@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -39,7 +38,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	AllowedChars pulumi.StringOutput `pulumi:"allowedChars"`
+	AllowedChars pulumi.StringPtrOutput `pulumi:"allowedChars"`
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayOutput `pulumi:"attributeSets"`
 	// (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -57,7 +56,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
 	//
 	// **SCIM++ Properties:**
@@ -81,7 +80,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) A String that describes the password policy
 	//
 	// **SCIM++ Properties:**
@@ -92,7 +91,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A delimiter used to separate characters in the dictionary file
 	//
 	// **SCIM++ Properties:**
@@ -103,7 +102,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DictionaryDelimiter pulumi.StringOutput `pulumi:"dictionaryDelimiter"`
+	DictionaryDelimiter pulumi.StringPtrOutput `pulumi:"dictionaryDelimiter"`
 	// (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
 	//
 	// **SCIM++ Properties:**
@@ -114,7 +113,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DictionaryLocation pulumi.StringOutput `pulumi:"dictionaryLocation"`
+	DictionaryLocation pulumi.StringPtrOutput `pulumi:"dictionaryLocation"`
 	// (Updatable) Indicates whether the password can match a dictionary word
 	//
 	// **SCIM++ Properties:**
@@ -125,7 +124,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DictionaryWordDisallowed pulumi.BoolOutput `pulumi:"dictionaryWordDisallowed"`
+	DictionaryWordDisallowed pulumi.BoolPtrOutput `pulumi:"dictionaryWordDisallowed"`
 	// (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
 	//
 	// **SCIM++ Properties:**
@@ -136,7 +135,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DisallowedChars pulumi.StringOutput `pulumi:"disallowedChars"`
+	DisallowedChars pulumi.StringPtrOutput `pulumi:"disallowedChars"`
 	// (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
 	//
 	// **SCIM++ Properties:**
@@ -173,7 +172,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	DistinctCharacters pulumi.IntOutput `pulumi:"distinctCharacters"`
+	DistinctCharacters pulumi.IntPtrOutput `pulumi:"distinctCharacters"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -185,7 +184,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -196,7 +195,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
 	//
 	// **SCIM++ Properties:**
@@ -207,7 +206,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	FirstNameDisallowed pulumi.BoolOutput `pulumi:"firstNameDisallowed"`
+	FirstNameDisallowed pulumi.BoolPtrOutput `pulumi:"firstNameDisallowed"`
 	// (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
 	//
 	// **SCIM++ Properties:**
@@ -218,7 +217,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: never
 	// * type: boolean
 	// * uniqueness: none
-	ForcePasswordReset pulumi.BoolOutput `pulumi:"forcePasswordReset"`
+	ForcePasswordReset pulumi.BoolPtrOutput `pulumi:"forcePasswordReset"`
 	// (Updatable) A list of groups that the password policy belongs to.
 	//
 	// **Added In:** 20.1.3
@@ -267,7 +266,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -289,7 +288,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	LastNameDisallowed pulumi.BoolOutput `pulumi:"lastNameDisallowed"`
+	LastNameDisallowed pulumi.BoolPtrOutput `pulumi:"lastNameDisallowed"`
 	// (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
 	//
 	// **SCIM++ Properties:**
@@ -300,7 +299,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	LockoutDuration pulumi.IntOutput `pulumi:"lockoutDuration"`
+	LockoutDuration pulumi.IntPtrOutput `pulumi:"lockoutDuration"`
 	// (Updatable) An integer that represents the maximum number of failed logins before an account is locked
 	//
 	// **SCIM++ Properties:**
@@ -311,7 +310,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MaxIncorrectAttempts pulumi.IntOutput `pulumi:"maxIncorrectAttempts"`
+	MaxIncorrectAttempts pulumi.IntPtrOutput `pulumi:"maxIncorrectAttempts"`
 	// (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
 	//
 	// **SCIM++ Properties:**
@@ -323,7 +322,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MaxLength pulumi.IntOutput `pulumi:"maxLength"`
+	MaxLength pulumi.IntPtrOutput `pulumi:"maxLength"`
 	// (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
 	//
 	// **SCIM++ Properties:**
@@ -334,7 +333,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MaxRepeatedChars pulumi.IntOutput `pulumi:"maxRepeatedChars"`
+	MaxRepeatedChars pulumi.IntPtrOutput `pulumi:"maxRepeatedChars"`
 	// (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
 	//
 	// **SCIM++ Properties:**
@@ -345,7 +344,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MaxSpecialChars pulumi.IntOutput `pulumi:"maxSpecialChars"`
+	MaxSpecialChars pulumi.IntPtrOutput `pulumi:"maxSpecialChars"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -368,7 +367,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinAlphaNumerals pulumi.IntOutput `pulumi:"minAlphaNumerals"`
+	MinAlphaNumerals pulumi.IntPtrOutput `pulumi:"minAlphaNumerals"`
 	// (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
 	//
 	// **SCIM++ Properties:**
@@ -379,7 +378,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinAlphas pulumi.IntOutput `pulumi:"minAlphas"`
+	MinAlphas pulumi.IntPtrOutput `pulumi:"minAlphas"`
 	// (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
 	//
 	// **SCIM++ Properties:**
@@ -390,7 +389,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinLength pulumi.IntOutput `pulumi:"minLength"`
+	MinLength pulumi.IntPtrOutput `pulumi:"minLength"`
 	// (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
 	//
 	// **SCIM++ Properties:**
@@ -401,7 +400,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinLowerCase pulumi.IntOutput `pulumi:"minLowerCase"`
+	MinLowerCase pulumi.IntPtrOutput `pulumi:"minLowerCase"`
 	// (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
 	//
 	// **SCIM++ Properties:**
@@ -412,7 +411,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinNumerals pulumi.IntOutput `pulumi:"minNumerals"`
+	MinNumerals pulumi.IntPtrOutput `pulumi:"minNumerals"`
 	// (Updatable) Minimum time after which the user can resubmit the reset password request
 	//
 	// **SCIM++ Properties:**
@@ -423,7 +422,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinPasswordAge pulumi.IntOutput `pulumi:"minPasswordAge"`
+	MinPasswordAge pulumi.IntPtrOutput `pulumi:"minPasswordAge"`
 	// (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
 	//
 	// **SCIM++ Properties:**
@@ -434,7 +433,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinSpecialChars pulumi.IntOutput `pulumi:"minSpecialChars"`
+	MinSpecialChars pulumi.IntPtrOutput `pulumi:"minSpecialChars"`
 	// (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
 	//
 	// **SCIM++ Properties:**
@@ -445,7 +444,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinUniqueChars pulumi.IntOutput `pulumi:"minUniqueChars"`
+	MinUniqueChars pulumi.IntPtrOutput `pulumi:"minUniqueChars"`
 	// (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
 	//
 	// **SCIM++ Properties:**
@@ -456,7 +455,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	MinUpperCase pulumi.IntOutput `pulumi:"minUpperCase"`
+	MinUpperCase pulumi.IntPtrOutput `pulumi:"minUpperCase"`
 	// (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
 	//
 	// **SCIM++ Properties:**
@@ -479,7 +478,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	NumPasswordsInHistory pulumi.IntOutput `pulumi:"numPasswordsInHistory"`
+	NumPasswordsInHistory pulumi.IntPtrOutput `pulumi:"numPasswordsInHistory"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
@@ -491,7 +490,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
 	//
 	// **SCIM++ Properties:**
@@ -502,7 +501,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	PasswordExpireWarning pulumi.IntOutput `pulumi:"passwordExpireWarning"`
+	PasswordExpireWarning pulumi.IntPtrOutput `pulumi:"passwordExpireWarning"`
 	// (Updatable) The number of days after which the password expires automatically
 	//
 	// **SCIM++ Properties:**
@@ -513,7 +512,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	PasswordExpiresAfter pulumi.IntOutput `pulumi:"passwordExpiresAfter"`
+	PasswordExpiresAfter pulumi.IntPtrOutput `pulumi:"passwordExpiresAfter"`
 	// (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
 	//
 	// **SCIM++ Properties:**
@@ -524,7 +523,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	PasswordStrength pulumi.StringOutput `pulumi:"passwordStrength"`
+	PasswordStrength pulumi.StringPtrOutput `pulumi:"passwordStrength"`
 	// (Updatable) Password policy priority
 	//
 	// **Added In:** 20.1.3
@@ -538,7 +537,7 @@ type DomainsPasswordPolicy struct {
 	// * type: integer
 	// * idcsMinValue: 1
 	// * uniqueness: server
-	Priority pulumi.IntOutput `pulumi:"priority"`
+	Priority pulumi.IntPtrOutput `pulumi:"priority"`
 	// (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
 	//
 	// **SCIM++ Properties:**
@@ -549,7 +548,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	RequiredChars pulumi.StringOutput `pulumi:"requiredChars"`
+	RequiredChars pulumi.StringPtrOutput `pulumi:"requiredChars"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -574,7 +573,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	StartsWithAlphabet pulumi.BoolOutput `pulumi:"startsWithAlphabet"`
+	StartsWithAlphabet pulumi.BoolPtrOutput `pulumi:"startsWithAlphabet"`
 	// (Updatable) A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -598,7 +597,7 @@ type DomainsPasswordPolicy struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
 	//
 	// **SCIM++ Properties:**
@@ -612,7 +611,7 @@ type DomainsPasswordPolicy struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	UserNameDisallowed pulumi.BoolOutput `pulumi:"userNameDisallowed"`
+	UserNameDisallowed pulumi.BoolPtrOutput `pulumi:"userNameDisallowed"`
 }
 
 // NewDomainsPasswordPolicy registers a new resource with the given unique name, arguments, and options.
@@ -2803,12 +2802,6 @@ func (i *DomainsPasswordPolicy) ToDomainsPasswordPolicyOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsPasswordPolicyOutput)
 }
 
-func (i *DomainsPasswordPolicy) ToOutput(ctx context.Context) pulumix.Output[*DomainsPasswordPolicy] {
-	return pulumix.Output[*DomainsPasswordPolicy]{
-		OutputState: i.ToDomainsPasswordPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsPasswordPolicyArrayInput is an input type that accepts DomainsPasswordPolicyArray and DomainsPasswordPolicyArrayOutput values.
 // You can construct a concrete instance of `DomainsPasswordPolicyArrayInput` via:
 //
@@ -2832,12 +2825,6 @@ func (i DomainsPasswordPolicyArray) ToDomainsPasswordPolicyArrayOutput() Domains
 
 func (i DomainsPasswordPolicyArray) ToDomainsPasswordPolicyArrayOutputWithContext(ctx context.Context) DomainsPasswordPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsPasswordPolicyArrayOutput)
-}
-
-func (i DomainsPasswordPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsPasswordPolicy] {
-	return pulumix.Output[[]*DomainsPasswordPolicy]{
-		OutputState: i.ToDomainsPasswordPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsPasswordPolicyMapInput is an input type that accepts DomainsPasswordPolicyMap and DomainsPasswordPolicyMapOutput values.
@@ -2865,12 +2852,6 @@ func (i DomainsPasswordPolicyMap) ToDomainsPasswordPolicyMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsPasswordPolicyMapOutput)
 }
 
-func (i DomainsPasswordPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsPasswordPolicy] {
-	return pulumix.Output[map[string]*DomainsPasswordPolicy]{
-		OutputState: i.ToDomainsPasswordPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsPasswordPolicyOutput struct{ *pulumi.OutputState }
 
 func (DomainsPasswordPolicyOutput) ElementType() reflect.Type {
@@ -2885,12 +2866,6 @@ func (o DomainsPasswordPolicyOutput) ToDomainsPasswordPolicyOutputWithContext(ct
 	return o
 }
 
-func (o DomainsPasswordPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsPasswordPolicy] {
-	return pulumix.Output[*DomainsPasswordPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
 //
 // **SCIM++ Properties:**
@@ -2901,8 +2876,8 @@ func (o DomainsPasswordPolicyOutput) ToOutput(ctx context.Context) pulumix.Outpu
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) AllowedChars() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.AllowedChars }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) AllowedChars() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.AllowedChars }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -2931,8 +2906,8 @@ func (o DomainsPasswordPolicyOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
@@ -2963,8 +2938,8 @@ func (o DomainsPasswordPolicyOutput) ConfiguredPasswordPolicyRules() DomainsPass
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A String that describes the password policy
@@ -2977,8 +2952,8 @@ func (o DomainsPasswordPolicyOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A delimiter used to separate characters in the dictionary file
@@ -2991,8 +2966,8 @@ func (o DomainsPasswordPolicyOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DictionaryDelimiter() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DictionaryDelimiter }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) DictionaryDelimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.DictionaryDelimiter }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
@@ -3005,8 +2980,8 @@ func (o DomainsPasswordPolicyOutput) DictionaryDelimiter() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DictionaryLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DictionaryLocation }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) DictionaryLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.DictionaryLocation }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether the password can match a dictionary word
@@ -3019,8 +2994,8 @@ func (o DomainsPasswordPolicyOutput) DictionaryLocation() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DictionaryWordDisallowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.DictionaryWordDisallowed }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) DictionaryWordDisallowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.DictionaryWordDisallowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
@@ -3033,8 +3008,8 @@ func (o DomainsPasswordPolicyOutput) DictionaryWordDisallowed() pulumi.BoolOutpu
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DisallowedChars() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DisallowedChars }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) DisallowedChars() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.DisallowedChars }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
@@ -3079,8 +3054,8 @@ func (o DomainsPasswordPolicyOutput) DisallowedUserAttributeValues() pulumi.Stri
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DistinctCharacters() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.DistinctCharacters }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) DistinctCharacters() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.DistinctCharacters }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -3094,8 +3069,8 @@ func (o DomainsPasswordPolicyOutput) DistinctCharacters() pulumi.IntOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -3108,8 +3083,8 @@ func (o DomainsPasswordPolicyOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
@@ -3122,8 +3097,8 @@ func (o DomainsPasswordPolicyOutput) ExternalId() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) FirstNameDisallowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.FirstNameDisallowed }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) FirstNameDisallowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.FirstNameDisallowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
@@ -3136,8 +3111,8 @@ func (o DomainsPasswordPolicyOutput) FirstNameDisallowed() pulumi.BoolOutput {
 // * returned: never
 // * type: boolean
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) ForcePasswordReset() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.ForcePasswordReset }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) ForcePasswordReset() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.ForcePasswordReset }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A list of groups that the password policy belongs to.
@@ -3202,8 +3177,8 @@ func (o DomainsPasswordPolicyOutput) IdcsLastModifiedBies() DomainsPasswordPolic
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -3230,8 +3205,8 @@ func (o DomainsPasswordPolicyOutput) IdcsPreventedOperations() pulumi.StringArra
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) LastNameDisallowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.LastNameDisallowed }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) LastNameDisallowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.LastNameDisallowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
@@ -3244,8 +3219,8 @@ func (o DomainsPasswordPolicyOutput) LastNameDisallowed() pulumi.BoolOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) LockoutDuration() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.LockoutDuration }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) LockoutDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.LockoutDuration }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) An integer that represents the maximum number of failed logins before an account is locked
@@ -3258,8 +3233,8 @@ func (o DomainsPasswordPolicyOutput) LockoutDuration() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MaxIncorrectAttempts() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxIncorrectAttempts }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MaxIncorrectAttempts() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MaxIncorrectAttempts }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
@@ -3273,8 +3248,8 @@ func (o DomainsPasswordPolicyOutput) MaxIncorrectAttempts() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MaxLength() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxLength }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MaxLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MaxLength }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
@@ -3287,8 +3262,8 @@ func (o DomainsPasswordPolicyOutput) MaxLength() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MaxRepeatedChars() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxRepeatedChars }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MaxRepeatedChars() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MaxRepeatedChars }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
@@ -3301,8 +3276,8 @@ func (o DomainsPasswordPolicyOutput) MaxRepeatedChars() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MaxSpecialChars() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MaxSpecialChars }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MaxSpecialChars() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MaxSpecialChars }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -3330,8 +3305,8 @@ func (o DomainsPasswordPolicyOutput) Metas() DomainsPasswordPolicyMetaArrayOutpu
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinAlphaNumerals() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinAlphaNumerals }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinAlphaNumerals() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinAlphaNumerals }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
@@ -3344,8 +3319,8 @@ func (o DomainsPasswordPolicyOutput) MinAlphaNumerals() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinAlphas() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinAlphas }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinAlphas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinAlphas }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
@@ -3358,8 +3333,8 @@ func (o DomainsPasswordPolicyOutput) MinAlphas() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinLength() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinLength }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinLength }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
@@ -3372,8 +3347,8 @@ func (o DomainsPasswordPolicyOutput) MinLength() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinLowerCase() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinLowerCase }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinLowerCase() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinLowerCase }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
@@ -3386,8 +3361,8 @@ func (o DomainsPasswordPolicyOutput) MinLowerCase() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinNumerals() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinNumerals }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinNumerals() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinNumerals }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Minimum time after which the user can resubmit the reset password request
@@ -3400,8 +3375,8 @@ func (o DomainsPasswordPolicyOutput) MinNumerals() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinPasswordAge() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinPasswordAge }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinPasswordAge() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinPasswordAge }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
@@ -3414,8 +3389,8 @@ func (o DomainsPasswordPolicyOutput) MinPasswordAge() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinSpecialChars() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinSpecialChars }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinSpecialChars() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinSpecialChars }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
@@ -3428,8 +3403,8 @@ func (o DomainsPasswordPolicyOutput) MinSpecialChars() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinUniqueChars() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinUniqueChars }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinUniqueChars() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinUniqueChars }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
@@ -3442,8 +3417,8 @@ func (o DomainsPasswordPolicyOutput) MinUniqueChars() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) MinUpperCase() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.MinUpperCase }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) MinUpperCase() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.MinUpperCase }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
@@ -3471,8 +3446,8 @@ func (o DomainsPasswordPolicyOutput) Name() pulumi.StringOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) NumPasswordsInHistory() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.NumPasswordsInHistory }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) NumPasswordsInHistory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.NumPasswordsInHistory }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -3486,8 +3461,8 @@ func (o DomainsPasswordPolicyOutput) NumPasswordsInHistory() pulumi.IntOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsPasswordPolicyOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
@@ -3500,8 +3475,8 @@ func (o DomainsPasswordPolicyOutput) Ocid() pulumi.StringOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) PasswordExpireWarning() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.PasswordExpireWarning }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) PasswordExpireWarning() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.PasswordExpireWarning }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The number of days after which the password expires automatically
@@ -3514,8 +3489,8 @@ func (o DomainsPasswordPolicyOutput) PasswordExpireWarning() pulumi.IntOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) PasswordExpiresAfter() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.PasswordExpiresAfter }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) PasswordExpiresAfter() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.PasswordExpiresAfter }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
@@ -3528,8 +3503,8 @@ func (o DomainsPasswordPolicyOutput) PasswordExpiresAfter() pulumi.IntOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) PasswordStrength() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.PasswordStrength }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) PasswordStrength() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.PasswordStrength }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Password policy priority
@@ -3545,8 +3520,8 @@ func (o DomainsPasswordPolicyOutput) PasswordStrength() pulumi.StringOutput {
 // * type: integer
 // * idcsMinValue: 1
 // * uniqueness: server
-func (o DomainsPasswordPolicyOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
+func (o DomainsPasswordPolicyOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.IntPtrOutput { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
@@ -3559,8 +3534,8 @@ func (o DomainsPasswordPolicyOutput) Priority() pulumi.IntOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) RequiredChars() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.RequiredChars }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) RequiredChars() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.RequiredChars }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -3593,8 +3568,8 @@ func (o DomainsPasswordPolicyOutput) Schemas() pulumi.StringArrayOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) StartsWithAlphabet() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.StartsWithAlphabet }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) StartsWithAlphabet() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.StartsWithAlphabet }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A list of tags on this resource.
@@ -3623,8 +3598,8 @@ func (o DomainsPasswordPolicyOutput) Tags() DomainsPasswordPolicyTagArrayOutput 
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsPasswordPolicyOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsPasswordPolicyOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
@@ -3640,8 +3615,8 @@ func (o DomainsPasswordPolicyOutput) TenancyOcid() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsPasswordPolicyOutput) UserNameDisallowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolOutput { return v.UserNameDisallowed }).(pulumi.BoolOutput)
+func (o DomainsPasswordPolicyOutput) UserNameDisallowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsPasswordPolicy) pulumi.BoolPtrOutput { return v.UserNameDisallowed }).(pulumi.BoolPtrOutput)
 }
 
 type DomainsPasswordPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -3656,12 +3631,6 @@ func (o DomainsPasswordPolicyArrayOutput) ToDomainsPasswordPolicyArrayOutput() D
 
 func (o DomainsPasswordPolicyArrayOutput) ToDomainsPasswordPolicyArrayOutputWithContext(ctx context.Context) DomainsPasswordPolicyArrayOutput {
 	return o
-}
-
-func (o DomainsPasswordPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsPasswordPolicy] {
-	return pulumix.Output[[]*DomainsPasswordPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsPasswordPolicyArrayOutput) Index(i pulumi.IntInput) DomainsPasswordPolicyOutput {
@@ -3682,12 +3651,6 @@ func (o DomainsPasswordPolicyMapOutput) ToDomainsPasswordPolicyMapOutput() Domai
 
 func (o DomainsPasswordPolicyMapOutput) ToDomainsPasswordPolicyMapOutputWithContext(ctx context.Context) DomainsPasswordPolicyMapOutput {
 	return o
-}
-
-func (o DomainsPasswordPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsPasswordPolicy] {
-	return pulumix.Output[map[string]*DomainsPasswordPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsPasswordPolicyMapOutput) MapIndex(k pulumi.StringInput) DomainsPasswordPolicyOutput {

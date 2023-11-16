@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -87,27 +86,27 @@ type HttpMonitor struct {
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
 	Headers pulumi.MapOutput `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
-	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
+	HomeRegion pulumi.StringPtrOutput `pulumi:"homeRegion"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds pulumi.IntOutput `pulumi:"intervalInSeconds"`
 	// (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// (Updatable) The supported HTTP methods available for probes.
-	Method pulumi.StringOutput `pulumi:"method"`
+	Method pulumi.StringPtrOutput `pulumi:"method"`
 	// (Updatable) The optional URL path to probe, including query parameters.
-	Path pulumi.StringOutput `pulumi:"path"`
+	Path pulumi.StringPtrOutput `pulumi:"path"`
 	// (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// (Updatable) The supported protocols available for HTTP probes.
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl pulumi.StringOutput `pulumi:"resultsUrl"`
+	ResultsUrl pulumi.StringPtrOutput `pulumi:"resultsUrl"`
 	// (Updatable) A list of targets (hostnames or IP addresses) of the probe.
 	Targets pulumi.StringArrayOutput `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of names of vantage points from which to execute the probe.
 	//
 	// ** IMPORTANT **
@@ -343,12 +342,6 @@ func (i *HttpMonitor) ToHttpMonitorOutputWithContext(ctx context.Context) HttpMo
 	return pulumi.ToOutputWithContext(ctx, i).(HttpMonitorOutput)
 }
 
-func (i *HttpMonitor) ToOutput(ctx context.Context) pulumix.Output[*HttpMonitor] {
-	return pulumix.Output[*HttpMonitor]{
-		OutputState: i.ToHttpMonitorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HttpMonitorArrayInput is an input type that accepts HttpMonitorArray and HttpMonitorArrayOutput values.
 // You can construct a concrete instance of `HttpMonitorArrayInput` via:
 //
@@ -372,12 +365,6 @@ func (i HttpMonitorArray) ToHttpMonitorArrayOutput() HttpMonitorArrayOutput {
 
 func (i HttpMonitorArray) ToHttpMonitorArrayOutputWithContext(ctx context.Context) HttpMonitorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HttpMonitorArrayOutput)
-}
-
-func (i HttpMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]*HttpMonitor] {
-	return pulumix.Output[[]*HttpMonitor]{
-		OutputState: i.ToHttpMonitorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // HttpMonitorMapInput is an input type that accepts HttpMonitorMap and HttpMonitorMapOutput values.
@@ -405,12 +392,6 @@ func (i HttpMonitorMap) ToHttpMonitorMapOutputWithContext(ctx context.Context) H
 	return pulumi.ToOutputWithContext(ctx, i).(HttpMonitorMapOutput)
 }
 
-func (i HttpMonitorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpMonitor] {
-	return pulumix.Output[map[string]*HttpMonitor]{
-		OutputState: i.ToHttpMonitorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HttpMonitorOutput struct{ *pulumi.OutputState }
 
 func (HttpMonitorOutput) ElementType() reflect.Type {
@@ -423,12 +404,6 @@ func (o HttpMonitorOutput) ToHttpMonitorOutput() HttpMonitorOutput {
 
 func (o HttpMonitorOutput) ToHttpMonitorOutputWithContext(ctx context.Context) HttpMonitorOutput {
 	return o
-}
-
-func (o HttpMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpMonitor] {
-	return pulumix.Output[*HttpMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment.
@@ -459,8 +434,8 @@ func (o HttpMonitorOutput) Headers() pulumi.MapOutput {
 }
 
 // The region where updates must be made and where results must be fetched from.
-func (o HttpMonitorOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.StringOutput { return v.HomeRegion }).(pulumi.StringOutput)
+func (o HttpMonitorOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringPtrOutput { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -469,23 +444,23 @@ func (o HttpMonitorOutput) IntervalInSeconds() pulumi.IntOutput {
 }
 
 // (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
-func (o HttpMonitorOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o HttpMonitorOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The supported HTTP methods available for probes.
-func (o HttpMonitorOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.StringOutput { return v.Method }).(pulumi.StringOutput)
+func (o HttpMonitorOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringPtrOutput { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The optional URL path to probe, including query parameters.
-func (o HttpMonitorOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.StringOutput { return v.Path }).(pulumi.StringOutput)
+func (o HttpMonitorOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringPtrOutput { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o HttpMonitorOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o HttpMonitorOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The supported protocols available for HTTP probes.
@@ -494,8 +469,8 @@ func (o HttpMonitorOutput) Protocol() pulumi.StringOutput {
 }
 
 // A URL for fetching the probe results.
-func (o HttpMonitorOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.StringOutput { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o HttpMonitorOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringPtrOutput { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of targets (hostnames or IP addresses) of the probe.
@@ -504,13 +479,13 @@ func (o HttpMonitorOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o HttpMonitorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o HttpMonitorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o HttpMonitorOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o HttpMonitorOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.IntPtrOutput { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) A list of names of vantage points from which to execute the probe.
@@ -535,12 +510,6 @@ func (o HttpMonitorArrayOutput) ToHttpMonitorArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o HttpMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HttpMonitor] {
-	return pulumix.Output[[]*HttpMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o HttpMonitorArrayOutput) Index(i pulumi.IntInput) HttpMonitorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *HttpMonitor {
 		return vs[0].([]*HttpMonitor)[vs[1].(int)]
@@ -559,12 +528,6 @@ func (o HttpMonitorMapOutput) ToHttpMonitorMapOutput() HttpMonitorMapOutput {
 
 func (o HttpMonitorMapOutput) ToHttpMonitorMapOutputWithContext(ctx context.Context) HttpMonitorMapOutput {
 	return o
-}
-
-func (o HttpMonitorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpMonitor] {
-	return pulumix.Output[map[string]*HttpMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HttpMonitorMapOutput) MapIndex(k pulumi.StringInput) HttpMonitorOutput {

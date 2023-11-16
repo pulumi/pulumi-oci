@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider {
@@ -16,195 +18,195 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
      * @return Social IDP Access token URL
      * 
      */
-    private String accessTokenUrl;
+    private @Nullable String accessTokenUrl;
     /**
      * @return Whether account linking is enabled
      * 
      */
-    private Boolean accountLinkingEnabled;
+    private @Nullable Boolean accountLinkingEnabled;
     /**
      * @return Admin scope to request
      * 
      */
-    private List<String> adminScopes;
+    private @Nullable List<String> adminScopes;
     /**
      * @return Social IDP Authorization URL
      * 
      */
-    private String authzUrl;
+    private @Nullable String authzUrl;
     /**
      * @return Whether the client credential is contained in payload
      * 
      */
-    private Boolean clientCredentialInPayload;
+    private @Nullable Boolean clientCredentialInPayload;
     /**
      * @return Social IDP allowed clock skew time
      * 
      */
-    private Integer clockSkewInSeconds;
+    private @Nullable Integer clockSkewInSeconds;
     /**
      * @return Social IDP Client Application Client ID
      * 
      */
-    private String consumerKey;
+    private @Nullable String consumerKey;
     /**
      * @return Social IDP Client Application Client Secret
      * 
      */
-    private String consumerSecret;
+    private @Nullable String consumerSecret;
     /**
      * @return Discovery URL
      * 
      */
-    private String discoveryUrl;
+    private @Nullable String discoveryUrl;
     /**
      * @return Id attribute used for account linking
      * 
      */
-    private String idAttribute;
+    private @Nullable String idAttribute;
     /**
      * @return Social IDP User profile URL
      * 
      */
-    private String profileUrl;
+    private @Nullable String profileUrl;
     /**
      * @return redirect URL for social idp
      * 
      */
-    private String redirectUrl;
+    private @Nullable String redirectUrl;
     /**
      * @return Whether registration is enabled
      * 
      */
-    private Boolean registrationEnabled;
+    private @Nullable Boolean registrationEnabled;
     /**
      * @return Scope to request
      * 
      */
-    private List<String> scopes;
+    private @Nullable List<String> scopes;
     /**
      * @return Service Provider Name
      * 
      */
-    private String serviceProviderName;
+    private @Nullable String serviceProviderName;
     /**
      * @return Status
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider() {}
     /**
      * @return Social IDP Access token URL
      * 
      */
-    public String accessTokenUrl() {
-        return this.accessTokenUrl;
+    public Optional<String> accessTokenUrl() {
+        return Optional.ofNullable(this.accessTokenUrl);
     }
     /**
      * @return Whether account linking is enabled
      * 
      */
-    public Boolean accountLinkingEnabled() {
-        return this.accountLinkingEnabled;
+    public Optional<Boolean> accountLinkingEnabled() {
+        return Optional.ofNullable(this.accountLinkingEnabled);
     }
     /**
      * @return Admin scope to request
      * 
      */
     public List<String> adminScopes() {
-        return this.adminScopes;
+        return this.adminScopes == null ? List.of() : this.adminScopes;
     }
     /**
      * @return Social IDP Authorization URL
      * 
      */
-    public String authzUrl() {
-        return this.authzUrl;
+    public Optional<String> authzUrl() {
+        return Optional.ofNullable(this.authzUrl);
     }
     /**
      * @return Whether the client credential is contained in payload
      * 
      */
-    public Boolean clientCredentialInPayload() {
-        return this.clientCredentialInPayload;
+    public Optional<Boolean> clientCredentialInPayload() {
+        return Optional.ofNullable(this.clientCredentialInPayload);
     }
     /**
      * @return Social IDP allowed clock skew time
      * 
      */
-    public Integer clockSkewInSeconds() {
-        return this.clockSkewInSeconds;
+    public Optional<Integer> clockSkewInSeconds() {
+        return Optional.ofNullable(this.clockSkewInSeconds);
     }
     /**
      * @return Social IDP Client Application Client ID
      * 
      */
-    public String consumerKey() {
-        return this.consumerKey;
+    public Optional<String> consumerKey() {
+        return Optional.ofNullable(this.consumerKey);
     }
     /**
      * @return Social IDP Client Application Client Secret
      * 
      */
-    public String consumerSecret() {
-        return this.consumerSecret;
+    public Optional<String> consumerSecret() {
+        return Optional.ofNullable(this.consumerSecret);
     }
     /**
      * @return Discovery URL
      * 
      */
-    public String discoveryUrl() {
-        return this.discoveryUrl;
+    public Optional<String> discoveryUrl() {
+        return Optional.ofNullable(this.discoveryUrl);
     }
     /**
      * @return Id attribute used for account linking
      * 
      */
-    public String idAttribute() {
-        return this.idAttribute;
+    public Optional<String> idAttribute() {
+        return Optional.ofNullable(this.idAttribute);
     }
     /**
      * @return Social IDP User profile URL
      * 
      */
-    public String profileUrl() {
-        return this.profileUrl;
+    public Optional<String> profileUrl() {
+        return Optional.ofNullable(this.profileUrl);
     }
     /**
      * @return redirect URL for social idp
      * 
      */
-    public String redirectUrl() {
-        return this.redirectUrl;
+    public Optional<String> redirectUrl() {
+        return Optional.ofNullable(this.redirectUrl);
     }
     /**
      * @return Whether registration is enabled
      * 
      */
-    public Boolean registrationEnabled() {
-        return this.registrationEnabled;
+    public Optional<Boolean> registrationEnabled() {
+        return Optional.ofNullable(this.registrationEnabled);
     }
     /**
      * @return Scope to request
      * 
      */
     public List<String> scopes() {
-        return this.scopes;
+        return this.scopes == null ? List.of() : this.scopes;
     }
     /**
      * @return Service Provider Name
      * 
      */
-    public String serviceProviderName() {
-        return this.serviceProviderName;
+    public Optional<String> serviceProviderName() {
+        return Optional.ofNullable(this.serviceProviderName);
     }
     /**
      * @return Status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -216,22 +218,22 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessTokenUrl;
-        private Boolean accountLinkingEnabled;
-        private List<String> adminScopes;
-        private String authzUrl;
-        private Boolean clientCredentialInPayload;
-        private Integer clockSkewInSeconds;
-        private String consumerKey;
-        private String consumerSecret;
-        private String discoveryUrl;
-        private String idAttribute;
-        private String profileUrl;
-        private String redirectUrl;
-        private Boolean registrationEnabled;
-        private List<String> scopes;
-        private String serviceProviderName;
-        private String status;
+        private @Nullable String accessTokenUrl;
+        private @Nullable Boolean accountLinkingEnabled;
+        private @Nullable List<String> adminScopes;
+        private @Nullable String authzUrl;
+        private @Nullable Boolean clientCredentialInPayload;
+        private @Nullable Integer clockSkewInSeconds;
+        private @Nullable String consumerKey;
+        private @Nullable String consumerSecret;
+        private @Nullable String discoveryUrl;
+        private @Nullable String idAttribute;
+        private @Nullable String profileUrl;
+        private @Nullable String redirectUrl;
+        private @Nullable Boolean registrationEnabled;
+        private @Nullable List<String> scopes;
+        private @Nullable String serviceProviderName;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider defaults) {
     	      Objects.requireNonNull(defaults);
@@ -254,89 +256,89 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         }
 
         @CustomType.Setter
-        public Builder accessTokenUrl(String accessTokenUrl) {
-            this.accessTokenUrl = Objects.requireNonNull(accessTokenUrl);
+        public Builder accessTokenUrl(@Nullable String accessTokenUrl) {
+            this.accessTokenUrl = accessTokenUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder accountLinkingEnabled(Boolean accountLinkingEnabled) {
-            this.accountLinkingEnabled = Objects.requireNonNull(accountLinkingEnabled);
+        public Builder accountLinkingEnabled(@Nullable Boolean accountLinkingEnabled) {
+            this.accountLinkingEnabled = accountLinkingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder adminScopes(List<String> adminScopes) {
-            this.adminScopes = Objects.requireNonNull(adminScopes);
+        public Builder adminScopes(@Nullable List<String> adminScopes) {
+            this.adminScopes = adminScopes;
             return this;
         }
         public Builder adminScopes(String... adminScopes) {
             return adminScopes(List.of(adminScopes));
         }
         @CustomType.Setter
-        public Builder authzUrl(String authzUrl) {
-            this.authzUrl = Objects.requireNonNull(authzUrl);
+        public Builder authzUrl(@Nullable String authzUrl) {
+            this.authzUrl = authzUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder clientCredentialInPayload(Boolean clientCredentialInPayload) {
-            this.clientCredentialInPayload = Objects.requireNonNull(clientCredentialInPayload);
+        public Builder clientCredentialInPayload(@Nullable Boolean clientCredentialInPayload) {
+            this.clientCredentialInPayload = clientCredentialInPayload;
             return this;
         }
         @CustomType.Setter
-        public Builder clockSkewInSeconds(Integer clockSkewInSeconds) {
-            this.clockSkewInSeconds = Objects.requireNonNull(clockSkewInSeconds);
+        public Builder clockSkewInSeconds(@Nullable Integer clockSkewInSeconds) {
+            this.clockSkewInSeconds = clockSkewInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder consumerKey(String consumerKey) {
-            this.consumerKey = Objects.requireNonNull(consumerKey);
+        public Builder consumerKey(@Nullable String consumerKey) {
+            this.consumerKey = consumerKey;
             return this;
         }
         @CustomType.Setter
-        public Builder consumerSecret(String consumerSecret) {
-            this.consumerSecret = Objects.requireNonNull(consumerSecret);
+        public Builder consumerSecret(@Nullable String consumerSecret) {
+            this.consumerSecret = consumerSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryUrl(String discoveryUrl) {
-            this.discoveryUrl = Objects.requireNonNull(discoveryUrl);
+        public Builder discoveryUrl(@Nullable String discoveryUrl) {
+            this.discoveryUrl = discoveryUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder idAttribute(String idAttribute) {
-            this.idAttribute = Objects.requireNonNull(idAttribute);
+        public Builder idAttribute(@Nullable String idAttribute) {
+            this.idAttribute = idAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder profileUrl(String profileUrl) {
-            this.profileUrl = Objects.requireNonNull(profileUrl);
+        public Builder profileUrl(@Nullable String profileUrl) {
+            this.profileUrl = profileUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder redirectUrl(String redirectUrl) {
-            this.redirectUrl = Objects.requireNonNull(redirectUrl);
+        public Builder redirectUrl(@Nullable String redirectUrl) {
+            this.redirectUrl = redirectUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder registrationEnabled(Boolean registrationEnabled) {
-            this.registrationEnabled = Objects.requireNonNull(registrationEnabled);
+        public Builder registrationEnabled(@Nullable Boolean registrationEnabled) {
+            this.registrationEnabled = registrationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder scopes(List<String> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+        public Builder scopes(@Nullable List<String> scopes) {
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(String... scopes) {
             return scopes(List.of(scopes));
         }
         @CustomType.Setter
-        public Builder serviceProviderName(String serviceProviderName) {
-            this.serviceProviderName = Objects.requireNonNull(serviceProviderName);
+        public Builder serviceProviderName(@Nullable String serviceProviderName) {
+            this.serviceProviderName = serviceProviderName;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider build() {

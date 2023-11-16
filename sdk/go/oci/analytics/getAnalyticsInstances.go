@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
@@ -82,7 +81,7 @@ type GetAnalyticsInstancesResult struct {
 	FeatureSet *string                       `pulumi:"featureSet"`
 	Filters    []GetAnalyticsInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The current state of an instance.
@@ -136,12 +135,6 @@ func (o GetAnalyticsInstancesResultOutput) ToGetAnalyticsInstancesResultOutputWi
 	return o
 }
 
-func (o GetAnalyticsInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesResult] {
-	return pulumix.Output[GetAnalyticsInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of analytics_instances.
 func (o GetAnalyticsInstancesResultOutput) AnalyticsInstances() GetAnalyticsInstancesAnalyticsInstanceArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) []GetAnalyticsInstancesAnalyticsInstance {
@@ -169,8 +162,8 @@ func (o GetAnalyticsInstancesResultOutput) Filters() GetAnalyticsInstancesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAnalyticsInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.

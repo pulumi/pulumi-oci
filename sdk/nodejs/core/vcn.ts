@@ -117,15 +117,15 @@ export class Vcn extends pulumi.CustomResource {
     /**
      * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      */
-    public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[]>;
+    public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[] | undefined>;
     /**
      * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
-    public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VcnByoipv6cidrDetail[]>;
+    public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VcnByoipv6cidrDetail[] | undefined>;
     /**
      * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
      */
-    public readonly cidrBlock!: pulumi.Output<string>;
+    public readonly cidrBlock!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
@@ -133,7 +133,7 @@ export class Vcn extends pulumi.CustomResource {
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
-    public readonly cidrBlocks!: pulumi.Output<string[]>;
+    public readonly cidrBlocks!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
      */
@@ -141,23 +141,23 @@ export class Vcn extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
      */
-    public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string>;
+    public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
      */
-    public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string>;
+    public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
      */
-    public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string>;
+    public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
@@ -166,15 +166,15 @@ export class Vcn extends pulumi.CustomResource {
      *
      * Example: `vcn1`
      */
-    public readonly dnsLabel!: pulumi.Output<string>;
+    public readonly dnsLabel!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      */
-    public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
+    public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[] | undefined>;
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
@@ -183,11 +183,11 @@ export class Vcn extends pulumi.CustomResource {
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
-    public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
+    public readonly ipv6privateCidrBlocks!: pulumi.Output<string[] | undefined>;
     /**
      * Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      */
-    public readonly isIpv6enabled!: pulumi.Output<boolean>;
+    public readonly isIpv6enabled!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN. 
      *
@@ -195,19 +195,19 @@ export class Vcn extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
+    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The VCN's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
      */
-    public /*out*/ readonly vcnDomainName!: pulumi.Output<string>;
+    public /*out*/ readonly vcnDomainName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Vcn resource with the given unique name, arguments, and options.

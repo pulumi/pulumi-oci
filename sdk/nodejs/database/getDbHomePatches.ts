@@ -51,11 +51,11 @@ export interface GetDbHomePatchesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of patches.
      */
-    readonly patches: outputs.Database.GetDbHomePatchesPatch[];
+    readonly patches?: outputs.Database.GetDbHomePatchesPatch[];
 }
 /**
  * This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.

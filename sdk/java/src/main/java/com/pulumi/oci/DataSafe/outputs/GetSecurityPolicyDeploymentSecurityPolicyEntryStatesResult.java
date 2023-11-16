@@ -24,7 +24,7 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the security policy deployment associated.
      * 
@@ -39,7 +39,7 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
      * @return The list of security_policy_entry_state_collection.
      * 
      */
-    private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections;
+    private @Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections;
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult() {}
     /**
@@ -56,8 +56,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the security policy deployment associated.
@@ -78,7 +78,7 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
      * 
      */
     public List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections() {
-        return this.securityPolicyEntryStateCollections;
+        return this.securityPolicyEntryStateCollections == null ? List.of() : this.securityPolicyEntryStateCollections;
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
     public static final class Builder {
         private @Nullable String deploymentStatus;
         private @Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String securityPolicyDeploymentId;
         private @Nullable String securityPolicyEntryId;
-        private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections;
+        private @Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -121,8 +121,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +136,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyEntryStateCollections(List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections) {
-            this.securityPolicyEntryStateCollections = Objects.requireNonNull(securityPolicyEntryStateCollections);
+        public Builder securityPolicyEntryStateCollections(@Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections) {
+            this.securityPolicyEntryStateCollections = securityPolicyEntryStateCollections;
             return this;
         }
         public Builder securityPolicyEntryStateCollections(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection... securityPolicyEntryStateCollections) {

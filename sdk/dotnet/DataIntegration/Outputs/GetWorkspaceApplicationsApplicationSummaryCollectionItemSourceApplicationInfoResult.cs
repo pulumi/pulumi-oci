@@ -16,32 +16,32 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The source application key to use when creating the application.
         /// </summary>
-        public readonly string ApplicationKey;
+        public readonly string? ApplicationKey;
         /// <summary>
         /// The source application version of the application.
         /// </summary>
-        public readonly string ApplicationVersion;
-        public readonly string CopyType;
+        public readonly string? ApplicationVersion;
+        public readonly string? CopyType;
         /// <summary>
         /// The last patch key for the application.
         /// </summary>
-        public readonly string LastPatchKey;
+        public readonly string? LastPatchKey;
         /// <summary>
         /// The workspace ID.
         /// </summary>
-        public readonly string WorkspaceId;
+        public readonly string? WorkspaceId;
 
         [OutputConstructor]
         private GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult(
-            string applicationKey,
+            string? applicationKey,
 
-            string applicationVersion,
+            string? applicationVersion,
 
-            string copyType,
+            string? copyType,
 
-            string lastPatchKey,
+            string? lastPatchKey,
 
-            string workspaceId)
+            string? workspaceId)
         {
             ApplicationKey = applicationKey;
             ApplicationVersion = applicationVersion;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
@@ -74,7 +73,7 @@ type GetConnectionsResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Connection resource.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetConnectionsResultOutput) ToGetConnectionsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsResult] {
-	return pulumix.Output[GetConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the compartment where the secret containing the credentials will be created.
 func (o GetConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -148,8 +141,8 @@ func (o GetConnectionsResultOutput) Filters() GetConnectionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Connection resource.

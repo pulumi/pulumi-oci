@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceVolumeConfig {
@@ -13,39 +15,39 @@ public final class GetContainerInstanceVolumeConfig {
      * @return The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
      * 
      */
-    private String data;
+    private @Nullable String data;
     /**
      * @return The name of the file. The fileName should be unique across the volume.
      * 
      */
-    private String fileName;
+    private @Nullable String fileName;
     /**
      * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
      * 
      */
-    private String path;
+    private @Nullable String path;
 
     private GetContainerInstanceVolumeConfig() {}
     /**
      * @return The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
      * 
      */
-    public String data() {
-        return this.data;
+    public Optional<String> data() {
+        return Optional.ofNullable(this.data);
     }
     /**
      * @return The name of the file. The fileName should be unique across the volume.
      * 
      */
-    public String fileName() {
-        return this.fileName;
+    public Optional<String> fileName() {
+        return Optional.ofNullable(this.fileName);
     }
     /**
      * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetContainerInstanceVolumeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String data;
-        private String fileName;
-        private String path;
+        private @Nullable String data;
+        private @Nullable String fileName;
+        private @Nullable String path;
         public Builder() {}
         public Builder(GetContainerInstanceVolumeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetContainerInstanceVolumeConfig {
         }
 
         @CustomType.Setter
-        public Builder data(String data) {
-            this.data = Objects.requireNonNull(data);
+        public Builder data(@Nullable String data) {
+            this.data = data;
             return this;
         }
         @CustomType.Setter
-        public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+        public Builder fileName(@Nullable String fileName) {
+            this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         public GetContainerInstanceVolumeConfig build() {

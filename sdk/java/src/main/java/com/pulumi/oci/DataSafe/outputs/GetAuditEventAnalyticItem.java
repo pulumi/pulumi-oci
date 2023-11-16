@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetAuditEventAnalyticItemDimension;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditEventAnalyticItem {
@@ -15,75 +17,75 @@ public final class GetAuditEventAnalyticItem {
      * @return Total count of aggregated value.
      * 
      */
-    private String count;
+    private @Nullable String count;
     /**
      * @return Details of aggregation dimensions used for summarizing audit events.
      * 
      */
-    private List<GetAuditEventAnalyticItemDimension> dimensions;
+    private @Nullable List<GetAuditEventAnalyticItemDimension> dimensions;
     /**
      * @return Display Name of aggregation field.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Name of the aggregation.
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetAuditEventAnalyticItem() {}
     /**
      * @return Total count of aggregated value.
      * 
      */
-    public String count() {
-        return this.count;
+    public Optional<String> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return Details of aggregation dimensions used for summarizing audit events.
      * 
      */
     public List<GetAuditEventAnalyticItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return Display Name of aggregation field.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Name of the aggregation.
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetAuditEventAnalyticItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String count;
-        private List<GetAuditEventAnalyticItemDimension> dimensions;
-        private String displayName;
-        private String metricName;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String count;
+        private @Nullable List<GetAuditEventAnalyticItemDimension> dimensions;
+        private @Nullable String displayName;
+        private @Nullable String metricName;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetAuditEventAnalyticItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetAuditEventAnalyticItem {
         }
 
         @CustomType.Setter
-        public Builder count(String count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable String count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<GetAuditEventAnalyticItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetAuditEventAnalyticItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetAuditEventAnalyticItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetAuditEventAnalyticItem build() {

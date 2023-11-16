@@ -56,23 +56,23 @@ export interface GetComputeGlobalImageCapabilitySchemasVersionResult {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the compute global image capability schema version
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The map of each capability name to its ImageCapabilityDescriptor.
      */
-    readonly schemaData: {[key: string]: any};
+    readonly schemaData?: {[key: string]: any};
     /**
      * The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.

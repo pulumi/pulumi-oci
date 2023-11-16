@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscribed Services in Oracle Cloud Infrastructure Onesubscription service.
@@ -72,7 +71,7 @@ type GetSubscribedServicesResult struct {
 	CompartmentId string                        `pulumi:"compartmentId"`
 	Filters       []GetSubscribedServicesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Sales Order Line Id associated to the subscribed service
 	OrderLineId *string `pulumi:"orderLineId"`
 	// Subscribed service status
@@ -128,12 +127,6 @@ func (o GetSubscribedServicesResultOutput) ToGetSubscribedServicesResultOutputWi
 	return o
 }
 
-func (o GetSubscribedServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesResult] {
-	return pulumix.Output[GetSubscribedServicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscribedServicesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -143,8 +136,8 @@ func (o GetSubscribedServicesResultOutput) Filters() GetSubscribedServicesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscribedServicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscribedServicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Line Id associated to the subscribed service

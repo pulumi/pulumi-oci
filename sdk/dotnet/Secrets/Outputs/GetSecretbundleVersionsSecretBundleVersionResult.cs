@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Secrets.Outputs
         /// <summary>
         /// The OCID of the secret.
         /// </summary>
-        public readonly string SecretId;
+        public readonly string? SecretId;
         /// <summary>
         /// A list of possible rotation states for the secret bundle.
         /// </summary>
@@ -24,39 +24,39 @@ namespace Pulumi.Oci.Secrets.Outputs
         /// <summary>
         /// The time when the secret bundle was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfExpiry;
+        public readonly string? TimeOfExpiry;
         /// <summary>
         /// The version name of the secret bundle, as provided when the secret was created or last rotated.
         /// </summary>
-        public readonly string VersionName;
+        public readonly string? VersionName;
         /// <summary>
         /// The version number of the secret.
         /// </summary>
-        public readonly string VersionNumber;
+        public readonly string? VersionNumber;
 
         [OutputConstructor]
         private GetSecretbundleVersionsSecretBundleVersionResult(
-            string secretId,
+            string? secretId,
 
             ImmutableArray<string> stages,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string timeOfExpiry,
+            string? timeOfExpiry,
 
-            string versionName,
+            string? versionName,
 
-            string versionNumber)
+            string? versionNumber)
         {
             SecretId = secretId;
             Stages = stages;

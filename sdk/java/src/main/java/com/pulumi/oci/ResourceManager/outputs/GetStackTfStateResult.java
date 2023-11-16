@@ -6,6 +6,8 @@ package com.pulumi.oci.ResourceManager.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStackTfStateResult {
@@ -13,7 +15,7 @@ public final class GetStackTfStateResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String localPath;
     private String stackId;
 
@@ -22,8 +24,8 @@ public final class GetStackTfStateResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String localPath() {
         return this.localPath;
@@ -41,7 +43,7 @@ public final class GetStackTfStateResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String localPath;
         private String stackId;
         public Builder() {}
@@ -53,8 +55,8 @@ public final class GetStackTfStateResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

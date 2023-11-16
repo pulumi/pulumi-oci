@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// name of SKU
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetSupportedSkusItemResult(string name)
+        private GetSupportedSkusItemResult(string? name)
         {
             Name = name;
         }

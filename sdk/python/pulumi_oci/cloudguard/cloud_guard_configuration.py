@@ -20,14 +20,6 @@ class CloudGuardConfigurationArgs:
                  self_manage_resources: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a CloudGuardConfiguration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "reporting_region", reporting_region)
@@ -38,9 +30,6 @@ class CloudGuardConfigurationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The ID of the compartment in which to list resources.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -50,9 +39,6 @@ class CloudGuardConfigurationArgs:
     @property
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The reporting region value
-        """
         return pulumi.get(self, "reporting_region")
 
     @reporting_region.setter
@@ -62,13 +48,6 @@ class CloudGuardConfigurationArgs:
     @property
     @pulumi.getter
     def status(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Status of Cloud Guard Tenant
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -78,9 +57,6 @@ class CloudGuardConfigurationArgs:
     @property
     @pulumi.getter(name="selfManageResources")
     def self_manage_resources(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        """
         return pulumi.get(self, "self_manage_resources")
 
     @self_manage_resources.setter
@@ -97,14 +73,6 @@ class _CloudGuardConfigurationState:
                  status: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudGuardConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
-        :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -118,9 +86,6 @@ class _CloudGuardConfigurationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The ID of the compartment in which to list resources.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -130,9 +95,6 @@ class _CloudGuardConfigurationState:
     @property
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The reporting region value
-        """
         return pulumi.get(self, "reporting_region")
 
     @reporting_region.setter
@@ -142,9 +104,6 @@ class _CloudGuardConfigurationState:
     @property
     @pulumi.getter(name="selfManageResources")
     def self_manage_resources(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        """
         return pulumi.get(self, "self_manage_resources")
 
     @self_manage_resources.setter
@@ -154,13 +113,6 @@ class _CloudGuardConfigurationState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Status of Cloud Guard Tenant
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -179,37 +131,9 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("testCloudGuardConfiguration",
-            compartment_id=var["compartment_id"],
-            reporting_region=var["cloud_guard_configuration_reporting_region"],
-            status=var["cloud_guard_configuration_status"],
-            self_manage_resources=var["cloud_guard_configuration_self_manage_resources"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a CloudGuardConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
-        :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -218,27 +142,7 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  args: CloudGuardConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("testCloudGuardConfiguration",
-            compartment_id=var["compartment_id"],
-            reporting_region=var["cloud_guard_configuration_reporting_region"],
-            status=var["cloud_guard_configuration_status"],
-            self_manage_resources=var["cloud_guard_configuration_self_manage_resources"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a CloudGuardConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CloudGuardConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -298,14 +202,6 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The ID of the compartment in which to list resources.
-        :param pulumi.Input[str] reporting_region: (Updatable) The reporting region value
-        :param pulumi.Input[bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        :param pulumi.Input[str] status: (Updatable) Status of Cloud Guard Tenant
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -320,36 +216,20 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The ID of the compartment in which to list resources.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The reporting region value
-        """
         return pulumi.get(self, "reporting_region")
 
     @property
     @pulumi.getter(name="selfManageResources")
-    def self_manage_resources(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-        """
+    def self_manage_resources(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "self_manage_resources")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Status of Cloud Guard Tenant
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "status")
 

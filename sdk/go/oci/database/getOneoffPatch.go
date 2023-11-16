@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
@@ -60,37 +59,37 @@ type LookupOneoffPatchArgs struct {
 // A collection of values returned by getOneoffPatch.
 type LookupOneoffPatchResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-	DbVersion string `pulumi:"dbVersion"`
+	DbVersion *string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// One-off patch name.
-	DisplayName                string `pulumi:"displayName"`
-	DownloadOneoffPatchTrigger int    `pulumi:"downloadOneoffPatchTrigger"`
+	DisplayName                *string `pulumi:"displayName"`
+	DownloadOneoffPatchTrigger *int    `pulumi:"downloadOneoffPatchTrigger"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Detailed message for the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of one-off patches for Database Homes.
 	OneOffPatches []string `pulumi:"oneOffPatches"`
 	OneoffPatchId string   `pulumi:"oneoffPatchId"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-	ReleaseUpdate string `pulumi:"releaseUpdate"`
+	ReleaseUpdate *string `pulumi:"releaseUpdate"`
 	// SHA-256 checksum of the one-off patch.
-	Sha256sum string `pulumi:"sha256sum"`
+	Sha256sum *string `pulumi:"sha256sum"`
 	// The size of one-off patch in kilobytes.
-	SizeInKbs float64 `pulumi:"sizeInKbs"`
+	SizeInKbs *float64 `pulumi:"sizeInKbs"`
 	// The current state of the one-off patch.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time one-off patch was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time until which the one-off patch will be available for download.
-	TimeOfExpiration string `pulumi:"timeOfExpiration"`
+	TimeOfExpiration *string `pulumi:"timeOfExpiration"`
 	// The date and time one-off patch was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupOneoffPatchOutput(ctx *pulumi.Context, args LookupOneoffPatchOutputArgs, opts ...pulumi.InvokeOption) LookupOneoffPatchResultOutput {
@@ -131,20 +130,14 @@ func (o LookupOneoffPatchResultOutput) ToLookupOneoffPatchResultOutputWithContex
 	return o
 }
 
-func (o LookupOneoffPatchResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOneoffPatchResult] {
-	return pulumix.Output[LookupOneoffPatchResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupOneoffPatchResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-func (o LookupOneoffPatchResultOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.DbVersion }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -153,12 +146,12 @@ func (o LookupOneoffPatchResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // One-off patch name.
-func (o LookupOneoffPatchResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupOneoffPatchResultOutput) DownloadOneoffPatchTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) int { return v.DownloadOneoffPatchTrigger }).(pulumi.IntOutput)
+func (o LookupOneoffPatchResultOutput) DownloadOneoffPatchTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *int { return v.DownloadOneoffPatchTrigger }).(pulumi.IntPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -167,13 +160,13 @@ func (o LookupOneoffPatchResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
-func (o LookupOneoffPatchResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Detailed message for the lifecycle state.
-func (o LookupOneoffPatchResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // List of one-off patches for Database Homes.
@@ -186,38 +179,38 @@ func (o LookupOneoffPatchResultOutput) OneoffPatchId() pulumi.StringOutput {
 }
 
 // The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-func (o LookupOneoffPatchResultOutput) ReleaseUpdate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.ReleaseUpdate }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) ReleaseUpdate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.ReleaseUpdate }).(pulumi.StringPtrOutput)
 }
 
 // SHA-256 checksum of the one-off patch.
-func (o LookupOneoffPatchResultOutput) Sha256sum() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.Sha256sum }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) Sha256sum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
 // The size of one-off patch in kilobytes.
-func (o LookupOneoffPatchResultOutput) SizeInKbs() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupOneoffPatchResult) float64 { return v.SizeInKbs }).(pulumi.Float64Output)
+func (o LookupOneoffPatchResultOutput) SizeInKbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *float64 { return v.SizeInKbs }).(pulumi.Float64PtrOutput)
 }
 
 // The current state of the one-off patch.
-func (o LookupOneoffPatchResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time one-off patch was created.
-func (o LookupOneoffPatchResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time until which the one-off patch will be available for download.
-func (o LookupOneoffPatchResultOutput) TimeOfExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.TimeOfExpiration }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) TimeOfExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.TimeOfExpiration }).(pulumi.StringPtrOutput)
 }
 
 // The date and time one-off patch was updated.
-func (o LookupOneoffPatchResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOneoffPatchResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

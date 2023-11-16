@@ -103,12 +103,12 @@ export interface GetResponderRecipesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly resourceMetadataOnly?: boolean;
     /**
      * The list of responder_recipe_collection.
      */
-    readonly responderRecipeCollections: outputs.CloudGuard.GetResponderRecipesResponderRecipeCollection[];
+    readonly responderRecipeCollections?: outputs.CloudGuard.GetResponderRecipesResponderRecipeCollection[];
     /**
      * The current state of the Example.
      */

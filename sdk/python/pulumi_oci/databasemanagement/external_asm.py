@@ -20,12 +20,6 @@ class ExternalAsmArgs:
                  external_connector_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExternalAsm resource.
-        :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "external_asm_id", external_asm_id)
         if external_connector_id is not None:
@@ -34,9 +28,6 @@ class ExternalAsmArgs:
     @property
     @pulumi.getter(name="externalAsmId")
     def external_asm_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        """
         return pulumi.get(self, "external_asm_id")
 
     @external_asm_id.setter
@@ -46,13 +37,6 @@ class ExternalAsmArgs:
     @property
     @pulumi.getter(name="externalConnectorId")
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
@@ -81,26 +65,6 @@ class _ExternalAsmState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalAsm resources.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        :param pulumi.Input[str] component_name: The name of the external ASM.
-        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
-        :param pulumi.Input[str] grid_home: The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
-        :param pulumi.Input[bool] is_cluster: Indicates whether the ASM is a cluster ASM or not.
-        :param pulumi.Input[bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalAsmServicedDatabaseArgs']]] serviced_databases: The list of databases that are serviced by the ASM.
-        :param pulumi.Input[str] state: The current lifecycle state of the external ASM.
-        :param pulumi.Input[str] time_created: The date and time the external ASM was created.
-        :param pulumi.Input[str] time_updated: The date and time the external ASM was last updated.
-        :param pulumi.Input[str] version: The ASM version.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
@@ -138,9 +102,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -150,9 +111,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -162,9 +120,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="componentName")
     def component_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the external ASM.
-        """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
@@ -174,9 +129,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -186,9 +138,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="externalAsmId")
     def external_asm_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        """
         return pulumi.get(self, "external_asm_id")
 
     @external_asm_id.setter
@@ -198,13 +147,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="externalConnectorId")
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
@@ -214,9 +156,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
@@ -226,9 +165,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="gridHome")
     def grid_home(self) -> Optional[pulumi.Input[str]]:
-        """
-        The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
-        """
         return pulumi.get(self, "grid_home")
 
     @grid_home.setter
@@ -238,9 +174,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="isCluster")
     def is_cluster(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the ASM is a cluster ASM or not.
-        """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
@@ -250,9 +183,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="isFlexEnabled")
     def is_flex_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether Oracle Flex ASM is enabled or not.
-        """
         return pulumi.get(self, "is_flex_enabled")
 
     @is_flex_enabled.setter
@@ -262,9 +192,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -274,9 +201,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="servicedDatabases")
     def serviced_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalAsmServicedDatabaseArgs']]]]:
-        """
-        The list of databases that are serviced by the ASM.
-        """
         return pulumi.get(self, "serviced_databases")
 
     @serviced_databases.setter
@@ -286,9 +210,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the external ASM.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -298,9 +219,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external ASM was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -310,9 +228,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external ASM was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -322,9 +237,6 @@ class _ExternalAsmState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ASM version.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -341,26 +253,9 @@ class ExternalAsm(pulumi.CustomResource):
                  external_connector_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Asm resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external ASM specified by `externalAsmId`.
-
-        ## Import
-
-        ExternalAsms can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalAsm:ExternalAsm test_external_asm "id"
-        ```
-
+        Create a ExternalAsm resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -369,18 +264,7 @@ class ExternalAsm(pulumi.CustomResource):
                  args: ExternalAsmArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Asm resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external ASM specified by `externalAsmId`.
-
-        ## Import
-
-        ExternalAsms can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalAsm:ExternalAsm test_external_asm "id"
-        ```
-
+        Create a ExternalAsm resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalAsmArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -458,26 +342,6 @@ class ExternalAsm(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        :param pulumi.Input[str] component_name: The name of the external ASM.
-        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[str] external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
-        :param pulumi.Input[str] grid_home: The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
-        :param pulumi.Input[bool] is_cluster: Indicates whether the ASM is a cluster ASM or not.
-        :param pulumi.Input[bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalAsmServicedDatabaseArgs']]]] serviced_databases: The list of databases that are serviced by the ASM.
-        :param pulumi.Input[str] state: The current lifecycle state of the external ASM.
-        :param pulumi.Input[str] time_created: The date and time the external ASM was created.
-        :param pulumi.Input[str] time_updated: The date and time the external ASM was last updated.
-        :param pulumi.Input[str] version: The ASM version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -503,133 +367,81 @@ class ExternalAsm(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> pulumi.Output[str]:
-        """
-        The name of the external ASM.
-        """
+    def component_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalAsmId")
     def external_asm_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
-        """
         return pulumi.get(self, "external_asm_id")
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def external_connector_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_connector_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
-        """
+    def external_db_system_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="gridHome")
-    def grid_home(self) -> pulumi.Output[str]:
-        """
-        The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
-        """
+    def grid_home(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "grid_home")
 
     @property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the ASM is a cluster ASM or not.
-        """
+    def is_cluster(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_cluster")
 
     @property
     @pulumi.getter(name="isFlexEnabled")
-    def is_flex_enabled(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether Oracle Flex ASM is enabled or not.
-        """
+    def is_flex_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_flex_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="servicedDatabases")
-    def serviced_databases(self) -> pulumi.Output[Sequence['outputs.ExternalAsmServicedDatabase']]:
-        """
-        The list of databases that are serviced by the ASM.
-        """
+    def serviced_databases(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalAsmServicedDatabase']]]:
         return pulumi.get(self, "serviced_databases")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the external ASM.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the external ASM was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the external ASM was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        The ASM version.
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 

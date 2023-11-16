@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader {
@@ -14,27 +16,27 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    private Boolean required;
+    private @Nullable Boolean required;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader() {}
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Determines if the parameter is required in the request.
      * 
      */
-    public Boolean required() {
-        return this.required;
+    public Optional<Boolean> required() {
+        return Optional.ofNullable(this.required);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private Boolean required;
+        private @Nullable String name;
+        private @Nullable Boolean required;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+        public Builder required(@Nullable Boolean required) {
+            this.required = required;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader build() {

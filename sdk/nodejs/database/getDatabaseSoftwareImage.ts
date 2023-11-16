@@ -45,73 +45,73 @@ export interface GetDatabaseSoftwareImageResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly databaseSoftwareImageId: string;
     /**
      * List of one-off patches for Database Homes.
      */
-    readonly databaseSoftwareImageIncludedPatches: string[];
+    readonly databaseSoftwareImageIncludedPatches?: string[];
     /**
      * List of one-off patches for Database Homes.
      */
-    readonly databaseSoftwareImageOneOffPatches: string[];
+    readonly databaseSoftwareImageOneOffPatches?: string[];
     /**
      * The database version with which the database software image is to be built.
      */
-    readonly databaseVersion: string;
+    readonly databaseVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * To what shape the image is meant for.
      */
-    readonly imageShapeFamily: string;
+    readonly imageShapeFamily?: string;
     /**
      * The type of software image. Can be grid or database.
      */
-    readonly imageType: string;
+    readonly imageType?: string;
     /**
      * The patches included in the image and the version of the image.
      */
-    readonly includedPatchesSummary: string;
+    readonly includedPatchesSummary?: string;
     /**
      * True if this Database software image is supported for Upgrade.
      */
-    readonly isUpgradeSupported: boolean;
+    readonly isUpgradeSupported?: boolean;
     /**
      * Detailed message for the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      */
-    readonly lsInventory: string;
+    readonly lsInventory?: string;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
-    readonly patchSet: string;
-    readonly sourceDbHomeId: string;
+    readonly patchSet?: string;
+    readonly sourceDbHomeId?: string;
     /**
      * The current state of the database software image.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the database software image was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.

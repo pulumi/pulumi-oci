@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -60,20 +59,20 @@ type GetActionArgs struct {
 // A collection of values returned by getAction.
 type GetActionResult struct {
 	// Name of the infrastructure layer associated with the operator action.
-	Component string `pulumi:"component"`
+	Component *string `pulumi:"component"`
 	// Display Name of the operator action.
-	CustomerDisplayName string `pulumi:"customerDisplayName"`
+	CustomerDisplayName *string `pulumi:"customerDisplayName"`
 	// Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of the property
-	Name             string `pulumi:"name"`
-	OperatorActionId string `pulumi:"operatorActionId"`
+	Name             *string `pulumi:"name"`
+	OperatorActionId string  `pulumi:"operatorActionId"`
 	// Fine grained properties associated with the operator control.
 	Properties []GetActionProperty `pulumi:"properties"`
 	// resourceType for which the OperatorAction is applicable
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 }
 
 func GetActionOutput(ctx *pulumi.Context, args GetActionOutputArgs, opts ...pulumi.InvokeOption) GetActionResultOutput {
@@ -114,35 +113,29 @@ func (o GetActionResultOutput) ToGetActionResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetActionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionResult] {
-	return pulumix.Output[GetActionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the infrastructure layer associated with the operator action.
-func (o GetActionResultOutput) Component() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionResult) string { return v.Component }).(pulumi.StringOutput)
+func (o GetActionResultOutput) Component() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionResult) *string { return v.Component }).(pulumi.StringPtrOutput)
 }
 
 // Display Name of the operator action.
-func (o GetActionResultOutput) CustomerDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionResult) string { return v.CustomerDisplayName }).(pulumi.StringOutput)
+func (o GetActionResultOutput) CustomerDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionResult) *string { return v.CustomerDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-func (o GetActionResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetActionResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetActionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetActionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the property
-func (o GetActionResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetActionResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o GetActionResultOutput) OperatorActionId() pulumi.StringOutput {
@@ -155,8 +148,8 @@ func (o GetActionResultOutput) Properties() GetActionPropertyArrayOutput {
 }
 
 // resourceType for which the OperatorAction is applicable
-func (o GetActionResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetActionResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -8,29 +8,31 @@ import com.pulumi.oci.ObjectStorage.outputs.GetObjectLifecyclePolicyRule;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectLifecyclePolicyResult {
     private String bucket;
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return The live lifecycle policy on the bucket.
      * 
      */
-    private List<GetObjectLifecyclePolicyRule> rules;
+    private @Nullable List<GetObjectLifecyclePolicyRule> rules;
     /**
      * @return The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetObjectLifecyclePolicyResult() {}
     public String bucket() {
         return this.bucket;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -40,14 +42,14 @@ public final class GetObjectLifecyclePolicyResult {
      * 
      */
     public List<GetObjectLifecyclePolicyRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     /**
      * @return The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -60,10 +62,10 @@ public final class GetObjectLifecyclePolicyResult {
     @CustomType.Builder
     public static final class Builder {
         private String bucket;
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private List<GetObjectLifecyclePolicyRule> rules;
-        private String timeCreated;
+        private @Nullable List<GetObjectLifecyclePolicyRule> rules;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetObjectLifecyclePolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -80,8 +82,8 @@ public final class GetObjectLifecyclePolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -90,16 +92,16 @@ public final class GetObjectLifecyclePolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetObjectLifecyclePolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetObjectLifecyclePolicyRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetObjectLifecyclePolicyRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetObjectLifecyclePolicyResult build() {

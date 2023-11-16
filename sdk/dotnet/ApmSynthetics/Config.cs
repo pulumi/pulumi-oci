@@ -178,25 +178,25 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) Monitor availability configuration details.
         /// </summary>
         [Output("availabilityConfiguration")]
-        public Output<Outputs.ConfigAvailabilityConfiguration> AvailabilityConfiguration { get; private set; } = null!;
+        public Output<Outputs.ConfigAvailabilityConfiguration?> AvailabilityConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         /// </summary>
         [Output("batchIntervalInSeconds")]
-        public Output<int> BatchIntervalInSeconds { get; private set; } = null!;
+        public Output<int?> BatchIntervalInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of monitor configuration.
         /// </summary>
         [Output("configuration")]
-        public Output<Outputs.ConfigConfiguration> Configuration { get; private set; } = null!;
+        public Output<Outputs.ConfigConfiguration?> Configuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Unique name that can be edited. The name should not contain any confidential information.
@@ -208,25 +208,25 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Output("isRunNow")]
-        public Output<bool> IsRunNow { get; private set; } = null!;
+        public Output<bool?> IsRunNow { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If runOnce is enabled, then the monitor will run once.
         /// </summary>
         [Output("isRunOnce")]
-        public Output<bool> IsRunOnce { get; private set; } = null!;
+        public Output<bool?> IsRunOnce { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details required to schedule maintenance window.
         /// </summary>
         [Output("maintenanceWindowSchedule")]
-        public Output<Outputs.ConfigMaintenanceWindowSchedule> MaintenanceWindowSchedule { get; private set; } = null!;
+        public Output<Outputs.ConfigMaintenanceWindowSchedule?> MaintenanceWindowSchedule { get; private set; } = null!;
 
         /// <summary>
         /// Type of monitor.
@@ -244,19 +244,19 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         /// </summary>
         [Output("schedulingPolicy")]
-        public Output<string> SchedulingPolicy { get; private set; } = null!;
+        public Output<string?> SchedulingPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         /// </summary>
         [Output("scriptId")]
-        public Output<string> ScriptId { get; private set; } = null!;
+        public Output<string?> ScriptId { get; private set; } = null!;
 
         /// <summary>
         /// Name of the script.
         /// </summary>
         [Output("scriptName")]
-        public Output<string> ScriptName { get; private set; } = null!;
+        public Output<string?> ScriptName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
@@ -268,37 +268,37 @@ namespace Pulumi.Oci.ApmSynthetics
         /// (Updatable) Enables or disables the monitor.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         /// </summary>
         [Output("target")]
-        public Output<string> Target { get; private set; } = null!;
+        public Output<string?> Target { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Output("timeoutInSeconds")]
-        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// Number of vantage points where monitor is running.
         /// </summary>
         [Output("vantagePointCount")]
-        public Output<int> VantagePointCount { get; private set; } = null!;
+        public Output<int?> VantagePointCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 

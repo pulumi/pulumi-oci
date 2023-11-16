@@ -8,18 +8,20 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoSca
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric {
-    private String metricType;
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds;
+    private @Nullable String metricType;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric() {}
-    public String metricType() {
-        return this.metricType;
+    public Optional<String> metricType() {
+        return Optional.ofNullable(this.metricType);
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds() {
-        return this.thresholds;
+        return this.thresholds == null ? List.of() : this.thresholds;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private String metricType;
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds;
+        private @Nullable String metricType;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
 
         @CustomType.Setter
-        public Builder metricType(String metricType) {
-            this.metricType = Objects.requireNonNull(metricType);
+        public Builder metricType(@Nullable String metricType) {
+            this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
-        public Builder thresholds(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds) {
-            this.thresholds = Objects.requireNonNull(thresholds);
+        public Builder thresholds(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold> thresholds) {
+            this.thresholds = thresholds;
             return this;
         }
         public Builder thresholds(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold... thresholds) {

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollection {
-    private List<GetServiceConnectorsServiceConnectorCollectionItem> items;
+    private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItem> items;
 
     private GetServiceConnectorsServiceConnectorCollection() {}
     public List<GetServiceConnectorsServiceConnectorCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetServiceConnectorsServiceConnectorCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetServiceConnectorsServiceConnectorCollectionItem> items;
+        private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItem> items;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetServiceConnectorsServiceConnectorCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetServiceConnectorsServiceConnectorCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetServiceConnectorsServiceConnectorCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetServiceConnectorsServiceConnectorCollectionItem... items) {

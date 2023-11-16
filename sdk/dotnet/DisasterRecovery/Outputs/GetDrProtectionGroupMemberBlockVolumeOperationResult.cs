@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
         /// </summary>
-        public readonly string BlockVolumeId;
+        public readonly string? BlockVolumeId;
         /// <summary>
         /// Mount details of a file system.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         private GetDrProtectionGroupMemberBlockVolumeOperationResult(
             ImmutableArray<Outputs.GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult> attachmentDetails,
 
-            string blockVolumeId,
+            string? blockVolumeId,
 
             ImmutableArray<Outputs.GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult> mountDetails)
         {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultReplicaDetail {
@@ -13,15 +15,15 @@ public final class GetVaultReplicaDetail {
      * @return ReplicationId associated with a vault operation
      * 
      */
-    private String replicationId;
+    private @Nullable String replicationId;
 
     private GetVaultReplicaDetail() {}
     /**
      * @return ReplicationId associated with a vault operation
      * 
      */
-    public String replicationId() {
-        return this.replicationId;
+    public Optional<String> replicationId() {
+        return Optional.ofNullable(this.replicationId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetVaultReplicaDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String replicationId;
+        private @Nullable String replicationId;
         public Builder() {}
         public Builder(GetVaultReplicaDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetVaultReplicaDetail {
         }
 
         @CustomType.Setter
-        public Builder replicationId(String replicationId) {
-            this.replicationId = Objects.requireNonNull(replicationId);
+        public Builder replicationId(@Nullable String replicationId) {
+            this.replicationId = replicationId;
             return this;
         }
         public GetVaultReplicaDetail build() {

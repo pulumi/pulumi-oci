@@ -227,7 +227,7 @@ namespace Pulumi.Oci.Waf
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The field that shows if this is the latest version of protection capability.
         /// </summary>
@@ -257,7 +257,7 @@ namespace Pulumi.Oci.Waf
 
             ImmutableArray<string> groupTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<bool> isLatestVersions,
 

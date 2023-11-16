@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -60,28 +59,28 @@ type LookupReplicationScheduleArgs struct {
 // A collection of values returned by getReplicationSchedule.
 type LookupReplicationScheduleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A name of the replication schedule.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Recurrence specification for the replication schedule execution.
-	ExecutionRecurrences string `pulumi:"executionRecurrences"`
+	ExecutionRecurrences *string `pulumi:"executionRecurrences"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed state of the replication schedule.
-	LifecycleDetails      string `pulumi:"lifecycleDetails"`
-	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
+	LifecycleDetails      *string `pulumi:"lifecycleDetails"`
+	ReplicationScheduleId string  `pulumi:"replicationScheduleId"`
 	// Current state of the replication schedule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupReplicationScheduleOutput(ctx *pulumi.Context, args LookupReplicationScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupReplicationScheduleResultOutput {
@@ -122,15 +121,9 @@ func (o LookupReplicationScheduleResultOutput) ToLookupReplicationScheduleResult
 	return o
 }
 
-func (o LookupReplicationScheduleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReplicationScheduleResult] {
-	return pulumix.Output[LookupReplicationScheduleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.
-func (o LookupReplicationScheduleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -139,13 +132,13 @@ func (o LookupReplicationScheduleResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A name of the replication schedule.
-func (o LookupReplicationScheduleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Recurrence specification for the replication schedule execution.
-func (o LookupReplicationScheduleResultOutput) ExecutionRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.ExecutionRecurrences }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) ExecutionRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.ExecutionRecurrences }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
@@ -154,13 +147,13 @@ func (o LookupReplicationScheduleResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
-func (o LookupReplicationScheduleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed state of the replication schedule.
-func (o LookupReplicationScheduleResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupReplicationScheduleResultOutput) ReplicationScheduleId() pulumi.StringOutput {
@@ -168,8 +161,8 @@ func (o LookupReplicationScheduleResultOutput) ReplicationScheduleId() pulumi.St
 }
 
 // Current state of the replication schedule.
-func (o LookupReplicationScheduleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -178,13 +171,13 @@ func (o LookupReplicationScheduleResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the replication schedule was created in RFC3339 format.
-func (o LookupReplicationScheduleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the replication schedule was last updated in RFC3339 format.
-func (o LookupReplicationScheduleResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupReplicationScheduleResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

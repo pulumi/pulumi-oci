@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// The OCID of the compartment that the resource belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The source the log object comes from.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
         [OutputConstructor]
         private GetLogConfigurationResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetLogConfigurationSourceResult> sources)
         {

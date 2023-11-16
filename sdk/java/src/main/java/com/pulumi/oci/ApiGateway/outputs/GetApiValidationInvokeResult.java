@@ -8,6 +8,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetApiValidationValidation;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiValidationInvokeResult {
@@ -16,12 +18,12 @@ public final class GetApiValidationInvokeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return API validation results.
      * 
      */
-    private List<GetApiValidationValidation> validations;
+    private @Nullable List<GetApiValidationValidation> validations;
 
     private GetApiValidationInvokeResult() {}
     public String apiId() {
@@ -31,15 +33,15 @@ public final class GetApiValidationInvokeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return API validation results.
      * 
      */
     public List<GetApiValidationValidation> validations() {
-        return this.validations;
+        return this.validations == null ? List.of() : this.validations;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetApiValidationInvokeResult {
     @CustomType.Builder
     public static final class Builder {
         private String apiId;
-        private String id;
-        private List<GetApiValidationValidation> validations;
+        private @Nullable String id;
+        private @Nullable List<GetApiValidationValidation> validations;
         public Builder() {}
         public Builder(GetApiValidationInvokeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetApiValidationInvokeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder validations(List<GetApiValidationValidation> validations) {
-            this.validations = Objects.requireNonNull(validations);
+        public Builder validations(@Nullable List<GetApiValidationValidation> validations) {
+            this.validations = validations;
             return this;
         }
         public Builder validations(GetApiValidationValidation... validations) {

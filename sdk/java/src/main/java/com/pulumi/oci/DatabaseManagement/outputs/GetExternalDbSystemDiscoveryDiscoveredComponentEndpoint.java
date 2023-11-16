@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint {
@@ -15,63 +17,63 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint {
      * @return The host name or IP address.
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return The unique name of the service.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The port used to connect to the ASM instance.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol used to connect to the ASM instance.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The list of services registered with the listener.
      * 
      */
-    private List<String> services;
+    private @Nullable List<String> services;
 
     private GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint() {}
     /**
      * @return The host name or IP address.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return The unique name of the service.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The port used to connect to the ASM instance.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol used to connect to the ASM instance.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The list of services registered with the listener.
      * 
      */
     public List<String> services() {
-        return this.services;
+        return this.services == null ? List.of() : this.services;
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
-        private String key;
-        private Integer port;
-        private String protocol;
-        private List<String> services;
+        private @Nullable String host;
+        private @Nullable String key;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable List<String> services;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentEndpoint {
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder services(List<String> services) {
-            this.services = Objects.requireNonNull(services);
+        public Builder services(@Nullable List<String> services) {
+            this.services = services;
             return this;
         }
         public Builder services(String... services) {

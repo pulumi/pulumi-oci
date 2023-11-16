@@ -6,26 +6,28 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage {
-    private Integer limit;
+    private @Nullable Integer limit;
     /**
      * @return The usage of current environment.
      * 
      */
-    private Integer usage;
+    private @Nullable Integer usage;
 
     private GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage() {}
-    public Integer limit() {
-        return this.limit;
+    public Optional<Integer> limit() {
+        return Optional.ofNullable(this.limit);
     }
     /**
      * @return The usage of current environment.
      * 
      */
-    public Integer usage() {
-        return this.usage;
+    public Optional<Integer> usage() {
+        return Optional.ofNullable(this.usage);
     }
 
     public static Builder builder() {
@@ -37,8 +39,8 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsa
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer limit;
-        private Integer usage;
+        private @Nullable Integer limit;
+        private @Nullable Integer usage;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,13 +49,13 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsa
         }
 
         @CustomType.Setter
-        public Builder limit(Integer limit) {
-            this.limit = Objects.requireNonNull(limit);
+        public Builder limit(@Nullable Integer limit) {
+            this.limit = limit;
             return this;
         }
         @CustomType.Setter
-        public Builder usage(Integer usage) {
-            this.usage = Objects.requireNonNull(usage);
+        public Builder usage(@Nullable Integer usage) {
+            this.usage = usage;
             return this;
         }
         public GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage build() {

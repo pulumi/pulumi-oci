@@ -20,11 +20,11 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Customer friendly service name provided by PRG
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// Subscribed service status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// List of Subscribed Services of the plan
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Represents the date when the last service of the subscription ends
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Represents the date when the first service of the subscription was activated
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionResult(
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionCurrencyResult> currencies,
 
-            string serviceName,
+            string? serviceName,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionSubscribedServiceResult> subscribedServices,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             Currencies = currencies;
             ServiceName = serviceName;

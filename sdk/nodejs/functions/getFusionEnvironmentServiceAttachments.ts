@@ -73,11 +73,11 @@ export interface GetFusionEnvironmentServiceAttachmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of service_attachment_collection.
      */
-    readonly serviceAttachmentCollections: outputs.Functions.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection[];
+    readonly serviceAttachmentCollections?: outputs.Functions.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection[];
     /**
      * Type of the serviceInstance.
      */

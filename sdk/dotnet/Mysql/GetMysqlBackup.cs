@@ -109,27 +109,27 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The size of the backup in base-2 (IEC) gibibytes. (GiB).
         /// </summary>
-        public readonly int BackupSizeInGbs;
+        public readonly int? BackupSizeInGbs;
         /// <summary>
         /// The type of backup.
         /// </summary>
-        public readonly string BackupType;
+        public readonly string? BackupType;
         /// <summary>
         /// The OCID of the compartment the DB System belongs in.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Indicates how the backup was created: manually, automatic, or by an Operator.
         /// </summary>
-        public readonly string CreationType;
+        public readonly string? CreationType;
         /// <summary>
         /// Initial size of the data volume in GiBs that will be created and attached.
         /// </summary>
-        public readonly int DataStorageSizeInGb;
+        public readonly int? DataStorageSizeInGb;
         /// <summary>
         /// The OCID of the DB System the backup is associated with.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// Snapshot of the DbSystem details at the time of the backup
         /// </summary>
@@ -137,93 +137,93 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-supplied description for the backup.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-supplied display name for the backup.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// OCID of the backup itself
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The MySQL server version of the DB System used for backup.
         /// </summary>
-        public readonly string MysqlVersion;
+        public readonly string? MysqlVersion;
         /// <summary>
         /// Number of days to retain this backup.
         /// </summary>
-        public readonly int RetentionInDays;
+        public readonly int? RetentionInDays;
         /// <summary>
         /// The shape of the DB System instance used for backup.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// The state of the backup.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the backup record was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time at which the backup was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMysqlBackupResult(
             string backupId,
 
-            int backupSizeInGbs,
+            int? backupSizeInGbs,
 
-            string backupType,
+            string? backupType,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string creationType,
+            string? creationType,
 
-            int dataStorageSizeInGb,
+            int? dataStorageSizeInGb,
 
-            string dbSystemId,
+            string? dbSystemId,
 
             ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotResult> dbSystemSnapshots,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string mysqlVersion,
+            string? mysqlVersion,
 
-            int retentionInDays,
+            int? retentionInDays,
 
-            string shapeName,
+            string? shapeName,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             BackupId = backupId;
             BackupSizeInGbs = backupSizeInGbs;

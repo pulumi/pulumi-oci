@@ -82,14 +82,14 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
-    private Output<String> content;
+    private Output</* @Nullable */ String> content;
 
     /**
      * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    public Output<String> content() {
-        return this.content;
+    public Output<Optional<String>> content() {
+        return Codegen.optional(this.content);
     }
     /**
      * The type of wallet to generate.

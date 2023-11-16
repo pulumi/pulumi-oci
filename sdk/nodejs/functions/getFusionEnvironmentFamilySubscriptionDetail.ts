@@ -48,11 +48,11 @@ export interface GetFusionEnvironmentFamilySubscriptionDetailResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of subscriptions.
      */
-    readonly subscriptions: outputs.Functions.GetFusionEnvironmentFamilySubscriptionDetailSubscription[];
+    readonly subscriptions?: outputs.Functions.GetFusionEnvironmentFamilySubscriptionDetailSubscription[];
 }
 /**
  * This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.

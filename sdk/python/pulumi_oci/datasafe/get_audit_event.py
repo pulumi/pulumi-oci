@@ -50,9 +50,6 @@ class GetAuditEventResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,7 +59,7 @@ class GetAuditEventResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,10 +67,7 @@ class GetAuditEventResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAuditEventItemResult']:
-        """
-        Array of audit event summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAuditEventItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -102,41 +96,7 @@ def get_audit_event(access_level: Optional[str] = None,
                     scim_query: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditEventResult:
     """
-    This data source provides details about a specific Audit Event resource in Oracle Cloud Infrastructure Data Safe service.
-
-    The ListAuditEvents operation returns specified `compartmentId` audit Events only.
-    The list does not include any audit Events associated with the `subcompartments` of the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditEvents on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=var["compartment_id"],
-        access_level=var["audit_event_access_level"],
-        compartment_id_in_subtree=var["audit_event_compartment_id_in_subtree"],
-        scim_query=var["audit_event_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -162,40 +122,6 @@ def get_audit_event_output(access_level: Optional[pulumi.Input[Optional[str]]] =
                            scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditEventResult]:
     """
-    This data source provides details about a specific Audit Event resource in Oracle Cloud Infrastructure Data Safe service.
-
-    The ListAuditEvents operation returns specified `compartmentId` audit Events only.
-    The list does not include any audit Events associated with the `subcompartments` of the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListAuditEvents on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=var["compartment_id"],
-        access_level=var["audit_event_access_level"],
-        compartment_id_in_subtree=var["audit_event_compartment_id_in_subtree"],
-        scim_query=var["audit_event_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+    Use this data source to access information about an existing resource.
     """
     ...

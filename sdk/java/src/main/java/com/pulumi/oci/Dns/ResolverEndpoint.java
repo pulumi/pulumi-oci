@@ -80,42 +80,42 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
-    private Output<String> endpointType;
+    private Output</* @Nullable */ String> endpointType;
 
     /**
      * @return (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
-    public Output<String> endpointType() {
-        return this.endpointType;
+    public Output<Optional<String>> endpointType() {
+        return Codegen.optional(this.endpointType);
     }
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      * 
      */
     @Export(name="forwardingAddress", refs={String.class}, tree="[0]")
-    private Output<String> forwardingAddress;
+    private Output</* @Nullable */ String> forwardingAddress;
 
     /**
      * @return An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      * 
      */
-    public Output<String> forwardingAddress() {
-        return this.forwardingAddress;
+    public Output<Optional<String>> forwardingAddress() {
+        return Codegen.optional(this.forwardingAddress);
     }
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -150,14 +150,14 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="listeningAddress", refs={String.class}, tree="[0]")
-    private Output<String> listeningAddress;
+    private Output</* @Nullable */ String> listeningAddress;
 
     /**
      * @return An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      * 
      */
-    public Output<String> listeningAddress() {
-        return this.listeningAddress;
+    public Output<Optional<String>> listeningAddress() {
+        return Codegen.optional(this.listeningAddress);
     }
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
@@ -220,28 +220,28 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="self", refs={String.class}, tree="[0]")
-    private Output<String> self;
+    private Output</* @Nullable */ String> self;
 
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public Output<String> self() {
-        return this.self;
+    public Output<Optional<String>> self() {
+        return Codegen.optional(this.self);
     }
     /**
      * The current state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
@@ -268,28 +268,28 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

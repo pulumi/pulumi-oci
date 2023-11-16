@@ -29,7 +29,7 @@ namespace Pulumi.Oci.MediaServices
         /// The name of the object storage bucket where this asset is located.
         /// </summary>
         [Output("bucket")]
-        public Output<string> Bucket { get; private set; } = null!;
+        public Output<string?> Bucket { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment Identifier.
@@ -41,25 +41,25 @@ namespace Pulumi.Oci.MediaServices
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The ID of the senior most asset from which this asset is derived.
         /// </summary>
         [Output("masterMediaAssetId")]
-        public Output<string> MasterMediaAssetId { get; private set; } = null!;
+        public Output<string?> MasterMediaAssetId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) list of tags for the MediaAsset.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.MediaServices
         /// The ID of the MediaWorkflowJob used to produce this asset.
         /// </summary>
         [Output("mediaWorkflowJobId")]
-        public Output<string> MediaWorkflowJobId { get; private set; } = null!;
+        public Output<string?> MediaWorkflowJobId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) JSON string containing the technial metadata for the media asset.
@@ -83,73 +83,73 @@ namespace Pulumi.Oci.MediaServices
         /// The object storage namespace where this asset is located.
         /// </summary>
         [Output("namespace")]
-        public Output<string> Namespace { get; private set; } = null!;
+        public Output<string?> Namespace { get; private set; } = null!;
 
         /// <summary>
         /// The object storage object name that identifies this asset.
         /// </summary>
         [Output("object")]
-        public Output<string> Object { get; private set; } = null!;
+        public Output<string?> Object { get; private set; } = null!;
 
         /// <summary>
         /// eTag of the underlying object storage object.
         /// </summary>
         [Output("objectEtag")]
-        public Output<string> ObjectEtag { get; private set; } = null!;
+        public Output<string?> ObjectEtag { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The ID of the parent asset from which this asset is derived.
         /// </summary>
         [Output("parentMediaAssetId")]
-        public Output<string> ParentMediaAssetId { get; private set; } = null!;
+        public Output<string?> ParentMediaAssetId { get; private set; } = null!;
 
         /// <summary>
         /// The end index for video segment files.
         /// </summary>
         [Output("segmentRangeEndIndex")]
-        public Output<string> SegmentRangeEndIndex { get; private set; } = null!;
+        public Output<string?> SegmentRangeEndIndex { get; private set; } = null!;
 
         /// <summary>
         /// The start index for video segment files.
         /// </summary>
         [Output("segmentRangeStartIndex")]
-        public Output<string> SegmentRangeStartIndex { get; private set; } = null!;
+        public Output<string?> SegmentRangeStartIndex { get; private set; } = null!;
 
         /// <summary>
         /// The ID of the MediaWorkflow used to produce this asset.
         /// </summary>
         [Output("sourceMediaWorkflowId")]
-        public Output<string> SourceMediaWorkflowId { get; private set; } = null!;
+        public Output<string?> SourceMediaWorkflowId { get; private set; } = null!;
 
         /// <summary>
         /// The version of the MediaWorkflow used to produce this asset.
         /// </summary>
         [Output("sourceMediaWorkflowVersion")]
-        public Output<string> SourceMediaWorkflowVersion { get; private set; } = null!;
+        public Output<string?> SourceMediaWorkflowVersion { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the MediaAsset.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of the media asset.

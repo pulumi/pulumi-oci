@@ -16,29 +16,29 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The bucket name where usage or cost CSVs will be uploaded.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Defines the type of location where the usage or cost CSVs will be stored.
         /// </summary>
-        public readonly string LocationType;
+        public readonly string? LocationType;
         /// <summary>
         /// The namespace needed to determine the object storage bucket.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The destination Object Store Region specified by the customer.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
 
         [OutputConstructor]
         private GetSchedulesScheduleCollectionItemResultLocationResult(
-            string bucket,
+            string? bucket,
 
-            string locationType,
+            string? locationType,
 
-            string @namespace,
+            string? @namespace,
 
-            string region)
+            string? region)
         {
             Bucket = bucket;
             LocationType = locationType;

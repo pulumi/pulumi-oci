@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
@@ -88,7 +87,7 @@ type GetKeysResult struct {
 	CurveId *string         `pulumi:"curveId"`
 	Filters []GetKeysFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of keys.
 	Keys []GetKeysKey `pulumi:"keys"`
 	// The length of the key in bytes, expressed as an integer. Supported values include the following:
@@ -150,12 +149,6 @@ func (o GetKeysResultOutput) ToGetKeysResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysResult] {
-	return pulumix.Output[GetKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 func (o GetKeysResultOutput) Algorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetKeysResult) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
@@ -176,8 +169,8 @@ func (o GetKeysResultOutput) Filters() GetKeysFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of keys.

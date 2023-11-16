@@ -69,7 +69,7 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
     /**
      * The character set of the external database.
      */
-    public /*out*/ readonly characterSet!: pulumi.Output<string>;
+    public /*out*/ readonly characterSet!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -77,35 +77,35 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
     /**
      * The Oracle Database configuration
      */
-    public /*out*/ readonly databaseConfiguration!: pulumi.Output<string>;
+    public /*out*/ readonly databaseConfiguration!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Database edition.
      */
-    public /*out*/ readonly databaseEdition!: pulumi.Output<string>;
+    public /*out*/ readonly databaseEdition!: pulumi.Output<string | undefined>;
     /**
      * The configuration of the Database Management service.
      */
-    public /*out*/ readonly databaseManagementConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseDatabaseManagementConfig[]>;
+    public /*out*/ readonly databaseManagementConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseDatabaseManagementConfig[] | undefined>;
     /**
      * The Oracle Database version.
      */
-    public /*out*/ readonly databaseVersion!: pulumi.Output<string>;
+    public /*out*/ readonly databaseVersion!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      */
-    public /*out*/ readonly dbId!: pulumi.Output<string>;
+    public /*out*/ readonly dbId!: pulumi.Output<string | undefined>;
     /**
      * The database packs licensed for the external Oracle Database.
      */
-    public /*out*/ readonly dbPacks!: pulumi.Output<string>;
+    public /*out*/ readonly dbPacks!: pulumi.Output<string | undefined>;
     /**
      * The `DB_UNIQUE_NAME` of the external database.
      */
-    public /*out*/ readonly dbUniqueName!: pulumi.Output<string>;
+    public /*out*/ readonly dbUniqueName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The user-friendly name for the external database. The name does not have to be unique.
      */
@@ -117,19 +117,19 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The national character of the external database.
      */
-    public /*out*/ readonly ncharacterSet!: pulumi.Output<string>;
+    public /*out*/ readonly ncharacterSet!: pulumi.Output<string | undefined>;
     /**
      * The configuration of Operations Insights for the external database
      */
-    public /*out*/ readonly operationsInsightsConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseOperationsInsightsConfig[]>;
+    public /*out*/ readonly operationsInsightsConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseOperationsInsightsConfig[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
      *
@@ -137,23 +137,23 @@ export class ExternalPluggableDatabase extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceId!: pulumi.Output<string>;
+    public readonly sourceId!: pulumi.Output<string | undefined>;
     /**
      * The configuration of Stack Monitoring for the external database.
      */
-    public /*out*/ readonly stackMonitoringConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseStackMonitoringConfig[]>;
+    public /*out*/ readonly stackMonitoringConfigs!: pulumi.Output<outputs.Database.ExternalPluggableDatabaseStackMonitoringConfig[] | undefined>;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    public /*out*/ readonly timeZone!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalPluggableDatabase resource with the given unique name, arguments, and options.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
@@ -60,36 +59,36 @@ type LookupOperationsInsightsWarehouseUserArgs struct {
 // A collection of values returned by getOperationsInsightsWarehouseUser.
 type LookupOperationsInsightsWarehouseUserResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	ConnectionPassword string `pulumi:"connectionPassword"`
+	ConnectionPassword *string `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Hub User OCID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicate whether user has access to AWR data.
-	IsAwrDataAccess bool `pulumi:"isAwrDataAccess"`
+	IsAwrDataAccess *bool `pulumi:"isAwrDataAccess"`
 	// Indicate whether user has access to EM data.
-	IsEmDataAccess bool `pulumi:"isEmDataAccess"`
+	IsEmDataAccess *bool `pulumi:"isEmDataAccess"`
 	// Indicate whether user has access to OPSI data.
-	IsOpsiDataAccess bool `pulumi:"isOpsiDataAccess"`
+	IsOpsiDataAccess *bool `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// OPSI Warehouse OCID
-	OperationsInsightsWarehouseId     string `pulumi:"operationsInsightsWarehouseId"`
-	OperationsInsightsWarehouseUserId string `pulumi:"operationsInsightsWarehouseUserId"`
+	OperationsInsightsWarehouseId     *string `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseUserId string  `pulumi:"operationsInsightsWarehouseUserId"`
 	// Possible lifecycle states
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupOperationsInsightsWarehouseUserOutput(ctx *pulumi.Context, args LookupOperationsInsightsWarehouseUserOutputArgs, opts ...pulumi.InvokeOption) LookupOperationsInsightsWarehouseUserResultOutput {
@@ -130,20 +129,14 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) ToLookupOperationsIns
 	return o
 }
 
-func (o LookupOperationsInsightsWarehouseUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOperationsInsightsWarehouseUserResult] {
-	return pulumix.Output[LookupOperationsInsightsWarehouseUserResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) ConnectionPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.ConnectionPassword }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) ConnectionPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.ConnectionPassword }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -157,38 +150,38 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) FreeformTags() pulumi
 }
 
 // Hub User OCID
-func (o LookupOperationsInsightsWarehouseUserResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicate whether user has access to AWR data.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) IsAwrDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) bool { return v.IsAwrDataAccess }).(pulumi.BoolOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) IsAwrDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *bool { return v.IsAwrDataAccess }).(pulumi.BoolPtrOutput)
 }
 
 // Indicate whether user has access to EM data.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) IsEmDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) bool { return v.IsEmDataAccess }).(pulumi.BoolOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) IsEmDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *bool { return v.IsEmDataAccess }).(pulumi.BoolPtrOutput)
 }
 
 // Indicate whether user has access to OPSI data.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) IsOpsiDataAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) bool { return v.IsOpsiDataAccess }).(pulumi.BoolOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) IsOpsiDataAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *bool { return v.IsOpsiDataAccess }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-func (o LookupOperationsInsightsWarehouseUserResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // OPSI Warehouse OCID
-func (o LookupOperationsInsightsWarehouseUserResultOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) OperationsInsightsWarehouseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.OperationsInsightsWarehouseId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOperationsInsightsWarehouseUserResultOutput) OperationsInsightsWarehouseUserId() pulumi.StringOutput {
@@ -196,8 +189,8 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) OperationsInsightsWar
 }
 
 // Possible lifecycle states
-func (o LookupOperationsInsightsWarehouseUserResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -206,13 +199,13 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) SystemTags() pulumi.M
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o LookupOperationsInsightsWarehouseUserResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o LookupOperationsInsightsWarehouseUserResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

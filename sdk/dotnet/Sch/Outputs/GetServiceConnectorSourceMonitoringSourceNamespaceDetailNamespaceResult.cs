@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
 
         [OutputConstructor]
         private GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceResult(
             ImmutableArray<Outputs.GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricResult> metrics,
 
-            string @namespace)
+            string? @namespace)
         {
             Metrics = metrics;
             Namespace = @namespace;

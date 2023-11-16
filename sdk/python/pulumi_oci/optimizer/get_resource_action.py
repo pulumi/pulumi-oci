@@ -83,82 +83,52 @@ class GetResourceActionResult:
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetResourceActionActionResult']:
-        """
-        Details about the recommended action.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetResourceActionActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> str:
-        """
-        The unique OCID associated with the category.
-        """
+    def category_id(self) -> Optional[str]:
         return pulumi.get(self, "category_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
-    def compartment_name(self) -> str:
-        """
-        The name associated with the compartment.
-        """
+    def compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the resource action.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID associated with the resource action.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Custom metadata key/value pairs for the resource action.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name assigned to the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> str:
-        """
-        The unique OCID associated with the recommendation.
-        """
+    def recommendation_id(self) -> Optional[str]:
         return pulumi.get(self, "recommendation_id")
 
     @property
@@ -168,66 +138,42 @@ class GetResourceActionResult:
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique OCID associated with the resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        The kind of resource.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The resource action's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current status of the resource action.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource action details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> str:
-        """
-        The date and time that the resource action entered its current status. The format is defined by RFC3339.
-        """
+    def time_status_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_status_begin")
 
     @property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> str:
-        """
-        The date and time the current status will change. The format is defined by RFC3339.
-        """
+    def time_status_end(self) -> Optional[str]:
         return pulumi.get(self, "time_status_end")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource action details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -261,21 +207,7 @@ class AwaitableGetResourceActionResult(GetResourceActionResult):
 def get_resource_action(resource_action_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceActionResult:
     """
-    This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the resource action that corresponds to the specified OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"])
-    ```
-
-
-    :param str resource_action_id: The unique OCID associated with the resource action.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['resourceActionId'] = resource_action_id
@@ -308,20 +240,6 @@ def get_resource_action(resource_action_id: Optional[str] = None,
 def get_resource_action_output(resource_action_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceActionResult]:
     """
-    This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the resource action that corresponds to the specified OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"])
-    ```
-
-
-    :param str resource_action_id: The unique OCID associated with the resource action.
+    Use this data source to access information about an existing resource.
     """
     ...

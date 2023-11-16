@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ResourceIdentifier;
 
         [OutputConstructor]
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetIamWorkRequestsIamWorkRequestResult> iamWorkRequests,
 
-            string id,
+            string? id,
 
             string? resourceIdentifier)
         {

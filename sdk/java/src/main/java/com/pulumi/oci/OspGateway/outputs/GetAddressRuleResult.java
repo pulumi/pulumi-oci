@@ -10,6 +10,8 @@ import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTax;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddressRuleResult {
@@ -17,13 +19,13 @@ public final class GetAddressRuleResult {
      * @return Address type rule information
      * 
      */
-    private List<GetAddressRuleAddress> addresses;
+    private @Nullable List<GetAddressRuleAddress> addresses;
     private String compartmentId;
     /**
      * @return Contact type rule information
      * 
      */
-    private List<GetAddressRuleContact> contacts;
+    private @Nullable List<GetAddressRuleContact> contacts;
     /**
      * @return Country code for the address rule in ISO-3166-1 2-letter format
      * 
@@ -33,13 +35,13 @@ public final class GetAddressRuleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String ospHomeRegion;
     /**
      * @return Tax type rule information
      * 
      */
-    private List<GetAddressRuleTax> taxes;
+    private @Nullable List<GetAddressRuleTax> taxes;
 
     private GetAddressRuleResult() {}
     /**
@@ -47,7 +49,7 @@ public final class GetAddressRuleResult {
      * 
      */
     public List<GetAddressRuleAddress> addresses() {
-        return this.addresses;
+        return this.addresses == null ? List.of() : this.addresses;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -57,7 +59,7 @@ public final class GetAddressRuleResult {
      * 
      */
     public List<GetAddressRuleContact> contacts() {
-        return this.contacts;
+        return this.contacts == null ? List.of() : this.contacts;
     }
     /**
      * @return Country code for the address rule in ISO-3166-1 2-letter format
@@ -70,8 +72,8 @@ public final class GetAddressRuleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String ospHomeRegion() {
         return this.ospHomeRegion;
@@ -81,7 +83,7 @@ public final class GetAddressRuleResult {
      * 
      */
     public List<GetAddressRuleTax> taxes() {
-        return this.taxes;
+        return this.taxes == null ? List.of() : this.taxes;
     }
 
     public static Builder builder() {
@@ -93,13 +95,13 @@ public final class GetAddressRuleResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddressRuleAddress> addresses;
+        private @Nullable List<GetAddressRuleAddress> addresses;
         private String compartmentId;
-        private List<GetAddressRuleContact> contacts;
+        private @Nullable List<GetAddressRuleContact> contacts;
         private String countryCode;
-        private String id;
+        private @Nullable String id;
         private String ospHomeRegion;
-        private List<GetAddressRuleTax> taxes;
+        private @Nullable List<GetAddressRuleTax> taxes;
         public Builder() {}
         public Builder(GetAddressRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,8 +115,8 @@ public final class GetAddressRuleResult {
         }
 
         @CustomType.Setter
-        public Builder addresses(List<GetAddressRuleAddress> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable List<GetAddressRuleAddress> addresses) {
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(GetAddressRuleAddress... addresses) {
@@ -126,8 +128,8 @@ public final class GetAddressRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder contacts(List<GetAddressRuleContact> contacts) {
-            this.contacts = Objects.requireNonNull(contacts);
+        public Builder contacts(@Nullable List<GetAddressRuleContact> contacts) {
+            this.contacts = contacts;
             return this;
         }
         public Builder contacts(GetAddressRuleContact... contacts) {
@@ -139,8 +141,8 @@ public final class GetAddressRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -149,8 +151,8 @@ public final class GetAddressRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder taxes(List<GetAddressRuleTax> taxes) {
-            this.taxes = Objects.requireNonNull(taxes);
+        public Builder taxes(@Nullable List<GetAddressRuleTax> taxes) {
+            this.taxes = taxes;
             return this;
         }
         public Builder taxes(GetAddressRuleTax... taxes) {

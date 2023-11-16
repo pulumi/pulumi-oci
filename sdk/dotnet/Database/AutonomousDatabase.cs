@@ -29,19 +29,19 @@ namespace Pulumi.Oci.Database
         /// The current amount of storage in use for user and system data, in terabytes (TB).
         /// </summary>
         [Output("actualUsedDataStorageSizeInTbs")]
-        public Output<double> ActualUsedDataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> ActualUsedDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         /// </summary>
         [Output("adminPassword")]
-        public Output<string> AdminPassword { get; private set; } = null!;
+        public Output<string?> AdminPassword { get; private set; } = null!;
 
         /// <summary>
         /// The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         /// </summary>
         [Output("allocatedStorageSizeInTbs")]
-        public Output<double> AllocatedStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> AllocatedStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// Information about Oracle APEX Application Development.
@@ -53,31 +53,31 @@ namespace Pulumi.Oci.Database
         /// (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         /// </summary>
         [Output("arePrimaryWhitelistedIpsUsed")]
-        public Output<bool> ArePrimaryWhitelistedIpsUsed { get; private set; } = null!;
+        public Output<bool?> ArePrimaryWhitelistedIpsUsed { get; private set; } = null!;
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("autonomousContainerDatabaseId")]
-        public Output<string> AutonomousContainerDatabaseId { get; private set; } = null!;
+        public Output<string?> AutonomousContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
         /// </summary>
         [Output("autonomousDatabaseBackupId")]
-        public Output<string> AutonomousDatabaseBackupId { get; private set; } = null!;
+        public Output<string?> AutonomousDatabaseBackupId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
         /// </summary>
         [Output("autonomousDatabaseId")]
-        public Output<string> AutonomousDatabaseId { get; private set; } = null!;
+        public Output<string?> AutonomousDatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         /// </summary>
         [Output("autonomousMaintenanceScheduleType")]
-        public Output<string> AutonomousMaintenanceScheduleType { get; private set; } = null!;
+        public Output<string?> AutonomousMaintenanceScheduleType { get; private set; } = null!;
 
         /// <summary>
         /// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Retention period, in days, for backups.
         /// </summary>
         [Output("backupRetentionPeriodInDays")]
-        public Output<int> BackupRetentionPeriodInDays { get; private set; } = null!;
+        public Output<int?> BackupRetentionPeriodInDays { get; private set; } = null!;
 
         /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
@@ -105,13 +105,13 @@ namespace Pulumi.Oci.Database
         /// AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         /// </summary>
         [Output("characterSet")]
-        public Output<string> CharacterSet { get; private set; } = null!;
+        public Output<string?> CharacterSet { get; private set; } = null!;
 
         /// <summary>
         /// The Autonomous Database clone type.
         /// </summary>
         [Output("cloneType")]
-        public Output<string> CloneType { get; private set; } = null!;
+        public Output<string?> CloneType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
@@ -123,13 +123,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
         /// </summary>
         [Output("computeCount")]
-        public Output<double> ComputeCount { get; private set; } = null!;
+        public Output<double?> ComputeCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         /// </summary>
         [Output("computeModel")]
-        public Output<string> ComputeModel { get; private set; } = null!;
+        public Output<string?> ComputeModel { get; private set; } = null!;
 
         /// <summary>
         /// The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Database
         /// * Autonomous Databases on dedicated Exadata infrastructure: The maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         [Output("cpuCoreCount")]
-        public Output<int> CpuCoreCount { get; private set; } = null!;
+        public Output<int?> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Customer Contacts.
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
         /// </summary>
         [Output("dataSafeStatus")]
-        public Output<string> DataSafeStatus { get; private set; } = null!;
+        public Output<string?> DataSafeStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Database
         /// * This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
         /// </summary>
         [Output("dataStorageSizeInGb")]
-        public Output<int> DataStorageSizeInGb { get; private set; } = null!;
+        public Output<int?> DataStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.  A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
@@ -183,25 +183,25 @@ namespace Pulumi.Oci.Database
         /// **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
-        public Output<int> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<int?> DataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
         /// </summary>
         [Output("databaseEdition")]
-        public Output<string> DatabaseEdition { get; private set; } = null!;
+        public Output<string?> DatabaseEdition { get; private set; } = null!;
 
         /// <summary>
         /// Status of Database Management for this Autonomous Database.
         /// </summary>
         [Output("databaseManagementStatus")]
-        public Output<string> DatabaseManagementStatus { get; private set; } = null!;
+        public Output<string?> DatabaseManagementStatus { get; private set; } = null!;
 
         /// <summary>
         /// The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
         /// </summary>
         [Output("dataguardRegionType")]
-        public Output<string> DataguardRegionType { get; private set; } = null!;
+        public Output<string?> DataguardRegionType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
         /// </summary>
         [Output("dbVersion")]
-        public Output<string> DbVersion { get; private set; } = null!;
+        public Output<string?> DbVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Autonomous Database workload type. The following values are valid:
@@ -225,55 +225,55 @@ namespace Pulumi.Oci.Database
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
         /// </summary>
         [Output("dbWorkload")]
-        public Output<string> DbWorkload { get; private set; } = null!;
+        public Output<string?> DbWorkload { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         /// </summary>
         [Output("disasterRecoveryRegionType")]
-        public Output<string> DisasterRecoveryRegionType { get; private set; } = null!;
+        public Output<string?> DisasterRecoveryRegionType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
         /// </summary>
         [Output("failedDataRecoveryInSeconds")]
-        public Output<int> FailedDataRecoveryInSeconds { get; private set; } = null!;
+        public Output<int?> FailedDataRecoveryInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The area assigned to In-Memory tables in Autonomous Database.
         /// </summary>
         [Output("inMemoryAreaInGbs")]
-        public Output<int> InMemoryAreaInGbs { get; private set; } = null!;
+        public Output<int?> InMemoryAreaInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
         /// </summary>
         [Output("inMemoryPercentage")]
-        public Output<int> InMemoryPercentage { get; private set; } = null!;
+        public Output<int?> InMemoryPercentage { get; private set; } = null!;
 
         /// <summary>
         /// The infrastructure type this resource belongs to.
         /// </summary>
         [Output("infrastructureType")]
-        public Output<string> InfrastructureType { get; private set; } = null!;
+        public Output<string?> InfrastructureType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
@@ -281,79 +281,79 @@ namespace Pulumi.Oci.Database
         /// This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
         /// </summary>
         [Output("isAccessControlEnabled")]
-        public Output<bool> IsAccessControlEnabled { get; private set; } = null!;
+        public Output<bool?> IsAccessControlEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
         /// </summary>
         [Output("isAutoScalingEnabled")]
-        public Output<bool> IsAutoScalingEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutoScalingEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
         /// </summary>
         [Output("isAutoScalingForStorageEnabled")]
-        public Output<bool> IsAutoScalingForStorageEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutoScalingForStorageEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         [Output("isDataGuardEnabled")]
-        public Output<bool> IsDataGuardEnabled { get; private set; } = null!;
+        public Output<bool?> IsDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
         /// True if the database is on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm).
         /// </summary>
         [Output("isDedicated")]
-        public Output<bool> IsDedicated { get; private set; } = null!;
+        public Output<bool?> IsDedicated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled. When `db_workload` is `AJD` or `APEX` it cannot be `true`.
         /// </summary>
         [Output("isFreeTier")]
-        public Output<bool> IsFreeTier { get; private set; } = null!;
+        public Output<bool?> IsFreeTier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         [Output("isLocalDataGuardEnabled")]
-        public Output<bool> IsLocalDataGuardEnabled { get; private set; } = null!;
+        public Output<bool?> IsLocalDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether the Autonomous Database requires mTLS connections.
         /// </summary>
         [Output("isMtlsConnectionRequired")]
-        public Output<bool> IsMtlsConnectionRequired { get; private set; } = null!;
+        public Output<bool?> IsMtlsConnectionRequired { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if the Autonomous Database version is a preview version.
         /// </summary>
         [Output("isPreview")]
-        public Output<bool> IsPreview { get; private set; } = null!;
+        public Output<bool?> IsPreview { get; private set; } = null!;
 
         /// <summary>
         /// If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
         /// </summary>
         [Output("isPreviewVersionWithServiceTermsAccepted")]
-        public Output<bool> IsPreviewVersionWithServiceTermsAccepted { get; private set; } = null!;
+        public Output<bool?> IsPreviewVersionWithServiceTermsAccepted { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if the refreshable clone can be reconnected to its source database.
         /// </summary>
         [Output("isReconnectCloneEnabled")]
-        public Output<bool> IsReconnectCloneEnabled { get; private set; } = null!;
+        public Output<bool?> IsReconnectCloneEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) True for creating a refreshable clone and False for detaching the clone from source Autonomous Database. Detaching is one time operation and clone becomes a regular Autonomous Database.
         /// </summary>
         [Output("isRefreshableClone")]
-        public Output<bool> IsRefreshableClone { get; private set; } = null!;
+        public Output<bool?> IsRefreshableClone { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         /// </summary>
         [Output("isRemoteDataGuardEnabled")]
-        public Output<bool> IsRemoteDataGuardEnabled { get; private set; } = null!;
+        public Output<bool?> IsRemoteDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on shared databases i.e. where `is_dedicated` is false.
@@ -374,55 +374,55 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Output("keyStoreId")]
-        public Output<string> KeyStoreId { get; private set; } = null!;
+        public Output<string?> KeyStoreId { get; private set; } = null!;
 
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
         [Output("keyStoreWalletName")]
-        public Output<string> KeyStoreWalletName { get; private set; } = null!;
+        public Output<string?> KeyStoreWalletName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// KMS key lifecycle details.
         /// </summary>
         [Output("kmsKeyLifecycleDetails")]
-        public Output<string> KmsKeyLifecycleDetails { get; private set; } = null!;
+        public Output<string?> KmsKeyLifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
         [Output("kmsKeyVersionId")]
-        public Output<string> KmsKeyVersionId { get; private set; } = null!;
+        public Output<string?> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
         /// </summary>
         [Output("localAdgAutoFailoverMaxDataLossLimit")]
-        public Output<int> LocalAdgAutoFailoverMaxDataLossLimit { get; private set; } = null!;
+        public Output<int?> LocalAdgAutoFailoverMaxDataLossLimit { get; private set; } = null!;
 
         /// <summary>
         /// Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Output("localDisasterRecoveryType")]
-        public Output<string> LocalDisasterRecoveryType { get; private set; } = null!;
+        public Output<string?> LocalDisasterRecoveryType { get; private set; } = null!;
 
         /// <summary>
         /// Autonomous Data Guard standby database details.
@@ -440,25 +440,25 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>
         [Output("maxCpuCoreCount")]
-        public Output<int> MaxCpuCoreCount { get; private set; } = null!;
+        public Output<int?> MaxCpuCoreCount { get; private set; } = null!;
 
         /// <summary>
         /// The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
-        public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
+        public Output<int?> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         /// </summary>
         [Output("ncharacterSet")]
-        public Output<string> NcharacterSet { get; private set; } = null!;
+        public Output<string?> NcharacterSet { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the next long-term backup would be created.
         /// </summary>
         [Output("nextLongTermBackupTimeStamp")]
-        public Output<string> NextLongTermBackupTimeStamp { get; private set; } = null!;
+        public Output<string?> NextLongTermBackupTimeStamp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -479,19 +479,19 @@ namespace Pulumi.Oci.Database
         /// **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
         /// </summary>
         [Output("ocpuCount")]
-        public Output<double> OcpuCount { get; private set; } = null!;
+        public Output<double?> OcpuCount { get; private set; } = null!;
 
         /// <summary>
         /// Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
         /// </summary>
         [Output("openMode")]
-        public Output<string> OpenMode { get; private set; } = null!;
+        public Output<string?> OpenMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Status of Operations Insights for this Autonomous Database. Values supported are `ENABLED` and `NOT_ENABLED`
         /// </summary>
         [Output("operationsInsightsStatus")]
-        public Output<string> OperationsInsightsStatus { get; private set; } = null!;
+        public Output<string?> OperationsInsightsStatus { get; private set; } = null!;
 
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
@@ -503,25 +503,25 @@ namespace Pulumi.Oci.Database
         /// The Autonomous Database permission level. Restricted mode allows access only by admin users.
         /// </summary>
         [Output("permissionLevel")]
-        public Output<string> PermissionLevel { get; private set; } = null!;
+        public Output<string?> PermissionLevel { get; private set; } = null!;
 
         /// <summary>
         /// The private endpoint for the resource.
         /// </summary>
         [Output("privateEndpoint")]
-        public Output<string> PrivateEndpoint { get; private set; } = null!;
+        public Output<string?> PrivateEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// The private endpoint Ip address for the resource.
         /// </summary>
         [Output("privateEndpointIp")]
-        public Output<string> PrivateEndpointIp { get; private set; } = null!;
+        public Output<string?> PrivateEndpointIp { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The private endpoint label for the resource.
         /// </summary>
         [Output("privateEndpointLabel")]
-        public Output<string> PrivateEndpointLabel { get; private set; } = null!;
+        public Output<string?> PrivateEndpointLabel { get; private set; } = null!;
 
         /// <summary>
         /// An array of CPU values that an Autonomous Database can be scaled to.
@@ -533,13 +533,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
         [Output("refreshableMode")]
-        public Output<string> RefreshableMode { get; private set; } = null!;
+        public Output<string?> RefreshableMode { get; private set; } = null!;
 
         /// <summary>
         /// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         /// </summary>
         [Output("refreshableStatus")]
-        public Output<string> RefreshableStatus { get; private set; } = null!;
+        public Output<string?> RefreshableStatus { get; private set; } = null!;
 
         /// <summary>
         /// Configurations of a Disaster Recovery.
@@ -551,19 +551,19 @@ namespace Pulumi.Oci.Database
         /// Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Output("remoteDisasterRecoveryType")]
-        public Output<string> RemoteDisasterRecoveryType { get; private set; } = null!;
+        public Output<string?> RemoteDisasterRecoveryType { get; private set; } = null!;
 
         [Output("resourcePoolLeaderId")]
-        public Output<string> ResourcePoolLeaderId { get; private set; } = null!;
+        public Output<string?> ResourcePoolLeaderId { get; private set; } = null!;
 
         [Output("resourcePoolSummary")]
-        public Output<Outputs.AutonomousDatabaseResourcePoolSummary> ResourcePoolSummary { get; private set; } = null!;
+        public Output<Outputs.AutonomousDatabaseResourcePoolSummary?> ResourcePoolSummary { get; private set; } = null!;
 
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Output("role")]
-        public Output<string> Role { get; private set; } = null!;
+        public Output<string?> Role { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
@@ -583,19 +583,19 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
         /// </summary>
         [Output("secretId")]
-        public Output<string> SecretId { get; private set; } = null!;
+        public Output<string?> SecretId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         /// </summary>
         [Output("secretVersionNumber")]
-        public Output<int> SecretVersionNumber { get; private set; } = null!;
+        public Output<int?> SecretVersionNumber { get; private set; } = null!;
 
         /// <summary>
         /// The URL of the Service Console for the Autonomous Database.
         /// </summary>
         [Output("serviceConsoleUrl")]
-        public Output<string> ServiceConsoleUrl { get; private set; } = null!;
+        public Output<string?> ServiceConsoleUrl { get; private set; } = null!;
 
         /// <summary>
         /// The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -603,13 +603,13 @@ namespace Pulumi.Oci.Database
         /// For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
         /// </summary>
         [Output("source")]
-        public Output<string> Source { get; private set; } = null!;
+        public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
         /// </summary>
         [Output("sourceId")]
-        public Output<string> SourceId { get; private set; } = null!;
+        public Output<string?> SourceId { get; private set; } = null!;
 
         /// <summary>
         /// **Deprecated** Autonomous Data Guard standby database details.
@@ -633,7 +633,7 @@ namespace Pulumi.Oci.Database
         /// The current state of the Autonomous Database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
@@ -646,7 +646,7 @@ namespace Pulumi.Oci.Database
         /// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
@@ -670,130 +670,130 @@ namespace Pulumi.Oci.Database
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous Database was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         /// </summary>
         [Output("timeDataGuardRoleChanged")]
-        public Output<string> TimeDataGuardRoleChanged { get; private set; } = null!;
+        public Output<string?> TimeDataGuardRoleChanged { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
         /// </summary>
         [Output("timeDeletionOfFreeAutonomousDatabase")]
-        public Output<string> TimeDeletionOfFreeAutonomousDatabase { get; private set; } = null!;
+        public Output<string?> TimeDeletionOfFreeAutonomousDatabase { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         /// </summary>
         [Output("timeDisasterRecoveryRoleChanged")]
-        public Output<string> TimeDisasterRecoveryRoleChanged { get; private set; } = null!;
+        public Output<string?> TimeDisasterRecoveryRoleChanged { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         /// </summary>
         [Output("timeLocalDataGuardEnabled")]
-        public Output<string> TimeLocalDataGuardEnabled { get; private set; } = null!;
+        public Output<string?> TimeLocalDataGuardEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when maintenance will begin.
         /// </summary>
         [Output("timeMaintenanceBegin")]
-        public Output<string> TimeMaintenanceBegin { get; private set; } = null!;
+        public Output<string?> TimeMaintenanceBegin { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when maintenance will end.
         /// </summary>
         [Output("timeMaintenanceEnd")]
-        public Output<string> TimeMaintenanceEnd { get; private set; } = null!;
+        public Output<string?> TimeMaintenanceEnd { get; private set; } = null!;
 
         [Output("timeOfJoiningResourcePool")]
-        public Output<string> TimeOfJoiningResourcePool { get; private set; } = null!;
+        public Output<string?> TimeOfJoiningResourcePool { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the last failover operation.
         /// </summary>
         [Output("timeOfLastFailover")]
-        public Output<string> TimeOfLastFailover { get; private set; } = null!;
+        public Output<string?> TimeOfLastFailover { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when last refresh happened.
         /// </summary>
         [Output("timeOfLastRefresh")]
-        public Output<string> TimeOfLastRefresh { get; private set; } = null!;
+        public Output<string?> TimeOfLastRefresh { get; private set; } = null!;
 
         /// <summary>
         /// The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
         /// </summary>
         [Output("timeOfLastRefreshPoint")]
-        public Output<string> TimeOfLastRefreshPoint { get; private set; } = null!;
+        public Output<string?> TimeOfLastRefreshPoint { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the last switchover operation for the Autonomous Database.
         /// </summary>
         [Output("timeOfLastSwitchover")]
-        public Output<string> TimeOfLastSwitchover { get; private set; } = null!;
+        public Output<string?> TimeOfLastSwitchover { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of next refresh.
         /// </summary>
         [Output("timeOfNextRefresh")]
-        public Output<string> TimeOfNextRefresh { get; private set; } = null!;
+        public Output<string?> TimeOfNextRefresh { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         /// </summary>
         [Output("timeReclamationOfFreeAutonomousDatabase")]
-        public Output<string> TimeReclamationOfFreeAutonomousDatabase { get; private set; } = null!;
+        public Output<string?> TimeReclamationOfFreeAutonomousDatabase { get; private set; } = null!;
 
         /// <summary>
         /// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         /// </summary>
         [Output("timeUntilReconnectCloneEnabled")]
-        public Output<string> TimeUntilReconnectCloneEnabled { get; private set; } = null!;
+        public Output<string?> TimeUntilReconnectCloneEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
         /// </summary>
         [Output("timestamp")]
-        public Output<string> Timestamp { get; private set; } = null!;
+        public Output<string?> Timestamp { get; private set; } = null!;
 
         /// <summary>
         /// The backup storage to the database.
         /// </summary>
         [Output("totalBackupStorageSizeInGbs")]
-        public Output<double> TotalBackupStorageSizeInGbs { get; private set; } = null!;
+        public Output<double?> TotalBackupStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// Clone from latest available backup timestamp.
         /// </summary>
         [Output("useLatestAvailableBackupTimeStamp")]
-        public Output<bool> UseLatestAvailableBackupTimeStamp { get; private set; } = null!;
+        public Output<bool?> UseLatestAvailableBackupTimeStamp { get; private set; } = null!;
 
         /// <summary>
         /// The storage space consumed by Autonomous Database in GBs.
         /// </summary>
         [Output("usedDataStorageSizeInGbs")]
-        public Output<int> UsedDataStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> UsedDataStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
         [Output("usedDataStorageSizeInTbs")]
-        public Output<int> UsedDataStorageSizeInTbs { get; private set; } = null!;
+        public Output<int?> UsedDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.

@@ -18,7 +18,7 @@ public final class GetAlertRulesResult {
      * @return The list of alert_rules.
      * 
      */
-    private List<GetAlertRulesAlertRule> alertRules;
+    private @Nullable List<GetAlertRulesAlertRule> alertRules;
     /**
      * @return The OCID of the budget.
      * 
@@ -34,7 +34,7 @@ public final class GetAlertRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the alert rule.
      * 
@@ -47,7 +47,7 @@ public final class GetAlertRulesResult {
      * 
      */
     public List<GetAlertRulesAlertRule> alertRules() {
-        return this.alertRules;
+        return this.alertRules == null ? List.of() : this.alertRules;
     }
     /**
      * @return The OCID of the budget.
@@ -70,8 +70,8 @@ public final class GetAlertRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the alert rule.
@@ -90,11 +90,11 @@ public final class GetAlertRulesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAlertRulesAlertRule> alertRules;
+        private @Nullable List<GetAlertRulesAlertRule> alertRules;
         private String budgetId;
         private @Nullable String displayName;
         private @Nullable List<GetAlertRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAlertRulesResult defaults) {
@@ -108,8 +108,8 @@ public final class GetAlertRulesResult {
         }
 
         @CustomType.Setter
-        public Builder alertRules(List<GetAlertRulesAlertRule> alertRules) {
-            this.alertRules = Objects.requireNonNull(alertRules);
+        public Builder alertRules(@Nullable List<GetAlertRulesAlertRule> alertRules) {
+            this.alertRules = alertRules;
             return this;
         }
         public Builder alertRules(GetAlertRulesAlertRule... alertRules) {
@@ -134,8 +134,8 @@ public final class GetAlertRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

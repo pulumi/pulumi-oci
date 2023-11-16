@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicationPackagesPublicationPackage {
@@ -13,63 +15,63 @@ public final class GetPublicationPackagesPublicationPackage {
      * @return The ID of the listing that the specified package belongs to.
      * 
      */
-    private String listingId;
+    private @Nullable String listingId;
     /**
      * @return A filter to return only packages that match the given package type exactly.
      * 
      */
-    private String packageType;
+    private @Nullable String packageType;
     /**
      * @return The version of the package. Package versions are unique within a listing.
      * 
      */
-    private String packageVersion;
+    private @Nullable String packageVersion;
     /**
      * @return The unique identifier for the package resource.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetPublicationPackagesPublicationPackage() {}
     /**
      * @return The ID of the listing that the specified package belongs to.
      * 
      */
-    public String listingId() {
-        return this.listingId;
+    public Optional<String> listingId() {
+        return Optional.ofNullable(this.listingId);
     }
     /**
      * @return A filter to return only packages that match the given package type exactly.
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
     /**
      * @return The version of the package. Package versions are unique within a listing.
      * 
      */
-    public String packageVersion() {
-        return this.packageVersion;
+    public Optional<String> packageVersion() {
+        return Optional.ofNullable(this.packageVersion);
     }
     /**
      * @return The unique identifier for the package resource.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetPublicationPackagesPublicationPackage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String listingId;
-        private String packageType;
-        private String packageVersion;
-        private String resourceId;
-        private String timeCreated;
+        private @Nullable String listingId;
+        private @Nullable String packageType;
+        private @Nullable String packageVersion;
+        private @Nullable String resourceId;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetPublicationPackagesPublicationPackage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetPublicationPackagesPublicationPackage {
         }
 
         @CustomType.Setter
-        public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+        public Builder listingId(@Nullable String listingId) {
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
-        public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+        public Builder packageVersion(@Nullable String packageVersion) {
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPublicationPackagesPublicationPackage build() {

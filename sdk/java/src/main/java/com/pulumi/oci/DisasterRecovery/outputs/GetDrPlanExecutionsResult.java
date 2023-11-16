@@ -23,7 +23,7 @@ public final class GetDrPlanExecutionsResult {
      * @return The list of dr_plan_execution_collection.
      * 
      */
-    private List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections;
+    private @Nullable List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections;
     private @Nullable String drPlanExecutionId;
     private @Nullable String drPlanExecutionType;
     /**
@@ -36,7 +36,7 @@ public final class GetDrPlanExecutionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the DR plan execution.
      * 
@@ -56,7 +56,7 @@ public final class GetDrPlanExecutionsResult {
      * 
      */
     public List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections() {
-        return this.drPlanExecutionCollections;
+        return this.drPlanExecutionCollections == null ? List.of() : this.drPlanExecutionCollections;
     }
     public Optional<String> drPlanExecutionId() {
         return Optional.ofNullable(this.drPlanExecutionId);
@@ -78,8 +78,8 @@ public final class GetDrPlanExecutionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the DR plan execution.
@@ -99,12 +99,12 @@ public final class GetDrPlanExecutionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String displayName;
-        private List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections;
+        private @Nullable List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections;
         private @Nullable String drPlanExecutionId;
         private @Nullable String drPlanExecutionType;
         private String drProtectionGroupId;
         private @Nullable List<GetDrPlanExecutionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDrPlanExecutionsResult defaults) {
@@ -125,8 +125,8 @@ public final class GetDrPlanExecutionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drPlanExecutionCollections(List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections) {
-            this.drPlanExecutionCollections = Objects.requireNonNull(drPlanExecutionCollections);
+        public Builder drPlanExecutionCollections(@Nullable List<GetDrPlanExecutionsDrPlanExecutionCollection> drPlanExecutionCollections) {
+            this.drPlanExecutionCollections = drPlanExecutionCollections;
             return this;
         }
         public Builder drPlanExecutionCollections(GetDrPlanExecutionsDrPlanExecutionCollection... drPlanExecutionCollections) {
@@ -156,8 +156,8 @@ public final class GetDrPlanExecutionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -44,15 +44,12 @@ class GetHostnamesResult:
 
     @property
     @pulumi.getter
-    def hostnames(self) -> Sequence['outputs.GetHostnamesHostnameResult']:
-        """
-        The list of hostnames.
-        """
+    def hostnames(self) -> Optional[Sequence['outputs.GetHostnamesHostnameResult']]:
         return pulumi.get(self, "hostnames")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_hostnames(filters: Optional[Sequence[pulumi.InputType['GetHostnamesFilte
                   load_balancer_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostnamesResult:
     """
-    This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all hostname resources associated with the specified load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_hostnames_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi
                          load_balancer_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostnamesResult]:
     """
-    This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all hostname resources associated with the specified load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_hostnames = oci.LoadBalancer.get_hostnames(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
@@ -13,15 +15,15 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
      * @return The name of the disk group.
      * 
      */
-    private String diskGroup;
+    private @Nullable String diskGroup;
 
     private GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem() {}
     /**
      * @return The name of the disk group.
      * 
      */
-    public String diskGroup() {
-        return this.diskGroup;
+    public Optional<String> diskGroup() {
+        return Optional.ofNullable(this.diskGroup);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String diskGroup;
+        private @Nullable String diskGroup;
         public Builder() {}
         public Builder(GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder diskGroup(String diskGroup) {
-            this.diskGroup = Objects.requireNonNull(diskGroup);
+        public Builder diskGroup(@Nullable String diskGroup) {
+            this.diskGroup = diskGroup;
             return this;
         }
         public GetManagedDatabasesAsmPropertiesAsmPropertyCollectionItem build() {

@@ -61,7 +61,7 @@ export class DbCredential extends pulumi.CustomResource {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The password for the DB credentials during creation.
      */
@@ -69,15 +69,15 @@ export class DbCredential extends pulumi.CustomResource {
     /**
      * The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeExpires!: pulumi.Output<string>;
+    public /*out*/ readonly timeExpires!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user.
      *

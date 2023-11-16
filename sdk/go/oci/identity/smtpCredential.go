@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity service.
@@ -62,22 +61,22 @@ type SmtpCredential struct {
 	// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The SMTP password.
-	Password pulumi.StringOutput `pulumi:"password"`
+	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// The credential's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrOutput `pulumi:"timeExpires"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	UserId pulumi.StringOutput `pulumi:"userId"`
 	// The SMTP user name.
-	Username pulumi.StringOutput `pulumi:"username"`
+	Username pulumi.StringPtrOutput `pulumi:"username"`
 }
 
 // NewSmtpCredential registers a new resource with the given unique name, arguments, and options.
@@ -207,12 +206,6 @@ func (i *SmtpCredential) ToSmtpCredentialOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SmtpCredentialOutput)
 }
 
-func (i *SmtpCredential) ToOutput(ctx context.Context) pulumix.Output[*SmtpCredential] {
-	return pulumix.Output[*SmtpCredential]{
-		OutputState: i.ToSmtpCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SmtpCredentialArrayInput is an input type that accepts SmtpCredentialArray and SmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `SmtpCredentialArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i SmtpCredentialArray) ToSmtpCredentialArrayOutput() SmtpCredentialArrayOu
 
 func (i SmtpCredentialArray) ToSmtpCredentialArrayOutputWithContext(ctx context.Context) SmtpCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SmtpCredentialArrayOutput)
-}
-
-func (i SmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*SmtpCredential] {
-	return pulumix.Output[[]*SmtpCredential]{
-		OutputState: i.ToSmtpCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SmtpCredentialMapInput is an input type that accepts SmtpCredentialMap and SmtpCredentialMapOutput values.
@@ -269,12 +256,6 @@ func (i SmtpCredentialMap) ToSmtpCredentialMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SmtpCredentialMapOutput)
 }
 
-func (i SmtpCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SmtpCredential] {
-	return pulumix.Output[map[string]*SmtpCredential]{
-		OutputState: i.ToSmtpCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (SmtpCredentialOutput) ElementType() reflect.Type {
@@ -289,40 +270,34 @@ func (o SmtpCredentialOutput) ToSmtpCredentialOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o SmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*SmtpCredential] {
-	return pulumix.Output[*SmtpCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
 func (o SmtpCredentialOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o SmtpCredentialOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o SmtpCredentialOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SmtpCredential) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The SMTP password.
-func (o SmtpCredentialOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+func (o SmtpCredentialOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SmtpCredential) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The credential's current state.
-func (o SmtpCredentialOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SmtpCredentialOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SmtpCredential) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `SmtpCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o SmtpCredentialOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SmtpCredentialOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SmtpCredential) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-func (o SmtpCredentialOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.TimeExpires }).(pulumi.StringOutput)
+func (o SmtpCredentialOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SmtpCredential) pulumi.StringPtrOutput { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -334,8 +309,8 @@ func (o SmtpCredentialOutput) UserId() pulumi.StringOutput {
 }
 
 // The SMTP user name.
-func (o SmtpCredentialOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v *SmtpCredential) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
+func (o SmtpCredentialOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SmtpCredential) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type SmtpCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -350,12 +325,6 @@ func (o SmtpCredentialArrayOutput) ToSmtpCredentialArrayOutput() SmtpCredentialA
 
 func (o SmtpCredentialArrayOutput) ToSmtpCredentialArrayOutputWithContext(ctx context.Context) SmtpCredentialArrayOutput {
 	return o
-}
-
-func (o SmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SmtpCredential] {
-	return pulumix.Output[[]*SmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SmtpCredentialArrayOutput) Index(i pulumi.IntInput) SmtpCredentialOutput {
@@ -376,12 +345,6 @@ func (o SmtpCredentialMapOutput) ToSmtpCredentialMapOutput() SmtpCredentialMapOu
 
 func (o SmtpCredentialMapOutput) ToSmtpCredentialMapOutputWithContext(ctx context.Context) SmtpCredentialMapOutput {
 	return o
-}
-
-func (o SmtpCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SmtpCredential] {
-	return pulumix.Output[map[string]*SmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SmtpCredentialMapOutput) MapIndex(k pulumi.StringInput) SmtpCredentialOutput {

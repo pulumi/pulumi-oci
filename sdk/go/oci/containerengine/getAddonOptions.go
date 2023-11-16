@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
@@ -68,8 +67,8 @@ type GetAddonOptionsResult struct {
 	AddonOptions []GetAddonOptionsAddonOption `pulumi:"addonOptions"`
 	Filters      []GetAddonOptionsFilter      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	Id                *string `pulumi:"id"`
+	KubernetesVersion string  `pulumi:"kubernetesVersion"`
 }
 
 func GetAddonOptionsOutput(ctx *pulumi.Context, args GetAddonOptionsOutputArgs, opts ...pulumi.InvokeOption) GetAddonOptionsResultOutput {
@@ -113,12 +112,6 @@ func (o GetAddonOptionsResultOutput) ToGetAddonOptionsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetAddonOptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsResult] {
-	return pulumix.Output[GetAddonOptionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonOptionsResultOutput) AddonName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAddonOptionsResult) *string { return v.AddonName }).(pulumi.StringPtrOutput)
 }
@@ -133,8 +126,8 @@ func (o GetAddonOptionsResultOutput) Filters() GetAddonOptionsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAddonOptionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAddonOptionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAddonOptionsResultOutput) KubernetesVersion() pulumi.StringOutput {

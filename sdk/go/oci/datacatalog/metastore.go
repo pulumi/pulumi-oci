@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -73,20 +72,20 @@ type Metastore struct {
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Mutable name of the metastore.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the metastore.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMetastore registers a new resource with the given unique name, arguments, and options.
@@ -243,12 +242,6 @@ func (i *Metastore) ToMetastoreOutputWithContext(ctx context.Context) MetastoreO
 	return pulumi.ToOutputWithContext(ctx, i).(MetastoreOutput)
 }
 
-func (i *Metastore) ToOutput(ctx context.Context) pulumix.Output[*Metastore] {
-	return pulumix.Output[*Metastore]{
-		OutputState: i.ToMetastoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetastoreArrayInput is an input type that accepts MetastoreArray and MetastoreArrayOutput values.
 // You can construct a concrete instance of `MetastoreArrayInput` via:
 //
@@ -272,12 +265,6 @@ func (i MetastoreArray) ToMetastoreArrayOutput() MetastoreArrayOutput {
 
 func (i MetastoreArray) ToMetastoreArrayOutputWithContext(ctx context.Context) MetastoreArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetastoreArrayOutput)
-}
-
-func (i MetastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]*Metastore] {
-	return pulumix.Output[[]*Metastore]{
-		OutputState: i.ToMetastoreArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MetastoreMapInput is an input type that accepts MetastoreMap and MetastoreMapOutput values.
@@ -305,12 +292,6 @@ func (i MetastoreMap) ToMetastoreMapOutputWithContext(ctx context.Context) Metas
 	return pulumi.ToOutputWithContext(ctx, i).(MetastoreMapOutput)
 }
 
-func (i MetastoreMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Metastore] {
-	return pulumix.Output[map[string]*Metastore]{
-		OutputState: i.ToMetastoreMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetastoreOutput struct{ *pulumi.OutputState }
 
 func (MetastoreOutput) ElementType() reflect.Type {
@@ -323,12 +304,6 @@ func (o MetastoreOutput) ToMetastoreOutput() MetastoreOutput {
 
 func (o MetastoreOutput) ToMetastoreOutputWithContext(ctx context.Context) MetastoreOutput {
 	return o
-}
-
-func (o MetastoreOutput) ToOutput(ctx context.Context) pulumix.Output[*Metastore] {
-	return pulumix.Output[*Metastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) OCID of the compartment which holds the metastore.
@@ -352,8 +327,8 @@ func (o MetastoreOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Mutable name of the metastore.
-func (o MetastoreOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Metastore) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MetastoreOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Metastore) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -365,23 +340,23 @@ func (o MetastoreOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o MetastoreOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Metastore) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MetastoreOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Metastore) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the metastore.
-func (o MetastoreOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Metastore) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MetastoreOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Metastore) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o MetastoreOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Metastore) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MetastoreOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Metastore) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o MetastoreOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Metastore) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MetastoreOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Metastore) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MetastoreArrayOutput struct{ *pulumi.OutputState }
@@ -396,12 +371,6 @@ func (o MetastoreArrayOutput) ToMetastoreArrayOutput() MetastoreArrayOutput {
 
 func (o MetastoreArrayOutput) ToMetastoreArrayOutputWithContext(ctx context.Context) MetastoreArrayOutput {
 	return o
-}
-
-func (o MetastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Metastore] {
-	return pulumix.Output[[]*Metastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetastoreArrayOutput) Index(i pulumi.IntInput) MetastoreOutput {
@@ -422,12 +391,6 @@ func (o MetastoreMapOutput) ToMetastoreMapOutput() MetastoreMapOutput {
 
 func (o MetastoreMapOutput) ToMetastoreMapOutputWithContext(ctx context.Context) MetastoreMapOutput {
 	return o
-}
-
-func (o MetastoreMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Metastore] {
-	return pulumix.Output[map[string]*Metastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetastoreMapOutput) MapIndex(k pulumi.StringInput) MetastoreOutput {

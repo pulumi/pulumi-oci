@@ -52,8 +52,8 @@ export interface GetLogAnalyticsLogGroupsSummaryResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
-    readonly logGroupCount: number;
+    readonly id?: string;
+    readonly logGroupCount?: number;
     readonly namespace: string;
 }
 /**

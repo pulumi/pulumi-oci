@@ -24,7 +24,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Defines whether or not to uphold SSL verification.
         /// </summary>
-        public readonly bool IsSslVerifyDisabled;
+        public readonly bool? IsSslVerifyDisabled;
         /// <summary>
         /// The set of static public keys.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The duration for which the introspect URL response should be cached before it is fetched again.
         /// </summary>
-        public readonly int MaxCacheDurationInHours;
+        public readonly int? MaxCacheDurationInHours;
         /// <summary>
         /// Auth endpoint details.
         /// </summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The uri from which to retrieve the key. It must be accessible without authentication.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyResult(
@@ -52,17 +52,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetailResult> clientDetails,
 
-            bool isSslVerifyDisabled,
+            bool? isSslVerifyDisabled,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyKeyResult> keys,
 
-            int maxCacheDurationInHours,
+            int? maxCacheDurationInHours,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult> sourceUriDetails,
 
-            string type,
+            string? type,
 
-            string uri)
+            string? uri)
         {
             AdditionalValidationPolicies = additionalValidationPolicies;
             ClientDetails = clientDetails;

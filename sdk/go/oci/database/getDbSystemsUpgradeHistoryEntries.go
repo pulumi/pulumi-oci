@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
@@ -71,7 +70,7 @@ type GetDbSystemsUpgradeHistoryEntriesResult struct {
 	DbSystemUpgradeHistoryEntries []GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry `pulumi:"dbSystemUpgradeHistoryEntries"`
 	Filters                       []GetDbSystemsUpgradeHistoryEntriesFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the action.
 	State         *string `pulumi:"state"`
 	UpgradeAction *string `pulumi:"upgradeAction"`
@@ -120,12 +119,6 @@ func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) ToGetDbSystemsUpgradeHist
 	return o
 }
 
-func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemsUpgradeHistoryEntriesResult] {
-	return pulumix.Output[GetDbSystemsUpgradeHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
@@ -144,8 +137,8 @@ func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) Filters() GetDbSystemsUpg
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the action.

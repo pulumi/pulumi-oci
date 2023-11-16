@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
@@ -60,36 +59,36 @@ type LookupDkimArgs struct {
 // A collection of values returned by getDkim.
 type LookupDkimResult struct {
 	// The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
-	CnameRecordValue string `pulumi:"cnameRecordValue"`
+	CnameRecordValue *string `pulumi:"cnameRecordValue"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the DKIM. Avoid entering confidential information.
-	Description string `pulumi:"description"`
-	DkimId      string `pulumi:"dkimId"`
+	Description *string `pulumi:"description"`
+	DkimId      string  `pulumi:"dkimId"`
 	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
-	DnsSubdomainName string `pulumi:"dnsSubdomainName"`
+	DnsSubdomainName *string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
-	EmailDomainId string `pulumi:"emailDomainId"`
+	EmailDomainId *string `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current state of the DKIM.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the DKIM was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
-	TxtRecordValue string `pulumi:"txtRecordValue"`
+	TxtRecordValue *string `pulumi:"txtRecordValue"`
 }
 
 func LookupDkimOutput(ctx *pulumi.Context, args LookupDkimOutputArgs, opts ...pulumi.InvokeOption) LookupDkimResultOutput {
@@ -130,20 +129,14 @@ func (o LookupDkimResultOutput) ToLookupDkimResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o LookupDkimResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDkimResult] {
-	return pulumix.Output[LookupDkimResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
-func (o LookupDkimResultOutput) CnameRecordValue() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.CnameRecordValue }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) CnameRecordValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.CnameRecordValue }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
-func (o LookupDkimResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -152,8 +145,8 @@ func (o LookupDkimResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the DKIM. Avoid entering confidential information.
-func (o LookupDkimResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDkimResultOutput) DkimId() pulumi.StringOutput {
@@ -161,13 +154,13 @@ func (o LookupDkimResultOutput) DkimId() pulumi.StringOutput {
 }
 
 // The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
-func (o LookupDkimResultOutput) DnsSubdomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.DnsSubdomainName }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) DnsSubdomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.DnsSubdomainName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
-func (o LookupDkimResultOutput) EmailDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.EmailDomainId }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) EmailDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.EmailDomainId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -176,23 +169,23 @@ func (o LookupDkimResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
-func (o LookupDkimResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
-func (o LookupDkimResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
-func (o LookupDkimResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DKIM.
-func (o LookupDkimResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -201,18 +194,18 @@ func (o LookupDkimResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the DKIM was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-func (o LookupDkimResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-func (o LookupDkimResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
-func (o LookupDkimResultOutput) TxtRecordValue() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDkimResult) string { return v.TxtRecordValue }).(pulumi.StringOutput)
+func (o LookupDkimResultOutput) TxtRecordValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDkimResult) *string { return v.TxtRecordValue }).(pulumi.StringPtrOutput)
 }
 
 func init() {

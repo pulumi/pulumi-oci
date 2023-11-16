@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
@@ -47,14 +46,14 @@ type GetDomainsUserAttributesSettingsResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string  `pulumi:"id"`
+	Id                        *string `pulumi:"id"`
 	IdcsEndpoint              string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage              int     `pulumi:"itemsPerPage"`
+	ItemsPerPage              *int    `pulumi:"itemsPerPage"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas      []string `pulumi:"schemas"`
-	StartIndex   int      `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	StartIndex   *int     `pulumi:"startIndex"`
+	TotalResults *int     `pulumi:"totalResults"`
 	// The list of user_attributes_settings.
 	UserAttributesSettings []GetDomainsUserAttributesSettingsUserAttributesSetting `pulumi:"userAttributesSettings"`
 }
@@ -106,12 +105,6 @@ func (o GetDomainsUserAttributesSettingsResultOutput) ToGetDomainsUserAttributes
 	return o
 }
 
-func (o GetDomainsUserAttributesSettingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsUserAttributesSettingsResult] {
-	return pulumix.Output[GetDomainsUserAttributesSettingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsUserAttributesSettingsResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -129,16 +122,16 @@ func (o GetDomainsUserAttributesSettingsResultOutput) CompartmentId() pulumi.Str
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsUserAttributesSettingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsUserAttributesSettingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsUserAttributesSettingsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsUserAttributesSettingsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsUserAttributesSettingsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsUserAttributesSettingsResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -150,12 +143,12 @@ func (o GetDomainsUserAttributesSettingsResultOutput) Schemas() pulumi.StringArr
 	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) []string { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-func (o GetDomainsUserAttributesSettingsResultOutput) StartIndex() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) int { return v.StartIndex }).(pulumi.IntOutput)
+func (o GetDomainsUserAttributesSettingsResultOutput) StartIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsUserAttributesSettingsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsUserAttributesSettingsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsUserAttributesSettingsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 // The list of user_attributes_settings.

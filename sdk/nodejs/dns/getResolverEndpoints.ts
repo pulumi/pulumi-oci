@@ -71,7 +71,7 @@ export interface GetResolverEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
@@ -79,7 +79,7 @@ export interface GetResolverEndpointsResult {
     /**
      * The list of resolver_endpoints.
      */
-    readonly resolverEndpoints: outputs.Dns.GetResolverEndpointsResolverEndpoint[];
+    readonly resolverEndpoints?: outputs.Dns.GetResolverEndpointsResolverEndpoint[];
     readonly resolverId: string;
     readonly scope: string;
     /**

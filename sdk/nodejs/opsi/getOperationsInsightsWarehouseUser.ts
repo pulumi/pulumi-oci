@@ -45,64 +45,64 @@ export interface GetOperationsInsightsWarehouseUserResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      */
-    readonly connectionPassword: string;
+    readonly connectionPassword?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Hub User OCID
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicate whether user has access to AWR data.
      */
-    readonly isAwrDataAccess: boolean;
+    readonly isAwrDataAccess?: boolean;
     /**
      * Indicate whether user has access to EM data.
      */
-    readonly isEmDataAccess: boolean;
+    readonly isEmDataAccess?: boolean;
     /**
      * Indicate whether user has access to OPSI data.
      */
-    readonly isOpsiDataAccess: boolean;
+    readonly isOpsiDataAccess?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * OPSI Warehouse OCID
      */
-    readonly operationsInsightsWarehouseId: string;
+    readonly operationsInsightsWarehouseId?: string;
     readonly operationsInsightsWarehouseUserId: string;
     /**
      * Possible lifecycle states
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.

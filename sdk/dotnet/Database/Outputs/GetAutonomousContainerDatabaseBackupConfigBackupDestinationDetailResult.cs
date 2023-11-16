@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Proxy URL to connect to object store.
         /// </summary>
-        public readonly string InternetProxy;
+        public readonly string? InternetProxy;
         /// <summary>
         /// Type of the database backup destination.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         /// </summary>
-        public readonly string VpcPassword;
+        public readonly string? VpcPassword;
         /// <summary>
         /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         /// </summary>
-        public readonly string VpcUser;
+        public readonly string? VpcUser;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(
-            string id,
+            string? id,
 
-            string internetProxy,
+            string? internetProxy,
 
-            string type,
+            string? type,
 
-            string vpcPassword,
+            string? vpcPassword,
 
-            string vpcUser)
+            string? vpcUser)
         {
             Id = id;
             InternetProxy = internetProxy;

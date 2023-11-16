@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// Number of OCPU allocation
         /// </summary>
-        public readonly double OcpuAllocationNumber;
+        public readonly double? OcpuAllocationNumber;
 
         [OutputConstructor]
-        private GetOsnOcpuAllocationParamResult(double ocpuAllocationNumber)
+        private GetOsnOcpuAllocationParamResult(double? ocpuAllocationNumber)
         {
             OcpuAllocationNumber = ocpuAllocationNumber;
         }

@@ -22,14 +22,6 @@ class VnicAttachmentArgs:
                  nic_index: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a VnicAttachment resource.
-        :param pulumi.Input['VnicAttachmentCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -41,9 +33,6 @@ class VnicAttachmentArgs:
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']:
-        """
-        (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
@@ -53,9 +42,6 @@ class VnicAttachmentArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -65,9 +51,6 @@ class VnicAttachmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -77,13 +60,6 @@ class VnicAttachmentArgs:
     @property
     @pulumi.getter(name="nicIndex")
     def nic_index(self) -> Optional[pulumi.Input[int]]:
-        """
-        Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
@@ -108,26 +84,6 @@ class _VnicAttachmentState:
                  vnic_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VnicAttachment resources.
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        :param pulumi.Input['VnicAttachmentCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the VNIC attachment.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
-               
-               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        :param pulumi.Input[str] time_created: The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        :param pulumi.Input[int] vlan_tag: The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
-        :param pulumi.Input[str] vnic_id: The OCID of the VNIC. Available after the attachment process is complete.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -157,9 +113,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -169,9 +122,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -181,9 +131,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> Optional[pulumi.Input['VnicAttachmentCreateVnicDetailsArgs']]:
-        """
-        (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @create_vnic_details.setter
@@ -193,9 +140,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -205,9 +149,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -217,13 +158,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="nicIndex")
     def nic_index(self) -> Optional[pulumi.Input[int]]:
-        """
-        Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
@@ -233,9 +167,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the VNIC attachment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -245,11 +176,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
-
-        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -259,9 +185,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -271,11 +194,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
@@ -285,9 +203,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="vlanTag")
     def vlan_tag(self) -> Optional[pulumi.Input[int]]:
-        """
-        The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
-        """
         return pulumi.get(self, "vlan_tag")
 
     @vlan_tag.setter
@@ -297,9 +212,6 @@ class _VnicAttachmentState:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the VNIC. Available after the attachment process is complete.
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
@@ -318,57 +230,9 @@ class VnicAttachment(pulumi.CustomResource):
                  nic_index: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a secondary VNIC and attaches it to the specified instance.
-        For more information about secondary VNICs, see
-        [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vnic_attachment = oci.core.VnicAttachment("testVnicAttachment",
-            create_vnic_details=oci.core.VnicAttachmentCreateVnicDetailsArgs(
-                assign_ipv6ip=var["vnic_attachment_create_vnic_details_assign_ipv6ip"],
-                assign_private_dns_record=var["vnic_attachment_create_vnic_details_assign_private_dns_record"],
-                assign_public_ip=var["vnic_attachment_create_vnic_details_assign_public_ip"],
-                defined_tags=var["vnic_attachment_create_vnic_details_defined_tags"],
-                display_name=var["vnic_attachment_create_vnic_details_display_name"],
-                freeform_tags=var["vnic_attachment_create_vnic_details_freeform_tags"],
-                hostname_label=var["vnic_attachment_create_vnic_details_hostname_label"],
-                ipv6address_ipv6subnet_cidr_pair_details=var["vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details"],
-                nsg_ids=var["vnic_attachment_create_vnic_details_nsg_ids"],
-                private_ip=var["vnic_attachment_create_vnic_details_private_ip"],
-                skip_source_dest_check=var["vnic_attachment_create_vnic_details_skip_source_dest_check"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-            ),
-            instance_id=oci_core_instance["test_instance"]["id"],
-            display_name=var["vnic_attachment_display_name"],
-            nic_index=var["vnic_attachment_nic_index"])
-        ```
-
-        ## Import
-
-        VnicAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
-        ```
-
+        Create a VnicAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -377,47 +241,7 @@ class VnicAttachment(pulumi.CustomResource):
                  args: VnicAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a secondary VNIC and attaches it to the specified instance.
-        For more information about secondary VNICs, see
-        [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vnic_attachment = oci.core.VnicAttachment("testVnicAttachment",
-            create_vnic_details=oci.core.VnicAttachmentCreateVnicDetailsArgs(
-                assign_ipv6ip=var["vnic_attachment_create_vnic_details_assign_ipv6ip"],
-                assign_private_dns_record=var["vnic_attachment_create_vnic_details_assign_private_dns_record"],
-                assign_public_ip=var["vnic_attachment_create_vnic_details_assign_public_ip"],
-                defined_tags=var["vnic_attachment_create_vnic_details_defined_tags"],
-                display_name=var["vnic_attachment_create_vnic_details_display_name"],
-                freeform_tags=var["vnic_attachment_create_vnic_details_freeform_tags"],
-                hostname_label=var["vnic_attachment_create_vnic_details_hostname_label"],
-                ipv6address_ipv6subnet_cidr_pair_details=var["vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details"],
-                nsg_ids=var["vnic_attachment_create_vnic_details_nsg_ids"],
-                private_ip=var["vnic_attachment_create_vnic_details_private_ip"],
-                skip_source_dest_check=var["vnic_attachment_create_vnic_details_skip_source_dest_check"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vlan_id=oci_core_vlan["test_vlan"]["id"],
-            ),
-            instance_id=oci_core_instance["test_instance"]["id"],
-            display_name=var["vnic_attachment_display_name"],
-            nic_index=var["vnic_attachment_nic_index"])
-        ```
-
-        ## Import
-
-        VnicAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"
-        ```
-
+        Create a VnicAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VnicAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -491,26 +315,6 @@ class VnicAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        :param pulumi.Input[pulumi.InputType['VnicAttachmentCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[int] nic_index: Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the VNIC attachment.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
-               
-               If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        :param pulumi.Input[str] time_created: The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vlan_id: Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-               
-               Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        :param pulumi.Input[int] vlan_tag: The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
-        :param pulumi.Input[str] vnic_id: The OCID of the VNIC. Available after the attachment process is complete.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -532,105 +336,61 @@ class VnicAttachment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createVnicDetails")
     def create_vnic_details(self) -> pulumi.Output['outputs.VnicAttachmentCreateVnicDetails']:
-        """
-        (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-        """
         return pulumi.get(self, "create_vnic_details")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter(name="nicIndex")
-    def nic_index(self) -> pulumi.Output[int]:
-        """
-        Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def nic_index(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "nic_index")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the VNIC attachment.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
-
-        If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
+    def subnet_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> pulumi.Output[str]:
-        """
-        Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-
-        Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
-        """
+    def vlan_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vlan_id")
 
     @property
     @pulumi.getter(name="vlanTag")
-    def vlan_tag(self) -> pulumi.Output[int]:
-        """
-        The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
-        """
+    def vlan_tag(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "vlan_tag")
 
     @property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the VNIC. Available after the attachment process is complete.
-        """
+    def vnic_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vnic_id")
 

@@ -8,6 +8,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateDetailHub;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateDetailSetting;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationGoldenGateDetail {
@@ -15,12 +16,12 @@ public final class GetMigrationGoldenGateDetail {
      * @return Details about Oracle GoldenGate Microservices.
      * 
      */
-    private List<GetMigrationGoldenGateDetailHub> hubs;
+    private @Nullable List<GetMigrationGoldenGateDetailHub> hubs;
     /**
      * @return Optional settings for Oracle GoldenGate processes
      * 
      */
-    private List<GetMigrationGoldenGateDetailSetting> settings;
+    private @Nullable List<GetMigrationGoldenGateDetailSetting> settings;
 
     private GetMigrationGoldenGateDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetMigrationGoldenGateDetail {
      * 
      */
     public List<GetMigrationGoldenGateDetailHub> hubs() {
-        return this.hubs;
+        return this.hubs == null ? List.of() : this.hubs;
     }
     /**
      * @return Optional settings for Oracle GoldenGate processes
      * 
      */
     public List<GetMigrationGoldenGateDetailSetting> settings() {
-        return this.settings;
+        return this.settings == null ? List.of() : this.settings;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetMigrationGoldenGateDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationGoldenGateDetailHub> hubs;
-        private List<GetMigrationGoldenGateDetailSetting> settings;
+        private @Nullable List<GetMigrationGoldenGateDetailHub> hubs;
+        private @Nullable List<GetMigrationGoldenGateDetailSetting> settings;
         public Builder() {}
         public Builder(GetMigrationGoldenGateDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetMigrationGoldenGateDetail {
         }
 
         @CustomType.Setter
-        public Builder hubs(List<GetMigrationGoldenGateDetailHub> hubs) {
-            this.hubs = Objects.requireNonNull(hubs);
+        public Builder hubs(@Nullable List<GetMigrationGoldenGateDetailHub> hubs) {
+            this.hubs = hubs;
             return this;
         }
         public Builder hubs(GetMigrationGoldenGateDetailHub... hubs) {
             return hubs(List.of(hubs));
         }
         @CustomType.Setter
-        public Builder settings(List<GetMigrationGoldenGateDetailSetting> settings) {
-            this.settings = Objects.requireNonNull(settings);
+        public Builder settings(@Nullable List<GetMigrationGoldenGateDetailSetting> settings) {
+            this.settings = settings;
             return this;
         }
         public Builder settings(GetMigrationGoldenGateDetailSetting... settings) {

@@ -112,58 +112,58 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The Oracle Data Safe's NAT Gateway IP Address.
         /// </summary>
-        public readonly string DataSafeNatGatewayIpAddress;
+        public readonly string? DataSafeNatGatewayIpAddress;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Details of the tenancy level global settings in Data Safe.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSafeConfigurationGlobalSettingResult> GlobalSettings;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if Data Safe is enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The current state of Data Safe.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeEnabled;
+        public readonly string? TimeEnabled;
         /// <summary>
         /// The URL of the Data Safe service.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetDataSafeConfigurationResult(
             string compartmentId,
 
-            string dataSafeNatGatewayIpAddress,
+            string? dataSafeNatGatewayIpAddress,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetDataSafeConfigurationGlobalSettingResult> globalSettings,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string state,
+            string? state,
 
-            string timeEnabled,
+            string? timeEnabled,
 
-            string url)
+            string? url)
         {
             CompartmentId = compartmentId;
             DataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;

@@ -66,11 +66,11 @@ export interface GetMonitoredResourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of monitored_resource_collection.
      */
-    readonly monitoredResourceCollections: outputs.StackMonitoring.GetMonitoredResourcesMonitoredResourceCollection[];
+    readonly monitoredResourceCollections?: outputs.StackMonitoring.GetMonitoredResourcesMonitoredResourceCollection[];
     /**
      * Property Name.
      */

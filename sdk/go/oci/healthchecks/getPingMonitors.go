@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -77,7 +76,7 @@ type GetPingMonitorsResult struct {
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion *string `pulumi:"homeRegion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of ping_monitors.
 	PingMonitors []GetPingMonitorsPingMonitor `pulumi:"pingMonitors"`
 }
@@ -125,12 +124,6 @@ func (o GetPingMonitorsResultOutput) ToGetPingMonitorsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetPingMonitorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsResult] {
-	return pulumix.Output[GetPingMonitorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o GetPingMonitorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPingMonitorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -151,8 +144,8 @@ func (o GetPingMonitorsResultOutput) HomeRegion() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPingMonitorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPingMonitorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of ping_monitors.

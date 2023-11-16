@@ -79,11 +79,11 @@ export interface GetLimitValuesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of limit_values.
      */
-    readonly limitValues: outputs.Limits.GetLimitValuesLimitValue[];
+    readonly limitValues?: outputs.Limits.GetLimitValuesLimitValue[];
     /**
      * The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      */

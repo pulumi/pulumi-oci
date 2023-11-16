@@ -18,7 +18,7 @@ public final class GetAssetsResult {
      * @return The list of asset_collection.
      * 
      */
-    private List<GetAssetsAssetCollection> assetCollections;
+    private @Nullable List<GetAssetsAssetCollection> assetCollections;
     private @Nullable String assetId;
     /**
      * @return The type of asset.
@@ -45,7 +45,7 @@ public final class GetAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Inventory ID to which an asset belongs to.
      * 
@@ -68,7 +68,7 @@ public final class GetAssetsResult {
      * 
      */
     public List<GetAssetsAssetCollection> assetCollections() {
-        return this.assetCollections;
+        return this.assetCollections == null ? List.of() : this.assetCollections;
     }
     public Optional<String> assetId() {
         return Optional.ofNullable(this.assetId);
@@ -108,8 +108,8 @@ public final class GetAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Inventory ID to which an asset belongs to.
@@ -142,14 +142,14 @@ public final class GetAssetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAssetsAssetCollection> assetCollections;
+        private @Nullable List<GetAssetsAssetCollection> assetCollections;
         private @Nullable String assetId;
         private @Nullable String assetType;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable String externalAssetKey;
         private @Nullable List<GetAssetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String inventoryId;
         private @Nullable String sourceKey;
         private @Nullable String state;
@@ -170,8 +170,8 @@ public final class GetAssetsResult {
         }
 
         @CustomType.Setter
-        public Builder assetCollections(List<GetAssetsAssetCollection> assetCollections) {
-            this.assetCollections = Objects.requireNonNull(assetCollections);
+        public Builder assetCollections(@Nullable List<GetAssetsAssetCollection> assetCollections) {
+            this.assetCollections = assetCollections;
             return this;
         }
         public Builder assetCollections(GetAssetsAssetCollection... assetCollections) {
@@ -211,8 +211,8 @@ public final class GetAssetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

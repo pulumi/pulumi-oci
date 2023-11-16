@@ -43,7 +43,7 @@ public final class GetManagementAgentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The install type, either AGENT or GATEWAY
      * 
@@ -58,7 +58,7 @@ public final class GetManagementAgentsResult {
      * @return The list of management_agents.
      * 
      */
-    private List<GetManagementAgentsManagementAgent> managementAgents;
+    private @Nullable List<GetManagementAgentsManagementAgent> managementAgents;
     /**
      * @return Platform Type
      * 
@@ -125,8 +125,8 @@ public final class GetManagementAgentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The install type, either AGENT or GATEWAY
@@ -147,7 +147,7 @@ public final class GetManagementAgentsResult {
      * 
      */
     public List<GetManagementAgentsManagementAgent> managementAgents() {
-        return this.managementAgents;
+        return this.managementAgents == null ? List.of() : this.managementAgents;
     }
     /**
      * @return Platform Type
@@ -195,10 +195,10 @@ public final class GetManagementAgentsResult {
         private @Nullable List<GetManagementAgentsFilter> filters;
         private @Nullable List<String> gatewayIds;
         private @Nullable String hostId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String installType;
         private @Nullable Boolean isCustomerDeployed;
-        private List<GetManagementAgentsManagementAgent> managementAgents;
+        private @Nullable List<GetManagementAgentsManagementAgent> managementAgents;
         private @Nullable List<String> platformTypes;
         private @Nullable List<String> pluginNames;
         private @Nullable String state;
@@ -271,8 +271,8 @@ public final class GetManagementAgentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -286,8 +286,8 @@ public final class GetManagementAgentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgents(List<GetManagementAgentsManagementAgent> managementAgents) {
-            this.managementAgents = Objects.requireNonNull(managementAgents);
+        public Builder managementAgents(@Nullable List<GetManagementAgentsManagementAgent> managementAgents) {
+            this.managementAgents = managementAgents;
             return this;
         }
         public Builder managementAgents(GetManagementAgentsManagementAgent... managementAgents) {

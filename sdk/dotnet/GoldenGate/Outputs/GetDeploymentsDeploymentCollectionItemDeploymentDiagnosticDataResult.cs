@@ -16,41 +16,41 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// Name of the bucket where the object is to be uploaded in the object storage
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The state of the deployment diagnostic collection.
         /// </summary>
-        public readonly string DiagnosticState;
+        public readonly string? DiagnosticState;
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Name of the diagnostic collected and uploaded to object storage
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeDiagnosticEnd;
+        public readonly string? TimeDiagnosticEnd;
         /// <summary>
         /// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeDiagnosticStart;
+        public readonly string? TimeDiagnosticStart;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(
-            string bucket,
+            string? bucket,
 
-            string diagnosticState,
+            string? diagnosticState,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string timeDiagnosticEnd,
+            string? timeDiagnosticEnd,
 
-            string timeDiagnosticStart)
+            string? timeDiagnosticStart)
         {
             Bucket = bucket;
             DiagnosticState = diagnosticState;

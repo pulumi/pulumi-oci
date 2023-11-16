@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract {
@@ -14,27 +16,27 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSe
      * @return Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
      * 
      */
-    private Integer longTransDuration;
+    private @Nullable Integer longTransDuration;
     /**
      * @return Extract performance.
      * 
      */
-    private String performanceProfile;
+    private @Nullable String performanceProfile;
 
     private GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract() {}
     /**
      * @return Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
      * 
      */
-    public Integer longTransDuration() {
-        return this.longTransDuration;
+    public Optional<Integer> longTransDuration() {
+        return Optional.ofNullable(this.longTransDuration);
     }
     /**
      * @return Extract performance.
      * 
      */
-    public String performanceProfile() {
-        return this.performanceProfile;
+    public Optional<String> performanceProfile() {
+        return Optional.ofNullable(this.performanceProfile);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSe
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer longTransDuration;
-        private String performanceProfile;
+        private @Nullable Integer longTransDuration;
+        private @Nullable String performanceProfile;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSe
         }
 
         @CustomType.Setter
-        public Builder longTransDuration(Integer longTransDuration) {
-            this.longTransDuration = Objects.requireNonNull(longTransDuration);
+        public Builder longTransDuration(@Nullable Integer longTransDuration) {
+            this.longTransDuration = longTransDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder performanceProfile(String performanceProfile) {
-            this.performanceProfile = Objects.requireNonNull(performanceProfile);
+        public Builder performanceProfile(@Nullable String performanceProfile) {
+            this.performanceProfile = performanceProfile;
             return this;
         }
         public GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtract build() {

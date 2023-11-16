@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -88,126 +89,126 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
     @Export(name="isCrossTenancyPeering", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCrossTenancyPeering;
+    private Output</* @Nullable */ Boolean> isCrossTenancyPeering;
 
     /**
      * @return Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    public Output<Boolean> isCrossTenancyPeering() {
-        return this.isCrossTenancyPeering;
+    public Output<Optional<Boolean>> isCrossTenancyPeering() {
+        return Codegen.optional(this.isCrossTenancyPeering);
     }
     /**
      * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      * 
      */
     @Export(name="peerAdvertisedCidr", refs={String.class}, tree="[0]")
-    private Output<String> peerAdvertisedCidr;
+    private Output</* @Nullable */ String> peerAdvertisedCidr;
 
     /**
      * @return The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      * 
      */
-    public Output<String> peerAdvertisedCidr() {
-        return this.peerAdvertisedCidr;
+    public Output<Optional<String>> peerAdvertisedCidr() {
+        return Codegen.optional(this.peerAdvertisedCidr);
     }
     /**
      * The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet&#39;s traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      * 
      */
     @Export(name="peerAdvertisedCidrDetails", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> peerAdvertisedCidrDetails;
+    private Output</* @Nullable */ List<String>> peerAdvertisedCidrDetails;
 
     /**
      * @return The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet&#39;s traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      * 
      */
-    public Output<List<String>> peerAdvertisedCidrDetails() {
-        return this.peerAdvertisedCidrDetails;
+    public Output<Optional<List<String>>> peerAdvertisedCidrDetails() {
+        return Codegen.optional(this.peerAdvertisedCidrDetails);
     }
     /**
      * The OCID of the LPG you want to peer with. Specifying a peer_id connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor&#39;s compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      */
     @Export(name="peerId", refs={String.class}, tree="[0]")
-    private Output<String> peerId;
+    private Output</* @Nullable */ String> peerId;
 
     /**
      * @return The OCID of the LPG you want to peer with. Specifying a peer_id connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor&#39;s compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      */
-    public Output<String> peerId() {
-        return this.peerId;
+    public Output<Optional<String>> peerId() {
+        return Codegen.optional(this.peerId);
     }
     /**
      * Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      * 
      */
     @Export(name="peeringStatus", refs={String.class}, tree="[0]")
-    private Output<String> peeringStatus;
+    private Output</* @Nullable */ String> peeringStatus;
 
     /**
      * @return Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      * 
      */
-    public Output<String> peeringStatus() {
-        return this.peeringStatus;
+    public Output<Optional<String>> peeringStatus() {
+        return Codegen.optional(this.peeringStatus);
     }
     /**
      * Additional information regarding the peering status, if applicable.
      * 
      */
     @Export(name="peeringStatusDetails", refs={String.class}, tree="[0]")
-    private Output<String> peeringStatusDetails;
+    private Output</* @Nullable */ String> peeringStatusDetails;
 
     /**
      * @return Additional information regarding the peering status, if applicable.
      * 
      */
-    public Output<String> peeringStatusDetails() {
-        return this.peeringStatusDetails;
+    public Output<Optional<String>> peeringStatusDetails() {
+        return Codegen.optional(this.peeringStatusDetails);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
@@ -218,7 +219,7 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
-    private Output<String> routeTableId;
+    private Output</* @Nullable */ String> routeTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
@@ -228,36 +229,36 @@ public class LocalPeeringGateway extends com.pulumi.resources.CustomResource {
      * For information about why you would associate a route table with an LPG, see [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
      * 
      */
-    public Output<String> routeTableId() {
-        return this.routeTableId;
+    public Output<Optional<String>> routeTableId() {
+        return Codegen.optional(this.routeTableId);
     }
     /**
      * The LPG&#39;s current lifecycle state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The LPG&#39;s current lifecycle state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
@@ -126,12 +125,6 @@ func (o GetNotificationTopicsResultOutput) ToGetNotificationTopicsResultOutput()
 
 func (o GetNotificationTopicsResultOutput) ToGetNotificationTopicsResultOutputWithContext(ctx context.Context) GetNotificationTopicsResultOutput {
 	return o
-}
-
-func (o GetNotificationTopicsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsResult] {
-	return pulumix.Output[GetNotificationTopicsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.

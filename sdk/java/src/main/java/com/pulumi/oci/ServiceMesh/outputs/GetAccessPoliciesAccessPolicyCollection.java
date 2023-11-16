@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ServiceMesh.outputs.GetAccessPoliciesAccessPolicyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAccessPoliciesAccessPolicyCollection {
-    private List<GetAccessPoliciesAccessPolicyCollectionItem> items;
+    private @Nullable List<GetAccessPoliciesAccessPolicyCollectionItem> items;
 
     private GetAccessPoliciesAccessPolicyCollection() {}
     public List<GetAccessPoliciesAccessPolicyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAccessPoliciesAccessPolicyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAccessPoliciesAccessPolicyCollectionItem> items;
+        private @Nullable List<GetAccessPoliciesAccessPolicyCollectionItem> items;
         public Builder() {}
         public Builder(GetAccessPoliciesAccessPolicyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAccessPoliciesAccessPolicyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAccessPoliciesAccessPolicyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAccessPoliciesAccessPolicyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAccessPoliciesAccessPolicyCollectionItem... items) {

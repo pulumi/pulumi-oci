@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration {
@@ -13,63 +15,63 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
      * @return Maximum number of connector instances in the pool that are idle and active.
      * 
      */
-    private Integer maxIdle;
+    private @Nullable Integer maxIdle;
     /**
      * @return Maximum number of connector instances in the pool that are idle and active.
      * 
      */
-    private Integer maxObjects;
+    private @Nullable Integer maxObjects;
     /**
      * @return Maximum time (in milliseconds) to wait for a free connector instance to become available before failing.
      * 
      */
-    private Integer maxWait;
+    private @Nullable Integer maxWait;
     /**
      * @return Minimum time (in milliseconds) to wait before evicting an idle conenctor instance from the pool.
      * 
      */
-    private Integer minEvictableIdleTimeMillis;
+    private @Nullable Integer minEvictableIdleTimeMillis;
     /**
      * @return Minimum number of idle connector instances in the pool.
      * 
      */
-    private Integer minIdle;
+    private @Nullable Integer minIdle;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration() {}
     /**
      * @return Maximum number of connector instances in the pool that are idle and active.
      * 
      */
-    public Integer maxIdle() {
-        return this.maxIdle;
+    public Optional<Integer> maxIdle() {
+        return Optional.ofNullable(this.maxIdle);
     }
     /**
      * @return Maximum number of connector instances in the pool that are idle and active.
      * 
      */
-    public Integer maxObjects() {
-        return this.maxObjects;
+    public Optional<Integer> maxObjects() {
+        return Optional.ofNullable(this.maxObjects);
     }
     /**
      * @return Maximum time (in milliseconds) to wait for a free connector instance to become available before failing.
      * 
      */
-    public Integer maxWait() {
-        return this.maxWait;
+    public Optional<Integer> maxWait() {
+        return Optional.ofNullable(this.maxWait);
     }
     /**
      * @return Minimum time (in milliseconds) to wait before evicting an idle conenctor instance from the pool.
      * 
      */
-    public Integer minEvictableIdleTimeMillis() {
-        return this.minEvictableIdleTimeMillis;
+    public Optional<Integer> minEvictableIdleTimeMillis() {
+        return Optional.ofNullable(this.minEvictableIdleTimeMillis);
     }
     /**
      * @return Minimum number of idle connector instances in the pool.
      * 
      */
-    public Integer minIdle() {
-        return this.minIdle;
+    public Optional<Integer> minIdle() {
+        return Optional.ofNullable(this.minIdle);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxIdle;
-        private Integer maxObjects;
-        private Integer maxWait;
-        private Integer minEvictableIdleTimeMillis;
-        private Integer minIdle;
+        private @Nullable Integer maxIdle;
+        private @Nullable Integer maxObjects;
+        private @Nullable Integer maxWait;
+        private @Nullable Integer minEvictableIdleTimeMillis;
+        private @Nullable Integer minIdle;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
 
         @CustomType.Setter
-        public Builder maxIdle(Integer maxIdle) {
-            this.maxIdle = Objects.requireNonNull(maxIdle);
+        public Builder maxIdle(@Nullable Integer maxIdle) {
+            this.maxIdle = maxIdle;
             return this;
         }
         @CustomType.Setter
-        public Builder maxObjects(Integer maxObjects) {
-            this.maxObjects = Objects.requireNonNull(maxObjects);
+        public Builder maxObjects(@Nullable Integer maxObjects) {
+            this.maxObjects = maxObjects;
             return this;
         }
         @CustomType.Setter
-        public Builder maxWait(Integer maxWait) {
-            this.maxWait = Objects.requireNonNull(maxWait);
+        public Builder maxWait(@Nullable Integer maxWait) {
+            this.maxWait = maxWait;
             return this;
         }
         @CustomType.Setter
-        public Builder minEvictableIdleTimeMillis(Integer minEvictableIdleTimeMillis) {
-            this.minEvictableIdleTimeMillis = Objects.requireNonNull(minEvictableIdleTimeMillis);
+        public Builder minEvictableIdleTimeMillis(@Nullable Integer minEvictableIdleTimeMillis) {
+            this.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder minIdle(Integer minIdle) {
-            this.minIdle = Objects.requireNonNull(minIdle);
+        public Builder minIdle(@Nullable Integer minIdle) {
+            this.minIdle = minIdle;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration build() {

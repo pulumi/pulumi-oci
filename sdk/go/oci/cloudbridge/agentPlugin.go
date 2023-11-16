@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -62,28 +61,28 @@ type AgentPlugin struct {
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) State to which the customer wants the plugin to move to.
-	DesiredState pulumi.StringOutput `pulumi:"desiredState"`
+	DesiredState pulumi.StringPtrOutput `pulumi:"desiredState"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Plugin identifier, which can be renamed.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// Unique plugin identifier path parameter.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PluginName pulumi.StringOutput `pulumi:"pluginName"`
 	// Plugin version.
-	PluginVersion pulumi.StringOutput `pulumi:"pluginVersion"`
+	PluginVersion pulumi.StringPtrOutput `pulumi:"pluginVersion"`
 	// The current state of the plugin.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAgentPlugin registers a new resource with the given unique name, arguments, and options.
@@ -233,12 +232,6 @@ func (i *AgentPlugin) ToAgentPluginOutputWithContext(ctx context.Context) AgentP
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginOutput)
 }
 
-func (i *AgentPlugin) ToOutput(ctx context.Context) pulumix.Output[*AgentPlugin] {
-	return pulumix.Output[*AgentPlugin]{
-		OutputState: i.ToAgentPluginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentPluginArrayInput is an input type that accepts AgentPluginArray and AgentPluginArrayOutput values.
 // You can construct a concrete instance of `AgentPluginArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i AgentPluginArray) ToAgentPluginArrayOutput() AgentPluginArrayOutput {
 
 func (i AgentPluginArray) ToAgentPluginArrayOutputWithContext(ctx context.Context) AgentPluginArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginArrayOutput)
-}
-
-func (i AgentPluginArray) ToOutput(ctx context.Context) pulumix.Output[[]*AgentPlugin] {
-	return pulumix.Output[[]*AgentPlugin]{
-		OutputState: i.ToAgentPluginArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AgentPluginMapInput is an input type that accepts AgentPluginMap and AgentPluginMapOutput values.
@@ -295,12 +282,6 @@ func (i AgentPluginMap) ToAgentPluginMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginMapOutput)
 }
 
-func (i AgentPluginMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AgentPlugin] {
-	return pulumix.Output[map[string]*AgentPlugin]{
-		OutputState: i.ToAgentPluginMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentPluginOutput struct{ *pulumi.OutputState }
 
 func (AgentPluginOutput) ElementType() reflect.Type {
@@ -315,12 +296,6 @@ func (o AgentPluginOutput) ToAgentPluginOutputWithContext(ctx context.Context) A
 	return o
 }
 
-func (o AgentPluginOutput) ToOutput(ctx context.Context) pulumix.Output[*AgentPlugin] {
-	return pulumix.Output[*AgentPlugin]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique Agent identifier path parameter.
 func (o AgentPluginOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.AgentId }).(pulumi.StringOutput)
@@ -332,8 +307,8 @@ func (o AgentPluginOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) State to which the customer wants the plugin to move to.
-func (o AgentPluginOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.DesiredState }).(pulumi.StringOutput)
+func (o AgentPluginOutput) DesiredState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.DesiredState }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -342,13 +317,13 @@ func (o AgentPluginOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o AgentPluginOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AgentPluginOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Plugin identifier, which can be renamed.
-func (o AgentPluginOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o AgentPluginOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Unique plugin identifier path parameter.
@@ -360,13 +335,13 @@ func (o AgentPluginOutput) PluginName() pulumi.StringOutput {
 }
 
 // Plugin version.
-func (o AgentPluginOutput) PluginVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.PluginVersion }).(pulumi.StringOutput)
+func (o AgentPluginOutput) PluginVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.PluginVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the plugin.
-func (o AgentPluginOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AgentPluginOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -375,13 +350,13 @@ func (o AgentPluginOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.
-func (o AgentPluginOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AgentPluginOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was updated. An RFC3339 formatted datetime string.
-func (o AgentPluginOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AgentPlugin) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AgentPluginOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentPlugin) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AgentPluginArrayOutput struct{ *pulumi.OutputState }
@@ -396,12 +371,6 @@ func (o AgentPluginArrayOutput) ToAgentPluginArrayOutput() AgentPluginArrayOutpu
 
 func (o AgentPluginArrayOutput) ToAgentPluginArrayOutputWithContext(ctx context.Context) AgentPluginArrayOutput {
 	return o
-}
-
-func (o AgentPluginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AgentPlugin] {
-	return pulumix.Output[[]*AgentPlugin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentPluginArrayOutput) Index(i pulumi.IntInput) AgentPluginOutput {
@@ -422,12 +391,6 @@ func (o AgentPluginMapOutput) ToAgentPluginMapOutput() AgentPluginMapOutput {
 
 func (o AgentPluginMapOutput) ToAgentPluginMapOutputWithContext(ctx context.Context) AgentPluginMapOutput {
 	return o
-}
-
-func (o AgentPluginMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AgentPlugin] {
-	return pulumix.Output[map[string]*AgentPlugin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentPluginMapOutput) MapIndex(k pulumi.StringInput) AgentPluginOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
@@ -65,7 +64,7 @@ type GetDbSystemComputePerformancesResult struct {
 	DbSystemShape               *string                                                    `pulumi:"dbSystemShape"`
 	Filters                     []GetDbSystemComputePerformancesFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDbSystemComputePerformancesOutput(ctx *pulumi.Context, args GetDbSystemComputePerformancesOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemComputePerformancesResultOutput {
@@ -107,12 +106,6 @@ func (o GetDbSystemComputePerformancesResultOutput) ToGetDbSystemComputePerforma
 	return o
 }
 
-func (o GetDbSystemComputePerformancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemComputePerformancesResult] {
-	return pulumix.Output[GetDbSystemComputePerformancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of db_system_compute_performances.
 func (o GetDbSystemComputePerformancesResultOutput) DbSystemComputePerformances() GetDbSystemComputePerformancesDbSystemComputePerformanceArrayOutput {
 	return o.ApplyT(func(v GetDbSystemComputePerformancesResult) []GetDbSystemComputePerformancesDbSystemComputePerformance {
@@ -129,8 +122,8 @@ func (o GetDbSystemComputePerformancesResultOutput) Filters() GetDbSystemCompute
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemComputePerformancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemComputePerformancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemComputePerformancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemComputePerformancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

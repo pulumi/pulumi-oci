@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentRefresh {
@@ -13,39 +15,39 @@ public final class GetFusionEnvironmentRefresh {
      * @return The source environment id for the last refresh
      * 
      */
-    private String sourceFusionEnvironmentId;
+    private @Nullable String sourceFusionEnvironmentId;
     /**
      * @return The time of when the last refresh finish
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The point of time of the latest DB backup for the last refresh
      * 
      */
-    private String timeOfRestorationPoint;
+    private @Nullable String timeOfRestorationPoint;
 
     private GetFusionEnvironmentRefresh() {}
     /**
      * @return The source environment id for the last refresh
      * 
      */
-    public String sourceFusionEnvironmentId() {
-        return this.sourceFusionEnvironmentId;
+    public Optional<String> sourceFusionEnvironmentId() {
+        return Optional.ofNullable(this.sourceFusionEnvironmentId);
     }
     /**
      * @return The time of when the last refresh finish
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The point of time of the latest DB backup for the last refresh
      * 
      */
-    public String timeOfRestorationPoint() {
-        return this.timeOfRestorationPoint;
+    public Optional<String> timeOfRestorationPoint() {
+        return Optional.ofNullable(this.timeOfRestorationPoint);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetFusionEnvironmentRefresh {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String sourceFusionEnvironmentId;
-        private String timeFinished;
-        private String timeOfRestorationPoint;
+        private @Nullable String sourceFusionEnvironmentId;
+        private @Nullable String timeFinished;
+        private @Nullable String timeOfRestorationPoint;
         public Builder() {}
         public Builder(GetFusionEnvironmentRefresh defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetFusionEnvironmentRefresh {
         }
 
         @CustomType.Setter
-        public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
-            this.sourceFusionEnvironmentId = Objects.requireNonNull(sourceFusionEnvironmentId);
+        public Builder sourceFusionEnvironmentId(@Nullable String sourceFusionEnvironmentId) {
+            this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfRestorationPoint(String timeOfRestorationPoint) {
-            this.timeOfRestorationPoint = Objects.requireNonNull(timeOfRestorationPoint);
+        public Builder timeOfRestorationPoint(@Nullable String timeOfRestorationPoint) {
+            this.timeOfRestorationPoint = timeOfRestorationPoint;
             return this;
         }
         public GetFusionEnvironmentRefresh build() {

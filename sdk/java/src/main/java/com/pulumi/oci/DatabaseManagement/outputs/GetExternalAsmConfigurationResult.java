@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmConfigurationInit
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalAsmConfigurationResult {
@@ -16,12 +18,12 @@ public final class GetExternalAsmConfigurationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of initialization parameters for the external ASM instances.
      * 
      */
-    private List<GetExternalAsmConfigurationInitParameter> initParameters;
+    private @Nullable List<GetExternalAsmConfigurationInitParameter> initParameters;
 
     private GetExternalAsmConfigurationResult() {}
     public String externalAsmId() {
@@ -31,15 +33,15 @@ public final class GetExternalAsmConfigurationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of initialization parameters for the external ASM instances.
      * 
      */
     public List<GetExternalAsmConfigurationInitParameter> initParameters() {
-        return this.initParameters;
+        return this.initParameters == null ? List.of() : this.initParameters;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetExternalAsmConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String externalAsmId;
-        private String id;
-        private List<GetExternalAsmConfigurationInitParameter> initParameters;
+        private @Nullable String id;
+        private @Nullable List<GetExternalAsmConfigurationInitParameter> initParameters;
         public Builder() {}
         public Builder(GetExternalAsmConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetExternalAsmConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder initParameters(List<GetExternalAsmConfigurationInitParameter> initParameters) {
-            this.initParameters = Objects.requireNonNull(initParameters);
+        public Builder initParameters(@Nullable List<GetExternalAsmConfigurationInitParameter> initParameters) {
+            this.initParameters = initParameters;
             return this;
         }
         public Builder initParameters(GetExternalAsmConfigurationInitParameter... initParameters) {

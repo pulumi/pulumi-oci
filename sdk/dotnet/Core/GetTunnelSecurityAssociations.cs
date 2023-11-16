@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IpsecId;
         public readonly string TunnelId;
         /// <summary>
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Core
         private GetTunnelSecurityAssociationsResult(
             ImmutableArray<Outputs.GetTunnelSecurityAssociationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string ipsecId,
 

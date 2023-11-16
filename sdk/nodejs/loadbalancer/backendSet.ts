@@ -101,7 +101,7 @@ export class BackendSet extends pulumi.CustomResource {
         return obj['__pulumiType'] === BackendSet.__pulumiType;
     }
 
-    public /*out*/ readonly backends!: pulumi.Output<outputs.LoadBalancer.BackendSetBackend[]>;
+    public /*out*/ readonly backends!: pulumi.Output<outputs.LoadBalancer.BackendSetBackend[] | undefined>;
     /**
      * (Updatable) The health check policy's configuration details.
      */
@@ -123,7 +123,7 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly lbCookieSessionPersistenceConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration>;
+    public readonly lbCookieSessionPersistenceConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
      */
@@ -155,14 +155,14 @@ export class BackendSet extends pulumi.CustomResource {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly sessionPersistenceConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetSessionPersistenceConfiguration>;
+    public readonly sessionPersistenceConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetSessionPersistenceConfiguration | undefined>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
     public readonly sslConfiguration!: pulumi.Output<outputs.LoadBalancer.BackendSetSslConfiguration | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a BackendSet resource with the given unique name, arguments, and options.

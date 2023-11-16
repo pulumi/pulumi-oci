@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsBaselineableMetricSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBaselineableMetricsBaselineableMetricSummaryCollection {
-    private List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items;
+    private @Nullable List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items;
 
     private GetBaselineableMetricsBaselineableMetricSummaryCollection() {}
     public List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items;
+        private @Nullable List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetBaselineableMetricsBaselineableMetricSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBaselineableMetricsBaselineableMetricSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBaselineableMetricsBaselineableMetricSummaryCollectionItem... items) {

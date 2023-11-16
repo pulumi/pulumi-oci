@@ -6,6 +6,8 @@ package com.pulumi.oci.Waf.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkAddressListVcnAddress {
@@ -13,27 +15,27 @@ public final class GetNetworkAddressListVcnAddress {
      * @return A private IP address or CIDR IP address range.
      * 
      */
-    private String addresses;
+    private @Nullable String addresses;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetNetworkAddressListVcnAddress() {}
     /**
      * @return A private IP address or CIDR IP address range.
      * 
      */
-    public String addresses() {
-        return this.addresses;
+    public Optional<String> addresses() {
+        return Optional.ofNullable(this.addresses);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetNetworkAddressListVcnAddress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String addresses;
-        private String vcnId;
+        private @Nullable String addresses;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetNetworkAddressListVcnAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetNetworkAddressListVcnAddress {
         }
 
         @CustomType.Setter
-        public Builder addresses(String addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable String addresses) {
+            this.addresses = addresses;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetNetworkAddressListVcnAddress build() {

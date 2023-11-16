@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSafeConfigurationResult {
@@ -23,43 +25,43 @@ public final class GetDataSafeConfigurationResult {
      * @return The Oracle Data Safe&#39;s NAT Gateway IP Address.
      * 
      */
-    private String dataSafeNatGatewayIpAddress;
+    private @Nullable String dataSafeNatGatewayIpAddress;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Details of the tenancy level global settings in Data Safe.
      * 
      */
-    private List<GetDataSafeConfigurationGlobalSetting> globalSettings;
-    private String id;
+    private @Nullable List<GetDataSafeConfigurationGlobalSetting> globalSettings;
+    private @Nullable String id;
     /**
      * @return Indicates if Data Safe is enabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The current state of Data Safe.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeEnabled;
+    private @Nullable String timeEnabled;
     /**
      * @return The URL of the Data Safe service.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetDataSafeConfigurationResult() {}
     /**
@@ -73,60 +75,60 @@ public final class GetDataSafeConfigurationResult {
      * @return The Oracle Data Safe&#39;s NAT Gateway IP Address.
      * 
      */
-    public String dataSafeNatGatewayIpAddress() {
-        return this.dataSafeNatGatewayIpAddress;
+    public Optional<String> dataSafeNatGatewayIpAddress() {
+        return Optional.ofNullable(this.dataSafeNatGatewayIpAddress);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Details of the tenancy level global settings in Data Safe.
      * 
      */
     public List<GetDataSafeConfigurationGlobalSetting> globalSettings() {
-        return this.globalSettings;
+        return this.globalSettings == null ? List.of() : this.globalSettings;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if Data Safe is enabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The current state of Data Safe.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeEnabled() {
-        return this.timeEnabled;
+    public Optional<String> timeEnabled() {
+        return Optional.ofNullable(this.timeEnabled);
     }
     /**
      * @return The URL of the Data Safe service.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -139,15 +141,15 @@ public final class GetDataSafeConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String dataSafeNatGatewayIpAddress;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private List<GetDataSafeConfigurationGlobalSetting> globalSettings;
-        private String id;
-        private Boolean isEnabled;
-        private String state;
-        private String timeEnabled;
-        private String url;
+        private @Nullable String dataSafeNatGatewayIpAddress;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<GetDataSafeConfigurationGlobalSetting> globalSettings;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String state;
+        private @Nullable String timeEnabled;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetDataSafeConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -169,51 +171,51 @@ public final class GetDataSafeConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataSafeNatGatewayIpAddress(String dataSafeNatGatewayIpAddress) {
-            this.dataSafeNatGatewayIpAddress = Objects.requireNonNull(dataSafeNatGatewayIpAddress);
+        public Builder dataSafeNatGatewayIpAddress(@Nullable String dataSafeNatGatewayIpAddress) {
+            this.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder globalSettings(List<GetDataSafeConfigurationGlobalSetting> globalSettings) {
-            this.globalSettings = Objects.requireNonNull(globalSettings);
+        public Builder globalSettings(@Nullable List<GetDataSafeConfigurationGlobalSetting> globalSettings) {
+            this.globalSettings = globalSettings;
             return this;
         }
         public Builder globalSettings(GetDataSafeConfigurationGlobalSetting... globalSettings) {
             return globalSettings(List.of(globalSettings));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnabled(String timeEnabled) {
-            this.timeEnabled = Objects.requireNonNull(timeEnabled);
+        public Builder timeEnabled(@Nullable String timeEnabled) {
+            this.timeEnabled = timeEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetDataSafeConfigurationResult build() {

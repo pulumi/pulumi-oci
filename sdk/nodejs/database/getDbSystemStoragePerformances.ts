@@ -57,12 +57,12 @@ export interface GetDbSystemStoragePerformancesResult {
     /**
      * The list of db_system_storage_performances.
      */
-    readonly dbSystemStoragePerformances: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformance[];
+    readonly dbSystemStoragePerformances?: outputs.Database.GetDbSystemStoragePerformancesDbSystemStoragePerformance[];
     readonly filters?: outputs.Database.GetDbSystemStoragePerformancesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * ShapeType of the DbSystems,INTEL or AMD
      */

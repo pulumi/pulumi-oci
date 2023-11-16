@@ -68,19 +68,19 @@ export class FusionEnvironmentDataMaskingActivity extends pulumi.CustomResource 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly isResumeDataMasking!: pulumi.Output<boolean>;
+    public readonly isResumeDataMasking!: pulumi.Output<boolean | undefined>;
     /**
      * The current state of the DataMaskingActivity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the data masking activity ended. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeMaskingFinish!: pulumi.Output<string>;
+    public /*out*/ readonly timeMaskingFinish!: pulumi.Output<string | undefined>;
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeMaskingStart!: pulumi.Output<string>;
+    public /*out*/ readonly timeMaskingStart!: pulumi.Output<string | undefined>;
 
     /**
      * Create a FusionEnvironmentDataMaskingActivity resource with the given unique name, arguments, and options.

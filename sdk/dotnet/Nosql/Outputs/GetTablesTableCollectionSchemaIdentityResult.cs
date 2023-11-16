@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Nosql.Outputs
     [OutputType]
     public sealed class GetTablesTableCollectionSchemaIdentityResult
     {
-        public readonly string ColumnName;
-        public readonly bool IsAlways;
-        public readonly bool IsNull;
+        public readonly string? ColumnName;
+        public readonly bool? IsAlways;
+        public readonly bool? IsNull;
 
         [OutputConstructor]
         private GetTablesTableCollectionSchemaIdentityResult(
-            string columnName,
+            string? columnName,
 
-            bool isAlways,
+            bool? isAlways,
 
-            bool isNull)
+            bool? isNull)
         {
             ColumnName = columnName;
             IsAlways = isAlways;

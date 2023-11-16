@@ -8,6 +8,8 @@ import com.pulumi.oci.GoldenGate.outputs.GetTrailSequencesTrailSequenceCollectio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTrailSequencesTrailSequenceCollection {
@@ -15,12 +17,12 @@ public final class GetTrailSequencesTrailSequenceCollection {
      * @return An array of TrailSequences.
      * 
      */
-    private List<GetTrailSequencesTrailSequenceCollectionItem> items;
+    private @Nullable List<GetTrailSequencesTrailSequenceCollectionItem> items;
     /**
      * @return The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeLastFetched;
+    private @Nullable String timeLastFetched;
 
     private GetTrailSequencesTrailSequenceCollection() {}
     /**
@@ -28,14 +30,14 @@ public final class GetTrailSequencesTrailSequenceCollection {
      * 
      */
     public List<GetTrailSequencesTrailSequenceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeLastFetched() {
-        return this.timeLastFetched;
+    public Optional<String> timeLastFetched() {
+        return Optional.ofNullable(this.timeLastFetched);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetTrailSequencesTrailSequenceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTrailSequencesTrailSequenceCollectionItem> items;
-        private String timeLastFetched;
+        private @Nullable List<GetTrailSequencesTrailSequenceCollectionItem> items;
+        private @Nullable String timeLastFetched;
         public Builder() {}
         public Builder(GetTrailSequencesTrailSequenceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetTrailSequencesTrailSequenceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetTrailSequencesTrailSequenceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetTrailSequencesTrailSequenceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetTrailSequencesTrailSequenceCollectionItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder timeLastFetched(String timeLastFetched) {
-            this.timeLastFetched = Objects.requireNonNull(timeLastFetched);
+        public Builder timeLastFetched(@Nullable String timeLastFetched) {
+            this.timeLastFetched = timeLastFetched;
             return this;
         }
         public GetTrailSequencesTrailSequenceCollection build() {

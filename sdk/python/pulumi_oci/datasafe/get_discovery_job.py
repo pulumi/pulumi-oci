@@ -100,18 +100,12 @@ class GetDiscoveryJobResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the discovery job.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -121,178 +115,112 @@ class GetDiscoveryJobResult:
 
     @property
     @pulumi.getter(name="discoveryType")
-    def discovery_type(self) -> str:
-        """
-        The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        """
+    def discovery_type(self) -> Optional[str]:
         return pulumi.get(self, "discovery_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the discovery job.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the discovery job.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAppDefinedRelationDiscoveryEnabled")
-    def is_app_defined_relation_discovery_enabled(self) -> bool:
-        """
-        Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
-        """
+    def is_app_defined_relation_discovery_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_app_defined_relation_discovery_enabled")
 
     @property
     @pulumi.getter(name="isIncludeAllSchemas")
-    def is_include_all_schemas(self) -> bool:
-        """
-        Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
-        """
+    def is_include_all_schemas(self) -> Optional[bool]:
         return pulumi.get(self, "is_include_all_schemas")
 
     @property
     @pulumi.getter(name="isIncludeAllSensitiveTypes")
-    def is_include_all_sensitive_types(self) -> bool:
-        """
-        Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
-        """
+    def is_include_all_sensitive_types(self) -> Optional[bool]:
         return pulumi.get(self, "is_include_all_sensitive_types")
 
     @property
     @pulumi.getter(name="isSampleDataCollectionEnabled")
-    def is_sample_data_collection_enabled(self) -> bool:
-        """
-        Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
-        """
+    def is_sample_data_collection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_sample_data_collection_enabled")
 
     @property
     @pulumi.getter(name="schemasForDiscoveries")
-    def schemas_for_discoveries(self) -> Sequence[str]:
-        """
-        The schemas used for data discovery.
-        """
+    def schemas_for_discoveries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas_for_discoveries")
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
-    def sensitive_data_model_id(self) -> str:
-        """
-        The OCID of the sensitive data model associated with the discovery job.
-        """
+    def sensitive_data_model_id(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
-    def sensitive_type_ids_for_discoveries(self) -> Sequence[str]:
-        """
-        The OCIDs of the sensitive types used for data discovery.
-        """
+    def sensitive_type_ids_for_discoveries(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the discovery job.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target database associated with the discovery job.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="totalColumnsScanned")
-    def total_columns_scanned(self) -> str:
-        """
-        The total number of columns scanned by the discovery job.
-        """
+    def total_columns_scanned(self) -> Optional[str]:
         return pulumi.get(self, "total_columns_scanned")
 
     @property
     @pulumi.getter(name="totalDeletedSensitiveColumns")
-    def total_deleted_sensitive_columns(self) -> str:
-        """
-        The total number of deleted sensitive columns identified by the discovery job.
-        """
+    def total_deleted_sensitive_columns(self) -> Optional[str]:
         return pulumi.get(self, "total_deleted_sensitive_columns")
 
     @property
     @pulumi.getter(name="totalModifiedSensitiveColumns")
-    def total_modified_sensitive_columns(self) -> str:
-        """
-        The total number of modified sensitive columns identified by the discovery job.
-        """
+    def total_modified_sensitive_columns(self) -> Optional[str]:
         return pulumi.get(self, "total_modified_sensitive_columns")
 
     @property
     @pulumi.getter(name="totalNewSensitiveColumns")
-    def total_new_sensitive_columns(self) -> str:
-        """
-        The total number of new sensitive columns identified by the discovery job.
-        """
+    def total_new_sensitive_columns(self) -> Optional[str]:
         return pulumi.get(self, "total_new_sensitive_columns")
 
     @property
     @pulumi.getter(name="totalObjectsScanned")
-    def total_objects_scanned(self) -> str:
-        """
-        The total number of objects (tables and editioning views) scanned by the discovery job.
-        """
+    def total_objects_scanned(self) -> Optional[str]:
         return pulumi.get(self, "total_objects_scanned")
 
     @property
     @pulumi.getter(name="totalSchemasScanned")
-    def total_schemas_scanned(self) -> str:
-        """
-        The total number of schemas scanned by the discovery job.
-        """
+    def total_schemas_scanned(self) -> Optional[str]:
         return pulumi.get(self, "total_schemas_scanned")
 
 
@@ -332,21 +260,7 @@ class AwaitableGetDiscoveryJobResult(GetDiscoveryJobResult):
 def get_discovery_job(discovery_job_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobResult:
     """
-    This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified discovery job.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"])
-    ```
-
-
-    :param str discovery_job_id: The OCID of the discovery job.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['discoveryJobId'] = discovery_job_id
@@ -385,20 +299,6 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
 def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobResult]:
     """
-    This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified discovery job.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_job = oci.DataSafe.get_discovery_job(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"])
-    ```
-
-
-    :param str discovery_job_id: The OCID of the discovery job.
+    Use this data source to access information about an existing resource.
     """
     ...

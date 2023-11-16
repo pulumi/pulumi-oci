@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         /// </summary>
-        public readonly string CertificateAuthorityMaxValidityDuration;
+        public readonly string? CertificateAuthorityMaxValidityDuration;
         /// <summary>
         /// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         /// </summary>
-        public readonly string LeafCertificateMaxValidityDuration;
+        public readonly string? LeafCertificateMaxValidityDuration;
         /// <summary>
         /// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
         /// </summary>
-        public readonly string RuleType;
+        public readonly string? RuleType;
 
         [OutputConstructor]
         private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleResult(
-            string certificateAuthorityMaxValidityDuration,
+            string? certificateAuthorityMaxValidityDuration,
 
-            string leafCertificateMaxValidityDuration,
+            string? leafCertificateMaxValidityDuration,
 
-            string ruleType)
+            string? ruleType)
         {
             CertificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             LeafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedemptionsRedemptionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRedemptionsRedemptionCollection {
@@ -14,7 +15,7 @@ public final class GetSubscriptionRedemptionsRedemptionCollection {
      * @return The list of redemption summary.
      * 
      */
-    private List<GetSubscriptionRedemptionsRedemptionCollectionItem> items;
+    private @Nullable List<GetSubscriptionRedemptionsRedemptionCollectionItem> items;
 
     private GetSubscriptionRedemptionsRedemptionCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSubscriptionRedemptionsRedemptionCollection {
      * 
      */
     public List<GetSubscriptionRedemptionsRedemptionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSubscriptionRedemptionsRedemptionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionRedemptionsRedemptionCollectionItem> items;
+        private @Nullable List<GetSubscriptionRedemptionsRedemptionCollectionItem> items;
         public Builder() {}
         public Builder(GetSubscriptionRedemptionsRedemptionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSubscriptionRedemptionsRedemptionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionRedemptionsRedemptionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionRedemptionsRedemptionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRedemptionsRedemptionCollectionItem... items) {

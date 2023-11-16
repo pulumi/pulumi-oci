@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -77,83 +76,83 @@ type GetDomainsMyDeviceResult struct {
 	// Device additional attributes
 	AdditionalAttributes []GetDomainsMyDeviceAdditionalAttribute `pulumi:"additionalAttributes"`
 	// Mobile Authenticator App Version
-	AppVersion    string   `pulumi:"appVersion"`
+	AppVersion    *string  `pulumi:"appVersion"`
 	AttributeSets []string `pulumi:"attributeSets"`
 	Attributes    *string  `pulumi:"attributes"`
 	// Authentication Factors
 	AuthenticationFactors []GetDomainsMyDeviceAuthenticationFactor `pulumi:"authenticationFactors"`
 	// Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
-	AuthenticationMethod string  `pulumi:"authenticationMethod"`
+	AuthenticationMethod *string `pulumi:"authenticationMethod"`
 	Authorization        *string `pulumi:"authorization"`
 	// Device base public Key
-	BasePublicKey string `pulumi:"basePublicKey"`
+	BasePublicKey *string `pulumi:"basePublicKey"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// Country code of user's Phone Number
-	CountryCode string `pulumi:"countryCode"`
+	CountryCode *string `pulumi:"countryCode"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Device hardware name/model
-	DeviceType string `pulumi:"deviceType"`
+	DeviceType *string `pulumi:"deviceType"`
 	// Unique id sent from device
-	DeviceUuid string `pulumi:"deviceUuid"`
+	DeviceUuid *string `pulumi:"deviceUuid"`
 	// Device friendly display name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// Attribute added for replication log, it is not used by IDCS, just added as place holder
-	ExpiresOn int `pulumi:"expiresOn"`
+	ExpiresOn *int `pulumi:"expiresOn"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsMyDeviceIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                            `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsMyDeviceIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Flag that indicates whether the device is enrolled for account recovery
-	IsAccRecEnabled bool `pulumi:"isAccRecEnabled"`
+	IsAccRecEnabled *bool `pulumi:"isAccRecEnabled"`
 	// Device Compliance Status
-	IsCompliant bool `pulumi:"isCompliant"`
+	IsCompliant *bool `pulumi:"isCompliant"`
 	// Last Sync time for device
-	LastSyncTime string `pulumi:"lastSyncTime"`
+	LastSyncTime *string `pulumi:"lastSyncTime"`
 	// The most recent timestamp when the device was successfully validated using one time passcode
-	LastValidatedTime string `pulumi:"lastValidatedTime"`
+	LastValidatedTime *string `pulumi:"lastValidatedTime"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas      []GetDomainsMyDeviceMeta `pulumi:"metas"`
 	MyDeviceId string                   `pulumi:"myDeviceId"`
 	// Device Non Compliances
 	NonCompliances []GetDomainsMyDeviceNonCompliance `pulumi:"nonCompliances"`
 	// The OCID of the user
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// Mobile Authenticator App Package Id
-	PackageId string `pulumi:"packageId"`
+	PackageId *string `pulumi:"packageId"`
 	// User's Phone Number
-	PhoneNumber string `pulumi:"phoneNumber"`
+	PhoneNumber *string `pulumi:"phoneNumber"`
 	// Device Platform
-	Platform string `pulumi:"platform"`
+	Platform *string `pulumi:"platform"`
 	// Push Notification target. Reference to Device notification related resource
 	PushNotificationTargets []GetDomainsMyDevicePushNotificationTarget `pulumi:"pushNotificationTargets"`
 	// Additional comments/reasons for the change in device status
-	Reason                    string  `pulumi:"reason"`
+	Reason                    *string `pulumi:"reason"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
-	Seed string `pulumi:"seed"`
+	Seed *string `pulumi:"seed"`
 	// Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
-	SeedDekId string `pulumi:"seedDekId"`
+	SeedDekId *string `pulumi:"seedDekId"`
 	// Device Status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMyDeviceTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// User's third-party authentication factor details
 	ThirdPartyFactors []GetDomainsMyDeviceThirdPartyFactor `pulumi:"thirdPartyFactors"`
 	// Device member
@@ -208,12 +207,6 @@ func (o GetDomainsMyDeviceResultOutput) ToGetDomainsMyDeviceResultOutputWithCont
 	return o
 }
 
-func (o GetDomainsMyDeviceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyDeviceResult] {
-	return pulumix.Output[GetDomainsMyDeviceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Device additional attributes
 func (o GetDomainsMyDeviceResultOutput) AdditionalAttributes() GetDomainsMyDeviceAdditionalAttributeArrayOutput {
 	return o.ApplyT(func(v GetDomainsMyDeviceResult) []GetDomainsMyDeviceAdditionalAttribute {
@@ -222,8 +215,8 @@ func (o GetDomainsMyDeviceResultOutput) AdditionalAttributes() GetDomainsMyDevic
 }
 
 // Mobile Authenticator App Version
-func (o GetDomainsMyDeviceResultOutput) AppVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.AppVersion }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) AppVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.AppVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyDeviceResultOutput) AttributeSets() pulumi.StringArrayOutput {
@@ -242,8 +235,8 @@ func (o GetDomainsMyDeviceResultOutput) AuthenticationFactors() GetDomainsMyDevi
 }
 
 // Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
-func (o GetDomainsMyDeviceResultOutput) AuthenticationMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.AuthenticationMethod }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) AuthenticationMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.AuthenticationMethod }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyDeviceResultOutput) Authorization() pulumi.StringPtrOutput {
@@ -251,58 +244,58 @@ func (o GetDomainsMyDeviceResultOutput) Authorization() pulumi.StringPtrOutput {
 }
 
 // Device base public Key
-func (o GetDomainsMyDeviceResultOutput) BasePublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.BasePublicKey }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) BasePublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.BasePublicKey }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o GetDomainsMyDeviceResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // Country code of user's Phone Number
-func (o GetDomainsMyDeviceResultOutput) CountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.CountryCode }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o GetDomainsMyDeviceResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o GetDomainsMyDeviceResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Device hardware name/model
-func (o GetDomainsMyDeviceResultOutput) DeviceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.DeviceType }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) DeviceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.DeviceType }).(pulumi.StringPtrOutput)
 }
 
 // Unique id sent from device
-func (o GetDomainsMyDeviceResultOutput) DeviceUuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.DeviceUuid }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) DeviceUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.DeviceUuid }).(pulumi.StringPtrOutput)
 }
 
 // Device friendly display name
-func (o GetDomainsMyDeviceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o GetDomainsMyDeviceResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // Attribute added for replication log, it is not used by IDCS, just added as place holder
-func (o GetDomainsMyDeviceResultOutput) ExpiresOn() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) int { return v.ExpiresOn }).(pulumi.IntOutput)
+func (o GetDomainsMyDeviceResultOutput) ExpiresOn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *int { return v.ExpiresOn }).(pulumi.IntPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o GetDomainsMyDeviceResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyDeviceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -320,8 +313,8 @@ func (o GetDomainsMyDeviceResultOutput) IdcsLastModifiedBies() GetDomainsMyDevic
 }
 
 // The release number when the resource was upgraded.
-func (o GetDomainsMyDeviceResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -330,23 +323,23 @@ func (o GetDomainsMyDeviceResultOutput) IdcsPreventedOperations() pulumi.StringA
 }
 
 // Flag that indicates whether the device is enrolled for account recovery
-func (o GetDomainsMyDeviceResultOutput) IsAccRecEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) bool { return v.IsAccRecEnabled }).(pulumi.BoolOutput)
+func (o GetDomainsMyDeviceResultOutput) IsAccRecEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *bool { return v.IsAccRecEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Device Compliance Status
-func (o GetDomainsMyDeviceResultOutput) IsCompliant() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) bool { return v.IsCompliant }).(pulumi.BoolOutput)
+func (o GetDomainsMyDeviceResultOutput) IsCompliant() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *bool { return v.IsCompliant }).(pulumi.BoolPtrOutput)
 }
 
 // Last Sync time for device
-func (o GetDomainsMyDeviceResultOutput) LastSyncTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.LastSyncTime }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) LastSyncTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.LastSyncTime }).(pulumi.StringPtrOutput)
 }
 
 // The most recent timestamp when the device was successfully validated using one time passcode
-func (o GetDomainsMyDeviceResultOutput) LastValidatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.LastValidatedTime }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) LastValidatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.LastValidatedTime }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -364,23 +357,23 @@ func (o GetDomainsMyDeviceResultOutput) NonCompliances() GetDomainsMyDeviceNonCo
 }
 
 // The OCID of the user
-func (o GetDomainsMyDeviceResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Mobile Authenticator App Package Id
-func (o GetDomainsMyDeviceResultOutput) PackageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.PackageId }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) PackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.PackageId }).(pulumi.StringPtrOutput)
 }
 
 // User's Phone Number
-func (o GetDomainsMyDeviceResultOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.PhoneNumber }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
 // Device Platform
-func (o GetDomainsMyDeviceResultOutput) Platform() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.Platform }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.Platform }).(pulumi.StringPtrOutput)
 }
 
 // Push Notification target. Reference to Device notification related resource
@@ -391,8 +384,8 @@ func (o GetDomainsMyDeviceResultOutput) PushNotificationTargets() GetDomainsMyDe
 }
 
 // Additional comments/reasons for the change in device status
-func (o GetDomainsMyDeviceResultOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyDeviceResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -405,18 +398,18 @@ func (o GetDomainsMyDeviceResultOutput) Schemas() pulumi.StringArrayOutput {
 }
 
 // Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
-func (o GetDomainsMyDeviceResultOutput) Seed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.Seed }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) Seed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.Seed }).(pulumi.StringPtrOutput)
 }
 
 // Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
-func (o GetDomainsMyDeviceResultOutput) SeedDekId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.SeedDekId }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) SeedDekId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.SeedDekId }).(pulumi.StringPtrOutput)
 }
 
 // Device Status
-func (o GetDomainsMyDeviceResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -425,8 +418,8 @@ func (o GetDomainsMyDeviceResultOutput) Tags() GetDomainsMyDeviceTagArrayOutput 
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o GetDomainsMyDeviceResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyDeviceResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o GetDomainsMyDeviceResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyDeviceResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // User's third-party authentication factor details

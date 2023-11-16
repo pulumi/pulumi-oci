@@ -59,27 +59,21 @@ class GetRrsetResult:
     @property
     @pulumi.getter
     def domain(self) -> str:
-        """
-        The fully qualified domain name where the record can be located.
-        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRrsetItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetRrsetItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def rtype(self) -> str:
-        """
-        The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        """
         return pulumi.get(self, "rtype")
 
     @property
@@ -129,36 +123,7 @@ def get_rrset(compartment_id: Optional[str] = None,
               zone_version: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRrsetResult:
     """
-    This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-    private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_rrset = oci.Dns.get_rrset(domain=var["rrset_domain"],
-        rtype=var["rrset_rtype"],
-        zone_name_or_id=oci_dns_zone["test_zone"]["id"],
-        compartment_id=var["compartment_id"],
-        scope=var["rrset_scope"],
-        view_id=oci_dns_view["test_view"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
-    :param str rtype: The type of the target RRSet within the target zone.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope.
-           This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
-    :param str view_id: The OCID of the view the resource is associated with.
-    :param str zone_name_or_id: The name or OCID of the target zone.
-    :param str zone_version: The version of the zone for which data is requested.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -193,35 +158,6 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = Non
                      zone_version: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRrsetResult]:
     """
-    This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-    private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_rrset = oci.Dns.get_rrset(domain=var["rrset_domain"],
-        rtype=var["rrset_rtype"],
-        zone_name_or_id=oci_dns_zone["test_zone"]["id"],
-        compartment_id=var["compartment_id"],
-        scope=var["rrset_scope"],
-        view_id=oci_dns_view["test_view"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
-    :param str rtype: The type of the target RRSet within the target zone.
-    :param str scope: Specifies to operate only on resources that have a matching DNS scope.
-           This value will be null for zones in the global DNS and `PRIVATE` when listing private Rrsets.
-    :param str view_id: The OCID of the view the resource is associated with.
-    :param str zone_name_or_id: The name or OCID of the target zone.
-    :param str zone_version: The version of the zone for which data is requested.
+    Use this data source to access information about an existing resource.
     """
     ...

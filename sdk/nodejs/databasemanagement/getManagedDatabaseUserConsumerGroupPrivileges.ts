@@ -61,12 +61,12 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegesResult {
     /**
      * The list of consumer_group_privilege_collection.
      */
-    readonly consumerGroupPrivilegeCollections: outputs.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection[];
+    readonly consumerGroupPrivilegeCollections?: outputs.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the granted consumer group privilege.

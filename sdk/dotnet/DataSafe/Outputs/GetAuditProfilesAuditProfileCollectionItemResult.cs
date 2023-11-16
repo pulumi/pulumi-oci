@@ -16,122 +16,122 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         /// </summary>
-        public readonly string AuditCollectedVolume;
+        public readonly string? AuditCollectedVolume;
         /// <summary>
         /// A optional filter to return only resources that match the specified id.
         /// </summary>
-        public readonly string AuditProfileId;
+        public readonly string? AuditProfileId;
         /// <summary>
         /// Indicates the list of available audit trails on the target.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAuditProfilesAuditProfileCollectionItemAuditTrailResult> AuditTrails;
-        public readonly int ChangeRetentionTrigger;
+        public readonly int? ChangeRetentionTrigger;
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the audit profile.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the audit profile.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A optional filter to return only resources that match the specified retention configured value.
         /// </summary>
-        public readonly bool IsOverrideGlobalRetentionSetting;
+        public readonly bool? IsOverrideGlobalRetentionSetting;
         /// <summary>
         /// Indicates if you want to continue audit record collection beyond the free limit of one million audit records per month per target database, incurring additional charges. The default value is inherited from the global settings. You can change at the global level or at the target level.
         /// </summary>
-        public readonly bool IsPaidUsageEnabled;
+        public readonly bool? IsPaidUsageEnabled;
         /// <summary>
         /// Details about the current state of the audit profile in Data Safe.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
         /// </summary>
-        public readonly int OfflineMonths;
+        public readonly int? OfflineMonths;
         /// <summary>
         /// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
         /// </summary>
-        public readonly int OnlineMonths;
+        public readonly int? OnlineMonths;
         /// <summary>
         /// A optional filter to return only resources that match the specified lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The date and time the audit profile was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the audit profile was updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAuditProfilesAuditProfileCollectionItemResult(
-            string auditCollectedVolume,
+            string? auditCollectedVolume,
 
-            string auditProfileId,
+            string? auditProfileId,
 
             ImmutableArray<Outputs.GetAuditProfilesAuditProfileCollectionItemAuditTrailResult> auditTrails,
 
-            int changeRetentionTrigger,
+            int? changeRetentionTrigger,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isOverrideGlobalRetentionSetting,
+            bool? isOverrideGlobalRetentionSetting,
 
-            bool isPaidUsageEnabled,
+            bool? isPaidUsageEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int offlineMonths,
+            int? offlineMonths,
 
-            int onlineMonths,
+            int? onlineMonths,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetId,
+            string? targetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AuditCollectedVolume = auditCollectedVolume;
             AuditProfileId = auditProfileId;

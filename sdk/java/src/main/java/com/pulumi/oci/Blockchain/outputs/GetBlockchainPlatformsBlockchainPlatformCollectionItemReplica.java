@@ -6,6 +6,8 @@ package com.pulumi.oci.Blockchain.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica {
@@ -13,39 +15,39 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
      * @return Number of CA replicas
      * 
      */
-    private Integer caCount;
+    private @Nullable Integer caCount;
     /**
      * @return Number of console replicas
      * 
      */
-    private Integer consoleCount;
+    private @Nullable Integer consoleCount;
     /**
      * @return Number of REST proxy replicas
      * 
      */
-    private Integer proxyCount;
+    private @Nullable Integer proxyCount;
 
     private GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica() {}
     /**
      * @return Number of CA replicas
      * 
      */
-    public Integer caCount() {
-        return this.caCount;
+    public Optional<Integer> caCount() {
+        return Optional.ofNullable(this.caCount);
     }
     /**
      * @return Number of console replicas
      * 
      */
-    public Integer consoleCount() {
-        return this.consoleCount;
+    public Optional<Integer> consoleCount() {
+        return Optional.ofNullable(this.consoleCount);
     }
     /**
      * @return Number of REST proxy replicas
      * 
      */
-    public Integer proxyCount() {
-        return this.proxyCount;
+    public Optional<Integer> proxyCount() {
+        return Optional.ofNullable(this.proxyCount);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer caCount;
-        private Integer consoleCount;
-        private Integer proxyCount;
+        private @Nullable Integer caCount;
+        private @Nullable Integer consoleCount;
+        private @Nullable Integer proxyCount;
         public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica
         }
 
         @CustomType.Setter
-        public Builder caCount(Integer caCount) {
-            this.caCount = Objects.requireNonNull(caCount);
+        public Builder caCount(@Nullable Integer caCount) {
+            this.caCount = caCount;
             return this;
         }
         @CustomType.Setter
-        public Builder consoleCount(Integer consoleCount) {
-            this.consoleCount = Objects.requireNonNull(consoleCount);
+        public Builder consoleCount(@Nullable Integer consoleCount) {
+            this.consoleCount = consoleCount;
             return this;
         }
         @CustomType.Setter
-        public Builder proxyCount(Integer proxyCount) {
-            this.proxyCount = Objects.requireNonNull(proxyCount);
+        public Builder proxyCount(@Nullable Integer proxyCount) {
+            this.proxyCount = proxyCount;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica build() {

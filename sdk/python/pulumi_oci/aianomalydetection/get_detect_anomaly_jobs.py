@@ -55,17 +55,11 @@ class GetDetectAnomalyJobsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that starts the job.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="detectAnomalyJobCollections")
-    def detect_anomaly_job_collections(self) -> Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionResult']:
-        """
-        The list of detect_anomaly_job_collection.
-        """
+    def detect_anomaly_job_collections(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionResult']]:
         return pulumi.get(self, "detect_anomaly_job_collections")
 
     @property
@@ -76,9 +70,6 @@ class GetDetectAnomalyJobsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Detect anomaly job display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +79,7 @@ class GetDetectAnomalyJobsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,25 +88,16 @@ class GetDetectAnomalyJobsResult:
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[str]:
-        """
-        The OCID of the trained model.
-        """
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of the project.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the batch document job.
-        """
         return pulumi.get(self, "state")
 
 
@@ -145,31 +127,7 @@ def get_detect_anomaly_jobs(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectAnomalyJobsResult:
     """
-    This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of all the Anomaly Detection jobs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detect_anomaly_jobs = oci.AiAnomalyDetection.get_detect_anomaly_jobs(compartment_id=var["compartment_id"],
-        detect_anomaly_job_id=oci_ai_anomaly_detection_detect_anomaly_job["test_detect_anomaly_job"]["id"],
-        display_name=var["detect_anomaly_job_display_name"],
-        model_id=oci_ai_anomaly_detection_model["test_model"]["id"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["detect_anomaly_job_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str detect_anomaly_job_id: Unique Async Job identifier
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str model_id: The ID of the trained model for which to list the resources.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -204,30 +162,6 @@ def get_detect_anomaly_jobs_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectAnomalyJobsResult]:
     """
-    This data source provides the list of Detect Anomaly Jobs in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Returns a list of all the Anomaly Detection jobs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detect_anomaly_jobs = oci.AiAnomalyDetection.get_detect_anomaly_jobs(compartment_id=var["compartment_id"],
-        detect_anomaly_job_id=oci_ai_anomaly_detection_detect_anomaly_job["test_detect_anomaly_job"]["id"],
-        display_name=var["detect_anomaly_job_display_name"],
-        model_id=oci_ai_anomaly_detection_model["test_model"]["id"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["detect_anomaly_job_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str detect_anomaly_job_id: Unique Async Job identifier
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str model_id: The ID of the trained model for which to list the resources.
-    :param str project_id: The ID of the project for which to list the objects.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

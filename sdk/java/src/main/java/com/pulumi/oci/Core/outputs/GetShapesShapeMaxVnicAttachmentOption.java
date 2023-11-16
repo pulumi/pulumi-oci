@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapesShapeMaxVnicAttachmentOption {
@@ -14,39 +16,39 @@ public final class GetShapesShapeMaxVnicAttachmentOption {
      * @return The default number of VNIC attachments allowed per OCPU.
      * 
      */
-    private Double defaultPerOcpu;
+    private @Nullable Double defaultPerOcpu;
     /**
      * @return The maximum allowed percentage of cores enabled.
      * 
      */
-    private Double max;
+    private @Nullable Double max;
     /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
-    private Integer min;
+    private @Nullable Integer min;
 
     private GetShapesShapeMaxVnicAttachmentOption() {}
     /**
      * @return The default number of VNIC attachments allowed per OCPU.
      * 
      */
-    public Double defaultPerOcpu() {
-        return this.defaultPerOcpu;
+    public Optional<Double> defaultPerOcpu() {
+        return Optional.ofNullable(this.defaultPerOcpu);
     }
     /**
      * @return The maximum allowed percentage of cores enabled.
      * 
      */
-    public Double max() {
-        return this.max;
+    public Optional<Double> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
-    public Integer min() {
-        return this.min;
+    public Optional<Integer> min() {
+        return Optional.ofNullable(this.min);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetShapesShapeMaxVnicAttachmentOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double defaultPerOcpu;
-        private Double max;
-        private Integer min;
+        private @Nullable Double defaultPerOcpu;
+        private @Nullable Double max;
+        private @Nullable Integer min;
         public Builder() {}
         public Builder(GetShapesShapeMaxVnicAttachmentOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetShapesShapeMaxVnicAttachmentOption {
         }
 
         @CustomType.Setter
-        public Builder defaultPerOcpu(Double defaultPerOcpu) {
-            this.defaultPerOcpu = Objects.requireNonNull(defaultPerOcpu);
+        public Builder defaultPerOcpu(@Nullable Double defaultPerOcpu) {
+            this.defaultPerOcpu = defaultPerOcpu;
             return this;
         }
         @CustomType.Setter
-        public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Double max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Integer min) {
+            this.min = min;
             return this;
         }
         public GetShapesShapeMaxVnicAttachmentOption build() {

@@ -47,56 +47,56 @@ export interface GetProfileResult {
     /**
      * The time period over which to collect data for the recommendations, measured in number of days.
      */
-    readonly aggregationIntervalInDays: number;
+    readonly aggregationIntervalInDays?: number;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Text describing the profile. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The unique OCID of the profile.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of configuration levels for each recommendation.
      */
-    readonly levelsConfigurations: outputs.Optimizer.GetProfileLevelsConfiguration[];
+    readonly levelsConfigurations?: outputs.Optimizer.GetProfileLevelsConfiguration[];
     /**
      * The name assigned to the profile. Avoid entering confidential information.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly profileId: string;
     /**
      * The profile's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Optional. The compartments specified in the profile override for a recommendation.
      */
-    readonly targetCompartments: outputs.Optimizer.GetProfileTargetCompartment[];
+    readonly targetCompartments?: outputs.Optimizer.GetProfileTargetCompartment[];
     /**
      * Optional. The tags specified in the profile override for a recommendation.
      */
-    readonly targetTags: outputs.Optimizer.GetProfileTargetTag[];
+    readonly targetTags?: outputs.Optimizer.GetProfileTargetTag[];
     /**
      * The date and time the profile was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the profile was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The result of the most recent health check.
         /// </summary>
-        public readonly string HealthCheckStatus;
+        public readonly string? HealthCheckStatus;
         /// <summary>
         /// The IP address of the health check status report provider. This identifier helps you differentiate same-subnet load balancers that report health check status.  Example: `10.0.0.7`
         /// </summary>
-        public readonly string SourceIpAddress;
+        public readonly string? SourceIpAddress;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetBackendHealthHealthCheckResultResult(
-            string healthCheckStatus,
+            string? healthCheckStatus,
 
-            string sourceIpAddress,
+            string? sourceIpAddress,
 
-            string subnetId,
+            string? subnetId,
 
-            string timestamp)
+            string? timestamp)
         {
             HealthCheckStatus = healthCheckStatus;
             SourceIpAddress = sourceIpAddress;

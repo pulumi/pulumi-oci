@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
         /// </summary>
-        public readonly bool ArePrechecksEnabled;
+        public readonly bool? ArePrechecksEnabled;
         /// <summary>
         /// A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         /// </summary>
-        public readonly bool AreWarningsIgnored;
+        public readonly bool? AreWarningsIgnored;
         /// <summary>
         /// The type of the DR plan executed.
         /// </summary>
-        public readonly string PlanExecutionType;
+        public readonly string? PlanExecutionType;
 
         [OutputConstructor]
         private GetDrPlanExecutionExecutionOptionResult(
-            bool arePrechecksEnabled,
+            bool? arePrechecksEnabled,
 
-            bool areWarningsIgnored,
+            bool? areWarningsIgnored,
 
-            string planExecutionType)
+            string? planExecutionType)
         {
             ArePrechecksEnabled = arePrechecksEnabled;
             AreWarningsIgnored = areWarningsIgnored;

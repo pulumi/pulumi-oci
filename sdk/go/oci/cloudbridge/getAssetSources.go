@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Asset Sources in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -78,7 +77,7 @@ type GetAssetSourcesResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetAssetSourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the asset source.
 	State *string `pulumi:"state"`
 }
@@ -128,12 +127,6 @@ func (o GetAssetSourcesResultOutput) ToGetAssetSourcesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetAssetSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesResult] {
-	return pulumix.Output[GetAssetSourcesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of asset_source_collection.
 func (o GetAssetSourcesResultOutput) AssetSourceCollections() GetAssetSourcesAssetSourceCollectionArrayOutput {
 	return o.ApplyT(func(v GetAssetSourcesResult) []GetAssetSourcesAssetSourceCollection { return v.AssetSourceCollections }).(GetAssetSourcesAssetSourceCollectionArrayOutput)
@@ -158,8 +151,8 @@ func (o GetAssetSourcesResultOutput) Filters() GetAssetSourcesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAssetSourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAssetSourcesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the asset source.

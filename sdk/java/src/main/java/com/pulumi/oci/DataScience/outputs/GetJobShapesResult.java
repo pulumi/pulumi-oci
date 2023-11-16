@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetJobShapesJobShape;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetJobShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of job_shapes.
      * 
      */
-    private List<GetJobShapesJobShape> jobShapes;
+    private @Nullable List<GetJobShapesJobShape> jobShapes;
 
     private GetJobShapesResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetJobShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of job_shapes.
      * 
      */
     public List<GetJobShapesJobShape> jobShapes() {
-        return this.jobShapes;
+        return this.jobShapes == null ? List.of() : this.jobShapes;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetJobShapesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetJobShapesFilter> filters;
-        private String id;
-        private List<GetJobShapesJobShape> jobShapes;
+        private @Nullable String id;
+        private @Nullable List<GetJobShapesJobShape> jobShapes;
         public Builder() {}
         public Builder(GetJobShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetJobShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder jobShapes(List<GetJobShapesJobShape> jobShapes) {
-            this.jobShapes = Objects.requireNonNull(jobShapes);
+        public Builder jobShapes(@Nullable List<GetJobShapesJobShape> jobShapes) {
+            this.jobShapes = jobShapes;
             return this;
         }
         public Builder jobShapes(GetJobShapesJobShape... jobShapes) {

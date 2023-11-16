@@ -18,9 +18,6 @@ class VaultVerificationArgs:
                  vault_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a VaultVerification resource.
-        :param pulumi.Input[str] replica_region: (Updatable) The region to be created replica to. When updated,
-               replica will be deleted from old region, and created to updated region.
-        :param pulumi.Input[str] vault_id: The OCID of the primary vault to create replica from.
         """
         pulumi.set(__self__, "replica_region", replica_region)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -28,10 +25,6 @@ class VaultVerificationArgs:
     @property
     @pulumi.getter(name="replicaRegion")
     def replica_region(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The region to be created replica to. When updated,
-        replica will be deleted from old region, and created to updated region.
-        """
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
@@ -41,9 +34,6 @@ class VaultVerificationArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the primary vault to create replica from.
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -58,9 +48,6 @@ class _VaultVerificationState:
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VaultVerification resources.
-        :param pulumi.Input[str] replica_region: (Updatable) The region to be created replica to. When updated,
-               replica will be deleted from old region, and created to updated region.
-        :param pulumi.Input[str] vault_id: The OCID of the primary vault to create replica from.
         """
         if replica_region is not None:
             pulumi.set(__self__, "replica_region", replica_region)
@@ -70,10 +57,6 @@ class _VaultVerificationState:
     @property
     @pulumi.getter(name="replicaRegion")
     def replica_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The region to be created replica to. When updated,
-        replica will be deleted from old region, and created to updated region.
-        """
         return pulumi.get(self, "replica_region")
 
     @replica_region.setter
@@ -83,9 +66,6 @@ class _VaultVerificationState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the primary vault to create replica from.
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -102,30 +82,9 @@ class VaultVerification(pulumi.CustomResource):
                  vault_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This source triggers action to create, update and delete replica for a vault in Oracle Cloud Infrastructure Kms service.
-
-        A vault replica is a mirror of that vault in a different region in the same realm.
-        The vault replica and all the resources have same OCID with corresponding original ones.
-
-        This only supports virtual private vault for now.
-        This supports only one replica in a region for a vault. Multiple replica will be supported in the future.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replication = oci.kms.VaultVerification("testReplication",
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            replica_region=var["replica_region"])
-        ```
-
+        Create a VaultVerification resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] replica_region: (Updatable) The region to be created replica to. When updated,
-               replica will be deleted from old region, and created to updated region.
-        :param pulumi.Input[str] vault_id: The OCID of the primary vault to create replica from.
         """
         ...
     @overload
@@ -134,25 +93,7 @@ class VaultVerification(pulumi.CustomResource):
                  args: VaultVerificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This source triggers action to create, update and delete replica for a vault in Oracle Cloud Infrastructure Kms service.
-
-        A vault replica is a mirror of that vault in a different region in the same realm.
-        The vault replica and all the resources have same OCID with corresponding original ones.
-
-        This only supports virtual private vault for now.
-        This supports only one replica in a region for a vault. Multiple replica will be supported in the future.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replication = oci.kms.VaultVerification("testReplication",
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            replica_region=var["replica_region"])
-        ```
-
+        Create a VaultVerification resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VaultVerificationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -204,9 +145,6 @@ class VaultVerification(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] replica_region: (Updatable) The region to be created replica to. When updated,
-               replica will be deleted from old region, and created to updated region.
-        :param pulumi.Input[str] vault_id: The OCID of the primary vault to create replica from.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -219,17 +157,10 @@ class VaultVerification(pulumi.CustomResource):
     @property
     @pulumi.getter(name="replicaRegion")
     def replica_region(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The region to be created replica to. When updated,
-        replica will be deleted from old region, and created to updated region.
-        """
         return pulumi.get(self, "replica_region")
 
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the primary vault to create replica from.
-        """
         return pulumi.get(self, "vault_id")
 

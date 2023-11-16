@@ -60,7 +60,7 @@ export class SetSecurityAssessmentBaseline extends pulumi.CustomResource {
     /**
      * The list of OCIDs for the security assessments that need to be updated while setting the baseline.
      */
-    public readonly assessmentIds!: pulumi.Output<string[]>;
+    public readonly assessmentIds!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the security assessment.
      *

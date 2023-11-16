@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// This value is the maximum number of nodes the cluster can be scaled-out to.
         /// </summary>
-        public readonly int MaxNodeCount;
+        public readonly int? MaxNodeCount;
         /// <summary>
         /// Metric and threshold details for triggering an autoscale action.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// This value is the number of nodes to add during a scale-out event.
         /// </summary>
-        public readonly int StepSize;
+        public readonly int? StepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScaleOutConfigResult(
-            int maxNodeCount,
+            int? maxNodeCount,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleOutConfigMetricResult> metrics,
 
-            int stepSize)
+            int? stepSize)
         {
             MaxNodeCount = maxNodeCount;
             Metrics = metrics;

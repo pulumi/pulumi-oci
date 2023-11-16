@@ -16,53 +16,53 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The affected resource name.
         /// </summary>
-        public readonly string AffectedResource;
+        public readonly string? AffectedResource;
         /// <summary>
         /// The quota balance.
         /// </summary>
-        public readonly double Balance;
+        public readonly double? Balance;
         /// <summary>
         /// Used to indicate if further quota consumption isAllowed.
         /// </summary>
-        public readonly bool IsAllowed;
+        public readonly bool? IsAllowed;
         /// <summary>
         /// Used to indicate any resource dependencies.
         /// </summary>
-        public readonly bool IsDependency;
+        public readonly bool? IsDependency;
         /// <summary>
         /// Used to indicate if overages are incurred.
         /// </summary>
-        public readonly bool IsOverage;
+        public readonly bool? IsOverage;
         /// <summary>
         /// The resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The purchased quota limit.
         /// </summary>
-        public readonly double PurchasedLimit;
+        public readonly double? PurchasedLimit;
         /// <summary>
         /// The service name.
         /// </summary>
-        public readonly string Service;
+        public readonly string? Service;
 
         [OutputConstructor]
         private GetResourceQuotasResourceQuotumCollectionItemResult(
-            string affectedResource,
+            string? affectedResource,
 
-            double balance,
+            double? balance,
 
-            bool isAllowed,
+            bool? isAllowed,
 
-            bool isDependency,
+            bool? isDependency,
 
-            bool isOverage,
+            bool? isOverage,
 
-            string name,
+            string? name,
 
-            double purchasedLimit,
+            double? purchasedLimit,
 
-            string service)
+            string? service)
         {
             AffectedResource = affectedResource;
             Balance = balance;

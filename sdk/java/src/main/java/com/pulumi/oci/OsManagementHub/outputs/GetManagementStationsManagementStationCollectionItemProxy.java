@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationsManagementStationCollectionItemProxy {
@@ -15,51 +17,51 @@ public final class GetManagementStationsManagementStationCollectionItemProxy {
      * @return URL that the proxy will forward to
      * 
      */
-    private String forward;
+    private @Nullable String forward;
     /**
      * @return List of hosts
      * 
      */
-    private List<String> hosts;
+    private @Nullable List<String> hosts;
     /**
      * @return To enable or disable the proxy (default true)
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Port that the proxy will use
      * 
      */
-    private String port;
+    private @Nullable String port;
 
     private GetManagementStationsManagementStationCollectionItemProxy() {}
     /**
      * @return URL that the proxy will forward to
      * 
      */
-    public String forward() {
-        return this.forward;
+    public Optional<String> forward() {
+        return Optional.ofNullable(this.forward);
     }
     /**
      * @return List of hosts
      * 
      */
     public List<String> hosts() {
-        return this.hosts;
+        return this.hosts == null ? List.of() : this.hosts;
     }
     /**
      * @return To enable or disable the proxy (default true)
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Port that the proxy will use
      * 
      */
-    public String port() {
-        return this.port;
+    public Optional<String> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetManagementStationsManagementStationCollectionItemProxy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String forward;
-        private List<String> hosts;
-        private Boolean isEnabled;
-        private String port;
+        private @Nullable String forward;
+        private @Nullable List<String> hosts;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String port;
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollectionItemProxy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetManagementStationsManagementStationCollectionItemProxy {
         }
 
         @CustomType.Setter
-        public Builder forward(String forward) {
-            this.forward = Objects.requireNonNull(forward);
+        public Builder forward(@Nullable String forward) {
+            this.forward = forward;
             return this;
         }
         @CustomType.Setter
-        public Builder hosts(List<String> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+        public Builder hosts(@Nullable List<String> hosts) {
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(String... hosts) {
             return hosts(List.of(hosts));
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable String port) {
+            this.port = port;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemProxy build() {

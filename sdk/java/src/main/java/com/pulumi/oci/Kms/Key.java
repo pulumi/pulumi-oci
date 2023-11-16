@@ -64,42 +64,42 @@ public class Key extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="currentKeyVersion", refs={String.class}, tree="[0]")
-    private Output<String> currentKeyVersion;
+    private Output</* @Nullable */ String> currentKeyVersion;
 
     /**
      * @return The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      * 
      */
-    public Output<String> currentKeyVersion() {
-        return this.currentKeyVersion;
+    public Output<Optional<String>> currentKeyVersion() {
+        return Codegen.optional(this.currentKeyVersion);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      * 
      */
     @Export(name="desiredState", refs={String.class}, tree="[0]")
-    private Output<String> desiredState;
+    private Output</* @Nullable */ String> desiredState;
 
     /**
      * @return (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      * 
      */
-    public Output<String> desiredState() {
-        return this.desiredState;
+    public Output<Optional<String>> desiredState() {
+        return Codegen.optional(this.desiredState);
     }
     /**
      * (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -120,56 +120,56 @@ public class Key extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalKeyReference", refs={KeyExternalKeyReference.class}, tree="[0]")
-    private Output<KeyExternalKeyReference> externalKeyReference;
+    private Output</* @Nullable */ KeyExternalKeyReference> externalKeyReference;
 
     /**
      * @return A reference to the key on external key manager.
      * 
      */
-    public Output<KeyExternalKeyReference> externalKeyReference() {
-        return this.externalKeyReference;
+    public Output<Optional<KeyExternalKeyReference>> externalKeyReference() {
+        return Codegen.optional(this.externalKeyReference);
     }
     /**
      * Key reference data to be returned to the customer as a response.
      * 
      */
     @Export(name="externalKeyReferenceDetails", refs={List.class,KeyExternalKeyReferenceDetail.class}, tree="[0,1]")
-    private Output<List<KeyExternalKeyReferenceDetail>> externalKeyReferenceDetails;
+    private Output</* @Nullable */ List<KeyExternalKeyReferenceDetail>> externalKeyReferenceDetails;
 
     /**
      * @return Key reference data to be returned to the customer as a response.
      * 
      */
-    public Output<List<KeyExternalKeyReferenceDetail>> externalKeyReferenceDetails() {
-        return this.externalKeyReferenceDetails;
+    public Output<Optional<List<KeyExternalKeyReferenceDetail>>> externalKeyReferenceDetails() {
+        return Codegen.optional(this.externalKeyReferenceDetails);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrimary;
+    private Output</* @Nullable */ Boolean> isPrimary;
 
     /**
      * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
-    public Output<Boolean> isPrimary() {
-        return this.isPrimary;
+    public Output<Optional<Boolean>> isPrimary() {
+        return Codegen.optional(this.isPrimary);
     }
     /**
      * The cryptographic properties of a key.
@@ -204,28 +204,28 @@ public class Key extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="protectionMode", refs={String.class}, tree="[0]")
-    private Output<String> protectionMode;
+    private Output</* @Nullable */ String> protectionMode;
 
     /**
      * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
-    public Output<String> protectionMode() {
-        return this.protectionMode;
+    public Output<Optional<String>> protectionMode() {
+        return Codegen.optional(this.protectionMode);
     }
     /**
      * Key replica details
      * 
      */
     @Export(name="replicaDetails", refs={List.class,KeyReplicaDetail.class}, tree="[0,1]")
-    private Output<List<KeyReplicaDetail>> replicaDetails;
+    private Output</* @Nullable */ List<KeyReplicaDetail>> replicaDetails;
 
     /**
      * @return Key replica details
      * 
      */
-    public Output<List<KeyReplicaDetail>> replicaDetails() {
-        return this.replicaDetails;
+    public Output<Optional<List<KeyReplicaDetail>>> replicaDetails() {
+        return Codegen.optional(this.replicaDetails);
     }
     /**
      * (Updatable) Details where key was backed up.
@@ -274,42 +274,42 @@ public class Key extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="restoredFromKeyId", refs={String.class}, tree="[0]")
-    private Output<String> restoredFromKeyId;
+    private Output</* @Nullable */ String> restoredFromKeyId;
 
     /**
      * @return The OCID of the key from which this key was restored.
      * 
      */
-    public Output<String> restoredFromKeyId() {
-        return this.restoredFromKeyId;
+    public Output<Optional<String>> restoredFromKeyId() {
+        return Codegen.optional(this.restoredFromKeyId);
     }
     /**
      * The key&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The key&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -319,7 +319,7 @@ public class Key extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -328,22 +328,22 @@ public class Key extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
     /**
      * The OCID of the vault that contains this key.
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return The OCID of the vault that contains this key.
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
 
     /**

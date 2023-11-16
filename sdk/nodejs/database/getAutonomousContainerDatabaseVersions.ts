@@ -55,13 +55,13 @@ export interface GetAutonomousContainerDatabaseVersionsResult {
     /**
      * The list of autonomous_container_database_versions.
      */
-    readonly autonomousContainerDatabaseVersions: outputs.Database.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion[];
+    readonly autonomousContainerDatabaseVersions?: outputs.Database.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion[];
     readonly compartmentId: string;
     readonly filters?: outputs.Database.GetAutonomousContainerDatabaseVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly serviceComponent: string;
 }
 /**

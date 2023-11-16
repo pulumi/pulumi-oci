@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -72,31 +71,31 @@ type Session struct {
 	// The unique identifier (OCID) of the bastion on which to create this session.
 	BastionId pulumi.StringOutput `pulumi:"bastionId"`
 	// The name of the bastion that is hosting this session.
-	BastionName pulumi.StringOutput `pulumi:"bastionName"`
+	BastionName pulumi.StringPtrOutput `pulumi:"bastionName"`
 	// The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-	BastionPublicHostKeyInfo pulumi.StringOutput `pulumi:"bastionPublicHostKeyInfo"`
+	BastionPublicHostKeyInfo pulumi.StringPtrOutput `pulumi:"bastionPublicHostKeyInfo"`
 	// The username that the session uses to connect to the target resource.
-	BastionUserName pulumi.StringOutput `pulumi:"bastionUserName"`
+	BastionUserName pulumi.StringPtrOutput `pulumi:"bastionUserName"`
 	// (Updatable) The name of the session.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Public key details for a bastion session.
 	KeyDetails SessionKeyDetailsOutput `pulumi:"keyDetails"`
 	// The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-	KeyType pulumi.StringOutput `pulumi:"keyType"`
+	KeyType pulumi.StringPtrOutput `pulumi:"keyType"`
 	// A message describing the current session state in more detail.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The amount of time the session can remain active.
-	SessionTtlInSeconds pulumi.IntOutput `pulumi:"sessionTtlInSeconds"`
+	SessionTtlInSeconds pulumi.IntPtrOutput `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
 	SshMetadata pulumi.MapOutput `pulumi:"sshMetadata"`
 	// The current state of the session.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Details about a bastion session's target resource.
 	TargetResourceDetails SessionTargetResourceDetailsOutput `pulumi:"targetResourceDetails"`
 	// The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSession registers a new resource with the given unique name, arguments, and options.
@@ -257,12 +256,6 @@ func (i *Session) ToSessionOutputWithContext(ctx context.Context) SessionOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(SessionOutput)
 }
 
-func (i *Session) ToOutput(ctx context.Context) pulumix.Output[*Session] {
-	return pulumix.Output[*Session]{
-		OutputState: i.ToSessionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SessionArrayInput is an input type that accepts SessionArray and SessionArrayOutput values.
 // You can construct a concrete instance of `SessionArrayInput` via:
 //
@@ -286,12 +279,6 @@ func (i SessionArray) ToSessionArrayOutput() SessionArrayOutput {
 
 func (i SessionArray) ToSessionArrayOutputWithContext(ctx context.Context) SessionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SessionArrayOutput)
-}
-
-func (i SessionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Session] {
-	return pulumix.Output[[]*Session]{
-		OutputState: i.ToSessionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SessionMapInput is an input type that accepts SessionMap and SessionMapOutput values.
@@ -319,12 +306,6 @@ func (i SessionMap) ToSessionMapOutputWithContext(ctx context.Context) SessionMa
 	return pulumi.ToOutputWithContext(ctx, i).(SessionMapOutput)
 }
 
-func (i SessionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Session] {
-	return pulumix.Output[map[string]*Session]{
-		OutputState: i.ToSessionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SessionOutput struct{ *pulumi.OutputState }
 
 func (SessionOutput) ElementType() reflect.Type {
@@ -339,35 +320,29 @@ func (o SessionOutput) ToSessionOutputWithContext(ctx context.Context) SessionOu
 	return o
 }
 
-func (o SessionOutput) ToOutput(ctx context.Context) pulumix.Output[*Session] {
-	return pulumix.Output[*Session]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique identifier (OCID) of the bastion on which to create this session.
 func (o SessionOutput) BastionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.BastionId }).(pulumi.StringOutput)
 }
 
 // The name of the bastion that is hosting this session.
-func (o SessionOutput) BastionName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.BastionName }).(pulumi.StringOutput)
+func (o SessionOutput) BastionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.BastionName }).(pulumi.StringPtrOutput)
 }
 
 // The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-func (o SessionOutput) BastionPublicHostKeyInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.BastionPublicHostKeyInfo }).(pulumi.StringOutput)
+func (o SessionOutput) BastionPublicHostKeyInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.BastionPublicHostKeyInfo }).(pulumi.StringPtrOutput)
 }
 
 // The username that the session uses to connect to the target resource.
-func (o SessionOutput) BastionUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.BastionUserName }).(pulumi.StringOutput)
+func (o SessionOutput) BastionUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.BastionUserName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the session.
-func (o SessionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SessionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Public key details for a bastion session.
@@ -376,18 +351,18 @@ func (o SessionOutput) KeyDetails() SessionKeyDetailsOutput {
 }
 
 // The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-func (o SessionOutput) KeyType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.KeyType }).(pulumi.StringOutput)
+func (o SessionOutput) KeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.KeyType }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current session state in more detail.
-func (o SessionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SessionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time the session can remain active.
-func (o SessionOutput) SessionTtlInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *Session) pulumi.IntOutput { return v.SessionTtlInSeconds }).(pulumi.IntOutput)
+func (o SessionOutput) SessionTtlInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.IntPtrOutput { return v.SessionTtlInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The connection message for the session.
@@ -396,8 +371,8 @@ func (o SessionOutput) SshMetadata() pulumi.MapOutput {
 }
 
 // The current state of the session.
-func (o SessionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SessionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about a bastion session's target resource.
@@ -406,13 +381,13 @@ func (o SessionOutput) TargetResourceDetails() SessionTargetResourceDetailsOutpu
 }
 
 // The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o SessionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SessionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o SessionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Session) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SessionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SessionArrayOutput struct{ *pulumi.OutputState }
@@ -427,12 +402,6 @@ func (o SessionArrayOutput) ToSessionArrayOutput() SessionArrayOutput {
 
 func (o SessionArrayOutput) ToSessionArrayOutputWithContext(ctx context.Context) SessionArrayOutput {
 	return o
-}
-
-func (o SessionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Session] {
-	return pulumix.Output[[]*Session]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SessionArrayOutput) Index(i pulumi.IntInput) SessionOutput {
@@ -453,12 +422,6 @@ func (o SessionMapOutput) ToSessionMapOutput() SessionMapOutput {
 
 func (o SessionMapOutput) ToSessionMapOutputWithContext(ctx context.Context) SessionMapOutput {
 	return o
-}
-
-func (o SessionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Session] {
-	return pulumix.Output[map[string]*Session]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SessionMapOutput) MapIndex(k pulumi.StringInput) SessionOutput {

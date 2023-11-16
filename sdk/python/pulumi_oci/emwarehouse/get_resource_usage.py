@@ -47,18 +47,12 @@ class GetResourceUsageResult:
 
     @property
     @pulumi.getter(name="emInstanceCount")
-    def em_instance_count(self) -> int:
-        """
-        EmInstanceCount
-        """
+    def em_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "em_instance_count")
 
     @property
     @pulumi.getter(name="emInstances")
-    def em_instances(self) -> Sequence['outputs.GetResourceUsageEmInstanceResult']:
-        """
-        List of emInstances
-        """
+    def em_instances(self) -> Optional[Sequence['outputs.GetResourceUsageEmInstanceResult']]:
         return pulumi.get(self, "em_instances")
 
     @property
@@ -68,7 +62,7 @@ class GetResourceUsageResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,26 +70,17 @@ class GetResourceUsageResult:
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> str:
-        """
-        operations Insights Warehouse Identifier
-        """
+    def operations_insights_warehouse_id(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> str:
-        """
-        schema name
-        """
+    def schema_name(self) -> Optional[str]:
         return pulumi.get(self, "schema_name")
 
     @property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> int:
-        """
-        EmInstance Target count
-        """
+    def targets_count(self) -> Optional[int]:
         return pulumi.get(self, "targets_count")
 
 
@@ -117,21 +102,7 @@ class AwaitableGetResourceUsageResult(GetResourceUsageResult):
 def get_resource_usage(em_warehouse_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceUsageResult:
     """
-    This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
-
-    Gets a EmWarehouseResourceUsage by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_em_warehouse_resource_usage = oci.EmWarehouse.get_resource_usage(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"])
-    ```
-
-
-    :param str em_warehouse_id: unique EmWarehouse identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['emWarehouseId'] = em_warehouse_id
@@ -152,20 +123,6 @@ def get_resource_usage(em_warehouse_id: Optional[str] = None,
 def get_resource_usage_output(em_warehouse_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceUsageResult]:
     """
-    This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
-
-    Gets a EmWarehouseResourceUsage by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_em_warehouse_resource_usage = oci.EmWarehouse.get_resource_usage(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"])
-    ```
-
-
-    :param str em_warehouse_id: unique EmWarehouse identifier
+    Use this data source to access information about an existing resource.
     """
     ...

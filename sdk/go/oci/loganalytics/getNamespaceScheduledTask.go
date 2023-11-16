@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -65,38 +64,38 @@ type LookupNamespaceScheduledTaskResult struct {
 	// Action for scheduled task.
 	Actions []GetNamespaceScheduledTaskAction `pulumi:"actions"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Discriminator.
-	Kind string `pulumi:"kind"`
+	Kind *string `pulumi:"kind"`
 	// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace string `pulumi:"namespace"`
 	// Number of execution occurrences.
-	NumOccurrences string `pulumi:"numOccurrences"`
+	NumOccurrences *string `pulumi:"numOccurrences"`
 	// The ManagementSavedSearch id [OCID] utilized in the action.
-	SavedSearchId   string `pulumi:"savedSearchId"`
-	ScheduledTaskId string `pulumi:"scheduledTaskId"`
+	SavedSearchId   *string `pulumi:"savedSearchId"`
+	ScheduledTaskId string  `pulumi:"scheduledTaskId"`
 	// Schedules.
 	Schedules []GetNamespaceScheduledTaskSchedule `pulumi:"schedules"`
 	// The current state of the scheduled task.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-	TaskStatus string `pulumi:"taskStatus"`
+	TaskStatus *string `pulumi:"taskStatus"`
 	// Task type.
-	TaskType string `pulumi:"taskType"`
+	TaskType *string `pulumi:"taskType"`
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 func LookupNamespaceScheduledTaskOutput(ctx *pulumi.Context, args LookupNamespaceScheduledTaskOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceScheduledTaskResultOutput {
@@ -139,20 +138,14 @@ func (o LookupNamespaceScheduledTaskResultOutput) ToLookupNamespaceScheduledTask
 	return o
 }
 
-func (o LookupNamespaceScheduledTaskResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceScheduledTaskResult] {
-	return pulumix.Output[LookupNamespaceScheduledTaskResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Action for scheduled task.
 func (o LookupNamespaceScheduledTaskResultOutput) Actions() GetNamespaceScheduledTaskActionArrayOutput {
 	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) []GetNamespaceScheduledTaskAction { return v.Actions }).(GetNamespaceScheduledTaskActionArrayOutput)
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupNamespaceScheduledTaskResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -161,8 +154,8 @@ func (o LookupNamespaceScheduledTaskResultOutput) DefinedTags() pulumi.MapOutput
 }
 
 // A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-func (o LookupNamespaceScheduledTaskResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -171,13 +164,13 @@ func (o LookupNamespaceScheduledTaskResultOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-func (o LookupNamespaceScheduledTaskResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Discriminator.
-func (o LookupNamespaceScheduledTaskResultOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.Kind }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
 
 // The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
@@ -186,13 +179,13 @@ func (o LookupNamespaceScheduledTaskResultOutput) Namespace() pulumi.StringOutpu
 }
 
 // Number of execution occurrences.
-func (o LookupNamespaceScheduledTaskResultOutput) NumOccurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.NumOccurrences }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) NumOccurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.NumOccurrences }).(pulumi.StringPtrOutput)
 }
 
 // The ManagementSavedSearch id [OCID] utilized in the action.
-func (o LookupNamespaceScheduledTaskResultOutput) SavedSearchId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.SavedSearchId }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) SavedSearchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.SavedSearchId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNamespaceScheduledTaskResultOutput) ScheduledTaskId() pulumi.StringOutput {
@@ -205,33 +198,33 @@ func (o LookupNamespaceScheduledTaskResultOutput) Schedules() GetNamespaceSchedu
 }
 
 // The current state of the scheduled task.
-func (o LookupNamespaceScheduledTaskResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-func (o LookupNamespaceScheduledTaskResultOutput) TaskStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.TaskStatus }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) TaskStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.TaskStatus }).(pulumi.StringPtrOutput)
 }
 
 // Task type.
-func (o LookupNamespaceScheduledTaskResultOutput) TaskType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.TaskType }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) TaskType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.TaskType }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the scheduled task was created, in the format defined by RFC3339.
-func (o LookupNamespaceScheduledTaskResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the scheduled task was last updated, in the format defined by RFC3339.
-func (o LookupNamespaceScheduledTaskResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-func (o LookupNamespaceScheduledTaskResultOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

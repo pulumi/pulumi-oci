@@ -62,11 +62,11 @@ export interface GetSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of subscriptions.
      */
-    readonly subscriptions: outputs.Ons.GetSubscriptionsSubscription[];
+    readonly subscriptions?: outputs.Ons.GetSubscriptionsSubscription[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      */

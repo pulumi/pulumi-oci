@@ -49,17 +49,11 @@ class GetViewsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the view.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,9 +64,6 @@ class GetViewsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the view.
-        """
         return pulumi.get(self, "id")
 
     @property
@@ -83,17 +74,11 @@ class GetViewsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def views(self) -> Sequence['outputs.GetViewsViewResult']:
-        """
-        The list of views.
-        """
+    def views(self) -> Optional[Sequence['outputs.GetViewsViewResult']]:
         return pulumi.get(self, "views")
 
 
@@ -120,34 +105,7 @@ def get_views(compartment_id: Optional[str] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetViewsResult:
     """
-    This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all views within a compartment. The collection can
-    be filtered by display name, id, or lifecycle state. It can be sorted
-    on creation time or displayName both in ASC or DESC order. Note that
-    when no lifecycleState query parameter is provided, the collection
-    does not include views in the DELETED lifecycleState to be consistent
-    with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_views = oci.Dns.get_views(compartment_id=var["compartment_id"],
-        scope="PRIVATE",
-        display_name=var["view_display_name"],
-        id=var["view_id"],
-        state=var["view_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str id: The OCID of a resource.
-    :param str scope: Value must be `PRIVATE` when listing private views.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -178,33 +136,6 @@ def get_views_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetViewsResult]:
     """
-    This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all views within a compartment. The collection can
-    be filtered by display name, id, or lifecycle state. It can be sorted
-    on creation time or displayName both in ASC or DESC order. Note that
-    when no lifecycleState query parameter is provided, the collection
-    does not include views in the DELETED lifecycleState to be consistent
-    with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_views = oci.Dns.get_views(compartment_id=var["compartment_id"],
-        scope="PRIVATE",
-        display_name=var["view_display_name"],
-        id=var["view_id"],
-        state=var["view_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str id: The OCID of a resource.
-    :param str scope: Value must be `PRIVATE` when listing private views.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     ...

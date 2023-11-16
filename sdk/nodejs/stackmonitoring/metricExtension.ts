@@ -104,7 +104,7 @@ export class MetricExtension extends pulumi.CustomResource {
     /**
      * (Updatable) Type of possible collection methods.
      */
-    public /*out*/ readonly collectionMethod!: pulumi.Output<string>;
+    public /*out*/ readonly collectionMethod!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      */
@@ -116,11 +116,11 @@ export class MetricExtension extends pulumi.CustomResource {
     /**
      * Created by user
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Description of the metric extension.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Display name of the metric.
      */
@@ -128,15 +128,15 @@ export class MetricExtension extends pulumi.CustomResource {
     /**
      * List of resource objects on which this metric extension is enabled.
      */
-    public /*out*/ readonly enabledOnResources!: pulumi.Output<outputs.StackMonitoring.MetricExtensionEnabledOnResource[]>;
+    public /*out*/ readonly enabledOnResources!: pulumi.Output<outputs.StackMonitoring.MetricExtensionEnabledOnResource[] | undefined>;
     /**
      * Count of resources on which this metric extension is enabled.
      */
-    public /*out*/ readonly enabledOnResourcesCount!: pulumi.Output<number>;
+    public /*out*/ readonly enabledOnResourcesCount!: pulumi.Output<number | undefined>;
     /**
      * Last updated by user
      */
-    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string>;
+    public /*out*/ readonly lastUpdatedBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of metrics which are part of this metric extension
      */
@@ -164,27 +164,27 @@ export class MetricExtension extends pulumi.CustomResource {
     /**
      * The URI path that the user can do a GET on to access the metric extension metadata
      */
-    public /*out*/ readonly resourceUri!: pulumi.Output<string>;
+    public /*out*/ readonly resourceUri!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the metric extension
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The current status of the metric extension i.e. whether it is Draft or Published
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    public /*out*/ readonly tenantId!: pulumi.Output<string | undefined>;
     /**
      * Metric Extension creation time. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Metric Extension update time. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MetricExtension resource with the given unique name, arguments, and options.

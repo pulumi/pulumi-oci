@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
      * @return A list of SQL statements in the cursor cache.
      * 
      */
-    private List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items;
 
     private GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
      * 
      */
     public List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem... items) {

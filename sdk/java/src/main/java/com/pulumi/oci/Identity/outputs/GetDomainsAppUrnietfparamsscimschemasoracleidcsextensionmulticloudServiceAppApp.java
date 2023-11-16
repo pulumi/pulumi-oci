@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp {
@@ -13,27 +15,27 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulti
      * @return The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
      * 
      */
-    private String multicloudPlatformUrl;
+    private @Nullable String multicloudPlatformUrl;
     /**
      * @return Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
      * 
      */
-    private String multicloudServiceType;
+    private @Nullable String multicloudServiceType;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp() {}
     /**
      * @return The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
      * 
      */
-    public String multicloudPlatformUrl() {
-        return this.multicloudPlatformUrl;
+    public Optional<String> multicloudPlatformUrl() {
+        return Optional.ofNullable(this.multicloudPlatformUrl);
     }
     /**
      * @return Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
      * 
      */
-    public String multicloudServiceType() {
-        return this.multicloudServiceType;
+    public Optional<String> multicloudServiceType() {
+        return Optional.ofNullable(this.multicloudServiceType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulti
     }
     @CustomType.Builder
     public static final class Builder {
-        private String multicloudPlatformUrl;
-        private String multicloudServiceType;
+        private @Nullable String multicloudPlatformUrl;
+        private @Nullable String multicloudServiceType;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulti
         }
 
         @CustomType.Setter
-        public Builder multicloudPlatformUrl(String multicloudPlatformUrl) {
-            this.multicloudPlatformUrl = Objects.requireNonNull(multicloudPlatformUrl);
+        public Builder multicloudPlatformUrl(@Nullable String multicloudPlatformUrl) {
+            this.multicloudPlatformUrl = multicloudPlatformUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder multicloudServiceType(String multicloudServiceType) {
-            this.multicloudServiceType = Objects.requireNonNull(multicloudServiceType);
+        public Builder multicloudServiceType(@Nullable String multicloudServiceType) {
+            this.multicloudServiceType = multicloudServiceType;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp build() {

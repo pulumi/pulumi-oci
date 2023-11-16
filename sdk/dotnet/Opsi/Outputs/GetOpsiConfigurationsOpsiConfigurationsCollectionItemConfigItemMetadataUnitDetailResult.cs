@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Filter to return based on resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Unit of configuration item.
         /// </summary>
-        public readonly string Unit;
+        public readonly string? Unit;
 
         [OutputConstructor]
         private GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult(
-            string displayName,
+            string? displayName,
 
-            string unit)
+            string? unit)
         {
             DisplayName = displayName;
             Unit = unit;

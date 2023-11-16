@@ -257,7 +257,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of library_masking_format_collection.
         /// </summary>
@@ -286,7 +286,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetLibraryMaskingFormatsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult> libraryMaskingFormatCollections,
 

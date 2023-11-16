@@ -45,21 +45,21 @@ namespace Pulumi.Oci.ObjectStorage
     [OutputType]
     public sealed class GetNamespaceMetadataResult
     {
-        public readonly string DefaultS3compartmentId;
-        public readonly string DefaultSwiftCompartmentId;
+        public readonly string? DefaultS3compartmentId;
+        public readonly string? DefaultSwiftCompartmentId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
 
         [OutputConstructor]
         private GetNamespaceMetadataResult(
-            string defaultS3compartmentId,
+            string? defaultS3compartmentId,
 
-            string defaultSwiftCompartmentId,
+            string? defaultSwiftCompartmentId,
 
-            string id,
+            string? id,
 
             string @namespace)
         {

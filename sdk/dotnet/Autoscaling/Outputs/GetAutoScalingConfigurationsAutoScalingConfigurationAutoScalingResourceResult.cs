@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// ID of the condition that is assigned after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type of action to take.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult(
-            string id,
+            string? id,
 
-            string type)
+            string? type)
         {
             Id = id;
             Type = type;

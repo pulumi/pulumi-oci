@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetsFleetCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetsFleetCollection {
-    private List<GetFleetsFleetCollectionItem> items;
+    private @Nullable List<GetFleetsFleetCollectionItem> items;
 
     private GetFleetsFleetCollection() {}
     public List<GetFleetsFleetCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFleetsFleetCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFleetsFleetCollectionItem> items;
+        private @Nullable List<GetFleetsFleetCollectionItem> items;
         public Builder() {}
         public Builder(GetFleetsFleetCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFleetsFleetCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFleetsFleetCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFleetsFleetCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetsFleetCollectionItem... items) {

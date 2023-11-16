@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetAddonsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetAddonsResult {
      * @return The list of addons.
      * 
      */
-    private List<GetAddonsAddon> addons;
+    private @Nullable List<GetAddonsAddon> addons;
     private String clusterId;
     private @Nullable List<GetAddonsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAddonsResult() {}
     /**
@@ -32,7 +33,7 @@ public final class GetAddonsResult {
      * 
      */
     public List<GetAddonsAddon> addons() {
-        return this.addons;
+        return this.addons == null ? List.of() : this.addons;
     }
     public String clusterId() {
         return this.clusterId;
@@ -44,8 +45,8 @@ public final class GetAddonsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,10 +58,10 @@ public final class GetAddonsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddonsAddon> addons;
+        private @Nullable List<GetAddonsAddon> addons;
         private String clusterId;
         private @Nullable List<GetAddonsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAddonsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,8 +72,8 @@ public final class GetAddonsResult {
         }
 
         @CustomType.Setter
-        public Builder addons(List<GetAddonsAddon> addons) {
-            this.addons = Objects.requireNonNull(addons);
+        public Builder addons(@Nullable List<GetAddonsAddon> addons) {
+            this.addons = addons;
             return this;
         }
         public Builder addons(GetAddonsAddon... addons) {
@@ -92,8 +93,8 @@ public final class GetAddonsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAddonsResult build() {

@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Ons
         /// The endpoint for managing subscriptions or publishing messages to the topic.
         /// </summary>
         [Output("apiEndpoint")]
-        public Output<string> ApiEndpoint { get; private set; } = null!;
+        public Output<string?> ApiEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
@@ -81,25 +81,25 @@ namespace Pulumi.Oci.Ons
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the topic being created. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// For optimistic concurrency control. See `if-match`.
         /// </summary>
         [Output("etag")]
-        public Output<string> Etag { get; private set; } = null!;
+        public Output<string?> Etag { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
@@ -115,25 +115,25 @@ namespace Pulumi.Oci.Ons
         /// A unique short topic Id. This is used only for SMS subscriptions.
         /// </summary>
         [Output("shortTopicId")]
-        public Output<string> ShortTopicId { get; private set; } = null!;
+        public Output<string?> ShortTopicId { get; private set; } = null!;
 
         /// <summary>
         /// The lifecycle state of the topic.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the topic was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         /// </summary>
         [Output("topicId")]
-        public Output<string> TopicId { get; private set; } = null!;
+        public Output<string?> TopicId { get; private set; } = null!;
 
 
         /// <summary>

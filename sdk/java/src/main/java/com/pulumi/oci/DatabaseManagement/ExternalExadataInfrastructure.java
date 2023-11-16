@@ -80,14 +80,14 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalDetails;
+    private Output</* @Nullable */ Map<String,Object>> additionalDetails;
 
     /**
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalDetails() {
-        return this.additionalDetails;
+    public Output<Optional<Map<String,Object>>> additionalDetails() {
+        return Codegen.optional(this.additionalDetails);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -108,28 +108,28 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="databaseCompartments", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> databaseCompartments;
+    private Output</* @Nullable */ List<String>> databaseCompartments;
 
     /**
      * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * 
      */
-    public Output<List<String>> databaseCompartments() {
-        return this.databaseCompartments;
+    public Output<Optional<List<String>>> databaseCompartments() {
+        return Codegen.optional(this.databaseCompartments);
     }
     /**
      * A list of DB systems.
      * 
      */
     @Export(name="databaseSystems", refs={List.class,ExternalExadataInfrastructureDatabaseSystem.class}, tree="[0,1]")
-    private Output<List<ExternalExadataInfrastructureDatabaseSystem>> databaseSystems;
+    private Output</* @Nullable */ List<ExternalExadataInfrastructureDatabaseSystem>> databaseSystems;
 
     /**
      * @return A list of DB systems.
      * 
      */
-    public Output<List<ExternalExadataInfrastructureDatabaseSystem>> databaseSystems() {
-        return this.databaseSystems;
+    public Output<Optional<List<ExternalExadataInfrastructureDatabaseSystem>>> databaseSystems() {
+        return Codegen.optional(this.databaseSystems);
     }
     /**
      * (Updatable) The list of DB systems in the Exadata infrastructure.
@@ -150,14 +150,14 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="discoveryKey", refs={String.class}, tree="[0]")
-    private Output<String> discoveryKey;
+    private Output</* @Nullable */ String> discoveryKey;
 
     /**
      * @return (Updatable) The unique key of the discovery request.
      * 
      */
-    public Output<String> discoveryKey() {
-        return this.discoveryKey;
+    public Output<Optional<String>> discoveryKey() {
+        return Codegen.optional(this.discoveryKey);
     }
     /**
      * (Updatable) The name of the Exadata infrastructure.
@@ -178,98 +178,98 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="internalId", refs={String.class}, tree="[0]")
-    private Output<String> internalId;
+    private Output</* @Nullable */ String> internalId;
 
     /**
      * @return The internal ID of the Exadata resource.
      * 
      */
-    public Output<String> internalId() {
-        return this.internalId;
+    public Output<Optional<String>> internalId() {
+        return Codegen.optional(this.internalId);
     }
     /**
      * (Updatable) The Oracle license model that applies to the database management resources.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return (Updatable) The Oracle license model that applies to the database management resources.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * The details of the lifecycle state of the Exadata resource.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The details of the lifecycle state of the Exadata resource.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The rack size of the Exadata infrastructure.
      * 
      */
     @Export(name="rackSize", refs={String.class}, tree="[0]")
-    private Output<String> rackSize;
+    private Output</* @Nullable */ String> rackSize;
 
     /**
      * @return The rack size of the Exadata infrastructure.
      * 
      */
-    public Output<String> rackSize() {
-        return this.rackSize;
+    public Output<Optional<String>> rackSize() {
+        return Codegen.optional(this.rackSize);
     }
     /**
      * The current lifecycle state of the database resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the database resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The status of the Exadata resource.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The status of the Exadata resource.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * The Exadata storage server grid of the Exadata infrastructure.
      * 
      */
     @Export(name="storageGrids", refs={List.class,ExternalExadataInfrastructureStorageGrid.class}, tree="[0,1]")
-    private Output<List<ExternalExadataInfrastructureStorageGrid>> storageGrids;
+    private Output</* @Nullable */ List<ExternalExadataInfrastructureStorageGrid>> storageGrids;
 
     /**
      * @return The Exadata storage server grid of the Exadata infrastructure.
      * 
      */
-    public Output<List<ExternalExadataInfrastructureStorageGrid>> storageGrids() {
-        return this.storageGrids;
+    public Output<Optional<List<ExternalExadataInfrastructureStorageGrid>>> storageGrids() {
+        return Codegen.optional(this.storageGrids);
     }
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
@@ -296,42 +296,42 @@ public class ExternalExadataInfrastructure extends com.pulumi.resources.CustomRe
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The timestamp of the last update of the Exadata resource.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The timestamp of the last update of the Exadata resource.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The version of the Exadata resource.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return The version of the Exadata resource.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

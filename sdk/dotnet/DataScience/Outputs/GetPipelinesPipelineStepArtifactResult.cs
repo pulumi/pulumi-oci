@@ -13,29 +13,29 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class GetPipelinesPipelineStepArtifactResult
     {
-        public readonly string ArtifactContentDisposition;
-        public readonly string ArtifactContentLength;
-        public readonly string ArtifactContentMd5;
-        public readonly string ArtifactLastModified;
-        public readonly string PipelineStepArtifact;
+        public readonly string? ArtifactContentDisposition;
+        public readonly string? ArtifactContentLength;
+        public readonly string? ArtifactContentMd5;
+        public readonly string? ArtifactLastModified;
+        public readonly string? PipelineStepArtifact;
         /// <summary>
         /// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         /// </summary>
-        public readonly string StepName;
+        public readonly string? StepName;
 
         [OutputConstructor]
         private GetPipelinesPipelineStepArtifactResult(
-            string artifactContentDisposition,
+            string? artifactContentDisposition,
 
-            string artifactContentLength,
+            string? artifactContentLength,
 
-            string artifactContentMd5,
+            string? artifactContentMd5,
 
-            string artifactLastModified,
+            string? artifactLastModified,
 
-            string pipelineStepArtifact,
+            string? pipelineStepArtifact,
 
-            string stepName)
+            string? stepName)
         {
             ArtifactContentDisposition = artifactContentDisposition;
             ArtifactContentLength = artifactContentLength;

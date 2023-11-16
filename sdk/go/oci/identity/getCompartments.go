@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compartments in Oracle Cloud Infrastructure Identity service.
@@ -99,7 +98,7 @@ type GetCompartmentsResult struct {
 	Compartments []GetCompartmentsCompartment `pulumi:"compartments"`
 	Filters      []GetCompartmentsFilter      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The compartment's current state.
@@ -155,12 +154,6 @@ func (o GetCompartmentsResultOutput) ToGetCompartmentsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetCompartmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCompartmentsResult] {
-	return pulumix.Output[GetCompartmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCompartmentsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCompartmentsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -184,8 +177,8 @@ func (o GetCompartmentsResultOutput) Filters() GetCompartmentsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCompartmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCompartmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCompartmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCompartmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.

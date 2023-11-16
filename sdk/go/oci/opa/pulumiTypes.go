@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -65,12 +64,6 @@ func (i OpaInstanceAttachmentArgs) ToOpaInstanceAttachmentOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceAttachmentOutput)
 }
 
-func (i OpaInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[OpaInstanceAttachment] {
-	return pulumix.Output[OpaInstanceAttachment]{
-		OutputState: i.ToOpaInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpaInstanceAttachmentArrayInput is an input type that accepts OpaInstanceAttachmentArray and OpaInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `OpaInstanceAttachmentArrayInput` via:
 //
@@ -96,12 +89,6 @@ func (i OpaInstanceAttachmentArray) ToOpaInstanceAttachmentArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceAttachmentArrayOutput)
 }
 
-func (i OpaInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]OpaInstanceAttachment] {
-	return pulumix.Output[[]OpaInstanceAttachment]{
-		OutputState: i.ToOpaInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpaInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (OpaInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -114,12 +101,6 @@ func (o OpaInstanceAttachmentOutput) ToOpaInstanceAttachmentOutput() OpaInstance
 
 func (o OpaInstanceAttachmentOutput) ToOpaInstanceAttachmentOutputWithContext(ctx context.Context) OpaInstanceAttachmentOutput {
 	return o
-}
-
-func (o OpaInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[OpaInstanceAttachment] {
-	return pulumix.Output[OpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -162,12 +143,6 @@ func (o OpaInstanceAttachmentArrayOutput) ToOpaInstanceAttachmentArrayOutputWith
 	return o
 }
 
-func (o OpaInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OpaInstanceAttachment] {
-	return pulumix.Output[[]OpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) OpaInstanceAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OpaInstanceAttachment {
 		return vs[0].([]OpaInstanceAttachment)[vs[1].(int)]
@@ -177,15 +152,15 @@ func (o OpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) OpaInstanceAt
 type GetOpaInstanceAttachment struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
+	IsImplicit *bool `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole string `pulumi:"targetRole"`
+	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
+	TargetServiceType *string `pulumi:"targetServiceType"`
 }
 
 // GetOpaInstanceAttachmentInput is an input type that accepts GetOpaInstanceAttachmentArgs and GetOpaInstanceAttachmentOutput values.
@@ -202,15 +177,15 @@ type GetOpaInstanceAttachmentInput interface {
 type GetOpaInstanceAttachmentArgs struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
 }
 
 func (GetOpaInstanceAttachmentArgs) ElementType() reflect.Type {
@@ -223,12 +198,6 @@ func (i GetOpaInstanceAttachmentArgs) ToGetOpaInstanceAttachmentOutput() GetOpaI
 
 func (i GetOpaInstanceAttachmentArgs) ToGetOpaInstanceAttachmentOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstanceAttachmentOutput)
-}
-
-func (i GetOpaInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstanceAttachment] {
-	return pulumix.Output[GetOpaInstanceAttachment]{
-		OutputState: i.ToGetOpaInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpaInstanceAttachmentArrayInput is an input type that accepts GetOpaInstanceAttachmentArray and GetOpaInstanceAttachmentArrayOutput values.
@@ -256,12 +225,6 @@ func (i GetOpaInstanceAttachmentArray) ToGetOpaInstanceAttachmentArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstanceAttachmentArrayOutput)
 }
 
-func (i GetOpaInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstanceAttachment] {
-	return pulumix.Output[[]GetOpaInstanceAttachment]{
-		OutputState: i.ToGetOpaInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -276,36 +239,30 @@ func (o GetOpaInstanceAttachmentOutput) ToGetOpaInstanceAttachmentOutputWithCont
 	return o
 }
 
-func (o GetOpaInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstanceAttachment] {
-	return pulumix.Output[GetOpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // * If role == `PARENT`, the attached instance was created by this service instance
 // * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetOpaInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOpaInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+func (o GetOpaInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetOpaInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetOpaInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The dataplane instance URL of the attached instance
-func (o GetOpaInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+func (o GetOpaInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The role of the target attachment.
-func (o GetOpaInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+func (o GetOpaInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target instance, such as "FUSION".
-func (o GetOpaInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+func (o GetOpaInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
 }
 
 type GetOpaInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -320,12 +277,6 @@ func (o GetOpaInstanceAttachmentArrayOutput) ToGetOpaInstanceAttachmentArrayOutp
 
 func (o GetOpaInstanceAttachmentArrayOutput) ToGetOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o GetOpaInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstanceAttachment] {
-	return pulumix.Output[[]GetOpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetOpaInstanceAttachmentOutput {
@@ -369,12 +320,6 @@ func (i GetOpaInstancesFilterArgs) ToGetOpaInstancesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesFilterOutput)
 }
 
-func (i GetOpaInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesFilter] {
-	return pulumix.Output[GetOpaInstancesFilter]{
-		OutputState: i.ToGetOpaInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstancesFilterArrayInput is an input type that accepts GetOpaInstancesFilterArray and GetOpaInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstancesFilterArrayInput` via:
 //
@@ -400,12 +345,6 @@ func (i GetOpaInstancesFilterArray) ToGetOpaInstancesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesFilterArrayOutput)
 }
 
-func (i GetOpaInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesFilter] {
-	return pulumix.Output[[]GetOpaInstancesFilter]{
-		OutputState: i.ToGetOpaInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesFilterOutput) ElementType() reflect.Type {
@@ -418,12 +357,6 @@ func (o GetOpaInstancesFilterOutput) ToGetOpaInstancesFilterOutput() GetOpaInsta
 
 func (o GetOpaInstancesFilterOutput) ToGetOpaInstancesFilterOutputWithContext(ctx context.Context) GetOpaInstancesFilterOutput {
 	return o
-}
-
-func (o GetOpaInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesFilter] {
-	return pulumix.Output[GetOpaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -450,12 +383,6 @@ func (o GetOpaInstancesFilterArrayOutput) ToGetOpaInstancesFilterArrayOutput() G
 
 func (o GetOpaInstancesFilterArrayOutput) ToGetOpaInstancesFilterArrayOutputWithContext(ctx context.Context) GetOpaInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetOpaInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesFilter] {
-	return pulumix.Output[[]GetOpaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesFilterOutput {
@@ -495,12 +422,6 @@ func (i GetOpaInstancesOpaInstanceCollectionArgs) ToGetOpaInstancesOpaInstanceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollection]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstancesOpaInstanceCollectionArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionArray and GetOpaInstancesOpaInstanceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstancesOpaInstanceCollectionArrayInput` via:
 //
@@ -526,12 +447,6 @@ func (i GetOpaInstancesOpaInstanceCollectionArray) ToGetOpaInstancesOpaInstanceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionArrayOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollection]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesOpaInstanceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesOpaInstanceCollectionOutput) ElementType() reflect.Type {
@@ -544,12 +459,6 @@ func (o GetOpaInstancesOpaInstanceCollectionOutput) ToGetOpaInstancesOpaInstance
 
 func (o GetOpaInstancesOpaInstanceCollectionOutput) ToGetOpaInstancesOpaInstanceCollectionOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesOpaInstanceCollectionOutput) Items() GetOpaInstancesOpaInstanceCollectionItemArrayOutput {
@@ -572,12 +481,6 @@ func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) ToGetOpaInstancesOpaIns
 	return o
 }
 
-func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpaInstancesOpaInstanceCollection {
 		return vs[0].([]GetOpaInstancesOpaInstanceCollection)[vs[1].(int)]
@@ -588,44 +491,44 @@ type GetOpaInstancesOpaInstanceCollectionItem struct {
 	// A list of associated attachments to other services
 	Attachments []GetOpaInstancesOpaInstanceCollectionItemAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the Process Automation instance.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique OpaInstance identifier
-	Id     string `pulumi:"id"`
-	IdcsAt string `pulumi:"idcsAt"`
+	Id     *string `pulumi:"id"`
+	IdcsAt *string `pulumi:"idcsAt"`
 	// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppDisplayName string `pulumi:"identityAppDisplayName"`
+	IdentityAppDisplayName *string `pulumi:"identityAppDisplayName"`
 	// This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppGuid string `pulumi:"identityAppGuid"`
+	IdentityAppGuid *string `pulumi:"identityAppGuid"`
 	// This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppOpcServiceInstanceGuid string `pulumi:"identityAppOpcServiceInstanceGuid"`
+	IdentityAppOpcServiceInstanceGuid *string `pulumi:"identityAppOpcServiceInstanceGuid"`
 	// This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityDomainUrl string `pulumi:"identityDomainUrl"`
+	IdentityDomainUrl *string `pulumi:"identityDomainUrl"`
 	// OPA Instance URL
-	InstanceUrl string `pulumi:"instanceUrl"`
+	InstanceUrl *string `pulumi:"instanceUrl"`
 	// indicates if breakGlass is enabled for the opa instance.
-	IsBreakglassEnabled bool `pulumi:"isBreakglassEnabled"`
+	IsBreakglassEnabled *bool `pulumi:"isBreakglassEnabled"`
 	// MeteringType Identifier
-	MeteringType string `pulumi:"meteringType"`
+	MeteringType *string `pulumi:"meteringType"`
 	// Shape of the instance.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetOpaInstancesOpaInstanceCollectionItemInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemArgs and GetOpaInstancesOpaInstanceCollectionItemOutput values.
@@ -643,44 +546,44 @@ type GetOpaInstancesOpaInstanceCollectionItemArgs struct {
 	// A list of associated attachments to other services
 	Attachments GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes
-	ConsumptionModel pulumi.StringInput `pulumi:"consumptionModel"`
+	ConsumptionModel pulumi.StringPtrInput `pulumi:"consumptionModel"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the Process Automation instance.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique OpaInstance identifier
-	Id     pulumi.StringInput `pulumi:"id"`
-	IdcsAt pulumi.StringInput `pulumi:"idcsAt"`
+	Id     pulumi.StringPtrInput `pulumi:"id"`
+	IdcsAt pulumi.StringPtrInput `pulumi:"idcsAt"`
 	// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppDisplayName pulumi.StringInput `pulumi:"identityAppDisplayName"`
+	IdentityAppDisplayName pulumi.StringPtrInput `pulumi:"identityAppDisplayName"`
 	// This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppGuid pulumi.StringInput `pulumi:"identityAppGuid"`
+	IdentityAppGuid pulumi.StringPtrInput `pulumi:"identityAppGuid"`
 	// This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppOpcServiceInstanceGuid pulumi.StringInput `pulumi:"identityAppOpcServiceInstanceGuid"`
+	IdentityAppOpcServiceInstanceGuid pulumi.StringPtrInput `pulumi:"identityAppOpcServiceInstanceGuid"`
 	// This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityDomainUrl pulumi.StringInput `pulumi:"identityDomainUrl"`
+	IdentityDomainUrl pulumi.StringPtrInput `pulumi:"identityDomainUrl"`
 	// OPA Instance URL
-	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
+	InstanceUrl pulumi.StringPtrInput `pulumi:"instanceUrl"`
 	// indicates if breakGlass is enabled for the opa instance.
-	IsBreakglassEnabled pulumi.BoolInput `pulumi:"isBreakglassEnabled"`
+	IsBreakglassEnabled pulumi.BoolPtrInput `pulumi:"isBreakglassEnabled"`
 	// MeteringType Identifier
-	MeteringType pulumi.StringInput `pulumi:"meteringType"`
+	MeteringType pulumi.StringPtrInput `pulumi:"meteringType"`
 	// Shape of the instance.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetOpaInstancesOpaInstanceCollectionItemArgs) ElementType() reflect.Type {
@@ -693,12 +596,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemArgs) ToGetOpaInstancesOpaInstan
 
 func (i GetOpaInstancesOpaInstanceCollectionItemArgs) ToGetOpaInstancesOpaInstanceCollectionItemOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemOutput)
-}
-
-func (i GetOpaInstancesOpaInstanceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpaInstancesOpaInstanceCollectionItemArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemArray and GetOpaInstancesOpaInstanceCollectionItemArrayOutput values.
@@ -726,12 +623,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemArray) ToGetOpaInstancesOpaInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemArrayOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesOpaInstanceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesOpaInstanceCollectionItemOutput) ElementType() reflect.Type {
@@ -746,12 +637,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToGetOpaInstancesOpaInst
 	return o
 }
 
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of associated attachments to other services
 func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Attachments() GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
 	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) []GetOpaInstancesOpaInstanceCollectionItemAttachment {
@@ -760,13 +645,13 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Attachments() GetOpaInst
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement used for billing purposes
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -775,13 +660,13 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // Description of the Process Automation instance.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -790,57 +675,57 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // unique OpaInstance identifier
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdcsAt() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.IdcsAt }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdcsAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.IdcsAt }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.IdentityAppDisplayName }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.IdentityAppDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityAppGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.IdentityAppGuid }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityAppGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.IdentityAppGuid }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityAppOpcServiceInstanceGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.IdentityAppOpcServiceInstanceGuid }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityAppOpcServiceInstanceGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.IdentityAppOpcServiceInstanceGuid }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityDomainUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.IdentityDomainUrl }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IdentityDomainUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.IdentityDomainUrl }).(pulumi.StringPtrOutput)
 }
 
 // OPA Instance URL
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // indicates if breakGlass is enabled for the opa instance.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IsBreakglassEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) bool { return v.IsBreakglassEnabled }).(pulumi.BoolOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) IsBreakglassEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *bool { return v.IsBreakglassEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // MeteringType Identifier
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) MeteringType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.MeteringType }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) MeteringType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.MeteringType }).(pulumi.StringPtrOutput)
 }
 
 // Shape of the instance.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -849,13 +734,13 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) SystemTags() pulumi.MapO
 }
 
 // The time when OpaInstance was created. An RFC3339 formatted datetime string
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the OpaInstance was updated. An RFC3339 formatted datetime string
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetOpaInstancesOpaInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -872,12 +757,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) ToGetOpaInstancesOp
 	return o
 }
 
-func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpaInstancesOpaInstanceCollectionItem {
 		return vs[0].([]GetOpaInstancesOpaInstanceCollectionItem)[vs[1].(int)]
@@ -887,15 +766,15 @@ func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) Index(i pulumi.IntI
 type GetOpaInstancesOpaInstanceCollectionItemAttachment struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
+	IsImplicit *bool `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole string `pulumi:"targetRole"`
+	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
+	TargetServiceType *string `pulumi:"targetServiceType"`
 }
 
 // GetOpaInstancesOpaInstanceCollectionItemAttachmentInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs and GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput values.
@@ -912,15 +791,15 @@ type GetOpaInstancesOpaInstanceCollectionItemAttachmentInput interface {
 type GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
 }
 
 func (GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ElementType() reflect.Type {
@@ -933,12 +812,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToGetOpaInstance
 
 func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput)
-}
-
-func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemAttachmentArray and GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput values.
@@ -966,12 +839,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ToGetOpaInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ElementType() reflect.Type {
@@ -986,36 +853,30 @@ func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToGetOpaInstan
 	return o
 }
 
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // * If role == `PARENT`, the attached instance was created by this service instance
 // * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The dataplane instance URL of the attached instance
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The role of the target attachment.
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target instance, such as "FUSION".
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
 }
 
 type GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -1030,12 +891,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToGetOpaI
 
 func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {

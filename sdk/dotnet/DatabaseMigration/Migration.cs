@@ -237,13 +237,13 @@ namespace Pulumi.Oci.DatabaseMigration
         /// (Updatable) Optional Pre-Migration advisor settings.
         /// </summary>
         [Output("advisorSettings")]
-        public Output<Outputs.MigrationAdvisorSettings> AdvisorSettings { get; private set; } = null!;
+        public Output<Outputs.MigrationAdvisorSettings?> AdvisorSettings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
         /// </summary>
         [Output("agentId")]
-        public Output<string> AgentId { get; private set; } = null!;
+        public Output<string?> AgentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -255,46 +255,46 @@ namespace Pulumi.Oci.DatabaseMigration
         /// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         /// </summary>
         [Output("credentialsSecretId")]
-        public Output<string> CredentialsSecretId { get; private set; } = null!;
+        public Output<string?> CredentialsSecretId { get; private set; } = null!;
 
         /// <summary>
         /// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         /// </summary>
         [Output("csvText")]
-        public Output<string> CsvText { get; private set; } = null!;
+        public Output<string?> CsvText { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         /// </summary>
         [Output("dataTransferMediumDetails")]
-        public Output<Outputs.MigrationDataTransferMediumDetails> DataTransferMediumDetails { get; private set; } = null!;
+        public Output<Outputs.MigrationDataTransferMediumDetails?> DataTransferMediumDetails { get; private set; } = null!;
 
         [Output("dataTransferMediumDetailsV2")]
-        public Output<Outputs.MigrationDataTransferMediumDetailsV2> DataTransferMediumDetailsV2 { get; private set; } = null!;
+        public Output<Outputs.MigrationDataTransferMediumDetailsV2?> DataTransferMediumDetailsV2 { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional settings for Data Pump Export and Import jobs
         /// </summary>
         [Output("datapumpSettings")]
-        public Output<Outputs.MigrationDatapumpSettings> DatapumpSettings { get; private set; } = null!;
+        public Output<Outputs.MigrationDatapumpSettings?> DatapumpSettings { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Migration Display Name
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional additional properties for dump transfer.
         /// </summary>
         [Output("dumpTransferDetails")]
-        public Output<Outputs.MigrationDumpTransferDetails> DumpTransferDetails { get; private set; } = null!;
+        public Output<Outputs.MigrationDumpTransferDetails?> DumpTransferDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
@@ -306,25 +306,25 @@ namespace Pulumi.Oci.DatabaseMigration
         /// OCID of the current ODMS Job in execution for the Migration, if any.
         /// </summary>
         [Output("executingJobId")]
-        public Output<string> ExecutingJobId { get; private set; } = null!;
+        public Output<string?> ExecutingJobId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
         /// </summary>
         [Output("goldenGateDetails")]
-        public Output<Outputs.MigrationGoldenGateDetails> GoldenGateDetails { get; private set; } = null!;
+        public Output<Outputs.MigrationGoldenGateDetails?> GoldenGateDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details about Oracle GoldenGate GGS Deployment.
         /// </summary>
         [Output("goldenGateServiceDetails")]
-        public Output<Outputs.MigrationGoldenGateServiceDetails> GoldenGateServiceDetails { get; private set; } = null!;
+        public Output<Outputs.MigrationGoldenGateServiceDetails?> GoldenGateServiceDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -336,13 +336,13 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Additional status related to the execution and current state of the Migration.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
         /// </summary>
         [Output("sourceContainerDatabaseConnectionId")]
-        public Output<string> SourceContainerDatabaseConnectionId { get; private set; } = null!;
+        public Output<string?> SourceContainerDatabaseConnectionId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Source Database Connection.
@@ -354,13 +354,13 @@ namespace Pulumi.Oci.DatabaseMigration
         /// The current state of the Migration resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Target Database Connection.
@@ -372,19 +372,19 @@ namespace Pulumi.Oci.DatabaseMigration
         /// The time the Migration was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time of last Migration. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeLastMigration")]
-        public Output<string> TimeLastMigration { get; private set; } = null!;
+        public Output<string?> TimeLastMigration { get; private set; } = null!;
 
         /// <summary>
         /// The time of the last Migration details update. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Migration type.
@@ -396,13 +396,13 @@ namespace Pulumi.Oci.DatabaseMigration
         /// (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         /// </summary>
         [Output("vaultDetails")]
-        public Output<Outputs.MigrationVaultDetails> VaultDetails { get; private set; } = null!;
+        public Output<Outputs.MigrationVaultDetails?> VaultDetails { get; private set; } = null!;
 
         /// <summary>
         /// Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
         /// </summary>
         [Output("waitAfter")]
-        public Output<string> WaitAfter { get; private set; } = null!;
+        public Output<string?> WaitAfter { get; private set; } = null!;
 
 
         /// <summary>

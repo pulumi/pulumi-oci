@@ -71,42 +71,42 @@ export interface GetRepositoryFileDiffResult {
     /**
      * Indicates whether the changed file contains conflicts.
      */
-    readonly areConflictsInFile: boolean;
+    readonly areConflictsInFile?: boolean;
     readonly baseVersion: string;
     /**
      * List of changed section in the file.
      */
-    readonly changes: outputs.DevOps.GetRepositoryFileDiffChange[];
+    readonly changes?: outputs.DevOps.GetRepositoryFileDiffChange[];
     readonly filePath: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the file is binary.
      */
-    readonly isBinary: boolean;
+    readonly isBinary?: boolean;
     readonly isComparisonFromMergeBase?: boolean;
     /**
      * Indicates whether the file is large.
      */
-    readonly isLarge: boolean;
+    readonly isLarge?: boolean;
     /**
      * The ID of the changed object on the target version.
      */
-    readonly newId: string;
+    readonly newId?: string;
     /**
      * The path on the target version to the changed object.
      */
-    readonly newPath: string;
+    readonly newPath?: string;
     /**
      * The ID of the changed object on the base version.
      */
-    readonly oldId: string;
+    readonly oldId?: string;
     /**
      * The path on the base version to the changed object.
      */
-    readonly oldPath: string;
+    readonly oldPath?: string;
     readonly repositoryId: string;
     readonly targetVersion: string;
 }

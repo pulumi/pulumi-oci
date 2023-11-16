@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Session resource in Oracle Cloud Infrastructure Bastion service.
@@ -60,36 +59,36 @@ type LookupSessionArgs struct {
 // A collection of values returned by getSession.
 type LookupSessionResult struct {
 	// The unique identifier (OCID) of the bastion that is hosting this session.
-	BastionId string `pulumi:"bastionId"`
+	BastionId *string `pulumi:"bastionId"`
 	// The name of the bastion that is hosting this session.
-	BastionName string `pulumi:"bastionName"`
+	BastionName *string `pulumi:"bastionName"`
 	// The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-	BastionPublicHostKeyInfo string `pulumi:"bastionPublicHostKeyInfo"`
+	BastionPublicHostKeyInfo *string `pulumi:"bastionPublicHostKeyInfo"`
 	// The username that the session uses to connect to the target resource.
-	BastionUserName string `pulumi:"bastionUserName"`
+	BastionUserName *string `pulumi:"bastionUserName"`
 	// The name of the session.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The unique identifier (OCID) of the session, which can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Public key details for a bastion session.
 	KeyDetails []GetSessionKeyDetail `pulumi:"keyDetails"`
 	// The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-	KeyType string `pulumi:"keyType"`
+	KeyType *string `pulumi:"keyType"`
 	// A message describing the current session state in more detail.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	SessionId        string `pulumi:"sessionId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	SessionId        string  `pulumi:"sessionId"`
 	// The amount of time the session can remain active.
-	SessionTtlInSeconds int `pulumi:"sessionTtlInSeconds"`
+	SessionTtlInSeconds *int `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
 	SshMetadata map[string]interface{} `pulumi:"sshMetadata"`
 	// The current state of the session.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Details about a bastion session's target resource.
 	TargetResourceDetails []GetSessionTargetResourceDetail `pulumi:"targetResourceDetails"`
 	// The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupSessionOutput(ctx *pulumi.Context, args LookupSessionOutputArgs, opts ...pulumi.InvokeOption) LookupSessionResultOutput {
@@ -130,40 +129,34 @@ func (o LookupSessionResultOutput) ToLookupSessionResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupSessionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSessionResult] {
-	return pulumix.Output[LookupSessionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique identifier (OCID) of the bastion that is hosting this session.
-func (o LookupSessionResultOutput) BastionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.BastionId }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) BastionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.BastionId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the bastion that is hosting this session.
-func (o LookupSessionResultOutput) BastionName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.BastionName }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) BastionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.BastionName }).(pulumi.StringPtrOutput)
 }
 
 // The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-func (o LookupSessionResultOutput) BastionPublicHostKeyInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.BastionPublicHostKeyInfo }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) BastionPublicHostKeyInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.BastionPublicHostKeyInfo }).(pulumi.StringPtrOutput)
 }
 
 // The username that the session uses to connect to the target resource.
-func (o LookupSessionResultOutput) BastionUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.BastionUserName }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) BastionUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.BastionUserName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the session.
-func (o LookupSessionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier (OCID) of the session, which can't be changed after creation.
-func (o LookupSessionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Public key details for a bastion session.
@@ -172,13 +165,13 @@ func (o LookupSessionResultOutput) KeyDetails() GetSessionKeyDetailArrayOutput {
 }
 
 // The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-func (o LookupSessionResultOutput) KeyType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.KeyType }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) KeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.KeyType }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current session state in more detail.
-func (o LookupSessionResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSessionResultOutput) SessionId() pulumi.StringOutput {
@@ -186,8 +179,8 @@ func (o LookupSessionResultOutput) SessionId() pulumi.StringOutput {
 }
 
 // The amount of time the session can remain active.
-func (o LookupSessionResultOutput) SessionTtlInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupSessionResult) int { return v.SessionTtlInSeconds }).(pulumi.IntOutput)
+func (o LookupSessionResultOutput) SessionTtlInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *int { return v.SessionTtlInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The connection message for the session.
@@ -196,8 +189,8 @@ func (o LookupSessionResultOutput) SshMetadata() pulumi.MapOutput {
 }
 
 // The current state of the session.
-func (o LookupSessionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about a bastion session's target resource.
@@ -206,13 +199,13 @@ func (o LookupSessionResultOutput) TargetResourceDetails() GetSessionTargetResou
 }
 
 // The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o LookupSessionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-func (o LookupSessionResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSessionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSessionResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSessionResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

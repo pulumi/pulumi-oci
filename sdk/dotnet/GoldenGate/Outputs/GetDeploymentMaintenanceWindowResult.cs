@@ -16,17 +16,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// Days of the week.
         /// </summary>
-        public readonly string Day;
+        public readonly string? Day;
         /// <summary>
         /// Start hour for maintenance period. Hour is in UTC.
         /// </summary>
-        public readonly int StartHour;
+        public readonly int? StartHour;
 
         [OutputConstructor]
         private GetDeploymentMaintenanceWindowResult(
-            string day,
+            string? day,
 
-            int startHour)
+            int? startHour)
         {
             Day = day;
             StartHour = startHour;

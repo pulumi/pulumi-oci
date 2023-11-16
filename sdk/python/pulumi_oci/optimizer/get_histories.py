@@ -61,9 +61,6 @@ class GetHistoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -78,15 +75,12 @@ class GetHistoriesResult:
 
     @property
     @pulumi.getter(name="historyCollections")
-    def history_collections(self) -> Sequence['outputs.GetHistoriesHistoryCollectionResult']:
-        """
-        The list of history_collection.
-        """
+    def history_collections(self) -> Optional[Sequence['outputs.GetHistoriesHistoryCollectionResult']]:
         return pulumi.get(self, "history_collections")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -95,49 +89,31 @@ class GetHistoriesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name assigned to the resource.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationId")
     def recommendation_id(self) -> Optional[str]:
-        """
-        The unique OCID associated with the recommendation.
-        """
         return pulumi.get(self, "recommendation_id")
 
     @property
     @pulumi.getter(name="recommendationName")
     def recommendation_name(self) -> Optional[str]:
-        """
-        The name assigned to the recommendation.
-        """
         return pulumi.get(self, "recommendation_name")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
-        """
-        The kind of resource.
-        """
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The recommendation history's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        The current status of the resource action.
-        """
         return pulumi.get(self, "status")
 
 
@@ -171,38 +147,7 @@ def get_histories(compartment_id: Optional[str] = None,
                   status: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHistoriesResult:
     """
-    This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists changes to the recommendations based on user activity.
-    For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
-        name=var["history_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["history_resource_type"],
-        state=var["history_state"],
-        status=var["history_status"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str recommendation_id: The unique OCID associated with the recommendation.
-    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
-    :param str resource_type: Optional. A filter that returns results that match the resource type specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
-    :param str status: A filter that returns recommendations that match the status specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -243,37 +188,6 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          status: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHistoriesResult]:
     """
-    This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists changes to the recommendations based on user activity.
-    For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
-        name=var["history_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["history_resource_type"],
-        state=var["history_state"],
-        status=var["history_status"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str recommendation_id: The unique OCID associated with the recommendation.
-    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
-    :param str resource_type: Optional. A filter that returns results that match the resource type specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
-    :param str status: A filter that returns recommendations that match the status specified.
+    Use this data source to access information about an existing resource.
     """
     ...

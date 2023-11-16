@@ -49,17 +49,11 @@ class GetResolversResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the resolver.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,17 +64,11 @@ class GetResolversResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the resolver.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def resolvers(self) -> Sequence['outputs.GetResolversResolverResult']:
-        """
-        The list of resolvers.
-        """
+    def resolvers(self) -> Optional[Sequence['outputs.GetResolversResolverResult']]:
         return pulumi.get(self, "resolvers")
 
     @property
@@ -91,9 +79,6 @@ class GetResolversResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -120,34 +105,7 @@ def get_resolvers(compartment_id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResolversResult:
     """
-    This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all resolvers within a compartment. The collection can
-    be filtered by display name, id, or lifecycle state. It can be sorted
-    on creation time or displayName both in ASC or DESC order. Note that
-    when no lifecycleState query parameter is provided, the collection
-    does not include resolvers in the DELETED lifecycleState to be consistent
-    with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolvers = oci.Dns.get_resolvers(compartment_id=var["compartment_id"],
-        scope="PRIVATE",
-        display_name=var["resolver_display_name"],
-        id=var["resolver_id"],
-        state=var["resolver_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str id: The OCID of a resource.
-    :param str scope: Value must be `PRIVATE` when listing private name resolvers.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -178,33 +136,6 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolversResult]:
     """
-    This data source provides the list of Resolvers in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all resolvers within a compartment. The collection can
-    be filtered by display name, id, or lifecycle state. It can be sorted
-    on creation time or displayName both in ASC or DESC order. Note that
-    when no lifecycleState query parameter is provided, the collection
-    does not include resolvers in the DELETED lifecycleState to be consistent
-    with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolvers = oci.Dns.get_resolvers(compartment_id=var["compartment_id"],
-        scope="PRIVATE",
-        display_name=var["resolver_display_name"],
-        id=var["resolver_id"],
-        state=var["resolver_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str display_name: The displayName of a resource.
-    :param str id: The OCID of a resource.
-    :param str scope: Value must be `PRIVATE` when listing private name resolvers.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     ...

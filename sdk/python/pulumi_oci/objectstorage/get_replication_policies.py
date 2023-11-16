@@ -52,7 +52,7 @@ class GetReplicationPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetReplicationPoliciesResult:
 
     @property
     @pulumi.getter(name="replicationPolicies")
-    def replication_policies(self) -> Sequence['outputs.GetReplicationPoliciesReplicationPolicyResult']:
-        """
-        The list of replication_policies.
-        """
+    def replication_policies(self) -> Optional[Sequence['outputs.GetReplicationPoliciesReplicationPolicyResult']]:
         return pulumi.get(self, "replication_policies")
 
 
@@ -90,23 +87,7 @@ def get_replication_policies(bucket: Optional[str] = None,
                              namespace: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationPoliciesResult:
     """
-    This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
-
-    List the replication policies associated with a bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_policies = oci.ObjectStorage.get_replication_policies(bucket=var["replication_policy_bucket"],
-        namespace=var["replication_policy_namespace"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -129,22 +110,6 @@ def get_replication_policies_output(bucket: Optional[pulumi.Input[str]] = None,
                                     namespace: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationPoliciesResult]:
     """
-    This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
-
-    List the replication policies associated with a bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_policies = oci.ObjectStorage.get_replication_policies(bucket=var["replication_policy_bucket"],
-        namespace=var["replication_policy_namespace"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

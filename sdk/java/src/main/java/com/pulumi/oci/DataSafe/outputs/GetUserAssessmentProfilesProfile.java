@@ -10,6 +10,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentProfilesProfile {
@@ -17,327 +19,327 @@ public final class GetUserAssessmentProfilesProfile {
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
      * 
      */
-    private String compositeLimit;
+    private @Nullable String compositeLimit;
     /**
      * @return Specify the total elapsed time limit for a session, expressed in minutes.
      * 
      */
-    private String connectTime;
+    private @Nullable String connectTime;
     /**
      * @return Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
      * 
      */
-    private String cpuPerCall;
+    private @Nullable String cpuPerCall;
     /**
      * @return Specify the CPU time limit for a session, expressed in hundredth of seconds.
      * 
      */
-    private String cpuPerSession;
+    private @Nullable String cpuPerSession;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Maximum times the user is allowed in fail login before the user account is locked.
      * 
      */
-    private String failedLoginAttempts;
+    private @Nullable String failedLoginAttempts;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
      * 
      */
-    private String idleTime;
+    private @Nullable String idleTime;
     /**
      * @return The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
      * 
      */
-    private String inactiveAccountTime;
+    private @Nullable String inactiveAccountTime;
     /**
      * @return An optional filter to return the user created profiles.
      * 
      */
-    private Boolean isUserCreated;
+    private @Nullable Boolean isUserCreated;
     /**
      * @return Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
      * 
      */
-    private String logicalReadsPerCall;
+    private @Nullable String logicalReadsPerCall;
     /**
      * @return Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
      * 
      */
-    private String logicalReadsPerSession;
+    private @Nullable String logicalReadsPerSession;
     /**
      * @return Number of grace days for user to change password.
      * 
      */
-    private String passwordGraceTime;
+    private @Nullable String passwordGraceTime;
     /**
      * @return Number of days the password is valid before expiry.
      * 
      */
-    private String passwordLifeTime;
+    private @Nullable String passwordLifeTime;
     /**
      * @return Number of days the user account remains locked after failed login.
      * 
      */
-    private String passwordLockTime;
+    private @Nullable String passwordLockTime;
     /**
      * @return Number of day after the user can use the already used password.
      * 
      */
-    private String passwordReuseMax;
+    private @Nullable String passwordReuseMax;
     /**
      * @return Number of days before which a password cannot be reused.
      * 
      */
-    private String passwordReuseTime;
+    private @Nullable String passwordReuseTime;
     /**
      * @return Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
      * 
      */
-    private String passwordRolloverTime;
+    private @Nullable String passwordRolloverTime;
     /**
      * @return An optional filter to filter the profiles based on password verification function.
      * 
      */
-    private String passwordVerificationFunction;
+    private @Nullable String passwordVerificationFunction;
     /**
      * @return Details about the PL/SQL that can be used for password verification.
      * 
      */
-    private String passwordVerificationFunctionDetails;
+    private @Nullable String passwordVerificationFunctionDetails;
     /**
      * @return Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
      * 
      */
-    private String privateSga;
+    private @Nullable String privateSga;
     /**
      * @return A filter to return only items that match the specified profile name.
      * 
      */
-    private String profileName;
+    private @Nullable String profileName;
     /**
      * @return Specify the number of concurrent sessions to which you want to limit the user.
      * 
      */
-    private String sessionsPerUser;
+    private @Nullable String sessionsPerUser;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    private String userAssessmentId;
+    private @Nullable String userAssessmentId;
     /**
      * @return The number of users that have a given profile.
      * 
      */
-    private Integer userCount;
+    private @Nullable Integer userCount;
 
     private GetUserAssessmentProfilesProfile() {}
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
      * 
      */
-    public String compositeLimit() {
-        return this.compositeLimit;
+    public Optional<String> compositeLimit() {
+        return Optional.ofNullable(this.compositeLimit);
     }
     /**
      * @return Specify the total elapsed time limit for a session, expressed in minutes.
      * 
      */
-    public String connectTime() {
-        return this.connectTime;
+    public Optional<String> connectTime() {
+        return Optional.ofNullable(this.connectTime);
     }
     /**
      * @return Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
      * 
      */
-    public String cpuPerCall() {
-        return this.cpuPerCall;
+    public Optional<String> cpuPerCall() {
+        return Optional.ofNullable(this.cpuPerCall);
     }
     /**
      * @return Specify the CPU time limit for a session, expressed in hundredth of seconds.
      * 
      */
-    public String cpuPerSession() {
-        return this.cpuPerSession;
+    public Optional<String> cpuPerSession() {
+        return Optional.ofNullable(this.cpuPerSession);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Maximum times the user is allowed in fail login before the user account is locked.
      * 
      */
-    public String failedLoginAttempts() {
-        return this.failedLoginAttempts;
+    public Optional<String> failedLoginAttempts() {
+        return Optional.ofNullable(this.failedLoginAttempts);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
      * 
      */
-    public String idleTime() {
-        return this.idleTime;
+    public Optional<String> idleTime() {
+        return Optional.ofNullable(this.idleTime);
     }
     /**
      * @return The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
      * 
      */
-    public String inactiveAccountTime() {
-        return this.inactiveAccountTime;
+    public Optional<String> inactiveAccountTime() {
+        return Optional.ofNullable(this.inactiveAccountTime);
     }
     /**
      * @return An optional filter to return the user created profiles.
      * 
      */
-    public Boolean isUserCreated() {
-        return this.isUserCreated;
+    public Optional<Boolean> isUserCreated() {
+        return Optional.ofNullable(this.isUserCreated);
     }
     /**
      * @return Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
      * 
      */
-    public String logicalReadsPerCall() {
-        return this.logicalReadsPerCall;
+    public Optional<String> logicalReadsPerCall() {
+        return Optional.ofNullable(this.logicalReadsPerCall);
     }
     /**
      * @return Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
      * 
      */
-    public String logicalReadsPerSession() {
-        return this.logicalReadsPerSession;
+    public Optional<String> logicalReadsPerSession() {
+        return Optional.ofNullable(this.logicalReadsPerSession);
     }
     /**
      * @return Number of grace days for user to change password.
      * 
      */
-    public String passwordGraceTime() {
-        return this.passwordGraceTime;
+    public Optional<String> passwordGraceTime() {
+        return Optional.ofNullable(this.passwordGraceTime);
     }
     /**
      * @return Number of days the password is valid before expiry.
      * 
      */
-    public String passwordLifeTime() {
-        return this.passwordLifeTime;
+    public Optional<String> passwordLifeTime() {
+        return Optional.ofNullable(this.passwordLifeTime);
     }
     /**
      * @return Number of days the user account remains locked after failed login.
      * 
      */
-    public String passwordLockTime() {
-        return this.passwordLockTime;
+    public Optional<String> passwordLockTime() {
+        return Optional.ofNullable(this.passwordLockTime);
     }
     /**
      * @return Number of day after the user can use the already used password.
      * 
      */
-    public String passwordReuseMax() {
-        return this.passwordReuseMax;
+    public Optional<String> passwordReuseMax() {
+        return Optional.ofNullable(this.passwordReuseMax);
     }
     /**
      * @return Number of days before which a password cannot be reused.
      * 
      */
-    public String passwordReuseTime() {
-        return this.passwordReuseTime;
+    public Optional<String> passwordReuseTime() {
+        return Optional.ofNullable(this.passwordReuseTime);
     }
     /**
      * @return Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
      * 
      */
-    public String passwordRolloverTime() {
-        return this.passwordRolloverTime;
+    public Optional<String> passwordRolloverTime() {
+        return Optional.ofNullable(this.passwordRolloverTime);
     }
     /**
      * @return An optional filter to filter the profiles based on password verification function.
      * 
      */
-    public String passwordVerificationFunction() {
-        return this.passwordVerificationFunction;
+    public Optional<String> passwordVerificationFunction() {
+        return Optional.ofNullable(this.passwordVerificationFunction);
     }
     /**
      * @return Details about the PL/SQL that can be used for password verification.
      * 
      */
-    public String passwordVerificationFunctionDetails() {
-        return this.passwordVerificationFunctionDetails;
+    public Optional<String> passwordVerificationFunctionDetails() {
+        return Optional.ofNullable(this.passwordVerificationFunctionDetails);
     }
     /**
      * @return Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA), expressed in bytes.
      * 
      */
-    public String privateSga() {
-        return this.privateSga;
+    public Optional<String> privateSga() {
+        return Optional.ofNullable(this.privateSga);
     }
     /**
      * @return A filter to return only items that match the specified profile name.
      * 
      */
-    public String profileName() {
-        return this.profileName;
+    public Optional<String> profileName() {
+        return Optional.ofNullable(this.profileName);
     }
     /**
      * @return Specify the number of concurrent sessions to which you want to limit the user.
      * 
      */
-    public String sessionsPerUser() {
-        return this.sessionsPerUser;
+    public Optional<String> sessionsPerUser() {
+        return Optional.ofNullable(this.sessionsPerUser);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    public String userAssessmentId() {
-        return this.userAssessmentId;
+    public Optional<String> userAssessmentId() {
+        return Optional.ofNullable(this.userAssessmentId);
     }
     /**
      * @return The number of users that have a given profile.
      * 
      */
-    public Integer userCount() {
-        return this.userCount;
+    public Optional<Integer> userCount() {
+        return Optional.ofNullable(this.userCount);
     }
 
     public static Builder builder() {
@@ -349,33 +351,33 @@ public final class GetUserAssessmentProfilesProfile {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String compositeLimit;
-        private String connectTime;
-        private String cpuPerCall;
-        private String cpuPerSession;
-        private Map<String,Object> definedTags;
-        private String failedLoginAttempts;
-        private Map<String,Object> freeformTags;
-        private String idleTime;
-        private String inactiveAccountTime;
-        private Boolean isUserCreated;
-        private String logicalReadsPerCall;
-        private String logicalReadsPerSession;
-        private String passwordGraceTime;
-        private String passwordLifeTime;
-        private String passwordLockTime;
-        private String passwordReuseMax;
-        private String passwordReuseTime;
-        private String passwordRolloverTime;
-        private String passwordVerificationFunction;
-        private String passwordVerificationFunctionDetails;
-        private String privateSga;
-        private String profileName;
-        private String sessionsPerUser;
-        private String targetId;
-        private String userAssessmentId;
-        private Integer userCount;
+        private @Nullable String compartmentId;
+        private @Nullable String compositeLimit;
+        private @Nullable String connectTime;
+        private @Nullable String cpuPerCall;
+        private @Nullable String cpuPerSession;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String failedLoginAttempts;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String idleTime;
+        private @Nullable String inactiveAccountTime;
+        private @Nullable Boolean isUserCreated;
+        private @Nullable String logicalReadsPerCall;
+        private @Nullable String logicalReadsPerSession;
+        private @Nullable String passwordGraceTime;
+        private @Nullable String passwordLifeTime;
+        private @Nullable String passwordLockTime;
+        private @Nullable String passwordReuseMax;
+        private @Nullable String passwordReuseTime;
+        private @Nullable String passwordRolloverTime;
+        private @Nullable String passwordVerificationFunction;
+        private @Nullable String passwordVerificationFunctionDetails;
+        private @Nullable String privateSga;
+        private @Nullable String profileName;
+        private @Nullable String sessionsPerUser;
+        private @Nullable String targetId;
+        private @Nullable String userAssessmentId;
+        private @Nullable Integer userCount;
         public Builder() {}
         public Builder(GetUserAssessmentProfilesProfile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -409,138 +411,138 @@ public final class GetUserAssessmentProfilesProfile {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder compositeLimit(String compositeLimit) {
-            this.compositeLimit = Objects.requireNonNull(compositeLimit);
+        public Builder compositeLimit(@Nullable String compositeLimit) {
+            this.compositeLimit = compositeLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder connectTime(String connectTime) {
-            this.connectTime = Objects.requireNonNull(connectTime);
+        public Builder connectTime(@Nullable String connectTime) {
+            this.connectTime = connectTime;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuPerCall(String cpuPerCall) {
-            this.cpuPerCall = Objects.requireNonNull(cpuPerCall);
+        public Builder cpuPerCall(@Nullable String cpuPerCall) {
+            this.cpuPerCall = cpuPerCall;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuPerSession(String cpuPerSession) {
-            this.cpuPerSession = Objects.requireNonNull(cpuPerSession);
+        public Builder cpuPerSession(@Nullable String cpuPerSession) {
+            this.cpuPerSession = cpuPerSession;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder failedLoginAttempts(String failedLoginAttempts) {
-            this.failedLoginAttempts = Objects.requireNonNull(failedLoginAttempts);
+        public Builder failedLoginAttempts(@Nullable String failedLoginAttempts) {
+            this.failedLoginAttempts = failedLoginAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder idleTime(String idleTime) {
-            this.idleTime = Objects.requireNonNull(idleTime);
+        public Builder idleTime(@Nullable String idleTime) {
+            this.idleTime = idleTime;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveAccountTime(String inactiveAccountTime) {
-            this.inactiveAccountTime = Objects.requireNonNull(inactiveAccountTime);
+        public Builder inactiveAccountTime(@Nullable String inactiveAccountTime) {
+            this.inactiveAccountTime = inactiveAccountTime;
             return this;
         }
         @CustomType.Setter
-        public Builder isUserCreated(Boolean isUserCreated) {
-            this.isUserCreated = Objects.requireNonNull(isUserCreated);
+        public Builder isUserCreated(@Nullable Boolean isUserCreated) {
+            this.isUserCreated = isUserCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder logicalReadsPerCall(String logicalReadsPerCall) {
-            this.logicalReadsPerCall = Objects.requireNonNull(logicalReadsPerCall);
+        public Builder logicalReadsPerCall(@Nullable String logicalReadsPerCall) {
+            this.logicalReadsPerCall = logicalReadsPerCall;
             return this;
         }
         @CustomType.Setter
-        public Builder logicalReadsPerSession(String logicalReadsPerSession) {
-            this.logicalReadsPerSession = Objects.requireNonNull(logicalReadsPerSession);
+        public Builder logicalReadsPerSession(@Nullable String logicalReadsPerSession) {
+            this.logicalReadsPerSession = logicalReadsPerSession;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordGraceTime(String passwordGraceTime) {
-            this.passwordGraceTime = Objects.requireNonNull(passwordGraceTime);
+        public Builder passwordGraceTime(@Nullable String passwordGraceTime) {
+            this.passwordGraceTime = passwordGraceTime;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordLifeTime(String passwordLifeTime) {
-            this.passwordLifeTime = Objects.requireNonNull(passwordLifeTime);
+        public Builder passwordLifeTime(@Nullable String passwordLifeTime) {
+            this.passwordLifeTime = passwordLifeTime;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordLockTime(String passwordLockTime) {
-            this.passwordLockTime = Objects.requireNonNull(passwordLockTime);
+        public Builder passwordLockTime(@Nullable String passwordLockTime) {
+            this.passwordLockTime = passwordLockTime;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordReuseMax(String passwordReuseMax) {
-            this.passwordReuseMax = Objects.requireNonNull(passwordReuseMax);
+        public Builder passwordReuseMax(@Nullable String passwordReuseMax) {
+            this.passwordReuseMax = passwordReuseMax;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordReuseTime(String passwordReuseTime) {
-            this.passwordReuseTime = Objects.requireNonNull(passwordReuseTime);
+        public Builder passwordReuseTime(@Nullable String passwordReuseTime) {
+            this.passwordReuseTime = passwordReuseTime;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordRolloverTime(String passwordRolloverTime) {
-            this.passwordRolloverTime = Objects.requireNonNull(passwordRolloverTime);
+        public Builder passwordRolloverTime(@Nullable String passwordRolloverTime) {
+            this.passwordRolloverTime = passwordRolloverTime;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordVerificationFunction(String passwordVerificationFunction) {
-            this.passwordVerificationFunction = Objects.requireNonNull(passwordVerificationFunction);
+        public Builder passwordVerificationFunction(@Nullable String passwordVerificationFunction) {
+            this.passwordVerificationFunction = passwordVerificationFunction;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordVerificationFunctionDetails(String passwordVerificationFunctionDetails) {
-            this.passwordVerificationFunctionDetails = Objects.requireNonNull(passwordVerificationFunctionDetails);
+        public Builder passwordVerificationFunctionDetails(@Nullable String passwordVerificationFunctionDetails) {
+            this.passwordVerificationFunctionDetails = passwordVerificationFunctionDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder privateSga(String privateSga) {
-            this.privateSga = Objects.requireNonNull(privateSga);
+        public Builder privateSga(@Nullable String privateSga) {
+            this.privateSga = privateSga;
             return this;
         }
         @CustomType.Setter
-        public Builder profileName(String profileName) {
-            this.profileName = Objects.requireNonNull(profileName);
+        public Builder profileName(@Nullable String profileName) {
+            this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
-        public Builder sessionsPerUser(String sessionsPerUser) {
-            this.sessionsPerUser = Objects.requireNonNull(sessionsPerUser);
+        public Builder sessionsPerUser(@Nullable String sessionsPerUser) {
+            this.sessionsPerUser = sessionsPerUser;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+        public Builder userAssessmentId(@Nullable String userAssessmentId) {
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder userCount(Integer userCount) {
-            this.userCount = Objects.requireNonNull(userCount);
+        public Builder userCount(@Nullable Integer userCount) {
+            this.userCount = userCount;
             return this;
         }
         public GetUserAssessmentProfilesProfile build() {

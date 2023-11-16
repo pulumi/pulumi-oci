@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
@@ -86,7 +85,7 @@ type GetChannelsResult struct {
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetChannelsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The state of the Channel.
@@ -142,12 +141,6 @@ func (o GetChannelsResultOutput) ToGetChannelsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetChannelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetChannelsResult] {
-	return pulumix.Output[GetChannelsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetChannelsResultOutput) ChannelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetChannelsResult) *string { return v.ChannelId }).(pulumi.StringPtrOutput)
 }
@@ -177,8 +170,8 @@ func (o GetChannelsResultOutput) Filters() GetChannelsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetChannelsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetChannelsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetChannelsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetChannelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the Channel has been enabled by the user.

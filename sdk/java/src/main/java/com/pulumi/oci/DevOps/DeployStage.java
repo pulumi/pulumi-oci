@@ -56,154 +56,154 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="approvalPolicy", refs={DeployStageApprovalPolicy.class}, tree="[0]")
-    private Output<DeployStageApprovalPolicy> approvalPolicy;
+    private Output</* @Nullable */ DeployStageApprovalPolicy> approvalPolicy;
 
     /**
      * @return (Updatable) Specifies the approval policy.
      * 
      */
-    public Output<DeployStageApprovalPolicy> approvalPolicy() {
-        return this.approvalPolicy;
+    public Output<Optional<DeployStageApprovalPolicy>> approvalPolicy() {
+        return Codegen.optional(this.approvalPolicy);
     }
     /**
      * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
      * 
      */
     @Export(name="areHooksEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> areHooksEnabled;
+    private Output</* @Nullable */ Boolean> areHooksEnabled;
 
     /**
      * @return (Updatable) Disable pre/post upgrade hooks. Set to false by default.
      * 
      */
-    public Output<Boolean> areHooksEnabled() {
-        return this.areHooksEnabled;
+    public Output<Optional<Boolean>> areHooksEnabled() {
+        return Codegen.optional(this.areHooksEnabled);
     }
     /**
      * (Updatable) Collection of backend environment IP addresses.
      * 
      */
     @Export(name="blueBackendIps", refs={DeployStageBlueBackendIps.class}, tree="[0]")
-    private Output<DeployStageBlueBackendIps> blueBackendIps;
+    private Output</* @Nullable */ DeployStageBlueBackendIps> blueBackendIps;
 
     /**
      * @return (Updatable) Collection of backend environment IP addresses.
      * 
      */
-    public Output<DeployStageBlueBackendIps> blueBackendIps() {
-        return this.blueBackendIps;
+    public Output<Optional<DeployStageBlueBackendIps>> blueBackendIps() {
+        return Codegen.optional(this.blueBackendIps);
     }
     /**
      * Specifies the required blue green release strategy for OKE deployment.
      * 
      */
     @Export(name="blueGreenStrategy", refs={DeployStageBlueGreenStrategy.class}, tree="[0]")
-    private Output<DeployStageBlueGreenStrategy> blueGreenStrategy;
+    private Output</* @Nullable */ DeployStageBlueGreenStrategy> blueGreenStrategy;
 
     /**
      * @return Specifies the required blue green release strategy for OKE deployment.
      * 
      */
-    public Output<DeployStageBlueGreenStrategy> blueGreenStrategy() {
-        return this.blueGreenStrategy;
+    public Output<Optional<DeployStageBlueGreenStrategy>> blueGreenStrategy() {
+        return Codegen.optional(this.blueGreenStrategy);
     }
     /**
      * Specifies the required canary release strategy for OKE deployment.
      * 
      */
     @Export(name="canaryStrategy", refs={DeployStageCanaryStrategy.class}, tree="[0]")
-    private Output<DeployStageCanaryStrategy> canaryStrategy;
+    private Output</* @Nullable */ DeployStageCanaryStrategy> canaryStrategy;
 
     /**
      * @return Specifies the required canary release strategy for OKE deployment.
      * 
      */
-    public Output<DeployStageCanaryStrategy> canaryStrategy() {
-        return this.canaryStrategy;
+    public Output<Optional<DeployStageCanaryStrategy>> canaryStrategy() {
+        return Codegen.optional(this.canaryStrategy);
     }
     /**
      * (Updatable) The OCID of the artifact that contains the command specification.
      * 
      */
     @Export(name="commandSpecDeployArtifactId", refs={String.class}, tree="[0]")
-    private Output<String> commandSpecDeployArtifactId;
+    private Output</* @Nullable */ String> commandSpecDeployArtifactId;
 
     /**
      * @return (Updatable) The OCID of the artifact that contains the command specification.
      * 
      */
-    public Output<String> commandSpecDeployArtifactId() {
-        return this.commandSpecDeployArtifactId;
+    public Output<Optional<String>> commandSpecDeployArtifactId() {
+        return Codegen.optional(this.commandSpecDeployArtifactId);
     }
     /**
      * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      * 
      */
     @Export(name="computeInstanceGroupBlueGreenDeploymentDeployStageId", refs={String.class}, tree="[0]")
-    private Output<String> computeInstanceGroupBlueGreenDeploymentDeployStageId;
+    private Output</* @Nullable */ String> computeInstanceGroupBlueGreenDeploymentDeployStageId;
 
     /**
      * @return The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      * 
      */
-    public Output<String> computeInstanceGroupBlueGreenDeploymentDeployStageId() {
-        return this.computeInstanceGroupBlueGreenDeploymentDeployStageId;
+    public Output<Optional<String>> computeInstanceGroupBlueGreenDeploymentDeployStageId() {
+        return Codegen.optional(this.computeInstanceGroupBlueGreenDeploymentDeployStageId);
     }
     /**
      * A compute instance group canary stage OCID for load balancer.
      * 
      */
     @Export(name="computeInstanceGroupCanaryDeployStageId", refs={String.class}, tree="[0]")
-    private Output<String> computeInstanceGroupCanaryDeployStageId;
+    private Output</* @Nullable */ String> computeInstanceGroupCanaryDeployStageId;
 
     /**
      * @return A compute instance group canary stage OCID for load balancer.
      * 
      */
-    public Output<String> computeInstanceGroupCanaryDeployStageId() {
-        return this.computeInstanceGroupCanaryDeployStageId;
+    public Output<Optional<String>> computeInstanceGroupCanaryDeployStageId() {
+        return Codegen.optional(this.computeInstanceGroupCanaryDeployStageId);
     }
     /**
      * (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
      * 
      */
     @Export(name="computeInstanceGroupCanaryTrafficShiftDeployStageId", refs={String.class}, tree="[0]")
-    private Output<String> computeInstanceGroupCanaryTrafficShiftDeployStageId;
+    private Output</* @Nullable */ String> computeInstanceGroupCanaryTrafficShiftDeployStageId;
 
     /**
      * @return (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
      * 
      */
-    public Output<String> computeInstanceGroupCanaryTrafficShiftDeployStageId() {
-        return this.computeInstanceGroupCanaryTrafficShiftDeployStageId;
+    public Output<Optional<String>> computeInstanceGroupCanaryTrafficShiftDeployStageId() {
+        return Codegen.optional(this.computeInstanceGroupCanaryTrafficShiftDeployStageId);
     }
     /**
      * (Updatable) A compute instance group environment OCID for rolling deployment.
      * 
      */
     @Export(name="computeInstanceGroupDeployEnvironmentId", refs={String.class}, tree="[0]")
-    private Output<String> computeInstanceGroupDeployEnvironmentId;
+    private Output</* @Nullable */ String> computeInstanceGroupDeployEnvironmentId;
 
     /**
      * @return (Updatable) A compute instance group environment OCID for rolling deployment.
      * 
      */
-    public Output<String> computeInstanceGroupDeployEnvironmentId() {
-        return this.computeInstanceGroupDeployEnvironmentId;
+    public Output<Optional<String>> computeInstanceGroupDeployEnvironmentId() {
+        return Codegen.optional(this.computeInstanceGroupDeployEnvironmentId);
     }
     /**
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
@@ -224,28 +224,28 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="containerConfig", refs={DeployStageContainerConfig.class}, tree="[0]")
-    private Output<DeployStageContainerConfig> containerConfig;
+    private Output</* @Nullable */ DeployStageContainerConfig> containerConfig;
 
     /**
      * @return (Updatable) Specifies the container configuration.
      * 
      */
-    public Output<DeployStageContainerConfig> containerConfig() {
-        return this.containerConfig;
+    public Output<Optional<DeployStageContainerConfig>> containerConfig() {
+        return Codegen.optional(this.containerConfig);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -280,28 +280,28 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deployEnvironmentIdA", refs={String.class}, tree="[0]")
-    private Output<String> deployEnvironmentIdA;
+    private Output</* @Nullable */ String> deployEnvironmentIdA;
 
     /**
      * @return First compute instance group environment OCID for deployment.
      * 
      */
-    public Output<String> deployEnvironmentIdA() {
-        return this.deployEnvironmentIdA;
+    public Output<Optional<String>> deployEnvironmentIdA() {
+        return Codegen.optional(this.deployEnvironmentIdA);
     }
     /**
      * Second compute instance group environment OCID for deployment.
      * 
      */
     @Export(name="deployEnvironmentIdB", refs={String.class}, tree="[0]")
-    private Output<String> deployEnvironmentIdB;
+    private Output</* @Nullable */ String> deployEnvironmentIdB;
 
     /**
      * @return Second compute instance group environment OCID for deployment.
      * 
      */
-    public Output<String> deployEnvironmentIdB() {
-        return this.deployEnvironmentIdB;
+    public Output<Optional<String>> deployEnvironmentIdB() {
+        return Codegen.optional(this.deployEnvironmentIdB);
     }
     /**
      * The OCID of a pipeline.
@@ -350,196 +350,196 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deploymentSpecDeployArtifactId", refs={String.class}, tree="[0]")
-    private Output<String> deploymentSpecDeployArtifactId;
+    private Output</* @Nullable */ String> deploymentSpecDeployArtifactId;
 
     /**
      * @return (Updatable) The OCID of the artifact that contains the deployment specification.
      * 
      */
-    public Output<String> deploymentSpecDeployArtifactId() {
-        return this.deploymentSpecDeployArtifactId;
+    public Output<Optional<String>> deploymentSpecDeployArtifactId() {
+        return Codegen.optional(this.deploymentSpecDeployArtifactId);
     }
     /**
      * (Updatable) Optional description about the deployment stage.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Optional description about the deployment stage.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) A Docker image artifact OCID.
      * 
      */
     @Export(name="dockerImageDeployArtifactId", refs={String.class}, tree="[0]")
-    private Output<String> dockerImageDeployArtifactId;
+    private Output</* @Nullable */ String> dockerImageDeployArtifactId;
 
     /**
      * @return (Updatable) A Docker image artifact OCID.
      * 
      */
-    public Output<String> dockerImageDeployArtifactId() {
-        return this.dockerImageDeployArtifactId;
+    public Output<Optional<String>> dockerImageDeployArtifactId() {
+        return Codegen.optional(this.dockerImageDeployArtifactId);
     }
     /**
      * (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
      * 
      */
     @Export(name="failurePolicy", refs={DeployStageFailurePolicy.class}, tree="[0]")
-    private Output<DeployStageFailurePolicy> failurePolicy;
+    private Output</* @Nullable */ DeployStageFailurePolicy> failurePolicy;
 
     /**
      * @return (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
      * 
      */
-    public Output<DeployStageFailurePolicy> failurePolicy() {
-        return this.failurePolicy;
+    public Output<Optional<DeployStageFailurePolicy>> failurePolicy() {
+        return Codegen.optional(this.failurePolicy);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Function environment OCID.
      * 
      */
     @Export(name="functionDeployEnvironmentId", refs={String.class}, tree="[0]")
-    private Output<String> functionDeployEnvironmentId;
+    private Output</* @Nullable */ String> functionDeployEnvironmentId;
 
     /**
      * @return (Updatable) Function environment OCID.
      * 
      */
-    public Output<String> functionDeployEnvironmentId() {
-        return this.functionDeployEnvironmentId;
+    public Output<Optional<String>> functionDeployEnvironmentId() {
+        return Codegen.optional(this.functionDeployEnvironmentId);
     }
     /**
      * (Updatable) Timeout for execution of the Function. Value in seconds.
      * 
      */
     @Export(name="functionTimeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> functionTimeoutInSeconds;
+    private Output</* @Nullable */ Integer> functionTimeoutInSeconds;
 
     /**
      * @return (Updatable) Timeout for execution of the Function. Value in seconds.
      * 
      */
-    public Output<Integer> functionTimeoutInSeconds() {
-        return this.functionTimeoutInSeconds;
+    public Output<Optional<Integer>> functionTimeoutInSeconds() {
+        return Codegen.optional(this.functionTimeoutInSeconds);
     }
     /**
      * (Updatable) Collection of backend environment IP addresses.
      * 
      */
     @Export(name="greenBackendIps", refs={DeployStageGreenBackendIps.class}, tree="[0]")
-    private Output<DeployStageGreenBackendIps> greenBackendIps;
+    private Output</* @Nullable */ DeployStageGreenBackendIps> greenBackendIps;
 
     /**
      * @return (Updatable) Collection of backend environment IP addresses.
      * 
      */
-    public Output<DeployStageGreenBackendIps> greenBackendIps() {
-        return this.greenBackendIps;
+    public Output<Optional<DeployStageGreenBackendIps>> greenBackendIps() {
+        return Codegen.optional(this.greenBackendIps);
     }
     /**
      * (Updatable) Helm chart artifact OCID.
      * 
      */
     @Export(name="helmChartDeployArtifactId", refs={String.class}, tree="[0]")
-    private Output<String> helmChartDeployArtifactId;
+    private Output</* @Nullable */ String> helmChartDeployArtifactId;
 
     /**
      * @return (Updatable) Helm chart artifact OCID.
      * 
      */
-    public Output<String> helmChartDeployArtifactId() {
-        return this.helmChartDeployArtifactId;
+    public Output<Optional<String>> helmChartDeployArtifactId() {
+        return Codegen.optional(this.helmChartDeployArtifactId);
     }
     /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
     @Export(name="isAsync", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAsync;
+    private Output</* @Nullable */ Boolean> isAsync;
 
     /**
      * @return (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
-    public Output<Boolean> isAsync() {
-        return this.isAsync;
+    public Output<Optional<Boolean>> isAsync() {
+        return Codegen.optional(this.isAsync);
     }
     /**
      * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
      * 
      */
     @Export(name="isDebugEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDebugEnabled;
+    private Output</* @Nullable */ Boolean> isDebugEnabled;
 
     /**
      * @return (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
      * 
      */
-    public Output<Boolean> isDebugEnabled() {
-        return this.isDebugEnabled;
+    public Output<Optional<Boolean>> isDebugEnabled() {
+        return Codegen.optional(this.isDebugEnabled);
     }
     /**
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      * 
      */
     @Export(name="isForceEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isForceEnabled;
+    private Output</* @Nullable */ Boolean> isForceEnabled;
 
     /**
      * @return (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      * 
      */
-    public Output<Boolean> isForceEnabled() {
-        return this.isForceEnabled;
+    public Output<Optional<Boolean>> isForceEnabled() {
+        return Codegen.optional(this.isForceEnabled);
     }
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      * 
      */
     @Export(name="isValidationEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isValidationEnabled;
+    private Output</* @Nullable */ Boolean> isValidationEnabled;
 
     /**
      * @return (Updatable) A boolean flag specifies whether the invoked function should be validated.
      * 
      */
-    public Output<Boolean> isValidationEnabled() {
-        return this.isValidationEnabled;
+    public Output<Optional<Boolean>> isValidationEnabled() {
+        return Codegen.optional(this.isValidationEnabled);
     }
     /**
      * (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -560,406 +560,406 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
     @Export(name="loadBalancerConfig", refs={DeployStageLoadBalancerConfig.class}, tree="[0]")
-    private Output<DeployStageLoadBalancerConfig> loadBalancerConfig;
+    private Output</* @Nullable */ DeployStageLoadBalancerConfig> loadBalancerConfig;
 
     /**
      * @return (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
      */
-    public Output<DeployStageLoadBalancerConfig> loadBalancerConfig() {
-        return this.loadBalancerConfig;
+    public Output<Optional<DeployStageLoadBalancerConfig>> loadBalancerConfig() {
+        return Codegen.optional(this.loadBalancerConfig);
     }
     /**
      * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      * 
      */
     @Export(name="maxHistory", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxHistory;
+    private Output</* @Nullable */ Integer> maxHistory;
 
     /**
      * @return (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      * 
      */
-    public Output<Integer> maxHistory() {
-        return this.maxHistory;
+    public Output<Optional<Integer>> maxHistory() {
+        return Codegen.optional(this.maxHistory);
     }
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
      * 
      */
     @Export(name="maxMemoryInMbs", refs={String.class}, tree="[0]")
-    private Output<String> maxMemoryInMbs;
+    private Output</* @Nullable */ String> maxMemoryInMbs;
 
     /**
      * @return (Updatable) Maximum usable memory for the Function (in MB).
      * 
      */
-    public Output<String> maxMemoryInMbs() {
-        return this.maxMemoryInMbs;
+    public Output<Optional<String>> maxMemoryInMbs() {
+        return Codegen.optional(this.maxMemoryInMbs);
     }
     /**
      * (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
-    private Output<String> namespace;
+    private Output</* @Nullable */ String> namespace;
 
     /**
      * @return (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    public Output<String> namespace() {
-        return this.namespace;
+    public Output<Optional<String>> namespace() {
+        return Codegen.optional(this.namespace);
     }
     /**
      * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      * 
      */
     @Export(name="okeBlueGreenDeployStageId", refs={String.class}, tree="[0]")
-    private Output<String> okeBlueGreenDeployStageId;
+    private Output</* @Nullable */ String> okeBlueGreenDeployStageId;
 
     /**
      * @return The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      * 
      */
-    public Output<String> okeBlueGreenDeployStageId() {
-        return this.okeBlueGreenDeployStageId;
+    public Output<Optional<String>> okeBlueGreenDeployStageId() {
+        return Codegen.optional(this.okeBlueGreenDeployStageId);
     }
     /**
      * The OCID of an upstream OKE canary deployment stage in this pipeline.
      * 
      */
     @Export(name="okeCanaryDeployStageId", refs={String.class}, tree="[0]")
-    private Output<String> okeCanaryDeployStageId;
+    private Output</* @Nullable */ String> okeCanaryDeployStageId;
 
     /**
      * @return The OCID of an upstream OKE canary deployment stage in this pipeline.
      * 
      */
-    public Output<String> okeCanaryDeployStageId() {
-        return this.okeCanaryDeployStageId;
+    public Output<Optional<String>> okeCanaryDeployStageId() {
+        return Codegen.optional(this.okeCanaryDeployStageId);
     }
     /**
      * The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      * 
      */
     @Export(name="okeCanaryTrafficShiftDeployStageId", refs={String.class}, tree="[0]")
-    private Output<String> okeCanaryTrafficShiftDeployStageId;
+    private Output</* @Nullable */ String> okeCanaryTrafficShiftDeployStageId;
 
     /**
      * @return The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      * 
      */
-    public Output<String> okeCanaryTrafficShiftDeployStageId() {
-        return this.okeCanaryTrafficShiftDeployStageId;
+    public Output<Optional<String>> okeCanaryTrafficShiftDeployStageId() {
+        return Codegen.optional(this.okeCanaryTrafficShiftDeployStageId);
     }
     /**
      * (Updatable) Kubernetes cluster environment OCID for deployment.
      * 
      */
     @Export(name="okeClusterDeployEnvironmentId", refs={String.class}, tree="[0]")
-    private Output<String> okeClusterDeployEnvironmentId;
+    private Output</* @Nullable */ String> okeClusterDeployEnvironmentId;
 
     /**
      * @return (Updatable) Kubernetes cluster environment OCID for deployment.
      * 
      */
-    public Output<String> okeClusterDeployEnvironmentId() {
-        return this.okeClusterDeployEnvironmentId;
+    public Output<Optional<String>> okeClusterDeployEnvironmentId() {
+        return Codegen.optional(this.okeClusterDeployEnvironmentId);
     }
     /**
      * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     @Export(name="productionLoadBalancerConfig", refs={DeployStageProductionLoadBalancerConfig.class}, tree="[0]")
-    private Output<DeployStageProductionLoadBalancerConfig> productionLoadBalancerConfig;
+    private Output</* @Nullable */ DeployStageProductionLoadBalancerConfig> productionLoadBalancerConfig;
 
     /**
      * @return Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
-    public Output<DeployStageProductionLoadBalancerConfig> productionLoadBalancerConfig() {
-        return this.productionLoadBalancerConfig;
+    public Output<Optional<DeployStageProductionLoadBalancerConfig>> productionLoadBalancerConfig() {
+        return Codegen.optional(this.productionLoadBalancerConfig);
     }
     /**
      * The OCID of a project.
      * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
-    private Output<String> projectId;
+    private Output</* @Nullable */ String> projectId;
 
     /**
      * @return The OCID of a project.
      * 
      */
-    public Output<String> projectId() {
-        return this.projectId;
+    public Output<Optional<String>> projectId() {
+        return Codegen.optional(this.projectId);
     }
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      * 
      */
     @Export(name="releaseName", refs={String.class}, tree="[0]")
-    private Output<String> releaseName;
+    private Output</* @Nullable */ String> releaseName;
 
     /**
      * @return (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      * 
      */
-    public Output<String> releaseName() {
-        return this.releaseName;
+    public Output<Optional<String>> releaseName() {
+        return Codegen.optional(this.releaseName);
     }
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
     @Export(name="rollbackPolicy", refs={DeployStageRollbackPolicy.class}, tree="[0]")
-    private Output<DeployStageRollbackPolicy> rollbackPolicy;
+    private Output</* @Nullable */ DeployStageRollbackPolicy> rollbackPolicy;
 
     /**
      * @return (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      * 
      */
-    public Output<DeployStageRollbackPolicy> rollbackPolicy() {
-        return this.rollbackPolicy;
+    public Output<Optional<DeployStageRollbackPolicy>> rollbackPolicy() {
+        return Codegen.optional(this.rollbackPolicy);
     }
     /**
      * (Updatable) Description of rollout policy for load balancer traffic shift stage.
      * 
      */
     @Export(name="rolloutPolicy", refs={DeployStageRolloutPolicy.class}, tree="[0]")
-    private Output<DeployStageRolloutPolicy> rolloutPolicy;
+    private Output</* @Nullable */ DeployStageRolloutPolicy> rolloutPolicy;
 
     /**
      * @return (Updatable) Description of rollout policy for load balancer traffic shift stage.
      * 
      */
-    public Output<DeployStageRolloutPolicy> rolloutPolicy() {
-        return this.rolloutPolicy;
+    public Output<Optional<DeployStageRolloutPolicy>> rolloutPolicy() {
+        return Codegen.optional(this.rolloutPolicy);
     }
     /**
      * (Updatable) Specifies the name and value pairs to set helm values.
      * 
      */
     @Export(name="setString", refs={DeployStageSetString.class}, tree="[0]")
-    private Output<DeployStageSetString> setString;
+    private Output</* @Nullable */ DeployStageSetString> setString;
 
     /**
      * @return (Updatable) Specifies the name and value pairs to set helm values.
      * 
      */
-    public Output<DeployStageSetString> setString() {
-        return this.setString;
+    public Output<Optional<DeployStageSetString>> setString() {
+        return Codegen.optional(this.setString);
     }
     /**
      * (Updatable) Specifies the name and value pairs to set helm values.
      * 
      */
     @Export(name="setValues", refs={DeployStageSetValues.class}, tree="[0]")
-    private Output<DeployStageSetValues> setValues;
+    private Output</* @Nullable */ DeployStageSetValues> setValues;
 
     /**
      * @return (Updatable) Specifies the name and value pairs to set helm values.
      * 
      */
-    public Output<DeployStageSetValues> setValues() {
-        return this.setValues;
+    public Output<Optional<DeployStageSetValues>> setValues() {
+        return Codegen.optional(this.setValues);
     }
     /**
      * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      * 
      */
     @Export(name="shouldCleanupOnFail", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldCleanupOnFail;
+    private Output</* @Nullable */ Boolean> shouldCleanupOnFail;
 
     /**
      * @return (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      * 
      */
-    public Output<Boolean> shouldCleanupOnFail() {
-        return this.shouldCleanupOnFail;
+    public Output<Optional<Boolean>> shouldCleanupOnFail() {
+        return Codegen.optional(this.shouldCleanupOnFail);
     }
     /**
      * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
      * 
      */
     @Export(name="shouldNotWait", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldNotWait;
+    private Output</* @Nullable */ Boolean> shouldNotWait;
 
     /**
      * @return (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
      * 
      */
-    public Output<Boolean> shouldNotWait() {
-        return this.shouldNotWait;
+    public Output<Optional<Boolean>> shouldNotWait() {
+        return Codegen.optional(this.shouldNotWait);
     }
     /**
      * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      * 
      */
     @Export(name="shouldResetValues", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldResetValues;
+    private Output</* @Nullable */ Boolean> shouldResetValues;
 
     /**
      * @return (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      * 
      */
-    public Output<Boolean> shouldResetValues() {
-        return this.shouldResetValues;
+    public Output<Optional<Boolean>> shouldResetValues() {
+        return Codegen.optional(this.shouldResetValues);
     }
     /**
      * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      * 
      */
     @Export(name="shouldReuseValues", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldReuseValues;
+    private Output</* @Nullable */ Boolean> shouldReuseValues;
 
     /**
      * @return (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      * 
      */
-    public Output<Boolean> shouldReuseValues() {
-        return this.shouldReuseValues;
+    public Output<Optional<Boolean>> shouldReuseValues() {
+        return Codegen.optional(this.shouldReuseValues);
     }
     /**
      * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      * 
      */
     @Export(name="shouldSkipCrds", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldSkipCrds;
+    private Output</* @Nullable */ Boolean> shouldSkipCrds;
 
     /**
      * @return (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      * 
      */
-    public Output<Boolean> shouldSkipCrds() {
-        return this.shouldSkipCrds;
+    public Output<Optional<Boolean>> shouldSkipCrds() {
+        return Codegen.optional(this.shouldSkipCrds);
     }
     /**
      * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
      * 
      */
     @Export(name="shouldSkipRenderSubchartNotes", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldSkipRenderSubchartNotes;
+    private Output</* @Nullable */ Boolean> shouldSkipRenderSubchartNotes;
 
     /**
      * @return (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
      * 
      */
-    public Output<Boolean> shouldSkipRenderSubchartNotes() {
-        return this.shouldSkipRenderSubchartNotes;
+    public Output<Optional<Boolean>> shouldSkipRenderSubchartNotes() {
+        return Codegen.optional(this.shouldSkipRenderSubchartNotes);
     }
     /**
      * The current state of the deployment stage.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the deployment stage.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
     @Export(name="testLoadBalancerConfig", refs={DeployStageTestLoadBalancerConfig.class}, tree="[0]")
-    private Output<DeployStageTestLoadBalancerConfig> testLoadBalancerConfig;
+    private Output</* @Nullable */ DeployStageTestLoadBalancerConfig> testLoadBalancerConfig;
 
     /**
      * @return (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      * 
      */
-    public Output<DeployStageTestLoadBalancerConfig> testLoadBalancerConfig() {
-        return this.testLoadBalancerConfig;
+    public Output<Optional<DeployStageTestLoadBalancerConfig>> testLoadBalancerConfig() {
+        return Codegen.optional(this.testLoadBalancerConfig);
     }
     /**
      * Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
     @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> timeoutInSeconds;
+    private Output</* @Nullable */ Integer> timeoutInSeconds;
 
     /**
      * @return (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      * 
      */
-    public Output<Integer> timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Output<Optional<Integer>> timeoutInSeconds() {
+        return Codegen.optional(this.timeoutInSeconds);
     }
     /**
      * (Updatable) Specifies the target or destination backend set.
      * 
      */
     @Export(name="trafficShiftTarget", refs={String.class}, tree="[0]")
-    private Output<String> trafficShiftTarget;
+    private Output</* @Nullable */ String> trafficShiftTarget;
 
     /**
      * @return (Updatable) Specifies the target or destination backend set.
      * 
      */
-    public Output<String> trafficShiftTarget() {
-        return this.trafficShiftTarget;
+    public Output<Optional<String>> trafficShiftTarget() {
+        return Codegen.optional(this.trafficShiftTarget);
     }
     /**
      * (Updatable) List of values.yaml file artifact OCIDs.
@@ -980,14 +980,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="waitCriteria", refs={DeployStageWaitCriteria.class}, tree="[0]")
-    private Output<DeployStageWaitCriteria> waitCriteria;
+    private Output</* @Nullable */ DeployStageWaitCriteria> waitCriteria;
 
     /**
      * @return (Updatable) Specifies wait criteria for the Wait stage.
      * 
      */
-    public Output<DeployStageWaitCriteria> waitCriteria() {
-        return this.waitCriteria;
+    public Output<Optional<DeployStageWaitCriteria>> waitCriteria() {
+        return Codegen.optional(this.waitCriteria);
     }
 
     /**

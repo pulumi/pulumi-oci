@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -70,14 +71,14 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="allowedKeyInstallCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> allowedKeyInstallCount;
+    private Output</* @Nullable */ Integer> allowedKeyInstallCount;
 
     /**
      * @return Total number of install for this keys
      * 
      */
-    public Output<Integer> allowedKeyInstallCount() {
-        return this.allowedKeyInstallCount;
+    public Output<Optional<Integer>> allowedKeyInstallCount() {
+        return Codegen.optional(this.allowedKeyInstallCount);
     }
     /**
      * Compartment Identifier
@@ -98,28 +99,28 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="createdByPrincipalId", refs={String.class}, tree="[0]")
-    private Output<String> createdByPrincipalId;
+    private Output</* @Nullable */ String> createdByPrincipalId;
 
     /**
      * @return Principal id of user who created the Agent Install key
      * 
      */
-    public Output<String> createdByPrincipalId() {
-        return this.createdByPrincipalId;
+    public Output<Optional<String>> createdByPrincipalId() {
+        return Codegen.optional(this.createdByPrincipalId);
     }
     /**
      * Total number of install for this keys
      * 
      */
     @Export(name="currentKeyInstallCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> currentKeyInstallCount;
+    private Output</* @Nullable */ Integer> currentKeyInstallCount;
 
     /**
      * @return Total number of install for this keys
      * 
      */
-    public Output<Integer> currentKeyInstallCount() {
-        return this.currentKeyInstallCount;
+    public Output<Optional<Integer>> currentKeyInstallCount() {
+        return Codegen.optional(this.currentKeyInstallCount);
     }
     /**
      * (Updatable) Management Agent install Key Name
@@ -140,70 +141,70 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="isUnlimited", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUnlimited;
+    private Output</* @Nullable */ Boolean> isUnlimited;
 
     /**
      * @return If set to true, the install key has no expiration date or usage limit. Defaults to false
      * 
      */
-    public Output<Boolean> isUnlimited() {
-        return this.isUnlimited;
+    public Output<Optional<Boolean>> isUnlimited() {
+        return Codegen.optional(this.isUnlimited);
     }
     /**
      * Management Agent Install Key
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return Management Agent Install Key
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Status of Key
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return Status of Key
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * date after which key would expire after creation
@@ -213,7 +214,7 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="timeExpires", refs={String.class}, tree="[0]")
-    private Output<String> timeExpires;
+    private Output</* @Nullable */ String> timeExpires;
 
     /**
      * @return date after which key would expire after creation
@@ -222,22 +223,22 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeExpires() {
-        return this.timeExpires;
+    public Output<Optional<String>> timeExpires() {
+        return Codegen.optional(this.timeExpires);
     }
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstancesBdsInstanceKafkaBrokerNode {
@@ -16,47 +18,47 @@ public final class GetBdsInstancesBdsInstanceKafkaBrokerNode {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private String blockVolumeSizeInGbs;
-    private Integer numberOfKafkaNodes;
+    private @Nullable String blockVolumeSizeInGbs;
+    private @Nullable Integer numberOfKafkaNodes;
     /**
      * @return Shape of the node.
      * 
      */
-    private String shape;
-    private List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs;
+    private @Nullable String shape;
+    private @Nullable List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs;
     /**
      * @return The OCID of the subnet in which the node is to be created.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetBdsInstancesBdsInstanceKafkaBrokerNode() {}
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    public String blockVolumeSizeInGbs() {
-        return this.blockVolumeSizeInGbs;
+    public Optional<String> blockVolumeSizeInGbs() {
+        return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
-    public Integer numberOfKafkaNodes() {
-        return this.numberOfKafkaNodes;
+    public Optional<Integer> numberOfKafkaNodes() {
+        return Optional.ofNullable(this.numberOfKafkaNodes);
     }
     /**
      * @return Shape of the node.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     public List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
     /**
      * @return The OCID of the subnet in which the node is to be created.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -68,11 +70,11 @@ public final class GetBdsInstancesBdsInstanceKafkaBrokerNode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String blockVolumeSizeInGbs;
-        private Integer numberOfKafkaNodes;
-        private String shape;
-        private List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs;
-        private String subnetId;
+        private @Nullable String blockVolumeSizeInGbs;
+        private @Nullable Integer numberOfKafkaNodes;
+        private @Nullable String shape;
+        private @Nullable List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetBdsInstancesBdsInstanceKafkaBrokerNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,31 +86,31 @@ public final class GetBdsInstancesBdsInstanceKafkaBrokerNode {
         }
 
         @CustomType.Setter
-        public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
-            this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
+        public Builder blockVolumeSizeInGbs(@Nullable String blockVolumeSizeInGbs) {
+            this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfKafkaNodes(Integer numberOfKafkaNodes) {
-            this.numberOfKafkaNodes = Objects.requireNonNull(numberOfKafkaNodes);
+        public Builder numberOfKafkaNodes(@Nullable Integer numberOfKafkaNodes) {
+            this.numberOfKafkaNodes = numberOfKafkaNodes;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetBdsInstancesBdsInstanceKafkaBrokerNode build() {

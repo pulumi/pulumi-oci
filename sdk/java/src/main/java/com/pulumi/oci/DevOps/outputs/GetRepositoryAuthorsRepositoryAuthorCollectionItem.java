@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
@@ -15,39 +17,39 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
      * @return Author name.
      * 
      */
-    private String authorName;
+    private @Nullable String authorName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
 
     private GetRepositoryAuthorsRepositoryAuthorCollectionItem() {}
     /**
      * @return Author name.
      * 
      */
-    public String authorName() {
-        return this.authorName;
+    public Optional<String> authorName() {
+        return Optional.ofNullable(this.authorName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authorName;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private @Nullable String authorName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
         public Builder() {}
         public Builder(GetRepositoryAuthorsRepositoryAuthorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder authorName(String authorName) {
-            this.authorName = Objects.requireNonNull(authorName);
+        public Builder authorName(@Nullable String authorName) {
+            this.authorName = authorName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         public GetRepositoryAuthorsRepositoryAuthorCollectionItem build() {

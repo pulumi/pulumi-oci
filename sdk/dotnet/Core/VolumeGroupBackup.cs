@@ -59,43 +59,43 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         /// </summary>
         [Output("expirationTime")]
-        public Output<string> ExpirationTime { get; private set; } = null!;
+        public Output<string?> ExpirationTime { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The aggregate size of the volume group backup, in GBs.
         /// </summary>
         [Output("sizeInGbs")]
-        public Output<string> SizeInGbs { get; private set; } = null!;
+        public Output<string?> SizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The aggregate size of the volume group backup, in MBs.
         /// </summary>
         [Output("sizeInMbs")]
-        public Output<string> SizeInMbs { get; private set; } = null!;
+        public Output<string?> SizeInMbs { get; private set; } = null!;
 
         /// <summary>
         /// Details of the volume group backup source in the cloud.
@@ -107,31 +107,31 @@ namespace Pulumi.Oci.Core
         /// Specifies whether the volume group backup was created manually, or via scheduled backup policy.
         /// </summary>
         [Output("sourceType")]
-        public Output<string> SourceType { get; private set; } = null!;
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the source volume group backup.
         /// </summary>
         [Output("sourceVolumeGroupBackupId")]
-        public Output<string> SourceVolumeGroupBackupId { get; private set; } = null!;
+        public Output<string?> SourceVolumeGroupBackupId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of a volume group backup.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeRequestReceived")]
-        public Output<string> TimeRequestReceived { get; private set; } = null!;
+        public Output<string?> TimeRequestReceived { get; private set; } = null!;
 
         /// <summary>
         /// The type of backup to create. If omitted, defaults to incremental.
@@ -140,19 +140,19 @@ namespace Pulumi.Oci.Core
         /// * INCREMENTAL
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         [Output("uniqueSizeInGbs")]
-        public Output<string> UniqueSizeInGbs { get; private set; } = null!;
+        public Output<string?> UniqueSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         [Output("uniqueSizeInMbs")]
-        public Output<string> UniqueSizeInMbs { get; private set; } = null!;
+        public Output<string?> UniqueSizeInMbs { get; private set; } = null!;
 
         /// <summary>
         /// OCIDs for the volume backups in this volume group backup.
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Core
         /// The OCID of the volume group that needs to be backed up.
         /// </summary>
         [Output("volumeGroupId")]
-        public Output<string> VolumeGroupId { get; private set; } = null!;
+        public Output<string?> VolumeGroupId { get; private set; } = null!;
 
 
         /// <summary>

@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail {
@@ -17,123 +19,123 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
      * @return Base condition object
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return Configuration details
      * 
      */
-    private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations;
+    private @Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations;
     /**
      * @return The id of the attached DataSource.
      * 
      */
-    private String dataSourceId;
+    private @Nullable String dataSourceId;
     /**
      * @return Description for DetectorRecipeDetectorRule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Data Source entities mapping for a Detector Rule
      * 
      */
-    private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings;
+    private @Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings;
     /**
      * @return configuration allowed or not
      * 
      */
-    private Boolean isConfigurationAllowed;
+    private @Nullable Boolean isConfigurationAllowed;
     /**
      * @return Enables the control
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return user defined labels for a detector rule
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
-    private String recommendation;
+    private @Nullable String recommendation;
     /**
      * @return The Risk Level
      * 
      */
-    private String riskLevel;
+    private @Nullable String riskLevel;
 
     private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail() {}
     /**
      * @return Base condition object
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return Configuration details
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return The id of the attached DataSource.
      * 
      */
-    public String dataSourceId() {
-        return this.dataSourceId;
+    public Optional<String> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
     }
     /**
      * @return Description for DetectorRecipeDetectorRule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Data Source entities mapping for a Detector Rule
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings() {
-        return this.entitiesMappings;
+        return this.entitiesMappings == null ? List.of() : this.entitiesMappings;
     }
     /**
      * @return configuration allowed or not
      * 
      */
-    public Boolean isConfigurationAllowed() {
-        return this.isConfigurationAllowed;
+    public Optional<Boolean> isConfigurationAllowed() {
+        return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
      * @return Enables the control
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return user defined labels for a detector rule
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
-    public String recommendation() {
-        return this.recommendation;
+    public Optional<String> recommendation() {
+        return Optional.ofNullable(this.recommendation);
     }
     /**
      * @return The Risk Level
      * 
      */
-    public String riskLevel() {
-        return this.riskLevel;
+    public Optional<String> riskLevel() {
+        return Optional.ofNullable(this.riskLevel);
     }
 
     public static Builder builder() {
@@ -145,16 +147,16 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations;
-        private String dataSourceId;
-        private String description;
-        private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings;
-        private Boolean isConfigurationAllowed;
-        private Boolean isEnabled;
-        private List<String> labels;
-        private String recommendation;
-        private String riskLevel;
+        private @Nullable String condition;
+        private @Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations;
+        private @Nullable String dataSourceId;
+        private @Nullable String description;
+        private @Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings;
+        private @Nullable Boolean isConfigurationAllowed;
+        private @Nullable Boolean isEnabled;
+        private @Nullable List<String> labels;
+        private @Nullable String recommendation;
+        private @Nullable String riskLevel;
         public Builder() {}
         public Builder(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -171,62 +173,62 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+        public Builder dataSourceId(@Nullable String dataSourceId) {
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder entitiesMappings(List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings) {
-            this.entitiesMappings = Objects.requireNonNull(entitiesMappings);
+        public Builder entitiesMappings(@Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = entitiesMappings;
             return this;
         }
         public Builder entitiesMappings(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMapping... entitiesMappings) {
             return entitiesMappings(List.of(entitiesMappings));
         }
         @CustomType.Setter
-        public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
-            this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
+        public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
+            this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder recommendation(String recommendation) {
-            this.recommendation = Objects.requireNonNull(recommendation);
+        public Builder recommendation(@Nullable String recommendation) {
+            this.recommendation = recommendation;
             return this;
         }
         @CustomType.Setter
-        public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+        public Builder riskLevel(@Nullable String riskLevel) {
+            this.riskLevel = riskLevel;
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail build() {

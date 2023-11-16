@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
@@ -96,8 +95,8 @@ type GetGuardTargetsResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetGuardTargetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                                string `pulumi:"id"`
-	IsNonSecurityZoneTargetsOnlyQuery *bool  `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
+	Id                                *string `pulumi:"id"`
+	IsNonSecurityZoneTargetsOnlyQuery *bool   `pulumi:"isNonSecurityZoneTargetsOnlyQuery"`
 	// The current state of the ResponderRule.
 	State *string `pulumi:"state"`
 	// The list of target_collection.
@@ -153,12 +152,6 @@ func (o GetGuardTargetsResultOutput) ToGetGuardTargetsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetGuardTargetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetsResult] {
-	return pulumix.Output[GetGuardTargetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGuardTargetsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGuardTargetsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -182,8 +175,8 @@ func (o GetGuardTargetsResultOutput) Filters() GetGuardTargetsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetGuardTargetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGuardTargetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGuardTargetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGuardTargetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetGuardTargetsResultOutput) IsNonSecurityZoneTargetsOnlyQuery() pulumi.BoolPtrOutput {

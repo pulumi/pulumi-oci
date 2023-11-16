@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly int AvailableCoreCount;
+        public readonly int? AvailableCoreCount;
         /// <summary>
         /// The increment in which core count can be increased or decreased.
         /// </summary>
-        public readonly int CoreCountIncrement;
+        public readonly int? CoreCountIncrement;
         /// <summary>
         /// The maximum number of nodes available for the shape.
         /// </summary>
-        public readonly int MaximumNodeCount;
+        public readonly int? MaximumNodeCount;
         /// <summary>
         /// The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly int MinimumCoreCount;
+        public readonly int? MinimumCoreCount;
         /// <summary>
         /// The minimum number of nodes available for the shape.
         /// </summary>
-        public readonly int MinimumNodeCount;
+        public readonly int? MinimumNodeCount;
         /// <summary>
         /// The name of the shape used for the Autonomous Exadata Infrastructure.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeResult(
-            int availableCoreCount,
+            int? availableCoreCount,
 
-            int coreCountIncrement,
+            int? coreCountIncrement,
 
-            int maximumNodeCount,
+            int? maximumNodeCount,
 
-            int minimumCoreCount,
+            int? minimumCoreCount,
 
-            int minimumNodeCount,
+            int? minimumNodeCount,
 
-            string name)
+            string? name)
         {
             AvailableCoreCount = availableCoreCount;
             CoreCountIncrement = coreCountIncrement;

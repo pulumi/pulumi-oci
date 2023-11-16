@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpensearchClustersOpensearchClusterCollection {
-    private List<GetOpensearchClustersOpensearchClusterCollectionItem> items;
+    private @Nullable List<GetOpensearchClustersOpensearchClusterCollectionItem> items;
 
     private GetOpensearchClustersOpensearchClusterCollection() {}
     public List<GetOpensearchClustersOpensearchClusterCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetOpensearchClustersOpensearchClusterCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOpensearchClustersOpensearchClusterCollectionItem> items;
+        private @Nullable List<GetOpensearchClustersOpensearchClusterCollectionItem> items;
         public Builder() {}
         public Builder(GetOpensearchClustersOpensearchClusterCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetOpensearchClustersOpensearchClusterCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOpensearchClustersOpensearchClusterCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOpensearchClustersOpensearchClusterCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOpensearchClustersOpensearchClusterCollectionItem... items) {

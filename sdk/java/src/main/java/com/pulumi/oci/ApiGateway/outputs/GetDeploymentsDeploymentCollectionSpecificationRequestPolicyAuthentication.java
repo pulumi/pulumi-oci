@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication {
@@ -22,73 +24,73 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * @return The list of intended recipients for the token.
      * 
      */
-    private List<String> audiences;
+    private @Nullable List<String> audiences;
     /**
      * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
      * 
      */
-    private List<String> cacheKeys;
+    private @Nullable List<String> cacheKeys;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    private String functionId;
+    private @Nullable String functionId;
     /**
      * @return Whether an unauthenticated user may access the API. Must be &#34;true&#34; to enable ANONYMOUS route authorization.
      * 
      */
-    private Boolean isAnonymousAccessAllowed;
+    private @Nullable Boolean isAnonymousAccessAllowed;
     /**
      * @return A list of parties that could have issued the token.
      * 
      */
-    private List<String> issuers;
+    private @Nullable List<String> issuers;
     /**
      * @return The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
      * 
      */
-    private Double maxClockSkewInSeconds;
-    private Map<String,Object> parameters;
+    private @Nullable Double maxClockSkewInSeconds;
+    private @Nullable Map<String,Object> parameters;
     /**
      * @return A set of Public Keys that will be used to verify the JWT signature.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys;
     /**
      * @return The authentication scheme that is to be used when authenticating the token. This must to be provided if &#34;tokenHeader&#34; is specified.
      * 
      */
-    private String tokenAuthScheme;
+    private @Nullable String tokenAuthScheme;
     /**
      * @return The name of the header containing the authentication token.
      * 
      */
-    private String tokenHeader;
+    private @Nullable String tokenHeader;
     /**
      * @return The name of the query parameter containing the authentication token.
      * 
      */
-    private String tokenQueryParam;
+    private @Nullable String tokenQueryParam;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Policy for defining behaviour on validation failure.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies;
     /**
      * @return Authentication Policies for the Token Authentication types.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies;
     /**
      * @return A list of claims which should be validated to consider the token valid.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication() {}
     /**
@@ -96,101 +98,101 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
      * 
      */
     public List<String> audiences() {
-        return this.audiences;
+        return this.audiences == null ? List.of() : this.audiences;
     }
     /**
      * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
      * 
      */
     public List<String> cacheKeys() {
-        return this.cacheKeys;
+        return this.cacheKeys == null ? List.of() : this.cacheKeys;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
      */
-    public String functionId() {
-        return this.functionId;
+    public Optional<String> functionId() {
+        return Optional.ofNullable(this.functionId);
     }
     /**
      * @return Whether an unauthenticated user may access the API. Must be &#34;true&#34; to enable ANONYMOUS route authorization.
      * 
      */
-    public Boolean isAnonymousAccessAllowed() {
-        return this.isAnonymousAccessAllowed;
+    public Optional<Boolean> isAnonymousAccessAllowed() {
+        return Optional.ofNullable(this.isAnonymousAccessAllowed);
     }
     /**
      * @return A list of parties that could have issued the token.
      * 
      */
     public List<String> issuers() {
-        return this.issuers;
+        return this.issuers == null ? List.of() : this.issuers;
     }
     /**
      * @return The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
      * 
      */
-    public Double maxClockSkewInSeconds() {
-        return this.maxClockSkewInSeconds;
+    public Optional<Double> maxClockSkewInSeconds() {
+        return Optional.ofNullable(this.maxClockSkewInSeconds);
     }
     public Map<String,Object> parameters() {
-        return this.parameters;
+        return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
      * @return A set of Public Keys that will be used to verify the JWT signature.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys() {
-        return this.publicKeys;
+        return this.publicKeys == null ? List.of() : this.publicKeys;
     }
     /**
      * @return The authentication scheme that is to be used when authenticating the token. This must to be provided if &#34;tokenHeader&#34; is specified.
      * 
      */
-    public String tokenAuthScheme() {
-        return this.tokenAuthScheme;
+    public Optional<String> tokenAuthScheme() {
+        return Optional.ofNullable(this.tokenAuthScheme);
     }
     /**
      * @return The name of the header containing the authentication token.
      * 
      */
-    public String tokenHeader() {
-        return this.tokenHeader;
+    public Optional<String> tokenHeader() {
+        return Optional.ofNullable(this.tokenHeader);
     }
     /**
      * @return The name of the query parameter containing the authentication token.
      * 
      */
-    public String tokenQueryParam() {
-        return this.tokenQueryParam;
+    public Optional<String> tokenQueryParam() {
+        return Optional.ofNullable(this.tokenQueryParam);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Policy for defining behaviour on validation failure.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies() {
-        return this.validationFailurePolicies;
+        return this.validationFailurePolicies == null ? List.of() : this.validationFailurePolicies;
     }
     /**
      * @return Authentication Policies for the Token Authentication types.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies() {
-        return this.validationPolicies;
+        return this.validationPolicies == null ? List.of() : this.validationPolicies;
     }
     /**
      * @return A list of claims which should be validated to consider the token valid.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims() {
-        return this.verifyClaims;
+        return this.verifyClaims == null ? List.of() : this.verifyClaims;
     }
 
     public static Builder builder() {
@@ -202,21 +204,21 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> audiences;
-        private List<String> cacheKeys;
-        private String functionId;
-        private Boolean isAnonymousAccessAllowed;
-        private List<String> issuers;
-        private Double maxClockSkewInSeconds;
-        private Map<String,Object> parameters;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys;
-        private String tokenAuthScheme;
-        private String tokenHeader;
-        private String tokenQueryParam;
-        private String type;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims;
+        private @Nullable List<String> audiences;
+        private @Nullable List<String> cacheKeys;
+        private @Nullable String functionId;
+        private @Nullable Boolean isAnonymousAccessAllowed;
+        private @Nullable List<String> issuers;
+        private @Nullable Double maxClockSkewInSeconds;
+        private @Nullable Map<String,Object> parameters;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys;
+        private @Nullable String tokenAuthScheme;
+        private @Nullable String tokenHeader;
+        private @Nullable String tokenQueryParam;
+        private @Nullable String type;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication defaults) {
     	      Objects.requireNonNull(defaults);
@@ -238,96 +240,96 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
 
         @CustomType.Setter
-        public Builder audiences(List<String> audiences) {
-            this.audiences = Objects.requireNonNull(audiences);
+        public Builder audiences(@Nullable List<String> audiences) {
+            this.audiences = audiences;
             return this;
         }
         public Builder audiences(String... audiences) {
             return audiences(List.of(audiences));
         }
         @CustomType.Setter
-        public Builder cacheKeys(List<String> cacheKeys) {
-            this.cacheKeys = Objects.requireNonNull(cacheKeys);
+        public Builder cacheKeys(@Nullable List<String> cacheKeys) {
+            this.cacheKeys = cacheKeys;
             return this;
         }
         public Builder cacheKeys(String... cacheKeys) {
             return cacheKeys(List.of(cacheKeys));
         }
         @CustomType.Setter
-        public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+        public Builder functionId(@Nullable String functionId) {
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
-        public Builder isAnonymousAccessAllowed(Boolean isAnonymousAccessAllowed) {
-            this.isAnonymousAccessAllowed = Objects.requireNonNull(isAnonymousAccessAllowed);
+        public Builder isAnonymousAccessAllowed(@Nullable Boolean isAnonymousAccessAllowed) {
+            this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder issuers(List<String> issuers) {
-            this.issuers = Objects.requireNonNull(issuers);
+        public Builder issuers(@Nullable List<String> issuers) {
+            this.issuers = issuers;
             return this;
         }
         public Builder issuers(String... issuers) {
             return issuers(List.of(issuers));
         }
         @CustomType.Setter
-        public Builder maxClockSkewInSeconds(Double maxClockSkewInSeconds) {
-            this.maxClockSkewInSeconds = Objects.requireNonNull(maxClockSkewInSeconds);
+        public Builder maxClockSkewInSeconds(@Nullable Double maxClockSkewInSeconds) {
+            this.maxClockSkewInSeconds = maxClockSkewInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(Map<String,Object> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable Map<String,Object> parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
-        public Builder publicKeys(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys) {
-            this.publicKeys = Objects.requireNonNull(publicKeys);
+        public Builder publicKeys(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys) {
+            this.publicKeys = publicKeys;
             return this;
         }
         public Builder publicKeys(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey... publicKeys) {
             return publicKeys(List.of(publicKeys));
         }
         @CustomType.Setter
-        public Builder tokenAuthScheme(String tokenAuthScheme) {
-            this.tokenAuthScheme = Objects.requireNonNull(tokenAuthScheme);
+        public Builder tokenAuthScheme(@Nullable String tokenAuthScheme) {
+            this.tokenAuthScheme = tokenAuthScheme;
             return this;
         }
         @CustomType.Setter
-        public Builder tokenHeader(String tokenHeader) {
-            this.tokenHeader = Objects.requireNonNull(tokenHeader);
+        public Builder tokenHeader(@Nullable String tokenHeader) {
+            this.tokenHeader = tokenHeader;
             return this;
         }
         @CustomType.Setter
-        public Builder tokenQueryParam(String tokenQueryParam) {
-            this.tokenQueryParam = Objects.requireNonNull(tokenQueryParam);
+        public Builder tokenQueryParam(@Nullable String tokenQueryParam) {
+            this.tokenQueryParam = tokenQueryParam;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder validationFailurePolicies(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies) {
-            this.validationFailurePolicies = Objects.requireNonNull(validationFailurePolicies);
+        public Builder validationFailurePolicies(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies) {
+            this.validationFailurePolicies = validationFailurePolicies;
             return this;
         }
         public Builder validationFailurePolicies(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy... validationFailurePolicies) {
             return validationFailurePolicies(List.of(validationFailurePolicies));
         }
         @CustomType.Setter
-        public Builder validationPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies) {
-            this.validationPolicies = Objects.requireNonNull(validationPolicies);
+        public Builder validationPolicies(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies) {
+            this.validationPolicies = validationPolicies;
             return this;
         }
         public Builder validationPolicies(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy... validationPolicies) {
             return validationPolicies(List.of(validationPolicies));
         }
         @CustomType.Setter
-        public Builder verifyClaims(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims) {
-            this.verifyClaims = Objects.requireNonNull(verifyClaims);
+        public Builder verifyClaims(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims) {
+            this.verifyClaims = verifyClaims;
             return this;
         }
         public Builder verifyClaims(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim... verifyClaims) {

@@ -9,6 +9,7 @@ import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformPatchesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetBlockchainPlatformPatchesResult {
      * @return The list of blockchain_platform_patch_collection.
      * 
      */
-    private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
+    private @Nullable List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
     private @Nullable List<GetBlockchainPlatformPatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetBlockchainPlatformPatchesResult() {}
     public String blockchainPlatformId() {
@@ -35,7 +36,7 @@ public final class GetBlockchainPlatformPatchesResult {
      * 
      */
     public List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections() {
-        return this.blockchainPlatformPatchCollections;
+        return this.blockchainPlatformPatchCollections == null ? List.of() : this.blockchainPlatformPatchCollections;
     }
     public List<GetBlockchainPlatformPatchesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetBlockchainPlatformPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetBlockchainPlatformPatchesResult {
     @CustomType.Builder
     public static final class Builder {
         private String blockchainPlatformId;
-        private List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
+        private @Nullable List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections;
         private @Nullable List<GetBlockchainPlatformPatchesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetBlockchainPlatformPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetBlockchainPlatformPatchesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder blockchainPlatformPatchCollections(List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections) {
-            this.blockchainPlatformPatchCollections = Objects.requireNonNull(blockchainPlatformPatchCollections);
+        public Builder blockchainPlatformPatchCollections(@Nullable List<GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection> blockchainPlatformPatchCollections) {
+            this.blockchainPlatformPatchCollections = blockchainPlatformPatchCollections;
             return this;
         }
         public Builder blockchainPlatformPatchCollections(GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection... blockchainPlatformPatchCollections) {
@@ -92,8 +93,8 @@ public final class GetBlockchainPlatformPatchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetBlockchainPlatformPatchesResult build() {

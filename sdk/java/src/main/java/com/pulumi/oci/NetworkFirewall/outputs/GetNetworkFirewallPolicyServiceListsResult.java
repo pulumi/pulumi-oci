@@ -20,13 +20,13 @@ public final class GetNetworkFirewallPolicyServiceListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkFirewallPolicyId;
     /**
      * @return The list of service_list_summary_collection.
      * 
      */
-    private List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections;
+    private @Nullable List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections;
 
     private GetNetworkFirewallPolicyServiceListsResult() {}
     public Optional<String> displayName() {
@@ -39,8 +39,8 @@ public final class GetNetworkFirewallPolicyServiceListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkFirewallPolicyId() {
         return this.networkFirewallPolicyId;
@@ -50,7 +50,7 @@ public final class GetNetworkFirewallPolicyServiceListsResult {
      * 
      */
     public List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections() {
-        return this.serviceListSummaryCollections;
+        return this.serviceListSummaryCollections == null ? List.of() : this.serviceListSummaryCollections;
     }
 
     public static Builder builder() {
@@ -64,9 +64,9 @@ public final class GetNetworkFirewallPolicyServiceListsResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetNetworkFirewallPolicyServiceListsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkFirewallPolicyId;
-        private List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections;
+        private @Nullable List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServiceListsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,8 +91,8 @@ public final class GetNetworkFirewallPolicyServiceListsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -101,8 +101,8 @@ public final class GetNetworkFirewallPolicyServiceListsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder serviceListSummaryCollections(List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections) {
-            this.serviceListSummaryCollections = Objects.requireNonNull(serviceListSummaryCollections);
+        public Builder serviceListSummaryCollections(@Nullable List<GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection> serviceListSummaryCollections) {
+            this.serviceListSummaryCollections = serviceListSummaryCollections;
             return this;
         }
         public Builder serviceListSummaryCollections(GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection... serviceListSummaryCollections) {

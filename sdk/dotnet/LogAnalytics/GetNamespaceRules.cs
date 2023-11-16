@@ -191,7 +191,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The kind of rule - either an ingest time rule or a scheduled task.
         /// </summary>
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             ImmutableArray<Outputs.GetNamespaceRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? kind,
 

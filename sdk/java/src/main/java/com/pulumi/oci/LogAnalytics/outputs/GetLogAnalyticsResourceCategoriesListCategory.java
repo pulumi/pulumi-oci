@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsResourceCategoriesListCategory {
@@ -14,63 +16,63 @@ public final class GetLogAnalyticsResourceCategoriesListCategory {
      * @return The category description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The category display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
-    private Boolean isSystem;
+    private @Nullable Boolean isSystem;
     /**
      * @return The unique name that identifies the category.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The category type. Values include &#34;PRODUCT&#34;, &#34;TIER&#34;, &#34;VENDOR&#34; and &#34;GENERIC&#34;.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetLogAnalyticsResourceCategoriesListCategory() {}
     /**
      * @return The category description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The category display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
      * 
      */
-    public Boolean isSystem() {
-        return this.isSystem;
+    public Optional<Boolean> isSystem() {
+        return Optional.ofNullable(this.isSystem);
     }
     /**
      * @return The unique name that identifies the category.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The category type. Values include &#34;PRODUCT&#34;, &#34;TIER&#34;, &#34;VENDOR&#34; and &#34;GENERIC&#34;.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetLogAnalyticsResourceCategoriesListCategory {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String displayName;
-        private Boolean isSystem;
-        private String name;
-        private String type;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Boolean isSystem;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetLogAnalyticsResourceCategoriesListCategory defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetLogAnalyticsResourceCategoriesListCategory {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder isSystem(Boolean isSystem) {
-            this.isSystem = Objects.requireNonNull(isSystem);
+        public Builder isSystem(@Nullable Boolean isSystem) {
+            this.isSystem = isSystem;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetLogAnalyticsResourceCategoriesListCategory build() {

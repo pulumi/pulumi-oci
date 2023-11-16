@@ -47,7 +47,7 @@ class GetTunnelSecurityAssociationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetTunnelSecurityAssociationsResult:
 
     @property
     @pulumi.getter(name="tunnelSecurityAssociations")
-    def tunnel_security_associations(self) -> Sequence['outputs.GetTunnelSecurityAssociationsTunnelSecurityAssociationResult']:
-        """
-        The list of tunnel_security_associations.
-        """
+    def tunnel_security_associations(self) -> Optional[Sequence['outputs.GetTunnelSecurityAssociationsTunnelSecurityAssociationResult']]:
         return pulumi.get(self, "tunnel_security_associations")
 
 
@@ -90,23 +87,7 @@ def get_tunnel_security_associations(filters: Optional[Sequence[pulumi.InputType
                                      tunnel_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTunnelSecurityAssociationsResult:
     """
-    This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
-
-    Lists the tunnel security associations information for the specified IPSec tunnel ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
-    :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -129,22 +110,6 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
                                             tunnel_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTunnelSecurityAssociationsResult]:
     """
-    This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
-
-    Lists the tunnel security associations information for the specified IPSec tunnel ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
-    :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+    Use this data source to access information about an existing resource.
     """
     ...

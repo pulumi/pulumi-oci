@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
@@ -60,30 +59,30 @@ type GetDatabaseToolsEndpointServiceArgs struct {
 // A collection of values returned by getDatabaseToolsEndpointService.
 type GetDatabaseToolsEndpointServiceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
-	CompartmentId                  string `pulumi:"compartmentId"`
-	DatabaseToolsEndpointServiceId string `pulumi:"databaseToolsEndpointServiceId"`
+	CompartmentId                  *string `pulumi:"compartmentId"`
+	DatabaseToolsEndpointServiceId string  `pulumi:"databaseToolsEndpointServiceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the Database Tools Endpoint Service.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A unique, non-changeable resource name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current state of the Database Tools Endpoint Service.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetDatabaseToolsEndpointServiceOutput(ctx *pulumi.Context, args GetDatabaseToolsEndpointServiceOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseToolsEndpointServiceResultOutput {
@@ -124,15 +123,9 @@ func (o GetDatabaseToolsEndpointServiceResultOutput) ToGetDatabaseToolsEndpointS
 	return o
 }
 
-func (o GetDatabaseToolsEndpointServiceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServiceResult] {
-	return pulumix.Output[GetDatabaseToolsEndpointServiceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools Endpoint Service.
-func (o GetDatabaseToolsEndpointServiceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatabaseToolsEndpointServiceResultOutput) DatabaseToolsEndpointServiceId() pulumi.StringOutput {
@@ -145,13 +138,13 @@ func (o GetDatabaseToolsEndpointServiceResultOutput) DefinedTags() pulumi.MapOut
 }
 
 // A description of the Database Tools Endpoint Service.
-func (o GetDatabaseToolsEndpointServiceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetDatabaseToolsEndpointServiceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -160,23 +153,23 @@ func (o GetDatabaseToolsEndpointServiceResultOutput) FreeformTags() pulumi.MapOu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseToolsEndpointServiceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetDatabaseToolsEndpointServiceResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A unique, non-changeable resource name.
-func (o GetDatabaseToolsEndpointServiceResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Database Tools Endpoint Service.
-func (o GetDatabaseToolsEndpointServiceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -185,13 +178,13 @@ func (o GetDatabaseToolsEndpointServiceResultOutput) SystemTags() pulumi.MapOutp
 }
 
 // The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
-func (o GetDatabaseToolsEndpointServiceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
-func (o GetDatabaseToolsEndpointServiceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDatabaseToolsEndpointServiceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServiceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

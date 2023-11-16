@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -80,7 +79,7 @@ type GetWaasPoliciesResult struct {
 	DisplayNames  []string                `pulumi:"displayNames"`
 	Filters       []GetWaasPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                              string   `pulumi:"id"`
+	Id                              *string  `pulumi:"id"`
 	Ids                             []string `pulumi:"ids"`
 	States                          []string `pulumi:"states"`
 	TimeCreatedGreaterThanOrEqualTo *string  `pulumi:"timeCreatedGreaterThanOrEqualTo"`
@@ -138,12 +137,6 @@ func (o GetWaasPoliciesResultOutput) ToGetWaasPoliciesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetWaasPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesResult] {
-	return pulumix.Output[GetWaasPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.
 func (o GetWaasPoliciesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWaasPoliciesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -158,8 +151,8 @@ func (o GetWaasPoliciesResultOutput) Filters() GetWaasPoliciesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWaasPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWaasPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWaasPoliciesResultOutput) Ids() pulumi.StringArrayOutput {

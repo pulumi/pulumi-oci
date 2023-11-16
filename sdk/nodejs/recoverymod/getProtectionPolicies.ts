@@ -82,12 +82,12 @@ export interface GetProtectionPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly owner?: string;
     /**
      * The list of protection_policy_collection.
      */
-    readonly protectionPolicyCollections: outputs.RecoveryMod.GetProtectionPoliciesProtectionPolicyCollection[];
+    readonly protectionPolicyCollections?: outputs.RecoveryMod.GetProtectionPoliciesProtectionPolicyCollection[];
     readonly protectionPolicyId?: string;
     /**
      * The current state of the protection policy. Allowed values are:

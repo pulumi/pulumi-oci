@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume resource in Oracle Cloud Infrastructure Core service.
@@ -100,7 +99,7 @@ type Volume struct {
 	pulumi.CustomResourceState
 
 	// The number of Volume Performance Units per GB that this volume is effectively tuned to.
-	AutoTunedVpusPerGb pulumi.StringOutput `pulumi:"autoTunedVpusPerGb"`
+	AutoTunedVpusPerGb pulumi.StringPtrOutput `pulumi:"autoTunedVpusPerGb"`
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies VolumeAutotunePolicyArrayOutput `pulumi:"autotunePolicies"`
 	// (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
@@ -108,7 +107,7 @@ type Volume struct {
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-	BackupPolicyId pulumi.StringOutput `pulumi:"backupPolicyId"`
+	BackupPolicyId pulumi.StringPtrOutput `pulumi:"backupPolicyId"`
 	// (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
 	BlockVolumeReplicas         VolumeBlockVolumeReplicaArrayOutput `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion pulumi.BoolPtrOutput                `pulumi:"blockVolumeReplicasDeletion"`
@@ -117,36 +116,36 @@ type Volume struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled pulumi.BoolOutput `pulumi:"isAutoTuneEnabled"`
+	IsAutoTuneEnabled pulumi.BoolPtrOutput `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
+	IsHydrated pulumi.BoolPtrOutput `pulumi:"isHydrated"`
 	// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The size of the volume in GBs.
-	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
+	SizeInGbs pulumi.StringPtrOutput `pulumi:"sizeInGbs"`
 	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     pulumi.StringOutput       `pulumi:"sizeInMbs"`
-	SourceDetails VolumeSourceDetailsOutput `pulumi:"sourceDetails"`
+	SizeInMbs     pulumi.StringPtrOutput       `pulumi:"sizeInMbs"`
+	SourceDetails VolumeSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// The current state of a volume.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-	VolumeBackupId pulumi.StringOutput `pulumi:"volumeBackupId"`
+	VolumeBackupId pulumi.StringPtrOutput `pulumi:"volumeBackupId"`
 	// The OCID of the source volume group.
-	VolumeGroupId pulumi.StringOutput `pulumi:"volumeGroupId"`
+	VolumeGroupId pulumi.StringPtrOutput `pulumi:"volumeGroupId"`
 	// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 	//
 	// Allowed values:
-	VpusPerGb pulumi.StringOutput `pulumi:"vpusPerGb"`
+	VpusPerGb pulumi.StringPtrOutput `pulumi:"vpusPerGb"`
 }
 
 // NewVolume registers a new resource with the given unique name, arguments, and options.
@@ -392,12 +391,6 @@ func (i *Volume) ToVolumeOutputWithContext(ctx context.Context) VolumeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeOutput)
 }
 
-func (i *Volume) ToOutput(ctx context.Context) pulumix.Output[*Volume] {
-	return pulumix.Output[*Volume]{
-		OutputState: i.ToVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VolumeArrayInput is an input type that accepts VolumeArray and VolumeArrayOutput values.
 // You can construct a concrete instance of `VolumeArrayInput` via:
 //
@@ -421,12 +414,6 @@ func (i VolumeArray) ToVolumeArrayOutput() VolumeArrayOutput {
 
 func (i VolumeArray) ToVolumeArrayOutputWithContext(ctx context.Context) VolumeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeArrayOutput)
-}
-
-func (i VolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]*Volume] {
-	return pulumix.Output[[]*Volume]{
-		OutputState: i.ToVolumeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VolumeMapInput is an input type that accepts VolumeMap and VolumeMapOutput values.
@@ -454,12 +441,6 @@ func (i VolumeMap) ToVolumeMapOutputWithContext(ctx context.Context) VolumeMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeMapOutput)
 }
 
-func (i VolumeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Volume] {
-	return pulumix.Output[map[string]*Volume]{
-		OutputState: i.ToVolumeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VolumeOutput struct{ *pulumi.OutputState }
 
 func (VolumeOutput) ElementType() reflect.Type {
@@ -474,15 +455,9 @@ func (o VolumeOutput) ToVolumeOutputWithContext(ctx context.Context) VolumeOutpu
 	return o
 }
 
-func (o VolumeOutput) ToOutput(ctx context.Context) pulumix.Output[*Volume] {
-	return pulumix.Output[*Volume]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of Volume Performance Units per GB that this volume is effectively tuned to.
-func (o VolumeOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+func (o VolumeOutput) AutoTunedVpusPerGb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.AutoTunedVpusPerGb }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of autotune policies to be enabled for this volume.
@@ -498,8 +473,8 @@ func (o VolumeOutput) AvailabilityDomain() pulumi.StringOutput {
 // If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
 //
 // Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-func (o VolumeOutput) BackupPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.BackupPolicyId }).(pulumi.StringOutput)
+func (o VolumeOutput) BackupPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.BackupPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
@@ -522,8 +497,8 @@ func (o VolumeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VolumeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VolumeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -532,39 +507,39 @@ func (o VolumeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-func (o VolumeOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Volume) pulumi.BoolOutput { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
+func (o VolumeOutput) IsAutoTuneEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.BoolPtrOutput { return v.IsAutoTuneEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-func (o VolumeOutput) IsHydrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Volume) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
+func (o VolumeOutput) IsHydrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.BoolPtrOutput { return v.IsHydrated }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-func (o VolumeOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o VolumeOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The size of the volume in GBs.
-func (o VolumeOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o VolumeOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `sizeInGbs` instead.
 //
 // Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-func (o VolumeOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o VolumeOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
-func (o VolumeOutput) SourceDetails() VolumeSourceDetailsOutput {
-	return o.ApplyT(func(v *Volume) VolumeSourceDetailsOutput { return v.SourceDetails }).(VolumeSourceDetailsOutput)
+func (o VolumeOutput) SourceDetails() VolumeSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *Volume) VolumeSourceDetailsPtrOutput { return v.SourceDetails }).(VolumeSourceDetailsPtrOutput)
 }
 
 // The current state of a volume.
-func (o VolumeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VolumeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -573,25 +548,25 @@ func (o VolumeOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o VolumeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VolumeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-func (o VolumeOutput) VolumeBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VolumeBackupId }).(pulumi.StringOutput)
+func (o VolumeOutput) VolumeBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.VolumeBackupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source volume group.
-func (o VolumeOutput) VolumeGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VolumeGroupId }).(pulumi.StringOutput)
+func (o VolumeOutput) VolumeGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.VolumeGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
 //
 // Allowed values:
-func (o VolumeOutput) VpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.VpusPerGb }).(pulumi.StringOutput)
+func (o VolumeOutput) VpusPerGb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringPtrOutput { return v.VpusPerGb }).(pulumi.StringPtrOutput)
 }
 
 type VolumeArrayOutput struct{ *pulumi.OutputState }
@@ -606,12 +581,6 @@ func (o VolumeArrayOutput) ToVolumeArrayOutput() VolumeArrayOutput {
 
 func (o VolumeArrayOutput) ToVolumeArrayOutputWithContext(ctx context.Context) VolumeArrayOutput {
 	return o
-}
-
-func (o VolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Volume] {
-	return pulumix.Output[[]*Volume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeArrayOutput) Index(i pulumi.IntInput) VolumeOutput {
@@ -632,12 +601,6 @@ func (o VolumeMapOutput) ToVolumeMapOutput() VolumeMapOutput {
 
 func (o VolumeMapOutput) ToVolumeMapOutputWithContext(ctx context.Context) VolumeMapOutput {
 	return o
-}
-
-func (o VolumeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Volume] {
-	return pulumix.Output[map[string]*Volume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeMapOutput) MapIndex(k pulumi.StringInput) VolumeOutput {

@@ -46,17 +46,11 @@ class GetEmailDomainsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="emailDomainCollections")
-    def email_domain_collections(self) -> Sequence['outputs.GetEmailDomainsEmailDomainCollectionResult']:
-        """
-        The list of email_domain_collection.
-        """
+    def email_domain_collections(self) -> Optional[Sequence['outputs.GetEmailDomainsEmailDomainCollectionResult']]:
         return pulumi.get(self, "email_domain_collections")
 
     @property
@@ -67,25 +61,16 @@ class GetEmailDomainsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the email domain.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_email_domains(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEmailDomainsResult:
     """
-    This data source provides the list of Email Domains in Oracle Cloud Infrastructure Email service.
-
-    Lists email domains in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_email_domains = oci.Email.get_email_domains(compartment_id=var["compartment_id"],
-        id=var["email_domain_id"],
-        name=var["email_domain_name"],
-        state=var["email_domain_state"])
-    ```
-
-
-    :param str compartment_id: The OCID for the compartment.
-    :param str id: A filter to only return resources that match the given id exactly.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_email_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmailDomainsResult]:
     """
-    This data source provides the list of Email Domains in Oracle Cloud Infrastructure Email service.
-
-    Lists email domains in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_email_domains = oci.Email.get_email_domains(compartment_id=var["compartment_id"],
-        id=var["email_domain_id"],
-        name=var["email_domain_name"],
-        state=var["email_domain_state"])
-    ```
-
-
-    :param str compartment_id: The OCID for the compartment.
-    :param str id: A filter to only return resources that match the given id exactly.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

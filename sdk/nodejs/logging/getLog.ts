@@ -53,31 +53,31 @@ export interface GetLogResult {
     /**
      * The OCID of the compartment that the resource belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Log object configuration.
      */
-    readonly configurations: outputs.Logging.GetLogConfiguration[];
+    readonly configurations?: outputs.Logging.GetLogConfiguration[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether or not this resource is currently enabled.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * Log group OCID.
      */
@@ -86,27 +86,27 @@ export interface GetLogResult {
     /**
      * The logType that the log object is for, whether custom or service.
      */
-    readonly logType: string;
+    readonly logType?: string;
     /**
      * Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
      */
-    readonly retentionDuration: number;
+    readonly retentionDuration?: number;
     /**
      * The pipeline state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the tenancy.
      */
-    readonly tenancyId: string;
+    readonly tenancyId?: string;
     /**
      * Time the resource was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time the resource was last modified.
      */
-    readonly timeLastModified: string;
+    readonly timeLastModified?: string;
 }
 /**
  * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.

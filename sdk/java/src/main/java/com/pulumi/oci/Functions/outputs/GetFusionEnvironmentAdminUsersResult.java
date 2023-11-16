@@ -9,6 +9,7 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentAdminUsersFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetFusionEnvironmentAdminUsersResult {
      * @return The list of admin_user_collection.
      * 
      */
-    private List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections;
+    private @Nullable List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections;
     private @Nullable List<GetFusionEnvironmentAdminUsersFilter> filters;
     private String fusionEnvironmentId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetFusionEnvironmentAdminUsersResult() {}
     /**
@@ -32,7 +33,7 @@ public final class GetFusionEnvironmentAdminUsersResult {
      * 
      */
     public List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections() {
-        return this.adminUserCollections;
+        return this.adminUserCollections == null ? List.of() : this.adminUserCollections;
     }
     public List<GetFusionEnvironmentAdminUsersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetFusionEnvironmentAdminUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,10 +58,10 @@ public final class GetFusionEnvironmentAdminUsersResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections;
+        private @Nullable List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections;
         private @Nullable List<GetFusionEnvironmentAdminUsersFilter> filters;
         private String fusionEnvironmentId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetFusionEnvironmentAdminUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,8 +72,8 @@ public final class GetFusionEnvironmentAdminUsersResult {
         }
 
         @CustomType.Setter
-        public Builder adminUserCollections(List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections) {
-            this.adminUserCollections = Objects.requireNonNull(adminUserCollections);
+        public Builder adminUserCollections(@Nullable List<GetFusionEnvironmentAdminUsersAdminUserCollection> adminUserCollections) {
+            this.adminUserCollections = adminUserCollections;
             return this;
         }
         public Builder adminUserCollections(GetFusionEnvironmentAdminUsersAdminUserCollection... adminUserCollections) {
@@ -92,8 +93,8 @@ public final class GetFusionEnvironmentAdminUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetFusionEnvironmentAdminUsersResult build() {

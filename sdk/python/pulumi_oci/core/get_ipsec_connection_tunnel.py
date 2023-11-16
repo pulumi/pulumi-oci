@@ -71,47 +71,32 @@ class GetIpsecConnectionTunnelResult:
 
     @property
     @pulumi.getter(name="bgpSessionInfos")
-    def bgp_session_infos(self) -> Sequence['outputs.GetIpsecConnectionTunnelBgpSessionInfoResult']:
-        """
-        Information needed to establish a BGP Session on an interface.
-        """
+    def bgp_session_infos(self) -> Optional[Sequence['outputs.GetIpsecConnectionTunnelBgpSessionInfoResult']]:
         return pulumi.get(self, "bgp_session_infos")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the tunnel.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpeIp")
-    def cpe_ip(self) -> str:
-        """
-        The IP address of Cpe headend.  Example: `129.146.17.50`
-        """
+    def cpe_ip(self) -> Optional[str]:
         return pulumi.get(self, "cpe_ip")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="encryptionDomainConfigs")
-    def encryption_domain_configs(self) -> Sequence['outputs.GetIpsecConnectionTunnelEncryptionDomainConfigResult']:
-        """
-        Configuration information used by the encryption domain policy.
-        """
+    def encryption_domain_configs(self) -> Optional[Sequence['outputs.GetIpsecConnectionTunnelEncryptionDomainConfigResult']]:
         return pulumi.get(self, "encryption_domain_configs")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -119,10 +104,7 @@ class GetIpsecConnectionTunnelResult:
 
     @property
     @pulumi.getter(name="ikeVersion")
-    def ike_version(self) -> str:
-        """
-        Internet Key Exchange protocol version.
-        """
+    def ike_version(self) -> Optional[str]:
         return pulumi.get(self, "ike_version")
 
     @property
@@ -132,42 +114,27 @@ class GetIpsecConnectionTunnelResult:
 
     @property
     @pulumi.getter
-    def routing(self) -> str:
-        """
-        the routing strategy used for this tunnel, either static route or BGP dynamic routing
-        """
+    def routing(self) -> Optional[str]:
         return pulumi.get(self, "routing")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The IPSec connection's tunnel's lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The tunnel's current state.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> str:
-        """
-        When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_status_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_status_updated")
 
     @property
@@ -177,10 +144,7 @@ class GetIpsecConnectionTunnelResult:
 
     @property
     @pulumi.getter(name="vpnIp")
-    def vpn_ip(self) -> str:
-        """
-        The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-        """
+    def vpn_ip(self) -> Optional[str]:
         return pulumi.get(self, "vpn_ip")
 
 
@@ -211,23 +175,7 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
                                 tunnel_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionTunnelResult:
     """
-    This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified IPSec connection's specified tunnel basic information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connection_tunnel = oci.Core.get_ipsec_connection_tunnel(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"])
-    ```
-
-
-    :param str ipsec_id: The OCID of the IPSec connection.
-    :param str tunnel_id: The OCID of the IPSec connection's tunnel.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['ipsecId'] = ipsec_id
@@ -258,22 +206,6 @@ def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = N
                                        tunnel_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelResult]:
     """
-    This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified IPSec connection's specified tunnel basic information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connection_tunnel = oci.Core.get_ipsec_connection_tunnel(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"])
-    ```
-
-
-    :param str ipsec_id: The OCID of the IPSec connection.
-    :param str tunnel_id: The OCID of the IPSec connection's tunnel.
+    Use this data source to access information about an existing resource.
     """
     ...

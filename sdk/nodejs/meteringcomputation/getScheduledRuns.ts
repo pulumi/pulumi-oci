@@ -50,7 +50,7 @@ export interface GetScheduledRunsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ocid representing unique shedule
      */
@@ -58,7 +58,7 @@ export interface GetScheduledRunsResult {
     /**
      * The list of scheduled_run_collection.
      */
-    readonly scheduledRunCollections: outputs.MeteringComputation.GetScheduledRunsScheduledRunCollection[];
+    readonly scheduledRunCollections?: outputs.MeteringComputation.GetScheduledRunsScheduledRunCollection[];
 }
 /**
  * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.

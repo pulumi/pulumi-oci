@@ -79,11 +79,11 @@ export interface GetSqlEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of sql_endpoint_collection.
      */
-    readonly sqlEndpointCollections: outputs.DataFlow.GetSqlEndpointsSqlEndpointCollection[];
+    readonly sqlEndpointCollections?: outputs.DataFlow.GetSqlEndpointsSqlEndpointCollection[];
     readonly sqlEndpointId?: string;
     /**
      * The current state of the Sql Endpoint.

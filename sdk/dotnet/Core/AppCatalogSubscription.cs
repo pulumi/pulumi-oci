@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Core
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// EULA link
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// Listing resource id.
         /// </summary>
         [Output("listingResourceId")]
-        public Output<string> ListingResourceId { get; private set; } = null!;
+        public Output<string?> ListingResourceId { get; private set; } = null!;
 
         /// <summary>
         /// Listing resource version.
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.Core
         /// Name of the publisher who published this listing.
         /// </summary>
         [Output("publisherName")]
-        public Output<string> PublisherName { get; private set; } = null!;
+        public Output<string?> PublisherName { get; private set; } = null!;
 
         /// <summary>
         /// A generated signature for this listing resource version retrieved the agreements API.
@@ -107,13 +107,13 @@ namespace Pulumi.Oci.Core
         /// The short summary to the listing.
         /// </summary>
         [Output("summary")]
-        public Output<string> Summary { get; private set; } = null!;
+        public Output<string?> Summary { get; private set; } = null!;
 
         /// <summary>
         /// Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
@@ -68,7 +67,7 @@ type GetRemediationRunStagesArgs struct {
 type GetRemediationRunStagesResult struct {
 	Filters []GetRemediationRunStagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
 	RemediationRunId string `pulumi:"remediationRunId"`
 	// The list of remediation_run_stage_collection.
@@ -122,19 +121,13 @@ func (o GetRemediationRunStagesResultOutput) ToGetRemediationRunStagesResultOutp
 	return o
 }
 
-func (o GetRemediationRunStagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesResult] {
-	return pulumix.Output[GetRemediationRunStagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRunStagesResultOutput) Filters() GetRemediationRunStagesFilterArrayOutput {
 	return o.ApplyT(func(v GetRemediationRunStagesResult) []GetRemediationRunStagesFilter { return v.Filters }).(GetRemediationRunStagesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRemediationRunStagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRemediationRunStagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRemediationRunStagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRemediationRunStagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.

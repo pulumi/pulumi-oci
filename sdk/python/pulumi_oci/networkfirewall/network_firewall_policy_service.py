@@ -22,14 +22,6 @@ class NetworkFirewallPolicyServiceArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyService resource.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: Name of the service
         """
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "port_ranges", port_ranges)
@@ -40,9 +32,6 @@ class NetworkFirewallPolicyServiceArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -52,9 +41,6 @@ class NetworkFirewallPolicyServiceArgs:
     @property
     @pulumi.getter(name="portRanges")
     def port_ranges(self) -> pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]]:
-        """
-        (Updatable) List of port-ranges to be used.
-        """
         return pulumi.get(self, "port_ranges")
 
     @port_ranges.setter
@@ -64,13 +50,6 @@ class NetworkFirewallPolicyServiceArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Describes the type of Service. The accepted values are 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -80,9 +59,6 @@ class NetworkFirewallPolicyServiceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the service
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -100,15 +76,6 @@ class _NetworkFirewallPolicyServiceState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyService resources.
-        :param pulumi.Input[str] name: Name of the service
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -124,9 +91,6 @@ class _NetworkFirewallPolicyServiceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the service
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -136,9 +100,6 @@ class _NetworkFirewallPolicyServiceState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -148,9 +109,6 @@ class _NetworkFirewallPolicyServiceState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this service belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -160,9 +118,6 @@ class _NetworkFirewallPolicyServiceState:
     @property
     @pulumi.getter(name="portRanges")
     def port_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyServicePortRangeArgs']]]]:
-        """
-        (Updatable) List of port-ranges to be used.
-        """
         return pulumi.get(self, "port_ranges")
 
     @port_ranges.setter
@@ -172,13 +127,6 @@ class _NetworkFirewallPolicyServiceState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Describes the type of Service. The accepted values are 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -197,43 +145,9 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Service for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("testNetworkFirewallPolicyService",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            port_ranges=[oci.network_firewall.NetworkFirewallPolicyServicePortRangeArgs(
-                minimum_port=var["network_firewall_policy_service_port_ranges_minimum_port"],
-                maximum_port=var["network_firewall_policy_service_port_ranges_maximum_port"],
-            )],
-            type=var["network_firewall_policy_service_type"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyServices can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService test_network_firewall_policy_service "networkFirewallPolicies/{networkFirewallPolicyId}/services/{serviceName}"
-        ```
-
+        Create a NetworkFirewallPolicyService resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: Name of the service
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -242,33 +156,7 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
                  args: NetworkFirewallPolicyServiceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Service for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("testNetworkFirewallPolicyService",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            port_ranges=[oci.network_firewall.NetworkFirewallPolicyServicePortRangeArgs(
-                minimum_port=var["network_firewall_policy_service_port_ranges_minimum_port"],
-                maximum_port=var["network_firewall_policy_service_port_ranges_maximum_port"],
-            )],
-            type=var["network_firewall_policy_service_type"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyServices can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService test_network_firewall_policy_service "networkFirewallPolicies/{networkFirewallPolicyId}/services/{serviceName}"
-        ```
-
+        Create a NetworkFirewallPolicyService resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyServiceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -330,15 +218,6 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: Name of the service
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this service belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyServicePortRangeArgs']]]] port_ranges: (Updatable) List of port-ranges to be used.
-        :param pulumi.Input[str] type: Describes the type of Service. The accepted values are 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -354,44 +233,25 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Name of the service
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this service belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter(name="portRanges")
     def port_ranges(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyServicePortRange']]:
-        """
-        (Updatable) List of port-ranges to be used.
-        """
         return pulumi.get(self, "port_ranges")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Describes the type of Service. The accepted values are 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 

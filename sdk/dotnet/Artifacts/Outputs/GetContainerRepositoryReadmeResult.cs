@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// <summary>
         /// Readme content. Avoid entering confidential information.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// Readme format. Supported formats are text/plain and text/markdown.
         /// </summary>
-        public readonly string Format;
+        public readonly string? Format;
 
         [OutputConstructor]
         private GetContainerRepositoryReadmeResult(
-            string content,
+            string? content,
 
-            string format)
+            string? format)
         {
             Content = content;
             Format = format;

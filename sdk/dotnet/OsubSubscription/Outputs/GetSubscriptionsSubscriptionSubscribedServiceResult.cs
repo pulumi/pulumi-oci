@@ -16,7 +16,7 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Booking Opportunity Number of Subscribed Service
         /// </summary>
-        public readonly string BookingOptyNumber;
+        public readonly string? BookingOptyNumber;
         /// <summary>
         /// List of Commitment services of a line
         /// </summary>
@@ -24,43 +24,43 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Subscribed service CSI number
         /// </summary>
-        public readonly string Csi;
+        public readonly string? Csi;
         /// <summary>
         /// Subscribed service data center region
         /// </summary>
-        public readonly string DataCenterRegion;
+        public readonly string? DataCenterRegion;
         /// <summary>
         /// Funded Allocation line value example: 12000.00
         /// </summary>
-        public readonly string FundedAllocationValue;
+        public readonly string? FundedAllocationValue;
         /// <summary>
         /// SPM internal Subscribed Service ID
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Subscribed service intent to pay flag
         /// </summary>
-        public readonly bool IsIntentToPay;
+        public readonly bool? IsIntentToPay;
         /// <summary>
         /// Subscribed service net unit price
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// Subscribed service operation type
         /// </summary>
-        public readonly string OperationType;
+        public readonly string? OperationType;
         /// <summary>
         /// Sales Order Number associated to the subscribed service
         /// </summary>
-        public readonly string OrderNumber;
+        public readonly string? OrderNumber;
         /// <summary>
         /// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
         /// </summary>
-        public readonly string PartnerTransactionType;
+        public readonly string? PartnerTransactionType;
         /// <summary>
         /// Subscribed service pricing model
         /// </summary>
-        public readonly string PricingModel;
+        public readonly string? PricingModel;
         /// <summary>
         /// Product description
         /// </summary>
@@ -68,85 +68,85 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Subscribed service program type
         /// </summary>
-        public readonly string ProgramType;
+        public readonly string? ProgramType;
         /// <summary>
         /// Subscribed service promotion type
         /// </summary>
-        public readonly string PromoType;
+        public readonly string? PromoType;
         /// <summary>
         /// Subscribed service quantity
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Subscribed service status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Term value in Months
         /// </summary>
-        public readonly string TermValue;
+        public readonly string? TermValue;
         /// <summary>
         /// Term value UOM
         /// </summary>
-        public readonly string TermValueUom;
+        public readonly string? TermValueUom;
         /// <summary>
         /// Represents the date when the last service of the subscription ends
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Represents the date when the first service of the subscription was activated
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Subscribed service total value
         /// </summary>
-        public readonly string TotalValue;
+        public readonly string? TotalValue;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionSubscribedServiceResult(
-            string bookingOptyNumber,
+            string? bookingOptyNumber,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult> commitmentServices,
 
-            string csi,
+            string? csi,
 
-            string dataCenterRegion,
+            string? dataCenterRegion,
 
-            string fundedAllocationValue,
+            string? fundedAllocationValue,
 
-            string id,
+            string? id,
 
-            bool isIntentToPay,
+            bool? isIntentToPay,
 
-            string netUnitPrice,
+            string? netUnitPrice,
 
-            string operationType,
+            string? operationType,
 
-            string orderNumber,
+            string? orderNumber,
 
-            string partnerTransactionType,
+            string? partnerTransactionType,
 
-            string pricingModel,
+            string? pricingModel,
 
             ImmutableArray<Outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult> products,
 
-            string programType,
+            string? programType,
 
-            string promoType,
+            string? promoType,
 
-            string quantity,
+            string? quantity,
 
-            string status,
+            string? status,
 
-            string termValue,
+            string? termValue,
 
-            string termValueUom,
+            string? termValueUom,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart,
+            string? timeStart,
 
-            string totalValue)
+            string? totalValue)
         {
             BookingOptyNumber = bookingOptyNumber;
             CommitmentServices = commitmentServices;

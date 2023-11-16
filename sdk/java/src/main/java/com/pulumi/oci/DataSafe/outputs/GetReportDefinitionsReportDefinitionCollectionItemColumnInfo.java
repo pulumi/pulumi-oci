@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo {
@@ -15,63 +17,63 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
      * @return Specifies the data type of the column.
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return The name of the report definition to query.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    private Integer displayOrder;
+    private @Nullable Integer displayOrder;
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    private String fieldName;
+    private @Nullable String fieldName;
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private Boolean isHidden;
+    private @Nullable Boolean isHidden;
 
     private GetReportDefinitionsReportDefinitionCollectionItemColumnInfo() {}
     /**
      * @return Specifies the data type of the column.
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return The name of the report definition to query.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    public Integer displayOrder() {
-        return this.displayOrder;
+    public Optional<Integer> displayOrder() {
+        return Optional.ofNullable(this.displayOrder);
     }
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    public String fieldName() {
-        return this.fieldName;
+    public Optional<String> fieldName() {
+        return Optional.ofNullable(this.fieldName);
     }
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Boolean isHidden() {
-        return this.isHidden;
+    public Optional<Boolean> isHidden() {
+        return Optional.ofNullable(this.isHidden);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dataType;
-        private String displayName;
-        private Integer displayOrder;
-        private String fieldName;
-        private Boolean isHidden;
+        private @Nullable String dataType;
+        private @Nullable String displayName;
+        private @Nullable Integer displayOrder;
+        private @Nullable String fieldName;
+        private @Nullable Boolean isHidden;
         public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollectionItemColumnInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
         }
 
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+        public Builder displayOrder(@Nullable Integer displayOrder) {
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
-        public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+        public Builder fieldName(@Nullable String fieldName) {
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
-        public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+        public Builder isHidden(@Nullable Boolean isHidden) {
+            this.isHidden = isHidden;
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemColumnInfo build() {

@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetTriggerActionFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTriggerAction {
@@ -15,39 +17,39 @@ public final class GetTriggerAction {
      * @return The OCID of the build pipeline to be triggered.
      * 
      */
-    private String buildPipelineId;
+    private @Nullable String buildPipelineId;
     /**
      * @return The filters for the trigger.
      * 
      */
-    private List<GetTriggerActionFilter> filters;
+    private @Nullable List<GetTriggerActionFilter> filters;
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetTriggerAction() {}
     /**
      * @return The OCID of the build pipeline to be triggered.
      * 
      */
-    public String buildPipelineId() {
-        return this.buildPipelineId;
+    public Optional<String> buildPipelineId() {
+        return Optional.ofNullable(this.buildPipelineId);
     }
     /**
      * @return The filters for the trigger.
      * 
      */
     public List<GetTriggerActionFilter> filters() {
-        return this.filters;
+        return this.filters == null ? List.of() : this.filters;
     }
     /**
      * @return The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetTriggerAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String buildPipelineId;
-        private List<GetTriggerActionFilter> filters;
-        private String type;
+        private @Nullable String buildPipelineId;
+        private @Nullable List<GetTriggerActionFilter> filters;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetTriggerAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetTriggerAction {
         }
 
         @CustomType.Setter
-        public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+        public Builder buildPipelineId(@Nullable String buildPipelineId) {
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
-        public Builder filters(List<GetTriggerActionFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+        public Builder filters(@Nullable List<GetTriggerActionFilter> filters) {
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetTriggerActionFilter... filters) {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetTriggerAction build() {

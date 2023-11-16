@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerPatchesAutonomousPatch {
@@ -13,135 +15,135 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
      * @return Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
      * 
      */
-    private String autonomousPatchType;
+    private @Nullable String autonomousPatchType;
     /**
      * @return The text describing this patch package.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&amp;id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      * 
      */
-    private String patchModel;
+    private @Nullable String patchModel;
     /**
      * @return First month of the quarter in which the patch was released.
      * 
      */
-    private String quarter;
+    private @Nullable String quarter;
     /**
      * @return The current state of the patch as a result of lastAction.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time that the patch was released.
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return The type of patch. BUNDLE is one example.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The version of this patch package.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return Year in which the patch was released.
      * 
      */
-    private String year;
+    private @Nullable String year;
 
     private GetAutonomousContainerPatchesAutonomousPatch() {}
     /**
      * @return Autonomous patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
      * 
      */
-    public String autonomousPatchType() {
-        return this.autonomousPatchType;
+    public Optional<String> autonomousPatchType() {
+        return Optional.ofNullable(this.autonomousPatchType);
     }
     /**
      * @return The text describing this patch package.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&amp;id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      * 
      */
-    public String patchModel() {
-        return this.patchModel;
+    public Optional<String> patchModel() {
+        return Optional.ofNullable(this.patchModel);
     }
     /**
      * @return First month of the quarter in which the patch was released.
      * 
      */
-    public String quarter() {
-        return this.quarter;
+    public Optional<String> quarter() {
+        return Optional.ofNullable(this.quarter);
     }
     /**
      * @return The current state of the patch as a result of lastAction.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time that the patch was released.
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return The type of patch. BUNDLE is one example.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The version of this patch package.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return Year in which the patch was released.
      * 
      */
-    public String year() {
-        return this.year;
+    public Optional<String> year() {
+        return Optional.ofNullable(this.year);
     }
 
     public static Builder builder() {
@@ -153,17 +155,17 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String autonomousPatchType;
-        private String description;
-        private String id;
-        private String lifecycleDetails;
-        private String patchModel;
-        private String quarter;
-        private String state;
-        private String timeReleased;
-        private String type;
-        private String version;
-        private String year;
+        private @Nullable String autonomousPatchType;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String patchModel;
+        private @Nullable String quarter;
+        private @Nullable String state;
+        private @Nullable String timeReleased;
+        private @Nullable String type;
+        private @Nullable String version;
+        private @Nullable String year;
         public Builder() {}
         public Builder(GetAutonomousContainerPatchesAutonomousPatch defaults) {
     	      Objects.requireNonNull(defaults);
@@ -181,58 +183,58 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
         }
 
         @CustomType.Setter
-        public Builder autonomousPatchType(String autonomousPatchType) {
-            this.autonomousPatchType = Objects.requireNonNull(autonomousPatchType);
+        public Builder autonomousPatchType(@Nullable String autonomousPatchType) {
+            this.autonomousPatchType = autonomousPatchType;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder patchModel(String patchModel) {
-            this.patchModel = Objects.requireNonNull(patchModel);
+        public Builder patchModel(@Nullable String patchModel) {
+            this.patchModel = patchModel;
             return this;
         }
         @CustomType.Setter
-        public Builder quarter(String quarter) {
-            this.quarter = Objects.requireNonNull(quarter);
+        public Builder quarter(@Nullable String quarter) {
+            this.quarter = quarter;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder year(String year) {
-            this.year = Objects.requireNonNull(year);
+        public Builder year(@Nullable String year) {
+            this.year = year;
             return this;
         }
         public GetAutonomousContainerPatchesAutonomousPatch build() {

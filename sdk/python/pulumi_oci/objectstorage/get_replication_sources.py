@@ -52,7 +52,7 @@ class GetReplicationSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetReplicationSourcesResult:
 
     @property
     @pulumi.getter(name="replicationSources")
-    def replication_sources(self) -> Sequence['outputs.GetReplicationSourcesReplicationSourceResult']:
-        """
-        The list of replication_sources.
-        """
+    def replication_sources(self) -> Optional[Sequence['outputs.GetReplicationSourcesReplicationSourceResult']]:
         return pulumi.get(self, "replication_sources")
 
 
@@ -90,23 +87,7 @@ def get_replication_sources(bucket: Optional[str] = None,
                             namespace: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicationSourcesResult:
     """
-    This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
-
-    List the replication sources of a destination bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=var["replication_source_bucket"],
-        namespace=var["replication_source_namespace"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -129,22 +110,6 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[str]] = None,
                                    namespace: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicationSourcesResult]:
     """
-    This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
-
-    List the replication sources of a destination bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=var["replication_source_bucket"],
-        namespace=var["replication_source_namespace"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

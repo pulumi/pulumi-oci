@@ -16,23 +16,23 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// Object Storage bucket name.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Object Storage namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Object Storage object name.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
 
         [OutputConstructor]
         private GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult(
-            string bucket,
+            string? bucket,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object)
+            string? @object)
         {
             Bucket = bucket;
             Namespace = @namespace;

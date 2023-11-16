@@ -61,7 +61,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// * User created using tags (USER_TAG_ASSOC).
         /// </summary>
         [Output("category")]
-        public Output<string> Category { get; private set; } = null!;
+        public Output<string?> Category { get; private set; } = null!;
 
         /// <summary>
         /// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("tenantId")]
-        public Output<string> TenantId { get; private set; } = null!;
+        public Output<string?> TenantId { get; private set; } = null!;
 
         /// <summary>
         /// The time when the association was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

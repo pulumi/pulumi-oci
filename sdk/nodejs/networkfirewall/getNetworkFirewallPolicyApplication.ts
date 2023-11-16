@@ -39,12 +39,12 @@ export interface GetNetworkFirewallPolicyApplicationResult {
     /**
      * The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    readonly icmpCode: number;
+    readonly icmpCode?: number;
     /**
      * The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      */
-    readonly icmpType: number;
-    readonly id: string;
+    readonly icmpType?: number;
+    readonly id?: string;
     /**
      * Name of the application.
      */
@@ -53,11 +53,11 @@ export interface GetNetworkFirewallPolicyApplicationResult {
     /**
      * OCID of the Network Firewall Policy this application belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * Describes the type of application.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.

@@ -15,6 +15,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -76,210 +77,210 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * 
      */
     @Export(name="currentCustomActionTimeoutInMins", refs={Integer.class}, tree="[0]")
-    private Output<Integer> currentCustomActionTimeoutInMins;
+    private Output</* @Nullable */ Integer> currentCustomActionTimeoutInMins;
 
     /**
      * @return Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      * 
      */
-    public Output<Integer> currentCustomActionTimeoutInMins() {
-        return this.currentCustomActionTimeoutInMins;
+    public Output<Optional<Integer>> currentCustomActionTimeoutInMins() {
+        return Codegen.optional(this.currentCustomActionTimeoutInMins);
     }
     /**
      * The name of the current infrastruture component that is getting patched.
      * 
      */
     @Export(name="currentPatchingComponent", refs={String.class}, tree="[0]")
-    private Output<String> currentPatchingComponent;
+    private Output</* @Nullable */ String> currentPatchingComponent;
 
     /**
      * @return The name of the current infrastruture component that is getting patched.
      * 
      */
-    public Output<String> currentPatchingComponent() {
-        return this.currentPatchingComponent;
+    public Output<Optional<String>> currentPatchingComponent() {
+        return Codegen.optional(this.currentPatchingComponent);
     }
     /**
      * Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      * 
      */
     @Export(name="customActionTimeoutInMins", refs={Integer.class}, tree="[0]")
-    private Output<Integer> customActionTimeoutInMins;
+    private Output</* @Nullable */ Integer> customActionTimeoutInMins;
 
     /**
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      * 
      */
-    public Output<Integer> customActionTimeoutInMins() {
-        return this.customActionTimeoutInMins;
+    public Output<Optional<Integer>> customActionTimeoutInMins() {
+        return Codegen.optional(this.customActionTimeoutInMins);
     }
     /**
      * Description of the maintenance run.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return Description of the maintenance run.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * The user-friendly name for the maintenance run.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the maintenance run.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The estimated start time of the next infrastruture component patching operation.
      * 
      */
     @Export(name="estimatedComponentPatchingStartTime", refs={String.class}, tree="[0]")
-    private Output<String> estimatedComponentPatchingStartTime;
+    private Output</* @Nullable */ String> estimatedComponentPatchingStartTime;
 
     /**
      * @return The estimated start time of the next infrastruture component patching operation.
      * 
      */
-    public Output<String> estimatedComponentPatchingStartTime() {
-        return this.estimatedComponentPatchingStartTime;
+    public Output<Optional<String>> estimatedComponentPatchingStartTime() {
+        return Codegen.optional(this.estimatedComponentPatchingStartTime);
     }
     /**
      * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      * 
      */
     @Export(name="estimatedPatchingTimes", refs={List.class,MaintenanceRunEstimatedPatchingTime.class}, tree="[0,1]")
-    private Output<List<MaintenanceRunEstimatedPatchingTime>> estimatedPatchingTimes;
+    private Output</* @Nullable */ List<MaintenanceRunEstimatedPatchingTime>> estimatedPatchingTimes;
 
     /**
      * @return The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      * 
      */
-    public Output<List<MaintenanceRunEstimatedPatchingTime>> estimatedPatchingTimes() {
-        return this.estimatedPatchingTimes;
+    public Output<Optional<List<MaintenanceRunEstimatedPatchingTime>>> estimatedPatchingTimes() {
+        return Codegen.optional(this.estimatedPatchingTimes);
     }
     /**
      * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
     @Export(name="isCustomActionTimeoutEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCustomActionTimeoutEnabled;
+    private Output</* @Nullable */ Boolean> isCustomActionTimeoutEnabled;
 
     /**
      * @return If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      * 
      */
-    public Output<Boolean> isCustomActionTimeoutEnabled() {
-        return this.isCustomActionTimeoutEnabled;
+    public Output<Optional<Boolean>> isCustomActionTimeoutEnabled() {
+        return Codegen.optional(this.isCustomActionTimeoutEnabled);
     }
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
     @Export(name="isDstFileUpdateEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDstFileUpdateEnabled;
+    private Output</* @Nullable */ Boolean> isDstFileUpdateEnabled;
 
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    public Output<Boolean> isDstFileUpdateEnabled() {
-        return this.isDstFileUpdateEnabled;
+    public Output<Optional<Boolean>> isDstFileUpdateEnabled() {
+        return Codegen.optional(this.isDstFileUpdateEnabled);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Maintenance sub-type.
      * 
      */
     @Export(name="maintenanceSubtype", refs={String.class}, tree="[0]")
-    private Output<String> maintenanceSubtype;
+    private Output</* @Nullable */ String> maintenanceSubtype;
 
     /**
      * @return Maintenance sub-type.
      * 
      */
-    public Output<String> maintenanceSubtype() {
-        return this.maintenanceSubtype;
+    public Output<Optional<String>> maintenanceSubtype() {
+        return Codegen.optional(this.maintenanceSubtype);
     }
     /**
      * Maintenance type.
      * 
      */
     @Export(name="maintenanceType", refs={String.class}, tree="[0]")
-    private Output<String> maintenanceType;
+    private Output</* @Nullable */ String> maintenanceType;
 
     /**
      * @return Maintenance type.
      * 
      */
-    public Output<String> maintenanceType() {
-        return this.maintenanceType;
+    public Output<Optional<String>> maintenanceType() {
+        return Codegen.optional(this.maintenanceType);
     }
     /**
      * Contain the patch failure count.
      * 
      */
     @Export(name="patchFailureCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> patchFailureCount;
+    private Output</* @Nullable */ Integer> patchFailureCount;
 
     /**
      * @return Contain the patch failure count.
      * 
      */
-    public Output<Integer> patchFailureCount() {
-        return this.patchFailureCount;
+    public Output<Optional<Integer>> patchFailureCount() {
+        return Codegen.optional(this.patchFailureCount);
     }
     /**
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     @Export(name="patchId", refs={String.class}, tree="[0]")
-    private Output<String> patchId;
+    private Output</* @Nullable */ String> patchId;
 
     /**
      * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
-    public Output<String> patchId() {
-        return this.patchId;
+    public Output<Optional<String>> patchId() {
+        return Codegen.optional(this.patchId);
     }
     /**
      * Patch type, either &#34;QUARTERLY&#34; or &#34;TIMEZONE&#34;.
@@ -300,14 +301,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="patchingEndTime", refs={String.class}, tree="[0]")
-    private Output<String> patchingEndTime;
+    private Output</* @Nullable */ String> patchingEndTime;
 
     /**
      * @return The time when the patching operation ended.
      * 
      */
-    public Output<String> patchingEndTime() {
-        return this.patchingEndTime;
+    public Output<Optional<String>> patchingEndTime() {
+        return Codegen.optional(this.patchingEndTime);
     }
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
@@ -316,7 +317,7 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="patchingMode", refs={String.class}, tree="[0]")
-    private Output<String> patchingMode;
+    private Output</* @Nullable */ String> patchingMode;
 
     /**
      * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
@@ -324,78 +325,78 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      * 
      */
-    public Output<String> patchingMode() {
-        return this.patchingMode;
+    public Output<Optional<String>> patchingMode() {
+        return Codegen.optional(this.patchingMode);
     }
     /**
      * The time when the patching operation started.
      * 
      */
     @Export(name="patchingStartTime", refs={String.class}, tree="[0]")
-    private Output<String> patchingStartTime;
+    private Output</* @Nullable */ String> patchingStartTime;
 
     /**
      * @return The time when the patching operation started.
      * 
      */
-    public Output<String> patchingStartTime() {
-        return this.patchingStartTime;
+    public Output<Optional<String>> patchingStartTime() {
+        return Codegen.optional(this.patchingStartTime);
     }
     /**
      * The status of the patching operation.
      * 
      */
     @Export(name="patchingStatus", refs={String.class}, tree="[0]")
-    private Output<String> patchingStatus;
+    private Output</* @Nullable */ String> patchingStatus;
 
     /**
      * @return The status of the patching operation.
      * 
      */
-    public Output<String> patchingStatus() {
-        return this.patchingStatus;
+    public Output<Optional<String>> patchingStatus() {
+        return Codegen.optional(this.patchingStatus);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association&#39;s peer container database.
      * 
      */
     @Export(name="peerMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> peerMaintenanceRunId;
+    private Output</* @Nullable */ String> peerMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association&#39;s peer container database.
      * 
      */
-    public Output<String> peerMaintenanceRunId() {
-        return this.peerMaintenanceRunId;
+    public Output<Optional<String>> peerMaintenanceRunId() {
+        return Codegen.optional(this.peerMaintenanceRunId);
     }
     /**
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The target software version for the database server patching operation.
      * 
      */
     @Export(name="targetDbServerVersion", refs={String.class}, tree="[0]")
-    private Output<String> targetDbServerVersion;
+    private Output</* @Nullable */ String> targetDbServerVersion;
 
     /**
      * @return The target software version for the database server patching operation.
      * 
      */
-    public Output<String> targetDbServerVersion() {
-        return this.targetDbServerVersion;
+    public Output<Optional<String>> targetDbServerVersion() {
+        return Codegen.optional(this.targetDbServerVersion);
     }
     /**
      * The ID of the target resource for which the maintenance run should be created.
@@ -416,42 +417,42 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="targetResourceType", refs={String.class}, tree="[0]")
-    private Output<String> targetResourceType;
+    private Output</* @Nullable */ String> targetResourceType;
 
     /**
      * @return The type of the target resource on which the maintenance run occurs.
      * 
      */
-    public Output<String> targetResourceType() {
-        return this.targetResourceType;
+    public Output<Optional<String>> targetResourceType() {
+        return Codegen.optional(this.targetResourceType);
     }
     /**
      * The target Cell version that is to be patched to.
      * 
      */
     @Export(name="targetStorageServerVersion", refs={String.class}, tree="[0]")
-    private Output<String> targetStorageServerVersion;
+    private Output</* @Nullable */ String> targetStorageServerVersion;
 
     /**
      * @return The target Cell version that is to be patched to.
      * 
      */
-    public Output<String> targetStorageServerVersion() {
-        return this.targetStorageServerVersion;
+    public Output<Optional<String>> targetStorageServerVersion() {
+        return Codegen.optional(this.targetStorageServerVersion);
     }
     /**
      * The date and time the maintenance run was completed.
      * 
      */
     @Export(name="timeEnded", refs={String.class}, tree="[0]")
-    private Output<String> timeEnded;
+    private Output</* @Nullable */ String> timeEnded;
 
     /**
      * @return The date and time the maintenance run was completed.
      * 
      */
-    public Output<String> timeEnded() {
-        return this.timeEnded;
+    public Output<Optional<String>> timeEnded() {
+        return Codegen.optional(this.timeEnded);
     }
     /**
      * (Updatable) The date and time that update should be scheduled.
@@ -478,14 +479,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time the maintenance run starts.
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
 
     /**

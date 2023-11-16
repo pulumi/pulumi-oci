@@ -151,26 +151,26 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// content of the Kubeconfig YAML for the cluster.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         public readonly string? Endpoint;
         public readonly int? Expiration;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? TokenVersion;
 
         [OutputConstructor]
         private GetClusterKubeConfigResult(
             string clusterId,
 
-            string content,
+            string? content,
 
             string? endpoint,
 
             int? expiration,
 
-            string id,
+            string? id,
 
             string? tokenVersion)
         {

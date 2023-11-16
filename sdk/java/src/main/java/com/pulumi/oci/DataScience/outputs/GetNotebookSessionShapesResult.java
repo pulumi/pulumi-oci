@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetNotebookSessionShapesNotebookSessio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetNotebookSessionShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of notebook_session_shapes.
      * 
      */
-    private List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
+    private @Nullable List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
 
     private GetNotebookSessionShapesResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetNotebookSessionShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of notebook_session_shapes.
      * 
      */
     public List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes() {
-        return this.notebookSessionShapes;
+        return this.notebookSessionShapes == null ? List.of() : this.notebookSessionShapes;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetNotebookSessionShapesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetNotebookSessionShapesFilter> filters;
-        private String id;
-        private List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
+        private @Nullable String id;
+        private @Nullable List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes;
         public Builder() {}
         public Builder(GetNotebookSessionShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetNotebookSessionShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder notebookSessionShapes(List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes) {
-            this.notebookSessionShapes = Objects.requireNonNull(notebookSessionShapes);
+        public Builder notebookSessionShapes(@Nullable List<GetNotebookSessionShapesNotebookSessionShape> notebookSessionShapes) {
+            this.notebookSessionShapes = notebookSessionShapes;
             return this;
         }
         public Builder notebookSessionShapes(GetNotebookSessionShapesNotebookSessionShape... notebookSessionShapes) {

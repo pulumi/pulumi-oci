@@ -22,10 +22,6 @@ class ExternalDbSystemDiscoveryArgs:
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemDiscovery resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]] patch_operations: (Updatable)
         """
         pulumi.set(__self__, "agent_id", agent_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -37,9 +33,6 @@ class ExternalDbSystemDiscoveryArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -49,9 +42,6 @@ class ExternalDbSystemDiscoveryArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -61,9 +51,6 @@ class ExternalDbSystemDiscoveryArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -73,9 +60,6 @@ class ExternalDbSystemDiscoveryArgs:
     @property
     @pulumi.getter(name="patchOperations")
     def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
@@ -100,17 +84,6 @@ class _ExternalDbSystemDiscoveryState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystemDiscovery resources.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentArgs']]] discovered_components: The list of DB system components that were found in the DB system discovery.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]] patch_operations: (Updatable)
-        :param pulumi.Input[str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB system discovery resource.
-        :param pulumi.Input[str] time_created: The date and time the external DB system discovery was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB system discovery was last updated.
         """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
@@ -140,9 +113,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -152,9 +122,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -164,9 +131,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="discoveredComponents")
     def discovered_components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentArgs']]]]:
-        """
-        The list of DB system components that were found in the DB system discovery.
-        """
         return pulumi.get(self, "discovered_components")
 
     @discovered_components.setter
@@ -176,9 +140,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -197,9 +158,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="gridHome")
     def grid_home(self) -> Optional[pulumi.Input[str]]:
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
         return pulumi.get(self, "grid_home")
 
     @grid_home.setter
@@ -209,9 +167,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -221,9 +176,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="patchOperations")
     def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationArgs']]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
@@ -233,9 +185,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
@@ -245,9 +194,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the external DB system discovery resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -257,9 +203,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB system discovery was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -269,9 +212,6 @@ class _ExternalDbSystemDiscoveryState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external DB system discovery was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -290,26 +230,9 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system discovery resource and initiates the discovery process.
-
-          Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
-
-        ## Import
-
-        ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
-        ```
-
+        Create a ExternalDbSystemDiscovery resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]] patch_operations: (Updatable)
         """
         ...
     @overload
@@ -318,20 +241,7 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
                  args: ExternalDbSystemDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system discovery resource and initiates the discovery process.
-
-          Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
-
-        ## Import
-
-        ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery test_external_db_system_discovery "id"
-        ```
-
+        Create a ExternalDbSystemDiscovery resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemDiscoveryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -405,17 +315,6 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryDiscoveredComponentArgs']]]] discovered_components: The list of DB system components that were found in the DB system discovery.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalDbSystemDiscoveryPatchOperationArgs']]]] patch_operations: (Updatable)
-        :param pulumi.Input[str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        :param pulumi.Input[str] state: The current lifecycle state of the external DB system discovery resource.
-        :param pulumi.Input[str] time_created: The date and time the external DB system discovery was created.
-        :param pulumi.Input[str] time_updated: The date and time the external DB system discovery was last updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -438,93 +337,60 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="discoveredComponents")
-    def discovered_components(self) -> pulumi.Output[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponent']]:
-        """
-        The list of DB system components that were found in the DB system discovery.
-        """
+    def discovered_components(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponent']]]:
         return pulumi.get(self, "discovered_components")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalDbSystemDiscoveryId")
-    def external_db_system_discovery_id(self) -> pulumi.Output[str]:
+    def external_db_system_discovery_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_db_system_discovery_id")
 
     @property
     @pulumi.getter(name="gridHome")
-    def grid_home(self) -> pulumi.Output[str]:
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
+    def grid_home(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "grid_home")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="patchOperations")
     def patch_operations(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalDbSystemDiscoveryPatchOperation']]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "patch_operations")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        """
+    def resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the external DB system discovery resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB system discovery was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the external DB system discovery was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

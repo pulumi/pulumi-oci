@@ -141,7 +141,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The ID of a run.
         /// </summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.DataFlow
         private GetRunStatementsResult(
             ImmutableArray<Outputs.GetRunStatementsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string runId,
 

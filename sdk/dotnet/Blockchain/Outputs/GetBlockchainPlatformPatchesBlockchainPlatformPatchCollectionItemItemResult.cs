@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// patch id
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A URL for the patch specific documentation
         /// </summary>
-        public readonly string PatchInfoUrl;
+        public readonly string? PatchInfoUrl;
         /// <summary>
         /// patch service version
         /// </summary>
-        public readonly string ServiceVersion;
+        public readonly string? ServiceVersion;
         /// <summary>
         /// patch due date for customer initiated patching
         /// </summary>
-        public readonly string TimePatchDue;
+        public readonly string? TimePatchDue;
 
         [OutputConstructor]
         private GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResult(
-            string id,
+            string? id,
 
-            string patchInfoUrl,
+            string? patchInfoUrl,
 
-            string serviceVersion,
+            string? serviceVersion,
 
-            string timePatchDue)
+            string? timePatchDue)
         {
             Id = id;
             PatchInfoUrl = patchInfoUrl;

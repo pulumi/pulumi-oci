@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail {
@@ -18,68 +20,68 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
-    private Integer customActionTimeoutInMins;
+    private @Nullable Integer customActionTimeoutInMins;
     /**
      * @return Days during the week when maintenance should be performed.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
     /**
      * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
-    private List<Integer> hoursOfDays;
+    private @Nullable List<Integer> hoursOfDays;
     /**
      * @return If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
-    private Boolean isCustomActionTimeoutEnabled;
+    private @Nullable Boolean isCustomActionTimeoutEnabled;
     /**
      * @return If true, enables the monthly patching option.
      * 
      */
-    private Boolean isMonthlyPatchingEnabled;
+    private @Nullable Boolean isMonthlyPatchingEnabled;
     /**
      * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
-    private Integer leadTimeInWeeks;
+    private @Nullable Integer leadTimeInWeeks;
     /**
      * @return Months during the year when maintenance should be performed.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months;
     /**
      * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
-    private String patchingMode;
+    private @Nullable String patchingMode;
     /**
      * @return The maintenance window scheduling preference.
      * 
      */
-    private String preference;
+    private @Nullable String preference;
     /**
      * @return Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
      */
-    private List<Integer> weeksOfMonths;
+    private @Nullable List<Integer> weeksOfMonths;
 
     private GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail() {}
     /**
      * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
-    public Integer customActionTimeoutInMins() {
-        return this.customActionTimeoutInMins;
+    public Optional<Integer> customActionTimeoutInMins() {
+        return Optional.ofNullable(this.customActionTimeoutInMins);
     }
     /**
      * @return Days during the week when maintenance should be performed.
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks() {
-        return this.daysOfWeeks;
+        return this.daysOfWeeks == null ? List.of() : this.daysOfWeeks;
     }
     /**
      * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
@@ -87,56 +89,56 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
      * 
      */
     public List<Integer> hoursOfDays() {
-        return this.hoursOfDays;
+        return this.hoursOfDays == null ? List.of() : this.hoursOfDays;
     }
     /**
      * @return If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
-    public Boolean isCustomActionTimeoutEnabled() {
-        return this.isCustomActionTimeoutEnabled;
+    public Optional<Boolean> isCustomActionTimeoutEnabled() {
+        return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
     }
     /**
      * @return If true, enables the monthly patching option.
      * 
      */
-    public Boolean isMonthlyPatchingEnabled() {
-        return this.isMonthlyPatchingEnabled;
+    public Optional<Boolean> isMonthlyPatchingEnabled() {
+        return Optional.ofNullable(this.isMonthlyPatchingEnabled);
     }
     /**
      * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
-    public Integer leadTimeInWeeks() {
-        return this.leadTimeInWeeks;
+    public Optional<Integer> leadTimeInWeeks() {
+        return Optional.ofNullable(this.leadTimeInWeeks);
     }
     /**
      * @return Months during the year when maintenance should be performed.
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months() {
-        return this.months;
+        return this.months == null ? List.of() : this.months;
     }
     /**
      * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
-    public String patchingMode() {
-        return this.patchingMode;
+    public Optional<String> patchingMode() {
+        return Optional.ofNullable(this.patchingMode);
     }
     /**
      * @return The maintenance window scheduling preference.
      * 
      */
-    public String preference() {
-        return this.preference;
+    public Optional<String> preference() {
+        return Optional.ofNullable(this.preference);
     }
     /**
      * @return Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
      */
     public List<Integer> weeksOfMonths() {
-        return this.weeksOfMonths;
+        return this.weeksOfMonths == null ? List.of() : this.weeksOfMonths;
     }
 
     public static Builder builder() {
@@ -148,16 +150,16 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer customActionTimeoutInMins;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
-        private List<Integer> hoursOfDays;
-        private Boolean isCustomActionTimeoutEnabled;
-        private Boolean isMonthlyPatchingEnabled;
-        private Integer leadTimeInWeeks;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months;
-        private String patchingMode;
-        private String preference;
-        private List<Integer> weeksOfMonths;
+        private @Nullable Integer customActionTimeoutInMins;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks;
+        private @Nullable List<Integer> hoursOfDays;
+        private @Nullable Boolean isCustomActionTimeoutEnabled;
+        private @Nullable Boolean isMonthlyPatchingEnabled;
+        private @Nullable Integer leadTimeInWeeks;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months;
+        private @Nullable String patchingMode;
+        private @Nullable String preference;
+        private @Nullable List<Integer> weeksOfMonths;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -174,62 +176,62 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
         }
 
         @CustomType.Setter
-        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
-            this.customActionTimeoutInMins = Objects.requireNonNull(customActionTimeoutInMins);
+        public Builder customActionTimeoutInMins(@Nullable Integer customActionTimeoutInMins) {
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
-        public Builder daysOfWeeks(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
-            this.daysOfWeeks = Objects.requireNonNull(daysOfWeeks);
+        public Builder daysOfWeeks(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
+            this.daysOfWeeks = daysOfWeeks;
             return this;
         }
         public Builder daysOfWeeks(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek... daysOfWeeks) {
             return daysOfWeeks(List.of(daysOfWeeks));
         }
         @CustomType.Setter
-        public Builder hoursOfDays(List<Integer> hoursOfDays) {
-            this.hoursOfDays = Objects.requireNonNull(hoursOfDays);
+        public Builder hoursOfDays(@Nullable List<Integer> hoursOfDays) {
+            this.hoursOfDays = hoursOfDays;
             return this;
         }
         public Builder hoursOfDays(Integer... hoursOfDays) {
             return hoursOfDays(List.of(hoursOfDays));
         }
         @CustomType.Setter
-        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
-            this.isCustomActionTimeoutEnabled = Objects.requireNonNull(isCustomActionTimeoutEnabled);
+        public Builder isCustomActionTimeoutEnabled(@Nullable Boolean isCustomActionTimeoutEnabled) {
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
-            this.isMonthlyPatchingEnabled = Objects.requireNonNull(isMonthlyPatchingEnabled);
+        public Builder isMonthlyPatchingEnabled(@Nullable Boolean isMonthlyPatchingEnabled) {
+            this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder leadTimeInWeeks(Integer leadTimeInWeeks) {
-            this.leadTimeInWeeks = Objects.requireNonNull(leadTimeInWeeks);
+        public Builder leadTimeInWeeks(@Nullable Integer leadTimeInWeeks) {
+            this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
         @CustomType.Setter
-        public Builder months(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months) {
-            this.months = Objects.requireNonNull(months);
+        public Builder months(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth> months) {
+            this.months = months;
             return this;
         }
         public Builder months(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth... months) {
             return months(List.of(months));
         }
         @CustomType.Setter
-        public Builder patchingMode(String patchingMode) {
-            this.patchingMode = Objects.requireNonNull(patchingMode);
+        public Builder patchingMode(@Nullable String patchingMode) {
+            this.patchingMode = patchingMode;
             return this;
         }
         @CustomType.Setter
-        public Builder preference(String preference) {
-            this.preference = Objects.requireNonNull(preference);
+        public Builder preference(@Nullable String preference) {
+            this.preference = preference;
             return this;
         }
         @CustomType.Setter
-        public Builder weeksOfMonths(List<Integer> weeksOfMonths) {
-            this.weeksOfMonths = Objects.requireNonNull(weeksOfMonths);
+        public Builder weeksOfMonths(@Nullable List<Integer> weeksOfMonths) {
+            this.weeksOfMonths = weeksOfMonths;
             return this;
         }
         public Builder weeksOfMonths(Integer... weeksOfMonths) {

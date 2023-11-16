@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentStatisticEvaluate {
@@ -13,99 +15,99 @@ public final class GetSecurityAssessmentStatisticEvaluate {
      * @return The number of findings in the Auditing category.
      * 
      */
-    private Integer auditingFindingsCount;
+    private @Nullable Integer auditingFindingsCount;
     /**
      * @return The number of findings in the Authorization Control category.
      * 
      */
-    private Integer authorizationControlFindingsCount;
+    private @Nullable Integer authorizationControlFindingsCount;
     /**
      * @return The number of findings in the Data Encryption category.
      * 
      */
-    private Integer dataEncryptionFindingsCount;
+    private @Nullable Integer dataEncryptionFindingsCount;
     /**
      * @return The number of findings in the Database Configuration category.
      * 
      */
-    private Integer dbConfigurationFindingsCount;
+    private @Nullable Integer dbConfigurationFindingsCount;
     /**
      * @return The number of findings in the Fine-Grained Access Control category.
      * 
      */
-    private Integer fineGrainedAccessControlFindingsCount;
+    private @Nullable Integer fineGrainedAccessControlFindingsCount;
     /**
      * @return The number of findings in the Privileges and Roles category.
      * 
      */
-    private Integer privilegesAndRolesFindingsCount;
+    private @Nullable Integer privilegesAndRolesFindingsCount;
     /**
      * @return The total number of targets in this security assessment.
      * 
      */
-    private Integer targetsCount;
+    private @Nullable Integer targetsCount;
     /**
      * @return The number of findings in the User Accounts category.
      * 
      */
-    private Integer userAccountsFindingsCount;
+    private @Nullable Integer userAccountsFindingsCount;
 
     private GetSecurityAssessmentStatisticEvaluate() {}
     /**
      * @return The number of findings in the Auditing category.
      * 
      */
-    public Integer auditingFindingsCount() {
-        return this.auditingFindingsCount;
+    public Optional<Integer> auditingFindingsCount() {
+        return Optional.ofNullable(this.auditingFindingsCount);
     }
     /**
      * @return The number of findings in the Authorization Control category.
      * 
      */
-    public Integer authorizationControlFindingsCount() {
-        return this.authorizationControlFindingsCount;
+    public Optional<Integer> authorizationControlFindingsCount() {
+        return Optional.ofNullable(this.authorizationControlFindingsCount);
     }
     /**
      * @return The number of findings in the Data Encryption category.
      * 
      */
-    public Integer dataEncryptionFindingsCount() {
-        return this.dataEncryptionFindingsCount;
+    public Optional<Integer> dataEncryptionFindingsCount() {
+        return Optional.ofNullable(this.dataEncryptionFindingsCount);
     }
     /**
      * @return The number of findings in the Database Configuration category.
      * 
      */
-    public Integer dbConfigurationFindingsCount() {
-        return this.dbConfigurationFindingsCount;
+    public Optional<Integer> dbConfigurationFindingsCount() {
+        return Optional.ofNullable(this.dbConfigurationFindingsCount);
     }
     /**
      * @return The number of findings in the Fine-Grained Access Control category.
      * 
      */
-    public Integer fineGrainedAccessControlFindingsCount() {
-        return this.fineGrainedAccessControlFindingsCount;
+    public Optional<Integer> fineGrainedAccessControlFindingsCount() {
+        return Optional.ofNullable(this.fineGrainedAccessControlFindingsCount);
     }
     /**
      * @return The number of findings in the Privileges and Roles category.
      * 
      */
-    public Integer privilegesAndRolesFindingsCount() {
-        return this.privilegesAndRolesFindingsCount;
+    public Optional<Integer> privilegesAndRolesFindingsCount() {
+        return Optional.ofNullable(this.privilegesAndRolesFindingsCount);
     }
     /**
      * @return The total number of targets in this security assessment.
      * 
      */
-    public Integer targetsCount() {
-        return this.targetsCount;
+    public Optional<Integer> targetsCount() {
+        return Optional.ofNullable(this.targetsCount);
     }
     /**
      * @return The number of findings in the User Accounts category.
      * 
      */
-    public Integer userAccountsFindingsCount() {
-        return this.userAccountsFindingsCount;
+    public Optional<Integer> userAccountsFindingsCount() {
+        return Optional.ofNullable(this.userAccountsFindingsCount);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetSecurityAssessmentStatisticEvaluate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer auditingFindingsCount;
-        private Integer authorizationControlFindingsCount;
-        private Integer dataEncryptionFindingsCount;
-        private Integer dbConfigurationFindingsCount;
-        private Integer fineGrainedAccessControlFindingsCount;
-        private Integer privilegesAndRolesFindingsCount;
-        private Integer targetsCount;
-        private Integer userAccountsFindingsCount;
+        private @Nullable Integer auditingFindingsCount;
+        private @Nullable Integer authorizationControlFindingsCount;
+        private @Nullable Integer dataEncryptionFindingsCount;
+        private @Nullable Integer dbConfigurationFindingsCount;
+        private @Nullable Integer fineGrainedAccessControlFindingsCount;
+        private @Nullable Integer privilegesAndRolesFindingsCount;
+        private @Nullable Integer targetsCount;
+        private @Nullable Integer userAccountsFindingsCount;
         public Builder() {}
         public Builder(GetSecurityAssessmentStatisticEvaluate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetSecurityAssessmentStatisticEvaluate {
         }
 
         @CustomType.Setter
-        public Builder auditingFindingsCount(Integer auditingFindingsCount) {
-            this.auditingFindingsCount = Objects.requireNonNull(auditingFindingsCount);
+        public Builder auditingFindingsCount(@Nullable Integer auditingFindingsCount) {
+            this.auditingFindingsCount = auditingFindingsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder authorizationControlFindingsCount(Integer authorizationControlFindingsCount) {
-            this.authorizationControlFindingsCount = Objects.requireNonNull(authorizationControlFindingsCount);
+        public Builder authorizationControlFindingsCount(@Nullable Integer authorizationControlFindingsCount) {
+            this.authorizationControlFindingsCount = authorizationControlFindingsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dataEncryptionFindingsCount(Integer dataEncryptionFindingsCount) {
-            this.dataEncryptionFindingsCount = Objects.requireNonNull(dataEncryptionFindingsCount);
+        public Builder dataEncryptionFindingsCount(@Nullable Integer dataEncryptionFindingsCount) {
+            this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dbConfigurationFindingsCount(Integer dbConfigurationFindingsCount) {
-            this.dbConfigurationFindingsCount = Objects.requireNonNull(dbConfigurationFindingsCount);
+        public Builder dbConfigurationFindingsCount(@Nullable Integer dbConfigurationFindingsCount) {
+            this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder fineGrainedAccessControlFindingsCount(Integer fineGrainedAccessControlFindingsCount) {
-            this.fineGrainedAccessControlFindingsCount = Objects.requireNonNull(fineGrainedAccessControlFindingsCount);
+        public Builder fineGrainedAccessControlFindingsCount(@Nullable Integer fineGrainedAccessControlFindingsCount) {
+            this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder privilegesAndRolesFindingsCount(Integer privilegesAndRolesFindingsCount) {
-            this.privilegesAndRolesFindingsCount = Objects.requireNonNull(privilegesAndRolesFindingsCount);
+        public Builder privilegesAndRolesFindingsCount(@Nullable Integer privilegesAndRolesFindingsCount) {
+            this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+        public Builder targetsCount(@Nullable Integer targetsCount) {
+            this.targetsCount = targetsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder userAccountsFindingsCount(Integer userAccountsFindingsCount) {
-            this.userAccountsFindingsCount = Objects.requireNonNull(userAccountsFindingsCount);
+        public Builder userAccountsFindingsCount(@Nullable Integer userAccountsFindingsCount) {
+            this.userAccountsFindingsCount = userAccountsFindingsCount;
             return this;
         }
         public GetSecurityAssessmentStatisticEvaluate build() {

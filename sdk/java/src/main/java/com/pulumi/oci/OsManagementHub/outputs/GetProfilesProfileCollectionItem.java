@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfilesProfileCollectionItem {
@@ -20,231 +22,231 @@ public final class GetProfilesProfileCollectionItem {
      * @return A filter to return only profiles that match the given archType.
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Software source description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the software source.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Identifying information for the specified lifecycle environment.
      * 
      */
-    private List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments;
-    private String lifecycleStageId;
+    private @Nullable List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments;
+    private @Nullable String lifecycleStageId;
     /**
      * @return Identifying information for the specified lifecycle stage.
      * 
      */
-    private List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages;
-    private String managedInstanceGroupId;
+    private @Nullable List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages;
+    private @Nullable String managedInstanceGroupId;
     /**
      * @return Identifying information for the specified managed instance group.
      * 
      */
-    private List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups;
+    private @Nullable List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups;
     /**
      * @return The OCID of the management station.
      * 
      */
-    private String managementStationId;
+    private @Nullable String managementStationId;
     /**
      * @return A filter to return only profiles that match the given osFamily.
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return A filter to return registration profiles that match the given profileType.
      * 
      */
-    private String profileType;
-    private List<String> softwareSourceIds;
+    private @Nullable String profileType;
+    private @Nullable List<String> softwareSourceIds;
     /**
      * @return The list of software sources that the registration profile will use.
      * 
      */
-    private List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
+    private @Nullable List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
     /**
      * @return A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return A filter to return only profiles that match the given vendorName.
      * 
      */
-    private String vendorName;
+    private @Nullable String vendorName;
 
     private GetProfilesProfileCollectionItem() {}
     /**
      * @return A filter to return only profiles that match the given archType.
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Software source description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the software source.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Identifying information for the specified lifecycle environment.
      * 
      */
     public List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments() {
-        return this.lifecycleEnvironments;
+        return this.lifecycleEnvironments == null ? List.of() : this.lifecycleEnvironments;
     }
-    public String lifecycleStageId() {
-        return this.lifecycleStageId;
+    public Optional<String> lifecycleStageId() {
+        return Optional.ofNullable(this.lifecycleStageId);
     }
     /**
      * @return Identifying information for the specified lifecycle stage.
      * 
      */
     public List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages() {
-        return this.lifecycleStages;
+        return this.lifecycleStages == null ? List.of() : this.lifecycleStages;
     }
-    public String managedInstanceGroupId() {
-        return this.managedInstanceGroupId;
+    public Optional<String> managedInstanceGroupId() {
+        return Optional.ofNullable(this.managedInstanceGroupId);
     }
     /**
      * @return Identifying information for the specified managed instance group.
      * 
      */
     public List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups() {
-        return this.managedInstanceGroups;
+        return this.managedInstanceGroups == null ? List.of() : this.managedInstanceGroups;
     }
     /**
      * @return The OCID of the management station.
      * 
      */
-    public String managementStationId() {
-        return this.managementStationId;
+    public Optional<String> managementStationId() {
+        return Optional.ofNullable(this.managementStationId);
     }
     /**
      * @return A filter to return only profiles that match the given osFamily.
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return A filter to return registration profiles that match the given profileType.
      * 
      */
-    public String profileType() {
-        return this.profileType;
+    public Optional<String> profileType() {
+        return Optional.ofNullable(this.profileType);
     }
     public List<String> softwareSourceIds() {
-        return this.softwareSourceIds;
+        return this.softwareSourceIds == null ? List.of() : this.softwareSourceIds;
     }
     /**
      * @return The list of software sources that the registration profile will use.
      * 
      */
     public List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources() {
-        return this.softwareSources;
+        return this.softwareSources == null ? List.of() : this.softwareSources;
     }
     /**
      * @return A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the registration profile was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return A filter to return only profiles that match the given vendorName.
      * 
      */
-    public String vendorName() {
-        return this.vendorName;
+    public Optional<String> vendorName() {
+        return Optional.ofNullable(this.vendorName);
     }
 
     public static Builder builder() {
@@ -256,27 +258,27 @@ public final class GetProfilesProfileCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments;
-        private String lifecycleStageId;
-        private List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages;
-        private String managedInstanceGroupId;
-        private List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups;
-        private String managementStationId;
-        private String osFamily;
-        private String profileType;
-        private List<String> softwareSourceIds;
-        private List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String vendorName;
+        private @Nullable String archType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments;
+        private @Nullable String lifecycleStageId;
+        private @Nullable List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages;
+        private @Nullable String managedInstanceGroupId;
+        private @Nullable List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups;
+        private @Nullable String managementStationId;
+        private @Nullable String osFamily;
+        private @Nullable String profileType;
+        private @Nullable List<String> softwareSourceIds;
+        private @Nullable List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String vendorName;
         public Builder() {}
         public Builder(GetProfilesProfileCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -304,123 +306,123 @@ public final class GetProfilesProfileCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleEnvironments(List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments) {
-            this.lifecycleEnvironments = Objects.requireNonNull(lifecycleEnvironments);
+        public Builder lifecycleEnvironments(@Nullable List<GetProfilesProfileCollectionItemLifecycleEnvironment> lifecycleEnvironments) {
+            this.lifecycleEnvironments = lifecycleEnvironments;
             return this;
         }
         public Builder lifecycleEnvironments(GetProfilesProfileCollectionItemLifecycleEnvironment... lifecycleEnvironments) {
             return lifecycleEnvironments(List.of(lifecycleEnvironments));
         }
         @CustomType.Setter
-        public Builder lifecycleStageId(String lifecycleStageId) {
-            this.lifecycleStageId = Objects.requireNonNull(lifecycleStageId);
+        public Builder lifecycleStageId(@Nullable String lifecycleStageId) {
+            this.lifecycleStageId = lifecycleStageId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleStages(List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages) {
-            this.lifecycleStages = Objects.requireNonNull(lifecycleStages);
+        public Builder lifecycleStages(@Nullable List<GetProfilesProfileCollectionItemLifecycleStage> lifecycleStages) {
+            this.lifecycleStages = lifecycleStages;
             return this;
         }
         public Builder lifecycleStages(GetProfilesProfileCollectionItemLifecycleStage... lifecycleStages) {
             return lifecycleStages(List.of(lifecycleStages));
         }
         @CustomType.Setter
-        public Builder managedInstanceGroupId(String managedInstanceGroupId) {
-            this.managedInstanceGroupId = Objects.requireNonNull(managedInstanceGroupId);
+        public Builder managedInstanceGroupId(@Nullable String managedInstanceGroupId) {
+            this.managedInstanceGroupId = managedInstanceGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceGroups(List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups) {
-            this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
+        public Builder managedInstanceGroups(@Nullable List<GetProfilesProfileCollectionItemManagedInstanceGroup> managedInstanceGroups) {
+            this.managedInstanceGroups = managedInstanceGroups;
             return this;
         }
         public Builder managedInstanceGroups(GetProfilesProfileCollectionItemManagedInstanceGroup... managedInstanceGroups) {
             return managedInstanceGroups(List.of(managedInstanceGroups));
         }
         @CustomType.Setter
-        public Builder managementStationId(String managementStationId) {
-            this.managementStationId = Objects.requireNonNull(managementStationId);
+        public Builder managementStationId(@Nullable String managementStationId) {
+            this.managementStationId = managementStationId;
             return this;
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder profileType(String profileType) {
-            this.profileType = Objects.requireNonNull(profileType);
+        public Builder profileType(@Nullable String profileType) {
+            this.profileType = profileType;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceIds(List<String> softwareSourceIds) {
-            this.softwareSourceIds = Objects.requireNonNull(softwareSourceIds);
+        public Builder softwareSourceIds(@Nullable List<String> softwareSourceIds) {
+            this.softwareSourceIds = softwareSourceIds;
             return this;
         }
         public Builder softwareSourceIds(String... softwareSourceIds) {
             return softwareSourceIds(List.of(softwareSourceIds));
         }
         @CustomType.Setter
-        public Builder softwareSources(List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+        public Builder softwareSources(@Nullable List<GetProfilesProfileCollectionItemSoftwareSource> softwareSources) {
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetProfilesProfileCollectionItemSoftwareSource... softwareSources) {
             return softwareSources(List.of(softwareSources));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+        public Builder vendorName(@Nullable String vendorName) {
+            this.vendorName = vendorName;
             return this;
         }
         public GetProfilesProfileCollectionItem build() {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
         /// </summary>
-        public readonly string ForecastType;
+        public readonly string? ForecastType;
         /// <summary>
         /// The forecast end time.
         /// </summary>
-        public readonly string TimeForecastEnded;
+        public readonly string? TimeForecastEnded;
         /// <summary>
         /// The forecast start time. Defaults to UTC-1 if not specified.
         /// </summary>
-        public readonly string TimeForecastStarted;
+        public readonly string? TimeForecastStarted;
 
         [OutputConstructor]
         private GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult(
-            string forecastType,
+            string? forecastType,
 
-            string timeForecastEnded,
+            string? timeForecastEnded,
 
-            string timeForecastStarted)
+            string? timeForecastStarted)
         {
             ForecastType = forecastType;
             TimeForecastEnded = timeForecastEnded;

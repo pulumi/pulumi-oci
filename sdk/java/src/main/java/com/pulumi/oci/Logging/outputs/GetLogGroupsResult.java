@@ -30,13 +30,13 @@ public final class GetLogGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return The list of log_groups.
      * 
      */
-    private List<GetLogGroupsLogGroup> logGroups;
+    private @Nullable List<GetLogGroupsLogGroup> logGroups;
 
     private GetLogGroupsResult() {}
     /**
@@ -60,8 +60,8 @@ public final class GetLogGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -71,7 +71,7 @@ public final class GetLogGroupsResult {
      * 
      */
     public List<GetLogGroupsLogGroup> logGroups() {
-        return this.logGroups;
+        return this.logGroups == null ? List.of() : this.logGroups;
     }
 
     public static Builder builder() {
@@ -86,9 +86,9 @@ public final class GetLogGroupsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetLogGroupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
-        private List<GetLogGroupsLogGroup> logGroups;
+        private @Nullable List<GetLogGroupsLogGroup> logGroups;
         public Builder() {}
         public Builder(GetLogGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -119,8 +119,8 @@ public final class GetLogGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -129,8 +129,8 @@ public final class GetLogGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder logGroups(List<GetLogGroupsLogGroup> logGroups) {
-            this.logGroups = Objects.requireNonNull(logGroups);
+        public Builder logGroups(@Nullable List<GetLogGroupsLogGroup> logGroups) {
+            this.logGroups = logGroups;
             return this;
         }
         public Builder logGroups(GetLogGroupsLogGroup... logGroups) {

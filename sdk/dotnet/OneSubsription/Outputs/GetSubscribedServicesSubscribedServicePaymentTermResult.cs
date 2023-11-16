@@ -16,53 +16,53 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// User that created the Payment term
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Payment term Description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Payment term active flag
         /// </summary>
-        public readonly bool IsActive;
+        public readonly bool? IsActive;
         /// <summary>
         /// Commercial name also called customer name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Subscribed service creation date
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Subscribed service last update date
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// User that updated the subscribed service
         /// </summary>
-        public readonly string UpdatedBy;
+        public readonly string? UpdatedBy;
         /// <summary>
         /// Payment Term value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetSubscribedServicesSubscribedServicePaymentTermResult(
-            string createdBy,
+            string? createdBy,
 
-            string description,
+            string? description,
 
-            bool isActive,
+            bool? isActive,
 
-            string name,
+            string? name,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string updatedBy,
+            string? updatedBy,
 
-            string value)
+            string? value)
         {
             CreatedBy = createdBy;
             Description = description;

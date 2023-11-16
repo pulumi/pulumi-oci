@@ -135,133 +135,133 @@ namespace Pulumi.Oci.DevOps
         /// (Updatable) The information about build runner.
         /// </summary>
         [Output("buildRunnerShapeConfig")]
-        public Output<Outputs.BuildPipelineStageBuildRunnerShapeConfig> BuildRunnerShapeConfig { get; private set; } = null!;
+        public Output<Outputs.BuildPipelineStageBuildRunnerShapeConfig?> BuildRunnerShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of build sources.
         /// </summary>
         [Output("buildSourceCollection")]
-        public Output<Outputs.BuildPipelineStageBuildSourceCollection> BuildSourceCollection { get; private set; } = null!;
+        public Output<Outputs.BuildPipelineStageBuildSourceCollection?> BuildSourceCollection { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         /// </summary>
         [Output("buildSpecFile")]
-        public Output<string> BuildSpecFile { get; private set; } = null!;
+        public Output<string?> BuildSpecFile { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment where the pipeline is created.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         /// </summary>
         [Output("deliverArtifactCollection")]
-        public Output<Outputs.BuildPipelineStageDeliverArtifactCollection> DeliverArtifactCollection { get; private set; } = null!;
+        public Output<Outputs.BuildPipelineStageDeliverArtifactCollection?> DeliverArtifactCollection { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A target deployment pipeline OCID that will run in this stage.
         /// </summary>
         [Output("deployPipelineId")]
-        public Output<string> DeployPipelineId { get; private set; } = null!;
+        public Output<string?> DeployPipelineId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional description about the stage.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Image name for the build environment
         /// </summary>
         [Output("image")]
-        public Output<string> Image { get; private set; } = null!;
+        public Output<string?> Image { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         /// </summary>
         [Output("isPassAllParametersEnabled")]
-        public Output<bool> IsPassAllParametersEnabled { get; private set; } = null!;
+        public Output<bool?> IsPassAllParametersEnabled { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
         /// </summary>
         [Output("primaryBuildSource")]
-        public Output<string> PrimaryBuildSource { get; private set; } = null!;
+        public Output<string?> PrimaryBuildSource { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         /// </summary>
         [Output("privateAccessConfig")]
-        public Output<Outputs.BuildPipelineStagePrivateAccessConfig> PrivateAccessConfig { get; private set; } = null!;
+        public Output<Outputs.BuildPipelineStagePrivateAccessConfig?> PrivateAccessConfig { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DevOps project.
         /// </summary>
         [Output("projectId")]
-        public Output<string> ProjectId { get; private set; } = null!;
+        public Output<string?> ProjectId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Timeout for the build stage execution. Specify value in seconds.
         /// </summary>
         [Output("stageExecutionTimeoutInSeconds")]
-        public Output<int> StageExecutionTimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> StageExecutionTimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the stage.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies wait criteria for the Wait stage.
         /// </summary>
         [Output("waitCriteria")]
-        public Output<Outputs.BuildPipelineStageWaitCriteria> WaitCriteria { get; private set; } = null!;
+        public Output<Outputs.BuildPipelineStageWaitCriteria?> WaitCriteria { get; private set; } = null!;
 
 
         /// <summary>

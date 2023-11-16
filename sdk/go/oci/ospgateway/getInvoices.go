@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Invoices in Oracle Cloud Infrastructure Osp Gateway service.
@@ -90,7 +89,7 @@ type GetInvoicesResult struct {
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetInvoicesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of invoice_collection.
 	InvoiceCollections []GetInvoicesInvoiceCollection `pulumi:"invoiceCollections"`
 	// Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
@@ -162,12 +161,6 @@ func (o GetInvoicesResultOutput) ToGetInvoicesResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetInvoicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesResult] {
-	return pulumix.Output[GetInvoicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvoicesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -177,8 +170,8 @@ func (o GetInvoicesResultOutput) Filters() GetInvoicesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInvoicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of invoice_collection.

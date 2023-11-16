@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesManaged
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetManagedMySqlDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of managed_my_sql_database_collection.
      * 
      */
-    private List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections;
+    private @Nullable List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections;
 
     private GetManagedMySqlDatabasesResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetManagedMySqlDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of managed_my_sql_database_collection.
      * 
      */
     public List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections() {
-        return this.managedMySqlDatabaseCollections;
+        return this.managedMySqlDatabaseCollections == null ? List.of() : this.managedMySqlDatabaseCollections;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetManagedMySqlDatabasesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetManagedMySqlDatabasesFilter> filters;
-        private String id;
-        private List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections;
+        private @Nullable String id;
+        private @Nullable List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections;
         public Builder() {}
         public Builder(GetManagedMySqlDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetManagedMySqlDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedMySqlDatabaseCollections(List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections) {
-            this.managedMySqlDatabaseCollections = Objects.requireNonNull(managedMySqlDatabaseCollections);
+        public Builder managedMySqlDatabaseCollections(@Nullable List<GetManagedMySqlDatabasesManagedMySqlDatabaseCollection> managedMySqlDatabaseCollections) {
+            this.managedMySqlDatabaseCollections = managedMySqlDatabaseCollections;
             return this;
         }
         public Builder managedMySqlDatabaseCollections(GetManagedMySqlDatabasesManagedMySqlDatabaseCollection... managedMySqlDatabaseCollections) {

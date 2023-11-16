@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Certificates in Oracle Cloud Infrastructure Certificates Management service.
@@ -81,7 +80,7 @@ type GetCertificatesResult struct {
 	CompartmentId *string                 `pulumi:"compartmentId"`
 	Filters       []GetCertificatesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -137,12 +136,6 @@ func (o GetCertificatesResultOutput) ToGetCertificatesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetCertificatesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesResult] {
-	return pulumix.Output[GetCertificatesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of certificate_collection.
 func (o GetCertificatesResultOutput) CertificateCollections() GetCertificatesCertificateCollectionArrayOutput {
 	return o.ApplyT(func(v GetCertificatesResult) []GetCertificatesCertificateCollection { return v.CertificateCollections }).(GetCertificatesCertificateCollectionArrayOutput)
@@ -163,8 +156,8 @@ func (o GetCertificatesResultOutput) Filters() GetCertificatesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCertificatesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificatesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA) that issued the certificate.

@@ -17,6 +17,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -94,14 +95,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="aggregationIntervalInDays", refs={Integer.class}, tree="[0]")
-    private Output<Integer> aggregationIntervalInDays;
+    private Output</* @Nullable */ Integer> aggregationIntervalInDays;
 
     /**
      * @return (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
      * 
      */
-    public Output<Integer> aggregationIntervalInDays() {
-        return this.aggregationIntervalInDays;
+    public Output<Optional<Integer>> aggregationIntervalInDays() {
+        return Codegen.optional(this.aggregationIntervalInDays);
     }
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
@@ -122,14 +123,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Text describing the profile. Avoid entering confidential information.
@@ -150,14 +151,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) A list of configuration levels for each recommendation.
@@ -192,70 +193,70 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The profile&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      * 
      */
     @Export(name="targetCompartments", refs={ProfileTargetCompartments.class}, tree="[0]")
-    private Output<ProfileTargetCompartments> targetCompartments;
+    private Output</* @Nullable */ ProfileTargetCompartments> targetCompartments;
 
     /**
      * @return (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      * 
      */
-    public Output<ProfileTargetCompartments> targetCompartments() {
-        return this.targetCompartments;
+    public Output<Optional<ProfileTargetCompartments>> targetCompartments() {
+        return Codegen.optional(this.targetCompartments);
     }
     /**
      * (Updatable) Optional. The tags specified in the profile override for a recommendation.
      * 
      */
     @Export(name="targetTags", refs={ProfileTargetTags.class}, tree="[0]")
-    private Output<ProfileTargetTags> targetTags;
+    private Output</* @Nullable */ ProfileTargetTags> targetTags;
 
     /**
      * @return (Updatable) Optional. The tags specified in the profile override for a recommendation.
      * 
      */
-    public Output<ProfileTargetTags> targetTags() {
-        return this.targetTags;
+    public Output<Optional<ProfileTargetTags>> targetTags() {
+        return Codegen.optional(this.targetTags);
     }
     /**
      * The date and time the profile was created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the profile was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the profile was last updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the profile was last updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

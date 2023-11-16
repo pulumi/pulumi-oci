@@ -110,15 +110,15 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The display name of the release family.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Link to access the documentation for the release.
         /// </summary>
-        public readonly string DocUrl;
+        public readonly string? DocUrl;
         /// <summary>
         /// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string EndOfSupportLifeDate;
+        public readonly string? EndOfSupportLifeDate;
         /// <summary>
         /// The Java release family identifier.
         /// </summary>
@@ -126,25 +126,25 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// This indicates the support category for the Java release family.
         /// </summary>
-        public readonly string SupportType;
+        public readonly string? SupportType;
 
         [OutputConstructor]
         private GetJavaFamilyResult(
-            string displayName,
+            string? displayName,
 
-            string docUrl,
+            string? docUrl,
 
-            string endOfSupportLifeDate,
+            string? endOfSupportLifeDate,
 
             string familyVersion,
 
-            string id,
+            string? id,
 
-            string supportType)
+            string? supportType)
         {
             DisplayName = displayName;
             DocUrl = docUrl;

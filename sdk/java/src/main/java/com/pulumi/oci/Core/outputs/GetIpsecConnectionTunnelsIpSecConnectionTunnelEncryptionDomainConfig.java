@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig {
@@ -14,12 +15,12 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomai
      * @return Lists IPv4 or IPv6-enabled subnets in your on-premises network.
      * 
      */
-    private List<String> cpeTrafficSelectors;
+    private @Nullable List<String> cpeTrafficSelectors;
     /**
      * @return Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
      * 
      */
-    private List<String> oracleTrafficSelectors;
+    private @Nullable List<String> oracleTrafficSelectors;
 
     private GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig() {}
     /**
@@ -27,14 +28,14 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomai
      * 
      */
     public List<String> cpeTrafficSelectors() {
-        return this.cpeTrafficSelectors;
+        return this.cpeTrafficSelectors == null ? List.of() : this.cpeTrafficSelectors;
     }
     /**
      * @return Lists IPv4 or IPv6-enabled subnets in your Oracle tenancy.
      * 
      */
     public List<String> oracleTrafficSelectors() {
-        return this.oracleTrafficSelectors;
+        return this.oracleTrafficSelectors == null ? List.of() : this.oracleTrafficSelectors;
     }
 
     public static Builder builder() {
@@ -46,8 +47,8 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomai
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> cpeTrafficSelectors;
-        private List<String> oracleTrafficSelectors;
+        private @Nullable List<String> cpeTrafficSelectors;
+        private @Nullable List<String> oracleTrafficSelectors;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +57,16 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomai
         }
 
         @CustomType.Setter
-        public Builder cpeTrafficSelectors(List<String> cpeTrafficSelectors) {
-            this.cpeTrafficSelectors = Objects.requireNonNull(cpeTrafficSelectors);
+        public Builder cpeTrafficSelectors(@Nullable List<String> cpeTrafficSelectors) {
+            this.cpeTrafficSelectors = cpeTrafficSelectors;
             return this;
         }
         public Builder cpeTrafficSelectors(String... cpeTrafficSelectors) {
             return cpeTrafficSelectors(List.of(cpeTrafficSelectors));
         }
         @CustomType.Setter
-        public Builder oracleTrafficSelectors(List<String> oracleTrafficSelectors) {
-            this.oracleTrafficSelectors = Objects.requireNonNull(oracleTrafficSelectors);
+        public Builder oracleTrafficSelectors(@Nullable List<String> oracleTrafficSelectors) {
+            this.oracleTrafficSelectors = oracleTrafficSelectors;
             return this;
         }
         public Builder oracleTrafficSelectors(String... oracleTrafficSelectors) {

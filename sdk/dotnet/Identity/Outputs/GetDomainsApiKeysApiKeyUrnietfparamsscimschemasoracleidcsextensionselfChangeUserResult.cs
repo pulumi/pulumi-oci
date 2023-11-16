@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, allows requesting user to update themselves. If false, requesting user can't update themself (default).
         /// </summary>
-        public readonly bool AllowSelfChange;
+        public readonly bool? AllowSelfChange;
 
         [OutputConstructor]
-        private GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult(bool allowSelfChange)
+        private GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult(bool? allowSelfChange)
         {
             AllowSelfChange = allowSelfChange;
         }

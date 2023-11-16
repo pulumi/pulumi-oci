@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHttpProbeResultsHttpProbeResultConnection {
@@ -15,51 +17,51 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
      * @return The connection IP address.
      * 
      */
-    private String address;
+    private @Nullable String address;
     /**
      * @return Total connect duration, calculated using `connectEnd` minus `connectStart`.
      * 
      */
-    private Double connectDuration;
+    private @Nullable Double connectDuration;
     /**
      * @return The port.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
      * 
      */
-    private Double secureConnectDuration;
+    private @Nullable Double secureConnectDuration;
 
     private GetHttpProbeResultsHttpProbeResultConnection() {}
     /**
      * @return The connection IP address.
      * 
      */
-    public String address() {
-        return this.address;
+    public Optional<String> address() {
+        return Optional.ofNullable(this.address);
     }
     /**
      * @return Total connect duration, calculated using `connectEnd` minus `connectStart`.
      * 
      */
-    public Double connectDuration() {
-        return this.connectDuration;
+    public Optional<Double> connectDuration() {
+        return Optional.ofNullable(this.connectDuration);
     }
     /**
      * @return The port.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
      * 
      */
-    public Double secureConnectDuration() {
-        return this.secureConnectDuration;
+    public Optional<Double> secureConnectDuration() {
+        return Optional.ofNullable(this.secureConnectDuration);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String address;
-        private Double connectDuration;
-        private Integer port;
-        private Double secureConnectDuration;
+        private @Nullable String address;
+        private @Nullable Double connectDuration;
+        private @Nullable Integer port;
+        private @Nullable Double secureConnectDuration;
         public Builder() {}
         public Builder(GetHttpProbeResultsHttpProbeResultConnection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
         }
 
         @CustomType.Setter
-        public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+        public Builder address(@Nullable String address) {
+            this.address = address;
             return this;
         }
         @CustomType.Setter
-        public Builder connectDuration(Double connectDuration) {
-            this.connectDuration = Objects.requireNonNull(connectDuration);
+        public Builder connectDuration(@Nullable Double connectDuration) {
+            this.connectDuration = connectDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder secureConnectDuration(Double secureConnectDuration) {
-            this.secureConnectDuration = Objects.requireNonNull(secureConnectDuration);
+        public Builder secureConnectDuration(@Nullable Double secureConnectDuration) {
+            this.secureConnectDuration = secureConnectDuration;
             return this;
         }
         public GetHttpProbeResultsHttpProbeResultConnection build() {

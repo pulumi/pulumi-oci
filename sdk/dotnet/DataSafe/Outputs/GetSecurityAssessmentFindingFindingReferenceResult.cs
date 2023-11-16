@@ -13,17 +13,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetSecurityAssessmentFindingFindingReferenceResult
     {
-        public readonly string Cis;
-        public readonly string Gdpr;
-        public readonly string Stig;
+        public readonly string? Cis;
+        public readonly string? Gdpr;
+        public readonly string? Stig;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingFindingReferenceResult(
-            string cis,
+            string? cis,
 
-            string gdpr,
+            string? gdpr,
 
-            string stig)
+            string? stig)
         {
             Cis = cis;
             Gdpr = gdpr;

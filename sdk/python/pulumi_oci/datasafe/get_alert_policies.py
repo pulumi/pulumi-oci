@@ -71,10 +71,7 @@ class GetAlertPoliciesResult:
 
     @property
     @pulumi.getter(name="alertPolicyCollections")
-    def alert_policy_collections(self) -> Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionResult']:
-        """
-        The list of alert_policy_collection.
-        """
+    def alert_policy_collections(self) -> Optional[Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionResult']]:
         return pulumi.get(self, "alert_policy_collections")
 
     @property
@@ -85,9 +82,6 @@ class GetAlertPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the alert policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -98,9 +92,6 @@ class GetAlertPoliciesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the alert policy.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -110,7 +101,7 @@ class GetAlertPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -119,17 +110,11 @@ class GetAlertPoliciesResult:
     @property
     @pulumi.getter(name="isUserDefined")
     def is_user_defined(self) -> Optional[bool]:
-        """
-        Indicates if the alert policy is user-defined (true) or pre-defined (false).
-        """
         return pulumi.get(self, "is_user_defined")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the alert.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -182,43 +167,7 @@ def get_alert_policies(access_level: Optional[str] = None,
                        type: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertPoliciesResult:
     """
-    This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all alert policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=var["compartment_id"],
-        access_level=var["alert_policy_access_level"],
-        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
-        compartment_id_in_subtree=var["alert_policy_compartment_id_in_subtree"],
-        display_name=var["alert_policy_display_name"],
-        is_user_defined=var["alert_policy_is_user_defined"],
-        state=var["alert_policy_state"],
-        time_created_greater_than_or_equal_to=var["alert_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["alert_policy_time_created_less_than"],
-        type=var["alert_policy_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str alert_policy_id: A filter to return policy by it's OCID.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_user_defined: An optional filter to return only alert policies that are user-defined or not.
-    :param str state: An optional filter to return only alert policies that have the given life-cycle state.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str type: An optional filter to return only alert policies of a certain type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -265,42 +214,6 @@ def get_alert_policies_output(access_level: Optional[pulumi.Input[Optional[str]]
                               type: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPoliciesResult]:
     """
-    This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all alert policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_policies = oci.DataSafe.get_alert_policies(compartment_id=var["compartment_id"],
-        access_level=var["alert_policy_access_level"],
-        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
-        compartment_id_in_subtree=var["alert_policy_compartment_id_in_subtree"],
-        display_name=var["alert_policy_display_name"],
-        is_user_defined=var["alert_policy_is_user_defined"],
-        state=var["alert_policy_state"],
-        time_created_greater_than_or_equal_to=var["alert_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["alert_policy_time_created_less_than"],
-        type=var["alert_policy_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str alert_policy_id: A filter to return policy by it's OCID.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_user_defined: An optional filter to return only alert policies that are user-defined or not.
-    :param str state: An optional filter to return only alert policies that have the given life-cycle state.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str type: An optional filter to return only alert policies of a certain type.
+    Use this data source to access information about an existing resource.
     """
     ...

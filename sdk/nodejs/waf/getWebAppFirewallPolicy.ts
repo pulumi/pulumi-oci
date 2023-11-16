@@ -47,67 +47,67 @@ export interface GetWebAppFirewallPolicyResult {
     /**
      * Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      */
-    readonly actions: outputs.Waf.GetWebAppFirewallPolicyAction[];
+    readonly actions?: outputs.Waf.GetWebAppFirewallPolicyAction[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * WebAppFirewallPolicy display name, can be renamed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewallPolicy.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
      */
-    readonly requestAccessControls: outputs.Waf.GetWebAppFirewallPolicyRequestAccessControl[];
+    readonly requestAccessControls?: outputs.Waf.GetWebAppFirewallPolicyRequestAccessControl[];
     /**
      * Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      */
-    readonly requestProtections: outputs.Waf.GetWebAppFirewallPolicyRequestProtection[];
+    readonly requestProtections?: outputs.Waf.GetWebAppFirewallPolicyRequestProtection[];
     /**
      * Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      */
-    readonly requestRateLimitings: outputs.Waf.GetWebAppFirewallPolicyRequestRateLimiting[];
+    readonly requestRateLimitings?: outputs.Waf.GetWebAppFirewallPolicyRequestRateLimiting[];
     /**
      * Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      */
-    readonly responseAccessControls: outputs.Waf.GetWebAppFirewallPolicyResponseAccessControl[];
+    readonly responseAccessControls?: outputs.Waf.GetWebAppFirewallPolicyResponseAccessControl[];
     /**
      * Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      */
-    readonly responseProtections: outputs.Waf.GetWebAppFirewallPolicyResponseProtection[];
+    readonly responseProtections?: outputs.Waf.GetWebAppFirewallPolicyResponseProtection[];
     /**
      * The current state of the WebAppFirewallPolicy.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly webAppFirewallPolicyId: string;
 }
 /**

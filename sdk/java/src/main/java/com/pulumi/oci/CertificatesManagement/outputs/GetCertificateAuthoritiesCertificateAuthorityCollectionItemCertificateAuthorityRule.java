@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule {
@@ -13,39 +15,39 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
      * @return A property indicating the maximum validity duration, in days, of subordinate CA&#39;s issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private String certificateAuthorityMaxValidityDuration;
+    private @Nullable String certificateAuthorityMaxValidityDuration;
     /**
      * @return A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    private String leafCertificateMaxValidityDuration;
+    private @Nullable String leafCertificateMaxValidityDuration;
     /**
      * @return The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
      * 
      */
-    private String ruleType;
+    private @Nullable String ruleType;
 
     private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule() {}
     /**
      * @return A property indicating the maximum validity duration, in days, of subordinate CA&#39;s issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    public String certificateAuthorityMaxValidityDuration() {
-        return this.certificateAuthorityMaxValidityDuration;
+    public Optional<String> certificateAuthorityMaxValidityDuration() {
+        return Optional.ofNullable(this.certificateAuthorityMaxValidityDuration);
     }
     /**
      * @return A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      * 
      */
-    public String leafCertificateMaxValidityDuration() {
-        return this.leafCertificateMaxValidityDuration;
+    public Optional<String> leafCertificateMaxValidityDuration() {
+        return Optional.ofNullable(this.leafCertificateMaxValidityDuration);
     }
     /**
      * @return The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
      * 
      */
-    public String ruleType() {
-        return this.ruleType;
+    public Optional<String> ruleType() {
+        return Optional.ofNullable(this.ruleType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateAuthorityMaxValidityDuration;
-        private String leafCertificateMaxValidityDuration;
-        private String ruleType;
+        private @Nullable String certificateAuthorityMaxValidityDuration;
+        private @Nullable String leafCertificateMaxValidityDuration;
+        private @Nullable String ruleType;
         public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         }
 
         @CustomType.Setter
-        public Builder certificateAuthorityMaxValidityDuration(String certificateAuthorityMaxValidityDuration) {
-            this.certificateAuthorityMaxValidityDuration = Objects.requireNonNull(certificateAuthorityMaxValidityDuration);
+        public Builder certificateAuthorityMaxValidityDuration(@Nullable String certificateAuthorityMaxValidityDuration) {
+            this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder leafCertificateMaxValidityDuration(String leafCertificateMaxValidityDuration) {
-            this.leafCertificateMaxValidityDuration = Objects.requireNonNull(leafCertificateMaxValidityDuration);
+        public Builder leafCertificateMaxValidityDuration(@Nullable String leafCertificateMaxValidityDuration) {
+            this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+        public Builder ruleType(@Nullable String ruleType) {
+            this.ruleType = ruleType;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule build() {

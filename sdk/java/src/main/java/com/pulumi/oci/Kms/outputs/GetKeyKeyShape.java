@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeyKeyShape {
@@ -14,12 +16,12 @@ public final class GetKeyKeyShape {
      * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
-    private String algorithm;
+    private @Nullable String algorithm;
     /**
      * @return Supported curve IDs for ECDSA keys.
      * 
      */
-    private String curveId;
+    private @Nullable String curveId;
     /**
      * @return The length of the key in bytes, expressed as an integer. Supported values include the following:
      * * AES: 16, 24, or 32
@@ -27,22 +29,22 @@ public final class GetKeyKeyShape {
      * * ECDSA: 32, 48, or 66
      * 
      */
-    private Integer length;
+    private @Nullable Integer length;
 
     private GetKeyKeyShape() {}
     /**
      * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
-    public String algorithm() {
-        return this.algorithm;
+    public Optional<String> algorithm() {
+        return Optional.ofNullable(this.algorithm);
     }
     /**
      * @return Supported curve IDs for ECDSA keys.
      * 
      */
-    public String curveId() {
-        return this.curveId;
+    public Optional<String> curveId() {
+        return Optional.ofNullable(this.curveId);
     }
     /**
      * @return The length of the key in bytes, expressed as an integer. Supported values include the following:
@@ -51,8 +53,8 @@ public final class GetKeyKeyShape {
      * * ECDSA: 32, 48, or 66
      * 
      */
-    public Integer length() {
-        return this.length;
+    public Optional<Integer> length() {
+        return Optional.ofNullable(this.length);
     }
 
     public static Builder builder() {
@@ -64,9 +66,9 @@ public final class GetKeyKeyShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String algorithm;
-        private String curveId;
-        private Integer length;
+        private @Nullable String algorithm;
+        private @Nullable String curveId;
+        private @Nullable Integer length;
         public Builder() {}
         public Builder(GetKeyKeyShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,18 +78,18 @@ public final class GetKeyKeyShape {
         }
 
         @CustomType.Setter
-        public Builder algorithm(String algorithm) {
-            this.algorithm = Objects.requireNonNull(algorithm);
+        public Builder algorithm(@Nullable String algorithm) {
+            this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder curveId(String curveId) {
-            this.curveId = Objects.requireNonNull(curveId);
+        public Builder curveId(@Nullable String curveId) {
+            this.curveId = curveId;
             return this;
         }
         @CustomType.Setter
-        public Builder length(Integer length) {
-            this.length = Objects.requireNonNull(length);
+        public Builder length(@Nullable Integer length) {
+            this.length = length;
             return this;
         }
         public GetKeyKeyShape build() {

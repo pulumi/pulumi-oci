@@ -40,7 +40,7 @@ class GetExternalAsmConfigurationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetExternalAsmConfigurationResult:
 
     @property
     @pulumi.getter(name="initParameters")
-    def init_parameters(self) -> Sequence['outputs.GetExternalAsmConfigurationInitParameterResult']:
-        """
-        An array of initialization parameters for the external ASM instances.
-        """
+    def init_parameters(self) -> Optional[Sequence['outputs.GetExternalAsmConfigurationInitParameterResult']]:
         return pulumi.get(self, "init_parameters")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetExternalAsmConfigurationResult(GetExternalAsmConfigurationResu
 def get_external_asm_configuration(external_asm_id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmConfigurationResult:
     """
-    This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
-    ```
-
-
-    :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalAsmId'] = external_asm_id
@@ -100,20 +83,6 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
 def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmConfigurationResult]:
     """
-    This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets configuration details including disk groups for the external ASM specified by `externalAsmId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
-    ```
-
-
-    :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    Use this data source to access information about an existing resource.
     """
     ...

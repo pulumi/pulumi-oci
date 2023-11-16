@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
@@ -82,7 +81,7 @@ type GetConnectionAssignmentsResult struct {
 	DeploymentId *string                          `pulumi:"deploymentId"`
 	Filters      []GetConnectionAssignmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string  `pulumi:"id"`
+	Id   *string `pulumi:"id"`
 	Name *string `pulumi:"name"`
 	// Possible lifecycle states for connection assignments.
 	State *string `pulumi:"state"`
@@ -135,12 +134,6 @@ func (o GetConnectionAssignmentsResultOutput) ToGetConnectionAssignmentsResultOu
 	return o
 }
 
-func (o GetConnectionAssignmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionAssignmentsResult] {
-	return pulumix.Output[GetConnectionAssignmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o GetConnectionAssignmentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionAssignmentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -168,8 +161,8 @@ func (o GetConnectionAssignmentsResultOutput) Filters() GetConnectionAssignments
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConnectionAssignmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionAssignmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConnectionAssignmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetConnectionAssignmentsResultOutput) Name() pulumi.StringPtrOutput {

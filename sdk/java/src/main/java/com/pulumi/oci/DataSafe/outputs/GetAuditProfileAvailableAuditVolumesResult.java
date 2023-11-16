@@ -23,13 +23,13 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
      * @return The list of available_audit_volume_collection.
      * 
      */
-    private List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
+    private @Nullable List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
     private @Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String monthInConsiderationGreaterThan;
     private @Nullable String monthInConsiderationLessThan;
     /**
@@ -52,7 +52,7 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
      * 
      */
     public List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections() {
-        return this.availableAuditVolumeCollections;
+        return this.availableAuditVolumeCollections == null ? List.of() : this.availableAuditVolumeCollections;
     }
     public List<GetAuditProfileAvailableAuditVolumesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -61,8 +61,8 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> monthInConsiderationGreaterThan() {
         return Optional.ofNullable(this.monthInConsiderationGreaterThan);
@@ -91,9 +91,9 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
     @CustomType.Builder
     public static final class Builder {
         private String auditProfileId;
-        private List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
+        private @Nullable List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections;
         private @Nullable List<GetAuditProfileAvailableAuditVolumesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String monthInConsiderationGreaterThan;
         private @Nullable String monthInConsiderationLessThan;
         private @Nullable String trailLocation;
@@ -117,8 +117,8 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder availableAuditVolumeCollections(List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections) {
-            this.availableAuditVolumeCollections = Objects.requireNonNull(availableAuditVolumeCollections);
+        public Builder availableAuditVolumeCollections(@Nullable List<GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection> availableAuditVolumeCollections) {
+            this.availableAuditVolumeCollections = availableAuditVolumeCollections;
             return this;
         }
         public Builder availableAuditVolumeCollections(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection... availableAuditVolumeCollections) {
@@ -133,8 +133,8 @@ public final class GetAuditProfileAvailableAuditVolumesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

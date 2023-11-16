@@ -16,7 +16,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// The OCID of Management Agent
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// List of DiscoveryJOb Credential Details.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// License edition of the monitored resource.
         /// </summary>
-        public readonly string License;
+        public readonly string? License;
         /// <summary>
         /// Property Details
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// The Name of resource type
         /// </summary>
-        public readonly string ResourceName;
+        public readonly string? ResourceName;
         /// <summary>
         /// Resource Type.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// Property Details
         /// </summary>
@@ -44,17 +44,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
         [OutputConstructor]
         private GetDiscoveryJobDiscoveryDetailResult(
-            string agentId,
+            string? agentId,
 
             ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailCredentialResult> credentials,
 
-            string license,
+            string? license,
 
             ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailPropertyResult> properties,
 
-            string resourceName,
+            string? resourceName,
 
-            string resourceType,
+            string? resourceType,
 
             ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailTagResult> tags)
         {

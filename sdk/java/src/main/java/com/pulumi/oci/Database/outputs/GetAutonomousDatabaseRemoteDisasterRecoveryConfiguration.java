@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
@@ -13,15 +15,15 @@ public final class GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
      * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    private String disasterRecoveryType;
+    private @Nullable String disasterRecoveryType;
 
     private GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration() {}
     /**
      * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    public String disasterRecoveryType() {
-        return this.disasterRecoveryType;
+    public Optional<String> disasterRecoveryType() {
+        return Optional.ofNullable(this.disasterRecoveryType);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String disasterRecoveryType;
+        private @Nullable String disasterRecoveryType;
         public Builder() {}
         public Builder(GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
         }
 
         @CustomType.Setter
-        public Builder disasterRecoveryType(String disasterRecoveryType) {
-            this.disasterRecoveryType = Objects.requireNonNull(disasterRecoveryType);
+        public Builder disasterRecoveryType(@Nullable String disasterRecoveryType) {
+            this.disasterRecoveryType = disasterRecoveryType;
             return this;
         }
         public GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobRunJobLogConfigurationOverrideDetail {
@@ -14,51 +16,51 @@ public final class GetJobRunJobLogConfigurationOverrideDetail {
      * @return If automatic on-behalf-of log object creation is enabled for job runs.
      * 
      */
-    private Boolean enableAutoLogCreation;
+    private @Nullable Boolean enableAutoLogCreation;
     /**
      * @return If customer logging is enabled for job runs.
      * 
      */
-    private Boolean enableLogging;
+    private @Nullable Boolean enableLogging;
     /**
      * @return The log group id for where log objects will be for job runs.
      * 
      */
-    private String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return The log id of the log object the job run logs will be shipped to.
      * 
      */
-    private String logId;
+    private @Nullable String logId;
 
     private GetJobRunJobLogConfigurationOverrideDetail() {}
     /**
      * @return If automatic on-behalf-of log object creation is enabled for job runs.
      * 
      */
-    public Boolean enableAutoLogCreation() {
-        return this.enableAutoLogCreation;
+    public Optional<Boolean> enableAutoLogCreation() {
+        return Optional.ofNullable(this.enableAutoLogCreation);
     }
     /**
      * @return If customer logging is enabled for job runs.
      * 
      */
-    public Boolean enableLogging() {
-        return this.enableLogging;
+    public Optional<Boolean> enableLogging() {
+        return Optional.ofNullable(this.enableLogging);
     }
     /**
      * @return The log group id for where log objects will be for job runs.
      * 
      */
-    public String logGroupId() {
-        return this.logGroupId;
+    public Optional<String> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
     /**
      * @return The log id of the log object the job run logs will be shipped to.
      * 
      */
-    public String logId() {
-        return this.logId;
+    public Optional<String> logId() {
+        return Optional.ofNullable(this.logId);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetJobRunJobLogConfigurationOverrideDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean enableAutoLogCreation;
-        private Boolean enableLogging;
-        private String logGroupId;
-        private String logId;
+        private @Nullable Boolean enableAutoLogCreation;
+        private @Nullable Boolean enableLogging;
+        private @Nullable String logGroupId;
+        private @Nullable String logId;
         public Builder() {}
         public Builder(GetJobRunJobLogConfigurationOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetJobRunJobLogConfigurationOverrideDetail {
         }
 
         @CustomType.Setter
-        public Builder enableAutoLogCreation(Boolean enableAutoLogCreation) {
-            this.enableAutoLogCreation = Objects.requireNonNull(enableAutoLogCreation);
+        public Builder enableAutoLogCreation(@Nullable Boolean enableAutoLogCreation) {
+            this.enableAutoLogCreation = enableAutoLogCreation;
             return this;
         }
         @CustomType.Setter
-        public Builder enableLogging(Boolean enableLogging) {
-            this.enableLogging = Objects.requireNonNull(enableLogging);
+        public Builder enableLogging(@Nullable Boolean enableLogging) {
+            this.enableLogging = enableLogging;
             return this;
         }
         @CustomType.Setter
-        public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+        public Builder logGroupId(@Nullable String logGroupId) {
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+        public Builder logId(@Nullable String logId) {
+            this.logId = logId;
             return this;
         }
         public GetJobRunJobLogConfigurationOverrideDetail build() {

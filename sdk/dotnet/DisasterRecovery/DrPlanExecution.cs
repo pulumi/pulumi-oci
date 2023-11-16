@@ -62,31 +62,31 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("drProtectionGroupId")]
-        public Output<string> DrProtectionGroupId { get; private set; } = null!;
+        public Output<string?> DrProtectionGroupId { get; private set; } = null!;
 
         /// <summary>
         /// The total duration in seconds taken to complete the step execution.  Example: `35`
         /// </summary>
         [Output("executionDurationInSec")]
-        public Output<int> ExecutionDurationInSec { get; private set; } = null!;
+        public Output<int?> ExecutionDurationInSec { get; private set; } = null!;
 
         /// <summary>
         /// The options for a plan execution.
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A list of groups executed in this DR plan execution.
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// A message describing the DR plan execution's current state in more detail.
         /// </summary>
         [Output("lifeCycleDetails")]
-        public Output<string> LifeCycleDetails { get; private set; } = null!;
+        public Output<string?> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The details of an object storage log location for a DR protection group.
@@ -122,19 +122,19 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("peerDrProtectionGroupId")]
-        public Output<string> PeerDrProtectionGroupId { get; private set; } = null!;
+        public Output<string?> PeerDrProtectionGroupId { get; private set; } = null!;
 
         /// <summary>
         /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Output("peerRegion")]
-        public Output<string> PeerRegion { get; private set; } = null!;
+        public Output<string?> PeerRegion { get; private set; } = null!;
 
         /// <summary>
         /// The type of the plan execution.
         /// </summary>
         [Output("planExecutionType")]
-        public Output<string> PlanExecutionType { get; private set; } = null!;
+        public Output<string?> PlanExecutionType { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
@@ -150,37 +150,37 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The current state of the DR plan execution.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeEnded")]
-        public Output<string> TimeEnded { get; private set; } = null!;
+        public Output<string?> TimeEnded { get; private set; } = null!;
 
         /// <summary>
         /// The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
         /// <summary>
         /// The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

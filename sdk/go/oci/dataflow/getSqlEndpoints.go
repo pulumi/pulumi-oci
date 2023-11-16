@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
@@ -77,7 +76,7 @@ type GetSqlEndpointsResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetSqlEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of sql_endpoint_collection.
 	SqlEndpointCollections []GetSqlEndpointsSqlEndpointCollection `pulumi:"sqlEndpointCollections"`
 	SqlEndpointId          *string                                `pulumi:"sqlEndpointId"`
@@ -130,12 +129,6 @@ func (o GetSqlEndpointsResultOutput) ToGetSqlEndpointsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetSqlEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlEndpointsResult] {
-	return pulumix.Output[GetSqlEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of a compartment.
 func (o GetSqlEndpointsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlEndpointsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -151,8 +144,8 @@ func (o GetSqlEndpointsResultOutput) Filters() GetSqlEndpointsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of sql_endpoint_collection.

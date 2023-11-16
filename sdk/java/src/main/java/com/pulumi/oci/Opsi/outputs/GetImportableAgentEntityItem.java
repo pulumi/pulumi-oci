@@ -6,6 +6,8 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImportableAgentEntityItem {
@@ -13,63 +15,63 @@ public final class GetImportableAgentEntityItem {
      * @return Source of the importable agent entity.
      * 
      */
-    private String entitySource;
+    private @Nullable String entitySource;
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
      * 
      */
-    private String managementAgentDisplayName;
+    private @Nullable String managementAgentDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * 
      */
-    private String managementAgentId;
+    private @Nullable String managementAgentId;
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      * 
      */
-    private String platformType;
+    private @Nullable String platformType;
 
     private GetImportableAgentEntityItem() {}
     /**
      * @return Source of the importable agent entity.
      * 
      */
-    public String entitySource() {
-        return this.entitySource;
+    public Optional<String> entitySource() {
+        return Optional.ofNullable(this.entitySource);
     }
     /**
      * @return The host name. The host name is unique amongst the hosts managed by the same management agent.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
      * 
      */
-    public String managementAgentDisplayName() {
-        return this.managementAgentDisplayName;
+    public Optional<String> managementAgentDisplayName() {
+        return Optional.ofNullable(this.managementAgentDisplayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      * 
      */
-    public String managementAgentId() {
-        return this.managementAgentId;
+    public Optional<String> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
     }
     /**
      * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      * 
      */
-    public String platformType() {
-        return this.platformType;
+    public Optional<String> platformType() {
+        return Optional.ofNullable(this.platformType);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetImportableAgentEntityItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String entitySource;
-        private String hostName;
-        private String managementAgentDisplayName;
-        private String managementAgentId;
-        private String platformType;
+        private @Nullable String entitySource;
+        private @Nullable String hostName;
+        private @Nullable String managementAgentDisplayName;
+        private @Nullable String managementAgentId;
+        private @Nullable String platformType;
         public Builder() {}
         public Builder(GetImportableAgentEntityItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetImportableAgentEntityItem {
         }
 
         @CustomType.Setter
-        public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+        public Builder entitySource(@Nullable String entitySource) {
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentDisplayName(String managementAgentDisplayName) {
-            this.managementAgentDisplayName = Objects.requireNonNull(managementAgentDisplayName);
+        public Builder managementAgentDisplayName(@Nullable String managementAgentDisplayName) {
+            this.managementAgentDisplayName = managementAgentDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+        public Builder managementAgentId(@Nullable String managementAgentId) {
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
-        public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+        public Builder platformType(@Nullable String platformType) {
+            this.platformType = platformType;
             return this;
         }
         public GetImportableAgentEntityItem build() {

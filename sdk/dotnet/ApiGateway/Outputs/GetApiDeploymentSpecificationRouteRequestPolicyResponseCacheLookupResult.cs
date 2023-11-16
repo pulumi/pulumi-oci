@@ -20,25 +20,25 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Whether this policy is currently enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
         /// </summary>
-        public readonly bool IsPrivateCachingEnabled;
+        public readonly bool? IsPrivateCachingEnabled;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationRouteRequestPolicyResponseCacheLookupResult(
             ImmutableArray<string> cacheKeyAdditions,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            bool isPrivateCachingEnabled,
+            bool? isPrivateCachingEnabled,
 
-            string type)
+            string? type)
         {
             CacheKeyAdditions = cacheKeyAdditions;
             IsEnabled = isEnabled;

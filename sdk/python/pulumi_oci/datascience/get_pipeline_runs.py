@@ -52,25 +52,16 @@ class GetPipelineRunsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,33 +72,21 @@ class GetPipelineRunsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="pipelineId")
     def pipeline_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
-        """
         return pulumi.get(self, "pipeline_id")
 
     @property
     @pulumi.getter(name="pipelineRuns")
-    def pipeline_runs(self) -> Sequence['outputs.GetPipelineRunsPipelineRunResult']:
-        """
-        The list of pipeline_runs.
-        """
+    def pipeline_runs(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunResult']]:
         return pulumi.get(self, "pipeline_runs")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the step run.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_pipeline_runs(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPipelineRunsResult:
     """
-    This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
-
-    Returns a list of PipelineRuns.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pipeline_runs = oci.DataScience.get_pipeline_runs(compartment_id=var["compartment_id"],
-        created_by=var["pipeline_run_created_by"],
-        display_name=var["pipeline_run_display_name"],
-        id=var["pipeline_run_id"],
-        pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
-        state=var["pipeline_run_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-    :param str state: The current state of the PipelineRun.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,30 +149,6 @@ def get_pipeline_runs_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPipelineRunsResult]:
     """
-    This data source provides the list of Pipeline Runs in Oracle Cloud Infrastructure Data Science service.
-
-    Returns a list of PipelineRuns.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pipeline_runs = oci.DataScience.get_pipeline_runs(compartment_id=var["compartment_id"],
-        created_by=var["pipeline_run_created_by"],
-        display_name=var["pipeline_run_display_name"],
-        id=var["pipeline_run_id"],
-        pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
-        state=var["pipeline_run_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-    :param str state: The current state of the PipelineRun.
+    Use this data source to access information about an existing resource.
     """
     ...

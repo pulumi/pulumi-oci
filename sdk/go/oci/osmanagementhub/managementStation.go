@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -81,7 +80,7 @@ type ManagementStation struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Details describing the Management Station config.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Management Station name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -89,29 +88,29 @@ type ManagementStation struct {
 	// (Updatable) Name of the host
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// OCID for the Instance associated with the Management Station.
-	ManagedInstanceId pulumi.StringOutput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrOutput `pulumi:"managedInstanceId"`
 	// (Updatable) Information for creating a mirror configuration
 	Mirror ManagementStationMirrorOutput `pulumi:"mirror"`
 	// A decimal number representing the mirror capacity
-	MirrorCapacity pulumi.IntOutput `pulumi:"mirrorCapacity"`
+	MirrorCapacity pulumi.IntPtrOutput `pulumi:"mirrorCapacity"`
 	// Status summary of all repos
 	MirrorSyncStatuses ManagementStationMirrorSyncStatusArrayOutput `pulumi:"mirrorSyncStatuses"`
 	// A decimal number representing the completeness percentage
-	OverallPercentage pulumi.IntOutput `pulumi:"overallPercentage"`
+	OverallPercentage pulumi.IntPtrOutput `pulumi:"overallPercentage"`
 	// Current state of the mirroring
-	OverallState pulumi.StringOutput `pulumi:"overallState"`
+	OverallState pulumi.StringPtrOutput `pulumi:"overallState"`
 	// OCID of the Profile associated with the Station
-	ProfileId pulumi.StringOutput `pulumi:"profileId"`
+	ProfileId pulumi.StringPtrOutput `pulumi:"profileId"`
 	// (Updatable) Information for creating a proxy configuration
 	Proxy ManagementStationProxyOutput `pulumi:"proxy"`
 	// OCID of the Scheduled Job for mirror sync
-	ScheduledJobId pulumi.StringOutput `pulumi:"scheduledJobId"`
+	ScheduledJobId pulumi.StringPtrOutput `pulumi:"scheduledJobId"`
 	// The current state of the Management Station config.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// A decimal number representing the total of repos
-	TotalMirrors pulumi.IntOutput `pulumi:"totalMirrors"`
+	TotalMirrors pulumi.IntPtrOutput `pulumi:"totalMirrors"`
 }
 
 // NewManagementStation registers a new resource with the given unique name, arguments, and options.
@@ -302,12 +301,6 @@ func (i *ManagementStation) ToManagementStationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationOutput)
 }
 
-func (i *ManagementStation) ToOutput(ctx context.Context) pulumix.Output[*ManagementStation] {
-	return pulumix.Output[*ManagementStation]{
-		OutputState: i.ToManagementStationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementStationArrayInput is an input type that accepts ManagementStationArray and ManagementStationArrayOutput values.
 // You can construct a concrete instance of `ManagementStationArrayInput` via:
 //
@@ -331,12 +324,6 @@ func (i ManagementStationArray) ToManagementStationArrayOutput() ManagementStati
 
 func (i ManagementStationArray) ToManagementStationArrayOutputWithContext(ctx context.Context) ManagementStationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationArrayOutput)
-}
-
-func (i ManagementStationArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementStation] {
-	return pulumix.Output[[]*ManagementStation]{
-		OutputState: i.ToManagementStationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagementStationMapInput is an input type that accepts ManagementStationMap and ManagementStationMapOutput values.
@@ -364,12 +351,6 @@ func (i ManagementStationMap) ToManagementStationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationMapOutput)
 }
 
-func (i ManagementStationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementStation] {
-	return pulumix.Output[map[string]*ManagementStation]{
-		OutputState: i.ToManagementStationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementStationOutput struct{ *pulumi.OutputState }
 
 func (ManagementStationOutput) ElementType() reflect.Type {
@@ -384,12 +365,6 @@ func (o ManagementStationOutput) ToManagementStationOutputWithContext(ctx contex
 	return o
 }
 
-func (o ManagementStationOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementStation] {
-	return pulumix.Output[*ManagementStation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the Management Station.
 func (o ManagementStationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -401,8 +376,8 @@ func (o ManagementStationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Details describing the Management Station config.
-func (o ManagementStationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ManagementStationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Management Station name
@@ -421,8 +396,8 @@ func (o ManagementStationOutput) Hostname() pulumi.StringOutput {
 }
 
 // OCID for the Instance associated with the Management Station.
-func (o ManagementStationOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o ManagementStationOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringPtrOutput { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Information for creating a mirror configuration
@@ -431,8 +406,8 @@ func (o ManagementStationOutput) Mirror() ManagementStationMirrorOutput {
 }
 
 // A decimal number representing the mirror capacity
-func (o ManagementStationOutput) MirrorCapacity() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.IntOutput { return v.MirrorCapacity }).(pulumi.IntOutput)
+func (o ManagementStationOutput) MirrorCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.IntPtrOutput { return v.MirrorCapacity }).(pulumi.IntPtrOutput)
 }
 
 // Status summary of all repos
@@ -441,18 +416,18 @@ func (o ManagementStationOutput) MirrorSyncStatuses() ManagementStationMirrorSyn
 }
 
 // A decimal number representing the completeness percentage
-func (o ManagementStationOutput) OverallPercentage() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.IntOutput { return v.OverallPercentage }).(pulumi.IntOutput)
+func (o ManagementStationOutput) OverallPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.IntPtrOutput { return v.OverallPercentage }).(pulumi.IntPtrOutput)
 }
 
 // Current state of the mirroring
-func (o ManagementStationOutput) OverallState() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.OverallState }).(pulumi.StringOutput)
+func (o ManagementStationOutput) OverallState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringPtrOutput { return v.OverallState }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the Profile associated with the Station
-func (o ManagementStationOutput) ProfileId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.ProfileId }).(pulumi.StringOutput)
+func (o ManagementStationOutput) ProfileId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringPtrOutput { return v.ProfileId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Information for creating a proxy configuration
@@ -461,13 +436,13 @@ func (o ManagementStationOutput) Proxy() ManagementStationProxyOutput {
 }
 
 // OCID of the Scheduled Job for mirror sync
-func (o ManagementStationOutput) ScheduledJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.ScheduledJobId }).(pulumi.StringOutput)
+func (o ManagementStationOutput) ScheduledJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringPtrOutput { return v.ScheduledJobId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Management Station config.
-func (o ManagementStationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ManagementStationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -476,8 +451,8 @@ func (o ManagementStationOutput) SystemTags() pulumi.MapOutput {
 }
 
 // A decimal number representing the total of repos
-func (o ManagementStationOutput) TotalMirrors() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagementStation) pulumi.IntOutput { return v.TotalMirrors }).(pulumi.IntOutput)
+func (o ManagementStationOutput) TotalMirrors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagementStation) pulumi.IntPtrOutput { return v.TotalMirrors }).(pulumi.IntPtrOutput)
 }
 
 type ManagementStationArrayOutput struct{ *pulumi.OutputState }
@@ -492,12 +467,6 @@ func (o ManagementStationArrayOutput) ToManagementStationArrayOutput() Managemen
 
 func (o ManagementStationArrayOutput) ToManagementStationArrayOutputWithContext(ctx context.Context) ManagementStationArrayOutput {
 	return o
-}
-
-func (o ManagementStationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementStation] {
-	return pulumix.Output[[]*ManagementStation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementStationArrayOutput) Index(i pulumi.IntInput) ManagementStationOutput {
@@ -518,12 +487,6 @@ func (o ManagementStationMapOutput) ToManagementStationMapOutput() ManagementSta
 
 func (o ManagementStationMapOutput) ToManagementStationMapOutputWithContext(ctx context.Context) ManagementStationMapOutput {
 	return o
-}
-
-func (o ManagementStationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementStation] {
-	return pulumix.Output[map[string]*ManagementStation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementStationMapOutput) MapIndex(k pulumi.StringInput) ManagementStationOutput {

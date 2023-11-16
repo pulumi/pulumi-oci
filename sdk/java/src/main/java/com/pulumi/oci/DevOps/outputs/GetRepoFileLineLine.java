@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepoFileLineLine {
@@ -14,27 +16,27 @@ public final class GetRepoFileLineLine {
      * @return The content of the line.
      * 
      */
-    private String lineContent;
+    private @Nullable String lineContent;
     /**
      * @return The line number.
      * 
      */
-    private Integer lineNumber;
+    private @Nullable Integer lineNumber;
 
     private GetRepoFileLineLine() {}
     /**
      * @return The content of the line.
      * 
      */
-    public String lineContent() {
-        return this.lineContent;
+    public Optional<String> lineContent() {
+        return Optional.ofNullable(this.lineContent);
     }
     /**
      * @return The line number.
      * 
      */
-    public Integer lineNumber() {
-        return this.lineNumber;
+    public Optional<Integer> lineNumber() {
+        return Optional.ofNullable(this.lineNumber);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetRepoFileLineLine {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lineContent;
-        private Integer lineNumber;
+        private @Nullable String lineContent;
+        private @Nullable Integer lineNumber;
         public Builder() {}
         public Builder(GetRepoFileLineLine defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetRepoFileLineLine {
         }
 
         @CustomType.Setter
-        public Builder lineContent(String lineContent) {
-            this.lineContent = Objects.requireNonNull(lineContent);
+        public Builder lineContent(@Nullable String lineContent) {
+            this.lineContent = lineContent;
             return this;
         }
         @CustomType.Setter
-        public Builder lineNumber(Integer lineNumber) {
-            this.lineNumber = Objects.requireNonNull(lineNumber);
+        public Builder lineNumber(@Nullable Integer lineNumber) {
+            this.lineNumber = lineNumber;
             return this;
         }
         public GetRepoFileLineLine build() {

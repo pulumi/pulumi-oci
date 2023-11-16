@@ -29,21 +29,6 @@ class SoftwareSourceArgs:
                  parent_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SoftwareSource resource.
-        :param pulumi.Input[str] arch_type: The architecture type supported by the Software Source
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] maintainer_email: (Updatable) Email address of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
-        :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "arch_type", arch_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -68,9 +53,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Input[str]:
-        """
-        The architecture type supported by the Software Source
-        """
         return pulumi.get(self, "arch_type")
 
     @arch_type.setter
@@ -80,9 +62,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -92,9 +71,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User friendly name for the software source
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -104,9 +80,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="checksumType")
     def checksum_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The yum repository checksum type used by this software source
-        """
         return pulumi.get(self, "checksum_type")
 
     @checksum_type.setter
@@ -116,9 +89,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -128,9 +98,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information specified by the user about the software source
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -140,9 +107,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -152,9 +116,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="maintainerEmail")
     def maintainer_email(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Email address of the person maintaining this software source
-        """
         return pulumi.get(self, "maintainer_email")
 
     @maintainer_email.setter
@@ -164,9 +125,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="maintainerName")
     def maintainer_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the person maintaining this software source
-        """
         return pulumi.get(self, "maintainer_name")
 
     @maintainer_name.setter
@@ -176,9 +134,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="maintainerPhone")
     def maintainer_phone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Phone number of the person maintaining this software source
-        """
         return pulumi.get(self, "maintainer_phone")
 
     @maintainer_phone.setter
@@ -188,13 +143,6 @@ class SoftwareSourceArgs:
     @property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID for the parent software source, if there is one
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "parent_id")
 
     @parent_id.setter
@@ -228,31 +176,6 @@ class _SoftwareSourceState:
                  url: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSource resources.
-        :param pulumi.Input[str] arch_type: The architecture type supported by the Software Source
-        :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceAssociatedManagedInstanceArgs']]] associated_managed_instances: list of the Managed Instances associated with this Software Sources
-        :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source
-        :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source
-        :param pulumi.Input[str] gpg_key_url: URL of the GPG key for this software source
-        :param pulumi.Input[str] maintainer_email: (Updatable) Email address of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
-        :param pulumi.Input[int] packages: Number of packages
-        :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] parent_name: Display name the parent software source, if there is one
-        :param pulumi.Input[str] repo_type: Type of the Software Source
-        :param pulumi.Input[str] state: The current state of the Software Source.
-        :param pulumi.Input[str] status: status of the software source.
-        :param pulumi.Input[str] url: URL for the repostiory
         """
         if arch_type is not None:
             pulumi.set(__self__, "arch_type", arch_type)
@@ -300,9 +223,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The architecture type supported by the Software Source
-        """
         return pulumi.get(self, "arch_type")
 
     @arch_type.setter
@@ -312,9 +232,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="associatedManagedInstances")
     def associated_managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceAssociatedManagedInstanceArgs']]]]:
-        """
-        list of the Managed Instances associated with this Software Sources
-        """
         return pulumi.get(self, "associated_managed_instances")
 
     @associated_managed_instances.setter
@@ -324,9 +241,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="checksumType")
     def checksum_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The yum repository checksum type used by this software source
-        """
         return pulumi.get(self, "checksum_type")
 
     @checksum_type.setter
@@ -336,9 +250,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -348,9 +259,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -360,9 +268,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information specified by the user about the software source
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -372,9 +277,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User friendly name for the software source
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -384,9 +286,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -396,9 +295,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="gpgKeyFingerprint")
     def gpg_key_fingerprint(self) -> Optional[pulumi.Input[str]]:
-        """
-        Fingerprint of the GPG key for this software source
-        """
         return pulumi.get(self, "gpg_key_fingerprint")
 
     @gpg_key_fingerprint.setter
@@ -408,9 +304,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="gpgKeyId")
     def gpg_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        ID of the GPG key for this software source
-        """
         return pulumi.get(self, "gpg_key_id")
 
     @gpg_key_id.setter
@@ -420,9 +313,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="gpgKeyUrl")
     def gpg_key_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        URL of the GPG key for this software source
-        """
         return pulumi.get(self, "gpg_key_url")
 
     @gpg_key_url.setter
@@ -432,9 +322,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="maintainerEmail")
     def maintainer_email(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Email address of the person maintaining this software source
-        """
         return pulumi.get(self, "maintainer_email")
 
     @maintainer_email.setter
@@ -444,9 +331,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="maintainerName")
     def maintainer_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the person maintaining this software source
-        """
         return pulumi.get(self, "maintainer_name")
 
     @maintainer_name.setter
@@ -456,9 +340,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="maintainerPhone")
     def maintainer_phone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Phone number of the person maintaining this software source
-        """
         return pulumi.get(self, "maintainer_phone")
 
     @maintainer_phone.setter
@@ -468,9 +349,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter
     def packages(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of packages
-        """
         return pulumi.get(self, "packages")
 
     @packages.setter
@@ -480,13 +358,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID for the parent software source, if there is one
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "parent_id")
 
     @parent_id.setter
@@ -496,9 +367,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="parentName")
     def parent_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Display name the parent software source, if there is one
-        """
         return pulumi.get(self, "parent_name")
 
     @parent_name.setter
@@ -508,9 +376,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter(name="repoType")
     def repo_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the Software Source
-        """
         return pulumi.get(self, "repo_type")
 
     @repo_type.setter
@@ -520,9 +385,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Software Source.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -532,9 +394,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        status of the software source.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -544,9 +403,6 @@ class _SoftwareSourceState:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        URL for the repostiory
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -572,61 +428,9 @@ class SoftwareSource(pulumi.CustomResource):
                  parent_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Software Source resource in Oracle Cloud Infrastructure OS Management service.
-
-        Creates a new custom Software Source on the management system.
-        This will not contain any packages after it is first created,
-        and they must be added later.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_software_source = oci.os_management.SoftwareSource("testSoftwareSource",
-            arch_type=var["software_source_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["software_source_display_name"],
-            checksum_type=var["software_source_checksum_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["software_source_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            maintainer_email=var["software_source_maintainer_email"],
-            maintainer_name=var["software_source_maintainer_name"],
-            maintainer_phone=var["software_source_maintainer_phone"],
-            parent_id=oci_osmanagement_parent["test_parent"]["id"])
-        ```
-
-        ## Import
-
-        SoftwareSources can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
-        ```
-
+        Create a SoftwareSource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The architecture type supported by the Software Source
-        :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] maintainer_email: (Updatable) Email address of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
-        :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -635,44 +439,7 @@ class SoftwareSource(pulumi.CustomResource):
                  args: SoftwareSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Software Source resource in Oracle Cloud Infrastructure OS Management service.
-
-        Creates a new custom Software Source on the management system.
-        This will not contain any packages after it is first created,
-        and they must be added later.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_software_source = oci.os_management.SoftwareSource("testSoftwareSource",
-            arch_type=var["software_source_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["software_source_display_name"],
-            checksum_type=var["software_source_checksum_type"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["software_source_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            maintainer_email=var["software_source_maintainer_email"],
-            maintainer_name=var["software_source_maintainer_name"],
-            maintainer_phone=var["software_source_maintainer_phone"],
-            parent_id=oci_osmanagement_parent["test_parent"]["id"])
-        ```
-
-        ## Import
-
-        SoftwareSources can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OsManagement/softwareSource:SoftwareSource test_software_source "id"
-        ```
-
+        Create a SoftwareSource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SoftwareSourceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -773,31 +540,6 @@ class SoftwareSource(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The architecture type supported by the Software Source
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SoftwareSourceAssociatedManagedInstanceArgs']]]] associated_managed_instances: list of the Managed Instances associated with this Software Sources
-        :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source
-        :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source
-        :param pulumi.Input[str] gpg_key_url: URL of the GPG key for this software source
-        :param pulumi.Input[str] maintainer_email: (Updatable) Email address of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
-        :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
-        :param pulumi.Input[int] packages: Number of packages
-        :param pulumi.Input[str] parent_id: OCID for the parent software source, if there is one
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] parent_name: Display name the parent software source, if there is one
-        :param pulumi.Input[str] repo_type: Type of the Software Source
-        :param pulumi.Input[str] state: The current state of the Software Source.
-        :param pulumi.Input[str] status: status of the software source.
-        :param pulumi.Input[str] url: URL for the repostiory
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -829,172 +571,105 @@ class SoftwareSource(pulumi.CustomResource):
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[str]:
-        """
-        The architecture type supported by the Software Source
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="associatedManagedInstances")
-    def associated_managed_instances(self) -> pulumi.Output[Sequence['outputs.SoftwareSourceAssociatedManagedInstance']]:
-        """
-        list of the Managed Instances associated with this Software Sources
-        """
+    def associated_managed_instances(self) -> pulumi.Output[Optional[Sequence['outputs.SoftwareSourceAssociatedManagedInstance']]]:
         return pulumi.get(self, "associated_managed_instances")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The yum repository checksum type used by this software source
-        """
+    def checksum_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Information specified by the user about the software source
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User friendly name for the software source
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gpgKeyFingerprint")
-    def gpg_key_fingerprint(self) -> pulumi.Output[str]:
-        """
-        Fingerprint of the GPG key for this software source
-        """
+    def gpg_key_fingerprint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "gpg_key_fingerprint")
 
     @property
     @pulumi.getter(name="gpgKeyId")
-    def gpg_key_id(self) -> pulumi.Output[str]:
-        """
-        ID of the GPG key for this software source
-        """
+    def gpg_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "gpg_key_id")
 
     @property
     @pulumi.getter(name="gpgKeyUrl")
-    def gpg_key_url(self) -> pulumi.Output[str]:
-        """
-        URL of the GPG key for this software source
-        """
+    def gpg_key_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "gpg_key_url")
 
     @property
     @pulumi.getter(name="maintainerEmail")
-    def maintainer_email(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Email address of the person maintaining this software source
-        """
+    def maintainer_email(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "maintainer_email")
 
     @property
     @pulumi.getter(name="maintainerName")
-    def maintainer_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Name of the person maintaining this software source
-        """
+    def maintainer_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "maintainer_name")
 
     @property
     @pulumi.getter(name="maintainerPhone")
-    def maintainer_phone(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Phone number of the person maintaining this software source
-        """
+    def maintainer_phone(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "maintainer_phone")
 
     @property
     @pulumi.getter
-    def packages(self) -> pulumi.Output[int]:
-        """
-        Number of packages
-        """
+    def packages(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter(name="parentId")
-    def parent_id(self) -> pulumi.Output[str]:
-        """
-        OCID for the parent software source, if there is one
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def parent_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_id")
 
     @property
     @pulumi.getter(name="parentName")
-    def parent_name(self) -> pulumi.Output[str]:
-        """
-        Display name the parent software source, if there is one
-        """
+    def parent_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_name")
 
     @property
     @pulumi.getter(name="repoType")
-    def repo_type(self) -> pulumi.Output[str]:
-        """
-        Type of the Software Source
-        """
+    def repo_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "repo_type")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Software Source.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        status of the software source.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def url(self) -> pulumi.Output[str]:
-        """
-        URL for the repostiory
-        """
+    def url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "url")
 

@@ -124,7 +124,7 @@ namespace Pulumi.Oci.UsageProxy
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The monthly summary of rewards.
         /// </summary>
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.UsageProxy
 
         [OutputConstructor]
         private GetSubscriptionRewardResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSubscriptionRewardItemResult> items,
 

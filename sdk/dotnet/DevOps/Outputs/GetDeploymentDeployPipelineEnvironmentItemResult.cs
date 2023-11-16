@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of an Environment
         /// </summary>
-        public readonly string DeployEnvironmentId;
+        public readonly string? DeployEnvironmentId;
         /// <summary>
         /// List of stages.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Deployment identifier which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetDeploymentDeployPipelineEnvironmentItemResult(
-            string deployEnvironmentId,
+            string? deployEnvironmentId,
 
             ImmutableArray<Outputs.GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageResult> deployPipelineStages,
 
-            string displayName)
+            string? displayName)
         {
             DeployEnvironmentId = deployEnvironmentId;
             DeployPipelineStages = deployPipelineStages;

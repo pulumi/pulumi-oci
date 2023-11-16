@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection {
-    private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
+    private @Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
 
     private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection() {}
     public List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
+        private @Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items;
         public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         }
 
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem... items) {

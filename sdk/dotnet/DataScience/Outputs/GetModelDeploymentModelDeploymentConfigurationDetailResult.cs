@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The type of the model deployment.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// The configuration to carry the environment details thats used in Model Deployment creation
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailResult(
-            string deploymentType,
+            string? deploymentType,
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult> environmentConfigurationDetails,
 

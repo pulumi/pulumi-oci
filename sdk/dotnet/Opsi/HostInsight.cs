@@ -69,49 +69,49 @@ namespace Pulumi.Oci.Opsi
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         /// </summary>
         [Output("computeId")]
-        public Output<string> ComputeId { get; private set; } = null!;
+        public Output<string?> ComputeId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// OPSI Enterprise Manager Bridge OCID
         /// </summary>
         [Output("enterpriseManagerBridgeId")]
-        public Output<string> EnterpriseManagerBridgeId { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerBridgeId { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Display Name
         /// </summary>
         [Output("enterpriseManagerEntityDisplayName")]
-        public Output<string> EnterpriseManagerEntityDisplayName { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
         [Output("enterpriseManagerEntityIdentifier")]
-        public Output<string> EnterpriseManagerEntityIdentifier { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Name
         /// </summary>
         [Output("enterpriseManagerEntityName")]
-        public Output<string> EnterpriseManagerEntityName { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityName { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Type
         /// </summary>
         [Output("enterpriseManagerEntityType")]
-        public Output<string> EnterpriseManagerEntityType { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityType { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Unique Identifier
         /// </summary>
         [Output("enterpriseManagerIdentifier")]
-        public Output<string> EnterpriseManagerIdentifier { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Source of the host entity.
@@ -123,37 +123,37 @@ namespace Pulumi.Oci.Opsi
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
         /// </summary>
         [Output("exadataInsightId")]
-        public Output<string> ExadataInsightId { get; private set; } = null!;
+        public Output<string?> ExadataInsightId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the host. The name does not have to be unique.
         /// </summary>
         [Output("hostDisplayName")]
-        public Output<string> HostDisplayName { get; private set; } = null!;
+        public Output<string?> HostDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The host name. The host name is unique amongst the hosts managed by the same management agent.
         /// </summary>
         [Output("hostName")]
-        public Output<string> HostName { get; private set; } = null!;
+        public Output<string?> HostName { get; private set; } = null!;
 
         /// <summary>
         /// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         /// </summary>
         [Output("hostType")]
-        public Output<string> HostType { get; private set; } = null!;
+        public Output<string?> HostType { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
@@ -163,61 +163,61 @@ namespace Pulumi.Oci.Opsi
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         /// </summary>
         [Output("managementAgentId")]
-        public Output<string> ManagementAgentId { get; private set; } = null!;
+        public Output<string?> ManagementAgentId { get; private set; } = null!;
 
         /// <summary>
         /// Platform name.
         /// </summary>
         [Output("platformName")]
-        public Output<string> PlatformName { get; private set; } = null!;
+        public Output<string?> PlatformName { get; private set; } = null!;
 
         /// <summary>
         /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
         /// </summary>
         [Output("platformType")]
-        public Output<string> PlatformType { get; private set; } = null!;
+        public Output<string?> PlatformType { get; private set; } = null!;
 
         /// <summary>
         /// Platform version.
         /// </summary>
         [Output("platformVersion")]
-        public Output<string> PlatformVersion { get; private set; } = null!;
+        public Output<string?> PlatformVersion { get; private set; } = null!;
 
         /// <summary>
         /// Processor count.
         /// </summary>
         [Output("processorCount")]
-        public Output<int> ProcessorCount { get; private set; } = null!;
+        public Output<int?> ProcessorCount { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the host.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the host insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the host insight was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

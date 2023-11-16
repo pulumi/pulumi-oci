@@ -194,7 +194,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Mobile Authenticator App Version
         /// </summary>
-        public readonly string AppVersion;
+        public readonly string? AppVersion;
         public readonly ImmutableArray<string> AttributeSets;
         public readonly string? Attributes;
         /// <summary>
@@ -204,52 +204,52 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
         /// </summary>
-        public readonly string AuthenticationMethod;
+        public readonly string? AuthenticationMethod;
         public readonly string? Authorization;
         /// <summary>
         /// Device base public Key
         /// </summary>
-        public readonly string BasePublicKey;
+        public readonly string? BasePublicKey;
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// Country code of user's Phone Number
         /// </summary>
-        public readonly string CountryCode;
+        public readonly string? CountryCode;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Device hardware name/model
         /// </summary>
-        public readonly string DeviceType;
+        public readonly string? DeviceType;
         /// <summary>
         /// Unique id sent from device
         /// </summary>
-        public readonly string DeviceUuid;
+        public readonly string? DeviceUuid;
         /// <summary>
         /// Device friendly display name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// Attribute added for replication log, it is not used by IDCS, just added as place holder
         /// </summary>
-        public readonly int ExpiresOn;
+        public readonly int? ExpiresOn;
         /// <summary>
         /// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
         /// </summary>
-        public readonly string ExternalId;
+        public readonly string? ExternalId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -270,19 +270,19 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Flag that indicates whether the device is enrolled for account recovery
         /// </summary>
-        public readonly bool IsAccRecEnabled;
+        public readonly bool? IsAccRecEnabled;
         /// <summary>
         /// Device Compliance Status
         /// </summary>
-        public readonly bool IsCompliant;
+        public readonly bool? IsCompliant;
         /// <summary>
         /// Last Sync time for device
         /// </summary>
-        public readonly string LastSyncTime;
+        public readonly string? LastSyncTime;
         /// <summary>
         /// The most recent timestamp when the device was successfully validated using one time passcode
         /// </summary>
-        public readonly string LastValidatedTime;
+        public readonly string? LastValidatedTime;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -295,19 +295,19 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The OCID of the user
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// Mobile Authenticator App Package Id
         /// </summary>
-        public readonly string PackageId;
+        public readonly string? PackageId;
         /// <summary>
         /// User's Phone Number
         /// </summary>
-        public readonly string PhoneNumber;
+        public readonly string? PhoneNumber;
         /// <summary>
         /// Device Platform
         /// </summary>
-        public readonly string Platform;
+        public readonly string? Platform;
         /// <summary>
         /// Push Notification target. Reference to Device notification related resource
         /// </summary>
@@ -315,7 +315,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Additional comments/reasons for the change in device status
         /// </summary>
-        public readonly string Reason;
+        public readonly string? Reason;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -324,15 +324,15 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
         /// </summary>
-        public readonly string Seed;
+        public readonly string? Seed;
         /// <summary>
         /// Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
         /// </summary>
-        public readonly string SeedDekId;
+        public readonly string? SeedDekId;
         /// <summary>
         /// Device Status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// A list of tags on this resource.
         /// </summary>
@@ -340,7 +340,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// User's third-party authentication factor details
         /// </summary>
@@ -354,7 +354,7 @@ namespace Pulumi.Oci.Identity
         private GetDomainsMyDeviceResult(
             ImmutableArray<Outputs.GetDomainsMyDeviceAdditionalAttributeResult> additionalAttributes,
 
-            string appVersion,
+            string? appVersion,
 
             ImmutableArray<string> attributeSets,
 
@@ -362,31 +362,31 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsMyDeviceAuthenticationFactorResult> authenticationFactors,
 
-            string authenticationMethod,
+            string? authenticationMethod,
 
             string? authorization,
 
-            string basePublicKey,
+            string? basePublicKey,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            string countryCode,
+            string? countryCode,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string deviceType,
+            string? deviceType,
 
-            string deviceUuid,
+            string? deviceUuid,
 
-            string displayName,
+            string? displayName,
 
-            string domainOcid,
+            string? domainOcid,
 
-            int expiresOn,
+            int? expiresOn,
 
-            string externalId,
+            string? externalId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsMyDeviceIdcsCreatedByResult> idcsCreatedBies,
 
@@ -394,17 +394,17 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsMyDeviceIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            bool isAccRecEnabled,
+            bool? isAccRecEnabled,
 
-            bool isCompliant,
+            bool? isCompliant,
 
-            string lastSyncTime,
+            string? lastSyncTime,
 
-            string lastValidatedTime,
+            string? lastValidatedTime,
 
             ImmutableArray<Outputs.GetDomainsMyDeviceMetaResult> metas,
 
@@ -412,31 +412,31 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsMyDeviceNonComplianceResult> nonCompliances,
 
-            string ocid,
+            string? ocid,
 
-            string packageId,
+            string? packageId,
 
-            string phoneNumber,
+            string? phoneNumber,
 
-            string platform,
+            string? platform,
 
             ImmutableArray<Outputs.GetDomainsMyDevicePushNotificationTargetResult> pushNotificationTargets,
 
-            string reason,
+            string? reason,
 
             string? resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
 
-            string seed,
+            string? seed,
 
-            string seedDekId,
+            string? seedDekId,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetDomainsMyDeviceTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
             ImmutableArray<Outputs.GetDomainsMyDeviceThirdPartyFactorResult> thirdPartyFactors,
 

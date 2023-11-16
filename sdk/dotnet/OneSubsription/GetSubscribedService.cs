@@ -136,23 +136,23 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscribed service admin email id
         /// </summary>
-        public readonly string AdminEmail;
+        public readonly string? AdminEmail;
         /// <summary>
         /// Subscribed service agreement ID
         /// </summary>
-        public readonly string AgreementId;
+        public readonly string? AgreementId;
         /// <summary>
         /// Subscribed service agrrement name
         /// </summary>
-        public readonly string AgreementName;
+        public readonly string? AgreementName;
         /// <summary>
         /// Subscribed service agrrement type
         /// </summary>
-        public readonly string AgreementType;
+        public readonly string? AgreementType;
         /// <summary>
         /// Commitment available amount
         /// </summary>
-        public readonly string AvailableAmount;
+        public readonly string? AvailableAmount;
         /// <summary>
         /// Address.
         /// </summary>
@@ -168,19 +168,19 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscribed service invoice frequency
         /// </summary>
-        public readonly string BillingFrequency;
+        public readonly string? BillingFrequency;
         /// <summary>
         /// Booking Opportunity Number of Subscribed Service
         /// </summary>
-        public readonly string BookingOptyNumber;
+        public readonly string? BookingOptyNumber;
         /// <summary>
         /// Subscribed service buyer email id
         /// </summary>
-        public readonly string BuyerEmail;
+        public readonly string? BuyerEmail;
         /// <summary>
         /// Subscribed service commitment schedule Id
         /// </summary>
-        public readonly string CommitmentScheduleId;
+        public readonly string? CommitmentScheduleId;
         /// <summary>
         /// List of Commitment services of a line
         /// </summary>
@@ -188,31 +188,31 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// User that created the Payment term
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Subscribed service credit percentage
         /// </summary>
-        public readonly string CreditPercentage;
+        public readonly string? CreditPercentage;
         /// <summary>
         /// Subscribed service CSI number
         /// </summary>
-        public readonly string Csi;
+        public readonly string? Csi;
         /// <summary>
         /// Identifier for a customer's transactions for purchase of ay oracle services
         /// </summary>
-        public readonly string CustomerTransactionReference;
+        public readonly string? CustomerTransactionReference;
         /// <summary>
         /// Subscribed service data center
         /// </summary>
-        public readonly string DataCenter;
+        public readonly string? DataCenter;
         /// <summary>
         /// Subscribed service data center region
         /// </summary>
-        public readonly string DataCenterRegion;
+        public readonly string? DataCenterRegion;
         /// <summary>
         /// Subscribed service eligible to renew field
         /// </summary>
-        public readonly string EligibleToRenew;
+        public readonly string? EligibleToRenew;
         /// <summary>
         /// Address.
         /// </summary>
@@ -229,119 +229,119 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscribed service fulfillment set
         /// </summary>
-        public readonly string FulfillmentSet;
+        public readonly string? FulfillmentSet;
         /// <summary>
         /// Funded Allocation line value example: 12000.00
         /// </summary>
-        public readonly string FundedAllocationValue;
+        public readonly string? FundedAllocationValue;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if a service can recieve usages and consequently have available amounts computed
         /// </summary>
-        public readonly bool IsAllowance;
+        public readonly bool? IsAllowance;
         /// <summary>
         /// If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
         /// </summary>
-        public readonly bool IsCapToPriceList;
+        public readonly bool? IsCapToPriceList;
         /// <summary>
         /// Used in context of service credit lines
         /// </summary>
-        public readonly bool IsCreditEnabled;
+        public readonly bool? IsCreditEnabled;
         /// <summary>
         /// Indicator on whether or not there has been usage for the subscribed service
         /// </summary>
-        public readonly bool IsHavingUsage;
+        public readonly bool? IsHavingUsage;
         /// <summary>
         /// Subscribed service intent to pay flag
         /// </summary>
-        public readonly bool IsIntentToPay;
+        public readonly bool? IsIntentToPay;
         /// <summary>
         /// Subscribed service payg flag
         /// </summary>
-        public readonly bool IsPayg;
+        public readonly bool? IsPayg;
         /// <summary>
         /// Indicates if the Subscribed service has a single ratecard
         /// </summary>
-        public readonly bool IsSingleRateCard;
+        public readonly bool? IsSingleRateCard;
         /// <summary>
         /// Indicates if the commitment lines can have different quantities
         /// </summary>
-        public readonly bool IsVariableCommitment;
+        public readonly bool? IsVariableCommitment;
         /// <summary>
         /// Subscribed service line net amount
         /// </summary>
-        public readonly string LineNetAmount;
+        public readonly string? LineNetAmount;
         /// <summary>
         /// Subscribed service Major Set
         /// </summary>
-        public readonly string MajorSet;
+        public readonly string? MajorSet;
         /// <summary>
         /// Rate card tier net unit price
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// Subscribed service operation type
         /// </summary>
-        public readonly string OperationType;
+        public readonly string? OperationType;
         /// <summary>
         /// Sales Order Header associated to the subscribed service
         /// </summary>
-        public readonly string OrderHeaderId;
+        public readonly string? OrderHeaderId;
         /// <summary>
         /// Sales Order Line Id associated to the subscribed service
         /// </summary>
-        public readonly string OrderLineId;
+        public readonly string? OrderLineId;
         /// <summary>
         /// Sales Order Line Number associated to the subscribed service
         /// </summary>
-        public readonly int OrderLineNumber;
+        public readonly int? OrderLineNumber;
         /// <summary>
         /// Sales Order Number associated to the subscribed service
         /// </summary>
-        public readonly string OrderNumber;
+        public readonly string? OrderNumber;
         /// <summary>
         /// Order Type of Subscribed Service
         /// </summary>
-        public readonly string OrderType;
+        public readonly string? OrderType;
         /// <summary>
         /// Subscribed service Promotion Amount
         /// </summary>
-        public readonly string OriginalPromoAmount;
+        public readonly string? OriginalPromoAmount;
         /// <summary>
         /// Overage Bill To of Subscribed Service
         /// </summary>
-        public readonly string OverageBillTo;
+        public readonly string? OverageBillTo;
         /// <summary>
         /// Subscribed service Overage Discount Percentage
         /// </summary>
-        public readonly string OverageDiscountPercentage;
+        public readonly string? OverageDiscountPercentage;
         /// <summary>
         /// Overage Policy of Subscribed Service
         /// </summary>
-        public readonly string OveragePolicy;
+        public readonly string? OveragePolicy;
         /// <summary>
         /// Subscribed service partner credit amount
         /// </summary>
-        public readonly string PartnerCreditAmount;
+        public readonly string? PartnerCreditAmount;
         /// <summary>
         /// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
         /// </summary>
-        public readonly string PartnerTransactionType;
+        public readonly string? PartnerTransactionType;
         /// <summary>
         /// Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
         /// </summary>
-        public readonly string PaygPolicy;
+        public readonly string? PaygPolicy;
         /// <summary>
         /// Payment Method of Subscribed Service
         /// </summary>
-        public readonly string PaymentMethod;
+        public readonly string? PaymentMethod;
         /// <summary>
         /// Payment Number of Subscribed Service
         /// </summary>
-        public readonly string PaymentNumber;
+        public readonly string? PaymentNumber;
         /// <summary>
         /// Payment Term details
         /// </summary>
@@ -349,11 +349,11 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
         /// </summary>
-        public readonly string PricePeriod;
+        public readonly string? PricePeriod;
         /// <summary>
         /// Subscribed service pricing model
         /// </summary>
-        public readonly string PricingModel;
+        public readonly string? PricingModel;
         /// <summary>
         /// Product description
         /// </summary>
@@ -361,31 +361,31 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscribed service program type
         /// </summary>
-        public readonly string ProgramType;
+        public readonly string? ProgramType;
         /// <summary>
         /// Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
         /// </summary>
-        public readonly string PromoOrderLineId;
+        public readonly string? PromoOrderLineId;
         /// <summary>
         /// Subscribed service promotion type
         /// </summary>
-        public readonly string PromoType;
+        public readonly string? PromoType;
         /// <summary>
         /// Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
         /// </summary>
-        public readonly string PromotionPricingType;
+        public readonly string? PromotionPricingType;
         /// <summary>
         /// Subscribed service provisioning source
         /// </summary>
-        public readonly string ProvisioningSource;
+        public readonly string? ProvisioningSource;
         /// <summary>
         /// Subscribed service quantity
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Subscribed service Rate Card Discount Percentage
         /// </summary>
-        public readonly string RateCardDiscountPercentage;
+        public readonly string? RateCardDiscountPercentage;
         /// <summary>
         /// List of Rate Cards of a Subscribed Service
         /// </summary>
@@ -393,23 +393,23 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// SPM Ratecard Type
         /// </summary>
-        public readonly string RatecardType;
+        public readonly string? RatecardType;
         /// <summary>
         /// Subscribed service Opportunity Id
         /// </summary>
-        public readonly string RenewalOptyId;
+        public readonly string? RenewalOptyId;
         /// <summary>
         /// Renewal Opportunity Number of Subscribed Service
         /// </summary>
-        public readonly string RenewalOptyNumber;
+        public readonly string? RenewalOptyNumber;
         /// <summary>
         /// Renewal Opportunity Type of Subscribed Service
         /// </summary>
-        public readonly string RenewalOptyType;
+        public readonly string? RenewalOptyType;
         /// <summary>
         /// SPM renewed Subscription ID
         /// </summary>
-        public readonly string RenewedSubscribedServiceId;
+        public readonly string? RenewedSubscribedServiceId;
         /// <summary>
         /// Address.
         /// </summary>
@@ -425,31 +425,31 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscribed service Revenue Line Id
         /// </summary>
-        public readonly string RevenueLineId;
+        public readonly string? RevenueLineId;
         /// <summary>
         /// Revenue Line NUmber of Subscribed Service
         /// </summary>
-        public readonly string RevenueLineNumber;
+        public readonly string? RevenueLineNumber;
         /// <summary>
         /// Subscribed service Revised ARR
         /// </summary>
-        public readonly string RevisedArrInLc;
+        public readonly string? RevisedArrInLc;
         /// <summary>
         /// Subscribed service Revised ARR in Standard Currency
         /// </summary>
-        public readonly string RevisedArrInSc;
+        public readonly string? RevisedArrInSc;
         /// <summary>
         /// Subscribed service sales account party id
         /// </summary>
-        public readonly string SalesAccountPartyId;
+        public readonly string? SalesAccountPartyId;
         /// <summary>
         /// Sales Channel of Subscribed Service
         /// </summary>
-        public readonly string SalesChannel;
+        public readonly string? SalesChannel;
         /// <summary>
         /// Subscribed service line number
         /// </summary>
-        public readonly string SerialNumber;
+        public readonly string? SerialNumber;
         /// <summary>
         /// Address.
         /// </summary>
@@ -473,11 +473,11 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscribed service start date type
         /// </summary>
-        public readonly string StartDateType;
+        public readonly string? StartDateType;
         /// <summary>
         /// Subscribed service status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// SPM internal Subscribed Service ID
         /// </summary>
@@ -485,115 +485,115 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// Subscription ID associated to the subscribed service
         /// </summary>
-        public readonly string SubscriptionId;
+        public readonly string? SubscriptionId;
         /// <summary>
         /// Subscribed service source
         /// </summary>
-        public readonly string SubscriptionSource;
+        public readonly string? SubscriptionSource;
         /// <summary>
         /// Subscribed service System ARR
         /// </summary>
-        public readonly string SystemArrInLc;
+        public readonly string? SystemArrInLc;
         /// <summary>
         /// Subscribed service System ARR in Standard Currency
         /// </summary>
-        public readonly string SystemArrInSc;
+        public readonly string? SystemArrInSc;
         /// <summary>
         /// Subscribed service System ATR-ARR
         /// </summary>
-        public readonly string SystemAtrArrInLc;
+        public readonly string? SystemAtrArrInLc;
         /// <summary>
         /// Subscribed service System ATR-ARR in Standard Currency
         /// </summary>
-        public readonly string SystemAtrArrInSc;
+        public readonly string? SystemAtrArrInSc;
         /// <summary>
         /// Term value in Months
         /// </summary>
-        public readonly string TermValue;
+        public readonly string? TermValue;
         /// <summary>
         /// Term value UOM
         /// </summary>
-        public readonly string TermValueUom;
+        public readonly string? TermValueUom;
         /// <summary>
         /// Subscribed service agrrement end date
         /// </summary>
-        public readonly string TimeAgreementEnd;
+        public readonly string? TimeAgreementEnd;
         /// <summary>
         /// Subscribed service creation date
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Subscribed service customer config date
         /// </summary>
-        public readonly string TimeCustomerConfig;
+        public readonly string? TimeCustomerConfig;
         /// <summary>
         /// Subscribed service end date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Subscribed service Major Set End date
         /// </summary>
-        public readonly string TimeMajorsetEnd;
+        public readonly string? TimeMajorsetEnd;
         /// <summary>
         /// Subscribed service Major Set Start date
         /// </summary>
-        public readonly string TimeMajorsetStart;
+        public readonly string? TimeMajorsetStart;
         /// <summary>
         /// Subscribed service payment expiry date
         /// </summary>
-        public readonly string TimePaymentExpiry;
+        public readonly string? TimePaymentExpiry;
         /// <summary>
         /// Subscribed service provisioning date
         /// </summary>
-        public readonly string TimeProvisioned;
+        public readonly string? TimeProvisioned;
         /// <summary>
         /// Subscribed service service configuration email sent date
         /// </summary>
-        public readonly string TimeServiceConfigurationEmailSent;
+        public readonly string? TimeServiceConfigurationEmailSent;
         /// <summary>
         /// Subscribed service start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Subscribed service last update date
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Subscribed service welcome email sent date
         /// </summary>
-        public readonly string TimeWelcomeEmailSent;
+        public readonly string? TimeWelcomeEmailSent;
         /// <summary>
         /// Subscribed service total value
         /// </summary>
-        public readonly string TotalValue;
+        public readonly string? TotalValue;
         /// <summary>
         /// Subscribed service Transaction Extension Id
         /// </summary>
-        public readonly string TransactionExtensionId;
+        public readonly string? TransactionExtensionId;
         /// <summary>
         /// Subscribed Service line type
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// User that updated the subscribed service
         /// </summary>
-        public readonly string UpdatedBy;
+        public readonly string? UpdatedBy;
         /// <summary>
         /// Subscribed service used amount
         /// </summary>
-        public readonly string UsedAmount;
+        public readonly string? UsedAmount;
 
         [OutputConstructor]
         private GetSubscribedServiceResult(
-            string adminEmail,
+            string? adminEmail,
 
-            string agreementId,
+            string? agreementId,
 
-            string agreementName,
+            string? agreementName,
 
-            string agreementType,
+            string? agreementType,
 
-            string availableAmount,
+            string? availableAmount,
 
             ImmutableArray<Outputs.GetSubscribedServiceBillToAddressResult> billToAddresses,
 
@@ -601,29 +601,29 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetSubscribedServiceBillToCustomerResult> billToCustomers,
 
-            string billingFrequency,
+            string? billingFrequency,
 
-            string bookingOptyNumber,
+            string? bookingOptyNumber,
 
-            string buyerEmail,
+            string? buyerEmail,
 
-            string commitmentScheduleId,
+            string? commitmentScheduleId,
 
             ImmutableArray<Outputs.GetSubscribedServiceCommitmentServiceResult> commitmentServices,
 
-            string createdBy,
+            string? createdBy,
 
-            string creditPercentage,
+            string? creditPercentage,
 
-            string csi,
+            string? csi,
 
-            string customerTransactionReference,
+            string? customerTransactionReference,
 
-            string dataCenter,
+            string? dataCenter,
 
-            string dataCenterRegion,
+            string? dataCenterRegion,
 
-            string eligibleToRenew,
+            string? eligibleToRenew,
 
             ImmutableArray<Outputs.GetSubscribedServiceEndUserAddressResult> endUserAddresses,
 
@@ -633,97 +633,97 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<string> fields,
 
-            string fulfillmentSet,
+            string? fulfillmentSet,
 
-            string fundedAllocationValue,
+            string? fundedAllocationValue,
 
-            string id,
+            string? id,
 
-            bool isAllowance,
+            bool? isAllowance,
 
-            bool isCapToPriceList,
+            bool? isCapToPriceList,
 
-            bool isCreditEnabled,
+            bool? isCreditEnabled,
 
-            bool isHavingUsage,
+            bool? isHavingUsage,
 
-            bool isIntentToPay,
+            bool? isIntentToPay,
 
-            bool isPayg,
+            bool? isPayg,
 
-            bool isSingleRateCard,
+            bool? isSingleRateCard,
 
-            bool isVariableCommitment,
+            bool? isVariableCommitment,
 
-            string lineNetAmount,
+            string? lineNetAmount,
 
-            string majorSet,
+            string? majorSet,
 
-            string netUnitPrice,
+            string? netUnitPrice,
 
-            string operationType,
+            string? operationType,
 
-            string orderHeaderId,
+            string? orderHeaderId,
 
-            string orderLineId,
+            string? orderLineId,
 
-            int orderLineNumber,
+            int? orderLineNumber,
 
-            string orderNumber,
+            string? orderNumber,
 
-            string orderType,
+            string? orderType,
 
-            string originalPromoAmount,
+            string? originalPromoAmount,
 
-            string overageBillTo,
+            string? overageBillTo,
 
-            string overageDiscountPercentage,
+            string? overageDiscountPercentage,
 
-            string overagePolicy,
+            string? overagePolicy,
 
-            string partnerCreditAmount,
+            string? partnerCreditAmount,
 
-            string partnerTransactionType,
+            string? partnerTransactionType,
 
-            string paygPolicy,
+            string? paygPolicy,
 
-            string paymentMethod,
+            string? paymentMethod,
 
-            string paymentNumber,
+            string? paymentNumber,
 
             ImmutableArray<Outputs.GetSubscribedServicePaymentTermResult> paymentTerms,
 
-            string pricePeriod,
+            string? pricePeriod,
 
-            string pricingModel,
+            string? pricingModel,
 
             ImmutableArray<Outputs.GetSubscribedServiceProductResult> products,
 
-            string programType,
+            string? programType,
 
-            string promoOrderLineId,
+            string? promoOrderLineId,
 
-            string promoType,
+            string? promoType,
 
-            string promotionPricingType,
+            string? promotionPricingType,
 
-            string provisioningSource,
+            string? provisioningSource,
 
-            string quantity,
+            string? quantity,
 
-            string rateCardDiscountPercentage,
+            string? rateCardDiscountPercentage,
 
             ImmutableArray<Outputs.GetSubscribedServiceRateCardResult> rateCards,
 
-            string ratecardType,
+            string? ratecardType,
 
-            string renewalOptyId,
+            string? renewalOptyId,
 
-            string renewalOptyNumber,
+            string? renewalOptyNumber,
 
-            string renewalOptyType,
+            string? renewalOptyType,
 
-            string renewedSubscribedServiceId,
+            string? renewedSubscribedServiceId,
 
             ImmutableArray<Outputs.GetSubscribedServiceResellerAddressResult> resellerAddresses,
 
@@ -731,19 +731,19 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetSubscribedServiceResellerCustomerResult> resellerCustomers,
 
-            string revenueLineId,
+            string? revenueLineId,
 
-            string revenueLineNumber,
+            string? revenueLineNumber,
 
-            string revisedArrInLc,
+            string? revisedArrInLc,
 
-            string revisedArrInSc,
+            string? revisedArrInSc,
 
-            string salesAccountPartyId,
+            string? salesAccountPartyId,
 
-            string salesChannel,
+            string? salesChannel,
 
-            string serialNumber,
+            string? serialNumber,
 
             ImmutableArray<Outputs.GetSubscribedServiceServiceToAddressResult> serviceToAddresses,
 
@@ -755,61 +755,61 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetSubscribedServiceSoldToCustomerResult> soldToCustomers,
 
-            string startDateType,
+            string? startDateType,
 
-            string status,
+            string? status,
 
             string subscribedServiceId,
 
-            string subscriptionId,
+            string? subscriptionId,
 
-            string subscriptionSource,
+            string? subscriptionSource,
 
-            string systemArrInLc,
+            string? systemArrInLc,
 
-            string systemArrInSc,
+            string? systemArrInSc,
 
-            string systemAtrArrInLc,
+            string? systemAtrArrInLc,
 
-            string systemAtrArrInSc,
+            string? systemAtrArrInSc,
 
-            string termValue,
+            string? termValue,
 
-            string termValueUom,
+            string? termValueUom,
 
-            string timeAgreementEnd,
+            string? timeAgreementEnd,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeCustomerConfig,
+            string? timeCustomerConfig,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeMajorsetEnd,
+            string? timeMajorsetEnd,
 
-            string timeMajorsetStart,
+            string? timeMajorsetStart,
 
-            string timePaymentExpiry,
+            string? timePaymentExpiry,
 
-            string timeProvisioned,
+            string? timeProvisioned,
 
-            string timeServiceConfigurationEmailSent,
+            string? timeServiceConfigurationEmailSent,
 
-            string timeStart,
+            string? timeStart,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string timeWelcomeEmailSent,
+            string? timeWelcomeEmailSent,
 
-            string totalValue,
+            string? totalValue,
 
-            string transactionExtensionId,
+            string? transactionExtensionId,
 
-            string type,
+            string? type,
 
-            string updatedBy,
+            string? updatedBy,
 
-            string usedAmount)
+            string? usedAmount)
         {
             AdminEmail = adminEmail;
             AgreementId = agreementId;

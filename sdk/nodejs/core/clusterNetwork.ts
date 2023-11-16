@@ -117,7 +117,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      *
      * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
      */
-    public readonly clusterConfiguration!: pulumi.Output<outputs.Core.ClusterNetworkClusterConfiguration>;
+    public readonly clusterConfiguration!: pulumi.Output<outputs.Core.ClusterNetworkClusterConfiguration | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
@@ -125,19 +125,19 @@ export class ClusterNetwork extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      */
-    public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
+    public /*out*/ readonly hpcIslandId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
      *
@@ -147,7 +147,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
     /**
      * The list of network block OCIDs.
      */
-    public /*out*/ readonly networkBlockIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly networkBlockIds!: pulumi.Output<string[] | undefined>;
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */
@@ -155,15 +155,15 @@ export class ClusterNetwork extends pulumi.CustomResource {
     /**
      * The current state of the cluster network.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ClusterNetwork resource with the given unique name, arguments, and options.

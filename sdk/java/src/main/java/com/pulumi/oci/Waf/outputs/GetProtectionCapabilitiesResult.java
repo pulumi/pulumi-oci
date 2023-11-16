@@ -27,7 +27,7 @@ public final class GetProtectionCapabilitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The field that shows if this is the latest version of protection capability.
      * 
@@ -42,7 +42,7 @@ public final class GetProtectionCapabilitiesResult {
      * @return The list of protection_capability_collection.
      * 
      */
-    private List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
+    private @Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
     /**
      * @return The type of protection capability.
      * * **REQUEST_PROTECTION_CAPABILITY** can only be used in `requestProtection` module of WebAppFirewallPolicy.
@@ -72,8 +72,8 @@ public final class GetProtectionCapabilitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The field that shows if this is the latest version of protection capability.
@@ -94,7 +94,7 @@ public final class GetProtectionCapabilitiesResult {
      * 
      */
     public List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections() {
-        return this.protectionCapabilityCollections;
+        return this.protectionCapabilityCollections == null ? List.of() : this.protectionCapabilityCollections;
     }
     /**
      * @return The type of protection capability.
@@ -119,10 +119,10 @@ public final class GetProtectionCapabilitiesResult {
         private @Nullable String displayName;
         private @Nullable List<GetProtectionCapabilitiesFilter> filters;
         private @Nullable List<String> groupTags;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<Boolean> isLatestVersions;
         private @Nullable String key;
-        private List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
+        private @Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections;
         private @Nullable String type;
         public Builder() {}
         public Builder(GetProtectionCapabilitiesResult defaults) {
@@ -165,8 +165,8 @@ public final class GetProtectionCapabilitiesResult {
             return groupTags(List.of(groupTags));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -183,8 +183,8 @@ public final class GetProtectionCapabilitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder protectionCapabilityCollections(List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections) {
-            this.protectionCapabilityCollections = Objects.requireNonNull(protectionCapabilityCollections);
+        public Builder protectionCapabilityCollections(@Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollection> protectionCapabilityCollections) {
+            this.protectionCapabilityCollections = protectionCapabilityCollections;
             return this;
         }
         public Builder protectionCapabilityCollections(GetProtectionCapabilitiesProtectionCapabilityCollection... protectionCapabilityCollections) {

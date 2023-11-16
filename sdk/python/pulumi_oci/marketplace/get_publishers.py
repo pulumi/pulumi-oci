@@ -52,7 +52,7 @@ class GetPublishersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetPublishersResult:
 
     @property
     @pulumi.getter
-    def publishers(self) -> Sequence['outputs.GetPublishersPublisherResult']:
-        """
-        The list of publishers.
-        """
+    def publishers(self) -> Optional[Sequence['outputs.GetPublishersPublisherResult']]:
         return pulumi.get(self, "publishers")
 
 
@@ -90,23 +87,7 @@ def get_publishers(compartment_id: Optional[str] = None,
                    publisher_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublishersResult:
     """
-    This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=var["compartment_id"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str publisher_id: Limit results to just this publisher.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_publishers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
                           publisher_id: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublishersResult]:
     """
-    This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=var["compartment_id"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str publisher_id: Limit results to just this publisher.
+    Use this data source to access information about an existing resource.
     """
     ...

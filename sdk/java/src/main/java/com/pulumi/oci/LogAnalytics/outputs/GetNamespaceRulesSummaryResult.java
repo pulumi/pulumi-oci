@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceRulesSummaryResult {
@@ -15,23 +17,23 @@ public final class GetNamespaceRulesSummaryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The count of ingest time rules.
      * 
      */
-    private Integer ingestTimeRulesCount;
+    private @Nullable Integer ingestTimeRulesCount;
     private String namespace;
     /**
      * @return The count of saved search rules.
      * 
      */
-    private Integer savedSearchRulesCount;
+    private @Nullable Integer savedSearchRulesCount;
     /**
      * @return The total count of detection rules.
      * 
      */
-    private Integer totalCount;
+    private @Nullable Integer totalCount;
 
     private GetNamespaceRulesSummaryResult() {}
     public String compartmentId() {
@@ -41,15 +43,15 @@ public final class GetNamespaceRulesSummaryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The count of ingest time rules.
      * 
      */
-    public Integer ingestTimeRulesCount() {
-        return this.ingestTimeRulesCount;
+    public Optional<Integer> ingestTimeRulesCount() {
+        return Optional.ofNullable(this.ingestTimeRulesCount);
     }
     public String namespace() {
         return this.namespace;
@@ -58,15 +60,15 @@ public final class GetNamespaceRulesSummaryResult {
      * @return The count of saved search rules.
      * 
      */
-    public Integer savedSearchRulesCount() {
-        return this.savedSearchRulesCount;
+    public Optional<Integer> savedSearchRulesCount() {
+        return Optional.ofNullable(this.savedSearchRulesCount);
     }
     /**
      * @return The total count of detection rules.
      * 
      */
-    public Integer totalCount() {
-        return this.totalCount;
+    public Optional<Integer> totalCount() {
+        return Optional.ofNullable(this.totalCount);
     }
 
     public static Builder builder() {
@@ -79,11 +81,11 @@ public final class GetNamespaceRulesSummaryResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private Integer ingestTimeRulesCount;
+        private @Nullable String id;
+        private @Nullable Integer ingestTimeRulesCount;
         private String namespace;
-        private Integer savedSearchRulesCount;
-        private Integer totalCount;
+        private @Nullable Integer savedSearchRulesCount;
+        private @Nullable Integer totalCount;
         public Builder() {}
         public Builder(GetNamespaceRulesSummaryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,13 +103,13 @@ public final class GetNamespaceRulesSummaryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ingestTimeRulesCount(Integer ingestTimeRulesCount) {
-            this.ingestTimeRulesCount = Objects.requireNonNull(ingestTimeRulesCount);
+        public Builder ingestTimeRulesCount(@Nullable Integer ingestTimeRulesCount) {
+            this.ingestTimeRulesCount = ingestTimeRulesCount;
             return this;
         }
         @CustomType.Setter
@@ -116,13 +118,13 @@ public final class GetNamespaceRulesSummaryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder savedSearchRulesCount(Integer savedSearchRulesCount) {
-            this.savedSearchRulesCount = Objects.requireNonNull(savedSearchRulesCount);
+        public Builder savedSearchRulesCount(@Nullable Integer savedSearchRulesCount) {
+            this.savedSearchRulesCount = savedSearchRulesCount;
             return this;
         }
         @CustomType.Setter
-        public Builder totalCount(Integer totalCount) {
-            this.totalCount = Objects.requireNonNull(totalCount);
+        public Builder totalCount(@Nullable Integer totalCount) {
+            this.totalCount = totalCount;
             return this;
         }
         public GetNamespaceRulesSummaryResult build() {

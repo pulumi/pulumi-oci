@@ -23,7 +23,7 @@ public final class GetIpsecConnectionsResult {
      * @return The list of connections.
      * 
      */
-    private List<GetIpsecConnectionsConnection> connections;
+    private @Nullable List<GetIpsecConnectionsConnection> connections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
      * 
@@ -39,7 +39,7 @@ public final class GetIpsecConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetIpsecConnectionsResult() {}
     /**
@@ -54,7 +54,7 @@ public final class GetIpsecConnectionsResult {
      * 
      */
     public List<GetIpsecConnectionsConnection> connections() {
-        return this.connections;
+        return this.connections == null ? List.of() : this.connections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
@@ -77,8 +77,8 @@ public final class GetIpsecConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -91,11 +91,11 @@ public final class GetIpsecConnectionsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetIpsecConnectionsConnection> connections;
+        private @Nullable List<GetIpsecConnectionsConnection> connections;
         private @Nullable String cpeId;
         private @Nullable String drgId;
         private @Nullable List<GetIpsecConnectionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetIpsecConnectionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,8 +113,8 @@ public final class GetIpsecConnectionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder connections(List<GetIpsecConnectionsConnection> connections) {
-            this.connections = Objects.requireNonNull(connections);
+        public Builder connections(@Nullable List<GetIpsecConnectionsConnection> connections) {
+            this.connections = connections;
             return this;
         }
         public Builder connections(GetIpsecConnectionsConnection... connections) {
@@ -139,8 +139,8 @@ public final class GetIpsecConnectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetIpsecConnectionsResult build() {

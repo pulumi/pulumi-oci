@@ -59,7 +59,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly allowedChars!: pulumi.Output<string>;
+    public readonly allowedChars!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -85,7 +85,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      *
@@ -99,7 +99,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly configuredPasswordPolicyRules!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyConfiguredPasswordPolicyRule[]>;
+    public /*out*/ readonly configuredPasswordPolicyRules!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyConfiguredPasswordPolicyRule[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -113,7 +113,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A String that describes the password policy
      *
@@ -126,7 +126,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A delimiter used to separate characters in the dictionary file
      *
@@ -139,7 +139,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly dictionaryDelimiter!: pulumi.Output<string>;
+    public readonly dictionaryDelimiter!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      *
@@ -152,7 +152,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly dictionaryLocation!: pulumi.Output<string>;
+    public readonly dictionaryLocation!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether the password can match a dictionary word
      *
@@ -165,7 +165,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly dictionaryWordDisallowed!: pulumi.Output<boolean>;
+    public readonly dictionaryWordDisallowed!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      *
@@ -178,7 +178,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedChars!: pulumi.Output<string>;
+    public readonly disallowedChars!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      *
@@ -191,7 +191,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedSubstrings!: pulumi.Output<string[]>;
+    public readonly disallowedSubstrings!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) List of User attributes whose values are not allowed in the password.
      *
@@ -206,7 +206,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly disallowedUserAttributeValues!: pulumi.Output<string[]>;
+    public readonly disallowedUserAttributeValues!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The number of distinct characters between old password and new password
      *
@@ -221,7 +221,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly distinctCharacters!: pulumi.Output<number>;
+    public readonly distinctCharacters!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -235,7 +235,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -248,7 +248,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    public readonly externalId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      *
@@ -261,7 +261,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly firstNameDisallowed!: pulumi.Output<boolean>;
+    public readonly firstNameDisallowed!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      *
@@ -274,7 +274,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly forcePasswordReset!: pulumi.Output<boolean>;
+    public readonly forcePasswordReset!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of groups that the password policy belongs to.
      *
@@ -291,7 +291,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly groups!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyGroup[]>;
+    public readonly groups!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyGroup[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -303,7 +303,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -319,7 +319,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -333,7 +333,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -346,7 +346,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the user's last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      *
@@ -359,7 +359,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly lastNameDisallowed!: pulumi.Output<boolean>;
+    public readonly lastNameDisallowed!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      *
@@ -372,7 +372,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly lockoutDuration!: pulumi.Output<number>;
+    public readonly lockoutDuration!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An integer that represents the maximum number of failed logins before an account is locked
      *
@@ -385,7 +385,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxIncorrectAttempts!: pulumi.Output<number>;
+    public readonly maxIncorrectAttempts!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      *
@@ -399,7 +399,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxLength!: pulumi.Output<number>;
+    public readonly maxLength!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      *
@@ -412,7 +412,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxRepeatedChars!: pulumi.Output<number>;
+    public readonly maxRepeatedChars!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      *
@@ -425,7 +425,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly maxSpecialChars!: pulumi.Output<number>;
+    public readonly maxSpecialChars!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -439,7 +439,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyMeta[] | undefined>;
     /**
      * (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      *
@@ -452,7 +452,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minAlphaNumerals!: pulumi.Output<number>;
+    public readonly minAlphaNumerals!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      *
@@ -465,7 +465,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minAlphas!: pulumi.Output<number>;
+    public readonly minAlphas!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      *
@@ -478,7 +478,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minLength!: pulumi.Output<number>;
+    public readonly minLength!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      *
@@ -491,7 +491,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minLowerCase!: pulumi.Output<number>;
+    public readonly minLowerCase!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      *
@@ -504,7 +504,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minNumerals!: pulumi.Output<number>;
+    public readonly minNumerals!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Minimum time after which the user can resubmit the reset password request
      *
@@ -517,7 +517,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minPasswordAge!: pulumi.Output<number>;
+    public readonly minPasswordAge!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      *
@@ -530,7 +530,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minSpecialChars!: pulumi.Output<number>;
+    public readonly minSpecialChars!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      *
@@ -543,7 +543,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minUniqueChars!: pulumi.Output<number>;
+    public readonly minUniqueChars!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      *
@@ -556,7 +556,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly minUpperCase!: pulumi.Output<number>;
+    public readonly minUpperCase!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      *
@@ -583,7 +583,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly numPasswordsInHistory!: pulumi.Output<number>;
+    public readonly numPasswordsInHistory!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -597,7 +597,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
      *
@@ -610,7 +610,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly passwordExpireWarning!: pulumi.Output<number>;
+    public readonly passwordExpireWarning!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The number of days after which the password expires automatically
      *
@@ -623,7 +623,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly passwordExpiresAfter!: pulumi.Output<number>;
+    public readonly passwordExpiresAfter!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
      *
@@ -636,7 +636,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly passwordStrength!: pulumi.Output<string>;
+    public readonly passwordStrength!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Password policy priority
      *
@@ -652,7 +652,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: server
      */
-    public readonly priority!: pulumi.Output<number>;
+    public readonly priority!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      *
@@ -665,7 +665,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly requiredChars!: pulumi.Output<string>;
+    public readonly requiredChars!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -696,7 +696,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly startsWithAlphabet!: pulumi.Output<boolean>;
+    public readonly startsWithAlphabet!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -710,7 +710,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsPasswordPolicyTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -724,7 +724,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      *
@@ -741,7 +741,7 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userNameDisallowed!: pulumi.Output<boolean>;
+    public readonly userNameDisallowed!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a DomainsPasswordPolicy resource with the given unique name, arguments, and options.

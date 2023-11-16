@@ -44,56 +44,56 @@ export interface GetClusterNetworkArgs {
  * A collection of values returned by getClusterNetwork.
  */
 export interface GetClusterNetworkResult {
-    readonly clusterConfigurations: outputs.Core.GetClusterNetworkClusterConfiguration[];
+    readonly clusterConfigurations?: outputs.Core.GetClusterNetworkClusterConfiguration[];
     readonly clusterNetworkId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      */
-    readonly hpcIslandId: string;
+    readonly hpcIslandId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The instance pools in the cluster network.
      */
-    readonly instancePools: outputs.Core.GetClusterNetworkInstancePool[];
+    readonly instancePools?: outputs.Core.GetClusterNetworkInstancePool[];
     /**
      * The list of network block OCIDs of the HPC island.
      */
-    readonly networkBlockIds: string[];
+    readonly networkBlockIds?: string[];
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */
-    readonly placementConfigurations: outputs.Core.GetClusterNetworkPlacementConfiguration[];
+    readonly placementConfigurations?: outputs.Core.GetClusterNetworkPlacementConfiguration[];
     /**
      * The current state of the cluster network.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.

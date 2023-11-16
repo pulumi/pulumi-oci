@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
@@ -17,219 +19,219 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
      * @return The application suite name identifying a collection of applications. The default value is GENERIC. It&#39;s useful only if maintaining a sensitive data model for a suite of applications.
      * 
      */
-    private String appSuiteName;
+    private @Nullable String appSuiteName;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the sensitive data model.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the sensitive data model.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
-    private Boolean isAppDefinedRelationDiscoveryEnabled;
+    private @Nullable Boolean isAppDefinedRelationDiscoveryEnabled;
     /**
      * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
-    private Boolean isIncludeAllSchemas;
+    private @Nullable Boolean isIncludeAllSchemas;
     /**
      * @return Indicates if all the existing sensitive types should be used by data discovery jobs.If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
      * 
      */
-    private Boolean isIncludeAllSensitiveTypes;
+    private @Nullable Boolean isIncludeAllSensitiveTypes;
     /**
      * @return Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
-    private Boolean isSampleDataCollectionEnabled;
+    private @Nullable Boolean isSampleDataCollectionEnabled;
     /**
      * @return The schemas to be scanned by data discovery jobs.
      * 
      */
-    private List<String> schemasForDiscoveries;
+    private @Nullable List<String> schemasForDiscoveries;
     /**
      * @return The OCIDs of the sensitive types to be used by data discovery jobs.
      * 
      */
-    private List<String> sensitiveTypeIdsForDiscoveries;
+    private @Nullable List<String> sensitiveTypeIdsForDiscoveries;
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetSensitiveDataModelsSensitiveDataModelCollectionItem() {}
     /**
      * @return The application suite name identifying a collection of applications. The default value is GENERIC. It&#39;s useful only if maintaining a sensitive data model for a suite of applications.
      * 
      */
-    public String appSuiteName() {
-        return this.appSuiteName;
+    public Optional<String> appSuiteName() {
+        return Optional.ofNullable(this.appSuiteName);
     }
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the sensitive data model.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the sensitive data model.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It&#39;s disabled by default and should be used only if there is a need to identify application-level relationships.
      * 
      */
-    public Boolean isAppDefinedRelationDiscoveryEnabled() {
-        return this.isAppDefinedRelationDiscoveryEnabled;
+    public Optional<Boolean> isAppDefinedRelationDiscoveryEnabled() {
+        return Optional.ofNullable(this.isAppDefinedRelationDiscoveryEnabled);
     }
     /**
      * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
      * 
      */
-    public Boolean isIncludeAllSchemas() {
-        return this.isIncludeAllSchemas;
+    public Optional<Boolean> isIncludeAllSchemas() {
+        return Optional.ofNullable(this.isIncludeAllSchemas);
     }
     /**
      * @return Indicates if all the existing sensitive types should be used by data discovery jobs.If it&#39;s set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery.
      * 
      */
-    public Boolean isIncludeAllSensitiveTypes() {
-        return this.isIncludeAllSensitiveTypes;
+    public Optional<Boolean> isIncludeAllSensitiveTypes() {
+        return Optional.ofNullable(this.isIncludeAllSensitiveTypes);
     }
     /**
      * @return Indicates if data discovery jobs should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it&#39;s disabled by default and should be used only if it&#39;s acceptable to store sample data in Data Safe&#39;s repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      * 
      */
-    public Boolean isSampleDataCollectionEnabled() {
-        return this.isSampleDataCollectionEnabled;
+    public Optional<Boolean> isSampleDataCollectionEnabled() {
+        return Optional.ofNullable(this.isSampleDataCollectionEnabled);
     }
     /**
      * @return The schemas to be scanned by data discovery jobs.
      * 
      */
     public List<String> schemasForDiscoveries() {
-        return this.schemasForDiscoveries;
+        return this.schemasForDiscoveries == null ? List.of() : this.schemasForDiscoveries;
     }
     /**
      * @return The OCIDs of the sensitive types to be used by data discovery jobs.
      * 
      */
     public List<String> sensitiveTypeIdsForDiscoveries() {
-        return this.sensitiveTypeIdsForDiscoveries;
+        return this.sensitiveTypeIdsForDiscoveries == null ? List.of() : this.sensitiveTypeIdsForDiscoveries;
     }
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -241,24 +243,24 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String appSuiteName;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isAppDefinedRelationDiscoveryEnabled;
-        private Boolean isIncludeAllSchemas;
-        private Boolean isIncludeAllSensitiveTypes;
-        private Boolean isSampleDataCollectionEnabled;
-        private List<String> schemasForDiscoveries;
-        private List<String> sensitiveTypeIdsForDiscoveries;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String targetId;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String appSuiteName;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isAppDefinedRelationDiscoveryEnabled;
+        private @Nullable Boolean isIncludeAllSchemas;
+        private @Nullable Boolean isIncludeAllSensitiveTypes;
+        private @Nullable Boolean isSampleDataCollectionEnabled;
+        private @Nullable List<String> schemasForDiscoveries;
+        private @Nullable List<String> sensitiveTypeIdsForDiscoveries;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveDataModelCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -283,99 +285,99 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder appSuiteName(String appSuiteName) {
-            this.appSuiteName = Objects.requireNonNull(appSuiteName);
+        public Builder appSuiteName(@Nullable String appSuiteName) {
+            this.appSuiteName = appSuiteName;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAppDefinedRelationDiscoveryEnabled(Boolean isAppDefinedRelationDiscoveryEnabled) {
-            this.isAppDefinedRelationDiscoveryEnabled = Objects.requireNonNull(isAppDefinedRelationDiscoveryEnabled);
+        public Builder isAppDefinedRelationDiscoveryEnabled(@Nullable Boolean isAppDefinedRelationDiscoveryEnabled) {
+            this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isIncludeAllSchemas(Boolean isIncludeAllSchemas) {
-            this.isIncludeAllSchemas = Objects.requireNonNull(isIncludeAllSchemas);
+        public Builder isIncludeAllSchemas(@Nullable Boolean isIncludeAllSchemas) {
+            this.isIncludeAllSchemas = isIncludeAllSchemas;
             return this;
         }
         @CustomType.Setter
-        public Builder isIncludeAllSensitiveTypes(Boolean isIncludeAllSensitiveTypes) {
-            this.isIncludeAllSensitiveTypes = Objects.requireNonNull(isIncludeAllSensitiveTypes);
+        public Builder isIncludeAllSensitiveTypes(@Nullable Boolean isIncludeAllSensitiveTypes) {
+            this.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
             return this;
         }
         @CustomType.Setter
-        public Builder isSampleDataCollectionEnabled(Boolean isSampleDataCollectionEnabled) {
-            this.isSampleDataCollectionEnabled = Objects.requireNonNull(isSampleDataCollectionEnabled);
+        public Builder isSampleDataCollectionEnabled(@Nullable Boolean isSampleDataCollectionEnabled) {
+            this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder schemasForDiscoveries(List<String> schemasForDiscoveries) {
-            this.schemasForDiscoveries = Objects.requireNonNull(schemasForDiscoveries);
+        public Builder schemasForDiscoveries(@Nullable List<String> schemasForDiscoveries) {
+            this.schemasForDiscoveries = schemasForDiscoveries;
             return this;
         }
         public Builder schemasForDiscoveries(String... schemasForDiscoveries) {
             return schemasForDiscoveries(List.of(schemasForDiscoveries));
         }
         @CustomType.Setter
-        public Builder sensitiveTypeIdsForDiscoveries(List<String> sensitiveTypeIdsForDiscoveries) {
-            this.sensitiveTypeIdsForDiscoveries = Objects.requireNonNull(sensitiveTypeIdsForDiscoveries);
+        public Builder sensitiveTypeIdsForDiscoveries(@Nullable List<String> sensitiveTypeIdsForDiscoveries) {
+            this.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             return this;
         }
         public Builder sensitiveTypeIdsForDiscoveries(String... sensitiveTypeIdsForDiscoveries) {
             return sensitiveTypeIdsForDiscoveries(List.of(sensitiveTypeIdsForDiscoveries));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSensitiveDataModelsSensitiveDataModelCollectionItem build() {

@@ -46,7 +46,7 @@ class GetNamespaceStorageRecallCountResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,42 +59,27 @@ class GetNamespaceStorageRecallCountResult:
 
     @property
     @pulumi.getter(name="recallCount")
-    def recall_count(self) -> int:
-        """
-        This is the total number of recalls made so far
-        """
+    def recall_count(self) -> Optional[int]:
         return pulumi.get(self, "recall_count")
 
     @property
     @pulumi.getter(name="recallFailed")
-    def recall_failed(self) -> int:
-        """
-        This is the number of recalls that failed
-        """
+    def recall_failed(self) -> Optional[int]:
         return pulumi.get(self, "recall_failed")
 
     @property
     @pulumi.getter(name="recallLimit")
-    def recall_limit(self) -> int:
-        """
-        This is the maximum number of recalls (including successful and pending recalls) allowed
-        """
+    def recall_limit(self) -> Optional[int]:
         return pulumi.get(self, "recall_limit")
 
     @property
     @pulumi.getter(name="recallPending")
-    def recall_pending(self) -> int:
-        """
-        This is the number of recalls in pending state
-        """
+    def recall_pending(self) -> Optional[int]:
         return pulumi.get(self, "recall_pending")
 
     @property
     @pulumi.getter(name="recallSucceeded")
-    def recall_succeeded(self) -> int:
-        """
-        This is the number of recalls that succeeded
-        """
+    def recall_succeeded(self) -> Optional[int]:
         return pulumi.get(self, "recall_succeeded")
 
 
@@ -116,21 +101,7 @@ class AwaitableGetNamespaceStorageRecallCountResult(GetNamespaceStorageRecallCou
 def get_namespace_storage_recall_count(namespace: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceStorageRecallCountResult:
     """
-    This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the number of recalls made and the maximum recalls that can be made
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_recall_count = oci.LogAnalytics.get_namespace_storage_recall_count(namespace=var["namespace_storage_recall_count_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -151,20 +122,6 @@ def get_namespace_storage_recall_count(namespace: Optional[str] = None,
 def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageRecallCountResult]:
     """
-    This data source provides details about a specific Namespace Storage Recall Count resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the number of recalls made and the maximum recalls that can be made
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_recall_count = oci.LogAnalytics.get_namespace_storage_recall_count(namespace=var["namespace_storage_recall_count_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

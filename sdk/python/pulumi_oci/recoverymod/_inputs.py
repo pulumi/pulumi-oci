@@ -27,15 +27,6 @@ class ProtectedDatabaseMetricArgs:
                  is_redo_logs_enabled: Optional[pulumi.Input[bool]] = None,
                  retention_period_in_days: Optional[pulumi.Input[float]] = None,
                  unprotected_window_in_seconds: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] backup_space_estimate_in_gbs: The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        :param pulumi.Input[float] backup_space_used_in_gbs: Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        :param pulumi.Input[float] current_retention_period_in_seconds: Number of seconds backups are currently retained for this database.
-        :param pulumi.Input[float] db_size_in_gbs: The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        :param pulumi.Input[bool] is_redo_logs_enabled: The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param pulumi.Input[float] retention_period_in_days: The maximum number of days to retain backups for a protected database.
-        :param pulumi.Input[float] unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
         if backup_space_estimate_in_gbs is not None:
             pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         if backup_space_used_in_gbs is not None:
@@ -54,9 +45,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
     def backup_space_estimate_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-        """
         return pulumi.get(self, "backup_space_estimate_in_gbs")
 
     @backup_space_estimate_in_gbs.setter
@@ -66,9 +54,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="backupSpaceUsedInGbs")
     def backup_space_used_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-        """
         return pulumi.get(self, "backup_space_used_in_gbs")
 
     @backup_space_used_in_gbs.setter
@@ -78,9 +63,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="currentRetentionPeriodInSeconds")
     def current_retention_period_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        Number of seconds backups are currently retained for this database.
-        """
         return pulumi.get(self, "current_retention_period_in_seconds")
 
     @current_retention_period_in_seconds.setter
@@ -90,9 +72,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="dbSizeInGbs")
     def db_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-        """
         return pulumi.get(self, "db_size_in_gbs")
 
     @db_size_in_gbs.setter
@@ -102,9 +81,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="isRedoLogsEnabled")
     def is_redo_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        """
         return pulumi.get(self, "is_redo_logs_enabled")
 
     @is_redo_logs_enabled.setter
@@ -114,9 +90,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="retentionPeriodInDays")
     def retention_period_in_days(self) -> Optional[pulumi.Input[float]]:
-        """
-        The maximum number of days to retain backups for a protected database.
-        """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
@@ -126,9 +99,6 @@ class ProtectedDatabaseMetricArgs:
     @property
     @pulumi.getter(name="unprotectedWindowInSeconds")
     def unprotected_window_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-        """
         return pulumi.get(self, "unprotected_window_in_seconds")
 
     @unprotected_window_in_seconds.setter
@@ -141,14 +111,6 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
     def __init__(__self__, *,
                  recovery_service_subnet_id: pulumi.Input[str],
                  state: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] recovery_service_subnet_id: (Updatable) The recovery service subnet OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Protected Database.
-        """
         pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
@@ -156,13 +118,6 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
     def recovery_service_subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The recovery service subnet OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "recovery_service_subnet_id")
 
     @recovery_service_subnet_id.setter
@@ -172,9 +127,6 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Protected Database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter

@@ -34,23 +34,23 @@ export interface GetIpsecAlgorithmResult {
     /**
      * Allowed phase one parameters.
      */
-    readonly allowedPhaseOneParameters: outputs.Core.GetIpsecAlgorithmAllowedPhaseOneParameter[];
+    readonly allowedPhaseOneParameters?: outputs.Core.GetIpsecAlgorithmAllowedPhaseOneParameter[];
     /**
      * Allowed phase two parameters.
      */
-    readonly allowedPhaseTwoParameters: outputs.Core.GetIpsecAlgorithmAllowedPhaseTwoParameter[];
+    readonly allowedPhaseTwoParameters?: outputs.Core.GetIpsecAlgorithmAllowedPhaseTwoParameter[];
     /**
      * Default phase one parameters.
      */
-    readonly defaultPhaseOneParameters: outputs.Core.GetIpsecAlgorithmDefaultPhaseOneParameter[];
+    readonly defaultPhaseOneParameters?: outputs.Core.GetIpsecAlgorithmDefaultPhaseOneParameter[];
     /**
      * Default phase two parameters.
      */
-    readonly defaultPhaseTwoParameters: outputs.Core.GetIpsecAlgorithmDefaultPhaseTwoParameter[];
+    readonly defaultPhaseTwoParameters?: outputs.Core.GetIpsecAlgorithmDefaultPhaseTwoParameter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.

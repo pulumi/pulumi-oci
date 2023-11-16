@@ -13,17 +13,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     [OutputType]
     public sealed class GetNodePoolsNodePoolNodeErrorResult
     {
-        public readonly string Code;
-        public readonly string Message;
-        public readonly string Status;
+        public readonly string? Code;
+        public readonly string? Message;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetNodePoolsNodePoolNodeErrorResult(
-            string code,
+            string? code,
 
-            string message,
+            string? message,
 
-            string status)
+            string? status)
         {
             Code = code;
             Message = message;

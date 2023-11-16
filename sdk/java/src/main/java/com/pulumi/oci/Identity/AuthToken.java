@@ -11,6 +11,7 @@ import com.pulumi.oci.Identity.AuthTokenArgs;
 import com.pulumi.oci.Identity.inputs.AuthTokenState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -88,70 +89,70 @@ public class AuthToken extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="inactiveState", refs={String.class}, tree="[0]")
-    private Output<String> inactiveState;
+    private Output</* @Nullable */ String> inactiveState;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveState() {
-        return this.inactiveState;
+    public Output<Optional<String>> inactiveState() {
+        return Codegen.optional(this.inactiveState);
     }
     /**
      * The token&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The token&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the `AuthToken` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeExpires", refs={String.class}, tree="[0]")
-    private Output<String> timeExpires;
+    private Output</* @Nullable */ String> timeExpires;
 
     /**
      * @return Date and time when this auth token will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeExpires() {
-        return this.timeExpires;
+    public Output<Optional<String>> timeExpires() {
+        return Codegen.optional(this.timeExpires);
     }
     /**
      * The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
      * 
      */
     @Export(name="token", refs={String.class}, tree="[0]")
-    private Output<String> token;
+    private Output</* @Nullable */ String> token;
 
     /**
      * @return The auth token. The value is available only in the response for `CreateAuthToken`, and not for `ListAuthTokens` or `UpdateAuthToken`.
      * 
      */
-    public Output<String> token() {
-        return this.token;
+    public Output<Optional<String>> token() {
+        return Codegen.optional(this.token);
     }
     /**
      * The OCID of the user.

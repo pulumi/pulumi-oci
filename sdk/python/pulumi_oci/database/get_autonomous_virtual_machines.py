@@ -45,26 +45,17 @@ class GetAutonomousVirtualMachinesResult:
 
     @property
     @pulumi.getter(name="autonomousVirtualMachines")
-    def autonomous_virtual_machines(self) -> Sequence['outputs.GetAutonomousVirtualMachinesAutonomousVirtualMachineResult']:
-        """
-        The list of autonomous_virtual_machines.
-        """
+    def autonomous_virtual_machines(self) -> Optional[Sequence['outputs.GetAutonomousVirtualMachinesAutonomousVirtualMachineResult']]:
         return pulumi.get(self, "autonomous_virtual_machines")
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -74,7 +65,7 @@ class GetAutonomousVirtualMachinesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetAutonomousVirtualMachinesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Autonomous Virtual Machine.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[str] = No
                                     state: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousVirtualMachinesResult:
     """
-    This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
-
-    Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        state=var["autonomous_virtual_machine_state"])
-    ```
-
-
-    :param str autonomous_vm_cluster_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousVmClusterId'] = autonomous_vm_cluster_id
@@ -153,24 +123,6 @@ def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pu
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousVirtualMachinesResult]:
     """
-    This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
-
-    Lists the Autonomous Virtual Machines in the specified Autonomous VM Cluster and Compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        state=var["autonomous_virtual_machine_state"])
-    ```
-
-
-    :param str autonomous_vm_cluster_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

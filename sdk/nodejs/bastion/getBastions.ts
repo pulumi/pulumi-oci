@@ -69,7 +69,7 @@ export interface GetBastionsResult {
     /**
      * The list of bastions.
      */
-    readonly bastions: outputs.Bastion.GetBastionsBastion[];
+    readonly bastions?: outputs.Bastion.GetBastionsBastion[];
     /**
      * The unique identifier (OCID) of the compartment where the bastion is located.
      */
@@ -78,7 +78,7 @@ export interface GetBastionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the bastion, which can't be changed after creation.
      */

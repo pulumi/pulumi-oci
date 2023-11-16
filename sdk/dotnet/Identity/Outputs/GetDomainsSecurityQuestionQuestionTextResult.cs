@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, specifies that the localized attribute instance value is the default and will be returned if no localized value found for requesting user's preferred locale. One and only one instance should have this attribute set to true.
         /// </summary>
-        public readonly bool Default;
+        public readonly bool? Default;
         /// <summary>
         /// The locale
         /// </summary>
-        public readonly string Locale;
+        public readonly string? Locale;
         /// <summary>
         /// Value of the tag.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsSecurityQuestionQuestionTextResult(
-            bool @default,
+            bool? @default,
 
-            string locale,
+            string? locale,
 
-            string value)
+            string? value)
         {
             Default = @default;
             Locale = locale;

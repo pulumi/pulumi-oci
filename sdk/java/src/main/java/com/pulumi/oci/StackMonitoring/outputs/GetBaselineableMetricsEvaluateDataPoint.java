@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBaselineableMetricsEvaluateDataPoint {
@@ -14,63 +16,63 @@ public final class GetBaselineableMetricsEvaluateDataPoint {
      * @return if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
      * 
      */
-    private Double anomaly;
+    private @Nullable Double anomaly;
     /**
      * @return upper threshold for the metric value
      * 
      */
-    private Double high;
+    private @Nullable Double high;
     /**
      * @return lower threshold for the metric value
      * 
      */
-    private Double low;
+    private @Nullable Double low;
     /**
      * @return timestamp of when the metric was collected
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
     /**
      * @return value for the metric data point
      * 
      */
-    private Double value;
+    private @Nullable Double value;
 
     private GetBaselineableMetricsEvaluateDataPoint() {}
     /**
      * @return if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
      * 
      */
-    public Double anomaly() {
-        return this.anomaly;
+    public Optional<Double> anomaly() {
+        return Optional.ofNullable(this.anomaly);
     }
     /**
      * @return upper threshold for the metric value
      * 
      */
-    public Double high() {
-        return this.high;
+    public Optional<Double> high() {
+        return Optional.ofNullable(this.high);
     }
     /**
      * @return lower threshold for the metric value
      * 
      */
-    public Double low() {
-        return this.low;
+    public Optional<Double> low() {
+        return Optional.ofNullable(this.low);
     }
     /**
      * @return timestamp of when the metric was collected
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
     /**
      * @return value for the metric data point
      * 
      */
-    public Double value() {
-        return this.value;
+    public Optional<Double> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetBaselineableMetricsEvaluateDataPoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double anomaly;
-        private Double high;
-        private Double low;
-        private String timestamp;
-        private Double value;
+        private @Nullable Double anomaly;
+        private @Nullable Double high;
+        private @Nullable Double low;
+        private @Nullable String timestamp;
+        private @Nullable Double value;
         public Builder() {}
         public Builder(GetBaselineableMetricsEvaluateDataPoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetBaselineableMetricsEvaluateDataPoint {
         }
 
         @CustomType.Setter
-        public Builder anomaly(Double anomaly) {
-            this.anomaly = Objects.requireNonNull(anomaly);
+        public Builder anomaly(@Nullable Double anomaly) {
+            this.anomaly = anomaly;
             return this;
         }
         @CustomType.Setter
-        public Builder high(Double high) {
-            this.high = Objects.requireNonNull(high);
+        public Builder high(@Nullable Double high) {
+            this.high = high;
             return this;
         }
         @CustomType.Setter
-        public Builder low(Double low) {
-            this.low = Objects.requireNonNull(low);
+        public Builder low(@Nullable Double low) {
+            this.low = low;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Double value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Double value) {
+            this.value = value;
             return this;
         }
         public GetBaselineableMetricsEvaluateDataPoint build() {

@@ -70,11 +70,11 @@ export interface GetPathAnalyzerTestsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of path_analyzer_test_collection.
      */
-    readonly pathAnalyzerTestCollections: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollection[];
+    readonly pathAnalyzerTestCollections?: outputs.VnMonitoring.GetPathAnalyzerTestsPathAnalyzerTestCollection[];
     /**
      * The current state of the `PathAnalyzerTest` resource.
      */

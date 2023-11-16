@@ -52,17 +52,11 @@ class GetMigrationPlansResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment containing the migration plan.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -72,7 +66,7 @@ class GetMigrationPlansResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,17 +75,11 @@ class GetMigrationPlansResult:
     @property
     @pulumi.getter(name="migrationId")
     def migration_id(self) -> Optional[str]:
-        """
-        The OCID of the associated migration.
-        """
         return pulumi.get(self, "migration_id")
 
     @property
     @pulumi.getter(name="migrationPlanCollections")
-    def migration_plan_collections(self) -> Sequence['outputs.GetMigrationPlansMigrationPlanCollectionResult']:
-        """
-        The list of migration_plan_collection.
-        """
+    def migration_plan_collections(self) -> Optional[Sequence['outputs.GetMigrationPlansMigrationPlanCollectionResult']]:
         return pulumi.get(self, "migration_plan_collections")
 
     @property
@@ -102,9 +90,6 @@ class GetMigrationPlansResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the migration plan.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_migration_plans(compartment_id: Optional[str] = None,
                         state: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationPlansResult:
     """
-    This data source provides the list of Migration Plans in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of migration plans.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=var["compartment_id"],
-        display_name=var["migration_plan_display_name"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        state=var["migration_plan_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str migration_id: Unique migration identifier
-    :param str migration_plan_id: Unique migration plan identifier
-    :param str state: The current state of the migration plan.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[st
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationPlansResult]:
     """
-    This data source provides the list of Migration Plans in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of migration plans.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_plans = oci.CloudMigrations.get_migration_plans(compartment_id=var["compartment_id"],
-        display_name=var["migration_plan_display_name"],
-        migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-        migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        state=var["migration_plan_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str migration_id: Unique migration identifier
-    :param str migration_plan_id: Unique migration plan identifier
-    :param str state: The current state of the migration plan.
+    Use this data source to access information about an existing resource.
     """
     ...

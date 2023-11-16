@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
@@ -13,27 +15,27 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
      * @return Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
      * 
      */
-    private String ipv6address;
+    private @Nullable String ipv6address;
     /**
      * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
      * 
      */
-    private String ipv6subnetCidr;
+    private @Nullable String ipv6subnetCidr;
 
     private GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail() {}
     /**
      * @return Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
      * 
      */
-    public String ipv6address() {
-        return this.ipv6address;
+    public Optional<String> ipv6address() {
+        return Optional.ofNullable(this.ipv6address);
     }
     /**
      * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
      * 
      */
-    public String ipv6subnetCidr() {
-        return this.ipv6subnetCidr;
+    public Optional<String> ipv6subnetCidr() {
+        return Optional.ofNullable(this.ipv6subnetCidr);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipv6address;
-        private String ipv6subnetCidr;
+        private @Nullable String ipv6address;
+        private @Nullable String ipv6subnetCidr;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreat
         }
 
         @CustomType.Setter
-        public Builder ipv6address(String ipv6address) {
-            this.ipv6address = Objects.requireNonNull(ipv6address);
+        public Builder ipv6address(@Nullable String ipv6address) {
+            this.ipv6address = ipv6address;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
-            this.ipv6subnetCidr = Objects.requireNonNull(ipv6subnetCidr);
+        public Builder ipv6subnetCidr(@Nullable String ipv6subnetCidr) {
+            this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail build() {

@@ -19,7 +19,7 @@ public final class GetManagedDatabaseUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the User.
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseUsersResult {
      * @return The list of user_collection.
      * 
      */
-    private List<GetManagedDatabaseUsersUserCollection> userCollections;
+    private @Nullable List<GetManagedDatabaseUsersUserCollection> userCollections;
 
     private GetManagedDatabaseUsersResult() {}
     public List<GetManagedDatabaseUsersFilter> filters() {
@@ -40,8 +40,8 @@ public final class GetManagedDatabaseUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -58,7 +58,7 @@ public final class GetManagedDatabaseUsersResult {
      * 
      */
     public List<GetManagedDatabaseUsersUserCollection> userCollections() {
-        return this.userCollections;
+        return this.userCollections == null ? List.of() : this.userCollections;
     }
 
     public static Builder builder() {
@@ -71,10 +71,10 @@ public final class GetManagedDatabaseUsersResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseUsersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabaseUsersUserCollection> userCollections;
+        private @Nullable List<GetManagedDatabaseUsersUserCollection> userCollections;
         public Builder() {}
         public Builder(GetManagedDatabaseUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetManagedDatabaseUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -109,8 +109,8 @@ public final class GetManagedDatabaseUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder userCollections(List<GetManagedDatabaseUsersUserCollection> userCollections) {
-            this.userCollections = Objects.requireNonNull(userCollections);
+        public Builder userCollections(@Nullable List<GetManagedDatabaseUsersUserCollection> userCollections) {
+            this.userCollections = userCollections;
             return this;
         }
         public Builder userCollections(GetManagedDatabaseUsersUserCollection... userCollections) {

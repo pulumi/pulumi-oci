@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listener Rules in Oracle Cloud Infrastructure Load Balancer service.
@@ -71,8 +70,8 @@ type GetListenerRulesArgs struct {
 type GetListenerRulesResult struct {
 	Filters []GetListenerRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	ListenerName string `pulumi:"listenerName"`
+	Id           *string `pulumi:"id"`
+	ListenerName string  `pulumi:"listenerName"`
 	// The list of listener_rules.
 	ListenerRules  []GetListenerRulesListenerRule `pulumi:"listenerRules"`
 	LoadBalancerId string                         `pulumi:"loadBalancerId"`
@@ -119,19 +118,13 @@ func (o GetListenerRulesResultOutput) ToGetListenerRulesResultOutputWithContext(
 	return o
 }
 
-func (o GetListenerRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesResult] {
-	return pulumix.Output[GetListenerRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenerRulesResultOutput) Filters() GetListenerRulesFilterArrayOutput {
 	return o.ApplyT(func(v GetListenerRulesResult) []GetListenerRulesFilter { return v.Filters }).(GetListenerRulesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListenerRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListenerRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListenerRulesResultOutput) ListenerName() pulumi.StringOutput {

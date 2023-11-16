@@ -46,17 +46,11 @@ class GetQueuesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetQueuesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        A unique identifier for the queue that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="queueCollections")
-    def queue_collections(self) -> Sequence['outputs.GetQueuesQueueCollectionResult']:
-        """
-        The list of queue_collection.
-        """
+    def queue_collections(self) -> Optional[Sequence['outputs.GetQueuesQueueCollectionResult']]:
         return pulumi.get(self, "queue_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the queue.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_queues(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueuesResult:
     """
-    This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
-
-    Returns a list of queues.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_queues = oci.Queue.get_queues(compartment_id=var["compartment_id"],
-        display_name=var["queue_display_name"],
-        id=var["queue_id"],
-        state=var["queue_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique queue identifier.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_queues_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueuesResult]:
     """
-    This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
-
-    Returns a list of queues.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_queues = oci.Queue.get_queues(compartment_id=var["compartment_id"],
-        display_name=var["queue_display_name"],
-        id=var["queue_id"],
-        state=var["queue_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique queue identifier.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

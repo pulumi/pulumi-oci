@@ -23,7 +23,7 @@ public final class GetEmailDomainsResult {
      * @return The list of email_domain_collection.
      * 
      */
-    private List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
+    private @Nullable List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
     private @Nullable List<GetEmailDomainsFilter> filters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
@@ -54,7 +54,7 @@ public final class GetEmailDomainsResult {
      * 
      */
     public List<GetEmailDomainsEmailDomainCollection> emailDomainCollections() {
-        return this.emailDomainCollections;
+        return this.emailDomainCollections == null ? List.of() : this.emailDomainCollections;
     }
     public List<GetEmailDomainsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -91,7 +91,7 @@ public final class GetEmailDomainsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
+        private @Nullable List<GetEmailDomainsEmailDomainCollection> emailDomainCollections;
         private @Nullable List<GetEmailDomainsFilter> filters;
         private @Nullable String id;
         private @Nullable String name;
@@ -113,8 +113,8 @@ public final class GetEmailDomainsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder emailDomainCollections(List<GetEmailDomainsEmailDomainCollection> emailDomainCollections) {
-            this.emailDomainCollections = Objects.requireNonNull(emailDomainCollections);
+        public Builder emailDomainCollections(@Nullable List<GetEmailDomainsEmailDomainCollection> emailDomainCollections) {
+            this.emailDomainCollections = emailDomainCollections;
             return this;
         }
         public Builder emailDomainCollections(GetEmailDomainsEmailDomainCollection... emailDomainCollections) {

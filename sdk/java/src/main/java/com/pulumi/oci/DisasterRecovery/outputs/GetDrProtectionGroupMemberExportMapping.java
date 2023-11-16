@@ -6,6 +6,8 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupMemberExportMapping {
@@ -13,27 +15,27 @@ public final class GetDrProtectionGroupMemberExportMapping {
      * @return The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
-    private String destinationMountTargetId;
+    private @Nullable String destinationMountTargetId;
     /**
      * @return The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
      * 
      */
-    private String exportId;
+    private @Nullable String exportId;
 
     private GetDrProtectionGroupMemberExportMapping() {}
     /**
      * @return The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
-    public String destinationMountTargetId() {
-        return this.destinationMountTargetId;
+    public Optional<String> destinationMountTargetId() {
+        return Optional.ofNullable(this.destinationMountTargetId);
     }
     /**
      * @return The OCID of the export path.  Example: `ocid1.export.oc1..uniqueID`
      * 
      */
-    public String exportId() {
-        return this.exportId;
+    public Optional<String> exportId() {
+        return Optional.ofNullable(this.exportId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDrProtectionGroupMemberExportMapping {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String destinationMountTargetId;
-        private String exportId;
+        private @Nullable String destinationMountTargetId;
+        private @Nullable String exportId;
         public Builder() {}
         public Builder(GetDrProtectionGroupMemberExportMapping defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDrProtectionGroupMemberExportMapping {
         }
 
         @CustomType.Setter
-        public Builder destinationMountTargetId(String destinationMountTargetId) {
-            this.destinationMountTargetId = Objects.requireNonNull(destinationMountTargetId);
+        public Builder destinationMountTargetId(@Nullable String destinationMountTargetId) {
+            this.destinationMountTargetId = destinationMountTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder exportId(String exportId) {
-            this.exportId = Objects.requireNonNull(exportId);
+        public Builder exportId(@Nullable String exportId) {
+            this.exportId = exportId;
             return this;
         }
         public GetDrProtectionGroupMemberExportMapping build() {

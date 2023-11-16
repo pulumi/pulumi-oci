@@ -20,13 +20,13 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
         /// </summary>
-        public readonly double DomainLookupDuration;
+        public readonly double? DomainLookupDuration;
 
         [OutputConstructor]
         private GetPingProbeResultsPingProbeResultDnResult(
             ImmutableArray<string> addresses,
 
-            double domainLookupDuration)
+            double? domainLookupDuration)
         {
             Addresses = addresses;
             DomainLookupDuration = domainLookupDuration;

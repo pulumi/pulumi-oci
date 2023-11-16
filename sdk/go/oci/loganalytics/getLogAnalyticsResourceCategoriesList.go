@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -71,7 +70,7 @@ type GetLogAnalyticsResourceCategoriesListResult struct {
 	// An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
 	Categories []GetLogAnalyticsResourceCategoriesListCategory `pulumi:"categories"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of resources and their category assignments
 	Items              []GetLogAnalyticsResourceCategoriesListItem `pulumi:"items"`
 	Namespace          string                                      `pulumi:"namespace"`
@@ -124,12 +123,6 @@ func (o GetLogAnalyticsResourceCategoriesListResultOutput) ToGetLogAnalyticsReso
 	return o
 }
 
-func (o GetLogAnalyticsResourceCategoriesListResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsResourceCategoriesListResult] {
-	return pulumix.Output[GetLogAnalyticsResourceCategoriesListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of categories. The array contents include detailed information about the distinct set of categories assigned to all the listed resources under items.
 func (o GetLogAnalyticsResourceCategoriesListResultOutput) Categories() GetLogAnalyticsResourceCategoriesListCategoryArrayOutput {
 	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListResult) []GetLogAnalyticsResourceCategoriesListCategory {
@@ -138,8 +131,8 @@ func (o GetLogAnalyticsResourceCategoriesListResultOutput) Categories() GetLogAn
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsResourceCategoriesListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsResourceCategoriesListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsResourceCategoriesListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of resources and their category assignments

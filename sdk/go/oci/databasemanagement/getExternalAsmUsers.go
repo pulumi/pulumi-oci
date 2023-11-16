@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.
@@ -65,7 +64,7 @@ type GetExternalAsmUsersResult struct {
 	ExternalAsmUserCollections []GetExternalAsmUsersExternalAsmUserCollection `pulumi:"externalAsmUserCollections"`
 	Filters                    []GetExternalAsmUsersFilter                    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalAsmUsersOutput(ctx *pulumi.Context, args GetExternalAsmUsersOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmUsersResultOutput {
@@ -107,12 +106,6 @@ func (o GetExternalAsmUsersResultOutput) ToGetExternalAsmUsersResultOutputWithCo
 	return o
 }
 
-func (o GetExternalAsmUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmUsersResult] {
-	return pulumix.Output[GetExternalAsmUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExternalAsmUsersResultOutput) ExternalAsmId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmUsersResult) string { return v.ExternalAsmId }).(pulumi.StringOutput)
 }
@@ -129,8 +122,8 @@ func (o GetExternalAsmUsersResultOutput) Filters() GetExternalAsmUsersFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalAsmUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalAsmUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -143,7 +143,7 @@ namespace Pulumi.Oci.LicenseManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCompartmentIdInSubtree;
         /// <summary>
         /// The list of product_license_collection.
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.LicenseManager
 
             ImmutableArray<Outputs.GetProductLicensesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isCompartmentIdInSubtree,
 

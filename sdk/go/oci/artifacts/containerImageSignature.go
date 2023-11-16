@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
@@ -70,11 +69,11 @@ type ContainerImageSignature struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -93,11 +92,11 @@ type ContainerImageSignature struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SigningAlgorithm pulumi.StringOutput `pulumi:"signingAlgorithm"`
 	// The current state of the container image signature.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the image was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewContainerImageSignature registers a new resource with the given unique name, arguments, and options.
@@ -294,12 +293,6 @@ func (i *ContainerImageSignature) ToContainerImageSignatureOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerImageSignatureOutput)
 }
 
-func (i *ContainerImageSignature) ToOutput(ctx context.Context) pulumix.Output[*ContainerImageSignature] {
-	return pulumix.Output[*ContainerImageSignature]{
-		OutputState: i.ToContainerImageSignatureOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerImageSignatureArrayInput is an input type that accepts ContainerImageSignatureArray and ContainerImageSignatureArrayOutput values.
 // You can construct a concrete instance of `ContainerImageSignatureArrayInput` via:
 //
@@ -323,12 +316,6 @@ func (i ContainerImageSignatureArray) ToContainerImageSignatureArrayOutput() Con
 
 func (i ContainerImageSignatureArray) ToContainerImageSignatureArrayOutputWithContext(ctx context.Context) ContainerImageSignatureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerImageSignatureArrayOutput)
-}
-
-func (i ContainerImageSignatureArray) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerImageSignature] {
-	return pulumix.Output[[]*ContainerImageSignature]{
-		OutputState: i.ToContainerImageSignatureArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ContainerImageSignatureMapInput is an input type that accepts ContainerImageSignatureMap and ContainerImageSignatureMapOutput values.
@@ -356,12 +343,6 @@ func (i ContainerImageSignatureMap) ToContainerImageSignatureMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerImageSignatureMapOutput)
 }
 
-func (i ContainerImageSignatureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerImageSignature] {
-	return pulumix.Output[map[string]*ContainerImageSignature]{
-		OutputState: i.ToContainerImageSignatureMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerImageSignatureOutput struct{ *pulumi.OutputState }
 
 func (ContainerImageSignatureOutput) ElementType() reflect.Type {
@@ -376,20 +357,14 @@ func (o ContainerImageSignatureOutput) ToContainerImageSignatureOutputWithContex
 	return o
 }
 
-func (o ContainerImageSignatureOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerImageSignature] {
-	return pulumix.Output[*ContainerImageSignature]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
 func (o ContainerImageSignatureOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The id of the user or principal that created the resource.
-func (o ContainerImageSignatureOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o ContainerImageSignatureOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -398,8 +373,8 @@ func (o ContainerImageSignatureOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-func (o ContainerImageSignatureOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ContainerImageSignatureOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -441,8 +416,8 @@ func (o ContainerImageSignatureOutput) SigningAlgorithm() pulumi.StringOutput {
 }
 
 // The current state of the container image signature.
-func (o ContainerImageSignatureOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ContainerImageSignatureOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -451,8 +426,8 @@ func (o ContainerImageSignatureOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC 3339 timestamp indicating when the image was created.
-func (o ContainerImageSignatureOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ContainerImageSignatureOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerImageSignature) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ContainerImageSignatureArrayOutput struct{ *pulumi.OutputState }
@@ -467,12 +442,6 @@ func (o ContainerImageSignatureArrayOutput) ToContainerImageSignatureArrayOutput
 
 func (o ContainerImageSignatureArrayOutput) ToContainerImageSignatureArrayOutputWithContext(ctx context.Context) ContainerImageSignatureArrayOutput {
 	return o
-}
-
-func (o ContainerImageSignatureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ContainerImageSignature] {
-	return pulumix.Output[[]*ContainerImageSignature]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerImageSignatureArrayOutput) Index(i pulumi.IntInput) ContainerImageSignatureOutput {
@@ -493,12 +462,6 @@ func (o ContainerImageSignatureMapOutput) ToContainerImageSignatureMapOutput() C
 
 func (o ContainerImageSignatureMapOutput) ToContainerImageSignatureMapOutputWithContext(ctx context.Context) ContainerImageSignatureMapOutput {
 	return o
-}
-
-func (o ContainerImageSignatureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ContainerImageSignature] {
-	return pulumix.Output[map[string]*ContainerImageSignature]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerImageSignatureMapOutput) MapIndex(k pulumi.StringInput) ContainerImageSignatureOutput {

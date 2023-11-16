@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection {
-    private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
+    private @Nullable List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
 
     private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection() {}
     public List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
+        private @Nullable List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items;
         public Builder() {}
         public Builder(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem... items) {

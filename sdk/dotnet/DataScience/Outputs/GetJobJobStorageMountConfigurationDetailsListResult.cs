@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The object storage bucket
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The local directory name to be mounted
         /// </summary>
-        public readonly string DestinationDirectoryName;
+        public readonly string? DestinationDirectoryName;
         /// <summary>
         /// The local path of the mounted directory, excluding directory name.
         /// </summary>
-        public readonly string DestinationPath;
+        public readonly string? DestinationPath;
         /// <summary>
         /// OCID of the export
         /// </summary>
-        public readonly string ExportId;
+        public readonly string? ExportId;
         /// <summary>
         /// OCID of the mount target
         /// </summary>
-        public readonly string MountTargetId;
+        public readonly string? MountTargetId;
         /// <summary>
         /// The object storage namespace
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Prefix in the bucket to mount
         /// </summary>
-        public readonly string Prefix;
+        public readonly string? Prefix;
         /// <summary>
         /// The type of storage.
         /// </summary>
-        public readonly string StorageType;
+        public readonly string? StorageType;
 
         [OutputConstructor]
         private GetJobJobStorageMountConfigurationDetailsListResult(
-            string bucket,
+            string? bucket,
 
-            string destinationDirectoryName,
+            string? destinationDirectoryName,
 
-            string destinationPath,
+            string? destinationPath,
 
-            string exportId,
+            string? exportId,
 
-            string mountTargetId,
+            string? mountTargetId,
 
-            string @namespace,
+            string? @namespace,
 
-            string prefix,
+            string? prefix,
 
-            string storageType)
+            string? storageType)
         {
             Bucket = bucket;
             DestinationDirectoryName = destinationDirectoryName;

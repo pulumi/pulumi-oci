@@ -55,13 +55,13 @@ export interface GetDrgRouteTableRouteRulesResult {
     /**
      * The list of drg_route_rules.
      */
-    readonly drgRouteRules: outputs.Core.GetDrgRouteTableRouteRulesDrgRouteRule[];
+    readonly drgRouteRules?: outputs.Core.GetDrgRouteTableRouteRulesDrgRouteRule[];
     readonly drgRouteTableId: string;
     readonly filters?: outputs.Core.GetDrgRouteTableRouteRulesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
@@ -77,7 +76,7 @@ type GetInvoicesResult struct {
 	Fields                  []string            `pulumi:"fields"`
 	Filters                 []GetInvoicesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of invoices.
 	Invoices []GetInvoicesInvoice `pulumi:"invoices"`
 	TimeFrom *string              `pulumi:"timeFrom"`
@@ -131,12 +130,6 @@ func (o GetInvoicesResultOutput) ToGetInvoicesResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetInvoicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesResult] {
-	return pulumix.Output[GetInvoicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesResultOutput) ArCustomerTransactionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvoicesResult) string { return v.ArCustomerTransactionId }).(pulumi.StringOutput)
 }
@@ -154,8 +147,8 @@ func (o GetInvoicesResultOutput) Filters() GetInvoicesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInvoicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of invoices.

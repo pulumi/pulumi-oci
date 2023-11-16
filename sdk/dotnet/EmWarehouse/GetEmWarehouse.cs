@@ -108,104 +108,104 @@ namespace Pulumi.Oci.EmWarehouse
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// EmWarehouse Identifier, can be renamed
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// EMBridge Identifier
         /// </summary>
-        public readonly string EmBridgeId;
+        public readonly string? EmBridgeId;
         public readonly string EmWarehouseId;
         /// <summary>
         /// Type of the EmWarehouse.
         /// </summary>
-        public readonly string EmWarehouseType;
+        public readonly string? EmWarehouseType;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Data Flow Run Status Message
         /// </summary>
-        public readonly string LatestEtlRunMessage;
+        public readonly string? LatestEtlRunMessage;
         /// <summary>
         /// Data Flow Run Status
         /// </summary>
-        public readonly string LatestEtlRunStatus;
+        public readonly string? LatestEtlRunStatus;
         /// <summary>
         /// Data Flow Run Total Time
         /// </summary>
-        public readonly string LatestEtlRunTime;
+        public readonly string? LatestEtlRunTime;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// operations Insights Warehouse Identifier
         /// </summary>
-        public readonly string OperationsInsightsWarehouseId;
+        public readonly string? OperationsInsightsWarehouseId;
         /// <summary>
         /// The current state of the EmWarehouse.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the EmWarehouse was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the EmWarehouse was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetEmWarehouseResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string emBridgeId,
+            string? emBridgeId,
 
             string emWarehouseId,
 
-            string emWarehouseType,
+            string? emWarehouseType,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string latestEtlRunMessage,
+            string? latestEtlRunMessage,
 
-            string latestEtlRunStatus,
+            string? latestEtlRunStatus,
 
-            string latestEtlRunTime,
+            string? latestEtlRunTime,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string operationsInsightsWarehouseId,
+            string? operationsInsightsWarehouseId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Lifecycle Stages in Oracle Cloud Infrastructure Os Management Hub service.
@@ -58,7 +57,7 @@ type GetLifecycleStagesResult struct {
 	DisplayNames []string                   `pulumi:"displayNames"`
 	Filters      []GetLifecycleStagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of lifecycle_stage_collection.
 	LifecycleStageCollections []GetLifecycleStagesLifecycleStageCollection `pulumi:"lifecycleStageCollections"`
 	LifecycleStageId          *string                                      `pulumi:"lifecycleStageId"`
@@ -123,12 +122,6 @@ func (o GetLifecycleStagesResultOutput) ToGetLifecycleStagesResultOutputWithCont
 	return o
 }
 
-func (o GetLifecycleStagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesResult] {
-	return pulumix.Output[GetLifecycleStagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CPU architecture of the target instances.
 func (o GetLifecycleStagesResultOutput) ArchType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
@@ -153,8 +146,8 @@ func (o GetLifecycleStagesResultOutput) Filters() GetLifecycleStagesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLifecycleStagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of lifecycle_stage_collection.

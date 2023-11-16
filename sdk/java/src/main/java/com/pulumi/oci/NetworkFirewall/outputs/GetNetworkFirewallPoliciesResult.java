@@ -34,7 +34,7 @@ public final class GetNetworkFirewallPoliciesResult {
      * @return The list of network_firewall_policy_summary_collection.
      * 
      */
-    private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
+    private @Nullable List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
     /**
      * @return The current state of the Network Firewall Policy.
      * 
@@ -71,7 +71,7 @@ public final class GetNetworkFirewallPoliciesResult {
      * 
      */
     public List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections() {
-        return this.networkFirewallPolicySummaryCollections;
+        return this.networkFirewallPolicySummaryCollections == null ? List.of() : this.networkFirewallPolicySummaryCollections;
     }
     /**
      * @return The current state of the Network Firewall Policy.
@@ -94,7 +94,7 @@ public final class GetNetworkFirewallPoliciesResult {
         private @Nullable String displayName;
         private @Nullable List<GetNetworkFirewallPoliciesFilter> filters;
         private @Nullable String id;
-        private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
+        private @Nullable List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetNetworkFirewallPoliciesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetNetworkFirewallPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder networkFirewallPolicySummaryCollections(List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections) {
-            this.networkFirewallPolicySummaryCollections = Objects.requireNonNull(networkFirewallPolicySummaryCollections);
+        public Builder networkFirewallPolicySummaryCollections(@Nullable List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection> networkFirewallPolicySummaryCollections) {
+            this.networkFirewallPolicySummaryCollections = networkFirewallPolicySummaryCollections;
             return this;
         }
         public Builder networkFirewallPolicySummaryCollections(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollection... networkFirewallPolicySummaryCollections) {

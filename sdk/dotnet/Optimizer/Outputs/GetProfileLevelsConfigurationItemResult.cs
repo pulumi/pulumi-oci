@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The pre-defined profile level.
         /// </summary>
-        public readonly string Level;
+        public readonly string? Level;
         /// <summary>
         /// The unique OCID of the recommendation.
         /// </summary>
-        public readonly string RecommendationId;
+        public readonly string? RecommendationId;
 
         [OutputConstructor]
         private GetProfileLevelsConfigurationItemResult(
-            string level,
+            string? level,
 
-            string recommendationId)
+            string? recommendationId)
         {
             Level = level;
             RecommendationId = recommendationId;

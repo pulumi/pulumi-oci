@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Profile Collected Audit Volume resource in Oracle Cloud Infrastructure Data Safe service.
@@ -75,7 +74,7 @@ type GetAuditProfileCollectedAuditVolumeResult struct {
 	// The OCID of the audit profile resource.
 	AuditProfileId string `pulumi:"auditProfileId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of collected audit volume summary.
 	Items                           []GetAuditProfileCollectedAuditVolumeItem `pulumi:"items"`
 	MonthInConsiderationGreaterThan *string                                   `pulumi:"monthInConsiderationGreaterThan"`
@@ -131,20 +130,14 @@ func (o GetAuditProfileCollectedAuditVolumeResultOutput) ToGetAuditProfileCollec
 	return o
 }
 
-func (o GetAuditProfileCollectedAuditVolumeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileCollectedAuditVolumeResult] {
-	return pulumix.Output[GetAuditProfileCollectedAuditVolumeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the audit profile resource.
 func (o GetAuditProfileCollectedAuditVolumeResultOutput) AuditProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditProfileCollectedAuditVolumeResult) string { return v.AuditProfileId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditProfileCollectedAuditVolumeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditProfileCollectedAuditVolumeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditProfileCollectedAuditVolumeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditProfileCollectedAuditVolumeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of collected audit volume summary.

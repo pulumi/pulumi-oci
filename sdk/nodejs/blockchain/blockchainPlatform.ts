@@ -76,7 +76,7 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
      */
-    public readonly caCertArchiveText!: pulumi.Output<string>;
+    public readonly caCertArchiveText!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Compartment Identifier
      */
@@ -84,7 +84,7 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * Blockchain Platform component details.
      */
-    public /*out*/ readonly componentDetails!: pulumi.Output<outputs.Blockchain.BlockchainPlatformComponentDetail[]>;
+    public /*out*/ readonly componentDetails!: pulumi.Output<outputs.Blockchain.BlockchainPlatformComponentDetail[] | undefined>;
     /**
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
      */
@@ -92,11 +92,11 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Platform Instance Description
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * Platform Instance Display name, can be renamed
      */
@@ -104,15 +104,15 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * Identifier for a federated user
      */
-    public readonly federatedUserId!: pulumi.Output<string>;
+    public readonly federatedUserId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * List of OcpuUtilization for all hosts
      */
-    public /*out*/ readonly hostOcpuUtilizationInfos!: pulumi.Output<outputs.Blockchain.BlockchainPlatformHostOcpuUtilizationInfo[]>;
+    public /*out*/ readonly hostOcpuUtilizationInfos!: pulumi.Output<outputs.Blockchain.BlockchainPlatformHostOcpuUtilizationInfo[] | undefined>;
     /**
      * IDCS access token with Identity Domain Administrator role
      */
@@ -120,15 +120,15 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * Bring your own license
      */
-    public readonly isByol!: pulumi.Output<boolean>;
+    public readonly isByol!: pulumi.Output<boolean | undefined>;
     /**
      * True for multi-AD blockchain plaforms, false for single-AD
      */
-    public /*out*/ readonly isMultiAd!: pulumi.Output<boolean>;
+    public /*out*/ readonly isMultiAd!: pulumi.Output<boolean | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
      *
@@ -136,7 +136,7 @@ export class BlockchainPlatform extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly loadBalancerShape!: pulumi.Output<string>;
+    public readonly loadBalancerShape!: pulumi.Output<string | undefined>;
     /**
      * Role of platform - founder or participant
      */
@@ -144,47 +144,47 @@ export class BlockchainPlatform extends pulumi.CustomResource {
     /**
      * Type of Platform shape - DEFAULT or CUSTOM
      */
-    public /*out*/ readonly platformShapeType!: pulumi.Output<string>;
+    public /*out*/ readonly platformShapeType!: pulumi.Output<string | undefined>;
     /**
      * Platform version
      */
-    public readonly platformVersion!: pulumi.Output<string>;
+    public readonly platformVersion!: pulumi.Output<string | undefined>;
     /**
      * Number of replicas of service components like Rest Proxy, CA and Console
      */
-    public readonly replicas!: pulumi.Output<outputs.Blockchain.BlockchainPlatformReplicas>;
+    public readonly replicas!: pulumi.Output<outputs.Blockchain.BlockchainPlatformReplicas | undefined>;
     /**
      * Service endpoint URL, valid post-provisioning
      */
-    public /*out*/ readonly serviceEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly serviceEndpoint!: pulumi.Output<string | undefined>;
     /**
      * The version of the Platform Instance.
      */
-    public /*out*/ readonly serviceVersion!: pulumi.Output<string>;
+    public /*out*/ readonly serviceVersion!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Platform Instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Storage size in TBs
      */
-    public readonly storageSizeInTbs!: pulumi.Output<number>;
+    public readonly storageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * Storage used in TBs
      */
-    public /*out*/ readonly storageUsedInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly storageUsedInTbs!: pulumi.Output<number | undefined>;
     /**
      * The time the the Platform Instance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the Platform Instance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Number of total OCPUs allocated to the platform cluster
      */
-    public readonly totalOcpuCapacity!: pulumi.Output<number>;
+    public readonly totalOcpuCapacity!: pulumi.Output<number | undefined>;
 
     /**
      * Create a BlockchainPlatform resource with the given unique name, arguments, and options.

@@ -16,20 +16,20 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The name of the rule set that the rule belongs to.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A rule object that applies to the listener.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetListenerRulesListenerRuleRuleResult> Rules;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetListenerRulesListenerRuleResult(
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetListenerRulesListenerRuleRuleResult> rules,
 
-            string state)
+            string? state)
         {
             Name = name;
             Rules = rules;

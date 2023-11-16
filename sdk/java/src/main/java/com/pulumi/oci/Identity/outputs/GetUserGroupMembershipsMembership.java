@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserGroupMembershipsMembership {
@@ -13,87 +15,87 @@ public final class GetUserGroupMembershipsMembership {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the group.
      * 
      */
-    private String groupId;
+    private @Nullable String groupId;
     /**
      * @return The OCID of the membership.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private String inactiveState;
+    private @Nullable String inactiveState;
     /**
      * @return The membership&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The OCID of the user.
      * 
      */
-    private String userId;
+    private @Nullable String userId;
 
     private GetUserGroupMembershipsMembership() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the group.
      * 
      */
-    public String groupId() {
-        return this.groupId;
+    public Optional<String> groupId() {
+        return Optional.ofNullable(this.groupId);
     }
     /**
      * @return The OCID of the membership.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public String inactiveState() {
-        return this.inactiveState;
+    public Optional<String> inactiveState() {
+        return Optional.ofNullable(this.inactiveState);
     }
     /**
      * @return The membership&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The OCID of the user.
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetUserGroupMembershipsMembership {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String groupId;
-        private String id;
-        private String inactiveState;
-        private String state;
-        private String timeCreated;
-        private String userId;
+        private @Nullable String compartmentId;
+        private @Nullable String groupId;
+        private @Nullable String id;
+        private @Nullable String inactiveState;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetUserGroupMembershipsMembership defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetUserGroupMembershipsMembership {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+        public Builder groupId(@Nullable String groupId) {
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+        public Builder inactiveState(@Nullable String inactiveState) {
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetUserGroupMembershipsMembership build() {

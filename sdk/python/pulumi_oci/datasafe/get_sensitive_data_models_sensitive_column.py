@@ -97,127 +97,82 @@ class GetSensitiveDataModelsSensitiveColumnResult:
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
-    def app_defined_child_column_keys(self) -> Sequence[str]:
-        """
-        Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-        """
+    def app_defined_child_column_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @property
     @pulumi.getter(name="appName")
-    def app_name(self) -> str:
-        """
-        The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
-        """
+    def app_name(self) -> Optional[str]:
         return pulumi.get(self, "app_name")
 
     @property
     @pulumi.getter(name="columnGroups")
-    def column_groups(self) -> Sequence[str]:
-        """
-        The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
-        """
+    def column_groups(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "column_groups")
 
     @property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> str:
-        """
-        The name of the sensitive column.
-        """
+    def column_name(self) -> Optional[str]:
         return pulumi.get(self, "column_name")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        The data type of the sensitive column.
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
-    def db_defined_child_column_keys(self) -> Sequence[str]:
-        """
-        Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-        """
+    def db_defined_child_column_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @property
     @pulumi.getter(name="estimatedDataValueCount")
-    def estimated_data_value_count(self) -> str:
-        """
-        The estimated number of data values the column has in the associated database.
-        """
+    def estimated_data_value_count(self) -> Optional[str]:
         return pulumi.get(self, "estimated_data_value_count")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the current state of the sensitive column.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The database object that contains the sensitive column.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of the database object that contains the sensitive column.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="parentColumnKeys")
-    def parent_column_keys(self) -> Sequence[str]:
-        """
-        Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
-        """
+    def parent_column_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "parent_column_keys")
 
     @property
     @pulumi.getter(name="relationType")
-    def relation_type(self) -> str:
-        """
-        The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-        """
+    def relation_type(self) -> Optional[str]:
         return pulumi.get(self, "relation_type")
 
     @property
     @pulumi.getter(name="sampleDataValues")
-    def sample_data_values(self) -> Sequence[str]:
-        """
-        Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
-        """
+    def sample_data_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sample_data_values")
 
     @property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> str:
-        """
-        The database schema that contains the sensitive column.
-        """
+    def schema_name(self) -> Optional[str]:
         return pulumi.get(self, "schema_name")
 
     @property
@@ -228,57 +183,36 @@ class GetSensitiveDataModelsSensitiveColumnResult:
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> str:
-        """
-        The OCID of the sensitive data model that contains the sensitive column.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> str:
-        """
-        The OCID of the sensitive type associated with the sensitive column.
-        """
+    def sensitive_type_id(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_type_id")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
-        """
-        The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
-        """
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the sensitive column.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -318,23 +252,7 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[st
                                                sensitive_data_model_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelsSensitiveColumnResult:
     """
-    This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified sensitive column.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=var["sensitive_data_models_sensitive_column_sensitive_column_key"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
-    ```
-
-
-    :param str sensitive_column_key: The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sensitiveColumnKey'] = sensitive_column_key
@@ -374,22 +292,6 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnResult]:
     """
-    This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified sensitive column.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=var["sensitive_data_models_sensitive_column_sensitive_column_key"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
-    ```
-
-
-    :param str sensitive_column_key: The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
+    Use this data source to access information about an existing resource.
     """
     ...

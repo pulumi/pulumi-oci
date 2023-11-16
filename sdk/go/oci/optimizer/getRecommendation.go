@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -60,38 +59,38 @@ type LookupRecommendationArgs struct {
 // A collection of values returned by getRecommendation.
 type LookupRecommendationResult struct {
 	// The unique OCID associated with the category.
-	CategoryId string `pulumi:"categoryId"`
+	CategoryId *string `pulumi:"categoryId"`
 	// The OCID of the tenancy. The tenancy is the root compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Text describing the recommendation.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The estimated cost savings, in dollars, for the recommendation.
-	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
+	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The level of importance assigned to the recommendation.
-	Importance string `pulumi:"importance"`
+	Importance *string `pulumi:"importance"`
 	// The name of the profile level.
-	Name             string `pulumi:"name"`
-	RecommendationId string `pulumi:"recommendationId"`
+	Name             *string `pulumi:"name"`
+	RecommendationId string  `pulumi:"recommendationId"`
 	// An array of `ResourceCount` objects grouped by the status of the resource actions.
 	ResourceCounts []GetRecommendationResourceCount `pulumi:"resourceCounts"`
 	// The recommendation's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The current status of the recommendation.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
 	SupportedLevels []GetRecommendationSupportedLevel `pulumi:"supportedLevels"`
 	// The date and time the recommendation details were created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-	TimeStatusBegin string `pulumi:"timeStatusBegin"`
+	TimeStatusBegin *string `pulumi:"timeStatusBegin"`
 	// The date and time the current status will change. The format is defined by RFC3339.
-	TimeStatusEnd string `pulumi:"timeStatusEnd"`
+	TimeStatusEnd *string `pulumi:"timeStatusEnd"`
 	// The date and time the recommendation details were last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupRecommendationOutput(ctx *pulumi.Context, args LookupRecommendationOutputArgs, opts ...pulumi.InvokeOption) LookupRecommendationResultOutput {
@@ -132,30 +131,24 @@ func (o LookupRecommendationResultOutput) ToLookupRecommendationResultOutputWith
 	return o
 }
 
-func (o LookupRecommendationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRecommendationResult] {
-	return pulumix.Output[LookupRecommendationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique OCID associated with the category.
-func (o LookupRecommendationResultOutput) CategoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.CategoryId }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) CategoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.CategoryId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy. The tenancy is the root compartment.
-func (o LookupRecommendationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Text describing the recommendation.
-func (o LookupRecommendationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The estimated cost savings, in dollars, for the recommendation.
-func (o LookupRecommendationResultOutput) EstimatedCostSaving() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupRecommendationResult) float64 { return v.EstimatedCostSaving }).(pulumi.Float64Output)
+func (o LookupRecommendationResultOutput) EstimatedCostSaving() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *float64 { return v.EstimatedCostSaving }).(pulumi.Float64PtrOutput)
 }
 
 // Additional metadata key/value pairs for the recommendation.
@@ -164,18 +157,18 @@ func (o LookupRecommendationResultOutput) ExtendedMetadata() pulumi.MapOutput {
 }
 
 // The unique OCID associated with the recommendation.
-func (o LookupRecommendationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The level of importance assigned to the recommendation.
-func (o LookupRecommendationResultOutput) Importance() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.Importance }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) Importance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.Importance }).(pulumi.StringPtrOutput)
 }
 
 // The name of the profile level.
-func (o LookupRecommendationResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupRecommendationResultOutput) RecommendationId() pulumi.StringOutput {
@@ -188,13 +181,13 @@ func (o LookupRecommendationResultOutput) ResourceCounts() GetRecommendationReso
 }
 
 // The recommendation's current state.
-func (o LookupRecommendationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current status of the recommendation.
-func (o LookupRecommendationResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
@@ -203,23 +196,23 @@ func (o LookupRecommendationResultOutput) SupportedLevels() GetRecommendationSup
 }
 
 // The date and time the recommendation details were created, in the format defined by RFC3339.
-func (o LookupRecommendationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the recommendation entered its current status. The format is defined by RFC3339.
-func (o LookupRecommendationResultOutput) TimeStatusBegin() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.TimeStatusBegin }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) TimeStatusBegin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.TimeStatusBegin }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the current status will change. The format is defined by RFC3339.
-func (o LookupRecommendationResultOutput) TimeStatusEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.TimeStatusEnd }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) TimeStatusEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.TimeStatusEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the recommendation details were last updated, in the format defined by RFC3339.
-func (o LookupRecommendationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupRecommendationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

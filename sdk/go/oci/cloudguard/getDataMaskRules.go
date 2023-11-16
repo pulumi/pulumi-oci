@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
@@ -94,7 +93,7 @@ type GetDataMaskRulesResult struct {
 	// IAM Group id associated with the data mask rule
 	IamGroupId *string `pulumi:"iamGroupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the DataMaskRule.
 	State      *string `pulumi:"state"`
 	TargetId   *string `pulumi:"targetId"`
@@ -154,12 +153,6 @@ func (o GetDataMaskRulesResultOutput) ToGetDataMaskRulesResultOutputWithContext(
 	return o
 }
 
-func (o GetDataMaskRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataMaskRulesResult] {
-	return pulumix.Output[GetDataMaskRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataMaskRulesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -196,8 +189,8 @@ func (o GetDataMaskRulesResultOutput) IamGroupId() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataMaskRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataMaskRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataMaskRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataMaskRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DataMaskRule.

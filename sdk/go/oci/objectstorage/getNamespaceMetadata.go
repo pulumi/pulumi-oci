@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupNamespaceMetadata(ctx *pulumi.Context, args *LookupNamespaceMetadataArgs, opts ...pulumi.InvokeOption) (*LookupNamespaceMetadataResult, error) {
@@ -29,11 +28,11 @@ type LookupNamespaceMetadataArgs struct {
 
 // A collection of values returned by getNamespaceMetadata.
 type LookupNamespaceMetadataResult struct {
-	DefaultS3compartmentId    string `pulumi:"defaultS3compartmentId"`
-	DefaultSwiftCompartmentId string `pulumi:"defaultSwiftCompartmentId"`
+	DefaultS3compartmentId    *string `pulumi:"defaultS3compartmentId"`
+	DefaultSwiftCompartmentId *string `pulumi:"defaultSwiftCompartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 }
 
 func LookupNamespaceMetadataOutput(ctx *pulumi.Context, args LookupNamespaceMetadataOutputArgs, opts ...pulumi.InvokeOption) LookupNamespaceMetadataResultOutput {
@@ -73,23 +72,17 @@ func (o LookupNamespaceMetadataResultOutput) ToLookupNamespaceMetadataResultOutp
 	return o
 }
 
-func (o LookupNamespaceMetadataResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNamespaceMetadataResult] {
-	return pulumix.Output[LookupNamespaceMetadataResult]{
-		OutputState: o.OutputState,
-	}
+func (o LookupNamespaceMetadataResultOutput) DefaultS3compartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceMetadataResult) *string { return v.DefaultS3compartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupNamespaceMetadataResultOutput) DefaultS3compartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceMetadataResult) string { return v.DefaultS3compartmentId }).(pulumi.StringOutput)
-}
-
-func (o LookupNamespaceMetadataResultOutput) DefaultSwiftCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceMetadataResult) string { return v.DefaultSwiftCompartmentId }).(pulumi.StringOutput)
+func (o LookupNamespaceMetadataResultOutput) DefaultSwiftCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceMetadataResult) *string { return v.DefaultSwiftCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupNamespaceMetadataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNamespaceMetadataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNamespaceMetadataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNamespaceMetadataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNamespaceMetadataResultOutput) Namespace() pulumi.StringOutput {

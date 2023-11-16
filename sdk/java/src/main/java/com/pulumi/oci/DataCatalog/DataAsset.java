@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,28 +85,28 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdById", refs={String.class}, tree="[0]")
-    private Output<String> createdById;
+    private Output</* @Nullable */ String> createdById;
 
     /**
      * @return OCID of the user who created the data asset.
      * 
      */
-    public Output<String> createdById() {
-        return this.createdById;
+    public Output<Optional<String>> createdById() {
+        return Codegen.optional(this.createdById);
     }
     /**
      * (Updatable) Detailed description of the data asset.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Detailed description of the data asset.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -126,104 +127,104 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalKey", refs={String.class}, tree="[0]")
-    private Output<String> externalKey;
+    private Output</* @Nullable */ String> externalKey;
 
     /**
      * @return External URI that can be used to reference the object. Format will differ based on the type of object.
      * 
      */
-    public Output<String> externalKey() {
-        return this.externalKey;
+    public Output<Optional<String>> externalKey() {
+        return Codegen.optional(this.externalKey);
     }
     /**
      * Unique data asset key that is immutable.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return Unique data asset key that is immutable.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> properties;
+    private Output</* @Nullable */ Map<String,Object>> properties;
 
-    public Output<Map<String,Object>> properties() {
-        return this.properties;
+    public Output<Optional<Map<String,Object>>> properties() {
+        return Codegen.optional(this.properties);
     }
     /**
      * The current state of the data asset.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the data asset.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeHarvested", refs={String.class}, tree="[0]")
-    private Output<String> timeHarvested;
+    private Output</* @Nullable */ String> timeHarvested;
 
     /**
      * @return The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public Output<String> timeHarvested() {
-        return this.timeHarvested;
+    public Output<Optional<String>> timeHarvested() {
+        return Codegen.optional(this.timeHarvested);
     }
     /**
      * The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The key of the data asset type. This can be obtained via the &#39;/types&#39; endpoint.
@@ -250,28 +251,28 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="updatedById", refs={String.class}, tree="[0]")
-    private Output<String> updatedById;
+    private Output</* @Nullable */ String> updatedById;
 
     /**
      * @return OCID of the user who last modified the data asset.
      * 
      */
-    public Output<String> updatedById() {
-        return this.updatedById;
+    public Output<Optional<String>> updatedById() {
+        return Codegen.optional(this.updatedById);
     }
     /**
      * URI to the data asset instance in the API.
      * 
      */
     @Export(name="uri", refs={String.class}, tree="[0]")
-    private Output<String> uri;
+    private Output</* @Nullable */ String> uri;
 
     /**
      * @return URI to the data asset instance in the API.
      * 
      */
-    public Output<String> uri() {
-        return this.uri;
+    public Output<Optional<String>> uri() {
+        return Codegen.optional(this.uri);
     }
 
     /**

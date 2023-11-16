@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -93,31 +92,31 @@ import (
 type AutonomousVmCluster struct {
 	pulumi.CustomResourceState
 
-	AutonomousDataStoragePercentage pulumi.Float64Output `pulumi:"autonomousDataStoragePercentage"`
+	AutonomousDataStoragePercentage pulumi.Float64PtrOutput `pulumi:"autonomousDataStoragePercentage"`
 	// The data disk group size to be allocated for Autonomous Databases, in TBs.
-	AutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"autonomousDataStorageSizeInTbs"`
+	AutonomousDataStorageSizeInTbs pulumi.Float64PtrOutput `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The data disk group size available for Autonomous Databases, in TBs.
-	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64PtrOutput `pulumi:"availableAutonomousDataStorageSizeInTbs"`
 	// The number of Autonomous Container Databases that can be created with the currently available local storage.
-	AvailableContainerDatabases pulumi.IntOutput `pulumi:"availableContainerDatabases"`
+	AvailableContainerDatabases pulumi.IntPtrOutput `pulumi:"availableContainerDatabases"`
 	// The numnber of CPU cores available.
-	AvailableCpus pulumi.IntOutput `pulumi:"availableCpus"`
+	AvailableCpus pulumi.IntPtrOutput `pulumi:"availableCpus"`
 	// **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
-	AvailableDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableDataStorageSizeInTbs"`
+	AvailableDataStorageSizeInTbs pulumi.Float64PtrOutput `pulumi:"availableDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The compute model of the Autonomous VM Cluster.
-	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
+	ComputeModel pulumi.StringPtrOutput `pulumi:"computeModel"`
 	// The number of CPU cores to enable per VM cluster node.
-	CpuCoreCountPerNode pulumi.IntOutput     `pulumi:"cpuCoreCountPerNode"`
-	CpuPercentage       pulumi.Float64Output `pulumi:"cpuPercentage"`
+	CpuCoreCountPerNode pulumi.IntPtrOutput     `pulumi:"cpuCoreCountPerNode"`
+	CpuPercentage       pulumi.Float64PtrOutput `pulumi:"cpuPercentage"`
 	// The number of enabled CPU cores.
-	CpusEnabled         pulumi.IntOutput     `pulumi:"cpusEnabled"`
-	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
+	CpusEnabled         pulumi.IntPtrOutput     `pulumi:"cpusEnabled"`
+	DataStorageSizeInGb pulumi.Float64PtrOutput `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated in TBs
-	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs pulumi.Float64PtrOutput `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs pulumi.IntPtrOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
 	DbServers pulumi.StringArrayOutput `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -129,54 +128,54 @@ type AutonomousVmCluster struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
-	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled pulumi.BoolPtrOutput `pulumi:"isLocalBackupEnabled"`
 	// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
-	IsMtlsEnabled pulumi.BoolOutput `pulumi:"isMtlsEnabled"`
+	IsMtlsEnabled pulumi.BoolPtrOutput `pulumi:"isMtlsEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
+	LastMaintenanceRunId pulumi.StringPtrOutput `pulumi:"lastMaintenanceRunId"`
 	// (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousVmClusterMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
-	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
+	MemorySizeInGbs pulumi.IntPtrOutput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
+	NextMaintenanceRunId pulumi.StringPtrOutput `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the Autonomous VM Cluster.
-	NodeCount                                    pulumi.IntOutput `pulumi:"nodeCount"`
-	NonProvisionableAutonomousContainerDatabases pulumi.IntOutput `pulumi:"nonProvisionableAutonomousContainerDatabases"`
+	NodeCount                                    pulumi.IntPtrOutput `pulumi:"nodeCount"`
+	NonProvisionableAutonomousContainerDatabases pulumi.IntPtrOutput `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The number of enabled OCPU cores.
-	OcpusEnabled                            pulumi.Float64Output `pulumi:"ocpusEnabled"`
-	ProvisionedAutonomousContainerDatabases pulumi.IntOutput     `pulumi:"provisionedAutonomousContainerDatabases"`
-	ProvisionedCpus                         pulumi.Float64Output `pulumi:"provisionedCpus"`
+	OcpusEnabled                            pulumi.Float64PtrOutput `pulumi:"ocpusEnabled"`
+	ProvisionedAutonomousContainerDatabases pulumi.IntPtrOutput     `pulumi:"provisionedAutonomousContainerDatabases"`
+	ProvisionedCpus                         pulumi.Float64PtrOutput `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	ReclaimableCpus pulumi.IntOutput     `pulumi:"reclaimableCpus"`
-	ReservedCpus    pulumi.Float64Output `pulumi:"reservedCpus"`
+	ReclaimableCpus pulumi.IntPtrOutput     `pulumi:"reclaimableCpus"`
+	ReservedCpus    pulumi.Float64PtrOutput `pulumi:"reservedCpus"`
 	// The SCAN Listener Non TLS port number. Default value is 1521.
-	ScanListenerPortNonTls pulumi.IntOutput `pulumi:"scanListenerPortNonTls"`
+	ScanListenerPortNonTls pulumi.IntPtrOutput `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port number. Default value is 2484.
-	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
+	ScanListenerPortTls pulumi.IntPtrOutput `pulumi:"scanListenerPortTls"`
 	// The current state of the Autonomous VM cluster.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time that the Autonomous VM cluster was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
-	TimeDatabaseSslCertificateExpires pulumi.StringOutput `pulumi:"timeDatabaseSslCertificateExpires"`
+	TimeDatabaseSslCertificateExpires pulumi.StringPtrOutput `pulumi:"timeDatabaseSslCertificateExpires"`
 	// The date and time of ORDS certificate expiration.
-	TimeOrdsCertificateExpires pulumi.StringOutput `pulumi:"timeOrdsCertificateExpires"`
+	TimeOrdsCertificateExpires pulumi.StringPtrOutput `pulumi:"timeOrdsCertificateExpires"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone                        pulumi.StringOutput  `pulumi:"timeZone"`
-	TotalAutonomousDataStorageInTbs pulumi.Float64Output `pulumi:"totalAutonomousDataStorageInTbs"`
+	TimeZone                        pulumi.StringPtrOutput  `pulumi:"timeZone"`
+	TotalAutonomousDataStorageInTbs pulumi.Float64PtrOutput `pulumi:"totalAutonomousDataStorageInTbs"`
 	// The total number of Autonomous Container Databases that can be created.
-	TotalContainerDatabases pulumi.IntOutput `pulumi:"totalContainerDatabases"`
+	TotalContainerDatabases pulumi.IntPtrOutput `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
 	// ** IMPORTANT **
@@ -525,12 +524,6 @@ func (i *AutonomousVmCluster) ToAutonomousVmClusterOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterOutput)
 }
 
-func (i *AutonomousVmCluster) ToOutput(ctx context.Context) pulumix.Output[*AutonomousVmCluster] {
-	return pulumix.Output[*AutonomousVmCluster]{
-		OutputState: i.ToAutonomousVmClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutonomousVmClusterArrayInput is an input type that accepts AutonomousVmClusterArray and AutonomousVmClusterArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterArrayInput` via:
 //
@@ -554,12 +547,6 @@ func (i AutonomousVmClusterArray) ToAutonomousVmClusterArrayOutput() AutonomousV
 
 func (i AutonomousVmClusterArray) ToAutonomousVmClusterArrayOutputWithContext(ctx context.Context) AutonomousVmClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterArrayOutput)
-}
-
-func (i AutonomousVmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousVmCluster] {
-	return pulumix.Output[[]*AutonomousVmCluster]{
-		OutputState: i.ToAutonomousVmClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutonomousVmClusterMapInput is an input type that accepts AutonomousVmClusterMap and AutonomousVmClusterMapOutput values.
@@ -587,12 +574,6 @@ func (i AutonomousVmClusterMap) ToAutonomousVmClusterMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterMapOutput)
 }
 
-func (i AutonomousVmClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousVmCluster] {
-	return pulumix.Output[map[string]*AutonomousVmCluster]{
-		OutputState: i.ToAutonomousVmClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutonomousVmClusterOutput struct{ *pulumi.OutputState }
 
 func (AutonomousVmClusterOutput) ElementType() reflect.Type {
@@ -607,39 +588,33 @@ func (o AutonomousVmClusterOutput) ToAutonomousVmClusterOutputWithContext(ctx co
 	return o
 }
 
-func (o AutonomousVmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousVmCluster] {
-	return pulumix.Output[*AutonomousVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o AutonomousVmClusterOutput) AutonomousDataStoragePercentage() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.AutonomousDataStoragePercentage }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) AutonomousDataStoragePercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.AutonomousDataStoragePercentage }).(pulumi.Float64PtrOutput)
 }
 
 // The data disk group size to be allocated for Autonomous Databases, in TBs.
-func (o AutonomousVmClusterOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The data disk group size available for Autonomous Databases, in TBs.
-func (o AutonomousVmClusterOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.AvailableAutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.AvailableAutonomousDataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The number of Autonomous Container Databases that can be created with the currently available local storage.
-func (o AutonomousVmClusterOutput) AvailableContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) AvailableContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.AvailableContainerDatabases }).(pulumi.IntPtrOutput)
 }
 
 // The numnber of CPU cores available.
-func (o AutonomousVmClusterOutput) AvailableCpus() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.AvailableCpus }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) AvailableCpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.AvailableCpus }).(pulumi.IntPtrOutput)
 }
 
 // **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
-func (o AutonomousVmClusterOutput) AvailableDataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.AvailableDataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) AvailableDataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.AvailableDataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -648,36 +623,36 @@ func (o AutonomousVmClusterOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The compute model of the Autonomous VM Cluster.
-func (o AutonomousVmClusterOutput) ComputeModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) ComputeModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.ComputeModel }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPU cores to enable per VM cluster node.
-func (o AutonomousVmClusterOutput) CpuCoreCountPerNode() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) CpuCoreCountPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.CpuCoreCountPerNode }).(pulumi.IntPtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) CpuPercentage() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.CpuPercentage }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) CpuPercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.CpuPercentage }).(pulumi.Float64PtrOutput)
 }
 
 // The number of enabled CPU cores.
-func (o AutonomousVmClusterOutput) CpusEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) CpusEnabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.CpusEnabled }).(pulumi.IntPtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) DataStorageSizeInGb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.DataStorageSizeInGb }).(pulumi.Float64PtrOutput)
 }
 
 // The total data storage allocated in TBs
-func (o AutonomousVmClusterOutput) DataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) DataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.DataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The local node storage allocated in GBs.
-func (o AutonomousVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
@@ -706,28 +681,28 @@ func (o AutonomousVmClusterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
-func (o AutonomousVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+func (o AutonomousVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolPtrOutput { return v.IsLocalBackupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
-func (o AutonomousVmClusterOutput) IsMtlsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolOutput { return v.IsMtlsEnabled }).(pulumi.BoolOutput)
+func (o AutonomousVmClusterOutput) IsMtlsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.BoolPtrOutput { return v.IsMtlsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-func (o AutonomousVmClusterOutput) LastMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) LastMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.LastMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-func (o AutonomousVmClusterOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o AutonomousVmClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -745,95 +720,97 @@ func (o AutonomousVmClusterOutput) MaintenanceWindows() AutonomousVmClusterMaint
 }
 
 // The amount of memory (in GBs) to be enabled per OCPU or ECPU.
-func (o AutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The memory allocated in GBs.
-func (o AutonomousVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-func (o AutonomousVmClusterOutput) NextMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) NextMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.NextMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The number of nodes in the Autonomous VM Cluster.
-func (o AutonomousVmClusterOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) NonProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.NonProvisionableAutonomousContainerDatabases }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) NonProvisionableAutonomousContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput {
+		return v.NonProvisionableAutonomousContainerDatabases
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of enabled OCPU cores.
-func (o AutonomousVmClusterOutput) OcpusEnabled() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.OcpusEnabled }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) OcpusEnabled() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.OcpusEnabled }).(pulumi.Float64PtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ProvisionedAutonomousContainerDatabases }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.ProvisionedAutonomousContainerDatabases }).(pulumi.IntPtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) ProvisionedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.ProvisionedCpus }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) ProvisionedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.ProvisionedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // For Autonomous Databases on Dedicated Exadata Infrastructure:
 // * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 // * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-func (o AutonomousVmClusterOutput) ReclaimableCpus() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ReclaimableCpus }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) ReclaimableCpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.ReclaimableCpus }).(pulumi.IntPtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) ReservedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.ReservedCpus }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) ReservedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.ReservedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // The SCAN Listener Non TLS port number. Default value is 1521.
-func (o AutonomousVmClusterOutput) ScanListenerPortNonTls() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortNonTls }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) ScanListenerPortNonTls() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.ScanListenerPortNonTls }).(pulumi.IntPtrOutput)
 }
 
 // The SCAN Listener TLS port number. Default value is 2484.
-func (o AutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ScanListenerPortTls }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.ScanListenerPortTls }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the Autonomous VM cluster.
-func (o AutonomousVmClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the Autonomous VM cluster was created.
-func (o AutonomousVmClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of Database SSL certificate expiration.
-func (o AutonomousVmClusterOutput) TimeDatabaseSslCertificateExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeDatabaseSslCertificateExpires }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) TimeDatabaseSslCertificateExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.TimeDatabaseSslCertificateExpires }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of ORDS certificate expiration.
-func (o AutonomousVmClusterOutput) TimeOrdsCertificateExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeOrdsCertificateExpires }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) TimeOrdsCertificateExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.TimeOrdsCertificateExpires }).(pulumi.StringPtrOutput)
 }
 
 // The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-func (o AutonomousVmClusterOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o AutonomousVmClusterOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
-func (o AutonomousVmClusterOutput) TotalAutonomousDataStorageInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.TotalAutonomousDataStorageInTbs }).(pulumi.Float64Output)
+func (o AutonomousVmClusterOutput) TotalAutonomousDataStorageInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64PtrOutput { return v.TotalAutonomousDataStorageInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of Autonomous Container Databases that can be created.
-func (o AutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.TotalContainerDatabases }).(pulumi.IntOutput)
+func (o AutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntPtrOutput { return v.TotalContainerDatabases }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -858,12 +835,6 @@ func (o AutonomousVmClusterArrayOutput) ToAutonomousVmClusterArrayOutputWithCont
 	return o
 }
 
-func (o AutonomousVmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousVmCluster] {
-	return pulumix.Output[[]*AutonomousVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) AutonomousVmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AutonomousVmCluster {
 		return vs[0].([]*AutonomousVmCluster)[vs[1].(int)]
@@ -882,12 +853,6 @@ func (o AutonomousVmClusterMapOutput) ToAutonomousVmClusterMapOutput() Autonomou
 
 func (o AutonomousVmClusterMapOutput) ToAutonomousVmClusterMapOutputWithContext(ctx context.Context) AutonomousVmClusterMapOutput {
 	return o
-}
-
-func (o AutonomousVmClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousVmCluster] {
-	return pulumix.Output[map[string]*AutonomousVmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousVmClusterMapOutput) MapIndex(k pulumi.StringInput) AutonomousVmClusterOutput {

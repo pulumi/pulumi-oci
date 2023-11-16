@@ -24,7 +24,7 @@ public final class GetComputeCapacityReservationInstancesResult {
      * @return The list of capacity_reservation_instances.
      * 
      */
-    private List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances;
+    private @Nullable List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances;
     /**
      * @return The OCID of the compartment that contains the instance.
      * 
@@ -35,7 +35,7 @@ public final class GetComputeCapacityReservationInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetComputeCapacityReservationInstancesResult() {}
     /**
@@ -53,7 +53,7 @@ public final class GetComputeCapacityReservationInstancesResult {
      * 
      */
     public List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances() {
-        return this.capacityReservationInstances;
+        return this.capacityReservationInstances == null ? List.of() : this.capacityReservationInstances;
     }
     /**
      * @return The OCID of the compartment that contains the instance.
@@ -69,8 +69,8 @@ public final class GetComputeCapacityReservationInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -84,10 +84,10 @@ public final class GetComputeCapacityReservationInstancesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String capacityReservationId;
-        private List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances;
+        private @Nullable List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances;
         private @Nullable String compartmentId;
         private @Nullable List<GetComputeCapacityReservationInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -110,8 +110,8 @@ public final class GetComputeCapacityReservationInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder capacityReservationInstances(List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances) {
-            this.capacityReservationInstances = Objects.requireNonNull(capacityReservationInstances);
+        public Builder capacityReservationInstances(@Nullable List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances) {
+            this.capacityReservationInstances = capacityReservationInstances;
             return this;
         }
         public Builder capacityReservationInstances(GetComputeCapacityReservationInstancesCapacityReservationInstance... capacityReservationInstances) {
@@ -131,8 +131,8 @@ public final class GetComputeCapacityReservationInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetComputeCapacityReservationInstancesResult build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHeatWaveClusterClusterNode {
@@ -13,51 +15,51 @@ public final class GetHeatWaveClusterClusterNode {
      * @return The ID of the node within MySQL HeatWave cluster.
      * 
      */
-    private String nodeId;
+    private @Nullable String nodeId;
     /**
      * @return The current state of the HeatWave cluster.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetHeatWaveClusterClusterNode() {}
     /**
      * @return The ID of the node within MySQL HeatWave cluster.
      * 
      */
-    public String nodeId() {
-        return this.nodeId;
+    public Optional<String> nodeId() {
+        return Optional.ofNullable(this.nodeId);
     }
     /**
      * @return The current state of the HeatWave cluster.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetHeatWaveClusterClusterNode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String nodeId;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String nodeId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetHeatWaveClusterClusterNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetHeatWaveClusterClusterNode {
         }
 
         @CustomType.Setter
-        public Builder nodeId(String nodeId) {
-            this.nodeId = Objects.requireNonNull(nodeId);
+        public Builder nodeId(@Nullable String nodeId) {
+            this.nodeId = nodeId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetHeatWaveClusterClusterNode build() {

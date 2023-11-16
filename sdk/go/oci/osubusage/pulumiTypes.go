@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -18,23 +17,23 @@ type GetCommitmentAggregatedsComputedUsageAggregated struct {
 	// Aggregation of computed usages for the subscribed service.
 	AggregatedComputedUsages []GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage `pulumi:"aggregatedComputedUsages"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts []GetCommitmentAggregatedsComputedUsageAggregatedParentProduct `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId string `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId *string `pulumi:"parentSubscribedServiceId"`
 	// Subscribed service asociated subscription plan number.
-	PlanNumber string `pulumi:"planNumber"`
+	PlanNumber *string `pulumi:"planNumber"`
 	// Subscribed services pricing model
-	PricingModel string `pulumi:"pricingModel"`
+	PricingModel *string `pulumi:"pricingModel"`
 	// Inernal SPM Ratecard Id at line level
-	RateCardId string `pulumi:"rateCardId"`
+	RateCardId *string `pulumi:"rateCardId"`
 	// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedArgs and GetCommitmentAggregatedsComputedUsageAggregatedOutput values.
@@ -52,23 +51,23 @@ type GetCommitmentAggregatedsComputedUsageAggregatedArgs struct {
 	// Aggregation of computed usages for the subscribed service.
 	AggregatedComputedUsages GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput `pulumi:"aggregatedComputedUsages"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId pulumi.StringInput `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId pulumi.StringPtrInput `pulumi:"parentSubscribedServiceId"`
 	// Subscribed service asociated subscription plan number.
-	PlanNumber pulumi.StringInput `pulumi:"planNumber"`
+	PlanNumber pulumi.StringPtrInput `pulumi:"planNumber"`
 	// Subscribed services pricing model
-	PricingModel pulumi.StringInput `pulumi:"pricingModel"`
+	PricingModel pulumi.StringPtrInput `pulumi:"pricingModel"`
 	// Inernal SPM Ratecard Id at line level
-	RateCardId pulumi.StringInput `pulumi:"rateCardId"`
+	RateCardId pulumi.StringPtrInput `pulumi:"rateCardId"`
 	// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 	// Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedArgs) ElementType() reflect.Type {
@@ -81,12 +80,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedArgs) ToGetCommitmentAggr
 
 func (i GetCommitmentAggregatedsComputedUsageAggregatedArgs) ToGetCommitmentAggregatedsComputedUsageAggregatedOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedOutput)
-}
-
-func (i GetCommitmentAggregatedsComputedUsageAggregatedArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedArray and GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput values.
@@ -114,12 +107,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedArray) ToGetCommitmentAgg
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput)
 }
 
-func (i GetCommitmentAggregatedsComputedUsageAggregatedArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentAggregatedsComputedUsageAggregatedOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedOutput) ElementType() reflect.Type {
@@ -134,12 +121,6 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ToGetCommitmentAg
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregated]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregation of computed usages for the subscribed service.
 func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) AggregatedComputedUsages() GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput {
 	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) []GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage {
@@ -148,8 +129,8 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) AggregatedCompute
 }
 
 // Currency code
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Product part number for subscribed service line, called parent product.
@@ -160,38 +141,38 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ParentProducts() 
 }
 
 // Subscribed service line parent id
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ParentSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.ParentSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) ParentSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.ParentSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service asociated subscription plan number.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) PlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.PlanNumber }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) PlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.PlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed services pricing model
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) PricingModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.PricingModel }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) PricingModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.PricingModel }).(pulumi.StringPtrOutput)
 }
 
 // Inernal SPM Ratecard Id at line level
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) RateCardId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.RateCardId }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) RateCardId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.RateCardId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregated) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput struct{ *pulumi.OutputState }
@@ -208,12 +189,6 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) ToGetCommitm
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregated]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregated {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregated)[vs[1].(int)]
@@ -222,21 +197,21 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedArrayOutput) Index(i pulu
 
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage struct {
 	// Sum of Computed Line Amount rounded
-	Cost string `pulumi:"cost"`
+	Cost *string `pulumi:"cost"`
 	// Sum of Computed Line Amount unrounded
-	CostUnrounded string `pulumi:"costUnrounded"`
+	CostUnrounded *string `pulumi:"costUnrounded"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// Net Unit Price for the product in consideration.
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Product description
 	Products []GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Metered Service date , expressed in RFC 3339 timestamp format.
-	TimeMeteredOn string `pulumi:"timeMeteredOn"`
+	TimeMeteredOn *string `pulumi:"timeMeteredOn"`
 	// Usage compute type in SPM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput values.
@@ -252,21 +227,21 @@ type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageInput
 
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs struct {
 	// Sum of Computed Line Amount rounded
-	Cost pulumi.StringInput `pulumi:"cost"`
+	Cost pulumi.StringPtrInput `pulumi:"cost"`
 	// Sum of Computed Line Amount unrounded
-	CostUnrounded pulumi.StringInput `pulumi:"costUnrounded"`
+	CostUnrounded pulumi.StringPtrInput `pulumi:"costUnrounded"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// Net Unit Price for the product in consideration.
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Product description
 	Products GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Metered Service date , expressed in RFC 3339 timestamp format.
-	TimeMeteredOn pulumi.StringInput `pulumi:"timeMeteredOn"`
+	TimeMeteredOn pulumi.StringPtrInput `pulumi:"timeMeteredOn"`
 	// Usage compute type in SPM.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs) ElementType() reflect.Type {
@@ -279,12 +254,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 
 func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs) ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput)
-}
-
-func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput values.
@@ -312,12 +281,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput)
 }
 
-func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) ElementType() reflect.Type {
@@ -332,36 +295,30 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOu
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Sum of Computed Line Amount rounded
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) Cost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string { return v.Cost }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) Cost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string { return v.Cost }).(pulumi.StringPtrOutput)
 }
 
 // Sum of Computed Line Amount unrounded
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) CostUnrounded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) CostUnrounded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string {
 		return v.CostUnrounded
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Data Center Attribute as sent by MQS to SPM.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string {
 		return v.DataCenter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Net Unit Price for the product in consideration.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string {
 		return v.NetUnitPrice
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -372,22 +329,22 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOu
 }
 
 // Total Quantity that was used for computation
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string {
 		return v.Quantity
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Metered Service date , expressed in RFC 3339 timestamp format.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) TimeMeteredOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) TimeMeteredOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string {
 		return v.TimeMeteredOn
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Usage compute type in SPM.
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) string { return v.Type }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput struct{ *pulumi.OutputState }
@@ -404,12 +361,6 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsage)[vs[1].(int)]
@@ -418,19 +369,19 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageAr
 
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput values.
@@ -446,19 +397,19 @@ type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProdu
 
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs) ElementType() reflect.Type {
@@ -471,12 +422,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 
 func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs) ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput)
-}
-
-func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray and GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput values.
@@ -504,12 +449,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput)
 }
 
-func (i GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ElementType() reflect.Type {
@@ -524,59 +463,53 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.BillingCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.PartNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.ProductCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.ProvisioningGroup
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.UcmRateCardPartType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct) *string {
 		return v.UnitOfMeasure
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -593,12 +526,6 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct {
 		return vs[0].([]GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct)[vs[1].(int)]
@@ -607,19 +534,19 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsagePr
 
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedParentProductInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs and GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput values.
@@ -635,19 +562,19 @@ type GetCommitmentAggregatedsComputedUsageAggregatedParentProductInput interface
 
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ElementType() reflect.Type {
@@ -660,12 +587,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ToGetC
 
 func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput)
-}
-
-func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayInput is an input type that accepts GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray and GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput values.
@@ -693,12 +614,6 @@ func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput)
 }
 
-func (i GetCommitmentAggregatedsComputedUsageAggregatedParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
-		OutputState: i.ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ElementType() reflect.Type {
@@ -713,49 +628,43 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ToGe
 	return o
 }
 
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
-	return pulumix.Output[GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string {
 		return v.ProvisioningGroup
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string {
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string {
 		return v.UcmRateCardPartType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsComputedUsageAggregatedParentProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -770,12 +679,6 @@ func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput)
 
 func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput) ToGetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutputWithContext(ctx context.Context) GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput {
 	return o
-}
-
-func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct] {
-	return pulumix.Output[[]GetCommitmentAggregatedsComputedUsageAggregatedParentProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCommitmentAggregatedsComputedUsageAggregatedParentProductArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsComputedUsageAggregatedParentProductOutput {
@@ -821,12 +724,6 @@ func (i GetCommitmentAggregatedsFilterArgs) ToGetCommitmentAggregatedsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsFilterOutput)
 }
 
-func (i GetCommitmentAggregatedsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsFilter] {
-	return pulumix.Output[GetCommitmentAggregatedsFilter]{
-		OutputState: i.ToGetCommitmentAggregatedsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCommitmentAggregatedsFilterArrayInput is an input type that accepts GetCommitmentAggregatedsFilterArray and GetCommitmentAggregatedsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentAggregatedsFilterArrayInput` via:
 //
@@ -852,12 +749,6 @@ func (i GetCommitmentAggregatedsFilterArray) ToGetCommitmentAggregatedsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentAggregatedsFilterArrayOutput)
 }
 
-func (i GetCommitmentAggregatedsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsFilter] {
-	return pulumix.Output[[]GetCommitmentAggregatedsFilter]{
-		OutputState: i.ToGetCommitmentAggregatedsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentAggregatedsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentAggregatedsFilterOutput) ElementType() reflect.Type {
@@ -870,12 +761,6 @@ func (o GetCommitmentAggregatedsFilterOutput) ToGetCommitmentAggregatedsFilterOu
 
 func (o GetCommitmentAggregatedsFilterOutput) ToGetCommitmentAggregatedsFilterOutputWithContext(ctx context.Context) GetCommitmentAggregatedsFilterOutput {
 	return o
-}
-
-func (o GetCommitmentAggregatedsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsFilter] {
-	return pulumix.Output[GetCommitmentAggregatedsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -905,12 +790,6 @@ func (o GetCommitmentAggregatedsFilterArrayOutput) ToGetCommitmentAggregatedsFil
 	return o
 }
 
-func (o GetCommitmentAggregatedsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentAggregatedsFilter] {
-	return pulumix.Output[[]GetCommitmentAggregatedsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCommitmentAggregatedsFilterArrayOutput) Index(i pulumi.IntInput) GetCommitmentAggregatedsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentAggregatedsFilter {
 		return vs[0].([]GetCommitmentAggregatedsFilter)[vs[1].(int)]
@@ -919,19 +798,19 @@ func (o GetCommitmentAggregatedsFilterArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetComputedUsageParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsageParentProductInput is an input type that accepts GetComputedUsageParentProductArgs and GetComputedUsageParentProductOutput values.
@@ -947,19 +826,19 @@ type GetComputedUsageParentProductInput interface {
 
 type GetComputedUsageParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsageParentProductArgs) ElementType() reflect.Type {
@@ -972,12 +851,6 @@ func (i GetComputedUsageParentProductArgs) ToGetComputedUsageParentProductOutput
 
 func (i GetComputedUsageParentProductArgs) ToGetComputedUsageParentProductOutputWithContext(ctx context.Context) GetComputedUsageParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageParentProductOutput)
-}
-
-func (i GetComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsageParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsageParentProductArray and GetComputedUsageParentProductArrayOutput values.
@@ -1005,12 +878,6 @@ func (i GetComputedUsageParentProductArray) ToGetComputedUsageParentProductArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageParentProductArrayOutput)
 }
 
-func (i GetComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -1025,45 +892,39 @@ func (o GetComputedUsageParentProductOutput) ToGetComputedUsageParentProductOutp
 	return o
 }
 
-func (o GetComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsageParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsageParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsageParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsageParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsageParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -1080,12 +941,6 @@ func (o GetComputedUsageParentProductArrayOutput) ToGetComputedUsageParentProduc
 	return o
 }
 
-func (o GetComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsageParentProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsageParentProduct {
 		return vs[0].([]GetComputedUsageParentProduct)[vs[1].(int)]
@@ -1094,19 +949,19 @@ func (o GetComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetCo
 
 type GetComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsageProductInput is an input type that accepts GetComputedUsageProductArgs and GetComputedUsageProductOutput values.
@@ -1122,19 +977,19 @@ type GetComputedUsageProductInput interface {
 
 type GetComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsageProductArgs) ElementType() reflect.Type {
@@ -1147,12 +1002,6 @@ func (i GetComputedUsageProductArgs) ToGetComputedUsageProductOutput() GetComput
 
 func (i GetComputedUsageProductArgs) ToGetComputedUsageProductOutputWithContext(ctx context.Context) GetComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageProductOutput)
-}
-
-func (i GetComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsageProductArrayInput is an input type that accepts GetComputedUsageProductArray and GetComputedUsageProductArrayOutput values.
@@ -1180,12 +1029,6 @@ func (i GetComputedUsageProductArray) ToGetComputedUsageProductArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageProductArrayOutput)
 }
 
-func (i GetComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsageProductOutput) ElementType() reflect.Type {
@@ -1200,45 +1043,39 @@ func (o GetComputedUsageProductOutput) ToGetComputedUsageProductOutputWithContex
 	return o
 }
 
-func (o GetComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsageProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -1255,12 +1092,6 @@ func (o GetComputedUsageProductArrayOutput) ToGetComputedUsageProductArrayOutput
 	return o
 }
 
-func (o GetComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsageProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsageProduct {
 		return vs[0].([]GetComputedUsageProduct)[vs[1].(int)]
@@ -1269,56 +1100,56 @@ func (o GetComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputed
 
 type GetComputedUsagesComputedUsage struct {
 	// Subscribed service commitmentId.
-	CommitmentServiceId string `pulumi:"commitmentServiceId"`
+	CommitmentServiceId *string `pulumi:"commitmentServiceId"`
 	// SPM Internal compute records source .
-	ComputeSource   string `pulumi:"computeSource"`
-	ComputedUsageId string `pulumi:"computedUsageId"`
+	ComputeSource   *string `pulumi:"computeSource"`
+	ComputedUsageId *string `pulumi:"computedUsageId"`
 	// Computed Line Amount not rounded
-	Cost string `pulumi:"cost"`
+	Cost *string `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded string `pulumi:"costRounded"`
+	CostRounded *string `pulumi:"costRounded"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// SPM Internal computed usage Id , 32 character string
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Invoicing status for the aggregated compute usage
-	IsInvoiced bool `pulumi:"isInvoiced"`
+	IsInvoiced *bool `pulumi:"isInvoiced"`
 	// MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-	MqsMessageId string `pulumi:"mqsMessageId"`
+	MqsMessageId *string `pulumi:"mqsMessageId"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-	OriginalUsageNumber string `pulumi:"originalUsageNumber"`
+	OriginalUsageNumber *string `pulumi:"originalUsageNumber"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts []GetComputedUsagesComputedUsageParentProduct `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId string `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId *string `pulumi:"parentSubscribedServiceId"`
 	// Subscription plan number
-	PlanNumber string `pulumi:"planNumber"`
+	PlanNumber *string `pulumi:"planNumber"`
 	// Product description
 	Products []GetComputedUsagesComputedUsageProduct `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Ratecard Id at subscribed service level
-	RateCardId string `pulumi:"rateCardId"`
+	RateCardId *string `pulumi:"rateCardId"`
 	// References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-	RateCardTierdId string `pulumi:"rateCardTierdId"`
+	RateCardTierdId *string `pulumi:"rateCardTierdId"`
 	// Computed Usage created time, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Metered Service date, expressed in RFC 3339 timestamp format.
-	TimeMeteredOn string `pulumi:"timeMeteredOn"`
+	TimeMeteredOn *string `pulumi:"timeMeteredOn"`
 	// Usae computation date, expressed in RFC 3339 timestamp format.
-	TimeOfArrival string `pulumi:"timeOfArrival"`
+	TimeOfArrival *string `pulumi:"timeOfArrival"`
 	// Computed Usage updated time, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Usage compute type in SPM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 	// SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-	UsageNumber string `pulumi:"usageNumber"`
+	UsageNumber *string `pulumi:"usageNumber"`
 }
 
 // GetComputedUsagesComputedUsageInput is an input type that accepts GetComputedUsagesComputedUsageArgs and GetComputedUsagesComputedUsageOutput values.
@@ -1334,56 +1165,56 @@ type GetComputedUsagesComputedUsageInput interface {
 
 type GetComputedUsagesComputedUsageArgs struct {
 	// Subscribed service commitmentId.
-	CommitmentServiceId pulumi.StringInput `pulumi:"commitmentServiceId"`
+	CommitmentServiceId pulumi.StringPtrInput `pulumi:"commitmentServiceId"`
 	// SPM Internal compute records source .
-	ComputeSource   pulumi.StringInput `pulumi:"computeSource"`
-	ComputedUsageId pulumi.StringInput `pulumi:"computedUsageId"`
+	ComputeSource   pulumi.StringPtrInput `pulumi:"computeSource"`
+	ComputedUsageId pulumi.StringPtrInput `pulumi:"computedUsageId"`
 	// Computed Line Amount not rounded
-	Cost pulumi.StringInput `pulumi:"cost"`
+	Cost pulumi.StringPtrInput `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded pulumi.StringInput `pulumi:"costRounded"`
+	CostRounded pulumi.StringPtrInput `pulumi:"costRounded"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// SPM Internal computed usage Id , 32 character string
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Invoicing status for the aggregated compute usage
-	IsInvoiced pulumi.BoolInput `pulumi:"isInvoiced"`
+	IsInvoiced pulumi.BoolPtrInput `pulumi:"isInvoiced"`
 	// MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-	MqsMessageId pulumi.StringInput `pulumi:"mqsMessageId"`
+	MqsMessageId pulumi.StringPtrInput `pulumi:"mqsMessageId"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-	OriginalUsageNumber pulumi.StringInput `pulumi:"originalUsageNumber"`
+	OriginalUsageNumber pulumi.StringPtrInput `pulumi:"originalUsageNumber"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts GetComputedUsagesComputedUsageParentProductArrayInput `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId pulumi.StringInput `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId pulumi.StringPtrInput `pulumi:"parentSubscribedServiceId"`
 	// Subscription plan number
-	PlanNumber pulumi.StringInput `pulumi:"planNumber"`
+	PlanNumber pulumi.StringPtrInput `pulumi:"planNumber"`
 	// Product description
 	Products GetComputedUsagesComputedUsageProductArrayInput `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Ratecard Id at subscribed service level
-	RateCardId pulumi.StringInput `pulumi:"rateCardId"`
+	RateCardId pulumi.StringPtrInput `pulumi:"rateCardId"`
 	// References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-	RateCardTierdId pulumi.StringInput `pulumi:"rateCardTierdId"`
+	RateCardTierdId pulumi.StringPtrInput `pulumi:"rateCardTierdId"`
 	// Computed Usage created time, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Metered Service date, expressed in RFC 3339 timestamp format.
-	TimeMeteredOn pulumi.StringInput `pulumi:"timeMeteredOn"`
+	TimeMeteredOn pulumi.StringPtrInput `pulumi:"timeMeteredOn"`
 	// Usae computation date, expressed in RFC 3339 timestamp format.
-	TimeOfArrival pulumi.StringInput `pulumi:"timeOfArrival"`
+	TimeOfArrival pulumi.StringPtrInput `pulumi:"timeOfArrival"`
 	// Computed Usage updated time, expressed in RFC 3339 timestamp format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Usage compute type in SPM.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 	// SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-	UsageNumber pulumi.StringInput `pulumi:"usageNumber"`
+	UsageNumber pulumi.StringPtrInput `pulumi:"usageNumber"`
 }
 
 func (GetComputedUsagesComputedUsageArgs) ElementType() reflect.Type {
@@ -1396,12 +1227,6 @@ func (i GetComputedUsagesComputedUsageArgs) ToGetComputedUsagesComputedUsageOutp
 
 func (i GetComputedUsagesComputedUsageArgs) ToGetComputedUsagesComputedUsageOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageOutput)
-}
-
-func (i GetComputedUsagesComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsage] {
-	return pulumix.Output[GetComputedUsagesComputedUsage]{
-		OutputState: i.ToGetComputedUsagesComputedUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsagesComputedUsageArrayInput is an input type that accepts GetComputedUsagesComputedUsageArray and GetComputedUsagesComputedUsageArrayOutput values.
@@ -1429,12 +1254,6 @@ func (i GetComputedUsagesComputedUsageArray) ToGetComputedUsagesComputedUsageArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageArrayOutput)
 }
 
-func (i GetComputedUsagesComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsage] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsage]{
-		OutputState: i.ToGetComputedUsagesComputedUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageOutput) ElementType() reflect.Type {
@@ -1449,69 +1268,63 @@ func (o GetComputedUsagesComputedUsageOutput) ToGetComputedUsagesComputedUsageOu
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsage] {
-	return pulumix.Output[GetComputedUsagesComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Subscribed service commitmentId.
-func (o GetComputedUsagesComputedUsageOutput) CommitmentServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.CommitmentServiceId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) CommitmentServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.CommitmentServiceId }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal compute records source .
-func (o GetComputedUsagesComputedUsageOutput) ComputeSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.ComputeSource }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) ComputeSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.ComputeSource }).(pulumi.StringPtrOutput)
 }
 
-func (o GetComputedUsagesComputedUsageOutput) ComputedUsageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.ComputedUsageId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) ComputedUsageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.ComputedUsageId }).(pulumi.StringPtrOutput)
 }
 
 // Computed Line Amount not rounded
-func (o GetComputedUsagesComputedUsageOutput) Cost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Cost }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Cost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Cost }).(pulumi.StringPtrOutput)
 }
 
 // Computed Line Amount rounded.
-func (o GetComputedUsagesComputedUsageOutput) CostRounded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.CostRounded }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) CostRounded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.CostRounded }).(pulumi.StringPtrOutput)
 }
 
 // Currency code
-func (o GetComputedUsagesComputedUsageOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Data Center Attribute as sent by MQS to SPM.
-func (o GetComputedUsagesComputedUsageOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal computed usage Id , 32 character string
-func (o GetComputedUsagesComputedUsageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Invoicing status for the aggregated compute usage
-func (o GetComputedUsagesComputedUsageOutput) IsInvoiced() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) bool { return v.IsInvoiced }).(pulumi.BoolOutput)
+func (o GetComputedUsagesComputedUsageOutput) IsInvoiced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *bool { return v.IsInvoiced }).(pulumi.BoolPtrOutput)
 }
 
 // MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-func (o GetComputedUsagesComputedUsageOutput) MqsMessageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.MqsMessageId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) MqsMessageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.MqsMessageId }).(pulumi.StringPtrOutput)
 }
 
 // Net Unit Price for the product in consideration, price actual.
-func (o GetComputedUsagesComputedUsageOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-func (o GetComputedUsagesComputedUsageOutput) OriginalUsageNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.OriginalUsageNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) OriginalUsageNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.OriginalUsageNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product part number for subscribed service line, called parent product.
@@ -1522,13 +1335,13 @@ func (o GetComputedUsagesComputedUsageOutput) ParentProducts() GetComputedUsages
 }
 
 // Subscribed service line parent id
-func (o GetComputedUsagesComputedUsageOutput) ParentSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.ParentSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) ParentSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.ParentSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription plan number
-func (o GetComputedUsagesComputedUsageOutput) PlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.PlanNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) PlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.PlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -1537,53 +1350,53 @@ func (o GetComputedUsagesComputedUsageOutput) Products() GetComputedUsagesComput
 }
 
 // Total Quantity that was used for computation
-func (o GetComputedUsagesComputedUsageOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Ratecard Id at subscribed service level
-func (o GetComputedUsagesComputedUsageOutput) RateCardId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.RateCardId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) RateCardId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.RateCardId }).(pulumi.StringPtrOutput)
 }
 
 // References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-func (o GetComputedUsagesComputedUsageOutput) RateCardTierdId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.RateCardTierdId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) RateCardTierdId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.RateCardTierdId }).(pulumi.StringPtrOutput)
 }
 
 // Computed Usage created time, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Metered Service date, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeMeteredOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeMeteredOn }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeMeteredOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeMeteredOn }).(pulumi.StringPtrOutput)
 }
 
 // Usae computation date, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeOfArrival() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeOfArrival }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeOfArrival() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeOfArrival }).(pulumi.StringPtrOutput)
 }
 
 // Computed Usage updated time, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Usage compute type in SPM.
-func (o GetComputedUsagesComputedUsageOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Type }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsagesComputedUsageOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-func (o GetComputedUsagesComputedUsageOutput) UsageNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.UsageNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) UsageNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.UsageNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsagesComputedUsageArrayOutput struct{ *pulumi.OutputState }
@@ -1600,12 +1413,6 @@ func (o GetComputedUsagesComputedUsageArrayOutput) ToGetComputedUsagesComputedUs
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsage] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsagesComputedUsageArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsagesComputedUsage {
 		return vs[0].([]GetComputedUsagesComputedUsage)[vs[1].(int)]
@@ -1614,19 +1421,19 @@ func (o GetComputedUsagesComputedUsageArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetComputedUsagesComputedUsageParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsagesComputedUsageParentProductInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArgs and GetComputedUsagesComputedUsageParentProductOutput values.
@@ -1642,19 +1449,19 @@ type GetComputedUsagesComputedUsageParentProductInput interface {
 
 type GetComputedUsagesComputedUsageParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsagesComputedUsageParentProductArgs) ElementType() reflect.Type {
@@ -1667,12 +1474,6 @@ func (i GetComputedUsagesComputedUsageParentProductArgs) ToGetComputedUsagesComp
 
 func (i GetComputedUsagesComputedUsageParentProductArgs) ToGetComputedUsagesComputedUsageParentProductOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageParentProductOutput)
-}
-
-func (i GetComputedUsagesComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsagesComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArray and GetComputedUsagesComputedUsageParentProductArrayOutput values.
@@ -1700,12 +1501,6 @@ func (i GetComputedUsagesComputedUsageParentProductArray) ToGetComputedUsagesCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageParentProductArrayOutput)
 }
 
-func (i GetComputedUsagesComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -1720,45 +1515,39 @@ func (o GetComputedUsagesComputedUsageParentProductOutput) ToGetComputedUsagesCo
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsagesComputedUsageParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsagesComputedUsageParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsagesComputedUsageParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsagesComputedUsageParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsagesComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsagesComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsagesComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsagesComputedUsageParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -1775,12 +1564,6 @@ func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToGetComputedUsa
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsagesComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageParentProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsagesComputedUsageParentProduct {
 		return vs[0].([]GetComputedUsagesComputedUsageParentProduct)[vs[1].(int)]
@@ -1789,19 +1572,19 @@ func (o GetComputedUsagesComputedUsageParentProductArrayOutput) Index(i pulumi.I
 
 type GetComputedUsagesComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsagesComputedUsageProductInput is an input type that accepts GetComputedUsagesComputedUsageProductArgs and GetComputedUsagesComputedUsageProductOutput values.
@@ -1817,19 +1600,19 @@ type GetComputedUsagesComputedUsageProductInput interface {
 
 type GetComputedUsagesComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsagesComputedUsageProductArgs) ElementType() reflect.Type {
@@ -1842,12 +1625,6 @@ func (i GetComputedUsagesComputedUsageProductArgs) ToGetComputedUsagesComputedUs
 
 func (i GetComputedUsagesComputedUsageProductArgs) ToGetComputedUsagesComputedUsageProductOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageProductOutput)
-}
-
-func (i GetComputedUsagesComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsagesComputedUsageProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageProductArray and GetComputedUsagesComputedUsageProductArrayOutput values.
@@ -1875,12 +1652,6 @@ func (i GetComputedUsagesComputedUsageProductArray) ToGetComputedUsagesComputedU
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageProductArrayOutput)
 }
 
-func (i GetComputedUsagesComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageProductOutput) ElementType() reflect.Type {
@@ -1895,45 +1666,39 @@ func (o GetComputedUsagesComputedUsageProductOutput) ToGetComputedUsagesComputed
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsagesComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsagesComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsagesComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsagesComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsagesComputedUsageProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsagesComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsagesComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsagesComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -1948,12 +1713,6 @@ func (o GetComputedUsagesComputedUsageProductArrayOutput) ToGetComputedUsagesCom
 
 func (o GetComputedUsagesComputedUsageProductArrayOutput) ToGetComputedUsagesComputedUsageProductArrayOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageProductArrayOutput {
 	return o
-}
-
-func (o GetComputedUsagesComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetComputedUsagesComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageProductOutput {
@@ -1999,12 +1758,6 @@ func (i GetComputedUsagesFilterArgs) ToGetComputedUsagesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesFilterOutput)
 }
 
-func (i GetComputedUsagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesFilter] {
-	return pulumix.Output[GetComputedUsagesFilter]{
-		OutputState: i.ToGetComputedUsagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetComputedUsagesFilterArrayInput is an input type that accepts GetComputedUsagesFilterArray and GetComputedUsagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesFilterArrayInput` via:
 //
@@ -2030,12 +1783,6 @@ func (i GetComputedUsagesFilterArray) ToGetComputedUsagesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesFilterArrayOutput)
 }
 
-func (i GetComputedUsagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesFilter] {
-	return pulumix.Output[[]GetComputedUsagesFilter]{
-		OutputState: i.ToGetComputedUsagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesFilterOutput) ElementType() reflect.Type {
@@ -2048,12 +1795,6 @@ func (o GetComputedUsagesFilterOutput) ToGetComputedUsagesFilterOutput() GetComp
 
 func (o GetComputedUsagesFilterOutput) ToGetComputedUsagesFilterOutputWithContext(ctx context.Context) GetComputedUsagesFilterOutput {
 	return o
-}
-
-func (o GetComputedUsagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesFilter] {
-	return pulumix.Output[GetComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -2081,12 +1822,6 @@ func (o GetComputedUsagesFilterArrayOutput) ToGetComputedUsagesFilterArrayOutput
 
 func (o GetComputedUsagesFilterArrayOutput) ToGetComputedUsagesFilterArrayOutputWithContext(ctx context.Context) GetComputedUsagesFilterArrayOutput {
 	return o
-}
-
-func (o GetComputedUsagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesFilter] {
-	return pulumix.Output[[]GetComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesFilterOutput {

@@ -104,146 +104,92 @@ class GetSqlEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the SQL Endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The SQL Endpoint name, which can be changed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="driverShape")
-    def driver_shape(self) -> str:
-        """
-        The shape of the SQL Endpoint driver instance.
-        """
+    def driver_shape(self) -> Optional[str]:
         return pulumi.get(self, "driver_shape")
 
     @property
     @pulumi.getter(name="driverShapeConfigs")
-    def driver_shape_configs(self) -> Sequence['outputs.GetSqlEndpointDriverShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def driver_shape_configs(self) -> Optional[Sequence['outputs.GetSqlEndpointDriverShapeConfigResult']]:
         return pulumi.get(self, "driver_shape_configs")
 
     @property
     @pulumi.getter(name="executorShape")
-    def executor_shape(self) -> str:
-        """
-        The shape of the SQL Endpoint executor instance.
-        """
+    def executor_shape(self) -> Optional[str]:
         return pulumi.get(self, "executor_shape")
 
     @property
     @pulumi.getter(name="executorShapeConfigs")
-    def executor_shape_configs(self) -> Sequence['outputs.GetSqlEndpointExecutorShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def executor_shape_configs(self) -> Optional[Sequence['outputs.GetSqlEndpointExecutorShapeConfigResult']]:
         return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The provision identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="jdbcEndpointUrl")
-    def jdbc_endpoint_url(self) -> str:
-        """
-        The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        """
+    def jdbc_endpoint_url(self) -> Optional[str]:
         return pulumi.get(self, "jdbc_endpoint_url")
 
     @property
     @pulumi.getter(name="lakeId")
-    def lake_id(self) -> str:
-        """
-        The OCID of Oracle Cloud Infrastructure Lake.
-        """
+    def lake_id(self) -> Optional[str]:
         return pulumi.get(self, "lake_id")
 
     @property
     @pulumi.getter(name="lastAcceptedRequestToken")
-    def last_accepted_request_token(self) -> str:
-        """
-        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        """
+    def last_accepted_request_token(self) -> Optional[str]:
         return pulumi.get(self, "last_accepted_request_token")
 
     @property
     @pulumi.getter(name="maxExecutorCount")
-    def max_executor_count(self) -> int:
-        """
-        The maximum number of executors.
-        """
+    def max_executor_count(self) -> Optional[int]:
         return pulumi.get(self, "max_executor_count")
 
     @property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> str:
-        """
-        The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
+    def metastore_id(self) -> Optional[str]:
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="minExecutorCount")
-    def min_executor_count(self) -> int:
-        """
-        The minimum number of executors.
-        """
+    def min_executor_count(self) -> Optional[int]:
         return pulumi.get(self, "min_executor_count")
 
     @property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Sequence['outputs.GetSqlEndpointNetworkConfigurationResult']:
-        """
-        The network configuration of a SQL Endpoint.
-        """
+    def network_configurations(self) -> Optional[Sequence['outputs.GetSqlEndpointNetworkConfigurationResult']]:
         return pulumi.get(self, "network_configurations")
 
     @property
     @pulumi.getter(name="sparkAdvancedConfigurations")
-    def spark_advanced_configurations(self) -> Mapping[str, Any]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
+    def spark_advanced_configurations(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "spark_advanced_configurations")
 
     @property
@@ -253,58 +199,37 @@ class GetSqlEndpointResult:
 
     @property
     @pulumi.getter(name="sqlEndpointVersion")
-    def sql_endpoint_version(self) -> str:
-        """
-        The version of SQL Endpoint.
-        """
+    def sql_endpoint_version(self) -> Optional[str]:
         return pulumi.get(self, "sql_endpoint_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Sql Endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> str:
-        """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        """
+    def warehouse_bucket_uri(self) -> Optional[str]:
         return pulumi.get(self, "warehouse_bucket_uri")
 
 
@@ -345,21 +270,7 @@ class AwaitableGetSqlEndpointResult(GetSqlEndpointResult):
 def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlEndpointResult:
     """
-    This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves a SQL Endpoint using a sqlEndpointId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"])
-    ```
-
-
-    :param str sql_endpoint_id: The unique id of the SQL Endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sqlEndpointId'] = sql_endpoint_id
@@ -399,20 +310,6 @@ def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
 def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlEndpointResult]:
     """
-    This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves a SQL Endpoint using a sqlEndpointId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"])
-    ```
-
-
-    :param str sql_endpoint_id: The unique id of the SQL Endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

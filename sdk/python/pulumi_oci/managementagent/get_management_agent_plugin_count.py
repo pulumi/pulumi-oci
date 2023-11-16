@@ -48,7 +48,7 @@ class GetManagementAgentPluginCountResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,10 +56,7 @@ class GetManagementAgentPluginCountResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagementAgentPluginCountItemResult']:
-        """
-        List in which each item describes an aggregation of Managment Agent Plugins
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagementAgentPluginCountItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -79,24 +76,7 @@ def get_management_agent_plugin_count(compartment_id: Optional[str] = None,
                                       group_by: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentPluginCountResult:
     """
-    This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
-    Supported groupBy parameter: pluginName
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=var["compartment_id"],
-        group_by=var["management_agent_plugin_count_group_by"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param str group_by: The field by which to group Management Agent Plugins
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -116,23 +96,6 @@ def get_management_agent_plugin_count_output(compartment_id: Optional[pulumi.Inp
                                              group_by: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentPluginCountResult]:
     """
-    This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
-    Supported groupBy parameter: pluginName
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_plugin_count = oci.ManagementAgent.get_management_agent_plugin_count(compartment_id=var["compartment_id"],
-        group_by=var["management_agent_plugin_count_group_by"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param str group_by: The field by which to group Management Agent Plugins
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,6 +9,8 @@ import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigItemMetadataValueIn
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpsiConfigurationConfigItemMetadata {
@@ -16,75 +18,75 @@ public final class GetOpsiConfigurationConfigItemMetadata {
      * @return Type of configuration item.
      * 
      */
-    private String configItemType;
+    private @Nullable String configItemType;
     /**
      * @return Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return Description of OPSI configuration.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return User-friendly display name for the OPSI configuration. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Unit details of configuration item.
      * 
      */
-    private List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails;
+    private @Nullable List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails;
     /**
      * @return Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
      * 
      */
-    private List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails;
+    private @Nullable List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails;
 
     private GetOpsiConfigurationConfigItemMetadata() {}
     /**
      * @return Type of configuration item.
      * 
      */
-    public String configItemType() {
-        return this.configItemType;
+    public Optional<String> configItemType() {
+        return Optional.ofNullable(this.configItemType);
     }
     /**
      * @return Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return Description of OPSI configuration.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return User-friendly display name for the OPSI configuration. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Unit details of configuration item.
      * 
      */
     public List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails() {
-        return this.unitDetails;
+        return this.unitDetails == null ? List.of() : this.unitDetails;
     }
     /**
      * @return Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
      * 
      */
     public List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails() {
-        return this.valueInputDetails;
+        return this.valueInputDetails == null ? List.of() : this.valueInputDetails;
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetOpsiConfigurationConfigItemMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configItemType;
-        private String dataType;
-        private String description;
-        private String displayName;
-        private List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails;
-        private List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails;
+        private @Nullable String configItemType;
+        private @Nullable String dataType;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails;
+        private @Nullable List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails;
         public Builder() {}
         public Builder(GetOpsiConfigurationConfigItemMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,36 +116,36 @@ public final class GetOpsiConfigurationConfigItemMetadata {
         }
 
         @CustomType.Setter
-        public Builder configItemType(String configItemType) {
-            this.configItemType = Objects.requireNonNull(configItemType);
+        public Builder configItemType(@Nullable String configItemType) {
+            this.configItemType = configItemType;
             return this;
         }
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder unitDetails(List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails) {
-            this.unitDetails = Objects.requireNonNull(unitDetails);
+        public Builder unitDetails(@Nullable List<GetOpsiConfigurationConfigItemMetadataUnitDetail> unitDetails) {
+            this.unitDetails = unitDetails;
             return this;
         }
         public Builder unitDetails(GetOpsiConfigurationConfigItemMetadataUnitDetail... unitDetails) {
             return unitDetails(List.of(unitDetails));
         }
         @CustomType.Setter
-        public Builder valueInputDetails(List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails) {
-            this.valueInputDetails = Objects.requireNonNull(valueInputDetails);
+        public Builder valueInputDetails(@Nullable List<GetOpsiConfigurationConfigItemMetadataValueInputDetail> valueInputDetails) {
+            this.valueInputDetails = valueInputDetails;
             return this;
         }
         public Builder valueInputDetails(GetOpsiConfigurationConfigItemMetadataValueInputDetail... valueInputDetails) {

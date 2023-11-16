@@ -71,31 +71,22 @@ class GetPublicationPackageResult:
 
     @property
     @pulumi.getter(name="appCatalogListingId")
-    def app_catalog_listing_id(self) -> str:
-        """
-        The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
-        """
+    def app_catalog_listing_id(self) -> Optional[str]:
         return pulumi.get(self, "app_catalog_listing_id")
 
     @property
     @pulumi.getter(name="appCatalogListingResourceVersion")
-    def app_catalog_listing_resource_version(self) -> str:
-        """
-        The resource version of the listing resource associated with this publication package.
-        """
+    def app_catalog_listing_resource_version(self) -> Optional[str]:
         return pulumi.get(self, "app_catalog_listing_resource_version")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the variable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,34 +94,22 @@ class GetPublicationPackageResult:
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
-        """
-        The ID of the image that corresponds to the package.
-        """
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> str:
-        """
-        The ID of the listing that the specified package belongs to.
-        """
+    def listing_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetPublicationPackageOperatingSystemResult']:
-        """
-        The operating system used by the listing.
-        """
+    def operating_systems(self) -> Optional[Sequence['outputs.GetPublicationPackageOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The specified package's type.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
@@ -145,42 +124,27 @@ class GetPublicationPackageResult:
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique identifier for the package resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceLink")
-    def resource_link(self) -> str:
-        """
-        A link to the stack resource.
-        """
+    def resource_link(self) -> Optional[str]:
         return pulumi.get(self, "resource_link")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def variables(self) -> Sequence['outputs.GetPublicationPackageVariableResult']:
-        """
-        A list of variables for the stack resource.
-        """
+    def variables(self) -> Optional[Sequence['outputs.GetPublicationPackageVariableResult']]:
         return pulumi.get(self, "variables")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The package version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -211,23 +175,7 @@ def get_publication_package(package_version: Optional[str] = None,
                             publication_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicationPackageResult:
     """
-    This data source provides details about a specific Publication Package resource in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the details of a specific package version within a given publication.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=var["publication_package_package_version"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
-    ```
-
-
-    :param str package_version: The version of the package. Package versions are unique within a listing.
-    :param str publication_id: The unique identifier for the publication.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['packageVersion'] = package_version
@@ -258,22 +206,6 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[str]] 
                                    publication_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicationPackageResult]:
     """
-    This data source provides details about a specific Publication Package resource in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the details of a specific package version within a given publication.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=var["publication_package_package_version"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
-    ```
-
-
-    :param str package_version: The version of the package. Package versions are unique within a listing.
-    :param str publication_id: The unique identifier for the publication.
+    Use this data source to access information about an existing resource.
     """
     ...

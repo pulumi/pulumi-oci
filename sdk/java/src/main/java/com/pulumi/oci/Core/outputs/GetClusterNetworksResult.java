@@ -18,7 +18,7 @@ public final class GetClusterNetworksResult {
      * @return The list of cluster_networks.
      * 
      */
-    private List<GetClusterNetworksClusterNetwork> clusterNetworks;
+    private @Nullable List<GetClusterNetworksClusterNetwork> clusterNetworks;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
@@ -34,7 +34,7 @@ public final class GetClusterNetworksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the cluster network.
      * 
@@ -47,7 +47,7 @@ public final class GetClusterNetworksResult {
      * 
      */
     public List<GetClusterNetworksClusterNetwork> clusterNetworks() {
-        return this.clusterNetworks;
+        return this.clusterNetworks == null ? List.of() : this.clusterNetworks;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -70,8 +70,8 @@ public final class GetClusterNetworksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the cluster network.
@@ -90,11 +90,11 @@ public final class GetClusterNetworksResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetClusterNetworksClusterNetwork> clusterNetworks;
+        private @Nullable List<GetClusterNetworksClusterNetwork> clusterNetworks;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetClusterNetworksFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetClusterNetworksResult defaults) {
@@ -108,8 +108,8 @@ public final class GetClusterNetworksResult {
         }
 
         @CustomType.Setter
-        public Builder clusterNetworks(List<GetClusterNetworksClusterNetwork> clusterNetworks) {
-            this.clusterNetworks = Objects.requireNonNull(clusterNetworks);
+        public Builder clusterNetworks(@Nullable List<GetClusterNetworksClusterNetwork> clusterNetworks) {
+            this.clusterNetworks = clusterNetworks;
             return this;
         }
         public Builder clusterNetworks(GetClusterNetworksClusterNetwork... clusterNetworks) {
@@ -134,8 +134,8 @@ public final class GetClusterNetworksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

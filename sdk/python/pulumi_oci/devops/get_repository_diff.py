@@ -68,10 +68,7 @@ class GetRepositoryDiffResult:
 
     @property
     @pulumi.getter(name="areConflictsInFile")
-    def are_conflicts_in_file(self) -> bool:
-        """
-        Indicates whether the changed file contains conflicts.
-        """
+    def are_conflicts_in_file(self) -> Optional[bool]:
         return pulumi.get(self, "are_conflicts_in_file")
 
     @property
@@ -81,10 +78,7 @@ class GetRepositoryDiffResult:
 
     @property
     @pulumi.getter
-    def changes(self) -> Sequence['outputs.GetRepositoryDiffChangeResult']:
-        """
-        List of changed section in the file.
-        """
+    def changes(self) -> Optional[Sequence['outputs.GetRepositoryDiffChangeResult']]:
         return pulumi.get(self, "changes")
 
     @property
@@ -94,7 +88,7 @@ class GetRepositoryDiffResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,10 +96,7 @@ class GetRepositoryDiffResult:
 
     @property
     @pulumi.getter(name="isBinary")
-    def is_binary(self) -> bool:
-        """
-        Indicates whether the file is binary.
-        """
+    def is_binary(self) -> Optional[bool]:
         return pulumi.get(self, "is_binary")
 
     @property
@@ -115,42 +106,27 @@ class GetRepositoryDiffResult:
 
     @property
     @pulumi.getter(name="isLarge")
-    def is_large(self) -> bool:
-        """
-        Indicates whether the file is large.
-        """
+    def is_large(self) -> Optional[bool]:
         return pulumi.get(self, "is_large")
 
     @property
     @pulumi.getter(name="newId")
-    def new_id(self) -> str:
-        """
-        The ID of the changed object on the target version.
-        """
+    def new_id(self) -> Optional[str]:
         return pulumi.get(self, "new_id")
 
     @property
     @pulumi.getter(name="newPath")
-    def new_path(self) -> str:
-        """
-        The path on the target version to the changed object.
-        """
+    def new_path(self) -> Optional[str]:
         return pulumi.get(self, "new_path")
 
     @property
     @pulumi.getter(name="oldId")
-    def old_id(self) -> str:
-        """
-        The ID of the changed object on the base version.
-        """
+    def old_id(self) -> Optional[str]:
         return pulumi.get(self, "old_id")
 
     @property
     @pulumi.getter(name="oldPath")
-    def old_path(self) -> str:
-        """
-        The path on the base version to the changed object.
-        """
+    def old_path(self) -> Optional[str]:
         return pulumi.get(self, "old_path")
 
     @property
@@ -193,29 +169,7 @@ def get_repository_diff(base_version: Optional[str] = None,
                         target_version: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryDiffResult:
     """
-    This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
-
-    Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/diffs"
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_diff = oci.DevOps.get_repository_diff(base_version=var["repository_diff_base_version"],
-        file_path=var["repository_diff_file_path"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_diff_target_version"],
-        is_comparison_from_merge_base=var["repository_diff_is_comparison_from_merge_base"])
-    ```
-
-
-    :param str base_version: The branch to compare changes against.
-    :param str file_path: Path to a file within a repository.
-    :param bool is_comparison_from_merge_base: Boolean to indicate whether to use merge base or most recent revision.
-    :param str repository_id: Unique repository identifier.
-    :param str target_version: The branch where changes are coming from.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['baseVersion'] = base_version
@@ -251,28 +205,6 @@ def get_repository_diff_output(base_version: Optional[pulumi.Input[str]] = None,
                                target_version: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryDiffResult]:
     """
-    This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
-
-    Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/diffs"
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_diff = oci.DevOps.get_repository_diff(base_version=var["repository_diff_base_version"],
-        file_path=var["repository_diff_file_path"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_diff_target_version"],
-        is_comparison_from_merge_base=var["repository_diff_is_comparison_from_merge_base"])
-    ```
-
-
-    :param str base_version: The branch to compare changes against.
-    :param str file_path: Path to a file within a repository.
-    :param bool is_comparison_from_merge_base: Boolean to indicate whether to use merge base or most recent revision.
-    :param str repository_id: Unique repository identifier.
-    :param str target_version: The branch where changes are coming from.
+    Use this data source to access information about an existing resource.
     """
     ...

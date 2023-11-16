@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
@@ -78,7 +77,7 @@ type GetSoftwareSourcePackageGroupsResult struct {
 	// Indicates if this is a group, category or environment.
 	GroupTypes []string `pulumi:"groupTypes"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Package group name.
 	Name         *string `pulumi:"name"`
 	NameContains *string `pulumi:"nameContains"`
@@ -134,12 +133,6 @@ func (o GetSoftwareSourcePackageGroupsResultOutput) ToGetSoftwareSourcePackageGr
 	return o
 }
 
-func (o GetSoftwareSourcePackageGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsResult] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcePackageGroupsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -154,8 +147,8 @@ func (o GetSoftwareSourcePackageGroupsResultOutput) GroupTypes() pulumi.StringAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourcePackageGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Package group name.

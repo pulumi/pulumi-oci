@@ -74,74 +74,47 @@ class GetNotebookSessionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the state of the notebook session.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="notebookSessionConfigDetails")
-    def notebook_session_config_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailResult']:
-        """
-        Details for the notebook session configuration.
-        """
+    def notebook_session_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_config_details")
 
     @property
     @pulumi.getter(name="notebookSessionConfigurationDetails")
-    def notebook_session_configuration_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailResult']:
-        """
-        Details for the notebook session configuration.
-        """
+    def notebook_session_configuration_details(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailResult']]:
         return pulumi.get(self, "notebook_session_configuration_details")
 
     @property
@@ -151,50 +124,32 @@ class GetNotebookSessionResult:
 
     @property
     @pulumi.getter(name="notebookSessionRuntimeConfigDetails")
-    def notebook_session_runtime_config_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailResult']:
-        """
-        Notebook Session runtime configuration details.
-        """
+    def notebook_session_runtime_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_runtime_config_details")
 
     @property
     @pulumi.getter(name="notebookSessionStorageMountConfigurationDetailsLists")
-    def notebook_session_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']:
-        """
-        Collection of NotebookSessionStorageMountConfigurationDetails.
-        """
+    def notebook_session_storage_mount_configuration_details_lists(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']]:
         return pulumi.get(self, "notebook_session_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="notebookSessionUrl")
-    def notebook_session_url(self) -> str:
-        """
-        The URL to interact with the notebook session.
-        """
+    def notebook_session_url(self) -> Optional[str]:
         return pulumi.get(self, "notebook_session_url")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the notebook session.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetNotebookSessionResult(GetNotebookSessionResult):
 def get_notebook_session(notebook_session_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNotebookSessionResult:
     """
-    This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets the specified notebook session's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=oci_datascience_notebook_session["test_notebook_session"]["id"])
-    ```
-
-
-    :param str notebook_session_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['notebookSessionId'] = notebook_session_id
@@ -269,20 +210,6 @@ def get_notebook_session(notebook_session_id: Optional[str] = None,
 def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNotebookSessionResult]:
     """
-    This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets the specified notebook session's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=oci_datascience_notebook_session["test_notebook_session"]["id"])
-    ```
-
-
-    :param str notebook_session_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
+    Use this data source to access information about an existing resource.
     """
     ...

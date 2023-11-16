@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -105,14 +106,14 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="answers", refs={List.class,SteeringPolicyAnswer.class}, tree="[0,1]")
-    private Output<List<SteeringPolicyAnswer>> answers;
+    private Output</* @Nullable */ List<SteeringPolicyAnswer>> answers;
 
     /**
      * @return The set of all answers that can potentially issue from the steering policy.
      * 
      */
-    public Output<List<SteeringPolicyAnswer>> answers() {
-        return this.answers;
+    public Output<Optional<List<SteeringPolicyAnswer>>> answers() {
+        return Codegen.optional(this.answers);
     }
     /**
      * (Updatable) The OCID of the compartment containing the steering policy.
@@ -133,14 +134,14 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -161,14 +162,14 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
@@ -177,7 +178,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="healthCheckMonitorId", refs={String.class}, tree="[0]")
-    private Output<String> healthCheckMonitorId;
+    private Output</* @Nullable */ String> healthCheckMonitorId;
 
     /**
      * @return (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
@@ -185,8 +186,8 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      * 
      */
-    public Output<String> healthCheckMonitorId() {
-        return this.healthCheckMonitorId;
+    public Output<Optional<String>> healthCheckMonitorId() {
+        return Codegen.optional(this.healthCheckMonitorId);
     }
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
@@ -195,7 +196,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="rules", refs={List.class,SteeringPolicyRule.class}, tree="[0,1]")
-    private Output<List<SteeringPolicyRule>> rules;
+    private Output</* @Nullable */ List<SteeringPolicyRule>> rules;
 
     /**
      * @return The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
@@ -203,36 +204,36 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
      * 
      */
-    public Output<List<SteeringPolicyRule>> rules() {
-        return this.rules;
+    public Output<Optional<List<SteeringPolicyRule>>> rules() {
+        return Codegen.optional(this.rules);
     }
     /**
      * The canonical absolute URL of the resource.
      * 
      */
     @Export(name="self", refs={String.class}, tree="[0]")
-    private Output<String> self;
+    private Output</* @Nullable */ String> self;
 
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public Output<String> self() {
-        return this.self;
+    public Output<Optional<String>> self() {
+        return Codegen.optional(this.self);
     }
     /**
      * The current state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
@@ -269,14 +270,14 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
@@ -286,7 +287,7 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
-    private Output<Integer> ttl;
+    private Output</* @Nullable */ Integer> ttl;
 
     /**
      * @return (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
@@ -295,8 +296,8 @@ public class SteeringPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> ttl() {
-        return this.ttl;
+    public Output<Optional<Integer>> ttl() {
+        return Codegen.optional(this.ttl);
     }
 
     /**

@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectLifecyclePolicyRule {
@@ -16,87 +18,87 @@ public final class GetObjectLifecyclePolicyRule {
      * @return The action of the object lifecycle policy rule. Rules using the action &#39;ARCHIVE&#39; move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action &#39;INFREQUENT_ACCESS&#39; move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action &#39;DELETE&#39; permanently delete objects from buckets. Rules using &#39;ABORT&#39; abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return A Boolean that determines whether this rule is currently enabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The name of the lifecycle rule to be applied.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
      * 
      */
-    private List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters;
+    private @Nullable List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters;
     /**
      * @return The target of the object lifecycle policy rule. The values of target can be either &#34;objects&#34;, &#34;multipart-uploads&#34; or &#34;previous-object-versions&#34;. This field when declared as &#34;objects&#34; is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as &#34;previous-object-versions&#34; is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as &#34;multipart-uploads&#34; is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
      * 
      */
-    private String target;
+    private @Nullable String target;
     /**
      * @return Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified time.
      * 
      */
-    private String timeAmount;
+    private @Nullable String timeAmount;
     /**
      * @return The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
      * 
      */
-    private String timeUnit;
+    private @Nullable String timeUnit;
 
     private GetObjectLifecyclePolicyRule() {}
     /**
      * @return The action of the object lifecycle policy rule. Rules using the action &#39;ARCHIVE&#39; move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action &#39;INFREQUENT_ACCESS&#39; move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action &#39;DELETE&#39; permanently delete objects from buckets. Rules using &#39;ABORT&#39; abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return A Boolean that determines whether this rule is currently enabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The name of the lifecycle rule to be applied.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
      * 
      */
     public List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters() {
-        return this.objectNameFilters;
+        return this.objectNameFilters == null ? List.of() : this.objectNameFilters;
     }
     /**
      * @return The target of the object lifecycle policy rule. The values of target can be either &#34;objects&#34;, &#34;multipart-uploads&#34; or &#34;previous-object-versions&#34;. This field when declared as &#34;objects&#34; is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as &#34;previous-object-versions&#34; is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as &#34;multipart-uploads&#34; is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
      * 
      */
-    public String target() {
-        return this.target;
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
     /**
      * @return Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified time.
      * 
      */
-    public String timeAmount() {
-        return this.timeAmount;
+    public Optional<String> timeAmount() {
+        return Optional.ofNullable(this.timeAmount);
     }
     /**
      * @return The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
      * 
      */
-    public String timeUnit() {
-        return this.timeUnit;
+    public Optional<String> timeUnit() {
+        return Optional.ofNullable(this.timeUnit);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetObjectLifecyclePolicyRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private Boolean isEnabled;
-        private String name;
-        private List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters;
-        private String target;
-        private String timeAmount;
-        private String timeUnit;
+        private @Nullable String action;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String name;
+        private @Nullable List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters;
+        private @Nullable String target;
+        private @Nullable String timeAmount;
+        private @Nullable String timeUnit;
         public Builder() {}
         public Builder(GetObjectLifecyclePolicyRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetObjectLifecyclePolicyRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectNameFilters(List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters) {
-            this.objectNameFilters = Objects.requireNonNull(objectNameFilters);
+        public Builder objectNameFilters(@Nullable List<GetObjectLifecyclePolicyRuleObjectNameFilter> objectNameFilters) {
+            this.objectNameFilters = objectNameFilters;
             return this;
         }
         public Builder objectNameFilters(GetObjectLifecyclePolicyRuleObjectNameFilter... objectNameFilters) {
             return objectNameFilters(List.of(objectNameFilters));
         }
         @CustomType.Setter
-        public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+        public Builder target(@Nullable String target) {
+            this.target = target;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAmount(String timeAmount) {
-            this.timeAmount = Objects.requireNonNull(timeAmount);
+        public Builder timeAmount(@Nullable String timeAmount) {
+            this.timeAmount = timeAmount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUnit(String timeUnit) {
-            this.timeUnit = Objects.requireNonNull(timeUnit);
+        public Builder timeUnit(@Nullable String timeUnit) {
+            this.timeUnit = timeUnit;
             return this;
         }
         public GetObjectLifecyclePolicyRule build() {

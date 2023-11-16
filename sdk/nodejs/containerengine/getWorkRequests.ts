@@ -79,7 +79,7 @@ export interface GetWorkRequestsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly resourceId?: string;
     readonly resourceType?: string;
     /**
@@ -89,7 +89,7 @@ export interface GetWorkRequestsResult {
     /**
      * The list of work_requests.
      */
-    readonly workRequests: outputs.ContainerEngine.GetWorkRequestsWorkRequest[];
+    readonly workRequests?: outputs.ContainerEngine.GetWorkRequestsWorkRequest[];
 }
 /**
  * This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.

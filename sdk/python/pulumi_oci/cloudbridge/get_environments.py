@@ -49,25 +49,16 @@ class GetEnvironmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Environment identifier, which can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="environmentCollections")
-    def environment_collections(self) -> Sequence['outputs.GetEnvironmentsEnvironmentCollectionResult']:
-        """
-        The list of environment_collection.
-        """
+    def environment_collections(self) -> Optional[Sequence['outputs.GetEnvironmentsEnvironmentCollectionResult']]:
         return pulumi.get(self, "environment_collections")
 
     @property
@@ -82,7 +73,7 @@ class GetEnvironmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +82,6 @@ class GetEnvironmentsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the source environment.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_environments(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnvironmentsResult:
     """
-    This data source provides the list of Environments in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of source environments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_environments = oci.CloudBridge.get_environments(compartment_id=var["compartment_id"],
-        display_name=var["environment_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["environment_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_id: A filter to return only resources that match the given environment ID.
-    :param str state: A filter to return only resources where their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_environments_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnvironmentsResult]:
     """
-    This data source provides the list of Environments in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of source environments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_environments = oci.CloudBridge.get_environments(compartment_id=var["compartment_id"],
-        display_name=var["environment_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["environment_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_id: A filter to return only resources that match the given environment ID.
-    :param str state: A filter to return only resources where their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

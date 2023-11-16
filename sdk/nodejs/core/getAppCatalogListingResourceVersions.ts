@@ -49,12 +49,12 @@ export interface GetAppCatalogListingResourceVersionsResult {
     /**
      * The list of app_catalog_listing_resource_versions.
      */
-    readonly appCatalogListingResourceVersions: outputs.Core.GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion[];
+    readonly appCatalogListingResourceVersions?: outputs.Core.GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion[];
     readonly filters?: outputs.Core.GetAppCatalogListingResourceVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the listing this resource version belongs to.
      */

@@ -20,28 +20,28 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
         /// </summary>
-        public readonly int HttpPort;
+        public readonly int? HttpPort;
         /// <summary>
         /// The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
         /// </summary>
-        public readonly int HttpsPort;
-        public readonly string Label;
+        public readonly int? HttpsPort;
+        public readonly string? Label;
         /// <summary>
         /// The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyOriginResult(
             ImmutableArray<Outputs.GetWaasPoliciesWaasPolicyOriginCustomHeaderResult> customHeaders,
 
-            int httpPort,
+            int? httpPort,
 
-            int httpsPort,
+            int? httpsPort,
 
-            string label,
+            string? label,
 
-            string uri)
+            string? uri)
         {
             CustomHeaders = customHeaders;
             HttpPort = httpPort;

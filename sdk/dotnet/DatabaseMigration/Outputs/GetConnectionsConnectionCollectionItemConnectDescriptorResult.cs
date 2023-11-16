@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Connect string.
         /// </summary>
-        public readonly string ConnectString;
+        public readonly string? ConnectString;
         /// <summary>
         /// Database service name.
         /// </summary>
-        public readonly string DatabaseServiceName;
+        public readonly string? DatabaseServiceName;
         /// <summary>
         /// Name of the host the SSH key is valid for.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// Port of the connect descriptor.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetConnectionsConnectionCollectionItemConnectDescriptorResult(
-            string connectString,
+            string? connectString,
 
-            string databaseServiceName,
+            string? databaseServiceName,
 
-            string host,
+            string? host,
 
-            int port)
+            int? port)
         {
             ConnectString = connectString;
             DatabaseServiceName = databaseServiceName;

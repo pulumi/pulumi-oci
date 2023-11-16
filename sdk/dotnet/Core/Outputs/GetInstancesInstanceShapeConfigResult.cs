@@ -16,80 +16,80 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         /// </summary>
-        public readonly string BaselineOcpuUtilization;
+        public readonly string? BaselineOcpuUtilization;
         /// <summary>
         /// A short description of the instance's graphics processing unit (GPU).
         /// </summary>
-        public readonly string GpuDescription;
+        public readonly string? GpuDescription;
         /// <summary>
         /// The number of GPUs available to the instance.
         /// </summary>
-        public readonly int Gpus;
+        public readonly int? Gpus;
         /// <summary>
         /// A short description of the local disks available to this instance.
         /// </summary>
-        public readonly string LocalDiskDescription;
+        public readonly string? LocalDiskDescription;
         /// <summary>
         /// The number of local disks available to the instance.
         /// </summary>
-        public readonly int LocalDisks;
+        public readonly int? LocalDisks;
         /// <summary>
         /// The aggregate size of all local disks, in gigabytes.
         /// </summary>
-        public readonly double LocalDisksTotalSizeInGbs;
+        public readonly double? LocalDisksTotalSizeInGbs;
         /// <summary>
         /// The maximum number of VNIC attachments for the instance.
         /// </summary>
-        public readonly int MaxVnicAttachments;
+        public readonly int? MaxVnicAttachments;
         /// <summary>
         /// The total amount of memory available to the instance, in gigabytes.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The networking bandwidth available to the instance, in gigabits per second.
         /// </summary>
-        public readonly double NetworkingBandwidthInGbps;
-        public readonly int Nvmes;
+        public readonly double? NetworkingBandwidthInGbps;
+        public readonly int? Nvmes;
         /// <summary>
         /// The total number of OCPUs available to the instance.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
         /// <summary>
         /// A short description of the instance's processor (CPU).
         /// </summary>
-        public readonly string ProcessorDescription;
+        public readonly string? ProcessorDescription;
         /// <summary>
         /// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         /// </summary>
-        public readonly int Vcpus;
+        public readonly int? Vcpus;
 
         [OutputConstructor]
         private GetInstancesInstanceShapeConfigResult(
-            string baselineOcpuUtilization,
+            string? baselineOcpuUtilization,
 
-            string gpuDescription,
+            string? gpuDescription,
 
-            int gpus,
+            int? gpus,
 
-            string localDiskDescription,
+            string? localDiskDescription,
 
-            int localDisks,
+            int? localDisks,
 
-            double localDisksTotalSizeInGbs,
+            double? localDisksTotalSizeInGbs,
 
-            int maxVnicAttachments,
+            int? maxVnicAttachments,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double networkingBandwidthInGbps,
+            double? networkingBandwidthInGbps,
 
-            int nvmes,
+            int? nvmes,
 
-            double ocpus,
+            double? ocpus,
 
-            string processorDescription,
+            string? processorDescription,
 
-            int vcpus)
+            int? vcpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
             GpuDescription = gpuDescription;

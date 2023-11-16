@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentUsersUser {
@@ -14,147 +16,147 @@ public final class GetUserAssessmentUsersUser {
      * @return A filter to return only items that match the specified account status.
      * 
      */
-    private String accountStatus;
+    private @Nullable String accountStatus;
     /**
      * @return The admin roles granted to the user.
      * 
      */
-    private List<String> adminRoles;
+    private @Nullable List<String> adminRoles;
     /**
      * @return A filter to return only items that match the specified authentication type.
      * 
      */
-    private String authenticationType;
+    private @Nullable String authenticationType;
     /**
      * @return The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeLastLogin;
+    private @Nullable String timeLastLogin;
     /**
      * @return The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timePasswordChanged;
+    private @Nullable String timePasswordChanged;
     /**
      * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUserCreated;
+    private @Nullable String timeUserCreated;
     /**
      * @return A filter to return only items that match the specified user category.
      * 
      */
-    private String userCategory;
+    private @Nullable String userCategory;
     /**
      * @return A filter to return only items that match the specified user name.
      * 
      */
-    private String userName;
+    private @Nullable String userName;
     /**
      * @return A filter to return only items that match the specified user profile.
      * 
      */
-    private String userProfile;
+    private @Nullable String userProfile;
     /**
      * @return The user type, which can be a combination of the following:
      * 
      */
-    private List<String> userTypes;
+    private @Nullable List<String> userTypes;
 
     private GetUserAssessmentUsersUser() {}
     /**
      * @return A filter to return only items that match the specified account status.
      * 
      */
-    public String accountStatus() {
-        return this.accountStatus;
+    public Optional<String> accountStatus() {
+        return Optional.ofNullable(this.accountStatus);
     }
     /**
      * @return The admin roles granted to the user.
      * 
      */
     public List<String> adminRoles() {
-        return this.adminRoles;
+        return this.adminRoles == null ? List.of() : this.adminRoles;
     }
     /**
      * @return A filter to return only items that match the specified authentication type.
      * 
      */
-    public String authenticationType() {
-        return this.authenticationType;
+    public Optional<String> authenticationType() {
+        return Optional.ofNullable(this.authenticationType);
     }
     /**
      * @return The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeLastLogin() {
-        return this.timeLastLogin;
+    public Optional<String> timeLastLogin() {
+        return Optional.ofNullable(this.timeLastLogin);
     }
     /**
      * @return The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timePasswordChanged() {
-        return this.timePasswordChanged;
+    public Optional<String> timePasswordChanged() {
+        return Optional.ofNullable(this.timePasswordChanged);
     }
     /**
      * @return The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUserCreated() {
-        return this.timeUserCreated;
+    public Optional<String> timeUserCreated() {
+        return Optional.ofNullable(this.timeUserCreated);
     }
     /**
      * @return A filter to return only items that match the specified user category.
      * 
      */
-    public String userCategory() {
-        return this.userCategory;
+    public Optional<String> userCategory() {
+        return Optional.ofNullable(this.userCategory);
     }
     /**
      * @return A filter to return only items that match the specified user name.
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
     /**
      * @return A filter to return only items that match the specified user profile.
      * 
      */
-    public String userProfile() {
-        return this.userProfile;
+    public Optional<String> userProfile() {
+        return Optional.ofNullable(this.userProfile);
     }
     /**
      * @return The user type, which can be a combination of the following:
      * 
      */
     public List<String> userTypes() {
-        return this.userTypes;
+        return this.userTypes == null ? List.of() : this.userTypes;
     }
 
     public static Builder builder() {
@@ -166,18 +168,18 @@ public final class GetUserAssessmentUsersUser {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accountStatus;
-        private List<String> adminRoles;
-        private String authenticationType;
-        private String key;
-        private String targetId;
-        private String timeLastLogin;
-        private String timePasswordChanged;
-        private String timeUserCreated;
-        private String userCategory;
-        private String userName;
-        private String userProfile;
-        private List<String> userTypes;
+        private @Nullable String accountStatus;
+        private @Nullable List<String> adminRoles;
+        private @Nullable String authenticationType;
+        private @Nullable String key;
+        private @Nullable String targetId;
+        private @Nullable String timeLastLogin;
+        private @Nullable String timePasswordChanged;
+        private @Nullable String timeUserCreated;
+        private @Nullable String userCategory;
+        private @Nullable String userName;
+        private @Nullable String userProfile;
+        private @Nullable List<String> userTypes;
         public Builder() {}
         public Builder(GetUserAssessmentUsersUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -196,66 +198,66 @@ public final class GetUserAssessmentUsersUser {
         }
 
         @CustomType.Setter
-        public Builder accountStatus(String accountStatus) {
-            this.accountStatus = Objects.requireNonNull(accountStatus);
+        public Builder accountStatus(@Nullable String accountStatus) {
+            this.accountStatus = accountStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder adminRoles(List<String> adminRoles) {
-            this.adminRoles = Objects.requireNonNull(adminRoles);
+        public Builder adminRoles(@Nullable List<String> adminRoles) {
+            this.adminRoles = adminRoles;
             return this;
         }
         public Builder adminRoles(String... adminRoles) {
             return adminRoles(List.of(adminRoles));
         }
         @CustomType.Setter
-        public Builder authenticationType(String authenticationType) {
-            this.authenticationType = Objects.requireNonNull(authenticationType);
+        public Builder authenticationType(@Nullable String authenticationType) {
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastLogin(String timeLastLogin) {
-            this.timeLastLogin = Objects.requireNonNull(timeLastLogin);
+        public Builder timeLastLogin(@Nullable String timeLastLogin) {
+            this.timeLastLogin = timeLastLogin;
             return this;
         }
         @CustomType.Setter
-        public Builder timePasswordChanged(String timePasswordChanged) {
-            this.timePasswordChanged = Objects.requireNonNull(timePasswordChanged);
+        public Builder timePasswordChanged(@Nullable String timePasswordChanged) {
+            this.timePasswordChanged = timePasswordChanged;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUserCreated(String timeUserCreated) {
-            this.timeUserCreated = Objects.requireNonNull(timeUserCreated);
+        public Builder timeUserCreated(@Nullable String timeUserCreated) {
+            this.timeUserCreated = timeUserCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder userCategory(String userCategory) {
-            this.userCategory = Objects.requireNonNull(userCategory);
+        public Builder userCategory(@Nullable String userCategory) {
+            this.userCategory = userCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
-        public Builder userProfile(String userProfile) {
-            this.userProfile = Objects.requireNonNull(userProfile);
+        public Builder userProfile(@Nullable String userProfile) {
+            this.userProfile = userProfile;
             return this;
         }
         @CustomType.Setter
-        public Builder userTypes(List<String> userTypes) {
-            this.userTypes = Objects.requireNonNull(userTypes);
+        public Builder userTypes(@Nullable List<String> userTypes) {
+            this.userTypes = userTypes;
             return this;
         }
         public Builder userTypes(String... userTypes) {

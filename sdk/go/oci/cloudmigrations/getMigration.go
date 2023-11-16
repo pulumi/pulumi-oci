@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -60,30 +59,30 @@ type LookupMigrationArgs struct {
 // A collection of values returned by getMigration.
 type LookupMigrationResult struct {
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Migration Identifier that can be renamed
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether migration is marked as completed.
-	IsCompleted bool `pulumi:"isCompleted"`
+	IsCompleted *bool `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	MigrationId      string `pulumi:"migrationId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	MigrationId      string  `pulumi:"migrationId"`
 	// Replication schedule identifier
-	ReplicationScheduleId string `pulumi:"replicationScheduleId"`
+	ReplicationScheduleId *string `pulumi:"replicationScheduleId"`
 	// The current state of migration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupMigrationOutput(ctx *pulumi.Context, args LookupMigrationOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationResultOutput {
@@ -124,15 +123,9 @@ func (o LookupMigrationResultOutput) ToLookupMigrationResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupMigrationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMigrationResult] {
-	return pulumix.Output[LookupMigrationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o LookupMigrationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -141,8 +134,8 @@ func (o LookupMigrationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Migration Identifier that can be renamed
-func (o LookupMigrationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
@@ -151,18 +144,18 @@ func (o LookupMigrationResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupMigrationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether migration is marked as completed.
-func (o LookupMigrationResultOutput) IsCompleted() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupMigrationResult) bool { return v.IsCompleted }).(pulumi.BoolOutput)
+func (o LookupMigrationResultOutput) IsCompleted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *bool { return v.IsCompleted }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o LookupMigrationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMigrationResultOutput) MigrationId() pulumi.StringOutput {
@@ -170,13 +163,13 @@ func (o LookupMigrationResultOutput) MigrationId() pulumi.StringOutput {
 }
 
 // Replication schedule identifier
-func (o LookupMigrationResultOutput) ReplicationScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.ReplicationScheduleId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) ReplicationScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.ReplicationScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of migration.
-func (o LookupMigrationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -185,13 +178,13 @@ func (o LookupMigrationResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the migration project was created. An RFC3339 formatted datetime string
-func (o LookupMigrationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the migration project was updated. An RFC3339 formatted datetime string
-func (o LookupMigrationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

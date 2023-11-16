@@ -69,12 +69,12 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * A SQL execution plan as a list of steps.
      */
-    readonly plans: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan[];
+    readonly plans?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan[];
     readonly sqlObjectId: string;
     readonly sqlTuningAdvisorTaskId: string;
 }

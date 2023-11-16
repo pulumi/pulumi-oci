@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
@@ -60,17 +59,17 @@ type GetJavaFamilyArgs struct {
 // A collection of values returned by getJavaFamily.
 type GetJavaFamilyResult struct {
 	// The display name of the release family.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Link to access the documentation for the release.
-	DocUrl string `pulumi:"docUrl"`
+	DocUrl *string `pulumi:"docUrl"`
 	// The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
+	EndOfSupportLifeDate *string `pulumi:"endOfSupportLifeDate"`
 	// The Java release family identifier.
 	FamilyVersion string `pulumi:"familyVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// This indicates the support category for the Java release family.
-	SupportType string `pulumi:"supportType"`
+	SupportType *string `pulumi:"supportType"`
 }
 
 func GetJavaFamilyOutput(ctx *pulumi.Context, args GetJavaFamilyOutputArgs, opts ...pulumi.InvokeOption) GetJavaFamilyResultOutput {
@@ -111,25 +110,19 @@ func (o GetJavaFamilyResultOutput) ToGetJavaFamilyResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetJavaFamilyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJavaFamilyResult] {
-	return pulumix.Output[GetJavaFamilyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the release family.
-func (o GetJavaFamilyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetJavaFamilyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Link to access the documentation for the release.
-func (o GetJavaFamilyResultOutput) DocUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.DocUrl }).(pulumi.StringOutput)
+func (o GetJavaFamilyResultOutput) DocUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) *string { return v.DocUrl }).(pulumi.StringPtrOutput)
 }
 
 // The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetJavaFamilyResultOutput) EndOfSupportLifeDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.EndOfSupportLifeDate }).(pulumi.StringOutput)
+func (o GetJavaFamilyResultOutput) EndOfSupportLifeDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) *string { return v.EndOfSupportLifeDate }).(pulumi.StringPtrOutput)
 }
 
 // The Java release family identifier.
@@ -138,13 +131,13 @@ func (o GetJavaFamilyResultOutput) FamilyVersion() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetJavaFamilyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJavaFamilyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // This indicates the support category for the Java release family.
-func (o GetJavaFamilyResultOutput) SupportType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.SupportType }).(pulumi.StringOutput)
+func (o GetJavaFamilyResultOutput) SupportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) *string { return v.SupportType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

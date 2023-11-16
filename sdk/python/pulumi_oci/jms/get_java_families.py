@@ -43,17 +43,11 @@ class GetJavaFamiliesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the release family.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="familyVersion")
     def family_version(self) -> Optional[str]:
-        """
-        The Java release family identifier.
-        """
         return pulumi.get(self, "family_version")
 
     @property
@@ -63,7 +57,7 @@ class GetJavaFamiliesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,10 +65,7 @@ class GetJavaFamiliesResult:
 
     @property
     @pulumi.getter(name="javaFamilyCollections")
-    def java_family_collections(self) -> Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionResult']:
-        """
-        The list of java_family_collection.
-        """
+    def java_family_collections(self) -> Optional[Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionResult']]:
         return pulumi.get(self, "java_family_collections")
 
 
@@ -96,24 +87,7 @@ def get_java_families(display_name: Optional[str] = None,
                       filters: Optional[Sequence[pulumi.InputType['GetJavaFamiliesFilterArgs']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaFamiliesResult:
     """
-    This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of the Java release family information.
-    A Java release family is typically a major version in the Java version identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_families = oci.Jms.get_java_families(display_name=var["java_family_display_name"],
-        family_version=var["java_family_family_version"])
-    ```
-
-
-    :param str display_name: The display name for the Java family.
-    :param str family_version: The version identifier for the Java family.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -136,23 +110,6 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJavaFamiliesFilterArgs']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaFamiliesResult]:
     """
-    This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of the Java release family information.
-    A Java release family is typically a major version in the Java version identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_families = oci.Jms.get_java_families(display_name=var["java_family_display_name"],
-        family_version=var["java_family_family_version"])
-    ```
-
-
-    :param str display_name: The display name for the Java family.
-    :param str family_version: The version identifier for the Java family.
+    Use this data source to access information about an existing resource.
     """
     ...

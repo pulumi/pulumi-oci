@@ -21,39 +21,39 @@ public final class GetObjectResult {
      * 
      */
     private String bucket;
-    private String cacheControl;
+    private @Nullable String cacheControl;
     /**
      * @return The object to upload to the object store.
      * 
      */
-    private String content;
-    private String contentDisposition;
+    private @Nullable String content;
+    private @Nullable String contentDisposition;
     /**
      * @return The content encoding of the object.
      * 
      */
-    private String contentEncoding;
+    private @Nullable String contentEncoding;
     /**
      * @return The content language of the object.
      * 
      */
-    private String contentLanguage;
+    private @Nullable String contentLanguage;
     /**
      * @return The content length of the body.
      * 
      */
-    private String contentLength;
+    private @Nullable String contentLength;
     private @Nullable Integer contentLengthLimit;
     /**
      * @return The base-64 encoded MD5 hash of the body.
      * 
      */
-    private String contentMd5;
+    private @Nullable String contentMd5;
     /**
      * @return The content type of the object.  Defaults to &#39;application/octet-stream&#39; if not overridden during the PutObject call.
      * 
      */
-    private String contentType;
+    private @Nullable String contentType;
     private @Nullable String httpResponseCacheControl;
     private @Nullable String httpResponseContentDisposition;
     private @Nullable String httpResponseContentEncoding;
@@ -64,12 +64,12 @@ public final class GetObjectResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      * 
      */
-    private Map<String,Object> metadata;
+    private @Nullable Map<String,Object> metadata;
     /**
      * @return The top-level namespace used for the request.
      * 
@@ -84,8 +84,8 @@ public final class GetObjectResult {
      * @return The storage tier that the object is stored in.
      * 
      */
-    private String storageTier;
-    private String versionId;
+    private @Nullable String storageTier;
+    private @Nullable String versionId;
 
     private GetObjectResult() {}
     public Optional<Boolean> base64EncodeContent() {
@@ -98,39 +98,39 @@ public final class GetObjectResult {
     public String bucket() {
         return this.bucket;
     }
-    public String cacheControl() {
-        return this.cacheControl;
+    public Optional<String> cacheControl() {
+        return Optional.ofNullable(this.cacheControl);
     }
     /**
      * @return The object to upload to the object store.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
-    public String contentDisposition() {
-        return this.contentDisposition;
+    public Optional<String> contentDisposition() {
+        return Optional.ofNullable(this.contentDisposition);
     }
     /**
      * @return The content encoding of the object.
      * 
      */
-    public String contentEncoding() {
-        return this.contentEncoding;
+    public Optional<String> contentEncoding() {
+        return Optional.ofNullable(this.contentEncoding);
     }
     /**
      * @return The content language of the object.
      * 
      */
-    public String contentLanguage() {
-        return this.contentLanguage;
+    public Optional<String> contentLanguage() {
+        return Optional.ofNullable(this.contentLanguage);
     }
     /**
      * @return The content length of the body.
      * 
      */
-    public String contentLength() {
-        return this.contentLength;
+    public Optional<String> contentLength() {
+        return Optional.ofNullable(this.contentLength);
     }
     public Optional<Integer> contentLengthLimit() {
         return Optional.ofNullable(this.contentLengthLimit);
@@ -139,15 +139,15 @@ public final class GetObjectResult {
      * @return The base-64 encoded MD5 hash of the body.
      * 
      */
-    public String contentMd5() {
-        return this.contentMd5;
+    public Optional<String> contentMd5() {
+        return Optional.ofNullable(this.contentMd5);
     }
     /**
      * @return The content type of the object.  Defaults to &#39;application/octet-stream&#39; if not overridden during the PutObject call.
      * 
      */
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
     public Optional<String> httpResponseCacheControl() {
         return Optional.ofNullable(this.httpResponseCacheControl);
@@ -171,15 +171,15 @@ public final class GetObjectResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
      * @return The top-level namespace used for the request.
@@ -199,11 +199,11 @@ public final class GetObjectResult {
      * @return The storage tier that the object is stored in.
      * 
      */
-    public String storageTier() {
-        return this.storageTier;
+    public Optional<String> storageTier() {
+        return Optional.ofNullable(this.storageTier);
     }
-    public String versionId() {
-        return this.versionId;
+    public Optional<String> versionId() {
+        return Optional.ofNullable(this.versionId);
     }
 
     public static Builder builder() {
@@ -217,27 +217,27 @@ public final class GetObjectResult {
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
         private String bucket;
-        private String cacheControl;
-        private String content;
-        private String contentDisposition;
-        private String contentEncoding;
-        private String contentLanguage;
-        private String contentLength;
+        private @Nullable String cacheControl;
+        private @Nullable String content;
+        private @Nullable String contentDisposition;
+        private @Nullable String contentEncoding;
+        private @Nullable String contentLanguage;
+        private @Nullable String contentLength;
         private @Nullable Integer contentLengthLimit;
-        private String contentMd5;
-        private String contentType;
+        private @Nullable String contentMd5;
+        private @Nullable String contentType;
         private @Nullable String httpResponseCacheControl;
         private @Nullable String httpResponseContentDisposition;
         private @Nullable String httpResponseContentEncoding;
         private @Nullable String httpResponseContentLanguage;
         private @Nullable String httpResponseContentType;
         private @Nullable String httpResponseExpires;
-        private String id;
-        private Map<String,Object> metadata;
+        private @Nullable String id;
+        private @Nullable Map<String,Object> metadata;
         private String namespace;
         private String object;
-        private String storageTier;
-        private String versionId;
+        private @Nullable String storageTier;
+        private @Nullable String versionId;
         public Builder() {}
         public Builder(GetObjectResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -277,33 +277,33 @@ public final class GetObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cacheControl(String cacheControl) {
-            this.cacheControl = Objects.requireNonNull(cacheControl);
+        public Builder cacheControl(@Nullable String cacheControl) {
+            this.cacheControl = cacheControl;
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder contentDisposition(String contentDisposition) {
-            this.contentDisposition = Objects.requireNonNull(contentDisposition);
+        public Builder contentDisposition(@Nullable String contentDisposition) {
+            this.contentDisposition = contentDisposition;
             return this;
         }
         @CustomType.Setter
-        public Builder contentEncoding(String contentEncoding) {
-            this.contentEncoding = Objects.requireNonNull(contentEncoding);
+        public Builder contentEncoding(@Nullable String contentEncoding) {
+            this.contentEncoding = contentEncoding;
             return this;
         }
         @CustomType.Setter
-        public Builder contentLanguage(String contentLanguage) {
-            this.contentLanguage = Objects.requireNonNull(contentLanguage);
+        public Builder contentLanguage(@Nullable String contentLanguage) {
+            this.contentLanguage = contentLanguage;
             return this;
         }
         @CustomType.Setter
-        public Builder contentLength(String contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+        public Builder contentLength(@Nullable String contentLength) {
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
@@ -312,13 +312,13 @@ public final class GetObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder contentMd5(String contentMd5) {
-            this.contentMd5 = Objects.requireNonNull(contentMd5);
+        public Builder contentMd5(@Nullable String contentMd5) {
+            this.contentMd5 = contentMd5;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
@@ -352,13 +352,13 @@ public final class GetObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
@@ -372,13 +372,13 @@ public final class GetObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+        public Builder storageTier(@Nullable String storageTier) {
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
-        public Builder versionId(String versionId) {
-            this.versionId = Objects.requireNonNull(versionId);
+        public Builder versionId(@Nullable String versionId) {
+            this.versionId = versionId;
             return this;
         }
         public GetObjectResult build() {

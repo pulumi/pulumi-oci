@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
         /// </summary>
-        public readonly string Data;
+        public readonly string? Data;
         /// <summary>
         /// The name of the file. The fileName should be unique across the volume.
         /// </summary>
-        public readonly string FileName;
+        public readonly string? FileName;
         /// <summary>
         /// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
 
         [OutputConstructor]
         private GetContainerInstanceVolumeConfigResult(
-            string data,
+            string? data,
 
-            string fileName,
+            string? fileName,
 
-            string path)
+            string? path)
         {
             Data = data;
             FileName = fileName;

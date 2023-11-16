@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
         /// </summary>
-        public readonly double Ordinal;
+        public readonly double? Ordinal;
         /// <summary>
         /// The parameter value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetManagedDatabasesDatabaseParameterItemAllowedValueResult(
-            bool isDefault,
+            bool? isDefault,
 
-            double ordinal,
+            double? ordinal,
 
-            string value)
+            string? value)
         {
             IsDefault = isDefault;
             Ordinal = ordinal;

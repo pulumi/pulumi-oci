@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The number of cores associated with this fast launch job shape.
         /// </summary>
-        public readonly int CoreCount;
+        public readonly int? CoreCount;
         /// <summary>
         /// The managed egress support
         /// </summary>
-        public readonly string ManagedEgressSupport;
+        public readonly string? ManagedEgressSupport;
         /// <summary>
         /// The number of cores associated with this fast launch job shape.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The name of the fast launch job config
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The name of the fast launch job shape.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// The family that the compute shape belongs to.
         /// </summary>
-        public readonly string ShapeSeries;
+        public readonly string? ShapeSeries;
 
         [OutputConstructor]
         private GetFastLaunchJobConfigsFastLaunchJobConfigResult(
-            int coreCount,
+            int? coreCount,
 
-            string managedEgressSupport,
+            string? managedEgressSupport,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            string name,
+            string? name,
 
-            string shapeName,
+            string? shapeName,
 
-            string shapeSeries)
+            string? shapeSeries)
         {
             CoreCount = coreCount;
             ManagedEgressSupport = managedEgressSupport;

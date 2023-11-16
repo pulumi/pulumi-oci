@@ -59,7 +59,7 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
     /**
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    public /*out*/ readonly content!: pulumi.Output<string>;
+    public /*out*/ readonly content!: pulumi.Output<string | undefined>;
     /**
      * The type of wallet to generate.
      *

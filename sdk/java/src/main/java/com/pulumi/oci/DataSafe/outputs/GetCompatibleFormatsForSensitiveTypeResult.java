@@ -21,12 +21,12 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
      * @return An array of library masking formats compatible with the existing sensitive types.
      * 
      */
-    private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
+    private @Nullable List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCompatibleFormatsForSensitiveTypeResult() {}
     public Optional<String> accessLevel() {
@@ -43,14 +43,14 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
      * 
      */
     public List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes() {
-        return this.formatsForSensitiveTypes;
+        return this.formatsForSensitiveTypes == null ? List.of() : this.formatsForSensitiveTypes;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -65,8 +65,8 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
-        private String id;
+        private @Nullable List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCompatibleFormatsForSensitiveTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -93,16 +93,16 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder formatsForSensitiveTypes(List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes) {
-            this.formatsForSensitiveTypes = Objects.requireNonNull(formatsForSensitiveTypes);
+        public Builder formatsForSensitiveTypes(@Nullable List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes) {
+            this.formatsForSensitiveTypes = formatsForSensitiveTypes;
             return this;
         }
         public Builder formatsForSensitiveTypes(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType... formatsForSensitiveTypes) {
             return formatsForSensitiveTypes(List.of(formatsForSensitiveTypes));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeResult build() {

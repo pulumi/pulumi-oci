@@ -77,82 +77,52 @@ class GetResolverResult:
 
     @property
     @pulumi.getter(name="attachedVcnId")
-    def attached_vcn_id(self) -> str:
-        """
-        The OCID of the attached VCN.
-        """
+    def attached_vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "attached_vcn_id")
 
     @property
     @pulumi.getter(name="attachedViews")
-    def attached_views(self) -> Sequence['outputs.GetResolverAttachedViewResult']:
-        """
-        The attached views. Views are evaluated in order.
-        """
+    def attached_views(self) -> Optional[Sequence['outputs.GetResolverAttachedViewResult']]:
         return pulumi.get(self, "attached_views")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultViewId")
-    def default_view_id(self) -> str:
-        """
-        The OCID of the default view.
-        """
+    def default_view_id(self) -> Optional[str]:
         return pulumi.get(self, "default_view_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the resolver.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> Sequence['outputs.GetResolverEndpointResult']:
-        """
-        Read-only array of endpoints for the resolver.
-        """
+    def endpoints(self) -> Optional[Sequence['outputs.GetResolverEndpointResult']]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resolver.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> Optional[bool]:
         return pulumi.get(self, "is_protected")
 
     @property
@@ -162,10 +132,7 @@ class GetResolverResult:
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetResolverRuleResult']:
-        """
-        Rules for the resolver. Rules are evaluated in order.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetResolverRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
@@ -175,34 +142,22 @@ class GetResolverResult:
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -235,25 +190,7 @@ def get_resolver(resolver_id: Optional[str] = None,
                  scope: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResolverResult:
     """
-    This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about a specific resolver. Note that attempting to get a
-    resolver in the DELETED lifecycleState will result in a `404` response to be
-    consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolver = oci.Dns.get_resolver(resolver_id=oci_dns_resolver["test_resolver"]["id"],
-        scope="PRIVATE")
-    ```
-
-
-    :param str resolver_id: The OCID of the target resolver.
-    :param str scope: Value must be `PRIVATE` when listing private name resolvers.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['resolverId'] = resolver_id
@@ -286,24 +223,6 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
                         scope: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverResult]:
     """
-    This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about a specific resolver. Note that attempting to get a
-    resolver in the DELETED lifecycleState will result in a `404` response to be
-    consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolver = oci.Dns.get_resolver(resolver_id=oci_dns_resolver["test_resolver"]["id"],
-        scope="PRIVATE")
-    ```
-
-
-    :param str resolver_id: The OCID of the target resolver.
-    :param str scope: Value must be `PRIVATE` when listing private name resolvers.
+    Use this data source to access information about an existing resource.
     """
     ...

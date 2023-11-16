@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compute Capacity Reservation resource in Oracle Cloud Infrastructure Core service.
@@ -60,32 +59,32 @@ type LookupComputeCapacityReservationArgs struct {
 // A collection of values returned by getComputeCapacityReservation.
 type LookupComputeCapacityReservationResult struct {
 	// The availability domain of the compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain    string `pulumi:"availabilityDomain"`
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	AvailabilityDomain    *string `pulumi:"availabilityDomain"`
+	CapacityReservationId string  `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the compute capacity reservation.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The capacity configurations for the capacity reservation.
 	InstanceReservationConfigs []GetComputeCapacityReservationInstanceReservationConfig `pulumi:"instanceReservationConfigs"`
 	// Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-	IsDefaultReservation bool `pulumi:"isDefaultReservation"`
+	IsDefaultReservation *bool `pulumi:"isDefaultReservation"`
 	// The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-	ReservedInstanceCount string `pulumi:"reservedInstanceCount"`
+	ReservedInstanceCount *string `pulumi:"reservedInstanceCount"`
 	// The current state of the compute capacity reservation.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-	UsedInstanceCount string `pulumi:"usedInstanceCount"`
+	UsedInstanceCount *string `pulumi:"usedInstanceCount"`
 }
 
 func LookupComputeCapacityReservationOutput(ctx *pulumi.Context, args LookupComputeCapacityReservationOutputArgs, opts ...pulumi.InvokeOption) LookupComputeCapacityReservationResultOutput {
@@ -126,15 +125,9 @@ func (o LookupComputeCapacityReservationResultOutput) ToLookupComputeCapacityRes
 	return o
 }
 
-func (o LookupComputeCapacityReservationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupComputeCapacityReservationResult] {
-	return pulumix.Output[LookupComputeCapacityReservationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the compute capacity reservation.  Example: `Uocm:PHX-AD-1`
-func (o LookupComputeCapacityReservationResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupComputeCapacityReservationResultOutput) CapacityReservationId() pulumi.StringOutput {
@@ -142,8 +135,8 @@ func (o LookupComputeCapacityReservationResultOutput) CapacityReservationId() pu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the compute capacity reservation.
-func (o LookupComputeCapacityReservationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -152,8 +145,8 @@ func (o LookupComputeCapacityReservationResultOutput) DefinedTags() pulumi.MapOu
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupComputeCapacityReservationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -162,8 +155,8 @@ func (o LookupComputeCapacityReservationResultOutput) FreeformTags() pulumi.MapO
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation.
-func (o LookupComputeCapacityReservationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The capacity configurations for the capacity reservation.
@@ -174,33 +167,33 @@ func (o LookupComputeCapacityReservationResultOutput) InstanceReservationConfigs
 }
 
 // Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-func (o LookupComputeCapacityReservationResultOutput) IsDefaultReservation() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) bool { return v.IsDefaultReservation }).(pulumi.BoolOutput)
+func (o LookupComputeCapacityReservationResultOutput) IsDefaultReservation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *bool { return v.IsDefaultReservation }).(pulumi.BoolPtrOutput)
 }
 
 // The number of instances for which capacity will be held with this compute capacity reservation. This number is the sum of the values of the `reservedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-func (o LookupComputeCapacityReservationResultOutput) ReservedInstanceCount() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.ReservedInstanceCount }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) ReservedInstanceCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.ReservedInstanceCount }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the compute capacity reservation.
-func (o LookupComputeCapacityReservationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the compute capacity reservation was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupComputeCapacityReservationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the compute capacity reservation was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupComputeCapacityReservationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total number of instances currently consuming space in this compute capacity reservation. This number is the sum of the values of the `usedCount` fields for all of the instance capacity configurations under this reservation. The purpose of this field is to calculate the percentage usage of the reservation.
-func (o LookupComputeCapacityReservationResultOutput) UsedInstanceCount() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeCapacityReservationResult) string { return v.UsedInstanceCount }).(pulumi.StringOutput)
+func (o LookupComputeCapacityReservationResultOutput) UsedInstanceCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeCapacityReservationResult) *string { return v.UsedInstanceCount }).(pulumi.StringPtrOutput)
 }
 
 func init() {

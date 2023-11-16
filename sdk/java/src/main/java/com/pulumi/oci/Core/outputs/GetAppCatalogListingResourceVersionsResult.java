@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetAppCatalogListingResourceVersionsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetAppCatalogListingResourceVersionsResult {
      * @return The list of app_catalog_listing_resource_versions.
      * 
      */
-    private List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
+    private @Nullable List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
     private @Nullable List<GetAppCatalogListingResourceVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the listing this resource version belongs to.
      * 
@@ -36,7 +37,7 @@ public final class GetAppCatalogListingResourceVersionsResult {
      * 
      */
     public List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions() {
-        return this.appCatalogListingResourceVersions;
+        return this.appCatalogListingResourceVersions == null ? List.of() : this.appCatalogListingResourceVersions;
     }
     public List<GetAppCatalogListingResourceVersionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -45,8 +46,8 @@ public final class GetAppCatalogListingResourceVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the listing this resource version belongs to.
@@ -65,9 +66,9 @@ public final class GetAppCatalogListingResourceVersionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
+        private @Nullable List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions;
         private @Nullable List<GetAppCatalogListingResourceVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String listingId;
         public Builder() {}
         public Builder(GetAppCatalogListingResourceVersionsResult defaults) {
@@ -79,8 +80,8 @@ public final class GetAppCatalogListingResourceVersionsResult {
         }
 
         @CustomType.Setter
-        public Builder appCatalogListingResourceVersions(List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions) {
-            this.appCatalogListingResourceVersions = Objects.requireNonNull(appCatalogListingResourceVersions);
+        public Builder appCatalogListingResourceVersions(@Nullable List<GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions) {
+            this.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
             return this;
         }
         public Builder appCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersion... appCatalogListingResourceVersions) {
@@ -95,8 +96,8 @@ public final class GetAppCatalogListingResourceVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
@@ -13,27 +15,27 @@ public final class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDe
      * @return The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The total number of OCPUs available to the job run instance.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
 
     private GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail() {}
     /**
      * @return The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The total number of OCPUs available to the job run instance.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDe
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double memoryInGbs;
-        private Double ocpus;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double ocpus;
         public Builder() {}
         public Builder(GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDe
         }
 
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail build() {

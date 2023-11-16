@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseApexDetail {
@@ -13,27 +15,27 @@ public final class GetAutonomousDatabaseApexDetail {
      * @return The Oracle APEX Application Development version.
      * 
      */
-    private String apexVersion;
+    private @Nullable String apexVersion;
     /**
      * @return The Oracle REST Data Services (ORDS) version.
      * 
      */
-    private String ordsVersion;
+    private @Nullable String ordsVersion;
 
     private GetAutonomousDatabaseApexDetail() {}
     /**
      * @return The Oracle APEX Application Development version.
      * 
      */
-    public String apexVersion() {
-        return this.apexVersion;
+    public Optional<String> apexVersion() {
+        return Optional.ofNullable(this.apexVersion);
     }
     /**
      * @return The Oracle REST Data Services (ORDS) version.
      * 
      */
-    public String ordsVersion() {
-        return this.ordsVersion;
+    public Optional<String> ordsVersion() {
+        return Optional.ofNullable(this.ordsVersion);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAutonomousDatabaseApexDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String apexVersion;
-        private String ordsVersion;
+        private @Nullable String apexVersion;
+        private @Nullable String ordsVersion;
         public Builder() {}
         public Builder(GetAutonomousDatabaseApexDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAutonomousDatabaseApexDetail {
         }
 
         @CustomType.Setter
-        public Builder apexVersion(String apexVersion) {
-            this.apexVersion = Objects.requireNonNull(apexVersion);
+        public Builder apexVersion(@Nullable String apexVersion) {
+            this.apexVersion = apexVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder ordsVersion(String ordsVersion) {
-            this.ordsVersion = Objects.requireNonNull(ordsVersion);
+        public Builder ordsVersion(@Nullable String ordsVersion) {
+            this.ordsVersion = ordsVersion;
             return this;
         }
         public GetAutonomousDatabaseApexDetail build() {

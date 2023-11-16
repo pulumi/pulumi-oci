@@ -45,44 +45,44 @@ export interface GetCustomProtectionRuleResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly customProtectionRuleId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the custom protection rule.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The user-friendly name of the custom protection rule.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
      */
-    readonly modSecurityRuleIds: string[];
+    readonly modSecurityRuleIds?: string[];
     /**
      * The current lifecycle state of the custom protection rule.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
      */
-    readonly template: string;
+    readonly template?: string;
     /**
      * The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

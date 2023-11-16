@@ -97,7 +97,7 @@ export interface GetDeploymentsResult {
     /**
      * The list of deployment_collection.
      */
-    readonly deploymentCollections: outputs.GoldenGate.GetDeploymentsDeploymentCollection[];
+    readonly deploymentCollections?: outputs.GoldenGate.GetDeploymentsDeploymentCollection[];
     /**
      * An object's Display Name.
      */
@@ -110,7 +110,7 @@ export interface GetDeploymentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Possible GGS lifecycle sub-states.
      */

@@ -8,6 +8,7 @@ import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformComponentDetailOsn
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformComponentDetailPeer;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformComponentDetail {
@@ -15,12 +16,12 @@ public final class GetBlockchainPlatformComponentDetail {
      * @return List of OSNs
      * 
      */
-    private List<GetBlockchainPlatformComponentDetailOsn> osns;
+    private @Nullable List<GetBlockchainPlatformComponentDetailOsn> osns;
     /**
      * @return List of Peers
      * 
      */
-    private List<GetBlockchainPlatformComponentDetailPeer> peers;
+    private @Nullable List<GetBlockchainPlatformComponentDetailPeer> peers;
 
     private GetBlockchainPlatformComponentDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetBlockchainPlatformComponentDetail {
      * 
      */
     public List<GetBlockchainPlatformComponentDetailOsn> osns() {
-        return this.osns;
+        return this.osns == null ? List.of() : this.osns;
     }
     /**
      * @return List of Peers
      * 
      */
     public List<GetBlockchainPlatformComponentDetailPeer> peers() {
-        return this.peers;
+        return this.peers == null ? List.of() : this.peers;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetBlockchainPlatformComponentDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBlockchainPlatformComponentDetailOsn> osns;
-        private List<GetBlockchainPlatformComponentDetailPeer> peers;
+        private @Nullable List<GetBlockchainPlatformComponentDetailOsn> osns;
+        private @Nullable List<GetBlockchainPlatformComponentDetailPeer> peers;
         public Builder() {}
         public Builder(GetBlockchainPlatformComponentDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetBlockchainPlatformComponentDetail {
         }
 
         @CustomType.Setter
-        public Builder osns(List<GetBlockchainPlatformComponentDetailOsn> osns) {
-            this.osns = Objects.requireNonNull(osns);
+        public Builder osns(@Nullable List<GetBlockchainPlatformComponentDetailOsn> osns) {
+            this.osns = osns;
             return this;
         }
         public Builder osns(GetBlockchainPlatformComponentDetailOsn... osns) {
             return osns(List.of(osns));
         }
         @CustomType.Setter
-        public Builder peers(List<GetBlockchainPlatformComponentDetailPeer> peers) {
-            this.peers = Objects.requireNonNull(peers);
+        public Builder peers(@Nullable List<GetBlockchainPlatformComponentDetailPeer> peers) {
+            this.peers = peers;
             return this;
         }
         public Builder peers(GetBlockchainPlatformComponentDetailPeer... peers) {

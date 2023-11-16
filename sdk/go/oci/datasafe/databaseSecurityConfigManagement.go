@@ -9,26 +9,25 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DatabaseSecurityConfigManagement struct {
 	pulumi.CustomResourceState
 
-	CompartmentId     pulumi.StringOutput                                     `pulumi:"compartmentId"`
-	DefinedTags       pulumi.MapOutput                                        `pulumi:"definedTags"`
-	Description       pulumi.StringOutput                                     `pulumi:"description"`
-	DisplayName       pulumi.StringOutput                                     `pulumi:"displayName"`
-	FreeformTags      pulumi.MapOutput                                        `pulumi:"freeformTags"`
-	LifecycleDetails  pulumi.StringOutput                                     `pulumi:"lifecycleDetails"`
-	RefreshTrigger    pulumi.BoolPtrOutput                                    `pulumi:"refreshTrigger"`
-	SqlFirewallConfig DatabaseSecurityConfigManagementSqlFirewallConfigOutput `pulumi:"sqlFirewallConfig"`
-	State             pulumi.StringOutput                                     `pulumi:"state"`
-	SystemTags        pulumi.MapOutput                                        `pulumi:"systemTags"`
-	TargetId          pulumi.StringPtrOutput                                  `pulumi:"targetId"`
-	TimeCreated       pulumi.StringOutput                                     `pulumi:"timeCreated"`
-	TimeLastRefreshed pulumi.StringOutput                                     `pulumi:"timeLastRefreshed"`
-	TimeUpdated       pulumi.StringOutput                                     `pulumi:"timeUpdated"`
+	CompartmentId     pulumi.StringPtrOutput                                     `pulumi:"compartmentId"`
+	DefinedTags       pulumi.MapOutput                                           `pulumi:"definedTags"`
+	Description       pulumi.StringPtrOutput                                     `pulumi:"description"`
+	DisplayName       pulumi.StringPtrOutput                                     `pulumi:"displayName"`
+	FreeformTags      pulumi.MapOutput                                           `pulumi:"freeformTags"`
+	LifecycleDetails  pulumi.StringPtrOutput                                     `pulumi:"lifecycleDetails"`
+	RefreshTrigger    pulumi.BoolPtrOutput                                       `pulumi:"refreshTrigger"`
+	SqlFirewallConfig DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput `pulumi:"sqlFirewallConfig"`
+	State             pulumi.StringPtrOutput                                     `pulumi:"state"`
+	SystemTags        pulumi.MapOutput                                           `pulumi:"systemTags"`
+	TargetId          pulumi.StringPtrOutput                                     `pulumi:"targetId"`
+	TimeCreated       pulumi.StringPtrOutput                                     `pulumi:"timeCreated"`
+	TimeLastRefreshed pulumi.StringPtrOutput                                     `pulumi:"timeLastRefreshed"`
+	TimeUpdated       pulumi.StringPtrOutput                                     `pulumi:"timeUpdated"`
 }
 
 // NewDatabaseSecurityConfigManagement registers a new resource with the given unique name, arguments, and options.
@@ -144,12 +143,6 @@ func (i *DatabaseSecurityConfigManagement) ToDatabaseSecurityConfigManagementOut
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementOutput)
 }
 
-func (i *DatabaseSecurityConfigManagement) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[*DatabaseSecurityConfigManagement]{
-		OutputState: i.ToDatabaseSecurityConfigManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseSecurityConfigManagementArrayInput is an input type that accepts DatabaseSecurityConfigManagementArray and DatabaseSecurityConfigManagementArrayOutput values.
 // You can construct a concrete instance of `DatabaseSecurityConfigManagementArrayInput` via:
 //
@@ -173,12 +166,6 @@ func (i DatabaseSecurityConfigManagementArray) ToDatabaseSecurityConfigManagemen
 
 func (i DatabaseSecurityConfigManagementArray) ToDatabaseSecurityConfigManagementArrayOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementArrayOutput)
-}
-
-func (i DatabaseSecurityConfigManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[[]*DatabaseSecurityConfigManagement]{
-		OutputState: i.ToDatabaseSecurityConfigManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseSecurityConfigManagementMapInput is an input type that accepts DatabaseSecurityConfigManagementMap and DatabaseSecurityConfigManagementMapOutput values.
@@ -206,12 +193,6 @@ func (i DatabaseSecurityConfigManagementMap) ToDatabaseSecurityConfigManagementM
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigManagementMapOutput)
 }
 
-func (i DatabaseSecurityConfigManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfigManagement]{
-		OutputState: i.ToDatabaseSecurityConfigManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseSecurityConfigManagementOutput struct{ *pulumi.OutputState }
 
 func (DatabaseSecurityConfigManagementOutput) ElementType() reflect.Type {
@@ -226,48 +207,42 @@ func (o DatabaseSecurityConfigManagementOutput) ToDatabaseSecurityConfigManageme
 	return o
 }
 
-func (o DatabaseSecurityConfigManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[*DatabaseSecurityConfigManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o DatabaseSecurityConfigManagementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o DatabaseSecurityConfigManagementOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o DatabaseSecurityConfigManagementOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o DatabaseSecurityConfigManagementOutput) RefreshTrigger() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.BoolPtrOutput { return v.RefreshTrigger }).(pulumi.BoolPtrOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) SqlFirewallConfig() DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) DatabaseSecurityConfigManagementSqlFirewallConfigOutput {
+func (o DatabaseSecurityConfigManagementOutput) SqlFirewallConfig() DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput {
 		return v.SqlFirewallConfig
-	}).(DatabaseSecurityConfigManagementSqlFirewallConfigOutput)
+	}).(DatabaseSecurityConfigManagementSqlFirewallConfigPtrOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o DatabaseSecurityConfigManagementOutput) SystemTags() pulumi.MapOutput {
@@ -278,16 +253,16 @@ func (o DatabaseSecurityConfigManagementOutput) TargetId() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) TimeLastRefreshed() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.TimeLastRefreshed }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) TimeLastRefreshed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.TimeLastRefreshed }).(pulumi.StringPtrOutput)
 }
 
-func (o DatabaseSecurityConfigManagementOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DatabaseSecurityConfigManagementOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfigManagement) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DatabaseSecurityConfigManagementArrayOutput struct{ *pulumi.OutputState }
@@ -302,12 +277,6 @@ func (o DatabaseSecurityConfigManagementArrayOutput) ToDatabaseSecurityConfigMan
 
 func (o DatabaseSecurityConfigManagementArrayOutput) ToDatabaseSecurityConfigManagementArrayOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementArrayOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[[]*DatabaseSecurityConfigManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigManagementArrayOutput) Index(i pulumi.IntInput) DatabaseSecurityConfigManagementOutput {
@@ -328,12 +297,6 @@ func (o DatabaseSecurityConfigManagementMapOutput) ToDatabaseSecurityConfigManag
 
 func (o DatabaseSecurityConfigManagementMapOutput) ToDatabaseSecurityConfigManagementMapOutputWithContext(ctx context.Context) DatabaseSecurityConfigManagementMapOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfigManagement] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfigManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigManagementMapOutput) MapIndex(k pulumi.StringInput) DatabaseSecurityConfigManagementOutput {

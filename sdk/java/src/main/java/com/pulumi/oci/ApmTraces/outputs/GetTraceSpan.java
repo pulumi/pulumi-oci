@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceSpan {
@@ -17,147 +19,147 @@ public final class GetTraceSpan {
      * @return Total span duration in milliseconds.
      * 
      */
-    private String durationInMs;
+    private @Nullable String durationInMs;
     /**
      * @return Indicates if the span has an error.
      * 
      */
-    private Boolean isError;
+    private @Nullable Boolean isError;
     /**
      * @return Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Kind associated with the span.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return List of logs associated with the span.
      * 
      */
-    private List<GetTraceSpanLog> logs;
+    private @Nullable List<GetTraceSpanLog> logs;
     /**
      * @return Span name associated with the trace.  This is usually the method or URI of the request.
      * 
      */
-    private String operationName;
+    private @Nullable String operationName;
     /**
      * @return Unique parent identifier for the span if one exists. For root spans this will be null.
      * 
      */
-    private String parentSpanKey;
+    private @Nullable String parentSpanKey;
     /**
      * @return Service name associated with the span.
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return List of tags associated with the span.
      * 
      */
-    private List<GetTraceSpanTag> tags;
+    private @Nullable List<GetTraceSpanTag> tags;
     /**
      * @return Span end time.  Timestamp when the span was completed.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return Span start time.  Timestamp when the span was started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return Unique Application Performance Monitoring trace identifier (traceId).
      * 
      */
-    private String traceKey;
+    private @Nullable String traceKey;
 
     private GetTraceSpan() {}
     /**
      * @return Total span duration in milliseconds.
      * 
      */
-    public String durationInMs() {
-        return this.durationInMs;
+    public Optional<String> durationInMs() {
+        return Optional.ofNullable(this.durationInMs);
     }
     /**
      * @return Indicates if the span has an error.
      * 
      */
-    public Boolean isError() {
-        return this.isError;
+    public Optional<Boolean> isError() {
+        return Optional.ofNullable(this.isError);
     }
     /**
      * @return Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Kind associated with the span.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return List of logs associated with the span.
      * 
      */
     public List<GetTraceSpanLog> logs() {
-        return this.logs;
+        return this.logs == null ? List.of() : this.logs;
     }
     /**
      * @return Span name associated with the trace.  This is usually the method or URI of the request.
      * 
      */
-    public String operationName() {
-        return this.operationName;
+    public Optional<String> operationName() {
+        return Optional.ofNullable(this.operationName);
     }
     /**
      * @return Unique parent identifier for the span if one exists. For root spans this will be null.
      * 
      */
-    public String parentSpanKey() {
-        return this.parentSpanKey;
+    public Optional<String> parentSpanKey() {
+        return Optional.ofNullable(this.parentSpanKey);
     }
     /**
      * @return Service name associated with the span.
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return List of tags associated with the span.
      * 
      */
     public List<GetTraceSpanTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Span end time.  Timestamp when the span was completed.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return Span start time.  Timestamp when the span was started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return Unique Application Performance Monitoring trace identifier (traceId).
      * 
      */
-    public String traceKey() {
-        return this.traceKey;
+    public Optional<String> traceKey() {
+        return Optional.ofNullable(this.traceKey);
     }
 
     public static Builder builder() {
@@ -169,18 +171,18 @@ public final class GetTraceSpan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String durationInMs;
-        private Boolean isError;
-        private String key;
-        private String kind;
-        private List<GetTraceSpanLog> logs;
-        private String operationName;
-        private String parentSpanKey;
-        private String serviceName;
-        private List<GetTraceSpanTag> tags;
-        private String timeEnded;
-        private String timeStarted;
-        private String traceKey;
+        private @Nullable String durationInMs;
+        private @Nullable Boolean isError;
+        private @Nullable String key;
+        private @Nullable String kind;
+        private @Nullable List<GetTraceSpanLog> logs;
+        private @Nullable String operationName;
+        private @Nullable String parentSpanKey;
+        private @Nullable String serviceName;
+        private @Nullable List<GetTraceSpanTag> tags;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
+        private @Nullable String traceKey;
         public Builder() {}
         public Builder(GetTraceSpan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -199,69 +201,69 @@ public final class GetTraceSpan {
         }
 
         @CustomType.Setter
-        public Builder durationInMs(String durationInMs) {
-            this.durationInMs = Objects.requireNonNull(durationInMs);
+        public Builder durationInMs(@Nullable String durationInMs) {
+            this.durationInMs = durationInMs;
             return this;
         }
         @CustomType.Setter
-        public Builder isError(Boolean isError) {
-            this.isError = Objects.requireNonNull(isError);
+        public Builder isError(@Nullable Boolean isError) {
+            this.isError = isError;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder logs(List<GetTraceSpanLog> logs) {
-            this.logs = Objects.requireNonNull(logs);
+        public Builder logs(@Nullable List<GetTraceSpanLog> logs) {
+            this.logs = logs;
             return this;
         }
         public Builder logs(GetTraceSpanLog... logs) {
             return logs(List.of(logs));
         }
         @CustomType.Setter
-        public Builder operationName(String operationName) {
-            this.operationName = Objects.requireNonNull(operationName);
+        public Builder operationName(@Nullable String operationName) {
+            this.operationName = operationName;
             return this;
         }
         @CustomType.Setter
-        public Builder parentSpanKey(String parentSpanKey) {
-            this.parentSpanKey = Objects.requireNonNull(parentSpanKey);
+        public Builder parentSpanKey(@Nullable String parentSpanKey) {
+            this.parentSpanKey = parentSpanKey;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetTraceSpanTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetTraceSpanTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetTraceSpanTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder traceKey(String traceKey) {
-            this.traceKey = Objects.requireNonNull(traceKey);
+        public Builder traceKey(@Nullable String traceKey) {
+            this.traceKey = traceKey;
             return this;
         }
         public GetTraceSpan build() {

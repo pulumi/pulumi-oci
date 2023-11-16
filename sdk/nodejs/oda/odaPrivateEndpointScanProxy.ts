@@ -91,11 +91,11 @@ export class OdaPrivateEndpointScanProxy extends pulumi.CustomResource {
     /**
      * The current state of the ODA Private Endpoint Scan Proxy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OdaPrivateEndpointScanProxy resource with the given unique name, arguments, and options.

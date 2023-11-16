@@ -59,59 +59,59 @@ export interface GetResolverEndpointResult {
     /**
      * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The type of resolver endpoint. VNIC is currently the only supported type.
      */
-    readonly endpointType: string;
+    readonly endpointType?: string;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
-    readonly forwardingAddress: string;
-    readonly id: string;
+    readonly forwardingAddress?: string;
+    readonly id?: string;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
-    readonly isForwarding: boolean;
+    readonly isForwarding?: boolean;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      */
-    readonly isListening: boolean;
+    readonly isListening?: boolean;
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
      */
-    readonly listeningAddress: string;
+    readonly listeningAddress?: string;
     /**
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     readonly resolverEndpointName: string;
     readonly resolverId: string;
     readonly scope?: string;
     /**
      * The canonical absolute URL of the resource.
      */
-    readonly self: string;
+    readonly self?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.

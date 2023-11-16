@@ -34,7 +34,7 @@ public final class GetProjectsResult {
      * @return The list of project_collection.
      * 
      */
-    private List<GetProjectsProjectCollection> projectCollections;
+    private @Nullable List<GetProjectsProjectCollection> projectCollections;
     /**
      * @return The current state of the project.
      * 
@@ -71,7 +71,7 @@ public final class GetProjectsResult {
      * 
      */
     public List<GetProjectsProjectCollection> projectCollections() {
-        return this.projectCollections;
+        return this.projectCollections == null ? List.of() : this.projectCollections;
     }
     /**
      * @return The current state of the project.
@@ -94,7 +94,7 @@ public final class GetProjectsResult {
         private @Nullable String displayName;
         private @Nullable List<GetProjectsFilter> filters;
         private @Nullable String id;
-        private List<GetProjectsProjectCollection> projectCollections;
+        private @Nullable List<GetProjectsProjectCollection> projectCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetProjectsResult defaults) {
@@ -131,8 +131,8 @@ public final class GetProjectsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder projectCollections(List<GetProjectsProjectCollection> projectCollections) {
-            this.projectCollections = Objects.requireNonNull(projectCollections);
+        public Builder projectCollections(@Nullable List<GetProjectsProjectCollection> projectCollections) {
+            this.projectCollections = projectCollections;
             return this;
         }
         public Builder projectCollections(GetProjectsProjectCollection... projectCollections) {

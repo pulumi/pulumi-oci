@@ -43,17 +43,11 @@ class GetCertificateVersionsResult:
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> str:
-        """
-        The OCID of the certificate.
-        """
         return pulumi.get(self, "certificate_id")
 
     @property
     @pulumi.getter(name="certificateVersionCollections")
-    def certificate_version_collections(self) -> Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionResult']:
-        """
-        The list of certificate_version_collection.
-        """
+    def certificate_version_collections(self) -> Optional[Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionResult']]:
         return pulumi.get(self, "certificate_version_collections")
 
     @property
@@ -63,7 +57,7 @@ class GetCertificateVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetCertificateVersionsResult:
     @property
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> Optional[str]:
-        """
-        The version number of the certificate.
-        """
         return pulumi.get(self, "version_number")
 
 
@@ -96,24 +87,7 @@ def get_certificate_versions(certificate_id: Optional[str] = None,
                              version_number: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateVersionsResult:
     """
-    This data source provides the list of Certificate Versions in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all certificate versions for the specified certificate.
-    Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        version_number=var["certificate_version_version_number"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate.
-    :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -136,23 +110,6 @@ def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[str]] 
                                     version_number: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateVersionsResult]:
     """
-    This data source provides the list of Certificate Versions in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all certificate versions for the specified certificate.
-    Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        version_number=var["certificate_version_version_number"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate.
-    :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -101,113 +101,77 @@ class GetMonitoredResourceResult:
 
     @property
     @pulumi.getter(name="additionalAliases")
-    def additional_aliases(self) -> Sequence['outputs.GetMonitoredResourceAdditionalAliasResult']:
+    def additional_aliases(self) -> Optional[Sequence['outputs.GetMonitoredResourceAdditionalAliasResult']]:
         return pulumi.get(self, "additional_aliases")
 
     @property
     @pulumi.getter(name="additionalCredentials")
-    def additional_credentials(self) -> Sequence['outputs.GetMonitoredResourceAdditionalCredentialResult']:
+    def additional_credentials(self) -> Optional[Sequence['outputs.GetMonitoredResourceAdditionalCredentialResult']]:
         return pulumi.get(self, "additional_credentials")
 
     @property
     @pulumi.getter
-    def aliases(self) -> Sequence['outputs.GetMonitoredResourceAliasResult']:
-        """
-        Monitored Resource Alias Credential Details
-        """
+    def aliases(self) -> Optional[Sequence['outputs.GetMonitoredResourceAliasResult']]:
         return pulumi.get(self, "aliases")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def credentials(self) -> Sequence['outputs.GetMonitoredResourceCredentialResult']:
-        """
-        Monitored Resource Credential Details.
-        """
+    def credentials(self) -> Optional[Sequence['outputs.GetMonitoredResourceCredentialResult']]:
         return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Sequence['outputs.GetMonitoredResourceDatabaseConnectionDetailResult']:
-        """
-        Connection details for the database.
-        """
+    def database_connection_details(self) -> Optional[Sequence['outputs.GetMonitoredResourceDatabaseConnectionDetailResult']]:
         return pulumi.get(self, "database_connection_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Monitored resource display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="externalResourceId")
-    def external_resource_id(self) -> str:
+    def external_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "external_resource_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        Monitored resource host name.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def license(self) -> str:
-        """
-        License edition of the monitored resource.
-        """
+    def license(self) -> Optional[str]:
         return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
@@ -217,74 +181,47 @@ class GetMonitoredResourceResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Property Name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def properties(self) -> Sequence['outputs.GetMonitoredResourcePropertyResult']:
-        """
-        List of monitored resource properties.
-        """
+    def properties(self) -> Optional[Sequence['outputs.GetMonitoredResourcePropertyResult']]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="resourceTimeZone")
-    def resource_time_zone(self) -> str:
-        """
-        Time zone in the form of tz database canonical zone ID.
-        """
+    def resource_time_zone(self) -> Optional[str]:
         return pulumi.get(self, "resource_time_zone")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle state of the monitored resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> str:
-        """
-        Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Monitored Resource Type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -324,21 +261,7 @@ class AwaitableGetMonitoredResourceResult(GetMonitoredResourceResult):
 def get_monitored_resource(monitored_resource_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourceResult:
     """
-    This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"])
-    ```
-
-
-    :param str monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['monitoredResourceId'] = monitored_resource_id
@@ -377,20 +300,6 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
 def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceResult]:
     """
-    This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Get monitored resource for the given identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"])
-    ```
-
-
-    :param str monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
+    Use this data source to access information about an existing resource.
     """
     ...

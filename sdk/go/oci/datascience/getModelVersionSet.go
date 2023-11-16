@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
@@ -60,28 +59,28 @@ type LookupModelVersionSetArgs struct {
 // A collection of values returned by getModelVersionSet.
 type LookupModelVersionSetResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the model version set.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set.
-	Id                string `pulumi:"id"`
-	ModelVersionSetId string `pulumi:"modelVersionSetId"`
+	Id                *string `pulumi:"id"`
+	ModelVersionSetId string  `pulumi:"modelVersionSetId"`
 	// A user-friendly name for the resource. It must be unique and can't be modified.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model version set.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the model version set.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupModelVersionSetOutput(ctx *pulumi.Context, args LookupModelVersionSetOutputArgs, opts ...pulumi.InvokeOption) LookupModelVersionSetResultOutput {
@@ -122,20 +121,14 @@ func (o LookupModelVersionSetResultOutput) ToLookupModelVersionSetResultOutputWi
 	return o
 }
 
-func (o LookupModelVersionSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelVersionSetResult] {
-	return pulumix.Output[LookupModelVersionSetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set compartment.
-func (o LookupModelVersionSetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
-func (o LookupModelVersionSetResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -144,8 +137,8 @@ func (o LookupModelVersionSetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the model version set.
-func (o LookupModelVersionSetResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -154,8 +147,8 @@ func (o LookupModelVersionSetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model version set.
-func (o LookupModelVersionSetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupModelVersionSetResultOutput) ModelVersionSetId() pulumi.StringOutput {
@@ -163,28 +156,28 @@ func (o LookupModelVersionSetResultOutput) ModelVersionSetId() pulumi.StringOutp
 }
 
 // A user-friendly name for the resource. It must be unique and can't be modified.
-func (o LookupModelVersionSetResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model version set.
-func (o LookupModelVersionSetResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the model version set.
-func (o LookupModelVersionSetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o LookupModelVersionSetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o LookupModelVersionSetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelVersionSetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupModelVersionSetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelVersionSetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

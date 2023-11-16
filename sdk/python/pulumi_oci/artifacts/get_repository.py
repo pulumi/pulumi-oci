@@ -58,58 +58,37 @@ class GetRepositoryResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the repository's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The repository description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The repository name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isImmutable")
-    def is_immutable(self) -> bool:
-        """
-        Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
-        """
+    def is_immutable(self) -> Optional[bool]:
         return pulumi.get(self, "is_immutable")
 
     @property
@@ -119,26 +98,17 @@ class GetRepositoryResult:
 
     @property
     @pulumi.getter(name="repositoryType")
-    def repository_type(self) -> str:
-        """
-        The repository's supported artifact type.
-        """
+    def repository_type(self) -> Optional[str]:
         return pulumi.get(self, "repository_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the repository.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -164,21 +134,7 @@ class AwaitableGetRepositoryResult(GetRepositoryResult):
 def get_repository(repository_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryResult:
     """
-    This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Gets the specified repository's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository = oci.Artifacts.get_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
-    ```
-
-
-    :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['repositoryId'] = repository_id
@@ -203,20 +159,6 @@ def get_repository(repository_id: Optional[str] = None,
 def get_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryResult]:
     """
-    This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Gets the specified repository's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository = oci.Artifacts.get_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
-    ```
-
-
-    :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     ...

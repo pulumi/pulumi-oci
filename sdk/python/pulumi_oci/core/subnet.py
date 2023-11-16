@@ -31,58 +31,6 @@ class SubnetArgs:
                  security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a Subnet resource.
-        :param pulumi.Input[str] cidr_block: (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-               
-               a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-               
-               Example: `10.0.1.0/24`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] availability_domain: Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-               
-               To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-               
-               To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-               
-               Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dhcp_options_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] dns_label: A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-               
-               This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `subnet123`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-               
-               For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               
-               Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-               * The prefixes must be valid.
-               * Multiple prefixes must not overlap each other or the on-premises network prefix.
-               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-               
-               For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-               
-               `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-               
-               Example: `true`
-        :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-               
-               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-               
-               Example: `true`
-        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_list_ids: (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
         """
         pulumi.set(__self__, "cidr_block", cidr_block)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -115,13 +63,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-
-        a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-
-        Example: `10.0.1.0/24`
-        """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -131,9 +72,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -143,13 +81,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -159,15 +90,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-
-        To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-
-        To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-
-        Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -177,9 +99,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -189,9 +108,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="dhcpOptionsId")
     def dhcp_options_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        """
         return pulumi.get(self, "dhcp_options_id")
 
     @dhcp_options_id.setter
@@ -201,9 +117,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -213,15 +126,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="dnsLabel")
     def dns_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-
-        This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        Example: `subnet123`
-        """
         return pulumi.get(self, "dns_label")
 
     @dns_label.setter
@@ -231,9 +135,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -243,13 +144,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-
-        For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-
-        Example: `2001:0db8:0123:1111::/64`
-        """
         return pulumi.get(self, "ipv6cidr_block")
 
     @ipv6cidr_block.setter
@@ -259,12 +153,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="ipv6cidrBlocks")
     def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-        * The prefixes must be valid.
-        * Multiple prefixes must not overlap each other or the on-premises network prefix.
-        * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        """
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @ipv6cidr_blocks.setter
@@ -274,15 +162,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="prohibitInternetIngress")
     def prohibit_internet_ingress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-
-        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-
-        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-
-        Example: `true`
-        """
         return pulumi.get(self, "prohibit_internet_ingress")
 
     @prohibit_internet_ingress.setter
@@ -292,13 +171,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="prohibitPublicIpOnVnic")
     def prohibit_public_ip_on_vnic(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-
-        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-
-        Example: `true`
-        """
         return pulumi.get(self, "prohibit_public_ip_on_vnic")
 
     @prohibit_public_ip_on_vnic.setter
@@ -308,9 +180,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -320,9 +189,6 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="securityListIds")
     def security_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        """
         return pulumi.get(self, "security_list_ids")
 
     @security_list_ids.setter
@@ -356,64 +222,6 @@ class _SubnetState:
                  virtual_router_mac: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Subnet resources.
-        :param pulumi.Input[str] availability_domain: Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-               
-               To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-               
-               To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-               
-               Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] cidr_block: (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-               
-               a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-               
-               Example: `10.0.1.0/24`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dhcp_options_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] dns_label: A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-               
-               This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `subnet123`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-               
-               For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               
-               Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-               * The prefixes must be valid.
-               * Multiple prefixes must not overlap each other or the on-premises network prefix.
-               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        :param pulumi.Input[str] ipv6virtual_router_ip: For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-        :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-               
-               For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-               
-               `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-               
-               Example: `true`
-        :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-               
-               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-               
-               Example: `true`
-        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_list_ids: (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        :param pulumi.Input[str] state: The subnet's current state.
-        :param pulumi.Input[str] subnet_domain_name: The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-        :param pulumi.Input[str] time_created: The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] virtual_router_ip: The IP address of the virtual router.  Example: `10.0.14.1`
-        :param pulumi.Input[str] virtual_router_mac: The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -461,15 +269,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-
-        To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-
-        To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-
-        Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -479,13 +278,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-
-        a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-
-        Example: `10.0.1.0/24`
-        """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -495,9 +287,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -507,9 +296,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -519,9 +305,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="dhcpOptionsId")
     def dhcp_options_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        """
         return pulumi.get(self, "dhcp_options_id")
 
     @dhcp_options_id.setter
@@ -531,9 +314,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -543,15 +323,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="dnsLabel")
     def dns_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-
-        This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        Example: `subnet123`
-        """
         return pulumi.get(self, "dns_label")
 
     @dns_label.setter
@@ -561,9 +332,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -573,13 +341,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-
-        For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-
-        Example: `2001:0db8:0123:1111::/64`
-        """
         return pulumi.get(self, "ipv6cidr_block")
 
     @ipv6cidr_block.setter
@@ -589,12 +350,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="ipv6cidrBlocks")
     def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-        * The prefixes must be valid.
-        * Multiple prefixes must not overlap each other or the on-premises network prefix.
-        * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        """
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @ipv6cidr_blocks.setter
@@ -604,9 +359,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="ipv6virtualRouterIp")
     def ipv6virtual_router_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-        """
         return pulumi.get(self, "ipv6virtual_router_ip")
 
     @ipv6virtual_router_ip.setter
@@ -616,15 +368,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="prohibitInternetIngress")
     def prohibit_internet_ingress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-
-        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-
-        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-
-        Example: `true`
-        """
         return pulumi.get(self, "prohibit_internet_ingress")
 
     @prohibit_internet_ingress.setter
@@ -634,13 +377,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="prohibitPublicIpOnVnic")
     def prohibit_public_ip_on_vnic(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-
-        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-
-        Example: `true`
-        """
         return pulumi.get(self, "prohibit_public_ip_on_vnic")
 
     @prohibit_public_ip_on_vnic.setter
@@ -650,9 +386,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -662,9 +395,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="securityListIds")
     def security_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        """
         return pulumi.get(self, "security_list_ids")
 
     @security_list_ids.setter
@@ -674,9 +404,6 @@ class _SubnetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -686,9 +413,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="subnetDomainName")
     def subnet_domain_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-        """
         return pulumi.get(self, "subnet_domain_name")
 
     @subnet_domain_name.setter
@@ -698,9 +422,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -710,13 +431,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -726,9 +440,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="virtualRouterIp")
     def virtual_router_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IP address of the virtual router.  Example: `10.0.14.1`
-        """
         return pulumi.get(self, "virtual_router_ip")
 
     @virtual_router_ip.setter
@@ -738,9 +449,6 @@ class _SubnetState:
     @property
     @pulumi.getter(name="virtualRouterMac")
     def virtual_router_mac(self) -> Optional[pulumi.Input[str]]:
-        """
-        The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
-        """
         return pulumi.get(self, "virtual_router_mac")
 
     @virtual_router_mac.setter
@@ -770,130 +478,9 @@ class Subnet(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
-        so it's important to think about the size of subnets you need before creating them.
-        For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
-        For information on the number of subnets you can have in a VCN, see
-        [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
-        to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
-        other Networking Service components. If you're not sure which compartment to use, put the subnet in
-        the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-        see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally associate a route table with the subnet. If you don't, the subnet will use the
-        VCN's default route table. For more information about route tables, see
-        [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-
-        You may optionally associate a security list with the subnet. If you don't, the subnet will use the
-        VCN's default security list. For more information about security lists, see
-        [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-
-        You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
-        VCN's default set. For more information about DHCP options, see
-        [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
-
-        You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        You can also add a DNS label for the subnet, which is required if you want the Internet and
-        VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-        [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_subnet = oci.core.Subnet("testSubnet",
-            cidr_block=var["subnet_cidr_block"],
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            availability_domain=var["subnet_availability_domain"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            dhcp_options_id=oci_core_dhcp_options["test_dhcp_options"]["id"],
-            display_name=var["subnet_display_name"],
-            dns_label=var["subnet_dns_label"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ipv6cidr_block=var["subnet_ipv6cidr_block"],
-            ipv6cidr_blocks=var["subnet_ipv6cidr_blocks"],
-            prohibit_internet_ingress=var["subnet_prohibit_internet_ingress"],
-            prohibit_public_ip_on_vnic=var["subnet_prohibit_public_ip_on_vnic"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"],
-            security_list_ids=var["subnet_security_list_ids"])
-        ```
-
-        ## Import
-
-        Subnets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
-        ```
-
+        Create a Subnet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-               
-               To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-               
-               To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-               
-               Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] cidr_block: (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-               
-               a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-               
-               Example: `10.0.1.0/24`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dhcp_options_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] dns_label: A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-               
-               This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `subnet123`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-               
-               For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               
-               Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-               * The prefixes must be valid.
-               * Multiple prefixes must not overlap each other or the on-premises network prefix.
-               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-               
-               For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-               
-               `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-               
-               Example: `true`
-        :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-               
-               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-               
-               Example: `true`
-        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_list_ids: (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -902,76 +489,7 @@ class Subnet(pulumi.CustomResource):
                  args: SubnetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
-        so it's important to think about the size of subnets you need before creating them.
-        For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
-        For information on the number of subnets you can have in a VCN, see
-        [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
-        to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
-        other Networking Service components. If you're not sure which compartment to use, put the subnet in
-        the same compartment as the VCN. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-        see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally associate a route table with the subnet. If you don't, the subnet will use the
-        VCN's default route table. For more information about route tables, see
-        [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-
-        You may optionally associate a security list with the subnet. If you don't, the subnet will use the
-        VCN's default security list. For more information about security lists, see
-        [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-
-        You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
-        VCN's default set. For more information about DHCP options, see
-        [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
-
-        You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        You can also add a DNS label for the subnet, which is required if you want the Internet and
-        VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-        [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_subnet = oci.core.Subnet("testSubnet",
-            cidr_block=var["subnet_cidr_block"],
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            availability_domain=var["subnet_availability_domain"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            dhcp_options_id=oci_core_dhcp_options["test_dhcp_options"]["id"],
-            display_name=var["subnet_display_name"],
-            dns_label=var["subnet_dns_label"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ipv6cidr_block=var["subnet_ipv6cidr_block"],
-            ipv6cidr_blocks=var["subnet_ipv6cidr_blocks"],
-            prohibit_internet_ingress=var["subnet_prohibit_internet_ingress"],
-            prohibit_public_ip_on_vnic=var["subnet_prohibit_public_ip_on_vnic"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"],
-            security_list_ids=var["subnet_security_list_ids"])
-        ```
-
-        ## Import
-
-        Subnets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/subnet:Subnet test_subnet "id"
-        ```
-
+        Create a Subnet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SubnetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1076,64 +594,6 @@ class Subnet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-               
-               To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-               
-               To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-               
-               Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] cidr_block: (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-               
-               a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-               
-               Example: `10.0.1.0/24`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dhcp_options_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] dns_label: A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-               
-               This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-               
-               For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-               
-               Example: `subnet123`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ipv6cidr_block: (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-               
-               For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-               
-               Example: `2001:0db8:0123:1111::/64`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ipv6cidr_blocks: (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-               * The prefixes must be valid.
-               * Multiple prefixes must not overlap each other or the on-premises network prefix.
-               * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        :param pulumi.Input[str] ipv6virtual_router_ip: For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-        :param pulumi.Input[bool] prohibit_internet_ingress: Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-               
-               For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-               
-               `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-               
-               Example: `true`
-        :param pulumi.Input[bool] prohibit_public_ip_on_vnic: Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-               
-               If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-               
-               Example: `true`
-        :param pulumi.Input[str] route_table_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_list_ids: (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        :param pulumi.Input[str] state: The subnet's current state.
-        :param pulumi.Input[str] subnet_domain_name: The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-        :param pulumi.Input[str] time_created: The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] virtual_router_ip: The IP address of the virtual router.  Example: `10.0.14.1`
-        :param pulumi.Input[str] virtual_router_mac: The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1164,206 +624,106 @@ class Subnet(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
-
-        To create a regional subnet, omit this attribute. Then any resources later created in this subnet (such as a Compute instance) can be created in any availability domain in the region.
-
-        To instead create an AD-specific subnet, set this attribute to the availability domain you want this subnet to be in. Then any resources later created in this subnet can only be created in that availability domain.
-
-        Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
-
-        a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
-
-        Example: `10.0.1.0/24`
-        """
         return pulumi.get(self, "cidr_block")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dhcpOptionsId")
-    def dhcp_options_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
-        """
+    def dhcp_options_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dhcp_options_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> pulumi.Output[str]:
-        """
-        A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-
-        This value must be set if you want to use the Internet and VCN Resolver to resolve the hostnames of instances in the subnet. It can only be set if the VCN itself was created with a DNS label.
-
-        For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-
-        Example: `subnet123`
-        """
+    def dns_label(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dns_label")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ipv6cidrBlock")
-    def ipv6cidr_block(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
-
-        For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-
-        Example: `2001:0db8:0123:1111::/64`
-        """
+    def ipv6cidr_block(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ipv6cidr_block")
 
     @property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
-        * The prefixes must be valid.
-        * Multiple prefixes must not overlap each other or the on-premises network prefix.
-        * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
-        """
+    def ipv6cidr_blocks(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @property
     @pulumi.getter(name="ipv6virtualRouterIp")
-    def ipv6virtual_router_ip(self) -> pulumi.Output[str]:
-        """
-        For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-        """
+    def ipv6virtual_router_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ipv6virtual_router_ip")
 
     @property
     @pulumi.getter(name="prohibitInternetIngress")
-    def prohibit_internet_ingress(self) -> pulumi.Output[bool]:
-        """
-        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-
-        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
-
-        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
-
-        Example: `true`
-        """
+    def prohibit_internet_ingress(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "prohibit_internet_ingress")
 
     @property
     @pulumi.getter(name="prohibitPublicIpOnVnic")
-    def prohibit_public_ip_on_vnic(self) -> pulumi.Output[bool]:
-        """
-        Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
-
-        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
-
-        Example: `true`
-        """
+    def prohibit_public_ip_on_vnic(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "prohibit_public_ip_on_vnic")
 
     @property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
-        """
+    def route_table_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter(name="securityListIds")
-    def security_list_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
-        """
+    def security_list_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "security_list_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The subnet's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetDomainName")
-    def subnet_domain_name(self) -> pulumi.Output[str]:
-        """
-        The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-        """
+    def subnet_domain_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "subnet_domain_name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @property
     @pulumi.getter(name="virtualRouterIp")
-    def virtual_router_ip(self) -> pulumi.Output[str]:
-        """
-        The IP address of the virtual router.  Example: `10.0.14.1`
-        """
+    def virtual_router_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "virtual_router_ip")
 
     @property
     @pulumi.getter(name="virtualRouterMac")
-    def virtual_router_mac(self) -> pulumi.Output[str]:
-        """
-        The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
-        """
+    def virtual_router_mac(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "virtual_router_mac")
 

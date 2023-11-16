@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Type of Unified Agent service configuration.
         /// </summary>
-        public readonly string ConfigurationType;
+        public readonly string? ConfigurationType;
         /// <summary>
         /// Unified monitoring agent operational metrics destination object.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationResult(
-            string configurationType,
+            string? configurationType,
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationResult> destinations,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
@@ -64,16 +63,16 @@ type GetLicenseMetricArgs struct {
 type GetLicenseMetricResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string `pulumi:"id"`
-	IsCompartmentIdInSubtree *bool  `pulumi:"isCompartmentIdInSubtree"`
+	Id                       *string `pulumi:"id"`
+	IsCompartmentIdInSubtree *bool   `pulumi:"isCompartmentIdInSubtree"`
 	// Total number of license records that will expire within 90 days in a particular compartment.
-	LicenseRecordExpiringSoonCount int `pulumi:"licenseRecordExpiringSoonCount"`
+	LicenseRecordExpiringSoonCount *int `pulumi:"licenseRecordExpiringSoonCount"`
 	// Total number of BYOL instances in a particular compartment.
-	TotalByolInstanceCount int `pulumi:"totalByolInstanceCount"`
+	TotalByolInstanceCount *int `pulumi:"totalByolInstanceCount"`
 	// Total number of License Included (LI) instances in a particular compartment.
-	TotalLicenseIncludedInstanceCount int `pulumi:"totalLicenseIncludedInstanceCount"`
+	TotalLicenseIncludedInstanceCount *int `pulumi:"totalLicenseIncludedInstanceCount"`
 	// Total number of product licenses in a particular compartment.
-	TotalProductLicenseCount int `pulumi:"totalProductLicenseCount"`
+	TotalProductLicenseCount *int `pulumi:"totalProductLicenseCount"`
 }
 
 func GetLicenseMetricOutput(ctx *pulumi.Context, args GetLicenseMetricOutputArgs, opts ...pulumi.InvokeOption) GetLicenseMetricResultOutput {
@@ -116,19 +115,13 @@ func (o GetLicenseMetricResultOutput) ToGetLicenseMetricResultOutputWithContext(
 	return o
 }
 
-func (o GetLicenseMetricResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLicenseMetricResult] {
-	return pulumix.Output[GetLicenseMetricResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLicenseMetricResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLicenseMetricResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLicenseMetricResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLicenseMetricResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLicenseMetricResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLicenseMetricResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLicenseMetricResultOutput) IsCompartmentIdInSubtree() pulumi.BoolPtrOutput {
@@ -136,23 +129,23 @@ func (o GetLicenseMetricResultOutput) IsCompartmentIdInSubtree() pulumi.BoolPtrO
 }
 
 // Total number of license records that will expire within 90 days in a particular compartment.
-func (o GetLicenseMetricResultOutput) LicenseRecordExpiringSoonCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLicenseMetricResult) int { return v.LicenseRecordExpiringSoonCount }).(pulumi.IntOutput)
+func (o GetLicenseMetricResultOutput) LicenseRecordExpiringSoonCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLicenseMetricResult) *int { return v.LicenseRecordExpiringSoonCount }).(pulumi.IntPtrOutput)
 }
 
 // Total number of BYOL instances in a particular compartment.
-func (o GetLicenseMetricResultOutput) TotalByolInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLicenseMetricResult) int { return v.TotalByolInstanceCount }).(pulumi.IntOutput)
+func (o GetLicenseMetricResultOutput) TotalByolInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLicenseMetricResult) *int { return v.TotalByolInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // Total number of License Included (LI) instances in a particular compartment.
-func (o GetLicenseMetricResultOutput) TotalLicenseIncludedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLicenseMetricResult) int { return v.TotalLicenseIncludedInstanceCount }).(pulumi.IntOutput)
+func (o GetLicenseMetricResultOutput) TotalLicenseIncludedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLicenseMetricResult) *int { return v.TotalLicenseIncludedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // Total number of product licenses in a particular compartment.
-func (o GetLicenseMetricResultOutput) TotalProductLicenseCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLicenseMetricResult) int { return v.TotalProductLicenseCount }).(pulumi.IntOutput)
+func (o GetLicenseMetricResultOutput) TotalProductLicenseCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLicenseMetricResult) *int { return v.TotalProductLicenseCount }).(pulumi.IntPtrOutput)
 }
 
 func init() {

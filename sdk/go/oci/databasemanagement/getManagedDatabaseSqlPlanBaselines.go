@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
@@ -90,14 +89,14 @@ type GetManagedDatabaseSqlPlanBaselinesArgs struct {
 type GetManagedDatabaseSqlPlanBaselinesResult struct {
 	Filters []GetManagedDatabaseSqlPlanBaselinesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	IsAccepted        *bool  `pulumi:"isAccepted"`
-	IsAdaptive        *bool  `pulumi:"isAdaptive"`
-	IsEnabled         *bool  `pulumi:"isEnabled"`
-	IsFixed           *bool  `pulumi:"isFixed"`
-	IsReproduced      *bool  `pulumi:"isReproduced"`
-	Limit             *int   `pulumi:"limit"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	IsAccepted        *bool   `pulumi:"isAccepted"`
+	IsAdaptive        *bool   `pulumi:"isAdaptive"`
+	IsEnabled         *bool   `pulumi:"isEnabled"`
+	IsFixed           *bool   `pulumi:"isFixed"`
+	IsReproduced      *bool   `pulumi:"isReproduced"`
+	Limit             *int    `pulumi:"limit"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The origin of the SQL plan baseline.
 	Origin *string `pulumi:"origin"`
 	// The unique plan identifier.
@@ -168,12 +167,6 @@ func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) ToGetManagedDatabaseSqlP
 	return o
 }
 
-func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselinesResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselinesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) Filters() GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) []GetManagedDatabaseSqlPlanBaselinesFilter {
 		return v.Filters
@@ -181,8 +174,8 @@ func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) Filters() GetManagedData
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) IsAccepted() pulumi.BoolPtrOutput {

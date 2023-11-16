@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
         /// </summary>
-        public readonly string CloudExadataInfrastructureDisplayName;
+        public readonly string? CloudExadataInfrastructureDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
         /// </summary>
@@ -149,43 +149,43 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Total unallocated exadata storage in the infrastructure in TBs.
         /// </summary>
-        public readonly double ExadataStorageInTbs;
+        public readonly double? ExadataStorageInTbs;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The minimum amount of unallocated storage available across all nodes in the infrastructure.
         /// </summary>
-        public readonly int LocalStorageInGbs;
+        public readonly int? LocalStorageInGbs;
         /// <summary>
         /// The minimum amount of unallocated memory available across all nodes in the infrastructure.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
         /// </summary>
-        public readonly int Ocpus;
+        public readonly int? Ocpus;
 
         [OutputConstructor]
         private GetCloudExadataInfrastructureUnAllocatedResourceResult(
             ImmutableArray<Outputs.GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult> cloudAutonomousVmClusters,
 
-            string cloudExadataInfrastructureDisplayName,
+            string? cloudExadataInfrastructureDisplayName,
 
             string cloudExadataInfrastructureId,
 
             ImmutableArray<string> dbServers,
 
-            double exadataStorageInTbs,
+            double? exadataStorageInTbs,
 
-            string id,
+            string? id,
 
-            int localStorageInGbs,
+            int? localStorageInGbs,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            int ocpus)
+            int? ocpus)
         {
             CloudAutonomousVmClusters = cloudAutonomousVmClusters;
             CloudExadataInfrastructureDisplayName = cloudExadataInfrastructureDisplayName;

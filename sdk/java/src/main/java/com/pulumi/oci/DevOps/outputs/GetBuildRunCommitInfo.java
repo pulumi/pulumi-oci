@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunCommitInfo {
@@ -13,39 +15,39 @@ public final class GetBuildRunCommitInfo {
      * @return Commit hash pertinent to the repository URL and the specified branch.
      * 
      */
-    private String commitHash;
+    private @Nullable String commitHash;
     /**
      * @return Name of the repository branch.
      * 
      */
-    private String repositoryBranch;
+    private @Nullable String repositoryBranch;
     /**
      * @return Repository URL.
      * 
      */
-    private String repositoryUrl;
+    private @Nullable String repositoryUrl;
 
     private GetBuildRunCommitInfo() {}
     /**
      * @return Commit hash pertinent to the repository URL and the specified branch.
      * 
      */
-    public String commitHash() {
-        return this.commitHash;
+    public Optional<String> commitHash() {
+        return Optional.ofNullable(this.commitHash);
     }
     /**
      * @return Name of the repository branch.
      * 
      */
-    public String repositoryBranch() {
-        return this.repositoryBranch;
+    public Optional<String> repositoryBranch() {
+        return Optional.ofNullable(this.repositoryBranch);
     }
     /**
      * @return Repository URL.
      * 
      */
-    public String repositoryUrl() {
-        return this.repositoryUrl;
+    public Optional<String> repositoryUrl() {
+        return Optional.ofNullable(this.repositoryUrl);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetBuildRunCommitInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commitHash;
-        private String repositoryBranch;
-        private String repositoryUrl;
+        private @Nullable String commitHash;
+        private @Nullable String repositoryBranch;
+        private @Nullable String repositoryUrl;
         public Builder() {}
         public Builder(GetBuildRunCommitInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetBuildRunCommitInfo {
         }
 
         @CustomType.Setter
-        public Builder commitHash(String commitHash) {
-            this.commitHash = Objects.requireNonNull(commitHash);
+        public Builder commitHash(@Nullable String commitHash) {
+            this.commitHash = commitHash;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryBranch(String repositoryBranch) {
-            this.repositoryBranch = Objects.requireNonNull(repositoryBranch);
+        public Builder repositoryBranch(@Nullable String repositoryBranch) {
+            this.repositoryBranch = repositoryBranch;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+        public Builder repositoryUrl(@Nullable String repositoryUrl) {
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         public GetBuildRunCommitInfo build() {

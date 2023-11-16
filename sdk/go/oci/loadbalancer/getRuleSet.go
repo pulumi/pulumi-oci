@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -62,13 +61,13 @@ type LookupRuleSetArgs struct {
 
 // A collection of values returned by getRuleSet.
 type LookupRuleSetResult struct {
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of rules that compose the rule set.
 	Items          []GetRuleSetItem `pulumi:"items"`
 	LoadBalancerId string           `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-	Name  string `pulumi:"name"`
-	State string `pulumi:"state"`
+	Name  string  `pulumi:"name"`
+	State *string `pulumi:"state"`
 }
 
 func LookupRuleSetOutput(ctx *pulumi.Context, args LookupRuleSetOutputArgs, opts ...pulumi.InvokeOption) LookupRuleSetResultOutput {
@@ -111,14 +110,8 @@ func (o LookupRuleSetResultOutput) ToLookupRuleSetResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupRuleSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRuleSetResult] {
-	return pulumix.Output[LookupRuleSetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupRuleSetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRuleSetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRuleSetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRuleSetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of rules that compose the rule set.
@@ -135,8 +128,8 @@ func (o LookupRuleSetResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleSetResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o LookupRuleSetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRuleSetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRuleSetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRuleSetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

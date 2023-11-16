@@ -108,14 +108,14 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return An optional description of your choice for the rule. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
@@ -127,7 +127,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="destination", refs={String.class}, tree="[0]")
-    private Output<String> destination;
+    private Output</* @Nullable */ String> destination;
 
     /**
      * @return Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
@@ -138,8 +138,8 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule&#39;s intent is to control traffic between VNICs in the same NSG.
      * 
      */
-    public Output<String> destination() {
-        return this.destination;
+    public Output<Optional<String>> destination() {
+        return Codegen.optional(this.destination);
     }
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`.
@@ -148,7 +148,7 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="destinationType", refs={String.class}, tree="[0]")
-    private Output<String> destinationType;
+    private Output</* @Nullable */ String> destinationType;
 
     /**
      * @return Type of destination for the rule. Required if `direction` = `EGRESS`.
@@ -156,8 +156,8 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * Allowed values:
      * 
      */
-    public Output<String> destinationType() {
-        return this.destinationType;
+    public Output<Optional<String>> destinationType() {
+        return Codegen.optional(this.destinationType);
     }
     /**
      * Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
@@ -200,14 +200,14 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="isValid", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isValid;
+    private Output</* @Nullable */ Boolean> isValid;
 
     /**
      * @return Whether the rule is valid. The value is `True` when the rule is first created. If the rule&#39;s `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
      * 
      */
-    public Output<Boolean> isValid() {
-        return this.isValid;
+    public Output<Optional<Boolean>> isValid() {
+        return Codegen.optional(this.isValid);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -266,28 +266,28 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
-    private Output<String> sourceType;
+    private Output</* @Nullable */ String> sourceType;
 
     /**
      * @return Type of source for the rule. Required if `direction` = `INGRESS`.
      * 
      */
-    public Output<String> sourceType() {
-        return this.sourceType;
+    public Output<Optional<String>> sourceType() {
+        return Codegen.optional(this.sourceType);
     }
     /**
      * A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
     @Export(name="stateless", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> stateless;
+    private Output</* @Nullable */ Boolean> stateless;
 
     /**
      * @return A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
-    public Output<Boolean> stateless() {
-        return this.stateless;
+    public Output<Optional<Boolean>> stateless() {
+        return Codegen.optional(this.stateless);
     }
     /**
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
@@ -308,14 +308,14 @@ public class NetworkSecurityGroupSecurityRule extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.

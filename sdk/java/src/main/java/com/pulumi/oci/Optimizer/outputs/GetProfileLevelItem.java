@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileLevelItem {
@@ -16,87 +18,87 @@ public final class GetProfileLevelItem {
      * @return The default aggregation interval (in days) for profiles using this profile level.
      * 
      */
-    private Integer defaultInterval;
+    private @Nullable Integer defaultInterval;
     /**
      * @return The metrics that will be evaluated by profiles using this profile level.
      * 
      */
-    private List<GetProfileLevelItemMetric> metrics;
+    private @Nullable List<GetProfileLevelItemMetric> metrics;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Optional. A filter that returns results that match the recommendation name specified.
      * 
      */
-    private String recommendationName;
+    private @Nullable String recommendationName;
     /**
      * @return The date and time the category details were created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the category details were last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return An array of aggregation intervals (in days) allowed for profiles using this profile level.
      * 
      */
-    private List<Integer> validIntervals;
+    private @Nullable List<Integer> validIntervals;
 
     private GetProfileLevelItem() {}
     /**
      * @return The default aggregation interval (in days) for profiles using this profile level.
      * 
      */
-    public Integer defaultInterval() {
-        return this.defaultInterval;
+    public Optional<Integer> defaultInterval() {
+        return Optional.ofNullable(this.defaultInterval);
     }
     /**
      * @return The metrics that will be evaluated by profiles using this profile level.
      * 
      */
     public List<GetProfileLevelItemMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Optional. A filter that returns results that match the recommendation name specified.
      * 
      */
-    public String recommendationName() {
-        return this.recommendationName;
+    public Optional<String> recommendationName() {
+        return Optional.ofNullable(this.recommendationName);
     }
     /**
      * @return The date and time the category details were created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the category details were last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return An array of aggregation intervals (in days) allowed for profiles using this profile level.
      * 
      */
     public List<Integer> validIntervals() {
-        return this.validIntervals;
+        return this.validIntervals == null ? List.of() : this.validIntervals;
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetProfileLevelItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer defaultInterval;
-        private List<GetProfileLevelItemMetric> metrics;
-        private String name;
-        private String recommendationName;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<Integer> validIntervals;
+        private @Nullable Integer defaultInterval;
+        private @Nullable List<GetProfileLevelItemMetric> metrics;
+        private @Nullable String name;
+        private @Nullable String recommendationName;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<Integer> validIntervals;
         public Builder() {}
         public Builder(GetProfileLevelItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetProfileLevelItem {
         }
 
         @CustomType.Setter
-        public Builder defaultInterval(Integer defaultInterval) {
-            this.defaultInterval = Objects.requireNonNull(defaultInterval);
+        public Builder defaultInterval(@Nullable Integer defaultInterval) {
+            this.defaultInterval = defaultInterval;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetProfileLevelItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetProfileLevelItemMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetProfileLevelItemMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationName(String recommendationName) {
-            this.recommendationName = Objects.requireNonNull(recommendationName);
+        public Builder recommendationName(@Nullable String recommendationName) {
+            this.recommendationName = recommendationName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder validIntervals(List<Integer> validIntervals) {
-            this.validIntervals = Objects.requireNonNull(validIntervals);
+        public Builder validIntervals(@Nullable List<Integer> validIntervals) {
+            this.validIntervals = validIntervals;
             return this;
         }
         public Builder validIntervals(Integer... validIntervals) {

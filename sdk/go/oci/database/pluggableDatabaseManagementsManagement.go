@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
@@ -57,11 +56,11 @@ type PluggableDatabaseManagementsManagement struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Connection strings to connect to an Oracle Pluggable Database.
 	ConnectionStrings PluggableDatabaseManagementsManagementConnectionStringArrayOutput `pulumi:"connectionStrings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-	ContainerDatabaseId pulumi.StringOutput `pulumi:"containerDatabaseId"`
+	ContainerDatabaseId pulumi.StringPtrOutput `pulumi:"containerDatabaseId"`
 	// Data for the credential used to connect to the database.
 	CredentialDetails PluggableDatabaseManagementsManagementCredentialDetailsOutput `pulumi:"credentialDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -74,33 +73,33 @@ type PluggableDatabaseManagementsManagement struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted pulumi.BoolOutput `pulumi:"isRestricted"`
+	IsRestricted pulumi.BoolPtrOutput `pulumi:"isRestricted"`
 	// Detailed message for the lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-	OpenMode pulumi.StringOutput `pulumi:"openMode"`
+	OpenMode pulumi.StringPtrOutput `pulumi:"openMode"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-	PdbName pulumi.StringOutput `pulumi:"pdbName"`
+	PdbName pulumi.StringPtrOutput `pulumi:"pdbName"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId pulumi.StringOutput `pulumi:"pluggableDatabaseId"`
 	// The configuration of the Pluggable Database Management service.
 	PluggableDatabaseManagementConfigs PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArrayOutput `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The port used to connect to the pluggable database.
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	PrivateEndPointId pulumi.StringOutput `pulumi:"privateEndPointId"`
 	// Protocol used by the database connection.
-	Protocol pulumi.StringOutput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrOutput `pulumi:"protocol"`
 	// The role of the user that will be connecting to the pluggable database.
-	Role pulumi.StringOutput `pulumi:"role"`
+	Role pulumi.StringPtrOutput `pulumi:"role"`
 	// The name of the Oracle Database service that will be used to connect to the database.
 	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	SslSecretId pulumi.StringOutput `pulumi:"sslSecretId"`
+	SslSecretId pulumi.StringPtrOutput `pulumi:"sslSecretId"`
 	// The current state of the pluggable database.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the pluggable database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewPluggableDatabaseManagementsManagement registers a new resource with the given unique name, arguments, and options.
@@ -319,12 +318,6 @@ func (i *PluggableDatabaseManagementsManagement) ToPluggableDatabaseManagementsM
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseManagementsManagementOutput)
 }
 
-func (i *PluggableDatabaseManagementsManagement) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabaseManagementsManagement] {
-	return pulumix.Output[*PluggableDatabaseManagementsManagement]{
-		OutputState: i.ToPluggableDatabaseManagementsManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PluggableDatabaseManagementsManagementArrayInput is an input type that accepts PluggableDatabaseManagementsManagementArray and PluggableDatabaseManagementsManagementArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabaseManagementsManagementArrayInput` via:
 //
@@ -348,12 +341,6 @@ func (i PluggableDatabaseManagementsManagementArray) ToPluggableDatabaseManageme
 
 func (i PluggableDatabaseManagementsManagementArray) ToPluggableDatabaseManagementsManagementArrayOutputWithContext(ctx context.Context) PluggableDatabaseManagementsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseManagementsManagementArrayOutput)
-}
-
-func (i PluggableDatabaseManagementsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabaseManagementsManagement] {
-	return pulumix.Output[[]*PluggableDatabaseManagementsManagement]{
-		OutputState: i.ToPluggableDatabaseManagementsManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PluggableDatabaseManagementsManagementMapInput is an input type that accepts PluggableDatabaseManagementsManagementMap and PluggableDatabaseManagementsManagementMapOutput values.
@@ -381,12 +368,6 @@ func (i PluggableDatabaseManagementsManagementMap) ToPluggableDatabaseManagement
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabaseManagementsManagementMapOutput)
 }
 
-func (i PluggableDatabaseManagementsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabaseManagementsManagement] {
-	return pulumix.Output[map[string]*PluggableDatabaseManagementsManagement]{
-		OutputState: i.ToPluggableDatabaseManagementsManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PluggableDatabaseManagementsManagementOutput struct{ *pulumi.OutputState }
 
 func (PluggableDatabaseManagementsManagementOutput) ElementType() reflect.Type {
@@ -401,15 +382,9 @@ func (o PluggableDatabaseManagementsManagementOutput) ToPluggableDatabaseManagem
 	return o
 }
 
-func (o PluggableDatabaseManagementsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabaseManagementsManagement] {
-	return pulumix.Output[*PluggableDatabaseManagementsManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o PluggableDatabaseManagementsManagementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Connection strings to connect to an Oracle Pluggable Database.
@@ -420,8 +395,8 @@ func (o PluggableDatabaseManagementsManagementOutput) ConnectionStrings() Plugga
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-func (o PluggableDatabaseManagementsManagementOutput) ContainerDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.ContainerDatabaseId }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) ContainerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.ContainerDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Data for the credential used to connect to the database.
@@ -452,23 +427,23 @@ func (o PluggableDatabaseManagementsManagementOutput) FreeformTags() pulumi.MapO
 }
 
 // The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-func (o PluggableDatabaseManagementsManagementOutput) IsRestricted() pulumi.BoolOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.BoolOutput { return v.IsRestricted }).(pulumi.BoolOutput)
+func (o PluggableDatabaseManagementsManagementOutput) IsRestricted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.BoolPtrOutput { return v.IsRestricted }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed message for the lifecycle state.
-func (o PluggableDatabaseManagementsManagementOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-func (o PluggableDatabaseManagementsManagementOutput) OpenMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.OpenMode }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) OpenMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.OpenMode }).(pulumi.StringPtrOutput)
 }
 
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-func (o PluggableDatabaseManagementsManagementOutput) PdbName() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.PdbName }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) PdbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.PdbName }).(pulumi.StringPtrOutput)
 }
 
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -484,8 +459,8 @@ func (o PluggableDatabaseManagementsManagementOutput) PluggableDatabaseManagemen
 }
 
 // The port used to connect to the pluggable database.
-func (o PluggableDatabaseManagementsManagementOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o PluggableDatabaseManagementsManagementOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -494,13 +469,13 @@ func (o PluggableDatabaseManagementsManagementOutput) PrivateEndPointId() pulumi
 }
 
 // Protocol used by the database connection.
-func (o PluggableDatabaseManagementsManagementOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The role of the user that will be connecting to the pluggable database.
-func (o PluggableDatabaseManagementsManagementOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Oracle Database service that will be used to connect to the database.
@@ -509,18 +484,18 @@ func (o PluggableDatabaseManagementsManagementOutput) ServiceName() pulumi.Strin
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o PluggableDatabaseManagementsManagementOutput) SslSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.SslSecretId }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) SslSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.SslSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the pluggable database.
-func (o PluggableDatabaseManagementsManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the pluggable database was created.
-func (o PluggableDatabaseManagementsManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PluggableDatabaseManagementsManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type PluggableDatabaseManagementsManagementArrayOutput struct{ *pulumi.OutputState }
@@ -535,12 +510,6 @@ func (o PluggableDatabaseManagementsManagementArrayOutput) ToPluggableDatabaseMa
 
 func (o PluggableDatabaseManagementsManagementArrayOutput) ToPluggableDatabaseManagementsManagementArrayOutputWithContext(ctx context.Context) PluggableDatabaseManagementsManagementArrayOutput {
 	return o
-}
-
-func (o PluggableDatabaseManagementsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabaseManagementsManagement] {
-	return pulumix.Output[[]*PluggableDatabaseManagementsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PluggableDatabaseManagementsManagementArrayOutput) Index(i pulumi.IntInput) PluggableDatabaseManagementsManagementOutput {
@@ -561,12 +530,6 @@ func (o PluggableDatabaseManagementsManagementMapOutput) ToPluggableDatabaseMana
 
 func (o PluggableDatabaseManagementsManagementMapOutput) ToPluggableDatabaseManagementsManagementMapOutputWithContext(ctx context.Context) PluggableDatabaseManagementsManagementMapOutput {
 	return o
-}
-
-func (o PluggableDatabaseManagementsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabaseManagementsManagement] {
-	return pulumix.Output[map[string]*PluggableDatabaseManagementsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PluggableDatabaseManagementsManagementMapOutput) MapIndex(k pulumi.StringInput) PluggableDatabaseManagementsManagementOutput {

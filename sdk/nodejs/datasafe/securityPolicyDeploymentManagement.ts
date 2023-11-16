@@ -32,18 +32,18 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
         return obj['__pulumiType'] === SecurityPolicyDeploymentManagement.__pulumiType;
     }
 
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly description!: pulumi.Output<string>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly targetId!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly description!: pulumi.Output<string | undefined>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly securityPolicyId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly targetId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SecurityPolicyDeploymentManagement resource with the given unique name, arguments, and options.

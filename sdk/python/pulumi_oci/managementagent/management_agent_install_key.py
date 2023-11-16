@@ -21,15 +21,6 @@ class ManagementAgentInstallKeyArgs:
                  time_expires: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ManagementAgentInstallKey resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[str] display_name: (Updatable) Management Agent install Key Name
-        :param pulumi.Input[int] allowed_key_install_count: Total number of install for this keys
-        :param pulumi.Input[bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
-        :param pulumi.Input[str] time_expires: date after which key would expire after creation
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -43,9 +34,6 @@ class ManagementAgentInstallKeyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -55,9 +43,6 @@ class ManagementAgentInstallKeyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Management Agent install Key Name
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -67,9 +52,6 @@ class ManagementAgentInstallKeyArgs:
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
     def allowed_key_install_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total number of install for this keys
-        """
         return pulumi.get(self, "allowed_key_install_count")
 
     @allowed_key_install_count.setter
@@ -79,9 +61,6 @@ class ManagementAgentInstallKeyArgs:
     @property
     @pulumi.getter(name="isUnlimited")
     def is_unlimited(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, the install key has no expiration date or usage limit. Defaults to false
-        """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
@@ -91,13 +70,6 @@ class ManagementAgentInstallKeyArgs:
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> Optional[pulumi.Input[str]]:
-        """
-        date after which key would expire after creation
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
@@ -122,22 +94,6 @@ class _ManagementAgentInstallKeyState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagementAgentInstallKey resources.
-        :param pulumi.Input[int] allowed_key_install_count: Total number of install for this keys
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[str] created_by_principal_id: Principal id of user who created the Agent Install key
-        :param pulumi.Input[int] current_key_install_count: Total number of install for this keys
-        :param pulumi.Input[str] display_name: (Updatable) Management Agent install Key Name
-        :param pulumi.Input[bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
-        :param pulumi.Input[str] key: Management Agent Install Key
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] state: Status of Key
-        :param pulumi.Input[str] time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        :param pulumi.Input[str] time_expires: date after which key would expire after creation
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
         if allowed_key_install_count is not None:
             pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
@@ -167,9 +123,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
     def allowed_key_install_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total number of install for this keys
-        """
         return pulumi.get(self, "allowed_key_install_count")
 
     @allowed_key_install_count.setter
@@ -179,9 +132,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -191,9 +141,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="createdByPrincipalId")
     def created_by_principal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Principal id of user who created the Agent Install key
-        """
         return pulumi.get(self, "created_by_principal_id")
 
     @created_by_principal_id.setter
@@ -203,9 +150,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="currentKeyInstallCount")
     def current_key_install_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total number of install for this keys
-        """
         return pulumi.get(self, "current_key_install_count")
 
     @current_key_install_count.setter
@@ -215,9 +159,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Management Agent install Key Name
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -227,9 +168,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="isUnlimited")
     def is_unlimited(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If set to true, the install key has no expiration date or usage limit. Defaults to false
-        """
         return pulumi.get(self, "is_unlimited")
 
     @is_unlimited.setter
@@ -239,9 +177,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Management Agent Install Key
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -251,9 +186,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -263,9 +195,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Status of Key
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -275,9 +204,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -287,13 +213,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> Optional[pulumi.Input[str]]:
-        """
-        date after which key would expire after creation
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
@@ -303,9 +222,6 @@ class _ManagementAgentInstallKeyState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -325,43 +241,9 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
                  time_expires: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
-
-        User creates a new install key as part of this API.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_management_agent_install_key = oci.management_agent.ManagementAgentInstallKey("testManagementAgentInstallKey",
-            compartment_id=var["compartment_id"],
-            display_name=var["management_agent_install_key_display_name"],
-            allowed_key_install_count=var["management_agent_install_key_allowed_key_install_count"],
-            is_unlimited=var["management_agent_install_key_is_unlimited"],
-            time_expires=var["management_agent_install_key_time_expires"])
-        ```
-
-        ## Import
-
-        ManagementAgentInstallKeys can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
-        ```
-
+        Create a ManagementAgentInstallKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] allowed_key_install_count: Total number of install for this keys
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[str] display_name: (Updatable) Management Agent install Key Name
-        :param pulumi.Input[bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
-        :param pulumi.Input[str] time_expires: date after which key would expire after creation
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -370,32 +252,7 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
                  args: ManagementAgentInstallKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
-
-        User creates a new install key as part of this API.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_management_agent_install_key = oci.management_agent.ManagementAgentInstallKey("testManagementAgentInstallKey",
-            compartment_id=var["compartment_id"],
-            display_name=var["management_agent_install_key_display_name"],
-            allowed_key_install_count=var["management_agent_install_key_allowed_key_install_count"],
-            is_unlimited=var["management_agent_install_key_is_unlimited"],
-            time_expires=var["management_agent_install_key_time_expires"])
-        ```
-
-        ## Import
-
-        ManagementAgentInstallKeys can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey test_management_agent_install_key "id"
-        ```
-
+        Create a ManagementAgentInstallKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ManagementAgentInstallKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -470,22 +327,6 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] allowed_key_install_count: Total number of install for this keys
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[str] created_by_principal_id: Principal id of user who created the Agent Install key
-        :param pulumi.Input[int] current_key_install_count: Total number of install for this keys
-        :param pulumi.Input[str] display_name: (Updatable) Management Agent install Key Name
-        :param pulumi.Input[bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
-        :param pulumi.Input[str] key: Management Agent Install Key
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] state: Status of Key
-        :param pulumi.Input[str] time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        :param pulumi.Input[str] time_expires: date after which key would expire after creation
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -507,101 +348,61 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
-    def allowed_key_install_count(self) -> pulumi.Output[int]:
-        """
-        Total number of install for this keys
-        """
+    def allowed_key_install_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "allowed_key_install_count")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdByPrincipalId")
-    def created_by_principal_id(self) -> pulumi.Output[str]:
-        """
-        Principal id of user who created the Agent Install key
-        """
+    def created_by_principal_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by_principal_id")
 
     @property
     @pulumi.getter(name="currentKeyInstallCount")
-    def current_key_install_count(self) -> pulumi.Output[int]:
-        """
-        Total number of install for this keys
-        """
+    def current_key_install_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "current_key_install_count")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Management Agent install Key Name
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> pulumi.Output[bool]:
-        """
-        If set to true, the install key has no expiration date or usage limit. Defaults to false
-        """
+    def is_unlimited(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        Management Agent Install Key
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Status of Key
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> pulumi.Output[str]:
-        """
-        date after which key would expire after creation
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def time_expires(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_expires")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

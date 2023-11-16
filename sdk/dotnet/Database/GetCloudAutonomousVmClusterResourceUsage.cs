@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The data disk group size allocated for Autonomous Databases, in TBs.
         /// </summary>
-        public readonly double AutonomousDataStorageSizeInTbs;
+        public readonly double? AutonomousDataStorageSizeInTbs;
         /// <summary>
         /// List of Autonomous VM resource usages.
         /// </summary>
@@ -118,120 +118,120 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The data disk group size available for Autonomous Databases, in TBs.
         /// </summary>
-        public readonly double AvailableAutonomousDataStorageSizeInTbs;
+        public readonly double? AvailableAutonomousDataStorageSizeInTbs;
         /// <summary>
         /// The number of CPU cores available.
         /// </summary>
-        public readonly double AvailableCpus;
+        public readonly double? AvailableCpus;
         public readonly string CloudAutonomousVmClusterId;
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
-        public readonly int DbNodeStorageSizeInGbs;
+        public readonly int? DbNodeStorageSizeInGbs;
         /// <summary>
         /// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
         /// </summary>
-        public readonly double ExadataStorageInTbs;
+        public readonly double? ExadataStorageInTbs;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The amount of memory (in GBs) to be enabled per each CPU core.
         /// </summary>
-        public readonly int MemoryPerOracleComputeUnitInGbs;
+        public readonly int? MemoryPerOracleComputeUnitInGbs;
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly int NonProvisionableAutonomousContainerDatabases;
+        public readonly int? NonProvisionableAutonomousContainerDatabases;
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly int ProvisionableAutonomousContainerDatabases;
+        public readonly int? ProvisionableAutonomousContainerDatabases;
         /// <summary>
         /// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly int ProvisionedAutonomousContainerDatabases;
+        public readonly int? ProvisionedAutonomousContainerDatabases;
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double ProvisionedCpus;
+        public readonly double? ProvisionedCpus;
         /// <summary>
         /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         /// </summary>
-        public readonly double ReclaimableCpus;
+        public readonly double? ReclaimableCpus;
         /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double ReservedCpus;
+        public readonly double? ReservedCpus;
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created.
         /// </summary>
-        public readonly int TotalContainerDatabases;
+        public readonly int? TotalContainerDatabases;
         /// <summary>
         /// The number of CPU cores enabled on the Cloud Autonomous VM cluster.
         /// </summary>
-        public readonly double TotalCpus;
+        public readonly double? TotalCpus;
         /// <summary>
         /// The data disk group size used for Autonomous Databases, in TBs.
         /// </summary>
-        public readonly double UsedAutonomousDataStorageSizeInTbs;
+        public readonly double? UsedAutonomousDataStorageSizeInTbs;
         /// <summary>
         /// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
         /// </summary>
-        public readonly double UsedCpus;
+        public readonly double? UsedCpus;
 
         [OutputConstructor]
         private GetCloudAutonomousVmClusterResourceUsageResult(
-            double autonomousDataStorageSizeInTbs,
+            double? autonomousDataStorageSizeInTbs,
 
             ImmutableArray<Outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult> autonomousVmResourceUsages,
 
-            double availableAutonomousDataStorageSizeInTbs,
+            double? availableAutonomousDataStorageSizeInTbs,
 
-            double availableCpus,
+            double? availableCpus,
 
             string cloudAutonomousVmClusterId,
 
-            int dbNodeStorageSizeInGbs,
+            int? dbNodeStorageSizeInGbs,
 
-            string displayName,
+            string? displayName,
 
-            double exadataStorageInTbs,
+            double? exadataStorageInTbs,
 
-            string id,
+            string? id,
 
-            int memoryPerOracleComputeUnitInGbs,
+            int? memoryPerOracleComputeUnitInGbs,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            int nonProvisionableAutonomousContainerDatabases,
+            int? nonProvisionableAutonomousContainerDatabases,
 
-            int provisionableAutonomousContainerDatabases,
+            int? provisionableAutonomousContainerDatabases,
 
-            int provisionedAutonomousContainerDatabases,
+            int? provisionedAutonomousContainerDatabases,
 
-            double provisionedCpus,
+            double? provisionedCpus,
 
-            double reclaimableCpus,
+            double? reclaimableCpus,
 
-            double reservedCpus,
+            double? reservedCpus,
 
-            int totalContainerDatabases,
+            int? totalContainerDatabases,
 
-            double totalCpus,
+            double? totalCpus,
 
-            double usedAutonomousDataStorageSizeInTbs,
+            double? usedAutonomousDataStorageSizeInTbs,
 
-            double usedCpus)
+            double? usedCpus)
         {
             AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             AutonomousVmResourceUsages = autonomousVmResourceUsages;

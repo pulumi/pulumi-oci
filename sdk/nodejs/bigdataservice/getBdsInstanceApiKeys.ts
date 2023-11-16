@@ -59,14 +59,14 @@ export interface GetBdsInstanceApiKeysArgs {
  * A collection of values returned by getBdsInstanceApiKeys.
  */
 export interface GetBdsInstanceApiKeysResult {
-    readonly bdsApiKeys: outputs.BigDataService.GetBdsInstanceApiKeysBdsApiKey[];
+    readonly bdsApiKeys?: outputs.BigDataService.GetBdsInstanceApiKeysBdsApiKey[];
     readonly bdsInstanceId: string;
     readonly displayName?: string;
     readonly filters?: outputs.BigDataService.GetBdsInstanceApiKeysFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current status of the API key.
      */

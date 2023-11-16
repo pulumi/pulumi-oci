@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of importable agent entity objects.
         /// </summary>
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Opsi
         private GetImportableAgentEntityResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetImportableAgentEntityItemResult> items)
         {

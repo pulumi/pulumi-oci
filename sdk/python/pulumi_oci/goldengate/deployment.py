@@ -36,23 +36,6 @@ class DeploymentArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Deployment resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -87,9 +70,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -99,9 +79,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -111,9 +88,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Input[str]:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
@@ -123,9 +97,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -135,9 +106,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @is_auto_scaling_enabled.setter
@@ -147,9 +115,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The Oracle license model that applies to a Deployment.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -159,9 +124,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -171,9 +133,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -183,9 +142,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="deploymentBackupId")
     def deployment_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        """
         return pulumi.get(self, "deployment_backup_id")
 
     @deployment_backup_id.setter
@@ -195,9 +151,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Metadata about this specific object.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -207,9 +160,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
@@ -219,9 +169,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -231,9 +178,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) True if this object is publicly available.
-        """
         return pulumi.get(self, "is_public")
 
     @is_public.setter
@@ -243,9 +187,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="maintenanceConfiguration")
     def maintenance_configuration(self) -> Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']]:
-        """
-        (Updatable) Defines the maintenance configuration for create operation.
-        """
         return pulumi.get(self, "maintenance_configuration")
 
     @maintenance_configuration.setter
@@ -255,9 +196,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']]:
-        """
-        (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        """
         return pulumi.get(self, "maintenance_window")
 
     @maintenance_window.setter
@@ -267,9 +205,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -279,9 +214,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter(name="oggData")
     def ogg_data(self) -> Optional[pulumi.Input['DeploymentOggDataArgs']]:
-        """
-        (Updatable) Deployment Data for creating an OggDeployment
-        """
         return pulumi.get(self, "ogg_data")
 
     @ogg_data.setter
@@ -339,41 +271,6 @@ class _DeploymentState:
                  time_upgrade_required: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentDiagnosticDataArgs']]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
-        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        :param pulumi.Input[str] deployment_url: The URL of a resource.
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
-        :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
-        :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input[bool] is_storage_utilization_limit_exceeded: Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
-        :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
-        :param pulumi.Input[str] next_maintenance_description: Description of the next maintenance.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
-        :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -451,9 +348,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -463,9 +357,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -475,9 +366,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -487,9 +375,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="deploymentBackupId")
     def deployment_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        """
         return pulumi.get(self, "deployment_backup_id")
 
     @deployment_backup_id.setter
@@ -499,9 +384,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="deploymentDiagnosticDatas")
     def deployment_diagnostic_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentDiagnosticDataArgs']]]]:
-        """
-        Information regarding the deployment diagnostic collection
-        """
         return pulumi.get(self, "deployment_diagnostic_datas")
 
     @deployment_diagnostic_datas.setter
@@ -511,9 +393,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
@@ -523,9 +402,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="deploymentUrl")
     def deployment_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of a resource.
-        """
         return pulumi.get(self, "deployment_url")
 
     @deployment_url.setter
@@ -535,9 +411,6 @@ class _DeploymentState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Metadata about this specific object.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -547,9 +420,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -559,9 +429,6 @@ class _DeploymentState:
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
@@ -571,9 +438,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -583,9 +447,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @is_auto_scaling_enabled.setter
@@ -595,9 +456,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="isHealthy")
     def is_healthy(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True if all of the aggregate resources are working correctly.
-        """
         return pulumi.get(self, "is_healthy")
 
     @is_healthy.setter
@@ -607,9 +465,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="isLatestVersion")
     def is_latest_version(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the resource is the the latest available version.
-        """
         return pulumi.get(self, "is_latest_version")
 
     @is_latest_version.setter
@@ -619,9 +474,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) True if this object is publicly available.
-        """
         return pulumi.get(self, "is_public")
 
     @is_public.setter
@@ -631,9 +483,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
     def is_storage_utilization_limit_exceeded(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        """
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
     @is_storage_utilization_limit_exceeded.setter
@@ -643,9 +492,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle license model that applies to a Deployment.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -655,9 +501,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -667,9 +510,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="lifecycleSubState")
     def lifecycle_sub_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible GGS lifecycle sub-states.
-        """
         return pulumi.get(self, "lifecycle_sub_state")
 
     @lifecycle_sub_state.setter
@@ -679,9 +519,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="maintenanceConfiguration")
     def maintenance_configuration(self) -> Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']]:
-        """
-        (Updatable) Defines the maintenance configuration for create operation.
-        """
         return pulumi.get(self, "maintenance_configuration")
 
     @maintenance_configuration.setter
@@ -691,9 +528,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']]:
-        """
-        (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        """
         return pulumi.get(self, "maintenance_window")
 
     @maintenance_window.setter
@@ -703,9 +537,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="nextMaintenanceActionType")
     def next_maintenance_action_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the next maintenance.
-        """
         return pulumi.get(self, "next_maintenance_action_type")
 
     @next_maintenance_action_type.setter
@@ -715,9 +546,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="nextMaintenanceDescription")
     def next_maintenance_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        Description of the next maintenance.
-        """
         return pulumi.get(self, "next_maintenance_description")
 
     @next_maintenance_description.setter
@@ -727,9 +555,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -739,9 +564,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="oggData")
     def ogg_data(self) -> Optional[pulumi.Input['DeploymentOggDataArgs']]:
-        """
-        (Updatable) Deployment Data for creating an OggDeployment
-        """
         return pulumi.get(self, "ogg_data")
 
     @ogg_data.setter
@@ -751,9 +573,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        """
         return pulumi.get(self, "private_ip_address")
 
     @private_ip_address.setter
@@ -763,9 +582,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="publicIpAddress")
     def public_ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public IP address representing the access point for the Deployment.
-        """
         return pulumi.get(self, "public_ip_address")
 
     @public_ip_address.setter
@@ -784,9 +600,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="storageUtilizationInBytes")
     def storage_utilization_in_bytes(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of storage being utilized (in bytes)
-        """
         return pulumi.get(self, "storage_utilization_in_bytes")
 
     @storage_utilization_in_bytes.setter
@@ -796,9 +609,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -808,9 +618,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -820,9 +627,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -832,9 +636,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="timeOfNextMaintenance")
     def time_of_next_maintenance(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_of_next_maintenance")
 
     @time_of_next_maintenance.setter
@@ -844,9 +645,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="timeOggVersionSupportedUntil")
     def time_ogg_version_supported_until(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @time_ogg_version_supported_until.setter
@@ -856,9 +654,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -868,9 +663,6 @@ class _DeploymentState:
     @property
     @pulumi.getter(name="timeUpgradeRequired")
     def time_upgrade_required(self) -> Optional[pulumi.Input[str]]:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_upgrade_required")
 
     @time_upgrade_required.setter
@@ -903,37 +695,9 @@ class Deployment(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Deployment.
-
-        ## Import
-
-        Deployments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/deployment:Deployment test_deployment "id"
-        ```
-
+        Create a Deployment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         """
         ...
     @overload
@@ -942,18 +706,7 @@ class Deployment(pulumi.CustomResource):
                  args: DeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Deployment.
-
-        ## Import
-
-        Deployments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/deployment:Deployment test_deployment "id"
-        ```
-
+        Create a Deployment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DeploymentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1099,41 +852,6 @@ class Deployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentDeploymentDiagnosticDataArgs']]]] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
-        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        :param pulumi.Input[str] deployment_url: The URL of a resource.
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
-        :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
-        :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
-        :param pulumi.Input[bool] is_storage_utilization_limit_exceeded: Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
-        :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
-        :param pulumi.Input[str] next_maintenance_description: Description of the next maintenance.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
-        :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1180,285 +898,180 @@ class Deployment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentBackupId")
-    def deployment_backup_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        """
+    def deployment_backup_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "deployment_backup_id")
 
     @property
     @pulumi.getter(name="deploymentDiagnosticDatas")
-    def deployment_diagnostic_datas(self) -> pulumi.Output[Sequence['outputs.DeploymentDeploymentDiagnosticData']]:
-        """
-        Information regarding the deployment diagnostic collection
-        """
+    def deployment_diagnostic_datas(self) -> pulumi.Output[Optional[Sequence['outputs.DeploymentDeploymentDiagnosticData']]]:
         return pulumi.get(self, "deployment_diagnostic_datas")
 
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> pulumi.Output[str]:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="deploymentUrl")
-    def deployment_url(self) -> pulumi.Output[str]:
-        """
-        The URL of a resource.
-        """
+    def deployment_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "deployment_url")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Metadata about this specific object.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
+    def fqdn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @property
     @pulumi.getter(name="isHealthy")
-    def is_healthy(self) -> pulumi.Output[bool]:
-        """
-        True if all of the aggregate resources are working correctly.
-        """
+    def is_healthy(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_healthy")
 
     @property
     @pulumi.getter(name="isLatestVersion")
-    def is_latest_version(self) -> pulumi.Output[bool]:
-        """
-        Indicates if the resource is the the latest available version.
-        """
+    def is_latest_version(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_latest_version")
 
     @property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) True if this object is publicly available.
-        """
+    def is_public(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_public")
 
     @property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
-    def is_storage_utilization_limit_exceeded(self) -> pulumi.Output[bool]:
-        """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        """
+    def is_storage_utilization_limit_exceeded(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Oracle license model that applies to a Deployment.
-        """
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> pulumi.Output[str]:
-        """
-        Possible GGS lifecycle sub-states.
-        """
+    def lifecycle_sub_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="maintenanceConfiguration")
-    def maintenance_configuration(self) -> pulumi.Output['outputs.DeploymentMaintenanceConfiguration']:
-        """
-        (Updatable) Defines the maintenance configuration for create operation.
-        """
+    def maintenance_configuration(self) -> pulumi.Output[Optional['outputs.DeploymentMaintenanceConfiguration']]:
         return pulumi.get(self, "maintenance_configuration")
 
     @property
     @pulumi.getter(name="maintenanceWindow")
-    def maintenance_window(self) -> pulumi.Output['outputs.DeploymentMaintenanceWindow']:
-        """
-        (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
-        """
+    def maintenance_window(self) -> pulumi.Output[Optional['outputs.DeploymentMaintenanceWindow']]:
         return pulumi.get(self, "maintenance_window")
 
     @property
     @pulumi.getter(name="nextMaintenanceActionType")
-    def next_maintenance_action_type(self) -> pulumi.Output[str]:
-        """
-        Type of the next maintenance.
-        """
+    def next_maintenance_action_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "next_maintenance_action_type")
 
     @property
     @pulumi.getter(name="nextMaintenanceDescription")
-    def next_maintenance_description(self) -> pulumi.Output[str]:
-        """
-        Description of the next maintenance.
-        """
+    def next_maintenance_description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "next_maintenance_description")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
+    def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="oggData")
-    def ogg_data(self) -> pulumi.Output['outputs.DeploymentOggData']:
-        """
-        (Updatable) Deployment Data for creating an OggDeployment
-        """
+    def ogg_data(self) -> pulumi.Output[Optional['outputs.DeploymentOggData']]:
         return pulumi.get(self, "ogg_data")
 
     @property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> pulumi.Output[str]:
-        """
-        The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        """
+    def private_ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "private_ip_address")
 
     @property
     @pulumi.getter(name="publicIpAddress")
-    def public_ip_address(self) -> pulumi.Output[str]:
-        """
-        The public IP address representing the access point for the Deployment.
-        """
+    def public_ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "public_ip_address")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageUtilizationInBytes")
-    def storage_utilization_in_bytes(self) -> pulumi.Output[str]:
-        """
-        The amount of storage being utilized (in bytes)
-        """
+    def storage_utilization_in_bytes(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "storage_utilization_in_bytes")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfNextMaintenance")
-    def time_of_next_maintenance(self) -> pulumi.Output[str]:
-        """
-        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_of_next_maintenance(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_next_maintenance")
 
     @property
     @pulumi.getter(name="timeOggVersionSupportedUntil")
-    def time_ogg_version_supported_until(self) -> pulumi.Output[str]:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_ogg_version_supported_until(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> pulumi.Output[str]:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_upgrade_required(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_upgrade_required")
 

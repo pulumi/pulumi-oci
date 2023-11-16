@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDatapumpSettingMetadataRemap {
@@ -13,39 +15,39 @@ public final class GetMigrationDatapumpSettingMetadataRemap {
      * @return Specifies the new value that oldValue should be translated into.
      * 
      */
-    private String newValue;
+    private @Nullable String newValue;
     /**
      * @return Specifies the value which needs to be reset.
      * 
      */
-    private String oldValue;
+    private @Nullable String oldValue;
     /**
      * @return Migration type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMigrationDatapumpSettingMetadataRemap() {}
     /**
      * @return Specifies the new value that oldValue should be translated into.
      * 
      */
-    public String newValue() {
-        return this.newValue;
+    public Optional<String> newValue() {
+        return Optional.ofNullable(this.newValue);
     }
     /**
      * @return Specifies the value which needs to be reset.
      * 
      */
-    public String oldValue() {
-        return this.oldValue;
+    public Optional<String> oldValue() {
+        return Optional.ofNullable(this.oldValue);
     }
     /**
      * @return Migration type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMigrationDatapumpSettingMetadataRemap {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String newValue;
-        private String oldValue;
-        private String type;
+        private @Nullable String newValue;
+        private @Nullable String oldValue;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMigrationDatapumpSettingMetadataRemap defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMigrationDatapumpSettingMetadataRemap {
         }
 
         @CustomType.Setter
-        public Builder newValue(String newValue) {
-            this.newValue = Objects.requireNonNull(newValue);
+        public Builder newValue(@Nullable String newValue) {
+            this.newValue = newValue;
             return this;
         }
         @CustomType.Setter
-        public Builder oldValue(String oldValue) {
-            this.oldValue = Objects.requireNonNull(oldValue);
+        public Builder oldValue(@Nullable String oldValue) {
+            this.oldValue = oldValue;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMigrationDatapumpSettingMetadataRemap build() {

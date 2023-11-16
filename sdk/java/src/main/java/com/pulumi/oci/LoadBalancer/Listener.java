@@ -92,14 +92,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="connectionConfiguration", refs={ListenerConnectionConfiguration.class}, tree="[0]")
-    private Output<ListenerConnectionConfiguration> connectionConfiguration;
+    private Output</* @Nullable */ ListenerConnectionConfiguration> connectionConfiguration;
 
     /**
      * @return (Updatable) Configuration details for the connection between the client and backend servers.
      * 
      */
-    public Output<ListenerConnectionConfiguration> connectionConfiguration() {
-        return this.connectionConfiguration;
+    public Output<Optional<ListenerConnectionConfiguration>> connectionConfiguration() {
+        return Codegen.optional(this.connectionConfiguration);
     }
     /**
      * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -120,14 +120,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="hostnameNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> hostnameNames;
+    private Output</* @Nullable */ List<String>> hostnameNames;
 
     /**
      * @return (Updatable) An array of hostname resource names.
      * 
      */
-    public Output<List<String>> hostnameNames() {
-        return this.hostnameNames;
+    public Output<Optional<List<String>>> hostnameNames() {
+        return Codegen.optional(this.hostnameNames);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
@@ -166,7 +166,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pathRouteSetName", refs={String.class}, tree="[0]")
-    private Output<String> pathRouteSetName;
+    private Output</* @Nullable */ String> pathRouteSetName;
 
     /**
      * @return (Updatable) Deprecated. Please use `routingPolicies` instead.
@@ -176,8 +176,8 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * Example: `example_path_route_set`
      * 
      */
-    public Output<String> pathRouteSetName() {
-        return this.pathRouteSetName;
+    public Output<Optional<String>> pathRouteSetName() {
+        return Codegen.optional(this.pathRouteSetName);
     }
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
@@ -212,28 +212,28 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="routingPolicyName", refs={String.class}, tree="[0]")
-    private Output<String> routingPolicyName;
+    private Output</* @Nullable */ String> routingPolicyName;
 
     /**
      * @return (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
      * 
      */
-    public Output<String> routingPolicyName() {
-        return this.routingPolicyName;
+    public Output<Optional<String>> routingPolicyName() {
+        return Codegen.optional(this.routingPolicyName);
     }
     /**
      * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
      * 
      */
     @Export(name="ruleSetNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ruleSetNames;
+    private Output</* @Nullable */ List<String>> ruleSetNames;
 
     /**
      * @return (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
      * 
      */
-    public Output<List<String>> ruleSetNames() {
-        return this.ruleSetNames;
+    public Output<Optional<List<String>>> ruleSetNames() {
+        return Codegen.optional(this.ruleSetNames);
     }
     /**
      * (Updatable) The load balancer&#39;s SSL handling configuration details.
@@ -254,10 +254,10 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sslConfiguration);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

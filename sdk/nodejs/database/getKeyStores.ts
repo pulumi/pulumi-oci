@@ -54,11 +54,11 @@ export interface GetKeyStoresResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of key_stores.
      */
-    readonly keyStores: outputs.Database.GetKeyStoresKeyStore[];
+    readonly keyStores?: outputs.Database.GetKeyStoresKeyStore[];
 }
 /**
  * This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.

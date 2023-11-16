@@ -137,39 +137,39 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
      */
-    public readonly accessKeyId!: pulumi.Output<string>;
+    public readonly accessKeyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      */
-    public readonly accountKey!: pulumi.Output<string>;
+    public readonly accountKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Sets the Azure storage account name.
      */
-    public readonly accountName!: pulumi.Output<string>;
+    public readonly accountName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      */
-    public readonly additionalAttributes!: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
+    public readonly additionalAttributes!: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[] | undefined>;
     /**
      * (Updatable) Used authentication mechanism.
      */
-    public readonly authenticationType!: pulumi.Output<string>;
+    public readonly authenticationType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
-    public readonly azureTenantId!: pulumi.Output<string>;
+    public readonly azureTenantId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
      */
-    public readonly bootstrapServers!: pulumi.Output<outputs.GoldenGate.ConnectionBootstrapServer[]>;
+    public readonly bootstrapServers!: pulumi.Output<outputs.GoldenGate.ConnectionBootstrapServer[] | undefined>;
     /**
      * (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      */
-    public readonly clientId!: pulumi.Output<string>;
+    public readonly clientId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
      */
-    public readonly clientSecret!: pulumi.Output<string>;
+    public readonly clientSecret!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
@@ -177,11 +177,11 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
      */
-    public readonly connectionFactory!: pulumi.Output<string>;
+    public readonly connectionFactory!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
      */
-    public readonly connectionString!: pulumi.Output<string>;
+    public readonly connectionString!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The connection type.
      */
@@ -189,39 +189,39 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      */
-    public readonly connectionUrl!: pulumi.Output<string>;
+    public readonly connectionUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      */
-    public readonly consumerProperties!: pulumi.Output<string>;
+    public readonly consumerProperties!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
      */
-    public readonly coreSiteXml!: pulumi.Output<string>;
+    public readonly coreSiteXml!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    public readonly databaseId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the database.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    public readonly databaseName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    public readonly dbSystemId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    public readonly deploymentId!: pulumi.Output<string>;
+    public readonly deploymentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
@@ -229,155 +229,155 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      */
-    public readonly endpoint!: pulumi.Output<string>;
+    public readonly endpoint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The name or address of a host.
      */
-    public readonly host!: pulumi.Output<string>;
+    public readonly host!: pulumi.Output<string | undefined>;
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
-    public /*out*/ readonly ingressIps!: pulumi.Output<outputs.GoldenGate.ConnectionIngressIp[]>;
+    public /*out*/ readonly ingressIps!: pulumi.Output<outputs.GoldenGate.ConnectionIngressIp[] | undefined>;
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
-    public readonly jndiConnectionFactory!: pulumi.Output<string>;
+    public readonly jndiConnectionFactory!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
      */
-    public readonly jndiInitialContextFactory!: pulumi.Output<string>;
+    public readonly jndiInitialContextFactory!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
      */
-    public readonly jndiProviderUrl!: pulumi.Output<string>;
+    public readonly jndiProviderUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The password associated to the principal.
      */
-    public readonly jndiSecurityCredentials!: pulumi.Output<string>;
+    public readonly jndiSecurityCredentials!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
      */
-    public readonly jndiSecurityPrincipal!: pulumi.Output<string>;
+    public readonly jndiSecurityPrincipal!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    public readonly keyId!: pulumi.Output<string>;
+    public readonly keyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of the KeyStore file.
      */
-    public readonly keyStore!: pulumi.Output<string>;
+    public readonly keyStore!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The KeyStore password.
      */
-    public readonly keyStorePassword!: pulumi.Output<string>;
+    public readonly keyStorePassword!: pulumi.Output<string | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      */
-    public readonly password!: pulumi.Output<string>;
+    public readonly password!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The port of an endpoint usually specified for a connection.
      */
-    public readonly port!: pulumi.Output<number>;
+    public readonly port!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
-    public readonly privateIp!: pulumi.Output<string>;
+    public readonly privateIp!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of private key file in PEM format.
      */
-    public readonly privateKeyFile!: pulumi.Output<string>;
+    public readonly privateKeyFile!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Password if the private key file is encrypted.
      */
-    public readonly privateKeyPassphrase!: pulumi.Output<string>;
+    public readonly privateKeyPassphrase!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of the producer.properties file.
      */
-    public readonly producerProperties!: pulumi.Output<string>;
+    public readonly producerProperties!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
-    public readonly publicKeyFingerprint!: pulumi.Output<string>;
+    public readonly publicKeyFingerprint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
-    public readonly region!: pulumi.Output<string>;
+    public readonly region!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      */
-    public readonly sasToken!: pulumi.Output<string>;
+    public readonly sasToken!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
      */
-    public readonly secretAccessKey!: pulumi.Output<string>;
+    public readonly secretAccessKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Security Protocol.
      */
-    public readonly securityProtocol!: pulumi.Output<string>;
+    public readonly securityProtocol!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
-    public readonly sessionMode!: pulumi.Output<string>;
+    public readonly sessionMode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      */
-    public readonly shouldUseJndi!: pulumi.Output<boolean>;
+    public readonly shouldUseJndi!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
      */
-    public readonly shouldValidateServerCertificate!: pulumi.Output<boolean>;
+    public readonly shouldValidateServerCertificate!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      */
-    public readonly sslCa!: pulumi.Output<string>;
+    public readonly sslCa!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      */
-    public readonly sslCert!: pulumi.Output<string>;
+    public readonly sslCert!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
-    public readonly sslCrl!: pulumi.Output<string>;
+    public readonly sslCrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      */
-    public readonly sslKey!: pulumi.Output<string>;
+    public readonly sslKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
      */
-    public readonly sslKeyPassword!: pulumi.Output<string>;
+    public readonly sslKeyPassword!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) SSL modes for PostgreSQL.
      */
-    public readonly sslMode!: pulumi.Output<string>;
+    public readonly sslMode!: pulumi.Output<string | undefined>;
     /**
      * Possible lifecycle states for connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      */
-    public readonly streamPoolId!: pulumi.Output<string>;
+    public readonly streamPoolId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    public readonly subnetId!: pulumi.Output<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The Kafka (e.g. Confluent) Schema Registry technology type.
      */
@@ -385,46 +385,46 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      */
-    public readonly tenancyId!: pulumi.Output<string>;
+    public readonly tenancyId!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The base64 encoded content of the TrustStore file.
      */
-    public readonly trustStore!: pulumi.Output<string>;
+    public readonly trustStore!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The TrustStore password.
      */
-    public readonly trustStorePassword!: pulumi.Output<string>;
+    public readonly trustStorePassword!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
-    public readonly url!: pulumi.Output<string>;
+    public readonly url!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      */
-    public readonly userId!: pulumi.Output<string>;
+    public readonly userId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      */
-    public readonly username!: pulumi.Output<string>;
+    public readonly username!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
-    public readonly vaultId!: pulumi.Output<string>;
+    public readonly vaultId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly wallet!: pulumi.Output<string>;
+    public readonly wallet!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.

@@ -24,11 +24,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// configuration allowed or not
         /// </summary>
-        public readonly bool IsConfigurationAllowed;
+        public readonly bool? IsConfigurationAllowed;
         /// <summary>
         /// Identifies state for ResponderRule
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// user defined labels for a detector rule
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The Risk Level
         /// </summary>
-        public readonly string RiskLevel;
+        public readonly string? RiskLevel;
 
         [OutputConstructor]
         private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailResult(
@@ -44,13 +44,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult> configurations,
 
-            bool isConfigurationAllowed,
+            bool? isConfigurationAllowed,
 
-            bool isEnabled,
+            bool? isEnabled,
 
             ImmutableArray<string> labels,
 
-            string riskLevel)
+            string? riskLevel)
         {
             ConditionGroups = conditionGroups;
             Configurations = configurations;

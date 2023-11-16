@@ -173,7 +173,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the cluster.
         /// </summary>
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetClustersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

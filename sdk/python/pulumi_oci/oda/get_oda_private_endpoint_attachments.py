@@ -46,9 +46,6 @@ class GetOdaPrivateEndpointAttachmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetOdaPrivateEndpointAttachmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,26 +63,17 @@ class GetOdaPrivateEndpointAttachmentsResult:
 
     @property
     @pulumi.getter(name="odaPrivateEndpointAttachmentCollections")
-    def oda_private_endpoint_attachment_collections(self) -> Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResult']:
-        """
-        The list of oda_private_endpoint_attachment_collection.
-        """
+    def oda_private_endpoint_attachment_collections(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResult']]:
         return pulumi.get(self, "oda_private_endpoint_attachment_collections")
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
     def oda_private_endpoint_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-        """
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ODA Private Endpoint attachment.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,29 +97,7 @@ def get_oda_private_endpoint_attachments(compartment_id: Optional[str] = None,
                                          state: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaPrivateEndpointAttachmentsResult:
     """
-    This data source provides the list of Oda Private Endpoint Attachments in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of ODA Instances attached to this ODA Private Endpoint.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_attachments = oci.Oda.get_oda_private_endpoint_attachments(compartment_id=var["compartment_id"],
-        oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        state=var["oda_private_endpoint_attachment_state"])
-    ```
-
-
-    :param str compartment_id: List the ODA Private Endpoint Attachments that belong to this compartment.
-    :param str oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-    :param str state: List only the ODA Private Endpoint Attachments that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -157,28 +123,6 @@ def get_oda_private_endpoint_attachments_output(compartment_id: Optional[pulumi.
                                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaPrivateEndpointAttachmentsResult]:
     """
-    This data source provides the list of Oda Private Endpoint Attachments in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of ODA Instances attached to this ODA Private Endpoint.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_private_endpoint_attachments = oci.Oda.get_oda_private_endpoint_attachments(compartment_id=var["compartment_id"],
-        oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-        state=var["oda_private_endpoint_attachment_state"])
-    ```
-
-
-    :param str compartment_id: List the ODA Private Endpoint Attachments that belong to this compartment.
-    :param str oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-    :param str state: List only the ODA Private Endpoint Attachments that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

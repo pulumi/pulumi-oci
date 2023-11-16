@@ -70,12 +70,12 @@ export interface GetDedicatedVmHostInstancesResult {
     /**
      * The list of dedicated_vm_host_instances.
      */
-    readonly dedicatedVmHostInstances: outputs.Core.GetDedicatedVmHostInstancesDedicatedVmHostInstance[];
+    readonly dedicatedVmHostInstances?: outputs.Core.GetDedicatedVmHostInstancesDedicatedVmHostInstance[];
     readonly filters?: outputs.Core.GetDedicatedVmHostInstancesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.

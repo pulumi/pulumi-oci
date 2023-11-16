@@ -16,29 +16,29 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The connection IP address.
         /// </summary>
-        public readonly string Address;
+        public readonly string? Address;
         /// <summary>
         /// Total connect duration, calculated using `connectEnd` minus `connectStart`.
         /// </summary>
-        public readonly double ConnectDuration;
+        public readonly double? ConnectDuration;
         /// <summary>
         /// The port.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
         /// </summary>
-        public readonly double SecureConnectDuration;
+        public readonly double? SecureConnectDuration;
 
         [OutputConstructor]
         private GetHttpProbeResultsHttpProbeResultConnectionResult(
-            string address,
+            string? address,
 
-            double connectDuration,
+            double? connectDuration,
 
-            int port,
+            int? port,
 
-            double secureConnectDuration)
+            double? secureConnectDuration)
         {
             Address = address;
             ConnectDuration = connectDuration;

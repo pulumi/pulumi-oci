@@ -106,39 +106,6 @@ class AppFirewallPolicyAction(dict):
                  body: Optional['outputs.AppFirewallPolicyActionBody'] = None,
                  code: Optional[int] = None,
                  headers: Optional[Sequence['outputs.AppFirewallPolicyActionHeader']] = None):
-        """
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        :param 'AppFirewallPolicyActionBodyArgs' body: (Updatable) Type of returned HTTP response body.
-        :param int code: (Updatable) Response code.
-               
-               The following response codes are valid values for this property:
-               * 2xx
-               
-               200 OK 201 Created 202 Accepted 206 Partial Content
-               * 3xx
-               
-               300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
-               * 4xx
-               
-               400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
-               * 5xx
-               
-               500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
-               
-               Example: `200`
-        :param Sequence['AppFirewallPolicyActionHeaderArgs'] headers: (Updatable) Adds headers defined in this array for HTTP response.
-               
-               Hop-by-hop headers are not allowed to be set:
-               * Connection
-               * Keep-Alive
-               * Proxy-Authenticate
-               * Proxy-Authorization
-               * TE
-               * Trailer
-               * Transfer-Encoding
-               * Upgrade
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
         if body is not None:
@@ -151,67 +118,26 @@ class AppFirewallPolicyAction(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def body(self) -> Optional['outputs.AppFirewallPolicyActionBody']:
-        """
-        (Updatable) Type of returned HTTP response body.
-        """
         return pulumi.get(self, "body")
 
     @property
     @pulumi.getter
     def code(self) -> Optional[int]:
-        """
-        (Updatable) Response code.
-
-        The following response codes are valid values for this property:
-        * 2xx
-
-        200 OK 201 Created 202 Accepted 206 Partial Content
-        * 3xx
-
-        300 Multiple Choices 301 Moved Permanently 302 Found 303 See Other 307 Temporary Redirect
-        * 4xx
-
-        400 Bad Request 401 Unauthorized 403 Forbidden 404 Not Found 405 Method Not Allowed 408 Request Timeout 409 Conflict 411 Length Required 412 Precondition Failed 413 Payload Too Large 414 URI Too Long 415 Unsupported Media Type 416 Range Not Satisfiable 422 Unprocessable Entity 494 Request Header Too Large 495 Cert Error 496 No Cert 497 HTTP to HTTPS
-        * 5xx
-
-        500 Internal Server Error 501 Not Implemented 502 Bad Gateway 503 Service Unavailable 504 Gateway Timeout 507 Insufficient Storage
-
-        Example: `200`
-        """
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
     def headers(self) -> Optional[Sequence['outputs.AppFirewallPolicyActionHeader']]:
-        """
-        (Updatable) Adds headers defined in this array for HTTP response.
-
-        Hop-by-hop headers are not allowed to be set:
-        * Connection
-        * Keep-Alive
-        * Proxy-Authenticate
-        * Proxy-Authorization
-        * TE
-        * Trailer
-        * Transfer-Encoding
-        * Upgrade
-        """
         return pulumi.get(self, "headers")
 
 
@@ -220,27 +146,17 @@ class AppFirewallPolicyActionBody(dict):
     def __init__(__self__, *,
                  text: str,
                  type: str):
-        """
-        :param str text: (Updatable) Static response body text.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         pulumi.set(__self__, "text", text)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def text(self) -> str:
-        """
-        (Updatable) Static response body text.
-        """
         return pulumi.get(self, "text")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
 
@@ -249,10 +165,6 @@ class AppFirewallPolicyActionHeader(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param str value: (Updatable) The value of the header field.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -261,17 +173,11 @@ class AppFirewallPolicyActionHeader(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) The value of the header field.
-        """
         return pulumi.get(self, "value")
 
 
@@ -297,12 +203,6 @@ class AppFirewallPolicyRequestAccessControl(dict):
     def __init__(__self__, *,
                  default_action_name: str,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyRequestAccessControlRule']] = None):
-        """
-        :param str default_action_name: (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
-               * **ALLOW** continues execution of other modules and their rules.
-               * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        :param Sequence['AppFirewallPolicyRequestAccessControlRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         pulumi.set(__self__, "default_action_name", default_action_name)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
@@ -310,19 +210,11 @@ class AppFirewallPolicyRequestAccessControl(dict):
     @property
     @pulumi.getter(name="defaultActionName")
     def default_action_name(self) -> str:
-        """
-        (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
-        * **ALLOW** continues execution of other modules and their rules.
-        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        """
         return pulumi.get(self, "default_action_name")
 
     @property
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestAccessControlRule']]:
-        """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         return pulumi.get(self, "rules")
 
 
@@ -353,14 +245,6 @@ class AppFirewallPolicyRequestAccessControlRule(dict):
                  type: str,
                  condition: Optional[str] = None,
                  condition_language: Optional[str] = None):
-        """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        """
         pulumi.set(__self__, "action_name", action_name)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
@@ -372,42 +256,26 @@ class AppFirewallPolicyRequestAccessControlRule(dict):
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def condition(self) -> Optional[str]:
-        """
-        (Updatable) An expression that determines whether or not the rule action should be executed.
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
     def condition_language(self) -> Optional[str]:
-        """
-        (Updatable) The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
         return pulumi.get(self, "condition_language")
 
 
@@ -436,20 +304,6 @@ class AppFirewallPolicyRequestProtection(dict):
                  body_inspection_size_limit_exceeded_action_name: Optional[str] = None,
                  body_inspection_size_limit_in_bytes: Optional[int] = None,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRule']] = None):
-        """
-        :param str body_inspection_size_limit_exceeded_action_name: (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
-               
-               If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
-               
-               Allowed action types:
-               * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        :param int body_inspection_size_limit_in_bytes: (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
-               
-               Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
-               
-               For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-        :param Sequence['AppFirewallPolicyRequestProtectionRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         if body_inspection_size_limit_exceeded_action_name is not None:
             pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
         if body_inspection_size_limit_in_bytes is not None:
@@ -460,34 +314,16 @@ class AppFirewallPolicyRequestProtection(dict):
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
     def body_inspection_size_limit_exceeded_action_name(self) -> Optional[str]:
-        """
-        (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
-
-        If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
-
-        Allowed action types:
-        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        """
         return pulumi.get(self, "body_inspection_size_limit_exceeded_action_name")
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitInBytes")
     def body_inspection_size_limit_in_bytes(self) -> Optional[int]:
-        """
-        (Updatable) Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
-
-        Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
-
-        For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-        """
         return pulumi.get(self, "body_inspection_size_limit_in_bytes")
 
     @property
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRule']]:
-        """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         return pulumi.get(self, "rules")
 
 
@@ -527,17 +363,6 @@ class AppFirewallPolicyRequestProtectionRule(dict):
                  condition_language: Optional[str] = None,
                  is_body_inspection_enabled: Optional[bool] = None,
                  protection_capability_settings: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings'] = None):
-        """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param Sequence['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs'] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param bool is_body_inspection_enabled: (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        :param 'AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs' protection_capability_settings: (Updatable) Settings for protection capabilities
-        """
         pulumi.set(__self__, "action_name", action_name)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "protection_capabilities", protection_capabilities)
@@ -554,66 +379,41 @@ class AppFirewallPolicyRequestProtectionRule(dict):
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilities")
     def protection_capabilities(self) -> Sequence['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapability']:
-        """
-        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        """
         return pulumi.get(self, "protection_capabilities")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def condition(self) -> Optional[str]:
-        """
-        (Updatable) An expression that determines whether or not the rule action should be executed.
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
     def condition_language(self) -> Optional[str]:
-        """
-        (Updatable) The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter(name="isBodyInspectionEnabled")
     def is_body_inspection_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        """
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
     def protection_capability_settings(self) -> Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings']:
-        """
-        (Updatable) Settings for protection capabilities
-        """
         return pulumi.get(self, "protection_capability_settings")
 
 
@@ -647,14 +447,6 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapability(dict):
                  collaborative_action_threshold: Optional[int] = None,
                  collaborative_weights: Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight']] = None,
                  exclusions: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions'] = None):
-        """
-        :param str key: (Updatable) Unique key of referenced protection capability.
-        :param int version: (Updatable) Version of referenced protection capability.
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        :param Sequence['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
-        :param 'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs' exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "version", version)
         if action_name is not None:
@@ -669,49 +461,31 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapability(dict):
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        (Updatable) Unique key of referenced protection capability.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def version(self) -> int:
-        """
-        (Updatable) Version of referenced protection capability.
-        """
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> Optional[str]:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> Optional[int]:
-        """
-        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        """
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
     def collaborative_weights(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight']]:
-        """
-        (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
-        """
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
     def exclusions(self) -> Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions']:
-        """
-        (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
         return pulumi.get(self, "exclusions")
 
 
@@ -720,27 +494,17 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
     def __init__(__self__, *,
                  key: str,
                  weight: int):
-        """
-        :param str key: (Updatable) Unique key of referenced protection capability.
-        :param int weight: (Updatable) The value of weight to set.
-        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        (Updatable) Unique key of referenced protection capability.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def weight(self) -> int:
-        """
-        (Updatable) The value of weight to set.
-        """
         return pulumi.get(self, "weight")
 
 
@@ -766,10 +530,6 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions(dict)
     def __init__(__self__, *,
                  args: Optional[Sequence[str]] = None,
                  request_cookies: Optional[Sequence[str]] = None):
-        """
-        :param Sequence[str] args: (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        :param Sequence[str] request_cookies: (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
         if args is not None:
             pulumi.set(__self__, "args", args)
         if request_cookies is not None:
@@ -778,17 +538,11 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions(dict)
     @property
     @pulumi.getter
     def args(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        """
         return pulumi.get(self, "args")
 
     @property
     @pulumi.getter(name="requestCookies")
     def request_cookies(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
         return pulumi.get(self, "request_cookies")
 
 
@@ -828,14 +582,6 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings(dict):
                  max_number_of_arguments: Optional[int] = None,
                  max_single_argument_length: Optional[int] = None,
                  max_total_argument_length: Optional[int] = None):
-        """
-        :param Sequence[str] allowed_http_methods: (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        :param int max_http_request_header_length: (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        :param int max_http_request_headers: (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        :param int max_number_of_arguments: (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        :param int max_single_argument_length: (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        :param int max_total_argument_length: (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
         if allowed_http_methods is not None:
             pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
         if max_http_request_header_length is not None:
@@ -852,49 +598,31 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings(dict):
     @property
     @pulumi.getter(name="allowedHttpMethods")
     def allowed_http_methods(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        """
         return pulumi.get(self, "allowed_http_methods")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
     def max_http_request_header_length(self) -> Optional[int]:
-        """
-        (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        """
         return pulumi.get(self, "max_http_request_header_length")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaders")
     def max_http_request_headers(self) -> Optional[int]:
-        """
-        (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        """
         return pulumi.get(self, "max_http_request_headers")
 
     @property
     @pulumi.getter(name="maxNumberOfArguments")
     def max_number_of_arguments(self) -> Optional[int]:
-        """
-        (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        """
         return pulumi.get(self, "max_number_of_arguments")
 
     @property
     @pulumi.getter(name="maxSingleArgumentLength")
     def max_single_argument_length(self) -> Optional[int]:
-        """
-        (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        """
         return pulumi.get(self, "max_single_argument_length")
 
     @property
     @pulumi.getter(name="maxTotalArgumentLength")
     def max_total_argument_length(self) -> Optional[int]:
-        """
-        (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
         return pulumi.get(self, "max_total_argument_length")
 
 
@@ -902,18 +630,12 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings(dict):
 class AppFirewallPolicyRequestRateLimiting(dict):
     def __init__(__self__, *,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyRequestRateLimitingRule']] = None):
-        """
-        :param Sequence['AppFirewallPolicyRequestRateLimitingRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyRequestRateLimitingRule']]:
-        """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         return pulumi.get(self, "rules")
 
 
@@ -945,15 +667,6 @@ class AppFirewallPolicyRequestRateLimitingRule(dict):
                  type: str,
                  condition: Optional[str] = None,
                  condition_language: Optional[str] = None):
-        """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param Sequence['AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs'] configurations: (Updatable) Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        """
         pulumi.set(__self__, "action_name", action_name)
         pulumi.set(__self__, "configurations", configurations)
         pulumi.set(__self__, "name", name)
@@ -966,50 +679,31 @@ class AppFirewallPolicyRequestRateLimitingRule(dict):
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
     def configurations(self) -> Sequence['outputs.AppFirewallPolicyRequestRateLimitingRuleConfiguration']:
-        """
-        (Updatable) Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
-        """
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def condition(self) -> Optional[str]:
-        """
-        (Updatable) An expression that determines whether or not the rule action should be executed.
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
     def condition_language(self) -> Optional[str]:
-        """
-        (Updatable) The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
         return pulumi.get(self, "condition_language")
 
 
@@ -1040,11 +734,6 @@ class AppFirewallPolicyRequestRateLimitingRuleConfiguration(dict):
                  period_in_seconds: int,
                  requests_limit: int,
                  action_duration_in_seconds: Optional[int] = None):
-        """
-        :param int period_in_seconds: (Updatable) Evaluation period in seconds.
-        :param int requests_limit: (Updatable) Requests allowed per evaluation period.
-        :param int action_duration_in_seconds: (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
-        """
         pulumi.set(__self__, "period_in_seconds", period_in_seconds)
         pulumi.set(__self__, "requests_limit", requests_limit)
         if action_duration_in_seconds is not None:
@@ -1053,25 +742,16 @@ class AppFirewallPolicyRequestRateLimitingRuleConfiguration(dict):
     @property
     @pulumi.getter(name="periodInSeconds")
     def period_in_seconds(self) -> int:
-        """
-        (Updatable) Evaluation period in seconds.
-        """
         return pulumi.get(self, "period_in_seconds")
 
     @property
     @pulumi.getter(name="requestsLimit")
     def requests_limit(self) -> int:
-        """
-        (Updatable) Requests allowed per evaluation period.
-        """
         return pulumi.get(self, "requests_limit")
 
     @property
     @pulumi.getter(name="actionDurationInSeconds")
     def action_duration_in_seconds(self) -> Optional[int]:
-        """
-        (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
-        """
         return pulumi.get(self, "action_duration_in_seconds")
 
 
@@ -1079,18 +759,12 @@ class AppFirewallPolicyRequestRateLimitingRuleConfiguration(dict):
 class AppFirewallPolicyResponseAccessControl(dict):
     def __init__(__self__, *,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyResponseAccessControlRule']] = None):
-        """
-        :param Sequence['AppFirewallPolicyResponseAccessControlRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyResponseAccessControlRule']]:
-        """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         return pulumi.get(self, "rules")
 
 
@@ -1121,14 +795,6 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
                  type: str,
                  condition: Optional[str] = None,
                  condition_language: Optional[str] = None):
-        """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        """
         pulumi.set(__self__, "action_name", action_name)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
@@ -1140,42 +806,26 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def condition(self) -> Optional[str]:
-        """
-        (Updatable) An expression that determines whether or not the rule action should be executed.
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
     def condition_language(self) -> Optional[str]:
-        """
-        (Updatable) The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
         return pulumi.get(self, "condition_language")
 
 
@@ -1183,18 +833,12 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
 class AppFirewallPolicyResponseProtection(dict):
     def __init__(__self__, *,
                  rules: Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRule']] = None):
-        """
-        :param Sequence['AppFirewallPolicyResponseProtectionRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
     def rules(self) -> Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRule']]:
-        """
-        (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
         return pulumi.get(self, "rules")
 
 
@@ -1234,17 +878,6 @@ class AppFirewallPolicyResponseProtectionRule(dict):
                  condition_language: Optional[str] = None,
                  is_body_inspection_enabled: Optional[bool] = None,
                  protection_capability_settings: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings'] = None):
-        """
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str name: (Updatable) Rule name. Must be unique within the module.
-        :param Sequence['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs'] protection_capabilities: (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
-        :param str condition: (Updatable) An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param bool is_body_inspection_enabled: (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        :param 'AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs' protection_capability_settings: (Updatable) Settings for protection capabilities
-        """
         pulumi.set(__self__, "action_name", action_name)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "protection_capabilities", protection_capabilities)
@@ -1261,66 +894,41 @@ class AppFirewallPolicyResponseProtectionRule(dict):
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> str:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilities")
     def protection_capabilities(self) -> Sequence['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapability']:
-        """
-        (Updatable) An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        """
         return pulumi.get(self, "protection_capabilities")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Type of WebAppFirewallPolicyRule.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def condition(self) -> Optional[str]:
-        """
-        (Updatable) An expression that determines whether or not the rule action should be executed.
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
     def condition_language(self) -> Optional[str]:
-        """
-        (Updatable) The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter(name="isBodyInspectionEnabled")
     def is_body_inspection_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        """
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
     def protection_capability_settings(self) -> Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings']:
-        """
-        (Updatable) Settings for protection capabilities
-        """
         return pulumi.get(self, "protection_capability_settings")
 
 
@@ -1354,14 +962,6 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapability(dict):
                  collaborative_action_threshold: Optional[int] = None,
                  collaborative_weights: Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight']] = None,
                  exclusions: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions'] = None):
-        """
-        :param str key: (Updatable) Unique key of referenced protection capability.
-        :param int version: (Updatable) Version of referenced protection capability.
-        :param str action_name: (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        :param Sequence['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
-        :param 'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs' exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "version", version)
         if action_name is not None:
@@ -1376,49 +976,31 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapability(dict):
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        (Updatable) Unique key of referenced protection capability.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def version(self) -> int:
-        """
-        (Updatable) Version of referenced protection capability.
-        """
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="actionName")
     def action_name(self) -> Optional[str]:
-        """
-        (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
     def collaborative_action_threshold(self) -> Optional[int]:
-        """
-        (Updatable) The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        """
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
     def collaborative_weights(self) -> Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight']]:
-        """
-        (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
-        """
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
     def exclusions(self) -> Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions']:
-        """
-        (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
         return pulumi.get(self, "exclusions")
 
 
@@ -1427,27 +1009,17 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
     def __init__(__self__, *,
                  key: str,
                  weight: int):
-        """
-        :param str key: (Updatable) Unique key of referenced protection capability.
-        :param int weight: (Updatable) The value of weight to set.
-        """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
     def key(self) -> str:
-        """
-        (Updatable) Unique key of referenced protection capability.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def weight(self) -> int:
-        """
-        (Updatable) The value of weight to set.
-        """
         return pulumi.get(self, "weight")
 
 
@@ -1473,10 +1045,6 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions(dict
     def __init__(__self__, *,
                  args: Optional[Sequence[str]] = None,
                  request_cookies: Optional[Sequence[str]] = None):
-        """
-        :param Sequence[str] args: (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        :param Sequence[str] request_cookies: (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
         if args is not None:
             pulumi.set(__self__, "args", args)
         if request_cookies is not None:
@@ -1485,17 +1053,11 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions(dict
     @property
     @pulumi.getter
     def args(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        """
         return pulumi.get(self, "args")
 
     @property
     @pulumi.getter(name="requestCookies")
     def request_cookies(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
         return pulumi.get(self, "request_cookies")
 
 
@@ -1535,14 +1097,6 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings(dict):
                  max_number_of_arguments: Optional[int] = None,
                  max_single_argument_length: Optional[int] = None,
                  max_total_argument_length: Optional[int] = None):
-        """
-        :param Sequence[str] allowed_http_methods: (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        :param int max_http_request_header_length: (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        :param int max_http_request_headers: (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        :param int max_number_of_arguments: (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        :param int max_single_argument_length: (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        :param int max_total_argument_length: (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
         if allowed_http_methods is not None:
             pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
         if max_http_request_header_length is not None:
@@ -1559,49 +1113,31 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings(dict):
     @property
     @pulumi.getter(name="allowedHttpMethods")
     def allowed_http_methods(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        """
         return pulumi.get(self, "allowed_http_methods")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
     def max_http_request_header_length(self) -> Optional[int]:
-        """
-        (Updatable) Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        """
         return pulumi.get(self, "max_http_request_header_length")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaders")
     def max_http_request_headers(self) -> Optional[int]:
-        """
-        (Updatable) Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        """
         return pulumi.get(self, "max_http_request_headers")
 
     @property
     @pulumi.getter(name="maxNumberOfArguments")
     def max_number_of_arguments(self) -> Optional[int]:
-        """
-        (Updatable) Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        """
         return pulumi.get(self, "max_number_of_arguments")
 
     @property
     @pulumi.getter(name="maxSingleArgumentLength")
     def max_single_argument_length(self) -> Optional[int]:
-        """
-        (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        """
         return pulumi.get(self, "max_single_argument_length")
 
     @property
     @pulumi.getter(name="maxTotalArgumentLength")
     def max_total_argument_length(self) -> Optional[int]:
-        """
-        (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
         return pulumi.get(self, "max_total_argument_length")
 
 
@@ -1627,14 +1163,6 @@ class NetworkAddressListVcnAddress(dict):
     def __init__(__self__, *,
                  addresses: Optional[str] = None,
                  vcn_id: Optional[str] = None):
-        """
-        :param str addresses: (Updatable) A private IP address or CIDR IP address range.
-        :param str vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
         if vcn_id is not None:
@@ -1643,21 +1171,11 @@ class NetworkAddressListVcnAddress(dict):
     @property
     @pulumi.getter
     def addresses(self) -> Optional[str]:
-        """
-        (Updatable) A private IP address or CIDR IP address range.
-        """
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -1691,191 +1209,143 @@ class GetFirewallsFilterResult(dict):
 @pulumi.output_type
 class GetFirewallsWebAppFirewallCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetFirewallsWebAppFirewallCollectionItemResult(dict):
     def __init__(__self__, *,
-                 backend_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 load_balancer_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 web_app_firewall_policy_id: str):
-        """
-        :param str backend_type: Type of the WebAppFirewall, as example LOAD_BALANCER.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param str load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
-        :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
-        :param str web_app_firewall_policy_id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
-        """
-        pulumi.set(__self__, "backend_type", backend_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "web_app_firewall_policy_id", web_app_firewall_policy_id)
+                 backend_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 load_balancer_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 web_app_firewall_policy_id: Optional[str] = None):
+        if backend_type is not None:
+            pulumi.set(__self__, "backend_type", backend_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if load_balancer_id is not None:
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if web_app_firewall_policy_id is not None:
+            pulumi.set(__self__, "web_app_firewall_policy_id", web_app_firewall_policy_id)
 
     @property
     @pulumi.getter(name="backendType")
-    def backend_type(self) -> str:
-        """
-        Type of the WebAppFirewall, as example LOAD_BALANCER.
-        """
+    def backend_type(self) -> Optional[str]:
         return pulumi.get(self, "backend_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> str:
-        """
-        LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
-        """
+    def load_balancer_id(self) -> Optional[str]:
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="webAppFirewallPolicyId")
-    def web_app_firewall_policy_id(self) -> str:
-        """
-        A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
-        """
+    def web_app_firewall_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "web_app_firewall_policy_id")
 
 
 @pulumi.output_type
 class GetNetworkAddressListVcnAddressResult(dict):
     def __init__(__self__, *,
-                 addresses: str,
-                 vcn_id: str):
-        """
-        :param str addresses: A private IP address or CIDR IP address range.
-        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 addresses: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter
-    def addresses(self) -> str:
-        """
-        A private IP address or CIDR IP address range.
-        """
+    def addresses(self) -> Optional[str]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -1909,191 +1379,143 @@ class GetNetworkAddressListsFilterResult(dict):
 @pulumi.output_type
 class GetNetworkAddressListsNetworkAddressListCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
     def __init__(__self__, *,
-                 addresses: Sequence[str],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 type: str,
-                 vcn_addresses: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult']):
-        """
-        :param Sequence[str] addresses: A private IP address or CIDR IP address range.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        :param str type: Type of NetworkAddressList.
-        :param Sequence['GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs'] vcn_addresses: A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
-        """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vcn_addresses", vcn_addresses)
+                 addresses: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 type: Optional[str] = None,
+                 vcn_addresses: Optional[Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult']] = None):
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if vcn_addresses is not None:
+            pulumi.set(__self__, "vcn_addresses", vcn_addresses)
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence[str]:
-        """
-        A private IP address or CIDR IP address range.
-        """
+    def addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of NetworkAddressList.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcnAddresses")
-    def vcn_addresses(self) -> Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult']:
-        """
-        A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
-        """
+    def vcn_addresses(self) -> Optional[Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult']]:
         return pulumi.get(self, "vcn_addresses")
 
 
 @pulumi.output_type
 class GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult(dict):
     def __init__(__self__, *,
-                 addresses: str,
-                 vcn_id: str):
-        """
-        :param str addresses: A private IP address or CIDR IP address range.
-        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 addresses: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter
-    def addresses(self) -> str:
-        """
-        A private IP address or CIDR IP address range.
-        """
+    def addresses(self) -> Optional[str]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -2127,164 +1549,119 @@ class GetProtectionCapabilitiesFilterResult(dict):
 @pulumi.output_type
 class GetProtectionCapabilitiesProtectionCapabilityCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult']):
-        """
-        :param Sequence['GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs'] items: List of protection capabilities.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult']:
-        """
-        List of protection capabilities.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult(dict):
     def __init__(__self__, *,
-                 collaborative_action_threshold: int,
-                 collaborative_weights: Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult'],
-                 description: str,
-                 display_name: str,
-                 group_tags: Sequence[str],
-                 is_latest_version: bool,
-                 key: str,
-                 type: str,
-                 version: int):
-        """
-        :param int collaborative_action_threshold: The default collaborative action threshold for OCI-managed collaborative protection capability. Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities (referred to as `contributing capabilities` later on) which have weights assigned to them. These weights can be found in the `collaborativeWeights` array. For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered contributing capabilities weights is calculated. Only if this sum is greater than or equal to `collaborativeActionThreshold` is the incoming/outgoing HTTP message marked as malicious.
-        :param Sequence['GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightArgs'] collaborative_weights: The weights of contributing capabilities. Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
-        :param str description: The description of protection capability.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence[str] group_tags: The list of unique names protection capability group tags that are associated with this capability. Example: ["PCI", "Recommended"]
-        :param bool is_latest_version: A filter to return only resources that matches given isLatestVersion.
-        :param str key: The unique key of protection capability to filter by.
-        :param str type: A filter to return only resources that matches given type.
-        :param int version: The version of protection capability.
-        """
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "group_tags", group_tags)
-        pulumi.set(__self__, "is_latest_version", is_latest_version)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+                 collaborative_action_threshold: Optional[int] = None,
+                 collaborative_weights: Optional[Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult']] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 group_tags: Optional[Sequence[str]] = None,
+                 is_latest_version: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 type: Optional[str] = None,
+                 version: Optional[int] = None):
+        if collaborative_action_threshold is not None:
+            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+        if collaborative_weights is not None:
+            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if group_tags is not None:
+            pulumi.set(__self__, "group_tags", group_tags)
+        if is_latest_version is not None:
+            pulumi.set(__self__, "is_latest_version", is_latest_version)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> int:
-        """
-        The default collaborative action threshold for OCI-managed collaborative protection capability. Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities (referred to as `contributing capabilities` later on) which have weights assigned to them. These weights can be found in the `collaborativeWeights` array. For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered contributing capabilities weights is calculated. Only if this sum is greater than or equal to `collaborativeActionThreshold` is the incoming/outgoing HTTP message marked as malicious.
-        """
+    def collaborative_action_threshold(self) -> Optional[int]:
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult']:
-        """
-        The weights of contributing capabilities. Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
-        """
+    def collaborative_weights(self) -> Optional[Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult']]:
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of protection capability.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="groupTags")
-    def group_tags(self) -> Sequence[str]:
-        """
-        The list of unique names protection capability group tags that are associated with this capability. Example: ["PCI", "Recommended"]
-        """
+    def group_tags(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "group_tags")
 
     @property
     @pulumi.getter(name="isLatestVersion")
-    def is_latest_version(self) -> bool:
-        """
-        A filter to return only resources that matches given isLatestVersion.
-        """
+    def is_latest_version(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest_version")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key of protection capability to filter by.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        A filter to return only resources that matches given type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        The version of protection capability.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 key: str,
-                 weight: int):
-        """
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str key: The unique key of protection capability to filter by.
-        :param int weight: The weight of contributing protection capability.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+                 display_name: Optional[str] = None,
+                 key: Optional[str] = None,
+                 weight: Optional[int] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key of protection capability to filter by.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def weight(self) -> int:
-        """
-        The weight of contributing protection capability.
-        """
+    def weight(self) -> Optional[int]:
         return pulumi.get(self, "weight")
 
 
@@ -2294,9 +1671,6 @@ class GetProtectionCapabilityGroupTagsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2305,9 +1679,6 @@ class GetProtectionCapabilityGroupTagsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2324,36 +1695,26 @@ class GetProtectionCapabilityGroupTagsFilterResult(dict):
 @pulumi.output_type
 class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult']):
-        """
-        :param Sequence['GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs'] items: List of protection capabilities group tags.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult']:
-        """
-        List of protection capabilities group tags.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult(dict):
     def __init__(__self__, *,
-                 name: str):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
-        pulumi.set(__self__, "name", name)
+                 name: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -2363,9 +1724,6 @@ class GetWebAppFirewallPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Rule name. Must be unique within the module.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2374,9 +1732,6 @@ class GetWebAppFirewallPoliciesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2393,2379 +1748,1710 @@ class GetWebAppFirewallPoliciesFilterResult(dict):
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 actions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult'],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 request_access_controls: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult'],
-                 request_protections: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult'],
-                 request_rate_limitings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult'],
-                 response_access_controls: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult'],
-                 response_protections: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs'] actions: Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs'] request_access_controls: Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionArgs'] request_protections: Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingArgs'] request_rate_limitings: Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs'] response_access_controls: Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs'] response_protections: Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "request_access_controls", request_access_controls)
-        pulumi.set(__self__, "request_protections", request_protections)
-        pulumi.set(__self__, "request_rate_limitings", request_rate_limitings)
-        pulumi.set(__self__, "response_access_controls", response_access_controls)
-        pulumi.set(__self__, "response_protections", response_protections)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 actions: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 request_access_controls: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult']] = None,
+                 request_protections: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult']] = None,
+                 request_rate_limitings: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult']] = None,
+                 response_access_controls: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult']] = None,
+                 response_protections: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if request_access_controls is not None:
+            pulumi.set(__self__, "request_access_controls", request_access_controls)
+        if request_protections is not None:
+            pulumi.set(__self__, "request_protections", request_protections)
+        if request_rate_limitings is not None:
+            pulumi.set(__self__, "request_rate_limitings", request_rate_limitings)
+        if response_access_controls is not None:
+            pulumi.set(__self__, "response_access_controls", response_access_controls)
+        if response_protections is not None:
+            pulumi.set(__self__, "response_protections", response_protections)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult']:
-        """
-        Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="requestAccessControls")
-    def request_access_controls(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult']:
-        """
-        Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        """
+    def request_access_controls(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult']]:
         return pulumi.get(self, "request_access_controls")
 
     @property
     @pulumi.getter(name="requestProtections")
-    def request_protections(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult']:
-        """
-        Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        """
+    def request_protections(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult']]:
         return pulumi.get(self, "request_protections")
 
     @property
     @pulumi.getter(name="requestRateLimitings")
-    def request_rate_limitings(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult']:
-        """
-        Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        """
+    def request_rate_limitings(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult']]:
         return pulumi.get(self, "request_rate_limitings")
 
     @property
     @pulumi.getter(name="responseAccessControls")
-    def response_access_controls(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult']:
-        """
-        Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        """
+    def response_access_controls(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult']]:
         return pulumi.get(self, "response_access_controls")
 
     @property
     @pulumi.getter(name="responseProtections")
-    def response_protections(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult']:
-        """
-        Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        """
+    def response_protections(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult']]:
         return pulumi.get(self, "response_protections")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources that match the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult(dict):
     def __init__(__self__, *,
-                 bodies: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult'],
-                 code: int,
-                 headers: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult'],
-                 name: str,
-                 type: str):
-        """
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyArgs'] bodies: Type of returned HTTP response body.
-        :param int code: Response code.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderArgs'] headers: Adds headers defined in this array for HTTP response.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "bodies", bodies)
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 bodies: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult']] = None,
+                 code: Optional[int] = None,
+                 headers: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult']] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if bodies is not None:
+            pulumi.set(__self__, "bodies", bodies)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def bodies(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult']:
-        """
-        Type of returned HTTP response body.
-        """
+    def bodies(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult']]:
         return pulumi.get(self, "bodies")
 
     @property
     @pulumi.getter
-    def code(self) -> int:
-        """
-        Response code.
-        """
+    def code(self) -> Optional[int]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def headers(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult']:
-        """
-        Adds headers defined in this array for HTTP response.
-        """
+    def headers(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult']]:
         return pulumi.get(self, "headers")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult(dict):
     def __init__(__self__, *,
-                 text: str,
-                 type: str):
-        """
-        :param str text: Static response body text.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "type", type)
+                 text: Optional[str] = None,
+                 type: Optional[str] = None):
+        if text is not None:
+            pulumi.set(__self__, "text", text)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def text(self) -> str:
-        """
-        Static response body text.
-        """
+    def text(self) -> Optional[str]:
         return pulumi.get(self, "text")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: Rule name. Must be unique within the module.
-        :param str value: The value of the header field.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the header field.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult(dict):
     def __init__(__self__, *,
-                 default_action_name: str,
-                 rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult']):
-        """
-        :param str default_action_name: References an default Action to take if no AccessControlRule was matched. Allowed action types:
-               * **ALLOW** continues execution of other modules and their rules.
-               * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "default_action_name", default_action_name)
-        pulumi.set(__self__, "rules", rules)
+                 default_action_name: Optional[str] = None,
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult']] = None):
+        if default_action_name is not None:
+            pulumi.set(__self__, "default_action_name", default_action_name)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="defaultActionName")
-    def default_action_name(self) -> str:
-        """
-        References an default Action to take if no AccessControlRule was matched. Allowed action types:
-        * **ALLOW** continues execution of other modules and their rules.
-        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        """
+    def default_action_name(self) -> Optional[str]:
         return pulumi.get(self, "default_action_name")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 name: str,
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult(dict):
     def __init__(__self__, *,
-                 body_inspection_size_limit_exceeded_action_name: str,
-                 body_inspection_size_limit_in_bytes: int,
-                 rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult']):
-        """
-        :param str body_inspection_size_limit_exceeded_action_name: References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
-        :param int body_inspection_size_limit_in_bytes: Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
-        pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
-        pulumi.set(__self__, "rules", rules)
+                 body_inspection_size_limit_exceeded_action_name: Optional[str] = None,
+                 body_inspection_size_limit_in_bytes: Optional[int] = None,
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult']] = None):
+        if body_inspection_size_limit_exceeded_action_name is not None:
+            pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
+        if body_inspection_size_limit_in_bytes is not None:
+            pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
-    def body_inspection_size_limit_exceeded_action_name(self) -> str:
-        """
-        References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
-        """
+    def body_inspection_size_limit_exceeded_action_name(self) -> Optional[str]:
         return pulumi.get(self, "body_inspection_size_limit_exceeded_action_name")
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitInBytes")
-    def body_inspection_size_limit_in_bytes(self) -> int:
-        """
-        Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
-        """
+    def body_inspection_size_limit_in_bytes(self) -> Optional[int]:
         return pulumi.get(self, "body_inspection_size_limit_in_bytes")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 is_body_inspection_enabled: bool,
-                 name: str,
-                 protection_capabilities: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult'],
-                 protection_capability_settings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult'],
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param bool is_body_inspection_enabled: Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        :param str name: Rule name. Must be unique within the module.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityArgs'] protection_capabilities: An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 is_body_inspection_enabled: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 protection_capabilities: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult']] = None,
+                 protection_capability_settings: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult']] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if is_body_inspection_enabled is not None:
+            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if protection_capabilities is not None:
+            pulumi.set(__self__, "protection_capabilities", protection_capabilities)
+        if protection_capability_settings is not None:
+            pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter(name="isBodyInspectionEnabled")
-    def is_body_inspection_enabled(self) -> bool:
-        """
-        Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        """
+    def is_body_inspection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilities")
-    def protection_capabilities(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult']:
-        """
-        An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        """
+    def protection_capabilities(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult']]:
         return pulumi.get(self, "protection_capabilities")
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
-    def protection_capability_settings(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult']:
-        """
-        Settings for protection capabilities
-        """
+    def protection_capability_settings(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult']]:
         return pulumi.get(self, "protection_capability_settings")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 collaborative_action_threshold: int,
-                 collaborative_weights: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
-                 exclusions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult'],
-                 key: str,
-                 version: int):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        :param str key: Unique key of referenced protection capability.
-        :param int version: Version of referenced protection capability.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+                 action_name: Optional[str] = None,
+                 collaborative_action_threshold: Optional[int] = None,
+                 collaborative_weights: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult']] = None,
+                 exclusions: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult']] = None,
+                 key: Optional[str] = None,
+                 version: Optional[int] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if collaborative_action_threshold is not None:
+            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+        if collaborative_weights is not None:
+            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+        if exclusions is not None:
+            pulumi.set(__self__, "exclusions", exclusions)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> int:
-        """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        """
+    def collaborative_action_threshold(self) -> Optional[int]:
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult']:
-        """
-        Explicit weight values to use for associated collaborative protection capabilities.
-        """
+    def collaborative_weights(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult']]:
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
-    def exclusions(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult']:
-        """
-        Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
+    def exclusions(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult']]:
         return pulumi.get(self, "exclusions")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        Version of referenced protection capability.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 weight: int):
-        """
-        :param str key: Unique key of referenced protection capability.
-        :param int weight: The value of weight to set.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+                 key: Optional[str] = None,
+                 weight: Optional[int] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def weight(self) -> int:
-        """
-        The value of weight to set.
-        """
+    def weight(self) -> Optional[int]:
         return pulumi.get(self, "weight")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult(dict):
     def __init__(__self__, *,
-                 args: Sequence[str],
-                 request_cookies: Sequence[str]):
-        """
-        :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+                 args: Optional[Sequence[str]] = None,
+                 request_cookies: Optional[Sequence[str]] = None):
+        if args is not None:
+            pulumi.set(__self__, "args", args)
+        if request_cookies is not None:
+            pulumi.set(__self__, "request_cookies", request_cookies)
 
     @property
     @pulumi.getter
-    def args(self) -> Sequence[str]:
-        """
-        List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        """
+    def args(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "args")
 
     @property
     @pulumi.getter(name="requestCookies")
-    def request_cookies(self) -> Sequence[str]:
-        """
-        List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
+    def request_cookies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "request_cookies")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult(dict):
     def __init__(__self__, *,
-                 allowed_http_methods: Sequence[str],
-                 max_http_request_header_length: int,
-                 max_http_request_headers: int,
-                 max_number_of_arguments: int,
-                 max_single_argument_length: int,
-                 max_total_argument_length: int):
-        """
-        :param Sequence[str] allowed_http_methods: List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        :param int max_http_request_header_length: Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        :param int max_http_request_headers: Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        :param int max_number_of_arguments: Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+                 allowed_http_methods: Optional[Sequence[str]] = None,
+                 max_http_request_header_length: Optional[int] = None,
+                 max_http_request_headers: Optional[int] = None,
+                 max_number_of_arguments: Optional[int] = None,
+                 max_single_argument_length: Optional[int] = None,
+                 max_total_argument_length: Optional[int] = None):
+        if allowed_http_methods is not None:
+            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+        if max_http_request_header_length is not None:
+            pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
+        if max_http_request_headers is not None:
+            pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
+        if max_number_of_arguments is not None:
+            pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
+        if max_single_argument_length is not None:
+            pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
+        if max_total_argument_length is not None:
+            pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Sequence[str]:
-        """
-        List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        """
+    def allowed_http_methods(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_http_methods")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
-    def max_http_request_header_length(self) -> int:
-        """
-        Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        """
+    def max_http_request_header_length(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_header_length")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaders")
-    def max_http_request_headers(self) -> int:
-        """
-        Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        """
+    def max_http_request_headers(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_headers")
 
     @property
     @pulumi.getter(name="maxNumberOfArguments")
-    def max_number_of_arguments(self) -> int:
-        """
-        Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        """
+    def max_number_of_arguments(self) -> Optional[int]:
         return pulumi.get(self, "max_number_of_arguments")
 
     @property
     @pulumi.getter(name="maxSingleArgumentLength")
-    def max_single_argument_length(self) -> int:
-        """
-        Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        """
+    def max_single_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_single_argument_length")
 
     @property
     @pulumi.getter(name="maxTotalArgumentLength")
-    def max_total_argument_length(self) -> int:
-        """
-        Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
+    def max_total_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_total_argument_length")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult(dict):
     def __init__(__self__, *,
-                 rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult']):
-        """
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "rules", rules)
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 configurations: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult'],
-                 name: str,
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationArgs'] configurations: Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult']] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult']:
-        """
-        Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult(dict):
     def __init__(__self__, *,
-                 action_duration_in_seconds: int,
-                 period_in_seconds: int,
-                 requests_limit: int):
-        """
-        :param int action_duration_in_seconds: Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
-        :param int period_in_seconds: Evaluation period in seconds.
-        :param int requests_limit: Requests allowed per evaluation period.
-        """
-        pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
-        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
-        pulumi.set(__self__, "requests_limit", requests_limit)
+                 action_duration_in_seconds: Optional[int] = None,
+                 period_in_seconds: Optional[int] = None,
+                 requests_limit: Optional[int] = None):
+        if action_duration_in_seconds is not None:
+            pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
+        if period_in_seconds is not None:
+            pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+        if requests_limit is not None:
+            pulumi.set(__self__, "requests_limit", requests_limit)
 
     @property
     @pulumi.getter(name="actionDurationInSeconds")
-    def action_duration_in_seconds(self) -> int:
-        """
-        Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
-        """
+    def action_duration_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "action_duration_in_seconds")
 
     @property
     @pulumi.getter(name="periodInSeconds")
-    def period_in_seconds(self) -> int:
-        """
-        Evaluation period in seconds.
-        """
+    def period_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "period_in_seconds")
 
     @property
     @pulumi.getter(name="requestsLimit")
-    def requests_limit(self) -> int:
-        """
-        Requests allowed per evaluation period.
-        """
+    def requests_limit(self) -> Optional[int]:
         return pulumi.get(self, "requests_limit")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult(dict):
     def __init__(__self__, *,
-                 rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult']):
-        """
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "rules", rules)
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 name: str,
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult(dict):
     def __init__(__self__, *,
-                 rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult']):
-        """
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "rules", rules)
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 is_body_inspection_enabled: bool,
-                 name: str,
-                 protection_capabilities: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult'],
-                 protection_capability_settings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult'],
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param bool is_body_inspection_enabled: Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        :param str name: Rule name. Must be unique within the module.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityArgs'] protection_capabilities: An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 is_body_inspection_enabled: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 protection_capabilities: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult']] = None,
+                 protection_capability_settings: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult']] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if is_body_inspection_enabled is not None:
+            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if protection_capabilities is not None:
+            pulumi.set(__self__, "protection_capabilities", protection_capabilities)
+        if protection_capability_settings is not None:
+            pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter(name="isBodyInspectionEnabled")
-    def is_body_inspection_enabled(self) -> bool:
-        """
-        Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        """
+    def is_body_inspection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilities")
-    def protection_capabilities(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult']:
-        """
-        An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        """
+    def protection_capabilities(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult']]:
         return pulumi.get(self, "protection_capabilities")
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
-    def protection_capability_settings(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult']:
-        """
-        Settings for protection capabilities
-        """
+    def protection_capability_settings(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult']]:
         return pulumi.get(self, "protection_capability_settings")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 collaborative_action_threshold: int,
-                 collaborative_weights: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
-                 exclusions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult'],
-                 key: str,
-                 version: int):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
-        :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        :param str key: Unique key of referenced protection capability.
-        :param int version: Version of referenced protection capability.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+                 action_name: Optional[str] = None,
+                 collaborative_action_threshold: Optional[int] = None,
+                 collaborative_weights: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult']] = None,
+                 exclusions: Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult']] = None,
+                 key: Optional[str] = None,
+                 version: Optional[int] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if collaborative_action_threshold is not None:
+            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+        if collaborative_weights is not None:
+            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+        if exclusions is not None:
+            pulumi.set(__self__, "exclusions", exclusions)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> int:
-        """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        """
+    def collaborative_action_threshold(self) -> Optional[int]:
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult']:
-        """
-        Explicit weight values to use for associated collaborative protection capabilities.
-        """
+    def collaborative_weights(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult']]:
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
-    def exclusions(self) -> Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult']:
-        """
-        Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
+    def exclusions(self) -> Optional[Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult']]:
         return pulumi.get(self, "exclusions")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        Version of referenced protection capability.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 weight: int):
-        """
-        :param str key: Unique key of referenced protection capability.
-        :param int weight: The value of weight to set.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+                 key: Optional[str] = None,
+                 weight: Optional[int] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def weight(self) -> int:
-        """
-        The value of weight to set.
-        """
+    def weight(self) -> Optional[int]:
         return pulumi.get(self, "weight")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult(dict):
     def __init__(__self__, *,
-                 args: Sequence[str],
-                 request_cookies: Sequence[str]):
-        """
-        :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+                 args: Optional[Sequence[str]] = None,
+                 request_cookies: Optional[Sequence[str]] = None):
+        if args is not None:
+            pulumi.set(__self__, "args", args)
+        if request_cookies is not None:
+            pulumi.set(__self__, "request_cookies", request_cookies)
 
     @property
     @pulumi.getter
-    def args(self) -> Sequence[str]:
-        """
-        List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        """
+    def args(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "args")
 
     @property
     @pulumi.getter(name="requestCookies")
-    def request_cookies(self) -> Sequence[str]:
-        """
-        List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
+    def request_cookies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "request_cookies")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult(dict):
     def __init__(__self__, *,
-                 allowed_http_methods: Sequence[str],
-                 max_http_request_header_length: int,
-                 max_http_request_headers: int,
-                 max_number_of_arguments: int,
-                 max_single_argument_length: int,
-                 max_total_argument_length: int):
-        """
-        :param Sequence[str] allowed_http_methods: List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        :param int max_http_request_header_length: Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        :param int max_http_request_headers: Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        :param int max_number_of_arguments: Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+                 allowed_http_methods: Optional[Sequence[str]] = None,
+                 max_http_request_header_length: Optional[int] = None,
+                 max_http_request_headers: Optional[int] = None,
+                 max_number_of_arguments: Optional[int] = None,
+                 max_single_argument_length: Optional[int] = None,
+                 max_total_argument_length: Optional[int] = None):
+        if allowed_http_methods is not None:
+            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+        if max_http_request_header_length is not None:
+            pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
+        if max_http_request_headers is not None:
+            pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
+        if max_number_of_arguments is not None:
+            pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
+        if max_single_argument_length is not None:
+            pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
+        if max_total_argument_length is not None:
+            pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Sequence[str]:
-        """
-        List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        """
+    def allowed_http_methods(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_http_methods")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
-    def max_http_request_header_length(self) -> int:
-        """
-        Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        """
+    def max_http_request_header_length(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_header_length")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaders")
-    def max_http_request_headers(self) -> int:
-        """
-        Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        """
+    def max_http_request_headers(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_headers")
 
     @property
     @pulumi.getter(name="maxNumberOfArguments")
-    def max_number_of_arguments(self) -> int:
-        """
-        Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        """
+    def max_number_of_arguments(self) -> Optional[int]:
         return pulumi.get(self, "max_number_of_arguments")
 
     @property
     @pulumi.getter(name="maxSingleArgumentLength")
-    def max_single_argument_length(self) -> int:
-        """
-        Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        """
+    def max_single_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_single_argument_length")
 
     @property
     @pulumi.getter(name="maxTotalArgumentLength")
-    def max_total_argument_length(self) -> int:
-        """
-        Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
+    def max_total_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_total_argument_length")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyActionResult(dict):
     def __init__(__self__, *,
-                 bodies: Sequence['outputs.GetWebAppFirewallPolicyActionBodyResult'],
-                 code: int,
-                 headers: Sequence['outputs.GetWebAppFirewallPolicyActionHeaderResult'],
-                 name: str,
-                 type: str):
-        """
-        :param Sequence['GetWebAppFirewallPolicyActionBodyArgs'] bodies: Type of returned HTTP response body.
-        :param int code: Response code.
-        :param Sequence['GetWebAppFirewallPolicyActionHeaderArgs'] headers: Adds headers defined in this array for HTTP response.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "bodies", bodies)
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 bodies: Optional[Sequence['outputs.GetWebAppFirewallPolicyActionBodyResult']] = None,
+                 code: Optional[int] = None,
+                 headers: Optional[Sequence['outputs.GetWebAppFirewallPolicyActionHeaderResult']] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if bodies is not None:
+            pulumi.set(__self__, "bodies", bodies)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def bodies(self) -> Sequence['outputs.GetWebAppFirewallPolicyActionBodyResult']:
-        """
-        Type of returned HTTP response body.
-        """
+    def bodies(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyActionBodyResult']]:
         return pulumi.get(self, "bodies")
 
     @property
     @pulumi.getter
-    def code(self) -> int:
-        """
-        Response code.
-        """
+    def code(self) -> Optional[int]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def headers(self) -> Sequence['outputs.GetWebAppFirewallPolicyActionHeaderResult']:
-        """
-        Adds headers defined in this array for HTTP response.
-        """
+    def headers(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyActionHeaderResult']]:
         return pulumi.get(self, "headers")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyActionBodyResult(dict):
     def __init__(__self__, *,
-                 text: str,
-                 type: str):
-        """
-        :param str text: Static response body text.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "type", type)
+                 text: Optional[str] = None,
+                 type: Optional[str] = None):
+        if text is not None:
+            pulumi.set(__self__, "text", text)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def text(self) -> str:
-        """
-        Static response body text.
-        """
+    def text(self) -> Optional[str]:
         return pulumi.get(self, "text")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyActionHeaderResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: Rule name. Must be unique within the module.
-        :param str value: The value of the header field.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the header field.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestAccessControlResult(dict):
     def __init__(__self__, *,
-                 default_action_name: str,
-                 rules: Sequence['outputs.GetWebAppFirewallPolicyRequestAccessControlRuleResult']):
-        """
-        :param str default_action_name: References an default Action to take if no AccessControlRule was matched. Allowed action types:
-               * **ALLOW** continues execution of other modules and their rules.
-               * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        :param Sequence['GetWebAppFirewallPolicyRequestAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "default_action_name", default_action_name)
-        pulumi.set(__self__, "rules", rules)
+                 default_action_name: Optional[str] = None,
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestAccessControlRuleResult']] = None):
+        if default_action_name is not None:
+            pulumi.set(__self__, "default_action_name", default_action_name)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="defaultActionName")
-    def default_action_name(self) -> str:
-        """
-        References an default Action to take if no AccessControlRule was matched. Allowed action types:
-        * **ALLOW** continues execution of other modules and their rules.
-        * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
-        """
+    def default_action_name(self) -> Optional[str]:
         return pulumi.get(self, "default_action_name")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestAccessControlRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestAccessControlRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestAccessControlRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 name: str,
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestProtectionResult(dict):
     def __init__(__self__, *,
-                 body_inspection_size_limit_exceeded_action_name: str,
-                 body_inspection_size_limit_in_bytes: int,
-                 rules: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult']):
-        """
-        :param str body_inspection_size_limit_exceeded_action_name: References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
-        :param int body_inspection_size_limit_in_bytes: Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
-        :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
-        pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
-        pulumi.set(__self__, "rules", rules)
+                 body_inspection_size_limit_exceeded_action_name: Optional[str] = None,
+                 body_inspection_size_limit_in_bytes: Optional[int] = None,
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult']] = None):
+        if body_inspection_size_limit_exceeded_action_name is not None:
+            pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
+        if body_inspection_size_limit_in_bytes is not None:
+            pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
-    def body_inspection_size_limit_exceeded_action_name(self) -> str:
-        """
-        References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
-        """
+    def body_inspection_size_limit_exceeded_action_name(self) -> Optional[str]:
         return pulumi.get(self, "body_inspection_size_limit_exceeded_action_name")
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitInBytes")
-    def body_inspection_size_limit_in_bytes(self) -> int:
-        """
-        Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
-        """
+    def body_inspection_size_limit_in_bytes(self) -> Optional[int]:
         return pulumi.get(self, "body_inspection_size_limit_in_bytes")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestProtectionRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 is_body_inspection_enabled: bool,
-                 name: str,
-                 protection_capabilities: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult'],
-                 protection_capability_settings: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult'],
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param bool is_body_inspection_enabled: Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        :param str name: Rule name. Must be unique within the module.
-        :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs'] protection_capabilities: An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 is_body_inspection_enabled: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 protection_capabilities: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult']] = None,
+                 protection_capability_settings: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult']] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if is_body_inspection_enabled is not None:
+            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if protection_capabilities is not None:
+            pulumi.set(__self__, "protection_capabilities", protection_capabilities)
+        if protection_capability_settings is not None:
+            pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter(name="isBodyInspectionEnabled")
-    def is_body_inspection_enabled(self) -> bool:
-        """
-        Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        """
+    def is_body_inspection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilities")
-    def protection_capabilities(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult']:
-        """
-        An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        """
+    def protection_capabilities(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult']]:
         return pulumi.get(self, "protection_capabilities")
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
-    def protection_capability_settings(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult']:
-        """
-        Settings for protection capabilities
-        """
+    def protection_capability_settings(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult']]:
         return pulumi.get(self, "protection_capability_settings")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 collaborative_action_threshold: int,
-                 collaborative_weights: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
-                 exclusions: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult'],
-                 key: str,
-                 version: int):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
-        :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        :param str key: Unique key of referenced protection capability.
-        :param int version: Version of referenced protection capability.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+                 action_name: Optional[str] = None,
+                 collaborative_action_threshold: Optional[int] = None,
+                 collaborative_weights: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult']] = None,
+                 exclusions: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult']] = None,
+                 key: Optional[str] = None,
+                 version: Optional[int] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if collaborative_action_threshold is not None:
+            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+        if collaborative_weights is not None:
+            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+        if exclusions is not None:
+            pulumi.set(__self__, "exclusions", exclusions)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> int:
-        """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        """
+    def collaborative_action_threshold(self) -> Optional[int]:
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult']:
-        """
-        Explicit weight values to use for associated collaborative protection capabilities.
-        """
+    def collaborative_weights(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult']]:
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
-    def exclusions(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult']:
-        """
-        Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
+    def exclusions(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult']]:
         return pulumi.get(self, "exclusions")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        Version of referenced protection capability.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 weight: int):
-        """
-        :param str key: Unique key of referenced protection capability.
-        :param int weight: The value of weight to set.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+                 key: Optional[str] = None,
+                 weight: Optional[int] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def weight(self) -> int:
-        """
-        The value of weight to set.
-        """
+    def weight(self) -> Optional[int]:
         return pulumi.get(self, "weight")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult(dict):
     def __init__(__self__, *,
-                 args: Sequence[str],
-                 request_cookies: Sequence[str]):
-        """
-        :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+                 args: Optional[Sequence[str]] = None,
+                 request_cookies: Optional[Sequence[str]] = None):
+        if args is not None:
+            pulumi.set(__self__, "args", args)
+        if request_cookies is not None:
+            pulumi.set(__self__, "request_cookies", request_cookies)
 
     @property
     @pulumi.getter
-    def args(self) -> Sequence[str]:
-        """
-        List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        """
+    def args(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "args")
 
     @property
     @pulumi.getter(name="requestCookies")
-    def request_cookies(self) -> Sequence[str]:
-        """
-        List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
+    def request_cookies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "request_cookies")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult(dict):
     def __init__(__self__, *,
-                 allowed_http_methods: Sequence[str],
-                 max_http_request_header_length: int,
-                 max_http_request_headers: int,
-                 max_number_of_arguments: int,
-                 max_single_argument_length: int,
-                 max_total_argument_length: int):
-        """
-        :param Sequence[str] allowed_http_methods: List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        :param int max_http_request_header_length: Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        :param int max_http_request_headers: Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        :param int max_number_of_arguments: Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+                 allowed_http_methods: Optional[Sequence[str]] = None,
+                 max_http_request_header_length: Optional[int] = None,
+                 max_http_request_headers: Optional[int] = None,
+                 max_number_of_arguments: Optional[int] = None,
+                 max_single_argument_length: Optional[int] = None,
+                 max_total_argument_length: Optional[int] = None):
+        if allowed_http_methods is not None:
+            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+        if max_http_request_header_length is not None:
+            pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
+        if max_http_request_headers is not None:
+            pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
+        if max_number_of_arguments is not None:
+            pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
+        if max_single_argument_length is not None:
+            pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
+        if max_total_argument_length is not None:
+            pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Sequence[str]:
-        """
-        List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        """
+    def allowed_http_methods(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_http_methods")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
-    def max_http_request_header_length(self) -> int:
-        """
-        Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        """
+    def max_http_request_header_length(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_header_length")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaders")
-    def max_http_request_headers(self) -> int:
-        """
-        Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        """
+    def max_http_request_headers(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_headers")
 
     @property
     @pulumi.getter(name="maxNumberOfArguments")
-    def max_number_of_arguments(self) -> int:
-        """
-        Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        """
+    def max_number_of_arguments(self) -> Optional[int]:
         return pulumi.get(self, "max_number_of_arguments")
 
     @property
     @pulumi.getter(name="maxSingleArgumentLength")
-    def max_single_argument_length(self) -> int:
-        """
-        Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        """
+    def max_single_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_single_argument_length")
 
     @property
     @pulumi.getter(name="maxTotalArgumentLength")
-    def max_total_argument_length(self) -> int:
-        """
-        Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
+    def max_total_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_total_argument_length")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestRateLimitingResult(dict):
     def __init__(__self__, *,
-                 rules: Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleResult']):
-        """
-        :param Sequence['GetWebAppFirewallPolicyRequestRateLimitingRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "rules", rules)
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleResult']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestRateLimitingRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 configurations: Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult'],
-                 name: str,
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param Sequence['GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationArgs'] configurations: Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult']] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult']:
-        """
-        Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult(dict):
     def __init__(__self__, *,
-                 action_duration_in_seconds: int,
-                 period_in_seconds: int,
-                 requests_limit: int):
-        """
-        :param int action_duration_in_seconds: Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
-        :param int period_in_seconds: Evaluation period in seconds.
-        :param int requests_limit: Requests allowed per evaluation period.
-        """
-        pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
-        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
-        pulumi.set(__self__, "requests_limit", requests_limit)
+                 action_duration_in_seconds: Optional[int] = None,
+                 period_in_seconds: Optional[int] = None,
+                 requests_limit: Optional[int] = None):
+        if action_duration_in_seconds is not None:
+            pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
+        if period_in_seconds is not None:
+            pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+        if requests_limit is not None:
+            pulumi.set(__self__, "requests_limit", requests_limit)
 
     @property
     @pulumi.getter(name="actionDurationInSeconds")
-    def action_duration_in_seconds(self) -> int:
-        """
-        Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
-        """
+    def action_duration_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "action_duration_in_seconds")
 
     @property
     @pulumi.getter(name="periodInSeconds")
-    def period_in_seconds(self) -> int:
-        """
-        Evaluation period in seconds.
-        """
+    def period_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "period_in_seconds")
 
     @property
     @pulumi.getter(name="requestsLimit")
-    def requests_limit(self) -> int:
-        """
-        Requests allowed per evaluation period.
-        """
+    def requests_limit(self) -> Optional[int]:
         return pulumi.get(self, "requests_limit")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseAccessControlResult(dict):
     def __init__(__self__, *,
-                 rules: Sequence['outputs.GetWebAppFirewallPolicyResponseAccessControlRuleResult']):
-        """
-        :param Sequence['GetWebAppFirewallPolicyResponseAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "rules", rules)
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseAccessControlRuleResult']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPolicyResponseAccessControlRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseAccessControlRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseAccessControlRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 name: str,
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param str name: Rule name. Must be unique within the module.
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseProtectionResult(dict):
     def __init__(__self__, *,
-                 rules: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleResult']):
-        """
-        :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
-        pulumi.set(__self__, "rules", rules)
+                 rules: Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleResult']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleResult']:
-        """
-        Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleResult']]:
         return pulumi.get(self, "rules")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseProtectionRuleResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 condition: str,
-                 condition_language: str,
-                 is_body_inspection_enabled: bool,
-                 name: str,
-                 protection_capabilities: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult'],
-                 protection_capability_settings: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult'],
-                 type: str):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param str condition: An expression that determines whether or not the rule action should be executed.
-        :param str condition_language: The language used to parse condition from field `condition`. Available languages:
-               * **JMESPATH** an extended JMESPath language syntax.
-        :param bool is_body_inspection_enabled: Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        :param str name: Rule name. Must be unique within the module.
-        :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs'] protection_capabilities: An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
-        :param str type: Type of WebAppFirewallPolicyRule.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+                 action_name: Optional[str] = None,
+                 condition: Optional[str] = None,
+                 condition_language: Optional[str] = None,
+                 is_body_inspection_enabled: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 protection_capabilities: Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult']] = None,
+                 protection_capability_settings: Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult']] = None,
+                 type: Optional[str] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_language is not None:
+            pulumi.set(__self__, "condition_language", condition_language)
+        if is_body_inspection_enabled is not None:
+            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if protection_capabilities is not None:
+            pulumi.set(__self__, "protection_capabilities", protection_capabilities)
+        if protection_capability_settings is not None:
+            pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
-        """
-        An expression that determines whether or not the rule action should be executed.
-        """
+    def condition(self) -> Optional[str]:
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="conditionLanguage")
-    def condition_language(self) -> str:
-        """
-        The language used to parse condition from field `condition`. Available languages:
-        * **JMESPATH** an extended JMESPath language syntax.
-        """
+    def condition_language(self) -> Optional[str]:
         return pulumi.get(self, "condition_language")
 
     @property
     @pulumi.getter(name="isBodyInspectionEnabled")
-    def is_body_inspection_enabled(self) -> bool:
-        """
-        Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
-        """
+    def is_body_inspection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_body_inspection_enabled")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Rule name. Must be unique within the module.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilities")
-    def protection_capabilities(self) -> Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult']:
-        """
-        An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
-        """
+    def protection_capabilities(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult']]:
         return pulumi.get(self, "protection_capabilities")
 
     @property
     @pulumi.getter(name="protectionCapabilitySettings")
-    def protection_capability_settings(self) -> Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult']:
-        """
-        Settings for protection capabilities
-        """
+    def protection_capability_settings(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult']]:
         return pulumi.get(self, "protection_capability_settings")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of WebAppFirewallPolicyRule.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult(dict):
     def __init__(__self__, *,
-                 action_name: str,
-                 collaborative_action_threshold: int,
-                 collaborative_weights: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
-                 exclusions: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult'],
-                 key: str,
-                 version: int):
-        """
-        :param str action_name: Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        :param int collaborative_action_threshold: The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: Explicit weight values to use for associated collaborative protection capabilities.
-        :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionArgs'] exclusions: Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        :param str key: Unique key of referenced protection capability.
-        :param int version: Version of referenced protection capability.
-        """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+                 action_name: Optional[str] = None,
+                 collaborative_action_threshold: Optional[int] = None,
+                 collaborative_weights: Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult']] = None,
+                 exclusions: Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult']] = None,
+                 key: Optional[str] = None,
+                 version: Optional[int] = None):
+        if action_name is not None:
+            pulumi.set(__self__, "action_name", action_name)
+        if collaborative_action_threshold is not None:
+            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+        if collaborative_weights is not None:
+            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+        if exclusions is not None:
+            pulumi.set(__self__, "exclusions", exclusions)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> str:
-        """
-        Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
-        """
+    def action_name(self) -> Optional[str]:
         return pulumi.get(self, "action_name")
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
-    def collaborative_action_threshold(self) -> int:
-        """
-        The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
-        """
+    def collaborative_action_threshold(self) -> Optional[int]:
         return pulumi.get(self, "collaborative_action_threshold")
 
     @property
     @pulumi.getter(name="collaborativeWeights")
-    def collaborative_weights(self) -> Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult']:
-        """
-        Explicit weight values to use for associated collaborative protection capabilities.
-        """
+    def collaborative_weights(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult']]:
         return pulumi.get(self, "collaborative_weights")
 
     @property
     @pulumi.getter
-    def exclusions(self) -> Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult']:
-        """
-        Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
-        """
+    def exclusions(self) -> Optional[Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult']]:
         return pulumi.get(self, "exclusions")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        Version of referenced protection capability.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 weight: int):
-        """
-        :param str key: Unique key of referenced protection capability.
-        :param int weight: The value of weight to set.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+                 key: Optional[str] = None,
+                 weight: Optional[int] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique key of referenced protection capability.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def weight(self) -> int:
-        """
-        The value of weight to set.
-        """
+    def weight(self) -> Optional[int]:
         return pulumi.get(self, "weight")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult(dict):
     def __init__(__self__, *,
-                 args: Sequence[str],
-                 request_cookies: Sequence[str]):
-        """
-        :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+                 args: Optional[Sequence[str]] = None,
+                 request_cookies: Optional[Sequence[str]] = None):
+        if args is not None:
+            pulumi.set(__self__, "args", args)
+        if request_cookies is not None:
+            pulumi.set(__self__, "request_cookies", request_cookies)
 
     @property
     @pulumi.getter
-    def args(self) -> Sequence[str]:
-        """
-        List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
-        """
+    def args(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "args")
 
     @property
     @pulumi.getter(name="requestCookies")
-    def request_cookies(self) -> Sequence[str]:
-        """
-        List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
-        """
+    def request_cookies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "request_cookies")
 
 
 @pulumi.output_type
 class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult(dict):
     def __init__(__self__, *,
-                 allowed_http_methods: Sequence[str],
-                 max_http_request_header_length: int,
-                 max_http_request_headers: int,
-                 max_number_of_arguments: int,
-                 max_single_argument_length: int,
-                 max_total_argument_length: int):
-        """
-        :param Sequence[str] allowed_http_methods: List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        :param int max_http_request_header_length: Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        :param int max_http_request_headers: Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        :param int max_number_of_arguments: Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+                 allowed_http_methods: Optional[Sequence[str]] = None,
+                 max_http_request_header_length: Optional[int] = None,
+                 max_http_request_headers: Optional[int] = None,
+                 max_number_of_arguments: Optional[int] = None,
+                 max_single_argument_length: Optional[int] = None,
+                 max_total_argument_length: Optional[int] = None):
+        if allowed_http_methods is not None:
+            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+        if max_http_request_header_length is not None:
+            pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
+        if max_http_request_headers is not None:
+            pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
+        if max_number_of_arguments is not None:
+            pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
+        if max_single_argument_length is not None:
+            pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
+        if max_total_argument_length is not None:
+            pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
-    def allowed_http_methods(self) -> Sequence[str]:
-        """
-        List of allowed HTTP methods. Each value as a RFC7230 formated token string. Used in protection capability 911100: Restrict HTTP Request Methods.
-        """
+    def allowed_http_methods(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "allowed_http_methods")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaderLength")
-    def max_http_request_header_length(self) -> int:
-        """
-        Maximum allowed length of headers in an HTTP request. Used in protection capability: 9200024: Limit length of request header size.
-        """
+    def max_http_request_header_length(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_header_length")
 
     @property
     @pulumi.getter(name="maxHttpRequestHeaders")
-    def max_http_request_headers(self) -> int:
-        """
-        Maximum number of headers allowed in an HTTP request. Used in protection capability 9200014: Limit Number of Request Headers.
-        """
+    def max_http_request_headers(self) -> Optional[int]:
         return pulumi.get(self, "max_http_request_headers")
 
     @property
     @pulumi.getter(name="maxNumberOfArguments")
-    def max_number_of_arguments(self) -> int:
-        """
-        Maximum number of arguments allowed. Used in protection capability 920380: Number of Arguments Limits.
-        """
+    def max_number_of_arguments(self) -> Optional[int]:
         return pulumi.get(self, "max_number_of_arguments")
 
     @property
     @pulumi.getter(name="maxSingleArgumentLength")
-    def max_single_argument_length(self) -> int:
-        """
-        Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
-        """
+    def max_single_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_single_argument_length")
 
     @property
     @pulumi.getter(name="maxTotalArgumentLength")
-    def max_total_argument_length(self) -> int:
-        """
-        Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
-        """
+    def max_total_argument_length(self) -> Optional[int]:
         return pulumi.get(self, "max_total_argument_length")
 
 

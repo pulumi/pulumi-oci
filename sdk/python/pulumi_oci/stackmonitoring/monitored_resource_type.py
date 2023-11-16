@@ -26,18 +26,6 @@ class MonitoredResourceTypeArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MonitoredResourceType resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A friendly description.
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource type display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MonitoredResourceTypeMetadataArgs'] metadata: (Updatable) The metadata details for resource type.
-        :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
-        :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -58,9 +46,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -70,9 +55,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -82,9 +64,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A friendly description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -94,9 +73,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Monitored resource type display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -106,9 +82,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -118,9 +91,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']]:
-        """
-        (Updatable) The metadata details for resource type.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -130,9 +100,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter(name="metricNamespace")
     def metric_namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Metric namespace for resource type.
-        """
         return pulumi.get(self, "metric_namespace")
 
     @metric_namespace.setter
@@ -142,13 +109,6 @@ class MonitoredResourceTypeArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -173,22 +133,6 @@ class _MonitoredResourceTypeState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceType resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A friendly description.
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource type display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MonitoredResourceTypeMetadataArgs'] metadata: (Updatable) The metadata details for resource type.
-        :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
-        :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Lifecycle state of the monitored resource type.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -218,9 +162,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -230,9 +171,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -242,9 +180,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A friendly description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -254,9 +189,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Monitored resource type display name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -266,9 +198,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -278,9 +207,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['MonitoredResourceTypeMetadataArgs']]:
-        """
-        (Updatable) The metadata details for resource type.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -290,9 +216,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="metricNamespace")
     def metric_namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Metric namespace for resource type.
-        """
         return pulumi.get(self, "metric_namespace")
 
     @metric_namespace.setter
@@ -302,13 +225,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -318,9 +234,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Lifecycle state of the monitored resource type.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -330,9 +243,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -342,9 +252,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -354,9 +261,6 @@ class _MonitoredResourceTypeState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -379,62 +283,9 @@ class MonitoredResourceType(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new monitored resource type.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resource_type = oci.stack_monitoring.MonitoredResourceType("testMonitoredResourceType",
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["monitored_resource_type_description"],
-            display_name=var["monitored_resource_type_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            metadata=oci.stack_monitoring.MonitoredResourceTypeMetadataArgs(
-                format=var["monitored_resource_type_metadata_format"],
-                agent_properties=var["monitored_resource_type_metadata_agent_properties"],
-                required_properties=var["monitored_resource_type_metadata_required_properties"],
-                unique_property_sets=[oci.stack_monitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs(
-                    properties=var["monitored_resource_type_metadata_unique_property_sets_properties"],
-                )],
-                valid_properties_for_creates=var["monitored_resource_type_metadata_valid_properties_for_create"],
-                valid_properties_for_updates=var["monitored_resource_type_metadata_valid_properties_for_update"],
-                valid_property_values=var["monitored_resource_type_metadata_valid_property_values"],
-            ),
-            metric_namespace=var["monitored_resource_type_metric_namespace"])
-        ```
-
-        ## Import
-
-        MonitoredResourceTypes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
-        ```
-
+        Create a MonitoredResourceType resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A friendly description.
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource type display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']] metadata: (Updatable) The metadata details for resource type.
-        :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
-        :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -443,48 +294,7 @@ class MonitoredResourceType(pulumi.CustomResource):
                  args: MonitoredResourceTypeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new monitored resource type.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resource_type = oci.stack_monitoring.MonitoredResourceType("testMonitoredResourceType",
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["monitored_resource_type_description"],
-            display_name=var["monitored_resource_type_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            metadata=oci.stack_monitoring.MonitoredResourceTypeMetadataArgs(
-                format=var["monitored_resource_type_metadata_format"],
-                agent_properties=var["monitored_resource_type_metadata_agent_properties"],
-                required_properties=var["monitored_resource_type_metadata_required_properties"],
-                unique_property_sets=[oci.stack_monitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs(
-                    properties=var["monitored_resource_type_metadata_unique_property_sets_properties"],
-                )],
-                valid_properties_for_creates=var["monitored_resource_type_metadata_valid_properties_for_create"],
-                valid_properties_for_updates=var["monitored_resource_type_metadata_valid_properties_for_update"],
-                valid_property_values=var["monitored_resource_type_metadata_valid_property_values"],
-            ),
-            metric_namespace=var["monitored_resource_type_metric_namespace"])
-        ```
-
-        ## Import
-
-        MonitoredResourceTypes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourceType:MonitoredResourceType test_monitored_resource_type "id"
-        ```
-
+        Create a MonitoredResourceType resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MonitoredResourceTypeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -560,22 +370,6 @@ class MonitoredResourceType(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A friendly description.
-        :param pulumi.Input[str] display_name: (Updatable) Monitored resource type display name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MonitoredResourceTypeMetadataArgs']] metadata: (Updatable) The metadata details for resource type.
-        :param pulumi.Input[str] metric_namespace: (Updatable) Metric namespace for resource type.
-        :param pulumi.Input[str] name: A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Lifecycle state of the monitored resource type.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        :param pulumi.Input[str] time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -598,100 +392,60 @@ class MonitoredResourceType(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) A friendly description.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Monitored resource type display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output['outputs.MonitoredResourceTypeMetadata']:
-        """
-        (Updatable) The metadata details for resource type.
-        """
+    def metadata(self) -> pulumi.Output[Optional['outputs.MonitoredResourceTypeMetadata']]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="metricNamespace")
-    def metric_namespace(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Metric namespace for resource type.
-        """
+    def metric_namespace(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "metric_namespace")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Lifecycle state of the monitored resource type.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

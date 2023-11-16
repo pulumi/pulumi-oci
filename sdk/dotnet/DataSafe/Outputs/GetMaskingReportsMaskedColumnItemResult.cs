@@ -16,65 +16,65 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only a specific column based on column name.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// The unique key that identifies the masked column. It's numeric and unique within a masking policy.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A filter to return only the resources that match the specified masking column group.
         /// </summary>
-        public readonly string MaskingColumnGroup;
+        public readonly string? MaskingColumnGroup;
         /// <summary>
         /// The masking format used for masking the column.
         /// </summary>
-        public readonly string MaskingFormatUsed;
+        public readonly string? MaskingFormatUsed;
         /// <summary>
         /// A filter to return only items related to a specific object name.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// A filter to return only items related to a specific object type.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// The unique key that identifies the parent column of the masked column.
         /// </summary>
-        public readonly string ParentColumnKey;
+        public readonly string? ParentColumnKey;
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// A filter to return only items related to a specific sensitive type OCID.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// The total number of values masked in the column.
         /// </summary>
-        public readonly string TotalMaskedValues;
+        public readonly string? TotalMaskedValues;
 
         [OutputConstructor]
         private GetMaskingReportsMaskedColumnItemResult(
-            string columnName,
+            string? columnName,
 
-            string key,
+            string? key,
 
-            string maskingColumnGroup,
+            string? maskingColumnGroup,
 
-            string maskingFormatUsed,
+            string? maskingFormatUsed,
 
-            string @object,
+            string? @object,
 
-            string objectType,
+            string? objectType,
 
-            string parentColumnKey,
+            string? parentColumnKey,
 
-            string schemaName,
+            string? schemaName,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string totalMaskedValues)
+            string? totalMaskedValues)
         {
             ColumnName = columnName;
             Key = key;

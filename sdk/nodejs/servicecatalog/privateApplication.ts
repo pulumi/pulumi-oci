@@ -80,7 +80,7 @@ export class PrivateApplication extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The name of the private application.
      */
@@ -88,19 +88,19 @@ export class PrivateApplication extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
      */
-    public readonly logoFileBase64encoded!: pulumi.Output<string>;
+    public readonly logoFileBase64encoded!: pulumi.Output<string | undefined>;
     /**
      * The model for uploaded binary data, like logos and images.
      */
-    public /*out*/ readonly logos!: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationLogo[]>;
+    public /*out*/ readonly logos!: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationLogo[] | undefined>;
     /**
      * (Updatable) A long description of the private application.
      */
-    public readonly longDescription!: pulumi.Output<string>;
+    public readonly longDescription!: pulumi.Output<string | undefined>;
     /**
      * A base object for creating a private application package.
      */
@@ -108,7 +108,7 @@ export class PrivateApplication extends pulumi.CustomResource {
     /**
      * The package's type.
      */
-    public /*out*/ readonly packageType!: pulumi.Output<string>;
+    public /*out*/ readonly packageType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A short description of the private application.
      *
@@ -120,15 +120,15 @@ export class PrivateApplication extends pulumi.CustomResource {
     /**
      * The lifecycle state of the private application.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PrivateApplication resource with the given unique name, arguments, and options.

@@ -55,13 +55,6 @@ class ProductLicenseImage(dict):
                  id: Optional[str] = None,
                  listing_name: Optional[str] = None,
                  publisher: Optional[str] = None):
-        """
-        :param str listing_id: (Updatable) Marketplace image listing ID.
-        :param str package_version: (Updatable) Image package version.
-        :param str id: The image ID associated with the product license.
-        :param str listing_name: The listing name associated with the product license.
-        :param str publisher: The image publisher.
-        """
         pulumi.set(__self__, "listing_id", listing_id)
         pulumi.set(__self__, "package_version", package_version)
         if id is not None:
@@ -74,41 +67,26 @@ class ProductLicenseImage(dict):
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> str:
-        """
-        (Updatable) Marketplace image listing ID.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> str:
-        """
-        (Updatable) Image package version.
-        """
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The image ID associated with the product license.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="listingName")
     def listing_name(self) -> Optional[str]:
-        """
-        The listing name associated with the product license.
-        """
         return pulumi.get(self, "listing_name")
 
     @property
     @pulumi.getter
     def publisher(self) -> Optional[str]:
-        """
-        The image publisher.
-        """
         return pulumi.get(self, "publisher")
 
 
@@ -142,458 +120,337 @@ class GetLicenseRecordsFilterResult(dict):
 @pulumi.output_type
 class GetLicenseRecordsLicenseRecordCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLicenseRecordsLicenseRecordCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 expiration_date: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_perpetual: bool,
-                 is_unlimited: bool,
-                 license_count: int,
-                 license_unit: str,
-                 product_id: str,
-                 product_license: str,
-                 product_license_id: str,
-                 state: str,
-                 support_end_date: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: The license record display name. Avoid entering confidential information.
-        :param str expiration_date: The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param bool is_perpetual: Specifies if the license record term is perpertual.
-        :param bool is_unlimited: Specifies if the license count is unlimited.
-        :param int license_count: The number of license units added by the user for the given license record. Default 1
-        :param str license_unit: The product license unit.
-        :param str product_id: The license record product ID.
-        :param str product_license: The product license name with which the license record is associated.
-        :param str product_license_id: Unique product license identifier.
-        :param str state: The current license record state.
-        :param str support_end_date: The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param str time_updated: The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "expiration_date", expiration_date)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_perpetual", is_perpetual)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "license_count", license_count)
-        pulumi.set(__self__, "license_unit", license_unit)
-        pulumi.set(__self__, "product_id", product_id)
-        pulumi.set(__self__, "product_license", product_license)
-        pulumi.set(__self__, "product_license_id", product_license_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "support_end_date", support_end_date)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 expiration_date: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_perpetual: Optional[bool] = None,
+                 is_unlimited: Optional[bool] = None,
+                 license_count: Optional[int] = None,
+                 license_unit: Optional[str] = None,
+                 product_id: Optional[str] = None,
+                 product_license: Optional[str] = None,
+                 product_license_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 support_end_date: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_perpetual is not None:
+            pulumi.set(__self__, "is_perpetual", is_perpetual)
+        if is_unlimited is not None:
+            pulumi.set(__self__, "is_unlimited", is_unlimited)
+        if license_count is not None:
+            pulumi.set(__self__, "license_count", license_count)
+        if license_unit is not None:
+            pulumi.set(__self__, "license_unit", license_unit)
+        if product_id is not None:
+            pulumi.set(__self__, "product_id", product_id)
+        if product_license is not None:
+            pulumi.set(__self__, "product_license", product_license)
+        if product_license_id is not None:
+            pulumi.set(__self__, "product_license_id", product_license_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if support_end_date is not None:
+            pulumi.set(__self__, "support_end_date", support_end_date)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The license record display name. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> str:
-        """
-        The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
+    def expiration_date(self) -> Optional[str]:
         return pulumi.get(self, "expiration_date")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPerpetual")
-    def is_perpetual(self) -> bool:
-        """
-        Specifies if the license record term is perpertual.
-        """
+    def is_perpetual(self) -> Optional[bool]:
         return pulumi.get(self, "is_perpetual")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        Specifies if the license count is unlimited.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="licenseCount")
-    def license_count(self) -> int:
-        """
-        The number of license units added by the user for the given license record. Default 1
-        """
+    def license_count(self) -> Optional[int]:
         return pulumi.get(self, "license_count")
 
     @property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> str:
-        """
-        The product license unit.
-        """
+    def license_unit(self) -> Optional[str]:
         return pulumi.get(self, "license_unit")
 
     @property
     @pulumi.getter(name="productId")
-    def product_id(self) -> str:
-        """
-        The license record product ID.
-        """
+    def product_id(self) -> Optional[str]:
         return pulumi.get(self, "product_id")
 
     @property
     @pulumi.getter(name="productLicense")
-    def product_license(self) -> str:
-        """
-        The product license name with which the license record is associated.
-        """
+    def product_license(self) -> Optional[str]:
         return pulumi.get(self, "product_license")
 
     @property
     @pulumi.getter(name="productLicenseId")
-    def product_license_id(self) -> str:
-        """
-        Unique product license identifier.
-        """
+    def product_license_id(self) -> Optional[str]:
         return pulumi.get(self, "product_license_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current license record state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="supportEndDate")
-    def support_end_date(self) -> str:
-        """
-        The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
+    def support_end_date(self) -> Optional[str]:
         return pulumi.get(self, "support_end_date")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetProductLicenseConsumersItemResult(dict):
     def __init__(__self__, *,
-                 are_all_options_available: bool,
-                 is_base_license_available: bool,
-                 license_unit_type: str,
-                 license_units_consumed: float,
-                 missing_products: Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult'],
-                 product_name: str,
-                 resource_compartment_id: str,
-                 resource_compartment_name: str,
-                 resource_id: str,
-                 resource_name: str,
-                 resource_unit_count: float,
-                 resource_unit_type: str):
-        """
-        :param bool are_all_options_available: Specifies if all options are available.
-        :param bool is_base_license_available: Specifies if the base license is available.
-        :param str license_unit_type: The product license unit.
-        :param float license_units_consumed: Number of license units consumed by the resource.
-        :param Sequence['GetProductLicenseConsumersItemMissingProductArgs'] missing_products: Collection of missing product licenses.
-        :param str product_name: The resource product name.
-        :param str resource_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
-        :param str resource_compartment_name: The display name of the compartment that contains the resource.
-        :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        :param str resource_name: The display name of the resource.
-        :param float resource_unit_count: Number of units of the resource
-        :param str resource_unit_type: The unit type for the resource.
-        """
-        pulumi.set(__self__, "are_all_options_available", are_all_options_available)
-        pulumi.set(__self__, "is_base_license_available", is_base_license_available)
-        pulumi.set(__self__, "license_unit_type", license_unit_type)
-        pulumi.set(__self__, "license_units_consumed", license_units_consumed)
-        pulumi.set(__self__, "missing_products", missing_products)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_compartment_name", resource_compartment_name)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_unit_count", resource_unit_count)
-        pulumi.set(__self__, "resource_unit_type", resource_unit_type)
+                 are_all_options_available: Optional[bool] = None,
+                 is_base_license_available: Optional[bool] = None,
+                 license_unit_type: Optional[str] = None,
+                 license_units_consumed: Optional[float] = None,
+                 missing_products: Optional[Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult']] = None,
+                 product_name: Optional[str] = None,
+                 resource_compartment_id: Optional[str] = None,
+                 resource_compartment_name: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_name: Optional[str] = None,
+                 resource_unit_count: Optional[float] = None,
+                 resource_unit_type: Optional[str] = None):
+        if are_all_options_available is not None:
+            pulumi.set(__self__, "are_all_options_available", are_all_options_available)
+        if is_base_license_available is not None:
+            pulumi.set(__self__, "is_base_license_available", is_base_license_available)
+        if license_unit_type is not None:
+            pulumi.set(__self__, "license_unit_type", license_unit_type)
+        if license_units_consumed is not None:
+            pulumi.set(__self__, "license_units_consumed", license_units_consumed)
+        if missing_products is not None:
+            pulumi.set(__self__, "missing_products", missing_products)
+        if product_name is not None:
+            pulumi.set(__self__, "product_name", product_name)
+        if resource_compartment_id is not None:
+            pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
+        if resource_compartment_name is not None:
+            pulumi.set(__self__, "resource_compartment_name", resource_compartment_name)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if resource_unit_count is not None:
+            pulumi.set(__self__, "resource_unit_count", resource_unit_count)
+        if resource_unit_type is not None:
+            pulumi.set(__self__, "resource_unit_type", resource_unit_type)
 
     @property
     @pulumi.getter(name="areAllOptionsAvailable")
-    def are_all_options_available(self) -> bool:
-        """
-        Specifies if all options are available.
-        """
+    def are_all_options_available(self) -> Optional[bool]:
         return pulumi.get(self, "are_all_options_available")
 
     @property
     @pulumi.getter(name="isBaseLicenseAvailable")
-    def is_base_license_available(self) -> bool:
-        """
-        Specifies if the base license is available.
-        """
+    def is_base_license_available(self) -> Optional[bool]:
         return pulumi.get(self, "is_base_license_available")
 
     @property
     @pulumi.getter(name="licenseUnitType")
-    def license_unit_type(self) -> str:
-        """
-        The product license unit.
-        """
+    def license_unit_type(self) -> Optional[str]:
         return pulumi.get(self, "license_unit_type")
 
     @property
     @pulumi.getter(name="licenseUnitsConsumed")
-    def license_units_consumed(self) -> float:
-        """
-        Number of license units consumed by the resource.
-        """
+    def license_units_consumed(self) -> Optional[float]:
         return pulumi.get(self, "license_units_consumed")
 
     @property
     @pulumi.getter(name="missingProducts")
-    def missing_products(self) -> Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult']:
-        """
-        Collection of missing product licenses.
-        """
+    def missing_products(self) -> Optional[Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult']]:
         return pulumi.get(self, "missing_products")
 
     @property
     @pulumi.getter(name="productName")
-    def product_name(self) -> str:
-        """
-        The resource product name.
-        """
+    def product_name(self) -> Optional[str]:
         return pulumi.get(self, "product_name")
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
-        """
+    def resource_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_id")
 
     @property
     @pulumi.getter(name="resourceCompartmentName")
-    def resource_compartment_name(self) -> str:
-        """
-        The display name of the compartment that contains the resource.
-        """
+    def resource_compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_name")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        The display name of the resource.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceUnitCount")
-    def resource_unit_count(self) -> float:
-        """
-        Number of units of the resource
-        """
+    def resource_unit_count(self) -> Optional[float]:
         return pulumi.get(self, "resource_unit_count")
 
     @property
     @pulumi.getter(name="resourceUnitType")
-    def resource_unit_type(self) -> str:
-        """
-        The unit type for the resource.
-        """
+    def resource_unit_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_unit_type")
 
 
 @pulumi.output_type
 class GetProductLicenseConsumersItemMissingProductResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 count: float,
-                 name: str):
-        """
-        :param str category: Product category base or option.
-        :param float count: Units required for the missing product.
-        :param str name: Name of the product.
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "name", name)
+                 category: Optional[str] = None,
+                 count: Optional[float] = None,
+                 name: Optional[str] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        Product category base or option.
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
-    def count(self) -> float:
-        """
-        Units required for the missing product.
-        """
+    def count(self) -> Optional[float]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the product.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetProductLicenseImageResult(dict):
     def __init__(__self__, *,
-                 id: str,
-                 listing_id: str,
-                 listing_name: str,
-                 package_version: str,
-                 publisher: str):
-        """
-        :param str id: The image ID associated with the product license.
-        :param str listing_id: The image listing ID.
-        :param str listing_name: The listing name associated with the product license.
-        :param str package_version: The image package version.
-        :param str publisher: The image publisher.
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "listing_name", listing_name)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "publisher", publisher)
+                 id: Optional[str] = None,
+                 listing_id: Optional[str] = None,
+                 listing_name: Optional[str] = None,
+                 package_version: Optional[str] = None,
+                 publisher: Optional[str] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if listing_id is not None:
+            pulumi.set(__self__, "listing_id", listing_id)
+        if listing_name is not None:
+            pulumi.set(__self__, "listing_name", listing_name)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
+        if publisher is not None:
+            pulumi.set(__self__, "publisher", publisher)
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The image ID associated with the product license.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> str:
-        """
-        The image listing ID.
-        """
+    def listing_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="listingName")
-    def listing_name(self) -> str:
-        """
-        The listing name associated with the product license.
-        """
+    def listing_name(self) -> Optional[str]:
         return pulumi.get(self, "listing_name")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The image package version.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
-    def publisher(self) -> str:
-        """
-        The image publisher.
-        """
+    def publisher(self) -> Optional[str]:
         return pulumi.get(self, "publisher")
 
 
@@ -627,469 +484,345 @@ class GetProductLicensesFilterResult(dict):
 @pulumi.output_type
 class GetProductLicensesProductLicenseCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProductLicensesProductLicenseCollectionItemResult(dict):
     def __init__(__self__, *,
-                 active_license_record_count: int,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 images: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult'],
-                 is_over_subscribed: bool,
-                 is_unlimited: bool,
-                 is_vendor_oracle: bool,
-                 license_unit: str,
-                 state: str,
-                 status: str,
-                 status_description: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 total_active_license_unit_count: int,
-                 total_license_record_count: int,
-                 total_license_units_consumed: float,
-                 vendor_name: str):
-        """
-        :param int active_license_record_count: The number of active license records associated with the product license.
-        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: License record name
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The image ID associated with the product license.
-        :param Sequence['GetProductLicensesProductLicenseCollectionItemImageArgs'] images: The images associated with the product license.
-        :param bool is_over_subscribed: Specifies whether or not the product license is oversubscribed.
-        :param bool is_unlimited: Specifies if the license unit count is unlimited.
-        :param bool is_vendor_oracle: Specifies whether the vendor is Oracle or a third party.
-        :param str license_unit: The product license unit.
-        :param str state: The current product license state.
-        :param str status: The current product license status.
-        :param str status_description: Status description for the current product license status.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param str time_updated: The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        :param int total_active_license_unit_count: The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        :param int total_license_record_count: The number of license records associated with the product license.
-        :param float total_license_units_consumed: The number of license units consumed. Updated after each allocation run.
-        :param str vendor_name: The vendor of the ProductLicense
-        """
-        pulumi.set(__self__, "active_license_record_count", active_license_record_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "images", images)
-        pulumi.set(__self__, "is_over_subscribed", is_over_subscribed)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "is_vendor_oracle", is_vendor_oracle)
-        pulumi.set(__self__, "license_unit", license_unit)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_description", status_description)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_active_license_unit_count", total_active_license_unit_count)
-        pulumi.set(__self__, "total_license_record_count", total_license_record_count)
-        pulumi.set(__self__, "total_license_units_consumed", total_license_units_consumed)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 active_license_record_count: Optional[int] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 images: Optional[Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult']] = None,
+                 is_over_subscribed: Optional[bool] = None,
+                 is_unlimited: Optional[bool] = None,
+                 is_vendor_oracle: Optional[bool] = None,
+                 license_unit: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 status_description: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 total_active_license_unit_count: Optional[int] = None,
+                 total_license_record_count: Optional[int] = None,
+                 total_license_units_consumed: Optional[float] = None,
+                 vendor_name: Optional[str] = None):
+        if active_license_record_count is not None:
+            pulumi.set(__self__, "active_license_record_count", active_license_record_count)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if images is not None:
+            pulumi.set(__self__, "images", images)
+        if is_over_subscribed is not None:
+            pulumi.set(__self__, "is_over_subscribed", is_over_subscribed)
+        if is_unlimited is not None:
+            pulumi.set(__self__, "is_unlimited", is_unlimited)
+        if is_vendor_oracle is not None:
+            pulumi.set(__self__, "is_vendor_oracle", is_vendor_oracle)
+        if license_unit is not None:
+            pulumi.set(__self__, "license_unit", license_unit)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if status_description is not None:
+            pulumi.set(__self__, "status_description", status_description)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if total_active_license_unit_count is not None:
+            pulumi.set(__self__, "total_active_license_unit_count", total_active_license_unit_count)
+        if total_license_record_count is not None:
+            pulumi.set(__self__, "total_license_record_count", total_license_record_count)
+        if total_license_units_consumed is not None:
+            pulumi.set(__self__, "total_license_units_consumed", total_license_units_consumed)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="activeLicenseRecordCount")
-    def active_license_record_count(self) -> int:
-        """
-        The number of active license records associated with the product license.
-        """
+    def active_license_record_count(self) -> Optional[int]:
         return pulumi.get(self, "active_license_record_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        License record name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The image ID associated with the product license.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def images(self) -> Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult']:
-        """
-        The images associated with the product license.
-        """
+    def images(self) -> Optional[Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult']]:
         return pulumi.get(self, "images")
 
     @property
     @pulumi.getter(name="isOverSubscribed")
-    def is_over_subscribed(self) -> bool:
-        """
-        Specifies whether or not the product license is oversubscribed.
-        """
+    def is_over_subscribed(self) -> Optional[bool]:
         return pulumi.get(self, "is_over_subscribed")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        Specifies if the license unit count is unlimited.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="isVendorOracle")
-    def is_vendor_oracle(self) -> bool:
-        """
-        Specifies whether the vendor is Oracle or a third party.
-        """
+    def is_vendor_oracle(self) -> Optional[bool]:
         return pulumi.get(self, "is_vendor_oracle")
 
     @property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> str:
-        """
-        The product license unit.
-        """
+    def license_unit(self) -> Optional[str]:
         return pulumi.get(self, "license_unit")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current product license state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current product license status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusDescription")
-    def status_description(self) -> str:
-        """
-        Status description for the current product license status.
-        """
+    def status_description(self) -> Optional[str]:
         return pulumi.get(self, "status_description")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalActiveLicenseUnitCount")
-    def total_active_license_unit_count(self) -> int:
-        """
-        The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-        """
+    def total_active_license_unit_count(self) -> Optional[int]:
         return pulumi.get(self, "total_active_license_unit_count")
 
     @property
     @pulumi.getter(name="totalLicenseRecordCount")
-    def total_license_record_count(self) -> int:
-        """
-        The number of license records associated with the product license.
-        """
+    def total_license_record_count(self) -> Optional[int]:
         return pulumi.get(self, "total_license_record_count")
 
     @property
     @pulumi.getter(name="totalLicenseUnitsConsumed")
-    def total_license_units_consumed(self) -> float:
-        """
-        The number of license units consumed. Updated after each allocation run.
-        """
+    def total_license_units_consumed(self) -> Optional[float]:
         return pulumi.get(self, "total_license_units_consumed")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The vendor of the ProductLicense
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetProductLicensesProductLicenseCollectionItemImageResult(dict):
     def __init__(__self__, *,
-                 id: str,
-                 listing_id: str,
-                 listing_name: str,
-                 package_version: str,
-                 publisher: str):
-        """
-        :param str id: The image ID associated with the product license.
-        :param str listing_id: The image listing ID.
-        :param str listing_name: The listing name associated with the product license.
-        :param str package_version: The image package version.
-        :param str publisher: The image publisher.
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "listing_name", listing_name)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "publisher", publisher)
+                 id: Optional[str] = None,
+                 listing_id: Optional[str] = None,
+                 listing_name: Optional[str] = None,
+                 package_version: Optional[str] = None,
+                 publisher: Optional[str] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if listing_id is not None:
+            pulumi.set(__self__, "listing_id", listing_id)
+        if listing_name is not None:
+            pulumi.set(__self__, "listing_name", listing_name)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
+        if publisher is not None:
+            pulumi.set(__self__, "publisher", publisher)
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The image ID associated with the product license.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> str:
-        """
-        The image listing ID.
-        """
+    def listing_id(self) -> Optional[str]:
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="listingName")
-    def listing_name(self) -> str:
-        """
-        The listing name associated with the product license.
-        """
+    def listing_name(self) -> Optional[str]:
         return pulumi.get(self, "listing_name")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The image package version.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
     @property
     @pulumi.getter
-    def publisher(self) -> str:
-        """
-        The image publisher.
-        """
+    def publisher(self) -> Optional[str]:
         return pulumi.get(self, "publisher")
 
 
 @pulumi.output_type
 class GetTopUtilizedProductLicensesItemResult(dict):
     def __init__(__self__, *,
-                 is_unlimited: bool,
-                 product_license_id: str,
-                 product_type: str,
-                 status: str,
-                 total_license_unit_count: int,
-                 total_units_consumed: float,
-                 unit_type: str):
-        """
-        :param bool is_unlimited: Specifies if the license unit count is unlimited.
-        :param str product_license_id: The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str product_type: The product type.
-        :param str status: The current product license status.
-        :param int total_license_unit_count: Total number of license units in the product license provided by the user.
-        :param float total_units_consumed: Number of license units consumed.
-        :param str unit_type: The product license unit.
-        """
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "product_license_id", product_license_id)
-        pulumi.set(__self__, "product_type", product_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "total_license_unit_count", total_license_unit_count)
-        pulumi.set(__self__, "total_units_consumed", total_units_consumed)
-        pulumi.set(__self__, "unit_type", unit_type)
+                 is_unlimited: Optional[bool] = None,
+                 product_license_id: Optional[str] = None,
+                 product_type: Optional[str] = None,
+                 status: Optional[str] = None,
+                 total_license_unit_count: Optional[int] = None,
+                 total_units_consumed: Optional[float] = None,
+                 unit_type: Optional[str] = None):
+        if is_unlimited is not None:
+            pulumi.set(__self__, "is_unlimited", is_unlimited)
+        if product_license_id is not None:
+            pulumi.set(__self__, "product_license_id", product_license_id)
+        if product_type is not None:
+            pulumi.set(__self__, "product_type", product_type)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if total_license_unit_count is not None:
+            pulumi.set(__self__, "total_license_unit_count", total_license_unit_count)
+        if total_units_consumed is not None:
+            pulumi.set(__self__, "total_units_consumed", total_units_consumed)
+        if unit_type is not None:
+            pulumi.set(__self__, "unit_type", unit_type)
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        Specifies if the license unit count is unlimited.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="productLicenseId")
-    def product_license_id(self) -> str:
-        """
-        The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def product_license_id(self) -> Optional[str]:
         return pulumi.get(self, "product_license_id")
 
     @property
     @pulumi.getter(name="productType")
-    def product_type(self) -> str:
-        """
-        The product type.
-        """
+    def product_type(self) -> Optional[str]:
         return pulumi.get(self, "product_type")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current product license status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="totalLicenseUnitCount")
-    def total_license_unit_count(self) -> int:
-        """
-        Total number of license units in the product license provided by the user.
-        """
+    def total_license_unit_count(self) -> Optional[int]:
         return pulumi.get(self, "total_license_unit_count")
 
     @property
     @pulumi.getter(name="totalUnitsConsumed")
-    def total_units_consumed(self) -> float:
-        """
-        Number of license units consumed.
-        """
+    def total_units_consumed(self) -> Optional[float]:
         return pulumi.get(self, "total_units_consumed")
 
     @property
     @pulumi.getter(name="unitType")
-    def unit_type(self) -> str:
-        """
-        The product license unit.
-        """
+    def unit_type(self) -> Optional[str]:
         return pulumi.get(self, "unit_type")
 
 
 @pulumi.output_type
 class GetTopUtilizedResourcesItemResult(dict):
     def __init__(__self__, *,
-                 resource_compartment_id: str,
-                 resource_compartment_name: str,
-                 resource_id: str,
-                 resource_name: str,
-                 total_units: float,
-                 unit_type: str):
-        """
-        :param str resource_compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
-        :param str resource_compartment_name: The display name of the compartment that contains the resource.
-        :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        :param str resource_name: Resource canonical name.
-        :param float total_units: Number of license units consumed by the resource.
-        :param str unit_type: The resource unit.
-        """
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_compartment_name", resource_compartment_name)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "total_units", total_units)
-        pulumi.set(__self__, "unit_type", unit_type)
+                 resource_compartment_id: Optional[str] = None,
+                 resource_compartment_name: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_name: Optional[str] = None,
+                 total_units: Optional[float] = None,
+                 unit_type: Optional[str] = None):
+        if resource_compartment_id is not None:
+            pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
+        if resource_compartment_name is not None:
+            pulumi.set(__self__, "resource_compartment_name", resource_compartment_name)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if total_units is not None:
+            pulumi.set(__self__, "total_units", total_units)
+        if unit_type is not None:
+            pulumi.set(__self__, "unit_type", unit_type)
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
-        """
+    def resource_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_id")
 
     @property
     @pulumi.getter(name="resourceCompartmentName")
-    def resource_compartment_name(self) -> str:
-        """
-        The display name of the compartment that contains the resource.
-        """
+    def resource_compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_compartment_name")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        Resource canonical name.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="totalUnits")
-    def total_units(self) -> float:
-        """
-        Number of license units consumed by the resource.
-        """
+    def total_units(self) -> Optional[float]:
         return pulumi.get(self, "total_units")
 
     @property
     @pulumi.getter(name="unitType")
-    def unit_type(self) -> str:
-        """
-        The resource unit.
-        """
+    def unit_type(self) -> Optional[str]:
         return pulumi.get(self, "unit_type")
 
 

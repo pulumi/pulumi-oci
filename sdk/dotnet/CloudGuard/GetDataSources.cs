@@ -257,7 +257,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Logging query type for data source (Sighting/Insight)
         /// </summary>
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableArray<Outputs.GetDataSourcesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? loggingQueryType,
 

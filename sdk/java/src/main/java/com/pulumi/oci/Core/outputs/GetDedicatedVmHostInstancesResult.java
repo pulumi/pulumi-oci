@@ -29,13 +29,13 @@ public final class GetDedicatedVmHostInstancesResult {
      * @return The list of dedicated_vm_host_instances.
      * 
      */
-    private List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
+    private @Nullable List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
     private @Nullable List<GetDedicatedVmHostInstancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDedicatedVmHostInstancesResult() {}
     /**
@@ -60,7 +60,7 @@ public final class GetDedicatedVmHostInstancesResult {
      * 
      */
     public List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances() {
-        return this.dedicatedVmHostInstances;
+        return this.dedicatedVmHostInstances == null ? List.of() : this.dedicatedVmHostInstances;
     }
     public List<GetDedicatedVmHostInstancesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -69,8 +69,8 @@ public final class GetDedicatedVmHostInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -85,9 +85,9 @@ public final class GetDedicatedVmHostInstancesResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private String dedicatedVmHostId;
-        private List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
+        private @Nullable List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances;
         private @Nullable List<GetDedicatedVmHostInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDedicatedVmHostInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,8 +115,8 @@ public final class GetDedicatedVmHostInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dedicatedVmHostInstances(List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances) {
-            this.dedicatedVmHostInstances = Objects.requireNonNull(dedicatedVmHostInstances);
+        public Builder dedicatedVmHostInstances(@Nullable List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances) {
+            this.dedicatedVmHostInstances = dedicatedVmHostInstances;
             return this;
         }
         public Builder dedicatedVmHostInstances(GetDedicatedVmHostInstancesDedicatedVmHostInstance... dedicatedVmHostInstances) {
@@ -131,8 +131,8 @@ public final class GetDedicatedVmHostInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDedicatedVmHostInstancesResult build() {

@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Kms
         /// The encrypted data encryption key generated from a master encryption key.
         /// </summary>
         [Output("ciphertext")]
-        public Output<string> Ciphertext { get; private set; } = null!;
+        public Output<string?> Ciphertext { get; private set; } = null!;
 
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -99,13 +99,13 @@ namespace Pulumi.Oci.Kms
         /// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         /// </summary>
         [Output("plaintext")]
-        public Output<string> Plaintext { get; private set; } = null!;
+        public Output<string?> Plaintext { get; private set; } = null!;
 
         /// <summary>
         /// The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         /// </summary>
         [Output("plaintextChecksum")]
-        public Output<string> PlaintextChecksum { get; private set; } = null!;
+        public Output<string?> PlaintextChecksum { get; private set; } = null!;
 
 
         /// <summary>

@@ -77,14 +77,14 @@ export interface GetMigrationPlanAvailableShapesResult {
     /**
      * The list of available_shapes_collection.
      */
-    readonly availableShapesCollections: outputs.CloudMigrations.GetMigrationPlanAvailableShapesAvailableShapesCollection[];
+    readonly availableShapesCollections?: outputs.CloudMigrations.GetMigrationPlanAvailableShapesAvailableShapesCollection[];
     readonly compartmentId?: string;
     readonly dvhHostId?: string;
     readonly filters?: outputs.CloudMigrations.GetMigrationPlanAvailableShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly migrationPlanId: string;
     readonly reservedCapacityId?: string;
 }

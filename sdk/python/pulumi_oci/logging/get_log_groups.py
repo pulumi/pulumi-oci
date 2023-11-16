@@ -46,17 +46,11 @@ class GetLogGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetLogGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +73,7 @@ class GetLogGroupsResult:
 
     @property
     @pulumi.getter(name="logGroups")
-    def log_groups(self) -> Sequence['outputs.GetLogGroupsLogGroupResult']:
-        """
-        The list of log_groups.
-        """
+    def log_groups(self) -> Optional[Sequence['outputs.GetLogGroupsLogGroupResult']]:
         return pulumi.get(self, "log_groups")
 
 
@@ -106,25 +97,7 @@ def get_log_groups(compartment_id: Optional[str] = None,
                    is_compartment_id_in_subtree: Optional[bool] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogGroupsResult:
     """
-    This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.
-
-    Lists all log groups for the specified compartment or tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_groups = oci.Logging.get_log_groups(compartment_id=var["compartment_id"],
-        display_name=var["log_group_display_name"],
-        is_compartment_id_in_subtree=var["log_group_is_compartment_id_in_subtree"])
-    ```
-
-
-    :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name.
-    :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_log_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                           is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogGroupsResult]:
     """
-    This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.
-
-    Lists all log groups for the specified compartment or tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_groups = oci.Logging.get_log_groups(compartment_id=var["compartment_id"],
-        display_name=var["log_group_display_name"],
-        is_compartment_id_in_subtree=var["log_group_is_compartment_id_in_subtree"])
-    ```
-
-
-    :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name.
-    :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
+    Use this data source to access information about an existing resource.
     """
     ...

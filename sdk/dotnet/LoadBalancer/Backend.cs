@@ -70,7 +70,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         /// </summary>
         [Output("drain")]
-        public Output<bool> Drain { get; private set; } = null!;
+        public Output<bool?> Drain { get; private set; } = null!;
 
         /// <summary>
         /// The IP address of the backend server.  Example: `10.0.0.3`
@@ -88,13 +88,13 @@ namespace Pulumi.Oci.LoadBalancer
         /// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         /// </summary>
         [Output("offline")]
-        public Output<bool> Offline { get; private set; } = null!;
+        public Output<bool?> Offline { get; private set; } = null!;
 
         /// <summary>
         /// The communication port for the backend server.  Example: `8080`
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<int> Port { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("weight")]
-        public Output<int> Weight { get; private set; } = null!;
+        public Output<int?> Weight { get; private set; } = null!;
 
 
         /// <summary>

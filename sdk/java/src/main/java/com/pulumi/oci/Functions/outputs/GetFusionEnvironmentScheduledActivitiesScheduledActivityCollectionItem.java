@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem {
@@ -18,69 +20,69 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
      * @return List of actions
      * 
      */
-    private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions;
+    private @Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions;
     /**
      * @return Cumulative delay hours
      * 
      */
-    private Integer delayInHours;
+    private @Nullable Integer delayInHours;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
-    private Map<String,Object> freeformTags;
+    private @Nullable String displayName;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return unique FusionEnvironment identifier
      * 
      */
-    private String fusionEnvironmentId;
+    private @Nullable String fusionEnvironmentId;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter that returns all resources that match the specified run cycle.
      * 
      */
-    private String runCycle;
+    private @Nullable String runCycle;
     /**
      * @return Service availability / impact during scheduled activity execution up down
      * 
      */
-    private String serviceAvailability;
+    private @Nullable String serviceAvailability;
     /**
      * @return A filter that returns all resources that match the specified status
      * 
      */
-    private String state;
-    private String timeAccepted;
+    private @Nullable String state;
+    private @Nullable String timeAccepted;
     /**
      * @return Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeExpectedFinish;
+    private @Nullable String timeExpectedFinish;
     /**
      * @return The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeScheduledStart;
+    private @Nullable String timeScheduledStart;
     /**
      * @return The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem() {}
     /**
@@ -88,97 +90,97 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
      * 
      */
     public List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return Cumulative delay hours
      * 
      */
-    public Integer delayInHours() {
-        return this.delayInHours;
+    public Optional<Integer> delayInHours() {
+        return Optional.ofNullable(this.delayInHours);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return unique FusionEnvironment identifier
      * 
      */
-    public String fusionEnvironmentId() {
-        return this.fusionEnvironmentId;
+    public Optional<String> fusionEnvironmentId() {
+        return Optional.ofNullable(this.fusionEnvironmentId);
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter that returns all resources that match the specified run cycle.
      * 
      */
-    public String runCycle() {
-        return this.runCycle;
+    public Optional<String> runCycle() {
+        return Optional.ofNullable(this.runCycle);
     }
     /**
      * @return Service availability / impact during scheduled activity execution up down
      * 
      */
-    public String serviceAvailability() {
-        return this.serviceAvailability;
+    public Optional<String> serviceAvailability() {
+        return Optional.ofNullable(this.serviceAvailability);
     }
     /**
      * @return A filter that returns all resources that match the specified status
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeExpectedFinish() {
-        return this.timeExpectedFinish;
+    public Optional<String> timeExpectedFinish() {
+        return Optional.ofNullable(this.timeExpectedFinish);
     }
     /**
      * @return The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeScheduledStart() {
-        return this.timeScheduledStart;
+    public Optional<String> timeScheduledStart() {
+        return Optional.ofNullable(this.timeScheduledStart);
     }
     /**
      * @return The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -190,21 +192,21 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions;
-        private Integer delayInHours;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String fusionEnvironmentId;
-        private String id;
-        private String lifecycleDetails;
-        private String runCycle;
-        private String serviceAvailability;
-        private String state;
-        private String timeAccepted;
-        private String timeExpectedFinish;
-        private String timeFinished;
-        private String timeScheduledStart;
-        private String timeUpdated;
+        private @Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions;
+        private @Nullable Integer delayInHours;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String fusionEnvironmentId;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String runCycle;
+        private @Nullable String serviceAvailability;
+        private @Nullable String state;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeExpectedFinish;
+        private @Nullable String timeFinished;
+        private @Nullable String timeScheduledStart;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -226,81 +228,81 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder delayInHours(Integer delayInHours) {
-            this.delayInHours = Objects.requireNonNull(delayInHours);
+        public Builder delayInHours(@Nullable Integer delayInHours) {
+            this.delayInHours = delayInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+        public Builder fusionEnvironmentId(@Nullable String fusionEnvironmentId) {
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder runCycle(String runCycle) {
-            this.runCycle = Objects.requireNonNull(runCycle);
+        public Builder runCycle(@Nullable String runCycle) {
+            this.runCycle = runCycle;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceAvailability(String serviceAvailability) {
-            this.serviceAvailability = Objects.requireNonNull(serviceAvailability);
+        public Builder serviceAvailability(@Nullable String serviceAvailability) {
+            this.serviceAvailability = serviceAvailability;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpectedFinish(String timeExpectedFinish) {
-            this.timeExpectedFinish = Objects.requireNonNull(timeExpectedFinish);
+        public Builder timeExpectedFinish(@Nullable String timeExpectedFinish) {
+            this.timeExpectedFinish = timeExpectedFinish;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduledStart(String timeScheduledStart) {
-            this.timeScheduledStart = Objects.requireNonNull(timeScheduledStart);
+        public Builder timeScheduledStart(@Nullable String timeScheduledStart) {
+            this.timeScheduledStart = timeScheduledStart;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem build() {

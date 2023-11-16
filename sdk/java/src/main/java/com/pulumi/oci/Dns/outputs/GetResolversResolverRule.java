@@ -7,30 +7,32 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResolversResolverRule {
-    private String action;
-    private List<String> clientAddressConditions;
-    private List<String> destinationAddresses;
-    private List<String> qnameCoverConditions;
-    private String sourceEndpointName;
+    private @Nullable String action;
+    private @Nullable List<String> clientAddressConditions;
+    private @Nullable List<String> destinationAddresses;
+    private @Nullable List<String> qnameCoverConditions;
+    private @Nullable String sourceEndpointName;
 
     private GetResolversResolverRule() {}
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     public List<String> clientAddressConditions() {
-        return this.clientAddressConditions;
+        return this.clientAddressConditions == null ? List.of() : this.clientAddressConditions;
     }
     public List<String> destinationAddresses() {
-        return this.destinationAddresses;
+        return this.destinationAddresses == null ? List.of() : this.destinationAddresses;
     }
     public List<String> qnameCoverConditions() {
-        return this.qnameCoverConditions;
+        return this.qnameCoverConditions == null ? List.of() : this.qnameCoverConditions;
     }
-    public String sourceEndpointName() {
-        return this.sourceEndpointName;
+    public Optional<String> sourceEndpointName() {
+        return Optional.ofNullable(this.sourceEndpointName);
     }
 
     public static Builder builder() {
@@ -42,11 +44,11 @@ public final class GetResolversResolverRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<String> clientAddressConditions;
-        private List<String> destinationAddresses;
-        private List<String> qnameCoverConditions;
-        private String sourceEndpointName;
+        private @Nullable String action;
+        private @Nullable List<String> clientAddressConditions;
+        private @Nullable List<String> destinationAddresses;
+        private @Nullable List<String> qnameCoverConditions;
+        private @Nullable String sourceEndpointName;
         public Builder() {}
         public Builder(GetResolversResolverRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -58,37 +60,37 @@ public final class GetResolversResolverRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder clientAddressConditions(List<String> clientAddressConditions) {
-            this.clientAddressConditions = Objects.requireNonNull(clientAddressConditions);
+        public Builder clientAddressConditions(@Nullable List<String> clientAddressConditions) {
+            this.clientAddressConditions = clientAddressConditions;
             return this;
         }
         public Builder clientAddressConditions(String... clientAddressConditions) {
             return clientAddressConditions(List.of(clientAddressConditions));
         }
         @CustomType.Setter
-        public Builder destinationAddresses(List<String> destinationAddresses) {
-            this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
+        public Builder destinationAddresses(@Nullable List<String> destinationAddresses) {
+            this.destinationAddresses = destinationAddresses;
             return this;
         }
         public Builder destinationAddresses(String... destinationAddresses) {
             return destinationAddresses(List.of(destinationAddresses));
         }
         @CustomType.Setter
-        public Builder qnameCoverConditions(List<String> qnameCoverConditions) {
-            this.qnameCoverConditions = Objects.requireNonNull(qnameCoverConditions);
+        public Builder qnameCoverConditions(@Nullable List<String> qnameCoverConditions) {
+            this.qnameCoverConditions = qnameCoverConditions;
             return this;
         }
         public Builder qnameCoverConditions(String... qnameCoverConditions) {
             return qnameCoverConditions(List.of(qnameCoverConditions));
         }
         @CustomType.Setter
-        public Builder sourceEndpointName(String sourceEndpointName) {
-            this.sourceEndpointName = Objects.requireNonNull(sourceEndpointName);
+        public Builder sourceEndpointName(@Nullable String sourceEndpointName) {
+            this.sourceEndpointName = sourceEndpointName;
             return this;
         }
         public GetResolversResolverRule build() {

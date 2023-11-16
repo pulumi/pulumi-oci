@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -67,7 +66,7 @@ type DeploymentBackup struct {
 	pulumi.CustomResourceState
 
 	// Possible Deployment backup types.
-	BackupType pulumi.StringOutput `pulumi:"backupType"`
+	BackupType pulumi.StringPtrOutput `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -81,9 +80,9 @@ type DeploymentBackup struct {
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// True if this object is automatically created
-	IsAutomatic pulumi.BoolOutput `pulumi:"isAutomatic"`
+	IsAutomatic pulumi.BoolPtrOutput `pulumi:"isAutomatic"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -92,21 +91,21 @@ type DeploymentBackup struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Object pulumi.StringOutput `pulumi:"object"`
 	// Version of OGG
-	OggVersion pulumi.StringOutput `pulumi:"oggVersion"`
+	OggVersion pulumi.StringPtrOutput `pulumi:"oggVersion"`
 	// The size of the backup stored in object storage (in bytes)
-	SizeInBytes pulumi.Float64Output `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.Float64PtrOutput `pulumi:"sizeInBytes"`
 	// Possible lifecycle states.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeBackupFinished pulumi.StringOutput `pulumi:"timeBackupFinished"`
+	TimeBackupFinished pulumi.StringPtrOutput `pulumi:"timeBackupFinished"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeOfBackup pulumi.StringOutput `pulumi:"timeOfBackup"`
+	TimeOfBackup pulumi.StringPtrOutput `pulumi:"timeOfBackup"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDeploymentBackup registers a new resource with the given unique name, arguments, and options.
@@ -316,12 +315,6 @@ func (i *DeploymentBackup) ToDeploymentBackupOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupOutput)
 }
 
-func (i *DeploymentBackup) ToOutput(ctx context.Context) pulumix.Output[*DeploymentBackup] {
-	return pulumix.Output[*DeploymentBackup]{
-		OutputState: i.ToDeploymentBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeploymentBackupArrayInput is an input type that accepts DeploymentBackupArray and DeploymentBackupArrayOutput values.
 // You can construct a concrete instance of `DeploymentBackupArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i DeploymentBackupArray) ToDeploymentBackupArrayOutput() DeploymentBackupA
 
 func (i DeploymentBackupArray) ToDeploymentBackupArrayOutputWithContext(ctx context.Context) DeploymentBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupArrayOutput)
-}
-
-func (i DeploymentBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeploymentBackup] {
-	return pulumix.Output[[]*DeploymentBackup]{
-		OutputState: i.ToDeploymentBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeploymentBackupMapInput is an input type that accepts DeploymentBackupMap and DeploymentBackupMapOutput values.
@@ -378,12 +365,6 @@ func (i DeploymentBackupMap) ToDeploymentBackupMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupMapOutput)
 }
 
-func (i DeploymentBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeploymentBackup] {
-	return pulumix.Output[map[string]*DeploymentBackup]{
-		OutputState: i.ToDeploymentBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeploymentBackupOutput struct{ *pulumi.OutputState }
 
 func (DeploymentBackupOutput) ElementType() reflect.Type {
@@ -398,15 +379,9 @@ func (o DeploymentBackupOutput) ToDeploymentBackupOutputWithContext(ctx context.
 	return o
 }
 
-func (o DeploymentBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*DeploymentBackup] {
-	return pulumix.Output[*DeploymentBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Possible Deployment backup types.
-func (o DeploymentBackupOutput) BackupType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.BackupType }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.BackupType }).(pulumi.StringPtrOutput)
 }
 
 // Name of the bucket where the object is to be uploaded in the object storage
@@ -440,13 +415,13 @@ func (o DeploymentBackupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // True if this object is automatically created
-func (o DeploymentBackupOutput) IsAutomatic() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.BoolOutput { return v.IsAutomatic }).(pulumi.BoolOutput)
+func (o DeploymentBackupOutput) IsAutomatic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.BoolPtrOutput { return v.IsAutomatic }).(pulumi.BoolPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o DeploymentBackupOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Name of namespace that serves as a container for all of your buckets
@@ -463,18 +438,18 @@ func (o DeploymentBackupOutput) Object() pulumi.StringOutput {
 }
 
 // Version of OGG
-func (o DeploymentBackupOutput) OggVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.OggVersion }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) OggVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.OggVersion }).(pulumi.StringPtrOutput)
 }
 
 // The size of the backup stored in object storage (in bytes)
-func (o DeploymentBackupOutput) SizeInBytes() pulumi.Float64Output {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.Float64Output { return v.SizeInBytes }).(pulumi.Float64Output)
+func (o DeploymentBackupOutput) SizeInBytes() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.Float64PtrOutput { return v.SizeInBytes }).(pulumi.Float64PtrOutput)
 }
 
 // Possible lifecycle states.
-func (o DeploymentBackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -483,23 +458,23 @@ func (o DeploymentBackupOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o DeploymentBackupOutput) TimeBackupFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.TimeBackupFinished }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) TimeBackupFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.TimeBackupFinished }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o DeploymentBackupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o DeploymentBackupOutput) TimeOfBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.TimeOfBackup }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) TimeOfBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.TimeOfBackup }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o DeploymentBackupOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DeploymentBackupOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DeploymentBackupArrayOutput struct{ *pulumi.OutputState }
@@ -514,12 +489,6 @@ func (o DeploymentBackupArrayOutput) ToDeploymentBackupArrayOutput() DeploymentB
 
 func (o DeploymentBackupArrayOutput) ToDeploymentBackupArrayOutputWithContext(ctx context.Context) DeploymentBackupArrayOutput {
 	return o
-}
-
-func (o DeploymentBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeploymentBackup] {
-	return pulumix.Output[[]*DeploymentBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeploymentBackupArrayOutput) Index(i pulumi.IntInput) DeploymentBackupOutput {
@@ -540,12 +509,6 @@ func (o DeploymentBackupMapOutput) ToDeploymentBackupMapOutput() DeploymentBacku
 
 func (o DeploymentBackupMapOutput) ToDeploymentBackupMapOutputWithContext(ctx context.Context) DeploymentBackupMapOutput {
 	return o
-}
-
-func (o DeploymentBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeploymentBackup] {
-	return pulumix.Output[map[string]*DeploymentBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeploymentBackupMapOutput) MapIndex(k pulumi.StringInput) DeploymentBackupOutput {

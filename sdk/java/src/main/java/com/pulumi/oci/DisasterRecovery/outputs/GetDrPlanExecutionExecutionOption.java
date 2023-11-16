@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlanExecutionExecutionOption {
@@ -14,39 +16,39 @@ public final class GetDrPlanExecutionExecutionOption {
      * @return A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
      * 
      */
-    private Boolean arePrechecksEnabled;
+    private @Nullable Boolean arePrechecksEnabled;
     /**
      * @return A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
      * 
      */
-    private Boolean areWarningsIgnored;
+    private @Nullable Boolean areWarningsIgnored;
     /**
      * @return The type of the DR plan executed.
      * 
      */
-    private String planExecutionType;
+    private @Nullable String planExecutionType;
 
     private GetDrPlanExecutionExecutionOption() {}
     /**
      * @return A flag indicating whether a precheck should be executed before the plan execution.  Example: `true`
      * 
      */
-    public Boolean arePrechecksEnabled() {
-        return this.arePrechecksEnabled;
+    public Optional<Boolean> arePrechecksEnabled() {
+        return Optional.ofNullable(this.arePrechecksEnabled);
     }
     /**
      * @return A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
      * 
      */
-    public Boolean areWarningsIgnored() {
-        return this.areWarningsIgnored;
+    public Optional<Boolean> areWarningsIgnored() {
+        return Optional.ofNullable(this.areWarningsIgnored);
     }
     /**
      * @return The type of the DR plan executed.
      * 
      */
-    public String planExecutionType() {
-        return this.planExecutionType;
+    public Optional<String> planExecutionType() {
+        return Optional.ofNullable(this.planExecutionType);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDrPlanExecutionExecutionOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean arePrechecksEnabled;
-        private Boolean areWarningsIgnored;
-        private String planExecutionType;
+        private @Nullable Boolean arePrechecksEnabled;
+        private @Nullable Boolean areWarningsIgnored;
+        private @Nullable String planExecutionType;
         public Builder() {}
         public Builder(GetDrPlanExecutionExecutionOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDrPlanExecutionExecutionOption {
         }
 
         @CustomType.Setter
-        public Builder arePrechecksEnabled(Boolean arePrechecksEnabled) {
-            this.arePrechecksEnabled = Objects.requireNonNull(arePrechecksEnabled);
+        public Builder arePrechecksEnabled(@Nullable Boolean arePrechecksEnabled) {
+            this.arePrechecksEnabled = arePrechecksEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder areWarningsIgnored(Boolean areWarningsIgnored) {
-            this.areWarningsIgnored = Objects.requireNonNull(areWarningsIgnored);
+        public Builder areWarningsIgnored(@Nullable Boolean areWarningsIgnored) {
+            this.areWarningsIgnored = areWarningsIgnored;
             return this;
         }
         @CustomType.Setter
-        public Builder planExecutionType(String planExecutionType) {
-            this.planExecutionType = Objects.requireNonNull(planExecutionType);
+        public Builder planExecutionType(@Nullable String planExecutionType) {
+            this.planExecutionType = planExecutionType;
             return this;
         }
         public GetDrPlanExecutionExecutionOption build() {

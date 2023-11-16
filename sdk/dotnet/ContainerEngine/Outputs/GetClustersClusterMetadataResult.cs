@@ -16,65 +16,65 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The user who created the cluster.
         /// </summary>
-        public readonly string CreatedByUserId;
+        public readonly string? CreatedByUserId;
         /// <summary>
         /// The OCID of the work request which created the cluster.
         /// </summary>
-        public readonly string CreatedByWorkRequestId;
+        public readonly string? CreatedByWorkRequestId;
         /// <summary>
         /// The user who deleted the cluster.
         /// </summary>
-        public readonly string DeletedByUserId;
+        public readonly string? DeletedByUserId;
         /// <summary>
         /// The OCID of the work request which deleted the cluster.
         /// </summary>
-        public readonly string DeletedByWorkRequestId;
+        public readonly string? DeletedByWorkRequestId;
         /// <summary>
         /// The time the cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time until which the cluster credential is valid.
         /// </summary>
-        public readonly string TimeCredentialExpiration;
+        public readonly string? TimeCredentialExpiration;
         /// <summary>
         /// The time the cluster was deleted.
         /// </summary>
-        public readonly string TimeDeleted;
+        public readonly string? TimeDeleted;
         /// <summary>
         /// The time the cluster was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The user who updated the cluster.
         /// </summary>
-        public readonly string UpdatedByUserId;
+        public readonly string? UpdatedByUserId;
         /// <summary>
         /// The OCID of the work request which updated the cluster.
         /// </summary>
-        public readonly string UpdatedByWorkRequestId;
+        public readonly string? UpdatedByWorkRequestId;
 
         [OutputConstructor]
         private GetClustersClusterMetadataResult(
-            string createdByUserId,
+            string? createdByUserId,
 
-            string createdByWorkRequestId,
+            string? createdByWorkRequestId,
 
-            string deletedByUserId,
+            string? deletedByUserId,
 
-            string deletedByWorkRequestId,
+            string? deletedByWorkRequestId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeCredentialExpiration,
+            string? timeCredentialExpiration,
 
-            string timeDeleted,
+            string? timeDeleted,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string updatedByUserId,
+            string? updatedByUserId,
 
-            string updatedByWorkRequestId)
+            string? updatedByWorkRequestId)
         {
             CreatedByUserId = createdByUserId;
             CreatedByWorkRequestId = createdByWorkRequestId;

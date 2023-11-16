@@ -6,6 +6,8 @@ package com.pulumi.oci.StackMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionEnabledOnResource {
@@ -13,15 +15,15 @@ public final class GetMetricExtensionEnabledOnResource {
      * @return The OCID of the resource on which Metric Extension is enabled
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
 
     private GetMetricExtensionEnabledOnResource() {}
     /**
      * @return The OCID of the resource on which Metric Extension is enabled
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMetricExtensionEnabledOnResource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String resourceId;
+        private @Nullable String resourceId;
         public Builder() {}
         public Builder(GetMetricExtensionEnabledOnResource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMetricExtensionEnabledOnResource {
         }
 
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         public GetMetricExtensionEnabledOnResource build() {

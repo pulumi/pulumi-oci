@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsMaskingReportCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingReportsMaskingReportCollection {
-    private List<GetMaskingReportsMaskingReportCollectionItem> items;
+    private @Nullable List<GetMaskingReportsMaskingReportCollectionItem> items;
 
     private GetMaskingReportsMaskingReportCollection() {}
     public List<GetMaskingReportsMaskingReportCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMaskingReportsMaskingReportCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMaskingReportsMaskingReportCollectionItem> items;
+        private @Nullable List<GetMaskingReportsMaskingReportCollectionItem> items;
         public Builder() {}
         public Builder(GetMaskingReportsMaskingReportCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMaskingReportsMaskingReportCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMaskingReportsMaskingReportCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingReportsMaskingReportCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingReportsMaskingReportCollectionItem... items) {

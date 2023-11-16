@@ -86,90 +86,57 @@ class GetRedisClusterResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name of a Redis cluster node.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nodeCollections")
-    def node_collections(self) -> Sequence['outputs.GetRedisClusterNodeCollectionResult']:
-        """
-        The collection of Redis cluster nodes.
-        """
+    def node_collections(self) -> Optional[Sequence['outputs.GetRedisClusterNodeCollectionResult']]:
         return pulumi.get(self, "node_collections")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> int:
-        """
-        The number of nodes in the Redis cluster.
-        """
+    def node_count(self) -> Optional[int]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nodeMemoryInGbs")
-    def node_memory_in_gbs(self) -> float:
-        """
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
-        """
+    def node_memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "node_memory_in_gbs")
 
     @property
     @pulumi.getter(name="primaryEndpointIpAddress")
-    def primary_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the API endpoint for the Redis cluster's primary node.
-        """
+    def primary_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "primary_endpoint_ip_address")
 
     @property
     @pulumi.getter(name="primaryFqdn")
-    def primary_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
-        """
+    def primary_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "primary_fqdn")
 
     @property
@@ -179,66 +146,42 @@ class GetRedisClusterResult:
 
     @property
     @pulumi.getter(name="replicasEndpointIpAddress")
-    def replicas_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
-        """
+    def replicas_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "replicas_endpoint_ip_address")
 
     @property
     @pulumi.getter(name="replicasFqdn")
-    def replicas_fqdn(self) -> str:
-        """
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
-        """
+    def replicas_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "replicas_fqdn")
 
     @property
     @pulumi.getter(name="softwareVersion")
-    def software_version(self) -> str:
-        """
-        The Redis version that the cluster is running.
-        """
+    def software_version(self) -> Optional[str]:
         return pulumi.get(self, "software_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Redis cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -273,21 +216,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
 def get_redis_cluster(redis_cluster_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRedisClusterResult:
     """
-    This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-
-    Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=oci_redis_redis_cluster["test_redis_cluster"]["id"])
-    ```
-
-
-    :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['redisClusterId'] = redis_cluster_id
@@ -321,20 +250,6 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
 def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRedisClusterResult]:
     """
-    This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-
-    Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=oci_redis_redis_cluster["test_redis_cluster"]["id"])
-    ```
-
-
-    :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

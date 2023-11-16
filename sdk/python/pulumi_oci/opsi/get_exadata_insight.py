@@ -110,98 +110,62 @@ class GetExadataInsightResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier of the Exadata insight resource
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> str:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
+    def enterprise_manager_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> str:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> str:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> str:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> str:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> str:
-        """
-        Enterprise Manager Unique Identifier
-        """
+    def enterprise_manager_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the Exadata system.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataDisplayName")
-    def exadata_display_name(self) -> str:
-        """
-        The user-friendly name for the Exadata system. The name does not have to be unique.
-        """
+    def exadata_display_name(self) -> Optional[str]:
         return pulumi.get(self, "exadata_display_name")
 
     @property
     @pulumi.getter(name="exadataInfraId")
-    def exadata_infra_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-        """
+    def exadata_infra_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infra_id")
 
     @property
     @pulumi.getter(name="exadataInfraResourceType")
-    def exadata_infra_resource_type(self) -> str:
-        """
-        Oracle Cloud Infrastructure exadata infrastructure resource type
-        """
+    def exadata_infra_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infra_resource_type")
 
     @property
@@ -211,116 +175,77 @@ class GetExadataInsightResult:
 
     @property
     @pulumi.getter(name="exadataName")
-    def exadata_name(self) -> str:
-        """
-        The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-        """
+    def exadata_name(self) -> Optional[str]:
         return pulumi.get(self, "exadata_name")
 
     @property
     @pulumi.getter(name="exadataRackType")
-    def exadata_rack_type(self) -> str:
-        """
-        Exadata rack type.
-        """
+    def exadata_rack_type(self) -> Optional[str]:
         return pulumi.get(self, "exadata_rack_type")
 
     @property
     @pulumi.getter(name="exadataShape")
-    def exadata_shape(self) -> str:
-        """
-        The shape of the Exadata Infrastructure.
-        """
+    def exadata_shape(self) -> Optional[str]:
         return pulumi.get(self, "exadata_shape")
 
     @property
     @pulumi.getter(name="exadataType")
-    def exadata_type(self) -> str:
-        """
-        Operations Insights internal representation of the the Exadata system type.
-        """
+    def exadata_type(self) -> Optional[str]:
         return pulumi.get(self, "exadata_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Exadata insight identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoSyncEnabled")
-    def is_auto_sync_enabled(self) -> bool:
+    def is_auto_sync_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_sync_enabled")
 
     @property
     @pulumi.getter(name="isVirtualizedExadata")
-    def is_virtualized_exadata(self) -> bool:
-        """
-        true if virtualization is used in the Exadata system
-        """
+    def is_virtualized_exadata(self) -> Optional[bool]:
         return pulumi.get(self, "is_virtualized_exadata")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="memberVmClusterDetails")
-    def member_vm_cluster_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailResult']:
+    def member_vm_cluster_details(self) -> Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailResult']]:
         return pulumi.get(self, "member_vm_cluster_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Exadata insight.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Indicates the status of an Exadata insight in Operations Insights
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Exadata insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -363,21 +288,7 @@ class AwaitableGetExadataInsightResult(GetExadataInsightResult):
 def get_exadata_insight(exadata_insight_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataInsightResult:
     """
-    This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an Exadata insight.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_insight = oci.Opsi.get_exadata_insight(exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"])
-    ```
-
-
-    :param str exadata_insight_id: Unique Exadata insight identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['exadataInsightId'] = exadata_insight_id
@@ -419,20 +330,6 @@ def get_exadata_insight(exadata_insight_id: Optional[str] = None,
 def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInsightResult]:
     """
-    This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an Exadata insight.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_insight = oci.Opsi.get_exadata_insight(exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"])
-    ```
-
-
-    :param str exadata_insight_id: Unique Exadata insight identifier
+    Use this data source to access information about an existing resource.
     """
     ...

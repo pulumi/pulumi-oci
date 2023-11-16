@@ -44,73 +44,73 @@ export interface GetDrProtectionGroupArgs {
  * A collection of values returned by getDrProtectionGroup.
  */
 export interface GetDrProtectionGroupResult {
-    readonly associations: outputs.DisasterRecovery.GetDrProtectionGroupAssociation[];
+    readonly associations?: outputs.DisasterRecovery.GetDrProtectionGroupAssociation[];
     /**
      * The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
-    readonly disassociateTrigger: number;
+    readonly definedTags?: {[key: string]: any};
+    readonly disassociateTrigger?: number;
     /**
      * The display name of the DR protection group.  Example: `EBS PHX Group`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly drProtectionGroupId: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the DR protection group's current state in more detail.
      */
-    readonly lifeCycleDetails: string;
+    readonly lifeCycleDetails?: string;
     /**
      * The current sub-state of the DR protection group.
      */
-    readonly lifecycleSubState: string;
+    readonly lifecycleSubState?: string;
     /**
      * The details of an object storage log location for a DR protection group.
      */
-    readonly logLocations: outputs.DisasterRecovery.GetDrProtectionGroupLogLocation[];
+    readonly logLocations?: outputs.DisasterRecovery.GetDrProtectionGroupLogLocation[];
     /**
      * A list of DR protection group members.
      */
-    readonly members: outputs.DisasterRecovery.GetDrProtectionGroupMember[];
+    readonly members?: outputs.DisasterRecovery.GetDrProtectionGroupMember[];
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    readonly peerId: string;
+    readonly peerId?: string;
     /**
      * The region of the peer DR protection group.  Example: `us-ashburn-1`
      */
-    readonly peerRegion: string;
+    readonly peerRegion?: string;
     /**
      * The role of the DR protection group.
      */
-    readonly role: string;
+    readonly role?: string;
     /**
      * The current state of the DR protection group.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.

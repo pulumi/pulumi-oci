@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -184,12 +183,6 @@ func (i *Query) ToQueryOutputWithContext(ctx context.Context) QueryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(QueryOutput)
 }
 
-func (i *Query) ToOutput(ctx context.Context) pulumix.Output[*Query] {
-	return pulumix.Output[*Query]{
-		OutputState: i.ToQueryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // QueryArrayInput is an input type that accepts QueryArray and QueryArrayOutput values.
 // You can construct a concrete instance of `QueryArrayInput` via:
 //
@@ -213,12 +206,6 @@ func (i QueryArray) ToQueryArrayOutput() QueryArrayOutput {
 
 func (i QueryArray) ToQueryArrayOutputWithContext(ctx context.Context) QueryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(QueryArrayOutput)
-}
-
-func (i QueryArray) ToOutput(ctx context.Context) pulumix.Output[[]*Query] {
-	return pulumix.Output[[]*Query]{
-		OutputState: i.ToQueryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // QueryMapInput is an input type that accepts QueryMap and QueryMapOutput values.
@@ -246,12 +233,6 @@ func (i QueryMap) ToQueryMapOutputWithContext(ctx context.Context) QueryMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(QueryMapOutput)
 }
 
-func (i QueryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Query] {
-	return pulumix.Output[map[string]*Query]{
-		OutputState: i.ToQueryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueryOutput struct{ *pulumi.OutputState }
 
 func (QueryOutput) ElementType() reflect.Type {
@@ -264,12 +245,6 @@ func (o QueryOutput) ToQueryOutput() QueryOutput {
 
 func (o QueryOutput) ToQueryOutputWithContext(ctx context.Context) QueryOutput {
 	return o
-}
-
-func (o QueryOutput) ToOutput(ctx context.Context) pulumix.Output[*Query] {
-	return pulumix.Output[*Query]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment OCID.
@@ -296,12 +271,6 @@ func (o QueryArrayOutput) ToQueryArrayOutputWithContext(ctx context.Context) Que
 	return o
 }
 
-func (o QueryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Query] {
-	return pulumix.Output[[]*Query]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o QueryArrayOutput) Index(i pulumi.IntInput) QueryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Query {
 		return vs[0].([]*Query)[vs[1].(int)]
@@ -320,12 +289,6 @@ func (o QueryMapOutput) ToQueryMapOutput() QueryMapOutput {
 
 func (o QueryMapOutput) ToQueryMapOutputWithContext(ctx context.Context) QueryMapOutput {
 	return o
-}
-
-func (o QueryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Query] {
-	return pulumix.Output[map[string]*Query]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueryMapOutput) MapIndex(k pulumi.StringInput) QueryOutput {

@@ -75,7 +75,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<ImmutableArray<Outputs.PathRouteSetPathRoute>> PathRoutes { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the boot volume used to boot the instance.
         /// </summary>
-        public readonly string BootVolumeId;
+        public readonly string? BootVolumeId;
         /// <summary>
         /// The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         /// </summary>
-        public readonly string BootVolumeSizeInGbs;
+        public readonly string? BootVolumeSizeInGbs;
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
-        public readonly string BootVolumeVpusPerGb;
+        public readonly string? BootVolumeVpusPerGb;
         /// <summary>
         /// The OCID of the image used to boot the instance.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// These are the criteria for selecting an image. This is required if imageId is not specified.
         /// </summary>
@@ -36,27 +36,27 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailResult(
-            string bootVolumeId,
+            string? bootVolumeId,
 
-            string bootVolumeSizeInGbs,
+            string? bootVolumeSizeInGbs,
 
-            string bootVolumeVpusPerGb,
+            string? bootVolumeVpusPerGb,
 
-            string imageId,
+            string? imageId,
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult> instanceSourceImageFilterDetails,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string sourceType)
+            string? sourceType)
         {
             BootVolumeId = bootVolumeId;
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;

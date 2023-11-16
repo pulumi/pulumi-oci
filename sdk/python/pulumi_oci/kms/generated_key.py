@@ -24,16 +24,6 @@ class GeneratedKeyArgs:
                  logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a GeneratedKey resource.
-        :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
-        :param pulumi.Input['GeneratedKeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
         pulumi.set(__self__, "include_plaintext_key", include_plaintext_key)
@@ -47,9 +37,6 @@ class GeneratedKeyArgs:
     @property
     @pulumi.getter(name="cryptoEndpoint")
     def crypto_endpoint(self) -> pulumi.Input[str]:
-        """
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
@@ -59,9 +46,6 @@ class GeneratedKeyArgs:
     @property
     @pulumi.getter(name="includePlaintextKey")
     def include_plaintext_key(self) -> pulumi.Input[bool]:
-        """
-        If true, the generated key is also returned unencrypted.
-        """
         return pulumi.get(self, "include_plaintext_key")
 
     @include_plaintext_key.setter
@@ -71,9 +55,6 @@ class GeneratedKeyArgs:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the master encryption key to encrypt the generated data encryption key with.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -83,9 +64,6 @@ class GeneratedKeyArgs:
     @property
     @pulumi.getter(name="keyShape")
     def key_shape(self) -> pulumi.Input['GeneratedKeyKeyShapeArgs']:
-        """
-        The cryptographic properties of a key.
-        """
         return pulumi.get(self, "key_shape")
 
     @key_shape.setter
@@ -95,9 +73,6 @@ class GeneratedKeyArgs:
     @property
     @pulumi.getter(name="associatedData")
     def associated_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
@@ -107,13 +82,6 @@ class GeneratedKeyArgs:
     @property
     @pulumi.getter(name="loggingContext")
     def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
@@ -135,19 +103,6 @@ class _GeneratedKeyState:
                  plaintext_checksum: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering GeneratedKey resources.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        :param pulumi.Input[str] ciphertext: The encrypted data encryption key generated from a master encryption key.
-        :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
-        :param pulumi.Input['GeneratedKeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] plaintext: The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-        :param pulumi.Input[str] plaintext_checksum: The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
         if associated_data is not None:
             pulumi.set(__self__, "associated_data", associated_data)
@@ -171,9 +126,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="associatedData")
     def associated_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
@@ -183,9 +135,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter
     def ciphertext(self) -> Optional[pulumi.Input[str]]:
-        """
-        The encrypted data encryption key generated from a master encryption key.
-        """
         return pulumi.get(self, "ciphertext")
 
     @ciphertext.setter
@@ -195,9 +144,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="cryptoEndpoint")
     def crypto_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
@@ -207,9 +153,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="includePlaintextKey")
     def include_plaintext_key(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the generated key is also returned unencrypted.
-        """
         return pulumi.get(self, "include_plaintext_key")
 
     @include_plaintext_key.setter
@@ -219,9 +162,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the master encryption key to encrypt the generated data encryption key with.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -231,9 +171,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="keyShape")
     def key_shape(self) -> Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']]:
-        """
-        The cryptographic properties of a key.
-        """
         return pulumi.get(self, "key_shape")
 
     @key_shape.setter
@@ -243,13 +180,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="loggingContext")
     def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
@@ -259,9 +189,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter
     def plaintext(self) -> Optional[pulumi.Input[str]]:
-        """
-        The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-        """
         return pulumi.get(self, "plaintext")
 
     @plaintext.setter
@@ -271,9 +198,6 @@ class _GeneratedKeyState:
     @property
     @pulumi.getter(name="plaintextChecksum")
     def plaintext_checksum(self) -> Optional[pulumi.Input[str]]:
-        """
-        The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-        """
         return pulumi.get(self, "plaintext_checksum")
 
     @plaintext_checksum.setter
@@ -294,45 +218,9 @@ class GeneratedKey(pulumi.CustomResource):
                  logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a key that you can use to encrypt or decrypt data.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_generated_key = oci.kms.GeneratedKey("testGeneratedKey",
-            crypto_endpoint=var["generated_key_crypto_endpoint"],
-            include_plaintext_key=var["generated_key_include_plaintext_key"],
-            key_id=oci_kms_key["test_key"]["id"],
-            key_shape=oci.kms.GeneratedKeyKeyShapeArgs(
-                algorithm=var["generated_key_key_shape_algorithm"],
-                length=var["generated_key_key_shape_length"],
-                curve_id=oci_kms_curve["test_curve"]["id"],
-            ),
-            associated_data=var["generated_key_associated_data"],
-            logging_context=var["generated_key_logging_context"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a GeneratedKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
-        :param pulumi.Input[pulumi.InputType['GeneratedKeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -341,33 +229,7 @@ class GeneratedKey(pulumi.CustomResource):
                  args: GeneratedKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a key that you can use to encrypt or decrypt data.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_generated_key = oci.kms.GeneratedKey("testGeneratedKey",
-            crypto_endpoint=var["generated_key_crypto_endpoint"],
-            include_plaintext_key=var["generated_key_include_plaintext_key"],
-            key_id=oci_kms_key["test_key"]["id"],
-            key_shape=oci.kms.GeneratedKeyKeyShapeArgs(
-                algorithm=var["generated_key_key_shape_algorithm"],
-                length=var["generated_key_key_shape_length"],
-                curve_id=oci_kms_curve["test_curve"]["id"],
-            ),
-            associated_data=var["generated_key_associated_data"],
-            logging_context=var["generated_key_logging_context"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a GeneratedKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param GeneratedKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -441,19 +303,6 @@ class GeneratedKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        :param pulumi.Input[str] ciphertext: The encrypted data encryption key generated from a master encryption key.
-        :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
-        :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
-        :param pulumi.Input[pulumi.InputType['GeneratedKeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] plaintext: The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-        :param pulumi.Input[str] plaintext_checksum: The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -473,76 +322,45 @@ class GeneratedKey(pulumi.CustomResource):
     @property
     @pulumi.getter(name="associatedData")
     def associated_data(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
-        """
-        Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        """
         return pulumi.get(self, "associated_data")
 
     @property
     @pulumi.getter
-    def ciphertext(self) -> pulumi.Output[str]:
-        """
-        The encrypted data encryption key generated from a master encryption key.
-        """
+    def ciphertext(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ciphertext")
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
     def crypto_endpoint(self) -> pulumi.Output[str]:
-        """
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
-        """
         return pulumi.get(self, "crypto_endpoint")
 
     @property
     @pulumi.getter(name="includePlaintextKey")
     def include_plaintext_key(self) -> pulumi.Output[bool]:
-        """
-        If true, the generated key is also returned unencrypted.
-        """
         return pulumi.get(self, "include_plaintext_key")
 
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the master encryption key to encrypt the generated data encryption key with.
-        """
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="keyShape")
     def key_shape(self) -> pulumi.Output['outputs.GeneratedKeyKeyShape']:
-        """
-        The cryptographic properties of a key.
-        """
         return pulumi.get(self, "key_shape")
 
     @property
     @pulumi.getter(name="loggingContext")
     def logging_context(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
-        """
-        Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "logging_context")
 
     @property
     @pulumi.getter
-    def plaintext(self) -> pulumi.Output[str]:
-        """
-        The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-        """
+    def plaintext(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "plaintext")
 
     @property
     @pulumi.getter(name="plaintextChecksum")
-    def plaintext_checksum(self) -> pulumi.Output[str]:
-        """
-        The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-        """
+    def plaintext_checksum(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "plaintext_checksum")
 

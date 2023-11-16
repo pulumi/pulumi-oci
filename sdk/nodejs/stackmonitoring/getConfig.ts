@@ -45,56 +45,56 @@ export interface GetConfigResult {
     /**
      * The OCID of the compartment containing the configuration.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly configId: string;
     /**
      * The type of configuration.
      */
-    readonly configType: string;
+    readonly configType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Unique Oracle ID (OCID) that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * License edition.
      */
-    readonly license: string;
+    readonly license?: string;
     /**
      * The type of resource to configure for automatic promotion.
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
     /**
      * The current state of the configuration.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the configuration was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Config was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.

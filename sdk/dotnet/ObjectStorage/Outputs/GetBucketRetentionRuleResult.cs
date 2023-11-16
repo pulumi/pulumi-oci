@@ -16,38 +16,38 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// User specified name for the retention rule.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetBucketRetentionRuleDurationResult> Durations;
         /// <summary>
         /// Unique identifier for the retention rule.
         /// </summary>
-        public readonly string RetentionRuleId;
+        public readonly string? RetentionRuleId;
         /// <summary>
         /// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
         /// <summary>
         /// The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
         /// </summary>
-        public readonly string TimeRuleLocked;
+        public readonly string? TimeRuleLocked;
 
         [OutputConstructor]
         private GetBucketRetentionRuleResult(
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetBucketRetentionRuleDurationResult> durations,
 
-            string retentionRuleId,
+            string? retentionRuleId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeModified,
+            string? timeModified,
 
-            string timeRuleLocked)
+            string? timeRuleLocked)
         {
             DisplayName = displayName;
             Durations = durations;

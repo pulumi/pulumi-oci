@@ -51,23 +51,23 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
     /**
      * The OCID of the application for which the report has been generated.
      */
-    readonly applicationId: string;
+    readonly applicationId?: string;
     /**
      * The internal identifier of the application installation for which the report has been generated.
      */
-    readonly applicationInstallationId: string;
+    readonly applicationInstallationId?: string;
     /**
      * The installation path of the application for which the report has been generated.
      */
-    readonly applicationInstallationPath: string;
+    readonly applicationInstallationPath?: string;
     /**
      * The name of the application for which the report has been generated.
      */
-    readonly applicationName: string;
+    readonly applicationName?: string;
     /**
      * The Object Storage bucket name of this analysis result.
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * The fleet OCID.
      */
@@ -75,48 +75,48 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
     /**
      * The hostname of the managed instance.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The managed instance OCID.
      */
-    readonly managedInstanceId: string;
+    readonly managedInstanceId?: string;
     /**
      * The Object Storage namespace of this analysis result.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * The Object Storage object name of this analysis result.
      */
-    readonly object: string;
+    readonly object?: string;
     readonly performanceTuningAnalysisResultId: string;
     /**
      * Result of the analysis based on whether warnings have been found or not.
      */
-    readonly result: string;
+    readonly result?: string;
     /**
      * The time the result is compiled.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the JFR capture finished.
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The time the JFR capture started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * Total number of warnings reported by the analysis.
      */
-    readonly warningCount: number;
+    readonly warningCount?: number;
     /**
      * The OCID of the work request to start the analysis.
      */
-    readonly workRequestId: string;
+    readonly workRequestId?: string;
 }
 /**
  * This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.

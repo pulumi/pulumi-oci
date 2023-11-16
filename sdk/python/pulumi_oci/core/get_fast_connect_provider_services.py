@@ -44,10 +44,7 @@ class GetFastConnectProviderServicesResult:
 
     @property
     @pulumi.getter(name="fastConnectProviderServices")
-    def fast_connect_provider_services(self) -> Sequence['outputs.GetFastConnectProviderServicesFastConnectProviderServiceResult']:
-        """
-        The list of fast_connect_provider_services.
-        """
+    def fast_connect_provider_services(self) -> Optional[Sequence['outputs.GetFastConnectProviderServicesFastConnectProviderServiceResult']]:
         return pulumi.get(self, "fast_connect_provider_services")
 
     @property
@@ -57,7 +54,7 @@ class GetFastConnectProviderServicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,27 +77,7 @@ def get_fast_connect_provider_services(compartment_id: Optional[str] = None,
                                        filters: Optional[Sequence[pulumi.InputType['GetFastConnectProviderServicesFilterArgs']]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFastConnectProviderServicesResult:
     """
-    This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
-
-    Lists the service offerings from supported providers. You need this
-    information so you can specify your desired provider and service
-    offering when you create a virtual circuit.
-
-    For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
-
-    For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fast_connect_provider_services = oci.Core.get_fast_connect_provider_services(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -120,26 +97,6 @@ def get_fast_connect_provider_services_output(compartment_id: Optional[pulumi.In
                                               filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFastConnectProviderServicesFilterArgs']]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServicesResult]:
     """
-    This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.
-
-    Lists the service offerings from supported providers. You need this
-    information so you can specify your desired provider and service
-    offering when you create a virtual circuit.
-
-    For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
-
-    For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fast_connect_provider_services = oci.Core.get_fast_connect_provider_services(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

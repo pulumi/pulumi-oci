@@ -77,11 +77,11 @@ export interface GetServiceCatalogAssociationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of service_catalog_association_collection.
      */
-    readonly serviceCatalogAssociationCollections: outputs.ServiceCatalog.GetServiceCatalogAssociationsServiceCatalogAssociationCollection[];
+    readonly serviceCatalogAssociationCollections?: outputs.ServiceCatalog.GetServiceCatalogAssociationsServiceCatalogAssociationCollection[];
     readonly serviceCatalogAssociationId?: string;
     /**
      * Identifier of the service catalog.

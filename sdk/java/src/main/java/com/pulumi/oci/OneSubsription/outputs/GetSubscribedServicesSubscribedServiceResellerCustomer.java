@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscribedServicesSubscribedServiceResellerCustomer {
@@ -14,111 +16,111 @@ public final class GetSubscribedServicesSubscribedServiceResellerCustomer {
      * @return Customer chain type.
      * 
      */
-    private String customerChainType;
+    private @Nullable String customerChainType;
     /**
      * @return The business partner is chain customer or not.
      * 
      */
-    private Boolean isChainCustomer;
+    private @Nullable Boolean isChainCustomer;
     /**
      * @return The business partner is part of the public sector or not.
      * 
      */
-    private Boolean isPublicSector;
+    private @Nullable Boolean isPublicSector;
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Phonetic name.
      * 
      */
-    private String namePhonetic;
+    private @Nullable String namePhonetic;
     /**
      * @return TCA customer account number.
      * 
      */
-    private String tcaCustAccountNumber;
+    private @Nullable String tcaCustAccountNumber;
     /**
      * @return TCA customer account ID.
      * 
      */
-    private String tcaCustomerAccountId;
+    private @Nullable String tcaCustomerAccountId;
     /**
      * @return TCA party ID.
      * 
      */
-    private String tcaPartyId;
+    private @Nullable String tcaPartyId;
     /**
      * @return TCA party number.
      * 
      */
-    private String tcaPartyNumber;
+    private @Nullable String tcaPartyNumber;
 
     private GetSubscribedServicesSubscribedServiceResellerCustomer() {}
     /**
      * @return Customer chain type.
      * 
      */
-    public String customerChainType() {
-        return this.customerChainType;
+    public Optional<String> customerChainType() {
+        return Optional.ofNullable(this.customerChainType);
     }
     /**
      * @return The business partner is chain customer or not.
      * 
      */
-    public Boolean isChainCustomer() {
-        return this.isChainCustomer;
+    public Optional<Boolean> isChainCustomer() {
+        return Optional.ofNullable(this.isChainCustomer);
     }
     /**
      * @return The business partner is part of the public sector or not.
      * 
      */
-    public Boolean isPublicSector() {
-        return this.isPublicSector;
+    public Optional<Boolean> isPublicSector() {
+        return Optional.ofNullable(this.isPublicSector);
     }
     /**
      * @return Commercial name also called customer name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Phonetic name.
      * 
      */
-    public String namePhonetic() {
-        return this.namePhonetic;
+    public Optional<String> namePhonetic() {
+        return Optional.ofNullable(this.namePhonetic);
     }
     /**
      * @return TCA customer account number.
      * 
      */
-    public String tcaCustAccountNumber() {
-        return this.tcaCustAccountNumber;
+    public Optional<String> tcaCustAccountNumber() {
+        return Optional.ofNullable(this.tcaCustAccountNumber);
     }
     /**
      * @return TCA customer account ID.
      * 
      */
-    public String tcaCustomerAccountId() {
-        return this.tcaCustomerAccountId;
+    public Optional<String> tcaCustomerAccountId() {
+        return Optional.ofNullable(this.tcaCustomerAccountId);
     }
     /**
      * @return TCA party ID.
      * 
      */
-    public String tcaPartyId() {
-        return this.tcaPartyId;
+    public Optional<String> tcaPartyId() {
+        return Optional.ofNullable(this.tcaPartyId);
     }
     /**
      * @return TCA party number.
      * 
      */
-    public String tcaPartyNumber() {
-        return this.tcaPartyNumber;
+    public Optional<String> tcaPartyNumber() {
+        return Optional.ofNullable(this.tcaPartyNumber);
     }
 
     public static Builder builder() {
@@ -130,15 +132,15 @@ public final class GetSubscribedServicesSubscribedServiceResellerCustomer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String customerChainType;
-        private Boolean isChainCustomer;
-        private Boolean isPublicSector;
-        private String name;
-        private String namePhonetic;
-        private String tcaCustAccountNumber;
-        private String tcaCustomerAccountId;
-        private String tcaPartyId;
-        private String tcaPartyNumber;
+        private @Nullable String customerChainType;
+        private @Nullable Boolean isChainCustomer;
+        private @Nullable Boolean isPublicSector;
+        private @Nullable String name;
+        private @Nullable String namePhonetic;
+        private @Nullable String tcaCustAccountNumber;
+        private @Nullable String tcaCustomerAccountId;
+        private @Nullable String tcaPartyId;
+        private @Nullable String tcaPartyNumber;
         public Builder() {}
         public Builder(GetSubscribedServicesSubscribedServiceResellerCustomer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,48 +156,48 @@ public final class GetSubscribedServicesSubscribedServiceResellerCustomer {
         }
 
         @CustomType.Setter
-        public Builder customerChainType(String customerChainType) {
-            this.customerChainType = Objects.requireNonNull(customerChainType);
+        public Builder customerChainType(@Nullable String customerChainType) {
+            this.customerChainType = customerChainType;
             return this;
         }
         @CustomType.Setter
-        public Builder isChainCustomer(Boolean isChainCustomer) {
-            this.isChainCustomer = Objects.requireNonNull(isChainCustomer);
+        public Builder isChainCustomer(@Nullable Boolean isChainCustomer) {
+            this.isChainCustomer = isChainCustomer;
             return this;
         }
         @CustomType.Setter
-        public Builder isPublicSector(Boolean isPublicSector) {
-            this.isPublicSector = Objects.requireNonNull(isPublicSector);
+        public Builder isPublicSector(@Nullable Boolean isPublicSector) {
+            this.isPublicSector = isPublicSector;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namePhonetic(String namePhonetic) {
-            this.namePhonetic = Objects.requireNonNull(namePhonetic);
+        public Builder namePhonetic(@Nullable String namePhonetic) {
+            this.namePhonetic = namePhonetic;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaCustAccountNumber(String tcaCustAccountNumber) {
-            this.tcaCustAccountNumber = Objects.requireNonNull(tcaCustAccountNumber);
+        public Builder tcaCustAccountNumber(@Nullable String tcaCustAccountNumber) {
+            this.tcaCustAccountNumber = tcaCustAccountNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaCustomerAccountId(String tcaCustomerAccountId) {
-            this.tcaCustomerAccountId = Objects.requireNonNull(tcaCustomerAccountId);
+        public Builder tcaCustomerAccountId(@Nullable String tcaCustomerAccountId) {
+            this.tcaCustomerAccountId = tcaCustomerAccountId;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaPartyId(String tcaPartyId) {
-            this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
+        public Builder tcaPartyId(@Nullable String tcaPartyId) {
+            this.tcaPartyId = tcaPartyId;
             return this;
         }
         @CustomType.Setter
-        public Builder tcaPartyNumber(String tcaPartyNumber) {
-            this.tcaPartyNumber = Objects.requireNonNull(tcaPartyNumber);
+        public Builder tcaPartyNumber(@Nullable String tcaPartyNumber) {
+            this.tcaPartyNumber = tcaPartyNumber;
             return this;
         }
         public GetSubscribedServicesSubscribedServiceResellerCustomer build() {

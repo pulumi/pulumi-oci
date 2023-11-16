@@ -70,7 +70,7 @@ export interface GetExternalDbNodesResult {
     /**
      * The list of external_db_node_collection.
      */
-    readonly externalDbNodeCollections: outputs.DatabaseManagement.GetExternalDbNodesExternalDbNodeCollection[];
+    readonly externalDbNodeCollections?: outputs.DatabaseManagement.GetExternalDbNodesExternalDbNodeCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
      */
@@ -79,7 +79,7 @@ export interface GetExternalDbNodesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Db Nodes in Oracle Cloud Infrastructure Database Management service.

@@ -80,82 +80,82 @@ export interface GetDomainsDynamicResourceGroupResult {
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * text that explains the purpose of this Dynamic Resource Group
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * User-friendly, mutable identifier
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * A list of appRoles that are currently granted to this Dynamic Resource Group.  The Identity service will assert these AppRoles for any resource that satisfies the matching-rule of this DynamicResourceGroup.
      */
-    readonly dynamicGroupAppRoles: outputs.Identity.GetDomainsDynamicResourceGroupDynamicGroupAppRole[];
+    readonly dynamicGroupAppRoles?: outputs.Identity.GetDomainsDynamicResourceGroupDynamicGroupAppRole[];
     readonly dynamicResourceGroupId: string;
     /**
      * Grants assigned to group
      */
-    readonly grants: outputs.Identity.GetDomainsDynamicResourceGroupGrant[];
+    readonly grants?: outputs.Identity.GetDomainsDynamicResourceGroupGrant[];
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsDynamicResourceGroupIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsDynamicResourceGroupIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsDynamicResourceGroupIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsDynamicResourceGroupIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * Store as a string the matching-rule for this Dynamic Resource Group. This may match any number of Apps in this Domain, as well as matching any number of Oracle Cloud Infrastructure resources that are not in any Domain but that are in the Oracle Cloud Infrastructure Compartment that contains this Domain.
      */
-    readonly matchingRule: string;
+    readonly matchingRule?: string;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsDynamicResourceGroupMeta[];
+    readonly metas?: outputs.Identity.GetDomainsDynamicResourceGroupMeta[];
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsDynamicResourceGroupTag[];
+    readonly tags?: outputs.Identity.GetDomainsDynamicResourceGroupTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * Oracle Cloud Infrastructure Tags.
      */
-    readonly urnietfparamsscimschemasoracleidcsextensionOciTags: outputs.Identity.GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag[];
+    readonly urnietfparamsscimschemasoracleidcsextensionOciTags?: outputs.Identity.GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag[];
 }
 /**
  * This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.

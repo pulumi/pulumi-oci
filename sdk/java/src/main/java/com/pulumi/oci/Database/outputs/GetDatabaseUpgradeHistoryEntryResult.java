@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseUpgradeHistoryEntryResult {
@@ -13,65 +15,65 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
      * @return The database upgrade action.
      * 
      */
-    private String action;
+    private @Nullable String action;
     private String databaseId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: &#34;-upgradeTimezone false -keepEvents&#34;
      * 
      */
-    private String options;
+    private @Nullable String options;
     /**
      * @return The source of the Oracle Database software to be used for the upgrade.
      * * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private String sourceDbHomeId;
+    private @Nullable String sourceDbHomeId;
     /**
      * @return Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return the database software image used for upgrading database.
      * 
      */
-    private String targetDatabaseSoftwareImageId;
+    private @Nullable String targetDatabaseSoftwareImageId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private String targetDbHomeId;
+    private @Nullable String targetDbHomeId;
     /**
      * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
      */
-    private String targetDbVersion;
+    private @Nullable String targetDbVersion;
     /**
      * @return The date and time when the database upgrade ended.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time when the database upgrade started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     private String upgradeHistoryEntryId;
 
     private GetDatabaseUpgradeHistoryEntryResult() {}
@@ -79,8 +81,8 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
      * @return The database upgrade action.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     public String databaseId() {
         return this.databaseId;
@@ -89,22 +91,22 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: &#34;-upgradeTimezone false -keepEvents&#34;
      * 
      */
-    public String options() {
-        return this.options;
+    public Optional<String> options() {
+        return Optional.ofNullable(this.options);
     }
     /**
      * @return The source of the Oracle Database software to be used for the upgrade.
@@ -112,57 +114,57 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
      * * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    public String sourceDbHomeId() {
-        return this.sourceDbHomeId;
+    public Optional<String> sourceDbHomeId() {
+        return Optional.ofNullable(this.sourceDbHomeId);
     }
     /**
      * @return Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return the database software image used for upgrading database.
      * 
      */
-    public String targetDatabaseSoftwareImageId() {
-        return this.targetDatabaseSoftwareImageId;
+    public Optional<String> targetDatabaseSoftwareImageId() {
+        return Optional.ofNullable(this.targetDatabaseSoftwareImageId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    public String targetDbHomeId() {
-        return this.targetDbHomeId;
+    public Optional<String> targetDbHomeId() {
+        return Optional.ofNullable(this.targetDbHomeId);
     }
     /**
      * @return A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      * 
      */
-    public String targetDbVersion() {
-        return this.targetDbVersion;
+    public Optional<String> targetDbVersion() {
+        return Optional.ofNullable(this.targetDbVersion);
     }
     /**
      * @return The date and time when the database upgrade ended.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time when the database upgrade started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     public String upgradeHistoryEntryId() {
         return this.upgradeHistoryEntryId;
@@ -177,19 +179,19 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
+        private @Nullable String action;
         private String databaseId;
-        private String id;
-        private String lifecycleDetails;
-        private String options;
-        private String source;
-        private String sourceDbHomeId;
-        private String state;
-        private String targetDatabaseSoftwareImageId;
-        private String targetDbHomeId;
-        private String targetDbVersion;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String options;
+        private @Nullable String source;
+        private @Nullable String sourceDbHomeId;
+        private @Nullable String state;
+        private @Nullable String targetDatabaseSoftwareImageId;
+        private @Nullable String targetDbHomeId;
+        private @Nullable String targetDbVersion;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         private String upgradeHistoryEntryId;
         public Builder() {}
         public Builder(GetDatabaseUpgradeHistoryEntryResult defaults) {
@@ -211,8 +213,8 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
@@ -221,58 +223,58 @@ public final class GetDatabaseUpgradeHistoryEntryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder options(String options) {
-            this.options = Objects.requireNonNull(options);
+        public Builder options(@Nullable String options) {
+            this.options = options;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDbHomeId(String sourceDbHomeId) {
-            this.sourceDbHomeId = Objects.requireNonNull(sourceDbHomeId);
+        public Builder sourceDbHomeId(@Nullable String sourceDbHomeId) {
+            this.sourceDbHomeId = sourceDbHomeId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDatabaseSoftwareImageId(String targetDatabaseSoftwareImageId) {
-            this.targetDatabaseSoftwareImageId = Objects.requireNonNull(targetDatabaseSoftwareImageId);
+        public Builder targetDatabaseSoftwareImageId(@Nullable String targetDatabaseSoftwareImageId) {
+            this.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDbHomeId(String targetDbHomeId) {
-            this.targetDbHomeId = Objects.requireNonNull(targetDbHomeId);
+        public Builder targetDbHomeId(@Nullable String targetDbHomeId) {
+            this.targetDbHomeId = targetDbHomeId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDbVersion(String targetDbVersion) {
-            this.targetDbVersion = Objects.requireNonNull(targetDbVersion);
+        public Builder targetDbVersion(@Nullable String targetDbVersion) {
+            this.targetDbVersion = targetDbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter

@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, then the role provides administrative access privileges. READ-ONLY.
         /// </summary>
-        public readonly bool AdminRole;
+        public readonly bool? AdminRole;
         /// <summary>
         /// App identifier
         /// </summary>
-        public readonly string AppId;
+        public readonly string? AppId;
         /// <summary>
         /// Name of parent App. READ-ONLY.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// App Display Name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The name of the legacy group associated with this AppRole.
         /// </summary>
-        public readonly string LegacyGroupName;
+        public readonly string? LegacyGroupName;
         /// <summary>
         /// App URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The type of the entity that created this Group.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The ID of the App.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoleResult(
-            bool adminRole,
+            bool? adminRole,
 
-            string appId,
+            string? appId,
 
-            string appName,
+            string? appName,
 
-            string display,
+            string? display,
 
-            string legacyGroupName,
+            string? legacyGroupName,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             AdminRole = adminRole;
             AppId = appId;

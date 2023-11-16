@@ -66,7 +66,7 @@ export interface GetProjectsResult {
     /**
      * The list of project_collection.
      */
-    readonly projectCollections: outputs.AiLanguage.GetProjectsProjectCollection[];
+    readonly projectCollections?: outputs.AiLanguage.GetProjectsProjectCollection[];
     /**
      * The state of the project.
      */

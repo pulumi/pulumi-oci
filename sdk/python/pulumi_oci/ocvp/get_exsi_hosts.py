@@ -58,33 +58,21 @@ class GetExsiHostsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeInstanceId")
     def compute_instance_id(self) -> Optional[str]:
-        """
-        In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
-        """
         return pulumi.get(self, "compute_instance_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="esxiHostCollections")
-    def esxi_host_collections(self) -> Sequence['outputs.GetExsiHostsEsxiHostCollectionResult']:
-        """
-        The list of esxi_host_collection.
-        """
+    def esxi_host_collections(self) -> Optional[Sequence['outputs.GetExsiHostsEsxiHostCollectionResult']]:
         return pulumi.get(self, "esxi_host_collections")
 
     @property
@@ -94,7 +82,7 @@ class GetExsiHostsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,17 +101,11 @@ class GetExsiHostsResult:
     @property
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> Optional[str]:
-        """
-        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
-        """
         return pulumi.get(self, "sddc_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the ESXi host.
-        """
         return pulumi.get(self, "state")
 
 
@@ -155,41 +137,7 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExsiHostsResult:
     """
-    This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists the ESXi hosts in the specified SDDC. The list can be filtered
-    by Compute instance OCID or ESXi display name.
-
-    Remember that in terms of implementation, an ESXi host is a Compute instance that
-    is configured with the chosen bundle of VMware software. Each `EsxiHost`
-    object has its own OCID (`id`), and a separate attribute for the OCID of
-    the Compute instance (`computeInstanceId`). When filtering the list of
-    ESXi hosts, you can specify the OCID of the Compute instance, not the
-    ESXi host OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compartment_id=var["compartment_id"],
-        compute_instance_id=oci_core_instance["test_instance"]["id"],
-        display_name=var["esxi_host_display_name"],
-        is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
-        is_swap_billing_only=var["esxi_host_is_swap_billing_only"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["esxi_host_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
-    :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param bool is_billing_donors_only: If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
-    :param bool is_swap_billing_only: If this flag/param is set to True, we return only active hosts.
-    :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-    :param str state: The lifecycle state of the resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -227,40 +175,6 @@ def get_exsi_hosts_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExsiHostsResult]:
     """
-    This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists the ESXi hosts in the specified SDDC. The list can be filtered
-    by Compute instance OCID or ESXi display name.
-
-    Remember that in terms of implementation, an ESXi host is a Compute instance that
-    is configured with the chosen bundle of VMware software. Each `EsxiHost`
-    object has its own OCID (`id`), and a separate attribute for the OCID of
-    the Compute instance (`computeInstanceId`). When filtering the list of
-    ESXi hosts, you can specify the OCID of the Compute instance, not the
-    ESXi host OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compartment_id=var["compartment_id"],
-        compute_instance_id=oci_core_instance["test_instance"]["id"],
-        display_name=var["esxi_host_display_name"],
-        is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
-        is_swap_billing_only=var["esxi_host_is_swap_billing_only"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["esxi_host_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
-    :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param bool is_billing_donors_only: If this flag/param is set to True, we return only deleted hosts with LeftOver billingCycle.
-    :param bool is_swap_billing_only: If this flag/param is set to True, we return only active hosts.
-    :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-    :param str state: The lifecycle state of the resource.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -46,47 +46,47 @@ export interface GetAutonomousPatchResult {
     /**
      * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
      */
-    readonly autonomousPatchType: string;
+    readonly autonomousPatchType?: string;
     /**
      * The text describing this patch package.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      */
-    readonly patchModel: string;
+    readonly patchModel?: string;
     /**
      * First month of the quarter in which the patch was released.
      */
-    readonly quarter: string;
+    readonly quarter?: string;
     /**
      * The current state of the patch as a result of lastAction.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time that the patch was released.
      */
-    readonly timeReleased: string;
+    readonly timeReleased?: string;
     /**
      * The type of patch. BUNDLE is one example.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * The version of this patch package.
      */
-    readonly version: string;
+    readonly version?: string;
     /**
      * Year in which the patch was released.
      */
-    readonly year: string;
+    readonly year?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.

@@ -8,6 +8,8 @@ import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolumeConfi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceVolume {
@@ -15,51 +17,51 @@ public final class GetContainerInstanceVolume {
      * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
-    private String backingStore;
+    private @Nullable String backingStore;
     /**
      * @return Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
      * 
      */
-    private List<GetContainerInstanceVolumeConfig> configs;
+    private @Nullable List<GetContainerInstanceVolumeConfig> configs;
     /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The type of volume.
      * 
      */
-    private String volumeType;
+    private @Nullable String volumeType;
 
     private GetContainerInstanceVolume() {}
     /**
      * @return The volume type of the empty directory, can be either File Storage or Memory.
      * 
      */
-    public String backingStore() {
-        return this.backingStore;
+    public Optional<String> backingStore() {
+        return Optional.ofNullable(this.backingStore);
     }
     /**
      * @return Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
      * 
      */
     public List<GetContainerInstanceVolumeConfig> configs() {
-        return this.configs;
+        return this.configs == null ? List.of() : this.configs;
     }
     /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The type of volume.
      * 
      */
-    public String volumeType() {
-        return this.volumeType;
+    public Optional<String> volumeType() {
+        return Optional.ofNullable(this.volumeType);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetContainerInstanceVolume {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backingStore;
-        private List<GetContainerInstanceVolumeConfig> configs;
-        private String name;
-        private String volumeType;
+        private @Nullable String backingStore;
+        private @Nullable List<GetContainerInstanceVolumeConfig> configs;
+        private @Nullable String name;
+        private @Nullable String volumeType;
         public Builder() {}
         public Builder(GetContainerInstanceVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetContainerInstanceVolume {
         }
 
         @CustomType.Setter
-        public Builder backingStore(String backingStore) {
-            this.backingStore = Objects.requireNonNull(backingStore);
+        public Builder backingStore(@Nullable String backingStore) {
+            this.backingStore = backingStore;
             return this;
         }
         @CustomType.Setter
-        public Builder configs(List<GetContainerInstanceVolumeConfig> configs) {
-            this.configs = Objects.requireNonNull(configs);
+        public Builder configs(@Nullable List<GetContainerInstanceVolumeConfig> configs) {
+            this.configs = configs;
             return this;
         }
         public Builder configs(GetContainerInstanceVolumeConfig... configs) {
             return configs(List.of(configs));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeType(String volumeType) {
-            this.volumeType = Objects.requireNonNull(volumeType);
+        public Builder volumeType(@Nullable String volumeType) {
+            this.volumeType = volumeType;
             return this;
         }
         public GetContainerInstanceVolume build() {

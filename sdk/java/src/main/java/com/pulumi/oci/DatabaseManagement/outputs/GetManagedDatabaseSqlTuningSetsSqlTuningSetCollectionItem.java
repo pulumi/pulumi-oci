@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
@@ -14,123 +16,123 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
      * @return The description of the SQL tuning set.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Latest execution error of the plsql that was submitted as a scheduler job.
      * 
      */
-    private String errorMessage;
+    private @Nullable String errorMessage;
     /**
      * @return The unique Sql tuning set identifier. This is not OCID.
      * 
      */
-    private Integer id;
+    private @Nullable Integer id;
     /**
      * @return The name of the SQL tuning set.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return Name of the Sql tuning set scheduler job.
      * 
      */
-    private String scheduledJobName;
+    private @Nullable String scheduledJobName;
     /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
-    private Integer statementCounts;
+    private @Nullable Integer statementCounts;
     /**
      * @return Current status of the Sql tuning set.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The created time of the Sql tuning set.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Last modified time of the Sql tuning set.
      * 
      */
-    private String timeLastModified;
+    private @Nullable String timeLastModified;
 
     private GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem() {}
     /**
      * @return The description of the SQL tuning set.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Latest execution error of the plsql that was submitted as a scheduler job.
      * 
      */
-    public String errorMessage() {
-        return this.errorMessage;
+    public Optional<String> errorMessage() {
+        return Optional.ofNullable(this.errorMessage);
     }
     /**
      * @return The unique Sql tuning set identifier. This is not OCID.
      * 
      */
-    public Integer id() {
-        return this.id;
+    public Optional<Integer> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the SQL tuning set.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return Name of the Sql tuning set scheduler job.
      * 
      */
-    public String scheduledJobName() {
-        return this.scheduledJobName;
+    public Optional<String> scheduledJobName() {
+        return Optional.ofNullable(this.scheduledJobName);
     }
     /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
-    public Integer statementCounts() {
-        return this.statementCounts;
+    public Optional<Integer> statementCounts() {
+        return Optional.ofNullable(this.statementCounts);
     }
     /**
      * @return Current status of the Sql tuning set.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The created time of the Sql tuning set.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Last modified time of the Sql tuning set.
      * 
      */
-    public String timeLastModified() {
-        return this.timeLastModified;
+    public Optional<String> timeLastModified() {
+        return Optional.ofNullable(this.timeLastModified);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String errorMessage;
-        private Integer id;
-        private String name;
-        private String owner;
-        private String scheduledJobName;
-        private Integer statementCounts;
-        private String status;
-        private String timeCreated;
-        private String timeLastModified;
+        private @Nullable String description;
+        private @Nullable String errorMessage;
+        private @Nullable Integer id;
+        private @Nullable String name;
+        private @Nullable String owner;
+        private @Nullable String scheduledJobName;
+        private @Nullable Integer statementCounts;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastModified;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,53 +170,53 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+        public Builder errorMessage(@Nullable String errorMessage) {
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder id(Integer id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable Integer id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledJobName(String scheduledJobName) {
-            this.scheduledJobName = Objects.requireNonNull(scheduledJobName);
+        public Builder scheduledJobName(@Nullable String scheduledJobName) {
+            this.scheduledJobName = scheduledJobName;
             return this;
         }
         @CustomType.Setter
-        public Builder statementCounts(Integer statementCounts) {
-            this.statementCounts = Objects.requireNonNull(statementCounts);
+        public Builder statementCounts(@Nullable Integer statementCounts) {
+            this.statementCounts = statementCounts;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+        public Builder timeLastModified(@Nullable String timeLastModified) {
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
@@ -60,10 +59,10 @@ type GetInstanceMeasuredBootReportArgs struct {
 // A collection of values returned by getInstanceMeasuredBootReport.
 type GetInstanceMeasuredBootReportResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	InstanceId string `pulumi:"instanceId"`
+	Id         *string `pulumi:"id"`
+	InstanceId string  `pulumi:"instanceId"`
 	// Whether the verification succeeded, and the new values match the expected values.
-	IsPolicyVerificationSuccessful bool `pulumi:"isPolicyVerificationSuccessful"`
+	IsPolicyVerificationSuccessful *bool `pulumi:"isPolicyVerificationSuccessful"`
 	// A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
 	Measurements []GetInstanceMeasuredBootReportMeasurement `pulumi:"measurements"`
 }
@@ -106,15 +105,9 @@ func (o GetInstanceMeasuredBootReportResultOutput) ToGetInstanceMeasuredBootRepo
 	return o
 }
 
-func (o GetInstanceMeasuredBootReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceMeasuredBootReportResult] {
-	return pulumix.Output[GetInstanceMeasuredBootReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceMeasuredBootReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceMeasuredBootReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceMeasuredBootReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceMeasuredBootReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInstanceMeasuredBootReportResultOutput) InstanceId() pulumi.StringOutput {
@@ -122,8 +115,8 @@ func (o GetInstanceMeasuredBootReportResultOutput) InstanceId() pulumi.StringOut
 }
 
 // Whether the verification succeeded, and the new values match the expected values.
-func (o GetInstanceMeasuredBootReportResultOutput) IsPolicyVerificationSuccessful() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceMeasuredBootReportResult) bool { return v.IsPolicyVerificationSuccessful }).(pulumi.BoolOutput)
+func (o GetInstanceMeasuredBootReportResultOutput) IsPolicyVerificationSuccessful() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstanceMeasuredBootReportResult) *bool { return v.IsPolicyVerificationSuccessful }).(pulumi.BoolPtrOutput)
 }
 
 // A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.

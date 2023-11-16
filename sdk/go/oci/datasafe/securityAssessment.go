@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -72,9 +71,9 @@ type SecurityAssessment struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the security assessment.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -82,23 +81,23 @@ type SecurityAssessment struct {
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets pulumi.StringArrayOutput `pulumi:"ignoredTargets"`
 	// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-	IsBaseline pulumi.BoolOutput `pulumi:"isBaseline"`
+	IsBaseline pulumi.BoolPtrOutput `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
-	IsDeviatedFromBaseline pulumi.BoolOutput `pulumi:"isDeviatedFromBaseline"`
+	IsDeviatedFromBaseline pulumi.BoolPtrOutput `pulumi:"isDeviatedFromBaseline"`
 	// The OCID of the baseline against which the latest security assessment was compared.
-	LastComparedBaselineId pulumi.StringOutput `pulumi:"lastComparedBaselineId"`
+	LastComparedBaselineId pulumi.StringPtrOutput `pulumi:"lastComparedBaselineId"`
 	// Details about the current state of the security assessment.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The summary of findings for the security assessment.
-	Link pulumi.StringOutput `pulumi:"link"`
+	Link pulumi.StringPtrOutput `pulumi:"link"`
 	// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-	Schedule pulumi.StringOutput `pulumi:"schedule"`
+	Schedule pulumi.StringPtrOutput `pulumi:"schedule"`
 	// The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-	ScheduleSecurityAssessmentId pulumi.StringOutput `pulumi:"scheduleSecurityAssessmentId"`
+	ScheduleSecurityAssessmentId pulumi.StringPtrOutput `pulumi:"scheduleSecurityAssessmentId"`
 	// The current state of the security assessment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics SecurityAssessmentStatisticArrayOutput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -111,17 +110,17 @@ type SecurityAssessment struct {
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
 	// The version of the target database.
-	TargetVersion pulumi.StringOutput `pulumi:"targetVersion"`
+	TargetVersion pulumi.StringPtrOutput `pulumi:"targetVersion"`
 	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeLastAssessed pulumi.StringOutput `pulumi:"timeLastAssessed"`
+	TimeLastAssessed pulumi.StringPtrOutput `pulumi:"timeLastAssessed"`
 	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Indicates whether the security assessment was created by system or by a user.
-	TriggeredBy pulumi.StringOutput `pulumi:"triggeredBy"`
+	TriggeredBy pulumi.StringPtrOutput `pulumi:"triggeredBy"`
 	// The type of this security assessment. The possible types are:
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 }
 
 // NewSecurityAssessment registers a new resource with the given unique name, arguments, and options.
@@ -347,12 +346,6 @@ func (i *SecurityAssessment) ToSecurityAssessmentOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentOutput)
 }
 
-func (i *SecurityAssessment) ToOutput(ctx context.Context) pulumix.Output[*SecurityAssessment] {
-	return pulumix.Output[*SecurityAssessment]{
-		OutputState: i.ToSecurityAssessmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityAssessmentArrayInput is an input type that accepts SecurityAssessmentArray and SecurityAssessmentArrayOutput values.
 // You can construct a concrete instance of `SecurityAssessmentArrayInput` via:
 //
@@ -376,12 +369,6 @@ func (i SecurityAssessmentArray) ToSecurityAssessmentArrayOutput() SecurityAsses
 
 func (i SecurityAssessmentArray) ToSecurityAssessmentArrayOutputWithContext(ctx context.Context) SecurityAssessmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentArrayOutput)
-}
-
-func (i SecurityAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityAssessment] {
-	return pulumix.Output[[]*SecurityAssessment]{
-		OutputState: i.ToSecurityAssessmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityAssessmentMapInput is an input type that accepts SecurityAssessmentMap and SecurityAssessmentMapOutput values.
@@ -409,12 +396,6 @@ func (i SecurityAssessmentMap) ToSecurityAssessmentMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityAssessmentMapOutput)
 }
 
-func (i SecurityAssessmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityAssessment] {
-	return pulumix.Output[map[string]*SecurityAssessment]{
-		OutputState: i.ToSecurityAssessmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityAssessmentOutput struct{ *pulumi.OutputState }
 
 func (SecurityAssessmentOutput) ElementType() reflect.Type {
@@ -429,12 +410,6 @@ func (o SecurityAssessmentOutput) ToSecurityAssessmentOutputWithContext(ctx cont
 	return o
 }
 
-func (o SecurityAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityAssessment] {
-	return pulumix.Output[*SecurityAssessment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the security assessment.
 func (o SecurityAssessmentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -446,13 +421,13 @@ func (o SecurityAssessmentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the security assessment.
-func (o SecurityAssessmentOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the security assessment.
-func (o SecurityAssessmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -471,45 +446,45 @@ func (o SecurityAssessmentOutput) IgnoredTargets() pulumi.StringArrayOutput {
 }
 
 // Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
-func (o SecurityAssessmentOutput) IsBaseline() pulumi.BoolOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.BoolOutput { return v.IsBaseline }).(pulumi.BoolOutput)
+func (o SecurityAssessmentOutput) IsBaseline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.BoolPtrOutput { return v.IsBaseline }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether or not the security assessment deviates from the baseline.
-func (o SecurityAssessmentOutput) IsDeviatedFromBaseline() pulumi.BoolOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.BoolOutput { return v.IsDeviatedFromBaseline }).(pulumi.BoolOutput)
+func (o SecurityAssessmentOutput) IsDeviatedFromBaseline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.BoolPtrOutput { return v.IsDeviatedFromBaseline }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the baseline against which the latest security assessment was compared.
-func (o SecurityAssessmentOutput) LastComparedBaselineId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.LastComparedBaselineId }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) LastComparedBaselineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.LastComparedBaselineId }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the security assessment.
-func (o SecurityAssessmentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The summary of findings for the security assessment.
-func (o SecurityAssessmentOutput) Link() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.Link }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) Link() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.Link }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 //
 // Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-func (o SecurityAssessmentOutput) Schedule() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.Schedule }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) Schedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.Schedule }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the security assessment that is responsible for creating this scheduled save assessment.
-func (o SecurityAssessmentOutput) ScheduleSecurityAssessmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.ScheduleSecurityAssessmentId }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) ScheduleSecurityAssessmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.ScheduleSecurityAssessmentId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the security assessment.
-func (o SecurityAssessmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
@@ -536,33 +511,33 @@ func (o SecurityAssessmentOutput) TargetIds() pulumi.StringArrayOutput {
 }
 
 // The version of the target database.
-func (o SecurityAssessmentOutput) TargetVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.TargetVersion }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) TargetVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.TargetVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o SecurityAssessmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o SecurityAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.TimeLastAssessed }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) TimeLastAssessed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.TimeLastAssessed }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o SecurityAssessmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the security assessment was created by system or by a user.
-func (o SecurityAssessmentOutput) TriggeredBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.TriggeredBy }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) TriggeredBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.TriggeredBy }).(pulumi.StringPtrOutput)
 }
 
 // The type of this security assessment. The possible types are:
-func (o SecurityAssessmentOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o SecurityAssessmentOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type SecurityAssessmentArrayOutput struct{ *pulumi.OutputState }
@@ -577,12 +552,6 @@ func (o SecurityAssessmentArrayOutput) ToSecurityAssessmentArrayOutput() Securit
 
 func (o SecurityAssessmentArrayOutput) ToSecurityAssessmentArrayOutputWithContext(ctx context.Context) SecurityAssessmentArrayOutput {
 	return o
-}
-
-func (o SecurityAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityAssessment] {
-	return pulumix.Output[[]*SecurityAssessment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityAssessmentArrayOutput) Index(i pulumi.IntInput) SecurityAssessmentOutput {
@@ -603,12 +572,6 @@ func (o SecurityAssessmentMapOutput) ToSecurityAssessmentMapOutput() SecurityAss
 
 func (o SecurityAssessmentMapOutput) ToSecurityAssessmentMapOutputWithContext(ctx context.Context) SecurityAssessmentMapOutput {
 	return o
-}
-
-func (o SecurityAssessmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityAssessment] {
-	return pulumix.Output[map[string]*SecurityAssessment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityAssessmentMapOutput) MapIndex(k pulumi.StringInput) SecurityAssessmentOutput {

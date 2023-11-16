@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -81,32 +80,32 @@ type AnnouncementSubscription struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the announcement subscription. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
-	FilterGroups AnnouncementSubscriptionFilterGroupsOutput `pulumi:"filterGroups"`
+	FilterGroups AnnouncementSubscriptionFilterGroupsPtrOutput `pulumi:"filterGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
 	OnsTopicId pulumi.StringOutput `pulumi:"onsTopicId"`
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-	PreferredLanguage pulumi.StringOutput `pulumi:"preferredLanguage"`
+	PreferredLanguage pulumi.StringPtrOutput `pulumi:"preferredLanguage"`
 	// (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	PreferredTimeZone pulumi.StringOutput `pulumi:"preferredTimeZone"`
+	PreferredTimeZone pulumi.StringPtrOutput `pulumi:"preferredTimeZone"`
 	// The current lifecycle state of the announcement subscription.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAnnouncementSubscription registers a new resource with the given unique name, arguments, and options.
@@ -291,12 +290,6 @@ func (i *AnnouncementSubscription) ToAnnouncementSubscriptionOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionOutput)
 }
 
-func (i *AnnouncementSubscription) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscription] {
-	return pulumix.Output[*AnnouncementSubscription]{
-		OutputState: i.ToAnnouncementSubscriptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnnouncementSubscriptionArrayInput is an input type that accepts AnnouncementSubscriptionArray and AnnouncementSubscriptionArrayOutput values.
 // You can construct a concrete instance of `AnnouncementSubscriptionArrayInput` via:
 //
@@ -320,12 +313,6 @@ func (i AnnouncementSubscriptionArray) ToAnnouncementSubscriptionArrayOutput() A
 
 func (i AnnouncementSubscriptionArray) ToAnnouncementSubscriptionArrayOutputWithContext(ctx context.Context) AnnouncementSubscriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionArrayOutput)
-}
-
-func (i AnnouncementSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscription] {
-	return pulumix.Output[[]*AnnouncementSubscription]{
-		OutputState: i.ToAnnouncementSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AnnouncementSubscriptionMapInput is an input type that accepts AnnouncementSubscriptionMap and AnnouncementSubscriptionMapOutput values.
@@ -353,12 +340,6 @@ func (i AnnouncementSubscriptionMap) ToAnnouncementSubscriptionMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionMapOutput)
 }
 
-func (i AnnouncementSubscriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscription] {
-	return pulumix.Output[map[string]*AnnouncementSubscription]{
-		OutputState: i.ToAnnouncementSubscriptionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnnouncementSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionOutput) ElementType() reflect.Type {
@@ -373,12 +354,6 @@ func (o AnnouncementSubscriptionOutput) ToAnnouncementSubscriptionOutputWithCont
 	return o
 }
 
-func (o AnnouncementSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscription] {
-	return pulumix.Output[*AnnouncementSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 func (o AnnouncementSubscriptionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -390,8 +365,8 @@ func (o AnnouncementSubscriptionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A description of the announcement subscription. Avoid entering confidential information.
-func (o AnnouncementSubscriptionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -400,8 +375,8 @@ func (o AnnouncementSubscriptionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
-func (o AnnouncementSubscriptionOutput) FilterGroups() AnnouncementSubscriptionFilterGroupsOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) AnnouncementSubscriptionFilterGroupsOutput { return v.FilterGroups }).(AnnouncementSubscriptionFilterGroupsOutput)
+func (o AnnouncementSubscriptionOutput) FilterGroups() AnnouncementSubscriptionFilterGroupsPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) AnnouncementSubscriptionFilterGroupsPtrOutput { return v.FilterGroups }).(AnnouncementSubscriptionFilterGroupsPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -410,8 +385,8 @@ func (o AnnouncementSubscriptionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-func (o AnnouncementSubscriptionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
@@ -420,21 +395,21 @@ func (o AnnouncementSubscriptionOutput) OnsTopicId() pulumi.StringOutput {
 }
 
 // (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-func (o AnnouncementSubscriptionOutput) PreferredLanguage() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.PreferredLanguage }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) PreferredLanguage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.PreferredLanguage }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AnnouncementSubscriptionOutput) PreferredTimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.PreferredTimeZone }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) PreferredTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.PreferredTimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the announcement subscription.
-func (o AnnouncementSubscriptionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -443,13 +418,13 @@ func (o AnnouncementSubscriptionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o AnnouncementSubscriptionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o AnnouncementSubscriptionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AnnouncementSubscriptionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AnnouncementSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -464,12 +439,6 @@ func (o AnnouncementSubscriptionArrayOutput) ToAnnouncementSubscriptionArrayOutp
 
 func (o AnnouncementSubscriptionArrayOutput) ToAnnouncementSubscriptionArrayOutputWithContext(ctx context.Context) AnnouncementSubscriptionArrayOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscription] {
-	return pulumix.Output[[]*AnnouncementSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnnouncementSubscriptionArrayOutput) Index(i pulumi.IntInput) AnnouncementSubscriptionOutput {
@@ -490,12 +459,6 @@ func (o AnnouncementSubscriptionMapOutput) ToAnnouncementSubscriptionMapOutput()
 
 func (o AnnouncementSubscriptionMapOutput) ToAnnouncementSubscriptionMapOutputWithContext(ctx context.Context) AnnouncementSubscriptionMapOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscription] {
-	return pulumix.Output[map[string]*AnnouncementSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnnouncementSubscriptionMapOutput) MapIndex(k pulumi.StringInput) AnnouncementSubscriptionOutput {

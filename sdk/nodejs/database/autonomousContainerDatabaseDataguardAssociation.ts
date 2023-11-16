@@ -48,11 +48,11 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
     /**
      * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      */
-    public /*out*/ readonly applyLag!: pulumi.Output<string>;
+    public /*out*/ readonly applyLag!: pulumi.Output<string | undefined>;
     /**
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      */
-    public /*out*/ readonly applyRate!: pulumi.Output<string>;
+    public /*out*/ readonly applyRate!: pulumi.Output<string | undefined>;
     /**
      * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -64,31 +64,31 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
     /**
      * (Updatable) The lag time for my preference based on data loss tolerance in seconds.
      */
-    public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number>;
+    public readonly fastStartFailOverLagLimitInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      */
-    public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean>;
+    public readonly isAutomaticFailoverEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      */
-    public /*out*/ readonly peerAutonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string>;
+    public /*out*/ readonly peerAutonomousContainerDatabaseDataguardAssociationId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      */
-    public /*out*/ readonly peerAutonomousContainerDatabaseId!: pulumi.Output<string>;
+    public /*out*/ readonly peerAutonomousContainerDatabaseId!: pulumi.Output<string | undefined>;
     /**
      * The current state of Autonomous Data Guard.
      */
-    public /*out*/ readonly peerLifecycleState!: pulumi.Output<string>;
+    public /*out*/ readonly peerLifecycleState!: pulumi.Output<string | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    public /*out*/ readonly peerRole!: pulumi.Output<string>;
+    public /*out*/ readonly peerRole!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
      *
@@ -96,31 +96,31 @@ export class AutonomousContainerDatabaseDataguardAssociation extends pulumi.Cust
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly protectionMode!: pulumi.Output<string>;
+    public readonly protectionMode!: pulumi.Output<string | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    public /*out*/ readonly role!: pulumi.Output<string | undefined>;
     /**
      * The current state of Autonomous Data Guard.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Autonomous DataGuard association was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time when the last role change action happened.
      */
-    public /*out*/ readonly timeLastRoleChanged!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastRoleChanged!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      */
-    public /*out*/ readonly timeLastSynced!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastSynced!: pulumi.Output<string | undefined>;
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      */
-    public /*out*/ readonly transportLag!: pulumi.Output<string>;
+    public /*out*/ readonly transportLag!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutonomousContainerDatabaseDataguardAssociation resource with the given unique name, arguments, and options.

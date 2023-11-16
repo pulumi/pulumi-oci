@@ -72,11 +72,11 @@ export interface GetFleetJavaMigrationAnalysisResultsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of java_migration_analysis_result_collection.
      */
-    readonly javaMigrationAnalysisResultCollections: outputs.Jms.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection[];
+    readonly javaMigrationAnalysisResultCollections?: outputs.Jms.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection[];
     /**
      * The managed instance OCID.
      */

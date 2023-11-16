@@ -57,13 +57,13 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -81,25 +81,25 @@ namespace Pulumi.Oci.DisasterRecovery
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the DR plan's current state in more detail.
         /// </summary>
         [Output("lifeCycleDetails")]
-        public Output<string> LifeCycleDetails { get; private set; } = null!;
+        public Output<string?> LifeCycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
         [Output("peerDrProtectionGroupId")]
-        public Output<string> PeerDrProtectionGroupId { get; private set; } = null!;
+        public Output<string?> PeerDrProtectionGroupId { get; private set; } = null!;
 
         /// <summary>
         /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
         [Output("peerRegion")]
-        public Output<string> PeerRegion { get; private set; } = null!;
+        public Output<string?> PeerRegion { get; private set; } = null!;
 
         /// <summary>
         /// The list of groups in this DR plan.
@@ -111,25 +111,25 @@ namespace Pulumi.Oci.DisasterRecovery
         /// The current state of the DR plan.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The type of DR plan to be created. 

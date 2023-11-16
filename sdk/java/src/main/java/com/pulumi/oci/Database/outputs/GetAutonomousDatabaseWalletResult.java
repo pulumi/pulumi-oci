@@ -24,13 +24,13 @@ public final class GetAutonomousDatabaseWalletResult {
      * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    private String content;
+    private @Nullable String content;
     private @Nullable String generateType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String password;
 
     private GetAutonomousDatabaseWalletResult() {}
@@ -50,8 +50,8 @@ public final class GetAutonomousDatabaseWalletResult {
      * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     public Optional<String> generateType() {
         return Optional.ofNullable(this.generateType);
@@ -60,8 +60,8 @@ public final class GetAutonomousDatabaseWalletResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String password() {
         return this.password;
@@ -78,9 +78,9 @@ public final class GetAutonomousDatabaseWalletResult {
     public static final class Builder {
         private String autonomousDatabaseId;
         private @Nullable Boolean base64EncodeContent;
-        private String content;
+        private @Nullable String content;
         private @Nullable String generateType;
-        private String id;
+        private @Nullable String id;
         private String password;
         public Builder() {}
         public Builder(GetAutonomousDatabaseWalletResult defaults) {
@@ -104,8 +104,8 @@ public final class GetAutonomousDatabaseWalletResult {
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
@@ -114,8 +114,8 @@ public final class GetAutonomousDatabaseWalletResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

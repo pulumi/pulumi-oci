@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetChannelsChannelSourceAnonymousTransactionsHandling {
@@ -13,51 +15,51 @@ public final class GetChannelsChannelSourceAnonymousTransactionsHandling {
      * @return Specifies one of the coordinates (file) at which the replica should begin reading the source&#39;s log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
      * 
      */
-    private String lastConfiguredLogFilename;
+    private @Nullable String lastConfiguredLogFilename;
     /**
      * @return Specifies one of the coordinates (offset) at which the replica should begin reading the source&#39;s log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
      * 
      */
-    private String lastConfiguredLogOffset;
+    private @Nullable String lastConfiguredLogOffset;
     /**
      * @return Specifies how the replication channel handles anonymous transactions.
      * 
      */
-    private String policy;
+    private @Nullable String policy;
     /**
      * @return The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
      * 
      */
-    private String uuid;
+    private @Nullable String uuid;
 
     private GetChannelsChannelSourceAnonymousTransactionsHandling() {}
     /**
      * @return Specifies one of the coordinates (file) at which the replica should begin reading the source&#39;s log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
      * 
      */
-    public String lastConfiguredLogFilename() {
-        return this.lastConfiguredLogFilename;
+    public Optional<String> lastConfiguredLogFilename() {
+        return Optional.ofNullable(this.lastConfiguredLogFilename);
     }
     /**
      * @return Specifies one of the coordinates (offset) at which the replica should begin reading the source&#39;s log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
      * 
      */
-    public String lastConfiguredLogOffset() {
-        return this.lastConfiguredLogOffset;
+    public Optional<String> lastConfiguredLogOffset() {
+        return Optional.ofNullable(this.lastConfiguredLogOffset);
     }
     /**
      * @return Specifies how the replication channel handles anonymous transactions.
      * 
      */
-    public String policy() {
-        return this.policy;
+    public Optional<String> policy() {
+        return Optional.ofNullable(this.policy);
     }
     /**
      * @return The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
      * 
      */
-    public String uuid() {
-        return this.uuid;
+    public Optional<String> uuid() {
+        return Optional.ofNullable(this.uuid);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetChannelsChannelSourceAnonymousTransactionsHandling {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lastConfiguredLogFilename;
-        private String lastConfiguredLogOffset;
-        private String policy;
-        private String uuid;
+        private @Nullable String lastConfiguredLogFilename;
+        private @Nullable String lastConfiguredLogOffset;
+        private @Nullable String policy;
+        private @Nullable String uuid;
         public Builder() {}
         public Builder(GetChannelsChannelSourceAnonymousTransactionsHandling defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetChannelsChannelSourceAnonymousTransactionsHandling {
         }
 
         @CustomType.Setter
-        public Builder lastConfiguredLogFilename(String lastConfiguredLogFilename) {
-            this.lastConfiguredLogFilename = Objects.requireNonNull(lastConfiguredLogFilename);
+        public Builder lastConfiguredLogFilename(@Nullable String lastConfiguredLogFilename) {
+            this.lastConfiguredLogFilename = lastConfiguredLogFilename;
             return this;
         }
         @CustomType.Setter
-        public Builder lastConfiguredLogOffset(String lastConfiguredLogOffset) {
-            this.lastConfiguredLogOffset = Objects.requireNonNull(lastConfiguredLogOffset);
+        public Builder lastConfiguredLogOffset(@Nullable String lastConfiguredLogOffset) {
+            this.lastConfiguredLogOffset = lastConfiguredLogOffset;
             return this;
         }
         @CustomType.Setter
-        public Builder policy(String policy) {
-            this.policy = Objects.requireNonNull(policy);
+        public Builder policy(@Nullable String policy) {
+            this.policy = policy;
             return this;
         }
         @CustomType.Setter
-        public Builder uuid(String uuid) {
-            this.uuid = Objects.requireNonNull(uuid);
+        public Builder uuid(@Nullable String uuid) {
+            this.uuid = uuid;
             return this;
         }
         public GetChannelsChannelSourceAnonymousTransactionsHandling build() {

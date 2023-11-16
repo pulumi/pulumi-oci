@@ -20,103 +20,103 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The unique OCID associated with the category.
         /// </summary>
-        public readonly string CategoryId;
+        public readonly string? CategoryId;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name assigned to the compartment.
         /// </summary>
-        public readonly string CompartmentName;
+        public readonly string? CompartmentName;
         /// <summary>
         /// The estimated cost savings, in dollars, for the resource action.
         /// </summary>
-        public readonly double EstimatedCostSaving;
+        public readonly double? EstimatedCostSaving;
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, object>? ExtendedMetadata;
         /// <summary>
         /// The unique OCID associated with the recommendation history.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
-        public readonly string RecommendationId;
+        public readonly string? RecommendationId;
         /// <summary>
         /// Optional. A filter that returns results that match the recommendation name specified.
         /// </summary>
-        public readonly string RecommendationName;
+        public readonly string? RecommendationName;
         /// <summary>
         /// The unique OCID associated with the resource action.
         /// </summary>
-        public readonly string ResourceActionId;
+        public readonly string? ResourceActionId;
         /// <summary>
         /// The unique OCID associated with the resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// Optional. A filter that returns results that match the resource type specified.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// A filter that returns results that match the lifecycle state specified.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A filter that returns recommendations that match the status specified.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The date and time the recommendation history was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetHistoriesHistoryCollectionItemResult(
             ImmutableArray<Outputs.GetHistoriesHistoryCollectionItemActionResult> actions,
 
-            string categoryId,
+            string? categoryId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string compartmentName,
+            string? compartmentName,
 
-            double estimatedCostSaving,
+            double? estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, object>? extendedMetadata,
 
-            string id,
+            string? id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
-            string name,
+            string? name,
 
-            string recommendationId,
+            string? recommendationId,
 
-            string recommendationName,
+            string? recommendationName,
 
-            string resourceActionId,
+            string? resourceActionId,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceType,
+            string? resourceType,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Actions = actions;
             CategoryId = categoryId;

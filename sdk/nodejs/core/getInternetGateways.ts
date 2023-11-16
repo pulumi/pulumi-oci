@@ -77,11 +77,11 @@ export interface GetInternetGatewaysResult {
     /**
      * The list of gateways.
      */
-    readonly gateways: outputs.Core.GetInternetGatewaysGateway[];
+    readonly gateways?: outputs.Core.GetInternetGatewaysGateway[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The internet gateway's current state.
      */

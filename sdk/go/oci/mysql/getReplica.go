@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replica resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -60,48 +59,48 @@ type LookupReplicaArgs struct {
 // A collection of values returned by getReplica.
 type LookupReplicaResult struct {
 	// The name of the Availability Domain the read replica is located in.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the read replica.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used by the read replica.
-	ConfigurationId string `pulumi:"configurationId"`
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User provided description of the read replica.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The user-friendly name for the read replica. It does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The name of the Fault Domain the read replica is located in.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the read replica.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The MySQL version to be used by the read replica.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-	PortX     int    `pulumi:"portX"`
+	PortX     *int   `pulumi:"portX"`
 	ReplicaId string `pulumi:"replicaId"`
 	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
 	ReplicaOverrides []GetReplicaReplicaOverride `pulumi:"replicaOverrides"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The state of the read replica.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupReplicaOutput(ctx *pulumi.Context, args LookupReplicaOutputArgs, opts ...pulumi.InvokeOption) LookupReplicaResultOutput {
@@ -142,30 +141,24 @@ func (o LookupReplicaResultOutput) ToLookupReplicaResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReplicaResult] {
-	return pulumix.Output[LookupReplicaResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the Availability Domain the read replica is located in.
-func (o LookupReplicaResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the read replica.
-func (o LookupReplicaResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Configuration to be used by the read replica.
-func (o LookupReplicaResultOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.ConfigurationId }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DB System the read replica is associated with.
-func (o LookupReplicaResultOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -174,18 +167,18 @@ func (o LookupReplicaResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // User provided description of the read replica.
-func (o LookupReplicaResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the read replica. It does not have to be unique.
-func (o LookupReplicaResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Fault Domain the read replica is located in.
-func (o LookupReplicaResultOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -194,38 +187,38 @@ func (o LookupReplicaResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the read replica.
-func (o LookupReplicaResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IP address the read replica is configured to listen on.
-func (o LookupReplicaResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-func (o LookupReplicaResultOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupReplicaResult) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+func (o LookupReplicaResultOutput) IsDeleteProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *bool { return v.IsDeleteProtected }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the state of the read replica.
-func (o LookupReplicaResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The MySQL version to be used by the read replica.
-func (o LookupReplicaResultOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // The port the read replica is configured to listen on.
-func (o LookupReplicaResultOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupReplicaResult) int { return v.Port }).(pulumi.IntOutput)
+func (o LookupReplicaResultOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-func (o LookupReplicaResultOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupReplicaResult) int { return v.PortX }).(pulumi.IntOutput)
+func (o LookupReplicaResultOutput) PortX() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupReplicaResultOutput) ReplicaId() pulumi.StringOutput {
@@ -238,23 +231,23 @@ func (o LookupReplicaResultOutput) ReplicaOverrides() GetReplicaReplicaOverrideA
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-func (o LookupReplicaResultOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The state of the read replica.
-func (o LookupReplicaResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupReplicaResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupReplicaResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicaResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupReplicaResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicaResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -18,13 +18,13 @@ public final class GetManagementAgentAvailableHistoriesResult {
      * @return The list of availability_histories.
      * 
      */
-    private List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
+    private @Nullable List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
     private @Nullable List<GetManagementAgentAvailableHistoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return agent identifier
      * 
@@ -39,7 +39,7 @@ public final class GetManagementAgentAvailableHistoriesResult {
      * 
      */
     public List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories() {
-        return this.availabilityHistories;
+        return this.availabilityHistories == null ? List.of() : this.availabilityHistories;
     }
     public List<GetManagementAgentAvailableHistoriesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -48,8 +48,8 @@ public final class GetManagementAgentAvailableHistoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return agent identifier
@@ -74,9 +74,9 @@ public final class GetManagementAgentAvailableHistoriesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
+        private @Nullable List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories;
         private @Nullable List<GetManagementAgentAvailableHistoriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managementAgentId;
         private @Nullable String timeAvailabilityStatusEndedGreaterThan;
         private @Nullable String timeAvailabilityStatusStartedLessThan;
@@ -92,8 +92,8 @@ public final class GetManagementAgentAvailableHistoriesResult {
         }
 
         @CustomType.Setter
-        public Builder availabilityHistories(List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories) {
-            this.availabilityHistories = Objects.requireNonNull(availabilityHistories);
+        public Builder availabilityHistories(@Nullable List<GetManagementAgentAvailableHistoriesAvailabilityHistory> availabilityHistories) {
+            this.availabilityHistories = availabilityHistories;
             return this;
         }
         public Builder availabilityHistories(GetManagementAgentAvailableHistoriesAvailabilityHistory... availabilityHistories) {
@@ -108,8 +108,8 @@ public final class GetManagementAgentAvailableHistoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

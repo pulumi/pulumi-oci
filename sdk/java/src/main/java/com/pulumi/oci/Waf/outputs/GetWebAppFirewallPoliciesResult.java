@@ -39,7 +39,7 @@ public final class GetWebAppFirewallPoliciesResult {
      * @return The list of web_app_firewall_policy_collection.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections;
 
     private GetWebAppFirewallPoliciesResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetWebAppFirewallPoliciesResult {
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections() {
-        return this.webAppFirewallPolicyCollections;
+        return this.webAppFirewallPolicyCollections == null ? List.of() : this.webAppFirewallPolicyCollections;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetWebAppFirewallPoliciesResult {
         private @Nullable List<GetWebAppFirewallPoliciesFilter> filters;
         private @Nullable String id;
         private @Nullable List<String> states;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,8 +139,8 @@ public final class GetWebAppFirewallPoliciesResult {
             return states(List.of(states));
         }
         @CustomType.Setter
-        public Builder webAppFirewallPolicyCollections(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections) {
-            this.webAppFirewallPolicyCollections = Objects.requireNonNull(webAppFirewallPolicyCollections);
+        public Builder webAppFirewallPolicyCollections(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection> webAppFirewallPolicyCollections) {
+            this.webAppFirewallPolicyCollections = webAppFirewallPolicyCollections;
             return this;
         }
         public Builder webAppFirewallPolicyCollections(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection... webAppFirewallPolicyCollections) {

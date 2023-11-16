@@ -34,22 +34,6 @@ class VolumeArgs:
                  vpus_per_gb: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Volume resource.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -91,9 +75,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -103,9 +84,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -115,9 +93,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="autotunePolicies")
     def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]]]:
-        """
-        (Updatable) The list of autotune policies to be enabled for this volume.
-        """
         return pulumi.get(self, "autotune_policies")
 
     @autotune_policies.setter
@@ -127,9 +102,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        """
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
 
@@ -142,9 +114,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="blockVolumeReplicas")
     def block_volume_replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]]]:
-        """
-        (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        """
         return pulumi.get(self, "block_volume_replicas")
 
     @block_volume_replicas.setter
@@ -163,9 +132,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -175,9 +141,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -187,9 +150,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -199,9 +159,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        """
         return pulumi.get(self, "is_auto_tune_enabled")
 
     @is_auto_tune_enabled.setter
@@ -211,9 +168,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -223,9 +177,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the volume in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -235,9 +186,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        """
         warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
 
@@ -259,9 +207,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="volumeBackupId")
     def volume_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        """
         return pulumi.get(self, "volume_backup_id")
 
     @volume_backup_id.setter
@@ -271,11 +216,6 @@ class VolumeArgs:
     @property
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "vpus_per_gb")
 
     @vpus_per_gb.setter
@@ -310,28 +250,6 @@ class _VolumeState:
                  vpus_per_gb: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Volume resources.
-        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        :param pulumi.Input[str] state: The current state of a volume.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] time_created: The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        :param pulumi.Input[str] volume_group_id: The OCID of the source volume group.
-        :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         """
         if auto_tuned_vpus_per_gb is not None:
             pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -387,9 +305,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to.
-        """
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
     @auto_tuned_vpus_per_gb.setter
@@ -399,9 +314,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="autotunePolicies")
     def autotune_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAutotunePolicyArgs']]]]:
-        """
-        (Updatable) The list of autotune policies to be enabled for this volume.
-        """
         return pulumi.get(self, "autotune_policies")
 
     @autotune_policies.setter
@@ -411,9 +323,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -423,9 +332,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="backupPolicyId")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        """
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
 
@@ -438,9 +344,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="blockVolumeReplicas")
     def block_volume_replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeBlockVolumeReplicaArgs']]]]:
-        """
-        (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        """
         return pulumi.get(self, "block_volume_replicas")
 
     @block_volume_replicas.setter
@@ -459,9 +362,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -471,9 +371,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -483,9 +380,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -495,9 +389,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -507,9 +398,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        """
         return pulumi.get(self, "is_auto_tune_enabled")
 
     @is_auto_tune_enabled.setter
@@ -519,9 +407,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="isHydrated")
     def is_hydrated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-        """
         return pulumi.get(self, "is_hydrated")
 
     @is_hydrated.setter
@@ -531,9 +416,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -543,9 +425,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="sizeInGbs")
     def size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the volume in GBs.
-        """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
@@ -555,9 +434,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        """
         warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
 
@@ -579,9 +455,6 @@ class _VolumeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of a volume.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -591,9 +464,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -603,9 +473,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -615,9 +482,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="volumeBackupId")
     def volume_backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        """
         return pulumi.get(self, "volume_backup_id")
 
     @volume_backup_id.setter
@@ -627,9 +491,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="volumeGroupId")
     def volume_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the source volume group.
-        """
         return pulumi.get(self, "volume_group_id")
 
     @volume_group_id.setter
@@ -639,11 +500,6 @@ class _VolumeState:
     @property
     @pulumi.getter(name="vpusPerGb")
     def vpus_per_gb(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
         return pulumi.get(self, "vpus_per_gb")
 
     @vpus_per_gb.setter
@@ -674,86 +530,9 @@ class Volume(pulumi.CustomResource):
                  vpus_per_gb: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
-        50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
-        For general information about block volumes, see
-        [Overview of Block Volume Service](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
-
-        A volume and instance can be in separate compartments but must be in the same availability domain.
-        For information about access control and compartments, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about
-        availability domains, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the `ListAvailabilityDomains` operation
-        in the Identity and Access Management Service API.
-
-        You may optionally specify a *display name* for the volume, which is simply a friendly name or
-        description. It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume = oci.core.Volume("testVolume",
-            compartment_id=var["compartment_id"],
-            autotune_policies=[oci.core.VolumeAutotunePolicyArgs(
-                autotune_type=var["volume_autotune_policies_autotune_type"],
-                max_vpus_per_gb=var["volume_autotune_policies_max_vpus_per_gb"],
-            )],
-            availability_domain=var["volume_availability_domain"],
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-            block_volume_replicas=[oci.core.VolumeBlockVolumeReplicaArgs(
-                availability_domain=var["volume_block_volume_replicas_availability_domain"],
-                display_name=var["volume_block_volume_replicas_display_name"],
-            )],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_auto_tune_enabled=var["volume_is_auto_tune_enabled"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            size_in_gbs=var["volume_size_in_gbs"],
-            size_in_mbs=var["volume_size_in_mbs"],
-            source_details=oci.core.VolumeSourceDetailsArgs(
-                id=var["volume_source_details_id"],
-                type=var["volume_source_details_type"],
-            ),
-            vpus_per_gb=var["volume_vpus_per_gb"],
-            block_volume_replicas_deletion=True)
-        ```
-
-        ## Import
-
-        Volumes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volume:Volume test_volume "id"
-        ```
-
+        Create a Volume resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAutotunePolicyArgs']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBlockVolumeReplicaArgs']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         """
         ...
     @overload
@@ -762,68 +541,7 @@ class Volume(pulumi.CustomResource):
                  args: VolumeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
-        50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
-        For general information about block volumes, see
-        [Overview of Block Volume Service](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
-
-        A volume and instance can be in separate compartments but must be in the same availability domain.
-        For information about access control and compartments, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about
-        availability domains, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the `ListAvailabilityDomains` operation
-        in the Identity and Access Management Service API.
-
-        You may optionally specify a *display name* for the volume, which is simply a friendly name or
-        description. It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume = oci.core.Volume("testVolume",
-            compartment_id=var["compartment_id"],
-            autotune_policies=[oci.core.VolumeAutotunePolicyArgs(
-                autotune_type=var["volume_autotune_policies_autotune_type"],
-                max_vpus_per_gb=var["volume_autotune_policies_max_vpus_per_gb"],
-            )],
-            availability_domain=var["volume_availability_domain"],
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
-            block_volume_replicas=[oci.core.VolumeBlockVolumeReplicaArgs(
-                availability_domain=var["volume_block_volume_replicas_availability_domain"],
-                display_name=var["volume_block_volume_replicas_display_name"],
-            )],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["volume_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_auto_tune_enabled=var["volume_is_auto_tune_enabled"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            size_in_gbs=var["volume_size_in_gbs"],
-            size_in_mbs=var["volume_size_in_mbs"],
-            source_details=oci.core.VolumeSourceDetailsArgs(
-                id=var["volume_source_details_id"],
-                type=var["volume_source_details_type"],
-            ),
-            vpus_per_gb=var["volume_vpus_per_gb"],
-            block_volume_replicas_deletion=True)
-        ```
-
-        ## Import
-
-        Volumes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volume:Volume test_volume "id"
-        ```
-
+        Create a Volume resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VolumeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -929,28 +647,6 @@ class Volume(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] auto_tuned_vpus_per_gb: The number of Volume Performance Units per GB that this volume is effectively tuned to.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAutotunePolicyArgs']]]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeBlockVolumeReplicaArgs']]]] block_volume_replicas: (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_auto_tune_enabled: (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        :param pulumi.Input[bool] is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        :param pulumi.Input[str] size_in_gbs: (Updatable) The size of the volume in GBs.
-        :param pulumi.Input[str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        :param pulumi.Input[str] state: The current state of a volume.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] time_created: The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] volume_backup_id: The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        :param pulumi.Input[str] volume_group_id: The OCID of the source volume group.
-        :param pulumi.Input[str] vpus_per_gb: (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-               
-               Allowed values:
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -982,34 +678,22 @@ class Volume(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="autoTunedVpusPerGb")
-    def auto_tuned_vpus_per_gb(self) -> pulumi.Output[str]:
-        """
-        The number of Volume Performance Units per GB that this volume is effectively tuned to.
-        """
+    def auto_tuned_vpus_per_gb(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "auto_tuned_vpus_per_gb")
 
     @property
     @pulumi.getter(name="autotunePolicies")
-    def autotune_policies(self) -> pulumi.Output[Sequence['outputs.VolumeAutotunePolicy']]:
-        """
-        (Updatable) The list of autotune policies to be enabled for this volume.
-        """
+    def autotune_policies(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeAutotunePolicy']]]:
         return pulumi.get(self, "autotune_policies")
 
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupPolicyId")
-    def backup_policy_id(self) -> pulumi.Output[str]:
-        """
-        If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
-        """
+    def backup_policy_id(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
 
@@ -1017,10 +701,7 @@ class Volume(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="blockVolumeReplicas")
-    def block_volume_replicas(self) -> pulumi.Output[Sequence['outputs.VolumeBlockVolumeReplica']]:
-        """
-        (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        """
+    def block_volume_replicas(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeBlockVolumeReplica']]]:
         return pulumi.get(self, "block_volume_replicas")
 
     @property
@@ -1031,73 +712,46 @@ class Volume(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the volume.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isAutoTuneEnabled")
-    def is_auto_tune_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-        """
+    def is_auto_tune_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_auto_tune_enabled")
 
     @property
     @pulumi.getter(name="isHydrated")
-    def is_hydrated(self) -> pulumi.Output[bool]:
-        """
-        Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-        """
+    def is_hydrated(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_hydrated")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the Vault service key to assign as the master encryption key for the volume.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The size of the volume in GBs.
-        """
+    def size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> pulumi.Output[str]:
-        """
-        The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
-        """
+    def size_in_mbs(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
         pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
 
@@ -1105,56 +759,36 @@ class Volume(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> pulumi.Output['outputs.VolumeSourceDetails']:
+    def source_details(self) -> pulumi.Output[Optional['outputs.VolumeSourceDetails']]:
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of a volume.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="volumeBackupId")
-    def volume_backup_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the volume backup from which the data should be restored on the newly created volume. This field is deprecated. Use the sourceDetails field instead to specify the backup for the volume.
-        """
+    def volume_backup_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "volume_backup_id")
 
     @property
     @pulumi.getter(name="volumeGroupId")
-    def volume_group_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the source volume group.
-        """
+    def volume_group_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "volume_group_id")
 
     @property
     @pulumi.getter(name="vpusPerGb")
-    def vpus_per_gb(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-
-        Allowed values:
-        """
+    def vpus_per_gb(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vpus_per_gb")
 

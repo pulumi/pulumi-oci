@@ -49,10 +49,6 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -61,9 +57,6 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -73,9 +66,6 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -102,28 +92,6 @@ class LifecycleEnvironmentStageArgs:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_modified: Optional[pulumi.Input[str]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[int] rank: User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The OCID of the software source.
-        :param pulumi.Input[str] lifecycle_environment_id: The OCID of the lifecycle environment for the lifecycle stage.
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]] software_source_ids: Identifying information for the specified software source.
-        :param pulumi.Input[str] state: The current state of the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "rank", rank)
         if arch_type is not None:
@@ -158,9 +126,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -170,9 +135,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter
     def rank(self) -> pulumi.Input[int]:
-        """
-        User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        """
         return pulumi.get(self, "rank")
 
     @rank.setter
@@ -182,9 +144,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CPU architecture of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "arch_type")
 
     @arch_type.setter
@@ -194,9 +153,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy containing the lifecycle environment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -206,9 +162,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -218,9 +171,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -230,9 +180,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -242,9 +189,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the lifecycle environment for the lifecycle stage.
-        """
         return pulumi.get(self, "lifecycle_environment_id")
 
     @lifecycle_environment_id.setter
@@ -254,9 +198,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageManagedInstanceIdArgs']]]]:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
         return pulumi.get(self, "managed_instance_ids")
 
     @managed_instance_ids.setter
@@ -266,9 +207,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
-        """
-        The operating system type of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
@@ -278,9 +216,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageSoftwareSourceIdArgs']]]]:
-        """
-        Identifying information for the specified software source.
-        """
         return pulumi.get(self, "software_source_ids")
 
     @software_source_ids.setter
@@ -290,9 +225,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the lifecycle environment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -302,9 +234,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -314,9 +243,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -326,9 +252,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_modified")
 
     @time_modified.setter
@@ -338,13 +261,6 @@ class LifecycleEnvironmentStageArgs:
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The software source vendor name.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
@@ -357,10 +273,6 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -369,9 +281,6 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -381,9 +290,6 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -398,12 +304,6 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] description: (Updatable) User specified information about the lifecycle environment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        :param pulumi.Input[str] software_source_type: Type of the software source.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -416,9 +316,6 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User specified information about the lifecycle environment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -428,9 +325,6 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -440,9 +334,6 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -452,9 +343,6 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @property
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_type")
 
     @software_source_type.setter
@@ -469,12 +357,6 @@ class ManagedInstanceGroupSoftwareSourceArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] description: (Updatable) Details about the managed instance group.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        :param pulumi.Input[str] software_source_type: Type of the software source.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -487,9 +369,6 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Details about the managed instance group.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -499,9 +378,6 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -511,9 +387,6 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -523,9 +396,6 @@ class ManagedInstanceGroupSoftwareSourceArgs:
     @property
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_type")
 
     @software_source_type.setter
@@ -540,16 +410,6 @@ class ManagementStationMirrorArgs:
                  port: pulumi.Input[str],
                  sslport: pulumi.Input[str],
                  sslcert: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] directory: (Updatable) Directory for the mirroring
-        :param pulumi.Input[str] port: (Updatable) Port that the proxy will use
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] sslport: (Updatable) Default sslport for the mirror
-        :param pulumi.Input[str] sslcert: (Updatable) Local path for the sslcert
-        """
         pulumi.set(__self__, "directory", directory)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslport", sslport)
@@ -559,9 +419,6 @@ class ManagementStationMirrorArgs:
     @property
     @pulumi.getter
     def directory(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Directory for the mirroring
-        """
         return pulumi.get(self, "directory")
 
     @directory.setter
@@ -571,13 +428,6 @@ class ManagementStationMirrorArgs:
     @property
     @pulumi.getter
     def port(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Port that the proxy will use
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -587,9 +437,6 @@ class ManagementStationMirrorArgs:
     @property
     @pulumi.getter
     def sslport(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Default sslport for the mirror
-        """
         return pulumi.get(self, "sslport")
 
     @sslport.setter
@@ -599,9 +446,6 @@ class ManagementStationMirrorArgs:
     @property
     @pulumi.getter
     def sslcert(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Local path for the sslcert
-        """
         return pulumi.get(self, "sslcert")
 
     @sslcert.setter
@@ -617,13 +461,6 @@ class ManagementStationMirrorSyncStatusArgs:
                  synced: Optional[pulumi.Input[int]] = None,
                  syncing: Optional[pulumi.Input[int]] = None,
                  unsynced: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] failed: Total of mirrors in 'failed' state
-        :param pulumi.Input[int] queued: Total of mirrors in 'queued' state
-        :param pulumi.Input[int] synced: Total of mirrors in 'synced' state
-        :param pulumi.Input[int] syncing: Total of mirrors in 'syncing' state
-        :param pulumi.Input[int] unsynced: Total of mirrors in 'failed' state
-        """
         if failed is not None:
             pulumi.set(__self__, "failed", failed)
         if queued is not None:
@@ -638,9 +475,6 @@ class ManagementStationMirrorSyncStatusArgs:
     @property
     @pulumi.getter
     def failed(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total of mirrors in 'failed' state
-        """
         return pulumi.get(self, "failed")
 
     @failed.setter
@@ -650,9 +484,6 @@ class ManagementStationMirrorSyncStatusArgs:
     @property
     @pulumi.getter
     def queued(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total of mirrors in 'queued' state
-        """
         return pulumi.get(self, "queued")
 
     @queued.setter
@@ -662,9 +493,6 @@ class ManagementStationMirrorSyncStatusArgs:
     @property
     @pulumi.getter
     def synced(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total of mirrors in 'synced' state
-        """
         return pulumi.get(self, "synced")
 
     @synced.setter
@@ -674,9 +502,6 @@ class ManagementStationMirrorSyncStatusArgs:
     @property
     @pulumi.getter
     def syncing(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total of mirrors in 'syncing' state
-        """
         return pulumi.get(self, "syncing")
 
     @syncing.setter
@@ -686,9 +511,6 @@ class ManagementStationMirrorSyncStatusArgs:
     @property
     @pulumi.getter
     def unsynced(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total of mirrors in 'failed' state
-        """
         return pulumi.get(self, "unsynced")
 
     @unsynced.setter
@@ -703,16 +525,6 @@ class ManagementStationProxyArgs:
                  forward: Optional[pulumi.Input[str]] = None,
                  hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  port: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) To enable or disable the proxy (default true)
-        :param pulumi.Input[str] forward: (Updatable) URL that the proxy will forward to
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: (Updatable) List of hosts
-        :param pulumi.Input[str] port: (Updatable) Port that the proxy will use
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if forward is not None:
             pulumi.set(__self__, "forward", forward)
@@ -724,9 +536,6 @@ class ManagementStationProxyArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) To enable or disable the proxy (default true)
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -736,9 +545,6 @@ class ManagementStationProxyArgs:
     @property
     @pulumi.getter
     def forward(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) URL that the proxy will forward to
-        """
         return pulumi.get(self, "forward")
 
     @forward.setter
@@ -748,9 +554,6 @@ class ManagementStationProxyArgs:
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of hosts
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -760,13 +563,6 @@ class ManagementStationProxyArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Port that the proxy will use
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -779,10 +575,6 @@ class ProfileLifecycleEnvironmentArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -791,9 +583,6 @@ class ProfileLifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -803,9 +592,6 @@ class ProfileLifecycleEnvironmentArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -818,10 +604,6 @@ class ProfileLifecycleStageArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -830,9 +612,6 @@ class ProfileLifecycleStageArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -842,9 +621,6 @@ class ProfileLifecycleStageArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -857,10 +633,6 @@ class ProfileManagedInstanceGroupArgs:
     def __init__(__self__, *,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -869,9 +641,6 @@ class ProfileManagedInstanceGroupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -881,9 +650,6 @@ class ProfileManagedInstanceGroupArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -898,12 +664,6 @@ class ProfileSoftwareSourceArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  software_source_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] description: (Updatable) The description of the registration profile.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] id: The OCID of the software source.
-        :param pulumi.Input[str] software_source_type: Type of the software source.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -916,9 +676,6 @@ class ProfileSoftwareSourceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the registration profile.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -928,9 +685,6 @@ class ProfileSoftwareSourceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -940,9 +694,6 @@ class ProfileSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -952,9 +703,6 @@ class ProfileSoftwareSourceArgs:
     @property
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_type")
 
     @software_source_type.setter
@@ -968,11 +716,6 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
                  module_stream_profile_filters: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs']]]] = None,
                  package_filters: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs']]]] = None,
                  package_group_filters: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs']]] module_stream_profile_filters: (Updatable) The list of module stream/profile filters.
-        :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs']]] package_filters: (Updatable) The list of package filters.
-        :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs']]] package_group_filters: (Updatable) The list of group filters.
-        """
         if module_stream_profile_filters is not None:
             pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
         if package_filters is not None:
@@ -983,9 +726,6 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
     def module_stream_profile_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs']]]]:
-        """
-        (Updatable) The list of module stream/profile filters.
-        """
         return pulumi.get(self, "module_stream_profile_filters")
 
     @module_stream_profile_filters.setter
@@ -995,9 +735,6 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
     @property
     @pulumi.getter(name="packageFilters")
     def package_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs']]]]:
-        """
-        (Updatable) The list of package filters.
-        """
         return pulumi.get(self, "package_filters")
 
     @package_filters.setter
@@ -1007,9 +744,6 @@ class SoftwareSourceCustomSoftwareSourceFilterArgs:
     @property
     @pulumi.getter(name="packageGroupFilters")
     def package_group_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs']]]]:
-        """
-        (Updatable) The list of group filters.
-        """
         return pulumi.get(self, "package_group_filters")
 
     @package_group_filters.setter
@@ -1024,12 +758,6 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
                  module_name: pulumi.Input[str],
                  profile_name: Optional[pulumi.Input[str]] = None,
                  stream_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param pulumi.Input[str] module_name: (Updatable) Module name.
-        :param pulumi.Input[str] profile_name: (Updatable) Profile name.
-        :param pulumi.Input[str] stream_name: (Updatable) Stream name.
-        """
         pulumi.set(__self__, "filter_type", filter_type)
         pulumi.set(__self__, "module_name", module_name)
         if profile_name is not None:
@@ -1040,9 +768,6 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
@@ -1052,9 +777,6 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Module name.
-        """
         return pulumi.get(self, "module_name")
 
     @module_name.setter
@@ -1064,9 +786,6 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
     @property
     @pulumi.getter(name="profileName")
     def profile_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Profile name.
-        """
         return pulumi.get(self, "profile_name")
 
     @profile_name.setter
@@ -1076,9 +795,6 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs:
     @property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Stream name.
-        """
         return pulumi.get(self, "stream_name")
 
     @stream_name.setter
@@ -1093,12 +809,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
                  package_name: Optional[pulumi.Input[str]] = None,
                  package_name_pattern: Optional[pulumi.Input[str]] = None,
                  package_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param pulumi.Input[str] package_name: (Updatable) The package name.
-        :param pulumi.Input[str] package_name_pattern: (Updatable) The package name pattern.
-        :param pulumi.Input[str] package_version: (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
         pulumi.set(__self__, "filter_type", filter_type)
         if package_name is not None:
             pulumi.set(__self__, "package_name", package_name)
@@ -1110,9 +820,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
@@ -1122,9 +829,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
     @property
     @pulumi.getter(name="packageName")
     def package_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The package name.
-        """
         return pulumi.get(self, "package_name")
 
     @package_name.setter
@@ -1134,9 +838,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
     @property
     @pulumi.getter(name="packageNamePattern")
     def package_name_pattern(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The package name pattern.
-        """
         return pulumi.get(self, "package_name_pattern")
 
     @package_name_pattern.setter
@@ -1146,9 +847,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -1161,10 +859,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
     def __init__(__self__, *,
                  filter_type: pulumi.Input[str],
                  package_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] package_groups: (Updatable) List of package group names.
-        """
         pulumi.set(__self__, "filter_type", filter_type)
         if package_groups is not None:
             pulumi.set(__self__, "package_groups", package_groups)
@@ -1172,9 +866,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
@@ -1184,9 +875,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs:
     @property
     @pulumi.getter(name="packageGroups")
     def package_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of package group names.
-        """
         return pulumi.get(self, "package_groups")
 
     @package_groups.setter
@@ -1199,23 +887,12 @@ class SoftwareSourceVendorSoftwareSourceArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[str],
                  id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] display_name: (Updatable) User friendly name.
-        :param pulumi.Input[str] id: (Updatable) The OCID of the resource that is immutable on creation.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User friendly name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1225,13 +902,6 @@ class SoftwareSourceVendorSoftwareSourceArgs:
     @property
     @pulumi.getter
     def id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the resource that is immutable on creation.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -1323,9 +993,6 @@ class GetManagedInstanceGroupAvailableModulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The resource name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1334,9 +1001,6 @@ class GetManagedInstanceGroupAvailableModulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The resource name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1368,9 +1032,6 @@ class GetManagedInstanceGroupAvailablePackagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1379,9 +1040,6 @@ class GetManagedInstanceGroupAvailablePackagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1608,9 +1266,6 @@ class GetSoftwareSourceModuleStreamProfilesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1619,9 +1274,6 @@ class GetSoftwareSourceModuleStreamProfilesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1653,9 +1305,6 @@ class GetSoftwareSourceModuleStreamsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1664,9 +1313,6 @@ class GetSoftwareSourceModuleStreamsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1698,9 +1344,6 @@ class GetSoftwareSourcePackageGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1709,9 +1352,6 @@ class GetSoftwareSourcePackageGroupsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1743,9 +1383,6 @@ class GetSoftwareSourceSoftwarePackagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1754,9 +1391,6 @@ class GetSoftwareSourceSoftwarePackagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1788,9 +1422,6 @@ class GetSoftwareSourceVendorsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1799,9 +1430,6 @@ class GetSoftwareSourceVendorsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

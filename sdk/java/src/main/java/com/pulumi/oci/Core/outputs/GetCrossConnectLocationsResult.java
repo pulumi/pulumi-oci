@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetCrossConnectLocationsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetCrossConnectLocationsResult {
      * @return The list of cross_connect_locations.
      * 
      */
-    private List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
+    private @Nullable List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
     private @Nullable List<GetCrossConnectLocationsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCrossConnectLocationsResult() {}
     public String compartmentId() {
@@ -35,7 +36,7 @@ public final class GetCrossConnectLocationsResult {
      * 
      */
     public List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations() {
-        return this.crossConnectLocations;
+        return this.crossConnectLocations == null ? List.of() : this.crossConnectLocations;
     }
     public List<GetCrossConnectLocationsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetCrossConnectLocationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetCrossConnectLocationsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
+        private @Nullable List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations;
         private @Nullable List<GetCrossConnectLocationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCrossConnectLocationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetCrossConnectLocationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder crossConnectLocations(List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations) {
-            this.crossConnectLocations = Objects.requireNonNull(crossConnectLocations);
+        public Builder crossConnectLocations(@Nullable List<GetCrossConnectLocationsCrossConnectLocation> crossConnectLocations) {
+            this.crossConnectLocations = crossConnectLocations;
             return this;
         }
         public Builder crossConnectLocations(GetCrossConnectLocationsCrossConnectLocation... crossConnectLocations) {
@@ -92,8 +93,8 @@ public final class GetCrossConnectLocationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCrossConnectLocationsResult build() {

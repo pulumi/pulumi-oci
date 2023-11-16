@@ -20,12 +20,12 @@ public final class GetRecommendationStrategyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A collection of recommendation strategy summaries.
      * 
      */
-    private List<GetRecommendationStrategyItem> items;
+    private @Nullable List<GetRecommendationStrategyItem> items;
     /**
      * @return The name of the strategy parameter.
      * 
@@ -44,15 +44,15 @@ public final class GetRecommendationStrategyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A collection of recommendation strategy summaries.
      * 
      */
     public List<GetRecommendationStrategyItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The name of the strategy parameter.
@@ -76,8 +76,8 @@ public final class GetRecommendationStrategyResult {
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
-        private String id;
-        private List<GetRecommendationStrategyItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetRecommendationStrategyItem> items;
         private @Nullable String name;
         private @Nullable String recommendationName;
         public Builder() {}
@@ -102,13 +102,13 @@ public final class GetRecommendationStrategyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetRecommendationStrategyItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRecommendationStrategyItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRecommendationStrategyItem... items) {

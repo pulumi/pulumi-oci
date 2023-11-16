@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// The availability status of managementAgent
         /// </summary>
-        public readonly string AvailabilityStatus;
+        public readonly string? AvailabilityStatus;
         /// <summary>
         /// When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
         /// </summary>
-        public readonly bool HasPlugins;
+        public readonly bool? HasPlugins;
         /// <summary>
         /// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
         /// </summary>
-        public readonly string InstallType;
+        public readonly string? InstallType;
         /// <summary>
         /// Platform Type
         /// </summary>
-        public readonly string PlatformType;
+        public readonly string? PlatformType;
         /// <summary>
         /// Agent image version
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetManagementAgentCountItemDimensionResult(
-            string availabilityStatus,
+            string? availabilityStatus,
 
-            bool hasPlugins,
+            bool? hasPlugins,
 
-            string installType,
+            string? installType,
 
-            string platformType,
+            string? platformType,
 
-            string version)
+            string? version)
         {
             AvailabilityStatus = availabilityStatus;
             HasPlugins = hasPlugins;

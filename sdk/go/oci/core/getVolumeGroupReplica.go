@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
@@ -60,30 +59,30 @@ type GetVolumeGroupReplicaArgs struct {
 // A collection of values returned by getVolumeGroupReplica.
 type GetVolumeGroupReplicaResult struct {
 	// The availability domain of the volume group replica.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the volume group replica.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Volume replicas within this volume group replica.
 	MemberReplicas []GetVolumeGroupReplicaMemberReplica `pulumi:"memberReplicas"`
 	// The aggregate size of the volume group replica in GBs.
-	SizeInGbs string `pulumi:"sizeInGbs"`
+	SizeInGbs *string `pulumi:"sizeInGbs"`
 	// The current state of a volume group.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the volume group replica was last synced from the source volume group. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeLastSynced string `pulumi:"timeLastSynced"`
+	TimeLastSynced *string `pulumi:"timeLastSynced"`
 	// The OCID of the source volume group.
-	VolumeGroupId        string `pulumi:"volumeGroupId"`
-	VolumeGroupReplicaId string `pulumi:"volumeGroupReplicaId"`
+	VolumeGroupId        *string `pulumi:"volumeGroupId"`
+	VolumeGroupReplicaId string  `pulumi:"volumeGroupReplicaId"`
 }
 
 func GetVolumeGroupReplicaOutput(ctx *pulumi.Context, args GetVolumeGroupReplicaOutputArgs, opts ...pulumi.InvokeOption) GetVolumeGroupReplicaResultOutput {
@@ -124,20 +123,14 @@ func (o GetVolumeGroupReplicaResultOutput) ToGetVolumeGroupReplicaResultOutputWi
 	return o
 }
 
-func (o GetVolumeGroupReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeGroupReplicaResult] {
-	return pulumix.Output[GetVolumeGroupReplicaResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the volume group replica.
-func (o GetVolumeGroupReplicaResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the volume group replica.
-func (o GetVolumeGroupReplicaResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -146,8 +139,8 @@ func (o GetVolumeGroupReplicaResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetVolumeGroupReplicaResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -156,8 +149,8 @@ func (o GetVolumeGroupReplicaResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVolumeGroupReplicaResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Volume replicas within this volume group replica.
@@ -166,28 +159,28 @@ func (o GetVolumeGroupReplicaResultOutput) MemberReplicas() GetVolumeGroupReplic
 }
 
 // The aggregate size of the volume group replica in GBs.
-func (o GetVolumeGroupReplicaResultOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a volume group.
-func (o GetVolumeGroupReplicaResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume group replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetVolumeGroupReplicaResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume group replica was last synced from the source volume group. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetVolumeGroupReplicaResultOutput) TimeLastSynced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.TimeLastSynced }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) TimeLastSynced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.TimeLastSynced }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source volume group.
-func (o GetVolumeGroupReplicaResultOutput) VolumeGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeGroupReplicaResult) string { return v.VolumeGroupId }).(pulumi.StringOutput)
+func (o GetVolumeGroupReplicaResultOutput) VolumeGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeGroupReplicaResult) *string { return v.VolumeGroupId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVolumeGroupReplicaResultOutput) VolumeGroupReplicaId() pulumi.StringOutput {

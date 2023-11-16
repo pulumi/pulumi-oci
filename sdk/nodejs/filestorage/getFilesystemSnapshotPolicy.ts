@@ -47,44 +47,44 @@ export interface GetFilesystemSnapshotPolicyResult {
     /**
      * The availability domain that the file system snapshot policy is in. May be unset using a blank or NULL value.  Example: `Uocm:PHX-AD-2`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Filesystem Snapshot Policy`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly filesystemSnapshotPolicyId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The prefix to apply to all snapshots created by this policy.  Example: `acme`
      */
-    readonly policyPrefix: string;
+    readonly policyPrefix?: string;
     /**
      * The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
      */
-    readonly schedules: outputs.FileStorage.GetFilesystemSnapshotPolicySchedule[];
+    readonly schedules?: outputs.FileStorage.GetFilesystemSnapshotPolicySchedule[];
     /**
      * The current state of this file system snapshot policy.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.

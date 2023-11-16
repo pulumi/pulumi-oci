@@ -6,6 +6,8 @@ package com.pulumi.oci.Logging.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
@@ -13,63 +15,63 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
      * @return Process value using the specified format. This is available only when time_type is a string.
      * 
      */
-    private String fieldTimeFormat;
+    private @Nullable String fieldTimeFormat;
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private String fieldTimeKey;
+    private @Nullable String fieldTimeKey;
     /**
      * @return Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      * 
      */
-    private String fieldTimeZone;
+    private @Nullable String fieldTimeZone;
     /**
      * @return The name key to tag this Grok pattern.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The Grok pattern.
      * 
      */
-    private String pattern;
+    private @Nullable String pattern;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern() {}
     /**
      * @return Process value using the specified format. This is available only when time_type is a string.
      * 
      */
-    public String fieldTimeFormat() {
-        return this.fieldTimeFormat;
+    public Optional<String> fieldTimeFormat() {
+        return Optional.ofNullable(this.fieldTimeFormat);
     }
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    public String fieldTimeKey() {
-        return this.fieldTimeKey;
+    public Optional<String> fieldTimeKey() {
+        return Optional.ofNullable(this.fieldTimeKey);
     }
     /**
      * @return Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      * 
      */
-    public String fieldTimeZone() {
-        return this.fieldTimeZone;
+    public Optional<String> fieldTimeZone() {
+        return Optional.ofNullable(this.fieldTimeZone);
     }
     /**
      * @return The name key to tag this Grok pattern.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The Grok pattern.
      * 
      */
-    public String pattern() {
-        return this.pattern;
+    public Optional<String> pattern() {
+        return Optional.ofNullable(this.pattern);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fieldTimeFormat;
-        private String fieldTimeKey;
-        private String fieldTimeZone;
-        private String name;
-        private String pattern;
+        private @Nullable String fieldTimeFormat;
+        private @Nullable String fieldTimeKey;
+        private @Nullable String fieldTimeZone;
+        private @Nullable String name;
+        private @Nullable String pattern;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
         }
 
         @CustomType.Setter
-        public Builder fieldTimeFormat(String fieldTimeFormat) {
-            this.fieldTimeFormat = Objects.requireNonNull(fieldTimeFormat);
+        public Builder fieldTimeFormat(@Nullable String fieldTimeFormat) {
+            this.fieldTimeFormat = fieldTimeFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder fieldTimeKey(String fieldTimeKey) {
-            this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
+        public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
+            this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder fieldTimeZone(String fieldTimeZone) {
-            this.fieldTimeZone = Objects.requireNonNull(fieldTimeZone);
+        public Builder fieldTimeZone(@Nullable String fieldTimeZone) {
+            this.fieldTimeZone = fieldTimeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder pattern(String pattern) {
-            this.pattern = Objects.requireNonNull(pattern);
+        public Builder pattern(@Nullable String pattern) {
+            this.pattern = pattern;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {

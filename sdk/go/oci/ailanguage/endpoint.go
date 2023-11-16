@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
@@ -70,30 +69,30 @@ type Endpoint struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the an endpoint.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
-	InferenceUnits pulumi.IntOutput `pulumi:"inferenceUnits"`
+	InferenceUnits pulumi.IntPtrOutput `pulumi:"inferenceUnits"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ModelId pulumi.StringOutput `pulumi:"modelId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the Endpoint.
-	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrOutput `pulumi:"projectId"`
 	// The state of the endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the endpoint was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the endpoint was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -263,12 +262,6 @@ func (i *Endpoint) ToEndpointOutputWithContext(ctx context.Context) EndpointOutp
 	return pulumi.ToOutputWithContext(ctx, i).(EndpointOutput)
 }
 
-func (i *Endpoint) ToOutput(ctx context.Context) pulumix.Output[*Endpoint] {
-	return pulumix.Output[*Endpoint]{
-		OutputState: i.ToEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EndpointArrayInput is an input type that accepts EndpointArray and EndpointArrayOutput values.
 // You can construct a concrete instance of `EndpointArrayInput` via:
 //
@@ -292,12 +285,6 @@ func (i EndpointArray) ToEndpointArrayOutput() EndpointArrayOutput {
 
 func (i EndpointArray) ToEndpointArrayOutputWithContext(ctx context.Context) EndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EndpointArrayOutput)
-}
-
-func (i EndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*Endpoint] {
-	return pulumix.Output[[]*Endpoint]{
-		OutputState: i.ToEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EndpointMapInput is an input type that accepts EndpointMap and EndpointMapOutput values.
@@ -325,12 +312,6 @@ func (i EndpointMap) ToEndpointMapOutputWithContext(ctx context.Context) Endpoin
 	return pulumi.ToOutputWithContext(ctx, i).(EndpointMapOutput)
 }
 
-func (i EndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Endpoint] {
-	return pulumix.Output[map[string]*Endpoint]{
-		OutputState: i.ToEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EndpointOutput struct{ *pulumi.OutputState }
 
 func (EndpointOutput) ElementType() reflect.Type {
@@ -345,12 +326,6 @@ func (o EndpointOutput) ToEndpointOutputWithContext(ctx context.Context) Endpoin
 	return o
 }
 
-func (o EndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*Endpoint] {
-	return pulumix.Output[*Endpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 func (o EndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -362,13 +337,13 @@ func (o EndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the an endpoint.
-func (o EndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o EndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
-func (o EndpointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o EndpointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -377,13 +352,13 @@ func (o EndpointOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
-func (o EndpointOutput) InferenceUnits() pulumi.IntOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.IntOutput { return v.InferenceUnits }).(pulumi.IntOutput)
+func (o EndpointOutput) InferenceUnits() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.IntPtrOutput { return v.InferenceUnits }).(pulumi.IntPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-func (o EndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o EndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
@@ -395,13 +370,13 @@ func (o EndpointOutput) ModelId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the Endpoint.
-func (o EndpointOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+func (o EndpointOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoint.
-func (o EndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -410,13 +385,13 @@ func (o EndpointOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the endpoint was created. An RFC3339 formatted datetime string.
-func (o EndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the endpoint was updated. An RFC3339 formatted datetime string.
-func (o EndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type EndpointArrayOutput struct{ *pulumi.OutputState }
@@ -431,12 +406,6 @@ func (o EndpointArrayOutput) ToEndpointArrayOutput() EndpointArrayOutput {
 
 func (o EndpointArrayOutput) ToEndpointArrayOutputWithContext(ctx context.Context) EndpointArrayOutput {
 	return o
-}
-
-func (o EndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Endpoint] {
-	return pulumix.Output[[]*Endpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EndpointArrayOutput) Index(i pulumi.IntInput) EndpointOutput {
@@ -457,12 +426,6 @@ func (o EndpointMapOutput) ToEndpointMapOutput() EndpointMapOutput {
 
 func (o EndpointMapOutput) ToEndpointMapOutputWithContext(ctx context.Context) EndpointMapOutput {
 	return o
-}
-
-func (o EndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Endpoint] {
-	return pulumix.Output[map[string]*Endpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EndpointMapOutput) MapIndex(k pulumi.StringInput) EndpointOutput {

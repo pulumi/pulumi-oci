@@ -96,14 +96,14 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="backupPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> backupPolicyId;
+    private Output</* @Nullable */ String> backupPolicyId;
 
     /**
      * @return If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
      * 
      */
-    public Output<String> backupPolicyId() {
-        return this.backupPolicyId;
+    public Output<Optional<String>> backupPolicyId() {
+        return Codegen.optional(this.backupPolicyId);
     }
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
@@ -124,14 +124,14 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -141,7 +141,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -150,36 +150,36 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Specifies whether the newly created cloned volume group&#39;s data has finished copying from the source volume group or backup.
      * 
      */
     @Export(name="isHydrated", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHydrated;
+    private Output</* @Nullable */ Boolean> isHydrated;
 
     /**
      * @return Specifies whether the newly created cloned volume group&#39;s data has finished copying from the source volume group or backup.
      * 
      */
-    public Output<Boolean> isHydrated() {
-        return this.isHydrated;
+    public Output<Optional<Boolean>> isHydrated() {
+        return Codegen.optional(this.isHydrated);
     }
     @Export(name="preserveVolumeReplica", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> preserveVolumeReplica;
@@ -192,28 +192,28 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInGbs;
+    private Output</* @Nullable */ String> sizeInGbs;
 
     /**
      * @return The aggregate size of the volume group in GBs.
      * 
      */
-    public Output<String> sizeInGbs() {
-        return this.sizeInGbs;
+    public Output<Optional<String>> sizeInGbs() {
+        return Codegen.optional(this.sizeInGbs);
     }
     /**
      * The aggregate size of the volume group in MBs.
      * 
      */
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInMbs;
+    private Output</* @Nullable */ String> sizeInMbs;
 
     /**
      * @return The aggregate size of the volume group in MBs.
      * 
      */
-    public Output<String> sizeInMbs() {
-        return this.sizeInMbs;
+    public Output<Optional<String>> sizeInMbs() {
+        return Codegen.optional(this.sizeInMbs);
     }
     /**
      * Specifies the source for a volume group.
@@ -234,42 +234,42 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of a volume group.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      * 
      */
     @Export(name="volumeGroupReplicas", refs={List.class,VolumeGroupVolumeGroupReplica.class}, tree="[0,1]")
-    private Output<List<VolumeGroupVolumeGroupReplica>> volumeGroupReplicas;
+    private Output</* @Nullable */ List<VolumeGroupVolumeGroupReplica>> volumeGroupReplicas;
 
     /**
      * @return (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      * 
      */
-    public Output<List<VolumeGroupVolumeGroupReplica>> volumeGroupReplicas() {
-        return this.volumeGroupReplicas;
+    public Output<Optional<List<VolumeGroupVolumeGroupReplica>>> volumeGroupReplicas() {
+        return Codegen.optional(this.volumeGroupReplicas);
     }
     @Export(name="volumeGroupReplicasDeletion", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> volumeGroupReplicasDeletion;
@@ -282,14 +282,14 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="volumeIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> volumeIds;
+    private Output</* @Nullable */ List<String>> volumeIds;
 
     /**
      * @return OCIDs for the volumes in this volume group.
      * 
      */
-    public Output<List<String>> volumeIds() {
-        return this.volumeIds;
+    public Output<Optional<List<String>>> volumeIds() {
+        return Codegen.optional(this.volumeIds);
     }
 
     /**

@@ -56,7 +56,7 @@ class GetPbfListingVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,17 +70,11 @@ class GetPbfListingVersionsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A brief descriptive name for the PBF trigger.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="pbfListingId")
     def pbf_listing_id(self) -> str:
-        """
-        The OCID of the PbfListing this resource version belongs to.
-        """
         return pulumi.get(self, "pbf_listing_id")
 
     @property
@@ -90,18 +84,12 @@ class GetPbfListingVersionsResult:
 
     @property
     @pulumi.getter(name="pbfListingVersionsCollections")
-    def pbf_listing_versions_collections(self) -> Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionResult']:
-        """
-        The list of pbf_listing_versions_collection.
-        """
+    def pbf_listing_versions_collections(self) -> Optional[Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionResult']]:
         return pulumi.get(self, "pbf_listing_versions_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the PBF resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,33 +117,7 @@ def get_pbf_listing_versions(filters: Optional[Sequence[pulumi.InputType['GetPbf
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbfListingVersionsResult:
     """
-    This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
-
-    Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
-    containing an array of PbfListingVersionSummary response models.
-
-    Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
-    be thrown.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-        is_current_version=var["pbf_listing_version_is_current_version"],
-        name=var["pbf_listing_version_name"],
-        pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"],
-        state=var["pbf_listing_version_state"])
-    ```
-
-
-    :param bool is_current_version: Matches the current version (the most recently added version with an Active  lifecycleState) associated with a PbfListing.
-    :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-    :param str pbf_listing_id: unique PbfListing identifier
-    :param str pbf_listing_version_id: unique PbfListingVersion identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -187,32 +149,6 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbfListingVersionsResult]:
     """
-    This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
-
-    Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
-    containing an array of PbfListingVersionSummary response models.
-
-    Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
-    be thrown.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-        is_current_version=var["pbf_listing_version_is_current_version"],
-        name=var["pbf_listing_version_name"],
-        pbf_listing_version_id=oci_functions_pbf_listing_version["test_pbf_listing_version"]["id"],
-        state=var["pbf_listing_version_state"])
-    ```
-
-
-    :param bool is_current_version: Matches the current version (the most recently added version with an Active  lifecycleState) associated with a PbfListing.
-    :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-    :param str pbf_listing_id: unique PbfListing identifier
-    :param str pbf_listing_version_id: unique PbfListingVersion identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

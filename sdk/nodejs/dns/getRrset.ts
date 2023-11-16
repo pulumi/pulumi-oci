@@ -88,8 +88,8 @@ export interface GetRrsetResult {
      * The fully qualified domain name where the record can be located.
      */
     readonly domain: string;
-    readonly id: string;
-    readonly items: outputs.Dns.GetRrsetItem[];
+    readonly id?: string;
+    readonly items?: outputs.Dns.GetRrsetItem[];
     /**
      * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      */

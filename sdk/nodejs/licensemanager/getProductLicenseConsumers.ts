@@ -60,12 +60,12 @@ export interface GetProductLicenseConsumersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     /**
      * Collection of product license consumers.
      */
-    readonly items: outputs.LicenseManager.GetProductLicenseConsumersItem[];
+    readonly items?: outputs.LicenseManager.GetProductLicenseConsumersItem[];
     readonly productLicenseId: string;
 }
 /**

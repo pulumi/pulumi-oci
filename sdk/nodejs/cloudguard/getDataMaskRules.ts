@@ -96,7 +96,7 @@ export interface GetDataMaskRulesResult {
     /**
      * The list of data_mask_rule_collection.
      */
-    readonly dataMaskRuleCollections: outputs.CloudGuard.GetDataMaskRulesDataMaskRuleCollection[];
+    readonly dataMaskRuleCollections?: outputs.CloudGuard.GetDataMaskRulesDataMaskRuleCollection[];
     /**
      * The status of the dataMaskRule.
      */
@@ -113,7 +113,7 @@ export interface GetDataMaskRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the DataMaskRule.
      */

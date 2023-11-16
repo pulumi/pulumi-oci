@@ -20,142 +20,142 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The parameter category.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
         /// </summary>
-        public readonly string Constraint;
+        public readonly string? Constraint;
         /// <summary>
         /// The ID of the database container to which the data pertains. Possible values include:
         /// </summary>
-        public readonly double ContainerId;
+        public readonly double? ContainerId;
         /// <summary>
         /// The description of the parameter.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
         /// </summary>
-        public readonly string DisplayValue;
+        public readonly string? DisplayValue;
         /// <summary>
         /// Indicates whether Oracle adjusted the input value to a more suitable value.
         /// </summary>
-        public readonly bool IsAdjusted;
+        public readonly bool? IsAdjusted;
         /// <summary>
         /// Indicates whether the parameter is a basic parameter (`TRUE`) or not (`FALSE`).
         /// </summary>
-        public readonly bool IsBasic;
+        public readonly bool? IsBasic;
         /// <summary>
         /// Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// Indicates whether the parameter has been deprecated (`TRUE`) or not (`FALSE`).
         /// </summary>
-        public readonly bool IsDeprecated;
+        public readonly bool? IsDeprecated;
         /// <summary>
         /// For parameters that can be changed with `ALTER SYSTEM`, indicates whether the value of the parameter can be different for every instance (`TRUE`) or whether the parameter must have the same value for all Real Application Clusters instances (`FALSE`). For other parameters, this is always `FALSE`.
         /// </summary>
-        public readonly bool IsInstanceModifiable;
+        public readonly bool? IsInstanceModifiable;
         /// <summary>
         /// Indicates how the parameter was modified. If an `ALTER SYSTEM` was performed, the value will be `MODIFIED`.
         /// </summary>
-        public readonly string IsModified;
+        public readonly string? IsModified;
         /// <summary>
         /// Indicates whether the parameter can be modified on a per-PDB basis (`TRUE`) or not (`FALSE`). In a non-CDB, the value of this property is `null`.
         /// </summary>
-        public readonly bool IsPdbModifiable;
+        public readonly bool? IsPdbModifiable;
         /// <summary>
         /// Indicates whether the parameter can be changed with `ALTER SESSION` (`TRUE`) or not (`FALSE`)
         /// </summary>
-        public readonly bool IsSessionModifiable;
+        public readonly bool? IsSessionModifiable;
         /// <summary>
         /// Indicates whether the parameter was specified in the server parameter file (`TRUE`) or not (`FALSE`). Applicable only when the parameter source is `SPFILE`.
         /// </summary>
-        public readonly bool IsSpecified;
+        public readonly bool? IsSpecified;
         /// <summary>
         /// Indicates whether the parameter can be changed with `ALTER SYSTEM` and when the change takes effect:
         /// * IMMEDIATE: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect immediately.
         /// * DEFERRED: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect in subsequent sessions.
         /// * FALSE: Parameter cannot be changed with `ALTER SYSTEM` unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
         /// </summary>
-        public readonly string IsSystemModifiable;
+        public readonly string? IsSystemModifiable;
         /// <summary>
         /// A filter to return all parameters that have the text given in their names.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The parameter number.
         /// </summary>
-        public readonly double Number;
+        public readonly double? Number;
         /// <summary>
         /// The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
         /// </summary>
-        public readonly double Ordinal;
+        public readonly double? Ordinal;
         /// <summary>
         /// The database instance SID for which the parameter is defined.
         /// </summary>
-        public readonly string Sid;
+        public readonly string? Sid;
         /// <summary>
         /// The parameter type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The comments associated with the most recent update.
         /// </summary>
-        public readonly string UpdateComment;
+        public readonly string? UpdateComment;
         /// <summary>
         /// The parameter value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResult(
             ImmutableArray<Outputs.GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValueResult> allowedValues,
 
-            string category,
+            string? category,
 
-            string constraint,
+            string? constraint,
 
-            double containerId,
+            double? containerId,
 
-            string description,
+            string? description,
 
-            string displayValue,
+            string? displayValue,
 
-            bool isAdjusted,
+            bool? isAdjusted,
 
-            bool isBasic,
+            bool? isBasic,
 
-            bool isDefault,
+            bool? isDefault,
 
-            bool isDeprecated,
+            bool? isDeprecated,
 
-            bool isInstanceModifiable,
+            bool? isInstanceModifiable,
 
-            string isModified,
+            string? isModified,
 
-            bool isPdbModifiable,
+            bool? isPdbModifiable,
 
-            bool isSessionModifiable,
+            bool? isSessionModifiable,
 
-            bool isSpecified,
+            bool? isSpecified,
 
-            string isSystemModifiable,
+            string? isSystemModifiable,
 
-            string name,
+            string? name,
 
-            double number,
+            double? number,
 
-            double ordinal,
+            double? ordinal,
 
-            string sid,
+            string? sid,
 
-            string type,
+            string? type,
 
-            string updateComment,
+            string? updateComment,
 
-            string value)
+            string? value)
         {
             AllowedValues = allowedValues;
             Category = category;

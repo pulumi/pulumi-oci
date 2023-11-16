@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -81,7 +80,7 @@ type GetFusionEnvironmentScheduledActivitiesResult struct {
 	// FAaaS Environment Identifier.
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// run cadence.
 	RunCycle *string `pulumi:"runCycle"`
 	// The list of scheduled_activity_collection.
@@ -141,12 +140,6 @@ func (o GetFusionEnvironmentScheduledActivitiesResultOutput) ToGetFusionEnvironm
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesResult] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // scheduled activity display name, can be renamed.
 func (o GetFusionEnvironmentScheduledActivitiesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -164,8 +157,8 @@ func (o GetFusionEnvironmentScheduledActivitiesResultOutput) FusionEnvironmentId
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentScheduledActivitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivitiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // run cadence.

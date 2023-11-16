@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupManagedD
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseGroupResult {
@@ -15,65 +17,65 @@ public final class GetManagedDatabaseGroupResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The information specified by the user about the Managed Database Group.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseGroupId;
     /**
      * @return A list of Managed Databases in the Managed Database Group.
      * 
      */
-    private List<GetManagedDatabaseGroupManagedDatabase> managedDatabases;
+    private @Nullable List<GetManagedDatabaseGroupManagedDatabase> managedDatabases;
     /**
      * @return The name of the Managed Database Group.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The current lifecycle state of the Managed Database Group.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Managed Database Group was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the Managed Database Group was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetManagedDatabaseGroupResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The information specified by the user about the Managed Database Group.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseGroupId() {
         return this.managedDatabaseGroupId;
@@ -83,35 +85,35 @@ public final class GetManagedDatabaseGroupResult {
      * 
      */
     public List<GetManagedDatabaseGroupManagedDatabase> managedDatabases() {
-        return this.managedDatabases;
+        return this.managedDatabases == null ? List.of() : this.managedDatabases;
     }
     /**
      * @return The name of the Managed Database Group.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The current lifecycle state of the Managed Database Group.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the Managed Database Group was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the Managed Database Group was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -123,15 +125,15 @@ public final class GetManagedDatabaseGroupResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String description;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String description;
+        private @Nullable String id;
         private String managedDatabaseGroupId;
-        private List<GetManagedDatabaseGroupManagedDatabase> managedDatabases;
-        private String name;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetManagedDatabaseGroupManagedDatabase> managedDatabases;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetManagedDatabaseGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -147,18 +149,18 @@ public final class GetManagedDatabaseGroupResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -167,31 +169,31 @@ public final class GetManagedDatabaseGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedDatabases(List<GetManagedDatabaseGroupManagedDatabase> managedDatabases) {
-            this.managedDatabases = Objects.requireNonNull(managedDatabases);
+        public Builder managedDatabases(@Nullable List<GetManagedDatabaseGroupManagedDatabase> managedDatabases) {
+            this.managedDatabases = managedDatabases;
             return this;
         }
         public Builder managedDatabases(GetManagedDatabaseGroupManagedDatabase... managedDatabases) {
             return managedDatabases(List.of(managedDatabases));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetManagedDatabaseGroupResult build() {

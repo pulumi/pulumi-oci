@@ -93,19 +93,19 @@ export class Domain extends pulumi.CustomResource {
     /**
      * The admin email address
      */
-    public readonly adminEmail!: pulumi.Output<string>;
+    public readonly adminEmail!: pulumi.Output<string | undefined>;
     /**
      * The admin first name
      */
-    public readonly adminFirstName!: pulumi.Output<string>;
+    public readonly adminFirstName!: pulumi.Output<string | undefined>;
     /**
      * The admin last name
      */
-    public readonly adminLastName!: pulumi.Output<string>;
+    public readonly adminLastName!: pulumi.Output<string | undefined>;
     /**
      * The admin user name
      */
-    public readonly adminUserName!: pulumi.Output<string>;
+    public readonly adminUserName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the Compartment where domain is created
      */
@@ -113,7 +113,7 @@ export class Domain extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Domain entity description
      */
@@ -125,7 +125,7 @@ export class Domain extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      */
@@ -133,19 +133,19 @@ export class Domain extends pulumi.CustomResource {
     /**
      * Region specific domain URL.
      */
-    public /*out*/ readonly homeRegionUrl!: pulumi.Output<string>;
+    public /*out*/ readonly homeRegionUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether domain is hidden on login screen or not.
      */
-    public readonly isHiddenOnLogin!: pulumi.Output<boolean>;
+    public readonly isHiddenOnLogin!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      */
-    public readonly isNotificationBypassed!: pulumi.Output<boolean>;
+    public readonly isNotificationBypassed!: pulumi.Output<boolean | undefined>;
     /**
      * Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      */
-    public readonly isPrimaryEmailRequired!: pulumi.Output<boolean>;
+    public readonly isPrimaryEmailRequired!: pulumi.Output<boolean | undefined>;
     /**
      * The License type of Domain
      *
@@ -157,27 +157,27 @@ export class Domain extends pulumi.CustomResource {
     /**
      * Any additional details about the current state of the Domain.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The regions domain is replication to.
      */
-    public /*out*/ readonly replicaRegions!: pulumi.Output<outputs.Identity.DomainReplicaRegion[]>;
+    public /*out*/ readonly replicaRegions!: pulumi.Output<outputs.Identity.DomainReplicaRegion[] | undefined>;
     /**
      * The current state.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The type of the domain.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    public /*out*/ readonly type!: pulumi.Output<string | undefined>;
     /**
      * Region agnostic domain URL.
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    public /*out*/ readonly url!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Domain resource with the given unique name, arguments, and options.

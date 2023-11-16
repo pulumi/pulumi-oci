@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
         /// </summary>
         [Output("cccUpgradeScheduleId")]
-        public Output<string> CccUpgradeScheduleId { get; private set; } = null!;
+        public Output<string?> CccUpgradeScheduleId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
@@ -74,25 +74,25 @@ namespace Pulumi.Oci.ComputeCloud
         /// (Updatable) A message describing the current connection state in more detail.
         /// </summary>
         [Output("connectionDetails")]
-        public Output<string> ConnectionDetails { get; private set; } = null!;
+        public Output<string?> ConnectionDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
         /// </summary>
         [Output("connectionState")]
-        public Output<string> ConnectionState { get; private set; } = null!;
+        public Output<string?> ConnectionState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -122,31 +122,31 @@ namespace Pulumi.Oci.ComputeCloud
         /// A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
         /// </summary>
         [Output("provisioningFingerprint")]
-        public Output<string> ProvisioningFingerprint { get; private set; } = null!;
+        public Output<string?> ProvisioningFingerprint { get; private set; } = null!;
 
         /// <summary>
         /// Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
         /// </summary>
         [Output("provisioningPin")]
-        public Output<string> ProvisioningPin { get; private set; } = null!;
+        public Output<string?> ProvisioningPin { get; private set; } = null!;
 
         /// <summary>
         /// The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
         /// </summary>
         [Output("shortName")]
-        public Output<string> ShortName { get; private set; } = null!;
+        public Output<string?> ShortName { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Compute Cloud@Customer infrastructure.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
@@ -162,19 +162,19 @@ namespace Pulumi.Oci.ComputeCloud
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.

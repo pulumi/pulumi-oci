@@ -40,7 +40,7 @@ class GetMessageResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetMessageResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMessageItemResult']:
-        """
-        An array of DeploymentMessages.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetMessageItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetMessageResult(GetMessageResult):
 def get_message(deployment_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMessageResult:
     """
-    This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_message = oci.GoldenGate.get_message(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -100,20 +83,6 @@ def get_message(deployment_id: Optional[str] = None,
 def get_message_output(deployment_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMessageResult]:
     """
-    This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the DeploymentMessages for a deployment. The sorting order is not important. By default first will be Upgrade message, next Exception message and then Storage Utilization message.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_message = oci.GoldenGate.get_message(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

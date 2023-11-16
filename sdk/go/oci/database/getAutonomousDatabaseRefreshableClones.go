@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.
@@ -63,7 +62,7 @@ type GetAutonomousDatabaseRefreshableClonesResult struct {
 	AutonomousDatabaseId string                                         `pulumi:"autonomousDatabaseId"`
 	Filters              []GetAutonomousDatabaseRefreshableClonesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of refreshable_clone_collection.
 	RefreshableCloneCollections []GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection `pulumi:"refreshableCloneCollections"`
 }
@@ -107,12 +106,6 @@ func (o GetAutonomousDatabaseRefreshableClonesResultOutput) ToGetAutonomousDatab
 	return o
 }
 
-func (o GetAutonomousDatabaseRefreshableClonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDatabaseRefreshableClonesResult] {
-	return pulumix.Output[GetAutonomousDatabaseRefreshableClonesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousDatabaseRefreshableClonesResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseRefreshableClonesResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
@@ -124,8 +117,8 @@ func (o GetAutonomousDatabaseRefreshableClonesResultOutput) Filters() GetAutonom
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousDatabaseRefreshableClonesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousDatabaseRefreshableClonesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousDatabaseRefreshableClonesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseRefreshableClonesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of refreshable_clone_collection.

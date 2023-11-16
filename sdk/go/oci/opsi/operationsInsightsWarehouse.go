@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
@@ -71,36 +70,36 @@ type OperationsInsightsWarehouse struct {
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Output `pulumi:"cpuAllocated"`
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-	CpuUsed pulumi.Float64Output `pulumi:"cpuUsed"`
+	CpuUsed pulumi.Float64PtrOutput `pulumi:"cpuUsed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
-	DynamicGroupId pulumi.StringOutput `pulumi:"dynamicGroupId"`
+	DynamicGroupId pulumi.StringPtrOutput `pulumi:"dynamicGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Tenancy Identifier of Operations Insights service
-	OperationsInsightsTenancyId pulumi.StringOutput `pulumi:"operationsInsightsTenancyId"`
+	OperationsInsightsTenancyId pulumi.StringPtrOutput `pulumi:"operationsInsightsTenancyId"`
 	// Possible lifecycle states
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StorageAllocatedInGbs pulumi.Float64Output `pulumi:"storageAllocatedInGbs"`
+	StorageAllocatedInGbs pulumi.Float64PtrOutput `pulumi:"storageAllocatedInGbs"`
 	// Storage by OPSI Warehouse ADW in GB.
-	StorageUsedInGbs pulumi.Float64Output `pulumi:"storageUsedInGbs"`
+	StorageUsedInGbs pulumi.Float64PtrOutput `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-	TimeLastWalletRotated pulumi.StringOutput `pulumi:"timeLastWalletRotated"`
+	TimeLastWalletRotated pulumi.StringPtrOutput `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewOperationsInsightsWarehouse registers a new resource with the given unique name, arguments, and options.
@@ -281,12 +280,6 @@ func (i *OperationsInsightsWarehouse) ToOperationsInsightsWarehouseOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseOutput)
 }
 
-func (i *OperationsInsightsWarehouse) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouse] {
-	return pulumix.Output[*OperationsInsightsWarehouse]{
-		OutputState: i.ToOperationsInsightsWarehouseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperationsInsightsWarehouseArrayInput is an input type that accepts OperationsInsightsWarehouseArray and OperationsInsightsWarehouseArrayOutput values.
 // You can construct a concrete instance of `OperationsInsightsWarehouseArrayInput` via:
 //
@@ -310,12 +303,6 @@ func (i OperationsInsightsWarehouseArray) ToOperationsInsightsWarehouseArrayOutp
 
 func (i OperationsInsightsWarehouseArray) ToOperationsInsightsWarehouseArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseArrayOutput)
-}
-
-func (i OperationsInsightsWarehouseArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouse] {
-	return pulumix.Output[[]*OperationsInsightsWarehouse]{
-		OutputState: i.ToOperationsInsightsWarehouseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperationsInsightsWarehouseMapInput is an input type that accepts OperationsInsightsWarehouseMap and OperationsInsightsWarehouseMapOutput values.
@@ -343,12 +330,6 @@ func (i OperationsInsightsWarehouseMap) ToOperationsInsightsWarehouseMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(OperationsInsightsWarehouseMapOutput)
 }
 
-func (i OperationsInsightsWarehouseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouse] {
-	return pulumix.Output[map[string]*OperationsInsightsWarehouse]{
-		OutputState: i.ToOperationsInsightsWarehouseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperationsInsightsWarehouseOutput struct{ *pulumi.OutputState }
 
 func (OperationsInsightsWarehouseOutput) ElementType() reflect.Type {
@@ -363,12 +344,6 @@ func (o OperationsInsightsWarehouseOutput) ToOperationsInsightsWarehouseOutputWi
 	return o
 }
 
-func (o OperationsInsightsWarehouseOutput) ToOutput(ctx context.Context) pulumix.Output[*OperationsInsightsWarehouse] {
-	return pulumix.Output[*OperationsInsightsWarehouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o OperationsInsightsWarehouseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -380,8 +355,8 @@ func (o OperationsInsightsWarehouseOutput) CpuAllocated() pulumi.Float64Output {
 }
 
 // Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-func (o OperationsInsightsWarehouseOutput) CpuUsed() pulumi.Float64Output {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64Output { return v.CpuUsed }).(pulumi.Float64Output)
+func (o OperationsInsightsWarehouseOutput) CpuUsed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64PtrOutput { return v.CpuUsed }).(pulumi.Float64PtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -395,8 +370,8 @@ func (o OperationsInsightsWarehouseOutput) DisplayName() pulumi.StringOutput {
 }
 
 // OCID of the dynamic group created for the warehouse
-func (o OperationsInsightsWarehouseOutput) DynamicGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.DynamicGroupId }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) DynamicGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.DynamicGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -405,31 +380,31 @@ func (o OperationsInsightsWarehouseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o OperationsInsightsWarehouseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Tenancy Identifier of Operations Insights service
-func (o OperationsInsightsWarehouseOutput) OperationsInsightsTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.OperationsInsightsTenancyId }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) OperationsInsightsTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.OperationsInsightsTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states
-func (o OperationsInsightsWarehouseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Storage allocated to OPSI Warehouse ADW.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OperationsInsightsWarehouseOutput) StorageAllocatedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64Output { return v.StorageAllocatedInGbs }).(pulumi.Float64Output)
+func (o OperationsInsightsWarehouseOutput) StorageAllocatedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64PtrOutput { return v.StorageAllocatedInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // Storage by OPSI Warehouse ADW in GB.
-func (o OperationsInsightsWarehouseOutput) StorageUsedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64Output { return v.StorageUsedInGbs }).(pulumi.Float64Output)
+func (o OperationsInsightsWarehouseOutput) StorageUsedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.Float64PtrOutput { return v.StorageUsedInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -438,18 +413,18 @@ func (o OperationsInsightsWarehouseOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o OperationsInsightsWarehouseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-func (o OperationsInsightsWarehouseOutput) TimeLastWalletRotated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.TimeLastWalletRotated }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) TimeLastWalletRotated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.TimeLastWalletRotated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o OperationsInsightsWarehouseOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o OperationsInsightsWarehouseOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type OperationsInsightsWarehouseArrayOutput struct{ *pulumi.OutputState }
@@ -464,12 +439,6 @@ func (o OperationsInsightsWarehouseArrayOutput) ToOperationsInsightsWarehouseArr
 
 func (o OperationsInsightsWarehouseArrayOutput) ToOperationsInsightsWarehouseArrayOutputWithContext(ctx context.Context) OperationsInsightsWarehouseArrayOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperationsInsightsWarehouse] {
-	return pulumix.Output[[]*OperationsInsightsWarehouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsWarehouseArrayOutput) Index(i pulumi.IntInput) OperationsInsightsWarehouseOutput {
@@ -490,12 +459,6 @@ func (o OperationsInsightsWarehouseMapOutput) ToOperationsInsightsWarehouseMapOu
 
 func (o OperationsInsightsWarehouseMapOutput) ToOperationsInsightsWarehouseMapOutputWithContext(ctx context.Context) OperationsInsightsWarehouseMapOutput {
 	return o
-}
-
-func (o OperationsInsightsWarehouseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperationsInsightsWarehouse] {
-	return pulumix.Output[map[string]*OperationsInsightsWarehouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperationsInsightsWarehouseMapOutput) MapIndex(k pulumi.StringInput) OperationsInsightsWarehouseOutput {

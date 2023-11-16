@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitsVirtualCircuit {
@@ -20,17 +22,17 @@ public final class GetVirtualCircuitsVirtualCircuit {
      * @return The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      * 
      */
-    private String bandwidthShapeName;
+    private @Nullable String bandwidthShapeName;
     /**
      * @return Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
-    private String bgpAdminState;
+    private @Nullable String bgpAdminState;
     /**
      * @return The state of the Ipv6 BGP session associated with the virtual circuit.
      * 
      */
-    private String bgpIpv6sessionState;
+    private @Nullable String bgpIpv6sessionState;
     /**
      * @return Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
@@ -39,27 +41,27 @@ public final class GetVirtualCircuitsVirtualCircuit {
      * 
      */
     @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
-    private String bgpManagement;
+    private @Nullable String bgpManagement;
     /**
      * @return The state of the Ipv4 BGP session associated with the virtual circuit.
      * 
      */
-    private String bgpSessionState;
+    private @Nullable String bgpSessionState;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
      * 
      */
-    private List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings;
+    private @Nullable List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings;
     /**
      * @return The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer&#39;s edge router and Oracle, the value is the customer&#39;s ASN. If the BGP session is between the provider&#39;s edge router and Oracle, the value is the provider&#39;s ASN. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.
      * 
      */
-    private String customerAsn;
+    private @Nullable String customerAsn;
     /**
      * @return Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
@@ -68,130 +70,130 @@ public final class GetVirtualCircuitsVirtualCircuit {
      * 
      */
     @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
-    private Integer customerBgpAsn;
+    private @Nullable Integer customerBgpAsn;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer&#39;s [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
      * 
      */
-    private String gatewayId;
+    private @Nullable String gatewayId;
     /**
      * @return The virtual circuit&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The layer 3 IP MTU to use on this virtual circuit.
      * 
      */
-    private String ipMtu;
+    private @Nullable String ipMtu;
     /**
      * @return Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
-    private Boolean isBfdEnabled;
+    private @Nullable Boolean isBfdEnabled;
     /**
      * @return Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      * 
      */
-    private Boolean isTransportMode;
+    private @Nullable Boolean isTransportMode;
     /**
      * @return The Oracle BGP ASN.
      * 
      */
-    private Integer oracleBgpAsn;
+    private @Nullable Integer oracleBgpAsn;
     /**
      * @return The OCID of the service offered by the provider (if the customer is connecting via a provider).
      * 
      */
-    private String providerServiceId;
+    private @Nullable String providerServiceId;
     /**
      * @return The service key name offered by the provider (if the customer is connecting via a provider).
      * 
      */
-    private String providerServiceKeyName;
+    private @Nullable String providerServiceKeyName;
     /**
      * @return The provider&#39;s state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      * 
      */
-    private String providerState;
+    private @Nullable String providerState;
     /**
      * @return For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
      * 
      */
-    private List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes;
+    private @Nullable List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes;
     /**
      * @return Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
      * 
      */
-    private String referenceComment;
+    private @Nullable String referenceComment;
     /**
      * @return The Oracle Cloud Infrastructure region where this virtual circuit is located.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
-    private List<String> routingPolicies;
+    private @Nullable List<String> routingPolicies;
     /**
      * @return Provider service type.
      * 
      */
-    private String serviceType;
+    private @Nullable String serviceType;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
-    private String type;
-    private String virtualCircuitId;
+    private @Nullable String type;
+    private @Nullable String virtualCircuitId;
 
     private GetVirtualCircuitsVirtualCircuit() {}
     /**
      * @return The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      * 
      */
-    public String bandwidthShapeName() {
-        return this.bandwidthShapeName;
+    public Optional<String> bandwidthShapeName() {
+        return Optional.ofNullable(this.bandwidthShapeName);
     }
     /**
      * @return Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      * 
      */
-    public String bgpAdminState() {
-        return this.bgpAdminState;
+    public Optional<String> bgpAdminState() {
+        return Optional.ofNullable(this.bgpAdminState);
     }
     /**
      * @return The state of the Ipv6 BGP session associated with the virtual circuit.
      * 
      */
-    public String bgpIpv6sessionState() {
-        return this.bgpIpv6sessionState;
+    public Optional<String> bgpIpv6sessionState() {
+        return Optional.ofNullable(this.bgpIpv6sessionState);
     }
     /**
      * @return Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
@@ -201,36 +203,36 @@ public final class GetVirtualCircuitsVirtualCircuit {
      * 
      */
     @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
-    public String bgpManagement() {
-        return this.bgpManagement;
+    public Optional<String> bgpManagement() {
+        return Optional.ofNullable(this.bgpManagement);
     }
     /**
      * @return The state of the Ipv4 BGP session associated with the virtual circuit.
      * 
      */
-    public String bgpSessionState() {
-        return this.bgpSessionState;
+    public Optional<String> bgpSessionState() {
+        return Optional.ofNullable(this.bgpSessionState);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
      * 
      */
     public List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings() {
-        return this.crossConnectMappings;
+        return this.crossConnectMappings == null ? List.of() : this.crossConnectMappings;
     }
     /**
      * @return The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer&#39;s edge router and Oracle, the value is the customer&#39;s ASN. If the BGP session is between the provider&#39;s edge router and Oracle, the value is the provider&#39;s ASN. Can be a 2-byte or 4-byte ASN. Uses &#34;asplain&#34; format.
      * 
      */
-    public String customerAsn() {
-        return this.customerAsn;
+    public Optional<String> customerAsn() {
+        return Optional.ofNullable(this.customerAsn);
     }
     /**
      * @return Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
@@ -240,151 +242,151 @@ public final class GetVirtualCircuitsVirtualCircuit {
      * 
      */
     @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
-    public Integer customerBgpAsn() {
-        return this.customerBgpAsn;
+    public Optional<Integer> customerBgpAsn() {
+        return Optional.ofNullable(this.customerBgpAsn);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer&#39;s [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
      * 
      */
-    public String gatewayId() {
-        return this.gatewayId;
+    public Optional<String> gatewayId() {
+        return Optional.ofNullable(this.gatewayId);
     }
     /**
      * @return The virtual circuit&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The layer 3 IP MTU to use on this virtual circuit.
      * 
      */
-    public String ipMtu() {
-        return this.ipMtu;
+    public Optional<String> ipMtu() {
+        return Optional.ofNullable(this.ipMtu);
     }
     /**
      * @return Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      * 
      */
-    public Boolean isBfdEnabled() {
-        return this.isBfdEnabled;
+    public Optional<Boolean> isBfdEnabled() {
+        return Optional.ofNullable(this.isBfdEnabled);
     }
     /**
      * @return Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      * 
      */
-    public Boolean isTransportMode() {
-        return this.isTransportMode;
+    public Optional<Boolean> isTransportMode() {
+        return Optional.ofNullable(this.isTransportMode);
     }
     /**
      * @return The Oracle BGP ASN.
      * 
      */
-    public Integer oracleBgpAsn() {
-        return this.oracleBgpAsn;
+    public Optional<Integer> oracleBgpAsn() {
+        return Optional.ofNullable(this.oracleBgpAsn);
     }
     /**
      * @return The OCID of the service offered by the provider (if the customer is connecting via a provider).
      * 
      */
-    public String providerServiceId() {
-        return this.providerServiceId;
+    public Optional<String> providerServiceId() {
+        return Optional.ofNullable(this.providerServiceId);
     }
     /**
      * @return The service key name offered by the provider (if the customer is connecting via a provider).
      * 
      */
-    public String providerServiceKeyName() {
-        return this.providerServiceKeyName;
+    public Optional<String> providerServiceKeyName() {
+        return Optional.ofNullable(this.providerServiceKeyName);
     }
     /**
      * @return The provider&#39;s state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      * 
      */
-    public String providerState() {
-        return this.providerState;
+    public Optional<String> providerState() {
+        return Optional.ofNullable(this.providerState);
     }
     /**
      * @return For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
      * 
      */
     public List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes() {
-        return this.publicPrefixes;
+        return this.publicPrefixes == null ? List.of() : this.publicPrefixes;
     }
     /**
      * @return Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
      * 
      */
-    public String referenceComment() {
-        return this.referenceComment;
+    public Optional<String> referenceComment() {
+        return Optional.ofNullable(this.referenceComment);
     }
     /**
      * @return The Oracle Cloud Infrastructure region where this virtual circuit is located.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
     public List<String> routingPolicies() {
-        return this.routingPolicies;
+        return this.routingPolicies == null ? List.of() : this.routingPolicies;
     }
     /**
      * @return Provider service type.
      * 
      */
-    public String serviceType() {
-        return this.serviceType;
+    public Optional<String> serviceType() {
+        return Optional.ofNullable(this.serviceType);
     }
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
-    public String virtualCircuitId() {
-        return this.virtualCircuitId;
+    public Optional<String> virtualCircuitId() {
+        return Optional.ofNullable(this.virtualCircuitId);
     }
 
     public static Builder builder() {
@@ -396,36 +398,36 @@ public final class GetVirtualCircuitsVirtualCircuit {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bandwidthShapeName;
-        private String bgpAdminState;
-        private String bgpIpv6sessionState;
-        private String bgpManagement;
-        private String bgpSessionState;
-        private String compartmentId;
-        private List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings;
-        private String customerAsn;
-        private Integer customerBgpAsn;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String gatewayId;
-        private String id;
-        private String ipMtu;
-        private Boolean isBfdEnabled;
-        private Boolean isTransportMode;
-        private Integer oracleBgpAsn;
-        private String providerServiceId;
-        private String providerServiceKeyName;
-        private String providerState;
-        private List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes;
-        private String referenceComment;
-        private String region;
-        private List<String> routingPolicies;
-        private String serviceType;
-        private String state;
-        private String timeCreated;
-        private String type;
-        private String virtualCircuitId;
+        private @Nullable String bandwidthShapeName;
+        private @Nullable String bgpAdminState;
+        private @Nullable String bgpIpv6sessionState;
+        private @Nullable String bgpManagement;
+        private @Nullable String bgpSessionState;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings;
+        private @Nullable String customerAsn;
+        private @Nullable Integer customerBgpAsn;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String gatewayId;
+        private @Nullable String id;
+        private @Nullable String ipMtu;
+        private @Nullable Boolean isBfdEnabled;
+        private @Nullable Boolean isTransportMode;
+        private @Nullable Integer oracleBgpAsn;
+        private @Nullable String providerServiceId;
+        private @Nullable String providerServiceKeyName;
+        private @Nullable String providerState;
+        private @Nullable List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes;
+        private @Nullable String referenceComment;
+        private @Nullable String region;
+        private @Nullable List<String> routingPolicies;
+        private @Nullable String serviceType;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String type;
+        private @Nullable String virtualCircuitId;
         public Builder() {}
         public Builder(GetVirtualCircuitsVirtualCircuit defaults) {
     	      Objects.requireNonNull(defaults);
@@ -462,162 +464,162 @@ public final class GetVirtualCircuitsVirtualCircuit {
         }
 
         @CustomType.Setter
-        public Builder bandwidthShapeName(String bandwidthShapeName) {
-            this.bandwidthShapeName = Objects.requireNonNull(bandwidthShapeName);
+        public Builder bandwidthShapeName(@Nullable String bandwidthShapeName) {
+            this.bandwidthShapeName = bandwidthShapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder bgpAdminState(String bgpAdminState) {
-            this.bgpAdminState = Objects.requireNonNull(bgpAdminState);
+        public Builder bgpAdminState(@Nullable String bgpAdminState) {
+            this.bgpAdminState = bgpAdminState;
             return this;
         }
         @CustomType.Setter
-        public Builder bgpIpv6sessionState(String bgpIpv6sessionState) {
-            this.bgpIpv6sessionState = Objects.requireNonNull(bgpIpv6sessionState);
+        public Builder bgpIpv6sessionState(@Nullable String bgpIpv6sessionState) {
+            this.bgpIpv6sessionState = bgpIpv6sessionState;
             return this;
         }
         @CustomType.Setter
-        public Builder bgpManagement(String bgpManagement) {
-            this.bgpManagement = Objects.requireNonNull(bgpManagement);
+        public Builder bgpManagement(@Nullable String bgpManagement) {
+            this.bgpManagement = bgpManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder bgpSessionState(String bgpSessionState) {
-            this.bgpSessionState = Objects.requireNonNull(bgpSessionState);
+        public Builder bgpSessionState(@Nullable String bgpSessionState) {
+            this.bgpSessionState = bgpSessionState;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder crossConnectMappings(List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings) {
-            this.crossConnectMappings = Objects.requireNonNull(crossConnectMappings);
+        public Builder crossConnectMappings(@Nullable List<GetVirtualCircuitsVirtualCircuitCrossConnectMapping> crossConnectMappings) {
+            this.crossConnectMappings = crossConnectMappings;
             return this;
         }
         public Builder crossConnectMappings(GetVirtualCircuitsVirtualCircuitCrossConnectMapping... crossConnectMappings) {
             return crossConnectMappings(List.of(crossConnectMappings));
         }
         @CustomType.Setter
-        public Builder customerAsn(String customerAsn) {
-            this.customerAsn = Objects.requireNonNull(customerAsn);
+        public Builder customerAsn(@Nullable String customerAsn) {
+            this.customerAsn = customerAsn;
             return this;
         }
         @CustomType.Setter
-        public Builder customerBgpAsn(Integer customerBgpAsn) {
-            this.customerBgpAsn = Objects.requireNonNull(customerBgpAsn);
+        public Builder customerBgpAsn(@Nullable Integer customerBgpAsn) {
+            this.customerBgpAsn = customerBgpAsn;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder gatewayId(String gatewayId) {
-            this.gatewayId = Objects.requireNonNull(gatewayId);
+        public Builder gatewayId(@Nullable String gatewayId) {
+            this.gatewayId = gatewayId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipMtu(String ipMtu) {
-            this.ipMtu = Objects.requireNonNull(ipMtu);
+        public Builder ipMtu(@Nullable String ipMtu) {
+            this.ipMtu = ipMtu;
             return this;
         }
         @CustomType.Setter
-        public Builder isBfdEnabled(Boolean isBfdEnabled) {
-            this.isBfdEnabled = Objects.requireNonNull(isBfdEnabled);
+        public Builder isBfdEnabled(@Nullable Boolean isBfdEnabled) {
+            this.isBfdEnabled = isBfdEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isTransportMode(Boolean isTransportMode) {
-            this.isTransportMode = Objects.requireNonNull(isTransportMode);
+        public Builder isTransportMode(@Nullable Boolean isTransportMode) {
+            this.isTransportMode = isTransportMode;
             return this;
         }
         @CustomType.Setter
-        public Builder oracleBgpAsn(Integer oracleBgpAsn) {
-            this.oracleBgpAsn = Objects.requireNonNull(oracleBgpAsn);
+        public Builder oracleBgpAsn(@Nullable Integer oracleBgpAsn) {
+            this.oracleBgpAsn = oracleBgpAsn;
             return this;
         }
         @CustomType.Setter
-        public Builder providerServiceId(String providerServiceId) {
-            this.providerServiceId = Objects.requireNonNull(providerServiceId);
+        public Builder providerServiceId(@Nullable String providerServiceId) {
+            this.providerServiceId = providerServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder providerServiceKeyName(String providerServiceKeyName) {
-            this.providerServiceKeyName = Objects.requireNonNull(providerServiceKeyName);
+        public Builder providerServiceKeyName(@Nullable String providerServiceKeyName) {
+            this.providerServiceKeyName = providerServiceKeyName;
             return this;
         }
         @CustomType.Setter
-        public Builder providerState(String providerState) {
-            this.providerState = Objects.requireNonNull(providerState);
+        public Builder providerState(@Nullable String providerState) {
+            this.providerState = providerState;
             return this;
         }
         @CustomType.Setter
-        public Builder publicPrefixes(List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes) {
-            this.publicPrefixes = Objects.requireNonNull(publicPrefixes);
+        public Builder publicPrefixes(@Nullable List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes) {
+            this.publicPrefixes = publicPrefixes;
             return this;
         }
         public Builder publicPrefixes(GetVirtualCircuitsVirtualCircuitPublicPrefix... publicPrefixes) {
             return publicPrefixes(List.of(publicPrefixes));
         }
         @CustomType.Setter
-        public Builder referenceComment(String referenceComment) {
-            this.referenceComment = Objects.requireNonNull(referenceComment);
+        public Builder referenceComment(@Nullable String referenceComment) {
+            this.referenceComment = referenceComment;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder routingPolicies(List<String> routingPolicies) {
-            this.routingPolicies = Objects.requireNonNull(routingPolicies);
+        public Builder routingPolicies(@Nullable List<String> routingPolicies) {
+            this.routingPolicies = routingPolicies;
             return this;
         }
         public Builder routingPolicies(String... routingPolicies) {
             return routingPolicies(List.of(routingPolicies));
         }
         @CustomType.Setter
-        public Builder serviceType(String serviceType) {
-            this.serviceType = Objects.requireNonNull(serviceType);
+        public Builder serviceType(@Nullable String serviceType) {
+            this.serviceType = serviceType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualCircuitId(String virtualCircuitId) {
-            this.virtualCircuitId = Objects.requireNonNull(virtualCircuitId);
+        public Builder virtualCircuitId(@Nullable String virtualCircuitId) {
+            this.virtualCircuitId = virtualCircuitId;
             return this;
         }
         public GetVirtualCircuitsVirtualCircuit build() {

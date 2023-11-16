@@ -29,7 +29,7 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return run cadence.
      * 
@@ -39,7 +39,7 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
      * @return The list of scheduled_activity_collection.
      * 
      */
-    private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections;
+    private @Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections;
     /**
      * @return The current state of the scheduledActivity.
      * 
@@ -70,8 +70,8 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return run cadence.
@@ -85,7 +85,7 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
      * 
      */
     public List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections() {
-        return this.scheduledActivityCollections;
+        return this.scheduledActivityCollections == null ? List.of() : this.scheduledActivityCollections;
     }
     /**
      * @return The current state of the scheduledActivity.
@@ -113,9 +113,9 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
         private @Nullable String displayName;
         private @Nullable List<GetFusionEnvironmentScheduledActivitiesFilter> filters;
         private String fusionEnvironmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String runCycle;
-        private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections;
+        private @Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections;
         private @Nullable String state;
         private @Nullable String timeExpectedFinishLessThanOrEqualTo;
         private @Nullable String timeScheduledStartGreaterThanOrEqualTo;
@@ -152,8 +152,8 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -162,8 +162,8 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledActivityCollections(List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections) {
-            this.scheduledActivityCollections = Objects.requireNonNull(scheduledActivityCollections);
+        public Builder scheduledActivityCollections(@Nullable List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections) {
+            this.scheduledActivityCollections = scheduledActivityCollections;
             return this;
         }
         public Builder scheduledActivityCollections(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection... scheduledActivityCollections) {

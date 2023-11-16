@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Describes the alert policy rule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The conditional expression of the alert policy rule which evaluates to boolean value.
         /// </summary>
-        public readonly string Expression;
+        public readonly string? Expression;
         /// <summary>
         /// The unique key of the alert policy rule.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
 
         [OutputConstructor]
         private GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(
-            string description,
+            string? description,
 
-            string expression,
+            string? expression,
 
-            string key)
+            string? key)
         {
             Description = description;
             Expression = expression;

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The ocid representing unique shedule run
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional details about scheduled run failure
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The unique ID of a schedule.
         /// </summary>
-        public readonly string ScheduleId;
+        public readonly string? ScheduleId;
         /// <summary>
         /// Specifies if the schedule job was run successfully or not.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time when schedule started executing
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when schedule finished executing
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
 
         [OutputConstructor]
         private GetScheduledRunsScheduledRunCollectionItemResult(
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string scheduleId,
+            string? scheduleId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeFinished)
+            string? timeFinished)
         {
             Id = id;
             LifecycleDetails = lifecycleDetails;

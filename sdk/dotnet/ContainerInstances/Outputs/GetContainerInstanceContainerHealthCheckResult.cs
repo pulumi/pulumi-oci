@@ -14,55 +14,55 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     public sealed class GetContainerInstanceContainerHealthCheckResult
     {
         public readonly ImmutableArray<string> Commands;
-        public readonly string FailureAction;
-        public readonly int FailureThreshold;
+        public readonly string? FailureAction;
+        public readonly int? FailureThreshold;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerHealthCheckHeaderResult> Headers;
-        public readonly string HealthCheckType;
-        public readonly int InitialDelayInSeconds;
-        public readonly int IntervalInSeconds;
+        public readonly string? HealthCheckType;
+        public readonly int? InitialDelayInSeconds;
+        public readonly int? IntervalInSeconds;
         /// <summary>
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         /// </summary>
-        public readonly string Path;
-        public readonly int Port;
-        public readonly string Status;
-        public readonly string StatusDetails;
-        public readonly int SuccessThreshold;
-        public readonly int TimeoutInSeconds;
+        public readonly string? Path;
+        public readonly int? Port;
+        public readonly string? Status;
+        public readonly string? StatusDetails;
+        public readonly int? SuccessThreshold;
+        public readonly int? TimeoutInSeconds;
 
         [OutputConstructor]
         private GetContainerInstanceContainerHealthCheckResult(
             ImmutableArray<string> commands,
 
-            string failureAction,
+            string? failureAction,
 
-            int failureThreshold,
+            int? failureThreshold,
 
             ImmutableArray<Outputs.GetContainerInstanceContainerHealthCheckHeaderResult> headers,
 
-            string healthCheckType,
+            string? healthCheckType,
 
-            int initialDelayInSeconds,
+            int? initialDelayInSeconds,
 
-            int intervalInSeconds,
+            int? intervalInSeconds,
 
-            string name,
+            string? name,
 
-            string path,
+            string? path,
 
-            int port,
+            int? port,
 
-            string status,
+            string? status,
 
-            string statusDetails,
+            string? statusDetails,
 
-            int successThreshold,
+            int? successThreshold,
 
-            int timeoutInSeconds)
+            int? timeoutInSeconds)
         {
             Commands = commands;
             FailureAction = failureAction;

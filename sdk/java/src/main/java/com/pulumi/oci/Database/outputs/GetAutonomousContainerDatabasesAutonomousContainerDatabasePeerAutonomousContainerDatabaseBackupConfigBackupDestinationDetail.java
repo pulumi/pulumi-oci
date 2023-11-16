@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail {
@@ -13,63 +15,63 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Proxy URL to connect to object store.
      * 
      */
-    private String internetProxy;
+    private @Nullable String internetProxy;
     /**
      * @return Type of the database backup destination.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
-    private String vpcPassword;
+    private @Nullable String vpcPassword;
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
-    private String vpcUser;
+    private @Nullable String vpcUser;
 
     private GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail() {}
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Proxy URL to connect to object store.
      * 
      */
-    public String internetProxy() {
-        return this.internetProxy;
+    public Optional<String> internetProxy() {
+        return Optional.ofNullable(this.internetProxy);
     }
     /**
      * @return Type of the database backup destination.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
-    public String vpcPassword() {
-        return this.vpcPassword;
+    public Optional<String> vpcPassword() {
+        return Optional.ofNullable(this.vpcPassword);
     }
     /**
      * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
-    public String vpcUser() {
-        return this.vpcUser;
+    public Optional<String> vpcUser() {
+        return Optional.ofNullable(this.vpcUser);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String internetProxy;
-        private String type;
-        private String vpcPassword;
-        private String vpcUser;
+        private @Nullable String id;
+        private @Nullable String internetProxy;
+        private @Nullable String type;
+        private @Nullable String vpcPassword;
+        private @Nullable String vpcUser;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabasePee
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder internetProxy(String internetProxy) {
-            this.internetProxy = Objects.requireNonNull(internetProxy);
+        public Builder internetProxy(@Nullable String internetProxy) {
+            this.internetProxy = internetProxy;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vpcPassword(String vpcPassword) {
-            this.vpcPassword = Objects.requireNonNull(vpcPassword);
+        public Builder vpcPassword(@Nullable String vpcPassword) {
+            this.vpcPassword = vpcPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder vpcUser(String vpcUser) {
-            this.vpcUser = Objects.requireNonNull(vpcUser);
+        public Builder vpcUser(@Nullable String vpcUser) {
+            this.vpcUser = vpcUser;
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {

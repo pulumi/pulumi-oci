@@ -63,15 +63,15 @@ export class TableReplica extends pulumi.CustomResource {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
      */
-    public readonly maxReadUnits!: pulumi.Output<number>;
+    public readonly maxReadUnits!: pulumi.Output<number | undefined>;
     /**
      * Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
      */
-    public readonly maxWriteUnits!: pulumi.Output<number>;
+    public readonly maxWriteUnits!: pulumi.Output<number | undefined>;
     /**
      * Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
      */

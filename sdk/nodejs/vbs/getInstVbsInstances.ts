@@ -84,7 +84,7 @@ export interface GetInstVbsInstancesResult {
     /**
      * The list of vbs_instance_summary_collection.
      */
-    readonly vbsInstanceSummaryCollections: outputs.Vbs.GetInstVbsInstancesVbsInstanceSummaryCollection[];
+    readonly vbsInstanceSummaryCollections?: outputs.Vbs.GetInstVbsInstancesVbsInstanceSummaryCollection[];
 }
 /**
  * This data source provides the list of Vbs Instances in Oracle Cloud Infrastructure Vbs Inst service.

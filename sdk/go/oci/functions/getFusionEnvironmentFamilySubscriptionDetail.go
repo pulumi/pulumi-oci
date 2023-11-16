@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -61,7 +60,7 @@ type GetFusionEnvironmentFamilySubscriptionDetailArgs struct {
 type GetFusionEnvironmentFamilySubscriptionDetailResult struct {
 	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of subscriptions.
 	Subscriptions []GetFusionEnvironmentFamilySubscriptionDetailSubscription `pulumi:"subscriptions"`
 }
@@ -104,19 +103,13 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) ToGetFusionEnv
 	return o
 }
 
-func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailResult] {
-	return pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) FusionEnvironmentFamilyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailResult) string { return v.FusionEnvironmentFamilyId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of subscriptions.

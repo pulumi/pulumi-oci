@@ -29,12 +29,12 @@ public final class GetPathAnalyzerTestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of path_analyzer_test_collection.
      * 
      */
-    private List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections;
+    private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections;
     /**
      * @return The current state of the `PathAnalyzerTest` resource.
      * 
@@ -63,15 +63,15 @@ public final class GetPathAnalyzerTestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of path_analyzer_test_collection.
      * 
      */
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections() {
-        return this.pathAnalyzerTestCollections;
+        return this.pathAnalyzerTestCollections == null ? List.of() : this.pathAnalyzerTestCollections;
     }
     /**
      * @return The current state of the `PathAnalyzerTest` resource.
@@ -93,8 +93,8 @@ public final class GetPathAnalyzerTestsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetPathAnalyzerTestsFilter> filters;
-        private String id;
-        private List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections;
+        private @Nullable String id;
+        private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPathAnalyzerTestsResult defaults) {
@@ -126,13 +126,13 @@ public final class GetPathAnalyzerTestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder pathAnalyzerTestCollections(List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections) {
-            this.pathAnalyzerTestCollections = Objects.requireNonNull(pathAnalyzerTestCollections);
+        public Builder pathAnalyzerTestCollections(@Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections) {
+            this.pathAnalyzerTestCollections = pathAnalyzerTestCollections;
             return this;
         }
         public Builder pathAnalyzerTestCollections(GetPathAnalyzerTestsPathAnalyzerTestCollection... pathAnalyzerTestCollections) {

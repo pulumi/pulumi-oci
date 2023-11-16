@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Type of change.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRepositoryDiffChangeDiffSectionResult(
             ImmutableArray<Outputs.GetRepositoryDiffChangeDiffSectionLineResult> lines,
 
-            string type)
+            string? type)
         {
             Lines = lines;
             Type = type;

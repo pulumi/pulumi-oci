@@ -47,7 +47,7 @@ class GetManagedDatabaseSqlTuningAdvisorTaskResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -55,10 +55,7 @@ class GetManagedDatabaseSqlTuningAdvisorTaskResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTaskItemResult']:
-        """
-        A list of SQL Tuning Advisor tasks.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTaskItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -69,9 +66,6 @@ class GetManagedDatabaseSqlTuningAdvisorTaskResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the SQL Tuning Advisor task.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -112,29 +106,7 @@ def get_managed_database_sql_tuning_advisor_task(managed_database_id: Optional[s
                                                  time_less_than_or_equal_to: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningAdvisorTaskResult:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL Tuning Advisor tasks for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_task = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_task(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_sql_tuning_advisor_task_name"],
-        status=var["managed_database_sql_tuning_advisor_task_status"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: The optional query parameter to filter the SQL Tuning Advisor task list by name.
-    :param str status: The optional query parameter to filter the SQL Tuning Advisor task list by status.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp.
-    :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -163,28 +135,6 @@ def get_managed_database_sql_tuning_advisor_task_output(managed_database_id: Opt
                                                         time_less_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTaskResult]:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL Tuning Advisor tasks for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_task = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_task(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_sql_tuning_advisor_task_name"],
-        status=var["managed_database_sql_tuning_advisor_task_status"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: The optional query parameter to filter the SQL Tuning Advisor task list by name.
-    :param str status: The optional query parameter to filter the SQL Tuning Advisor task list by status.
-    :param str time_greater_than_or_equal_to: The optional greater than or equal to query parameter to filter the timestamp.
-    :param str time_less_than_or_equal_to: The optional less than or equal to query parameter to filter the timestamp.
+    Use this data source to access information about an existing resource.
     """
     ...

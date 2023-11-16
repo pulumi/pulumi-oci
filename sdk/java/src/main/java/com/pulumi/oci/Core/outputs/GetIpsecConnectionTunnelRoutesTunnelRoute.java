@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
@@ -16,63 +18,63 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
      * @return Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
      * 
      */
-    private String advertiser;
+    private @Nullable String advertiser;
     /**
      * @return The age of the route.
      * 
      */
-    private String age;
+    private @Nullable String age;
     /**
      * @return A list of ASNs in AS_Path.
      * 
      */
-    private List<Integer> asPaths;
+    private @Nullable List<Integer> asPaths;
     /**
      * @return Indicates this is the best route.
      * 
      */
-    private Boolean isBestPath;
+    private @Nullable Boolean isBestPath;
     /**
      * @return The BGP network layer reachability information.
      * 
      */
-    private String prefix;
+    private @Nullable String prefix;
 
     private GetIpsecConnectionTunnelRoutesTunnelRoute() {}
     /**
      * @return Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
      * 
      */
-    public String advertiser() {
-        return this.advertiser;
+    public Optional<String> advertiser() {
+        return Optional.ofNullable(this.advertiser);
     }
     /**
      * @return The age of the route.
      * 
      */
-    public String age() {
-        return this.age;
+    public Optional<String> age() {
+        return Optional.ofNullable(this.age);
     }
     /**
      * @return A list of ASNs in AS_Path.
      * 
      */
     public List<Integer> asPaths() {
-        return this.asPaths;
+        return this.asPaths == null ? List.of() : this.asPaths;
     }
     /**
      * @return Indicates this is the best route.
      * 
      */
-    public Boolean isBestPath() {
-        return this.isBestPath;
+    public Optional<Boolean> isBestPath() {
+        return Optional.ofNullable(this.isBestPath);
     }
     /**
      * @return The BGP network layer reachability information.
      * 
      */
-    public String prefix() {
-        return this.prefix;
+    public Optional<String> prefix() {
+        return Optional.ofNullable(this.prefix);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String advertiser;
-        private String age;
-        private List<Integer> asPaths;
-        private Boolean isBestPath;
-        private String prefix;
+        private @Nullable String advertiser;
+        private @Nullable String age;
+        private @Nullable List<Integer> asPaths;
+        private @Nullable Boolean isBestPath;
+        private @Nullable String prefix;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelRoutesTunnelRoute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
         }
 
         @CustomType.Setter
-        public Builder advertiser(String advertiser) {
-            this.advertiser = Objects.requireNonNull(advertiser);
+        public Builder advertiser(@Nullable String advertiser) {
+            this.advertiser = advertiser;
             return this;
         }
         @CustomType.Setter
-        public Builder age(String age) {
-            this.age = Objects.requireNonNull(age);
+        public Builder age(@Nullable String age) {
+            this.age = age;
             return this;
         }
         @CustomType.Setter
-        public Builder asPaths(List<Integer> asPaths) {
-            this.asPaths = Objects.requireNonNull(asPaths);
+        public Builder asPaths(@Nullable List<Integer> asPaths) {
+            this.asPaths = asPaths;
             return this;
         }
         public Builder asPaths(Integer... asPaths) {
             return asPaths(List.of(asPaths));
         }
         @CustomType.Setter
-        public Builder isBestPath(Boolean isBestPath) {
-            this.isBestPath = Objects.requireNonNull(isBestPath);
+        public Builder isBestPath(@Nullable Boolean isBestPath) {
+            this.isBestPath = isBestPath;
             return this;
         }
         @CustomType.Setter
-        public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+        public Builder prefix(@Nullable String prefix) {
+            this.prefix = prefix;
             return this;
         }
         public GetIpsecConnectionTunnelRoutesTunnelRoute build() {

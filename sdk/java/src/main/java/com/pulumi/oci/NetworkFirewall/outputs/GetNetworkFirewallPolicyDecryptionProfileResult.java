@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyDecryptionProfileResult {
@@ -14,48 +16,48 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
      * @return Whether to block sessions if the server&#39;s certificate uses extensions other than key usage and/or extended key usage.
      * 
      */
-    private Boolean areCertificateExtensionsRestricted;
-    private String id;
+    private @Nullable Boolean areCertificateExtensionsRestricted;
+    private @Nullable String id;
     /**
      * @return Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
      */
-    private Boolean isAutoIncludeAltName;
+    private @Nullable Boolean isAutoIncludeAltName;
     /**
      * @return Whether to block sessions if server&#39;s certificate is expired.
      * 
      */
-    private Boolean isExpiredCertificateBlocked;
+    private @Nullable Boolean isExpiredCertificateBlocked;
     /**
      * @return Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      * 
      */
-    private Boolean isOutOfCapacityBlocked;
+    private @Nullable Boolean isOutOfCapacityBlocked;
     /**
      * @return Whether to block sessions if the revocation status check for server&#39;s certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      * 
      */
-    private Boolean isRevocationStatusTimeoutBlocked;
+    private @Nullable Boolean isRevocationStatusTimeoutBlocked;
     /**
      * @return Whether to block sessions if the revocation status check for server&#39;s certificate results in &#34;unknown&#34;.
      * 
      */
-    private Boolean isUnknownRevocationStatusBlocked;
+    private @Nullable Boolean isUnknownRevocationStatusBlocked;
     /**
      * @return Whether to block sessions if SSL cipher suite is not supported.
      * 
      */
-    private Boolean isUnsupportedCipherBlocked;
+    private @Nullable Boolean isUnsupportedCipherBlocked;
     /**
      * @return Whether to block sessions if SSL version is not supported.
      * 
      */
-    private Boolean isUnsupportedVersionBlocked;
+    private @Nullable Boolean isUnsupportedVersionBlocked;
     /**
      * @return Whether to block sessions if server&#39;s certificate is issued by an untrusted certificate authority (CA).
      * 
      */
-    private Boolean isUntrustedIssuerBlocked;
+    private @Nullable Boolean isUntrustedIssuerBlocked;
     /**
      * @return Unique Name of the decryption profile.
      * 
@@ -66,79 +68,79 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
      * @return OCID of the Network Firewall Policy this decryption profile belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetNetworkFirewallPolicyDecryptionProfileResult() {}
     /**
      * @return Whether to block sessions if the server&#39;s certificate uses extensions other than key usage and/or extended key usage.
      * 
      */
-    public Boolean areCertificateExtensionsRestricted() {
-        return this.areCertificateExtensionsRestricted;
+    public Optional<Boolean> areCertificateExtensionsRestricted() {
+        return Optional.ofNullable(this.areCertificateExtensionsRestricted);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      * 
      */
-    public Boolean isAutoIncludeAltName() {
-        return this.isAutoIncludeAltName;
+    public Optional<Boolean> isAutoIncludeAltName() {
+        return Optional.ofNullable(this.isAutoIncludeAltName);
     }
     /**
      * @return Whether to block sessions if server&#39;s certificate is expired.
      * 
      */
-    public Boolean isExpiredCertificateBlocked() {
-        return this.isExpiredCertificateBlocked;
+    public Optional<Boolean> isExpiredCertificateBlocked() {
+        return Optional.ofNullable(this.isExpiredCertificateBlocked);
     }
     /**
      * @return Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      * 
      */
-    public Boolean isOutOfCapacityBlocked() {
-        return this.isOutOfCapacityBlocked;
+    public Optional<Boolean> isOutOfCapacityBlocked() {
+        return Optional.ofNullable(this.isOutOfCapacityBlocked);
     }
     /**
      * @return Whether to block sessions if the revocation status check for server&#39;s certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      * 
      */
-    public Boolean isRevocationStatusTimeoutBlocked() {
-        return this.isRevocationStatusTimeoutBlocked;
+    public Optional<Boolean> isRevocationStatusTimeoutBlocked() {
+        return Optional.ofNullable(this.isRevocationStatusTimeoutBlocked);
     }
     /**
      * @return Whether to block sessions if the revocation status check for server&#39;s certificate results in &#34;unknown&#34;.
      * 
      */
-    public Boolean isUnknownRevocationStatusBlocked() {
-        return this.isUnknownRevocationStatusBlocked;
+    public Optional<Boolean> isUnknownRevocationStatusBlocked() {
+        return Optional.ofNullable(this.isUnknownRevocationStatusBlocked);
     }
     /**
      * @return Whether to block sessions if SSL cipher suite is not supported.
      * 
      */
-    public Boolean isUnsupportedCipherBlocked() {
-        return this.isUnsupportedCipherBlocked;
+    public Optional<Boolean> isUnsupportedCipherBlocked() {
+        return Optional.ofNullable(this.isUnsupportedCipherBlocked);
     }
     /**
      * @return Whether to block sessions if SSL version is not supported.
      * 
      */
-    public Boolean isUnsupportedVersionBlocked() {
-        return this.isUnsupportedVersionBlocked;
+    public Optional<Boolean> isUnsupportedVersionBlocked() {
+        return Optional.ofNullable(this.isUnsupportedVersionBlocked);
     }
     /**
      * @return Whether to block sessions if server&#39;s certificate is issued by an untrusted certificate authority (CA).
      * 
      */
-    public Boolean isUntrustedIssuerBlocked() {
-        return this.isUntrustedIssuerBlocked;
+    public Optional<Boolean> isUntrustedIssuerBlocked() {
+        return Optional.ofNullable(this.isUntrustedIssuerBlocked);
     }
     /**
      * @return Unique Name of the decryption profile.
@@ -154,15 +156,15 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
      * @return OCID of the Network Firewall Policy this decryption profile belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -174,20 +176,20 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areCertificateExtensionsRestricted;
-        private String id;
-        private Boolean isAutoIncludeAltName;
-        private Boolean isExpiredCertificateBlocked;
-        private Boolean isOutOfCapacityBlocked;
-        private Boolean isRevocationStatusTimeoutBlocked;
-        private Boolean isUnknownRevocationStatusBlocked;
-        private Boolean isUnsupportedCipherBlocked;
-        private Boolean isUnsupportedVersionBlocked;
-        private Boolean isUntrustedIssuerBlocked;
+        private @Nullable Boolean areCertificateExtensionsRestricted;
+        private @Nullable String id;
+        private @Nullable Boolean isAutoIncludeAltName;
+        private @Nullable Boolean isExpiredCertificateBlocked;
+        private @Nullable Boolean isOutOfCapacityBlocked;
+        private @Nullable Boolean isRevocationStatusTimeoutBlocked;
+        private @Nullable Boolean isUnknownRevocationStatusBlocked;
+        private @Nullable Boolean isUnsupportedCipherBlocked;
+        private @Nullable Boolean isUnsupportedVersionBlocked;
+        private @Nullable Boolean isUntrustedIssuerBlocked;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private String type;
+        private @Nullable String parentResourceId;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyDecryptionProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -208,53 +210,53 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
         }
 
         @CustomType.Setter
-        public Builder areCertificateExtensionsRestricted(Boolean areCertificateExtensionsRestricted) {
-            this.areCertificateExtensionsRestricted = Objects.requireNonNull(areCertificateExtensionsRestricted);
+        public Builder areCertificateExtensionsRestricted(@Nullable Boolean areCertificateExtensionsRestricted) {
+            this.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoIncludeAltName(Boolean isAutoIncludeAltName) {
-            this.isAutoIncludeAltName = Objects.requireNonNull(isAutoIncludeAltName);
+        public Builder isAutoIncludeAltName(@Nullable Boolean isAutoIncludeAltName) {
+            this.isAutoIncludeAltName = isAutoIncludeAltName;
             return this;
         }
         @CustomType.Setter
-        public Builder isExpiredCertificateBlocked(Boolean isExpiredCertificateBlocked) {
-            this.isExpiredCertificateBlocked = Objects.requireNonNull(isExpiredCertificateBlocked);
+        public Builder isExpiredCertificateBlocked(@Nullable Boolean isExpiredCertificateBlocked) {
+            this.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
             return this;
         }
         @CustomType.Setter
-        public Builder isOutOfCapacityBlocked(Boolean isOutOfCapacityBlocked) {
-            this.isOutOfCapacityBlocked = Objects.requireNonNull(isOutOfCapacityBlocked);
+        public Builder isOutOfCapacityBlocked(@Nullable Boolean isOutOfCapacityBlocked) {
+            this.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
             return this;
         }
         @CustomType.Setter
-        public Builder isRevocationStatusTimeoutBlocked(Boolean isRevocationStatusTimeoutBlocked) {
-            this.isRevocationStatusTimeoutBlocked = Objects.requireNonNull(isRevocationStatusTimeoutBlocked);
+        public Builder isRevocationStatusTimeoutBlocked(@Nullable Boolean isRevocationStatusTimeoutBlocked) {
+            this.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnknownRevocationStatusBlocked(Boolean isUnknownRevocationStatusBlocked) {
-            this.isUnknownRevocationStatusBlocked = Objects.requireNonNull(isUnknownRevocationStatusBlocked);
+        public Builder isUnknownRevocationStatusBlocked(@Nullable Boolean isUnknownRevocationStatusBlocked) {
+            this.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnsupportedCipherBlocked(Boolean isUnsupportedCipherBlocked) {
-            this.isUnsupportedCipherBlocked = Objects.requireNonNull(isUnsupportedCipherBlocked);
+        public Builder isUnsupportedCipherBlocked(@Nullable Boolean isUnsupportedCipherBlocked) {
+            this.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnsupportedVersionBlocked(Boolean isUnsupportedVersionBlocked) {
-            this.isUnsupportedVersionBlocked = Objects.requireNonNull(isUnsupportedVersionBlocked);
+        public Builder isUnsupportedVersionBlocked(@Nullable Boolean isUnsupportedVersionBlocked) {
+            this.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
             return this;
         }
         @CustomType.Setter
-        public Builder isUntrustedIssuerBlocked(Boolean isUntrustedIssuerBlocked) {
-            this.isUntrustedIssuerBlocked = Objects.requireNonNull(isUntrustedIssuerBlocked);
+        public Builder isUntrustedIssuerBlocked(@Nullable Boolean isUntrustedIssuerBlocked) {
+            this.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
             return this;
         }
         @CustomType.Setter
@@ -268,13 +270,13 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionProfileResult build() {

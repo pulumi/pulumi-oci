@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -40,17 +39,17 @@ type OperatorControl struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the operator control.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) List of emailId.
 	EmailIdLists pulumi.StringArrayOutput `pulumi:"emailIdLists"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Whether the operator control is a default Operator Control.
-	IsDefaultOperatorControl pulumi.BoolOutput `pulumi:"isDefaultOperatorControl"`
+	IsDefaultOperatorControl pulumi.BoolPtrOutput `pulumi:"isDefaultOperatorControl"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved pulumi.BoolOutput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
-	LastModifiedInfo pulumi.StringOutput `pulumi:"lastModifiedInfo"`
+	LastModifiedInfo pulumi.StringPtrOutput `pulumi:"lastModifiedInfo"`
 	// (Updatable) Name of the operator control.
 	OperatorControlName pulumi.StringOutput `pulumi:"operatorControlName"`
 	// (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
@@ -58,18 +57,18 @@ type OperatorControl struct {
 	// resourceType for which the OperatorControl is applicable
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// The current lifecycle state of the operator control.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) This is the message that will be displayed to the operator users while accessing the system.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemMessage pulumi.StringOutput `pulumi:"systemMessage"`
+	SystemMessage pulumi.StringPtrOutput `pulumi:"systemMessage"`
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfCreation pulumi.StringOutput `pulumi:"timeOfCreation"`
+	TimeOfCreation pulumi.StringPtrOutput `pulumi:"timeOfCreation"`
 	// Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrOutput `pulumi:"timeOfDeletion"`
 	// Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfModification pulumi.StringOutput `pulumi:"timeOfModification"`
+	TimeOfModification pulumi.StringPtrOutput `pulumi:"timeOfModification"`
 }
 
 // NewOperatorControl registers a new resource with the given unique name, arguments, and options.
@@ -292,12 +291,6 @@ func (i *OperatorControl) ToOperatorControlOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlOutput)
 }
 
-func (i *OperatorControl) ToOutput(ctx context.Context) pulumix.Output[*OperatorControl] {
-	return pulumix.Output[*OperatorControl]{
-		OutputState: i.ToOperatorControlOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperatorControlArrayInput is an input type that accepts OperatorControlArray and OperatorControlArrayOutput values.
 // You can construct a concrete instance of `OperatorControlArrayInput` via:
 //
@@ -321,12 +314,6 @@ func (i OperatorControlArray) ToOperatorControlArrayOutput() OperatorControlArra
 
 func (i OperatorControlArray) ToOperatorControlArrayOutputWithContext(ctx context.Context) OperatorControlArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlArrayOutput)
-}
-
-func (i OperatorControlArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControl] {
-	return pulumix.Output[[]*OperatorControl]{
-		OutputState: i.ToOperatorControlArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperatorControlMapInput is an input type that accepts OperatorControlMap and OperatorControlMapOutput values.
@@ -354,12 +341,6 @@ func (i OperatorControlMap) ToOperatorControlMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlMapOutput)
 }
 
-func (i OperatorControlMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControl] {
-	return pulumix.Output[map[string]*OperatorControl]{
-		OutputState: i.ToOperatorControlMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperatorControlOutput struct{ *pulumi.OutputState }
 
 func (OperatorControlOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o OperatorControlOutput) ToOperatorControlOutput() OperatorControlOutput {
 
 func (o OperatorControlOutput) ToOperatorControlOutputWithContext(ctx context.Context) OperatorControlOutput {
 	return o
-}
-
-func (o OperatorControlOutput) ToOutput(ctx context.Context) pulumix.Output[*OperatorControl] {
-	return pulumix.Output[*OperatorControl]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
@@ -406,8 +381,8 @@ func (o OperatorControlOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the operator control.
-func (o OperatorControlOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o OperatorControlOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of emailId.
@@ -421,8 +396,8 @@ func (o OperatorControlOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether the operator control is a default Operator Control.
-func (o OperatorControlOutput) IsDefaultOperatorControl() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.BoolOutput { return v.IsDefaultOperatorControl }).(pulumi.BoolOutput)
+func (o OperatorControlOutput) IsDefaultOperatorControl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.BoolPtrOutput { return v.IsDefaultOperatorControl }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -431,8 +406,8 @@ func (o OperatorControlOutput) IsFullyPreApproved() pulumi.BoolOutput {
 }
 
 // Description associated with the latest modification of the operator control.
-func (o OperatorControlOutput) LastModifiedInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.LastModifiedInfo }).(pulumi.StringOutput)
+func (o OperatorControlOutput) LastModifiedInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.LastModifiedInfo }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Name of the operator control.
@@ -451,31 +426,31 @@ func (o OperatorControlOutput) ResourceType() pulumi.StringOutput {
 }
 
 // The current lifecycle state of the operator control.
-func (o OperatorControlOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OperatorControlOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This is the message that will be displayed to the operator users while accessing the system.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OperatorControlOutput) SystemMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.SystemMessage }).(pulumi.StringOutput)
+func (o OperatorControlOutput) SystemMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.SystemMessage }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o OperatorControlOutput) TimeOfCreation() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.TimeOfCreation }).(pulumi.StringOutput)
+func (o OperatorControlOutput) TimeOfCreation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.TimeOfCreation }).(pulumi.StringPtrOutput)
 }
 
 // Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-func (o OperatorControlOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o OperatorControlOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o OperatorControlOutput) TimeOfModification() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.StringOutput { return v.TimeOfModification }).(pulumi.StringOutput)
+func (o OperatorControlOutput) TimeOfModification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringPtrOutput { return v.TimeOfModification }).(pulumi.StringPtrOutput)
 }
 
 type OperatorControlArrayOutput struct{ *pulumi.OutputState }
@@ -490,12 +465,6 @@ func (o OperatorControlArrayOutput) ToOperatorControlArrayOutput() OperatorContr
 
 func (o OperatorControlArrayOutput) ToOperatorControlArrayOutputWithContext(ctx context.Context) OperatorControlArrayOutput {
 	return o
-}
-
-func (o OperatorControlArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControl] {
-	return pulumix.Output[[]*OperatorControl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperatorControlArrayOutput) Index(i pulumi.IntInput) OperatorControlOutput {
@@ -516,12 +485,6 @@ func (o OperatorControlMapOutput) ToOperatorControlMapOutput() OperatorControlMa
 
 func (o OperatorControlMapOutput) ToOperatorControlMapOutputWithContext(ctx context.Context) OperatorControlMapOutput {
 	return o
-}
-
-func (o OperatorControlMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControl] {
-	return pulumix.Output[map[string]*OperatorControl]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperatorControlMapOutput) MapIndex(k pulumi.StringInput) OperatorControlOutput {

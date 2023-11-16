@@ -15,206 +15,208 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstancesContainerInstanceCollectionItemContainer {
-    private List<String> arguments;
+    private @Nullable List<String> arguments;
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
-    private List<String> commands;
+    private @Nullable String availabilityDomain;
+    private @Nullable List<String> commands;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the container.
      * 
      */
-    private String containerId;
-    private String containerInstanceId;
+    private @Nullable String containerId;
+    private @Nullable String containerInstanceId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
-    private Map<String,Object> environmentVariables;
-    private Integer exitCode;
+    private @Nullable String displayName;
+    private @Nullable Map<String,Object> environmentVariables;
+    private @Nullable Integer exitCode;
     /**
      * @return The fault domain to place the container instance.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks;
-    private String imageUrl;
-    private Boolean isResourcePrincipalDisabled;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks;
+    private @Nullable String imageUrl;
+    private @Nullable Boolean isResourcePrincipalDisabled;
     /**
      * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
-    private String lifecycleDetails;
-    private List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
-    private List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
+    private @Nullable String lifecycleDetails;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeCreated;
-    private String timeTerminated;
+    private @Nullable String timeCreated;
+    private @Nullable String timeTerminated;
     /**
      * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeUpdated;
-    private List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts;
-    private String workingDirectory;
+    private @Nullable String timeUpdated;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts;
+    private @Nullable String workingDirectory;
 
     private GetContainerInstancesContainerInstanceCollectionItemContainer() {}
     public List<String> arguments() {
-        return this.arguments;
+        return this.arguments == null ? List.of() : this.arguments;
     }
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     public List<String> commands() {
-        return this.commands;
+        return this.commands == null ? List.of() : this.commands;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the container.
      * 
      */
-    public String containerId() {
-        return this.containerId;
+    public Optional<String> containerId() {
+        return Optional.ofNullable(this.containerId);
     }
-    public String containerInstanceId() {
-        return this.containerInstanceId;
+    public Optional<String> containerInstanceId() {
+        return Optional.ofNullable(this.containerInstanceId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public Map<String,Object> environmentVariables() {
-        return this.environmentVariables;
+        return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
-    public Integer exitCode() {
-        return this.exitCode;
+    public Optional<Integer> exitCode() {
+        return Optional.ofNullable(this.exitCode);
     }
     /**
      * @return The fault domain to place the container instance.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks() {
-        return this.healthChecks;
+        return this.healthChecks == null ? List.of() : this.healthChecks;
     }
-    public String imageUrl() {
-        return this.imageUrl;
+    public Optional<String> imageUrl() {
+        return Optional.ofNullable(this.imageUrl);
     }
-    public Boolean isResourcePrincipalDisabled() {
-        return this.isResourcePrincipalDisabled;
+    public Optional<Boolean> isResourcePrincipalDisabled() {
+        return Optional.ofNullable(this.isResourcePrincipalDisabled);
     }
     /**
      * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs() {
-        return this.resourceConfigs;
+        return this.resourceConfigs == null ? List.of() : this.resourceConfigs;
     }
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts() {
-        return this.securityContexts;
+        return this.securityContexts == null ? List.of() : this.securityContexts;
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String timeTerminated() {
-        return this.timeTerminated;
+    public Optional<String> timeTerminated() {
+        return Optional.ofNullable(this.timeTerminated);
     }
     /**
      * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts() {
-        return this.volumeMounts;
+        return this.volumeMounts == null ? List.of() : this.volumeMounts;
     }
-    public String workingDirectory() {
-        return this.workingDirectory;
+    public Optional<String> workingDirectory() {
+        return Optional.ofNullable(this.workingDirectory);
     }
 
     public static Builder builder() {
@@ -226,31 +228,31 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> arguments;
-        private String availabilityDomain;
-        private List<String> commands;
-        private String compartmentId;
-        private String containerId;
-        private String containerInstanceId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> environmentVariables;
-        private Integer exitCode;
-        private String faultDomain;
-        private Map<String,Object> freeformTags;
-        private List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks;
-        private String imageUrl;
-        private Boolean isResourcePrincipalDisabled;
-        private String lifecycleDetails;
-        private List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
-        private List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeTerminated;
-        private String timeUpdated;
-        private List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts;
-        private String workingDirectory;
+        private @Nullable List<String> arguments;
+        private @Nullable String availabilityDomain;
+        private @Nullable List<String> commands;
+        private @Nullable String compartmentId;
+        private @Nullable String containerId;
+        private @Nullable String containerInstanceId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable Integer exitCode;
+        private @Nullable String faultDomain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks;
+        private @Nullable String imageUrl;
+        private @Nullable Boolean isResourcePrincipalDisabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeTerminated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts;
+        private @Nullable String workingDirectory;
         public Builder() {}
         public Builder(GetContainerInstancesContainerInstanceCollectionItemContainer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -282,146 +284,146 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
 
         @CustomType.Setter
-        public Builder arguments(List<String> arguments) {
-            this.arguments = Objects.requireNonNull(arguments);
+        public Builder arguments(@Nullable List<String> arguments) {
+            this.arguments = arguments;
             return this;
         }
         public Builder arguments(String... arguments) {
             return arguments(List.of(arguments));
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder commands(List<String> commands) {
-            this.commands = Objects.requireNonNull(commands);
+        public Builder commands(@Nullable List<String> commands) {
+            this.commands = commands;
             return this;
         }
         public Builder commands(String... commands) {
             return commands(List.of(commands));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder containerId(String containerId) {
-            this.containerId = Objects.requireNonNull(containerId);
+        public Builder containerId(@Nullable String containerId) {
+            this.containerId = containerId;
             return this;
         }
         @CustomType.Setter
-        public Builder containerInstanceId(String containerInstanceId) {
-            this.containerInstanceId = Objects.requireNonNull(containerInstanceId);
+        public Builder containerInstanceId(@Nullable String containerInstanceId) {
+            this.containerInstanceId = containerInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
-        public Builder exitCode(Integer exitCode) {
-            this.exitCode = Objects.requireNonNull(exitCode);
+        public Builder exitCode(@Nullable Integer exitCode) {
+            this.exitCode = exitCode;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder healthChecks(List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks) {
-            this.healthChecks = Objects.requireNonNull(healthChecks);
+        public Builder healthChecks(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks) {
+            this.healthChecks = healthChecks;
             return this;
         }
         public Builder healthChecks(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck... healthChecks) {
             return healthChecks(List.of(healthChecks));
         }
         @CustomType.Setter
-        public Builder imageUrl(String imageUrl) {
-            this.imageUrl = Objects.requireNonNull(imageUrl);
+        public Builder imageUrl(@Nullable String imageUrl) {
+            this.imageUrl = imageUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder isResourcePrincipalDisabled(Boolean isResourcePrincipalDisabled) {
-            this.isResourcePrincipalDisabled = Objects.requireNonNull(isResourcePrincipalDisabled);
+        public Builder isResourcePrincipalDisabled(@Nullable Boolean isResourcePrincipalDisabled) {
+            this.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceConfigs(List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs) {
-            this.resourceConfigs = Objects.requireNonNull(resourceConfigs);
+        public Builder resourceConfigs(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs) {
+            this.resourceConfigs = resourceConfigs;
             return this;
         }
         public Builder resourceConfigs(GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig... resourceConfigs) {
             return resourceConfigs(List.of(resourceConfigs));
         }
         @CustomType.Setter
-        public Builder securityContexts(List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts) {
-            this.securityContexts = Objects.requireNonNull(securityContexts);
+        public Builder securityContexts(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts) {
+            this.securityContexts = securityContexts;
             return this;
         }
         public Builder securityContexts(GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext... securityContexts) {
             return securityContexts(List.of(securityContexts));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeTerminated(String timeTerminated) {
-            this.timeTerminated = Objects.requireNonNull(timeTerminated);
+        public Builder timeTerminated(@Nullable String timeTerminated) {
+            this.timeTerminated = timeTerminated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeMounts(List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts) {
-            this.volumeMounts = Objects.requireNonNull(volumeMounts);
+        public Builder volumeMounts(@Nullable List<GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount> volumeMounts) {
+            this.volumeMounts = volumeMounts;
             return this;
         }
         public Builder volumeMounts(GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount... volumeMounts) {
             return volumeMounts(List.of(volumeMounts));
         }
         @CustomType.Setter
-        public Builder workingDirectory(String workingDirectory) {
-            this.workingDirectory = Objects.requireNonNull(workingDirectory);
+        public Builder workingDirectory(@Nullable String workingDirectory) {
+            this.workingDirectory = workingDirectory;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainer build() {

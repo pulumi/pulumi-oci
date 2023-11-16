@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
         /// </summary>
-        public readonly string FormUrl;
+        public readonly string? FormUrl;
         /// <summary>
         /// Indicates how to interpret the value of 'formUrl' when matching against a user-specified formUrl.  The system currently supports only 'Exact', which indicates that the value of 'formUrl' should be treated as a literal value.
         /// </summary>
-        public readonly string FormUrlMatchType;
+        public readonly string? FormUrlMatchType;
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchResult(
-            string formUrl,
+            string? formUrl,
 
-            string formUrlMatchType)
+            string? formUrlMatchType)
         {
             FormUrl = formUrl;
             FormUrlMatchType = formUrlMatchType;

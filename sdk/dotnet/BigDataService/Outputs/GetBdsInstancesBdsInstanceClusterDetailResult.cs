@@ -16,95 +16,95 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The URL of Ambari
         /// </summary>
-        public readonly string AmbariUrl;
+        public readonly string? AmbariUrl;
         /// <summary>
         /// Cloud SQL cell version.
         /// </summary>
-        public readonly string BdCellVersion;
+        public readonly string? BdCellVersion;
         /// <summary>
         /// BDA version installed in the cluster
         /// </summary>
-        public readonly string BdaVersion;
+        public readonly string? BdaVersion;
         /// <summary>
         /// Big Data Manager version installed in the cluster.
         /// </summary>
-        public readonly string BdmVersion;
+        public readonly string? BdmVersion;
         /// <summary>
         /// Big Data Service version installed in the cluster.
         /// </summary>
-        public readonly string BdsVersion;
+        public readonly string? BdsVersion;
         /// <summary>
         /// The URL of Big Data Manager.
         /// </summary>
-        public readonly string BigDataManagerUrl;
+        public readonly string? BigDataManagerUrl;
         /// <summary>
         /// The URL of Cloudera Manager
         /// </summary>
-        public readonly string ClouderaManagerUrl;
+        public readonly string? ClouderaManagerUrl;
         /// <summary>
         /// Big Data SQL version.
         /// </summary>
-        public readonly string CsqlCellVersion;
+        public readonly string? CsqlCellVersion;
         /// <summary>
         /// Cloud SQL query server database version.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// The URL of the Hue server.
         /// </summary>
-        public readonly string HueServerUrl;
+        public readonly string? HueServerUrl;
         /// <summary>
         /// The URL of the Jupyterhub.
         /// </summary>
-        public readonly string JupyterHubUrl;
+        public readonly string? JupyterHubUrl;
         /// <summary>
         /// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
         /// </summary>
-        public readonly string OdhVersion;
+        public readonly string? OdhVersion;
         /// <summary>
         /// Oracle Linux version installed in the cluster.
         /// </summary>
-        public readonly string OsVersion;
+        public readonly string? OsVersion;
         /// <summary>
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeRefreshed;
+        public readonly string? TimeRefreshed;
 
         [OutputConstructor]
         private GetBdsInstancesBdsInstanceClusterDetailResult(
-            string ambariUrl,
+            string? ambariUrl,
 
-            string bdCellVersion,
+            string? bdCellVersion,
 
-            string bdaVersion,
+            string? bdaVersion,
 
-            string bdmVersion,
+            string? bdmVersion,
 
-            string bdsVersion,
+            string? bdsVersion,
 
-            string bigDataManagerUrl,
+            string? bigDataManagerUrl,
 
-            string clouderaManagerUrl,
+            string? clouderaManagerUrl,
 
-            string csqlCellVersion,
+            string? csqlCellVersion,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string hueServerUrl,
+            string? hueServerUrl,
 
-            string jupyterHubUrl,
+            string? jupyterHubUrl,
 
-            string odhVersion,
+            string? odhVersion,
 
-            string osVersion,
+            string? osVersion,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeRefreshed)
+            string? timeRefreshed)
         {
             AmbariUrl = ambariUrl;
             BdCellVersion = bdCellVersion;

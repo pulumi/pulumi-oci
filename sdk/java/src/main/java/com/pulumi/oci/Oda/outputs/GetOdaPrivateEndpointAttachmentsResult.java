@@ -24,12 +24,12 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of oda_private_endpoint_attachment_collection.
      * 
      */
-    private List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections;
+    private @Nullable List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
      * 
@@ -56,15 +56,15 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of oda_private_endpoint_attachment_collection.
      * 
      */
     public List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections() {
-        return this.odaPrivateEndpointAttachmentCollections;
+        return this.odaPrivateEndpointAttachmentCollections == null ? List.of() : this.odaPrivateEndpointAttachmentCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
@@ -92,8 +92,8 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetOdaPrivateEndpointAttachmentsFilter> filters;
-        private String id;
-        private List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections;
+        private @Nullable String id;
+        private @Nullable List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections;
         private String odaPrivateEndpointId;
         private @Nullable String state;
         public Builder() {}
@@ -121,13 +121,13 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder odaPrivateEndpointAttachmentCollections(List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections) {
-            this.odaPrivateEndpointAttachmentCollections = Objects.requireNonNull(odaPrivateEndpointAttachmentCollections);
+        public Builder odaPrivateEndpointAttachmentCollections(@Nullable List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection> odaPrivateEndpointAttachmentCollections) {
+            this.odaPrivateEndpointAttachmentCollections = odaPrivateEndpointAttachmentCollections;
             return this;
         }
         public Builder odaPrivateEndpointAttachmentCollections(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection... odaPrivateEndpointAttachmentCollections) {

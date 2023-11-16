@@ -84,7 +84,7 @@ export interface GetStreamCdnConfigsResult {
     /**
      * The list of stream_cdn_config_collection.
      */
-    readonly streamCdnConfigCollections: outputs.MediaServices.GetStreamCdnConfigsStreamCdnConfigCollection[];
+    readonly streamCdnConfigCollections?: outputs.MediaServices.GetStreamCdnConfigsStreamCdnConfigCollection[];
 }
 /**
  * This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.

@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddressRuleTaxField {
@@ -17,27 +19,27 @@ public final class GetAddressRuleTaxField {
      * @return Format information
      * 
      */
-    private List<GetAddressRuleTaxFieldFormat> formats;
+    private @Nullable List<GetAddressRuleTaxFieldFormat> formats;
     /**
      * @return The given field is requeired or not
      * 
      */
-    private Boolean isRequired;
+    private @Nullable Boolean isRequired;
     /**
      * @return Label information
      * 
      */
-    private List<GetAddressRuleTaxFieldLabel> labels;
+    private @Nullable List<GetAddressRuleTaxFieldLabel> labels;
     /**
      * @return Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
      * 
      */
-    private String language;
+    private @Nullable String language;
     /**
      * @return The field name
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAddressRuleTaxField() {}
     /**
@@ -45,35 +47,35 @@ public final class GetAddressRuleTaxField {
      * 
      */
     public List<GetAddressRuleTaxFieldFormat> formats() {
-        return this.formats;
+        return this.formats == null ? List.of() : this.formats;
     }
     /**
      * @return The given field is requeired or not
      * 
      */
-    public Boolean isRequired() {
-        return this.isRequired;
+    public Optional<Boolean> isRequired() {
+        return Optional.ofNullable(this.isRequired);
     }
     /**
      * @return Label information
      * 
      */
     public List<GetAddressRuleTaxFieldLabel> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
      * 
      */
-    public String language() {
-        return this.language;
+    public Optional<String> language() {
+        return Optional.ofNullable(this.language);
     }
     /**
      * @return The field name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetAddressRuleTaxField {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddressRuleTaxFieldFormat> formats;
-        private Boolean isRequired;
-        private List<GetAddressRuleTaxFieldLabel> labels;
-        private String language;
-        private String name;
+        private @Nullable List<GetAddressRuleTaxFieldFormat> formats;
+        private @Nullable Boolean isRequired;
+        private @Nullable List<GetAddressRuleTaxFieldLabel> labels;
+        private @Nullable String language;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAddressRuleTaxField defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,34 +103,34 @@ public final class GetAddressRuleTaxField {
         }
 
         @CustomType.Setter
-        public Builder formats(List<GetAddressRuleTaxFieldFormat> formats) {
-            this.formats = Objects.requireNonNull(formats);
+        public Builder formats(@Nullable List<GetAddressRuleTaxFieldFormat> formats) {
+            this.formats = formats;
             return this;
         }
         public Builder formats(GetAddressRuleTaxFieldFormat... formats) {
             return formats(List.of(formats));
         }
         @CustomType.Setter
-        public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+        public Builder isRequired(@Nullable Boolean isRequired) {
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<GetAddressRuleTaxFieldLabel> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<GetAddressRuleTaxFieldLabel> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(GetAddressRuleTaxFieldLabel... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+        public Builder language(@Nullable String language) {
+            this.language = language;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAddressRuleTaxField build() {

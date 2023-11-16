@@ -20,49 +20,49 @@ namespace Pulumi.Oci.OsubOrganizationSubscription.Outputs
         /// <summary>
         /// SPM internal Subscription ID
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Customer friendly service name provided by PRG
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// Status of the plan
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Represents the date when the last service of the subscription ends
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Represents the date when the first service of the subscription was activated
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Total aggregate TCLV of all lines for the subscription including expired, active, and signed
         /// </summary>
-        public readonly string TotalValue;
+        public readonly string? TotalValue;
         /// <summary>
         /// Subscription Type i.e. IAAS,SAAS,PAAS
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetOrganizationSubscriptionsSubscriptionResult(
             ImmutableArray<Outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult> currencies,
 
-            string id,
+            string? id,
 
-            string serviceName,
+            string? serviceName,
 
-            string status,
+            string? status,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart,
+            string? timeStart,
 
-            string totalValue,
+            string? totalValue,
 
-            string type)
+            string? type)
         {
             Currencies = currencies;
             Id = id;

@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetCompatibilityMessage {
@@ -13,39 +15,39 @@ public final class GetTargetAssetCompatibilityMessage {
      * @return Detailed description of the compatibility issue.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Severity level of the compatibility issue.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
 
     private GetTargetAssetCompatibilityMessage() {}
     /**
      * @return Detailed description of the compatibility issue.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Severity level of the compatibility issue.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetTargetAssetCompatibilityMessage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
-        private String name;
-        private String severity;
+        private @Nullable String message;
+        private @Nullable String name;
+        private @Nullable String severity;
         public Builder() {}
         public Builder(GetTargetAssetCompatibilityMessage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetTargetAssetCompatibilityMessage {
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         public GetTargetAssetCompatibilityMessage build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -66,16 +65,16 @@ type GetBackendSetHealthResult struct {
 	// A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.4:8080`
 	CriticalStateBackendNames []string `pulumi:"criticalStateBackendNames"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	// Overall health status of the backend set.
 	// *  **OK:** All backend servers in the backend set return a status of `OK`.
 	// *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
 	// *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
 	// *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The total number of backend servers in this backend set.  Example: `7`
-	TotalBackendCount int `pulumi:"totalBackendCount"`
+	TotalBackendCount *int `pulumi:"totalBackendCount"`
 	// A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
 	UnknownStateBackendNames []string `pulumi:"unknownStateBackendNames"`
 	// A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.3:8080`
@@ -122,12 +121,6 @@ func (o GetBackendSetHealthResultOutput) ToGetBackendSetHealthResultOutputWithCo
 	return o
 }
 
-func (o GetBackendSetHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetHealthResult] {
-	return pulumix.Output[GetBackendSetHealthResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetHealthResultOutput) BackendSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.BackendSetName }).(pulumi.StringOutput)
 }
@@ -138,8 +131,8 @@ func (o GetBackendSetHealthResultOutput) CriticalStateBackendNames() pulumi.Stri
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBackendSetHealthResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendSetHealthResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBackendSetHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
@@ -151,13 +144,13 @@ func (o GetBackendSetHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
 // *  **WARNING:** Half or more of the backend set's backend servers return a status of `OK` and at least one backend server returns a status of `WARNING`, `CRITICAL`, or `UNKNOWN`.
 // *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
 // *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
-func (o GetBackendSetHealthResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetBackendSetHealthResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The total number of backend servers in this backend set.  Example: `7`
-func (o GetBackendSetHealthResultOutput) TotalBackendCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthResult) int { return v.TotalBackendCount }).(pulumi.IntOutput)
+func (o GetBackendSetHealthResultOutput) TotalBackendCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthResult) *int { return v.TotalBackendCount }).(pulumi.IntPtrOutput)
 }
 
 // A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`

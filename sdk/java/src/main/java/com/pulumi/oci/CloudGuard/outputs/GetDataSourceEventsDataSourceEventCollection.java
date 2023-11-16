@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventsDataSourceEventCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourceEventsDataSourceEventCollection {
@@ -14,7 +15,7 @@ public final class GetDataSourceEventsDataSourceEventCollection {
      * @return List of event related to a DataSource
      * 
      */
-    private List<GetDataSourceEventsDataSourceEventCollectionItem> items;
+    private @Nullable List<GetDataSourceEventsDataSourceEventCollectionItem> items;
 
     private GetDataSourceEventsDataSourceEventCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDataSourceEventsDataSourceEventCollection {
      * 
      */
     public List<GetDataSourceEventsDataSourceEventCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDataSourceEventsDataSourceEventCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDataSourceEventsDataSourceEventCollectionItem> items;
+        private @Nullable List<GetDataSourceEventsDataSourceEventCollectionItem> items;
         public Builder() {}
         public Builder(GetDataSourceEventsDataSourceEventCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDataSourceEventsDataSourceEventCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDataSourceEventsDataSourceEventCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDataSourceEventsDataSourceEventCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDataSourceEventsDataSourceEventCollectionItem... items) {

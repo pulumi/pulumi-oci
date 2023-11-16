@@ -73,12 +73,12 @@ export interface GetTrailSequencesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly trailFileId: string;
     /**
      * The list of trail_sequence_collection.
      */
-    readonly trailSequenceCollections: outputs.GoldenGate.GetTrailSequencesTrailSequenceCollection[];
+    readonly trailSequenceCollections?: outputs.GoldenGate.GetTrailSequencesTrailSequenceCollection[];
     readonly trailSequenceId: string;
 }
 /**

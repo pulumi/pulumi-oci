@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
@@ -120,17 +119,17 @@ type ClusterNetwork struct {
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//
 	// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
-	ClusterConfiguration ClusterNetworkClusterConfigurationOutput `pulumi:"clusterConfiguration"`
+	ClusterConfiguration ClusterNetworkClusterConfigurationPtrOutput `pulumi:"clusterConfiguration"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
-	HpcIslandId pulumi.StringOutput `pulumi:"hpcIslandId"`
+	HpcIslandId pulumi.StringPtrOutput `pulumi:"hpcIslandId"`
 	// (Updatable) The data to create the instance pools in the cluster network.
 	//
 	// Each cluster network can have one instance pool.
@@ -140,11 +139,11 @@ type ClusterNetwork struct {
 	// The location for where the instance pools in a cluster network will place instances.
 	PlacementConfiguration ClusterNetworkPlacementConfigurationOutput `pulumi:"placementConfiguration"`
 	// The current state of the cluster network.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewClusterNetwork registers a new resource with the given unique name, arguments, and options.
@@ -317,12 +316,6 @@ func (i *ClusterNetwork) ToClusterNetworkOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkOutput)
 }
 
-func (i *ClusterNetwork) ToOutput(ctx context.Context) pulumix.Output[*ClusterNetwork] {
-	return pulumix.Output[*ClusterNetwork]{
-		OutputState: i.ToClusterNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterNetworkArrayInput is an input type that accepts ClusterNetworkArray and ClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `ClusterNetworkArrayInput` via:
 //
@@ -346,12 +339,6 @@ func (i ClusterNetworkArray) ToClusterNetworkArrayOutput() ClusterNetworkArrayOu
 
 func (i ClusterNetworkArray) ToClusterNetworkArrayOutputWithContext(ctx context.Context) ClusterNetworkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkArrayOutput)
-}
-
-func (i ClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterNetwork] {
-	return pulumix.Output[[]*ClusterNetwork]{
-		OutputState: i.ToClusterNetworkArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ClusterNetworkMapInput is an input type that accepts ClusterNetworkMap and ClusterNetworkMapOutput values.
@@ -379,12 +366,6 @@ func (i ClusterNetworkMap) ToClusterNetworkMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkMapOutput)
 }
 
-func (i ClusterNetworkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterNetwork] {
-	return pulumix.Output[map[string]*ClusterNetwork]{
-		OutputState: i.ToClusterNetworkMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterNetworkOutput struct{ *pulumi.OutputState }
 
 func (ClusterNetworkOutput) ElementType() reflect.Type {
@@ -399,17 +380,11 @@ func (o ClusterNetworkOutput) ToClusterNetworkOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterNetwork] {
-	return pulumix.Output[*ClusterNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The HPC cluster configuration requested when launching instances of a cluster network.
 //
 // If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
-func (o ClusterNetworkOutput) ClusterConfiguration() ClusterNetworkClusterConfigurationOutput {
-	return o.ApplyT(func(v *ClusterNetwork) ClusterNetworkClusterConfigurationOutput { return v.ClusterConfiguration }).(ClusterNetworkClusterConfigurationOutput)
+func (o ClusterNetworkOutput) ClusterConfiguration() ClusterNetworkClusterConfigurationPtrOutput {
+	return o.ApplyT(func(v *ClusterNetwork) ClusterNetworkClusterConfigurationPtrOutput { return v.ClusterConfiguration }).(ClusterNetworkClusterConfigurationPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -423,8 +398,8 @@ func (o ClusterNetworkOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-func (o ClusterNetworkOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ClusterNetworkOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -433,8 +408,8 @@ func (o ClusterNetworkOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
-func (o ClusterNetworkOutput) HpcIslandId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.HpcIslandId }).(pulumi.StringOutput)
+func (o ClusterNetworkOutput) HpcIslandId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringPtrOutput { return v.HpcIslandId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The data to create the instance pools in the cluster network.
@@ -455,18 +430,18 @@ func (o ClusterNetworkOutput) PlacementConfiguration() ClusterNetworkPlacementCo
 }
 
 // The current state of the cluster network.
-func (o ClusterNetworkOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ClusterNetworkOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ClusterNetworkOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ClusterNetworkOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ClusterNetworkOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ClusterNetworkOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetwork) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ClusterNetworkArrayOutput struct{ *pulumi.OutputState }
@@ -481,12 +456,6 @@ func (o ClusterNetworkArrayOutput) ToClusterNetworkArrayOutput() ClusterNetworkA
 
 func (o ClusterNetworkArrayOutput) ToClusterNetworkArrayOutputWithContext(ctx context.Context) ClusterNetworkArrayOutput {
 	return o
-}
-
-func (o ClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClusterNetwork] {
-	return pulumix.Output[[]*ClusterNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterNetworkArrayOutput) Index(i pulumi.IntInput) ClusterNetworkOutput {
@@ -507,12 +476,6 @@ func (o ClusterNetworkMapOutput) ToClusterNetworkMapOutput() ClusterNetworkMapOu
 
 func (o ClusterNetworkMapOutput) ToClusterNetworkMapOutputWithContext(ctx context.Context) ClusterNetworkMapOutput {
 	return o
-}
-
-func (o ClusterNetworkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClusterNetwork] {
-	return pulumix.Output[map[string]*ClusterNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterNetworkMapOutput) MapIndex(k pulumi.StringInput) ClusterNetworkOutput {

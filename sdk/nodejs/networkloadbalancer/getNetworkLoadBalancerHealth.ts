@@ -45,11 +45,11 @@ export interface GetNetworkLoadBalancerHealthResult {
     /**
      * A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet`
      */
-    readonly criticalStateBackendSetNames: string[];
+    readonly criticalStateBackendSetNames?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkLoadBalancerId: string;
     /**
      * The overall health status of the network load balancer.
@@ -62,19 +62,19 @@ export interface GetNetworkLoadBalancerHealthResult {
      * *  More than half of the backend sets associated with the network load balancer return a status of `UNKNOWN`, none of the backend sets return a status of `WARNING` or `CRITICAL`, and the network load balancer life cycle state is `ACTIVE`.
      * *  The system could not retrieve metrics for any reason.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The total number of backend sets associated with this network load balancer.  Example: `4`
      */
-    readonly totalBackendSetCount: number;
+    readonly totalBackendSetCount?: number;
     /**
      * A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet2`
      */
-    readonly unknownStateBackendSetNames: string[];
+    readonly unknownStateBackendSetNames?: string[];
     /**
      * A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet3`
      */
-    readonly warningStateBackendSetNames: string[];
+    readonly warningStateBackendSetNames?: string[];
 }
 /**
  * This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.

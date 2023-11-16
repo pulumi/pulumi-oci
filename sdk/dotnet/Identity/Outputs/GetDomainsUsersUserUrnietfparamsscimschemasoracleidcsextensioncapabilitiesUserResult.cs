@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates whether a user can use API keys.
         /// </summary>
-        public readonly bool CanUseApiKeys;
+        public readonly bool? CanUseApiKeys;
         /// <summary>
         /// Indicates whether a user can use Auth tokens.
         /// </summary>
-        public readonly bool CanUseAuthTokens;
+        public readonly bool? CanUseAuthTokens;
         /// <summary>
         /// Specifies whether user can access the Console.
         /// </summary>
-        public readonly bool CanUseConsole;
+        public readonly bool? CanUseConsole;
         /// <summary>
         /// Indicates whether a user can use Console passwords.
         /// </summary>
-        public readonly bool CanUseConsolePassword;
+        public readonly bool? CanUseConsolePassword;
         /// <summary>
         /// Indicates whether a user can use customer secret keys.
         /// </summary>
-        public readonly bool CanUseCustomerSecretKeys;
+        public readonly bool? CanUseCustomerSecretKeys;
         /// <summary>
         /// Indicates whether a user can use database credentials.
         /// </summary>
-        public readonly bool CanUseDbCredentials;
+        public readonly bool? CanUseDbCredentials;
         /// <summary>
         /// Indicates whether a user can use OAuth2 client credentials.
         /// </summary>
-        public readonly bool CanUseOauth2clientCredentials;
+        public readonly bool? CanUseOauth2clientCredentials;
         /// <summary>
         /// Indicates whether a user can use SMTP credentials.
         /// </summary>
-        public readonly bool CanUseSmtpCredentials;
+        public readonly bool? CanUseSmtpCredentials;
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserResult(
-            bool canUseApiKeys,
+            bool? canUseApiKeys,
 
-            bool canUseAuthTokens,
+            bool? canUseAuthTokens,
 
-            bool canUseConsole,
+            bool? canUseConsole,
 
-            bool canUseConsolePassword,
+            bool? canUseConsolePassword,
 
-            bool canUseCustomerSecretKeys,
+            bool? canUseCustomerSecretKeys,
 
-            bool canUseDbCredentials,
+            bool? canUseDbCredentials,
 
-            bool canUseOauth2clientCredentials,
+            bool? canUseOauth2clientCredentials,
 
-            bool canUseSmtpCredentials)
+            bool? canUseSmtpCredentials)
         {
             CanUseApiKeys = canUseApiKeys;
             CanUseAuthTokens = canUseAuthTokens;

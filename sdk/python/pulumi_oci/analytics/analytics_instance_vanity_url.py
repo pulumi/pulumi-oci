@@ -23,17 +23,6 @@ class AnalyticsInstanceVanityUrlArgs:
                  passphrase: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AnalyticsInstanceVanityUrl resource.
-        :param pulumi.Input[str] analytics_instance_id: The OCID of the AnalyticsInstance.
-        :param pulumi.Input[str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] description: Optional description.
-        :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
         """
         pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
         pulumi.set(__self__, "ca_certificate", ca_certificate)
@@ -48,9 +37,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter(name="analyticsInstanceId")
     def analytics_instance_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the AnalyticsInstance.
-        """
         return pulumi.get(self, "analytics_instance_id")
 
     @analytics_instance_id.setter
@@ -60,9 +46,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter(name="caCertificate")
     def ca_certificate(self) -> pulumi.Input[str]:
-        """
-        (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        """
         return pulumi.get(self, "ca_certificate")
 
     @ca_certificate.setter
@@ -72,9 +55,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter
     def hosts(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -84,9 +64,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[str]:
-        """
-        (Updatable) PEM Private key for HTTPS connections.
-        """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
@@ -96,13 +73,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter(name="publicCertificate")
     def public_certificate(self) -> pulumi.Input[str]:
-        """
-        (Updatable) PEM certificate for HTTPS connections. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
@@ -112,9 +82,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -124,9 +91,6 @@ class AnalyticsInstanceVanityUrlArgs:
     @property
     @pulumi.getter
     def passphrase(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Passphrase for the PEM Private key (if any).
-        """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
@@ -146,17 +110,6 @@ class _AnalyticsInstanceVanityUrlState:
                  public_certificate: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstanceVanityUrl resources.
-        :param pulumi.Input[str] analytics_instance_id: The OCID of the AnalyticsInstance.
-        :param pulumi.Input[str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        :param pulumi.Input[str] description: Optional description.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
-        :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if analytics_instance_id is not None:
             pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
@@ -176,9 +129,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter(name="analyticsInstanceId")
     def analytics_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the AnalyticsInstance.
-        """
         return pulumi.get(self, "analytics_instance_id")
 
     @analytics_instance_id.setter
@@ -188,9 +138,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter(name="caCertificate")
     def ca_certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        """
         return pulumi.get(self, "ca_certificate")
 
     @ca_certificate.setter
@@ -200,9 +147,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        Optional description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -212,9 +156,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -224,9 +165,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter
     def passphrase(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Passphrase for the PEM Private key (if any).
-        """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
@@ -236,9 +174,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) PEM Private key for HTTPS connections.
-        """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
@@ -248,13 +183,6 @@ class _AnalyticsInstanceVanityUrlState:
     @property
     @pulumi.getter(name="publicCertificate")
     def public_certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) PEM certificate for HTTPS connections. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
@@ -276,48 +204,9 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
                  public_certificate: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
-
-        Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-        for this host.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_analytics_instance_vanity_url = oci.analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl",
-            analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-            ca_certificate=var["analytics_instance_vanity_url_ca_certificate"],
-            hosts=var["analytics_instance_vanity_url_hosts"],
-            private_key=var["analytics_instance_vanity_url_private_key"],
-            public_certificate=var["analytics_instance_vanity_url_public_certificate"],
-            description=var["analytics_instance_vanity_url_description"],
-            passphrase=var["analytics_instance_vanity_url_passphrase"])
-        ```
-
-        ## Import
-
-        AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
-        ```
-
+        Create a AnalyticsInstanceVanityUrl resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] analytics_instance_id: The OCID of the AnalyticsInstance.
-        :param pulumi.Input[str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        :param pulumi.Input[str] description: Optional description.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
-        :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -326,35 +215,7 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
                  args: AnalyticsInstanceVanityUrlArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
-
-        Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-        for this host.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_analytics_instance_vanity_url = oci.analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl",
-            analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-            ca_certificate=var["analytics_instance_vanity_url_ca_certificate"],
-            hosts=var["analytics_instance_vanity_url_hosts"],
-            private_key=var["analytics_instance_vanity_url_private_key"],
-            public_certificate=var["analytics_instance_vanity_url_public_certificate"],
-            description=var["analytics_instance_vanity_url_description"],
-            passphrase=var["analytics_instance_vanity_url_passphrase"])
-        ```
-
-        ## Import
-
-        AnalyticsInstanceVanityUrls can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl test_analytics_instance_vanity_url "analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
-        ```
-
+        Create a AnalyticsInstanceVanityUrl resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AnalyticsInstanceVanityUrlArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -429,17 +290,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] analytics_instance_id: The OCID of the AnalyticsInstance.
-        :param pulumi.Input[str] ca_certificate: (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        :param pulumi.Input[str] description: Optional description.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        :param pulumi.Input[str] passphrase: (Updatable) Passphrase for the PEM Private key (if any).
-        :param pulumi.Input[str] private_key: (Updatable) PEM Private key for HTTPS connections.
-        :param pulumi.Input[str] public_certificate: (Updatable) PEM certificate for HTTPS connections. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -457,60 +307,35 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
     @property
     @pulumi.getter(name="analyticsInstanceId")
     def analytics_instance_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the AnalyticsInstance.
-        """
         return pulumi.get(self, "analytics_instance_id")
 
     @property
     @pulumi.getter(name="caCertificate")
     def ca_certificate(self) -> pulumi.Output[str]:
-        """
-        (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
-        """
         return pulumi.get(self, "ca_certificate")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
-        """
-        Optional description.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def hosts(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-        """
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
     def passphrase(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) Passphrase for the PEM Private key (if any).
-        """
         return pulumi.get(self, "passphrase")
 
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) PEM Private key for HTTPS connections.
-        """
         return pulumi.get(self, "private_key")
 
     @property
     @pulumi.getter(name="publicCertificate")
     def public_certificate(self) -> pulumi.Output[str]:
-        """
-        (Updatable) PEM certificate for HTTPS connections. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "public_certificate")
 

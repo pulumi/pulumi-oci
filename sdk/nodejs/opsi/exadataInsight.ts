@@ -111,31 +111,31 @@ export class ExadataInsight extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    public readonly enterpriseManagerBridgeId!: pulumi.Output<string>;
+    public readonly enterpriseManagerBridgeId!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Display Name
      */
-    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityDisplayName!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string>;
+    public readonly enterpriseManagerEntityIdentifier!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Name
      */
-    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityName!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Entity Type
      */
-    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string>;
+    public /*out*/ readonly enterpriseManagerEntityType!: pulumi.Output<string | undefined>;
     /**
      * Enterprise Manager Unique Identifier
      */
-    public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
+    public readonly enterpriseManagerIdentifier!: pulumi.Output<string | undefined>;
     /**
      * Source of the database entity.
      */
@@ -143,62 +143,62 @@ export class ExadataInsight extends pulumi.CustomResource {
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
-    public /*out*/ readonly exadataDisplayName!: pulumi.Output<string>;
-    public readonly exadataInfraId!: pulumi.Output<string>;
-    public /*out*/ readonly exadataInfraResourceType!: pulumi.Output<string>;
+    public /*out*/ readonly exadataDisplayName!: pulumi.Output<string | undefined>;
+    public readonly exadataInfraId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly exadataInfraResourceType!: pulumi.Output<string | undefined>;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      */
-    public /*out*/ readonly exadataName!: pulumi.Output<string>;
+    public /*out*/ readonly exadataName!: pulumi.Output<string | undefined>;
     /**
      * Exadata rack type.
      */
-    public /*out*/ readonly exadataRackType!: pulumi.Output<string>;
-    public /*out*/ readonly exadataShape!: pulumi.Output<string>;
+    public /*out*/ readonly exadataRackType!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly exadataShape!: pulumi.Output<string | undefined>;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
-    public /*out*/ readonly exadataType!: pulumi.Output<string>;
+    public /*out*/ readonly exadataType!: pulumi.Output<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
      */
-    public readonly isAutoSyncEnabled!: pulumi.Output<boolean>;
+    public readonly isAutoSyncEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * true if virtualization is used in the Exadata system
      */
-    public /*out*/ readonly isVirtualizedExadata!: pulumi.Output<boolean>;
+    public /*out*/ readonly isVirtualizedExadata!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public readonly memberVmClusterDetails!: pulumi.Output<outputs.Opsi.ExadataInsightMemberVmClusterDetail[]>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
+    public readonly memberVmClusterDetails!: pulumi.Output<outputs.Opsi.ExadataInsightMemberVmClusterDetail[] | undefined>;
     /**
      * The current state of the Exadata insight.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExadataInsight resource with the given unique name, arguments, and options.

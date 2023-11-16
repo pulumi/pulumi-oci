@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
@@ -62,22 +61,22 @@ type LookupKeyStoreResult struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	Id         string `pulumi:"id"`
-	KeyStoreId string `pulumi:"keyStoreId"`
+	Id         *string `pulumi:"id"`
+	KeyStoreId string  `pulumi:"keyStoreId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the key store.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time that the key store was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Key store type details.
 	TypeDetails []GetKeyStoreTypeDetail `pulumi:"typeDetails"`
 }
@@ -120,20 +119,14 @@ func (o LookupKeyStoreResultOutput) ToLookupKeyStoreResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupKeyStoreResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKeyStoreResult] {
-	return pulumix.Output[LookupKeyStoreResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of databases associated with the key store.
 func (o LookupKeyStoreResultOutput) AssociatedDatabases() GetKeyStoreAssociatedDatabaseArrayOutput {
 	return o.ApplyT(func(v LookupKeyStoreResult) []GetKeyStoreAssociatedDatabase { return v.AssociatedDatabases }).(GetKeyStoreAssociatedDatabaseArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupKeyStoreResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupKeyStoreResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -142,8 +135,8 @@ func (o LookupKeyStoreResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name for the key store. The name does not need to be unique.
-func (o LookupKeyStoreResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupKeyStoreResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -152,8 +145,8 @@ func (o LookupKeyStoreResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o LookupKeyStoreResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupKeyStoreResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupKeyStoreResultOutput) KeyStoreId() pulumi.StringOutput {
@@ -161,18 +154,18 @@ func (o LookupKeyStoreResultOutput) KeyStoreId() pulumi.StringOutput {
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupKeyStoreResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupKeyStoreResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the key store.
-func (o LookupKeyStoreResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupKeyStoreResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the key store was created.
-func (o LookupKeyStoreResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupKeyStoreResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Key store type details.

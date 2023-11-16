@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
@@ -60,58 +59,58 @@ type LookupManagementAgentArgs struct {
 // A collection of values returned by getManagementAgent.
 type LookupManagementAgentResult struct {
 	// The current availability status of managementAgent
-	AvailabilityStatus string `pulumi:"availabilityStatus"`
+	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
 	DeployPluginsIds []string               `pulumi:"deployPluginsIds"`
 	// Management Agent Name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Management Agent host machine name
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// Host resource ocid
-	HostId string `pulumi:"hostId"`
+	HostId *string `pulumi:"hostId"`
 	// agent identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// agent install key identifier
-	InstallKeyId string `pulumi:"installKeyId"`
+	InstallKeyId *string `pulumi:"installKeyId"`
 	// Path where Management Agent is installed
-	InstallPath string `pulumi:"installPath"`
+	InstallPath *string `pulumi:"installPath"`
 	// The install type, either AGENT or GATEWAY
-	InstallType string `pulumi:"installType"`
+	InstallType *string `pulumi:"installType"`
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-	IsAgentAutoUpgradable bool `pulumi:"isAgentAutoUpgradable"`
+	IsAgentAutoUpgradable *bool `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed bool `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed *bool `pulumi:"isCustomerDeployed"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails  string `pulumi:"lifecycleDetails"`
-	ManagedAgentId    string `pulumi:"managedAgentId"`
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	LifecycleDetails  *string `pulumi:"lifecycleDetails"`
+	ManagedAgentId    *string `pulumi:"managedAgentId"`
+	ManagementAgentId string  `pulumi:"managementAgentId"`
 	// Additional properties for this Management Agent
 	ManagementAgentProperties []GetManagementAgentManagementAgentProperty `pulumi:"managementAgentProperties"`
 	// Platform Name
-	PlatformName string `pulumi:"platformName"`
+	PlatformName *string `pulumi:"platformName"`
 	// Platform Type
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 	// Platform Version
-	PlatformVersion string `pulumi:"platformVersion"`
+	PlatformVersion *string `pulumi:"platformVersion"`
 	// list of managementAgentPlugins associated with the agent
 	PluginLists []GetManagementAgentPluginList `pulumi:"pluginLists"`
 	// Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-	ResourceArtifactVersion string `pulumi:"resourceArtifactVersion"`
+	ResourceArtifactVersion *string `pulumi:"resourceArtifactVersion"`
 	// The current state of managementAgent
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-	TimeLastHeartbeat string `pulumi:"timeLastHeartbeat"`
+	TimeLastHeartbeat *string `pulumi:"timeLastHeartbeat"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Management Agent Version
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupManagementAgentOutput(ctx *pulumi.Context, args LookupManagementAgentOutputArgs, opts ...pulumi.InvokeOption) LookupManagementAgentResultOutput {
@@ -152,20 +151,14 @@ func (o LookupManagementAgentResultOutput) ToLookupManagementAgentResultOutputWi
 	return o
 }
 
-func (o LookupManagementAgentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagementAgentResult] {
-	return pulumix.Output[LookupManagementAgentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The current availability status of managementAgent
-func (o LookupManagementAgentResultOutput) AvailabilityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) AvailabilityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.AvailabilityStatus }).(pulumi.StringPtrOutput)
 }
 
 // Compartment Identifier
-func (o LookupManagementAgentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -178,8 +171,8 @@ func (o LookupManagementAgentResultOutput) DeployPluginsIds() pulumi.StringArray
 }
 
 // Management Agent Name
-func (o LookupManagementAgentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -188,52 +181,52 @@ func (o LookupManagementAgentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Management Agent host machine name
-func (o LookupManagementAgentResultOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.Host }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // Host resource ocid
-func (o LookupManagementAgentResultOutput) HostId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.HostId }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) HostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.HostId }).(pulumi.StringPtrOutput)
 }
 
 // agent identifier
-func (o LookupManagementAgentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // agent install key identifier
-func (o LookupManagementAgentResultOutput) InstallKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.InstallKeyId }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) InstallKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.InstallKeyId }).(pulumi.StringPtrOutput)
 }
 
 // Path where Management Agent is installed
-func (o LookupManagementAgentResultOutput) InstallPath() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.InstallPath }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) InstallPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.InstallPath }).(pulumi.StringPtrOutput)
 }
 
 // The install type, either AGENT or GATEWAY
-func (o LookupManagementAgentResultOutput) InstallType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.InstallType }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) InstallType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
 
 // true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-func (o LookupManagementAgentResultOutput) IsAgentAutoUpgradable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) bool { return v.IsAgentAutoUpgradable }).(pulumi.BoolOutput)
+func (o LookupManagementAgentResultOutput) IsAgentAutoUpgradable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *bool { return v.IsAgentAutoUpgradable }).(pulumi.BoolPtrOutput)
 }
 
 // true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-func (o LookupManagementAgentResultOutput) IsCustomerDeployed() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) bool { return v.IsCustomerDeployed }).(pulumi.BoolOutput)
+func (o LookupManagementAgentResultOutput) IsCustomerDeployed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *bool { return v.IsCustomerDeployed }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupManagementAgentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupManagementAgentResultOutput) ManagedAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.ManagedAgentId }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) ManagedAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.ManagedAgentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupManagementAgentResultOutput) ManagementAgentId() pulumi.StringOutput {
@@ -248,18 +241,18 @@ func (o LookupManagementAgentResultOutput) ManagementAgentProperties() GetManage
 }
 
 // Platform Name
-func (o LookupManagementAgentResultOutput) PlatformName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.PlatformName }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) PlatformName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.PlatformName }).(pulumi.StringPtrOutput)
 }
 
 // Platform Type
-func (o LookupManagementAgentResultOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 // Platform Version
-func (o LookupManagementAgentResultOutput) PlatformVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.PlatformVersion }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) PlatformVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.PlatformVersion }).(pulumi.StringPtrOutput)
 }
 
 // list of managementAgentPlugins associated with the agent
@@ -268,33 +261,33 @@ func (o LookupManagementAgentResultOutput) PluginLists() GetManagementAgentPlugi
 }
 
 // Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-func (o LookupManagementAgentResultOutput) ResourceArtifactVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.ResourceArtifactVersion }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) ResourceArtifactVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.ResourceArtifactVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of managementAgent
-func (o LookupManagementAgentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the Management Agent was created. An RFC3339 formatted datetime string
-func (o LookupManagementAgentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-func (o LookupManagementAgentResultOutput) TimeLastHeartbeat() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.TimeLastHeartbeat }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) TimeLastHeartbeat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.TimeLastHeartbeat }).(pulumi.StringPtrOutput)
 }
 
 // The time the Management Agent was last updated. An RFC3339 formatted datetime string
-func (o LookupManagementAgentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Version
-func (o LookupManagementAgentResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagementAgentResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupManagementAgentResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagementAgentResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

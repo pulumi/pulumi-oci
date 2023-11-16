@@ -16,83 +16,83 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// Application icon.
         /// </summary>
-        public readonly string AppIcon;
+        public readonly string? AppIcon;
         /// <summary>
         /// Application thumbnail.
         /// </summary>
-        public readonly string AppThumbnail;
+        public readonly string? AppThumbnail;
         /// <summary>
         /// Application description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// User display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// If true, this App is an AliasApp and it cannot be granted to an end user directly
         /// </summary>
-        public readonly bool IsAliasApp;
+        public readonly bool? IsAliasApp;
         /// <summary>
         /// If true, this App allows runtime services to log end users into this App automatically.
         /// </summary>
-        public readonly bool IsLoginTarget;
+        public readonly bool? IsLoginTarget;
         /// <summary>
         /// If true, this application is an Oracle Public Cloud service-instance.
         /// </summary>
-        public readonly bool IsOpcService;
+        public readonly bool? IsOpcService;
         /// <summary>
         /// The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
         /// </summary>
-        public readonly string LoginMechanism;
+        public readonly string? LoginMechanism;
         /// <summary>
         /// UserWalletArtifact URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
         /// </summary>
-        public readonly string ServiceTypeUrn;
+        public readonly string? ServiceTypeUrn;
         /// <summary>
         /// If true, this App will be displayed in the MyApps page of each end-user who has access to this App.
         /// </summary>
-        public readonly bool ShowInMyApps;
+        public readonly bool? ShowInMyApps;
         /// <summary>
         /// UserWalletArtifact identifier
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsMyAppsMyAppAppResult(
-            bool active,
+            bool? active,
 
-            string appIcon,
+            string? appIcon,
 
-            string appThumbnail,
+            string? appThumbnail,
 
-            string description,
+            string? description,
 
-            string display,
+            string? display,
 
-            bool isAliasApp,
+            bool? isAliasApp,
 
-            bool isLoginTarget,
+            bool? isLoginTarget,
 
-            bool isOpcService,
+            bool? isOpcService,
 
-            string loginMechanism,
+            string? loginMechanism,
 
-            string @ref,
+            string? @ref,
 
-            string serviceTypeUrn,
+            string? serviceTypeUrn,
 
-            bool showInMyApps,
+            bool? showInMyApps,
 
-            string value)
+            string? value)
         {
             Active = active;
             AppIcon = appIcon;

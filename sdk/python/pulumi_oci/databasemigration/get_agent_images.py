@@ -36,10 +36,7 @@ class GetAgentImagesResult:
 
     @property
     @pulumi.getter(name="agentImageCollections")
-    def agent_image_collections(self) -> Sequence['outputs.GetAgentImagesAgentImageCollectionResult']:
-        """
-        The list of agent_image_collection.
-        """
+    def agent_image_collections(self) -> Optional[Sequence['outputs.GetAgentImagesAgentImageCollectionResult']]:
         return pulumi.get(self, "agent_image_collections")
 
     @property
@@ -49,7 +46,7 @@ class GetAgentImagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,18 +67,7 @@ class AwaitableGetAgentImagesResult(GetAgentImagesResult):
 def get_agent_images(filters: Optional[Sequence[pulumi.InputType['GetAgentImagesFilterArgs']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentImagesResult:
     """
-    This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.
-
-    Get details of the ODMS Agent Images available to install on-premises.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agent_images = oci.DatabaseMigration.get_agent_images()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -98,17 +84,6 @@ def get_agent_images(filters: Optional[Sequence[pulumi.InputType['GetAgentImages
 def get_agent_images_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAgentImagesFilterArgs']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentImagesResult]:
     """
-    This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.
-
-    Get details of the ODMS Agent Images available to install on-premises.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agent_images = oci.DatabaseMigration.get_agent_images()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

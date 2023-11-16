@@ -28,7 +28,7 @@ public final class GetDatasetsResult {
      * @return The list of dataset_collection.
      * 
      */
-    private List<GetDatasetsDatasetCollection> datasetCollections;
+    private @Nullable List<GetDatasetsDatasetCollection> datasetCollections;
     /**
      * @return A user-friendly display name for the resource.
      * 
@@ -66,7 +66,7 @@ public final class GetDatasetsResult {
      * 
      */
     public List<GetDatasetsDatasetCollection> datasetCollections() {
-        return this.datasetCollections;
+        return this.datasetCollections == null ? List.of() : this.datasetCollections;
     }
     /**
      * @return A user-friendly display name for the resource.
@@ -104,7 +104,7 @@ public final class GetDatasetsResult {
     public static final class Builder {
         private @Nullable String annotationFormat;
         private String compartmentId;
-        private List<GetDatasetsDatasetCollection> datasetCollections;
+        private @Nullable List<GetDatasetsDatasetCollection> datasetCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDatasetsFilter> filters;
         private @Nullable String id;
@@ -132,8 +132,8 @@ public final class GetDatasetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder datasetCollections(List<GetDatasetsDatasetCollection> datasetCollections) {
-            this.datasetCollections = Objects.requireNonNull(datasetCollections);
+        public Builder datasetCollections(@Nullable List<GetDatasetsDatasetCollection> datasetCollections) {
+            this.datasetCollections = datasetCollections;
             return this;
         }
         public Builder datasetCollections(GetDatasetsDatasetCollection... datasetCollections) {

@@ -8,18 +8,19 @@ import com.pulumi.oci.Core.outputs.GetCaptureFilterFlowLogCaptureFilterRuleUdpOp
 import com.pulumi.oci.Core.outputs.GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCaptureFilterFlowLogCaptureFilterRuleUdpOption {
-    private List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
-    private List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
+    private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
+    private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
 
     private GetCaptureFilterFlowLogCaptureFilterRuleUdpOption() {}
     public List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges() {
-        return this.destinationPortRanges;
+        return this.destinationPortRanges == null ? List.of() : this.destinationPortRanges;
     }
     public List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges() {
-        return this.sourcePortRanges;
+        return this.sourcePortRanges == null ? List.of() : this.sourcePortRanges;
     }
 
     public static Builder builder() {
@@ -31,8 +32,8 @@ public final class GetCaptureFilterFlowLogCaptureFilterRuleUdpOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
-        private List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
+        private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges;
+        private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges;
         public Builder() {}
         public Builder(GetCaptureFilterFlowLogCaptureFilterRuleUdpOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,16 +42,16 @@ public final class GetCaptureFilterFlowLogCaptureFilterRuleUdpOption {
         }
 
         @CustomType.Setter
-        public Builder destinationPortRanges(List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+        public Builder destinationPortRanges(@Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange> destinationPortRanges) {
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange... destinationPortRanges) {
             return destinationPortRanges(List.of(destinationPortRanges));
         }
         @CustomType.Setter
-        public Builder sourcePortRanges(List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+        public Builder sourcePortRanges(@Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange> sourcePortRanges) {
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFilterFlowLogCaptureFilterRuleUdpOptionSourcePortRange... sourcePortRanges) {

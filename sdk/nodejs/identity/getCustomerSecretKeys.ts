@@ -50,12 +50,12 @@ export interface GetCustomerSecretKeysResult {
     /**
      * The list of customer_secret_keys.
      */
-    readonly customerSecretKeys: outputs.Identity.GetCustomerSecretKeysCustomerSecretKey[];
+    readonly customerSecretKeys?: outputs.Identity.GetCustomerSecretKeysCustomerSecretKey[];
     readonly filters?: outputs.Identity.GetCustomerSecretKeysFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the user the password belongs to.
      */

@@ -13,17 +13,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigResult
     {
-        public readonly int MaxNodeCount;
+        public readonly int? MaxNodeCount;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricResult> Metrics;
-        public readonly int StepSize;
+        public readonly int? StepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigResult(
-            int maxNodeCount,
+            int? maxNodeCount,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricResult> metrics,
 
-            int stepSize)
+            int? stepSize)
         {
             MaxNodeCount = maxNodeCount;
             Metrics = metrics;

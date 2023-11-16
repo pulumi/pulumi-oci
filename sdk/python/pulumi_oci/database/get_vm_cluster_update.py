@@ -58,23 +58,17 @@ class GetVmClusterUpdateResult:
 
     @property
     @pulumi.getter(name="availableActions")
-    def available_actions(self) -> Sequence[str]:
-        """
-        The possible actions that can be performed using this maintenance update.
-        """
+    def available_actions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "available_actions")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Details of the maintenance update package.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,34 +76,22 @@ class GetVmClusterUpdateResult:
 
     @property
     @pulumi.getter(name="lastAction")
-    def last_action(self) -> str:
-        """
-        The update action performed most recently using this maintenance update.
-        """
+    def last_action(self) -> Optional[str]:
         return pulumi.get(self, "last_action")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Descriptive text providing additional details about the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the maintenance update. Dependent on value of `lastAction`.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The date and time the maintenance update was released.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
@@ -119,18 +101,12 @@ class GetVmClusterUpdateResult:
 
     @property
     @pulumi.getter(name="updateType")
-    def update_type(self) -> str:
-        """
-        The type of VM cluster maintenance update.
-        """
+    def update_type(self) -> Optional[str]:
         return pulumi.get(self, "update_type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the maintenance update package.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
@@ -162,23 +138,7 @@ def get_vm_cluster_update(update_id: Optional[str] = None,
                           vm_cluster_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterUpdateResult:
     """
-    This data source provides details about a specific Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_update = oci.Database.get_vm_cluster_update(update_id=oci_database_update["test_update"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str update_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['updateId'] = update_id
@@ -205,22 +165,6 @@ def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
                                  vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterUpdateResult]:
     """
-    This data source provides details about a specific Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_update = oci.Database.get_vm_cluster_update(update_id=oci_database_update["test_update"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str update_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

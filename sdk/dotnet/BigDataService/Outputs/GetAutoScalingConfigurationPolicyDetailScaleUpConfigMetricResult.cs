@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// Allowed value is CPU_UTILIZATION.
         /// </summary>
-        public readonly string MetricType;
+        public readonly string? MetricType;
         /// <summary>
         /// An autoscale action is triggered when a performance metric exceeds a threshold.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricResult(
-            string metricType,
+            string? metricType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThresholdResult> thresholds)
         {

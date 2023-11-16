@@ -45,101 +45,101 @@ export interface GetDbNodeResult {
     /**
      * Additional information about the planned maintenance.
      */
-    readonly additionalDetails: string;
+    readonly additionalDetails?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
      */
-    readonly backupIpId: string;
+    readonly backupIpId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      */
-    readonly backupVnic2id: string;
+    readonly backupVnic2id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      */
-    readonly backupVnicId: string;
+    readonly backupVnicId?: string;
     /**
      * The number of CPU cores enabled on the Db node.
      */
-    readonly cpuCoreCount: number;
+    readonly cpuCoreCount?: number;
     readonly dbNodeId: string;
     /**
      * The allocated local node storage in GBs on the Db node.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      */
-    readonly dbServerId: string;
+    readonly dbServerId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    readonly dbSystemId: string;
+    readonly dbSystemId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The name of the Fault Domain the instance is contained in.
      */
-    readonly faultDomain: string;
+    readonly faultDomain?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * **Note:** Applies only to Exadata Cloud Service.
      */
-    readonly hostIpId: string;
+    readonly hostIpId?: string;
     /**
      * The host name for the database node.
      */
-    readonly hostname: string;
+    readonly hostname?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The type of database node maintenance.
      */
-    readonly maintenanceType: string;
+    readonly maintenanceType?: string;
     /**
      * The allocated memory in GBs on the Db node.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      */
-    readonly softwareStorageSizeInGb: number;
+    readonly softwareStorageSizeInGb?: number;
     /**
      * The current state of the database node.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time that the database node was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * End date and time of maintenance window.
      */
-    readonly timeMaintenanceWindowEnd: string;
+    readonly timeMaintenanceWindowEnd?: string;
     /**
      * Start date and time of maintenance window.
      */
-    readonly timeMaintenanceWindowStart: string;
+    readonly timeMaintenanceWindowStart?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      */
-    readonly vnic2id: string;
+    readonly vnic2id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      */
-    readonly vnicId: string;
+    readonly vnicId?: string;
 }
 /**
  * This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.

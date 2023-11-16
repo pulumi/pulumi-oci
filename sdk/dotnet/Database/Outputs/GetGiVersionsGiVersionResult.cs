@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A valid Oracle Grid Infrastructure (GI) software version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
-        private GetGiVersionsGiVersionResult(string version)
+        private GetGiVersionsGiVersionResult(string? version)
         {
             Version = version;
         }

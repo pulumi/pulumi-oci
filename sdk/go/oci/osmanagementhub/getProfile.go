@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -60,45 +59,45 @@ type LookupProfileArgs struct {
 // A collection of values returned by getProfile.
 type LookupProfileResult struct {
 	// The architecture type.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the tenancy containing the registration profile.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Identifying information for the specified lifecycle environment.
 	LifecycleEnvironments []GetProfileLifecycleEnvironment `pulumi:"lifecycleEnvironments"`
-	LifecycleStageId      string                           `pulumi:"lifecycleStageId"`
+	LifecycleStageId      *string                          `pulumi:"lifecycleStageId"`
 	// Identifying information for the specified lifecycle stage.
 	LifecycleStages        []GetProfileLifecycleStage `pulumi:"lifecycleStages"`
-	ManagedInstanceGroupId string                     `pulumi:"managedInstanceGroupId"`
+	ManagedInstanceGroupId *string                    `pulumi:"managedInstanceGroupId"`
 	// Identifying information for the specified managed instance group.
 	ManagedInstanceGroups []GetProfileManagedInstanceGroup `pulumi:"managedInstanceGroups"`
 	// The OCID of the management station.
-	ManagementStationId string `pulumi:"managementStationId"`
+	ManagementStationId *string `pulumi:"managementStationId"`
 	// The operating system family.
-	OsFamily  string `pulumi:"osFamily"`
-	ProfileId string `pulumi:"profileId"`
+	OsFamily  *string `pulumi:"osFamily"`
+	ProfileId string  `pulumi:"profileId"`
 	// The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
-	ProfileType       string   `pulumi:"profileType"`
+	ProfileType       *string  `pulumi:"profileType"`
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the registration profile will use.
 	SoftwareSources []GetProfileSoftwareSource `pulumi:"softwareSources"`
 	// The current state of the registration profile.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the registration profile was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 func LookupProfileOutput(ctx *pulumi.Context, args LookupProfileOutputArgs, opts ...pulumi.InvokeOption) LookupProfileResultOutput {
@@ -139,20 +138,14 @@ func (o LookupProfileResultOutput) ToLookupProfileResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProfileResult] {
-	return pulumix.Output[LookupProfileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type.
-func (o LookupProfileResultOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.ArchType }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy containing the registration profile.
-func (o LookupProfileResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -161,13 +154,13 @@ func (o LookupProfileResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Software source description.
-func (o LookupProfileResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o LookupProfileResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -176,8 +169,8 @@ func (o LookupProfileResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the software source.
-func (o LookupProfileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified lifecycle environment.
@@ -185,8 +178,8 @@ func (o LookupProfileResultOutput) LifecycleEnvironments() GetProfileLifecycleEn
 	return o.ApplyT(func(v LookupProfileResult) []GetProfileLifecycleEnvironment { return v.LifecycleEnvironments }).(GetProfileLifecycleEnvironmentArrayOutput)
 }
 
-func (o LookupProfileResultOutput) LifecycleStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.LifecycleStageId }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) LifecycleStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.LifecycleStageId }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified lifecycle stage.
@@ -194,8 +187,8 @@ func (o LookupProfileResultOutput) LifecycleStages() GetProfileLifecycleStageArr
 	return o.ApplyT(func(v LookupProfileResult) []GetProfileLifecycleStage { return v.LifecycleStages }).(GetProfileLifecycleStageArrayOutput)
 }
 
-func (o LookupProfileResultOutput) ManagedInstanceGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) ManagedInstanceGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.ManagedInstanceGroupId }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified managed instance group.
@@ -204,13 +197,13 @@ func (o LookupProfileResultOutput) ManagedInstanceGroups() GetProfileManagedInst
 }
 
 // The OCID of the management station.
-func (o LookupProfileResultOutput) ManagementStationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.ManagementStationId }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) ManagementStationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.ManagementStationId }).(pulumi.StringPtrOutput)
 }
 
 // The operating system family.
-func (o LookupProfileResultOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
@@ -218,8 +211,8 @@ func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
 }
 
 // The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
-func (o LookupProfileResultOutput) ProfileType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.ProfileType }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) ProfileType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.ProfileType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProfileResultOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
@@ -232,8 +225,8 @@ func (o LookupProfileResultOutput) SoftwareSources() GetProfileSoftwareSourceArr
 }
 
 // The current state of the registration profile.
-func (o LookupProfileResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -242,13 +235,13 @@ func (o LookupProfileResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the registration profile was created. An RFC3339 formatted datetime string.
-func (o LookupProfileResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o LookupProfileResultOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProfileResult) string { return v.VendorName }).(pulumi.StringOutput)
+func (o LookupProfileResultOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProfileResult) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -51,9 +50,9 @@ type DataSafeConfiguration struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) A filter to return only resources that match the specified compartment OCID.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The Oracle Data Safe's NAT Gateway IP Address.
-	DataSafeNatGatewayIpAddress pulumi.StringOutput `pulumi:"dataSafeNatGatewayIpAddress"`
+	DataSafeNatGatewayIpAddress pulumi.StringPtrOutput `pulumi:"dataSafeNatGatewayIpAddress"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -66,11 +65,11 @@ type DataSafeConfiguration struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The current state of Data Safe.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeEnabled pulumi.StringOutput `pulumi:"timeEnabled"`
+	TimeEnabled pulumi.StringPtrOutput `pulumi:"timeEnabled"`
 	// The URL of the Data Safe service.
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
 }
 
 // NewDataSafeConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -201,12 +200,6 @@ func (i *DataSafeConfiguration) ToDataSafeConfigurationOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationOutput)
 }
 
-func (i *DataSafeConfiguration) ToOutput(ctx context.Context) pulumix.Output[*DataSafeConfiguration] {
-	return pulumix.Output[*DataSafeConfiguration]{
-		OutputState: i.ToDataSafeConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataSafeConfigurationArrayInput is an input type that accepts DataSafeConfigurationArray and DataSafeConfigurationArrayOutput values.
 // You can construct a concrete instance of `DataSafeConfigurationArrayInput` via:
 //
@@ -230,12 +223,6 @@ func (i DataSafeConfigurationArray) ToDataSafeConfigurationArrayOutput() DataSaf
 
 func (i DataSafeConfigurationArray) ToDataSafeConfigurationArrayOutputWithContext(ctx context.Context) DataSafeConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationArrayOutput)
-}
-
-func (i DataSafeConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafeConfiguration] {
-	return pulumix.Output[[]*DataSafeConfiguration]{
-		OutputState: i.ToDataSafeConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataSafeConfigurationMapInput is an input type that accepts DataSafeConfigurationMap and DataSafeConfigurationMapOutput values.
@@ -263,12 +250,6 @@ func (i DataSafeConfigurationMap) ToDataSafeConfigurationMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafeConfigurationMapOutput)
 }
 
-func (i DataSafeConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafeConfiguration] {
-	return pulumix.Output[map[string]*DataSafeConfiguration]{
-		OutputState: i.ToDataSafeConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataSafeConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DataSafeConfigurationOutput) ElementType() reflect.Type {
@@ -283,20 +264,14 @@ func (o DataSafeConfigurationOutput) ToDataSafeConfigurationOutputWithContext(ct
 	return o
 }
 
-func (o DataSafeConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*DataSafeConfiguration] {
-	return pulumix.Output[*DataSafeConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) A filter to return only resources that match the specified compartment OCID.
-func (o DataSafeConfigurationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DataSafeConfigurationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Data Safe's NAT Gateway IP Address.
-func (o DataSafeConfigurationOutput) DataSafeNatGatewayIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringOutput { return v.DataSafeNatGatewayIpAddress }).(pulumi.StringOutput)
+func (o DataSafeConfigurationOutput) DataSafeNatGatewayIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringPtrOutput { return v.DataSafeNatGatewayIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -323,18 +298,18 @@ func (o DataSafeConfigurationOutput) IsEnabled() pulumi.BoolOutput {
 }
 
 // The current state of Data Safe.
-func (o DataSafeConfigurationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DataSafeConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o DataSafeConfigurationOutput) TimeEnabled() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringOutput { return v.TimeEnabled }).(pulumi.StringOutput)
+func (o DataSafeConfigurationOutput) TimeEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringPtrOutput { return v.TimeEnabled }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the Data Safe service.
-func (o DataSafeConfigurationOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o DataSafeConfigurationOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafeConfiguration) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type DataSafeConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -349,12 +324,6 @@ func (o DataSafeConfigurationArrayOutput) ToDataSafeConfigurationArrayOutput() D
 
 func (o DataSafeConfigurationArrayOutput) ToDataSafeConfigurationArrayOutputWithContext(ctx context.Context) DataSafeConfigurationArrayOutput {
 	return o
-}
-
-func (o DataSafeConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafeConfiguration] {
-	return pulumix.Output[[]*DataSafeConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataSafeConfigurationArrayOutput) Index(i pulumi.IntInput) DataSafeConfigurationOutput {
@@ -375,12 +344,6 @@ func (o DataSafeConfigurationMapOutput) ToDataSafeConfigurationMapOutput() DataS
 
 func (o DataSafeConfigurationMapOutput) ToDataSafeConfigurationMapOutputWithContext(ctx context.Context) DataSafeConfigurationMapOutput {
 	return o
-}
-
-func (o DataSafeConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafeConfiguration] {
-	return pulumix.Output[map[string]*DataSafeConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataSafeConfigurationMapOutput) MapIndex(k pulumi.StringInput) DataSafeConfigurationOutput {

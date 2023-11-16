@@ -59,16 +59,16 @@ export interface GetInvoiceResult {
     /**
      * Address details model
      */
-    readonly billToAddresses: outputs.OspGateway.GetInvoiceBillToAddress[];
+    readonly billToAddresses?: outputs.OspGateway.GetInvoiceBillToAddress[];
     readonly compartmentId: string;
     /**
      * Currency details model
      */
-    readonly currencies: outputs.OspGateway.GetInvoiceCurrency[];
+    readonly currencies?: outputs.OspGateway.GetInvoiceCurrency[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Transaction identifier
      */
@@ -76,92 +76,92 @@ export interface GetInvoiceResult {
     /**
      * Total amount of invoice
      */
-    readonly invoiceAmount: number;
+    readonly invoiceAmount?: number;
     /**
      * Invoice amount adjust
      */
-    readonly invoiceAmountAdjusted: number;
+    readonly invoiceAmountAdjusted?: number;
     /**
      * Invoice amount applied
      */
-    readonly invoiceAmountApplied: number;
+    readonly invoiceAmountApplied?: number;
     /**
      * Invoice amount credit
      */
-    readonly invoiceAmountCredited: number;
+    readonly invoiceAmountCredited?: number;
     /**
      * Balance of invoice
      */
-    readonly invoiceAmountDue: number;
+    readonly invoiceAmountDue?: number;
     /**
      * Invoice identifier which is generated on the on-premise sie. Pls note this is not an OCID
      */
-    readonly invoiceId: string;
+    readonly invoiceId?: string;
     /**
      * Invoice external reference
      */
-    readonly invoiceNumber: string;
+    readonly invoiceNumber?: string;
     /**
      * Invoice PO number
      */
-    readonly invoicePoNumber: string;
+    readonly invoicePoNumber?: string;
     /**
      * Invoice reference number
      */
-    readonly invoiceRefNumber: string;
+    readonly invoiceRefNumber?: string;
     /**
      * Invoice status
      */
-    readonly invoiceStatus: string;
+    readonly invoiceStatus?: string;
     /**
      * Type of invoice
      */
-    readonly invoiceType: string;
+    readonly invoiceType?: string;
     /**
      * Is credit card payment eligible
      */
-    readonly isCreditCardPayable: boolean;
+    readonly isCreditCardPayable?: boolean;
     /**
      * Is pdf download access allowed
      */
-    readonly isDisplayDownloadPdf: boolean;
+    readonly isDisplayDownloadPdf?: boolean;
     /**
      * Whether invoice can be payed
      */
-    readonly isPayable: boolean;
+    readonly isPayable?: boolean;
     /**
      * Is emailing pdf allowed
      */
-    readonly isPdfEmailAvailable: boolean;
+    readonly isPdfEmailAvailable?: boolean;
     /**
      * Payment related details
      */
-    readonly lastPaymentDetails: outputs.OspGateway.GetInvoiceLastPaymentDetail[];
+    readonly lastPaymentDetails?: outputs.OspGateway.GetInvoiceLastPaymentDetail[];
     readonly ospHomeRegion: string;
     /**
      * Payment terms
      */
-    readonly paymentTerms: string;
+    readonly paymentTerms?: string;
     /**
      * Preferred Email on the invoice
      */
-    readonly preferredEmail: string;
+    readonly preferredEmail?: string;
     /**
      * List of subscription identifiers
      */
-    readonly subscriptionIds: string[];
+    readonly subscriptionIds?: string[];
     /**
      * Tax of invoice amount
      */
-    readonly tax: number;
+    readonly tax?: number;
     /**
      * Date of invoice
      */
-    readonly timeInvoice: string;
+    readonly timeInvoice?: string;
     /**
      * Due date of invoice
      */
-    readonly timeInvoiceDue: string;
+    readonly timeInvoiceDue?: string;
 }
 /**
  * This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.

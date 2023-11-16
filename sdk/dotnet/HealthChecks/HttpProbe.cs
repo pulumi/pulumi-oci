@@ -66,31 +66,31 @@ namespace Pulumi.Oci.HealthChecks
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
         [Output("headers")]
-        public Output<ImmutableDictionary<string, object>> Headers { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Headers { get; private set; } = null!;
 
         /// <summary>
         /// The region where updates must be made and where results must be fetched from.
         /// </summary>
         [Output("homeRegion")]
-        public Output<string> HomeRegion { get; private set; } = null!;
+        public Output<string?> HomeRegion { get; private set; } = null!;
 
         /// <summary>
         /// The supported HTTP methods available for probes.
         /// </summary>
         [Output("method")]
-        public Output<string> Method { get; private set; } = null!;
+        public Output<string?> Method { get; private set; } = null!;
 
         /// <summary>
         /// The optional URL path to probe, including query parameters.
         /// </summary>
         [Output("path")]
-        public Output<string> Path { get; private set; } = null!;
+        public Output<string?> Path { get; private set; } = null!;
 
         /// <summary>
         /// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// The supported protocols available for HTTP probes.
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.HealthChecks
         /// A URL for fetching the probe results.
         /// </summary>
         [Output("resultsUrl")]
-        public Output<string> ResultsUrl { get; private set; } = null!;
+        public Output<string?> ResultsUrl { get; private set; } = null!;
 
         /// <summary>
         /// A list of targets (hostnames or IP addresses) of the probe.
@@ -114,13 +114,13 @@ namespace Pulumi.Oci.HealthChecks
         /// The RFC 3339-formatted creation date and time of the probe.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         /// </summary>
         [Output("timeoutInSeconds")]
-        public Output<int> TimeoutInSeconds { get; private set; } = null!;
+        public Output<int?> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// A list of names of vantage points from which to execute the probe.

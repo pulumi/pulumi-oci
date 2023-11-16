@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp {
@@ -15,87 +17,87 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionk
      * @return The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
      * 
      */
-    private String defaultEncryptionSaltType;
+    private @Nullable String defaultEncryptionSaltType;
     /**
      * @return The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
      * 
      */
-    private String masterKey;
+    private @Nullable String masterKey;
     /**
      * @return Max Renewable Age in seconds
      * 
      */
-    private Integer maxRenewableAge;
+    private @Nullable Integer maxRenewableAge;
     /**
      * @return Max Ticket Life in seconds
      * 
      */
-    private Integer maxTicketLife;
+    private @Nullable Integer maxTicketLife;
     /**
      * @return The name of the Kerberos Realm that this App uses for authentication.
      * 
      */
-    private String realmName;
+    private @Nullable String realmName;
     /**
      * @return The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
      * 
      */
-    private List<String> supportedEncryptionSaltTypes;
+    private @Nullable List<String> supportedEncryptionSaltTypes;
     /**
      * @return Ticket Flags
      * 
      */
-    private Integer ticketFlags;
+    private @Nullable Integer ticketFlags;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp() {}
     /**
      * @return The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
      * 
      */
-    public String defaultEncryptionSaltType() {
-        return this.defaultEncryptionSaltType;
+    public Optional<String> defaultEncryptionSaltType() {
+        return Optional.ofNullable(this.defaultEncryptionSaltType);
     }
     /**
      * @return The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
      * 
      */
-    public String masterKey() {
-        return this.masterKey;
+    public Optional<String> masterKey() {
+        return Optional.ofNullable(this.masterKey);
     }
     /**
      * @return Max Renewable Age in seconds
      * 
      */
-    public Integer maxRenewableAge() {
-        return this.maxRenewableAge;
+    public Optional<Integer> maxRenewableAge() {
+        return Optional.ofNullable(this.maxRenewableAge);
     }
     /**
      * @return Max Ticket Life in seconds
      * 
      */
-    public Integer maxTicketLife() {
-        return this.maxTicketLife;
+    public Optional<Integer> maxTicketLife() {
+        return Optional.ofNullable(this.maxTicketLife);
     }
     /**
      * @return The name of the Kerberos Realm that this App uses for authentication.
      * 
      */
-    public String realmName() {
-        return this.realmName;
+    public Optional<String> realmName() {
+        return Optional.ofNullable(this.realmName);
     }
     /**
      * @return The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
      * 
      */
     public List<String> supportedEncryptionSaltTypes() {
-        return this.supportedEncryptionSaltTypes;
+        return this.supportedEncryptionSaltTypes == null ? List.of() : this.supportedEncryptionSaltTypes;
     }
     /**
      * @return Ticket Flags
      * 
      */
-    public Integer ticketFlags() {
-        return this.ticketFlags;
+    public Optional<Integer> ticketFlags() {
+        return Optional.ofNullable(this.ticketFlags);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionk
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultEncryptionSaltType;
-        private String masterKey;
-        private Integer maxRenewableAge;
-        private Integer maxTicketLife;
-        private String realmName;
-        private List<String> supportedEncryptionSaltTypes;
-        private Integer ticketFlags;
+        private @Nullable String defaultEncryptionSaltType;
+        private @Nullable String masterKey;
+        private @Nullable Integer maxRenewableAge;
+        private @Nullable Integer maxTicketLife;
+        private @Nullable String realmName;
+        private @Nullable List<String> supportedEncryptionSaltTypes;
+        private @Nullable Integer ticketFlags;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,41 +129,41 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionk
         }
 
         @CustomType.Setter
-        public Builder defaultEncryptionSaltType(String defaultEncryptionSaltType) {
-            this.defaultEncryptionSaltType = Objects.requireNonNull(defaultEncryptionSaltType);
+        public Builder defaultEncryptionSaltType(@Nullable String defaultEncryptionSaltType) {
+            this.defaultEncryptionSaltType = defaultEncryptionSaltType;
             return this;
         }
         @CustomType.Setter
-        public Builder masterKey(String masterKey) {
-            this.masterKey = Objects.requireNonNull(masterKey);
+        public Builder masterKey(@Nullable String masterKey) {
+            this.masterKey = masterKey;
             return this;
         }
         @CustomType.Setter
-        public Builder maxRenewableAge(Integer maxRenewableAge) {
-            this.maxRenewableAge = Objects.requireNonNull(maxRenewableAge);
+        public Builder maxRenewableAge(@Nullable Integer maxRenewableAge) {
+            this.maxRenewableAge = maxRenewableAge;
             return this;
         }
         @CustomType.Setter
-        public Builder maxTicketLife(Integer maxTicketLife) {
-            this.maxTicketLife = Objects.requireNonNull(maxTicketLife);
+        public Builder maxTicketLife(@Nullable Integer maxTicketLife) {
+            this.maxTicketLife = maxTicketLife;
             return this;
         }
         @CustomType.Setter
-        public Builder realmName(String realmName) {
-            this.realmName = Objects.requireNonNull(realmName);
+        public Builder realmName(@Nullable String realmName) {
+            this.realmName = realmName;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedEncryptionSaltTypes(List<String> supportedEncryptionSaltTypes) {
-            this.supportedEncryptionSaltTypes = Objects.requireNonNull(supportedEncryptionSaltTypes);
+        public Builder supportedEncryptionSaltTypes(@Nullable List<String> supportedEncryptionSaltTypes) {
+            this.supportedEncryptionSaltTypes = supportedEncryptionSaltTypes;
             return this;
         }
         public Builder supportedEncryptionSaltTypes(String... supportedEncryptionSaltTypes) {
             return supportedEncryptionSaltTypes(List.of(supportedEncryptionSaltTypes));
         }
         @CustomType.Setter
-        public Builder ticketFlags(Integer ticketFlags) {
-            this.ticketFlags = Objects.requireNonNull(ticketFlags);
+        public Builder ticketFlags(@Nullable Integer ticketFlags) {
+            this.ticketFlags = ticketFlags;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp build() {

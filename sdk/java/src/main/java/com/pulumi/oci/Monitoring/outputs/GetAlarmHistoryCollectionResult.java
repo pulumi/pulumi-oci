@@ -24,17 +24,17 @@ public final class GetAlarmHistoryCollectionResult {
      * @return The set of history entries retrieved for the alarm.
      * 
      */
-    private List<GetAlarmHistoryCollectionEntry> entries;
+    private @Nullable List<GetAlarmHistoryCollectionEntry> entries;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the alarm is enabled.  Example: `true`
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     private @Nullable String timestampGreaterThanOrEqualTo;
     private @Nullable String timestampLessThan;
 
@@ -54,21 +54,21 @@ public final class GetAlarmHistoryCollectionResult {
      * 
      */
     public List<GetAlarmHistoryCollectionEntry> entries() {
-        return this.entries;
+        return this.entries == null ? List.of() : this.entries;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the alarm is enabled.  Example: `true`
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     public Optional<String> timestampGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timestampGreaterThanOrEqualTo);
@@ -88,9 +88,9 @@ public final class GetAlarmHistoryCollectionResult {
     public static final class Builder {
         private @Nullable String alarmHistorytype;
         private String alarmId;
-        private List<GetAlarmHistoryCollectionEntry> entries;
-        private String id;
-        private Boolean isEnabled;
+        private @Nullable List<GetAlarmHistoryCollectionEntry> entries;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
         private @Nullable String timestampGreaterThanOrEqualTo;
         private @Nullable String timestampLessThan;
         public Builder() {}
@@ -116,21 +116,21 @@ public final class GetAlarmHistoryCollectionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder entries(List<GetAlarmHistoryCollectionEntry> entries) {
-            this.entries = Objects.requireNonNull(entries);
+        public Builder entries(@Nullable List<GetAlarmHistoryCollectionEntry> entries) {
+            this.entries = entries;
             return this;
         }
         public Builder entries(GetAlarmHistoryCollectionEntry... entries) {
             return entries(List.of(entries));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter

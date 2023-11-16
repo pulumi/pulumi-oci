@@ -12,6 +12,7 @@ import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemStackMonitorings
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,28 +96,28 @@ public class ExternalDbSystemStackMonitoringsManagement extends com.pulumi.resou
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    private Output</* @Nullable */ Boolean> isEnabled;
 
     /**
      * @return The status of the associated service.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Output<Optional<Boolean>> isEnabled() {
+        return Codegen.optional(this.isEnabled);
     }
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      * 
      */
     @Export(name="metadata", refs={String.class}, tree="[0]")
-    private Output<String> metadata;
+    private Output</* @Nullable */ String> metadata;
 
     /**
      * @return The associated service-specific inputs in JSON string format, which Database Management can identify.
      * 
      */
-    public Output<String> metadata() {
-        return this.metadata;
+    public Output<Optional<String>> metadata() {
+        return Codegen.optional(this.metadata);
     }
 
     /**

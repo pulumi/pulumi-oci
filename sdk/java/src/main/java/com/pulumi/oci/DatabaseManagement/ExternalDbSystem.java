@@ -14,6 +14,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemStackMonitoring
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -92,14 +93,14 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="databaseManagementConfig", refs={ExternalDbSystemDatabaseManagementConfig.class}, tree="[0]")
-    private Output<ExternalDbSystemDatabaseManagementConfig> databaseManagementConfig;
+    private Output</* @Nullable */ ExternalDbSystemDatabaseManagementConfig> databaseManagementConfig;
 
     /**
      * @return The details required to enable Database Management for an external DB system.
      * 
      */
-    public Output<ExternalDbSystemDatabaseManagementConfig> databaseManagementConfig() {
-        return this.databaseManagementConfig;
+    public Output<Optional<ExternalDbSystemDatabaseManagementConfig>> databaseManagementConfig() {
+        return Codegen.optional(this.databaseManagementConfig);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
@@ -120,126 +121,126 @@ public class ExternalDbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="discoveryAgentId", refs={String.class}, tree="[0]")
-    private Output<String> discoveryAgentId;
+    private Output</* @Nullable */ String> discoveryAgentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      * 
      */
-    public Output<String> discoveryAgentId() {
-        return this.discoveryAgentId;
+    public Output<Optional<String>> discoveryAgentId() {
+        return Codegen.optional(this.discoveryAgentId);
     }
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      * 
      */
     @Export(name="homeDirectory", refs={String.class}, tree="[0]")
-    private Output<String> homeDirectory;
+    private Output</* @Nullable */ String> homeDirectory;
 
     /**
      * @return The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      * 
      */
-    public Output<String> homeDirectory() {
-        return this.homeDirectory;
+    public Output<Optional<String>> homeDirectory() {
+        return Codegen.optional(this.homeDirectory);
     }
     /**
      * Indicates whether the DB system is a cluster DB system or not.
      * 
      */
     @Export(name="isCluster", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCluster;
+    private Output</* @Nullable */ Boolean> isCluster;
 
     /**
      * @return Indicates whether the DB system is a cluster DB system or not.
      * 
      */
-    public Output<Boolean> isCluster() {
-        return this.isCluster;
+    public Output<Optional<Boolean>> isCluster() {
+        return Codegen.optional(this.isCluster);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The details of the associated service that will be enabled or disabled for an external DB System.
      * 
      */
     @Export(name="stackMonitoringConfig", refs={ExternalDbSystemStackMonitoringConfig.class}, tree="[0]")
-    private Output<ExternalDbSystemStackMonitoringConfig> stackMonitoringConfig;
+    private Output</* @Nullable */ ExternalDbSystemStackMonitoringConfig> stackMonitoringConfig;
 
     /**
      * @return The details of the associated service that will be enabled or disabled for an external DB System.
      * 
      */
-    public Output<ExternalDbSystemStackMonitoringConfig> stackMonitoringConfig() {
-        return this.stackMonitoringConfig;
+    public Output<Optional<ExternalDbSystemStackMonitoringConfig>> stackMonitoringConfig() {
+        return Codegen.optional(this.stackMonitoringConfig);
     }
     /**
      * The current lifecycle state of the external DB system resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external DB system resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the external DB system was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external DB system was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external DB system was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external DB system was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -57,15 +57,15 @@ export class ManagementAgent extends pulumi.CustomResource {
     /**
      * The current availability status of managementAgent
      */
-    public /*out*/ readonly availabilityStatus!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityStatus!: pulumi.Output<string | undefined>;
     /**
      * Compartment Identifier
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Plugin Id list
      *
@@ -76,43 +76,43 @@ export class ManagementAgent extends pulumi.CustomResource {
     /**
      * (Updatable) New displayName of Agent.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Management Agent host machine name
      */
-    public /*out*/ readonly host!: pulumi.Output<string>;
+    public /*out*/ readonly host!: pulumi.Output<string | undefined>;
     /**
      * Host resource ocid
      */
-    public /*out*/ readonly hostId!: pulumi.Output<string>;
+    public /*out*/ readonly hostId!: pulumi.Output<string | undefined>;
     /**
      * agent install key identifier
      */
-    public /*out*/ readonly installKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly installKeyId!: pulumi.Output<string | undefined>;
     /**
      * Path where Management Agent is installed
      */
-    public /*out*/ readonly installPath!: pulumi.Output<string>;
+    public /*out*/ readonly installPath!: pulumi.Output<string | undefined>;
     /**
      * The install type, either AGENT or GATEWAY
      */
-    public /*out*/ readonly installType!: pulumi.Output<string>;
+    public /*out*/ readonly installType!: pulumi.Output<string | undefined>;
     /**
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      */
-    public /*out*/ readonly isAgentAutoUpgradable!: pulumi.Output<boolean>;
+    public /*out*/ readonly isAgentAutoUpgradable!: pulumi.Output<boolean | undefined>;
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
-    public /*out*/ readonly isCustomerDeployed!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCustomerDeployed!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Unique Management Agent identifier
      */
@@ -120,47 +120,47 @@ export class ManagementAgent extends pulumi.CustomResource {
     /**
      * Additional properties for this Management Agent
      */
-    public /*out*/ readonly managementAgentProperties!: pulumi.Output<outputs.ManagementAgent.ManagementAgentManagementAgentProperty[]>;
+    public /*out*/ readonly managementAgentProperties!: pulumi.Output<outputs.ManagementAgent.ManagementAgentManagementAgentProperty[] | undefined>;
     /**
      * Platform Name
      */
-    public /*out*/ readonly platformName!: pulumi.Output<string>;
+    public /*out*/ readonly platformName!: pulumi.Output<string | undefined>;
     /**
      * Platform Type
      */
-    public /*out*/ readonly platformType!: pulumi.Output<string>;
+    public /*out*/ readonly platformType!: pulumi.Output<string | undefined>;
     /**
      * Platform Version
      */
-    public /*out*/ readonly platformVersion!: pulumi.Output<string>;
+    public /*out*/ readonly platformVersion!: pulumi.Output<string | undefined>;
     /**
      * list of managementAgentPlugins associated with the agent
      */
-    public /*out*/ readonly pluginLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentPluginList[]>;
+    public /*out*/ readonly pluginLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentPluginList[] | undefined>;
     /**
      * Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      */
-    public /*out*/ readonly resourceArtifactVersion!: pulumi.Output<string>;
+    public /*out*/ readonly resourceArtifactVersion!: pulumi.Output<string | undefined>;
     /**
      * The current state of managementAgent
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeLastHeartbeat!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastHeartbeat!: pulumi.Output<string | undefined>;
     /**
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Management Agent Version
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagementAgent resource with the given unique name, arguments, and options.

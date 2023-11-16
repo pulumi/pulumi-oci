@@ -28,22 +28,6 @@ class LogAnalyticsEntityArgs:
                  timezone_region: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntity resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_type_name", entity_type_name)
@@ -70,9 +54,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -82,9 +63,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="entityTypeName")
     def entity_type_name(self) -> pulumi.Input[str]:
-        """
-        Log analytics entity type name.
-        """
         return pulumi.get(self, "entity_type_name")
 
     @entity_type_name.setter
@@ -94,9 +72,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -106,9 +81,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="cloudResourceId")
     def cloud_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        """
         return pulumi.get(self, "cloud_resource_id")
 
     @cloud_resource_id.setter
@@ -118,9 +90,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -130,9 +99,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -142,9 +108,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -154,9 +117,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Management Agent.
-        """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
@@ -166,9 +126,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Log analytics entity name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -178,9 +135,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -190,9 +144,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
@@ -202,13 +153,6 @@ class LogAnalyticsEntityArgs:
     @property
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The timezone region of the log analytics entity. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "timezone_region")
 
     @timezone_region.setter
@@ -241,30 +185,6 @@ class _LogAnalyticsEntityState:
                  timezone_region: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntity resources.
-        :param pulumi.Input[bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] entity_type_internal_name: Internal name for the log analytics entity type.
-        :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        :param pulumi.Input[str] lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
-        :param pulumi.Input[str] management_agent_display_name: Management agent (management-agents resource kind) display name
-        :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param pulumi.Input[str] state: The current state of the log analytics entity.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if are_logs_collected is not None:
             pulumi.set(__self__, "are_logs_collected", are_logs_collected)
@@ -310,9 +230,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="areLogsCollected")
     def are_logs_collected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        """
         return pulumi.get(self, "are_logs_collected")
 
     @are_logs_collected.setter
@@ -322,9 +239,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="cloudResourceId")
     def cloud_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        """
         return pulumi.get(self, "cloud_resource_id")
 
     @cloud_resource_id.setter
@@ -334,9 +248,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -346,9 +257,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -358,9 +266,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="entityTypeInternalName")
     def entity_type_internal_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Internal name for the log analytics entity type.
-        """
         return pulumi.get(self, "entity_type_internal_name")
 
     @entity_type_internal_name.setter
@@ -370,9 +275,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="entityTypeName")
     def entity_type_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Log analytics entity type name.
-        """
         return pulumi.get(self, "entity_type_name")
 
     @entity_type_name.setter
@@ -382,9 +284,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -394,9 +293,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -406,9 +302,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -418,9 +311,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="managementAgentCompartmentId")
     def management_agent_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Management agent (management-agents resource kind) compartment OCID
-        """
         return pulumi.get(self, "management_agent_compartment_id")
 
     @management_agent_compartment_id.setter
@@ -430,9 +320,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="managementAgentDisplayName")
     def management_agent_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Management agent (management-agents resource kind) display name
-        """
         return pulumi.get(self, "management_agent_display_name")
 
     @management_agent_display_name.setter
@@ -442,9 +329,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Management Agent.
-        """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
@@ -454,9 +338,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Log analytics entity name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -466,9 +347,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -478,9 +356,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -490,9 +365,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
@@ -502,9 +374,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the log analytics entity.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -514,9 +383,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -526,9 +392,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -538,13 +401,6 @@ class _LogAnalyticsEntityState:
     @property
     @pulumi.getter(name="timezoneRegion")
     def timezone_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The timezone region of the log analytics entity. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "timezone_region")
 
     @timezone_region.setter
@@ -571,60 +427,9 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  timezone_region: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Create a new log analytics entity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("testLogAnalyticsEntity",
-            compartment_id=var["compartment_id"],
-            entity_type_name=var["log_analytics_entity_entity_type_name"],
-            namespace=var["log_analytics_entity_namespace"],
-            cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            hostname=var["log_analytics_entity_hostname"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            properties=var["log_analytics_entity_properties"],
-            source_id=oci_log_analytics_source["test_source"]["id"],
-            timezone_region=var["log_analytics_entity_timezone_region"])
-        ```
-
-        ## Import
-
-        LogAnalyticsEntities can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
-        ```
-
+        Create a LogAnalyticsEntity resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -633,42 +438,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  args: LogAnalyticsEntityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Create a new log analytics entity.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("testLogAnalyticsEntity",
-            compartment_id=var["compartment_id"],
-            entity_type_name=var["log_analytics_entity_entity_type_name"],
-            namespace=var["log_analytics_entity_namespace"],
-            cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            hostname=var["log_analytics_entity_hostname"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            properties=var["log_analytics_entity_properties"],
-            source_id=oci_log_analytics_source["test_source"]["id"],
-            timezone_region=var["log_analytics_entity_timezone_region"])
-        ```
-
-        ## Import
-
-        LogAnalyticsEntities can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity test_log_analytics_entity "namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
-        ```
-
+        Create a LogAnalyticsEntity resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LogAnalyticsEntityArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -768,30 +538,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] entity_type_internal_name: Internal name for the log analytics entity type.
-        :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        :param pulumi.Input[str] lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
-        :param pulumi.Input[str] management_agent_display_name: Management agent (management-agents resource kind) display name
-        :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
-        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param pulumi.Input[str] state: The current state of the log analytics entity.
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -821,165 +567,101 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="areLogsCollected")
-    def are_logs_collected(self) -> pulumi.Output[bool]:
-        """
-        The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        """
+    def are_logs_collected(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "are_logs_collected")
 
     @property
     @pulumi.getter(name="cloudResourceId")
-    def cloud_resource_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        """
+    def cloud_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cloud_resource_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="entityTypeInternalName")
-    def entity_type_internal_name(self) -> pulumi.Output[str]:
-        """
-        Internal name for the log analytics entity type.
-        """
+    def entity_type_internal_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "entity_type_internal_name")
 
     @property
     @pulumi.getter(name="entityTypeName")
     def entity_type_name(self) -> pulumi.Output[str]:
-        """
-        Log analytics entity type name.
-        """
         return pulumi.get(self, "entity_type_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hostname(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        """
+    def hostname(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentCompartmentId")
-    def management_agent_compartment_id(self) -> pulumi.Output[str]:
-        """
-        Management agent (management-agents resource kind) compartment OCID
-        """
+    def management_agent_compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_agent_compartment_id")
 
     @property
     @pulumi.getter(name="managementAgentDisplayName")
-    def management_agent_display_name(self) -> pulumi.Output[str]:
-        """
-        Management agent (management-agents resource kind) display name
-        """
+    def management_agent_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_agent_display_name")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the Management Agent.
-        """
+    def management_agent_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Log analytics entity name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def properties(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        """
+    def properties(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> pulumi.Output[str]:
-        """
-        This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        """
+    def source_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the log analytics entity.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timezoneRegion")
-    def timezone_region(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The timezone region of the log analytics entity. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def timezone_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "timezone_region")
 

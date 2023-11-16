@@ -50,11 +50,11 @@ export interface GetListenersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of listener_collection.
      */
-    readonly listenerCollections: outputs.NetworkLoadBalancer.GetListenersListenerCollection[];
+    readonly listenerCollections?: outputs.NetworkLoadBalancer.GetListenersListenerCollection[];
     readonly networkLoadBalancerId: string;
 }
 /**

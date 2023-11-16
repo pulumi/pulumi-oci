@@ -44,7 +44,7 @@ class GetListenersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,10 +52,7 @@ class GetListenersResult:
 
     @property
     @pulumi.getter(name="listenerCollections")
-    def listener_collections(self) -> Sequence['outputs.GetListenersListenerCollectionResult']:
-        """
-        The list of listener_collection.
-        """
+    def listener_collections(self) -> Optional[Sequence['outputs.GetListenersListenerCollectionResult']]:
         return pulumi.get(self, "listener_collections")
 
     @property
@@ -80,21 +77,7 @@ def get_listeners(filters: Optional[Sequence[pulumi.InputType['GetListenersFilte
                   network_load_balancer_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListenersResult:
     """
-    This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists all listeners associated with a given network load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi
                          network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenersResult]:
     """
-    This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists all listeners associated with a given network load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

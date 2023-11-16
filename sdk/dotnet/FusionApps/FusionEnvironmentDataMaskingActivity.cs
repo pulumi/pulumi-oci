@@ -58,25 +58,25 @@ namespace Pulumi.Oci.FusionApps
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isResumeDataMasking")]
-        public Output<bool> IsResumeDataMasking { get; private set; } = null!;
+        public Output<bool?> IsResumeDataMasking { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the DataMaskingActivity.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the data masking activity ended. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeMaskingFinish")]
-        public Output<string> TimeMaskingFinish { get; private set; } = null!;
+        public Output<string?> TimeMaskingFinish { get; private set; } = null!;
 
         /// <summary>
         /// The time the data masking activity started. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeMaskingStart")]
-        public Output<string> TimeMaskingStart { get; private set; } = null!;
+        public Output<string?> TimeMaskingStart { get; private set; } = null!;
 
 
         /// <summary>

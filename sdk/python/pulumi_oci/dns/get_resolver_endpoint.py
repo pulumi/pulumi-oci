@@ -76,71 +76,47 @@ class GetResolverEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> str:
-        """
-        The type of resolver endpoint. VNIC is currently the only supported type.
-        """
+    def endpoint_type(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_type")
 
     @property
     @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> str:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
+    def forwarding_address(self) -> Optional[str]:
         return pulumi.get(self, "forwarding_address")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isForwarding")
-    def is_forwarding(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
+    def is_forwarding(self) -> Optional[bool]:
         return pulumi.get(self, "is_forwarding")
 
     @property
     @pulumi.getter(name="isListening")
-    def is_listening(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
+    def is_listening(self) -> Optional[bool]:
         return pulumi.get(self, "is_listening")
 
     @property
     @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> str:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
+    def listening_address(self) -> Optional[str]:
         return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
@@ -160,42 +136,27 @@ class GetResolverEndpointResult:
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -229,27 +190,7 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
                           scope: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResolverEndpointResult:
     """
-    This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-    in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-    API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolver_endpoint = oci.Dns.get_resolver_endpoint(resolver_endpoint_name=oci_dns_resolver_endpoint["test_resolver_endpoint"]["name"],
-        resolver_id=oci_dns_resolver["test_resolver"]["id"],
-        scope="PRIVATE")
-    ```
-
-
-    :param str resolver_endpoint_name: The name of the target resolver endpoint.
-    :param str resolver_id: The OCID of the target resolver.
-    :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['resolverEndpointName'] = resolver_endpoint_name
@@ -284,26 +225,6 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[s
                                  scope: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResolverEndpointResult]:
     """
-    This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-    in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-    API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resolver_endpoint = oci.Dns.get_resolver_endpoint(resolver_endpoint_name=oci_dns_resolver_endpoint["test_resolver_endpoint"]["name"],
-        resolver_id=oci_dns_resolver["test_resolver"]["id"],
-        scope="PRIVATE")
-    ```
-
-
-    :param str resolver_endpoint_name: The name of the target resolver endpoint.
-    :param str resolver_id: The OCID of the target resolver.
-    :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -59,11 +59,11 @@ export interface GetManagedDatabaseUserDataAccessContainerResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of container resources.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseUserDataAccessContainerItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseUserDataAccessContainerItem[];
     readonly managedDatabaseId: string;
     /**
      * The name of the container included in the attribute.

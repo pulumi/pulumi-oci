@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Name of the month of the year.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult(string name)
+        private GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult(string? name)
         {
             Name = name;
         }

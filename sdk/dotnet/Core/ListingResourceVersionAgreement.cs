@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// EULA link
         /// </summary>
         [Output("eulaLink")]
-        public Output<string> EulaLink { get; private set; } = null!;
+        public Output<string?> EulaLink { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the listing.
@@ -56,19 +56,19 @@ namespace Pulumi.Oci.Core
         /// Oracle TOU link
         /// </summary>
         [Output("oracleTermsOfUseLink")]
-        public Output<string> OracleTermsOfUseLink { get; private set; } = null!;
+        public Output<string?> OracleTermsOfUseLink { get; private set; } = null!;
 
         /// <summary>
         /// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
         /// </summary>
         [Output("signature")]
-        public Output<string> Signature { get; private set; } = null!;
+        public Output<string?> Signature { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
         /// </summary>
         [Output("timeRetrieved")]
-        public Output<string> TimeRetrieved { get; private set; } = null!;
+        public Output<string?> TimeRetrieved { get; private set; } = null!;
 
 
         /// <summary>

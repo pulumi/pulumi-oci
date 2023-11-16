@@ -49,7 +49,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult']:
-        """
-        A list of SQL Tuning Advisor recommendations.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -76,9 +73,6 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult:
     @property
     @pulumi.getter(name="sqlTuningAdvisorTaskId")
     def sql_tuning_advisor_task_id(self) -> str:
-        """
-        The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "sql_tuning_advisor_task_id")
 
 
@@ -102,28 +96,7 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id: O
                                                                  sql_tuning_advisor_task_id: Optional[str] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Recommendation resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the findings and possible actions for a given object in a SQL tuning task.
-    The task ID and object ID are used to retrieve the findings and recommendations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_recommendation = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id=oci_database_management_execution["test_execution"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
-    ```
-
-
-    :param str execution_id: The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['executionId'] = execution_id
@@ -149,27 +122,6 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation_output(executio
                                                                         sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
                                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult]:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Recommendation resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the findings and possible actions for a given object in a SQL tuning task.
-    The task ID and object ID are used to retrieve the findings and recommendations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_recommendation = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id=oci_database_management_execution["test_execution"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
-    ```
-
-
-    :param str execution_id: The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -108,92 +108,92 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// Compartment identifier of the Enterprise Manager bridge
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Description of Enterprise Manager Bridge
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// User-friedly name of Enterprise Manager Bridge that does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string EnterpriseManagerBridgeId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Enterprise Manager bridge identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Object Storage Bucket Name
         /// </summary>
-        public readonly string ObjectStorageBucketName;
+        public readonly string? ObjectStorageBucketName;
         /// <summary>
         /// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
         /// </summary>
-        public readonly string ObjectStorageBucketStatusDetails;
+        public readonly string? ObjectStorageBucketStatusDetails;
         /// <summary>
         /// Object Storage Namespace Name
         /// </summary>
-        public readonly string ObjectStorageNamespaceName;
+        public readonly string? ObjectStorageNamespaceName;
         /// <summary>
         /// The current state of the Enterprise Manager bridge.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetEnterpriseManagerBridgeResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             string enterpriseManagerBridgeId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string objectStorageBucketName,
+            string? objectStorageBucketName,
 
-            string objectStorageBucketStatusDetails,
+            string? objectStorageBucketStatusDetails,
 
-            string objectStorageNamespaceName,
+            string? objectStorageNamespaceName,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -39,18 +39,12 @@ class GetDataGuardAssociationsResult:
 
     @property
     @pulumi.getter(name="dataGuardAssociations")
-    def data_guard_associations(self) -> Sequence['outputs.GetDataGuardAssociationsDataGuardAssociationResult']:
-        """
-        The list of data_guard_associations.
-        """
+    def data_guard_associations(self) -> Optional[Sequence['outputs.GetDataGuardAssociationsDataGuardAssociationResult']]:
         return pulumi.get(self, "data_guard_associations")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
-        """
         return pulumi.get(self, "database_id")
 
     @property
@@ -60,7 +54,7 @@ class GetDataGuardAssociationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_data_guard_associations(database_id: Optional[str] = None,
                                 filters: Optional[Sequence[pulumi.InputType['GetDataGuardAssociationsFilterArgs']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataGuardAssociationsResult:
     """
-    This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
-
-    Lists all Data Guard associations for the specified database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=oci_database_database["test_database"]["id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -117,20 +97,6 @@ def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] 
                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDataGuardAssociationsFilterArgs']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataGuardAssociationsResult]:
     """
-    This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
-
-    Lists all Data Guard associations for the specified database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=oci_database_database["test_database"]["id"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

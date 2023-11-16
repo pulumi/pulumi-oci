@@ -15,6 +15,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsPasswordPoliciesPasswordPolicy {
@@ -22,675 +24,675 @@ public final class GetDomainsPasswordPoliciesPasswordPolicy {
      * @return A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
      * 
      */
-    private String allowedChars;
+    private @Nullable String allowedChars;
     /**
      * @return A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    private List<String> attributeSets;
+    private @Nullable List<String> attributeSets;
     /**
      * @return A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    private String attributes;
+    private @Nullable String attributes;
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    private String authorization;
+    private @Nullable String authorization;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return A String that describes the password policy
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A delimiter used to separate characters in the dictionary file
      * 
      */
-    private String dictionaryDelimiter;
+    private @Nullable String dictionaryDelimiter;
     /**
      * @return A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      * 
      */
-    private String dictionaryLocation;
+    private @Nullable String dictionaryLocation;
     /**
      * @return Indicates whether the password can match a dictionary word
      * 
      */
-    private Boolean dictionaryWordDisallowed;
+    private @Nullable Boolean dictionaryWordDisallowed;
     /**
      * @return A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      * 
      */
-    private String disallowedChars;
+    private @Nullable String disallowedChars;
     /**
      * @return A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      * 
      */
-    private List<String> disallowedSubstrings;
+    private @Nullable List<String> disallowedSubstrings;
     /**
      * @return List of User attributes whose values are not allowed in the password.
      * 
      */
-    private List<String> disallowedUserAttributeValues;
+    private @Nullable List<String> disallowedUserAttributeValues;
     /**
      * @return The number of distinct characters between old password and new password
      * 
      */
-    private Integer distinctCharacters;
+    private @Nullable Integer distinctCharacters;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      * 
      */
-    private Boolean firstNameDisallowed;
+    private @Nullable Boolean firstNameDisallowed;
     /**
      * @return Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      * 
      */
-    private Boolean forcePasswordReset;
+    private @Nullable Boolean forcePasswordReset;
     /**
      * @return A list of groups that the password policy belongs to.
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    private String idcsEndpoint;
+    private @Nullable String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      * 
      */
-    private Boolean lastNameDisallowed;
+    private @Nullable Boolean lastNameDisallowed;
     /**
      * @return The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      * 
      */
-    private Integer lockoutDuration;
+    private @Nullable Integer lockoutDuration;
     /**
      * @return An integer that represents the maximum number of failed logins before an account is locked
      * 
      */
-    private Integer maxIncorrectAttempts;
+    private @Nullable Integer maxIncorrectAttempts;
     /**
      * @return The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      * 
      */
-    private Integer maxLength;
+    private @Nullable Integer maxLength;
     /**
      * @return The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      * 
      */
-    private Integer maxRepeatedChars;
+    private @Nullable Integer maxRepeatedChars;
     /**
      * @return The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      * 
      */
-    private Integer maxSpecialChars;
+    private @Nullable Integer maxSpecialChars;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas;
     /**
      * @return The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      * 
      */
-    private Integer minAlphaNumerals;
+    private @Nullable Integer minAlphaNumerals;
     /**
      * @return The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      * 
      */
-    private Integer minAlphas;
+    private @Nullable Integer minAlphas;
     /**
      * @return The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      * 
      */
-    private Integer minLength;
+    private @Nullable Integer minLength;
     /**
      * @return The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      * 
      */
-    private Integer minLowerCase;
+    private @Nullable Integer minLowerCase;
     /**
      * @return The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      * 
      */
-    private Integer minNumerals;
+    private @Nullable Integer minNumerals;
     /**
      * @return Minimum time after which the user can resubmit the reset password request
      * 
      */
-    private Integer minPasswordAge;
+    private @Nullable Integer minPasswordAge;
     /**
      * @return The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      * 
      */
-    private Integer minSpecialChars;
+    private @Nullable Integer minSpecialChars;
     /**
      * @return The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      * 
      */
-    private Integer minUniqueChars;
+    private @Nullable Integer minUniqueChars;
     /**
      * @return The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      * 
      */
-    private Integer minUpperCase;
+    private @Nullable Integer minUpperCase;
     /**
      * @return A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The number of passwords that will be kept in history that may not be used as a password
      * 
      */
-    private Integer numPasswordsInHistory;
+    private @Nullable Integer numPasswordsInHistory;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return An integer indicating the number of days before which the user should be warned about password expiry.
      * 
      */
-    private Integer passwordExpireWarning;
+    private @Nullable Integer passwordExpireWarning;
     /**
      * @return The number of days after which the password expires automatically
      * 
      */
-    private Integer passwordExpiresAfter;
+    private @Nullable Integer passwordExpiresAfter;
     /**
      * @return Indicates whether the password policy is configured as Simple, Standard, or Custom.
      * 
      */
-    private String passwordStrength;
+    private @Nullable String passwordStrength;
     /**
      * @return Password policy priority
      * 
      */
-    private Integer priority;
+    private @Nullable Integer priority;
     /**
      * @return A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      * 
      */
-    private String requiredChars;
+    private @Nullable String requiredChars;
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    private String resourceTypeSchemaVersion;
+    private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return Indicates that the password must begin with an alphabetic character
      * 
      */
-    private Boolean startsWithAlphabet;
+    private @Nullable Boolean startsWithAlphabet;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      * 
      */
-    private Boolean userNameDisallowed;
+    private @Nullable Boolean userNameDisallowed;
 
     private GetDomainsPasswordPoliciesPasswordPolicy() {}
     /**
      * @return A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
      * 
      */
-    public String allowedChars() {
-        return this.allowedChars;
+    public Optional<String> allowedChars() {
+        return Optional.ofNullable(this.allowedChars);
     }
     /**
      * @return A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
     public List<String> attributeSets() {
-        return this.attributeSets;
+        return this.attributeSets == null ? List.of() : this.attributeSets;
     }
     /**
      * @return A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    public String attributes() {
-        return this.attributes;
+    public Optional<String> attributes() {
+        return Optional.ofNullable(this.attributes);
     }
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    public String authorization() {
-        return this.authorization;
+    public Optional<String> authorization() {
+        return Optional.ofNullable(this.authorization);
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules() {
-        return this.configuredPasswordPolicyRules;
+        return this.configuredPasswordPolicyRules == null ? List.of() : this.configuredPasswordPolicyRules;
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return A String that describes the password policy
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A delimiter used to separate characters in the dictionary file
      * 
      */
-    public String dictionaryDelimiter() {
-        return this.dictionaryDelimiter;
+    public Optional<String> dictionaryDelimiter() {
+        return Optional.ofNullable(this.dictionaryDelimiter);
     }
     /**
      * @return A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
      * 
      */
-    public String dictionaryLocation() {
-        return this.dictionaryLocation;
+    public Optional<String> dictionaryLocation() {
+        return Optional.ofNullable(this.dictionaryLocation);
     }
     /**
      * @return Indicates whether the password can match a dictionary word
      * 
      */
-    public Boolean dictionaryWordDisallowed() {
-        return this.dictionaryWordDisallowed;
+    public Optional<Boolean> dictionaryWordDisallowed() {
+        return Optional.ofNullable(this.dictionaryWordDisallowed);
     }
     /**
      * @return A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
      * 
      */
-    public String disallowedChars() {
-        return this.disallowedChars;
+    public Optional<String> disallowedChars() {
+        return Optional.ofNullable(this.disallowedChars);
     }
     /**
      * @return A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
      * 
      */
     public List<String> disallowedSubstrings() {
-        return this.disallowedSubstrings;
+        return this.disallowedSubstrings == null ? List.of() : this.disallowedSubstrings;
     }
     /**
      * @return List of User attributes whose values are not allowed in the password.
      * 
      */
     public List<String> disallowedUserAttributeValues() {
-        return this.disallowedUserAttributeValues;
+        return this.disallowedUserAttributeValues == null ? List.of() : this.disallowedUserAttributeValues;
     }
     /**
      * @return The number of distinct characters between old password and new password
      * 
      */
-    public Integer distinctCharacters() {
-        return this.distinctCharacters;
+    public Optional<Integer> distinctCharacters() {
+        return Optional.ofNullable(this.distinctCharacters);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
      * 
      */
-    public Boolean firstNameDisallowed() {
-        return this.firstNameDisallowed;
+    public Optional<Boolean> firstNameDisallowed() {
+        return Optional.ofNullable(this.firstNameDisallowed);
     }
     /**
      * @return Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
      * 
      */
-    public Boolean forcePasswordReset() {
-        return this.forcePasswordReset;
+    public Optional<Boolean> forcePasswordReset() {
+        return Optional.ofNullable(this.forcePasswordReset);
     }
     /**
      * @return A list of groups that the password policy belongs to.
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups() {
-        return this.groups;
+        return this.groups == null ? List.of() : this.groups;
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    public String idcsEndpoint() {
-        return this.idcsEndpoint;
+    public Optional<String> idcsEndpoint() {
+        return Optional.ofNullable(this.idcsEndpoint);
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
      * 
      */
-    public Boolean lastNameDisallowed() {
-        return this.lastNameDisallowed;
+    public Optional<Boolean> lastNameDisallowed() {
+        return Optional.ofNullable(this.lastNameDisallowed);
     }
     /**
      * @return The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
      * 
      */
-    public Integer lockoutDuration() {
-        return this.lockoutDuration;
+    public Optional<Integer> lockoutDuration() {
+        return Optional.ofNullable(this.lockoutDuration);
     }
     /**
      * @return An integer that represents the maximum number of failed logins before an account is locked
      * 
      */
-    public Integer maxIncorrectAttempts() {
-        return this.maxIncorrectAttempts;
+    public Optional<Integer> maxIncorrectAttempts() {
+        return Optional.ofNullable(this.maxIncorrectAttempts);
     }
     /**
      * @return The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
      * 
      */
-    public Integer maxLength() {
-        return this.maxLength;
+    public Optional<Integer> maxLength() {
+        return Optional.ofNullable(this.maxLength);
     }
     /**
      * @return The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
      * 
      */
-    public Integer maxRepeatedChars() {
-        return this.maxRepeatedChars;
+    public Optional<Integer> maxRepeatedChars() {
+        return Optional.ofNullable(this.maxRepeatedChars);
     }
     /**
      * @return The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
      * 
      */
-    public Integer maxSpecialChars() {
-        return this.maxSpecialChars;
+    public Optional<Integer> maxSpecialChars() {
+        return Optional.ofNullable(this.maxSpecialChars);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
      * 
      */
-    public Integer minAlphaNumerals() {
-        return this.minAlphaNumerals;
+    public Optional<Integer> minAlphaNumerals() {
+        return Optional.ofNullable(this.minAlphaNumerals);
     }
     /**
      * @return The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
      * 
      */
-    public Integer minAlphas() {
-        return this.minAlphas;
+    public Optional<Integer> minAlphas() {
+        return Optional.ofNullable(this.minAlphas);
     }
     /**
      * @return The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
      * 
      */
-    public Integer minLength() {
-        return this.minLength;
+    public Optional<Integer> minLength() {
+        return Optional.ofNullable(this.minLength);
     }
     /**
      * @return The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
      * 
      */
-    public Integer minLowerCase() {
-        return this.minLowerCase;
+    public Optional<Integer> minLowerCase() {
+        return Optional.ofNullable(this.minLowerCase);
     }
     /**
      * @return The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
      * 
      */
-    public Integer minNumerals() {
-        return this.minNumerals;
+    public Optional<Integer> minNumerals() {
+        return Optional.ofNullable(this.minNumerals);
     }
     /**
      * @return Minimum time after which the user can resubmit the reset password request
      * 
      */
-    public Integer minPasswordAge() {
-        return this.minPasswordAge;
+    public Optional<Integer> minPasswordAge() {
+        return Optional.ofNullable(this.minPasswordAge);
     }
     /**
      * @return The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
      * 
      */
-    public Integer minSpecialChars() {
-        return this.minSpecialChars;
+    public Optional<Integer> minSpecialChars() {
+        return Optional.ofNullable(this.minSpecialChars);
     }
     /**
      * @return The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
      * 
      */
-    public Integer minUniqueChars() {
-        return this.minUniqueChars;
+    public Optional<Integer> minUniqueChars() {
+        return Optional.ofNullable(this.minUniqueChars);
     }
     /**
      * @return The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
      * 
      */
-    public Integer minUpperCase() {
-        return this.minUpperCase;
+    public Optional<Integer> minUpperCase() {
+        return Optional.ofNullable(this.minUpperCase);
     }
     /**
      * @return A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The number of passwords that will be kept in history that may not be used as a password
      * 
      */
-    public Integer numPasswordsInHistory() {
-        return this.numPasswordsInHistory;
+    public Optional<Integer> numPasswordsInHistory() {
+        return Optional.ofNullable(this.numPasswordsInHistory);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return An integer indicating the number of days before which the user should be warned about password expiry.
      * 
      */
-    public Integer passwordExpireWarning() {
-        return this.passwordExpireWarning;
+    public Optional<Integer> passwordExpireWarning() {
+        return Optional.ofNullable(this.passwordExpireWarning);
     }
     /**
      * @return The number of days after which the password expires automatically
      * 
      */
-    public Integer passwordExpiresAfter() {
-        return this.passwordExpiresAfter;
+    public Optional<Integer> passwordExpiresAfter() {
+        return Optional.ofNullable(this.passwordExpiresAfter);
     }
     /**
      * @return Indicates whether the password policy is configured as Simple, Standard, or Custom.
      * 
      */
-    public String passwordStrength() {
-        return this.passwordStrength;
+    public Optional<String> passwordStrength() {
+        return Optional.ofNullable(this.passwordStrength);
     }
     /**
      * @return Password policy priority
      * 
      */
-    public Integer priority() {
-        return this.priority;
+    public Optional<Integer> priority() {
+        return Optional.ofNullable(this.priority);
     }
     /**
      * @return A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
      * 
      */
-    public String requiredChars() {
-        return this.requiredChars;
+    public Optional<String> requiredChars() {
+        return Optional.ofNullable(this.requiredChars);
     }
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    public String resourceTypeSchemaVersion() {
-        return this.resourceTypeSchemaVersion;
+    public Optional<String> resourceTypeSchemaVersion() {
+        return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return Indicates that the password must begin with an alphabetic character
      * 
      */
-    public Boolean startsWithAlphabet() {
-        return this.startsWithAlphabet;
+    public Optional<Boolean> startsWithAlphabet() {
+        return Optional.ofNullable(this.startsWithAlphabet);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
      * 
      */
-    public Boolean userNameDisallowed() {
-        return this.userNameDisallowed;
+    public Optional<Boolean> userNameDisallowed() {
+        return Optional.ofNullable(this.userNameDisallowed);
     }
 
     public static Builder builder() {
@@ -702,62 +704,62 @@ public final class GetDomainsPasswordPoliciesPasswordPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String allowedChars;
-        private List<String> attributeSets;
-        private String attributes;
-        private String authorization;
-        private String compartmentOcid;
-        private List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules;
-        private Boolean deleteInProgress;
-        private String description;
-        private String dictionaryDelimiter;
-        private String dictionaryLocation;
-        private Boolean dictionaryWordDisallowed;
-        private String disallowedChars;
-        private List<String> disallowedSubstrings;
-        private List<String> disallowedUserAttributeValues;
-        private Integer distinctCharacters;
-        private String domainOcid;
-        private String externalId;
-        private Boolean firstNameDisallowed;
-        private Boolean forcePasswordReset;
-        private List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups;
-        private String id;
-        private List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies;
-        private String idcsEndpoint;
-        private List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Boolean lastNameDisallowed;
-        private Integer lockoutDuration;
-        private Integer maxIncorrectAttempts;
-        private Integer maxLength;
-        private Integer maxRepeatedChars;
-        private Integer maxSpecialChars;
-        private List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas;
-        private Integer minAlphaNumerals;
-        private Integer minAlphas;
-        private Integer minLength;
-        private Integer minLowerCase;
-        private Integer minNumerals;
-        private Integer minPasswordAge;
-        private Integer minSpecialChars;
-        private Integer minUniqueChars;
-        private Integer minUpperCase;
-        private String name;
-        private Integer numPasswordsInHistory;
-        private String ocid;
-        private Integer passwordExpireWarning;
-        private Integer passwordExpiresAfter;
-        private String passwordStrength;
-        private Integer priority;
-        private String requiredChars;
-        private String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private Boolean startsWithAlphabet;
-        private List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags;
-        private String tenancyOcid;
-        private Boolean userNameDisallowed;
+        private @Nullable String allowedChars;
+        private @Nullable List<String> attributeSets;
+        private @Nullable String attributes;
+        private @Nullable String authorization;
+        private @Nullable String compartmentOcid;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String description;
+        private @Nullable String dictionaryDelimiter;
+        private @Nullable String dictionaryLocation;
+        private @Nullable Boolean dictionaryWordDisallowed;
+        private @Nullable String disallowedChars;
+        private @Nullable List<String> disallowedSubstrings;
+        private @Nullable List<String> disallowedUserAttributeValues;
+        private @Nullable Integer distinctCharacters;
+        private @Nullable String domainOcid;
+        private @Nullable String externalId;
+        private @Nullable Boolean firstNameDisallowed;
+        private @Nullable Boolean forcePasswordReset;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String idcsEndpoint;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Boolean lastNameDisallowed;
+        private @Nullable Integer lockoutDuration;
+        private @Nullable Integer maxIncorrectAttempts;
+        private @Nullable Integer maxLength;
+        private @Nullable Integer maxRepeatedChars;
+        private @Nullable Integer maxSpecialChars;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas;
+        private @Nullable Integer minAlphaNumerals;
+        private @Nullable Integer minAlphas;
+        private @Nullable Integer minLength;
+        private @Nullable Integer minLowerCase;
+        private @Nullable Integer minNumerals;
+        private @Nullable Integer minPasswordAge;
+        private @Nullable Integer minSpecialChars;
+        private @Nullable Integer minUniqueChars;
+        private @Nullable Integer minUpperCase;
+        private @Nullable String name;
+        private @Nullable Integer numPasswordsInHistory;
+        private @Nullable String ocid;
+        private @Nullable Integer passwordExpireWarning;
+        private @Nullable Integer passwordExpiresAfter;
+        private @Nullable String passwordStrength;
+        private @Nullable Integer priority;
+        private @Nullable String requiredChars;
+        private @Nullable String resourceTypeSchemaVersion;
+        private @Nullable List<String> schemas;
+        private @Nullable Boolean startsWithAlphabet;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable Boolean userNameDisallowed;
         public Builder() {}
         public Builder(GetDomainsPasswordPoliciesPasswordPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -820,316 +822,316 @@ public final class GetDomainsPasswordPoliciesPasswordPolicy {
         }
 
         @CustomType.Setter
-        public Builder allowedChars(String allowedChars) {
-            this.allowedChars = Objects.requireNonNull(allowedChars);
+        public Builder allowedChars(@Nullable String allowedChars) {
+            this.allowedChars = allowedChars;
             return this;
         }
         @CustomType.Setter
-        public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+        public Builder attributeSets(@Nullable List<String> attributeSets) {
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
             return attributeSets(List.of(attributeSets));
         }
         @CustomType.Setter
-        public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+        public Builder attributes(@Nullable String attributes) {
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
-        public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+        public Builder authorization(@Nullable String authorization) {
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder configuredPasswordPolicyRules(List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules) {
-            this.configuredPasswordPolicyRules = Objects.requireNonNull(configuredPasswordPolicyRules);
+        public Builder configuredPasswordPolicyRules(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules) {
+            this.configuredPasswordPolicyRules = configuredPasswordPolicyRules;
             return this;
         }
         public Builder configuredPasswordPolicyRules(GetDomainsPasswordPoliciesPasswordPolicyConfiguredPasswordPolicyRule... configuredPasswordPolicyRules) {
             return configuredPasswordPolicyRules(List.of(configuredPasswordPolicyRules));
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder dictionaryDelimiter(String dictionaryDelimiter) {
-            this.dictionaryDelimiter = Objects.requireNonNull(dictionaryDelimiter);
+        public Builder dictionaryDelimiter(@Nullable String dictionaryDelimiter) {
+            this.dictionaryDelimiter = dictionaryDelimiter;
             return this;
         }
         @CustomType.Setter
-        public Builder dictionaryLocation(String dictionaryLocation) {
-            this.dictionaryLocation = Objects.requireNonNull(dictionaryLocation);
+        public Builder dictionaryLocation(@Nullable String dictionaryLocation) {
+            this.dictionaryLocation = dictionaryLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder dictionaryWordDisallowed(Boolean dictionaryWordDisallowed) {
-            this.dictionaryWordDisallowed = Objects.requireNonNull(dictionaryWordDisallowed);
+        public Builder dictionaryWordDisallowed(@Nullable Boolean dictionaryWordDisallowed) {
+            this.dictionaryWordDisallowed = dictionaryWordDisallowed;
             return this;
         }
         @CustomType.Setter
-        public Builder disallowedChars(String disallowedChars) {
-            this.disallowedChars = Objects.requireNonNull(disallowedChars);
+        public Builder disallowedChars(@Nullable String disallowedChars) {
+            this.disallowedChars = disallowedChars;
             return this;
         }
         @CustomType.Setter
-        public Builder disallowedSubstrings(List<String> disallowedSubstrings) {
-            this.disallowedSubstrings = Objects.requireNonNull(disallowedSubstrings);
+        public Builder disallowedSubstrings(@Nullable List<String> disallowedSubstrings) {
+            this.disallowedSubstrings = disallowedSubstrings;
             return this;
         }
         public Builder disallowedSubstrings(String... disallowedSubstrings) {
             return disallowedSubstrings(List.of(disallowedSubstrings));
         }
         @CustomType.Setter
-        public Builder disallowedUserAttributeValues(List<String> disallowedUserAttributeValues) {
-            this.disallowedUserAttributeValues = Objects.requireNonNull(disallowedUserAttributeValues);
+        public Builder disallowedUserAttributeValues(@Nullable List<String> disallowedUserAttributeValues) {
+            this.disallowedUserAttributeValues = disallowedUserAttributeValues;
             return this;
         }
         public Builder disallowedUserAttributeValues(String... disallowedUserAttributeValues) {
             return disallowedUserAttributeValues(List.of(disallowedUserAttributeValues));
         }
         @CustomType.Setter
-        public Builder distinctCharacters(Integer distinctCharacters) {
-            this.distinctCharacters = Objects.requireNonNull(distinctCharacters);
+        public Builder distinctCharacters(@Nullable Integer distinctCharacters) {
+            this.distinctCharacters = distinctCharacters;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder firstNameDisallowed(Boolean firstNameDisallowed) {
-            this.firstNameDisallowed = Objects.requireNonNull(firstNameDisallowed);
+        public Builder firstNameDisallowed(@Nullable Boolean firstNameDisallowed) {
+            this.firstNameDisallowed = firstNameDisallowed;
             return this;
         }
         @CustomType.Setter
-        public Builder forcePasswordReset(Boolean forcePasswordReset) {
-            this.forcePasswordReset = Objects.requireNonNull(forcePasswordReset);
+        public Builder forcePasswordReset(@Nullable Boolean forcePasswordReset) {
+            this.forcePasswordReset = forcePasswordReset;
             return this;
         }
         @CustomType.Setter
-        public Builder groups(List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups) {
-            this.groups = Objects.requireNonNull(groups);
+        public Builder groups(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicyGroup> groups) {
+            this.groups = groups;
             return this;
         }
         public Builder groups(GetDomainsPasswordPoliciesPasswordPolicyGroup... groups) {
             return groups(List.of(groups));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsPasswordPoliciesPasswordPolicyIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+        public Builder idcsEndpoint(@Nullable String idcsEndpoint) {
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsPasswordPoliciesPasswordPolicyIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder lastNameDisallowed(Boolean lastNameDisallowed) {
-            this.lastNameDisallowed = Objects.requireNonNull(lastNameDisallowed);
+        public Builder lastNameDisallowed(@Nullable Boolean lastNameDisallowed) {
+            this.lastNameDisallowed = lastNameDisallowed;
             return this;
         }
         @CustomType.Setter
-        public Builder lockoutDuration(Integer lockoutDuration) {
-            this.lockoutDuration = Objects.requireNonNull(lockoutDuration);
+        public Builder lockoutDuration(@Nullable Integer lockoutDuration) {
+            this.lockoutDuration = lockoutDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
-            this.maxIncorrectAttempts = Objects.requireNonNull(maxIncorrectAttempts);
+        public Builder maxIncorrectAttempts(@Nullable Integer maxIncorrectAttempts) {
+            this.maxIncorrectAttempts = maxIncorrectAttempts;
             return this;
         }
         @CustomType.Setter
-        public Builder maxLength(Integer maxLength) {
-            this.maxLength = Objects.requireNonNull(maxLength);
+        public Builder maxLength(@Nullable Integer maxLength) {
+            this.maxLength = maxLength;
             return this;
         }
         @CustomType.Setter
-        public Builder maxRepeatedChars(Integer maxRepeatedChars) {
-            this.maxRepeatedChars = Objects.requireNonNull(maxRepeatedChars);
+        public Builder maxRepeatedChars(@Nullable Integer maxRepeatedChars) {
+            this.maxRepeatedChars = maxRepeatedChars;
             return this;
         }
         @CustomType.Setter
-        public Builder maxSpecialChars(Integer maxSpecialChars) {
-            this.maxSpecialChars = Objects.requireNonNull(maxSpecialChars);
+        public Builder maxSpecialChars(@Nullable Integer maxSpecialChars) {
+            this.maxSpecialChars = maxSpecialChars;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicyMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsPasswordPoliciesPasswordPolicyMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder minAlphaNumerals(Integer minAlphaNumerals) {
-            this.minAlphaNumerals = Objects.requireNonNull(minAlphaNumerals);
+        public Builder minAlphaNumerals(@Nullable Integer minAlphaNumerals) {
+            this.minAlphaNumerals = minAlphaNumerals;
             return this;
         }
         @CustomType.Setter
-        public Builder minAlphas(Integer minAlphas) {
-            this.minAlphas = Objects.requireNonNull(minAlphas);
+        public Builder minAlphas(@Nullable Integer minAlphas) {
+            this.minAlphas = minAlphas;
             return this;
         }
         @CustomType.Setter
-        public Builder minLength(Integer minLength) {
-            this.minLength = Objects.requireNonNull(minLength);
+        public Builder minLength(@Nullable Integer minLength) {
+            this.minLength = minLength;
             return this;
         }
         @CustomType.Setter
-        public Builder minLowerCase(Integer minLowerCase) {
-            this.minLowerCase = Objects.requireNonNull(minLowerCase);
+        public Builder minLowerCase(@Nullable Integer minLowerCase) {
+            this.minLowerCase = minLowerCase;
             return this;
         }
         @CustomType.Setter
-        public Builder minNumerals(Integer minNumerals) {
-            this.minNumerals = Objects.requireNonNull(minNumerals);
+        public Builder minNumerals(@Nullable Integer minNumerals) {
+            this.minNumerals = minNumerals;
             return this;
         }
         @CustomType.Setter
-        public Builder minPasswordAge(Integer minPasswordAge) {
-            this.minPasswordAge = Objects.requireNonNull(minPasswordAge);
+        public Builder minPasswordAge(@Nullable Integer minPasswordAge) {
+            this.minPasswordAge = minPasswordAge;
             return this;
         }
         @CustomType.Setter
-        public Builder minSpecialChars(Integer minSpecialChars) {
-            this.minSpecialChars = Objects.requireNonNull(minSpecialChars);
+        public Builder minSpecialChars(@Nullable Integer minSpecialChars) {
+            this.minSpecialChars = minSpecialChars;
             return this;
         }
         @CustomType.Setter
-        public Builder minUniqueChars(Integer minUniqueChars) {
-            this.minUniqueChars = Objects.requireNonNull(minUniqueChars);
+        public Builder minUniqueChars(@Nullable Integer minUniqueChars) {
+            this.minUniqueChars = minUniqueChars;
             return this;
         }
         @CustomType.Setter
-        public Builder minUpperCase(Integer minUpperCase) {
-            this.minUpperCase = Objects.requireNonNull(minUpperCase);
+        public Builder minUpperCase(@Nullable Integer minUpperCase) {
+            this.minUpperCase = minUpperCase;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder numPasswordsInHistory(Integer numPasswordsInHistory) {
-            this.numPasswordsInHistory = Objects.requireNonNull(numPasswordsInHistory);
+        public Builder numPasswordsInHistory(@Nullable Integer numPasswordsInHistory) {
+            this.numPasswordsInHistory = numPasswordsInHistory;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordExpireWarning(Integer passwordExpireWarning) {
-            this.passwordExpireWarning = Objects.requireNonNull(passwordExpireWarning);
+        public Builder passwordExpireWarning(@Nullable Integer passwordExpireWarning) {
+            this.passwordExpireWarning = passwordExpireWarning;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordExpiresAfter(Integer passwordExpiresAfter) {
-            this.passwordExpiresAfter = Objects.requireNonNull(passwordExpiresAfter);
+        public Builder passwordExpiresAfter(@Nullable Integer passwordExpiresAfter) {
+            this.passwordExpiresAfter = passwordExpiresAfter;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordStrength(String passwordStrength) {
-            this.passwordStrength = Objects.requireNonNull(passwordStrength);
+        public Builder passwordStrength(@Nullable String passwordStrength) {
+            this.passwordStrength = passwordStrength;
             return this;
         }
         @CustomType.Setter
-        public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+        public Builder priority(@Nullable Integer priority) {
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
-        public Builder requiredChars(String requiredChars) {
-            this.requiredChars = Objects.requireNonNull(requiredChars);
+        public Builder requiredChars(@Nullable String requiredChars) {
+            this.requiredChars = requiredChars;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+        public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder startsWithAlphabet(Boolean startsWithAlphabet) {
-            this.startsWithAlphabet = Objects.requireNonNull(startsWithAlphabet);
+        public Builder startsWithAlphabet(@Nullable Boolean startsWithAlphabet) {
+            this.startsWithAlphabet = startsWithAlphabet;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicyTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsPasswordPoliciesPasswordPolicyTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder userNameDisallowed(Boolean userNameDisallowed) {
-            this.userNameDisallowed = Objects.requireNonNull(userNameDisallowed);
+        public Builder userNameDisallowed(@Nullable Boolean userNameDisallowed) {
+            this.userNameDisallowed = userNameDisallowed;
             return this;
         }
         public GetDomainsPasswordPoliciesPasswordPolicy build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserAddress {
@@ -14,99 +16,99 @@ public final class GetDomainsUsersUserAddress {
      * @return The country name component.
      * 
      */
-    private String country;
+    private @Nullable String country;
     /**
      * @return Full name
      * 
      */
-    private String formatted;
+    private @Nullable String formatted;
     /**
      * @return The city or locality component.
      * 
      */
-    private String locality;
+    private @Nullable String locality;
     /**
      * @return The zipcode or postal code component.
      * 
      */
-    private String postalCode;
+    private @Nullable String postalCode;
     /**
      * @return A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    private Boolean primary;
+    private @Nullable Boolean primary;
     /**
      * @return The state or region component.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
      * 
      */
-    private String streetAddress;
+    private @Nullable String streetAddress;
     /**
      * @return A label indicating the attribute&#39;s function.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDomainsUsersUserAddress() {}
     /**
      * @return The country name component.
      * 
      */
-    public String country() {
-        return this.country;
+    public Optional<String> country() {
+        return Optional.ofNullable(this.country);
     }
     /**
      * @return Full name
      * 
      */
-    public String formatted() {
-        return this.formatted;
+    public Optional<String> formatted() {
+        return Optional.ofNullable(this.formatted);
     }
     /**
      * @return The city or locality component.
      * 
      */
-    public String locality() {
-        return this.locality;
+    public Optional<String> locality() {
+        return Optional.ofNullable(this.locality);
     }
     /**
      * @return The zipcode or postal code component.
      * 
      */
-    public String postalCode() {
-        return this.postalCode;
+    public Optional<String> postalCode() {
+        return Optional.ofNullable(this.postalCode);
     }
     /**
      * @return A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      */
-    public Boolean primary() {
-        return this.primary;
+    public Optional<Boolean> primary() {
+        return Optional.ofNullable(this.primary);
     }
     /**
      * @return The state or region component.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The full street address component, which may include house number, street name, PO BOX, and multi-line extended street address information. This attribute MAY contain newlines.
      * 
      */
-    public String streetAddress() {
-        return this.streetAddress;
+    public Optional<String> streetAddress() {
+        return Optional.ofNullable(this.streetAddress);
     }
     /**
      * @return A label indicating the attribute&#39;s function.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetDomainsUsersUserAddress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String country;
-        private String formatted;
-        private String locality;
-        private String postalCode;
-        private Boolean primary;
-        private String region;
-        private String streetAddress;
-        private String type;
+        private @Nullable String country;
+        private @Nullable String formatted;
+        private @Nullable String locality;
+        private @Nullable String postalCode;
+        private @Nullable Boolean primary;
+        private @Nullable String region;
+        private @Nullable String streetAddress;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDomainsUsersUserAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,43 +142,43 @@ public final class GetDomainsUsersUserAddress {
         }
 
         @CustomType.Setter
-        public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+        public Builder country(@Nullable String country) {
+            this.country = country;
             return this;
         }
         @CustomType.Setter
-        public Builder formatted(String formatted) {
-            this.formatted = Objects.requireNonNull(formatted);
+        public Builder formatted(@Nullable String formatted) {
+            this.formatted = formatted;
             return this;
         }
         @CustomType.Setter
-        public Builder locality(String locality) {
-            this.locality = Objects.requireNonNull(locality);
+        public Builder locality(@Nullable String locality) {
+            this.locality = locality;
             return this;
         }
         @CustomType.Setter
-        public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+        public Builder postalCode(@Nullable String postalCode) {
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
-        public Builder primary(Boolean primary) {
-            this.primary = Objects.requireNonNull(primary);
+        public Builder primary(@Nullable Boolean primary) {
+            this.primary = primary;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder streetAddress(String streetAddress) {
-            this.streetAddress = Objects.requireNonNull(streetAddress);
+        public Builder streetAddress(@Nullable String streetAddress) {
+            this.streetAddress = streetAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDomainsUsersUserAddress build() {

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection {
-    private List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items;
+    private @Nullable List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items;
 
     private GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection() {}
     public List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items;
+        private @Nullable List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items;
         public Builder() {}
         public Builder(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem... items) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -77,21 +76,21 @@ type LookupDomainsAppArgs struct {
 // A collection of values returned by getDomainsApp.
 type LookupDomainsAppResult struct {
 	// Access token expiry
-	AccessTokenExpiry int `pulumi:"accessTokenExpiry"`
+	AccessTokenExpiry *int `pulumi:"accessTokenExpiry"`
 	// Accounts of App
 	Accounts []GetDomainsAppAccount `pulumi:"accounts"`
 	// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-	Active bool `pulumi:"active"`
+	Active *bool `pulumi:"active"`
 	// A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
 	AdminRoles []GetDomainsAppAdminRole `pulumi:"adminRoles"`
 	// Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
 	AliasApps []GetDomainsAppAliasApp `pulumi:"aliasApps"`
 	// If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-	AllUrlSchemesAllowed bool `pulumi:"allUrlSchemesAllowed"`
+	AllUrlSchemesAllowed *bool `pulumi:"allUrlSchemesAllowed"`
 	// If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-	AllowAccessControl bool `pulumi:"allowAccessControl"`
+	AllowAccessControl *bool `pulumi:"allowAccessControl"`
 	// If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-	AllowOffline bool `pulumi:"allowOffline"`
+	AllowOffline *bool `pulumi:"allowOffline"`
 	// List of grant-types that this App is allowed to use when it acts as an OAuthClient.
 	AllowedGrants []string `pulumi:"allowedGrants"`
 	// OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
@@ -101,13 +100,13 @@ type LookupDomainsAppResult struct {
 	// A list of tags, acting as an OAuthClient, this App is allowed to access.
 	AllowedTags []GetDomainsAppAllowedTag `pulumi:"allowedTags"`
 	// Application icon.
-	AppIcon string `pulumi:"appIcon"`
+	AppIcon *string `pulumi:"appIcon"`
 	// The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
 	AppId string `pulumi:"appId"`
 	// App Sign-on Policy.
 	AppSignonPolicies []GetDomainsAppAppSignonPolicy `pulumi:"appSignonPolicies"`
 	// Application thumbnail.
-	AppThumbnail string `pulumi:"appThumbnail"`
+	AppThumbnail *string `pulumi:"appThumbnail"`
 	// Network Perimeter
 	AppsNetworkPerimeters []GetDomainsAppAppsNetworkPerimeter `pulumi:"appsNetworkPerimeters"`
 	// OPCService facet of the application.
@@ -117,65 +116,65 @@ type LookupDomainsAppResult struct {
 	AttributeSets          []string                             `pulumi:"attributeSets"`
 	Attributes             *string                              `pulumi:"attributes"`
 	// The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-	Audience      string  `pulumi:"audience"`
+	Audience      *string `pulumi:"audience"`
 	Authorization *string `pulumi:"authorization"`
 	// Application template on which the application is based.
 	BasedOnTemplates []GetDomainsAppBasedOnTemplate `pulumi:"basedOnTemplates"`
 	// If true, indicates that consent should be skipped for all scopes
-	BypassConsent bool `pulumi:"bypassConsent"`
+	BypassConsent *bool `pulumi:"bypassConsent"`
 	// Callback Service URL
-	CallbackServiceUrl string `pulumi:"callbackServiceUrl"`
+	CallbackServiceUrl *string `pulumi:"callbackServiceUrl"`
 	// Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
 	Certificates []GetDomainsAppCertificate `pulumi:"certificates"`
 	// Network Perimeters checking mode
-	ClientIpChecking string `pulumi:"clientIpChecking"`
+	ClientIpChecking *string `pulumi:"clientIpChecking"`
 	// This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-	ClientSecret string `pulumi:"clientSecret"`
+	ClientSecret *string `pulumi:"clientSecret"`
 	// Specifies the type of access that this App has when it acts as an OAuthClient.
-	ClientType string `pulumi:"clientType"`
+	ClientType *string `pulumi:"clientType"`
 	// A collection of arbitrary properties that scope the privileges of a cloud-control App.
 	CloudControlProperties []GetDomainsAppCloudControlProperty `pulumi:"cloudControlProperties"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// Contact Email Address
-	ContactEmailAddress string `pulumi:"contactEmailAddress"`
+	ContactEmailAddress *string `pulumi:"contactEmailAddress"`
 	// Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
 	DelegatedServiceNames []string `pulumi:"delegatedServiceNames"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// The description of the AppRole.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Indicates whether the application is allowed to be access using kmsi token.
-	DisableKmsiTokenAuthentication bool `pulumi:"disableKmsiTokenAuthentication"`
+	DisableKmsiTokenAuthentication *bool `pulumi:"disableKmsiTokenAuthentication"`
 	// Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// App attributes editable by subject
 	EditableAttributes []GetDomainsAppEditableAttribute `pulumi:"editableAttributes"`
 	// This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-	ErrorPageUrl string `pulumi:"errorPageUrl"`
+	ErrorPageUrl *string `pulumi:"errorPageUrl"`
 	// A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	GrantedAppRoles []GetDomainsAppGrantedAppRole `pulumi:"grantedAppRoles"`
 	// Grants assigned to the app
 	Grants []GetDomainsAppGrant `pulumi:"grants"`
 	// Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-	HashedClientSecret string `pulumi:"hashedClientSecret"`
+	HashedClientSecret *string `pulumi:"hashedClientSecret"`
 	// Home Page URL
-	HomePageUrl string `pulumi:"homePageUrl"`
+	HomePageUrl *string `pulumi:"homePageUrl"`
 	// URL of application icon.
-	Icon string `pulumi:"icon"`
+	Icon *string `pulumi:"icon"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Encryption Alogrithm to use for encrypting ID token.
-	IdTokenEncAlgo string `pulumi:"idTokenEncAlgo"`
+	IdTokenEncAlgo *string `pulumi:"idTokenEncAlgo"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsAppIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                       `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsAppIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
@@ -183,81 +182,81 @@ type LookupDomainsAppResult struct {
 	// IDP Policy.
 	IdpPolicies []GetDomainsAppIdpPolicy `pulumi:"idpPolicies"`
 	// If true, this App is an internal infrastructure App.
-	Infrastructure bool `pulumi:"infrastructure"`
+	Infrastructure *bool `pulumi:"infrastructure"`
 	// If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-	IsAliasApp bool `pulumi:"isAliasApp"`
+	IsAliasApp *bool `pulumi:"isAliasApp"`
 	// If true, this application acts as database service Application
-	IsDatabaseService bool `pulumi:"isDatabaseService"`
+	IsDatabaseService *bool `pulumi:"isDatabaseService"`
 	// If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-	IsEnterpriseApp bool `pulumi:"isEnterpriseApp"`
+	IsEnterpriseApp *bool `pulumi:"isEnterpriseApp"`
 	// If true, this application acts as FormFill Application
-	IsFormFill bool `pulumi:"isFormFill"`
+	IsFormFill *bool `pulumi:"isFormFill"`
 	// If true, indicates that this App supports Kerberos Authentication
-	IsKerberosRealm bool `pulumi:"isKerberosRealm"`
+	IsKerberosRealm *bool `pulumi:"isKerberosRealm"`
 	// If true, this App allows runtime services to log end users into this App automatically.
-	IsLoginTarget bool `pulumi:"isLoginTarget"`
+	IsLoginTarget *bool `pulumi:"isLoginTarget"`
 	// If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-	IsManagedApp bool `pulumi:"isManagedApp"`
+	IsManagedApp *bool `pulumi:"isManagedApp"`
 	// If true, indicates that the App should be visible in each end-user's mobile application.
-	IsMobileTarget bool `pulumi:"isMobileTarget"`
+	IsMobileTarget *bool `pulumi:"isMobileTarget"`
 	// If true, indicates the app is used for multicloud service integration.
-	IsMulticloudServiceApp bool `pulumi:"isMulticloudServiceApp"`
+	IsMulticloudServiceApp *bool `pulumi:"isMulticloudServiceApp"`
 	// If true, this application acts as an OAuth Client
-	IsOauthClient bool `pulumi:"isOauthClient"`
+	IsOauthClient *bool `pulumi:"isOauthClient"`
 	// If true, indicates that this application acts as an OAuth Resource.
-	IsOauthResource bool `pulumi:"isOauthResource"`
+	IsOauthResource *bool `pulumi:"isOauthResource"`
 	// This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-	IsObligationCapable bool `pulumi:"isObligationCapable"`
+	IsObligationCapable *bool `pulumi:"isObligationCapable"`
 	// If true, this application is an Oracle Public Cloud service-instance.
-	IsOpcService bool `pulumi:"isOpcService"`
+	IsOpcService *bool `pulumi:"isOpcService"`
 	// If true, this application acts as an Radius App
-	IsRadiusApp bool `pulumi:"isRadiusApp"`
+	IsRadiusApp *bool `pulumi:"isRadiusApp"`
 	// If true, then this App acts as a SAML Service Provider.
-	IsSamlServiceProvider bool `pulumi:"isSamlServiceProvider"`
+	IsSamlServiceProvider *bool `pulumi:"isSamlServiceProvider"`
 	// If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-	IsUnmanagedApp bool `pulumi:"isUnmanagedApp"`
+	IsUnmanagedApp *bool `pulumi:"isUnmanagedApp"`
 	// If true, the webtier policy is active
-	IsWebTierPolicy bool `pulumi:"isWebTierPolicy"`
+	IsWebTierPolicy *bool `pulumi:"isWebTierPolicy"`
 	// The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-	LandingPageUrl string `pulumi:"landingPageUrl"`
+	LandingPageUrl *string `pulumi:"landingPageUrl"`
 	// This attribute specifies the callback URL for the social linking operation.
-	LinkingCallbackUrl string `pulumi:"linkingCallbackUrl"`
+	LinkingCallbackUrl *string `pulumi:"linkingCallbackUrl"`
 	// The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-	LoginMechanism string `pulumi:"loginMechanism"`
+	LoginMechanism *string `pulumi:"loginMechanism"`
 	// This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-	LoginPageUrl string `pulumi:"loginPageUrl"`
+	LoginPageUrl *string `pulumi:"loginPageUrl"`
 	// This attribute specifies the URL of the page that the App uses when an end-user signs out.
-	LogoutPageUrl string `pulumi:"logoutPageUrl"`
+	LogoutPageUrl *string `pulumi:"logoutPageUrl"`
 	// OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-	LogoutUri string `pulumi:"logoutUri"`
+	LogoutUri *string `pulumi:"logoutUri"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsAppMeta `pulumi:"metas"`
 	// Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-	MeterAsOpcService bool `pulumi:"meterAsOpcService"`
+	MeterAsOpcService *bool `pulumi:"meterAsOpcService"`
 	// If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-	Migrated bool `pulumi:"migrated"`
+	Migrated *bool `pulumi:"migrated"`
 	// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
 	PostLogoutRedirectUris []string `pulumi:"postLogoutRedirectUris"`
 	// Privacy Policy URL
-	PrivacyPolicyUrl string `pulumi:"privacyPolicyUrl"`
+	PrivacyPolicyUrl *string `pulumi:"privacyPolicyUrl"`
 	// Application Logo URL
-	ProductLogoUrl string `pulumi:"productLogoUrl"`
+	ProductLogoUrl *string `pulumi:"productLogoUrl"`
 	// Product Name
-	ProductName string `pulumi:"productName"`
+	ProductName *string `pulumi:"productName"`
 	// A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
 	ProtectableSecondaryAudiences []GetDomainsAppProtectableSecondaryAudience `pulumi:"protectableSecondaryAudiences"`
 	// RADIUS Policy assigned to this application.
 	RadiusPolicies []GetDomainsAppRadiusPolicy `pulumi:"radiusPolicies"`
 	// If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-	ReadyToUpgrade bool `pulumi:"readyToUpgrade"`
+	ReadyToUpgrade *bool `pulumi:"readyToUpgrade"`
 	// OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
 	RedirectUris []string `pulumi:"redirectUris"`
 	// Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-	RefreshTokenExpiry        int     `pulumi:"refreshTokenExpiry"`
+	RefreshTokenExpiry        *int    `pulumi:"refreshTokenExpiry"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
 	SamlServiceProviders []GetDomainsAppSamlServiceProvider `pulumi:"samlServiceProviders"`
@@ -270,25 +269,25 @@ type LookupDomainsAppResult struct {
 	// Custom attribute that is required to compute other attribute values during app creation.
 	ServiceParams []GetDomainsAppServiceParam `pulumi:"serviceParams"`
 	// This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-	ServiceTypeUrn string `pulumi:"serviceTypeUrn"`
+	ServiceTypeUrn *string `pulumi:"serviceTypeUrn"`
 	// This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-	ServiceTypeVersion string `pulumi:"serviceTypeVersion"`
+	ServiceTypeVersion *string `pulumi:"serviceTypeVersion"`
 	// If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-	ShowInMyApps bool `pulumi:"showInMyApps"`
+	ShowInMyApps *bool `pulumi:"showInMyApps"`
 	// Sign-on Policy.
 	SignonPolicies []GetDomainsAppSignonPolicy `pulumi:"signonPolicies"`
 	// A list of tags on this resource.
 	Tags []GetDomainsAppTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Terms of Service URL
-	TermsOfServiceUrl string `pulumi:"termsOfServiceUrl"`
+	TermsOfServiceUrl *string `pulumi:"termsOfServiceUrl"`
 	// Terms Of Use.
 	TermsOfUses []GetDomainsAppTermsOfUse `pulumi:"termsOfUses"`
 	// Trust Policies.
 	TrustPolicies []GetDomainsAppTrustPolicy `pulumi:"trustPolicies"`
 	// Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-	TrustScope string `pulumi:"trustScope"`
+	TrustScope *string `pulumi:"trustScope"`
 	// Oracle Cloud Infrastructure Tags.
 	UrnietfparamsscimschemasoracleidcsextensionOciTags []GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTag `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 	// This extension provides attributes for database service facet of an App
@@ -367,15 +366,9 @@ func (o LookupDomainsAppResultOutput) ToLookupDomainsAppResultOutputWithContext(
 	return o
 }
 
-func (o LookupDomainsAppResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAppResult] {
-	return pulumix.Output[LookupDomainsAppResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Access token expiry
-func (o LookupDomainsAppResultOutput) AccessTokenExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) int { return v.AccessTokenExpiry }).(pulumi.IntOutput)
+func (o LookupDomainsAppResultOutput) AccessTokenExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *int { return v.AccessTokenExpiry }).(pulumi.IntPtrOutput)
 }
 
 // Accounts of App
@@ -384,8 +377,8 @@ func (o LookupDomainsAppResultOutput) Accounts() GetDomainsAppAccountArrayOutput
 }
 
 // If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-func (o LookupDomainsAppResultOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.Active }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
 // A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
@@ -399,18 +392,18 @@ func (o LookupDomainsAppResultOutput) AliasApps() GetDomainsAppAliasAppArrayOutp
 }
 
 // If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-func (o LookupDomainsAppResultOutput) AllUrlSchemesAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.AllUrlSchemesAllowed }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) AllUrlSchemesAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.AllUrlSchemesAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-func (o LookupDomainsAppResultOutput) AllowAccessControl() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.AllowAccessControl }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) AllowAccessControl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.AllowAccessControl }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-func (o LookupDomainsAppResultOutput) AllowOffline() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.AllowOffline }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) AllowOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.AllowOffline }).(pulumi.BoolPtrOutput)
 }
 
 // List of grant-types that this App is allowed to use when it acts as an OAuthClient.
@@ -434,8 +427,8 @@ func (o LookupDomainsAppResultOutput) AllowedTags() GetDomainsAppAllowedTagArray
 }
 
 // Application icon.
-func (o LookupDomainsAppResultOutput) AppIcon() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.AppIcon }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) AppIcon() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.AppIcon }).(pulumi.StringPtrOutput)
 }
 
 // The id of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
@@ -449,8 +442,8 @@ func (o LookupDomainsAppResultOutput) AppSignonPolicies() GetDomainsAppAppSignon
 }
 
 // Application thumbnail.
-func (o LookupDomainsAppResultOutput) AppThumbnail() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.AppThumbnail }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) AppThumbnail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.AppThumbnail }).(pulumi.StringPtrOutput)
 }
 
 // Network Perimeter
@@ -477,8 +470,8 @@ func (o LookupDomainsAppResultOutput) Attributes() pulumi.StringPtrOutput {
 }
 
 // The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-func (o LookupDomainsAppResultOutput) Audience() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.Audience }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.Audience }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsAppResultOutput) Authorization() pulumi.StringPtrOutput {
@@ -491,13 +484,13 @@ func (o LookupDomainsAppResultOutput) BasedOnTemplates() GetDomainsAppBasedOnTem
 }
 
 // If true, indicates that consent should be skipped for all scopes
-func (o LookupDomainsAppResultOutput) BypassConsent() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.BypassConsent }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) BypassConsent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.BypassConsent }).(pulumi.BoolPtrOutput)
 }
 
 // Callback Service URL
-func (o LookupDomainsAppResultOutput) CallbackServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.CallbackServiceUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) CallbackServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.CallbackServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
@@ -506,18 +499,18 @@ func (o LookupDomainsAppResultOutput) Certificates() GetDomainsAppCertificateArr
 }
 
 // Network Perimeters checking mode
-func (o LookupDomainsAppResultOutput) ClientIpChecking() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ClientIpChecking }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ClientIpChecking() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ClientIpChecking }).(pulumi.StringPtrOutput)
 }
 
 // This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-func (o LookupDomainsAppResultOutput) ClientSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ClientSecret }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the type of access that this App has when it acts as an OAuthClient.
-func (o LookupDomainsAppResultOutput) ClientType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ClientType }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ClientType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ClientType }).(pulumi.StringPtrOutput)
 }
 
 // A collection of arbitrary properties that scope the privileges of a cloud-control App.
@@ -526,13 +519,13 @@ func (o LookupDomainsAppResultOutput) CloudControlProperties() GetDomainsAppClou
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsAppResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // Contact Email Address
-func (o LookupDomainsAppResultOutput) ContactEmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ContactEmailAddress }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ContactEmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ContactEmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
@@ -541,28 +534,28 @@ func (o LookupDomainsAppResultOutput) DelegatedServiceNames() pulumi.StringArray
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsAppResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // The description of the AppRole.
-func (o LookupDomainsAppResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the application is allowed to be access using kmsi token.
-func (o LookupDomainsAppResultOutput) DisableKmsiTokenAuthentication() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.DisableKmsiTokenAuthentication }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) DisableKmsiTokenAuthentication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.DisableKmsiTokenAuthentication }).(pulumi.BoolPtrOutput)
 }
 
 // Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
-func (o LookupDomainsAppResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsAppResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // App attributes editable by subject
@@ -571,8 +564,8 @@ func (o LookupDomainsAppResultOutput) EditableAttributes() GetDomainsAppEditable
 }
 
 // This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-func (o LookupDomainsAppResultOutput) ErrorPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ErrorPageUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ErrorPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ErrorPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -586,28 +579,28 @@ func (o LookupDomainsAppResultOutput) Grants() GetDomainsAppGrantArrayOutput {
 }
 
 // Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-func (o LookupDomainsAppResultOutput) HashedClientSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.HashedClientSecret }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) HashedClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.HashedClientSecret }).(pulumi.StringPtrOutput)
 }
 
 // Home Page URL
-func (o LookupDomainsAppResultOutput) HomePageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.HomePageUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) HomePageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.HomePageUrl }).(pulumi.StringPtrOutput)
 }
 
 // URL of application icon.
-func (o LookupDomainsAppResultOutput) Icon() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.Icon }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) Icon() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.Icon }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsAppResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Encryption Alogrithm to use for encrypting ID token.
-func (o LookupDomainsAppResultOutput) IdTokenEncAlgo() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.IdTokenEncAlgo }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) IdTokenEncAlgo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.IdTokenEncAlgo }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -625,8 +618,8 @@ func (o LookupDomainsAppResultOutput) IdcsLastModifiedBies() GetDomainsAppIdcsLa
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsAppResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -645,123 +638,123 @@ func (o LookupDomainsAppResultOutput) IdpPolicies() GetDomainsAppIdpPolicyArrayO
 }
 
 // If true, this App is an internal infrastructure App.
-func (o LookupDomainsAppResultOutput) Infrastructure() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.Infrastructure }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) Infrastructure() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.Infrastructure }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-func (o LookupDomainsAppResultOutput) IsAliasApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsAliasApp }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsAliasApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsAliasApp }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this application acts as database service Application
-func (o LookupDomainsAppResultOutput) IsDatabaseService() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsDatabaseService }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsDatabaseService() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsDatabaseService }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-func (o LookupDomainsAppResultOutput) IsEnterpriseApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsEnterpriseApp }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsEnterpriseApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsEnterpriseApp }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this application acts as FormFill Application
-func (o LookupDomainsAppResultOutput) IsFormFill() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsFormFill }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsFormFill() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsFormFill }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that this App supports Kerberos Authentication
-func (o LookupDomainsAppResultOutput) IsKerberosRealm() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsKerberosRealm }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsKerberosRealm() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsKerberosRealm }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this App allows runtime services to log end users into this App automatically.
-func (o LookupDomainsAppResultOutput) IsLoginTarget() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsLoginTarget }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsLoginTarget() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsLoginTarget }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-func (o LookupDomainsAppResultOutput) IsManagedApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsManagedApp }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsManagedApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsManagedApp }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that the App should be visible in each end-user's mobile application.
-func (o LookupDomainsAppResultOutput) IsMobileTarget() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsMobileTarget }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsMobileTarget() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsMobileTarget }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates the app is used for multicloud service integration.
-func (o LookupDomainsAppResultOutput) IsMulticloudServiceApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsMulticloudServiceApp }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsMulticloudServiceApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsMulticloudServiceApp }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this application acts as an OAuth Client
-func (o LookupDomainsAppResultOutput) IsOauthClient() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsOauthClient }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsOauthClient() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsOauthClient }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that this application acts as an OAuth Resource.
-func (o LookupDomainsAppResultOutput) IsOauthResource() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsOauthResource }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsOauthResource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsOauthResource }).(pulumi.BoolPtrOutput)
 }
 
 // This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-func (o LookupDomainsAppResultOutput) IsObligationCapable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsObligationCapable }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsObligationCapable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsObligationCapable }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this application is an Oracle Public Cloud service-instance.
-func (o LookupDomainsAppResultOutput) IsOpcService() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsOpcService }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsOpcService() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsOpcService }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this application acts as an Radius App
-func (o LookupDomainsAppResultOutput) IsRadiusApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsRadiusApp }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsRadiusApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsRadiusApp }).(pulumi.BoolPtrOutput)
 }
 
 // If true, then this App acts as a SAML Service Provider.
-func (o LookupDomainsAppResultOutput) IsSamlServiceProvider() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsSamlServiceProvider }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsSamlServiceProvider() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsSamlServiceProvider }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-func (o LookupDomainsAppResultOutput) IsUnmanagedApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsUnmanagedApp }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsUnmanagedApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsUnmanagedApp }).(pulumi.BoolPtrOutput)
 }
 
 // If true, the webtier policy is active
-func (o LookupDomainsAppResultOutput) IsWebTierPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.IsWebTierPolicy }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) IsWebTierPolicy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.IsWebTierPolicy }).(pulumi.BoolPtrOutput)
 }
 
 // The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-func (o LookupDomainsAppResultOutput) LandingPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.LandingPageUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) LandingPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.LandingPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // This attribute specifies the callback URL for the social linking operation.
-func (o LookupDomainsAppResultOutput) LinkingCallbackUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.LinkingCallbackUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) LinkingCallbackUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.LinkingCallbackUrl }).(pulumi.StringPtrOutput)
 }
 
 // The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-func (o LookupDomainsAppResultOutput) LoginMechanism() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.LoginMechanism }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) LoginMechanism() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.LoginMechanism }).(pulumi.StringPtrOutput)
 }
 
 // This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-func (o LookupDomainsAppResultOutput) LoginPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.LoginPageUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) LoginPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.LoginPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // This attribute specifies the URL of the page that the App uses when an end-user signs out.
-func (o LookupDomainsAppResultOutput) LogoutPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.LogoutPageUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) LogoutPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.LogoutPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-func (o LookupDomainsAppResultOutput) LogoutUri() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.LogoutUri }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) LogoutUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.LogoutUri }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -770,23 +763,23 @@ func (o LookupDomainsAppResultOutput) Metas() GetDomainsAppMetaArrayOutput {
 }
 
 // Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-func (o LookupDomainsAppResultOutput) MeterAsOpcService() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.MeterAsOpcService }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) MeterAsOpcService() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.MeterAsOpcService }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-func (o LookupDomainsAppResultOutput) Migrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.Migrated }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) Migrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.Migrated }).(pulumi.BoolPtrOutput)
 }
 
 // The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-func (o LookupDomainsAppResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsAppResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
@@ -795,18 +788,18 @@ func (o LookupDomainsAppResultOutput) PostLogoutRedirectUris() pulumi.StringArra
 }
 
 // Privacy Policy URL
-func (o LookupDomainsAppResultOutput) PrivacyPolicyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.PrivacyPolicyUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) PrivacyPolicyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.PrivacyPolicyUrl }).(pulumi.StringPtrOutput)
 }
 
 // Application Logo URL
-func (o LookupDomainsAppResultOutput) ProductLogoUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ProductLogoUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ProductLogoUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ProductLogoUrl }).(pulumi.StringPtrOutput)
 }
 
 // Product Name
-func (o LookupDomainsAppResultOutput) ProductName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ProductName }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ProductName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ProductName }).(pulumi.StringPtrOutput)
 }
 
 // A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -822,8 +815,8 @@ func (o LookupDomainsAppResultOutput) RadiusPolicies() GetDomainsAppRadiusPolicy
 }
 
 // If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-func (o LookupDomainsAppResultOutput) ReadyToUpgrade() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.ReadyToUpgrade }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) ReadyToUpgrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.ReadyToUpgrade }).(pulumi.BoolPtrOutput)
 }
 
 // OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
@@ -832,8 +825,8 @@ func (o LookupDomainsAppResultOutput) RedirectUris() pulumi.StringArrayOutput {
 }
 
 // Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-func (o LookupDomainsAppResultOutput) RefreshTokenExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) int { return v.RefreshTokenExpiry }).(pulumi.IntOutput)
+func (o LookupDomainsAppResultOutput) RefreshTokenExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *int { return v.RefreshTokenExpiry }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupDomainsAppResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -866,18 +859,18 @@ func (o LookupDomainsAppResultOutput) ServiceParams() GetDomainsAppServiceParamA
 }
 
 // This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-func (o LookupDomainsAppResultOutput) ServiceTypeUrn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ServiceTypeUrn }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ServiceTypeUrn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ServiceTypeUrn }).(pulumi.StringPtrOutput)
 }
 
 // This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-func (o LookupDomainsAppResultOutput) ServiceTypeVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.ServiceTypeVersion }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) ServiceTypeVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.ServiceTypeVersion }).(pulumi.StringPtrOutput)
 }
 
 // If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-func (o LookupDomainsAppResultOutput) ShowInMyApps() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) bool { return v.ShowInMyApps }).(pulumi.BoolOutput)
+func (o LookupDomainsAppResultOutput) ShowInMyApps() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *bool { return v.ShowInMyApps }).(pulumi.BoolPtrOutput)
 }
 
 // Sign-on Policy.
@@ -891,13 +884,13 @@ func (o LookupDomainsAppResultOutput) Tags() GetDomainsAppTagArrayOutput {
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsAppResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Terms of Service URL
-func (o LookupDomainsAppResultOutput) TermsOfServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.TermsOfServiceUrl }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) TermsOfServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.TermsOfServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // Terms Of Use.
@@ -911,8 +904,8 @@ func (o LookupDomainsAppResultOutput) TrustPolicies() GetDomainsAppTrustPolicyAr
 }
 
 // Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-func (o LookupDomainsAppResultOutput) TrustScope() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAppResult) string { return v.TrustScope }).(pulumi.StringOutput)
+func (o LookupDomainsAppResultOutput) TrustScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAppResult) *string { return v.TrustScope }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Tags.

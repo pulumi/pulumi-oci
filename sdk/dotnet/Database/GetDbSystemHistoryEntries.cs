@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of patch_history_entries.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDbSystemHistoryEntriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDbSystemHistoryEntriesPatchHistoryEntryResult> patchHistoryEntries)
         {

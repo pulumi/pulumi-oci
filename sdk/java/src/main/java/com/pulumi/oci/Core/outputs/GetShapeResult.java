@@ -21,9 +21,9 @@ public final class GetShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String imageId;
-    private List<GetShapeShape> shapes;
+    private @Nullable List<GetShapeShape> shapes;
 
     private GetShapeResult() {}
     public Optional<String> availabilityDomain() {
@@ -39,14 +39,14 @@ public final class GetShapeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     public List<GetShapeShape> shapes() {
-        return this.shapes;
+        return this.shapes == null ? List.of() : this.shapes;
     }
 
     public static Builder builder() {
@@ -61,9 +61,9 @@ public final class GetShapeResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetShapeFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String imageId;
-        private List<GetShapeShape> shapes;
+        private @Nullable List<GetShapeShape> shapes;
         public Builder() {}
         public Builder(GetShapeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetShapeResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -104,8 +104,8 @@ public final class GetShapeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder shapes(List<GetShapeShape> shapes) {
-            this.shapes = Objects.requireNonNull(shapes);
+        public Builder shapes(@Nullable List<GetShapeShape> shapes) {
+            this.shapes = shapes;
             return this;
         }
         public Builder shapes(GetShapeShape... shapes) {

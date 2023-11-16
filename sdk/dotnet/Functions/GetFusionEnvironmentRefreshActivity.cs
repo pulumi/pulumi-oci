@@ -122,16 +122,16 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// A friendly name for the refresh activity. Can be changed later.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string FusionEnvironmentId;
         /// <summary>
         /// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly string RefreshActivityId;
         /// <summary>
         /// Details of refresh investigation information, each item represents a different issue.
@@ -140,65 +140,65 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Service availability / impact during refresh activity execution up down
         /// </summary>
-        public readonly string ServiceAvailability;
+        public readonly string? ServiceAvailability;
         /// <summary>
         /// The OCID of the Fusion environment that is the source environment for the refresh.
         /// </summary>
-        public readonly string SourceFusionEnvironmentId;
+        public readonly string? SourceFusionEnvironmentId;
         /// <summary>
         /// The current state of the refreshActivity.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the refresh activity record was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeAccepted;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeExpectedFinish;
+        public readonly string? TimeExpectedFinish;
         /// <summary>
         /// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The date and time of the most recent source environment backup used for the environment refresh.
         /// </summary>
-        public readonly string TimeOfRestorationPoint;
+        public readonly string? TimeOfRestorationPoint;
         /// <summary>
         /// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetFusionEnvironmentRefreshActivityResult(
-            string displayName,
+            string? displayName,
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string refreshActivityId,
 
             ImmutableArray<Outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult> refreshIssueDetailsLists,
 
-            string serviceAvailability,
+            string? serviceAvailability,
 
-            string sourceFusionEnvironmentId,
+            string? sourceFusionEnvironmentId,
 
-            string state,
+            string? state,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeExpectedFinish,
+            string? timeExpectedFinish,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeOfRestorationPoint,
+            string? timeOfRestorationPoint,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             DisplayName = displayName;
             FusionEnvironmentId = fusionEnvironmentId;

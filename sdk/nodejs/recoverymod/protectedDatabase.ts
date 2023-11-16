@@ -81,11 +81,11 @@ export class ProtectedDatabase extends pulumi.CustomResource {
     /**
      * The OCID of the protected database.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    public readonly databaseId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      */
-    public readonly databaseSize!: pulumi.Output<string>;
+    public readonly databaseSize!: pulumi.Output<string | undefined>;
     /**
      * The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
      */
@@ -93,7 +93,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */
@@ -101,34 +101,34 @@ export class ProtectedDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Indicates the protection status of the database. Allowed values are:
      * * HEALTHY
      * * WARNING
      * * ALERT
      */
-    public /*out*/ readonly health!: pulumi.Output<string>;
+    public /*out*/ readonly health!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current health of the protected database.
      */
-    public /*out*/ readonly healthDetails!: pulumi.Output<string>;
+    public /*out*/ readonly healthDetails!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
      */
-    public /*out*/ readonly isReadOnlyResource!: pulumi.Output<boolean>;
+    public /*out*/ readonly isReadOnlyResource!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
      */
-    public readonly isRedoLogsShipped!: pulumi.Output<boolean>;
+    public readonly isRedoLogsShipped!: pulumi.Output<boolean | undefined>;
     /**
      * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Backup performance and storage utilization metrics for the protected database.
      */
-    public /*out*/ readonly metrics!: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseMetric[]>;
+    public /*out*/ readonly metrics!: pulumi.Output<outputs.RecoveryMod.ProtectedDatabaseMetric[] | undefined>;
     /**
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
@@ -144,23 +144,23 @@ export class ProtectedDatabase extends pulumi.CustomResource {
     /**
      * The current state of the Protected Database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      */
-    public /*out*/ readonly vpcUserName!: pulumi.Output<string>;
+    public /*out*/ readonly vpcUserName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ProtectedDatabase resource with the given unique name, arguments, and options.

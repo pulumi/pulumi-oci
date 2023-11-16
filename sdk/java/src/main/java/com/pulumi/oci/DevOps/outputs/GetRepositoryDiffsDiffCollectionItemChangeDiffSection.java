@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsDiffCollectionItemChangeD
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
@@ -15,12 +17,12 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
      * @return The lines within changed section.
      * 
      */
-    private List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
+    private @Nullable List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
     /**
      * @return Type of change.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetRepositoryDiffsDiffCollectionItemChangeDiffSection() {}
     /**
@@ -28,14 +30,14 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
      * 
      */
     public List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines() {
-        return this.lines;
+        return this.lines == null ? List.of() : this.lines;
     }
     /**
      * @return Type of change.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
-        private String type;
+        private @Nullable List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRepositoryDiffsDiffCollectionItemChangeDiffSection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
         }
 
         @CustomType.Setter
-        public Builder lines(List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines) {
-            this.lines = Objects.requireNonNull(lines);
+        public Builder lines(@Nullable List<GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine> lines) {
+            this.lines = lines;
             return this;
         }
         public Builder lines(GetRepositoryDiffsDiffCollectionItemChangeDiffSectionLine... lines) {
             return lines(List.of(lines));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItemChangeDiffSection build() {

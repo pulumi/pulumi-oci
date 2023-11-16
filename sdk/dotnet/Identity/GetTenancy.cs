@@ -108,50 +108,50 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the tenancy.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
         /// </summary>
-        public readonly string HomeRegionKey;
+        public readonly string? HomeRegionKey;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the tenancy.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string TenancyId;
         /// <summary>
         /// Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
         /// </summary>
-        public readonly string UpiIdcsCompatibilityLayerEndpoint;
+        public readonly string? UpiIdcsCompatibilityLayerEndpoint;
 
         [OutputConstructor]
         private GetTenancyResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string homeRegionKey,
+            string? homeRegionKey,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
             string tenancyId,
 
-            string upiIdcsCompatibilityLayerEndpoint)
+            string? upiIdcsCompatibilityLayerEndpoint)
         {
             DefinedTags = definedTags;
             Description = description;

@@ -18,13 +18,13 @@ public final class GetAnnouncementsResult {
      * @return The list of announcement_collection.
      * 
      */
-    private List<GetAnnouncementsAnnouncementCollection> announcementCollections;
+    private @Nullable List<GetAnnouncementsAnnouncementCollection> announcementCollections;
     private @Nullable List<GetAnnouncementsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String summaryContains;
     private @Nullable String timeEnd;
     private @Nullable String timeStart;
@@ -35,7 +35,7 @@ public final class GetAnnouncementsResult {
      * 
      */
     public List<GetAnnouncementsAnnouncementCollection> announcementCollections() {
-        return this.announcementCollections;
+        return this.announcementCollections == null ? List.of() : this.announcementCollections;
     }
     public List<GetAnnouncementsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +44,8 @@ public final class GetAnnouncementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> summaryContains() {
         return Optional.ofNullable(this.summaryContains);
@@ -66,9 +66,9 @@ public final class GetAnnouncementsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAnnouncementsAnnouncementCollection> announcementCollections;
+        private @Nullable List<GetAnnouncementsAnnouncementCollection> announcementCollections;
         private @Nullable List<GetAnnouncementsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String summaryContains;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
@@ -84,8 +84,8 @@ public final class GetAnnouncementsResult {
         }
 
         @CustomType.Setter
-        public Builder announcementCollections(List<GetAnnouncementsAnnouncementCollection> announcementCollections) {
-            this.announcementCollections = Objects.requireNonNull(announcementCollections);
+        public Builder announcementCollections(@Nullable List<GetAnnouncementsAnnouncementCollection> announcementCollections) {
+            this.announcementCollections = announcementCollections;
             return this;
         }
         public Builder announcementCollections(GetAnnouncementsAnnouncementCollection... announcementCollections) {
@@ -100,8 +100,8 @@ public final class GetAnnouncementsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

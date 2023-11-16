@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
@@ -80,13 +79,13 @@ type TsigKey struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Secret pulumi.StringOutput `pulumi:"secret"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringOutput `pulumi:"self"`
+	Self pulumi.StringPtrOutput `pulumi:"self"`
 	// The current state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewTsigKey registers a new resource with the given unique name, arguments, and options.
@@ -266,12 +265,6 @@ func (i *TsigKey) ToTsigKeyOutputWithContext(ctx context.Context) TsigKeyOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(TsigKeyOutput)
 }
 
-func (i *TsigKey) ToOutput(ctx context.Context) pulumix.Output[*TsigKey] {
-	return pulumix.Output[*TsigKey]{
-		OutputState: i.ToTsigKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TsigKeyArrayInput is an input type that accepts TsigKeyArray and TsigKeyArrayOutput values.
 // You can construct a concrete instance of `TsigKeyArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i TsigKeyArray) ToTsigKeyArrayOutput() TsigKeyArrayOutput {
 
 func (i TsigKeyArray) ToTsigKeyArrayOutputWithContext(ctx context.Context) TsigKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TsigKeyArrayOutput)
-}
-
-func (i TsigKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*TsigKey] {
-	return pulumix.Output[[]*TsigKey]{
-		OutputState: i.ToTsigKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TsigKeyMapInput is an input type that accepts TsigKeyMap and TsigKeyMapOutput values.
@@ -328,12 +315,6 @@ func (i TsigKeyMap) ToTsigKeyMapOutputWithContext(ctx context.Context) TsigKeyMa
 	return pulumi.ToOutputWithContext(ctx, i).(TsigKeyMapOutput)
 }
 
-func (i TsigKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TsigKey] {
-	return pulumix.Output[map[string]*TsigKey]{
-		OutputState: i.ToTsigKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TsigKeyOutput struct{ *pulumi.OutputState }
 
 func (TsigKeyOutput) ElementType() reflect.Type {
@@ -346,12 +327,6 @@ func (o TsigKeyOutput) ToTsigKeyOutput() TsigKeyOutput {
 
 func (o TsigKeyOutput) ToTsigKeyOutputWithContext(ctx context.Context) TsigKeyOutput {
 	return o
-}
-
-func (o TsigKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*TsigKey] {
-	return pulumix.Output[*TsigKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
@@ -392,23 +367,23 @@ func (o TsigKeyOutput) Secret() pulumi.StringOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o TsigKeyOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v *TsigKey) pulumi.StringOutput { return v.Self }).(pulumi.StringOutput)
+func (o TsigKeyOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TsigKey) pulumi.StringPtrOutput { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o TsigKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *TsigKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TsigKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TsigKey) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o TsigKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TsigKey) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TsigKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TsigKey) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-func (o TsigKeyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TsigKey) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o TsigKeyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TsigKey) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type TsigKeyArrayOutput struct{ *pulumi.OutputState }
@@ -423,12 +398,6 @@ func (o TsigKeyArrayOutput) ToTsigKeyArrayOutput() TsigKeyArrayOutput {
 
 func (o TsigKeyArrayOutput) ToTsigKeyArrayOutputWithContext(ctx context.Context) TsigKeyArrayOutput {
 	return o
-}
-
-func (o TsigKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TsigKey] {
-	return pulumix.Output[[]*TsigKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TsigKeyArrayOutput) Index(i pulumi.IntInput) TsigKeyOutput {
@@ -449,12 +418,6 @@ func (o TsigKeyMapOutput) ToTsigKeyMapOutput() TsigKeyMapOutput {
 
 func (o TsigKeyMapOutput) ToTsigKeyMapOutputWithContext(ctx context.Context) TsigKeyMapOutput {
 	return o
-}
-
-func (o TsigKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TsigKey] {
-	return pulumix.Output[map[string]*TsigKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TsigKeyMapOutput) MapIndex(k pulumi.StringInput) TsigKeyOutput {

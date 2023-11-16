@@ -24,17 +24,6 @@ class ConnectionArgs:
                  is_default: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Connection resource.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] data_asset_key: Unique data asset key.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] description: (Updatable) A description of the connection.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         """
         pulumi.set(__self__, "catalog_id", catalog_id)
         pulumi.set(__self__, "data_asset_key", data_asset_key)
@@ -51,9 +40,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> pulumi.Input[str]:
-        """
-        Unique catalog identifier.
-        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -63,9 +49,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="dataAssetKey")
     def data_asset_key(self) -> pulumi.Input[str]:
-        """
-        Unique data asset key.
-        """
         return pulumi.get(self, "data_asset_key")
 
     @data_asset_key.setter
@@ -75,9 +58,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -96,13 +76,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> pulumi.Input[str]:
-        """
-        The key of the object type. Type key's can be found via the '/types' endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type_key")
 
     @type_key.setter
@@ -112,9 +85,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A description of the connection.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -124,9 +94,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="encProperties")
     def enc_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        """
         return pulumi.get(self, "enc_properties")
 
     @enc_properties.setter
@@ -136,9 +103,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-        """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
@@ -168,26 +132,6 @@ class _ConnectionState:
                  uri: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Connection resources.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] created_by_id: OCID of the user who created the connection.
-        :param pulumi.Input[str] data_asset_key: Unique data asset key.
-        :param pulumi.Input[str] description: (Updatable) A description of the connection.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        :param pulumi.Input[str] external_key: Unique external key of this object from the source system.
-        :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-        :param pulumi.Input[str] key: Unique connection key that is immutable.
-        :param pulumi.Input[str] state: The current state of the connection.
-        :param pulumi.Input[str] time_created: The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_status_updated: Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] updated_by_id: OCID of the user who modified the connection.
-        :param pulumi.Input[str] uri: URI to the connection instance in the API.
         """
         if catalog_id is not None:
             pulumi.set(__self__, "catalog_id", catalog_id)
@@ -227,9 +171,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique catalog identifier.
-        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -239,9 +180,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="createdById")
     def created_by_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the user who created the connection.
-        """
         return pulumi.get(self, "created_by_id")
 
     @created_by_id.setter
@@ -251,9 +189,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="dataAssetKey")
     def data_asset_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique data asset key.
-        """
         return pulumi.get(self, "data_asset_key")
 
     @data_asset_key.setter
@@ -263,9 +198,6 @@ class _ConnectionState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A description of the connection.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -275,9 +207,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -287,9 +216,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="encProperties")
     def enc_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        """
         return pulumi.get(self, "enc_properties")
 
     @enc_properties.setter
@@ -299,9 +225,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique external key of this object from the source system.
-        """
         return pulumi.get(self, "external_key")
 
     @external_key.setter
@@ -311,9 +234,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-        """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
@@ -323,9 +243,6 @@ class _ConnectionState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique connection key that is immutable.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -344,9 +261,6 @@ class _ConnectionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the connection.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -356,9 +270,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -368,9 +279,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="timeStatusUpdated")
     def time_status_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_status_updated")
 
     @time_status_updated.setter
@@ -380,9 +288,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -392,13 +297,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The key of the object type. Type key's can be found via the '/types' endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type_key")
 
     @type_key.setter
@@ -408,9 +306,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="updatedById")
     def updated_by_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the user who modified the connection.
-        """
         return pulumi.get(self, "updated_by_id")
 
     @updated_by_id.setter
@@ -420,9 +315,6 @@ class _ConnectionState:
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        URI to the connection instance in the API.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -445,48 +337,9 @@ class Connection(pulumi.CustomResource):
                  type_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new connection.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_connection = oci.data_catalog.Connection("testConnection",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            data_asset_key=var["connection_data_asset_key"],
-            display_name=var["connection_display_name"],
-            properties=var["connection_properties"],
-            type_key=var["connection_type_key"],
-            description=var["connection_description"],
-            enc_properties=var["connection_enc_properties"],
-            is_default=var["connection_is_default"])
-        ```
-
-        ## Import
-
-        Connections can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
-        ```
-
+        Create a Connection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] data_asset_key: Unique data asset key.
-        :param pulumi.Input[str] description: (Updatable) A description of the connection.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-        :param pulumi.Input[str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -495,35 +348,7 @@ class Connection(pulumi.CustomResource):
                  args: ConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Creates a new connection.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_connection = oci.data_catalog.Connection("testConnection",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            data_asset_key=var["connection_data_asset_key"],
-            display_name=var["connection_display_name"],
-            properties=var["connection_properties"],
-            type_key=var["connection_type_key"],
-            description=var["connection_description"],
-            enc_properties=var["connection_enc_properties"],
-            is_default=var["connection_is_default"])
-        ```
-
-        ## Import
-
-        Connections can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataCatalog/connection:Connection test_connection "catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
-        ```
-
+        Create a Connection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -619,26 +444,6 @@ class Connection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] catalog_id: Unique catalog identifier.
-        :param pulumi.Input[str] created_by_id: OCID of the user who created the connection.
-        :param pulumi.Input[str] data_asset_key: Unique data asset key.
-        :param pulumi.Input[str] description: (Updatable) A description of the connection.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        :param pulumi.Input[str] external_key: Unique external key of this object from the source system.
-        :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-        :param pulumi.Input[str] key: Unique connection key that is immutable.
-        :param pulumi.Input[str] state: The current state of the connection.
-        :param pulumi.Input[str] time_created: The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_status_updated: Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] updated_by_id: OCID of the user who modified the connection.
-        :param pulumi.Input[str] uri: URI to the connection instance in the API.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -666,73 +471,46 @@ class Connection(pulumi.CustomResource):
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> pulumi.Output[str]:
-        """
-        Unique catalog identifier.
-        """
         return pulumi.get(self, "catalog_id")
 
     @property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the user who created the connection.
-        """
+    def created_by_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by_id")
 
     @property
     @pulumi.getter(name="dataAssetKey")
     def data_asset_key(self) -> pulumi.Output[str]:
-        """
-        Unique data asset key.
-        """
         return pulumi.get(self, "data_asset_key")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A description of the connection.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="encProperties")
     def enc_properties(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
-        """
-        (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-        """
         return pulumi.get(self, "enc_properties")
 
     @property
     @pulumi.getter(name="externalKey")
-    def external_key(self) -> pulumi.Output[str]:
-        """
-        Unique external key of this object from the source system.
-        """
+    def external_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_key")
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-        """
+    def is_default(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        Unique connection key that is immutable.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
@@ -742,61 +520,36 @@ class Connection(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the connection.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> pulumi.Output[str]:
-        """
-        Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_status_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_status_updated")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="typeKey")
     def type_key(self) -> pulumi.Output[str]:
-        """
-        The key of the object type. Type key's can be found via the '/types' endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type_key")
 
     @property
     @pulumi.getter(name="updatedById")
-    def updated_by_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the user who modified the connection.
-        """
+    def updated_by_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "updated_by_id")
 
     @property
     @pulumi.getter
-    def uri(self) -> pulumi.Output[str]:
-        """
-        URI to the connection instance in the API.
-        """
+    def uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "uri")
 

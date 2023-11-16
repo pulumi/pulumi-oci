@@ -23,15 +23,6 @@ class PeerArgs:
                  alias: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Peer resource.
-        :param pulumi.Input[str] ad: Availability Domain to place new peer
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input['PeerOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
-        :param pulumi.Input[str] role: Peer role
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] alias: peer alias
         """
         pulumi.set(__self__, "ad", ad)
         pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
@@ -43,9 +34,6 @@ class PeerArgs:
     @property
     @pulumi.getter
     def ad(self) -> pulumi.Input[str]:
-        """
-        Availability Domain to place new peer
-        """
         return pulumi.get(self, "ad")
 
     @ad.setter
@@ -55,9 +43,6 @@ class PeerArgs:
     @property
     @pulumi.getter(name="blockchainPlatformId")
     def blockchain_platform_id(self) -> pulumi.Input[str]:
-        """
-        Unique service identifier.
-        """
         return pulumi.get(self, "blockchain_platform_id")
 
     @blockchain_platform_id.setter
@@ -67,9 +52,6 @@ class PeerArgs:
     @property
     @pulumi.getter(name="ocpuAllocationParam")
     def ocpu_allocation_param(self) -> pulumi.Input['PeerOcpuAllocationParamArgs']:
-        """
-        (Updatable) OCPU allocation parameter
-        """
         return pulumi.get(self, "ocpu_allocation_param")
 
     @ocpu_allocation_param.setter
@@ -79,13 +61,6 @@ class PeerArgs:
     @property
     @pulumi.getter
     def role(self) -> pulumi.Input[str]:
-        """
-        Peer role
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -95,9 +70,6 @@ class PeerArgs:
     @property
     @pulumi.getter
     def alias(self) -> Optional[pulumi.Input[str]]:
-        """
-        peer alias
-        """
         return pulumi.get(self, "alias")
 
     @alias.setter
@@ -118,18 +90,6 @@ class _PeerState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Peer resources.
-        :param pulumi.Input[str] ad: Availability Domain to place new peer
-        :param pulumi.Input[str] alias: peer alias
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[str] host: Host on which the Peer exists
-        :param pulumi.Input['PeerOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
-        :param pulumi.Input[str] peer_key: peer identifier
-        :param pulumi.Input[str] role: Peer role
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the peer.
         """
         if ad is not None:
             pulumi.set(__self__, "ad", ad)
@@ -151,9 +111,6 @@ class _PeerState:
     @property
     @pulumi.getter
     def ad(self) -> Optional[pulumi.Input[str]]:
-        """
-        Availability Domain to place new peer
-        """
         return pulumi.get(self, "ad")
 
     @ad.setter
@@ -163,9 +120,6 @@ class _PeerState:
     @property
     @pulumi.getter
     def alias(self) -> Optional[pulumi.Input[str]]:
-        """
-        peer alias
-        """
         return pulumi.get(self, "alias")
 
     @alias.setter
@@ -175,9 +129,6 @@ class _PeerState:
     @property
     @pulumi.getter(name="blockchainPlatformId")
     def blockchain_platform_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique service identifier.
-        """
         return pulumi.get(self, "blockchain_platform_id")
 
     @blockchain_platform_id.setter
@@ -187,9 +138,6 @@ class _PeerState:
     @property
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
-        """
-        Host on which the Peer exists
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -199,9 +147,6 @@ class _PeerState:
     @property
     @pulumi.getter(name="ocpuAllocationParam")
     def ocpu_allocation_param(self) -> Optional[pulumi.Input['PeerOcpuAllocationParamArgs']]:
-        """
-        (Updatable) OCPU allocation parameter
-        """
         return pulumi.get(self, "ocpu_allocation_param")
 
     @ocpu_allocation_param.setter
@@ -211,9 +156,6 @@ class _PeerState:
     @property
     @pulumi.getter(name="peerKey")
     def peer_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        peer identifier
-        """
         return pulumi.get(self, "peer_key")
 
     @peer_key.setter
@@ -223,13 +165,6 @@ class _PeerState:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        Peer role
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -239,9 +174,6 @@ class _PeerState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the peer.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -261,45 +193,9 @@ class Peer(pulumi.CustomResource):
                  role: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Peer
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_peer = oci.blockchain.Peer("testPeer",
-            ad=var["peer_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-            ocpu_allocation_param=oci.blockchain.PeerOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["peer_ocpu_allocation_param_ocpu_allocation_number"],
-            ),
-            role=var["peer_role"],
-            alias=var["peer_alias"])
-        ```
-
-        ## Import
-
-        Peers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
-        ```
-
+        Create a Peer resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ad: Availability Domain to place new peer
-        :param pulumi.Input[str] alias: peer alias
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[pulumi.InputType['PeerOcpuAllocationParamArgs']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
-        :param pulumi.Input[str] role: Peer role
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -308,34 +204,7 @@ class Peer(pulumi.CustomResource):
                  args: PeerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Peer
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_peer = oci.blockchain.Peer("testPeer",
-            ad=var["peer_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-            ocpu_allocation_param=oci.blockchain.PeerOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["peer_ocpu_allocation_param_ocpu_allocation_number"],
-            ),
-            role=var["peer_role"],
-            alias=var["peer_alias"])
-        ```
-
-        ## Import
-
-        Peers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Blockchain/peer:Peer test_peer "blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
-        ```
-
+        Create a Peer resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PeerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -406,18 +275,6 @@ class Peer(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ad: Availability Domain to place new peer
-        :param pulumi.Input[str] alias: peer alias
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[str] host: Host on which the Peer exists
-        :param pulumi.Input[pulumi.InputType['PeerOcpuAllocationParamArgs']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
-        :param pulumi.Input[str] peer_key: peer identifier
-        :param pulumi.Input[str] role: Peer role
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the peer.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -436,68 +293,40 @@ class Peer(pulumi.CustomResource):
     @property
     @pulumi.getter
     def ad(self) -> pulumi.Output[str]:
-        """
-        Availability Domain to place new peer
-        """
         return pulumi.get(self, "ad")
 
     @property
     @pulumi.getter
-    def alias(self) -> pulumi.Output[str]:
-        """
-        peer alias
-        """
+    def alias(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "alias")
 
     @property
     @pulumi.getter(name="blockchainPlatformId")
     def blockchain_platform_id(self) -> pulumi.Output[str]:
-        """
-        Unique service identifier.
-        """
         return pulumi.get(self, "blockchain_platform_id")
 
     @property
     @pulumi.getter
-    def host(self) -> pulumi.Output[str]:
-        """
-        Host on which the Peer exists
-        """
+    def host(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter(name="ocpuAllocationParam")
     def ocpu_allocation_param(self) -> pulumi.Output['outputs.PeerOcpuAllocationParam']:
-        """
-        (Updatable) OCPU allocation parameter
-        """
         return pulumi.get(self, "ocpu_allocation_param")
 
     @property
     @pulumi.getter(name="peerKey")
-    def peer_key(self) -> pulumi.Output[str]:
-        """
-        peer identifier
-        """
+    def peer_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_key")
 
     @property
     @pulumi.getter
     def role(self) -> pulumi.Output[str]:
-        """
-        Peer role
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the peer.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

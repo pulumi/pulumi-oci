@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         /// </summary>
-        public readonly int CustomActionTimeoutInMins;
+        public readonly int? CustomActionTimeoutInMins;
         /// <summary>
         /// Days during the week when maintenance should be performed.
         /// </summary>
@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         /// </summary>
-        public readonly bool IsCustomActionTimeoutEnabled;
+        public readonly bool? IsCustomActionTimeoutEnabled;
         /// <summary>
         /// If true, enables the monthly patching option.
         /// </summary>
-        public readonly bool IsMonthlyPatchingEnabled;
+        public readonly bool? IsMonthlyPatchingEnabled;
         /// <summary>
         /// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         /// </summary>
-        public readonly int LeadTimeInWeeks;
+        public readonly int? LeadTimeInWeeks;
         /// <summary>
         /// Months during the year when maintenance should be performed.
         /// </summary>
@@ -45,11 +45,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         /// </summary>
-        public readonly string PatchingMode;
+        public readonly string? PatchingMode;
         /// <summary>
         /// The maintenance window scheduling preference.
         /// </summary>
-        public readonly string Preference;
+        public readonly string? Preference;
         /// <summary>
         /// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         /// </summary>
@@ -57,23 +57,23 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetCloudExadataInfrastructureMaintenanceWindowResult(
-            int customActionTimeoutInMins,
+            int? customActionTimeoutInMins,
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult> daysOfWeeks,
 
             ImmutableArray<int> hoursOfDays,
 
-            bool isCustomActionTimeoutEnabled,
+            bool? isCustomActionTimeoutEnabled,
 
-            bool isMonthlyPatchingEnabled,
+            bool? isMonthlyPatchingEnabled,
 
-            int leadTimeInWeeks,
+            int? leadTimeInWeeks,
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowMonthResult> months,
 
-            string patchingMode,
+            string? patchingMode,
 
-            string preference,
+            string? preference,
 
             ImmutableArray<int> weeksOfMonths)
         {

@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria {
@@ -18,7 +20,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
      * @return Wait criteria type.
      * 
      */
-    private String waitType;
+    private @Nullable String waitType;
 
     private GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria() {}
     /**
@@ -32,8 +34,8 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
      * @return Wait criteria type.
      * 
      */
-    public String waitType() {
-        return this.waitType;
+    public Optional<String> waitType() {
+        return Optional.ofNullable(this.waitType);
     }
 
     public static Builder builder() {
@@ -46,7 +48,7 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
     @CustomType.Builder
     public static final class Builder {
         private String waitDuration;
-        private String waitType;
+        private @Nullable String waitType;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria defaults) {
     	      Objects.requireNonNull(defaults);
@@ -60,8 +62,8 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
             return this;
         }
         @CustomType.Setter
-        public Builder waitType(String waitType) {
-            this.waitType = Objects.requireNonNull(waitType);
+        public Builder waitType(@Nullable String waitType) {
+            this.waitType = waitType;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria build() {

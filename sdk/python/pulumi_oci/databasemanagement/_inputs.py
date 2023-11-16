@@ -118,16 +118,6 @@ class ExternalAsmServicedDatabaseArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  is_managed: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        :param pulumi.Input[str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        :param pulumi.Input[str] database_type: The type of Oracle Database installation.
-        :param pulumi.Input[str] db_unique_name: The unique name of the external database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] disk_groups: The list of ASM disk groups used by the database.
-        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        :param pulumi.Input[bool] is_managed: Indicates whether the database is a Managed Database or not.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if database_sub_type is not None:
@@ -148,9 +138,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -160,9 +147,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSubType")
     def database_sub_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
@@ -172,9 +156,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of Oracle Database installation.
-        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -184,9 +165,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique name of the external database.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -196,9 +174,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="diskGroups")
     def disk_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of ASM disk groups used by the database.
-        """
         return pulumi.get(self, "disk_groups")
 
     @disk_groups.setter
@@ -208,9 +183,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -220,9 +192,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -232,9 +201,6 @@ class ExternalAsmServicedDatabaseArgs:
     @property
     @pulumi.getter(name="isManaged")
     def is_managed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the database is a Managed Database or not.
-        """
         return pulumi.get(self, "is_managed")
 
     @is_managed.setter
@@ -248,11 +214,6 @@ class ExternalClusterNetworkConfigurationArgs:
                  network_number: Optional[pulumi.Input[int]] = None,
                  network_type: Optional[pulumi.Input[str]] = None,
                  subnet: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
-        :param pulumi.Input[str] network_type: The network type.
-        :param pulumi.Input[str] subnet: The subnet for the network.
-        """
         if network_number is not None:
             pulumi.set(__self__, "network_number", network_number)
         if network_type is not None:
@@ -263,9 +224,6 @@ class ExternalClusterNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="networkNumber")
     def network_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network number from which VIPs are obtained.
-        """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
@@ -275,9 +233,6 @@ class ExternalClusterNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The network type.
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -287,9 +242,6 @@ class ExternalClusterNetworkConfigurationArgs:
     @property
     @pulumi.getter
     def subnet(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet for the network.
-        """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
@@ -304,12 +256,6 @@ class ExternalClusterScanConfigurationArgs:
                  scan_name: Optional[pulumi.Input[str]] = None,
                  scan_port: Optional[pulumi.Input[int]] = None,
                  scan_protocol: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
-        :param pulumi.Input[str] scan_name: The name of the SCAN listener.
-        :param pulumi.Input[int] scan_port: The port number of the SCAN listener.
-        :param pulumi.Input[str] scan_protocol: The protocol of the SCAN listener.
-        """
         if network_number is not None:
             pulumi.set(__self__, "network_number", network_number)
         if scan_name is not None:
@@ -322,9 +268,6 @@ class ExternalClusterScanConfigurationArgs:
     @property
     @pulumi.getter(name="networkNumber")
     def network_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network number from which VIPs are obtained.
-        """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
@@ -334,9 +277,6 @@ class ExternalClusterScanConfigurationArgs:
     @property
     @pulumi.getter(name="scanName")
     def scan_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the SCAN listener.
-        """
         return pulumi.get(self, "scan_name")
 
     @scan_name.setter
@@ -346,9 +286,6 @@ class ExternalClusterScanConfigurationArgs:
     @property
     @pulumi.getter(name="scanPort")
     def scan_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port number of the SCAN listener.
-        """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
@@ -358,9 +295,6 @@ class ExternalClusterScanConfigurationArgs:
     @property
     @pulumi.getter(name="scanProtocol")
     def scan_protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol of the SCAN listener.
-        """
         return pulumi.get(self, "scan_protocol")
 
     @scan_protocol.setter
@@ -374,11 +308,6 @@ class ExternalClusterVipConfigurationArgs:
                  address: Optional[pulumi.Input[str]] = None,
                  network_number: Optional[pulumi.Input[int]] = None,
                  node_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] address: The VIP name or IP address.
-        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
-        :param pulumi.Input[str] node_name: The name of the node with the VIP.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if network_number is not None:
@@ -389,9 +318,6 @@ class ExternalClusterVipConfigurationArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The VIP name or IP address.
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -401,9 +327,6 @@ class ExternalClusterVipConfigurationArgs:
     @property
     @pulumi.getter(name="networkNumber")
     def network_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network number from which VIPs are obtained.
-        """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
@@ -413,9 +336,6 @@ class ExternalClusterVipConfigurationArgs:
     @property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the node with the VIP.
-        """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
@@ -429,11 +349,6 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
                  component_type: pulumi.Input[str],
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None):
-        """
-        :param pulumi.Input[str] component_type: The component type.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
-        """
         pulumi.set(__self__, "component_type", component_type)
         if connection_credentials is not None:
             pulumi.set(__self__, "connection_credentials", connection_credentials)
@@ -443,9 +358,6 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> pulumi.Input[str]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -455,9 +367,6 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="connectionCredentials")
     def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]:
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
@@ -467,9 +376,6 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]:
-        """
-        The Oracle Database connection string.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -486,14 +392,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
                  role: Optional[pulumi.Input[str]] = None,
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
-        """
         if credential_name is not None:
             pulumi.set(__self__, "credential_name", credential_name)
         if credential_type is not None:
@@ -510,9 +408,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
@@ -522,9 +417,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of credential used to connect to the ASM instance.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -534,9 +426,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -546,9 +435,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user connecting to the ASM instance.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -558,9 +444,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -570,9 +453,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user name used to connect to the ASM instance.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -588,13 +468,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
-        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
-        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
-        :param pulumi.Input[str] service: The service name of the ASM instance.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -609,9 +482,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -621,9 +491,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of host names of the ASM instances.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -633,9 +500,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the ASM instance.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -645,9 +509,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol used to connect to the ASM instance.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -657,9 +518,6 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service name of the ASM instance.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -671,17 +529,11 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
 class ExternalDbSystemDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  license_model: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
-        """
         pulumi.set(__self__, "license_model", license_model)
 
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> pulumi.Input[str]:
-        """
-        The Oracle license model that applies to the external database.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -739,53 +591,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
                  trace_directory: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
-        """
-        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]] associated_components: The list of associated components.
-        :param pulumi.Input[str] cluster_id: The unique identifier of the Oracle cluster.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[str] component_id: The identifier of the discovered DB system component.
-        :param pulumi.Input[str] component_name: The name of the discovered DB system component.
-        :param pulumi.Input[str] component_type: The component type.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
-        :param pulumi.Input[str] container_database_id: The unique identifier of the parent Container Database (CDB).
-        :param pulumi.Input[float] cpu_core_count: The number of CPU cores available on the DB node.
-        :param pulumi.Input[str] crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
-        :param pulumi.Input[str] db_edition: The Oracle Database edition.
-        :param pulumi.Input[str] db_id: The Oracle Database ID.
-        :param pulumi.Input[str] db_node_name: The name of the DB node.
-        :param pulumi.Input[str] db_packs: The database packs licensed for the external Oracle Database.
-        :param pulumi.Input[str] db_role: The role of the Oracle Database in Oracle Data Guard configuration.
-        :param pulumi.Input[str] db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the external database.
-        :param pulumi.Input[str] db_version: The Oracle Database version.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]] endpoints: The list of protocol addresses the listener is configured to listen on.
-        :param pulumi.Input[str] grid_home: The directory in which Oracle Grid Infrastructure is installed.
-        :param pulumi.Input[str] guid: The unique identifier of the PDB.
-        :param pulumi.Input[str] home_directory: The location of the DB home.
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[str] instance_name: The name of the ASM instance.
-        :param pulumi.Input[bool] is_cluster: Indicates whether the Oracle Database is part of a cluster.
-        :param pulumi.Input[bool] is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
-        :param pulumi.Input[bool] is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
-        :param pulumi.Input[bool] is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        :param pulumi.Input[str] listener_alias: The listener alias.
-        :param pulumi.Input[str] listener_type: The type of listener.
-        :param pulumi.Input[str] log_directory: The destination directory of the listener log file.
-        :param pulumi.Input[float] memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]] network_configurations: The list of network address configurations of the external cluster.
-        :param pulumi.Input[str] node_role: The role of the cluster node.
-        :param pulumi.Input[str] ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
-        :param pulumi.Input[str] oracle_home: The Oracle home location of the listener.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]] pluggable_databases: The list of Pluggable Databases.
-        :param pulumi.Input[str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
-        :param pulumi.Input[str] status: The state of the discovered DB system component.
-        :param pulumi.Input[str] trace_directory: The destination directory of the listener trace file.
-        :param pulumi.Input[str] version: The version of Oracle Clusterware running in the cluster.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]] vip_configurations: The list of Virtual IP (VIP) configurations of the external cluster.
-        """
         if adr_home_directory is not None:
             pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         if asm_instances is not None:
@@ -884,9 +689,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
@@ -905,9 +707,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="associatedComponents")
     def associated_components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]:
-        """
-        The list of associated components.
-        """
         return pulumi.get(self, "associated_components")
 
     @associated_components.setter
@@ -917,9 +716,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier of the Oracle cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -938,9 +734,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -950,9 +743,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="componentId")
     def component_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identifier of the discovered DB system component.
-        """
         return pulumi.get(self, "component_id")
 
     @component_id.setter
@@ -962,9 +752,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="componentName")
     def component_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the discovered DB system component.
-        """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
@@ -974,9 +761,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -986,9 +770,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter
     def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]:
-        """
-        The connector details used to connect to the external DB system component.
-        """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
@@ -998,9 +779,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier of the parent Container Database (CDB).
-        """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
@@ -1010,9 +788,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[float]]:
-        """
-        The number of CPU cores available on the DB node.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -1022,9 +797,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="crsBaseDirectory")
     def crs_base_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
@@ -1034,9 +806,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbEdition")
     def db_edition(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database edition.
-        """
         return pulumi.get(self, "db_edition")
 
     @db_edition.setter
@@ -1046,9 +815,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbId")
     def db_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database ID.
-        """
         return pulumi.get(self, "db_id")
 
     @db_id.setter
@@ -1058,9 +824,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbNodeName")
     def db_node_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the DB node.
-        """
         return pulumi.get(self, "db_node_name")
 
     @db_node_name.setter
@@ -1070,9 +833,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbPacks")
     def db_packs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database packs licensed for the external Oracle Database.
-        """
         return pulumi.get(self, "db_packs")
 
     @db_packs.setter
@@ -1082,9 +842,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbRole")
     def db_role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the Oracle Database in Oracle Data Guard configuration.
-        """
         return pulumi.get(self, "db_role")
 
     @db_role.setter
@@ -1094,9 +851,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbType")
     def db_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-        """
         return pulumi.get(self, "db_type")
 
     @db_type.setter
@@ -1106,9 +860,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The `DB_UNIQUE_NAME` of the external database.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -1118,9 +869,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database version.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -1130,9 +878,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1142,9 +887,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]:
-        """
-        The list of protocol addresses the listener is configured to listen on.
-        """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
@@ -1154,9 +896,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="gridHome")
     def grid_home(self) -> Optional[pulumi.Input[str]]:
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
         return pulumi.get(self, "grid_home")
 
     @grid_home.setter
@@ -1166,9 +905,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter
     def guid(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier of the PDB.
-        """
         return pulumi.get(self, "guid")
 
     @guid.setter
@@ -1178,9 +914,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="homeDirectory")
     def home_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The location of the DB home.
-        """
         return pulumi.get(self, "home_directory")
 
     @home_directory.setter
@@ -1190,9 +923,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -1202,9 +932,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the ASM instance.
-        """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
@@ -1214,9 +941,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="isCluster")
     def is_cluster(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the Oracle Database is part of a cluster.
-        """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
@@ -1226,9 +950,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="isFlexCluster")
     def is_flex_cluster(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the cluster is an Oracle Flex Cluster or not.
-        """
         return pulumi.get(self, "is_flex_cluster")
 
     @is_flex_cluster.setter
@@ -1238,9 +959,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="isFlexEnabled")
     def is_flex_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether Oracle Flex ASM is enabled or not.
-        """
         return pulumi.get(self, "is_flex_enabled")
 
     @is_flex_enabled.setter
@@ -1250,9 +968,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="isSelectedForMonitoring")
     def is_selected_for_monitoring(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
         return pulumi.get(self, "is_selected_for_monitoring")
 
     @is_selected_for_monitoring.setter
@@ -1262,9 +977,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="listenerAlias")
     def listener_alias(self) -> Optional[pulumi.Input[str]]:
-        """
-        The listener alias.
-        """
         return pulumi.get(self, "listener_alias")
 
     @listener_alias.setter
@@ -1274,9 +986,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="listenerType")
     def listener_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of listener.
-        """
         return pulumi.get(self, "listener_type")
 
     @listener_type.setter
@@ -1286,9 +995,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="logDirectory")
     def log_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The destination directory of the listener log file.
-        """
         return pulumi.get(self, "log_directory")
 
     @log_directory.setter
@@ -1298,9 +1004,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total memory in gigabytes (GB) on the DB node.
-        """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
@@ -1310,9 +1013,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="networkConfigurations")
     def network_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]:
-        """
-        The list of network address configurations of the external cluster.
-        """
         return pulumi.get(self, "network_configurations")
 
     @network_configurations.setter
@@ -1322,9 +1022,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the cluster node.
-        """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
@@ -1334,9 +1031,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="ocrFileLocation")
     def ocr_file_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        The location of the Oracle Cluster Registry (OCR) file.
-        """
         return pulumi.get(self, "ocr_file_location")
 
     @ocr_file_location.setter
@@ -1346,9 +1040,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="oracleHome")
     def oracle_home(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle home location of the listener.
-        """
         return pulumi.get(self, "oracle_home")
 
     @oracle_home.setter
@@ -1358,9 +1049,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="pluggableDatabases")
     def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]:
-        """
-        The list of Pluggable Databases.
-        """
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
@@ -1370,9 +1058,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
@@ -1382,9 +1067,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="scanConfigurations")
     def scan_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]:
-        """
-        The list of Single Client Access Name (SCAN) configurations of the external cluster.
-        """
         return pulumi.get(self, "scan_configurations")
 
     @scan_configurations.setter
@@ -1394,9 +1076,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the discovered DB system component.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -1406,9 +1085,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="traceDirectory")
     def trace_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The destination directory of the listener trace file.
-        """
         return pulumi.get(self, "trace_directory")
 
     @trace_directory.setter
@@ -1418,9 +1094,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of Oracle Clusterware running in the cluster.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -1430,9 +1103,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     @property
     @pulumi.getter(name="vipConfigurations")
     def vip_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]:
-        """
-        The list of Virtual IP (VIP) configurations of the external cluster.
-        """
         return pulumi.get(self, "vip_configurations")
 
     @vip_configurations.setter
@@ -1446,11 +1116,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
                  adr_home_directory: Optional[pulumi.Input[str]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  instance_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[str] instance_name: The name of the ASM instance.
-        """
         if adr_home_directory is not None:
             pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         if host_name is not None:
@@ -1461,9 +1126,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
     @property
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
@@ -1473,9 +1135,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -1485,9 +1144,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
     @property
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the ASM instance.
-        """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
@@ -1501,11 +1157,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
                  association_type: Optional[pulumi.Input[str]] = None,
                  component_id: Optional[pulumi.Input[str]] = None,
                  component_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] association_type: The association type.
-        :param pulumi.Input[str] component_id: The identifier of the discovered DB system component.
-        :param pulumi.Input[str] component_type: The component type.
-        """
         if association_type is not None:
             pulumi.set(__self__, "association_type", association_type)
         if component_id is not None:
@@ -1516,9 +1167,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
     @property
     @pulumi.getter(name="associationType")
     def association_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The association type.
-        """
         return pulumi.get(self, "association_type")
 
     @association_type.setter
@@ -1528,9 +1176,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
     @property
     @pulumi.getter(name="componentId")
     def component_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identifier of the discovered DB system component.
-        """
         return pulumi.get(self, "component_id")
 
     @component_id.setter
@@ -1540,9 +1185,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -1559,14 +1201,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
                  crs_base_directory: Optional[pulumi.Input[str]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  node_role: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        :param pulumi.Input[str] cluster_id: The unique identifier of the Oracle cluster.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
-        :param pulumi.Input[str] crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[str] node_role: The role of the cluster node.
-        """
         if adr_home_directory is not None:
             pulumi.set(__self__, "adr_home_directory", adr_home_directory)
         if cluster_id is not None:
@@ -1583,9 +1217,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     @property
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
@@ -1595,9 +1226,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier of the Oracle cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -1607,9 +1235,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     @property
     @pulumi.getter
     def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]:
-        """
-        The connector details used to connect to the external DB system component.
-        """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
@@ -1619,9 +1244,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     @property
     @pulumi.getter(name="crsBaseDirectory")
     def crs_base_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
@@ -1631,9 +1253,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -1643,9 +1262,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     @property
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the cluster node.
-        """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
@@ -1663,15 +1279,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
                  connector_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  time_connection_status_last_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
-        :param pulumi.Input[str] connector_type: The type of connector.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
         if connection_failure_message is not None:
@@ -1690,9 +1297,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -1702,9 +1306,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="connectionFailureMessage")
     def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
@@ -1714,9 +1315,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="connectionInfos")
     def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
@@ -1726,9 +1324,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="connectionStatus")
     def connection_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of connectivity to the external DB system component.
-        """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
@@ -1738,9 +1333,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -1750,9 +1342,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1762,9 +1351,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
     def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
@@ -1778,11 +1364,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
                  component_type: Optional[pulumi.Input[str]] = None,
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None):
-        """
-        :param pulumi.Input[str] component_type: The component type.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
-        """
         if component_type is not None:
             pulumi.set(__self__, "component_type", component_type)
         if connection_credentials is not None:
@@ -1793,9 +1374,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -1805,9 +1383,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="connectionCredentials")
     def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]:
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
@@ -1817,9 +1392,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]:
-        """
-        The Oracle Database connection string.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -1836,14 +1408,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
                  role: Optional[pulumi.Input[str]] = None,
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
-        """
         if credential_name is not None:
             pulumi.set(__self__, "credential_name", credential_name)
         if credential_type is not None:
@@ -1860,9 +1424,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
@@ -1872,9 +1433,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of credential used to connect to the ASM instance.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -1884,9 +1442,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -1896,9 +1451,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user connecting to the ASM instance.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -1908,9 +1460,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -1920,9 +1469,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user name used to connect to the ASM instance.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -1938,13 +1484,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
-        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
-        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
-        :param pulumi.Input[str] service: The service name of the ASM instance.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -1959,9 +1498,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -1971,9 +1507,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of host names of the ASM instances.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -1983,9 +1516,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the ASM instance.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1995,9 +1525,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol used to connect to the ASM instance.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -2007,9 +1534,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service name of the ASM instance.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -2027,15 +1551,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
                  connector_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  time_connection_status_last_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
-        :param pulumi.Input[str] connector_type: The type of connector.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
         if connection_failure_message is not None:
@@ -2054,9 +1569,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -2066,9 +1578,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="connectionFailureMessage")
     def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
@@ -2078,9 +1587,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="connectionInfos")
     def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
@@ -2090,9 +1596,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="connectionStatus")
     def connection_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of connectivity to the external DB system component.
-        """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
@@ -2102,9 +1605,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -2114,9 +1614,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -2126,9 +1623,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
     def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
@@ -2142,11 +1636,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
                  component_type: Optional[pulumi.Input[str]] = None,
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None):
-        """
-        :param pulumi.Input[str] component_type: The component type.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
-        """
         if component_type is not None:
             pulumi.set(__self__, "component_type", component_type)
         if connection_credentials is not None:
@@ -2157,9 +1646,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -2169,9 +1655,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="connectionCredentials")
     def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]:
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
@@ -2181,9 +1664,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]:
-        """
-        The Oracle Database connection string.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -2200,14 +1680,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
                  role: Optional[pulumi.Input[str]] = None,
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
-        """
         if credential_name is not None:
             pulumi.set(__self__, "credential_name", credential_name)
         if credential_type is not None:
@@ -2224,9 +1696,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
@@ -2236,9 +1705,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of credential used to connect to the ASM instance.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -2248,9 +1714,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -2260,9 +1723,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user connecting to the ASM instance.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -2272,9 +1732,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -2284,9 +1741,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user name used to connect to the ASM instance.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -2302,13 +1756,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
-        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
-        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
-        :param pulumi.Input[str] service: The service name of the ASM instance.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -2323,9 +1770,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -2335,9 +1779,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of host names of the ASM instances.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -2347,9 +1788,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the ASM instance.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -2359,9 +1797,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol used to connect to the ASM instance.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -2371,9 +1806,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service name of the ASM instance.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -2389,13 +1821,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] host: The host name or IP address.
-        :param pulumi.Input[str] key: The unique name of the service.
-        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
-        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] services: The list of services registered with the listener.
-        """
         if host is not None:
             pulumi.set(__self__, "host", host)
         if key is not None:
@@ -2410,9 +1835,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     @property
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name or IP address.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -2422,9 +1844,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique name of the service.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -2434,9 +1853,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the ASM instance.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -2446,9 +1862,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol used to connect to the ASM instance.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -2458,9 +1871,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     @property
     @pulumi.getter
     def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of services registered with the listener.
-        """
         return pulumi.get(self, "services")
 
     @services.setter
@@ -2474,11 +1884,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
                  network_number: Optional[pulumi.Input[int]] = None,
                  network_type: Optional[pulumi.Input[str]] = None,
                  subnet: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
-        :param pulumi.Input[str] network_type: The network type.
-        :param pulumi.Input[str] subnet: The subnet for the network.
-        """
         if network_number is not None:
             pulumi.set(__self__, "network_number", network_number)
         if network_type is not None:
@@ -2489,9 +1894,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="networkNumber")
     def network_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network number from which VIPs are obtained.
-        """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
@@ -2501,9 +1903,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The network type.
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -2513,9 +1912,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
     @property
     @pulumi.getter
     def subnet(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subnet for the network.
-        """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
@@ -2530,12 +1926,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
                  connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
                  container_database_id: Optional[pulumi.Input[str]] = None,
                  guid: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
-        :param pulumi.Input[str] container_database_id: The unique identifier of the parent Container Database (CDB).
-        :param pulumi.Input[str] guid: The unique identifier of the PDB.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connectors is not None:
@@ -2548,9 +1938,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -2560,9 +1947,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
     @property
     @pulumi.getter
     def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]:
-        """
-        The connector details used to connect to the external DB system component.
-        """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
@@ -2572,9 +1956,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
     @property
     @pulumi.getter(name="containerDatabaseId")
     def container_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier of the parent Container Database (CDB).
-        """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
@@ -2584,9 +1965,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
     @property
     @pulumi.getter
     def guid(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier of the PDB.
-        """
         return pulumi.get(self, "guid")
 
     @guid.setter
@@ -2604,15 +1982,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
                  connector_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  time_connection_status_last_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input[str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]] connection_infos: The connection details required to connect to an external DB system component.
-        :param pulumi.Input[str] connection_status: The status of connectivity to the external DB system component.
-        :param pulumi.Input[str] connector_type: The type of connector.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
         if connection_failure_message is not None:
@@ -2631,9 +2000,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -2643,9 +2009,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="connectionFailureMessage")
     def connection_failure_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
@@ -2655,9 +2018,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="connectionInfos")
     def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
@@ -2667,9 +2027,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="connectionStatus")
     def connection_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of connectivity to the external DB system component.
-        """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
@@ -2679,9 +2036,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -2691,9 +2045,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -2703,9 +2054,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
     def time_connection_status_last_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
@@ -2719,11 +2067,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
                  component_type: Optional[pulumi.Input[str]] = None,
                  connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
                  connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None):
-        """
-        :param pulumi.Input[str] component_type: The component type.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
-        """
         if component_type is not None:
             pulumi.set(__self__, "component_type", component_type)
         if connection_credentials is not None:
@@ -2734,9 +2077,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -2746,9 +2086,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="connectionCredentials")
     def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]:
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
@@ -2758,9 +2095,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]:
-        """
-        The Oracle Database connection string.
-        """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
@@ -2777,14 +2111,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
                  role: Optional[pulumi.Input[str]] = None,
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
-        """
         if credential_name is not None:
             pulumi.set(__self__, "credential_name", credential_name)
         if credential_type is not None:
@@ -2801,9 +2127,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
@@ -2813,9 +2136,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of credential used to connect to the ASM instance.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -2825,9 +2145,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -2837,9 +2154,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user connecting to the ASM instance.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -2849,9 +2163,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -2861,9 +2172,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user name used to connect to the ASM instance.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -2879,13 +2187,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
-        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
-        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
-        :param pulumi.Input[str] service: The service name of the ASM instance.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -2900,9 +2201,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -2912,9 +2210,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of host names of the ASM instances.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -2924,9 +2219,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the ASM instance.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -2936,9 +2228,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol used to connect to the ASM instance.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -2948,9 +2237,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service name of the ASM instance.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -2965,12 +2251,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
                  scan_name: Optional[pulumi.Input[str]] = None,
                  scan_port: Optional[pulumi.Input[int]] = None,
                  scan_protocol: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
-        :param pulumi.Input[str] scan_name: The name of the SCAN listener.
-        :param pulumi.Input[int] scan_port: The port number of the SCAN listener.
-        :param pulumi.Input[str] scan_protocol: The protocol of the SCAN listener.
-        """
         if network_number is not None:
             pulumi.set(__self__, "network_number", network_number)
         if scan_name is not None:
@@ -2983,9 +2263,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
     @property
     @pulumi.getter(name="networkNumber")
     def network_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network number from which VIPs are obtained.
-        """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
@@ -2995,9 +2272,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
     @property
     @pulumi.getter(name="scanName")
     def scan_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the SCAN listener.
-        """
         return pulumi.get(self, "scan_name")
 
     @scan_name.setter
@@ -3007,9 +2281,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
     @property
     @pulumi.getter(name="scanPort")
     def scan_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port number of the SCAN listener.
-        """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
@@ -3019,9 +2290,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
     @property
     @pulumi.getter(name="scanProtocol")
     def scan_protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol of the SCAN listener.
-        """
         return pulumi.get(self, "scan_protocol")
 
     @scan_protocol.setter
@@ -3035,11 +2303,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
                  address: Optional[pulumi.Input[str]] = None,
                  network_number: Optional[pulumi.Input[int]] = None,
                  node_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] address: The VIP name or IP address.
-        :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
-        :param pulumi.Input[str] node_name: The name of the node with the VIP.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if network_number is not None:
@@ -3050,9 +2313,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
     @property
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The VIP name or IP address.
-        """
         return pulumi.get(self, "address")
 
     @address.setter
@@ -3062,9 +2322,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
     @property
     @pulumi.getter(name="networkNumber")
     def network_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        The network number from which VIPs are obtained.
-        """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
@@ -3074,9 +2331,6 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
     @property
     @pulumi.getter(name="nodeName")
     def node_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the node with the VIP.
-        """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
@@ -3090,15 +2344,6 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
                  operation: pulumi.Input[str],
                  selection: pulumi.Input[str],
                  value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']] = None):
-        """
-        :param pulumi.Input[str] operation: (Updatable) The operation can be one of these values: `MERGE`
-        :param pulumi.Input[str] selection: (Updatable)
-        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs'] value: (Updatable) 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "selection", selection)
         if value is not None:
@@ -3107,9 +2352,6 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
     @property
     @pulumi.getter
     def operation(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The operation can be one of these values: `MERGE`
-        """
         return pulumi.get(self, "operation")
 
     @operation.setter
@@ -3119,9 +2361,6 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
     @property
     @pulumi.getter
     def selection(self) -> pulumi.Input[str]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "selection")
 
     @selection.setter
@@ -3131,13 +2370,6 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']]:
-        """
-        (Updatable) 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3152,12 +2384,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
                  connector: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  is_selected_for_monitoring: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs'] connector: The connector details used to connect to the external DB system component.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[bool] is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connector is not None:
@@ -3170,9 +2396,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -3182,9 +2405,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
     @property
     @pulumi.getter
     def connector(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]:
-        """
-        The connector details used to connect to the external DB system component.
-        """
         return pulumi.get(self, "connector")
 
     @connector.setter
@@ -3194,9 +2414,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -3206,9 +2423,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
     @property
     @pulumi.getter(name="isSelectedForMonitoring")
     def is_selected_for_monitoring(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
         return pulumi.get(self, "is_selected_for_monitoring")
 
     @is_selected_for_monitoring.setter
@@ -3223,12 +2437,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
                  display_name: pulumi.Input[str],
                  agent_id: Optional[pulumi.Input[str]] = None,
                  connection_info: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None):
-        """
-        :param pulumi.Input[str] connector_type: The type of connector.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs'] connection_info: The connection details required to connect to an external DB system component.
-        """
         pulumi.set(__self__, "connector_type", connector_type)
         pulumi.set(__self__, "display_name", display_name)
         if agent_id is not None:
@@ -3239,9 +2447,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
     @property
     @pulumi.getter(name="connectorType")
     def connector_type(self) -> pulumi.Input[str]:
-        """
-        The type of connector.
-        """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
@@ -3251,9 +2456,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -3263,9 +2465,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -3275,9 +2474,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
     @property
     @pulumi.getter(name="connectionInfo")
     def connection_info(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]:
-        """
-        The connection details required to connect to an external DB system component.
-        """
         return pulumi.get(self, "connection_info")
 
     @connection_info.setter
@@ -3291,11 +2487,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
                  component_type: pulumi.Input[str],
                  connection_credentials: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
                  connection_string: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None):
-        """
-        :param pulumi.Input[str] component_type: The component type.
-        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs'] connection_string: The Oracle Database connection string.
-        """
         pulumi.set(__self__, "component_type", component_type)
         if connection_credentials is not None:
             pulumi.set(__self__, "connection_credentials", connection_credentials)
@@ -3305,9 +2496,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="componentType")
     def component_type(self) -> pulumi.Input[str]:
-        """
-        The component type.
-        """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
@@ -3317,9 +2505,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="connectionCredentials")
     def connection_credentials(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]:
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
@@ -3329,9 +2514,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
     @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]:
-        """
-        The Oracle Database connection string.
-        """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
@@ -3348,14 +2530,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
                  role: Optional[pulumi.Input[str]] = None,
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] credential_type: The type of credential used to connect to the ASM instance.
-        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] role: The role of the user connecting to the ASM instance.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
-        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_name is not None:
             pulumi.set(__self__, "credential_name", credential_name)
@@ -3371,9 +2545,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[str]:
-        """
-        The type of credential used to connect to the ASM instance.
-        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -3383,9 +2554,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="credentialName")
     def credential_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
@@ -3395,9 +2563,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -3407,9 +2572,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user connecting to the ASM instance.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -3419,9 +2581,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -3431,9 +2590,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user name used to connect to the ASM instance.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -3449,13 +2605,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hosts: The list of host names of the ASM instances.
-        :param pulumi.Input[int] port: The port used to connect to the ASM instance.
-        :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
-        :param pulumi.Input[str] service: The service name of the ASM instance.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -3470,9 +2619,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -3482,9 +2628,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of host names of the ASM instances.
-        """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
@@ -3494,9 +2637,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the ASM instance.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -3506,9 +2646,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protocol used to connect to the ASM instance.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -3518,9 +2655,6 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     @property
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service name of the ASM instance.
-        """
         return pulumi.get(self, "service")
 
     @service.setter
@@ -3533,14 +2667,6 @@ class ExternalDbSystemStackMonitoringConfigArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[bool],
                  metadata: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: The status of the associated service.
-        :param pulumi.Input[str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
@@ -3548,9 +2674,6 @@ class ExternalDbSystemStackMonitoringConfigArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        The status of the associated service.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -3560,13 +2683,6 @@ class ExternalDbSystemStackMonitoringConfigArgs:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[str]]:
-        """
-        The associated service-specific inputs in JSON string format, which Database Management can identify.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -3589,20 +2705,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
-        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
-        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
-        :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
-        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
-        :param pulumi.Input[str] version: The version of the Exadata resource.
-        """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
         if compartment_id is not None:
@@ -3631,9 +2733,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -3643,9 +2742,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -3655,9 +2751,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -3667,9 +2760,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -3679,9 +2769,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="internalId")
     def internal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The internal ID of the Exadata resource.
-        """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
@@ -3691,9 +2778,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle license model that applies to the database management resources.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -3703,9 +2787,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -3715,9 +2796,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the database resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -3727,9 +2805,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Exadata resource.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -3739,9 +2814,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -3751,9 +2823,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -3763,9 +2832,6 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the Exadata resource.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -3787,19 +2853,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The name of the Exadata infrastructure.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        :param pulumi.Input[str] internal_id: The internal ID of the Exadata resource.
-        :param pulumi.Input[str] lifecycle_details: The details of the lifecycle state of the Exadata resource.
-        :param pulumi.Input[float] server_count: The number of Exadata storage servers in the Exadata infrastructure.
-        :param pulumi.Input[str] state: The current lifecycle state of the database resource.
-        :param pulumi.Input[str] status: The status of the Exadata resource.
-        :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
-        :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
-        :param pulumi.Input[str] version: The version of the Exadata resource.
-        """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
         if display_name is not None:
@@ -3826,9 +2879,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -3838,9 +2888,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -3850,9 +2897,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -3862,9 +2906,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="internalId")
     def internal_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The internal ID of the Exadata resource.
-        """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
@@ -3874,9 +2915,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -3886,9 +2924,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="serverCount")
     def server_count(self) -> Optional[pulumi.Input[float]]:
-        """
-        The number of Exadata storage servers in the Exadata infrastructure.
-        """
         return pulumi.get(self, "server_count")
 
     @server_count.setter
@@ -3898,9 +2933,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the database resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -3910,9 +2942,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the Exadata resource.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -3922,9 +2951,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -3934,9 +2960,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -3946,9 +2969,6 @@ class ExternalExadataInfrastructureStorageGridArgs:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The version of the Exadata resource.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -3964,13 +2984,6 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
                  ssl_trust_store_location: Optional[pulumi.Input[str]] = None,
                  ssl_trust_store_password: Optional[pulumi.Input[str]] = None,
                  ssl_trust_store_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] password: (Updatable) The password of the user.
-        :param pulumi.Input[str] username: (Updatable) The name of the user.
-        :param pulumi.Input[str] ssl_trust_store_location: (Updatable) The full path of the SSL truststore location in the agent.
-        :param pulumi.Input[str] ssl_trust_store_password: (Updatable) The password of the SSL truststore location in the agent.
-        :param pulumi.Input[str] ssl_trust_store_type: (Updatable) The SSL truststore type.
-        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
         if ssl_trust_store_location is not None:
@@ -3983,9 +2996,6 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The password of the user.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -3995,9 +3005,6 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the user.
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -4007,9 +3014,6 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
     @property
     @pulumi.getter(name="sslTrustStoreLocation")
     def ssl_trust_store_location(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The full path of the SSL truststore location in the agent.
-        """
         return pulumi.get(self, "ssl_trust_store_location")
 
     @ssl_trust_store_location.setter
@@ -4019,9 +3023,6 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
     @property
     @pulumi.getter(name="sslTrustStorePassword")
     def ssl_trust_store_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password of the SSL truststore location in the agent.
-        """
         return pulumi.get(self, "ssl_trust_store_password")
 
     @ssl_trust_store_password.setter
@@ -4031,9 +3032,6 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
     @property
     @pulumi.getter(name="sslTrustStoreType")
     def ssl_trust_store_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The SSL truststore type.
-        """
         return pulumi.get(self, "ssl_trust_store_type")
 
     @ssl_trust_store_type.setter
@@ -4049,13 +3047,6 @@ class ExternalListenerEndpointArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] host: The host name or IP address.
-        :param pulumi.Input[str] key: The unique name of the service.
-        :param pulumi.Input[int] port: The port number.
-        :param pulumi.Input[str] protocol: The listener protocol.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] services: The list of services registered with the listener.
-        """
         if host is not None:
             pulumi.set(__self__, "host", host)
         if key is not None:
@@ -4070,9 +3061,6 @@ class ExternalListenerEndpointArgs:
     @property
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name or IP address.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -4082,9 +3070,6 @@ class ExternalListenerEndpointArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique name of the service.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -4094,9 +3079,6 @@ class ExternalListenerEndpointArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port number.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -4106,9 +3088,6 @@ class ExternalListenerEndpointArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        The listener protocol.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -4118,9 +3097,6 @@ class ExternalListenerEndpointArgs:
     @property
     @pulumi.getter
     def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of services registered with the listener.
-        """
         return pulumi.get(self, "services")
 
     @services.setter
@@ -4134,11 +3110,6 @@ class ExternalListenerServicedAsmArgs:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if display_name is not None:
@@ -4149,9 +3120,6 @@ class ExternalListenerServicedAsmArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -4161,9 +3129,6 @@ class ExternalListenerServicedAsmArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -4173,9 +3138,6 @@ class ExternalListenerServicedAsmArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -4193,15 +3155,6 @@ class ExternalListenerServicedDatabaseArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  is_managed: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        :param pulumi.Input[str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        :param pulumi.Input[str] database_type: The type of Oracle Database installation.
-        :param pulumi.Input[str] db_unique_name: The unique name of the external database.
-        :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        :param pulumi.Input[bool] is_managed: Indicates whether the database is a Managed Database or not.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if database_sub_type is not None:
@@ -4220,9 +3173,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -4232,9 +3182,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSubType")
     def database_sub_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
@@ -4244,9 +3191,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of Oracle Database installation.
-        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -4256,9 +3200,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique name of the external database.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -4268,9 +3209,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -4280,9 +3218,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -4292,9 +3227,6 @@ class ExternalListenerServicedDatabaseArgs:
     @property
     @pulumi.getter(name="isManaged")
     def is_managed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the database is a Managed Database or not.
-        """
         return pulumi.get(self, "is_managed")
 
     @is_managed.setter
@@ -4313,20 +3245,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  time_added: Optional[pulumi.Input[str]] = None,
                  workload_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        :param pulumi.Input[str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        :param pulumi.Input[str] database_type: The type of Oracle Database installation.
-        :param pulumi.Input[str] deployment_type: The infrastructure used to deploy the Oracle Database.
-        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        :param pulumi.Input[str] time_added: The date and time the Managed Database was added to the group.
-        :param pulumi.Input[str] workload_type: The workload type of the Autonomous Database.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if database_sub_type is not None:
@@ -4347,9 +3265,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -4359,9 +3274,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseSubType")
     def database_sub_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
@@ -4371,9 +3283,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of Oracle Database installation.
-        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -4383,9 +3292,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The infrastructure used to deploy the Oracle Database.
-        """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
@@ -4395,13 +3301,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -4411,9 +3310,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4423,9 +3319,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter(name="timeAdded")
     def time_added(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Managed Database was added to the group.
-        """
         return pulumi.get(self, "time_added")
 
     @time_added.setter
@@ -4435,9 +3328,6 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @property
     @pulumi.getter(name="workloadType")
     def workload_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The workload type of the Autonomous Database.
-        """
         return pulumi.get(self, "workload_type")
 
     @workload_type.setter
@@ -4452,12 +3342,6 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
                  role: Optional[pulumi.Input[str]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] password: The password for the database user name.
-        :param pulumi.Input[str] role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
-        :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] user_name: The database user name used to perform management activity.
-        """
         if password is not None:
             pulumi.set(__self__, "password", password)
         if role is not None:
@@ -4470,9 +3354,6 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password for the database user name.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -4482,9 +3363,6 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the database user. Indicates whether the database user is a normal user or sysdba.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -4494,9 +3372,6 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -4506,9 +3381,6 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database user name used to perform management activity.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -4522,11 +3394,6 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
                  name: pulumi.Input[str],
                  value: pulumi.Input[str],
                  update_comment: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: The parameter name.
-        :param pulumi.Input[str] value: The parameter value.
-        :param pulumi.Input[str] update_comment: A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         if update_comment is not None:
@@ -4535,9 +3402,6 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        The parameter name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4547,9 +3411,6 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        The parameter value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -4559,9 +3420,6 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
     @property
     @pulumi.getter(name="updateComment")
     def update_comment(self) -> Optional[pulumi.Input[str]]:
-        """
-        A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
-        """
         return pulumi.get(self, "update_comment")
 
     @update_comment.setter
@@ -4576,12 +3434,6 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
                  role: Optional[pulumi.Input[str]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  user_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] password: The password for the database user name.
-        :param pulumi.Input[str] role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
-        :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        :param pulumi.Input[str] user_name: The database user name used to perform management activity.
-        """
         if password is not None:
             pulumi.set(__self__, "password", password)
         if role is not None:
@@ -4594,9 +3446,6 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password for the database user name.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -4606,9 +3455,6 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the database user. Indicates whether the database user is a normal user or sysdba.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -4618,9 +3464,6 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -4630,9 +3473,6 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database user name used to perform management activity.
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -4646,9 +3486,6 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the database.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4657,9 +3494,6 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the database.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4691,9 +3525,6 @@ class GetDbManagementPrivateEndpointsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4702,9 +3533,6 @@ class GetDbManagementPrivateEndpointsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4736,9 +3564,6 @@ class GetExternalAsmDiskGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the ASM disk group.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4747,9 +3572,6 @@ class GetExternalAsmDiskGroupsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the ASM disk group.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4820,9 +3642,6 @@ class GetExternalAsmUsersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the ASM user.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4831,9 +3650,6 @@ class GetExternalAsmUsersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the ASM user.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5333,9 +4149,6 @@ class GetExternalListenerServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the service.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5344,9 +4157,6 @@ class GetExternalListenerServicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the service.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5417,9 +4227,6 @@ class GetJobExecutionsStatusesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5428,9 +4235,6 @@ class GetJobExecutionsStatusesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5618,9 +4422,6 @@ class GetManagedDatabaseGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5629,9 +4430,6 @@ class GetManagedDatabaseGroupsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5663,9 +4461,6 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the rule.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5674,9 +4469,6 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the rule.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5747,9 +4539,6 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the Managed Database.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5758,9 +4547,6 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the Managed Database.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5792,9 +4578,6 @@ class GetManagedDatabaseSqlPlanBaselineJobsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return the SQL plan baseline jobs that match the name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5803,9 +4586,6 @@ class GetManagedDatabaseSqlPlanBaselineJobsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return the SQL plan baseline jobs that match the name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5876,9 +4656,6 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The optional query parameter to filter the SQL Tuning Advisor task list by name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5887,9 +4664,6 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The optional query parameter to filter the SQL Tuning Advisor task list by name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5999,9 +4773,6 @@ class GetManagedDatabaseSqlTuningSetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the SQL tuning set.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6010,9 +4781,6 @@ class GetManagedDatabaseSqlTuningSetsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the SQL tuning set.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6083,9 +4851,6 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6094,9 +4859,6 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6128,9 +4890,6 @@ class GetManagedDatabaseUserDataAccessContainersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6139,9 +4898,6 @@ class GetManagedDatabaseUserDataAccessContainersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6173,9 +4929,6 @@ class GetManagedDatabaseUserObjectPrivilegesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6184,9 +4937,6 @@ class GetManagedDatabaseUserObjectPrivilegesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6218,9 +4968,6 @@ class GetManagedDatabaseUserProxiedForUsersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6229,9 +4976,6 @@ class GetManagedDatabaseUserProxiedForUsersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6263,9 +5007,6 @@ class GetManagedDatabaseUserRolesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6274,9 +5015,6 @@ class GetManagedDatabaseUserRolesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6308,9 +5046,6 @@ class GetManagedDatabaseUsersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6319,9 +5054,6 @@ class GetManagedDatabaseUsersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6353,9 +5085,6 @@ class GetManagedDatabasesAsmPropertiesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6364,9 +5093,6 @@ class GetManagedDatabasesAsmPropertiesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6398,9 +5124,6 @@ class GetManagedDatabasesDatabaseParametersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return all parameters that have the text given in their names.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6409,9 +5132,6 @@ class GetManagedDatabasesDatabaseParametersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return all parameters that have the text given in their names.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6443,9 +5163,6 @@ class GetManagedDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6454,9 +5171,6 @@ class GetManagedDatabasesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6488,9 +5202,6 @@ class GetManagedDatabasesUserProxyUsersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6499,9 +5210,6 @@ class GetManagedDatabasesUserProxyUsersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6533,9 +5241,6 @@ class GetManagedDatabasesUserSystemPrivilegesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6544,9 +5249,6 @@ class GetManagedDatabasesUserSystemPrivilegesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6578,9 +5280,6 @@ class GetManagedMySqlDatabaseConfigurationDataFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of variable
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6589,9 +5288,6 @@ class GetManagedMySqlDatabaseConfigurationDataFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of variable
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6662,9 +5358,6 @@ class GetManagedMySqlDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the Managed MySQL Database.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6673,9 +5366,6 @@ class GetManagedMySqlDatabasesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the Managed MySQL Database.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -89,167 +89,107 @@ class GetCertificateResult:
 
     @property
     @pulumi.getter(name="certificateConfigs")
-    def certificate_configs(self) -> Sequence['outputs.GetCertificateCertificateConfigResult']:
+    def certificate_configs(self) -> Optional[Sequence['outputs.GetCertificateCertificateConfigResult']]:
         return pulumi.get(self, "certificate_configs")
 
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> str:
-        """
-        The OCID of the certificate.
-        """
         return pulumi.get(self, "certificate_id")
 
     @property
     @pulumi.getter(name="certificateProfileType")
-    def certificate_profile_type(self) -> str:
-        """
-        The name of the profile used to create the certificate, which depends on the type of certificate you need.
-        """
+    def certificate_profile_type(self) -> Optional[str]:
         return pulumi.get(self, "certificate_profile_type")
 
     @property
     @pulumi.getter(name="certificateRevocationListDetails")
-    def certificate_revocation_list_details(self) -> Sequence['outputs.GetCertificateCertificateRevocationListDetailResult']:
-        """
-        The details of the certificate revocation list (CRL).
-        """
+    def certificate_revocation_list_details(self) -> Optional[Sequence['outputs.GetCertificateCertificateRevocationListDetailResult']]:
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @property
     @pulumi.getter(name="certificateRules")
-    def certificate_rules(self) -> Sequence['outputs.GetCertificateCertificateRuleResult']:
-        """
-        A list of rules that control how the certificate is used and managed.
-        """
+    def certificate_rules(self) -> Optional[Sequence['outputs.GetCertificateCertificateRuleResult']]:
         return pulumi.get(self, "certificate_rules")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where you want to create the certificate.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        The origin of the certificate.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="currentVersions")
-    def current_versions(self) -> Sequence['outputs.GetCertificateCurrentVersionResult']:
-        """
-        The details of the certificate version. This object does not contain the certificate contents.
-        """
+    def current_versions(self) -> Optional[Sequence['outputs.GetCertificateCurrentVersionResult']]:
         return pulumi.get(self, "current_versions")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A brief description of the certificate. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the certificate.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="issuerCertificateAuthorityId")
-    def issuer_certificate_authority_id(self) -> str:
-        """
-        The OCID of the certificate authority (CA) that issued the certificate.
-        """
+    def issuer_certificate_authority_id(self) -> Optional[str]:
         return pulumi.get(self, "issuer_certificate_authority_id")
 
     @property
     @pulumi.getter(name="keyAlgorithm")
-    def key_algorithm(self) -> str:
-        """
-        The algorithm used to create key pairs.
-        """
+    def key_algorithm(self) -> Optional[str]:
         return pulumi.get(self, "key_algorithm")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the certificate.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="signatureAlgorithm")
-    def signature_algorithm(self) -> str:
-        """
-        The algorithm used to sign the public key certificate.
-        """
+    def signature_algorithm(self) -> Optional[str]:
         return pulumi.get(self, "signature_algorithm")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the certificate.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def subjects(self) -> Sequence['outputs.GetCertificateSubjectResult']:
-        """
-        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        """
+    def subjects(self) -> Optional[Sequence['outputs.GetCertificateSubjectResult']]:
         return pulumi.get(self, "subjects")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
 
@@ -285,21 +225,7 @@ class AwaitableGetCertificateResult(GetCertificateResult):
 def get_certificate(certificate_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateResult:
     """
-    This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate = oci.CertificatesManagement.get_certificate(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -334,20 +260,6 @@ def get_certificate(certificate_id: Optional[str] = None,
 def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateResult]:
     """
-    This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate = oci.CertificatesManagement.get_certificate(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate.
+    Use this data source to access information about an existing resource.
     """
     ...

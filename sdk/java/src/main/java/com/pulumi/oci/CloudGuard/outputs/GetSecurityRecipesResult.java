@@ -34,7 +34,7 @@ public final class GetSecurityRecipesResult {
      * @return The list of security_recipe_collection.
      * 
      */
-    private List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
+    private @Nullable List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
     /**
      * @return The current state of the recipe
      * 
@@ -71,7 +71,7 @@ public final class GetSecurityRecipesResult {
      * 
      */
     public List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections() {
-        return this.securityRecipeCollections;
+        return this.securityRecipeCollections == null ? List.of() : this.securityRecipeCollections;
     }
     /**
      * @return The current state of the recipe
@@ -94,7 +94,7 @@ public final class GetSecurityRecipesResult {
         private @Nullable String displayName;
         private @Nullable List<GetSecurityRecipesFilter> filters;
         private @Nullable String id;
-        private List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
+        private @Nullable List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSecurityRecipesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetSecurityRecipesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityRecipeCollections(List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections) {
-            this.securityRecipeCollections = Objects.requireNonNull(securityRecipeCollections);
+        public Builder securityRecipeCollections(@Nullable List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections) {
+            this.securityRecipeCollections = securityRecipeCollections;
             return this;
         }
         public Builder securityRecipeCollections(GetSecurityRecipesSecurityRecipeCollection... securityRecipeCollections) {

@@ -50,11 +50,11 @@ export interface GetHostnamesResult {
     /**
      * The list of hostnames.
      */
-    readonly hostnames: outputs.LoadBalancer.GetHostnamesHostname[];
+    readonly hostnames?: outputs.LoadBalancer.GetHostnamesHostname[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
 }
 /**

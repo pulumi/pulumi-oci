@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -63,10 +62,10 @@ type GetExadataInfrastructureDownloadConfigFileArgs struct {
 type GetExadataInfrastructureDownloadConfigFileResult struct {
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-	Content                 string `pulumi:"content"`
-	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	Content                 *string `pulumi:"content"`
+	ExadataInfrastructureId string  `pulumi:"exadataInfrastructureId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExadataInfrastructureDownloadConfigFileOutput(ctx *pulumi.Context, args GetExadataInfrastructureDownloadConfigFileOutputArgs, opts ...pulumi.InvokeOption) GetExadataInfrastructureDownloadConfigFileResultOutput {
@@ -108,19 +107,13 @@ func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ToGetExadataInfr
 	return o
 }
 
-func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInfrastructureDownloadConfigFileResult] {
-	return pulumix.Output[GetExadataInfrastructureDownloadConfigFileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExadataInfrastructureDownloadConfigFileResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetExadataInfrastructureDownloadConfigFileResult) *bool { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
 
 // content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-func (o GetExadataInfrastructureDownloadConfigFileResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureDownloadConfigFileResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetExadataInfrastructureDownloadConfigFileResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDownloadConfigFileResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
@@ -128,8 +121,8 @@ func (o GetExadataInfrastructureDownloadConfigFileResultOutput) ExadataInfrastru
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExadataInfrastructureDownloadConfigFileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureDownloadConfigFileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExadataInfrastructureDownloadConfigFileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureDownloadConfigFileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

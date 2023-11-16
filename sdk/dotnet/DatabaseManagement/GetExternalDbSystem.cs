@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The details required to enable Database Management for an external DB system.
         /// </summary>
@@ -118,32 +118,32 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
         /// </summary>
-        public readonly string DbSystemDiscoveryId;
+        public readonly string? DbSystemDiscoveryId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         /// </summary>
-        public readonly string DiscoveryAgentId;
+        public readonly string? DiscoveryAgentId;
         /// <summary>
         /// The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string ExternalDbSystemId;
         /// <summary>
         /// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         /// </summary>
-        public readonly string HomeDirectory;
+        public readonly string? HomeDirectory;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the DB system is a cluster DB system or not.
         /// </summary>
-        public readonly bool IsCluster;
+        public readonly bool? IsCluster;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The configuration details of Stack Monitoring for an external DB system.
         /// </summary>
@@ -151,45 +151,45 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The current lifecycle state of the external DB system resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external DB system was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external DB system was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExternalDbSystemResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDatabaseManagementConfigResult> databaseManagementConfigs,
 
-            string dbSystemDiscoveryId,
+            string? dbSystemDiscoveryId,
 
-            string discoveryAgentId,
+            string? discoveryAgentId,
 
-            string displayName,
+            string? displayName,
 
             string externalDbSystemId,
 
-            string homeDirectory,
+            string? homeDirectory,
 
-            string id,
+            string? id,
 
-            bool isCluster,
+            bool? isCluster,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetExternalDbSystemStackMonitoringConfigResult> stackMonitoringConfigs,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DatabaseManagementConfigs = databaseManagementConfigs;

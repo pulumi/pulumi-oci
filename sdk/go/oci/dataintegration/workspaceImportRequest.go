@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -68,33 +67,33 @@ type WorkspaceImportRequest struct {
 	// Name of the Object Storage bucket where the object will be imported from.
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// Name of the user who initiated import request.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// Contains key of the error
 	ErrorMessages pulumi.MapOutput `pulumi:"errorMessages"`
 	// Name of the zip file to be imported.
 	FileName pulumi.StringOutput `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
-	ImportConflictResolution WorkspaceImportRequestImportConflictResolutionOutput `pulumi:"importConflictResolution"`
+	ImportConflictResolution WorkspaceImportRequestImportConflictResolutionPtrOutput `pulumi:"importConflictResolution"`
 	// The array of imported object details.
 	ImportedObjects WorkspaceImportRequestImportedObjectArrayOutput `pulumi:"importedObjects"`
 	// Import object request key
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// Name of the import request.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// Key of the object inside which all the objects will be imported
-	ObjectKeyForImport pulumi.StringOutput `pulumi:"objectKeyForImport"`
+	ObjectKeyForImport pulumi.StringPtrOutput `pulumi:"objectKeyForImport"`
 	// Region of the object storage (if using object storage of different region)
-	ObjectStorageRegion pulumi.StringOutput `pulumi:"objectStorageRegion"`
+	ObjectStorageRegion pulumi.StringPtrOutput `pulumi:"objectStorageRegion"`
 	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-	ObjectStorageTenancyId pulumi.StringOutput `pulumi:"objectStorageTenancyId"`
+	ObjectStorageTenancyId pulumi.StringPtrOutput `pulumi:"objectStorageTenancyId"`
 	// Import Objects request status.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// Time at which the request was completely processed.
-	TimeEndedInMillis pulumi.StringOutput `pulumi:"timeEndedInMillis"`
+	TimeEndedInMillis pulumi.StringPtrOutput `pulumi:"timeEndedInMillis"`
 	// Time at which the request started getting processed.
-	TimeStartedInMillis pulumi.StringOutput `pulumi:"timeStartedInMillis"`
+	TimeStartedInMillis pulumi.StringPtrOutput `pulumi:"timeStartedInMillis"`
 	// Number of objects that are imported.
-	TotalImportedObjectCount pulumi.IntOutput `pulumi:"totalImportedObjectCount"`
+	TotalImportedObjectCount pulumi.IntPtrOutput `pulumi:"totalImportedObjectCount"`
 	// The workspace ID.
 	//
 	// ** IMPORTANT **
@@ -284,12 +283,6 @@ func (i *WorkspaceImportRequest) ToWorkspaceImportRequestOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestOutput)
 }
 
-func (i *WorkspaceImportRequest) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequest] {
-	return pulumix.Output[*WorkspaceImportRequest]{
-		OutputState: i.ToWorkspaceImportRequestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceImportRequestArrayInput is an input type that accepts WorkspaceImportRequestArray and WorkspaceImportRequestArrayOutput values.
 // You can construct a concrete instance of `WorkspaceImportRequestArrayInput` via:
 //
@@ -313,12 +306,6 @@ func (i WorkspaceImportRequestArray) ToWorkspaceImportRequestArrayOutput() Works
 
 func (i WorkspaceImportRequestArray) ToWorkspaceImportRequestArrayOutputWithContext(ctx context.Context) WorkspaceImportRequestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestArrayOutput)
-}
-
-func (i WorkspaceImportRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceImportRequest] {
-	return pulumix.Output[[]*WorkspaceImportRequest]{
-		OutputState: i.ToWorkspaceImportRequestArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceImportRequestMapInput is an input type that accepts WorkspaceImportRequestMap and WorkspaceImportRequestMapOutput values.
@@ -346,12 +333,6 @@ func (i WorkspaceImportRequestMap) ToWorkspaceImportRequestMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestMapOutput)
 }
 
-func (i WorkspaceImportRequestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceImportRequest] {
-	return pulumix.Output[map[string]*WorkspaceImportRequest]{
-		OutputState: i.ToWorkspaceImportRequestMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceImportRequestOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceImportRequestOutput) ElementType() reflect.Type {
@@ -366,20 +347,14 @@ func (o WorkspaceImportRequestOutput) ToWorkspaceImportRequestOutputWithContext(
 	return o
 }
 
-func (o WorkspaceImportRequestOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequest] {
-	return pulumix.Output[*WorkspaceImportRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the Object Storage bucket where the object will be imported from.
 func (o WorkspaceImportRequestOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
 }
 
 // Name of the user who initiated import request.
-func (o WorkspaceImportRequestOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Contains key of the error
@@ -393,10 +368,10 @@ func (o WorkspaceImportRequestOutput) FileName() pulumi.StringOutput {
 }
 
 // Import Objects Conflict resolution.
-func (o WorkspaceImportRequestOutput) ImportConflictResolution() WorkspaceImportRequestImportConflictResolutionOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) WorkspaceImportRequestImportConflictResolutionOutput {
+func (o WorkspaceImportRequestOutput) ImportConflictResolution() WorkspaceImportRequestImportConflictResolutionPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) WorkspaceImportRequestImportConflictResolutionPtrOutput {
 		return v.ImportConflictResolution
-	}).(WorkspaceImportRequestImportConflictResolutionOutput)
+	}).(WorkspaceImportRequestImportConflictResolutionPtrOutput)
 }
 
 // The array of imported object details.
@@ -407,48 +382,48 @@ func (o WorkspaceImportRequestOutput) ImportedObjects() WorkspaceImportRequestIm
 }
 
 // Import object request key
-func (o WorkspaceImportRequestOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Name of the import request.
-func (o WorkspaceImportRequestOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Key of the object inside which all the objects will be imported
-func (o WorkspaceImportRequestOutput) ObjectKeyForImport() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.ObjectKeyForImport }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) ObjectKeyForImport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.ObjectKeyForImport }).(pulumi.StringPtrOutput)
 }
 
 // Region of the object storage (if using object storage of different region)
-func (o WorkspaceImportRequestOutput) ObjectStorageRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.ObjectStorageRegion }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) ObjectStorageRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.ObjectStorageRegion }).(pulumi.StringPtrOutput)
 }
 
 // Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-func (o WorkspaceImportRequestOutput) ObjectStorageTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.ObjectStorageTenancyId }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) ObjectStorageTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.ObjectStorageTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // Import Objects request status.
-func (o WorkspaceImportRequestOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the request was completely processed.
-func (o WorkspaceImportRequestOutput) TimeEndedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.TimeEndedInMillis }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) TimeEndedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.TimeEndedInMillis }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the request started getting processed.
-func (o WorkspaceImportRequestOutput) TimeStartedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringOutput { return v.TimeStartedInMillis }).(pulumi.StringOutput)
+func (o WorkspaceImportRequestOutput) TimeStartedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringPtrOutput { return v.TimeStartedInMillis }).(pulumi.StringPtrOutput)
 }
 
 // Number of objects that are imported.
-func (o WorkspaceImportRequestOutput) TotalImportedObjectCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.IntOutput { return v.TotalImportedObjectCount }).(pulumi.IntOutput)
+func (o WorkspaceImportRequestOutput) TotalImportedObjectCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.IntPtrOutput { return v.TotalImportedObjectCount }).(pulumi.IntPtrOutput)
 }
 
 // The workspace ID.
@@ -473,12 +448,6 @@ func (o WorkspaceImportRequestArrayOutput) ToWorkspaceImportRequestArrayOutputWi
 	return o
 }
 
-func (o WorkspaceImportRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceImportRequest] {
-	return pulumix.Output[[]*WorkspaceImportRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceImportRequestArrayOutput) Index(i pulumi.IntInput) WorkspaceImportRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceImportRequest {
 		return vs[0].([]*WorkspaceImportRequest)[vs[1].(int)]
@@ -497,12 +466,6 @@ func (o WorkspaceImportRequestMapOutput) ToWorkspaceImportRequestMapOutput() Wor
 
 func (o WorkspaceImportRequestMapOutput) ToWorkspaceImportRequestMapOutputWithContext(ctx context.Context) WorkspaceImportRequestMapOutput {
 	return o
-}
-
-func (o WorkspaceImportRequestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceImportRequest] {
-	return pulumix.Output[map[string]*WorkspaceImportRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceImportRequestMapOutput) MapIndex(k pulumi.StringInput) WorkspaceImportRequestOutput {

@@ -16,68 +16,68 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// <summary>
         /// The name of the backend set associated with the backend servers.  Example: `example_backend_set`
         /// </summary>
-        public readonly string BackendSetName;
-        public readonly string Id;
+        public readonly string? BackendSetName;
+        public readonly string? Id;
         /// <summary>
         /// The IP address of the backend server. Example: `10.0.0.3`
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         /// </summary>
-        public readonly bool IsBackup;
+        public readonly bool? IsBackup;
         /// <summary>
         /// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         /// </summary>
-        public readonly bool IsDrain;
+        public readonly bool? IsDrain;
         /// <summary>
         /// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         /// </summary>
-        public readonly bool IsOffline;
+        public readonly bool? IsOffline;
         /// <summary>
         /// A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:443` or `10.0.0.3:0`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         /// </summary>
-        public readonly string NetworkLoadBalancerId;
+        public readonly string? NetworkLoadBalancerId;
         /// <summary>
         /// The communication port for the backend server.  Example: `8080`
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetBackendsBackendCollectionItemResult(
-            string backendSetName,
+            string? backendSetName,
 
-            string id,
+            string? id,
 
-            string ipAddress,
+            string? ipAddress,
 
-            bool isBackup,
+            bool? isBackup,
 
-            bool isDrain,
+            bool? isDrain,
 
-            bool isOffline,
+            bool? isOffline,
 
-            string name,
+            string? name,
 
-            string networkLoadBalancerId,
+            string? networkLoadBalancerId,
 
-            int port,
+            int? port,
 
-            string targetId,
+            string? targetId,
 
-            int weight)
+            int? weight)
         {
             BackendSetName = backendSetName;
             Id = id;

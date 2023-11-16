@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetCategoriesResult(
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<Outputs.GetCategoriesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             Categories = categories;
             CompartmentId = compartmentId;

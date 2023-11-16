@@ -67,12 +67,12 @@ export interface GetMediaWorkflowTaskDeclarationResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCurrent?: boolean;
     /**
      * List of MediaWorkflowTaskDeclaration objects.
      */
-    readonly items: outputs.MediaServices.GetMediaWorkflowTaskDeclarationItem[];
+    readonly items?: outputs.MediaServices.GetMediaWorkflowTaskDeclarationItem[];
     /**
      * MediaWorkflowTaskDeclaration identifier. The name and version should be unique among MediaWorkflowTaskDeclarations.
      */

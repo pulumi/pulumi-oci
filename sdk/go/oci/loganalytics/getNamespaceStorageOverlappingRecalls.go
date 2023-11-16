@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
@@ -68,8 +67,8 @@ type GetNamespaceStorageOverlappingRecallsArgs struct {
 type GetNamespaceStorageOverlappingRecallsResult struct {
 	Filters []GetNamespaceStorageOverlappingRecallsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// The list of overlapping_recall_collection.
 	OverlappingRecallCollections []GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection `pulumi:"overlappingRecallCollections"`
 	// This is the end of the time range of the archival data
@@ -121,12 +120,6 @@ func (o GetNamespaceStorageOverlappingRecallsResultOutput) ToGetNamespaceStorage
 	return o
 }
 
-func (o GetNamespaceStorageOverlappingRecallsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageOverlappingRecallsResult] {
-	return pulumix.Output[GetNamespaceStorageOverlappingRecallsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceStorageOverlappingRecallsResultOutput) Filters() GetNamespaceStorageOverlappingRecallsFilterArrayOutput {
 	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsResult) []GetNamespaceStorageOverlappingRecallsFilter {
 		return v.Filters
@@ -134,8 +127,8 @@ func (o GetNamespaceStorageOverlappingRecallsResultOutput) Filters() GetNamespac
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceStorageOverlappingRecallsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceStorageOverlappingRecallsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageOverlappingRecallsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNamespaceStorageOverlappingRecallsResultOutput) Namespace() pulumi.StringOutput {

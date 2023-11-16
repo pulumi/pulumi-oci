@@ -119,148 +119,97 @@ class GetMigrationResult:
 
     @property
     @pulumi.getter(name="advisorSettings")
-    def advisor_settings(self) -> Sequence['outputs.GetMigrationAdvisorSettingResult']:
-        """
-        Optional Pre-Migration advisor settings.
-        """
+    def advisor_settings(self) -> Optional[Sequence['outputs.GetMigrationAdvisorSettingResult']]:
         return pulumi.get(self, "advisor_settings")
 
     @property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> str:
-        """
-        The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
-        """
+    def agent_id(self) -> Optional[str]:
         return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID of the compartment where the secret containing the credentials will be created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="credentialsSecretId")
-    def credentials_secret_id(self) -> str:
-        """
-        OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
-        """
+    def credentials_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "credentials_secret_id")
 
     @property
     @pulumi.getter(name="csvText")
-    def csv_text(self) -> str:
+    def csv_text(self) -> Optional[str]:
         return pulumi.get(self, "csv_text")
 
     @property
     @pulumi.getter(name="dataTransferMediumDetails")
-    def data_transfer_medium_details(self) -> Sequence['outputs.GetMigrationDataTransferMediumDetailResult']:
-        """
-        Data Transfer Medium details for the Migration.
-        """
+    def data_transfer_medium_details(self) -> Optional[Sequence['outputs.GetMigrationDataTransferMediumDetailResult']]:
         return pulumi.get(self, "data_transfer_medium_details")
 
     @property
     @pulumi.getter(name="dataTransferMediumDetailsV2s")
-    def data_transfer_medium_details_v2s(self) -> Sequence['outputs.GetMigrationDataTransferMediumDetailsV2Result']:
+    def data_transfer_medium_details_v2s(self) -> Optional[Sequence['outputs.GetMigrationDataTransferMediumDetailsV2Result']]:
         return pulumi.get(self, "data_transfer_medium_details_v2s")
 
     @property
     @pulumi.getter(name="datapumpSettings")
-    def datapump_settings(self) -> Sequence['outputs.GetMigrationDatapumpSettingResult']:
-        """
-        Optional settings for Data Pump Export and Import jobs
-        """
+    def datapump_settings(self) -> Optional[Sequence['outputs.GetMigrationDatapumpSettingResult']]:
         return pulumi.get(self, "datapump_settings")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Migration Display Name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dumpTransferDetails")
-    def dump_transfer_details(self) -> Sequence['outputs.GetMigrationDumpTransferDetailResult']:
-        """
-        Optional additional properties for dump transfer.
-        """
+    def dump_transfer_details(self) -> Optional[Sequence['outputs.GetMigrationDumpTransferDetailResult']]:
         return pulumi.get(self, "dump_transfer_details")
 
     @property
     @pulumi.getter(name="excludeObjects")
-    def exclude_objects(self) -> Sequence['outputs.GetMigrationExcludeObjectResult']:
-        """
-        Database objects to exclude from migration. If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
-        """
+    def exclude_objects(self) -> Optional[Sequence['outputs.GetMigrationExcludeObjectResult']]:
         return pulumi.get(self, "exclude_objects")
 
     @property
     @pulumi.getter(name="executingJobId")
-    def executing_job_id(self) -> str:
-        """
-        OCID of the current ODMS Job in execution for the Migration, if any.
-        """
+    def executing_job_id(self) -> Optional[str]:
         return pulumi.get(self, "executing_job_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="goldenGateDetails")
-    def golden_gate_details(self) -> Sequence['outputs.GetMigrationGoldenGateDetailResult']:
-        """
-        Details about Oracle GoldenGate Microservices.
-        """
+    def golden_gate_details(self) -> Optional[Sequence['outputs.GetMigrationGoldenGateDetailResult']]:
         return pulumi.get(self, "golden_gate_details")
 
     @property
     @pulumi.getter(name="goldenGateServiceDetails")
-    def golden_gate_service_details(self) -> Sequence['outputs.GetMigrationGoldenGateServiceDetailResult']:
-        """
-        Details about Oracle GoldenGate GGS Deployment.
-        """
+    def golden_gate_service_details(self) -> Optional[Sequence['outputs.GetMigrationGoldenGateServiceDetailResult']]:
         return pulumi.get(self, "golden_gate_service_details")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="includeObjects")
-    def include_objects(self) -> Sequence['outputs.GetMigrationIncludeObjectResult']:
-        """
-        Database objects to include from migration.
-        """
+    def include_objects(self) -> Optional[Sequence['outputs.GetMigrationIncludeObjectResult']]:
         return pulumi.get(self, "include_objects")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional status related to the execution and current state of the Migration.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -270,90 +219,57 @@ class GetMigrationResult:
 
     @property
     @pulumi.getter(name="sourceContainerDatabaseConnectionId")
-    def source_container_database_connection_id(self) -> str:
-        """
-        The OCID of the Source Container Database Connection.
-        """
+    def source_container_database_connection_id(self) -> Optional[str]:
         return pulumi.get(self, "source_container_database_connection_id")
 
     @property
     @pulumi.getter(name="sourceDatabaseConnectionId")
-    def source_database_connection_id(self) -> str:
-        """
-        The OCID of the Source Database Connection.
-        """
+    def source_database_connection_id(self) -> Optional[str]:
         return pulumi.get(self, "source_database_connection_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Migration resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetDatabaseConnectionId")
-    def target_database_connection_id(self) -> str:
-        """
-        The OCID of the Target Database Connection.
-        """
+    def target_database_connection_id(self) -> Optional[str]:
         return pulumi.get(self, "target_database_connection_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Migration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastMigration")
-    def time_last_migration(self) -> str:
-        """
-        The time of last Migration. An RFC3339 formatted datetime string.
-        """
+    def time_last_migration(self) -> Optional[str]:
         return pulumi.get(self, "time_last_migration")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time of the last Migration details update. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Migration type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vaultDetails")
-    def vault_details(self) -> Sequence['outputs.GetMigrationVaultDetailResult']:
-        """
-        Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-        """
+    def vault_details(self) -> Optional[Sequence['outputs.GetMigrationVaultDetailResult']]:
         return pulumi.get(self, "vault_details")
 
     @property
     @pulumi.getter(name="waitAfter")
-    def wait_after(self) -> str:
-        """
-        Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
-        """
+    def wait_after(self) -> Optional[str]:
         return pulumi.get(self, "wait_after")
 
 
@@ -399,21 +315,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
 def get_migration(migration_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationResult:
     """
-    This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Display Migration details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration = oci.DatabaseMigration.get_migration(migration_id=oci_database_migration_migration["test_migration"]["id"])
-    ```
-
-
-    :param str migration_id: The OCID of the migration
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['migrationId'] = migration_id
@@ -458,20 +360,6 @@ def get_migration(migration_id: Optional[str] = None,
 def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationResult]:
     """
-    This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Display Migration details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration = oci.DatabaseMigration.get_migration(migration_id=oci_database_migration_migration["test_migration"]["id"])
-    ```
-
-
-    :param str migration_id: The OCID of the migration
+    Use this data source to access information about an existing resource.
     """
     ...

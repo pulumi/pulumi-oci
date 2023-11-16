@@ -115,7 +115,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetExternalExadataStorageServerTopSqlCpuActivityResult(
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string externalExadataStorageServerId,
 
-            string id)
+            string? id)
         {
             Activities = activities;
             ExternalExadataStorageServerId = externalExadataStorageServerId;

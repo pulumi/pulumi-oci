@@ -74,12 +74,12 @@ export interface GetOpsiConfigurationConfigurationItemResult {
     /**
      * Array of configuration item summary objects.
      */
-    readonly configItems: outputs.Opsi.GetOpsiConfigurationConfigurationItemConfigItem[];
+    readonly configItems?: outputs.Opsi.GetOpsiConfigurationConfigurationItemConfigItem[];
     readonly configItemsApplicableContexts?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of configuration item.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i OdaInstanceRestrictedOperationArgs) ToOdaInstanceRestrictedOperationOutp
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceRestrictedOperationOutput)
 }
 
-func (i OdaInstanceRestrictedOperationArgs) ToOutput(ctx context.Context) pulumix.Output[OdaInstanceRestrictedOperation] {
-	return pulumix.Output[OdaInstanceRestrictedOperation]{
-		OutputState: i.ToOdaInstanceRestrictedOperationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaInstanceRestrictedOperationArrayInput is an input type that accepts OdaInstanceRestrictedOperationArray and OdaInstanceRestrictedOperationArrayOutput values.
 // You can construct a concrete instance of `OdaInstanceRestrictedOperationArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i OdaInstanceRestrictedOperationArray) ToOdaInstanceRestrictedOperationArr
 	return pulumi.ToOutputWithContext(ctx, i).(OdaInstanceRestrictedOperationArrayOutput)
 }
 
-func (i OdaInstanceRestrictedOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]OdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]OdaInstanceRestrictedOperation]{
-		OutputState: i.ToOdaInstanceRestrictedOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
 
 func (OdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o OdaInstanceRestrictedOperationOutput) ToOdaInstanceRestrictedOperationOu
 
 func (o OdaInstanceRestrictedOperationOutput) ToOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationOutput {
 	return o
-}
-
-func (o OdaInstanceRestrictedOperationOutput) ToOutput(ctx context.Context) pulumix.Output[OdaInstanceRestrictedOperation] {
-	return pulumix.Output[OdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the restricted operation.
@@ -130,12 +111,6 @@ func (o OdaInstanceRestrictedOperationArrayOutput) ToOdaInstanceRestrictedOperat
 
 func (o OdaInstanceRestrictedOperationArrayOutput) ToOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) OdaInstanceRestrictedOperationArrayOutput {
 	return o
-}
-
-func (o OdaInstanceRestrictedOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]OdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) OdaInstanceRestrictedOperationOutput {
@@ -185,12 +160,6 @@ func (i OdaPrivateEndpointScanProxyScanListenerInfoArgs) ToOdaPrivateEndpointSca
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyScanListenerInfoOutput)
 }
 
-func (i OdaPrivateEndpointScanProxyScanListenerInfoArgs) ToOutput(ctx context.Context) pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaPrivateEndpointScanProxyScanListenerInfoArrayInput is an input type that accepts OdaPrivateEndpointScanProxyScanListenerInfoArray and OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput values.
 // You can construct a concrete instance of `OdaPrivateEndpointScanProxyScanListenerInfoArrayInput` via:
 //
@@ -216,12 +185,6 @@ func (i OdaPrivateEndpointScanProxyScanListenerInfoArray) ToOdaPrivateEndpointSc
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput)
 }
 
-func (i OdaPrivateEndpointScanProxyScanListenerInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaPrivateEndpointScanProxyScanListenerInfoOutput struct{ *pulumi.OutputState }
 
 func (OdaPrivateEndpointScanProxyScanListenerInfoOutput) ElementType() reflect.Type {
@@ -234,12 +197,6 @@ func (o OdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOdaPrivateEndpointS
 
 func (o OdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx context.Context) OdaPrivateEndpointScanProxyScanListenerInfoOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOutput(ctx context.Context) pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -271,12 +228,6 @@ func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOdaPrivateEndp
 	return o
 }
 
-func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]OdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) Index(i pulumi.IntInput) OdaPrivateEndpointScanProxyScanListenerInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OdaPrivateEndpointScanProxyScanListenerInfo {
 		return vs[0].([]OdaPrivateEndpointScanProxyScanListenerInfo)[vs[1].(int)]
@@ -285,9 +236,9 @@ func (o OdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) Index(i pulumi.I
 
 type GetOdaInstanceRestrictedOperation struct {
 	// Name of the restricted operation.
-	OperationName string `pulumi:"operationName"`
+	OperationName *string `pulumi:"operationName"`
 	// Name of the service restricting the operation.
-	RestrictingService string `pulumi:"restrictingService"`
+	RestrictingService *string `pulumi:"restrictingService"`
 }
 
 // GetOdaInstanceRestrictedOperationInput is an input type that accepts GetOdaInstanceRestrictedOperationArgs and GetOdaInstanceRestrictedOperationOutput values.
@@ -303,9 +254,9 @@ type GetOdaInstanceRestrictedOperationInput interface {
 
 type GetOdaInstanceRestrictedOperationArgs struct {
 	// Name of the restricted operation.
-	OperationName pulumi.StringInput `pulumi:"operationName"`
+	OperationName pulumi.StringPtrInput `pulumi:"operationName"`
 	// Name of the service restricting the operation.
-	RestrictingService pulumi.StringInput `pulumi:"restrictingService"`
+	RestrictingService pulumi.StringPtrInput `pulumi:"restrictingService"`
 }
 
 func (GetOdaInstanceRestrictedOperationArgs) ElementType() reflect.Type {
@@ -318,12 +269,6 @@ func (i GetOdaInstanceRestrictedOperationArgs) ToGetOdaInstanceRestrictedOperati
 
 func (i GetOdaInstanceRestrictedOperationArgs) ToGetOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstanceRestrictedOperationOutput)
-}
-
-func (i GetOdaInstanceRestrictedOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstanceRestrictedOperationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstanceRestrictedOperationArray and GetOdaInstanceRestrictedOperationArrayOutput values.
@@ -351,12 +296,6 @@ func (i GetOdaInstanceRestrictedOperationArray) ToGetOdaInstanceRestrictedOperat
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstanceRestrictedOperationArrayOutput)
 }
 
-func (i GetOdaInstanceRestrictedOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
@@ -371,20 +310,14 @@ func (o GetOdaInstanceRestrictedOperationOutput) ToGetOdaInstanceRestrictedOpera
 	return o
 }
 
-func (o GetOdaInstanceRestrictedOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the restricted operation.
-func (o GetOdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstanceRestrictedOperation) string { return v.OperationName }).(pulumi.StringOutput)
+func (o GetOdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstanceRestrictedOperation) *string { return v.OperationName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the service restricting the operation.
-func (o GetOdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstanceRestrictedOperation) string { return v.RestrictingService }).(pulumi.StringOutput)
+func (o GetOdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstanceRestrictedOperation) *string { return v.RestrictingService }).(pulumi.StringPtrOutput)
 }
 
 type GetOdaInstanceRestrictedOperationArrayOutput struct{ *pulumi.OutputState }
@@ -399,12 +332,6 @@ func (o GetOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstanceRestricted
 
 func (o GetOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstanceRestrictedOperationArrayOutput {
 	return o
-}
-
-func (o GetOdaInstanceRestrictedOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) GetOdaInstanceRestrictedOperationOutput {
@@ -448,12 +375,6 @@ func (i GetOdaInstancesFilterArgs) ToGetOdaInstancesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesFilterOutput)
 }
 
-func (i GetOdaInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesFilter] {
-	return pulumix.Output[GetOdaInstancesFilter]{
-		OutputState: i.ToGetOdaInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaInstancesFilterArrayInput is an input type that accepts GetOdaInstancesFilterArray and GetOdaInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaInstancesFilterArrayInput` via:
 //
@@ -479,12 +400,6 @@ func (i GetOdaInstancesFilterArray) ToGetOdaInstancesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesFilterArrayOutput)
 }
 
-func (i GetOdaInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesFilter] {
-	return pulumix.Output[[]GetOdaInstancesFilter]{
-		OutputState: i.ToGetOdaInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstancesFilterOutput) ElementType() reflect.Type {
@@ -497,12 +412,6 @@ func (o GetOdaInstancesFilterOutput) ToGetOdaInstancesFilterOutput() GetOdaInsta
 
 func (o GetOdaInstancesFilterOutput) ToGetOdaInstancesFilterOutputWithContext(ctx context.Context) GetOdaInstancesFilterOutput {
 	return o
-}
-
-func (o GetOdaInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesFilter] {
-	return pulumix.Output[GetOdaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -531,12 +440,6 @@ func (o GetOdaInstancesFilterArrayOutput) ToGetOdaInstancesFilterArrayOutputWith
 	return o
 }
 
-func (o GetOdaInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesFilter] {
-	return pulumix.Output[[]GetOdaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaInstancesFilter {
 		return vs[0].([]GetOdaInstancesFilter)[vs[1].(int)]
@@ -549,47 +452,47 @@ type GetOdaInstancesOdaInstance struct {
 	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
 	AttachmentTypes []string `pulumi:"attachmentTypes"`
 	// List the Digital Assistant instances that belong to this compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
-	ConnectorUrl string `pulumi:"connectorUrl"`
+	ConnectorUrl *string `pulumi:"connectorUrl"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the Digital Assistant instance.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-	IdentityAppConsoleUrl string `pulumi:"identityAppConsoleUrl"`
+	IdentityAppConsoleUrl *string `pulumi:"identityAppConsoleUrl"`
 	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-	IdentityAppGuid string `pulumi:"identityAppGuid"`
+	IdentityAppGuid *string `pulumi:"identityAppGuid"`
 	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-	IdentityDomain string `pulumi:"identityDomain"`
+	IdentityDomain *string `pulumi:"identityDomain"`
 	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
 	ImportedPackageIds []string `pulumi:"importedPackageIds"`
 	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
 	ImportedPackageNames []string `pulumi:"importedPackageNames"`
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-	IsRoleBasedAccess bool `pulumi:"isRoleBasedAccess"`
+	IsRoleBasedAccess *bool `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
-	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	LifecycleSubState *string `pulumi:"lifecycleSubState"`
 	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 	RestrictedOperations []GetOdaInstancesOdaInstanceRestrictedOperation `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// List only the Digital Assistant instances that are in this lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// URL for the Digital Assistant web application that's associated with the instance.
-	WebAppUrl string `pulumi:"webAppUrl"`
+	WebAppUrl *string `pulumi:"webAppUrl"`
 }
 
 // GetOdaInstancesOdaInstanceInput is an input type that accepts GetOdaInstancesOdaInstanceArgs and GetOdaInstancesOdaInstanceOutput values.
@@ -609,47 +512,47 @@ type GetOdaInstancesOdaInstanceArgs struct {
 	// A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
 	AttachmentTypes pulumi.StringArrayInput `pulumi:"attachmentTypes"`
 	// List the Digital Assistant instances that belong to this compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// URL for the connector's endpoint.
-	ConnectorUrl pulumi.StringInput `pulumi:"connectorUrl"`
+	ConnectorUrl pulumi.StringPtrInput `pulumi:"connectorUrl"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the Digital Assistant instance.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-	IdentityAppConsoleUrl pulumi.StringInput `pulumi:"identityAppConsoleUrl"`
+	IdentityAppConsoleUrl pulumi.StringPtrInput `pulumi:"identityAppConsoleUrl"`
 	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-	IdentityAppGuid pulumi.StringInput `pulumi:"identityAppGuid"`
+	IdentityAppGuid pulumi.StringPtrInput `pulumi:"identityAppGuid"`
 	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-	IdentityDomain pulumi.StringInput `pulumi:"identityDomain"`
+	IdentityDomain pulumi.StringPtrInput `pulumi:"identityDomain"`
 	// A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
 	ImportedPackageIds pulumi.StringArrayInput `pulumi:"importedPackageIds"`
 	// A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
 	ImportedPackageNames pulumi.StringArrayInput `pulumi:"importedPackageNames"`
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-	IsRoleBasedAccess pulumi.BoolInput `pulumi:"isRoleBasedAccess"`
+	IsRoleBasedAccess pulumi.BoolPtrInput `pulumi:"isRoleBasedAccess"`
 	// The current sub-state of the Digital Assistant instance.
-	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	LifecycleSubState pulumi.StringPtrInput `pulumi:"lifecycleSubState"`
 	// A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 	RestrictedOperations GetOdaInstancesOdaInstanceRestrictedOperationArrayInput `pulumi:"restrictedOperations"`
 	// Shape or size of the instance.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// List only the Digital Assistant instances that are in this lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrInput `pulumi:"stateMessage"`
 	// When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// URL for the Digital Assistant web application that's associated with the instance.
-	WebAppUrl pulumi.StringInput `pulumi:"webAppUrl"`
+	WebAppUrl pulumi.StringPtrInput `pulumi:"webAppUrl"`
 }
 
 func (GetOdaInstancesOdaInstanceArgs) ElementType() reflect.Type {
@@ -662,12 +565,6 @@ func (i GetOdaInstancesOdaInstanceArgs) ToGetOdaInstancesOdaInstanceOutput() Get
 
 func (i GetOdaInstancesOdaInstanceArgs) ToGetOdaInstancesOdaInstanceOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceOutput)
-}
-
-func (i GetOdaInstancesOdaInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstance] {
-	return pulumix.Output[GetOdaInstancesOdaInstance]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaInstancesOdaInstanceArrayInput is an input type that accepts GetOdaInstancesOdaInstanceArray and GetOdaInstancesOdaInstanceArrayOutput values.
@@ -695,12 +592,6 @@ func (i GetOdaInstancesOdaInstanceArray) ToGetOdaInstancesOdaInstanceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceArrayOutput)
 }
 
-func (i GetOdaInstancesOdaInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstance] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstance]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstancesOdaInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstancesOdaInstanceOutput) ElementType() reflect.Type {
@@ -715,12 +606,6 @@ func (o GetOdaInstancesOdaInstanceOutput) ToGetOdaInstancesOdaInstanceOutputWith
 	return o
 }
 
-func (o GetOdaInstancesOdaInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstance] {
-	return pulumix.Output[GetOdaInstancesOdaInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
 func (o GetOdaInstancesOdaInstanceOutput) AttachmentIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOdaInstancesOdaInstance) []string { return v.AttachmentIds }).(pulumi.StringArrayOutput)
@@ -732,13 +617,13 @@ func (o GetOdaInstancesOdaInstanceOutput) AttachmentTypes() pulumi.StringArrayOu
 }
 
 // List the Digital Assistant instances that belong to this compartment.
-func (o GetOdaInstancesOdaInstanceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // URL for the connector's endpoint.
-func (o GetOdaInstancesOdaInstanceOutput) ConnectorUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.ConnectorUrl }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) ConnectorUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.ConnectorUrl }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -747,13 +632,13 @@ func (o GetOdaInstancesOdaInstanceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the Digital Assistant instance.
-func (o GetOdaInstancesOdaInstanceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.Description }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-func (o GetOdaInstancesOdaInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
@@ -762,23 +647,23 @@ func (o GetOdaInstancesOdaInstanceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique immutable identifier that was assigned when the instance was created.
-func (o GetOdaInstancesOdaInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-func (o GetOdaInstancesOdaInstanceOutput) IdentityAppConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.IdentityAppConsoleUrl }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) IdentityAppConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.IdentityAppConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-func (o GetOdaInstancesOdaInstanceOutput) IdentityAppGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.IdentityAppGuid }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) IdentityAppGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.IdentityAppGuid }).(pulumi.StringPtrOutput)
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-func (o GetOdaInstancesOdaInstanceOutput) IdentityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.IdentityDomain }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) IdentityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.IdentityDomain }).(pulumi.StringPtrOutput)
 }
 
 // A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
@@ -792,13 +677,13 @@ func (o GetOdaInstancesOdaInstanceOutput) ImportedPackageNames() pulumi.StringAr
 }
 
 // Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-func (o GetOdaInstancesOdaInstanceOutput) IsRoleBasedAccess() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) bool { return v.IsRoleBasedAccess }).(pulumi.BoolOutput)
+func (o GetOdaInstancesOdaInstanceOutput) IsRoleBasedAccess() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *bool { return v.IsRoleBasedAccess }).(pulumi.BoolPtrOutput)
 }
 
 // The current sub-state of the Digital Assistant instance.
-func (o GetOdaInstancesOdaInstanceOutput) LifecycleSubState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) LifecycleSubState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.LifecycleSubState }).(pulumi.StringPtrOutput)
 }
 
 // A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -809,33 +694,33 @@ func (o GetOdaInstancesOdaInstanceOutput) RestrictedOperations() GetOdaInstances
 }
 
 // Shape or size of the instance.
-func (o GetOdaInstancesOdaInstanceOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // List only the Digital Assistant instances that are in this lifecycle state.
-func (o GetOdaInstancesOdaInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.State }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-func (o GetOdaInstancesOdaInstanceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaInstancesOdaInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaInstancesOdaInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // URL for the Digital Assistant web application that's associated with the instance.
-func (o GetOdaInstancesOdaInstanceOutput) WebAppUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) string { return v.WebAppUrl }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceOutput) WebAppUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) *string { return v.WebAppUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetOdaInstancesOdaInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -852,12 +737,6 @@ func (o GetOdaInstancesOdaInstanceArrayOutput) ToGetOdaInstancesOdaInstanceArray
 	return o
 }
 
-func (o GetOdaInstancesOdaInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstance] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaInstancesOdaInstanceArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesOdaInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaInstancesOdaInstance {
 		return vs[0].([]GetOdaInstancesOdaInstance)[vs[1].(int)]
@@ -866,9 +745,9 @@ func (o GetOdaInstancesOdaInstanceArrayOutput) Index(i pulumi.IntInput) GetOdaIn
 
 type GetOdaInstancesOdaInstanceRestrictedOperation struct {
 	// Name of the restricted operation.
-	OperationName string `pulumi:"operationName"`
+	OperationName *string `pulumi:"operationName"`
 	// Name of the service restricting the operation.
-	RestrictingService string `pulumi:"restrictingService"`
+	RestrictingService *string `pulumi:"restrictingService"`
 }
 
 // GetOdaInstancesOdaInstanceRestrictedOperationInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArgs and GetOdaInstancesOdaInstanceRestrictedOperationOutput values.
@@ -884,9 +763,9 @@ type GetOdaInstancesOdaInstanceRestrictedOperationInput interface {
 
 type GetOdaInstancesOdaInstanceRestrictedOperationArgs struct {
 	// Name of the restricted operation.
-	OperationName pulumi.StringInput `pulumi:"operationName"`
+	OperationName pulumi.StringPtrInput `pulumi:"operationName"`
 	// Name of the service restricting the operation.
-	RestrictingService pulumi.StringInput `pulumi:"restrictingService"`
+	RestrictingService pulumi.StringPtrInput `pulumi:"restrictingService"`
 }
 
 func (GetOdaInstancesOdaInstanceRestrictedOperationArgs) ElementType() reflect.Type {
@@ -899,12 +778,6 @@ func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToGetOdaInstancesOdaI
 
 func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceRestrictedOperationOutput)
-}
-
-func (i GetOdaInstancesOdaInstanceRestrictedOperationArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceRestrictedOperationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaInstancesOdaInstanceRestrictedOperationArrayInput is an input type that accepts GetOdaInstancesOdaInstanceRestrictedOperationArray and GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput values.
@@ -932,12 +805,6 @@ func (i GetOdaInstancesOdaInstanceRestrictedOperationArray) ToGetOdaInstancesOda
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput)
 }
 
-func (i GetOdaInstancesOdaInstanceRestrictedOperationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: i.ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaInstancesOdaInstanceRestrictedOperationOutput struct{ *pulumi.OutputState }
 
 func (GetOdaInstancesOdaInstanceRestrictedOperationOutput) ElementType() reflect.Type {
@@ -952,20 +819,14 @@ func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToGetOdaInstancesOd
 	return o
 }
 
-func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the restricted operation.
-func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstanceRestrictedOperation) string { return v.OperationName }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) OperationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstanceRestrictedOperation) *string { return v.OperationName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the service restricting the operation.
-func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstanceRestrictedOperation) string { return v.RestrictingService }).(pulumi.StringOutput)
+func (o GetOdaInstancesOdaInstanceRestrictedOperationOutput) RestrictingService() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstanceRestrictedOperation) *string { return v.RestrictingService }).(pulumi.StringPtrOutput)
 }
 
 type GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput struct{ *pulumi.OutputState }
@@ -980,12 +841,6 @@ func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstan
 
 func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToGetOdaInstancesOdaInstanceRestrictedOperationArrayOutputWithContext(ctx context.Context) GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput {
 	return o
-}
-
-func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation] {
-	return pulumix.Output[[]GetOdaInstancesOdaInstanceRestrictedOperation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaInstancesOdaInstanceRestrictedOperationArrayOutput) Index(i pulumi.IntInput) GetOdaInstancesOdaInstanceRestrictedOperationOutput {
@@ -1029,12 +884,6 @@ func (i GetOdaPrivateEndpointAttachmentsFilterArgs) ToGetOdaPrivateEndpointAttac
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsFilterOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointAttachmentsFilterArrayInput is an input type that accepts GetOdaPrivateEndpointAttachmentsFilterArray and GetOdaPrivateEndpointAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointAttachmentsFilterArrayInput` via:
 //
@@ -1060,12 +909,6 @@ func (i GetOdaPrivateEndpointAttachmentsFilterArray) ToGetOdaPrivateEndpointAtta
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsFilterArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointAttachmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointAttachmentsFilterOutput) ElementType() reflect.Type {
@@ -1078,12 +921,6 @@ func (o GetOdaPrivateEndpointAttachmentsFilterOutput) ToGetOdaPrivateEndpointAtt
 
 func (o GetOdaPrivateEndpointAttachmentsFilterOutput) ToGetOdaPrivateEndpointAttachmentsFilterOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsFilterOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsFilterOutput) Name() pulumi.StringOutput {
@@ -1110,12 +947,6 @@ func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) ToGetOdaPrivateEndpoi
 
 func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) ToGetOdaPrivateEndpointAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointAttachmentsFilterOutput {
@@ -1155,12 +986,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayInput is an input type that accepts GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArray and GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayInput` via:
 //
@@ -1186,12 +1011,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) ElementType() reflect.Type {
@@ -1204,12 +1023,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOu
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput) Items() GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput {
@@ -1232,12 +1045,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 	return o
 }
 
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection {
 		return vs[0].([]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection)[vs[1].(int)]
@@ -1246,19 +1053,19 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionAr
 
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem struct {
 	// List the ODA Private Endpoint Attachments that belong to this compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-	OdaInstanceId string `pulumi:"odaInstanceId"`
+	OdaInstanceId *string `pulumi:"odaInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-	OdaPrivateEndpointId string `pulumi:"odaPrivateEndpointId"`
+	OdaPrivateEndpointId *string `pulumi:"odaPrivateEndpointId"`
 	// List only the ODA Private Endpoint Attachments that are in this lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemInput is an input type that accepts GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArgs and GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput values.
@@ -1274,19 +1081,19 @@ type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemI
 
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArgs struct {
 	// List the ODA Private Endpoint Attachments that belong to this compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-	OdaInstanceId pulumi.StringInput `pulumi:"odaInstanceId"`
+	OdaInstanceId pulumi.StringPtrInput `pulumi:"odaInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-	OdaPrivateEndpointId pulumi.StringInput `pulumi:"odaPrivateEndpointId"`
+	OdaPrivateEndpointId pulumi.StringPtrInput `pulumi:"odaPrivateEndpointId"`
 	// List only the ODA Private Endpoint Attachments that are in this lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArgs) ElementType() reflect.Type {
@@ -1299,12 +1106,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 
 func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArgs) ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput)
-}
-
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayInput is an input type that accepts GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArray and GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput values.
@@ -1332,12 +1133,6 @@ func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) ElementType() reflect.Type {
@@ -1352,57 +1147,53 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 	return o
 }
 
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List the ODA Private Endpoint Attachments that belong to this compartment.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string {
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
+		return v.Id
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) OdaInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string {
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) OdaInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
 		return v.OdaInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) OdaPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string {
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) OdaPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
 		return v.OdaPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // List only the ODA Private Endpoint Attachments that are in this lifecycle state.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string {
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string {
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) string {
+func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1417,12 +1208,6 @@ func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionIt
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput) ToGetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemOutput {
@@ -1466,12 +1251,6 @@ func (i GetOdaPrivateEndpointScanProxiesFilterArgs) ToGetOdaPrivateEndpointScanP
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesFilterOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxiesFilterArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesFilterArray and GetOdaPrivateEndpointScanProxiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxiesFilterArrayInput` via:
 //
@@ -1497,12 +1276,6 @@ func (i GetOdaPrivateEndpointScanProxiesFilterArray) ToGetOdaPrivateEndpointScan
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesFilterArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesFilterOutput) ElementType() reflect.Type {
@@ -1515,12 +1288,6 @@ func (o GetOdaPrivateEndpointScanProxiesFilterOutput) ToGetOdaPrivateEndpointSca
 
 func (o GetOdaPrivateEndpointScanProxiesFilterOutput) ToGetOdaPrivateEndpointScanProxiesFilterOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesFilterOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesFilterOutput) Name() pulumi.StringOutput {
@@ -1547,12 +1314,6 @@ func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) ToGetOdaPrivateEndpoi
 
 func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) ToGetOdaPrivateEndpointScanProxiesFilterArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesFilterArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesFilterOutput {
@@ -1592,12 +1353,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArray and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayInput` via:
 //
@@ -1623,12 +1378,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) ElementType() reflect.Type {
@@ -1641,12 +1390,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOut
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput) Items() GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput {
@@ -1669,12 +1412,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArr
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection {
 		return vs[0].([]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection)[vs[1].(int)]
@@ -1683,19 +1420,19 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionArr
 
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	OdaPrivateEndpointId string `pulumi:"odaPrivateEndpointId"`
+	OdaPrivateEndpointId *string `pulumi:"odaPrivateEndpointId"`
 	// The protocol used for communication between client, scanProxy and RAC's scan listeners
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos []GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo `pulumi:"scanListenerInfos"`
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
-	ScanListenerType string `pulumi:"scanListenerType"`
+	ScanListenerType *string `pulumi:"scanListenerType"`
 	// List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArgs and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput values.
@@ -1711,19 +1448,19 @@ type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemIn
 
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	OdaPrivateEndpointId pulumi.StringInput `pulumi:"odaPrivateEndpointId"`
+	OdaPrivateEndpointId pulumi.StringPtrInput `pulumi:"odaPrivateEndpointId"`
 	// The protocol used for communication between client, scanProxy and RAC's scan listeners
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
 	ScanListenerInfos GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayInput `pulumi:"scanListenerInfos"`
 	// Type indicating whether Scan listener is specified by its FQDN or list of IPs
-	ScanListenerType pulumi.StringInput `pulumi:"scanListenerType"`
+	ScanListenerType pulumi.StringPtrInput `pulumi:"scanListenerType"`
 	// List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArgs) ElementType() reflect.Type {
@@ -1736,12 +1473,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArgs) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput)
-}
-
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArray and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput values.
@@ -1769,12 +1500,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ElementType() reflect.Type {
@@ -1789,29 +1514,23 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) OdaPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) OdaPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) *string {
 		return v.OdaPrivateEndpointId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The protocol used for communication between client, scanProxy and RAC's scan listeners
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) *string {
 		return v.Protocol
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
@@ -1822,24 +1541,24 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 }
 
 // Type indicating whether Scan listener is specified by its FQDN or list of IPs
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ScanListenerType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) ScanListenerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) *string {
 		return v.ScanListenerType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1856,12 +1575,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem {
 		return vs[0].([]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem)[vs[1].(int)]
@@ -1870,11 +1583,11 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo struct {
 	// FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-	ScanListenerFqdn string `pulumi:"scanListenerFqdn"`
+	ScanListenerFqdn *string `pulumi:"scanListenerFqdn"`
 	// A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-	ScanListenerIp string `pulumi:"scanListenerIp"`
+	ScanListenerIp *string `pulumi:"scanListenerIp"`
 	// The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-	ScanListenerPort int `pulumi:"scanListenerPort"`
+	ScanListenerPort *int `pulumi:"scanListenerPort"`
 }
 
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput values.
@@ -1890,11 +1603,11 @@ type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemSc
 
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs struct {
 	// FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-	ScanListenerFqdn pulumi.StringInput `pulumi:"scanListenerFqdn"`
+	ScanListenerFqdn pulumi.StringPtrInput `pulumi:"scanListenerFqdn"`
 	// A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-	ScanListenerIp pulumi.StringInput `pulumi:"scanListenerIp"`
+	ScanListenerIp pulumi.StringPtrInput `pulumi:"scanListenerIp"`
 	// The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-	ScanListenerPort pulumi.IntInput `pulumi:"scanListenerPort"`
+	ScanListenerPort pulumi.IntPtrInput `pulumi:"scanListenerPort"`
 }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs) ElementType() reflect.Type {
@@ -1907,12 +1620,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs) ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput)
-}
-
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArray and GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput values.
@@ -1940,12 +1647,6 @@ func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ElementType() reflect.Type {
@@ -1960,31 +1661,25 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ScanListenerFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ScanListenerFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo) *string {
 		return v.ScanListenerFqdn
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ScanListenerIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo) string {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ScanListenerIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo) *string {
 		return v.ScanListenerIp
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ScanListenerPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo) int {
+func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput) ScanListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo) *int {
 		return v.ScanListenerPort
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput struct{ *pulumi.OutputState }
@@ -2001,12 +1696,6 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo {
 		return vs[0].([]GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfo)[vs[1].(int)]
@@ -2015,11 +1704,11 @@ func (o GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionIte
 
 type GetOdaPrivateEndpointScanProxyScanListenerInfo struct {
 	// FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-	ScanListenerFqdn string `pulumi:"scanListenerFqdn"`
+	ScanListenerFqdn *string `pulumi:"scanListenerFqdn"`
 	// A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-	ScanListenerIp string `pulumi:"scanListenerIp"`
+	ScanListenerIp *string `pulumi:"scanListenerIp"`
 	// The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-	ScanListenerPort int `pulumi:"scanListenerPort"`
+	ScanListenerPort *int `pulumi:"scanListenerPort"`
 }
 
 // GetOdaPrivateEndpointScanProxyScanListenerInfoInput is an input type that accepts GetOdaPrivateEndpointScanProxyScanListenerInfoArgs and GetOdaPrivateEndpointScanProxyScanListenerInfoOutput values.
@@ -2035,11 +1724,11 @@ type GetOdaPrivateEndpointScanProxyScanListenerInfoInput interface {
 
 type GetOdaPrivateEndpointScanProxyScanListenerInfoArgs struct {
 	// FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-	ScanListenerFqdn pulumi.StringInput `pulumi:"scanListenerFqdn"`
+	ScanListenerFqdn pulumi.StringPtrInput `pulumi:"scanListenerFqdn"`
 	// A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-	ScanListenerIp pulumi.StringInput `pulumi:"scanListenerIp"`
+	ScanListenerIp pulumi.StringPtrInput `pulumi:"scanListenerIp"`
 	// The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-	ScanListenerPort pulumi.IntInput `pulumi:"scanListenerPort"`
+	ScanListenerPort pulumi.IntPtrInput `pulumi:"scanListenerPort"`
 }
 
 func (GetOdaPrivateEndpointScanProxyScanListenerInfoArgs) ElementType() reflect.Type {
@@ -2052,12 +1741,6 @@ func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArgs) ToGetOdaPrivateEndpo
 
 func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArgs) ToGetOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxyScanListenerInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxyScanListenerInfoOutput)
-}
-
-func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxyScanListenerInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaPrivateEndpointScanProxyScanListenerInfoArrayInput is an input type that accepts GetOdaPrivateEndpointScanProxyScanListenerInfoArray and GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput values.
@@ -2085,12 +1768,6 @@ func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArray) ToGetOdaPrivateEndp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointScanProxyScanListenerInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: i.ToGetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointScanProxyScanListenerInfoOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ElementType() reflect.Type {
@@ -2105,25 +1782,19 @@ func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ToGetOdaPrivateEnd
 	return o
 }
 
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ScanListenerFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxyScanListenerInfo) string { return v.ScanListenerFqdn }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ScanListenerFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxyScanListenerInfo) *string { return v.ScanListenerFqdn }).(pulumi.StringPtrOutput)
 }
 
 // A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ScanListenerIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxyScanListenerInfo) string { return v.ScanListenerIp }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ScanListenerIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxyScanListenerInfo) *string { return v.ScanListenerIp }).(pulumi.StringPtrOutput)
 }
 
 // The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ScanListenerPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxyScanListenerInfo) int { return v.ScanListenerPort }).(pulumi.IntOutput)
+func (o GetOdaPrivateEndpointScanProxyScanListenerInfoOutput) ScanListenerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointScanProxyScanListenerInfo) *int { return v.ScanListenerPort }).(pulumi.IntPtrOutput)
 }
 
 type GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput struct{ *pulumi.OutputState }
@@ -2138,12 +1809,6 @@ func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToGetOdaPriva
 
 func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToGetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo] {
-	return pulumix.Output[[]GetOdaPrivateEndpointScanProxyScanListenerInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointScanProxyScanListenerInfoArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointScanProxyScanListenerInfoOutput {
@@ -2187,12 +1852,6 @@ func (i GetOdaPrivateEndpointsFilterArgs) ToGetOdaPrivateEndpointsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsFilterOutput)
 }
 
-func (i GetOdaPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointsFilterArrayInput is an input type that accepts GetOdaPrivateEndpointsFilterArray and GetOdaPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointsFilterArrayInput` via:
 //
@@ -2218,12 +1877,6 @@ func (i GetOdaPrivateEndpointsFilterArray) ToGetOdaPrivateEndpointsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsFilter]{
-		OutputState: i.ToGetOdaPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -2236,12 +1889,6 @@ func (o GetOdaPrivateEndpointsFilterOutput) ToGetOdaPrivateEndpointsFilterOutput
 
 func (o GetOdaPrivateEndpointsFilterOutput) ToGetOdaPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[GetOdaPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -2268,12 +1915,6 @@ func (o GetOdaPrivateEndpointsFilterArrayOutput) ToGetOdaPrivateEndpointsFilterA
 
 func (o GetOdaPrivateEndpointsFilterArrayOutput) ToGetOdaPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointsFilterOutput {
@@ -2313,12 +1954,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArgs) ToGetOdaPrivateE
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayInput is an input type that accepts GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArray and GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayInput` via:
 //
@@ -2344,12 +1979,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArray) ToGetOdaPrivate
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -2362,12 +1991,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ToGetOdaPrivat
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput) Items() GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput {
@@ -2390,12 +2013,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) ToGetOdaP
 	return o
 }
 
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOdaPrivateEndpointsOdaPrivateEndpointCollection {
 		return vs[0].([]GetOdaPrivateEndpointsOdaPrivateEndpointCollection)[vs[1].(int)]
@@ -2404,27 +2021,27 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionArrayOutput) Index(i p
 
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem struct {
 	// List the ODA Private Endpoints that belong to this compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the ODA private endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 	NsgIds []string `pulumi:"nsgIds"`
 	// List only the ODA Private Endpoints that are in this lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemInput is an input type that accepts GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs and GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput values.
@@ -2440,27 +2057,27 @@ type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemInput interface {
 
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs struct {
 	// List the ODA Private Endpoints that belong to this compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the ODA private endpoint.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// List only the ODA Private Endpoints that are in this lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -2473,12 +2090,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs) ToGetOdaPriv
 
 func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput)
-}
-
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayInput is an input type that accepts GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArray and GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput values.
@@ -2506,12 +2117,6 @@ func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArray) ToGetOdaPri
 	return pulumi.ToOutputWithContext(ctx, i).(GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -2526,15 +2131,9 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ToGetOdaPr
 	return o
 }
 
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List the ODA Private Endpoints that belong to this compartment.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2545,13 +2144,13 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) DefinedTag
 }
 
 // Description of the ODA private endpoint.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
@@ -2562,8 +2161,8 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) FreeformTa
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
@@ -2572,23 +2171,23 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) NsgIds() p
 }
 
 // List only the ODA Private Endpoints that are in this lifecycle state.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2603,12 +2202,6 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) ToGet
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) ToGetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput {

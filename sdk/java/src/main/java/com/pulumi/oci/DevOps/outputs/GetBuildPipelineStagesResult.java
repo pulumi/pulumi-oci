@@ -23,7 +23,7 @@ public final class GetBuildPipelineStagesResult {
      * @return The list of build_pipeline_stage_collection.
      * 
      */
-    private List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
+    private @Nullable List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
     /**
      * @return The OCID of the compartment where the pipeline is created.
      * 
@@ -59,7 +59,7 @@ public final class GetBuildPipelineStagesResult {
      * 
      */
     public List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections() {
-        return this.buildPipelineStageCollections;
+        return this.buildPipelineStageCollections == null ? List.of() : this.buildPipelineStageCollections;
     }
     /**
      * @return The OCID of the compartment where the pipeline is created.
@@ -103,7 +103,7 @@ public final class GetBuildPipelineStagesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String buildPipelineId;
-        private List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
+        private @Nullable List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBuildPipelineStagesFilter> filters;
@@ -127,8 +127,8 @@ public final class GetBuildPipelineStagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder buildPipelineStageCollections(List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections) {
-            this.buildPipelineStageCollections = Objects.requireNonNull(buildPipelineStageCollections);
+        public Builder buildPipelineStageCollections(@Nullable List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections) {
+            this.buildPipelineStageCollections = buildPipelineStageCollections;
             return this;
         }
         public Builder buildPipelineStageCollections(GetBuildPipelineStagesBuildPipelineStageCollection... buildPipelineStageCollections) {

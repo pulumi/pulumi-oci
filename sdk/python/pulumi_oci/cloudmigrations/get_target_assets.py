@@ -49,9 +49,6 @@ class GetTargetAssetsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -61,7 +58,7 @@ class GetTargetAssetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,25 +67,16 @@ class GetTargetAssetsResult:
     @property
     @pulumi.getter(name="migrationPlanId")
     def migration_plan_id(self) -> Optional[str]:
-        """
-        OCID of the associated migration plan.
-        """
         return pulumi.get(self, "migration_plan_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the target asset.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetAssetCollections")
-    def target_asset_collections(self) -> Sequence['outputs.GetTargetAssetsTargetAssetCollectionResult']:
-        """
-        The list of target_asset_collection.
-        """
+    def target_asset_collections(self) -> Optional[Sequence['outputs.GetTargetAssetsTargetAssetCollectionResult']]:
         return pulumi.get(self, "target_asset_collections")
 
     @property
@@ -119,27 +107,7 @@ def get_target_assets(display_name: Optional[str] = None,
                       target_asset_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetAssetsResult:
     """
-    This data source provides the list of Target Assets in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of target assets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_assets = oci.CloudMigrations.get_target_assets(display_name=var["target_asset_display_name"],
-        migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        state=var["target_asset_state"],
-        target_asset_id=oci_cloud_migrations_target_asset["test_target_asset"]["id"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str migration_plan_id: Unique migration plan identifier
-    :param str state: The current state of the target asset.
-    :param str target_asset_id: Unique target asset identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -168,26 +136,6 @@ def get_target_assets_output(display_name: Optional[pulumi.Input[Optional[str]]]
                              target_asset_id: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAssetsResult]:
     """
-    This data source provides the list of Target Assets in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Returns a list of target assets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_assets = oci.CloudMigrations.get_target_assets(display_name=var["target_asset_display_name"],
-        migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        state=var["target_asset_state"],
-        target_asset_id=oci_cloud_migrations_target_asset["test_target_asset"]["id"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire given display name.
-    :param str migration_plan_id: Unique migration plan identifier
-    :param str state: The current state of the target asset.
-    :param str target_asset_id: Unique target asset identifier
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
         /// </summary>
-        public readonly string BodyInspectionSizeLimitExceededActionName;
+        public readonly string? BodyInspectionSizeLimitExceededActionName;
         /// <summary>
         /// Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
         /// </summary>
-        public readonly int BodyInspectionSizeLimitInBytes;
+        public readonly int? BodyInspectionSizeLimitInBytes;
         /// <summary>
         /// Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.Waf.Outputs
 
         [OutputConstructor]
         private GetWebAppFirewallPolicyRequestProtectionResult(
-            string bodyInspectionSizeLimitExceededActionName,
+            string? bodyInspectionSizeLimitExceededActionName,
 
-            int bodyInspectionSizeLimitInBytes,
+            int? bodyInspectionSizeLimitInBytes,
 
             ImmutableArray<Outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult> rules)
         {

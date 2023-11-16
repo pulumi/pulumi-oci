@@ -9,6 +9,7 @@ import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRecordsRepositoryMirrorR
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetRepositoryMirrorRecordsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String repositoryId;
     /**
      * @return The list of repository_mirror_record_collection.
      * 
      */
-    private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
+    private @Nullable List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
 
     private GetRepositoryMirrorRecordsResult() {}
     public List<GetRepositoryMirrorRecordsFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetRepositoryMirrorRecordsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -45,7 +46,7 @@ public final class GetRepositoryMirrorRecordsResult {
      * 
      */
     public List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections() {
-        return this.repositoryMirrorRecordCollections;
+        return this.repositoryMirrorRecordCollections == null ? List.of() : this.repositoryMirrorRecordCollections;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetRepositoryMirrorRecordsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRepositoryMirrorRecordsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String repositoryId;
-        private List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
+        private @Nullable List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections;
         public Builder() {}
         public Builder(GetRepositoryMirrorRecordsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetRepositoryMirrorRecordsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetRepositoryMirrorRecordsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryMirrorRecordCollections(List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections) {
-            this.repositoryMirrorRecordCollections = Objects.requireNonNull(repositoryMirrorRecordCollections);
+        public Builder repositoryMirrorRecordCollections(@Nullable List<GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection> repositoryMirrorRecordCollections) {
+            this.repositoryMirrorRecordCollections = repositoryMirrorRecordCollections;
             return this;
         }
         public Builder repositoryMirrorRecordCollections(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection... repositoryMirrorRecordCollections) {

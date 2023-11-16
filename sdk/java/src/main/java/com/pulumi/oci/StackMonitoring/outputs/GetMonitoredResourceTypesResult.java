@@ -27,7 +27,7 @@ public final class GetMonitoredResourceTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isExcludeSystemTypes;
     /**
      * @return Metric namespace for resource type.
@@ -38,7 +38,7 @@ public final class GetMonitoredResourceTypesResult {
      * @return The list of monitored_resource_types_collection.
      * 
      */
-    private List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections;
+    private @Nullable List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections;
     /**
      * @return A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      * 
@@ -67,8 +67,8 @@ public final class GetMonitoredResourceTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isExcludeSystemTypes() {
         return Optional.ofNullable(this.isExcludeSystemTypes);
@@ -85,7 +85,7 @@ public final class GetMonitoredResourceTypesResult {
      * 
      */
     public List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections() {
-        return this.monitoredResourceTypesCollections;
+        return this.monitoredResourceTypesCollections == null ? List.of() : this.monitoredResourceTypesCollections;
     }
     /**
      * @return A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
@@ -111,10 +111,10 @@ public final class GetMonitoredResourceTypesResult {
         private @Nullable List<String> excludeFields;
         private @Nullable List<String> fields;
         private @Nullable List<GetMonitoredResourceTypesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isExcludeSystemTypes;
         private @Nullable String metricNamespace;
-        private List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections;
+        private @Nullable List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections;
         private @Nullable String name;
         private @Nullable String status;
         public Builder() {}
@@ -162,8 +162,8 @@ public final class GetMonitoredResourceTypesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -177,8 +177,8 @@ public final class GetMonitoredResourceTypesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder monitoredResourceTypesCollections(List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections) {
-            this.monitoredResourceTypesCollections = Objects.requireNonNull(monitoredResourceTypesCollections);
+        public Builder monitoredResourceTypesCollections(@Nullable List<GetMonitoredResourceTypesMonitoredResourceTypesCollection> monitoredResourceTypesCollections) {
+            this.monitoredResourceTypesCollections = monitoredResourceTypesCollections;
             return this;
         }
         public Builder monitoredResourceTypesCollections(GetMonitoredResourceTypesMonitoredResourceTypesCollection... monitoredResourceTypesCollections) {

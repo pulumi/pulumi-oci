@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -66,7 +65,7 @@ type MonitoredResourcesAssociateMonitoredResource struct {
 	// * System created (SYSTEM),
 	// * User created using API (USER_API)
 	// * User created using tags (USER_TAG_ASSOC).
-	Category pulumi.StringOutput `pulumi:"category"`
+	Category pulumi.StringPtrOutput `pulumi:"category"`
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Association Resource Details.
@@ -81,9 +80,9 @@ type MonitoredResourcesAssociateMonitoredResource struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResourceId pulumi.StringOutput `pulumi:"sourceResourceId"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	TenantId pulumi.StringOutput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrOutput `pulumi:"tenantId"`
 	// The time when the association was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewMonitoredResourcesAssociateMonitoredResource registers a new resource with the given unique name, arguments, and options.
@@ -237,12 +236,6 @@ func (i *MonitoredResourcesAssociateMonitoredResource) ToMonitoredResourcesAssoc
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceOutput)
 }
 
-func (i *MonitoredResourcesAssociateMonitoredResource) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesAssociateMonitoredResource] {
-	return pulumix.Output[*MonitoredResourcesAssociateMonitoredResource]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesAssociateMonitoredResourceArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceArray and MonitoredResourcesAssociateMonitoredResourceArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceArrayInput` via:
 //
@@ -266,12 +259,6 @@ func (i MonitoredResourcesAssociateMonitoredResourceArray) ToMonitoredResourcesA
 
 func (i MonitoredResourcesAssociateMonitoredResourceArray) ToMonitoredResourcesAssociateMonitoredResourceArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceArrayOutput)
-}
-
-func (i MonitoredResourcesAssociateMonitoredResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource] {
-	return pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MonitoredResourcesAssociateMonitoredResourceMapInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceMap and MonitoredResourcesAssociateMonitoredResourceMapOutput values.
@@ -299,12 +286,6 @@ func (i MonitoredResourcesAssociateMonitoredResourceMap) ToMonitoredResourcesAss
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceMapOutput)
 }
 
-func (i MonitoredResourcesAssociateMonitoredResourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource] {
-	return pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesAssociateMonitoredResourceOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesAssociateMonitoredResourceOutput) ElementType() reflect.Type {
@@ -319,12 +300,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceOutput) ToMonitoredResources
 	return o
 }
 
-func (o MonitoredResourcesAssociateMonitoredResourceOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesAssociateMonitoredResource] {
-	return pulumix.Output[*MonitoredResourcesAssociateMonitoredResource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Association type to be created between source and destination resources.
 func (o MonitoredResourcesAssociateMonitoredResourceOutput) AssociationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.AssociationType }).(pulumi.StringOutput)
@@ -334,8 +309,8 @@ func (o MonitoredResourcesAssociateMonitoredResourceOutput) AssociationType() pu
 // * System created (SYSTEM),
 // * User created using API (USER_API)
 // * User created using tags (USER_TAG_ASSOC).
-func (o MonitoredResourcesAssociateMonitoredResourceOutput) Category() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
+func (o MonitoredResourcesAssociateMonitoredResourceOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringPtrOutput { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -373,13 +348,13 @@ func (o MonitoredResourcesAssociateMonitoredResourceOutput) SourceResourceId() p
 }
 
 // Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o MonitoredResourcesAssociateMonitoredResourceOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
+func (o MonitoredResourcesAssociateMonitoredResourceOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringPtrOutput { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The time when the association was created. An RFC3339 formatted datetime string.
-func (o MonitoredResourcesAssociateMonitoredResourceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MonitoredResourcesAssociateMonitoredResourceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesAssociateMonitoredResource) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type MonitoredResourcesAssociateMonitoredResourceArrayOutput struct{ *pulumi.OutputState }
@@ -394,12 +369,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) ToMonitoredReso
 
 func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) ToMonitoredResourcesAssociateMonitoredResourceArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource] {
-	return pulumix.Output[[]*MonitoredResourcesAssociateMonitoredResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesAssociateMonitoredResourceOutput {
@@ -420,12 +389,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) ToMonitoredResour
 
 func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) ToMonitoredResourcesAssociateMonitoredResourceMapOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceMapOutput {
 	return o
-}
-
-func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource] {
-	return pulumix.Output[map[string]*MonitoredResourcesAssociateMonitoredResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourcesAssociateMonitoredResourceOutput {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The uri from which to retrieve the key. It must be accessible without authentication.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetailResult(
-            string type,
+            string? type,
 
-            string uri)
+            string? uri)
         {
             Type = type;
             Uri = uri;

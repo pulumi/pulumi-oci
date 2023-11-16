@@ -28,7 +28,7 @@ public final class GetContainerInstancesResult {
      * @return The list of container_instance_collection.
      * 
      */
-    private List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections;
+    private @Nullable List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -39,7 +39,7 @@ public final class GetContainerInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the container instance.
      * 
@@ -66,7 +66,7 @@ public final class GetContainerInstancesResult {
      * 
      */
     public List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections() {
-        return this.containerInstanceCollections;
+        return this.containerInstanceCollections == null ? List.of() : this.containerInstanceCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -82,8 +82,8 @@ public final class GetContainerInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the container instance.
@@ -104,10 +104,10 @@ public final class GetContainerInstancesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections;
+        private @Nullable List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections;
         private @Nullable String displayName;
         private @Nullable List<GetContainerInstancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetContainerInstancesResult defaults) {
@@ -132,8 +132,8 @@ public final class GetContainerInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder containerInstanceCollections(List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections) {
-            this.containerInstanceCollections = Objects.requireNonNull(containerInstanceCollections);
+        public Builder containerInstanceCollections(@Nullable List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections) {
+            this.containerInstanceCollections = containerInstanceCollections;
             return this;
         }
         public Builder containerInstanceCollections(GetContainerInstancesContainerInstanceCollection... containerInstanceCollections) {
@@ -153,8 +153,8 @@ public final class GetContainerInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -60,7 +60,7 @@ class GetInvoiceLineComputedUsagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,10 +73,7 @@ class GetInvoiceLineComputedUsagesResult:
 
     @property
     @pulumi.getter(name="invoicelineComputedUsages")
-    def invoiceline_computed_usages(self) -> Sequence['outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsageResult']:
-        """
-        The list of invoiceline_computed_usages.
-        """
+    def invoiceline_computed_usages(self) -> Optional[Sequence['outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsageResult']]:
         return pulumi.get(self, "invoiceline_computed_usages")
 
 
@@ -100,25 +97,7 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
                                      invoice_line_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoiceLineComputedUsagesResult:
     """
-    This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=var["compartment_id"],
-        invoice_line_id=oci_onesubscription_invoice_line["test_invoice_line"]["id"],
-        fields=var["invoice_line_computed_usage_fields"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
-    :param str invoice_line_id: Invoice Line Identifier - Primary Key SPM
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -144,24 +123,6 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
                                             invoice_line_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoiceLineComputedUsagesResult]:
     """
-    This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoice_line_computed_usages = oci.OneSubsription.get_invoice_line_computed_usages(compartment_id=var["compartment_id"],
-        invoice_line_id=oci_onesubscription_invoice_line["test_invoice_line"]["id"],
-        fields=var["invoice_line_computed_usage_fields"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
-    :param str invoice_line_id: Invoice Line Identifier - Primary Key SPM
+    Use this data source to access information about an existing resource.
     """
     ...

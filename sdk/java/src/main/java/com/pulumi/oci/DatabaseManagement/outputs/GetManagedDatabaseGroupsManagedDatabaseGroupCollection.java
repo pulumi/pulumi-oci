@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollection {
-    private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
 
     private GetManagedDatabaseGroupsManagedDatabaseGroupCollection() {}
     public List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseGroupsManagedDatabaseGroupCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem... items) {

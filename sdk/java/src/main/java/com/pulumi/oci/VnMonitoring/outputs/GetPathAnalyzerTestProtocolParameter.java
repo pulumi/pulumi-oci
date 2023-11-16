@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathAnalyzerTestProtocolParameter {
@@ -14,63 +16,63 @@ public final class GetPathAnalyzerTestProtocolParameter {
      * @return The destination port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    private Integer destinationPort;
+    private @Nullable Integer destinationPort;
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
      * 
      */
-    private Integer icmpCode;
+    private @Nullable Integer icmpCode;
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
      * 
      */
-    private Integer icmpType;
+    private @Nullable Integer icmpType;
     /**
      * @return The source port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    private Integer sourcePort;
+    private @Nullable Integer sourcePort;
     /**
      * @return The type of the `Endpoint`.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetPathAnalyzerTestProtocolParameter() {}
     /**
      * @return The destination port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    public Integer destinationPort() {
-        return this.destinationPort;
+    public Optional<Integer> destinationPort() {
+        return Optional.ofNullable(this.destinationPort);
     }
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
      * 
      */
-    public Integer icmpCode() {
-        return this.icmpCode;
+    public Optional<Integer> icmpCode() {
+        return Optional.ofNullable(this.icmpCode);
     }
     /**
      * @return The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
      * 
      */
-    public Integer icmpType() {
-        return this.icmpType;
+    public Optional<Integer> icmpType() {
+        return Optional.ofNullable(this.icmpType);
     }
     /**
      * @return The source port to use in a `PathAnalyzerTest` resource.
      * 
      */
-    public Integer sourcePort() {
-        return this.sourcePort;
+    public Optional<Integer> sourcePort() {
+        return Optional.ofNullable(this.sourcePort);
     }
     /**
      * @return The type of the `Endpoint`.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetPathAnalyzerTestProtocolParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer destinationPort;
-        private Integer icmpCode;
-        private Integer icmpType;
-        private Integer sourcePort;
-        private String type;
+        private @Nullable Integer destinationPort;
+        private @Nullable Integer icmpCode;
+        private @Nullable Integer icmpType;
+        private @Nullable Integer sourcePort;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetPathAnalyzerTestProtocolParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetPathAnalyzerTestProtocolParameter {
         }
 
         @CustomType.Setter
-        public Builder destinationPort(Integer destinationPort) {
-            this.destinationPort = Objects.requireNonNull(destinationPort);
+        public Builder destinationPort(@Nullable Integer destinationPort) {
+            this.destinationPort = destinationPort;
             return this;
         }
         @CustomType.Setter
-        public Builder icmpCode(Integer icmpCode) {
-            this.icmpCode = Objects.requireNonNull(icmpCode);
+        public Builder icmpCode(@Nullable Integer icmpCode) {
+            this.icmpCode = icmpCode;
             return this;
         }
         @CustomType.Setter
-        public Builder icmpType(Integer icmpType) {
-            this.icmpType = Objects.requireNonNull(icmpType);
+        public Builder icmpType(@Nullable Integer icmpType) {
+            this.icmpType = icmpType;
             return this;
         }
         @CustomType.Setter
-        public Builder sourcePort(Integer sourcePort) {
-            this.sourcePort = Objects.requireNonNull(sourcePort);
+        public Builder sourcePort(@Nullable Integer sourcePort) {
+            this.sourcePort = sourcePort;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetPathAnalyzerTestProtocolParameter build() {

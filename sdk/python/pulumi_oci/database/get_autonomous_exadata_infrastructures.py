@@ -48,34 +48,22 @@ class GetAutonomousExadataInfrastructuresResult:
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructures")
-    def autonomous_exadata_infrastructures(self) -> Sequence['outputs.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult']:
-        """
-        The list of autonomous_exadata_infrastructures.
-        """
+    def autonomous_exadata_infrastructures(self) -> Optional[Sequence['outputs.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult']]:
         return pulumi.get(self, "autonomous_exadata_infrastructures")
 
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +73,7 @@ class GetAutonomousExadataInfrastructuresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetAutonomousExadataInfrastructuresResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
                                            state: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructuresResult:
     """
-    This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
-
-    **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=var["compartment_id"],
-        availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-        display_name=var["autonomous_exadata_infrastructure_display_name"],
-        state=var["autonomous_exadata_infrastructure_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -171,26 +136,6 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
                                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructuresResult]:
     """
-    This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
-
-    **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=var["compartment_id"],
-        availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-        display_name=var["autonomous_exadata_infrastructure_display_name"],
-        state=var["autonomous_exadata_infrastructure_state"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -58,10 +58,7 @@ class GetDbSystemsUpgradeHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The operating system upgrade action.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
@@ -71,7 +68,7 @@ class GetDbSystemsUpgradeHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,58 +76,37 @@ class GetDbSystemsUpgradeHistoryEntryResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="newGiVersion")
-    def new_gi_version(self) -> str:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
+    def new_gi_version(self) -> Optional[str]:
         return pulumi.get(self, "new_gi_version")
 
     @property
     @pulumi.getter(name="oldGiVersion")
-    def old_gi_version(self) -> str:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
+    def old_gi_version(self) -> Optional[str]:
         return pulumi.get(self, "old_gi_version")
 
     @property
     @pulumi.getter(name="snapshotRetentionPeriodInDays")
-    def snapshot_retention_period_in_days(self) -> int:
-        """
-        The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-        """
+    def snapshot_retention_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "snapshot_retention_period_in_days")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the action.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The date and time when the upgrade action completed
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time when the upgrade action started.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
@@ -162,23 +138,7 @@ def get_db_systems_upgrade_history_entry(db_system_id: Optional[str] = None,
                                          upgrade_history_entry_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsUpgradeHistoryEntryResult:
     """
-    This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of the specified operating system upgrade operation for the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=oci_database_db_system["test_db_system"]["id"],
-        upgrade_history_entry_id=oci_database_upgrade_history_entry["test_upgrade_history_entry"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str upgrade_history_entry_id: The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -205,22 +165,6 @@ def get_db_systems_upgrade_history_entry_output(db_system_id: Optional[pulumi.In
                                                 upgrade_history_entry_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntryResult]:
     """
-    This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the details of the specified operating system upgrade operation for the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_systems_upgrade_history_entry = oci.Database.get_db_systems_upgrade_history_entry(db_system_id=oci_database_db_system["test_db_system"]["id"],
-        upgrade_history_entry_id=oci_database_upgrade_history_entry["test_upgrade_history_entry"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str upgrade_history_entry_id: The database/db system upgrade History [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

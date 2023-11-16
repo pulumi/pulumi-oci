@@ -42,9 +42,6 @@ class GetAwrHubAwrSourcesSummaryResult:
     @property
     @pulumi.getter(name="awrHubId")
     def awr_hub_id(self) -> str:
-        """
-        AWR Hub OCID
-        """
         return pulumi.get(self, "awr_hub_id")
 
     @property
@@ -54,7 +51,7 @@ class GetAwrHubAwrSourcesSummaryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,18 +59,12 @@ class GetAwrHubAwrSourcesSummaryResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAwrHubAwrSourcesSummaryItemResult']:
-        """
-        Array of AwrSource summary objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAwrHubAwrSourcesSummaryItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
-        """
         return pulumi.get(self, "name")
 
 
@@ -95,25 +86,7 @@ def get_awr_hub_awr_sources_summary(awr_hub_id: Optional[str] = None,
                                     name: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwrHubAwrSourcesSummaryResult:
     """
-    This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of summary of AWR Sources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["awr_hub_awr_sources_summary_name"])
-    ```
-
-
-    :param str awr_hub_id: Unique Awr Hub identifier
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str name: Name for an Awr source database
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['awrHubId'] = awr_hub_id
@@ -136,24 +109,6 @@ def get_awr_hub_awr_sources_summary_output(awr_hub_id: Optional[pulumi.Input[str
                                            name: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubAwrSourcesSummaryResult]:
     """
-    This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of summary of AWR Sources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["awr_hub_awr_sources_summary_name"])
-    ```
-
-
-    :param str awr_hub_id: Unique Awr Hub identifier
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str name: Name for an Awr source database
+    Use this data source to access information about an existing resource.
     """
     ...

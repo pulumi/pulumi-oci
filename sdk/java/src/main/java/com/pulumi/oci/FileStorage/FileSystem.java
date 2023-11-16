@@ -133,28 +133,28 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -179,56 +179,56 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     @Export(name="isCloneParent", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCloneParent;
+    private Output</* @Nullable */ Boolean> isCloneParent;
 
     /**
      * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public Output<Boolean> isCloneParent() {
-        return this.isCloneParent;
+    public Output<Optional<Boolean>> isCloneParent() {
+        return Codegen.optional(this.isCloneParent);
     }
     /**
      * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
     @Export(name="isHydrated", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHydrated;
+    private Output</* @Nullable */ Boolean> isHydrated;
 
     /**
      * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
-    public Output<Boolean> isHydrated() {
-        return this.isHydrated;
+    public Output<Optional<Boolean>> isHydrated() {
+        return Codegen.optional(this.isHydrated);
     }
     /**
      * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
      */
     @Export(name="isTargetable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isTargetable;
+    private Output</* @Nullable */ Boolean> isTargetable;
 
     /**
      * @return Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn&#39;t yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      * 
      */
-    public Output<Boolean> isTargetable() {
-        return this.isTargetable;
+    public Output<Optional<Boolean>> isTargetable() {
+        return Codegen.optional(this.isTargetable);
     }
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
@@ -249,56 +249,56 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      * 
      */
     @Export(name="meteredBytes", refs={String.class}, tree="[0]")
-    private Output<String> meteredBytes;
+    private Output</* @Nullable */ String> meteredBytes;
 
     /**
      * @return The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      * 
      */
-    public Output<String> meteredBytes() {
-        return this.meteredBytes;
+    public Output<Optional<String>> meteredBytes() {
+        return Codegen.optional(this.meteredBytes);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      * 
      */
     @Export(name="replicationTargetId", refs={String.class}, tree="[0]")
-    private Output<String> replicationTargetId;
+    private Output</* @Nullable */ String> replicationTargetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      * 
      */
-    public Output<String> replicationTargetId() {
-        return this.replicationTargetId;
+    public Output<Optional<String>> replicationTargetId() {
+        return Codegen.optional(this.replicationTargetId);
     }
     /**
      * Source information for the file system.
      * 
      */
     @Export(name="sourceDetails", refs={List.class,FileSystemSourceDetail.class}, tree="[0,1]")
-    private Output<List<FileSystemSourceDetail>> sourceDetails;
+    private Output</* @Nullable */ List<FileSystemSourceDetail>> sourceDetails;
 
     /**
      * @return Source information for the file system.
      * 
      */
-    public Output<List<FileSystemSourceDetail>> sourceDetails() {
-        return this.sourceDetails;
+    public Output<Optional<List<FileSystemSourceDetail>>> sourceDetails() {
+        return Codegen.optional(this.sourceDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -308,7 +308,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourceSnapshotId", refs={String.class}, tree="[0]")
-    private Output<String> sourceSnapshotId;
+    private Output</* @Nullable */ String> sourceSnapshotId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -317,36 +317,36 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> sourceSnapshotId() {
-        return this.sourceSnapshotId;
+    public Output<Optional<String>> sourceSnapshotId() {
+        return Codegen.optional(this.sourceSnapshotId);
     }
     /**
      * The current state of the file system.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the file system.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

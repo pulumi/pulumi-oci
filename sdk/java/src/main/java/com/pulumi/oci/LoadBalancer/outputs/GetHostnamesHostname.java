@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHostnamesHostname {
@@ -24,7 +26,7 @@ public final class GetHostnamesHostname {
      * 
      */
     private String name;
-    private String state;
+    private @Nullable String state;
 
     private GetHostnamesHostname() {}
     /**
@@ -48,8 +50,8 @@ public final class GetHostnamesHostname {
     public String name() {
         return this.name;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -64,7 +66,7 @@ public final class GetHostnamesHostname {
         private String hostname;
         private String loadBalancerId;
         private String name;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetHostnamesHostname defaults) {
     	      Objects.requireNonNull(defaults);
@@ -90,8 +92,8 @@ public final class GetHostnamesHostname {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetHostnamesHostname build() {

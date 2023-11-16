@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
         /// </summary>
-        public readonly int ActionExpirationInSeconds;
+        public readonly int? ActionExpirationInSeconds;
         /// <summary>
         /// The challenge settings if `action` is set to `BLOCK`.
         /// </summary>
@@ -28,27 +28,27 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The number of failed requests before taking action. If unspecified, defaults to `10`.
         /// </summary>
-        public readonly int FailureThreshold;
+        public readonly int? FailureThreshold;
         /// <summary>
         /// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
         /// </summary>
-        public readonly int FailureThresholdExpirationInSeconds;
+        public readonly int? FailureThresholdExpirationInSeconds;
         /// <summary>
         /// The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
         /// </summary>
-        public readonly int InteractionThreshold;
+        public readonly int? InteractionThreshold;
         /// <summary>
         /// Enables or disables the JavaScript challenge Web Application Firewall feature.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
         /// </summary>
-        public readonly bool IsNatEnabled;
+        public readonly bool? IsNatEnabled;
         /// <summary>
         /// The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
         /// </summary>
-        public readonly int RecordingPeriodInSeconds;
+        public readonly int? RecordingPeriodInSeconds;
         /// <summary>
         /// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
         /// </summary>
@@ -56,23 +56,23 @@ namespace Pulumi.Oci.Waas.Outputs
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeResult(
-            string action,
+            string? action,
 
-            int actionExpirationInSeconds,
+            int? actionExpirationInSeconds,
 
             ImmutableArray<Outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingResult> challengeSettings,
 
-            int failureThreshold,
+            int? failureThreshold,
 
-            int failureThresholdExpirationInSeconds,
+            int? failureThresholdExpirationInSeconds,
 
-            int interactionThreshold,
+            int? interactionThreshold,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            bool isNatEnabled,
+            bool? isNatEnabled,
 
-            int recordingPeriodInSeconds,
+            int? recordingPeriodInSeconds,
 
             ImmutableArray<Outputs.GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult> setHttpHeaders)
         {

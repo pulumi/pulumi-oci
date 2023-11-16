@@ -18,7 +18,7 @@ public final class GetAggregatedComputedUsagesResult {
      * @return Aggregation of computed usages for the subscribed service.
      * 
      */
-    private List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
+    private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
     private String compartmentId;
     private @Nullable List<GetAggregatedComputedUsagesFilter> filters;
     private @Nullable String grouping;
@@ -26,7 +26,7 @@ public final class GetAggregatedComputedUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Product description
      * 
@@ -46,7 +46,7 @@ public final class GetAggregatedComputedUsagesResult {
      * 
      */
     public List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages() {
-        return this.aggregatedComputedUsages;
+        return this.aggregatedComputedUsages == null ? List.of() : this.aggregatedComputedUsages;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -61,8 +61,8 @@ public final class GetAggregatedComputedUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Product description
@@ -94,11 +94,11 @@ public final class GetAggregatedComputedUsagesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
+        private @Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages;
         private String compartmentId;
         private @Nullable List<GetAggregatedComputedUsagesFilter> filters;
         private @Nullable String grouping;
-        private String id;
+        private @Nullable String id;
         private @Nullable String parentProduct;
         private String subscriptionId;
         private String timeFrom;
@@ -118,8 +118,8 @@ public final class GetAggregatedComputedUsagesResult {
         }
 
         @CustomType.Setter
-        public Builder aggregatedComputedUsages(List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages) {
-            this.aggregatedComputedUsages = Objects.requireNonNull(aggregatedComputedUsages);
+        public Builder aggregatedComputedUsages(@Nullable List<GetAggregatedComputedUsagesAggregatedComputedUsage> aggregatedComputedUsages) {
+            this.aggregatedComputedUsages = aggregatedComputedUsages;
             return this;
         }
         public Builder aggregatedComputedUsages(GetAggregatedComputedUsagesAggregatedComputedUsage... aggregatedComputedUsages) {
@@ -144,8 +144,8 @@ public final class GetAggregatedComputedUsagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

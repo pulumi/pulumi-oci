@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database User Proxied For Users in Oracle Cloud Infrastructure Database Management service.
@@ -68,8 +67,8 @@ type GetManagedDatabaseUserProxiedForUsersArgs struct {
 type GetManagedDatabaseUserProxiedForUsersResult struct {
 	Filters []GetManagedDatabaseUserProxiedForUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of a proxy user or the name of the client user.
 	Name *string `pulumi:"name"`
 	// The list of proxied_for_user_collection.
@@ -120,12 +119,6 @@ func (o GetManagedDatabaseUserProxiedForUsersResultOutput) ToGetManagedDatabaseU
 	return o
 }
 
-func (o GetManagedDatabaseUserProxiedForUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserProxiedForUsersResult] {
-	return pulumix.Output[GetManagedDatabaseUserProxiedForUsersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseUserProxiedForUsersResultOutput) Filters() GetManagedDatabaseUserProxiedForUsersFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserProxiedForUsersResult) []GetManagedDatabaseUserProxiedForUsersFilter {
 		return v.Filters
@@ -133,8 +126,8 @@ func (o GetManagedDatabaseUserProxiedForUsersResultOutput) Filters() GetManagedD
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseUserProxiedForUsersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserProxiedForUsersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserProxiedForUsersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserProxiedForUsersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserProxiedForUsersResultOutput) ManagedDatabaseId() pulumi.StringOutput {

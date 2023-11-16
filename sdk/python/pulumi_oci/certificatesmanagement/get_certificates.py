@@ -51,26 +51,17 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter(name="certificateCollections")
-    def certificate_collections(self) -> Sequence['outputs.GetCertificatesCertificateCollectionResult']:
-        """
-        The list of certificate_collection.
-        """
+    def certificate_collections(self) -> Optional[Sequence['outputs.GetCertificatesCertificateCollectionResult']]:
         return pulumi.get(self, "certificate_collections")
 
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[str]:
-        """
-        The OCID of the certificate.
-        """
         return pulumi.get(self, "certificate_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment where you want to create the certificate.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -80,7 +71,7 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,25 +80,16 @@ class GetCertificatesResult:
     @property
     @pulumi.getter(name="issuerCertificateAuthorityId")
     def issuer_certificate_authority_id(self) -> Optional[str]:
-        """
-        The OCID of the certificate authority (CA) that issued the certificate.
-        """
         return pulumi.get(self, "issuer_certificate_authority_id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the certificate.
-        """
         return pulumi.get(self, "state")
 
 
@@ -135,30 +117,7 @@ def get_certificates(certificate_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all certificates that match the query parameters.
-    Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        compartment_id=var["compartment_id"],
-        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        name=var["certificate_name"],
-        state=var["certificate_state"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
-    :param str compartment_id: A filter that returns only resources that match the given compartment OCID.
-    :param str issuer_certificate_authority_id: The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-    :param str name: A filter that returns only resources that match the specified name.
-    :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -190,29 +149,6 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all certificates that match the query parameters.
-    Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        compartment_id=var["compartment_id"],
-        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        name=var["certificate_name"],
-        state=var["certificate_state"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
-    :param str compartment_id: A filter that returns only resources that match the given compartment OCID.
-    :param str issuer_certificate_authority_id: The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-    :param str name: A filter that returns only resources that match the specified name.
-    :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Access Token
         /// </summary>
-        public readonly string AccessToken;
+        public readonly string? AccessToken;
         /// <summary>
         /// Access token expiry
         /// </summary>
-        public readonly string AccessTokenExpiry;
+        public readonly string? AccessTokenExpiry;
         /// <summary>
         /// Refresh Token
         /// </summary>
-        public readonly string RefreshToken;
+        public readonly string? RefreshToken;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialResult(
-            string accessToken,
+            string? accessToken,
 
-            string accessTokenExpiry,
+            string? accessTokenExpiry,
 
-            string refreshToken)
+            string? refreshToken)
         {
             AccessToken = accessToken;
             AccessTokenExpiry = accessTokenExpiry;

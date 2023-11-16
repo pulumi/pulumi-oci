@@ -16,29 +16,29 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Sequence Id
         /// </summary>
-        public readonly string SequenceId;
+        public readonly string? SequenceId;
         /// <summary>
         /// The size of the backup stored in object storage (in bytes)
         /// </summary>
-        public readonly double SizeInBytes;
+        public readonly double? SizeInBytes;
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeLastUpdated;
+        public readonly string? TimeLastUpdated;
 
         [OutputConstructor]
         private GetTrailSequencesTrailSequenceCollectionItemResult(
-            string displayName,
+            string? displayName,
 
-            string sequenceId,
+            string? sequenceId,
 
-            double sizeInBytes,
+            double? sizeInBytes,
 
-            string timeLastUpdated)
+            string? timeLastUpdated)
         {
             DisplayName = displayName;
             SequenceId = sequenceId;

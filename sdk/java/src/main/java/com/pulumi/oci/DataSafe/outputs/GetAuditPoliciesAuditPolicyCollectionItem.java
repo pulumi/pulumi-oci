@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditPoliciesAuditPolicyCollectionItem {
@@ -20,94 +22,94 @@ public final class GetAuditPoliciesAuditPolicyCollectionItem {
      * @return Lists the audit policy provisioning conditions for the target database.
      * 
      */
-    private List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions;
+    private @Nullable List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions;
     /**
      * @return An optional filter to return only resources that match the specified id.
      * 
      */
-    private String auditPolicyId;
+    private @Nullable String auditPolicyId;
     /**
      * @return Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      * 
      */
-    private List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications;
+    private @Nullable List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications;
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of the audit policy.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the audit policy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * 
      */
-    private Boolean isDataSafeServiceAccountExcluded;
+    private @Nullable Boolean isDataSafeServiceAccountExcluded;
     /**
      * @return Details about the current state of the audit policy in Data Safe.
      * 
      */
-    private String lifecycleDetails;
-    private Integer provisionTrigger;
-    private Integer retrieveFromTargetTrigger;
+    private @Nullable String lifecycleDetails;
+    private @Nullable Integer provisionTrigger;
+    private @Nullable Integer retrieveFromTargetTrigger;
     /**
      * @return The current state of the audit policy.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The time the the audit policy was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      * 
      */
-    private String timeLastProvisioned;
+    private @Nullable String timeLastProvisioned;
     /**
      * @return The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      * 
      */
-    private String timeLastRetrieved;
+    private @Nullable String timeLastRetrieved;
     /**
      * @return The last date and time the audit policy was updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetAuditPoliciesAuditPolicyCollectionItem() {}
     /**
@@ -115,132 +117,132 @@ public final class GetAuditPoliciesAuditPolicyCollectionItem {
      * 
      */
     public List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions() {
-        return this.auditConditions;
+        return this.auditConditions == null ? List.of() : this.auditConditions;
     }
     /**
      * @return An optional filter to return only resources that match the specified id.
      * 
      */
-    public String auditPolicyId() {
-        return this.auditPolicyId;
+    public Optional<String> auditPolicyId() {
+        return Optional.ofNullable(this.auditPolicyId);
     }
     /**
      * @return Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      * 
      */
     public List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications() {
-        return this.auditSpecifications;
+        return this.auditSpecifications == null ? List.of() : this.auditSpecifications;
     }
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of the audit policy.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the specified display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the audit policy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * 
      */
-    public Boolean isDataSafeServiceAccountExcluded() {
-        return this.isDataSafeServiceAccountExcluded;
+    public Optional<Boolean> isDataSafeServiceAccountExcluded() {
+        return Optional.ofNullable(this.isDataSafeServiceAccountExcluded);
     }
     /**
      * @return Details about the current state of the audit policy in Data Safe.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public Integer provisionTrigger() {
-        return this.provisionTrigger;
+    public Optional<Integer> provisionTrigger() {
+        return Optional.ofNullable(this.provisionTrigger);
     }
-    public Integer retrieveFromTargetTrigger() {
-        return this.retrieveFromTargetTrigger;
+    public Optional<Integer> retrieveFromTargetTrigger() {
+        return Optional.ofNullable(this.retrieveFromTargetTrigger);
     }
     /**
      * @return The current state of the audit policy.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The time the the audit policy was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      * 
      */
-    public String timeLastProvisioned() {
-        return this.timeLastProvisioned;
+    public Optional<String> timeLastProvisioned() {
+        return Optional.ofNullable(this.timeLastProvisioned);
     }
     /**
      * @return The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      * 
      */
-    public String timeLastRetrieved() {
-        return this.timeLastRetrieved;
+    public Optional<String> timeLastRetrieved() {
+        return Optional.ofNullable(this.timeLastRetrieved);
     }
     /**
      * @return The last date and time the audit policy was updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -252,26 +254,26 @@ public final class GetAuditPoliciesAuditPolicyCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions;
-        private String auditPolicyId;
-        private List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isDataSafeServiceAccountExcluded;
-        private String lifecycleDetails;
-        private Integer provisionTrigger;
-        private Integer retrieveFromTargetTrigger;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String targetId;
-        private String timeCreated;
-        private String timeLastProvisioned;
-        private String timeLastRetrieved;
-        private String timeUpdated;
+        private @Nullable List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions;
+        private @Nullable String auditPolicyId;
+        private @Nullable List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isDataSafeServiceAccountExcluded;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer provisionTrigger;
+        private @Nullable Integer retrieveFromTargetTrigger;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastProvisioned;
+        private @Nullable String timeLastRetrieved;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAuditPoliciesAuditPolicyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -298,109 +300,109 @@ public final class GetAuditPoliciesAuditPolicyCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder auditConditions(List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions) {
-            this.auditConditions = Objects.requireNonNull(auditConditions);
+        public Builder auditConditions(@Nullable List<GetAuditPoliciesAuditPolicyCollectionItemAuditCondition> auditConditions) {
+            this.auditConditions = auditConditions;
             return this;
         }
         public Builder auditConditions(GetAuditPoliciesAuditPolicyCollectionItemAuditCondition... auditConditions) {
             return auditConditions(List.of(auditConditions));
         }
         @CustomType.Setter
-        public Builder auditPolicyId(String auditPolicyId) {
-            this.auditPolicyId = Objects.requireNonNull(auditPolicyId);
+        public Builder auditPolicyId(@Nullable String auditPolicyId) {
+            this.auditPolicyId = auditPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder auditSpecifications(List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications) {
-            this.auditSpecifications = Objects.requireNonNull(auditSpecifications);
+        public Builder auditSpecifications(@Nullable List<GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification> auditSpecifications) {
+            this.auditSpecifications = auditSpecifications;
             return this;
         }
         public Builder auditSpecifications(GetAuditPoliciesAuditPolicyCollectionItemAuditSpecification... auditSpecifications) {
             return auditSpecifications(List.of(auditSpecifications));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDataSafeServiceAccountExcluded(Boolean isDataSafeServiceAccountExcluded) {
-            this.isDataSafeServiceAccountExcluded = Objects.requireNonNull(isDataSafeServiceAccountExcluded);
+        public Builder isDataSafeServiceAccountExcluded(@Nullable Boolean isDataSafeServiceAccountExcluded) {
+            this.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionTrigger(Integer provisionTrigger) {
-            this.provisionTrigger = Objects.requireNonNull(provisionTrigger);
+        public Builder provisionTrigger(@Nullable Integer provisionTrigger) {
+            this.provisionTrigger = provisionTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder retrieveFromTargetTrigger(Integer retrieveFromTargetTrigger) {
-            this.retrieveFromTargetTrigger = Objects.requireNonNull(retrieveFromTargetTrigger);
+        public Builder retrieveFromTargetTrigger(@Nullable Integer retrieveFromTargetTrigger) {
+            this.retrieveFromTargetTrigger = retrieveFromTargetTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastProvisioned(String timeLastProvisioned) {
-            this.timeLastProvisioned = Objects.requireNonNull(timeLastProvisioned);
+        public Builder timeLastProvisioned(@Nullable String timeLastProvisioned) {
+            this.timeLastProvisioned = timeLastProvisioned;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastRetrieved(String timeLastRetrieved) {
-            this.timeLastRetrieved = Objects.requireNonNull(timeLastRetrieved);
+        public Builder timeLastRetrieved(@Nullable String timeLastRetrieved) {
+            this.timeLastRetrieved = timeLastRetrieved;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAuditPoliciesAuditPolicyCollectionItem build() {

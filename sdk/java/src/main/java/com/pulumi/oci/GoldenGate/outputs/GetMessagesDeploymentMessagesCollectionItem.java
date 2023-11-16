@@ -6,6 +6,8 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMessagesDeploymentMessagesCollectionItem {
@@ -13,39 +15,39 @@ public final class GetMessagesDeploymentMessagesCollectionItem {
      * @return The deployment Message in plain text with optional HTML anchor tags.
      * 
      */
-    private String deploymentMessage;
+    private @Nullable String deploymentMessage;
     /**
      * @return The deployment Message Status.
      * 
      */
-    private String deploymentMessageStatus;
+    private @Nullable String deploymentMessageStatus;
     /**
      * @return The deployment Message Id.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetMessagesDeploymentMessagesCollectionItem() {}
     /**
      * @return The deployment Message in plain text with optional HTML anchor tags.
      * 
      */
-    public String deploymentMessage() {
-        return this.deploymentMessage;
+    public Optional<String> deploymentMessage() {
+        return Optional.ofNullable(this.deploymentMessage);
     }
     /**
      * @return The deployment Message Status.
      * 
      */
-    public String deploymentMessageStatus() {
-        return this.deploymentMessageStatus;
+    public Optional<String> deploymentMessageStatus() {
+        return Optional.ofNullable(this.deploymentMessageStatus);
     }
     /**
      * @return The deployment Message Id.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMessagesDeploymentMessagesCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deploymentMessage;
-        private String deploymentMessageStatus;
-        private String id;
+        private @Nullable String deploymentMessage;
+        private @Nullable String deploymentMessageStatus;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetMessagesDeploymentMessagesCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMessagesDeploymentMessagesCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder deploymentMessage(String deploymentMessage) {
-            this.deploymentMessage = Objects.requireNonNull(deploymentMessage);
+        public Builder deploymentMessage(@Nullable String deploymentMessage) {
+            this.deploymentMessage = deploymentMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentMessageStatus(String deploymentMessageStatus) {
-            this.deploymentMessageStatus = Objects.requireNonNull(deploymentMessageStatus);
+        public Builder deploymentMessageStatus(@Nullable String deploymentMessageStatus) {
+            this.deploymentMessageStatus = deploymentMessageStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetMessagesDeploymentMessagesCollectionItem build() {

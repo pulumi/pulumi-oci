@@ -119,98 +119,62 @@ class GetMaintenanceRunResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currentCustomActionTimeoutInMins")
-    def current_custom_action_timeout_in_mins(self) -> int:
-        """
-        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
-        """
+    def current_custom_action_timeout_in_mins(self) -> Optional[int]:
         return pulumi.get(self, "current_custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter(name="currentPatchingComponent")
-    def current_patching_component(self) -> str:
-        """
-        The name of the current infrastruture component that is getting patched.
-        """
+    def current_patching_component(self) -> Optional[str]:
         return pulumi.get(self, "current_patching_component")
 
     @property
     @pulumi.getter(name="customActionTimeoutInMins")
-    def custom_action_timeout_in_mins(self) -> int:
-        """
-        Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-        """
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the maintenance run.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the maintenance run.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="estimatedComponentPatchingStartTime")
-    def estimated_component_patching_start_time(self) -> str:
-        """
-        The estimated start time of the next infrastruture component patching operation.
-        """
+    def estimated_component_patching_start_time(self) -> Optional[str]:
         return pulumi.get(self, "estimated_component_patching_start_time")
 
     @property
     @pulumi.getter(name="estimatedPatchingTimes")
-    def estimated_patching_times(self) -> Sequence['outputs.GetMaintenanceRunEstimatedPatchingTimeResult']:
-        """
-        The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
-        """
+    def estimated_patching_times(self) -> Optional[Sequence['outputs.GetMaintenanceRunEstimatedPatchingTimeResult']]:
         return pulumi.get(self, "estimated_patching_times")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the maintenance run.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
-    def is_custom_action_timeout_enabled(self) -> bool:
-        """
-        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-        """
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> bool:
-        """
-        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        """
+    def is_dst_file_update_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -220,143 +184,92 @@ class GetMaintenanceRunResult:
 
     @property
     @pulumi.getter(name="maintenanceSubtype")
-    def maintenance_subtype(self) -> str:
-        """
-        Maintenance sub-type.
-        """
+    def maintenance_subtype(self) -> Optional[str]:
         return pulumi.get(self, "maintenance_subtype")
 
     @property
     @pulumi.getter(name="maintenanceType")
-    def maintenance_type(self) -> str:
-        """
-        Maintenance type.
-        """
+    def maintenance_type(self) -> Optional[str]:
         return pulumi.get(self, "maintenance_type")
 
     @property
     @pulumi.getter(name="patchFailureCount")
-    def patch_failure_count(self) -> int:
-        """
-        Contain the patch failure count.
-        """
+    def patch_failure_count(self) -> Optional[int]:
         return pulumi.get(self, "patch_failure_count")
 
     @property
     @pulumi.getter(name="patchId")
-    def patch_id(self) -> str:
-        """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
-        """
+    def patch_id(self) -> Optional[str]:
         return pulumi.get(self, "patch_id")
 
     @property
     @pulumi.getter(name="patchType")
-    def patch_type(self) -> str:
+    def patch_type(self) -> Optional[str]:
         return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter(name="patchingEndTime")
-    def patching_end_time(self) -> str:
-        """
-        The time when the patching operation ended.
-        """
+    def patching_end_time(self) -> Optional[str]:
         return pulumi.get(self, "patching_end_time")
 
     @property
     @pulumi.getter(name="patchingMode")
-    def patching_mode(self) -> str:
-        """
-        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        """
+    def patching_mode(self) -> Optional[str]:
         return pulumi.get(self, "patching_mode")
 
     @property
     @pulumi.getter(name="patchingStartTime")
-    def patching_start_time(self) -> str:
-        """
-        The time when the patching operation started.
-        """
+    def patching_start_time(self) -> Optional[str]:
         return pulumi.get(self, "patching_start_time")
 
     @property
     @pulumi.getter(name="patchingStatus")
-    def patching_status(self) -> str:
-        """
-        The status of the patching operation.
-        """
+    def patching_status(self) -> Optional[str]:
         return pulumi.get(self, "patching_status")
 
     @property
     @pulumi.getter(name="peerMaintenanceRunId")
-    def peer_maintenance_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
-        """
+    def peer_maintenance_run_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_maintenance_run_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetDbServerVersion")
-    def target_db_server_version(self) -> str:
-        """
-        The target software version for the database server patching operation.
-        """
+    def target_db_server_version(self) -> Optional[str]:
         return pulumi.get(self, "target_db_server_version")
 
     @property
     @pulumi.getter(name="targetResourceId")
-    def target_resource_id(self) -> str:
-        """
-        The ID of the target resource on which the maintenance run occurs.
-        """
+    def target_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceType")
-    def target_resource_type(self) -> str:
-        """
-        The type of the target resource on which the maintenance run occurs.
-        """
+    def target_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_type")
 
     @property
     @pulumi.getter(name="targetStorageServerVersion")
-    def target_storage_server_version(self) -> str:
-        """
-        The target Cell version that is to be patched to.
-        """
+    def target_storage_server_version(self) -> Optional[str]:
         return pulumi.get(self, "target_storage_server_version")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The date and time the maintenance run was completed.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeScheduled")
-    def time_scheduled(self) -> str:
-        """
-        The date and time the maintenance run is scheduled to occur.
-        """
+    def time_scheduled(self) -> Optional[str]:
         return pulumi.get(self, "time_scheduled")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the maintenance run starts.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -402,21 +315,7 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
 def get_maintenance_run(maintenance_run_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaintenanceRunResult:
     """
-    This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified maintenance run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_run = oci.Database.get_maintenance_run(maintenance_run_id=oci_database_maintenance_run["test_maintenance_run"]["id"])
-    ```
-
-
-    :param str maintenance_run_id: The maintenance run OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['maintenanceRunId'] = maintenance_run_id
@@ -461,20 +360,6 @@ def get_maintenance_run(maintenance_run_id: Optional[str] = None,
 def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceRunResult]:
     """
-    This data source provides details about a specific Maintenance Run resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified maintenance run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_run = oci.Database.get_maintenance_run(maintenance_run_id=oci_database_maintenance_run["test_maintenance_run"]["id"])
-    ```
-
-
-    :param str maintenance_run_id: The maintenance run OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

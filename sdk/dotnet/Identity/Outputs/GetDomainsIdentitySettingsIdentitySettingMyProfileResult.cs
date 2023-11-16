@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Whether to allow users to change their own password.
         /// </summary>
-        public readonly bool AllowEndUsersToChangeTheirPassword;
+        public readonly bool? AllowEndUsersToChangeTheirPassword;
         /// <summary>
         /// Whether to allow users to link or unlink their support accounts.
         /// </summary>
-        public readonly bool AllowEndUsersToLinkTheirSupportAccount;
+        public readonly bool? AllowEndUsersToLinkTheirSupportAccount;
         /// <summary>
         /// Whether to allow users to update their capabilities.
         /// </summary>
-        public readonly bool AllowEndUsersToManageTheirCapabilities;
+        public readonly bool? AllowEndUsersToManageTheirCapabilities;
         /// <summary>
         /// Whether to allow users to update their security settings.
         /// </summary>
-        public readonly bool AllowEndUsersToUpdateTheirSecuritySettings;
+        public readonly bool? AllowEndUsersToUpdateTheirSecuritySettings;
 
         [OutputConstructor]
         private GetDomainsIdentitySettingsIdentitySettingMyProfileResult(
-            bool allowEndUsersToChangeTheirPassword,
+            bool? allowEndUsersToChangeTheirPassword,
 
-            bool allowEndUsersToLinkTheirSupportAccount,
+            bool? allowEndUsersToLinkTheirSupportAccount,
 
-            bool allowEndUsersToManageTheirCapabilities,
+            bool? allowEndUsersToManageTheirCapabilities,
 
-            bool allowEndUsersToUpdateTheirSecuritySettings)
+            bool? allowEndUsersToUpdateTheirSecuritySettings)
         {
             AllowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
             AllowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;

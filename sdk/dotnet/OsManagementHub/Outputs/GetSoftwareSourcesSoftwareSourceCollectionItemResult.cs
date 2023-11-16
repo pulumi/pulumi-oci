@@ -16,19 +16,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// A filter to return only instances whose architecture type matches the given architecture.
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// The availabilities of the software source for a tenant.
         /// </summary>
-        public readonly string Availability;
+        public readonly string? Availability;
         /// <summary>
         /// The yum repository checksum type used by this software source.
         /// </summary>
-        public readonly string ChecksumType;
+        public readonly string? ChecksumType;
         /// <summary>
         /// The OCID of the compartment that contains the resources to list.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
         /// </summary>
@@ -36,79 +36,79 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Information specified by the user about the software source.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Fingerprint of the GPG key for this software source.
         /// </summary>
-        public readonly string GpgKeyFingerprint;
+        public readonly string? GpgKeyFingerprint;
         /// <summary>
         /// ID of the GPG key for this software source.
         /// </summary>
-        public readonly string GpgKeyId;
+        public readonly string? GpgKeyId;
         /// <summary>
         /// URL of the GPG key for this software source.
         /// </summary>
-        public readonly string GpgKeyUrl;
+        public readonly string? GpgKeyUrl;
         /// <summary>
         /// The OCID of the resource that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether service should automatically update the custom software source for the user.
         /// </summary>
-        public readonly bool IsAutomaticallyUpdated;
+        public readonly bool? IsAutomaticallyUpdated;
         /// <summary>
         /// A filter to return only instances whose OS family type matches the given OS family.
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         /// <summary>
         /// Number of packages.
         /// </summary>
-        public readonly string PackageCount;
+        public readonly string? PackageCount;
         /// <summary>
         /// The Repo ID for the software source.
         /// </summary>
-        public readonly string RepoId;
+        public readonly string? RepoId;
         /// <summary>
         /// The type of the software source.
         /// </summary>
-        public readonly string SoftwareSourceType;
+        public readonly string? SoftwareSourceType;
         /// <summary>
         /// The version to assign to this custom software source.
         /// </summary>
-        public readonly string SoftwareSourceVersion;
+        public readonly string? SoftwareSourceVersion;
         /// <summary>
         /// A filter to return only resources whose lifecycleState matches the given lifecycleStates.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// URL for the repository.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
         /// <summary>
         /// A filter to return only profiles that match the given vendorName.
         /// </summary>
-        public readonly string VendorName;
+        public readonly string? VendorName;
         /// <summary>
         /// List of vendor software sources.
         /// </summary>
@@ -116,53 +116,53 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private GetSoftwareSourcesSoftwareSourceCollectionItemResult(
-            string archType,
+            string? archType,
 
-            string availability,
+            string? availability,
 
-            string checksumType,
+            string? checksumType,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult> customSoftwareSourceFilters,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string gpgKeyFingerprint,
+            string? gpgKeyFingerprint,
 
-            string gpgKeyId,
+            string? gpgKeyId,
 
-            string gpgKeyUrl,
+            string? gpgKeyUrl,
 
-            string id,
+            string? id,
 
-            bool isAutomaticallyUpdated,
+            bool? isAutomaticallyUpdated,
 
-            string osFamily,
+            string? osFamily,
 
-            string packageCount,
+            string? packageCount,
 
-            string repoId,
+            string? repoId,
 
-            string softwareSourceType,
+            string? softwareSourceType,
 
-            string softwareSourceVersion,
+            string? softwareSourceVersion,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string url,
+            string? url,
 
-            string vendorName,
+            string? vendorName,
 
             ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult> vendorSoftwareSources)
         {

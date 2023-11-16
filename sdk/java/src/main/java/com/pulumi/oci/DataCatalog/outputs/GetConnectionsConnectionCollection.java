@@ -8,18 +8,20 @@ import com.pulumi.oci.DataCatalog.outputs.GetConnectionsConnectionCollectionItem
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsConnectionCollection {
-    private Integer count;
-    private List<GetConnectionsConnectionCollectionItem> items;
+    private @Nullable Integer count;
+    private @Nullable List<GetConnectionsConnectionCollectionItem> items;
 
     private GetConnectionsConnectionCollection() {}
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     public List<GetConnectionsConnectionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetConnectionsConnectionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private List<GetConnectionsConnectionCollectionItem> items;
+        private @Nullable Integer count;
+        private @Nullable List<GetConnectionsConnectionCollectionItem> items;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetConnectionsConnectionCollection {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetConnectionsConnectionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetConnectionsConnectionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetConnectionsConnectionCollectionItem... items) {

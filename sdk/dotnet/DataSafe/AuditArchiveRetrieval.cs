@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataSafe
         /// Total count of audit events to be retrieved from the archive for the specified date range.
         /// </summary>
         [Output("auditEventCount")]
-        public Output<string> AuditEventCount { get; private set; } = null!;
+        public Output<string?> AuditEventCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the archival retrieval.
@@ -74,19 +74,19 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the archive retrieval.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// End month of the archive retrieval, in the format defined by RFC3339.
@@ -98,19 +98,19 @@ namespace Pulumi.Oci.DataSafe
         /// The Error details of a failed archive retrieval.
         /// </summary>
         [Output("errorInfo")]
-        public Output<string> ErrorInfo { get; private set; } = null!;
+        public Output<string?> ErrorInfo { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the archive retrieval.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Start month of the archive retrieval, in the format defined by RFC3339.
@@ -122,13 +122,13 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the archive retrieval.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the target associated with the archive retrieval.
@@ -144,19 +144,19 @@ namespace Pulumi.Oci.DataSafe
         /// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCompleted")]
-        public Output<string> TimeCompleted { get; private set; } = null!;
+        public Output<string?> TimeCompleted { get; private set; } = null!;
 
         /// <summary>
         /// The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
         /// </summary>
         [Output("timeOfExpiry")]
-        public Output<string> TimeOfExpiry { get; private set; } = null!;
+        public Output<string?> TimeOfExpiry { get; private set; } = null!;
 
         /// <summary>
         /// The date time when archive retrieval was requested, in the format defined by RFC3339.
         /// </summary>
         [Output("timeRequested")]
-        public Output<string> TimeRequested { get; private set; } = null!;
+        public Output<string?> TimeRequested { get; private set; } = null!;
 
 
         /// <summary>

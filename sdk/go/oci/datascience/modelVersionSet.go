@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
@@ -66,11 +65,11 @@ type ModelVersionSet struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the model version set.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A user-friendly name for the resource. It must be unique and can't be modified. Avoid entering confidential information. Example: `My model version set`
@@ -81,11 +80,11 @@ type ModelVersionSet struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the model version set.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewModelVersionSet registers a new resource with the given unique name, arguments, and options.
@@ -239,12 +238,6 @@ func (i *ModelVersionSet) ToModelVersionSetOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelVersionSetOutput)
 }
 
-func (i *ModelVersionSet) ToOutput(ctx context.Context) pulumix.Output[*ModelVersionSet] {
-	return pulumix.Output[*ModelVersionSet]{
-		OutputState: i.ToModelVersionSetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelVersionSetArrayInput is an input type that accepts ModelVersionSetArray and ModelVersionSetArrayOutput values.
 // You can construct a concrete instance of `ModelVersionSetArrayInput` via:
 //
@@ -268,12 +261,6 @@ func (i ModelVersionSetArray) ToModelVersionSetArrayOutput() ModelVersionSetArra
 
 func (i ModelVersionSetArray) ToModelVersionSetArrayOutputWithContext(ctx context.Context) ModelVersionSetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelVersionSetArrayOutput)
-}
-
-func (i ModelVersionSetArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelVersionSet] {
-	return pulumix.Output[[]*ModelVersionSet]{
-		OutputState: i.ToModelVersionSetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelVersionSetMapInput is an input type that accepts ModelVersionSetMap and ModelVersionSetMapOutput values.
@@ -301,12 +288,6 @@ func (i ModelVersionSetMap) ToModelVersionSetMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelVersionSetMapOutput)
 }
 
-func (i ModelVersionSetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelVersionSet] {
-	return pulumix.Output[map[string]*ModelVersionSet]{
-		OutputState: i.ToModelVersionSetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelVersionSetOutput struct{ *pulumi.OutputState }
 
 func (ModelVersionSetOutput) ElementType() reflect.Type {
@@ -321,20 +302,14 @@ func (o ModelVersionSetOutput) ToModelVersionSetOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ModelVersionSetOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelVersionSet] {
-	return pulumix.Output[*ModelVersionSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
 func (o ModelVersionSetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model version set.
-func (o ModelVersionSetOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o ModelVersionSetOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -343,8 +318,8 @@ func (o ModelVersionSetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the model version set.
-func (o ModelVersionSetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ModelVersionSetOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -366,18 +341,18 @@ func (o ModelVersionSetOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the model version set.
-func (o ModelVersionSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ModelVersionSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o ModelVersionSetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ModelVersionSetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o ModelVersionSetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ModelVersionSetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelVersionSet) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ModelVersionSetArrayOutput struct{ *pulumi.OutputState }
@@ -392,12 +367,6 @@ func (o ModelVersionSetArrayOutput) ToModelVersionSetArrayOutput() ModelVersionS
 
 func (o ModelVersionSetArrayOutput) ToModelVersionSetArrayOutputWithContext(ctx context.Context) ModelVersionSetArrayOutput {
 	return o
-}
-
-func (o ModelVersionSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelVersionSet] {
-	return pulumix.Output[[]*ModelVersionSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelVersionSetArrayOutput) Index(i pulumi.IntInput) ModelVersionSetOutput {
@@ -418,12 +387,6 @@ func (o ModelVersionSetMapOutput) ToModelVersionSetMapOutput() ModelVersionSetMa
 
 func (o ModelVersionSetMapOutput) ToModelVersionSetMapOutputWithContext(ctx context.Context) ModelVersionSetMapOutput {
 	return o
-}
-
-func (o ModelVersionSetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelVersionSet] {
-	return pulumix.Output[map[string]*ModelVersionSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelVersionSetMapOutput) MapIndex(k pulumi.StringInput) ModelVersionSetOutput {

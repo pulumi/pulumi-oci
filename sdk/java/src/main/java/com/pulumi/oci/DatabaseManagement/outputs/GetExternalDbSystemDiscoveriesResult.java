@@ -28,13 +28,13 @@ public final class GetExternalDbSystemDiscoveriesResult {
      * @return The list of external_db_system_discovery_collection.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections;
     private @Nullable List<GetExternalDbSystemDiscoveriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalDbSystemDiscoveriesResult() {}
     /**
@@ -56,7 +56,7 @@ public final class GetExternalDbSystemDiscoveriesResult {
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections() {
-        return this.externalDbSystemDiscoveryCollections;
+        return this.externalDbSystemDiscoveryCollections == null ? List.of() : this.externalDbSystemDiscoveryCollections;
     }
     public List<GetExternalDbSystemDiscoveriesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -65,8 +65,8 @@ public final class GetExternalDbSystemDiscoveriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -80,9 +80,9 @@ public final class GetExternalDbSystemDiscoveriesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections;
         private @Nullable List<GetExternalDbSystemDiscoveriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,8 +104,8 @@ public final class GetExternalDbSystemDiscoveriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemDiscoveryCollections(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections) {
-            this.externalDbSystemDiscoveryCollections = Objects.requireNonNull(externalDbSystemDiscoveryCollections);
+        public Builder externalDbSystemDiscoveryCollections(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection> externalDbSystemDiscoveryCollections) {
+            this.externalDbSystemDiscoveryCollections = externalDbSystemDiscoveryCollections;
             return this;
         }
         public Builder externalDbSystemDiscoveryCollections(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection... externalDbSystemDiscoveryCollections) {
@@ -120,8 +120,8 @@ public final class GetExternalDbSystemDiscoveriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalDbSystemDiscoveriesResult build() {

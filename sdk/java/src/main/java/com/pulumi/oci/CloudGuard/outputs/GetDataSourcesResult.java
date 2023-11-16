@@ -26,7 +26,7 @@ public final class GetDataSourcesResult {
      * @return The list of data_source_collection.
      * 
      */
-    private List<GetDataSourcesDataSourceCollection> dataSourceCollections;
+    private @Nullable List<GetDataSourcesDataSourceCollection> dataSourceCollections;
     /**
      * @return Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
@@ -42,7 +42,7 @@ public final class GetDataSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Logging query type for data source (Sighting/Insight)
      * 
@@ -73,7 +73,7 @@ public final class GetDataSourcesResult {
      * 
      */
     public List<GetDataSourcesDataSourceCollection> dataSourceCollections() {
-        return this.dataSourceCollections;
+        return this.dataSourceCollections == null ? List.of() : this.dataSourceCollections;
     }
     /**
      * @return Possible type of dataSourceFeed Provider(LoggingQuery)
@@ -96,8 +96,8 @@ public final class GetDataSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Logging query type for data source (Sighting/Insight)
@@ -126,11 +126,11 @@ public final class GetDataSourcesResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetDataSourcesDataSourceCollection> dataSourceCollections;
+        private @Nullable List<GetDataSourcesDataSourceCollection> dataSourceCollections;
         private @Nullable String dataSourceFeedProvider;
         private @Nullable String displayName;
         private @Nullable List<GetDataSourcesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String loggingQueryType;
         private @Nullable String state;
         public Builder() {}
@@ -164,8 +164,8 @@ public final class GetDataSourcesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataSourceCollections(List<GetDataSourcesDataSourceCollection> dataSourceCollections) {
-            this.dataSourceCollections = Objects.requireNonNull(dataSourceCollections);
+        public Builder dataSourceCollections(@Nullable List<GetDataSourcesDataSourceCollection> dataSourceCollections) {
+            this.dataSourceCollections = dataSourceCollections;
             return this;
         }
         public Builder dataSourceCollections(GetDataSourcesDataSourceCollection... dataSourceCollections) {
@@ -190,8 +190,8 @@ public final class GetDataSourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -48,10 +48,7 @@ class GetAssetSourcesResult:
 
     @property
     @pulumi.getter(name="assetSourceCollections")
-    def asset_source_collections(self) -> Sequence['outputs.GetAssetSourcesAssetSourceCollectionResult']:
-        """
-        The list of asset_source_collection.
-        """
+    def asset_source_collections(self) -> Optional[Sequence['outputs.GetAssetSourcesAssetSourceCollectionResult']]:
         return pulumi.get(self, "asset_source_collections")
 
     @property
@@ -62,17 +59,11 @@ class GetAssetSourcesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the asset source. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -82,7 +73,7 @@ class GetAssetSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +82,6 @@ class GetAssetSourcesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the asset source.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_asset_sources(asset_source_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssetSourcesResult:
     """
-    This data source provides the list of Asset Sources in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of asset sources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_asset_sources = oci.CloudBridge.get_asset_sources(compartment_id=var["compartment_id"],
-        asset_source_id=oci_cloud_bridge_asset_source["test_asset_source"]["id"],
-        display_name=var["asset_source_display_name"],
-        state=var["asset_source_state"])
-    ```
-
-
-    :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the asset source.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['assetSourceId'] = asset_source_id
@@ -168,26 +136,6 @@ def get_asset_sources_output(asset_source_id: Optional[pulumi.Input[Optional[str
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetSourcesResult]:
     """
-    This data source provides the list of Asset Sources in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of asset sources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_asset_sources = oci.CloudBridge.get_asset_sources(compartment_id=var["compartment_id"],
-        asset_source_id=oci_cloud_bridge_asset_source["test_asset_source"]["id"],
-        display_name=var["asset_source_display_name"],
-        state=var["asset_source_state"])
-    ```
-
-
-    :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the asset source.
+    Use this data source to access information about an existing resource.
     """
     ...

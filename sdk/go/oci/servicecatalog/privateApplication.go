@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -79,26 +78,26 @@ type PrivateApplication struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-	LogoFileBase64encoded pulumi.StringOutput `pulumi:"logoFileBase64encoded"`
+	LogoFileBase64encoded pulumi.StringPtrOutput `pulumi:"logoFileBase64encoded"`
 	// The model for uploaded binary data, like logos and images.
 	Logos PrivateApplicationLogoArrayOutput `pulumi:"logos"`
 	// (Updatable) A long description of the private application.
-	LongDescription pulumi.StringOutput `pulumi:"longDescription"`
+	LongDescription pulumi.StringPtrOutput `pulumi:"longDescription"`
 	// A base object for creating a private application package.
 	PackageDetails PrivateApplicationPackageDetailsOutput `pulumi:"packageDetails"`
 	// The package's type.
-	PackageType pulumi.StringOutput `pulumi:"packageType"`
+	PackageType pulumi.StringPtrOutput `pulumi:"packageType"`
 	// (Updatable) A short description of the private application.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShortDescription pulumi.StringOutput `pulumi:"shortDescription"`
 	// The lifecycle state of the private application.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewPrivateApplication registers a new resource with the given unique name, arguments, and options.
@@ -278,12 +277,6 @@ func (i *PrivateApplication) ToPrivateApplicationOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationOutput)
 }
 
-func (i *PrivateApplication) ToOutput(ctx context.Context) pulumix.Output[*PrivateApplication] {
-	return pulumix.Output[*PrivateApplication]{
-		OutputState: i.ToPrivateApplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PrivateApplicationArrayInput is an input type that accepts PrivateApplicationArray and PrivateApplicationArrayOutput values.
 // You can construct a concrete instance of `PrivateApplicationArrayInput` via:
 //
@@ -307,12 +300,6 @@ func (i PrivateApplicationArray) ToPrivateApplicationArrayOutput() PrivateApplic
 
 func (i PrivateApplicationArray) ToPrivateApplicationArrayOutputWithContext(ctx context.Context) PrivateApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationArrayOutput)
-}
-
-func (i PrivateApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateApplication] {
-	return pulumix.Output[[]*PrivateApplication]{
-		OutputState: i.ToPrivateApplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PrivateApplicationMapInput is an input type that accepts PrivateApplicationMap and PrivateApplicationMapOutput values.
@@ -340,12 +327,6 @@ func (i PrivateApplicationMap) ToPrivateApplicationMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(PrivateApplicationMapOutput)
 }
 
-func (i PrivateApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateApplication] {
-	return pulumix.Output[map[string]*PrivateApplication]{
-		OutputState: i.ToPrivateApplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PrivateApplicationOutput struct{ *pulumi.OutputState }
 
 func (PrivateApplicationOutput) ElementType() reflect.Type {
@@ -358,12 +339,6 @@ func (o PrivateApplicationOutput) ToPrivateApplicationOutput() PrivateApplicatio
 
 func (o PrivateApplicationOutput) ToPrivateApplicationOutputWithContext(ctx context.Context) PrivateApplicationOutput {
 	return o
-}
-
-func (o PrivateApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*PrivateApplication] {
-	return pulumix.Output[*PrivateApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
@@ -387,8 +362,8 @@ func (o PrivateApplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
-func (o PrivateApplicationOutput) LogoFileBase64encoded() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.LogoFileBase64encoded }).(pulumi.StringOutput)
+func (o PrivateApplicationOutput) LogoFileBase64encoded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateApplication) pulumi.StringPtrOutput { return v.LogoFileBase64encoded }).(pulumi.StringPtrOutput)
 }
 
 // The model for uploaded binary data, like logos and images.
@@ -397,8 +372,8 @@ func (o PrivateApplicationOutput) Logos() PrivateApplicationLogoArrayOutput {
 }
 
 // (Updatable) A long description of the private application.
-func (o PrivateApplicationOutput) LongDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.LongDescription }).(pulumi.StringOutput)
+func (o PrivateApplicationOutput) LongDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateApplication) pulumi.StringPtrOutput { return v.LongDescription }).(pulumi.StringPtrOutput)
 }
 
 // A base object for creating a private application package.
@@ -407,8 +382,8 @@ func (o PrivateApplicationOutput) PackageDetails() PrivateApplicationPackageDeta
 }
 
 // The package's type.
-func (o PrivateApplicationOutput) PackageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.PackageType }).(pulumi.StringOutput)
+func (o PrivateApplicationOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateApplication) pulumi.StringPtrOutput { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A short description of the private application.
@@ -420,18 +395,18 @@ func (o PrivateApplicationOutput) ShortDescription() pulumi.StringOutput {
 }
 
 // The lifecycle state of the private application.
-func (o PrivateApplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PrivateApplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateApplication) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-func (o PrivateApplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PrivateApplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateApplication) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-func (o PrivateApplicationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PrivateApplication) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o PrivateApplicationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PrivateApplication) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type PrivateApplicationArrayOutput struct{ *pulumi.OutputState }
@@ -446,12 +421,6 @@ func (o PrivateApplicationArrayOutput) ToPrivateApplicationArrayOutput() Private
 
 func (o PrivateApplicationArrayOutput) ToPrivateApplicationArrayOutputWithContext(ctx context.Context) PrivateApplicationArrayOutput {
 	return o
-}
-
-func (o PrivateApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PrivateApplication] {
-	return pulumix.Output[[]*PrivateApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PrivateApplicationArrayOutput) Index(i pulumi.IntInput) PrivateApplicationOutput {
@@ -472,12 +441,6 @@ func (o PrivateApplicationMapOutput) ToPrivateApplicationMapOutput() PrivateAppl
 
 func (o PrivateApplicationMapOutput) ToPrivateApplicationMapOutputWithContext(ctx context.Context) PrivateApplicationMapOutput {
 	return o
-}
-
-func (o PrivateApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PrivateApplication] {
-	return pulumix.Output[map[string]*PrivateApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PrivateApplicationMapOutput) MapIndex(k pulumi.StringInput) PrivateApplicationOutput {

@@ -98,7 +98,7 @@ export interface GetStreamsResult {
     /**
      * The list of streams.
      */
-    readonly streams: outputs.Streaming.GetStreamsStream[];
+    readonly streams?: outputs.Streaming.GetStreamsStream[];
 }
 /**
  * This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.

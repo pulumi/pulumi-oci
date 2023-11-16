@@ -29,7 +29,7 @@ public final class GetPublicIpsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Defines when the public IP is deleted and released back to Oracle&#39;s public IP pool.
      * 
@@ -44,7 +44,7 @@ public final class GetPublicIpsResult {
      * @return The list of public_ips.
      * 
      */
-    private List<GetPublicIpsPublicIp> publicIps;
+    private @Nullable List<GetPublicIpsPublicIp> publicIps;
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
      * 
@@ -73,8 +73,8 @@ public final class GetPublicIpsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Defines when the public IP is deleted and released back to Oracle&#39;s public IP pool.
@@ -95,7 +95,7 @@ public final class GetPublicIpsResult {
      * 
      */
     public List<GetPublicIpsPublicIp> publicIps() {
-        return this.publicIps;
+        return this.publicIps == null ? List.of() : this.publicIps;
     }
     /**
      * @return Whether the public IP is regional or specific to a particular availability domain.
@@ -117,10 +117,10 @@ public final class GetPublicIpsResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetPublicIpsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String lifetime;
         private @Nullable String publicIpPoolId;
-        private List<GetPublicIpsPublicIp> publicIps;
+        private @Nullable List<GetPublicIpsPublicIp> publicIps;
         private String scope;
         public Builder() {}
         public Builder(GetPublicIpsResult defaults) {
@@ -154,8 +154,8 @@ public final class GetPublicIpsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -169,8 +169,8 @@ public final class GetPublicIpsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder publicIps(List<GetPublicIpsPublicIp> publicIps) {
-            this.publicIps = Objects.requireNonNull(publicIps);
+        public Builder publicIps(@Nullable List<GetPublicIpsPublicIp> publicIps) {
+            this.publicIps = publicIps;
             return this;
         }
         public Builder publicIps(GetPublicIpsPublicIp... publicIps) {

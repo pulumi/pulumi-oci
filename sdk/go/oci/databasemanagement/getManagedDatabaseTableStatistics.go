@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
@@ -63,8 +62,8 @@ type GetManagedDatabaseTableStatisticsArgs struct {
 type GetManagedDatabaseTableStatisticsResult struct {
 	Filters []GetManagedDatabaseTableStatisticsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The list of table_statistics_collection.
 	TableStatisticsCollections []GetManagedDatabaseTableStatisticsTableStatisticsCollection `pulumi:"tableStatisticsCollections"`
 }
@@ -108,12 +107,6 @@ func (o GetManagedDatabaseTableStatisticsResultOutput) ToGetManagedDatabaseTable
 	return o
 }
 
-func (o GetManagedDatabaseTableStatisticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseTableStatisticsResult] {
-	return pulumix.Output[GetManagedDatabaseTableStatisticsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseTableStatisticsResultOutput) Filters() GetManagedDatabaseTableStatisticsFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsResult) []GetManagedDatabaseTableStatisticsFilter {
 		return v.Filters
@@ -121,8 +114,8 @@ func (o GetManagedDatabaseTableStatisticsResultOutput) Filters() GetManagedDatab
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseTableStatisticsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseTableStatisticsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseTableStatisticsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseTableStatisticsResultOutput) ManagedDatabaseId() pulumi.StringOutput {

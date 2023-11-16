@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobJobConfigurationDetail {
@@ -15,51 +17,51 @@ public final class GetJobJobConfigurationDetail {
      * @return The arguments to pass to the job.
      * 
      */
-    private String commandLineArguments;
+    private @Nullable String commandLineArguments;
     /**
      * @return Environment variables to set for the job.
      * 
      */
-    private Map<String,Object> environmentVariables;
+    private @Nullable Map<String,Object> environmentVariables;
     /**
      * @return The type of job.
      * 
      */
-    private String jobType;
+    private @Nullable String jobType;
     /**
      * @return A time bound for the execution of the job. Timer starts when the job becomes active.
      * 
      */
-    private String maximumRuntimeInMinutes;
+    private @Nullable String maximumRuntimeInMinutes;
 
     private GetJobJobConfigurationDetail() {}
     /**
      * @return The arguments to pass to the job.
      * 
      */
-    public String commandLineArguments() {
-        return this.commandLineArguments;
+    public Optional<String> commandLineArguments() {
+        return Optional.ofNullable(this.commandLineArguments);
     }
     /**
      * @return Environment variables to set for the job.
      * 
      */
     public Map<String,Object> environmentVariables() {
-        return this.environmentVariables;
+        return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
      * @return The type of job.
      * 
      */
-    public String jobType() {
-        return this.jobType;
+    public Optional<String> jobType() {
+        return Optional.ofNullable(this.jobType);
     }
     /**
      * @return A time bound for the execution of the job. Timer starts when the job becomes active.
      * 
      */
-    public String maximumRuntimeInMinutes() {
-        return this.maximumRuntimeInMinutes;
+    public Optional<String> maximumRuntimeInMinutes() {
+        return Optional.ofNullable(this.maximumRuntimeInMinutes);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetJobJobConfigurationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commandLineArguments;
-        private Map<String,Object> environmentVariables;
-        private String jobType;
-        private String maximumRuntimeInMinutes;
+        private @Nullable String commandLineArguments;
+        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable String jobType;
+        private @Nullable String maximumRuntimeInMinutes;
         public Builder() {}
         public Builder(GetJobJobConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetJobJobConfigurationDetail {
         }
 
         @CustomType.Setter
-        public Builder commandLineArguments(String commandLineArguments) {
-            this.commandLineArguments = Objects.requireNonNull(commandLineArguments);
+        public Builder commandLineArguments(@Nullable String commandLineArguments) {
+            this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
-        public Builder jobType(String jobType) {
-            this.jobType = Objects.requireNonNull(jobType);
+        public Builder jobType(@Nullable String jobType) {
+            this.jobType = jobType;
             return this;
         }
         @CustomType.Setter
-        public Builder maximumRuntimeInMinutes(String maximumRuntimeInMinutes) {
-            this.maximumRuntimeInMinutes = Objects.requireNonNull(maximumRuntimeInMinutes);
+        public Builder maximumRuntimeInMinutes(@Nullable String maximumRuntimeInMinutes) {
+            this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         public GetJobJobConfigurationDetail build() {

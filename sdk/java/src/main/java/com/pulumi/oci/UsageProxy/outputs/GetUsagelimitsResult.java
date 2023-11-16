@@ -20,7 +20,7 @@ public final class GetUsagelimitsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The limit type of the usage limit
      * 
@@ -33,7 +33,7 @@ public final class GetUsagelimitsResult {
      * @return The list of usage_limit_collection.
      * 
      */
-    private List<GetUsagelimitsUsageLimitCollection> usageLimitCollections;
+    private @Nullable List<GetUsagelimitsUsageLimitCollection> usageLimitCollections;
 
     private GetUsagelimitsResult() {}
     public String compartmentId() {
@@ -46,8 +46,8 @@ public final class GetUsagelimitsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The limit type of the usage limit
@@ -70,7 +70,7 @@ public final class GetUsagelimitsResult {
      * 
      */
     public List<GetUsagelimitsUsageLimitCollection> usageLimitCollections() {
-        return this.usageLimitCollections;
+        return this.usageLimitCollections == null ? List.of() : this.usageLimitCollections;
     }
 
     public static Builder builder() {
@@ -84,12 +84,12 @@ public final class GetUsagelimitsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetUsagelimitsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String limitType;
         private @Nullable String resourceType;
         private @Nullable String serviceType;
         private String subscriptionId;
-        private List<GetUsagelimitsUsageLimitCollection> usageLimitCollections;
+        private @Nullable List<GetUsagelimitsUsageLimitCollection> usageLimitCollections;
         public Builder() {}
         public Builder(GetUsagelimitsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,8 +117,8 @@ public final class GetUsagelimitsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,8 +142,8 @@ public final class GetUsagelimitsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder usageLimitCollections(List<GetUsagelimitsUsageLimitCollection> usageLimitCollections) {
-            this.usageLimitCollections = Objects.requireNonNull(usageLimitCollections);
+        public Builder usageLimitCollections(@Nullable List<GetUsagelimitsUsageLimitCollection> usageLimitCollections) {
+            this.usageLimitCollections = usageLimitCollections;
             return this;
         }
         public Builder usageLimitCollections(GetUsagelimitsUsageLimitCollection... usageLimitCollections) {

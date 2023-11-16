@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,28 +85,28 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the private endpoint.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      * 
      */
     @Export(name="isCluster", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCluster;
+    private Output</* @Nullable */ Boolean> isCluster;
 
     /**
      * @return Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
      * 
      */
-    public Output<Boolean> isCluster() {
-        return this.isCluster;
+    public Output<Optional<Boolean>> isCluster() {
+        return Codegen.optional(this.isCluster);
     }
     /**
      * (Updatable) The display name of the Database Management private endpoint.
@@ -126,42 +127,42 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * The IP addresses assigned to the Database Management private endpoint.
      * 
      */
     @Export(name="privateIp", refs={String.class}, tree="[0]")
-    private Output<String> privateIp;
+    private Output</* @Nullable */ String> privateIp;
 
     /**
      * @return The IP addresses assigned to the Database Management private endpoint.
      * 
      */
-    public Output<String> privateIp() {
-        return this.privateIp;
+    public Output<Optional<String>> privateIp() {
+        return Codegen.optional(this.privateIp);
     }
     /**
      * The current lifecycle state of the Database Management private endpoint.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the Database Management private endpoint.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -188,28 +189,28 @@ public class DbManagementPrivateEndpoint extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     @Export(name="vcnId", refs={String.class}, tree="[0]")
-    private Output<String> vcnId;
+    private Output</* @Nullable */ String> vcnId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    public Output<String> vcnId() {
-        return this.vcnId;
+    public Output<Optional<String>> vcnId() {
+        return Codegen.optional(this.vcnId);
     }
 
     /**

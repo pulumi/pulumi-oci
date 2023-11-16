@@ -293,7 +293,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? InstallationPath;
         /// <summary>
         /// The list of installation_site_collection.
@@ -320,7 +320,7 @@ namespace Pulumi.Oci.Jms
 
             string fleetId,
 
-            string id,
+            string? id,
 
             string? installationPath,
 

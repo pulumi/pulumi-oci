@@ -9,6 +9,7 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRedeemableUsersRedeemabl
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetSubscriptionRedeemableUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of redeemable_user_collection.
      * 
      */
-    private List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections;
+    private @Nullable List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections;
     private String subscriptionId;
     private String tenancyId;
 
@@ -35,15 +36,15 @@ public final class GetSubscriptionRedeemableUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of redeemable_user_collection.
      * 
      */
     public List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections() {
-        return this.redeemableUserCollections;
+        return this.redeemableUserCollections == null ? List.of() : this.redeemableUserCollections;
     }
     public String subscriptionId() {
         return this.subscriptionId;
@@ -62,8 +63,8 @@ public final class GetSubscriptionRedeemableUsersResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSubscriptionRedeemableUsersFilter> filters;
-        private String id;
-        private List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections;
         private String subscriptionId;
         private String tenancyId;
         public Builder() {}
@@ -85,13 +86,13 @@ public final class GetSubscriptionRedeemableUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder redeemableUserCollections(List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections) {
-            this.redeemableUserCollections = Objects.requireNonNull(redeemableUserCollections);
+        public Builder redeemableUserCollections(@Nullable List<GetSubscriptionRedeemableUsersRedeemableUserCollection> redeemableUserCollections) {
+            this.redeemableUserCollections = redeemableUserCollections;
             return this;
         }
         public Builder redeemableUserCollections(GetSubscriptionRedeemableUsersRedeemableUserCollection... redeemableUserCollections) {

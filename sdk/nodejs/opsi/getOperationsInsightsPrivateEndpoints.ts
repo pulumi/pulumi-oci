@@ -96,7 +96,7 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The flag is to identify if private endpoint is used for rac database or not
      */
@@ -104,7 +104,7 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
     /**
      * The list of operations_insights_private_endpoint_collection.
      */
-    readonly operationsInsightsPrivateEndpointCollections: outputs.Opsi.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection[];
+    readonly operationsInsightsPrivateEndpointCollections?: outputs.Opsi.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection[];
     readonly opsiPrivateEndpointId?: string;
     /**
      * The current state of the private endpoint.

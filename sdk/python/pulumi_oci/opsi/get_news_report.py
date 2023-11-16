@@ -77,82 +77,52 @@ class GetNewsReportResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="contentTypes")
-    def content_types(self) -> Sequence['outputs.GetNewsReportContentTypeResult']:
-        """
-        Content types that the news report can handle.
-        """
+    def content_types(self) -> Optional[Sequence['outputs.GetNewsReportContentTypeResult']]:
         return pulumi.get(self, "content_types")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the news report.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def locale(self) -> str:
-        """
-        Language of the news report.
-        """
+    def locale(self) -> Optional[str]:
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The news report name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="newsFrequency")
-    def news_frequency(self) -> str:
-        """
-        News report frequency.
-        """
+    def news_frequency(self) -> Optional[str]:
         return pulumi.get(self, "news_frequency")
 
     @property
@@ -162,50 +132,32 @@ class GetNewsReportResult:
 
     @property
     @pulumi.getter(name="onsTopicId")
-    def ons_topic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        """
+    def ons_topic_id(self) -> Optional[str]:
         return pulumi.get(self, "ons_topic_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the news report.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Indicates the status of a news report in Operations Insights.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the news report was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -237,21 +189,7 @@ class AwaitableGetNewsReportResult(GetNewsReportResult):
 def get_news_report(news_report_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNewsReportResult:
     """
-    This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of a news report.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_news_report = oci.Opsi.get_news_report(news_report_id=oci_opsi_news_report["test_news_report"]["id"])
-    ```
-
-
-    :param str news_report_id: Unique news report identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['newsReportId'] = news_report_id
@@ -282,20 +220,6 @@ def get_news_report(news_report_id: Optional[str] = None,
 def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNewsReportResult]:
     """
-    This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of a news report.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_news_report = oci.Opsi.get_news_report(news_report_id=oci_opsi_news_report["test_news_report"]["id"])
-    ```
-
-
-    :param str news_report_id: Unique news report identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

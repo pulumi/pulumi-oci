@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Oda.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string OdaPrivateEndpointId;
+        public readonly string? OdaPrivateEndpointId;
         /// <summary>
         /// The protocol used for communication between client, scanProxy and RAC's scan listeners
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.Oda.Outputs
         /// <summary>
         /// Type indicating whether Scan listener is specified by its FQDN or list of IPs
         /// </summary>
-        public readonly string ScanListenerType;
+        public readonly string? ScanListenerType;
         /// <summary>
         /// List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult(
-            string id,
+            string? id,
 
-            string odaPrivateEndpointId,
+            string? odaPrivateEndpointId,
 
-            string protocol,
+            string? protocol,
 
             ImmutableArray<Outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult> scanListenerInfos,
 
-            string scanListenerType,
+            string? scanListenerType,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Id = id;
             OdaPrivateEndpointId = odaPrivateEndpointId;

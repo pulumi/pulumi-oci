@@ -6,22 +6,24 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolsNodePoolNodeError {
-    private String code;
-    private String message;
-    private String status;
+    private @Nullable String code;
+    private @Nullable String message;
+    private @Nullable String status;
 
     private GetNodePoolsNodePoolNodeError() {}
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetNodePoolsNodePoolNodeError {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private String message;
-        private String status;
+        private @Nullable String code;
+        private @Nullable String message;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeError defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetNodePoolsNodePoolNodeError {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetNodePoolsNodePoolNodeError build() {

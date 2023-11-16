@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drg Route Table Route Rules in Oracle Cloud Infrastructure Core service.
@@ -68,7 +67,7 @@ type GetDrgRouteTableRouteRulesResult struct {
 	DrgRouteTableId string                                   `pulumi:"drgRouteTableId"`
 	Filters         []GetDrgRouteTableRouteRulesFilter       `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
 	RouteType *string `pulumi:"routeType"`
 }
@@ -114,12 +113,6 @@ func (o GetDrgRouteTableRouteRulesResultOutput) ToGetDrgRouteTableRouteRulesResu
 	return o
 }
 
-func (o GetDrgRouteTableRouteRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteTableRouteRulesResult] {
-	return pulumix.Output[GetDrgRouteTableRouteRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of drg_route_rules.
 func (o GetDrgRouteTableRouteRulesResultOutput) DrgRouteRules() GetDrgRouteTableRouteRulesDrgRouteRuleArrayOutput {
 	return o.ApplyT(func(v GetDrgRouteTableRouteRulesResult) []GetDrgRouteTableRouteRulesDrgRouteRule {
@@ -136,8 +129,8 @@ func (o GetDrgRouteTableRouteRulesResultOutput) Filters() GetDrgRouteTableRouteR
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDrgRouteTableRouteRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteTableRouteRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrgRouteTableRouteRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteTableRouteRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.

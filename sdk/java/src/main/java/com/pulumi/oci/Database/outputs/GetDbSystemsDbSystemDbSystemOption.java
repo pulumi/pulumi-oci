@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbSystemOption {
@@ -13,15 +15,15 @@ public final class GetDbSystemsDbSystemDbSystemOption {
      * @return The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
      * 
      */
-    private String storageManagement;
+    private @Nullable String storageManagement;
 
     private GetDbSystemsDbSystemDbSystemOption() {}
     /**
      * @return The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume management
      * 
      */
-    public String storageManagement() {
-        return this.storageManagement;
+    public Optional<String> storageManagement() {
+        return Optional.ofNullable(this.storageManagement);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDbSystemsDbSystemDbSystemOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String storageManagement;
+        private @Nullable String storageManagement;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbSystemOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDbSystemsDbSystemDbSystemOption {
         }
 
         @CustomType.Setter
-        public Builder storageManagement(String storageManagement) {
-            this.storageManagement = Objects.requireNonNull(storageManagement);
+        public Builder storageManagement(@Nullable String storageManagement) {
+            this.storageManagement = storageManagement;
             return this;
         }
         public GetDbSystemsDbSystemDbSystemOption build() {

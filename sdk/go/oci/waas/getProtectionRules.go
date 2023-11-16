@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -71,7 +70,7 @@ type GetProtectionRulesResult struct {
 	Actions []string                   `pulumi:"actions"`
 	Filters []GetProtectionRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string   `pulumi:"id"`
+	Id                 *string  `pulumi:"id"`
 	ModSecurityRuleIds []string `pulumi:"modSecurityRuleIds"`
 	// The list of protection_rules.
 	ProtectionRules []GetProtectionRulesProtectionRule `pulumi:"protectionRules"`
@@ -121,12 +120,6 @@ func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutputWithCont
 	return o
 }
 
-func (o GetProtectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesResult] {
-	return pulumix.Output[GetProtectionRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
 func (o GetProtectionRulesResultOutput) Actions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesResult) []string { return v.Actions }).(pulumi.StringArrayOutput)
@@ -137,8 +130,8 @@ func (o GetProtectionRulesResultOutput) Filters() GetProtectionRulesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProtectionRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProtectionRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetProtectionRulesResultOutput) ModSecurityRuleIds() pulumi.StringArrayOutput {

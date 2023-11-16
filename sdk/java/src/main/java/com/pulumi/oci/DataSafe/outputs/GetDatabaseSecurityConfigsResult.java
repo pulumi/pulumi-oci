@@ -26,7 +26,7 @@ public final class GetDatabaseSecurityConfigsResult {
      * @return The list of database_security_config_collection.
      * 
      */
-    private List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections;
+    private @Nullable List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections;
     private @Nullable String databaseSecurityConfigId;
     /**
      * @return The display name of the database security config.
@@ -38,7 +38,7 @@ public final class GetDatabaseSecurityConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the database security config.
      * 
@@ -71,7 +71,7 @@ public final class GetDatabaseSecurityConfigsResult {
      * 
      */
     public List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections() {
-        return this.databaseSecurityConfigCollections;
+        return this.databaseSecurityConfigCollections == null ? List.of() : this.databaseSecurityConfigCollections;
     }
     public Optional<String> databaseSecurityConfigId() {
         return Optional.ofNullable(this.databaseSecurityConfigId);
@@ -90,8 +90,8 @@ public final class GetDatabaseSecurityConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the database security config.
@@ -126,11 +126,11 @@ public final class GetDatabaseSecurityConfigsResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections;
+        private @Nullable List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections;
         private @Nullable String databaseSecurityConfigId;
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseSecurityConfigsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -168,8 +168,8 @@ public final class GetDatabaseSecurityConfigsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSecurityConfigCollections(List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections) {
-            this.databaseSecurityConfigCollections = Objects.requireNonNull(databaseSecurityConfigCollections);
+        public Builder databaseSecurityConfigCollections(@Nullable List<GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection> databaseSecurityConfigCollections) {
+            this.databaseSecurityConfigCollections = databaseSecurityConfigCollections;
             return this;
         }
         public Builder databaseSecurityConfigCollections(GetDatabaseSecurityConfigsDatabaseSecurityConfigCollection... databaseSecurityConfigCollections) {
@@ -194,8 +194,8 @@ public final class GetDatabaseSecurityConfigsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
@@ -63,19 +62,19 @@ type GetRepositoryMirrorRecordArgs struct {
 // A collection of values returned by getRepositoryMirrorRecord.
 type GetRepositoryMirrorRecordResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id               string `pulumi:"id"`
-	MirrorRecordType string `pulumi:"mirrorRecordType"`
+	Id               *string `pulumi:"id"`
+	MirrorRecordType string  `pulumi:"mirrorRecordType"`
 	// Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
-	MirrorStatus string `pulumi:"mirrorStatus"`
-	RepositoryId string `pulumi:"repositoryId"`
+	MirrorStatus *string `pulumi:"mirrorStatus"`
+	RepositoryId string  `pulumi:"repositoryId"`
 	// The time taken to complete a mirror operation. Value is null if not completed.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The time to enqueue a mirror operation.
-	TimeEnqueued string `pulumi:"timeEnqueued"`
+	TimeEnqueued *string `pulumi:"timeEnqueued"`
 	// The time to start a mirror operation.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// Workrequest ID to track current mirror operation.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 func GetRepositoryMirrorRecordOutput(ctx *pulumi.Context, args GetRepositoryMirrorRecordOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryMirrorRecordResultOutput {
@@ -118,15 +117,9 @@ func (o GetRepositoryMirrorRecordResultOutput) ToGetRepositoryMirrorRecordResult
 	return o
 }
 
-func (o GetRepositoryMirrorRecordResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryMirrorRecordResult] {
-	return pulumix.Output[GetRepositoryMirrorRecordResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryMirrorRecordResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryMirrorRecordResultOutput) MirrorRecordType() pulumi.StringOutput {
@@ -134,8 +127,8 @@ func (o GetRepositoryMirrorRecordResultOutput) MirrorRecordType() pulumi.StringO
 }
 
 // Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
-func (o GetRepositoryMirrorRecordResultOutput) MirrorStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) string { return v.MirrorStatus }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordResultOutput) MirrorStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) *string { return v.MirrorStatus }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryMirrorRecordResultOutput) RepositoryId() pulumi.StringOutput {
@@ -143,23 +136,23 @@ func (o GetRepositoryMirrorRecordResultOutput) RepositoryId() pulumi.StringOutpu
 }
 
 // The time taken to complete a mirror operation. Value is null if not completed.
-func (o GetRepositoryMirrorRecordResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The time to enqueue a mirror operation.
-func (o GetRepositoryMirrorRecordResultOutput) TimeEnqueued() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) string { return v.TimeEnqueued }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordResultOutput) TimeEnqueued() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) *string { return v.TimeEnqueued }).(pulumi.StringPtrOutput)
 }
 
 // The time to start a mirror operation.
-func (o GetRepositoryMirrorRecordResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // Workrequest ID to track current mirror operation.
-func (o GetRepositoryMirrorRecordResultOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordResultOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordResult) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

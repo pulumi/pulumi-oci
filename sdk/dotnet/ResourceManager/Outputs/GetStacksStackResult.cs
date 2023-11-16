@@ -21,23 +21,23 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// General description of the stack.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Display name on which to query.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
         /// 
@@ -47,12 +47,12 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// * DELETING
         /// * DELETED
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time at which the stack was created.
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly ImmutableDictionary<string, object> Variables;
+        public readonly string? TimeCreated;
+        public readonly ImmutableDictionary<string, object>? Variables;
 
         [OutputConstructor]
         private GetStacksStackResult(
@@ -60,21 +60,21 @@ namespace Pulumi.Oci.ResourceManager.Outputs
 
             Outputs.GetStacksStackConfigSourceResult configSource,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            ImmutableDictionary<string, object> variables)
+            ImmutableDictionary<string, object>? variables)
         {
             CompartmentId = compartmentId;
             ConfigSource = configSource;

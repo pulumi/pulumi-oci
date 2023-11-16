@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The total count of the aggregated metric.
         /// </summary>
-        public readonly string SqlFirewallPolicyAnalyticCount;
+        public readonly string? SqlFirewallPolicyAnalyticCount;
 
         [OutputConstructor]
         private GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemResult(
             ImmutableArray<Outputs.GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimensionResult> dimensions,
 
-            string sqlFirewallPolicyAnalyticCount)
+            string? sqlFirewallPolicyAnalyticCount)
         {
             Dimensions = dimensions;
             SqlFirewallPolicyAnalyticCount = sqlFirewallPolicyAnalyticCount;

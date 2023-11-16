@@ -79,7 +79,7 @@ export interface GetAddressListsResult {
     /**
      * The list of address_lists.
      */
-    readonly addressLists: outputs.Waas.GetAddressListsAddressList[];
+    readonly addressLists?: outputs.Waas.GetAddressListsAddressList[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list's compartment.
      */
@@ -88,7 +88,7 @@ export interface GetAddressListsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ids?: string[];
     readonly names?: string[];
     readonly states?: string[];

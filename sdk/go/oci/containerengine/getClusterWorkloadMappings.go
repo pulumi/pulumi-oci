@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
@@ -64,7 +63,7 @@ type GetClusterWorkloadMappingsResult struct {
 	ClusterId string                             `pulumi:"clusterId"`
 	Filters   []GetClusterWorkloadMappingsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of workload_mappings.
 	WorkloadMappings []GetClusterWorkloadMappingsWorkloadMapping `pulumi:"workloadMappings"`
 }
@@ -108,12 +107,6 @@ func (o GetClusterWorkloadMappingsResultOutput) ToGetClusterWorkloadMappingsResu
 	return o
 }
 
-func (o GetClusterWorkloadMappingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsResult] {
-	return pulumix.Output[GetClusterWorkloadMappingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
 func (o GetClusterWorkloadMappingsResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterWorkloadMappingsResult) string { return v.ClusterId }).(pulumi.StringOutput)
@@ -124,8 +117,8 @@ func (o GetClusterWorkloadMappingsResultOutput) Filters() GetClusterWorkloadMapp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetClusterWorkloadMappingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of workload_mappings.

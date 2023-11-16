@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetResult {
@@ -21,98 +23,98 @@ public final class GetDatasetResult {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalProperties;
+    private @Nullable Map<String,Object> additionalProperties;
     /**
      * @return The annotation format name required for labeling records.
      * 
      */
-    private String annotationFormat;
+    private @Nullable String annotationFormat;
     /**
      * @return The OCID of the compartment of the resource.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
-    private List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
+    private @Nullable List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
     private String datasetId;
     /**
      * @return This allows the customer to specify the source of the dataset.
      * 
      */
-    private List<GetDatasetDatasetSourceDetail> datasetSourceDetails;
+    private @Nullable List<GetDatasetDatasetSourceDetail> datasetSourceDetails;
     /**
      * @return The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user provided description of the dataset
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Dataset.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      * 
      */
-    private List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
+    private @Nullable List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
     /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
-    private List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
+    private @Nullable List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
     /**
      * @return An ordered collection of labels that are unique by name.
      * 
      */
-    private List<GetDatasetLabelSet> labelSets;
+    private @Nullable List<GetDatasetLabelSet> labelSets;
     /**
      * @return The labeling instructions for human labelers in rich text format
      * 
      */
-    private String labelingInstructions;
+    private @Nullable String labelingInstructions;
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      * 
      */
-    private String lifecycleSubstate;
+    private @Nullable String lifecycleSubstate;
     /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, in the timestamp format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDatasetResult() {}
     /**
@@ -120,28 +122,28 @@ public final class GetDatasetResult {
      * 
      */
     public Map<String,Object> additionalProperties() {
-        return this.additionalProperties;
+        return this.additionalProperties == null ? Map.of() : this.additionalProperties;
     }
     /**
      * @return The annotation format name required for labeling records.
      * 
      */
-    public String annotationFormat() {
-        return this.annotationFormat;
+    public Optional<String> annotationFormat() {
+        return Optional.ofNullable(this.annotationFormat);
     }
     /**
      * @return The OCID of the compartment of the resource.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
      * 
      */
     public List<GetDatasetDatasetFormatDetail> datasetFormatDetails() {
-        return this.datasetFormatDetails;
+        return this.datasetFormatDetails == null ? List.of() : this.datasetFormatDetails;
     }
     public String datasetId() {
         return this.datasetId;
@@ -151,105 +153,105 @@ public final class GetDatasetResult {
      * 
      */
     public List<GetDatasetDatasetSourceDetail> datasetSourceDetails() {
-        return this.datasetSourceDetails;
+        return this.datasetSourceDetails == null ? List.of() : this.datasetSourceDetails;
     }
     /**
      * @return The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user provided description of the dataset
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly display name for the resource.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the Dataset.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      * 
      */
     public List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations() {
-        return this.initialImportDatasetConfigurations;
+        return this.initialImportDatasetConfigurations == null ? List.of() : this.initialImportDatasetConfigurations;
     }
     /**
      * @return The initial generate records configuration. It generates records from the dataset&#39;s source.
      * 
      */
     public List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations() {
-        return this.initialRecordGenerationConfigurations;
+        return this.initialRecordGenerationConfigurations == null ? List.of() : this.initialRecordGenerationConfigurations;
     }
     /**
      * @return An ordered collection of labels that are unique by name.
      * 
      */
     public List<GetDatasetLabelSet> labelSets() {
-        return this.labelSets;
+        return this.labelSets == null ? List.of() : this.labelSets;
     }
     /**
      * @return The labeling instructions for human labelers in rich text format
      * 
      */
-    public String labelingInstructions() {
-        return this.labelingInstructions;
+    public Optional<String> labelingInstructions() {
+        return Optional.ofNullable(this.labelingInstructions);
     }
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      * 
      */
-    public String lifecycleSubstate() {
-        return this.lifecycleSubstate;
+    public Optional<String> lifecycleSubstate() {
+        return Optional.ofNullable(this.lifecycleSubstate);
     }
     /**
      * @return The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created, in the timestamp format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -261,26 +263,26 @@ public final class GetDatasetResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalProperties;
-        private String annotationFormat;
-        private String compartmentId;
-        private List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
+        private @Nullable Map<String,Object> additionalProperties;
+        private @Nullable String annotationFormat;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetDatasetDatasetFormatDetail> datasetFormatDetails;
         private String datasetId;
-        private List<GetDatasetDatasetSourceDetail> datasetSourceDetails;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
-        private List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
-        private List<GetDatasetLabelSet> labelSets;
-        private String labelingInstructions;
-        private String lifecycleDetails;
-        private String lifecycleSubstate;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetDatasetDatasetSourceDetail> datasetSourceDetails;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
+        private @Nullable List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
+        private @Nullable List<GetDatasetLabelSet> labelSets;
+        private @Nullable String labelingInstructions;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String lifecycleSubstate;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDatasetResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -307,23 +309,23 @@ public final class GetDatasetResult {
         }
 
         @CustomType.Setter
-        public Builder additionalProperties(Map<String,Object> additionalProperties) {
-            this.additionalProperties = Objects.requireNonNull(additionalProperties);
+        public Builder additionalProperties(@Nullable Map<String,Object> additionalProperties) {
+            this.additionalProperties = additionalProperties;
             return this;
         }
         @CustomType.Setter
-        public Builder annotationFormat(String annotationFormat) {
-            this.annotationFormat = Objects.requireNonNull(annotationFormat);
+        public Builder annotationFormat(@Nullable String annotationFormat) {
+            this.annotationFormat = annotationFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder datasetFormatDetails(List<GetDatasetDatasetFormatDetail> datasetFormatDetails) {
-            this.datasetFormatDetails = Objects.requireNonNull(datasetFormatDetails);
+        public Builder datasetFormatDetails(@Nullable List<GetDatasetDatasetFormatDetail> datasetFormatDetails) {
+            this.datasetFormatDetails = datasetFormatDetails;
             return this;
         }
         public Builder datasetFormatDetails(GetDatasetDatasetFormatDetail... datasetFormatDetails) {
@@ -335,90 +337,90 @@ public final class GetDatasetResult {
             return this;
         }
         @CustomType.Setter
-        public Builder datasetSourceDetails(List<GetDatasetDatasetSourceDetail> datasetSourceDetails) {
-            this.datasetSourceDetails = Objects.requireNonNull(datasetSourceDetails);
+        public Builder datasetSourceDetails(@Nullable List<GetDatasetDatasetSourceDetail> datasetSourceDetails) {
+            this.datasetSourceDetails = datasetSourceDetails;
             return this;
         }
         public Builder datasetSourceDetails(GetDatasetDatasetSourceDetail... datasetSourceDetails) {
             return datasetSourceDetails(List.of(datasetSourceDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder initialImportDatasetConfigurations(List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations) {
-            this.initialImportDatasetConfigurations = Objects.requireNonNull(initialImportDatasetConfigurations);
+        public Builder initialImportDatasetConfigurations(@Nullable List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations) {
+            this.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
             return this;
         }
         public Builder initialImportDatasetConfigurations(GetDatasetInitialImportDatasetConfiguration... initialImportDatasetConfigurations) {
             return initialImportDatasetConfigurations(List.of(initialImportDatasetConfigurations));
         }
         @CustomType.Setter
-        public Builder initialRecordGenerationConfigurations(List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
-            this.initialRecordGenerationConfigurations = Objects.requireNonNull(initialRecordGenerationConfigurations);
+        public Builder initialRecordGenerationConfigurations(@Nullable List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
+            this.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             return this;
         }
         public Builder initialRecordGenerationConfigurations(GetDatasetInitialRecordGenerationConfiguration... initialRecordGenerationConfigurations) {
             return initialRecordGenerationConfigurations(List.of(initialRecordGenerationConfigurations));
         }
         @CustomType.Setter
-        public Builder labelSets(List<GetDatasetLabelSet> labelSets) {
-            this.labelSets = Objects.requireNonNull(labelSets);
+        public Builder labelSets(@Nullable List<GetDatasetLabelSet> labelSets) {
+            this.labelSets = labelSets;
             return this;
         }
         public Builder labelSets(GetDatasetLabelSet... labelSets) {
             return labelSets(List.of(labelSets));
         }
         @CustomType.Setter
-        public Builder labelingInstructions(String labelingInstructions) {
-            this.labelingInstructions = Objects.requireNonNull(labelingInstructions);
+        public Builder labelingInstructions(@Nullable String labelingInstructions) {
+            this.labelingInstructions = labelingInstructions;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleSubstate(String lifecycleSubstate) {
-            this.lifecycleSubstate = Objects.requireNonNull(lifecycleSubstate);
+        public Builder lifecycleSubstate(@Nullable String lifecycleSubstate) {
+            this.lifecycleSubstate = lifecycleSubstate;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDatasetResult build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceManagerProxy.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition {
@@ -13,39 +15,39 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
      * @return The display name of the resource.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Short display name of the service. For example, &#34;Retail Order Management&#34;.
      * 
      */
-    private String shortDisplayName;
+    private @Nullable String shortDisplayName;
     /**
      * @return The service definition type. For example, a service definition type &#34;RGBUOROMS&#34;  would be for the service &#34;Oracle Retail Order Management Cloud Service&#34;.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition() {}
     /**
      * @return The display name of the resource.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Short display name of the service. For example, &#34;Retail Order Management&#34;.
      * 
      */
-    public String shortDisplayName() {
-        return this.shortDisplayName;
+    public Optional<String> shortDisplayName() {
+        return Optional.ofNullable(this.shortDisplayName);
     }
     /**
      * @return The service definition type. For example, a service definition type &#34;RGBUOROMS&#34;  would be for the service &#34;Oracle Retail Order Management Cloud Service&#34;.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String shortDisplayName;
-        private String type;
+        private @Nullable String displayName;
+        private @Nullable String shortDisplayName;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder shortDisplayName(String shortDisplayName) {
-            this.shortDisplayName = Objects.requireNonNull(shortDisplayName);
+        public Builder shortDisplayName(@Nullable String shortDisplayName) {
+            this.shortDisplayName = shortDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition build() {

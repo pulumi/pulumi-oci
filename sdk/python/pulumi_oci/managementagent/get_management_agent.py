@@ -110,124 +110,82 @@ class GetManagementAgentResult:
 
     @property
     @pulumi.getter(name="availabilityStatus")
-    def availability_status(self) -> str:
-        """
-        The current availability status of managementAgent
-        """
+    def availability_status(self) -> Optional[str]:
         return pulumi.get(self, "availability_status")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployPluginsIds")
-    def deploy_plugins_ids(self) -> Sequence[str]:
+    def deploy_plugins_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "deploy_plugins_ids")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Management Agent Name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        Management Agent host machine name
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> str:
-        """
-        Host resource ocid
-        """
+    def host_id(self) -> Optional[str]:
         return pulumi.get(self, "host_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        agent identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="installKeyId")
-    def install_key_id(self) -> str:
-        """
-        agent install key identifier
-        """
+    def install_key_id(self) -> Optional[str]:
         return pulumi.get(self, "install_key_id")
 
     @property
     @pulumi.getter(name="installPath")
-    def install_path(self) -> str:
-        """
-        Path where Management Agent is installed
-        """
+    def install_path(self) -> Optional[str]:
         return pulumi.get(self, "install_path")
 
     @property
     @pulumi.getter(name="installType")
-    def install_type(self) -> str:
-        """
-        The install type, either AGENT or GATEWAY
-        """
+    def install_type(self) -> Optional[str]:
         return pulumi.get(self, "install_type")
 
     @property
     @pulumi.getter(name="isAgentAutoUpgradable")
-    def is_agent_auto_upgradable(self) -> bool:
-        """
-        true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-        """
+    def is_agent_auto_upgradable(self) -> Optional[bool]:
         return pulumi.get(self, "is_agent_auto_upgradable")
 
     @property
     @pulumi.getter(name="isCustomerDeployed")
-    def is_customer_deployed(self) -> bool:
-        """
-        true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-        """
+    def is_customer_deployed(self) -> Optional[bool]:
         return pulumi.get(self, "is_customer_deployed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managedAgentId")
-    def managed_agent_id(self) -> str:
+    def managed_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_agent_id")
 
     @property
@@ -237,90 +195,57 @@ class GetManagementAgentResult:
 
     @property
     @pulumi.getter(name="managementAgentProperties")
-    def management_agent_properties(self) -> Sequence['outputs.GetManagementAgentManagementAgentPropertyResult']:
-        """
-        Additional properties for this Management Agent
-        """
+    def management_agent_properties(self) -> Optional[Sequence['outputs.GetManagementAgentManagementAgentPropertyResult']]:
         return pulumi.get(self, "management_agent_properties")
 
     @property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> str:
-        """
-        Platform Name
-        """
+    def platform_name(self) -> Optional[str]:
         return pulumi.get(self, "platform_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform Type
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> str:
-        """
-        Platform Version
-        """
+    def platform_version(self) -> Optional[str]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter(name="pluginLists")
-    def plugin_lists(self) -> Sequence['outputs.GetManagementAgentPluginListResult']:
-        """
-        list of managementAgentPlugins associated with the agent
-        """
+    def plugin_lists(self) -> Optional[Sequence['outputs.GetManagementAgentPluginListResult']]:
         return pulumi.get(self, "plugin_lists")
 
     @property
     @pulumi.getter(name="resourceArtifactVersion")
-    def resource_artifact_version(self) -> str:
-        """
-        Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-        """
+    def resource_artifact_version(self) -> Optional[str]:
         return pulumi.get(self, "resource_artifact_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of managementAgent
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Management Agent was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastHeartbeat")
-    def time_last_heartbeat(self) -> str:
-        """
-        The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-        """
+    def time_last_heartbeat(self) -> Optional[str]:
         return pulumi.get(self, "time_last_heartbeat")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Management Agent was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Management Agent Version
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -363,21 +288,7 @@ class AwaitableGetManagementAgentResult(GetManagementAgentResult):
 def get_management_agent(management_agent_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentResult:
     """
-    This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets complete details of the inventory of a given agent id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent = oci.ManagementAgent.get_management_agent(management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"])
-    ```
-
-
-    :param str management_agent_id: Unique Management Agent identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managementAgentId'] = management_agent_id
@@ -419,20 +330,6 @@ def get_management_agent(management_agent_id: Optional[str] = None,
 def get_management_agent_output(management_agent_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentResult]:
     """
-    This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets complete details of the inventory of a given agent id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent = oci.ManagementAgent.get_management_agent(management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"])
-    ```
-
-
-    :param str management_agent_id: Unique Management Agent identifier
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -75,24 +74,24 @@ type FusionEnvironmentFamily struct {
 	// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-	FamilyMaintenancePolicy FusionEnvironmentFamilyFamilyMaintenancePolicyOutput `pulumi:"familyMaintenancePolicy"`
+	FamilyMaintenancePolicy FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput `pulumi:"familyMaintenancePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// When set to True, a subscription update is required for the environment family.
-	IsSubscriptionUpdateNeeded pulumi.BoolOutput `pulumi:"isSubscriptionUpdateNeeded"`
+	IsSubscriptionUpdateNeeded pulumi.BoolPtrOutput `pulumi:"isSubscriptionUpdateNeeded"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the FusionEnvironmentFamily.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionIds pulumi.StringArrayOutput `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName pulumi.StringOutput `pulumi:"systemName"`
+	SystemName pulumi.StringPtrOutput `pulumi:"systemName"`
 	// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput    `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
@@ -258,12 +257,6 @@ func (i *FusionEnvironmentFamily) ToFusionEnvironmentFamilyOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyOutput)
 }
 
-func (i *FusionEnvironmentFamily) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentFamily] {
-	return pulumix.Output[*FusionEnvironmentFamily]{
-		OutputState: i.ToFusionEnvironmentFamilyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentFamilyArrayInput is an input type that accepts FusionEnvironmentFamilyArray and FusionEnvironmentFamilyArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentFamilyArrayInput` via:
 //
@@ -287,12 +280,6 @@ func (i FusionEnvironmentFamilyArray) ToFusionEnvironmentFamilyArrayOutput() Fus
 
 func (i FusionEnvironmentFamilyArray) ToFusionEnvironmentFamilyArrayOutputWithContext(ctx context.Context) FusionEnvironmentFamilyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyArrayOutput)
-}
-
-func (i FusionEnvironmentFamilyArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentFamily] {
-	return pulumix.Output[[]*FusionEnvironmentFamily]{
-		OutputState: i.ToFusionEnvironmentFamilyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentFamilyMapInput is an input type that accepts FusionEnvironmentFamilyMap and FusionEnvironmentFamilyMapOutput values.
@@ -320,12 +307,6 @@ func (i FusionEnvironmentFamilyMap) ToFusionEnvironmentFamilyMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentFamilyMapOutput)
 }
 
-func (i FusionEnvironmentFamilyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentFamily] {
-	return pulumix.Output[map[string]*FusionEnvironmentFamily]{
-		OutputState: i.ToFusionEnvironmentFamilyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentFamilyOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentFamilyOutput) ElementType() reflect.Type {
@@ -338,12 +319,6 @@ func (o FusionEnvironmentFamilyOutput) ToFusionEnvironmentFamilyOutput() FusionE
 
 func (o FusionEnvironmentFamilyOutput) ToFusionEnvironmentFamilyOutputWithContext(ctx context.Context) FusionEnvironmentFamilyOutput {
 	return o
-}
-
-func (o FusionEnvironmentFamilyOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentFamily] {
-	return pulumix.Output[*FusionEnvironmentFamily]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment where the environment family is located.
@@ -362,10 +337,10 @@ func (o FusionEnvironmentFamilyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-func (o FusionEnvironmentFamilyOutput) FamilyMaintenancePolicy() FusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) FusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
+func (o FusionEnvironmentFamilyOutput) FamilyMaintenancePolicy() FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput {
 		return v.FamilyMaintenancePolicy
-	}).(FusionEnvironmentFamilyFamilyMaintenancePolicyOutput)
+	}).(FusionEnvironmentFamilyFamilyMaintenancePolicyPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -374,18 +349,18 @@ func (o FusionEnvironmentFamilyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // When set to True, a subscription update is required for the environment family.
-func (o FusionEnvironmentFamilyOutput) IsSubscriptionUpdateNeeded() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.BoolOutput { return v.IsSubscriptionUpdateNeeded }).(pulumi.BoolOutput)
+func (o FusionEnvironmentFamilyOutput) IsSubscriptionUpdateNeeded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.BoolPtrOutput { return v.IsSubscriptionUpdateNeeded }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o FusionEnvironmentFamilyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o FusionEnvironmentFamilyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the FusionEnvironmentFamily.
-func (o FusionEnvironmentFamilyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FusionEnvironmentFamilyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
@@ -397,13 +372,13 @@ func (o FusionEnvironmentFamilyOutput) SubscriptionIds() pulumi.StringArrayOutpu
 }
 
 // Environment Specific Guid/ System Name
-func (o FusionEnvironmentFamilyOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringOutput { return v.SystemName }).(pulumi.StringOutput)
+func (o FusionEnvironmentFamilyOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringPtrOutput { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 // The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-func (o FusionEnvironmentFamilyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FusionEnvironmentFamilyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o FusionEnvironmentFamilyOutput) TimeUpdated() pulumi.StringPtrOutput {
@@ -424,12 +399,6 @@ func (o FusionEnvironmentFamilyArrayOutput) ToFusionEnvironmentFamilyArrayOutput
 	return o
 }
 
-func (o FusionEnvironmentFamilyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentFamily] {
-	return pulumix.Output[[]*FusionEnvironmentFamily]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FusionEnvironmentFamilyArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentFamilyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FusionEnvironmentFamily {
 		return vs[0].([]*FusionEnvironmentFamily)[vs[1].(int)]
@@ -448,12 +417,6 @@ func (o FusionEnvironmentFamilyMapOutput) ToFusionEnvironmentFamilyMapOutput() F
 
 func (o FusionEnvironmentFamilyMapOutput) ToFusionEnvironmentFamilyMapOutputWithContext(ctx context.Context) FusionEnvironmentFamilyMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentFamilyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentFamily] {
-	return pulumix.Output[map[string]*FusionEnvironmentFamily]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentFamilyMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentFamilyOutput {

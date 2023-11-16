@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides the Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service. This resource supports upload/download the content of a generic artifact by specifying the repository id, artifact path, and artifact version
@@ -51,11 +50,11 @@ import (
 type ArtifactByPath struct {
 	pulumi.CustomResourceState
 
-	ArtifactId pulumi.StringOutput `pulumi:"artifactId"`
+	ArtifactId pulumi.StringPtrOutput `pulumi:"artifactId"`
 	// A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
 	ArtifactPath pulumi.StringOutput `pulumi:"artifactPath"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
 	//
 	// ** IMPORTANT **
@@ -64,21 +63,21 @@ type ArtifactByPath struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 	RepositoryId pulumi.StringOutput `pulumi:"repositoryId"`
 	// The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
-	Sha256 pulumi.StringOutput `pulumi:"sha256"`
+	Sha256 pulumi.StringPtrOutput `pulumi:"sha256"`
 	// The size of the artifact in bytes.
-	SizeInBytes pulumi.StringOutput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrOutput `pulumi:"sizeInBytes"`
 	// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
 	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// The current state of the artifact.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
 	Version pulumi.StringOutput `pulumi:"version"`
 }
@@ -247,12 +246,6 @@ func (i *ArtifactByPath) ToArtifactByPathOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ArtifactByPathOutput)
 }
 
-func (i *ArtifactByPath) ToOutput(ctx context.Context) pulumix.Output[*ArtifactByPath] {
-	return pulumix.Output[*ArtifactByPath]{
-		OutputState: i.ToArtifactByPathOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ArtifactByPathArrayInput is an input type that accepts ArtifactByPathArray and ArtifactByPathArrayOutput values.
 // You can construct a concrete instance of `ArtifactByPathArrayInput` via:
 //
@@ -276,12 +269,6 @@ func (i ArtifactByPathArray) ToArtifactByPathArrayOutput() ArtifactByPathArrayOu
 
 func (i ArtifactByPathArray) ToArtifactByPathArrayOutputWithContext(ctx context.Context) ArtifactByPathArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ArtifactByPathArrayOutput)
-}
-
-func (i ArtifactByPathArray) ToOutput(ctx context.Context) pulumix.Output[[]*ArtifactByPath] {
-	return pulumix.Output[[]*ArtifactByPath]{
-		OutputState: i.ToArtifactByPathArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ArtifactByPathMapInput is an input type that accepts ArtifactByPathMap and ArtifactByPathMapOutput values.
@@ -309,12 +296,6 @@ func (i ArtifactByPathMap) ToArtifactByPathMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ArtifactByPathMapOutput)
 }
 
-func (i ArtifactByPathMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ArtifactByPath] {
-	return pulumix.Output[map[string]*ArtifactByPath]{
-		OutputState: i.ToArtifactByPathMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ArtifactByPathOutput struct{ *pulumi.OutputState }
 
 func (ArtifactByPathOutput) ElementType() reflect.Type {
@@ -329,14 +310,8 @@ func (o ArtifactByPathOutput) ToArtifactByPathOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ArtifactByPathOutput) ToOutput(ctx context.Context) pulumix.Output[*ArtifactByPath] {
-	return pulumix.Output[*ArtifactByPath]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o ArtifactByPathOutput) ArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.ArtifactId }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) ArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.ArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -345,8 +320,8 @@ func (o ArtifactByPathOutput) ArtifactPath() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
-func (o ArtifactByPathOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
@@ -363,8 +338,8 @@ func (o ArtifactByPathOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
-func (o ArtifactByPathOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -378,13 +353,13 @@ func (o ArtifactByPathOutput) RepositoryId() pulumi.StringOutput {
 }
 
 // The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
-func (o ArtifactByPathOutput) Sha256() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.Sha256 }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) Sha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.Sha256 }).(pulumi.StringPtrOutput)
 }
 
 // The size of the artifact in bytes.
-func (o ArtifactByPathOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
@@ -393,13 +368,13 @@ func (o ArtifactByPathOutput) Source() pulumi.StringPtrOutput {
 }
 
 // The current state of the artifact.
-func (o ArtifactByPathOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o ArtifactByPathOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ArtifactByPathOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
@@ -421,12 +396,6 @@ func (o ArtifactByPathArrayOutput) ToArtifactByPathArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ArtifactByPathArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ArtifactByPath] {
-	return pulumix.Output[[]*ArtifactByPath]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ArtifactByPathArrayOutput) Index(i pulumi.IntInput) ArtifactByPathOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ArtifactByPath {
 		return vs[0].([]*ArtifactByPath)[vs[1].(int)]
@@ -445,12 +414,6 @@ func (o ArtifactByPathMapOutput) ToArtifactByPathMapOutput() ArtifactByPathMapOu
 
 func (o ArtifactByPathMapOutput) ToArtifactByPathMapOutputWithContext(ctx context.Context) ArtifactByPathMapOutput {
 	return o
-}
-
-func (o ArtifactByPathMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ArtifactByPath] {
-	return pulumix.Output[map[string]*ArtifactByPath]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ArtifactByPathMapOutput) MapIndex(k pulumi.StringInput) ArtifactByPathOutput {

@@ -65,11 +65,11 @@ export interface GetResourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of resources_collection.
      */
-    readonly resourcesCollections: outputs.UsageProxy.GetResourcesResourcesCollection[];
+    readonly resourcesCollections?: outputs.UsageProxy.GetResourcesResourcesCollection[];
     readonly serviceName: string;
 }
 /**

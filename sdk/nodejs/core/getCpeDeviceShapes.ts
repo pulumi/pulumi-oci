@@ -55,12 +55,12 @@ export interface GetCpeDeviceShapesResult {
     /**
      * The list of cpe_device_shapes.
      */
-    readonly cpeDeviceShapes: outputs.Core.GetCpeDeviceShapesCpeDeviceShape[];
+    readonly cpeDeviceShapes?: outputs.Core.GetCpeDeviceShapesCpeDeviceShape[];
     readonly filters?: outputs.Core.GetCpeDeviceShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Cpe Device Shapes in Oracle Cloud Infrastructure Core service.

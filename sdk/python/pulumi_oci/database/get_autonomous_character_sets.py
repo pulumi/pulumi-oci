@@ -45,10 +45,7 @@ class GetAutonomousCharacterSetsResult:
 
     @property
     @pulumi.getter(name="autonomousDatabaseCharacterSets")
-    def autonomous_database_character_sets(self) -> Sequence['outputs.GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult']:
-        """
-        The list of autonomous_database_character_sets.
-        """
+    def autonomous_database_character_sets(self) -> Optional[Sequence['outputs.GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult']]:
         return pulumi.get(self, "autonomous_database_character_sets")
 
     @property
@@ -63,7 +60,7 @@ class GetAutonomousCharacterSetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -100,24 +97,7 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
                                   is_shared: Optional[bool] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousCharacterSetsResult:
     """
-    This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported character sets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=var["autonomous_database_character_set_character_set_type"],
-        is_shared=var["autonomous_database_character_set_is_shared"])
-    ```
-
-
-    :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
-    :param bool is_dedicated: Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
-    :param bool is_shared: Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['characterSetType'] = character_set_type
@@ -143,23 +123,6 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
                                          is_shared: Optional[pulumi.Input[Optional[bool]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousCharacterSetsResult]:
     """
-    This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported character sets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_character_sets = oci.Database.get_autonomous_character_sets(character_set_type=var["autonomous_database_character_set_character_set_type"],
-        is_shared=var["autonomous_database_character_set_is_shared"])
-    ```
-
-
-    :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
-    :param bool is_dedicated: Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
-    :param bool is_shared: Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -110,98 +110,98 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the external DB node.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// The number of CPU cores available on the DB node.
         /// </summary>
-        public readonly double CpuCoreCount;
+        public readonly double? CpuCoreCount;
         /// <summary>
         /// The user-friendly name for the external DB node. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Name of the domain.
         /// </summary>
-        public readonly string DomainName;
+        public readonly string? DomainName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
-        public readonly string ExternalConnectorId;
+        public readonly string? ExternalConnectorId;
         public readonly string ExternalDbNodeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         /// <summary>
         /// The host name for the DB node.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The total memory in gigabytes (GB) on the DB node.
         /// </summary>
-        public readonly double MemorySizeInGbs;
+        public readonly double? MemorySizeInGbs;
         /// <summary>
         /// The current lifecycle state of the external DB node.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external DB node was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external DB node was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExternalDbNodeResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentName,
+            string? componentName,
 
-            double cpuCoreCount,
+            double? cpuCoreCount,
 
-            string displayName,
+            string? displayName,
 
-            string domainName,
+            string? domainName,
 
-            string externalConnectorId,
+            string? externalConnectorId,
 
             string externalDbNodeId,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
-            string hostName,
+            string? hostName,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            double memorySizeInGbs,
+            double? memorySizeInGbs,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AdditionalDetails = additionalDetails;
             CompartmentId = compartmentId;

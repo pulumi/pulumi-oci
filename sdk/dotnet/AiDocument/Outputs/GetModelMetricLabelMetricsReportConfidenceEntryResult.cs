@@ -16,35 +16,35 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// accuracy under the threshold
         /// </summary>
-        public readonly double Accuracy;
+        public readonly double? Accuracy;
         /// <summary>
         /// f1Score under the threshold
         /// </summary>
-        public readonly double F1score;
+        public readonly double? F1score;
         /// <summary>
         /// Precision under the threshold
         /// </summary>
-        public readonly double Precision;
+        public readonly double? Precision;
         /// <summary>
         /// Recall under the threshold
         /// </summary>
-        public readonly double Recall;
+        public readonly double? Recall;
         /// <summary>
         /// Threshold used to calculate precision and recall.
         /// </summary>
-        public readonly double Threshold;
+        public readonly double? Threshold;
 
         [OutputConstructor]
         private GetModelMetricLabelMetricsReportConfidenceEntryResult(
-            double accuracy,
+            double? accuracy,
 
-            double f1score,
+            double? f1score,
 
-            double precision,
+            double? precision,
 
-            double recall,
+            double? recall,
 
-            double threshold)
+            double? threshold)
         {
             Accuracy = accuracy;
             F1score = f1score;

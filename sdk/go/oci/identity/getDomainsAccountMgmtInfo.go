@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Account Mgmt Info resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -78,76 +77,76 @@ type GetDomainsAccountMgmtInfoArgs struct {
 type GetDomainsAccountMgmtInfoResult struct {
 	AccountMgmtInfoId string `pulumi:"accountMgmtInfoId"`
 	// Type of Account
-	AccountType string `pulumi:"accountType"`
+	AccountType *string `pulumi:"accountType"`
 	// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
-	Active bool `pulumi:"active"`
+	Active *bool `pulumi:"active"`
 	// Application on which the account is based
 	Apps          []GetDomainsAccountMgmtInfoApp `pulumi:"apps"`
 	AttributeSets []string                       `pulumi:"attributeSets"`
 	Attributes    *string                        `pulumi:"attributes"`
 	Authorization *string                        `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
-	CompositeKey string `pulumi:"compositeKey"`
+	CompositeKey *string `pulumi:"compositeKey"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// If true, a back-fill grant will not be created for a connected managed app as part of account creation.
-	DoNotBackFillGrants bool `pulumi:"doNotBackFillGrants"`
+	DoNotBackFillGrants *bool `pulumi:"doNotBackFillGrants"`
 	// If true, the operation will not be performed on the target
-	DoNotPerformActionOnTarget bool `pulumi:"doNotPerformActionOnTarget"`
+	DoNotPerformActionOnTarget *bool `pulumi:"doNotPerformActionOnTarget"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// If true, this account has been marked as a favorite of the User who owns it
-	Favorite bool `pulumi:"favorite"`
+	Favorite *bool `pulumi:"favorite"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsAccountMgmtInfoIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                   `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsAccountMgmtInfoIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
-	IsAccount bool `pulumi:"isAccount"`
+	IsAccount *bool `pulumi:"isAccount"`
 	// Last accessed timestamp of an application
-	LastAccessed string `pulumi:"lastAccessed"`
+	LastAccessed *string `pulumi:"lastAccessed"`
 	// Matching owning users of the account
 	MatchingOwners []GetDomainsAccountMgmtInfoMatchingOwner `pulumi:"matchingOwners"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsAccountMgmtInfoMeta `pulumi:"metas"`
 	// Name of the Account
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Object-class of the Account
 	ObjectClasses []GetDomainsAccountMgmtInfoObjectClass `pulumi:"objectClasses"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// The context in which the operation is performed on the account.
-	OperationContext string `pulumi:"operationContext"`
+	OperationContext *string `pulumi:"operationContext"`
 	// Owning user of the account
 	Owners []GetDomainsAccountMgmtInfoOwner `pulumi:"owners"`
 	// If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
-	PreviewOnly               bool    `pulumi:"previewOnly"`
+	PreviewOnly               *bool   `pulumi:"previewOnly"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// Resource Type of the Account
 	ResourceTypes []GetDomainsAccountMgmtInfoResourceType `pulumi:"resourceTypes"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// Last recorded sync response for the account
-	SyncResponse string `pulumi:"syncResponse"`
+	SyncResponse *string `pulumi:"syncResponse"`
 	// Last recorded sync situation for the account
-	SyncSituation string `pulumi:"syncSituation"`
+	SyncSituation *string `pulumi:"syncSituation"`
 	// Last sync timestamp of the account
-	SyncTimestamp string `pulumi:"syncTimestamp"`
+	SyncTimestamp *string `pulumi:"syncTimestamp"`
 	// A list of tags on this resource.
 	Tags []GetDomainsAccountMgmtInfoTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Unique identifier of the Account
-	Uid string `pulumi:"uid"`
+	Uid *string `pulumi:"uid"`
 	// The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application
 	UserWalletArtifacts []GetDomainsAccountMgmtInfoUserWalletArtifact `pulumi:"userWalletArtifacts"`
 }
@@ -200,24 +199,18 @@ func (o GetDomainsAccountMgmtInfoResultOutput) ToGetDomainsAccountMgmtInfoResult
 	return o
 }
 
-func (o GetDomainsAccountMgmtInfoResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsAccountMgmtInfoResult] {
-	return pulumix.Output[GetDomainsAccountMgmtInfoResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsAccountMgmtInfoResultOutput) AccountMgmtInfoId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.AccountMgmtInfoId }).(pulumi.StringOutput)
 }
 
 // Type of Account
-func (o GetDomainsAccountMgmtInfoResultOutput) AccountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.AccountType }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) AccountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.AccountType }).(pulumi.StringPtrOutput)
 }
 
 // If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
-func (o GetDomainsAccountMgmtInfoResultOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.Active }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
 // Application on which the account is based
@@ -238,43 +231,43 @@ func (o GetDomainsAccountMgmtInfoResultOutput) Authorization() pulumi.StringPtrO
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o GetDomainsAccountMgmtInfoResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
-func (o GetDomainsAccountMgmtInfoResultOutput) CompositeKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.CompositeKey }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) CompositeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.CompositeKey }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o GetDomainsAccountMgmtInfoResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // If true, a back-fill grant will not be created for a connected managed app as part of account creation.
-func (o GetDomainsAccountMgmtInfoResultOutput) DoNotBackFillGrants() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.DoNotBackFillGrants }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) DoNotBackFillGrants() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.DoNotBackFillGrants }).(pulumi.BoolPtrOutput)
 }
 
 // If true, the operation will not be performed on the target
-func (o GetDomainsAccountMgmtInfoResultOutput) DoNotPerformActionOnTarget() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.DoNotPerformActionOnTarget }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) DoNotPerformActionOnTarget() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.DoNotPerformActionOnTarget }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o GetDomainsAccountMgmtInfoResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // If true, this account has been marked as a favorite of the User who owns it
-func (o GetDomainsAccountMgmtInfoResultOutput) Favorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.Favorite }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) Favorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.Favorite }).(pulumi.BoolPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsAccountMgmtInfoResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -296,8 +289,8 @@ func (o GetDomainsAccountMgmtInfoResultOutput) IdcsLastModifiedBies() GetDomains
 }
 
 // The release number when the resource was upgraded.
-func (o GetDomainsAccountMgmtInfoResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -306,13 +299,13 @@ func (o GetDomainsAccountMgmtInfoResultOutput) IdcsPreventedOperations() pulumi.
 }
 
 // If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
-func (o GetDomainsAccountMgmtInfoResultOutput) IsAccount() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.IsAccount }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) IsAccount() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.IsAccount }).(pulumi.BoolPtrOutput)
 }
 
 // Last accessed timestamp of an application
-func (o GetDomainsAccountMgmtInfoResultOutput) LastAccessed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.LastAccessed }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) LastAccessed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.LastAccessed }).(pulumi.StringPtrOutput)
 }
 
 // Matching owning users of the account
@@ -328,8 +321,8 @@ func (o GetDomainsAccountMgmtInfoResultOutput) Metas() GetDomainsAccountMgmtInfo
 }
 
 // Name of the Account
-func (o GetDomainsAccountMgmtInfoResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Object-class of the Account
@@ -338,13 +331,13 @@ func (o GetDomainsAccountMgmtInfoResultOutput) ObjectClasses() GetDomainsAccount
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o GetDomainsAccountMgmtInfoResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // The context in which the operation is performed on the account.
-func (o GetDomainsAccountMgmtInfoResultOutput) OperationContext() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.OperationContext }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) OperationContext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.OperationContext }).(pulumi.StringPtrOutput)
 }
 
 // Owning user of the account
@@ -353,8 +346,8 @@ func (o GetDomainsAccountMgmtInfoResultOutput) Owners() GetDomainsAccountMgmtInf
 }
 
 // If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
-func (o GetDomainsAccountMgmtInfoResultOutput) PreviewOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) bool { return v.PreviewOnly }).(pulumi.BoolOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) PreviewOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *bool { return v.PreviewOnly }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetDomainsAccountMgmtInfoResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -374,18 +367,18 @@ func (o GetDomainsAccountMgmtInfoResultOutput) Schemas() pulumi.StringArrayOutpu
 }
 
 // Last recorded sync response for the account
-func (o GetDomainsAccountMgmtInfoResultOutput) SyncResponse() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.SyncResponse }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) SyncResponse() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.SyncResponse }).(pulumi.StringPtrOutput)
 }
 
 // Last recorded sync situation for the account
-func (o GetDomainsAccountMgmtInfoResultOutput) SyncSituation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.SyncSituation }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) SyncSituation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.SyncSituation }).(pulumi.StringPtrOutput)
 }
 
 // Last sync timestamp of the account
-func (o GetDomainsAccountMgmtInfoResultOutput) SyncTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.SyncTimestamp }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) SyncTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.SyncTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -394,13 +387,13 @@ func (o GetDomainsAccountMgmtInfoResultOutput) Tags() GetDomainsAccountMgmtInfoT
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o GetDomainsAccountMgmtInfoResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier of the Account
-func (o GetDomainsAccountMgmtInfoResultOutput) Uid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) string { return v.Uid }).(pulumi.StringOutput)
+func (o GetDomainsAccountMgmtInfoResultOutput) Uid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsAccountMgmtInfoResult) *string { return v.Uid }).(pulumi.StringPtrOutput)
 }
 
 // The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application

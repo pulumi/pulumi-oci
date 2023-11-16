@@ -62,12 +62,12 @@ export interface GetDbSystemsUpgradeHistoryEntriesResult {
     /**
      * The list of db_system_upgrade_history_entries.
      */
-    readonly dbSystemUpgradeHistoryEntries: outputs.Database.GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry[];
+    readonly dbSystemUpgradeHistoryEntries?: outputs.Database.GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry[];
     readonly filters?: outputs.Database.GetDbSystemsUpgradeHistoryEntriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the action.
      */

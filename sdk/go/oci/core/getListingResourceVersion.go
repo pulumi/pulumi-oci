@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetListingResourceVersion(ctx *pulumi.Context, args *GetListingResourceVersionArgs, opts ...pulumi.InvokeOption) (*GetListingResourceVersionResult, error) {
@@ -35,12 +34,12 @@ type GetListingResourceVersionResult struct {
 	AvailableRegions []string `pulumi:"availableRegions"`
 	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	ListingId              string `pulumi:"listingId"`
-	ListingResourceId      string `pulumi:"listingResourceId"`
-	ListingResourceVersion string `pulumi:"listingResourceVersion"`
-	ResourceVersion        string `pulumi:"resourceVersion"`
-	TimePublished          string `pulumi:"timePublished"`
+	Id                     *string `pulumi:"id"`
+	ListingId              string  `pulumi:"listingId"`
+	ListingResourceId      *string `pulumi:"listingResourceId"`
+	ListingResourceVersion *string `pulumi:"listingResourceVersion"`
+	ResourceVersion        string  `pulumi:"resourceVersion"`
+	TimePublished          *string `pulumi:"timePublished"`
 }
 
 func GetListingResourceVersionOutput(ctx *pulumi.Context, args GetListingResourceVersionOutputArgs, opts ...pulumi.InvokeOption) GetListingResourceVersionResultOutput {
@@ -81,12 +80,6 @@ func (o GetListingResourceVersionResultOutput) ToGetListingResourceVersionResult
 	return o
 }
 
-func (o GetListingResourceVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResourceVersionResult] {
-	return pulumix.Output[GetListingResourceVersionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListingResourceVersionResultOutput) AccessiblePorts() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetListingResourceVersionResult) []int { return v.AccessiblePorts }).(pulumi.IntArrayOutput)
 }
@@ -104,28 +97,28 @@ func (o GetListingResourceVersionResultOutput) CompatibleShapes() pulumi.StringA
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListingResourceVersionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResourceVersionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListingResourceVersionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResourceVersionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListingResourceVersionResultOutput) ListingId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListingResourceVersionResult) string { return v.ListingId }).(pulumi.StringOutput)
 }
 
-func (o GetListingResourceVersionResultOutput) ListingResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResourceVersionResult) string { return v.ListingResourceId }).(pulumi.StringOutput)
+func (o GetListingResourceVersionResultOutput) ListingResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResourceVersionResult) *string { return v.ListingResourceId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetListingResourceVersionResultOutput) ListingResourceVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResourceVersionResult) string { return v.ListingResourceVersion }).(pulumi.StringOutput)
+func (o GetListingResourceVersionResultOutput) ListingResourceVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResourceVersionResult) *string { return v.ListingResourceVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListingResourceVersionResultOutput) ResourceVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListingResourceVersionResult) string { return v.ResourceVersion }).(pulumi.StringOutput)
 }
 
-func (o GetListingResourceVersionResultOutput) TimePublished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResourceVersionResult) string { return v.TimePublished }).(pulumi.StringOutput)
+func (o GetListingResourceVersionResultOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResourceVersionResult) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
 }
 
 func init() {

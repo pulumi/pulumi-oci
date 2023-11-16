@@ -160,7 +160,7 @@ namespace Pulumi.Oci.Limits
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of limit_definitions.
         /// </summary>
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.Limits
 
             ImmutableArray<Outputs.GetLimitDefinitionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLimitDefinitionsLimitDefinitionResult> limitDefinitions,
 

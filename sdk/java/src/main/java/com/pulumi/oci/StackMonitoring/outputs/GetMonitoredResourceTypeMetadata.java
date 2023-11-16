@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourceTypeMetadata {
@@ -17,38 +19,38 @@ public final class GetMonitoredResourceTypeMetadata {
      * @return List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
      * 
      */
-    private List<String> agentProperties;
+    private @Nullable List<String> agentProperties;
     /**
      * @return ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
      * * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
      * 
      */
-    private String format;
+    private @Nullable String format;
     /**
      * @return List of required properties for resource type.
      * 
      */
-    private List<String> requiredProperties;
+    private @Nullable List<String> requiredProperties;
     /**
      * @return List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
      * 
      */
-    private List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets;
+    private @Nullable List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets;
     /**
      * @return List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
      * 
      */
-    private List<String> validPropertiesForCreates;
+    private @Nullable List<String> validPropertiesForCreates;
     /**
      * @return List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
      * 
      */
-    private List<String> validPropertiesForUpdates;
+    private @Nullable List<String> validPropertiesForUpdates;
     /**
      * @return List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{&#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;, &#34;osVersion&#34;: &#34;v6.0,v7.0&#34;}`
      * 
      */
-    private Map<String,Object> validPropertyValues;
+    private @Nullable Map<String,Object> validPropertyValues;
 
     private GetMonitoredResourceTypeMetadata() {}
     /**
@@ -56,50 +58,50 @@ public final class GetMonitoredResourceTypeMetadata {
      * 
      */
     public List<String> agentProperties() {
-        return this.agentProperties;
+        return this.agentProperties == null ? List.of() : this.agentProperties;
     }
     /**
      * @return ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
      * * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
      * 
      */
-    public String format() {
-        return this.format;
+    public Optional<String> format() {
+        return Optional.ofNullable(this.format);
     }
     /**
      * @return List of required properties for resource type.
      * 
      */
     public List<String> requiredProperties() {
-        return this.requiredProperties;
+        return this.requiredProperties == null ? List.of() : this.requiredProperties;
     }
     /**
      * @return List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
      * 
      */
     public List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets() {
-        return this.uniquePropertySets;
+        return this.uniquePropertySets == null ? List.of() : this.uniquePropertySets;
     }
     /**
      * @return List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
      * 
      */
     public List<String> validPropertiesForCreates() {
-        return this.validPropertiesForCreates;
+        return this.validPropertiesForCreates == null ? List.of() : this.validPropertiesForCreates;
     }
     /**
      * @return List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
      * 
      */
     public List<String> validPropertiesForUpdates() {
-        return this.validPropertiesForUpdates;
+        return this.validPropertiesForUpdates == null ? List.of() : this.validPropertiesForUpdates;
     }
     /**
      * @return List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{&#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;, &#34;osVersion&#34;: &#34;v6.0,v7.0&#34;}`
      * 
      */
     public Map<String,Object> validPropertyValues() {
-        return this.validPropertyValues;
+        return this.validPropertyValues == null ? Map.of() : this.validPropertyValues;
     }
 
     public static Builder builder() {
@@ -111,13 +113,13 @@ public final class GetMonitoredResourceTypeMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> agentProperties;
-        private String format;
-        private List<String> requiredProperties;
-        private List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets;
-        private List<String> validPropertiesForCreates;
-        private List<String> validPropertiesForUpdates;
-        private Map<String,Object> validPropertyValues;
+        private @Nullable List<String> agentProperties;
+        private @Nullable String format;
+        private @Nullable List<String> requiredProperties;
+        private @Nullable List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets;
+        private @Nullable List<String> validPropertiesForCreates;
+        private @Nullable List<String> validPropertiesForUpdates;
+        private @Nullable Map<String,Object> validPropertyValues;
         public Builder() {}
         public Builder(GetMonitoredResourceTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,53 +133,53 @@ public final class GetMonitoredResourceTypeMetadata {
         }
 
         @CustomType.Setter
-        public Builder agentProperties(List<String> agentProperties) {
-            this.agentProperties = Objects.requireNonNull(agentProperties);
+        public Builder agentProperties(@Nullable List<String> agentProperties) {
+            this.agentProperties = agentProperties;
             return this;
         }
         public Builder agentProperties(String... agentProperties) {
             return agentProperties(List.of(agentProperties));
         }
         @CustomType.Setter
-        public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+        public Builder format(@Nullable String format) {
+            this.format = format;
             return this;
         }
         @CustomType.Setter
-        public Builder requiredProperties(List<String> requiredProperties) {
-            this.requiredProperties = Objects.requireNonNull(requiredProperties);
+        public Builder requiredProperties(@Nullable List<String> requiredProperties) {
+            this.requiredProperties = requiredProperties;
             return this;
         }
         public Builder requiredProperties(String... requiredProperties) {
             return requiredProperties(List.of(requiredProperties));
         }
         @CustomType.Setter
-        public Builder uniquePropertySets(List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets) {
-            this.uniquePropertySets = Objects.requireNonNull(uniquePropertySets);
+        public Builder uniquePropertySets(@Nullable List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets) {
+            this.uniquePropertySets = uniquePropertySets;
             return this;
         }
         public Builder uniquePropertySets(GetMonitoredResourceTypeMetadataUniquePropertySet... uniquePropertySets) {
             return uniquePropertySets(List.of(uniquePropertySets));
         }
         @CustomType.Setter
-        public Builder validPropertiesForCreates(List<String> validPropertiesForCreates) {
-            this.validPropertiesForCreates = Objects.requireNonNull(validPropertiesForCreates);
+        public Builder validPropertiesForCreates(@Nullable List<String> validPropertiesForCreates) {
+            this.validPropertiesForCreates = validPropertiesForCreates;
             return this;
         }
         public Builder validPropertiesForCreates(String... validPropertiesForCreates) {
             return validPropertiesForCreates(List.of(validPropertiesForCreates));
         }
         @CustomType.Setter
-        public Builder validPropertiesForUpdates(List<String> validPropertiesForUpdates) {
-            this.validPropertiesForUpdates = Objects.requireNonNull(validPropertiesForUpdates);
+        public Builder validPropertiesForUpdates(@Nullable List<String> validPropertiesForUpdates) {
+            this.validPropertiesForUpdates = validPropertiesForUpdates;
             return this;
         }
         public Builder validPropertiesForUpdates(String... validPropertiesForUpdates) {
             return validPropertiesForUpdates(List.of(validPropertiesForUpdates));
         }
         @CustomType.Setter
-        public Builder validPropertyValues(Map<String,Object> validPropertyValues) {
-            this.validPropertyValues = Objects.requireNonNull(validPropertyValues);
+        public Builder validPropertyValues(@Nullable Map<String,Object> validPropertyValues) {
+            this.validPropertyValues = validPropertyValues;
             return this;
         }
         public GetMonitoredResourceTypeMetadata build() {

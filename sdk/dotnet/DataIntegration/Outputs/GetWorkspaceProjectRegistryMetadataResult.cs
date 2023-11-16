@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The owning object key for this object.
         /// </summary>
-        public readonly string AggregatorKey;
+        public readonly string? AggregatorKey;
         /// <summary>
         /// Specifies whether this object is a favorite or not.
         /// </summary>
-        public readonly bool IsFavorite;
+        public readonly bool? IsFavorite;
         /// <summary>
         /// The key of the aggregator object.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The registry version of the object.
         /// </summary>
-        public readonly int RegistryVersion;
+        public readonly int? RegistryVersion;
 
         [OutputConstructor]
         private GetWorkspaceProjectRegistryMetadataResult(
-            string aggregatorKey,
+            string? aggregatorKey,
 
-            bool isFavorite,
+            bool? isFavorite,
 
-            string key,
+            string? key,
 
             ImmutableArray<string> labels,
 
-            int registryVersion)
+            int? registryVersion)
         {
             AggregatorKey = aggregatorKey;
             IsFavorite = isFavorite;

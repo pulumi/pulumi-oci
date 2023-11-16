@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -61,43 +60,43 @@ type LookupMysqlBackupArgs struct {
 type LookupMysqlBackupResult struct {
 	BackupId string `pulumi:"backupId"`
 	// The size of the backup in base-2 (IEC) gibibytes. (GiB).
-	BackupSizeInGbs int `pulumi:"backupSizeInGbs"`
+	BackupSizeInGbs *int `pulumi:"backupSizeInGbs"`
 	// The type of backup.
-	BackupType string `pulumi:"backupType"`
+	BackupType *string `pulumi:"backupType"`
 	// The OCID of the compartment the DB System belongs in.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
-	CreationType string `pulumi:"creationType"`
+	CreationType *string `pulumi:"creationType"`
 	// Initial size of the data volume in GiBs that will be created and attached.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the backup is associated with.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []GetMysqlBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-supplied display name for the backup.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the backup itself
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The MySQL server version of the DB System used for backup.
-	MysqlVersion string `pulumi:"mysqlVersion"`
+	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// Number of days to retain this backup.
-	RetentionInDays int `pulumi:"retentionInDays"`
+	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The state of the backup.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the backup record was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupMysqlBackupOutput(ctx *pulumi.Context, args LookupMysqlBackupOutputArgs, opts ...pulumi.InvokeOption) LookupMysqlBackupResultOutput {
@@ -138,44 +137,38 @@ func (o LookupMysqlBackupResultOutput) ToLookupMysqlBackupResultOutputWithContex
 	return o
 }
 
-func (o LookupMysqlBackupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMysqlBackupResult] {
-	return pulumix.Output[LookupMysqlBackupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupMysqlBackupResultOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
 // The size of the backup in base-2 (IEC) gibibytes. (GiB).
-func (o LookupMysqlBackupResultOutput) BackupSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) int { return v.BackupSizeInGbs }).(pulumi.IntOutput)
+func (o LookupMysqlBackupResultOutput) BackupSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *int { return v.BackupSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The type of backup.
-func (o LookupMysqlBackupResultOutput) BackupType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.BackupType }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.BackupType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment the DB System belongs in.
-func (o LookupMysqlBackupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Indicates how the backup was created: manually, automatic, or by an Operator.
-func (o LookupMysqlBackupResultOutput) CreationType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.CreationType }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) CreationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.CreationType }).(pulumi.StringPtrOutput)
 }
 
 // Initial size of the data volume in GiBs that will be created and attached.
-func (o LookupMysqlBackupResultOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+func (o LookupMysqlBackupResultOutput) DataStorageSizeInGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *int { return v.DataStorageSizeInGb }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the DB System the backup is associated with.
-func (o LookupMysqlBackupResultOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Snapshot of the DbSystem details at the time of the backup
@@ -189,13 +182,13 @@ func (o LookupMysqlBackupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-supplied description for the backup.
-func (o LookupMysqlBackupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-supplied display name for the backup.
-func (o LookupMysqlBackupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -204,43 +197,43 @@ func (o LookupMysqlBackupResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // OCID of the backup itself
-func (o LookupMysqlBackupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o LookupMysqlBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The MySQL server version of the DB System used for backup.
-func (o LookupMysqlBackupResultOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
 }
 
 // Number of days to retain this backup.
-func (o LookupMysqlBackupResultOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) int { return v.RetentionInDays }).(pulumi.IntOutput)
+func (o LookupMysqlBackupResultOutput) RetentionInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *int { return v.RetentionInDays }).(pulumi.IntPtrOutput)
 }
 
 // The shape of the DB System instance used for backup.
-func (o LookupMysqlBackupResultOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The state of the backup.
-func (o LookupMysqlBackupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the backup record was created.
-func (o LookupMysqlBackupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the backup was updated.
-func (o LookupMysqlBackupResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMysqlBackupResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

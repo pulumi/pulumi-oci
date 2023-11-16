@@ -8,6 +8,8 @@ import com.pulumi.oci.DataFlow.outputs.GetPoolsPoolCollectionItemPoolMetricActiv
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoolsPoolCollectionItemPoolMetric {
@@ -15,75 +17,75 @@ public final class GetPoolsPoolCollectionItemPoolMetric {
      * @return The number of runs that are currently running that are using this pool.
      * 
      */
-    private String activeRunsCount;
+    private @Nullable String activeRunsCount;
     /**
      * @return A count of the nodes that are currently being used for each shape in this pool.
      * 
      */
-    private List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts;
+    private @Nullable List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts;
     /**
      * @return The last time the mertics were updated for this.
      * 
      */
-    private String timeLastMetricsUpdated;
+    private @Nullable String timeLastMetricsUpdated;
     /**
      * @return The last time this pool was started.
      * 
      */
-    private String timeLastStarted;
+    private @Nullable String timeLastStarted;
     /**
      * @return The last time this pool was stopped.
      * 
      */
-    private String timeLastStopped;
+    private @Nullable String timeLastStopped;
     /**
      * @return The last time a run used this pool.
      * 
      */
-    private String timeLastUsed;
+    private @Nullable String timeLastUsed;
 
     private GetPoolsPoolCollectionItemPoolMetric() {}
     /**
      * @return The number of runs that are currently running that are using this pool.
      * 
      */
-    public String activeRunsCount() {
-        return this.activeRunsCount;
+    public Optional<String> activeRunsCount() {
+        return Optional.ofNullable(this.activeRunsCount);
     }
     /**
      * @return A count of the nodes that are currently being used for each shape in this pool.
      * 
      */
     public List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts() {
-        return this.activelyUsedNodeCounts;
+        return this.activelyUsedNodeCounts == null ? List.of() : this.activelyUsedNodeCounts;
     }
     /**
      * @return The last time the mertics were updated for this.
      * 
      */
-    public String timeLastMetricsUpdated() {
-        return this.timeLastMetricsUpdated;
+    public Optional<String> timeLastMetricsUpdated() {
+        return Optional.ofNullable(this.timeLastMetricsUpdated);
     }
     /**
      * @return The last time this pool was started.
      * 
      */
-    public String timeLastStarted() {
-        return this.timeLastStarted;
+    public Optional<String> timeLastStarted() {
+        return Optional.ofNullable(this.timeLastStarted);
     }
     /**
      * @return The last time this pool was stopped.
      * 
      */
-    public String timeLastStopped() {
-        return this.timeLastStopped;
+    public Optional<String> timeLastStopped() {
+        return Optional.ofNullable(this.timeLastStopped);
     }
     /**
      * @return The last time a run used this pool.
      * 
      */
-    public String timeLastUsed() {
-        return this.timeLastUsed;
+    public Optional<String> timeLastUsed() {
+        return Optional.ofNullable(this.timeLastUsed);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetPoolsPoolCollectionItemPoolMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String activeRunsCount;
-        private List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts;
-        private String timeLastMetricsUpdated;
-        private String timeLastStarted;
-        private String timeLastStopped;
-        private String timeLastUsed;
+        private @Nullable String activeRunsCount;
+        private @Nullable List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts;
+        private @Nullable String timeLastMetricsUpdated;
+        private @Nullable String timeLastStarted;
+        private @Nullable String timeLastStopped;
+        private @Nullable String timeLastUsed;
         public Builder() {}
         public Builder(GetPoolsPoolCollectionItemPoolMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetPoolsPoolCollectionItemPoolMetric {
         }
 
         @CustomType.Setter
-        public Builder activeRunsCount(String activeRunsCount) {
-            this.activeRunsCount = Objects.requireNonNull(activeRunsCount);
+        public Builder activeRunsCount(@Nullable String activeRunsCount) {
+            this.activeRunsCount = activeRunsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder activelyUsedNodeCounts(List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts) {
-            this.activelyUsedNodeCounts = Objects.requireNonNull(activelyUsedNodeCounts);
+        public Builder activelyUsedNodeCounts(@Nullable List<GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts) {
+            this.activelyUsedNodeCounts = activelyUsedNodeCounts;
             return this;
         }
         public Builder activelyUsedNodeCounts(GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount... activelyUsedNodeCounts) {
             return activelyUsedNodeCounts(List.of(activelyUsedNodeCounts));
         }
         @CustomType.Setter
-        public Builder timeLastMetricsUpdated(String timeLastMetricsUpdated) {
-            this.timeLastMetricsUpdated = Objects.requireNonNull(timeLastMetricsUpdated);
+        public Builder timeLastMetricsUpdated(@Nullable String timeLastMetricsUpdated) {
+            this.timeLastMetricsUpdated = timeLastMetricsUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastStarted(String timeLastStarted) {
-            this.timeLastStarted = Objects.requireNonNull(timeLastStarted);
+        public Builder timeLastStarted(@Nullable String timeLastStarted) {
+            this.timeLastStarted = timeLastStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastStopped(String timeLastStopped) {
-            this.timeLastStopped = Objects.requireNonNull(timeLastStopped);
+        public Builder timeLastStopped(@Nullable String timeLastStopped) {
+            this.timeLastStopped = timeLastStopped;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastUsed(String timeLastUsed) {
-            this.timeLastUsed = Objects.requireNonNull(timeLastUsed);
+        public Builder timeLastUsed(@Nullable String timeLastUsed) {
+            this.timeLastUsed = timeLastUsed;
             return this;
         }
         public GetPoolsPoolCollectionItemPoolMetric build() {

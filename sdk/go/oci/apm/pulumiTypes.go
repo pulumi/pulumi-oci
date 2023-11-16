@@ -9,34 +9,33 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetApmDomainsApmDomain struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The endpoint where the APM agents upload their observations and metrics.
-	DataUploadEndpoint string `pulumi:"dataUploadEndpoint"`
+	DataUploadEndpoint *string `pulumi:"dataUploadEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the APM domain.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if this is an Always Free resource.
-	IsFreeTier bool `pulumi:"isFreeTier"`
+	IsFreeTier *bool `pulumi:"isFreeTier"`
 	// A filter to return only resources that match the given life-cycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetApmDomainsApmDomainInput is an input type that accepts GetApmDomainsApmDomainArgs and GetApmDomainsApmDomainOutput values.
@@ -52,27 +51,27 @@ type GetApmDomainsApmDomainInput interface {
 
 type GetApmDomainsApmDomainArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The endpoint where the APM agents upload their observations and metrics.
-	DataUploadEndpoint pulumi.StringInput `pulumi:"dataUploadEndpoint"`
+	DataUploadEndpoint pulumi.StringPtrInput `pulumi:"dataUploadEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the APM domain.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates if this is an Always Free resource.
-	IsFreeTier pulumi.BoolInput `pulumi:"isFreeTier"`
+	IsFreeTier pulumi.BoolPtrInput `pulumi:"isFreeTier"`
 	// A filter to return only resources that match the given life-cycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetApmDomainsApmDomainArgs) ElementType() reflect.Type {
@@ -85,12 +84,6 @@ func (i GetApmDomainsApmDomainArgs) ToGetApmDomainsApmDomainOutput() GetApmDomai
 
 func (i GetApmDomainsApmDomainArgs) ToGetApmDomainsApmDomainOutputWithContext(ctx context.Context) GetApmDomainsApmDomainOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsApmDomainOutput)
-}
-
-func (i GetApmDomainsApmDomainArgs) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsApmDomain] {
-	return pulumix.Output[GetApmDomainsApmDomain]{
-		OutputState: i.ToGetApmDomainsApmDomainOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApmDomainsApmDomainArrayInput is an input type that accepts GetApmDomainsApmDomainArray and GetApmDomainsApmDomainArrayOutput values.
@@ -118,12 +111,6 @@ func (i GetApmDomainsApmDomainArray) ToGetApmDomainsApmDomainArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsApmDomainArrayOutput)
 }
 
-func (i GetApmDomainsApmDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsApmDomain] {
-	return pulumix.Output[[]GetApmDomainsApmDomain]{
-		OutputState: i.ToGetApmDomainsApmDomainArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApmDomainsApmDomainOutput struct{ *pulumi.OutputState }
 
 func (GetApmDomainsApmDomainOutput) ElementType() reflect.Type {
@@ -138,20 +125,14 @@ func (o GetApmDomainsApmDomainOutput) ToGetApmDomainsApmDomainOutputWithContext(
 	return o
 }
 
-func (o GetApmDomainsApmDomainOutput) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsApmDomain] {
-	return pulumix.Output[GetApmDomainsApmDomain]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetApmDomainsApmDomainOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint where the APM agents upload their observations and metrics.
-func (o GetApmDomainsApmDomainOutput) DataUploadEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.DataUploadEndpoint }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) DataUploadEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.DataUploadEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -160,13 +141,13 @@ func (o GetApmDomainsApmDomainOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the APM domain.
-func (o GetApmDomainsApmDomainOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.Description }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetApmDomainsApmDomainOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -175,28 +156,28 @@ func (o GetApmDomainsApmDomainOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetApmDomainsApmDomainOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this is an Always Free resource.
-func (o GetApmDomainsApmDomainOutput) IsFreeTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
+func (o GetApmDomainsApmDomainOutput) IsFreeTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *bool { return v.IsFreeTier }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return only resources that match the given life-cycle state.
-func (o GetApmDomainsApmDomainOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.State }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the APM domain was created, expressed in RFC 3339 timestamp format.
-func (o GetApmDomainsApmDomainOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-func (o GetApmDomainsApmDomainOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApmDomainsApmDomain) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetApmDomainsApmDomainOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApmDomainsApmDomain) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetApmDomainsApmDomainArrayOutput struct{ *pulumi.OutputState }
@@ -211,12 +192,6 @@ func (o GetApmDomainsApmDomainArrayOutput) ToGetApmDomainsApmDomainArrayOutput()
 
 func (o GetApmDomainsApmDomainArrayOutput) ToGetApmDomainsApmDomainArrayOutputWithContext(ctx context.Context) GetApmDomainsApmDomainArrayOutput {
 	return o
-}
-
-func (o GetApmDomainsApmDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsApmDomain] {
-	return pulumix.Output[[]GetApmDomainsApmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApmDomainsApmDomainArrayOutput) Index(i pulumi.IntInput) GetApmDomainsApmDomainOutput {
@@ -260,12 +235,6 @@ func (i GetApmDomainsFilterArgs) ToGetApmDomainsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsFilterOutput)
 }
 
-func (i GetApmDomainsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsFilter] {
-	return pulumix.Output[GetApmDomainsFilter]{
-		OutputState: i.ToGetApmDomainsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApmDomainsFilterArrayInput is an input type that accepts GetApmDomainsFilterArray and GetApmDomainsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApmDomainsFilterArrayInput` via:
 //
@@ -291,12 +260,6 @@ func (i GetApmDomainsFilterArray) ToGetApmDomainsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetApmDomainsFilterArrayOutput)
 }
 
-func (i GetApmDomainsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsFilter] {
-	return pulumix.Output[[]GetApmDomainsFilter]{
-		OutputState: i.ToGetApmDomainsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApmDomainsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetApmDomainsFilterOutput) ElementType() reflect.Type {
@@ -309,12 +272,6 @@ func (o GetApmDomainsFilterOutput) ToGetApmDomainsFilterOutput() GetApmDomainsFi
 
 func (o GetApmDomainsFilterOutput) ToGetApmDomainsFilterOutputWithContext(ctx context.Context) GetApmDomainsFilterOutput {
 	return o
-}
-
-func (o GetApmDomainsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApmDomainsFilter] {
-	return pulumix.Output[GetApmDomainsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApmDomainsFilterOutput) Name() pulumi.StringOutput {
@@ -343,12 +300,6 @@ func (o GetApmDomainsFilterArrayOutput) ToGetApmDomainsFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetApmDomainsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApmDomainsFilter] {
-	return pulumix.Output[[]GetApmDomainsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApmDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetApmDomainsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApmDomainsFilter {
 		return vs[0].([]GetApmDomainsFilter)[vs[1].(int)]
@@ -357,11 +308,11 @@ func (o GetApmDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetApmDomainsFi
 
 type GetDataKeysDataKey struct {
 	// Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Type of the Data Key.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Value of the Data Key.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetDataKeysDataKeyInput is an input type that accepts GetDataKeysDataKeyArgs and GetDataKeysDataKeyOutput values.
@@ -377,11 +328,11 @@ type GetDataKeysDataKeyInput interface {
 
 type GetDataKeysDataKeyArgs struct {
 	// Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Type of the Data Key.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Value of the Data Key.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetDataKeysDataKeyArgs) ElementType() reflect.Type {
@@ -394,12 +345,6 @@ func (i GetDataKeysDataKeyArgs) ToGetDataKeysDataKeyOutput() GetDataKeysDataKeyO
 
 func (i GetDataKeysDataKeyArgs) ToGetDataKeysDataKeyOutputWithContext(ctx context.Context) GetDataKeysDataKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysDataKeyOutput)
-}
-
-func (i GetDataKeysDataKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysDataKey] {
-	return pulumix.Output[GetDataKeysDataKey]{
-		OutputState: i.ToGetDataKeysDataKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDataKeysDataKeyArrayInput is an input type that accepts GetDataKeysDataKeyArray and GetDataKeysDataKeyArrayOutput values.
@@ -427,12 +372,6 @@ func (i GetDataKeysDataKeyArray) ToGetDataKeysDataKeyArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysDataKeyArrayOutput)
 }
 
-func (i GetDataKeysDataKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysDataKey] {
-	return pulumix.Output[[]GetDataKeysDataKey]{
-		OutputState: i.ToGetDataKeysDataKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataKeysDataKeyOutput struct{ *pulumi.OutputState }
 
 func (GetDataKeysDataKeyOutput) ElementType() reflect.Type {
@@ -447,25 +386,19 @@ func (o GetDataKeysDataKeyOutput) ToGetDataKeysDataKeyOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetDataKeysDataKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysDataKey] {
-	return pulumix.Output[GetDataKeysDataKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-func (o GetDataKeysDataKeyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataKeysDataKey) string { return v.Name }).(pulumi.StringOutput)
+func (o GetDataKeysDataKeyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataKeysDataKey) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Data Key.
-func (o GetDataKeysDataKeyOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataKeysDataKey) string { return v.Type }).(pulumi.StringOutput)
+func (o GetDataKeysDataKeyOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataKeysDataKey) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Value of the Data Key.
-func (o GetDataKeysDataKeyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataKeysDataKey) string { return v.Value }).(pulumi.StringOutput)
+func (o GetDataKeysDataKeyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataKeysDataKey) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetDataKeysDataKeyArrayOutput struct{ *pulumi.OutputState }
@@ -480,12 +413,6 @@ func (o GetDataKeysDataKeyArrayOutput) ToGetDataKeysDataKeyArrayOutput() GetData
 
 func (o GetDataKeysDataKeyArrayOutput) ToGetDataKeysDataKeyArrayOutputWithContext(ctx context.Context) GetDataKeysDataKeyArrayOutput {
 	return o
-}
-
-func (o GetDataKeysDataKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysDataKey] {
-	return pulumix.Output[[]GetDataKeysDataKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataKeysDataKeyArrayOutput) Index(i pulumi.IntInput) GetDataKeysDataKeyOutput {
@@ -531,12 +458,6 @@ func (i GetDataKeysFilterArgs) ToGetDataKeysFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysFilterOutput)
 }
 
-func (i GetDataKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysFilter] {
-	return pulumix.Output[GetDataKeysFilter]{
-		OutputState: i.ToGetDataKeysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataKeysFilterArrayInput is an input type that accepts GetDataKeysFilterArray and GetDataKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataKeysFilterArrayInput` via:
 //
@@ -562,12 +483,6 @@ func (i GetDataKeysFilterArray) ToGetDataKeysFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataKeysFilterArrayOutput)
 }
 
-func (i GetDataKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysFilter] {
-	return pulumix.Output[[]GetDataKeysFilter]{
-		OutputState: i.ToGetDataKeysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataKeysFilterOutput) ElementType() reflect.Type {
@@ -580,12 +495,6 @@ func (o GetDataKeysFilterOutput) ToGetDataKeysFilterOutput() GetDataKeysFilterOu
 
 func (o GetDataKeysFilterOutput) ToGetDataKeysFilterOutputWithContext(ctx context.Context) GetDataKeysFilterOutput {
 	return o
-}
-
-func (o GetDataKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysFilter] {
-	return pulumix.Output[GetDataKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
@@ -613,12 +522,6 @@ func (o GetDataKeysFilterArrayOutput) ToGetDataKeysFilterArrayOutput() GetDataKe
 
 func (o GetDataKeysFilterArrayOutput) ToGetDataKeysFilterArrayOutputWithContext(ctx context.Context) GetDataKeysFilterArrayOutput {
 	return o
-}
-
-func (o GetDataKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataKeysFilter] {
-	return pulumix.Output[[]GetDataKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataKeysFilterArrayOutput) Index(i pulumi.IntInput) GetDataKeysFilterOutput {

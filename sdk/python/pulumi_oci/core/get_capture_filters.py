@@ -48,34 +48,22 @@ class GetCaptureFiltersResult:
 
     @property
     @pulumi.getter(name="captureFilters")
-    def capture_filters(self) -> Sequence['outputs.GetCaptureFiltersCaptureFilterResult']:
-        """
-        The list of capture_filters.
-        """
+    def capture_filters(self) -> Optional[Sequence['outputs.GetCaptureFiltersCaptureFilterResult']]:
         return pulumi.get(self, "capture_filters")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> Optional[str]:
-        """
-        Indicates which service will use this capture filter
-        """
         return pulumi.get(self, "filter_type")
 
     @property
@@ -85,7 +73,7 @@ class GetCaptureFiltersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetCaptureFiltersResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The capture filter's current administrative state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_capture_filters(compartment_id: Optional[str] = None,
                         state: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaptureFiltersResult:
     """
-    This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
-
-    Lists the capture filters in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=var["compartment_id"],
-        display_name=var["capture_filter_display_name"],
-        filter_type=var["capture_filter_filter_type"],
-        state=var["capture_filter_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str filter_type: A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
-    :param str state: A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaptureFiltersResult]:
     """
-    This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
-
-    Lists the capture filters in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=var["compartment_id"],
-        display_name=var["capture_filter_display_name"],
-        filter_type=var["capture_filter_filter_type"],
-        state=var["capture_filter_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str filter_type: A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
-    :param str state: A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

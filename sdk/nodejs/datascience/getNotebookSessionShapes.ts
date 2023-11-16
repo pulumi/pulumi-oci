@@ -51,11 +51,11 @@ export interface GetNotebookSessionShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of notebook_session_shapes.
      */
-    readonly notebookSessionShapes: outputs.DataScience.GetNotebookSessionShapesNotebookSessionShape[];
+    readonly notebookSessionShapes?: outputs.DataScience.GetNotebookSessionShapesNotebookSessionShape[];
 }
 /**
  * This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.

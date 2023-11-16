@@ -74,66 +74,42 @@ class GetExternalDatabaseConnectorResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Sequence['outputs.GetExternalDatabaseConnectorConnectionCredentialResult']:
-        """
-        Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
-        """
+    def connection_credentials(self) -> Optional[Sequence['outputs.GetExternalDatabaseConnectorConnectionCredentialResult']]:
         return pulumi.get(self, "connection_credentials")
 
     @property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> str:
-        """
-        The status of connectivity to the external database.
-        """
+    def connection_status(self) -> Optional[str]:
         return pulumi.get(self, "connection_status")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Sequence['outputs.GetExternalDatabaseConnectorConnectionStringResult']:
-        """
-        The Oracle Database connection string.
-        """
+    def connection_strings(self) -> Optional[Sequence['outputs.GetExternalDatabaseConnectorConnectionStringResult']]:
         return pulumi.get(self, "connection_strings")
 
     @property
     @pulumi.getter(name="connectorAgentId")
-    def connector_agent_id(self) -> str:
-        """
-        The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
+    def connector_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "connector_agent_id")
 
     @property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> str:
-        """
-        The type of connector used by the external database resource.
-        """
+    def connector_type(self) -> Optional[str]:
         return pulumi.get(self, "connector_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -143,58 +119,37 @@ class GetExternalDatabaseConnectorResult:
 
     @property
     @pulumi.getter(name="externalDatabaseId")
-    def external_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
-        """
+    def external_database_id(self) -> Optional[str]:
         return pulumi.get(self, "external_database_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external database connector resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> str:
-        """
-        The date and time the `connectionStatus` of this external connector was last updated.
-        """
+    def time_connection_status_last_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external connector was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetExternalDatabaseConnectorResult(GetExternalDatabaseConnectorRe
 def get_external_database_connector(external_database_connector_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabaseConnectorResult:
     """
-    This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified external database connector.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"])
-    ```
-
-
-    :param str external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalDatabaseConnectorId'] = external_database_connector_id
@@ -269,20 +210,6 @@ def get_external_database_connector(external_database_connector_id: Optional[str
 def get_external_database_connector_output(external_database_connector_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabaseConnectorResult]:
     """
-    This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified external database connector.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_database_connector = oci.Database.get_external_database_connector(external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"])
-    ```
-
-
-    :param str external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).
+    Use this data source to access information about an existing resource.
     """
     ...

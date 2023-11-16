@@ -263,7 +263,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// If the DB System has a HeatWave Cluster attached.
         /// </summary>
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.Mysql
 
             ImmutableArray<Outputs.GetMysqlDbSystemsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isHeatWaveClusterAttached,
 

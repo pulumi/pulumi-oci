@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
@@ -88,7 +87,7 @@ type UsagePlan struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) A collection of entitlements to assign to the newly created usage plan.
 	Entitlements UsagePlanEntitlementArrayOutput `pulumi:"entitlements"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -97,13 +96,13 @@ type UsagePlan struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the usage plan.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewUsagePlan registers a new resource with the given unique name, arguments, and options.
@@ -249,12 +248,6 @@ func (i *UsagePlan) ToUsagePlanOutputWithContext(ctx context.Context) UsagePlanO
 	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanOutput)
 }
 
-func (i *UsagePlan) ToOutput(ctx context.Context) pulumix.Output[*UsagePlan] {
-	return pulumix.Output[*UsagePlan]{
-		OutputState: i.ToUsagePlanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UsagePlanArrayInput is an input type that accepts UsagePlanArray and UsagePlanArrayOutput values.
 // You can construct a concrete instance of `UsagePlanArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i UsagePlanArray) ToUsagePlanArrayOutput() UsagePlanArrayOutput {
 
 func (i UsagePlanArray) ToUsagePlanArrayOutputWithContext(ctx context.Context) UsagePlanArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanArrayOutput)
-}
-
-func (i UsagePlanArray) ToOutput(ctx context.Context) pulumix.Output[[]*UsagePlan] {
-	return pulumix.Output[[]*UsagePlan]{
-		OutputState: i.ToUsagePlanArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UsagePlanMapInput is an input type that accepts UsagePlanMap and UsagePlanMapOutput values.
@@ -311,12 +298,6 @@ func (i UsagePlanMap) ToUsagePlanMapOutputWithContext(ctx context.Context) Usage
 	return pulumi.ToOutputWithContext(ctx, i).(UsagePlanMapOutput)
 }
 
-func (i UsagePlanMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UsagePlan] {
-	return pulumix.Output[map[string]*UsagePlan]{
-		OutputState: i.ToUsagePlanMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsagePlanOutput struct{ *pulumi.OutputState }
 
 func (UsagePlanOutput) ElementType() reflect.Type {
@@ -331,12 +312,6 @@ func (o UsagePlanOutput) ToUsagePlanOutputWithContext(ctx context.Context) Usage
 	return o
 }
 
-func (o UsagePlanOutput) ToOutput(ctx context.Context) pulumix.Output[*UsagePlan] {
-	return pulumix.Output[*UsagePlan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 func (o UsagePlanOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -348,8 +323,8 @@ func (o UsagePlanOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o UsagePlanOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o UsagePlanOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A collection of entitlements to assign to the newly created usage plan.
@@ -366,23 +341,23 @@ func (o UsagePlanOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o UsagePlanOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o UsagePlanOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the usage plan.
-func (o UsagePlanOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o UsagePlanOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o UsagePlanOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o UsagePlanOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o UsagePlanOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o UsagePlanOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type UsagePlanArrayOutput struct{ *pulumi.OutputState }
@@ -397,12 +372,6 @@ func (o UsagePlanArrayOutput) ToUsagePlanArrayOutput() UsagePlanArrayOutput {
 
 func (o UsagePlanArrayOutput) ToUsagePlanArrayOutputWithContext(ctx context.Context) UsagePlanArrayOutput {
 	return o
-}
-
-func (o UsagePlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UsagePlan] {
-	return pulumix.Output[[]*UsagePlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UsagePlanArrayOutput) Index(i pulumi.IntInput) UsagePlanOutput {
@@ -423,12 +392,6 @@ func (o UsagePlanMapOutput) ToUsagePlanMapOutput() UsagePlanMapOutput {
 
 func (o UsagePlanMapOutput) ToUsagePlanMapOutputWithContext(ctx context.Context) UsagePlanMapOutput {
 	return o
-}
-
-func (o UsagePlanMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UsagePlan] {
-	return pulumix.Output[map[string]*UsagePlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UsagePlanMapOutput) MapIndex(k pulumi.StringInput) UsagePlanOutput {

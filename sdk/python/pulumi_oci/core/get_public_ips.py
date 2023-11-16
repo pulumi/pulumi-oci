@@ -52,17 +52,11 @@ class GetPublicIpsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is the compartment of its assigned entity (which can be a private IP or a regional entity such as a NAT gateway). For a reserved public IP that is currently assigned, its compartment can be different from the assigned private IP's.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,7 +66,7 @@ class GetPublicIpsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,33 +75,21 @@ class GetPublicIpsResult:
     @property
     @pulumi.getter
     def lifetime(self) -> Optional[str]:
-        """
-        Defines when the public IP is deleted and released back to Oracle's public IP pool.
-        """
         return pulumi.get(self, "lifetime")
 
     @property
     @pulumi.getter(name="publicIpPoolId")
     def public_ip_pool_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
-        """
         return pulumi.get(self, "public_ip_pool_id")
 
     @property
     @pulumi.getter(name="publicIps")
-    def public_ips(self) -> Sequence['outputs.GetPublicIpsPublicIpResult']:
-        """
-        The list of public_ips.
-        """
+    def public_ips(self) -> Optional[Sequence['outputs.GetPublicIpsPublicIpResult']]:
         return pulumi.get(self, "public_ips")
 
     @property
     @pulumi.getter
     def scope(self) -> str:
-        """
-        Whether the public IP is regional or specific to a particular availability domain.
-        """
         return pulumi.get(self, "scope")
 
 
@@ -135,48 +117,7 @@ def get_public_ips(availability_domain: Optional[str] = None,
                    scope: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPublicIpsResult:
     """
-    This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
-
-    Lists the [PublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) objects
-    in the specified compartment. You can filter the list by using query parameters.
-
-    To list your reserved public IPs:
-      * Set `scope` = `REGION`  (required)
-      * Leave the `availabilityDomain` parameter empty
-      * Set `lifetime` = `RESERVED`
-
-    To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
-      * Set `scope` = `REGION`  (required)
-      * Leave the `availabilityDomain` parameter empty
-      * Set `lifetime` = `EPHEMERAL`
-
-    To list the ephemeral public IPs assigned to private IPs:
-      * Set `scope` = `AVAILABILITY_DOMAIN` (required)
-      * Set the `availabilityDomain` parameter to the desired availability domain (required)
-      * Set `lifetime` = `EPHEMERAL`
-
-    **Note:** An ephemeral public IP assigned to a private IP
-    is always in the same availability domain and compartment as the private IP.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_public_ips = oci.Core.get_public_ips(compartment_id=var["compartment_id"],
-        scope=var["public_ip_scope"],
-        availability_domain=var["public_ip_availability_domain"],
-        lifetime=var["public_ip_lifetime"],
-        public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str lifetime: A filter to return only public IPs that match given lifetime.
-    :param str public_ip_pool_id: A filter to return only resources that belong to the given public IP pool.
-    :param str scope: Whether the public IP is regional or specific to a particular availability domain.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -208,47 +149,6 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
                           scope: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPublicIpsResult]:
     """
-    This data source provides the list of Public Ips in Oracle Cloud Infrastructure Core service.
-
-    Lists the [PublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) objects
-    in the specified compartment. You can filter the list by using query parameters.
-
-    To list your reserved public IPs:
-      * Set `scope` = `REGION`  (required)
-      * Leave the `availabilityDomain` parameter empty
-      * Set `lifetime` = `RESERVED`
-
-    To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
-      * Set `scope` = `REGION`  (required)
-      * Leave the `availabilityDomain` parameter empty
-      * Set `lifetime` = `EPHEMERAL`
-
-    To list the ephemeral public IPs assigned to private IPs:
-      * Set `scope` = `AVAILABILITY_DOMAIN` (required)
-      * Set the `availabilityDomain` parameter to the desired availability domain (required)
-      * Set `lifetime` = `EPHEMERAL`
-
-    **Note:** An ephemeral public IP assigned to a private IP
-    is always in the same availability domain and compartment as the private IP.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_public_ips = oci.Core.get_public_ips(compartment_id=var["compartment_id"],
-        scope=var["public_ip_scope"],
-        availability_domain=var["public_ip_availability_domain"],
-        lifetime=var["public_ip_lifetime"],
-        public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str lifetime: A filter to return only public IPs that match given lifetime.
-    :param str public_ip_pool_id: A filter to return only resources that belong to the given public IP pool.
-    :param str scope: Whether the public IP is regional or specific to a particular availability domain.
+    Use this data source to access information about an existing resource.
     """
     ...

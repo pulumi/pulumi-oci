@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,14 +92,14 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="artifactContentDisposition", refs={String.class}, tree="[0]")
-    private Output<String> artifactContentDisposition;
+    private Output</* @Nullable */ String> artifactContentDisposition;
 
     /**
      * @return This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
      * 
      */
-    public Output<String> artifactContentDisposition() {
-        return this.artifactContentDisposition;
+    public Output<Optional<String>> artifactContentDisposition() {
+        return Codegen.optional(this.artifactContentDisposition);
     }
     /**
      * The content length of the model_artifact.
@@ -121,16 +122,16 @@ public class Model extends com.pulumi.resources.CustomResource {
         return this.artifactContentLength;
     }
     @Export(name="artifactContentMd5", refs={String.class}, tree="[0]")
-    private Output<String> artifactContentMd5;
+    private Output</* @Nullable */ String> artifactContentMd5;
 
-    public Output<String> artifactContentMd5() {
-        return this.artifactContentMd5;
+    public Output<Optional<String>> artifactContentMd5() {
+        return Codegen.optional(this.artifactContentMd5);
     }
     @Export(name="artifactLastModified", refs={String.class}, tree="[0]")
-    private Output<String> artifactLastModified;
+    private Output</* @Nullable */ String> artifactLastModified;
 
-    public Output<String> artifactLastModified() {
-        return this.artifactLastModified;
+    public Output<Optional<String>> artifactLastModified() {
+        return Codegen.optional(this.artifactLastModified);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
@@ -151,118 +152,118 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) An array of custom metadata details for the model.
      * 
      */
     @Export(name="customMetadataLists", refs={List.class,ModelCustomMetadataList.class}, tree="[0,1]")
-    private Output<List<ModelCustomMetadataList>> customMetadataLists;
+    private Output</* @Nullable */ List<ModelCustomMetadataList>> customMetadataLists;
 
     /**
      * @return (Updatable) An array of custom metadata details for the model.
      * 
      */
-    public Output<List<ModelCustomMetadataList>> customMetadataLists() {
-        return this.customMetadataLists;
+    public Output<Optional<List<ModelCustomMetadataList>>> customMetadataLists() {
+        return Codegen.optional(this.customMetadataLists);
     }
     /**
      * (Updatable) An array of defined metadata details for the model.
      * 
      */
     @Export(name="definedMetadataLists", refs={List.class,ModelDefinedMetadataList.class}, tree="[0,1]")
-    private Output<List<ModelDefinedMetadataList>> definedMetadataLists;
+    private Output</* @Nullable */ List<ModelDefinedMetadataList>> definedMetadataLists;
 
     /**
      * @return (Updatable) An array of defined metadata details for the model.
      * 
      */
-    public Output<List<ModelDefinedMetadataList>> definedMetadataLists() {
-        return this.definedMetadataLists;
+    public Output<Optional<List<ModelDefinedMetadataList>>> definedMetadataLists() {
+        return Codegen.optional(this.definedMetadataLists);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A short description of the model.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A short description of the model.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="emptyModel", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> emptyModel;
+    private Output</* @Nullable */ Boolean> emptyModel;
 
-    public Output<Boolean> emptyModel() {
-        return this.emptyModel;
+    public Output<Optional<Boolean>> emptyModel() {
+        return Codegen.optional(this.emptyModel);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Input schema file content in String format
      * 
      */
     @Export(name="inputSchema", refs={String.class}, tree="[0]")
-    private Output<String> inputSchema;
+    private Output</* @Nullable */ String> inputSchema;
 
     /**
      * @return Input schema file content in String format
      * 
      */
-    public Output<String> inputSchema() {
-        return this.inputSchema;
+    public Output<Optional<String>> inputSchema() {
+        return Codegen.optional(this.inputSchema);
     }
     /**
      * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
@@ -283,14 +284,14 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="outputSchema", refs={String.class}, tree="[0]")
-    private Output<String> outputSchema;
+    private Output</* @Nullable */ String> outputSchema;
 
     /**
      * @return Output schema file content in String format
      * 
      */
-    public Output<String> outputSchema() {
-        return this.outputSchema;
+    public Output<Optional<String>> outputSchema() {
+        return Codegen.optional(this.outputSchema);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -311,28 +312,28 @@ public class Model extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the model.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

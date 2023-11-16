@@ -29,7 +29,7 @@ public final class GetStreamPackagingConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Packaging Configuration.
      * 
@@ -39,7 +39,7 @@ public final class GetStreamPackagingConfigsResult {
      * @return The list of stream_packaging_config_collection.
      * 
      */
-    private List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections;
+    private @Nullable List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections;
     private @Nullable String streamPackagingConfigId;
 
     private GetStreamPackagingConfigsResult() {}
@@ -64,8 +64,8 @@ public final class GetStreamPackagingConfigsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Packaging Configuration.
@@ -79,7 +79,7 @@ public final class GetStreamPackagingConfigsResult {
      * 
      */
     public List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections() {
-        return this.streamPackagingConfigCollections;
+        return this.streamPackagingConfigCollections == null ? List.of() : this.streamPackagingConfigCollections;
     }
     public Optional<String> streamPackagingConfigId() {
         return Optional.ofNullable(this.streamPackagingConfigId);
@@ -97,9 +97,9 @@ public final class GetStreamPackagingConfigsResult {
         private @Nullable String displayName;
         private String distributionChannelId;
         private @Nullable List<GetStreamPackagingConfigsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections;
+        private @Nullable List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections;
         private @Nullable String streamPackagingConfigId;
         public Builder() {}
         public Builder(GetStreamPackagingConfigsResult defaults) {
@@ -132,8 +132,8 @@ public final class GetStreamPackagingConfigsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,8 +142,8 @@ public final class GetStreamPackagingConfigsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder streamPackagingConfigCollections(List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections) {
-            this.streamPackagingConfigCollections = Objects.requireNonNull(streamPackagingConfigCollections);
+        public Builder streamPackagingConfigCollections(@Nullable List<GetStreamPackagingConfigsStreamPackagingConfigCollection> streamPackagingConfigCollections) {
+            this.streamPackagingConfigCollections = streamPackagingConfigCollections;
             return this;
         }
         public Builder streamPackagingConfigCollections(GetStreamPackagingConfigsStreamPackagingConfigCollection... streamPackagingConfigCollections) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
@@ -96,7 +95,7 @@ type GetSensitiveDataModelsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetSensitiveDataModelsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of sensitive_data_model_collection.
 	SensitiveDataModelCollections []GetSensitiveDataModelsSensitiveDataModelCollection `pulumi:"sensitiveDataModelCollections"`
 	SensitiveDataModelId          *string                                              `pulumi:"sensitiveDataModelId"`
@@ -167,12 +166,6 @@ func (o GetSensitiveDataModelsResultOutput) ToGetSensitiveDataModelsResultOutput
 	return o
 }
 
-func (o GetSensitiveDataModelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsResult] {
-	return pulumix.Output[GetSensitiveDataModelsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSensitiveDataModelsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -196,8 +189,8 @@ func (o GetSensitiveDataModelsResultOutput) Filters() GetSensitiveDataModelsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSensitiveDataModelsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSensitiveDataModelsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of sensitive_data_model_collection.

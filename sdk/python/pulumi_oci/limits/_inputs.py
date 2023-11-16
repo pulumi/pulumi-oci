@@ -24,12 +24,6 @@ class QuotaLockArgs:
                  message: Optional[pulumi.Input[str]] = None,
                  related_resource_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: Lock type.
-        :param pulumi.Input[str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        :param pulumi.Input[str] related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        :param pulumi.Input[str] time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-        """
         pulumi.set(__self__, "type", type)
         if message is not None:
             pulumi.set(__self__, "message", message)
@@ -41,9 +35,6 @@ class QuotaLockArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Lock type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -53,9 +44,6 @@ class QuotaLockArgs:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -65,9 +53,6 @@ class QuotaLockArgs:
     @property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
@@ -77,9 +62,6 @@ class QuotaLockArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -93,9 +75,6 @@ class GetLimitDefinitionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional field, filter for a specific resource limit.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -104,9 +83,6 @@ class GetLimitDefinitionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional field, filter for a specific resource limit.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -138,9 +114,6 @@ class GetLimitValuesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Optional field, can be used to see a specific resource limit value.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -149,9 +122,6 @@ class GetLimitValuesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Optional field, can be used to see a specific resource limit value.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -183,9 +153,6 @@ class GetQuotasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -194,9 +161,6 @@ class GetQuotasFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -228,9 +192,6 @@ class GetServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The service name. Use this when calling other APIs.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -239,9 +200,6 @@ class GetServicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The service name. Use this when calling other APIs.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.
@@ -59,7 +58,7 @@ type GetDbHomesResult struct {
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetDbHomesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Database Home.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -117,12 +116,6 @@ func (o GetDbHomesResultOutput) ToGetDbHomesResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetDbHomesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbHomesResult] {
-	return pulumix.Output[GetDbHomesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDbHomesResultOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbHomesResult) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
@@ -157,8 +150,8 @@ func (o GetDbHomesResultOutput) Filters() GetDbHomesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbHomesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbHomesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbHomesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbHomesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Database Home.

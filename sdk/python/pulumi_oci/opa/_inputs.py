@@ -22,14 +22,6 @@ class OpaInstanceAttachmentArgs:
                  target_instance_url: Optional[pulumi.Input[str]] = None,
                  target_role: Optional[pulumi.Input[str]] = None,
                  target_service_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param pulumi.Input[str] target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param pulumi.Input[str] target_instance_url: The dataplane instance URL of the attached instance
-        :param pulumi.Input[str] target_role: The role of the target attachment.
-        :param pulumi.Input[str] target_service_type: The type of the target instance, such as "FUSION".
-        """
         if is_implicit is not None:
             pulumi.set(__self__, "is_implicit", is_implicit)
         if target_id is not None:
@@ -44,10 +36,6 @@ class OpaInstanceAttachmentArgs:
     @property
     @pulumi.getter(name="isImplicit")
     def is_implicit(self) -> Optional[pulumi.Input[bool]]:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
         return pulumi.get(self, "is_implicit")
 
     @is_implicit.setter
@@ -57,9 +45,6 @@ class OpaInstanceAttachmentArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -69,9 +54,6 @@ class OpaInstanceAttachmentArgs:
     @property
     @pulumi.getter(name="targetInstanceUrl")
     def target_instance_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The dataplane instance URL of the attached instance
-        """
         return pulumi.get(self, "target_instance_url")
 
     @target_instance_url.setter
@@ -81,9 +63,6 @@ class OpaInstanceAttachmentArgs:
     @property
     @pulumi.getter(name="targetRole")
     def target_role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the target attachment.
-        """
         return pulumi.get(self, "target_role")
 
     @target_role.setter
@@ -93,9 +72,6 @@ class OpaInstanceAttachmentArgs:
     @property
     @pulumi.getter(name="targetServiceType")
     def target_service_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the target instance, such as "FUSION".
-        """
         return pulumi.get(self, "target_service_type")
 
     @target_service_type.setter

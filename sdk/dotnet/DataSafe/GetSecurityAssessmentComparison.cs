@@ -122,17 +122,17 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the security assessment that is set as a baseline.
         /// </summary>
-        public readonly string BaselineId;
+        public readonly string? BaselineId;
         public readonly string ComparisonSecurityAssessmentId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string SecurityAssessmentId;
         /// <summary>
         /// The current state of the security assessment comparison.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A target-based comparison between two security assessments.
         /// </summary>
@@ -140,23 +140,23 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetSecurityAssessmentComparisonResult(
-            string baselineId,
+            string? baselineId,
 
             string comparisonSecurityAssessmentId,
 
-            string id,
+            string? id,
 
             string securityAssessmentId,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetSecurityAssessmentComparisonTargetResult> targets,
 
-            string timeCreated)
+            string? timeCreated)
         {
             BaselineId = baselineId;
             ComparisonSecurityAssessmentId = comparisonSecurityAssessmentId;

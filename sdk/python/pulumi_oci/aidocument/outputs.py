@@ -119,12 +119,6 @@ class ModelMetric(dict):
                  label_metrics_reports: Optional[Sequence['outputs.ModelMetricLabelMetricsReport']] = None,
                  model_type: Optional[str] = None,
                  overall_metrics_reports: Optional[Sequence['outputs.ModelMetricOverallMetricsReport']] = None):
-        """
-        :param Sequence['ModelMetricDatasetSummaryArgs'] dataset_summaries: Summary of count of samples used during model training.
-        :param Sequence['ModelMetricLabelMetricsReportArgs'] label_metrics_reports: List of metrics entries per label.
-        :param str model_type: The type of the Document model.
-        :param Sequence['ModelMetricOverallMetricsReportArgs'] overall_metrics_reports: Overall Metrics report for Document Classification Model.
-        """
         if dataset_summaries is not None:
             pulumi.set(__self__, "dataset_summaries", dataset_summaries)
         if label_metrics_reports is not None:
@@ -137,33 +131,21 @@ class ModelMetric(dict):
     @property
     @pulumi.getter(name="datasetSummaries")
     def dataset_summaries(self) -> Optional[Sequence['outputs.ModelMetricDatasetSummary']]:
-        """
-        Summary of count of samples used during model training.
-        """
         return pulumi.get(self, "dataset_summaries")
 
     @property
     @pulumi.getter(name="labelMetricsReports")
     def label_metrics_reports(self) -> Optional[Sequence['outputs.ModelMetricLabelMetricsReport']]:
-        """
-        List of metrics entries per label.
-        """
         return pulumi.get(self, "label_metrics_reports")
 
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[str]:
-        """
-        The type of the Document model.
-        """
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="overallMetricsReports")
     def overall_metrics_reports(self) -> Optional[Sequence['outputs.ModelMetricOverallMetricsReport']]:
-        """
-        Overall Metrics report for Document Classification Model.
-        """
         return pulumi.get(self, "overall_metrics_reports")
 
 
@@ -194,11 +176,6 @@ class ModelMetricDatasetSummary(dict):
                  test_sample_count: Optional[int] = None,
                  training_sample_count: Optional[int] = None,
                  validation_sample_count: Optional[int] = None):
-        """
-        :param int test_sample_count: Number of samples used for testing the model.
-        :param int training_sample_count: Number of samples used for training the model.
-        :param int validation_sample_count: Number of samples used for validating the model.
-        """
         if test_sample_count is not None:
             pulumi.set(__self__, "test_sample_count", test_sample_count)
         if training_sample_count is not None:
@@ -209,25 +186,16 @@ class ModelMetricDatasetSummary(dict):
     @property
     @pulumi.getter(name="testSampleCount")
     def test_sample_count(self) -> Optional[int]:
-        """
-        Number of samples used for testing the model.
-        """
         return pulumi.get(self, "test_sample_count")
 
     @property
     @pulumi.getter(name="trainingSampleCount")
     def training_sample_count(self) -> Optional[int]:
-        """
-        Number of samples used for training the model.
-        """
         return pulumi.get(self, "training_sample_count")
 
     @property
     @pulumi.getter(name="validationSampleCount")
     def validation_sample_count(self) -> Optional[int]:
-        """
-        Number of samples used for validating the model.
-        """
         return pulumi.get(self, "validation_sample_count")
 
 
@@ -259,12 +227,6 @@ class ModelMetricLabelMetricsReport(dict):
                  document_count: Optional[int] = None,
                  label: Optional[str] = None,
                  mean_average_precision: Optional[float] = None):
-        """
-        :param Sequence['ModelMetricLabelMetricsReportConfidenceEntryArgs'] confidence_entries: List of document classification confidence report.
-        :param int document_count: Total test documents in the label.
-        :param str label: Label name
-        :param float mean_average_precision: Mean average precision under different thresholds
-        """
         if confidence_entries is not None:
             pulumi.set(__self__, "confidence_entries", confidence_entries)
         if document_count is not None:
@@ -277,33 +239,21 @@ class ModelMetricLabelMetricsReport(dict):
     @property
     @pulumi.getter(name="confidenceEntries")
     def confidence_entries(self) -> Optional[Sequence['outputs.ModelMetricLabelMetricsReportConfidenceEntry']]:
-        """
-        List of document classification confidence report.
-        """
         return pulumi.get(self, "confidence_entries")
 
     @property
     @pulumi.getter(name="documentCount")
     def document_count(self) -> Optional[int]:
-        """
-        Total test documents in the label.
-        """
         return pulumi.get(self, "document_count")
 
     @property
     @pulumi.getter
     def label(self) -> Optional[str]:
-        """
-        Label name
-        """
         return pulumi.get(self, "label")
 
     @property
     @pulumi.getter(name="meanAveragePrecision")
     def mean_average_precision(self) -> Optional[float]:
-        """
-        Mean average precision under different thresholds
-        """
         return pulumi.get(self, "mean_average_precision")
 
 
@@ -315,13 +265,6 @@ class ModelMetricLabelMetricsReportConfidenceEntry(dict):
                  precision: Optional[float] = None,
                  recall: Optional[float] = None,
                  threshold: Optional[float] = None):
-        """
-        :param float accuracy: accuracy under the threshold
-        :param float f1score: f1Score under the threshold
-        :param float precision: Precision under the threshold
-        :param float recall: Recall under the threshold
-        :param float threshold: Threshold used to calculate precision and recall.
-        """
         if accuracy is not None:
             pulumi.set(__self__, "accuracy", accuracy)
         if f1score is not None:
@@ -336,41 +279,26 @@ class ModelMetricLabelMetricsReportConfidenceEntry(dict):
     @property
     @pulumi.getter
     def accuracy(self) -> Optional[float]:
-        """
-        accuracy under the threshold
-        """
         return pulumi.get(self, "accuracy")
 
     @property
     @pulumi.getter
     def f1score(self) -> Optional[float]:
-        """
-        f1Score under the threshold
-        """
         return pulumi.get(self, "f1score")
 
     @property
     @pulumi.getter
     def precision(self) -> Optional[float]:
-        """
-        Precision under the threshold
-        """
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter
     def recall(self) -> Optional[float]:
-        """
-        Recall under the threshold
-        """
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
     def threshold(self) -> Optional[float]:
-        """
-        Threshold used to calculate precision and recall.
-        """
         return pulumi.get(self, "threshold")
 
 
@@ -401,11 +329,6 @@ class ModelMetricOverallMetricsReport(dict):
                  confidence_entries: Optional[Sequence['outputs.ModelMetricOverallMetricsReportConfidenceEntry']] = None,
                  document_count: Optional[int] = None,
                  mean_average_precision: Optional[float] = None):
-        """
-        :param Sequence['ModelMetricOverallMetricsReportConfidenceEntryArgs'] confidence_entries: List of document classification confidence report.
-        :param int document_count: Total test documents in the label.
-        :param float mean_average_precision: Mean average precision under different thresholds
-        """
         if confidence_entries is not None:
             pulumi.set(__self__, "confidence_entries", confidence_entries)
         if document_count is not None:
@@ -416,25 +339,16 @@ class ModelMetricOverallMetricsReport(dict):
     @property
     @pulumi.getter(name="confidenceEntries")
     def confidence_entries(self) -> Optional[Sequence['outputs.ModelMetricOverallMetricsReportConfidenceEntry']]:
-        """
-        List of document classification confidence report.
-        """
         return pulumi.get(self, "confidence_entries")
 
     @property
     @pulumi.getter(name="documentCount")
     def document_count(self) -> Optional[int]:
-        """
-        Total test documents in the label.
-        """
         return pulumi.get(self, "document_count")
 
     @property
     @pulumi.getter(name="meanAveragePrecision")
     def mean_average_precision(self) -> Optional[float]:
-        """
-        Mean average precision under different thresholds
-        """
         return pulumi.get(self, "mean_average_precision")
 
 
@@ -446,13 +360,6 @@ class ModelMetricOverallMetricsReportConfidenceEntry(dict):
                  precision: Optional[float] = None,
                  recall: Optional[float] = None,
                  threshold: Optional[float] = None):
-        """
-        :param float accuracy: accuracy under the threshold
-        :param float f1score: f1Score under the threshold
-        :param float precision: Precision under the threshold
-        :param float recall: Recall under the threshold
-        :param float threshold: Threshold used to calculate precision and recall.
-        """
         if accuracy is not None:
             pulumi.set(__self__, "accuracy", accuracy)
         if f1score is not None:
@@ -467,41 +374,26 @@ class ModelMetricOverallMetricsReportConfidenceEntry(dict):
     @property
     @pulumi.getter
     def accuracy(self) -> Optional[float]:
-        """
-        accuracy under the threshold
-        """
         return pulumi.get(self, "accuracy")
 
     @property
     @pulumi.getter
     def f1score(self) -> Optional[float]:
-        """
-        f1Score under the threshold
-        """
         return pulumi.get(self, "f1score")
 
     @property
     @pulumi.getter
     def precision(self) -> Optional[float]:
-        """
-        Precision under the threshold
-        """
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter
     def recall(self) -> Optional[float]:
-        """
-        Recall under the threshold
-        """
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
     def threshold(self) -> Optional[float]:
-        """
-        Threshold used to calculate precision and recall.
-        """
         return pulumi.get(self, "threshold")
 
 
@@ -532,17 +424,6 @@ class ModelTestingDataset(dict):
                  dataset_id: Optional[str] = None,
                  namespace: Optional[str] = None,
                  object: Optional[str] = None):
-        """
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -556,45 +437,26 @@ class ModelTestingDataset(dict):
     @property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[str]:
-        """
-        OCID of the Data Labeling dataset.
-        """
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        The object name of the input data file.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object")
 
 
@@ -625,17 +487,6 @@ class ModelTrainingDataset(dict):
                  dataset_id: Optional[str] = None,
                  namespace: Optional[str] = None,
                  object: Optional[str] = None):
-        """
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -649,45 +500,26 @@ class ModelTrainingDataset(dict):
     @property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[str]:
-        """
-        OCID of the Data Labeling dataset.
-        """
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        The object name of the input data file.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object")
 
 
@@ -718,17 +550,6 @@ class ModelValidationDataset(dict):
                  dataset_id: Optional[str] = None,
                  namespace: Optional[str] = None,
                  object: Optional[str] = None):
-        """
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "dataset_type", dataset_type)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -742,45 +563,26 @@ class ModelValidationDataset(dict):
     @property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[str]:
-        """
-        OCID of the Data Labeling dataset.
-        """
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        The object name of the input data file.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "object")
 
 
@@ -809,11 +611,6 @@ class ProcessorJobInputLocation(dict):
                  source_type: str,
                  data: Optional[str] = None,
                  object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None):
-        """
-        :param str source_type: The type of input location. The allowed values are:
-        :param str data: Raw document data with Base64 encoding.
-        :param Sequence['ProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
-        """
         pulumi.set(__self__, "source_type", source_type)
         if data is not None:
             pulumi.set(__self__, "data", data)
@@ -823,25 +620,16 @@ class ProcessorJobInputLocation(dict):
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
-        """
-        The type of input location. The allowed values are:
-        """
         return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter
     def data(self) -> Optional[str]:
-        """
-        Raw document data with Base64 encoding.
-        """
         return pulumi.get(self, "data")
 
     @property
     @pulumi.getter(name="objectLocations")
     def object_locations(self) -> Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']]:
-        """
-        The list of ObjectLocations.
-        """
         return pulumi.get(self, "object_locations")
 
 
@@ -851,11 +639,6 @@ class ProcessorJobInputLocationObjectLocation(dict):
                  bucket: Optional[str] = None,
                  namespace: Optional[str] = None,
                  object: Optional[str] = None):
-        """
-        :param str bucket: The Object Storage bucket name.
-        :param str namespace: The Object Storage namespace.
-        :param str object: The Object Storage object name.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
@@ -866,25 +649,16 @@ class ProcessorJobInputLocationObjectLocation(dict):
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        The Object Storage object name.
-        """
         return pulumi.get(self, "object")
 
 
@@ -894,11 +668,6 @@ class ProcessorJobOutputLocation(dict):
                  bucket: str,
                  namespace: str,
                  prefix: str):
-        """
-        :param str bucket: The Object Storage bucket name.
-        :param str namespace: The Object Storage namespace.
-        :param str prefix: The Object Storage folder name.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "prefix", prefix)
@@ -906,25 +675,16 @@ class ProcessorJobOutputLocation(dict):
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        The Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def prefix(self) -> str:
-        """
-        The Object Storage folder name.
-        """
         return pulumi.get(self, "prefix")
 
 
@@ -957,17 +717,6 @@ class ProcessorJobProcessorConfig(dict):
                  document_type: Optional[str] = None,
                  is_zip_output_enabled: Optional[bool] = None,
                  language: Optional[str] = None):
-        """
-        :param Sequence['ProcessorJobProcessorConfigFeatureArgs'] features: The types of document analysis requested.
-        :param str processor_type: The type of the processor.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str document_type: The document type.
-        :param bool is_zip_output_enabled: Whether or not to generate a ZIP file containing the results.
-        :param str language: The document language, abbreviated according to the BCP 47 Language-Tag syntax.
-        """
         pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "processor_type", processor_type)
         if document_type is not None:
@@ -980,45 +729,26 @@ class ProcessorJobProcessorConfig(dict):
     @property
     @pulumi.getter
     def features(self) -> Sequence['outputs.ProcessorJobProcessorConfigFeature']:
-        """
-        The types of document analysis requested.
-        """
         return pulumi.get(self, "features")
 
     @property
     @pulumi.getter(name="processorType")
     def processor_type(self) -> str:
-        """
-        The type of the processor.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "processor_type")
 
     @property
     @pulumi.getter(name="documentType")
     def document_type(self) -> Optional[str]:
-        """
-        The document type.
-        """
         return pulumi.get(self, "document_type")
 
     @property
     @pulumi.getter(name="isZipOutputEnabled")
     def is_zip_output_enabled(self) -> Optional[bool]:
-        """
-        Whether or not to generate a ZIP file containing the results.
-        """
         return pulumi.get(self, "is_zip_output_enabled")
 
     @property
     @pulumi.getter
     def language(self) -> Optional[str]:
-        """
-        The document language, abbreviated according to the BCP 47 Language-Tag syntax.
-        """
         return pulumi.get(self, "language")
 
 
@@ -1055,13 +785,6 @@ class ProcessorJobProcessorConfigFeature(dict):
                  max_results: Optional[int] = None,
                  model_id: Optional[str] = None,
                  tenancy_id: Optional[str] = None):
-        """
-        :param str feature_type: The type of document analysis requested. The allowed values are:
-        :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
-        :param int max_results: The maximum number of results to return.
-        :param str model_id: The custom model ID.
-        :param str tenancy_id: The custom model tenancy ID when modelId represents aliasName.
-        """
         pulumi.set(__self__, "feature_type", feature_type)
         if generate_searchable_pdf is not None:
             pulumi.set(__self__, "generate_searchable_pdf", generate_searchable_pdf)
@@ -1075,551 +798,396 @@ class ProcessorJobProcessorConfigFeature(dict):
     @property
     @pulumi.getter(name="featureType")
     def feature_type(self) -> str:
-        """
-        The type of document analysis requested. The allowed values are:
-        """
         return pulumi.get(self, "feature_type")
 
     @property
     @pulumi.getter(name="generateSearchablePdf")
     def generate_searchable_pdf(self) -> Optional[bool]:
-        """
-        Whether or not to generate a searchable PDF file.
-        """
         return pulumi.get(self, "generate_searchable_pdf")
 
     @property
     @pulumi.getter(name="maxResults")
     def max_results(self) -> Optional[int]:
-        """
-        The maximum number of results to return.
-        """
         return pulumi.get(self, "max_results")
 
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[str]:
-        """
-        The custom model ID.
-        """
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> Optional[str]:
-        """
-        The custom model tenancy ID when modelId represents aliasName.
-        """
         return pulumi.get(self, "tenancy_id")
 
 
 @pulumi.output_type
 class GetModelComponentModelResult(dict):
     def __init__(__self__, *,
-                 model_id: str):
-        """
-        :param str model_id: A unique model identifier.
-        """
-        pulumi.set(__self__, "model_id", model_id)
+                 model_id: Optional[str] = None):
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        A unique model identifier.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
 
 @pulumi.output_type
 class GetModelMetricResult(dict):
     def __init__(__self__, *,
-                 dataset_summaries: Sequence['outputs.GetModelMetricDatasetSummaryResult'],
-                 label_metrics_reports: Sequence['outputs.GetModelMetricLabelMetricsReportResult'],
-                 model_type: str,
-                 overall_metrics_reports: Sequence['outputs.GetModelMetricOverallMetricsReportResult']):
-        """
-        :param Sequence['GetModelMetricDatasetSummaryArgs'] dataset_summaries: Summary of count of samples used during model training.
-        :param Sequence['GetModelMetricLabelMetricsReportArgs'] label_metrics_reports: List of metrics entries per label.
-        :param str model_type: The type of the Document model.
-        :param Sequence['GetModelMetricOverallMetricsReportArgs'] overall_metrics_reports: Overall Metrics report for Document Classification Model.
-        """
-        pulumi.set(__self__, "dataset_summaries", dataset_summaries)
-        pulumi.set(__self__, "label_metrics_reports", label_metrics_reports)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "overall_metrics_reports", overall_metrics_reports)
+                 dataset_summaries: Optional[Sequence['outputs.GetModelMetricDatasetSummaryResult']] = None,
+                 label_metrics_reports: Optional[Sequence['outputs.GetModelMetricLabelMetricsReportResult']] = None,
+                 model_type: Optional[str] = None,
+                 overall_metrics_reports: Optional[Sequence['outputs.GetModelMetricOverallMetricsReportResult']] = None):
+        if dataset_summaries is not None:
+            pulumi.set(__self__, "dataset_summaries", dataset_summaries)
+        if label_metrics_reports is not None:
+            pulumi.set(__self__, "label_metrics_reports", label_metrics_reports)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if overall_metrics_reports is not None:
+            pulumi.set(__self__, "overall_metrics_reports", overall_metrics_reports)
 
     @property
     @pulumi.getter(name="datasetSummaries")
-    def dataset_summaries(self) -> Sequence['outputs.GetModelMetricDatasetSummaryResult']:
-        """
-        Summary of count of samples used during model training.
-        """
+    def dataset_summaries(self) -> Optional[Sequence['outputs.GetModelMetricDatasetSummaryResult']]:
         return pulumi.get(self, "dataset_summaries")
 
     @property
     @pulumi.getter(name="labelMetricsReports")
-    def label_metrics_reports(self) -> Sequence['outputs.GetModelMetricLabelMetricsReportResult']:
-        """
-        List of metrics entries per label.
-        """
+    def label_metrics_reports(self) -> Optional[Sequence['outputs.GetModelMetricLabelMetricsReportResult']]:
         return pulumi.get(self, "label_metrics_reports")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The type of the Document model.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="overallMetricsReports")
-    def overall_metrics_reports(self) -> Sequence['outputs.GetModelMetricOverallMetricsReportResult']:
-        """
-        Overall Metrics report for Document Classification Model.
-        """
+    def overall_metrics_reports(self) -> Optional[Sequence['outputs.GetModelMetricOverallMetricsReportResult']]:
         return pulumi.get(self, "overall_metrics_reports")
 
 
 @pulumi.output_type
 class GetModelMetricDatasetSummaryResult(dict):
     def __init__(__self__, *,
-                 test_sample_count: int,
-                 training_sample_count: int,
-                 validation_sample_count: int):
-        """
-        :param int test_sample_count: Number of samples used for testing the model.
-        :param int training_sample_count: Number of samples used for training the model.
-        :param int validation_sample_count: Number of samples used for validating the model.
-        """
-        pulumi.set(__self__, "test_sample_count", test_sample_count)
-        pulumi.set(__self__, "training_sample_count", training_sample_count)
-        pulumi.set(__self__, "validation_sample_count", validation_sample_count)
+                 test_sample_count: Optional[int] = None,
+                 training_sample_count: Optional[int] = None,
+                 validation_sample_count: Optional[int] = None):
+        if test_sample_count is not None:
+            pulumi.set(__self__, "test_sample_count", test_sample_count)
+        if training_sample_count is not None:
+            pulumi.set(__self__, "training_sample_count", training_sample_count)
+        if validation_sample_count is not None:
+            pulumi.set(__self__, "validation_sample_count", validation_sample_count)
 
     @property
     @pulumi.getter(name="testSampleCount")
-    def test_sample_count(self) -> int:
-        """
-        Number of samples used for testing the model.
-        """
+    def test_sample_count(self) -> Optional[int]:
         return pulumi.get(self, "test_sample_count")
 
     @property
     @pulumi.getter(name="trainingSampleCount")
-    def training_sample_count(self) -> int:
-        """
-        Number of samples used for training the model.
-        """
+    def training_sample_count(self) -> Optional[int]:
         return pulumi.get(self, "training_sample_count")
 
     @property
     @pulumi.getter(name="validationSampleCount")
-    def validation_sample_count(self) -> int:
-        """
-        Number of samples used for validating the model.
-        """
+    def validation_sample_count(self) -> Optional[int]:
         return pulumi.get(self, "validation_sample_count")
 
 
 @pulumi.output_type
 class GetModelMetricLabelMetricsReportResult(dict):
     def __init__(__self__, *,
-                 confidence_entries: Sequence['outputs.GetModelMetricLabelMetricsReportConfidenceEntryResult'],
-                 document_count: int,
-                 label: str,
-                 mean_average_precision: float):
-        """
-        :param Sequence['GetModelMetricLabelMetricsReportConfidenceEntryArgs'] confidence_entries: List of document classification confidence report.
-        :param int document_count: Total test documents in the label.
-        :param str label: Label name
-        :param float mean_average_precision: Mean average precision under different thresholds
-        """
-        pulumi.set(__self__, "confidence_entries", confidence_entries)
-        pulumi.set(__self__, "document_count", document_count)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "mean_average_precision", mean_average_precision)
+                 confidence_entries: Optional[Sequence['outputs.GetModelMetricLabelMetricsReportConfidenceEntryResult']] = None,
+                 document_count: Optional[int] = None,
+                 label: Optional[str] = None,
+                 mean_average_precision: Optional[float] = None):
+        if confidence_entries is not None:
+            pulumi.set(__self__, "confidence_entries", confidence_entries)
+        if document_count is not None:
+            pulumi.set(__self__, "document_count", document_count)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if mean_average_precision is not None:
+            pulumi.set(__self__, "mean_average_precision", mean_average_precision)
 
     @property
     @pulumi.getter(name="confidenceEntries")
-    def confidence_entries(self) -> Sequence['outputs.GetModelMetricLabelMetricsReportConfidenceEntryResult']:
-        """
-        List of document classification confidence report.
-        """
+    def confidence_entries(self) -> Optional[Sequence['outputs.GetModelMetricLabelMetricsReportConfidenceEntryResult']]:
         return pulumi.get(self, "confidence_entries")
 
     @property
     @pulumi.getter(name="documentCount")
-    def document_count(self) -> int:
-        """
-        Total test documents in the label.
-        """
+    def document_count(self) -> Optional[int]:
         return pulumi.get(self, "document_count")
 
     @property
     @pulumi.getter
-    def label(self) -> str:
-        """
-        Label name
-        """
+    def label(self) -> Optional[str]:
         return pulumi.get(self, "label")
 
     @property
     @pulumi.getter(name="meanAveragePrecision")
-    def mean_average_precision(self) -> float:
-        """
-        Mean average precision under different thresholds
-        """
+    def mean_average_precision(self) -> Optional[float]:
         return pulumi.get(self, "mean_average_precision")
 
 
 @pulumi.output_type
 class GetModelMetricLabelMetricsReportConfidenceEntryResult(dict):
     def __init__(__self__, *,
-                 accuracy: float,
-                 f1score: float,
-                 precision: float,
-                 recall: float,
-                 threshold: float):
-        """
-        :param float accuracy: accuracy under the threshold
-        :param float f1score: f1Score under the threshold
-        :param float precision: Precision under the threshold
-        :param float recall: Recall under the threshold
-        :param float threshold: Threshold used to calculate precision and recall.
-        """
-        pulumi.set(__self__, "accuracy", accuracy)
-        pulumi.set(__self__, "f1score", f1score)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "threshold", threshold)
+                 accuracy: Optional[float] = None,
+                 f1score: Optional[float] = None,
+                 precision: Optional[float] = None,
+                 recall: Optional[float] = None,
+                 threshold: Optional[float] = None):
+        if accuracy is not None:
+            pulumi.set(__self__, "accuracy", accuracy)
+        if f1score is not None:
+            pulumi.set(__self__, "f1score", f1score)
+        if precision is not None:
+            pulumi.set(__self__, "precision", precision)
+        if recall is not None:
+            pulumi.set(__self__, "recall", recall)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter
-    def accuracy(self) -> float:
-        """
-        accuracy under the threshold
-        """
+    def accuracy(self) -> Optional[float]:
         return pulumi.get(self, "accuracy")
 
     @property
     @pulumi.getter
-    def f1score(self) -> float:
-        """
-        f1Score under the threshold
-        """
+    def f1score(self) -> Optional[float]:
         return pulumi.get(self, "f1score")
 
     @property
     @pulumi.getter
-    def precision(self) -> float:
-        """
-        Precision under the threshold
-        """
+    def precision(self) -> Optional[float]:
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter
-    def recall(self) -> float:
-        """
-        Recall under the threshold
-        """
+    def recall(self) -> Optional[float]:
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        Threshold used to calculate precision and recall.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
 class GetModelMetricOverallMetricsReportResult(dict):
     def __init__(__self__, *,
-                 confidence_entries: Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult'],
-                 document_count: int,
-                 mean_average_precision: float):
-        """
-        :param Sequence['GetModelMetricOverallMetricsReportConfidenceEntryArgs'] confidence_entries: List of document classification confidence report.
-        :param int document_count: Total test documents in the label.
-        :param float mean_average_precision: Mean average precision under different thresholds
-        """
-        pulumi.set(__self__, "confidence_entries", confidence_entries)
-        pulumi.set(__self__, "document_count", document_count)
-        pulumi.set(__self__, "mean_average_precision", mean_average_precision)
+                 confidence_entries: Optional[Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult']] = None,
+                 document_count: Optional[int] = None,
+                 mean_average_precision: Optional[float] = None):
+        if confidence_entries is not None:
+            pulumi.set(__self__, "confidence_entries", confidence_entries)
+        if document_count is not None:
+            pulumi.set(__self__, "document_count", document_count)
+        if mean_average_precision is not None:
+            pulumi.set(__self__, "mean_average_precision", mean_average_precision)
 
     @property
     @pulumi.getter(name="confidenceEntries")
-    def confidence_entries(self) -> Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult']:
-        """
-        List of document classification confidence report.
-        """
+    def confidence_entries(self) -> Optional[Sequence['outputs.GetModelMetricOverallMetricsReportConfidenceEntryResult']]:
         return pulumi.get(self, "confidence_entries")
 
     @property
     @pulumi.getter(name="documentCount")
-    def document_count(self) -> int:
-        """
-        Total test documents in the label.
-        """
+    def document_count(self) -> Optional[int]:
         return pulumi.get(self, "document_count")
 
     @property
     @pulumi.getter(name="meanAveragePrecision")
-    def mean_average_precision(self) -> float:
-        """
-        Mean average precision under different thresholds
-        """
+    def mean_average_precision(self) -> Optional[float]:
         return pulumi.get(self, "mean_average_precision")
 
 
 @pulumi.output_type
 class GetModelMetricOverallMetricsReportConfidenceEntryResult(dict):
     def __init__(__self__, *,
-                 accuracy: float,
-                 f1score: float,
-                 precision: float,
-                 recall: float,
-                 threshold: float):
-        """
-        :param float accuracy: accuracy under the threshold
-        :param float f1score: f1Score under the threshold
-        :param float precision: Precision under the threshold
-        :param float recall: Recall under the threshold
-        :param float threshold: Threshold used to calculate precision and recall.
-        """
-        pulumi.set(__self__, "accuracy", accuracy)
-        pulumi.set(__self__, "f1score", f1score)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "threshold", threshold)
+                 accuracy: Optional[float] = None,
+                 f1score: Optional[float] = None,
+                 precision: Optional[float] = None,
+                 recall: Optional[float] = None,
+                 threshold: Optional[float] = None):
+        if accuracy is not None:
+            pulumi.set(__self__, "accuracy", accuracy)
+        if f1score is not None:
+            pulumi.set(__self__, "f1score", f1score)
+        if precision is not None:
+            pulumi.set(__self__, "precision", precision)
+        if recall is not None:
+            pulumi.set(__self__, "recall", recall)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter
-    def accuracy(self) -> float:
-        """
-        accuracy under the threshold
-        """
+    def accuracy(self) -> Optional[float]:
         return pulumi.get(self, "accuracy")
 
     @property
     @pulumi.getter
-    def f1score(self) -> float:
-        """
-        f1Score under the threshold
-        """
+    def f1score(self) -> Optional[float]:
         return pulumi.get(self, "f1score")
 
     @property
     @pulumi.getter
-    def precision(self) -> float:
-        """
-        Precision under the threshold
-        """
+    def precision(self) -> Optional[float]:
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter
-    def recall(self) -> float:
-        """
-        Recall under the threshold
-        """
+    def recall(self) -> Optional[float]:
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        Threshold used to calculate precision and recall.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
 class GetModelTestingDatasetResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 dataset_id: str,
-                 dataset_type: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 dataset_id: Optional[str] = None,
+                 dataset_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if dataset_id is not None:
+            pulumi.set(__self__, "dataset_id", dataset_id)
+        if dataset_type is not None:
+            pulumi.set(__self__, "dataset_type", dataset_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> str:
-        """
-        OCID of the Data Labeling dataset.
-        """
+    def dataset_id(self) -> Optional[str]:
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter(name="datasetType")
-    def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
+    def dataset_type(self) -> Optional[str]:
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the input data file.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetModelTrainingDatasetResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 dataset_id: str,
-                 dataset_type: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 dataset_id: Optional[str] = None,
+                 dataset_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if dataset_id is not None:
+            pulumi.set(__self__, "dataset_id", dataset_id)
+        if dataset_type is not None:
+            pulumi.set(__self__, "dataset_type", dataset_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> str:
-        """
-        OCID of the Data Labeling dataset.
-        """
+    def dataset_id(self) -> Optional[str]:
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter(name="datasetType")
-    def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
+    def dataset_type(self) -> Optional[str]:
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the input data file.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetModelValidationDatasetResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 dataset_id: str,
-                 dataset_type: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 dataset_id: Optional[str] = None,
+                 dataset_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if dataset_id is not None:
+            pulumi.set(__self__, "dataset_id", dataset_id)
+        if dataset_type is not None:
+            pulumi.set(__self__, "dataset_type", dataset_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> str:
-        """
-        OCID of the Data Labeling dataset.
-        """
+    def dataset_id(self) -> Optional[str]:
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter(name="datasetType")
-    def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
+    def dataset_type(self) -> Optional[str]:
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the input data file.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
@@ -1653,1059 +1221,773 @@ class GetModelsFilterResult(dict):
 @pulumi.output_type
 class GetModelsModelCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetModelsModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetModelsModelCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetModelsModelCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 component_models: Sequence['outputs.GetModelsModelCollectionItemComponentModelResult'],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_composed_model: bool,
-                 is_quick_mode: bool,
-                 labels: Sequence[str],
-                 lifecycle_details: str,
-                 max_training_time_in_hours: float,
-                 metrics: Sequence['outputs.GetModelsModelCollectionItemMetricResult'],
-                 model_id: str,
-                 model_type: str,
-                 model_version: str,
-                 project_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 tenancy_id: str,
-                 testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult'],
-                 time_created: str,
-                 time_updated: str,
-                 trained_time_in_hours: float,
-                 training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
-                 validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Sequence['GetModelsModelCollectionItemComponentModelArgs'] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-        :param str description: An optional description of the model.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param str id: The filter to find the model with the given identifier.
-        :param bool is_composed_model: Set to true when the model is created by using multiple key value extraction models.
-        :param bool is_quick_mode: Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
-        :param Sequence[str] labels: The collection of labels used to train the custom model.
-        :param str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
-        :param float max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
-        :param Sequence['GetModelsModelCollectionItemMetricArgs'] metrics: Trained Model Metrics.
-        :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        :param str model_type: The type of the Document model.
-        :param str model_version: The version of the model.
-        :param str project_id: The ID of the project for which to list the objects.
-        :param str state: The filter to match models with the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-        :param str tenancy_id: The tenancy id of the model.
-        :param Sequence['GetModelsModelCollectionItemTestingDatasetArgs'] testing_datasets: The base entity which is the input for creating and training a model.
-        :param str time_created: When the model was created, as an RFC3339 datetime string.
-        :param str time_updated: When the model was updated, as an RFC3339 datetime string.
-        :param float trained_time_in_hours: The total hours actually used for model training.
-        :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: The base entity which is the input for creating and training a model.
-        :param Sequence['GetModelsModelCollectionItemValidationDatasetArgs'] validation_datasets: The base entity which is the input for creating and training a model.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "component_models", component_models)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_composed_model", is_composed_model)
-        pulumi.set(__self__, "is_quick_mode", is_quick_mode)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "testing_datasets", testing_datasets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "trained_time_in_hours", trained_time_in_hours)
-        pulumi.set(__self__, "training_datasets", training_datasets)
-        pulumi.set(__self__, "validation_datasets", validation_datasets)
+                 compartment_id: Optional[str] = None,
+                 component_models: Optional[Sequence['outputs.GetModelsModelCollectionItemComponentModelResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_composed_model: Optional[bool] = None,
+                 is_quick_mode: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 lifecycle_details: Optional[str] = None,
+                 max_training_time_in_hours: Optional[float] = None,
+                 metrics: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricResult']] = None,
+                 model_id: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 tenancy_id: Optional[str] = None,
+                 testing_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 trained_time_in_hours: Optional[float] = None,
+                 training_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']] = None,
+                 validation_datasets: Optional[Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if component_models is not None:
+            pulumi.set(__self__, "component_models", component_models)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_composed_model is not None:
+            pulumi.set(__self__, "is_composed_model", is_composed_model)
+        if is_quick_mode is not None:
+            pulumi.set(__self__, "is_quick_mode", is_quick_mode)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if max_training_time_in_hours is not None:
+            pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if testing_datasets is not None:
+            pulumi.set(__self__, "testing_datasets", testing_datasets)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if trained_time_in_hours is not None:
+            pulumi.set(__self__, "trained_time_in_hours", trained_time_in_hours)
+        if training_datasets is not None:
+            pulumi.set(__self__, "training_datasets", training_datasets)
+        if validation_datasets is not None:
+            pulumi.set(__self__, "validation_datasets", validation_datasets)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentModels")
-    def component_models(self) -> Sequence['outputs.GetModelsModelCollectionItemComponentModelResult']:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
-        """
+    def component_models(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemComponentModelResult']]:
         return pulumi.get(self, "component_models")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        An optional description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The filter to find the model with the given identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isComposedModel")
-    def is_composed_model(self) -> bool:
-        """
-        Set to true when the model is created by using multiple key value extraction models.
-        """
+    def is_composed_model(self) -> Optional[bool]:
         return pulumi.get(self, "is_composed_model")
 
     @property
     @pulumi.getter(name="isQuickMode")
-    def is_quick_mode(self) -> bool:
-        """
-        Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
-        """
+    def is_quick_mode(self) -> Optional[bool]:
         return pulumi.get(self, "is_quick_mode")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        The collection of labels used to train the custom model.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail, that can provide actionable information if training failed.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxTrainingTimeInHours")
-    def max_training_time_in_hours(self) -> float:
-        """
-        The maximum model training time in hours, expressed as a decimal fraction.
-        """
+    def max_training_time_in_hours(self) -> Optional[float]:
         return pulumi.get(self, "max_training_time_in_hours")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetModelsModelCollectionItemMetricResult']:
-        """
-        Trained Model Metrics.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The type of the Document model.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The version of the model.
-        """
+    def model_version(self) -> Optional[str]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The ID of the project for which to list the objects.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The filter to match models with the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The tenancy id of the model.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="testingDatasets")
-    def testing_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']:
-        """
-        The base entity which is the input for creating and training a model.
-        """
+    def testing_datasets(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']]:
         return pulumi.get(self, "testing_datasets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the model was created, as an RFC3339 datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        When the model was updated, as an RFC3339 datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="trainedTimeInHours")
-    def trained_time_in_hours(self) -> float:
-        """
-        The total hours actually used for model training.
-        """
+    def trained_time_in_hours(self) -> Optional[float]:
         return pulumi.get(self, "trained_time_in_hours")
 
     @property
     @pulumi.getter(name="trainingDatasets")
-    def training_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']:
-        """
-        The base entity which is the input for creating and training a model.
-        """
+    def training_datasets(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']]:
         return pulumi.get(self, "training_datasets")
 
     @property
     @pulumi.getter(name="validationDatasets")
-    def validation_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']:
-        """
-        The base entity which is the input for creating and training a model.
-        """
+    def validation_datasets(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']]:
         return pulumi.get(self, "validation_datasets")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemComponentModelResult(dict):
     def __init__(__self__, *,
-                 model_id: str):
-        """
-        :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        """
-        pulumi.set(__self__, "model_id", model_id)
+                 model_id: Optional[str] = None):
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemMetricResult(dict):
     def __init__(__self__, *,
-                 dataset_summaries: Sequence['outputs.GetModelsModelCollectionItemMetricDatasetSummaryResult'],
-                 label_metrics_reports: Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult'],
-                 model_type: str,
-                 overall_metrics_reports: Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult']):
-        """
-        :param Sequence['GetModelsModelCollectionItemMetricDatasetSummaryArgs'] dataset_summaries: Summary of count of samples used during model training.
-        :param Sequence['GetModelsModelCollectionItemMetricLabelMetricsReportArgs'] label_metrics_reports: List of metrics entries per label.
-        :param str model_type: The type of the Document model.
-        :param Sequence['GetModelsModelCollectionItemMetricOverallMetricsReportArgs'] overall_metrics_reports: Overall Metrics report for Document Classification Model.
-        """
-        pulumi.set(__self__, "dataset_summaries", dataset_summaries)
-        pulumi.set(__self__, "label_metrics_reports", label_metrics_reports)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "overall_metrics_reports", overall_metrics_reports)
+                 dataset_summaries: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricDatasetSummaryResult']] = None,
+                 label_metrics_reports: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult']] = None,
+                 model_type: Optional[str] = None,
+                 overall_metrics_reports: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult']] = None):
+        if dataset_summaries is not None:
+            pulumi.set(__self__, "dataset_summaries", dataset_summaries)
+        if label_metrics_reports is not None:
+            pulumi.set(__self__, "label_metrics_reports", label_metrics_reports)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if overall_metrics_reports is not None:
+            pulumi.set(__self__, "overall_metrics_reports", overall_metrics_reports)
 
     @property
     @pulumi.getter(name="datasetSummaries")
-    def dataset_summaries(self) -> Sequence['outputs.GetModelsModelCollectionItemMetricDatasetSummaryResult']:
-        """
-        Summary of count of samples used during model training.
-        """
+    def dataset_summaries(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemMetricDatasetSummaryResult']]:
         return pulumi.get(self, "dataset_summaries")
 
     @property
     @pulumi.getter(name="labelMetricsReports")
-    def label_metrics_reports(self) -> Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult']:
-        """
-        List of metrics entries per label.
-        """
+    def label_metrics_reports(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportResult']]:
         return pulumi.get(self, "label_metrics_reports")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The type of the Document model.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="overallMetricsReports")
-    def overall_metrics_reports(self) -> Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult']:
-        """
-        Overall Metrics report for Document Classification Model.
-        """
+    def overall_metrics_reports(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportResult']]:
         return pulumi.get(self, "overall_metrics_reports")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemMetricDatasetSummaryResult(dict):
     def __init__(__self__, *,
-                 test_sample_count: int,
-                 training_sample_count: int,
-                 validation_sample_count: int):
-        """
-        :param int test_sample_count: Number of samples used for testing the model.
-        :param int training_sample_count: Number of samples used for training the model.
-        :param int validation_sample_count: Number of samples used for validating the model.
-        """
-        pulumi.set(__self__, "test_sample_count", test_sample_count)
-        pulumi.set(__self__, "training_sample_count", training_sample_count)
-        pulumi.set(__self__, "validation_sample_count", validation_sample_count)
+                 test_sample_count: Optional[int] = None,
+                 training_sample_count: Optional[int] = None,
+                 validation_sample_count: Optional[int] = None):
+        if test_sample_count is not None:
+            pulumi.set(__self__, "test_sample_count", test_sample_count)
+        if training_sample_count is not None:
+            pulumi.set(__self__, "training_sample_count", training_sample_count)
+        if validation_sample_count is not None:
+            pulumi.set(__self__, "validation_sample_count", validation_sample_count)
 
     @property
     @pulumi.getter(name="testSampleCount")
-    def test_sample_count(self) -> int:
-        """
-        Number of samples used for testing the model.
-        """
+    def test_sample_count(self) -> Optional[int]:
         return pulumi.get(self, "test_sample_count")
 
     @property
     @pulumi.getter(name="trainingSampleCount")
-    def training_sample_count(self) -> int:
-        """
-        Number of samples used for training the model.
-        """
+    def training_sample_count(self) -> Optional[int]:
         return pulumi.get(self, "training_sample_count")
 
     @property
     @pulumi.getter(name="validationSampleCount")
-    def validation_sample_count(self) -> int:
-        """
-        Number of samples used for validating the model.
-        """
+    def validation_sample_count(self) -> Optional[int]:
         return pulumi.get(self, "validation_sample_count")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemMetricLabelMetricsReportResult(dict):
     def __init__(__self__, *,
-                 confidence_entries: Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult'],
-                 document_count: int,
-                 label: str,
-                 mean_average_precision: float):
-        """
-        :param Sequence['GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryArgs'] confidence_entries: List of document classification confidence report.
-        :param int document_count: Total test documents in the label.
-        :param str label: Label name
-        :param float mean_average_precision: Mean average precision under different thresholds
-        """
-        pulumi.set(__self__, "confidence_entries", confidence_entries)
-        pulumi.set(__self__, "document_count", document_count)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "mean_average_precision", mean_average_precision)
+                 confidence_entries: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult']] = None,
+                 document_count: Optional[int] = None,
+                 label: Optional[str] = None,
+                 mean_average_precision: Optional[float] = None):
+        if confidence_entries is not None:
+            pulumi.set(__self__, "confidence_entries", confidence_entries)
+        if document_count is not None:
+            pulumi.set(__self__, "document_count", document_count)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if mean_average_precision is not None:
+            pulumi.set(__self__, "mean_average_precision", mean_average_precision)
 
     @property
     @pulumi.getter(name="confidenceEntries")
-    def confidence_entries(self) -> Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult']:
-        """
-        List of document classification confidence report.
-        """
+    def confidence_entries(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult']]:
         return pulumi.get(self, "confidence_entries")
 
     @property
     @pulumi.getter(name="documentCount")
-    def document_count(self) -> int:
-        """
-        Total test documents in the label.
-        """
+    def document_count(self) -> Optional[int]:
         return pulumi.get(self, "document_count")
 
     @property
     @pulumi.getter
-    def label(self) -> str:
-        """
-        Label name
-        """
+    def label(self) -> Optional[str]:
         return pulumi.get(self, "label")
 
     @property
     @pulumi.getter(name="meanAveragePrecision")
-    def mean_average_precision(self) -> float:
-        """
-        Mean average precision under different thresholds
-        """
+    def mean_average_precision(self) -> Optional[float]:
         return pulumi.get(self, "mean_average_precision")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult(dict):
     def __init__(__self__, *,
-                 accuracy: float,
-                 f1score: float,
-                 precision: float,
-                 recall: float,
-                 threshold: float):
-        """
-        :param float accuracy: accuracy under the threshold
-        :param float f1score: f1Score under the threshold
-        :param float precision: Precision under the threshold
-        :param float recall: Recall under the threshold
-        :param float threshold: Threshold used to calculate precision and recall.
-        """
-        pulumi.set(__self__, "accuracy", accuracy)
-        pulumi.set(__self__, "f1score", f1score)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "threshold", threshold)
+                 accuracy: Optional[float] = None,
+                 f1score: Optional[float] = None,
+                 precision: Optional[float] = None,
+                 recall: Optional[float] = None,
+                 threshold: Optional[float] = None):
+        if accuracy is not None:
+            pulumi.set(__self__, "accuracy", accuracy)
+        if f1score is not None:
+            pulumi.set(__self__, "f1score", f1score)
+        if precision is not None:
+            pulumi.set(__self__, "precision", precision)
+        if recall is not None:
+            pulumi.set(__self__, "recall", recall)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter
-    def accuracy(self) -> float:
-        """
-        accuracy under the threshold
-        """
+    def accuracy(self) -> Optional[float]:
         return pulumi.get(self, "accuracy")
 
     @property
     @pulumi.getter
-    def f1score(self) -> float:
-        """
-        f1Score under the threshold
-        """
+    def f1score(self) -> Optional[float]:
         return pulumi.get(self, "f1score")
 
     @property
     @pulumi.getter
-    def precision(self) -> float:
-        """
-        Precision under the threshold
-        """
+    def precision(self) -> Optional[float]:
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter
-    def recall(self) -> float:
-        """
-        Recall under the threshold
-        """
+    def recall(self) -> Optional[float]:
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        Threshold used to calculate precision and recall.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemMetricOverallMetricsReportResult(dict):
     def __init__(__self__, *,
-                 confidence_entries: Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult'],
-                 document_count: int,
-                 mean_average_precision: float):
-        """
-        :param Sequence['GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArgs'] confidence_entries: List of document classification confidence report.
-        :param int document_count: Total test documents in the label.
-        :param float mean_average_precision: Mean average precision under different thresholds
-        """
-        pulumi.set(__self__, "confidence_entries", confidence_entries)
-        pulumi.set(__self__, "document_count", document_count)
-        pulumi.set(__self__, "mean_average_precision", mean_average_precision)
+                 confidence_entries: Optional[Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult']] = None,
+                 document_count: Optional[int] = None,
+                 mean_average_precision: Optional[float] = None):
+        if confidence_entries is not None:
+            pulumi.set(__self__, "confidence_entries", confidence_entries)
+        if document_count is not None:
+            pulumi.set(__self__, "document_count", document_count)
+        if mean_average_precision is not None:
+            pulumi.set(__self__, "mean_average_precision", mean_average_precision)
 
     @property
     @pulumi.getter(name="confidenceEntries")
-    def confidence_entries(self) -> Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult']:
-        """
-        List of document classification confidence report.
-        """
+    def confidence_entries(self) -> Optional[Sequence['outputs.GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult']]:
         return pulumi.get(self, "confidence_entries")
 
     @property
     @pulumi.getter(name="documentCount")
-    def document_count(self) -> int:
-        """
-        Total test documents in the label.
-        """
+    def document_count(self) -> Optional[int]:
         return pulumi.get(self, "document_count")
 
     @property
     @pulumi.getter(name="meanAveragePrecision")
-    def mean_average_precision(self) -> float:
-        """
-        Mean average precision under different thresholds
-        """
+    def mean_average_precision(self) -> Optional[float]:
         return pulumi.get(self, "mean_average_precision")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult(dict):
     def __init__(__self__, *,
-                 accuracy: float,
-                 f1score: float,
-                 precision: float,
-                 recall: float,
-                 threshold: float):
-        """
-        :param float accuracy: accuracy under the threshold
-        :param float f1score: f1Score under the threshold
-        :param float precision: Precision under the threshold
-        :param float recall: Recall under the threshold
-        :param float threshold: Threshold used to calculate precision and recall.
-        """
-        pulumi.set(__self__, "accuracy", accuracy)
-        pulumi.set(__self__, "f1score", f1score)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "threshold", threshold)
+                 accuracy: Optional[float] = None,
+                 f1score: Optional[float] = None,
+                 precision: Optional[float] = None,
+                 recall: Optional[float] = None,
+                 threshold: Optional[float] = None):
+        if accuracy is not None:
+            pulumi.set(__self__, "accuracy", accuracy)
+        if f1score is not None:
+            pulumi.set(__self__, "f1score", f1score)
+        if precision is not None:
+            pulumi.set(__self__, "precision", precision)
+        if recall is not None:
+            pulumi.set(__self__, "recall", recall)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter
-    def accuracy(self) -> float:
-        """
-        accuracy under the threshold
-        """
+    def accuracy(self) -> Optional[float]:
         return pulumi.get(self, "accuracy")
 
     @property
     @pulumi.getter
-    def f1score(self) -> float:
-        """
-        f1Score under the threshold
-        """
+    def f1score(self) -> Optional[float]:
         return pulumi.get(self, "f1score")
 
     @property
     @pulumi.getter
-    def precision(self) -> float:
-        """
-        Precision under the threshold
-        """
+    def precision(self) -> Optional[float]:
         return pulumi.get(self, "precision")
 
     @property
     @pulumi.getter
-    def recall(self) -> float:
-        """
-        Recall under the threshold
-        """
+    def recall(self) -> Optional[float]:
         return pulumi.get(self, "recall")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        Threshold used to calculate precision and recall.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemTestingDatasetResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 dataset_id: str,
-                 dataset_type: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 dataset_id: Optional[str] = None,
+                 dataset_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if dataset_id is not None:
+            pulumi.set(__self__, "dataset_id", dataset_id)
+        if dataset_type is not None:
+            pulumi.set(__self__, "dataset_type", dataset_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> str:
-        """
-        OCID of the Data Labeling dataset.
-        """
+    def dataset_id(self) -> Optional[str]:
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter(name="datasetType")
-    def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
+    def dataset_type(self) -> Optional[str]:
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the input data file.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemTrainingDatasetResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 dataset_id: str,
-                 dataset_type: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 dataset_id: Optional[str] = None,
+                 dataset_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if dataset_id is not None:
+            pulumi.set(__self__, "dataset_id", dataset_id)
+        if dataset_type is not None:
+            pulumi.set(__self__, "dataset_type", dataset_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> str:
-        """
-        OCID of the Data Labeling dataset.
-        """
+    def dataset_id(self) -> Optional[str]:
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter(name="datasetType")
-    def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
+    def dataset_type(self) -> Optional[str]:
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the input data file.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetModelsModelCollectionItemValidationDatasetResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 dataset_id: str,
-                 dataset_type: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The name of the Object Storage bucket that contains the input data file.
-        :param str dataset_id: OCID of the Data Labeling dataset.
-        :param str dataset_type: The dataset type, based on where it is stored.
-        :param str namespace: The namespace name of the Object Storage bucket that contains the input data file.
-        :param str object: The object name of the input data file.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 dataset_id: Optional[str] = None,
+                 dataset_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if dataset_id is not None:
+            pulumi.set(__self__, "dataset_id", dataset_id)
+        if dataset_type is not None:
+            pulumi.set(__self__, "dataset_type", dataset_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> str:
-        """
-        OCID of the Data Labeling dataset.
-        """
+    def dataset_id(self) -> Optional[str]:
         return pulumi.get(self, "dataset_id")
 
     @property
     @pulumi.getter(name="datasetType")
-    def dataset_type(self) -> str:
-        """
-        The dataset type, based on where it is stored.
-        """
+    def dataset_type(self) -> Optional[str]:
         return pulumi.get(self, "dataset_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object name of the input data file.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetProcessorJobInputLocationResult(dict):
     def __init__(__self__, *,
-                 data: str,
-                 object_locations: Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult'],
-                 source_type: str):
-        """
-        :param str data: Raw document data with Base64 encoding.
-        :param Sequence['GetProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
-        :param str source_type: The type of input location. The allowed values are:
-        """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "object_locations", object_locations)
-        pulumi.set(__self__, "source_type", source_type)
+                 data: Optional[str] = None,
+                 object_locations: Optional[Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult']] = None,
+                 source_type: Optional[str] = None):
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if object_locations is not None:
+            pulumi.set(__self__, "object_locations", object_locations)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
 
     @property
     @pulumi.getter
-    def data(self) -> str:
-        """
-        Raw document data with Base64 encoding.
-        """
+    def data(self) -> Optional[str]:
         return pulumi.get(self, "data")
 
     @property
     @pulumi.getter(name="objectLocations")
-    def object_locations(self) -> Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult']:
-        """
-        The list of ObjectLocations.
-        """
+    def object_locations(self) -> Optional[Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult']]:
         return pulumi.get(self, "object_locations")
 
     @property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> str:
-        """
-        The type of input location. The allowed values are:
-        """
+    def source_type(self) -> Optional[str]:
         return pulumi.get(self, "source_type")
 
 
 @pulumi.output_type
 class GetProcessorJobInputLocationObjectLocationResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: The Object Storage bucket name.
-        :param str namespace: The Object Storage namespace.
-        :param str object: The Object Storage object name.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The Object Storage bucket name.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Object Storage namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The Object Storage object name.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetProcessorJobOutputLocationResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 namespace: str,
-                 prefix: str):
-        """
-        :param str bucket: The Object Storage bucket name.
-        :param str namespace: The Object Storage namespace.
-        :param str prefix: The Object Storage folder name.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The Object Storage bucket name.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Object Storage namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        The Object Storage folder name.
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
 
 @pulumi.output_type
 class GetProcessorJobProcessorConfigResult(dict):
     def __init__(__self__, *,
-                 document_type: str,
-                 features: Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult'],
-                 is_zip_output_enabled: bool,
-                 language: str,
-                 processor_type: str):
-        """
-        :param str document_type: The document type.
-        :param Sequence['GetProcessorJobProcessorConfigFeatureArgs'] features: The types of document analysis requested.
-        :param bool is_zip_output_enabled: Whether or not to generate a ZIP file containing the results.
-        :param str language: The document language, abbreviated according to the BCP 47 Language-Tag syntax.
-        :param str processor_type: The type of the processor.
-        """
-        pulumi.set(__self__, "document_type", document_type)
-        pulumi.set(__self__, "features", features)
-        pulumi.set(__self__, "is_zip_output_enabled", is_zip_output_enabled)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "processor_type", processor_type)
+                 document_type: Optional[str] = None,
+                 features: Optional[Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult']] = None,
+                 is_zip_output_enabled: Optional[bool] = None,
+                 language: Optional[str] = None,
+                 processor_type: Optional[str] = None):
+        if document_type is not None:
+            pulumi.set(__self__, "document_type", document_type)
+        if features is not None:
+            pulumi.set(__self__, "features", features)
+        if is_zip_output_enabled is not None:
+            pulumi.set(__self__, "is_zip_output_enabled", is_zip_output_enabled)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if processor_type is not None:
+            pulumi.set(__self__, "processor_type", processor_type)
 
     @property
     @pulumi.getter(name="documentType")
-    def document_type(self) -> str:
-        """
-        The document type.
-        """
+    def document_type(self) -> Optional[str]:
         return pulumi.get(self, "document_type")
 
     @property
     @pulumi.getter
-    def features(self) -> Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult']:
-        """
-        The types of document analysis requested.
-        """
+    def features(self) -> Optional[Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult']]:
         return pulumi.get(self, "features")
 
     @property
     @pulumi.getter(name="isZipOutputEnabled")
-    def is_zip_output_enabled(self) -> bool:
-        """
-        Whether or not to generate a ZIP file containing the results.
-        """
+    def is_zip_output_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_zip_output_enabled")
 
     @property
     @pulumi.getter
-    def language(self) -> str:
-        """
-        The document language, abbreviated according to the BCP 47 Language-Tag syntax.
-        """
+    def language(self) -> Optional[str]:
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter(name="processorType")
-    def processor_type(self) -> str:
-        """
-        The type of the processor.
-        """
+    def processor_type(self) -> Optional[str]:
         return pulumi.get(self, "processor_type")
 
 
 @pulumi.output_type
 class GetProcessorJobProcessorConfigFeatureResult(dict):
     def __init__(__self__, *,
-                 feature_type: str,
-                 generate_searchable_pdf: bool,
-                 max_results: int,
-                 model_id: str,
-                 tenancy_id: str):
-        """
-        :param str feature_type: The type of document analysis requested. The allowed values are:
-        :param bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
-        :param int max_results: The maximum number of results to return.
-        :param str model_id: The custom model ID.
-        :param str tenancy_id: The custom model tenancy ID when modelId represents aliasName.
-        """
-        pulumi.set(__self__, "feature_type", feature_type)
-        pulumi.set(__self__, "generate_searchable_pdf", generate_searchable_pdf)
-        pulumi.set(__self__, "max_results", max_results)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
+                 feature_type: Optional[str] = None,
+                 generate_searchable_pdf: Optional[bool] = None,
+                 max_results: Optional[int] = None,
+                 model_id: Optional[str] = None,
+                 tenancy_id: Optional[str] = None):
+        if feature_type is not None:
+            pulumi.set(__self__, "feature_type", feature_type)
+        if generate_searchable_pdf is not None:
+            pulumi.set(__self__, "generate_searchable_pdf", generate_searchable_pdf)
+        if max_results is not None:
+            pulumi.set(__self__, "max_results", max_results)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
 
     @property
     @pulumi.getter(name="featureType")
-    def feature_type(self) -> str:
-        """
-        The type of document analysis requested. The allowed values are:
-        """
+    def feature_type(self) -> Optional[str]:
         return pulumi.get(self, "feature_type")
 
     @property
     @pulumi.getter(name="generateSearchablePdf")
-    def generate_searchable_pdf(self) -> bool:
-        """
-        Whether or not to generate a searchable PDF file.
-        """
+    def generate_searchable_pdf(self) -> Optional[bool]:
         return pulumi.get(self, "generate_searchable_pdf")
 
     @property
     @pulumi.getter(name="maxResults")
-    def max_results(self) -> int:
-        """
-        The maximum number of results to return.
-        """
+    def max_results(self) -> Optional[int]:
         return pulumi.get(self, "max_results")
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The custom model ID.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The custom model tenancy ID when modelId represents aliasName.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
 
@@ -2739,140 +2021,106 @@ class GetProjectsFilterResult(dict):
 @pulumi.output_type
 class GetProjectsProjectCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProjectsProjectCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProjectsProjectCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProjectsProjectCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetProjectsProjectCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProjectsProjectCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-        :param str description: An optional description of the project.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param str id: The filter to find the project with the given identifier.
-        :param str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
-        :param str state: The filter to match projects with the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-        :param str time_created: When the project was created, as an RFC3339 datetime string.
-        :param str time_updated: When the project was updated, as an RFC3339 datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        An optional description of the project.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The filter to find the project with the given identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail, that can provide actionable information if creation failed.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The filter to match projects with the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the project was created, as an RFC3339 datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        When the project was updated, as an RFC3339 datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 

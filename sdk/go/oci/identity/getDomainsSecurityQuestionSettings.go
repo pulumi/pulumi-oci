@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Question Settings in Oracle Cloud Infrastructure Identity Domains service.
@@ -79,16 +78,16 @@ type GetDomainsSecurityQuestionSettingsResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string  `pulumi:"id"`
+	Id                        *string `pulumi:"id"`
 	IdcsEndpoint              string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage              int     `pulumi:"itemsPerPage"`
+	ItemsPerPage              *int    `pulumi:"itemsPerPage"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// The list of security_question_settings.
 	SecurityQuestionSettings []GetDomainsSecurityQuestionSettingsSecurityQuestionSetting `pulumi:"securityQuestionSettings"`
-	StartIndex               int                                                         `pulumi:"startIndex"`
-	TotalResults             int                                                         `pulumi:"totalResults"`
+	StartIndex               *int                                                        `pulumi:"startIndex"`
+	TotalResults             *int                                                        `pulumi:"totalResults"`
 }
 
 func GetDomainsSecurityQuestionSettingsOutput(ctx *pulumi.Context, args GetDomainsSecurityQuestionSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsSecurityQuestionSettingsResultOutput {
@@ -138,12 +137,6 @@ func (o GetDomainsSecurityQuestionSettingsResultOutput) ToGetDomainsSecurityQues
 	return o
 }
 
-func (o GetDomainsSecurityQuestionSettingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsSecurityQuestionSettingsResult] {
-	return pulumix.Output[GetDomainsSecurityQuestionSettingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsSecurityQuestionSettingsResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -161,16 +154,16 @@ func (o GetDomainsSecurityQuestionSettingsResultOutput) CompartmentId() pulumi.S
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsSecurityQuestionSettingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsSecurityQuestionSettingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsSecurityQuestionSettingsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsSecurityQuestionSettingsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsSecurityQuestionSettingsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsSecurityQuestionSettingsResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -189,12 +182,12 @@ func (o GetDomainsSecurityQuestionSettingsResultOutput) SecurityQuestionSettings
 	}).(GetDomainsSecurityQuestionSettingsSecurityQuestionSettingArrayOutput)
 }
 
-func (o GetDomainsSecurityQuestionSettingsResultOutput) StartIndex() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) int { return v.StartIndex }).(pulumi.IntOutput)
+func (o GetDomainsSecurityQuestionSettingsResultOutput) StartIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsSecurityQuestionSettingsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsSecurityQuestionSettingsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsSecurityQuestionSettingsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

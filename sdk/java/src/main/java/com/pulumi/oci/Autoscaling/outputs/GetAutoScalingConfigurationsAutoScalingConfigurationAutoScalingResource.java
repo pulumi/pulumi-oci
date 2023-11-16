@@ -6,6 +6,8 @@ package com.pulumi.oci.Autoscaling.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource {
@@ -13,27 +15,27 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScali
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The type of action to take.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource() {}
     /**
      * @return ID of the condition that is assigned after creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The type of action to take.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScali
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String type;
+        private @Nullable String id;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScali
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResource build() {

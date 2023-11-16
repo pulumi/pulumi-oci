@@ -69,7 +69,7 @@ export interface GetAnnouncementSubscriptionsResult {
     /**
      * The list of announcement_subscription_collection.
      */
-    readonly announcementSubscriptionCollections: outputs.AnnouncementsService.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection[];
+    readonly announcementSubscriptionCollections?: outputs.AnnouncementsService.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection[];
     /**
      * The OCID of the compartment that contains the announcement subscription.
      */

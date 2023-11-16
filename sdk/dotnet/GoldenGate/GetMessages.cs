@@ -132,7 +132,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetMessagesResult(
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetMessagesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             DeploymentId = deploymentId;
             DeploymentMessagesCollections = deploymentMessagesCollections;

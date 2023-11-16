@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Risk Level
         /// </summary>
-        public readonly string RiskLevel;
+        public readonly string? RiskLevel;
         /// <summary>
         /// The risk score pertaining to the user.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserResult(
-            string riskLevel,
+            string? riskLevel,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreResult> riskScores)
         {

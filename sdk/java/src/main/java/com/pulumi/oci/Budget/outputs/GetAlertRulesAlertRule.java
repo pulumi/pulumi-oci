@@ -10,6 +10,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertRulesAlertRule {
@@ -17,183 +19,183 @@ public final class GetAlertRulesAlertRule {
      * @return The unique budget OCID.
      * 
      */
-    private String budgetId;
+    private @Nullable String budgetId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the alert rule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the alert rule.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The custom message that will be sent when the alert is triggered.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      * 
      */
-    private String recipients;
+    private @Nullable String recipients;
     /**
      * @return The current state of the resource to filter by.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      * 
      */
-    private Double threshold;
+    private @Nullable Double threshold;
     /**
      * @return The type of threshold.
      * 
      */
-    private String thresholdType;
+    private @Nullable String thresholdType;
     /**
      * @return The time when the budget was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time when the budget was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
-    private Integer version;
+    private @Nullable Integer version;
 
     private GetAlertRulesAlertRule() {}
     /**
      * @return The unique budget OCID.
      * 
      */
-    public String budgetId() {
-        return this.budgetId;
+    public Optional<String> budgetId() {
+        return Optional.ofNullable(this.budgetId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the alert rule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly name. This does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the alert rule.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The custom message that will be sent when the alert is triggered.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      * 
      */
-    public String recipients() {
-        return this.recipients;
+    public Optional<String> recipients() {
+        return Optional.ofNullable(this.recipients);
     }
     /**
      * @return The current state of the resource to filter by.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      * 
      */
-    public Double threshold() {
-        return this.threshold;
+    public Optional<Double> threshold() {
+        return Optional.ofNullable(this.threshold);
     }
     /**
      * @return The type of threshold.
      * 
      */
-    public String thresholdType() {
-        return this.thresholdType;
+    public Optional<String> thresholdType() {
+        return Optional.ofNullable(this.thresholdType);
     }
     /**
      * @return The time when the budget was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time when the budget was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The version of the alert rule. Starts from 1 and increments by 1.
      * 
      */
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -205,21 +207,21 @@ public final class GetAlertRulesAlertRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String budgetId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String message;
-        private String recipients;
-        private String state;
-        private Double threshold;
-        private String thresholdType;
-        private String timeCreated;
-        private String timeUpdated;
-        private String type;
-        private Integer version;
+        private @Nullable String budgetId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String message;
+        private @Nullable String recipients;
+        private @Nullable String state;
+        private @Nullable Double threshold;
+        private @Nullable String thresholdType;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
+        private @Nullable Integer version;
         public Builder() {}
         public Builder(GetAlertRulesAlertRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -241,78 +243,78 @@ public final class GetAlertRulesAlertRule {
         }
 
         @CustomType.Setter
-        public Builder budgetId(String budgetId) {
-            this.budgetId = Objects.requireNonNull(budgetId);
+        public Builder budgetId(@Nullable String budgetId) {
+            this.budgetId = budgetId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder recipients(String recipients) {
-            this.recipients = Objects.requireNonNull(recipients);
+        public Builder recipients(@Nullable String recipients) {
+            this.recipients = recipients;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder threshold(Double threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+        public Builder threshold(@Nullable Double threshold) {
+            this.threshold = threshold;
             return this;
         }
         @CustomType.Setter
-        public Builder thresholdType(String thresholdType) {
-            this.thresholdType = Objects.requireNonNull(thresholdType);
+        public Builder thresholdType(@Nullable String thresholdType) {
+            this.thresholdType = thresholdType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         public GetAlertRulesAlertRule build() {

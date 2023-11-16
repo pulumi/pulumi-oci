@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveryDis
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo {
@@ -16,39 +18,39 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
      * @return The component type.
      * 
      */
-    private String componentType;
+    private @Nullable String componentType;
     /**
      * @return The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
      * 
      */
-    private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials;
+    private @Nullable List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials;
     /**
      * @return The Oracle Database connection string.
      * 
      */
-    private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
+    private @Nullable List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
 
     private GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo() {}
     /**
      * @return The component type.
      * 
      */
-    public String componentType() {
-        return this.componentType;
+    public Optional<String> componentType() {
+        return Optional.ofNullable(this.componentType);
     }
     /**
      * @return The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
      * 
      */
     public List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials() {
-        return this.connectionCredentials;
+        return this.connectionCredentials == null ? List.of() : this.connectionCredentials;
     }
     /**
      * @return The Oracle Database connection string.
      * 
      */
     public List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings() {
-        return this.connectionStrings;
+        return this.connectionStrings == null ? List.of() : this.connectionStrings;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
     }
     @CustomType.Builder
     public static final class Builder {
-        private String componentType;
-        private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials;
-        private List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
+        private @Nullable String componentType;
+        private @Nullable List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials;
+        private @Nullable List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
         }
 
         @CustomType.Setter
-        public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+        public Builder componentType(@Nullable String componentType) {
+            this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionCredentials(List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials) {
-            this.connectionCredentials = Objects.requireNonNull(connectionCredentials);
+        public Builder connectionCredentials(@Nullable List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential> connectionCredentials) {
+            this.connectionCredentials = connectionCredentials;
             return this;
         }
         public Builder connectionCredentials(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential... connectionCredentials) {
             return connectionCredentials(List.of(connectionCredentials));
         }
         @CustomType.Setter
-        public Builder connectionStrings(List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+        public Builder connectionStrings(@Nullable List<GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString> connectionStrings) {
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString... connectionStrings) {

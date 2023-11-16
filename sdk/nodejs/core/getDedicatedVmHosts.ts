@@ -96,7 +96,7 @@ export interface GetDedicatedVmHostsResult {
     /**
      * The list of dedicated_vm_hosts.
      */
-    readonly dedicatedVmHosts: outputs.Core.GetDedicatedVmHostsDedicatedVmHost[];
+    readonly dedicatedVmHosts?: outputs.Core.GetDedicatedVmHostsDedicatedVmHost[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -105,7 +105,7 @@ export interface GetDedicatedVmHostsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceShapeName?: string;
     readonly remainingMemoryInGbsGreaterThanOrEqualTo?: number;
     readonly remainingOcpusGreaterThanOrEqualTo?: number;

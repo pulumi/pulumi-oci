@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The message of the rationale.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The list of recommendations.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingResult(
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailResult> details,
 
-            string message,
+            string? message,
 
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationResult> recommendations)
         {

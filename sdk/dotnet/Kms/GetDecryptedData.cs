@@ -167,16 +167,16 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string KeyId;
         /// <summary>
         /// The decrypted data, in the form of a base64-encoded value.
         /// </summary>
-        public readonly string Plaintext;
+        public readonly string? Plaintext;
         /// <summary>
         /// Checksum of the decrypted data.
         /// </summary>
-        public readonly string PlaintextChecksum;
+        public readonly string? PlaintextChecksum;
 
         [OutputConstructor]
         private GetDecryptedDataResult(
@@ -186,13 +186,13 @@ namespace Pulumi.Oci.Kms
 
             string cryptoEndpoint,
 
-            string id,
+            string? id,
 
             string keyId,
 
-            string plaintext,
+            string? plaintext,
 
-            string plaintextChecksum)
+            string? plaintextChecksum)
         {
             AssociatedData = associatedData;
             Ciphertext = ciphertext;

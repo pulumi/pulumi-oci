@@ -21,15 +21,6 @@ class TableReplicaInitArgs:
                  max_write_units: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a TableReplica resource.
-        :param pulumi.Input[str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        :param pulumi.Input[int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         """
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "table_name_or_id", table_name_or_id)
@@ -43,9 +34,6 @@ class TableReplicaInitArgs:
     @property
     @pulumi.getter
     def region(self) -> pulumi.Input[str]:
-        """
-        Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -55,13 +43,6 @@ class TableReplicaInitArgs:
     @property
     @pulumi.getter(name="tableNameOrId")
     def table_name_or_id(self) -> pulumi.Input[str]:
-        """
-        A table name within the compartment, or a table OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "table_name_or_id")
 
     @table_name_or_id.setter
@@ -71,9 +52,6 @@ class TableReplicaInitArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -83,9 +61,6 @@ class TableReplicaInitArgs:
     @property
     @pulumi.getter(name="maxReadUnits")
     def max_read_units(self) -> Optional[pulumi.Input[int]]:
-        """
-        Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        """
         return pulumi.get(self, "max_read_units")
 
     @max_read_units.setter
@@ -95,9 +70,6 @@ class TableReplicaInitArgs:
     @property
     @pulumi.getter(name="maxWriteUnits")
     def max_write_units(self) -> Optional[pulumi.Input[int]]:
-        """
-        Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
-        """
         return pulumi.get(self, "max_write_units")
 
     @max_write_units.setter
@@ -115,15 +87,6 @@ class _TableReplicaState:
                  table_name_or_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering TableReplica resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        :param pulumi.Input[int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
-        :param pulumi.Input[str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -139,9 +102,6 @@ class _TableReplicaState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -151,9 +111,6 @@ class _TableReplicaState:
     @property
     @pulumi.getter(name="maxReadUnits")
     def max_read_units(self) -> Optional[pulumi.Input[int]]:
-        """
-        Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        """
         return pulumi.get(self, "max_read_units")
 
     @max_read_units.setter
@@ -163,9 +120,6 @@ class _TableReplicaState:
     @property
     @pulumi.getter(name="maxWriteUnits")
     def max_write_units(self) -> Optional[pulumi.Input[int]]:
-        """
-        Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
-        """
         return pulumi.get(self, "max_write_units")
 
     @max_write_units.setter
@@ -175,9 +129,6 @@ class _TableReplicaState:
     @property
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -187,13 +138,6 @@ class _TableReplicaState:
     @property
     @pulumi.getter(name="tableNameOrId")
     def table_name_or_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        A table name within the compartment, or a table OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "table_name_or_id")
 
     @table_name_or_id.setter
@@ -213,43 +157,9 @@ class TableReplica(pulumi.CustomResource):
                  table_name_or_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Add a replica for this table
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_table_replica = oci.nosql.TableReplica("testTableReplica",
-            region=var["table_replica_region"],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            max_read_units=var["table_replica_max_read_units"],
-            max_write_units=var["table_replica_max_write_units"])
-        ```
-
-        ## Import
-
-        TableReplicas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
-        ```
-
+        Create a TableReplica resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        :param pulumi.Input[int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
-        :param pulumi.Input[str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -258,32 +168,7 @@ class TableReplica(pulumi.CustomResource):
                  args: TableReplicaInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Add a replica for this table
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_table_replica = oci.nosql.TableReplica("testTableReplica",
-            region=var["table_replica_region"],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            max_read_units=var["table_replica_max_read_units"],
-            max_write_units=var["table_replica_max_write_units"])
-        ```
-
-        ## Import
-
-        TableReplicas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Nosql/tableReplica:TableReplica test_table_replica "tables/{tableNameOrId}/replicas/{region}"
-        ```
-
+        Create a TableReplica resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param TableReplicaInitArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -344,15 +229,6 @@ class TableReplica(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        :param pulumi.Input[int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
-        :param pulumi.Input[str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -367,45 +243,26 @@ class TableReplica(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="maxReadUnits")
-    def max_read_units(self) -> pulumi.Output[int]:
-        """
-        Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
-        """
+    def max_read_units(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_read_units")
 
     @property
     @pulumi.getter(name="maxWriteUnits")
-    def max_write_units(self) -> pulumi.Output[int]:
-        """
-        Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
-        """
+    def max_write_units(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "max_write_units")
 
     @property
     @pulumi.getter
     def region(self) -> pulumi.Output[str]:
-        """
-        Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
-        """
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="tableNameOrId")
     def table_name_or_id(self) -> pulumi.Output[str]:
-        """
-        A table name within the compartment, or a table OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "table_name_or_id")
 

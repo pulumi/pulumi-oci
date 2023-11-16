@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -72,9 +71,9 @@ type UserAssessment struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the user assessment.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the user assessment.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -82,23 +81,23 @@ type UserAssessment struct {
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets UserAssessmentIgnoredTargetArrayOutput `pulumi:"ignoredTargets"`
 	// Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
-	IsBaseline pulumi.BoolOutput `pulumi:"isBaseline"`
+	IsBaseline pulumi.BoolPtrOutput `pulumi:"isBaseline"`
 	// Indicates if the user assessment deviates from the baseline.
-	IsDeviatedFromBaseline pulumi.BoolOutput `pulumi:"isDeviatedFromBaseline"`
+	IsDeviatedFromBaseline pulumi.BoolPtrOutput `pulumi:"isDeviatedFromBaseline"`
 	// The OCID of the last user assessment baseline against which the latest assessment was compared.
-	LastComparedBaselineId pulumi.StringOutput `pulumi:"lastComparedBaselineId"`
+	LastComparedBaselineId pulumi.StringPtrOutput `pulumi:"lastComparedBaselineId"`
 	// Details about the current state of the user assessment.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-	Schedule pulumi.StringOutput `pulumi:"schedule"`
+	Schedule pulumi.StringPtrOutput `pulumi:"schedule"`
 	// The OCID of the user assessment that is responsible for creating this scheduled save assessment.
-	ScheduleAssessmentId pulumi.StringOutput `pulumi:"scheduleAssessmentId"`
+	ScheduleAssessmentId pulumi.StringPtrOutput `pulumi:"scheduleAssessmentId"`
 	// The current state of the user assessment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-	Statistics pulumi.StringOutput `pulumi:"statistics"`
+	Statistics pulumi.StringPtrOutput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the target database on which the user assessment is to be run.
@@ -109,15 +108,15 @@ type UserAssessment struct {
 	// Array of database target OCIDs.
 	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
 	// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeLastAssessed pulumi.StringOutput `pulumi:"timeLastAssessed"`
+	TimeLastAssessed pulumi.StringPtrOutput `pulumi:"timeLastAssessed"`
 	// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Indicates whether the user assessment was created by the system or the user.
-	TriggeredBy pulumi.StringOutput `pulumi:"triggeredBy"`
+	TriggeredBy pulumi.StringPtrOutput `pulumi:"triggeredBy"`
 	// The type of the user assessment. The possible types are:
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 }
 
 // NewUserAssessment registers a new resource with the given unique name, arguments, and options.
@@ -335,12 +334,6 @@ func (i *UserAssessment) ToUserAssessmentOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentOutput)
 }
 
-func (i *UserAssessment) ToOutput(ctx context.Context) pulumix.Output[*UserAssessment] {
-	return pulumix.Output[*UserAssessment]{
-		OutputState: i.ToUserAssessmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UserAssessmentArrayInput is an input type that accepts UserAssessmentArray and UserAssessmentArrayOutput values.
 // You can construct a concrete instance of `UserAssessmentArrayInput` via:
 //
@@ -364,12 +357,6 @@ func (i UserAssessmentArray) ToUserAssessmentArrayOutput() UserAssessmentArrayOu
 
 func (i UserAssessmentArray) ToUserAssessmentArrayOutputWithContext(ctx context.Context) UserAssessmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentArrayOutput)
-}
-
-func (i UserAssessmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*UserAssessment] {
-	return pulumix.Output[[]*UserAssessment]{
-		OutputState: i.ToUserAssessmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UserAssessmentMapInput is an input type that accepts UserAssessmentMap and UserAssessmentMapOutput values.
@@ -397,12 +384,6 @@ func (i UserAssessmentMap) ToUserAssessmentMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(UserAssessmentMapOutput)
 }
 
-func (i UserAssessmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserAssessment] {
-	return pulumix.Output[map[string]*UserAssessment]{
-		OutputState: i.ToUserAssessmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UserAssessmentOutput struct{ *pulumi.OutputState }
 
 func (UserAssessmentOutput) ElementType() reflect.Type {
@@ -417,12 +398,6 @@ func (o UserAssessmentOutput) ToUserAssessmentOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o UserAssessmentOutput) ToOutput(ctx context.Context) pulumix.Output[*UserAssessment] {
-	return pulumix.Output[*UserAssessment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the user assessment.
 func (o UserAssessmentOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -434,13 +409,13 @@ func (o UserAssessmentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the user assessment.
-func (o UserAssessmentOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the user assessment.
-func (o UserAssessmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -459,45 +434,45 @@ func (o UserAssessmentOutput) IgnoredTargets() UserAssessmentIgnoredTargetArrayO
 }
 
 // Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
-func (o UserAssessmentOutput) IsBaseline() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.BoolOutput { return v.IsBaseline }).(pulumi.BoolOutput)
+func (o UserAssessmentOutput) IsBaseline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.BoolPtrOutput { return v.IsBaseline }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the user assessment deviates from the baseline.
-func (o UserAssessmentOutput) IsDeviatedFromBaseline() pulumi.BoolOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.BoolOutput { return v.IsDeviatedFromBaseline }).(pulumi.BoolOutput)
+func (o UserAssessmentOutput) IsDeviatedFromBaseline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.BoolPtrOutput { return v.IsDeviatedFromBaseline }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the last user assessment baseline against which the latest assessment was compared.
-func (o UserAssessmentOutput) LastComparedBaselineId() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.LastComparedBaselineId }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) LastComparedBaselineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.LastComparedBaselineId }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the user assessment.
-func (o UserAssessmentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 //
 // Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-func (o UserAssessmentOutput) Schedule() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.Schedule }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) Schedule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.Schedule }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user assessment that is responsible for creating this scheduled save assessment.
-func (o UserAssessmentOutput) ScheduleAssessmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.ScheduleAssessmentId }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) ScheduleAssessmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.ScheduleAssessmentId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the user assessment.
-func (o UserAssessmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-func (o UserAssessmentOutput) Statistics() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.Statistics }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) Statistics() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.Statistics }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -519,28 +494,28 @@ func (o UserAssessmentOutput) TargetIds() pulumi.StringArrayOutput {
 }
 
 // The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o UserAssessmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o UserAssessmentOutput) TimeLastAssessed() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TimeLastAssessed }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) TimeLastAssessed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.TimeLastAssessed }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o UserAssessmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the user assessment was created by the system or the user.
-func (o UserAssessmentOutput) TriggeredBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.TriggeredBy }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) TriggeredBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.TriggeredBy }).(pulumi.StringPtrOutput)
 }
 
 // The type of the user assessment. The possible types are:
-func (o UserAssessmentOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o UserAssessmentOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type UserAssessmentArrayOutput struct{ *pulumi.OutputState }
@@ -555,12 +530,6 @@ func (o UserAssessmentArrayOutput) ToUserAssessmentArrayOutput() UserAssessmentA
 
 func (o UserAssessmentArrayOutput) ToUserAssessmentArrayOutputWithContext(ctx context.Context) UserAssessmentArrayOutput {
 	return o
-}
-
-func (o UserAssessmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UserAssessment] {
-	return pulumix.Output[[]*UserAssessment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserAssessmentArrayOutput) Index(i pulumi.IntInput) UserAssessmentOutput {
@@ -581,12 +550,6 @@ func (o UserAssessmentMapOutput) ToUserAssessmentMapOutput() UserAssessmentMapOu
 
 func (o UserAssessmentMapOutput) ToUserAssessmentMapOutputWithContext(ctx context.Context) UserAssessmentMapOutput {
 	return o
-}
-
-func (o UserAssessmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserAssessment] {
-	return pulumix.Output[map[string]*UserAssessment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserAssessmentMapOutput) MapIndex(k pulumi.StringInput) UserAssessmentOutput {

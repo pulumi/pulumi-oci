@@ -50,7 +50,7 @@ export class AuditPolicy extends pulumi.CustomResource {
     /**
      * Lists the audit policy provisioning conditions for the target database.
      */
-    public /*out*/ readonly auditConditions!: pulumi.Output<outputs.DataSafe.AuditPolicyAuditCondition[]>;
+    public /*out*/ readonly auditConditions!: pulumi.Output<outputs.DataSafe.AuditPolicyAuditCondition[] | undefined>;
     /**
      * Unique audit policy identifier.
      */
@@ -58,35 +58,35 @@ export class AuditPolicy extends pulumi.CustomResource {
     /**
      * Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      */
-    public /*out*/ readonly auditSpecifications!: pulumi.Output<outputs.DataSafe.AuditPolicyAuditSpecification[]>;
+    public /*out*/ readonly auditSpecifications!: pulumi.Output<outputs.DataSafe.AuditPolicyAuditSpecification[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the audit policy.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the audit policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      */
-    public /*out*/ readonly isDataSafeServiceAccountExcluded!: pulumi.Output<boolean>;
+    public /*out*/ readonly isDataSafeServiceAccountExcluded!: pulumi.Output<boolean | undefined>;
     /**
      * Details about the current state of the audit policy in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
      */
@@ -102,31 +102,31 @@ export class AuditPolicy extends pulumi.CustomResource {
     /**
      * The current state of the audit policy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the target for which the audit policy is created.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    public /*out*/ readonly targetId!: pulumi.Output<string | undefined>;
     /**
      * The time the the audit policy was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastProvisioned!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastProvisioned!: pulumi.Output<string | undefined>;
     /**
      * The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastRetrieved!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastRetrieved!: pulumi.Output<string | undefined>;
     /**
      * The last date and time the audit policy was updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AuditPolicy resource with the given unique name, arguments, and options.

@@ -15,6 +15,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetCompute {
@@ -22,351 +24,351 @@ public final class GetAssetCompute {
      * @return Number of connected networks.
      * 
      */
-    private Integer connectedNetworks;
+    private @Nullable Integer connectedNetworks;
     /**
      * @return Number of GPU cores.
      * 
      */
-    private Integer coresCount;
+    private @Nullable Integer coresCount;
     /**
      * @return CPU model name.
      * 
      */
-    private String cpuModel;
+    private @Nullable String cpuModel;
     /**
      * @return The tag description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Lists the set of disks belonging to the virtual machine. This list is unordered.
      * 
      */
-    private List<GetAssetComputeDisk> disks;
+    private @Nullable List<GetAssetComputeDisk> disks;
     /**
      * @return Number of disks.
      * 
      */
-    private Integer disksCount;
+    private @Nullable Integer disksCount;
     /**
      * @return Fully Qualified DNS Name.
      * 
      */
-    private String dnsName;
+    private @Nullable String dnsName;
     /**
      * @return Information about firmware type for this virtual machine.
      * 
      */
-    private String firmware;
+    private @Nullable String firmware;
     /**
      * @return List of GPU devices attached to a virtual machine.
      * 
      */
-    private List<GetAssetComputeGpuDevice> gpuDevices;
+    private @Nullable List<GetAssetComputeGpuDevice> gpuDevices;
     /**
      * @return Number of GPU devices.
      * 
      */
-    private Integer gpuDevicesCount;
+    private @Nullable Integer gpuDevicesCount;
     /**
      * @return Guest state.
      * 
      */
-    private String guestState;
+    private @Nullable String guestState;
     /**
      * @return Hardware version.
      * 
      */
-    private String hardwareVersion;
+    private @Nullable String hardwareVersion;
     /**
      * @return Host name of the VM.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
      * 
      */
-    private Boolean isPmemEnabled;
+    private @Nullable Boolean isPmemEnabled;
     /**
      * @return Whether Trusted Platform Module (TPM) is enabled.
      * 
      */
-    private Boolean isTpmEnabled;
+    private @Nullable Boolean isTpmEnabled;
     /**
      * @return Latency sensitivity.
      * 
      */
-    private String latencySensitivity;
+    private @Nullable String latencySensitivity;
     /**
      * @return Memory size in MBs.
      * 
      */
-    private String memoryInMbs;
+    private @Nullable String memoryInMbs;
     /**
      * @return List of network ethernet cards attached to a virtual machine.
      * 
      */
-    private List<GetAssetComputeNic> nics;
+    private @Nullable List<GetAssetComputeNic> nics;
     /**
      * @return Number of network ethernet cards.
      * 
      */
-    private Integer nicsCount;
+    private @Nullable Integer nicsCount;
     /**
      * @return The asset&#39;s NVDIMM configuration.
      * 
      */
-    private List<GetAssetComputeNvdimmController> nvdimmControllers;
+    private @Nullable List<GetAssetComputeNvdimmController> nvdimmControllers;
     /**
      * @return The properties of the NVDIMMs attached to a virtual machine.
      * 
      */
-    private List<GetAssetComputeNvdimm> nvdimms;
+    private @Nullable List<GetAssetComputeNvdimm> nvdimms;
     /**
      * @return Operating system.
      * 
      */
-    private String operatingSystem;
+    private @Nullable String operatingSystem;
     /**
      * @return Operating system version.
      * 
      */
-    private String operatingSystemVersion;
+    private @Nullable String operatingSystemVersion;
     /**
      * @return Pmem size in MBs.
      * 
      */
-    private String pmemInMbs;
+    private @Nullable String pmemInMbs;
     /**
      * @return The current power state of the virtual machine.
      * 
      */
-    private String powerState;
+    private @Nullable String powerState;
     /**
      * @return Primary IP address of the compute instance.
      * 
      */
-    private String primaryIp;
+    private @Nullable String primaryIp;
     /**
      * @return The assets SCSI controller.
      * 
      */
-    private List<GetAssetComputeScsiController> scsiControllers;
+    private @Nullable List<GetAssetComputeScsiController> scsiControllers;
     /**
      * @return Provision storage size in MBs.
      * 
      */
-    private String storageProvisionedInMbs;
+    private @Nullable String storageProvisionedInMbs;
     /**
      * @return Number of threads per core.
      * 
      */
-    private Integer threadsPerCoreCount;
+    private @Nullable Integer threadsPerCoreCount;
 
     private GetAssetCompute() {}
     /**
      * @return Number of connected networks.
      * 
      */
-    public Integer connectedNetworks() {
-        return this.connectedNetworks;
+    public Optional<Integer> connectedNetworks() {
+        return Optional.ofNullable(this.connectedNetworks);
     }
     /**
      * @return Number of GPU cores.
      * 
      */
-    public Integer coresCount() {
-        return this.coresCount;
+    public Optional<Integer> coresCount() {
+        return Optional.ofNullable(this.coresCount);
     }
     /**
      * @return CPU model name.
      * 
      */
-    public String cpuModel() {
-        return this.cpuModel;
+    public Optional<String> cpuModel() {
+        return Optional.ofNullable(this.cpuModel);
     }
     /**
      * @return The tag description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Lists the set of disks belonging to the virtual machine. This list is unordered.
      * 
      */
     public List<GetAssetComputeDisk> disks() {
-        return this.disks;
+        return this.disks == null ? List.of() : this.disks;
     }
     /**
      * @return Number of disks.
      * 
      */
-    public Integer disksCount() {
-        return this.disksCount;
+    public Optional<Integer> disksCount() {
+        return Optional.ofNullable(this.disksCount);
     }
     /**
      * @return Fully Qualified DNS Name.
      * 
      */
-    public String dnsName() {
-        return this.dnsName;
+    public Optional<String> dnsName() {
+        return Optional.ofNullable(this.dnsName);
     }
     /**
      * @return Information about firmware type for this virtual machine.
      * 
      */
-    public String firmware() {
-        return this.firmware;
+    public Optional<String> firmware() {
+        return Optional.ofNullable(this.firmware);
     }
     /**
      * @return List of GPU devices attached to a virtual machine.
      * 
      */
     public List<GetAssetComputeGpuDevice> gpuDevices() {
-        return this.gpuDevices;
+        return this.gpuDevices == null ? List.of() : this.gpuDevices;
     }
     /**
      * @return Number of GPU devices.
      * 
      */
-    public Integer gpuDevicesCount() {
-        return this.gpuDevicesCount;
+    public Optional<Integer> gpuDevicesCount() {
+        return Optional.ofNullable(this.gpuDevicesCount);
     }
     /**
      * @return Guest state.
      * 
      */
-    public String guestState() {
-        return this.guestState;
+    public Optional<String> guestState() {
+        return Optional.ofNullable(this.guestState);
     }
     /**
      * @return Hardware version.
      * 
      */
-    public String hardwareVersion() {
-        return this.hardwareVersion;
+    public Optional<String> hardwareVersion() {
+        return Optional.ofNullable(this.hardwareVersion);
     }
     /**
      * @return Host name of the VM.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
      * 
      */
-    public Boolean isPmemEnabled() {
-        return this.isPmemEnabled;
+    public Optional<Boolean> isPmemEnabled() {
+        return Optional.ofNullable(this.isPmemEnabled);
     }
     /**
      * @return Whether Trusted Platform Module (TPM) is enabled.
      * 
      */
-    public Boolean isTpmEnabled() {
-        return this.isTpmEnabled;
+    public Optional<Boolean> isTpmEnabled() {
+        return Optional.ofNullable(this.isTpmEnabled);
     }
     /**
      * @return Latency sensitivity.
      * 
      */
-    public String latencySensitivity() {
-        return this.latencySensitivity;
+    public Optional<String> latencySensitivity() {
+        return Optional.ofNullable(this.latencySensitivity);
     }
     /**
      * @return Memory size in MBs.
      * 
      */
-    public String memoryInMbs() {
-        return this.memoryInMbs;
+    public Optional<String> memoryInMbs() {
+        return Optional.ofNullable(this.memoryInMbs);
     }
     /**
      * @return List of network ethernet cards attached to a virtual machine.
      * 
      */
     public List<GetAssetComputeNic> nics() {
-        return this.nics;
+        return this.nics == null ? List.of() : this.nics;
     }
     /**
      * @return Number of network ethernet cards.
      * 
      */
-    public Integer nicsCount() {
-        return this.nicsCount;
+    public Optional<Integer> nicsCount() {
+        return Optional.ofNullable(this.nicsCount);
     }
     /**
      * @return The asset&#39;s NVDIMM configuration.
      * 
      */
     public List<GetAssetComputeNvdimmController> nvdimmControllers() {
-        return this.nvdimmControllers;
+        return this.nvdimmControllers == null ? List.of() : this.nvdimmControllers;
     }
     /**
      * @return The properties of the NVDIMMs attached to a virtual machine.
      * 
      */
     public List<GetAssetComputeNvdimm> nvdimms() {
-        return this.nvdimms;
+        return this.nvdimms == null ? List.of() : this.nvdimms;
     }
     /**
      * @return Operating system.
      * 
      */
-    public String operatingSystem() {
-        return this.operatingSystem;
+    public Optional<String> operatingSystem() {
+        return Optional.ofNullable(this.operatingSystem);
     }
     /**
      * @return Operating system version.
      * 
      */
-    public String operatingSystemVersion() {
-        return this.operatingSystemVersion;
+    public Optional<String> operatingSystemVersion() {
+        return Optional.ofNullable(this.operatingSystemVersion);
     }
     /**
      * @return Pmem size in MBs.
      * 
      */
-    public String pmemInMbs() {
-        return this.pmemInMbs;
+    public Optional<String> pmemInMbs() {
+        return Optional.ofNullable(this.pmemInMbs);
     }
     /**
      * @return The current power state of the virtual machine.
      * 
      */
-    public String powerState() {
-        return this.powerState;
+    public Optional<String> powerState() {
+        return Optional.ofNullable(this.powerState);
     }
     /**
      * @return Primary IP address of the compute instance.
      * 
      */
-    public String primaryIp() {
-        return this.primaryIp;
+    public Optional<String> primaryIp() {
+        return Optional.ofNullable(this.primaryIp);
     }
     /**
      * @return The assets SCSI controller.
      * 
      */
     public List<GetAssetComputeScsiController> scsiControllers() {
-        return this.scsiControllers;
+        return this.scsiControllers == null ? List.of() : this.scsiControllers;
     }
     /**
      * @return Provision storage size in MBs.
      * 
      */
-    public String storageProvisionedInMbs() {
-        return this.storageProvisionedInMbs;
+    public Optional<String> storageProvisionedInMbs() {
+        return Optional.ofNullable(this.storageProvisionedInMbs);
     }
     /**
      * @return Number of threads per core.
      * 
      */
-    public Integer threadsPerCoreCount() {
-        return this.threadsPerCoreCount;
+    public Optional<Integer> threadsPerCoreCount() {
+        return Optional.ofNullable(this.threadsPerCoreCount);
     }
 
     public static Builder builder() {
@@ -378,35 +380,35 @@ public final class GetAssetCompute {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer connectedNetworks;
-        private Integer coresCount;
-        private String cpuModel;
-        private String description;
-        private List<GetAssetComputeDisk> disks;
-        private Integer disksCount;
-        private String dnsName;
-        private String firmware;
-        private List<GetAssetComputeGpuDevice> gpuDevices;
-        private Integer gpuDevicesCount;
-        private String guestState;
-        private String hardwareVersion;
-        private String hostName;
-        private Boolean isPmemEnabled;
-        private Boolean isTpmEnabled;
-        private String latencySensitivity;
-        private String memoryInMbs;
-        private List<GetAssetComputeNic> nics;
-        private Integer nicsCount;
-        private List<GetAssetComputeNvdimmController> nvdimmControllers;
-        private List<GetAssetComputeNvdimm> nvdimms;
-        private String operatingSystem;
-        private String operatingSystemVersion;
-        private String pmemInMbs;
-        private String powerState;
-        private String primaryIp;
-        private List<GetAssetComputeScsiController> scsiControllers;
-        private String storageProvisionedInMbs;
-        private Integer threadsPerCoreCount;
+        private @Nullable Integer connectedNetworks;
+        private @Nullable Integer coresCount;
+        private @Nullable String cpuModel;
+        private @Nullable String description;
+        private @Nullable List<GetAssetComputeDisk> disks;
+        private @Nullable Integer disksCount;
+        private @Nullable String dnsName;
+        private @Nullable String firmware;
+        private @Nullable List<GetAssetComputeGpuDevice> gpuDevices;
+        private @Nullable Integer gpuDevicesCount;
+        private @Nullable String guestState;
+        private @Nullable String hardwareVersion;
+        private @Nullable String hostName;
+        private @Nullable Boolean isPmemEnabled;
+        private @Nullable Boolean isTpmEnabled;
+        private @Nullable String latencySensitivity;
+        private @Nullable String memoryInMbs;
+        private @Nullable List<GetAssetComputeNic> nics;
+        private @Nullable Integer nicsCount;
+        private @Nullable List<GetAssetComputeNvdimmController> nvdimmControllers;
+        private @Nullable List<GetAssetComputeNvdimm> nvdimms;
+        private @Nullable String operatingSystem;
+        private @Nullable String operatingSystemVersion;
+        private @Nullable String pmemInMbs;
+        private @Nullable String powerState;
+        private @Nullable String primaryIp;
+        private @Nullable List<GetAssetComputeScsiController> scsiControllers;
+        private @Nullable String storageProvisionedInMbs;
+        private @Nullable Integer threadsPerCoreCount;
         public Builder() {}
         public Builder(GetAssetCompute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -442,166 +444,166 @@ public final class GetAssetCompute {
         }
 
         @CustomType.Setter
-        public Builder connectedNetworks(Integer connectedNetworks) {
-            this.connectedNetworks = Objects.requireNonNull(connectedNetworks);
+        public Builder connectedNetworks(@Nullable Integer connectedNetworks) {
+            this.connectedNetworks = connectedNetworks;
             return this;
         }
         @CustomType.Setter
-        public Builder coresCount(Integer coresCount) {
-            this.coresCount = Objects.requireNonNull(coresCount);
+        public Builder coresCount(@Nullable Integer coresCount) {
+            this.coresCount = coresCount;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuModel(String cpuModel) {
-            this.cpuModel = Objects.requireNonNull(cpuModel);
+        public Builder cpuModel(@Nullable String cpuModel) {
+            this.cpuModel = cpuModel;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder disks(List<GetAssetComputeDisk> disks) {
-            this.disks = Objects.requireNonNull(disks);
+        public Builder disks(@Nullable List<GetAssetComputeDisk> disks) {
+            this.disks = disks;
             return this;
         }
         public Builder disks(GetAssetComputeDisk... disks) {
             return disks(List.of(disks));
         }
         @CustomType.Setter
-        public Builder disksCount(Integer disksCount) {
-            this.disksCount = Objects.requireNonNull(disksCount);
+        public Builder disksCount(@Nullable Integer disksCount) {
+            this.disksCount = disksCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsName(String dnsName) {
-            this.dnsName = Objects.requireNonNull(dnsName);
+        public Builder dnsName(@Nullable String dnsName) {
+            this.dnsName = dnsName;
             return this;
         }
         @CustomType.Setter
-        public Builder firmware(String firmware) {
-            this.firmware = Objects.requireNonNull(firmware);
+        public Builder firmware(@Nullable String firmware) {
+            this.firmware = firmware;
             return this;
         }
         @CustomType.Setter
-        public Builder gpuDevices(List<GetAssetComputeGpuDevice> gpuDevices) {
-            this.gpuDevices = Objects.requireNonNull(gpuDevices);
+        public Builder gpuDevices(@Nullable List<GetAssetComputeGpuDevice> gpuDevices) {
+            this.gpuDevices = gpuDevices;
             return this;
         }
         public Builder gpuDevices(GetAssetComputeGpuDevice... gpuDevices) {
             return gpuDevices(List.of(gpuDevices));
         }
         @CustomType.Setter
-        public Builder gpuDevicesCount(Integer gpuDevicesCount) {
-            this.gpuDevicesCount = Objects.requireNonNull(gpuDevicesCount);
+        public Builder gpuDevicesCount(@Nullable Integer gpuDevicesCount) {
+            this.gpuDevicesCount = gpuDevicesCount;
             return this;
         }
         @CustomType.Setter
-        public Builder guestState(String guestState) {
-            this.guestState = Objects.requireNonNull(guestState);
+        public Builder guestState(@Nullable String guestState) {
+            this.guestState = guestState;
             return this;
         }
         @CustomType.Setter
-        public Builder hardwareVersion(String hardwareVersion) {
-            this.hardwareVersion = Objects.requireNonNull(hardwareVersion);
+        public Builder hardwareVersion(@Nullable String hardwareVersion) {
+            this.hardwareVersion = hardwareVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder isPmemEnabled(Boolean isPmemEnabled) {
-            this.isPmemEnabled = Objects.requireNonNull(isPmemEnabled);
+        public Builder isPmemEnabled(@Nullable Boolean isPmemEnabled) {
+            this.isPmemEnabled = isPmemEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isTpmEnabled(Boolean isTpmEnabled) {
-            this.isTpmEnabled = Objects.requireNonNull(isTpmEnabled);
+        public Builder isTpmEnabled(@Nullable Boolean isTpmEnabled) {
+            this.isTpmEnabled = isTpmEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder latencySensitivity(String latencySensitivity) {
-            this.latencySensitivity = Objects.requireNonNull(latencySensitivity);
+        public Builder latencySensitivity(@Nullable String latencySensitivity) {
+            this.latencySensitivity = latencySensitivity;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInMbs(String memoryInMbs) {
-            this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
+        public Builder memoryInMbs(@Nullable String memoryInMbs) {
+            this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nics(List<GetAssetComputeNic> nics) {
-            this.nics = Objects.requireNonNull(nics);
+        public Builder nics(@Nullable List<GetAssetComputeNic> nics) {
+            this.nics = nics;
             return this;
         }
         public Builder nics(GetAssetComputeNic... nics) {
             return nics(List.of(nics));
         }
         @CustomType.Setter
-        public Builder nicsCount(Integer nicsCount) {
-            this.nicsCount = Objects.requireNonNull(nicsCount);
+        public Builder nicsCount(@Nullable Integer nicsCount) {
+            this.nicsCount = nicsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder nvdimmControllers(List<GetAssetComputeNvdimmController> nvdimmControllers) {
-            this.nvdimmControllers = Objects.requireNonNull(nvdimmControllers);
+        public Builder nvdimmControllers(@Nullable List<GetAssetComputeNvdimmController> nvdimmControllers) {
+            this.nvdimmControllers = nvdimmControllers;
             return this;
         }
         public Builder nvdimmControllers(GetAssetComputeNvdimmController... nvdimmControllers) {
             return nvdimmControllers(List.of(nvdimmControllers));
         }
         @CustomType.Setter
-        public Builder nvdimms(List<GetAssetComputeNvdimm> nvdimms) {
-            this.nvdimms = Objects.requireNonNull(nvdimms);
+        public Builder nvdimms(@Nullable List<GetAssetComputeNvdimm> nvdimms) {
+            this.nvdimms = nvdimms;
             return this;
         }
         public Builder nvdimms(GetAssetComputeNvdimm... nvdimms) {
             return nvdimms(List.of(nvdimms));
         }
         @CustomType.Setter
-        public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+        public Builder operatingSystem(@Nullable String operatingSystem) {
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+        public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder pmemInMbs(String pmemInMbs) {
-            this.pmemInMbs = Objects.requireNonNull(pmemInMbs);
+        public Builder pmemInMbs(@Nullable String pmemInMbs) {
+            this.pmemInMbs = pmemInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder powerState(String powerState) {
-            this.powerState = Objects.requireNonNull(powerState);
+        public Builder powerState(@Nullable String powerState) {
+            this.powerState = powerState;
             return this;
         }
         @CustomType.Setter
-        public Builder primaryIp(String primaryIp) {
-            this.primaryIp = Objects.requireNonNull(primaryIp);
+        public Builder primaryIp(@Nullable String primaryIp) {
+            this.primaryIp = primaryIp;
             return this;
         }
         @CustomType.Setter
-        public Builder scsiControllers(List<GetAssetComputeScsiController> scsiControllers) {
-            this.scsiControllers = Objects.requireNonNull(scsiControllers);
+        public Builder scsiControllers(@Nullable List<GetAssetComputeScsiController> scsiControllers) {
+            this.scsiControllers = scsiControllers;
             return this;
         }
         public Builder scsiControllers(GetAssetComputeScsiController... scsiControllers) {
             return scsiControllers(List.of(scsiControllers));
         }
         @CustomType.Setter
-        public Builder storageProvisionedInMbs(String storageProvisionedInMbs) {
-            this.storageProvisionedInMbs = Objects.requireNonNull(storageProvisionedInMbs);
+        public Builder storageProvisionedInMbs(@Nullable String storageProvisionedInMbs) {
+            this.storageProvisionedInMbs = storageProvisionedInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder threadsPerCoreCount(Integer threadsPerCoreCount) {
-            this.threadsPerCoreCount = Objects.requireNonNull(threadsPerCoreCount);
+        public Builder threadsPerCoreCount(@Nullable Integer threadsPerCoreCount) {
+            this.threadsPerCoreCount = threadsPerCoreCount;
             return this;
         }
         public GetAssetCompute build() {

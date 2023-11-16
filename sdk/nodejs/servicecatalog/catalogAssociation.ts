@@ -65,7 +65,7 @@ export class CatalogAssociation extends pulumi.CustomResource {
     /**
      * The type of the entity that is associated with the service catalog.
      */
-    public readonly entityType!: pulumi.Output<string>;
+    public readonly entityType!: pulumi.Output<string | undefined>;
     /**
      * Identifier of the service catalog.
      *
@@ -77,7 +77,7 @@ export class CatalogAssociation extends pulumi.CustomResource {
     /**
      * Timestamp of when the resource was associated with service catalog.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CatalogAssociation resource with the given unique name, arguments, and options.

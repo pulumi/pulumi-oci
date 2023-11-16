@@ -30,22 +30,6 @@ class ClusterArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Cluster resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
-        :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input['ClusterEndpointConfigArgs'] endpoint_config: The network configuration for access to the Cluster control plane.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['ClusterImagePolicyConfigArgs'] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
-        :param pulumi.Input[str] type: (Updatable) Type of cluster
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
@@ -72,9 +56,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment in which to create the cluster.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -84,9 +65,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The version of Kubernetes to install into the cluster masters.
-        """
         return pulumi.get(self, "kubernetes_version")
 
     @kubernetes_version.setter
@@ -96,13 +74,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the virtual cloud network (VCN) in which to create the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -112,9 +83,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="clusterPodNetworkOptions")
     def cluster_pod_network_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]]:
-        """
-        Available CNIs and network options for existing and new node pools of the cluster
-        """
         return pulumi.get(self, "cluster_pod_network_options")
 
     @cluster_pod_network_options.setter
@@ -124,9 +92,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -136,9 +101,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="endpointConfig")
     def endpoint_config(self) -> Optional[pulumi.Input['ClusterEndpointConfigArgs']]:
-        """
-        The network configuration for access to the Cluster control plane.
-        """
         return pulumi.get(self, "endpoint_config")
 
     @endpoint_config.setter
@@ -148,9 +110,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -160,9 +119,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="imagePolicyConfig")
     def image_policy_config(self) -> Optional[pulumi.Input['ClusterImagePolicyConfigArgs']]:
-        """
-        (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        """
         return pulumi.get(self, "image_policy_config")
 
     @image_policy_config.setter
@@ -172,9 +128,6 @@ class ClusterArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -184,9 +137,6 @@ class ClusterArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -196,9 +146,6 @@ class ClusterArgs:
     @property
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input['ClusterOptionsArgs']]:
-        """
-        (Updatable) Optional attributes for the cluster.
-        """
         return pulumi.get(self, "options")
 
     @options.setter
@@ -208,9 +155,6 @@ class ClusterArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of cluster
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -240,27 +184,6 @@ class _ClusterState:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input['ClusterEndpointConfigArgs'] endpoint_config: The network configuration for access to the Cluster control plane.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterEndpointArgs']]] endpoints: Endpoints served up by the cluster masters.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['ClusterImagePolicyConfigArgs'] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the cluster masters.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]] metadatas: Metadata about the cluster.
-        :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
-        :param pulumi.Input[str] state: The state of the cluster masters.
-        :param pulumi.Input[str] type: (Updatable) Type of cluster
-        :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if available_kubernetes_upgrades is not None:
             pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -300,9 +223,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="availableKubernetesUpgrades")
     def available_kubernetes_upgrades(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Available Kubernetes versions to which the clusters masters may be upgraded.
-        """
         return pulumi.get(self, "available_kubernetes_upgrades")
 
     @available_kubernetes_upgrades.setter
@@ -312,9 +232,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="clusterPodNetworkOptions")
     def cluster_pod_network_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]]]:
-        """
-        Available CNIs and network options for existing and new node pools of the cluster
-        """
         return pulumi.get(self, "cluster_pod_network_options")
 
     @cluster_pod_network_options.setter
@@ -324,9 +241,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment in which to create the cluster.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -336,9 +250,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -348,9 +259,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="endpointConfig")
     def endpoint_config(self) -> Optional[pulumi.Input['ClusterEndpointConfigArgs']]:
-        """
-        The network configuration for access to the Cluster control plane.
-        """
         return pulumi.get(self, "endpoint_config")
 
     @endpoint_config.setter
@@ -360,9 +268,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterEndpointArgs']]]]:
-        """
-        Endpoints served up by the cluster masters.
-        """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
@@ -372,9 +277,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -384,9 +286,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="imagePolicyConfig")
     def image_policy_config(self) -> Optional[pulumi.Input['ClusterImagePolicyConfigArgs']]:
-        """
-        (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        """
         return pulumi.get(self, "image_policy_config")
 
     @image_policy_config.setter
@@ -396,9 +295,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -408,9 +304,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of Kubernetes to install into the cluster masters.
-        """
         return pulumi.get(self, "kubernetes_version")
 
     @kubernetes_version.setter
@@ -420,9 +313,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the state of the cluster masters.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -432,9 +322,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterMetadataArgs']]]]:
-        """
-        Metadata about the cluster.
-        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -444,9 +331,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -456,9 +340,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input['ClusterOptionsArgs']]:
-        """
-        (Updatable) Optional attributes for the cluster.
-        """
         return pulumi.get(self, "options")
 
     @options.setter
@@ -468,9 +349,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the cluster masters.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -480,9 +358,6 @@ class _ClusterState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of cluster
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -492,13 +367,6 @@ class _ClusterState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the virtual cloud network (VCN) in which to create the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -525,36 +393,9 @@ class Cluster(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new cluster.
-
-        ## Import
-
-        Clusters can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
-        ```
-
+        Create a Cluster resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']] endpoint_config: The network configuration for access to the Cluster control plane.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
-        :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['ClusterOptionsArgs']] options: (Updatable) Optional attributes for the cluster.
-        :param pulumi.Input[str] type: (Updatable) Type of cluster
-        :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -563,18 +404,7 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new cluster.
-
-        ## Import
-
-        Clusters can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ContainerEngine/cluster:Cluster test_cluster "id"
-        ```
-
+        Create a Cluster resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ClusterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -668,27 +498,6 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] available_kubernetes_upgrades: Available Kubernetes versions to which the clusters masters may be upgraded.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterClusterPodNetworkOptionArgs']]]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which to create the cluster.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[pulumi.InputType['ClusterEndpointConfigArgs']] endpoint_config: The network configuration for access to the Cluster control plane.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterEndpointArgs']]]] endpoints: Endpoints served up by the cluster masters.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ClusterImagePolicyConfigArgs']] image_policy_config: (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the cluster masters.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ClusterMetadataArgs']]]] metadatas: Metadata about the cluster.
-        :param pulumi.Input[str] name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['ClusterOptionsArgs']] options: (Updatable) Optional attributes for the cluster.
-        :param pulumi.Input[str] state: The state of the cluster masters.
-        :param pulumi.Input[str] type: (Updatable) Type of cluster
-        :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -715,141 +524,86 @@ class Cluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availableKubernetesUpgrades")
-    def available_kubernetes_upgrades(self) -> pulumi.Output[Sequence[str]]:
-        """
-        Available Kubernetes versions to which the clusters masters may be upgraded.
-        """
+    def available_kubernetes_upgrades(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "available_kubernetes_upgrades")
 
     @property
     @pulumi.getter(name="clusterPodNetworkOptions")
-    def cluster_pod_network_options(self) -> pulumi.Output[Sequence['outputs.ClusterClusterPodNetworkOption']]:
-        """
-        Available CNIs and network options for existing and new node pools of the cluster
-        """
+    def cluster_pod_network_options(self) -> pulumi.Output[Optional[Sequence['outputs.ClusterClusterPodNetworkOption']]]:
         return pulumi.get(self, "cluster_pod_network_options")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment in which to create the cluster.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="endpointConfig")
     def endpoint_config(self) -> pulumi.Output[Optional['outputs.ClusterEndpointConfig']]:
-        """
-        The network configuration for access to the Cluster control plane.
-        """
         return pulumi.get(self, "endpoint_config")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> pulumi.Output[Sequence['outputs.ClusterEndpoint']]:
-        """
-        Endpoints served up by the cluster masters.
-        """
+    def endpoints(self) -> pulumi.Output[Optional[Sequence['outputs.ClusterEndpoint']]]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imagePolicyConfig")
-    def image_policy_config(self) -> pulumi.Output['outputs.ClusterImagePolicyConfig']:
-        """
-        (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-        """
+    def image_policy_config(self) -> pulumi.Output[Optional['outputs.ClusterImagePolicyConfig']]:
         return pulumi.get(self, "image_policy_config")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The version of Kubernetes to install into the cluster masters.
-        """
         return pulumi.get(self, "kubernetes_version")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the state of the cluster masters.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Output[Sequence['outputs.ClusterMetadata']]:
-        """
-        Metadata about the cluster.
-        """
+    def metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.ClusterMetadata']]]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def options(self) -> pulumi.Output['outputs.ClusterOptions']:
-        """
-        (Updatable) Optional attributes for the cluster.
-        """
+    def options(self) -> pulumi.Output[Optional['outputs.ClusterOptions']]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the cluster masters.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Type of cluster
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the virtual cloud network (VCN) in which to create the cluster.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 

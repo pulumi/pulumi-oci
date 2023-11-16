@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the File System resource in Oracle Cloud Infrastructure File Storage service.
@@ -101,7 +100,7 @@ type FileSystem struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
 	//
 	// May be unset as a blank value.
@@ -109,30 +108,30 @@ type FileSystem struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneParent pulumi.BoolOutput `pulumi:"isCloneParent"`
+	IsCloneParent pulumi.BoolPtrOutput `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated pulumi.BoolOutput `pulumi:"isHydrated"`
+	IsHydrated pulumi.BoolPtrOutput `pulumi:"isHydrated"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-	IsTargetable pulumi.BoolOutput `pulumi:"isTargetable"`
+	IsTargetable pulumi.BoolPtrOutput `pulumi:"isTargetable"`
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-	MeteredBytes pulumi.StringOutput `pulumi:"meteredBytes"`
+	MeteredBytes pulumi.StringPtrOutput `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-	ReplicationTargetId pulumi.StringOutput `pulumi:"replicationTargetId"`
+	ReplicationTargetId pulumi.StringPtrOutput `pulumi:"replicationTargetId"`
 	// Source information for the file system.
 	SourceDetails FileSystemSourceDetailArrayOutput `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SourceSnapshotId pulumi.StringOutput `pulumi:"sourceSnapshotId"`
+	SourceSnapshotId pulumi.StringPtrOutput `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewFileSystem registers a new resource with the given unique name, arguments, and options.
@@ -330,12 +329,6 @@ func (i *FileSystem) ToFileSystemOutputWithContext(ctx context.Context) FileSyst
 	return pulumi.ToOutputWithContext(ctx, i).(FileSystemOutput)
 }
 
-func (i *FileSystem) ToOutput(ctx context.Context) pulumix.Output[*FileSystem] {
-	return pulumix.Output[*FileSystem]{
-		OutputState: i.ToFileSystemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FileSystemArrayInput is an input type that accepts FileSystemArray and FileSystemArrayOutput values.
 // You can construct a concrete instance of `FileSystemArrayInput` via:
 //
@@ -359,12 +352,6 @@ func (i FileSystemArray) ToFileSystemArrayOutput() FileSystemArrayOutput {
 
 func (i FileSystemArray) ToFileSystemArrayOutputWithContext(ctx context.Context) FileSystemArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FileSystemArrayOutput)
-}
-
-func (i FileSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]*FileSystem] {
-	return pulumix.Output[[]*FileSystem]{
-		OutputState: i.ToFileSystemArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FileSystemMapInput is an input type that accepts FileSystemMap and FileSystemMapOutput values.
@@ -392,12 +379,6 @@ func (i FileSystemMap) ToFileSystemMapOutputWithContext(ctx context.Context) Fil
 	return pulumi.ToOutputWithContext(ctx, i).(FileSystemMapOutput)
 }
 
-func (i FileSystemMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FileSystem] {
-	return pulumix.Output[map[string]*FileSystem]{
-		OutputState: i.ToFileSystemMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FileSystemOutput struct{ *pulumi.OutputState }
 
 func (FileSystemOutput) ElementType() reflect.Type {
@@ -410,12 +391,6 @@ func (o FileSystemOutput) ToFileSystemOutput() FileSystemOutput {
 
 func (o FileSystemOutput) ToFileSystemOutputWithContext(ctx context.Context) FileSystemOutput {
 	return o
-}
-
-func (o FileSystemOutput) ToOutput(ctx context.Context) pulumix.Output[*FileSystem] {
-	return pulumix.Output[*FileSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
@@ -434,8 +409,8 @@ func (o FileSystemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
-func (o FileSystemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o FileSystemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -451,18 +426,18 @@ func (o FileSystemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o FileSystemOutput) IsCloneParent() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.IsCloneParent }).(pulumi.BoolOutput)
+func (o FileSystemOutput) IsCloneParent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.BoolPtrOutput { return v.IsCloneParent }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-func (o FileSystemOutput) IsHydrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
+func (o FileSystemOutput) IsHydrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.BoolPtrOutput { return v.IsHydrated }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-func (o FileSystemOutput) IsTargetable() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.BoolOutput { return v.IsTargetable }).(pulumi.BoolOutput)
+func (o FileSystemOutput) IsTargetable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.BoolPtrOutput { return v.IsTargetable }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
@@ -471,18 +446,18 @@ func (o FileSystemOutput) KmsKeyId() pulumi.StringPtrOutput {
 }
 
 // Additional information about the current 'lifecycleState'.
-func (o FileSystemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o FileSystemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-func (o FileSystemOutput) MeteredBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.MeteredBytes }).(pulumi.StringOutput)
+func (o FileSystemOutput) MeteredBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.MeteredBytes }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-func (o FileSystemOutput) ReplicationTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.ReplicationTargetId }).(pulumi.StringOutput)
+func (o FileSystemOutput) ReplicationTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.ReplicationTargetId }).(pulumi.StringPtrOutput)
 }
 
 // Source information for the file system.
@@ -494,18 +469,18 @@ func (o FileSystemOutput) SourceDetails() FileSystemSourceDetailArrayOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o FileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.SourceSnapshotId }).(pulumi.StringOutput)
+func (o FileSystemOutput) SourceSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the file system.
-func (o FileSystemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FileSystemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o FileSystemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FileSystemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type FileSystemArrayOutput struct{ *pulumi.OutputState }
@@ -520,12 +495,6 @@ func (o FileSystemArrayOutput) ToFileSystemArrayOutput() FileSystemArrayOutput {
 
 func (o FileSystemArrayOutput) ToFileSystemArrayOutputWithContext(ctx context.Context) FileSystemArrayOutput {
 	return o
-}
-
-func (o FileSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FileSystem] {
-	return pulumix.Output[[]*FileSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FileSystemArrayOutput) Index(i pulumi.IntInput) FileSystemOutput {
@@ -546,12 +515,6 @@ func (o FileSystemMapOutput) ToFileSystemMapOutput() FileSystemMapOutput {
 
 func (o FileSystemMapOutput) ToFileSystemMapOutputWithContext(ctx context.Context) FileSystemMapOutput {
 	return o
-}
-
-func (o FileSystemMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FileSystem] {
-	return pulumix.Output[map[string]*FileSystem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FileSystemMapOutput) MapIndex(k pulumi.StringInput) FileSystemOutput {

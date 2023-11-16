@@ -71,11 +71,11 @@ export interface GetClusterNetworkInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of instances.
      */
-    readonly instances: outputs.Core.GetClusterNetworkInstancesInstance[];
+    readonly instances?: outputs.Core.GetClusterNetworkInstancesInstance[];
 }
 /**
  * This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.

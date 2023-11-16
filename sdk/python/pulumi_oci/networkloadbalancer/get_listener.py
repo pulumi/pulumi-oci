@@ -49,23 +49,17 @@ class GetListenerResult:
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
-    def default_backend_set_name(self) -> str:
-        """
-        The name of the associated backend set.  Example: `example_backend_set`
-        """
+    def default_backend_set_name(self) -> Optional[str]:
         return pulumi.get(self, "default_backend_set_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipVersion")
-    def ip_version(self) -> str:
-        """
-        IP version associated with the listener.
-        """
+    def ip_version(self) -> Optional[str]:
         return pulumi.get(self, "ip_version")
 
     @property
@@ -75,10 +69,7 @@ class GetListenerResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -88,18 +79,12 @@ class GetListenerResult:
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The communication port for the listener.  Example: `80`
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
 
@@ -123,23 +108,7 @@ def get_listener(listener_name: Optional[str] = None,
                  network_load_balancer_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListenerResult:
     """
-    This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves listener properties associated with a given network load balancer and listener name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=oci_network_load_balancer_listener["test_listener"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str listener_name: The name of the listener to get.  Example: `example_listener`
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['listenerName'] = listener_name
@@ -163,22 +132,6 @@ def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
                         network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListenerResult]:
     """
-    This data source provides details about a specific Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Retrieves listener properties associated with a given network load balancer and listener name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=oci_network_load_balancer_listener["test_listener"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str listener_name: The name of the listener to get.  Example: `example_listener`
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

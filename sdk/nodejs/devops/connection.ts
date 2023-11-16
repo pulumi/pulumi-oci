@@ -78,19 +78,19 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of personal access token saved in secret store.
      */
-    public readonly accessToken!: pulumi.Output<string>;
+    public readonly accessToken!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      */
-    public readonly appPassword!: pulumi.Output<string>;
+    public readonly appPassword!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Base URL of the hosted BitbucketServer.
      */
-    public readonly baseUrl!: pulumi.Output<string>;
+    public readonly baseUrl!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment containing the connection.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The type of connection.
      */
@@ -98,23 +98,23 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Optional description about the connection.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Optional connection display name. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The result of validating the credentials of a connection.
      */
-    public /*out*/ readonly lastConnectionValidationResults!: pulumi.Output<outputs.DevOps.ConnectionLastConnectionValidationResult[]>;
+    public /*out*/ readonly lastConnectionValidationResults!: pulumi.Output<outputs.DevOps.ConnectionLastConnectionValidationResult[] | undefined>;
     /**
      * The OCID of the DevOps project.
      */
@@ -122,23 +122,23 @@ export class Connection extends pulumi.CustomResource {
     /**
      * The current state of the connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) TLS configuration used by build service to verify TLS connection.
      */
-    public readonly tlsVerifyConfig!: pulumi.Output<outputs.DevOps.ConnectionTlsVerifyConfig>;
+    public readonly tlsVerifyConfig!: pulumi.Output<outputs.DevOps.ConnectionTlsVerifyConfig | undefined>;
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
      *
@@ -146,7 +146,7 @@ export class Connection extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly username!: pulumi.Output<string>;
+    public readonly username!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.

@@ -84,7 +84,7 @@ export interface GetUsersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the `IdentityProvider` this user belongs to.
      */
@@ -100,7 +100,7 @@ export interface GetUsersResult {
     /**
      * The list of users.
      */
-    readonly users: outputs.Identity.GetUsersUser[];
+    readonly users?: outputs.Identity.GetUsersUser[];
 }
 /**
  * This data source provides the list of Users in Oracle Cloud Infrastructure Identity service.

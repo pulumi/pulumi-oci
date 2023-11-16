@@ -110,44 +110,44 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// This is the total number of recalls made so far
         /// </summary>
-        public readonly int RecallCount;
+        public readonly int? RecallCount;
         /// <summary>
         /// This is the number of recalls that failed
         /// </summary>
-        public readonly int RecallFailed;
+        public readonly int? RecallFailed;
         /// <summary>
         /// This is the maximum number of recalls (including successful and pending recalls) allowed
         /// </summary>
-        public readonly int RecallLimit;
+        public readonly int? RecallLimit;
         /// <summary>
         /// This is the number of recalls in pending state
         /// </summary>
-        public readonly int RecallPending;
+        public readonly int? RecallPending;
         /// <summary>
         /// This is the number of recalls that succeeded
         /// </summary>
-        public readonly int RecallSucceeded;
+        public readonly int? RecallSucceeded;
 
         [OutputConstructor]
         private GetNamespaceStorageRecallCountResult(
-            string id,
+            string? id,
 
             string @namespace,
 
-            int recallCount,
+            int? recallCount,
 
-            int recallFailed,
+            int? recallFailed,
 
-            int recallLimit,
+            int? recallLimit,
 
-            int recallPending,
+            int? recallPending,
 
-            int recallSucceeded)
+            int? recallSucceeded)
         {
             Id = id;
             Namespace = @namespace;

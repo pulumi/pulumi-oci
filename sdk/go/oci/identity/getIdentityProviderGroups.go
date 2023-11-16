@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Identity Provider Groups in Oracle Cloud Infrastructure Identity service.
@@ -70,7 +69,7 @@ type GetIdentityProviderGroupsArgs struct {
 type GetIdentityProviderGroupsResult struct {
 	Filters []GetIdentityProviderGroupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of identity_provider_groups.
 	IdentityProviderGroups []GetIdentityProviderGroupsIdentityProviderGroup `pulumi:"identityProviderGroups"`
 	// The OCID of the `IdentityProvider` this group belongs to.
@@ -123,19 +122,13 @@ func (o GetIdentityProviderGroupsResultOutput) ToGetIdentityProviderGroupsResult
 	return o
 }
 
-func (o GetIdentityProviderGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIdentityProviderGroupsResult] {
-	return pulumix.Output[GetIdentityProviderGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIdentityProviderGroupsResultOutput) Filters() GetIdentityProviderGroupsFilterArrayOutput {
 	return o.ApplyT(func(v GetIdentityProviderGroupsResult) []GetIdentityProviderGroupsFilter { return v.Filters }).(GetIdentityProviderGroupsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIdentityProviderGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIdentityProviderGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIdentityProviderGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIdentityProviderGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of identity_provider_groups.

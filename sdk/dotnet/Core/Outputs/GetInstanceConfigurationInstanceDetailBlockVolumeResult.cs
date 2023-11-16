@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the volume.
         /// </summary>
-        public readonly string VolumeId;
+        public readonly string? VolumeId;
 
         [OutputConstructor]
         private GetInstanceConfigurationInstanceDetailBlockVolumeResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult> createDetails,
 
-            string volumeId)
+            string? volumeId)
         {
             AttachDetails = attachDetails;
             CreateDetails = createDetails;

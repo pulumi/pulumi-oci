@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Authentication Factor public key issued by client
         /// </summary>
-        public readonly string PublicKey;
+        public readonly string? PublicKey;
         /// <summary>
         /// Device Status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The type of resource, User or App, that modified this Resource
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDomainsMyDeviceAuthenticationFactorResult(
-            string publicKey,
+            string? publicKey,
 
-            string status,
+            string? status,
 
-            string type)
+            string? type)
         {
             PublicKey = publicKey;
             Status = status;

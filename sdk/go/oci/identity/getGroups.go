@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Groups in Oracle Cloud Infrastructure Identity service.
@@ -74,7 +73,7 @@ type GetGroupsResult struct {
 	// The list of groups.
 	Groups []GetGroupsGroup `pulumi:"groups"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The group's current state.
@@ -124,12 +123,6 @@ func (o GetGroupsResultOutput) ToGetGroupsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGroupsResult] {
-	return pulumix.Output[GetGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the group.
 func (o GetGroupsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -145,8 +138,8 @@ func (o GetGroupsResultOutput) Groups() GetGroupsGroupArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.

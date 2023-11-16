@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of news_report_collection.
         /// </summary>
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.Opsi
 
             ImmutableArray<Outputs.GetNewsReportsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNewsReportsNewsReportCollectionResult> newsReportCollections,
 

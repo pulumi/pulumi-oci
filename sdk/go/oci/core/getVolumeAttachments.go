@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
@@ -79,7 +78,7 @@ type GetVolumeAttachmentsResult struct {
 	CompartmentId string                       `pulumi:"compartmentId"`
 	Filters       []GetVolumeAttachmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the instance the volume is attached to.
 	InstanceId *string `pulumi:"instanceId"`
 	// The list of volume_attachments.
@@ -133,12 +132,6 @@ func (o GetVolumeAttachmentsResultOutput) ToGetVolumeAttachmentsResultOutputWith
 	return o
 }
 
-func (o GetVolumeAttachmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeAttachmentsResult] {
-	return pulumix.Output[GetVolumeAttachmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
 func (o GetVolumeAttachmentsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -154,8 +147,8 @@ func (o GetVolumeAttachmentsResultOutput) Filters() GetVolumeAttachmentsFilterAr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVolumeAttachmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeAttachmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVolumeAttachmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance the volume is attached to.

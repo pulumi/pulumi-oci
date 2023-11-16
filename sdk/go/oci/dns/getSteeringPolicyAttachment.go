@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
@@ -60,26 +59,26 @@ type LookupSteeringPolicyAttachmentArgs struct {
 // A collection of values returned by getSteeringPolicyAttachment.
 type LookupSteeringPolicyAttachmentResult struct {
 	// The OCID of the compartment containing the steering policy attachment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The attached domain within the attached zone.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
 	Rtypes []string `pulumi:"rtypes"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State                      string `pulumi:"state"`
-	SteeringPolicyAttachmentId string `pulumi:"steeringPolicyAttachmentId"`
+	State                      *string `pulumi:"state"`
+	SteeringPolicyAttachmentId string  `pulumi:"steeringPolicyAttachmentId"`
 	// The OCID of the attached steering policy.
-	SteeringPolicyId string `pulumi:"steeringPolicyId"`
+	SteeringPolicyId *string `pulumi:"steeringPolicyId"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the attached zone.
-	ZoneId string `pulumi:"zoneId"`
+	ZoneId *string `pulumi:"zoneId"`
 }
 
 func LookupSteeringPolicyAttachmentOutput(ctx *pulumi.Context, args LookupSteeringPolicyAttachmentOutputArgs, opts ...pulumi.InvokeOption) LookupSteeringPolicyAttachmentResultOutput {
@@ -120,30 +119,24 @@ func (o LookupSteeringPolicyAttachmentResultOutput) ToLookupSteeringPolicyAttach
 	return o
 }
 
-func (o LookupSteeringPolicyAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSteeringPolicyAttachmentResult] {
-	return pulumix.Output[LookupSteeringPolicyAttachmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the steering policy attachment.
-func (o LookupSteeringPolicyAttachmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
-func (o LookupSteeringPolicyAttachmentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The attached domain within the attached zone.
-func (o LookupSteeringPolicyAttachmentResultOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.DomainName }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource.
-func (o LookupSteeringPolicyAttachmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
@@ -152,13 +145,13 @@ func (o LookupSteeringPolicyAttachmentResultOutput) Rtypes() pulumi.StringArrayO
 }
 
 // The canonical absolute URL of the resource.
-func (o LookupSteeringPolicyAttachmentResultOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.Self }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupSteeringPolicyAttachmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSteeringPolicyAttachmentResultOutput) SteeringPolicyAttachmentId() pulumi.StringOutput {
@@ -166,18 +159,18 @@ func (o LookupSteeringPolicyAttachmentResultOutput) SteeringPolicyAttachmentId()
 }
 
 // The OCID of the attached steering policy.
-func (o LookupSteeringPolicyAttachmentResultOutput) SteeringPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.SteeringPolicyId }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) SteeringPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.SteeringPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o LookupSteeringPolicyAttachmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the attached zone.
-func (o LookupSteeringPolicyAttachmentResultOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) string { return v.ZoneId }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyAttachmentResultOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyAttachmentResult) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

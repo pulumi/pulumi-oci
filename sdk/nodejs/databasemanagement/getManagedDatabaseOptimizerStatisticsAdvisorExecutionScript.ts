@@ -58,12 +58,12 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResu
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The Optimizer Statistics Advisor execution script.
      */
-    readonly script: string;
+    readonly script?: string;
     readonly taskName: string;
 }
 /**

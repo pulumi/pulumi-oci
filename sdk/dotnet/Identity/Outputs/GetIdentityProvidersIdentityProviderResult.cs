@@ -16,101 +16,101 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformAttributes;
+        public readonly ImmutableDictionary<string, object>? FreeformAttributes;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the `IdentityProvider`.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveState;
+        public readonly string? InactiveState;
         /// <summary>
         /// The XML that contains the information required for federating Identity with SAML2 Identity Provider.
         /// </summary>
-        public readonly string Metadata;
+        public readonly string? Metadata;
         /// <summary>
         /// The URL for retrieving the identity provider's metadata, which contains information required for federating.
         /// </summary>
-        public readonly string MetadataUrl;
+        public readonly string? MetadataUrl;
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).
         /// </summary>
-        public readonly string ProductType;
+        public readonly string? ProductType;
         /// <summary>
         /// The protocol used for federation.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The URL to redirect federated users to for authentication with the identity provider.
         /// </summary>
-        public readonly string RedirectUrl;
+        public readonly string? RedirectUrl;
         /// <summary>
         /// The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
         /// </summary>
-        public readonly string SigningCertificate;
+        public readonly string? SigningCertificate;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetIdentityProvidersIdentityProviderResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformAttributes,
+            ImmutableDictionary<string, object>? freeformAttributes,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string metadata,
+            string? metadata,
 
-            string metadataUrl,
+            string? metadataUrl,
 
-            string name,
+            string? name,
 
-            string productType,
+            string? productType,
 
-            string protocol,
+            string? protocol,
 
-            string redirectUrl,
+            string? redirectUrl,
 
-            string signingCertificate,
+            string? signingCertificate,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

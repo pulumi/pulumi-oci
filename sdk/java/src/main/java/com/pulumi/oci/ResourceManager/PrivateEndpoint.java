@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,28 +92,28 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description of the private endpoint. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of the private endpoint. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The private endpoint display name. Avoid entering confidential information.
@@ -133,84 +134,84 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dnsZones", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> dnsZones;
+    private Output</* @Nullable */ List<String>> dnsZones;
 
     /**
      * @return (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      * 
      */
-    public Output<List<String>> dnsZones() {
-        return this.dnsZones;
+    public Output<Optional<List<String>>> dnsZones() {
+        return Codegen.optional(this.dnsZones);
     }
     /**
      * (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
      * 
      */
     @Export(name="isUsedWithConfigurationSourceProvider", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUsedWithConfigurationSourceProvider;
+    private Output</* @Nullable */ Boolean> isUsedWithConfigurationSourceProvider;
 
     /**
      * @return (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
      * 
      */
-    public Output<Boolean> isUsedWithConfigurationSourceProvider() {
-        return this.isUsedWithConfigurationSourceProvider;
+    public Output<Optional<Boolean>> isUsedWithConfigurationSourceProvider() {
+        return Codegen.optional(this.isUsedWithConfigurationSourceProvider);
     }
     /**
      * (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
      * 
      */
     @Export(name="nsgIdLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIdLists;
+    private Output</* @Nullable */ List<String>> nsgIdLists;
 
     /**
      * @return (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
      * 
      */
-    public Output<List<String>> nsgIdLists() {
-        return this.nsgIdLists;
+    public Output<Optional<List<String>>> nsgIdLists() {
+        return Codegen.optional(this.nsgIdLists);
     }
     /**
      * The source IPs which resource manager service will use to connect to customer&#39;s network. Automatically assigned by Resource Manager Service.
      * 
      */
     @Export(name="sourceIps", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sourceIps;
+    private Output</* @Nullable */ List<String>> sourceIps;
 
     /**
      * @return The source IPs which resource manager service will use to connect to customer&#39;s network. Automatically assigned by Resource Manager Service.
      * 
      */
-    public Output<List<String>> sourceIps() {
-        return this.sourceIps;
+    public Output<Optional<List<String>>> sourceIps() {
+        return Codegen.optional(this.sourceIps);
     }
     /**
      * The current lifecycle state of the private endpoint.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the private endpoint.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
@@ -231,14 +232,14 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.

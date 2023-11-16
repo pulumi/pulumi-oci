@@ -130,14 +130,14 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
@@ -158,28 +158,28 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * An array of IP addresses.
      * 
      */
     @Export(name="ipAddressDetails", refs={List.class,LoadBalancerIpAddressDetail.class}, tree="[0,1]")
-    private Output<List<LoadBalancerIpAddressDetail>> ipAddressDetails;
+    private Output</* @Nullable */ List<LoadBalancerIpAddressDetail>> ipAddressDetails;
 
     /**
      * @return An array of IP addresses.
      * 
      */
-    public Output<List<LoadBalancerIpAddressDetail>> ipAddressDetails() {
-        return this.ipAddressDetails;
+    public Output<Optional<List<LoadBalancerIpAddressDetail>>> ipAddressDetails() {
+        return Codegen.optional(this.ipAddressDetails);
     }
     /**
      * An array of IP addresses. Deprecated: use ip_address_details instead
@@ -190,14 +190,14 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
     @Export(name="ipAddresses", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ipAddresses;
+    private Output</* @Nullable */ List<String>> ipAddresses;
 
     /**
      * @return An array of IP addresses. Deprecated: use ip_address_details instead
      * 
      */
-    public Output<List<String>> ipAddresses() {
-        return this.ipAddresses;
+    public Output<Optional<List<String>>> ipAddresses() {
+        return Codegen.optional(this.ipAddresses);
     }
     /**
      * IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
@@ -210,7 +210,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ipMode", refs={String.class}, tree="[0]")
-    private Output<String> ipMode;
+    private Output</* @Nullable */ String> ipMode;
 
     /**
      * @return IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
@@ -222,8 +222,8 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: &#34;ipMode&#34;:&#34;IPV6&#34;
      * 
      */
-    public Output<String> ipMode() {
-        return this.ipMode;
+    public Output<Optional<String>> ipMode() {
+        return Codegen.optional(this.ipMode);
     }
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
@@ -238,7 +238,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrivate;
+    private Output</* @Nullable */ Boolean> isPrivate;
 
     /**
      * @return Whether the load balancer has a VCN-local (private) IP address.
@@ -252,8 +252,8 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * Example: `true`
      * 
      */
-    public Output<Boolean> isPrivate() {
-        return this.isPrivate;
+    public Output<Optional<Boolean>> isPrivate() {
+        return Codegen.optional(this.isPrivate);
     }
     /**
      * (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
@@ -318,28 +318,28 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shapeDetails", refs={LoadBalancerShapeDetails.class}, tree="[0]")
-    private Output<LoadBalancerShapeDetails> shapeDetails;
+    private Output</* @Nullable */ LoadBalancerShapeDetails> shapeDetails;
 
     /**
      * @return (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
      * 
      */
-    public Output<LoadBalancerShapeDetails> shapeDetails() {
-        return this.shapeDetails;
+    public Output<Optional<LoadBalancerShapeDetails>> shapeDetails() {
+        return Codegen.optional(this.shapeDetails);
     }
     /**
      * The current state of the load balancer.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the load balancer.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -366,28 +366,28 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

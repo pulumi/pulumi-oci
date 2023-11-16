@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudVmClustersCloudVmCluster {
@@ -21,434 +23,434 @@ public final class GetCloudVmClustersCloudVmCluster {
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
-    private List<String> backupNetworkNsgIds;
+    private @Nullable List<String> backupNetworkNsgIds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      * 
      */
-    private String backupSubnetId;
+    private @Nullable String backupSubnetId;
     /**
      * @return If provided, filters the results for the specified cloud Exadata infrastructure.
      * 
      */
-    private String cloudExadataInfrastructureId;
+    private @Nullable String cloudExadataInfrastructureId;
     /**
      * @return The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    private String clusterName;
+    private @Nullable String clusterName;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of CPU cores enabled on the cloud VM cluster.
      * 
      */
-    private Integer cpuCoreCount;
-    private Boolean createAsync;
+    private @Nullable Integer cpuCoreCount;
+    private @Nullable Boolean createAsync;
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    private List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
+    private @Nullable List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
-    private Integer dataStoragePercentage;
+    private @Nullable Integer dataStoragePercentage;
     /**
      * @return The data disk group size to be allocated in TBs.
      * 
      */
-    private Double dataStorageSizeInTbs;
+    private @Nullable Double dataStorageSizeInTbs;
     /**
      * @return The local node storage to be allocated in GBs.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The list of DB servers.
      * 
      */
-    private List<String> dbServers;
+    private @Nullable List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    private String diskRedundancy;
+    private @Nullable String diskRedundancy;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The domain name for the cloud VM cluster.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private String giVersion;
+    private @Nullable String giVersion;
     /**
      * @return The hostname for the cloud VM cluster.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
      * 
      */
-    private String id;
-    private List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches;
+    private @Nullable String id;
+    private @Nullable List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches;
     /**
      * @return If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
-    private Boolean isLocalBackupEnabled;
+    private @Nullable Boolean isLocalBackupEnabled;
     /**
      * @return If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
      * 
      */
-    private Boolean isSparseDiskgroupEnabled;
+    private @Nullable Boolean isSparseDiskgroupEnabled;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
      */
-    private String lastUpdateHistoryEntryId;
+    private @Nullable String lastUpdateHistoryEntryId;
     /**
      * @return The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The port number configured for the listener on the cloud VM cluster.
      * 
      */
-    private String listenerPort;
+    private @Nullable String listenerPort;
     /**
      * @return The memory to be allocated in GBs.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The number of nodes in the cloud VM cluster.
      * 
      */
-    private Integer nodeCount;
+    private @Nullable Integer nodeCount;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    private Double ocpuCount;
-    private String privateZoneId;
+    private @Nullable Double ocpuCount;
+    private @Nullable String privateZoneId;
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    private String scanDnsName;
+    private @Nullable String scanDnsName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    private String scanDnsRecordId;
+    private @Nullable String scanDnsRecordId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
-    private List<String> scanIpIds;
+    private @Nullable List<String> scanIpIds;
     /**
      * @return The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
      */
-    private Integer scanListenerPortTcp;
+    private @Nullable Integer scanListenerPortTcp;
     /**
      * @return The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      * 
      */
-    private Integer scanListenerPortTcpSsl;
+    private @Nullable Integer scanListenerPortTcpSsl;
     /**
      * @return The model name of the Exadata hardware running the cloud VM cluster.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      * 
      */
-    private List<String> sshPublicKeys;
+    private @Nullable List<String> sshPublicKeys;
     /**
      * @return A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
-    private Integer storageSizeInGbs;
+    private @Nullable Integer storageSizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return Operating system version of the image.
      * 
      */
-    private String systemVersion;
+    private @Nullable String systemVersion;
     /**
      * @return The date and time that the cloud VM cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    private String timeZone;
+    private @Nullable String timeZone;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
-    private List<String> vipIds;
+    private @Nullable List<String> vipIds;
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
      * 
      */
-    private String zoneId;
+    private @Nullable String zoneId;
 
     private GetCloudVmClustersCloudVmCluster() {}
     /**
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
     public List<String> backupNetworkNsgIds() {
-        return this.backupNetworkNsgIds;
+        return this.backupNetworkNsgIds == null ? List.of() : this.backupNetworkNsgIds;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      * 
      */
-    public String backupSubnetId() {
-        return this.backupSubnetId;
+    public Optional<String> backupSubnetId() {
+        return Optional.ofNullable(this.backupSubnetId);
     }
     /**
      * @return If provided, filters the results for the specified cloud Exadata infrastructure.
      * 
      */
-    public String cloudExadataInfrastructureId() {
-        return this.cloudExadataInfrastructureId;
+    public Optional<String> cloudExadataInfrastructureId() {
+        return Optional.ofNullable(this.cloudExadataInfrastructureId);
     }
     /**
      * @return The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    public String clusterName() {
-        return this.clusterName;
+    public Optional<String> clusterName() {
+        return Optional.ofNullable(this.clusterName);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of CPU cores enabled on the cloud VM cluster.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
-    public Boolean createAsync() {
-        return this.createAsync;
+    public Optional<Boolean> createAsync() {
+        return Optional.ofNullable(this.createAsync);
     }
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+        return this.dataCollectionOptions == null ? List.of() : this.dataCollectionOptions;
     }
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
      */
-    public Integer dataStoragePercentage() {
-        return this.dataStoragePercentage;
+    public Optional<Integer> dataStoragePercentage() {
+        return Optional.ofNullable(this.dataStoragePercentage);
     }
     /**
      * @return The data disk group size to be allocated in TBs.
      * 
      */
-    public Double dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Optional<Double> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
     }
     /**
      * @return The local node storage to be allocated in GBs.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The list of DB servers.
      * 
      */
     public List<String> dbServers() {
-        return this.dbServers;
+        return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    public String diskRedundancy() {
-        return this.diskRedundancy;
+    public Optional<String> diskRedundancy() {
+        return Optional.ofNullable(this.diskRedundancy);
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The domain name for the cloud VM cluster.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    public String giVersion() {
-        return this.giVersion;
+    public Optional<String> giVersion() {
+        return Optional.ofNullable(this.giVersion);
     }
     /**
      * @return The hostname for the cloud VM cluster.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches() {
-        return this.iormConfigCaches;
+        return this.iormConfigCaches == null ? List.of() : this.iormConfigCaches;
     }
     /**
      * @return If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
      */
-    public Boolean isLocalBackupEnabled() {
-        return this.isLocalBackupEnabled;
+    public Optional<Boolean> isLocalBackupEnabled() {
+        return Optional.ofNullable(this.isLocalBackupEnabled);
     }
     /**
      * @return If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
      * 
      */
-    public Boolean isSparseDiskgroupEnabled() {
-        return this.isSparseDiskgroupEnabled;
+    public Optional<Boolean> isSparseDiskgroupEnabled() {
+        return Optional.ofNullable(this.isSparseDiskgroupEnabled);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
      */
-    public String lastUpdateHistoryEntryId() {
-        return this.lastUpdateHistoryEntryId;
+    public Optional<String> lastUpdateHistoryEntryId() {
+        return Optional.ofNullable(this.lastUpdateHistoryEntryId);
     }
     /**
      * @return The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The port number configured for the listener on the cloud VM cluster.
      * 
      */
-    public String listenerPort() {
-        return this.listenerPort;
+    public Optional<String> listenerPort() {
+        return Optional.ofNullable(this.listenerPort);
     }
     /**
      * @return The memory to be allocated in GBs.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The number of nodes in the cloud VM cluster.
      * 
      */
-    public Integer nodeCount() {
-        return this.nodeCount;
+    public Optional<Integer> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -456,122 +458,122 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    public Double ocpuCount() {
-        return this.ocpuCount;
+    public Optional<Double> ocpuCount() {
+        return Optional.ofNullable(this.ocpuCount);
     }
-    public String privateZoneId() {
-        return this.privateZoneId;
+    public Optional<String> privateZoneId() {
+        return Optional.ofNullable(this.privateZoneId);
     }
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    public String scanDnsName() {
-        return this.scanDnsName;
+    public Optional<String> scanDnsName() {
+        return Optional.ofNullable(this.scanDnsName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
      */
-    public String scanDnsRecordId() {
-        return this.scanDnsRecordId;
+    public Optional<String> scanDnsRecordId() {
+        return Optional.ofNullable(this.scanDnsRecordId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     public List<String> scanIpIds() {
-        return this.scanIpIds;
+        return this.scanIpIds == null ? List.of() : this.scanIpIds;
     }
     /**
      * @return The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
      */
-    public Integer scanListenerPortTcp() {
-        return this.scanListenerPortTcp;
+    public Optional<Integer> scanListenerPortTcp() {
+        return Optional.ofNullable(this.scanListenerPortTcp);
     }
     /**
      * @return The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      * 
      */
-    public Integer scanListenerPortTcpSsl() {
-        return this.scanListenerPortTcpSsl;
+    public Optional<Integer> scanListenerPortTcpSsl() {
+        return Optional.ofNullable(this.scanListenerPortTcpSsl);
     }
     /**
      * @return The model name of the Exadata hardware running the cloud VM cluster.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      * 
      */
     public List<String> sshPublicKeys() {
-        return this.sshPublicKeys;
+        return this.sshPublicKeys == null ? List.of() : this.sshPublicKeys;
     }
     /**
      * @return A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
-    public Integer storageSizeInGbs() {
-        return this.storageSizeInGbs;
+    public Optional<Integer> storageSizeInGbs() {
+        return Optional.ofNullable(this.storageSizeInGbs);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return Operating system version of the image.
      * 
      */
-    public String systemVersion() {
-        return this.systemVersion;
+    public Optional<String> systemVersion() {
+        return Optional.ofNullable(this.systemVersion);
     }
     /**
      * @return The date and time that the cloud VM cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    public String timeZone() {
-        return this.timeZone;
+    public Optional<String> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     public List<String> vipIds() {
-        return this.vipIds;
+        return this.vipIds == null ? List.of() : this.vipIds;
     }
     /**
      * @return The OCID of the zone the cloud VM cluster is associated with.
      * 
      */
-    public String zoneId() {
-        return this.zoneId;
+    public Optional<String> zoneId() {
+        return Optional.ofNullable(this.zoneId);
     }
 
     public static Builder builder() {
@@ -583,54 +585,54 @@ public final class GetCloudVmClustersCloudVmCluster {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private List<String> backupNetworkNsgIds;
-        private String backupSubnetId;
-        private String cloudExadataInfrastructureId;
-        private String clusterName;
-        private String compartmentId;
-        private Integer cpuCoreCount;
-        private Boolean createAsync;
-        private List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
-        private Integer dataStoragePercentage;
-        private Double dataStorageSizeInTbs;
-        private Integer dbNodeStorageSizeInGbs;
-        private List<String> dbServers;
-        private Map<String,Object> definedTags;
-        private String diskRedundancy;
-        private String displayName;
-        private String domain;
-        private Map<String,Object> freeformTags;
-        private String giVersion;
-        private String hostname;
-        private String id;
-        private List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches;
-        private Boolean isLocalBackupEnabled;
-        private Boolean isSparseDiskgroupEnabled;
-        private String lastUpdateHistoryEntryId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private String listenerPort;
-        private Integer memorySizeInGbs;
-        private Integer nodeCount;
-        private List<String> nsgIds;
-        private Double ocpuCount;
-        private String privateZoneId;
-        private String scanDnsName;
-        private String scanDnsRecordId;
-        private List<String> scanIpIds;
-        private Integer scanListenerPortTcp;
-        private Integer scanListenerPortTcpSsl;
-        private String shape;
-        private List<String> sshPublicKeys;
-        private String state;
-        private Integer storageSizeInGbs;
-        private String subnetId;
-        private String systemVersion;
-        private String timeCreated;
-        private String timeZone;
-        private List<String> vipIds;
-        private String zoneId;
+        private @Nullable String availabilityDomain;
+        private @Nullable List<String> backupNetworkNsgIds;
+        private @Nullable String backupSubnetId;
+        private @Nullable String cloudExadataInfrastructureId;
+        private @Nullable String clusterName;
+        private @Nullable String compartmentId;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable Boolean createAsync;
+        private @Nullable List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
+        private @Nullable Integer dataStoragePercentage;
+        private @Nullable Double dataStorageSizeInTbs;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable List<String> dbServers;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String diskRedundancy;
+        private @Nullable String displayName;
+        private @Nullable String domain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String giVersion;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches;
+        private @Nullable Boolean isLocalBackupEnabled;
+        private @Nullable Boolean isSparseDiskgroupEnabled;
+        private @Nullable String lastUpdateHistoryEntryId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String listenerPort;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable Integer nodeCount;
+        private @Nullable List<String> nsgIds;
+        private @Nullable Double ocpuCount;
+        private @Nullable String privateZoneId;
+        private @Nullable String scanDnsName;
+        private @Nullable String scanDnsRecordId;
+        private @Nullable List<String> scanIpIds;
+        private @Nullable Integer scanListenerPortTcp;
+        private @Nullable Integer scanListenerPortTcpSsl;
+        private @Nullable String shape;
+        private @Nullable List<String> sshPublicKeys;
+        private @Nullable String state;
+        private @Nullable Integer storageSizeInGbs;
+        private @Nullable String subnetId;
+        private @Nullable String systemVersion;
+        private @Nullable String timeCreated;
+        private @Nullable String timeZone;
+        private @Nullable List<String> vipIds;
+        private @Nullable String zoneId;
         public Builder() {}
         public Builder(GetCloudVmClustersCloudVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
@@ -685,267 +687,267 @@ public final class GetCloudVmClustersCloudVmCluster {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder backupNetworkNsgIds(List<String> backupNetworkNsgIds) {
-            this.backupNetworkNsgIds = Objects.requireNonNull(backupNetworkNsgIds);
+        public Builder backupNetworkNsgIds(@Nullable List<String> backupNetworkNsgIds) {
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
             return this;
         }
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
         }
         @CustomType.Setter
-        public Builder backupSubnetId(String backupSubnetId) {
-            this.backupSubnetId = Objects.requireNonNull(backupSubnetId);
+        public Builder backupSubnetId(@Nullable String backupSubnetId) {
+            this.backupSubnetId = backupSubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
-            this.cloudExadataInfrastructureId = Objects.requireNonNull(cloudExadataInfrastructureId);
+        public Builder cloudExadataInfrastructureId(@Nullable String cloudExadataInfrastructureId) {
+            this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterName(String clusterName) {
-            this.clusterName = Objects.requireNonNull(clusterName);
+        public Builder clusterName(@Nullable String clusterName) {
+            this.clusterName = clusterName;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+        public Builder createAsync(@Nullable Boolean createAsync) {
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCollectionOptions(List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions) {
-            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+        public Builder dataCollectionOptions(@Nullable List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions) {
+            this.dataCollectionOptions = dataCollectionOptions;
             return this;
         }
         public Builder dataCollectionOptions(GetCloudVmClustersCloudVmClusterDataCollectionOption... dataCollectionOptions) {
             return dataCollectionOptions(List.of(dataCollectionOptions));
         }
         @CustomType.Setter
-        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
-            this.dataStoragePercentage = Objects.requireNonNull(dataStoragePercentage);
+        public Builder dataStoragePercentage(@Nullable Integer dataStoragePercentage) {
+            this.dataStoragePercentage = dataStoragePercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+        public Builder dataStorageSizeInTbs(@Nullable Double dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServers(List<String> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(String... dbServers) {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder diskRedundancy(String diskRedundancy) {
-            this.diskRedundancy = Objects.requireNonNull(diskRedundancy);
+        public Builder diskRedundancy(@Nullable String diskRedundancy) {
+            this.diskRedundancy = diskRedundancy;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder giVersion(String giVersion) {
-            this.giVersion = Objects.requireNonNull(giVersion);
+        public Builder giVersion(@Nullable String giVersion) {
+            this.giVersion = giVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder iormConfigCaches(List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches) {
-            this.iormConfigCaches = Objects.requireNonNull(iormConfigCaches);
+        public Builder iormConfigCaches(@Nullable List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches) {
+            this.iormConfigCaches = iormConfigCaches;
             return this;
         }
         public Builder iormConfigCaches(GetCloudVmClustersCloudVmClusterIormConfigCach... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
         @CustomType.Setter
-        public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
-            this.isLocalBackupEnabled = Objects.requireNonNull(isLocalBackupEnabled);
+        public Builder isLocalBackupEnabled(@Nullable Boolean isLocalBackupEnabled) {
+            this.isLocalBackupEnabled = isLocalBackupEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
-            this.isSparseDiskgroupEnabled = Objects.requireNonNull(isSparseDiskgroupEnabled);
+        public Builder isSparseDiskgroupEnabled(@Nullable Boolean isSparseDiskgroupEnabled) {
+            this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lastUpdateHistoryEntryId(String lastUpdateHistoryEntryId) {
-            this.lastUpdateHistoryEntryId = Objects.requireNonNull(lastUpdateHistoryEntryId);
+        public Builder lastUpdateHistoryEntryId(@Nullable String lastUpdateHistoryEntryId) {
+            this.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerPort(String listenerPort) {
-            this.listenerPort = Objects.requireNonNull(listenerPort);
+        public Builder listenerPort(@Nullable String listenerPort) {
+            this.listenerPort = listenerPort;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+        public Builder nodeCount(@Nullable Integer nodeCount) {
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+        public Builder ocpuCount(@Nullable Double ocpuCount) {
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder privateZoneId(String privateZoneId) {
-            this.privateZoneId = Objects.requireNonNull(privateZoneId);
+        public Builder privateZoneId(@Nullable String privateZoneId) {
+            this.privateZoneId = privateZoneId;
             return this;
         }
         @CustomType.Setter
-        public Builder scanDnsName(String scanDnsName) {
-            this.scanDnsName = Objects.requireNonNull(scanDnsName);
+        public Builder scanDnsName(@Nullable String scanDnsName) {
+            this.scanDnsName = scanDnsName;
             return this;
         }
         @CustomType.Setter
-        public Builder scanDnsRecordId(String scanDnsRecordId) {
-            this.scanDnsRecordId = Objects.requireNonNull(scanDnsRecordId);
+        public Builder scanDnsRecordId(@Nullable String scanDnsRecordId) {
+            this.scanDnsRecordId = scanDnsRecordId;
             return this;
         }
         @CustomType.Setter
-        public Builder scanIpIds(List<String> scanIpIds) {
-            this.scanIpIds = Objects.requireNonNull(scanIpIds);
+        public Builder scanIpIds(@Nullable List<String> scanIpIds) {
+            this.scanIpIds = scanIpIds;
             return this;
         }
         public Builder scanIpIds(String... scanIpIds) {
             return scanIpIds(List.of(scanIpIds));
         }
         @CustomType.Setter
-        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
-            this.scanListenerPortTcp = Objects.requireNonNull(scanListenerPortTcp);
+        public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
-            this.scanListenerPortTcpSsl = Objects.requireNonNull(scanListenerPortTcpSsl);
+        public Builder scanListenerPortTcpSsl(@Nullable Integer scanListenerPortTcpSsl) {
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder sshPublicKeys(List<String> sshPublicKeys) {
-            this.sshPublicKeys = Objects.requireNonNull(sshPublicKeys);
+        public Builder sshPublicKeys(@Nullable List<String> sshPublicKeys) {
+            this.sshPublicKeys = sshPublicKeys;
             return this;
         }
         public Builder sshPublicKeys(String... sshPublicKeys) {
             return sshPublicKeys(List.of(sshPublicKeys));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageSizeInGbs(Integer storageSizeInGbs) {
-            this.storageSizeInGbs = Objects.requireNonNull(storageSizeInGbs);
+        public Builder storageSizeInGbs(@Nullable Integer storageSizeInGbs) {
+            this.storageSizeInGbs = storageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemVersion(String systemVersion) {
-            this.systemVersion = Objects.requireNonNull(systemVersion);
+        public Builder systemVersion(@Nullable String systemVersion) {
+            this.systemVersion = systemVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+        public Builder timeZone(@Nullable String timeZone) {
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder vipIds(List<String> vipIds) {
-            this.vipIds = Objects.requireNonNull(vipIds);
+        public Builder vipIds(@Nullable List<String> vipIds) {
+            this.vipIds = vipIds;
             return this;
         }
         public Builder vipIds(String... vipIds) {
             return vipIds(List.of(vipIds));
         }
         @CustomType.Setter
-        public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+        public Builder zoneId(@Nullable String zoneId) {
+            this.zoneId = zoneId;
             return this;
         }
         public GetCloudVmClustersCloudVmCluster build() {

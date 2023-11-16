@@ -16,35 +16,35 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// Version of the keytab secert in the Vault to use as a backup.
         /// </summary>
-        public readonly int BackupKeyTabSecretVersion;
+        public readonly int? BackupKeyTabSecretVersion;
         /// <summary>
         /// Version of the keytab secret in the Vault to use.
         /// </summary>
-        public readonly int CurrentKeyTabSecretVersion;
+        public readonly int? CurrentKeyTabSecretVersion;
         /// <summary>
         /// Specifies whether to enable or disable Kerberos.
         /// </summary>
-        public readonly bool IsKerberosEnabled;
+        public readonly bool? IsKerberosEnabled;
         /// <summary>
         /// The Kerberos realm that the mount target will join.
         /// </summary>
-        public readonly string KerberosRealm;
+        public readonly string? KerberosRealm;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
         /// </summary>
-        public readonly string KeyTabSecretId;
+        public readonly string? KeyTabSecretId;
 
         [OutputConstructor]
         private GetMountTargetsMountTargetKerberoResult(
-            int backupKeyTabSecretVersion,
+            int? backupKeyTabSecretVersion,
 
-            int currentKeyTabSecretVersion,
+            int? currentKeyTabSecretVersion,
 
-            bool isKerberosEnabled,
+            bool? isKerberosEnabled,
 
-            string kerberosRealm,
+            string? kerberosRealm,
 
-            string keyTabSecretId)
+            string? keyTabSecretId)
         {
             BackupKeyTabSecretVersion = backupKeyTabSecretVersion;
             CurrentKeyTabSecretVersion = currentKeyTabSecretVersion;

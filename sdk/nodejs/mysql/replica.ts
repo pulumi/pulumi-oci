@@ -75,15 +75,15 @@ export class Replica extends pulumi.CustomResource {
     /**
      * The name of the Availability Domain the read replica is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment that contains the read replica.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the Configuration to be used by the read replica.
      */
-    public /*out*/ readonly configurationId!: pulumi.Output<string>;
+    public /*out*/ readonly configurationId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the DB System the read replica is associated with.
      */
@@ -91,51 +91,51 @@ export class Replica extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) User provided description of the read replica.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The name of the Fault Domain the read replica is located in.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    public /*out*/ readonly faultDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The IP address the read replica is configured to listen on.
      */
-    public /*out*/ readonly ipAddress!: pulumi.Output<string>;
+    public /*out*/ readonly ipAddress!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      */
-    public readonly isDeleteProtected!: pulumi.Output<boolean>;
+    public readonly isDeleteProtected!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the state of the read replica.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The MySQL version to be used by the read replica.
      */
-    public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
+    public /*out*/ readonly mysqlVersion!: pulumi.Output<string | undefined>;
     /**
      * The port the read replica is configured to listen on.
      */
-    public /*out*/ readonly port!: pulumi.Output<number>;
+    public /*out*/ readonly port!: pulumi.Output<number | undefined>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    public /*out*/ readonly portX!: pulumi.Output<number>;
+    public /*out*/ readonly portX!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
      */
-    public readonly replicaOverrides!: pulumi.Output<outputs.Mysql.ReplicaReplicaOverrides>;
+    public readonly replicaOverrides!: pulumi.Output<outputs.Mysql.ReplicaReplicaOverrides | undefined>;
     /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
      *
@@ -143,19 +143,19 @@ export class Replica extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly shapeName!: pulumi.Output<string>;
+    public /*out*/ readonly shapeName!: pulumi.Output<string | undefined>;
     /**
      * The state of the read replica.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Replica resource with the given unique name, arguments, and options.

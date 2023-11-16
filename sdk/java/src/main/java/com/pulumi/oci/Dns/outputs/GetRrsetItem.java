@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRrsetItem {
@@ -15,87 +17,87 @@ public final class GetRrsetItem {
      * @return The target fully-qualified domain name (FQDN) within the target zone.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    private Boolean isProtected;
+    private @Nullable Boolean isProtected;
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      * 
      */
-    private String rdata;
+    private @Nullable String rdata;
     /**
      * @return A unique identifier for the record within its zone.
      * 
      */
-    private String recordHash;
+    private @Nullable String recordHash;
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    private String rrsetVersion;
+    private @Nullable String rrsetVersion;
     /**
      * @return The type of the target RRSet within the target zone.
      * 
      */
-    private String rtype;
+    private @Nullable String rtype;
     /**
      * @return The Time To Live for the record, in seconds.
      * 
      */
-    private Integer ttl;
+    private @Nullable Integer ttl;
 
     private GetRrsetItem() {}
     /**
      * @return The target fully-qualified domain name (FQDN) within the target zone.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    public Boolean isProtected() {
-        return this.isProtected;
+    public Optional<Boolean> isProtected() {
+        return Optional.ofNullable(this.isProtected);
     }
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      * 
      */
-    public String rdata() {
-        return this.rdata;
+    public Optional<String> rdata() {
+        return Optional.ofNullable(this.rdata);
     }
     /**
      * @return A unique identifier for the record within its zone.
      * 
      */
-    public String recordHash() {
-        return this.recordHash;
+    public Optional<String> recordHash() {
+        return Optional.ofNullable(this.recordHash);
     }
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    public String rrsetVersion() {
-        return this.rrsetVersion;
+    public Optional<String> rrsetVersion() {
+        return Optional.ofNullable(this.rrsetVersion);
     }
     /**
      * @return The type of the target RRSet within the target zone.
      * 
      */
-    public String rtype() {
-        return this.rtype;
+    public Optional<String> rtype() {
+        return Optional.ofNullable(this.rtype);
     }
     /**
      * @return The Time To Live for the record, in seconds.
      * 
      */
-    public Integer ttl() {
-        return this.ttl;
+    public Optional<Integer> ttl() {
+        return Optional.ofNullable(this.ttl);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetRrsetItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String domain;
-        private Boolean isProtected;
-        private String rdata;
-        private String recordHash;
-        private String rrsetVersion;
-        private String rtype;
-        private Integer ttl;
+        private @Nullable String domain;
+        private @Nullable Boolean isProtected;
+        private @Nullable String rdata;
+        private @Nullable String recordHash;
+        private @Nullable String rrsetVersion;
+        private @Nullable String rtype;
+        private @Nullable Integer ttl;
         public Builder() {}
         public Builder(GetRrsetItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,38 +129,38 @@ public final class GetRrsetItem {
         }
 
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+        public Builder isProtected(@Nullable Boolean isProtected) {
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
-        public Builder rdata(String rdata) {
-            this.rdata = Objects.requireNonNull(rdata);
+        public Builder rdata(@Nullable String rdata) {
+            this.rdata = rdata;
             return this;
         }
         @CustomType.Setter
-        public Builder recordHash(String recordHash) {
-            this.recordHash = Objects.requireNonNull(recordHash);
+        public Builder recordHash(@Nullable String recordHash) {
+            this.recordHash = recordHash;
             return this;
         }
         @CustomType.Setter
-        public Builder rrsetVersion(String rrsetVersion) {
-            this.rrsetVersion = Objects.requireNonNull(rrsetVersion);
+        public Builder rrsetVersion(@Nullable String rrsetVersion) {
+            this.rrsetVersion = rrsetVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+        public Builder rtype(@Nullable String rtype) {
+            this.rtype = rtype;
             return this;
         }
         @CustomType.Setter
-        public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+        public Builder ttl(@Nullable Integer ttl) {
+            this.ttl = ttl;
             return this;
         }
         public GetRrsetItem build() {

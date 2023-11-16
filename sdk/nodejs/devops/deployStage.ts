@@ -50,47 +50,47 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies the approval policy.
      */
-    public readonly approvalPolicy!: pulumi.Output<outputs.DevOps.DeployStageApprovalPolicy>;
+    public readonly approvalPolicy!: pulumi.Output<outputs.DevOps.DeployStageApprovalPolicy | undefined>;
     /**
      * (Updatable) Disable pre/post upgrade hooks. Set to false by default.
      */
-    public readonly areHooksEnabled!: pulumi.Output<boolean>;
+    public readonly areHooksEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Collection of backend environment IP addresses.
      */
-    public readonly blueBackendIps!: pulumi.Output<outputs.DevOps.DeployStageBlueBackendIps>;
+    public readonly blueBackendIps!: pulumi.Output<outputs.DevOps.DeployStageBlueBackendIps | undefined>;
     /**
      * Specifies the required blue green release strategy for OKE deployment.
      */
-    public readonly blueGreenStrategy!: pulumi.Output<outputs.DevOps.DeployStageBlueGreenStrategy>;
+    public readonly blueGreenStrategy!: pulumi.Output<outputs.DevOps.DeployStageBlueGreenStrategy | undefined>;
     /**
      * Specifies the required canary release strategy for OKE deployment.
      */
-    public readonly canaryStrategy!: pulumi.Output<outputs.DevOps.DeployStageCanaryStrategy>;
+    public readonly canaryStrategy!: pulumi.Output<outputs.DevOps.DeployStageCanaryStrategy | undefined>;
     /**
      * (Updatable) The OCID of the artifact that contains the command specification.
      */
-    public readonly commandSpecDeployArtifactId!: pulumi.Output<string>;
+    public readonly commandSpecDeployArtifactId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
      */
-    public readonly computeInstanceGroupBlueGreenDeploymentDeployStageId!: pulumi.Output<string>;
+    public readonly computeInstanceGroupBlueGreenDeploymentDeployStageId!: pulumi.Output<string | undefined>;
     /**
      * A compute instance group canary stage OCID for load balancer.
      */
-    public readonly computeInstanceGroupCanaryDeployStageId!: pulumi.Output<string>;
+    public readonly computeInstanceGroupCanaryDeployStageId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
      */
-    public readonly computeInstanceGroupCanaryTrafficShiftDeployStageId!: pulumi.Output<string>;
+    public readonly computeInstanceGroupCanaryTrafficShiftDeployStageId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A compute instance group environment OCID for rolling deployment.
      */
-    public readonly computeInstanceGroupDeployEnvironmentId!: pulumi.Output<string>;
+    public readonly computeInstanceGroupDeployEnvironmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      */
@@ -98,11 +98,11 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies the container configuration.
      */
-    public readonly containerConfig!: pulumi.Output<outputs.DevOps.DeployStageContainerConfig>;
+    public readonly containerConfig!: pulumi.Output<outputs.DevOps.DeployStageContainerConfig | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      */
@@ -114,11 +114,11 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * First compute instance group environment OCID for deployment.
      */
-    public readonly deployEnvironmentIdA!: pulumi.Output<string>;
+    public readonly deployEnvironmentIdA!: pulumi.Output<string | undefined>;
     /**
      * Second compute instance group environment OCID for deployment.
      */
-    public readonly deployEnvironmentIdB!: pulumi.Output<string>;
+    public readonly deployEnvironmentIdB!: pulumi.Output<string | undefined>;
     /**
      * The OCID of a pipeline.
      */
@@ -134,59 +134,59 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the artifact that contains the deployment specification.
      */
-    public readonly deploymentSpecDeployArtifactId!: pulumi.Output<string>;
+    public readonly deploymentSpecDeployArtifactId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Optional description about the deployment stage.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A Docker image artifact OCID.
      */
-    public readonly dockerImageDeployArtifactId!: pulumi.Output<string>;
+    public readonly dockerImageDeployArtifactId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
      */
-    public readonly failurePolicy!: pulumi.Output<outputs.DevOps.DeployStageFailurePolicy>;
+    public readonly failurePolicy!: pulumi.Output<outputs.DevOps.DeployStageFailurePolicy | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Function environment OCID.
      */
-    public readonly functionDeployEnvironmentId!: pulumi.Output<string>;
+    public readonly functionDeployEnvironmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Timeout for execution of the Function. Value in seconds.
      */
-    public readonly functionTimeoutInSeconds!: pulumi.Output<number>;
+    public readonly functionTimeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Collection of backend environment IP addresses.
      */
-    public readonly greenBackendIps!: pulumi.Output<outputs.DevOps.DeployStageGreenBackendIps>;
+    public readonly greenBackendIps!: pulumi.Output<outputs.DevOps.DeployStageGreenBackendIps | undefined>;
     /**
      * (Updatable) Helm chart artifact OCID.
      */
-    public readonly helmChartDeployArtifactId!: pulumi.Output<string>;
+    public readonly helmChartDeployArtifactId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
-    public readonly isAsync!: pulumi.Output<boolean>;
+    public readonly isAsync!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
      */
-    public readonly isDebugEnabled!: pulumi.Output<boolean>;
+    public readonly isDebugEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      */
-    public readonly isForceEnabled!: pulumi.Output<boolean>;
+    public readonly isForceEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
-    public readonly isValidationEnabled!: pulumi.Output<boolean>;
+    public readonly isValidationEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) List of Kubernetes manifest artifact OCIDs.
      */
@@ -194,119 +194,119 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      */
-    public readonly loadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageLoadBalancerConfig>;
+    public readonly loadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageLoadBalancerConfig | undefined>;
     /**
      * (Updatable) Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      */
-    public readonly maxHistory!: pulumi.Output<number>;
+    public readonly maxHistory!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Maximum usable memory for the Function (in MB).
      */
-    public readonly maxMemoryInMbs!: pulumi.Output<string>;
+    public readonly maxMemoryInMbs!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    public readonly namespace!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the upstream OKE blue-green deployment stage in this pipeline.
      */
-    public readonly okeBlueGreenDeployStageId!: pulumi.Output<string>;
+    public readonly okeBlueGreenDeployStageId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of an upstream OKE canary deployment stage in this pipeline.
      */
-    public readonly okeCanaryDeployStageId!: pulumi.Output<string>;
+    public readonly okeCanaryDeployStageId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
      */
-    public readonly okeCanaryTrafficShiftDeployStageId!: pulumi.Output<string>;
+    public readonly okeCanaryTrafficShiftDeployStageId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Kubernetes cluster environment OCID for deployment.
      */
-    public readonly okeClusterDeployEnvironmentId!: pulumi.Output<string>;
+    public readonly okeClusterDeployEnvironmentId!: pulumi.Output<string | undefined>;
     /**
      * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
-    public readonly productionLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageProductionLoadBalancerConfig>;
+    public readonly productionLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageProductionLoadBalancerConfig | undefined>;
     /**
      * The OCID of a project.
      */
-    public /*out*/ readonly projectId!: pulumi.Output<string>;
+    public /*out*/ readonly projectId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      */
-    public readonly releaseName!: pulumi.Output<string>;
+    public readonly releaseName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
      */
-    public readonly rollbackPolicy!: pulumi.Output<outputs.DevOps.DeployStageRollbackPolicy>;
+    public readonly rollbackPolicy!: pulumi.Output<outputs.DevOps.DeployStageRollbackPolicy | undefined>;
     /**
      * (Updatable) Description of rollout policy for load balancer traffic shift stage.
      */
-    public readonly rolloutPolicy!: pulumi.Output<outputs.DevOps.DeployStageRolloutPolicy>;
+    public readonly rolloutPolicy!: pulumi.Output<outputs.DevOps.DeployStageRolloutPolicy | undefined>;
     /**
      * (Updatable) Specifies the name and value pairs to set helm values.
      */
-    public readonly setString!: pulumi.Output<outputs.DevOps.DeployStageSetString>;
+    public readonly setString!: pulumi.Output<outputs.DevOps.DeployStageSetString | undefined>;
     /**
      * (Updatable) Specifies the name and value pairs to set helm values.
      */
-    public readonly setValues!: pulumi.Output<outputs.DevOps.DeployStageSetValues>;
+    public readonly setValues!: pulumi.Output<outputs.DevOps.DeployStageSetValues | undefined>;
     /**
      * (Updatable) Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      */
-    public readonly shouldCleanupOnFail!: pulumi.Output<boolean>;
+    public readonly shouldCleanupOnFail!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Does not wait until all the resources are in a ready state to mark the release as successful if set to true. Set to false by default.
      */
-    public readonly shouldNotWait!: pulumi.Output<boolean>;
+    public readonly shouldNotWait!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      */
-    public readonly shouldResetValues!: pulumi.Output<boolean>;
+    public readonly shouldResetValues!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      */
-    public readonly shouldReuseValues!: pulumi.Output<boolean>;
+    public readonly shouldReuseValues!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      */
-    public readonly shouldSkipCrds!: pulumi.Output<boolean>;
+    public readonly shouldSkipCrds!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
      */
-    public readonly shouldSkipRenderSubchartNotes!: pulumi.Output<boolean>;
+    public readonly shouldSkipRenderSubchartNotes!: pulumi.Output<boolean | undefined>;
     /**
      * The current state of the deployment stage.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
-    public readonly testLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageTestLoadBalancerConfig>;
+    public readonly testLoadBalancerConfig!: pulumi.Output<outputs.DevOps.DeployStageTestLoadBalancerConfig | undefined>;
     /**
      * Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    public readonly timeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Specifies the target or destination backend set.
      */
-    public readonly trafficShiftTarget!: pulumi.Output<string>;
+    public readonly trafficShiftTarget!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of values.yaml file artifact OCIDs.
      */
@@ -314,7 +314,7 @@ export class DeployStage extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
-    public readonly waitCriteria!: pulumi.Output<outputs.DevOps.DeployStageWaitCriteria>;
+    public readonly waitCriteria!: pulumi.Output<outputs.DevOps.DeployStageWaitCriteria | undefined>;
 
     /**
      * Create a DeployStage resource with the given unique name, arguments, and options.

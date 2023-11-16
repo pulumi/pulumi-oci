@@ -20,22 +20,22 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape. This value uniquely identifies the type of CPE device.
         /// </summary>
-        public readonly string CpeDeviceShapeId;
+        public readonly string? CpeDeviceShapeId;
         /// <summary>
         /// A template of CPE device configuration information that will be merged with the customer's answers to the questions to render the final CPE device configuration content. Also see:
         /// * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
         /// * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
         /// * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
         /// </summary>
-        public readonly string Template;
+        public readonly string? Template;
 
         [OutputConstructor]
         private GetCpeDeviceShapesCpeDeviceShapeResult(
             ImmutableArray<Outputs.GetCpeDeviceShapesCpeDeviceShapeCpeDeviceInfoResult> cpeDeviceInfos,
 
-            string cpeDeviceShapeId,
+            string? cpeDeviceShapeId,
 
-            string template)
+            string? template)
         {
             CpeDeviceInfos = cpeDeviceInfos;
             CpeDeviceShapeId = cpeDeviceShapeId;

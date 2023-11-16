@@ -122,35 +122,35 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The version of the language in which `condition` of `rules` are composed.
         /// </summary>
-        public readonly string ConditionLanguageVersion;
-        public readonly string Id;
+        public readonly string? ConditionLanguageVersion;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
         /// <summary>
         /// A unique name for the routing policy rule. Avoid entering confidential information.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string RoutingPolicyName;
         /// <summary>
         /// The ordered list of routing rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerRoutingPolicyRuleResult> Rules;
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetLoadBalancerRoutingPolicyResult(
-            string conditionLanguageVersion,
+            string? conditionLanguageVersion,
 
-            string id,
+            string? id,
 
             string loadBalancerId,
 
-            string name,
+            string? name,
 
             string routingPolicyName,
 
             ImmutableArray<Outputs.GetLoadBalancerRoutingPolicyRuleResult> rules,
 
-            string state)
+            string? state)
         {
             ConditionLanguageVersion = conditionLanguageVersion;
             Id = id;

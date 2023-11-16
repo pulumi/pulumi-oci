@@ -16,23 +16,23 @@ namespace Pulumi.Oci.OsubSubscription.Outputs
         /// <summary>
         /// Currency Code
         /// </summary>
-        public readonly string IsoCode;
+        public readonly string? IsoCode;
         /// <summary>
         /// Product name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Standard Precision of the Currency
         /// </summary>
-        public readonly string StdPrecision;
+        public readonly string? StdPrecision;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionCurrencyResult(
-            string isoCode,
+            string? isoCode,
 
-            string name,
+            string? name,
 
-            string stdPrecision)
+            string? stdPrecision)
         {
             IsoCode = isoCode;
             Name = name;

@@ -28,19 +28,6 @@ class CloudDatabaseManagementArgs:
                  ssl_secret_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudDatabaseManagement resource.
-        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
-               enum:
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[int] port: The port used to connect to the database.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         pulumi.set(__self__, "credentialdetails", credentialdetails)
         pulumi.set(__self__, "database_id", database_id)
@@ -69,9 +56,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Input[str]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -81,12 +65,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter(name="enableManagement")
     def enable_management(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Use this flag to enable/disable database management
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_management")
 
     @enable_management.setter
@@ -96,10 +74,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Specifies database management type
-        enum:
-        """
         return pulumi.get(self, "management_type")
 
     @management_type.setter
@@ -109,9 +83,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
@@ -121,9 +92,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[str]:
-        """
-        The name of the Oracle Database service that will be used to connect to the database.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -133,9 +101,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the database.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -145,9 +110,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used by the database connection.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -157,9 +119,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user that will be connecting to the database.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -169,9 +128,6 @@ class CloudDatabaseManagementArgs:
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -194,19 +150,6 @@ class _CloudDatabaseManagementState:
                  ssl_secret_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudDatabaseManagement resources.
-        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
-               enum:
-        :param pulumi.Input[int] port: The port used to connect to the database.
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         if credentialdetails is not None:
             pulumi.set(__self__, "credentialdetails", credentialdetails)
@@ -241,9 +184,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -253,12 +193,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter(name="enableManagement")
     def enable_management(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Use this flag to enable/disable database management
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_management")
 
     @enable_management.setter
@@ -268,10 +202,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies database management type
-        enum:
-        """
         return pulumi.get(self, "management_type")
 
     @management_type.setter
@@ -281,9 +211,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The port used to connect to the database.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -293,9 +220,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
@@ -305,9 +229,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        Protocol used by the database connection.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -317,9 +238,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the user that will be connecting to the database.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -329,9 +247,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Oracle Database service that will be used to connect to the database.
-        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -341,9 +256,6 @@ class _CloudDatabaseManagementState:
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
@@ -368,54 +280,9 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                  ssl_secret_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Database Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enable / Update / Disable database management for the specified Oracle Database instance.
-
-        Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
-        `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test = oci.database.CloudDatabaseManagement("test",
-            database_id=oci_database_database["test_database"]["id"],
-            management_type=var["database_cloud_database_management_details_management_type"],
-            private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
-            service_name=var["database_cloud_database_management_details_service_name"],
-            credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
-                user_name=var["database_cloud_database_management_details_user_name"],
-                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
-            ),
-            enable_management=var["database_cloud_database_management_details_enable_management"],
-            port=var["cloud_database_management_port"],
-            protocol=var["cloud_database_management_protocol"],
-            role=var["cloud_database_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a CloudDatabaseManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
-               enum:
-        :param pulumi.Input[int] port: The port used to connect to the database.
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         ...
     @overload
@@ -424,39 +291,7 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                  args: CloudDatabaseManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enable / Update / Disable database management for the specified Oracle Database instance.
-
-        Database Management requires `USER_NAME`, `PASSWORD_SECRET_ID` and `PRIVATE_END_POINT_ID`.
-        `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test = oci.database.CloudDatabaseManagement("test",
-            database_id=oci_database_database["test_database"]["id"],
-            management_type=var["database_cloud_database_management_details_management_type"],
-            private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
-            service_name=var["database_cloud_database_management_details_service_name"],
-            credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
-                user_name=var["database_cloud_database_management_details_user_name"],
-                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
-            ),
-            enable_management=var["database_cloud_database_management_details_enable_management"],
-            port=var["cloud_database_management_port"],
-            protocol=var["cloud_database_management_protocol"],
-            role=var["cloud_database_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a CloudDatabaseManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CloudDatabaseManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -540,19 +375,6 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[bool] enable_management: (Updatable) Use this flag to enable/disable database management
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] management_type: (Updatable) Specifies database management type
-               enum:
-        :param pulumi.Input[int] port: The port used to connect to the database.
-        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        :param pulumi.Input[str] protocol: Protocol used by the database connection.
-        :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
-        :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
-        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -578,76 +400,45 @@ class CloudDatabaseManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Output[str]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="enableManagement")
     def enable_management(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Use this flag to enable/disable database management
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "enable_management")
 
     @property
     @pulumi.getter(name="managementType")
     def management_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies database management type
-        enum:
-        """
         return pulumi.get(self, "management_type")
 
     @property
     @pulumi.getter
     def port(self) -> pulumi.Output[Optional[int]]:
-        """
-        The port used to connect to the database.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateEndPointId")
     def private_end_point_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
         return pulumi.get(self, "private_end_point_id")
 
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Output[Optional[str]]:
-        """
-        Protocol used by the database connection.
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter
     def role(self) -> pulumi.Output[Optional[str]]:
-        """
-        The role of the user that will be connecting to the database.
-        """
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Output[str]:
-        """
-        The name of the Oracle Database service that will be used to connect to the database.
-        """
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter(name="sslSecretId")
     def ssl_secret_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "ssl_secret_id")
 

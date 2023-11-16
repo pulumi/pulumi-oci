@@ -165,7 +165,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The Object Storage namespace in which the bucket resides.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.ObjectStorage
 
             ImmutableArray<Outputs.GetBucketSummariesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string @namespace)
         {

@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetailTargetSecurit
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGuardTargetTargetDetail {
@@ -15,51 +17,51 @@ public final class GetGuardTargetTargetDetail {
      * @return The name of the security zone to associate this compartment with.
      * 
      */
-    private String securityZoneDisplayName;
+    private @Nullable String securityZoneDisplayName;
     /**
      * @return The OCID of the security zone to associate this compartment with.
      * 
      */
-    private String securityZoneId;
+    private @Nullable String securityZoneId;
     /**
      * @return possible type of targets
      * 
      */
-    private String targetResourceType;
+    private @Nullable String targetResourceType;
     /**
      * @return The list of security zone recipes to associate this compartment with.
      * 
      */
-    private List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
+    private @Nullable List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
 
     private GetGuardTargetTargetDetail() {}
     /**
      * @return The name of the security zone to associate this compartment with.
      * 
      */
-    public String securityZoneDisplayName() {
-        return this.securityZoneDisplayName;
+    public Optional<String> securityZoneDisplayName() {
+        return Optional.ofNullable(this.securityZoneDisplayName);
     }
     /**
      * @return The OCID of the security zone to associate this compartment with.
      * 
      */
-    public String securityZoneId() {
-        return this.securityZoneId;
+    public Optional<String> securityZoneId() {
+        return Optional.ofNullable(this.securityZoneId);
     }
     /**
      * @return possible type of targets
      * 
      */
-    public String targetResourceType() {
-        return this.targetResourceType;
+    public Optional<String> targetResourceType() {
+        return Optional.ofNullable(this.targetResourceType);
     }
     /**
      * @return The list of security zone recipes to associate this compartment with.
      * 
      */
     public List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes() {
-        return this.targetSecurityZoneRecipes;
+        return this.targetSecurityZoneRecipes == null ? List.of() : this.targetSecurityZoneRecipes;
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetGuardTargetTargetDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String securityZoneDisplayName;
-        private String securityZoneId;
-        private String targetResourceType;
-        private List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
+        private @Nullable String securityZoneDisplayName;
+        private @Nullable String securityZoneId;
+        private @Nullable String targetResourceType;
+        private @Nullable List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
         public Builder() {}
         public Builder(GetGuardTargetTargetDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetGuardTargetTargetDetail {
         }
 
         @CustomType.Setter
-        public Builder securityZoneDisplayName(String securityZoneDisplayName) {
-            this.securityZoneDisplayName = Objects.requireNonNull(securityZoneDisplayName);
+        public Builder securityZoneDisplayName(@Nullable String securityZoneDisplayName) {
+            this.securityZoneDisplayName = securityZoneDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder securityZoneId(String securityZoneId) {
-            this.securityZoneId = Objects.requireNonNull(securityZoneId);
+        public Builder securityZoneId(@Nullable String securityZoneId) {
+            this.securityZoneId = securityZoneId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetResourceType(String targetResourceType) {
-            this.targetResourceType = Objects.requireNonNull(targetResourceType);
+        public Builder targetResourceType(@Nullable String targetResourceType) {
+            this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder targetSecurityZoneRecipes(List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
-            this.targetSecurityZoneRecipes = Objects.requireNonNull(targetSecurityZoneRecipes);
+        public Builder targetSecurityZoneRecipes(@Nullable List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes) {
+            this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
             return this;
         }
         public Builder targetSecurityZoneRecipes(GetGuardTargetTargetDetailTargetSecurityZoneRecipe... targetSecurityZoneRecipes) {

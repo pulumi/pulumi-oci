@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem {
@@ -13,27 +15,27 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
      * @return The original case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private String from;
+    private @Nullable String from;
     /**
      * @return The new name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private String to;
+    private @Nullable String to;
 
     private GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem() {}
     /**
      * @return The original case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    public String from() {
-        return this.from;
+    public Optional<String> from() {
+        return Optional.ofNullable(this.from);
     }
     /**
      * @return The new name of the header.  This name must be unique across transformation policies.
      * 
      */
-    public String to() {
-        return this.to;
+    public Optional<String> to() {
+        return Optional.ofNullable(this.to);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
     }
     @CustomType.Builder
     public static final class Builder {
-        private String from;
-        private String to;
+        private @Nullable String from;
+        private @Nullable String to;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
         }
 
         @CustomType.Setter
-        public Builder from(String from) {
-            this.from = Objects.requireNonNull(from);
+        public Builder from(@Nullable String from) {
+            this.from = from;
             return this;
         }
         @CustomType.Setter
-        public Builder to(String to) {
-            this.to = Objects.requireNonNull(to);
+        public Builder to(@Nullable String to) {
+            this.to = to;
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeaderItem build() {

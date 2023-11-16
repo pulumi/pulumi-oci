@@ -6,6 +6,8 @@ package com.pulumi.oci.DataLabellingService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetInitialImportDatasetConfigurationImportMetadataPath {
@@ -13,51 +15,51 @@ public final class GetDatasetInitialImportDatasetConfigurationImportMetadataPath
      * @return Bucket name
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Bucket namespace name
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Path for the metadata file.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetDatasetInitialImportDatasetConfigurationImportMetadataPath() {}
     /**
      * @return Bucket name
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Bucket namespace name
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Path for the metadata file.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDatasetInitialImportDatasetConfigurationImportMetadataPath
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String namespace;
-        private String path;
-        private String sourceType;
+        private @Nullable String bucket;
+        private @Nullable String namespace;
+        private @Nullable String path;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetDatasetInitialImportDatasetConfigurationImportMetadataPath defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDatasetInitialImportDatasetConfigurationImportMetadataPath
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetDatasetInitialImportDatasetConfigurationImportMetadataPath build() {

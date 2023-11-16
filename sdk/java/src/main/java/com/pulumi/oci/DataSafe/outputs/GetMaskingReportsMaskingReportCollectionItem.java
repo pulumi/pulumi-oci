@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingReportsMaskingReportCollectionItem {
@@ -14,231 +16,231 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the masking report.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if the temporary tables created during the masking operation were dropped after masking.
      * 
      */
-    private Boolean isDropTempTablesEnabled;
+    private @Nullable Boolean isDropTempTablesEnabled;
     /**
      * @return Indicates if redo logging was enabled during the masking operation.
      * 
      */
-    private Boolean isRedoLoggingEnabled;
+    private @Nullable Boolean isRedoLoggingEnabled;
     /**
      * @return Indicates if statistics gathering was enabled during the masking operation.
      * 
      */
-    private Boolean isRefreshStatsEnabled;
+    private @Nullable Boolean isRefreshStatsEnabled;
     /**
      * @return A filter to return only the resources that match the specified masking policy OCID.
      * 
      */
-    private String maskingPolicyId;
+    private @Nullable String maskingPolicyId;
     /**
      * @return The OCID of the masking work request that resulted in this masking report.
      * 
      */
-    private String maskingWorkRequestId;
+    private @Nullable String maskingWorkRequestId;
     /**
      * @return Indicates if parallel execution was enabled during the masking operation.
      * 
      */
-    private String parallelDegree;
+    private @Nullable String parallelDegree;
     /**
      * @return Indicates how invalid objects were recompiled post the masking operation.
      * 
      */
-    private String recompile;
+    private @Nullable String recompile;
     /**
      * @return The current state of the masking report.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private String timeMaskingFinished;
+    private @Nullable String timeMaskingFinished;
     /**
      * @return The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private String timeMaskingStarted;
+    private @Nullable String timeMaskingStarted;
     /**
      * @return The total number of masked columns.
      * 
      */
-    private String totalMaskedColumns;
+    private @Nullable String totalMaskedColumns;
     /**
      * @return The total number of unique objects (tables and editioning views) that contain the masked columns.
      * 
      */
-    private String totalMaskedObjects;
+    private @Nullable String totalMaskedObjects;
     /**
      * @return The total number of unique schemas that contain the masked columns.
      * 
      */
-    private String totalMaskedSchemas;
+    private @Nullable String totalMaskedSchemas;
     /**
      * @return The total number of unique sensitive types associated with the masked columns.
      * 
      */
-    private String totalMaskedSensitiveTypes;
+    private @Nullable String totalMaskedSensitiveTypes;
     /**
      * @return The total number of masked values.
      * 
      */
-    private String totalMaskedValues;
+    private @Nullable String totalMaskedValues;
 
     private GetMaskingReportsMaskingReportCollectionItem() {}
     /**
      * @return A filter to return only resources that match the specified compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the masking report.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if the temporary tables created during the masking operation were dropped after masking.
      * 
      */
-    public Boolean isDropTempTablesEnabled() {
-        return this.isDropTempTablesEnabled;
+    public Optional<Boolean> isDropTempTablesEnabled() {
+        return Optional.ofNullable(this.isDropTempTablesEnabled);
     }
     /**
      * @return Indicates if redo logging was enabled during the masking operation.
      * 
      */
-    public Boolean isRedoLoggingEnabled() {
-        return this.isRedoLoggingEnabled;
+    public Optional<Boolean> isRedoLoggingEnabled() {
+        return Optional.ofNullable(this.isRedoLoggingEnabled);
     }
     /**
      * @return Indicates if statistics gathering was enabled during the masking operation.
      * 
      */
-    public Boolean isRefreshStatsEnabled() {
-        return this.isRefreshStatsEnabled;
+    public Optional<Boolean> isRefreshStatsEnabled() {
+        return Optional.ofNullable(this.isRefreshStatsEnabled);
     }
     /**
      * @return A filter to return only the resources that match the specified masking policy OCID.
      * 
      */
-    public String maskingPolicyId() {
-        return this.maskingPolicyId;
+    public Optional<String> maskingPolicyId() {
+        return Optional.ofNullable(this.maskingPolicyId);
     }
     /**
      * @return The OCID of the masking work request that resulted in this masking report.
      * 
      */
-    public String maskingWorkRequestId() {
-        return this.maskingWorkRequestId;
+    public Optional<String> maskingWorkRequestId() {
+        return Optional.ofNullable(this.maskingWorkRequestId);
     }
     /**
      * @return Indicates if parallel execution was enabled during the masking operation.
      * 
      */
-    public String parallelDegree() {
-        return this.parallelDegree;
+    public Optional<String> parallelDegree() {
+        return Optional.ofNullable(this.parallelDegree);
     }
     /**
      * @return Indicates how invalid objects were recompiled post the masking operation.
      * 
      */
-    public String recompile() {
-        return this.recompile;
+    public Optional<String> recompile() {
+        return Optional.ofNullable(this.recompile);
     }
     /**
      * @return The current state of the masking report.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    public String timeMaskingFinished() {
-        return this.timeMaskingFinished;
+    public Optional<String> timeMaskingFinished() {
+        return Optional.ofNullable(this.timeMaskingFinished);
     }
     /**
      * @return The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    public String timeMaskingStarted() {
-        return this.timeMaskingStarted;
+    public Optional<String> timeMaskingStarted() {
+        return Optional.ofNullable(this.timeMaskingStarted);
     }
     /**
      * @return The total number of masked columns.
      * 
      */
-    public String totalMaskedColumns() {
-        return this.totalMaskedColumns;
+    public Optional<String> totalMaskedColumns() {
+        return Optional.ofNullable(this.totalMaskedColumns);
     }
     /**
      * @return The total number of unique objects (tables and editioning views) that contain the masked columns.
      * 
      */
-    public String totalMaskedObjects() {
-        return this.totalMaskedObjects;
+    public Optional<String> totalMaskedObjects() {
+        return Optional.ofNullable(this.totalMaskedObjects);
     }
     /**
      * @return The total number of unique schemas that contain the masked columns.
      * 
      */
-    public String totalMaskedSchemas() {
-        return this.totalMaskedSchemas;
+    public Optional<String> totalMaskedSchemas() {
+        return Optional.ofNullable(this.totalMaskedSchemas);
     }
     /**
      * @return The total number of unique sensitive types associated with the masked columns.
      * 
      */
-    public String totalMaskedSensitiveTypes() {
-        return this.totalMaskedSensitiveTypes;
+    public Optional<String> totalMaskedSensitiveTypes() {
+        return Optional.ofNullable(this.totalMaskedSensitiveTypes);
     }
     /**
      * @return The total number of masked values.
      * 
      */
-    public String totalMaskedValues() {
-        return this.totalMaskedValues;
+    public Optional<String> totalMaskedValues() {
+        return Optional.ofNullable(this.totalMaskedValues);
     }
 
     public static Builder builder() {
@@ -250,25 +252,25 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private Boolean isDropTempTablesEnabled;
-        private Boolean isRedoLoggingEnabled;
-        private Boolean isRefreshStatsEnabled;
-        private String maskingPolicyId;
-        private String maskingWorkRequestId;
-        private String parallelDegree;
-        private String recompile;
-        private String state;
-        private String targetId;
-        private String timeCreated;
-        private String timeMaskingFinished;
-        private String timeMaskingStarted;
-        private String totalMaskedColumns;
-        private String totalMaskedObjects;
-        private String totalMaskedSchemas;
-        private String totalMaskedSensitiveTypes;
-        private String totalMaskedValues;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable Boolean isDropTempTablesEnabled;
+        private @Nullable Boolean isRedoLoggingEnabled;
+        private @Nullable Boolean isRefreshStatsEnabled;
+        private @Nullable String maskingPolicyId;
+        private @Nullable String maskingWorkRequestId;
+        private @Nullable String parallelDegree;
+        private @Nullable String recompile;
+        private @Nullable String state;
+        private @Nullable String targetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeMaskingFinished;
+        private @Nullable String timeMaskingStarted;
+        private @Nullable String totalMaskedColumns;
+        private @Nullable String totalMaskedObjects;
+        private @Nullable String totalMaskedSchemas;
+        private @Nullable String totalMaskedSensitiveTypes;
+        private @Nullable String totalMaskedValues;
         public Builder() {}
         public Builder(GetMaskingReportsMaskingReportCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -294,98 +296,98 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
-            this.isDropTempTablesEnabled = Objects.requireNonNull(isDropTempTablesEnabled);
+        public Builder isDropTempTablesEnabled(@Nullable Boolean isDropTempTablesEnabled) {
+            this.isDropTempTablesEnabled = isDropTempTablesEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
-            this.isRedoLoggingEnabled = Objects.requireNonNull(isRedoLoggingEnabled);
+        public Builder isRedoLoggingEnabled(@Nullable Boolean isRedoLoggingEnabled) {
+            this.isRedoLoggingEnabled = isRedoLoggingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
-            this.isRefreshStatsEnabled = Objects.requireNonNull(isRefreshStatsEnabled);
+        public Builder isRefreshStatsEnabled(@Nullable Boolean isRefreshStatsEnabled) {
+            this.isRefreshStatsEnabled = isRefreshStatsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+        public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingWorkRequestId(String maskingWorkRequestId) {
-            this.maskingWorkRequestId = Objects.requireNonNull(maskingWorkRequestId);
+        public Builder maskingWorkRequestId(@Nullable String maskingWorkRequestId) {
+            this.maskingWorkRequestId = maskingWorkRequestId;
             return this;
         }
         @CustomType.Setter
-        public Builder parallelDegree(String parallelDegree) {
-            this.parallelDegree = Objects.requireNonNull(parallelDegree);
+        public Builder parallelDegree(@Nullable String parallelDegree) {
+            this.parallelDegree = parallelDegree;
             return this;
         }
         @CustomType.Setter
-        public Builder recompile(String recompile) {
-            this.recompile = Objects.requireNonNull(recompile);
+        public Builder recompile(@Nullable String recompile) {
+            this.recompile = recompile;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaskingFinished(String timeMaskingFinished) {
-            this.timeMaskingFinished = Objects.requireNonNull(timeMaskingFinished);
+        public Builder timeMaskingFinished(@Nullable String timeMaskingFinished) {
+            this.timeMaskingFinished = timeMaskingFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaskingStarted(String timeMaskingStarted) {
-            this.timeMaskingStarted = Objects.requireNonNull(timeMaskingStarted);
+        public Builder timeMaskingStarted(@Nullable String timeMaskingStarted) {
+            this.timeMaskingStarted = timeMaskingStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMaskedColumns(String totalMaskedColumns) {
-            this.totalMaskedColumns = Objects.requireNonNull(totalMaskedColumns);
+        public Builder totalMaskedColumns(@Nullable String totalMaskedColumns) {
+            this.totalMaskedColumns = totalMaskedColumns;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMaskedObjects(String totalMaskedObjects) {
-            this.totalMaskedObjects = Objects.requireNonNull(totalMaskedObjects);
+        public Builder totalMaskedObjects(@Nullable String totalMaskedObjects) {
+            this.totalMaskedObjects = totalMaskedObjects;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMaskedSchemas(String totalMaskedSchemas) {
-            this.totalMaskedSchemas = Objects.requireNonNull(totalMaskedSchemas);
+        public Builder totalMaskedSchemas(@Nullable String totalMaskedSchemas) {
+            this.totalMaskedSchemas = totalMaskedSchemas;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMaskedSensitiveTypes(String totalMaskedSensitiveTypes) {
-            this.totalMaskedSensitiveTypes = Objects.requireNonNull(totalMaskedSensitiveTypes);
+        public Builder totalMaskedSensitiveTypes(@Nullable String totalMaskedSensitiveTypes) {
+            this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMaskedValues(String totalMaskedValues) {
-            this.totalMaskedValues = Objects.requireNonNull(totalMaskedValues);
+        public Builder totalMaskedValues(@Nullable String totalMaskedValues) {
+            this.totalMaskedValues = totalMaskedValues;
             return this;
         }
         public GetMaskingReportsMaskingReportCollectionItem build() {

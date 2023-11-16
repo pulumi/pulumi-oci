@@ -104,26 +104,17 @@ class GetSubscriptionResult:
 
     @property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> str:
-        """
-        Account type.
-        """
+    def account_type(self) -> Optional[str]:
         return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter(name="billToCustAccountId")
-    def bill_to_cust_account_id(self) -> str:
-        """
-        Bill to customer Account id.
-        """
+    def bill_to_cust_account_id(self) -> Optional[str]:
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @property
     @pulumi.getter(name="billingAddresses")
-    def billing_addresses(self) -> Sequence['outputs.GetSubscriptionBillingAddressResult']:
-        """
-        Address details model.
-        """
+    def billing_addresses(self) -> Optional[Sequence['outputs.GetSubscriptionBillingAddressResult']]:
         return pulumi.get(self, "billing_addresses")
 
     @property
@@ -133,55 +124,37 @@ class GetSubscriptionResult:
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter
-    def email(self) -> str:
+    def email(self) -> Optional[str]:
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter(name="gsiOrgCode")
-    def gsi_org_code(self) -> str:
-        """
-        GSI Subscription external code.
-        """
+    def gsi_org_code(self) -> Optional[str]:
         return pulumi.get(self, "gsi_org_code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Subscription id identifier (OCID).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> bool:
-        """
-        Payment intension.
-        """
+    def is_intent_to_pay(self) -> Optional[bool]:
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> str:
-        """
-        Language short code (en, de, hu, etc)
-        """
+    def language_code(self) -> Optional[str]:
         return pulumi.get(self, "language_code")
 
     @property
     @pulumi.getter(name="organizationId")
-    def organization_id(self) -> str:
-        """
-        GSI organization external identifier.
-        """
+    def organization_id(self) -> Optional[str]:
         return pulumi.get(self, "organization_id")
 
     @property
@@ -191,42 +164,27 @@ class GetSubscriptionResult:
 
     @property
     @pulumi.getter(name="paymentGateways")
-    def payment_gateways(self) -> Sequence['outputs.GetSubscriptionPaymentGatewayResult']:
-        """
-        Payment gateway details.
-        """
+    def payment_gateways(self) -> Optional[Sequence['outputs.GetSubscriptionPaymentGatewayResult']]:
         return pulumi.get(self, "payment_gateways")
 
     @property
     @pulumi.getter(name="paymentOptions")
-    def payment_options(self) -> Sequence['outputs.GetSubscriptionPaymentOptionResult']:
-        """
-        Payment option list of a subscription.
-        """
+    def payment_options(self) -> Optional[Sequence['outputs.GetSubscriptionPaymentOptionResult']]:
         return pulumi.get(self, "payment_options")
 
     @property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> str:
-        """
-        Subscription plan type.
-        """
+    def plan_type(self) -> Optional[str]:
         return pulumi.get(self, "plan_type")
 
     @property
     @pulumi.getter(name="shipToCustAcctRoleId")
-    def ship_to_cust_acct_role_id(self) -> str:
-        """
-        Ship to customer account role.
-        """
+    def ship_to_cust_acct_role_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @property
     @pulumi.getter(name="shipToCustAcctSiteId")
-    def ship_to_cust_acct_site_id(self) -> str:
-        """
-        Ship to customer account site address id.
-        """
+    def ship_to_cust_acct_site_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @property
@@ -236,63 +194,42 @@ class GetSubscriptionResult:
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
-    def subscription_plan_number(self) -> str:
-        """
-        Subscription plan number.
-        """
+    def subscription_plan_number(self) -> Optional[str]:
         return pulumi.get(self, "subscription_plan_number")
 
     @property
     @pulumi.getter
-    def subscriptions(self) -> Sequence['outputs.GetSubscriptionSubscriptionResult']:
+    def subscriptions(self) -> Optional[Sequence['outputs.GetSubscriptionSubscriptionResult']]:
         return pulumi.get(self, "subscriptions")
 
     @property
     @pulumi.getter(name="taxInfos")
-    def tax_infos(self) -> Sequence['outputs.GetSubscriptionTaxInfoResult']:
-        """
-        Tax details.
-        """
+    def tax_infos(self) -> Optional[Sequence['outputs.GetSubscriptionTaxInfoResult']]:
         return pulumi.get(self, "tax_infos")
 
     @property
     @pulumi.getter(name="timePersonalToCorporateConv")
-    def time_personal_to_corporate_conv(self) -> str:
-        """
-        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        """
+    def time_personal_to_corporate_conv(self) -> Optional[str]:
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @property
     @pulumi.getter(name="timePlanUpgrade")
-    def time_plan_upgrade(self) -> str:
-        """
-        Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        """
+    def time_plan_upgrade(self) -> Optional[str]:
         return pulumi.get(self, "time_plan_upgrade")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Start date of the subscription.
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="upgradeState")
-    def upgrade_state(self) -> str:
-        """
-        Status of the upgrade.
-        """
+    def upgrade_state(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state")
 
     @property
     @pulumi.getter(name="upgradeStateDetails")
-    def upgrade_state_details(self) -> str:
-        """
-        This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
+    def upgrade_state_details(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state_details")
 
 
@@ -335,25 +272,7 @@ def get_subscription(compartment_id: Optional[str] = None,
                      subscription_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionResult:
     """
-    This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the subscription plan.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"],
-        subscription_id=oci_osp_gateway_subscription["test_subscription"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str osp_home_region: The home region's public name of the logged in user.
-    :param str subscription_id: Subscription id(OCID).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -397,24 +316,6 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             subscription_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
-    This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the subscription plan.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"],
-        subscription_id=oci_osp_gateway_subscription["test_subscription"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str osp_home_region: The home region's public name of the logged in user.
-    :param str subscription_id: Subscription id(OCID).
+    Use this data source to access information about an existing resource.
     """
     ...

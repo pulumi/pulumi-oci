@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMountTargetsMountTarget {
@@ -18,203 +20,203 @@ public final class GetMountTargetsMountTarget {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      * 
      */
-    private String exportSetId;
+    private @Nullable String exportSetId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private String hostnameLabel;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String hostnameLabel;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
      * 
      */
-    private String idmapType;
-    private String ipAddress;
+    private @Nullable String idmapType;
+    private @Nullable String ipAddress;
     /**
      * @return Allows administrator to configure a mount target to interact with the administrator&#39;s Kerberos infrastructure.
      * 
      */
-    private List<GetMountTargetsMountTargetKerbero> kerberos;
+    private @Nullable List<GetMountTargetsMountTargetKerbero> kerberos;
     /**
      * @return Mount target details about the LDAP ID mapping configuration.
      * 
      */
-    private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
+    private @Nullable List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The OCIDs of the private IP addresses associated with this mount target.
      * 
      */
-    private List<String> privateIpIds;
+    private @Nullable List<String> privateIpIds;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetMountTargetsMountTarget() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      * 
      */
-    public String exportSetId() {
-        return this.exportSetId;
+    public Optional<String> exportSetId() {
+        return Optional.ofNullable(this.exportSetId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String hostnameLabel() {
-        return this.hostnameLabel;
+    public Optional<String> hostnameLabel() {
+        return Optional.ofNullable(this.hostnameLabel);
     }
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
      * 
      */
-    public String idmapType() {
-        return this.idmapType;
+    public Optional<String> idmapType() {
+        return Optional.ofNullable(this.idmapType);
     }
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return Allows administrator to configure a mount target to interact with the administrator&#39;s Kerberos infrastructure.
      * 
      */
     public List<GetMountTargetsMountTargetKerbero> kerberos() {
-        return this.kerberos;
+        return this.kerberos == null ? List.of() : this.kerberos;
     }
     /**
      * @return Mount target details about the LDAP ID mapping configuration.
      * 
      */
     public List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps() {
-        return this.ldapIdmaps;
+        return this.ldapIdmaps == null ? List.of() : this.ldapIdmaps;
     }
     /**
      * @return Additional information about the current &#39;lifecycleState&#39;.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The OCIDs of the private IP addresses associated with this mount target.
      * 
      */
     public List<String> privateIpIds() {
-        return this.privateIpIds;
+        return this.privateIpIds == null ? List.of() : this.privateIpIds;
     }
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -226,24 +228,24 @@ public final class GetMountTargetsMountTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String exportSetId;
-        private Map<String,Object> freeformTags;
-        private String hostnameLabel;
-        private String id;
-        private String idmapType;
-        private String ipAddress;
-        private List<GetMountTargetsMountTargetKerbero> kerberos;
-        private List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
-        private String lifecycleDetails;
-        private List<String> nsgIds;
-        private List<String> privateIpIds;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String exportSetId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostnameLabel;
+        private @Nullable String id;
+        private @Nullable String idmapType;
+        private @Nullable String ipAddress;
+        private @Nullable List<GetMountTargetsMountTargetKerbero> kerberos;
+        private @Nullable List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> nsgIds;
+        private @Nullable List<String> privateIpIds;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetMountTargetsMountTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -268,105 +270,105 @@ public final class GetMountTargetsMountTarget {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder exportSetId(String exportSetId) {
-            this.exportSetId = Objects.requireNonNull(exportSetId);
+        public Builder exportSetId(@Nullable String exportSetId) {
+            this.exportSetId = exportSetId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+        public Builder hostnameLabel(@Nullable String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idmapType(String idmapType) {
-            this.idmapType = Objects.requireNonNull(idmapType);
+        public Builder idmapType(@Nullable String idmapType) {
+            this.idmapType = idmapType;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder kerberos(List<GetMountTargetsMountTargetKerbero> kerberos) {
-            this.kerberos = Objects.requireNonNull(kerberos);
+        public Builder kerberos(@Nullable List<GetMountTargetsMountTargetKerbero> kerberos) {
+            this.kerberos = kerberos;
             return this;
         }
         public Builder kerberos(GetMountTargetsMountTargetKerbero... kerberos) {
             return kerberos(List.of(kerberos));
         }
         @CustomType.Setter
-        public Builder ldapIdmaps(List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps) {
-            this.ldapIdmaps = Objects.requireNonNull(ldapIdmaps);
+        public Builder ldapIdmaps(@Nullable List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps) {
+            this.ldapIdmaps = ldapIdmaps;
             return this;
         }
         public Builder ldapIdmaps(GetMountTargetsMountTargetLdapIdmap... ldapIdmaps) {
             return ldapIdmaps(List.of(ldapIdmaps));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateIpIds(List<String> privateIpIds) {
-            this.privateIpIds = Objects.requireNonNull(privateIpIds);
+        public Builder privateIpIds(@Nullable List<String> privateIpIds) {
+            this.privateIpIds = privateIpIds;
             return this;
         }
         public Builder privateIpIds(String... privateIpIds) {
             return privateIpIds(List.of(privateIpIds));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetMountTargetsMountTarget build() {

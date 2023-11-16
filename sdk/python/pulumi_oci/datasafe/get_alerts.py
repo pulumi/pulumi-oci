@@ -56,18 +56,12 @@ class GetAlertsResult:
 
     @property
     @pulumi.getter(name="alertCollections")
-    def alert_collections(self) -> Sequence['outputs.GetAlertsAlertCollectionResult']:
-        """
-        The list of alert_collection.
-        """
+    def alert_collections(self) -> Optional[Sequence['outputs.GetAlertsAlertCollectionResult']]:
         return pulumi.get(self, "alert_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the alert.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -88,9 +82,6 @@ class GetAlertsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the alert.
-        """
         return pulumi.get(self, "id")
 
     @property
@@ -124,33 +115,7 @@ def get_alerts(access_level: Optional[str] = None,
                scim_query: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertsResult:
     """
-    This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all alerts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alerts = oci.DataSafe.get_alerts(compartment_id=var["compartment_id"],
-        access_level=var["alert_access_level"],
-        compartment_id_in_subtree=var["alert_compartment_id_in_subtree"],
-        fields=var["alert_field"],
-        id=var["alert_id"],
-        scim_query=var["alert_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] fields: Specifies a subset of fields to be returned in the response.
-    :param str id: A filter to return alert by it's OCID.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') query=(featureDetails.userName eq "user") and (targetNames eq "target_1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -184,32 +149,6 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
                       scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertsResult]:
     """
-    This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all alerts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alerts = oci.DataSafe.get_alerts(compartment_id=var["compartment_id"],
-        access_level=var["alert_access_level"],
-        compartment_id_in_subtree=var["alert_compartment_id_in_subtree"],
-        fields=var["alert_field"],
-        id=var["alert_id"],
-        scim_query=var["alert_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] fields: Specifies a subset of fields to be returned in the response.
-    :param str id: A filter to return alert by it's OCID.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** | query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1') query=(featureDetails.userName eq "user") and (targetNames eq "target_1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
+    Use this data source to access information about an existing resource.
     """
     ...

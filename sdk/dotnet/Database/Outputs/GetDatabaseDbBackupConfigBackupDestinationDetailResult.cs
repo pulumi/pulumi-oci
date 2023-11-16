@@ -16,26 +16,26 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         /// </summary>
-        public readonly string DbrsPolicyId;
+        public readonly string? DbrsPolicyId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Type of the database backup destination.
         /// </summary>
-        public readonly string Type;
-        public readonly string VpcUser;
+        public readonly string? Type;
+        public readonly string? VpcUser;
 
         [OutputConstructor]
         private GetDatabaseDbBackupConfigBackupDestinationDetailResult(
-            string dbrsPolicyId,
+            string? dbrsPolicyId,
 
-            string id,
+            string? id,
 
-            string type,
+            string? type,
 
-            string vpcUser)
+            string? vpcUser)
         {
             DbrsPolicyId = dbrsPolicyId;
             Id = id;

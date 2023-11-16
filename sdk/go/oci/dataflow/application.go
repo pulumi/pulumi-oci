@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
@@ -101,7 +100,7 @@ type Application struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Logging details of Application logs for Data Flow Run.
-	ApplicationLogConfig ApplicationApplicationLogConfigOutput `pulumi:"applicationLogConfig"`
+	ApplicationLogConfig ApplicationApplicationLogConfigPtrOutput `pulumi:"applicationLogConfig"`
 	// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	ArchiveUri pulumi.StringPtrOutput `pulumi:"archiveUri"`
 	// (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
@@ -115,60 +114,60 @@ type Application struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The VM shape for the driver. Sets the driver cores and memory.
 	DriverShape pulumi.StringOutput `pulumi:"driverShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-	DriverShapeConfig ApplicationDriverShapeConfigOutput `pulumi:"driverShapeConfig"`
+	DriverShapeConfig ApplicationDriverShapeConfigPtrOutput `pulumi:"driverShapeConfig"`
 	// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-	Execute pulumi.StringOutput `pulumi:"execute"`
+	Execute pulumi.StringPtrOutput `pulumi:"execute"`
 	// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
 	ExecutorShape pulumi.StringOutput `pulumi:"executorShape"`
 	// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-	ExecutorShapeConfig ApplicationExecutorShapeConfigOutput `pulumi:"executorShapeConfig"`
+	ExecutorShapeConfig ApplicationExecutorShapeConfigPtrOutput `pulumi:"executorShapeConfig"`
 	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	FileUri pulumi.StringOutput `pulumi:"fileUri"`
+	FileUri pulumi.StringPtrOutput `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-	IdleTimeoutInMinutes pulumi.StringOutput `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes pulumi.StringPtrOutput `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
 	Language pulumi.StringOutput `pulumi:"language"`
 	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-	LogsBucketUri pulumi.StringOutput `pulumi:"logsBucketUri"`
+	LogsBucketUri pulumi.StringPtrOutput `pulumi:"logsBucketUri"`
 	// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-	MaxDurationInMinutes pulumi.StringOutput `pulumi:"maxDurationInMinutes"`
+	MaxDurationInMinutes pulumi.StringPtrOutput `pulumi:"maxDurationInMinutes"`
 	// (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-	MetastoreId pulumi.StringOutput `pulumi:"metastoreId"`
+	MetastoreId pulumi.StringPtrOutput `pulumi:"metastoreId"`
 	// (Updatable) The number of executor VMs requested.
 	NumExecutors pulumi.IntOutput `pulumi:"numExecutors"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId pulumi.StringOutput `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId pulumi.StringPtrOutput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName pulumi.StringOutput `pulumi:"ownerUserName"`
+	OwnerUserName pulumi.StringPtrOutput `pulumi:"ownerUserName"`
 	// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters ApplicationParameterArrayOutput `pulumi:"parameters"`
 	// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-	PoolId pulumi.StringOutput `pulumi:"poolId"`
+	PoolId pulumi.StringPtrOutput `pulumi:"poolId"`
 	// (Updatable) The OCID of a private endpoint.
-	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrOutput `pulumi:"privateEndpointId"`
 	// (Updatable) The Spark version utilized to run the application.
 	SparkVersion pulumi.StringOutput `pulumi:"sparkVersion"`
 	// The current state of this application.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The Spark application processing type.
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	WarehouseBucketUri pulumi.StringOutput `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri pulumi.StringPtrOutput `pulumi:"warehouseBucketUri"`
 }
 
 // NewApplication registers a new resource with the given unique name, arguments, and options.
@@ -517,12 +516,6 @@ func (i *Application) ToApplicationOutputWithContext(ctx context.Context) Applic
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationOutput)
 }
 
-func (i *Application) ToOutput(ctx context.Context) pulumix.Output[*Application] {
-	return pulumix.Output[*Application]{
-		OutputState: i.ToApplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApplicationArrayInput is an input type that accepts ApplicationArray and ApplicationArrayOutput values.
 // You can construct a concrete instance of `ApplicationArrayInput` via:
 //
@@ -546,12 +539,6 @@ func (i ApplicationArray) ToApplicationArrayOutput() ApplicationArrayOutput {
 
 func (i ApplicationArray) ToApplicationArrayOutputWithContext(ctx context.Context) ApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationArrayOutput)
-}
-
-func (i ApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Application] {
-	return pulumix.Output[[]*Application]{
-		OutputState: i.ToApplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ApplicationMapInput is an input type that accepts ApplicationMap and ApplicationMapOutput values.
@@ -579,12 +566,6 @@ func (i ApplicationMap) ToApplicationMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationMapOutput)
 }
 
-func (i ApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Application] {
-	return pulumix.Output[map[string]*Application]{
-		OutputState: i.ToApplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationOutput struct{ *pulumi.OutputState }
 
 func (ApplicationOutput) ElementType() reflect.Type {
@@ -599,15 +580,9 @@ func (o ApplicationOutput) ToApplicationOutputWithContext(ctx context.Context) A
 	return o
 }
 
-func (o ApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*Application] {
-	return pulumix.Output[*Application]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Logging details of Application logs for Data Flow Run.
-func (o ApplicationOutput) ApplicationLogConfig() ApplicationApplicationLogConfigOutput {
-	return o.ApplyT(func(v *Application) ApplicationApplicationLogConfigOutput { return v.ApplicationLogConfig }).(ApplicationApplicationLogConfigOutput)
+func (o ApplicationOutput) ApplicationLogConfig() ApplicationApplicationLogConfigPtrOutput {
+	return o.ApplyT(func(v *Application) ApplicationApplicationLogConfigPtrOutput { return v.ApplicationLogConfig }).(ApplicationApplicationLogConfigPtrOutput)
 }
 
 // (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -641,8 +616,8 @@ func (o ApplicationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly description. Avoid entering confidential information.
-func (o ApplicationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ApplicationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -656,13 +631,13 @@ func (o ApplicationOutput) DriverShape() pulumi.StringOutput {
 }
 
 // (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-func (o ApplicationOutput) DriverShapeConfig() ApplicationDriverShapeConfigOutput {
-	return o.ApplyT(func(v *Application) ApplicationDriverShapeConfigOutput { return v.DriverShapeConfig }).(ApplicationDriverShapeConfigOutput)
+func (o ApplicationOutput) DriverShapeConfig() ApplicationDriverShapeConfigPtrOutput {
+	return o.ApplyT(func(v *Application) ApplicationDriverShapeConfigPtrOutput { return v.DriverShapeConfig }).(ApplicationDriverShapeConfigPtrOutput)
 }
 
 // (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include “--class“, “--file“, “--jars“, “--conf“, “--py-files“, and main application file with arguments. Example: “--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10“ Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-func (o ApplicationOutput) Execute() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Execute }).(pulumi.StringOutput)
+func (o ApplicationOutput) Execute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.Execute }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The VM shape for the executors. Sets the executor cores and memory.
@@ -671,13 +646,13 @@ func (o ApplicationOutput) ExecutorShape() pulumi.StringOutput {
 }
 
 // (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-func (o ApplicationOutput) ExecutorShapeConfig() ApplicationExecutorShapeConfigOutput {
-	return o.ApplyT(func(v *Application) ApplicationExecutorShapeConfigOutput { return v.ExecutorShapeConfig }).(ApplicationExecutorShapeConfigOutput)
+func (o ApplicationOutput) ExecutorShapeConfig() ApplicationExecutorShapeConfigPtrOutput {
+	return o.ApplyT(func(v *Application) ApplicationExecutorShapeConfigPtrOutput { return v.ExecutorShapeConfig }).(ApplicationExecutorShapeConfigPtrOutput)
 }
 
 // (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o ApplicationOutput) FileUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.FileUri }).(pulumi.StringOutput)
+func (o ApplicationOutput) FileUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.FileUri }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -686,8 +661,8 @@ func (o ApplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-func (o ApplicationOutput) IdleTimeoutInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.IdleTimeoutInMinutes }).(pulumi.StringOutput)
+func (o ApplicationOutput) IdleTimeoutInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.IdleTimeoutInMinutes }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Spark language.
@@ -696,18 +671,18 @@ func (o ApplicationOutput) Language() pulumi.StringOutput {
 }
 
 // (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-func (o ApplicationOutput) LogsBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.LogsBucketUri }).(pulumi.StringOutput)
+func (o ApplicationOutput) LogsBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.LogsBucketUri }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-func (o ApplicationOutput) MaxDurationInMinutes() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.MaxDurationInMinutes }).(pulumi.StringOutput)
+func (o ApplicationOutput) MaxDurationInMinutes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.MaxDurationInMinutes }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
-func (o ApplicationOutput) MetastoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.MetastoreId }).(pulumi.StringOutput)
+func (o ApplicationOutput) MetastoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.MetastoreId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The number of executor VMs requested.
@@ -716,13 +691,13 @@ func (o ApplicationOutput) NumExecutors() pulumi.IntOutput {
 }
 
 // The OCID of the user who created the resource.
-func (o ApplicationOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o ApplicationOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o ApplicationOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o ApplicationOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
@@ -731,13 +706,13 @@ func (o ApplicationOutput) Parameters() ApplicationParameterArrayOutput {
 }
 
 // (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-func (o ApplicationOutput) PoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.PoolId }).(pulumi.StringOutput)
+func (o ApplicationOutput) PoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.PoolId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of a private endpoint.
-func (o ApplicationOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o ApplicationOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Spark version utilized to run the application.
@@ -746,31 +721,31 @@ func (o ApplicationOutput) SparkVersion() pulumi.StringOutput {
 }
 
 // The current state of this application.
-func (o ApplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ApplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o ApplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ApplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o ApplicationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ApplicationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The Spark application processing type.
-func (o ApplicationOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o ApplicationOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ApplicationOutput) WarehouseBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *Application) pulumi.StringOutput { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+func (o ApplicationOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringPtrOutput { return v.WarehouseBucketUri }).(pulumi.StringPtrOutput)
 }
 
 type ApplicationArrayOutput struct{ *pulumi.OutputState }
@@ -785,12 +760,6 @@ func (o ApplicationArrayOutput) ToApplicationArrayOutput() ApplicationArrayOutpu
 
 func (o ApplicationArrayOutput) ToApplicationArrayOutputWithContext(ctx context.Context) ApplicationArrayOutput {
 	return o
-}
-
-func (o ApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Application] {
-	return pulumix.Output[[]*Application]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationArrayOutput) Index(i pulumi.IntInput) ApplicationOutput {
@@ -811,12 +780,6 @@ func (o ApplicationMapOutput) ToApplicationMapOutput() ApplicationMapOutput {
 
 func (o ApplicationMapOutput) ToApplicationMapOutputWithContext(ctx context.Context) ApplicationMapOutput {
 	return o
-}
-
-func (o ApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Application] {
-	return pulumix.Output[map[string]*Application]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationMapOutput) MapIndex(k pulumi.StringInput) ApplicationOutput {

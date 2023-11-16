@@ -152,7 +152,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAutonomousDbVersionsResult(
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousDbVersionsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AutonomousDbVersions = autonomousDbVersions;
             CompartmentId = compartmentId;

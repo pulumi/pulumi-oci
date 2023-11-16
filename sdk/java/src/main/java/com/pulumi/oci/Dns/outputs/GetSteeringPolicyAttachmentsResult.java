@@ -41,7 +41,7 @@ public final class GetSteeringPolicyAttachmentsResult {
      * @return The list of steering_policy_attachments.
      * 
      */
-    private List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments;
+    private @Nullable List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments;
     /**
      * @return The OCID of the attached steering policy.
      * 
@@ -98,7 +98,7 @@ public final class GetSteeringPolicyAttachmentsResult {
      * 
      */
     public List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments() {
-        return this.steeringPolicyAttachments;
+        return this.steeringPolicyAttachments == null ? List.of() : this.steeringPolicyAttachments;
     }
     /**
      * @return The OCID of the attached steering policy.
@@ -137,7 +137,7 @@ public final class GetSteeringPolicyAttachmentsResult {
         private @Nullable List<GetSteeringPolicyAttachmentsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-        private List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments;
+        private @Nullable List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments;
         private @Nullable String steeringPolicyId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
@@ -198,8 +198,8 @@ public final class GetSteeringPolicyAttachmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder steeringPolicyAttachments(List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments) {
-            this.steeringPolicyAttachments = Objects.requireNonNull(steeringPolicyAttachments);
+        public Builder steeringPolicyAttachments(@Nullable List<GetSteeringPolicyAttachmentsSteeringPolicyAttachment> steeringPolicyAttachments) {
+            this.steeringPolicyAttachments = steeringPolicyAttachments;
             return this;
         }
         public Builder steeringPolicyAttachments(GetSteeringPolicyAttachmentsSteeringPolicyAttachment... steeringPolicyAttachments) {

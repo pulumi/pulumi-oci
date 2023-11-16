@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenerRulesListenerRuleRule {
@@ -18,115 +20,115 @@ public final class GetListenerRulesListenerRuleRule {
      * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The list of HTTP methods allowed for this listener.
      * 
      */
-    private List<String> allowedMethods;
+    private @Nullable List<String> allowedMethods;
     /**
      * @return Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If &#34;true&#34;, invalid characters are allowed in the HTTP header. If &#34;false&#34;, invalid characters are not allowed in the HTTP header
      * 
      */
-    private Boolean areInvalidCharactersAllowed;
-    private List<GetListenerRulesListenerRuleRuleCondition> conditions;
+    private @Nullable Boolean areInvalidCharactersAllowed;
+    private @Nullable List<GetListenerRulesListenerRuleRuleCondition> conditions;
     /**
      * @return A brief description of the access control rule. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A header name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    private String header;
+    private @Nullable String header;
     /**
      * @return The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
      * 
      */
-    private Integer httpLargeHeaderSizeInKb;
+    private @Nullable Integer httpLargeHeaderSizeInKb;
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    private String prefix;
+    private @Nullable String prefix;
     /**
      * @return An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
      * 
      */
-    private List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris;
+    private @Nullable List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris;
     /**
      * @return The HTTP status code to return when the incoming request is redirected.
      * 
      */
-    private Integer responseCode;
+    private @Nullable Integer responseCode;
     /**
      * @return The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
      * 
      */
-    private Integer statusCode;
+    private @Nullable Integer statusCode;
     /**
      * @return A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    private String suffix;
+    private @Nullable String suffix;
     /**
      * @return A header value that conforms to RFC 7230. With the following exceptions:
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetListenerRulesListenerRuleRule() {}
     /**
      * @return The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The list of HTTP methods allowed for this listener.
      * 
      */
     public List<String> allowedMethods() {
-        return this.allowedMethods;
+        return this.allowedMethods == null ? List.of() : this.allowedMethods;
     }
     /**
      * @return Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If &#34;true&#34;, invalid characters are allowed in the HTTP header. If &#34;false&#34;, invalid characters are not allowed in the HTTP header
      * 
      */
-    public Boolean areInvalidCharactersAllowed() {
-        return this.areInvalidCharactersAllowed;
+    public Optional<Boolean> areInvalidCharactersAllowed() {
+        return Optional.ofNullable(this.areInvalidCharactersAllowed);
     }
     public List<GetListenerRulesListenerRuleRuleCondition> conditions() {
-        return this.conditions;
+        return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return A brief description of the access control rule. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A header name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    public String header() {
-        return this.header;
+    public Optional<String> header() {
+        return Optional.ofNullable(this.header);
     }
     /**
      * @return The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
      * 
      */
-    public Integer httpLargeHeaderSizeInKb() {
-        return this.httpLargeHeaderSizeInKb;
+    public Optional<Integer> httpLargeHeaderSizeInKb() {
+        return Optional.ofNullable(this.httpLargeHeaderSizeInKb);
     }
     /**
      * @return A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -134,29 +136,29 @@ public final class GetListenerRulesListenerRuleRule {
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    public String prefix() {
-        return this.prefix;
+    public Optional<String> prefix() {
+        return Optional.ofNullable(this.prefix);
     }
     /**
      * @return An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
      * 
      */
     public List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris() {
-        return this.redirectUris;
+        return this.redirectUris == null ? List.of() : this.redirectUris;
     }
     /**
      * @return The HTTP status code to return when the incoming request is redirected.
      * 
      */
-    public Integer responseCode() {
-        return this.responseCode;
+    public Optional<Integer> responseCode() {
+        return Optional.ofNullable(this.responseCode);
     }
     /**
      * @return The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
      * 
      */
-    public Integer statusCode() {
-        return this.statusCode;
+    public Optional<Integer> statusCode() {
+        return Optional.ofNullable(this.statusCode);
     }
     /**
      * @return A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
@@ -164,8 +166,8 @@ public final class GetListenerRulesListenerRuleRule {
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    public String suffix() {
-        return this.suffix;
+    public Optional<String> suffix() {
+        return Optional.ofNullable(this.suffix);
     }
     /**
      * @return A header value that conforms to RFC 7230. With the following exceptions:
@@ -173,8 +175,8 @@ public final class GetListenerRulesListenerRuleRule {
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -186,19 +188,19 @@ public final class GetListenerRulesListenerRuleRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<String> allowedMethods;
-        private Boolean areInvalidCharactersAllowed;
-        private List<GetListenerRulesListenerRuleRuleCondition> conditions;
-        private String description;
-        private String header;
-        private Integer httpLargeHeaderSizeInKb;
-        private String prefix;
-        private List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris;
-        private Integer responseCode;
-        private Integer statusCode;
-        private String suffix;
-        private String value;
+        private @Nullable String action;
+        private @Nullable List<String> allowedMethods;
+        private @Nullable Boolean areInvalidCharactersAllowed;
+        private @Nullable List<GetListenerRulesListenerRuleRuleCondition> conditions;
+        private @Nullable String description;
+        private @Nullable String header;
+        private @Nullable Integer httpLargeHeaderSizeInKb;
+        private @Nullable String prefix;
+        private @Nullable List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris;
+        private @Nullable Integer responseCode;
+        private @Nullable Integer statusCode;
+        private @Nullable String suffix;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetListenerRulesListenerRuleRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -218,77 +220,77 @@ public final class GetListenerRulesListenerRuleRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder allowedMethods(List<String> allowedMethods) {
-            this.allowedMethods = Objects.requireNonNull(allowedMethods);
+        public Builder allowedMethods(@Nullable List<String> allowedMethods) {
+            this.allowedMethods = allowedMethods;
             return this;
         }
         public Builder allowedMethods(String... allowedMethods) {
             return allowedMethods(List.of(allowedMethods));
         }
         @CustomType.Setter
-        public Builder areInvalidCharactersAllowed(Boolean areInvalidCharactersAllowed) {
-            this.areInvalidCharactersAllowed = Objects.requireNonNull(areInvalidCharactersAllowed);
+        public Builder areInvalidCharactersAllowed(@Nullable Boolean areInvalidCharactersAllowed) {
+            this.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder conditions(List<GetListenerRulesListenerRuleRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+        public Builder conditions(@Nullable List<GetListenerRulesListenerRuleRuleCondition> conditions) {
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(GetListenerRulesListenerRuleRuleCondition... conditions) {
             return conditions(List.of(conditions));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder header(String header) {
-            this.header = Objects.requireNonNull(header);
+        public Builder header(@Nullable String header) {
+            this.header = header;
             return this;
         }
         @CustomType.Setter
-        public Builder httpLargeHeaderSizeInKb(Integer httpLargeHeaderSizeInKb) {
-            this.httpLargeHeaderSizeInKb = Objects.requireNonNull(httpLargeHeaderSizeInKb);
+        public Builder httpLargeHeaderSizeInKb(@Nullable Integer httpLargeHeaderSizeInKb) {
+            this.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
             return this;
         }
         @CustomType.Setter
-        public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+        public Builder prefix(@Nullable String prefix) {
+            this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
-        public Builder redirectUris(List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris) {
-            this.redirectUris = Objects.requireNonNull(redirectUris);
+        public Builder redirectUris(@Nullable List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris) {
+            this.redirectUris = redirectUris;
             return this;
         }
         public Builder redirectUris(GetListenerRulesListenerRuleRuleRedirectUri... redirectUris) {
             return redirectUris(List.of(redirectUris));
         }
         @CustomType.Setter
-        public Builder responseCode(Integer responseCode) {
-            this.responseCode = Objects.requireNonNull(responseCode);
+        public Builder responseCode(@Nullable Integer responseCode) {
+            this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
-        public Builder statusCode(Integer statusCode) {
-            this.statusCode = Objects.requireNonNull(statusCode);
+        public Builder statusCode(@Nullable Integer statusCode) {
+            this.statusCode = statusCode;
             return this;
         }
         @CustomType.Setter
-        public Builder suffix(String suffix) {
-            this.suffix = Objects.requireNonNull(suffix);
+        public Builder suffix(@Nullable String suffix) {
+            this.suffix = suffix;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetListenerRulesListenerRuleRule build() {

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * @return The list of examples for the recommendation.
      * 
      */
-    private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
+    private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
      * 
      */
     public List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines() {
-        return this.lines;
+        return this.lines == null ? List.of() : this.lines;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
+        private @Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
 
         @CustomType.Setter
-        public Builder lines(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines) {
-            this.lines = Objects.requireNonNull(lines);
+        public Builder lines(@Nullable List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine> lines) {
+            this.lines = lines;
             return this;
         }
         public Builder lines(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine... lines) {

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// If automatic on-behalf-of log object creation is enabled for job runs.
         /// </summary>
-        public readonly bool EnableAutoLogCreation;
+        public readonly bool? EnableAutoLogCreation;
         /// <summary>
         /// If customer logging is enabled for job runs.
         /// </summary>
-        public readonly bool EnableLogging;
+        public readonly bool? EnableLogging;
         /// <summary>
         /// The log group id for where log objects are for job runs.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The log id the job run will push logs too.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetJobsJobJobLogConfigurationDetailResult(
-            bool enableAutoLogCreation,
+            bool? enableAutoLogCreation,
 
-            bool enableLogging,
+            bool? enableLogging,
 
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             EnableAutoLogCreation = enableAutoLogCreation;
             EnableLogging = enableLogging;

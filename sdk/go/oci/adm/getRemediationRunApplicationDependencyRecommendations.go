@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
@@ -69,8 +68,8 @@ type GetRemediationRunApplicationDependencyRecommendationsResult struct {
 	// Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
 	Gav *string `pulumi:"gav"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string `pulumi:"id"`
-	RemediationRunId string `pulumi:"remediationRunId"`
+	Id               *string `pulumi:"id"`
+	RemediationRunId string  `pulumi:"remediationRunId"`
 }
 
 func GetRemediationRunApplicationDependencyRecommendationsOutput(ctx *pulumi.Context, args GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts ...pulumi.InvokeOption) GetRemediationRunApplicationDependencyRecommendationsResultOutput {
@@ -114,12 +113,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) ToGet
 	return o
 }
 
-func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsResult] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of application_dependency_recommendation_collection.
 func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) ApplicationDependencyRecommendationCollections() GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput {
 	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsResult) []GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection {
@@ -139,8 +132,8 @@ func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) Gav()
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRemediationRunApplicationDependencyRecommendationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRemediationRunApplicationDependencyRecommendationsResultOutput) RemediationRunId() pulumi.StringOutput {

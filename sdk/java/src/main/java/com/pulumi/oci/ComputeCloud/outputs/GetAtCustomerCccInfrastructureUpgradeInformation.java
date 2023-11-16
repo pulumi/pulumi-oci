@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructureUpgradeInformation {
@@ -14,51 +16,51 @@ public final class GetAtCustomerCccInfrastructureUpgradeInformation {
      * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
      * 
      */
-    private String currentVersion;
+    private @Nullable String currentVersion;
     /**
      * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
-    private Boolean isActive;
+    private @Nullable Boolean isActive;
     /**
      * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
-    private String scheduledUpgradeDuration;
+    private @Nullable String scheduledUpgradeDuration;
     /**
      * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
-    private String timeOfScheduledUpgrade;
+    private @Nullable String timeOfScheduledUpgrade;
 
     private GetAtCustomerCccInfrastructureUpgradeInformation() {}
     /**
      * @return The current version of software installed on the Compute Cloud@Customer infrastructure.
      * 
      */
-    public String currentVersion() {
-        return this.currentVersion;
+    public Optional<String> currentVersion() {
+        return Optional.ofNullable(this.currentVersion);
     }
     /**
      * @return Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
      * 
      */
-    public Boolean isActive() {
-        return this.isActive;
+    public Optional<Boolean> isActive() {
+        return Optional.ofNullable(this.isActive);
     }
     /**
      * @return Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
      * 
      */
-    public String scheduledUpgradeDuration() {
-        return this.scheduledUpgradeDuration;
+    public Optional<String> scheduledUpgradeDuration() {
+        return Optional.ofNullable(this.scheduledUpgradeDuration);
     }
     /**
      * @return Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
      * 
      */
-    public String timeOfScheduledUpgrade() {
-        return this.timeOfScheduledUpgrade;
+    public Optional<String> timeOfScheduledUpgrade() {
+        return Optional.ofNullable(this.timeOfScheduledUpgrade);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetAtCustomerCccInfrastructureUpgradeInformation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currentVersion;
-        private Boolean isActive;
-        private String scheduledUpgradeDuration;
-        private String timeOfScheduledUpgrade;
+        private @Nullable String currentVersion;
+        private @Nullable Boolean isActive;
+        private @Nullable String scheduledUpgradeDuration;
+        private @Nullable String timeOfScheduledUpgrade;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructureUpgradeInformation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetAtCustomerCccInfrastructureUpgradeInformation {
         }
 
         @CustomType.Setter
-        public Builder currentVersion(String currentVersion) {
-            this.currentVersion = Objects.requireNonNull(currentVersion);
+        public Builder currentVersion(@Nullable String currentVersion) {
+            this.currentVersion = currentVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isActive(Boolean isActive) {
-            this.isActive = Objects.requireNonNull(isActive);
+        public Builder isActive(@Nullable Boolean isActive) {
+            this.isActive = isActive;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledUpgradeDuration(String scheduledUpgradeDuration) {
-            this.scheduledUpgradeDuration = Objects.requireNonNull(scheduledUpgradeDuration);
+        public Builder scheduledUpgradeDuration(@Nullable String scheduledUpgradeDuration) {
+            this.scheduledUpgradeDuration = scheduledUpgradeDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfScheduledUpgrade(String timeOfScheduledUpgrade) {
-            this.timeOfScheduledUpgrade = Objects.requireNonNull(timeOfScheduledUpgrade);
+        public Builder timeOfScheduledUpgrade(@Nullable String timeOfScheduledUpgrade) {
+            this.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
             return this;
         }
         public GetAtCustomerCccInfrastructureUpgradeInformation build() {

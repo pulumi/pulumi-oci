@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -96,8 +95,8 @@ type GetResponderRecipesResult struct {
 	DisplayName *string                     `pulumi:"displayName"`
 	Filters     []GetResponderRecipesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string `pulumi:"id"`
-	ResourceMetadataOnly *bool  `pulumi:"resourceMetadataOnly"`
+	Id                   *string `pulumi:"id"`
+	ResourceMetadataOnly *bool   `pulumi:"resourceMetadataOnly"`
 	// The list of responder_recipe_collection.
 	ResponderRecipeCollections []GetResponderRecipesResponderRecipeCollection `pulumi:"responderRecipeCollections"`
 	// The current state of the Example.
@@ -153,12 +152,6 @@ func (o GetResponderRecipesResultOutput) ToGetResponderRecipesResultOutputWithCo
 	return o
 }
 
-func (o GetResponderRecipesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResponderRecipesResult] {
-	return pulumix.Output[GetResponderRecipesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResponderRecipesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetResponderRecipesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -182,8 +175,8 @@ func (o GetResponderRecipesResultOutput) Filters() GetResponderRecipesFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResponderRecipesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResponderRecipesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResponderRecipesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResponderRecipesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetResponderRecipesResultOutput) ResourceMetadataOnly() pulumi.BoolPtrOutput {

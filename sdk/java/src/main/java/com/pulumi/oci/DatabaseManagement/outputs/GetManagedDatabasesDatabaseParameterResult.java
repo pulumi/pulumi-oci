@@ -18,33 +18,33 @@ public final class GetManagedDatabasesDatabaseParameterResult {
      * @return The name of the Managed Database.
      * 
      */
-    private String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    private String databaseSubType;
+    private @Nullable String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private String databaseVersion;
+    private @Nullable String databaseVersion;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isAllowedValuesIncluded;
     /**
      * @return An array of DatabaseParameterSummary objects.
      * 
      */
-    private List<GetManagedDatabasesDatabaseParameterItem> items;
+    private @Nullable List<GetManagedDatabasesDatabaseParameterItem> items;
     private String managedDatabaseId;
     /**
      * @return The parameter name.
@@ -58,36 +58,36 @@ public final class GetManagedDatabasesDatabaseParameterResult {
      * @return The name of the Managed Database.
      * 
      */
-    public String databaseName() {
-        return this.databaseName;
+    public Optional<String> databaseName() {
+        return Optional.ofNullable(this.databaseName);
     }
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    public String databaseSubType() {
-        return this.databaseSubType;
+    public Optional<String> databaseSubType() {
+        return Optional.ofNullable(this.databaseSubType);
     }
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The Oracle Database version.
      * 
      */
-    public String databaseVersion() {
-        return this.databaseVersion;
+    public Optional<String> databaseVersion() {
+        return Optional.ofNullable(this.databaseVersion);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isAllowedValuesIncluded() {
         return Optional.ofNullable(this.isAllowedValuesIncluded);
@@ -97,7 +97,7 @@ public final class GetManagedDatabasesDatabaseParameterResult {
      * 
      */
     public List<GetManagedDatabasesDatabaseParameterItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -122,13 +122,13 @@ public final class GetManagedDatabasesDatabaseParameterResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String databaseName;
-        private String databaseSubType;
-        private String databaseType;
-        private String databaseVersion;
-        private String id;
+        private @Nullable String databaseName;
+        private @Nullable String databaseSubType;
+        private @Nullable String databaseType;
+        private @Nullable String databaseVersion;
+        private @Nullable String id;
         private @Nullable Boolean isAllowedValuesIncluded;
-        private List<GetManagedDatabasesDatabaseParameterItem> items;
+        private @Nullable List<GetManagedDatabasesDatabaseParameterItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         private @Nullable String source;
@@ -148,28 +148,28 @@ public final class GetManagedDatabasesDatabaseParameterResult {
         }
 
         @CustomType.Setter
-        public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+        public Builder databaseName(@Nullable String databaseName) {
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+        public Builder databaseSubType(@Nullable String databaseSubType) {
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+        public Builder databaseVersion(@Nullable String databaseVersion) {
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -178,8 +178,8 @@ public final class GetManagedDatabasesDatabaseParameterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabasesDatabaseParameterItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabasesDatabaseParameterItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabasesDatabaseParameterItem... items) {

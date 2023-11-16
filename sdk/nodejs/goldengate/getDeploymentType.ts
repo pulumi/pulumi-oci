@@ -58,11 +58,11 @@ export interface GetDeploymentTypeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of DeploymentTypeSummary
      */
-    readonly items: outputs.GoldenGate.GetDeploymentTypeItem[];
+    readonly items?: outputs.GoldenGate.GetDeploymentTypeItem[];
 }
 /**
  * This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.

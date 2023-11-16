@@ -46,67 +46,67 @@ export interface GetBaselineableMetricResult {
     /**
      * metric column name
      */
-    readonly column: string;
+    readonly column?: string;
     /**
      * OCID of the compartment
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Created user id
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * OCID of the metric
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Is the metric created out of box, default false
      */
-    readonly isOutOfBox: boolean;
+    readonly isOutOfBox?: boolean;
     /**
      * last Updated user id
      */
-    readonly lastUpdatedBy: string;
+    readonly lastUpdatedBy?: string;
     /**
      * name of the metric
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * namespace of the metric
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * Resource group of the metric
      */
-    readonly resourceGroup: string;
+    readonly resourceGroup?: string;
     /**
      * The current lifecycle state of the metric extension
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * OCID of the tenancy
      */
-    readonly tenancyId: string;
+    readonly tenancyId?: string;
     /**
      * creation date
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * last updated time
      */
-    readonly timeLastUpdated: string;
+    readonly timeLastUpdated?: string;
 }
 /**
  * This data source provides details about a specific Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The number of a line in the base version.
         /// </summary>
-        public readonly int BaseLine;
+        public readonly int? BaseLine;
         /// <summary>
         /// Number of lines chunk spans in base version.
         /// </summary>
-        public readonly int BaseSpan;
+        public readonly int? BaseSpan;
         /// <summary>
         /// List of difference section.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Line number in target version where changes begin.
         /// </summary>
-        public readonly int TargetLine;
+        public readonly int? TargetLine;
         /// <summary>
         /// Number of lines chunk spans in target version.
         /// </summary>
-        public readonly int TargetSpan;
+        public readonly int? TargetSpan;
 
         [OutputConstructor]
         private GetRepositoryFileDiffChangeResult(
-            int baseLine,
+            int? baseLine,
 
-            int baseSpan,
+            int? baseSpan,
 
             ImmutableArray<Outputs.GetRepositoryFileDiffChangeDiffSectionResult> diffSections,
 
-            int targetLine,
+            int? targetLine,
 
-            int targetSpan)
+            int? targetSpan)
         {
             BaseLine = baseLine;
             BaseSpan = baseSpan;

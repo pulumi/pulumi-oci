@@ -108,15 +108,15 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalProperties;
+        public readonly ImmutableDictionary<string, object>? AdditionalProperties;
         /// <summary>
         /// The annotation format name required for labeling records.
         /// </summary>
-        public readonly string AnnotationFormat;
+        public readonly string? AnnotationFormat;
         /// <summary>
         /// The OCID of the compartment of the resource.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         /// </summary>
@@ -129,23 +129,23 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user provided description of the dataset
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly display name for the resource.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the Dataset.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         /// </summary>
@@ -161,35 +161,35 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// The labeling instructions for human labelers in rich text format
         /// </summary>
-        public readonly string LabelingInstructions;
+        public readonly string? LabelingInstructions;
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         /// </summary>
-        public readonly string LifecycleSubstate;
+        public readonly string? LifecycleSubstate;
         /// <summary>
         /// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDatasetResult(
-            ImmutableDictionary<string, object> additionalProperties,
+            ImmutableDictionary<string, object>? additionalProperties,
 
-            string annotationFormat,
+            string? annotationFormat,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetDatasetDatasetFormatDetailResult> datasetFormatDetails,
 
@@ -197,15 +197,15 @@ namespace Pulumi.Oci.DataLabellingService
 
             ImmutableArray<Outputs.GetDatasetDatasetSourceDetailResult> datasetSourceDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDatasetInitialImportDatasetConfigurationResult> initialImportDatasetConfigurations,
 
@@ -213,17 +213,17 @@ namespace Pulumi.Oci.DataLabellingService
 
             ImmutableArray<Outputs.GetDatasetLabelSetResult> labelSets,
 
-            string labelingInstructions,
+            string? labelingInstructions,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string lifecycleSubstate,
+            string? lifecycleSubstate,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AdditionalProperties = additionalProperties;
             AnnotationFormat = annotationFormat;

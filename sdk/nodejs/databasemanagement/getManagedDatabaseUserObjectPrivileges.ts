@@ -62,7 +62,7 @@ export interface GetManagedDatabaseUserObjectPrivilegesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the privilege on the object.
@@ -71,7 +71,7 @@ export interface GetManagedDatabaseUserObjectPrivilegesResult {
     /**
      * The list of object_privilege_collection.
      */
-    readonly objectPrivilegeCollections: outputs.DatabaseManagement.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection[];
+    readonly objectPrivilegeCollections?: outputs.DatabaseManagement.GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection[];
     readonly userName: string;
 }
 /**

@@ -34,7 +34,7 @@ public final class GetMeshesResult {
      * @return The list of mesh_collection.
      * 
      */
-    private List<GetMeshesMeshCollection> meshCollections;
+    private @Nullable List<GetMeshesMeshCollection> meshCollections;
     /**
      * @return The current state of the Resource.
      * 
@@ -71,7 +71,7 @@ public final class GetMeshesResult {
      * 
      */
     public List<GetMeshesMeshCollection> meshCollections() {
-        return this.meshCollections;
+        return this.meshCollections == null ? List.of() : this.meshCollections;
     }
     /**
      * @return The current state of the Resource.
@@ -94,7 +94,7 @@ public final class GetMeshesResult {
         private @Nullable String displayName;
         private @Nullable List<GetMeshesFilter> filters;
         private @Nullable String id;
-        private List<GetMeshesMeshCollection> meshCollections;
+        private @Nullable List<GetMeshesMeshCollection> meshCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMeshesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetMeshesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder meshCollections(List<GetMeshesMeshCollection> meshCollections) {
-            this.meshCollections = Objects.requireNonNull(meshCollections);
+        public Builder meshCollections(@Nullable List<GetMeshesMeshCollection> meshCollections) {
+            this.meshCollections = meshCollections;
             return this;
         }
         public Builder meshCollections(GetMeshesMeshCollection... meshCollections) {

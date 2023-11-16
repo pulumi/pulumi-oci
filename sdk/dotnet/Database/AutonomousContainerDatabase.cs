@@ -29,70 +29,70 @@ namespace Pulumi.Oci.Database
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Output("autonomousExadataInfrastructureId")]
-        public Output<string> AutonomousExadataInfrastructureId { get; private set; } = null!;
+        public Output<string?> AutonomousExadataInfrastructureId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Autonomous VM Cluster.
         /// </summary>
         [Output("autonomousVmClusterId")]
-        public Output<string> AutonomousVmClusterId { get; private set; } = null!;
+        public Output<string?> AutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
         /// The availability domain of the Autonomous Container Database
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         [Output("availableCpus")]
-        public Output<double> AvailableCpus { get; private set; } = null!;
+        public Output<double?> AvailableCpus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Backup options for the Autonomous Container Database.
         /// </summary>
         [Output("backupConfig")]
-        public Output<Outputs.AutonomousContainerDatabaseBackupConfig> BackupConfig { get; private set; } = null!;
+        public Output<Outputs.AutonomousContainerDatabaseBackupConfig?> BackupConfig { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Cloud Autonomous VM Cluster.
         /// </summary>
         [Output("cloudAutonomousVmClusterId")]
-        public Output<string> CloudAutonomousVmClusterId { get; private set; } = null!;
+        public Output<string?> CloudAutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The compute model of the Autonomous VM Cluster.
         /// </summary>
         [Output("computeModel")]
-        public Output<string> ComputeModel { get; private set; } = null!;
+        public Output<string?> ComputeModel { get; private set; } = null!;
 
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Output("dbName")]
-        public Output<string> DbName { get; private set; } = null!;
+        public Output<string?> DbName { get; private set; } = null!;
 
         [Output("dbUniqueName")]
-        public Output<string> DbUniqueName { get; private set; } = null!;
+        public Output<string?> DbUniqueName { get; private set; } = null!;
 
         /// <summary>
         /// The base version for the Autonomous Container Database.
         /// </summary>
         [Output("dbVersion")]
-        public Output<string> DbVersion { get; private set; } = null!;
+        public Output<string?> DbVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name for the Autonomous Container Database.
@@ -104,37 +104,37 @@ namespace Pulumi.Oci.Database
         /// DST Time Zone File version of the Autonomous Container Database.
         /// </summary>
         [Output("dstFileVersion")]
-        public Output<string> DstFileVersion { get; private set; } = null!;
+        public Output<string?> DstFileVersion { get; private set; } = null!;
 
         /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Output("fastStartFailOverLagLimitInSeconds")]
-        public Output<int> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
+        public Output<int?> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The infrastructure type this resource belongs to.
         /// </summary>
         [Output("infrastructureType")]
-        public Output<string> InfrastructureType { get; private set; } = null!;
+        public Output<string?> InfrastructureType { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
-        public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutomaticFailoverEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
         [Output("isDstFileUpdateEnabled")]
-        public Output<bool> IsDstFileUpdateEnabled { get; private set; } = null!;
+        public Output<bool?> IsDstFileUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Key History Entry.
@@ -146,37 +146,37 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Output("keyStoreId")]
-        public Output<string> KeyStoreId { get; private set; } = null!;
+        public Output<string?> KeyStoreId { get; private set; } = null!;
 
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
         [Output("keyStoreWalletName")]
-        public Output<string> KeyStoreWalletName { get; private set; } = null!;
+        public Output<string?> KeyStoreWalletName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         /// </summary>
         [Output("largestProvisionableAutonomousDatabaseInCpus")]
-        public Output<double> LargestProvisionableAutonomousDatabaseInCpus { get; private set; } = null!;
+        public Output<double?> LargestProvisionableAutonomousDatabaseInCpus { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         [Output("lastMaintenanceRunId")]
-        public Output<string> LastMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> LastMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -194,19 +194,19 @@ namespace Pulumi.Oci.Database
         /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
-        public Output<int> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
+        public Output<int?> MemoryPerOracleComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
-        public Output<string> NextMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> NextMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         /// </summary>
         [Output("patchId")]
-        public Output<string> PatchId { get; private set; } = null!;
+        public Output<string?> PatchId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Database Patch model preference.
@@ -215,46 +215,46 @@ namespace Pulumi.Oci.Database
         public Output<string> PatchModel { get; private set; } = null!;
 
         [Output("peerAutonomousContainerDatabaseBackupConfig")]
-        public Output<Outputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> PeerAutonomousContainerDatabaseBackupConfig { get; private set; } = null!;
+        public Output<Outputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig?> PeerAutonomousContainerDatabaseBackupConfig { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         /// </summary>
         [Output("peerAutonomousContainerDatabaseCompartmentId")]
-        public Output<string> PeerAutonomousContainerDatabaseCompartmentId { get; private set; } = null!;
+        public Output<string?> PeerAutonomousContainerDatabaseCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The display name for the peer Autonomous Container Database.
         /// </summary>
         [Output("peerAutonomousContainerDatabaseDisplayName")]
-        public Output<string> PeerAutonomousContainerDatabaseDisplayName { get; private set; } = null!;
+        public Output<string?> PeerAutonomousContainerDatabaseDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
         [Output("peerAutonomousExadataInfrastructureId")]
-        public Output<string> PeerAutonomousExadataInfrastructureId { get; private set; } = null!;
+        public Output<string?> PeerAutonomousExadataInfrastructureId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         /// </summary>
         [Output("peerAutonomousVmClusterId")]
-        public Output<string> PeerAutonomousVmClusterId { get; private set; } = null!;
+        public Output<string?> PeerAutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
         /// </summary>
         [Output("peerCloudAutonomousVmClusterId")]
-        public Output<string> PeerCloudAutonomousVmClusterId { get; private set; } = null!;
+        public Output<string?> PeerCloudAutonomousVmClusterId { get; private set; } = null!;
 
         [Output("peerDbUniqueName")]
-        public Output<string> PeerDbUniqueName { get; private set; } = null!;
+        public Output<string?> PeerDbUniqueName { get; private set; } = null!;
 
         /// <summary>
         /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         [Output("protectionMode")]
-        public Output<string> ProtectionMode { get; private set; } = null!;
+        public Output<string?> ProtectionMode { get; private set; } = null!;
 
         /// <summary>
         /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -266,7 +266,7 @@ namespace Pulumi.Oci.Database
         /// The number of CPUs provisioned in an Autonomous Container Database.
         /// </summary>
         [Output("provisionedCpus")]
-        public Output<double> ProvisionedCpus { get; private set; } = null!;
+        public Output<double?> ProvisionedCpus { get; private set; } = null!;
 
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.Database
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         [Output("reclaimableCpus")]
-        public Output<double> ReclaimableCpus { get; private set; } = null!;
+        public Output<double?> ReclaimableCpus { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
@@ -282,13 +282,13 @@ namespace Pulumi.Oci.Database
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         [Output("reservedCpus")]
-        public Output<double> ReservedCpus { get; private set; } = null!;
+        public Output<double?> ReservedCpus { get; private set; } = null!;
 
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Output("role")]
-        public Output<string> Role { get; private set; } = null!;
+        public Output<string?> Role { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
@@ -300,7 +300,7 @@ namespace Pulumi.Oci.Database
         /// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         /// </summary>
         [Output("serviceLevelAgreementType")]
-        public Output<string> ServiceLevelAgreementType { get; private set; } = null!;
+        public Output<string?> ServiceLevelAgreementType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
@@ -310,43 +310,43 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("standbyMaintenanceBufferInDays")]
-        public Output<int> StandbyMaintenanceBufferInDays { get; private set; } = null!;
+        public Output<int?> StandbyMaintenanceBufferInDays { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Autonomous Container Database.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         /// </summary>
         [Output("timeSnapshotStandbyRevert")]
-        public Output<string> TimeSnapshotStandbyRevert { get; private set; } = null!;
+        public Output<string?> TimeSnapshotStandbyRevert { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
         [Output("totalCpus")]
-        public Output<int> TotalCpus { get; private set; } = null!;
+        public Output<int?> TotalCpus { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("vaultId")]
-        public Output<string> VaultId { get; private set; } = null!;
+        public Output<string?> VaultId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The next maintenance version preference.
         /// </summary>
         [Output("versionPreference")]
-        public Output<string> VersionPreference { get; private set; } = null!;
+        public Output<string?> VersionPreference { get; private set; } = null!;
 
 
         /// <summary>

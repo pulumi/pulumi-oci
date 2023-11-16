@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The number of instances for the model deployment.
         /// </summary>
-        public readonly int InstanceCount;
+        public readonly int? InstanceCount;
         /// <summary>
         /// The type of scaling policy.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult(
-            int instanceCount,
+            int? instanceCount,
 
-            string policyType)
+            string? policyType)
         {
             InstanceCount = instanceCount;
             PolicyType = policyType;

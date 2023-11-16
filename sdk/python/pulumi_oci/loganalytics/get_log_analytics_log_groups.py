@@ -46,17 +46,11 @@ class GetLogAnalyticsLogGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetLogAnalyticsLogGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,10 +68,7 @@ class GetLogAnalyticsLogGroupsResult:
 
     @property
     @pulumi.getter(name="logAnalyticsLogGroupSummaryCollections")
-    def log_analytics_log_group_summary_collections(self) -> Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult']:
-        """
-        The list of log_analytics_log_group_summary_collection.
-        """
+    def log_analytics_log_group_summary_collections(self) -> Optional[Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult']]:
         return pulumi.get(self, "log_analytics_log_group_summary_collections")
 
     @property
@@ -106,25 +97,7 @@ def get_log_analytics_log_groups(compartment_id: Optional[str] = None,
                                  namespace: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsLogGroupsResult:
     """
-    This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_log_group_namespace"],
-        display_name=var["log_analytics_log_group_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[st
                                         namespace: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsLogGroupsResult]:
     """
-    This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_log_group_namespace"],
-        display_name=var["log_analytics_log_group_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

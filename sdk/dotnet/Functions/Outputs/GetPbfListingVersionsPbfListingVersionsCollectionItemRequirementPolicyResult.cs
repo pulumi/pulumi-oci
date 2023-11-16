@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Details about why this policy is required and what it will be used for.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Policy required for PBF execution
         /// </summary>
-        public readonly string Policy;
+        public readonly string? Policy;
 
         [OutputConstructor]
         private GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyResult(
-            string description,
+            string? description,
 
-            string policy)
+            string? policy)
         {
             Description = description;
             Policy = policy;

@@ -139,43 +139,43 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Flag to determine if the object contains binary file content or not.
         /// </summary>
-        public readonly bool IsBinary;
+        public readonly bool? IsBinary;
         public readonly string? RefName;
         public readonly string RepositoryId;
         /// <summary>
         /// SHA-1 hash of git object.
         /// </summary>
-        public readonly string Sha;
+        public readonly string? Sha;
         /// <summary>
         /// Size in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// The type of git object.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRepositoryObjectResult(
             string? filePath,
 
-            string id,
+            string? id,
 
-            bool isBinary,
+            bool? isBinary,
 
             string? refName,
 
             string repositoryId,
 
-            string sha,
+            string? sha,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string type)
+            string? type)
         {
             FilePath = filePath;
             Id = id;

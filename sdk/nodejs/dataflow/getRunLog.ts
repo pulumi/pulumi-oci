@@ -54,15 +54,15 @@ export interface GetRunLogResult {
     /**
      * The content of the run log.
      */
-    readonly content: string;
+    readonly content?: string;
     /**
      * The content type of the run log.
      */
-    readonly contentType: string;
+    readonly contentType?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly name: string;
     readonly runId: string;
 }

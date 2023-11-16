@@ -84,7 +84,7 @@ export interface GetConnectionsResult {
     /**
      * The list of connection_collection.
      */
-    readonly connectionCollections: outputs.DevOps.GetConnectionsConnectionCollection[];
+    readonly connectionCollections?: outputs.DevOps.GetConnectionsConnectionCollection[];
     /**
      * The type of connection.
      */

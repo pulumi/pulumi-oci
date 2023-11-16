@@ -18,8 +18,6 @@ class RouteTableAttachmentArgs:
                  subnet_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a RouteTableAttachment resource.
-        :param pulumi.Input[str] route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         """
         pulumi.set(__self__, "route_table_id", route_table_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -27,9 +25,6 @@ class RouteTableAttachmentArgs:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -39,9 +34,6 @@ class RouteTableAttachmentArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -56,8 +48,6 @@ class _RouteTableAttachmentState:
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RouteTableAttachment resources.
-        :param pulumi.Input[str] route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         """
         if route_table_id is not None:
             pulumi.set(__self__, "route_table_id", route_table_id)
@@ -67,9 +57,6 @@ class _RouteTableAttachmentState:
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
@@ -79,9 +66,6 @@ class _RouteTableAttachmentState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -98,33 +82,9 @@ class RouteTableAttachment(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the ability to associate a route table for a subnet in Oracle Cloud Infrastructure Core service.
-
-        Attaches the specified `route table` to the specified `subnet`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_route_table_attachment = oci.core.RouteTableAttachment("testRouteTableAttachment",
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
-        ```
-
-        ## Import
-
-        Route Table Attachment can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
-        ```
-
+        Create a RouteTableAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         """
         ...
     @overload
@@ -133,29 +93,7 @@ class RouteTableAttachment(pulumi.CustomResource):
                  args: RouteTableAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the ability to associate a route table for a subnet in Oracle Cloud Infrastructure Core service.
-
-        Attaches the specified `route table` to the specified `subnet`.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_route_table_attachment = oci.core.RouteTableAttachment("testRouteTableAttachment",
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
-        ```
-
-        ## Import
-
-        Route Table Attachment can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/routeTableAttachment:RouteTableAttachment test_route_table_attachment "{subnetId}/{routeTableId}"
-        ```
-
+        Create a RouteTableAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RouteTableAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -207,8 +145,6 @@ class RouteTableAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -221,16 +157,10 @@ class RouteTableAttachment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
-        """
         return pulumi.get(self, "route_table_id")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
-        """
         return pulumi.get(self, "subnet_id")
 

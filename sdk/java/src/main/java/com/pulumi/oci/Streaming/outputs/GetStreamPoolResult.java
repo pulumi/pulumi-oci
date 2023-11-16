@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamPoolResult {
@@ -20,153 +22,153 @@ public final class GetStreamPoolResult {
      * @return Compartment OCID that the pool belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Custom Encryption Key which will be used for encryption by all the streams in the pool.
      * 
      */
-    private List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys;
+    private @Nullable List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}&#39;
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      * 
      */
-    private String endpointFqdn;
+    private @Nullable String endpointFqdn;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the stream pool.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      * 
      */
-    private Boolean isPrivate;
+    private @Nullable Boolean isPrivate;
     /**
      * @return Settings for the Kafka compatibility layer.
      * 
      */
-    private List<GetStreamPoolKafkaSetting> kafkaSettings;
+    private @Nullable List<GetStreamPoolKafkaSetting> kafkaSettings;
     /**
      * @return Any additional details about the current state of the stream.
      * 
      */
-    private String lifecycleStateDetails;
+    private @Nullable String lifecycleStateDetails;
     /**
      * @return The name of the stream pool.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Optional settings if the stream pool is private.
      * 
      */
-    private List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings;
+    private @Nullable List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings;
     /**
      * @return The current state of the stream pool.
      * 
      */
-    private String state;
+    private @Nullable String state;
     private String streamPoolId;
     /**
      * @return The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetStreamPoolResult() {}
     /**
      * @return Compartment OCID that the pool belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Custom Encryption Key which will be used for encryption by all the streams in the pool.
      * 
      */
     public List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys() {
-        return this.customEncryptionKeys;
+        return this.customEncryptionKeys == null ? List.of() : this.customEncryptionKeys;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}&#39;
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      * 
      */
-    public String endpointFqdn() {
-        return this.endpointFqdn;
+    public Optional<String> endpointFqdn() {
+        return Optional.ofNullable(this.endpointFqdn);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the stream pool.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      * 
      */
-    public Boolean isPrivate() {
-        return this.isPrivate;
+    public Optional<Boolean> isPrivate() {
+        return Optional.ofNullable(this.isPrivate);
     }
     /**
      * @return Settings for the Kafka compatibility layer.
      * 
      */
     public List<GetStreamPoolKafkaSetting> kafkaSettings() {
-        return this.kafkaSettings;
+        return this.kafkaSettings == null ? List.of() : this.kafkaSettings;
     }
     /**
      * @return Any additional details about the current state of the stream.
      * 
      */
-    public String lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Optional<String> lifecycleStateDetails() {
+        return Optional.ofNullable(this.lifecycleStateDetails);
     }
     /**
      * @return The name of the stream pool.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Optional settings if the stream pool is private.
      * 
      */
     public List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings() {
-        return this.privateEndpointSettings;
+        return this.privateEndpointSettings == null ? List.of() : this.privateEndpointSettings;
     }
     /**
      * @return The current state of the stream pool.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     public String streamPoolId() {
         return this.streamPoolId;
@@ -175,8 +177,8 @@ public final class GetStreamPoolResult {
      * @return The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -188,20 +190,20 @@ public final class GetStreamPoolResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys;
-        private Map<String,Object> definedTags;
-        private String endpointFqdn;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isPrivate;
-        private List<GetStreamPoolKafkaSetting> kafkaSettings;
-        private String lifecycleStateDetails;
-        private String name;
-        private List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings;
-        private String state;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String endpointFqdn;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isPrivate;
+        private @Nullable List<GetStreamPoolKafkaSetting> kafkaSettings;
+        private @Nullable String lifecycleStateDetails;
+        private @Nullable String name;
+        private @Nullable List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings;
+        private @Nullable String state;
         private String streamPoolId;
-        private String timeCreated;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetStreamPoolResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -222,72 +224,72 @@ public final class GetStreamPoolResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder customEncryptionKeys(List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys) {
-            this.customEncryptionKeys = Objects.requireNonNull(customEncryptionKeys);
+        public Builder customEncryptionKeys(@Nullable List<GetStreamPoolCustomEncryptionKey> customEncryptionKeys) {
+            this.customEncryptionKeys = customEncryptionKeys;
             return this;
         }
         public Builder customEncryptionKeys(GetStreamPoolCustomEncryptionKey... customEncryptionKeys) {
             return customEncryptionKeys(List.of(customEncryptionKeys));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder endpointFqdn(String endpointFqdn) {
-            this.endpointFqdn = Objects.requireNonNull(endpointFqdn);
+        public Builder endpointFqdn(@Nullable String endpointFqdn) {
+            this.endpointFqdn = endpointFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrivate(Boolean isPrivate) {
-            this.isPrivate = Objects.requireNonNull(isPrivate);
+        public Builder isPrivate(@Nullable Boolean isPrivate) {
+            this.isPrivate = isPrivate;
             return this;
         }
         @CustomType.Setter
-        public Builder kafkaSettings(List<GetStreamPoolKafkaSetting> kafkaSettings) {
-            this.kafkaSettings = Objects.requireNonNull(kafkaSettings);
+        public Builder kafkaSettings(@Nullable List<GetStreamPoolKafkaSetting> kafkaSettings) {
+            this.kafkaSettings = kafkaSettings;
             return this;
         }
         public Builder kafkaSettings(GetStreamPoolKafkaSetting... kafkaSettings) {
             return kafkaSettings(List.of(kafkaSettings));
         }
         @CustomType.Setter
-        public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+        public Builder lifecycleStateDetails(@Nullable String lifecycleStateDetails) {
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointSettings(List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings) {
-            this.privateEndpointSettings = Objects.requireNonNull(privateEndpointSettings);
+        public Builder privateEndpointSettings(@Nullable List<GetStreamPoolPrivateEndpointSetting> privateEndpointSettings) {
+            this.privateEndpointSettings = privateEndpointSettings;
             return this;
         }
         public Builder privateEndpointSettings(GetStreamPoolPrivateEndpointSetting... privateEndpointSettings) {
             return privateEndpointSettings(List.of(privateEndpointSettings));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
@@ -296,8 +298,8 @@ public final class GetStreamPoolResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetStreamPoolResult build() {

@@ -39,7 +39,7 @@ public final class GetJobsResult {
      * @return The list of jobs.
      * 
      */
-    private List<GetJobsJob> jobs;
+    private @Nullable List<GetJobsJob> jobs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
@@ -88,7 +88,7 @@ public final class GetJobsResult {
      * 
      */
     public List<GetJobsJob> jobs() {
-        return this.jobs;
+        return this.jobs == null ? List.of() : this.jobs;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -119,7 +119,7 @@ public final class GetJobsResult {
         private @Nullable String displayName;
         private @Nullable List<GetJobsFilter> filters;
         private @Nullable String id;
-        private List<GetJobsJob> jobs;
+        private @Nullable List<GetJobsJob> jobs;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -164,8 +164,8 @@ public final class GetJobsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder jobs(List<GetJobsJob> jobs) {
-            this.jobs = Objects.requireNonNull(jobs);
+        public Builder jobs(@Nullable List<GetJobsJob> jobs) {
+            this.jobs = jobs;
             return this;
         }
         public Builder jobs(GetJobsJob... jobs) {

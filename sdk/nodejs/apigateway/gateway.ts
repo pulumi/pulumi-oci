@@ -91,11 +91,11 @@ export class Gateway extends pulumi.CustomResource {
     /**
      * (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
      */
-    public readonly caBundles!: pulumi.Output<outputs.ApiGateway.GatewayCaBundle[]>;
+    public readonly caBundles!: pulumi.Output<outputs.ApiGateway.GatewayCaBundle[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
-    public readonly certificateId!: pulumi.Output<string>;
+    public readonly certificateId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
@@ -103,11 +103,11 @@ export class Gateway extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
      */
@@ -115,31 +115,31 @@ export class Gateway extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The hostname for APIs deployed on the gateway.
      */
-    public /*out*/ readonly hostname!: pulumi.Output<string>;
+    public /*out*/ readonly hostname!: pulumi.Output<string | undefined>;
     /**
      * An array of IP addresses associated with the gateway.
      */
-    public /*out*/ readonly ipAddresses!: pulumi.Output<outputs.ApiGateway.GatewayIpAddress[]>;
+    public /*out*/ readonly ipAddresses!: pulumi.Output<outputs.ApiGateway.GatewayIpAddress[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      */
-    public readonly networkSecurityGroupIds!: pulumi.Output<string[]>;
+    public readonly networkSecurityGroupIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Base Gateway response cache.
      */
-    public readonly responseCacheDetails!: pulumi.Output<outputs.ApiGateway.GatewayResponseCacheDetails>;
+    public readonly responseCacheDetails!: pulumi.Output<outputs.ApiGateway.GatewayResponseCacheDetails | undefined>;
     /**
      * The current state of the gateway.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created. 
      *
@@ -151,11 +151,11 @@ export class Gateway extends pulumi.CustomResource {
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Gateway resource with the given unique name, arguments, and options.

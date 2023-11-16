@@ -127,59 +127,59 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the alert rule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The name of the alert rule. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the alert rule.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The custom message that will be sent when the alert is triggered.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
         /// </summary>
-        public readonly string Recipients;
+        public readonly string? Recipients;
         /// <summary>
         /// The current state of the alert rule.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
         /// </summary>
-        public readonly double Threshold;
+        public readonly double? Threshold;
         /// <summary>
         /// The type of threshold.
         /// </summary>
-        public readonly string ThresholdType;
+        public readonly string? ThresholdType;
         /// <summary>
         /// The time when the budget was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the budget was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The version of the alert rule. Starts from 1 and increments by 1.
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetAlertRuleResult(
@@ -187,33 +187,33 @@ namespace Pulumi.Oci.Budget
 
             string budgetId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string message,
+            string? message,
 
-            string recipients,
+            string? recipients,
 
-            string state,
+            string? state,
 
-            double threshold,
+            double? threshold,
 
-            string thresholdType,
+            string? thresholdType,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type,
+            string? type,
 
-            int version)
+            int? version)
         {
             AlertRuleId = alertRuleId;
             BudgetId = budgetId;

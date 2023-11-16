@@ -46,9 +46,6 @@ class GetGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,15 +55,12 @@ class GetGroupsResult:
 
     @property
     @pulumi.getter
-    def groups(self) -> Sequence['outputs.GetGroupsGroupResult']:
-        """
-        The list of groups.
-        """
+    def groups(self) -> Optional[Sequence['outputs.GetGroupsGroupResult']]:
         return pulumi.get(self, "groups")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetGroupsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The group's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,27 +97,7 @@ def get_groups(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupsResult:
     """
-    This data source provides the list of Groups in Oracle Cloud Infrastructure Identity service.
-
-    Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
-    the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_groups = oci.Identity.get_groups(compartment_id=var["tenancy_ocid"],
-        name=var["group_name"],
-        state=var["group_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -155,26 +123,6 @@ def get_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGroupsResult]:
     """
-    This data source provides the list of Groups in Oracle Cloud Infrastructure Identity service.
-
-    Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
-    the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_groups = oci.Identity.get_groups(compartment_id=var["tenancy_ocid"],
-        name=var["group_name"],
-        state=var["group_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

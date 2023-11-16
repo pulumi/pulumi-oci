@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail {
@@ -13,39 +15,39 @@ public final class GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTun
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
      * 
      */
-    private String ipsecConnectionId;
+    private @Nullable String ipsecConnectionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
      * 
      */
-    private String tunnelId;
+    private @Nullable String tunnelId;
     /**
      * @return The type of the tunnel associated with the virtual circuit.
      * 
      */
-    private String tunnelType;
+    private @Nullable String tunnelType;
 
     private GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
      * 
      */
-    public String ipsecConnectionId() {
-        return this.ipsecConnectionId;
+    public Optional<String> ipsecConnectionId() {
+        return Optional.ofNullable(this.ipsecConnectionId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
      * 
      */
-    public String tunnelId() {
-        return this.tunnelId;
+    public Optional<String> tunnelId() {
+        return Optional.ofNullable(this.tunnelId);
     }
     /**
      * @return The type of the tunnel associated with the virtual circuit.
      * 
      */
-    public String tunnelType() {
-        return this.tunnelType;
+    public Optional<String> tunnelType() {
+        return Optional.ofNullable(this.tunnelType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTun
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ipsecConnectionId;
-        private String tunnelId;
-        private String tunnelType;
+        private @Nullable String ipsecConnectionId;
+        private @Nullable String tunnelId;
+        private @Nullable String tunnelType;
         public Builder() {}
         public Builder(GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTun
         }
 
         @CustomType.Setter
-        public Builder ipsecConnectionId(String ipsecConnectionId) {
-            this.ipsecConnectionId = Objects.requireNonNull(ipsecConnectionId);
+        public Builder ipsecConnectionId(@Nullable String ipsecConnectionId) {
+            this.ipsecConnectionId = ipsecConnectionId;
             return this;
         }
         @CustomType.Setter
-        public Builder tunnelId(String tunnelId) {
-            this.tunnelId = Objects.requireNonNull(tunnelId);
+        public Builder tunnelId(@Nullable String tunnelId) {
+            this.tunnelId = tunnelId;
             return this;
         }
         @CustomType.Setter
-        public Builder tunnelType(String tunnelType) {
-            this.tunnelType = Objects.requireNonNull(tunnelType);
+        public Builder tunnelType(@Nullable String tunnelType) {
+            this.tunnelType = tunnelType;
             return this;
         }
         public GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail build() {

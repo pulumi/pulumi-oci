@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -35,16 +34,16 @@ type LookupNetworkFirewallPolicyServiceArgs struct {
 
 // A collection of values returned by getNetworkFirewallPolicyService.
 type LookupNetworkFirewallPolicyServiceResult struct {
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of the service.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this service belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// List of port-ranges used.
 	PortRanges []GetNetworkFirewallPolicyServicePortRange `pulumi:"portRanges"`
 	// Describes the type of Service.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupNetworkFirewallPolicyServiceOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyServiceOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyServiceResultOutput {
@@ -87,14 +86,8 @@ func (o LookupNetworkFirewallPolicyServiceResultOutput) ToLookupNetworkFirewallP
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyServiceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyServiceResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyServiceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupNetworkFirewallPolicyServiceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyServiceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the service.
@@ -107,8 +100,8 @@ func (o LookupNetworkFirewallPolicyServiceResultOutput) NetworkFirewallPolicyId(
 }
 
 // OCID of the Network Firewall Policy this service belongs to.
-func (o LookupNetworkFirewallPolicyServiceResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyServiceResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // List of port-ranges used.
@@ -119,8 +112,8 @@ func (o LookupNetworkFirewallPolicyServiceResultOutput) PortRanges() GetNetworkF
 }
 
 // Describes the type of Service.
-func (o LookupNetworkFirewallPolicyServiceResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyServiceResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyServiceResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

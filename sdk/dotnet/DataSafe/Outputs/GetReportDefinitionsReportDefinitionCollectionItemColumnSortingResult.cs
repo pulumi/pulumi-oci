@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Name of the column that must be sorted.
         /// </summary>
-        public readonly string FieldName;
+        public readonly string? FieldName;
         /// <summary>
         /// Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         /// </summary>
-        public readonly bool IsAscending;
+        public readonly bool? IsAscending;
         /// <summary>
         /// Indicates the order at which column must be sorted.
         /// </summary>
-        public readonly int SortingOrder;
+        public readonly int? SortingOrder;
 
         [OutputConstructor]
         private GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult(
-            string fieldName,
+            string? fieldName,
 
-            bool isAscending,
+            bool? isAscending,
 
-            int sortingOrder)
+            int? sortingOrder)
         {
             FieldName = fieldName;
             IsAscending = isAscending;

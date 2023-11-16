@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The unique identifier of this blocklist record.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The operation type.
         /// </summary>
-        public readonly string Operation;
+        public readonly string? Operation;
         /// <summary>
         /// The reason why the operation is blocklisted.
         /// </summary>
-        public readonly string Reason;
+        public readonly string? Reason;
         /// <summary>
         /// A resource to blocklist for certain operation.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Jms.Outputs
 
         [OutputConstructor]
         private GetFleetBlocklistsItemResult(
-            string key,
+            string? key,
 
-            string operation,
+            string? operation,
 
-            string reason,
+            string? reason,
 
             ImmutableArray<Outputs.GetFleetBlocklistsItemTargetResult> targets)
         {

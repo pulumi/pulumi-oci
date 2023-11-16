@@ -80,7 +80,7 @@ export interface GetSecurityRecipesResult {
     /**
      * The list of security_recipe_collection.
      */
-    readonly securityRecipeCollections: outputs.CloudGuard.GetSecurityRecipesSecurityRecipeCollection[];
+    readonly securityRecipeCollections?: outputs.CloudGuard.GetSecurityRecipesSecurityRecipeCollection[];
     /**
      * The current state of the recipe
      */

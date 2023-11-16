@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserProxiedForUserItem {
@@ -13,39 +15,39 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
      * @return Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      * 
      */
-    private String authentication;
+    private @Nullable String authentication;
     /**
      * @return The flags associated with the proxy/client pair.
      * 
      */
-    private String flags;
+    private @Nullable String flags;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetManagedDatabaseUserProxiedForUserItem() {}
     /**
      * @return Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      * 
      */
-    public String authentication() {
-        return this.authentication;
+    public Optional<String> authentication() {
+        return Optional.ofNullable(this.authentication);
     }
     /**
      * @return The flags associated with the proxy/client pair.
      * 
      */
-    public String flags() {
-        return this.flags;
+    public Optional<String> flags() {
+        return Optional.ofNullable(this.flags);
     }
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authentication;
-        private String flags;
-        private String name;
+        private @Nullable String authentication;
+        private @Nullable String flags;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetManagedDatabaseUserProxiedForUserItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
         }
 
         @CustomType.Setter
-        public Builder authentication(String authentication) {
-            this.authentication = Objects.requireNonNull(authentication);
+        public Builder authentication(@Nullable String authentication) {
+            this.authentication = authentication;
             return this;
         }
         @CustomType.Setter
-        public Builder flags(String flags) {
-            this.flags = Objects.requireNonNull(flags);
+        public Builder flags(@Nullable String flags) {
+            this.flags = flags;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseUserProxiedForUserItem build() {

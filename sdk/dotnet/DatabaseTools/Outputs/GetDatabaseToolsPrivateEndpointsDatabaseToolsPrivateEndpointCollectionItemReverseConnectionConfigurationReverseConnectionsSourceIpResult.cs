@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
         /// </summary>
-        public readonly string SourceIp;
+        public readonly string? SourceIp;
 
         [OutputConstructor]
-        private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult(string sourceIp)
+        private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult(string? sourceIp)
         {
             SourceIp = sourceIp;
         }

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
@@ -73,7 +72,7 @@ type RecoveryServiceSubnet struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the recovery service subnet. Allowed values are:
 	// * CREATING
 	// * UPDATING
@@ -81,15 +80,15 @@ type RecoveryServiceSubnet struct {
 	// * DELETING
 	// * DELETED
 	// * FAILED
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
 	//
 	// ** IMPORTANT **
@@ -270,12 +269,6 @@ func (i *RecoveryServiceSubnet) ToRecoveryServiceSubnetOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryServiceSubnetOutput)
 }
 
-func (i *RecoveryServiceSubnet) ToOutput(ctx context.Context) pulumix.Output[*RecoveryServiceSubnet] {
-	return pulumix.Output[*RecoveryServiceSubnet]{
-		OutputState: i.ToRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecoveryServiceSubnetArrayInput is an input type that accepts RecoveryServiceSubnetArray and RecoveryServiceSubnetArrayOutput values.
 // You can construct a concrete instance of `RecoveryServiceSubnetArrayInput` via:
 //
@@ -299,12 +292,6 @@ func (i RecoveryServiceSubnetArray) ToRecoveryServiceSubnetArrayOutput() Recover
 
 func (i RecoveryServiceSubnetArray) ToRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) RecoveryServiceSubnetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryServiceSubnetArrayOutput)
-}
-
-func (i RecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]*RecoveryServiceSubnet] {
-	return pulumix.Output[[]*RecoveryServiceSubnet]{
-		OutputState: i.ToRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RecoveryServiceSubnetMapInput is an input type that accepts RecoveryServiceSubnetMap and RecoveryServiceSubnetMapOutput values.
@@ -332,12 +319,6 @@ func (i RecoveryServiceSubnetMap) ToRecoveryServiceSubnetMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryServiceSubnetMapOutput)
 }
 
-func (i RecoveryServiceSubnetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RecoveryServiceSubnet] {
-	return pulumix.Output[map[string]*RecoveryServiceSubnet]{
-		OutputState: i.ToRecoveryServiceSubnetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (RecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -350,12 +331,6 @@ func (o RecoveryServiceSubnetOutput) ToRecoveryServiceSubnetOutput() RecoverySer
 
 func (o RecoveryServiceSubnetOutput) ToRecoveryServiceSubnetOutputWithContext(ctx context.Context) RecoveryServiceSubnetOutput {
 	return o
-}
-
-func (o RecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[*RecoveryServiceSubnet] {
-	return pulumix.Output[*RecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment OCID.
@@ -379,8 +354,8 @@ func (o RecoveryServiceSubnetOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-func (o RecoveryServiceSubnetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o RecoveryServiceSubnetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the recovery service subnet. Allowed values are:
@@ -390,8 +365,8 @@ func (o RecoveryServiceSubnetOutput) LifecycleDetails() pulumi.StringOutput {
 // * DELETING
 // * DELETED
 // * FAILED
-func (o RecoveryServiceSubnetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RecoveryServiceSubnetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
@@ -405,13 +380,13 @@ func (o RecoveryServiceSubnetOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-func (o RecoveryServiceSubnetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RecoveryServiceSubnetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-func (o RecoveryServiceSubnetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RecoveryServiceSubnetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
@@ -436,12 +411,6 @@ func (o RecoveryServiceSubnetArrayOutput) ToRecoveryServiceSubnetArrayOutputWith
 	return o
 }
 
-func (o RecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RecoveryServiceSubnet] {
-	return pulumix.Output[[]*RecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) RecoveryServiceSubnetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RecoveryServiceSubnet {
 		return vs[0].([]*RecoveryServiceSubnet)[vs[1].(int)]
@@ -460,12 +429,6 @@ func (o RecoveryServiceSubnetMapOutput) ToRecoveryServiceSubnetMapOutput() Recov
 
 func (o RecoveryServiceSubnetMapOutput) ToRecoveryServiceSubnetMapOutputWithContext(ctx context.Context) RecoveryServiceSubnetMapOutput {
 	return o
-}
-
-func (o RecoveryServiceSubnetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RecoveryServiceSubnet] {
-	return pulumix.Output[map[string]*RecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecoveryServiceSubnetMapOutput) MapIndex(k pulumi.StringInput) RecoveryServiceSubnetOutput {

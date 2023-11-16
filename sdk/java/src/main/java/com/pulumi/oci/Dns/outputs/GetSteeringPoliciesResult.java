@@ -45,7 +45,7 @@ public final class GetSteeringPoliciesResult {
      * @return The list of steering_policies.
      * 
      */
-    private List<GetSteeringPoliciesSteeringPolicy> steeringPolicies;
+    private @Nullable List<GetSteeringPoliciesSteeringPolicy> steeringPolicies;
     /**
      * @return A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
      * 
@@ -101,7 +101,7 @@ public final class GetSteeringPoliciesResult {
      * 
      */
     public List<GetSteeringPoliciesSteeringPolicy> steeringPolicies() {
-        return this.steeringPolicies;
+        return this.steeringPolicies == null ? List.of() : this.steeringPolicies;
     }
     /**
      * @return A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
@@ -133,7 +133,7 @@ public final class GetSteeringPoliciesResult {
         private @Nullable String healthCheckMonitorId;
         private @Nullable String id;
         private @Nullable String state;
-        private List<GetSteeringPoliciesSteeringPolicy> steeringPolicies;
+        private @Nullable List<GetSteeringPoliciesSteeringPolicy> steeringPolicies;
         private @Nullable String template;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
@@ -192,8 +192,8 @@ public final class GetSteeringPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder steeringPolicies(List<GetSteeringPoliciesSteeringPolicy> steeringPolicies) {
-            this.steeringPolicies = Objects.requireNonNull(steeringPolicies);
+        public Builder steeringPolicies(@Nullable List<GetSteeringPoliciesSteeringPolicy> steeringPolicies) {
+            this.steeringPolicies = steeringPolicies;
             return this;
         }
         public Builder steeringPolicies(GetSteeringPoliciesSteeringPolicy... steeringPolicies) {

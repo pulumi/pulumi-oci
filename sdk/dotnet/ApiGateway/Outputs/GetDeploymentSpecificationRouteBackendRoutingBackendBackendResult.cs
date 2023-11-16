@@ -16,59 +16,59 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The body of the stock response from the mock backend.
         /// </summary>
-        public readonly string Body;
+        public readonly string? Body;
         /// <summary>
         /// Defines a timeout for establishing a connection with a proxied server.
         /// </summary>
-        public readonly double ConnectTimeoutInSeconds;
+        public readonly double? ConnectTimeoutInSeconds;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
-        public readonly string FunctionId;
+        public readonly string? FunctionId;
         public readonly ImmutableArray<Outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult> Headers;
         /// <summary>
         /// Defines whether or not to uphold SSL verification.
         /// </summary>
-        public readonly bool IsSslVerifyDisabled;
+        public readonly bool? IsSslVerifyDisabled;
         /// <summary>
         /// Defines a timeout for reading a response from the proxied server.
         /// </summary>
-        public readonly double ReadTimeoutInSeconds;
+        public readonly double? ReadTimeoutInSeconds;
         /// <summary>
         /// Defines a timeout for transmitting a request to the proxied server.
         /// </summary>
-        public readonly double SendTimeoutInSeconds;
+        public readonly double? SendTimeoutInSeconds;
         /// <summary>
         /// The status code of the stock response from the mock backend.
         /// </summary>
-        public readonly int Status;
+        public readonly int? Status;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
-        public readonly string Url;
+        public readonly string? Type;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult(
-            string body,
+            string? body,
 
-            double connectTimeoutInSeconds,
+            double? connectTimeoutInSeconds,
 
-            string functionId,
+            string? functionId,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult> headers,
 
-            bool isSslVerifyDisabled,
+            bool? isSslVerifyDisabled,
 
-            double readTimeoutInSeconds,
+            double? readTimeoutInSeconds,
 
-            double sendTimeoutInSeconds,
+            double? sendTimeoutInSeconds,
 
-            int status,
+            int? status,
 
-            string type,
+            string? type,
 
-            string url)
+            string? url)
         {
             Body = body;
             ConnectTimeoutInSeconds = connectTimeoutInSeconds;

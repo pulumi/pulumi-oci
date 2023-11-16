@@ -16,9 +16,9 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string Id;
-        public readonly bool IsIfNotExists;
+        public readonly string? CompartmentId;
+        public readonly string? Id;
+        public readonly bool? IsIfNotExists;
         /// <summary>
         /// A set of keys for a secondary index.
         /// </summary>
@@ -26,49 +26,49 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A shell-globbing-style (*?[]) filter for names.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Filter list by the lifecycle state of the item.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// the OCID of the table to which this index belongs.
         /// </summary>
-        public readonly string TableId;
+        public readonly string? TableId;
         /// <summary>
         /// The name of the table to which this index belongs.
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
         /// <summary>
         /// A table name within the compartment, or a table OCID.
         /// </summary>
-        public readonly string TableNameOrId;
+        public readonly string? TableNameOrId;
 
         [OutputConstructor]
         private GetIndexesIndexCollectionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            bool isIfNotExists,
+            bool? isIfNotExists,
 
             ImmutableArray<Outputs.GetIndexesIndexCollectionKeyResult> keys,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            string tableId,
+            string? tableId,
 
-            string tableName,
+            string? tableName,
 
-            string tableNameOrId)
+            string? tableNameOrId)
         {
             CompartmentId = compartmentId;
             Id = id;

@@ -24,12 +24,12 @@ public final class GetVantagePointsResult {
      * @return The list of health_checks_vantage_points.
      * 
      */
-    private List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints;
+    private @Nullable List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The unique, permanent name for the vantage point.
      * 
@@ -52,14 +52,14 @@ public final class GetVantagePointsResult {
      * 
      */
     public List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints() {
-        return this.healthChecksVantagePoints;
+        return this.healthChecksVantagePoints == null ? List.of() : this.healthChecksVantagePoints;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The unique, permanent name for the vantage point.
@@ -80,8 +80,8 @@ public final class GetVantagePointsResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetVantagePointsFilter> filters;
-        private List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints;
-        private String id;
+        private @Nullable List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints;
+        private @Nullable String id;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetVantagePointsResult defaults) {
@@ -107,16 +107,16 @@ public final class GetVantagePointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder healthChecksVantagePoints(List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints) {
-            this.healthChecksVantagePoints = Objects.requireNonNull(healthChecksVantagePoints);
+        public Builder healthChecksVantagePoints(@Nullable List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints) {
+            this.healthChecksVantagePoints = healthChecksVantagePoints;
             return this;
         }
         public Builder healthChecksVantagePoints(GetVantagePointsHealthChecksVantagePoint... healthChecksVantagePoints) {
             return healthChecksVantagePoints(List.of(healthChecksVantagePoints));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

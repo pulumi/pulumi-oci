@@ -23,15 +23,6 @@ class IndexArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Index resource.
-        :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[str] name: Index name.
         """
         pulumi.set(__self__, "keys", keys)
         pulumi.set(__self__, "table_name_or_id", table_name_or_id)
@@ -45,9 +36,6 @@ class IndexArgs:
     @property
     @pulumi.getter
     def keys(self) -> pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]:
-        """
-        A set of keys for a secondary index.
-        """
         return pulumi.get(self, "keys")
 
     @keys.setter
@@ -57,13 +45,6 @@ class IndexArgs:
     @property
     @pulumi.getter(name="tableNameOrId")
     def table_name_or_id(self) -> pulumi.Input[str]:
-        """
-        A table name within the compartment, or a table OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "table_name_or_id")
 
     @table_name_or_id.setter
@@ -73,9 +54,6 @@ class IndexArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -85,9 +63,6 @@ class IndexArgs:
     @property
     @pulumi.getter(name="isIfNotExists")
     def is_if_not_exists(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        """
         return pulumi.get(self, "is_if_not_exists")
 
     @is_if_not_exists.setter
@@ -97,9 +72,6 @@ class IndexArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Index name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -121,19 +93,6 @@ class _IndexState:
                  table_name_or_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Index resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[str] name: Index name.
-        :param pulumi.Input[str] state: The state of an index.
-        :param pulumi.Input[str] table_id: the OCID of the table to which this index belongs.
-        :param pulumi.Input[str] table_name: The name of the table to which this index belongs.
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -157,9 +116,6 @@ class _IndexState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -169,9 +125,6 @@ class _IndexState:
     @property
     @pulumi.getter(name="isIfNotExists")
     def is_if_not_exists(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        """
         return pulumi.get(self, "is_if_not_exists")
 
     @is_if_not_exists.setter
@@ -181,9 +134,6 @@ class _IndexState:
     @property
     @pulumi.getter
     def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]]:
-        """
-        A set of keys for a secondary index.
-        """
         return pulumi.get(self, "keys")
 
     @keys.setter
@@ -193,9 +143,6 @@ class _IndexState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -205,9 +152,6 @@ class _IndexState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Index name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -217,9 +161,6 @@ class _IndexState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of an index.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -229,9 +170,6 @@ class _IndexState:
     @property
     @pulumi.getter(name="tableId")
     def table_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        the OCID of the table to which this index belongs.
-        """
         return pulumi.get(self, "table_id")
 
     @table_id.setter
@@ -241,9 +179,6 @@ class _IndexState:
     @property
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the table to which this index belongs.
-        """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
@@ -253,13 +188,6 @@ class _IndexState:
     @property
     @pulumi.getter(name="tableNameOrId")
     def table_name_or_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        A table name within the compartment, or a table OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "table_name_or_id")
 
     @table_name_or_id.setter
@@ -279,46 +207,9 @@ class Index(pulumi.CustomResource):
                  table_name_or_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Create a new index on the table identified by tableNameOrId.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_index = oci.nosql.Index("testIndex",
-            keys=[oci.nosql.IndexKeyArgs(
-                column_name=var["index_keys_column_name"],
-                json_field_type=var["index_keys_json_field_type"],
-                json_path=var["index_keys_json_path"],
-            )],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            is_if_not_exists=var["index_is_if_not_exists"])
-        ```
-
-        ## Import
-
-        Indexes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
-        ```
-
+        Create a Index resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]] keys: A set of keys for a secondary index.
-        :param pulumi.Input[str] name: Index name.
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -327,35 +218,7 @@ class Index(pulumi.CustomResource):
                  args: IndexArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Create a new index on the table identified by tableNameOrId.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_index = oci.nosql.Index("testIndex",
-            keys=[oci.nosql.IndexKeyArgs(
-                column_name=var["index_keys_column_name"],
-                json_field_type=var["index_keys_json_field_type"],
-                json_path=var["index_keys_json_path"],
-            )],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            is_if_not_exists=var["index_is_if_not_exists"])
-        ```
-
-        ## Import
-
-        Indexes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"
-        ```
-
+        Create a Index resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IndexArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -424,19 +287,6 @@ class Index(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        :param pulumi.Input[bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IndexKeyArgs']]]] keys: A set of keys for a secondary index.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[str] name: Index name.
-        :param pulumi.Input[str] state: The state of an index.
-        :param pulumi.Input[str] table_id: the OCID of the table to which this index belongs.
-        :param pulumi.Input[str] table_name: The name of the table to which this index belongs.
-        :param pulumi.Input[str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -455,77 +305,46 @@ class Index(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="isIfNotExists")
-    def is_if_not_exists(self) -> pulumi.Output[bool]:
-        """
-        If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
-        """
+    def is_if_not_exists(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_if_not_exists")
 
     @property
     @pulumi.getter
     def keys(self) -> pulumi.Output[Sequence['outputs.IndexKey']]:
-        """
-        A set of keys for a secondary index.
-        """
         return pulumi.get(self, "keys")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Index name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of an index.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tableId")
-    def table_id(self) -> pulumi.Output[str]:
-        """
-        the OCID of the table to which this index belongs.
-        """
+    def table_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "table_id")
 
     @property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> pulumi.Output[str]:
-        """
-        The name of the table to which this index belongs.
-        """
+    def table_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "table_name")
 
     @property
     @pulumi.getter(name="tableNameOrId")
     def table_name_or_id(self) -> pulumi.Output[str]:
-        """
-        A table name within the compartment, or a table OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "table_name_or_id")
 

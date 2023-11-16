@@ -66,7 +66,7 @@ export interface GetSchedulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The unique name of the schedule created by the user.
      */
@@ -74,7 +74,7 @@ export interface GetSchedulesResult {
     /**
      * The list of schedule_collection.
      */
-    readonly scheduleCollections: outputs.MeteringComputation.GetSchedulesScheduleCollection[];
+    readonly scheduleCollections?: outputs.MeteringComputation.GetSchedulesScheduleCollection[];
 }
 /**
  * This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.

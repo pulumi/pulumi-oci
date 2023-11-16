@@ -64,19 +64,19 @@ namespace Pulumi.Oci.Mysql
         /// The name of the Availability Domain the read replica is located in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment that contains the read replica.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Configuration to be used by the read replica.
         /// </summary>
         [Output("configurationId")]
-        public Output<string> ConfigurationId { get; private set; } = null!;
+        public Output<string?> ConfigurationId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the DB System the read replica is associated with.
@@ -88,73 +88,73 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User provided description of the read replica.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The name of the Fault Domain the read replica is located in.
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The IP address the read replica is configured to listen on.
         /// </summary>
         [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        public Output<string?> IpAddress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         /// </summary>
         [Output("isDeleteProtected")]
-        public Output<bool> IsDeleteProtected { get; private set; } = null!;
+        public Output<bool?> IsDeleteProtected { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the state of the read replica.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The MySQL version to be used by the read replica.
         /// </summary>
         [Output("mysqlVersion")]
-        public Output<string> MysqlVersion { get; private set; } = null!;
+        public Output<string?> MysqlVersion { get; private set; } = null!;
 
         /// <summary>
         /// The port the read replica is configured to listen on.
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         /// </summary>
         [Output("portX")]
-        public Output<int> PortX { get; private set; } = null!;
+        public Output<int?> PortX { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         /// </summary>
         [Output("replicaOverrides")]
-        public Output<Outputs.ReplicaReplicaOverrides> ReplicaOverrides { get; private set; } = null!;
+        public Output<Outputs.ReplicaReplicaOverrides?> ReplicaOverrides { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
@@ -164,25 +164,25 @@ namespace Pulumi.Oci.Mysql
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shapeName")]
-        public Output<string> ShapeName { get; private set; } = null!;
+        public Output<string?> ShapeName { get; private set; } = null!;
 
         /// <summary>
         /// The state of the read replica.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

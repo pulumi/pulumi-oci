@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -64,70 +65,70 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> appDefinedChildColumnKeys;
+    private Output</* @Nullable */ List<String>> appDefinedChildColumnKeys;
 
     /**
      * @return Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
      */
-    public Output<List<String>> appDefinedChildColumnKeys() {
-        return this.appDefinedChildColumnKeys;
+    public Output<Optional<List<String>>> appDefinedChildColumnKeys() {
+        return Codegen.optional(this.appDefinedChildColumnKeys);
     }
     /**
      * The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      * 
      */
     @Export(name="appName", refs={String.class}, tree="[0]")
-    private Output<String> appName;
+    private Output</* @Nullable */ String> appName;
 
     /**
      * @return The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      * 
      */
-    public Output<String> appName() {
-        return this.appName;
+    public Output<Optional<String>> appName() {
+        return Codegen.optional(this.appName);
     }
     /**
      * The name of the sensitive column.
      * 
      */
     @Export(name="columnName", refs={String.class}, tree="[0]")
-    private Output<String> columnName;
+    private Output</* @Nullable */ String> columnName;
 
     /**
      * @return The name of the sensitive column.
      * 
      */
-    public Output<String> columnName() {
-        return this.columnName;
+    public Output<Optional<String>> columnName() {
+        return Codegen.optional(this.columnName);
     }
     /**
      * The data type of the sensitive column.
      * 
      */
     @Export(name="dataType", refs={String.class}, tree="[0]")
-    private Output<String> dataType;
+    private Output</* @Nullable */ String> dataType;
 
     /**
      * @return The data type of the sensitive column.
      * 
      */
-    public Output<String> dataType() {
-        return this.dataType;
+    public Output<Optional<String>> dataType() {
+        return Codegen.optional(this.dataType);
     }
     /**
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
     @Export(name="dbDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> dbDefinedChildColumnKeys;
+    private Output</* @Nullable */ List<String>> dbDefinedChildColumnKeys;
 
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
-    public Output<List<String>> dbDefinedChildColumnKeys() {
-        return this.dbDefinedChildColumnKeys;
+    public Output<Optional<List<String>>> dbDefinedChildColumnKeys() {
+        return Codegen.optional(this.dbDefinedChildColumnKeys);
     }
     /**
      * The OCID of the discovery job.
@@ -156,42 +157,42 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     @Export(name="discoveryType", refs={String.class}, tree="[0]")
-    private Output<String> discoveryType;
+    private Output</* @Nullable */ String> discoveryType;
 
     /**
      * @return The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      * 
      */
-    public Output<String> discoveryType() {
-        return this.discoveryType;
+    public Output<Optional<String>> discoveryType() {
+        return Codegen.optional(this.discoveryType);
     }
     /**
      * The estimated number of data values the column has in the associated database.
      * 
      */
     @Export(name="estimatedDataValueCount", refs={String.class}, tree="[0]")
-    private Output<String> estimatedDataValueCount;
+    private Output</* @Nullable */ String> estimatedDataValueCount;
 
     /**
      * @return The estimated number of data values the column has in the associated database.
      * 
      */
-    public Output<String> estimatedDataValueCount() {
-        return this.estimatedDataValueCount;
+    public Output<Optional<String>> estimatedDataValueCount() {
+        return Codegen.optional(this.estimatedDataValueCount);
     }
     /**
      * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
      */
     @Export(name="isResultApplied", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isResultApplied;
+    private Output</* @Nullable */ Boolean> isResultApplied;
 
     /**
      * @return Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
      */
-    public Output<Boolean> isResultApplied() {
-        return this.isResultApplied;
+    public Output<Optional<Boolean>> isResultApplied() {
+        return Codegen.optional(this.isResultApplied);
     }
     /**
      * The unique key that identifies the discovery result.
@@ -202,154 +203,154 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return The unique key that identifies the discovery result.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * The attributes of a sensitive column that have been modified in the target database. It&#39;s populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      * 
      */
     @Export(name="modifiedAttributes", refs={List.class,DiscoveryJobsResultModifiedAttribute.class}, tree="[0,1]")
-    private Output<List<DiscoveryJobsResultModifiedAttribute>> modifiedAttributes;
+    private Output</* @Nullable */ List<DiscoveryJobsResultModifiedAttribute>> modifiedAttributes;
 
     /**
      * @return The attributes of a sensitive column that have been modified in the target database. It&#39;s populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      * 
      */
-    public Output<List<DiscoveryJobsResultModifiedAttribute>> modifiedAttributes() {
-        return this.modifiedAttributes;
+    public Output<Optional<List<DiscoveryJobsResultModifiedAttribute>>> modifiedAttributes() {
+        return Codegen.optional(this.modifiedAttributes);
     }
     /**
      * The database object that contains the sensitive column.
      * 
      */
     @Export(name="object", refs={String.class}, tree="[0]")
-    private Output<String> object;
+    private Output</* @Nullable */ String> object;
 
     /**
      * @return The database object that contains the sensitive column.
      * 
      */
-    public Output<String> object() {
-        return this.object;
+    public Output<Optional<String>> object() {
+        return Codegen.optional(this.object);
     }
     /**
      * The type of the database object that contains the sensitive column.
      * 
      */
     @Export(name="objectType", refs={String.class}, tree="[0]")
-    private Output<String> objectType;
+    private Output</* @Nullable */ String> objectType;
 
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
      */
-    public Output<String> objectType() {
-        return this.objectType;
+    public Output<Optional<String>> objectType() {
+        return Codegen.optional(this.objectType);
     }
     /**
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
     @Export(name="parentColumnKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> parentColumnKeys;
+    private Output</* @Nullable */ List<String>> parentColumnKeys;
 
     /**
      * @return Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
-    public Output<List<String>> parentColumnKeys() {
-        return this.parentColumnKeys;
+    public Output<Optional<List<String>>> parentColumnKeys() {
+        return Codegen.optional(this.parentColumnKeys);
     }
     /**
      * Specifies how to process the discovery result. It&#39;s set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn&#39;t change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren&#39;t reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
      * 
      */
     @Export(name="plannedAction", refs={String.class}, tree="[0]")
-    private Output<String> plannedAction;
+    private Output</* @Nullable */ String> plannedAction;
 
     /**
      * @return Specifies how to process the discovery result. It&#39;s set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn&#39;t change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren&#39;t reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
      * 
      */
-    public Output<String> plannedAction() {
-        return this.plannedAction;
+    public Output<Optional<String>> plannedAction() {
+        return Codegen.optional(this.plannedAction);
     }
     /**
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
     @Export(name="relationType", refs={String.class}, tree="[0]")
-    private Output<String> relationType;
+    private Output</* @Nullable */ String> relationType;
 
     /**
      * @return The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    public Output<String> relationType() {
-        return this.relationType;
+    public Output<Optional<String>> relationType() {
+        return Codegen.optional(this.relationType);
     }
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
     @Export(name="sampleDataValues", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sampleDataValues;
+    private Output</* @Nullable */ List<String>> sampleDataValues;
 
     /**
      * @return Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
-    public Output<List<String>> sampleDataValues() {
-        return this.sampleDataValues;
+    public Output<Optional<List<String>>> sampleDataValues() {
+        return Codegen.optional(this.sampleDataValues);
     }
     /**
      * The database schema that contains the sensitive column.
      * 
      */
     @Export(name="schemaName", refs={String.class}, tree="[0]")
-    private Output<String> schemaName;
+    private Output</* @Nullable */ String> schemaName;
 
     /**
      * @return The database schema that contains the sensitive column.
      * 
      */
-    public Output<String> schemaName() {
-        return this.schemaName;
+    public Output<Optional<String>> schemaName() {
+        return Codegen.optional(this.schemaName);
     }
     /**
      * The unique key that identifies the sensitive column represented by the discovery result.
      * 
      */
     @Export(name="sensitiveColumnkey", refs={String.class}, tree="[0]")
-    private Output<String> sensitiveColumnkey;
+    private Output</* @Nullable */ String> sensitiveColumnkey;
 
     /**
      * @return The unique key that identifies the sensitive column represented by the discovery result.
      * 
      */
-    public Output<String> sensitiveColumnkey() {
-        return this.sensitiveColumnkey;
+    public Output<Optional<String>> sensitiveColumnkey() {
+        return Codegen.optional(this.sensitiveColumnkey);
     }
     /**
      * The OCID of the sensitive type associated with the sensitive column.
      * 
      */
     @Export(name="sensitiveTypeId", refs={String.class}, tree="[0]")
-    private Output<String> sensitiveTypeId;
+    private Output</* @Nullable */ String> sensitiveTypeId;
 
     /**
      * @return The OCID of the sensitive type associated with the sensitive column.
      * 
      */
-    public Output<String> sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Output<Optional<String>> sensitiveTypeId() {
+        return Codegen.optional(this.sensitiveTypeId);
     }
 
     /**

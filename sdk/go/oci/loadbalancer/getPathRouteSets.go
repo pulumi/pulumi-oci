@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -62,8 +61,8 @@ type GetPathRouteSetsArgs struct {
 type GetPathRouteSetsResult struct {
 	Filters []GetPathRouteSetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	// The list of path_route_sets.
 	PathRouteSets []GetPathRouteSetsPathRouteSet `pulumi:"pathRouteSets"`
 }
@@ -107,19 +106,13 @@ func (o GetPathRouteSetsResultOutput) ToGetPathRouteSetsResultOutputWithContext(
 	return o
 }
 
-func (o GetPathRouteSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsResult] {
-	return pulumix.Output[GetPathRouteSetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPathRouteSetsResultOutput) Filters() GetPathRouteSetsFilterArrayOutput {
 	return o.ApplyT(func(v GetPathRouteSetsResult) []GetPathRouteSetsFilter { return v.Filters }).(GetPathRouteSetsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPathRouteSetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPathRouteSetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPathRouteSetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPathRouteSetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPathRouteSetsResultOutput) LoadBalancerId() pulumi.StringOutput {

@@ -46,17 +46,11 @@ class GetManagedInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        OCID for the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User friendly name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetManagedInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetManagedInstancesResult:
 
     @property
     @pulumi.getter(name="managedInstances")
-    def managed_instances(self) -> Sequence['outputs.GetManagedInstancesManagedInstanceResult']:
-        """
-        The list of managed_instances.
-        """
+    def managed_instances(self) -> Optional[Sequence['outputs.GetManagedInstancesManagedInstanceResult']]:
         return pulumi.get(self, "managed_instances")
 
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
-        """
-        The Operating System type of the managed instance.
-        """
         return pulumi.get(self, "os_family")
 
 
@@ -109,25 +97,7 @@ def get_managed_instances(compartment_id: Optional[str] = None,
                           os_family: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstancesResult:
     """
-    This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a list of all Managed Instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instances = oci.OsManagement.get_managed_instances(compartment_id=var["compartment_id"],
-        display_name=var["managed_instance_display_name"],
-        os_family=var["managed_instance_os_family"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str os_family: The OS family for which to list resources.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_managed_instances_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  os_family: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstancesResult]:
     """
-    This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a list of all Managed Instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instances = oci.OsManagement.get_managed_instances(compartment_id=var["compartment_id"],
-        display_name=var["managed_instance_display_name"],
-        os_family=var["managed_instance_os_family"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str os_family: The OS family for which to list resources.
+    Use this data source to access information about an existing resource.
     """
     ...

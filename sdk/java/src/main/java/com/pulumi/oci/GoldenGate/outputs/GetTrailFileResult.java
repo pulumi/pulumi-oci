@@ -23,17 +23,17 @@ public final class GetTrailFileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of TrailFiles.
      * 
      */
-    private List<GetTrailFileItem> items;
+    private @Nullable List<GetTrailFileItem> items;
     /**
      * @return The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeLastFetched;
+    private @Nullable String timeLastFetched;
     /**
      * @return The TrailFile Id.
      * 
@@ -55,22 +55,22 @@ public final class GetTrailFileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of TrailFiles.
      * 
      */
     public List<GetTrailFileItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeLastFetched() {
-        return this.timeLastFetched;
+    public Optional<String> timeLastFetched() {
+        return Optional.ofNullable(this.timeLastFetched);
     }
     /**
      * @return The TrailFile Id.
@@ -91,9 +91,9 @@ public final class GetTrailFileResult {
     public static final class Builder {
         private String deploymentId;
         private @Nullable String displayName;
-        private String id;
-        private List<GetTrailFileItem> items;
-        private String timeLastFetched;
+        private @Nullable String id;
+        private @Nullable List<GetTrailFileItem> items;
+        private @Nullable String timeLastFetched;
         private String trailFileId;
         public Builder() {}
         public Builder(GetTrailFileResult defaults) {
@@ -117,21 +117,21 @@ public final class GetTrailFileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetTrailFileItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetTrailFileItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetTrailFileItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder timeLastFetched(String timeLastFetched) {
-            this.timeLastFetched = Objects.requireNonNull(timeLastFetched);
+        public Builder timeLastFetched(@Nullable String timeLastFetched) {
+            this.timeLastFetched = timeLastFetched;
             return this;
         }
         @CustomType.Setter

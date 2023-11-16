@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
@@ -61,29 +60,29 @@ type LookupGenericArtifactArgs struct {
 type LookupGenericArtifactResult struct {
 	ArtifactId string `pulumi:"artifactId"`
 	// A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
-	ArtifactPath string `pulumi:"artifactPath"`
+	ArtifactPath *string `pulumi:"artifactPath"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-	RepositoryId string `pulumi:"repositoryId"`
+	RepositoryId *string `pulumi:"repositoryId"`
 	// The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
-	Sha256 string `pulumi:"sha256"`
+	Sha256 *string `pulumi:"sha256"`
 	// The size of the artifact in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// The current state of the artifact.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupGenericArtifactOutput(ctx *pulumi.Context, args LookupGenericArtifactOutputArgs, opts ...pulumi.InvokeOption) LookupGenericArtifactResultOutput {
@@ -124,24 +123,18 @@ func (o LookupGenericArtifactResultOutput) ToLookupGenericArtifactResultOutputWi
 	return o
 }
 
-func (o LookupGenericArtifactResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupGenericArtifactResult] {
-	return pulumix.Output[LookupGenericArtifactResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupGenericArtifactResultOutput) ArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.ArtifactId }).(pulumi.StringOutput)
 }
 
 // A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
-func (o LookupGenericArtifactResultOutput) ArtifactPath() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.ArtifactPath }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) ArtifactPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.ArtifactPath }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
-func (o LookupGenericArtifactResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -150,8 +143,8 @@ func (o LookupGenericArtifactResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
-func (o LookupGenericArtifactResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -160,38 +153,38 @@ func (o LookupGenericArtifactResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
-func (o LookupGenericArtifactResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-func (o LookupGenericArtifactResultOutput) RepositoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.RepositoryId }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) RepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.RepositoryId }).(pulumi.StringPtrOutput)
 }
 
 // The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
-func (o LookupGenericArtifactResultOutput) Sha256() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.Sha256 }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) Sha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.Sha256 }).(pulumi.StringPtrOutput)
 }
 
 // The size of the artifact in bytes.
-func (o LookupGenericArtifactResultOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the artifact.
-func (o LookupGenericArtifactResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o LookupGenericArtifactResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
-func (o LookupGenericArtifactResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGenericArtifactResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupGenericArtifactResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGenericArtifactResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

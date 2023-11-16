@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The Oracle license model.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
 
         /// <summary>

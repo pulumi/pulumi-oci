@@ -47,64 +47,64 @@ export interface GetRemediationRecipeResult {
     /**
      * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A configuration to define the constraints when detecting vulnerable dependencies.
      */
-    readonly detectConfigurations: outputs.Adm.GetRemediationRecipeDetectConfiguration[];
+    readonly detectConfigurations?: outputs.Adm.GetRemediationRecipeDetectConfiguration[];
     /**
      * The name of the Remediation Recipe.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
      */
-    readonly isRunTriggeredOnKbChange: boolean;
+    readonly isRunTriggeredOnKbChange?: boolean;
     /**
      * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
-    readonly knowledgeBaseId: string;
+    readonly knowledgeBaseId?: string;
     /**
      * A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
      */
-    readonly networkConfigurations: outputs.Adm.GetRemediationRecipeNetworkConfiguration[];
+    readonly networkConfigurations?: outputs.Adm.GetRemediationRecipeNetworkConfiguration[];
     readonly remediationRecipeId: string;
     /**
      * A configuration for the Source Code Management tool/platform used by a remediation recipe.
      */
-    readonly scmConfigurations: outputs.Adm.GetRemediationRecipeScmConfiguration[];
+    readonly scmConfigurations?: outputs.Adm.GetRemediationRecipeScmConfiguration[];
     /**
      * The current lifecycle state of the Remediation Recipe.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
      */
-    readonly verifyConfigurations: outputs.Adm.GetRemediationRecipeVerifyConfiguration[];
+    readonly verifyConfigurations?: outputs.Adm.GetRemediationRecipeVerifyConfiguration[];
 }
 /**
  * This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.

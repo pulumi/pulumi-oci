@@ -58,12 +58,12 @@ export interface GetPublishersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly publisherId?: string;
     /**
      * The list of publishers.
      */
-    readonly publishers: outputs.Marketplace.GetPublishersPublisher[];
+    readonly publishers?: outputs.Marketplace.GetPublishersPublisher[];
 }
 /**
  * This data source provides the list of Publishers in Oracle Cloud Infrastructure Marketplace service.

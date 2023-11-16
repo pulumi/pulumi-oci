@@ -67,24 +67,24 @@ export class InstancePoolInstance extends pulumi.CustomResource {
     /**
      * The availability domain the instance is running in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     public readonly decrementSizeOnDelete!: pulumi.Output<boolean | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The fault domain the instance is running in.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    public /*out*/ readonly faultDomain!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
      */
-    public /*out*/ readonly instanceConfigurationId!: pulumi.Output<string>;
+    public /*out*/ readonly instanceConfigurationId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
@@ -100,23 +100,23 @@ export class InstancePoolInstance extends pulumi.CustomResource {
     /**
      * The load balancer backends that are configured for the instance pool instance.
      */
-    public /*out*/ readonly loadBalancerBackends!: pulumi.Output<outputs.Core.InstancePoolInstanceLoadBalancerBackend[]>;
+    public /*out*/ readonly loadBalancerBackends!: pulumi.Output<outputs.Core.InstancePoolInstanceLoadBalancerBackend[] | undefined>;
     /**
      * The region that contains the availability domain the instance is running in.
      */
-    public /*out*/ readonly region!: pulumi.Output<string>;
+    public /*out*/ readonly region!: pulumi.Output<string | undefined>;
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a InstancePoolInstance resource with the given unique name, arguments, and options.

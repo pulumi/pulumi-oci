@@ -8,6 +8,8 @@ import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource {
@@ -15,17 +17,17 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
      * @return List of unified monitoring agent operational metrics.
      * 
      */
-    private List<String> metrics;
+    private @Nullable List<String> metrics;
     /**
      * @return Record section of OperationalMetricsSource object.
      * 
      */
-    private List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs;
+    private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs;
     /**
      * @return Type of the unified monitoring agent operational metrics source object.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource() {}
     /**
@@ -33,21 +35,21 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
      * 
      */
     public List<String> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return Record section of OperationalMetricsSource object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs() {
-        return this.recordInputs;
+        return this.recordInputs == null ? List.of() : this.recordInputs;
     }
     /**
      * @return Type of the unified monitoring agent operational metrics source object.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> metrics;
-        private List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs;
-        private String type;
+        private @Nullable List<String> metrics;
+        private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,24 +73,24 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         }
 
         @CustomType.Setter
-        public Builder metrics(List<String> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<String> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(String... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder recordInputs(List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs) {
-            this.recordInputs = Objects.requireNonNull(recordInputs);
+        public Builder recordInputs(@Nullable List<GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput> recordInputs) {
+            this.recordInputs = recordInputs;
             return this;
         }
         public Builder recordInputs(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput... recordInputs) {
             return recordInputs(List.of(recordInputs));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource build() {

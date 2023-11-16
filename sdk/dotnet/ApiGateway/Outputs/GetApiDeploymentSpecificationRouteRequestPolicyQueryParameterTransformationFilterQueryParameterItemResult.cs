@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The case-insensitive name of the header.  This name must be unique across transformation policies.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult(string name)
+        private GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameterItemResult(string? name)
         {
             Name = name;
         }

@@ -99,178 +99,112 @@ class GetAlertResult:
 
     @property
     @pulumi.getter(name="alertType")
-    def alert_type(self) -> str:
-        """
-        Type of the alert. Indicates the Data Safe feature triggering the alert.
-        """
+    def alert_type(self) -> Optional[str]:
         return pulumi.get(self, "alert_type")
 
     @property
     @pulumi.getter
-    def comment(self) -> str:
-        """
-        A comment for the alert. Entered by the user.
-        """
+    def comment(self) -> Optional[str]:
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the alert.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the alert.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the alert.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Mapping[str, Any]:
-        """
-        Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-        """
+    def feature_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "feature_details")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the alert.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def operation(self) -> str:
-        """
-        The operation (event) that triggered alert.
-        """
+    def operation(self) -> Optional[str]:
         return pulumi.get(self, "operation")
 
     @property
     @pulumi.getter(name="operationStatus")
-    def operation_status(self) -> str:
-        """
-        The result of the operation (event) that triggered alert.
-        """
+    def operation_status(self) -> Optional[str]:
         return pulumi.get(self, "operation_status")
 
     @property
     @pulumi.getter(name="operationTime")
-    def operation_time(self) -> str:
-        """
-        Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def operation_time(self) -> Optional[str]:
         return pulumi.get(self, "operation_time")
 
     @property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> str:
-        """
-        The OCID of the policy that triggered alert.
-        """
+    def policy_id(self) -> Optional[str]:
         return pulumi.get(self, "policy_id")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        The resource endpoint that triggered the alert.
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter
-    def severity(self) -> str:
-        """
-        Severity level of the alert.
-        """
+    def severity(self) -> Optional[str]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the alert.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the alert.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> Sequence[str]:
-        """
-        Array of OCIDs of the target database which are associated with the alert.
-        """
+    def target_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="targetNames")
-    def target_names(self) -> Sequence[str]:
-        """
-        Array of names of the target database.
-        """
+    def target_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -308,21 +242,7 @@ class AwaitableGetAlertResult(GetAlertResult):
 def get_alert(alert_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertResult:
     """
-    This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified alerts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert = oci.DataSafe.get_alert(alert_id=oci_data_safe_alert["test_alert"]["id"])
-    ```
-
-
-    :param str alert_id: The OCID of alert.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['alertId'] = alert_id
@@ -359,20 +279,6 @@ def get_alert(alert_id: Optional[str] = None,
 def get_alert_output(alert_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertResult]:
     """
-    This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified alerts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert = oci.DataSafe.get_alert(alert_id=oci_data_safe_alert["test_alert"]["id"])
-    ```
-
-
-    :param str alert_id: The OCID of alert.
+    Use this data source to access information about an existing resource.
     """
     ...

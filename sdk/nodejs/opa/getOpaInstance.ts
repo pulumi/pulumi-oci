@@ -47,85 +47,85 @@ export interface GetOpaInstanceResult {
     /**
      * A list of associated attachments to other services
      */
-    readonly attachments: outputs.Opa.GetOpaInstanceAttachment[];
+    readonly attachments?: outputs.Opa.GetOpaInstanceAttachment[];
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The entitlement used for billing purposes
      */
-    readonly consumptionModel: string;
+    readonly consumptionModel?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the Process Automation instance.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * OpaInstance Identifier, can be renamed
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
-    readonly idcsAt: string;
+    readonly id?: string;
+    readonly idcsAt?: string;
     /**
      * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    readonly identityAppDisplayName: string;
+    readonly identityAppDisplayName?: string;
     /**
      * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      */
-    readonly identityAppGuid: string;
+    readonly identityAppGuid?: string;
     /**
      * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    readonly identityAppOpcServiceInstanceGuid: string;
+    readonly identityAppOpcServiceInstanceGuid?: string;
     /**
      * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    readonly identityDomainUrl: string;
+    readonly identityDomainUrl?: string;
     /**
      * OPA Instance URL
      */
-    readonly instanceUrl: string;
+    readonly instanceUrl?: string;
     /**
      * indicates if breakGlass is enabled for the opa instance.
      */
-    readonly isBreakglassEnabled: boolean;
+    readonly isBreakglassEnabled?: boolean;
     /**
      * MeteringType Identifier
      */
-    readonly meteringType: string;
+    readonly meteringType?: string;
     readonly opaInstanceId: string;
     /**
      * Shape of the instance.
      */
-    readonly shapeName: string;
+    readonly shapeName?: string;
     /**
      * The current state of the OpaInstance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Opa Instance resource in Oracle Cloud Infrastructure Opa service.

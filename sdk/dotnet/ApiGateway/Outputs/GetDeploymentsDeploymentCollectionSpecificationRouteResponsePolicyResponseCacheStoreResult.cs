@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         /// </summary>
-        public readonly int TimeToLiveInSeconds;
+        public readonly int? TimeToLiveInSeconds;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStoreResult(
-            int timeToLiveInSeconds,
+            int? timeToLiveInSeconds,
 
-            string type)
+            string? type)
         {
             TimeToLiveInSeconds = timeToLiveInSeconds;
             Type = type;

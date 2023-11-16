@@ -44,10 +44,7 @@ class GetIamWorkRequestErrorsResult:
 
     @property
     @pulumi.getter(name="iamWorkRequestErrors")
-    def iam_work_request_errors(self) -> Sequence['outputs.GetIamWorkRequestErrorsIamWorkRequestErrorResult']:
-        """
-        The list of iam_work_request_errors.
-        """
+    def iam_work_request_errors(self) -> Optional[Sequence['outputs.GetIamWorkRequestErrorsIamWorkRequestErrorResult']]:
         return pulumi.get(self, "iam_work_request_errors")
 
     @property
@@ -57,7 +54,7 @@ class GetIamWorkRequestErrorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,25 +77,7 @@ def get_iam_work_request_errors(filters: Optional[Sequence[pulumi.InputType['Get
                                 iam_work_request_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamWorkRequestErrorsResult:
     """
-    This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.
-
-    Gets error details for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-    iam work request id that can be provided in this API to track the current status of the operation.
-
-    - If workrequest exists, returns 202 ACCEPTED
-    - If workrequest does not exist, returns 404 NOT FOUND
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
-    ```
-
-
-    :param str iam_work_request_id: The OCID of the IAM work request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -118,24 +97,6 @@ def get_iam_work_request_errors_output(filters: Optional[pulumi.Input[Optional[S
                                        iam_work_request_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamWorkRequestErrorsResult]:
     """
-    This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.
-
-    Gets error details for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-    iam work request id that can be provided in this API to track the current status of the operation.
-
-    - If workrequest exists, returns 202 ACCEPTED
-    - If workrequest does not exist, returns 404 NOT FOUND
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_iam_work_request_errors = oci.Identity.get_iam_work_request_errors(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
-    ```
-
-
-    :param str iam_work_request_id: The OCID of the IAM work request.
+    Use this data source to access information about an existing resource.
     """
     ...

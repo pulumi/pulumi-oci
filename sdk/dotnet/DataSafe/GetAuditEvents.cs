@@ -207,7 +207,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ScimQuery;
 
         [OutputConstructor]
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetAuditEventsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? scimQuery)
         {

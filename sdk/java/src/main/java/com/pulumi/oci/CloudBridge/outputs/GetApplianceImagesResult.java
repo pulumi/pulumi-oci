@@ -18,7 +18,7 @@ public final class GetApplianceImagesResult {
      * @return The list of appliance_image_collection.
      * 
      */
-    private List<GetApplianceImagesApplianceImageCollection> applianceImageCollections;
+    private @Nullable List<GetApplianceImagesApplianceImageCollection> applianceImageCollections;
     private String compartmentId;
     /**
      * @return The name of the image to be displayed.
@@ -30,7 +30,7 @@ public final class GetApplianceImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetApplianceImagesResult() {}
     /**
@@ -38,7 +38,7 @@ public final class GetApplianceImagesResult {
      * 
      */
     public List<GetApplianceImagesApplianceImageCollection> applianceImageCollections() {
-        return this.applianceImageCollections;
+        return this.applianceImageCollections == null ? List.of() : this.applianceImageCollections;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -57,8 +57,8 @@ public final class GetApplianceImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -70,11 +70,11 @@ public final class GetApplianceImagesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApplianceImagesApplianceImageCollection> applianceImageCollections;
+        private @Nullable List<GetApplianceImagesApplianceImageCollection> applianceImageCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetApplianceImagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetApplianceImagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,8 +86,8 @@ public final class GetApplianceImagesResult {
         }
 
         @CustomType.Setter
-        public Builder applianceImageCollections(List<GetApplianceImagesApplianceImageCollection> applianceImageCollections) {
-            this.applianceImageCollections = Objects.requireNonNull(applianceImageCollections);
+        public Builder applianceImageCollections(@Nullable List<GetApplianceImagesApplianceImageCollection> applianceImageCollections) {
+            this.applianceImageCollections = applianceImageCollections;
             return this;
         }
         public Builder applianceImageCollections(GetApplianceImagesApplianceImageCollection... applianceImageCollections) {
@@ -112,8 +112,8 @@ public final class GetApplianceImagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetApplianceImagesResult build() {

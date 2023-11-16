@@ -12,6 +12,7 @@ import com.pulumi.oci.DatabaseManagement.inputs.ExternalExadataInfrastructureExa
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,14 +99,14 @@ public class ExternalExadataInfrastructureExadataManagement extends com.pulumi.r
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return The Oracle license model.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
 
     /**

@@ -18,14 +18,14 @@ public final class GetNetworkFirewallPolicyApplicationGroupsResult {
      * @return The list of application_group_summary_collection.
      * 
      */
-    private List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections;
+    private @Nullable List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections;
     private @Nullable String displayName;
     private @Nullable List<GetNetworkFirewallPolicyApplicationGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkFirewallPolicyId;
 
     private GetNetworkFirewallPolicyApplicationGroupsResult() {}
@@ -34,7 +34,7 @@ public final class GetNetworkFirewallPolicyApplicationGroupsResult {
      * 
      */
     public List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections() {
-        return this.applicationGroupSummaryCollections;
+        return this.applicationGroupSummaryCollections == null ? List.of() : this.applicationGroupSummaryCollections;
     }
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -46,8 +46,8 @@ public final class GetNetworkFirewallPolicyApplicationGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkFirewallPolicyId() {
         return this.networkFirewallPolicyId;
@@ -62,10 +62,10 @@ public final class GetNetworkFirewallPolicyApplicationGroupsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections;
+        private @Nullable List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections;
         private @Nullable String displayName;
         private @Nullable List<GetNetworkFirewallPolicyApplicationGroupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkFirewallPolicyId;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationGroupsResult defaults) {
@@ -78,8 +78,8 @@ public final class GetNetworkFirewallPolicyApplicationGroupsResult {
         }
 
         @CustomType.Setter
-        public Builder applicationGroupSummaryCollections(List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections) {
-            this.applicationGroupSummaryCollections = Objects.requireNonNull(applicationGroupSummaryCollections);
+        public Builder applicationGroupSummaryCollections(@Nullable List<GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection> applicationGroupSummaryCollections) {
+            this.applicationGroupSummaryCollections = applicationGroupSummaryCollections;
             return this;
         }
         public Builder applicationGroupSummaryCollections(GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection... applicationGroupSummaryCollections) {
@@ -99,8 +99,8 @@ public final class GetNetworkFirewallPolicyApplicationGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

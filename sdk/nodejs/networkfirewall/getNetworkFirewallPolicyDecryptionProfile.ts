@@ -39,40 +39,40 @@ export interface GetNetworkFirewallPolicyDecryptionProfileResult {
     /**
      * Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
      */
-    readonly areCertificateExtensionsRestricted: boolean;
-    readonly id: string;
+    readonly areCertificateExtensionsRestricted?: boolean;
+    readonly id?: string;
     /**
      * Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
      */
-    readonly isAutoIncludeAltName: boolean;
+    readonly isAutoIncludeAltName?: boolean;
     /**
      * Whether to block sessions if server's certificate is expired.
      */
-    readonly isExpiredCertificateBlocked: boolean;
+    readonly isExpiredCertificateBlocked?: boolean;
     /**
      * Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
      */
-    readonly isOutOfCapacityBlocked: boolean;
+    readonly isOutOfCapacityBlocked?: boolean;
     /**
      * Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
      */
-    readonly isRevocationStatusTimeoutBlocked: boolean;
+    readonly isRevocationStatusTimeoutBlocked?: boolean;
     /**
      * Whether to block sessions if the revocation status check for server's certificate results in "unknown".
      */
-    readonly isUnknownRevocationStatusBlocked: boolean;
+    readonly isUnknownRevocationStatusBlocked?: boolean;
     /**
      * Whether to block sessions if SSL cipher suite is not supported.
      */
-    readonly isUnsupportedCipherBlocked: boolean;
+    readonly isUnsupportedCipherBlocked?: boolean;
     /**
      * Whether to block sessions if SSL version is not supported.
      */
-    readonly isUnsupportedVersionBlocked: boolean;
+    readonly isUnsupportedVersionBlocked?: boolean;
     /**
      * Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
      */
-    readonly isUntrustedIssuerBlocked: boolean;
+    readonly isUntrustedIssuerBlocked?: boolean;
     /**
      * Unique Name of the decryption profile.
      */
@@ -81,11 +81,11 @@ export interface GetNetworkFirewallPolicyDecryptionProfileResult {
     /**
      * OCID of the Network Firewall Policy this decryption profile belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.

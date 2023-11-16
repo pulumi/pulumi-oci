@@ -257,7 +257,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether domain is hidden on login screen or not.
         /// </summary>
@@ -292,7 +292,7 @@ namespace Pulumi.Oci.Identity
 
             string? homeRegionUrl,
 
-            string id,
+            string? id,
 
             bool? isHiddenOnLogin,
 

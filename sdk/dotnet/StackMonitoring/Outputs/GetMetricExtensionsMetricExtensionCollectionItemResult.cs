@@ -16,27 +16,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Type of possible collection methods.
         /// </summary>
-        public readonly string CollectionMethod;
+        public readonly string? CollectionMethod;
         /// <summary>
         /// Schedule of metric extension should use RFC 5545 format &gt; recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         /// </summary>
-        public readonly string CollectionRecurrences;
+        public readonly string? CollectionRecurrences;
         /// <summary>
         /// The ID of the compartment in which data is listed.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Created by user
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Description of the metric extension.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Display name of the metric.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of resource objects on which this metric extension is enabled.
         /// </summary>
@@ -44,15 +44,15 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Count of resources on which this metric extension is enabled.
         /// </summary>
-        public readonly int EnabledOnResourcesCount;
+        public readonly int? EnabledOnResourcesCount;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Last updated by user
         /// </summary>
-        public readonly string LastUpdatedBy;
+        public readonly string? LastUpdatedBy;
         /// <summary>
         /// List of metrics which are part of this metric extension
         /// </summary>
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// A filter to return resources based on name.
         /// </summary>
-        public readonly string Name;
-        public readonly bool PublishTrigger;
+        public readonly string? Name;
+        public readonly bool? PublishTrigger;
         /// <summary>
         /// Collection method and query properties details of metric extension
         /// </summary>
@@ -69,75 +69,75 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// A filter to return resources based on resource type.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The URI path that the user can do a GET on to access the metric extension metadata
         /// </summary>
-        public readonly string ResourceUri;
+        public readonly string? ResourceUri;
         /// <summary>
         /// A filter to return metric extensions based on Lifecycle State
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A filter to return resources based on status e.g. Draft or Published
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
-        public readonly string TenantId;
+        public readonly string? TenantId;
         /// <summary>
         /// Metric Extension creation time. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Metric Extension update time. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMetricExtensionsMetricExtensionCollectionItemResult(
-            string collectionMethod,
+            string? collectionMethod,
 
-            string collectionRecurrences,
+            string? collectionRecurrences,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string createdBy,
+            string? createdBy,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceResult> enabledOnResources,
 
-            int enabledOnResourcesCount,
+            int? enabledOnResourcesCount,
 
-            string id,
+            string? id,
 
-            string lastUpdatedBy,
+            string? lastUpdatedBy,
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemMetricListResult> metricLists,
 
-            string name,
+            string? name,
 
-            bool publishTrigger,
+            bool? publishTrigger,
 
             ImmutableArray<Outputs.GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyResult> queryProperties,
 
-            string resourceType,
+            string? resourceType,
 
-            string resourceUri,
+            string? resourceUri,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string tenantId,
+            string? tenantId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CollectionMethod = collectionMethod;
             CollectionRecurrences = collectionRecurrences;

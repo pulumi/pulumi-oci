@@ -144,7 +144,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? IdcsOpenId;
         public readonly string VbInstanceId;
 
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.VisualBuilder
         private GetVbInstanceApplicationsResult(
             ImmutableArray<Outputs.GetVbInstanceApplicationsApplicationSummaryCollectionResult> applicationSummaryCollections,
 
-            string id,
+            string? id,
 
             string? idcsOpenId,
 

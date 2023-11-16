@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
@@ -60,26 +59,26 @@ type LookupLogSavedSearchArgs struct {
 // A collection of values returned by getLogSavedSearch.
 type LookupLogSavedSearchResult struct {
 	// The OCID of the compartment that the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resource.
-	Id               string `pulumi:"id"`
-	LogSavedSearchId string `pulumi:"logSavedSearchId"`
+	Id               *string `pulumi:"id"`
+	LogSavedSearchId string  `pulumi:"logSavedSearchId"`
 	// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The search query that is saved.
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 	// The state of the LogSavedSearch
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time the resource was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified string `pulumi:"timeLastModified"`
+	TimeLastModified *string `pulumi:"timeLastModified"`
 }
 
 func LookupLogSavedSearchOutput(ctx *pulumi.Context, args LookupLogSavedSearchOutputArgs, opts ...pulumi.InvokeOption) LookupLogSavedSearchResultOutput {
@@ -120,15 +119,9 @@ func (o LookupLogSavedSearchResultOutput) ToLookupLogSavedSearchResultOutputWith
 	return o
 }
 
-func (o LookupLogSavedSearchResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogSavedSearchResult] {
-	return pulumix.Output[LookupLogSavedSearchResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
-func (o LookupLogSavedSearchResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -137,8 +130,8 @@ func (o LookupLogSavedSearchResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description for this resource.
-func (o LookupLogSavedSearchResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -147,8 +140,8 @@ func (o LookupLogSavedSearchResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the resource.
-func (o LookupLogSavedSearchResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogSavedSearchResultOutput) LogSavedSearchId() pulumi.StringOutput {
@@ -156,28 +149,28 @@ func (o LookupLogSavedSearchResultOutput) LogSavedSearchId() pulumi.StringOutput
 }
 
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-func (o LookupLogSavedSearchResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The search query that is saved.
-func (o LookupLogSavedSearchResultOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.Query }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 // The state of the LogSavedSearch
-func (o LookupLogSavedSearchResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LookupLogSavedSearchResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LookupLogSavedSearchResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogSavedSearchResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LookupLogSavedSearchResultOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogSavedSearchResult) *string { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 func init() {

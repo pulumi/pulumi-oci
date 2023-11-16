@@ -18,7 +18,7 @@ public final class GetBackupsResult {
      * @return The list of backups.
      * 
      */
-    private List<GetBackupsBackup> backups;
+    private @Nullable List<GetBackupsBackup> backups;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -34,7 +34,7 @@ public final class GetBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetBackupsResult() {}
     /**
@@ -42,7 +42,7 @@ public final class GetBackupsResult {
      * 
      */
     public List<GetBackupsBackup> backups() {
-        return this.backups;
+        return this.backups == null ? List.of() : this.backups;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -65,8 +65,8 @@ public final class GetBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -78,11 +78,11 @@ public final class GetBackupsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackupsBackup> backups;
+        private @Nullable List<GetBackupsBackup> backups;
         private @Nullable String compartmentId;
         private @Nullable String databaseId;
         private @Nullable List<GetBackupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetBackupsResult {
         }
 
         @CustomType.Setter
-        public Builder backups(List<GetBackupsBackup> backups) {
-            this.backups = Objects.requireNonNull(backups);
+        public Builder backups(@Nullable List<GetBackupsBackup> backups) {
+            this.backups = backups;
             return this;
         }
         public Builder backups(GetBackupsBackup... backups) {
@@ -120,8 +120,8 @@ public final class GetBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetBackupsResult build() {

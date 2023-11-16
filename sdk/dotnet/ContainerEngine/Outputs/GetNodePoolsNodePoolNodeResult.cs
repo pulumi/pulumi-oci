@@ -16,74 +16,74 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         public readonly ImmutableArray<Outputs.GetNodePoolsNodePoolNodeErrorResult> Errors;
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the node pool.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The version of Kubernetes running on the nodes in the node pool.
         /// </summary>
-        public readonly string KubernetesVersion;
+        public readonly string? KubernetesVersion;
         /// <summary>
         /// Details about the state of the nodepool.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The name to filter on.
         /// </summary>
-        public readonly string Name;
-        public readonly string NodePoolId;
-        public readonly string PrivateIp;
-        public readonly string PublicIp;
+        public readonly string? Name;
+        public readonly string? NodePoolId;
+        public readonly string? PrivateIp;
+        public readonly string? PublicIp;
         /// <summary>
         /// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the subnet in which to place nodes.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetNodePoolsNodePoolNodeResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetNodePoolsNodePoolNodeErrorResult> errors,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string kubernetesVersion,
+            string? kubernetesVersion,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string nodePoolId,
+            string? nodePoolId,
 
-            string privateIp,
+            string? privateIp,
 
-            string publicIp,
+            string? publicIp,
 
-            string state,
+            string? state,
 
-            string subnetId)
+            string? subnetId)
         {
             AvailabilityDomain = availabilityDomain;
             DefinedTags = definedTags;

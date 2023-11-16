@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// An unique name for a label within its dataset.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Version of import format
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetDatasetInitialImportDatasetConfigurationImportFormatResult(
-            string name,
+            string? name,
 
-            string version)
+            string? version)
         {
             Name = name;
             Version = version;

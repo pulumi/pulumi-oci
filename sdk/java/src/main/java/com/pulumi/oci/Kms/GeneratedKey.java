@@ -89,14 +89,14 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ciphertext", refs={String.class}, tree="[0]")
-    private Output<String> ciphertext;
+    private Output</* @Nullable */ String> ciphertext;
 
     /**
      * @return The encrypted data encryption key generated from a master encryption key.
      * 
      */
-    public Output<String> ciphertext() {
-        return this.ciphertext;
+    public Output<Optional<String>> ciphertext() {
+        return Codegen.optional(this.ciphertext);
     }
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include &#39;Encrypt,&#39; &#39;Decrypt,&#39; and &#39;GenerateDataEncryptionKey&#39; operations. see Vault Crypto endpoint.
@@ -179,28 +179,28 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="plaintext", refs={String.class}, tree="[0]")
-    private Output<String> plaintext;
+    private Output</* @Nullable */ String> plaintext;
 
     /**
      * @return The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to &#34;true&#34;.
      * 
      */
-    public Output<String> plaintext() {
-        return this.plaintext;
+    public Output<Optional<String>> plaintext() {
+        return Codegen.optional(this.plaintext);
     }
     /**
      * The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to &#34;true&#34;.
      * 
      */
     @Export(name="plaintextChecksum", refs={String.class}, tree="[0]")
-    private Output<String> plaintextChecksum;
+    private Output</* @Nullable */ String> plaintextChecksum;
 
     /**
      * @return The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to &#34;true&#34;.
      * 
      */
-    public Output<String> plaintextChecksum() {
-        return this.plaintextChecksum;
+    public Output<Optional<String>> plaintextChecksum() {
+        return Codegen.optional(this.plaintextChecksum);
     }
 
     /**

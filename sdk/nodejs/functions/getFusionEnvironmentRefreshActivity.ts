@@ -53,53 +53,53 @@ export interface GetFusionEnvironmentRefreshActivityResult {
     /**
      * A friendly name for the refresh activity. Can be changed later.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly fusionEnvironmentId: string;
     /**
      * The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly refreshActivityId: string;
     /**
      * Details of refresh investigation information, each item represents a different issue.
      */
-    readonly refreshIssueDetailsLists: outputs.Functions.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList[];
+    readonly refreshIssueDetailsLists?: outputs.Functions.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList[];
     /**
      * Service availability / impact during refresh activity execution up down
      */
-    readonly serviceAvailability: string;
+    readonly serviceAvailability?: string;
     /**
      * The OCID of the Fusion environment that is the source environment for the refresh.
      */
-    readonly sourceFusionEnvironmentId: string;
+    readonly sourceFusionEnvironmentId?: string;
     /**
      * The current state of the refreshActivity.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
     /**
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      */
-    readonly timeExpectedFinish: string;
+    readonly timeExpectedFinish?: string;
     /**
      * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The date and time of the most recent source environment backup used for the environment refresh.
      */
-    readonly timeOfRestorationPoint: string;
+    readonly timeOfRestorationPoint?: string;
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.

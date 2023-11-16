@@ -35,10 +35,7 @@ class GetExternalExadataStorageServerTopSqlCpuActivityResult:
 
     @property
     @pulumi.getter
-    def activities(self) -> Sequence['outputs.GetExternalExadataStorageServerTopSqlCpuActivityActivityResult']:
-        """
-        A list of sql CPU activity.
-        """
+    def activities(self) -> Optional[Sequence['outputs.GetExternalExadataStorageServerTopSqlCpuActivityActivityResult']]:
         return pulumi.get(self, "activities")
 
     @property
@@ -48,7 +45,7 @@ class GetExternalExadataStorageServerTopSqlCpuActivityResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,21 +66,7 @@ class AwaitableGetExternalExadataStorageServerTopSqlCpuActivityResult(GetExterna
 def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id: Optional[str] = None,
                                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageServerTopSqlCpuActivityResult:
     """
-    This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the SQL IDs with the top CPU activity from the Exadata storage server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_server_top_sql_cpu_activity = oci.DatabaseManagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalExadataStorageServerId'] = external_exadata_storage_server_id
@@ -100,20 +83,6 @@ def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_st
 def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exadata_storage_server_id: Optional[pulumi.Input[str]] = None,
                                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult]:
     """
-    This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the SQL IDs with the top CPU activity from the Exadata storage server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_server_top_sql_cpu_activity = oci.DatabaseManagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    Use this data source to access information about an existing resource.
     """
     ...

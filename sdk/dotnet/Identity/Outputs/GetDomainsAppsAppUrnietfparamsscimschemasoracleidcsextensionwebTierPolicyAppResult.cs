@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If this Attribute is true, resource ref id and resource ref name attributes will we included in wtp json response.
         /// </summary>
-        public readonly bool ResourceRef;
+        public readonly bool? ResourceRef;
         /// <summary>
         /// Webtier policy AZ Control
         /// </summary>
-        public readonly string WebTierPolicyAzControl;
+        public readonly string? WebTierPolicyAzControl;
         /// <summary>
         /// Store the web tier policy for an application as a string in Javascript Object Notification (JSON) format.
         /// </summary>
-        public readonly string WebTierPolicyJson;
+        public readonly string? WebTierPolicyJson;
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResult(
-            bool resourceRef,
+            bool? resourceRef,
 
-            string webTierPolicyAzControl,
+            string? webTierPolicyAzControl,
 
-            string webTierPolicyJson)
+            string? webTierPolicyJson)
         {
             ResourceRef = resourceRef;
             WebTierPolicyAzControl = webTierPolicyAzControl;

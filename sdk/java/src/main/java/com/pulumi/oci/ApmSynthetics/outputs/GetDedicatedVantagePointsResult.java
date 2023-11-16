@@ -19,7 +19,7 @@ public final class GetDedicatedVantagePointsResult {
      * @return The list of dedicated_vantage_point_collection.
      * 
      */
-    private List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections;
+    private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections;
     /**
      * @return Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      * 
@@ -30,7 +30,7 @@ public final class GetDedicatedVantagePointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique permanent name of the dedicated vantage point. This is the same as the displayName.
      * 
@@ -51,7 +51,7 @@ public final class GetDedicatedVantagePointsResult {
      * 
      */
     public List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections() {
-        return this.dedicatedVantagePointCollections;
+        return this.dedicatedVantagePointCollections == null ? List.of() : this.dedicatedVantagePointCollections;
     }
     /**
      * @return Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
@@ -67,8 +67,8 @@ public final class GetDedicatedVantagePointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique permanent name of the dedicated vantage point. This is the same as the displayName.
@@ -95,10 +95,10 @@ public final class GetDedicatedVantagePointsResult {
     @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
-        private List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections;
+        private @Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDedicatedVantagePointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String status;
         public Builder() {}
@@ -119,8 +119,8 @@ public final class GetDedicatedVantagePointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dedicatedVantagePointCollections(List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections) {
-            this.dedicatedVantagePointCollections = Objects.requireNonNull(dedicatedVantagePointCollections);
+        public Builder dedicatedVantagePointCollections(@Nullable List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections) {
+            this.dedicatedVantagePointCollections = dedicatedVantagePointCollections;
             return this;
         }
         public Builder dedicatedVantagePointCollections(GetDedicatedVantagePointsDedicatedVantagePointCollection... dedicatedVantagePointCollections) {
@@ -140,8 +140,8 @@ public final class GetDedicatedVantagePointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -7,18 +7,20 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
-    private List<String> ipRanges;
-    private String vcnId;
+    private @Nullable List<String> ipRanges;
+    private @Nullable String vcnId;
 
     private GetNetworkSourcesNetworkSourceVirtualSourceList() {}
     public List<String> ipRanges() {
-        return this.ipRanges;
+        return this.ipRanges == null ? List.of() : this.ipRanges;
     }
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -30,8 +32,8 @@ public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> ipRanges;
-        private String vcnId;
+        private @Nullable List<String> ipRanges;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetNetworkSourcesNetworkSourceVirtualSourceList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -40,16 +42,16 @@ public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
         }
 
         @CustomType.Setter
-        public Builder ipRanges(List<String> ipRanges) {
-            this.ipRanges = Objects.requireNonNull(ipRanges);
+        public Builder ipRanges(@Nullable List<String> ipRanges) {
+            this.ipRanges = ipRanges;
             return this;
         }
         public Builder ipRanges(String... ipRanges) {
             return ipRanges(List.of(ipRanges));
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetNetworkSourcesNetworkSourceVirtualSourceList build() {

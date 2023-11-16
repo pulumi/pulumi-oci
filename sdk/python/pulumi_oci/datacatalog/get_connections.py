@@ -80,34 +80,22 @@ class GetConnectionsResult:
 
     @property
     @pulumi.getter(name="connectionCollections")
-    def connection_collections(self) -> Sequence['outputs.GetConnectionsConnectionCollectionResult']:
-        """
-        The list of connection_collection.
-        """
+    def connection_collections(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionResult']]:
         return pulumi.get(self, "connection_collections")
 
     @property
     @pulumi.getter(name="createdById")
     def created_by_id(self) -> Optional[str]:
-        """
-        OCID of the user who created the connection.
-        """
         return pulumi.get(self, "created_by_id")
 
     @property
     @pulumi.getter(name="dataAssetKey")
     def data_asset_key(self) -> str:
-        """
-        Unique key of the parent data asset.
-        """
         return pulumi.get(self, "data_asset_key")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -118,9 +106,6 @@ class GetConnectionsResult:
     @property
     @pulumi.getter(name="externalKey")
     def external_key(self) -> Optional[str]:
-        """
-        Unique external key of this object from the source system.
-        """
         return pulumi.get(self, "external_key")
 
     @property
@@ -135,7 +120,7 @@ class GetConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -144,49 +129,31 @@ class GetConnectionsResult:
     @property
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[bool]:
-        """
-        Indicates whether this connection is the default connection.
-        """
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the connection.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusUpdated")
     def time_status_updated(self) -> Optional[str]:
-        """
-        Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_status_updated")
 
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
-        """
-        The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedById")
     def updated_by_id(self) -> Optional[str]:
-        """
-        OCID of the user who modified the connection.
-        """
         return pulumi.get(self, "updated_by_id")
 
 
@@ -230,45 +197,7 @@ def get_connections(catalog_id: Optional[str] = None,
                     updated_by_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionsResult:
     """
-    This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all Connections for a data asset.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connections = oci.DataCatalog.get_connections(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["connection_data_asset_key"],
-        created_by_id=oci_datacatalog_created_by["test_created_by"]["id"],
-        display_name=var["connection_display_name"],
-        display_name_contains=var["connection_display_name_contains"],
-        external_key=var["connection_external_key"],
-        fields=var["connection_fields"],
-        is_default=var["connection_is_default"],
-        state=var["connection_state"],
-        time_created=var["connection_time_created"],
-        time_status_updated=var["connection_time_status_updated"],
-        time_updated=var["connection_time_updated"],
-        updated_by_id=oci_datacatalog_updated_by["test_updated_by"]["id"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str created_by_id: OCID of the user who created the resource.
-    :param str data_asset_key: Unique data asset key.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str display_name_contains: A filter to return only resources that match display name pattern given. The match is not case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
-    :param str external_key: Unique external identifier of this resource in the external source system.
-    :param Sequence[str] fields: Specifies the fields to return in a connection summary response.
-    :param bool is_default: Indicates whether this connection is the default connection.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str time_created: Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-    :param str time_status_updated: Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-    :param str time_updated: Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-    :param str updated_by_id: OCID of the user who updated the resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -324,44 +253,6 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
                            updated_by_id: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionsResult]:
     """
-    This data source provides the list of Connections in Oracle Cloud Infrastructure Data Catalog service.
-
-    Returns a list of all Connections for a data asset.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connections = oci.DataCatalog.get_connections(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["connection_data_asset_key"],
-        created_by_id=oci_datacatalog_created_by["test_created_by"]["id"],
-        display_name=var["connection_display_name"],
-        display_name_contains=var["connection_display_name_contains"],
-        external_key=var["connection_external_key"],
-        fields=var["connection_fields"],
-        is_default=var["connection_is_default"],
-        state=var["connection_state"],
-        time_created=var["connection_time_created"],
-        time_status_updated=var["connection_time_status_updated"],
-        time_updated=var["connection_time_updated"],
-        updated_by_id=oci_datacatalog_updated_by["test_updated_by"]["id"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str created_by_id: OCID of the user who created the resource.
-    :param str data_asset_key: Unique data asset key.
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str display_name_contains: A filter to return only resources that match display name pattern given. The match is not case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
-    :param str external_key: Unique external identifier of this resource in the external source system.
-    :param Sequence[str] fields: Specifies the fields to return in a connection summary response.
-    :param bool is_default: Indicates whether this connection is the default connection.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str time_created: Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-    :param str time_status_updated: Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-    :param str time_updated: Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-    :param str updated_by_id: OCID of the user who updated the resource.
+    Use this data source to access information about an existing resource.
     """
     ...

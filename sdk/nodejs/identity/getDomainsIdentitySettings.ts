@@ -77,20 +77,20 @@ export interface GetDomainsIdentitySettingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly idcsEndpoint: string;
     /**
      * The list of identity_settings.
      */
-    readonly identitySettings: outputs.Identity.GetDomainsIdentitySettingsIdentitySetting[];
-    readonly itemsPerPage: number;
+    readonly identitySettings?: outputs.Identity.GetDomainsIdentitySettingsIdentitySetting[];
+    readonly itemsPerPage?: number;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
-    readonly startIndex: number;
-    readonly totalResults: number;
+    readonly schemas?: string[];
+    readonly startIndex?: number;
+    readonly totalResults?: number;
 }
 /**
  * This data source provides the list of Identity Settings in Oracle Cloud Infrastructure Identity Domains service.

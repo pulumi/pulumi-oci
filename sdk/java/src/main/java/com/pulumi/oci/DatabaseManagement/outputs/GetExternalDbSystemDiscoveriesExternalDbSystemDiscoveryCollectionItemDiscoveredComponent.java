@@ -18,6 +18,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent {
@@ -25,551 +27,551 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    private String adrHomeDirectory;
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances;
+    private @Nullable String adrHomeDirectory;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances;
     /**
      * @return The list of associated components.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents;
     /**
      * @return The unique identifier of the Oracle cluster.
      * 
      */
-    private String clusterId;
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances;
+    private @Nullable String clusterId;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The identifier of the discovered DB system component.
      * 
      */
-    private String componentId;
+    private @Nullable String componentId;
     /**
      * @return The name of the discovered DB system component.
      * 
      */
-    private String componentName;
+    private @Nullable String componentName;
     /**
      * @return The component type.
      * 
      */
-    private String componentType;
+    private @Nullable String componentType;
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors;
     /**
      * @return The unique identifier of the parent Container Database (CDB).
      * 
      */
-    private String containerDatabaseId;
+    private @Nullable String containerDatabaseId;
     /**
      * @return The number of CPU cores available on the DB node.
      * 
      */
-    private Double cpuCoreCount;
+    private @Nullable Double cpuCoreCount;
     /**
      * @return The Oracle base location of Cluster Ready Services (CRS).
      * 
      */
-    private String crsBaseDirectory;
+    private @Nullable String crsBaseDirectory;
     /**
      * @return The Oracle Database edition.
      * 
      */
-    private String dbEdition;
+    private @Nullable String dbEdition;
     /**
      * @return The Oracle Database ID.
      * 
      */
-    private String dbId;
+    private @Nullable String dbId;
     /**
      * @return The name of the DB node.
      * 
      */
-    private String dbNodeName;
+    private @Nullable String dbNodeName;
     /**
      * @return The database packs licensed for the external Oracle Database.
      * 
      */
-    private String dbPacks;
+    private @Nullable String dbPacks;
     /**
      * @return The role of the Oracle Database in Oracle Data Guard configuration.
      * 
      */
-    private String dbRole;
+    private @Nullable String dbRole;
     /**
      * @return The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    private String dbType;
+    private @Nullable String dbType;
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    private String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of protocol addresses the listener is configured to listen on.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints;
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    private String gridHome;
+    private @Nullable String gridHome;
     /**
      * @return The unique identifier of the PDB.
      * 
      */
-    private String guid;
+    private @Nullable String guid;
     /**
      * @return The location of the DB home.
      * 
      */
-    private String homeDirectory;
+    private @Nullable String homeDirectory;
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The name of the ASM instance.
      * 
      */
-    private String instanceName;
+    private @Nullable String instanceName;
     /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
-    private Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return Indicates whether the cluster is an Oracle Flex Cluster or not.
      * 
      */
-    private Boolean isFlexCluster;
+    private @Nullable Boolean isFlexCluster;
     /**
      * @return Indicates whether Oracle Flex ASM is enabled or not.
      * 
      */
-    private Boolean isFlexEnabled;
+    private @Nullable Boolean isFlexEnabled;
     /**
      * @return Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
      * 
      */
-    private Boolean isSelectedForMonitoring;
+    private @Nullable Boolean isSelectedForMonitoring;
     /**
      * @return The listener alias.
      * 
      */
-    private String listenerAlias;
+    private @Nullable String listenerAlias;
     /**
      * @return The type of listener.
      * 
      */
-    private String listenerType;
+    private @Nullable String listenerType;
     /**
      * @return The destination directory of the listener log file.
      * 
      */
-    private String logDirectory;
+    private @Nullable String logDirectory;
     /**
      * @return The total memory in gigabytes (GB) on the DB node.
      * 
      */
-    private Double memorySizeInGbs;
+    private @Nullable Double memorySizeInGbs;
     /**
      * @return The list of network address configurations of the external cluster.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations;
     /**
      * @return The role of the cluster node.
      * 
      */
-    private String nodeRole;
+    private @Nullable String nodeRole;
     /**
      * @return The location of the Oracle Cluster Registry (OCR) file.
      * 
      */
-    private String ocrFileLocation;
+    private @Nullable String ocrFileLocation;
     /**
      * @return The Oracle home location of the listener.
      * 
      */
-    private String oracleHome;
+    private @Nullable String oracleHome;
     /**
      * @return The list of Pluggable Databases.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations;
     /**
      * @return The state of the discovered DB system component.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The destination directory of the listener trace file.
      * 
      */
-    private String traceDirectory;
+    private @Nullable String traceDirectory;
     /**
      * @return The version of Oracle Clusterware running in the cluster.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent() {}
     /**
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    public String adrHomeDirectory() {
-        return this.adrHomeDirectory;
+    public Optional<String> adrHomeDirectory() {
+        return Optional.ofNullable(this.adrHomeDirectory);
     }
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances() {
-        return this.asmInstances;
+        return this.asmInstances == null ? List.of() : this.asmInstances;
     }
     /**
      * @return The list of associated components.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents() {
-        return this.associatedComponents;
+        return this.associatedComponents == null ? List.of() : this.associatedComponents;
     }
     /**
      * @return The unique identifier of the Oracle cluster.
      * 
      */
-    public String clusterId() {
-        return this.clusterId;
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
     }
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances() {
-        return this.clusterInstances;
+        return this.clusterInstances == null ? List.of() : this.clusterInstances;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The identifier of the discovered DB system component.
      * 
      */
-    public String componentId() {
-        return this.componentId;
+    public Optional<String> componentId() {
+        return Optional.ofNullable(this.componentId);
     }
     /**
      * @return The name of the discovered DB system component.
      * 
      */
-    public String componentName() {
-        return this.componentName;
+    public Optional<String> componentName() {
+        return Optional.ofNullable(this.componentName);
     }
     /**
      * @return The component type.
      * 
      */
-    public String componentType() {
-        return this.componentType;
+    public Optional<String> componentType() {
+        return Optional.ofNullable(this.componentType);
     }
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors() {
-        return this.connectors;
+        return this.connectors == null ? List.of() : this.connectors;
     }
     /**
      * @return The unique identifier of the parent Container Database (CDB).
      * 
      */
-    public String containerDatabaseId() {
-        return this.containerDatabaseId;
+    public Optional<String> containerDatabaseId() {
+        return Optional.ofNullable(this.containerDatabaseId);
     }
     /**
      * @return The number of CPU cores available on the DB node.
      * 
      */
-    public Double cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Double> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return The Oracle base location of Cluster Ready Services (CRS).
      * 
      */
-    public String crsBaseDirectory() {
-        return this.crsBaseDirectory;
+    public Optional<String> crsBaseDirectory() {
+        return Optional.ofNullable(this.crsBaseDirectory);
     }
     /**
      * @return The Oracle Database edition.
      * 
      */
-    public String dbEdition() {
-        return this.dbEdition;
+    public Optional<String> dbEdition() {
+        return Optional.ofNullable(this.dbEdition);
     }
     /**
      * @return The Oracle Database ID.
      * 
      */
-    public String dbId() {
-        return this.dbId;
+    public Optional<String> dbId() {
+        return Optional.ofNullable(this.dbId);
     }
     /**
      * @return The name of the DB node.
      * 
      */
-    public String dbNodeName() {
-        return this.dbNodeName;
+    public Optional<String> dbNodeName() {
+        return Optional.ofNullable(this.dbNodeName);
     }
     /**
      * @return The database packs licensed for the external Oracle Database.
      * 
      */
-    public String dbPacks() {
-        return this.dbPacks;
+    public Optional<String> dbPacks() {
+        return Optional.ofNullable(this.dbPacks);
     }
     /**
      * @return The role of the Oracle Database in Oracle Data Guard configuration.
      * 
      */
-    public String dbRole() {
-        return this.dbRole;
+    public Optional<String> dbRole() {
+        return Optional.ofNullable(this.dbRole);
     }
     /**
      * @return The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    public String dbType() {
-        return this.dbType;
+    public Optional<String> dbType() {
+        return Optional.ofNullable(this.dbType);
     }
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return The Oracle Database version.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The list of protocol addresses the listener is configured to listen on.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints() {
-        return this.endpoints;
+        return this.endpoints == null ? List.of() : this.endpoints;
     }
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    public String gridHome() {
-        return this.gridHome;
+    public Optional<String> gridHome() {
+        return Optional.ofNullable(this.gridHome);
     }
     /**
      * @return The unique identifier of the PDB.
      * 
      */
-    public String guid() {
-        return this.guid;
+    public Optional<String> guid() {
+        return Optional.ofNullable(this.guid);
     }
     /**
      * @return The location of the DB home.
      * 
      */
-    public String homeDirectory() {
-        return this.homeDirectory;
+    public Optional<String> homeDirectory() {
+        return Optional.ofNullable(this.homeDirectory);
     }
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The name of the ASM instance.
      * 
      */
-    public String instanceName() {
-        return this.instanceName;
+    public Optional<String> instanceName() {
+        return Optional.ofNullable(this.instanceName);
     }
     /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
-    public Boolean isCluster() {
-        return this.isCluster;
+    public Optional<Boolean> isCluster() {
+        return Optional.ofNullable(this.isCluster);
     }
     /**
      * @return Indicates whether the cluster is an Oracle Flex Cluster or not.
      * 
      */
-    public Boolean isFlexCluster() {
-        return this.isFlexCluster;
+    public Optional<Boolean> isFlexCluster() {
+        return Optional.ofNullable(this.isFlexCluster);
     }
     /**
      * @return Indicates whether Oracle Flex ASM is enabled or not.
      * 
      */
-    public Boolean isFlexEnabled() {
-        return this.isFlexEnabled;
+    public Optional<Boolean> isFlexEnabled() {
+        return Optional.ofNullable(this.isFlexEnabled);
     }
     /**
      * @return Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
      * 
      */
-    public Boolean isSelectedForMonitoring() {
-        return this.isSelectedForMonitoring;
+    public Optional<Boolean> isSelectedForMonitoring() {
+        return Optional.ofNullable(this.isSelectedForMonitoring);
     }
     /**
      * @return The listener alias.
      * 
      */
-    public String listenerAlias() {
-        return this.listenerAlias;
+    public Optional<String> listenerAlias() {
+        return Optional.ofNullable(this.listenerAlias);
     }
     /**
      * @return The type of listener.
      * 
      */
-    public String listenerType() {
-        return this.listenerType;
+    public Optional<String> listenerType() {
+        return Optional.ofNullable(this.listenerType);
     }
     /**
      * @return The destination directory of the listener log file.
      * 
      */
-    public String logDirectory() {
-        return this.logDirectory;
+    public Optional<String> logDirectory() {
+        return Optional.ofNullable(this.logDirectory);
     }
     /**
      * @return The total memory in gigabytes (GB) on the DB node.
      * 
      */
-    public Double memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Double> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The list of network address configurations of the external cluster.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations() {
-        return this.networkConfigurations;
+        return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
      * @return The role of the cluster node.
      * 
      */
-    public String nodeRole() {
-        return this.nodeRole;
+    public Optional<String> nodeRole() {
+        return Optional.ofNullable(this.nodeRole);
     }
     /**
      * @return The location of the Oracle Cluster Registry (OCR) file.
      * 
      */
-    public String ocrFileLocation() {
-        return this.ocrFileLocation;
+    public Optional<String> ocrFileLocation() {
+        return Optional.ofNullable(this.ocrFileLocation);
     }
     /**
      * @return The Oracle home location of the listener.
      * 
      */
-    public String oracleHome() {
-        return this.oracleHome;
+    public Optional<String> oracleHome() {
+        return Optional.ofNullable(this.oracleHome);
     }
     /**
      * @return The list of Pluggable Databases.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases() {
-        return this.pluggableDatabases;
+        return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations() {
-        return this.scanConfigurations;
+        return this.scanConfigurations == null ? List.of() : this.scanConfigurations;
     }
     /**
      * @return The state of the discovered DB system component.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The destination directory of the listener trace file.
      * 
      */
-    public String traceDirectory() {
-        return this.traceDirectory;
+    public Optional<String> traceDirectory() {
+        return Optional.ofNullable(this.traceDirectory);
     }
     /**
      * @return The version of Oracle Clusterware running in the cluster.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations() {
-        return this.vipConfigurations;
+        return this.vipConfigurations == null ? List.of() : this.vipConfigurations;
     }
 
     public static Builder builder() {
@@ -581,53 +583,53 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adrHomeDirectory;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents;
-        private String clusterId;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances;
-        private String compartmentId;
-        private String componentId;
-        private String componentName;
-        private String componentType;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors;
-        private String containerDatabaseId;
-        private Double cpuCoreCount;
-        private String crsBaseDirectory;
-        private String dbEdition;
-        private String dbId;
-        private String dbNodeName;
-        private String dbPacks;
-        private String dbRole;
-        private String dbType;
-        private String dbUniqueName;
-        private String dbVersion;
-        private String displayName;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints;
-        private String gridHome;
-        private String guid;
-        private String homeDirectory;
-        private String hostName;
-        private String instanceName;
-        private Boolean isCluster;
-        private Boolean isFlexCluster;
-        private Boolean isFlexEnabled;
-        private Boolean isSelectedForMonitoring;
-        private String listenerAlias;
-        private String listenerType;
-        private String logDirectory;
-        private Double memorySizeInGbs;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations;
-        private String nodeRole;
-        private String ocrFileLocation;
-        private String oracleHome;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases;
-        private String resourceId;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations;
-        private String status;
-        private String traceDirectory;
-        private String version;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations;
+        private @Nullable String adrHomeDirectory;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents;
+        private @Nullable String clusterId;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances;
+        private @Nullable String compartmentId;
+        private @Nullable String componentId;
+        private @Nullable String componentName;
+        private @Nullable String componentType;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors;
+        private @Nullable String containerDatabaseId;
+        private @Nullable Double cpuCoreCount;
+        private @Nullable String crsBaseDirectory;
+        private @Nullable String dbEdition;
+        private @Nullable String dbId;
+        private @Nullable String dbNodeName;
+        private @Nullable String dbPacks;
+        private @Nullable String dbRole;
+        private @Nullable String dbType;
+        private @Nullable String dbUniqueName;
+        private @Nullable String dbVersion;
+        private @Nullable String displayName;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints;
+        private @Nullable String gridHome;
+        private @Nullable String guid;
+        private @Nullable String homeDirectory;
+        private @Nullable String hostName;
+        private @Nullable String instanceName;
+        private @Nullable Boolean isCluster;
+        private @Nullable Boolean isFlexCluster;
+        private @Nullable Boolean isFlexEnabled;
+        private @Nullable Boolean isSelectedForMonitoring;
+        private @Nullable String listenerAlias;
+        private @Nullable String listenerType;
+        private @Nullable String logDirectory;
+        private @Nullable Double memorySizeInGbs;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations;
+        private @Nullable String nodeRole;
+        private @Nullable String ocrFileLocation;
+        private @Nullable String oracleHome;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases;
+        private @Nullable String resourceId;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations;
+        private @Nullable String status;
+        private @Nullable String traceDirectory;
+        private @Nullable String version;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -681,262 +683,262 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+        public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder asmInstances(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances) {
-            this.asmInstances = Objects.requireNonNull(asmInstances);
+        public Builder asmInstances(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances) {
+            this.asmInstances = asmInstances;
             return this;
         }
         public Builder asmInstances(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance... asmInstances) {
             return asmInstances(List.of(asmInstances));
         }
         @CustomType.Setter
-        public Builder associatedComponents(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents) {
-            this.associatedComponents = Objects.requireNonNull(associatedComponents);
+        public Builder associatedComponents(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents) {
+            this.associatedComponents = associatedComponents;
             return this;
         }
         public Builder associatedComponents(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent... associatedComponents) {
             return associatedComponents(List.of(associatedComponents));
         }
         @CustomType.Setter
-        public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+        public Builder clusterId(@Nullable String clusterId) {
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterInstances(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances) {
-            this.clusterInstances = Objects.requireNonNull(clusterInstances);
+        public Builder clusterInstances(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances) {
+            this.clusterInstances = clusterInstances;
             return this;
         }
         public Builder clusterInstances(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance... clusterInstances) {
             return clusterInstances(List.of(clusterInstances));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentId(String componentId) {
-            this.componentId = Objects.requireNonNull(componentId);
+        public Builder componentId(@Nullable String componentId) {
+            this.componentId = componentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+        public Builder componentName(@Nullable String componentName) {
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
-        public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+        public Builder componentType(@Nullable String componentType) {
+            this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
-        public Builder connectors(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+        public Builder connectors(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors) {
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector... connectors) {
             return connectors(List.of(connectors));
         }
         @CustomType.Setter
-        public Builder containerDatabaseId(String containerDatabaseId) {
-            this.containerDatabaseId = Objects.requireNonNull(containerDatabaseId);
+        public Builder containerDatabaseId(@Nullable String containerDatabaseId) {
+            this.containerDatabaseId = containerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Double cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Double cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder crsBaseDirectory(String crsBaseDirectory) {
-            this.crsBaseDirectory = Objects.requireNonNull(crsBaseDirectory);
+        public Builder crsBaseDirectory(@Nullable String crsBaseDirectory) {
+            this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder dbEdition(String dbEdition) {
-            this.dbEdition = Objects.requireNonNull(dbEdition);
+        public Builder dbEdition(@Nullable String dbEdition) {
+            this.dbEdition = dbEdition;
             return this;
         }
         @CustomType.Setter
-        public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+        public Builder dbId(@Nullable String dbId) {
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeName(String dbNodeName) {
-            this.dbNodeName = Objects.requireNonNull(dbNodeName);
+        public Builder dbNodeName(@Nullable String dbNodeName) {
+            this.dbNodeName = dbNodeName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbPacks(String dbPacks) {
-            this.dbPacks = Objects.requireNonNull(dbPacks);
+        public Builder dbPacks(@Nullable String dbPacks) {
+            this.dbPacks = dbPacks;
             return this;
         }
         @CustomType.Setter
-        public Builder dbRole(String dbRole) {
-            this.dbRole = Objects.requireNonNull(dbRole);
+        public Builder dbRole(@Nullable String dbRole) {
+            this.dbRole = dbRole;
             return this;
         }
         @CustomType.Setter
-        public Builder dbType(String dbType) {
-            this.dbType = Objects.requireNonNull(dbType);
+        public Builder dbType(@Nullable String dbType) {
+            this.dbType = dbType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder endpoints(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+        public Builder endpoints(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints) {
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
         @CustomType.Setter
-        public Builder gridHome(String gridHome) {
-            this.gridHome = Objects.requireNonNull(gridHome);
+        public Builder gridHome(@Nullable String gridHome) {
+            this.gridHome = gridHome;
             return this;
         }
         @CustomType.Setter
-        public Builder guid(String guid) {
-            this.guid = Objects.requireNonNull(guid);
+        public Builder guid(@Nullable String guid) {
+            this.guid = guid;
             return this;
         }
         @CustomType.Setter
-        public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+        public Builder homeDirectory(@Nullable String homeDirectory) {
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceName(String instanceName) {
-            this.instanceName = Objects.requireNonNull(instanceName);
+        public Builder instanceName(@Nullable String instanceName) {
+            this.instanceName = instanceName;
             return this;
         }
         @CustomType.Setter
-        public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+        public Builder isCluster(@Nullable Boolean isCluster) {
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder isFlexCluster(Boolean isFlexCluster) {
-            this.isFlexCluster = Objects.requireNonNull(isFlexCluster);
+        public Builder isFlexCluster(@Nullable Boolean isFlexCluster) {
+            this.isFlexCluster = isFlexCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder isFlexEnabled(Boolean isFlexEnabled) {
-            this.isFlexEnabled = Objects.requireNonNull(isFlexEnabled);
+        public Builder isFlexEnabled(@Nullable Boolean isFlexEnabled) {
+            this.isFlexEnabled = isFlexEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isSelectedForMonitoring(Boolean isSelectedForMonitoring) {
-            this.isSelectedForMonitoring = Objects.requireNonNull(isSelectedForMonitoring);
+        public Builder isSelectedForMonitoring(@Nullable Boolean isSelectedForMonitoring) {
+            this.isSelectedForMonitoring = isSelectedForMonitoring;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerAlias(String listenerAlias) {
-            this.listenerAlias = Objects.requireNonNull(listenerAlias);
+        public Builder listenerAlias(@Nullable String listenerAlias) {
+            this.listenerAlias = listenerAlias;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerType(String listenerType) {
-            this.listenerType = Objects.requireNonNull(listenerType);
+        public Builder listenerType(@Nullable String listenerType) {
+            this.listenerType = listenerType;
             return this;
         }
         @CustomType.Setter
-        public Builder logDirectory(String logDirectory) {
-            this.logDirectory = Objects.requireNonNull(logDirectory);
+        public Builder logDirectory(@Nullable String logDirectory) {
+            this.logDirectory = logDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Double memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Double memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder networkConfigurations(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+        public Builder networkConfigurations(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations) {
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration... networkConfigurations) {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
-        public Builder nodeRole(String nodeRole) {
-            this.nodeRole = Objects.requireNonNull(nodeRole);
+        public Builder nodeRole(@Nullable String nodeRole) {
+            this.nodeRole = nodeRole;
             return this;
         }
         @CustomType.Setter
-        public Builder ocrFileLocation(String ocrFileLocation) {
-            this.ocrFileLocation = Objects.requireNonNull(ocrFileLocation);
+        public Builder ocrFileLocation(@Nullable String ocrFileLocation) {
+            this.ocrFileLocation = ocrFileLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder oracleHome(String oracleHome) {
-            this.oracleHome = Objects.requireNonNull(oracleHome);
+        public Builder oracleHome(@Nullable String oracleHome) {
+            this.oracleHome = oracleHome;
             return this;
         }
         @CustomType.Setter
-        public Builder pluggableDatabases(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases) {
-            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+        public Builder pluggableDatabases(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
             return this;
         }
         public Builder pluggableDatabases(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase... pluggableDatabases) {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder scanConfigurations(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations) {
-            this.scanConfigurations = Objects.requireNonNull(scanConfigurations);
+        public Builder scanConfigurations(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations) {
+            this.scanConfigurations = scanConfigurations;
             return this;
         }
         public Builder scanConfigurations(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration... scanConfigurations) {
             return scanConfigurations(List.of(scanConfigurations));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder traceDirectory(String traceDirectory) {
-            this.traceDirectory = Objects.requireNonNull(traceDirectory);
+        public Builder traceDirectory(@Nullable String traceDirectory) {
+            this.traceDirectory = traceDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder vipConfigurations(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations) {
-            this.vipConfigurations = Objects.requireNonNull(vipConfigurations);
+        public Builder vipConfigurations(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations) {
+            this.vipConfigurations = vipConfigurations;
             return this;
         }
         public Builder vipConfigurations(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration... vipConfigurations) {

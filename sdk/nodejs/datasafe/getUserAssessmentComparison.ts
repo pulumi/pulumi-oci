@@ -54,19 +54,19 @@ export interface GetUserAssessmentComparisonResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the user assessment comparison.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
-    readonly summaries: outputs.DataSafe.GetUserAssessmentComparisonSummary[];
+    readonly summaries?: outputs.DataSafe.GetUserAssessmentComparisonSummary[];
     /**
      * The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     readonly userAssessmentId: string;
 }
 /**

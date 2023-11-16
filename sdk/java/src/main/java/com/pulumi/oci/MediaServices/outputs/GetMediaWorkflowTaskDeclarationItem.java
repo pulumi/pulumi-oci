@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowTaskDeclarationItem {
@@ -14,51 +16,51 @@ public final class GetMediaWorkflowTaskDeclarationItem {
      * @return A filter to return only the resources with their system defined, unique name matching the given name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return JSON schema specifying the parameters supported by this type of task. This is used to validate tasks&#39; parameters when jobs are created.
      * 
      */
-    private String parametersSchema;
+    private @Nullable String parametersSchema;
     /**
      * @return JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
      * 
      */
-    private String parametersSchemaAllowingReferences;
+    private @Nullable String parametersSchemaAllowingReferences;
     /**
      * @return A filter to select MediaWorkflowTaskDeclaration by version.
      * 
      */
-    private Integer version;
+    private @Nullable Integer version;
 
     private GetMediaWorkflowTaskDeclarationItem() {}
     /**
      * @return A filter to return only the resources with their system defined, unique name matching the given name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return JSON schema specifying the parameters supported by this type of task. This is used to validate tasks&#39; parameters when jobs are created.
      * 
      */
-    public String parametersSchema() {
-        return this.parametersSchema;
+    public Optional<String> parametersSchema() {
+        return Optional.ofNullable(this.parametersSchema);
     }
     /**
      * @return JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
      * 
      */
-    public String parametersSchemaAllowingReferences() {
-        return this.parametersSchemaAllowingReferences;
+    public Optional<String> parametersSchemaAllowingReferences() {
+        return Optional.ofNullable(this.parametersSchemaAllowingReferences);
     }
     /**
      * @return A filter to select MediaWorkflowTaskDeclaration by version.
      * 
      */
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetMediaWorkflowTaskDeclarationItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String parametersSchema;
-        private String parametersSchemaAllowingReferences;
-        private Integer version;
+        private @Nullable String name;
+        private @Nullable String parametersSchema;
+        private @Nullable String parametersSchemaAllowingReferences;
+        private @Nullable Integer version;
         public Builder() {}
         public Builder(GetMediaWorkflowTaskDeclarationItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetMediaWorkflowTaskDeclarationItem {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder parametersSchema(String parametersSchema) {
-            this.parametersSchema = Objects.requireNonNull(parametersSchema);
+        public Builder parametersSchema(@Nullable String parametersSchema) {
+            this.parametersSchema = parametersSchema;
             return this;
         }
         @CustomType.Setter
-        public Builder parametersSchemaAllowingReferences(String parametersSchemaAllowingReferences) {
-            this.parametersSchemaAllowingReferences = Objects.requireNonNull(parametersSchemaAllowingReferences);
+        public Builder parametersSchemaAllowingReferences(@Nullable String parametersSchemaAllowingReferences) {
+            this.parametersSchemaAllowingReferences = parametersSchemaAllowingReferences;
             return this;
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         public GetMediaWorkflowTaskDeclarationItem build() {

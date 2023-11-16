@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Apps in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,10 +79,10 @@ type GetDomainsMyAppsResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	IdcsEndpoint string `pulumi:"idcsEndpoint"`
+	Id           *string `pulumi:"id"`
+	IdcsEndpoint string  `pulumi:"idcsEndpoint"`
 	// The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-	ItemsPerPage int     `pulumi:"itemsPerPage"`
+	ItemsPerPage *int    `pulumi:"itemsPerPage"`
 	MyAppCount   *int    `pulumi:"myAppCount"`
 	MyAppFilter  *string `pulumi:"myAppFilter"`
 	// The list of my_apps.
@@ -96,7 +95,7 @@ type GetDomainsMyAppsResult struct {
 	// The 1-based index of the first result in the current set of list results.  REQUIRED when partial results returned due to pagination.
 	StartIndex *int `pulumi:"startIndex"`
 	// The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-	TotalResults int `pulumi:"totalResults"`
+	TotalResults *int `pulumi:"totalResults"`
 }
 
 func GetDomainsMyAppsOutput(ctx *pulumi.Context, args GetDomainsMyAppsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyAppsResultOutput {
@@ -150,12 +149,6 @@ func (o GetDomainsMyAppsResultOutput) ToGetDomainsMyAppsResultOutputWithContext(
 	return o
 }
 
-func (o GetDomainsMyAppsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyAppsResult] {
-	return pulumix.Output[GetDomainsMyAppsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyAppsResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyAppsResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -165,8 +158,8 @@ func (o GetDomainsMyAppsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyAppsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyAppsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyAppsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyAppsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyAppsResultOutput) IdcsEndpoint() pulumi.StringOutput {
@@ -174,8 +167,8 @@ func (o GetDomainsMyAppsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 }
 
 // The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
-func (o GetDomainsMyAppsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyAppsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyAppsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyAppsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyAppsResultOutput) MyAppCount() pulumi.IntPtrOutput {
@@ -214,8 +207,8 @@ func (o GetDomainsMyAppsResultOutput) StartIndex() pulumi.IntPtrOutput {
 }
 
 // The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
-func (o GetDomainsMyAppsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyAppsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyAppsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyAppsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

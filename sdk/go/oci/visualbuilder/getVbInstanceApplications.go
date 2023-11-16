@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
@@ -65,7 +64,7 @@ type GetVbInstanceApplicationsResult struct {
 	// The list of application_summary_collection.
 	ApplicationSummaryCollections []GetVbInstanceApplicationsApplicationSummaryCollection `pulumi:"applicationSummaryCollections"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
+	Id           *string `pulumi:"id"`
 	IdcsOpenId   *string `pulumi:"idcsOpenId"`
 	VbInstanceId string  `pulumi:"vbInstanceId"`
 }
@@ -110,12 +109,6 @@ func (o GetVbInstanceApplicationsResultOutput) ToGetVbInstanceApplicationsResult
 	return o
 }
 
-func (o GetVbInstanceApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsResult] {
-	return pulumix.Output[GetVbInstanceApplicationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of application_summary_collection.
 func (o GetVbInstanceApplicationsResultOutput) ApplicationSummaryCollections() GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput {
 	return o.ApplyT(func(v GetVbInstanceApplicationsResult) []GetVbInstanceApplicationsApplicationSummaryCollection {
@@ -124,8 +117,8 @@ func (o GetVbInstanceApplicationsResultOutput) ApplicationSummaryCollections() G
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVbInstanceApplicationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceApplicationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVbInstanceApplicationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceApplicationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVbInstanceApplicationsResultOutput) IdcsOpenId() pulumi.StringPtrOutput {

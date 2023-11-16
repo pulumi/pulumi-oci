@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -65,20 +64,20 @@ type HeatWaveCluster struct {
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
-	IsLakehouseEnabled pulumi.BoolOutput `pulumi:"isLakehouseEnabled"`
+	IsLakehouseEnabled pulumi.BoolPtrOutput `pulumi:"isLakehouseEnabled"`
 	// Additional information about the current lifecycleState.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewHeatWaveCluster registers a new resource with the given unique name, arguments, and options.
@@ -227,12 +226,6 @@ func (i *HeatWaveCluster) ToHeatWaveClusterOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterOutput)
 }
 
-func (i *HeatWaveCluster) ToOutput(ctx context.Context) pulumix.Output[*HeatWaveCluster] {
-	return pulumix.Output[*HeatWaveCluster]{
-		OutputState: i.ToHeatWaveClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HeatWaveClusterArrayInput is an input type that accepts HeatWaveClusterArray and HeatWaveClusterArrayOutput values.
 // You can construct a concrete instance of `HeatWaveClusterArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i HeatWaveClusterArray) ToHeatWaveClusterArrayOutput() HeatWaveClusterArra
 
 func (i HeatWaveClusterArray) ToHeatWaveClusterArrayOutputWithContext(ctx context.Context) HeatWaveClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterArrayOutput)
-}
-
-func (i HeatWaveClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*HeatWaveCluster] {
-	return pulumix.Output[[]*HeatWaveCluster]{
-		OutputState: i.ToHeatWaveClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // HeatWaveClusterMapInput is an input type that accepts HeatWaveClusterMap and HeatWaveClusterMapOutput values.
@@ -289,12 +276,6 @@ func (i HeatWaveClusterMap) ToHeatWaveClusterMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(HeatWaveClusterMapOutput)
 }
 
-func (i HeatWaveClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HeatWaveCluster] {
-	return pulumix.Output[map[string]*HeatWaveCluster]{
-		OutputState: i.ToHeatWaveClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HeatWaveClusterOutput struct{ *pulumi.OutputState }
 
 func (HeatWaveClusterOutput) ElementType() reflect.Type {
@@ -307,12 +288,6 @@ func (o HeatWaveClusterOutput) ToHeatWaveClusterOutput() HeatWaveClusterOutput {
 
 func (o HeatWaveClusterOutput) ToHeatWaveClusterOutputWithContext(ctx context.Context) HeatWaveClusterOutput {
 	return o
-}
-
-func (o HeatWaveClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*HeatWaveCluster] {
-	return pulumix.Output[*HeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A HeatWave node is a compute host that is part of a HeatWave cluster.
@@ -331,13 +306,13 @@ func (o HeatWaveClusterOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
-func (o HeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *HeatWaveCluster) pulumi.BoolOutput { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
+func (o HeatWaveClusterOutput) IsLakehouseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HeatWaveCluster) pulumi.BoolPtrOutput { return v.IsLakehouseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycleState.
-func (o HeatWaveClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o HeatWaveClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
@@ -349,18 +324,18 @@ func (o HeatWaveClusterOutput) ShapeName() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o HeatWaveClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o HeatWaveClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o HeatWaveClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o HeatWaveClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o HeatWaveClusterOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o HeatWaveClusterOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HeatWaveCluster) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type HeatWaveClusterArrayOutput struct{ *pulumi.OutputState }
@@ -375,12 +350,6 @@ func (o HeatWaveClusterArrayOutput) ToHeatWaveClusterArrayOutput() HeatWaveClust
 
 func (o HeatWaveClusterArrayOutput) ToHeatWaveClusterArrayOutputWithContext(ctx context.Context) HeatWaveClusterArrayOutput {
 	return o
-}
-
-func (o HeatWaveClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HeatWaveCluster] {
-	return pulumix.Output[[]*HeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HeatWaveClusterArrayOutput) Index(i pulumi.IntInput) HeatWaveClusterOutput {
@@ -401,12 +370,6 @@ func (o HeatWaveClusterMapOutput) ToHeatWaveClusterMapOutput() HeatWaveClusterMa
 
 func (o HeatWaveClusterMapOutput) ToHeatWaveClusterMapOutputWithContext(ctx context.Context) HeatWaveClusterMapOutput {
 	return o
-}
-
-func (o HeatWaveClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HeatWaveCluster] {
-	return pulumix.Output[map[string]*HeatWaveCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HeatWaveClusterMapOutput) MapIndex(k pulumi.StringInput) HeatWaveClusterOutput {

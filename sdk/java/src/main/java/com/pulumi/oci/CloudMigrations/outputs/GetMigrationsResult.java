@@ -29,12 +29,12 @@ public final class GetMigrationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of migration_collection.
      * 
      */
-    private List<GetMigrationsMigrationCollection> migrationCollections;
+    private @Nullable List<GetMigrationsMigrationCollection> migrationCollections;
     private @Nullable String migrationId;
     /**
      * @return The current state of migration.
@@ -64,15 +64,15 @@ public final class GetMigrationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of migration_collection.
      * 
      */
     public List<GetMigrationsMigrationCollection> migrationCollections() {
-        return this.migrationCollections;
+        return this.migrationCollections == null ? List.of() : this.migrationCollections;
     }
     public Optional<String> migrationId() {
         return Optional.ofNullable(this.migrationId);
@@ -97,8 +97,8 @@ public final class GetMigrationsResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetMigrationsFilter> filters;
-        private String id;
-        private List<GetMigrationsMigrationCollection> migrationCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMigrationsMigrationCollection> migrationCollections;
         private @Nullable String migrationId;
         private @Nullable String state;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetMigrationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder migrationCollections(List<GetMigrationsMigrationCollection> migrationCollections) {
-            this.migrationCollections = Objects.requireNonNull(migrationCollections);
+        public Builder migrationCollections(@Nullable List<GetMigrationsMigrationCollection> migrationCollections) {
+            this.migrationCollections = migrationCollections;
             return this;
         }
         public Builder migrationCollections(GetMigrationsMigrationCollection... migrationCollections) {

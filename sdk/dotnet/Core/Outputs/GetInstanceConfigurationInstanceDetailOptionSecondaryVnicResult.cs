@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         /// </summary>
-        public readonly int NicIndex;
+        public readonly int? NicIndex;
 
         [OutputConstructor]
         private GetInstanceConfigurationInstanceDetailOptionSecondaryVnicResult(
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailResult> createVnicDetails,
 
-            string displayName,
+            string? displayName,
 
-            int nicIndex)
+            int? nicIndex)
         {
             CreateVnicDetails = createVnicDetails;
             DisplayName = displayName;

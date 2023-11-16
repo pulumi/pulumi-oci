@@ -6,6 +6,8 @@ package com.pulumi.oci.AiAnomalyDetection.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
@@ -13,63 +15,63 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
      * @return Bucket Name for influx connection
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return DB Name for influx connection
      * 
      */
-    private String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return Data source type where actually data asset is being stored
      * 
      */
-    private String influxVersion;
+    private @Nullable String influxVersion;
     /**
      * @return Org name for the influx db
      * 
      */
-    private String organizationName;
+    private @Nullable String organizationName;
     /**
      * @return retention policy is how long the bucket would last
      * 
      */
-    private String retentionPolicyName;
+    private @Nullable String retentionPolicyName;
 
     private GetDetectionDataAssetDataSourceDetailVersionSpecificDetail() {}
     /**
      * @return Bucket Name for influx connection
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return DB Name for influx connection
      * 
      */
-    public String databaseName() {
-        return this.databaseName;
+    public Optional<String> databaseName() {
+        return Optional.ofNullable(this.databaseName);
     }
     /**
      * @return Data source type where actually data asset is being stored
      * 
      */
-    public String influxVersion() {
-        return this.influxVersion;
+    public Optional<String> influxVersion() {
+        return Optional.ofNullable(this.influxVersion);
     }
     /**
      * @return Org name for the influx db
      * 
      */
-    public String organizationName() {
-        return this.organizationName;
+    public Optional<String> organizationName() {
+        return Optional.ofNullable(this.organizationName);
     }
     /**
      * @return retention policy is how long the bucket would last
      * 
      */
-    public String retentionPolicyName() {
-        return this.retentionPolicyName;
+    public Optional<String> retentionPolicyName() {
+        return Optional.ofNullable(this.retentionPolicyName);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String databaseName;
-        private String influxVersion;
-        private String organizationName;
-        private String retentionPolicyName;
+        private @Nullable String bucket;
+        private @Nullable String databaseName;
+        private @Nullable String influxVersion;
+        private @Nullable String organizationName;
+        private @Nullable String retentionPolicyName;
         public Builder() {}
         public Builder(GetDetectionDataAssetDataSourceDetailVersionSpecificDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+        public Builder databaseName(@Nullable String databaseName) {
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder influxVersion(String influxVersion) {
-            this.influxVersion = Objects.requireNonNull(influxVersion);
+        public Builder influxVersion(@Nullable String influxVersion) {
+            this.influxVersion = influxVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder organizationName(String organizationName) {
-            this.organizationName = Objects.requireNonNull(organizationName);
+        public Builder organizationName(@Nullable String organizationName) {
+            this.organizationName = organizationName;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionPolicyName(String retentionPolicyName) {
-            this.retentionPolicyName = Objects.requireNonNull(retentionPolicyName);
+        public Builder retentionPolicyName(@Nullable String retentionPolicyName) {
+            this.retentionPolicyName = retentionPolicyName;
             return this;
         }
         public GetDetectionDataAssetDataSourceDetailVersionSpecificDetail build() {

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The name of a module.  This parameter is required if a streamName is specified.
         /// </summary>
-        public readonly string ModuleName;
+        public readonly string? ModuleName;
         /// <summary>
         /// The name of the profile
         /// </summary>
-        public readonly string ProfileName;
+        public readonly string? ProfileName;
         /// <summary>
         /// The status of the stream
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         /// </summary>
-        public readonly string StreamName;
+        public readonly string? StreamName;
         /// <summary>
         /// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
 
         [OutputConstructor]
         private GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult(
-            string moduleName,
+            string? moduleName,
 
-            string profileName,
+            string? profileName,
 
-            string status,
+            string? status,
 
-            string streamName,
+            string? streamName,
 
-            string timeModified)
+            string? timeModified)
         {
             ModuleName = moduleName;
             ProfileName = profileName;

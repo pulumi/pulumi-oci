@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Nosql
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Human-friendly table name, immutable.
         /// </summary>
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.Nosql
 
             ImmutableArray<Outputs.GetTablesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

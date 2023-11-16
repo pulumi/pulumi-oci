@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The license type description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The license type identifier.  Example: "oracle-apps-premium"
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
         /// <summary>
         /// The license type name.  Example: "Oracle Apps Premium"
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAllowedDomainLicenseTypesAllowedDomainLicenseTypeResult(
-            string description,
+            string? description,
 
-            string licenseType,
+            string? licenseType,
 
-            string name)
+            string? name)
         {
             Description = description;
             LicenseType = licenseType;

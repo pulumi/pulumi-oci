@@ -78,7 +78,7 @@ export class PathRouteSet extends pulumi.CustomResource {
      * (Updatable) The set of path route rules.
      */
     public readonly pathRoutes!: pulumi.Output<outputs.LoadBalancer.PathRouteSetPathRoute[]>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PathRouteSet resource with the given unique name, arguments, and options.

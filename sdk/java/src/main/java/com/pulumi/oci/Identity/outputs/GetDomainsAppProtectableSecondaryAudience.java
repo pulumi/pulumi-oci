@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppProtectableSecondaryAudience {
@@ -14,27 +16,27 @@ public final class GetDomainsAppProtectableSecondaryAudience {
      * @return If true, indicates that this value must be protected.
      * 
      */
-    private Boolean readOnly;
+    private @Nullable Boolean readOnly;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppProtectableSecondaryAudience() {}
     /**
      * @return If true, indicates that this value must be protected.
      * 
      */
-    public Boolean readOnly() {
-        return this.readOnly;
+    public Optional<Boolean> readOnly() {
+        return Optional.ofNullable(this.readOnly);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDomainsAppProtectableSecondaryAudience {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean readOnly;
-        private String value;
+        private @Nullable Boolean readOnly;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppProtectableSecondaryAudience defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDomainsAppProtectableSecondaryAudience {
         }
 
         @CustomType.Setter
-        public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+        public Builder readOnly(@Nullable Boolean readOnly) {
+            this.readOnly = readOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppProtectableSecondaryAudience build() {

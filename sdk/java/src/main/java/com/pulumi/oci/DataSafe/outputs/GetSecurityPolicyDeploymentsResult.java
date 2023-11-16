@@ -32,12 +32,12 @@ public final class GetSecurityPolicyDeploymentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of security_policy_deployment_collection.
      * 
      */
-    private List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections;
+    private @Nullable List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections;
     private @Nullable String securityPolicyDeploymentId;
     /**
      * @return The OCID of the security policy corresponding to the security policy deployment.
@@ -83,15 +83,15 @@ public final class GetSecurityPolicyDeploymentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of security_policy_deployment_collection.
      * 
      */
     public List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections() {
-        return this.securityPolicyDeploymentCollections;
+        return this.securityPolicyDeploymentCollections == null ? List.of() : this.securityPolicyDeploymentCollections;
     }
     public Optional<String> securityPolicyDeploymentId() {
         return Optional.ofNullable(this.securityPolicyDeploymentId);
@@ -132,8 +132,8 @@ public final class GetSecurityPolicyDeploymentsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetSecurityPolicyDeploymentsFilter> filters;
-        private String id;
-        private List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections;
         private @Nullable String securityPolicyDeploymentId;
         private @Nullable String securityPolicyId;
         private @Nullable String state;
@@ -183,13 +183,13 @@ public final class GetSecurityPolicyDeploymentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyDeploymentCollections(List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections) {
-            this.securityPolicyDeploymentCollections = Objects.requireNonNull(securityPolicyDeploymentCollections);
+        public Builder securityPolicyDeploymentCollections(@Nullable List<GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection> securityPolicyDeploymentCollections) {
+            this.securityPolicyDeploymentCollections = securityPolicyDeploymentCollections;
             return this;
         }
         public Builder securityPolicyDeploymentCollections(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection... securityPolicyDeploymentCollections) {

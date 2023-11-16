@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -60,32 +59,32 @@ type LookupOutboundConnectorArgs struct {
 // A collection of values returned by getOutboundConnector.
 type LookupOutboundConnectorResult struct {
 	// The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The LDAP Distinguished Name of the account.
-	BindDistinguishedName string `pulumi:"bindDistinguishedName"`
+	BindDistinguishedName *string `pulumi:"bindDistinguishedName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The account type of this outbound connector.
-	ConnectorType string `pulumi:"connectorType"`
+	ConnectorType *string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []GetOutboundConnectorEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
-	Id                  string `pulumi:"id"`
-	OutboundConnectorId string `pulumi:"outboundConnectorId"`
+	Id                  *string `pulumi:"id"`
+	OutboundConnectorId string  `pulumi:"outboundConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
-	PasswordSecretVersion int `pulumi:"passwordSecretVersion"`
+	PasswordSecretVersion *int `pulumi:"passwordSecretVersion"`
 	// The current state of this outbound connector.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupOutboundConnectorOutput(ctx *pulumi.Context, args LookupOutboundConnectorOutputArgs, opts ...pulumi.InvokeOption) LookupOutboundConnectorResultOutput {
@@ -126,30 +125,24 @@ func (o LookupOutboundConnectorResultOutput) ToLookupOutboundConnectorResultOutp
 	return o
 }
 
-func (o LookupOutboundConnectorResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOutboundConnectorResult] {
-	return pulumix.Output[LookupOutboundConnectorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-func (o LookupOutboundConnectorResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The LDAP Distinguished Name of the account.
-func (o LookupOutboundConnectorResultOutput) BindDistinguishedName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.BindDistinguishedName }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) BindDistinguishedName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.BindDistinguishedName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
-func (o LookupOutboundConnectorResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The account type of this outbound connector.
-func (o LookupOutboundConnectorResultOutput) ConnectorType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.ConnectorType }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) ConnectorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.ConnectorType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -158,8 +151,8 @@ func (o LookupOutboundConnectorResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-func (o LookupOutboundConnectorResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Array of server endpoints to use when connecting with the LDAP bind account.
@@ -173,8 +166,8 @@ func (o LookupOutboundConnectorResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
-func (o LookupOutboundConnectorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOutboundConnectorResultOutput) OutboundConnectorId() pulumi.StringOutput {
@@ -182,23 +175,23 @@ func (o LookupOutboundConnectorResultOutput) OutboundConnectorId() pulumi.String
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-func (o LookupOutboundConnectorResultOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Version of the password secret in the Vault to use.
-func (o LookupOutboundConnectorResultOutput) PasswordSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) int { return v.PasswordSecretVersion }).(pulumi.IntOutput)
+func (o LookupOutboundConnectorResultOutput) PasswordSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *int { return v.PasswordSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // The current state of this outbound connector.
-func (o LookupOutboundConnectorResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupOutboundConnectorResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOutboundConnectorResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

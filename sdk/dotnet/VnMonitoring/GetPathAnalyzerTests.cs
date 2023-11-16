@@ -163,7 +163,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of path_analyzer_test_collection.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.VnMonitoring
 
             ImmutableArray<Outputs.GetPathAnalyzerTestsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionResult> pathAnalyzerTestCollections,
 

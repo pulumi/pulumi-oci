@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Core
         private GetImageShapesResult(
             ImmutableArray<Outputs.GetImageShapesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string imageId,
 

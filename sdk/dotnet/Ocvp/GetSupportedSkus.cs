@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of the supported SKUs.
         /// </summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Ocvp
 
             string? hostShapeName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSupportedSkusItemResult> items)
         {

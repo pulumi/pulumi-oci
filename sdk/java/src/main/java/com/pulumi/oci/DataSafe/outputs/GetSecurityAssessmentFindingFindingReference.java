@@ -6,22 +6,24 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentFindingFindingReference {
-    private String cis;
-    private String gdpr;
-    private String stig;
+    private @Nullable String cis;
+    private @Nullable String gdpr;
+    private @Nullable String stig;
 
     private GetSecurityAssessmentFindingFindingReference() {}
-    public String cis() {
-        return this.cis;
+    public Optional<String> cis() {
+        return Optional.ofNullable(this.cis);
     }
-    public String gdpr() {
-        return this.gdpr;
+    public Optional<String> gdpr() {
+        return Optional.ofNullable(this.gdpr);
     }
-    public String stig() {
-        return this.stig;
+    public Optional<String> stig() {
+        return Optional.ofNullable(this.stig);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetSecurityAssessmentFindingFindingReference {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cis;
-        private String gdpr;
-        private String stig;
+        private @Nullable String cis;
+        private @Nullable String gdpr;
+        private @Nullable String stig;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingFindingReference defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetSecurityAssessmentFindingFindingReference {
         }
 
         @CustomType.Setter
-        public Builder cis(String cis) {
-            this.cis = Objects.requireNonNull(cis);
+        public Builder cis(@Nullable String cis) {
+            this.cis = cis;
             return this;
         }
         @CustomType.Setter
-        public Builder gdpr(String gdpr) {
-            this.gdpr = Objects.requireNonNull(gdpr);
+        public Builder gdpr(@Nullable String gdpr) {
+            this.gdpr = gdpr;
             return this;
         }
         @CustomType.Setter
-        public Builder stig(String stig) {
-            this.stig = Objects.requireNonNull(stig);
+        public Builder stig(@Nullable String stig) {
+            this.stig = stig;
             return this;
         }
         public GetSecurityAssessmentFindingFindingReference build() {

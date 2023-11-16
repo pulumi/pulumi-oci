@@ -10,6 +10,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProductLicenseConsumersItem {
@@ -17,147 +19,147 @@ public final class GetProductLicenseConsumersItem {
      * @return Specifies if all options are available.
      * 
      */
-    private Boolean areAllOptionsAvailable;
+    private @Nullable Boolean areAllOptionsAvailable;
     /**
      * @return Specifies if the base license is available.
      * 
      */
-    private Boolean isBaseLicenseAvailable;
+    private @Nullable Boolean isBaseLicenseAvailable;
     /**
      * @return The product license unit.
      * 
      */
-    private String licenseUnitType;
+    private @Nullable String licenseUnitType;
     /**
      * @return Number of license units consumed by the resource.
      * 
      */
-    private Double licenseUnitsConsumed;
+    private @Nullable Double licenseUnitsConsumed;
     /**
      * @return Collection of missing product licenses.
      * 
      */
-    private List<GetProductLicenseConsumersItemMissingProduct> missingProducts;
+    private @Nullable List<GetProductLicenseConsumersItemMissingProduct> missingProducts;
     /**
      * @return The resource product name.
      * 
      */
-    private String productName;
+    private @Nullable String productName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
      * 
      */
-    private String resourceCompartmentId;
+    private @Nullable String resourceCompartmentId;
     /**
      * @return The display name of the compartment that contains the resource.
      * 
      */
-    private String resourceCompartmentName;
+    private @Nullable String resourceCompartmentName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The display name of the resource.
      * 
      */
-    private String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return Number of units of the resource
      * 
      */
-    private Double resourceUnitCount;
+    private @Nullable Double resourceUnitCount;
     /**
      * @return The unit type for the resource.
      * 
      */
-    private String resourceUnitType;
+    private @Nullable String resourceUnitType;
 
     private GetProductLicenseConsumersItem() {}
     /**
      * @return Specifies if all options are available.
      * 
      */
-    public Boolean areAllOptionsAvailable() {
-        return this.areAllOptionsAvailable;
+    public Optional<Boolean> areAllOptionsAvailable() {
+        return Optional.ofNullable(this.areAllOptionsAvailable);
     }
     /**
      * @return Specifies if the base license is available.
      * 
      */
-    public Boolean isBaseLicenseAvailable() {
-        return this.isBaseLicenseAvailable;
+    public Optional<Boolean> isBaseLicenseAvailable() {
+        return Optional.ofNullable(this.isBaseLicenseAvailable);
     }
     /**
      * @return The product license unit.
      * 
      */
-    public String licenseUnitType() {
-        return this.licenseUnitType;
+    public Optional<String> licenseUnitType() {
+        return Optional.ofNullable(this.licenseUnitType);
     }
     /**
      * @return Number of license units consumed by the resource.
      * 
      */
-    public Double licenseUnitsConsumed() {
-        return this.licenseUnitsConsumed;
+    public Optional<Double> licenseUnitsConsumed() {
+        return Optional.ofNullable(this.licenseUnitsConsumed);
     }
     /**
      * @return Collection of missing product licenses.
      * 
      */
     public List<GetProductLicenseConsumersItemMissingProduct> missingProducts() {
-        return this.missingProducts;
+        return this.missingProducts == null ? List.of() : this.missingProducts;
     }
     /**
      * @return The resource product name.
      * 
      */
-    public String productName() {
-        return this.productName;
+    public Optional<String> productName() {
+        return Optional.ofNullable(this.productName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the resource.
      * 
      */
-    public String resourceCompartmentId() {
-        return this.resourceCompartmentId;
+    public Optional<String> resourceCompartmentId() {
+        return Optional.ofNullable(this.resourceCompartmentId);
     }
     /**
      * @return The display name of the compartment that contains the resource.
      * 
      */
-    public String resourceCompartmentName() {
-        return this.resourceCompartmentName;
+    public Optional<String> resourceCompartmentName() {
+        return Optional.ofNullable(this.resourceCompartmentName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The display name of the resource.
      * 
      */
-    public String resourceName() {
-        return this.resourceName;
+    public Optional<String> resourceName() {
+        return Optional.ofNullable(this.resourceName);
     }
     /**
      * @return Number of units of the resource
      * 
      */
-    public Double resourceUnitCount() {
-        return this.resourceUnitCount;
+    public Optional<Double> resourceUnitCount() {
+        return Optional.ofNullable(this.resourceUnitCount);
     }
     /**
      * @return The unit type for the resource.
      * 
      */
-    public String resourceUnitType() {
-        return this.resourceUnitType;
+    public Optional<String> resourceUnitType() {
+        return Optional.ofNullable(this.resourceUnitType);
     }
 
     public static Builder builder() {
@@ -169,18 +171,18 @@ public final class GetProductLicenseConsumersItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areAllOptionsAvailable;
-        private Boolean isBaseLicenseAvailable;
-        private String licenseUnitType;
-        private Double licenseUnitsConsumed;
-        private List<GetProductLicenseConsumersItemMissingProduct> missingProducts;
-        private String productName;
-        private String resourceCompartmentId;
-        private String resourceCompartmentName;
-        private String resourceId;
-        private String resourceName;
-        private Double resourceUnitCount;
-        private String resourceUnitType;
+        private @Nullable Boolean areAllOptionsAvailable;
+        private @Nullable Boolean isBaseLicenseAvailable;
+        private @Nullable String licenseUnitType;
+        private @Nullable Double licenseUnitsConsumed;
+        private @Nullable List<GetProductLicenseConsumersItemMissingProduct> missingProducts;
+        private @Nullable String productName;
+        private @Nullable String resourceCompartmentId;
+        private @Nullable String resourceCompartmentName;
+        private @Nullable String resourceId;
+        private @Nullable String resourceName;
+        private @Nullable Double resourceUnitCount;
+        private @Nullable String resourceUnitType;
         public Builder() {}
         public Builder(GetProductLicenseConsumersItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -199,66 +201,66 @@ public final class GetProductLicenseConsumersItem {
         }
 
         @CustomType.Setter
-        public Builder areAllOptionsAvailable(Boolean areAllOptionsAvailable) {
-            this.areAllOptionsAvailable = Objects.requireNonNull(areAllOptionsAvailable);
+        public Builder areAllOptionsAvailable(@Nullable Boolean areAllOptionsAvailable) {
+            this.areAllOptionsAvailable = areAllOptionsAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder isBaseLicenseAvailable(Boolean isBaseLicenseAvailable) {
-            this.isBaseLicenseAvailable = Objects.requireNonNull(isBaseLicenseAvailable);
+        public Builder isBaseLicenseAvailable(@Nullable Boolean isBaseLicenseAvailable) {
+            this.isBaseLicenseAvailable = isBaseLicenseAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseUnitType(String licenseUnitType) {
-            this.licenseUnitType = Objects.requireNonNull(licenseUnitType);
+        public Builder licenseUnitType(@Nullable String licenseUnitType) {
+            this.licenseUnitType = licenseUnitType;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseUnitsConsumed(Double licenseUnitsConsumed) {
-            this.licenseUnitsConsumed = Objects.requireNonNull(licenseUnitsConsumed);
+        public Builder licenseUnitsConsumed(@Nullable Double licenseUnitsConsumed) {
+            this.licenseUnitsConsumed = licenseUnitsConsumed;
             return this;
         }
         @CustomType.Setter
-        public Builder missingProducts(List<GetProductLicenseConsumersItemMissingProduct> missingProducts) {
-            this.missingProducts = Objects.requireNonNull(missingProducts);
+        public Builder missingProducts(@Nullable List<GetProductLicenseConsumersItemMissingProduct> missingProducts) {
+            this.missingProducts = missingProducts;
             return this;
         }
         public Builder missingProducts(GetProductLicenseConsumersItemMissingProduct... missingProducts) {
             return missingProducts(List.of(missingProducts));
         }
         @CustomType.Setter
-        public Builder productName(String productName) {
-            this.productName = Objects.requireNonNull(productName);
+        public Builder productName(@Nullable String productName) {
+            this.productName = productName;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+        public Builder resourceCompartmentId(@Nullable String resourceCompartmentId) {
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceCompartmentName(String resourceCompartmentName) {
-            this.resourceCompartmentName = Objects.requireNonNull(resourceCompartmentName);
+        public Builder resourceCompartmentName(@Nullable String resourceCompartmentName) {
+            this.resourceCompartmentName = resourceCompartmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+        public Builder resourceName(@Nullable String resourceName) {
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceUnitCount(Double resourceUnitCount) {
-            this.resourceUnitCount = Objects.requireNonNull(resourceUnitCount);
+        public Builder resourceUnitCount(@Nullable Double resourceUnitCount) {
+            this.resourceUnitCount = resourceUnitCount;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceUnitType(String resourceUnitType) {
-            this.resourceUnitType = Objects.requireNonNull(resourceUnitType);
+        public Builder resourceUnitType(@Nullable String resourceUnitType) {
+            this.resourceUnitType = resourceUnitType;
             return this;
         }
         public GetProductLicenseConsumersItem build() {

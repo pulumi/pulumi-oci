@@ -108,7 +108,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// This is an array of encryption key info. There are at most 2 items in the list.
         /// </summary>
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.LogAnalytics
 
         [OutputConstructor]
         private GetNamespaceStorageEncryptionKeyInfoResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNamespaceStorageEncryptionKeyInfoItemResult> items,
 

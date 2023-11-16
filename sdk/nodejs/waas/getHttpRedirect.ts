@@ -47,44 +47,44 @@ export interface GetHttpRedirectResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The domain from which traffic will be redirected.
      */
-    readonly domain: string;
+    readonly domain?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     readonly httpRedirectId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
      */
-    readonly responseCode: number;
+    readonly responseCode?: number;
     /**
      * The current lifecycle state of the HTTP Redirect.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The redirect target object including all the redirect data.
      */
-    readonly targets: outputs.Waas.GetHttpRedirectTarget[];
+    readonly targets?: outputs.Waas.GetHttpRedirectTarget[];
     /**
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

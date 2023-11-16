@@ -22,14 +22,6 @@ class ExternalContainerDatabaseArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a ExternalContainerDatabase resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -41,9 +33,6 @@ class ExternalContainerDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -53,9 +42,6 @@ class ExternalContainerDatabaseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -65,9 +51,6 @@ class ExternalContainerDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -77,13 +60,6 @@ class ExternalContainerDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -114,28 +90,6 @@ class _ExternalContainerDatabaseState:
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalContainerDatabase resources.
-        :param pulumi.Input[str] character_set: The character set of the external database.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] database_configuration: The Oracle Database configuration
-        :param pulumi.Input[str] database_edition: The Oracle Database edition.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseDatabaseManagementConfigArgs']]] database_management_configs: The configuration of the Database Management service.
-        :param pulumi.Input[str] database_version: The Oracle Database version.
-        :param pulumi.Input[str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-        :param pulumi.Input[str] db_packs: The database packs licensed for the external Oracle Database.
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the external database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] ncharacter_set: The national character of the external database.
-        :param pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseStackMonitoringConfigArgs']]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
-        :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
-        :param pulumi.Input[str] time_created: The date and time the database was created.
-        :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         """
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
@@ -177,9 +131,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The character set of the external database.
-        """
         return pulumi.get(self, "character_set")
 
     @character_set.setter
@@ -189,9 +140,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -201,9 +149,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="databaseConfiguration")
     def database_configuration(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database configuration
-        """
         return pulumi.get(self, "database_configuration")
 
     @database_configuration.setter
@@ -213,9 +158,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database edition.
-        """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
@@ -225,9 +167,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="databaseManagementConfigs")
     def database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseDatabaseManagementConfigArgs']]]]:
-        """
-        The configuration of the Database Management service.
-        """
         return pulumi.get(self, "database_management_configs")
 
     @database_management_configs.setter
@@ -237,9 +176,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database version.
-        """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
@@ -249,9 +185,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="dbId")
     def db_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-        """
         return pulumi.get(self, "db_id")
 
     @db_id.setter
@@ -261,9 +194,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="dbPacks")
     def db_packs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database packs licensed for the external Oracle Database.
-        """
         return pulumi.get(self, "db_packs")
 
     @db_packs.setter
@@ -273,9 +203,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The `DB_UNIQUE_NAME` of the external database.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -285,9 +212,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -297,9 +221,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -309,13 +230,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -325,9 +239,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -337,9 +248,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="ncharacterSet")
     def ncharacter_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The national character of the external database.
-        """
         return pulumi.get(self, "ncharacter_set")
 
     @ncharacter_set.setter
@@ -349,9 +257,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="stackMonitoringConfigs")
     def stack_monitoring_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseStackMonitoringConfigArgs']]]]:
-        """
-        The configuration of Stack Monitoring for the external database.
-        """
         return pulumi.get(self, "stack_monitoring_configs")
 
     @stack_monitoring_configs.setter
@@ -361,9 +266,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Oracle Cloud Infrastructure external database resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -373,9 +275,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the database was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -385,9 +284,6 @@ class _ExternalContainerDatabaseState:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -406,43 +302,9 @@ class ExternalContainerDatabase(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new external container database resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_container_database = oci.database.ExternalContainerDatabase("testExternalContainerDatabase",
-            compartment_id=var["compartment_id"],
-            display_name=var["external_container_database_display_name"],
-            defined_tags=var["external_container_database_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ExternalContainerDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/externalContainerDatabase:ExternalContainerDatabase test_external_container_database "id"
-        ```
-
+        Create a ExternalContainerDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -451,33 +313,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
                  args: ExternalContainerDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new external container database resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_external_container_database = oci.database.ExternalContainerDatabase("testExternalContainerDatabase",
-            compartment_id=var["compartment_id"],
-            display_name=var["external_container_database_display_name"],
-            defined_tags=var["external_container_database_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ExternalContainerDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/externalContainerDatabase:ExternalContainerDatabase test_external_container_database "id"
-        ```
-
+        Create a ExternalContainerDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalContainerDatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -563,28 +399,6 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] character_set: The character set of the external database.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] database_configuration: The Oracle Database configuration
-        :param pulumi.Input[str] database_edition: The Oracle Database edition.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalContainerDatabaseDatabaseManagementConfigArgs']]]] database_management_configs: The configuration of the Database Management service.
-        :param pulumi.Input[str] database_version: The Oracle Database version.
-        :param pulumi.Input[str] db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-        :param pulumi.Input[str] db_packs: The database packs licensed for the external Oracle Database.
-        :param pulumi.Input[str] db_unique_name: The `DB_UNIQUE_NAME` of the external database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] ncharacter_set: The national character of the external database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExternalContainerDatabaseStackMonitoringConfigArgs']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
-        :param pulumi.Input[str] state: The current state of the Oracle Cloud Infrastructure external database resource.
-        :param pulumi.Input[str] time_created: The date and time the database was created.
-        :param pulumi.Input[str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -612,149 +426,91 @@ class ExternalContainerDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="characterSet")
-    def character_set(self) -> pulumi.Output[str]:
-        """
-        The character set of the external database.
-        """
+    def character_set(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "character_set")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseConfiguration")
-    def database_configuration(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database configuration
-        """
+    def database_configuration(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_configuration")
 
     @property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database edition.
-        """
+    def database_edition(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_edition")
 
     @property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> pulumi.Output[Sequence['outputs.ExternalContainerDatabaseDatabaseManagementConfig']]:
-        """
-        The configuration of the Database Management service.
-        """
+    def database_management_configs(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalContainerDatabaseDatabaseManagementConfig']]]:
         return pulumi.get(self, "database_management_configs")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database version.
-        """
+    def database_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter(name="dbId")
-    def db_id(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-        """
+    def db_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_id")
 
     @property
     @pulumi.getter(name="dbPacks")
-    def db_packs(self) -> pulumi.Output[str]:
-        """
-        The database packs licensed for the external Oracle Database.
-        """
+    def db_packs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_packs")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> pulumi.Output[str]:
-        """
-        The `DB_UNIQUE_NAME` of the external database.
-        """
+    def db_unique_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the external database. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="ncharacterSet")
-    def ncharacter_set(self) -> pulumi.Output[str]:
-        """
-        The national character of the external database.
-        """
+    def ncharacter_set(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ncharacter_set")
 
     @property
     @pulumi.getter(name="stackMonitoringConfigs")
-    def stack_monitoring_configs(self) -> pulumi.Output[Sequence['outputs.ExternalContainerDatabaseStackMonitoringConfig']]:
-        """
-        The configuration of Stack Monitoring for the external database.
-        """
+    def stack_monitoring_configs(self) -> pulumi.Output[Optional[Sequence['outputs.ExternalContainerDatabaseStackMonitoringConfig']]]:
         return pulumi.get(self, "stack_monitoring_configs")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Oracle Cloud Infrastructure external database resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the database was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> pulumi.Output[str]:
-        """
-        The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-        """
+    def time_zone(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_zone")
 

@@ -40,11 +40,11 @@ export interface GetCompatibleFormatsForDataTypeResult {
     /**
      * An array of lists of basic masking formats compatible with the supported data types.
      */
-    readonly formatsForDataTypes: outputs.DataSafe.GetCompatibleFormatsForDataTypeFormatsForDataType[];
+    readonly formatsForDataTypes?: outputs.DataSafe.GetCompatibleFormatsForDataTypeFormatsForDataType[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.

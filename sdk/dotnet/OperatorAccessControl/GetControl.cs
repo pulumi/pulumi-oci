@@ -120,15 +120,15 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// The OCID of the compartment that contains the operator control.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Description of operator control.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// List of emailId.
         /// </summary>
@@ -136,28 +136,28 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the operator control.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the operator control is a default Operator Control.
         /// </summary>
-        public readonly bool IsDefaultOperatorControl;
+        public readonly bool? IsDefaultOperatorControl;
         /// <summary>
         /// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         /// </summary>
-        public readonly bool IsFullyPreApproved;
+        public readonly bool? IsFullyPreApproved;
         /// <summary>
         /// Description associated with the latest modification of the operator control.
         /// </summary>
-        public readonly string LastModifiedInfo;
+        public readonly string? LastModifiedInfo;
         public readonly string OperatorControlId;
         /// <summary>
         /// Name of the operator control. The name must be unique.
         /// </summary>
-        public readonly string OperatorControlName;
+        public readonly string? OperatorControlName;
         /// <summary>
         /// List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
         /// </summary>
@@ -165,27 +165,27 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// resourceType for which the OperatorControl is applicable
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The current lifecycle state of the operator control.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
         /// </summary>
-        public readonly string SystemMessage;
+        public readonly string? SystemMessage;
         /// <summary>
         /// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeOfCreation;
+        public readonly string? TimeOfCreation;
         /// <summary>
         /// Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeOfModification;
+        public readonly string? TimeOfModification;
 
         [OutputConstructor]
         private GetControlResult(
@@ -195,41 +195,41 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             ImmutableArray<string> approversLists,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
             ImmutableArray<string> emailIdLists,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isDefaultOperatorControl,
+            bool? isDefaultOperatorControl,
 
-            bool isFullyPreApproved,
+            bool? isFullyPreApproved,
 
-            string lastModifiedInfo,
+            string? lastModifiedInfo,
 
             string operatorControlId,
 
-            string operatorControlName,
+            string? operatorControlName,
 
             ImmutableArray<string> preApprovedOpActionLists,
 
-            string resourceType,
+            string? resourceType,
 
-            string state,
+            string? state,
 
-            string systemMessage,
+            string? systemMessage,
 
-            string timeOfCreation,
+            string? timeOfCreation,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string timeOfModification)
+            string? timeOfModification)
         {
             ApprovalRequiredOpActionLists = approvalRequiredOpActionLists;
             ApproverGroupsLists = approverGroupsLists;

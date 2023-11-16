@@ -52,63 +52,63 @@ export class Alert extends pulumi.CustomResource {
     /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */
-    public /*out*/ readonly alertType!: pulumi.Output<string>;
+    public /*out*/ readonly alertType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A comment can be entered to track the alert changes done by the user.
      */
-    public readonly comment!: pulumi.Output<string>;
+    public readonly comment!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the alert.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The description of the alert.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    public /*out*/ readonly description!: pulumi.Output<string | undefined>;
     /**
      * The display name of the alert.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
      */
-    public /*out*/ readonly featureDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly featureDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The operation (event) that triggered alert.
      */
-    public /*out*/ readonly operation!: pulumi.Output<string>;
+    public /*out*/ readonly operation!: pulumi.Output<string | undefined>;
     /**
      * The result of the operation (event) that triggered alert.
      */
-    public /*out*/ readonly operationStatus!: pulumi.Output<string>;
+    public /*out*/ readonly operationStatus!: pulumi.Output<string | undefined>;
     /**
      * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly operationTime!: pulumi.Output<string>;
+    public /*out*/ readonly operationTime!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the policy that triggered alert.
      */
-    public /*out*/ readonly policyId!: pulumi.Output<string>;
+    public /*out*/ readonly policyId!: pulumi.Output<string | undefined>;
     /**
      * The resource endpoint that triggered the alert.
      */
-    public /*out*/ readonly resourceName!: pulumi.Output<string>;
+    public /*out*/ readonly resourceName!: pulumi.Output<string | undefined>;
     /**
      * Severity level of the alert.
      */
-    public /*out*/ readonly severity!: pulumi.Output<string>;
+    public /*out*/ readonly severity!: pulumi.Output<string | undefined>;
     /**
      * The current state of the alert.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The status of the alert.
      *
@@ -116,27 +116,27 @@ export class Alert extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Array of OCIDs of the target database which are associated with the alert.
      */
-    public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly targetIds!: pulumi.Output<string[] | undefined>;
     /**
      * Array of names of the target database.
      */
-    public /*out*/ readonly targetNames!: pulumi.Output<string[]>;
+    public /*out*/ readonly targetNames!: pulumi.Output<string[] | undefined>;
     /**
      * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Alert resource with the given unique name, arguments, and options.

@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The name identifying the shape.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// A short description of the container instance's processor (CPU).
         /// </summary>
-        public readonly string ProcessorDescription;
+        public readonly string? ProcessorDescription;
 
         [OutputConstructor]
         private GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(
             ImmutableArray<Outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult> memoryOptions,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult> networkingBandwidthOptions,
 
             ImmutableArray<Outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult> ocpuOptions,
 
-            string processorDescription)
+            string? processorDescription)
         {
             MemoryOptions = memoryOptions;
             Name = name;

@@ -197,7 +197,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? MonthInConsiderationGreaterThan;
         public readonly string? MonthInConsiderationLessThan;
         /// <summary>
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetAuditProfileAvailableAuditVolumesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? monthInConsiderationGreaterThan,
 

@@ -67,7 +67,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// The architecture type.
         /// </summary>
         [Output("archType")]
-        public Output<string> ArchType { get; private set; } = null!;
+        public Output<string?> ArchType { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the tenancy containing the registration profile.
@@ -79,13 +79,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the registration profile.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Identifying information for the specified lifecycle environment.
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// The OCID of the lifecycle stage from which the registration profile will inherit its software source.
         /// </summary>
         [Output("lifecycleStageId")]
-        public Output<string> LifecycleStageId { get; private set; } = null!;
+        public Output<string?> LifecycleStageId { get; private set; } = null!;
 
         /// <summary>
         /// Identifying information for the specified lifecycle stage.
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// The OCID of the managed instance group from which the registration profile will inherit its software sources.
         /// </summary>
         [Output("managedInstanceGroupId")]
-        public Output<string> ManagedInstanceGroupId { get; private set; } = null!;
+        public Output<string?> ManagedInstanceGroupId { get; private set; } = null!;
 
         /// <summary>
         /// Identifying information for the specified managed instance group.
@@ -133,13 +133,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// The OCID of the management station.
         /// </summary>
         [Output("managementStationId")]
-        public Output<string> ManagementStationId { get; private set; } = null!;
+        public Output<string?> ManagementStationId { get; private set; } = null!;
 
         /// <summary>
         /// The operating system family.
         /// </summary>
         [Output("osFamily")]
-        public Output<string> OsFamily { get; private set; } = null!;
+        public Output<string?> OsFamily { get; private set; } = null!;
 
         /// <summary>
         /// The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
@@ -163,19 +163,19 @@ namespace Pulumi.Oci.OsManagementHub
         /// The current state of the registration profile.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the registration profile was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The software source vendor name.
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vendorName")]
-        public Output<string> VendorName { get; private set; } = null!;
+        public Output<string?> VendorName { get; private set; } = null!;
 
 
         /// <summary>

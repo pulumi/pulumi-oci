@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingReportsMaskedColumnItem {
@@ -13,123 +15,123 @@ public final class GetMaskingReportsMaskedColumnItem {
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    private String columnName;
+    private @Nullable String columnName;
     /**
      * @return The unique key that identifies the masked column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A filter to return only the resources that match the specified masking column group.
      * 
      */
-    private String maskingColumnGroup;
+    private @Nullable String maskingColumnGroup;
     /**
      * @return The masking format used for masking the column.
      * 
      */
-    private String maskingFormatUsed;
+    private @Nullable String maskingFormatUsed;
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return The unique key that identifies the parent column of the masked column.
      * 
      */
-    private String parentColumnKey;
+    private @Nullable String parentColumnKey;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return A filter to return only items related to a specific sensitive type OCID.
      * 
      */
-    private String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
     /**
      * @return The total number of values masked in the column.
      * 
      */
-    private String totalMaskedValues;
+    private @Nullable String totalMaskedValues;
 
     private GetMaskingReportsMaskedColumnItem() {}
     /**
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
     /**
      * @return The unique key that identifies the masked column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A filter to return only the resources that match the specified masking column group.
      * 
      */
-    public String maskingColumnGroup() {
-        return this.maskingColumnGroup;
+    public Optional<String> maskingColumnGroup() {
+        return Optional.ofNullable(this.maskingColumnGroup);
     }
     /**
      * @return The masking format used for masking the column.
      * 
      */
-    public String maskingFormatUsed() {
-        return this.maskingFormatUsed;
+    public Optional<String> maskingFormatUsed() {
+        return Optional.ofNullable(this.maskingFormatUsed);
     }
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return The unique key that identifies the parent column of the masked column.
      * 
      */
-    public String parentColumnKey() {
-        return this.parentColumnKey;
+    public Optional<String> parentColumnKey() {
+        return Optional.ofNullable(this.parentColumnKey);
     }
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return A filter to return only items related to a specific sensitive type OCID.
      * 
      */
-    public String sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
     /**
      * @return The total number of values masked in the column.
      * 
      */
-    public String totalMaskedValues() {
-        return this.totalMaskedValues;
+    public Optional<String> totalMaskedValues() {
+        return Optional.ofNullable(this.totalMaskedValues);
     }
 
     public static Builder builder() {
@@ -141,16 +143,16 @@ public final class GetMaskingReportsMaskedColumnItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnName;
-        private String key;
-        private String maskingColumnGroup;
-        private String maskingFormatUsed;
-        private String object;
-        private String objectType;
-        private String parentColumnKey;
-        private String schemaName;
-        private String sensitiveTypeId;
-        private String totalMaskedValues;
+        private @Nullable String columnName;
+        private @Nullable String key;
+        private @Nullable String maskingColumnGroup;
+        private @Nullable String maskingFormatUsed;
+        private @Nullable String object;
+        private @Nullable String objectType;
+        private @Nullable String parentColumnKey;
+        private @Nullable String schemaName;
+        private @Nullable String sensitiveTypeId;
+        private @Nullable String totalMaskedValues;
         public Builder() {}
         public Builder(GetMaskingReportsMaskedColumnItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,53 +169,53 @@ public final class GetMaskingReportsMaskedColumnItem {
         }
 
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingColumnGroup(String maskingColumnGroup) {
-            this.maskingColumnGroup = Objects.requireNonNull(maskingColumnGroup);
+        public Builder maskingColumnGroup(@Nullable String maskingColumnGroup) {
+            this.maskingColumnGroup = maskingColumnGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingFormatUsed(String maskingFormatUsed) {
-            this.maskingFormatUsed = Objects.requireNonNull(maskingFormatUsed);
+        public Builder maskingFormatUsed(@Nullable String maskingFormatUsed) {
+            this.maskingFormatUsed = maskingFormatUsed;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
-        public Builder parentColumnKey(String parentColumnKey) {
-            this.parentColumnKey = Objects.requireNonNull(parentColumnKey);
+        public Builder parentColumnKey(@Nullable String parentColumnKey) {
+            this.parentColumnKey = parentColumnKey;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMaskedValues(String totalMaskedValues) {
-            this.totalMaskedValues = Objects.requireNonNull(totalMaskedValues);
+        public Builder totalMaskedValues(@Nullable String totalMaskedValues) {
+            this.totalMaskedValues = totalMaskedValues;
             return this;
         }
         public GetMaskingReportsMaskedColumnItem build() {

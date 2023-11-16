@@ -187,7 +187,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of java_release_collection.
         /// </summary>
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetJavaReleasesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionResult> javaReleaseCollections,
 

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection {
-    private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
+    private @Nullable List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
 
     private GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection() {}
     public List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
+        private @Nullable List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items;
         public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem... items) {

@@ -127,7 +127,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         /// </summary>
-        public readonly int BatchIntervalInSeconds;
+        public readonly int? BatchIntervalInSeconds;
         /// <summary>
         /// Details of monitor configuration.
         /// </summary>
@@ -135,27 +135,27 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
-        public readonly bool IsRunNow;
+        public readonly bool? IsRunNow;
         /// <summary>
         /// If runOnce is enabled, then the monitor will run once.
         /// </summary>
-        public readonly bool IsRunOnce;
+        public readonly bool? IsRunOnce;
         /// <summary>
         /// Details required to schedule maintenance window.
         /// </summary>
@@ -164,23 +164,23 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// Type of monitor.
         /// </summary>
-        public readonly string MonitorType;
+        public readonly string? MonitorType;
         /// <summary>
         /// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         /// </summary>
-        public readonly int RepeatIntervalInSeconds;
+        public readonly int? RepeatIntervalInSeconds;
         /// <summary>
         /// Scheduling policy to decide the distribution of monitor executions on vantage points.
         /// </summary>
-        public readonly string SchedulingPolicy;
+        public readonly string? SchedulingPolicy;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         /// </summary>
-        public readonly string ScriptId;
+        public readonly string? ScriptId;
         /// <summary>
         /// Name of the script.
         /// </summary>
-        public readonly string ScriptName;
+        public readonly string? ScriptName;
         /// <summary>
         /// List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
         /// </summary>
@@ -188,27 +188,27 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// Enables or disables the monitor.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
-        public readonly int TimeoutInSeconds;
+        public readonly int? TimeoutInSeconds;
         /// <summary>
         /// Number of vantage points where monitor is running.
         /// </summary>
-        public readonly int VantagePointCount;
+        public readonly int? VantagePointCount;
         /// <summary>
         /// List of public and dedicated vantage points where the monitor is running.
         /// </summary>
@@ -220,49 +220,49 @@ namespace Pulumi.Oci.ApmSynthetics
 
             ImmutableArray<Outputs.GetMonitorAvailabilityConfigurationResult> availabilityConfigurations,
 
-            int batchIntervalInSeconds,
+            int? batchIntervalInSeconds,
 
             ImmutableArray<Outputs.GetMonitorConfigurationResult> configurations,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isRunNow,
+            bool? isRunNow,
 
-            bool isRunOnce,
+            bool? isRunOnce,
 
             ImmutableArray<Outputs.GetMonitorMaintenanceWindowScheduleResult> maintenanceWindowSchedules,
 
             string monitorId,
 
-            string monitorType,
+            string? monitorType,
 
-            int repeatIntervalInSeconds,
+            int? repeatIntervalInSeconds,
 
-            string schedulingPolicy,
+            string? schedulingPolicy,
 
-            string scriptId,
+            string? scriptId,
 
-            string scriptName,
+            string? scriptName,
 
             ImmutableArray<Outputs.GetMonitorScriptParameterResult> scriptParameters,
 
-            string status,
+            string? status,
 
-            string target,
+            string? target,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int timeoutInSeconds,
+            int? timeoutInSeconds,
 
-            int vantagePointCount,
+            int? vantagePointCount,
 
             ImmutableArray<Outputs.GetMonitorVantagePointResult> vantagePoints)
         {

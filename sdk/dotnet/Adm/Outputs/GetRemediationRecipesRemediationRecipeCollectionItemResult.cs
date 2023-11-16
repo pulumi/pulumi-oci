@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A configuration to define the constraints when detecting vulnerable dependencies.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
         /// </summary>
-        public readonly bool IsRunTriggeredOnKbChange;
+        public readonly bool? IsRunTriggeredOnKbChange;
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         /// </summary>
-        public readonly string KnowledgeBaseId;
+        public readonly string? KnowledgeBaseId;
         /// <summary>
         /// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
         /// </summary>
@@ -56,19 +56,19 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// A filter to return only Remediation Recipes that match the specified lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
         /// </summary>
@@ -76,33 +76,33 @@ namespace Pulumi.Oci.Adm.Outputs
 
         [OutputConstructor]
         private GetRemediationRecipesRemediationRecipeCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult> detectConfigurations,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isRunTriggeredOnKbChange,
+            bool? isRunTriggeredOnKbChange,
 
-            string knowledgeBaseId,
+            string? knowledgeBaseId,
 
             ImmutableArray<Outputs.GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult> networkConfigurations,
 
             ImmutableArray<Outputs.GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult> scmConfigurations,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult> verifyConfigurations)
         {

@@ -23,7 +23,7 @@ public final class GetDeploymentsResult {
      * @return The list of deployment_collection.
      * 
      */
-    private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+    private @Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
@@ -39,7 +39,7 @@ public final class GetDeploymentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the deployment.
      * 
@@ -59,7 +59,7 @@ public final class GetDeploymentsResult {
      * 
      */
     public List<GetDeploymentsDeploymentCollection> deploymentCollections() {
-        return this.deploymentCollections;
+        return this.deploymentCollections == null ? List.of() : this.deploymentCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -82,8 +82,8 @@ public final class GetDeploymentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the deployment.
@@ -103,11 +103,11 @@ public final class GetDeploymentsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+        private @Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentsFilter> filters;
         private @Nullable String gatewayId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDeploymentsResult defaults) {
@@ -127,8 +127,8 @@ public final class GetDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentCollections(List<GetDeploymentsDeploymentCollection> deploymentCollections) {
-            this.deploymentCollections = Objects.requireNonNull(deploymentCollections);
+        public Builder deploymentCollections(@Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections) {
+            this.deploymentCollections = deploymentCollections;
             return this;
         }
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {
@@ -153,8 +153,8 @@ public final class GetDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

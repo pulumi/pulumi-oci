@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
@@ -19,37 +21,37 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      * @return The compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the protected database.
      * 
      */
-    private String databaseId;
+    private @Nullable String databaseId;
     /**
      * @return The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * 
      */
-    private String databaseSize;
+    private @Nullable String databaseSize;
     /**
      * @return The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
      * 
      */
-    private String dbUniqueName;
+    private @Nullable String dbUniqueName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire &#39;displayname&#39; given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Indicates the protection status of the database. Allowed values are:
      * * HEALTHY
@@ -57,123 +59,123 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      * * ALERT
      * 
      */
-    private String health;
+    private @Nullable String health;
     /**
      * @return A message describing the current health of the protected database.
      * 
      */
-    private String healthDetails;
+    private @Nullable String healthDetails;
     /**
      * @return The protected database OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
      * 
      */
-    private Boolean isReadOnlyResource;
+    private @Nullable Boolean isReadOnlyResource;
     /**
      * @return The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
      * 
      */
-    private Boolean isRedoLogsShipped;
+    private @Nullable Boolean isRedoLogsShipped;
     /**
      * @return Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Backup performance and storage utilization metrics for the protected database.
      * 
      */
-    private List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics;
-    private String password;
+    private @Nullable List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics;
+    private @Nullable String password;
     /**
      * @return The protection policy OCID.
      * 
      */
-    private String protectionPolicyId;
+    private @Nullable String protectionPolicyId;
     /**
      * @return List of recovery service subnet resources associated with the protected database.
      * 
      */
-    private List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets;
+    private @Nullable List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets;
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      * 
      */
-    private String vpcUserName;
+    private @Nullable String vpcUserName;
 
     private GetProtectedDatabasesProtectedDatabaseCollectionItem() {}
     /**
      * @return The compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the protected database.
      * 
      */
-    public String databaseId() {
-        return this.databaseId;
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
     /**
      * @return The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * 
      */
-    public String databaseSize() {
-        return this.databaseSize;
+    public Optional<String> databaseSize() {
+        return Optional.ofNullable(this.databaseSize);
     }
     /**
      * @return The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
      * 
      */
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire &#39;displayname&#39; given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Indicates the protection status of the database. Allowed values are:
@@ -182,102 +184,102 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      * * ALERT
      * 
      */
-    public String health() {
-        return this.health;
+    public Optional<String> health() {
+        return Optional.ofNullable(this.health);
     }
     /**
      * @return A message describing the current health of the protected database.
      * 
      */
-    public String healthDetails() {
-        return this.healthDetails;
+    public Optional<String> healthDetails() {
+        return Optional.ofNullable(this.healthDetails);
     }
     /**
      * @return The protected database OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the protected database is created by Recovery Service or created manually. Set to &lt;b&gt;TRUE&lt;/b&gt; for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to &lt;b&gt;FALSE&lt;/b&gt; for a user-defined protected database.
      * 
      */
-    public Boolean isReadOnlyResource() {
-        return this.isReadOnlyResource;
+    public Optional<Boolean> isReadOnlyResource() {
+        return Optional.ofNullable(this.isReadOnlyResource);
     }
     /**
      * @return The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
      * 
      */
-    public Boolean isRedoLogsShipped() {
-        return this.isRedoLogsShipped;
+    public Optional<Boolean> isRedoLogsShipped() {
+        return Optional.ofNullable(this.isRedoLogsShipped);
     }
     /**
      * @return Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Backup performance and storage utilization metrics for the protected database.
      * 
      */
     public List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The protection policy OCID.
      * 
      */
-    public String protectionPolicyId() {
-        return this.protectionPolicyId;
+    public Optional<String> protectionPolicyId() {
+        return Optional.ofNullable(this.protectionPolicyId);
     }
     /**
      * @return List of recovery service subnet resources associated with the protected database.
      * 
      */
     public List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets() {
-        return this.recoveryServiceSubnets;
+        return this.recoveryServiceSubnets == null ? List.of() : this.recoveryServiceSubnets;
     }
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      * 
      */
-    public String vpcUserName() {
-        return this.vpcUserName;
+    public Optional<String> vpcUserName() {
+        return Optional.ofNullable(this.vpcUserName);
     }
 
     public static Builder builder() {
@@ -289,28 +291,28 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String databaseId;
-        private String databaseSize;
-        private String dbUniqueName;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String health;
-        private String healthDetails;
-        private String id;
-        private Boolean isReadOnlyResource;
-        private Boolean isRedoLogsShipped;
-        private String lifecycleDetails;
-        private List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics;
-        private String password;
-        private String protectionPolicyId;
-        private List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String vpcUserName;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseId;
+        private @Nullable String databaseSize;
+        private @Nullable String dbUniqueName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String health;
+        private @Nullable String healthDetails;
+        private @Nullable String id;
+        private @Nullable Boolean isReadOnlyResource;
+        private @Nullable Boolean isRedoLogsShipped;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics;
+        private @Nullable String password;
+        private @Nullable String protectionPolicyId;
+        private @Nullable List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String vpcUserName;
         public Builder() {}
         public Builder(GetProtectedDatabasesProtectedDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -339,119 +341,119 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+        public Builder databaseId(@Nullable String databaseId) {
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSize(String databaseSize) {
-            this.databaseSize = Objects.requireNonNull(databaseSize);
+        public Builder databaseSize(@Nullable String databaseSize) {
+            this.databaseSize = databaseSize;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder health(String health) {
-            this.health = Objects.requireNonNull(health);
+        public Builder health(@Nullable String health) {
+            this.health = health;
             return this;
         }
         @CustomType.Setter
-        public Builder healthDetails(String healthDetails) {
-            this.healthDetails = Objects.requireNonNull(healthDetails);
+        public Builder healthDetails(@Nullable String healthDetails) {
+            this.healthDetails = healthDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isReadOnlyResource(Boolean isReadOnlyResource) {
-            this.isReadOnlyResource = Objects.requireNonNull(isReadOnlyResource);
+        public Builder isReadOnlyResource(@Nullable Boolean isReadOnlyResource) {
+            this.isReadOnlyResource = isReadOnlyResource;
             return this;
         }
         @CustomType.Setter
-        public Builder isRedoLogsShipped(Boolean isRedoLogsShipped) {
-            this.isRedoLogsShipped = Objects.requireNonNull(isRedoLogsShipped);
+        public Builder isRedoLogsShipped(@Nullable Boolean isRedoLogsShipped) {
+            this.isRedoLogsShipped = isRedoLogsShipped;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetProtectedDatabasesProtectedDatabaseCollectionItemMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder protectionPolicyId(String protectionPolicyId) {
-            this.protectionPolicyId = Objects.requireNonNull(protectionPolicyId);
+        public Builder protectionPolicyId(@Nullable String protectionPolicyId) {
+            this.protectionPolicyId = protectionPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryServiceSubnets(List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets) {
-            this.recoveryServiceSubnets = Objects.requireNonNull(recoveryServiceSubnets);
+        public Builder recoveryServiceSubnets(@Nullable List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets) {
+            this.recoveryServiceSubnets = recoveryServiceSubnets;
             return this;
         }
         public Builder recoveryServiceSubnets(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet... recoveryServiceSubnets) {
             return recoveryServiceSubnets(List.of(recoveryServiceSubnets));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder vpcUserName(String vpcUserName) {
-            this.vpcUserName = Objects.requireNonNull(vpcUserName);
+        public Builder vpcUserName(@Nullable String vpcUserName) {
+            this.vpcUserName = vpcUserName;
             return this;
         }
         public GetProtectedDatabasesProtectedDatabaseCollectionItem build() {

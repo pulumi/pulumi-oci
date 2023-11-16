@@ -30,7 +30,7 @@ public final class GetPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the user who created the resource.
      * 
@@ -40,7 +40,7 @@ public final class GetPrivateEndpointsResult {
      * @return The list of private_endpoint_collection.
      * 
      */
-    private List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
+    private @Nullable List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
     /**
      * @return The current state of this private endpoint.
      * 
@@ -72,8 +72,8 @@ public final class GetPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the user who created the resource.
@@ -87,7 +87,7 @@ public final class GetPrivateEndpointsResult {
      * 
      */
     public List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections() {
-        return this.privateEndpointCollections;
+        return this.privateEndpointCollections == null ? List.of() : this.privateEndpointCollections;
     }
     /**
      * @return The current state of this private endpoint.
@@ -110,9 +110,9 @@ public final class GetPrivateEndpointsResult {
         private @Nullable String displayName;
         private @Nullable String displayNameStartsWith;
         private @Nullable List<GetPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String ownerPrincipalId;
-        private List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
+        private @Nullable List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPrivateEndpointsResult defaults) {
@@ -151,8 +151,8 @@ public final class GetPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -161,8 +161,8 @@ public final class GetPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointCollections(List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections) {
-            this.privateEndpointCollections = Objects.requireNonNull(privateEndpointCollections);
+        public Builder privateEndpointCollections(@Nullable List<GetPrivateEndpointsPrivateEndpointCollection> privateEndpointCollections) {
+            this.privateEndpointCollections = privateEndpointCollections;
             return this;
         }
         public Builder privateEndpointCollections(GetPrivateEndpointsPrivateEndpointCollection... privateEndpointCollections) {

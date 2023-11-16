@@ -41,7 +41,7 @@ class GetMigrationObjectTypesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetMigrationObjectTypesResult:
 
     @property
     @pulumi.getter(name="migrationObjectTypeSummaryCollections")
-    def migration_object_type_summary_collections(self) -> Sequence['outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult']:
-        """
-        The list of migration_object_type_summary_collection.
-        """
+    def migration_object_type_summary_collections(self) -> Optional[Sequence['outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult']]:
         return pulumi.get(self, "migration_object_type_summary_collections")
 
 
@@ -70,18 +67,7 @@ class AwaitableGetMigrationObjectTypesResult(GetMigrationObjectTypesResult):
 def get_migration_object_types(filters: Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationObjectTypesResult:
     """
-    This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-
-    Display sample object types to exclude or include for a Migration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -98,17 +84,6 @@ def get_migration_object_types(filters: Optional[Sequence[pulumi.InputType['GetM
 def get_migration_object_types_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
     """
-    This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-
-    Display sample object types to exclude or include for a Migration.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig {
@@ -13,39 +15,39 @@ public final class GetExternalContainerDatabasesExternalContainerDatabaseDatabas
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private String databaseManagementConnectionId;
+    private @Nullable String databaseManagementConnectionId;
     /**
      * @return The status of the Database Management service.
      * 
      */
-    private String databaseManagementStatus;
+    private @Nullable String databaseManagementStatus;
     /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
 
     private GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    public String databaseManagementConnectionId() {
-        return this.databaseManagementConnectionId;
+    public Optional<String> databaseManagementConnectionId() {
+        return Optional.ofNullable(this.databaseManagementConnectionId);
     }
     /**
      * @return The status of the Database Management service.
      * 
      */
-    public String databaseManagementStatus() {
-        return this.databaseManagementStatus;
+    public Optional<String> databaseManagementStatus() {
+        return Optional.ofNullable(this.databaseManagementStatus);
     }
     /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetExternalContainerDatabasesExternalContainerDatabaseDatabas
     }
     @CustomType.Builder
     public static final class Builder {
-        private String databaseManagementConnectionId;
-        private String databaseManagementStatus;
-        private String licenseModel;
+        private @Nullable String databaseManagementConnectionId;
+        private @Nullable String databaseManagementStatus;
+        private @Nullable String licenseModel;
         public Builder() {}
         public Builder(GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetExternalContainerDatabasesExternalContainerDatabaseDatabas
         }
 
         @CustomType.Setter
-        public Builder databaseManagementConnectionId(String databaseManagementConnectionId) {
-            this.databaseManagementConnectionId = Objects.requireNonNull(databaseManagementConnectionId);
+        public Builder databaseManagementConnectionId(@Nullable String databaseManagementConnectionId) {
+            this.databaseManagementConnectionId = databaseManagementConnectionId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseManagementStatus(String databaseManagementStatus) {
-            this.databaseManagementStatus = Objects.requireNonNull(databaseManagementStatus);
+        public Builder databaseManagementStatus(@Nullable String databaseManagementStatus) {
+            this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         public GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfig build() {

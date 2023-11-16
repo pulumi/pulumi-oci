@@ -6,30 +6,32 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
-    private String emailAddress;
-    private String firstName;
-    private String lastName;
-    private String password;
-    private String username;
+    private @Nullable String emailAddress;
+    private @Nullable String firstName;
+    private @Nullable String lastName;
+    private @Nullable String password;
+    private @Nullable String username;
 
     private GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail() {}
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
-    public String firstName() {
-        return this.firstName;
+    public Optional<String> firstName() {
+        return Optional.ofNullable(this.firstName);
     }
-    public String lastName() {
-        return this.lastName;
+    public Optional<String> lastName() {
+        return Optional.ofNullable(this.lastName);
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -41,11 +43,11 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String emailAddress;
-        private String firstName;
-        private String lastName;
-        private String password;
-        private String username;
+        private @Nullable String emailAddress;
+        private @Nullable String firstName;
+        private @Nullable String lastName;
+        private @Nullable String password;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,28 +59,28 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
         }
 
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+        public Builder firstName(@Nullable String firstName) {
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
-        public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+        public Builder lastName(@Nullable String lastName) {
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail build() {

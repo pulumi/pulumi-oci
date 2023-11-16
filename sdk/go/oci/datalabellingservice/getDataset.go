@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -62,9 +61,9 @@ type LookupDatasetResult struct {
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	AdditionalProperties map[string]interface{} `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
-	AnnotationFormat string `pulumi:"annotationFormat"`
+	AnnotationFormat *string `pulumi:"annotationFormat"`
 	// The OCID of the compartment of the resource.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
 	DatasetFormatDetails []GetDatasetDatasetFormatDetail `pulumi:"datasetFormatDetails"`
 	DatasetId            string                          `pulumi:"datasetId"`
@@ -73,13 +72,13 @@ type LookupDatasetResult struct {
 	// The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user provided description of the dataset
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Dataset.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
 	InitialImportDatasetConfigurations []GetDatasetInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfigurations"`
 	// The initial generate records configuration. It generates records from the dataset's source.
@@ -87,17 +86,17 @@ type LookupDatasetResult struct {
 	// An ordered collection of labels that are unique by name.
 	LabelSets []GetDatasetLabelSet `pulumi:"labelSets"`
 	// The labeling instructions for human labelers in rich text format
-	LabelingInstructions string `pulumi:"labelingInstructions"`
+	LabelingInstructions *string `pulumi:"labelingInstructions"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
-	LifecycleSubstate string `pulumi:"lifecycleSubstate"`
+	LifecycleSubstate *string `pulumi:"lifecycleSubstate"`
 	// The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDatasetOutput(ctx *pulumi.Context, args LookupDatasetOutputArgs, opts ...pulumi.InvokeOption) LookupDatasetResultOutput {
@@ -138,25 +137,19 @@ func (o LookupDatasetResultOutput) ToLookupDatasetResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupDatasetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatasetResult] {
-	return pulumix.Output[LookupDatasetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 func (o LookupDatasetResultOutput) AdditionalProperties() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDatasetResult) map[string]interface{} { return v.AdditionalProperties }).(pulumi.MapOutput)
 }
 
 // The annotation format name required for labeling records.
-func (o LookupDatasetResultOutput) AnnotationFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.AnnotationFormat }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) AnnotationFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.AnnotationFormat }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment of the resource.
-func (o LookupDatasetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
@@ -179,13 +172,13 @@ func (o LookupDatasetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user provided description of the dataset
-func (o LookupDatasetResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource.
-func (o LookupDatasetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -194,8 +187,8 @@ func (o LookupDatasetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the Dataset.
-func (o LookupDatasetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Initial import dataset configuration. Allows user to create dataset from existing dataset files.
@@ -218,33 +211,33 @@ func (o LookupDatasetResultOutput) LabelSets() GetDatasetLabelSetArrayOutput {
 }
 
 // The labeling instructions for human labelers in rich text format
-func (o LookupDatasetResultOutput) LabelingInstructions() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.LabelingInstructions }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) LabelingInstructions() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.LabelingInstructions }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-func (o LookupDatasetResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
-func (o LookupDatasetResultOutput) LifecycleSubstate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.LifecycleSubstate }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) LifecycleSubstate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.LifecycleSubstate }).(pulumi.StringPtrOutput)
 }
 
 // The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
-func (o LookupDatasetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the timestamp format defined by RFC3339.
-func (o LookupDatasetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-func (o LookupDatasetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatasetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDatasetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatasetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

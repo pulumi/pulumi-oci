@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
@@ -30,22 +29,22 @@ type EnrollmentStatus struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The unique OCID associated with the enrollment status.
 	EnrollmentStatusId pulumi.StringOutput `pulumi:"enrollmentStatusId"`
 	// The enrollment status' current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The Cloud Advisor enrollment status.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// The reason for the enrollment status of the tenancy.
-	StatusReason pulumi.StringOutput `pulumi:"statusReason"`
+	StatusReason pulumi.StringPtrOutput `pulumi:"statusReason"`
 	// The date and time the enrollment status was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the enrollment status was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewEnrollmentStatus registers a new resource with the given unique name, arguments, and options.
@@ -171,12 +170,6 @@ func (i *EnrollmentStatus) ToEnrollmentStatusOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(EnrollmentStatusOutput)
 }
 
-func (i *EnrollmentStatus) ToOutput(ctx context.Context) pulumix.Output[*EnrollmentStatus] {
-	return pulumix.Output[*EnrollmentStatus]{
-		OutputState: i.ToEnrollmentStatusOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EnrollmentStatusArrayInput is an input type that accepts EnrollmentStatusArray and EnrollmentStatusArrayOutput values.
 // You can construct a concrete instance of `EnrollmentStatusArrayInput` via:
 //
@@ -200,12 +193,6 @@ func (i EnrollmentStatusArray) ToEnrollmentStatusArrayOutput() EnrollmentStatusA
 
 func (i EnrollmentStatusArray) ToEnrollmentStatusArrayOutputWithContext(ctx context.Context) EnrollmentStatusArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EnrollmentStatusArrayOutput)
-}
-
-func (i EnrollmentStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]*EnrollmentStatus] {
-	return pulumix.Output[[]*EnrollmentStatus]{
-		OutputState: i.ToEnrollmentStatusArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EnrollmentStatusMapInput is an input type that accepts EnrollmentStatusMap and EnrollmentStatusMapOutput values.
@@ -233,12 +220,6 @@ func (i EnrollmentStatusMap) ToEnrollmentStatusMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(EnrollmentStatusMapOutput)
 }
 
-func (i EnrollmentStatusMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnrollmentStatus] {
-	return pulumix.Output[map[string]*EnrollmentStatus]{
-		OutputState: i.ToEnrollmentStatusMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EnrollmentStatusOutput struct{ *pulumi.OutputState }
 
 func (EnrollmentStatusOutput) ElementType() reflect.Type {
@@ -253,15 +234,9 @@ func (o EnrollmentStatusOutput) ToEnrollmentStatusOutputWithContext(ctx context.
 	return o
 }
 
-func (o EnrollmentStatusOutput) ToOutput(ctx context.Context) pulumix.Output[*EnrollmentStatus] {
-	return pulumix.Output[*EnrollmentStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o EnrollmentStatusOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o EnrollmentStatusOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The unique OCID associated with the enrollment status.
@@ -270,8 +245,8 @@ func (o EnrollmentStatusOutput) EnrollmentStatusId() pulumi.StringOutput {
 }
 
 // The enrollment status' current state.
-func (o EnrollmentStatusOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EnrollmentStatusOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Cloud Advisor enrollment status.
@@ -283,18 +258,18 @@ func (o EnrollmentStatusOutput) Status() pulumi.StringOutput {
 }
 
 // The reason for the enrollment status of the tenancy.
-func (o EnrollmentStatusOutput) StatusReason() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringOutput { return v.StatusReason }).(pulumi.StringOutput)
+func (o EnrollmentStatusOutput) StatusReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringPtrOutput { return v.StatusReason }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the enrollment status was created, in the format defined by RFC3339.
-func (o EnrollmentStatusOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EnrollmentStatusOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the enrollment status was last updated, in the format defined by RFC3339.
-func (o EnrollmentStatusOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EnrollmentStatusOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnrollmentStatus) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type EnrollmentStatusArrayOutput struct{ *pulumi.OutputState }
@@ -309,12 +284,6 @@ func (o EnrollmentStatusArrayOutput) ToEnrollmentStatusArrayOutput() EnrollmentS
 
 func (o EnrollmentStatusArrayOutput) ToEnrollmentStatusArrayOutputWithContext(ctx context.Context) EnrollmentStatusArrayOutput {
 	return o
-}
-
-func (o EnrollmentStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EnrollmentStatus] {
-	return pulumix.Output[[]*EnrollmentStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnrollmentStatusArrayOutput) Index(i pulumi.IntInput) EnrollmentStatusOutput {
@@ -335,12 +304,6 @@ func (o EnrollmentStatusMapOutput) ToEnrollmentStatusMapOutput() EnrollmentStatu
 
 func (o EnrollmentStatusMapOutput) ToEnrollmentStatusMapOutputWithContext(ctx context.Context) EnrollmentStatusMapOutput {
 	return o
-}
-
-func (o EnrollmentStatusMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnrollmentStatus] {
-	return pulumix.Output[map[string]*EnrollmentStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnrollmentStatusMapOutput) MapIndex(k pulumi.StringInput) EnrollmentStatusOutput {

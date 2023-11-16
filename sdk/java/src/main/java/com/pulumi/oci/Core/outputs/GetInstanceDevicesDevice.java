@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceDevicesDevice {
@@ -14,27 +16,27 @@ public final class GetInstanceDevicesDevice {
      * @return A filter to return only available devices or only used devices.
      * 
      */
-    private Boolean isAvailable;
+    private @Nullable Boolean isAvailable;
     /**
      * @return A filter to return only devices that match the given name exactly.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetInstanceDevicesDevice() {}
     /**
      * @return A filter to return only available devices or only used devices.
      * 
      */
-    public Boolean isAvailable() {
-        return this.isAvailable;
+    public Optional<Boolean> isAvailable() {
+        return Optional.ofNullable(this.isAvailable);
     }
     /**
      * @return A filter to return only devices that match the given name exactly.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetInstanceDevicesDevice {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isAvailable;
-        private String name;
+        private @Nullable Boolean isAvailable;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetInstanceDevicesDevice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetInstanceDevicesDevice {
         }
 
         @CustomType.Setter
-        public Builder isAvailable(Boolean isAvailable) {
-            this.isAvailable = Objects.requireNonNull(isAvailable);
+        public Builder isAvailable(@Nullable Boolean isAvailable) {
+            this.isAvailable = isAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetInstanceDevicesDevice build() {

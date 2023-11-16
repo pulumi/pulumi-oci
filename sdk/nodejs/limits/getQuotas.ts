@@ -66,7 +66,7 @@ export interface GetQuotasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      */
@@ -74,7 +74,7 @@ export interface GetQuotasResult {
     /**
      * The list of quotas.
      */
-    readonly quotas: outputs.Limits.GetQuotasQuota[];
+    readonly quotas?: outputs.Limits.GetQuotasQuota[];
     /**
      * The quota's current state.
      */

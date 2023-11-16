@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Network channel type.
         /// </summary>
-        public readonly string NetworkChannelType;
+        public readonly string? NetworkChannelType;
         /// <summary>
         /// An array of network security group OCIDs.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the subnet where VNIC resources will be created for private endpoint.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannelResult(
-            string networkChannelType,
+            string? networkChannelType,
 
             ImmutableArray<string> nsgIds,
 
-            string subnetId)
+            string? subnetId)
         {
             NetworkChannelType = networkChannelType;
             NsgIds = nsgIds;

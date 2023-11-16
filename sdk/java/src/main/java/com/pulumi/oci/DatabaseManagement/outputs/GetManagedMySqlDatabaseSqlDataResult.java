@@ -21,13 +21,13 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedMySqlDatabaseId;
     /**
      * @return The list of my_sql_data_collection.
      * 
      */
-    private List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections;
+    private @Nullable List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections;
     private String startTime;
 
     private GetManagedMySqlDatabaseSqlDataResult() {}
@@ -44,8 +44,8 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedMySqlDatabaseId() {
         return this.managedMySqlDatabaseId;
@@ -55,7 +55,7 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
      * 
      */
     public List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections() {
-        return this.mySqlDataCollections;
+        return this.mySqlDataCollections == null ? List.of() : this.mySqlDataCollections;
     }
     public String startTime() {
         return this.startTime;
@@ -73,9 +73,9 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
         private String endTime;
         private @Nullable String filterColumn;
         private @Nullable List<GetManagedMySqlDatabaseSqlDataFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedMySqlDatabaseId;
-        private List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections;
+        private @Nullable List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections;
         private String startTime;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseSqlDataResult defaults) {
@@ -108,8 +108,8 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -118,8 +118,8 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mySqlDataCollections(List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections) {
-            this.mySqlDataCollections = Objects.requireNonNull(mySqlDataCollections);
+        public Builder mySqlDataCollections(@Nullable List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections) {
+            this.mySqlDataCollections = mySqlDataCollections;
             return this;
         }
         public Builder mySqlDataCollections(GetManagedMySqlDatabaseSqlDataMySqlDataCollection... mySqlDataCollections) {

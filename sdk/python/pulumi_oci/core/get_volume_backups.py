@@ -52,17 +52,11 @@ class GetVolumeBackupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the volume backup.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -72,7 +66,7 @@ class GetVolumeBackupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,33 +75,21 @@ class GetVolumeBackupsResult:
     @property
     @pulumi.getter(name="sourceVolumeBackupId")
     def source_volume_backup_id(self) -> Optional[str]:
-        """
-        The OCID of the source volume backup.
-        """
         return pulumi.get(self, "source_volume_backup_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of a volume backup.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="volumeBackups")
-    def volume_backups(self) -> Sequence['outputs.GetVolumeBackupsVolumeBackupResult']:
-        """
-        The list of volume_backups.
-        """
+    def volume_backups(self) -> Optional[Sequence['outputs.GetVolumeBackupsVolumeBackupResult']]:
         return pulumi.get(self, "volume_backups")
 
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[str]:
-        """
-        The OCID of the volume.
-        """
         return pulumi.get(self, "volume_id")
 
 
@@ -135,29 +117,7 @@ def get_volume_backups(compartment_id: Optional[str] = None,
                        volume_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeBackupsResult:
     """
-    This data source provides the list of Volume Backups in Oracle Cloud Infrastructure Core service.
-
-    Lists the volume backups in the specified compartment. You can filter the results by volume.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=var["compartment_id"],
-        display_name=var["volume_backup_display_name"],
-        source_volume_backup_id=oci_core_volume_backup["test_volume_backup"]["id"],
-        state=var["volume_backup_state"],
-        volume_id=oci_core_volume["test_volume"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str source_volume_backup_id: A filter to return only resources that originated from the given source volume backup.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str volume_id: The OCID of the volume.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -189,28 +149,6 @@ def get_volume_backups_output(compartment_id: Optional[pulumi.Input[str]] = None
                               volume_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupsResult]:
     """
-    This data source provides the list of Volume Backups in Oracle Cloud Infrastructure Core service.
-
-    Lists the volume backups in the specified compartment. You can filter the results by volume.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=var["compartment_id"],
-        display_name=var["volume_backup_display_name"],
-        source_volume_backup_id=oci_core_volume_backup["test_volume_backup"]["id"],
-        state=var["volume_backup_state"],
-        volume_id=oci_core_volume["test_volume"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str source_volume_backup_id: A filter to return only resources that originated from the given source volume backup.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str volume_id: The OCID of the volume.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesManagedDatabaseCollectionItem {
@@ -18,82 +20,82 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      * @return The additional details specific to a type of database defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      * 
      */
-    private String databaseStatus;
+    private @Nullable String databaseStatus;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    private String databaseSubType;
+    private @Nullable String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return A filter to return Managed Databases of the specified deployment type.
      * 
      */
-    private String deploymentType;
+    private @Nullable String deploymentType;
     /**
      * @return The identifier of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
-    private Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return A list of Managed Database Groups that the Managed Database belongs to.
      * 
      */
-    private List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups;
+    private @Nullable List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups;
     /**
      * @return A filter to return Managed Databases with the specified management option.
      * 
      */
-    private String managementOption;
+    private @Nullable String managementOption;
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      * 
      */
-    private String parentContainerId;
+    private @Nullable String parentContainerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      * 
      */
-    private String storageSystemId;
+    private @Nullable String storageSystemId;
     /**
      * @return The date and time the Managed Database was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    private String workloadType;
+    private @Nullable String workloadType;
 
     private GetManagedDatabasesManagedDatabaseCollectionItem() {}
     /**
@@ -101,112 +103,112 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
      * 
      */
-    public String databaseStatus() {
-        return this.databaseStatus;
+    public Optional<String> databaseStatus() {
+        return Optional.ofNullable(this.databaseStatus);
     }
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      * 
      */
-    public String databaseSubType() {
-        return this.databaseSubType;
+    public Optional<String> databaseSubType() {
+        return Optional.ofNullable(this.databaseSubType);
     }
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return A filter to return Managed Databases of the specified deployment type.
      * 
      */
-    public String deploymentType() {
-        return this.deploymentType;
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return The identifier of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the Oracle Database is part of a cluster.
      * 
      */
-    public Boolean isCluster() {
-        return this.isCluster;
+    public Optional<Boolean> isCluster() {
+        return Optional.ofNullable(this.isCluster);
     }
     /**
      * @return A list of Managed Database Groups that the Managed Database belongs to.
      * 
      */
     public List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups() {
-        return this.managedDatabaseGroups;
+        return this.managedDatabaseGroups == null ? List.of() : this.managedDatabaseGroups;
     }
     /**
      * @return A filter to return Managed Databases with the specified management option.
      * 
      */
-    public String managementOption() {
-        return this.managementOption;
+    public Optional<String> managementOption() {
+        return Optional.ofNullable(this.managementOption);
     }
     /**
      * @return A filter to return only resources that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
      * 
      */
-    public String parentContainerId() {
-        return this.parentContainerId;
+    public Optional<String> parentContainerId() {
+        return Optional.ofNullable(this.parentContainerId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      * 
      */
-    public String storageSystemId() {
-        return this.storageSystemId;
+    public Optional<String> storageSystemId() {
+        return Optional.ofNullable(this.storageSystemId);
     }
     /**
      * @return The date and time the Managed Database was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The workload type of the Autonomous Database.
      * 
      */
-    public String workloadType() {
-        return this.workloadType;
+    public Optional<String> workloadType() {
+        return Optional.ofNullable(this.workloadType);
     }
 
     public static Builder builder() {
@@ -218,22 +220,22 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String compartmentId;
-        private String databaseStatus;
-        private String databaseSubType;
-        private String databaseType;
-        private String dbSystemId;
-        private String deploymentType;
-        private String id;
-        private Boolean isCluster;
-        private List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups;
-        private String managementOption;
-        private String name;
-        private String parentContainerId;
-        private String storageSystemId;
-        private String timeCreated;
-        private String workloadType;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseStatus;
+        private @Nullable String databaseSubType;
+        private @Nullable String databaseType;
+        private @Nullable String dbSystemId;
+        private @Nullable String deploymentType;
+        private @Nullable String id;
+        private @Nullable Boolean isCluster;
+        private @Nullable List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups;
+        private @Nullable String managementOption;
+        private @Nullable String name;
+        private @Nullable String parentContainerId;
+        private @Nullable String storageSystemId;
+        private @Nullable String timeCreated;
+        private @Nullable String workloadType;
         public Builder() {}
         public Builder(GetManagedDatabasesManagedDatabaseCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -256,86 +258,86 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseStatus(String databaseStatus) {
-            this.databaseStatus = Objects.requireNonNull(databaseStatus);
+        public Builder databaseStatus(@Nullable String databaseStatus) {
+            this.databaseStatus = databaseStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+        public Builder databaseSubType(@Nullable String databaseSubType) {
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+        public Builder deploymentType(@Nullable String deploymentType) {
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+        public Builder isCluster(@Nullable Boolean isCluster) {
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder managedDatabaseGroups(List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups) {
-            this.managedDatabaseGroups = Objects.requireNonNull(managedDatabaseGroups);
+        public Builder managedDatabaseGroups(@Nullable List<GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup> managedDatabaseGroups) {
+            this.managedDatabaseGroups = managedDatabaseGroups;
             return this;
         }
         public Builder managedDatabaseGroups(GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup... managedDatabaseGroups) {
             return managedDatabaseGroups(List.of(managedDatabaseGroups));
         }
         @CustomType.Setter
-        public Builder managementOption(String managementOption) {
-            this.managementOption = Objects.requireNonNull(managementOption);
+        public Builder managementOption(@Nullable String managementOption) {
+            this.managementOption = managementOption;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder parentContainerId(String parentContainerId) {
-            this.parentContainerId = Objects.requireNonNull(parentContainerId);
+        public Builder parentContainerId(@Nullable String parentContainerId) {
+            this.parentContainerId = parentContainerId;
             return this;
         }
         @CustomType.Setter
-        public Builder storageSystemId(String storageSystemId) {
-            this.storageSystemId = Objects.requireNonNull(storageSystemId);
+        public Builder storageSystemId(@Nullable String storageSystemId) {
+            this.storageSystemId = storageSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder workloadType(String workloadType) {
-            this.workloadType = Objects.requireNonNull(workloadType);
+        public Builder workloadType(@Nullable String workloadType) {
+            this.workloadType = workloadType;
             return this;
         }
         public GetManagedDatabasesManagedDatabaseCollectionItem build() {

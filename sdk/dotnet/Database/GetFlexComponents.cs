@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the Flex Component used for the DB system.
         /// </summary>
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetFlexComponentsFlexComponentCollectionResult> flexComponentCollections,
 
-            string id,
+            string? id,
 
             string? name)
         {

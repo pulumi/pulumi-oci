@@ -71,7 +71,7 @@ class GetMaskingAnalyticsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +79,7 @@ class GetMaskingAnalyticsResult:
 
     @property
     @pulumi.getter(name="maskingAnalyticsCollections")
-    def masking_analytics_collections(self) -> Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionResult']:
-        """
-        The list of masking_analytics_collection.
-        """
+    def masking_analytics_collections(self) -> Optional[Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionResult']]:
         return pulumi.get(self, "masking_analytics_collections")
 
     @property
@@ -93,9 +90,6 @@ class GetMaskingAnalyticsResult:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target database.
-        """
         return pulumi.get(self, "target_id")
 
 
@@ -123,31 +117,7 @@ def get_masking_analytics(compartment_id: Optional[str] = None,
                           target_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingAnalyticsResult:
     """
-    This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets consolidated masking analytics data based on the specified query parameters.
-    If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
-    is equivalent to accessLevel "ACCESSIBLE" by default.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_analytics = oci.DataSafe.get_masking_analytics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["masking_analytic_compartment_id_in_subtree"],
-        group_by=var["masking_analytic_group_by"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str group_by: Attribute by which the masking analytics data should be grouped.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -179,30 +149,6 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingAnalyticsResult]:
     """
-    This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets consolidated masking analytics data based on the specified query parameters.
-    If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
-    is equivalent to accessLevel "ACCESSIBLE" by default.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_analytics = oci.DataSafe.get_masking_analytics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["masking_analytic_compartment_id_in_subtree"],
-        group_by=var["masking_analytic_group_by"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str group_by: Attribute by which the masking analytics data should be grouped.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -60,30 +59,30 @@ type LookupProcessorJobArgs struct {
 // A collection of values returned by getProcessorJob.
 type LookupProcessorJobResult struct {
 	// The compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The display name of the processor job.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The id of the processor job.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The location of the inputs.
 	InputLocations []GetProcessorJobInputLocation `pulumi:"inputLocations"`
 	// The detailed status of FAILED state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The object storage location where to store analysis results.
 	OutputLocations []GetProcessorJobOutputLocation `pulumi:"outputLocations"`
 	// How much progress the operation has made, compared to the total amount of work to be performed.
-	PercentComplete float64 `pulumi:"percentComplete"`
+	PercentComplete *float64 `pulumi:"percentComplete"`
 	// The configuration of a processor.
 	ProcessorConfigs []GetProcessorJobProcessorConfig `pulumi:"processorConfigs"`
 	ProcessorJobId   string                           `pulumi:"processorJobId"`
 	// The current state of the processor job.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The job acceptance time.
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// The job finish time.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The job start time.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 func LookupProcessorJobOutput(ctx *pulumi.Context, args LookupProcessorJobOutputArgs, opts ...pulumi.InvokeOption) LookupProcessorJobResultOutput {
@@ -124,25 +123,19 @@ func (o LookupProcessorJobResultOutput) ToLookupProcessorJobResultOutputWithCont
 	return o
 }
 
-func (o LookupProcessorJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProcessorJobResult] {
-	return pulumix.Output[LookupProcessorJobResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment identifier.
-func (o LookupProcessorJobResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the processor job.
-func (o LookupProcessorJobResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The id of the processor job.
-func (o LookupProcessorJobResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The location of the inputs.
@@ -151,8 +144,8 @@ func (o LookupProcessorJobResultOutput) InputLocations() GetProcessorJobInputLoc
 }
 
 // The detailed status of FAILED state.
-func (o LookupProcessorJobResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The object storage location where to store analysis results.
@@ -161,8 +154,8 @@ func (o LookupProcessorJobResultOutput) OutputLocations() GetProcessorJobOutputL
 }
 
 // How much progress the operation has made, compared to the total amount of work to be performed.
-func (o LookupProcessorJobResultOutput) PercentComplete() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupProcessorJobResult) float64 { return v.PercentComplete }).(pulumi.Float64Output)
+func (o LookupProcessorJobResultOutput) PercentComplete() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *float64 { return v.PercentComplete }).(pulumi.Float64PtrOutput)
 }
 
 // The configuration of a processor.
@@ -175,23 +168,23 @@ func (o LookupProcessorJobResultOutput) ProcessorJobId() pulumi.StringOutput {
 }
 
 // The current state of the processor job.
-func (o LookupProcessorJobResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The job acceptance time.
-func (o LookupProcessorJobResultOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The job finish time.
-func (o LookupProcessorJobResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The job start time.
-func (o LookupProcessorJobResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProcessorJobResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o LookupProcessorJobResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProcessorJobResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

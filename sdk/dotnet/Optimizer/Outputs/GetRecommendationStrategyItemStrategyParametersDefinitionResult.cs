@@ -20,15 +20,15 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Text describing the strategy parameter.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Whether this parameter is required.
         /// </summary>
-        public readonly bool IsRequired;
+        public readonly bool? IsRequired;
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The list of possible values used for these strategy parameters.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The type of strategy parameter.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRecommendationStrategyItemStrategyParametersDefinitionResult(
             ImmutableArray<object> defaultValues,
 
-            string description,
+            string? description,
 
-            bool isRequired,
+            bool? isRequired,
 
-            string name,
+            string? name,
 
             ImmutableArray<object> possibleValues,
 
-            string type)
+            string? type)
         {
             DefaultValues = defaultValues;
             Description = description;

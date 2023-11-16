@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseConnectionUrl {
@@ -13,51 +15,51 @@ public final class GetAutonomousDatabaseConnectionUrl {
      * @return Oracle Application Express (APEX) URL.
      * 
      */
-    private String apexUrl;
+    private @Nullable String apexUrl;
     /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
-    private String graphStudioUrl;
+    private @Nullable String graphStudioUrl;
     /**
      * @return Oracle Machine Learning user management URL.
      * 
      */
-    private String machineLearningUserManagementUrl;
+    private @Nullable String machineLearningUserManagementUrl;
     /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
-    private String sqlDevWebUrl;
+    private @Nullable String sqlDevWebUrl;
 
     private GetAutonomousDatabaseConnectionUrl() {}
     /**
      * @return Oracle Application Express (APEX) URL.
      * 
      */
-    public String apexUrl() {
-        return this.apexUrl;
+    public Optional<String> apexUrl() {
+        return Optional.ofNullable(this.apexUrl);
     }
     /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
-    public String graphStudioUrl() {
-        return this.graphStudioUrl;
+    public Optional<String> graphStudioUrl() {
+        return Optional.ofNullable(this.graphStudioUrl);
     }
     /**
      * @return Oracle Machine Learning user management URL.
      * 
      */
-    public String machineLearningUserManagementUrl() {
-        return this.machineLearningUserManagementUrl;
+    public Optional<String> machineLearningUserManagementUrl() {
+        return Optional.ofNullable(this.machineLearningUserManagementUrl);
     }
     /**
      * @return Oracle SQL Developer Web URL.
      * 
      */
-    public String sqlDevWebUrl() {
-        return this.sqlDevWebUrl;
+    public Optional<String> sqlDevWebUrl() {
+        return Optional.ofNullable(this.sqlDevWebUrl);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetAutonomousDatabaseConnectionUrl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String apexUrl;
-        private String graphStudioUrl;
-        private String machineLearningUserManagementUrl;
-        private String sqlDevWebUrl;
+        private @Nullable String apexUrl;
+        private @Nullable String graphStudioUrl;
+        private @Nullable String machineLearningUserManagementUrl;
+        private @Nullable String sqlDevWebUrl;
         public Builder() {}
         public Builder(GetAutonomousDatabaseConnectionUrl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetAutonomousDatabaseConnectionUrl {
         }
 
         @CustomType.Setter
-        public Builder apexUrl(String apexUrl) {
-            this.apexUrl = Objects.requireNonNull(apexUrl);
+        public Builder apexUrl(@Nullable String apexUrl) {
+            this.apexUrl = apexUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder graphStudioUrl(String graphStudioUrl) {
-            this.graphStudioUrl = Objects.requireNonNull(graphStudioUrl);
+        public Builder graphStudioUrl(@Nullable String graphStudioUrl) {
+            this.graphStudioUrl = graphStudioUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
-            this.machineLearningUserManagementUrl = Objects.requireNonNull(machineLearningUserManagementUrl);
+        public Builder machineLearningUserManagementUrl(@Nullable String machineLearningUserManagementUrl) {
+            this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlDevWebUrl(String sqlDevWebUrl) {
-            this.sqlDevWebUrl = Objects.requireNonNull(sqlDevWebUrl);
+        public Builder sqlDevWebUrl(@Nullable String sqlDevWebUrl) {
+            this.sqlDevWebUrl = sqlDevWebUrl;
             return this;
         }
         public GetAutonomousDatabaseConnectionUrl build() {

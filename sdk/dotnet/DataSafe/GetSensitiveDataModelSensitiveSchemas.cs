@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The database schema that contains the sensitive column.
         /// </summary>
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.DataSafe
         private GetSensitiveDataModelSensitiveSchemasResult(
             ImmutableArray<Outputs.GetSensitiveDataModelSensitiveSchemasFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> schemaNames,
 

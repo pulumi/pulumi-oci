@@ -22,150 +22,150 @@ public final class GetResolverResult {
      * @return The OCID of the attached VCN.
      * 
      */
-    private String attachedVcnId;
+    private @Nullable String attachedVcnId;
     /**
      * @return The attached views. Views are evaluated in order.
      * 
      */
-    private List<GetResolverAttachedView> attachedViews;
+    private @Nullable List<GetResolverAttachedView> attachedViews;
     /**
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the default view.
      * 
      */
-    private String defaultViewId;
+    private @Nullable String defaultViewId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The display name of the resolver.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Read-only array of endpoints for the resolver.
      * 
      */
-    private List<GetResolverEndpoint> endpoints;
+    private @Nullable List<GetResolverEndpoint> endpoints;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resolver.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    private Boolean isProtected;
+    private @Nullable Boolean isProtected;
     private String resolverId;
     /**
      * @return Rules for the resolver. Rules are evaluated in order.
      * 
      */
-    private List<GetResolverRule> rules;
+    private @Nullable List<GetResolverRule> rules;
     private @Nullable String scope;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetResolverResult() {}
     /**
      * @return The OCID of the attached VCN.
      * 
      */
-    public String attachedVcnId() {
-        return this.attachedVcnId;
+    public Optional<String> attachedVcnId() {
+        return Optional.ofNullable(this.attachedVcnId);
     }
     /**
      * @return The attached views. Views are evaluated in order.
      * 
      */
     public List<GetResolverAttachedView> attachedViews() {
-        return this.attachedViews;
+        return this.attachedViews == null ? List.of() : this.attachedViews;
     }
     /**
      * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the default view.
      * 
      */
-    public String defaultViewId() {
-        return this.defaultViewId;
+    public Optional<String> defaultViewId() {
+        return Optional.ofNullable(this.defaultViewId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The display name of the resolver.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Read-only array of endpoints for the resolver.
      * 
      */
     public List<GetResolverEndpoint> endpoints() {
-        return this.endpoints;
+        return this.endpoints == null ? List.of() : this.endpoints;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the resolver.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    public Boolean isProtected() {
-        return this.isProtected;
+    public Optional<Boolean> isProtected() {
+        return Optional.ofNullable(this.isProtected);
     }
     public String resolverId() {
         return this.resolverId;
@@ -175,7 +175,7 @@ public final class GetResolverResult {
      * 
      */
     public List<GetResolverRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     public Optional<String> scope() {
         return Optional.ofNullable(this.scope);
@@ -184,29 +184,29 @@ public final class GetResolverResult {
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The current state of the resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was last updated in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -218,23 +218,23 @@ public final class GetResolverResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String attachedVcnId;
-        private List<GetResolverAttachedView> attachedViews;
-        private String compartmentId;
-        private String defaultViewId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private List<GetResolverEndpoint> endpoints;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isProtected;
+        private @Nullable String attachedVcnId;
+        private @Nullable List<GetResolverAttachedView> attachedViews;
+        private @Nullable String compartmentId;
+        private @Nullable String defaultViewId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable List<GetResolverEndpoint> endpoints;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isProtected;
         private String resolverId;
-        private List<GetResolverRule> rules;
+        private @Nullable List<GetResolverRule> rules;
         private @Nullable String scope;
-        private String self;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String self;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetResolverResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -258,59 +258,59 @@ public final class GetResolverResult {
         }
 
         @CustomType.Setter
-        public Builder attachedVcnId(String attachedVcnId) {
-            this.attachedVcnId = Objects.requireNonNull(attachedVcnId);
+        public Builder attachedVcnId(@Nullable String attachedVcnId) {
+            this.attachedVcnId = attachedVcnId;
             return this;
         }
         @CustomType.Setter
-        public Builder attachedViews(List<GetResolverAttachedView> attachedViews) {
-            this.attachedViews = Objects.requireNonNull(attachedViews);
+        public Builder attachedViews(@Nullable List<GetResolverAttachedView> attachedViews) {
+            this.attachedViews = attachedViews;
             return this;
         }
         public Builder attachedViews(GetResolverAttachedView... attachedViews) {
             return attachedViews(List.of(attachedViews));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultViewId(String defaultViewId) {
-            this.defaultViewId = Objects.requireNonNull(defaultViewId);
+        public Builder defaultViewId(@Nullable String defaultViewId) {
+            this.defaultViewId = defaultViewId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder endpoints(List<GetResolverEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+        public Builder endpoints(@Nullable List<GetResolverEndpoint> endpoints) {
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetResolverEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+        public Builder isProtected(@Nullable Boolean isProtected) {
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
@@ -319,8 +319,8 @@ public final class GetResolverResult {
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetResolverRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetResolverRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetResolverRule... rules) {
@@ -332,23 +332,23 @@ public final class GetResolverResult {
             return this;
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetResolverResult build() {

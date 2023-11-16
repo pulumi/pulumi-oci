@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
@@ -60,22 +59,22 @@ type LookupProtectionPolicyArgs struct {
 // A collection of values returned by getProtectionPolicy.
 type LookupProtectionPolicyResult struct {
 	// The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-	BackupRetentionPeriodInDays int `pulumi:"backupRetentionPeriodInDays"`
+	BackupRetentionPeriodInDays *int `pulumi:"backupRetentionPeriodInDays"`
 	// The OCID of the compartment that contains the protection policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user provided name for the protection policy.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The protection policy OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
+	IsPredefinedPolicy *bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails   string `pulumi:"lifecycleDetails"`
-	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
+	LifecycleDetails   *string `pulumi:"lifecycleDetails"`
+	ProtectionPolicyId string  `pulumi:"protectionPolicyId"`
 	// The current state of the protection policy. Allowed values are:
 	// * CREATING
 	// * UPDATING
@@ -83,13 +82,13 @@ type LookupProtectionPolicyResult struct {
 	// * DELETING
 	// * DELETED
 	// * FAILED
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupProtectionPolicyOutput(ctx *pulumi.Context, args LookupProtectionPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupProtectionPolicyResultOutput {
@@ -130,20 +129,14 @@ func (o LookupProtectionPolicyResultOutput) ToLookupProtectionPolicyResultOutput
 	return o
 }
 
-func (o LookupProtectionPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectionPolicyResult] {
-	return pulumix.Output[LookupProtectionPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-func (o LookupProtectionPolicyResultOutput) BackupRetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) int { return v.BackupRetentionPeriodInDays }).(pulumi.IntOutput)
+func (o LookupProtectionPolicyResultOutput) BackupRetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *int { return v.BackupRetentionPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the compartment that contains the protection policy.
-func (o LookupProtectionPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -152,8 +145,8 @@ func (o LookupProtectionPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user provided name for the protection policy.
-func (o LookupProtectionPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -162,18 +155,18 @@ func (o LookupProtectionPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The protection policy OCID.
-func (o LookupProtectionPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-func (o LookupProtectionPolicyResultOutput) IsPredefinedPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) bool { return v.IsPredefinedPolicy }).(pulumi.BoolOutput)
+func (o LookupProtectionPolicyResultOutput) IsPredefinedPolicy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *bool { return v.IsPredefinedPolicy }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o LookupProtectionPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProtectionPolicyResultOutput) ProtectionPolicyId() pulumi.StringOutput {
@@ -187,8 +180,8 @@ func (o LookupProtectionPolicyResultOutput) ProtectionPolicyId() pulumi.StringOu
 // * DELETING
 // * DELETED
 // * FAILED
-func (o LookupProtectionPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -197,13 +190,13 @@ func (o LookupProtectionPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-func (o LookupProtectionPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-func (o LookupProtectionPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupProtectionPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -59,23 +58,23 @@ type LookupJobRunArgs struct {
 
 // A collection of values returned by getJobRun.
 type LookupJobRunResult struct {
-	Asynchronous bool `pulumi:"asynchronous"`
+	Asynchronous *bool `pulumi:"asynchronous"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly display name for the resource.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The job configuration details
 	JobConfigurationOverrideDetails []GetJobRunJobConfigurationOverrideDetail `pulumi:"jobConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-	JobId string `pulumi:"jobId"`
+	JobId *string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails []GetJobRunJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
@@ -84,19 +83,19 @@ type LookupJobRunResult struct {
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
 	LogDetails []GetJobRunLogDetail `pulumi:"logDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the job run.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 func LookupJobRunOutput(ctx *pulumi.Context, args LookupJobRunOutputArgs, opts ...pulumi.InvokeOption) LookupJobRunResultOutput {
@@ -137,24 +136,18 @@ func (o LookupJobRunResultOutput) ToLookupJobRunResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupJobRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupJobRunResult] {
-	return pulumix.Output[LookupJobRunResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupJobRunResultOutput) Asynchronous() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupJobRunResult) bool { return v.Asynchronous }).(pulumi.BoolOutput)
+func (o LookupJobRunResultOutput) Asynchronous() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *bool { return v.Asynchronous }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-func (o LookupJobRunResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
-func (o LookupJobRunResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -163,8 +156,8 @@ func (o LookupJobRunResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly display name for the resource.
-func (o LookupJobRunResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -173,8 +166,8 @@ func (o LookupJobRunResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-func (o LookupJobRunResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The job configuration details
@@ -185,8 +178,8 @@ func (o LookupJobRunResultOutput) JobConfigurationOverrideDetails() GetJobRunJob
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-func (o LookupJobRunResultOutput) JobId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.JobId }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) JobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.JobId }).(pulumi.StringPtrOutput)
 }
 
 // The job infrastructure configuration details (shape, block storage, etc.)
@@ -215,8 +208,8 @@ func (o LookupJobRunResultOutput) JobStorageMountConfigurationDetailsLists() Get
 }
 
 // Details of the state of the job run.
-func (o LookupJobRunResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Customer logging details for job run.
@@ -225,28 +218,28 @@ func (o LookupJobRunResultOutput) LogDetails() GetJobRunLogDetailArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-func (o LookupJobRunResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the job run.
-func (o LookupJobRunResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupJobRunResultOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupJobRunResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupJobRunResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobRunResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o LookupJobRunResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobRunResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

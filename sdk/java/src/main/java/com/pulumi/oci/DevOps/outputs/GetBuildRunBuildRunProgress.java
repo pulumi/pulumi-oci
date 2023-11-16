@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildRunProgress {
@@ -15,17 +17,17 @@ public final class GetBuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    private Map<String,Object> buildPipelineStageRunProgress;
+    private @Nullable Map<String,Object> buildPipelineStageRunProgress;
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetBuildRunBuildRunProgress() {}
     /**
@@ -33,21 +35,21 @@ public final class GetBuildRunBuildRunProgress {
      * 
      */
     public Map<String,Object> buildPipelineStageRunProgress() {
-        return this.buildPipelineStageRunProgress;
+        return this.buildPipelineStageRunProgress == null ? Map.of() : this.buildPipelineStageRunProgress;
     }
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetBuildRunBuildRunProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> buildPipelineStageRunProgress;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable Map<String,Object> buildPipelineStageRunProgress;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetBuildRunBuildRunProgress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetBuildRunBuildRunProgress {
         }
 
         @CustomType.Setter
-        public Builder buildPipelineStageRunProgress(Map<String,Object> buildPipelineStageRunProgress) {
-            this.buildPipelineStageRunProgress = Objects.requireNonNull(buildPipelineStageRunProgress);
+        public Builder buildPipelineStageRunProgress(@Nullable Map<String,Object> buildPipelineStageRunProgress) {
+            this.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetBuildRunBuildRunProgress build() {

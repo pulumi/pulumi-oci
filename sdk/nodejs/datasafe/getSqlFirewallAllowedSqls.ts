@@ -89,12 +89,12 @@ export interface GetSqlFirewallAllowedSqlsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly scimQuery?: string;
     /**
      * The list of sql_firewall_allowed_sql_collection.
      */
-    readonly sqlFirewallAllowedSqlCollections: outputs.DataSafe.GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection[];
+    readonly sqlFirewallAllowedSqlCollections?: outputs.DataSafe.GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection[];
 }
 /**
  * This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.

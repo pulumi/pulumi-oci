@@ -47,68 +47,68 @@ export interface GetPoolResult {
     /**
      * The OCID of a compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * List of PoolConfig items.
      */
-    readonly configurations: outputs.DataFlow.GetPoolConfiguration[];
+    readonly configurations?: outputs.DataFlow.GetPoolConfiguration[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly description. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      */
-    readonly idleTimeoutInMinutes: number;
+    readonly idleTimeoutInMinutes?: number;
     /**
      * The detailed messages about the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the user who created the resource.
      */
-    readonly ownerPrincipalId: string;
+    readonly ownerPrincipalId?: string;
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      */
-    readonly ownerUserName: string;
+    readonly ownerUserName?: string;
     readonly poolId: string;
     /**
      * A collection of metrics related to a particular pool.
      */
-    readonly poolMetrics: outputs.DataFlow.GetPoolPoolMetric[];
+    readonly poolMetrics?: outputs.DataFlow.GetPoolPoolMetric[];
     /**
      * A list of schedules for pool to auto start and stop.
      */
-    readonly schedules: outputs.DataFlow.GetPoolSchedule[];
+    readonly schedules?: outputs.DataFlow.GetPoolSchedule[];
     /**
      * The current state of this pool.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.

@@ -62,12 +62,12 @@ export interface GetAnnouncementsResult {
     /**
      * The list of announcement_collection.
      */
-    readonly announcementCollections: outputs.Jms.GetAnnouncementsAnnouncementCollection[];
+    readonly announcementCollections?: outputs.Jms.GetAnnouncementsAnnouncementCollection[];
     readonly filters?: outputs.Jms.GetAnnouncementsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly summaryContains?: string;
     readonly timeEnd?: string;
     readonly timeStart?: string;

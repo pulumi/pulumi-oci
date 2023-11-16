@@ -49,33 +49,21 @@ class GetDeploymentBackupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deploymentBackupCollections")
-    def deployment_backup_collections(self) -> Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionResult']:
-        """
-        The list of deployment_backup_collection.
-        """
+    def deployment_backup_collections(self) -> Optional[Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionResult']]:
         return pulumi.get(self, "deployment_backup_collections")
 
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +73,7 @@ class GetDeploymentBackupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetDeploymentBackupsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_deployment_backups(compartment_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentBackupsResult:
     """
-    This data source provides the list of Deployment Backups in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Backups in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_backups = oci.GoldenGate.get_deployment_backups(compartment_id=var["compartment_id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        display_name=var["deployment_backup_display_name"],
-        state=var["deployment_backup_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str state: A filter to return only the resources that match the 'lifecycleState' given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,26 +136,6 @@ def get_deployment_backups_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentBackupsResult]:
     """
-    This data source provides the list of Deployment Backups in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Backups in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_backups = oci.GoldenGate.get_deployment_backups(compartment_id=var["compartment_id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        display_name=var["deployment_backup_display_name"],
-        state=var["deployment_backup_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str state: A filter to return only the resources that match the 'lifecycleState' given.
+    Use this data source to access information about an existing resource.
     """
     ...

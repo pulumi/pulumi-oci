@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
@@ -71,7 +70,7 @@ type GetServiceGatewaysResult struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetServiceGatewaysFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of service_gateways.
 	ServiceGateways []GetServiceGatewaysServiceGateway `pulumi:"serviceGateways"`
 	// The service gateway's current state.
@@ -123,12 +122,6 @@ func (o GetServiceGatewaysResultOutput) ToGetServiceGatewaysResultOutputWithCont
 	return o
 }
 
-func (o GetServiceGatewaysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceGatewaysResult] {
-	return pulumix.Output[GetServiceGatewaysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the service gateway.
 func (o GetServiceGatewaysResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceGatewaysResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -139,8 +132,8 @@ func (o GetServiceGatewaysResultOutput) Filters() GetServiceGatewaysFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetServiceGatewaysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceGatewaysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceGatewaysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceGatewaysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of service_gateways.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -63,11 +62,11 @@ type GetPrivateEndpointReachableIpArgs struct {
 // A collection of values returned by getPrivateEndpointReachableIp.
 type GetPrivateEndpointReachableIpResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An IP address for the Resource Manager service to use for connection to the private resource.
-	IpAddress         string `pulumi:"ipAddress"`
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
-	PrivateIp         string `pulumi:"privateIp"`
+	IpAddress         *string `pulumi:"ipAddress"`
+	PrivateEndpointId string  `pulumi:"privateEndpointId"`
+	PrivateIp         string  `pulumi:"privateIp"`
 }
 
 func GetPrivateEndpointReachableIpOutput(ctx *pulumi.Context, args GetPrivateEndpointReachableIpOutputArgs, opts ...pulumi.InvokeOption) GetPrivateEndpointReachableIpResultOutput {
@@ -110,20 +109,14 @@ func (o GetPrivateEndpointReachableIpResultOutput) ToGetPrivateEndpointReachable
 	return o
 }
 
-func (o GetPrivateEndpointReachableIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointReachableIpResult] {
-	return pulumix.Output[GetPrivateEndpointReachableIpResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetPrivateEndpointReachableIpResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointReachableIpResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateEndpointReachableIpResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointReachableIpResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An IP address for the Resource Manager service to use for connection to the private resource.
-func (o GetPrivateEndpointReachableIpResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointReachableIpResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetPrivateEndpointReachableIpResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointReachableIpResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPrivateEndpointReachableIpResultOutput) PrivateEndpointId() pulumi.StringOutput {

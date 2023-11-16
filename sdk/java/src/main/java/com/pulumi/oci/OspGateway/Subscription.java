@@ -18,6 +18,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -41,42 +42,42 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
-    private Output<String> accountType;
+    private Output</* @Nullable */ String> accountType;
 
     /**
      * @return (Updatable) Account type.
      * 
      */
-    public Output<String> accountType() {
-        return this.accountType;
+    public Output<Optional<String>> accountType() {
+        return Codegen.optional(this.accountType);
     }
     /**
      * (Updatable) Bill to customer Account id.
      * 
      */
     @Export(name="billToCustAccountId", refs={String.class}, tree="[0]")
-    private Output<String> billToCustAccountId;
+    private Output</* @Nullable */ String> billToCustAccountId;
 
     /**
      * @return (Updatable) Bill to customer Account id.
      * 
      */
-    public Output<String> billToCustAccountId() {
-        return this.billToCustAccountId;
+    public Output<Optional<String>> billToCustAccountId() {
+        return Codegen.optional(this.billToCustAccountId);
     }
     /**
      * (Updatable) Address details model.
      * 
      */
     @Export(name="billingAddresses", refs={List.class,SubscriptionBillingAddress.class}, tree="[0,1]")
-    private Output<List<SubscriptionBillingAddress>> billingAddresses;
+    private Output</* @Nullable */ List<SubscriptionBillingAddress>> billingAddresses;
 
     /**
      * @return (Updatable) Address details model.
      * 
      */
-    public Output<List<SubscriptionBillingAddress>> billingAddresses() {
-        return this.billingAddresses;
+    public Output<Optional<List<SubscriptionBillingAddress>>> billingAddresses() {
+        return Codegen.optional(this.billingAddresses);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -97,14 +98,14 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="currencyCode", refs={String.class}, tree="[0]")
-    private Output<String> currencyCode;
+    private Output</* @Nullable */ String> currencyCode;
 
     /**
      * @return (Updatable) Currency code
      * 
      */
-    public Output<String> currencyCode() {
-        return this.currencyCode;
+    public Output<Optional<String>> currencyCode() {
+        return Codegen.optional(this.currencyCode);
     }
     /**
      * (Updatable) User email
@@ -125,56 +126,56 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="gsiOrgCode", refs={String.class}, tree="[0]")
-    private Output<String> gsiOrgCode;
+    private Output</* @Nullable */ String> gsiOrgCode;
 
     /**
      * @return (Updatable) GSI Subscription external code.
      * 
      */
-    public Output<String> gsiOrgCode() {
-        return this.gsiOrgCode;
+    public Output<Optional<String>> gsiOrgCode() {
+        return Codegen.optional(this.gsiOrgCode);
     }
     /**
      * (Updatable) Payment intension.
      * 
      */
     @Export(name="isIntentToPay", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIntentToPay;
+    private Output</* @Nullable */ Boolean> isIntentToPay;
 
     /**
      * @return (Updatable) Payment intension.
      * 
      */
-    public Output<Boolean> isIntentToPay() {
-        return this.isIntentToPay;
+    public Output<Optional<Boolean>> isIntentToPay() {
+        return Codegen.optional(this.isIntentToPay);
     }
     /**
      * (Updatable) Language short code (en, de, hu, etc)
      * 
      */
     @Export(name="languageCode", refs={String.class}, tree="[0]")
-    private Output<String> languageCode;
+    private Output</* @Nullable */ String> languageCode;
 
     /**
      * @return (Updatable) Language short code (en, de, hu, etc)
      * 
      */
-    public Output<String> languageCode() {
-        return this.languageCode;
+    public Output<Optional<String>> languageCode() {
+        return Codegen.optional(this.languageCode);
     }
     /**
      * (Updatable) GSI organization external identifier.
      * 
      */
     @Export(name="organizationId", refs={String.class}, tree="[0]")
-    private Output<String> organizationId;
+    private Output</* @Nullable */ String> organizationId;
 
     /**
      * @return (Updatable) GSI organization external identifier.
      * 
      */
-    public Output<String> organizationId() {
-        return this.organizationId;
+    public Output<Optional<String>> organizationId() {
+        return Codegen.optional(this.organizationId);
     }
     /**
      * (Updatable) The home region&#39;s public name of the logged in user.
@@ -195,70 +196,70 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="paymentGateways", refs={List.class,SubscriptionPaymentGateway.class}, tree="[0,1]")
-    private Output<List<SubscriptionPaymentGateway>> paymentGateways;
+    private Output</* @Nullable */ List<SubscriptionPaymentGateway>> paymentGateways;
 
     /**
      * @return (Updatable) Payment gateway details.
      * 
      */
-    public Output<List<SubscriptionPaymentGateway>> paymentGateways() {
-        return this.paymentGateways;
+    public Output<Optional<List<SubscriptionPaymentGateway>>> paymentGateways() {
+        return Codegen.optional(this.paymentGateways);
     }
     /**
      * (Updatable) Payment option list of a subscription.
      * 
      */
     @Export(name="paymentOptions", refs={List.class,SubscriptionPaymentOption.class}, tree="[0,1]")
-    private Output<List<SubscriptionPaymentOption>> paymentOptions;
+    private Output</* @Nullable */ List<SubscriptionPaymentOption>> paymentOptions;
 
     /**
      * @return (Updatable) Payment option list of a subscription.
      * 
      */
-    public Output<List<SubscriptionPaymentOption>> paymentOptions() {
-        return this.paymentOptions;
+    public Output<Optional<List<SubscriptionPaymentOption>>> paymentOptions() {
+        return Codegen.optional(this.paymentOptions);
     }
     /**
      * (Updatable) Subscription plan type.
      * 
      */
     @Export(name="planType", refs={String.class}, tree="[0]")
-    private Output<String> planType;
+    private Output</* @Nullable */ String> planType;
 
     /**
      * @return (Updatable) Subscription plan type.
      * 
      */
-    public Output<String> planType() {
-        return this.planType;
+    public Output<Optional<String>> planType() {
+        return Codegen.optional(this.planType);
     }
     /**
      * (Updatable) Ship to customer account role.
      * 
      */
     @Export(name="shipToCustAcctRoleId", refs={String.class}, tree="[0]")
-    private Output<String> shipToCustAcctRoleId;
+    private Output</* @Nullable */ String> shipToCustAcctRoleId;
 
     /**
      * @return (Updatable) Ship to customer account role.
      * 
      */
-    public Output<String> shipToCustAcctRoleId() {
-        return this.shipToCustAcctRoleId;
+    public Output<Optional<String>> shipToCustAcctRoleId() {
+        return Codegen.optional(this.shipToCustAcctRoleId);
     }
     /**
      * (Updatable) Ship to customer account site address id.
      * 
      */
     @Export(name="shipToCustAcctSiteId", refs={String.class}, tree="[0]")
-    private Output<String> shipToCustAcctSiteId;
+    private Output</* @Nullable */ String> shipToCustAcctSiteId;
 
     /**
      * @return (Updatable) Ship to customer account site address id.
      * 
      */
-    public Output<String> shipToCustAcctSiteId() {
-        return this.shipToCustAcctSiteId;
+    public Output<Optional<String>> shipToCustAcctSiteId() {
+        return Codegen.optional(this.shipToCustAcctSiteId);
     }
     /**
      * (Updatable) Subscription details object which extends the SubscriptionSummary
@@ -299,98 +300,98 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="subscriptionPlanNumber", refs={String.class}, tree="[0]")
-    private Output<String> subscriptionPlanNumber;
+    private Output</* @Nullable */ String> subscriptionPlanNumber;
 
     /**
      * @return (Updatable) Subscription plan number.
      * 
      */
-    public Output<String> subscriptionPlanNumber() {
-        return this.subscriptionPlanNumber;
+    public Output<Optional<String>> subscriptionPlanNumber() {
+        return Codegen.optional(this.subscriptionPlanNumber);
     }
     /**
      * (Updatable) Tax details.
      * 
      */
     @Export(name="taxInfos", refs={List.class,SubscriptionTaxInfo.class}, tree="[0,1]")
-    private Output<List<SubscriptionTaxInfo>> taxInfos;
+    private Output</* @Nullable */ List<SubscriptionTaxInfo>> taxInfos;
 
     /**
      * @return (Updatable) Tax details.
      * 
      */
-    public Output<List<SubscriptionTaxInfo>> taxInfos() {
-        return this.taxInfos;
+    public Output<Optional<List<SubscriptionTaxInfo>>> taxInfos() {
+        return Codegen.optional(this.taxInfos);
     }
     /**
      * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
     @Export(name="timePersonalToCorporateConv", refs={String.class}, tree="[0]")
-    private Output<String> timePersonalToCorporateConv;
+    private Output</* @Nullable */ String> timePersonalToCorporateConv;
 
     /**
      * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
-    public Output<String> timePersonalToCorporateConv() {
-        return this.timePersonalToCorporateConv;
+    public Output<Optional<String>> timePersonalToCorporateConv() {
+        return Codegen.optional(this.timePersonalToCorporateConv);
     }
     /**
      * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
     @Export(name="timePlanUpgrade", refs={String.class}, tree="[0]")
-    private Output<String> timePlanUpgrade;
+    private Output</* @Nullable */ String> timePlanUpgrade;
 
     /**
      * @return (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    public Output<String> timePlanUpgrade() {
-        return this.timePlanUpgrade;
+    public Output<Optional<String>> timePlanUpgrade() {
+        return Codegen.optional(this.timePlanUpgrade);
     }
     /**
      * (Updatable) Start date of the subscription.
      * 
      */
     @Export(name="timeStart", refs={String.class}, tree="[0]")
-    private Output<String> timeStart;
+    private Output</* @Nullable */ String> timeStart;
 
     /**
      * @return (Updatable) Start date of the subscription.
      * 
      */
-    public Output<String> timeStart() {
-        return this.timeStart;
+    public Output<Optional<String>> timeStart() {
+        return Codegen.optional(this.timeStart);
     }
     /**
      * (Updatable) Status of the upgrade.
      * 
      */
     @Export(name="upgradeState", refs={String.class}, tree="[0]")
-    private Output<String> upgradeState;
+    private Output</* @Nullable */ String> upgradeState;
 
     /**
      * @return (Updatable) Status of the upgrade.
      * 
      */
-    public Output<String> upgradeState() {
-        return this.upgradeState;
+    public Output<Optional<String>> upgradeState() {
+        return Codegen.optional(this.upgradeState);
     }
     /**
      * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
     @Export(name="upgradeStateDetails", refs={String.class}, tree="[0]")
-    private Output<String> upgradeStateDetails;
+    private Output</* @Nullable */ String> upgradeStateDetails;
 
     /**
      * @return (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    public Output<String> upgradeStateDetails() {
-        return this.upgradeStateDetails;
+    public Output<Optional<String>> upgradeStateDetails() {
+        return Codegen.optional(this.upgradeStateDetails);
     }
 
     /**

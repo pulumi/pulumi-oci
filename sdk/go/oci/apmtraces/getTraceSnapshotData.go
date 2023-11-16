@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -73,17 +72,17 @@ type GetTraceSnapshotDataArgs struct {
 type GetTraceSnapshotDataResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	IsSummarized *bool  `pulumi:"isSummarized"`
+	Id           *string `pulumi:"id"`
+	IsSummarized *bool   `pulumi:"isSummarized"`
 	// Name of the property.
-	Key          string  `pulumi:"key"`
+	Key          *string `pulumi:"key"`
 	SnapshotTime *string `pulumi:"snapshotTime"`
 	ThreadId     *string `pulumi:"threadId"`
 	// End time of the trace.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// Start time of the trace.
-	TimeStarted string `pulumi:"timeStarted"`
-	TraceKey    string `pulumi:"traceKey"`
+	TimeStarted *string `pulumi:"timeStarted"`
+	TraceKey    string  `pulumi:"traceKey"`
 	// Trace snapshots properties.
 	TraceSnapshotDetails []GetTraceSnapshotDataTraceSnapshotDetail `pulumi:"traceSnapshotDetails"`
 }
@@ -134,19 +133,13 @@ func (o GetTraceSnapshotDataResultOutput) ToGetTraceSnapshotDataResultOutputWith
 	return o
 }
 
-func (o GetTraceSnapshotDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSnapshotDataResult] {
-	return pulumix.Output[GetTraceSnapshotDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSnapshotDataResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTraceSnapshotDataResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTraceSnapshotDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSnapshotDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTraceSnapshotDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSnapshotDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTraceSnapshotDataResultOutput) IsSummarized() pulumi.BoolPtrOutput {
@@ -154,8 +147,8 @@ func (o GetTraceSnapshotDataResultOutput) IsSummarized() pulumi.BoolPtrOutput {
 }
 
 // Name of the property.
-func (o GetTraceSnapshotDataResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSnapshotDataResult) string { return v.Key }).(pulumi.StringOutput)
+func (o GetTraceSnapshotDataResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSnapshotDataResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTraceSnapshotDataResultOutput) SnapshotTime() pulumi.StringPtrOutput {
@@ -167,13 +160,13 @@ func (o GetTraceSnapshotDataResultOutput) ThreadId() pulumi.StringPtrOutput {
 }
 
 // End time of the trace.
-func (o GetTraceSnapshotDataResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSnapshotDataResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetTraceSnapshotDataResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSnapshotDataResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Start time of the trace.
-func (o GetTraceSnapshotDataResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSnapshotDataResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetTraceSnapshotDataResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSnapshotDataResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTraceSnapshotDataResultOutput) TraceKey() pulumi.StringOutput {

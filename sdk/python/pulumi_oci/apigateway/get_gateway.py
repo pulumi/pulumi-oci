@@ -80,58 +80,37 @@ class GetGatewayResult:
 
     @property
     @pulumi.getter(name="caBundles")
-    def ca_bundles(self) -> Sequence['outputs.GetGatewayCaBundleResult']:
-        """
-        An array of CA bundles that should be used on the Gateway for TLS validation.
-        """
+    def ca_bundles(self) -> Optional[Sequence['outputs.GetGatewayCaBundleResult']]:
         return pulumi.get(self, "ca_bundles")
 
     @property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def certificate_id(self) -> Optional[str]:
         return pulumi.get(self, "certificate_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> str:
-        """
-        Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
-        """
+    def endpoint_type(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -141,82 +120,52 @@ class GetGatewayResult:
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        The hostname for APIs deployed on the gateway.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Sequence['outputs.GetGatewayIpAddressResult']:
-        """
-        An array of IP addresses associated with the gateway.
-        """
+    def ip_addresses(self) -> Optional[Sequence['outputs.GetGatewayIpAddressResult']]:
         return pulumi.get(self, "ip_addresses")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> Sequence[str]:
-        """
-        An array of Network Security Groups OCIDs associated with this API Gateway.
-        """
+    def network_security_group_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "network_security_group_ids")
 
     @property
     @pulumi.getter(name="responseCacheDetails")
-    def response_cache_details(self) -> Sequence['outputs.GetGatewayResponseCacheDetailResult']:
-        """
-        Base Gateway response cache.
-        """
+    def response_cache_details(self) -> Optional[Sequence['outputs.GetGatewayResponseCacheDetailResult']]:
         return pulumi.get(self, "response_cache_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the gateway.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -249,21 +198,7 @@ class AwaitableGetGatewayResult(GetGatewayResult):
 def get_gateway(gateway_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGatewayResult:
     """
-    This data source provides details about a specific Gateway resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a gateway by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_gateway = oci.ApiGateway.get_gateway(gateway_id=oci_apigateway_gateway["test_gateway"]["id"])
-    ```
-
-
-    :param str gateway_id: The ocid of the gateway.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['gatewayId'] = gateway_id
@@ -295,20 +230,6 @@ def get_gateway(gateway_id: Optional[str] = None,
 def get_gateway_output(gateway_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGatewayResult]:
     """
-    This data source provides details about a specific Gateway resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a gateway by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_gateway = oci.ApiGateway.get_gateway(gateway_id=oci_apigateway_gateway["test_gateway"]["id"])
-    ```
-
-
-    :param str gateway_id: The ocid of the gateway.
+    Use this data source to access information about an existing resource.
     """
     ...

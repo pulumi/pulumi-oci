@@ -21,12 +21,12 @@ public final class GetSupportedSkusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of the supported SKUs.
      * 
      */
-    private List<GetSupportedSkusItem> items;
+    private @Nullable List<GetSupportedSkusItem> items;
 
     private GetSupportedSkusResult() {}
     public String compartmentId() {
@@ -42,15 +42,15 @@ public final class GetSupportedSkusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of the supported SKUs.
      * 
      */
     public List<GetSupportedSkusItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -65,8 +65,8 @@ public final class GetSupportedSkusResult {
         private String compartmentId;
         private @Nullable List<GetSupportedSkusFilter> filters;
         private @Nullable String hostShapeName;
-        private String id;
-        private List<GetSupportedSkusItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetSupportedSkusItem> items;
         public Builder() {}
         public Builder(GetSupportedSkusResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -96,13 +96,13 @@ public final class GetSupportedSkusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetSupportedSkusItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSupportedSkusItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSupportedSkusItem... items) {

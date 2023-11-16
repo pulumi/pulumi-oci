@@ -16,92 +16,92 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The time when this snapshot will be deleted.
         /// </summary>
-        public readonly string ExpirationTime;
+        public readonly string? ExpirationTime;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         /// </summary>
-        public readonly string FileSystemId;
+        public readonly string? FileSystemId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
         /// </summary>
-        public readonly string FilesystemSnapshotPolicyId;
+        public readonly string? FilesystemSnapshotPolicyId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
-        public readonly bool IsCloneSource;
+        public readonly bool? IsCloneSource;
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Name of the snapshot. This value is immutable.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
-        public readonly string ProvenanceId;
+        public readonly string? ProvenanceId;
         /// <summary>
         /// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
         /// * If the snapshot is created in the original file system directory.
         /// * If the snapshot is cloned from a file system.
         /// * If the snapshot is replicated from a file system.
         /// </summary>
-        public readonly string SnapshotTime;
+        public readonly string? SnapshotTime;
         /// <summary>
         /// Specifies the generation type of the snapshot.
         /// </summary>
-        public readonly string SnapshotType;
+        public readonly string? SnapshotType;
         /// <summary>
         /// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetSnapshotsSnapshotResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string expirationTime,
+            string? expirationTime,
 
-            string fileSystemId,
+            string? fileSystemId,
 
-            string filesystemSnapshotPolicyId,
+            string? filesystemSnapshotPolicyId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isCloneSource,
+            bool? isCloneSource,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string provenanceId,
+            string? provenanceId,
 
-            string snapshotTime,
+            string? snapshotTime,
 
-            string snapshotType,
+            string? snapshotType,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             DefinedTags = definedTags;
             ExpirationTime = expirationTime;

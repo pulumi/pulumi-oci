@@ -70,11 +70,11 @@ export class ManagedDatabaseGroup extends pulumi.CustomResource {
     /**
      * (Updatable) The information specified by the user about the Managed Database Group.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
      */
-    public readonly managedDatabases!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseGroupManagedDatabase[]>;
+    public readonly managedDatabases!: pulumi.Output<outputs.DatabaseManagement.ManagedDatabaseGroupManagedDatabase[] | undefined>;
     /**
      * The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
      */
@@ -82,15 +82,15 @@ export class ManagedDatabaseGroup extends pulumi.CustomResource {
     /**
      * The current lifecycle state of the Managed Database Group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Managed Database Group was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Managed Database Group was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagedDatabaseGroup resource with the given unique name, arguments, and options.

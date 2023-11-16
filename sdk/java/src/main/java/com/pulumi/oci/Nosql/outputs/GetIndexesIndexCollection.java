@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIndexesIndexCollection {
@@ -16,107 +18,107 @@ public final class GetIndexesIndexCollection {
      * @return The ID of a table&#39;s compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
      * 
      */
-    private String compartmentId;
-    private String id;
-    private Boolean isIfNotExists;
+    private @Nullable String compartmentId;
+    private @Nullable String id;
+    private @Nullable Boolean isIfNotExists;
     /**
      * @return A set of keys for a secondary index.
      * 
      */
-    private List<GetIndexesIndexCollectionKey> keys;
+    private @Nullable List<GetIndexesIndexCollectionKey> keys;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Filter list by the lifecycle state of the item.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    private String tableId;
+    private @Nullable String tableId;
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    private String tableName;
+    private @Nullable String tableName;
     /**
      * @return A table name within the compartment, or a table OCID.
      * 
      */
-    private String tableNameOrId;
+    private @Nullable String tableNameOrId;
 
     private GetIndexesIndexCollection() {}
     /**
      * @return The ID of a table&#39;s compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isIfNotExists() {
-        return this.isIfNotExists;
+    public Optional<Boolean> isIfNotExists() {
+        return Optional.ofNullable(this.isIfNotExists);
     }
     /**
      * @return A set of keys for a secondary index.
      * 
      */
     public List<GetIndexesIndexCollectionKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Filter list by the lifecycle state of the item.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    public String tableId() {
-        return this.tableId;
+    public Optional<String> tableId() {
+        return Optional.ofNullable(this.tableId);
     }
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    public String tableName() {
-        return this.tableName;
+    public Optional<String> tableName() {
+        return Optional.ofNullable(this.tableName);
     }
     /**
      * @return A table name within the compartment, or a table OCID.
      * 
      */
-    public String tableNameOrId() {
-        return this.tableNameOrId;
+    public Optional<String> tableNameOrId() {
+        return Optional.ofNullable(this.tableNameOrId);
     }
 
     public static Builder builder() {
@@ -128,16 +130,16 @@ public final class GetIndexesIndexCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private Boolean isIfNotExists;
-        private List<GetIndexesIndexCollectionKey> keys;
-        private String lifecycleDetails;
-        private String name;
-        private String state;
-        private String tableId;
-        private String tableName;
-        private String tableNameOrId;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable Boolean isIfNotExists;
+        private @Nullable List<GetIndexesIndexCollectionKey> keys;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String tableId;
+        private @Nullable String tableName;
+        private @Nullable String tableNameOrId;
         public Builder() {}
         public Builder(GetIndexesIndexCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,56 +156,56 @@ public final class GetIndexesIndexCollection {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isIfNotExists(Boolean isIfNotExists) {
-            this.isIfNotExists = Objects.requireNonNull(isIfNotExists);
+        public Builder isIfNotExists(@Nullable Boolean isIfNotExists) {
+            this.isIfNotExists = isIfNotExists;
             return this;
         }
         @CustomType.Setter
-        public Builder keys(List<GetIndexesIndexCollectionKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetIndexesIndexCollectionKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetIndexesIndexCollectionKey... keys) {
             return keys(List.of(keys));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tableId(String tableId) {
-            this.tableId = Objects.requireNonNull(tableId);
+        public Builder tableId(@Nullable String tableId) {
+            this.tableId = tableId;
             return this;
         }
         @CustomType.Setter
-        public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+        public Builder tableName(@Nullable String tableName) {
+            this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
-        public Builder tableNameOrId(String tableNameOrId) {
-            this.tableNameOrId = Objects.requireNonNull(tableNameOrId);
+        public Builder tableNameOrId(@Nullable String tableNameOrId) {
+            this.tableNameOrId = tableNameOrId;
             return this;
         }
         public GetIndexesIndexCollection build() {

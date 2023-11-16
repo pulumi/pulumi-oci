@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -74,7 +73,7 @@ type GetComputeCapacityReservationInstanceShapesResult struct {
 	DisplayName                              *string                                                                              `pulumi:"displayName"`
 	Filters                                  []GetComputeCapacityReservationInstanceShapesFilter                                  `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetComputeCapacityReservationInstanceShapesOutput(ctx *pulumi.Context, args GetComputeCapacityReservationInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityReservationInstanceShapesResultOutput {
@@ -120,12 +119,6 @@ func (o GetComputeCapacityReservationInstanceShapesResultOutput) ToGetComputeCap
 	return o
 }
 
-func (o GetComputeCapacityReservationInstanceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeCapacityReservationInstanceShapesResult] {
-	return pulumix.Output[GetComputeCapacityReservationInstanceShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The shape's availability domain.
 func (o GetComputeCapacityReservationInstanceShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeCapacityReservationInstanceShapesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -153,8 +146,8 @@ func (o GetComputeCapacityReservationInstanceShapesResultOutput) Filters() GetCo
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeCapacityReservationInstanceShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeCapacityReservationInstanceShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeCapacityReservationInstanceShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeCapacityReservationInstanceShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

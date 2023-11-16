@@ -92,11 +92,11 @@ export class FusionEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Language packs.
      */
-    public readonly additionalLanguagePacks!: pulumi.Output<string[]>;
+    public readonly additionalLanguagePacks!: pulumi.Output<string[] | undefined>;
     /**
      * Patch bundle names
      */
-    public /*out*/ readonly appliedPatchBundles!: pulumi.Output<string[]>;
+    public /*out*/ readonly appliedPatchBundles!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
      */
@@ -108,7 +108,7 @@ export class FusionEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) FusionEnvironment Identifier can be renamed.
      */
@@ -116,15 +116,15 @@ export class FusionEnvironment extends pulumi.CustomResource {
     /**
      * DNS prefix.
      */
-    public readonly dnsPrefix!: pulumi.Output<string>;
+    public readonly dnsPrefix!: pulumi.Output<string | undefined>;
     /**
      * The IDCS domain created for the fusion instance
      */
-    public /*out*/ readonly domainId!: pulumi.Output<string>;
+    public /*out*/ readonly domainId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
      */
@@ -136,71 +136,71 @@ export class FusionEnvironment extends pulumi.CustomResource {
     /**
      * The IDCS Domain URL
      */
-    public /*out*/ readonly idcsDomainUrl!: pulumi.Output<string>;
+    public /*out*/ readonly idcsDomainUrl!: pulumi.Output<string | undefined>;
     /**
      * If it's true, then the Break Glass feature is enabled
      */
-    public /*out*/ readonly isBreakGlassEnabled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isBreakGlassEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) byok kms keyId
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * BYOK key info
      */
-    public /*out*/ readonly kmsKeyInfos!: pulumi.Output<outputs.FusionApps.FusionEnvironmentKmsKeyInfo[]>;
+    public /*out*/ readonly kmsKeyInfos!: pulumi.Output<outputs.FusionApps.FusionEnvironmentKmsKeyInfo[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
      */
-    public /*out*/ readonly lockboxId!: pulumi.Output<string>;
+    public /*out*/ readonly lockboxId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    public readonly maintenancePolicy!: pulumi.Output<outputs.FusionApps.FusionEnvironmentMaintenancePolicy>;
+    public readonly maintenancePolicy!: pulumi.Output<outputs.FusionApps.FusionEnvironmentMaintenancePolicy | undefined>;
     /**
      * Public URL
      */
-    public /*out*/ readonly publicUrl!: pulumi.Output<string>;
+    public /*out*/ readonly publicUrl!: pulumi.Output<string | undefined>;
     /**
      * Describes a refresh of a fusion environment
      */
-    public /*out*/ readonly refreshes!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefresh[]>;
+    public /*out*/ readonly refreshes!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefresh[] | undefined>;
     /**
      * (Updatable) Rules.
      */
-    public readonly rules!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRule[]>;
+    public readonly rules!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRule[] | undefined>;
     /**
      * The current state of the ServiceInstance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * List of subscription IDs.
      */
-    public /*out*/ readonly subscriptionIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly subscriptionIds!: pulumi.Output<string[] | undefined>;
     /**
      * Environment Specific Guid/ System Name
      */
-    public /*out*/ readonly systemName!: pulumi.Output<string>;
+    public /*out*/ readonly systemName!: pulumi.Output<string | undefined>;
     /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The next maintenance for this environment
      */
-    public /*out*/ readonly timeUpcomingMaintenance!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpcomingMaintenance!: pulumi.Output<string | undefined>;
     /**
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Version of Fusion Apps used by this environment
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a FusionEnvironment resource with the given unique name, arguments, and options.

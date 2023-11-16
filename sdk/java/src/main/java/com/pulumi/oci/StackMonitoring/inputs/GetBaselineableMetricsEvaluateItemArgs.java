@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetBaselineableMetricsEvaluateItemArgs extends com.pulumi.resources.ResourceArgs {
@@ -23,30 +25,30 @@ public final class GetBaselineableMetricsEvaluateItemArgs extends com.pulumi.res
      * list of anomaly data points for the metric
      * 
      */
-    @Import(name="dataPoints", required=true)
-    private Output<List<GetBaselineableMetricsEvaluateItemDataPointArgs>> dataPoints;
+    @Import(name="dataPoints")
+    private @Nullable Output<List<GetBaselineableMetricsEvaluateItemDataPointArgs>> dataPoints;
 
     /**
      * @return list of anomaly data points for the metric
      * 
      */
-    public Output<List<GetBaselineableMetricsEvaluateItemDataPointArgs>> dataPoints() {
-        return this.dataPoints;
+    public Optional<Output<List<GetBaselineableMetricsEvaluateItemDataPointArgs>>> dataPoints() {
+        return Optional.ofNullable(this.dataPoints);
     }
 
     /**
      * list of dimensions for the metric
      * 
      */
-    @Import(name="dimensions", required=true)
-    private Output<Map<String,Object>> dimensions;
+    @Import(name="dimensions")
+    private @Nullable Output<Map<String,Object>> dimensions;
 
     /**
      * @return list of dimensions for the metric
      * 
      */
-    public Output<Map<String,Object>> dimensions() {
-        return this.dimensions;
+    public Optional<Output<Map<String,Object>>> dimensions() {
+        return Optional.ofNullable(this.dimensions);
     }
 
     /**
@@ -112,7 +114,7 @@ public final class GetBaselineableMetricsEvaluateItemArgs extends com.pulumi.res
          * @return builder
          * 
          */
-        public Builder dataPoints(Output<List<GetBaselineableMetricsEvaluateItemDataPointArgs>> dataPoints) {
+        public Builder dataPoints(@Nullable Output<List<GetBaselineableMetricsEvaluateItemDataPointArgs>> dataPoints) {
             $.dataPoints = dataPoints;
             return this;
         }
@@ -143,7 +145,7 @@ public final class GetBaselineableMetricsEvaluateItemArgs extends com.pulumi.res
          * @return builder
          * 
          */
-        public Builder dimensions(Output<Map<String,Object>> dimensions) {
+        public Builder dimensions(@Nullable Output<Map<String,Object>> dimensions) {
             $.dimensions = dimensions;
             return this;
         }
@@ -221,8 +223,6 @@ public final class GetBaselineableMetricsEvaluateItemArgs extends com.pulumi.res
         }
 
         public GetBaselineableMetricsEvaluateItemArgs build() {
-            $.dataPoints = Objects.requireNonNull($.dataPoints, "expected parameter 'dataPoints' to be non-null");
-            $.dimensions = Objects.requireNonNull($.dimensions, "expected parameter 'dimensions' to be non-null");
             $.evaluationDataPoints = Objects.requireNonNull($.evaluationDataPoints, "expected parameter 'evaluationDataPoints' to be non-null");
             $.trainingDataPoints = Objects.requireNonNull($.trainingDataPoints, "expected parameter 'trainingDataPoints' to be non-null");
             return $;

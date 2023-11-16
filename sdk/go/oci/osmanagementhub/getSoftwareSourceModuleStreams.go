@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
@@ -75,7 +74,7 @@ type GetSoftwareSourceModuleStreamsArgs struct {
 type GetSoftwareSourceModuleStreamsResult struct {
 	Filters []GetSoftwareSourceModuleStreamsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether this module stream is the latest.
 	IsLatest *bool `pulumi:"isLatest"`
 	// The name of the module that contains the stream.
@@ -136,19 +135,13 @@ func (o GetSoftwareSourceModuleStreamsResultOutput) ToGetSoftwareSourceModuleStr
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsResult] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceModuleStreamsResultOutput) Filters() GetSoftwareSourceModuleStreamsFilterArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsResult) []GetSoftwareSourceModuleStreamsFilter { return v.Filters }).(GetSoftwareSourceModuleStreamsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceModuleStreamsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this module stream is the latest.

@@ -130,7 +130,7 @@ export interface GetSoftwareSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OS family the software source belongs to.
      */
@@ -138,7 +138,7 @@ export interface GetSoftwareSourcesResult {
     /**
      * The list of software_source_collection.
      */
-    readonly softwareSourceCollections: outputs.OsManagementHub.GetSoftwareSourcesSoftwareSourceCollection[];
+    readonly softwareSourceCollections?: outputs.OsManagementHub.GetSoftwareSourcesSoftwareSourceCollection[];
     readonly softwareSourceId?: string;
     /**
      * Type of the software source.

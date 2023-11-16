@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmConfig.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigDimension {
@@ -13,27 +15,27 @@ public final class GetConfigDimension {
      * @return The name of the metric. This must be a known metric name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return This must not be set.
      * 
      */
-    private String valueSource;
+    private @Nullable String valueSource;
 
     private GetConfigDimension() {}
     /**
      * @return The name of the metric. This must be a known metric name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return This must not be set.
      * 
      */
-    public String valueSource() {
-        return this.valueSource;
+    public Optional<String> valueSource() {
+        return Optional.ofNullable(this.valueSource);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetConfigDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String valueSource;
+        private @Nullable String name;
+        private @Nullable String valueSource;
         public Builder() {}
         public Builder(GetConfigDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetConfigDimension {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder valueSource(String valueSource) {
-            this.valueSource = Objects.requireNonNull(valueSource);
+        public Builder valueSource(@Nullable String valueSource) {
+            this.valueSource = valueSource;
             return this;
         }
         public GetConfigDimension build() {

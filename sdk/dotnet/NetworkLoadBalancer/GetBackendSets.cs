@@ -129,7 +129,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkLoadBalancerId;
 
         [OutputConstructor]
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             ImmutableArray<Outputs.GetBackendSetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string networkLoadBalancerId)
         {

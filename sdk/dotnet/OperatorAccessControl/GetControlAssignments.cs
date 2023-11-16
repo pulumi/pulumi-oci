@@ -185,7 +185,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of operator_control_assignment_collection.
         /// </summary>
@@ -210,7 +210,7 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             ImmutableArray<Outputs.GetControlAssignmentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetControlAssignmentsOperatorControlAssignmentCollectionResult> operatorControlAssignmentCollections,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
@@ -60,30 +59,30 @@ type LookupAppAccelerationPolicyArgs struct {
 // A collection of values returned by getAppAccelerationPolicy.
 type LookupAppAccelerationPolicyResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// WebAppAccelerationPolicy display name, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicies []GetAppAccelerationPolicyResponseCachingPolicy `pulumi:"responseCachingPolicies"`
 	// An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
 	ResponseCompressionPolicies []GetAppAccelerationPolicyResponseCompressionPolicy `pulumi:"responseCompressionPolicies"`
 	// The current state of the WebAppAccelerationPolicy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-	TimeUpdated                string `pulumi:"timeUpdated"`
-	WebAppAccelerationPolicyId string `pulumi:"webAppAccelerationPolicyId"`
+	TimeUpdated                *string `pulumi:"timeUpdated"`
+	WebAppAccelerationPolicyId string  `pulumi:"webAppAccelerationPolicyId"`
 }
 
 func LookupAppAccelerationPolicyOutput(ctx *pulumi.Context, args LookupAppAccelerationPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAppAccelerationPolicyResultOutput {
@@ -124,15 +123,9 @@ func (o LookupAppAccelerationPolicyResultOutput) ToLookupAppAccelerationPolicyRe
 	return o
 }
 
-func (o LookupAppAccelerationPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppAccelerationPolicyResult] {
-	return pulumix.Output[LookupAppAccelerationPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupAppAccelerationPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -141,8 +134,8 @@ func (o LookupAppAccelerationPolicyResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // WebAppAccelerationPolicy display name, can be renamed.
-func (o LookupAppAccelerationPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -151,13 +144,13 @@ func (o LookupAppAccelerationPolicyResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAccelerationPolicy.
-func (o LookupAppAccelerationPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o LookupAppAccelerationPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // An object that specifies an HTTP response caching policy.
@@ -175,8 +168,8 @@ func (o LookupAppAccelerationPolicyResultOutput) ResponseCompressionPolicies() G
 }
 
 // The current state of the WebAppAccelerationPolicy.
-func (o LookupAppAccelerationPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -185,13 +178,13 @@ func (o LookupAppAccelerationPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-func (o LookupAppAccelerationPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-func (o LookupAppAccelerationPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAppAccelerationPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAppAccelerationPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAppAccelerationPolicyResultOutput) WebAppAccelerationPolicyId() pulumi.StringOutput {

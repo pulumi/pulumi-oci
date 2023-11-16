@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
@@ -77,7 +76,7 @@ type GetDatabaseToolsConnectionsResult struct {
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Database Tools connection.
 	State *string `pulumi:"state"`
 	// The Database Tools connection type.
@@ -129,12 +128,6 @@ func (o GetDatabaseToolsConnectionsResultOutput) ToGetDatabaseToolsConnectionsRe
 	return o
 }
 
-func (o GetDatabaseToolsConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsResult] {
-	return pulumix.Output[GetDatabaseToolsConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 func (o GetDatabaseToolsConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -157,8 +150,8 @@ func (o GetDatabaseToolsConnectionsResultOutput) Filters() GetDatabaseToolsConne
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseToolsConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseToolsConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Database Tools connection.

@@ -45,18 +45,12 @@ class GetAppCatalogListingsResult:
 
     @property
     @pulumi.getter(name="appCatalogListings")
-    def app_catalog_listings(self) -> Sequence['outputs.GetAppCatalogListingsAppCatalogListingResult']:
-        """
-        The list of app_catalog_listings.
-        """
+    def app_catalog_listings(self) -> Optional[Sequence['outputs.GetAppCatalogListingsAppCatalogListingResult']]:
         return pulumi.get(self, "app_catalog_listings")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetAppCatalogListingsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,9 +69,6 @@ class GetAppCatalogListingsResult:
     @property
     @pulumi.getter(name="publisherName")
     def publisher_name(self) -> Optional[str]:
-        """
-        The name of the publisher who published this listing.
-        """
         return pulumi.get(self, "publisher_name")
 
     @property
@@ -106,25 +97,7 @@ def get_app_catalog_listings(display_name: Optional[str] = None,
                              publisher_type: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogListingsResult:
     """
-    This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
-
-    Lists the published listings.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listings = oci.Core.get_app_catalog_listings(display_name=var["app_catalog_listing_display_name"],
-        publisher_name=var["app_catalog_listing_publisher_name"],
-        publisher_type=var["app_catalog_listing_publisher_type"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str publisher_name: A filter to return only the publisher that matches the given publisher name exactly.
-    :param str publisher_type: A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -150,24 +123,6 @@ def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional
                                     publisher_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingsResult]:
     """
-    This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
-
-    Lists the published listings.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listings = oci.Core.get_app_catalog_listings(display_name=var["app_catalog_listing_display_name"],
-        publisher_name=var["app_catalog_listing_publisher_name"],
-        publisher_type=var["app_catalog_listing_publisher_type"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str publisher_name: A filter to return only the publisher that matches the given publisher name exactly.
-    :param str publisher_type: A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
+    Use this data source to access information about an existing resource.
     """
     ...

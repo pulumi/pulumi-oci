@@ -7,22 +7,24 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold {
-    private Integer durationInMinutes;
-    private String operator;
-    private Integer value;
+    private @Nullable Integer durationInMinutes;
+    private @Nullable String operator;
+    private @Nullable Integer value;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold() {}
-    public Integer durationInMinutes() {
-        return this.durationInMinutes;
+    public Optional<Integer> durationInMinutes() {
+        return Optional.ofNullable(this.durationInMinutes);
     }
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
-    public Integer value() {
-        return this.value;
+    public Optional<Integer> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -34,9 +36,9 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer durationInMinutes;
-        private String operator;
-        private Integer value;
+        private @Nullable Integer durationInMinutes;
+        private @Nullable String operator;
+        private @Nullable Integer value;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold defaults) {
     	      Objects.requireNonNull(defaults);
@@ -46,18 +48,18 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
 
         @CustomType.Setter
-        public Builder durationInMinutes(Integer durationInMinutes) {
-            this.durationInMinutes = Objects.requireNonNull(durationInMinutes);
+        public Builder durationInMinutes(@Nullable Integer durationInMinutes) {
+            this.durationInMinutes = durationInMinutes;
             return this;
         }
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Integer value) {
+            this.value = value;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThreshold build() {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The unique name of the whitelist.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The value of the header.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyOriginCustomHeaderResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

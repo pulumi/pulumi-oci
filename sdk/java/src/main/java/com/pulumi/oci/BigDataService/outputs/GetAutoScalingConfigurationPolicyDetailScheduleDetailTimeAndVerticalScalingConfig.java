@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig {
@@ -14,51 +16,51 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private Integer targetMemoryPerNode;
+    private @Nullable Integer targetMemoryPerNode;
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private Integer targetOcpusPerNode;
+    private @Nullable Integer targetOcpusPerNode;
     /**
      * @return For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
      * 
      */
-    private String targetShape;
+    private @Nullable String targetShape;
     /**
      * @return Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      * 
      */
-    private String timeRecurrence;
+    private @Nullable String timeRecurrence;
 
     private GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig() {}
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    public Integer targetMemoryPerNode() {
-        return this.targetMemoryPerNode;
+    public Optional<Integer> targetMemoryPerNode() {
+        return Optional.ofNullable(this.targetMemoryPerNode);
     }
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    public Integer targetOcpusPerNode() {
-        return this.targetOcpusPerNode;
+    public Optional<Integer> targetOcpusPerNode() {
+        return Optional.ofNullable(this.targetOcpusPerNode);
     }
     /**
      * @return For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
      * 
      */
-    public String targetShape() {
-        return this.targetShape;
+    public Optional<String> targetShape() {
+        return Optional.ofNullable(this.targetShape);
     }
     /**
      * @return Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      * 
      */
-    public String timeRecurrence() {
-        return this.timeRecurrence;
+    public Optional<String> timeRecurrence() {
+        return Optional.ofNullable(this.timeRecurrence);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer targetMemoryPerNode;
-        private Integer targetOcpusPerNode;
-        private String targetShape;
-        private String timeRecurrence;
+        private @Nullable Integer targetMemoryPerNode;
+        private @Nullable Integer targetOcpusPerNode;
+        private @Nullable String targetShape;
+        private @Nullable String timeRecurrence;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
         }
 
         @CustomType.Setter
-        public Builder targetMemoryPerNode(Integer targetMemoryPerNode) {
-            this.targetMemoryPerNode = Objects.requireNonNull(targetMemoryPerNode);
+        public Builder targetMemoryPerNode(@Nullable Integer targetMemoryPerNode) {
+            this.targetMemoryPerNode = targetMemoryPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder targetOcpusPerNode(Integer targetOcpusPerNode) {
-            this.targetOcpusPerNode = Objects.requireNonNull(targetOcpusPerNode);
+        public Builder targetOcpusPerNode(@Nullable Integer targetOcpusPerNode) {
+            this.targetOcpusPerNode = targetOcpusPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder targetShape(String targetShape) {
-            this.targetShape = Objects.requireNonNull(targetShape);
+        public Builder targetShape(@Nullable String targetShape) {
+            this.targetShape = targetShape;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRecurrence(String timeRecurrence) {
-            this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
+        public Builder timeRecurrence(@Nullable String timeRecurrence) {
+            this.timeRecurrence = timeRecurrence;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {

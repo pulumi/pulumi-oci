@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -63,29 +62,29 @@ type LookupCatalogResult struct {
 	AttachedCatalogPrivateEndpoints []string `pulumi:"attachedCatalogPrivateEndpoints"`
 	CatalogId                       string   `pulumi:"catalogId"`
 	// Compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Data catalog identifier, which can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-	NumberOfObjects int `pulumi:"numberOfObjects"`
+	NumberOfObjects *int `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
-	ServiceApiUrl string `pulumi:"serviceApiUrl"`
+	ServiceApiUrl *string `pulumi:"serviceApiUrl"`
 	// The console front endpoint URL to the data catalog instance.
-	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
+	ServiceConsoleUrl *string `pulumi:"serviceConsoleUrl"`
 	// The current state of the data catalog resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupCatalogOutput(ctx *pulumi.Context, args LookupCatalogOutputArgs, opts ...pulumi.InvokeOption) LookupCatalogResultOutput {
@@ -126,12 +125,6 @@ func (o LookupCatalogResultOutput) ToLookupCatalogResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupCatalogResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCatalogResult] {
-	return pulumix.Output[LookupCatalogResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of private reverse connection endpoints attached to the catalog
 func (o LookupCatalogResultOutput) AttachedCatalogPrivateEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCatalogResult) []string { return v.AttachedCatalogPrivateEndpoints }).(pulumi.StringArrayOutput)
@@ -142,8 +135,8 @@ func (o LookupCatalogResultOutput) CatalogId() pulumi.StringOutput {
 }
 
 // Compartment identifier.
-func (o LookupCatalogResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -152,8 +145,8 @@ func (o LookupCatalogResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Data catalog identifier, which can be renamed.
-func (o LookupCatalogResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -162,43 +155,43 @@ func (o LookupCatalogResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupCatalogResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-func (o LookupCatalogResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-func (o LookupCatalogResultOutput) NumberOfObjects() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCatalogResult) int { return v.NumberOfObjects }).(pulumi.IntOutput)
+func (o LookupCatalogResultOutput) NumberOfObjects() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *int { return v.NumberOfObjects }).(pulumi.IntPtrOutput)
 }
 
 // The REST front endpoint URL to the data catalog instance.
-func (o LookupCatalogResultOutput) ServiceApiUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.ServiceApiUrl }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) ServiceApiUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.ServiceApiUrl }).(pulumi.StringPtrOutput)
 }
 
 // The console front endpoint URL to the data catalog instance.
-func (o LookupCatalogResultOutput) ServiceConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.ServiceConsoleUrl }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) ServiceConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.ServiceConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the data catalog resource.
-func (o LookupCatalogResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupCatalogResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupCatalogResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCatalogResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupCatalogResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCatalogResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

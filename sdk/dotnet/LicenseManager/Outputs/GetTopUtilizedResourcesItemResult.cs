@@ -16,41 +16,41 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains the resource.
         /// </summary>
-        public readonly string ResourceCompartmentId;
+        public readonly string? ResourceCompartmentId;
         /// <summary>
         /// The display name of the compartment that contains the resource.
         /// </summary>
-        public readonly string ResourceCompartmentName;
+        public readonly string? ResourceCompartmentName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// Resource canonical name.
         /// </summary>
-        public readonly string ResourceName;
+        public readonly string? ResourceName;
         /// <summary>
         /// Number of license units consumed by the resource.
         /// </summary>
-        public readonly double TotalUnits;
+        public readonly double? TotalUnits;
         /// <summary>
         /// The resource unit.
         /// </summary>
-        public readonly string UnitType;
+        public readonly string? UnitType;
 
         [OutputConstructor]
         private GetTopUtilizedResourcesItemResult(
-            string resourceCompartmentId,
+            string? resourceCompartmentId,
 
-            string resourceCompartmentName,
+            string? resourceCompartmentName,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceName,
+            string? resourceName,
 
-            double totalUnits,
+            double? totalUnits,
 
-            string unitType)
+            string? unitType)
         {
             ResourceCompartmentId = resourceCompartmentId;
             ResourceCompartmentName = resourceCompartmentName;

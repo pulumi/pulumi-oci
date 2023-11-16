@@ -47,56 +47,56 @@ export interface GetStreamPackagingConfigResult {
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The name of the stream packaging configuration. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
      */
-    readonly distributionChannelId: string;
+    readonly distributionChannelId?: string;
     /**
      * The encryption used by the stream packaging configuration.
      */
-    readonly encryptions: outputs.MediaServices.GetStreamPackagingConfigEncryption[];
+    readonly encryptions?: outputs.MediaServices.GetStreamPackagingConfigEncryption[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The duration in seconds for each fragment.
      */
-    readonly segmentTimeInSeconds: number;
+    readonly segmentTimeInSeconds?: number;
     /**
      * The current state of the Packaging Configuration.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly streamPackagingConfigId: string;
     /**
      * The output format for the package.
      */
-    readonly streamPackagingFormat: string;
+    readonly streamPackagingFormat?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.

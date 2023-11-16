@@ -26,12 +26,12 @@ public final class GetManagementAgentPluginsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of management_agent_plugins.
      * 
      */
-    private List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
+    private @Nullable List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
     private @Nullable List<String> platformTypes;
     /**
      * @return The current state of Management Agent Plugin
@@ -60,15 +60,15 @@ public final class GetManagementAgentPluginsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of management_agent_plugins.
      * 
      */
     public List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins() {
-        return this.managementAgentPlugins;
+        return this.managementAgentPlugins == null ? List.of() : this.managementAgentPlugins;
     }
     public List<String> platformTypes() {
         return this.platformTypes == null ? List.of() : this.platformTypes;
@@ -94,8 +94,8 @@ public final class GetManagementAgentPluginsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetManagementAgentPluginsFilter> filters;
-        private String id;
-        private List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
+        private @Nullable String id;
+        private @Nullable List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins;
         private @Nullable List<String> platformTypes;
         private @Nullable String state;
         public Builder() {}
@@ -135,13 +135,13 @@ public final class GetManagementAgentPluginsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentPlugins(List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins) {
-            this.managementAgentPlugins = Objects.requireNonNull(managementAgentPlugins);
+        public Builder managementAgentPlugins(@Nullable List<GetManagementAgentPluginsManagementAgentPlugin> managementAgentPlugins) {
+            this.managementAgentPlugins = managementAgentPlugins;
             return this;
         }
         public Builder managementAgentPlugins(GetManagementAgentPluginsManagementAgentPlugin... managementAgentPlugins) {

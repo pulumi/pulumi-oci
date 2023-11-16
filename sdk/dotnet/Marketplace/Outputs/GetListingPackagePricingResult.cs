@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The currency of the pricing model.
         /// </summary>
-        public readonly string Currency;
+        public readonly string? Currency;
         /// <summary>
         /// The model for international market pricing.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The type of pricing for a PAYGO model, eg PER_OCPU_LINEAR, PER_OCPU_MIN_BILLING, PER_INSTANCE.  Null if type is not PAYGO.
         /// </summary>
-        public readonly string PayGoStrategy;
+        public readonly string? PayGoStrategy;
         /// <summary>
         /// The pricing rate.
         /// </summary>
-        public readonly double Rate;
+        public readonly double? Rate;
         /// <summary>
         /// The type of the pricing model.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetListingPackagePricingResult(
-            string currency,
+            string? currency,
 
             ImmutableArray<Outputs.GetListingPackagePricingInternationalMarketPriceResult> internationalMarketPrices,
 
-            string payGoStrategy,
+            string? payGoStrategy,
 
-            double rate,
+            double? rate,
 
-            string type)
+            string? type)
         {
             Currency = currency;
             InternationalMarketPrices = internationalMarketPrices;

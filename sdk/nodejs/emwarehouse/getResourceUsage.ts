@@ -47,28 +47,28 @@ export interface GetResourceUsageResult {
     /**
      * EmInstanceCount
      */
-    readonly emInstanceCount: number;
+    readonly emInstanceCount?: number;
     /**
      * List of emInstances
      */
-    readonly emInstances: outputs.EmWarehouse.GetResourceUsageEmInstance[];
+    readonly emInstances?: outputs.EmWarehouse.GetResourceUsageEmInstance[];
     readonly emWarehouseId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * operations Insights Warehouse Identifier
      */
-    readonly operationsInsightsWarehouseId: string;
+    readonly operationsInsightsWarehouseId?: string;
     /**
      * schema name
      */
-    readonly schemaName: string;
+    readonly schemaName?: string;
     /**
      * EmInstance Target count
      */
-    readonly targetsCount: number;
+    readonly targetsCount?: number;
 }
 /**
  * This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.

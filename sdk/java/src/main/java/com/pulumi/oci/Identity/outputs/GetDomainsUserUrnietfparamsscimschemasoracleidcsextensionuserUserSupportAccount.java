@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount {
@@ -13,63 +15,63 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * @return The OCID of the user&#39;s support account.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return ID of the resource
      * 
      */
-    private String userId;
+    private @Nullable String userId;
     /**
      * @return User Support Account Provider
      * 
      */
-    private String userProvider;
+    private @Nullable String userProvider;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount() {}
     /**
      * @return The OCID of the user&#39;s support account.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return ID of the resource
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
     /**
      * @return User Support Account Provider
      * 
      */
-    public String userProvider() {
-        return this.userProvider;
+    public Optional<String> userProvider() {
+        return Optional.ofNullable(this.userProvider);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ocid;
-        private String ref;
-        private String userId;
-        private String userProvider;
-        private String value;
+        private @Nullable String ocid;
+        private @Nullable String ref;
+        private @Nullable String userId;
+        private @Nullable String userProvider;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
 
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
-        public Builder userProvider(String userProvider) {
-            this.userProvider = Objects.requireNonNull(userProvider);
+        public Builder userProvider(@Nullable String userProvider) {
+            this.userProvider = userProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -83,70 +82,70 @@ type AddressActionVerification struct {
 	pulumi.CustomResourceState
 
 	// Address identifier.
-	AddressKey pulumi.StringOutput `pulumi:"addressKey"`
+	AddressKey pulumi.StringPtrOutput `pulumi:"addressKey"`
 	// Address details model.
 	Addresses AddressActionVerificationAddressArrayOutput `pulumi:"addresses"`
 	// Name of the city.
-	City pulumi.StringOutput `pulumi:"city"`
+	City pulumi.StringPtrOutput `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName pulumi.StringOutput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrOutput `pulumi:"companyName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Contributor class of the customer company.
-	ContributorClass pulumi.StringOutput `pulumi:"contributorClass"`
+	ContributorClass pulumi.StringPtrOutput `pulumi:"contributorClass"`
 	// Country of the address.
-	Country pulumi.StringOutput `pulumi:"country"`
+	Country pulumi.StringPtrOutput `pulumi:"country"`
 	// County of the address.
-	County pulumi.StringOutput `pulumi:"county"`
+	County pulumi.StringPtrOutput `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName pulumi.StringOutput `pulumi:"departmentName"`
+	DepartmentName pulumi.StringPtrOutput `pulumi:"departmentName"`
 	// Contact person email address.
-	EmailAddress pulumi.StringOutput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrOutput `pulumi:"emailAddress"`
 	// First name of the contact person.
-	FirstName pulumi.StringOutput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrOutput `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber pulumi.StringOutput `pulumi:"internalNumber"`
+	InternalNumber pulumi.StringPtrOutput `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle pulumi.StringOutput `pulumi:"jobTitle"`
+	JobTitle pulumi.StringPtrOutput `pulumi:"jobTitle"`
 	// Last name of the contact person.
-	LastName pulumi.StringOutput `pulumi:"lastName"`
+	LastName pulumi.StringPtrOutput `pulumi:"lastName"`
 	// Address line 1.
-	Line1 pulumi.StringOutput `pulumi:"line1"`
+	Line1 pulumi.StringPtrOutput `pulumi:"line1"`
 	// Address line 2.
-	Line2 pulumi.StringOutput `pulumi:"line2"`
+	Line2 pulumi.StringPtrOutput `pulumi:"line2"`
 	// Address line 3.
-	Line3 pulumi.StringOutput `pulumi:"line3"`
+	Line3 pulumi.StringPtrOutput `pulumi:"line3"`
 	// Address line 4.
-	Line4 pulumi.StringOutput `pulumi:"line4"`
+	Line4 pulumi.StringPtrOutput `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName pulumi.StringOutput `pulumi:"middleName"`
+	MiddleName pulumi.StringPtrOutput `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription pulumi.StringOutput `pulumi:"municipalInscription"`
+	MunicipalInscription pulumi.StringPtrOutput `pulumi:"municipalInscription"`
 	// The home region's public name of the logged in user.
 	OspHomeRegion pulumi.StringOutput `pulumi:"ospHomeRegion"`
 	// Phone country code of the contact person.
-	PhoneCountryCode pulumi.StringOutput `pulumi:"phoneCountryCode"`
+	PhoneCountryCode pulumi.StringPtrOutput `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber pulumi.StringOutput `pulumi:"phoneNumber"`
+	PhoneNumber pulumi.StringPtrOutput `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode pulumi.StringOutput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrOutput `pulumi:"postalCode"`
 	// Province of the address.
-	Province pulumi.StringOutput `pulumi:"province"`
+	Province pulumi.StringPtrOutput `pulumi:"province"`
 	// Address quality type.
-	Quality pulumi.StringOutput `pulumi:"quality"`
+	Quality pulumi.StringPtrOutput `pulumi:"quality"`
 	// State of the address.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// State Inscription.
-	StateInscription pulumi.StringOutput `pulumi:"stateInscription"`
+	StateInscription pulumi.StringPtrOutput `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName pulumi.StringOutput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrOutput `pulumi:"streetName"`
 	// Street number of the address.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StreetNumber pulumi.StringOutput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrOutput `pulumi:"streetNumber"`
 	// Address verification code.
-	VerificationCode pulumi.StringOutput `pulumi:"verificationCode"`
+	VerificationCode pulumi.StringPtrOutput `pulumi:"verificationCode"`
 }
 
 // NewAddressActionVerification registers a new resource with the given unique name, arguments, and options.
@@ -472,12 +471,6 @@ func (i *AddressActionVerification) ToAddressActionVerificationOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationOutput)
 }
 
-func (i *AddressActionVerification) ToOutput(ctx context.Context) pulumix.Output[*AddressActionVerification] {
-	return pulumix.Output[*AddressActionVerification]{
-		OutputState: i.ToAddressActionVerificationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddressActionVerificationArrayInput is an input type that accepts AddressActionVerificationArray and AddressActionVerificationArrayOutput values.
 // You can construct a concrete instance of `AddressActionVerificationArrayInput` via:
 //
@@ -501,12 +494,6 @@ func (i AddressActionVerificationArray) ToAddressActionVerificationArrayOutput()
 
 func (i AddressActionVerificationArray) ToAddressActionVerificationArrayOutputWithContext(ctx context.Context) AddressActionVerificationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationArrayOutput)
-}
-
-func (i AddressActionVerificationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AddressActionVerification] {
-	return pulumix.Output[[]*AddressActionVerification]{
-		OutputState: i.ToAddressActionVerificationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AddressActionVerificationMapInput is an input type that accepts AddressActionVerificationMap and AddressActionVerificationMapOutput values.
@@ -534,12 +521,6 @@ func (i AddressActionVerificationMap) ToAddressActionVerificationMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationMapOutput)
 }
 
-func (i AddressActionVerificationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressActionVerification] {
-	return pulumix.Output[map[string]*AddressActionVerification]{
-		OutputState: i.ToAddressActionVerificationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddressActionVerificationOutput struct{ *pulumi.OutputState }
 
 func (AddressActionVerificationOutput) ElementType() reflect.Type {
@@ -554,15 +535,9 @@ func (o AddressActionVerificationOutput) ToAddressActionVerificationOutputWithCo
 	return o
 }
 
-func (o AddressActionVerificationOutput) ToOutput(ctx context.Context) pulumix.Output[*AddressActionVerification] {
-	return pulumix.Output[*AddressActionVerification]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address identifier.
-func (o AddressActionVerificationOutput) AddressKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.AddressKey }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) AddressKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.AddressKey }).(pulumi.StringPtrOutput)
 }
 
 // Address details model.
@@ -571,13 +546,13 @@ func (o AddressActionVerificationOutput) Addresses() AddressActionVerificationAd
 }
 
 // Name of the city.
-func (o AddressActionVerificationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.City }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company.
-func (o AddressActionVerificationOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.CompanyName }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -586,78 +561,78 @@ func (o AddressActionVerificationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Contributor class of the customer company.
-func (o AddressActionVerificationOutput) ContributorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.ContributorClass }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) ContributorClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.ContributorClass }).(pulumi.StringPtrOutput)
 }
 
 // Country of the address.
-func (o AddressActionVerificationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Country }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // County of the address.
-func (o AddressActionVerificationOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.County }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // Department name of the customer company.
-func (o AddressActionVerificationOutput) DepartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.DepartmentName }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) DepartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
 // Contact person email address.
-func (o AddressActionVerificationOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.EmailAddress }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // First name of the contact person.
-func (o AddressActionVerificationOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.FirstName }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Internal number of the customer company.
-func (o AddressActionVerificationOutput) InternalNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.InternalNumber }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) InternalNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.InternalNumber }).(pulumi.StringPtrOutput)
 }
 
 // Job title of the contact person.
-func (o AddressActionVerificationOutput) JobTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.JobTitle }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) JobTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the contact person.
-func (o AddressActionVerificationOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.LastName }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Address line 1.
-func (o AddressActionVerificationOutput) Line1() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Line1 }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Line1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2.
-func (o AddressActionVerificationOutput) Line2() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Line2 }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Line2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3.
-func (o AddressActionVerificationOutput) Line3() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Line3 }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Line3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4.
-func (o AddressActionVerificationOutput) Line4() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Line4 }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Line4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
 // Middle name of the contact person.
-func (o AddressActionVerificationOutput) MiddleName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.MiddleName }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) MiddleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.MiddleName }).(pulumi.StringPtrOutput)
 }
 
 // Municipal Inscription.
-func (o AddressActionVerificationOutput) MunicipalInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.MunicipalInscription }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) MunicipalInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.MunicipalInscription }).(pulumi.StringPtrOutput)
 }
 
 // The home region's public name of the logged in user.
@@ -666,56 +641,56 @@ func (o AddressActionVerificationOutput) OspHomeRegion() pulumi.StringOutput {
 }
 
 // Phone country code of the contact person.
-func (o AddressActionVerificationOutput) PhoneCountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.PhoneCountryCode }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) PhoneCountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.PhoneCountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the contact person.
-func (o AddressActionVerificationOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.PhoneNumber }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
 // Post code of the address.
-func (o AddressActionVerificationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.PostalCode }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Province of the address.
-func (o AddressActionVerificationOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Province }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // Address quality type.
-func (o AddressActionVerificationOutput) Quality() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.Quality }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) Quality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.Quality }).(pulumi.StringPtrOutput)
 }
 
 // State of the address.
-func (o AddressActionVerificationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // State Inscription.
-func (o AddressActionVerificationOutput) StateInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.StateInscription }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) StateInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.StateInscription }).(pulumi.StringPtrOutput)
 }
 
 // Street name of the address.
-func (o AddressActionVerificationOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.StreetName }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // Street number of the address.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AddressActionVerificationOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.StreetNumber }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 // Address verification code.
-func (o AddressActionVerificationOutput) VerificationCode() pulumi.StringOutput {
-	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringOutput { return v.VerificationCode }).(pulumi.StringOutput)
+func (o AddressActionVerificationOutput) VerificationCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AddressActionVerification) pulumi.StringPtrOutput { return v.VerificationCode }).(pulumi.StringPtrOutput)
 }
 
 type AddressActionVerificationArrayOutput struct{ *pulumi.OutputState }
@@ -730,12 +705,6 @@ func (o AddressActionVerificationArrayOutput) ToAddressActionVerificationArrayOu
 
 func (o AddressActionVerificationArrayOutput) ToAddressActionVerificationArrayOutputWithContext(ctx context.Context) AddressActionVerificationArrayOutput {
 	return o
-}
-
-func (o AddressActionVerificationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AddressActionVerification] {
-	return pulumix.Output[[]*AddressActionVerification]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddressActionVerificationArrayOutput) Index(i pulumi.IntInput) AddressActionVerificationOutput {
@@ -756,12 +725,6 @@ func (o AddressActionVerificationMapOutput) ToAddressActionVerificationMapOutput
 
 func (o AddressActionVerificationMapOutput) ToAddressActionVerificationMapOutputWithContext(ctx context.Context) AddressActionVerificationMapOutput {
 	return o
-}
-
-func (o AddressActionVerificationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressActionVerification] {
-	return pulumix.Output[map[string]*AddressActionVerification]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddressActionVerificationMapOutput) MapIndex(k pulumi.StringInput) AddressActionVerificationOutput {

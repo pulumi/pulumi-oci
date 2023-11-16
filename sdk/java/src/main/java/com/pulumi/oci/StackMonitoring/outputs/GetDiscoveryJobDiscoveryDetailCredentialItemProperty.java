@@ -8,6 +8,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
@@ -15,7 +16,7 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
      * @return Key/Value pair of Property
      * 
      */
-    private Map<String,Object> propertiesMap;
+    private @Nullable Map<String,Object> propertiesMap;
 
     private GetDiscoveryJobDiscoveryDetailCredentialItemProperty() {}
     /**
@@ -23,7 +24,7 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
      * 
      */
     public Map<String,Object> propertiesMap() {
-        return this.propertiesMap;
+        return this.propertiesMap == null ? Map.of() : this.propertiesMap;
     }
 
     public static Builder builder() {
@@ -35,7 +36,7 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> propertiesMap;
+        private @Nullable Map<String,Object> propertiesMap;
         public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetailCredentialItemProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -43,8 +44,8 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItemProperty {
         }
 
         @CustomType.Setter
-        public Builder propertiesMap(Map<String,Object> propertiesMap) {
-            this.propertiesMap = Objects.requireNonNull(propertiesMap);
+        public Builder propertiesMap(@Nullable Map<String,Object> propertiesMap) {
+            this.propertiesMap = propertiesMap;
             return this;
         }
         public GetDiscoveryJobDiscoveryDetailCredentialItemProperty build() {

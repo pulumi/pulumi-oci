@@ -13,23 +13,23 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
     [OutputType]
     public sealed class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult
     {
-        public readonly bool IsNonRootUserCheckEnabled;
-        public readonly bool IsRootFileSystemReadonly;
-        public readonly int RunAsGroup;
-        public readonly int RunAsUser;
-        public readonly string SecurityContextType;
+        public readonly bool? IsNonRootUserCheckEnabled;
+        public readonly bool? IsRootFileSystemReadonly;
+        public readonly int? RunAsGroup;
+        public readonly int? RunAsUser;
+        public readonly string? SecurityContextType;
 
         [OutputConstructor]
         private GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult(
-            bool isNonRootUserCheckEnabled,
+            bool? isNonRootUserCheckEnabled,
 
-            bool isRootFileSystemReadonly,
+            bool? isRootFileSystemReadonly,
 
-            int runAsGroup,
+            int? runAsGroup,
 
-            int runAsUser,
+            int? runAsUser,
 
-            string securityContextType)
+            string? securityContextType)
         {
             IsNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             IsRootFileSystemReadonly = isRootFileSystemReadonly;

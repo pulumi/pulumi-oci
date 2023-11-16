@@ -38,7 +38,7 @@ public final class GetTargetDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The infrastructure type the database is running on.
      * 
@@ -54,7 +54,7 @@ public final class GetTargetDatabasesResult {
      * @return The list of target_databases.
      * 
      */
-    private List<GetTargetDatabasesTargetDatabase> targetDatabases;
+    private @Nullable List<GetTargetDatabasesTargetDatabase> targetDatabases;
 
     private GetTargetDatabasesResult() {}
     public Optional<String> accessLevel() {
@@ -94,8 +94,8 @@ public final class GetTargetDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The infrastructure type the database is running on.
@@ -119,7 +119,7 @@ public final class GetTargetDatabasesResult {
      * 
      */
     public List<GetTargetDatabasesTargetDatabase> targetDatabases() {
-        return this.targetDatabases;
+        return this.targetDatabases == null ? List.of() : this.targetDatabases;
     }
 
     public static Builder builder() {
@@ -138,11 +138,11 @@ public final class GetTargetDatabasesResult {
         private @Nullable String databaseType;
         private @Nullable String displayName;
         private @Nullable List<GetTargetDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String infrastructureType;
         private @Nullable String state;
         private @Nullable String targetDatabaseId;
-        private List<GetTargetDatabasesTargetDatabase> targetDatabases;
+        private @Nullable List<GetTargetDatabasesTargetDatabase> targetDatabases;
         public Builder() {}
         public Builder(GetTargetDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -199,8 +199,8 @@ public final class GetTargetDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -219,8 +219,8 @@ public final class GetTargetDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder targetDatabases(List<GetTargetDatabasesTargetDatabase> targetDatabases) {
-            this.targetDatabases = Objects.requireNonNull(targetDatabases);
+        public Builder targetDatabases(@Nullable List<GetTargetDatabasesTargetDatabase> targetDatabases) {
+            this.targetDatabases = targetDatabases;
             return this;
         }
         public Builder targetDatabases(GetTargetDatabasesTargetDatabase... targetDatabases) {

@@ -45,47 +45,47 @@ export interface GetTsigKeyResult {
     /**
      * TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
      */
-    readonly algorithm: string;
+    readonly algorithm?: string;
     /**
      * The OCID of the compartment containing the TSIG key.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A globally unique domain name identifying the key for a given pair of hosts.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * A base64 string encoding the binary shared secret.
      */
-    readonly secret: string;
+    readonly secret?: string;
     /**
      * The canonical absolute URL of the resource.
      */
-    readonly self: string;
+    readonly self?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly tsigKeyId: string;
 }
 /**

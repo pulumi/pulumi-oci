@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
@@ -67,18 +66,18 @@ type GetServiceEnvironmentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The URL for the console.
-	ConsoleUrl string `pulumi:"consoleUrl"`
+	ConsoleUrl *string `pulumi:"consoleUrl"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details for a service definition.
 	ServiceDefinitions []GetServiceEnvironmentServiceDefinition `pulumi:"serviceDefinitions"`
 	// Array of service environment end points.
 	ServiceEnvironmentEndpoints []GetServiceEnvironmentServiceEnvironmentEndpoint `pulumi:"serviceEnvironmentEndpoints"`
 	ServiceEnvironmentId        string                                            `pulumi:"serviceEnvironmentId"`
 	// Status of the entitlement registration for the service.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The unique subscription ID associated with the service environment ID.
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 func GetServiceEnvironmentOutput(ctx *pulumi.Context, args GetServiceEnvironmentOutputArgs, opts ...pulumi.InvokeOption) GetServiceEnvironmentResultOutput {
@@ -123,25 +122,19 @@ func (o GetServiceEnvironmentResultOutput) ToGetServiceEnvironmentResultOutputWi
 	return o
 }
 
-func (o GetServiceEnvironmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceEnvironmentResult] {
-	return pulumix.Output[GetServiceEnvironmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 func (o GetServiceEnvironmentResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceEnvironmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The URL for the console.
-func (o GetServiceEnvironmentResultOutput) ConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentResult) string { return v.ConsoleUrl }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentResultOutput) ConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentResult) *string { return v.ConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetServiceEnvironmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details for a service definition.
@@ -163,13 +156,13 @@ func (o GetServiceEnvironmentResultOutput) ServiceEnvironmentId() pulumi.StringO
 }
 
 // Status of the entitlement registration for the service.
-func (o GetServiceEnvironmentResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The unique subscription ID associated with the service environment ID.
-func (o GetServiceEnvironmentResultOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetServiceEnvironmentResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

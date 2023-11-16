@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Event Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -96,7 +95,7 @@ type GetAuditEventAnalyticResult struct {
 	CompartmentIdInSubtree *bool    `pulumi:"compartmentIdInSubtree"`
 	GroupBies              []string `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The aggregated data point items.
 	Items         []GetAuditEventAnalyticItem `pulumi:"items"`
 	QueryTimeZone *string                     `pulumi:"queryTimeZone"`
@@ -164,12 +163,6 @@ func (o GetAuditEventAnalyticResultOutput) ToGetAuditEventAnalyticResultOutputWi
 	return o
 }
 
-func (o GetAuditEventAnalyticResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditEventAnalyticResult] {
-	return pulumix.Output[GetAuditEventAnalyticResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuditEventAnalyticResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditEventAnalyticResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -187,8 +180,8 @@ func (o GetAuditEventAnalyticResultOutput) GroupBies() pulumi.StringArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditEventAnalyticResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditEventAnalyticResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditEventAnalyticResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditEventAnalyticResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The aggregated data point items.

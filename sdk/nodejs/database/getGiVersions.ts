@@ -57,11 +57,11 @@ export interface GetGiVersionsResult {
     /**
      * The list of gi_versions.
      */
-    readonly giVersions: outputs.Database.GetGiVersionsGiVersion[];
+    readonly giVersions?: outputs.Database.GetGiVersionsGiVersion[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly shape?: string;
 }
 /**

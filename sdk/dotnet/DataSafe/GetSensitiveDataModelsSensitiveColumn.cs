@@ -126,7 +126,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
         /// </summary>
@@ -134,11 +134,11 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The name of the sensitive column.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// The data type of the sensitive column.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         /// </summary>
@@ -146,24 +146,24 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The estimated number of data values the column has in the associated database.
         /// </summary>
-        public readonly string EstimatedDataValueCount;
-        public readonly string Id;
+        public readonly string? EstimatedDataValueCount;
+        public readonly string? Id;
         /// <summary>
         /// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Details about the current state of the sensitive column.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The database object that contains the sensitive column.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// The type of the database object that contains the sensitive column.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         /// </summary>
-        public readonly string RelationType;
+        public readonly string? RelationType;
         /// <summary>
         /// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The database schema that contains the sensitive column.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         public readonly string SensitiveColumnKey;
         /// <summary>
         /// The OCID of the sensitive data model that contains the sensitive column.
@@ -188,77 +188,77 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the sensitive type associated with the sensitive column.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// The current state of the sensitive column.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetSensitiveDataModelsSensitiveColumnResult(
             ImmutableArray<string> appDefinedChildColumnKeys,
 
-            string appName,
+            string? appName,
 
             ImmutableArray<string> columnGroups,
 
-            string columnName,
+            string? columnName,
 
-            string dataType,
+            string? dataType,
 
             ImmutableArray<string> dbDefinedChildColumnKeys,
 
-            string estimatedDataValueCount,
+            string? estimatedDataValueCount,
 
-            string id,
+            string? id,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string @object,
+            string? @object,
 
-            string objectType,
+            string? objectType,
 
             ImmutableArray<string> parentColumnKeys,
 
-            string relationType,
+            string? relationType,
 
             ImmutableArray<string> sampleDataValues,
 
-            string schemaName,
+            string? schemaName,
 
             string sensitiveColumnKey,
 
             string sensitiveDataModelId,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string source,
+            string? source,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AppDefinedChildColumnKeys = appDefinedChildColumnKeys;
             AppName = appName;

@@ -107,7 +107,7 @@ export interface GetHostInsightsResult {
     /**
      * The list of host_insight_summary_collection.
      */
-    readonly hostInsightSummaryCollections: outputs.Opsi.GetHostInsightsHostInsightSummaryCollection[];
+    readonly hostInsightSummaryCollections?: outputs.Opsi.GetHostInsightsHostInsightSummaryCollection[];
     /**
      * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */

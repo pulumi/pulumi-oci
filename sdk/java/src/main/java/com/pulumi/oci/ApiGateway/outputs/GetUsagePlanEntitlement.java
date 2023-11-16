@@ -10,6 +10,8 @@ import com.pulumi.oci.ApiGateway.outputs.GetUsagePlanEntitlementTarget;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagePlanEntitlement {
@@ -17,63 +19,63 @@ public final class GetUsagePlanEntitlement {
      * @return A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return An entitlement name, unique within a usage plan.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Quota policy for a usage plan.
      * 
      */
-    private List<GetUsagePlanEntitlementQuota> quotas;
+    private @Nullable List<GetUsagePlanEntitlementQuota> quotas;
     /**
      * @return Rate-limiting policy for a usage plan.
      * 
      */
-    private List<GetUsagePlanEntitlementRateLimit> rateLimits;
+    private @Nullable List<GetUsagePlanEntitlementRateLimit> rateLimits;
     /**
      * @return A collection of targeted deployments that the entitlement will be applied to.
      * 
      */
-    private List<GetUsagePlanEntitlementTarget> targets;
+    private @Nullable List<GetUsagePlanEntitlementTarget> targets;
 
     private GetUsagePlanEntitlement() {}
     /**
      * @return A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return An entitlement name, unique within a usage plan.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Quota policy for a usage plan.
      * 
      */
     public List<GetUsagePlanEntitlementQuota> quotas() {
-        return this.quotas;
+        return this.quotas == null ? List.of() : this.quotas;
     }
     /**
      * @return Rate-limiting policy for a usage plan.
      * 
      */
     public List<GetUsagePlanEntitlementRateLimit> rateLimits() {
-        return this.rateLimits;
+        return this.rateLimits == null ? List.of() : this.rateLimits;
     }
     /**
      * @return A collection of targeted deployments that the entitlement will be applied to.
      * 
      */
     public List<GetUsagePlanEntitlementTarget> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetUsagePlanEntitlement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String name;
-        private List<GetUsagePlanEntitlementQuota> quotas;
-        private List<GetUsagePlanEntitlementRateLimit> rateLimits;
-        private List<GetUsagePlanEntitlementTarget> targets;
+        private @Nullable String description;
+        private @Nullable String name;
+        private @Nullable List<GetUsagePlanEntitlementQuota> quotas;
+        private @Nullable List<GetUsagePlanEntitlementRateLimit> rateLimits;
+        private @Nullable List<GetUsagePlanEntitlementTarget> targets;
         public Builder() {}
         public Builder(GetUsagePlanEntitlement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,34 +103,34 @@ public final class GetUsagePlanEntitlement {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder quotas(List<GetUsagePlanEntitlementQuota> quotas) {
-            this.quotas = Objects.requireNonNull(quotas);
+        public Builder quotas(@Nullable List<GetUsagePlanEntitlementQuota> quotas) {
+            this.quotas = quotas;
             return this;
         }
         public Builder quotas(GetUsagePlanEntitlementQuota... quotas) {
             return quotas(List.of(quotas));
         }
         @CustomType.Setter
-        public Builder rateLimits(List<GetUsagePlanEntitlementRateLimit> rateLimits) {
-            this.rateLimits = Objects.requireNonNull(rateLimits);
+        public Builder rateLimits(@Nullable List<GetUsagePlanEntitlementRateLimit> rateLimits) {
+            this.rateLimits = rateLimits;
             return this;
         }
         public Builder rateLimits(GetUsagePlanEntitlementRateLimit... rateLimits) {
             return rateLimits(List.of(rateLimits));
         }
         @CustomType.Setter
-        public Builder targets(List<GetUsagePlanEntitlementTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<GetUsagePlanEntitlementTarget> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetUsagePlanEntitlementTarget... targets) {

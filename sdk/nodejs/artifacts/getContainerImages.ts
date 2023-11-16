@@ -102,7 +102,7 @@ export interface GetContainerImagesResult {
     /**
      * The list of container_image_collection.
      */
-    readonly containerImageCollections: outputs.Artifacts.GetContainerImagesContainerImageCollection[];
+    readonly containerImageCollections?: outputs.Artifacts.GetContainerImagesContainerImageCollection[];
     /**
      * The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
      */
@@ -111,7 +111,7 @@ export interface GetContainerImagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageId?: string;
     readonly isVersioned?: boolean;
     /**

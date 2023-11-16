@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         /// </summary>
-        public readonly string MountTargetId;
+        public readonly string? MountTargetId;
 
         [OutputConstructor]
-        private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailResult(string mountTargetId)
+        private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailResult(string? mountTargetId)
         {
             MountTargetId = mountTargetId;
         }

@@ -16,26 +16,26 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// Defines whether the schedule date range is STATIC or DYNAMIC.
         /// </summary>
-        public readonly string DateRangeType;
-        public readonly string DynamicDateRangeType;
+        public readonly string? DateRangeType;
+        public readonly string? DynamicDateRangeType;
         /// <summary>
         /// The usage end time.
         /// </summary>
-        public readonly string TimeUsageEnded;
+        public readonly string? TimeUsageEnded;
         /// <summary>
         /// The usage start time.
         /// </summary>
-        public readonly string TimeUsageStarted;
+        public readonly string? TimeUsageStarted;
 
         [OutputConstructor]
         private GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult(
-            string dateRangeType,
+            string? dateRangeType,
 
-            string dynamicDateRangeType,
+            string? dynamicDateRangeType,
 
-            string timeUsageEnded,
+            string? timeUsageEnded,
 
-            string timeUsageStarted)
+            string? timeUsageStarted)
         {
             DateRangeType = dateRangeType;
             DynamicDateRangeType = dynamicDateRangeType;

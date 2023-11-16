@@ -79,14 +79,14 @@ export interface GetSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCommitInfoRequired?: boolean;
     readonly planNumber?: string;
     readonly subscriptionId?: string;
     /**
      * The list of subscriptions.
      */
-    readonly subscriptions: outputs.OneSubsription.GetSubscriptionsSubscription[];
+    readonly subscriptions?: outputs.OneSubsription.GetSubscriptionsSubscription[];
 }
 /**
  * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.

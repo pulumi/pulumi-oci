@@ -63,49 +63,49 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The OCID of the compartment that contains the volume backup.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         /// </summary>
         [Output("expirationTime")]
-        public Output<string> ExpirationTime { get; private set; } = null!;
+        public Output<string?> ExpirationTime { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The size of the volume, in GBs.
         /// </summary>
         [Output("sizeInGbs")]
-        public Output<string> SizeInGbs { get; private set; } = null!;
+        public Output<string?> SizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         /// </summary>
         [Output("sizeInMbs")]
-        public Output<string> SizeInMbs { get; private set; } = null!;
+        public Output<string?> SizeInMbs { get; private set; } = null!;
 
         /// <summary>
         /// Details of the volume backup source in the cloud.
@@ -117,61 +117,61 @@ namespace Pulumi.Oci.Core
         /// Specifies whether the backup was created manually, or via scheduled backup policy.
         /// </summary>
         [Output("sourceType")]
-        public Output<string> SourceType { get; private set; } = null!;
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the source volume backup.
         /// </summary>
         [Output("sourceVolumeBackupId")]
-        public Output<string> SourceVolumeBackupId { get; private set; } = null!;
+        public Output<string?> SourceVolumeBackupId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of a volume backup.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
         /// </summary>
         [Output("timeRequestReceived")]
-        public Output<string> TimeRequestReceived { get; private set; } = null!;
+        public Output<string?> TimeRequestReceived { get; private set; } = null!;
 
         /// <summary>
         /// The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
         /// </summary>
         [Output("uniqueSizeInGbs")]
-        public Output<string> UniqueSizeInGbs { get; private set; } = null!;
+        public Output<string?> UniqueSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         /// </summary>
         [Output("uniqueSizeInMbs")]
-        public Output<string> UniqueSizeInMbs { get; private set; } = null!;
+        public Output<string?> UniqueSizeInMbs { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         /// </summary>
         [Output("volumeId")]
-        public Output<string> VolumeId { get; private set; } = null!;
+        public Output<string?> VolumeId { get; private set; } = null!;
 
 
         /// <summary>

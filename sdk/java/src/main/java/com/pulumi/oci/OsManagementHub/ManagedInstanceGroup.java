@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -106,28 +107,28 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Details about the managed instance group.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Details about the managed instance group.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -148,42 +149,42 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The number of Managed Instances in the managed instance group.
      * 
      */
     @Export(name="managedInstanceCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> managedInstanceCount;
+    private Output</* @Nullable */ Integer> managedInstanceCount;
 
     /**
      * @return The number of Managed Instances in the managed instance group.
      * 
      */
-    public Output<Integer> managedInstanceCount() {
-        return this.managedInstanceCount;
+    public Output<Optional<Integer>> managedInstanceCount() {
+        return Codegen.optional(this.managedInstanceCount);
     }
     /**
      * The list of managed instance OCIDs to be added to the managed instance group.
      * 
      */
     @Export(name="managedInstanceIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> managedInstanceIds;
+    private Output</* @Nullable */ List<String>> managedInstanceIds;
 
     /**
      * @return The list of managed instance OCIDs to be added to the managed instance group.
      * 
      */
-    public Output<List<String>> managedInstanceIds() {
-        return this.managedInstanceIds;
+    public Output<Optional<List<String>>> managedInstanceIds() {
+        return Codegen.optional(this.managedInstanceIds);
     }
     /**
      * The operating system type of the managed instance(s) that this managed instance group will contain.
@@ -204,14 +205,14 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pendingJobCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> pendingJobCount;
+    private Output</* @Nullable */ Integer> pendingJobCount;
 
     /**
      * @return The number of scheduled jobs pending against the managed instance group.
      * 
      */
-    public Output<Integer> pendingJobCount() {
-        return this.pendingJobCount;
+    public Output<Optional<Integer>> pendingJobCount() {
+        return Codegen.optional(this.pendingJobCount);
     }
     /**
      * The list of software source OCIDs available to the managed instances in the managed instance group.
@@ -232,70 +233,70 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="softwareSources", refs={List.class,ManagedInstanceGroupSoftwareSource.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceGroupSoftwareSource>> softwareSources;
+    private Output</* @Nullable */ List<ManagedInstanceGroupSoftwareSource>> softwareSources;
 
     /**
      * @return The list of software sources that the managed instance group will use.
      * 
      */
-    public Output<List<ManagedInstanceGroupSoftwareSource>> softwareSources() {
-        return this.softwareSources;
+    public Output<Optional<List<ManagedInstanceGroupSoftwareSource>>> softwareSources() {
+        return Codegen.optional(this.softwareSources);
     }
     /**
      * The current state of the managed instance group.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the managed instance group.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the managed instance group was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the managed instance group was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeModified", refs={String.class}, tree="[0]")
-    private Output<String> timeModified;
+    private Output</* @Nullable */ String> timeModified;
 
     /**
      * @return The time the managed instance group was last modified. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeModified() {
-        return this.timeModified;
+    public Output<Optional<String>> timeModified() {
+        return Codegen.optional(this.timeModified);
     }
     /**
      * The software source vendor name.

@@ -29,21 +29,6 @@ class AppFirewallPolicyArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AppFirewallPolicy resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['AppFirewallPolicyRequestAccessControlArgs'] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param pulumi.Input['AppFirewallPolicyRequestProtectionArgs'] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs'] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param pulumi.Input['AppFirewallPolicyResponseAccessControlArgs'] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param pulumi.Input['AppFirewallPolicyResponseProtectionArgs'] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if actions is not None:
@@ -70,9 +55,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -82,9 +64,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]:
-        """
-        (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -94,9 +73,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -106,9 +82,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -118,9 +91,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -130,9 +100,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="requestAccessControl")
     def request_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']]:
-        """
-        (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        """
         return pulumi.get(self, "request_access_control")
 
     @request_access_control.setter
@@ -142,9 +109,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="requestProtection")
     def request_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']]:
-        """
-        (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        """
         return pulumi.get(self, "request_protection")
 
     @request_protection.setter
@@ -154,9 +118,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="requestRateLimiting")
     def request_rate_limiting(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']]:
-        """
-        (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        """
         return pulumi.get(self, "request_rate_limiting")
 
     @request_rate_limiting.setter
@@ -166,9 +127,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="responseAccessControl")
     def response_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']]:
-        """
-        (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        """
         return pulumi.get(self, "response_access_control")
 
     @response_access_control.setter
@@ -178,9 +136,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="responseProtection")
     def response_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']]:
-        """
-        (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        """
         return pulumi.get(self, "response_protection")
 
     @response_protection.setter
@@ -190,13 +145,6 @@ class AppFirewallPolicyArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -224,25 +172,6 @@ class _AppFirewallPolicyState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppFirewallPolicy resources.
-        :param pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param pulumi.Input['AppFirewallPolicyRequestAccessControlArgs'] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param pulumi.Input['AppFirewallPolicyRequestProtectionArgs'] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs'] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param pulumi.Input['AppFirewallPolicyResponseAccessControlArgs'] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param pulumi.Input['AppFirewallPolicyResponseProtectionArgs'] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param pulumi.Input[str] state: The current state of the WebAppFirewallPolicy.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
         """
         if actions is not None:
             pulumi.set(__self__, "actions", actions)
@@ -278,9 +207,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter
     def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AppFirewallPolicyActionArgs']]]]:
-        """
-        (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        """
         return pulumi.get(self, "actions")
 
     @actions.setter
@@ -290,9 +216,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -302,9 +225,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -314,9 +234,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -326,9 +243,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -338,9 +252,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -350,9 +261,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="requestAccessControl")
     def request_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestAccessControlArgs']]:
-        """
-        (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        """
         return pulumi.get(self, "request_access_control")
 
     @request_access_control.setter
@@ -362,9 +270,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="requestProtection")
     def request_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestProtectionArgs']]:
-        """
-        (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        """
         return pulumi.get(self, "request_protection")
 
     @request_protection.setter
@@ -374,9 +279,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="requestRateLimiting")
     def request_rate_limiting(self) -> Optional[pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs']]:
-        """
-        (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        """
         return pulumi.get(self, "request_rate_limiting")
 
     @request_rate_limiting.setter
@@ -386,9 +288,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="responseAccessControl")
     def response_access_control(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseAccessControlArgs']]:
-        """
-        (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        """
         return pulumi.get(self, "response_access_control")
 
     @response_access_control.setter
@@ -398,9 +297,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="responseProtection")
     def response_protection(self) -> Optional[pulumi.Input['AppFirewallPolicyResponseProtectionArgs']]:
-        """
-        (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        """
         return pulumi.get(self, "response_protection")
 
     @response_protection.setter
@@ -410,9 +306,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the WebAppFirewallPolicy.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -422,13 +315,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -438,9 +324,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -450,9 +333,6 @@ class _AppFirewallPolicyState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -478,165 +358,9 @@ class AppFirewallPolicy(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new WebAppFirewallPolicy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_web_app_firewall_policy = oci.waf.AppFirewallPolicy("testWebAppFirewallPolicy",
-            compartment_id=var["compartment_id"],
-            actions=[oci.waf.AppFirewallPolicyActionArgs(
-                name=var["web_app_firewall_policy_actions_name"],
-                type=var["web_app_firewall_policy_actions_type"],
-                body=oci.waf.AppFirewallPolicyActionBodyArgs(
-                    text=var["web_app_firewall_policy_actions_body_text"],
-                    type=var["web_app_firewall_policy_actions_body_type"],
-                ),
-                code=var["web_app_firewall_policy_actions_code"],
-                headers=[oci.waf.AppFirewallPolicyActionHeaderArgs(
-                    name=var["web_app_firewall_policy_actions_headers_name"],
-                    value=var["web_app_firewall_policy_actions_headers_value"],
-                )],
-            )],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["web_app_firewall_policy_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            request_access_control=oci.waf.AppFirewallPolicyRequestAccessControlArgs(
-                default_action_name=var["web_app_firewall_policy_request_access_control_default_action_name"],
-                rules=[oci.waf.AppFirewallPolicyRequestAccessControlRuleArgs(
-                    action_name=var["web_app_firewall_policy_request_access_control_rules_action_name"],
-                    name=var["web_app_firewall_policy_request_access_control_rules_name"],
-                    type=var["web_app_firewall_policy_request_access_control_rules_type"],
-                    condition=var["web_app_firewall_policy_request_access_control_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_request_access_control_rules_condition_language"],
-                )],
-            ),
-            request_protection=oci.waf.AppFirewallPolicyRequestProtectionArgs(
-                body_inspection_size_limit_exceeded_action_name=var["web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name"],
-                body_inspection_size_limit_in_bytes=var["web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes"],
-                rules=[oci.waf.AppFirewallPolicyRequestProtectionRuleArgs(
-                    action_name=var["web_app_firewall_policy_request_protection_rules_action_name"],
-                    name=var["web_app_firewall_policy_request_protection_rules_name"],
-                    protection_capabilities=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs(
-                        key=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_key"],
-                        version=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_version"],
-                        action_name=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name"],
-                        collaborative_action_threshold=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold"],
-                        collaborative_weights=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key"],
-                            weight=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight"],
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args"],
-                            request_cookies=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies"],
-                        ),
-                    )],
-                    type=var["web_app_firewall_policy_request_protection_rules_type"],
-                    condition=var["web_app_firewall_policy_request_protection_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_request_protection_rules_condition_language"],
-                    is_body_inspection_enabled=var["web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled"],
-                    protection_capability_settings=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods"],
-                        max_http_request_header_length=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length"],
-                        max_http_request_headers=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers"],
-                        max_number_of_arguments=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments"],
-                        max_single_argument_length=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length"],
-                        max_total_argument_length=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length"],
-                    ),
-                )],
-            ),
-            request_rate_limiting=oci.waf.AppFirewallPolicyRequestRateLimitingArgs(
-                rules=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleArgs(
-                    action_name=var["web_app_firewall_policy_request_rate_limiting_rules_action_name"],
-                    configurations=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs(
-                        period_in_seconds=var["web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds"],
-                        requests_limit=var["web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit"],
-                        action_duration_in_seconds=var["web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds"],
-                    )],
-                    name=var["web_app_firewall_policy_request_rate_limiting_rules_name"],
-                    type=var["web_app_firewall_policy_request_rate_limiting_rules_type"],
-                    condition=var["web_app_firewall_policy_request_rate_limiting_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_request_rate_limiting_rules_condition_language"],
-                )],
-            ),
-            response_access_control=oci.waf.AppFirewallPolicyResponseAccessControlArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseAccessControlRuleArgs(
-                    action_name=var["web_app_firewall_policy_response_access_control_rules_action_name"],
-                    name=var["web_app_firewall_policy_response_access_control_rules_name"],
-                    type=var["web_app_firewall_policy_response_access_control_rules_type"],
-                    condition=var["web_app_firewall_policy_response_access_control_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_response_access_control_rules_condition_language"],
-                )],
-            ),
-            response_protection=oci.waf.AppFirewallPolicyResponseProtectionArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseProtectionRuleArgs(
-                    action_name=var["web_app_firewall_policy_response_protection_rules_action_name"],
-                    name=var["web_app_firewall_policy_response_protection_rules_name"],
-                    protection_capabilities=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs(
-                        key=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_key"],
-                        version=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_version"],
-                        action_name=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name"],
-                        collaborative_action_threshold=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold"],
-                        collaborative_weights=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key"],
-                            weight=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight"],
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args"],
-                            request_cookies=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies"],
-                        ),
-                    )],
-                    type=var["web_app_firewall_policy_response_protection_rules_type"],
-                    condition=var["web_app_firewall_policy_response_protection_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_response_protection_rules_condition_language"],
-                    is_body_inspection_enabled=var["web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled"],
-                    protection_capability_settings=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods"],
-                        max_http_request_header_length=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length"],
-                        max_http_request_headers=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers"],
-                        max_number_of_arguments=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments"],
-                        max_single_argument_length=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length"],
-                        max_total_argument_length=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length"],
-                    ),
-                )],
-            ),
-            system_tags=var["web_app_firewall_policy_system_tags"])
-        ```
-
-        ## Import
-
-        WebAppFirewallPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waf/appFirewallPolicy:AppFirewallPolicy test_web_app_firewall_policy "id"
-        ```
-
+        Create a AppFirewallPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -645,148 +369,7 @@ class AppFirewallPolicy(pulumi.CustomResource):
                  args: AppFirewallPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
-
-        Creates a new WebAppFirewallPolicy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_web_app_firewall_policy = oci.waf.AppFirewallPolicy("testWebAppFirewallPolicy",
-            compartment_id=var["compartment_id"],
-            actions=[oci.waf.AppFirewallPolicyActionArgs(
-                name=var["web_app_firewall_policy_actions_name"],
-                type=var["web_app_firewall_policy_actions_type"],
-                body=oci.waf.AppFirewallPolicyActionBodyArgs(
-                    text=var["web_app_firewall_policy_actions_body_text"],
-                    type=var["web_app_firewall_policy_actions_body_type"],
-                ),
-                code=var["web_app_firewall_policy_actions_code"],
-                headers=[oci.waf.AppFirewallPolicyActionHeaderArgs(
-                    name=var["web_app_firewall_policy_actions_headers_name"],
-                    value=var["web_app_firewall_policy_actions_headers_value"],
-                )],
-            )],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["web_app_firewall_policy_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            request_access_control=oci.waf.AppFirewallPolicyRequestAccessControlArgs(
-                default_action_name=var["web_app_firewall_policy_request_access_control_default_action_name"],
-                rules=[oci.waf.AppFirewallPolicyRequestAccessControlRuleArgs(
-                    action_name=var["web_app_firewall_policy_request_access_control_rules_action_name"],
-                    name=var["web_app_firewall_policy_request_access_control_rules_name"],
-                    type=var["web_app_firewall_policy_request_access_control_rules_type"],
-                    condition=var["web_app_firewall_policy_request_access_control_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_request_access_control_rules_condition_language"],
-                )],
-            ),
-            request_protection=oci.waf.AppFirewallPolicyRequestProtectionArgs(
-                body_inspection_size_limit_exceeded_action_name=var["web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name"],
-                body_inspection_size_limit_in_bytes=var["web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes"],
-                rules=[oci.waf.AppFirewallPolicyRequestProtectionRuleArgs(
-                    action_name=var["web_app_firewall_policy_request_protection_rules_action_name"],
-                    name=var["web_app_firewall_policy_request_protection_rules_name"],
-                    protection_capabilities=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs(
-                        key=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_key"],
-                        version=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_version"],
-                        action_name=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name"],
-                        collaborative_action_threshold=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold"],
-                        collaborative_weights=[oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key"],
-                            weight=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight"],
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args"],
-                            request_cookies=var["web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies"],
-                        ),
-                    )],
-                    type=var["web_app_firewall_policy_request_protection_rules_type"],
-                    condition=var["web_app_firewall_policy_request_protection_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_request_protection_rules_condition_language"],
-                    is_body_inspection_enabled=var["web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled"],
-                    protection_capability_settings=oci.waf.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods"],
-                        max_http_request_header_length=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length"],
-                        max_http_request_headers=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers"],
-                        max_number_of_arguments=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments"],
-                        max_single_argument_length=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length"],
-                        max_total_argument_length=var["web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length"],
-                    ),
-                )],
-            ),
-            request_rate_limiting=oci.waf.AppFirewallPolicyRequestRateLimitingArgs(
-                rules=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleArgs(
-                    action_name=var["web_app_firewall_policy_request_rate_limiting_rules_action_name"],
-                    configurations=[oci.waf.AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs(
-                        period_in_seconds=var["web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds"],
-                        requests_limit=var["web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit"],
-                        action_duration_in_seconds=var["web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds"],
-                    )],
-                    name=var["web_app_firewall_policy_request_rate_limiting_rules_name"],
-                    type=var["web_app_firewall_policy_request_rate_limiting_rules_type"],
-                    condition=var["web_app_firewall_policy_request_rate_limiting_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_request_rate_limiting_rules_condition_language"],
-                )],
-            ),
-            response_access_control=oci.waf.AppFirewallPolicyResponseAccessControlArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseAccessControlRuleArgs(
-                    action_name=var["web_app_firewall_policy_response_access_control_rules_action_name"],
-                    name=var["web_app_firewall_policy_response_access_control_rules_name"],
-                    type=var["web_app_firewall_policy_response_access_control_rules_type"],
-                    condition=var["web_app_firewall_policy_response_access_control_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_response_access_control_rules_condition_language"],
-                )],
-            ),
-            response_protection=oci.waf.AppFirewallPolicyResponseProtectionArgs(
-                rules=[oci.waf.AppFirewallPolicyResponseProtectionRuleArgs(
-                    action_name=var["web_app_firewall_policy_response_protection_rules_action_name"],
-                    name=var["web_app_firewall_policy_response_protection_rules_name"],
-                    protection_capabilities=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs(
-                        key=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_key"],
-                        version=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_version"],
-                        action_name=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name"],
-                        collaborative_action_threshold=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold"],
-                        collaborative_weights=[oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs(
-                            key=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key"],
-                            weight=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight"],
-                        )],
-                        exclusions=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs(
-                            args=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args"],
-                            request_cookies=var["web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies"],
-                        ),
-                    )],
-                    type=var["web_app_firewall_policy_response_protection_rules_type"],
-                    condition=var["web_app_firewall_policy_response_protection_rules_condition"],
-                    condition_language=var["web_app_firewall_policy_response_protection_rules_condition_language"],
-                    is_body_inspection_enabled=var["web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled"],
-                    protection_capability_settings=oci.waf.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs(
-                        allowed_http_methods=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods"],
-                        max_http_request_header_length=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length"],
-                        max_http_request_headers=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers"],
-                        max_number_of_arguments=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments"],
-                        max_single_argument_length=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length"],
-                        max_total_argument_length=var["web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length"],
-                    ),
-                )],
-            ),
-            system_tags=var["web_app_firewall_policy_system_tags"])
-        ```
-
-        ## Import
-
-        WebAppFirewallPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Waf/appFirewallPolicy:AppFirewallPolicy test_web_app_firewall_policy "id"
-        ```
-
+        Create a AppFirewallPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppFirewallPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -871,25 +454,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AppFirewallPolicyActionArgs']]]] actions: (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestAccessControlArgs']] request_access_control: (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestProtectionArgs']] request_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyRequestRateLimitingArgs']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseAccessControlArgs']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        :param pulumi.Input[pulumi.InputType['AppFirewallPolicyResponseProtectionArgs']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param pulumi.Input[str] state: The current state of the WebAppFirewallPolicy.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -914,125 +478,76 @@ class AppFirewallPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def actions(self) -> pulumi.Output[Sequence['outputs.AppFirewallPolicyAction']]:
-        """
-        (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
-        """
+    def actions(self) -> pulumi.Output[Optional[Sequence['outputs.AppFirewallPolicyAction']]]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) WebAppFirewallPolicy display name, can be renamed.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="requestAccessControl")
-    def request_access_control(self) -> pulumi.Output['outputs.AppFirewallPolicyRequestAccessControl']:
-        """
-        (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
-        """
+    def request_access_control(self) -> pulumi.Output[Optional['outputs.AppFirewallPolicyRequestAccessControl']]:
         return pulumi.get(self, "request_access_control")
 
     @property
     @pulumi.getter(name="requestProtection")
-    def request_protection(self) -> pulumi.Output['outputs.AppFirewallPolicyRequestProtection']:
-        """
-        (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
-        """
+    def request_protection(self) -> pulumi.Output[Optional['outputs.AppFirewallPolicyRequestProtection']]:
         return pulumi.get(self, "request_protection")
 
     @property
     @pulumi.getter(name="requestRateLimiting")
-    def request_rate_limiting(self) -> pulumi.Output['outputs.AppFirewallPolicyRequestRateLimiting']:
-        """
-        (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
-        """
+    def request_rate_limiting(self) -> pulumi.Output[Optional['outputs.AppFirewallPolicyRequestRateLimiting']]:
         return pulumi.get(self, "request_rate_limiting")
 
     @property
     @pulumi.getter(name="responseAccessControl")
-    def response_access_control(self) -> pulumi.Output['outputs.AppFirewallPolicyResponseAccessControl']:
-        """
-        (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
-        """
+    def response_access_control(self) -> pulumi.Output[Optional['outputs.AppFirewallPolicyResponseAccessControl']]:
         return pulumi.get(self, "response_access_control")
 
     @property
     @pulumi.getter(name="responseProtection")
-    def response_protection(self) -> pulumi.Output['outputs.AppFirewallPolicyResponseProtection']:
-        """
-        (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        """
+    def response_protection(self) -> pulumi.Output[Optional['outputs.AppFirewallPolicyResponseProtection']]:
         return pulumi.get(self, "response_protection")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the WebAppFirewallPolicy.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

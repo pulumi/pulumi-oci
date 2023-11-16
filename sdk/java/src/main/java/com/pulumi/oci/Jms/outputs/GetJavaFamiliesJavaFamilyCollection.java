@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesJavaFamilyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJavaFamiliesJavaFamilyCollection {
-    private List<GetJavaFamiliesJavaFamilyCollectionItem> items;
+    private @Nullable List<GetJavaFamiliesJavaFamilyCollectionItem> items;
 
     private GetJavaFamiliesJavaFamilyCollection() {}
     public List<GetJavaFamiliesJavaFamilyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetJavaFamiliesJavaFamilyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetJavaFamiliesJavaFamilyCollectionItem> items;
+        private @Nullable List<GetJavaFamiliesJavaFamilyCollectionItem> items;
         public Builder() {}
         public Builder(GetJavaFamiliesJavaFamilyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetJavaFamiliesJavaFamilyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetJavaFamiliesJavaFamilyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetJavaFamiliesJavaFamilyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetJavaFamiliesJavaFamilyCollectionItem... items) {

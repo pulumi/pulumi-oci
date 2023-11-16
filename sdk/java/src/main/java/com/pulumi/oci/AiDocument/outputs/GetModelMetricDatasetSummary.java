@@ -6,6 +6,8 @@ package com.pulumi.oci.AiDocument.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelMetricDatasetSummary {
@@ -13,39 +15,39 @@ public final class GetModelMetricDatasetSummary {
      * @return Number of samples used for testing the model.
      * 
      */
-    private Integer testSampleCount;
+    private @Nullable Integer testSampleCount;
     /**
      * @return Number of samples used for training the model.
      * 
      */
-    private Integer trainingSampleCount;
+    private @Nullable Integer trainingSampleCount;
     /**
      * @return Number of samples used for validating the model.
      * 
      */
-    private Integer validationSampleCount;
+    private @Nullable Integer validationSampleCount;
 
     private GetModelMetricDatasetSummary() {}
     /**
      * @return Number of samples used for testing the model.
      * 
      */
-    public Integer testSampleCount() {
-        return this.testSampleCount;
+    public Optional<Integer> testSampleCount() {
+        return Optional.ofNullable(this.testSampleCount);
     }
     /**
      * @return Number of samples used for training the model.
      * 
      */
-    public Integer trainingSampleCount() {
-        return this.trainingSampleCount;
+    public Optional<Integer> trainingSampleCount() {
+        return Optional.ofNullable(this.trainingSampleCount);
     }
     /**
      * @return Number of samples used for validating the model.
      * 
      */
-    public Integer validationSampleCount() {
-        return this.validationSampleCount;
+    public Optional<Integer> validationSampleCount() {
+        return Optional.ofNullable(this.validationSampleCount);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetModelMetricDatasetSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer testSampleCount;
-        private Integer trainingSampleCount;
-        private Integer validationSampleCount;
+        private @Nullable Integer testSampleCount;
+        private @Nullable Integer trainingSampleCount;
+        private @Nullable Integer validationSampleCount;
         public Builder() {}
         public Builder(GetModelMetricDatasetSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetModelMetricDatasetSummary {
         }
 
         @CustomType.Setter
-        public Builder testSampleCount(Integer testSampleCount) {
-            this.testSampleCount = Objects.requireNonNull(testSampleCount);
+        public Builder testSampleCount(@Nullable Integer testSampleCount) {
+            this.testSampleCount = testSampleCount;
             return this;
         }
         @CustomType.Setter
-        public Builder trainingSampleCount(Integer trainingSampleCount) {
-            this.trainingSampleCount = Objects.requireNonNull(trainingSampleCount);
+        public Builder trainingSampleCount(@Nullable Integer trainingSampleCount) {
+            this.trainingSampleCount = trainingSampleCount;
             return this;
         }
         @CustomType.Setter
-        public Builder validationSampleCount(Integer validationSampleCount) {
-            this.validationSampleCount = Objects.requireNonNull(validationSampleCount);
+        public Builder validationSampleCount(@Nullable Integer validationSampleCount) {
+            this.validationSampleCount = validationSampleCount;
             return this;
         }
         public GetModelMetricDatasetSummary build() {

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The number of CPU cores available.
         /// </summary>
-        public readonly double AvailableCpus;
+        public readonly double? AvailableCpus;
         /// <summary>
         /// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double ProvisionedCpus;
+        public readonly double? ProvisionedCpus;
         /// <summary>
         /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         /// </summary>
-        public readonly double ReclaimableCpus;
+        public readonly double? ReclaimableCpus;
         /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double ReservedCpus;
+        public readonly double? ReservedCpus;
         /// <summary>
         /// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
         /// </summary>
-        public readonly double UsedCpus;
+        public readonly double? UsedCpus;
 
         [OutputConstructor]
         private GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult(
-            double availableCpus,
+            double? availableCpus,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            double provisionedCpus,
+            double? provisionedCpus,
 
-            double reclaimableCpus,
+            double? reclaimableCpus,
 
-            double reservedCpus,
+            double? reservedCpus,
 
-            double usedCpus)
+            double? usedCpus)
         {
             AvailableCpus = availableCpus;
             DisplayName = displayName;

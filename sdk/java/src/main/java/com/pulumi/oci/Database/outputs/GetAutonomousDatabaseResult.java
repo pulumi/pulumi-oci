@@ -24,6 +24,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseResult {
@@ -31,131 +33,131 @@ public final class GetAutonomousDatabaseResult {
      * @return The current amount of storage in use for user and system data, in terabytes (TB).
      * 
      */
-    private Double actualUsedDataStorageSizeInTbs;
-    private String adminPassword;
+    private @Nullable Double actualUsedDataStorageSizeInTbs;
+    private @Nullable String adminPassword;
     /**
      * @return The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
-    private Double allocatedStorageSizeInTbs;
+    private @Nullable Double allocatedStorageSizeInTbs;
     /**
      * @return Information about Oracle APEX Application Development.
      * 
      */
-    private List<GetAutonomousDatabaseApexDetail> apexDetails;
+    private @Nullable List<GetAutonomousDatabaseApexDetail> apexDetails;
     /**
      * @return This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
-    private Boolean arePrimaryWhitelistedIpsUsed;
+    private @Nullable Boolean arePrimaryWhitelistedIpsUsed;
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String autonomousContainerDatabaseId;
-    private String autonomousDatabaseBackupId;
+    private @Nullable String autonomousContainerDatabaseId;
+    private @Nullable String autonomousDatabaseBackupId;
     private String autonomousDatabaseId;
     /**
      * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      * 
      */
-    private String autonomousMaintenanceScheduleType;
+    private @Nullable String autonomousMaintenanceScheduleType;
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
-    private List<String> availableUpgradeVersions;
+    private @Nullable List<String> availableUpgradeVersions;
     /**
      * @return Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
-    private List<GetAutonomousDatabaseBackupConfig> backupConfigs;
+    private @Nullable List<GetAutonomousDatabaseBackupConfig> backupConfigs;
     /**
      * @return Retention period, in days, for backups.
      * 
      */
-    private Integer backupRetentionPeriodInDays;
+    private @Nullable Integer backupRetentionPeriodInDays;
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      * 
      */
-    private String characterSet;
-    private String cloneType;
+    private @Nullable String characterSet;
+    private @Nullable String cloneType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
-    private Double computeCount;
+    private @Nullable Double computeCount;
     /**
      * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
-    private String computeModel;
+    private @Nullable String computeModel;
     /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
-    private List<GetAutonomousDatabaseConnectionString> connectionStrings;
+    private @Nullable List<GetAutonomousDatabaseConnectionString> connectionStrings;
     /**
      * @return The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
      * 
      */
-    private List<GetAutonomousDatabaseConnectionUrl> connectionUrls;
+    private @Nullable List<GetAutonomousDatabaseConnectionUrl> connectionUrls;
     /**
      * @return The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return Customer Contacts.
      * 
      */
-    private List<GetAutonomousDatabaseCustomerContact> customerContacts;
+    private @Nullable List<GetAutonomousDatabaseCustomerContact> customerContacts;
     /**
      * @return Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      * 
      */
-    private String dataSafeStatus;
+    private @Nullable String dataSafeStatus;
     /**
      * @return The quantity of data in the database, in gigabytes.
      * 
      */
-    private Integer dataStorageSizeInGb;
+    private @Nullable Integer dataStorageSizeInGb;
     /**
      * @return The quantity of data in the database, in terabytes.
      * 
      */
-    private Integer dataStorageSizeInTbs;
+    private @Nullable Integer dataStorageSizeInTbs;
     /**
      * @return The Oracle Database Edition that applies to the Autonomous databases.
      * 
      */
-    private String databaseEdition;
+    private @Nullable String databaseEdition;
     /**
      * @return Status of Database Management for this Autonomous Database.
      * 
      */
-    private String databaseManagementStatus;
+    private @Nullable String databaseManagementStatus;
     /**
      * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
      * 
      */
-    private String dataguardRegionType;
+    private @Nullable String dataguardRegionType;
     /**
      * @return The database name.
      * 
      */
-    private String dbName;
+    private @Nullable String dbName;
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The Autonomous Database workload type. The following values are valid:
      * * OLTP - indicates an Autonomous Transaction Processing database
@@ -164,471 +166,471 @@ public final class GetAutonomousDatabaseResult {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    private String dbWorkload;
+    private @Nullable String dbWorkload;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
-    private String disasterRecoveryRegionType;
+    private @Nullable String disasterRecoveryRegionType;
     /**
      * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
-    private Integer failedDataRecoveryInSeconds;
+    private @Nullable Integer failedDataRecoveryInSeconds;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The area assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    private Integer inMemoryAreaInGbs;
+    private @Nullable Integer inMemoryAreaInGbs;
     /**
      * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    private Integer inMemoryPercentage;
+    private @Nullable Integer inMemoryPercentage;
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    private String infrastructureType;
+    private @Nullable String infrastructureType;
     /**
      * @return Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * 
      */
-    private Boolean isAccessControlEnabled;
+    private @Nullable Boolean isAccessControlEnabled;
     /**
      * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
      * 
      */
-    private Boolean isAutoScalingEnabled;
+    private @Nullable Boolean isAutoScalingEnabled;
     /**
      * @return Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      * 
      */
-    private Boolean isAutoScalingForStorageEnabled;
+    private @Nullable Boolean isAutoScalingForStorageEnabled;
     /**
      * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    private Boolean isDataGuardEnabled;
+    private @Nullable Boolean isDataGuardEnabled;
     /**
      * @return True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    private Boolean isDedicated;
+    private @Nullable Boolean isDedicated;
     /**
      * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
-    private Boolean isFreeTier;
+    private @Nullable Boolean isFreeTier;
     /**
      * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    private Boolean isLocalDataGuardEnabled;
+    private @Nullable Boolean isLocalDataGuardEnabled;
     /**
      * @return Specifies if the Autonomous Database requires mTLS connections.
      * 
      */
-    private Boolean isMtlsConnectionRequired;
+    private @Nullable Boolean isMtlsConnectionRequired;
     /**
      * @return Indicates if the Autonomous Database version is a preview version.
      * 
      */
-    private Boolean isPreview;
-    private Boolean isPreviewVersionWithServiceTermsAccepted;
+    private @Nullable Boolean isPreview;
+    private @Nullable Boolean isPreviewVersionWithServiceTermsAccepted;
     /**
      * @return Indicates if the refreshable clone can be reconnected to its source database.
      * 
      */
-    private Boolean isReconnectCloneEnabled;
+    private @Nullable Boolean isReconnectCloneEnabled;
     /**
      * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
-    private Boolean isRefreshableClone;
+    private @Nullable Boolean isRefreshableClone;
     /**
      * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    private Boolean isRemoteDataGuardEnabled;
-    private Boolean isShrinkOnly;
+    private @Nullable Boolean isRemoteDataGuardEnabled;
+    private @Nullable Boolean isShrinkOnly;
     /**
      * @return Key History Entry.
      * 
      */
-    private List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
+    private @Nullable List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private String keyStoreId;
+    private @Nullable String keyStoreId;
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    private String keyStoreWalletName;
+    private @Nullable String keyStoreWalletName;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return KMS key lifecycle details.
      * 
      */
-    private String kmsKeyLifecycleDetails;
+    private @Nullable String kmsKeyLifecycleDetails;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      * 
      */
-    private Integer localAdgAutoFailoverMaxDataLossLimit;
+    private @Nullable Integer localAdgAutoFailoverMaxDataLossLimit;
     /**
      * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    private String localDisasterRecoveryType;
+    private @Nullable String localDisasterRecoveryType;
     /**
      * @return Autonomous Data Guard standby database details.
      * 
      */
-    private List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
+    private @Nullable List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
     /**
      * @return Details for the long-term backup schedule.
      * 
      */
-    private List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
+    private @Nullable List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
     /**
      * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
-    private Integer maxCpuCoreCount;
+    private @Nullable Integer maxCpuCoreCount;
     /**
      * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
-    private Integer memoryPerOracleComputeUnitInGbs;
+    private @Nullable Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
-    private String ncharacterSet;
+    private @Nullable String ncharacterSet;
     /**
      * @return The date and time when the next long-term backup would be created.
      * 
      */
-    private String nextLongTermBackupTimeStamp;
+    private @Nullable String nextLongTermBackupTimeStamp;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The number of OCPU cores to be made available to the database.
      * 
      */
-    private Double ocpuCount;
+    private @Nullable Double ocpuCount;
     /**
      * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
-    private String openMode;
+    private @Nullable String openMode;
     /**
      * @return Status of Operations Insights for this Autonomous Database.
      * 
      */
-    private String operationsInsightsStatus;
+    private @Nullable String operationsInsightsStatus;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
-    private List<String> peerDbIds;
+    private @Nullable List<String> peerDbIds;
     /**
      * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
-    private String permissionLevel;
+    private @Nullable String permissionLevel;
     /**
      * @return The private endpoint for the resource.
      * 
      */
-    private String privateEndpoint;
+    private @Nullable String privateEndpoint;
     /**
      * @return The private endpoint Ip address for the resource.
      * 
      */
-    private String privateEndpointIp;
+    private @Nullable String privateEndpointIp;
     /**
      * @return The private endpoint label for the resource.
      * 
      */
-    private String privateEndpointLabel;
+    private @Nullable String privateEndpointLabel;
     /**
      * @return An array of CPU values that an Autonomous Database can be scaled to.
      * 
      */
-    private List<Double> provisionableCpuses;
+    private @Nullable List<Double> provisionableCpuses;
     /**
      * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
-    private String refreshableMode;
+    private @Nullable String refreshableMode;
     /**
      * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      * 
      */
-    private String refreshableStatus;
+    private @Nullable String refreshableStatus;
     /**
      * @return Configurations of a Disaster Recovery.
      * 
      */
-    private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
-    private String remoteDisasterRecoveryType;
+    private @Nullable List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
+    private @Nullable String remoteDisasterRecoveryType;
     /**
      * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String resourcePoolLeaderId;
+    private @Nullable String resourcePoolLeaderId;
     /**
      * @return The configuration details for resource pool
      * 
      */
-    private List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
+    private @Nullable List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    private String role;
-    private Boolean rotateKeyTrigger;
+    private @Nullable String role;
+    private @Nullable Boolean rotateKeyTrigger;
     /**
      * @return The list of scheduled operations.
      * 
      */
-    private List<GetAutonomousDatabaseScheduledOperation> scheduledOperations;
-    private String secretId;
-    private Integer secretVersionNumber;
+    private @Nullable List<GetAutonomousDatabaseScheduledOperation> scheduledOperations;
+    private @Nullable String secretId;
+    private @Nullable Integer secretVersionNumber;
     /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
-    private String serviceConsoleUrl;
-    private String source;
+    private @Nullable String serviceConsoleUrl;
+    private @Nullable String source;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
-    private List<GetAutonomousDatabaseStandbyDb> standbyDbs;
+    private @Nullable List<GetAutonomousDatabaseStandbyDb> standbyDbs;
     /**
      * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
-    private List<String> standbyWhitelistedIps;
+    private @Nullable List<String> standbyWhitelistedIps;
     /**
      * @return The current state of the Autonomous Database.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
-    private List<String> supportedRegionsToCloneTos;
-    private String switchoverTo;
-    private String switchoverToRemotePeerId;
+    private @Nullable List<String> supportedRegionsToCloneTos;
+    private @Nullable String switchoverTo;
+    private @Nullable String switchoverToRemotePeerId;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the Autonomous Database was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    private String timeDataGuardRoleChanged;
+    private @Nullable String timeDataGuardRoleChanged;
     /**
      * @return The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      * 
      */
-    private String timeDeletionOfFreeAutonomousDatabase;
+    private @Nullable String timeDeletionOfFreeAutonomousDatabase;
     /**
      * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
-    private String timeDisasterRecoveryRoleChanged;
+    private @Nullable String timeDisasterRecoveryRoleChanged;
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
-    private String timeLocalDataGuardEnabled;
+    private @Nullable String timeLocalDataGuardEnabled;
     /**
      * @return The date and time when maintenance will begin.
      * 
      */
-    private String timeMaintenanceBegin;
+    private @Nullable String timeMaintenanceBegin;
     /**
      * @return The date and time when maintenance will end.
      * 
      */
-    private String timeMaintenanceEnd;
+    private @Nullable String timeMaintenanceEnd;
     /**
      * @return The time the member joined the resource pool.
      * 
      */
-    private String timeOfJoiningResourcePool;
+    private @Nullable String timeOfJoiningResourcePool;
     /**
      * @return The timestamp of the last failover operation.
      * 
      */
-    private String timeOfLastFailover;
+    private @Nullable String timeOfLastFailover;
     /**
      * @return The date and time when last refresh happened.
      * 
      */
-    private String timeOfLastRefresh;
+    private @Nullable String timeOfLastRefresh;
     /**
      * @return The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      * 
      */
-    private String timeOfLastRefreshPoint;
+    private @Nullable String timeOfLastRefreshPoint;
     /**
      * @return The timestamp of the last switchover operation for the Autonomous Database.
      * 
      */
-    private String timeOfLastSwitchover;
+    private @Nullable String timeOfLastSwitchover;
     /**
      * @return The date and time of next refresh.
      * 
      */
-    private String timeOfNextRefresh;
+    private @Nullable String timeOfNextRefresh;
     /**
      * @return The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      * 
      */
-    private String timeReclamationOfFreeAutonomousDatabase;
+    private @Nullable String timeReclamationOfFreeAutonomousDatabase;
     /**
      * @return The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
-    private String timeUntilReconnectCloneEnabled;
-    private String timestamp;
+    private @Nullable String timeUntilReconnectCloneEnabled;
+    private @Nullable String timestamp;
     /**
      * @return The backup storage to the database.
      * 
      */
-    private Double totalBackupStorageSizeInGbs;
-    private Boolean useLatestAvailableBackupTimeStamp;
+    private @Nullable Double totalBackupStorageSizeInGbs;
+    private @Nullable Boolean useLatestAvailableBackupTimeStamp;
     /**
      * @return The storage space consumed by Autonomous Database in GBs.
      * 
      */
-    private Integer usedDataStorageSizeInGbs;
+    private @Nullable Integer usedDataStorageSizeInGbs;
     /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
-    private Integer usedDataStorageSizeInTbs;
+    private @Nullable Integer usedDataStorageSizeInTbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
     /**
      * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
-    private List<String> whitelistedIps;
+    private @Nullable List<String> whitelistedIps;
 
     private GetAutonomousDatabaseResult() {}
     /**
      * @return The current amount of storage in use for user and system data, in terabytes (TB).
      * 
      */
-    public Double actualUsedDataStorageSizeInTbs() {
-        return this.actualUsedDataStorageSizeInTbs;
+    public Optional<Double> actualUsedDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.actualUsedDataStorageSizeInTbs);
     }
-    public String adminPassword() {
-        return this.adminPassword;
+    public Optional<String> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
     /**
      * @return The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
-    public Double allocatedStorageSizeInTbs() {
-        return this.allocatedStorageSizeInTbs;
+    public Optional<Double> allocatedStorageSizeInTbs() {
+        return Optional.ofNullable(this.allocatedStorageSizeInTbs);
     }
     /**
      * @return Information about Oracle APEX Application Development.
      * 
      */
     public List<GetAutonomousDatabaseApexDetail> apexDetails() {
-        return this.apexDetails;
+        return this.apexDetails == null ? List.of() : this.apexDetails;
     }
     /**
      * @return This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
-    public Boolean arePrimaryWhitelistedIpsUsed() {
-        return this.arePrimaryWhitelistedIpsUsed;
+    public Optional<Boolean> arePrimaryWhitelistedIpsUsed() {
+        return Optional.ofNullable(this.arePrimaryWhitelistedIpsUsed);
     }
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String autonomousContainerDatabaseId() {
-        return this.autonomousContainerDatabaseId;
+    public Optional<String> autonomousContainerDatabaseId() {
+        return Optional.ofNullable(this.autonomousContainerDatabaseId);
     }
-    public String autonomousDatabaseBackupId() {
-        return this.autonomousDatabaseBackupId;
+    public Optional<String> autonomousDatabaseBackupId() {
+        return Optional.ofNullable(this.autonomousDatabaseBackupId);
     }
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
@@ -637,144 +639,144 @@ public final class GetAutonomousDatabaseResult {
      * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
      * 
      */
-    public String autonomousMaintenanceScheduleType() {
-        return this.autonomousMaintenanceScheduleType;
+    public Optional<String> autonomousMaintenanceScheduleType() {
+        return Optional.ofNullable(this.autonomousMaintenanceScheduleType);
     }
     /**
      * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
     public List<String> availableUpgradeVersions() {
-        return this.availableUpgradeVersions;
+        return this.availableUpgradeVersions == null ? List.of() : this.availableUpgradeVersions;
     }
     /**
      * @return Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
     public List<GetAutonomousDatabaseBackupConfig> backupConfigs() {
-        return this.backupConfigs;
+        return this.backupConfigs == null ? List.of() : this.backupConfigs;
     }
     /**
      * @return Retention period, in days, for backups.
      * 
      */
-    public Integer backupRetentionPeriodInDays() {
-        return this.backupRetentionPeriodInDays;
+    public Optional<Integer> backupRetentionPeriodInDays() {
+        return Optional.ofNullable(this.backupRetentionPeriodInDays);
     }
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      * 
      */
-    public String characterSet() {
-        return this.characterSet;
+    public Optional<String> characterSet() {
+        return Optional.ofNullable(this.characterSet);
     }
-    public String cloneType() {
-        return this.cloneType;
+    public Optional<String> cloneType() {
+        return Optional.ofNullable(this.cloneType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
      * 
      */
-    public Double computeCount() {
-        return this.computeCount;
+    public Optional<Double> computeCount() {
+        return Optional.ofNullable(this.computeCount);
     }
     /**
      * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
      * 
      */
-    public String computeModel() {
-        return this.computeModel;
+    public Optional<String> computeModel() {
+        return Optional.ofNullable(this.computeModel);
     }
     /**
      * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
      * 
      */
     public List<GetAutonomousDatabaseConnectionString> connectionStrings() {
-        return this.connectionStrings;
+        return this.connectionStrings == null ? List.of() : this.connectionStrings;
     }
     /**
      * @return The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
      * 
      */
     public List<GetAutonomousDatabaseConnectionUrl> connectionUrls() {
-        return this.connectionUrls;
+        return this.connectionUrls == null ? List.of() : this.connectionUrls;
     }
     /**
      * @return The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return Customer Contacts.
      * 
      */
     public List<GetAutonomousDatabaseCustomerContact> customerContacts() {
-        return this.customerContacts;
+        return this.customerContacts == null ? List.of() : this.customerContacts;
     }
     /**
      * @return Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
      * 
      */
-    public String dataSafeStatus() {
-        return this.dataSafeStatus;
+    public Optional<String> dataSafeStatus() {
+        return Optional.ofNullable(this.dataSafeStatus);
     }
     /**
      * @return The quantity of data in the database, in gigabytes.
      * 
      */
-    public Integer dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Optional<Integer> dataStorageSizeInGb() {
+        return Optional.ofNullable(this.dataStorageSizeInGb);
     }
     /**
      * @return The quantity of data in the database, in terabytes.
      * 
      */
-    public Integer dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Optional<Integer> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
     }
     /**
      * @return The Oracle Database Edition that applies to the Autonomous databases.
      * 
      */
-    public String databaseEdition() {
-        return this.databaseEdition;
+    public Optional<String> databaseEdition() {
+        return Optional.ofNullable(this.databaseEdition);
     }
     /**
      * @return Status of Database Management for this Autonomous Database.
      * 
      */
-    public String databaseManagementStatus() {
-        return this.databaseManagementStatus;
+    public Optional<String> databaseManagementStatus() {
+        return Optional.ofNullable(this.databaseManagementStatus);
     }
     /**
      * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
      * 
      */
-    public String dataguardRegionType() {
-        return this.dataguardRegionType;
+    public Optional<String> dataguardRegionType() {
+        return Optional.ofNullable(this.dataguardRegionType);
     }
     /**
      * @return The database name.
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return The Autonomous Database workload type. The following values are valid:
@@ -784,273 +786,273 @@ public final class GetAutonomousDatabaseResult {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    public String dbWorkload() {
-        return this.dbWorkload;
+    public Optional<String> dbWorkload() {
+        return Optional.ofNullable(this.dbWorkload);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
-    public String disasterRecoveryRegionType() {
-        return this.disasterRecoveryRegionType;
+    public Optional<String> disasterRecoveryRegionType() {
+        return Optional.ofNullable(this.disasterRecoveryRegionType);
     }
     /**
      * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
-    public Integer failedDataRecoveryInSeconds() {
-        return this.failedDataRecoveryInSeconds;
+    public Optional<Integer> failedDataRecoveryInSeconds() {
+        return Optional.ofNullable(this.failedDataRecoveryInSeconds);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The area assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    public Integer inMemoryAreaInGbs() {
-        return this.inMemoryAreaInGbs;
+    public Optional<Integer> inMemoryAreaInGbs() {
+        return Optional.ofNullable(this.inMemoryAreaInGbs);
     }
     /**
      * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
      * 
      */
-    public Integer inMemoryPercentage() {
-        return this.inMemoryPercentage;
+    public Optional<Integer> inMemoryPercentage() {
+        return Optional.ofNullable(this.inMemoryPercentage);
     }
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    public String infrastructureType() {
-        return this.infrastructureType;
+    public Optional<String> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
     }
     /**
      * @return Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * 
      */
-    public Boolean isAccessControlEnabled() {
-        return this.isAccessControlEnabled;
+    public Optional<Boolean> isAccessControlEnabled() {
+        return Optional.ofNullable(this.isAccessControlEnabled);
     }
     /**
      * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
      * 
      */
-    public Boolean isAutoScalingEnabled() {
-        return this.isAutoScalingEnabled;
+    public Optional<Boolean> isAutoScalingEnabled() {
+        return Optional.ofNullable(this.isAutoScalingEnabled);
     }
     /**
      * @return Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
      * 
      */
-    public Boolean isAutoScalingForStorageEnabled() {
-        return this.isAutoScalingForStorageEnabled;
+    public Optional<Boolean> isAutoScalingForStorageEnabled() {
+        return Optional.ofNullable(this.isAutoScalingForStorageEnabled);
     }
     /**
      * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    public Boolean isDataGuardEnabled() {
-        return this.isDataGuardEnabled;
+    public Optional<Boolean> isDataGuardEnabled() {
+        return Optional.ofNullable(this.isDataGuardEnabled);
     }
     /**
      * @return True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      */
-    public Boolean isDedicated() {
-        return this.isDedicated;
+    public Optional<Boolean> isDedicated() {
+        return Optional.ofNullable(this.isDedicated);
     }
     /**
      * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
-    public Boolean isFreeTier() {
-        return this.isFreeTier;
+    public Optional<Boolean> isFreeTier() {
+        return Optional.ofNullable(this.isFreeTier);
     }
     /**
      * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    public Boolean isLocalDataGuardEnabled() {
-        return this.isLocalDataGuardEnabled;
+    public Optional<Boolean> isLocalDataGuardEnabled() {
+        return Optional.ofNullable(this.isLocalDataGuardEnabled);
     }
     /**
      * @return Specifies if the Autonomous Database requires mTLS connections.
      * 
      */
-    public Boolean isMtlsConnectionRequired() {
-        return this.isMtlsConnectionRequired;
+    public Optional<Boolean> isMtlsConnectionRequired() {
+        return Optional.ofNullable(this.isMtlsConnectionRequired);
     }
     /**
      * @return Indicates if the Autonomous Database version is a preview version.
      * 
      */
-    public Boolean isPreview() {
-        return this.isPreview;
+    public Optional<Boolean> isPreview() {
+        return Optional.ofNullable(this.isPreview);
     }
-    public Boolean isPreviewVersionWithServiceTermsAccepted() {
-        return this.isPreviewVersionWithServiceTermsAccepted;
+    public Optional<Boolean> isPreviewVersionWithServiceTermsAccepted() {
+        return Optional.ofNullable(this.isPreviewVersionWithServiceTermsAccepted);
     }
     /**
      * @return Indicates if the refreshable clone can be reconnected to its source database.
      * 
      */
-    public Boolean isReconnectCloneEnabled() {
-        return this.isReconnectCloneEnabled;
+    public Optional<Boolean> isReconnectCloneEnabled() {
+        return Optional.ofNullable(this.isReconnectCloneEnabled);
     }
     /**
      * @return Indicates if the Autonomous Database is a refreshable clone.
      * 
      */
-    public Boolean isRefreshableClone() {
-        return this.isRefreshableClone;
+    public Optional<Boolean> isRefreshableClone() {
+        return Optional.ofNullable(this.isRefreshableClone);
     }
     /**
      * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      * 
      */
-    public Boolean isRemoteDataGuardEnabled() {
-        return this.isRemoteDataGuardEnabled;
+    public Optional<Boolean> isRemoteDataGuardEnabled() {
+        return Optional.ofNullable(this.isRemoteDataGuardEnabled);
     }
-    public Boolean isShrinkOnly() {
-        return this.isShrinkOnly;
+    public Optional<Boolean> isShrinkOnly() {
+        return Optional.ofNullable(this.isShrinkOnly);
     }
     /**
      * @return Key History Entry.
      * 
      */
     public List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries() {
-        return this.keyHistoryEntries;
+        return this.keyHistoryEntries == null ? List.of() : this.keyHistoryEntries;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public String keyStoreId() {
-        return this.keyStoreId;
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
     }
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public String keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Optional<String> keyStoreWalletName() {
+        return Optional.ofNullable(this.keyStoreWalletName);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return KMS key lifecycle details.
      * 
      */
-    public String kmsKeyLifecycleDetails() {
-        return this.kmsKeyLifecycleDetails;
+    public Optional<String> kmsKeyLifecycleDetails() {
+        return Optional.ofNullable(this.kmsKeyLifecycleDetails);
     }
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      * 
      */
-    public Integer localAdgAutoFailoverMaxDataLossLimit() {
-        return this.localAdgAutoFailoverMaxDataLossLimit;
+    public Optional<Integer> localAdgAutoFailoverMaxDataLossLimit() {
+        return Optional.ofNullable(this.localAdgAutoFailoverMaxDataLossLimit);
     }
     /**
      * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
-    public String localDisasterRecoveryType() {
-        return this.localDisasterRecoveryType;
+    public Optional<String> localDisasterRecoveryType() {
+        return Optional.ofNullable(this.localDisasterRecoveryType);
     }
     /**
      * @return Autonomous Data Guard standby database details.
      * 
      */
     public List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs() {
-        return this.localStandbyDbs;
+        return this.localStandbyDbs == null ? List.of() : this.localStandbyDbs;
     }
     /**
      * @return Details for the long-term backup schedule.
      * 
      */
     public List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules() {
-        return this.longTermBackupSchedules;
+        return this.longTermBackupSchedules == null ? List.of() : this.longTermBackupSchedules;
     }
     /**
      * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
-    public Integer maxCpuCoreCount() {
-        return this.maxCpuCoreCount;
+    public Optional<Integer> maxCpuCoreCount() {
+        return Optional.ofNullable(this.maxCpuCoreCount);
     }
     /**
      * @return The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
      * 
      */
-    public Integer memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Optional<Integer> memoryPerOracleComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
-    public String ncharacterSet() {
-        return this.ncharacterSet;
+    public Optional<String> ncharacterSet() {
+        return Optional.ofNullable(this.ncharacterSet);
     }
     /**
      * @return The date and time when the next long-term backup would be created.
      * 
      */
-    public String nextLongTermBackupTimeStamp() {
-        return this.nextLongTermBackupTimeStamp;
+    public Optional<String> nextLongTermBackupTimeStamp() {
+        return Optional.ofNullable(this.nextLongTermBackupTimeStamp);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -1058,342 +1060,342 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The number of OCPU cores to be made available to the database.
      * 
      */
-    public Double ocpuCount() {
-        return this.ocpuCount;
+    public Optional<Double> ocpuCount() {
+        return Optional.ofNullable(this.ocpuCount);
     }
     /**
      * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
-    public String openMode() {
-        return this.openMode;
+    public Optional<String> openMode() {
+        return Optional.ofNullable(this.openMode);
     }
     /**
      * @return Status of Operations Insights for this Autonomous Database.
      * 
      */
-    public String operationsInsightsStatus() {
-        return this.operationsInsightsStatus;
+    public Optional<String> operationsInsightsStatus() {
+        return Optional.ofNullable(this.operationsInsightsStatus);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     public List<String> peerDbIds() {
-        return this.peerDbIds;
+        return this.peerDbIds == null ? List.of() : this.peerDbIds;
     }
     /**
      * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
      * 
      */
-    public String permissionLevel() {
-        return this.permissionLevel;
+    public Optional<String> permissionLevel() {
+        return Optional.ofNullable(this.permissionLevel);
     }
     /**
      * @return The private endpoint for the resource.
      * 
      */
-    public String privateEndpoint() {
-        return this.privateEndpoint;
+    public Optional<String> privateEndpoint() {
+        return Optional.ofNullable(this.privateEndpoint);
     }
     /**
      * @return The private endpoint Ip address for the resource.
      * 
      */
-    public String privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Optional<String> privateEndpointIp() {
+        return Optional.ofNullable(this.privateEndpointIp);
     }
     /**
      * @return The private endpoint label for the resource.
      * 
      */
-    public String privateEndpointLabel() {
-        return this.privateEndpointLabel;
+    public Optional<String> privateEndpointLabel() {
+        return Optional.ofNullable(this.privateEndpointLabel);
     }
     /**
      * @return An array of CPU values that an Autonomous Database can be scaled to.
      * 
      */
     public List<Double> provisionableCpuses() {
-        return this.provisionableCpuses;
+        return this.provisionableCpuses == null ? List.of() : this.provisionableCpuses;
     }
     /**
      * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
-    public String refreshableMode() {
-        return this.refreshableMode;
+    public Optional<String> refreshableMode() {
+        return Optional.ofNullable(this.refreshableMode);
     }
     /**
      * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
      * 
      */
-    public String refreshableStatus() {
-        return this.refreshableStatus;
+    public Optional<String> refreshableStatus() {
+        return Optional.ofNullable(this.refreshableStatus);
     }
     /**
      * @return Configurations of a Disaster Recovery.
      * 
      */
     public List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations() {
-        return this.remoteDisasterRecoveryConfigurations;
+        return this.remoteDisasterRecoveryConfigurations == null ? List.of() : this.remoteDisasterRecoveryConfigurations;
     }
-    public String remoteDisasterRecoveryType() {
-        return this.remoteDisasterRecoveryType;
+    public Optional<String> remoteDisasterRecoveryType() {
+        return Optional.ofNullable(this.remoteDisasterRecoveryType);
     }
     /**
      * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String resourcePoolLeaderId() {
-        return this.resourcePoolLeaderId;
+    public Optional<String> resourcePoolLeaderId() {
+        return Optional.ofNullable(this.resourcePoolLeaderId);
     }
     /**
      * @return The configuration details for resource pool
      * 
      */
     public List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries() {
-        return this.resourcePoolSummaries;
+        return this.resourcePoolSummaries == null ? List.of() : this.resourcePoolSummaries;
     }
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
-    public Boolean rotateKeyTrigger() {
-        return this.rotateKeyTrigger;
+    public Optional<Boolean> rotateKeyTrigger() {
+        return Optional.ofNullable(this.rotateKeyTrigger);
     }
     /**
      * @return The list of scheduled operations.
      * 
      */
     public List<GetAutonomousDatabaseScheduledOperation> scheduledOperations() {
-        return this.scheduledOperations;
+        return this.scheduledOperations == null ? List.of() : this.scheduledOperations;
     }
-    public String secretId() {
-        return this.secretId;
+    public Optional<String> secretId() {
+        return Optional.ofNullable(this.secretId);
     }
-    public Integer secretVersionNumber() {
-        return this.secretVersionNumber;
+    public Optional<Integer> secretVersionNumber() {
+        return Optional.ofNullable(this.secretVersionNumber);
     }
     /**
      * @return The URL of the Service Console for the Autonomous Database.
      * 
      */
-    public String serviceConsoleUrl() {
-        return this.serviceConsoleUrl;
+    public Optional<String> serviceConsoleUrl() {
+        return Optional.ofNullable(this.serviceConsoleUrl);
     }
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     public List<GetAutonomousDatabaseStandbyDb> standbyDbs() {
-        return this.standbyDbs;
+        return this.standbyDbs == null ? List.of() : this.standbyDbs;
     }
     /**
      * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     public List<String> standbyWhitelistedIps() {
-        return this.standbyWhitelistedIps;
+        return this.standbyWhitelistedIps == null ? List.of() : this.standbyWhitelistedIps;
     }
     /**
      * @return The current state of the Autonomous Database.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
     public List<String> supportedRegionsToCloneTos() {
-        return this.supportedRegionsToCloneTos;
+        return this.supportedRegionsToCloneTos == null ? List.of() : this.supportedRegionsToCloneTos;
     }
-    public String switchoverTo() {
-        return this.switchoverTo;
+    public Optional<String> switchoverTo() {
+        return Optional.ofNullable(this.switchoverTo);
     }
-    public String switchoverToRemotePeerId() {
-        return this.switchoverToRemotePeerId;
+    public Optional<String> switchoverToRemotePeerId() {
+        return Optional.ofNullable(this.switchoverToRemotePeerId);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the Autonomous Database was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    public String timeDataGuardRoleChanged() {
-        return this.timeDataGuardRoleChanged;
+    public Optional<String> timeDataGuardRoleChanged() {
+        return Optional.ofNullable(this.timeDataGuardRoleChanged);
     }
     /**
      * @return The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
      * 
      */
-    public String timeDeletionOfFreeAutonomousDatabase() {
-        return this.timeDeletionOfFreeAutonomousDatabase;
+    public Optional<String> timeDeletionOfFreeAutonomousDatabase() {
+        return Optional.ofNullable(this.timeDeletionOfFreeAutonomousDatabase);
     }
     /**
      * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
-    public String timeDisasterRecoveryRoleChanged() {
-        return this.timeDisasterRecoveryRoleChanged;
+    public Optional<String> timeDisasterRecoveryRoleChanged() {
+        return Optional.ofNullable(this.timeDisasterRecoveryRoleChanged);
     }
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
-    public String timeLocalDataGuardEnabled() {
-        return this.timeLocalDataGuardEnabled;
+    public Optional<String> timeLocalDataGuardEnabled() {
+        return Optional.ofNullable(this.timeLocalDataGuardEnabled);
     }
     /**
      * @return The date and time when maintenance will begin.
      * 
      */
-    public String timeMaintenanceBegin() {
-        return this.timeMaintenanceBegin;
+    public Optional<String> timeMaintenanceBegin() {
+        return Optional.ofNullable(this.timeMaintenanceBegin);
     }
     /**
      * @return The date and time when maintenance will end.
      * 
      */
-    public String timeMaintenanceEnd() {
-        return this.timeMaintenanceEnd;
+    public Optional<String> timeMaintenanceEnd() {
+        return Optional.ofNullable(this.timeMaintenanceEnd);
     }
     /**
      * @return The time the member joined the resource pool.
      * 
      */
-    public String timeOfJoiningResourcePool() {
-        return this.timeOfJoiningResourcePool;
+    public Optional<String> timeOfJoiningResourcePool() {
+        return Optional.ofNullable(this.timeOfJoiningResourcePool);
     }
     /**
      * @return The timestamp of the last failover operation.
      * 
      */
-    public String timeOfLastFailover() {
-        return this.timeOfLastFailover;
+    public Optional<String> timeOfLastFailover() {
+        return Optional.ofNullable(this.timeOfLastFailover);
     }
     /**
      * @return The date and time when last refresh happened.
      * 
      */
-    public String timeOfLastRefresh() {
-        return this.timeOfLastRefresh;
+    public Optional<String> timeOfLastRefresh() {
+        return Optional.ofNullable(this.timeOfLastRefresh);
     }
     /**
      * @return The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
      * 
      */
-    public String timeOfLastRefreshPoint() {
-        return this.timeOfLastRefreshPoint;
+    public Optional<String> timeOfLastRefreshPoint() {
+        return Optional.ofNullable(this.timeOfLastRefreshPoint);
     }
     /**
      * @return The timestamp of the last switchover operation for the Autonomous Database.
      * 
      */
-    public String timeOfLastSwitchover() {
-        return this.timeOfLastSwitchover;
+    public Optional<String> timeOfLastSwitchover() {
+        return Optional.ofNullable(this.timeOfLastSwitchover);
     }
     /**
      * @return The date and time of next refresh.
      * 
      */
-    public String timeOfNextRefresh() {
-        return this.timeOfNextRefresh;
+    public Optional<String> timeOfNextRefresh() {
+        return Optional.ofNullable(this.timeOfNextRefresh);
     }
     /**
      * @return The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      * 
      */
-    public String timeReclamationOfFreeAutonomousDatabase() {
-        return this.timeReclamationOfFreeAutonomousDatabase;
+    public Optional<String> timeReclamationOfFreeAutonomousDatabase() {
+        return Optional.ofNullable(this.timeReclamationOfFreeAutonomousDatabase);
     }
     /**
      * @return The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
      * 
      */
-    public String timeUntilReconnectCloneEnabled() {
-        return this.timeUntilReconnectCloneEnabled;
+    public Optional<String> timeUntilReconnectCloneEnabled() {
+        return Optional.ofNullable(this.timeUntilReconnectCloneEnabled);
     }
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
     /**
      * @return The backup storage to the database.
      * 
      */
-    public Double totalBackupStorageSizeInGbs() {
-        return this.totalBackupStorageSizeInGbs;
+    public Optional<Double> totalBackupStorageSizeInGbs() {
+        return Optional.ofNullable(this.totalBackupStorageSizeInGbs);
     }
-    public Boolean useLatestAvailableBackupTimeStamp() {
-        return this.useLatestAvailableBackupTimeStamp;
+    public Optional<Boolean> useLatestAvailableBackupTimeStamp() {
+        return Optional.ofNullable(this.useLatestAvailableBackupTimeStamp);
     }
     /**
      * @return The storage space consumed by Autonomous Database in GBs.
      * 
      */
-    public Integer usedDataStorageSizeInGbs() {
-        return this.usedDataStorageSizeInGbs;
+    public Optional<Integer> usedDataStorageSizeInGbs() {
+        return Optional.ofNullable(this.usedDataStorageSizeInGbs);
     }
     /**
      * @return The amount of storage that has been used, in terabytes.
      * 
      */
-    public Integer usedDataStorageSizeInTbs() {
-        return this.usedDataStorageSizeInTbs;
+    public Optional<Integer> usedDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.usedDataStorageSizeInTbs);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
     /**
      * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     public List<String> whitelistedIps() {
-        return this.whitelistedIps;
+        return this.whitelistedIps == null ? List.of() : this.whitelistedIps;
     }
 
     public static Builder builder() {
@@ -1405,129 +1407,129 @@ public final class GetAutonomousDatabaseResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double actualUsedDataStorageSizeInTbs;
-        private String adminPassword;
-        private Double allocatedStorageSizeInTbs;
-        private List<GetAutonomousDatabaseApexDetail> apexDetails;
-        private Boolean arePrimaryWhitelistedIpsUsed;
-        private String autonomousContainerDatabaseId;
-        private String autonomousDatabaseBackupId;
+        private @Nullable Double actualUsedDataStorageSizeInTbs;
+        private @Nullable String adminPassword;
+        private @Nullable Double allocatedStorageSizeInTbs;
+        private @Nullable List<GetAutonomousDatabaseApexDetail> apexDetails;
+        private @Nullable Boolean arePrimaryWhitelistedIpsUsed;
+        private @Nullable String autonomousContainerDatabaseId;
+        private @Nullable String autonomousDatabaseBackupId;
         private String autonomousDatabaseId;
-        private String autonomousMaintenanceScheduleType;
-        private List<String> availableUpgradeVersions;
-        private List<GetAutonomousDatabaseBackupConfig> backupConfigs;
-        private Integer backupRetentionPeriodInDays;
-        private String characterSet;
-        private String cloneType;
-        private String compartmentId;
-        private Double computeCount;
-        private String computeModel;
-        private List<GetAutonomousDatabaseConnectionString> connectionStrings;
-        private List<GetAutonomousDatabaseConnectionUrl> connectionUrls;
-        private Integer cpuCoreCount;
-        private List<GetAutonomousDatabaseCustomerContact> customerContacts;
-        private String dataSafeStatus;
-        private Integer dataStorageSizeInGb;
-        private Integer dataStorageSizeInTbs;
-        private String databaseEdition;
-        private String databaseManagementStatus;
-        private String dataguardRegionType;
-        private String dbName;
-        private String dbVersion;
-        private String dbWorkload;
-        private Map<String,Object> definedTags;
-        private String disasterRecoveryRegionType;
-        private String displayName;
-        private Integer failedDataRecoveryInSeconds;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer inMemoryAreaInGbs;
-        private Integer inMemoryPercentage;
-        private String infrastructureType;
-        private Boolean isAccessControlEnabled;
-        private Boolean isAutoScalingEnabled;
-        private Boolean isAutoScalingForStorageEnabled;
-        private Boolean isDataGuardEnabled;
-        private Boolean isDedicated;
-        private Boolean isFreeTier;
-        private Boolean isLocalDataGuardEnabled;
-        private Boolean isMtlsConnectionRequired;
-        private Boolean isPreview;
-        private Boolean isPreviewVersionWithServiceTermsAccepted;
-        private Boolean isReconnectCloneEnabled;
-        private Boolean isRefreshableClone;
-        private Boolean isRemoteDataGuardEnabled;
-        private Boolean isShrinkOnly;
-        private List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
-        private String keyStoreId;
-        private String keyStoreWalletName;
-        private String kmsKeyId;
-        private String kmsKeyLifecycleDetails;
-        private String kmsKeyVersionId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private Integer localAdgAutoFailoverMaxDataLossLimit;
-        private String localDisasterRecoveryType;
-        private List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
-        private List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
-        private Integer maxCpuCoreCount;
-        private Integer memoryPerOracleComputeUnitInGbs;
-        private String ncharacterSet;
-        private String nextLongTermBackupTimeStamp;
-        private List<String> nsgIds;
-        private Double ocpuCount;
-        private String openMode;
-        private String operationsInsightsStatus;
-        private List<String> peerDbIds;
-        private String permissionLevel;
-        private String privateEndpoint;
-        private String privateEndpointIp;
-        private String privateEndpointLabel;
-        private List<Double> provisionableCpuses;
-        private String refreshableMode;
-        private String refreshableStatus;
-        private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
-        private String remoteDisasterRecoveryType;
-        private String resourcePoolLeaderId;
-        private List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
-        private String role;
-        private Boolean rotateKeyTrigger;
-        private List<GetAutonomousDatabaseScheduledOperation> scheduledOperations;
-        private String secretId;
-        private Integer secretVersionNumber;
-        private String serviceConsoleUrl;
-        private String source;
-        private String sourceId;
-        private List<GetAutonomousDatabaseStandbyDb> standbyDbs;
-        private List<String> standbyWhitelistedIps;
-        private String state;
-        private String subnetId;
-        private List<String> supportedRegionsToCloneTos;
-        private String switchoverTo;
-        private String switchoverToRemotePeerId;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeDataGuardRoleChanged;
-        private String timeDeletionOfFreeAutonomousDatabase;
-        private String timeDisasterRecoveryRoleChanged;
-        private String timeLocalDataGuardEnabled;
-        private String timeMaintenanceBegin;
-        private String timeMaintenanceEnd;
-        private String timeOfJoiningResourcePool;
-        private String timeOfLastFailover;
-        private String timeOfLastRefresh;
-        private String timeOfLastRefreshPoint;
-        private String timeOfLastSwitchover;
-        private String timeOfNextRefresh;
-        private String timeReclamationOfFreeAutonomousDatabase;
-        private String timeUntilReconnectCloneEnabled;
-        private String timestamp;
-        private Double totalBackupStorageSizeInGbs;
-        private Boolean useLatestAvailableBackupTimeStamp;
-        private Integer usedDataStorageSizeInGbs;
-        private Integer usedDataStorageSizeInTbs;
-        private String vaultId;
-        private List<String> whitelistedIps;
+        private @Nullable String autonomousMaintenanceScheduleType;
+        private @Nullable List<String> availableUpgradeVersions;
+        private @Nullable List<GetAutonomousDatabaseBackupConfig> backupConfigs;
+        private @Nullable Integer backupRetentionPeriodInDays;
+        private @Nullable String characterSet;
+        private @Nullable String cloneType;
+        private @Nullable String compartmentId;
+        private @Nullable Double computeCount;
+        private @Nullable String computeModel;
+        private @Nullable List<GetAutonomousDatabaseConnectionString> connectionStrings;
+        private @Nullable List<GetAutonomousDatabaseConnectionUrl> connectionUrls;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable List<GetAutonomousDatabaseCustomerContact> customerContacts;
+        private @Nullable String dataSafeStatus;
+        private @Nullable Integer dataStorageSizeInGb;
+        private @Nullable Integer dataStorageSizeInTbs;
+        private @Nullable String databaseEdition;
+        private @Nullable String databaseManagementStatus;
+        private @Nullable String dataguardRegionType;
+        private @Nullable String dbName;
+        private @Nullable String dbVersion;
+        private @Nullable String dbWorkload;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String disasterRecoveryRegionType;
+        private @Nullable String displayName;
+        private @Nullable Integer failedDataRecoveryInSeconds;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer inMemoryAreaInGbs;
+        private @Nullable Integer inMemoryPercentage;
+        private @Nullable String infrastructureType;
+        private @Nullable Boolean isAccessControlEnabled;
+        private @Nullable Boolean isAutoScalingEnabled;
+        private @Nullable Boolean isAutoScalingForStorageEnabled;
+        private @Nullable Boolean isDataGuardEnabled;
+        private @Nullable Boolean isDedicated;
+        private @Nullable Boolean isFreeTier;
+        private @Nullable Boolean isLocalDataGuardEnabled;
+        private @Nullable Boolean isMtlsConnectionRequired;
+        private @Nullable Boolean isPreview;
+        private @Nullable Boolean isPreviewVersionWithServiceTermsAccepted;
+        private @Nullable Boolean isReconnectCloneEnabled;
+        private @Nullable Boolean isRefreshableClone;
+        private @Nullable Boolean isRemoteDataGuardEnabled;
+        private @Nullable Boolean isShrinkOnly;
+        private @Nullable List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
+        private @Nullable String keyStoreId;
+        private @Nullable String keyStoreWalletName;
+        private @Nullable String kmsKeyId;
+        private @Nullable String kmsKeyLifecycleDetails;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer localAdgAutoFailoverMaxDataLossLimit;
+        private @Nullable String localDisasterRecoveryType;
+        private @Nullable List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
+        private @Nullable List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
+        private @Nullable Integer maxCpuCoreCount;
+        private @Nullable Integer memoryPerOracleComputeUnitInGbs;
+        private @Nullable String ncharacterSet;
+        private @Nullable String nextLongTermBackupTimeStamp;
+        private @Nullable List<String> nsgIds;
+        private @Nullable Double ocpuCount;
+        private @Nullable String openMode;
+        private @Nullable String operationsInsightsStatus;
+        private @Nullable List<String> peerDbIds;
+        private @Nullable String permissionLevel;
+        private @Nullable String privateEndpoint;
+        private @Nullable String privateEndpointIp;
+        private @Nullable String privateEndpointLabel;
+        private @Nullable List<Double> provisionableCpuses;
+        private @Nullable String refreshableMode;
+        private @Nullable String refreshableStatus;
+        private @Nullable List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
+        private @Nullable String remoteDisasterRecoveryType;
+        private @Nullable String resourcePoolLeaderId;
+        private @Nullable List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
+        private @Nullable String role;
+        private @Nullable Boolean rotateKeyTrigger;
+        private @Nullable List<GetAutonomousDatabaseScheduledOperation> scheduledOperations;
+        private @Nullable String secretId;
+        private @Nullable Integer secretVersionNumber;
+        private @Nullable String serviceConsoleUrl;
+        private @Nullable String source;
+        private @Nullable String sourceId;
+        private @Nullable List<GetAutonomousDatabaseStandbyDb> standbyDbs;
+        private @Nullable List<String> standbyWhitelistedIps;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable List<String> supportedRegionsToCloneTos;
+        private @Nullable String switchoverTo;
+        private @Nullable String switchoverToRemotePeerId;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeDataGuardRoleChanged;
+        private @Nullable String timeDeletionOfFreeAutonomousDatabase;
+        private @Nullable String timeDisasterRecoveryRoleChanged;
+        private @Nullable String timeLocalDataGuardEnabled;
+        private @Nullable String timeMaintenanceBegin;
+        private @Nullable String timeMaintenanceEnd;
+        private @Nullable String timeOfJoiningResourcePool;
+        private @Nullable String timeOfLastFailover;
+        private @Nullable String timeOfLastRefresh;
+        private @Nullable String timeOfLastRefreshPoint;
+        private @Nullable String timeOfLastSwitchover;
+        private @Nullable String timeOfNextRefresh;
+        private @Nullable String timeReclamationOfFreeAutonomousDatabase;
+        private @Nullable String timeUntilReconnectCloneEnabled;
+        private @Nullable String timestamp;
+        private @Nullable Double totalBackupStorageSizeInGbs;
+        private @Nullable Boolean useLatestAvailableBackupTimeStamp;
+        private @Nullable Integer usedDataStorageSizeInGbs;
+        private @Nullable Integer usedDataStorageSizeInTbs;
+        private @Nullable String vaultId;
+        private @Nullable List<String> whitelistedIps;
         public Builder() {}
         public Builder(GetAutonomousDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -1657,41 +1659,41 @@ public final class GetAutonomousDatabaseResult {
         }
 
         @CustomType.Setter
-        public Builder actualUsedDataStorageSizeInTbs(Double actualUsedDataStorageSizeInTbs) {
-            this.actualUsedDataStorageSizeInTbs = Objects.requireNonNull(actualUsedDataStorageSizeInTbs);
+        public Builder actualUsedDataStorageSizeInTbs(@Nullable Double actualUsedDataStorageSizeInTbs) {
+            this.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+        public Builder adminPassword(@Nullable String adminPassword) {
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder allocatedStorageSizeInTbs(Double allocatedStorageSizeInTbs) {
-            this.allocatedStorageSizeInTbs = Objects.requireNonNull(allocatedStorageSizeInTbs);
+        public Builder allocatedStorageSizeInTbs(@Nullable Double allocatedStorageSizeInTbs) {
+            this.allocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder apexDetails(List<GetAutonomousDatabaseApexDetail> apexDetails) {
-            this.apexDetails = Objects.requireNonNull(apexDetails);
+        public Builder apexDetails(@Nullable List<GetAutonomousDatabaseApexDetail> apexDetails) {
+            this.apexDetails = apexDetails;
             return this;
         }
         public Builder apexDetails(GetAutonomousDatabaseApexDetail... apexDetails) {
             return apexDetails(List.of(apexDetails));
         }
         @CustomType.Setter
-        public Builder arePrimaryWhitelistedIpsUsed(Boolean arePrimaryWhitelistedIpsUsed) {
-            this.arePrimaryWhitelistedIpsUsed = Objects.requireNonNull(arePrimaryWhitelistedIpsUsed);
+        public Builder arePrimaryWhitelistedIpsUsed(@Nullable Boolean arePrimaryWhitelistedIpsUsed) {
+            this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+        public Builder autonomousContainerDatabaseId(@Nullable String autonomousContainerDatabaseId) {
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousDatabaseBackupId(String autonomousDatabaseBackupId) {
-            this.autonomousDatabaseBackupId = Objects.requireNonNull(autonomousDatabaseBackupId);
+        public Builder autonomousDatabaseBackupId(@Nullable String autonomousDatabaseBackupId) {
+            this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             return this;
         }
         @CustomType.Setter
@@ -1700,629 +1702,629 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousMaintenanceScheduleType(String autonomousMaintenanceScheduleType) {
-            this.autonomousMaintenanceScheduleType = Objects.requireNonNull(autonomousMaintenanceScheduleType);
+        public Builder autonomousMaintenanceScheduleType(@Nullable String autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             return this;
         }
         @CustomType.Setter
-        public Builder availableUpgradeVersions(List<String> availableUpgradeVersions) {
-            this.availableUpgradeVersions = Objects.requireNonNull(availableUpgradeVersions);
+        public Builder availableUpgradeVersions(@Nullable List<String> availableUpgradeVersions) {
+            this.availableUpgradeVersions = availableUpgradeVersions;
             return this;
         }
         public Builder availableUpgradeVersions(String... availableUpgradeVersions) {
             return availableUpgradeVersions(List.of(availableUpgradeVersions));
         }
         @CustomType.Setter
-        public Builder backupConfigs(List<GetAutonomousDatabaseBackupConfig> backupConfigs) {
-            this.backupConfigs = Objects.requireNonNull(backupConfigs);
+        public Builder backupConfigs(@Nullable List<GetAutonomousDatabaseBackupConfig> backupConfigs) {
+            this.backupConfigs = backupConfigs;
             return this;
         }
         public Builder backupConfigs(GetAutonomousDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
         }
         @CustomType.Setter
-        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
-            this.backupRetentionPeriodInDays = Objects.requireNonNull(backupRetentionPeriodInDays);
+        public Builder backupRetentionPeriodInDays(@Nullable Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+        public Builder characterSet(@Nullable String characterSet) {
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder cloneType(String cloneType) {
-            this.cloneType = Objects.requireNonNull(cloneType);
+        public Builder cloneType(@Nullable String cloneType) {
+            this.cloneType = cloneType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeCount(Double computeCount) {
-            this.computeCount = Objects.requireNonNull(computeCount);
+        public Builder computeCount(@Nullable Double computeCount) {
+            this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder computeModel(String computeModel) {
-            this.computeModel = Objects.requireNonNull(computeModel);
+        public Builder computeModel(@Nullable String computeModel) {
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionStrings(List<GetAutonomousDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+        public Builder connectionStrings(@Nullable List<GetAutonomousDatabaseConnectionString> connectionStrings) {
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetAutonomousDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
         @CustomType.Setter
-        public Builder connectionUrls(List<GetAutonomousDatabaseConnectionUrl> connectionUrls) {
-            this.connectionUrls = Objects.requireNonNull(connectionUrls);
+        public Builder connectionUrls(@Nullable List<GetAutonomousDatabaseConnectionUrl> connectionUrls) {
+            this.connectionUrls = connectionUrls;
             return this;
         }
         public Builder connectionUrls(GetAutonomousDatabaseConnectionUrl... connectionUrls) {
             return connectionUrls(List.of(connectionUrls));
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder customerContacts(List<GetAutonomousDatabaseCustomerContact> customerContacts) {
-            this.customerContacts = Objects.requireNonNull(customerContacts);
+        public Builder customerContacts(@Nullable List<GetAutonomousDatabaseCustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
             return this;
         }
         public Builder customerContacts(GetAutonomousDatabaseCustomerContact... customerContacts) {
             return customerContacts(List.of(customerContacts));
         }
         @CustomType.Setter
-        public Builder dataSafeStatus(String dataSafeStatus) {
-            this.dataSafeStatus = Objects.requireNonNull(dataSafeStatus);
+        public Builder dataSafeStatus(@Nullable String dataSafeStatus) {
+            this.dataSafeStatus = dataSafeStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+        public Builder dataStorageSizeInGb(@Nullable Integer dataStorageSizeInGb) {
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInTbs(Integer dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+        public Builder dataStorageSizeInTbs(@Nullable Integer dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+        public Builder databaseEdition(@Nullable String databaseEdition) {
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseManagementStatus(String databaseManagementStatus) {
-            this.databaseManagementStatus = Objects.requireNonNull(databaseManagementStatus);
+        public Builder databaseManagementStatus(@Nullable String databaseManagementStatus) {
+            this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder dataguardRegionType(String dataguardRegionType) {
-            this.dataguardRegionType = Objects.requireNonNull(dataguardRegionType);
+        public Builder dataguardRegionType(@Nullable String dataguardRegionType) {
+            this.dataguardRegionType = dataguardRegionType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+        public Builder dbWorkload(@Nullable String dbWorkload) {
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder disasterRecoveryRegionType(String disasterRecoveryRegionType) {
-            this.disasterRecoveryRegionType = Objects.requireNonNull(disasterRecoveryRegionType);
+        public Builder disasterRecoveryRegionType(@Nullable String disasterRecoveryRegionType) {
+            this.disasterRecoveryRegionType = disasterRecoveryRegionType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder failedDataRecoveryInSeconds(Integer failedDataRecoveryInSeconds) {
-            this.failedDataRecoveryInSeconds = Objects.requireNonNull(failedDataRecoveryInSeconds);
+        public Builder failedDataRecoveryInSeconds(@Nullable Integer failedDataRecoveryInSeconds) {
+            this.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inMemoryAreaInGbs(Integer inMemoryAreaInGbs) {
-            this.inMemoryAreaInGbs = Objects.requireNonNull(inMemoryAreaInGbs);
+        public Builder inMemoryAreaInGbs(@Nullable Integer inMemoryAreaInGbs) {
+            this.inMemoryAreaInGbs = inMemoryAreaInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
-            this.inMemoryPercentage = Objects.requireNonNull(inMemoryPercentage);
+        public Builder inMemoryPercentage(@Nullable Integer inMemoryPercentage) {
+            this.inMemoryPercentage = inMemoryPercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder infrastructureType(String infrastructureType) {
-            this.infrastructureType = Objects.requireNonNull(infrastructureType);
+        public Builder infrastructureType(@Nullable String infrastructureType) {
+            this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
-        public Builder isAccessControlEnabled(Boolean isAccessControlEnabled) {
-            this.isAccessControlEnabled = Objects.requireNonNull(isAccessControlEnabled);
+        public Builder isAccessControlEnabled(@Nullable Boolean isAccessControlEnabled) {
+            this.isAccessControlEnabled = isAccessControlEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
-            this.isAutoScalingEnabled = Objects.requireNonNull(isAutoScalingEnabled);
+        public Builder isAutoScalingEnabled(@Nullable Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
-            this.isAutoScalingForStorageEnabled = Objects.requireNonNull(isAutoScalingForStorageEnabled);
+        public Builder isAutoScalingForStorageEnabled(@Nullable Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
-            this.isDataGuardEnabled = Objects.requireNonNull(isDataGuardEnabled);
+        public Builder isDataGuardEnabled(@Nullable Boolean isDataGuardEnabled) {
+            this.isDataGuardEnabled = isDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isDedicated(Boolean isDedicated) {
-            this.isDedicated = Objects.requireNonNull(isDedicated);
+        public Builder isDedicated(@Nullable Boolean isDedicated) {
+            this.isDedicated = isDedicated;
             return this;
         }
         @CustomType.Setter
-        public Builder isFreeTier(Boolean isFreeTier) {
-            this.isFreeTier = Objects.requireNonNull(isFreeTier);
+        public Builder isFreeTier(@Nullable Boolean isFreeTier) {
+            this.isFreeTier = isFreeTier;
             return this;
         }
         @CustomType.Setter
-        public Builder isLocalDataGuardEnabled(Boolean isLocalDataGuardEnabled) {
-            this.isLocalDataGuardEnabled = Objects.requireNonNull(isLocalDataGuardEnabled);
+        public Builder isLocalDataGuardEnabled(@Nullable Boolean isLocalDataGuardEnabled) {
+            this.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
-            this.isMtlsConnectionRequired = Objects.requireNonNull(isMtlsConnectionRequired);
+        public Builder isMtlsConnectionRequired(@Nullable Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder isPreview(Boolean isPreview) {
-            this.isPreview = Objects.requireNonNull(isPreview);
+        public Builder isPreview(@Nullable Boolean isPreview) {
+            this.isPreview = isPreview;
             return this;
         }
         @CustomType.Setter
-        public Builder isPreviewVersionWithServiceTermsAccepted(Boolean isPreviewVersionWithServiceTermsAccepted) {
-            this.isPreviewVersionWithServiceTermsAccepted = Objects.requireNonNull(isPreviewVersionWithServiceTermsAccepted);
+        public Builder isPreviewVersionWithServiceTermsAccepted(@Nullable Boolean isPreviewVersionWithServiceTermsAccepted) {
+            this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder isReconnectCloneEnabled(Boolean isReconnectCloneEnabled) {
-            this.isReconnectCloneEnabled = Objects.requireNonNull(isReconnectCloneEnabled);
+        public Builder isReconnectCloneEnabled(@Nullable Boolean isReconnectCloneEnabled) {
+            this.isReconnectCloneEnabled = isReconnectCloneEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isRefreshableClone(Boolean isRefreshableClone) {
-            this.isRefreshableClone = Objects.requireNonNull(isRefreshableClone);
+        public Builder isRefreshableClone(@Nullable Boolean isRefreshableClone) {
+            this.isRefreshableClone = isRefreshableClone;
             return this;
         }
         @CustomType.Setter
-        public Builder isRemoteDataGuardEnabled(Boolean isRemoteDataGuardEnabled) {
-            this.isRemoteDataGuardEnabled = Objects.requireNonNull(isRemoteDataGuardEnabled);
+        public Builder isRemoteDataGuardEnabled(@Nullable Boolean isRemoteDataGuardEnabled) {
+            this.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isShrinkOnly(Boolean isShrinkOnly) {
-            this.isShrinkOnly = Objects.requireNonNull(isShrinkOnly);
+        public Builder isShrinkOnly(@Nullable Boolean isShrinkOnly) {
+            this.isShrinkOnly = isShrinkOnly;
             return this;
         }
         @CustomType.Setter
-        public Builder keyHistoryEntries(List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries) {
-            this.keyHistoryEntries = Objects.requireNonNull(keyHistoryEntries);
+        public Builder keyHistoryEntries(@Nullable List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries) {
+            this.keyHistoryEntries = keyHistoryEntries;
             return this;
         }
         public Builder keyHistoryEntries(GetAutonomousDatabaseKeyHistoryEntry... keyHistoryEntries) {
             return keyHistoryEntries(List.of(keyHistoryEntries));
         }
         @CustomType.Setter
-        public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+        public Builder keyStoreWalletName(@Nullable String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyLifecycleDetails(String kmsKeyLifecycleDetails) {
-            this.kmsKeyLifecycleDetails = Objects.requireNonNull(kmsKeyLifecycleDetails);
+        public Builder kmsKeyLifecycleDetails(@Nullable String kmsKeyLifecycleDetails) {
+            this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder localAdgAutoFailoverMaxDataLossLimit(Integer localAdgAutoFailoverMaxDataLossLimit) {
-            this.localAdgAutoFailoverMaxDataLossLimit = Objects.requireNonNull(localAdgAutoFailoverMaxDataLossLimit);
+        public Builder localAdgAutoFailoverMaxDataLossLimit(@Nullable Integer localAdgAutoFailoverMaxDataLossLimit) {
+            this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder localDisasterRecoveryType(String localDisasterRecoveryType) {
-            this.localDisasterRecoveryType = Objects.requireNonNull(localDisasterRecoveryType);
+        public Builder localDisasterRecoveryType(@Nullable String localDisasterRecoveryType) {
+            this.localDisasterRecoveryType = localDisasterRecoveryType;
             return this;
         }
         @CustomType.Setter
-        public Builder localStandbyDbs(List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs) {
-            this.localStandbyDbs = Objects.requireNonNull(localStandbyDbs);
+        public Builder localStandbyDbs(@Nullable List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs) {
+            this.localStandbyDbs = localStandbyDbs;
             return this;
         }
         public Builder localStandbyDbs(GetAutonomousDatabaseLocalStandbyDb... localStandbyDbs) {
             return localStandbyDbs(List.of(localStandbyDbs));
         }
         @CustomType.Setter
-        public Builder longTermBackupSchedules(List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules) {
-            this.longTermBackupSchedules = Objects.requireNonNull(longTermBackupSchedules);
+        public Builder longTermBackupSchedules(@Nullable List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules) {
+            this.longTermBackupSchedules = longTermBackupSchedules;
             return this;
         }
         public Builder longTermBackupSchedules(GetAutonomousDatabaseLongTermBackupSchedule... longTermBackupSchedules) {
             return longTermBackupSchedules(List.of(longTermBackupSchedules));
         }
         @CustomType.Setter
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = Objects.requireNonNull(maxCpuCoreCount);
+        public Builder maxCpuCoreCount(@Nullable Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
-            this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+        public Builder memoryPerOracleComputeUnitInGbs(@Nullable Integer memoryPerOracleComputeUnitInGbs) {
+            this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+        public Builder ncharacterSet(@Nullable String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder nextLongTermBackupTimeStamp(String nextLongTermBackupTimeStamp) {
-            this.nextLongTermBackupTimeStamp = Objects.requireNonNull(nextLongTermBackupTimeStamp);
+        public Builder nextLongTermBackupTimeStamp(@Nullable String nextLongTermBackupTimeStamp) {
+            this.nextLongTermBackupTimeStamp = nextLongTermBackupTimeStamp;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+        public Builder ocpuCount(@Nullable Double ocpuCount) {
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder openMode(String openMode) {
-            this.openMode = Objects.requireNonNull(openMode);
+        public Builder openMode(@Nullable String openMode) {
+            this.openMode = openMode;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsStatus(String operationsInsightsStatus) {
-            this.operationsInsightsStatus = Objects.requireNonNull(operationsInsightsStatus);
+        public Builder operationsInsightsStatus(@Nullable String operationsInsightsStatus) {
+            this.operationsInsightsStatus = operationsInsightsStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder peerDbIds(List<String> peerDbIds) {
-            this.peerDbIds = Objects.requireNonNull(peerDbIds);
+        public Builder peerDbIds(@Nullable List<String> peerDbIds) {
+            this.peerDbIds = peerDbIds;
             return this;
         }
         public Builder peerDbIds(String... peerDbIds) {
             return peerDbIds(List.of(peerDbIds));
         }
         @CustomType.Setter
-        public Builder permissionLevel(String permissionLevel) {
-            this.permissionLevel = Objects.requireNonNull(permissionLevel);
+        public Builder permissionLevel(@Nullable String permissionLevel) {
+            this.permissionLevel = permissionLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpoint(String privateEndpoint) {
-            this.privateEndpoint = Objects.requireNonNull(privateEndpoint);
+        public Builder privateEndpoint(@Nullable String privateEndpoint) {
+            this.privateEndpoint = privateEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+        public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointLabel(String privateEndpointLabel) {
-            this.privateEndpointLabel = Objects.requireNonNull(privateEndpointLabel);
+        public Builder privateEndpointLabel(@Nullable String privateEndpointLabel) {
+            this.privateEndpointLabel = privateEndpointLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionableCpuses(List<Double> provisionableCpuses) {
-            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+        public Builder provisionableCpuses(@Nullable List<Double> provisionableCpuses) {
+            this.provisionableCpuses = provisionableCpuses;
             return this;
         }
         public Builder provisionableCpuses(Double... provisionableCpuses) {
             return provisionableCpuses(List.of(provisionableCpuses));
         }
         @CustomType.Setter
-        public Builder refreshableMode(String refreshableMode) {
-            this.refreshableMode = Objects.requireNonNull(refreshableMode);
+        public Builder refreshableMode(@Nullable String refreshableMode) {
+            this.refreshableMode = refreshableMode;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshableStatus(String refreshableStatus) {
-            this.refreshableStatus = Objects.requireNonNull(refreshableStatus);
+        public Builder refreshableStatus(@Nullable String refreshableStatus) {
+            this.refreshableStatus = refreshableStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder remoteDisasterRecoveryConfigurations(List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations) {
-            this.remoteDisasterRecoveryConfigurations = Objects.requireNonNull(remoteDisasterRecoveryConfigurations);
+        public Builder remoteDisasterRecoveryConfigurations(@Nullable List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations) {
+            this.remoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
             return this;
         }
         public Builder remoteDisasterRecoveryConfigurations(GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration... remoteDisasterRecoveryConfigurations) {
             return remoteDisasterRecoveryConfigurations(List.of(remoteDisasterRecoveryConfigurations));
         }
         @CustomType.Setter
-        public Builder remoteDisasterRecoveryType(String remoteDisasterRecoveryType) {
-            this.remoteDisasterRecoveryType = Objects.requireNonNull(remoteDisasterRecoveryType);
+        public Builder remoteDisasterRecoveryType(@Nullable String remoteDisasterRecoveryType) {
+            this.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
             return this;
         }
         @CustomType.Setter
-        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
-            this.resourcePoolLeaderId = Objects.requireNonNull(resourcePoolLeaderId);
+        public Builder resourcePoolLeaderId(@Nullable String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourcePoolSummaries(List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries) {
-            this.resourcePoolSummaries = Objects.requireNonNull(resourcePoolSummaries);
+        public Builder resourcePoolSummaries(@Nullable List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries) {
+            this.resourcePoolSummaries = resourcePoolSummaries;
             return this;
         }
         public Builder resourcePoolSummaries(GetAutonomousDatabaseResourcePoolSummary... resourcePoolSummaries) {
             return resourcePoolSummaries(List.of(resourcePoolSummaries));
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder rotateKeyTrigger(Boolean rotateKeyTrigger) {
-            this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
+        public Builder rotateKeyTrigger(@Nullable Boolean rotateKeyTrigger) {
+            this.rotateKeyTrigger = rotateKeyTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledOperations(List<GetAutonomousDatabaseScheduledOperation> scheduledOperations) {
-            this.scheduledOperations = Objects.requireNonNull(scheduledOperations);
+        public Builder scheduledOperations(@Nullable List<GetAutonomousDatabaseScheduledOperation> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
             return this;
         }
         public Builder scheduledOperations(GetAutonomousDatabaseScheduledOperation... scheduledOperations) {
             return scheduledOperations(List.of(scheduledOperations));
         }
         @CustomType.Setter
-        public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+        public Builder secretId(@Nullable String secretId) {
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
-        public Builder secretVersionNumber(Integer secretVersionNumber) {
-            this.secretVersionNumber = Objects.requireNonNull(secretVersionNumber);
+        public Builder secretVersionNumber(@Nullable Integer secretVersionNumber) {
+            this.secretVersionNumber = secretVersionNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceConsoleUrl(String serviceConsoleUrl) {
-            this.serviceConsoleUrl = Objects.requireNonNull(serviceConsoleUrl);
+        public Builder serviceConsoleUrl(@Nullable String serviceConsoleUrl) {
+            this.serviceConsoleUrl = serviceConsoleUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder standbyDbs(List<GetAutonomousDatabaseStandbyDb> standbyDbs) {
-            this.standbyDbs = Objects.requireNonNull(standbyDbs);
+        public Builder standbyDbs(@Nullable List<GetAutonomousDatabaseStandbyDb> standbyDbs) {
+            this.standbyDbs = standbyDbs;
             return this;
         }
         public Builder standbyDbs(GetAutonomousDatabaseStandbyDb... standbyDbs) {
             return standbyDbs(List.of(standbyDbs));
         }
         @CustomType.Setter
-        public Builder standbyWhitelistedIps(List<String> standbyWhitelistedIps) {
-            this.standbyWhitelistedIps = Objects.requireNonNull(standbyWhitelistedIps);
+        public Builder standbyWhitelistedIps(@Nullable List<String> standbyWhitelistedIps) {
+            this.standbyWhitelistedIps = standbyWhitelistedIps;
             return this;
         }
         public Builder standbyWhitelistedIps(String... standbyWhitelistedIps) {
             return standbyWhitelistedIps(List.of(standbyWhitelistedIps));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedRegionsToCloneTos(List<String> supportedRegionsToCloneTos) {
-            this.supportedRegionsToCloneTos = Objects.requireNonNull(supportedRegionsToCloneTos);
+        public Builder supportedRegionsToCloneTos(@Nullable List<String> supportedRegionsToCloneTos) {
+            this.supportedRegionsToCloneTos = supportedRegionsToCloneTos;
             return this;
         }
         public Builder supportedRegionsToCloneTos(String... supportedRegionsToCloneTos) {
             return supportedRegionsToCloneTos(List.of(supportedRegionsToCloneTos));
         }
         @CustomType.Setter
-        public Builder switchoverTo(String switchoverTo) {
-            this.switchoverTo = Objects.requireNonNull(switchoverTo);
+        public Builder switchoverTo(@Nullable String switchoverTo) {
+            this.switchoverTo = switchoverTo;
             return this;
         }
         @CustomType.Setter
-        public Builder switchoverToRemotePeerId(String switchoverToRemotePeerId) {
-            this.switchoverToRemotePeerId = Objects.requireNonNull(switchoverToRemotePeerId);
+        public Builder switchoverToRemotePeerId(@Nullable String switchoverToRemotePeerId) {
+            this.switchoverToRemotePeerId = switchoverToRemotePeerId;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDataGuardRoleChanged(String timeDataGuardRoleChanged) {
-            this.timeDataGuardRoleChanged = Objects.requireNonNull(timeDataGuardRoleChanged);
+        public Builder timeDataGuardRoleChanged(@Nullable String timeDataGuardRoleChanged) {
+            this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDeletionOfFreeAutonomousDatabase(String timeDeletionOfFreeAutonomousDatabase) {
-            this.timeDeletionOfFreeAutonomousDatabase = Objects.requireNonNull(timeDeletionOfFreeAutonomousDatabase);
+        public Builder timeDeletionOfFreeAutonomousDatabase(@Nullable String timeDeletionOfFreeAutonomousDatabase) {
+            this.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
-            this.timeDisasterRecoveryRoleChanged = Objects.requireNonNull(timeDisasterRecoveryRoleChanged);
+        public Builder timeDisasterRecoveryRoleChanged(@Nullable String timeDisasterRecoveryRoleChanged) {
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLocalDataGuardEnabled(String timeLocalDataGuardEnabled) {
-            this.timeLocalDataGuardEnabled = Objects.requireNonNull(timeLocalDataGuardEnabled);
+        public Builder timeLocalDataGuardEnabled(@Nullable String timeLocalDataGuardEnabled) {
+            this.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaintenanceBegin(String timeMaintenanceBegin) {
-            this.timeMaintenanceBegin = Objects.requireNonNull(timeMaintenanceBegin);
+        public Builder timeMaintenanceBegin(@Nullable String timeMaintenanceBegin) {
+            this.timeMaintenanceBegin = timeMaintenanceBegin;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
-            this.timeMaintenanceEnd = Objects.requireNonNull(timeMaintenanceEnd);
+        public Builder timeMaintenanceEnd(@Nullable String timeMaintenanceEnd) {
+            this.timeMaintenanceEnd = timeMaintenanceEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfJoiningResourcePool(String timeOfJoiningResourcePool) {
-            this.timeOfJoiningResourcePool = Objects.requireNonNull(timeOfJoiningResourcePool);
+        public Builder timeOfJoiningResourcePool(@Nullable String timeOfJoiningResourcePool) {
+            this.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfLastFailover(String timeOfLastFailover) {
-            this.timeOfLastFailover = Objects.requireNonNull(timeOfLastFailover);
+        public Builder timeOfLastFailover(@Nullable String timeOfLastFailover) {
+            this.timeOfLastFailover = timeOfLastFailover;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfLastRefresh(String timeOfLastRefresh) {
-            this.timeOfLastRefresh = Objects.requireNonNull(timeOfLastRefresh);
+        public Builder timeOfLastRefresh(@Nullable String timeOfLastRefresh) {
+            this.timeOfLastRefresh = timeOfLastRefresh;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfLastRefreshPoint(String timeOfLastRefreshPoint) {
-            this.timeOfLastRefreshPoint = Objects.requireNonNull(timeOfLastRefreshPoint);
+        public Builder timeOfLastRefreshPoint(@Nullable String timeOfLastRefreshPoint) {
+            this.timeOfLastRefreshPoint = timeOfLastRefreshPoint;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfLastSwitchover(String timeOfLastSwitchover) {
-            this.timeOfLastSwitchover = Objects.requireNonNull(timeOfLastSwitchover);
+        public Builder timeOfLastSwitchover(@Nullable String timeOfLastSwitchover) {
+            this.timeOfLastSwitchover = timeOfLastSwitchover;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfNextRefresh(String timeOfNextRefresh) {
-            this.timeOfNextRefresh = Objects.requireNonNull(timeOfNextRefresh);
+        public Builder timeOfNextRefresh(@Nullable String timeOfNextRefresh) {
+            this.timeOfNextRefresh = timeOfNextRefresh;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReclamationOfFreeAutonomousDatabase(String timeReclamationOfFreeAutonomousDatabase) {
-            this.timeReclamationOfFreeAutonomousDatabase = Objects.requireNonNull(timeReclamationOfFreeAutonomousDatabase);
+        public Builder timeReclamationOfFreeAutonomousDatabase(@Nullable String timeReclamationOfFreeAutonomousDatabase) {
+            this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUntilReconnectCloneEnabled(String timeUntilReconnectCloneEnabled) {
-            this.timeUntilReconnectCloneEnabled = Objects.requireNonNull(timeUntilReconnectCloneEnabled);
+        public Builder timeUntilReconnectCloneEnabled(@Nullable String timeUntilReconnectCloneEnabled) {
+            this.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder totalBackupStorageSizeInGbs(Double totalBackupStorageSizeInGbs) {
-            this.totalBackupStorageSizeInGbs = Objects.requireNonNull(totalBackupStorageSizeInGbs);
+        public Builder totalBackupStorageSizeInGbs(@Nullable Double totalBackupStorageSizeInGbs) {
+            this.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
-            this.useLatestAvailableBackupTimeStamp = Objects.requireNonNull(useLatestAvailableBackupTimeStamp);
+        public Builder useLatestAvailableBackupTimeStamp(@Nullable Boolean useLatestAvailableBackupTimeStamp) {
+            this.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             return this;
         }
         @CustomType.Setter
-        public Builder usedDataStorageSizeInGbs(Integer usedDataStorageSizeInGbs) {
-            this.usedDataStorageSizeInGbs = Objects.requireNonNull(usedDataStorageSizeInGbs);
+        public Builder usedDataStorageSizeInGbs(@Nullable Integer usedDataStorageSizeInGbs) {
+            this.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder usedDataStorageSizeInTbs(Integer usedDataStorageSizeInTbs) {
-            this.usedDataStorageSizeInTbs = Objects.requireNonNull(usedDataStorageSizeInTbs);
+        public Builder usedDataStorageSizeInTbs(@Nullable Integer usedDataStorageSizeInTbs) {
+            this.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
-        public Builder whitelistedIps(List<String> whitelistedIps) {
-            this.whitelistedIps = Objects.requireNonNull(whitelistedIps);
+        public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
+            this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {

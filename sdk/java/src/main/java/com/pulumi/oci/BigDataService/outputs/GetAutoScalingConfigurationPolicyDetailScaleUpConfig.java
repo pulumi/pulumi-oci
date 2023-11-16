@@ -8,6 +8,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDe
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
@@ -15,63 +17,63 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private Integer maxMemoryPerNode;
+    private @Nullable Integer maxMemoryPerNode;
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private Integer maxOcpusPerNode;
+    private @Nullable Integer maxOcpusPerNode;
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private Integer memoryStepSize;
+    private @Nullable Integer memoryStepSize;
     /**
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
+    private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    private Integer ocpuStepSize;
+    private @Nullable Integer ocpuStepSize;
 
     private GetAutoScalingConfigurationPolicyDetailScaleUpConfig() {}
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    public Integer maxMemoryPerNode() {
-        return this.maxMemoryPerNode;
+    public Optional<Integer> maxMemoryPerNode() {
+        return Optional.ofNullable(this.maxMemoryPerNode);
     }
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    public Integer maxOcpusPerNode() {
-        return this.maxOcpusPerNode;
+    public Optional<Integer> maxOcpusPerNode() {
+        return Optional.ofNullable(this.maxOcpusPerNode);
     }
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    public Integer memoryStepSize() {
-        return this.memoryStepSize;
+    public Optional<Integer> memoryStepSize() {
+        return Optional.ofNullable(this.memoryStepSize);
     }
     /**
      * @return Metric and threshold details for triggering an autoscale action.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
      * 
      */
-    public Integer ocpuStepSize() {
-        return this.ocpuStepSize;
+    public Optional<Integer> ocpuStepSize() {
+        return Optional.ofNullable(this.ocpuStepSize);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxMemoryPerNode;
-        private Integer maxOcpusPerNode;
-        private Integer memoryStepSize;
-        private List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
-        private Integer ocpuStepSize;
+        private @Nullable Integer maxMemoryPerNode;
+        private @Nullable Integer maxOcpusPerNode;
+        private @Nullable Integer memoryStepSize;
+        private @Nullable List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics;
+        private @Nullable Integer ocpuStepSize;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScaleUpConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
         }
 
         @CustomType.Setter
-        public Builder maxMemoryPerNode(Integer maxMemoryPerNode) {
-            this.maxMemoryPerNode = Objects.requireNonNull(maxMemoryPerNode);
+        public Builder maxMemoryPerNode(@Nullable Integer maxMemoryPerNode) {
+            this.maxMemoryPerNode = maxMemoryPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder maxOcpusPerNode(Integer maxOcpusPerNode) {
-            this.maxOcpusPerNode = Objects.requireNonNull(maxOcpusPerNode);
+        public Builder maxOcpusPerNode(@Nullable Integer maxOcpusPerNode) {
+            this.maxOcpusPerNode = maxOcpusPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryStepSize(Integer memoryStepSize) {
-            this.memoryStepSize = Objects.requireNonNull(memoryStepSize);
+        public Builder memoryStepSize(@Nullable Integer memoryStepSize) {
+            this.memoryStepSize = memoryStepSize;
             return this;
         }
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder ocpuStepSize(Integer ocpuStepSize) {
-            this.ocpuStepSize = Objects.requireNonNull(ocpuStepSize);
+        public Builder ocpuStepSize(@Nullable Integer ocpuStepSize) {
+            this.ocpuStepSize = ocpuStepSize;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleUpConfig build() {

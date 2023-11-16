@@ -483,7 +483,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accessTokenExpiry", refs={Integer.class}, tree="[0]")
-    private Output<Integer> accessTokenExpiry;
+    private Output</* @Nullable */ Integer> accessTokenExpiry;
 
     /**
      * @return (Updatable) Access token expiry
@@ -499,8 +499,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> accessTokenExpiry() {
-        return this.accessTokenExpiry;
+    public Output<Optional<Integer>> accessTokenExpiry() {
+        return Codegen.optional(this.accessTokenExpiry);
     }
     /**
      * (Updatable) Accounts of App
@@ -517,7 +517,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accounts", refs={List.class,DomainsAppAccount.class}, tree="[0,1]")
-    private Output<List<DomainsAppAccount>> accounts;
+    private Output</* @Nullable */ List<DomainsAppAccount>> accounts;
 
     /**
      * @return (Updatable) Accounts of App
@@ -533,8 +533,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppAccount>> accounts() {
-        return this.accounts;
+    public Output<Optional<List<DomainsAppAccount>>> accounts() {
+        return Codegen.optional(this.accounts);
     }
     /**
      * (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
@@ -550,7 +550,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="active", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> active;
+    private Output</* @Nullable */ Boolean> active;
 
     /**
      * @return (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
@@ -565,8 +565,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> active() {
-        return this.active;
+    public Output<Optional<Boolean>> active() {
+        return Codegen.optional(this.active);
     }
     /**
      * (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
@@ -582,7 +582,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="adminRoles", refs={List.class,DomainsAppAdminRole.class}, tree="[0,1]")
-    private Output<List<DomainsAppAdminRole>> adminRoles;
+    private Output</* @Nullable */ List<DomainsAppAdminRole>> adminRoles;
 
     /**
      * @return (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
@@ -597,8 +597,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppAdminRole>> adminRoles() {
-        return this.adminRoles;
+    public Output<Optional<List<DomainsAppAdminRole>>> adminRoles() {
+        return Codegen.optional(this.adminRoles);
     }
     /**
      * (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
@@ -616,7 +616,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="aliasApps", refs={List.class,DomainsAppAliasApp.class}, tree="[0,1]")
-    private Output<List<DomainsAppAliasApp>> aliasApps;
+    private Output</* @Nullable */ List<DomainsAppAliasApp>> aliasApps;
 
     /**
      * @return (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
@@ -633,8 +633,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppAliasApp>> aliasApps() {
-        return this.aliasApps;
+    public Output<Optional<List<DomainsAppAliasApp>>> aliasApps() {
+        return Codegen.optional(this.aliasApps);
     }
     /**
      * (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the &#39;redirectUris&#39; attribute.  Also indicates that the system should not attempt to confirm that each value of the &#39;redirectUris&#39; attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
@@ -650,7 +650,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allUrlSchemesAllowed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> allUrlSchemesAllowed;
+    private Output</* @Nullable */ Boolean> allUrlSchemesAllowed;
 
     /**
      * @return (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the &#39;redirectUris&#39; attribute.  Also indicates that the system should not attempt to confirm that each value of the &#39;redirectUris&#39; attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
@@ -665,8 +665,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> allUrlSchemesAllowed() {
-        return this.allUrlSchemesAllowed;
+    public Output<Optional<Boolean>> allUrlSchemesAllowed() {
+        return Codegen.optional(this.allUrlSchemesAllowed);
     }
     /**
      * (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
@@ -682,7 +682,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowAccessControl", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> allowAccessControl;
+    private Output</* @Nullable */ Boolean> allowAccessControl;
 
     /**
      * @return (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
@@ -697,8 +697,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> allowAccessControl() {
-        return this.allowAccessControl;
+    public Output<Optional<Boolean>> allowAccessControl() {
+        return Codegen.optional(this.allowAccessControl);
     }
     /**
      * (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
@@ -714,7 +714,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowOffline", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> allowOffline;
+    private Output</* @Nullable */ Boolean> allowOffline;
 
     /**
      * @return (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
@@ -729,8 +729,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> allowOffline() {
-        return this.allowOffline;
+    public Output<Optional<Boolean>> allowOffline() {
+        return Codegen.optional(this.allowOffline);
     }
     /**
      * (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
@@ -747,7 +747,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowedGrants", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> allowedGrants;
+    private Output</* @Nullable */ List<String>> allowedGrants;
 
     /**
      * @return (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
@@ -763,8 +763,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> allowedGrants() {
-        return this.allowedGrants;
+    public Output<Optional<List<String>>> allowedGrants() {
+        return Codegen.optional(this.allowedGrants);
     }
     /**
      * (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are &#39;introspect&#39; and &#39;onBehalfOfUser&#39;. The value &#39;introspect&#39; allows the client to look inside the access-token. The value &#39;onBehalfOfUser&#39; overrides how the client&#39;s privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client&#39;s privileges and the user&#39;s privileges. The value &#39;onBehalfOf&#39; indicates that authorization should ignore the privileges of the client and use only the user&#39;s privileges to calculate the effective privileges.
@@ -781,7 +781,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> allowedOperations;
+    private Output</* @Nullable */ List<String>> allowedOperations;
 
     /**
      * @return (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are &#39;introspect&#39; and &#39;onBehalfOfUser&#39;. The value &#39;introspect&#39; allows the client to look inside the access-token. The value &#39;onBehalfOfUser&#39; overrides how the client&#39;s privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client&#39;s privileges and the user&#39;s privileges. The value &#39;onBehalfOf&#39; indicates that authorization should ignore the privileges of the client and use only the user&#39;s privileges to calculate the effective privileges.
@@ -797,8 +797,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> allowedOperations() {
-        return this.allowedOperations;
+    public Output<Optional<List<String>>> allowedOperations() {
+        return Codegen.optional(this.allowedOperations);
     }
     /**
      * (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
@@ -816,7 +816,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowedScopes", refs={List.class,DomainsAppAllowedScope.class}, tree="[0,1]")
-    private Output<List<DomainsAppAllowedScope>> allowedScopes;
+    private Output</* @Nullable */ List<DomainsAppAllowedScope>> allowedScopes;
 
     /**
      * @return (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
@@ -833,8 +833,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppAllowedScope>> allowedScopes() {
-        return this.allowedScopes;
+    public Output<Optional<List<DomainsAppAllowedScope>>> allowedScopes() {
+        return Codegen.optional(this.allowedScopes);
     }
     /**
      * (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
@@ -853,7 +853,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowedTags", refs={List.class,DomainsAppAllowedTag.class}, tree="[0,1]")
-    private Output<List<DomainsAppAllowedTag>> allowedTags;
+    private Output</* @Nullable */ List<DomainsAppAllowedTag>> allowedTags;
 
     /**
      * @return (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
@@ -871,8 +871,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppAllowedTag>> allowedTags() {
-        return this.allowedTags;
+    public Output<Optional<List<DomainsAppAllowedTag>>> allowedTags() {
+        return Codegen.optional(this.allowedTags);
     }
     /**
      * (Updatable) Application icon.
@@ -888,7 +888,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appIcon", refs={String.class}, tree="[0]")
-    private Output<String> appIcon;
+    private Output</* @Nullable */ String> appIcon;
 
     /**
      * @return (Updatable) Application icon.
@@ -903,8 +903,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> appIcon() {
-        return this.appIcon;
+    public Output<Optional<String>> appIcon() {
+        return Codegen.optional(this.appIcon);
     }
     /**
      * (Updatable) App Sign-on Policy.
@@ -919,7 +919,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appSignonPolicy", refs={DomainsAppAppSignonPolicy.class}, tree="[0]")
-    private Output<DomainsAppAppSignonPolicy> appSignonPolicy;
+    private Output</* @Nullable */ DomainsAppAppSignonPolicy> appSignonPolicy;
 
     /**
      * @return (Updatable) App Sign-on Policy.
@@ -933,8 +933,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsAppAppSignonPolicy> appSignonPolicy() {
-        return this.appSignonPolicy;
+    public Output<Optional<DomainsAppAppSignonPolicy>> appSignonPolicy() {
+        return Codegen.optional(this.appSignonPolicy);
     }
     /**
      * (Updatable) Application thumbnail.
@@ -950,7 +950,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appThumbnail", refs={String.class}, tree="[0]")
-    private Output<String> appThumbnail;
+    private Output</* @Nullable */ String> appThumbnail;
 
     /**
      * @return (Updatable) Application thumbnail.
@@ -965,8 +965,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> appThumbnail() {
-        return this.appThumbnail;
+    public Output<Optional<String>> appThumbnail() {
+        return Codegen.optional(this.appThumbnail);
     }
     /**
      * (Updatable) Network Perimeter
@@ -983,7 +983,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="appsNetworkPerimeters", refs={List.class,DomainsAppAppsNetworkPerimeter.class}, tree="[0,1]")
-    private Output<List<DomainsAppAppsNetworkPerimeter>> appsNetworkPerimeters;
+    private Output</* @Nullable */ List<DomainsAppAppsNetworkPerimeter>> appsNetworkPerimeters;
 
     /**
      * @return (Updatable) Network Perimeter
@@ -999,8 +999,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppAppsNetworkPerimeter>> appsNetworkPerimeters() {
-        return this.appsNetworkPerimeters;
+    public Output<Optional<List<DomainsAppAppsNetworkPerimeter>>> appsNetworkPerimeters() {
+        return Codegen.optional(this.appsNetworkPerimeters);
     }
     /**
      * (Updatable) OPCService facet of the application.
@@ -1017,7 +1017,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="asOpcService", refs={DomainsAppAsOpcService.class}, tree="[0]")
-    private Output<DomainsAppAsOpcService> asOpcService;
+    private Output</* @Nullable */ DomainsAppAsOpcService> asOpcService;
 
     /**
      * @return (Updatable) OPCService facet of the application.
@@ -1033,8 +1033,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsAppAsOpcService> asOpcService() {
-        return this.asOpcService;
+    public Output<Optional<DomainsAppAsOpcService>> asOpcService() {
+        return Codegen.optional(this.asOpcService);
     }
     /**
      * (Updatable) Label for the attribute to be shown in the UI.
@@ -1051,7 +1051,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="attrRenderingMetadatas", refs={List.class,DomainsAppAttrRenderingMetadata.class}, tree="[0,1]")
-    private Output<List<DomainsAppAttrRenderingMetadata>> attrRenderingMetadatas;
+    private Output</* @Nullable */ List<DomainsAppAttrRenderingMetadata>> attrRenderingMetadatas;
 
     /**
      * @return (Updatable) Label for the attribute to be shown in the UI.
@@ -1067,8 +1067,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppAttrRenderingMetadata>> attrRenderingMetadatas() {
-        return this.attrRenderingMetadatas;
+    public Output<Optional<List<DomainsAppAttrRenderingMetadata>>> attrRenderingMetadatas() {
+        return Codegen.optional(this.attrRenderingMetadatas);
     }
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1113,7 +1113,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="audience", refs={String.class}, tree="[0]")
-    private Output<String> audience;
+    private Output</* @Nullable */ String> audience;
 
     /**
      * @return (Updatable) The base URI for all of the scopes defined in this App. The value of &#39;audience&#39; is combined with the &#39;value&#39; of each scope to form an &#39;fqs&#39; or fully qualified scope.
@@ -1129,8 +1129,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> audience() {
-        return this.audience;
+    public Output<Optional<String>> audience() {
+        return Codegen.optional(this.audience);
     }
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1193,7 +1193,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bypassConsent", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> bypassConsent;
+    private Output</* @Nullable */ Boolean> bypassConsent;
 
     /**
      * @return (Updatable) If true, indicates that consent should be skipped for all scopes
@@ -1211,8 +1211,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> bypassConsent() {
-        return this.bypassConsent;
+    public Output<Optional<Boolean>> bypassConsent() {
+        return Codegen.optional(this.bypassConsent);
     }
     /**
      * (Updatable) Callback Service URL
@@ -1229,7 +1229,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="callbackServiceUrl", refs={String.class}, tree="[0]")
-    private Output<String> callbackServiceUrl;
+    private Output</* @Nullable */ String> callbackServiceUrl;
 
     /**
      * @return (Updatable) Callback Service URL
@@ -1245,8 +1245,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> callbackServiceUrl() {
-        return this.callbackServiceUrl;
+    public Output<Optional<String>> callbackServiceUrl() {
+        return Codegen.optional(this.callbackServiceUrl);
     }
     /**
      * (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
@@ -1264,7 +1264,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="certificates", refs={List.class,DomainsAppCertificate.class}, tree="[0,1]")
-    private Output<List<DomainsAppCertificate>> certificates;
+    private Output</* @Nullable */ List<DomainsAppCertificate>> certificates;
 
     /**
      * @return (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
@@ -1281,8 +1281,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppCertificate>> certificates() {
-        return this.certificates;
+    public Output<Optional<List<DomainsAppCertificate>>> certificates() {
+        return Codegen.optional(this.certificates);
     }
     /**
      * (Updatable) Network Perimeters checking mode
@@ -1301,7 +1301,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clientIpChecking", refs={String.class}, tree="[0]")
-    private Output<String> clientIpChecking;
+    private Output</* @Nullable */ String> clientIpChecking;
 
     /**
      * @return (Updatable) Network Perimeters checking mode
@@ -1319,8 +1319,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> clientIpChecking() {
-        return this.clientIpChecking;
+    public Output<Optional<String>> clientIpChecking() {
+        return Codegen.optional(this.clientIpChecking);
     }
     /**
      * (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
@@ -1338,7 +1338,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clientSecret", refs={String.class}, tree="[0]")
-    private Output<String> clientSecret;
+    private Output</* @Nullable */ String> clientSecret;
 
     /**
      * @return (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
@@ -1355,8 +1355,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> clientSecret() {
-        return this.clientSecret;
+    public Output<Optional<String>> clientSecret() {
+        return Codegen.optional(this.clientSecret);
     }
     /**
      * (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
@@ -1373,7 +1373,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clientType", refs={String.class}, tree="[0]")
-    private Output<String> clientType;
+    private Output</* @Nullable */ String> clientType;
 
     /**
      * @return (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
@@ -1389,8 +1389,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> clientType() {
-        return this.clientType;
+    public Output<Optional<String>> clientType() {
+        return Codegen.optional(this.clientType);
     }
     /**
      * (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
@@ -1409,7 +1409,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cloudControlProperties", refs={List.class,DomainsAppCloudControlProperty.class}, tree="[0,1]")
-    private Output<List<DomainsAppCloudControlProperty>> cloudControlProperties;
+    private Output</* @Nullable */ List<DomainsAppCloudControlProperty>> cloudControlProperties;
 
     /**
      * @return (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
@@ -1427,8 +1427,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppCloudControlProperty>> cloudControlProperties() {
-        return this.cloudControlProperties;
+    public Output<Optional<List<DomainsAppCloudControlProperty>>> cloudControlProperties() {
+        return Codegen.optional(this.cloudControlProperties);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -1445,7 +1445,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -1461,8 +1461,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) Contact Email Address
@@ -1480,7 +1480,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="contactEmailAddress", refs={String.class}, tree="[0]")
-    private Output<String> contactEmailAddress;
+    private Output</* @Nullable */ String> contactEmailAddress;
 
     /**
      * @return (Updatable) Contact Email Address
@@ -1497,8 +1497,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> contactEmailAddress() {
-        return this.contactEmailAddress;
+    public Output<Optional<String>> contactEmailAddress() {
+        return Codegen.optional(this.contactEmailAddress);
     }
     /**
      * (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
@@ -1517,7 +1517,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="delegatedServiceNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> delegatedServiceNames;
+    private Output</* @Nullable */ List<String>> delegatedServiceNames;
 
     /**
      * @return (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
@@ -1535,8 +1535,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> delegatedServiceNames() {
-        return this.delegatedServiceNames;
+    public Output<Optional<List<String>>> delegatedServiceNames() {
+        return Codegen.optional(this.delegatedServiceNames);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1553,7 +1553,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1569,8 +1569,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) The description of the AppRole.
@@ -1586,7 +1586,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the AppRole.
@@ -1601,8 +1601,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Indicates whether the application is allowed to be access using kmsi token.
@@ -1620,7 +1620,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="disableKmsiTokenAuthentication", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> disableKmsiTokenAuthentication;
+    private Output</* @Nullable */ Boolean> disableKmsiTokenAuthentication;
 
     /**
      * @return (Updatable) Indicates whether the application is allowed to be access using kmsi token.
@@ -1637,8 +1637,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> disableKmsiTokenAuthentication() {
-        return this.disableKmsiTokenAuthentication;
+    public Output<Optional<Boolean>> disableKmsiTokenAuthentication() {
+        return Codegen.optional(this.disableKmsiTokenAuthentication);
     }
     /**
      * (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
@@ -1689,7 +1689,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1705,8 +1705,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) App attributes editable by subject
@@ -1726,7 +1726,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="editableAttributes", refs={List.class,DomainsAppEditableAttribute.class}, tree="[0,1]")
-    private Output<List<DomainsAppEditableAttribute>> editableAttributes;
+    private Output</* @Nullable */ List<DomainsAppEditableAttribute>> editableAttributes;
 
     /**
      * @return (Updatable) App attributes editable by subject
@@ -1745,8 +1745,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppEditableAttribute>> editableAttributes() {
-        return this.editableAttributes;
+    public Output<Optional<List<DomainsAppEditableAttribute>>> editableAttributes() {
+        return Codegen.optional(this.editableAttributes);
     }
     /**
      * (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
@@ -1763,7 +1763,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="errorPageUrl", refs={String.class}, tree="[0]")
-    private Output<String> errorPageUrl;
+    private Output</* @Nullable */ String> errorPageUrl;
 
     /**
      * @return (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
@@ -1779,8 +1779,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> errorPageUrl() {
-        return this.errorPageUrl;
+    public Output<Optional<String>> errorPageUrl() {
+        return Codegen.optional(this.errorPageUrl);
     }
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -1798,7 +1798,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="grantedAppRoles", refs={List.class,DomainsAppGrantedAppRole.class}, tree="[0,1]")
-    private Output<List<DomainsAppGrantedAppRole>> grantedAppRoles;
+    private Output</* @Nullable */ List<DomainsAppGrantedAppRole>> grantedAppRoles;
 
     /**
      * @return (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -1815,8 +1815,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppGrantedAppRole>> grantedAppRoles() {
-        return this.grantedAppRoles;
+    public Output<Optional<List<DomainsAppGrantedAppRole>>> grantedAppRoles() {
+        return Codegen.optional(this.grantedAppRoles);
     }
     /**
      * (Updatable) Grants assigned to the app
@@ -1833,7 +1833,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="grants", refs={List.class,DomainsAppGrant.class}, tree="[0,1]")
-    private Output<List<DomainsAppGrant>> grants;
+    private Output</* @Nullable */ List<DomainsAppGrant>> grants;
 
     /**
      * @return (Updatable) Grants assigned to the app
@@ -1849,8 +1849,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppGrant>> grants() {
-        return this.grants;
+    public Output<Optional<List<DomainsAppGrant>>> grants() {
+        return Codegen.optional(this.grants);
     }
     /**
      * (Updatable) Hashed Client Secret. This hash-value is used to verify the &#39;clientSecret&#39; credential of this App
@@ -1869,7 +1869,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="hashedClientSecret", refs={String.class}, tree="[0]")
-    private Output<String> hashedClientSecret;
+    private Output</* @Nullable */ String> hashedClientSecret;
 
     /**
      * @return (Updatable) Hashed Client Secret. This hash-value is used to verify the &#39;clientSecret&#39; credential of this App
@@ -1887,8 +1887,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> hashedClientSecret() {
-        return this.hashedClientSecret;
+    public Output<Optional<String>> hashedClientSecret() {
+        return Codegen.optional(this.hashedClientSecret);
     }
     /**
      * (Updatable) Home Page URL
@@ -1906,7 +1906,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="homePageUrl", refs={String.class}, tree="[0]")
-    private Output<String> homePageUrl;
+    private Output</* @Nullable */ String> homePageUrl;
 
     /**
      * @return (Updatable) Home Page URL
@@ -1923,8 +1923,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> homePageUrl() {
-        return this.homePageUrl;
+    public Output<Optional<String>> homePageUrl() {
+        return Codegen.optional(this.homePageUrl);
     }
     /**
      * (Updatable) URL of application icon.
@@ -1940,7 +1940,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="icon", refs={String.class}, tree="[0]")
-    private Output<String> icon;
+    private Output</* @Nullable */ String> icon;
 
     /**
      * @return (Updatable) URL of application icon.
@@ -1955,8 +1955,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> icon() {
-        return this.icon;
+    public Output<Optional<String>> icon() {
+        return Codegen.optional(this.icon);
     }
     /**
      * (Updatable) Encryption Alogrithm to use for encrypting ID token.
@@ -1975,7 +1975,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idTokenEncAlgo", refs={String.class}, tree="[0]")
-    private Output<String> idTokenEncAlgo;
+    private Output</* @Nullable */ String> idTokenEncAlgo;
 
     /**
      * @return (Updatable) Encryption Alogrithm to use for encrypting ID token.
@@ -1993,8 +1993,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idTokenEncAlgo() {
-        return this.idTokenEncAlgo;
+    public Output<Optional<String>> idTokenEncAlgo() {
+        return Codegen.optional(this.idTokenEncAlgo);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -2009,7 +2009,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsAppIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsAppIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsAppIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -2023,8 +2023,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsAppIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -2053,7 +2053,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAppIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsAppIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsAppIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -2067,8 +2067,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsAppIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -2085,7 +2085,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -2101,8 +2101,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -2118,7 +2118,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -2133,8 +2133,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
@@ -2150,7 +2150,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="identityProviders", refs={List.class,DomainsAppIdentityProvider.class}, tree="[0,1]")
-    private Output<List<DomainsAppIdentityProvider>> identityProviders;
+    private Output</* @Nullable */ List<DomainsAppIdentityProvider>> identityProviders;
 
     /**
      * @return (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
@@ -2165,8 +2165,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppIdentityProvider>> identityProviders() {
-        return this.identityProviders;
+    public Output<Optional<List<DomainsAppIdentityProvider>>> identityProviders() {
+        return Codegen.optional(this.identityProviders);
     }
     /**
      * (Updatable) IDP Policy.
@@ -2183,7 +2183,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idpPolicy", refs={DomainsAppIdpPolicy.class}, tree="[0]")
-    private Output<DomainsAppIdpPolicy> idpPolicy;
+    private Output</* @Nullable */ DomainsAppIdpPolicy> idpPolicy;
 
     /**
      * @return (Updatable) IDP Policy.
@@ -2199,8 +2199,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsAppIdpPolicy> idpPolicy() {
-        return this.idpPolicy;
+    public Output<Optional<DomainsAppIdpPolicy>> idpPolicy() {
+        return Codegen.optional(this.idpPolicy);
     }
     /**
      * (Updatable) If true, this App is an internal infrastructure App.
@@ -2216,7 +2216,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="infrastructure", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> infrastructure;
+    private Output</* @Nullable */ Boolean> infrastructure;
 
     /**
      * @return (Updatable) If true, this App is an internal infrastructure App.
@@ -2231,8 +2231,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> infrastructure() {
-        return this.infrastructure;
+    public Output<Optional<Boolean>> infrastructure() {
+        return Codegen.optional(this.infrastructure);
     }
     /**
      * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
@@ -2248,7 +2248,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isAliasApp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAliasApp;
+    private Output</* @Nullable */ Boolean> isAliasApp;
 
     /**
      * @return If true, this App is an AliasApp and it cannot be granted to an end-user directly.
@@ -2263,8 +2263,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isAliasApp() {
-        return this.isAliasApp;
+    public Output<Optional<Boolean>> isAliasApp() {
+        return Codegen.optional(this.isAliasApp);
     }
     /**
      * (Updatable) If true, this application acts as database service Application
@@ -2280,7 +2280,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isDatabaseService", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDatabaseService;
+    private Output</* @Nullable */ Boolean> isDatabaseService;
 
     /**
      * @return (Updatable) If true, this application acts as database service Application
@@ -2295,8 +2295,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: boolean
      * 
      */
-    public Output<Boolean> isDatabaseService() {
-        return this.isDatabaseService;
+    public Output<Optional<Boolean>> isDatabaseService() {
+        return Codegen.optional(this.isDatabaseService);
     }
     /**
      * (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
@@ -2314,7 +2314,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isEnterpriseApp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnterpriseApp;
+    private Output</* @Nullable */ Boolean> isEnterpriseApp;
 
     /**
      * @return (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
@@ -2331,8 +2331,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isEnterpriseApp() {
-        return this.isEnterpriseApp;
+    public Output<Optional<Boolean>> isEnterpriseApp() {
+        return Codegen.optional(this.isEnterpriseApp);
     }
     /**
      * (Updatable) If true, this application acts as FormFill Application
@@ -2348,7 +2348,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isFormFill", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFormFill;
+    private Output</* @Nullable */ Boolean> isFormFill;
 
     /**
      * @return (Updatable) If true, this application acts as FormFill Application
@@ -2363,8 +2363,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isFormFill() {
-        return this.isFormFill;
+    public Output<Optional<Boolean>> isFormFill() {
+        return Codegen.optional(this.isFormFill);
     }
     /**
      * (Updatable) If true, indicates that this App supports Kerberos Authentication
@@ -2380,7 +2380,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isKerberosRealm", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isKerberosRealm;
+    private Output</* @Nullable */ Boolean> isKerberosRealm;
 
     /**
      * @return (Updatable) If true, indicates that this App supports Kerberos Authentication
@@ -2395,8 +2395,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isKerberosRealm() {
-        return this.isKerberosRealm;
+    public Output<Optional<Boolean>> isKerberosRealm() {
+        return Codegen.optional(this.isKerberosRealm);
     }
     /**
      * (Updatable) If true, this App allows runtime services to log end users into this App automatically.
@@ -2412,7 +2412,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isLoginTarget", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLoginTarget;
+    private Output</* @Nullable */ Boolean> isLoginTarget;
 
     /**
      * @return (Updatable) If true, this App allows runtime services to log end users into this App automatically.
@@ -2427,8 +2427,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isLoginTarget() {
-        return this.isLoginTarget;
+    public Output<Optional<Boolean>> isLoginTarget() {
+        return Codegen.optional(this.isLoginTarget);
     }
     /**
      * (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
@@ -2444,7 +2444,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isManagedApp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isManagedApp;
+    private Output</* @Nullable */ Boolean> isManagedApp;
 
     /**
      * @return (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
@@ -2459,8 +2459,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isManagedApp() {
-        return this.isManagedApp;
+    public Output<Optional<Boolean>> isManagedApp() {
+        return Codegen.optional(this.isManagedApp);
     }
     /**
      * (Updatable) If true, indicates that the App should be visible in each end-user&#39;s mobile application.
@@ -2476,7 +2476,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isMobileTarget", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMobileTarget;
+    private Output</* @Nullable */ Boolean> isMobileTarget;
 
     /**
      * @return (Updatable) If true, indicates that the App should be visible in each end-user&#39;s mobile application.
@@ -2491,8 +2491,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isMobileTarget() {
-        return this.isMobileTarget;
+    public Output<Optional<Boolean>> isMobileTarget() {
+        return Codegen.optional(this.isMobileTarget);
     }
     /**
      * (Updatable) If true, indicates the app is used for multicloud service integration.
@@ -2510,7 +2510,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isMulticloudServiceApp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMulticloudServiceApp;
+    private Output</* @Nullable */ Boolean> isMulticloudServiceApp;
 
     /**
      * @return (Updatable) If true, indicates the app is used for multicloud service integration.
@@ -2527,8 +2527,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isMulticloudServiceApp() {
-        return this.isMulticloudServiceApp;
+    public Output<Optional<Boolean>> isMulticloudServiceApp() {
+        return Codegen.optional(this.isMulticloudServiceApp);
     }
     /**
      * (Updatable) If true, this application acts as an OAuth Client
@@ -2544,7 +2544,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isOauthClient", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOauthClient;
+    private Output</* @Nullable */ Boolean> isOauthClient;
 
     /**
      * @return (Updatable) If true, this application acts as an OAuth Client
@@ -2559,8 +2559,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isOauthClient() {
-        return this.isOauthClient;
+    public Output<Optional<Boolean>> isOauthClient() {
+        return Codegen.optional(this.isOauthClient);
     }
     /**
      * (Updatable) If true, indicates that this application acts as an OAuth Resource.
@@ -2576,7 +2576,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isOauthResource", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOauthResource;
+    private Output</* @Nullable */ Boolean> isOauthResource;
 
     /**
      * @return (Updatable) If true, indicates that this application acts as an OAuth Resource.
@@ -2591,8 +2591,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isOauthResource() {
-        return this.isOauthResource;
+    public Output<Optional<Boolean>> isOauthResource() {
+        return Codegen.optional(this.isOauthResource);
     }
     /**
      * (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
@@ -2609,7 +2609,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isObligationCapable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isObligationCapable;
+    private Output</* @Nullable */ Boolean> isObligationCapable;
 
     /**
      * @return (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
@@ -2625,8 +2625,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isObligationCapable() {
-        return this.isObligationCapable;
+    public Output<Optional<Boolean>> isObligationCapable() {
+        return Codegen.optional(this.isObligationCapable);
     }
     /**
      * (Updatable) If true, this application is an Oracle Public Cloud service-instance.
@@ -2642,7 +2642,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isOpcService", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOpcService;
+    private Output</* @Nullable */ Boolean> isOpcService;
 
     /**
      * @return (Updatable) If true, this application is an Oracle Public Cloud service-instance.
@@ -2657,8 +2657,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isOpcService() {
-        return this.isOpcService;
+    public Output<Optional<Boolean>> isOpcService() {
+        return Codegen.optional(this.isOpcService);
     }
     /**
      * (Updatable) If true, this application acts as an Radius App
@@ -2676,7 +2676,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isRadiusApp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRadiusApp;
+    private Output</* @Nullable */ Boolean> isRadiusApp;
 
     /**
      * @return (Updatable) If true, this application acts as an Radius App
@@ -2693,8 +2693,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isRadiusApp() {
-        return this.isRadiusApp;
+    public Output<Optional<Boolean>> isRadiusApp() {
+        return Codegen.optional(this.isRadiusApp);
     }
     /**
      * (Updatable) If true, then this App acts as a SAML Service Provider.
@@ -2710,7 +2710,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isSamlServiceProvider", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSamlServiceProvider;
+    private Output</* @Nullable */ Boolean> isSamlServiceProvider;
 
     /**
      * @return (Updatable) If true, then this App acts as a SAML Service Provider.
@@ -2725,8 +2725,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isSamlServiceProvider() {
-        return this.isSamlServiceProvider;
+    public Output<Optional<Boolean>> isSamlServiceProvider() {
+        return Codegen.optional(this.isSamlServiceProvider);
     }
     /**
      * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User&#39;s memberships in AppRoles.
@@ -2742,7 +2742,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isUnmanagedApp", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUnmanagedApp;
+    private Output</* @Nullable */ Boolean> isUnmanagedApp;
 
     /**
      * @return If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User&#39;s memberships in AppRoles.
@@ -2757,8 +2757,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isUnmanagedApp() {
-        return this.isUnmanagedApp;
+    public Output<Optional<Boolean>> isUnmanagedApp() {
+        return Codegen.optional(this.isUnmanagedApp);
     }
     /**
      * (Updatable) If true, the webtier policy is active
@@ -2774,7 +2774,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isWebTierPolicy", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isWebTierPolicy;
+    private Output</* @Nullable */ Boolean> isWebTierPolicy;
 
     /**
      * @return (Updatable) If true, the webtier policy is active
@@ -2789,8 +2789,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> isWebTierPolicy() {
-        return this.isWebTierPolicy;
+    public Output<Optional<Boolean>> isWebTierPolicy() {
+        return Codegen.optional(this.isWebTierPolicy);
     }
     /**
      * (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
@@ -2806,7 +2806,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="landingPageUrl", refs={String.class}, tree="[0]")
-    private Output<String> landingPageUrl;
+    private Output</* @Nullable */ String> landingPageUrl;
 
     /**
      * @return (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
@@ -2821,8 +2821,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> landingPageUrl() {
-        return this.landingPageUrl;
+    public Output<Optional<String>> landingPageUrl() {
+        return Codegen.optional(this.landingPageUrl);
     }
     /**
      * (Updatable) This attribute specifies the callback URL for the social linking operation.
@@ -2841,7 +2841,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="linkingCallbackUrl", refs={String.class}, tree="[0]")
-    private Output<String> linkingCallbackUrl;
+    private Output</* @Nullable */ String> linkingCallbackUrl;
 
     /**
      * @return (Updatable) This attribute specifies the callback URL for the social linking operation.
@@ -2859,8 +2859,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> linkingCallbackUrl() {
-        return this.linkingCallbackUrl;
+    public Output<Optional<String>> linkingCallbackUrl() {
+        return Codegen.optional(this.linkingCallbackUrl);
     }
     /**
      * (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If &#39;OIDC&#39;, then runtime services use the OpenID Connect protocol. If &#39;SAML&#39;, then runtime services use Security Assertion Markup Language protocol.
@@ -2877,7 +2877,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="loginMechanism", refs={String.class}, tree="[0]")
-    private Output<String> loginMechanism;
+    private Output</* @Nullable */ String> loginMechanism;
 
     /**
      * @return (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If &#39;OIDC&#39;, then runtime services use the OpenID Connect protocol. If &#39;SAML&#39;, then runtime services use Security Assertion Markup Language protocol.
@@ -2893,8 +2893,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> loginMechanism() {
-        return this.loginMechanism;
+    public Output<Optional<String>> loginMechanism() {
+        return Codegen.optional(this.loginMechanism);
     }
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
@@ -2911,7 +2911,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="loginPageUrl", refs={String.class}, tree="[0]")
-    private Output<String> loginPageUrl;
+    private Output</* @Nullable */ String> loginPageUrl;
 
     /**
      * @return (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
@@ -2927,8 +2927,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> loginPageUrl() {
-        return this.loginPageUrl;
+    public Output<Optional<String>> loginPageUrl() {
+        return Codegen.optional(this.loginPageUrl);
     }
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
@@ -2947,7 +2947,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="logoutPageUrl", refs={String.class}, tree="[0]")
-    private Output<String> logoutPageUrl;
+    private Output</* @Nullable */ String> logoutPageUrl;
 
     /**
      * @return (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
@@ -2965,8 +2965,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> logoutPageUrl() {
-        return this.logoutPageUrl;
+    public Output<Optional<String>> logoutPageUrl() {
+        return Codegen.optional(this.logoutPageUrl);
     }
     /**
      * (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App&#39;s session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
@@ -2983,7 +2983,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="logoutUri", refs={String.class}, tree="[0]")
-    private Output<String> logoutUri;
+    private Output</* @Nullable */ String> logoutUri;
 
     /**
      * @return (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App&#39;s session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
@@ -2999,8 +2999,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> logoutUri() {
-        return this.logoutUri;
+    public Output<Optional<String>> logoutUri() {
+        return Codegen.optional(this.logoutUri);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -3017,7 +3017,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metas", refs={List.class,DomainsAppMeta.class}, tree="[0,1]")
-    private Output<List<DomainsAppMeta>> metas;
+    private Output</* @Nullable */ List<DomainsAppMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -3033,8 +3033,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsAppMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
@@ -3052,7 +3052,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="meterAsOpcService", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> meterAsOpcService;
+    private Output</* @Nullable */ Boolean> meterAsOpcService;
 
     /**
      * @return (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
@@ -3069,8 +3069,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> meterAsOpcService() {
-        return this.meterAsOpcService;
+    public Output<Optional<Boolean>> meterAsOpcService() {
+        return Codegen.optional(this.meterAsOpcService);
     }
     /**
      * (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
@@ -3086,7 +3086,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="migrated", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> migrated;
+    private Output</* @Nullable */ Boolean> migrated;
 
     /**
      * @return (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
@@ -3101,8 +3101,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> migrated() {
-        return this.migrated;
+    public Output<Optional<Boolean>> migrated() {
+        return Codegen.optional(this.migrated);
     }
     /**
      * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
@@ -3159,7 +3159,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -3175,8 +3175,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
@@ -3193,7 +3193,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="postLogoutRedirectUris", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> postLogoutRedirectUris;
+    private Output</* @Nullable */ List<String>> postLogoutRedirectUris;
 
     /**
      * @return (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
@@ -3209,8 +3209,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> postLogoutRedirectUris() {
-        return this.postLogoutRedirectUris;
+    public Output<Optional<List<String>>> postLogoutRedirectUris() {
+        return Codegen.optional(this.postLogoutRedirectUris);
     }
     /**
      * (Updatable) Privacy Policy URL
@@ -3228,7 +3228,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="privacyPolicyUrl", refs={String.class}, tree="[0]")
-    private Output<String> privacyPolicyUrl;
+    private Output</* @Nullable */ String> privacyPolicyUrl;
 
     /**
      * @return (Updatable) Privacy Policy URL
@@ -3245,8 +3245,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> privacyPolicyUrl() {
-        return this.privacyPolicyUrl;
+    public Output<Optional<String>> privacyPolicyUrl() {
+        return Codegen.optional(this.privacyPolicyUrl);
     }
     /**
      * (Updatable) Application Logo URL
@@ -3264,7 +3264,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="productLogoUrl", refs={String.class}, tree="[0]")
-    private Output<String> productLogoUrl;
+    private Output</* @Nullable */ String> productLogoUrl;
 
     /**
      * @return (Updatable) Application Logo URL
@@ -3281,8 +3281,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> productLogoUrl() {
-        return this.productLogoUrl;
+    public Output<Optional<String>> productLogoUrl() {
+        return Codegen.optional(this.productLogoUrl);
     }
     /**
      * (Updatable) Product Name
@@ -3300,7 +3300,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="productName", refs={String.class}, tree="[0]")
-    private Output<String> productName;
+    private Output</* @Nullable */ String> productName;
 
     /**
      * @return (Updatable) Product Name
@@ -3317,8 +3317,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> productName() {
-        return this.productName;
+    public Output<Optional<String>> productName() {
+        return Codegen.optional(this.productName);
     }
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -3338,7 +3338,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="protectableSecondaryAudiences", refs={List.class,DomainsAppProtectableSecondaryAudience.class}, tree="[0,1]")
-    private Output<List<DomainsAppProtectableSecondaryAudience>> protectableSecondaryAudiences;
+    private Output</* @Nullable */ List<DomainsAppProtectableSecondaryAudience>> protectableSecondaryAudiences;
 
     /**
      * @return (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -3357,8 +3357,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppProtectableSecondaryAudience>> protectableSecondaryAudiences() {
-        return this.protectableSecondaryAudiences;
+    public Output<Optional<List<DomainsAppProtectableSecondaryAudience>>> protectableSecondaryAudiences() {
+        return Codegen.optional(this.protectableSecondaryAudiences);
     }
     /**
      * (Updatable) RADIUS Policy assigned to this application.
@@ -3375,7 +3375,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="radiusPolicy", refs={DomainsAppRadiusPolicy.class}, tree="[0]")
-    private Output<DomainsAppRadiusPolicy> radiusPolicy;
+    private Output</* @Nullable */ DomainsAppRadiusPolicy> radiusPolicy;
 
     /**
      * @return (Updatable) RADIUS Policy assigned to this application.
@@ -3391,8 +3391,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsAppRadiusPolicy> radiusPolicy() {
-        return this.radiusPolicy;
+    public Output<Optional<DomainsAppRadiusPolicy>> radiusPolicy() {
+        return Codegen.optional(this.radiusPolicy);
     }
     /**
      * (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
@@ -3408,7 +3408,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="readyToUpgrade", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> readyToUpgrade;
+    private Output</* @Nullable */ Boolean> readyToUpgrade;
 
     /**
      * @return (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
@@ -3423,8 +3423,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> readyToUpgrade() {
-        return this.readyToUpgrade;
+    public Output<Optional<Boolean>> readyToUpgrade() {
+        return Codegen.optional(this.readyToUpgrade);
     }
     /**
      * (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
@@ -3441,7 +3441,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="redirectUris", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> redirectUris;
+    private Output</* @Nullable */ List<String>> redirectUris;
 
     /**
      * @return (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
@@ -3457,8 +3457,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> redirectUris() {
-        return this.redirectUris;
+    public Output<Optional<List<String>>> redirectUris() {
+        return Codegen.optional(this.redirectUris);
     }
     /**
      * (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
@@ -3474,7 +3474,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="refreshTokenExpiry", refs={Integer.class}, tree="[0]")
-    private Output<Integer> refreshTokenExpiry;
+    private Output</* @Nullable */ Integer> refreshTokenExpiry;
 
     /**
      * @return (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
@@ -3489,8 +3489,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> refreshTokenExpiry() {
-        return this.refreshTokenExpiry;
+    public Output<Optional<Integer>> refreshTokenExpiry() {
+        return Codegen.optional(this.refreshTokenExpiry);
     }
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -3520,7 +3520,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="samlServiceProvider", refs={DomainsAppSamlServiceProvider.class}, tree="[0]")
-    private Output<DomainsAppSamlServiceProvider> samlServiceProvider;
+    private Output</* @Nullable */ DomainsAppSamlServiceProvider> samlServiceProvider;
 
     /**
      * @return (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is &#39;SAML&#39;.
@@ -3535,8 +3535,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<DomainsAppSamlServiceProvider> samlServiceProvider() {
-        return this.samlServiceProvider;
+    public Output<Optional<DomainsAppSamlServiceProvider>> samlServiceProvider() {
+        return Codegen.optional(this.samlServiceProvider);
     }
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -3588,7 +3588,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="scopes", refs={List.class,DomainsAppScope.class}, tree="[0,1]")
-    private Output<List<DomainsAppScope>> scopes;
+    private Output</* @Nullable */ List<DomainsAppScope>> scopes;
 
     /**
      * @return (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
@@ -3605,8 +3605,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppScope>> scopes() {
-        return this.scopes;
+    public Output<Optional<List<DomainsAppScope>>> scopes() {
+        return Codegen.optional(this.scopes);
     }
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -3625,7 +3625,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="secondaryAudiences", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> secondaryAudiences;
+    private Output</* @Nullable */ List<String>> secondaryAudiences;
 
     /**
      * @return (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -3643,8 +3643,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> secondaryAudiences() {
-        return this.secondaryAudiences;
+    public Output<Optional<List<String>>> secondaryAudiences() {
+        return Codegen.optional(this.secondaryAudiences);
     }
     /**
      * (Updatable) Custom attribute that is required to compute other attribute values during app creation.
@@ -3661,7 +3661,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="serviceParams", refs={List.class,DomainsAppServiceParam.class}, tree="[0,1]")
-    private Output<List<DomainsAppServiceParam>> serviceParams;
+    private Output</* @Nullable */ List<DomainsAppServiceParam>> serviceParams;
 
     /**
      * @return (Updatable) Custom attribute that is required to compute other attribute values during app creation.
@@ -3677,8 +3677,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppServiceParam>> serviceParams() {
-        return this.serviceParams;
+    public Output<Optional<List<DomainsAppServiceParam>>> serviceParams() {
+        return Codegen.optional(this.serviceParams);
     }
     /**
      * (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
@@ -3695,7 +3695,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="serviceTypeUrn", refs={String.class}, tree="[0]")
-    private Output<String> serviceTypeUrn;
+    private Output</* @Nullable */ String> serviceTypeUrn;
 
     /**
      * @return (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
@@ -3711,8 +3711,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> serviceTypeUrn() {
-        return this.serviceTypeUrn;
+    public Output<Optional<String>> serviceTypeUrn() {
+        return Codegen.optional(this.serviceTypeUrn);
     }
     /**
      * (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
@@ -3729,7 +3729,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="serviceTypeVersion", refs={String.class}, tree="[0]")
-    private Output<String> serviceTypeVersion;
+    private Output</* @Nullable */ String> serviceTypeVersion;
 
     /**
      * @return (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
@@ -3745,8 +3745,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> serviceTypeVersion() {
-        return this.serviceTypeVersion;
+    public Output<Optional<String>> serviceTypeVersion() {
+        return Codegen.optional(this.serviceTypeVersion);
     }
     /**
      * (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
@@ -3764,7 +3764,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="showInMyApps", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> showInMyApps;
+    private Output</* @Nullable */ Boolean> showInMyApps;
 
     /**
      * @return (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
@@ -3781,8 +3781,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> showInMyApps() {
-        return this.showInMyApps;
+    public Output<Optional<Boolean>> showInMyApps() {
+        return Codegen.optional(this.showInMyApps);
     }
     /**
      * (Updatable) Sign-on Policy.
@@ -3799,7 +3799,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="signonPolicy", refs={DomainsAppSignonPolicy.class}, tree="[0]")
-    private Output<DomainsAppSignonPolicy> signonPolicy;
+    private Output</* @Nullable */ DomainsAppSignonPolicy> signonPolicy;
 
     /**
      * @return (Updatable) Sign-on Policy.
@@ -3815,8 +3815,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsAppSignonPolicy> signonPolicy() {
-        return this.signonPolicy;
+    public Output<Optional<DomainsAppSignonPolicy>> signonPolicy() {
+        return Codegen.optional(this.signonPolicy);
     }
     /**
      * (Updatable) A list of tags on this resource.
@@ -3833,7 +3833,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tags", refs={List.class,DomainsAppTag.class}, tree="[0,1]")
-    private Output<List<DomainsAppTag>> tags;
+    private Output</* @Nullable */ List<DomainsAppTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
@@ -3849,8 +3849,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAppTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsAppTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -3867,7 +3867,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -3883,8 +3883,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) Terms of Service URL
@@ -3902,7 +3902,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="termsOfServiceUrl", refs={String.class}, tree="[0]")
-    private Output<String> termsOfServiceUrl;
+    private Output</* @Nullable */ String> termsOfServiceUrl;
 
     /**
      * @return (Updatable) Terms of Service URL
@@ -3919,8 +3919,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> termsOfServiceUrl() {
-        return this.termsOfServiceUrl;
+    public Output<Optional<String>> termsOfServiceUrl() {
+        return Codegen.optional(this.termsOfServiceUrl);
     }
     /**
      * (Updatable) Terms Of Use.
@@ -3937,7 +3937,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="termsOfUse", refs={DomainsAppTermsOfUse.class}, tree="[0]")
-    private Output<DomainsAppTermsOfUse> termsOfUse;
+    private Output</* @Nullable */ DomainsAppTermsOfUse> termsOfUse;
 
     /**
      * @return (Updatable) Terms Of Use.
@@ -3953,8 +3953,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<DomainsAppTermsOfUse> termsOfUse() {
-        return this.termsOfUse;
+    public Output<Optional<DomainsAppTermsOfUse>> termsOfUse() {
+        return Codegen.optional(this.termsOfUse);
     }
     /**
      * (Updatable) Trust Policies.
@@ -3970,7 +3970,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="trustPolicies", refs={List.class,DomainsAppTrustPolicy.class}, tree="[0,1]")
-    private Output<List<DomainsAppTrustPolicy>> trustPolicies;
+    private Output</* @Nullable */ List<DomainsAppTrustPolicy>> trustPolicies;
 
     /**
      * @return (Updatable) Trust Policies.
@@ -3985,8 +3985,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppTrustPolicy>> trustPolicies() {
-        return this.trustPolicies;
+    public Output<Optional<List<DomainsAppTrustPolicy>>> trustPolicies() {
+        return Codegen.optional(this.trustPolicies);
     }
     /**
      * (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of &#39;Explicit&#39; indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as &#39;allowedScopes&#39;. A value of &#39;Account&#39; indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of &#39;Tags&#39; indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of &#39;Default&#39; indicates that the Tenant default trust scope configured in the Tenant Settings is used.
@@ -4005,7 +4005,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="trustScope", refs={String.class}, tree="[0]")
-    private Output<String> trustScope;
+    private Output</* @Nullable */ String> trustScope;
 
     /**
      * @return (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of &#39;Explicit&#39; indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as &#39;allowedScopes&#39;. A value of &#39;Account&#39; indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of &#39;Tags&#39; indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of &#39;Default&#39; indicates that the Tenant default trust scope configured in the Tenant Settings is used.
@@ -4023,190 +4023,190 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> trustScope() {
-        return this.trustScope;
+    public Output<Optional<String>> trustScope() {
+        return Codegen.optional(this.trustScope);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionOciTags", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tags.
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags> urnietfparamsscimschemasoracleidcsextensionOciTags() {
-        return this.urnietfparamsscimschemasoracleidcsextensionOciTags;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags>> urnietfparamsscimschemasoracleidcsextensionOciTags() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionOciTags);
     }
     /**
      * (Updatable) This extension provides attributes for database service facet of an App
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApp;
 
     /**
      * @return (Updatable) This extension provides attributes for database service facet of an App
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp> urnietfparamsscimschemasoracleidcsextensiondbcsApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensiondbcsApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp>> urnietfparamsscimschemasoracleidcsextensiondbcsApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensiondbcsApp);
     }
     /**
      * (Updatable) This extension defines the Enterprise App related attributes.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp;
 
     /**
      * @return (Updatable) This extension defines the Enterprise App related attributes.
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp>> urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp);
     }
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of App
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApp;
 
     /**
      * @return (Updatable) This extension provides attributes for Form-Fill facet of App
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp> urnietfparamsscimschemasoracleidcsextensionformFillAppApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionformFillAppApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp>> urnietfparamsscimschemasoracleidcsextensionformFillAppApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionformFillAppApp);
     }
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate;
 
     /**
      * @return (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate() {
-        return this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate>> urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate);
     }
     /**
      * (Updatable) Kerberos Realm
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp;
 
     /**
      * @return (Updatable) Kerberos Realm
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp>> urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp);
     }
     /**
      * (Updatable) Managed App
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApp;
 
     /**
      * @return (Updatable) Managed App
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp> urnietfparamsscimschemasoracleidcsextensionmanagedappApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionmanagedappApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp>> urnietfparamsscimschemasoracleidcsextensionmanagedappApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionmanagedappApp);
     }
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp;
 
     /**
      * @return (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp>> urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp);
     }
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApp;
 
     /**
      * @return (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp> urnietfparamsscimschemasoracleidcsextensionopcServiceApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionopcServiceApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp>> urnietfparamsscimschemasoracleidcsextensionopcServiceApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionopcServiceApp);
     }
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApp;
 
     /**
      * @return (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp> urnietfparamsscimschemasoracleidcsextensionradiusAppApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionradiusAppApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp>> urnietfparamsscimschemasoracleidcsextensionradiusAppApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionradiusAppApp);
     }
     /**
      * (Updatable) Requestable App
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApp;
 
     /**
      * @return (Updatable) Requestable App
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp> urnietfparamsscimschemasoracleidcsextensionrequestableApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionrequestableApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp>> urnietfparamsscimschemasoracleidcsextensionrequestableApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionrequestableApp);
     }
     /**
      * (Updatable) This extension defines attributes related to the Service Providers configuration.
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp;
 
     /**
      * @return (Updatable) This extension defines attributes related to the Service Providers configuration.
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp>> urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp);
     }
     /**
      * (Updatable) WebTier Policy
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp", refs={DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp.class}, tree="[0]")
-    private Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp;
+    private Output</* @Nullable */ DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp;
 
     /**
      * @return (Updatable) WebTier Policy
      * 
      */
-    public Output<DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp() {
-        return this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp;
+    public Output<Optional<DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp>> urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp);
     }
     /**
      * (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
@@ -4222,7 +4222,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="userRoles", refs={List.class,DomainsAppUserRole.class}, tree="[0,1]")
-    private Output<List<DomainsAppUserRole>> userRoles;
+    private Output</* @Nullable */ List<DomainsAppUserRole>> userRoles;
 
     /**
      * @return (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
@@ -4237,8 +4237,8 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsAppUserRole>> userRoles() {
-        return this.userRoles;
+    public Output<Optional<List<DomainsAppUserRole>>> userRoles() {
+        return Codegen.optional(this.userRoles);
     }
 
     /**

@@ -73,7 +73,7 @@ export interface GetDbHomesResult {
     /**
      * The list of db_homes.
      */
-    readonly dbHomes: outputs.Database.GetDbHomesDbHome[];
+    readonly dbHomes?: outputs.Database.GetDbHomesDbHome[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
@@ -90,7 +90,7 @@ export interface GetDbHomesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Database Home.
      */

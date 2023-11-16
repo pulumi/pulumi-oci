@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,8 +59,8 @@ type GetReportContentArgs struct {
 // A collection of values returned by getReportContent.
 type GetReportContentResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	ReportId string `pulumi:"reportId"`
+	Id       *string `pulumi:"id"`
+	ReportId string  `pulumi:"reportId"`
 }
 
 func GetReportContentOutput(ctx *pulumi.Context, args GetReportContentOutputArgs, opts ...pulumi.InvokeOption) GetReportContentResultOutput {
@@ -102,15 +101,9 @@ func (o GetReportContentResultOutput) ToGetReportContentResultOutputWithContext(
 	return o
 }
 
-func (o GetReportContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportContentResult] {
-	return pulumix.Output[GetReportContentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetReportContentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportContentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReportContentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportContentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetReportContentResultOutput) ReportId() pulumi.StringOutput {

@@ -76,7 +76,7 @@ export interface GetRatecardsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Product part numner
      */
@@ -84,7 +84,7 @@ export interface GetRatecardsResult {
     /**
      * The list of rate_cards.
      */
-    readonly rateCards: outputs.OneSubsription.GetRatecardsRateCard[];
+    readonly rateCards?: outputs.OneSubsription.GetRatecardsRateCard[];
     readonly subscriptionId: string;
     readonly timeFrom?: string;
     readonly timeTo?: string;

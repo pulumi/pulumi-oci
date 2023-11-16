@@ -179,7 +179,7 @@ namespace Pulumi.Oci.Bastion
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the bastion, which can't be changed after creation.
         /// </summary>
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.Bastion
 
             ImmutableArray<Outputs.GetBastionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name)
         {

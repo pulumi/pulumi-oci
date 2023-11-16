@@ -308,7 +308,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? IsManagementAgentIdNull;
         public readonly string? LifecycleDetailsContains;
         /// <summary>
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.LogAnalytics
 
             string? hostnameContains,
 
-            string id,
+            string? id,
 
             string? isManagementAgentIdNull,
 

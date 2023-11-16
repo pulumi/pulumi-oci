@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -104,14 +105,14 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it&#39;s changeable.
@@ -132,28 +133,28 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
     @Export(name="inactiveState", refs={String.class}, tree="[0]")
-    private Output<String> inactiveState;
+    private Output</* @Nullable */ String> inactiveState;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveState() {
-        return this.inactiveState;
+    public Output<Optional<String>> inactiveState() {
+        return Codegen.optional(this.inactiveState);
     }
     /**
      * The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -174,56 +175,56 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="publicSourceLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> publicSourceLists;
+    private Output</* @Nullable */ List<String>> publicSourceLists;
 
     /**
      * @return (Updatable) A list of allowed public IP addresses and CIDR ranges.
      * 
      */
-    public Output<List<String>> publicSourceLists() {
-        return this.publicSourceLists;
+    public Output<Optional<List<String>>> publicSourceLists() {
+        return Codegen.optional(this.publicSourceLists);
     }
     /**
      * (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
      * 
      */
     @Export(name="services", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> services;
+    private Output</* @Nullable */ List<String>> services;
 
     /**
      * @return (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
      * 
      */
-    public Output<List<String>> services() {
-        return this.services;
+    public Output<Optional<List<String>>> services() {
+        return Codegen.optional(this.services);
     }
     /**
      * The network source object&#39;s current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The network source object&#39;s current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
@@ -233,7 +234,7 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="virtualSourceLists", refs={List.class,NetworkSourceVirtualSourceList.class}, tree="[0,1]")
-    private Output<List<NetworkSourceVirtualSourceList>> virtualSourceLists;
+    private Output</* @Nullable */ List<NetworkSourceVirtualSourceList>> virtualSourceLists;
 
     /**
      * @return (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`&#34;vcnId&#34;: &#34;ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID&#34;, &#34;ipRanges&#34;: [ &#34;129.213.39.0/24&#34; ]`
@@ -242,8 +243,8 @@ public class NetworkSource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<NetworkSourceVirtualSourceList>> virtualSourceLists() {
-        return this.virtualSourceLists;
+    public Output<Optional<List<NetworkSourceVirtualSourceList>>> virtualSourceLists() {
+        return Codegen.optional(this.virtualSourceLists);
     }
 
     /**

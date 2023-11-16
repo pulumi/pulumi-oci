@@ -77,63 +77,42 @@ class GetManagedDatabaseResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseStatus")
-    def database_status(self) -> str:
-        """
-        The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
-        """
+    def database_status(self) -> Optional[str]:
         return pulumi.get(self, "database_status")
 
     @property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> str:
-        """
-        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
+    def database_sub_type(self) -> Optional[str]:
         return pulumi.get(self, "database_sub_type")
 
     @property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> str:
-        """
-        The type of Oracle Database installation.
-        """
+    def database_type(self) -> Optional[str]:
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
-        """
+    def db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The infrastructure used to deploy the Oracle Database.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -141,18 +120,12 @@ class GetManagedDatabaseResult:
 
     @property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> bool:
-        """
-        Indicates whether the Oracle Database is part of a cluster.
-        """
+    def is_cluster(self) -> Optional[bool]:
         return pulumi.get(self, "is_cluster")
 
     @property
     @pulumi.getter(name="managedDatabaseGroups")
-    def managed_database_groups(self) -> Sequence['outputs.GetManagedDatabaseManagedDatabaseGroupResult']:
-        """
-        A list of Managed Database Groups that the Managed Database belongs to.
-        """
+    def managed_database_groups(self) -> Optional[Sequence['outputs.GetManagedDatabaseManagedDatabaseGroupResult']]:
         return pulumi.get(self, "managed_database_groups")
 
     @property
@@ -162,50 +135,32 @@ class GetManagedDatabaseResult:
 
     @property
     @pulumi.getter(name="managementOption")
-    def management_option(self) -> str:
-        """
-        The management option used when enabling Database Management.
-        """
+    def management_option(self) -> Optional[str]:
         return pulumi.get(self, "management_option")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the Managed Database.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="parentContainerId")
-    def parent_container_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
-        """
+    def parent_container_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_container_id")
 
     @property
     @pulumi.getter(name="storageSystemId")
-    def storage_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
-        """
+    def storage_system_id(self) -> Optional[str]:
         return pulumi.get(self, "storage_system_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Managed Database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="workloadType")
-    def workload_type(self) -> str:
-        """
-        The workload type of the Autonomous Database.
-        """
+    def workload_type(self) -> Optional[str]:
         return pulumi.get(self, "workload_type")
 
 
@@ -237,21 +192,7 @@ class AwaitableGetManagedDatabaseResult(GetManagedDatabaseResult):
 def get_managed_database(managed_database_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseResult:
     """
-    This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Managed Database specified by managedDatabaseId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -282,20 +223,6 @@ def get_managed_database(managed_database_id: Optional[str] = None,
 def get_managed_database_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseResult]:
     """
-    This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Managed Database specified by managedDatabaseId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     ...

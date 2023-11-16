@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetInstancesInstancePreemptibleInstanceConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstancesInstancePreemptibleInstanceConfig {
@@ -14,7 +15,7 @@ public final class GetInstancesInstancePreemptibleInstanceConfig {
      * @return (Required) The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private GetInstancesInstancePreemptibleInstanceConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetInstancesInstancePreemptibleInstanceConfig {
      * 
      */
     public List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetInstancesInstancePreemptibleInstanceConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetInstancesInstancePreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetInstancesInstancePreemptibleInstanceConfig {
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetInstancesInstancePreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetInstancesInstancePreemptibleInstanceConfigPreemptionAction... preemptionActions) {

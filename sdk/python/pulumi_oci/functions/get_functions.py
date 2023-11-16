@@ -46,17 +46,11 @@ class GetFunctionsResult:
     @property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> str:
-        """
-        The OCID of the application the function belongs to.
-        """
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the function. The display name is unique within the application containing the function.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,26 +60,17 @@ class GetFunctionsResult:
 
     @property
     @pulumi.getter
-    def functions(self) -> Sequence['outputs.GetFunctionsFunctionResult']:
-        """
-        The list of functions.
-        """
+    def functions(self) -> Optional[Sequence['outputs.GetFunctionsFunctionResult']]:
         return pulumi.get(self, "functions")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the function.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_functions(application_id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFunctionsResult:
     """
-    This data source provides the list of Functions in Oracle Cloud Infrastructure Functions service.
-
-    Lists functions for an application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_functions = oci.Functions.get_functions(application_id=oci_functions_application["test_application"]["id"],
-        display_name=var["function_display_name"],
-        id=var["function_id"],
-        state=var["function_state"])
-    ```
-
-
-    :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
-    :param str display_name: A filter to return only functions with display names that match the display name string. Matching is exact.
-    :param str id: A filter to return only functions with the specified OCID.
-    :param str state: A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
@@ -158,26 +123,6 @@ def get_functions_output(application_id: Optional[pulumi.Input[str]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFunctionsResult]:
     """
-    This data source provides the list of Functions in Oracle Cloud Infrastructure Functions service.
-
-    Lists functions for an application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_functions = oci.Functions.get_functions(application_id=oci_functions_application["test_application"]["id"],
-        display_name=var["function_display_name"],
-        id=var["function_id"],
-        state=var["function_state"])
-    ```
-
-
-    :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
-    :param str display_name: A filter to return only functions with display names that match the display name string. Matching is exact.
-    :param str id: A filter to return only functions with the specified OCID.
-    :param str state: A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
+    Use this data source to access information about an existing resource.
     """
     ...

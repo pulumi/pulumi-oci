@@ -16,15 +16,15 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The origin of the CA.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         /// </summary>
-        public readonly string IssuerCertificateAuthorityId;
+        public readonly string? IssuerCertificateAuthorityId;
         /// <summary>
         /// The algorithm used to sign public key certificates that the CA issues.
         /// </summary>
-        public readonly string SigningAlgorithm;
+        public readonly string? SigningAlgorithm;
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         /// </summary>
-        public readonly string VersionName;
+        public readonly string? VersionName;
 
         [OutputConstructor]
         private GetCertificateAuthorityCertificateAuthorityConfigResult(
-            string configType,
+            string? configType,
 
-            string issuerCertificateAuthorityId,
+            string? issuerCertificateAuthorityId,
 
-            string signingAlgorithm,
+            string? signingAlgorithm,
 
             ImmutableArray<Outputs.GetCertificateAuthorityCertificateAuthorityConfigSubjectResult> subjects,
 
             ImmutableArray<Outputs.GetCertificateAuthorityCertificateAuthorityConfigValidityResult> validities,
 
-            string versionName)
+            string? versionName)
         {
             ConfigType = configType;
             IssuerCertificateAuthorityId = issuerCertificateAuthorityId;

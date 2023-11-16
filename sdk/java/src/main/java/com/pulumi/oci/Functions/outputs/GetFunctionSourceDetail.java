@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFunctionSourceDetail {
@@ -13,27 +15,27 @@ public final class GetFunctionSourceDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
      * 
      */
-    private String pbfListingId;
+    private @Nullable String pbfListingId;
     /**
      * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetFunctionSourceDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
      * 
      */
-    public String pbfListingId() {
-        return this.pbfListingId;
+    public Optional<String> pbfListingId() {
+        return Optional.ofNullable(this.pbfListingId);
     }
     /**
      * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetFunctionSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String pbfListingId;
-        private String sourceType;
+        private @Nullable String pbfListingId;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetFunctionSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetFunctionSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder pbfListingId(String pbfListingId) {
-            this.pbfListingId = Objects.requireNonNull(pbfListingId);
+        public Builder pbfListingId(@Nullable String pbfListingId) {
+            this.pbfListingId = pbfListingId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetFunctionSourceDetail build() {

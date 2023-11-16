@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -80,14 +81,14 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="commentPattern", refs={String.class}, tree="[0]")
-    private Output<String> commentPattern;
+    private Output</* @Nullable */ String> commentPattern;
 
     /**
      * @return (Updatable) A regular expression to be used by data discovery for matching column comments.
      * 
      */
-    public Output<String> commentPattern() {
-        return this.commentPattern;
+    public Output<Optional<String>> commentPattern() {
+        return Codegen.optional(this.commentPattern);
     }
     /**
      * (Updatable) The OCID of the compartment where the sensitive type should be created.
@@ -108,70 +109,70 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataPattern", refs={String.class}, tree="[0]")
-    private Output<String> dataPattern;
+    private Output</* @Nullable */ String> dataPattern;
 
     /**
      * @return (Updatable) A regular expression to be used by data discovery for matching column data values.
      * 
      */
-    public Output<String> dataPattern() {
-        return this.dataPattern;
+    public Output<Optional<String>> dataPattern() {
+        return Codegen.optional(this.dataPattern);
     }
     /**
      * (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      * 
      */
     @Export(name="defaultMaskingFormatId", refs={String.class}, tree="[0]")
-    private Output<String> defaultMaskingFormatId;
+    private Output</* @Nullable */ String> defaultMaskingFormatId;
 
     /**
      * @return (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      * 
      */
-    public Output<String> defaultMaskingFormatId() {
-        return this.defaultMaskingFormatId;
+    public Output<Optional<String>> defaultMaskingFormatId() {
+        return Codegen.optional(this.defaultMaskingFormatId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the sensitive type.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the sensitive type.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the sensitive type. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the sensitive type. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
@@ -192,56 +193,56 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      * 
      */
     @Export(name="namePattern", refs={String.class}, tree="[0]")
-    private Output<String> namePattern;
+    private Output</* @Nullable */ String> namePattern;
 
     /**
      * @return (Updatable) A regular expression to be used by data discovery for matching column names.
      * 
      */
-    public Output<String> namePattern() {
-        return this.namePattern;
+    public Output<Optional<String>> namePattern() {
+        return Codegen.optional(this.namePattern);
     }
     /**
      * (Updatable) The OCID of the parent sensitive category.
      * 
      */
     @Export(name="parentCategoryId", refs={String.class}, tree="[0]")
-    private Output<String> parentCategoryId;
+    private Output</* @Nullable */ String> parentCategoryId;
 
     /**
      * @return (Updatable) The OCID of the parent sensitive category.
      * 
      */
-    public Output<String> parentCategoryId() {
-        return this.parentCategoryId;
+    public Output<Optional<String>> parentCategoryId() {
+        return Codegen.optional(this.parentCategoryId);
     }
     /**
      * (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      * 
      */
     @Export(name="searchType", refs={String.class}, tree="[0]")
-    private Output<String> searchType;
+    private Output</* @Nullable */ String> searchType;
 
     /**
      * @return (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      * 
      */
-    public Output<String> searchType() {
-        return this.searchType;
+    public Output<Optional<String>> searchType() {
+        return Codegen.optional(this.searchType);
     }
     /**
      * (Updatable) The short name of the sensitive type.
@@ -251,7 +252,7 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shortName", refs={String.class}, tree="[0]")
-    private Output<String> shortName;
+    private Output</* @Nullable */ String> shortName;
 
     /**
      * @return (Updatable) The short name of the sensitive type.
@@ -260,78 +261,78 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> shortName() {
-        return this.shortName;
+    public Output<Optional<String>> shortName() {
+        return Codegen.optional(this.shortName);
     }
     /**
      * Specifies whether the sensitive type is user-defined or predefined.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
-    private Output<String> source;
+    private Output</* @Nullable */ String> source;
 
     /**
      * @return Specifies whether the sensitive type is user-defined or predefined.
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Output<Optional<String>> source() {
+        return Codegen.optional(this.source);
     }
     /**
      * The current state of the sensitive type.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the sensitive type.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

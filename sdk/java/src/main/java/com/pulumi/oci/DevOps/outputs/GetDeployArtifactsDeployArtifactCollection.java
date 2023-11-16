@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployArtifactsDeployArtifactCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployArtifactsDeployArtifactCollection {
-    private List<GetDeployArtifactsDeployArtifactCollectionItem> items;
+    private @Nullable List<GetDeployArtifactsDeployArtifactCollectionItem> items;
 
     private GetDeployArtifactsDeployArtifactCollection() {}
     public List<GetDeployArtifactsDeployArtifactCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDeployArtifactsDeployArtifactCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployArtifactsDeployArtifactCollectionItem> items;
+        private @Nullable List<GetDeployArtifactsDeployArtifactCollectionItem> items;
         public Builder() {}
         public Builder(GetDeployArtifactsDeployArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDeployArtifactsDeployArtifactCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployArtifactsDeployArtifactCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployArtifactsDeployArtifactCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployArtifactsDeployArtifactCollectionItem... items) {

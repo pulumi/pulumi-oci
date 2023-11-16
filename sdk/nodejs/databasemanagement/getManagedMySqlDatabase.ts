@@ -45,28 +45,28 @@ export interface GetManagedMySqlDatabaseResult {
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * MySQL Database Name
      */
-    readonly dbName: string;
+    readonly dbName?: string;
     /**
      * MySQL Database Version
      */
-    readonly dbVersion: string;
+    readonly dbVersion?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedMySqlDatabaseId: string;
     /**
      * The name of the Managed MySQL Database.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The date and time the Managed Database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.

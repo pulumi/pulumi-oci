@@ -41,23 +41,17 @@ class GetCpeDeviceShapeResult:
 
     @property
     @pulumi.getter(name="cpeDeviceInfos")
-    def cpe_device_infos(self) -> Sequence['outputs.GetCpeDeviceShapeCpeDeviceInfoResult']:
-        """
-        Basic information about a particular CPE device type.
-        """
+    def cpe_device_infos(self) -> Optional[Sequence['outputs.GetCpeDeviceShapeCpeDeviceInfoResult']]:
         return pulumi.get(self, "cpe_device_infos")
 
     @property
     @pulumi.getter(name="cpeDeviceShapeId")
     def cpe_device_shape_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape. This value uniquely identifies the type of CPE device.
-        """
         return pulumi.get(self, "cpe_device_shape_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,21 +59,12 @@ class GetCpeDeviceShapeResult:
 
     @property
     @pulumi.getter
-    def parameters(self) -> Sequence['outputs.GetCpeDeviceShapeParameterResult']:
-        """
-        For certain CPE devices types, the customer can provide answers to questions that are specific to the device type. This attribute contains a list of those questions. The Networking service merges the answers with other information and renders a set of CPE configuration content. To provide the answers, use [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig).
-        """
+    def parameters(self) -> Optional[Sequence['outputs.GetCpeDeviceShapeParameterResult']]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def template(self) -> str:
-        """
-        A template of CPE device configuration information that will be merged with the customer's answers to the questions to render the final CPE device configuration content. Also see:
-        * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-        * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-        * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-        """
+    def template(self) -> Optional[str]:
         return pulumi.get(self, "template")
 
 
@@ -99,29 +84,7 @@ class AwaitableGetCpeDeviceShapeResult(GetCpeDeviceShapeResult):
 def get_cpe_device_shape(cpe_device_shape_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpeDeviceShapeResult:
     """
-    This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the detailed information about the specified CPE device type. This might include a set of questions
-    that are specific to the particular CPE device type. The customer must supply answers to those questions
-    (see [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig)).
-    The service merges the answers with a template of other information for the CPE device type. The following
-    operations return the merged content:
-
-      * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-      * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-      * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=oci_core_cpe_device_shape["test_cpe_device_shape"]["id"])
-    ```
-
-
-    :param str cpe_device_shape_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cpeDeviceShapeId'] = cpe_device_shape_id
@@ -140,28 +103,6 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[str] = None,
 def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpeDeviceShapeResult]:
     """
-    This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the detailed information about the specified CPE device type. This might include a set of questions
-    that are specific to the particular CPE device type. The customer must supply answers to those questions
-    (see [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig)).
-    The service merges the answers with a template of other information for the CPE device type. The following
-    operations return the merged content:
-
-      * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
-      * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
-      * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=oci_core_cpe_device_shape["test_cpe_device_shape"]["id"])
-    ```
-
-
-    :param str cpe_device_shape_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
+    Use this data source to access information about an existing resource.
     """
     ...

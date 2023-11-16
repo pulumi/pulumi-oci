@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The email address used by Oracle to send notifications regarding databases and infrastructure.
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
 
         [OutputConstructor]
-        private GetCloudExadataInfrastructureCustomerContactResult(string email)
+        private GetCloudExadataInfrastructureCustomerContactResult(string? email)
         {
             Email = email;
         }

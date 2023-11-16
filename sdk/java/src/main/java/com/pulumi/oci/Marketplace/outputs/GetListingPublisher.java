@@ -9,6 +9,8 @@ import com.pulumi.oci.Marketplace.outputs.GetListingPublisherLogo;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPublisher {
@@ -16,123 +18,123 @@ public final class GetListingPublisher {
      * @return The email address of the publisher.
      * 
      */
-    private String contactEmail;
+    private @Nullable String contactEmail;
     /**
      * @return The phone number of the publisher.
      * 
      */
-    private String contactPhone;
+    private @Nullable String contactPhone;
     /**
      * @return A description of the screenshot.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The address of the publisher&#39;s headquarters.
      * 
      */
-    private String hqAddress;
+    private @Nullable String hqAddress;
     /**
      * @return The unique identifier for the publisher.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Reference links.
      * 
      */
-    private List<GetListingPublisherLink> links;
+    private @Nullable List<GetListingPublisherLink> links;
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    private List<GetListingPublisherLogo> logos;
+    private @Nullable List<GetListingPublisherLogo> logos;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The publisher&#39;s website.
      * 
      */
-    private String websiteUrl;
+    private @Nullable String websiteUrl;
     /**
      * @return The year the publisher&#39;s company or organization was founded.
      * 
      */
-    private String yearFounded;
+    private @Nullable String yearFounded;
 
     private GetListingPublisher() {}
     /**
      * @return The email address of the publisher.
      * 
      */
-    public String contactEmail() {
-        return this.contactEmail;
+    public Optional<String> contactEmail() {
+        return Optional.ofNullable(this.contactEmail);
     }
     /**
      * @return The phone number of the publisher.
      * 
      */
-    public String contactPhone() {
-        return this.contactPhone;
+    public Optional<String> contactPhone() {
+        return Optional.ofNullable(this.contactPhone);
     }
     /**
      * @return A description of the screenshot.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The address of the publisher&#39;s headquarters.
      * 
      */
-    public String hqAddress() {
-        return this.hqAddress;
+    public Optional<String> hqAddress() {
+        return Optional.ofNullable(this.hqAddress);
     }
     /**
      * @return The unique identifier for the publisher.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Reference links.
      * 
      */
     public List<GetListingPublisherLink> links() {
-        return this.links;
+        return this.links == null ? List.of() : this.links;
     }
     /**
      * @return The model for upload data for images and icons.
      * 
      */
     public List<GetListingPublisherLogo> logos() {
-        return this.logos;
+        return this.logos == null ? List.of() : this.logos;
     }
     /**
      * @return Text that describes the resource.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The publisher&#39;s website.
      * 
      */
-    public String websiteUrl() {
-        return this.websiteUrl;
+    public Optional<String> websiteUrl() {
+        return Optional.ofNullable(this.websiteUrl);
     }
     /**
      * @return The year the publisher&#39;s company or organization was founded.
      * 
      */
-    public String yearFounded() {
-        return this.yearFounded;
+    public Optional<String> yearFounded() {
+        return Optional.ofNullable(this.yearFounded);
     }
 
     public static Builder builder() {
@@ -144,16 +146,16 @@ public final class GetListingPublisher {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contactEmail;
-        private String contactPhone;
-        private String description;
-        private String hqAddress;
-        private String id;
-        private List<GetListingPublisherLink> links;
-        private List<GetListingPublisherLogo> logos;
-        private String name;
-        private String websiteUrl;
-        private String yearFounded;
+        private @Nullable String contactEmail;
+        private @Nullable String contactPhone;
+        private @Nullable String description;
+        private @Nullable String hqAddress;
+        private @Nullable String id;
+        private @Nullable List<GetListingPublisherLink> links;
+        private @Nullable List<GetListingPublisherLogo> logos;
+        private @Nullable String name;
+        private @Nullable String websiteUrl;
+        private @Nullable String yearFounded;
         public Builder() {}
         public Builder(GetListingPublisher defaults) {
     	      Objects.requireNonNull(defaults);
@@ -170,59 +172,59 @@ public final class GetListingPublisher {
         }
 
         @CustomType.Setter
-        public Builder contactEmail(String contactEmail) {
-            this.contactEmail = Objects.requireNonNull(contactEmail);
+        public Builder contactEmail(@Nullable String contactEmail) {
+            this.contactEmail = contactEmail;
             return this;
         }
         @CustomType.Setter
-        public Builder contactPhone(String contactPhone) {
-            this.contactPhone = Objects.requireNonNull(contactPhone);
+        public Builder contactPhone(@Nullable String contactPhone) {
+            this.contactPhone = contactPhone;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder hqAddress(String hqAddress) {
-            this.hqAddress = Objects.requireNonNull(hqAddress);
+        public Builder hqAddress(@Nullable String hqAddress) {
+            this.hqAddress = hqAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder links(List<GetListingPublisherLink> links) {
-            this.links = Objects.requireNonNull(links);
+        public Builder links(@Nullable List<GetListingPublisherLink> links) {
+            this.links = links;
             return this;
         }
         public Builder links(GetListingPublisherLink... links) {
             return links(List.of(links));
         }
         @CustomType.Setter
-        public Builder logos(List<GetListingPublisherLogo> logos) {
-            this.logos = Objects.requireNonNull(logos);
+        public Builder logos(@Nullable List<GetListingPublisherLogo> logos) {
+            this.logos = logos;
             return this;
         }
         public Builder logos(GetListingPublisherLogo... logos) {
             return logos(List.of(logos));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder websiteUrl(String websiteUrl) {
-            this.websiteUrl = Objects.requireNonNull(websiteUrl);
+        public Builder websiteUrl(@Nullable String websiteUrl) {
+            this.websiteUrl = websiteUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder yearFounded(String yearFounded) {
-            this.yearFounded = Objects.requireNonNull(yearFounded);
+        public Builder yearFounded(@Nullable String yearFounded) {
+            this.yearFounded = yearFounded;
             return this;
         }
         public GetListingPublisher build() {

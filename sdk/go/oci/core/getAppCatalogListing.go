@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
@@ -60,23 +59,23 @@ type GetAppCatalogListingArgs struct {
 // A collection of values returned by getAppCatalogListing.
 type GetAppCatalogListingResult struct {
 	// Listing's contact URL.
-	ContactUrl string `pulumi:"contactUrl"`
+	ContactUrl *string `pulumi:"contactUrl"`
 	// Description of the listing.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// the region free ocid of the listing resource.
 	ListingId string `pulumi:"listingId"`
 	// Publisher's logo URL.
-	PublisherLogoUrl string `pulumi:"publisherLogoUrl"`
+	PublisherLogoUrl *string `pulumi:"publisherLogoUrl"`
 	// The name of the publisher who published this listing.
-	PublisherName string `pulumi:"publisherName"`
+	PublisherName *string `pulumi:"publisherName"`
 	// The short summary for the listing.
-	Summary string `pulumi:"summary"`
+	Summary *string `pulumi:"summary"`
 	// Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-	TimePublished string `pulumi:"timePublished"`
+	TimePublished *string `pulumi:"timePublished"`
 }
 
 func GetAppCatalogListingOutput(ctx *pulumi.Context, args GetAppCatalogListingOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogListingResultOutput {
@@ -117,30 +116,24 @@ func (o GetAppCatalogListingResultOutput) ToGetAppCatalogListingResultOutputWith
 	return o
 }
 
-func (o GetAppCatalogListingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogListingResult] {
-	return pulumix.Output[GetAppCatalogListingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Listing's contact URL.
-func (o GetAppCatalogListingResultOutput) ContactUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.ContactUrl }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) ContactUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.ContactUrl }).(pulumi.StringPtrOutput)
 }
 
 // Description of the listing.
-func (o GetAppCatalogListingResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetAppCatalogListingResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAppCatalogListingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // the region free ocid of the listing resource.
@@ -149,23 +142,23 @@ func (o GetAppCatalogListingResultOutput) ListingId() pulumi.StringOutput {
 }
 
 // Publisher's logo URL.
-func (o GetAppCatalogListingResultOutput) PublisherLogoUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.PublisherLogoUrl }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) PublisherLogoUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.PublisherLogoUrl }).(pulumi.StringPtrOutput)
 }
 
 // The name of the publisher who published this listing.
-func (o GetAppCatalogListingResultOutput) PublisherName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.PublisherName }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) PublisherName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.PublisherName }).(pulumi.StringPtrOutput)
 }
 
 // The short summary for the listing.
-func (o GetAppCatalogListingResultOutput) Summary() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.Summary }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) Summary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.Summary }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-func (o GetAppCatalogListingResultOutput) TimePublished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResult) string { return v.TimePublished }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResultOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResult) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
 }
 
 func init() {

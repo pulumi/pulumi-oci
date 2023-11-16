@@ -67,13 +67,13 @@ export interface GetCommitmentsResult {
     /**
      * The list of commitments.
      */
-    readonly commitments: outputs.OsubSubscription.GetCommitmentsCommitment[];
+    readonly commitments?: outputs.OsubSubscription.GetCommitmentsCommitment[];
     readonly compartmentId: string;
     readonly filters?: outputs.OsubSubscription.GetCommitmentsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly subscribedServiceId: string;
     readonly xOneGatewaySubscriptionId?: string;
     readonly xOneOriginRegion?: string;

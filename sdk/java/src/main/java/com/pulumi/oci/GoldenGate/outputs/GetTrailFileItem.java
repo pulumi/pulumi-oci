@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTrailFileItem {
@@ -16,47 +18,47 @@ public final class GetTrailFileItem {
      * @return array of consumer process names
      * 
      */
-    private List<String> consumers;
+    private @Nullable List<String> consumers;
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Maximum sequence number
      * 
      */
-    private String maxSequenceNumber;
+    private @Nullable String maxSequenceNumber;
     /**
      * @return Minimum sequence number
      * 
      */
-    private String minSequenceNumber;
+    private @Nullable String minSequenceNumber;
     /**
      * @return Number of sequences for a specific trail file
      * 
      */
-    private Integer numberOfSequences;
+    private @Nullable Integer numberOfSequences;
     /**
      * @return Producer Process Name if any.
      * 
      */
-    private String producer;
+    private @Nullable String producer;
     /**
      * @return The size of the backup stored in object storage (in bytes)
      * 
      */
-    private Double sizeInBytes;
+    private @Nullable Double sizeInBytes;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeLastUpdated;
+    private @Nullable String timeLastUpdated;
     /**
      * @return A Trail File identifier
      * 
      */
-    private String trailFileId;
+    private @Nullable String trailFileId;
 
     private GetTrailFileItem() {}
     /**
@@ -64,63 +66,63 @@ public final class GetTrailFileItem {
      * 
      */
     public List<String> consumers() {
-        return this.consumers;
+        return this.consumers == null ? List.of() : this.consumers;
     }
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Maximum sequence number
      * 
      */
-    public String maxSequenceNumber() {
-        return this.maxSequenceNumber;
+    public Optional<String> maxSequenceNumber() {
+        return Optional.ofNullable(this.maxSequenceNumber);
     }
     /**
      * @return Minimum sequence number
      * 
      */
-    public String minSequenceNumber() {
-        return this.minSequenceNumber;
+    public Optional<String> minSequenceNumber() {
+        return Optional.ofNullable(this.minSequenceNumber);
     }
     /**
      * @return Number of sequences for a specific trail file
      * 
      */
-    public Integer numberOfSequences() {
-        return this.numberOfSequences;
+    public Optional<Integer> numberOfSequences() {
+        return Optional.ofNullable(this.numberOfSequences);
     }
     /**
      * @return Producer Process Name if any.
      * 
      */
-    public String producer() {
-        return this.producer;
+    public Optional<String> producer() {
+        return Optional.ofNullable(this.producer);
     }
     /**
      * @return The size of the backup stored in object storage (in bytes)
      * 
      */
-    public Double sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<Double> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeLastUpdated() {
-        return this.timeLastUpdated;
+    public Optional<String> timeLastUpdated() {
+        return Optional.ofNullable(this.timeLastUpdated);
     }
     /**
      * @return A Trail File identifier
      * 
      */
-    public String trailFileId() {
-        return this.trailFileId;
+    public Optional<String> trailFileId() {
+        return Optional.ofNullable(this.trailFileId);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetTrailFileItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> consumers;
-        private String displayName;
-        private String maxSequenceNumber;
-        private String minSequenceNumber;
-        private Integer numberOfSequences;
-        private String producer;
-        private Double sizeInBytes;
-        private String timeLastUpdated;
-        private String trailFileId;
+        private @Nullable List<String> consumers;
+        private @Nullable String displayName;
+        private @Nullable String maxSequenceNumber;
+        private @Nullable String minSequenceNumber;
+        private @Nullable Integer numberOfSequences;
+        private @Nullable String producer;
+        private @Nullable Double sizeInBytes;
+        private @Nullable String timeLastUpdated;
+        private @Nullable String trailFileId;
         public Builder() {}
         public Builder(GetTrailFileItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,51 +158,51 @@ public final class GetTrailFileItem {
         }
 
         @CustomType.Setter
-        public Builder consumers(List<String> consumers) {
-            this.consumers = Objects.requireNonNull(consumers);
+        public Builder consumers(@Nullable List<String> consumers) {
+            this.consumers = consumers;
             return this;
         }
         public Builder consumers(String... consumers) {
             return consumers(List.of(consumers));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder maxSequenceNumber(String maxSequenceNumber) {
-            this.maxSequenceNumber = Objects.requireNonNull(maxSequenceNumber);
+        public Builder maxSequenceNumber(@Nullable String maxSequenceNumber) {
+            this.maxSequenceNumber = maxSequenceNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder minSequenceNumber(String minSequenceNumber) {
-            this.minSequenceNumber = Objects.requireNonNull(minSequenceNumber);
+        public Builder minSequenceNumber(@Nullable String minSequenceNumber) {
+            this.minSequenceNumber = minSequenceNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder numberOfSequences(Integer numberOfSequences) {
-            this.numberOfSequences = Objects.requireNonNull(numberOfSequences);
+        public Builder numberOfSequences(@Nullable Integer numberOfSequences) {
+            this.numberOfSequences = numberOfSequences;
             return this;
         }
         @CustomType.Setter
-        public Builder producer(String producer) {
-            this.producer = Objects.requireNonNull(producer);
+        public Builder producer(@Nullable String producer) {
+            this.producer = producer;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(Double sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable Double sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+        public Builder timeLastUpdated(@Nullable String timeLastUpdated) {
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder trailFileId(String trailFileId) {
-            this.trailFileId = Objects.requireNonNull(trailFileId);
+        public Builder trailFileId(@Nullable String trailFileId) {
+            this.trailFileId = trailFileId;
             return this;
         }
         public GetTrailFileItem build() {

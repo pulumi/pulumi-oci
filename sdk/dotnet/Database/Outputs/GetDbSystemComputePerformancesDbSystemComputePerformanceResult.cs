@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The shape of the DB system.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
 
         [OutputConstructor]
         private GetDbSystemComputePerformancesDbSystemComputePerformanceResult(
             ImmutableArray<Outputs.GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListResult> computePerformanceLists,
 
-            string shape)
+            string? shape)
         {
             ComputePerformanceLists = computePerformanceLists;
             Shape = shape;

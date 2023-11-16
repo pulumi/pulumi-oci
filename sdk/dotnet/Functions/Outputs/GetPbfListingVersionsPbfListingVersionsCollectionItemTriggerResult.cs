@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult(string name)
+        private GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult(string? name)
         {
             Name = name;
         }

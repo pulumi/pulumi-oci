@@ -49,39 +49,27 @@ class GetCloudVmClusterIormConfigResult:
 
     @property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetCloudVmClusterIormConfigDbPlanResult']:
-        """
-        An array of IORM settings for all the database in the cloud vm cluster.
-        """
+    def db_plans(self) -> Optional[Sequence['outputs.GetCloudVmClusterIormConfigDbPlanResult']]:
         return pulumi.get(self, "db_plans")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current `lifecycleState`.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def objective(self) -> str:
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
+    def objective(self) -> Optional[str]:
         return pulumi.get(self, "objective")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of IORM configuration for the cloud vm cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -102,24 +90,7 @@ class AwaitableGetCloudVmClusterIormConfigResult(GetCloudVmClusterIormConfigResu
 def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudVmClusterIormConfigResult:
     """
-    This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the IORM configuration settings for the specified Cloud Vm Cluster.
-    All Exadata service instances have default IORM settings.
-
-    The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"])
-    ```
-
-
-    :param str cloud_vm_cluster_id: The cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudVmClusterId'] = cloud_vm_cluster_id
@@ -139,23 +110,6 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[str] = None,
 def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudVmClusterIormConfigResult]:
     """
-    This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the IORM configuration settings for the specified Cloud Vm Cluster.
-    All Exadata service instances have default IORM settings.
-
-    The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"])
-    ```
-
-
-    :param str cloud_vm_cluster_id: The cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

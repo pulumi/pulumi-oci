@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Streaming.Outputs
         /// <summary>
         /// Life cycle State of the custom key
         /// </summary>
-        public readonly string KeyState;
+        public readonly string? KeyState;
         /// <summary>
         /// Custom Encryption Key (Master Key) ocid.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
 
         [OutputConstructor]
         private GetStreamPoolCustomEncryptionKeyResult(
-            string keyState,
+            string? keyState,
 
-            string kmsKeyId)
+            string? kmsKeyId)
         {
             KeyState = keyState;
             KmsKeyId = kmsKeyId;

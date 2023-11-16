@@ -35,7 +35,7 @@ public final class GetMediaAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The ID of the senior most asset from which this asset is derived.
      * 
@@ -45,7 +45,7 @@ public final class GetMediaAssetsResult {
      * @return The list of media_asset_collection.
      * 
      */
-    private List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections;
+    private @Nullable List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections;
     /**
      * @return The ID of the MediaWorkflowJob used to produce this asset.
      * 
@@ -114,8 +114,8 @@ public final class GetMediaAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The ID of the senior most asset from which this asset is derived.
@@ -129,7 +129,7 @@ public final class GetMediaAssetsResult {
      * 
      */
     public List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections() {
-        return this.mediaAssetCollections;
+        return this.mediaAssetCollections == null ? List.of() : this.mediaAssetCollections;
     }
     /**
      * @return The ID of the MediaWorkflowJob used to produce this asset.
@@ -195,9 +195,9 @@ public final class GetMediaAssetsResult {
         private @Nullable String displayName;
         private @Nullable String distributionChannelId;
         private @Nullable List<GetMediaAssetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String masterMediaAssetId;
-        private List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections;
+        private @Nullable List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections;
         private @Nullable String mediaWorkflowJobId;
         private @Nullable String object;
         private @Nullable String parentMediaAssetId;
@@ -254,8 +254,8 @@ public final class GetMediaAssetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -264,8 +264,8 @@ public final class GetMediaAssetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaAssetCollections(List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections) {
-            this.mediaAssetCollections = Objects.requireNonNull(mediaAssetCollections);
+        public Builder mediaAssetCollections(@Nullable List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections) {
+            this.mediaAssetCollections = mediaAssetCollections;
             return this;
         }
         public Builder mediaAssetCollections(GetMediaAssetsMediaAssetCollection... mediaAssetCollections) {

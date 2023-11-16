@@ -96,31 +96,31 @@ export class CrossConnectGroup extends pulumi.CustomResource {
     /**
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
      */
-    public readonly customerReferenceName!: pulumi.Output<string>;
+    public readonly customerReferenceName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
-    public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectGroupMacsecProperties>;
+    public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectGroupMacsecProperties | undefined>;
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      */
-    public /*out*/ readonly ociLogicalDeviceName!: pulumi.Output<string>;
+    public /*out*/ readonly ociLogicalDeviceName!: pulumi.Output<string | undefined>;
     /**
      * The FastConnect device that terminates the physical connection.
      */
-    public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string>;
+    public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether or not MACsec is enabled.
      *
@@ -128,11 +128,11 @@ export class CrossConnectGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CrossConnectGroup resource with the given unique name, arguments, and options.

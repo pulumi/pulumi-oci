@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceScheduledTaskResult {
@@ -18,37 +20,37 @@ public final class GetNamespaceScheduledTaskResult {
      * @return Action for scheduled task.
      * 
      */
-    private List<GetNamespaceScheduledTaskAction> actions;
+    private @Nullable List<GetNamespaceScheduledTaskAction> actions;
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Discriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
@@ -58,48 +60,48 @@ public final class GetNamespaceScheduledTaskResult {
      * @return Number of execution occurrences.
      * 
      */
-    private String numOccurrences;
+    private @Nullable String numOccurrences;
     /**
      * @return The ManagementSavedSearch id [OCID] utilized in the action.
      * 
      */
-    private String savedSearchId;
+    private @Nullable String savedSearchId;
     private String scheduledTaskId;
     /**
      * @return Schedules.
      * 
      */
-    private List<GetNamespaceScheduledTaskSchedule> schedules;
+    private @Nullable List<GetNamespaceScheduledTaskSchedule> schedules;
     /**
      * @return The current state of the scheduled task.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      * 
      */
-    private String taskStatus;
+    private @Nullable String taskStatus;
     /**
      * @return Task type.
      * 
      */
-    private String taskType;
+    private @Nullable String taskType;
     /**
      * @return The date and time the scheduled task was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the scheduled task was last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
-    private String workRequestId;
+    private @Nullable String workRequestId;
 
     private GetNamespaceScheduledTaskResult() {}
     /**
@@ -107,49 +109,49 @@ public final class GetNamespaceScheduledTaskResult {
      * 
      */
     public List<GetNamespaceScheduledTaskAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Discriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
@@ -162,15 +164,15 @@ public final class GetNamespaceScheduledTaskResult {
      * @return Number of execution occurrences.
      * 
      */
-    public String numOccurrences() {
-        return this.numOccurrences;
+    public Optional<String> numOccurrences() {
+        return Optional.ofNullable(this.numOccurrences);
     }
     /**
      * @return The ManagementSavedSearch id [OCID] utilized in the action.
      * 
      */
-    public String savedSearchId() {
-        return this.savedSearchId;
+    public Optional<String> savedSearchId() {
+        return Optional.ofNullable(this.savedSearchId);
     }
     public String scheduledTaskId() {
         return this.scheduledTaskId;
@@ -180,49 +182,49 @@ public final class GetNamespaceScheduledTaskResult {
      * 
      */
     public List<GetNamespaceScheduledTaskSchedule> schedules() {
-        return this.schedules;
+        return this.schedules == null ? List.of() : this.schedules;
     }
     /**
      * @return The current state of the scheduled task.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      * 
      */
-    public String taskStatus() {
-        return this.taskStatus;
+    public Optional<String> taskStatus() {
+        return Optional.ofNullable(this.taskStatus);
     }
     /**
      * @return Task type.
      * 
      */
-    public String taskType() {
-        return this.taskType;
+    public Optional<String> taskType() {
+        return Optional.ofNullable(this.taskType);
     }
     /**
      * @return The date and time the scheduled task was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the scheduled task was last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      * 
      */
-    public String workRequestId() {
-        return this.workRequestId;
+    public Optional<String> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     public static Builder builder() {
@@ -234,24 +236,24 @@ public final class GetNamespaceScheduledTaskResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceScheduledTaskAction> actions;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String kind;
+        private @Nullable List<GetNamespaceScheduledTaskAction> actions;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String kind;
         private String namespace;
-        private String numOccurrences;
-        private String savedSearchId;
+        private @Nullable String numOccurrences;
+        private @Nullable String savedSearchId;
         private String scheduledTaskId;
-        private List<GetNamespaceScheduledTaskSchedule> schedules;
-        private String state;
-        private String taskStatus;
-        private String taskType;
-        private String timeCreated;
-        private String timeUpdated;
-        private String workRequestId;
+        private @Nullable List<GetNamespaceScheduledTaskSchedule> schedules;
+        private @Nullable String state;
+        private @Nullable String taskStatus;
+        private @Nullable String taskType;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetNamespaceScheduledTaskResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -276,41 +278,41 @@ public final class GetNamespaceScheduledTaskResult {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetNamespaceScheduledTaskAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetNamespaceScheduledTaskAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetNamespaceScheduledTaskAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
@@ -319,13 +321,13 @@ public final class GetNamespaceScheduledTaskResult {
             return this;
         }
         @CustomType.Setter
-        public Builder numOccurrences(String numOccurrences) {
-            this.numOccurrences = Objects.requireNonNull(numOccurrences);
+        public Builder numOccurrences(@Nullable String numOccurrences) {
+            this.numOccurrences = numOccurrences;
             return this;
         }
         @CustomType.Setter
-        public Builder savedSearchId(String savedSearchId) {
-            this.savedSearchId = Objects.requireNonNull(savedSearchId);
+        public Builder savedSearchId(@Nullable String savedSearchId) {
+            this.savedSearchId = savedSearchId;
             return this;
         }
         @CustomType.Setter
@@ -334,41 +336,41 @@ public final class GetNamespaceScheduledTaskResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schedules(List<GetNamespaceScheduledTaskSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+        public Builder schedules(@Nullable List<GetNamespaceScheduledTaskSchedule> schedules) {
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetNamespaceScheduledTaskSchedule... schedules) {
             return schedules(List.of(schedules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder taskStatus(String taskStatus) {
-            this.taskStatus = Objects.requireNonNull(taskStatus);
+        public Builder taskStatus(@Nullable String taskStatus) {
+            this.taskStatus = taskStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder taskType(String taskType) {
-            this.taskType = Objects.requireNonNull(taskType);
+        public Builder taskType(@Nullable String taskType) {
+            this.taskType = taskType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+        public Builder workRequestId(@Nullable String workRequestId) {
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetNamespaceScheduledTaskResult build() {

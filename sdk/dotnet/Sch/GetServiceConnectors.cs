@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Sch
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of service_connector_collection.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Sch
 
             ImmutableArray<Outputs.GetServiceConnectorsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionResult> serviceConnectorCollections,
 

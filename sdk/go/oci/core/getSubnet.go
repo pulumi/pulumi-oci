@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
@@ -60,50 +59,50 @@ type LookupSubnetArgs struct {
 // A collection of values returned by getSubnet.
 type LookupSubnetResult struct {
 	// The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The subnet's CIDR block.  Example: `10.0.1.0/24`
-	CidrBlock string `pulumi:"cidrBlock"`
+	CidrBlock *string `pulumi:"cidrBlock"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
-	DhcpOptionsId string `pulumi:"dhcpOptionsId"`
+	DhcpOptionsId *string `pulumi:"dhcpOptionsId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-	DnsLabel string `pulumi:"dnsLabel"`
+	DnsLabel *string `pulumi:"dnsLabel"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
-	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
+	Ipv6cidrBlock *string `pulumi:"ipv6cidrBlock"`
 	// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
 	Ipv6cidrBlocks []string `pulumi:"ipv6cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-	Ipv6virtualRouterIp string `pulumi:"ipv6virtualRouterIp"`
+	Ipv6virtualRouterIp *string `pulumi:"ipv6virtualRouterIp"`
 	// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-	ProhibitInternetIngress bool `pulumi:"prohibitInternetIngress"`
+	ProhibitInternetIngress *bool `pulumi:"prohibitInternetIngress"`
 	// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
-	ProhibitPublicIpOnVnic bool `pulumi:"prohibitPublicIpOnVnic"`
+	ProhibitPublicIpOnVnic *bool `pulumi:"prohibitPublicIpOnVnic"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
-	RouteTableId string `pulumi:"routeTableId"`
+	RouteTableId *string `pulumi:"routeTableId"`
 	// The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
 	SecurityListIds []string `pulumi:"securityListIds"`
 	// The subnet's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-	SubnetDomainName string `pulumi:"subnetDomainName"`
-	SubnetId         string `pulumi:"subnetId"`
+	SubnetDomainName *string `pulumi:"subnetDomainName"`
+	SubnetId         string  `pulumi:"subnetId"`
 	// The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 	// The IP address of the virtual router.  Example: `10.0.14.1`
-	VirtualRouterIp string `pulumi:"virtualRouterIp"`
+	VirtualRouterIp *string `pulumi:"virtualRouterIp"`
 	// The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
-	VirtualRouterMac string `pulumi:"virtualRouterMac"`
+	VirtualRouterMac *string `pulumi:"virtualRouterMac"`
 }
 
 func LookupSubnetOutput(ctx *pulumi.Context, args LookupSubnetOutputArgs, opts ...pulumi.InvokeOption) LookupSubnetResultOutput {
@@ -144,25 +143,19 @@ func (o LookupSubnetResultOutput) ToLookupSubnetResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupSubnetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubnetResult] {
-	return pulumix.Output[LookupSubnetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
-func (o LookupSubnetResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The subnet's CIDR block.  Example: `10.0.1.0/24`
-func (o LookupSubnetResultOutput) CidrBlock() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.CidrBlock }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) CidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.CidrBlock }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
-func (o LookupSubnetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -171,18 +164,18 @@ func (o LookupSubnetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
-func (o LookupSubnetResultOutput) DhcpOptionsId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.DhcpOptionsId }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) DhcpOptionsId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.DhcpOptionsId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupSubnetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-func (o LookupSubnetResultOutput) DnsLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.DnsLabel }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) DnsLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.DnsLabel }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -191,13 +184,13 @@ func (o LookupSubnetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-func (o LookupSubnetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
-func (o LookupSubnetResultOutput) Ipv6cidrBlock() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) Ipv6cidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.Ipv6cidrBlock }).(pulumi.StringPtrOutput)
 }
 
 // The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
@@ -206,23 +199,23 @@ func (o LookupSubnetResultOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {
 }
 
 // For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
-func (o LookupSubnetResultOutput) Ipv6virtualRouterIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.Ipv6virtualRouterIp }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) Ipv6virtualRouterIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.Ipv6virtualRouterIp }).(pulumi.StringPtrOutput)
 }
 
 // Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
-func (o LookupSubnetResultOutput) ProhibitInternetIngress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSubnetResult) bool { return v.ProhibitInternetIngress }).(pulumi.BoolOutput)
+func (o LookupSubnetResultOutput) ProhibitInternetIngress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *bool { return v.ProhibitInternetIngress }).(pulumi.BoolPtrOutput)
 }
 
 // Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
-func (o LookupSubnetResultOutput) ProhibitPublicIpOnVnic() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSubnetResult) bool { return v.ProhibitPublicIpOnVnic }).(pulumi.BoolOutput)
+func (o LookupSubnetResultOutput) ProhibitPublicIpOnVnic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *bool { return v.ProhibitPublicIpOnVnic }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
-func (o LookupSubnetResultOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.RouteTableId }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
@@ -231,13 +224,13 @@ func (o LookupSubnetResultOutput) SecurityListIds() pulumi.StringArrayOutput {
 }
 
 // The subnet's current state.
-func (o LookupSubnetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
-func (o LookupSubnetResultOutput) SubnetDomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.SubnetDomainName }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) SubnetDomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.SubnetDomainName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSubnetResultOutput) SubnetId() pulumi.StringOutput {
@@ -245,23 +238,23 @@ func (o LookupSubnetResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupSubnetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
-func (o LookupSubnetResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of the virtual router.  Example: `10.0.14.1`
-func (o LookupSubnetResultOutput) VirtualRouterIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.VirtualRouterIp }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) VirtualRouterIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.VirtualRouterIp }).(pulumi.StringPtrOutput)
 }
 
 // The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
-func (o LookupSubnetResultOutput) VirtualRouterMac() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubnetResult) string { return v.VirtualRouterMac }).(pulumi.StringOutput)
+func (o LookupSubnetResultOutput) VirtualRouterMac() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubnetResult) *string { return v.VirtualRouterMac }).(pulumi.StringPtrOutput)
 }
 
 func init() {

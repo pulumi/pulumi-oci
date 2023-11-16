@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource that the VNIC is attached to (for example, a Compute instance).
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The date and time the VNIC was added to the network security group, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeAssociated;
+        public readonly string? TimeAssociated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         /// </summary>
-        public readonly string VnicId;
+        public readonly string? VnicId;
 
         [OutputConstructor]
         private GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnicResult(
-            string resourceId,
+            string? resourceId,
 
-            string timeAssociated,
+            string? timeAssociated,
 
-            string vnicId)
+            string? vnicId)
         {
             ResourceId = resourceId;
             TimeAssociated = timeAssociated;

@@ -22,12 +22,12 @@ public final class GetMaskingReportsMaskedColumnResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of masking column summary objects.
      * 
      */
-    private List<GetMaskingReportsMaskedColumnItem> items;
+    private @Nullable List<GetMaskingReportsMaskedColumnItem> items;
     /**
      * @return The masking group of the masked column.
      * 
@@ -67,15 +67,15 @@ public final class GetMaskingReportsMaskedColumnResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of masking column summary objects.
      * 
      */
     public List<GetMaskingReportsMaskedColumnItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The masking group of the masked column.
@@ -126,8 +126,8 @@ public final class GetMaskingReportsMaskedColumnResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> columnNames;
-        private String id;
-        private List<GetMaskingReportsMaskedColumnItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetMaskingReportsMaskedColumnItem> items;
         private @Nullable List<String> maskingColumnGroups;
         private String maskingReportId;
         private @Nullable List<String> objectTypes;
@@ -157,13 +157,13 @@ public final class GetMaskingReportsMaskedColumnResult {
             return columnNames(List.of(columnNames));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetMaskingReportsMaskedColumnItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingReportsMaskedColumnItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingReportsMaskedColumnItem... items) {

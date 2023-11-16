@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of region_subscriptions.
         /// </summary>
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Identity
         private GetRegionSubscriptionsResult(
             ImmutableArray<Outputs.GetRegionSubscriptionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRegionSubscriptionsRegionSubscriptionResult> regionSubscriptions,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,44 +59,44 @@ type GetMaskingReportArgs struct {
 // A collection of values returned by getMaskingReport.
 type GetMaskingReportResult struct {
 	// The OCID of the compartment that contains the masking report.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if the temporary tables created during the masking operation were dropped after masking.
-	IsDropTempTablesEnabled bool `pulumi:"isDropTempTablesEnabled"`
+	IsDropTempTablesEnabled *bool `pulumi:"isDropTempTablesEnabled"`
 	// Indicates if redo logging was enabled during the masking operation.
-	IsRedoLoggingEnabled bool `pulumi:"isRedoLoggingEnabled"`
+	IsRedoLoggingEnabled *bool `pulumi:"isRedoLoggingEnabled"`
 	// Indicates if statistics gathering was enabled during the masking operation.
-	IsRefreshStatsEnabled bool `pulumi:"isRefreshStatsEnabled"`
+	IsRefreshStatsEnabled *bool `pulumi:"isRefreshStatsEnabled"`
 	// The OCID of the masking policy used.
-	MaskingPolicyId string `pulumi:"maskingPolicyId"`
-	MaskingReportId string `pulumi:"maskingReportId"`
+	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
+	MaskingReportId string  `pulumi:"maskingReportId"`
 	// The OCID of the masking work request that resulted in this masking report.
-	MaskingWorkRequestId string `pulumi:"maskingWorkRequestId"`
+	MaskingWorkRequestId *string `pulumi:"maskingWorkRequestId"`
 	// Indicates if parallel execution was enabled during the masking operation.
-	ParallelDegree string `pulumi:"parallelDegree"`
+	ParallelDegree *string `pulumi:"parallelDegree"`
 	// Indicates how invalid objects were recompiled post the masking operation.
-	Recompile string `pulumi:"recompile"`
+	Recompile *string `pulumi:"recompile"`
 	// The current state of the masking report.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the target database masked.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeMaskingFinished string `pulumi:"timeMaskingFinished"`
+	TimeMaskingFinished *string `pulumi:"timeMaskingFinished"`
 	// The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-	TimeMaskingStarted string `pulumi:"timeMaskingStarted"`
+	TimeMaskingStarted *string `pulumi:"timeMaskingStarted"`
 	// The total number of masked columns.
-	TotalMaskedColumns string `pulumi:"totalMaskedColumns"`
+	TotalMaskedColumns *string `pulumi:"totalMaskedColumns"`
 	// The total number of unique objects (tables and editioning views) that contain the masked columns.
-	TotalMaskedObjects string `pulumi:"totalMaskedObjects"`
+	TotalMaskedObjects *string `pulumi:"totalMaskedObjects"`
 	// The total number of unique schemas that contain the masked columns.
-	TotalMaskedSchemas string `pulumi:"totalMaskedSchemas"`
+	TotalMaskedSchemas *string `pulumi:"totalMaskedSchemas"`
 	// The total number of unique sensitive types associated with the masked columns.
-	TotalMaskedSensitiveTypes string `pulumi:"totalMaskedSensitiveTypes"`
+	TotalMaskedSensitiveTypes *string `pulumi:"totalMaskedSensitiveTypes"`
 	// The total number of masked values.
-	TotalMaskedValues string `pulumi:"totalMaskedValues"`
+	TotalMaskedValues *string `pulumi:"totalMaskedValues"`
 }
 
 func GetMaskingReportOutput(ctx *pulumi.Context, args GetMaskingReportOutputArgs, opts ...pulumi.InvokeOption) GetMaskingReportResultOutput {
@@ -138,40 +137,34 @@ func (o GetMaskingReportResultOutput) ToGetMaskingReportResultOutputWithContext(
 	return o
 }
 
-func (o GetMaskingReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportResult] {
-	return pulumix.Output[GetMaskingReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the masking report.
-func (o GetMaskingReportResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the temporary tables created during the masking operation were dropped after masking.
-func (o GetMaskingReportResultOutput) IsDropTempTablesEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) bool { return v.IsDropTempTablesEnabled }).(pulumi.BoolOutput)
+func (o GetMaskingReportResultOutput) IsDropTempTablesEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *bool { return v.IsDropTempTablesEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if redo logging was enabled during the masking operation.
-func (o GetMaskingReportResultOutput) IsRedoLoggingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) bool { return v.IsRedoLoggingEnabled }).(pulumi.BoolOutput)
+func (o GetMaskingReportResultOutput) IsRedoLoggingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *bool { return v.IsRedoLoggingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if statistics gathering was enabled during the masking operation.
-func (o GetMaskingReportResultOutput) IsRefreshStatsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolOutput)
+func (o GetMaskingReportResultOutput) IsRefreshStatsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *bool { return v.IsRefreshStatsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the masking policy used.
-func (o GetMaskingReportResultOutput) MaskingPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingPolicyId }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) MaskingPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.MaskingPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMaskingReportResultOutput) MaskingReportId() pulumi.StringOutput {
@@ -179,68 +172,68 @@ func (o GetMaskingReportResultOutput) MaskingReportId() pulumi.StringOutput {
 }
 
 // The OCID of the masking work request that resulted in this masking report.
-func (o GetMaskingReportResultOutput) MaskingWorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.MaskingWorkRequestId }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) MaskingWorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.MaskingWorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if parallel execution was enabled during the masking operation.
-func (o GetMaskingReportResultOutput) ParallelDegree() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.ParallelDegree }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) ParallelDegree() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.ParallelDegree }).(pulumi.StringPtrOutput)
 }
 
 // Indicates how invalid objects were recompiled post the masking operation.
-func (o GetMaskingReportResultOutput) Recompile() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.Recompile }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) Recompile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.Recompile }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the masking report.
-func (o GetMaskingReportResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database masked.
-func (o GetMaskingReportResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetMaskingReportResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o GetMaskingReportResultOutput) TimeMaskingFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TimeMaskingFinished }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TimeMaskingFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TimeMaskingFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
-func (o GetMaskingReportResultOutput) TimeMaskingStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TimeMaskingStarted }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TimeMaskingStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TimeMaskingStarted }).(pulumi.StringPtrOutput)
 }
 
 // The total number of masked columns.
-func (o GetMaskingReportResultOutput) TotalMaskedColumns() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalMaskedColumns }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TotalMaskedColumns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TotalMaskedColumns }).(pulumi.StringPtrOutput)
 }
 
 // The total number of unique objects (tables and editioning views) that contain the masked columns.
-func (o GetMaskingReportResultOutput) TotalMaskedObjects() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalMaskedObjects }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TotalMaskedObjects() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TotalMaskedObjects }).(pulumi.StringPtrOutput)
 }
 
 // The total number of unique schemas that contain the masked columns.
-func (o GetMaskingReportResultOutput) TotalMaskedSchemas() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalMaskedSchemas }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TotalMaskedSchemas() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TotalMaskedSchemas }).(pulumi.StringPtrOutput)
 }
 
 // The total number of unique sensitive types associated with the masked columns.
-func (o GetMaskingReportResultOutput) TotalMaskedSensitiveTypes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalMaskedSensitiveTypes }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TotalMaskedSensitiveTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TotalMaskedSensitiveTypes }).(pulumi.StringPtrOutput)
 }
 
 // The total number of masked values.
-func (o GetMaskingReportResultOutput) TotalMaskedValues() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportResult) string { return v.TotalMaskedValues }).(pulumi.StringOutput)
+func (o GetMaskingReportResultOutput) TotalMaskedValues() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportResult) *string { return v.TotalMaskedValues }).(pulumi.StringPtrOutput)
 }
 
 func init() {

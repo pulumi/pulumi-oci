@@ -72,7 +72,7 @@ export class Queue extends pulumi.CustomResource {
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
      */
-    public readonly channelConsumptionLimit!: pulumi.Output<number>;
+    public readonly channelConsumptionLimit!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
@@ -80,15 +80,15 @@ export class Queue extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      */
-    public readonly customEncryptionKeyId!: pulumi.Output<string>;
+    public readonly customEncryptionKeyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      */
-    public readonly deadLetterQueueDeliveryCount!: pulumi.Output<number>;
+    public readonly deadLetterQueueDeliveryCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The user-friendly name of the queue.
      */
@@ -96,45 +96,45 @@ export class Queue extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Any additional details about the current state of the queue.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The endpoint to use to consume or publish messages in the queue.
      */
-    public /*out*/ readonly messagesEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly messagesEndpoint!: pulumi.Output<string | undefined>;
     public readonly purgeQueue!: pulumi.Output<boolean | undefined>;
     public readonly purgeType!: pulumi.Output<string | undefined>;
     /**
      * The retention period of messages in the queue, in seconds.
      */
-    public readonly retentionInSeconds!: pulumi.Output<number>;
+    public readonly retentionInSeconds!: pulumi.Output<number | undefined>;
     /**
      * The current state of the queue.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The default polling timeout of the messages in the queue, in seconds.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    public readonly timeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      */
-    public readonly visibilityInSeconds!: pulumi.Output<number>;
+    public readonly visibilityInSeconds!: pulumi.Output<number | undefined>;
 
     /**
      * Create a Queue resource with the given unique name, arguments, and options.

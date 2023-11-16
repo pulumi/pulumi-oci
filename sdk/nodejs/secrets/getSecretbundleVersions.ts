@@ -50,11 +50,11 @@ export interface GetSecretbundleVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of secret_bundle_versions.
      */
-    readonly secretBundleVersions: outputs.Secrets.GetSecretbundleVersionsSecretBundleVersion[];
+    readonly secretBundleVersions?: outputs.Secrets.GetSecretbundleVersionsSecretBundleVersion[];
     /**
      * The OCID of the secret.
      */

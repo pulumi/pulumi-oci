@@ -85,26 +85,26 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of object findings related to indexes.
      */
-    readonly indexFindings: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding[];
+    readonly indexFindings?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding[];
     readonly managedDatabaseId: string;
     /**
      * The list of object findings related to statistics.
      */
-    readonly objectStatFindings: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding[];
+    readonly objectStatFindings?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding[];
     readonly searchPeriod?: string;
     readonly sqlTuningAdvisorTaskId: string;
     /**
      * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      */
-    readonly statistics: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic[];
+    readonly statistics?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic[];
     /**
      * The general information regarding the SQL Tuning Advisor task.
      */
-    readonly taskInfos: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo[];
+    readonly taskInfos?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo[];
     readonly timeGreaterThanOrEqualTo?: string;
     readonly timeLessThanOrEqualTo?: string;
 }

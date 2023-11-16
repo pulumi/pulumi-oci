@@ -173,172 +173,112 @@ class GetExadataInfrastructureResult:
 
     @property
     @pulumi.getter(name="activatedStorageCount")
-    def activated_storage_count(self) -> int:
-        """
-        The requested number of additional storage servers activated for the Exadata infrastructure.
-        """
+    def activated_storage_count(self) -> Optional[int]:
         return pulumi.get(self, "activated_storage_count")
 
     @property
     @pulumi.getter(name="activationFile")
-    def activation_file(self) -> str:
+    def activation_file(self) -> Optional[str]:
         return pulumi.get(self, "activation_file")
 
     @property
     @pulumi.getter(name="additionalComputeCount")
-    def additional_compute_count(self) -> int:
-        """
-        The requested number of additional compute servers for the Exadata infrastructure.
-        """
+    def additional_compute_count(self) -> Optional[int]:
         return pulumi.get(self, "additional_compute_count")
 
     @property
     @pulumi.getter(name="additionalComputeSystemModel")
-    def additional_compute_system_model(self) -> str:
-        """
-        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
-        """
+    def additional_compute_system_model(self) -> Optional[str]:
         return pulumi.get(self, "additional_compute_system_model")
 
     @property
     @pulumi.getter(name="additionalStorageCount")
-    def additional_storage_count(self) -> int:
-        """
-        The requested number of additional storage servers for the Exadata infrastructure.
-        """
+    def additional_storage_count(self) -> Optional[int]:
         return pulumi.get(self, "additional_storage_count")
 
     @property
     @pulumi.getter(name="adminNetworkCidr")
-    def admin_network_cidr(self) -> str:
-        """
-        The CIDR block for the Exadata administration network.
-        """
+    def admin_network_cidr(self) -> Optional[str]:
         return pulumi.get(self, "admin_network_cidr")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The name of the availability domain that the Exadata infrastructure is located in.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="cloudControlPlaneServer1")
-    def cloud_control_plane_server1(self) -> str:
-        """
-        The IP address for the first control plane server.
-        """
+    def cloud_control_plane_server1(self) -> Optional[str]:
         return pulumi.get(self, "cloud_control_plane_server1")
 
     @property
     @pulumi.getter(name="cloudControlPlaneServer2")
-    def cloud_control_plane_server2(self) -> str:
-        """
-        The IP address for the second control plane server.
-        """
+    def cloud_control_plane_server2(self) -> Optional[str]:
         return pulumi.get(self, "cloud_control_plane_server2")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> int:
-        """
-        The number of compute servers for the Exadata infrastructure.
-        """
+    def compute_count(self) -> Optional[int]:
         return pulumi.get(self, "compute_count")
 
     @property
     @pulumi.getter
-    def contacts(self) -> Sequence['outputs.GetExadataInfrastructureContactResult']:
-        """
-        The list of contacts for the Exadata infrastructure.
-        """
+    def contacts(self) -> Optional[Sequence['outputs.GetExadataInfrastructureContactResult']]:
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter(name="corporateProxy")
-    def corporate_proxy(self) -> str:
-        """
-        The corporate network proxy for access to the control plane network.
-        """
+    def corporate_proxy(self) -> Optional[str]:
         return pulumi.get(self, "corporate_proxy")
 
     @property
     @pulumi.getter(name="cpusEnabled")
-    def cpus_enabled(self) -> int:
-        """
-        The number of enabled CPU cores.
-        """
+    def cpus_enabled(self) -> Optional[int]:
         return pulumi.get(self, "cpus_enabled")
 
     @property
     @pulumi.getter(name="createAsync")
-    def create_async(self) -> bool:
+    def create_async(self) -> Optional[bool]:
         return pulumi.get(self, "create_async")
 
     @property
     @pulumi.getter(name="csiNumber")
-    def csi_number(self) -> str:
-        """
-        The CSI Number of the Exadata infrastructure.
-        """
+    def csi_number(self) -> Optional[str]:
         return pulumi.get(self, "csi_number")
 
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> float:
-        """
-        Size, in terabytes, of the DATA disk group.
-        """
+    def data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The local node storage allocated in GBs.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServerVersion")
-    def db_server_version(self) -> str:
-        """
-        The software version of the database servers (dom0) in the Exadata infrastructure.
-        """
+    def db_server_version(self) -> Optional[str]:
         return pulumi.get(self, "db_server_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsServers")
-    def dns_servers(self) -> Sequence[str]:
-        """
-        The list of DNS server IP addresses. Maximum of 3 allowed.
-        """
+    def dns_servers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_servers")
 
     @property
@@ -348,210 +288,132 @@ class GetExadataInfrastructureResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def gateway(self) -> str:
-        """
-        The gateway for the control plane network.
-        """
+    def gateway(self) -> Optional[str]:
         return pulumi.get(self, "gateway")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="infiniBandNetworkCidr")
-    def infini_band_network_cidr(self) -> str:
-        """
-        The CIDR block for the Exadata InfiniBand interconnect.
-        """
+    def infini_band_network_cidr(self) -> Optional[str]:
         return pulumi.get(self, "infini_band_network_cidr")
 
     @property
     @pulumi.getter(name="isCpsOfflineReportEnabled")
-    def is_cps_offline_report_enabled(self) -> bool:
-        """
-        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
-        """
+    def is_cps_offline_report_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_cps_offline_report_enabled")
 
     @property
     @pulumi.getter(name="isMultiRackDeployment")
-    def is_multi_rack_deployment(self) -> bool:
-        """
-        Indicates if deployment is Multi-Rack or not.
-        """
+    def is_multi_rack_deployment(self) -> Optional[bool]:
         return pulumi.get(self, "is_multi_rack_deployment")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceSloStatus")
-    def maintenance_slo_status(self) -> str:
-        """
-        A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
-        """
+    def maintenance_slo_status(self) -> Optional[str]:
         return pulumi.get(self, "maintenance_slo_status")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Sequence['outputs.GetExadataInfrastructureMaintenanceWindowResult']:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def maintenance_windows(self) -> Optional[Sequence['outputs.GetExadataInfrastructureMaintenanceWindowResult']]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="maxCpuCount")
-    def max_cpu_count(self) -> int:
-        """
-        The total number of CPU cores available.
-        """
+    def max_cpu_count(self) -> Optional[int]:
         return pulumi.get(self, "max_cpu_count")
 
     @property
     @pulumi.getter(name="maxDataStorageInTbs")
-    def max_data_storage_in_tbs(self) -> float:
-        """
-        The total available DATA disk group size.
-        """
+    def max_data_storage_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "max_data_storage_in_tbs")
 
     @property
     @pulumi.getter(name="maxDbNodeStorageInGbs")
-    def max_db_node_storage_in_gbs(self) -> int:
-        """
-        The total local node storage available in GBs.
-        """
+    def max_db_node_storage_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "max_db_node_storage_in_gbs")
 
     @property
     @pulumi.getter(name="maxMemoryInGbs")
-    def max_memory_in_gbs(self) -> int:
-        """
-        The total memory available in GBs.
-        """
+    def max_memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "max_memory_in_gbs")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The memory allocated in GBs.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="monthlyDbServerVersion")
-    def monthly_db_server_version(self) -> str:
-        """
-        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
-        """
+    def monthly_db_server_version(self) -> Optional[str]:
         return pulumi.get(self, "monthly_db_server_version")
 
     @property
     @pulumi.getter(name="multiRackConfigurationFile")
-    def multi_rack_configuration_file(self) -> str:
-        """
-        The base64 encoded Multi-Rack configuration json file.
-        """
+    def multi_rack_configuration_file(self) -> Optional[str]:
         return pulumi.get(self, "multi_rack_configuration_file")
 
     @property
     @pulumi.getter
-    def netmask(self) -> str:
-        """
-        The netmask for the control plane network.
-        """
+    def netmask(self) -> Optional[str]:
         return pulumi.get(self, "netmask")
 
     @property
     @pulumi.getter(name="networkBondingModeDetails")
-    def network_bonding_mode_details(self) -> Sequence['outputs.GetExadataInfrastructureNetworkBondingModeDetailResult']:
-        """
-        Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
-        """
+    def network_bonding_mode_details(self) -> Optional[Sequence['outputs.GetExadataInfrastructureNetworkBondingModeDetailResult']]:
         return pulumi.get(self, "network_bonding_mode_details")
 
     @property
     @pulumi.getter(name="ntpServers")
-    def ntp_servers(self) -> Sequence[str]:
-        """
-        The list of NTP server IP addresses. Maximum of 3 allowed.
-        """
+    def ntp_servers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ntp_servers")
 
     @property
     @pulumi.getter(name="rackSerialNumber")
-    def rack_serial_number(self) -> str:
-        """
-        The serial number for the Exadata infrastructure.
-        """
+    def rack_serial_number(self) -> Optional[str]:
         return pulumi.get(self, "rack_serial_number")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the Exadata infrastructure.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageCount")
-    def storage_count(self) -> int:
-        """
-        The number of Exadata storage servers for the Exadata infrastructure.
-        """
+    def storage_count(self) -> Optional[int]:
         return pulumi.get(self, "storage_count")
 
     @property
     @pulumi.getter(name="storageServerVersion")
-    def storage_server_version(self) -> str:
-        """
-        The software version of the storage servers (cells) in the Exadata infrastructure.
-        """
+    def storage_server_version(self) -> Optional[str]:
         return pulumi.get(self, "storage_server_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Exadata infrastructure was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
 
@@ -615,13 +477,7 @@ class AwaitableGetExadataInfrastructureResult(GetExadataInfrastructureResult):
 def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataInfrastructureResult:
     """
-    This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-    To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-
-
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
@@ -684,12 +540,6 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[str] = None,
 def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructureResult]:
     """
-    This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-    To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-
-
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

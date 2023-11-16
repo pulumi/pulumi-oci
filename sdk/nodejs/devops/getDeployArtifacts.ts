@@ -78,7 +78,7 @@ export interface GetDeployArtifactsResult {
     /**
      * The list of deploy_artifact_collection.
      */
-    readonly deployArtifactCollections: outputs.DevOps.GetDeployArtifactsDeployArtifactCollection[];
+    readonly deployArtifactCollections?: outputs.DevOps.GetDeployArtifactsDeployArtifactCollection[];
     /**
      * Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */

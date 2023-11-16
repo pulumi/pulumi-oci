@@ -46,17 +46,11 @@ class GetPingMonitorsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly and mutable name suitable for display in a user interface.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,14 +61,11 @@ class GetPingMonitorsResult:
     @property
     @pulumi.getter(name="homeRegion")
     def home_region(self) -> Optional[str]:
-        """
-        The region where updates must be made and where results must be fetched from.
-        """
         return pulumi.get(self, "home_region")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,10 +73,7 @@ class GetPingMonitorsResult:
 
     @property
     @pulumi.getter(name="pingMonitors")
-    def ping_monitors(self) -> Sequence['outputs.GetPingMonitorsPingMonitorResult']:
-        """
-        The list of ping_monitors.
-        """
+    def ping_monitors(self) -> Optional[Sequence['outputs.GetPingMonitorsPingMonitorResult']]:
         return pulumi.get(self, "ping_monitors")
 
 
@@ -109,28 +97,7 @@ def get_ping_monitors(compartment_id: Optional[str] = None,
                       home_region: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPingMonitorsResult:
     """
-    This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets a list of configured ping monitors.
-
-    Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
-    a URL for fetching the next page.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ping_monitors = oci.HealthChecks.get_ping_monitors(compartment_id=var["compartment_id"],
-        display_name=var["ping_monitor_display_name"],
-        home_region=var["ping_monitor_home_region"])
-    ```
-
-
-    :param str compartment_id: Filters results by compartment.
-    :param str display_name: Filters results that exactly match the `displayName` field.
-    :param str home_region: Filters results that match the `homeRegion`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -156,27 +123,6 @@ def get_ping_monitors_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              home_region: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPingMonitorsResult]:
     """
-    This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets a list of configured ping monitors.
-
-    Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
-    a URL for fetching the next page.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ping_monitors = oci.HealthChecks.get_ping_monitors(compartment_id=var["compartment_id"],
-        display_name=var["ping_monitor_display_name"],
-        home_region=var["ping_monitor_home_region"])
-    ```
-
-
-    :param str compartment_id: Filters results by compartment.
-    :param str display_name: Filters results that exactly match the `displayName` field.
-    :param str home_region: Filters results that match the `homeRegion`.
+    Use this data source to access information about an existing resource.
     """
     ...

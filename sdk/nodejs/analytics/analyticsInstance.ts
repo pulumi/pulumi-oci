@@ -98,15 +98,15 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Optional description.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Email address receiving notifications.
      */
-    public readonly emailNotification!: pulumi.Output<string>;
+    public readonly emailNotification!: pulumi.Output<string | undefined>;
     /**
      * Analytics feature set.
      */
@@ -114,7 +114,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * IDCS access token identifying a stripe and service administrator user.
      */
@@ -134,11 +134,11 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     /**
      * Base representation of a network endpoint.
      */
-    public readonly networkEndpointDetails!: pulumi.Output<outputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
+    public readonly networkEndpointDetails!: pulumi.Output<outputs.Analytics.AnalyticsInstanceNetworkEndpointDetails | undefined>;
     /**
      * URL of the Analytics service.
      */
-    public /*out*/ readonly serviceUrl!: pulumi.Output<string>;
+    public /*out*/ readonly serviceUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -146,15 +146,15 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AnalyticsInstance resource with the given unique name, arguments, and options.

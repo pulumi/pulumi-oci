@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
@@ -94,7 +93,7 @@ type GetObjectVersionsResult struct {
 	Fields    *string                   `pulumi:"fields"`
 	Filters   []GetObjectVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of object version summaries.
 	Items     []GetObjectVersionsItem `pulumi:"items"`
 	Namespace string                  `pulumi:"namespace"`
@@ -158,12 +157,6 @@ func (o GetObjectVersionsResultOutput) ToGetObjectVersionsResultOutputWithContex
 	return o
 }
 
-func (o GetObjectVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectVersionsResult] {
-	return pulumix.Output[GetObjectVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetObjectVersionsResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetObjectVersionsResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -185,8 +178,8 @@ func (o GetObjectVersionsResultOutput) Filters() GetObjectVersionsFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetObjectVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetObjectVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of object version summaries.

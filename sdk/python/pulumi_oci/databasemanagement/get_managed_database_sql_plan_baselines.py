@@ -74,7 +74,7 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -118,41 +118,26 @@ class GetManagedDatabaseSqlPlanBaselinesResult:
     @property
     @pulumi.getter
     def origin(self) -> Optional[str]:
-        """
-        The origin of the SQL plan baseline.
-        """
         return pulumi.get(self, "origin")
 
     @property
     @pulumi.getter(name="planName")
     def plan_name(self) -> Optional[str]:
-        """
-        The unique plan identifier.
-        """
         return pulumi.get(self, "plan_name")
 
     @property
     @pulumi.getter(name="sqlHandle")
     def sql_handle(self) -> Optional[str]:
-        """
-        The unique SQL identifier.
-        """
         return pulumi.get(self, "sql_handle")
 
     @property
     @pulumi.getter(name="sqlPlanBaselineCollections")
-    def sql_plan_baseline_collections(self) -> Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionResult']:
-        """
-        The list of sql_plan_baseline_collection.
-        """
+    def sql_plan_baseline_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionResult']]:
         return pulumi.get(self, "sql_plan_baseline_collections")
 
     @property
     @pulumi.getter(name="sqlText")
     def sql_text(self) -> Optional[str]:
-        """
-        The SQL text.
-        """
         return pulumi.get(self, "sql_text")
 
 
@@ -192,39 +177,7 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[pulumi.In
                                             sql_text: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlPlanBaselinesResult:
     """
-    This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL plan baselines for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baselines = oci.DatabaseManagement.get_managed_database_sql_plan_baselines(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_accepted=var["managed_database_sql_plan_baseline_is_accepted"],
-        is_adaptive=var["managed_database_sql_plan_baseline_is_adaptive"],
-        is_enabled=var["managed_database_sql_plan_baseline_is_enabled"],
-        is_fixed=var["managed_database_sql_plan_baseline_is_fixed"],
-        is_reproduced=var["managed_database_sql_plan_baseline_is_reproduced"],
-        origin=var["managed_database_sql_plan_baseline_origin"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"],
-        sql_handle=var["managed_database_sql_plan_baseline_sql_handle"],
-        sql_text=var["managed_database_sql_plan_baseline_sql_text"])
-    ```
-
-
-    :param bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
-    :param bool is_adaptive: A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
-    :param bool is_enabled: A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
-    :param bool is_fixed: A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
-    :param bool is_reproduced: A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str origin: A filter to return all the SQL plan baselines that match the origin.
-    :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
-    :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -274,38 +227,6 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
                                                    sql_text: Optional[pulumi.Input[Optional[str]]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselinesResult]:
     """
-    This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL plan baselines for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baselines = oci.DatabaseManagement.get_managed_database_sql_plan_baselines(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        is_accepted=var["managed_database_sql_plan_baseline_is_accepted"],
-        is_adaptive=var["managed_database_sql_plan_baseline_is_adaptive"],
-        is_enabled=var["managed_database_sql_plan_baseline_is_enabled"],
-        is_fixed=var["managed_database_sql_plan_baseline_is_fixed"],
-        is_reproduced=var["managed_database_sql_plan_baseline_is_reproduced"],
-        origin=var["managed_database_sql_plan_baseline_origin"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"],
-        sql_handle=var["managed_database_sql_plan_baseline_sql_handle"],
-        sql_text=var["managed_database_sql_plan_baseline_sql_text"])
-    ```
-
-
-    :param bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
-    :param bool is_adaptive: A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
-    :param bool is_enabled: A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
-    :param bool is_fixed: A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
-    :param bool is_reproduced: A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str origin: A filter to return all the SQL plan baselines that match the origin.
-    :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
-    :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
-    :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
+    Use this data source to access information about an existing resource.
     """
     ...

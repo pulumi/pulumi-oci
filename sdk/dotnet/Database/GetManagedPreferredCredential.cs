@@ -128,52 +128,52 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the preferred credential is accessible.
         /// </summary>
-        public readonly bool IsAccessible;
+        public readonly bool? IsAccessible;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
         /// </summary>
-        public readonly string PasswordSecretId;
+        public readonly string? PasswordSecretId;
         /// <summary>
         /// The role of the database user.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// The status of the preferred credential.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The type of preferred credential. Only 'BASIC' is supported currently.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The user name used to connect to the database.
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
 
         [OutputConstructor]
         private GetManagedPreferredCredentialResult(
             string credentialName,
 
-            string id,
+            string? id,
 
-            bool isAccessible,
+            bool? isAccessible,
 
             string managedDatabaseId,
 
-            string passwordSecretId,
+            string? passwordSecretId,
 
-            string role,
+            string? role,
 
-            string status,
+            string? status,
 
-            string type,
+            string? type,
 
-            string userName)
+            string? userName)
         {
             CredentialName = credentialName;
             Id = id;

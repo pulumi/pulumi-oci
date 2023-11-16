@@ -219,7 +219,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of keys.
         /// </summary>
@@ -247,7 +247,7 @@ namespace Pulumi.Oci.Kms
 
             ImmutableArray<Outputs.GetKeysFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetKeysKeyResult> keys,
 

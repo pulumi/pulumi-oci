@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServicesService {
@@ -13,51 +15,51 @@ public final class GetServicesService {
      * @return A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object&#39;s *service CIDR label*.
      * 
      */
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The `Service` object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetServicesService() {}
     /**
      * @return A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object&#39;s *service CIDR label*.
      * 
      */
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     /**
      * @return Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The `Service` object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetServicesService {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidrBlock;
-        private String description;
-        private String id;
-        private String name;
+        private @Nullable String cidrBlock;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetServicesService defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetServicesService {
         }
 
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetServicesService build() {

@@ -33,12 +33,12 @@ public final class GetListUserGrantsResult {
      * @return The list of grants.
      * 
      */
-    private List<GetListUserGrantsGrant> grants;
+    private @Nullable List<GetListUserGrantsGrant> grants;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The privilege category.
      * 
@@ -84,14 +84,14 @@ public final class GetListUserGrantsResult {
      * 
      */
     public List<GetListUserGrantsGrant> grants() {
-        return this.grants;
+        return this.grants == null ? List.of() : this.grants;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The privilege category.
@@ -129,8 +129,8 @@ public final class GetListUserGrantsResult {
         private @Nullable List<GetListUserGrantsFilter> filters;
         private @Nullable String grantKey;
         private @Nullable String grantName;
-        private List<GetListUserGrantsGrant> grants;
-        private String id;
+        private @Nullable List<GetListUserGrantsGrant> grants;
+        private @Nullable String id;
         private @Nullable String privilegeCategory;
         private @Nullable String privilegeType;
         private String userAssessmentId;
@@ -186,16 +186,16 @@ public final class GetListUserGrantsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder grants(List<GetListUserGrantsGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+        public Builder grants(@Nullable List<GetListUserGrantsGrant> grants) {
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetListUserGrantsGrant... grants) {
             return grants(List.of(grants));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

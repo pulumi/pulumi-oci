@@ -16,53 +16,53 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
         /// </summary>
-        public readonly string AssociatedResourceId;
+        public readonly string? AssociatedResourceId;
         /// <summary>
         /// Type of associations to list. If the parameter is set to null, the service lists all types of associations.
         /// </summary>
-        public readonly string AssociationType;
+        public readonly string? AssociationType;
         /// <summary>
         /// A filter that returns only resources that match the given OCID of a certificate-related resource.
         /// </summary>
-        public readonly string CertificatesResourceId;
+        public readonly string? CertificatesResourceId;
         /// <summary>
         /// A filter that returns only resources that match the given compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the association.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter that returns only resources that match the specified name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The current lifecycle state of the association.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetAssociationsAssociationCollectionItemResult(
-            string associatedResourceId,
+            string? associatedResourceId,
 
-            string associationType,
+            string? associationType,
 
-            string certificatesResourceId,
+            string? certificatesResourceId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AssociatedResourceId = associatedResourceId;
             AssociationType = associationType;

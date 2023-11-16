@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat {
@@ -13,39 +15,39 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMa
      * @return The description of the masking format.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The OCID of the masking format.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the masking format.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat() {}
     /**
      * @return The description of the masking format.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The OCID of the masking format.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the masking format.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMa
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String id;
-        private String name;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMa
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormat build() {

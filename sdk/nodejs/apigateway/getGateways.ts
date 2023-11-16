@@ -80,11 +80,11 @@ export interface GetGatewaysResult {
     /**
      * The list of gateway_collection.
      */
-    readonly gatewayCollections: outputs.ApiGateway.GetGatewaysGatewayCollection[];
+    readonly gatewayCollections?: outputs.ApiGateway.GetGatewaysGatewayCollection[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the gateway.
      */

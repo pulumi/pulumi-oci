@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape {
@@ -14,27 +16,27 @@ public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape 
      * @return The bandwidth in Mbps.  Example: `10000`
      * 
      */
-    private Integer bandwidthInMbps;
+    private @Nullable Integer bandwidthInMbps;
     /**
      * @return The name of the bandwidth shape.  Example: `10 Gbps`
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape() {}
     /**
      * @return The bandwidth in Mbps.  Example: `10000`
      * 
      */
-    public Integer bandwidthInMbps() {
-        return this.bandwidthInMbps;
+    public Optional<Integer> bandwidthInMbps() {
+        return Optional.ofNullable(this.bandwidthInMbps);
     }
     /**
      * @return The name of the bandwidth shape.  Example: `10 Gbps`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape 
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer bandwidthInMbps;
-        private String name;
+        private @Nullable Integer bandwidthInMbps;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape 
         }
 
         @CustomType.Setter
-        public Builder bandwidthInMbps(Integer bandwidthInMbps) {
-            this.bandwidthInMbps = Objects.requireNonNull(bandwidthInMbps);
+        public Builder bandwidthInMbps(@Nullable Integer bandwidthInMbps) {
+            this.bandwidthInMbps = bandwidthInMbps;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape build() {

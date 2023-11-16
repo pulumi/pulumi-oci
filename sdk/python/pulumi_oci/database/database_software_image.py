@@ -27,21 +27,6 @@ class DatabaseSoftwareImageArgs:
                  source_db_home_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DatabaseSoftwareImage resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_software_image_one_off_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[str] database_version: The database version with which the database software image is to be built.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
-        :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
-        :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -67,9 +52,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -79,9 +61,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -91,9 +70,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="databaseSoftwareImageOneOffPatches")
     def database_software_image_one_off_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of one-off patches for Database Homes.
-        """
         return pulumi.get(self, "database_software_image_one_off_patches")
 
     @database_software_image_one_off_patches.setter
@@ -103,9 +79,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database version with which the database software image is to be built.
-        """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
@@ -115,9 +88,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -127,9 +97,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -139,9 +106,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="imageShapeFamily")
     def image_shape_family(self) -> Optional[pulumi.Input[str]]:
-        """
-        To what shape the image is meant for.
-        """
         return pulumi.get(self, "image_shape_family")
 
     @image_shape_family.setter
@@ -151,9 +115,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="imageType")
     def image_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of software image. Can be grid or database.
-        """
         return pulumi.get(self, "image_type")
 
     @image_type.setter
@@ -163,9 +124,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The output from the OPatch lsInventory command, which is passed as a string.
-        """
         return pulumi.get(self, "ls_inventory")
 
     @ls_inventory.setter
@@ -175,9 +133,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="patchSet")
     def patch_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        """
         return pulumi.get(self, "patch_set")
 
     @patch_set.setter
@@ -187,13 +142,6 @@ class DatabaseSoftwareImageArgs:
     @property
     @pulumi.getter(name="sourceDbHomeId")
     def source_db_home_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_db_home_id")
 
     @source_db_home_id.setter
@@ -223,27 +171,6 @@ class _DatabaseSoftwareImageState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DatabaseSoftwareImage resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_software_image_included_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_software_image_one_off_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[str] database_version: The database version with which the database software image is to be built.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
-        :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image.
-        :param pulumi.Input[bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
-        :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
-        :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the database software image.
-        :param pulumi.Input[str] time_created: The date and time the database software image was created.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -283,9 +210,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -295,9 +219,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="databaseSoftwareImageIncludedPatches")
     def database_software_image_included_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of one-off patches for Database Homes.
-        """
         return pulumi.get(self, "database_software_image_included_patches")
 
     @database_software_image_included_patches.setter
@@ -307,9 +228,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="databaseSoftwareImageOneOffPatches")
     def database_software_image_one_off_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of one-off patches for Database Homes.
-        """
         return pulumi.get(self, "database_software_image_one_off_patches")
 
     @database_software_image_one_off_patches.setter
@@ -319,9 +237,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database version with which the database software image is to be built.
-        """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
@@ -331,9 +246,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -343,9 +255,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -355,9 +264,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -367,9 +273,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="imageShapeFamily")
     def image_shape_family(self) -> Optional[pulumi.Input[str]]:
-        """
-        To what shape the image is meant for.
-        """
         return pulumi.get(self, "image_shape_family")
 
     @image_shape_family.setter
@@ -379,9 +282,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="imageType")
     def image_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of software image. Can be grid or database.
-        """
         return pulumi.get(self, "image_type")
 
     @image_type.setter
@@ -391,9 +291,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="includedPatchesSummary")
     def included_patches_summary(self) -> Optional[pulumi.Input[str]]:
-        """
-        The patches included in the image and the version of the image.
-        """
         return pulumi.get(self, "included_patches_summary")
 
     @included_patches_summary.setter
@@ -403,9 +300,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="isUpgradeSupported")
     def is_upgrade_supported(self) -> Optional[pulumi.Input[bool]]:
-        """
-        True if this Database software image is supported for Upgrade.
-        """
         return pulumi.get(self, "is_upgrade_supported")
 
     @is_upgrade_supported.setter
@@ -415,9 +309,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Detailed message for the lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -427,9 +318,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="lsInventory")
     def ls_inventory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The output from the OPatch lsInventory command, which is passed as a string.
-        """
         return pulumi.get(self, "ls_inventory")
 
     @ls_inventory.setter
@@ -439,9 +327,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="patchSet")
     def patch_set(self) -> Optional[pulumi.Input[str]]:
-        """
-        The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        """
         return pulumi.get(self, "patch_set")
 
     @patch_set.setter
@@ -451,13 +336,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="sourceDbHomeId")
     def source_db_home_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "source_db_home_id")
 
     @source_db_home_id.setter
@@ -467,9 +345,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the database software image.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -479,9 +354,6 @@ class _DatabaseSoftwareImageState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the database software image was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -507,57 +379,9 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                  source_db_home_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
-
-        create database software image in the specified compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database_software_image = oci.database.DatabaseSoftwareImage("testDatabaseSoftwareImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["database_software_image_display_name"],
-            database_software_image_one_off_patches=var["database_software_image_database_software_image_one_off_patches"],
-            database_version=var["database_software_image_database_version"],
-            defined_tags=var["database_software_image_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            image_shape_family=var["database_software_image_image_shape_family"],
-            image_type=var["database_software_image_image_type"],
-            ls_inventory=var["database_software_image_ls_inventory"],
-            patch_set=var["database_software_image_patch_set"],
-            source_db_home_id=oci_database_db_home["test_db_home"]["id"])
-        ```
-
-        ## Import
-
-        DatabaseSoftwareImages can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
-        ```
-
+        Create a DatabaseSoftwareImage resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_software_image_one_off_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[str] database_version: The database version with which the database software image is to be built.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
-        :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
-        :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -566,40 +390,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                  args: DatabaseSoftwareImageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
-
-        create database software image in the specified compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database_software_image = oci.database.DatabaseSoftwareImage("testDatabaseSoftwareImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["database_software_image_display_name"],
-            database_software_image_one_off_patches=var["database_software_image_database_software_image_one_off_patches"],
-            database_version=var["database_software_image_database_version"],
-            defined_tags=var["database_software_image_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            image_shape_family=var["database_software_image_image_shape_family"],
-            image_type=var["database_software_image_image_type"],
-            ls_inventory=var["database_software_image_ls_inventory"],
-            patch_set=var["database_software_image_patch_set"],
-            source_db_home_id=oci_database_db_home["test_db_home"]["id"])
-        ```
-
-        ## Import
-
-        DatabaseSoftwareImages can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/databaseSoftwareImage:DatabaseSoftwareImage test_database_software_image "id"
-        ```
-
+        Create a DatabaseSoftwareImage resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DatabaseSoftwareImageArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -690,27 +481,6 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_software_image_included_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_software_image_one_off_patches: List of one-off patches for Database Homes.
-        :param pulumi.Input[str] database_version: The database version with which the database software image is to be built.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
-        :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image.
-        :param pulumi.Input[bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
-        :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
-        :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
-        :param pulumi.Input[str] patch_set: The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        :param pulumi.Input[str] source_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the database software image.
-        :param pulumi.Input[str] time_created: The date and time the database software image was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -738,140 +508,85 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseSoftwareImageIncludedPatches")
-    def database_software_image_included_patches(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of one-off patches for Database Homes.
-        """
+    def database_software_image_included_patches(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "database_software_image_included_patches")
 
     @property
     @pulumi.getter(name="databaseSoftwareImageOneOffPatches")
-    def database_software_image_one_off_patches(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of one-off patches for Database Homes.
-        """
+    def database_software_image_one_off_patches(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "database_software_image_one_off_patches")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> pulumi.Output[str]:
-        """
-        The database version with which the database software image is to be built.
-        """
+    def database_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imageShapeFamily")
-    def image_shape_family(self) -> pulumi.Output[str]:
-        """
-        To what shape the image is meant for.
-        """
+    def image_shape_family(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "image_shape_family")
 
     @property
     @pulumi.getter(name="imageType")
-    def image_type(self) -> pulumi.Output[str]:
-        """
-        The type of software image. Can be grid or database.
-        """
+    def image_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "image_type")
 
     @property
     @pulumi.getter(name="includedPatchesSummary")
-    def included_patches_summary(self) -> pulumi.Output[str]:
-        """
-        The patches included in the image and the version of the image.
-        """
+    def included_patches_summary(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "included_patches_summary")
 
     @property
     @pulumi.getter(name="isUpgradeSupported")
-    def is_upgrade_supported(self) -> pulumi.Output[bool]:
-        """
-        True if this Database software image is supported for Upgrade.
-        """
+    def is_upgrade_supported(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_upgrade_supported")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Detailed message for the lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lsInventory")
-    def ls_inventory(self) -> pulumi.Output[str]:
-        """
-        The output from the OPatch lsInventory command, which is passed as a string.
-        """
+    def ls_inventory(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ls_inventory")
 
     @property
     @pulumi.getter(name="patchSet")
-    def patch_set(self) -> pulumi.Output[str]:
-        """
-        The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        """
+    def patch_set(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "patch_set")
 
     @property
     @pulumi.getter(name="sourceDbHomeId")
-    def source_db_home_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def source_db_home_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_db_home_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the database software image.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the database software image was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

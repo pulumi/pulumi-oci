@@ -8,6 +8,8 @@ import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
@@ -15,27 +17,27 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
      * @return Windows event log channels.
      * 
      */
-    private List<String> channels;
+    private @Nullable List<String> channels;
     /**
      * @return The name key to tag this Grok pattern.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Source parser object.
      * 
      */
-    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
+    private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
     /**
      * @return Absolute paths for log source files. Wildcards can be used.
      * 
      */
-    private List<String> paths;
+    private @Nullable List<String> paths;
     /**
      * @return Unified schema logging source type.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSource() {}
     /**
@@ -43,35 +45,35 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
      * 
      */
     public List<String> channels() {
-        return this.channels;
+        return this.channels == null ? List.of() : this.channels;
     }
     /**
      * @return The name key to tag this Grok pattern.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Source parser object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers() {
-        return this.parsers;
+        return this.parsers == null ? List.of() : this.parsers;
     }
     /**
      * @return Absolute paths for log source files. Wildcards can be used.
      * 
      */
     public List<String> paths() {
-        return this.paths;
+        return this.paths == null ? List.of() : this.paths;
     }
     /**
      * @return Unified schema logging source type.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> channels;
-        private String name;
-        private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
-        private List<String> paths;
-        private String sourceType;
+        private @Nullable List<String> channels;
+        private @Nullable String name;
+        private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
+        private @Nullable List<String> paths;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,37 +101,37 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         }
 
         @CustomType.Setter
-        public Builder channels(List<String> channels) {
-            this.channels = Objects.requireNonNull(channels);
+        public Builder channels(@Nullable List<String> channels) {
+            this.channels = channels;
             return this;
         }
         public Builder channels(String... channels) {
             return channels(List.of(channels));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder parsers(List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers) {
-            this.parsers = Objects.requireNonNull(parsers);
+        public Builder parsers(@Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers) {
+            this.parsers = parsers;
             return this;
         }
         public Builder parsers(GetUnifiedAgentConfigurationServiceConfigurationSourceParser... parsers) {
             return parsers(List.of(parsers));
         }
         @CustomType.Setter
-        public Builder paths(List<String> paths) {
-            this.paths = Objects.requireNonNull(paths);
+        public Builder paths(@Nullable List<String> paths) {
+            this.paths = paths;
             return this;
         }
         public Builder paths(String... paths) {
             return paths(List.of(paths));
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSource build() {

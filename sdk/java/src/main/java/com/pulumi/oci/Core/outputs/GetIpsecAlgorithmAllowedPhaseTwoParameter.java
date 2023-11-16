@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
@@ -14,17 +15,17 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
      * @return Allowed phase two authentication algorithms.
      * 
      */
-    private List<String> authenticationAlgorithms;
+    private @Nullable List<String> authenticationAlgorithms;
     /**
      * @return Allowed phase two encryption algorithms.
      * 
      */
-    private List<String> encryptionAlgorithms;
+    private @Nullable List<String> encryptionAlgorithms;
     /**
      * @return Allowed perfect forward secrecy Diffie-Hellman groups.
      * 
      */
-    private List<String> pfsDhGroups;
+    private @Nullable List<String> pfsDhGroups;
 
     private GetIpsecAlgorithmAllowedPhaseTwoParameter() {}
     /**
@@ -32,21 +33,21 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
      * 
      */
     public List<String> authenticationAlgorithms() {
-        return this.authenticationAlgorithms;
+        return this.authenticationAlgorithms == null ? List.of() : this.authenticationAlgorithms;
     }
     /**
      * @return Allowed phase two encryption algorithms.
      * 
      */
     public List<String> encryptionAlgorithms() {
-        return this.encryptionAlgorithms;
+        return this.encryptionAlgorithms == null ? List.of() : this.encryptionAlgorithms;
     }
     /**
      * @return Allowed perfect forward secrecy Diffie-Hellman groups.
      * 
      */
     public List<String> pfsDhGroups() {
-        return this.pfsDhGroups;
+        return this.pfsDhGroups == null ? List.of() : this.pfsDhGroups;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> authenticationAlgorithms;
-        private List<String> encryptionAlgorithms;
-        private List<String> pfsDhGroups;
+        private @Nullable List<String> authenticationAlgorithms;
+        private @Nullable List<String> encryptionAlgorithms;
+        private @Nullable List<String> pfsDhGroups;
         public Builder() {}
         public Builder(GetIpsecAlgorithmAllowedPhaseTwoParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,24 +71,24 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
         }
 
         @CustomType.Setter
-        public Builder authenticationAlgorithms(List<String> authenticationAlgorithms) {
-            this.authenticationAlgorithms = Objects.requireNonNull(authenticationAlgorithms);
+        public Builder authenticationAlgorithms(@Nullable List<String> authenticationAlgorithms) {
+            this.authenticationAlgorithms = authenticationAlgorithms;
             return this;
         }
         public Builder authenticationAlgorithms(String... authenticationAlgorithms) {
             return authenticationAlgorithms(List.of(authenticationAlgorithms));
         }
         @CustomType.Setter
-        public Builder encryptionAlgorithms(List<String> encryptionAlgorithms) {
-            this.encryptionAlgorithms = Objects.requireNonNull(encryptionAlgorithms);
+        public Builder encryptionAlgorithms(@Nullable List<String> encryptionAlgorithms) {
+            this.encryptionAlgorithms = encryptionAlgorithms;
             return this;
         }
         public Builder encryptionAlgorithms(String... encryptionAlgorithms) {
             return encryptionAlgorithms(List.of(encryptionAlgorithms));
         }
         @CustomType.Setter
-        public Builder pfsDhGroups(List<String> pfsDhGroups) {
-            this.pfsDhGroups = Objects.requireNonNull(pfsDhGroups);
+        public Builder pfsDhGroups(@Nullable List<String> pfsDhGroups) {
+            this.pfsDhGroups = pfsDhGroups;
             return this;
         }
         public Builder pfsDhGroups(String... pfsDhGroups) {

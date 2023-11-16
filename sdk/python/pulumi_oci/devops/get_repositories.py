@@ -52,9 +52,6 @@ class GetRepositoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the repository's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -64,7 +61,7 @@ class GetRepositoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,25 +70,16 @@ class GetRepositoriesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Unique name of a repository. This value is mutable.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of the DevOps project containing the repository.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter(name="repositoryCollections")
-    def repository_collections(self) -> Sequence['outputs.GetRepositoriesRepositoryCollectionResult']:
-        """
-        The list of repository_collection.
-        """
+    def repository_collections(self) -> Optional[Sequence['outputs.GetRepositoriesRepositoryCollectionResult']]:
         return pulumi.get(self, "repository_collections")
 
     @property
@@ -102,9 +90,6 @@ class GetRepositoriesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the repository.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_repositories(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoriesResult:
     """
-    This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of repositories given a compartment ID or a project ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repositories = oci.DevOps.get_repositories(compartment_id=var["compartment_id"],
-        name=var["repository_name"],
-        project_id=oci_devops_project["test_project"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        state=var["repository_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str project_id: unique project identifier
-    :param str repository_id: Unique repository identifier.
-    :param str state: A filter to return only resources whose lifecycle state matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoriesResult]:
     """
-    This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of repositories given a compartment ID or a project ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repositories = oci.DevOps.get_repositories(compartment_id=var["compartment_id"],
-        name=var["repository_name"],
-        project_id=oci_devops_project["test_project"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        state=var["repository_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str project_id: unique project identifier
-    :param str repository_id: Unique repository identifier.
-    :param str state: A filter to return only resources whose lifecycle state matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

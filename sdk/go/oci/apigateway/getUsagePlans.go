@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
@@ -72,7 +71,7 @@ type GetUsagePlansResult struct {
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetUsagePlansFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the usage plan.
 	State *string `pulumi:"state"`
 	// The list of usage_plan_collection.
@@ -122,12 +121,6 @@ func (o GetUsagePlansResultOutput) ToGetUsagePlansResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetUsagePlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagePlansResult] {
-	return pulumix.Output[GetUsagePlansResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 func (o GetUsagePlansResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsagePlansResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetUsagePlansResultOutput) Filters() GetUsagePlansFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUsagePlansResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagePlansResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUsagePlansResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagePlansResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the usage plan.

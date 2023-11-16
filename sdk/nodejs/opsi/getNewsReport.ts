@@ -47,68 +47,68 @@ export interface GetNewsReportResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Content types that the news report can handle.
      */
-    readonly contentTypes: outputs.Opsi.GetNewsReportContentType[];
+    readonly contentTypes?: outputs.Opsi.GetNewsReportContentType[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the news report.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Language of the news report.
      */
-    readonly locale: string;
+    readonly locale?: string;
     /**
      * The news report name.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * News report frequency.
      */
-    readonly newsFrequency: string;
+    readonly newsFrequency?: string;
     readonly newsReportId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
      */
-    readonly onsTopicId: string;
+    readonly onsTopicId?: string;
     /**
      * The current state of the news report.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Indicates the status of a news report in Operations Insights.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the news report was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch {
@@ -13,27 +15,27 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformF
      * @return An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
      * 
      */
-    private String formUrl;
+    private @Nullable String formUrl;
     /**
      * @return Indicates how to interpret the value of &#39;formUrl&#39; when matching against a user-specified formUrl.  The system currently supports only &#39;Exact&#39;, which indicates that the value of &#39;formUrl&#39; should be treated as a literal value.
      * 
      */
-    private String formUrlMatchType;
+    private @Nullable String formUrlMatchType;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch() {}
     /**
      * @return An application formUrl that FormFill will match against any formUrl that a User enters in trying to access the target-service which this App represents.
      * 
      */
-    public String formUrl() {
-        return this.formUrl;
+    public Optional<String> formUrl() {
+        return Optional.ofNullable(this.formUrl);
     }
     /**
      * @return Indicates how to interpret the value of &#39;formUrl&#39; when matching against a user-specified formUrl.  The system currently supports only &#39;Exact&#39;, which indicates that the value of &#39;formUrl&#39; should be treated as a literal value.
      * 
      */
-    public String formUrlMatchType() {
-        return this.formUrlMatchType;
+    public Optional<String> formUrlMatchType() {
+        return Optional.ofNullable(this.formUrlMatchType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformF
     }
     @CustomType.Builder
     public static final class Builder {
-        private String formUrl;
-        private String formUrlMatchType;
+        private @Nullable String formUrl;
+        private @Nullable String formUrlMatchType;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformF
         }
 
         @CustomType.Setter
-        public Builder formUrl(String formUrl) {
-            this.formUrl = Objects.requireNonNull(formUrl);
+        public Builder formUrl(@Nullable String formUrl) {
+            this.formUrl = formUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder formUrlMatchType(String formUrlMatchType) {
-            this.formUrlMatchType = Objects.requireNonNull(formUrlMatchType);
+        public Builder formUrlMatchType(@Nullable String formUrlMatchType) {
+            this.formUrlMatchType = formUrlMatchType;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatch build() {

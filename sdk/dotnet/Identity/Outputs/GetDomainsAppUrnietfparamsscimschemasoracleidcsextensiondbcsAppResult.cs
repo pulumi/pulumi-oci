@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The name of the Enterprise Domain that contains any number of DBInstances. If specified, the value must be unique.  A non-null value indicates that App represents a DBDomain. A value of null indicates that the App represents an DB-instance.
         /// </summary>
-        public readonly string DomainName;
+        public readonly string? DomainName;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppResult(
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppResult> domainApps,
 
-            string domainName)
+            string? domainName)
         {
             DomainApps = domainApps;
             DomainName = domainName;

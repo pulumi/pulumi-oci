@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
@@ -13,39 +15,39 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
-    private String volumeGroupReplicaId;
+    private @Nullable String volumeGroupReplicaId;
 
     private GetVolumeGroupsVolumeGroupVolumeGroupReplica() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
-    public String volumeGroupReplicaId() {
-        return this.volumeGroupReplicaId;
+    public Optional<String> volumeGroupReplicaId() {
+        return Optional.ofNullable(this.volumeGroupReplicaId);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String displayName;
-        private String volumeGroupReplicaId;
+        private @Nullable String availabilityDomain;
+        private @Nullable String displayName;
+        private @Nullable String volumeGroupReplicaId;
         public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroupVolumeGroupReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
-            this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
+        public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }
         public GetVolumeGroupsVolumeGroupVolumeGroupReplica build() {

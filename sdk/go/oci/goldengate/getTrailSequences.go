@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
@@ -74,8 +73,8 @@ type GetTrailSequencesResult struct {
 	DisplayName string                    `pulumi:"displayName"`
 	Filters     []GetTrailSequencesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string `pulumi:"id"`
-	TrailFileId string `pulumi:"trailFileId"`
+	Id          *string `pulumi:"id"`
+	TrailFileId string  `pulumi:"trailFileId"`
 	// The list of trail_sequence_collection.
 	TrailSequenceCollections []GetTrailSequencesTrailSequenceCollection `pulumi:"trailSequenceCollections"`
 	TrailSequenceId          string                                     `pulumi:"trailSequenceId"`
@@ -126,12 +125,6 @@ func (o GetTrailSequencesResultOutput) ToGetTrailSequencesResultOutputWithContex
 	return o
 }
 
-func (o GetTrailSequencesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTrailSequencesResult] {
-	return pulumix.Output[GetTrailSequencesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTrailSequencesResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrailSequencesResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
@@ -146,8 +139,8 @@ func (o GetTrailSequencesResultOutput) Filters() GetTrailSequencesFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTrailSequencesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTrailSequencesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTrailSequencesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTrailSequencesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTrailSequencesResultOutput) TrailFileId() pulumi.StringOutput {

@@ -62,7 +62,7 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     /**
      * Additional properties for the route, computed by the service.
      */
-    public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      *
@@ -84,11 +84,11 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     /**
      * Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      */
-    public /*out*/ readonly isBlackhole!: pulumi.Output<boolean>;
+    public /*out*/ readonly isBlackhole!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates that the route was not imported due to a conflict between route rules.
      */
-    public /*out*/ readonly isConflict!: pulumi.Output<boolean>;
+    public /*out*/ readonly isConflict!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
      *
@@ -99,11 +99,11 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     /**
      * The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      */
-    public /*out*/ readonly routeProvenance!: pulumi.Output<string>;
+    public /*out*/ readonly routeProvenance!: pulumi.Output<string | undefined>;
     /**
      * You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      */
-    public /*out*/ readonly routeType!: pulumi.Output<string>;
+    public /*out*/ readonly routeType!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DrgRouteTableRouteRule resource with the given unique name, arguments, and options.

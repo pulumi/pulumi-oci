@@ -34,7 +34,7 @@ public final class GetRecoveryServiceSubnetsResult {
      * @return The list of recovery_service_subnet_collection.
      * 
      */
-    private List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections;
+    private @Nullable List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections;
     /**
      * @return The current state of the recovery service subnet. Allowed values are:
      * * CREATING
@@ -82,7 +82,7 @@ public final class GetRecoveryServiceSubnetsResult {
      * 
      */
     public List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections() {
-        return this.recoveryServiceSubnetCollections;
+        return this.recoveryServiceSubnetCollections == null ? List.of() : this.recoveryServiceSubnetCollections;
     }
     /**
      * @return The current state of the recovery service subnet. Allowed values are:
@@ -118,7 +118,7 @@ public final class GetRecoveryServiceSubnetsResult {
         private @Nullable String displayName;
         private @Nullable List<GetRecoveryServiceSubnetsFilter> filters;
         private @Nullable String id;
-        private List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections;
+        private @Nullable List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -157,8 +157,8 @@ public final class GetRecoveryServiceSubnetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryServiceSubnetCollections(List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections) {
-            this.recoveryServiceSubnetCollections = Objects.requireNonNull(recoveryServiceSubnetCollections);
+        public Builder recoveryServiceSubnetCollections(@Nullable List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections) {
+            this.recoveryServiceSubnetCollections = recoveryServiceSubnetCollections;
             return this;
         }
         public Builder recoveryServiceSubnetCollections(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection... recoveryServiceSubnetCollections) {

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The type of autoscaling action to take.
         /// </summary>
-        public readonly string ActionType;
+        public readonly string? ActionType;
         /// <summary>
         /// Type of autoscaling policy.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
         /// <summary>
         /// Configration for a metric based vertical scale-down policy.
         /// </summary>
@@ -44,17 +44,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The time zone of the execution schedule, in IANA time zone database name format
         /// </summary>
-        public readonly string Timezone;
+        public readonly string? Timezone;
         /// <summary>
         /// The type of autoscaling trigger.
         /// </summary>
-        public readonly string TriggerType;
+        public readonly string? TriggerType;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailResult(
-            string actionType,
+            string? actionType,
 
-            string policyType,
+            string? policyType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleDownConfigResult> scaleDownConfigs,
 
@@ -66,9 +66,9 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScheduleDetailResult> scheduleDetails,
 
-            string timezone,
+            string? timezone,
 
-            string triggerType)
+            string? triggerType)
         {
             ActionType = actionType;
             PolicyType = policyType;

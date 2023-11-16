@@ -74,7 +74,7 @@ export interface GetTargetDatabasesTablesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly schemaNameContains?: string;
     /**
      * Name of the schema.
@@ -88,7 +88,7 @@ export interface GetTargetDatabasesTablesResult {
     /**
      * The list of tables.
      */
-    readonly tables: outputs.DataSafe.GetTargetDatabasesTablesTable[];
+    readonly tables?: outputs.DataSafe.GetTargetDatabasesTablesTable[];
     readonly targetDatabaseId: string;
 }
 /**

@@ -124,19 +124,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The category description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The category display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
         /// </summary>
-        public readonly bool IsSystem;
+        public readonly bool? IsSystem;
         /// <summary>
         /// The unique name that identifies the category.
         /// </summary>
@@ -145,23 +145,23 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetLogAnalyticsCategoryResult(
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isSystem,
+            bool? isSystem,
 
             string name,
 
             string @namespace,
 
-            string type)
+            string? type)
         {
             Description = description;
             DisplayName = displayName;

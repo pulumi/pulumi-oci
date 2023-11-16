@@ -16,65 +16,65 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
         /// </summary>
-        public readonly int EmailOtpValidityDurationInMins;
+        public readonly int? EmailOtpValidityDurationInMins;
         /// <summary>
         /// Exact length of the email one-time passcode.
         /// </summary>
-        public readonly int EmailPasscodeLength;
+        public readonly int? EmailPasscodeLength;
         /// <summary>
         /// The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
         /// </summary>
-        public readonly string HashingAlgorithm;
+        public readonly string? HashingAlgorithm;
         /// <summary>
         /// The period of time (in seconds) that a JSON Web Token (JWT) is valid
         /// </summary>
-        public readonly int JwtValidityDurationInSecs;
+        public readonly int? JwtValidityDurationInSecs;
         /// <summary>
         /// The duration of time (in days) after which the shared secret has to be refreshed
         /// </summary>
-        public readonly int KeyRefreshIntervalInDays;
+        public readonly int? KeyRefreshIntervalInDays;
         /// <summary>
         /// Exact length of the One-Time Passcode that the system should generate
         /// </summary>
-        public readonly int PasscodeLength;
+        public readonly int? PasscodeLength;
         /// <summary>
         /// The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
         /// </summary>
-        public readonly int SmsOtpValidityDurationInMins;
+        public readonly int? SmsOtpValidityDurationInMins;
         /// <summary>
         /// Exact length of the Short Message Service (SMS) One-Time Passcode
         /// </summary>
-        public readonly int SmsPasscodeLength;
+        public readonly int? SmsPasscodeLength;
         /// <summary>
         /// Time (in secs) to be used as the time step
         /// </summary>
-        public readonly int TimeStepInSecs;
+        public readonly int? TimeStepInSecs;
         /// <summary>
         /// The tolerance/step-size that the system should use when validating a One-Time Passcode
         /// </summary>
-        public readonly int TimeStepTolerance;
+        public readonly int? TimeStepTolerance;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingTotpSettingResult(
-            int emailOtpValidityDurationInMins,
+            int? emailOtpValidityDurationInMins,
 
-            int emailPasscodeLength,
+            int? emailPasscodeLength,
 
-            string hashingAlgorithm,
+            string? hashingAlgorithm,
 
-            int jwtValidityDurationInSecs,
+            int? jwtValidityDurationInSecs,
 
-            int keyRefreshIntervalInDays,
+            int? keyRefreshIntervalInDays,
 
-            int passcodeLength,
+            int? passcodeLength,
 
-            int smsOtpValidityDurationInMins,
+            int? smsOtpValidityDurationInMins,
 
-            int smsPasscodeLength,
+            int? smsPasscodeLength,
 
-            int timeStepInSecs,
+            int? timeStepInSecs,
 
-            int timeStepTolerance)
+            int? timeStepTolerance)
         {
             EmailOtpValidityDurationInMins = emailOtpValidityDurationInMins;
             EmailPasscodeLength = emailPasscodeLength;

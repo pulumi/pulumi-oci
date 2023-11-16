@@ -151,37 +151,37 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User-provided data about the Configuration.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the Configuration.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         /// </summary>
         [Output("initVariables")]
-        public Output<Outputs.MysqlConfigurationInitVariables> InitVariables { get; private set; } = null!;
+        public Output<Outputs.MysqlConfigurationInitVariables?> InitVariables { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
         /// </summary>
         [Output("parentConfigurationId")]
-        public Output<string> ParentConfigurationId { get; private set; } = null!;
+        public Output<string?> ParentConfigurationId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the associated Shape.
@@ -193,31 +193,31 @@ namespace Pulumi.Oci.Mysql
         /// The current state of the Configuration.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The Configuration type, DEFAULT or CUSTOM.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// User-defined service variables.
         /// </summary>
         [Output("variables")]
-        public Output<Outputs.MysqlConfigurationVariables> Variables { get; private set; } = null!;
+        public Output<Outputs.MysqlConfigurationVariables?> Variables { get; private set; } = null!;
 
 
         /// <summary>

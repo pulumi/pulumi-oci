@@ -65,337 +65,6 @@ class DomainsUserArgs:
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsUser resource.
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] user_name: (Updatable) User name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User ID
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]] addresses: (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] description: (Updatable) Description of the user
-               
-               **Added In:** 2012271618
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsPii: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]] emails: (Updatable) A complex attribute representing emails
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]] entitlements: (Updatable) A list of entitlements for the User that represent a thing the User has.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]] ims: (Updatable) User's instant messaging addresses
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Locale
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] nick_name: (Updatable) Nick name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Nick Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeName: Password
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-               * idcsPii: true
-               * idcsSearchable: false
-               * idcsSensitive: hash
-               * multiValued: false
-               * mutability: writeOnly
-               * required: false
-               * returned: never
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]] phone_numbers: (Updatable) Phone numbers
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]] photos: (Updatable) URLs of photos for the User
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] preferred_language: (Updatable) User's preferred written or spoken language used for localized user interfaces
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Preferred Language
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] profile_url: (Updatable) A fully-qualified URL to a page representing the User's online profile
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Profile URL
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]] roles: (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] timezone: (Updatable) User's timezone
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-               * idcsCanonicalValueSourceResourceType: AllowedValue
-               * idcsCsvAttributeName: TimeZone
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] title: (Updatable) Title
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Title
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs'] urnietfparamsscimschemasextensionenterprise20user: (Updatable) Enterprise User
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs'] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs'] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs'] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs'] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs'] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs'] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs'] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs'] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs'] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs'] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs'] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
-        :param pulumi.Input[str] user_type: (Updatable) Used to identify the organization-to-user relationship
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User Type
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]] x509certificates: (Updatable) A list of certificates issued to the User.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
         """
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
         pulumi.set(__self__, "name", name)
@@ -491,9 +160,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Input[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -503,21 +169,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input['DomainsUserNameArgs']:
-        """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -527,19 +178,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -549,22 +187,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: User ID
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -574,20 +196,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Status of the account
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "active")
 
     @active.setter
@@ -597,20 +205,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]:
-        """
-        (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -620,9 +214,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -632,9 +223,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -644,9 +232,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -656,22 +241,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the user
-
-        **Added In:** 2012271618
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsPii: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -681,18 +250,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -702,20 +259,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]:
-        """
-        (Updatable) A complex attribute representing emails
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "emails")
 
     @emails.setter
@@ -725,18 +268,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def entitlements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]:
-        """
-        (Updatable) A list of entitlements for the User that represent a thing the User has.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "entitlements")
 
     @entitlements.setter
@@ -746,20 +277,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-
-        **Added In:** 2011192329
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
@@ -769,19 +286,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def ims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]]:
-        """
-        (Updatable) User's instant messaging addresses
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "ims")
 
     @ims.setter
@@ -791,21 +295,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Locale
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "locale")
 
     @locale.setter
@@ -815,22 +304,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="nickName")
     def nick_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Nick name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Nick Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "nick_name")
 
     @nick_name.setter
@@ -840,21 +313,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the user's support account.
-
-        **Added In:** 2103141444
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -864,22 +322,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeName: Password
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-        * idcsPii: true
-        * idcsSearchable: false
-        * idcsSensitive: hash
-        * multiValued: false
-        * mutability: writeOnly
-        * required: false
-        * returned: never
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -889,20 +331,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="phoneNumbers")
     def phone_numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]:
-        """
-        (Updatable) Phone numbers
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "phone_numbers")
 
     @phone_numbers.setter
@@ -912,19 +340,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def photos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]:
-        """
-        (Updatable) URLs of photos for the User
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "photos")
 
     @photos.setter
@@ -934,21 +349,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="preferredLanguage")
     def preferred_language(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User's preferred written or spoken language used for localized user interfaces
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Preferred Language
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
@@ -958,22 +358,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="profileUrl")
     def profile_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A fully-qualified URL to a page representing the User's online profile
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Profile URL
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
         return pulumi.get(self, "profile_url")
 
     @profile_url.setter
@@ -983,9 +367,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -995,18 +376,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]:
-        """
-        (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "roles")
 
     @roles.setter
@@ -1016,19 +385,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -1038,23 +394,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def timezone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User's timezone
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-        * idcsCanonicalValueSourceResourceType: AllowedValue
-        * idcsCsvAttributeName: TimeZone
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
@@ -1064,22 +403,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def title(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Title
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Title
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "title")
 
     @title.setter
@@ -1089,9 +412,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def urnietfparamsscimschemasextensionenterprise20user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]:
-        """
-        (Updatable) Enterprise User
-        """
         return pulumi.get(self, "urnietfparamsscimschemasextensionenterprise20user")
 
     @urnietfparamsscimschemasextensionenterprise20user.setter
@@ -1101,9 +421,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
     def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
@@ -1113,9 +430,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser")
     def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]:
-        """
-        (Updatable) This extension defines attributes to manage user's risk score.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user")
 
     @urnietfparamsscimschemasoracleidcsextensionadaptive_user.setter
@@ -1125,9 +439,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser")
     def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]:
-        """
-        (Updatable) User's Capabilities
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user")
 
     @urnietfparamsscimschemasoracleidcsextensioncapabilities_user.setter
@@ -1137,9 +448,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
     def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
-        """
-        (Updatable) The database credentials user extension.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
     @urnietfparamsscimschemasoracleidcsextensiondb_credentials_user.setter
@@ -1149,9 +457,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser")
     def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]:
-        """
-        (Updatable) Kerberos User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_user_user.setter
@@ -1161,9 +466,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmfaUser")
     def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]:
-        """
-        (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user")
 
     @urnietfparamsscimschemasoracleidcsextensionmfa_user.setter
@@ -1173,9 +475,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser")
     def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]:
-        """
-        (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user")
 
     @urnietfparamsscimschemasoracleidcsextensionpasswordless_user.setter
@@ -1185,9 +484,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixUser")
     def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]:
-        """
-        (Updatable) POSIX User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_user")
 
     @urnietfparamsscimschemasoracleidcsextensionposix_user.setter
@@ -1197,9 +493,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
     def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
-        """
-        (Updatable) This extension defines the attributes used to store the security questions of a user.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user.setter
@@ -1209,9 +502,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")
     def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
-        """
-        (Updatable) Controls whether a user can update themselves or not via User related APIs
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
@@ -1221,9 +511,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser")
     def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]:
-        """
-        (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_registration_user.setter
@@ -1233,9 +520,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsffUser")
     def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]:
-        """
-        (Updatable) SFF Auth Keys User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsff_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsff_user.setter
@@ -1245,9 +529,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser")
     def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]:
-        """
-        (Updatable) Social User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsocial_account_user.setter
@@ -1257,9 +538,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser")
     def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]:
-        """
-        (Updatable) Terms Of Use extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user")
 
     @urnietfparamsscimschemasoracleidcsextensionterms_of_use_user.setter
@@ -1269,9 +547,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
-        """
-        (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_state_user.setter
@@ -1281,9 +556,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
-        """
-        (Updatable) Oracle Identity Cloud Service User
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_user.setter
@@ -1293,22 +565,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter(name="userType")
     def user_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Used to identify the organization-to-user relationship
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: User Type
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "user_type")
 
     @user_type.setter
@@ -1318,18 +574,6 @@ class DomainsUserArgs:
     @property
     @pulumi.getter
     def x509certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]:
-        """
-        (Updatable) A list of certificates issued to the User.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "x509certificates")
 
     @x509certificates.setter
@@ -1402,445 +646,6 @@ class _DomainsUserState:
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsUser resources.
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]] addresses: (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: (Updatable) Description of the user
-               
-               **Added In:** 2012271618
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsPii: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]] emails: (Updatable) A complex attribute representing emails
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]] entitlements: (Updatable) A list of entitlements for the User that represent a thing the User has.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]] groups: (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]] ims: (Updatable) User's instant messaging addresses
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Locale
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] nick_name: (Updatable) Nick name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Nick Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeName: Password
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-               * idcsPii: true
-               * idcsSearchable: false
-               * idcsSensitive: hash
-               * multiValued: false
-               * mutability: writeOnly
-               * required: false
-               * returned: never
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]] phone_numbers: (Updatable) Phone numbers
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]] photos: (Updatable) URLs of photos for the User
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] preferred_language: (Updatable) User's preferred written or spoken language used for localized user interfaces
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Preferred Language
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] profile_url: (Updatable) A fully-qualified URL to a page representing the User's online profile
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Profile URL
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]] roles: (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] timezone: (Updatable) User's timezone
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-               * idcsCanonicalValueSourceResourceType: AllowedValue
-               * idcsCsvAttributeName: TimeZone
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] title: (Updatable) Title
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Title
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs'] urnietfparamsscimschemasextensionenterprise20user: (Updatable) Enterprise User
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs'] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs'] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs'] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]] urnietfparamsscimschemasoracleidcsextensiondb_user_users: (Updatable) DB User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs'] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs'] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]] urnietfparamsscimschemasoracleidcsextensionpassword_state_users: (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs'] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs'] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs'] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs'] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs'] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs'] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs'] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]] urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: (Updatable) User's credentials
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs'] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
-        :param pulumi.Input[str] user_name: (Updatable) User name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User ID
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] user_type: (Updatable) Used to identify the organization-to-user relationship
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User Type
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]] x509certificates: (Updatable) A list of certificates issued to the User.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -1966,20 +771,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Status of the account
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "active")
 
     @active.setter
@@ -1989,20 +780,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]:
-        """
-        (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -2012,9 +789,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -2024,9 +798,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -2036,9 +807,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -2048,19 +816,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="compartmentOcid")
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
@@ -2070,19 +825,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="deleteInProgress")
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
@@ -2092,22 +834,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the user
-
-        **Added In:** 2012271618
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsPii: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -2117,18 +843,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -2138,19 +852,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="domainOcid")
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
@@ -2160,20 +861,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]:
-        """
-        (Updatable) A complex attribute representing emails
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "emails")
 
     @emails.setter
@@ -2183,18 +870,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def entitlements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]:
-        """
-        (Updatable) A list of entitlements for the User that represent a thing the User has.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "entitlements")
 
     @entitlements.setter
@@ -2204,20 +879,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-
-        **Added In:** 2011192329
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "external_id")
 
     @external_id.setter
@@ -2227,19 +888,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]]]:
-        """
-        (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "groups")
 
     @groups.setter
@@ -2249,17 +897,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="idcsCreatedBies")
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
@@ -2269,9 +906,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -2281,17 +915,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
@@ -2301,19 +924,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
@@ -2323,18 +933,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="idcsPreventedOperations")
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
@@ -2344,19 +942,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def ims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]]:
-        """
-        (Updatable) User's instant messaging addresses
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "ims")
 
     @ims.setter
@@ -2366,21 +951,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def locale(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Locale
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "locale")
 
     @locale.setter
@@ -2390,19 +960,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserMetaArgs']]]]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
         return pulumi.get(self, "metas")
 
     @metas.setter
@@ -2412,21 +969,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input['DomainsUserNameArgs']]:
-        """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2436,22 +978,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="nickName")
     def nick_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Nick name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Nick Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "nick_name")
 
     @nick_name.setter
@@ -2461,21 +987,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the user's support account.
-
-        **Added In:** 2103141444
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -2485,22 +996,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeName: Password
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-        * idcsPii: true
-        * idcsSearchable: false
-        * idcsSensitive: hash
-        * multiValued: false
-        * mutability: writeOnly
-        * required: false
-        * returned: never
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -2510,20 +1005,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="phoneNumbers")
     def phone_numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]:
-        """
-        (Updatable) Phone numbers
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "phone_numbers")
 
     @phone_numbers.setter
@@ -2533,19 +1014,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def photos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]:
-        """
-        (Updatable) URLs of photos for the User
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "photos")
 
     @photos.setter
@@ -2555,21 +1023,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="preferredLanguage")
     def preferred_language(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User's preferred written or spoken language used for localized user interfaces
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Preferred Language
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
@@ -2579,22 +1032,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="profileUrl")
     def profile_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A fully-qualified URL to a page representing the User's online profile
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Profile URL
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
         return pulumi.get(self, "profile_url")
 
     @profile_url.setter
@@ -2604,9 +1041,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -2616,18 +1050,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]:
-        """
-        (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "roles")
 
     @roles.setter
@@ -2637,19 +1059,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -2659,19 +1068,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -2681,19 +1077,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
@@ -2703,23 +1086,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def timezone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User's timezone
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-        * idcsCanonicalValueSourceResourceType: AllowedValue
-        * idcsCsvAttributeName: TimeZone
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
@@ -2729,22 +1095,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def title(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Title
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Title
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "title")
 
     @title.setter
@@ -2754,9 +1104,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def urnietfparamsscimschemasextensionenterprise20user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]:
-        """
-        (Updatable) Enterprise User
-        """
         return pulumi.get(self, "urnietfparamsscimschemasextensionenterprise20user")
 
     @urnietfparamsscimschemasextensionenterprise20user.setter
@@ -2766,9 +1113,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
     def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
@@ -2778,9 +1122,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser")
     def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]:
-        """
-        (Updatable) This extension defines attributes to manage user's risk score.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user")
 
     @urnietfparamsscimschemasoracleidcsextensionadaptive_user.setter
@@ -2790,9 +1131,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser")
     def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]:
-        """
-        (Updatable) User's Capabilities
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user")
 
     @urnietfparamsscimschemasoracleidcsextensioncapabilities_user.setter
@@ -2802,9 +1140,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
     def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
-        """
-        (Updatable) The database credentials user extension.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
     @urnietfparamsscimschemasoracleidcsextensiondb_credentials_user.setter
@@ -2814,9 +1149,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers")
     def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]]:
-        """
-        (Updatable) DB User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_user_users")
 
     @urnietfparamsscimschemasoracleidcsextensiondb_user_users.setter
@@ -2826,9 +1158,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser")
     def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]:
-        """
-        (Updatable) Kerberos User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_user_user.setter
@@ -2838,9 +1167,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmfaUser")
     def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]:
-        """
-        (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user")
 
     @urnietfparamsscimschemasoracleidcsextensionmfa_user.setter
@@ -2850,9 +1176,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers")
     def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]]:
-        """
-        (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpassword_state_users")
 
     @urnietfparamsscimschemasoracleidcsextensionpassword_state_users.setter
@@ -2862,9 +1185,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser")
     def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]:
-        """
-        (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user")
 
     @urnietfparamsscimschemasoracleidcsextensionpasswordless_user.setter
@@ -2874,9 +1194,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixUser")
     def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]:
-        """
-        (Updatable) POSIX User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_user")
 
     @urnietfparamsscimschemasoracleidcsextensionposix_user.setter
@@ -2886,9 +1203,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
     def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
-        """
-        (Updatable) This extension defines the attributes used to store the security questions of a user.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user.setter
@@ -2898,9 +1212,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")
     def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
-        """
-        (Updatable) Controls whether a user can update themselves or not via User related APIs
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
@@ -2910,9 +1221,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser")
     def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]:
-        """
-        (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_registration_user.setter
@@ -2922,9 +1230,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsffUser")
     def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]:
-        """
-        (Updatable) SFF Auth Keys User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsff_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsff_user.setter
@@ -2934,9 +1239,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser")
     def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]:
-        """
-        (Updatable) Social User extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsocial_account_user.setter
@@ -2946,9 +1248,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser")
     def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]:
-        """
-        (Updatable) Terms Of Use extension
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user")
 
     @urnietfparamsscimschemasoracleidcsextensionterms_of_use_user.setter
@@ -2958,9 +1257,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers")
     def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]]:
-        """
-        (Updatable) User's credentials
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_credentials_users")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_credentials_users.setter
@@ -2970,9 +1266,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
-        """
-        (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_state_user.setter
@@ -2982,9 +1275,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
     def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
-        """
-        (Updatable) Oracle Identity Cloud Service User
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_user.setter
@@ -2994,22 +1284,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: User ID
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -3019,22 +1293,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter(name="userType")
     def user_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Used to identify the organization-to-user relationship
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: User Type
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "user_type")
 
     @user_type.setter
@@ -3044,18 +1302,6 @@ class _DomainsUserState:
     @property
     @pulumi.getter
     def x509certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]:
-        """
-        (Updatable) A list of certificates issued to the User.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "x509certificates")
 
     @x509certificates.setter
@@ -3117,351 +1363,9 @@ class DomainsUser(pulumi.CustomResource):
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserX509certificateArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user.
-
-        ## Import
-
-        Users can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
-        ```
-
+        Create a DomainsUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserAddressArgs']]]] addresses: (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] description: (Updatable) Description of the user
-               
-               **Added In:** 2012271618
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsPii: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserEmailArgs']]]] emails: (Updatable) A complex attribute representing emails
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserEntitlementArgs']]]] entitlements: (Updatable) A list of entitlements for the User that represent a thing the User has.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserImArgs']]]] ims: (Updatable) User's instant messaging addresses
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Locale
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsUserNameArgs']] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] nick_name: (Updatable) Nick name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Nick Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeName: Password
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-               * idcsPii: true
-               * idcsSearchable: false
-               * idcsSensitive: hash
-               * multiValued: false
-               * mutability: writeOnly
-               * required: false
-               * returned: never
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserPhoneNumberArgs']]]] phone_numbers: (Updatable) Phone numbers
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserPhotoArgs']]]] photos: (Updatable) URLs of photos for the User
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] preferred_language: (Updatable) User's preferred written or spoken language used for localized user interfaces
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Preferred Language
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] profile_url: (Updatable) A fully-qualified URL to a page representing the User's online profile
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Profile URL
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserRoleArgs']]]] roles: (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserTagArgs']]]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] timezone: (Updatable) User's timezone
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-               * idcsCanonicalValueSourceResourceType: AllowedValue
-               * idcsCsvAttributeName: TimeZone
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] title: (Updatable) Title
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Title
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] urnietfparamsscimschemasextensionenterprise20user: (Updatable) Enterprise User
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
-        :param pulumi.Input[str] user_name: (Updatable) User name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User ID
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] user_type: (Updatable) Used to identify the organization-to-user relationship
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User Type
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserX509certificateArgs']]]] x509certificates: (Updatable) A list of certificates issued to the User.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
         """
         ...
     @overload
@@ -3470,18 +1374,7 @@ class DomainsUser(pulumi.CustomResource):
                  args: DomainsUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user.
-
-        ## Import
-
-        Users can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsUser:DomainsUser test_user "idcsEndpoint/{idcsEndpoint}/users/{userId}"
-        ```
-
+        Create a DomainsUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainsUserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -3700,445 +1593,6 @@ class DomainsUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: (Updatable) Status of the account
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserAddressArgs']]]] addresses: (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: (Updatable) Description of the user
-               
-               **Added In:** 2012271618
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsPii: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserEmailArgs']]]] emails: (Updatable) A complex attribute representing emails
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserEntitlementArgs']]]] entitlements: (Updatable) A list of entitlements for the User that represent a thing the User has.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] external_id: (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-               
-               **Added In:** 2011192329
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserGroupArgs']]]] groups: (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserImArgs']]]] ims: (Updatable) User's instant messaging addresses
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] locale: (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Locale
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[pulumi.InputType['DomainsUserNameArgs']] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] nick_name: (Updatable) Nick name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Nick Name
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) The OCID of the user's support account.
-               
-               **Added In:** 2103141444
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] password: (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeName: Password
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-               * idcsPii: true
-               * idcsSearchable: false
-               * idcsSensitive: hash
-               * multiValued: false
-               * mutability: writeOnly
-               * required: false
-               * returned: never
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserPhoneNumberArgs']]]] phone_numbers: (Updatable) Phone numbers
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserPhotoArgs']]]] photos: (Updatable) URLs of photos for the User
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * idcsPii: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] preferred_language: (Updatable) User's preferred written or spoken language used for localized user interfaces
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Preferred Language
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] profile_url: (Updatable) A fully-qualified URL to a page representing the User's online profile
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Profile URL
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserRoleArgs']]]] roles: (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value, type]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserTagArgs']]]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] timezone: (Updatable) User's timezone
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-               * idcsCanonicalValueSourceResourceType: AllowedValue
-               * idcsCsvAttributeName: TimeZone
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] title: (Updatable) Title
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: Title
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] urnietfparamsscimschemasextensionenterprise20user: (Updatable) Enterprise User
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] urnietfparamsscimschemasoracleidcsextensionadaptive_user: (Updatable) This extension defines attributes to manage user's risk score.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] urnietfparamsscimschemasoracleidcsextensioncapabilities_user: (Updatable) User's Capabilities
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: (Updatable) The database credentials user extension.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]] urnietfparamsscimschemasoracleidcsextensiondb_user_users: (Updatable) DB User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: (Updatable) Kerberos User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] urnietfparamsscimschemasoracleidcsextensionmfa_user: (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]] urnietfparamsscimschemasoracleidcsextensionpassword_state_users: (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] urnietfparamsscimschemasoracleidcsextensionpasswordless_user: (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] urnietfparamsscimschemasoracleidcsextensionposix_user: (Updatable) POSIX User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: (Updatable) This extension defines the attributes used to store the security questions of a user.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_change_user: (Updatable) Controls whether a user can update themselves or not via User related APIs
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] urnietfparamsscimschemasoracleidcsextensionself_registration_user: (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] urnietfparamsscimschemasoracleidcsextensionsff_user: (Updatable) SFF Auth Keys User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] urnietfparamsscimschemasoracleidcsextensionsocial_account_user: (Updatable) Social User extension
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: (Updatable) Terms Of Use extension
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]] urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: (Updatable) User's credentials
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_state_user: (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        :param pulumi.Input[pulumi.InputType['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] urnietfparamsscimschemasoracleidcsextensionuser_user: (Updatable) Oracle Identity Cloud Service User
-        :param pulumi.Input[str] user_name: (Updatable) User name
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User ID
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: always
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] user_type: (Updatable) Used to identify the organization-to-user relationship
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCsvAttributeName: User Type
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-               * idcsPii: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsUserX509certificateArgs']]]] x509certificates: (Updatable) A list of certificates issued to the User.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -4208,860 +1662,301 @@ class DomainsUser(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def active(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Status of the account
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def active(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter
-    def addresses(self) -> pulumi.Output[Sequence['outputs.DomainsUserAddress']]:
-        """
-        (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Address Street, deprecatedColumnHeaderName:Work Street Address, mapsTo:addresses[work].streetAddress], [columnHeaderName:Work Address Locality, deprecatedColumnHeaderName:Work City, mapsTo:addresses[work].locality], [columnHeaderName:Work Address Region, deprecatedColumnHeaderName:Work State, mapsTo:addresses[work].region], [columnHeaderName:Work Address Postal Code, deprecatedColumnHeaderName:Work Postal Code, mapsTo:addresses[work].postalCode], [columnHeaderName:Work Address Country, deprecatedColumnHeaderName:Work Country, mapsTo:addresses[work].country], [columnHeaderName:Work Address Formatted, mapsTo:addresses[work].formatted], [columnHeaderName:Home Address Formatted, mapsTo:addresses[home].formatted], [columnHeaderName:Other Address Formatted, mapsTo:addresses[other].formatted], [columnHeaderName:Home Address Street, mapsTo:addresses[home].streetAddress], [columnHeaderName:Other Address Street, mapsTo:addresses[other].streetAddress], [columnHeaderName:Home Address Locality, mapsTo:addresses[home].locality], [columnHeaderName:Other Address Locality, mapsTo:addresses[other].locality], [columnHeaderName:Home Address Region, mapsTo:addresses[home].region], [columnHeaderName:Other Address Region, mapsTo:addresses[other].region], [columnHeaderName:Home Address Country, mapsTo:addresses[home].country], [columnHeaderName:Other Address Country, mapsTo:addresses[other].country], [columnHeaderName:Home Address Postal Code, mapsTo:addresses[home].postalCode], [columnHeaderName:Other Address Postal Code, mapsTo:addresses[other].postalCode], [columnHeaderName:Primary Address Type, mapsTo:addresses[$(type)].primary]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def addresses(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserAddress']]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @property
     @pulumi.getter
     def attributes(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def compartment_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def delete_in_progress(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the user
-
-        **Added In:** 2012271618
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsPii: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def domain_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
-    def emails(self) -> pulumi.Output[Sequence['outputs.DomainsUserEmail']]:
-        """
-        (Updatable) A complex attribute representing emails
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Email, mapsTo:emails[work].value], [columnHeaderName:Home Email, mapsTo:emails[home].value], [columnHeaderName:Primary Email Type, mapsTo:emails[$(type)].primary], [columnHeaderName:Other Email, mapsTo:emails[other].value], [columnHeaderName:Recovery Email, mapsTo:emails[recovery].value], [columnHeaderName:Work Email Verified, mapsTo:emails[work].verified], [columnHeaderName:Home Email Verified, mapsTo:emails[home].verified], [columnHeaderName:Other Email Verified, mapsTo:emails[other].verified], [columnHeaderName:Recovery Email Verified, mapsTo:emails[recovery].verified]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def emails(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserEmail']]]:
         return pulumi.get(self, "emails")
 
     @property
     @pulumi.getter
-    def entitlements(self) -> pulumi.Output[Sequence['outputs.DomainsUserEntitlement']]:
-        """
-        (Updatable) A list of entitlements for the User that represent a thing the User has.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def entitlements(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserEntitlement']]]:
         return pulumi.get(self, "entitlements")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-
-        **Added In:** 2011192329
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def external_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter
-    def groups(self) -> pulumi.Output[Sequence['outputs.DomainsUserGroup']]:
-        """
-        (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def groups(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserGroup']]]:
         return pulumi.get(self, "groups")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsUserIdcsCreatedBy']]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
+    def idcs_created_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserIdcsCreatedBy']]]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Output[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsUserIdcsLastModifiedBy']]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def idcs_last_modified_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserIdcsLastModifiedBy']]]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_last_upgraded_in_release(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_prevented_operations(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter
-    def ims(self) -> pulumi.Output[Sequence['outputs.DomainsUserIm']]:
-        """
-        (Updatable) User's instant messaging addresses
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def ims(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserIm']]]:
         return pulumi.get(self, "ims")
 
     @property
     @pulumi.getter
-    def locale(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Locale
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Locale]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def locale(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter
-    def metas(self) -> pulumi.Output[Sequence['outputs.DomainsUserMeta']]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
+    def metas(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserMeta']]]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output['outputs.DomainsUserName']:
-        """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nickName")
-    def nick_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Nick name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Nick Name
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Nick Name]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def nick_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "nick_name")
 
     @property
     @pulumi.getter
-    def ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the user's support account.
-
-        **Added In:** 2103141444
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: string
-        * uniqueness: none
-        """
+    def ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter
-    def password(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Password attribute. Max length for password is controlled via Password Policy.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeName: Password
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Password]]
-        * idcsPii: true
-        * idcsSearchable: false
-        * idcsSensitive: hash
-        * multiValued: false
-        * mutability: writeOnly
-        * required: false
-        * returned: never
-        * type: string
-        * uniqueness: none
-        """
+    def password(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="phoneNumbers")
-    def phone_numbers(self) -> pulumi.Output[Sequence['outputs.DomainsUserPhoneNumber']]:
-        """
-        (Updatable) Phone numbers
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Work Phone, mapsTo:phoneNumbers[work].value], [columnHeaderName:Mobile No, mapsTo:phoneNumbers[mobile].value], [columnHeaderName:Home Phone, mapsTo:phoneNumbers[home].value], [columnHeaderName:Fax, mapsTo:phoneNumbers[fax].value], [columnHeaderName:Pager, mapsTo:phoneNumbers[pager].value], [columnHeaderName:Other Phone, mapsTo:phoneNumbers[other].value], [columnHeaderName:Recovery Phone, mapsTo:phoneNumbers[recovery].value], [columnHeaderName:Primary Phone Type, mapsTo:phoneNumbers[$(type)].primary]]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def phone_numbers(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserPhoneNumber']]]:
         return pulumi.get(self, "phone_numbers")
 
     @property
     @pulumi.getter
-    def photos(self) -> pulumi.Output[Sequence['outputs.DomainsUserPhoto']]:
-        """
-        (Updatable) URLs of photos for the User
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * idcsPii: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def photos(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserPhoto']]]:
         return pulumi.get(self, "photos")
 
     @property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User's preferred written or spoken language used for localized user interfaces
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Preferred Language
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Preferred Language]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def preferred_language(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "preferred_language")
 
     @property
     @pulumi.getter(name="profileUrl")
-    def profile_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A fully-qualified URL to a page representing the User's online profile
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Profile URL
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Profile Url]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
+    def profile_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "profile_url")
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @property
     @pulumi.getter
-    def roles(self) -> pulumi.Output[Sequence['outputs.DomainsUserRole']]:
-        """
-        (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value, type]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def roles(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserRole']]]:
         return pulumi.get(self, "roles")
 
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[Sequence['outputs.DomainsUserTag']]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def tags(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserTag']]]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def tenancy_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter
-    def timezone(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User's timezone
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCanonicalValueSourceFilter: attrName eq "timezones" and attrValues.value eq "$(timezone)"
-        * idcsCanonicalValueSourceResourceType: AllowedValue
-        * idcsCsvAttributeName: TimeZone
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Time Zone, deprecatedColumnHeaderName:TimeZone]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def timezone(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "timezone")
 
     @property
     @pulumi.getter
-    def title(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Title
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: Title
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Title]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def title(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "title")
 
     @property
     @pulumi.getter
-    def urnietfparamsscimschemasextensionenterprise20user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasextensionenterprise20user']:
-        """
-        (Updatable) Enterprise User
-        """
+    def urnietfparamsscimschemasextensionenterprise20user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasextensionenterprise20user']]:
         return pulumi.get(self, "urnietfparamsscimschemasextensionenterprise20user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags']:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser")
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser']:
-        """
-        (Updatable) This extension defines attributes to manage user's risk score.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser")
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']:
-        """
-        (Updatable) User's Capabilities
-        """
+    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']:
-        """
-        (Updatable) The database credentials user extension.
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers")
-    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> pulumi.Output[Sequence['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser']]:
-        """
-        (Updatable) DB User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser']]]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_user_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser']:
-        """
-        (Updatable) Kerberos User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmfaUser")
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser']:
-        """
-        (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers")
-    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> pulumi.Output[Sequence['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser']]:
-        """
-        (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser']]]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpassword_state_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser")
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser']:
-        """
-        (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixUser")
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser']:
-        """
-        (Updatable) POSIX User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']:
-        """
-        (Updatable) This extension defines the attributes used to store the security questions of a user.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']:
-        """
-        (Updatable) Controls whether a user can update themselves or not via User related APIs
-        """
+    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser")
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']:
-        """
-        (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsffUser")
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser']:
-        """
-        (Updatable) SFF Auth Keys User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsff_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser")
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser']:
-        """
-        (Updatable) Social User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser")
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']:
-        """
-        (Updatable) Terms Of Use extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers")
-    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> pulumi.Output[Sequence['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser']]:
-        """
-        (Updatable) User's credentials
-        """
+    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser']]]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_credentials_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser']:
-        """
-        (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> pulumi.Output['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser']:
-        """
-        (Updatable) Oracle Identity Cloud Service User
-        """
+    def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> pulumi.Output[Optional['outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User name
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: User ID
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Name, deprecatedColumnHeaderName:User ID]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: always
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="userType")
-    def user_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Used to identify the organization-to-user relationship
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCsvAttributeName: User Type
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:User Type]]
-        * idcsPii: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def user_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "user_type")
 
     @property
     @pulumi.getter
-    def x509certificates(self) -> pulumi.Output[Sequence['outputs.DomainsUserX509certificate']]:
-        """
-        (Updatable) A list of certificates issued to the User.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def x509certificates(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsUserX509certificate']]]:
         return pulumi.get(self, "x509certificates")
 

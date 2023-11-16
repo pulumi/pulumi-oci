@@ -45,24 +45,24 @@ export interface GetServiceCatalogAssociationResult {
     /**
      * Identifier of the entity being associated with service catalog.
      */
-    readonly entityId: string;
+    readonly entityId?: string;
     /**
      * The type of the entity that is associated with the service catalog.
      */
-    readonly entityType: string;
+    readonly entityType?: string;
     /**
      * Identifier of the association.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly serviceCatalogAssociationId: string;
     /**
      * Identifier of the service catalog.
      */
-    readonly serviceCatalogId: string;
+    readonly serviceCatalogId?: string;
     /**
      * Timestamp of when the resource was associated with service catalog.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.

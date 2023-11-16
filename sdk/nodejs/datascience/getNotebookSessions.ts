@@ -96,7 +96,7 @@ export interface GetNotebookSessionsResult {
     /**
      * The list of notebook_sessions.
      */
-    readonly notebookSessions: outputs.DataScience.GetNotebookSessionsNotebookSession[];
+    readonly notebookSessions?: outputs.DataScience.GetNotebookSessionsNotebookSession[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the notebook session.
      */

@@ -48,11 +48,11 @@ export interface GetExternalAsmConfigurationResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of initialization parameters for the external ASM instances.
      */
-    readonly initParameters: outputs.DatabaseManagement.GetExternalAsmConfigurationInitParameter[];
+    readonly initParameters?: outputs.DatabaseManagement.GetExternalAsmConfigurationInitParameter[];
 }
 /**
  * This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.

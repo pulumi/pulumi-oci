@@ -143,7 +143,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of PublicVantagePointSummary items.
         /// </summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.ApmSynthetics
 
             string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetVantagePointItemResult> items,
 

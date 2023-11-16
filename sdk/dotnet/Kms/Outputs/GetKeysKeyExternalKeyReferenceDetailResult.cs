@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         /// </summary>
-        public readonly string ExternalKeyId;
+        public readonly string? ExternalKeyId;
         /// <summary>
         /// Key version ID associated with the external key.
         /// </summary>
-        public readonly string ExternalKeyVersionId;
+        public readonly string? ExternalKeyVersionId;
 
         [OutputConstructor]
         private GetKeysKeyExternalKeyReferenceDetailResult(
-            string externalKeyId,
+            string? externalKeyId,
 
-            string externalKeyVersionId)
+            string? externalKeyVersionId)
         {
             ExternalKeyId = externalKeyId;
             ExternalKeyVersionId = externalKeyVersionId;

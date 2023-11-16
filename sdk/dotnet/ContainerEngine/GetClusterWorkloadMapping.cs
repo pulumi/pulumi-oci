@@ -126,56 +126,56 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The ocid of the workloadMapping.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the mapped customer compartment.
         /// </summary>
-        public readonly string MappedCompartmentId;
+        public readonly string? MappedCompartmentId;
         /// <summary>
         /// The OCID of the mapped customer tenancy.
         /// </summary>
-        public readonly string MappedTenancyId;
+        public readonly string? MappedTenancyId;
         /// <summary>
         /// The namespace of the workloadMapping.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The state of the workloadMapping.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         public readonly string WorkloadMappingId;
 
         [OutputConstructor]
         private GetClusterWorkloadMappingResult(
             string clusterId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string mappedCompartmentId,
+            string? mappedCompartmentId,
 
-            string mappedTenancyId,
+            string? mappedTenancyId,
 
-            string @namespace,
+            string? @namespace,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             string workloadMappingId)
         {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -60,32 +59,32 @@ type LookupUnifiedAgentConfigurationArgs struct {
 // A collection of values returned by getUnifiedAgentConfiguration.
 type LookupUnifiedAgentConfigurationResult struct {
 	// The OCID of the compartment that the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// State of unified agent service configuration.
-	ConfigurationState string `pulumi:"configurationState"`
+	ConfigurationState *string `pulumi:"configurationState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Groups using the configuration.
 	GroupAssociations []GetUnifiedAgentConfigurationGroupAssociation `pulumi:"groupAssociations"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Top level Unified Agent service configuration object.
 	ServiceConfigurations []GetUnifiedAgentConfigurationServiceConfiguration `pulumi:"serviceConfigurations"`
 	// The pipeline state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time the resource was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified            string `pulumi:"timeLastModified"`
-	UnifiedAgentConfigurationId string `pulumi:"unifiedAgentConfigurationId"`
+	TimeLastModified            *string `pulumi:"timeLastModified"`
+	UnifiedAgentConfigurationId string  `pulumi:"unifiedAgentConfigurationId"`
 }
 
 func LookupUnifiedAgentConfigurationOutput(ctx *pulumi.Context, args LookupUnifiedAgentConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupUnifiedAgentConfigurationResultOutput {
@@ -126,20 +125,14 @@ func (o LookupUnifiedAgentConfigurationResultOutput) ToLookupUnifiedAgentConfigu
 	return o
 }
 
-func (o LookupUnifiedAgentConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUnifiedAgentConfigurationResult] {
-	return pulumix.Output[LookupUnifiedAgentConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
-func (o LookupUnifiedAgentConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // State of unified agent service configuration.
-func (o LookupUnifiedAgentConfigurationResultOutput) ConfigurationState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.ConfigurationState }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) ConfigurationState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.ConfigurationState }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -148,13 +141,13 @@ func (o LookupUnifiedAgentConfigurationResultOutput) DefinedTags() pulumi.MapOut
 }
 
 // Description for this resource.
-func (o LookupUnifiedAgentConfigurationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-func (o LookupUnifiedAgentConfigurationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -170,13 +163,13 @@ func (o LookupUnifiedAgentConfigurationResultOutput) GroupAssociations() GetUnif
 }
 
 // The OCID of the resource.
-func (o LookupUnifiedAgentConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this resource is currently enabled.
-func (o LookupUnifiedAgentConfigurationResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Top level Unified Agent service configuration object.
@@ -187,18 +180,18 @@ func (o LookupUnifiedAgentConfigurationResultOutput) ServiceConfigurations() Get
 }
 
 // The pipeline state.
-func (o LookupUnifiedAgentConfigurationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LookupUnifiedAgentConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LookupUnifiedAgentConfigurationResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) *string { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupUnifiedAgentConfigurationResultOutput) UnifiedAgentConfigurationId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
@@ -82,8 +81,8 @@ type GetManagedDatabaseAlertLogCountArgs struct {
 type GetManagedDatabaseAlertLogCountResult struct {
 	GroupBy *string `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IsRegularExpression *bool  `pulumi:"isRegularExpression"`
+	Id                  *string `pulumi:"id"`
+	IsRegularExpression *bool   `pulumi:"isRegularExpression"`
 	// An array of the counts of different urgency or type of alert logs.
 	Items         []GetManagedDatabaseAlertLogCountItem `pulumi:"items"`
 	LevelFilter   *string                               `pulumi:"levelFilter"`
@@ -147,19 +146,13 @@ func (o GetManagedDatabaseAlertLogCountResultOutput) ToGetManagedDatabaseAlertLo
 	return o
 }
 
-func (o GetManagedDatabaseAlertLogCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAlertLogCountResult] {
-	return pulumix.Output[GetManagedDatabaseAlertLogCountResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseAlertLogCountResultOutput) GroupBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountResult) *string { return v.GroupBy }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseAlertLogCountResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseAlertLogCountResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseAlertLogCountResultOutput) IsRegularExpression() pulumi.BoolPtrOutput {

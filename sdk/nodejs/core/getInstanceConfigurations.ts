@@ -54,11 +54,11 @@ export interface GetInstanceConfigurationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of instance_configurations.
      */
-    readonly instanceConfigurations: outputs.Core.GetInstanceConfigurationsInstanceConfiguration[];
+    readonly instanceConfigurations?: outputs.Core.GetInstanceConfigurationsInstanceConfiguration[];
 }
 /**
  * This data source provides the list of Instance Configurations in Oracle Cloud Infrastructure Core service.

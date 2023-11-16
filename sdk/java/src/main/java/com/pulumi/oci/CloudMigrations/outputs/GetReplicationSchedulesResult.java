@@ -29,12 +29,12 @@ public final class GetReplicationSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of replication_schedule_collection.
      * 
      */
-    private List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections;
+    private @Nullable List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections;
     private @Nullable String replicationScheduleId;
     /**
      * @return Current state of the replication schedule.
@@ -64,15 +64,15 @@ public final class GetReplicationSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of replication_schedule_collection.
      * 
      */
     public List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections() {
-        return this.replicationScheduleCollections;
+        return this.replicationScheduleCollections == null ? List.of() : this.replicationScheduleCollections;
     }
     public Optional<String> replicationScheduleId() {
         return Optional.ofNullable(this.replicationScheduleId);
@@ -97,8 +97,8 @@ public final class GetReplicationSchedulesResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetReplicationSchedulesFilter> filters;
-        private String id;
-        private List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections;
+        private @Nullable String id;
+        private @Nullable List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections;
         private @Nullable String replicationScheduleId;
         private @Nullable String state;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetReplicationSchedulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder replicationScheduleCollections(List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections) {
-            this.replicationScheduleCollections = Objects.requireNonNull(replicationScheduleCollections);
+        public Builder replicationScheduleCollections(@Nullable List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections) {
+            this.replicationScheduleCollections = replicationScheduleCollections;
             return this;
         }
         public Builder replicationScheduleCollections(GetReplicationSchedulesReplicationScheduleCollection... replicationScheduleCollections) {

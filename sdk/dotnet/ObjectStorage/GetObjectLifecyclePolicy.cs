@@ -122,7 +122,7 @@ namespace Pulumi.Oci.ObjectStorage
     public sealed class GetObjectLifecyclePolicyResult
     {
         public readonly string Bucket;
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// The live lifecycle policy on the bucket.
@@ -131,19 +131,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetObjectLifecyclePolicyResult(
             string bucket,
 
-            string id,
+            string? id,
 
             string @namespace,
 
             ImmutableArray<Outputs.GetObjectLifecyclePolicyRuleResult> rules,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Bucket = bucket;
             Id = id;

@@ -108,170 +108,170 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string BillingContractEndDate;
+        public readonly string? BillingContractEndDate;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         /// </summary>
-        public readonly string BillingDonorHostId;
+        public readonly string? BillingDonorHostId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
-        public readonly string CapacityReservationId;
+        public readonly string? CapacityReservationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The availability domain of the ESXi host.
         /// </summary>
-        public readonly string ComputeAvailabilityDomain;
+        public readonly string? ComputeAvailabilityDomain;
         /// <summary>
         /// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         /// </summary>
-        public readonly string ComputeInstanceId;
+        public readonly string? ComputeInstanceId;
         /// <summary>
         /// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
-        public readonly string CurrentSku;
+        public readonly string? CurrentSku;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string EsxiHostId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         /// </summary>
-        public readonly string FailedEsxiHostId;
+        public readonly string? FailedEsxiHostId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         /// </summary>
-        public readonly string GracePeriodEndDate;
+        public readonly string? GracePeriodEndDate;
         /// <summary>
         /// The OCPU count of the ESXi host.
         /// </summary>
-        public readonly double HostOcpuCount;
+        public readonly double? HostOcpuCount;
         /// <summary>
         /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         /// </summary>
-        public readonly string HostShapeName;
+        public readonly string? HostShapeName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether this host is in the progress of billing continuation.
         /// </summary>
-        public readonly bool IsBillingContinuationInProgress;
+        public readonly bool? IsBillingContinuationInProgress;
         /// <summary>
         /// Indicates whether this host is in the progress of swapping billing.
         /// </summary>
-        public readonly bool IsBillingSwappingInProgress;
+        public readonly bool? IsBillingSwappingInProgress;
         /// <summary>
         /// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
-        public readonly string NextSku;
+        public readonly string? NextSku;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
         /// </summary>
-        public readonly string NonUpgradedEsxiHostId;
+        public readonly string? NonUpgradedEsxiHostId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         /// </summary>
-        public readonly string ReplacementEsxiHostId;
+        public readonly string? ReplacementEsxiHostId;
         /// <summary>
         /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         /// </summary>
-        public readonly string SddcId;
+        public readonly string? SddcId;
         /// <summary>
         /// The current state of the ESXi host.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         /// </summary>
-        public readonly string SwapBillingHostId;
+        public readonly string? SwapBillingHostId;
         /// <summary>
         /// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         /// </summary>
-        public readonly string UpgradedReplacementEsxiHostId;
+        public readonly string? UpgradedReplacementEsxiHostId;
         /// <summary>
         /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         /// </summary>
-        public readonly string VmwareSoftwareVersion;
+        public readonly string? VmwareSoftwareVersion;
 
         [OutputConstructor]
         private GetExsiHostResult(
-            string billingContractEndDate,
+            string? billingContractEndDate,
 
-            string billingDonorHostId,
+            string? billingDonorHostId,
 
-            string capacityReservationId,
+            string? capacityReservationId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string computeAvailabilityDomain,
+            string? computeAvailabilityDomain,
 
-            string computeInstanceId,
+            string? computeInstanceId,
 
-            string currentSku,
+            string? currentSku,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             string esxiHostId,
 
-            string failedEsxiHostId,
+            string? failedEsxiHostId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string gracePeriodEndDate,
+            string? gracePeriodEndDate,
 
-            double hostOcpuCount,
+            double? hostOcpuCount,
 
-            string hostShapeName,
+            string? hostShapeName,
 
-            string id,
+            string? id,
 
-            bool isBillingContinuationInProgress,
+            bool? isBillingContinuationInProgress,
 
-            bool isBillingSwappingInProgress,
+            bool? isBillingSwappingInProgress,
 
-            string nextSku,
+            string? nextSku,
 
-            string nonUpgradedEsxiHostId,
+            string? nonUpgradedEsxiHostId,
 
-            string replacementEsxiHostId,
+            string? replacementEsxiHostId,
 
-            string sddcId,
+            string? sddcId,
 
-            string state,
+            string? state,
 
-            string swapBillingHostId,
+            string? swapBillingHostId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string upgradedReplacementEsxiHostId,
+            string? upgradedReplacementEsxiHostId,
 
-            string vmwareSoftwareVersion)
+            string? vmwareSoftwareVersion)
         {
             BillingContractEndDate = billingContractEndDate;
             BillingDonorHostId = billingDonorHostId;

@@ -61,90 +61,57 @@ class GetTsigKeyResult:
 
     @property
     @pulumi.getter
-    def algorithm(self) -> str:
-        """
-        TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-        """
+    def algorithm(self) -> Optional[str]:
         return pulumi.get(self, "algorithm")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the TSIG key.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A globally unique domain name identifying the key for a given pair of hosts.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def secret(self) -> str:
-        """
-        A base64 string encoding the binary shared secret.
-        """
+    def secret(self) -> Optional[str]:
         return pulumi.get(self, "secret")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
@@ -176,21 +143,7 @@ class AwaitableGetTsigKeyResult(GetTsigKeyResult):
 def get_tsig_key(tsig_key_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTsigKeyResult:
     """
-    This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about the specified TSIG key.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"])
-    ```
-
-
-    :param str tsig_key_id: The OCID of the target TSIG key.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['tsigKeyId'] = tsig_key_id
@@ -216,20 +169,6 @@ def get_tsig_key(tsig_key_id: Optional[str] = None,
 def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTsigKeyResult]:
     """
-    This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about the specified TSIG key.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"])
-    ```
-
-
-    :param str tsig_key_id: The OCID of the target TSIG key.
+    Use this data source to access information about an existing resource.
     """
     ...

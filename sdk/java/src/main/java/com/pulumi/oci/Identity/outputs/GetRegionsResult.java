@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetRegionsRegion;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetRegionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of regions.
      * 
      */
-    private List<GetRegionsRegion> regions;
+    private @Nullable List<GetRegionsRegion> regions;
 
     private GetRegionsResult() {}
     public List<GetRegionsFilter> filters() {
@@ -33,15 +34,15 @@ public final class GetRegionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of regions.
      * 
      */
     public List<GetRegionsRegion> regions() {
-        return this.regions;
+        return this.regions == null ? List.of() : this.regions;
     }
 
     public static Builder builder() {
@@ -54,8 +55,8 @@ public final class GetRegionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetRegionsFilter> filters;
-        private String id;
-        private List<GetRegionsRegion> regions;
+        private @Nullable String id;
+        private @Nullable List<GetRegionsRegion> regions;
         public Builder() {}
         public Builder(GetRegionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,13 +74,13 @@ public final class GetRegionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder regions(List<GetRegionsRegion> regions) {
-            this.regions = Objects.requireNonNull(regions);
+        public Builder regions(@Nullable List<GetRegionsRegion> regions) {
+            this.regions = regions;
             return this;
         }
         public Builder regions(GetRegionsRegion... regions) {

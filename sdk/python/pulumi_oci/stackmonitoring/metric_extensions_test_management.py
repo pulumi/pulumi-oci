@@ -18,12 +18,6 @@ class MetricExtensionsTestManagementArgs:
                  resource_ids: pulumi.Input[str]):
         """
         The set of arguments for constructing a MetricExtensionsTestManagement resource.
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "metric_extension_id", metric_extension_id)
         pulumi.set(__self__, "resource_ids", resource_ids)
@@ -31,9 +25,6 @@ class MetricExtensionsTestManagementArgs:
     @property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        """
         return pulumi.get(self, "metric_extension_id")
 
     @metric_extension_id.setter
@@ -43,13 +34,6 @@ class MetricExtensionsTestManagementArgs:
     @property
     @pulumi.getter(name="resourceIds")
     def resource_ids(self) -> pulumi.Input[str]:
-        """
-        List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
@@ -68,16 +52,6 @@ class _MetricExtensionsTestManagementState:
                  test_run_resource_group_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MetricExtensionsTestManagement resources.
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] test_run_id: Test Run Id
-        :param pulumi.Input[str] test_run_metric_suffix: Test Run Metric Suffix
-        :param pulumi.Input[str] test_run_namespace_name: Test Run Namespace name
-        :param pulumi.Input[str] test_run_resource_group_name: Test Run Resource Group name
         """
         if metric_extension_id is not None:
             pulumi.set(__self__, "metric_extension_id", metric_extension_id)
@@ -95,9 +69,6 @@ class _MetricExtensionsTestManagementState:
     @property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        """
         return pulumi.get(self, "metric_extension_id")
 
     @metric_extension_id.setter
@@ -107,13 +78,6 @@ class _MetricExtensionsTestManagementState:
     @property
     @pulumi.getter(name="resourceIds")
     def resource_ids(self) -> Optional[pulumi.Input[str]]:
-        """
-        List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
@@ -123,9 +87,6 @@ class _MetricExtensionsTestManagementState:
     @property
     @pulumi.getter(name="testRunId")
     def test_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Test Run Id
-        """
         return pulumi.get(self, "test_run_id")
 
     @test_run_id.setter
@@ -135,9 +96,6 @@ class _MetricExtensionsTestManagementState:
     @property
     @pulumi.getter(name="testRunMetricSuffix")
     def test_run_metric_suffix(self) -> Optional[pulumi.Input[str]]:
-        """
-        Test Run Metric Suffix
-        """
         return pulumi.get(self, "test_run_metric_suffix")
 
     @test_run_metric_suffix.setter
@@ -147,9 +105,6 @@ class _MetricExtensionsTestManagementState:
     @property
     @pulumi.getter(name="testRunNamespaceName")
     def test_run_namespace_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Test Run Namespace name
-        """
         return pulumi.get(self, "test_run_namespace_name")
 
     @test_run_namespace_name.setter
@@ -159,9 +114,6 @@ class _MetricExtensionsTestManagementState:
     @property
     @pulumi.getter(name="testRunResourceGroupName")
     def test_run_resource_group_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Test Run Resource Group name
-        """
         return pulumi.get(self, "test_run_resource_group_name")
 
     @test_run_resource_group_name.setter
@@ -178,33 +130,9 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
                  resource_ids: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Performs test of Metric Extension on a specific resource Id
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_metric_extensions_test_management = oci.stack_monitoring.MetricExtensionsTestManagement("testMetricExtensionsTestManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extensions_test_management_resource_ids"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a MetricExtensionsTestManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -213,25 +141,7 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
                  args: MetricExtensionsTestManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Performs test of Metric Extension on a specific resource Id
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_metric_extensions_test_management = oci.stack_monitoring.MetricExtensionsTestManagement("testMetricExtensionsTestManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extensions_test_management_resource_ids"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a MetricExtensionsTestManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MetricExtensionsTestManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -291,16 +201,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        :param pulumi.Input[str] resource_ids: List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] test_run_id: Test Run Id
-        :param pulumi.Input[str] test_run_metric_suffix: Test Run Metric Suffix
-        :param pulumi.Input[str] test_run_namespace_name: Test Run Namespace name
-        :param pulumi.Input[str] test_run_resource_group_name: Test Run Resource Group name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -317,52 +217,30 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
-        """
         return pulumi.get(self, "metric_extension_id")
 
     @property
     @pulumi.getter(name="resourceIds")
     def resource_ids(self) -> pulumi.Output[str]:
-        """
-        List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_ids")
 
     @property
     @pulumi.getter(name="testRunId")
-    def test_run_id(self) -> pulumi.Output[str]:
-        """
-        Test Run Id
-        """
+    def test_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "test_run_id")
 
     @property
     @pulumi.getter(name="testRunMetricSuffix")
-    def test_run_metric_suffix(self) -> pulumi.Output[str]:
-        """
-        Test Run Metric Suffix
-        """
+    def test_run_metric_suffix(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "test_run_metric_suffix")
 
     @property
     @pulumi.getter(name="testRunNamespaceName")
-    def test_run_namespace_name(self) -> pulumi.Output[str]:
-        """
-        Test Run Namespace name
-        """
+    def test_run_namespace_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "test_run_namespace_name")
 
     @property
     @pulumi.getter(name="testRunResourceGroupName")
-    def test_run_resource_group_name(self) -> pulumi.Output[str]:
-        """
-        Test Run Resource Group name
-        """
+    def test_run_resource_group_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "test_run_resource_group_name")
 

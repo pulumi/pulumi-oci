@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
@@ -69,7 +68,7 @@ type GetDbSystemStoragePerformancesResult struct {
 	DbSystemStoragePerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformance `pulumi:"dbSystemStoragePerformances"`
 	Filters                     []GetDbSystemStoragePerformancesFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// ShapeType of the DbSystems,INTEL or AMD
 	ShapeType         *string `pulumi:"shapeType"`
 	StorageManagement string  `pulumi:"storageManagement"`
@@ -118,12 +117,6 @@ func (o GetDbSystemStoragePerformancesResultOutput) ToGetDbSystemStoragePerforma
 	return o
 }
 
-func (o GetDbSystemStoragePerformancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemStoragePerformancesResult] {
-	return pulumix.Output[GetDbSystemStoragePerformancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of db_system_storage_performances.
 func (o GetDbSystemStoragePerformancesResultOutput) DbSystemStoragePerformances() GetDbSystemStoragePerformancesDbSystemStoragePerformanceArrayOutput {
 	return o.ApplyT(func(v GetDbSystemStoragePerformancesResult) []GetDbSystemStoragePerformancesDbSystemStoragePerformance {
@@ -136,8 +129,8 @@ func (o GetDbSystemStoragePerformancesResultOutput) Filters() GetDbSystemStorage
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemStoragePerformancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemStoragePerformancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemStoragePerformancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // ShapeType of the DbSystems,INTEL or AMD

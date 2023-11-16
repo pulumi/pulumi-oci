@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail {
@@ -17,51 +19,51 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      * @return The minimum network bandwidth for the model deployment.
      * 
      */
-    private Integer bandwidthMbps;
+    private @Nullable Integer bandwidthMbps;
     /**
      * @return The model deployment instance configuration
      * 
      */
-    private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
+    private @Nullable List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
     /**
      * @return The OCID of the model you want to deploy.
      * 
      */
-    private String modelId;
+    private @Nullable String modelId;
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
      */
-    private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
+    private @Nullable List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
 
     private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail() {}
     /**
      * @return The minimum network bandwidth for the model deployment.
      * 
      */
-    public Integer bandwidthMbps() {
-        return this.bandwidthMbps;
+    public Optional<Integer> bandwidthMbps() {
+        return Optional.ofNullable(this.bandwidthMbps);
     }
     /**
      * @return The model deployment instance configuration
      * 
      */
     public List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations() {
-        return this.instanceConfigurations;
+        return this.instanceConfigurations == null ? List.of() : this.instanceConfigurations;
     }
     /**
      * @return The OCID of the model you want to deploy.
      * 
      */
-    public String modelId() {
-        return this.modelId;
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
     /**
      * @return The scaling policy to apply to each model of the deployment.
      * 
      */
     public List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies() {
-        return this.scalingPolicies;
+        return this.scalingPolicies == null ? List.of() : this.scalingPolicies;
     }
 
     public static Builder builder() {
@@ -73,10 +75,10 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer bandwidthMbps;
-        private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
-        private String modelId;
-        private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
+        private @Nullable Integer bandwidthMbps;
+        private @Nullable List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
+        private @Nullable String modelId;
+        private @Nullable List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
         public Builder() {}
         public Builder(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,26 +89,26 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         }
 
         @CustomType.Setter
-        public Builder bandwidthMbps(Integer bandwidthMbps) {
-            this.bandwidthMbps = Objects.requireNonNull(bandwidthMbps);
+        public Builder bandwidthMbps(@Nullable Integer bandwidthMbps) {
+            this.bandwidthMbps = bandwidthMbps;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConfigurations(List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations) {
-            this.instanceConfigurations = Objects.requireNonNull(instanceConfigurations);
+        public Builder instanceConfigurations(@Nullable List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations) {
+            this.instanceConfigurations = instanceConfigurations;
             return this;
         }
         public Builder instanceConfigurations(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration... instanceConfigurations) {
             return instanceConfigurations(List.of(instanceConfigurations));
         }
         @CustomType.Setter
-        public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+        public Builder modelId(@Nullable String modelId) {
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
-        public Builder scalingPolicies(List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies) {
-            this.scalingPolicies = Objects.requireNonNull(scalingPolicies);
+        public Builder scalingPolicies(@Nullable List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies) {
+            this.scalingPolicies = scalingPolicies;
             return this;
         }
         public Builder scalingPolicies(GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy... scalingPolicies) {

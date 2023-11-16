@@ -46,9 +46,6 @@ class GetProtectionRulesResult:
     @property
     @pulumi.getter
     def actions(self) -> Optional[Sequence[str]]:
-        """
-        The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        """
         return pulumi.get(self, "actions")
 
     @property
@@ -58,7 +55,7 @@ class GetProtectionRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,10 +68,7 @@ class GetProtectionRulesResult:
 
     @property
     @pulumi.getter(name="protectionRules")
-    def protection_rules(self) -> Sequence['outputs.GetProtectionRulesProtectionRuleResult']:
-        """
-        The list of protection_rules.
-        """
+    def protection_rules(self) -> Optional[Sequence['outputs.GetProtectionRulesProtectionRuleResult']]:
         return pulumi.get(self, "protection_rules")
 
     @property
@@ -103,26 +97,7 @@ def get_protection_rules(actions: Optional[Sequence[str]] = None,
                          waas_policy_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionRulesResult:
     """
-    This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the list of available protection rules for a WAAS policy. Use the `GetWafConfig` operation to view a list of currently configured protection rules for the Web Application Firewall, or use the `ListRecommendations` operation to get a list of recommended protection rules for the Web Application Firewall.
-    The list is sorted by `key`, in ascending order.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_rules = oci.Waas.get_protection_rules(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
-        actions=var["protection_rule_action"],
-        mod_security_rule_ids=oci_events_rule["test_rule"]["id"])
-    ```
-
-
-    :param Sequence[str] actions: Filter rules using a list of actions.
-    :param Sequence[str] mod_security_rule_ids: Filter rules using a list of ModSecurity rule IDs.
-    :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['actions'] = actions
@@ -148,25 +123,6 @@ def get_protection_rules_output(actions: Optional[pulumi.Input[Optional[Sequence
                                 waas_policy_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRulesResult]:
     """
-    This data source provides the list of Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the list of available protection rules for a WAAS policy. Use the `GetWafConfig` operation to view a list of currently configured protection rules for the Web Application Firewall, or use the `ListRecommendations` operation to get a list of recommended protection rules for the Web Application Firewall.
-    The list is sorted by `key`, in ascending order.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_rules = oci.Waas.get_protection_rules(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
-        actions=var["protection_rule_action"],
-        mod_security_rule_ids=oci_events_rule["test_rule"]["id"])
-    ```
-
-
-    :param Sequence[str] actions: Filter rules using a list of actions.
-    :param Sequence[str] mod_security_rule_ids: Filter rules using a list of ModSecurity rule IDs.
-    :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+    Use this data source to access information about an existing resource.
     """
     ...

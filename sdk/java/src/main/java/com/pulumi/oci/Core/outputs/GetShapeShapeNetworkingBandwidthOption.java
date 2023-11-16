@@ -6,22 +6,24 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapeShapeNetworkingBandwidthOption {
-    private Double defaultPerOcpuInGbps;
-    private Double maxInGbps;
-    private Double minInGbps;
+    private @Nullable Double defaultPerOcpuInGbps;
+    private @Nullable Double maxInGbps;
+    private @Nullable Double minInGbps;
 
     private GetShapeShapeNetworkingBandwidthOption() {}
-    public Double defaultPerOcpuInGbps() {
-        return this.defaultPerOcpuInGbps;
+    public Optional<Double> defaultPerOcpuInGbps() {
+        return Optional.ofNullable(this.defaultPerOcpuInGbps);
     }
-    public Double maxInGbps() {
-        return this.maxInGbps;
+    public Optional<Double> maxInGbps() {
+        return Optional.ofNullable(this.maxInGbps);
     }
-    public Double minInGbps() {
-        return this.minInGbps;
+    public Optional<Double> minInGbps() {
+        return Optional.ofNullable(this.minInGbps);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetShapeShapeNetworkingBandwidthOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double defaultPerOcpuInGbps;
-        private Double maxInGbps;
-        private Double minInGbps;
+        private @Nullable Double defaultPerOcpuInGbps;
+        private @Nullable Double maxInGbps;
+        private @Nullable Double minInGbps;
         public Builder() {}
         public Builder(GetShapeShapeNetworkingBandwidthOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetShapeShapeNetworkingBandwidthOption {
         }
 
         @CustomType.Setter
-        public Builder defaultPerOcpuInGbps(Double defaultPerOcpuInGbps) {
-            this.defaultPerOcpuInGbps = Objects.requireNonNull(defaultPerOcpuInGbps);
+        public Builder defaultPerOcpuInGbps(@Nullable Double defaultPerOcpuInGbps) {
+            this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder maxInGbps(Double maxInGbps) {
-            this.maxInGbps = Objects.requireNonNull(maxInGbps);
+        public Builder maxInGbps(@Nullable Double maxInGbps) {
+            this.maxInGbps = maxInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder minInGbps(Double minInGbps) {
-            this.minInGbps = Objects.requireNonNull(minInGbps);
+        public Builder minInGbps(@Nullable Double minInGbps) {
+            this.minInGbps = minInGbps;
             return this;
         }
         public GetShapeShapeNetworkingBandwidthOption build() {

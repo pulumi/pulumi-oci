@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigWhitelist {
@@ -14,17 +16,17 @@ public final class GetWaasPoliciesWaasPolicyWafConfigWhitelist {
      * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * 
      */
-    private List<String> addressLists;
+    private @Nullable List<String> addressLists;
     /**
      * @return A set of IP addresses or CIDR notations to include in the whitelist.
      * 
      */
-    private List<String> addresses;
+    private @Nullable List<String> addresses;
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetWaasPoliciesWaasPolicyWafConfigWhitelist() {}
     /**
@@ -32,21 +34,21 @@ public final class GetWaasPoliciesWaasPolicyWafConfigWhitelist {
      * 
      */
     public List<String> addressLists() {
-        return this.addressLists;
+        return this.addressLists == null ? List.of() : this.addressLists;
     }
     /**
      * @return A set of IP addresses or CIDR notations to include in the whitelist.
      * 
      */
     public List<String> addresses() {
-        return this.addresses;
+        return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetWaasPoliciesWaasPolicyWafConfigWhitelist {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> addressLists;
-        private List<String> addresses;
-        private String name;
+        private @Nullable List<String> addressLists;
+        private @Nullable List<String> addresses;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigWhitelist defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,24 +72,24 @@ public final class GetWaasPoliciesWaasPolicyWafConfigWhitelist {
         }
 
         @CustomType.Setter
-        public Builder addressLists(List<String> addressLists) {
-            this.addressLists = Objects.requireNonNull(addressLists);
+        public Builder addressLists(@Nullable List<String> addressLists) {
+            this.addressLists = addressLists;
             return this;
         }
         public Builder addressLists(String... addressLists) {
             return addressLists(List.of(addressLists));
         }
         @CustomType.Setter
-        public Builder addresses(List<String> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable List<String> addresses) {
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(String... addresses) {
             return addresses(List.of(addresses));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigWhitelist build() {

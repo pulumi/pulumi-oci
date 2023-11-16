@@ -18,7 +18,7 @@ public final class GetDkimsResult {
      * @return The list of dkim_collection.
      * 
      */
-    private List<GetDkimsDkimCollection> dkimCollections;
+    private @Nullable List<GetDkimsDkimCollection> dkimCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
      * 
@@ -47,7 +47,7 @@ public final class GetDkimsResult {
      * 
      */
     public List<GetDkimsDkimCollection> dkimCollections() {
-        return this.dkimCollections;
+        return this.dkimCollections == null ? List.of() : this.dkimCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
@@ -90,7 +90,7 @@ public final class GetDkimsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDkimsDkimCollection> dkimCollections;
+        private @Nullable List<GetDkimsDkimCollection> dkimCollections;
         private String emailDomainId;
         private @Nullable List<GetDkimsFilter> filters;
         private @Nullable String id;
@@ -108,8 +108,8 @@ public final class GetDkimsResult {
         }
 
         @CustomType.Setter
-        public Builder dkimCollections(List<GetDkimsDkimCollection> dkimCollections) {
-            this.dkimCollections = Objects.requireNonNull(dkimCollections);
+        public Builder dkimCollections(@Nullable List<GetDkimsDkimCollection> dkimCollections) {
+            this.dkimCollections = dkimCollections;
             return this;
         }
         public Builder dkimCollections(GetDkimsDkimCollection... dkimCollections) {

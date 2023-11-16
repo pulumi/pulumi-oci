@@ -112,7 +112,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Disable pre/post upgrade hooks. Set to false by default.
         /// </summary>
-        public readonly bool AreHooksEnabled;
+        public readonly bool? AreHooksEnabled;
         /// <summary>
         /// Collection of backend environment IP addresses.
         /// </summary>
@@ -128,31 +128,31 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The OCID of the artifact that contains the command specification.
         /// </summary>
-        public readonly string CommandSpecDeployArtifactId;
+        public readonly string? CommandSpecDeployArtifactId;
         /// <summary>
         /// The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         /// </summary>
-        public readonly string ComputeInstanceGroupBlueGreenDeploymentDeployStageId;
+        public readonly string? ComputeInstanceGroupBlueGreenDeploymentDeployStageId;
         /// <summary>
         /// The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
         /// </summary>
-        public readonly string ComputeInstanceGroupCanaryDeployStageId;
+        public readonly string? ComputeInstanceGroupCanaryDeployStageId;
         /// <summary>
         /// A compute instance group canary traffic shift stage OCID for load balancer.
         /// </summary>
-        public readonly string ComputeInstanceGroupCanaryTrafficShiftDeployStageId;
+        public readonly string? ComputeInstanceGroupCanaryTrafficShiftDeployStageId;
         /// <summary>
         /// A compute instance group environment OCID for rolling deployment.
         /// </summary>
-        public readonly string ComputeInstanceGroupDeployEnvironmentId;
+        public readonly string? ComputeInstanceGroupDeployEnvironmentId;
         /// <summary>
         /// User provided key and value pair configuration, which is assigned through constants or parameter.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Config;
+        public readonly ImmutableDictionary<string, object>? Config;
         /// <summary>
         /// Specifies the container configuration.
         /// </summary>
@@ -160,11 +160,11 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         /// </summary>
-        public readonly string DeployArtifactId;
+        public readonly string? DeployArtifactId;
         /// <summary>
         /// The list of file artifact OCIDs to deploy.
         /// </summary>
@@ -172,15 +172,15 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// First compute instance group environment OCID for deployment.
         /// </summary>
-        public readonly string DeployEnvironmentIdA;
+        public readonly string? DeployEnvironmentIdA;
         /// <summary>
         /// Second compute instance group environment OCID for deployment.
         /// </summary>
-        public readonly string DeployEnvironmentIdB;
+        public readonly string? DeployEnvironmentIdB;
         /// <summary>
         /// The OCID of a pipeline.
         /// </summary>
-        public readonly string DeployPipelineId;
+        public readonly string? DeployPipelineId;
         public readonly string DeployStageId;
         /// <summary>
         /// Collection containing the predecessors of a stage.
@@ -189,23 +189,23 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Deployment stage type.
         /// </summary>
-        public readonly string DeployStageType;
+        public readonly string? DeployStageType;
         /// <summary>
         /// The OCID of the artifact that contains the deployment specification.
         /// </summary>
-        public readonly string DeploymentSpecDeployArtifactId;
+        public readonly string? DeploymentSpecDeployArtifactId;
         /// <summary>
         /// Optional description about the deployment stage.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A Docker image artifact OCID.
         /// </summary>
-        public readonly string DockerImageDeployArtifactId;
+        public readonly string? DockerImageDeployArtifactId;
         /// <summary>
         /// Specifies a failure policy for a compute instance group rolling deployment stage.
         /// </summary>
@@ -213,15 +213,15 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Function environment OCID.
         /// </summary>
-        public readonly string FunctionDeployEnvironmentId;
+        public readonly string? FunctionDeployEnvironmentId;
         /// <summary>
         /// Timeout for execution of the Function. Value in seconds.
         /// </summary>
-        public readonly int FunctionTimeoutInSeconds;
+        public readonly int? FunctionTimeoutInSeconds;
         /// <summary>
         /// Collection of backend environment IP addresses.
         /// </summary>
@@ -229,27 +229,27 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Helm chart artifact OCID.
         /// </summary>
-        public readonly string HelmChartDeployArtifactId;
+        public readonly string? HelmChartDeployArtifactId;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A boolean flag specifies whether this stage executes asynchronously.
         /// </summary>
-        public readonly bool IsAsync;
+        public readonly bool? IsAsync;
         /// <summary>
         /// Enables helm --debug option to stream output to tf stdout. Set to false by default.
         /// </summary>
-        public readonly bool IsDebugEnabled;
+        public readonly bool? IsDebugEnabled;
         /// <summary>
         /// Force resource update through delete; or if required, recreate. Set to false by default.
         /// </summary>
-        public readonly bool IsForceEnabled;
+        public readonly bool? IsForceEnabled;
         /// <summary>
         /// A boolean flag specifies whether the invoked function must be validated.
         /// </summary>
-        public readonly bool IsValidationEnabled;
+        public readonly bool? IsValidationEnabled;
         /// <summary>
         /// List of Kubernetes manifest artifact OCIDs.
         /// </summary>
@@ -257,7 +257,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         /// </summary>
@@ -265,31 +265,31 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
         /// </summary>
-        public readonly int MaxHistory;
+        public readonly int? MaxHistory;
         /// <summary>
         /// Maximum usable memory for the Function (in MB).
         /// </summary>
-        public readonly string MaxMemoryInMbs;
+        public readonly string? MaxMemoryInMbs;
         /// <summary>
         /// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The OCID of the upstream OKE blue-green deployment stage in this pipeline.
         /// </summary>
-        public readonly string OkeBlueGreenDeployStageId;
+        public readonly string? OkeBlueGreenDeployStageId;
         /// <summary>
         /// The OCID of an upstream OKE canary deployment stage in this pipeline.
         /// </summary>
-        public readonly string OkeCanaryDeployStageId;
+        public readonly string? OkeCanaryDeployStageId;
         /// <summary>
         /// The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
         /// </summary>
-        public readonly string OkeCanaryTrafficShiftDeployStageId;
+        public readonly string? OkeCanaryTrafficShiftDeployStageId;
         /// <summary>
         /// Kubernetes cluster environment OCID for deployment.
         /// </summary>
-        public readonly string OkeClusterDeployEnvironmentId;
+        public readonly string? OkeClusterDeployEnvironmentId;
         /// <summary>
         /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         /// </summary>
@@ -297,11 +297,11 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The OCID of a project.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// Release name of the Helm chart.
         /// </summary>
-        public readonly string ReleaseName;
+        public readonly string? ReleaseName;
         /// <summary>
         /// Specifies the rollback policy. This is initiated on the failure of certain stage types.
         /// </summary>
@@ -321,35 +321,35 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
         /// </summary>
-        public readonly bool ShouldCleanupOnFail;
+        public readonly bool? ShouldCleanupOnFail;
         /// <summary>
         /// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
         /// </summary>
-        public readonly bool ShouldNotWait;
+        public readonly bool? ShouldNotWait;
         /// <summary>
         /// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
         /// </summary>
-        public readonly bool ShouldResetValues;
+        public readonly bool? ShouldResetValues;
         /// <summary>
         /// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
         /// </summary>
-        public readonly bool ShouldReuseValues;
+        public readonly bool? ShouldReuseValues;
         /// <summary>
         /// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         /// </summary>
-        public readonly bool ShouldSkipCrds;
+        public readonly bool? ShouldSkipCrds;
         /// <summary>
         /// If set, renders subchart notes along with the parent. Set to false by default.
         /// </summary>
-        public readonly bool ShouldSkipRenderSubchartNotes;
+        public readonly bool? ShouldSkipRenderSubchartNotes;
         /// <summary>
         /// The current state of the deployment stage.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         /// </summary>
@@ -357,19 +357,19 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
         /// </summary>
-        public readonly int TimeoutInSeconds;
+        public readonly int? TimeoutInSeconds;
         /// <summary>
         /// Specifies the target or destination backend set.
         /// </summary>
-        public readonly string TrafficShiftTarget;
+        public readonly string? TrafficShiftTarget;
         /// <summary>
         /// List of values.yaml file artifact OCIDs.
         /// </summary>
@@ -383,7 +383,7 @@ namespace Pulumi.Oci.DevOps
         private GetDeployStageResult(
             ImmutableArray<Outputs.GetDeployStageApprovalPolicyResult> approvalPolicies,
 
-            bool areHooksEnabled,
+            bool? areHooksEnabled,
 
             ImmutableArray<Outputs.GetDeployStageBlueBackendIpResult> blueBackendIps,
 
@@ -391,95 +391,95 @@ namespace Pulumi.Oci.DevOps
 
             ImmutableArray<Outputs.GetDeployStageCanaryStrategyResult> canaryStrategies,
 
-            string commandSpecDeployArtifactId,
+            string? commandSpecDeployArtifactId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string computeInstanceGroupBlueGreenDeploymentDeployStageId,
+            string? computeInstanceGroupBlueGreenDeploymentDeployStageId,
 
-            string computeInstanceGroupCanaryDeployStageId,
+            string? computeInstanceGroupCanaryDeployStageId,
 
-            string computeInstanceGroupCanaryTrafficShiftDeployStageId,
+            string? computeInstanceGroupCanaryTrafficShiftDeployStageId,
 
-            string computeInstanceGroupDeployEnvironmentId,
+            string? computeInstanceGroupDeployEnvironmentId,
 
-            ImmutableDictionary<string, object> config,
+            ImmutableDictionary<string, object>? config,
 
             ImmutableArray<Outputs.GetDeployStageContainerConfigResult> containerConfigs,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string deployArtifactId,
+            string? deployArtifactId,
 
             ImmutableArray<string> deployArtifactIds,
 
-            string deployEnvironmentIdA,
+            string? deployEnvironmentIdA,
 
-            string deployEnvironmentIdB,
+            string? deployEnvironmentIdB,
 
-            string deployPipelineId,
+            string? deployPipelineId,
 
             string deployStageId,
 
             ImmutableArray<Outputs.GetDeployStageDeployStagePredecessorCollectionResult> deployStagePredecessorCollections,
 
-            string deployStageType,
+            string? deployStageType,
 
-            string deploymentSpecDeployArtifactId,
+            string? deploymentSpecDeployArtifactId,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string dockerImageDeployArtifactId,
+            string? dockerImageDeployArtifactId,
 
             ImmutableArray<Outputs.GetDeployStageFailurePolicyResult> failurePolicies,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string functionDeployEnvironmentId,
+            string? functionDeployEnvironmentId,
 
-            int functionTimeoutInSeconds,
+            int? functionTimeoutInSeconds,
 
             ImmutableArray<Outputs.GetDeployStageGreenBackendIpResult> greenBackendIps,
 
-            string helmChartDeployArtifactId,
+            string? helmChartDeployArtifactId,
 
-            string id,
+            string? id,
 
-            bool isAsync,
+            bool? isAsync,
 
-            bool isDebugEnabled,
+            bool? isDebugEnabled,
 
-            bool isForceEnabled,
+            bool? isForceEnabled,
 
-            bool isValidationEnabled,
+            bool? isValidationEnabled,
 
             ImmutableArray<string> kubernetesManifestDeployArtifactIds,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetDeployStageLoadBalancerConfigResult> loadBalancerConfigs,
 
-            int maxHistory,
+            int? maxHistory,
 
-            string maxMemoryInMbs,
+            string? maxMemoryInMbs,
 
-            string @namespace,
+            string? @namespace,
 
-            string okeBlueGreenDeployStageId,
+            string? okeBlueGreenDeployStageId,
 
-            string okeCanaryDeployStageId,
+            string? okeCanaryDeployStageId,
 
-            string okeCanaryTrafficShiftDeployStageId,
+            string? okeCanaryTrafficShiftDeployStageId,
 
-            string okeClusterDeployEnvironmentId,
+            string? okeClusterDeployEnvironmentId,
 
             ImmutableArray<Outputs.GetDeployStageProductionLoadBalancerConfigResult> productionLoadBalancerConfigs,
 
-            string projectId,
+            string? projectId,
 
-            string releaseName,
+            string? releaseName,
 
             ImmutableArray<Outputs.GetDeployStageRollbackPolicyResult> rollbackPolicies,
 
@@ -489,31 +489,31 @@ namespace Pulumi.Oci.DevOps
 
             ImmutableArray<Outputs.GetDeployStageSetValueResult> setValues,
 
-            bool shouldCleanupOnFail,
+            bool? shouldCleanupOnFail,
 
-            bool shouldNotWait,
+            bool? shouldNotWait,
 
-            bool shouldResetValues,
+            bool? shouldResetValues,
 
-            bool shouldReuseValues,
+            bool? shouldReuseValues,
 
-            bool shouldSkipCrds,
+            bool? shouldSkipCrds,
 
-            bool shouldSkipRenderSubchartNotes,
+            bool? shouldSkipRenderSubchartNotes,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<Outputs.GetDeployStageTestLoadBalancerConfigResult> testLoadBalancerConfigs,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int timeoutInSeconds,
+            int? timeoutInSeconds,
 
-            string trafficShiftTarget,
+            string? trafficShiftTarget,
 
             ImmutableArray<string> valuesArtifactIds,
 

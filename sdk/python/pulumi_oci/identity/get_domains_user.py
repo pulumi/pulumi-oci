@@ -212,18 +212,12 @@ class GetDomainsUserResult:
 
     @property
     @pulumi.getter
-    def active(self) -> bool:
-        """
-        Status of the account
-        """
+    def active(self) -> Optional[bool]:
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence['outputs.GetDomainsUserAddressResult']:
-        """
-        A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
-        """
+    def addresses(self) -> Optional[Sequence['outputs.GetDomainsUserAddressResult']]:
         return pulumi.get(self, "addresses")
 
     @property
@@ -243,90 +237,57 @@ class GetDomainsUserResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the user
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The displayName of the User's manager. OPTIONAL and READ-ONLY.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
-    def emails(self) -> Sequence['outputs.GetDomainsUserEmailResult']:
-        """
-        A complex attribute representing emails
-        """
+    def emails(self) -> Optional[Sequence['outputs.GetDomainsUserEmailResult']]:
         return pulumi.get(self, "emails")
 
     @property
     @pulumi.getter
-    def entitlements(self) -> Sequence['outputs.GetDomainsUserEntitlementResult']:
-        """
-        A list of entitlements for the User that represent a thing the User has.
-        """
+    def entitlements(self) -> Optional[Sequence['outputs.GetDomainsUserEntitlementResult']]:
         return pulumi.get(self, "entitlements")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter
-    def groups(self) -> Sequence['outputs.GetDomainsUserGroupResult']:
-        """
-        A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
-        """
+    def groups(self) -> Optional[Sequence['outputs.GetDomainsUserGroupResult']]:
         return pulumi.get(self, "groups")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsUserIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsUserIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -336,114 +297,72 @@ class GetDomainsUserResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsUserIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsUserIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter
-    def ims(self) -> Sequence['outputs.GetDomainsUserImResult']:
-        """
-        User's instant messaging addresses
-        """
+    def ims(self) -> Optional[Sequence['outputs.GetDomainsUserImResult']]:
         return pulumi.get(self, "ims")
 
     @property
     @pulumi.getter
-    def locale(self) -> str:
-        """
-        Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
-        """
+    def locale(self) -> Optional[str]:
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsUserMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsUserMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
-    def names(self) -> Sequence['outputs.GetDomainsUserNameResult']:
-        """
-        Name of the account assigned to the User.
-        """
+    def names(self) -> Optional[Sequence['outputs.GetDomainsUserNameResult']]:
         return pulumi.get(self, "names")
 
     @property
     @pulumi.getter(name="nickName")
-    def nick_name(self) -> str:
-        """
-        Nick name
-        """
+    def nick_name(self) -> Optional[str]:
         return pulumi.get(self, "nick_name")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        The OCID of the user's support account.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
-        """
-        Password attribute. Max length for password is controlled via Password Policy.
-        """
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="phoneNumbers")
-    def phone_numbers(self) -> Sequence['outputs.GetDomainsUserPhoneNumberResult']:
-        """
-        Phone numbers
-        """
+    def phone_numbers(self) -> Optional[Sequence['outputs.GetDomainsUserPhoneNumberResult']]:
         return pulumi.get(self, "phone_numbers")
 
     @property
     @pulumi.getter
-    def photos(self) -> Sequence['outputs.GetDomainsUserPhotoResult']:
-        """
-        URLs of photos for the User
-        """
+    def photos(self) -> Optional[Sequence['outputs.GetDomainsUserPhotoResult']]:
         return pulumi.get(self, "photos")
 
     @property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> str:
-        """
-        User's preferred written or spoken language used for localized user interfaces
-        """
+    def preferred_language(self) -> Optional[str]:
         return pulumi.get(self, "preferred_language")
 
     @property
     @pulumi.getter(name="profileUrl")
-    def profile_url(self) -> str:
-        """
-        A fully-qualified URL to a page representing the User's online profile
-        """
+    def profile_url(self) -> Optional[str]:
         return pulumi.get(self, "profile_url")
 
     @property
@@ -453,242 +372,152 @@ class GetDomainsUserResult:
 
     @property
     @pulumi.getter
-    def roles(self) -> Sequence['outputs.GetDomainsUserRoleResult']:
-        """
-        A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
-        """
+    def roles(self) -> Optional[Sequence['outputs.GetDomainsUserRoleResult']]:
         return pulumi.get(self, "roles")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsUserTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsUserTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter
-    def timezone(self) -> str:
-        """
-        User's timezone
-        """
+    def timezone(self) -> Optional[str]:
         return pulumi.get(self, "timezone")
 
     @property
     @pulumi.getter
-    def title(self) -> str:
-        """
-        Title
-        """
+    def title(self) -> Optional[str]:
         return pulumi.get(self, "title")
 
     @property
     @pulumi.getter
-    def urnietfparamsscimschemasextensionenterprise20users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userResult']:
-        """
-        Enterprise User
-        """
+    def urnietfparamsscimschemasextensionenterprise20users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasextensionenterprise20users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagResult']:
-        """
-        Oracle Cloud Infrastructure Tags.
-        """
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUsers")
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserResult']:
-        """
-        This extension defines attributes to manage user's risk score.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionadaptive_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers")
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserResult']:
-        """
-        User's Capabilities
-        """
+    def urnietfparamsscimschemasoracleidcsextensioncapabilities_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers")
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserResult']:
-        """
-        The database credentials user extension.
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers")
-    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserResult']:
-        """
-        DB User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_user_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserResult']:
-        """
-        Kerberos User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmfaUsers")
-    def urnietfparamsscimschemasoracleidcsextensionmfa_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserResult']:
-        """
-        This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionmfa_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmfa_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers")
-    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserResult']:
-        """
-        This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpassword_state_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers")
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserResult']:
-        """
-        This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionpasswordless_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixUsers")
-    def urnietfparamsscimschemasoracleidcsextensionposix_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserResult']:
-        """
-        POSIX User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionposix_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers")
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserResult']:
-        """
-        This extension defines the attributes used to store the security questions of a user.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUsers")
-    def urnietfparamsscimschemasoracleidcsextensionself_change_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult']:
-        """
-        Controls whether a user can update themselves or not via User related APIs
-        """
+    def urnietfparamsscimschemasoracleidcsextensionself_change_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_change_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers")
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserResult']:
-        """
-        This extension defines attributes used to manage self registration profile linked to the user.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionself_registration_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsffUsers")
-    def urnietfparamsscimschemasoracleidcsextensionsff_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserResult']:
-        """
-        SFF Auth Keys User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsff_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsff_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers")
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserResult']:
-        """
-        Social User extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsocial_account_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers")
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserResult']:
-        """
-        Terms Of Use extension
-        """
+    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers")
-    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserResult']:
-        """
-        User's credentials
-        """
+    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_credentials_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUsers")
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserResult']:
-        """
-        This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionuser_state_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_users")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUsers")
-    def urnietfparamsscimschemasoracleidcsextensionuser_users(self) -> Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserResult']:
-        """
-        Oracle Identity Cloud Service User
-        """
+    def urnietfparamsscimschemasoracleidcsextensionuser_users(self) -> Optional[Sequence['outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserResult']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_users")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        User Support User Id
-        """
         return pulumi.get(self, "user_id")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        User name
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="userType")
-    def user_type(self) -> str:
-        """
-        Used to identify the organization-to-user relationship
-        """
+    def user_type(self) -> Optional[str]:
         return pulumi.get(self, "user_type")
 
     @property
     @pulumi.getter
-    def x509certificates(self) -> Sequence['outputs.GetDomainsUserX509certificateResult']:
-        """
-        A list of certificates issued to the User.
-        """
+    def x509certificates(self) -> Optional[Sequence['outputs.GetDomainsUserX509certificateResult']]:
         return pulumi.get(self, "x509certificates")
 
 
@@ -770,31 +599,7 @@ def get_domains_user(attribute_sets: Optional[Sequence[str]] = None,
                      user_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsUserResult:
     """
-    This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user = oci.Identity.get_domains_user(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_id=oci_identity_user["test_user"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["user_authorization"],
-        resource_type_schema_version=var["user_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param str user_id: ID of the resource
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -880,30 +685,6 @@ def get_domains_user_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
                             user_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsUserResult]:
     """
-    This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user = oci.Identity.get_domains_user(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_id=oci_identity_user["test_user"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["user_authorization"],
-        resource_type_schema_version=var["user_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param str user_id: ID of the resource
+    Use this data source to access information about an existing resource.
     """
     ...

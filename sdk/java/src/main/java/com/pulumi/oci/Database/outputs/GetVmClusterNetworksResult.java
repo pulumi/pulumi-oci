@@ -34,7 +34,7 @@ public final class GetVmClusterNetworksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
@@ -44,7 +44,7 @@ public final class GetVmClusterNetworksResult {
      * @return The list of vm_cluster_networks.
      * 
      */
-    private List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks;
+    private @Nullable List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks;
 
     private GetVmClusterNetworksResult() {}
     /**
@@ -75,8 +75,8 @@ public final class GetVmClusterNetworksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
@@ -90,7 +90,7 @@ public final class GetVmClusterNetworksResult {
      * 
      */
     public List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks() {
-        return this.vmClusterNetworks;
+        return this.vmClusterNetworks == null ? List.of() : this.vmClusterNetworks;
     }
 
     public static Builder builder() {
@@ -106,9 +106,9 @@ public final class GetVmClusterNetworksResult {
         private @Nullable String displayName;
         private String exadataInfrastructureId;
         private @Nullable List<GetVmClusterNetworksFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks;
+        private @Nullable List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks;
         public Builder() {}
         public Builder(GetVmClusterNetworksResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,8 +145,8 @@ public final class GetVmClusterNetworksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +155,8 @@ public final class GetVmClusterNetworksResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterNetworks(List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks) {
-            this.vmClusterNetworks = Objects.requireNonNull(vmClusterNetworks);
+        public Builder vmClusterNetworks(@Nullable List<GetVmClusterNetworksVmClusterNetwork> vmClusterNetworks) {
+            this.vmClusterNetworks = vmClusterNetworks;
             return this;
         }
         public Builder vmClusterNetworks(GetVmClusterNetworksVmClusterNetwork... vmClusterNetworks) {

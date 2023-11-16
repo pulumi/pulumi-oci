@@ -55,12 +55,12 @@ export interface GetVaultReplicasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly vaultId: string;
     /**
      * The list of vault_replicas.
      */
-    readonly vaultReplicas: outputs.Kms.GetVaultReplicasVaultReplica[];
+    readonly vaultReplicas?: outputs.Kms.GetVaultReplicasVaultReplica[];
 }
 /**
  * This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.

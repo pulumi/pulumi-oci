@@ -20,31 +20,31 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The field name to be evaluated.
         /// </summary>
-        public readonly string FieldName;
+        public readonly string? FieldName;
         /// <summary>
         /// The operator to be used for evaluating the field.
         /// </summary>
-        public readonly string FieldOperator;
+        public readonly string? FieldOperator;
         /// <summary>
         /// The field value to be evaluated.
         /// </summary>
-        public readonly string FieldValue;
+        public readonly string? FieldValue;
         /// <summary>
         /// Discriminator.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
 
         [OutputConstructor]
         private GetNamespaceIngestTimeRuleConditionResult(
             ImmutableArray<Outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult> additionalConditions,
 
-            string fieldName,
+            string? fieldName,
 
-            string fieldOperator,
+            string? fieldOperator,
 
-            string fieldValue,
+            string? fieldValue,
 
-            string kind)
+            string? kind)
         {
             AdditionalConditions = additionalConditions;
             FieldName = fieldName;

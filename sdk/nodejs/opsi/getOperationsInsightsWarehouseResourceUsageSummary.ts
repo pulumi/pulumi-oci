@@ -46,20 +46,20 @@ export interface GetOperationsInsightsWarehouseResourceUsageSummaryResult {
     /**
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      */
-    readonly cpuUsed: number;
+    readonly cpuUsed?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly operationsInsightsWarehouseId: string;
     /**
      * Possible lifecycle states
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Storage by OPSI Warehouse ADW in GB.
      */
-    readonly storageUsedInGbs: number;
+    readonly storageUsedInGbs?: number;
 }
 /**
  * This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.

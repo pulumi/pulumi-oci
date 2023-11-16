@@ -65,28 +65,28 @@ export interface GetManagedDatabasesDatabaseParameterResult {
     /**
      * The name of the Managed Database.
      */
-    readonly databaseName: string;
+    readonly databaseName?: string;
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      */
-    readonly databaseSubType: string;
+    readonly databaseSubType?: string;
     /**
      * The type of Oracle Database installation.
      */
-    readonly databaseType: string;
+    readonly databaseType?: string;
     /**
      * The Oracle Database version.
      */
-    readonly databaseVersion: string;
+    readonly databaseVersion?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isAllowedValuesIncluded?: boolean;
     /**
      * An array of DatabaseParameterSummary objects.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabasesDatabaseParameterItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabasesDatabaseParameterItem[];
     readonly managedDatabaseId: string;
     /**
      * The parameter name.

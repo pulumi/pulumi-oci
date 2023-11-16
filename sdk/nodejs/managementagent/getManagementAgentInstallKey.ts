@@ -45,56 +45,56 @@ export interface GetManagementAgentInstallKeyResult {
     /**
      * Total number of install for this keys
      */
-    readonly allowedKeyInstallCount: number;
+    readonly allowedKeyInstallCount?: number;
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Principal id of user who created the Agent Install key
      */
-    readonly createdByPrincipalId: string;
+    readonly createdByPrincipalId?: string;
     /**
      * Total number of install for this keys
      */
-    readonly currentKeyInstallCount: number;
+    readonly currentKeyInstallCount?: number;
     /**
      * Management Agent Install Key Name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Agent install Key identifier
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
      */
-    readonly isUnlimited: boolean;
+    readonly isUnlimited?: boolean;
     /**
      * Management Agent Install Key
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly managementAgentInstallKeyId: string;
     /**
      * Status of Key
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * date after which key would expire after creation
      */
-    readonly timeExpires: string;
+    readonly timeExpires?: string;
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.

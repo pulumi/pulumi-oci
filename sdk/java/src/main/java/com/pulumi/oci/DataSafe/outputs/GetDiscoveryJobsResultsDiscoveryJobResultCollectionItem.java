@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
@@ -16,27 +18,27 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * @return Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
      */
-    private List<String> appDefinedChildColumnKeys;
+    private @Nullable List<String> appDefinedChildColumnKeys;
     /**
      * @return The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      * 
      */
-    private String appName;
+    private @Nullable String appName;
     /**
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    private String columnName;
+    private @Nullable String columnName;
     /**
      * @return The data type of the sensitive column.
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
-    private List<String> dbDefinedChildColumnKeys;
+    private @Nullable List<String> dbDefinedChildColumnKeys;
     /**
      * @return The OCID of the discovery job.
      * 
@@ -54,17 +56,17 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    private String discoveryType;
+    private @Nullable String discoveryType;
     /**
      * @return The estimated number of data values the column has in the associated database.
      * 
      */
-    private String estimatedDataValueCount;
+    private @Nullable String estimatedDataValueCount;
     /**
      * @return A filter to return the discovery result resources based on the value of their isResultApplied attribute.
      * 
      */
-    private Boolean isResultApplied;
+    private @Nullable Boolean isResultApplied;
     /**
      * @return The unique key that identifies the discovery result.
      * 
@@ -73,57 +75,57 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The attributes of a sensitive column that have been modified in the target database. It&#39;s populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      * 
      */
-    private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes;
+    private @Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes;
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
-    private List<String> parentColumnKeys;
+    private @Nullable List<String> parentColumnKeys;
     /**
      * @return A filter to return only the resources that match the specified planned action.
      * 
      */
-    private String plannedAction;
+    private @Nullable String plannedAction;
     /**
      * @return The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    private String relationType;
+    private @Nullable String relationType;
     /**
      * @return Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
-    private List<String> sampleDataValues;
+    private @Nullable List<String> sampleDataValues;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return The unique key that identifies the sensitive column represented by the discovery result.
      * 
      */
-    private String sensitiveColumnkey;
+    private @Nullable String sensitiveColumnkey;
     /**
      * @return The OCID of the sensitive type associated with the sensitive column.
      * 
      */
-    private String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
 
     private GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem() {}
     /**
@@ -131,35 +133,35 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * 
      */
     public List<String> appDefinedChildColumnKeys() {
-        return this.appDefinedChildColumnKeys;
+        return this.appDefinedChildColumnKeys == null ? List.of() : this.appDefinedChildColumnKeys;
     }
     /**
      * @return The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      * 
      */
-    public String appName() {
-        return this.appName;
+    public Optional<String> appName() {
+        return Optional.ofNullable(this.appName);
     }
     /**
      * @return A filter to return only a specific column based on column name.
      * 
      */
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
     /**
      * @return The data type of the sensitive column.
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
     public List<String> dbDefinedChildColumnKeys() {
-        return this.dbDefinedChildColumnKeys;
+        return this.dbDefinedChildColumnKeys == null ? List.of() : this.dbDefinedChildColumnKeys;
     }
     /**
      * @return The OCID of the discovery job.
@@ -180,22 +182,22 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    public String discoveryType() {
-        return this.discoveryType;
+    public Optional<String> discoveryType() {
+        return Optional.ofNullable(this.discoveryType);
     }
     /**
      * @return The estimated number of data values the column has in the associated database.
      * 
      */
-    public String estimatedDataValueCount() {
-        return this.estimatedDataValueCount;
+    public Optional<String> estimatedDataValueCount() {
+        return Optional.ofNullable(this.estimatedDataValueCount);
     }
     /**
      * @return A filter to return the discovery result resources based on the value of their isResultApplied attribute.
      * 
      */
-    public Boolean isResultApplied() {
-        return this.isResultApplied;
+    public Optional<Boolean> isResultApplied() {
+        return Optional.ofNullable(this.isResultApplied);
     }
     /**
      * @return The unique key that identifies the discovery result.
@@ -205,78 +207,78 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * 
      */
     @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The attributes of a sensitive column that have been modified in the target database. It&#39;s populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      * 
      */
     public List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes() {
-        return this.modifiedAttributes;
+        return this.modifiedAttributes == null ? List.of() : this.modifiedAttributes;
     }
     /**
      * @return A filter to return only items related to a specific object name.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
     public List<String> parentColumnKeys() {
-        return this.parentColumnKeys;
+        return this.parentColumnKeys == null ? List.of() : this.parentColumnKeys;
     }
     /**
      * @return A filter to return only the resources that match the specified planned action.
      * 
      */
-    public String plannedAction() {
-        return this.plannedAction;
+    public Optional<String> plannedAction() {
+        return Optional.ofNullable(this.plannedAction);
     }
     /**
      * @return The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    public String relationType() {
-        return this.relationType;
+    public Optional<String> relationType() {
+        return Optional.ofNullable(this.relationType);
     }
     /**
      * @return Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
     public List<String> sampleDataValues() {
-        return this.sampleDataValues;
+        return this.sampleDataValues == null ? List.of() : this.sampleDataValues;
     }
     /**
      * @return A filter to return only items related to specific schema name.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return The unique key that identifies the sensitive column represented by the discovery result.
      * 
      */
-    public String sensitiveColumnkey() {
-        return this.sensitiveColumnkey;
+    public Optional<String> sensitiveColumnkey() {
+        return Optional.ofNullable(this.sensitiveColumnkey);
     }
     /**
      * @return The OCID of the sensitive type associated with the sensitive column.
      * 
      */
-    public String sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
 
     public static Builder builder() {
@@ -288,26 +290,26 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> appDefinedChildColumnKeys;
-        private String appName;
-        private String columnName;
-        private String dataType;
-        private List<String> dbDefinedChildColumnKeys;
+        private @Nullable List<String> appDefinedChildColumnKeys;
+        private @Nullable String appName;
+        private @Nullable String columnName;
+        private @Nullable String dataType;
+        private @Nullable List<String> dbDefinedChildColumnKeys;
         private String discoveryJobId;
-        private String discoveryType;
-        private String estimatedDataValueCount;
-        private Boolean isResultApplied;
-        private String key;
-        private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes;
-        private String object;
-        private String objectType;
-        private List<String> parentColumnKeys;
-        private String plannedAction;
-        private String relationType;
-        private List<String> sampleDataValues;
-        private String schemaName;
-        private String sensitiveColumnkey;
-        private String sensitiveTypeId;
+        private @Nullable String discoveryType;
+        private @Nullable String estimatedDataValueCount;
+        private @Nullable Boolean isResultApplied;
+        private @Nullable String key;
+        private @Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes;
+        private @Nullable String object;
+        private @Nullable String objectType;
+        private @Nullable List<String> parentColumnKeys;
+        private @Nullable String plannedAction;
+        private @Nullable String relationType;
+        private @Nullable List<String> sampleDataValues;
+        private @Nullable String schemaName;
+        private @Nullable String sensitiveColumnkey;
+        private @Nullable String sensitiveTypeId;
         public Builder() {}
         public Builder(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -334,31 +336,31 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
-            this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
+        public Builder appDefinedChildColumnKeys(@Nullable List<String> appDefinedChildColumnKeys) {
+            this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
             return appDefinedChildColumnKeys(List.of(appDefinedChildColumnKeys));
         }
         @CustomType.Setter
-        public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+        public Builder appName(@Nullable String appName) {
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
-            this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
+        public Builder dbDefinedChildColumnKeys(@Nullable List<String> dbDefinedChildColumnKeys) {
+            this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {
@@ -370,82 +372,82 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryType(String discoveryType) {
-            this.discoveryType = Objects.requireNonNull(discoveryType);
+        public Builder discoveryType(@Nullable String discoveryType) {
+            this.discoveryType = discoveryType;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedDataValueCount(String estimatedDataValueCount) {
-            this.estimatedDataValueCount = Objects.requireNonNull(estimatedDataValueCount);
+        public Builder estimatedDataValueCount(@Nullable String estimatedDataValueCount) {
+            this.estimatedDataValueCount = estimatedDataValueCount;
             return this;
         }
         @CustomType.Setter
-        public Builder isResultApplied(Boolean isResultApplied) {
-            this.isResultApplied = Objects.requireNonNull(isResultApplied);
+        public Builder isResultApplied(@Nullable Boolean isResultApplied) {
+            this.isResultApplied = isResultApplied;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder modifiedAttributes(List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes) {
-            this.modifiedAttributes = Objects.requireNonNull(modifiedAttributes);
+        public Builder modifiedAttributes(@Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes) {
+            this.modifiedAttributes = modifiedAttributes;
             return this;
         }
         public Builder modifiedAttributes(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute... modifiedAttributes) {
             return modifiedAttributes(List.of(modifiedAttributes));
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
-        public Builder parentColumnKeys(List<String> parentColumnKeys) {
-            this.parentColumnKeys = Objects.requireNonNull(parentColumnKeys);
+        public Builder parentColumnKeys(@Nullable List<String> parentColumnKeys) {
+            this.parentColumnKeys = parentColumnKeys;
             return this;
         }
         public Builder parentColumnKeys(String... parentColumnKeys) {
             return parentColumnKeys(List.of(parentColumnKeys));
         }
         @CustomType.Setter
-        public Builder plannedAction(String plannedAction) {
-            this.plannedAction = Objects.requireNonNull(plannedAction);
+        public Builder plannedAction(@Nullable String plannedAction) {
+            this.plannedAction = plannedAction;
             return this;
         }
         @CustomType.Setter
-        public Builder relationType(String relationType) {
-            this.relationType = Objects.requireNonNull(relationType);
+        public Builder relationType(@Nullable String relationType) {
+            this.relationType = relationType;
             return this;
         }
         @CustomType.Setter
-        public Builder sampleDataValues(List<String> sampleDataValues) {
-            this.sampleDataValues = Objects.requireNonNull(sampleDataValues);
+        public Builder sampleDataValues(@Nullable List<String> sampleDataValues) {
+            this.sampleDataValues = sampleDataValues;
             return this;
         }
         public Builder sampleDataValues(String... sampleDataValues) {
             return sampleDataValues(List.of(sampleDataValues));
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveColumnkey(String sensitiveColumnkey) {
-            this.sensitiveColumnkey = Objects.requireNonNull(sensitiveColumnkey);
+        public Builder sensitiveColumnkey(@Nullable String sensitiveColumnkey) {
+            this.sensitiveColumnkey = sensitiveColumnkey;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         public GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem build() {

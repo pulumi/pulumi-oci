@@ -88,17 +88,17 @@ export class Function extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains the function.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
      *
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
-    public readonly config!: pulumi.Output<{[key: string]: any}>;
+    public readonly config!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
@@ -106,19 +106,19 @@ export class Function extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      */
-    public readonly image!: pulumi.Output<string>;
+    public readonly image!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
-    public readonly imageDigest!: pulumi.Output<string>;
+    public readonly imageDigest!: pulumi.Output<string | undefined>;
     /**
      * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      */
-    public /*out*/ readonly invokeEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly invokeEndpoint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Maximum usable memory for the function (MiB).
      */
@@ -126,35 +126,35 @@ export class Function extends pulumi.CustomResource {
     /**
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      */
-    public readonly provisionedConcurrencyConfig!: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    public readonly provisionedConcurrencyConfig!: pulumi.Output<outputs.Functions.FunctionProvisionedConcurrencyConfig | undefined>;
     /**
      * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * The source details for the Function. The function can be created from various sources.
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Functions.FunctionSourceDetails>;
+    public readonly sourceDetails!: pulumi.Output<outputs.Functions.FunctionSourceDetails | undefined>;
     /**
      * The current state of the function.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    public readonly timeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Define the tracing configuration for a function.
      */
-    public readonly traceConfig!: pulumi.Output<outputs.Functions.FunctionTraceConfig>;
+    public readonly traceConfig!: pulumi.Output<outputs.Functions.FunctionTraceConfig | undefined>;
 
     /**
      * Create a Function resource with the given unique name, arguments, and options.

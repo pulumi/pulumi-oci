@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -100,14 +101,14 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="body", refs={String.class}, tree="[0]")
-    private Output<String> body;
+    private Output</* @Nullable */ String> body;
 
     /**
      * @return (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
-    public Output<String> body() {
-        return this.body;
+    public Output<Optional<String>> body() {
+        return Codegen.optional(this.body);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
@@ -128,14 +129,14 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
@@ -178,14 +179,14 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Whether the alarm is enabled.  Example: `true`
@@ -206,28 +207,28 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isNotificationsPerMetricDimensionEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isNotificationsPerMetricDimensionEnabled;
+    private Output</* @Nullable */ Boolean> isNotificationsPerMetricDimensionEnabled;
 
     /**
      * @return (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
      * 
      */
-    public Output<Boolean> isNotificationsPerMetricDimensionEnabled() {
-        return this.isNotificationsPerMetricDimensionEnabled;
+    public Output<Optional<Boolean>> isNotificationsPerMetricDimensionEnabled() {
+        return Codegen.optional(this.isNotificationsPerMetricDimensionEnabled);
     }
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
      * 
      */
     @Export(name="messageFormat", refs={String.class}, tree="[0]")
-    private Output<String> messageFormat;
+    private Output</* @Nullable */ String> messageFormat;
 
     /**
      * @return (Updatable) The format to use for alarm notifications. The formats are:
      * 
      */
-    public Output<String> messageFormat() {
-        return this.messageFormat;
+    public Output<Optional<String>> messageFormat() {
+        return Codegen.optional(this.messageFormat);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
@@ -248,14 +249,14 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metricCompartmentIdInSubtree", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> metricCompartmentIdInSubtree;
+    private Output</* @Nullable */ Boolean> metricCompartmentIdInSubtree;
 
     /**
      * @return (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      * 
      */
-    public Output<Boolean> metricCompartmentIdInSubtree() {
-        return this.metricCompartmentIdInSubtree;
+    public Output<Optional<Boolean>> metricCompartmentIdInSubtree() {
+        return Codegen.optional(this.metricCompartmentIdInSubtree);
     }
     /**
      * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
@@ -284,7 +285,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pendingDuration", refs={String.class}, tree="[0]")
-    private Output<String> pendingDuration;
+    private Output</* @Nullable */ String> pendingDuration;
 
     /**
      * @return (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
@@ -298,8 +299,8 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * Example: `PT5M`
      * 
      */
-    public Output<String> pendingDuration() {
-        return this.pendingDuration;
+    public Output<Optional<String>> pendingDuration() {
+        return Codegen.optional(this.pendingDuration);
     }
     /**
      * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -356,7 +357,7 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="repeatNotificationDuration", refs={String.class}, tree="[0]")
-    private Output<String> repeatNotificationDuration;
+    private Output</* @Nullable */ String> repeatNotificationDuration;
 
     /**
      * @return (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
@@ -366,36 +367,36 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * Example: `PT2H`
      * 
      */
-    public Output<String> repeatNotificationDuration() {
-        return this.repeatNotificationDuration;
+    public Output<Optional<String>> repeatNotificationDuration() {
+        return Codegen.optional(this.repeatNotificationDuration);
     }
     /**
      * (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
      * 
      */
     @Export(name="resolution", refs={String.class}, tree="[0]")
-    private Output<String> resolution;
+    private Output</* @Nullable */ String> resolution;
 
     /**
      * @return (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
      * 
      */
-    public Output<String> resolution() {
-        return this.resolution;
+    public Output<Optional<String>> resolution() {
+        return Codegen.optional(this.resolution);
     }
     /**
      * (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      * 
      */
     @Export(name="resourceGroup", refs={String.class}, tree="[0]")
-    private Output<String> resourceGroup;
+    private Output</* @Nullable */ String> resourceGroup;
 
     /**
      * @return (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      * 
      */
-    public Output<String> resourceGroup() {
-        return this.resourceGroup;
+    public Output<Optional<String>> resourceGroup() {
+        return Codegen.optional(this.resourceGroup);
     }
     /**
      * (Updatable) The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
@@ -416,56 +417,56 @@ public class Alarm extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the alarm.  Example: `DELETED`
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The configuration details for suppressing an alarm.
      * 
      */
     @Export(name="suppression", refs={AlarmSuppression.class}, tree="[0]")
-    private Output<AlarmSuppression> suppression;
+    private Output</* @Nullable */ AlarmSuppression> suppression;
 
     /**
      * @return (Updatable) The configuration details for suppressing an alarm.
      * 
      */
-    public Output<AlarmSuppression> suppression() {
-        return this.suppression;
+    public Output<Optional<AlarmSuppression>> suppression() {
+        return Codegen.optional(this.suppression);
     }
     /**
      * The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -55,18 +54,18 @@ type LogAnalyticsImportCustomContent struct {
 	// LogAnalyticsImportCustomChangeList
 	ChangeLists LogAnalyticsImportCustomContentChangeListArrayOutput `pulumi:"changeLists"`
 	// The content name.
-	ContentName pulumi.StringOutput `pulumi:"contentName"`
+	ContentName pulumi.StringPtrOutput `pulumi:"contentName"`
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Expect pulumi.StringOutput `pulumi:"expect"`
+	Expect pulumi.StringPtrOutput `pulumi:"expect"`
 	// The field names.
 	FieldNames pulumi.StringArrayOutput `pulumi:"fieldNames"`
 	// Path to the file to upload which contains the custom content.
 	ImportCustomContentFile pulumi.StringOutput `pulumi:"importCustomContentFile"`
 	// A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-	IsOverwrite pulumi.BoolOutput `pulumi:"isOverwrite"`
+	IsOverwrite pulumi.BoolPtrOutput `pulumi:"isOverwrite"`
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The parser names.
@@ -214,12 +213,6 @@ func (i *LogAnalyticsImportCustomContent) ToLogAnalyticsImportCustomContentOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentOutput)
 }
 
-func (i *LogAnalyticsImportCustomContent) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsImportCustomContent] {
-	return pulumix.Output[*LogAnalyticsImportCustomContent]{
-		OutputState: i.ToLogAnalyticsImportCustomContentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsImportCustomContentArrayInput is an input type that accepts LogAnalyticsImportCustomContentArray and LogAnalyticsImportCustomContentArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsImportCustomContentArrayInput` via:
 //
@@ -243,12 +236,6 @@ func (i LogAnalyticsImportCustomContentArray) ToLogAnalyticsImportCustomContentA
 
 func (i LogAnalyticsImportCustomContentArray) ToLogAnalyticsImportCustomContentArrayOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentArrayOutput)
-}
-
-func (i LogAnalyticsImportCustomContentArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsImportCustomContent] {
-	return pulumix.Output[[]*LogAnalyticsImportCustomContent]{
-		OutputState: i.ToLogAnalyticsImportCustomContentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsImportCustomContentMapInput is an input type that accepts LogAnalyticsImportCustomContentMap and LogAnalyticsImportCustomContentMapOutput values.
@@ -276,12 +263,6 @@ func (i LogAnalyticsImportCustomContentMap) ToLogAnalyticsImportCustomContentMap
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsImportCustomContentMapOutput)
 }
 
-func (i LogAnalyticsImportCustomContentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsImportCustomContent] {
-	return pulumix.Output[map[string]*LogAnalyticsImportCustomContent]{
-		OutputState: i.ToLogAnalyticsImportCustomContentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsImportCustomContentOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsImportCustomContentOutput) ElementType() reflect.Type {
@@ -296,12 +277,6 @@ func (o LogAnalyticsImportCustomContentOutput) ToLogAnalyticsImportCustomContent
 	return o
 }
 
-func (o LogAnalyticsImportCustomContentOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsImportCustomContent] {
-	return pulumix.Output[*LogAnalyticsImportCustomContent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // LogAnalyticsImportCustomChangeList
 func (o LogAnalyticsImportCustomContentOutput) ChangeLists() LogAnalyticsImportCustomContentChangeListArrayOutput {
 	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) LogAnalyticsImportCustomContentChangeListArrayOutput {
@@ -310,16 +285,16 @@ func (o LogAnalyticsImportCustomContentOutput) ChangeLists() LogAnalyticsImportC
 }
 
 // The content name.
-func (o LogAnalyticsImportCustomContentOutput) ContentName() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.StringOutput { return v.ContentName }).(pulumi.StringOutput)
+func (o LogAnalyticsImportCustomContentOutput) ContentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.StringPtrOutput { return v.ContentName }).(pulumi.StringPtrOutput)
 }
 
 // A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o LogAnalyticsImportCustomContentOutput) Expect() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.StringOutput { return v.Expect }).(pulumi.StringOutput)
+func (o LogAnalyticsImportCustomContentOutput) Expect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.StringPtrOutput { return v.Expect }).(pulumi.StringPtrOutput)
 }
 
 // The field names.
@@ -333,8 +308,8 @@ func (o LogAnalyticsImportCustomContentOutput) ImportCustomContentFile() pulumi.
 }
 
 // A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
-func (o LogAnalyticsImportCustomContentOutput) IsOverwrite() pulumi.BoolOutput {
-	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.BoolOutput { return v.IsOverwrite }).(pulumi.BoolOutput)
+func (o LogAnalyticsImportCustomContentOutput) IsOverwrite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsImportCustomContent) pulumi.BoolPtrOutput { return v.IsOverwrite }).(pulumi.BoolPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
@@ -366,12 +341,6 @@ func (o LogAnalyticsImportCustomContentArrayOutput) ToLogAnalyticsImportCustomCo
 	return o
 }
 
-func (o LogAnalyticsImportCustomContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsImportCustomContent] {
-	return pulumix.Output[[]*LogAnalyticsImportCustomContent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsImportCustomContentArrayOutput) Index(i pulumi.IntInput) LogAnalyticsImportCustomContentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsImportCustomContent {
 		return vs[0].([]*LogAnalyticsImportCustomContent)[vs[1].(int)]
@@ -390,12 +359,6 @@ func (o LogAnalyticsImportCustomContentMapOutput) ToLogAnalyticsImportCustomCont
 
 func (o LogAnalyticsImportCustomContentMapOutput) ToLogAnalyticsImportCustomContentMapOutputWithContext(ctx context.Context) LogAnalyticsImportCustomContentMapOutput {
 	return o
-}
-
-func (o LogAnalyticsImportCustomContentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsImportCustomContent] {
-	return pulumix.Output[map[string]*LogAnalyticsImportCustomContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsImportCustomContentMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsImportCustomContentOutput {

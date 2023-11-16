@@ -133,14 +133,6 @@ class DatabaseInsightConnectionCredentialDetails(dict):
                  role: Optional[str] = None,
                  user_name: Optional[str] = None,
                  wallet_secret_id: Optional[str] = None):
-        """
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str credential_type: Credential type.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
         if credential_type is not None:
@@ -157,49 +149,31 @@ class DatabaseInsightConnectionCredentialDetails(dict):
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[str]:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> Optional[str]:
-        """
-        Credential type.
-        """
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[str]:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
     def role(self) -> Optional[str]:
-        """
-        database user role.
-        """
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
-        """
-        database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         return pulumi.get(self, "wallet_secret_id")
 
 
@@ -230,13 +204,6 @@ class DatabaseInsightConnectionDetails(dict):
                  port: Optional[int] = None,
                  protocol: Optional[str] = None,
                  service_name: Optional[str] = None):
-        """
-        :param str host_name: Name of the listener host that will be used to create the connect string to the database.
-        :param Sequence['DatabaseInsightConnectionDetailsHostArgs'] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param int port: Listener port number used for connection requests for rivate endpoint accessed db resource.
-        :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
-        :param str service_name: Database service name used for connection requests.
-        """
         if host_name is not None:
             pulumi.set(__self__, "host_name", host_name)
         if hosts is not None:
@@ -251,41 +218,26 @@ class DatabaseInsightConnectionDetails(dict):
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[str]:
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
     def hosts(self) -> Optional[Sequence['outputs.DatabaseInsightConnectionDetailsHost']]:
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
     def protocol(self) -> Optional[str]:
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[str]:
-        """
-        Database service name used for connection requests.
-        """
         return pulumi.get(self, "service_name")
 
 
@@ -311,10 +263,6 @@ class DatabaseInsightConnectionDetailsHost(dict):
     def __init__(__self__, *,
                  host_ip: Optional[str] = None,
                  port: Optional[int] = None):
-        """
-        :param str host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param int port: Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         if host_ip is not None:
             pulumi.set(__self__, "host_ip", host_ip)
         if port is not None:
@@ -323,17 +271,11 @@ class DatabaseInsightConnectionDetailsHost(dict):
     @property
     @pulumi.getter(name="hostIp")
     def host_ip(self) -> Optional[str]:
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
         return pulumi.get(self, "host_ip")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         return pulumi.get(self, "port")
 
 
@@ -371,14 +313,6 @@ class DatabaseInsightCredentialDetails(dict):
                  role: Optional[str] = None,
                  user_name: Optional[str] = None,
                  wallet_secret_id: Optional[str] = None):
-        """
-        :param str credential_type: Credential type.
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -394,49 +328,31 @@ class DatabaseInsightCredentialDetails(dict):
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
-        """
-        Credential type.
-        """
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[str]:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[str]:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
     def role(self) -> Optional[str]:
-        """
-        database user role.
-        """
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
-        """
-        database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         return pulumi.get(self, "wallet_secret_id")
 
 
@@ -473,13 +389,6 @@ class ExadataInsightMemberVmClusterDetail(dict):
                  member_database_details: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail']] = None,
                  opsi_private_endpoint_id: Optional[str] = None,
                  vmcluster_id: Optional[str] = None):
-        """
-        :param str compartment_id: (Updatable) Compartment Identifier of database
-        :param str dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        :param Sequence['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs'] member_database_details: The databases that belong to the VM Cluster
-        :param str opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        :param str vmcluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if dbm_private_endpoint_id is not None:
@@ -494,41 +403,26 @@ class ExadataInsightMemberVmClusterDetail(dict):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        (Updatable) Compartment Identifier of database
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
     def dbm_private_endpoint_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="memberDatabaseDetails")
     def member_database_details(self) -> Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail']]:
-        """
-        The databases that belong to the VM Cluster
-        """
         return pulumi.get(self, "member_database_details")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="vmclusterId")
     def vmcluster_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
-        """
         return pulumi.get(self, "vmcluster_id")
 
 
@@ -589,21 +483,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
                  opsi_private_endpoint_id: Optional[str] = None,
                  service_name: Optional[str] = None,
                  system_tags: Optional[Mapping[str, Any]] = None):
-        """
-        :param str compartment_id: (Updatable) Compartment Identifier of database
-        :param 'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs' connection_details: Connection details of the private endpoints.
-        :param 'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs' credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param str database_resource_type: Oracle Cloud Infrastructure database resource type
-        :param str dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_type: Database Deployment Type
-        :param str entity_source: Source of the database entity.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        :param str service_name: Database service name used for connection requests.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_details is not None:
@@ -634,105 +513,66 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        (Updatable) Compartment Identifier of database
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionDetails")
     def connection_details(self) -> Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails']:
-        """
-        Connection details of the private endpoints.
-        """
         return pulumi.get(self, "connection_details")
 
     @property
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails']:
-        """
-        User credential details to connect to the database. This is supplied via the External Database Service.
-        """
         return pulumi.get(self, "credential_details")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseResourceType")
     def database_resource_type(self) -> Optional[str]:
-        """
-        Oracle Cloud Infrastructure database resource type
-        """
         return pulumi.get(self, "database_resource_type")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
     def dbm_private_endpoint_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[str]:
-        """
-        Database Deployment Type
-        """
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> Optional[str]:
-        """
-        Source of the database entity.
-        """
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
     def opsi_private_endpoint_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-        """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[str]:
-        """
-        Database service name used for connection requests.
-        """
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
 
@@ -759,11 +599,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails(d
                  hosts: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost']] = None,
                  protocol: Optional[str] = None,
                  service_name: Optional[str] = None):
-        """
-        :param Sequence['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs'] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
-        :param str service_name: Database service name used for connection requests.
-        """
         if hosts is not None:
             pulumi.set(__self__, "hosts", hosts)
         if protocol is not None:
@@ -774,25 +609,16 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails(d
     @property
     @pulumi.getter
     def hosts(self) -> Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost']]:
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
     def protocol(self) -> Optional[str]:
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[str]:
-        """
-        Database service name used for connection requests.
-        """
         return pulumi.get(self, "service_name")
 
 
@@ -818,10 +644,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
     def __init__(__self__, *,
                  host_ip: Optional[str] = None,
                  port: Optional[int] = None):
-        """
-        :param str host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param int port: Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         if host_ip is not None:
             pulumi.set(__self__, "host_ip", host_ip)
         if port is not None:
@@ -830,17 +652,11 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
     @property
     @pulumi.getter(name="hostIp")
     def host_ip(self) -> Optional[str]:
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
         return pulumi.get(self, "host_ip")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
-        """
         return pulumi.get(self, "port")
 
 
@@ -878,14 +694,6 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(d
                  role: Optional[str] = None,
                  user_name: Optional[str] = None,
                  wallet_secret_id: Optional[str] = None):
-        """
-        :param str credential_type: Credential type.
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -901,49 +709,31 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(d
     @property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> str:
-        """
-        Credential type.
-        """
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[str]:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[str]:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
     def role(self) -> Optional[str]:
-        """
-        database user role.
-        """
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
-        """
-        database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
         return pulumi.get(self, "wallet_secret_id")
 
 
@@ -968,17 +758,11 @@ class NewsReportContentTypes(dict):
 
     def __init__(__self__, *,
                  capacity_planning_resources: Sequence[str]):
-        """
-        :param Sequence[str] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
-        """
         pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
     def capacity_planning_resources(self) -> Sequence[str]:
-        """
-        (Updatable) Supported resources for capacity planning content type.
-        """
         return pulumi.get(self, "capacity_planning_resources")
 
 
@@ -1012,14 +796,6 @@ class OpsiConfigurationConfigItem(dict):
                  metadatas: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadata']] = None,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str config_item_type: (Updatable) Type of configuration item.
-        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
-        :param str default_value: Value of configuration item.
-        :param Sequence['OpsiConfigurationConfigItemMetadataArgs'] metadatas: Configuration item metadata.
-        :param str name: (Updatable) Name of configuration item.
-        :param str value: (Updatable) Value of configuration item.
-        """
         pulumi.set(__self__, "config_item_type", config_item_type)
         if applicable_contexts is not None:
             pulumi.set(__self__, "applicable_contexts", applicable_contexts)
@@ -1035,49 +811,31 @@ class OpsiConfigurationConfigItem(dict):
     @property
     @pulumi.getter(name="configItemType")
     def config_item_type(self) -> str:
-        """
-        (Updatable) Type of configuration item.
-        """
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="applicableContexts")
     def applicable_contexts(self) -> Optional[Sequence[str]]:
-        """
-        List of contexts in Operations Insights where this configuration item is applicable.
-        """
         return pulumi.get(self, "applicable_contexts")
 
     @property
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> Optional[str]:
-        """
-        Value of configuration item.
-        """
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
     def metadatas(self) -> Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadata']]:
-        """
-        Configuration item metadata.
-        """
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) Name of configuration item.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) Value of configuration item.
-        """
         return pulumi.get(self, "value")
 
 
@@ -1115,14 +873,6 @@ class OpsiConfigurationConfigItemMetadata(dict):
                  display_name: Optional[str] = None,
                  unit_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']] = None,
                  value_input_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']] = None):
-        """
-        :param str config_item_type: (Updatable) Type of configuration item.
-        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        :param str description: (Updatable) Description of OPSI configuration.
-        :param str display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param Sequence['OpsiConfigurationConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
-        :param Sequence['OpsiConfigurationConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
         if config_item_type is not None:
             pulumi.set(__self__, "config_item_type", config_item_type)
         if data_type is not None:
@@ -1139,49 +889,31 @@ class OpsiConfigurationConfigItemMetadata(dict):
     @property
     @pulumi.getter(name="configItemType")
     def config_item_type(self) -> Optional[str]:
-        """
-        (Updatable) Type of configuration item.
-        """
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[str]:
-        """
-        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        """
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) Description of OPSI configuration.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="unitDetails")
     def unit_details(self) -> Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']]:
-        """
-        Unit details of configuration item.
-        """
         return pulumi.get(self, "unit_details")
 
     @property
     @pulumi.getter(name="valueInputDetails")
     def value_input_details(self) -> Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']]:
-        """
-        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
         return pulumi.get(self, "value_input_details")
 
 
@@ -1207,10 +939,6 @@ class OpsiConfigurationConfigItemMetadataUnitDetail(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  unit: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param str unit: Unit of configuration item.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if unit is not None:
@@ -1219,17 +947,11 @@ class OpsiConfigurationConfigItemMetadataUnitDetail(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def unit(self) -> Optional[str]:
-        """
-        Unit of configuration item.
-        """
         return pulumi.get(self, "unit")
 
 
@@ -1263,12 +985,6 @@ class OpsiConfigurationConfigItemMetadataValueInputDetail(dict):
                  max_value: Optional[str] = None,
                  min_value: Optional[str] = None,
                  possible_values: Optional[Sequence[str]] = None):
-        """
-        :param str allowed_value_type: Allowed value type of configuration item.
-        :param str max_value: Maximum value limit for the configuration item.
-        :param str min_value: Minimum value limit for the configuration item.
-        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
-        """
         if allowed_value_type is not None:
             pulumi.set(__self__, "allowed_value_type", allowed_value_type)
         if max_value is not None:
@@ -1281,237 +997,169 @@ class OpsiConfigurationConfigItemMetadataValueInputDetail(dict):
     @property
     @pulumi.getter(name="allowedValueType")
     def allowed_value_type(self) -> Optional[str]:
-        """
-        Allowed value type of configuration item.
-        """
         return pulumi.get(self, "allowed_value_type")
 
     @property
     @pulumi.getter(name="maxValue")
     def max_value(self) -> Optional[str]:
-        """
-        Maximum value limit for the configuration item.
-        """
         return pulumi.get(self, "max_value")
 
     @property
     @pulumi.getter(name="minValue")
     def min_value(self) -> Optional[str]:
-        """
-        Minimum value limit for the configuration item.
-        """
         return pulumi.get(self, "min_value")
 
     @property
     @pulumi.getter(name="possibleValues")
     def possible_values(self) -> Optional[Sequence[str]]:
-        """
-        Allowed values to pick for the configuration item.
-        """
         return pulumi.get(self, "possible_values")
 
 
 @pulumi.output_type
 class GetAwrHubAwrSnapshotItemResult(dict):
     def __init__(__self__, *,
-                 awr_source_database_id: str,
-                 error_count: str,
-                 instance_number: int,
-                 snapshot_identifier: int,
-                 time_db_startup: str,
-                 time_snapshot_begin: str,
-                 time_snapshot_end: str):
-        """
-        :param str awr_source_database_id: DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-        :param str error_count: The total number of errors.
-        :param int instance_number: The database instance number.
-        :param int snapshot_identifier: The identifier of the snapshot.
-        :param str time_db_startup: The timestamp of the database startup.
-        :param str time_snapshot_begin: The start time of the snapshot.
-        :param str time_snapshot_end: The end time of the snapshot.
-        """
-        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
-        pulumi.set(__self__, "error_count", error_count)
-        pulumi.set(__self__, "instance_number", instance_number)
-        pulumi.set(__self__, "snapshot_identifier", snapshot_identifier)
-        pulumi.set(__self__, "time_db_startup", time_db_startup)
-        pulumi.set(__self__, "time_snapshot_begin", time_snapshot_begin)
-        pulumi.set(__self__, "time_snapshot_end", time_snapshot_end)
+                 awr_source_database_id: Optional[str] = None,
+                 error_count: Optional[str] = None,
+                 instance_number: Optional[int] = None,
+                 snapshot_identifier: Optional[int] = None,
+                 time_db_startup: Optional[str] = None,
+                 time_snapshot_begin: Optional[str] = None,
+                 time_snapshot_end: Optional[str] = None):
+        if awr_source_database_id is not None:
+            pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
+        if error_count is not None:
+            pulumi.set(__self__, "error_count", error_count)
+        if instance_number is not None:
+            pulumi.set(__self__, "instance_number", instance_number)
+        if snapshot_identifier is not None:
+            pulumi.set(__self__, "snapshot_identifier", snapshot_identifier)
+        if time_db_startup is not None:
+            pulumi.set(__self__, "time_db_startup", time_db_startup)
+        if time_snapshot_begin is not None:
+            pulumi.set(__self__, "time_snapshot_begin", time_snapshot_begin)
+        if time_snapshot_end is not None:
+            pulumi.set(__self__, "time_snapshot_end", time_snapshot_end)
 
     @property
     @pulumi.getter(name="awrSourceDatabaseId")
-    def awr_source_database_id(self) -> str:
-        """
-        DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-        """
+    def awr_source_database_id(self) -> Optional[str]:
         return pulumi.get(self, "awr_source_database_id")
 
     @property
     @pulumi.getter(name="errorCount")
-    def error_count(self) -> str:
-        """
-        The total number of errors.
-        """
+    def error_count(self) -> Optional[str]:
         return pulumi.get(self, "error_count")
 
     @property
     @pulumi.getter(name="instanceNumber")
-    def instance_number(self) -> int:
-        """
-        The database instance number.
-        """
+    def instance_number(self) -> Optional[int]:
         return pulumi.get(self, "instance_number")
 
     @property
     @pulumi.getter(name="snapshotIdentifier")
-    def snapshot_identifier(self) -> int:
-        """
-        The identifier of the snapshot.
-        """
+    def snapshot_identifier(self) -> Optional[int]:
         return pulumi.get(self, "snapshot_identifier")
 
     @property
     @pulumi.getter(name="timeDbStartup")
-    def time_db_startup(self) -> str:
-        """
-        The timestamp of the database startup.
-        """
+    def time_db_startup(self) -> Optional[str]:
         return pulumi.get(self, "time_db_startup")
 
     @property
     @pulumi.getter(name="timeSnapshotBegin")
-    def time_snapshot_begin(self) -> str:
-        """
-        The start time of the snapshot.
-        """
+    def time_snapshot_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_snapshot_begin")
 
     @property
     @pulumi.getter(name="timeSnapshotEnd")
-    def time_snapshot_end(self) -> str:
-        """
-        The end time of the snapshot.
-        """
+    def time_snapshot_end(self) -> Optional[str]:
         return pulumi.get(self, "time_snapshot_end")
 
 
 @pulumi.output_type
 class GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult']):
-        """
-        :param Sequence['GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs'] items: A list of AWR snapshot summary data.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult']:
-        """
-        A list of AWR snapshot summary data.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult']):
-        """
-        :param Sequence['GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs'] items: A list of AWR snapshot summary data.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult']:
-        """
-        A list of AWR snapshot summary data.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 awr_source_database_id: str,
-                 error_count: str,
-                 instance_number: int,
-                 snapshot_identifier: int,
-                 time_db_startup: str,
-                 time_snapshot_begin: str,
-                 time_snapshot_end: str):
-        """
-        :param str awr_source_database_id: DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-        :param str error_count: The total number of errors.
-        :param int instance_number: The database instance number.
-        :param int snapshot_identifier: The identifier of the snapshot.
-        :param str time_db_startup: The timestamp of the database startup.
-        :param str time_snapshot_begin: The start time of the snapshot.
-        :param str time_snapshot_end: The end time of the snapshot.
-        """
-        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
-        pulumi.set(__self__, "error_count", error_count)
-        pulumi.set(__self__, "instance_number", instance_number)
-        pulumi.set(__self__, "snapshot_identifier", snapshot_identifier)
-        pulumi.set(__self__, "time_db_startup", time_db_startup)
-        pulumi.set(__self__, "time_snapshot_begin", time_snapshot_begin)
-        pulumi.set(__self__, "time_snapshot_end", time_snapshot_end)
+                 awr_source_database_id: Optional[str] = None,
+                 error_count: Optional[str] = None,
+                 instance_number: Optional[int] = None,
+                 snapshot_identifier: Optional[int] = None,
+                 time_db_startup: Optional[str] = None,
+                 time_snapshot_begin: Optional[str] = None,
+                 time_snapshot_end: Optional[str] = None):
+        if awr_source_database_id is not None:
+            pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
+        if error_count is not None:
+            pulumi.set(__self__, "error_count", error_count)
+        if instance_number is not None:
+            pulumi.set(__self__, "instance_number", instance_number)
+        if snapshot_identifier is not None:
+            pulumi.set(__self__, "snapshot_identifier", snapshot_identifier)
+        if time_db_startup is not None:
+            pulumi.set(__self__, "time_db_startup", time_db_startup)
+        if time_snapshot_begin is not None:
+            pulumi.set(__self__, "time_snapshot_begin", time_snapshot_begin)
+        if time_snapshot_end is not None:
+            pulumi.set(__self__, "time_snapshot_end", time_snapshot_end)
 
     @property
     @pulumi.getter(name="awrSourceDatabaseId")
-    def awr_source_database_id(self) -> str:
-        """
-        DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-        """
+    def awr_source_database_id(self) -> Optional[str]:
         return pulumi.get(self, "awr_source_database_id")
 
     @property
     @pulumi.getter(name="errorCount")
-    def error_count(self) -> str:
-        """
-        The total number of errors.
-        """
+    def error_count(self) -> Optional[str]:
         return pulumi.get(self, "error_count")
 
     @property
     @pulumi.getter(name="instanceNumber")
-    def instance_number(self) -> int:
-        """
-        The database instance number.
-        """
+    def instance_number(self) -> Optional[int]:
         return pulumi.get(self, "instance_number")
 
     @property
     @pulumi.getter(name="snapshotIdentifier")
-    def snapshot_identifier(self) -> int:
-        """
-        The identifier of the snapshot.
-        """
+    def snapshot_identifier(self) -> Optional[int]:
         return pulumi.get(self, "snapshot_identifier")
 
     @property
     @pulumi.getter(name="timeDbStartup")
-    def time_db_startup(self) -> str:
-        """
-        The timestamp of the database startup.
-        """
+    def time_db_startup(self) -> Optional[str]:
         return pulumi.get(self, "time_db_startup")
 
     @property
     @pulumi.getter(name="timeSnapshotBegin")
-    def time_snapshot_begin(self) -> str:
-        """
-        The start time of the snapshot.
-        """
+    def time_snapshot_begin(self) -> Optional[str]:
         return pulumi.get(self, "time_snapshot_begin")
 
     @property
     @pulumi.getter(name="timeSnapshotEnd")
-    def time_snapshot_end(self) -> str:
-        """
-        The end time of the snapshot.
-        """
+    def time_snapshot_end(self) -> Optional[str]:
         return pulumi.get(self, "time_snapshot_end")
 
 
@@ -1545,268 +1193,199 @@ class GetAwrHubAwrSnapshotsFilterResult(dict):
 @pulumi.output_type
 class GetAwrHubAwrSourcesSummaryItemResult(dict):
     def __init__(__self__, *,
-                 awr_hub_id: str,
-                 awr_source_database_id: str,
-                 hours_since_last_import: float,
-                 max_snapshot_identifier: float,
-                 min_snapshot_identifier: float,
-                 name: str,
-                 snapshots_uploaded: float,
-                 time_first_snapshot_generated: str,
-                 time_last_snapshot_generated: str):
-        """
-        :param str awr_hub_id: Unique Awr Hub identifier
-        :param str awr_source_database_id: DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-        :param float hours_since_last_import: Number of hours since last AWR snapshots import happened from the Source database.
-        :param float max_snapshot_identifier: The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-        :param float min_snapshot_identifier: The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-        :param str name: Name for an Awr source database
-        :param float snapshots_uploaded: Number of AWR snapshots uploaded from the Source database.
-        :param str time_first_snapshot_generated: The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-        :param str time_last_snapshot_generated: The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "awr_hub_id", awr_hub_id)
-        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
-        pulumi.set(__self__, "hours_since_last_import", hours_since_last_import)
-        pulumi.set(__self__, "max_snapshot_identifier", max_snapshot_identifier)
-        pulumi.set(__self__, "min_snapshot_identifier", min_snapshot_identifier)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "snapshots_uploaded", snapshots_uploaded)
-        pulumi.set(__self__, "time_first_snapshot_generated", time_first_snapshot_generated)
-        pulumi.set(__self__, "time_last_snapshot_generated", time_last_snapshot_generated)
+                 awr_hub_id: Optional[str] = None,
+                 awr_source_database_id: Optional[str] = None,
+                 hours_since_last_import: Optional[float] = None,
+                 max_snapshot_identifier: Optional[float] = None,
+                 min_snapshot_identifier: Optional[float] = None,
+                 name: Optional[str] = None,
+                 snapshots_uploaded: Optional[float] = None,
+                 time_first_snapshot_generated: Optional[str] = None,
+                 time_last_snapshot_generated: Optional[str] = None):
+        if awr_hub_id is not None:
+            pulumi.set(__self__, "awr_hub_id", awr_hub_id)
+        if awr_source_database_id is not None:
+            pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
+        if hours_since_last_import is not None:
+            pulumi.set(__self__, "hours_since_last_import", hours_since_last_import)
+        if max_snapshot_identifier is not None:
+            pulumi.set(__self__, "max_snapshot_identifier", max_snapshot_identifier)
+        if min_snapshot_identifier is not None:
+            pulumi.set(__self__, "min_snapshot_identifier", min_snapshot_identifier)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if snapshots_uploaded is not None:
+            pulumi.set(__self__, "snapshots_uploaded", snapshots_uploaded)
+        if time_first_snapshot_generated is not None:
+            pulumi.set(__self__, "time_first_snapshot_generated", time_first_snapshot_generated)
+        if time_last_snapshot_generated is not None:
+            pulumi.set(__self__, "time_last_snapshot_generated", time_last_snapshot_generated)
 
     @property
     @pulumi.getter(name="awrHubId")
-    def awr_hub_id(self) -> str:
-        """
-        Unique Awr Hub identifier
-        """
+    def awr_hub_id(self) -> Optional[str]:
         return pulumi.get(self, "awr_hub_id")
 
     @property
     @pulumi.getter(name="awrSourceDatabaseId")
-    def awr_source_database_id(self) -> str:
-        """
-        DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
-        """
+    def awr_source_database_id(self) -> Optional[str]:
         return pulumi.get(self, "awr_source_database_id")
 
     @property
     @pulumi.getter(name="hoursSinceLastImport")
-    def hours_since_last_import(self) -> float:
-        """
-        Number of hours since last AWR snapshots import happened from the Source database.
-        """
+    def hours_since_last_import(self) -> Optional[float]:
         return pulumi.get(self, "hours_since_last_import")
 
     @property
     @pulumi.getter(name="maxSnapshotIdentifier")
-    def max_snapshot_identifier(self) -> float:
-        """
-        The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-        """
+    def max_snapshot_identifier(self) -> Optional[float]:
         return pulumi.get(self, "max_snapshot_identifier")
 
     @property
     @pulumi.getter(name="minSnapshotIdentifier")
-    def min_snapshot_identifier(self) -> float:
-        """
-        The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
-        """
+    def min_snapshot_identifier(self) -> Optional[float]:
         return pulumi.get(self, "min_snapshot_identifier")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name for an Awr source database
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="snapshotsUploaded")
-    def snapshots_uploaded(self) -> float:
-        """
-        Number of AWR snapshots uploaded from the Source database.
-        """
+    def snapshots_uploaded(self) -> Optional[float]:
         return pulumi.get(self, "snapshots_uploaded")
 
     @property
     @pulumi.getter(name="timeFirstSnapshotGenerated")
-    def time_first_snapshot_generated(self) -> str:
-        """
-        The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-        """
+    def time_first_snapshot_generated(self) -> Optional[str]:
         return pulumi.get(self, "time_first_snapshot_generated")
 
     @property
     @pulumi.getter(name="timeLastSnapshotGenerated")
-    def time_last_snapshot_generated(self) -> str:
-        """
-        The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
-        """
+    def time_last_snapshot_generated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_snapshot_generated")
 
 
 @pulumi.output_type
 class GetAwrHubsAwrHubSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 awr_mailbox_url: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 object_storage_bucket_name: str,
-                 operations_insights_warehouse_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str awr_mailbox_url: Mailbox URL required for AWR hub and AWR source setup.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique Awr Hub identifier
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str object_storage_bucket_name: Object Storage Bucket Name
-        :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param str state: Lifecycle states
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "awr_mailbox_url", awr_mailbox_url)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 awr_mailbox_url: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 object_storage_bucket_name: Optional[str] = None,
+                 operations_insights_warehouse_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if awr_mailbox_url is not None:
+            pulumi.set(__self__, "awr_mailbox_url", awr_mailbox_url)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if object_storage_bucket_name is not None:
+            pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
+        if operations_insights_warehouse_id is not None:
+            pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="awrMailboxUrl")
-    def awr_mailbox_url(self) -> str:
-        """
-        Mailbox URL required for AWR hub and AWR source setup.
-        """
+    def awr_mailbox_url(self) -> Optional[str]:
         return pulumi.get(self, "awr_mailbox_url")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique Awr Hub identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
-    def object_storage_bucket_name(self) -> str:
-        """
-        Object Storage Bucket Name
-        """
+    def object_storage_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_bucket_name")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> str:
-        """
-        Unique Operations Insights Warehouse identifier
-        """
+    def operations_insights_warehouse_id(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -1840,870 +1419,642 @@ class GetAwrHubsFilterResult(dict):
 @pulumi.output_type
 class GetDatabaseInsightConnectionCredentialDetailResult(dict):
     def __init__(__self__, *,
-                 credential_source_name: str,
-                 credential_type: str,
-                 password_secret_id: str,
-                 role: str,
-                 user_name: str,
-                 wallet_secret_id: str):
-        """
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str credential_type: Credential type.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+                 credential_source_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 wallet_secret_id: Optional[str] = None):
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> str:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
+    def credential_source_name(self) -> Optional[str]:
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> str:
-        """
-        Credential type.
-        """
+    def credential_type(self) -> Optional[str]:
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        database user role.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        database user name.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
+    def wallet_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_secret_id")
 
 
 @pulumi.output_type
 class GetDatabaseInsightConnectionDetailResult(dict):
     def __init__(__self__, *,
-                 host_name: str,
-                 hosts: Sequence['outputs.GetDatabaseInsightConnectionDetailHostResult'],
-                 port: int,
-                 protocol: str,
-                 service_name: str):
-        """
-        :param str host_name: Name of the listener host that will be used to create the connect string to the database.
-        :param Sequence['GetDatabaseInsightConnectionDetailHostArgs'] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param int port: Listener port number used for connection requests.
-        :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
-        :param str service_name: Database service name used for connection requests.
-        """
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+                 host_name: Optional[str] = None,
+                 hosts: Optional[Sequence['outputs.GetDatabaseInsightConnectionDetailHostResult']] = None,
+                 port: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 service_name: Optional[str] = None):
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence['outputs.GetDatabaseInsightConnectionDetailHostResult']:
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
+    def hosts(self) -> Optional[Sequence['outputs.GetDatabaseInsightConnectionDetailHostResult']]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        Listener port number used for connection requests.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        Database service name used for connection requests.
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
 
 @pulumi.output_type
 class GetDatabaseInsightConnectionDetailHostResult(dict):
     def __init__(__self__, *,
-                 host_ip: str,
-                 port: int):
-        """
-        :param str host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param int port: Listener port number used for connection requests.
-        """
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+                 host_ip: Optional[str] = None,
+                 port: Optional[int] = None):
+        if host_ip is not None:
+            pulumi.set(__self__, "host_ip", host_ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="hostIp")
-    def host_ip(self) -> str:
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
+    def host_ip(self) -> Optional[str]:
         return pulumi.get(self, "host_ip")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        Listener port number used for connection requests.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetDatabaseInsightCredentialDetailResult(dict):
     def __init__(__self__, *,
-                 credential_source_name: str,
-                 credential_type: str,
-                 password_secret_id: str,
-                 role: str,
-                 user_name: str,
-                 wallet_secret_id: str):
-        """
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str credential_type: Credential type.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+                 credential_source_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 wallet_secret_id: Optional[str] = None):
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> str:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
+    def credential_source_name(self) -> Optional[str]:
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> str:
-        """
-        Credential type.
-        """
+    def credential_type(self) -> Optional[str]:
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        database user role.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        database user name.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
+    def wallet_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_secret_id")
 
 
 @pulumi.output_type
 class GetDatabaseInsightsDatabaseInsightsCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 connection_credential_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult'],
-                 connection_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult'],
-                 credential_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult'],
-                 database_connection_status_details: str,
-                 database_display_name: str,
-                 database_id: str,
-                 database_name: str,
-                 database_resource_type: str,
-                 database_type: str,
-                 database_version: str,
-                 dbm_private_endpoint_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deployment_type: str,
-                 enterprise_manager_bridge_id: str,
-                 enterprise_manager_entity_display_name: str,
-                 enterprise_manager_entity_identifier: str,
-                 enterprise_manager_entity_name: str,
-                 enterprise_manager_entity_type: str,
-                 enterprise_manager_identifier: str,
-                 entity_source: str,
-                 exadata_insight_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 opsi_private_endpoint_id: str,
-                 parent_id: str,
-                 processor_count: int,
-                 root_id: str,
-                 service_name: str,
-                 state: str,
-                 status: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs'] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs'] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
-        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
-        :param str database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-        :param str database_display_name: Display name of database
-        :param str database_id: Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-        :param str database_name: Name of database
-        :param str database_resource_type: Oracle Cloud Infrastructure database resource type
-        :param str database_type: Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-        :param str database_version: The version of the database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-        :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
-        :param str enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param str enterprise_manager_entity_name: Enterprise Manager Entity Name
-        :param str enterprise_manager_entity_type: Enterprise Manager Entity Type
-        :param str enterprise_manager_identifier: Enterprise Manager Unqiue Identifier
-        :param str entity_source: Source of the database entity.
-        :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
-        :param str parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-        :param int processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        :param str root_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-        :param str service_name: Database service name used for connection requests.
-        :param str state: Lifecycle states
-        :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
-        :param str time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_credential_details", connection_credential_details)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
-        pulumi.set(__self__, "database_display_name", database_display_name)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "database_resource_type", database_resource_type)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "database_version", database_version)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
-        pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "parent_id", parent_id)
-        pulumi.set(__self__, "processor_count", processor_count)
-        pulumi.set(__self__, "root_id", root_id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 connection_credential_details: Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult']] = None,
+                 connection_details: Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult']] = None,
+                 credential_details: Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult']] = None,
+                 database_connection_status_details: Optional[str] = None,
+                 database_display_name: Optional[str] = None,
+                 database_id: Optional[str] = None,
+                 database_name: Optional[str] = None,
+                 database_resource_type: Optional[str] = None,
+                 database_type: Optional[str] = None,
+                 database_version: Optional[str] = None,
+                 dbm_private_endpoint_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_type: Optional[str] = None,
+                 enterprise_manager_bridge_id: Optional[str] = None,
+                 enterprise_manager_entity_display_name: Optional[str] = None,
+                 enterprise_manager_entity_identifier: Optional[str] = None,
+                 enterprise_manager_entity_name: Optional[str] = None,
+                 enterprise_manager_entity_type: Optional[str] = None,
+                 enterprise_manager_identifier: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 exadata_insight_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 parent_id: Optional[str] = None,
+                 processor_count: Optional[int] = None,
+                 root_id: Optional[str] = None,
+                 service_name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_credential_details is not None:
+            pulumi.set(__self__, "connection_credential_details", connection_credential_details)
+        if connection_details is not None:
+            pulumi.set(__self__, "connection_details", connection_details)
+        if credential_details is not None:
+            pulumi.set(__self__, "credential_details", credential_details)
+        if database_connection_status_details is not None:
+            pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+        if database_display_name is not None:
+            pulumi.set(__self__, "database_display_name", database_display_name)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if database_resource_type is not None:
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if database_version is not None:
+            pulumi.set(__self__, "database_version", database_version)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if enterprise_manager_bridge_id is not None:
+            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        if enterprise_manager_entity_display_name is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+        if enterprise_manager_entity_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        if enterprise_manager_entity_name is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
+        if enterprise_manager_entity_type is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
+        if enterprise_manager_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if exadata_insight_id is not None:
+            pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if parent_id is not None:
+            pulumi.set(__self__, "parent_id", parent_id)
+        if processor_count is not None:
+            pulumi.set(__self__, "processor_count", processor_count)
+        if root_id is not None:
+            pulumi.set(__self__, "root_id", root_id)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionCredentialDetails")
-    def connection_credential_details(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult']:
-        """
-        User credential details to connect to the database. This is supplied via the External Database Service.
-        """
+    def connection_credential_details(self) -> Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult']]:
         return pulumi.get(self, "connection_credential_details")
 
     @property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult']:
-        """
-        Connection details to connect to the database. HostName, protocol, and port should be specified.
-        """
+    def connection_details(self) -> Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult']]:
         return pulumi.get(self, "connection_details")
 
     @property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult']:
-        """
-        User credential details to connect to the database. This is supplied via the External Database Service.
-        """
+    def credential_details(self) -> Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult']]:
         return pulumi.get(self, "credential_details")
 
     @property
     @pulumi.getter(name="databaseConnectionStatusDetails")
-    def database_connection_status_details(self) -> str:
-        """
-        A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-        """
+    def database_connection_status_details(self) -> Optional[str]:
         return pulumi.get(self, "database_connection_status_details")
 
     @property
     @pulumi.getter(name="databaseDisplayName")
-    def database_display_name(self) -> str:
-        """
-        Display name of database
-        """
+    def database_display_name(self) -> Optional[str]:
         return pulumi.get(self, "database_display_name")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        Name of database
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="databaseResourceType")
-    def database_resource_type(self) -> str:
-        """
-        Oracle Cloud Infrastructure database resource type
-        """
+    def database_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "database_resource_type")
 
     @property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> str:
-        """
-        Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-        """
+    def database_type(self) -> Optional[str]:
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> str:
-        """
-        The version of the database.
-        """
+    def database_version(self) -> Optional[str]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> str:
+    def dbm_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> str:
-        """
-        Unique Enterprise Manager bridge identifier
-        """
+    def enterprise_manager_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> str:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> str:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> str:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> str:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> str:
-        """
-        Enterprise Manager Unqiue Identifier
-        """
+    def enterprise_manager_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the database entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataInsightId")
-    def exadata_insight_id(self) -> str:
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-        """
+    def exadata_insight_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_insight_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> str:
-        """
-        Unique Operations Insights PrivateEndpoint identifier
-        """
+    def opsi_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="parentId")
-    def parent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-        """
+    def parent_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_id")
 
     @property
     @pulumi.getter(name="processorCount")
-    def processor_count(self) -> int:
-        """
-        Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        """
+    def processor_count(self) -> Optional[int]:
         return pulumi.get(self, "processor_count")
 
     @property
     @pulumi.getter(name="rootId")
-    def root_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-        """
+    def root_id(self) -> Optional[str]:
         return pulumi.get(self, "root_id")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        Database service name used for connection requests.
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Resource Status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the database insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the database insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult(dict):
     def __init__(__self__, *,
-                 credential_source_name: str,
-                 credential_type: str,
-                 password_secret_id: str,
-                 role: str,
-                 user_name: str,
-                 wallet_secret_id: str):
-        """
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str credential_type: Credential type.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+                 credential_source_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 wallet_secret_id: Optional[str] = None):
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> str:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
+    def credential_source_name(self) -> Optional[str]:
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> str:
-        """
-        Credential type.
-        """
+    def credential_type(self) -> Optional[str]:
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        database user role.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        database user name.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
+    def wallet_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_secret_id")
 
 
 @pulumi.output_type
 class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult(dict):
     def __init__(__self__, *,
-                 host_name: str,
-                 hosts: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult'],
-                 port: int,
-                 protocol: str,
-                 service_name: str):
-        """
-        :param str host_name: Name of the listener host that will be used to create the connect string to the database.
-        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostArgs'] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param int port: Listener port number used for connection requests.
-        :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
-        :param str service_name: Database service name used for connection requests.
-        """
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+                 host_name: Optional[str] = None,
+                 hosts: Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult']] = None,
+                 port: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 service_name: Optional[str] = None):
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        Name of the listener host that will be used to create the connect string to the database.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult']:
-        """
-        List of hosts and port for private endpoint accessed database resource.
-        """
+    def hosts(self) -> Optional[Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult']]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        Listener port number used for connection requests.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        Protocol used for connection requests for private endpoint accssed database resource.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        Database service name used for connection requests.
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
 
 @pulumi.output_type
 class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult(dict):
     def __init__(__self__, *,
-                 host_ip: str,
-                 port: int):
-        """
-        :param str host_ip: Host IP used for connection requests for Cloud DB resource.
-        :param int port: Listener port number used for connection requests.
-        """
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+                 host_ip: Optional[str] = None,
+                 port: Optional[int] = None):
+        if host_ip is not None:
+            pulumi.set(__self__, "host_ip", host_ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="hostIp")
-    def host_ip(self) -> str:
-        """
-        Host IP used for connection requests for Cloud DB resource.
-        """
+    def host_ip(self) -> Optional[str]:
         return pulumi.get(self, "host_ip")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        Listener port number used for connection requests.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult(dict):
     def __init__(__self__, *,
-                 credential_source_name: str,
-                 credential_type: str,
-                 password_secret_id: str,
-                 role: str,
-                 user_name: str,
-                 wallet_secret_id: str):
-        """
-        :param str credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        :param str credential_type: Credential type.
-        :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        :param str role: database user role.
-        :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+                 credential_source_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 wallet_secret_id: Optional[str] = None):
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> str:
-        """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
-        """
+    def credential_source_name(self) -> Optional[str]:
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> str:
-        """
-        Credential type.
-        """
+    def credential_type(self) -> Optional[str]:
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        database user role.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        database user name.
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
-        """
+    def wallet_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_secret_id")
 
 
@@ -2737,173 +2088,130 @@ class GetDatabaseInsightsFilterResult(dict):
 @pulumi.output_type
 class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 object_storage_bucket_name: str,
-                 object_storage_bucket_status_details: str,
-                 object_storage_namespace_name: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description of Enterprise Manager Bridge
-        :param str display_name: A filter to return only resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique Enterprise Manager bridge identifier
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str object_storage_bucket_name: Object Storage Bucket Name
-        :param str object_storage_bucket_status_details: A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        :param str object_storage_namespace_name: Object Storage Namespace Name
-        :param str state: Lifecycle states
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_bucket_status_details", object_storage_bucket_status_details)
-        pulumi.set(__self__, "object_storage_namespace_name", object_storage_namespace_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 object_storage_bucket_name: Optional[str] = None,
+                 object_storage_bucket_status_details: Optional[str] = None,
+                 object_storage_namespace_name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if object_storage_bucket_name is not None:
+            pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
+        if object_storage_bucket_status_details is not None:
+            pulumi.set(__self__, "object_storage_bucket_status_details", object_storage_bucket_status_details)
+        if object_storage_namespace_name is not None:
+            pulumi.set(__self__, "object_storage_namespace_name", object_storage_namespace_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of Enterprise Manager Bridge
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique Enterprise Manager bridge identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
-    def object_storage_bucket_name(self) -> str:
-        """
-        Object Storage Bucket Name
-        """
+    def object_storage_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_bucket_name")
 
     @property
     @pulumi.getter(name="objectStorageBucketStatusDetails")
-    def object_storage_bucket_status_details(self) -> str:
-        """
-        A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        """
+    def object_storage_bucket_status_details(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_bucket_status_details")
 
     @property
     @pulumi.getter(name="objectStorageNamespaceName")
-    def object_storage_namespace_name(self) -> str:
-        """
-        Object Storage Namespace Name
-        """
+    def object_storage_namespace_name(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_namespace_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -2937,820 +2245,748 @@ class GetEnterpriseManagerBridgesFilterResult(dict):
 @pulumi.output_type
 class GetExadataInsightMemberVmClusterDetailResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 dbm_private_endpoint_id: str,
-                 member_database_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult'],
-                 opsi_private_endpoint_id: str,
-                 vmcluster_id: str):
-        """
-        :param str compartment_id: Compartment identifier of the Exadata insight resource
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "member_database_details", member_database_details)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+                 compartment_id: Optional[str] = None,
+                 dbm_private_endpoint_id: Optional[str] = None,
+                 member_database_details: Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult']] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 vmcluster_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if member_database_details is not None:
+            pulumi.set(__self__, "member_database_details", member_database_details)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if vmcluster_id is not None:
+            pulumi.set(__self__, "vmcluster_id", vmcluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier of the Exadata insight resource
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> str:
+    def dbm_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="memberDatabaseDetails")
-    def member_database_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult']:
+    def member_database_details(self) -> Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult']]:
         return pulumi.get(self, "member_database_details")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> str:
+    def opsi_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="vmclusterId")
-    def vmcluster_id(self) -> str:
+    def vmcluster_id(self) -> Optional[str]:
         return pulumi.get(self, "vmcluster_id")
 
 
 @pulumi.output_type
 class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 connection_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult'],
-                 credential_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult'],
-                 database_id: str,
-                 database_resource_type: str,
-                 dbm_private_endpoint_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deployment_type: str,
-                 entity_source: str,
-                 freeform_tags: Mapping[str, Any],
-                 opsi_private_endpoint_id: str,
-                 service_name: str,
-                 system_tags: Mapping[str, Any]):
-        """
-        :param str compartment_id: Compartment identifier of the Exadata insight resource
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str entity_source: Source of the Exadata system.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_resource_type", database_resource_type)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "system_tags", system_tags)
+                 compartment_id: Optional[str] = None,
+                 connection_details: Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult']] = None,
+                 credential_details: Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']] = None,
+                 database_id: Optional[str] = None,
+                 database_resource_type: Optional[str] = None,
+                 dbm_private_endpoint_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_type: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 service_name: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_details is not None:
+            pulumi.set(__self__, "connection_details", connection_details)
+        if credential_details is not None:
+            pulumi.set(__self__, "credential_details", credential_details)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_resource_type is not None:
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier of the Exadata insight resource
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult']:
+    def connection_details(self) -> Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult']]:
         return pulumi.get(self, "connection_details")
 
     @property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']:
+    def credential_details(self) -> Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']]:
         return pulumi.get(self, "credential_details")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseResourceType")
-    def database_resource_type(self) -> str:
+    def database_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "database_resource_type")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> str:
+    def dbm_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the Exadata system.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> str:
+    def opsi_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
 
 @pulumi.output_type
 class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult(dict):
     def __init__(__self__, *,
-                 hosts: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
-                 protocol: str,
-                 service_name: str):
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+                 hosts: Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult']] = None,
+                 protocol: Optional[str] = None,
+                 service_name: Optional[str] = None):
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult']:
+    def hosts(self) -> Optional[Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult']]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
 
 @pulumi.output_type
 class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult(dict):
     def __init__(__self__, *,
-                 host_ip: str,
-                 port: int):
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+                 host_ip: Optional[str] = None,
+                 port: Optional[int] = None):
+        if host_ip is not None:
+            pulumi.set(__self__, "host_ip", host_ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="hostIp")
-    def host_ip(self) -> str:
+    def host_ip(self) -> Optional[str]:
         return pulumi.get(self, "host_ip")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult(dict):
     def __init__(__self__, *,
-                 credential_source_name: str,
-                 credential_type: str,
-                 password_secret_id: str,
-                 role: str,
-                 user_name: str,
-                 wallet_secret_id: str):
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+                 credential_source_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 wallet_secret_id: Optional[str] = None):
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> str:
+    def credential_source_name(self) -> Optional[str]:
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> str:
+    def credential_type(self) -> Optional[str]:
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> str:
+    def wallet_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_secret_id")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 enterprise_manager_bridge_id: str,
-                 enterprise_manager_entity_display_name: str,
-                 enterprise_manager_entity_identifier: str,
-                 enterprise_manager_entity_name: str,
-                 enterprise_manager_entity_type: str,
-                 enterprise_manager_identifier: str,
-                 entity_source: str,
-                 exadata_display_name: str,
-                 exadata_infra_id: str,
-                 exadata_infra_resource_type: str,
-                 exadata_name: str,
-                 exadata_rack_type: str,
-                 exadata_shape: str,
-                 exadata_type: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_auto_sync_enabled: bool,
-                 is_virtualized_exadata: bool,
-                 lifecycle_details: str,
-                 member_vm_cluster_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult'],
-                 state: str,
-                 status: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-        :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
-        :param str enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param str enterprise_manager_entity_name: Enterprise Manager Entity Name
-        :param str enterprise_manager_entity_type: Enterprise Manager Entity Type
-        :param str enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param str entity_source: Source of the Exadata system.
-        :param str exadata_display_name: The user-friendly name for the Exadata system. The name does not have to be unique.
-        :param str exadata_infra_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-        :param str exadata_infra_resource_type: Oracle Cloud Infrastructure exadata infrastructure resource type
-        :param str exadata_name: The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-        :param str exadata_rack_type: Exadata rack type.
-        :param str exadata_shape: The shape of the Exadata Infrastructure.
-        :param str exadata_type: Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param bool is_virtualized_exadata: true if virtualization is used in the Exadata system
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: Lifecycle states
-        :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Exadata insight was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
-        pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "exadata_display_name", exadata_display_name)
-        pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
-        pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
-        pulumi.set(__self__, "exadata_name", exadata_name)
-        pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
-        pulumi.set(__self__, "exadata_shape", exadata_shape)
-        pulumi.set(__self__, "exadata_type", exadata_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
-        pulumi.set(__self__, "is_virtualized_exadata", is_virtualized_exadata)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 enterprise_manager_bridge_id: Optional[str] = None,
+                 enterprise_manager_entity_display_name: Optional[str] = None,
+                 enterprise_manager_entity_identifier: Optional[str] = None,
+                 enterprise_manager_entity_name: Optional[str] = None,
+                 enterprise_manager_entity_type: Optional[str] = None,
+                 enterprise_manager_identifier: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 exadata_display_name: Optional[str] = None,
+                 exadata_infra_id: Optional[str] = None,
+                 exadata_infra_resource_type: Optional[str] = None,
+                 exadata_name: Optional[str] = None,
+                 exadata_rack_type: Optional[str] = None,
+                 exadata_shape: Optional[str] = None,
+                 exadata_type: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_auto_sync_enabled: Optional[bool] = None,
+                 is_virtualized_exadata: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 member_vm_cluster_details: Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult']] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if enterprise_manager_bridge_id is not None:
+            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        if enterprise_manager_entity_display_name is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+        if enterprise_manager_entity_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        if enterprise_manager_entity_name is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
+        if enterprise_manager_entity_type is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
+        if enterprise_manager_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if exadata_display_name is not None:
+            pulumi.set(__self__, "exadata_display_name", exadata_display_name)
+        if exadata_infra_id is not None:
+            pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
+        if exadata_infra_resource_type is not None:
+            pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
+        if exadata_name is not None:
+            pulumi.set(__self__, "exadata_name", exadata_name)
+        if exadata_rack_type is not None:
+            pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
+        if exadata_shape is not None:
+            pulumi.set(__self__, "exadata_shape", exadata_shape)
+        if exadata_type is not None:
+            pulumi.set(__self__, "exadata_type", exadata_type)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_auto_sync_enabled is not None:
+            pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
+        if is_virtualized_exadata is not None:
+            pulumi.set(__self__, "is_virtualized_exadata", is_virtualized_exadata)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if member_vm_cluster_details is not None:
+            pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> str:
-        """
-        Unique Enterprise Manager bridge identifier
-        """
+    def enterprise_manager_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> str:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> str:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> str:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> str:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> str:
-        """
-        Enterprise Manager Unique Identifier
-        """
+    def enterprise_manager_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the Exadata system.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataDisplayName")
-    def exadata_display_name(self) -> str:
-        """
-        The user-friendly name for the Exadata system. The name does not have to be unique.
-        """
+    def exadata_display_name(self) -> Optional[str]:
         return pulumi.get(self, "exadata_display_name")
 
     @property
     @pulumi.getter(name="exadataInfraId")
-    def exadata_infra_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-        """
+    def exadata_infra_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infra_id")
 
     @property
     @pulumi.getter(name="exadataInfraResourceType")
-    def exadata_infra_resource_type(self) -> str:
-        """
-        Oracle Cloud Infrastructure exadata infrastructure resource type
-        """
+    def exadata_infra_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infra_resource_type")
 
     @property
     @pulumi.getter(name="exadataName")
-    def exadata_name(self) -> str:
-        """
-        The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
-        """
+    def exadata_name(self) -> Optional[str]:
         return pulumi.get(self, "exadata_name")
 
     @property
     @pulumi.getter(name="exadataRackType")
-    def exadata_rack_type(self) -> str:
-        """
-        Exadata rack type.
-        """
+    def exadata_rack_type(self) -> Optional[str]:
         return pulumi.get(self, "exadata_rack_type")
 
     @property
     @pulumi.getter(name="exadataShape")
-    def exadata_shape(self) -> str:
-        """
-        The shape of the Exadata Infrastructure.
-        """
+    def exadata_shape(self) -> Optional[str]:
         return pulumi.get(self, "exadata_shape")
 
     @property
     @pulumi.getter(name="exadataType")
-    def exadata_type(self) -> str:
-        """
-        Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-        """
+    def exadata_type(self) -> Optional[str]:
         return pulumi.get(self, "exadata_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoSyncEnabled")
-    def is_auto_sync_enabled(self) -> bool:
+    def is_auto_sync_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_sync_enabled")
 
     @property
     @pulumi.getter(name="isVirtualizedExadata")
-    def is_virtualized_exadata(self) -> bool:
-        """
-        true if virtualization is used in the Exadata system
-        """
+    def is_virtualized_exadata(self) -> Optional[bool]:
         return pulumi.get(self, "is_virtualized_exadata")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="memberVmClusterDetails")
-    def member_vm_cluster_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult']:
+    def member_vm_cluster_details(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult']]:
         return pulumi.get(self, "member_vm_cluster_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Resource Status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Exadata insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 dbm_private_endpoint_id: str,
-                 member_database_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult'],
-                 opsi_private_endpoint_id: str,
-                 vmcluster_id: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "member_database_details", member_database_details)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+                 compartment_id: Optional[str] = None,
+                 dbm_private_endpoint_id: Optional[str] = None,
+                 member_database_details: Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult']] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 vmcluster_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if member_database_details is not None:
+            pulumi.set(__self__, "member_database_details", member_database_details)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if vmcluster_id is not None:
+            pulumi.set(__self__, "vmcluster_id", vmcluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> str:
+    def dbm_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="memberDatabaseDetails")
-    def member_database_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult']:
+    def member_database_details(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult']]:
         return pulumi.get(self, "member_database_details")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> str:
+    def opsi_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="vmclusterId")
-    def vmcluster_id(self) -> str:
+    def vmcluster_id(self) -> Optional[str]:
         return pulumi.get(self, "vmcluster_id")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 connection_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult'],
-                 credential_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult'],
-                 database_id: str,
-                 database_resource_type: str,
-                 dbm_private_endpoint_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deployment_type: str,
-                 entity_source: str,
-                 freeform_tags: Mapping[str, Any],
-                 opsi_private_endpoint_id: str,
-                 service_name: str,
-                 system_tags: Mapping[str, Any]):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str entity_source: Source of the Exadata system.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_resource_type", database_resource_type)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "system_tags", system_tags)
+                 compartment_id: Optional[str] = None,
+                 connection_details: Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult']] = None,
+                 credential_details: Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']] = None,
+                 database_id: Optional[str] = None,
+                 database_resource_type: Optional[str] = None,
+                 dbm_private_endpoint_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_type: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 service_name: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_details is not None:
+            pulumi.set(__self__, "connection_details", connection_details)
+        if credential_details is not None:
+            pulumi.set(__self__, "credential_details", credential_details)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_resource_type is not None:
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult']:
+    def connection_details(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult']]:
         return pulumi.get(self, "connection_details")
 
     @property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']:
+    def credential_details(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']]:
         return pulumi.get(self, "credential_details")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseResourceType")
-    def database_resource_type(self) -> str:
+    def database_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "database_resource_type")
 
     @property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> str:
+    def dbm_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the Exadata system.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> str:
+    def opsi_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult(dict):
     def __init__(__self__, *,
-                 hosts: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
-                 protocol: str,
-                 service_name: str):
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+                 hosts: Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult']] = None,
+                 protocol: Optional[str] = None,
+                 service_name: Optional[str] = None):
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult']:
+    def hosts(self) -> Optional[Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult']]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult(dict):
     def __init__(__self__, *,
-                 host_ip: str,
-                 port: int):
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+                 host_ip: Optional[str] = None,
+                 port: Optional[int] = None):
+        if host_ip is not None:
+            pulumi.set(__self__, "host_ip", host_ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter(name="hostIp")
-    def host_ip(self) -> str:
+    def host_ip(self) -> Optional[str]:
         return pulumi.get(self, "host_ip")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult(dict):
     def __init__(__self__, *,
-                 credential_source_name: str,
-                 credential_type: str,
-                 password_secret_id: str,
-                 role: str,
-                 user_name: str,
-                 wallet_secret_id: str):
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+                 credential_source_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 wallet_secret_id: Optional[str] = None):
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> str:
+    def credential_source_name(self) -> Optional[str]:
         return pulumi.get(self, "credential_source_name")
 
     @property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> str:
+    def credential_type(self) -> Optional[str]:
         return pulumi.get(self, "credential_type")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> str:
+    def wallet_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_secret_id")
 
 
@@ -3811,604 +3047,443 @@ class GetHostInsightsFilterResult(dict):
 @pulumi.output_type
 class GetHostInsightsHostInsightSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 compute_id: str,
-                 defined_tags: Mapping[str, Any],
-                 enterprise_manager_bridge_id: str,
-                 enterprise_manager_entity_display_name: str,
-                 enterprise_manager_entity_identifier: str,
-                 enterprise_manager_entity_name: str,
-                 enterprise_manager_entity_type: str,
-                 enterprise_manager_identifier: str,
-                 entity_source: str,
-                 exadata_insight_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 host_display_name: str,
-                 host_name: str,
-                 host_type: str,
-                 id: str,
-                 lifecycle_details: str,
-                 management_agent_id: str,
-                 platform_name: str,
-                 platform_type: str,
-                 platform_version: str,
-                 processor_count: int,
-                 state: str,
-                 status: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-        :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
-        :param str enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param str enterprise_manager_entity_name: Enterprise Manager Entity Name
-        :param str enterprise_manager_entity_type: Enterprise Manager Entity Type
-        :param str enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param str entity_source: Source of the host entity.
-        :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str host_display_name: The user-friendly name for the host. The name does not have to be unique.
-        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str host_type: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-        :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        :param str platform_name: Platform name.
-        :param str platform_type: Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        :param str platform_version: Platform version.
-        :param int processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        :param str state: Lifecycle states
-        :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        :param str time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
-        pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host_display_name", host_display_name)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "host_type", host_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "platform_name", platform_name)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "platform_version", platform_version)
-        pulumi.set(__self__, "processor_count", processor_count)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 compute_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 enterprise_manager_bridge_id: Optional[str] = None,
+                 enterprise_manager_entity_display_name: Optional[str] = None,
+                 enterprise_manager_entity_identifier: Optional[str] = None,
+                 enterprise_manager_entity_name: Optional[str] = None,
+                 enterprise_manager_entity_type: Optional[str] = None,
+                 enterprise_manager_identifier: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 exadata_insight_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 host_display_name: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 host_type: Optional[str] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 platform_name: Optional[str] = None,
+                 platform_type: Optional[str] = None,
+                 platform_version: Optional[str] = None,
+                 processor_count: Optional[int] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_id is not None:
+            pulumi.set(__self__, "compute_id", compute_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if enterprise_manager_bridge_id is not None:
+            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        if enterprise_manager_entity_display_name is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+        if enterprise_manager_entity_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        if enterprise_manager_entity_name is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
+        if enterprise_manager_entity_type is not None:
+            pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
+        if enterprise_manager_identifier is not None:
+            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if exadata_insight_id is not None:
+            pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if host_display_name is not None:
+            pulumi.set(__self__, "host_display_name", host_display_name)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if host_type is not None:
+            pulumi.set(__self__, "host_type", host_type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if platform_name is not None:
+            pulumi.set(__self__, "platform_name", platform_name)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
+        if platform_version is not None:
+            pulumi.set(__self__, "platform_version", platform_version)
+        if processor_count is not None:
+            pulumi.set(__self__, "processor_count", processor_count)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeId")
-    def compute_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
+    def compute_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> str:
-        """
-        Unique Enterprise Manager bridge identifier
-        """
+    def enterprise_manager_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> str:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> str:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> str:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> str:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> str:
-        """
-        Enterprise Manager Unique Identifier
-        """
+    def enterprise_manager_identifier(self) -> Optional[str]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the host entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataInsightId")
-    def exadata_insight_id(self) -> str:
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-        """
+    def exadata_insight_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_insight_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostDisplayName")
-    def host_display_name(self) -> str:
-        """
-        The user-friendly name for the host. The name does not have to be unique.
-        """
+    def host_display_name(self) -> Optional[str]:
         return pulumi.get(self, "host_display_name")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="hostType")
-    def host_type(self) -> str:
-        """
-        Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-        """
+    def host_type(self) -> Optional[str]:
         return pulumi.get(self, "host_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> str:
-        """
-        Platform name.
-        """
+    def platform_name(self) -> Optional[str]:
         return pulumi.get(self, "platform_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> str:
-        """
-        Platform version.
-        """
+    def platform_version(self) -> Optional[str]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter(name="processorCount")
-    def processor_count(self) -> int:
-        """
-        Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        """
+    def processor_count(self) -> Optional[int]:
         return pulumi.get(self, "processor_count")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Resource Status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the host insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetImportableAgentEntitiesItemResult(dict):
     def __init__(__self__, *,
-                 entity_source: str,
-                 host_name: str,
-                 management_agent_display_name: str,
-                 management_agent_id: str,
-                 platform_type: str):
-        """
-        :param str entity_source: Source of the importable agent entity.
-        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str management_agent_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-        """
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "platform_type", platform_type)
+                 entity_source: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 management_agent_display_name: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 platform_type: Optional[str] = None):
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if management_agent_display_name is not None:
+            pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the importable agent entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="managementAgentDisplayName")
-    def management_agent_display_name(self) -> str:
-        """
-        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-        """
+    def management_agent_display_name(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_display_name")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
 
 @pulumi.output_type
 class GetImportableAgentEntityItemResult(dict):
     def __init__(__self__, *,
-                 entity_source: str,
-                 host_name: str,
-                 management_agent_display_name: str,
-                 management_agent_id: str,
-                 platform_type: str):
-        """
-        :param str entity_source: Source of the importable agent entity.
-        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str management_agent_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-        """
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "platform_type", platform_type)
+                 entity_source: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 management_agent_display_name: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 platform_type: Optional[str] = None):
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if management_agent_display_name is not None:
+            pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the importable agent entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="managementAgentDisplayName")
-    def management_agent_display_name(self) -> str:
-        """
-        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Management Agent
-        """
+    def management_agent_display_name(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_display_name")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
 
 @pulumi.output_type
 class GetImportableComputeEntitiesItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 compute_display_name: str,
-                 compute_id: str,
-                 entity_source: str,
-                 host_name: str,
-                 platform_type: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str compute_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-        :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param str entity_source: Source of the importable agent entity.
-        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_display_name", compute_display_name)
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "platform_type", platform_type)
+                 compartment_id: Optional[str] = None,
+                 compute_display_name: Optional[str] = None,
+                 compute_id: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 platform_type: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_display_name is not None:
+            pulumi.set(__self__, "compute_display_name", compute_display_name)
+        if compute_id is not None:
+            pulumi.set(__self__, "compute_id", compute_id)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeDisplayName")
-    def compute_display_name(self) -> str:
-        """
-        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-        """
+    def compute_display_name(self) -> Optional[str]:
         return pulumi.get(self, "compute_display_name")
 
     @property
     @pulumi.getter(name="computeId")
-    def compute_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
+    def compute_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the importable agent entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
 
 @pulumi.output_type
 class GetImportableComputeEntityItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 compute_display_name: str,
-                 compute_id: str,
-                 entity_source: str,
-                 host_name: str,
-                 platform_type: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str compute_display_name: The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-        :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param str entity_source: Source of the importable agent entity.
-        :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_display_name", compute_display_name)
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "platform_type", platform_type)
+                 compartment_id: Optional[str] = None,
+                 compute_display_name: Optional[str] = None,
+                 compute_id: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 platform_type: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_display_name is not None:
+            pulumi.set(__self__, "compute_display_name", compute_display_name)
+        if compute_id is not None:
+            pulumi.set(__self__, "compute_id", compute_id)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeDisplayName")
-    def compute_display_name(self) -> str:
-        """
-        The [Display Name](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Display) of the Compute Instance
-        """
+    def compute_display_name(self) -> Optional[str]:
         return pulumi.get(self, "compute_display_name")
 
     @property
     @pulumi.getter(name="computeId")
-    def compute_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
+    def compute_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> str:
-        """
-        Source of the importable agent entity.
-        """
+    def entity_source(self) -> Optional[str]:
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
 
 @pulumi.output_type
 class GetNewsReportContentTypeResult(dict):
     def __init__(__self__, *,
-                 capacity_planning_resources: Sequence[str]):
-        """
-        :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
-        """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+                 capacity_planning_resources: Optional[Sequence[str]] = None):
+        if capacity_planning_resources is not None:
+            pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
-    def capacity_planning_resources(self) -> Sequence[str]:
-        """
-        Supported resources for capacity planning content type.
-        """
+    def capacity_planning_resources(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "capacity_planning_resources")
 
 
@@ -4418,9 +3493,6 @@ class GetNewsReportsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The news report name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4429,9 +3501,6 @@ class GetNewsReportsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The news report name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4448,213 +3517,159 @@ class GetNewsReportsFilterResult(dict):
 @pulumi.output_type
 class GetNewsReportsNewsReportCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNewsReportsNewsReportCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 content_types: Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult'],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 locale: str,
-                 name: str,
-                 news_frequency: str,
-                 ons_topic_id: str,
-                 state: str,
-                 status: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence['GetNewsReportsNewsReportCollectionItemContentTypeArgs'] content_types: Content types that the news report can handle.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: The description of the news report.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str locale: Language of the news report.
-        :param str name: The news report name.
-        :param str news_frequency: News report frequency.
-        :param str ons_topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        :param str state: Lifecycle states
-        :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "content_types", content_types)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "locale", locale)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "news_frequency", news_frequency)
-        pulumi.set(__self__, "ons_topic_id", ons_topic_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 content_types: Optional[Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 locale: Optional[str] = None,
+                 name: Optional[str] = None,
+                 news_frequency: Optional[str] = None,
+                 ons_topic_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 status: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if content_types is not None:
+            pulumi.set(__self__, "content_types", content_types)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if news_frequency is not None:
+            pulumi.set(__self__, "news_frequency", news_frequency)
+        if ons_topic_id is not None:
+            pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="contentTypes")
-    def content_types(self) -> Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult']:
-        """
-        Content types that the news report can handle.
-        """
+    def content_types(self) -> Optional[Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult']]:
         return pulumi.get(self, "content_types")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the news report.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def locale(self) -> str:
-        """
-        Language of the news report.
-        """
+    def locale(self) -> Optional[str]:
         return pulumi.get(self, "locale")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The news report name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="newsFrequency")
-    def news_frequency(self) -> str:
-        """
-        News report frequency.
-        """
+    def news_frequency(self) -> Optional[str]:
         return pulumi.get(self, "news_frequency")
 
     @property
     @pulumi.getter(name="onsTopicId")
-    def ons_topic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-        """
+    def ons_topic_id(self) -> Optional[str]:
         return pulumi.get(self, "ons_topic_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Resource Status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the news report was first enabled. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the news report was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
     def __init__(__self__, *,
-                 capacity_planning_resources: Sequence[str]):
-        """
-        :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
-        """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+                 capacity_planning_resources: Optional[Sequence[str]] = None):
+        if capacity_planning_resources is not None:
+            pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
-    def capacity_planning_resources(self) -> Sequence[str]:
-        """
-        Supported resources for capacity planning content type.
-        """
+    def capacity_planning_resources(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "capacity_planning_resources")
 
 
@@ -4688,195 +3703,146 @@ class GetOperationsInsightsPrivateEndpointsFilterResult(dict):
 @pulumi.output_type
 class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_used_for_rac_dbs: bool,
-                 lifecycle_details: str,
-                 nsg_ids: Sequence[str],
-                 private_endpoint_status_details: str,
-                 private_ip: str,
-                 state: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 vcn_id: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: The description of the private endpoint.
-        :param str display_name: A filter to return only resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The OCID of the Private service accessed database.
-        :param bool is_used_for_rac_dbs: The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence[str] nsg_ids: The OCIDs of the network security groups that the private endpoint belongs to.
-        :param str private_endpoint_status_details: A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-        :param str private_ip: The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-        :param str state: Lifecycle states
-        :param str subnet_id: The OCID of the subnet.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_used_for_rac_dbs", is_used_for_rac_dbs)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoint_status_details", private_endpoint_status_details)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_used_for_rac_dbs: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 private_endpoint_status_details: Optional[str] = None,
+                 private_ip: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_used_for_rac_dbs is not None:
+            pulumi.set(__self__, "is_used_for_rac_dbs", is_used_for_rac_dbs)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if private_endpoint_status_details is not None:
+            pulumi.set(__self__, "private_endpoint_status_details", private_endpoint_status_details)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the private endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Private service accessed database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isUsedForRacDbs")
-    def is_used_for_rac_dbs(self) -> bool:
-        """
-        The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
-        """
+    def is_used_for_rac_dbs(self) -> Optional[bool]:
         return pulumi.get(self, "is_used_for_rac_dbs")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of the network security groups that the private endpoint belongs to.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointStatusDetails")
-    def private_endpoint_status_details(self) -> str:
-        """
-        A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
-        """
+    def private_endpoint_status_details(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_status_details")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of the subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -4886,9 +3852,6 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4897,9 +3860,6 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4916,184 +3876,138 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
 @pulumi.output_type
 class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 connection_password: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_awr_data_access: bool,
-                 is_em_data_access: bool,
-                 is_opsi_data_access: bool,
-                 lifecycle_details: str,
-                 name: str,
-                 operations_insights_warehouse_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str connection_password: User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique Operations Insights Warehouse User identifier
-        :param bool is_awr_data_access: Indicate whether user has access to AWR data.
-        :param bool is_em_data_access: Indicate whether user has access to EM data.
-        :param bool is_opsi_data_access: Indicate whether user has access to OPSI data.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param str state: Lifecycle states
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_password", connection_password)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_awr_data_access", is_awr_data_access)
-        pulumi.set(__self__, "is_em_data_access", is_em_data_access)
-        pulumi.set(__self__, "is_opsi_data_access", is_opsi_data_access)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 connection_password: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_awr_data_access: Optional[bool] = None,
+                 is_em_data_access: Optional[bool] = None,
+                 is_opsi_data_access: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 name: Optional[str] = None,
+                 operations_insights_warehouse_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_password is not None:
+            pulumi.set(__self__, "connection_password", connection_password)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_awr_data_access is not None:
+            pulumi.set(__self__, "is_awr_data_access", is_awr_data_access)
+        if is_em_data_access is not None:
+            pulumi.set(__self__, "is_em_data_access", is_em_data_access)
+        if is_opsi_data_access is not None:
+            pulumi.set(__self__, "is_opsi_data_access", is_opsi_data_access)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if operations_insights_warehouse_id is not None:
+            pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionPassword")
-    def connection_password(self) -> str:
-        """
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
+    def connection_password(self) -> Optional[str]:
         return pulumi.get(self, "connection_password")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique Operations Insights Warehouse User identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAwrDataAccess")
-    def is_awr_data_access(self) -> bool:
-        """
-        Indicate whether user has access to AWR data.
-        """
+    def is_awr_data_access(self) -> Optional[bool]:
         return pulumi.get(self, "is_awr_data_access")
 
     @property
     @pulumi.getter(name="isEmDataAccess")
-    def is_em_data_access(self) -> bool:
-        """
-        Indicate whether user has access to EM data.
-        """
+    def is_em_data_access(self) -> Optional[bool]:
         return pulumi.get(self, "is_em_data_access")
 
     @property
     @pulumi.getter(name="isOpsiDataAccess")
-    def is_opsi_data_access(self) -> bool:
-        """
-        Indicate whether user has access to OPSI data.
-        """
+    def is_opsi_data_access(self) -> Optional[bool]:
         return pulumi.get(self, "is_opsi_data_access")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> str:
-        """
-        Unique Operations Insights Warehouse identifier
-        """
+    def operations_insights_warehouse_id(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -5127,669 +4041,490 @@ class GetOperationsInsightsWarehousesFilterResult(dict):
 @pulumi.output_type
 class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 cpu_allocated: float,
-                 cpu_used: float,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 dynamic_group_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 operations_insights_tenancy_id: str,
-                 state: str,
-                 storage_allocated_in_gbs: float,
-                 storage_used_in_gbs: float,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_last_wallet_rotated: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param float cpu_allocated: Number of OCPUs allocated to OPSI Warehouse ADW.
-        :param float cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name.
-        :param str dynamic_group_id: OCID of the dynamic group created for the warehouse
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique Operations Insights Warehouse identifier
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str operations_insights_tenancy_id: Tenancy Identifier of Operations Insights service
-        :param str state: Lifecycle states
-        :param float storage_allocated_in_gbs: Storage allocated to OPSI Warehouse ADW.
-        :param float storage_used_in_gbs: Storage by OPSI Warehouse ADW in GB.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param str time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-        :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_allocated", cpu_allocated)
-        pulumi.set(__self__, "cpu_used", cpu_used)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dynamic_group_id", dynamic_group_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operations_insights_tenancy_id", operations_insights_tenancy_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "storage_allocated_in_gbs", storage_allocated_in_gbs)
-        pulumi.set(__self__, "storage_used_in_gbs", storage_used_in_gbs)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_wallet_rotated", time_last_wallet_rotated)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 cpu_allocated: Optional[float] = None,
+                 cpu_used: Optional[float] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 dynamic_group_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 operations_insights_tenancy_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 storage_allocated_in_gbs: Optional[float] = None,
+                 storage_used_in_gbs: Optional[float] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_last_wallet_rotated: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if cpu_allocated is not None:
+            pulumi.set(__self__, "cpu_allocated", cpu_allocated)
+        if cpu_used is not None:
+            pulumi.set(__self__, "cpu_used", cpu_used)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if dynamic_group_id is not None:
+            pulumi.set(__self__, "dynamic_group_id", dynamic_group_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if operations_insights_tenancy_id is not None:
+            pulumi.set(__self__, "operations_insights_tenancy_id", operations_insights_tenancy_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if storage_allocated_in_gbs is not None:
+            pulumi.set(__self__, "storage_allocated_in_gbs", storage_allocated_in_gbs)
+        if storage_used_in_gbs is not None:
+            pulumi.set(__self__, "storage_used_in_gbs", storage_used_in_gbs)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_last_wallet_rotated is not None:
+            pulumi.set(__self__, "time_last_wallet_rotated", time_last_wallet_rotated)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuAllocated")
-    def cpu_allocated(self) -> float:
-        """
-        Number of OCPUs allocated to OPSI Warehouse ADW.
-        """
+    def cpu_allocated(self) -> Optional[float]:
         return pulumi.get(self, "cpu_allocated")
 
     @property
     @pulumi.getter(name="cpuUsed")
-    def cpu_used(self) -> float:
-        """
-        Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-        """
+    def cpu_used(self) -> Optional[float]:
         return pulumi.get(self, "cpu_used")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dynamicGroupId")
-    def dynamic_group_id(self) -> str:
-        """
-        OCID of the dynamic group created for the warehouse
-        """
+    def dynamic_group_id(self) -> Optional[str]:
         return pulumi.get(self, "dynamic_group_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique Operations Insights Warehouse identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="operationsInsightsTenancyId")
-    def operations_insights_tenancy_id(self) -> str:
-        """
-        Tenancy Identifier of Operations Insights service
-        """
+    def operations_insights_tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_tenancy_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageAllocatedInGbs")
-    def storage_allocated_in_gbs(self) -> float:
-        """
-        Storage allocated to OPSI Warehouse ADW.
-        """
+    def storage_allocated_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "storage_allocated_in_gbs")
 
     @property
     @pulumi.getter(name="storageUsedInGbs")
-    def storage_used_in_gbs(self) -> float:
-        """
-        Storage by OPSI Warehouse ADW in GB.
-        """
+    def storage_used_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "storage_used_in_gbs")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastWalletRotated")
-    def time_last_wallet_rotated(self) -> str:
-        """
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-        """
+    def time_last_wallet_rotated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_wallet_rotated")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigItemResult(dict):
     def __init__(__self__, *,
-                 applicable_contexts: Sequence[str],
-                 config_item_type: str,
-                 default_value: str,
-                 metadatas: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult'],
-                 name: str,
-                 value: str):
-        """
-        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
-        :param str config_item_type: Type of configuration item.
-        :param str default_value: Value of configuration item.
-        :param Sequence['GetOpsiConfigurationConfigItemMetadataArgs'] metadatas: Configuration item metadata.
-        :param str name: Name of configuration item.
-        :param str value: Value of configuration item.
-        """
-        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 applicable_contexts: Optional[Sequence[str]] = None,
+                 config_item_type: Optional[str] = None,
+                 default_value: Optional[str] = None,
+                 metadatas: Optional[Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult']] = None,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if applicable_contexts is not None:
+            pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="applicableContexts")
-    def applicable_contexts(self) -> Sequence[str]:
-        """
-        List of contexts in Operations Insights where this configuration item is applicable.
-        """
+    def applicable_contexts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "applicable_contexts")
 
     @property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> str:
-        """
-        Type of configuration item.
-        """
+    def config_item_type(self) -> Optional[str]:
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> str:
-        """
-        Value of configuration item.
-        """
+    def default_value(self) -> Optional[str]:
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult']:
-        """
-        Configuration item metadata.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of configuration item.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Value of configuration item.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigItemMetadataResult(dict):
     def __init__(__self__, *,
-                 config_item_type: str,
-                 data_type: str,
-                 description: str,
-                 display_name: str,
-                 unit_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult'],
-                 value_input_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult']):
-        """
-        :param str config_item_type: Type of configuration item.
-        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        :param str description: Description of OPSI configuration.
-        :param str display_name: User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param Sequence['GetOpsiConfigurationConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
-        :param Sequence['GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit_details", unit_details)
-        pulumi.set(__self__, "value_input_details", value_input_details)
+                 config_item_type: Optional[str] = None,
+                 data_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 unit_details: Optional[Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult']] = None,
+                 value_input_details: Optional[Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult']] = None):
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit_details is not None:
+            pulumi.set(__self__, "unit_details", unit_details)
+        if value_input_details is not None:
+            pulumi.set(__self__, "value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> str:
-        """
-        Type of configuration item.
-        """
+    def config_item_type(self) -> Optional[str]:
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of OPSI configuration.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="unitDetails")
-    def unit_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult']:
-        """
-        Unit details of configuration item.
-        """
+    def unit_details(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult']]:
         return pulumi.get(self, "unit_details")
 
     @property
     @pulumi.getter(name="valueInputDetails")
-    def value_input_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult']:
-        """
-        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
+    def value_input_details(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult']]:
         return pulumi.get(self, "value_input_details")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigItemMetadataUnitDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 unit: str):
-        """
-        :param str display_name: User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param str unit: Unit of configuration item.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit", unit)
+                 display_name: Optional[str] = None,
+                 unit: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def unit(self) -> str:
-        """
-        Unit of configuration item.
-        """
+    def unit(self) -> Optional[str]:
         return pulumi.get(self, "unit")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigItemMetadataValueInputDetailResult(dict):
     def __init__(__self__, *,
-                 allowed_value_type: str,
-                 max_value: str,
-                 min_value: str,
-                 possible_values: Sequence[str]):
-        """
-        :param str allowed_value_type: Allowed value type of configuration item.
-        :param str max_value: Maximum value limit for the configuration item.
-        :param str min_value: Minimum value limit for the configuration item.
-        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
-        """
-        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
-        pulumi.set(__self__, "max_value", max_value)
-        pulumi.set(__self__, "min_value", min_value)
-        pulumi.set(__self__, "possible_values", possible_values)
+                 allowed_value_type: Optional[str] = None,
+                 max_value: Optional[str] = None,
+                 min_value: Optional[str] = None,
+                 possible_values: Optional[Sequence[str]] = None):
+        if allowed_value_type is not None:
+            pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if possible_values is not None:
+            pulumi.set(__self__, "possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
-    def allowed_value_type(self) -> str:
-        """
-        Allowed value type of configuration item.
-        """
+    def allowed_value_type(self) -> Optional[str]:
         return pulumi.get(self, "allowed_value_type")
 
     @property
     @pulumi.getter(name="maxValue")
-    def max_value(self) -> str:
-        """
-        Maximum value limit for the configuration item.
-        """
+    def max_value(self) -> Optional[str]:
         return pulumi.get(self, "max_value")
 
     @property
     @pulumi.getter(name="minValue")
-    def min_value(self) -> str:
-        """
-        Minimum value limit for the configuration item.
-        """
+    def min_value(self) -> Optional[str]:
         return pulumi.get(self, "min_value")
 
     @property
     @pulumi.getter(name="possibleValues")
-    def possible_values(self) -> Sequence[str]:
-        """
-        Allowed values to pick for the configuration item.
-        """
+    def possible_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "possible_values")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigurationItemConfigItemResult(dict):
     def __init__(__self__, *,
-                 applicable_contexts: Sequence[str],
-                 config_item_type: str,
-                 default_value: str,
-                 metadatas: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult'],
-                 name: str,
-                 value: str,
-                 value_source_config: str):
-        """
-        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
-        :param str config_item_type: Type of configuration item.
-        :param str default_value: Value of configuration item.
-        :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataArgs'] metadatas: Configuration item metadata.
-        :param str name: A filter to return only configuration items that match the entire name.
-        :param str value: Value of configuration item.
-        :param str value_source_config: Source configuration from where the value is taken for a configuration item.
-        """
-        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "value_source_config", value_source_config)
+                 applicable_contexts: Optional[Sequence[str]] = None,
+                 config_item_type: Optional[str] = None,
+                 default_value: Optional[str] = None,
+                 metadatas: Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult']] = None,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None,
+                 value_source_config: Optional[str] = None):
+        if applicable_contexts is not None:
+            pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_source_config is not None:
+            pulumi.set(__self__, "value_source_config", value_source_config)
 
     @property
     @pulumi.getter(name="applicableContexts")
-    def applicable_contexts(self) -> Sequence[str]:
-        """
-        List of contexts in Operations Insights where this configuration item is applicable.
-        """
+    def applicable_contexts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "applicable_contexts")
 
     @property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> str:
-        """
-        Type of configuration item.
-        """
+    def config_item_type(self) -> Optional[str]:
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> str:
-        """
-        Value of configuration item.
-        """
+    def default_value(self) -> Optional[str]:
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult']:
-        """
-        Configuration item metadata.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only configuration items that match the entire name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Value of configuration item.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
     @property
     @pulumi.getter(name="valueSourceConfig")
-    def value_source_config(self) -> str:
-        """
-        Source configuration from where the value is taken for a configuration item.
-        """
+    def value_source_config(self) -> Optional[str]:
         return pulumi.get(self, "value_source_config")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigurationItemConfigItemMetadataResult(dict):
     def __init__(__self__, *,
-                 config_item_type: str,
-                 data_type: str,
-                 description: str,
-                 display_name: str,
-                 unit_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult'],
-                 value_input_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult']):
-        """
-        :param str config_item_type: Type of configuration item.
-        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        :param str description: Description of configuration item .
-        :param str display_name: User-friendly display name for the configuration item unit.
-        :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
-        :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit_details", unit_details)
-        pulumi.set(__self__, "value_input_details", value_input_details)
+                 config_item_type: Optional[str] = None,
+                 data_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 unit_details: Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult']] = None,
+                 value_input_details: Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult']] = None):
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit_details is not None:
+            pulumi.set(__self__, "unit_details", unit_details)
+        if value_input_details is not None:
+            pulumi.set(__self__, "value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> str:
-        """
-        Type of configuration item.
-        """
+    def config_item_type(self) -> Optional[str]:
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of configuration item .
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friendly display name for the configuration item unit.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="unitDetails")
-    def unit_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult']:
-        """
-        Unit details of configuration item.
-        """
+    def unit_details(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult']]:
         return pulumi.get(self, "unit_details")
 
     @property
     @pulumi.getter(name="valueInputDetails")
-    def value_input_details(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult']:
-        """
-        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
+    def value_input_details(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult']]:
         return pulumi.get(self, "value_input_details")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 unit: str):
-        """
-        :param str display_name: User-friendly display name for the configuration item unit.
-        :param str unit: Unit of configuration item.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit", unit)
+                 display_name: Optional[str] = None,
+                 unit: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friendly display name for the configuration item unit.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def unit(self) -> str:
-        """
-        Unit of configuration item.
-        """
+    def unit(self) -> Optional[str]:
         return pulumi.get(self, "unit")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult(dict):
     def __init__(__self__, *,
-                 allowed_value_type: str,
-                 max_value: str,
-                 min_value: str,
-                 possible_values: Sequence[str]):
-        """
-        :param str allowed_value_type: Allowed value type of configuration item.
-        :param str max_value: Maximum value limit for the configuration item.
-        :param str min_value: Minimum value limit for the configuration item.
-        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
-        """
-        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
-        pulumi.set(__self__, "max_value", max_value)
-        pulumi.set(__self__, "min_value", min_value)
-        pulumi.set(__self__, "possible_values", possible_values)
+                 allowed_value_type: Optional[str] = None,
+                 max_value: Optional[str] = None,
+                 min_value: Optional[str] = None,
+                 possible_values: Optional[Sequence[str]] = None):
+        if allowed_value_type is not None:
+            pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if possible_values is not None:
+            pulumi.set(__self__, "possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
-    def allowed_value_type(self) -> str:
-        """
-        Allowed value type of configuration item.
-        """
+    def allowed_value_type(self) -> Optional[str]:
         return pulumi.get(self, "allowed_value_type")
 
     @property
     @pulumi.getter(name="maxValue")
-    def max_value(self) -> str:
-        """
-        Maximum value limit for the configuration item.
-        """
+    def max_value(self) -> Optional[str]:
         return pulumi.get(self, "max_value")
 
     @property
     @pulumi.getter(name="minValue")
-    def min_value(self) -> str:
-        """
-        Minimum value limit for the configuration item.
-        """
+    def min_value(self) -> Optional[str]:
         return pulumi.get(self, "min_value")
 
     @property
     @pulumi.getter(name="possibleValues")
-    def possible_values(self) -> Sequence[str]:
-        """
-        Allowed values to pick for the configuration item.
-        """
+    def possible_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "possible_values")
 
 
@@ -5799,9 +4534,6 @@ class GetOpsiConfigurationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of configuration item.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5810,9 +4542,6 @@ class GetOpsiConfigurationsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of configuration item.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -5829,416 +4558,318 @@ class GetOpsiConfigurationsFilterResult(dict):
 @pulumi.output_type
 class GetOpsiConfigurationsOpsiConfigurationsCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 config_item_custom_statuses: Sequence[str],
-                 config_item_fields: Sequence[str],
-                 config_items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult'],
-                 config_items_applicable_contexts: Sequence[str],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 opsi_config_fields: Sequence[str],
-                 opsi_config_type: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs'] config_items: Array of configuration item summary objects.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description of OPSI configuration.
-        :param str display_name: Filter to return based on resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str opsi_config_type: Filter to return based on configuration type of OPSI configuration.
-        :param str state: Filter to return based on Lifecycle state of OPSI configuration.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "config_item_custom_statuses", config_item_custom_statuses)
-        pulumi.set(__self__, "config_item_fields", config_item_fields)
-        pulumi.set(__self__, "config_items", config_items)
-        pulumi.set(__self__, "config_items_applicable_contexts", config_items_applicable_contexts)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "opsi_config_fields", opsi_config_fields)
-        pulumi.set(__self__, "opsi_config_type", opsi_config_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 config_item_custom_statuses: Optional[Sequence[str]] = None,
+                 config_item_fields: Optional[Sequence[str]] = None,
+                 config_items: Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult']] = None,
+                 config_items_applicable_contexts: Optional[Sequence[str]] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 opsi_config_fields: Optional[Sequence[str]] = None,
+                 opsi_config_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if config_item_custom_statuses is not None:
+            pulumi.set(__self__, "config_item_custom_statuses", config_item_custom_statuses)
+        if config_item_fields is not None:
+            pulumi.set(__self__, "config_item_fields", config_item_fields)
+        if config_items is not None:
+            pulumi.set(__self__, "config_items", config_items)
+        if config_items_applicable_contexts is not None:
+            pulumi.set(__self__, "config_items_applicable_contexts", config_items_applicable_contexts)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if opsi_config_fields is not None:
+            pulumi.set(__self__, "opsi_config_fields", opsi_config_fields)
+        if opsi_config_type is not None:
+            pulumi.set(__self__, "opsi_config_type", opsi_config_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configItemCustomStatuses")
-    def config_item_custom_statuses(self) -> Sequence[str]:
+    def config_item_custom_statuses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "config_item_custom_statuses")
 
     @property
     @pulumi.getter(name="configItemFields")
-    def config_item_fields(self) -> Sequence[str]:
+    def config_item_fields(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "config_item_fields")
 
     @property
     @pulumi.getter(name="configItems")
-    def config_items(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult']:
-        """
-        Array of configuration item summary objects.
-        """
+    def config_items(self) -> Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult']]:
         return pulumi.get(self, "config_items")
 
     @property
     @pulumi.getter(name="configItemsApplicableContexts")
-    def config_items_applicable_contexts(self) -> Sequence[str]:
+    def config_items_applicable_contexts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "config_items_applicable_contexts")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of OPSI configuration.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filter to return based on resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opsiConfigFields")
-    def opsi_config_fields(self) -> Sequence[str]:
+    def opsi_config_fields(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "opsi_config_fields")
 
     @property
     @pulumi.getter(name="opsiConfigType")
-    def opsi_config_type(self) -> str:
-        """
-        Filter to return based on configuration type of OPSI configuration.
-        """
+    def opsi_config_type(self) -> Optional[str]:
         return pulumi.get(self, "opsi_config_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter to return based on Lifecycle state of OPSI configuration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult(dict):
     def __init__(__self__, *,
-                 applicable_contexts: Sequence[str],
-                 config_item_type: str,
-                 default_value: str,
-                 metadatas: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult'],
-                 name: str,
-                 value: str):
-        """
-        :param Sequence[str] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
-        :param str config_item_type: Type of configuration item.
-        :param str default_value: Value of configuration item.
-        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataArgs'] metadatas: Configuration item metadata.
-        :param str name: Name of configuration item.
-        :param str value: Value of configuration item.
-        """
-        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 applicable_contexts: Optional[Sequence[str]] = None,
+                 config_item_type: Optional[str] = None,
+                 default_value: Optional[str] = None,
+                 metadatas: Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult']] = None,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if applicable_contexts is not None:
+            pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="applicableContexts")
-    def applicable_contexts(self) -> Sequence[str]:
-        """
-        List of contexts in Operations Insights where this configuration item is applicable.
-        """
+    def applicable_contexts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "applicable_contexts")
 
     @property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> str:
-        """
-        Type of configuration item.
-        """
+    def config_item_type(self) -> Optional[str]:
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> str:
-        """
-        Value of configuration item.
-        """
+    def default_value(self) -> Optional[str]:
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult']:
-        """
-        Configuration item metadata.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of configuration item.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Value of configuration item.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult(dict):
     def __init__(__self__, *,
-                 config_item_type: str,
-                 data_type: str,
-                 description: str,
-                 display_name: str,
-                 unit_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult'],
-                 value_input_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult']):
-        """
-        :param str config_item_type: Type of configuration item.
-        :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        :param str description: Description of OPSI configuration.
-        :param str display_name: Filter to return based on resources that match the entire display name.
-        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
-        :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit_details", unit_details)
-        pulumi.set(__self__, "value_input_details", value_input_details)
+                 config_item_type: Optional[str] = None,
+                 data_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 unit_details: Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult']] = None,
+                 value_input_details: Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult']] = None):
+        if config_item_type is not None:
+            pulumi.set(__self__, "config_item_type", config_item_type)
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit_details is not None:
+            pulumi.set(__self__, "unit_details", unit_details)
+        if value_input_details is not None:
+            pulumi.set(__self__, "value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> str:
-        """
-        Type of configuration item.
-        """
+    def config_item_type(self) -> Optional[str]:
         return pulumi.get(self, "config_item_type")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of OPSI configuration.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filter to return based on resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="unitDetails")
-    def unit_details(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult']:
-        """
-        Unit details of configuration item.
-        """
+    def unit_details(self) -> Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult']]:
         return pulumi.get(self, "unit_details")
 
     @property
     @pulumi.getter(name="valueInputDetails")
-    def value_input_details(self) -> Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult']:
-        """
-        Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
-        """
+    def value_input_details(self) -> Optional[Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult']]:
         return pulumi.get(self, "value_input_details")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 unit: str):
-        """
-        :param str display_name: Filter to return based on resources that match the entire display name.
-        :param str unit: Unit of configuration item.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit", unit)
+                 display_name: Optional[str] = None,
+                 unit: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filter to return based on resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def unit(self) -> str:
-        """
-        Unit of configuration item.
-        """
+    def unit(self) -> Optional[str]:
         return pulumi.get(self, "unit")
 
 
 @pulumi.output_type
 class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult(dict):
     def __init__(__self__, *,
-                 allowed_value_type: str,
-                 max_value: str,
-                 min_value: str,
-                 possible_values: Sequence[str]):
-        """
-        :param str allowed_value_type: Allowed value type of configuration item.
-        :param str max_value: Maximum value limit for the configuration item.
-        :param str min_value: Minimum value limit for the configuration item.
-        :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
-        """
-        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
-        pulumi.set(__self__, "max_value", max_value)
-        pulumi.set(__self__, "min_value", min_value)
-        pulumi.set(__self__, "possible_values", possible_values)
+                 allowed_value_type: Optional[str] = None,
+                 max_value: Optional[str] = None,
+                 min_value: Optional[str] = None,
+                 possible_values: Optional[Sequence[str]] = None):
+        if allowed_value_type is not None:
+            pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if possible_values is not None:
+            pulumi.set(__self__, "possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
-    def allowed_value_type(self) -> str:
-        """
-        Allowed value type of configuration item.
-        """
+    def allowed_value_type(self) -> Optional[str]:
         return pulumi.get(self, "allowed_value_type")
 
     @property
     @pulumi.getter(name="maxValue")
-    def max_value(self) -> str:
-        """
-        Maximum value limit for the configuration item.
-        """
+    def max_value(self) -> Optional[str]:
         return pulumi.get(self, "max_value")
 
     @property
     @pulumi.getter(name="minValue")
-    def min_value(self) -> str:
-        """
-        Minimum value limit for the configuration item.
-        """
+    def min_value(self) -> Optional[str]:
         return pulumi.get(self, "min_value")
 
     @property
     @pulumi.getter(name="possibleValues")
-    def possible_values(self) -> Sequence[str]:
-        """
-        Allowed values to pick for the configuration item.
-        """
+    def possible_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "possible_values")
 
 

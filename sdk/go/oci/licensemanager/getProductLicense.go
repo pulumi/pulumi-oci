@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
@@ -60,48 +59,48 @@ type LookupProductLicenseArgs struct {
 // A collection of values returned by getProductLicense.
 type LookupProductLicenseResult struct {
 	// The number of active license records associated with the product license.
-	ActiveLicenseRecordCount int `pulumi:"activeLicenseRecordCount"`
+	ActiveLicenseRecordCount *int `pulumi:"activeLicenseRecordCount"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// License record name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The image ID associated with the product license.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The images associated with the product license.
 	Images []GetProductLicenseImage `pulumi:"images"`
 	// Specifies whether or not the product license is oversubscribed.
-	IsOverSubscribed bool `pulumi:"isOverSubscribed"`
+	IsOverSubscribed *bool `pulumi:"isOverSubscribed"`
 	// Specifies if the license unit count is unlimited.
-	IsUnlimited bool `pulumi:"isUnlimited"`
+	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// Specifies whether the vendor is Oracle or a third party.
-	IsVendorOracle bool `pulumi:"isVendorOracle"`
+	IsVendorOracle *bool `pulumi:"isVendorOracle"`
 	// The product license unit.
-	LicenseUnit      string `pulumi:"licenseUnit"`
-	ProductLicenseId string `pulumi:"productLicenseId"`
+	LicenseUnit      *string `pulumi:"licenseUnit"`
+	ProductLicenseId string  `pulumi:"productLicenseId"`
 	// The current product license state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The current product license status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Status description for the current product license status.
-	StatusDescription string `pulumi:"statusDescription"`
+	StatusDescription *string `pulumi:"statusDescription"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-	TotalActiveLicenseUnitCount int `pulumi:"totalActiveLicenseUnitCount"`
+	TotalActiveLicenseUnitCount *int `pulumi:"totalActiveLicenseUnitCount"`
 	// The number of license records associated with the product license.
-	TotalLicenseRecordCount int `pulumi:"totalLicenseRecordCount"`
+	TotalLicenseRecordCount *int `pulumi:"totalLicenseRecordCount"`
 	// The number of license units consumed. Updated after each allocation run.
-	TotalLicenseUnitsConsumed float64 `pulumi:"totalLicenseUnitsConsumed"`
+	TotalLicenseUnitsConsumed *float64 `pulumi:"totalLicenseUnitsConsumed"`
 	// The vendor of the ProductLicense
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 func LookupProductLicenseOutput(ctx *pulumi.Context, args LookupProductLicenseOutputArgs, opts ...pulumi.InvokeOption) LookupProductLicenseResultOutput {
@@ -142,20 +141,14 @@ func (o LookupProductLicenseResultOutput) ToLookupProductLicenseResultOutputWith
 	return o
 }
 
-func (o LookupProductLicenseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProductLicenseResult] {
-	return pulumix.Output[LookupProductLicenseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of active license records associated with the product license.
-func (o LookupProductLicenseResultOutput) ActiveLicenseRecordCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) int { return v.ActiveLicenseRecordCount }).(pulumi.IntOutput)
+func (o LookupProductLicenseResultOutput) ActiveLicenseRecordCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *int { return v.ActiveLicenseRecordCount }).(pulumi.IntPtrOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
-func (o LookupProductLicenseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -164,8 +157,8 @@ func (o LookupProductLicenseResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // License record name
-func (o LookupProductLicenseResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -174,8 +167,8 @@ func (o LookupProductLicenseResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The image ID associated with the product license.
-func (o LookupProductLicenseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The images associated with the product license.
@@ -184,23 +177,23 @@ func (o LookupProductLicenseResultOutput) Images() GetProductLicenseImageArrayOu
 }
 
 // Specifies whether or not the product license is oversubscribed.
-func (o LookupProductLicenseResultOutput) IsOverSubscribed() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) bool { return v.IsOverSubscribed }).(pulumi.BoolOutput)
+func (o LookupProductLicenseResultOutput) IsOverSubscribed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *bool { return v.IsOverSubscribed }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the license unit count is unlimited.
-func (o LookupProductLicenseResultOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) bool { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o LookupProductLicenseResultOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *bool { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the vendor is Oracle or a third party.
-func (o LookupProductLicenseResultOutput) IsVendorOracle() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) bool { return v.IsVendorOracle }).(pulumi.BoolOutput)
+func (o LookupProductLicenseResultOutput) IsVendorOracle() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *bool { return v.IsVendorOracle }).(pulumi.BoolPtrOutput)
 }
 
 // The product license unit.
-func (o LookupProductLicenseResultOutput) LicenseUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.LicenseUnit }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) LicenseUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.LicenseUnit }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProductLicenseResultOutput) ProductLicenseId() pulumi.StringOutput {
@@ -208,18 +201,18 @@ func (o LookupProductLicenseResultOutput) ProductLicenseId() pulumi.StringOutput
 }
 
 // The current product license state.
-func (o LookupProductLicenseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current product license status.
-func (o LookupProductLicenseResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Status description for the current product license status.
-func (o LookupProductLicenseResultOutput) StatusDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.StatusDescription }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) StatusDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.StatusDescription }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -228,33 +221,33 @@ func (o LookupProductLicenseResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LookupProductLicenseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LookupProductLicenseResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
-func (o LookupProductLicenseResultOutput) TotalActiveLicenseUnitCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) int { return v.TotalActiveLicenseUnitCount }).(pulumi.IntOutput)
+func (o LookupProductLicenseResultOutput) TotalActiveLicenseUnitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *int { return v.TotalActiveLicenseUnitCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of license records associated with the product license.
-func (o LookupProductLicenseResultOutput) TotalLicenseRecordCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) int { return v.TotalLicenseRecordCount }).(pulumi.IntOutput)
+func (o LookupProductLicenseResultOutput) TotalLicenseRecordCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *int { return v.TotalLicenseRecordCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of license units consumed. Updated after each allocation run.
-func (o LookupProductLicenseResultOutput) TotalLicenseUnitsConsumed() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupProductLicenseResult) float64 { return v.TotalLicenseUnitsConsumed }).(pulumi.Float64Output)
+func (o LookupProductLicenseResultOutput) TotalLicenseUnitsConsumed() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *float64 { return v.TotalLicenseUnitsConsumed }).(pulumi.Float64PtrOutput)
 }
 
 // The vendor of the ProductLicense
-func (o LookupProductLicenseResultOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) string { return v.VendorName }).(pulumi.StringOutput)
+func (o LookupProductLicenseResultOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

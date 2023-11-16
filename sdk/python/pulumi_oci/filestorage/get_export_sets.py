@@ -49,33 +49,21 @@ class GetExportSetsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
-        """
-        The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exportSets")
-    def export_sets(self) -> Sequence['outputs.GetExportSetsExportSetResult']:
-        """
-        The list of export_sets.
-        """
+    def export_sets(self) -> Optional[Sequence['outputs.GetExportSetsExportSetResult']]:
         return pulumi.get(self, "export_sets")
 
     @property
@@ -86,17 +74,11 @@ class GetExportSetsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the export set.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_export_sets(availability_domain: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExportSetsResult:
     """
-    This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
-
-    Lists the export set resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=var["export_set_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["export_set_display_name"],
-        id=var["export_set_id"],
-        state=var["export_set_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -176,28 +136,6 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[str]] = No
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExportSetsResult]:
     """
-    This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
-
-    Lists the export set resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=var["export_set_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["export_set_display_name"],
-        id=var["export_set_id"],
-        state=var["export_set_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

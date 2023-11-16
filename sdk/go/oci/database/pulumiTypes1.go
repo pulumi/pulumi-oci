@@ -9,24 +9,23 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetVmClusterNetworkVmNetwork struct {
 	// The network domain name.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// The network gateway.
-	Gateway string `pulumi:"gateway"`
+	Gateway *string `pulumi:"gateway"`
 	// The network netmask.
-	Netmask string `pulumi:"netmask"`
+	Netmask *string `pulumi:"netmask"`
 	// The network type.
-	NetworkType string `pulumi:"networkType"`
+	NetworkType *string `pulumi:"networkType"`
 	// The list of node details.
 	Nodes []GetVmClusterNetworkVmNetworkNode `pulumi:"nodes"`
 	// The network VLAN ID.
-	VlanId string `pulumi:"vlanId"`
+	VlanId *string `pulumi:"vlanId"`
 }
 
 // GetVmClusterNetworkVmNetworkInput is an input type that accepts GetVmClusterNetworkVmNetworkArgs and GetVmClusterNetworkVmNetworkOutput values.
@@ -42,17 +41,17 @@ type GetVmClusterNetworkVmNetworkInput interface {
 
 type GetVmClusterNetworkVmNetworkArgs struct {
 	// The network domain name.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
+	DomainName pulumi.StringPtrInput `pulumi:"domainName"`
 	// The network gateway.
-	Gateway pulumi.StringInput `pulumi:"gateway"`
+	Gateway pulumi.StringPtrInput `pulumi:"gateway"`
 	// The network netmask.
-	Netmask pulumi.StringInput `pulumi:"netmask"`
+	Netmask pulumi.StringPtrInput `pulumi:"netmask"`
 	// The network type.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
 	// The list of node details.
 	Nodes GetVmClusterNetworkVmNetworkNodeArrayInput `pulumi:"nodes"`
 	// The network VLAN ID.
-	VlanId pulumi.StringInput `pulumi:"vlanId"`
+	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
 }
 
 func (GetVmClusterNetworkVmNetworkArgs) ElementType() reflect.Type {
@@ -65,12 +64,6 @@ func (i GetVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworkVmNetworkOutput()
 
 func (i GetVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkOutput)
-}
-
-func (i GetVmClusterNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkArray and GetVmClusterNetworkVmNetworkArrayOutput values.
@@ -98,12 +91,6 @@ func (i GetVmClusterNetworkVmNetworkArray) ToGetVmClusterNetworkVmNetworkArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkArrayOutput)
 }
 
-func (i GetVmClusterNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworkVmNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworkVmNetworkOutput) ElementType() reflect.Type {
@@ -118,30 +105,24 @@ func (o GetVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworkVmNetworkOutput
 	return o
 }
 
-func (o GetVmClusterNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network domain name.
-func (o GetVmClusterNetworkVmNetworkOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.DomainName }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // The network gateway.
-func (o GetVmClusterNetworkVmNetworkOutput) Gateway() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkOutput) Gateway() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) *string { return v.Gateway }).(pulumi.StringPtrOutput)
 }
 
 // The network netmask.
-func (o GetVmClusterNetworkVmNetworkOutput) Netmask() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkOutput) Netmask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) *string { return v.Netmask }).(pulumi.StringPtrOutput)
 }
 
 // The network type.
-func (o GetVmClusterNetworkVmNetworkOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
 // The list of node details.
@@ -150,8 +131,8 @@ func (o GetVmClusterNetworkVmNetworkOutput) Nodes() GetVmClusterNetworkVmNetwork
 }
 
 // The network VLAN ID.
-func (o GetVmClusterNetworkVmNetworkOutput) VlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkOutput) VlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetwork) *string { return v.VlanId }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterNetworkVmNetworkArrayOutput struct{ *pulumi.OutputState }
@@ -168,12 +149,6 @@ func (o GetVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworkVmNetworkA
 	return o
 }
 
-func (o GetVmClusterNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkVmNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworkVmNetwork {
 		return vs[0].([]GetVmClusterNetworkVmNetwork)[vs[1].(int)]
@@ -182,17 +157,17 @@ func (o GetVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmC
 
 type GetVmClusterNetworkVmNetworkNode struct {
 	// The Db server associated with the node.
-	DbServerId string `pulumi:"dbServerId"`
+	DbServerId *string `pulumi:"dbServerId"`
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The node IP address.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The node virtual IP (VIP) address.
-	Vip string `pulumi:"vip"`
+	Vip *string `pulumi:"vip"`
 	// The node virtual IP (VIP) host name.
-	VipHostname string `pulumi:"vipHostname"`
+	VipHostname *string `pulumi:"vipHostname"`
 }
 
 // GetVmClusterNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArgs and GetVmClusterNetworkVmNetworkNodeOutput values.
@@ -208,17 +183,17 @@ type GetVmClusterNetworkVmNetworkNodeInput interface {
 
 type GetVmClusterNetworkVmNetworkNodeArgs struct {
 	// The Db server associated with the node.
-	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	DbServerId pulumi.StringPtrInput `pulumi:"dbServerId"`
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The node IP address.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The node virtual IP (VIP) address.
-	Vip pulumi.StringInput `pulumi:"vip"`
+	Vip pulumi.StringPtrInput `pulumi:"vip"`
 	// The node virtual IP (VIP) host name.
-	VipHostname pulumi.StringInput `pulumi:"vipHostname"`
+	VipHostname pulumi.StringPtrInput `pulumi:"vipHostname"`
 }
 
 func (GetVmClusterNetworkVmNetworkNodeArgs) ElementType() reflect.Type {
@@ -231,12 +206,6 @@ func (i GetVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworkVmNetworkNode
 
 func (i GetVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkNodeOutput)
-}
-
-func (i GetVmClusterNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworkVmNetworkNodeArrayOutput values.
@@ -264,12 +233,6 @@ func (i GetVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNetworkVmNetworkNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkNodeArrayOutput)
 }
 
-func (i GetVmClusterNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
@@ -284,40 +247,34 @@ func (o GetVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworkVmNetworkNo
 	return o
 }
 
-func (o GetVmClusterNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Db server associated with the node.
-func (o GetVmClusterNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.DbServerId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) *string { return v.DbServerId }).(pulumi.StringPtrOutput)
 }
 
 // The node host name.
-func (o GetVmClusterNetworkVmNetworkNodeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkNodeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The node IP address.
-func (o GetVmClusterNetworkVmNetworkNodeOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.Ip }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkNodeOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-func (o GetVmClusterNetworkVmNetworkNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The node virtual IP (VIP) address.
-func (o GetVmClusterNetworkVmNetworkNodeOutput) Vip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.Vip }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkNodeOutput) Vip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) *string { return v.Vip }).(pulumi.StringPtrOutput)
 }
 
 // The node virtual IP (VIP) host name.
-func (o GetVmClusterNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) string { return v.VipHostname }).(pulumi.StringOutput)
+func (o GetVmClusterNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkVmNetworkNode) *string { return v.VipHostname }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterNetworkVmNetworkNodeArrayOutput struct{ *pulumi.OutputState }
@@ -332,12 +289,6 @@ func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworkVmNetw
 
 func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkVmNetworkNodeOutput {
@@ -381,12 +332,6 @@ func (i GetVmClusterNetworksFilterArgs) ToGetVmClusterNetworksFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksFilterOutput)
 }
 
-func (i GetVmClusterNetworksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksFilter] {
-	return pulumix.Output[GetVmClusterNetworksFilter]{
-		OutputState: i.ToGetVmClusterNetworksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksFilterArrayInput is an input type that accepts GetVmClusterNetworksFilterArray and GetVmClusterNetworksFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksFilterArrayInput` via:
 //
@@ -412,12 +357,6 @@ func (i GetVmClusterNetworksFilterArray) ToGetVmClusterNetworksFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksFilterArrayOutput)
 }
 
-func (i GetVmClusterNetworksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksFilter] {
-	return pulumix.Output[[]GetVmClusterNetworksFilter]{
-		OutputState: i.ToGetVmClusterNetworksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksFilterOutput) ElementType() reflect.Type {
@@ -430,12 +369,6 @@ func (o GetVmClusterNetworksFilterOutput) ToGetVmClusterNetworksFilterOutput() G
 
 func (o GetVmClusterNetworksFilterOutput) ToGetVmClusterNetworksFilterOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksFilter] {
-	return pulumix.Output[GetVmClusterNetworksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksFilterOutput) Name() pulumi.StringOutput {
@@ -464,12 +397,6 @@ func (o GetVmClusterNetworksFilterArrayOutput) ToGetVmClusterNetworksFilterArray
 	return o
 }
 
-func (o GetVmClusterNetworksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksFilter] {
-	return pulumix.Output[[]GetVmClusterNetworksFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksFilter {
 		return vs[0].([]GetVmClusterNetworksFilter)[vs[1].(int)]
@@ -477,36 +404,36 @@ func (o GetVmClusterNetworksFilterArrayOutput) Index(i pulumi.IntInput) GetVmClu
 }
 
 type GetVmClusterNetworksVmClusterNetwork struct {
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns []string `pulumi:"dns"`
 	// The SCAN details for DR network
 	DrScans []GetVmClusterNetworksVmClusterNetworkDrScan `pulumi:"drScans"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps []string `pulumi:"ntps"`
 	// The SCAN details.
 	Scans []GetVmClusterNetworksVmClusterNetworkScan `pulumi:"scans"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
-	TimeCreated              string `pulumi:"timeCreated"`
-	ValidateVmClusterNetwork bool   `pulumi:"validateVmClusterNetwork"`
+	TimeCreated              *string `pulumi:"timeCreated"`
+	ValidateVmClusterNetwork *bool   `pulumi:"validateVmClusterNetwork"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-	VmClusterId string `pulumi:"vmClusterId"`
+	VmClusterId *string `pulumi:"vmClusterId"`
 	// Details of the client and backup networks.
 	VmNetworks []GetVmClusterNetworksVmClusterNetworkVmNetwork `pulumi:"vmNetworks"`
 }
@@ -523,36 +450,36 @@ type GetVmClusterNetworksVmClusterNetworkInput interface {
 }
 
 type GetVmClusterNetworksVmClusterNetworkArgs struct {
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	Dns pulumi.StringArrayInput `pulumi:"dns"`
 	// The SCAN details for DR network
 	DrScans GetVmClusterNetworksVmClusterNetworkDrScanArrayInput `pulumi:"drScans"`
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	ExadataInfrastructureId pulumi.StringPtrInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps pulumi.StringArrayInput `pulumi:"ntps"`
 	// The SCAN details.
 	Scans GetVmClusterNetworksVmClusterNetworkScanArrayInput `pulumi:"scans"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time when the VM cluster network was created.
-	TimeCreated              pulumi.StringInput `pulumi:"timeCreated"`
-	ValidateVmClusterNetwork pulumi.BoolInput   `pulumi:"validateVmClusterNetwork"`
+	TimeCreated              pulumi.StringPtrInput `pulumi:"timeCreated"`
+	ValidateVmClusterNetwork pulumi.BoolPtrInput   `pulumi:"validateVmClusterNetwork"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
+	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
 	// Details of the client and backup networks.
 	VmNetworks GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput `pulumi:"vmNetworks"`
 }
@@ -567,12 +494,6 @@ func (i GetVmClusterNetworksVmClusterNetworkArgs) ToGetVmClusterNetworksVmCluste
 
 func (i GetVmClusterNetworksVmClusterNetworkArgs) ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkOutput)
-}
-
-func (i GetVmClusterNetworksVmClusterNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworksVmClusterNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkArray and GetVmClusterNetworksVmClusterNetworkArrayOutput values.
@@ -600,12 +521,6 @@ func (i GetVmClusterNetworksVmClusterNetworkArray) ToGetVmClusterNetworksVmClust
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkOutput) ElementType() reflect.Type {
@@ -620,19 +535,13 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) ToGetVmClusterNetworksVmClus
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.Action }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetVmClusterNetworksVmClusterNetworkOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -641,8 +550,8 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) DefinedTags() pulumi.MapOutp
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
-func (o GetVmClusterNetworksVmClusterNetworkOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -658,8 +567,8 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) DrScans() GetVmClusterNetwor
 }
 
 // The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetVmClusterNetworksVmClusterNetworkOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -668,13 +577,13 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) FreeformTags() pulumi.MapOut
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-func (o GetVmClusterNetworksVmClusterNetworkOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetVmClusterNetworksVmClusterNetworkOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -690,22 +599,22 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) Scans() GetVmClusterNetworks
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
-func (o GetVmClusterNetworksVmClusterNetworkOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the VM cluster network was created.
-func (o GetVmClusterNetworksVmClusterNetworkOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkOutput) ValidateVmClusterNetwork() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) bool { return v.ValidateVmClusterNetwork }).(pulumi.BoolOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) ValidateVmClusterNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *bool { return v.ValidateVmClusterNetwork }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-func (o GetVmClusterNetworksVmClusterNetworkOutput) VmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) string { return v.VmClusterId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // Details of the client and backup networks.
@@ -729,12 +638,6 @@ func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToGetVmClusterNetworksV
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetwork {
 		return vs[0].([]GetVmClusterNetworksVmClusterNetwork)[vs[1].(int)]
@@ -743,11 +646,11 @@ func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) Index(i pulumi.IntInput
 
 type GetVmClusterNetworksVmClusterNetworkDrScan struct {
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips []string `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 }
 
 // GetVmClusterNetworksVmClusterNetworkDrScanInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkDrScanArgs and GetVmClusterNetworksVmClusterNetworkDrScanOutput values.
@@ -763,11 +666,11 @@ type GetVmClusterNetworksVmClusterNetworkDrScanInput interface {
 
 type GetVmClusterNetworksVmClusterNetworkDrScanArgs struct {
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp pulumi.IntPtrInput `pulumi:"scanListenerPortTcp"`
 }
 
 func (GetVmClusterNetworksVmClusterNetworkDrScanArgs) ElementType() reflect.Type {
@@ -780,12 +683,6 @@ func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToGetVmClusterNetworksVm
 
 func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkDrScanOutput)
-}
-
-func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworksVmClusterNetworkDrScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkDrScanArray and GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput values.
@@ -813,12 +710,6 @@ func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToGetVmClusterNetworksV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkDrScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkDrScanOutput) ElementType() reflect.Type {
@@ -833,15 +724,9 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToGetVmClusterNetworks
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The node host name.
-func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The list of SCAN IP addresses. Three addresses should be provided.
@@ -850,8 +735,8 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) Ips() pulumi.StringArr
 }
 
 // The SCAN TCPIP port. Default is 1521.
-func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkDrScan) *int { return v.ScanListenerPortTcp }).(pulumi.IntPtrOutput)
 }
 
 type GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
@@ -868,12 +753,6 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNet
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkDrScan {
 		return vs[0].([]GetVmClusterNetworksVmClusterNetworkDrScan)[vs[1].(int)]
@@ -882,15 +761,15 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) Index(i pulumi.In
 
 type GetVmClusterNetworksVmClusterNetworkScan struct {
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips []string `pulumi:"ips"`
 	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The SCAN TCPIP SSL port. Default is 2484.
-	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+	ScanListenerPortTcpSsl *int `pulumi:"scanListenerPortTcpSsl"`
 }
 
 // GetVmClusterNetworksVmClusterNetworkScanInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArgs and GetVmClusterNetworksVmClusterNetworkScanOutput values.
@@ -906,15 +785,15 @@ type GetVmClusterNetworksVmClusterNetworkScanInput interface {
 
 type GetVmClusterNetworksVmClusterNetworkScanArgs struct {
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp pulumi.IntPtrInput `pulumi:"scanListenerPortTcp"`
 	// The SCAN TCPIP SSL port. Default is 2484.
-	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
+	ScanListenerPortTcpSsl pulumi.IntPtrInput `pulumi:"scanListenerPortTcpSsl"`
 }
 
 func (GetVmClusterNetworksVmClusterNetworkScanArgs) ElementType() reflect.Type {
@@ -927,12 +806,6 @@ func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToGetVmClusterNetworksVmCl
 
 func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkScanOutput)
-}
-
-func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworksVmClusterNetworkScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArray and GetVmClusterNetworksVmClusterNetworkScanArrayOutput values.
@@ -960,12 +833,6 @@ func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToGetVmClusterNetworksVmC
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkScanArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkScanOutput) ElementType() reflect.Type {
@@ -980,15 +847,9 @@ func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToGetVmClusterNetworksVm
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The node host name.
-func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The list of SCAN IP addresses. Three addresses should be provided.
@@ -997,18 +858,18 @@ func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Ips() pulumi.StringArray
 }
 
 // **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) int { return v.Port }).(pulumi.IntOutput)
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The SCAN TCPIP port. Default is 1521.
-func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ScanListenerPortTcp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) *int { return v.ScanListenerPortTcp }).(pulumi.IntPtrOutput)
 }
 
 // The SCAN TCPIP SSL port. Default is 2484.
-func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkScan) *int { return v.ScanListenerPortTcpSsl }).(pulumi.IntPtrOutput)
 }
 
 type GetVmClusterNetworksVmClusterNetworkScanArrayOutput struct{ *pulumi.OutputState }
@@ -1025,12 +886,6 @@ func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToGetVmClusterNetwo
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkScanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkScan {
 		return vs[0].([]GetVmClusterNetworksVmClusterNetworkScan)[vs[1].(int)]
@@ -1039,17 +894,17 @@ func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) Index(i pulumi.IntI
 
 type GetVmClusterNetworksVmClusterNetworkVmNetwork struct {
 	// The network domain name.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// The network gateway.
-	Gateway string `pulumi:"gateway"`
+	Gateway *string `pulumi:"gateway"`
 	// The network netmask.
-	Netmask string `pulumi:"netmask"`
+	Netmask *string `pulumi:"netmask"`
 	// The network type.
-	NetworkType string `pulumi:"networkType"`
+	NetworkType *string `pulumi:"networkType"`
 	// The list of node details.
 	Nodes []GetVmClusterNetworksVmClusterNetworkVmNetworkNode `pulumi:"nodes"`
 	// The network VLAN ID.
-	VlanId string `pulumi:"vlanId"`
+	VlanId *string `pulumi:"vlanId"`
 }
 
 // GetVmClusterNetworksVmClusterNetworkVmNetworkInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArgs and GetVmClusterNetworksVmClusterNetworkVmNetworkOutput values.
@@ -1065,17 +920,17 @@ type GetVmClusterNetworksVmClusterNetworkVmNetworkInput interface {
 
 type GetVmClusterNetworksVmClusterNetworkVmNetworkArgs struct {
 	// The network domain name.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
+	DomainName pulumi.StringPtrInput `pulumi:"domainName"`
 	// The network gateway.
-	Gateway pulumi.StringInput `pulumi:"gateway"`
+	Gateway pulumi.StringPtrInput `pulumi:"gateway"`
 	// The network netmask.
-	Netmask pulumi.StringInput `pulumi:"netmask"`
+	Netmask pulumi.StringPtrInput `pulumi:"netmask"`
 	// The network type.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
 	// The list of node details.
 	Nodes GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput `pulumi:"nodes"`
 	// The network VLAN ID.
-	VlanId pulumi.StringInput `pulumi:"vlanId"`
+	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
 }
 
 func (GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ElementType() reflect.Type {
@@ -1088,12 +943,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetwork
 
 func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkOutput)
-}
-
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArray and GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput values.
@@ -1121,12 +970,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToGetVmClusterNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkVmNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ElementType() reflect.Type {
@@ -1141,30 +984,24 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetwo
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network domain name.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.DomainName }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // The network gateway.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Gateway() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Gateway() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) *string { return v.Gateway }).(pulumi.StringPtrOutput)
 }
 
 // The network netmask.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Netmask() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Netmask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) *string { return v.Netmask }).(pulumi.StringPtrOutput)
 }
 
 // The network type.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
 // The list of node details.
@@ -1175,8 +1012,8 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) Nodes() GetVmCluste
 }
 
 // The network VLAN ID.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) VlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) VlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetwork) *string { return v.VlanId }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput struct{ *pulumi.OutputState }
@@ -1193,12 +1030,6 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToGetVmCluster
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkVmNetwork {
 		return vs[0].([]GetVmClusterNetworksVmClusterNetworkVmNetwork)[vs[1].(int)]
@@ -1207,17 +1038,17 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi
 
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNode struct {
 	// The Db server associated with the node.
-	DbServerId string `pulumi:"dbServerId"`
+	DbServerId *string `pulumi:"dbServerId"`
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The node IP address.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The node virtual IP (VIP) address.
-	Vip string `pulumi:"vip"`
+	Vip *string `pulumi:"vip"`
 	// The node virtual IP (VIP) host name.
-	VipHostname string `pulumi:"vipHostname"`
+	VipHostname *string `pulumi:"vipHostname"`
 }
 
 // GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput values.
@@ -1233,17 +1064,17 @@ type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeInput interface {
 
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs struct {
 	// The Db server associated with the node.
-	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	DbServerId pulumi.StringPtrInput `pulumi:"dbServerId"`
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The node IP address.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The node virtual IP (VIP) address.
-	Vip pulumi.StringInput `pulumi:"vip"`
+	Vip pulumi.StringPtrInput `pulumi:"vip"`
 	// The node virtual IP (VIP) host name.
-	VipHostname pulumi.StringInput `pulumi:"vipHostname"`
+	VipHostname pulumi.StringPtrInput `pulumi:"vipHostname"`
 }
 
 func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ElementType() reflect.Type {
@@ -1256,12 +1087,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNet
 
 func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput)
-}
-
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput values.
@@ -1289,12 +1114,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
@@ -1309,40 +1128,34 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterN
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Db server associated with the node.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.DbServerId }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) *string { return v.DbServerId }).(pulumi.StringPtrOutput)
 }
 
 // The node host name.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The node IP address.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.Ip }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The node virtual IP (VIP) address.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Vip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.Vip }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) Vip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) *string { return v.Vip }).(pulumi.StringPtrOutput)
 }
 
 // The node virtual IP (VIP) host name.
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) string { return v.VipHostname }).(pulumi.StringOutput)
+func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetworkVmNetworkNode) *string { return v.VipHostname }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput struct{ *pulumi.OutputState }
@@ -1357,12 +1170,6 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClu
 
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
@@ -1406,12 +1213,6 @@ func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToGetVmClusterPatchHistoryEnt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesFilterOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterPatchHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesFilterArray and GetVmClusterPatchHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesFilterArrayInput` via:
 //
@@ -1437,12 +1238,6 @@ func (i GetVmClusterPatchHistoryEntriesFilterArray) ToGetVmClusterPatchHistoryEn
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesFilterArrayOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchHistoryEntriesFilterOutput) ElementType() reflect.Type {
@@ -1455,12 +1250,6 @@ func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToGetVmClusterPatchHistoryE
 
 func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
@@ -1489,12 +1278,6 @@ func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToGetVmClusterPatchHis
 	return o
 }
 
-func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchHistoryEntriesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchHistoryEntriesFilter {
 		return vs[0].([]GetVmClusterPatchHistoryEntriesFilter)[vs[1].(int)]
@@ -1503,19 +1286,19 @@ func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInpu
 
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntry struct {
 	// The action being performed or was completed.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-	PatchId string `pulumi:"patchId"`
+	PatchId *string `pulumi:"patchId"`
 	// The current state of the action.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the patch action completed
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time when the patch action started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 // GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs and GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput values.
@@ -1531,19 +1314,19 @@ type GetVmClusterPatchHistoryEntriesPatchHistoryEntryInput interface {
 
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs struct {
 	// The action being performed or was completed.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-	PatchId pulumi.StringInput `pulumi:"patchId"`
+	PatchId pulumi.StringPtrInput `pulumi:"patchId"`
 	// The current state of the action.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time when the patch action completed
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// The date and time when the patch action started.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
 func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ElementType() reflect.Type {
@@ -1556,12 +1339,6 @@ func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToGetVmClusterPatc
 
 func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput)
-}
-
-func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray and GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput values.
@@ -1589,12 +1366,6 @@ func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToGetVmClusterPat
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ElementType() reflect.Type {
@@ -1609,45 +1380,39 @@ func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToGetVmClusterPa
 	return o
 }
 
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action being performed or was completed.
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.Action }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) PatchId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.PatchId }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) PatchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.PatchId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the action.
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the patch action completed
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the patch action started.
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesPatchHistoryEntry) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput struct{ *pulumi.OutputState }
@@ -1662,12 +1427,6 @@ func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetVmClus
 
 func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput {
 	return o
-}
-
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
@@ -1711,12 +1470,6 @@ func (i GetVmClusterPatchesFilterArgs) ToGetVmClusterPatchesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesFilterOutput)
 }
 
-func (i GetVmClusterPatchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesFilter] {
-	return pulumix.Output[GetVmClusterPatchesFilter]{
-		OutputState: i.ToGetVmClusterPatchesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterPatchesFilterArrayInput is an input type that accepts GetVmClusterPatchesFilterArray and GetVmClusterPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesFilterArrayInput` via:
 //
@@ -1742,12 +1495,6 @@ func (i GetVmClusterPatchesFilterArray) ToGetVmClusterPatchesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesFilterArrayOutput)
 }
 
-func (i GetVmClusterPatchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchesFilter]{
-		OutputState: i.ToGetVmClusterPatchesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchesFilterOutput) ElementType() reflect.Type {
@@ -1760,12 +1507,6 @@ func (o GetVmClusterPatchesFilterOutput) ToGetVmClusterPatchesFilterOutput() Get
 
 func (o GetVmClusterPatchesFilterOutput) ToGetVmClusterPatchesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterPatchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesFilter] {
-	return pulumix.Output[GetVmClusterPatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchesFilterOutput) Name() pulumi.StringOutput {
@@ -1794,12 +1535,6 @@ func (o GetVmClusterPatchesFilterArrayOutput) ToGetVmClusterPatchesFilterArrayOu
 	return o
 }
 
-func (o GetVmClusterPatchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchesFilter {
 		return vs[0].([]GetVmClusterPatchesFilter)[vs[1].(int)]
@@ -1810,19 +1545,19 @@ type GetVmClusterPatchesPatch struct {
 	// Actions that can possibly be performed using this patch.
 	AvailableActions []string `pulumi:"availableActions"`
 	// The text describing this patch package.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Action that is currently being performed or was completed last.
-	LastAction string `pulumi:"lastAction"`
+	LastAction *string `pulumi:"lastAction"`
 	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the patch as a result of lastAction.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time that the patch was released.
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// The version of this patch package.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetVmClusterPatchesPatchInput is an input type that accepts GetVmClusterPatchesPatchArgs and GetVmClusterPatchesPatchOutput values.
@@ -1840,19 +1575,19 @@ type GetVmClusterPatchesPatchArgs struct {
 	// Actions that can possibly be performed using this patch.
 	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
 	// The text describing this patch package.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Action that is currently being performed or was completed last.
-	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	LastAction pulumi.StringPtrInput `pulumi:"lastAction"`
 	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The current state of the patch as a result of lastAction.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time that the patch was released.
-	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	TimeReleased pulumi.StringPtrInput `pulumi:"timeReleased"`
 	// The version of this patch package.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetVmClusterPatchesPatchArgs) ElementType() reflect.Type {
@@ -1865,12 +1600,6 @@ func (i GetVmClusterPatchesPatchArgs) ToGetVmClusterPatchesPatchOutput() GetVmCl
 
 func (i GetVmClusterPatchesPatchArgs) ToGetVmClusterPatchesPatchOutputWithContext(ctx context.Context) GetVmClusterPatchesPatchOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesPatchOutput)
-}
-
-func (i GetVmClusterPatchesPatchArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesPatch] {
-	return pulumix.Output[GetVmClusterPatchesPatch]{
-		OutputState: i.ToGetVmClusterPatchesPatchOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterPatchesPatchArrayInput is an input type that accepts GetVmClusterPatchesPatchArray and GetVmClusterPatchesPatchArrayOutput values.
@@ -1898,12 +1627,6 @@ func (i GetVmClusterPatchesPatchArray) ToGetVmClusterPatchesPatchArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesPatchArrayOutput)
 }
 
-func (i GetVmClusterPatchesPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesPatch] {
-	return pulumix.Output[[]GetVmClusterPatchesPatch]{
-		OutputState: i.ToGetVmClusterPatchesPatchArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchesPatchOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchesPatchOutput) ElementType() reflect.Type {
@@ -1918,50 +1641,44 @@ func (o GetVmClusterPatchesPatchOutput) ToGetVmClusterPatchesPatchOutputWithCont
 	return o
 }
 
-func (o GetVmClusterPatchesPatchOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesPatch] {
-	return pulumix.Output[GetVmClusterPatchesPatch]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Actions that can possibly be performed using this patch.
 func (o GetVmClusterPatchesPatchOutput) AvailableActions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVmClusterPatchesPatch) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
 }
 
 // The text describing this patch package.
-func (o GetVmClusterPatchesPatchOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.Description }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-func (o GetVmClusterPatchesPatchOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Action that is currently being performed or was completed last.
-func (o GetVmClusterPatchesPatchOutput) LastAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.LastAction }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) LastAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.LastAction }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-func (o GetVmClusterPatchesPatchOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the patch as a result of lastAction.
-func (o GetVmClusterPatchesPatchOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the patch was released.
-func (o GetVmClusterPatchesPatchOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // The version of this patch package.
-func (o GetVmClusterPatchesPatchOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesPatch) string { return v.Version }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesPatchOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesPatch) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterPatchesPatchArrayOutput struct{ *pulumi.OutputState }
@@ -1978,12 +1695,6 @@ func (o GetVmClusterPatchesPatchArrayOutput) ToGetVmClusterPatchesPatchArrayOutp
 	return o
 }
 
-func (o GetVmClusterPatchesPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesPatch] {
-	return pulumix.Output[[]GetVmClusterPatchesPatch]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchesPatchArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchesPatchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchesPatch {
 		return vs[0].([]GetVmClusterPatchesPatch)[vs[1].(int)]
@@ -1992,11 +1703,11 @@ func (o GetVmClusterPatchesPatchArrayOutput) Index(i pulumi.IntInput) GetVmClust
 
 type GetVmClusterRecommendedNetworkDrScan struct {
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips []string `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 }
 
 // GetVmClusterRecommendedNetworkDrScanInput is an input type that accepts GetVmClusterRecommendedNetworkDrScanArgs and GetVmClusterRecommendedNetworkDrScanOutput values.
@@ -2012,11 +1723,11 @@ type GetVmClusterRecommendedNetworkDrScanInput interface {
 
 type GetVmClusterRecommendedNetworkDrScanArgs struct {
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp pulumi.IntPtrInput `pulumi:"scanListenerPortTcp"`
 }
 
 func (GetVmClusterRecommendedNetworkDrScanArgs) ElementType() reflect.Type {
@@ -2029,12 +1740,6 @@ func (i GetVmClusterRecommendedNetworkDrScanArgs) ToGetVmClusterRecommendedNetwo
 
 func (i GetVmClusterRecommendedNetworkDrScanArgs) ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkDrScanOutput)
-}
-
-func (i GetVmClusterRecommendedNetworkDrScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterRecommendedNetworkDrScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkDrScanArray and GetVmClusterRecommendedNetworkDrScanArrayOutput values.
@@ -2062,12 +1767,6 @@ func (i GetVmClusterRecommendedNetworkDrScanArray) ToGetVmClusterRecommendedNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkDrScanArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkDrScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkDrScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkDrScanOutput) ElementType() reflect.Type {
@@ -2082,15 +1781,9 @@ func (o GetVmClusterRecommendedNetworkDrScanOutput) ToGetVmClusterRecommendedNet
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkDrScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The node host name.
-func (o GetVmClusterRecommendedNetworkDrScanOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkDrScanOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The list of SCAN IP addresses. Three addresses should be provided.
@@ -2099,8 +1792,8 @@ func (o GetVmClusterRecommendedNetworkDrScanOutput) Ips() pulumi.StringArrayOutp
 }
 
 // The SCAN TCPIP port. Default is 1521.
-func (o GetVmClusterRecommendedNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+func (o GetVmClusterRecommendedNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkDrScan) *int { return v.ScanListenerPortTcp }).(pulumi.IntPtrOutput)
 }
 
 type GetVmClusterRecommendedNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
@@ -2115,12 +1808,6 @@ func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToGetVmClusterRecommend
 
 func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanArrayOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkDrScanOutput {
@@ -2186,12 +1873,6 @@ func (i GetVmClusterRecommendedNetworkNetworkArgs) ToGetVmClusterRecommendedNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkNetworkOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterRecommendedNetworkNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkNetworkArray and GetVmClusterRecommendedNetworkNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkNetworkArrayInput` via:
 //
@@ -2217,12 +1898,6 @@ func (i GetVmClusterRecommendedNetworkNetworkArray) ToGetVmClusterRecommendedNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkNetworkArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkNetworkOutput) ElementType() reflect.Type {
@@ -2235,12 +1910,6 @@ func (o GetVmClusterRecommendedNetworkNetworkOutput) ToGetVmClusterRecommendedNe
 
 func (o GetVmClusterRecommendedNetworkNetworkOutput) ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The cidr for the network.
@@ -2292,12 +1961,6 @@ func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToGetVmClusterRecommen
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkNetwork {
 		return vs[0].([]GetVmClusterRecommendedNetworkNetwork)[vs[1].(int)]
@@ -2306,15 +1969,15 @@ func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) Index(i pulumi.IntInpu
 
 type GetVmClusterRecommendedNetworkScan struct {
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips []string `pulumi:"ips"`
 	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp *int `pulumi:"scanListenerPortTcp"`
 	// The SCAN TCPIP SSL port. Default is 2484.
-	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+	ScanListenerPortTcpSsl *int `pulumi:"scanListenerPortTcpSsl"`
 }
 
 // GetVmClusterRecommendedNetworkScanInput is an input type that accepts GetVmClusterRecommendedNetworkScanArgs and GetVmClusterRecommendedNetworkScanOutput values.
@@ -2330,15 +1993,15 @@ type GetVmClusterRecommendedNetworkScanInput interface {
 
 type GetVmClusterRecommendedNetworkScanArgs struct {
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The list of SCAN IP addresses. Three addresses should be provided.
 	Ips pulumi.StringArrayInput `pulumi:"ips"`
 	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The SCAN TCPIP port. Default is 1521.
-	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	ScanListenerPortTcp pulumi.IntPtrInput `pulumi:"scanListenerPortTcp"`
 	// The SCAN TCPIP SSL port. Default is 2484.
-	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
+	ScanListenerPortTcpSsl pulumi.IntPtrInput `pulumi:"scanListenerPortTcpSsl"`
 }
 
 func (GetVmClusterRecommendedNetworkScanArgs) ElementType() reflect.Type {
@@ -2351,12 +2014,6 @@ func (i GetVmClusterRecommendedNetworkScanArgs) ToGetVmClusterRecommendedNetwork
 
 func (i GetVmClusterRecommendedNetworkScanArgs) ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkScanOutput)
-}
-
-func (i GetVmClusterRecommendedNetworkScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterRecommendedNetworkScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkScanArray and GetVmClusterRecommendedNetworkScanArrayOutput values.
@@ -2384,12 +2041,6 @@ func (i GetVmClusterRecommendedNetworkScanArray) ToGetVmClusterRecommendedNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkScanArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkScanOutput) ElementType() reflect.Type {
@@ -2404,15 +2055,9 @@ func (o GetVmClusterRecommendedNetworkScanOutput) ToGetVmClusterRecommendedNetwo
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The node host name.
-func (o GetVmClusterRecommendedNetworkScanOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkScanOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The list of SCAN IP addresses. Three addresses should be provided.
@@ -2421,18 +2066,18 @@ func (o GetVmClusterRecommendedNetworkScanOutput) Ips() pulumi.StringArrayOutput
 }
 
 // **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
-func (o GetVmClusterRecommendedNetworkScanOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) int { return v.Port }).(pulumi.IntOutput)
+func (o GetVmClusterRecommendedNetworkScanOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The SCAN TCPIP port. Default is 1521.
-func (o GetVmClusterRecommendedNetworkScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+func (o GetVmClusterRecommendedNetworkScanOutput) ScanListenerPortTcp() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) *int { return v.ScanListenerPortTcp }).(pulumi.IntPtrOutput)
 }
 
 // The SCAN TCPIP SSL port. Default is 2484.
-func (o GetVmClusterRecommendedNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+func (o GetVmClusterRecommendedNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkScan) *int { return v.ScanListenerPortTcpSsl }).(pulumi.IntPtrOutput)
 }
 
 type GetVmClusterRecommendedNetworkScanArrayOutput struct{ *pulumi.OutputState }
@@ -2449,12 +2094,6 @@ func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToGetVmClusterRecommended
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkScan]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterRecommendedNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkScanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkScan {
 		return vs[0].([]GetVmClusterRecommendedNetworkScan)[vs[1].(int)]
@@ -2463,17 +2102,17 @@ func (o GetVmClusterRecommendedNetworkScanArrayOutput) Index(i pulumi.IntInput) 
 
 type GetVmClusterRecommendedNetworkVmNetwork struct {
 	// The network domain name.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// The network gateway.
-	Gateway string `pulumi:"gateway"`
+	Gateway *string `pulumi:"gateway"`
 	// The network netmask.
-	Netmask string `pulumi:"netmask"`
+	Netmask *string `pulumi:"netmask"`
 	// The network type.
-	NetworkType string `pulumi:"networkType"`
+	NetworkType *string `pulumi:"networkType"`
 	// The list of node details.
 	Nodes []GetVmClusterRecommendedNetworkVmNetworkNode `pulumi:"nodes"`
 	// The network VLAN ID.
-	VlanId string `pulumi:"vlanId"`
+	VlanId *string `pulumi:"vlanId"`
 }
 
 // GetVmClusterRecommendedNetworkVmNetworkInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArgs and GetVmClusterRecommendedNetworkVmNetworkOutput values.
@@ -2489,17 +2128,17 @@ type GetVmClusterRecommendedNetworkVmNetworkInput interface {
 
 type GetVmClusterRecommendedNetworkVmNetworkArgs struct {
 	// The network domain name.
-	DomainName pulumi.StringInput `pulumi:"domainName"`
+	DomainName pulumi.StringPtrInput `pulumi:"domainName"`
 	// The network gateway.
-	Gateway pulumi.StringInput `pulumi:"gateway"`
+	Gateway pulumi.StringPtrInput `pulumi:"gateway"`
 	// The network netmask.
-	Netmask pulumi.StringInput `pulumi:"netmask"`
+	Netmask pulumi.StringPtrInput `pulumi:"netmask"`
 	// The network type.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
 	// The list of node details.
 	Nodes GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput `pulumi:"nodes"`
 	// The network VLAN ID.
-	VlanId pulumi.StringInput `pulumi:"vlanId"`
+	VlanId pulumi.StringPtrInput `pulumi:"vlanId"`
 }
 
 func (GetVmClusterRecommendedNetworkVmNetworkArgs) ElementType() reflect.Type {
@@ -2512,12 +2151,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToGetVmClusterRecommendedNe
 
 func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkOutput)
-}
-
-func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterRecommendedNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArray and GetVmClusterRecommendedNetworkVmNetworkArrayOutput values.
@@ -2545,12 +2178,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToGetVmClusterRecommendedN
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkVmNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkVmNetworkOutput) ElementType() reflect.Type {
@@ -2565,30 +2192,24 @@ func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToGetVmClusterRecommended
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The network domain name.
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.DomainName }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // The network gateway.
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Gateway() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.Gateway }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Gateway() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) *string { return v.Gateway }).(pulumi.StringPtrOutput)
 }
 
 // The network netmask.
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Netmask() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.Netmask }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Netmask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) *string { return v.Netmask }).(pulumi.StringPtrOutput)
 }
 
 // The network type.
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.NetworkType }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
 // The list of node details.
@@ -2599,8 +2220,8 @@ func (o GetVmClusterRecommendedNetworkVmNetworkOutput) Nodes() GetVmClusterRecom
 }
 
 // The network VLAN ID.
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) VlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) string { return v.VlanId }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkOutput) VlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetwork) *string { return v.VlanId }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterRecommendedNetworkVmNetworkArrayOutput struct{ *pulumi.OutputState }
@@ -2617,12 +2238,6 @@ func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToGetVmClusterRecomm
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkVmNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkVmNetwork {
 		return vs[0].([]GetVmClusterRecommendedNetworkVmNetwork)[vs[1].(int)]
@@ -2631,17 +2246,17 @@ func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) Index(i pulumi.IntIn
 
 type GetVmClusterRecommendedNetworkVmNetworkNode struct {
 	// The Db server associated with the node.
-	DbServerId string `pulumi:"dbServerId"`
+	DbServerId *string `pulumi:"dbServerId"`
 	// The node host name.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The node IP address.
-	Ip string `pulumi:"ip"`
+	Ip *string `pulumi:"ip"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The node virtual IP (VIP) address.
-	Vip string `pulumi:"vip"`
+	Vip *string `pulumi:"vip"`
 	// The node virtual IP (VIP) host name.
-	VipHostname string `pulumi:"vipHostname"`
+	VipHostname *string `pulumi:"vipHostname"`
 }
 
 // GetVmClusterRecommendedNetworkVmNetworkNodeInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArgs and GetVmClusterRecommendedNetworkVmNetworkNodeOutput values.
@@ -2657,17 +2272,17 @@ type GetVmClusterRecommendedNetworkVmNetworkNodeInput interface {
 
 type GetVmClusterRecommendedNetworkVmNetworkNodeArgs struct {
 	// The Db server associated with the node.
-	DbServerId pulumi.StringInput `pulumi:"dbServerId"`
+	DbServerId pulumi.StringPtrInput `pulumi:"dbServerId"`
 	// The node host name.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The node IP address.
-	Ip pulumi.StringInput `pulumi:"ip"`
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The node virtual IP (VIP) address.
-	Vip pulumi.StringInput `pulumi:"vip"`
+	Vip pulumi.StringPtrInput `pulumi:"vip"`
 	// The node virtual IP (VIP) host name.
-	VipHostname pulumi.StringInput `pulumi:"vipHostname"`
+	VipHostname pulumi.StringPtrInput `pulumi:"vipHostname"`
 }
 
 func (GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ElementType() reflect.Type {
@@ -2680,12 +2295,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToGetVmClusterRecommend
 
 func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkNodeOutput)
-}
-
-func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArray and GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput values.
@@ -2713,12 +2322,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToGetVmClusterRecommen
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
@@ -2733,40 +2336,34 @@ func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToGetVmClusterRecomme
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Db server associated with the node.
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.DbServerId }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) DbServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) *string { return v.DbServerId }).(pulumi.StringPtrOutput)
 }
 
 // The node host name.
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The node IP address.
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Ip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.Ip }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The node virtual IP (VIP) address.
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Vip() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.Vip }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) Vip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) *string { return v.Vip }).(pulumi.StringPtrOutput)
 }
 
 // The node virtual IP (VIP) host name.
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) string { return v.VipHostname }).(pulumi.StringOutput)
+func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) VipHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkVmNetworkNode) *string { return v.VipHostname }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput struct{ *pulumi.OutputState }
@@ -2781,12 +2378,6 @@ func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToGetVmClusterRe
 
 func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
@@ -2830,12 +2421,6 @@ func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToGetVmClusterUpdateHistoryE
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesFilterOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterUpdateHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesFilterArray and GetVmClusterUpdateHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesFilterArrayInput` via:
 //
@@ -2861,12 +2446,6 @@ func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToGetVmClusterUpdateHistory
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesFilterArrayOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdateHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdateHistoryEntriesFilterOutput) ElementType() reflect.Type {
@@ -2879,12 +2458,6 @@ func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToGetVmClusterUpdateHistor
 
 func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdateHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
@@ -2913,12 +2486,6 @@ func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetVmClusterUpdateH
 	return o
 }
 
-func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateHistoryEntriesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdateHistoryEntriesFilter {
 		return vs[0].([]GetVmClusterUpdateHistoryEntriesFilter)[vs[1].(int)]
@@ -2927,21 +2494,21 @@ func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInp
 
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Descriptive text providing additional details about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the maintenance update action completed.
-	TimeCompleted string `pulumi:"timeCompleted"`
+	TimeCompleted *string `pulumi:"timeCompleted"`
 	// The date and time when the maintenance update action started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// The update action performed using this maintenance update.
-	UpdateAction string `pulumi:"updateAction"`
+	UpdateAction *string `pulumi:"updateAction"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-	UpdateId string `pulumi:"updateId"`
+	UpdateId *string `pulumi:"updateId"`
 	// A filter to return only resources that match the given update type exactly.
-	UpdateType string `pulumi:"updateType"`
+	UpdateType *string `pulumi:"updateType"`
 }
 
 // GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput values.
@@ -2957,21 +2524,21 @@ type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput interface 
 
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Descriptive text providing additional details about the lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time when the maintenance update action completed.
-	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
+	TimeCompleted pulumi.StringPtrInput `pulumi:"timeCompleted"`
 	// The date and time when the maintenance update action started.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// The update action performed using this maintenance update.
-	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
+	UpdateAction pulumi.StringPtrInput `pulumi:"updateAction"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-	UpdateId pulumi.StringInput `pulumi:"updateId"`
+	UpdateId pulumi.StringPtrInput `pulumi:"updateId"`
 	// A filter to return only resources that match the given update type exactly.
-	UpdateType pulumi.StringInput `pulumi:"updateType"`
+	UpdateType pulumi.StringPtrInput `pulumi:"updateType"`
 }
 
 func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ElementType() reflect.Type {
@@ -2984,12 +2551,6 @@ func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToGetVm
 
 func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput)
-}
-
-func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput values.
@@ -3017,12 +2578,6 @@ func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ElementType() reflect.Type {
@@ -3037,50 +2592,44 @@ func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToGet
 	return o
 }
 
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Descriptive text providing additional details about the lifecycle state.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the maintenance update action completed.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the maintenance update action started.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The update action performed using this maintenance update.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateAction }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.UpdateAction }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateId }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.UpdateId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given update type exactly.
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateType }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) *string { return v.UpdateType }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput struct{ *pulumi.OutputState }
@@ -3095,12 +2644,6 @@ func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) 
 
 func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput {
 	return o
-}
-
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
@@ -3144,12 +2687,6 @@ func (i GetVmClusterUpdatesFilterArgs) ToGetVmClusterUpdatesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesFilterOutput)
 }
 
-func (i GetVmClusterUpdatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesFilter] {
-	return pulumix.Output[GetVmClusterUpdatesFilter]{
-		OutputState: i.ToGetVmClusterUpdatesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterUpdatesFilterArrayInput is an input type that accepts GetVmClusterUpdatesFilterArray and GetVmClusterUpdatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesFilterArrayInput` via:
 //
@@ -3175,12 +2712,6 @@ func (i GetVmClusterUpdatesFilterArray) ToGetVmClusterUpdatesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesFilterArrayOutput)
 }
 
-func (i GetVmClusterUpdatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdatesFilter]{
-		OutputState: i.ToGetVmClusterUpdatesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdatesFilterOutput) ElementType() reflect.Type {
@@ -3193,12 +2724,6 @@ func (o GetVmClusterUpdatesFilterOutput) ToGetVmClusterUpdatesFilterOutput() Get
 
 func (o GetVmClusterUpdatesFilterOutput) ToGetVmClusterUpdatesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterUpdatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesFilter] {
-	return pulumix.Output[GetVmClusterUpdatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdatesFilterOutput) Name() pulumi.StringOutput {
@@ -3227,12 +2752,6 @@ func (o GetVmClusterUpdatesFilterArrayOutput) ToGetVmClusterUpdatesFilterArrayOu
 	return o
 }
 
-func (o GetVmClusterUpdatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdatesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterUpdatesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdatesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdatesFilter {
 		return vs[0].([]GetVmClusterUpdatesFilter)[vs[1].(int)]
@@ -3243,21 +2762,21 @@ type GetVmClusterUpdatesVmClusterUpdate struct {
 	// The possible actions that can be performed using this maintenance update.
 	AvailableActions []string `pulumi:"availableActions"`
 	// Details of the maintenance update package.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The update action performed most recently using this maintenance update.
-	LastAction string `pulumi:"lastAction"`
+	LastAction *string `pulumi:"lastAction"`
 	// Descriptive text providing additional details about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the maintenance update was released.
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// A filter to return only resources that match the given update type exactly.
-	UpdateType string `pulumi:"updateType"`
+	UpdateType *string `pulumi:"updateType"`
 	// The version of the maintenance update package.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetVmClusterUpdatesVmClusterUpdateInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArgs and GetVmClusterUpdatesVmClusterUpdateOutput values.
@@ -3275,21 +2794,21 @@ type GetVmClusterUpdatesVmClusterUpdateArgs struct {
 	// The possible actions that can be performed using this maintenance update.
 	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
 	// Details of the maintenance update package.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The update action performed most recently using this maintenance update.
-	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	LastAction pulumi.StringPtrInput `pulumi:"lastAction"`
 	// Descriptive text providing additional details about the lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the maintenance update was released.
-	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	TimeReleased pulumi.StringPtrInput `pulumi:"timeReleased"`
 	// A filter to return only resources that match the given update type exactly.
-	UpdateType pulumi.StringInput `pulumi:"updateType"`
+	UpdateType pulumi.StringPtrInput `pulumi:"updateType"`
 	// The version of the maintenance update package.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetVmClusterUpdatesVmClusterUpdateArgs) ElementType() reflect.Type {
@@ -3302,12 +2821,6 @@ func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToGetVmClusterUpdatesVmClusterUp
 
 func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesVmClusterUpdateOutput)
-}
-
-func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: i.ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClusterUpdatesVmClusterUpdateArrayInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArray and GetVmClusterUpdatesVmClusterUpdateArrayOutput values.
@@ -3335,12 +2848,6 @@ func (i GetVmClusterUpdatesVmClusterUpdateArray) ToGetVmClusterUpdatesVmClusterU
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesVmClusterUpdateArrayOutput)
 }
 
-func (i GetVmClusterUpdatesVmClusterUpdateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: i.ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdatesVmClusterUpdateOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdatesVmClusterUpdateOutput) ElementType() reflect.Type {
@@ -3355,55 +2862,49 @@ func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToGetVmClusterUpdatesVmCluster
 	return o
 }
 
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The possible actions that can be performed using this maintenance update.
 func (o GetVmClusterUpdatesVmClusterUpdateOutput) AvailableActions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
 }
 
 // Details of the maintenance update package.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Description }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The update action performed most recently using this maintenance update.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) LastAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LastAction }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) LastAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.LastAction }).(pulumi.StringPtrOutput)
 }
 
 // Descriptive text providing additional details about the lifecycle state.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the maintenance update was released.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given update type exactly.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) UpdateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.UpdateType }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) UpdateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.UpdateType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the maintenance update package.
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Version }).(pulumi.StringOutput)
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClusterUpdatesVmClusterUpdateArrayOutput struct{ *pulumi.OutputState }
@@ -3418,12 +2919,6 @@ func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToGetVmClusterUpdatesVmCl
 
 func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateArrayOutput {
 	return o
-}
-
-func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdatesVmClusterUpdateOutput {
@@ -3467,12 +2962,6 @@ func (i GetVmClustersFilterArgs) ToGetVmClustersFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersFilterOutput)
 }
 
-func (i GetVmClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersFilter] {
-	return pulumix.Output[GetVmClustersFilter]{
-		OutputState: i.ToGetVmClustersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClustersFilterArrayInput is an input type that accepts GetVmClustersFilterArray and GetVmClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersFilterArrayInput` via:
 //
@@ -3498,12 +2987,6 @@ func (i GetVmClustersFilterArray) ToGetVmClustersFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersFilterArrayOutput)
 }
 
-func (i GetVmClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersFilter] {
-	return pulumix.Output[[]GetVmClustersFilter]{
-		OutputState: i.ToGetVmClustersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClustersFilterOutput) ElementType() reflect.Type {
@@ -3516,12 +2999,6 @@ func (o GetVmClustersFilterOutput) ToGetVmClustersFilterOutput() GetVmClustersFi
 
 func (o GetVmClustersFilterOutput) ToGetVmClustersFilterOutputWithContext(ctx context.Context) GetVmClustersFilterOutput {
 	return o
-}
-
-func (o GetVmClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersFilter] {
-	return pulumix.Output[GetVmClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClustersFilterOutput) Name() pulumi.StringOutput {
@@ -3550,12 +3027,6 @@ func (o GetVmClustersFilterArrayOutput) ToGetVmClustersFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetVmClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersFilter] {
-	return pulumix.Output[[]GetVmClustersFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetVmClustersFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersFilter {
 		return vs[0].([]GetVmClustersFilter)[vs[1].(int)]
@@ -3564,62 +3035,62 @@ func (o GetVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetVmClustersFi
 
 type GetVmClustersVmCluster struct {
 	// The name of the availability domain that the VM cluster is located in.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
-	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	CpuCoreCount  *int    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
-	CpusEnabled int `pulumi:"cpusEnabled"`
+	CpusEnabled *int `pulumi:"cpusEnabled"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []GetVmClustersVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// Size of the DATA disk group in GBs.
-	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
-	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// The list of Db server.
 	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
-	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
-	GiVersion string `pulumi:"giVersion"`
+	GiVersion *string `pulumi:"giVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
 	// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
-	IsSparseDiskgroupEnabled bool `pulumi:"isSparseDiskgroupEnabled"`
+	IsSparseDiskgroupEnabled *bool `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-	LastPatchHistoryEntryId string `pulumi:"lastPatchHistoryEntryId"`
+	LastPatchHistoryEntryId *string `pulumi:"lastPatchHistoryEntryId"`
 	// The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
-	LicenseModel string `pulumi:"licenseModel"`
+	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The memory allocated in GBs.
-	MemorySizeInGbs int     `pulumi:"memorySizeInGbs"`
-	OcpuCount       float64 `pulumi:"ocpuCount"`
-	OcpusEnabled    float64 `pulumi:"ocpusEnabled"`
+	MemorySizeInGbs *int     `pulumi:"memorySizeInGbs"`
+	OcpuCount       *float64 `pulumi:"ocpuCount"`
+	OcpusEnabled    *float64 `pulumi:"ocpusEnabled"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Operating system version of the image.
-	SystemVersion string `pulumi:"systemVersion"`
+	SystemVersion *string `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-	VmClusterNetworkId string `pulumi:"vmClusterNetworkId"`
+	VmClusterNetworkId *string `pulumi:"vmClusterNetworkId"`
 }
 
 // GetVmClustersVmClusterInput is an input type that accepts GetVmClustersVmClusterArgs and GetVmClustersVmClusterOutput values.
@@ -3635,62 +3106,62 @@ type GetVmClustersVmClusterInput interface {
 
 type GetVmClustersVmClusterArgs struct {
 	// The name of the availability domain that the VM cluster is located in.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	CpuCoreCount  pulumi.IntInput    `pulumi:"cpuCoreCount"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	CpuCoreCount  pulumi.IntPtrInput    `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
-	CpusEnabled pulumi.IntInput `pulumi:"cpusEnabled"`
+	CpusEnabled pulumi.IntPtrInput `pulumi:"cpusEnabled"`
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions GetVmClustersVmClusterDataCollectionOptionArrayInput `pulumi:"dataCollectionOptions"`
 	// Size of the DATA disk group in GBs.
-	DataStorageSizeInGb pulumi.Float64Input `pulumi:"dataStorageSizeInGb"`
+	DataStorageSizeInGb pulumi.Float64PtrInput `pulumi:"dataStorageSizeInGb"`
 	// Size, in terabytes, of the DATA disk group.
-	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
+	DataStorageSizeInTbs pulumi.Float64PtrInput `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs pulumi.IntPtrInput `pulumi:"dbNodeStorageSizeInGbs"`
 	// The list of Db server.
 	DbServers pulumi.StringArrayInput `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
-	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
+	ExadataInfrastructureId pulumi.StringPtrInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
-	GiVersion pulumi.StringInput `pulumi:"giVersion"`
+	GiVersion pulumi.StringPtrInput `pulumi:"giVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-	IsLocalBackupEnabled pulumi.BoolInput `pulumi:"isLocalBackupEnabled"`
+	IsLocalBackupEnabled pulumi.BoolPtrInput `pulumi:"isLocalBackupEnabled"`
 	// If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
-	IsSparseDiskgroupEnabled pulumi.BoolInput `pulumi:"isSparseDiskgroupEnabled"`
+	IsSparseDiskgroupEnabled pulumi.BoolPtrInput `pulumi:"isSparseDiskgroupEnabled"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-	LastPatchHistoryEntryId pulumi.StringInput `pulumi:"lastPatchHistoryEntryId"`
+	LastPatchHistoryEntryId pulumi.StringPtrInput `pulumi:"lastPatchHistoryEntryId"`
 	// The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
-	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The memory allocated in GBs.
-	MemorySizeInGbs pulumi.IntInput     `pulumi:"memorySizeInGbs"`
-	OcpuCount       pulumi.Float64Input `pulumi:"ocpuCount"`
-	OcpusEnabled    pulumi.Float64Input `pulumi:"ocpusEnabled"`
+	MemorySizeInGbs pulumi.IntPtrInput     `pulumi:"memorySizeInGbs"`
+	OcpuCount       pulumi.Float64PtrInput `pulumi:"ocpuCount"`
+	OcpusEnabled    pulumi.Float64PtrInput `pulumi:"ocpusEnabled"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The public key portion of one or more key pairs used for SSH access to the VM cluster.
 	SshPublicKeys pulumi.StringArrayInput `pulumi:"sshPublicKeys"`
 	// A filter to return only resources that match the given lifecycle state exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Operating system version of the image.
-	SystemVersion pulumi.StringInput `pulumi:"systemVersion"`
+	SystemVersion pulumi.StringPtrInput `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-	VmClusterNetworkId pulumi.StringInput `pulumi:"vmClusterNetworkId"`
+	VmClusterNetworkId pulumi.StringPtrInput `pulumi:"vmClusterNetworkId"`
 }
 
 func (GetVmClustersVmClusterArgs) ElementType() reflect.Type {
@@ -3703,12 +3174,6 @@ func (i GetVmClustersVmClusterArgs) ToGetVmClustersVmClusterOutput() GetVmCluste
 
 func (i GetVmClustersVmClusterArgs) ToGetVmClustersVmClusterOutputWithContext(ctx context.Context) GetVmClustersVmClusterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterOutput)
-}
-
-func (i GetVmClustersVmClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmCluster] {
-	return pulumix.Output[GetVmClustersVmCluster]{
-		OutputState: i.ToGetVmClustersVmClusterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClustersVmClusterArrayInput is an input type that accepts GetVmClustersVmClusterArray and GetVmClustersVmClusterArrayOutput values.
@@ -3736,12 +3201,6 @@ func (i GetVmClustersVmClusterArray) ToGetVmClustersVmClusterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterArrayOutput)
 }
 
-func (i GetVmClustersVmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmCluster] {
-	return pulumix.Output[[]GetVmClustersVmCluster]{
-		OutputState: i.ToGetVmClustersVmClusterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClustersVmClusterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClustersVmClusterOutput) ElementType() reflect.Type {
@@ -3756,29 +3215,23 @@ func (o GetVmClustersVmClusterOutput) ToGetVmClustersVmClusterOutputWithContext(
 	return o
 }
 
-func (o GetVmClustersVmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmCluster] {
-	return pulumix.Output[GetVmClustersVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain that the VM cluster is located in.
-func (o GetVmClustersVmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetVmClustersVmClusterOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetVmClustersVmClusterOutput) CpuCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+func (o GetVmClustersVmClusterOutput) CpuCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *int { return v.CpuCoreCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of enabled CPU cores.
-func (o GetVmClustersVmClusterOutput) CpusEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.CpusEnabled }).(pulumi.IntOutput)
+func (o GetVmClustersVmClusterOutput) CpusEnabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *int { return v.CpusEnabled }).(pulumi.IntPtrOutput)
 }
 
 // Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -3789,18 +3242,18 @@ func (o GetVmClustersVmClusterOutput) DataCollectionOptions() GetVmClustersVmClu
 }
 
 // Size of the DATA disk group in GBs.
-func (o GetVmClustersVmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVmClustersVmCluster) float64 { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
+func (o GetVmClustersVmClusterOutput) DataStorageSizeInGb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *float64 { return v.DataStorageSizeInGb }).(pulumi.Float64PtrOutput)
 }
 
 // Size, in terabytes, of the DATA disk group.
-func (o GetVmClustersVmClusterOutput) DataStorageSizeInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVmClustersVmCluster) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+func (o GetVmClustersVmClusterOutput) DataStorageSizeInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The local node storage allocated in GBs.
-func (o GetVmClustersVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+func (o GetVmClustersVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The list of Db server.
@@ -3814,13 +3267,13 @@ func (o GetVmClustersVmClusterOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
-func (o GetVmClustersVmClusterOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // If provided, filters the results for the given Exadata Infrastructure.
-func (o GetVmClustersVmClusterOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -3829,56 +3282,56 @@ func (o GetVmClustersVmClusterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Oracle Grid Infrastructure software version for the VM cluster.
-func (o GetVmClustersVmClusterOutput) GiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.GiVersion }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) GiVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.GiVersion }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-func (o GetVmClustersVmClusterOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
-func (o GetVmClustersVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) bool { return v.IsLocalBackupEnabled }).(pulumi.BoolOutput)
+func (o GetVmClustersVmClusterOutput) IsLocalBackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *bool { return v.IsLocalBackupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
-func (o GetVmClustersVmClusterOutput) IsSparseDiskgroupEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) bool { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolOutput)
+func (o GetVmClustersVmClusterOutput) IsSparseDiskgroupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *bool { return v.IsSparseDiskgroupEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
-func (o GetVmClustersVmClusterOutput) LastPatchHistoryEntryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.LastPatchHistoryEntryId }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) LastPatchHistoryEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.LastPatchHistoryEntryId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
-func (o GetVmClustersVmClusterOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.LicenseModel }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetVmClustersVmClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The memory allocated in GBs.
-func (o GetVmClustersVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+func (o GetVmClustersVmClusterOutput) MemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *int { return v.MemorySizeInGbs }).(pulumi.IntPtrOutput)
 }
 
-func (o GetVmClustersVmClusterOutput) OcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVmClustersVmCluster) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+func (o GetVmClustersVmClusterOutput) OcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *float64 { return v.OcpuCount }).(pulumi.Float64PtrOutput)
 }
 
-func (o GetVmClustersVmClusterOutput) OcpusEnabled() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVmClustersVmCluster) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
+func (o GetVmClustersVmClusterOutput) OcpusEnabled() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *float64 { return v.OcpusEnabled }).(pulumi.Float64PtrOutput)
 }
 
 // The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-func (o GetVmClustersVmClusterOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The public key portion of one or more key pairs used for SSH access to the VM cluster.
@@ -3887,28 +3340,28 @@ func (o GetVmClustersVmClusterOutput) SshPublicKeys() pulumi.StringArrayOutput {
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
-func (o GetVmClustersVmClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.State }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Operating system version of the image.
-func (o GetVmClustersVmClusterOutput) SystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.SystemVersion }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) SystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.SystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the VM cluster was created.
-func (o GetVmClustersVmClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-func (o GetVmClustersVmClusterOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-func (o GetVmClustersVmClusterOutput) VmClusterNetworkId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.VmClusterNetworkId }).(pulumi.StringOutput)
+func (o GetVmClustersVmClusterOutput) VmClusterNetworkId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) *string { return v.VmClusterNetworkId }).(pulumi.StringPtrOutput)
 }
 
 type GetVmClustersVmClusterArrayOutput struct{ *pulumi.OutputState }
@@ -3925,12 +3378,6 @@ func (o GetVmClustersVmClusterArrayOutput) ToGetVmClustersVmClusterArrayOutputWi
 	return o
 }
 
-func (o GetVmClustersVmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmCluster] {
-	return pulumix.Output[[]GetVmClustersVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClustersVmClusterArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmCluster {
 		return vs[0].([]GetVmClustersVmCluster)[vs[1].(int)]
@@ -3939,11 +3386,11 @@ func (o GetVmClustersVmClusterArrayOutput) Index(i pulumi.IntInput) GetVmCluster
 
 type GetVmClustersVmClusterDataCollectionOption struct {
 	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	IsDiagnosticsEventsEnabled *bool `pulumi:"isDiagnosticsEventsEnabled"`
 	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-	IsHealthMonitoringEnabled bool `pulumi:"isHealthMonitoringEnabled"`
+	IsHealthMonitoringEnabled *bool `pulumi:"isHealthMonitoringEnabled"`
 	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-	IsIncidentLogsEnabled bool `pulumi:"isIncidentLogsEnabled"`
+	IsIncidentLogsEnabled *bool `pulumi:"isIncidentLogsEnabled"`
 }
 
 // GetVmClustersVmClusterDataCollectionOptionInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArgs and GetVmClustersVmClusterDataCollectionOptionOutput values.
@@ -3959,11 +3406,11 @@ type GetVmClustersVmClusterDataCollectionOptionInput interface {
 
 type GetVmClustersVmClusterDataCollectionOptionArgs struct {
 	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	IsDiagnosticsEventsEnabled pulumi.BoolPtrInput `pulumi:"isDiagnosticsEventsEnabled"`
 	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-	IsHealthMonitoringEnabled pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	IsHealthMonitoringEnabled pulumi.BoolPtrInput `pulumi:"isHealthMonitoringEnabled"`
 	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-	IsIncidentLogsEnabled pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+	IsIncidentLogsEnabled pulumi.BoolPtrInput `pulumi:"isIncidentLogsEnabled"`
 }
 
 func (GetVmClustersVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
@@ -3976,12 +3423,6 @@ func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToGetVmClustersVmCluster
 
 func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterDataCollectionOptionOutput)
-}
-
-func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: i.ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVmClustersVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArray and GetVmClustersVmClusterDataCollectionOptionArrayOutput values.
@@ -4009,12 +3450,6 @@ func (i GetVmClustersVmClusterDataCollectionOptionArray) ToGetVmClustersVmCluste
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterDataCollectionOptionArrayOutput)
 }
 
-func (i GetVmClustersVmClusterDataCollectionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: i.ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClustersVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetVmClustersVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
@@ -4029,25 +3464,19 @@ func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToGetVmClustersVmClust
 	return o
 }
 
-func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
-func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) *bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) *bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
-func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+func (o GetVmClustersVmClusterDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterDataCollectionOption) *bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetVmClustersVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
@@ -4062,12 +3491,6 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToGetVmClustersVm
 
 func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionArrayOutput {
 	return o
-}
-
-func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterDataCollectionOptionOutput {

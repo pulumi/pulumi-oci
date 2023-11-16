@@ -6,6 +6,8 @@ package com.pulumi.oci.Adm.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRunStagePullRequestProperty {
@@ -13,27 +15,27 @@ public final class GetRemediationRunStagePullRequestProperty {
      * @return Unique identifier for the pull or merge request created in the recommend stage.
      * 
      */
-    private String pullRequestIdentifier;
+    private @Nullable String pullRequestIdentifier;
     /**
      * @return The web link to the pull or merge request created in the recommend stage.
      * 
      */
-    private String pullRequestUrl;
+    private @Nullable String pullRequestUrl;
 
     private GetRemediationRunStagePullRequestProperty() {}
     /**
      * @return Unique identifier for the pull or merge request created in the recommend stage.
      * 
      */
-    public String pullRequestIdentifier() {
-        return this.pullRequestIdentifier;
+    public Optional<String> pullRequestIdentifier() {
+        return Optional.ofNullable(this.pullRequestIdentifier);
     }
     /**
      * @return The web link to the pull or merge request created in the recommend stage.
      * 
      */
-    public String pullRequestUrl() {
-        return this.pullRequestUrl;
+    public Optional<String> pullRequestUrl() {
+        return Optional.ofNullable(this.pullRequestUrl);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetRemediationRunStagePullRequestProperty {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String pullRequestIdentifier;
-        private String pullRequestUrl;
+        private @Nullable String pullRequestIdentifier;
+        private @Nullable String pullRequestUrl;
         public Builder() {}
         public Builder(GetRemediationRunStagePullRequestProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetRemediationRunStagePullRequestProperty {
         }
 
         @CustomType.Setter
-        public Builder pullRequestIdentifier(String pullRequestIdentifier) {
-            this.pullRequestIdentifier = Objects.requireNonNull(pullRequestIdentifier);
+        public Builder pullRequestIdentifier(@Nullable String pullRequestIdentifier) {
+            this.pullRequestIdentifier = pullRequestIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder pullRequestUrl(String pullRequestUrl) {
-            this.pullRequestUrl = Objects.requireNonNull(pullRequestUrl);
+        public Builder pullRequestUrl(@Nullable String pullRequestUrl) {
+            this.pullRequestUrl = pullRequestUrl;
             return this;
         }
         public GetRemediationRunStagePullRequestProperty build() {

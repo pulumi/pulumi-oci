@@ -67,12 +67,12 @@ export interface GetExternalExadataStorageConnectorsResult {
     /**
      * The list of external_exadata_storage_connector_collection.
      */
-    readonly externalExadataStorageConnectorCollections: outputs.DatabaseManagement.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection[];
+    readonly externalExadataStorageConnectorCollections?: outputs.DatabaseManagement.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalExadataStorageConnectorsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.

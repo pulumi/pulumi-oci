@@ -11,6 +11,7 @@ import com.pulumi.oci.Kms.SignArgs;
 import com.pulumi.oci.Kms.inputs.SignState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -100,14 +101,14 @@ public class Sign extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="keyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> keyVersionId;
+    private Output</* @Nullable */ String> keyVersionId;
 
     /**
      * @return The OCID of the key version used to sign the message.
      * 
      */
-    public Output<String> keyVersionId() {
-        return this.keyVersionId;
+    public Output<Optional<String>> keyVersionId() {
+        return Codegen.optional(this.keyVersionId);
     }
     /**
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
@@ -128,28 +129,28 @@ public class Sign extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="messageType", refs={String.class}, tree="[0]")
-    private Output<String> messageType;
+    private Output</* @Nullable */ String> messageType;
 
     /**
      * @return Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      * 
      */
-    public Output<String> messageType() {
-        return this.messageType;
+    public Output<Optional<String>> messageType() {
+        return Codegen.optional(this.messageType);
     }
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
      * 
      */
     @Export(name="signature", refs={String.class}, tree="[0]")
-    private Output<String> signature;
+    private Output</* @Nullable */ String> signature;
 
     /**
      * @return The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
      * 
      */
-    public Output<String> signature() {
-        return this.signature;
+    public Output<Optional<String>> signature() {
+        return Codegen.optional(this.signature);
     }
     /**
      * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest.

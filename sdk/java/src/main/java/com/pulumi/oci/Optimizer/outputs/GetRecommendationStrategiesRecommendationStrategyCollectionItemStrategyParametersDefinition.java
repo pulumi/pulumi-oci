@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition {
@@ -16,32 +18,32 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
      * @return A default value used for the strategy parameter.
      * 
      */
-    private List<Object> defaultValues;
+    private @Nullable List<Object> defaultValues;
     /**
      * @return Text describing the strategy parameter.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Whether this parameter is required.
      * 
      */
-    private Boolean isRequired;
+    private @Nullable Boolean isRequired;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The list of possible values used for these strategy parameters.
      * 
      */
-    private List<Object> possibleValues;
+    private @Nullable List<Object> possibleValues;
     /**
      * @return The type of strategy parameter.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition() {}
     /**
@@ -49,42 +51,42 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
      * 
      */
     public List<Object> defaultValues() {
-        return this.defaultValues;
+        return this.defaultValues == null ? List.of() : this.defaultValues;
     }
     /**
      * @return Text describing the strategy parameter.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Whether this parameter is required.
      * 
      */
-    public Boolean isRequired() {
-        return this.isRequired;
+    public Optional<Boolean> isRequired() {
+        return Optional.ofNullable(this.isRequired);
     }
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The list of possible values used for these strategy parameters.
      * 
      */
     public List<Object> possibleValues() {
-        return this.possibleValues;
+        return this.possibleValues == null ? List.of() : this.possibleValues;
     }
     /**
      * @return The type of strategy parameter.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<Object> defaultValues;
-        private String description;
-        private Boolean isRequired;
-        private String name;
-        private List<Object> possibleValues;
-        private String type;
+        private @Nullable List<Object> defaultValues;
+        private @Nullable String description;
+        private @Nullable Boolean isRequired;
+        private @Nullable String name;
+        private @Nullable List<Object> possibleValues;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,39 +116,39 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         }
 
         @CustomType.Setter
-        public Builder defaultValues(List<Object> defaultValues) {
-            this.defaultValues = Objects.requireNonNull(defaultValues);
+        public Builder defaultValues(@Nullable List<Object> defaultValues) {
+            this.defaultValues = defaultValues;
             return this;
         }
         public Builder defaultValues(Object... defaultValues) {
             return defaultValues(List.of(defaultValues));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+        public Builder isRequired(@Nullable Boolean isRequired) {
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder possibleValues(List<Object> possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+        public Builder possibleValues(@Nullable List<Object> possibleValues) {
+            this.possibleValues = possibleValues;
             return this;
         }
         public Builder possibleValues(Object... possibleValues) {
             return possibleValues(List.of(possibleValues));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition build() {

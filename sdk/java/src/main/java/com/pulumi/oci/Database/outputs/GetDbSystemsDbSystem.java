@@ -17,6 +17,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemsDbSystem {
@@ -24,467 +26,467 @@ public final class GetDbSystemsDbSystem {
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
-    private List<String> backupNetworkNsgIds;
+    private @Nullable List<String> backupNetworkNsgIds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * 
      */
-    private String backupSubnetId;
+    private @Nullable String backupSubnetId;
     /**
      * @return The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    private String clusterName;
+    private @Nullable String clusterName;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of CPU cores enabled on the DB system.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    private List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions;
+    private @Nullable List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions;
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      * 
      */
-    private Integer dataStoragePercentage;
+    private @Nullable Integer dataStoragePercentage;
     /**
      * @return The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
      * 
      */
-    private Integer dataStorageSizeInGb;
+    private @Nullable Integer dataStorageSizeInGb;
     /**
      * @return The Oracle Database edition that applies to all the databases on the DB system.
      * 
      */
-    private String databaseEdition;
-    private List<GetDbSystemsDbSystemDbHome> dbHomes;
+    private @Nullable String databaseEdition;
+    private @Nullable List<GetDbSystemsDbSystemDbHome> dbHomes;
     /**
      * @return The DB system options.
      * 
      */
-    private List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions;
+    private @Nullable List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    private String diskRedundancy;
+    private @Nullable String diskRedundancy;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The domain name for the DB system.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return List of the Fault Domains in which this DB system is provisioned.
      * 
      */
-    private List<String> faultDomains;
+    private @Nullable List<String> faultDomains;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The hostname for the DB system.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private String id;
-    private List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches;
+    private @Nullable String id;
+    private @Nullable List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private String lastMaintenanceRunId;
+    private @Nullable String lastMaintenanceRunId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    private String lastPatchHistoryEntryId;
+    private @Nullable String lastPatchHistoryEntryId;
     /**
      * @return The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The port number configured for the listener on the DB system.
      * 
      */
-    private Integer listenerPort;
-    private List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails;
+    private @Nullable Integer listenerPort;
+    private @Nullable List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows;
+    private @Nullable List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows;
     /**
      * @return Memory allocated to the DB system, in gigabytes.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private String nextMaintenanceRunId;
+    private @Nullable String nextMaintenanceRunId;
     /**
      * @return The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      * 
      */
-    private Integer nodeCount;
+    private @Nullable Integer nodeCount;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The most recent OS Patch Version applied on the DB system.
      * 
      */
-    private String osVersion;
+    private @Nullable String osVersion;
     /**
      * @return The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String pointInTimeDataDiskCloneTimestamp;
-    private String privateIp;
+    private @Nullable String pointInTimeDataDiskCloneTimestamp;
+    private @Nullable String privateIp;
     /**
      * @return The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
-    private Integer recoStorageSizeInGb;
+    private @Nullable Integer recoStorageSizeInGb;
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    private String scanDnsName;
+    private @Nullable String scanDnsName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    private String scanDnsRecordId;
+    private @Nullable String scanDnsRecordId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
-    private List<String> scanIpIds;
+    private @Nullable List<String> scanIpIds;
     /**
      * @return The shape of the DB system. The shape determines resources to allocate to the DB system.
      * * For virtual machine shapes, the number of CPU cores and memory
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
      * 
      */
-    private String shape;
-    private String source;
+    private @Nullable String shape;
+    private @Nullable String source;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private String sourceDbSystemId;
+    private @Nullable String sourceDbSystemId;
     /**
      * @return True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
      * 
      */
-    private Boolean sparseDiskgroup;
+    private @Nullable Boolean sparseDiskgroup;
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the DB system.
      * 
      */
-    private List<String> sshPublicKeys;
+    private @Nullable List<String> sshPublicKeys;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
-    private String storageVolumePerformanceMode;
+    private @Nullable String storageVolumePerformanceMode;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    private String timeZone;
+    private @Nullable String timeZone;
     /**
      * @return The Oracle Database version of the DB system.
      * 
      */
-    private String version;
+    private @Nullable String version;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
-    private List<String> vipIds;
+    private @Nullable List<String> vipIds;
     /**
      * @return The OCID of the zone the DB system is associated with.
      * 
      */
-    private String zoneId;
+    private @Nullable String zoneId;
 
     private GetDbSystemsDbSystem() {}
     /**
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      * 
      */
     public List<String> backupNetworkNsgIds() {
-        return this.backupNetworkNsgIds;
+        return this.backupNetworkNsgIds == null ? List.of() : this.backupNetworkNsgIds;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * 
      */
-    public String backupSubnetId() {
-        return this.backupSubnetId;
+    public Optional<String> backupSubnetId() {
+        return Optional.ofNullable(this.backupSubnetId);
     }
     /**
      * @return The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    public String clusterName() {
-        return this.clusterName;
+    public Optional<String> clusterName() {
+        return Optional.ofNullable(this.clusterName);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of CPU cores enabled on the DB system.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+        return this.dataCollectionOptions == null ? List.of() : this.dataCollectionOptions;
     }
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      * 
      */
-    public Integer dataStoragePercentage() {
-        return this.dataStoragePercentage;
+    public Optional<Integer> dataStoragePercentage() {
+        return Optional.ofNullable(this.dataStoragePercentage);
     }
     /**
      * @return The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
      * 
      */
-    public Integer dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Optional<Integer> dataStorageSizeInGb() {
+        return Optional.ofNullable(this.dataStorageSizeInGb);
     }
     /**
      * @return The Oracle Database edition that applies to all the databases on the DB system.
      * 
      */
-    public String databaseEdition() {
-        return this.databaseEdition;
+    public Optional<String> databaseEdition() {
+        return Optional.ofNullable(this.databaseEdition);
     }
     public List<GetDbSystemsDbSystemDbHome> dbHomes() {
-        return this.dbHomes;
+        return this.dbHomes == null ? List.of() : this.dbHomes;
     }
     /**
      * @return The DB system options.
      * 
      */
     public List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions() {
-        return this.dbSystemOptions;
+        return this.dbSystemOptions == null ? List.of() : this.dbSystemOptions;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
      */
-    public String diskRedundancy() {
-        return this.diskRedundancy;
+    public Optional<String> diskRedundancy() {
+        return Optional.ofNullable(this.diskRedundancy);
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The domain name for the DB system.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return List of the Fault Domains in which this DB system is provisioned.
      * 
      */
     public List<String> faultDomains() {
-        return this.faultDomains;
+        return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The hostname for the DB system.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches() {
-        return this.iormConfigCaches;
+        return this.iormConfigCaches == null ? List.of() : this.iormConfigCaches;
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public String lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Optional<String> lastMaintenanceRunId() {
+        return Optional.ofNullable(this.lastMaintenanceRunId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    public String lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Optional<String> lastPatchHistoryEntryId() {
+        return Optional.ofNullable(this.lastPatchHistoryEntryId);
     }
     /**
      * @return The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The port number configured for the listener on the DB system.
      * 
      */
-    public Integer listenerPort() {
-        return this.listenerPort;
+    public Optional<Integer> listenerPort() {
+        return Optional.ofNullable(this.listenerPort);
     }
     public List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails() {
-        return this.maintenanceWindowDetails;
+        return this.maintenanceWindowDetails == null ? List.of() : this.maintenanceWindowDetails;
     }
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
     public List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows() {
-        return this.maintenanceWindows;
+        return this.maintenanceWindows == null ? List.of() : this.maintenanceWindows;
     }
     /**
      * @return Memory allocated to the DB system, in gigabytes.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public String nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Optional<String> nextMaintenanceRunId() {
+        return Optional.ofNullable(this.nextMaintenanceRunId);
     }
     /**
      * @return The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      * 
      */
-    public Integer nodeCount() {
-        return this.nodeCount;
+    public Optional<Integer> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -492,52 +494,52 @@ public final class GetDbSystemsDbSystem {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The most recent OS Patch Version applied on the DB system.
      * 
      */
-    public String osVersion() {
-        return this.osVersion;
+    public Optional<String> osVersion() {
+        return Optional.ofNullable(this.osVersion);
     }
     /**
      * @return The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String pointInTimeDataDiskCloneTimestamp() {
-        return this.pointInTimeDataDiskCloneTimestamp;
+    public Optional<String> pointInTimeDataDiskCloneTimestamp() {
+        return Optional.ofNullable(this.pointInTimeDataDiskCloneTimestamp);
     }
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
     /**
      * @return The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
-    public Integer recoStorageSizeInGb() {
-        return this.recoStorageSizeInGb;
+    public Optional<Integer> recoStorageSizeInGb() {
+        return Optional.ofNullable(this.recoStorageSizeInGb);
     }
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    public String scanDnsName() {
-        return this.scanDnsName;
+    public Optional<String> scanDnsName() {
+        return Optional.ofNullable(this.scanDnsName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    public String scanDnsRecordId() {
-        return this.scanDnsRecordId;
+    public Optional<String> scanDnsRecordId() {
+        return Optional.ofNullable(this.scanDnsRecordId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     public List<String> scanIpIds() {
-        return this.scanIpIds;
+        return this.scanIpIds == null ? List.of() : this.scanIpIds;
     }
     /**
      * @return The shape of the DB system. The shape determines resources to allocate to the DB system.
@@ -545,88 +547,88 @@ public final class GetDbSystemsDbSystem {
      * * For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public String sourceDbSystemId() {
-        return this.sourceDbSystemId;
+    public Optional<String> sourceDbSystemId() {
+        return Optional.ofNullable(this.sourceDbSystemId);
     }
     /**
      * @return True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured. Only applied for Exadata shape.
      * 
      */
-    public Boolean sparseDiskgroup() {
-        return this.sparseDiskgroup;
+    public Optional<Boolean> sparseDiskgroup() {
+        return Optional.ofNullable(this.sparseDiskgroup);
     }
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the DB system.
      * 
      */
     public List<String> sshPublicKeys() {
-        return this.sshPublicKeys;
+        return this.sshPublicKeys == null ? List.of() : this.sshPublicKeys;
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
-    public String storageVolumePerformanceMode() {
-        return this.storageVolumePerformanceMode;
+    public Optional<String> storageVolumePerformanceMode() {
+        return Optional.ofNullable(this.storageVolumePerformanceMode);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    public String timeZone() {
-        return this.timeZone;
+    public Optional<String> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
     /**
      * @return The Oracle Database version of the DB system.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     public List<String> vipIds() {
-        return this.vipIds;
+        return this.vipIds == null ? List.of() : this.vipIds;
     }
     /**
      * @return The OCID of the zone the DB system is associated with.
      * 
      */
-    public String zoneId() {
-        return this.zoneId;
+    public Optional<String> zoneId() {
+        return Optional.ofNullable(this.zoneId);
     }
 
     public static Builder builder() {
@@ -638,60 +640,60 @@ public final class GetDbSystemsDbSystem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private List<String> backupNetworkNsgIds;
-        private String backupSubnetId;
-        private String clusterName;
-        private String compartmentId;
-        private Integer cpuCoreCount;
-        private List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions;
-        private Integer dataStoragePercentage;
-        private Integer dataStorageSizeInGb;
-        private String databaseEdition;
-        private List<GetDbSystemsDbSystemDbHome> dbHomes;
-        private List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions;
-        private Map<String,Object> definedTags;
-        private String diskRedundancy;
-        private String displayName;
-        private String domain;
-        private List<String> faultDomains;
-        private Map<String,Object> freeformTags;
-        private String hostname;
-        private String id;
-        private List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches;
-        private String kmsKeyId;
-        private String kmsKeyVersionId;
-        private String lastMaintenanceRunId;
-        private String lastPatchHistoryEntryId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private Integer listenerPort;
-        private List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails;
-        private List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows;
-        private Integer memorySizeInGbs;
-        private String nextMaintenanceRunId;
-        private Integer nodeCount;
-        private List<String> nsgIds;
-        private String osVersion;
-        private String pointInTimeDataDiskCloneTimestamp;
-        private String privateIp;
-        private Integer recoStorageSizeInGb;
-        private String scanDnsName;
-        private String scanDnsRecordId;
-        private List<String> scanIpIds;
-        private String shape;
-        private String source;
-        private String sourceDbSystemId;
-        private Boolean sparseDiskgroup;
-        private List<String> sshPublicKeys;
-        private String state;
-        private String storageVolumePerformanceMode;
-        private String subnetId;
-        private String timeCreated;
-        private String timeZone;
-        private String version;
-        private List<String> vipIds;
-        private String zoneId;
+        private @Nullable String availabilityDomain;
+        private @Nullable List<String> backupNetworkNsgIds;
+        private @Nullable String backupSubnetId;
+        private @Nullable String clusterName;
+        private @Nullable String compartmentId;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions;
+        private @Nullable Integer dataStoragePercentage;
+        private @Nullable Integer dataStorageSizeInGb;
+        private @Nullable String databaseEdition;
+        private @Nullable List<GetDbSystemsDbSystemDbHome> dbHomes;
+        private @Nullable List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String diskRedundancy;
+        private @Nullable String displayName;
+        private @Nullable String domain;
+        private @Nullable List<String> faultDomains;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches;
+        private @Nullable String kmsKeyId;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable String lastMaintenanceRunId;
+        private @Nullable String lastPatchHistoryEntryId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer listenerPort;
+        private @Nullable List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails;
+        private @Nullable List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable String nextMaintenanceRunId;
+        private @Nullable Integer nodeCount;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String osVersion;
+        private @Nullable String pointInTimeDataDiskCloneTimestamp;
+        private @Nullable String privateIp;
+        private @Nullable Integer recoStorageSizeInGb;
+        private @Nullable String scanDnsName;
+        private @Nullable String scanDnsRecordId;
+        private @Nullable List<String> scanIpIds;
+        private @Nullable String shape;
+        private @Nullable String source;
+        private @Nullable String sourceDbSystemId;
+        private @Nullable Boolean sparseDiskgroup;
+        private @Nullable List<String> sshPublicKeys;
+        private @Nullable String state;
+        private @Nullable String storageVolumePerformanceMode;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeZone;
+        private @Nullable String version;
+        private @Nullable List<String> vipIds;
+        private @Nullable String zoneId;
         public Builder() {}
         public Builder(GetDbSystemsDbSystem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -752,309 +754,309 @@ public final class GetDbSystemsDbSystem {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder backupNetworkNsgIds(List<String> backupNetworkNsgIds) {
-            this.backupNetworkNsgIds = Objects.requireNonNull(backupNetworkNsgIds);
+        public Builder backupNetworkNsgIds(@Nullable List<String> backupNetworkNsgIds) {
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
             return this;
         }
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
         }
         @CustomType.Setter
-        public Builder backupSubnetId(String backupSubnetId) {
-            this.backupSubnetId = Objects.requireNonNull(backupSubnetId);
+        public Builder backupSubnetId(@Nullable String backupSubnetId) {
+            this.backupSubnetId = backupSubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterName(String clusterName) {
-            this.clusterName = Objects.requireNonNull(clusterName);
+        public Builder clusterName(@Nullable String clusterName) {
+            this.clusterName = clusterName;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCollectionOptions(List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions) {
-            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+        public Builder dataCollectionOptions(@Nullable List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions) {
+            this.dataCollectionOptions = dataCollectionOptions;
             return this;
         }
         public Builder dataCollectionOptions(GetDbSystemsDbSystemDataCollectionOption... dataCollectionOptions) {
             return dataCollectionOptions(List.of(dataCollectionOptions));
         }
         @CustomType.Setter
-        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
-            this.dataStoragePercentage = Objects.requireNonNull(dataStoragePercentage);
+        public Builder dataStoragePercentage(@Nullable Integer dataStoragePercentage) {
+            this.dataStoragePercentage = dataStoragePercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+        public Builder dataStorageSizeInGb(@Nullable Integer dataStorageSizeInGb) {
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+        public Builder databaseEdition(@Nullable String databaseEdition) {
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
-        public Builder dbHomes(List<GetDbSystemsDbSystemDbHome> dbHomes) {
-            this.dbHomes = Objects.requireNonNull(dbHomes);
+        public Builder dbHomes(@Nullable List<GetDbSystemsDbSystemDbHome> dbHomes) {
+            this.dbHomes = dbHomes;
             return this;
         }
         public Builder dbHomes(GetDbSystemsDbSystemDbHome... dbHomes) {
             return dbHomes(List.of(dbHomes));
         }
         @CustomType.Setter
-        public Builder dbSystemOptions(List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions) {
-            this.dbSystemOptions = Objects.requireNonNull(dbSystemOptions);
+        public Builder dbSystemOptions(@Nullable List<GetDbSystemsDbSystemDbSystemOption> dbSystemOptions) {
+            this.dbSystemOptions = dbSystemOptions;
             return this;
         }
         public Builder dbSystemOptions(GetDbSystemsDbSystemDbSystemOption... dbSystemOptions) {
             return dbSystemOptions(List.of(dbSystemOptions));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder diskRedundancy(String diskRedundancy) {
-            this.diskRedundancy = Objects.requireNonNull(diskRedundancy);
+        public Builder diskRedundancy(@Nullable String diskRedundancy) {
+            this.diskRedundancy = diskRedundancy;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+        public Builder faultDomains(@Nullable List<String> faultDomains) {
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder iormConfigCaches(List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches) {
-            this.iormConfigCaches = Objects.requireNonNull(iormConfigCaches);
+        public Builder iormConfigCaches(@Nullable List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches) {
+            this.iormConfigCaches = iormConfigCaches;
             return this;
         }
         public Builder iormConfigCaches(GetDbSystemsDbSystemIormConfigCach... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+        public Builder lastMaintenanceRunId(@Nullable String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
+        public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerPort(Integer listenerPort) {
-            this.listenerPort = Objects.requireNonNull(listenerPort);
+        public Builder listenerPort(@Nullable Integer listenerPort) {
+            this.listenerPort = listenerPort;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceWindowDetails(List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails) {
-            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+        public Builder maintenanceWindowDetails(@Nullable List<GetDbSystemsDbSystemMaintenanceWindowDetail> maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
             return this;
         }
         public Builder maintenanceWindowDetails(GetDbSystemsDbSystemMaintenanceWindowDetail... maintenanceWindowDetails) {
             return maintenanceWindowDetails(List.of(maintenanceWindowDetails));
         }
         @CustomType.Setter
-        public Builder maintenanceWindows(List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+        public Builder maintenanceWindows(@Nullable List<GetDbSystemsDbSystemMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetDbSystemsDbSystemMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+        public Builder nextMaintenanceRunId(@Nullable String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+        public Builder nodeCount(@Nullable Integer nodeCount) {
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder osVersion(String osVersion) {
-            this.osVersion = Objects.requireNonNull(osVersion);
+        public Builder osVersion(@Nullable String osVersion) {
+            this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder pointInTimeDataDiskCloneTimestamp(String pointInTimeDataDiskCloneTimestamp) {
-            this.pointInTimeDataDiskCloneTimestamp = Objects.requireNonNull(pointInTimeDataDiskCloneTimestamp);
+        public Builder pointInTimeDataDiskCloneTimestamp(@Nullable String pointInTimeDataDiskCloneTimestamp) {
+            this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder recoStorageSizeInGb(Integer recoStorageSizeInGb) {
-            this.recoStorageSizeInGb = Objects.requireNonNull(recoStorageSizeInGb);
+        public Builder recoStorageSizeInGb(@Nullable Integer recoStorageSizeInGb) {
+            this.recoStorageSizeInGb = recoStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder scanDnsName(String scanDnsName) {
-            this.scanDnsName = Objects.requireNonNull(scanDnsName);
+        public Builder scanDnsName(@Nullable String scanDnsName) {
+            this.scanDnsName = scanDnsName;
             return this;
         }
         @CustomType.Setter
-        public Builder scanDnsRecordId(String scanDnsRecordId) {
-            this.scanDnsRecordId = Objects.requireNonNull(scanDnsRecordId);
+        public Builder scanDnsRecordId(@Nullable String scanDnsRecordId) {
+            this.scanDnsRecordId = scanDnsRecordId;
             return this;
         }
         @CustomType.Setter
-        public Builder scanIpIds(List<String> scanIpIds) {
-            this.scanIpIds = Objects.requireNonNull(scanIpIds);
+        public Builder scanIpIds(@Nullable List<String> scanIpIds) {
+            this.scanIpIds = scanIpIds;
             return this;
         }
         public Builder scanIpIds(String... scanIpIds) {
             return scanIpIds(List.of(scanIpIds));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDbSystemId(String sourceDbSystemId) {
-            this.sourceDbSystemId = Objects.requireNonNull(sourceDbSystemId);
+        public Builder sourceDbSystemId(@Nullable String sourceDbSystemId) {
+            this.sourceDbSystemId = sourceDbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder sparseDiskgroup(Boolean sparseDiskgroup) {
-            this.sparseDiskgroup = Objects.requireNonNull(sparseDiskgroup);
+        public Builder sparseDiskgroup(@Nullable Boolean sparseDiskgroup) {
+            this.sparseDiskgroup = sparseDiskgroup;
             return this;
         }
         @CustomType.Setter
-        public Builder sshPublicKeys(List<String> sshPublicKeys) {
-            this.sshPublicKeys = Objects.requireNonNull(sshPublicKeys);
+        public Builder sshPublicKeys(@Nullable List<String> sshPublicKeys) {
+            this.sshPublicKeys = sshPublicKeys;
             return this;
         }
         public Builder sshPublicKeys(String... sshPublicKeys) {
             return sshPublicKeys(List.of(sshPublicKeys));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageVolumePerformanceMode(String storageVolumePerformanceMode) {
-            this.storageVolumePerformanceMode = Objects.requireNonNull(storageVolumePerformanceMode);
+        public Builder storageVolumePerformanceMode(@Nullable String storageVolumePerformanceMode) {
+            this.storageVolumePerformanceMode = storageVolumePerformanceMode;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+        public Builder timeZone(@Nullable String timeZone) {
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder vipIds(List<String> vipIds) {
-            this.vipIds = Objects.requireNonNull(vipIds);
+        public Builder vipIds(@Nullable List<String> vipIds) {
+            this.vipIds = vipIds;
             return this;
         }
         public Builder vipIds(String... vipIds) {
             return vipIds(List.of(vipIds));
         }
         @CustomType.Setter
-        public Builder zoneId(String zoneId) {
-            this.zoneId = Objects.requireNonNull(zoneId);
+        public Builder zoneId(@Nullable String zoneId) {
+            this.zoneId = zoneId;
             return this;
         }
         public GetDbSystemsDbSystem build() {

@@ -46,25 +46,16 @@ class GetComputeImageCapabilitySchemasResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment containing the compute global image capability schema
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeImageCapabilitySchemas")
-    def compute_image_capability_schemas(self) -> Sequence['outputs.GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult']:
-        """
-        The list of compute_image_capability_schemas.
-        """
+    def compute_image_capability_schemas(self) -> Optional[Sequence['outputs.GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult']]:
         return pulumi.get(self, "compute_image_capability_schemas")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetComputeImageCapabilitySchemasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetComputeImageCapabilitySchemasResult:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[str]:
-        """
-        The OCID of the image associated with this compute image capability schema
-        """
         return pulumi.get(self, "image_id")
 
 
@@ -109,25 +97,7 @@ def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
                                          image_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeImageCapabilitySchemasResult:
     """
-    This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
-
-    Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=var["compartment_id"],
-        display_name=var["compute_image_capability_schema_display_name"],
-        image_id=oci_core_image["test_image"]["id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.
                                                 image_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeImageCapabilitySchemasResult]:
     """
-    This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
-
-    Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=var["compartment_id"],
-        display_name=var["compute_image_capability_schema_display_name"],
-        image_id=oci_core_image["test_image"]["id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendR
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendRoutingBackendKey;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
@@ -15,12 +16,12 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
      * @return The backend to forward requests to.
      * 
      */
-    private List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends;
+    private @Nullable List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends;
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
-    private List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys;
+    private @Nullable List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys;
 
     private GetDeploymentSpecificationRouteBackendRoutingBackend() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
      * 
      */
     public List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends() {
-        return this.backends;
+        return this.backends == null ? List.of() : this.backends;
     }
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends;
-        private List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys;
+        private @Nullable List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends;
+        private @Nullable List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteBackendRoutingBackend defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackend {
         }
 
         @CustomType.Setter
-        public Builder backends(List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+        public Builder backends(@Nullable List<GetDeploymentSpecificationRouteBackendRoutingBackendBackend> backends) {
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetDeploymentSpecificationRouteBackendRoutingBackendBackend... backends) {
             return backends(List.of(backends));
         }
         @CustomType.Setter
-        public Builder keys(List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetDeploymentSpecificationRouteBackendRoutingBackendKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentSpecificationRouteBackendRoutingBackendKey... keys) {

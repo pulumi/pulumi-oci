@@ -55,7 +55,7 @@ export interface GetCpeDeviceShapeResult {
     /**
      * Basic information about a particular CPE device type.
      */
-    readonly cpeDeviceInfos: outputs.Core.GetCpeDeviceShapeCpeDeviceInfo[];
+    readonly cpeDeviceInfos?: outputs.Core.GetCpeDeviceShapeCpeDeviceInfo[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape. This value uniquely identifies the type of CPE device.
      */
@@ -63,18 +63,18 @@ export interface GetCpeDeviceShapeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * For certain CPE devices types, the customer can provide answers to questions that are specific to the device type. This attribute contains a list of those questions. The Networking service merges the answers with other information and renders a set of CPE configuration content. To provide the answers, use [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig).
      */
-    readonly parameters: outputs.Core.GetCpeDeviceShapeParameter[];
+    readonly parameters?: outputs.Core.GetCpeDeviceShapeParameter[];
     /**
      * A template of CPE device configuration information that will be merged with the customer's answers to the questions to render the final CPE device configuration content. Also see:
      * * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
      * * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
      * * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      */
-    readonly template: string;
+    readonly template?: string;
 }
 /**
  * This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.

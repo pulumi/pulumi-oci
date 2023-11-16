@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The command line arguments to set for step.
         /// </summary>
-        public readonly string CommandLineArguments;
+        public readonly string? CommandLineArguments;
         /// <summary>
         /// Environment variables to set for step.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> EnvironmentVariables;
+        public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
         /// <summary>
         /// A time bound for the execution of the step.
         /// </summary>
-        public readonly string MaximumRuntimeInMinutes;
+        public readonly string? MaximumRuntimeInMinutes;
         /// <summary>
         /// The type of pipeline.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetPipelineRunConfigurationOverrideDetailResult(
-            string commandLineArguments,
+            string? commandLineArguments,
 
-            ImmutableDictionary<string, object> environmentVariables,
+            ImmutableDictionary<string, object>? environmentVariables,
 
-            string maximumRuntimeInMinutes,
+            string? maximumRuntimeInMinutes,
 
-            string type)
+            string? type)
         {
             CommandLineArguments = commandLineArguments;
             EnvironmentVariables = environmentVariables;

@@ -63,15 +63,15 @@ export class ListingPackageAgreement extends pulumi.CustomResource {
     /**
      * Who authored the agreement.
      */
-    public /*out*/ readonly author!: pulumi.Output<string>;
+    public /*out*/ readonly author!: pulumi.Output<string | undefined>;
     /**
      * The unique identifier for the compartment, required in gov regions.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The content URL of the agreement.
      */
-    public /*out*/ readonly contentUrl!: pulumi.Output<string>;
+    public /*out*/ readonly contentUrl!: pulumi.Output<string | undefined>;
     /**
      * The unique identifier for the listing.
      */
@@ -83,11 +83,11 @@ export class ListingPackageAgreement extends pulumi.CustomResource {
     /**
      * Textual prompt to read and accept the agreement.
      */
-    public /*out*/ readonly prompt!: pulumi.Output<string>;
+    public /*out*/ readonly prompt!: pulumi.Output<string | undefined>;
     /**
      * A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
      */
-    public /*out*/ readonly signature!: pulumi.Output<string>;
+    public /*out*/ readonly signature!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ListingPackageAgreement resource with the given unique name, arguments, and options.

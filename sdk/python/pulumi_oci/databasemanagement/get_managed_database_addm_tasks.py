@@ -45,10 +45,7 @@ class GetManagedDatabaseAddmTasksResult:
 
     @property
     @pulumi.getter(name="addmTasksCollections")
-    def addm_tasks_collections(self) -> Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionResult']:
-        """
-        The list of addm_tasks_collection.
-        """
+    def addm_tasks_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseAddmTasksAddmTasksCollectionResult']]:
         return pulumi.get(self, "addm_tasks_collections")
 
     @property
@@ -58,7 +55,7 @@ class GetManagedDatabaseAddmTasksResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,9 +64,6 @@ class GetManagedDatabaseAddmTasksResult:
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
@@ -103,26 +97,7 @@ def get_managed_database_addm_tasks(filters: Optional[Sequence[pulumi.InputType[
                                     time_start: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseAddmTasksResult:
     """
-    This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
-    the name of the ADDM task, description, user, status and creation date time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        time_end=var["managed_database_addm_task_time_end"],
-        time_start=var["managed_database_addm_task_time_start"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_end: The end of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
-    :param str time_start: The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -148,25 +123,6 @@ def get_managed_database_addm_tasks_output(filters: Optional[pulumi.Input[Option
                                            time_start: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseAddmTasksResult]:
     """
-    This data source provides the list of Managed Database Addm Tasks in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
-    the name of the ADDM task, description, user, status and creation date time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_addm_tasks = oci.DatabaseManagement.get_managed_database_addm_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        time_end=var["managed_database_addm_task_time_end"],
-        time_start=var["managed_database_addm_task_time_start"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str time_end: The end of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
-    :param str time_start: The beginning of the time range to search for ADDM tasks as defined by date-time RFC3339 format.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -44,10 +44,7 @@ class GetFleetDiagnosesResult:
 
     @property
     @pulumi.getter(name="fleetDiagnosisCollections")
-    def fleet_diagnosis_collections(self) -> Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionResult']:
-        """
-        The list of fleet_diagnosis_collection.
-        """
+    def fleet_diagnosis_collections(self) -> Optional[Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionResult']]:
         return pulumi.get(self, "fleet_diagnosis_collections")
 
     @property
@@ -57,7 +54,7 @@ class GetFleetDiagnosesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_fleet_diagnoses(filters: Optional[Sequence[pulumi.InputType['GetFleetDia
                         fleet_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetDiagnosesResult:
     """
-    This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
-
-    List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_diagnoses = oci.Jms.get_fleet_diagnoses(fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_fleet_diagnoses_output(filters: Optional[pulumi.Input[Optional[Sequence[
                                fleet_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetDiagnosesResult]:
     """
-    This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
-
-    List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_diagnoses = oci.Jms.get_fleet_diagnoses(fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     ...

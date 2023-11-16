@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A collection of profile levels.
         /// </summary>
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.Optimizer
 
             bool compartmentIdInSubtree,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProfileLevelItemResult> items,
 

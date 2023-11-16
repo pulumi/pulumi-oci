@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The default amount of networking bandwidth per OCPU, in gigabits per second.
         /// </summary>
-        public readonly double DefaultPerOcpuInGbps;
+        public readonly double? DefaultPerOcpuInGbps;
         /// <summary>
         /// The maximum amount of networking bandwidth, in gigabits per second.
         /// </summary>
-        public readonly double MaxInGbps;
+        public readonly double? MaxInGbps;
         /// <summary>
         /// The minimum amount of networking bandwidth, in gigabits per second.
         /// </summary>
-        public readonly double MinInGbps;
+        public readonly double? MinInGbps;
 
         [OutputConstructor]
         private GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult(
-            double defaultPerOcpuInGbps,
+            double? defaultPerOcpuInGbps,
 
-            double maxInGbps,
+            double? maxInGbps,
 
-            double minInGbps)
+            double? minInGbps)
         {
             DefaultPerOcpuInGbps = defaultPerOcpuInGbps;
             MaxInGbps = maxInGbps;

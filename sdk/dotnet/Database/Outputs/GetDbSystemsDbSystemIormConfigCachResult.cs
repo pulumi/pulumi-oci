@@ -14,28 +14,28 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDbSystemsDbSystemIormConfigCachResult
     {
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCachDbPlanResult> DbPlans;
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly string Objective;
+        public readonly string? LifecycleDetails;
+        public readonly string? Objective;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemIormConfigCachResult(
             ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCachDbPlanResult> dbPlans,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string objective,
+            string? objective,
 
-            string state)
+            string? state)
         {
             DbPlans = dbPlans;
             DbSystemId = dbSystemId;

@@ -153,7 +153,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.MediaServices
         private GetMediaWorkflowJobFactsResult(
             ImmutableArray<Outputs.GetMediaWorkflowJobFactsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? key,
 

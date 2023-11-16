@@ -50,11 +50,11 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
-    public readonly bootstrapScriptUrl!: pulumi.Output<string>;
+    public readonly bootstrapScriptUrl!: pulumi.Output<string | undefined>;
     /**
      * The information about added Cloud SQL capability
      */
-    public readonly cloudSqlDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceCloudSqlDetail[]>;
+    public readonly cloudSqlDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceCloudSqlDetail[] | undefined>;
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
@@ -62,11 +62,11 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * Specific info about a Hadoop cluster
      */
-    public /*out*/ readonly clusterDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceClusterDetail[]>;
+    public /*out*/ readonly clusterDetails!: pulumi.Output<outputs.BigDataService.BdsInstanceClusterDetail[] | undefined>;
     /**
      * Profile of the Big Data Service cluster.
      */
-    public readonly clusterProfile!: pulumi.Output<string>;
+    public readonly clusterProfile!: pulumi.Output<string | undefined>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
@@ -83,11 +83,11 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * The user who created the cluster.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Name of the BDS instance
      */
@@ -96,11 +96,11 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
-    public readonly isCloudSqlConfigured!: pulumi.Output<boolean>;
+    public readonly isCloudSqlConfigured!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
@@ -124,11 +124,11 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * The user-defined kerberos realm name.
      */
-    public readonly kerberosRealmName!: pulumi.Output<string>;
+    public readonly kerberosRealmName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the Key Management master encryption key.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The master node in the BDS instance
      */
@@ -136,19 +136,19 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * Additional configuration of the user's network.
      */
-    public readonly networkConfig!: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig>;
+    public readonly networkConfig!: pulumi.Output<outputs.BigDataService.BdsInstanceNetworkConfig | undefined>;
     /**
      * The list of nodes in the Big Data Service cluster.
      */
-    public /*out*/ readonly nodes!: pulumi.Output<outputs.BigDataService.BdsInstanceNode[]>;
+    public /*out*/ readonly nodes!: pulumi.Output<outputs.BigDataService.BdsInstanceNode[] | undefined>;
     /**
      * The amount of worker nodes should be created
      */
-    public /*out*/ readonly numberOfNodes!: pulumi.Output<number>;
+    public /*out*/ readonly numberOfNodes!: pulumi.Output<number | undefined>;
     /**
      * Number of nodes that require a maintenance reboot
      */
-    public /*out*/ readonly numberOfNodesRequiringMaintenanceReboot!: pulumi.Output<number>;
+    public /*out*/ readonly numberOfNodesRequiringMaintenanceReboot!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The version of the patch to be upated.
      */
@@ -156,15 +156,15 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The utility node in the BDS instance
      */

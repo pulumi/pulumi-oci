@@ -53,7 +53,7 @@ export class Resolver extends pulumi.CustomResource {
     /**
      * The OCID of the attached VCN.
      */
-    public /*out*/ readonly attachedVcnId!: pulumi.Output<string>;
+    public /*out*/ readonly attachedVcnId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The attached views. Views are evaluated in order.
      */
@@ -61,35 +61,35 @@ export class Resolver extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the owning compartment.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the default view.
      */
-    public /*out*/ readonly defaultViewId!: pulumi.Output<string>;
+    public /*out*/ readonly defaultViewId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The display name of the resolver.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Read-only array of endpoints for the resolver.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.Dns.ResolverEndpoint[]>;
+    public /*out*/ readonly endpoints!: pulumi.Output<outputs.Dns.ResolverEndpoint[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    public /*out*/ readonly isProtected!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the target resolver.
      */
@@ -109,19 +109,19 @@ export class Resolver extends pulumi.CustomResource {
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    public /*out*/ readonly self!: pulumi.Output<string | undefined>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Resolver resource with the given unique name, arguments, and options.

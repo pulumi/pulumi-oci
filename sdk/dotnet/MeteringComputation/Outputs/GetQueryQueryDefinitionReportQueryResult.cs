@@ -16,15 +16,15 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The compartment depth level.
         /// </summary>
-        public readonly double CompartmentDepth;
+        public readonly double? CompartmentDepth;
         /// <summary>
         /// The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
         /// </summary>
-        public readonly string DateRangeName;
+        public readonly string? DateRangeName;
         /// <summary>
         /// The filter object for query usage.
         /// </summary>
-        public readonly string Filter;
+        public readonly string? Filter;
         /// <summary>
         /// Forecast configuration of usage/cost.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
         /// </summary>
-        public readonly string Granularity;
+        public readonly string? Granularity;
         /// <summary>
         /// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         /// </summary>
@@ -44,49 +44,49 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
         /// </summary>
-        public readonly bool IsAggregateByTime;
+        public readonly bool? IsAggregateByTime;
         /// <summary>
         /// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
         /// </summary>
-        public readonly string QueryType;
+        public readonly string? QueryType;
         /// <summary>
         /// Tenant ID.
         /// </summary>
-        public readonly string TenantId;
+        public readonly string? TenantId;
         /// <summary>
         /// The usage end time.
         /// </summary>
-        public readonly string TimeUsageEnded;
+        public readonly string? TimeUsageEnded;
         /// <summary>
         /// The usage start time.
         /// </summary>
-        public readonly string TimeUsageStarted;
+        public readonly string? TimeUsageStarted;
 
         [OutputConstructor]
         private GetQueryQueryDefinitionReportQueryResult(
-            double compartmentDepth,
+            double? compartmentDepth,
 
-            string dateRangeName,
+            string? dateRangeName,
 
-            string filter,
+            string? filter,
 
             ImmutableArray<Outputs.GetQueryQueryDefinitionReportQueryForecastResult> forecasts,
 
-            string granularity,
+            string? granularity,
 
             ImmutableArray<string> groupBies,
 
             ImmutableArray<Outputs.GetQueryQueryDefinitionReportQueryGroupByTagResult> groupByTags,
 
-            bool isAggregateByTime,
+            bool? isAggregateByTime,
 
-            string queryType,
+            string? queryType,
 
-            string tenantId,
+            string? tenantId,
 
-            string timeUsageEnded,
+            string? timeUsageEnded,
 
-            string timeUsageStarted)
+            string? timeUsageStarted)
         {
             CompartmentDepth = compartmentDepth;
             DateRangeName = dateRangeName;

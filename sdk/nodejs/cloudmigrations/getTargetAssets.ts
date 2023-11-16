@@ -73,7 +73,7 @@ export interface GetTargetAssetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * OCID of the associated migration plan.
      */
@@ -85,7 +85,7 @@ export interface GetTargetAssetsResult {
     /**
      * The list of target_asset_collection.
      */
-    readonly targetAssetCollections: outputs.CloudMigrations.GetTargetAssetsTargetAssetCollection[];
+    readonly targetAssetCollections?: outputs.CloudMigrations.GetTargetAssetsTargetAssetCollection[];
     readonly targetAssetId?: string;
 }
 /**

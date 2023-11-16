@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection {
-    private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
+    private @Nullable List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
 
     private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection() {}
     public List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
+        private @Nullable List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
         }
 
         @CustomType.Setter
-        public Builder items(List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem... items) {

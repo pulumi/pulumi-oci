@@ -36,7 +36,7 @@ export interface GetNetworkFirewallPolicyMappedSecretArgs {
  * A collection of values returned by getNetworkFirewallPolicyMappedSecret.
  */
 export interface GetNetworkFirewallPolicyMappedSecretResult {
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of the secret.
      */
@@ -45,23 +45,23 @@ export interface GetNetworkFirewallPolicyMappedSecretResult {
     /**
      * OCID of the Network Firewall Policy this Mapped Secret belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * Source of the secrets, where the secrets are stored.
      */
-    readonly source: string;
+    readonly source?: string;
     /**
      * Type of the secrets mapped based on the policy.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * OCID for the Vault Secret to be used.
      */
-    readonly vaultSecretId: string;
+    readonly vaultSecretId?: string;
     /**
      * Version number of the secret to be used.
      */
-    readonly versionNumber: number;
+    readonly versionNumber?: number;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.

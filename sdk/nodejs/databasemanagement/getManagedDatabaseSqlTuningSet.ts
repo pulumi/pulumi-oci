@@ -59,11 +59,11 @@ export interface GetManagedDatabaseSqlTuningSetResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The details in the SQL tuning set summary.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningSetItem[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

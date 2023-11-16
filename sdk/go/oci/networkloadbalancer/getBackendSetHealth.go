@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBackendSetHealth(ctx *pulumi.Context, args *GetBackendSetHealthArgs, opts ...pulumi.InvokeOption) (*GetBackendSetHealthResult, error) {
@@ -33,10 +32,10 @@ type GetBackendSetHealthResult struct {
 	BackendSetName            string   `pulumi:"backendSetName"`
 	CriticalStateBackendNames []string `pulumi:"criticalStateBackendNames"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string   `pulumi:"id"`
+	Id                       *string  `pulumi:"id"`
 	NetworkLoadBalancerId    string   `pulumi:"networkLoadBalancerId"`
-	Status                   string   `pulumi:"status"`
-	TotalBackendCount        int      `pulumi:"totalBackendCount"`
+	Status                   *string  `pulumi:"status"`
+	TotalBackendCount        *int     `pulumi:"totalBackendCount"`
 	UnknownStateBackendNames []string `pulumi:"unknownStateBackendNames"`
 	WarningStateBackendNames []string `pulumi:"warningStateBackendNames"`
 }
@@ -79,12 +78,6 @@ func (o GetBackendSetHealthResultOutput) ToGetBackendSetHealthResultOutputWithCo
 	return o
 }
 
-func (o GetBackendSetHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetHealthResult] {
-	return pulumix.Output[GetBackendSetHealthResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetHealthResultOutput) BackendSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.BackendSetName }).(pulumi.StringOutput)
 }
@@ -94,20 +87,20 @@ func (o GetBackendSetHealthResultOutput) CriticalStateBackendNames() pulumi.Stri
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBackendSetHealthResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendSetHealthResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBackendSetHealthResultOutput) NetworkLoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.NetworkLoadBalancerId }).(pulumi.StringOutput)
 }
 
-func (o GetBackendSetHealthResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetHealthResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetBackendSetHealthResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBackendSetHealthResultOutput) TotalBackendCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetHealthResult) int { return v.TotalBackendCount }).(pulumi.IntOutput)
+func (o GetBackendSetHealthResultOutput) TotalBackendCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetHealthResult) *int { return v.TotalBackendCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetBackendSetHealthResultOutput) UnknownStateBackendNames() pulumi.StringArrayOutput {

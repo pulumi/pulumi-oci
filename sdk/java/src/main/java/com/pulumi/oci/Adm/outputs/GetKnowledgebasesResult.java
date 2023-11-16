@@ -34,7 +34,7 @@ public final class GetKnowledgebasesResult {
      * @return The list of knowledge_base_collection.
      * 
      */
-    private List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections;
+    private @Nullable List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections;
     /**
      * @return The current lifecycle state of the knowledge base.
      * 
@@ -71,7 +71,7 @@ public final class GetKnowledgebasesResult {
      * 
      */
     public List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections() {
-        return this.knowledgeBaseCollections;
+        return this.knowledgeBaseCollections == null ? List.of() : this.knowledgeBaseCollections;
     }
     /**
      * @return The current lifecycle state of the knowledge base.
@@ -94,7 +94,7 @@ public final class GetKnowledgebasesResult {
         private @Nullable String displayName;
         private @Nullable List<GetKnowledgebasesFilter> filters;
         private @Nullable String id;
-        private List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections;
+        private @Nullable List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetKnowledgebasesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetKnowledgebasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder knowledgeBaseCollections(List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections) {
-            this.knowledgeBaseCollections = Objects.requireNonNull(knowledgeBaseCollections);
+        public Builder knowledgeBaseCollections(@Nullable List<GetKnowledgebasesKnowledgeBaseCollection> knowledgeBaseCollections) {
+            this.knowledgeBaseCollections = knowledgeBaseCollections;
             return this;
         }
         public Builder knowledgeBaseCollections(GetKnowledgebasesKnowledgeBaseCollection... knowledgeBaseCollections) {

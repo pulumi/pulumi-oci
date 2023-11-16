@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn {
@@ -14,12 +16,12 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
      * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
-    private List<String> allowlistedIps;
+    private @Nullable List<String> allowlistedIps;
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn() {}
     /**
@@ -27,14 +29,14 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
      * 
      */
     public List<String> allowlistedIps() {
-        return this.allowlistedIps;
+        return this.allowlistedIps == null ? List.of() : this.allowlistedIps;
     }
     /**
      * @return The Virtual Cloud Network OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> allowlistedIps;
-        private String id;
+        private @Nullable List<String> allowlistedIps;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +58,16 @@ public final class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn
         }
 
         @CustomType.Setter
-        public Builder allowlistedIps(List<String> allowlistedIps) {
-            this.allowlistedIps = Objects.requireNonNull(allowlistedIps);
+        public Builder allowlistedIps(@Nullable List<String> allowlistedIps) {
+            this.allowlistedIps = allowlistedIps;
             return this;
         }
         public Builder allowlistedIps(String... allowlistedIps) {
             return allowlistedIps(List.of(allowlistedIps));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn build() {

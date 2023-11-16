@@ -50,7 +50,7 @@ export class DatabaseSecurityConfig extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment containing the database security config.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the database security configuration resource.
      */
@@ -58,23 +58,23 @@ export class DatabaseSecurityConfig extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details about the current state of the database security config in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -86,31 +86,31 @@ export class DatabaseSecurityConfig extends pulumi.CustomResource {
     /**
      * (Updatable) Details to update the SQL firewall config.
      */
-    public readonly sqlFirewallConfig!: pulumi.Output<outputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig>;
+    public readonly sqlFirewallConfig!: pulumi.Output<outputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig | undefined>;
     /**
      * The current state of the database security config.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The target OCID corresponding to the database security config.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    public /*out*/ readonly targetId!: pulumi.Output<string | undefined>;
     /**
      * The time that the database security config was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The last date and time the database security config was refreshed, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeLastRefreshed!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastRefreshed!: pulumi.Output<string | undefined>;
     /**
      * The date and time the database security configuration was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DatabaseSecurityConfig resource with the given unique name, arguments, and options.

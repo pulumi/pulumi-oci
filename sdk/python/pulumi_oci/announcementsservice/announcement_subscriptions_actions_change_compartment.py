@@ -18,12 +18,6 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
                  compartment_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AnnouncementSubscriptionsActionsChangeCompartment resource.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -31,9 +25,6 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
     @property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the announcement subscription.
-        """
         return pulumi.get(self, "announcement_subscription_id")
 
     @announcement_subscription_id.setter
@@ -43,13 +34,6 @@ class AnnouncementSubscriptionsActionsChangeCompartmentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -64,12 +48,6 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
                  compartment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AnnouncementSubscriptionsActionsChangeCompartment resources.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if announcement_subscription_id is not None:
             pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
@@ -79,9 +57,6 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
     @property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the announcement subscription.
-        """
         return pulumi.get(self, "announcement_subscription_id")
 
     @announcement_subscription_id.setter
@@ -91,13 +66,6 @@ class _AnnouncementSubscriptionsActionsChangeCompartmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -114,39 +82,9 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Announcement Subscriptions Actions Change Compartment resource in Oracle Cloud Infrastructure Announcements Service service.
-
-        Moves the specified announcement subscription from one compartment to another compartment. When provided, If-Match is checked against ETag values of the resource.
-
-        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_announcement_subscriptions_actions_change_compartment = oci.announcements_service.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
-            compartment_id=var["compartment_id"])
-        ```
-
-        ## Import
-
-        AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
-        ```
-
+        Create a AnnouncementSubscriptionsActionsChangeCompartment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -155,31 +93,7 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
                  args: AnnouncementSubscriptionsActionsChangeCompartmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Announcement Subscriptions Actions Change Compartment resource in Oracle Cloud Infrastructure Announcements Service service.
-
-        Moves the specified announcement subscription from one compartment to another compartment. When provided, If-Match is checked against ETag values of the resource.
-
-        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_announcement_subscriptions_actions_change_compartment = oci.announcements_service.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
-            compartment_id=var["compartment_id"])
-        ```
-
-        ## Import
-
-        AnnouncementSubscriptionsActionsChangeCompartment can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment test_announcement_subscriptions_actions_change_compartment "id"
-        ```
-
+        Create a AnnouncementSubscriptionsActionsChangeCompartment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AnnouncementSubscriptionsActionsChangeCompartmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -231,12 +145,6 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -249,20 +157,10 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the announcement subscription.
-        """
         return pulumi.get(self, "announcement_subscription_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "compartment_id")
 

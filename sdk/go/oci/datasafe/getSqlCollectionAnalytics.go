@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -100,7 +99,7 @@ type GetSqlCollectionAnalyticsResult struct {
 	Filters                []GetSqlCollectionAnalyticsFilter `pulumi:"filters"`
 	GroupBies              []string                          `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of sql_collection_analytics_collection.
 	SqlCollectionAnalyticsCollections []GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollection `pulumi:"sqlCollectionAnalyticsCollections"`
 	// The current state of the SQL collection.
@@ -164,12 +163,6 @@ func (o GetSqlCollectionAnalyticsResultOutput) ToGetSqlCollectionAnalyticsResult
 	return o
 }
 
-func (o GetSqlCollectionAnalyticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionAnalyticsResult] {
-	return pulumix.Output[GetSqlCollectionAnalyticsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlCollectionAnalyticsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlCollectionAnalyticsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -191,8 +184,8 @@ func (o GetSqlCollectionAnalyticsResultOutput) GroupBies() pulumi.StringArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlCollectionAnalyticsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlCollectionAnalyticsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlCollectionAnalyticsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlCollectionAnalyticsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of sql_collection_analytics_collection.

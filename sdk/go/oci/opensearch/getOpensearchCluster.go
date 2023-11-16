@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
@@ -87,84 +86,84 @@ type GetOpensearchClusterResult struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
 	// The OCID of the compartment where the cluster is located.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of data nodes configured for the cluster.
-	DataNodeCount int `pulumi:"dataNodeCount"`
+	DataNodeCount *int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
-	DataNodeHostBareMetalShape string `pulumi:"dataNodeHostBareMetalShape"`
+	DataNodeHostBareMetalShape *string `pulumi:"dataNodeHostBareMetalShape"`
 	// The amount of memory in GB, for the cluster's data nodes.
-	DataNodeHostMemoryGb int `pulumi:"dataNodeHostMemoryGb"`
+	DataNodeHostMemoryGb *int `pulumi:"dataNodeHostMemoryGb"`
 	// The number of OCPUs configured for the cluster's data nodes.
-	DataNodeHostOcpuCount int `pulumi:"dataNodeHostOcpuCount"`
+	DataNodeHostOcpuCount *int `pulumi:"dataNodeHostOcpuCount"`
 	// The instance type for the cluster's data nodes.
-	DataNodeHostType string `pulumi:"dataNodeHostType"`
+	DataNodeHostType *string `pulumi:"dataNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
-	DataNodeStorageGb int `pulumi:"dataNodeStorageGb"`
+	DataNodeStorageGb *int `pulumi:"dataNodeStorageGb"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the cluster. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
-	Fqdn string `pulumi:"fqdn"`
+	Fqdn *string `pulumi:"fqdn"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the cluster.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state of the cluster.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The number of master nodes configured for the cluster.
-	MasterNodeCount int `pulumi:"masterNodeCount"`
+	MasterNodeCount *int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
-	MasterNodeHostBareMetalShape string `pulumi:"masterNodeHostBareMetalShape"`
+	MasterNodeHostBareMetalShape *string `pulumi:"masterNodeHostBareMetalShape"`
 	// The amount of memory in GB, for the cluster's master nodes.
-	MasterNodeHostMemoryGb int `pulumi:"masterNodeHostMemoryGb"`
+	MasterNodeHostMemoryGb *int `pulumi:"masterNodeHostMemoryGb"`
 	// The number of OCPUs configured for cluster's master nodes.
-	MasterNodeHostOcpuCount int `pulumi:"masterNodeHostOcpuCount"`
+	MasterNodeHostOcpuCount *int `pulumi:"masterNodeHostOcpuCount"`
 	// The instance type for the cluster's master nodes.
-	MasterNodeHostType string `pulumi:"masterNodeHostType"`
+	MasterNodeHostType *string `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-	OpendashboardFqdn string `pulumi:"opendashboardFqdn"`
+	OpendashboardFqdn *string `pulumi:"opendashboardFqdn"`
 	// The number of OpenSearch Dashboard nodes configured for the cluster.
-	OpendashboardNodeCount int `pulumi:"opendashboardNodeCount"`
+	OpendashboardNodeCount *int `pulumi:"opendashboardNodeCount"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
+	OpendashboardNodeHostMemoryGb *int `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
+	OpendashboardNodeHostOcpuCount *int `pulumi:"opendashboardNodeHostOcpuCount"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
-	OpendashboardPrivateIp string `pulumi:"opendashboardPrivateIp"`
-	OpensearchClusterId    string `pulumi:"opensearchClusterId"`
+	OpendashboardPrivateIp *string `pulumi:"opendashboardPrivateIp"`
+	OpensearchClusterId    string  `pulumi:"opensearchClusterId"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
-	OpensearchFqdn string `pulumi:"opensearchFqdn"`
+	OpensearchFqdn *string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
-	OpensearchPrivateIp string `pulumi:"opensearchPrivateIp"`
+	OpensearchPrivateIp *string `pulumi:"opensearchPrivateIp"`
 	// The name of the master user that are used to manage security config
-	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
+	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
-	SecurityMasterUserPasswordHash string `pulumi:"securityMasterUserPasswordHash"`
+	SecurityMasterUserPasswordHash *string `pulumi:"securityMasterUserPasswordHash"`
 	// The security mode of the cluster.
-	SecurityMode string `pulumi:"securityMode"`
+	SecurityMode *string `pulumi:"securityMode"`
 	// The software version the cluster is running.
-	SoftwareVersion string `pulumi:"softwareVersion"`
+	SoftwareVersion *string `pulumi:"softwareVersion"`
 	// The current state of the cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID for the compartment where the cluster's subnet is located.
-	SubnetCompartmentId string `pulumi:"subnetCompartmentId"`
+	SubnetCompartmentId *string `pulumi:"subnetCompartmentId"`
 	// The OCID of the cluster's subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
-	TimeDeleted string `pulumi:"timeDeleted"`
+	TimeDeleted *string `pulumi:"timeDeleted"`
 	// The amount of time in milliseconds since the cluster was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
-	TotalStorageGb int `pulumi:"totalStorageGb"`
+	TotalStorageGb *int `pulumi:"totalStorageGb"`
 	// The OCID for the compartment where the cluster's VCN is located.
-	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
+	VcnCompartmentId *string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func GetOpensearchClusterOutput(ctx *pulumi.Context, args GetOpensearchClusterOutputArgs, opts ...pulumi.InvokeOption) GetOpensearchClusterResultOutput {
@@ -205,50 +204,44 @@ func (o GetOpensearchClusterResultOutput) ToGetOpensearchClusterResultOutputWith
 	return o
 }
 
-func (o GetOpensearchClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClusterResult] {
-	return pulumix.Output[GetOpensearchClusterResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domains to distribute the cluser nodes across.
 func (o GetOpensearchClusterResultOutput) AvailabilityDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) []string { return v.AvailabilityDomains }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the compartment where the cluster is located.
-func (o GetOpensearchClusterResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of data nodes configured for the cluster.
-func (o GetOpensearchClusterResultOutput) DataNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.DataNodeCount }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) DataNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.DataNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The bare metal shape for the cluster's data nodes.
-func (o GetOpensearchClusterResultOutput) DataNodeHostBareMetalShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.DataNodeHostBareMetalShape }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) DataNodeHostBareMetalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.DataNodeHostBareMetalShape }).(pulumi.StringPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's data nodes.
-func (o GetOpensearchClusterResultOutput) DataNodeHostMemoryGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.DataNodeHostMemoryGb }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) DataNodeHostMemoryGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.DataNodeHostMemoryGb }).(pulumi.IntPtrOutput)
 }
 
 // The number of OCPUs configured for the cluster's data nodes.
-func (o GetOpensearchClusterResultOutput) DataNodeHostOcpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.DataNodeHostOcpuCount }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) DataNodeHostOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.DataNodeHostOcpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The instance type for the cluster's data nodes.
-func (o GetOpensearchClusterResultOutput) DataNodeHostType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.DataNodeHostType }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) DataNodeHostType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.DataNodeHostType }).(pulumi.StringPtrOutput)
 }
 
 // The amount of storage in GB, to configure per node for the cluster's data nodes.
-func (o GetOpensearchClusterResultOutput) DataNodeStorageGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.DataNodeStorageGb }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) DataNodeStorageGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.DataNodeStorageGb }).(pulumi.IntPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -257,13 +250,13 @@ func (o GetOpensearchClusterResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The name of the cluster. Avoid entering confidential information.
-func (o GetOpensearchClusterResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) for the cluster's API endpoint.
-func (o GetOpensearchClusterResultOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -272,63 +265,63 @@ func (o GetOpensearchClusterResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the cluster.
-func (o GetOpensearchClusterResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the cluster.
-func (o GetOpensearchClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of master nodes configured for the cluster.
-func (o GetOpensearchClusterResultOutput) MasterNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.MasterNodeCount }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) MasterNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.MasterNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The bare metal shape for the cluster's master nodes.
-func (o GetOpensearchClusterResultOutput) MasterNodeHostBareMetalShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.MasterNodeHostBareMetalShape }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) MasterNodeHostBareMetalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.MasterNodeHostBareMetalShape }).(pulumi.StringPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's master nodes.
-func (o GetOpensearchClusterResultOutput) MasterNodeHostMemoryGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.MasterNodeHostMemoryGb }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) MasterNodeHostMemoryGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.MasterNodeHostMemoryGb }).(pulumi.IntPtrOutput)
 }
 
 // The number of OCPUs configured for cluster's master nodes.
-func (o GetOpensearchClusterResultOutput) MasterNodeHostOcpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.MasterNodeHostOcpuCount }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) MasterNodeHostOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.MasterNodeHostOcpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The instance type for the cluster's master nodes.
-func (o GetOpensearchClusterResultOutput) MasterNodeHostType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.MasterNodeHostType }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) MasterNodeHostType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.MasterNodeHostType }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-func (o GetOpensearchClusterResultOutput) OpendashboardFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpendashboardFqdn }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) OpendashboardFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.OpendashboardFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The number of OpenSearch Dashboard nodes configured for the cluster.
-func (o GetOpensearchClusterResultOutput) OpendashboardNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.OpendashboardNodeCount }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) OpendashboardNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.OpendashboardNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostMemoryGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.OpendashboardNodeHostMemoryGb }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostMemoryGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.OpendashboardNodeHostMemoryGb }).(pulumi.IntPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostOcpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.OpendashboardNodeHostOcpuCount }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) OpendashboardNodeHostOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.OpendashboardNodeHostOcpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The private IP address for the cluster's OpenSearch Dashboard.
-func (o GetOpensearchClusterResultOutput) OpendashboardPrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpendashboardPrivateIp }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) OpendashboardPrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.OpendashboardPrivateIp }).(pulumi.StringPtrOutput)
 }
 
 func (o GetOpensearchClusterResultOutput) OpensearchClusterId() pulumi.StringOutput {
@@ -336,48 +329,48 @@ func (o GetOpensearchClusterResultOutput) OpensearchClusterId() pulumi.StringOut
 }
 
 // The fully qualified domain name (FQDN) for the cluster's API endpoint.
-func (o GetOpensearchClusterResultOutput) OpensearchFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpensearchFqdn }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) OpensearchFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.OpensearchFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The cluster's private IP address.
-func (o GetOpensearchClusterResultOutput) OpensearchPrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) OpensearchPrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.OpensearchPrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The name of the master user that are used to manage security config
-func (o GetOpensearchClusterResultOutput) SecurityMasterUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SecurityMasterUserName }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) SecurityMasterUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.SecurityMasterUserName }).(pulumi.StringPtrOutput)
 }
 
 // The password hash of the master user that are used to manage security config
-func (o GetOpensearchClusterResultOutput) SecurityMasterUserPasswordHash() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SecurityMasterUserPasswordHash }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) SecurityMasterUserPasswordHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.SecurityMasterUserPasswordHash }).(pulumi.StringPtrOutput)
 }
 
 // The security mode of the cluster.
-func (o GetOpensearchClusterResultOutput) SecurityMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SecurityMode }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) SecurityMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.SecurityMode }).(pulumi.StringPtrOutput)
 }
 
 // The software version the cluster is running.
-func (o GetOpensearchClusterResultOutput) SoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SoftwareVersion }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) SoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.SoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the cluster.
-func (o GetOpensearchClusterResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID for the compartment where the cluster's subnet is located.
-func (o GetOpensearchClusterResultOutput) SubnetCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SubnetCompartmentId }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) SubnetCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.SubnetCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the cluster's subnet.
-func (o GetOpensearchClusterResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -386,33 +379,33 @@ func (o GetOpensearchClusterResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The amount of time in milliseconds since the cluster was created.
-func (o GetOpensearchClusterResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time in milliseconds since the cluster was updated.
-func (o GetOpensearchClusterResultOutput) TimeDeleted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.TimeDeleted }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) TimeDeleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.TimeDeleted }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time in milliseconds since the cluster was updated.
-func (o GetOpensearchClusterResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The size in GB of the cluster's total storage.
-func (o GetOpensearchClusterResultOutput) TotalStorageGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.TotalStorageGb }).(pulumi.IntOutput)
+func (o GetOpensearchClusterResultOutput) TotalStorageGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *int { return v.TotalStorageGb }).(pulumi.IntPtrOutput)
 }
 
 // The OCID for the compartment where the cluster's VCN is located.
-func (o GetOpensearchClusterResultOutput) VcnCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.VcnCompartmentId }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) VcnCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.VcnCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the cluster's VCN.
-func (o GetOpensearchClusterResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetOpensearchClusterResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

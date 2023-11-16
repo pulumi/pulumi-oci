@@ -47,7 +47,7 @@ export interface GetAuditProfileResult {
     /**
      * Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      */
-    readonly auditCollectedVolume: string;
+    readonly auditCollectedVolume?: string;
     /**
      * The OCID of the  parent audit.
      */
@@ -55,72 +55,72 @@ export interface GetAuditProfileResult {
     /**
      * Indicates the list of available audit trails on the target.
      */
-    readonly auditTrails: outputs.DataSafe.GetAuditProfileAuditTrail[];
-    readonly changeRetentionTrigger: number;
+    readonly auditTrails?: outputs.DataSafe.GetAuditProfileAuditTrail[];
+    readonly changeRetentionTrigger?: number;
     /**
      * The OCID of the compartment that contains the audit.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the audit profile.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the audit profile.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the audit profile.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      */
-    readonly isOverrideGlobalRetentionSetting: boolean;
+    readonly isOverrideGlobalRetentionSetting?: boolean;
     /**
      * Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      */
-    readonly isPaidUsageEnabled: boolean;
+    readonly isPaidUsageEnabled?: boolean;
     /**
      * Details about the current state of the audit profile in Data Safe.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      */
-    readonly offlineMonths: number;
+    readonly offlineMonths?: number;
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      */
-    readonly onlineMonths: number;
+    readonly onlineMonths?: number;
     /**
      * The current state of the audit profile.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The OCID of the Data Safe target for which the audit profile is created.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.

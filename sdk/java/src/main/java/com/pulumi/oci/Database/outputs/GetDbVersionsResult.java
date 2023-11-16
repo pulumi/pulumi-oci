@@ -22,13 +22,13 @@ public final class GetDbVersionsResult {
      * @return The list of db_versions.
      * 
      */
-    private List<GetDbVersionsDbVersion> dbVersions;
+    private @Nullable List<GetDbVersionsDbVersion> dbVersions;
     private @Nullable List<GetDbVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isDatabaseSoftwareImageSupported;
     /**
      * @return True if this version of the Oracle Database software is supported for Upgrade.
@@ -52,7 +52,7 @@ public final class GetDbVersionsResult {
      * 
      */
     public List<GetDbVersionsDbVersion> dbVersions() {
-        return this.dbVersions;
+        return this.dbVersions == null ? List.of() : this.dbVersions;
     }
     public List<GetDbVersionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -61,8 +61,8 @@ public final class GetDbVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isDatabaseSoftwareImageSupported() {
         return Optional.ofNullable(this.isDatabaseSoftwareImageSupported);
@@ -90,9 +90,9 @@ public final class GetDbVersionsResult {
         private String compartmentId;
         private @Nullable String dbSystemId;
         private @Nullable String dbSystemShape;
-        private List<GetDbVersionsDbVersion> dbVersions;
+        private @Nullable List<GetDbVersionsDbVersion> dbVersions;
         private @Nullable List<GetDbVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isDatabaseSoftwareImageSupported;
         private @Nullable Boolean isUpgradeSupported;
         private @Nullable String storageManagement;
@@ -126,8 +126,8 @@ public final class GetDbVersionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersions(List<GetDbVersionsDbVersion> dbVersions) {
-            this.dbVersions = Objects.requireNonNull(dbVersions);
+        public Builder dbVersions(@Nullable List<GetDbVersionsDbVersion> dbVersions) {
+            this.dbVersions = dbVersions;
             return this;
         }
         public Builder dbVersions(GetDbVersionsDbVersion... dbVersions) {
@@ -142,8 +142,8 @@ public final class GetDbVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

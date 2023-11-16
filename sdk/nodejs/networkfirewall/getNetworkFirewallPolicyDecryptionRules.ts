@@ -62,13 +62,13 @@ export interface GetNetworkFirewallPolicyDecryptionRulesResult {
     /**
      * The list of decryption_rule_summary_collection.
      */
-    readonly decryptionRuleSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollection[];
+    readonly decryptionRuleSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollection[];
     readonly displayName?: string;
     readonly filters?: outputs.NetworkFirewall.GetNetworkFirewallPolicyDecryptionRulesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkFirewallPolicyId: string;
 }
 /**

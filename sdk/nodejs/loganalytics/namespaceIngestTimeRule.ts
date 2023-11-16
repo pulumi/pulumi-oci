@@ -101,11 +101,11 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The ingest time rule display name.
      */
@@ -113,12 +113,12 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
-    public /*out*/ readonly ingestTimeRuleId!: pulumi.Output<string>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public /*out*/ readonly ingestTimeRuleId!: pulumi.Output<string | undefined>;
     /**
      * A flag indicating whether or not the ingest time rule is enabled.
      */
-    public /*out*/ readonly isEnabled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The Logging Analytics namespace used for the request. 
      *
@@ -130,15 +130,15 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
     /**
      * The current state of the ingest time rule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a NamespaceIngestTimeRule resource with the given unique name, arguments, and options.

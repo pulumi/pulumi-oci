@@ -16,19 +16,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// ResponderRule description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// detector for the rule
         /// </summary>
-        public readonly string Detector;
+        public readonly string? Detector;
         /// <summary>
         /// Unique identifier for Detector Recipe of which this is an extension
         /// </summary>
-        public readonly string DetectorRecipeId;
+        public readonly string? DetectorRecipeId;
         /// <summary>
         /// List of detector rules for the detector type for recipe - user input
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// ResponderRule display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of effective detector rules for the detector type for recipe after applying defaults
         /// </summary>
@@ -44,49 +44,49 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Owner of ResponderRecipe
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// The current state of the ResponderRule.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the target was created. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the target was updated. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string description,
+            string? description,
 
-            string detector,
+            string? detector,
 
-            string detectorRecipeId,
+            string? detectorRecipeId,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleResult> detectorRules,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult> effectiveDetectorRules,
 
-            string id,
+            string? id,
 
-            string owner,
+            string? owner,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             Description = description;

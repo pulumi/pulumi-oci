@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Type of configuration item.
         /// </summary>
-        public readonly string ConfigItemType;
+        public readonly string? ConfigItemType;
         /// <summary>
         /// Value of configuration item.
         /// </summary>
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
         /// <summary>
         /// Configuration item metadata.
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Name of configuration item.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Value of configuration item.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult(
             ImmutableArray<string> applicableContexts,
 
-            string configItemType,
+            string? configItemType,
 
-            string defaultValue,
+            string? defaultValue,
 
             ImmutableArray<Outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult> metadatas,
 
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             ApplicableContexts = applicableContexts;
             ConfigItemType = configItemType;

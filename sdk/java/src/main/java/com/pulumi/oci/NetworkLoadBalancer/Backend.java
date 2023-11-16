@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -88,56 +89,56 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
-    private Output<String> ipAddress;
+    private Output</* @Nullable */ String> ipAddress;
 
     /**
      * @return The IP address of the backend server. Example: `10.0.0.3`
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    public Output<Optional<String>> ipAddress() {
+        return Codegen.optional(this.ipAddress);
     }
     /**
      * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
     @Export(name="isBackup", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBackup;
+    private Output</* @Nullable */ Boolean> isBackup;
 
     /**
      * @return (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;isBackup&#34; fail the health check policy.  Example: `false`
      * 
      */
-    public Output<Boolean> isBackup() {
-        return this.isBackup;
+    public Output<Optional<Boolean>> isBackup() {
+        return Codegen.optional(this.isBackup);
     }
     /**
      * (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
     @Export(name="isDrain", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDrain;
+    private Output</* @Nullable */ Boolean> isDrain;
 
     /**
      * @return (Updatable) Whether the network load balancer should drain this server. Servers marked &#34;isDrain&#34; receive no incoming traffic.  Example: `false`
      * 
      */
-    public Output<Boolean> isDrain() {
-        return this.isDrain;
+    public Output<Optional<Boolean>> isDrain() {
+        return Codegen.optional(this.isDrain);
     }
     /**
      * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     @Export(name="isOffline", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOffline;
+    private Output</* @Nullable */ Boolean> isOffline;
 
     /**
      * @return (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
-    public Output<Boolean> isOffline() {
-        return this.isOffline;
+    public Output<Optional<Boolean>> isOffline() {
+        return Codegen.optional(this.isOffline);
     }
     /**
      * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
@@ -186,14 +187,14 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
     /**
      * @return The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     /**
      * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
@@ -203,7 +204,7 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="weight", refs={Integer.class}, tree="[0]")
-    private Output<Integer> weight;
+    private Output</* @Nullable */ Integer> weight;
 
     /**
      * @return (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives three times the number of new connections as a server weighted &#39;1&#39;. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
@@ -212,8 +213,8 @@ public class Backend extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> weight() {
-        return this.weight;
+    public Output<Optional<Integer>> weight() {
+        return Codegen.optional(this.weight);
     }
 
     /**

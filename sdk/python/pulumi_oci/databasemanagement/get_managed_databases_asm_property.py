@@ -38,7 +38,7 @@ class GetManagedDatabasesAsmPropertyResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -46,10 +46,7 @@ class GetManagedDatabasesAsmPropertyResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabasesAsmPropertyItemResult']:
-        """
-        An array of AsmPropertySummary resources.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabasesAsmPropertyItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -79,23 +76,7 @@ def get_managed_databases_asm_property(managed_database_id: Optional[str] = None
                                        name: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesAsmPropertyResult:
     """
-    This data source provides details about a specific Managed Databases Asm Property resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of ASM properties for the specified managedDatabaseId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_asm_property = oci.DatabaseManagement.get_managed_databases_asm_property(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_databases_asm_property_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -115,22 +96,6 @@ def get_managed_databases_asm_property_output(managed_database_id: Optional[pulu
                                               name: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesAsmPropertyResult]:
     """
-    This data source provides details about a specific Managed Databases Asm Property resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of ASM properties for the specified managedDatabaseId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_asm_property = oci.DatabaseManagement.get_managed_databases_asm_property(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_databases_asm_property_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     ...

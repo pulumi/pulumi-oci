@@ -58,7 +58,7 @@ class GetBdsInstancePatchHistoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,18 +66,12 @@ class GetBdsInstancePatchHistoriesResult:
 
     @property
     @pulumi.getter(name="patchHistories")
-    def patch_histories(self) -> Sequence['outputs.GetBdsInstancePatchHistoriesPatchHistoryResult']:
-        """
-        The list of patch_histories.
-        """
+    def patch_histories(self) -> Optional[Sequence['outputs.GetBdsInstancePatchHistoriesPatchHistoryResult']]:
         return pulumi.get(self, "patch_histories")
 
     @property
     @pulumi.getter(name="patchType")
     def patch_type(self) -> Optional[str]:
-        """
-        The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
-        """
         return pulumi.get(self, "patch_type")
 
     @property
@@ -88,9 +82,6 @@ class GetBdsInstancePatchHistoriesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The status of this patch.
-        """
         return pulumi.get(self, "state")
 
 
@@ -116,27 +107,7 @@ def get_bds_instance_patch_histories(bds_instance_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstancePatchHistoriesResult:
     """
-    This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
-
-    List the patch history of this cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        patch_type=var["bds_instance_patch_history_patch_type"],
-        patch_version=var["bds_instance_patch_history_patch_version"],
-        state=var["bds_instance_patch_history_state"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str patch_type: The type of a BDS patch history entity.
-    :param str patch_version: The version of the patch
-    :param str state: The status of the patch.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -165,26 +136,6 @@ def get_bds_instance_patch_histories_output(bds_instance_id: Optional[pulumi.Inp
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstancePatchHistoriesResult]:
     """
-    This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
-
-    List the patch history of this cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_patch_histories = oci.BigDataService.get_bds_instance_patch_histories(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        patch_type=var["bds_instance_patch_history_patch_type"],
-        patch_version=var["bds_instance_patch_history_patch_version"],
-        state=var["bds_instance_patch_history_state"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str patch_type: The type of a BDS patch history entity.
-    :param str patch_version: The version of the patch
-    :param str state: The status of the patch.
+    Use this data source to access information about an existing resource.
     """
     ...

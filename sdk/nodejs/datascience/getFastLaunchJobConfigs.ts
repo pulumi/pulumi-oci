@@ -50,12 +50,12 @@ export interface GetFastLaunchJobConfigsResult {
     /**
      * The list of fast_launch_job_configs.
      */
-    readonly fastLaunchJobConfigs: outputs.DataScience.GetFastLaunchJobConfigsFastLaunchJobConfig[];
+    readonly fastLaunchJobConfigs?: outputs.DataScience.GetFastLaunchJobConfigsFastLaunchJobConfig[];
     readonly filters?: outputs.DataScience.GetFastLaunchJobConfigsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Fast Launch Job Configs in Oracle Cloud Infrastructure Data Science service.

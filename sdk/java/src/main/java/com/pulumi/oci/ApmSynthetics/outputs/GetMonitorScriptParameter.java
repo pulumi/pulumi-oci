@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorScriptParameter {
@@ -16,63 +18,63 @@ public final class GetMonitorScriptParameter {
      * @return If parameter value is default or overwritten.
      * 
      */
-    private Boolean isOverwritten;
+    private @Nullable Boolean isOverwritten;
     /**
      * @return Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
      * 
      */
-    private Boolean isSecret;
+    private @Nullable Boolean isSecret;
     /**
      * @return Details of the script parameter that can be used to overwrite the parameter present in the script.
      * 
      */
-    private List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
+    private @Nullable List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
     /**
      * @return Name of the parameter.
      * 
      */
-    private String paramName;
+    private @Nullable String paramName;
     /**
      * @return Value of the parameter.
      * 
      */
-    private String paramValue;
+    private @Nullable String paramValue;
 
     private GetMonitorScriptParameter() {}
     /**
      * @return If parameter value is default or overwritten.
      * 
      */
-    public Boolean isOverwritten() {
-        return this.isOverwritten;
+    public Optional<Boolean> isOverwritten() {
+        return Optional.ofNullable(this.isOverwritten);
     }
     /**
      * @return Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
      * 
      */
-    public Boolean isSecret() {
-        return this.isSecret;
+    public Optional<Boolean> isSecret() {
+        return Optional.ofNullable(this.isSecret);
     }
     /**
      * @return Details of the script parameter that can be used to overwrite the parameter present in the script.
      * 
      */
     public List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters() {
-        return this.monitorScriptParameters;
+        return this.monitorScriptParameters == null ? List.of() : this.monitorScriptParameters;
     }
     /**
      * @return Name of the parameter.
      * 
      */
-    public String paramName() {
-        return this.paramName;
+    public Optional<String> paramName() {
+        return Optional.ofNullable(this.paramName);
     }
     /**
      * @return Value of the parameter.
      * 
      */
-    public String paramValue() {
-        return this.paramValue;
+    public Optional<String> paramValue() {
+        return Optional.ofNullable(this.paramValue);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetMonitorScriptParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isOverwritten;
-        private Boolean isSecret;
-        private List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
-        private String paramName;
-        private String paramValue;
+        private @Nullable Boolean isOverwritten;
+        private @Nullable Boolean isSecret;
+        private @Nullable List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters;
+        private @Nullable String paramName;
+        private @Nullable String paramValue;
         public Builder() {}
         public Builder(GetMonitorScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetMonitorScriptParameter {
         }
 
         @CustomType.Setter
-        public Builder isOverwritten(Boolean isOverwritten) {
-            this.isOverwritten = Objects.requireNonNull(isOverwritten);
+        public Builder isOverwritten(@Nullable Boolean isOverwritten) {
+            this.isOverwritten = isOverwritten;
             return this;
         }
         @CustomType.Setter
-        public Builder isSecret(Boolean isSecret) {
-            this.isSecret = Objects.requireNonNull(isSecret);
+        public Builder isSecret(@Nullable Boolean isSecret) {
+            this.isSecret = isSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder monitorScriptParameters(List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters) {
-            this.monitorScriptParameters = Objects.requireNonNull(monitorScriptParameters);
+        public Builder monitorScriptParameters(@Nullable List<GetMonitorScriptParameterMonitorScriptParameter> monitorScriptParameters) {
+            this.monitorScriptParameters = monitorScriptParameters;
             return this;
         }
         public Builder monitorScriptParameters(GetMonitorScriptParameterMonitorScriptParameter... monitorScriptParameters) {
             return monitorScriptParameters(List.of(monitorScriptParameters));
         }
         @CustomType.Setter
-        public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+        public Builder paramName(@Nullable String paramName) {
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
-        public Builder paramValue(String paramValue) {
-            this.paramValue = Objects.requireNonNull(paramValue);
+        public Builder paramValue(@Nullable String paramValue) {
+            this.paramValue = paramValue;
             return this;
         }
         public GetMonitorScriptParameter build() {

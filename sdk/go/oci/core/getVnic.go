@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
@@ -63,42 +62,42 @@ type GetVnicArgs struct {
 // A collection of values returned by getVnic.
 type GetVnicResult struct {
 	// The VNIC's availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
 	Ipv6addresses []string `pulumi:"ipv6addresses"`
 	// Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
-	IsPrimary bool `pulumi:"isPrimary"`
+	IsPrimary *bool `pulumi:"isPrimary"`
 	// The MAC address of the VNIC.
-	MacAddress string `pulumi:"macAddress"`
+	MacAddress *string `pulumi:"macAddress"`
 	// A list of the OCIDs of the network security groups that the VNIC belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC's subnet.  Example: `10.0.3.3`
-	PrivateIpAddress string `pulumi:"privateIpAddress"`
+	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// The public IP address of the VNIC, if one is assigned.
-	PublicIpAddress string `pulumi:"publicIpAddress"`
+	PublicIpAddress *string `pulumi:"publicIpAddress"`
 	// Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	SkipSourceDestCheck *bool `pulumi:"skipSourceDestCheck"`
 	// The current state of the VNIC.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
-	VlanId string `pulumi:"vlanId"`
-	VnicId string `pulumi:"vnicId"`
+	VlanId *string `pulumi:"vlanId"`
+	VnicId string  `pulumi:"vnicId"`
 }
 
 func GetVnicOutput(ctx *pulumi.Context, args GetVnicOutputArgs, opts ...pulumi.InvokeOption) GetVnicResultOutput {
@@ -139,20 +138,14 @@ func (o GetVnicResultOutput) ToGetVnicResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetVnicResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVnicResult] {
-	return pulumix.Output[GetVnicResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The VNIC's availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetVnicResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
-func (o GetVnicResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -161,8 +154,8 @@ func (o GetVnicResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetVnicResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -171,13 +164,13 @@ func (o GetVnicResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-func (o GetVnicResultOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVnicResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of IPv6 addresses assigned to the VNIC.  Example: `2001:DB8::`
@@ -186,13 +179,13 @@ func (o GetVnicResultOutput) Ipv6addresses() pulumi.StringArrayOutput {
 }
 
 // Whether the VNIC is the primary VNIC (the VNIC that is automatically created and attached during instance launch).
-func (o GetVnicResultOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVnicResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o GetVnicResultOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *bool { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 // The MAC address of the VNIC.
-func (o GetVnicResultOutput) MacAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.MacAddress }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
 // A list of the OCIDs of the network security groups that the VNIC belongs to.
@@ -201,38 +194,38 @@ func (o GetVnicResultOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The private IP address of the primary `privateIp` object on the VNIC. The address is within the CIDR of the VNIC's subnet.  Example: `10.0.3.3`
-func (o GetVnicResultOutput) PrivateIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.PrivateIpAddress }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) PrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.PrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The public IP address of the VNIC, if one is assigned.
-func (o GetVnicResultOutput) PublicIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.PublicIpAddress }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) PublicIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.PublicIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you would skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
-func (o GetVnicResultOutput) SkipSourceDestCheck() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVnicResult) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+func (o GetVnicResultOutput) SkipSourceDestCheck() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *bool { return v.SkipSourceDestCheck }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the VNIC.
-func (o GetVnicResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-func (o GetVnicResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetVnicResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of belonging to a subnet), the `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan). If the VNIC is instead in a subnet, `subnetId` has a value.
-func (o GetVnicResultOutput) VlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVnicResult) string { return v.VlanId }).(pulumi.StringOutput)
+func (o GetVnicResultOutput) VlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVnicResult) *string { return v.VlanId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVnicResultOutput) VnicId() pulumi.StringOutput {

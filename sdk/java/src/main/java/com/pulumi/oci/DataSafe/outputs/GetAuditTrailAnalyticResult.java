@@ -22,12 +22,12 @@ public final class GetAuditTrailAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of audit trail aggregration data.
      * 
      */
-    private List<GetAuditTrailAnalyticItem> items;
+    private @Nullable List<GetAuditTrailAnalyticItem> items;
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
      * 
@@ -51,15 +51,15 @@ public final class GetAuditTrailAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of audit trail aggregration data.
      * 
      */
     public List<GetAuditTrailAnalyticItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The OCID of the Data Safe target for which the audit trail is created.
@@ -82,8 +82,8 @@ public final class GetAuditTrailAnalyticResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<String> groupBies;
-        private String id;
-        private List<GetAuditTrailAnalyticItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAuditTrailAnalyticItem> items;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetAuditTrailAnalyticResult defaults) {
@@ -121,13 +121,13 @@ public final class GetAuditTrailAnalyticResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAuditTrailAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditTrailAnalyticItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditTrailAnalyticItem... items) {

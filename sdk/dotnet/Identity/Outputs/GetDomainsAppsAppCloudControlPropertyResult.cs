@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The value(s) of the property.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsAppsAppCloudControlPropertyResult(
-            string name,
+            string? name,
 
             ImmutableArray<string> values)
         {

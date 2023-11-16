@@ -46,17 +46,11 @@ class GetRemediationRecipesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the Remediation Recipe.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetRemediationRecipesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="remediationRecipeCollections")
-    def remediation_recipe_collections(self) -> Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionResult']:
-        """
-        The list of remediation_recipe_collection.
-        """
+    def remediation_recipe_collections(self) -> Optional[Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionResult']]:
         return pulumi.get(self, "remediation_recipe_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the Remediation Recipe.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,28 +95,7 @@ def get_remediation_recipes(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRecipesResult:
     """
-    This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of Remediation Recipes based on the specified query parameters.
-    The query parameters `compartmentId` or `id` must be provided.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=var["compartment_id"],
-        display_name=var["remediation_recipe_display_name"],
-        id=var["remediation_recipe_id"],
-        state=var["remediation_recipe_state"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
-    :param str state: A filter to return only Remediation Recipes that match the specified lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -159,27 +123,6 @@ def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optiona
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRecipesResult]:
     """
-    This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of Remediation Recipes based on the specified query parameters.
-    The query parameters `compartmentId` or `id` must be provided.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=var["compartment_id"],
-        display_name=var["remediation_recipe_display_name"],
-        id=var["remediation_recipe_id"],
-        state=var["remediation_recipe_state"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
-    :param str state: A filter to return only Remediation Recipes that match the specified lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

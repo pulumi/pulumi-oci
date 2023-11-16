@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tag Default resource in Oracle Cloud Infrastructure Identity service.
@@ -72,17 +71,17 @@ type TagDefault struct {
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
 	//
 	// Example: `false`
-	IsRequired pulumi.BoolOutput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrOutput `pulumi:"isRequired"`
 	// The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
 	TagDefinitionId pulumi.StringOutput `pulumi:"tagDefinitionId"`
 	// The name used in the tag definition. This field is informational in the context of the tag default.
-	TagDefinitionName pulumi.StringOutput `pulumi:"tagDefinitionName"`
+	TagDefinitionName pulumi.StringPtrOutput `pulumi:"tagDefinitionName"`
 	// The OCID of the tag namespace that contains the tag definition.
-	TagNamespaceId pulumi.StringOutput `pulumi:"tagNamespaceId"`
+	TagNamespaceId pulumi.StringPtrOutput `pulumi:"tagNamespaceId"`
 	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
 	//
 	// ** IMPORTANT **
@@ -244,12 +243,6 @@ func (i *TagDefault) ToTagDefaultOutputWithContext(ctx context.Context) TagDefau
 	return pulumi.ToOutputWithContext(ctx, i).(TagDefaultOutput)
 }
 
-func (i *TagDefault) ToOutput(ctx context.Context) pulumix.Output[*TagDefault] {
-	return pulumix.Output[*TagDefault]{
-		OutputState: i.ToTagDefaultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TagDefaultArrayInput is an input type that accepts TagDefaultArray and TagDefaultArrayOutput values.
 // You can construct a concrete instance of `TagDefaultArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i TagDefaultArray) ToTagDefaultArrayOutput() TagDefaultArrayOutput {
 
 func (i TagDefaultArray) ToTagDefaultArrayOutputWithContext(ctx context.Context) TagDefaultArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagDefaultArrayOutput)
-}
-
-func (i TagDefaultArray) ToOutput(ctx context.Context) pulumix.Output[[]*TagDefault] {
-	return pulumix.Output[[]*TagDefault]{
-		OutputState: i.ToTagDefaultArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TagDefaultMapInput is an input type that accepts TagDefaultMap and TagDefaultMapOutput values.
@@ -306,12 +293,6 @@ func (i TagDefaultMap) ToTagDefaultMapOutputWithContext(ctx context.Context) Tag
 	return pulumi.ToOutputWithContext(ctx, i).(TagDefaultMapOutput)
 }
 
-func (i TagDefaultMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagDefault] {
-	return pulumix.Output[map[string]*TagDefault]{
-		OutputState: i.ToTagDefaultMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TagDefaultOutput struct{ *pulumi.OutputState }
 
 func (TagDefaultOutput) ElementType() reflect.Type {
@@ -326,12 +307,6 @@ func (o TagDefaultOutput) ToTagDefaultOutputWithContext(ctx context.Context) Tag
 	return o
 }
 
-func (o TagDefaultOutput) ToOutput(ctx context.Context) pulumix.Output[*TagDefault] {
-	return pulumix.Output[*TagDefault]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
 func (o TagDefaultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TagDefault) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -342,13 +317,13 @@ func (o TagDefaultOutput) CompartmentId() pulumi.StringOutput {
 // * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
 //
 // Example: `false`
-func (o TagDefaultOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *TagDefault) pulumi.BoolOutput { return v.IsRequired }).(pulumi.BoolOutput)
+func (o TagDefaultOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *TagDefault) pulumi.BoolPtrOutput { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
-func (o TagDefaultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *TagDefault) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TagDefaultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagDefault) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
@@ -357,18 +332,18 @@ func (o TagDefaultOutput) TagDefinitionId() pulumi.StringOutput {
 }
 
 // The name used in the tag definition. This field is informational in the context of the tag default.
-func (o TagDefaultOutput) TagDefinitionName() pulumi.StringOutput {
-	return o.ApplyT(func(v *TagDefault) pulumi.StringOutput { return v.TagDefinitionName }).(pulumi.StringOutput)
+func (o TagDefaultOutput) TagDefinitionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagDefault) pulumi.StringPtrOutput { return v.TagDefinitionName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tag namespace that contains the tag definition.
-func (o TagDefaultOutput) TagNamespaceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TagDefault) pulumi.StringOutput { return v.TagNamespaceId }).(pulumi.StringOutput)
+func (o TagDefaultOutput) TagNamespaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagDefault) pulumi.StringPtrOutput { return v.TagNamespaceId }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o TagDefaultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TagDefault) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TagDefaultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagDefault) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
@@ -393,12 +368,6 @@ func (o TagDefaultArrayOutput) ToTagDefaultArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o TagDefaultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TagDefault] {
-	return pulumix.Output[[]*TagDefault]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TagDefaultArrayOutput) Index(i pulumi.IntInput) TagDefaultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TagDefault {
 		return vs[0].([]*TagDefault)[vs[1].(int)]
@@ -417,12 +386,6 @@ func (o TagDefaultMapOutput) ToTagDefaultMapOutput() TagDefaultMapOutput {
 
 func (o TagDefaultMapOutput) ToTagDefaultMapOutputWithContext(ctx context.Context) TagDefaultMapOutput {
 	return o
-}
-
-func (o TagDefaultMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagDefault] {
-	return pulumix.Output[map[string]*TagDefault]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TagDefaultMapOutput) MapIndex(k pulumi.StringInput) TagDefaultOutput {

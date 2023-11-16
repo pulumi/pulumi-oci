@@ -16,56 +16,56 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Commit ID in a repository.
         /// </summary>
-        public readonly string CommitId;
+        public readonly string? CommitId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique full reference name inside a repository.
         /// </summary>
-        public readonly string FullRefName;
-        public readonly string Id;
+        public readonly string? FullRefName;
+        public readonly string? Id;
         /// <summary>
         /// SHA-1 hash value of the object pointed to by the tag.
         /// </summary>
-        public readonly string ObjectId;
+        public readonly string? ObjectId;
         /// <summary>
         /// A filter to return only resources that match the given reference name.
         /// </summary>
-        public readonly string RefName;
+        public readonly string? RefName;
         /// <summary>
         /// Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
         /// </summary>
-        public readonly string RefType;
+        public readonly string? RefType;
         /// <summary>
         /// Unique repository identifier.
         /// </summary>
-        public readonly string RepositoryId;
+        public readonly string? RepositoryId;
 
         [OutputConstructor]
         private GetRepositoryRefsRepositoryRefCollectionItemResult(
-            string commitId,
+            string? commitId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string fullRefName,
+            string? fullRefName,
 
-            string id,
+            string? id,
 
-            string objectId,
+            string? objectId,
 
-            string refName,
+            string? refName,
 
-            string refType,
+            string? refType,
 
-            string repositoryId)
+            string? repositoryId)
         {
             CommitId = commitId;
             DefinedTags = definedTags;

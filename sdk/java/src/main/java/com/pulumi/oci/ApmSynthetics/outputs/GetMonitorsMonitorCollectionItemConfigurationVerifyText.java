@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
@@ -13,15 +15,15 @@ public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
      * @return Verification text in the response.
      * 
      */
-    private String text;
+    private @Nullable String text;
 
     private GetMonitorsMonitorCollectionItemConfigurationVerifyText() {}
     /**
      * @return Verification text in the response.
      * 
      */
-    public String text() {
-        return this.text;
+    public Optional<String> text() {
+        return Optional.ofNullable(this.text);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String text;
+        private @Nullable String text;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationVerifyText defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
         }
 
         @CustomType.Setter
-        public Builder text(String text) {
-            this.text = Objects.requireNonNull(text);
+        public Builder text(@Nullable String text) {
+            this.text = text;
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationVerifyText build() {

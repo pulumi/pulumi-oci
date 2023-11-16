@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         /// </summary>
-        public readonly bool IsAssignIpv6ip;
+        public readonly bool? IsAssignIpv6ip;
         /// <summary>
         /// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetResult(
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult> ipv6addressIpv6subnetCidrPairDetails,
 
-            bool isAssignIpv6ip,
+            bool? isAssignIpv6ip,
 
-            string subnetId)
+            string? subnetId)
         {
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             IsAssignIpv6ip = isAssignIpv6ip;

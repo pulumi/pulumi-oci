@@ -8,6 +8,8 @@ import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollec
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail {
@@ -15,31 +17,31 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
-    private String dbmPrivateEndpointId;
-    private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
-    private String opsiPrivateEndpointId;
-    private String vmclusterId;
+    private @Nullable String compartmentId;
+    private @Nullable String dbmPrivateEndpointId;
+    private @Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
+    private @Nullable String opsiPrivateEndpointId;
+    private @Nullable String vmclusterId;
 
     private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public String dbmPrivateEndpointId() {
-        return this.dbmPrivateEndpointId;
+    public Optional<String> dbmPrivateEndpointId() {
+        return Optional.ofNullable(this.dbmPrivateEndpointId);
     }
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails() {
-        return this.memberDatabaseDetails;
+        return this.memberDatabaseDetails == null ? List.of() : this.memberDatabaseDetails;
     }
-    public String opsiPrivateEndpointId() {
-        return this.opsiPrivateEndpointId;
+    public Optional<String> opsiPrivateEndpointId() {
+        return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
-    public String vmclusterId() {
-        return this.vmclusterId;
+    public Optional<String> vmclusterId() {
+        return Optional.ofNullable(this.vmclusterId);
     }
 
     public static Builder builder() {
@@ -51,11 +53,11 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String dbmPrivateEndpointId;
-        private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
-        private String opsiPrivateEndpointId;
-        private String vmclusterId;
+        private @Nullable String compartmentId;
+        private @Nullable String dbmPrivateEndpointId;
+        private @Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
+        private @Nullable String opsiPrivateEndpointId;
+        private @Nullable String vmclusterId;
         public Builder() {}
         public Builder(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -67,31 +69,31 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
-            this.dbmPrivateEndpointId = Objects.requireNonNull(dbmPrivateEndpointId);
+        public Builder dbmPrivateEndpointId(@Nullable String dbmPrivateEndpointId) {
+            this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder memberDatabaseDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails) {
-            this.memberDatabaseDetails = Objects.requireNonNull(memberDatabaseDetails);
+        public Builder memberDatabaseDetails(@Nullable List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails) {
+            this.memberDatabaseDetails = memberDatabaseDetails;
             return this;
         }
         public Builder memberDatabaseDetails(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail... memberDatabaseDetails) {
             return memberDatabaseDetails(List.of(memberDatabaseDetails));
         }
         @CustomType.Setter
-        public Builder opsiPrivateEndpointId(String opsiPrivateEndpointId) {
-            this.opsiPrivateEndpointId = Objects.requireNonNull(opsiPrivateEndpointId);
+        public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+            this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder vmclusterId(String vmclusterId) {
-            this.vmclusterId = Objects.requireNonNull(vmclusterId);
+        public Builder vmclusterId(@Nullable String vmclusterId) {
+            this.vmclusterId = vmclusterId;
             return this;
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail build() {

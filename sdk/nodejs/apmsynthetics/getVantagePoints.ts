@@ -67,7 +67,7 @@ export interface GetVantagePointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique permanent name of the vantage point.
      */
@@ -75,7 +75,7 @@ export interface GetVantagePointsResult {
     /**
      * The list of public_vantage_point_collection.
      */
-    readonly publicVantagePointCollections: outputs.ApmSynthetics.GetVantagePointsPublicVantagePointCollection[];
+    readonly publicVantagePointCollections?: outputs.ApmSynthetics.GetVantagePointsPublicVantagePointCollection[];
 }
 /**
  * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.

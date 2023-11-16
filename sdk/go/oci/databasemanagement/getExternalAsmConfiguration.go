@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -61,7 +60,7 @@ type GetExternalAsmConfigurationArgs struct {
 type GetExternalAsmConfigurationResult struct {
 	ExternalAsmId string `pulumi:"externalAsmId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of initialization parameters for the external ASM instances.
 	InitParameters []GetExternalAsmConfigurationInitParameter `pulumi:"initParameters"`
 }
@@ -104,19 +103,13 @@ func (o GetExternalAsmConfigurationResultOutput) ToGetExternalAsmConfigurationRe
 	return o
 }
 
-func (o GetExternalAsmConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmConfigurationResult] {
-	return pulumix.Output[GetExternalAsmConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExternalAsmConfigurationResultOutput) ExternalAsmId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalAsmConfigurationResult) string { return v.ExternalAsmId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalAsmConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalAsmConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of initialization parameters for the external ASM instances.

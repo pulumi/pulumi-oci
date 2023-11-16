@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -37,25 +36,25 @@ type SqlEndpoint struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The description of CreateSQLEndpointDetails.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The SQL Endpoint name, which can be changed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The shape of the SQL Endpoint driver instance.
 	DriverShape pulumi.StringOutput `pulumi:"driverShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
-	DriverShapeConfig SqlEndpointDriverShapeConfigOutput `pulumi:"driverShapeConfig"`
+	DriverShapeConfig SqlEndpointDriverShapeConfigPtrOutput `pulumi:"driverShapeConfig"`
 	// The shape of the SQL Endpoint worker instance.
 	ExecutorShape pulumi.StringOutput `pulumi:"executorShape"`
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
-	ExecutorShapeConfig SqlEndpointExecutorShapeConfigOutput `pulumi:"executorShapeConfig"`
+	ExecutorShapeConfig SqlEndpointExecutorShapeConfigPtrOutput `pulumi:"executorShapeConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-	JdbcEndpointUrl pulumi.StringOutput `pulumi:"jdbcEndpointUrl"`
+	JdbcEndpointUrl pulumi.StringPtrOutput `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
-	LakeId pulumi.StringOutput `pulumi:"lakeId"`
+	LakeId pulumi.StringPtrOutput `pulumi:"lakeId"`
 	// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-	LastAcceptedRequestToken pulumi.StringOutput `pulumi:"lastAcceptedRequestToken"`
+	LastAcceptedRequestToken pulumi.StringPtrOutput `pulumi:"lastAcceptedRequestToken"`
 	// The maximum number of executors.
 	MaxExecutorCount pulumi.IntOutput `pulumi:"maxExecutorCount"`
 	// Metastore OCID
@@ -69,20 +68,20 @@ type SqlEndpoint struct {
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringOutput `pulumi:"sqlEndpointVersion"`
 	// The current state of the Sql Endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrOutput `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	WarehouseBucketUri pulumi.StringOutput `pulumi:"warehouseBucketUri"`
+	WarehouseBucketUri pulumi.StringPtrOutput `pulumi:"warehouseBucketUri"`
 }
 
 // NewSqlEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -343,12 +342,6 @@ func (i *SqlEndpoint) ToSqlEndpointOutputWithContext(ctx context.Context) SqlEnd
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointOutput)
 }
 
-func (i *SqlEndpoint) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpoint] {
-	return pulumix.Output[*SqlEndpoint]{
-		OutputState: i.ToSqlEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlEndpointArrayInput is an input type that accepts SqlEndpointArray and SqlEndpointArrayOutput values.
 // You can construct a concrete instance of `SqlEndpointArrayInput` via:
 //
@@ -372,12 +365,6 @@ func (i SqlEndpointArray) ToSqlEndpointArrayOutput() SqlEndpointArrayOutput {
 
 func (i SqlEndpointArray) ToSqlEndpointArrayOutputWithContext(ctx context.Context) SqlEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointArrayOutput)
-}
-
-func (i SqlEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlEndpoint] {
-	return pulumix.Output[[]*SqlEndpoint]{
-		OutputState: i.ToSqlEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SqlEndpointMapInput is an input type that accepts SqlEndpointMap and SqlEndpointMapOutput values.
@@ -405,12 +392,6 @@ func (i SqlEndpointMap) ToSqlEndpointMapOutputWithContext(ctx context.Context) S
 	return pulumi.ToOutputWithContext(ctx, i).(SqlEndpointMapOutput)
 }
 
-func (i SqlEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlEndpoint] {
-	return pulumix.Output[map[string]*SqlEndpoint]{
-		OutputState: i.ToSqlEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlEndpointOutput struct{ *pulumi.OutputState }
 
 func (SqlEndpointOutput) ElementType() reflect.Type {
@@ -425,12 +406,6 @@ func (o SqlEndpointOutput) ToSqlEndpointOutputWithContext(ctx context.Context) S
 	return o
 }
 
-func (o SqlEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlEndpoint] {
-	return pulumix.Output[*SqlEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The identifier of the compartment used with the SQL Endpoint.
 func (o SqlEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -442,8 +417,8 @@ func (o SqlEndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of CreateSQLEndpointDetails.
-func (o SqlEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The SQL Endpoint name, which can be changed.
@@ -457,8 +432,8 @@ func (o SqlEndpointOutput) DriverShape() pulumi.StringOutput {
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
-func (o SqlEndpointOutput) DriverShapeConfig() SqlEndpointDriverShapeConfigOutput {
-	return o.ApplyT(func(v *SqlEndpoint) SqlEndpointDriverShapeConfigOutput { return v.DriverShapeConfig }).(SqlEndpointDriverShapeConfigOutput)
+func (o SqlEndpointOutput) DriverShapeConfig() SqlEndpointDriverShapeConfigPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) SqlEndpointDriverShapeConfigPtrOutput { return v.DriverShapeConfig }).(SqlEndpointDriverShapeConfigPtrOutput)
 }
 
 // The shape of the SQL Endpoint worker instance.
@@ -467,8 +442,8 @@ func (o SqlEndpointOutput) ExecutorShape() pulumi.StringOutput {
 }
 
 // This is used to configure the shape of the driver or executor if a flexible shape is used.
-func (o SqlEndpointOutput) ExecutorShapeConfig() SqlEndpointExecutorShapeConfigOutput {
-	return o.ApplyT(func(v *SqlEndpoint) SqlEndpointExecutorShapeConfigOutput { return v.ExecutorShapeConfig }).(SqlEndpointExecutorShapeConfigOutput)
+func (o SqlEndpointOutput) ExecutorShapeConfig() SqlEndpointExecutorShapeConfigPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) SqlEndpointExecutorShapeConfigPtrOutput { return v.ExecutorShapeConfig }).(SqlEndpointExecutorShapeConfigPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -477,18 +452,18 @@ func (o SqlEndpointOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-func (o SqlEndpointOutput) JdbcEndpointUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.JdbcEndpointUrl }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) JdbcEndpointUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.JdbcEndpointUrl }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure lake OCID
-func (o SqlEndpointOutput) LakeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LakeId }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) LakeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.LakeId }).(pulumi.StringPtrOutput)
 }
 
 // This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-func (o SqlEndpointOutput) LastAcceptedRequestToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.LastAcceptedRequestToken }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) LastAcceptedRequestToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.LastAcceptedRequestToken }).(pulumi.StringPtrOutput)
 }
 
 // The maximum number of executors.
@@ -522,13 +497,13 @@ func (o SqlEndpointOutput) SqlEndpointVersion() pulumi.StringOutput {
 }
 
 // The current state of the Sql Endpoint.
-func (o SqlEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-func (o SqlEndpointOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.StateMessage }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -537,21 +512,21 @@ func (o SqlEndpointOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-func (o SqlEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-func (o SqlEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o SqlEndpointOutput) WarehouseBucketUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringOutput { return v.WarehouseBucketUri }).(pulumi.StringOutput)
+func (o SqlEndpointOutput) WarehouseBucketUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringPtrOutput { return v.WarehouseBucketUri }).(pulumi.StringPtrOutput)
 }
 
 type SqlEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -566,12 +541,6 @@ func (o SqlEndpointArrayOutput) ToSqlEndpointArrayOutput() SqlEndpointArrayOutpu
 
 func (o SqlEndpointArrayOutput) ToSqlEndpointArrayOutputWithContext(ctx context.Context) SqlEndpointArrayOutput {
 	return o
-}
-
-func (o SqlEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlEndpoint] {
-	return pulumix.Output[[]*SqlEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlEndpointArrayOutput) Index(i pulumi.IntInput) SqlEndpointOutput {
@@ -592,12 +561,6 @@ func (o SqlEndpointMapOutput) ToSqlEndpointMapOutput() SqlEndpointMapOutput {
 
 func (o SqlEndpointMapOutput) ToSqlEndpointMapOutputWithContext(ctx context.Context) SqlEndpointMapOutput {
 	return o
-}
-
-func (o SqlEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlEndpoint] {
-	return pulumix.Output[map[string]*SqlEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlEndpointMapOutput) MapIndex(k pulumi.StringInput) SqlEndpointOutput {

@@ -49,12 +49,12 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
     /**
      * content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    readonly content: string;
+    readonly content?: string;
     readonly exadataInfrastructureId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.

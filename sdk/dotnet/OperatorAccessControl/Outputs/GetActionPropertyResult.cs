@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// <summary>
         /// Name of the property
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// value of the property
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetActionPropertyResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

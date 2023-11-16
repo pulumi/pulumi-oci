@@ -50,7 +50,7 @@ class GetNamespaceStorageOverlappingRecallsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,26 +63,17 @@ class GetNamespaceStorageOverlappingRecallsResult:
 
     @property
     @pulumi.getter(name="overlappingRecallCollections")
-    def overlapping_recall_collections(self) -> Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult']:
-        """
-        The list of overlapping_recall_collection.
-        """
+    def overlapping_recall_collections(self) -> Optional[Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult']]:
         return pulumi.get(self, "overlapping_recall_collections")
 
     @property
     @pulumi.getter(name="timeDataEnded")
     def time_data_ended(self) -> Optional[str]:
-        """
-        This is the end of the time range of the archival data
-        """
         return pulumi.get(self, "time_data_ended")
 
     @property
     @pulumi.getter(name="timeDataStarted")
     def time_data_started(self) -> Optional[str]:
-        """
-        This is the start of the time range of the archival data
-        """
         return pulumi.get(self, "time_data_started")
 
 
@@ -106,25 +97,7 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[pulumi.
                                               time_data_started: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceStorageOverlappingRecallsResult:
     """
-    This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the list of overlapping recalls made in the given timeframe
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=var["namespace_storage_overlapping_recall_namespace"],
-        time_data_ended=var["namespace_storage_overlapping_recall_time_data_ended"],
-        time_data_started=var["namespace_storage_overlapping_recall_time_data_started"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str time_data_ended: This is the end of the time range for recalled data
-    :param str time_data_started: This is the start of the time range for recalled data
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -150,24 +123,6 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
                                                      time_data_started: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageOverlappingRecallsResult]:
     """
-    This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the list of overlapping recalls made in the given timeframe
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=var["namespace_storage_overlapping_recall_namespace"],
-        time_data_ended=var["namespace_storage_overlapping_recall_time_data_ended"],
-        time_data_started=var["namespace_storage_overlapping_recall_time_data_started"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str time_data_ended: This is the end of the time range for recalled data
-    :param str time_data_started: This is the start of the time range for recalled data
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -70,12 +70,12 @@ export interface GetEtlRunsResult {
     /**
      * The list of etl_run_collection.
      */
-    readonly etlRunCollections: outputs.EmWarehouse.GetEtlRunsEtlRunCollection[];
+    readonly etlRunCollections?: outputs.EmWarehouse.GetEtlRunsEtlRunCollection[];
     readonly filters?: outputs.EmWarehouse.GetEtlRunsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.

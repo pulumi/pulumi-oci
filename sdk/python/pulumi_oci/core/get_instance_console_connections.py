@@ -43,9 +43,6 @@ class GetInstanceConsoleConnectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to contain the console connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -55,7 +52,7 @@ class GetInstanceConsoleConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,18 +60,12 @@ class GetInstanceConsoleConnectionsResult:
 
     @property
     @pulumi.getter(name="instanceConsoleConnections")
-    def instance_console_connections(self) -> Sequence['outputs.GetInstanceConsoleConnectionsInstanceConsoleConnectionResult']:
-        """
-        The list of instance_console_connections.
-        """
+    def instance_console_connections(self) -> Optional[Sequence['outputs.GetInstanceConsoleConnectionsInstanceConsoleConnectionResult']]:
         return pulumi.get(self, "instance_console_connections")
 
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[str]:
-        """
-        The OCID of the instance the console connection connects to.
-        """
         return pulumi.get(self, "instance_id")
 
 
@@ -96,25 +87,7 @@ def get_instance_console_connections(compartment_id: Optional[str] = None,
                                      instance_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceConsoleConnectionsResult:
     """
-    This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
-
-    Lists the console connections for the specified compartment or instance.
-
-    For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=var["compartment_id"],
-        instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -137,24 +110,6 @@ def get_instance_console_connections_output(compartment_id: Optional[pulumi.Inpu
                                             instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConsoleConnectionsResult]:
     """
-    This data source provides the list of Instance Console Connections in Oracle Cloud Infrastructure Core service.
-
-    Lists the console connections for the specified compartment or instance.
-
-    For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_console_connections = oci.Core.get_instance_console_connections(compartment_id=var["compartment_id"],
-        instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str instance_id: The OCID of the instance.
+    Use this data source to access information about an existing resource.
     """
     ...

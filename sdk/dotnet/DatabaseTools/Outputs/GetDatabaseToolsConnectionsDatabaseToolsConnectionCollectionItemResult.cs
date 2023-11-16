@@ -16,31 +16,31 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdvancedProperties;
+        public readonly ImmutableDictionary<string, object>? AdvancedProperties;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The connect descriptor or Easy Connect Naming method used to connect to the database.
         /// </summary>
-        public readonly string ConnectionString;
+        public readonly string? ConnectionString;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         /// </summary>
@@ -48,11 +48,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
-        public readonly string PrivateEndpointId;
+        public readonly string? PrivateEndpointId;
         /// <summary>
         /// A related resource
         /// </summary>
@@ -60,27 +60,27 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// A filter to return only resources their type matches the specified type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The database user name.
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
         /// <summary>
         /// The user password.
         /// </summary>
@@ -88,39 +88,39 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
 
         [OutputConstructor]
         private GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(
-            ImmutableDictionary<string, object> advancedProperties,
+            ImmutableDictionary<string, object>? advancedProperties,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string connectionString,
+            string? connectionString,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult> keyStores,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string privateEndpointId,
+            string? privateEndpointId,
 
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult> relatedResources,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type,
+            string? type,
 
-            string userName,
+            string? userName,
 
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult> userPasswords)
         {

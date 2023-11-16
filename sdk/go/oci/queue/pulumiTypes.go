@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetQueuesFilterArgs) ToGetQueuesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesFilterOutput)
 }
 
-func (i GetQueuesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueuesFilter] {
-	return pulumix.Output[GetQueuesFilter]{
-		OutputState: i.ToGetQueuesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetQueuesFilterArrayInput is an input type that accepts GetQueuesFilterArray and GetQueuesFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueuesFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetQueuesFilterArray) ToGetQueuesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesFilterArrayOutput)
 }
 
-func (i GetQueuesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesFilter] {
-	return pulumix.Output[[]GetQueuesFilter]{
-		OutputState: i.ToGetQueuesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueuesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQueuesFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetQueuesFilterOutput) ToGetQueuesFilterOutput() GetQueuesFilterOutput {
 
 func (o GetQueuesFilterOutput) ToGetQueuesFilterOutputWithContext(ctx context.Context) GetQueuesFilterOutput {
 	return o
-}
-
-func (o GetQueuesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesFilter] {
-	return pulumix.Output[GetQueuesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueuesFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetQueuesFilterArrayOutput) ToGetQueuesFilterArrayOutput() GetQueuesFilt
 
 func (o GetQueuesFilterArrayOutput) ToGetQueuesFilterArrayOutputWithContext(ctx context.Context) GetQueuesFilterArrayOutput {
 	return o
-}
-
-func (o GetQueuesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesFilter] {
-	return pulumix.Output[[]GetQueuesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueuesFilterArrayOutput) Index(i pulumi.IntInput) GetQueuesFilterOutput {
@@ -175,12 +150,6 @@ func (i GetQueuesQueueCollectionArgs) ToGetQueuesQueueCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionOutput)
 }
 
-func (i GetQueuesQueueCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollection] {
-	return pulumix.Output[GetQueuesQueueCollection]{
-		OutputState: i.ToGetQueuesQueueCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetQueuesQueueCollectionArrayInput is an input type that accepts GetQueuesQueueCollectionArray and GetQueuesQueueCollectionArrayOutput values.
 // You can construct a concrete instance of `GetQueuesQueueCollectionArrayInput` via:
 //
@@ -206,12 +175,6 @@ func (i GetQueuesQueueCollectionArray) ToGetQueuesQueueCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionArrayOutput)
 }
 
-func (i GetQueuesQueueCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollection] {
-	return pulumix.Output[[]GetQueuesQueueCollection]{
-		OutputState: i.ToGetQueuesQueueCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueuesQueueCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetQueuesQueueCollectionOutput) ElementType() reflect.Type {
@@ -224,12 +187,6 @@ func (o GetQueuesQueueCollectionOutput) ToGetQueuesQueueCollectionOutput() GetQu
 
 func (o GetQueuesQueueCollectionOutput) ToGetQueuesQueueCollectionOutputWithContext(ctx context.Context) GetQueuesQueueCollectionOutput {
 	return o
-}
-
-func (o GetQueuesQueueCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollection] {
-	return pulumix.Output[GetQueuesQueueCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueuesQueueCollectionOutput) Items() GetQueuesQueueCollectionItemArrayOutput {
@@ -250,12 +207,6 @@ func (o GetQueuesQueueCollectionArrayOutput) ToGetQueuesQueueCollectionArrayOutp
 	return o
 }
 
-func (o GetQueuesQueueCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollection] {
-	return pulumix.Output[[]GetQueuesQueueCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueuesQueueCollectionArrayOutput) Index(i pulumi.IntInput) GetQueuesQueueCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueuesQueueCollection {
 		return vs[0].([]GetQueuesQueueCollection)[vs[1].(int)]
@@ -264,41 +215,41 @@ func (o GetQueuesQueueCollectionArrayOutput) Index(i pulumi.IntInput) GetQueuesQ
 
 type GetQueuesQueueCollectionItem struct {
 	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
-	ChannelConsumptionLimit int `pulumi:"channelConsumptionLimit"`
+	ChannelConsumptionLimit *int `pulumi:"channelConsumptionLimit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
-	CustomEncryptionKeyId string `pulumi:"customEncryptionKeyId"`
+	CustomEncryptionKeyId *string `pulumi:"customEncryptionKeyId"`
 	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
-	DeadLetterQueueDeliveryCount int `pulumi:"deadLetterQueueDeliveryCount"`
+	DeadLetterQueueDeliveryCount *int `pulumi:"deadLetterQueueDeliveryCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique queue identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Any additional details about the current state of the queue.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
-	MessagesEndpoint string `pulumi:"messagesEndpoint"`
-	PurgeQueue       bool   `pulumi:"purgeQueue"`
-	PurgeType        string `pulumi:"purgeType"`
+	MessagesEndpoint *string `pulumi:"messagesEndpoint"`
+	PurgeQueue       *bool   `pulumi:"purgeQueue"`
+	PurgeType        *string `pulumi:"purgeType"`
 	// The retention period of the messages in the queue, in seconds.
-	RetentionInSeconds int `pulumi:"retentionInSeconds"`
+	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The default polling timeout of the messages in the queue, in seconds.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// The default visibility timeout of the messages consumed from the queue, in seconds.
-	VisibilityInSeconds int `pulumi:"visibilityInSeconds"`
+	VisibilityInSeconds *int `pulumi:"visibilityInSeconds"`
 }
 
 // GetQueuesQueueCollectionItemInput is an input type that accepts GetQueuesQueueCollectionItemArgs and GetQueuesQueueCollectionItemOutput values.
@@ -314,41 +265,41 @@ type GetQueuesQueueCollectionItemInput interface {
 
 type GetQueuesQueueCollectionItemArgs struct {
 	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
-	ChannelConsumptionLimit pulumi.IntInput `pulumi:"channelConsumptionLimit"`
+	ChannelConsumptionLimit pulumi.IntPtrInput `pulumi:"channelConsumptionLimit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
-	CustomEncryptionKeyId pulumi.StringInput `pulumi:"customEncryptionKeyId"`
+	CustomEncryptionKeyId pulumi.StringPtrInput `pulumi:"customEncryptionKeyId"`
 	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
-	DeadLetterQueueDeliveryCount pulumi.IntInput `pulumi:"deadLetterQueueDeliveryCount"`
+	DeadLetterQueueDeliveryCount pulumi.IntPtrInput `pulumi:"deadLetterQueueDeliveryCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique queue identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Any additional details about the current state of the queue.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
-	MessagesEndpoint pulumi.StringInput `pulumi:"messagesEndpoint"`
-	PurgeQueue       pulumi.BoolInput   `pulumi:"purgeQueue"`
-	PurgeType        pulumi.StringInput `pulumi:"purgeType"`
+	MessagesEndpoint pulumi.StringPtrInput `pulumi:"messagesEndpoint"`
+	PurgeQueue       pulumi.BoolPtrInput   `pulumi:"purgeQueue"`
+	PurgeType        pulumi.StringPtrInput `pulumi:"purgeType"`
 	// The retention period of the messages in the queue, in seconds.
-	RetentionInSeconds pulumi.IntInput `pulumi:"retentionInSeconds"`
+	RetentionInSeconds pulumi.IntPtrInput `pulumi:"retentionInSeconds"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The default polling timeout of the messages in the queue, in seconds.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// The default visibility timeout of the messages consumed from the queue, in seconds.
-	VisibilityInSeconds pulumi.IntInput `pulumi:"visibilityInSeconds"`
+	VisibilityInSeconds pulumi.IntPtrInput `pulumi:"visibilityInSeconds"`
 }
 
 func (GetQueuesQueueCollectionItemArgs) ElementType() reflect.Type {
@@ -361,12 +312,6 @@ func (i GetQueuesQueueCollectionItemArgs) ToGetQueuesQueueCollectionItemOutput()
 
 func (i GetQueuesQueueCollectionItemArgs) ToGetQueuesQueueCollectionItemOutputWithContext(ctx context.Context) GetQueuesQueueCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionItemOutput)
-}
-
-func (i GetQueuesQueueCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollectionItem] {
-	return pulumix.Output[GetQueuesQueueCollectionItem]{
-		OutputState: i.ToGetQueuesQueueCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueuesQueueCollectionItemArrayInput is an input type that accepts GetQueuesQueueCollectionItemArray and GetQueuesQueueCollectionItemArrayOutput values.
@@ -394,12 +339,6 @@ func (i GetQueuesQueueCollectionItemArray) ToGetQueuesQueueCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueuesQueueCollectionItemArrayOutput)
 }
 
-func (i GetQueuesQueueCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollectionItem] {
-	return pulumix.Output[[]GetQueuesQueueCollectionItem]{
-		OutputState: i.ToGetQueuesQueueCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueuesQueueCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetQueuesQueueCollectionItemOutput) ElementType() reflect.Type {
@@ -414,30 +353,24 @@ func (o GetQueuesQueueCollectionItemOutput) ToGetQueuesQueueCollectionItemOutput
 	return o
 }
 
-func (o GetQueuesQueueCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueuesQueueCollectionItem] {
-	return pulumix.Output[GetQueuesQueueCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
-func (o GetQueuesQueueCollectionItemOutput) ChannelConsumptionLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.ChannelConsumptionLimit }).(pulumi.IntOutput)
+func (o GetQueuesQueueCollectionItemOutput) ChannelConsumptionLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *int { return v.ChannelConsumptionLimit }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetQueuesQueueCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
-func (o GetQueuesQueueCollectionItemOutput) CustomEncryptionKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.CustomEncryptionKeyId }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) CustomEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.CustomEncryptionKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
-func (o GetQueuesQueueCollectionItemOutput) DeadLetterQueueDeliveryCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.DeadLetterQueueDeliveryCount }).(pulumi.IntOutput)
+func (o GetQueuesQueueCollectionItemOutput) DeadLetterQueueDeliveryCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *int { return v.DeadLetterQueueDeliveryCount }).(pulumi.IntPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -446,8 +379,8 @@ func (o GetQueuesQueueCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetQueuesQueueCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -456,36 +389,36 @@ func (o GetQueuesQueueCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique queue identifier.
-func (o GetQueuesQueueCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Any additional details about the current state of the queue.
-func (o GetQueuesQueueCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to use to consume or publish messages in the queue.
-func (o GetQueuesQueueCollectionItemOutput) MessagesEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.MessagesEndpoint }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) MessagesEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.MessagesEndpoint }).(pulumi.StringPtrOutput)
 }
 
-func (o GetQueuesQueueCollectionItemOutput) PurgeQueue() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) bool { return v.PurgeQueue }).(pulumi.BoolOutput)
+func (o GetQueuesQueueCollectionItemOutput) PurgeQueue() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *bool { return v.PurgeQueue }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetQueuesQueueCollectionItemOutput) PurgeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.PurgeType }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) PurgeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.PurgeType }).(pulumi.StringPtrOutput)
 }
 
 // The retention period of the messages in the queue, in seconds.
-func (o GetQueuesQueueCollectionItemOutput) RetentionInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.RetentionInSeconds }).(pulumi.IntOutput)
+func (o GetQueuesQueueCollectionItemOutput) RetentionInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *int { return v.RetentionInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetQueuesQueueCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -494,23 +427,23 @@ func (o GetQueuesQueueCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o GetQueuesQueueCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o GetQueuesQueueCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetQueuesQueueCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The default polling timeout of the messages in the queue, in seconds.
-func (o GetQueuesQueueCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetQueuesQueueCollectionItemOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The default visibility timeout of the messages consumed from the queue, in seconds.
-func (o GetQueuesQueueCollectionItemOutput) VisibilityInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.VisibilityInSeconds }).(pulumi.IntOutput)
+func (o GetQueuesQueueCollectionItemOutput) VisibilityInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) *int { return v.VisibilityInSeconds }).(pulumi.IntPtrOutput)
 }
 
 type GetQueuesQueueCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -525,12 +458,6 @@ func (o GetQueuesQueueCollectionItemArrayOutput) ToGetQueuesQueueCollectionItemA
 
 func (o GetQueuesQueueCollectionItemArrayOutput) ToGetQueuesQueueCollectionItemArrayOutputWithContext(ctx context.Context) GetQueuesQueueCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetQueuesQueueCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueuesQueueCollectionItem] {
-	return pulumix.Output[[]GetQueuesQueueCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueuesQueueCollectionItemArrayOutput) Index(i pulumi.IntInput) GetQueuesQueueCollectionItemOutput {

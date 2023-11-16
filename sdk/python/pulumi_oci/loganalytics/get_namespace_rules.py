@@ -52,17 +52,11 @@ class GetNamespaceRulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The ingest time rule or scheduled task display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -72,7 +66,7 @@ class GetNamespaceRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -81,9 +75,6 @@ class GetNamespaceRulesResult:
     @property
     @pulumi.getter
     def kind(self) -> Optional[str]:
-        """
-        The kind of rule - either an ingest time rule or a scheduled task.
-        """
         return pulumi.get(self, "kind")
 
     @property
@@ -93,18 +84,12 @@ class GetNamespaceRulesResult:
 
     @property
     @pulumi.getter(name="ruleSummaryCollections")
-    def rule_summary_collections(self) -> Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionResult']:
-        """
-        The list of rule_summary_collection.
-        """
+    def rule_summary_collections(self) -> Optional[Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionResult']]:
         return pulumi.get(self, "rule_summary_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the logging analytics rule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
                         state: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceRulesResult:
     """
-    This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rule_namespace"],
-        display_name=var["namespace_rule_display_name"],
-        kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-    :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceRulesResult]:
     """
-    This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rule_namespace"],
-        display_name=var["namespace_rule_display_name"],
-        kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-    :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
+    Use this data source to access information about an existing resource.
     """
     ...

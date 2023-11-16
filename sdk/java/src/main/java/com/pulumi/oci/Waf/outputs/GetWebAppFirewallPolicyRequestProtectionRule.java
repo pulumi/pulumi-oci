@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPolicyRequestProtectionRule {
@@ -17,101 +19,101 @@ public final class GetWebAppFirewallPolicyRequestProtectionRule {
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    private String actionName;
+    private @Nullable String actionName;
     /**
      * @return An expression that determines whether or not the rule action should be executed.
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    private String conditionLanguage;
+    private @Nullable String conditionLanguage;
     /**
      * @return Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
      * 
      */
-    private Boolean isBodyInspectionEnabled;
+    private @Nullable Boolean isBodyInspectionEnabled;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
-    private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities;
+    private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities;
     /**
      * @return Settings for protection capabilities
      * 
      */
-    private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
+    private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetWebAppFirewallPolicyRequestProtectionRule() {}
     /**
      * @return Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
      * 
      */
-    public String actionName() {
-        return this.actionName;
+    public Optional<String> actionName() {
+        return Optional.ofNullable(this.actionName);
     }
     /**
      * @return An expression that determines whether or not the rule action should be executed.
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return The language used to parse condition from field `condition`. Available languages:
      * * **JMESPATH** an extended JMESPath language syntax.
      * 
      */
-    public String conditionLanguage() {
-        return this.conditionLanguage;
+    public Optional<String> conditionLanguage() {
+        return Optional.ofNullable(this.conditionLanguage);
     }
     /**
      * @return Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
      * 
      */
-    public Boolean isBodyInspectionEnabled() {
-        return this.isBodyInspectionEnabled;
+    public Optional<Boolean> isBodyInspectionEnabled() {
+        return Optional.ofNullable(this.isBodyInspectionEnabled);
     }
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return An ordered list that references OCI-managed protection capabilities. Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order is decided at runtime for improved performance. The array cannot contain entries with the same pair of capability key and version more than once.
      * 
      */
     public List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities() {
-        return this.protectionCapabilities;
+        return this.protectionCapabilities == null ? List.of() : this.protectionCapabilities;
     }
     /**
      * @return Settings for protection capabilities
      * 
      */
     public List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings() {
-        return this.protectionCapabilitySettings;
+        return this.protectionCapabilitySettings == null ? List.of() : this.protectionCapabilitySettings;
     }
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -123,14 +125,14 @@ public final class GetWebAppFirewallPolicyRequestProtectionRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String actionName;
-        private String condition;
-        private String conditionLanguage;
-        private Boolean isBodyInspectionEnabled;
-        private String name;
-        private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities;
-        private List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
-        private String type;
+        private @Nullable String actionName;
+        private @Nullable String condition;
+        private @Nullable String conditionLanguage;
+        private @Nullable Boolean isBodyInspectionEnabled;
+        private @Nullable String name;
+        private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities;
+        private @Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetWebAppFirewallPolicyRequestProtectionRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,49 +147,49 @@ public final class GetWebAppFirewallPolicyRequestProtectionRule {
         }
 
         @CustomType.Setter
-        public Builder actionName(String actionName) {
-            this.actionName = Objects.requireNonNull(actionName);
+        public Builder actionName(@Nullable String actionName) {
+            this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder conditionLanguage(String conditionLanguage) {
-            this.conditionLanguage = Objects.requireNonNull(conditionLanguage);
+        public Builder conditionLanguage(@Nullable String conditionLanguage) {
+            this.conditionLanguage = conditionLanguage;
             return this;
         }
         @CustomType.Setter
-        public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
-            this.isBodyInspectionEnabled = Objects.requireNonNull(isBodyInspectionEnabled);
+        public Builder isBodyInspectionEnabled(@Nullable Boolean isBodyInspectionEnabled) {
+            this.isBodyInspectionEnabled = isBodyInspectionEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder protectionCapabilities(List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities) {
-            this.protectionCapabilities = Objects.requireNonNull(protectionCapabilities);
+        public Builder protectionCapabilities(@Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability> protectionCapabilities) {
+            this.protectionCapabilities = protectionCapabilities;
             return this;
         }
         public Builder protectionCapabilities(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapability... protectionCapabilities) {
             return protectionCapabilities(List.of(protectionCapabilities));
         }
         @CustomType.Setter
-        public Builder protectionCapabilitySettings(List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings) {
-            this.protectionCapabilitySettings = Objects.requireNonNull(protectionCapabilitySettings);
+        public Builder protectionCapabilitySettings(@Nullable List<GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting> protectionCapabilitySettings) {
+            this.protectionCapabilitySettings = protectionCapabilitySettings;
             return this;
         }
         public Builder protectionCapabilitySettings(GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySetting... protectionCapabilitySettings) {
             return protectionCapabilitySettings(List.of(protectionCapabilitySettings));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPolicyRequestProtectionRule build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pool resource in Oracle Cloud Infrastructure Data Flow service.
@@ -60,38 +59,38 @@ type LookupPoolArgs struct {
 // A collection of values returned by getPool.
 type LookupPoolResult struct {
 	// The OCID of a compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// List of PoolConfig items.
 	Configurations []GetPoolConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-	IdleTimeoutInMinutes int `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes *int `pulumi:"idleTimeoutInMinutes"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName string `pulumi:"ownerUserName"`
-	PoolId        string `pulumi:"poolId"`
+	OwnerUserName *string `pulumi:"ownerUserName"`
+	PoolId        string  `pulumi:"poolId"`
 	// A collection of metrics related to a particular pool.
 	PoolMetrics []GetPoolPoolMetric `pulumi:"poolMetrics"`
 	// A list of schedules for pool to auto start and stop.
 	Schedules []GetPoolSchedule `pulumi:"schedules"`
 	// The current state of this pool.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupPoolOutput(ctx *pulumi.Context, args LookupPoolOutputArgs, opts ...pulumi.InvokeOption) LookupPoolResultOutput {
@@ -132,15 +131,9 @@ func (o LookupPoolResultOutput) ToLookupPoolResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o LookupPoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPoolResult] {
-	return pulumix.Output[LookupPoolResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of a compartment.
-func (o LookupPoolResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // List of PoolConfig items.
@@ -154,13 +147,13 @@ func (o LookupPoolResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly description. Avoid entering confidential information.
-func (o LookupPoolResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-func (o LookupPoolResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -169,28 +162,28 @@ func (o LookupPoolResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-func (o LookupPoolResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-func (o LookupPoolResultOutput) IdleTimeoutInMinutes() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPoolResult) int { return v.IdleTimeoutInMinutes }).(pulumi.IntOutput)
+func (o LookupPoolResultOutput) IdleTimeoutInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *int { return v.IdleTimeoutInMinutes }).(pulumi.IntPtrOutput)
 }
 
 // The detailed messages about the lifecycle state.
-func (o LookupPoolResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.
-func (o LookupPoolResultOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o LookupPoolResultOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPoolResultOutput) PoolId() pulumi.StringOutput {
@@ -208,18 +201,18 @@ func (o LookupPoolResultOutput) Schedules() GetPoolScheduleArrayOutput {
 }
 
 // The current state of this pool.
-func (o LookupPoolResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o LookupPoolResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o LookupPoolResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPoolResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupPoolResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPoolResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

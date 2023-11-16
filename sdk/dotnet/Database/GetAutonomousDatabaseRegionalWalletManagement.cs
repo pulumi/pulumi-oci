@@ -72,29 +72,29 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetAutonomousDatabaseRegionalWalletManagementResult
     {
-        public readonly int GracePeriod;
-        public readonly string Id;
-        public readonly bool ShouldRotate;
+        public readonly int? GracePeriod;
+        public readonly string? Id;
+        public readonly bool? ShouldRotate;
         /// <summary>
         /// The current lifecycle state of the Autonomous Database wallet.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the wallet was last rotated.
         /// </summary>
-        public readonly string TimeRotated;
+        public readonly string? TimeRotated;
 
         [OutputConstructor]
         private GetAutonomousDatabaseRegionalWalletManagementResult(
-            int gracePeriod,
+            int? gracePeriod,
 
-            string id,
+            string? id,
 
-            bool shouldRotate,
+            bool? shouldRotate,
 
-            string state,
+            string? state,
 
-            string timeRotated)
+            string? timeRotated)
         {
             GracePeriod = gracePeriod;
             Id = id;

@@ -6,6 +6,8 @@ package com.pulumi.oci.Apm.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataKeysDataKey {
@@ -13,39 +15,39 @@ public final class GetDataKeysDataKey {
      * @return Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Type of the Data Key.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Value of the Data Key.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDataKeysDataKey() {}
     /**
      * @return Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Type of the Data Key.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Value of the Data Key.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDataKeysDataKey {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String type;
-        private String value;
+        private @Nullable String name;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDataKeysDataKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDataKeysDataKey {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDataKeysDataKey build() {

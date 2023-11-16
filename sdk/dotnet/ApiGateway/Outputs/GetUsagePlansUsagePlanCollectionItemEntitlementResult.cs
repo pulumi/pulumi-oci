@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// An entitlement name, unique within a usage plan.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Quota policy for a usage plan.
         /// </summary>
@@ -36,9 +36,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetUsagePlansUsagePlanCollectionItemEntitlementResult(
-            string description,
+            string? description,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult> quotas,
 

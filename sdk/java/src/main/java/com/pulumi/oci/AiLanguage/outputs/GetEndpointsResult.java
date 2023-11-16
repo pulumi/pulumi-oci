@@ -28,7 +28,7 @@ public final class GetEndpointsResult {
      * @return The list of endpoint_collection.
      * 
      */
-    private List<GetEndpointsEndpointCollection> endpointCollections;
+    private @Nullable List<GetEndpointsEndpointCollection> endpointCollections;
     private @Nullable List<GetEndpointsFilter> filters;
     /**
      * @return Unique identifier endpoint OCID of an endpoint that is immutable on creation.
@@ -71,7 +71,7 @@ public final class GetEndpointsResult {
      * 
      */
     public List<GetEndpointsEndpointCollection> endpointCollections() {
-        return this.endpointCollections;
+        return this.endpointCollections == null ? List.of() : this.endpointCollections;
     }
     public List<GetEndpointsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -116,7 +116,7 @@ public final class GetEndpointsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetEndpointsEndpointCollection> endpointCollections;
+        private @Nullable List<GetEndpointsEndpointCollection> endpointCollections;
         private @Nullable List<GetEndpointsFilter> filters;
         private @Nullable String id;
         private @Nullable String modelId;
@@ -146,8 +146,8 @@ public final class GetEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder endpointCollections(List<GetEndpointsEndpointCollection> endpointCollections) {
-            this.endpointCollections = Objects.requireNonNull(endpointCollections);
+        public Builder endpointCollections(@Nullable List<GetEndpointsEndpointCollection> endpointCollections) {
+            this.endpointCollections = endpointCollections;
             return this;
         }
         public Builder endpointCollections(GetEndpointsEndpointCollection... endpointCollections) {

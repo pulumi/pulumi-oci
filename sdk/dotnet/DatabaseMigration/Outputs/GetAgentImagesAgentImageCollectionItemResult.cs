@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// URL to download Agent Image of the ODMS Agent.
         /// </summary>
-        public readonly string DownloadUrl;
+        public readonly string? DownloadUrl;
         /// <summary>
         /// ODMS Agent Image version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetAgentImagesAgentImageCollectionItemResult(
-            string downloadUrl,
+            string? downloadUrl,
 
-            string version)
+            string? version)
         {
             DownloadUrl = downloadUrl;
             Version = version;

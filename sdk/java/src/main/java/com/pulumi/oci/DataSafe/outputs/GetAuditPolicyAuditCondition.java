@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditPolicyAuditCondition {
@@ -16,51 +18,51 @@ public final class GetAuditPolicyAuditCondition {
      * @return Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      * 
      */
-    private String auditPolicyName;
+    private @Nullable String auditPolicyName;
     /**
      * @return Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
      * 
      */
-    private List<GetAuditPolicyAuditConditionEnableCondition> enableConditions;
+    private @Nullable List<GetAuditPolicyAuditConditionEnableCondition> enableConditions;
     /**
      * @return Indicates whether the Data Safe user activity on the target database will be audited by the policy.
      * 
      */
-    private Boolean isDataSafeServiceAccountAudited;
+    private @Nullable Boolean isDataSafeServiceAccountAudited;
     /**
      * @return Indicates whether the privileged user list is managed by Data Safe.
      * 
      */
-    private Boolean isPrivUsersManagedByDataSafe;
+    private @Nullable Boolean isPrivUsersManagedByDataSafe;
 
     private GetAuditPolicyAuditCondition() {}
     /**
      * @return Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
      * 
      */
-    public String auditPolicyName() {
-        return this.auditPolicyName;
+    public Optional<String> auditPolicyName() {
+        return Optional.ofNullable(this.auditPolicyName);
     }
     /**
      * @return Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
      * 
      */
     public List<GetAuditPolicyAuditConditionEnableCondition> enableConditions() {
-        return this.enableConditions;
+        return this.enableConditions == null ? List.of() : this.enableConditions;
     }
     /**
      * @return Indicates whether the Data Safe user activity on the target database will be audited by the policy.
      * 
      */
-    public Boolean isDataSafeServiceAccountAudited() {
-        return this.isDataSafeServiceAccountAudited;
+    public Optional<Boolean> isDataSafeServiceAccountAudited() {
+        return Optional.ofNullable(this.isDataSafeServiceAccountAudited);
     }
     /**
      * @return Indicates whether the privileged user list is managed by Data Safe.
      * 
      */
-    public Boolean isPrivUsersManagedByDataSafe() {
-        return this.isPrivUsersManagedByDataSafe;
+    public Optional<Boolean> isPrivUsersManagedByDataSafe() {
+        return Optional.ofNullable(this.isPrivUsersManagedByDataSafe);
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetAuditPolicyAuditCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String auditPolicyName;
-        private List<GetAuditPolicyAuditConditionEnableCondition> enableConditions;
-        private Boolean isDataSafeServiceAccountAudited;
-        private Boolean isPrivUsersManagedByDataSafe;
+        private @Nullable String auditPolicyName;
+        private @Nullable List<GetAuditPolicyAuditConditionEnableCondition> enableConditions;
+        private @Nullable Boolean isDataSafeServiceAccountAudited;
+        private @Nullable Boolean isPrivUsersManagedByDataSafe;
         public Builder() {}
         public Builder(GetAuditPolicyAuditCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,26 +88,26 @@ public final class GetAuditPolicyAuditCondition {
         }
 
         @CustomType.Setter
-        public Builder auditPolicyName(String auditPolicyName) {
-            this.auditPolicyName = Objects.requireNonNull(auditPolicyName);
+        public Builder auditPolicyName(@Nullable String auditPolicyName) {
+            this.auditPolicyName = auditPolicyName;
             return this;
         }
         @CustomType.Setter
-        public Builder enableConditions(List<GetAuditPolicyAuditConditionEnableCondition> enableConditions) {
-            this.enableConditions = Objects.requireNonNull(enableConditions);
+        public Builder enableConditions(@Nullable List<GetAuditPolicyAuditConditionEnableCondition> enableConditions) {
+            this.enableConditions = enableConditions;
             return this;
         }
         public Builder enableConditions(GetAuditPolicyAuditConditionEnableCondition... enableConditions) {
             return enableConditions(List.of(enableConditions));
         }
         @CustomType.Setter
-        public Builder isDataSafeServiceAccountAudited(Boolean isDataSafeServiceAccountAudited) {
-            this.isDataSafeServiceAccountAudited = Objects.requireNonNull(isDataSafeServiceAccountAudited);
+        public Builder isDataSafeServiceAccountAudited(@Nullable Boolean isDataSafeServiceAccountAudited) {
+            this.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrivUsersManagedByDataSafe(Boolean isPrivUsersManagedByDataSafe) {
-            this.isPrivUsersManagedByDataSafe = Objects.requireNonNull(isPrivUsersManagedByDataSafe);
+        public Builder isPrivUsersManagedByDataSafe(@Nullable Boolean isPrivUsersManagedByDataSafe) {
+            this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
             return this;
         }
         public GetAuditPolicyAuditCondition build() {

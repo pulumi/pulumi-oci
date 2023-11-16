@@ -61,7 +61,7 @@ export interface GetApplicationVipsResult {
     /**
      * The list of application_vips.
      */
-    readonly applicationVips: outputs.Database.GetApplicationVipsApplicationVip[];
+    readonly applicationVips?: outputs.Database.GetApplicationVipsApplicationVip[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      */
@@ -74,7 +74,7 @@ export interface GetApplicationVipsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the application virtual IP (VIP) address.
      */

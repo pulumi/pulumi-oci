@@ -38,26 +38,17 @@ class GetQueryResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The query OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="queryDefinitions")
-    def query_definitions(self) -> Sequence['outputs.GetQueryQueryDefinitionResult']:
-        """
-        The common fields for queries.
-        """
+    def query_definitions(self) -> Optional[Sequence['outputs.GetQueryQueryDefinitionResult']]:
         return pulumi.get(self, "query_definitions")
 
     @property
@@ -81,21 +72,7 @@ class AwaitableGetQueryResult(GetQueryResult):
 def get_query(query_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueryResult:
     """
-    This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved query.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_query = oci.MeteringComputation.get_query(query_id=oci_metering_computation_query["test_query"]["id"])
-    ```
-
-
-    :param str query_id: The query unique OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['queryId'] = query_id
@@ -113,20 +90,6 @@ def get_query(query_id: Optional[str] = None,
 def get_query_output(query_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueryResult]:
     """
-    This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved query.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_query = oci.MeteringComputation.get_query(query_id=oci_metering_computation_query["test_query"]["id"])
-    ```
-
-
-    :param str query_id: The query unique OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

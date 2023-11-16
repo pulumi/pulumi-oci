@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
@@ -88,18 +87,18 @@ type NetworkSecurityGroupSecurityRule struct {
 	pulumi.CustomResourceState
 
 	// An optional description of your choice for the rule. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
 	//
 	// Allowed values:
 	// * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
 	// * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
-	Destination pulumi.StringOutput `pulumi:"destination"`
+	Destination pulumi.StringPtrOutput `pulumi:"destination"`
 	// Type of destination for the rule. Required if `direction` = `EGRESS`.
 	//
 	// Allowed values:
-	DestinationType pulumi.StringOutput `pulumi:"destinationType"`
+	DestinationType pulumi.StringPtrOutput `pulumi:"destinationType"`
 	// Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 	Direction pulumi.StringOutput `pulumi:"direction"`
 	// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
@@ -109,7 +108,7 @@ type NetworkSecurityGroupSecurityRule struct {
 	// If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and codes are allowed. If you do provide this object, the type is required and the code is optional. To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify multiple codes for a single type, create a separate security list rule for each.
 	IcmpOptions NetworkSecurityGroupSecurityRuleIcmpOptionsPtrOutput `pulumi:"icmpOptions"`
 	// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
-	IsValid pulumi.BoolOutput `pulumi:"isValid"`
+	IsValid pulumi.BoolPtrOutput `pulumi:"isValid"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
 	NetworkSecurityGroupId pulumi.StringOutput `pulumi:"networkSecurityGroupId"`
 	// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
@@ -122,13 +121,13 @@ type NetworkSecurityGroupSecurityRule struct {
 	// * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
 	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
-	SourceType pulumi.StringOutput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-	Stateless pulumi.BoolOutput `pulumi:"stateless"`
+	Stateless pulumi.BoolPtrOutput `pulumi:"stateless"`
 	// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
 	TcpOptions NetworkSecurityGroupSecurityRuleTcpOptionsPtrOutput `pulumi:"tcpOptions"`
 	// The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
 	UdpOptions NetworkSecurityGroupSecurityRuleUdpOptionsPtrOutput `pulumi:"udpOptions"`
 }
@@ -379,12 +378,6 @@ func (i *NetworkSecurityGroupSecurityRule) ToNetworkSecurityGroupSecurityRuleOut
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupSecurityRuleOutput)
 }
 
-func (i *NetworkSecurityGroupSecurityRule) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[*NetworkSecurityGroupSecurityRule]{
-		OutputState: i.ToNetworkSecurityGroupSecurityRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkSecurityGroupSecurityRuleArrayInput is an input type that accepts NetworkSecurityGroupSecurityRuleArray and NetworkSecurityGroupSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkSecurityGroupSecurityRuleArrayInput` via:
 //
@@ -408,12 +401,6 @@ func (i NetworkSecurityGroupSecurityRuleArray) ToNetworkSecurityGroupSecurityRul
 
 func (i NetworkSecurityGroupSecurityRuleArray) ToNetworkSecurityGroupSecurityRuleArrayOutputWithContext(ctx context.Context) NetworkSecurityGroupSecurityRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupSecurityRuleArrayOutput)
-}
-
-func (i NetworkSecurityGroupSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[[]*NetworkSecurityGroupSecurityRule]{
-		OutputState: i.ToNetworkSecurityGroupSecurityRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkSecurityGroupSecurityRuleMapInput is an input type that accepts NetworkSecurityGroupSecurityRuleMap and NetworkSecurityGroupSecurityRuleMapOutput values.
@@ -441,12 +428,6 @@ func (i NetworkSecurityGroupSecurityRuleMap) ToNetworkSecurityGroupSecurityRuleM
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityGroupSecurityRuleMapOutput)
 }
 
-func (i NetworkSecurityGroupSecurityRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule]{
-		OutputState: i.ToNetworkSecurityGroupSecurityRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkSecurityGroupSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkSecurityGroupSecurityRuleOutput) ElementType() reflect.Type {
@@ -461,15 +442,9 @@ func (o NetworkSecurityGroupSecurityRuleOutput) ToNetworkSecurityGroupSecurityRu
 	return o
 }
 
-func (o NetworkSecurityGroupSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[*NetworkSecurityGroupSecurityRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An optional description of your choice for the rule. Avoid entering confidential information.
-func (o NetworkSecurityGroupSecurityRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
@@ -478,15 +453,15 @@ func (o NetworkSecurityGroupSecurityRuleOutput) Description() pulumi.StringOutpu
 // * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56` IPv6 addressing is supported for all commercial and government regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
 // * The `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/), if you're setting up a security rule for traffic destined for a particular `Service` through a service gateway. For example: `oci-phx-objectstorage`.
 // * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) in the same VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control traffic between VNICs in the same NSG.
-func (o NetworkSecurityGroupSecurityRuleOutput) Destination() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.Destination }).(pulumi.StringOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) Destination() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringPtrOutput { return v.Destination }).(pulumi.StringPtrOutput)
 }
 
 // Type of destination for the rule. Required if `direction` = `EGRESS`.
 //
 // Allowed values:
-func (o NetworkSecurityGroupSecurityRuleOutput) DestinationType() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.DestinationType }).(pulumi.StringOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) DestinationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringPtrOutput { return v.DestinationType }).(pulumi.StringPtrOutput)
 }
 
 // Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
@@ -506,8 +481,8 @@ func (o NetworkSecurityGroupSecurityRuleOutput) IcmpOptions() NetworkSecurityGro
 }
 
 // Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
-func (o NetworkSecurityGroupSecurityRuleOutput) IsValid() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.BoolOutput { return v.IsValid }).(pulumi.BoolOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) IsValid() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.BoolPtrOutput { return v.IsValid }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -531,13 +506,13 @@ func (o NetworkSecurityGroupSecurityRuleOutput) Source() pulumi.StringPtrOutput 
 }
 
 // Type of source for the rule. Required if `direction` = `INGRESS`.
-func (o NetworkSecurityGroupSecurityRuleOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-func (o NetworkSecurityGroupSecurityRuleOutput) Stateless() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.BoolOutput { return v.Stateless }).(pulumi.BoolOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) Stateless() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.BoolPtrOutput { return v.Stateless }).(pulumi.BoolPtrOutput)
 }
 
 // Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
@@ -548,8 +523,8 @@ func (o NetworkSecurityGroupSecurityRuleOutput) TcpOptions() NetworkSecurityGrou
 }
 
 // The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o NetworkSecurityGroupSecurityRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NetworkSecurityGroupSecurityRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSecurityGroupSecurityRule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
@@ -573,12 +548,6 @@ func (o NetworkSecurityGroupSecurityRuleArrayOutput) ToNetworkSecurityGroupSecur
 	return o
 }
 
-func (o NetworkSecurityGroupSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[[]*NetworkSecurityGroupSecurityRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkSecurityGroupSecurityRuleArrayOutput) Index(i pulumi.IntInput) NetworkSecurityGroupSecurityRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkSecurityGroupSecurityRule {
 		return vs[0].([]*NetworkSecurityGroupSecurityRule)[vs[1].(int)]
@@ -597,12 +566,6 @@ func (o NetworkSecurityGroupSecurityRuleMapOutput) ToNetworkSecurityGroupSecurit
 
 func (o NetworkSecurityGroupSecurityRuleMapOutput) ToNetworkSecurityGroupSecurityRuleMapOutputWithContext(ctx context.Context) NetworkSecurityGroupSecurityRuleMapOutput {
 	return o
-}
-
-func (o NetworkSecurityGroupSecurityRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule] {
-	return pulumix.Output[map[string]*NetworkSecurityGroupSecurityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkSecurityGroupSecurityRuleMapOutput) MapIndex(k pulumi.StringInput) NetworkSecurityGroupSecurityRuleOutput {

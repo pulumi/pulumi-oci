@@ -23,26 +23,6 @@ class ExportArgs:
                  is_idmap_groups_for_sys_auth: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Export resource.
-        :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        :param pulumi.Input[str] path: Path used to access the associated file system.
-               
-               Avoid entering confidential information.
-               
-               Example: `/mediafiles`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
-               [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-               
-               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-               
-               **If set to the empty array then the export will not be visible to any clients.**
-               
-               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         """
         pulumi.set(__self__, "export_set_id", export_set_id)
         pulumi.set(__self__, "file_system_id", file_system_id)
@@ -55,9 +35,6 @@ class ExportArgs:
     @property
     @pulumi.getter(name="exportSetId")
     def export_set_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        """
         return pulumi.get(self, "export_set_id")
 
     @export_set_id.setter
@@ -67,9 +44,6 @@ class ExportArgs:
     @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        """
         return pulumi.get(self, "file_system_id")
 
     @file_system_id.setter
@@ -79,17 +53,6 @@ class ExportArgs:
     @property
     @pulumi.getter
     def path(self) -> pulumi.Input[str]:
-        """
-        Path used to access the associated file system.
-
-        Avoid entering confidential information.
-
-        Example: `/mediafiles`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -99,16 +62,6 @@ class ExportArgs:
     @property
     @pulumi.getter(name="exportOptions")
     def export_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
-        """
-        (Updatable) Export options for the new export. If left unspecified, defaults to:
-        [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-
-        **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-
-        **If set to the empty array then the export will not be visible to any clients.**
-
-        The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        """
         return pulumi.get(self, "export_options")
 
     @export_options.setter
@@ -118,9 +71,6 @@ class ExportArgs:
     @property
     @pulumi.getter(name="isIdmapGroupsForSysAuth")
     def is_idmap_groups_for_sys_auth(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        """
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
 
     @is_idmap_groups_for_sys_auth.setter
@@ -140,28 +90,6 @@ class _ExportState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Export resources.
-        :param pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
-               [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-               
-               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-               
-               **If set to the empty array then the export will not be visible to any clients.**
-               
-               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        :param pulumi.Input[str] path: Path used to access the associated file system.
-               
-               Avoid entering confidential information.
-               
-               Example: `/mediafiles`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of this export.
-        :param pulumi.Input[str] time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if export_options is not None:
             pulumi.set(__self__, "export_options", export_options)
@@ -181,16 +109,6 @@ class _ExportState:
     @property
     @pulumi.getter(name="exportOptions")
     def export_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]]]:
-        """
-        (Updatable) Export options for the new export. If left unspecified, defaults to:
-        [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-
-        **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-
-        **If set to the empty array then the export will not be visible to any clients.**
-
-        The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        """
         return pulumi.get(self, "export_options")
 
     @export_options.setter
@@ -200,9 +118,6 @@ class _ExportState:
     @property
     @pulumi.getter(name="exportSetId")
     def export_set_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        """
         return pulumi.get(self, "export_set_id")
 
     @export_set_id.setter
@@ -212,9 +127,6 @@ class _ExportState:
     @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        """
         return pulumi.get(self, "file_system_id")
 
     @file_system_id.setter
@@ -224,9 +136,6 @@ class _ExportState:
     @property
     @pulumi.getter(name="isIdmapGroupsForSysAuth")
     def is_idmap_groups_for_sys_auth(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        """
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
 
     @is_idmap_groups_for_sys_auth.setter
@@ -236,17 +145,6 @@ class _ExportState:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        Path used to access the associated file system.
-
-        Avoid entering confidential information.
-
-        Example: `/mediafiles`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -256,9 +154,6 @@ class _ExportState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of this export.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -268,9 +163,6 @@ class _ExportState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -290,64 +182,9 @@ class Export(pulumi.CustomResource):
                  path: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new export in the specified export set, path, and
-        file system.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_export = oci.file_storage.Export("testExport",
-            export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-            file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-            path=var["export_path"],
-            export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=var["export_export_options_source"],
-                access=var["export_export_options_access"],
-                allowed_auths=var["export_export_options_allowed_auth"],
-                anonymous_gid=var["export_export_options_anonymous_gid"],
-                anonymous_uid=var["export_export_options_anonymous_uid"],
-                identity_squash=var["export_export_options_identity_squash"],
-                is_anonymous_access_allowed=var["export_export_options_is_anonymous_access_allowed"],
-                require_privileged_source_port=var["export_export_options_require_privileged_source_port"],
-            )],
-            is_idmap_groups_for_sys_auth=var["export_is_idmap_groups_for_sys_auth"])
-        ```
-
-        ## Import
-
-        Exports can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/export:Export test_export "id"
-        ```
-
+        Create a Export resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
-               [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-               
-               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-               
-               **If set to the empty array then the export will not be visible to any clients.**
-               
-               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        :param pulumi.Input[str] path: Path used to access the associated file system.
-               
-               Avoid entering confidential information.
-               
-               Example: `/mediafiles`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -356,42 +193,7 @@ class Export(pulumi.CustomResource):
                  args: ExportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new export in the specified export set, path, and
-        file system.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_export = oci.file_storage.Export("testExport",
-            export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-            file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-            path=var["export_path"],
-            export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=var["export_export_options_source"],
-                access=var["export_export_options_access"],
-                allowed_auths=var["export_export_options_allowed_auth"],
-                anonymous_gid=var["export_export_options_anonymous_gid"],
-                anonymous_uid=var["export_export_options_anonymous_uid"],
-                identity_squash=var["export_export_options_identity_squash"],
-                is_anonymous_access_allowed=var["export_export_options_is_anonymous_access_allowed"],
-                require_privileged_source_port=var["export_export_options_require_privileged_source_port"],
-            )],
-            is_idmap_groups_for_sys_auth=var["export_is_idmap_groups_for_sys_auth"])
-        ```
-
-        ## Import
-
-        Exports can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/export:Export test_export "id"
-        ```
-
+        Create a Export resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExportArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -458,28 +260,6 @@ class Export(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ExportExportOptionArgs']]]] export_options: (Updatable) Export options for the new export. If left unspecified, defaults to:
-               [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-               
-               **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-               
-               **If set to the empty array then the export will not be visible to any clients.**
-               
-               The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        :param pulumi.Input[str] export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        :param pulumi.Input[str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        :param pulumi.Input[bool] is_idmap_groups_for_sys_auth: (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        :param pulumi.Input[str] path: Path used to access the associated file system.
-               
-               Avoid entering confidential information.
-               
-               Example: `/mediafiles`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of this export.
-        :param pulumi.Input[str] time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -496,72 +276,36 @@ class Export(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="exportOptions")
-    def export_options(self) -> pulumi.Output[Sequence['outputs.ExportExportOption']]:
-        """
-        (Updatable) Export options for the new export. If left unspecified, defaults to:
-        [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
-
-        **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
-
-        **If set to the empty array then the export will not be visible to any clients.**
-
-        The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
-        """
+    def export_options(self) -> pulumi.Output[Optional[Sequence['outputs.ExportExportOption']]]:
         return pulumi.get(self, "export_options")
 
     @property
     @pulumi.getter(name="exportSetId")
     def export_set_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        """
         return pulumi.get(self, "export_set_id")
 
     @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        """
         return pulumi.get(self, "file_system_id")
 
     @property
     @pulumi.getter(name="isIdmapGroupsForSysAuth")
-    def is_idmap_groups_for_sys_auth(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-        """
+    def is_idmap_groups_for_sys_auth(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_idmap_groups_for_sys_auth")
 
     @property
     @pulumi.getter
     def path(self) -> pulumi.Output[str]:
-        """
-        Path used to access the associated file system.
-
-        Avoid entering confidential information.
-
-        Example: `/mediafiles`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of this export.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

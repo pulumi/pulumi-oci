@@ -29,12 +29,12 @@ public final class GetServiceCatalogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of service_catalog_collection.
      * 
      */
-    private List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
+    private @Nullable List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
     private @Nullable String serviceCatalogId;
 
     private GetServiceCatalogsResult() {}
@@ -59,15 +59,15 @@ public final class GetServiceCatalogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of service_catalog_collection.
      * 
      */
     public List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections() {
-        return this.serviceCatalogCollections;
+        return this.serviceCatalogCollections == null ? List.of() : this.serviceCatalogCollections;
     }
     public Optional<String> serviceCatalogId() {
         return Optional.ofNullable(this.serviceCatalogId);
@@ -85,8 +85,8 @@ public final class GetServiceCatalogsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetServiceCatalogsFilter> filters;
-        private String id;
-        private List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
+        private @Nullable String id;
+        private @Nullable List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections;
         private @Nullable String serviceCatalogId;
         public Builder() {}
         public Builder(GetServiceCatalogsResult defaults) {
@@ -118,13 +118,13 @@ public final class GetServiceCatalogsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceCatalogCollections(List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections) {
-            this.serviceCatalogCollections = Objects.requireNonNull(serviceCatalogCollections);
+        public Builder serviceCatalogCollections(@Nullable List<GetServiceCatalogsServiceCatalogCollection> serviceCatalogCollections) {
+            this.serviceCatalogCollections = serviceCatalogCollections;
             return this;
         }
         public Builder serviceCatalogCollections(GetServiceCatalogsServiceCatalogCollection... serviceCatalogCollections) {

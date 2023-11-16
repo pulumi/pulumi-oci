@@ -16,7 +16,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// An array of connectionTypes.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Allows to query by a specific GoldenGate version.
         /// </summary>
-        public readonly string OggVersion;
+        public readonly string? OggVersion;
         /// <summary>
         /// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         /// </summary>
@@ -44,15 +44,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
         [OutputConstructor]
         private GetDeploymentTypesDeploymentTypeCollectionItemResult(
-            string category,
+            string? category,
 
             ImmutableArray<string> connectionTypes,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string displayName,
+            string? displayName,
 
-            string oggVersion,
+            string? oggVersion,
 
             ImmutableArray<string> sourceTechnologies,
 

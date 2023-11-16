@@ -24,18 +24,6 @@ class InstVbsInstanceArgs:
                  resource_compartment_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InstVbsInstance resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
-        :param pulumi.Input[str] display_name: (Updatable) Display Name
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_access_token: IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        :param pulumi.Input[bool] is_resource_usage_agreement_granted: (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        :param pulumi.Input[str] name: Service Instance Name
-        :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -55,9 +43,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier. It can only be the root compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +52,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Display Name
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -79,9 +61,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -91,9 +70,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -103,9 +79,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> Optional[pulumi.Input[str]]:
-        """
-        IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
@@ -115,9 +88,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="isResourceUsageAgreementGranted")
     def is_resource_usage_agreement_granted(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        """
         return pulumi.get(self, "is_resource_usage_agreement_granted")
 
     @is_resource_usage_agreement_granted.setter
@@ -127,9 +97,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Service Instance Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -139,13 +106,6 @@ class InstVbsInstanceArgs:
     @property
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment where VBS may create additional resources for the service instance
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_compartment_id")
 
     @resource_compartment_id.setter
@@ -172,24 +132,6 @@ class _InstVbsInstanceState:
                  vbs_access_url: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering InstVbsInstance resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display Name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_access_token: IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        :param pulumi.Input[bool] is_resource_usage_agreement_granted: (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Service Instance Name
-        :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the VbsInstance.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the VbsInstance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the VbsInstance was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] vbs_access_url: Public web URL for accessing the VBS service instance
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -223,9 +165,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier. It can only be the root compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -235,9 +174,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -247,9 +183,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display Name
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -259,9 +192,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -271,9 +201,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="idcsAccessToken")
     def idcs_access_token(self) -> Optional[pulumi.Input[str]]:
-        """
-        IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
@@ -283,9 +210,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="isResourceUsageAgreementGranted")
     def is_resource_usage_agreement_granted(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        """
         return pulumi.get(self, "is_resource_usage_agreement_granted")
 
     @is_resource_usage_agreement_granted.setter
@@ -295,9 +219,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecyle_details")
 
     @lifecyle_details.setter
@@ -307,9 +228,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Service Instance Name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -319,13 +237,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="resourceCompartmentId")
     def resource_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment where VBS may create additional resources for the service instance
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_compartment_id")
 
     @resource_compartment_id.setter
@@ -335,9 +246,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the VbsInstance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -347,9 +255,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -359,9 +264,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the VbsInstance was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -371,9 +273,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the VbsInstance was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -383,9 +282,6 @@ class _InstVbsInstanceState:
     @property
     @pulumi.getter(name="vbsAccessUrl")
     def vbs_access_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Public web URL for accessing the VBS service instance
-        """
         return pulumi.get(self, "vbs_access_url")
 
     @vbs_access_url.setter
@@ -408,52 +304,9 @@ class InstVbsInstance(pulumi.CustomResource):
                  resource_compartment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-
-        Creates a new VbsInstance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vbs_instance = oci.vbs.InstVbsInstance("testVbsInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vbs_instance_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_access_token=var["vbs_instance_idcs_access_token"],
-            is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
-            resource_compartment_id=var["resource_compartment_id"])
-        ```
-
-        ## Import
-
-        VbsInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
-        ```
-
+        Create a InstVbsInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display Name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_access_token: IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        :param pulumi.Input[bool] is_resource_usage_agreement_granted: (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        :param pulumi.Input[str] name: Service Instance Name
-        :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -462,38 +315,7 @@ class InstVbsInstance(pulumi.CustomResource):
                  args: InstVbsInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-
-        Creates a new VbsInstance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vbs_instance = oci.vbs.InstVbsInstance("testVbsInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vbs_instance_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            idcs_access_token=var["vbs_instance_idcs_access_token"],
-            is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
-            resource_compartment_id=var["resource_compartment_id"])
-        ```
-
-        ## Import
-
-        VbsInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Vbs/instVbsInstance:InstVbsInstance test_vbs_instance "id"
-        ```
-
+        Create a InstVbsInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param InstVbsInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -575,24 +397,6 @@ class InstVbsInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier. It can only be the root compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display Name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] idcs_access_token: IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        :param pulumi.Input[bool] is_resource_usage_agreement_granted: (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Service Instance Name
-        :param pulumi.Input[str] resource_compartment_id: (Updatable) Compartment where VBS may create additional resources for the service instance
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the VbsInstance.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the VbsInstance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the VbsInstance was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] vbs_access_url: Public web URL for accessing the VBS service instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -617,116 +421,70 @@ class InstVbsInstance(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier. It can only be the root compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display Name
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> pulumi.Output[str]:
-        """
-        IDCS personal acceess token identifying IDCS user and stripe for the VBS service
-        """
+    def idcs_access_token(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="isResourceUsageAgreementGranted")
-    def is_resource_usage_agreement_granted(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
-        """
+    def is_resource_usage_agreement_granted(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_resource_usage_agreement_granted")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Service Instance Name
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment where VBS may create additional resources for the service instance
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def resource_compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_compartment_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the VbsInstance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the VbsInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the VbsInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vbsAccessUrl")
-    def vbs_access_url(self) -> pulumi.Output[str]:
-        """
-        Public web URL for accessing the VBS service instance
-        """
+    def vbs_access_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vbs_access_url")
 

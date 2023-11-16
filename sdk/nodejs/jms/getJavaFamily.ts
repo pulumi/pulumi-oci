@@ -45,15 +45,15 @@ export interface GetJavaFamilyResult {
     /**
      * The display name of the release family.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Link to access the documentation for the release.
      */
-    readonly docUrl: string;
+    readonly docUrl?: string;
     /**
      * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly endOfSupportLifeDate: string;
+    readonly endOfSupportLifeDate?: string;
     /**
      * The Java release family identifier.
      */
@@ -61,11 +61,11 @@ export interface GetJavaFamilyResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * This indicates the support category for the Java release family.
      */
-    readonly supportType: string;
+    readonly supportType?: string;
 }
 /**
  * This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.

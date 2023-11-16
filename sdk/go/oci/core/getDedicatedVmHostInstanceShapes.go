@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -75,7 +74,7 @@ type GetDedicatedVmHostInstanceShapesResult struct {
 	DedicatedVmHostShape          *string                                                        `pulumi:"dedicatedVmHostShape"`
 	Filters                       []GetDedicatedVmHostInstanceShapesFilter                       `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDedicatedVmHostInstanceShapesOutput(ctx *pulumi.Context, args GetDedicatedVmHostInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedVmHostInstanceShapesResultOutput {
@@ -121,12 +120,6 @@ func (o GetDedicatedVmHostInstanceShapesResultOutput) ToGetDedicatedVmHostInstan
 	return o
 }
 
-func (o GetDedicatedVmHostInstanceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVmHostInstanceShapesResult] {
-	return pulumix.Output[GetDedicatedVmHostInstanceShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The shape's availability domain.
 func (o GetDedicatedVmHostInstanceShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedVmHostInstanceShapesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -154,8 +147,8 @@ func (o GetDedicatedVmHostInstanceShapesResultOutput) Filters() GetDedicatedVmHo
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDedicatedVmHostInstanceShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDedicatedVmHostInstanceShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDedicatedVmHostInstanceShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedVmHostInstanceShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

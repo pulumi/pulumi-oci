@@ -36,7 +36,7 @@ class GetGenericArtifactsContentResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,21 +56,7 @@ class AwaitableGetGenericArtifactsContentResult(GetGenericArtifactsContentResult
 def get_generic_artifacts_content(artifact_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGenericArtifactsContentResult:
     """
-    This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
-
-    Gets the specified artifact's content.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=oci_generic_artifacts_content_artifact["test_artifact"]["id"])
-    ```
-
-
-    :param str artifact_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['artifactId'] = artifact_id
@@ -86,20 +72,6 @@ def get_generic_artifacts_content(artifact_id: Optional[str] = None,
 def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericArtifactsContentResult]:
     """
-    This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
-
-    Gets the specified artifact's content.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=oci_generic_artifacts_content_artifact["test_artifact"]["id"])
-    ```
-
-
-    :param str artifact_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     ...

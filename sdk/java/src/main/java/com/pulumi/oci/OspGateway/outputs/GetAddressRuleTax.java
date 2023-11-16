@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTaxField;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddressRuleTax {
@@ -14,7 +15,7 @@ public final class GetAddressRuleTax {
      * @return Tax type rule fields
      * 
      */
-    private List<GetAddressRuleTaxField> fields;
+    private @Nullable List<GetAddressRuleTaxField> fields;
 
     private GetAddressRuleTax() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAddressRuleTax {
      * 
      */
     public List<GetAddressRuleTaxField> fields() {
-        return this.fields;
+        return this.fields == null ? List.of() : this.fields;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAddressRuleTax {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddressRuleTaxField> fields;
+        private @Nullable List<GetAddressRuleTaxField> fields;
         public Builder() {}
         public Builder(GetAddressRuleTax defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAddressRuleTax {
         }
 
         @CustomType.Setter
-        public Builder fields(List<GetAddressRuleTaxField> fields) {
-            this.fields = Objects.requireNonNull(fields);
+        public Builder fields(@Nullable List<GetAddressRuleTaxField> fields) {
+            this.fields = fields;
             return this;
         }
         public Builder fields(GetAddressRuleTaxField... fields) {

@@ -49,9 +49,6 @@ class GetManagementStationMirrorsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Display name of the mirror
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +63,7 @@ class GetManagementStationMirrorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -84,10 +81,7 @@ class GetManagementStationMirrorsResult:
 
     @property
     @pulumi.getter(name="mirrorsCollections")
-    def mirrors_collections(self) -> Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionResult']:
-        """
-        The list of mirrors_collection.
-        """
+    def mirrors_collections(self) -> Optional[Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionResult']]:
         return pulumi.get(self, "mirrors_collections")
 
 
@@ -113,27 +107,7 @@ def get_management_station_mirrors(display_name: Optional[str] = None,
                                    mirror_states: Optional[Sequence[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementStationMirrorsResult:
     """
-    This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists all software source mirrors associated with a specified management station.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"],
-        display_name=var["management_station_mirror_display_name"],
-        display_name_contains=var["management_station_mirror_display_name_contains"],
-        mirror_states=var["management_station_mirror_mirror_states"])
-    ```
-
-
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str management_station_id: The OCID of the management station.
-    :param Sequence[str] mirror_states: List of Mirror state to filter by
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -162,26 +136,6 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
                                           mirror_states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationMirrorsResult]:
     """
-    This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists all software source mirrors associated with a specified management station.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"],
-        display_name=var["management_station_mirror_display_name"],
-        display_name_contains=var["management_station_mirror_display_name_contains"],
-        mirror_states=var["management_station_mirror_mirror_states"])
-    ```
-
-
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str management_station_id: The OCID of the management station.
-    :param Sequence[str] mirror_states: List of Mirror state to filter by
+    Use this data source to access information about an existing resource.
     """
     ...

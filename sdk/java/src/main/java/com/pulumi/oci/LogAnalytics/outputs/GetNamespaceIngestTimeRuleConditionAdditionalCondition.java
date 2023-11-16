@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceIngestTimeRuleConditionAdditionalCondition {
@@ -13,39 +15,39 @@ public final class GetNamespaceIngestTimeRuleConditionAdditionalCondition {
      * @return The additional field name to be evaluated.
      * 
      */
-    private String conditionField;
+    private @Nullable String conditionField;
     /**
      * @return The operator to be used for evaluating the additional field.
      * 
      */
-    private String conditionOperator;
+    private @Nullable String conditionOperator;
     /**
      * @return The additional field value to be evaluated.
      * 
      */
-    private String conditionValue;
+    private @Nullable String conditionValue;
 
     private GetNamespaceIngestTimeRuleConditionAdditionalCondition() {}
     /**
      * @return The additional field name to be evaluated.
      * 
      */
-    public String conditionField() {
-        return this.conditionField;
+    public Optional<String> conditionField() {
+        return Optional.ofNullable(this.conditionField);
     }
     /**
      * @return The operator to be used for evaluating the additional field.
      * 
      */
-    public String conditionOperator() {
-        return this.conditionOperator;
+    public Optional<String> conditionOperator() {
+        return Optional.ofNullable(this.conditionOperator);
     }
     /**
      * @return The additional field value to be evaluated.
      * 
      */
-    public String conditionValue() {
-        return this.conditionValue;
+    public Optional<String> conditionValue() {
+        return Optional.ofNullable(this.conditionValue);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNamespaceIngestTimeRuleConditionAdditionalCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String conditionField;
-        private String conditionOperator;
-        private String conditionValue;
+        private @Nullable String conditionField;
+        private @Nullable String conditionOperator;
+        private @Nullable String conditionValue;
         public Builder() {}
         public Builder(GetNamespaceIngestTimeRuleConditionAdditionalCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNamespaceIngestTimeRuleConditionAdditionalCondition {
         }
 
         @CustomType.Setter
-        public Builder conditionField(String conditionField) {
-            this.conditionField = Objects.requireNonNull(conditionField);
+        public Builder conditionField(@Nullable String conditionField) {
+            this.conditionField = conditionField;
             return this;
         }
         @CustomType.Setter
-        public Builder conditionOperator(String conditionOperator) {
-            this.conditionOperator = Objects.requireNonNull(conditionOperator);
+        public Builder conditionOperator(@Nullable String conditionOperator) {
+            this.conditionOperator = conditionOperator;
             return this;
         }
         @CustomType.Setter
-        public Builder conditionValue(String conditionValue) {
-            this.conditionValue = Objects.requireNonNull(conditionValue);
+        public Builder conditionValue(@Nullable String conditionValue) {
+            this.conditionValue = conditionValue;
             return this;
         }
         public GetNamespaceIngestTimeRuleConditionAdditionalCondition build() {

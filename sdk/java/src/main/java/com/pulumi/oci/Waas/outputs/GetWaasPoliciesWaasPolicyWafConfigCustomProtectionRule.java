@@ -8,6 +8,8 @@ import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProte
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
@@ -15,39 +17,39 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions;
+    private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions() {
-        return this.exclusions;
+        return this.exclusions == null ? List.of() : this.exclusions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions;
-        private String id;
+        private @Nullable String action;
+        private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder exclusions(List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+        public Builder exclusions(@Nullable List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions) {
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion... exclusions) {
             return exclusions(List.of(exclusions));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule build() {

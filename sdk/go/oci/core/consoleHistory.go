@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Console History resource in Oracle Cloud Infrastructure Core service.
@@ -79,13 +78,13 @@ type ConsoleHistory struct {
 	pulumi.CustomResourceState
 
 	// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the instance to get the console history from.
@@ -94,9 +93,9 @@ type ConsoleHistory struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The current state of the console history.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the history was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewConsoleHistory registers a new resource with the given unique name, arguments, and options.
@@ -231,12 +230,6 @@ func (i *ConsoleHistory) ToConsoleHistoryOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ConsoleHistoryOutput)
 }
 
-func (i *ConsoleHistory) ToOutput(ctx context.Context) pulumix.Output[*ConsoleHistory] {
-	return pulumix.Output[*ConsoleHistory]{
-		OutputState: i.ToConsoleHistoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConsoleHistoryArrayInput is an input type that accepts ConsoleHistoryArray and ConsoleHistoryArrayOutput values.
 // You can construct a concrete instance of `ConsoleHistoryArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i ConsoleHistoryArray) ToConsoleHistoryArrayOutput() ConsoleHistoryArrayOu
 
 func (i ConsoleHistoryArray) ToConsoleHistoryArrayOutputWithContext(ctx context.Context) ConsoleHistoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConsoleHistoryArrayOutput)
-}
-
-func (i ConsoleHistoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConsoleHistory] {
-	return pulumix.Output[[]*ConsoleHistory]{
-		OutputState: i.ToConsoleHistoryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConsoleHistoryMapInput is an input type that accepts ConsoleHistoryMap and ConsoleHistoryMapOutput values.
@@ -293,12 +280,6 @@ func (i ConsoleHistoryMap) ToConsoleHistoryMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConsoleHistoryMapOutput)
 }
 
-func (i ConsoleHistoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConsoleHistory] {
-	return pulumix.Output[map[string]*ConsoleHistory]{
-		OutputState: i.ToConsoleHistoryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConsoleHistoryOutput struct{ *pulumi.OutputState }
 
 func (ConsoleHistoryOutput) ElementType() reflect.Type {
@@ -313,20 +294,14 @@ func (o ConsoleHistoryOutput) ToConsoleHistoryOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ConsoleHistoryOutput) ToOutput(ctx context.Context) pulumix.Output[*ConsoleHistory] {
-	return pulumix.Output[*ConsoleHistory]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-func (o ConsoleHistoryOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o ConsoleHistoryOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o ConsoleHistoryOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ConsoleHistoryOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -335,8 +310,8 @@ func (o ConsoleHistoryOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o ConsoleHistoryOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ConsoleHistoryOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -353,13 +328,13 @@ func (o ConsoleHistoryOutput) InstanceId() pulumi.StringOutput {
 }
 
 // The current state of the console history.
-func (o ConsoleHistoryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConsoleHistoryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the history was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o ConsoleHistoryOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConsoleHistoryOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConsoleHistory) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ConsoleHistoryArrayOutput struct{ *pulumi.OutputState }
@@ -374,12 +349,6 @@ func (o ConsoleHistoryArrayOutput) ToConsoleHistoryArrayOutput() ConsoleHistoryA
 
 func (o ConsoleHistoryArrayOutput) ToConsoleHistoryArrayOutputWithContext(ctx context.Context) ConsoleHistoryArrayOutput {
 	return o
-}
-
-func (o ConsoleHistoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConsoleHistory] {
-	return pulumix.Output[[]*ConsoleHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConsoleHistoryArrayOutput) Index(i pulumi.IntInput) ConsoleHistoryOutput {
@@ -400,12 +369,6 @@ func (o ConsoleHistoryMapOutput) ToConsoleHistoryMapOutput() ConsoleHistoryMapOu
 
 func (o ConsoleHistoryMapOutput) ToConsoleHistoryMapOutputWithContext(ctx context.Context) ConsoleHistoryMapOutput {
 	return o
-}
-
-func (o ConsoleHistoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConsoleHistory] {
-	return pulumix.Output[map[string]*ConsoleHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConsoleHistoryMapOutput) MapIndex(k pulumi.StringInput) ConsoleHistoryOutput {

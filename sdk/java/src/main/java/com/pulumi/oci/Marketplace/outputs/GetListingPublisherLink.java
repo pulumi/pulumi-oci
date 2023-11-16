@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPublisherLink {
@@ -13,27 +15,27 @@ public final class GetListingPublisherLink {
      * @return The anchor tag.
      * 
      */
-    private String href;
+    private @Nullable String href;
     /**
      * @return Reference links to the previous page, next page, and other pages.
      * 
      */
-    private String rel;
+    private @Nullable String rel;
 
     private GetListingPublisherLink() {}
     /**
      * @return The anchor tag.
      * 
      */
-    public String href() {
-        return this.href;
+    public Optional<String> href() {
+        return Optional.ofNullable(this.href);
     }
     /**
      * @return Reference links to the previous page, next page, and other pages.
      * 
      */
-    public String rel() {
-        return this.rel;
+    public Optional<String> rel() {
+        return Optional.ofNullable(this.rel);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetListingPublisherLink {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String href;
-        private String rel;
+        private @Nullable String href;
+        private @Nullable String rel;
         public Builder() {}
         public Builder(GetListingPublisherLink defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetListingPublisherLink {
         }
 
         @CustomType.Setter
-        public Builder href(String href) {
-            this.href = Objects.requireNonNull(href);
+        public Builder href(@Nullable String href) {
+            this.href = href;
             return this;
         }
         @CustomType.Setter
-        public Builder rel(String rel) {
-            this.rel = Objects.requireNonNull(rel);
+        public Builder rel(@Nullable String rel) {
+            this.rel = rel;
             return this;
         }
         public GetListingPublisherLink build() {

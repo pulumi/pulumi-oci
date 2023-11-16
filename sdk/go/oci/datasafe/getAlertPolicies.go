@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Alert Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -102,7 +101,7 @@ type GetAlertPoliciesResult struct {
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetAlertPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if the alert policy is user-defined (true) or pre-defined (false).
 	IsUserDefined *bool `pulumi:"isUserDefined"`
 	// The current state of the alert.
@@ -173,12 +172,6 @@ func (o GetAlertPoliciesResultOutput) ToGetAlertPoliciesResultOutputWithContext(
 	return o
 }
 
-func (o GetAlertPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlertPoliciesResult] {
-	return pulumix.Output[GetAlertPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlertPoliciesResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAlertPoliciesResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -213,8 +206,8 @@ func (o GetAlertPoliciesResultOutput) Filters() GetAlertPoliciesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAlertPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlertPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlertPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlertPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the alert policy is user-defined (true) or pre-defined (false).

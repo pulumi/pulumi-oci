@@ -24,7 +24,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetIngressGatewayHostResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
 
             ImmutableArray<Outputs.GetIngressGatewayHostListenerResult> listeners,
 
-            string name)
+            string? name)
         {
             Hostnames = hostnames;
             Listeners = listeners;

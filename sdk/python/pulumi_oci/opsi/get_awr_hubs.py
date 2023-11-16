@@ -48,26 +48,17 @@ class GetAwrHubsResult:
 
     @property
     @pulumi.getter(name="awrHubSummaryCollections")
-    def awr_hub_summary_collections(self) -> Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionResult']:
-        """
-        The list of awr_hub_summary_collection.
-        """
+    def awr_hub_summary_collections(self) -> Optional[Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionResult']]:
         return pulumi.get(self, "awr_hub_summary_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User-friedly name of AWR Hub that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -78,25 +69,16 @@ class GetAwrHubsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        AWR Hub OCID
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> str:
-        """
-        OPSI Warehouse OCID
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        Possible lifecycle states
-        """
         return pulumi.get(self, "states")
 
 
@@ -123,29 +105,7 @@ def get_awr_hubs(compartment_id: Optional[str] = None,
                  states: Optional[Sequence[str]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwrHubsResult:
     """
-    This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["awr_hub_display_name"],
-        id=var["awr_hub_id"],
-        states=var["awr_hub_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Awr Hub identifier
-    :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-    :param Sequence[str] states: Lifecycle states
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubsResult]:
     """
-    This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["awr_hub_display_name"],
-        id=var["awr_hub_id"],
-        states=var["awr_hub_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Awr Hub identifier
-    :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-    :param Sequence[str] states: Lifecycle states
+    Use this data source to access information about an existing resource.
     """
     ...

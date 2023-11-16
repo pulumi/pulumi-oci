@@ -6,6 +6,8 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFileSystemsFileSystemSourceDetail {
@@ -13,27 +15,27 @@ public final class GetFileSystemsFileSystemSourceDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    private String parentFileSystemId;
+    private @Nullable String parentFileSystemId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    private String sourceSnapshotId;
+    private @Nullable String sourceSnapshotId;
 
     private GetFileSystemsFileSystemSourceDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public String parentFileSystemId() {
-        return this.parentFileSystemId;
+    public Optional<String> parentFileSystemId() {
+        return Optional.ofNullable(this.parentFileSystemId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public String sourceSnapshotId() {
-        return this.sourceSnapshotId;
+    public Optional<String> sourceSnapshotId() {
+        return Optional.ofNullable(this.sourceSnapshotId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetFileSystemsFileSystemSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String parentFileSystemId;
-        private String sourceSnapshotId;
+        private @Nullable String parentFileSystemId;
+        private @Nullable String sourceSnapshotId;
         public Builder() {}
         public Builder(GetFileSystemsFileSystemSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetFileSystemsFileSystemSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder parentFileSystemId(String parentFileSystemId) {
-            this.parentFileSystemId = Objects.requireNonNull(parentFileSystemId);
+        public Builder parentFileSystemId(@Nullable String parentFileSystemId) {
+            this.parentFileSystemId = parentFileSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceSnapshotId(String sourceSnapshotId) {
-            this.sourceSnapshotId = Objects.requireNonNull(sourceSnapshotId);
+        public Builder sourceSnapshotId(@Nullable String sourceSnapshotId) {
+            this.sourceSnapshotId = sourceSnapshotId;
             return this;
         }
         public GetFileSystemsFileSystemSourceDetail build() {

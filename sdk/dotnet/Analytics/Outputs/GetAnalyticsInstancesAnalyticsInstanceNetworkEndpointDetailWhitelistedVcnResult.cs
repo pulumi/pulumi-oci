@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// The Virtual Cloud Network OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Source IP addresses or IP address ranges in ingress rules.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Analytics.Outputs
 
         [OutputConstructor]
         private GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult(
-            string id,
+            string? id,
 
             ImmutableArray<string> whitelistedIps)
         {

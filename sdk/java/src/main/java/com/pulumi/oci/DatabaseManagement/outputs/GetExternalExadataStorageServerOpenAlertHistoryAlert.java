@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerOpenAlertHistoryAlert {
@@ -13,51 +15,51 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryAlert {
      * @return The alert message.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return The severity of the alert.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return The start time of the alert.
      * 
      */
-    private String timeStartAt;
+    private @Nullable String timeStartAt;
     /**
      * @return The type of alert.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetExternalExadataStorageServerOpenAlertHistoryAlert() {}
     /**
      * @return The alert message.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return The severity of the alert.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return The start time of the alert.
      * 
      */
-    public String timeStartAt() {
-        return this.timeStartAt;
+    public Optional<String> timeStartAt() {
+        return Optional.ofNullable(this.timeStartAt);
     }
     /**
      * @return The type of alert.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryAlert {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
-        private String severity;
-        private String timeStartAt;
-        private String type;
+        private @Nullable String message;
+        private @Nullable String severity;
+        private @Nullable String timeStartAt;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerOpenAlertHistoryAlert defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryAlert {
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStartAt(String timeStartAt) {
-            this.timeStartAt = Objects.requireNonNull(timeStartAt);
+        public Builder timeStartAt(@Nullable String timeStartAt) {
+            this.timeStartAt = timeStartAt;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetExternalExadataStorageServerOpenAlertHistoryAlert build() {

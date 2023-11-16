@@ -78,9 +78,6 @@ class GetSensitiveTypesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the sensitive type.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -91,25 +88,16 @@ class GetSensitiveTypesResult:
     @property
     @pulumi.getter(name="defaultMaskingFormatId")
     def default_masking_format_id(self) -> Optional[str]:
-        """
-        The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
-        """
         return pulumi.get(self, "default_masking_format_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the sensitive type.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[str]:
-        """
-        The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
-        """
         return pulumi.get(self, "entity_type")
 
     @property
@@ -119,7 +107,7 @@ class GetSensitiveTypesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -128,17 +116,11 @@ class GetSensitiveTypesResult:
     @property
     @pulumi.getter(name="parentCategoryId")
     def parent_category_id(self) -> Optional[str]:
-        """
-        The OCID of the parent sensitive category.
-        """
         return pulumi.get(self, "parent_category_id")
 
     @property
     @pulumi.getter(name="sensitiveTypeCollections")
-    def sensitive_type_collections(self) -> Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionResult']:
-        """
-        The list of sensitive_type_collection.
-        """
+    def sensitive_type_collections(self) -> Optional[Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionResult']]:
         return pulumi.get(self, "sensitive_type_collections")
 
     @property
@@ -154,9 +136,6 @@ class GetSensitiveTypesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the sensitive type.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -208,47 +187,7 @@ def get_sensitive_types(access_level: Optional[str] = None,
                         time_created_less_than: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveTypesResult:
     """
-    This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive types based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=var["compartment_id"],
-        access_level=var["sensitive_type_access_level"],
-        compartment_id_in_subtree=var["sensitive_type_compartment_id_in_subtree"],
-        default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
-        display_name=var["sensitive_type_display_name"],
-        entity_type=var["sensitive_type_entity_type"],
-        parent_category_id=oci_marketplace_category["test_category"]["id"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        sensitive_type_source=var["sensitive_type_sensitive_type_source"],
-        state=var["sensitive_type_state"],
-        time_created_greater_than_or_equal_to=var["sensitive_type_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_type_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str default_masking_format_id: A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str entity_type: A filter to return the sensitive type resources based on the value of their entityType attribute.
-    :param str parent_category_id: A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
-    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
-    :param str sensitive_type_source: A filter to return the sensitive type resources based on the value of their source attribute.
-    :param str state: A filter to return only the resources that match the specified lifecycle state.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -301,46 +240,6 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
                                time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveTypesResult]:
     """
-    This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive types based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_types = oci.DataSafe.get_sensitive_types(compartment_id=var["compartment_id"],
-        access_level=var["sensitive_type_access_level"],
-        compartment_id_in_subtree=var["sensitive_type_compartment_id_in_subtree"],
-        default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
-        display_name=var["sensitive_type_display_name"],
-        entity_type=var["sensitive_type_entity_type"],
-        parent_category_id=oci_marketplace_category["test_category"]["id"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        sensitive_type_source=var["sensitive_type_sensitive_type_source"],
-        state=var["sensitive_type_state"],
-        time_created_greater_than_or_equal_to=var["sensitive_type_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_type_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str default_masking_format_id: A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str entity_type: A filter to return the sensitive type resources based on the value of their entityType attribute.
-    :param str parent_category_id: A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
-    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
-    :param str sensitive_type_source: A filter to return the sensitive type resources based on the value of their source attribute.
-    :param str state: A filter to return only the resources that match the specified lifecycle state.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// ResponderRule display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Possible type of entity
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// The entity value mapped to a data source query
         /// </summary>
-        public readonly string QueryField;
+        public readonly string? QueryField;
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult(
-            string displayName,
+            string? displayName,
 
-            string entityType,
+            string? entityType,
 
-            string queryField)
+            string? queryField)
         {
             DisplayName = displayName;
             EntityType = entityType;

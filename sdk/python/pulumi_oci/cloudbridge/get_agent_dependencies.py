@@ -51,10 +51,7 @@ class GetAgentDependenciesResult:
 
     @property
     @pulumi.getter(name="agentDependencyCollections")
-    def agent_dependency_collections(self) -> Sequence['outputs.GetAgentDependenciesAgentDependencyCollectionResult']:
-        """
-        The list of agent_dependency_collection.
-        """
+    def agent_dependency_collections(self) -> Optional[Sequence['outputs.GetAgentDependenciesAgentDependencyCollectionResult']]:
         return pulumi.get(self, "agent_dependency_collections")
 
     @property
@@ -65,17 +62,11 @@ class GetAgentDependenciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Display name of the Agent dependency.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -90,7 +81,7 @@ class GetAgentDependenciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,9 +90,6 @@ class GetAgentDependenciesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of AgentDependency.
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,29 +117,7 @@ def get_agent_dependencies(agent_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentDependenciesResult:
     """
-    This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of AgentDependencies such as AgentDependencyCollection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_dependency_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_dependency_state"])
-    ```
-
-
-    :param str agent_id: A filter to return only resources that match the given Agent ID.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_id: A filter to return only resources that match the given environment ID.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
@@ -183,28 +149,6 @@ def get_agent_dependencies_output(agent_id: Optional[pulumi.Input[Optional[str]]
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentDependenciesResult]:
     """
-    This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of AgentDependencies such as AgentDependencyCollection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agent_dependencies = oci.CloudBridge.get_agent_dependencies(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_dependency_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_dependency_state"])
-    ```
-
-
-    :param str agent_id: A filter to return only resources that match the given Agent ID.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_id: A filter to return only resources that match the given environment ID.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

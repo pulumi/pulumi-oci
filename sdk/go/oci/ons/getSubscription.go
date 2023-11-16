@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Notifications service.
@@ -62,28 +61,28 @@ type LookupSubscriptionArgs struct {
 // A collection of values returned by getSubscription.
 type LookupSubscriptionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The time when this suscription was created.
-	CreatedTime string `pulumi:"createdTime"`
+	CreatedTime *string `pulumi:"createdTime"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The delivery policy of the subscription. Stored as a JSON string.
-	DeliveryPolicy string `pulumi:"deliveryPolicy"`
+	DeliveryPolicy *string `pulumi:"deliveryPolicy"`
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
-	Endpoint string `pulumi:"endpoint"`
+	Endpoint *string `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The protocol used for the subscription.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-	State          string `pulumi:"state"`
-	SubscriptionId string `pulumi:"subscriptionId"`
+	State          *string `pulumi:"state"`
+	SubscriptionId string  `pulumi:"subscriptionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
-	TopicId string `pulumi:"topicId"`
+	TopicId *string `pulumi:"topicId"`
 }
 
 func LookupSubscriptionOutput(ctx *pulumi.Context, args LookupSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriptionResultOutput {
@@ -124,20 +123,14 @@ func (o LookupSubscriptionResultOutput) ToLookupSubscriptionResultOutputWithCont
 	return o
 }
 
-func (o LookupSubscriptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubscriptionResult] {
-	return pulumix.Output[LookupSubscriptionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
-func (o LookupSubscriptionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The time when this suscription was created.
-func (o LookupSubscriptionResultOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.CreatedTime }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -146,18 +139,18 @@ func (o LookupSubscriptionResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The delivery policy of the subscription. Stored as a JSON string.
-func (o LookupSubscriptionResultOutput) DeliveryPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.DeliveryPolicy }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) DeliveryPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.DeliveryPolicy }).(pulumi.StringPtrOutput)
 }
 
 // A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
-func (o LookupSubscriptionResultOutput) Endpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Endpoint }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o LookupSubscriptionResultOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Etag }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -166,18 +159,18 @@ func (o LookupSubscriptionResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-func (o LookupSubscriptionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The protocol used for the subscription.
-func (o LookupSubscriptionResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-func (o LookupSubscriptionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSubscriptionResultOutput) SubscriptionId() pulumi.StringOutput {
@@ -185,8 +178,8 @@ func (o LookupSubscriptionResultOutput) SubscriptionId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
-func (o LookupSubscriptionResultOutput) TopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.TopicId }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

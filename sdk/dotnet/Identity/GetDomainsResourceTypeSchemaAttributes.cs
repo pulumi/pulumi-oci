@@ -246,12 +246,12 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IdcsEndpoint;
         /// <summary>
         /// The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
         /// </summary>
-        public readonly int ItemsPerPage;
+        public readonly int? ItemsPerPage;
         public readonly int? ResourceTypeSchemaAttributeCount;
         public readonly string? ResourceTypeSchemaAttributeFilter;
         /// <summary>
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
         /// </summary>
-        public readonly int TotalResults;
+        public readonly int? TotalResults;
 
         [OutputConstructor]
         private GetDomainsResourceTypeSchemaAttributesResult(
@@ -284,11 +284,11 @@ namespace Pulumi.Oci.Identity
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
             string idcsEndpoint,
 
-            int itemsPerPage,
+            int? itemsPerPage,
 
             int? resourceTypeSchemaAttributeCount,
 
@@ -306,7 +306,7 @@ namespace Pulumi.Oci.Identity
 
             int? startIndex,
 
-            int totalResults)
+            int? totalResults)
         {
             AttributeSets = attributeSets;
             Attributes = attributes;

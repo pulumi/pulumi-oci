@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Type of configuration.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// Information about the DNS settings.
         /// </summary>
@@ -28,19 +28,19 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// If certificate validation is enabled, then the call will fail in case of certification errors.
         /// </summary>
-        public readonly bool IsCertificateValidationEnabled;
+        public readonly bool? IsCertificateValidationEnabled;
         /// <summary>
         /// If disabled, auto snapshots are not collected.
         /// </summary>
-        public readonly bool IsDefaultSnapshotEnabled;
+        public readonly bool? IsDefaultSnapshotEnabled;
         /// <summary>
         /// If isFailureRetried is enabled, then a failed call will be retried.
         /// </summary>
-        public readonly bool IsFailureRetried;
+        public readonly bool? IsFailureRetried;
         /// <summary>
         /// If redirection is enabled, then redirects will be allowed while accessing target URL.
         /// </summary>
-        public readonly bool IsRedirectionEnabled;
+        public readonly bool? IsRedirectionEnabled;
         /// <summary>
         /// Details of the network configuration.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Request HTTP authentication scheme.
         /// </summary>
-        public readonly string ReqAuthenticationScheme;
+        public readonly string? ReqAuthenticationScheme;
         /// <summary>
         /// List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
         /// </summary>
@@ -60,11 +60,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Request HTTP method.
         /// </summary>
-        public readonly string RequestMethod;
+        public readonly string? RequestMethod;
         /// <summary>
         /// Request post body content.
         /// </summary>
-        public readonly string RequestPostBody;
+        public readonly string? RequestPostBody;
         /// <summary>
         /// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         /// </summary>
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         /// </summary>
-        public readonly string VerifyResponseContent;
+        public readonly string? VerifyResponseContent;
         /// <summary>
         /// Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         /// </summary>
@@ -86,35 +86,35 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         private GetMonitorConfigurationResult(
             ImmutableArray<Outputs.GetMonitorConfigurationClientCertificateDetailResult> clientCertificateDetails,
 
-            string configType,
+            string? configType,
 
             ImmutableArray<Outputs.GetMonitorConfigurationDnsConfigurationResult> dnsConfigurations,
 
-            bool isCertificateValidationEnabled,
+            bool? isCertificateValidationEnabled,
 
-            bool isDefaultSnapshotEnabled,
+            bool? isDefaultSnapshotEnabled,
 
-            bool isFailureRetried,
+            bool? isFailureRetried,
 
-            bool isRedirectionEnabled,
+            bool? isRedirectionEnabled,
 
             ImmutableArray<Outputs.GetMonitorConfigurationNetworkConfigurationResult> networkConfigurations,
 
             ImmutableArray<Outputs.GetMonitorConfigurationReqAuthenticationDetailResult> reqAuthenticationDetails,
 
-            string reqAuthenticationScheme,
+            string? reqAuthenticationScheme,
 
             ImmutableArray<Outputs.GetMonitorConfigurationRequestHeaderResult> requestHeaders,
 
-            string requestMethod,
+            string? requestMethod,
 
-            string requestPostBody,
+            string? requestPostBody,
 
             ImmutableArray<Outputs.GetMonitorConfigurationRequestQueryParamResult> requestQueryParams,
 
             ImmutableArray<string> verifyResponseCodes,
 
-            string verifyResponseContent,
+            string? verifyResponseContent,
 
             ImmutableArray<Outputs.GetMonitorConfigurationVerifyTextResult> verifyTexts)
         {

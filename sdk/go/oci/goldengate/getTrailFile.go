@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trail File resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -69,11 +68,11 @@ type GetTrailFileResult struct {
 	// An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of TrailFiles.
 	Items []GetTrailFileItem `pulumi:"items"`
 	// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeLastFetched string `pulumi:"timeLastFetched"`
+	TimeLastFetched *string `pulumi:"timeLastFetched"`
 	// The TrailFile Id.
 	TrailFileId string `pulumi:"trailFileId"`
 }
@@ -120,12 +119,6 @@ func (o GetTrailFileResultOutput) ToGetTrailFileResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetTrailFileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTrailFileResult] {
-	return pulumix.Output[GetTrailFileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTrailFileResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrailFileResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
@@ -136,8 +129,8 @@ func (o GetTrailFileResultOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTrailFileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTrailFileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTrailFileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTrailFileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of TrailFiles.
@@ -146,8 +139,8 @@ func (o GetTrailFileResultOutput) Items() GetTrailFileItemArrayOutput {
 }
 
 // The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetTrailFileResultOutput) TimeLastFetched() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTrailFileResult) string { return v.TimeLastFetched }).(pulumi.StringOutput)
+func (o GetTrailFileResultOutput) TimeLastFetched() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTrailFileResult) *string { return v.TimeLastFetched }).(pulumi.StringPtrOutput)
 }
 
 // The TrailFile Id.

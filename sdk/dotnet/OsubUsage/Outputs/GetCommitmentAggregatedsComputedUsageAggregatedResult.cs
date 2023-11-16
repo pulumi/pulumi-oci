@@ -20,7 +20,7 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Currency code
         /// </summary>
-        public readonly string CurrencyCode;
+        public readonly string? CurrencyCode;
         /// <summary>
         /// Product part number for subscribed service line, called parent product.
         /// </summary>
@@ -28,53 +28,53 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Subscribed service line parent id
         /// </summary>
-        public readonly string ParentSubscribedServiceId;
+        public readonly string? ParentSubscribedServiceId;
         /// <summary>
         /// Subscribed service asociated subscription plan number.
         /// </summary>
-        public readonly string PlanNumber;
+        public readonly string? PlanNumber;
         /// <summary>
         /// Subscribed services pricing model
         /// </summary>
-        public readonly string PricingModel;
+        public readonly string? PricingModel;
         /// <summary>
         /// Inernal SPM Ratecard Id at line level
         /// </summary>
-        public readonly string RateCardId;
+        public readonly string? RateCardId;
         /// <summary>
         /// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
         /// </summary>
-        public readonly string SubscriptionId;
+        public readonly string? SubscriptionId;
         /// <summary>
         /// Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetCommitmentAggregatedsComputedUsageAggregatedResult(
             ImmutableArray<Outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult> aggregatedComputedUsages,
 
-            string currencyCode,
+            string? currencyCode,
 
             ImmutableArray<Outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult> parentProducts,
 
-            string parentSubscribedServiceId,
+            string? parentSubscribedServiceId,
 
-            string planNumber,
+            string? planNumber,
 
-            string pricingModel,
+            string? pricingModel,
 
-            string rateCardId,
+            string? rateCardId,
 
-            string subscriptionId,
+            string? subscriptionId,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             AggregatedComputedUsages = aggregatedComputedUsages;
             CurrencyCode = currencyCode;

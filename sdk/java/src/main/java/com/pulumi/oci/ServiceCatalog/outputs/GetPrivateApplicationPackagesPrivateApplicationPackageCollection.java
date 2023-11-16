@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollection {
-    private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
+    private @Nullable List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
 
     private GetPrivateApplicationPackagesPrivateApplicationPackageCollection() {}
     public List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
+        private @Nullable List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items;
         public Builder() {}
         public Builder(GetPrivateApplicationPackagesPrivateApplicationPackageCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
         }
 
         @CustomType.Setter
-        public Builder items(List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem... items) {

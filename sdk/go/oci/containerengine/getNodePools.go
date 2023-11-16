@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
@@ -75,7 +74,7 @@ type GetNodePoolsResult struct {
 	CompartmentId string               `pulumi:"compartmentId"`
 	Filters       []GetNodePoolsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the node pool.
 	Name *string `pulumi:"name"`
 	// The list of node_pools.
@@ -129,12 +128,6 @@ func (o GetNodePoolsResultOutput) ToGetNodePoolsResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetNodePoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsResult] {
-	return pulumix.Output[GetNodePoolsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster to which this node pool is attached.
 func (o GetNodePoolsResultOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNodePoolsResult) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
@@ -150,8 +143,8 @@ func (o GetNodePoolsResultOutput) Filters() GetNodePoolsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNodePoolsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNodePoolsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the node pool.

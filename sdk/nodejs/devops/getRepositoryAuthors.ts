@@ -56,12 +56,12 @@ export interface GetRepositoryAuthorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly refName?: string;
     /**
      * The list of repository_author_collection.
      */
-    readonly repositoryAuthorCollections: outputs.DevOps.GetRepositoryAuthorsRepositoryAuthorCollection[];
+    readonly repositoryAuthorCollections?: outputs.DevOps.GetRepositoryAuthorsRepositoryAuthorCollection[];
     readonly repositoryId: string;
 }
 /**

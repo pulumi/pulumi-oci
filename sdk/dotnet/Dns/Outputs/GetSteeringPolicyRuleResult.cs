@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
         /// </summary>
-        public readonly int DefaultCount;
+        public readonly int? DefaultCount;
         /// <summary>
         /// A user-defined description of the rule's purpose or behavior.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The type of a rule determines its sorting/filtering behavior.
         /// </summary>
-        public readonly string RuleType;
+        public readonly string? RuleType;
 
         [OutputConstructor]
         private GetSteeringPolicyRuleResult(
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.Dns.Outputs
 
             ImmutableArray<Outputs.GetSteeringPolicyRuleDefaultAnswerDataResult> defaultAnswerDatas,
 
-            int defaultCount,
+            int? defaultCount,
 
-            string description,
+            string? description,
 
-            string ruleType)
+            string? ruleType)
         {
             Cases = cases;
             DefaultAnswerDatas = defaultAnswerDatas;

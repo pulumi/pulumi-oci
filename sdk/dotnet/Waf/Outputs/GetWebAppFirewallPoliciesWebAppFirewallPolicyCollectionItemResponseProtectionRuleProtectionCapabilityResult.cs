@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         /// </summary>
-        public readonly string ActionName;
+        public readonly string? ActionName;
         /// <summary>
         /// The minimum sum of weights of associated collaborative protection capabilities that have triggered which must be reached in order for _this_ capability to trigger. This field is ignored for non-collaborative capabilities.
         /// </summary>
-        public readonly int CollaborativeActionThreshold;
+        public readonly int? CollaborativeActionThreshold;
         /// <summary>
         /// Explicit weight values to use for associated collaborative protection capabilities.
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Unique key of referenced protection capability.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Version of referenced protection capability.
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult(
-            string actionName,
+            string? actionName,
 
-            int collaborativeActionThreshold,
+            int? collaborativeActionThreshold,
 
             ImmutableArray<Outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult> collaborativeWeights,
 
             ImmutableArray<Outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult> exclusions,
 
-            string key,
+            string? key,
 
-            int version)
+            int? version)
         {
             ActionName = actionName;
             CollaborativeActionThreshold = collaborativeActionThreshold;

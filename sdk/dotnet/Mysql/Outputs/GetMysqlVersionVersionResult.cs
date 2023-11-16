@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// A descriptive summary of a group of versions.
         /// </summary>
-        public readonly string VersionFamily;
+        public readonly string? VersionFamily;
         /// <summary>
         /// The list of supported MySQL Versions.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private GetMysqlVersionVersionResult(
-            string versionFamily,
+            string? versionFamily,
 
             ImmutableArray<Outputs.GetMysqlVersionVersionVersionResult> versions)
         {

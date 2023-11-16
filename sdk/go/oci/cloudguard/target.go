@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -112,7 +111,7 @@ type Target struct {
 	// The target description.
 	//
 	// Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) DetectorTemplate identifier.
 	//
 	// Avoid entering confidential information.
@@ -124,11 +123,11 @@ type Target struct {
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// Total number of recipes attached to target
-	RecipeCount pulumi.IntOutput `pulumi:"recipeCount"`
+	RecipeCount pulumi.IntPtrOutput `pulumi:"recipeCount"`
 	// (Updatable) The current state of the DetectorRule.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Details specific to the target type.
@@ -142,9 +141,9 @@ type Target struct {
 	// (Updatable) List of responder recipes to associate with target
 	TargetResponderRecipes TargetTargetResponderRecipeArrayOutput `pulumi:"targetResponderRecipes"`
 	// The date and time the target was created. Format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the target was updated. Format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewTarget registers a new resource with the given unique name, arguments, and options.
@@ -360,12 +359,6 @@ func (i *Target) ToTargetOutputWithContext(ctx context.Context) TargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetOutput)
 }
 
-func (i *Target) ToOutput(ctx context.Context) pulumix.Output[*Target] {
-	return pulumix.Output[*Target]{
-		OutputState: i.ToTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetArrayInput is an input type that accepts TargetArray and TargetArrayOutput values.
 // You can construct a concrete instance of `TargetArrayInput` via:
 //
@@ -389,12 +382,6 @@ func (i TargetArray) ToTargetArrayOutput() TargetArrayOutput {
 
 func (i TargetArray) ToTargetArrayOutputWithContext(ctx context.Context) TargetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetArrayOutput)
-}
-
-func (i TargetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Target] {
-	return pulumix.Output[[]*Target]{
-		OutputState: i.ToTargetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TargetMapInput is an input type that accepts TargetMap and TargetMapOutput values.
@@ -422,12 +409,6 @@ func (i TargetMap) ToTargetMapOutputWithContext(ctx context.Context) TargetMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(TargetMapOutput)
 }
 
-func (i TargetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Target] {
-	return pulumix.Output[map[string]*Target]{
-		OutputState: i.ToTargetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetOutput struct{ *pulumi.OutputState }
 
 func (TargetOutput) ElementType() reflect.Type {
@@ -440,12 +421,6 @@ func (o TargetOutput) ToTargetOutput() TargetOutput {
 
 func (o TargetOutput) ToTargetOutputWithContext(ctx context.Context) TargetOutput {
 	return o
-}
-
-func (o TargetOutput) ToOutput(ctx context.Context) pulumix.Output[*Target] {
-	return pulumix.Output[*Target]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) compartment associated with condition
@@ -461,8 +436,8 @@ func (o TargetOutput) DefinedTags() pulumi.MapOutput {
 // The target description.
 //
 // Avoid entering confidential information.
-func (o TargetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o TargetOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) DetectorTemplate identifier.
@@ -485,18 +460,18 @@ func (o TargetOutput) InheritedByCompartments() pulumi.StringArrayOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o TargetOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o TargetOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Total number of recipes attached to target
-func (o TargetOutput) RecipeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Target) pulumi.IntOutput { return v.RecipeCount }).(pulumi.IntOutput)
+func (o TargetOutput) RecipeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Target) pulumi.IntPtrOutput { return v.RecipeCount }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The current state of the DetectorRule.
-func (o TargetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TargetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -530,13 +505,13 @@ func (o TargetOutput) TargetResponderRecipes() TargetTargetResponderRecipeArrayO
 }
 
 // The date and time the target was created. Format defined by RFC3339.
-func (o TargetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TargetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the target was updated. Format defined by RFC3339.
-func (o TargetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Target) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o TargetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type TargetArrayOutput struct{ *pulumi.OutputState }
@@ -551,12 +526,6 @@ func (o TargetArrayOutput) ToTargetArrayOutput() TargetArrayOutput {
 
 func (o TargetArrayOutput) ToTargetArrayOutputWithContext(ctx context.Context) TargetArrayOutput {
 	return o
-}
-
-func (o TargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Target] {
-	return pulumix.Output[[]*Target]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetArrayOutput) Index(i pulumi.IntInput) TargetOutput {
@@ -577,12 +546,6 @@ func (o TargetMapOutput) ToTargetMapOutput() TargetMapOutput {
 
 func (o TargetMapOutput) ToTargetMapOutputWithContext(ctx context.Context) TargetMapOutput {
 	return o
-}
-
-func (o TargetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Target] {
-	return pulumix.Output[map[string]*Target]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetMapOutput) MapIndex(k pulumi.StringInput) TargetOutput {

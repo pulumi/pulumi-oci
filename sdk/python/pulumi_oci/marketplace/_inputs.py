@@ -34,12 +34,6 @@ class PublicationIconArgs:
                  file_extension: Optional[pulumi.Input[str]] = None,
                  mime_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] content_url: The content URL of the upload data.
-        :param pulumi.Input[str] file_extension: The file extension of the upload data.
-        :param pulumi.Input[str] mime_type: The MIME type of the upload data.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        """
         if content_url is not None:
             pulumi.set(__self__, "content_url", content_url)
         if file_extension is not None:
@@ -52,9 +46,6 @@ class PublicationIconArgs:
     @property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The content URL of the upload data.
-        """
         return pulumi.get(self, "content_url")
 
     @content_url.setter
@@ -64,9 +55,6 @@ class PublicationIconArgs:
     @property
     @pulumi.getter(name="fileExtension")
     def file_extension(self) -> Optional[pulumi.Input[str]]:
-        """
-        The file extension of the upload data.
-        """
         return pulumi.get(self, "file_extension")
 
     @file_extension.setter
@@ -76,9 +64,6 @@ class PublicationIconArgs:
     @property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The MIME type of the upload data.
-        """
         return pulumi.get(self, "mime_type")
 
     @mime_type.setter
@@ -88,9 +73,6 @@ class PublicationIconArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -106,13 +88,6 @@ class PublicationPackageDetailsArgs:
                  package_type: pulumi.Input[str],
                  package_version: pulumi.Input[str],
                  image_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['PublicationPackageDetailsEulaArgs']]] eulas: The end user license agreeement (EULA) that consumers of this listing must accept.
-        :param pulumi.Input['PublicationPackageDetailsOperatingSystemArgs'] operating_system: The operating system used by the listing.
-        :param pulumi.Input[str] package_type: The package's type.
-        :param pulumi.Input[str] package_version: The package version.
-        :param pulumi.Input[str] image_id: The unique identifier for the base image of the publication.
-        """
         pulumi.set(__self__, "eulas", eulas)
         pulumi.set(__self__, "operating_system", operating_system)
         pulumi.set(__self__, "package_type", package_type)
@@ -123,9 +98,6 @@ class PublicationPackageDetailsArgs:
     @property
     @pulumi.getter
     def eulas(self) -> pulumi.Input[Sequence[pulumi.Input['PublicationPackageDetailsEulaArgs']]]:
-        """
-        The end user license agreeement (EULA) that consumers of this listing must accept.
-        """
         return pulumi.get(self, "eulas")
 
     @eulas.setter
@@ -135,9 +107,6 @@ class PublicationPackageDetailsArgs:
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> pulumi.Input['PublicationPackageDetailsOperatingSystemArgs']:
-        """
-        The operating system used by the listing.
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -147,9 +116,6 @@ class PublicationPackageDetailsArgs:
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> pulumi.Input[str]:
-        """
-        The package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
@@ -159,9 +125,6 @@ class PublicationPackageDetailsArgs:
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> pulumi.Input[str]:
-        """
-        The package version.
-        """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
@@ -171,9 +134,6 @@ class PublicationPackageDetailsArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the base image of the publication.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -186,10 +146,6 @@ class PublicationPackageDetailsEulaArgs:
     def __init__(__self__, *,
                  eula_type: pulumi.Input[str],
                  license_text: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] eula_type: The end user license agreement's type.
-        :param pulumi.Input[str] license_text: The text of the end user license agreement.
-        """
         pulumi.set(__self__, "eula_type", eula_type)
         if license_text is not None:
             pulumi.set(__self__, "license_text", license_text)
@@ -197,9 +153,6 @@ class PublicationPackageDetailsEulaArgs:
     @property
     @pulumi.getter(name="eulaType")
     def eula_type(self) -> pulumi.Input[str]:
-        """
-        The end user license agreement's type.
-        """
         return pulumi.get(self, "eula_type")
 
     @eula_type.setter
@@ -209,9 +162,6 @@ class PublicationPackageDetailsEulaArgs:
     @property
     @pulumi.getter(name="licenseText")
     def license_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        The text of the end user license agreement.
-        """
         return pulumi.get(self, "license_text")
 
     @license_text.setter
@@ -223,18 +173,12 @@ class PublicationPackageDetailsEulaArgs:
 class PublicationPackageDetailsOperatingSystemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -249,16 +193,6 @@ class PublicationSupportContactArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  phone: Optional[pulumi.Input[str]] = None,
                  subject: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] email: (Updatable) The email of the contact.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        :param pulumi.Input[str] phone: (Updatable) The phone number of the contact.
-        :param pulumi.Input[str] subject: (Updatable) The email subject line to use when contacting support.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if email is not None:
             pulumi.set(__self__, "email", email)
         if name is not None:
@@ -271,9 +205,6 @@ class PublicationSupportContactArgs:
     @property
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The email of the contact.
-        """
         return pulumi.get(self, "email")
 
     @email.setter
@@ -283,9 +214,6 @@ class PublicationSupportContactArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -295,9 +223,6 @@ class PublicationSupportContactArgs:
     @property
     @pulumi.getter
     def phone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The phone number of the contact.
-        """
         return pulumi.get(self, "phone")
 
     @phone.setter
@@ -307,13 +232,6 @@ class PublicationSupportContactArgs:
     @property
     @pulumi.getter
     def subject(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The email subject line to use when contacting support.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subject")
 
     @subject.setter
@@ -325,18 +243,12 @@ class PublicationSupportContactArgs:
 class PublicationSupportedOperatingSystemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -389,9 +301,6 @@ class GetCategoriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the product category.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -400,9 +309,6 @@ class GetCategoriesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the product category.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -473,9 +379,6 @@ class GetListingPackagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the variable.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -484,9 +387,6 @@ class GetListingPackagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the variable.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -518,9 +418,6 @@ class GetListingTaxesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the tax code.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -529,9 +426,6 @@ class GetListingTaxesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the tax code.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -563,9 +457,6 @@ class GetListingsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the listing.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -574,9 +465,6 @@ class GetListingsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the listing.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -608,9 +496,6 @@ class GetPublicationPackagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the variable.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -619,9 +504,6 @@ class GetPublicationPackagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the variable.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -653,9 +535,6 @@ class GetPublicationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the publication.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -664,9 +543,6 @@ class GetPublicationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the publication.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -698,9 +574,6 @@ class GetPublishersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the publisher.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -709,9 +582,6 @@ class GetPublishersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the publisher.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

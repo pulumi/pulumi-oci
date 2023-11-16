@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificateCollectionItem {
@@ -16,163 +18,163 @@ public final class GetCertificatesCertificateCollectionItem {
      * @return The data of the leaf certificate in pem format.
      * 
      */
-    private String certificate;
+    private @Nullable String certificate;
     /**
      * @return The ocid of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The intermediate certificate data associated with the certificate in pem format.
      * 
      */
-    private String intermediateCertificates;
+    private @Nullable String intermediateCertificates;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
-    private String privateKey;
+    private @Nullable String lifecycleDetails;
+    private @Nullable String privateKey;
     /**
      * @return A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The entity to be secured by the certificate and additional host names.
      * 
      */
-    private List<String> subjectNames;
+    private @Nullable List<String> subjectNames;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the certificate will expire.
      * 
      */
-    private String timeNotValidAfter;
+    private @Nullable String timeNotValidAfter;
     /**
      * @return The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetCertificatesCertificateCollectionItem() {}
     /**
      * @return The data of the leaf certificate in pem format.
      * 
      */
-    public String certificate() {
-        return this.certificate;
+    public Optional<String> certificate() {
+        return Optional.ofNullable(this.certificate);
     }
     /**
      * @return The ocid of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The intermediate certificate data associated with the certificate in pem format.
      * 
      */
-    public String intermediateCertificates() {
-        return this.intermediateCertificates;
+    public Optional<String> intermediateCertificates() {
+        return Optional.ofNullable(this.intermediateCertificates);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public String privateKey() {
-        return this.privateKey;
+    public Optional<String> privateKey() {
+        return Optional.ofNullable(this.privateKey);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The entity to be secured by the certificate and additional host names.
      * 
      */
     public List<String> subjectNames() {
-        return this.subjectNames;
+        return this.subjectNames == null ? List.of() : this.subjectNames;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the certificate will expire.
      * 
      */
-    public String timeNotValidAfter() {
-        return this.timeNotValidAfter;
+    public Optional<String> timeNotValidAfter() {
+        return Optional.ofNullable(this.timeNotValidAfter);
     }
     /**
      * @return The time this resource was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -184,20 +186,20 @@ public final class GetCertificatesCertificateCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificate;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String intermediateCertificates;
-        private String lifecycleDetails;
-        private String privateKey;
-        private String state;
-        private List<String> subjectNames;
-        private String timeCreated;
-        private String timeNotValidAfter;
-        private String timeUpdated;
+        private @Nullable String certificate;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String intermediateCertificates;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String privateKey;
+        private @Nullable String state;
+        private @Nullable List<String> subjectNames;
+        private @Nullable String timeCreated;
+        private @Nullable String timeNotValidAfter;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -218,76 +220,76 @@ public final class GetCertificatesCertificateCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder certificate(String certificate) {
-            this.certificate = Objects.requireNonNull(certificate);
+        public Builder certificate(@Nullable String certificate) {
+            this.certificate = certificate;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder intermediateCertificates(String intermediateCertificates) {
-            this.intermediateCertificates = Objects.requireNonNull(intermediateCertificates);
+        public Builder intermediateCertificates(@Nullable String intermediateCertificates) {
+            this.intermediateCertificates = intermediateCertificates;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder privateKey(String privateKey) {
-            this.privateKey = Objects.requireNonNull(privateKey);
+        public Builder privateKey(@Nullable String privateKey) {
+            this.privateKey = privateKey;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subjectNames(List<String> subjectNames) {
-            this.subjectNames = Objects.requireNonNull(subjectNames);
+        public Builder subjectNames(@Nullable List<String> subjectNames) {
+            this.subjectNames = subjectNames;
             return this;
         }
         public Builder subjectNames(String... subjectNames) {
             return subjectNames(List.of(subjectNames));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeNotValidAfter(String timeNotValidAfter) {
-            this.timeNotValidAfter = Objects.requireNonNull(timeNotValidAfter);
+        public Builder timeNotValidAfter(@Nullable String timeNotValidAfter) {
+            this.timeNotValidAfter = timeNotValidAfter;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetCertificatesCertificateCollectionItem build() {

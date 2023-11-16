@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// A human-readable error string.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The date and time the error occurred.
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetWorkRequestErrorsWorkRequestErrorResult(
-            string code,
+            string? code,
 
-            string message,
+            string? message,
 
-            string timestamp)
+            string? timestamp)
         {
             Code = code;
             Message = message;

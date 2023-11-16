@@ -76,7 +76,7 @@ export interface GetCrossConnectsResult {
     /**
      * The list of cross_connects.
      */
-    readonly crossConnects: outputs.Core.GetCrossConnectsCrossConnect[];
+    readonly crossConnects?: outputs.Core.GetCrossConnectsCrossConnect[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -85,7 +85,7 @@ export interface GetCrossConnectsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The cross-connect's current state.
      */

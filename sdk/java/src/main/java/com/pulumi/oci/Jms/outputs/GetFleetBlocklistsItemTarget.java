@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetBlocklistsItemTarget {
@@ -13,39 +15,39 @@ public final class GetFleetBlocklistsItemTarget {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    private String fleetId;
+    private @Nullable String fleetId;
     /**
      * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      * 
      */
-    private String installationKey;
+    private @Nullable String installationKey;
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
 
     private GetFleetBlocklistsItemTarget() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    public String fleetId() {
-        return this.fleetId;
+    public Optional<String> fleetId() {
+        return Optional.ofNullable(this.fleetId);
     }
     /**
      * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
      * 
      */
-    public String installationKey() {
-        return this.installationKey;
+    public Optional<String> installationKey() {
+        return Optional.ofNullable(this.installationKey);
     }
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetFleetBlocklistsItemTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fleetId;
-        private String installationKey;
-        private String managedInstanceId;
+        private @Nullable String fleetId;
+        private @Nullable String installationKey;
+        private @Nullable String managedInstanceId;
         public Builder() {}
         public Builder(GetFleetBlocklistsItemTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetFleetBlocklistsItemTarget {
         }
 
         @CustomType.Setter
-        public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+        public Builder fleetId(@Nullable String fleetId) {
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
-        public Builder installationKey(String installationKey) {
-            this.installationKey = Objects.requireNonNull(installationKey);
+        public Builder installationKey(@Nullable String installationKey) {
+            this.installationKey = installationKey;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         public GetFleetBlocklistsItemTarget build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
@@ -62,8 +61,8 @@ type GetNetworkSecurityGroupVnicsArgs struct {
 type GetNetworkSecurityGroupVnicsResult struct {
 	Filters []GetNetworkSecurityGroupVnicsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	NetworkSecurityGroupId string `pulumi:"networkSecurityGroupId"`
+	Id                     *string `pulumi:"id"`
+	NetworkSecurityGroupId string  `pulumi:"networkSecurityGroupId"`
 	// The list of network_security_group_vnics.
 	NetworkSecurityGroupVnics []GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic `pulumi:"networkSecurityGroupVnics"`
 }
@@ -107,19 +106,13 @@ func (o GetNetworkSecurityGroupVnicsResultOutput) ToGetNetworkSecurityGroupVnics
 	return o
 }
 
-func (o GetNetworkSecurityGroupVnicsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupVnicsResult] {
-	return pulumix.Output[GetNetworkSecurityGroupVnicsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkSecurityGroupVnicsResultOutput) Filters() GetNetworkSecurityGroupVnicsFilterArrayOutput {
 	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsResult) []GetNetworkSecurityGroupVnicsFilter { return v.Filters }).(GetNetworkSecurityGroupVnicsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkSecurityGroupVnicsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkSecurityGroupVnicsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupVnicsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkSecurityGroupVnicsResultOutput) NetworkSecurityGroupId() pulumi.StringOutput {

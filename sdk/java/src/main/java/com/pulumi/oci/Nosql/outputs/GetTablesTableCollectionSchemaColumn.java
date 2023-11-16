@@ -7,42 +7,44 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTablesTableCollectionSchemaColumn {
-    private String defaultValue;
-    private Boolean isAsUuid;
-    private Boolean isGenerated;
-    private Boolean isNullable;
+    private @Nullable String defaultValue;
+    private @Nullable Boolean isAsUuid;
+    private @Nullable Boolean isGenerated;
+    private @Nullable Boolean isNullable;
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    private String name;
-    private String type;
+    private @Nullable String name;
+    private @Nullable String type;
 
     private GetTablesTableCollectionSchemaColumn() {}
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
-    public Boolean isAsUuid() {
-        return this.isAsUuid;
+    public Optional<Boolean> isAsUuid() {
+        return Optional.ofNullable(this.isAsUuid);
     }
-    public Boolean isGenerated() {
-        return this.isGenerated;
+    public Optional<Boolean> isGenerated() {
+        return Optional.ofNullable(this.isGenerated);
     }
-    public Boolean isNullable() {
-        return this.isNullable;
+    public Optional<Boolean> isNullable() {
+        return Optional.ofNullable(this.isNullable);
     }
     /**
      * @return A shell-globbing-style (*?[]) filter for names.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -54,12 +56,12 @@ public final class GetTablesTableCollectionSchemaColumn {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultValue;
-        private Boolean isAsUuid;
-        private Boolean isGenerated;
-        private Boolean isNullable;
-        private String name;
-        private String type;
+        private @Nullable String defaultValue;
+        private @Nullable Boolean isAsUuid;
+        private @Nullable Boolean isGenerated;
+        private @Nullable Boolean isNullable;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetTablesTableCollectionSchemaColumn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,33 +74,33 @@ public final class GetTablesTableCollectionSchemaColumn {
         }
 
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder isAsUuid(Boolean isAsUuid) {
-            this.isAsUuid = Objects.requireNonNull(isAsUuid);
+        public Builder isAsUuid(@Nullable Boolean isAsUuid) {
+            this.isAsUuid = isAsUuid;
             return this;
         }
         @CustomType.Setter
-        public Builder isGenerated(Boolean isGenerated) {
-            this.isGenerated = Objects.requireNonNull(isGenerated);
+        public Builder isGenerated(@Nullable Boolean isGenerated) {
+            this.isGenerated = isGenerated;
             return this;
         }
         @CustomType.Setter
-        public Builder isNullable(Boolean isNullable) {
-            this.isNullable = Objects.requireNonNull(isNullable);
+        public Builder isNullable(@Nullable Boolean isNullable) {
+            this.isNullable = isNullable;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetTablesTableCollectionSchemaColumn build() {

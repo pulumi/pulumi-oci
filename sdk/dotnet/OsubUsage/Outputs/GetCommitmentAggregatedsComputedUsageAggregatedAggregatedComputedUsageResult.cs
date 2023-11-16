@@ -16,19 +16,19 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Sum of Computed Line Amount rounded
         /// </summary>
-        public readonly string Cost;
+        public readonly string? Cost;
         /// <summary>
         /// Sum of Computed Line Amount unrounded
         /// </summary>
-        public readonly string CostUnrounded;
+        public readonly string? CostUnrounded;
         /// <summary>
         /// Data Center Attribute as sent by MQS to SPM.
         /// </summary>
-        public readonly string DataCenter;
+        public readonly string? DataCenter;
         /// <summary>
         /// Net Unit Price for the product in consideration.
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// Product description
         /// </summary>
@@ -36,33 +36,33 @@ namespace Pulumi.Oci.OsubUsage.Outputs
         /// <summary>
         /// Total Quantity that was used for computation
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Metered Service date , expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeMeteredOn;
+        public readonly string? TimeMeteredOn;
         /// <summary>
         /// Usage compute type in SPM.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult(
-            string cost,
+            string? cost,
 
-            string costUnrounded,
+            string? costUnrounded,
 
-            string dataCenter,
+            string? dataCenter,
 
-            string netUnitPrice,
+            string? netUnitPrice,
 
             ImmutableArray<Outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult> products,
 
-            string quantity,
+            string? quantity,
 
-            string timeMeteredOn,
+            string? timeMeteredOn,
 
-            string type)
+            string? type)
         {
             Cost = cost;
             CostUnrounded = costUnrounded;

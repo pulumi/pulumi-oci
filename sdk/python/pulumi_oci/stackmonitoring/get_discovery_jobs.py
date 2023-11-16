@@ -43,17 +43,11 @@ class GetDiscoveryJobsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="discoveryJobCollections")
-    def discovery_job_collections(self) -> Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionResult']:
-        """
-        The list of discovery_job_collection.
-        """
+    def discovery_job_collections(self) -> Optional[Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionResult']]:
         return pulumi.get(self, "discovery_job_collections")
 
     @property
@@ -63,7 +57,7 @@ class GetDiscoveryJobsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,23 +87,7 @@ def get_discovery_jobs(compartment_id: Optional[str] = None,
                        name: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobsResult:
     """
-    This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    API to get the details of all Discovery Jobs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=var["compartment_id"],
-        name=var["discovery_job_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str name: A filter to return only discovery jobs that match the entire resource name given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -132,22 +110,6 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobsResult]:
     """
-    This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    API to get the details of all Discovery Jobs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=var["compartment_id"],
-        name=var["discovery_job_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str name: A filter to return only discovery jobs that match the entire resource name given.
+    Use this data source to access information about an existing resource.
     """
     ...

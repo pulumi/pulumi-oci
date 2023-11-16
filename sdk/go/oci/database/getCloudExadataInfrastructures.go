@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetCloudExadataInfrastructuresResult struct {
 	DisplayName *string                                `pulumi:"displayName"`
 	Filters     []GetCloudExadataInfrastructuresFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetCloudExadataInfrastructuresResultOutput) ToGetCloudExadataInfrastruct
 	return o
 }
 
-func (o GetCloudExadataInfrastructuresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudExadataInfrastructuresResult] {
-	return pulumix.Output[GetCloudExadataInfrastructuresResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of cloud_exadata_infrastructures.
 func (o GetCloudExadataInfrastructuresResultOutput) CloudExadataInfrastructures() GetCloudExadataInfrastructuresCloudExadataInfrastructureArrayOutput {
 	return o.ApplyT(func(v GetCloudExadataInfrastructuresResult) []GetCloudExadataInfrastructuresCloudExadataInfrastructure {
@@ -150,8 +143,8 @@ func (o GetCloudExadataInfrastructuresResultOutput) Filters() GetCloudExadataInf
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCloudExadataInfrastructuresResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudExadataInfrastructuresResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCloudExadataInfrastructuresResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the cloud Exadata infrastructure resource.

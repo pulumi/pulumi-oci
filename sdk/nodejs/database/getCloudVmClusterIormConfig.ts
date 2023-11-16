@@ -51,20 +51,20 @@ export interface GetCloudVmClusterIormConfigResult {
     /**
      * An array of IORM settings for all the database in the cloud vm cluster.
      */
-    readonly dbPlans: outputs.Database.GetCloudVmClusterIormConfigDbPlan[];
-    readonly id: string;
+    readonly dbPlans?: outputs.Database.GetCloudVmClusterIormConfigDbPlan[];
+    readonly id?: string;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current value for the IORM objective. The default is `AUTO`.
      */
-    readonly objective: string;
+    readonly objective?: string;
     /**
      * The current state of IORM configuration for the cloud vm cluster.
      */
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.

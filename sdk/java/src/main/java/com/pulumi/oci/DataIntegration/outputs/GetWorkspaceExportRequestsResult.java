@@ -18,14 +18,14 @@ public final class GetWorkspaceExportRequestsResult {
      * @return The list of export_request_summary_collection.
      * 
      */
-    private List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections;
+    private @Nullable List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections;
     private @Nullable String exportStatus;
     private @Nullable List<GetWorkspaceExportRequestsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the export request.
      * 
@@ -50,7 +50,7 @@ public final class GetWorkspaceExportRequestsResult {
      * 
      */
     public List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections() {
-        return this.exportRequestSummaryCollections;
+        return this.exportRequestSummaryCollections == null ? List.of() : this.exportRequestSummaryCollections;
     }
     public Optional<String> exportStatus() {
         return Optional.ofNullable(this.exportStatus);
@@ -62,8 +62,8 @@ public final class GetWorkspaceExportRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the export request.
@@ -102,10 +102,10 @@ public final class GetWorkspaceExportRequestsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections;
+        private @Nullable List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections;
         private @Nullable String exportStatus;
         private @Nullable List<GetWorkspaceExportRequestsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String projection;
         private @Nullable String timeEndedInMillis;
@@ -126,8 +126,8 @@ public final class GetWorkspaceExportRequestsResult {
         }
 
         @CustomType.Setter
-        public Builder exportRequestSummaryCollections(List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections) {
-            this.exportRequestSummaryCollections = Objects.requireNonNull(exportRequestSummaryCollections);
+        public Builder exportRequestSummaryCollections(@Nullable List<GetWorkspaceExportRequestsExportRequestSummaryCollection> exportRequestSummaryCollections) {
+            this.exportRequestSummaryCollections = exportRequestSummaryCollections;
             return this;
         }
         public Builder exportRequestSummaryCollections(GetWorkspaceExportRequestsExportRequestSummaryCollection... exportRequestSummaryCollections) {
@@ -147,8 +147,8 @@ public final class GetWorkspaceExportRequestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vtap resource in Oracle Cloud Infrastructure Core service.
@@ -91,44 +90,44 @@ type Vtap struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
-	EncapsulationProtocol pulumi.StringOutput `pulumi:"encapsulationProtocol"`
+	EncapsulationProtocol pulumi.StringPtrOutput `pulumi:"encapsulationProtocol"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Used to start or stop a `Vtap` resource.
-	IsVtapEnabled pulumi.BoolOutput `pulumi:"isVtapEnabled"`
+	IsVtapEnabled pulumi.BoolPtrOutput `pulumi:"isVtapEnabled"`
 	// The VTAP's current running state.
-	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrOutput `pulumi:"lifecycleStateDetails"`
 	// (Updatable) The maximum size of the packets to be included in the filter.
-	MaxPacketSize pulumi.IntOutput `pulumi:"maxPacketSize"`
+	MaxPacketSize pulumi.IntPtrOutput `pulumi:"maxPacketSize"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
 	SourceId pulumi.StringOutput `pulumi:"sourceId"`
 	// (Updatable) The IP Address of the source private endpoint.
-	SourcePrivateEndpointIp pulumi.StringOutput `pulumi:"sourcePrivateEndpointIp"`
+	SourcePrivateEndpointIp pulumi.StringPtrOutput `pulumi:"sourcePrivateEndpointIp"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
-	SourcePrivateEndpointSubnetId pulumi.StringOutput `pulumi:"sourcePrivateEndpointSubnetId"`
+	SourcePrivateEndpointSubnetId pulumi.StringPtrOutput `pulumi:"sourcePrivateEndpointSubnetId"`
 	// (Updatable) The source type for the VTAP.
-	SourceType pulumi.StringOutput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// The VTAP's administrative lifecycle state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
-	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// (Updatable) The IP address of the destination resource where mirrored packets are sent.
-	TargetIp pulumi.StringOutput `pulumi:"targetIp"`
+	TargetIp pulumi.StringPtrOutput `pulumi:"targetIp"`
 	// (Updatable) The target type for the VTAP.
-	TargetType pulumi.StringOutput `pulumi:"targetType"`
+	TargetType pulumi.StringPtrOutput `pulumi:"targetType"`
 	// The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
-	TrafficMode pulumi.StringOutput `pulumi:"trafficMode"`
+	TrafficMode pulumi.StringPtrOutput `pulumi:"trafficMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 	// (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VxlanNetworkIdentifier pulumi.StringOutput `pulumi:"vxlanNetworkIdentifier"`
+	VxlanNetworkIdentifier pulumi.StringPtrOutput `pulumi:"vxlanNetworkIdentifier"`
 }
 
 // NewVtap registers a new resource with the given unique name, arguments, and options.
@@ -380,12 +379,6 @@ func (i *Vtap) ToVtapOutputWithContext(ctx context.Context) VtapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VtapOutput)
 }
 
-func (i *Vtap) ToOutput(ctx context.Context) pulumix.Output[*Vtap] {
-	return pulumix.Output[*Vtap]{
-		OutputState: i.ToVtapOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VtapArrayInput is an input type that accepts VtapArray and VtapArrayOutput values.
 // You can construct a concrete instance of `VtapArrayInput` via:
 //
@@ -409,12 +402,6 @@ func (i VtapArray) ToVtapArrayOutput() VtapArrayOutput {
 
 func (i VtapArray) ToVtapArrayOutputWithContext(ctx context.Context) VtapArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VtapArrayOutput)
-}
-
-func (i VtapArray) ToOutput(ctx context.Context) pulumix.Output[[]*Vtap] {
-	return pulumix.Output[[]*Vtap]{
-		OutputState: i.ToVtapArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VtapMapInput is an input type that accepts VtapMap and VtapMapOutput values.
@@ -442,12 +429,6 @@ func (i VtapMap) ToVtapMapOutputWithContext(ctx context.Context) VtapMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VtapMapOutput)
 }
 
-func (i VtapMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vtap] {
-	return pulumix.Output[map[string]*Vtap]{
-		OutputState: i.ToVtapMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VtapOutput struct{ *pulumi.OutputState }
 
 func (VtapOutput) ElementType() reflect.Type {
@@ -460,12 +441,6 @@ func (o VtapOutput) ToVtapOutput() VtapOutput {
 
 func (o VtapOutput) ToVtapOutputWithContext(ctx context.Context) VtapOutput {
 	return o
-}
-
-func (o VtapOutput) ToOutput(ctx context.Context) pulumix.Output[*Vtap] {
-	return pulumix.Output[*Vtap]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
@@ -484,13 +459,13 @@ func (o VtapOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VtapOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VtapOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
-func (o VtapOutput) EncapsulationProtocol() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.EncapsulationProtocol }).(pulumi.StringOutput)
+func (o VtapOutput) EncapsulationProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.EncapsulationProtocol }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -499,18 +474,18 @@ func (o VtapOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Used to start or stop a `Vtap` resource.
-func (o VtapOutput) IsVtapEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.BoolOutput { return v.IsVtapEnabled }).(pulumi.BoolOutput)
+func (o VtapOutput) IsVtapEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.BoolPtrOutput { return v.IsVtapEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The VTAP's current running state.
-func (o VtapOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o VtapOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The maximum size of the packets to be included in the filter.
-func (o VtapOutput) MaxPacketSize() pulumi.IntOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.IntOutput { return v.MaxPacketSize }).(pulumi.IntOutput)
+func (o VtapOutput) MaxPacketSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.IntPtrOutput { return v.MaxPacketSize }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
@@ -519,48 +494,48 @@ func (o VtapOutput) SourceId() pulumi.StringOutput {
 }
 
 // (Updatable) The IP Address of the source private endpoint.
-func (o VtapOutput) SourcePrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.SourcePrivateEndpointIp }).(pulumi.StringOutput)
+func (o VtapOutput) SourcePrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.SourcePrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
-func (o VtapOutput) SourcePrivateEndpointSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.SourcePrivateEndpointSubnetId }).(pulumi.StringOutput)
+func (o VtapOutput) SourcePrivateEndpointSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.SourcePrivateEndpointSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The source type for the VTAP.
-func (o VtapOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
+func (o VtapOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The VTAP's administrative lifecycle state.
-func (o VtapOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VtapOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
-func (o VtapOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o VtapOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The IP address of the destination resource where mirrored packets are sent.
-func (o VtapOutput) TargetIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.TargetIp }).(pulumi.StringOutput)
+func (o VtapOutput) TargetIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.TargetIp }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The target type for the VTAP.
-func (o VtapOutput) TargetType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.TargetType }).(pulumi.StringOutput)
+func (o VtapOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
-func (o VtapOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VtapOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
-func (o VtapOutput) TrafficMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.TrafficMode }).(pulumi.StringOutput)
+func (o VtapOutput) TrafficMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.TrafficMode }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
@@ -572,8 +547,8 @@ func (o VtapOutput) VcnId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VtapOutput) VxlanNetworkIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vtap) pulumi.StringOutput { return v.VxlanNetworkIdentifier }).(pulumi.StringOutput)
+func (o VtapOutput) VxlanNetworkIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vtap) pulumi.StringPtrOutput { return v.VxlanNetworkIdentifier }).(pulumi.StringPtrOutput)
 }
 
 type VtapArrayOutput struct{ *pulumi.OutputState }
@@ -588,12 +563,6 @@ func (o VtapArrayOutput) ToVtapArrayOutput() VtapArrayOutput {
 
 func (o VtapArrayOutput) ToVtapArrayOutputWithContext(ctx context.Context) VtapArrayOutput {
 	return o
-}
-
-func (o VtapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Vtap] {
-	return pulumix.Output[[]*Vtap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VtapArrayOutput) Index(i pulumi.IntInput) VtapOutput {
@@ -614,12 +583,6 @@ func (o VtapMapOutput) ToVtapMapOutput() VtapMapOutput {
 
 func (o VtapMapOutput) ToVtapMapOutputWithContext(ctx context.Context) VtapMapOutput {
 	return o
-}
-
-func (o VtapMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vtap] {
-	return pulumix.Output[map[string]*Vtap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VtapMapOutput) MapIndex(k pulumi.StringInput) VtapOutput {

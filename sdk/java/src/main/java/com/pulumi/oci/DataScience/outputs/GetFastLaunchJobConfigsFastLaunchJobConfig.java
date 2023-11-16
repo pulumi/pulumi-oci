@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
@@ -14,75 +16,75 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
      * @return The number of cores associated with this fast launch job shape.
      * 
      */
-    private Integer coreCount;
+    private @Nullable Integer coreCount;
     /**
      * @return The managed egress support
      * 
      */
-    private String managedEgressSupport;
+    private @Nullable String managedEgressSupport;
     /**
      * @return The number of cores associated with this fast launch job shape.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The name of the fast launch job config
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The name of the fast launch job shape.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return The family that the compute shape belongs to.
      * 
      */
-    private String shapeSeries;
+    private @Nullable String shapeSeries;
 
     private GetFastLaunchJobConfigsFastLaunchJobConfig() {}
     /**
      * @return The number of cores associated with this fast launch job shape.
      * 
      */
-    public Integer coreCount() {
-        return this.coreCount;
+    public Optional<Integer> coreCount() {
+        return Optional.ofNullable(this.coreCount);
     }
     /**
      * @return The managed egress support
      * 
      */
-    public String managedEgressSupport() {
-        return this.managedEgressSupport;
+    public Optional<String> managedEgressSupport() {
+        return Optional.ofNullable(this.managedEgressSupport);
     }
     /**
      * @return The number of cores associated with this fast launch job shape.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The name of the fast launch job config
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The name of the fast launch job shape.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return The family that the compute shape belongs to.
      * 
      */
-    public String shapeSeries() {
-        return this.shapeSeries;
+    public Optional<String> shapeSeries() {
+        return Optional.ofNullable(this.shapeSeries);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer coreCount;
-        private String managedEgressSupport;
-        private Integer memoryInGbs;
-        private String name;
-        private String shapeName;
-        private String shapeSeries;
+        private @Nullable Integer coreCount;
+        private @Nullable String managedEgressSupport;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable String name;
+        private @Nullable String shapeName;
+        private @Nullable String shapeSeries;
         public Builder() {}
         public Builder(GetFastLaunchJobConfigsFastLaunchJobConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
         }
 
         @CustomType.Setter
-        public Builder coreCount(Integer coreCount) {
-            this.coreCount = Objects.requireNonNull(coreCount);
+        public Builder coreCount(@Nullable Integer coreCount) {
+            this.coreCount = coreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder managedEgressSupport(String managedEgressSupport) {
-            this.managedEgressSupport = Objects.requireNonNull(managedEgressSupport);
+        public Builder managedEgressSupport(@Nullable String managedEgressSupport) {
+            this.managedEgressSupport = managedEgressSupport;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeSeries(String shapeSeries) {
-            this.shapeSeries = Objects.requireNonNull(shapeSeries);
+        public Builder shapeSeries(@Nullable String shapeSeries) {
+            this.shapeSeries = shapeSeries;
             return this;
         }
         public GetFastLaunchJobConfigsFastLaunchJobConfig build() {

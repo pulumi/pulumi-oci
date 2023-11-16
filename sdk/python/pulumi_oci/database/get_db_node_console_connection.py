@@ -58,87 +58,57 @@ class GetDbNodeConsoleConnectionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to contain the console connection.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        The SSH connection string for the console connection.
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="dbNodeId")
     def db_node_id(self) -> str:
-        """
-        The OCID of the database node.
-        """
         return pulumi.get(self, "db_node_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def fingerprint(self) -> str:
-        """
-        The SSH public key fingerprint for the console connection.
-        """
+    def fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "fingerprint")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def id(self) -> str:
-        """
-        The OCID of the console connection.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="publicKey")
-    def public_key(self) -> str:
+    def public_key(self) -> Optional[str]:
         return pulumi.get(self, "public_key")
 
     @property
     @pulumi.getter(name="serviceHostKeyFingerprint")
-    def service_host_key_fingerprint(self) -> str:
-        """
-        The SSH public key's fingerprint for the console connection service host.
-        """
+    def service_host_key_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "service_host_key_fingerprint")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the console connection.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -165,23 +135,7 @@ def get_db_node_console_connection(db_node_id: Optional[str] = None,
                                    id: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodeConsoleConnectionResult:
     """
-    This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the specified database node console connection's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_node_console_connection = oci.Database.get_db_node_console_connection(db_node_id=oci_database_db_node["test_db_node"]["id"],
-        id=var["db_node_console_connection_id"])
-    ```
-
-
-    :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str id: The OCID of the console connection.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbNodeId'] = db_node_id
@@ -208,22 +162,6 @@ def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[str]
                                           id: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeConsoleConnectionResult]:
     """
-    This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the specified database node console connection's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_node_console_connection = oci.Database.get_db_node_console_connection(db_node_id=oci_database_db_node["test_db_node"]["id"],
-        id=var["db_node_console_connection_id"])
-    ```
-
-
-    :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str id: The OCID of the console connection.
+    Use this data source to access information about an existing resource.
     """
     ...

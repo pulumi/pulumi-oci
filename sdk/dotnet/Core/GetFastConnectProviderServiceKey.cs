@@ -126,31 +126,31 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         /// </summary>
-        public readonly string BandwidthShapeName;
+        public readonly string? BandwidthShapeName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName` query parameter for [GetFastConnectProviderServiceKey](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey).
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The provider's peering location.
         /// </summary>
-        public readonly string PeeringLocation;
+        public readonly string? PeeringLocation;
         public readonly string ProviderServiceId;
         public readonly string ProviderServiceKeyName;
 
         [OutputConstructor]
         private GetFastConnectProviderServiceKeyResult(
-            string bandwidthShapeName,
+            string? bandwidthShapeName,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string peeringLocation,
+            string? peeringLocation,
 
             string providerServiceId,
 

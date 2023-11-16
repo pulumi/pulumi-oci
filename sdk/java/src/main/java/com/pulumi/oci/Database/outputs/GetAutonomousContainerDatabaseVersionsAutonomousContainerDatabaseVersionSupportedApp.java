@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp {
@@ -14,51 +16,51 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
      * @return The Autonomous Container Database version end of support date.
      * 
      */
-    private String endOfSupport;
+    private @Nullable String endOfSupport;
     /**
      * @return Indicates if the image is certified.
      * 
      */
-    private Boolean isCertified;
+    private @Nullable Boolean isCertified;
     /**
      * @return The Autonomous Container Database version release date.
      * 
      */
-    private String releaseDate;
+    private @Nullable String releaseDate;
     /**
      * @return The name of the supported application.
      * 
      */
-    private String supportedAppName;
+    private @Nullable String supportedAppName;
 
     private GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp() {}
     /**
      * @return The Autonomous Container Database version end of support date.
      * 
      */
-    public String endOfSupport() {
-        return this.endOfSupport;
+    public Optional<String> endOfSupport() {
+        return Optional.ofNullable(this.endOfSupport);
     }
     /**
      * @return Indicates if the image is certified.
      * 
      */
-    public Boolean isCertified() {
-        return this.isCertified;
+    public Optional<Boolean> isCertified() {
+        return Optional.ofNullable(this.isCertified);
     }
     /**
      * @return The Autonomous Container Database version release date.
      * 
      */
-    public String releaseDate() {
-        return this.releaseDate;
+    public Optional<String> releaseDate() {
+        return Optional.ofNullable(this.releaseDate);
     }
     /**
      * @return The name of the supported application.
      * 
      */
-    public String supportedAppName() {
-        return this.supportedAppName;
+    public Optional<String> supportedAppName() {
+        return Optional.ofNullable(this.supportedAppName);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
     }
     @CustomType.Builder
     public static final class Builder {
-        private String endOfSupport;
-        private Boolean isCertified;
-        private String releaseDate;
-        private String supportedAppName;
+        private @Nullable String endOfSupport;
+        private @Nullable Boolean isCertified;
+        private @Nullable String releaseDate;
+        private @Nullable String supportedAppName;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
         }
 
         @CustomType.Setter
-        public Builder endOfSupport(String endOfSupport) {
-            this.endOfSupport = Objects.requireNonNull(endOfSupport);
+        public Builder endOfSupport(@Nullable String endOfSupport) {
+            this.endOfSupport = endOfSupport;
             return this;
         }
         @CustomType.Setter
-        public Builder isCertified(Boolean isCertified) {
-            this.isCertified = Objects.requireNonNull(isCertified);
+        public Builder isCertified(@Nullable Boolean isCertified) {
+            this.isCertified = isCertified;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+        public Builder releaseDate(@Nullable String releaseDate) {
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedAppName(String supportedAppName) {
-            this.supportedAppName = Objects.requireNonNull(supportedAppName);
+        public Builder supportedAppName(@Nullable String supportedAppName) {
+            this.supportedAppName = supportedAppName;
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp build() {

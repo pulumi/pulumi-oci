@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail {
@@ -14,51 +16,51 @@ public final class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueI
      * @return Allowed value type of configuration item.
      * 
      */
-    private String allowedValueType;
+    private @Nullable String allowedValueType;
     /**
      * @return Maximum value limit for the configuration item.
      * 
      */
-    private String maxValue;
+    private @Nullable String maxValue;
     /**
      * @return Minimum value limit for the configuration item.
      * 
      */
-    private String minValue;
+    private @Nullable String minValue;
     /**
      * @return Allowed values to pick for the configuration item.
      * 
      */
-    private List<String> possibleValues;
+    private @Nullable List<String> possibleValues;
 
     private GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail() {}
     /**
      * @return Allowed value type of configuration item.
      * 
      */
-    public String allowedValueType() {
-        return this.allowedValueType;
+    public Optional<String> allowedValueType() {
+        return Optional.ofNullable(this.allowedValueType);
     }
     /**
      * @return Maximum value limit for the configuration item.
      * 
      */
-    public String maxValue() {
-        return this.maxValue;
+    public Optional<String> maxValue() {
+        return Optional.ofNullable(this.maxValue);
     }
     /**
      * @return Minimum value limit for the configuration item.
      * 
      */
-    public String minValue() {
-        return this.minValue;
+    public Optional<String> minValue() {
+        return Optional.ofNullable(this.minValue);
     }
     /**
      * @return Allowed values to pick for the configuration item.
      * 
      */
     public List<String> possibleValues() {
-        return this.possibleValues;
+        return this.possibleValues == null ? List.of() : this.possibleValues;
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String allowedValueType;
-        private String maxValue;
-        private String minValue;
-        private List<String> possibleValues;
+        private @Nullable String allowedValueType;
+        private @Nullable String maxValue;
+        private @Nullable String minValue;
+        private @Nullable List<String> possibleValues;
         public Builder() {}
         public Builder(GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueI
         }
 
         @CustomType.Setter
-        public Builder allowedValueType(String allowedValueType) {
-            this.allowedValueType = Objects.requireNonNull(allowedValueType);
+        public Builder allowedValueType(@Nullable String allowedValueType) {
+            this.allowedValueType = allowedValueType;
             return this;
         }
         @CustomType.Setter
-        public Builder maxValue(String maxValue) {
-            this.maxValue = Objects.requireNonNull(maxValue);
+        public Builder maxValue(@Nullable String maxValue) {
+            this.maxValue = maxValue;
             return this;
         }
         @CustomType.Setter
-        public Builder minValue(String minValue) {
-            this.minValue = Objects.requireNonNull(minValue);
+        public Builder minValue(@Nullable String minValue) {
+            this.minValue = minValue;
             return this;
         }
         @CustomType.Setter
-        public Builder possibleValues(List<String> possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+        public Builder possibleValues(@Nullable List<String> possibleValues) {
+            this.possibleValues = possibleValues;
             return this;
         }
         public Builder possibleValues(String... possibleValues) {

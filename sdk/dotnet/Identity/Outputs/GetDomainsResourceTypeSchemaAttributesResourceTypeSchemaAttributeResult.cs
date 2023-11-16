@@ -20,27 +20,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies if the String attribute is case-sensitive
         /// </summary>
-        public readonly bool CaseExact;
+        public readonly bool? CaseExact;
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// The attribute's human-readable description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// Specifies User mutability for this attribute
         /// </summary>
-        public readonly string EndUserMutability;
+        public readonly string? EndUserMutability;
         /// <summary>
         /// Specifies the list of User mutabilities allowed
         /// </summary>
@@ -48,39 +48,39 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates that the schema has been added since this release number
         /// </summary>
-        public readonly string IdcsAddedSinceReleaseNumber;
+        public readonly string? IdcsAddedSinceReleaseNumber;
         /// <summary>
         /// Indicates that the schema has been added since version
         /// </summary>
-        public readonly int IdcsAddedSinceVersion;
+        public readonly int? IdcsAddedSinceVersion;
         /// <summary>
         /// Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \"attributesToGet\" while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
         /// </summary>
-        public readonly bool IdcsAttributeCacheable;
+        public readonly bool? IdcsAttributeCacheable;
         /// <summary>
         /// Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
         /// </summary>
-        public readonly bool IdcsAttributeMappable;
+        public readonly bool? IdcsAttributeMappable;
         /// <summary>
         /// Specifies whether changes to this attribute value are audited
         /// </summary>
-        public readonly bool IdcsAuditable;
+        public readonly bool? IdcsAuditable;
         /// <summary>
         /// Sequence tracking ID name for the attribute
         /// </summary>
-        public readonly string IdcsAutoIncrementSeqName;
+        public readonly string? IdcsAutoIncrementSeqName;
         /// <summary>
         /// Filter to use when getting canonical values for this schema attribute
         /// </summary>
-        public readonly string IdcsCanonicalValueSourceFilter;
+        public readonly string? IdcsCanonicalValueSourceFilter;
         /// <summary>
         /// Specifies the Resource type to read from for dynamic canonical values
         /// </summary>
-        public readonly string IdcsCanonicalValueSourceResourceType;
+        public readonly string? IdcsCanonicalValueSourceResourceType;
         /// <summary>
         /// The set of one or more sub attributes' names of a CMVA, whose values uniquely identify an instance of a CMVA
         /// </summary>
@@ -92,27 +92,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The attribute defining the CSV column header name for import/export
         /// </summary>
-        public readonly string IdcsCsvColumnHeaderName;
+        public readonly string? IdcsCsvColumnHeaderName;
         /// <summary>
         /// custom attribute flag.
         /// </summary>
-        public readonly bool IdcsCustomAttribute;
+        public readonly bool? IdcsCustomAttribute;
         /// <summary>
         /// Indicates that the schema has been deprecated since this release number
         /// </summary>
-        public readonly string IdcsDeprecatedSinceReleaseNumber;
+        public readonly string? IdcsDeprecatedSinceReleaseNumber;
         /// <summary>
         /// Indicates that the schema has been deprecated since version
         /// </summary>
-        public readonly int IdcsDeprecatedSinceVersion;
+        public readonly int? IdcsDeprecatedSinceVersion;
         /// <summary>
         /// Specifies the user-friendly displayable attribute name or catalog key used for localization
         /// </summary>
-        public readonly string IdcsDisplayName;
+        public readonly string? IdcsDisplayName;
         /// <summary>
         /// Localized schema attribute display name for use by UI client  for displaying attribute labels
         /// </summary>
-        public readonly string IdcsDisplayNameMessageId;
+        public readonly string? IdcsDisplayNameMessageId;
         /// <summary>
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -124,31 +124,31 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * type: boolean
         /// * uniqueness: none Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
         /// </summary>
-        public readonly bool IdcsFetchComplexAttributeValues;
+        public readonly bool? IdcsFetchComplexAttributeValues;
         /// <summary>
         /// Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
         /// </summary>
-        public readonly string IdcsFromTargetMapper;
+        public readonly string? IdcsFromTargetMapper;
         /// <summary>
         /// Fully qualified name of this attribute
         /// </summary>
-        public readonly string IdcsFullyQualifiedName;
+        public readonly string? IdcsFullyQualifiedName;
         /// <summary>
         /// Specifies whether this attribute value was generated
         /// </summary>
-        public readonly bool IdcsGenerated;
+        public readonly bool? IdcsGenerated;
         /// <summary>
         /// Maps to ICF data type
         /// </summary>
-        public readonly string IdcsIcfAttributeType;
+        public readonly string? IdcsIcfAttributeType;
         /// <summary>
         /// Maps to ICF target attribute name
         /// </summary>
-        public readonly string IdcsIcfBundleAttributeName;
+        public readonly string? IdcsIcfBundleAttributeName;
         /// <summary>
         /// Metadata to identify the ICF required attribute
         /// </summary>
-        public readonly bool IdcsIcfRequired;
+        public readonly bool? IdcsIcfRequired;
         /// <summary>
         /// Specifies the indirectly referenced Resources
         /// </summary>
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
         /// </summary>
-        public readonly bool IdcsInternal;
+        public readonly bool? IdcsInternal;
         /// <summary>
         /// The User or App who modified the Resource
         /// </summary>
@@ -164,27 +164,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Specifies the maximum length of the attribute
         /// </summary>
-        public readonly int IdcsMaxLength;
+        public readonly int? IdcsMaxLength;
         /// <summary>
         /// Specifies the maximum value of the integer attribute
         /// </summary>
-        public readonly int IdcsMaxValue;
+        public readonly int? IdcsMaxValue;
         /// <summary>
         /// Specifies the minimum length of the attribute
         /// </summary>
-        public readonly int IdcsMinLength;
+        public readonly int? IdcsMinLength;
         /// <summary>
         /// Specifies the minimum value of the integer attribute
         /// </summary>
-        public readonly int IdcsMinValue;
+        public readonly int? IdcsMinValue;
         /// <summary>
         /// If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
         /// </summary>
-        public readonly bool IdcsMultiLanguage;
+        public readonly bool? IdcsMultiLanguage;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies the referenced Resource attribute
         /// </summary>
-        public readonly string IdcsRefResourceAttribute;
+        public readonly string? IdcsRefResourceAttribute;
         /// <summary>
         /// Specifies the directly referenced Resources
         /// </summary>
@@ -200,51 +200,51 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Schema URN string that this attribute belongs to
         /// </summary>
-        public readonly string IdcsSchemaUrn;
+        public readonly string? IdcsSchemaUrn;
         /// <summary>
         /// Indicates if the attribute is scim compliant, default is true
         /// </summary>
-        public readonly bool IdcsScimCompliant;
+        public readonly bool? IdcsScimCompliant;
         /// <summary>
         /// Specifies whether this attribute can be included in a search filter
         /// </summary>
-        public readonly bool IdcsSearchable;
+        public readonly bool? IdcsSearchable;
         /// <summary>
         /// Flag to specify if the attribute should be encrypted or hashed
         /// </summary>
-        public readonly string IdcsSensitive;
+        public readonly string? IdcsSensitive;
         /// <summary>
         /// Target attribute name that this attribute gets mapped to for persistence
         /// </summary>
-        public readonly string IdcsTargetAttributeName;
+        public readonly string? IdcsTargetAttributeName;
         /// <summary>
         /// Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
         /// </summary>
-        public readonly string IdcsTargetAttributeNameToMigrateFrom;
+        public readonly string? IdcsTargetAttributeNameToMigrateFrom;
         /// <summary>
         /// Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false &amp; searchable attributes. Do not use by default.
         /// </summary>
-        public readonly string IdcsTargetNormAttributeName;
+        public readonly string? IdcsTargetNormAttributeName;
         /// <summary>
         /// Target index name created for this attribute for performance
         /// </summary>
-        public readonly string IdcsTargetUniqueConstraintName;
+        public readonly string? IdcsTargetUniqueConstraintName;
         /// <summary>
         /// Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
         /// </summary>
-        public readonly string IdcsToTargetMapper;
+        public readonly string? IdcsToTargetMapper;
         /// <summary>
         /// Trims any leading and trailing blanks from String values. Default is True.
         /// </summary>
-        public readonly bool IdcsTrimStringValue;
+        public readonly bool? IdcsTrimStringValue;
         /// <summary>
         /// Validate payload reference value during create, replace, and update. Default is True.
         /// </summary>
-        public readonly bool IdcsValidateReference;
+        public readonly bool? IdcsValidateReference;
         /// <summary>
         /// Specifies whether the value of the Resource attribute is persisted
         /// </summary>
-        public readonly bool IdcsValuePersisted;
+        public readonly bool? IdcsValuePersisted;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -252,19 +252,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates the attribute's plurality
         /// </summary>
-        public readonly bool MultiValued;
+        public readonly bool? MultiValued;
         /// <summary>
         /// Specifies if the attribute is mutable
         /// </summary>
-        public readonly string Mutability;
+        public readonly string? Mutability;
         /// <summary>
         /// Attribute's name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \"reference\" data type.
         /// </summary>
@@ -272,15 +272,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies if the attribute is required
         /// </summary>
-        public readonly bool Required;
+        public readonly bool? Required;
         /// <summary>
         /// ResourceType this attribute belongs to.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
         /// </summary>
-        public readonly string Returned;
+        public readonly string? Returned;
         /// <summary>
         /// The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
         /// </summary>
@@ -292,157 +292,157 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// The attribute's data type--for example, String
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \"none\".
         /// </summary>
-        public readonly string Uniqueness;
+        public readonly string? Uniqueness;
 
         [OutputConstructor]
         private GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeResult(
             ImmutableArray<string> canonicalValues,
 
-            bool caseExact,
+            bool? caseExact,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string description,
+            string? description,
 
-            string domainOcid,
+            string? domainOcid,
 
-            string endUserMutability,
+            string? endUserMutability,
 
             ImmutableArray<string> endUserMutabilityAllowedValues,
 
-            string id,
+            string? id,
 
-            string idcsAddedSinceReleaseNumber,
+            string? idcsAddedSinceReleaseNumber,
 
-            int idcsAddedSinceVersion,
+            int? idcsAddedSinceVersion,
 
-            bool idcsAttributeCacheable,
+            bool? idcsAttributeCacheable,
 
-            bool idcsAttributeMappable,
+            bool? idcsAttributeMappable,
 
-            bool idcsAuditable,
+            bool? idcsAuditable,
 
-            string idcsAutoIncrementSeqName,
+            string? idcsAutoIncrementSeqName,
 
-            string idcsCanonicalValueSourceFilter,
+            string? idcsCanonicalValueSourceFilter,
 
-            string idcsCanonicalValueSourceResourceType,
+            string? idcsCanonicalValueSourceResourceType,
 
             ImmutableArray<string> idcsCompositeKeys,
 
             ImmutableArray<Outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedByResult> idcsCreatedBies,
 
-            string idcsCsvColumnHeaderName,
+            string? idcsCsvColumnHeaderName,
 
-            bool idcsCustomAttribute,
+            bool? idcsCustomAttribute,
 
-            string idcsDeprecatedSinceReleaseNumber,
+            string? idcsDeprecatedSinceReleaseNumber,
 
-            int idcsDeprecatedSinceVersion,
+            int? idcsDeprecatedSinceVersion,
 
-            string idcsDisplayName,
+            string? idcsDisplayName,
 
-            string idcsDisplayNameMessageId,
+            string? idcsDisplayNameMessageId,
 
-            bool idcsFetchComplexAttributeValues,
+            bool? idcsFetchComplexAttributeValues,
 
-            string idcsFromTargetMapper,
+            string? idcsFromTargetMapper,
 
-            string idcsFullyQualifiedName,
+            string? idcsFullyQualifiedName,
 
-            bool idcsGenerated,
+            bool? idcsGenerated,
 
-            string idcsIcfAttributeType,
+            string? idcsIcfAttributeType,
 
-            string idcsIcfBundleAttributeName,
+            string? idcsIcfBundleAttributeName,
 
-            bool idcsIcfRequired,
+            bool? idcsIcfRequired,
 
             ImmutableArray<string> idcsIndirectRefResourceAttributes,
 
-            bool idcsInternal,
+            bool? idcsInternal,
 
             ImmutableArray<Outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
-            int idcsMaxLength,
+            int? idcsMaxLength,
 
-            int idcsMaxValue,
+            int? idcsMaxValue,
 
-            int idcsMinLength,
+            int? idcsMinLength,
 
-            int idcsMinValue,
+            int? idcsMinValue,
 
-            bool idcsMultiLanguage,
+            bool? idcsMultiLanguage,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            string idcsRefResourceAttribute,
+            string? idcsRefResourceAttribute,
 
             ImmutableArray<string> idcsRefResourceAttributes,
 
-            string idcsSchemaUrn,
+            string? idcsSchemaUrn,
 
-            bool idcsScimCompliant,
+            bool? idcsScimCompliant,
 
-            bool idcsSearchable,
+            bool? idcsSearchable,
 
-            string idcsSensitive,
+            string? idcsSensitive,
 
-            string idcsTargetAttributeName,
+            string? idcsTargetAttributeName,
 
-            string idcsTargetAttributeNameToMigrateFrom,
+            string? idcsTargetAttributeNameToMigrateFrom,
 
-            string idcsTargetNormAttributeName,
+            string? idcsTargetNormAttributeName,
 
-            string idcsTargetUniqueConstraintName,
+            string? idcsTargetUniqueConstraintName,
 
-            string idcsToTargetMapper,
+            string? idcsToTargetMapper,
 
-            bool idcsTrimStringValue,
+            bool? idcsTrimStringValue,
 
-            bool idcsValidateReference,
+            bool? idcsValidateReference,
 
-            bool idcsValuePersisted,
+            bool? idcsValuePersisted,
 
             ImmutableArray<Outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMetaResult> metas,
 
-            bool multiValued,
+            bool? multiValued,
 
-            string mutability,
+            string? mutability,
 
-            string name,
+            string? name,
 
-            string ocid,
+            string? ocid,
 
             ImmutableArray<string> referenceTypes,
 
-            bool required,
+            bool? required,
 
-            string resourceType,
+            string? resourceType,
 
-            string returned,
+            string? returned,
 
             ImmutableArray<string> schemas,
 
             ImmutableArray<Outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            string type,
+            string? type,
 
-            string uniqueness)
+            string? uniqueness)
         {
             CanonicalValues = canonicalValues;
             CaseExact = caseExact;

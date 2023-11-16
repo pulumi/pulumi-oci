@@ -49,9 +49,6 @@ class GetPluggableDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -66,7 +63,7 @@ class GetPluggableDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,25 +72,16 @@ class GetPluggableDatabasesResult:
     @property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[str]:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
         return pulumi.get(self, "pdb_name")
 
     @property
     @pulumi.getter(name="pluggableDatabases")
-    def pluggable_databases(self) -> Sequence['outputs.GetPluggableDatabasesPluggableDatabaseResult']:
-        """
-        The list of pluggable_databases.
-        """
+    def pluggable_databases(self) -> Optional[Sequence['outputs.GetPluggableDatabasesPluggableDatabaseResult']]:
         return pulumi.get(self, "pluggable_databases")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the pluggable database.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_pluggable_databases(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPluggableDatabasesResult:
     """
-    This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"],
-        pdb_name=var["pluggable_database_pdb_name"],
-        state=var["pluggable_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-    :param str pdb_name: A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optiona
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPluggableDatabasesResult]:
     """
-    This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"],
-        pdb_name=var["pluggable_database_pdb_name"],
-        state=var["pluggable_database_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-    :param str pdb_name: A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

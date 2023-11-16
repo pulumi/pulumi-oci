@@ -20,11 +20,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// Name of the user who initiated import request.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Contains key of the error
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ErrorMessages;
+        public readonly ImmutableDictionary<string, object>? ErrorMessages;
         /// <summary>
         /// Name of the zip file from which objects will be imported.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// Import Objects Conflict resolution.
         /// </summary>
-        public readonly Outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult ImportConflictResolution;
+        public readonly Outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult? ImportConflictResolution;
         /// <summary>
         /// The array of imported object details.
         /// </summary>
@@ -40,39 +40,39 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// Import object request key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Used to filter by the name of the object.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Key of the object inside which all the objects will be imported
         /// </summary>
-        public readonly string ObjectKeyForImport;
+        public readonly string? ObjectKeyForImport;
         /// <summary>
         /// Region of the object storage (if using object storage of different region)
         /// </summary>
-        public readonly string ObjectStorageRegion;
+        public readonly string? ObjectStorageRegion;
         /// <summary>
         /// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         /// </summary>
-        public readonly string ObjectStorageTenancyId;
+        public readonly string? ObjectStorageTenancyId;
         /// <summary>
         /// Import Objects request status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Specifies end time of a copy object request.
         /// </summary>
-        public readonly string TimeEndedInMillis;
+        public readonly string? TimeEndedInMillis;
         /// <summary>
         /// Specifies start time of a copy object request.
         /// </summary>
-        public readonly string TimeStartedInMillis;
+        public readonly string? TimeStartedInMillis;
         /// <summary>
         /// Number of objects that are imported.
         /// </summary>
-        public readonly int TotalImportedObjectCount;
+        public readonly int? TotalImportedObjectCount;
         /// <summary>
         /// The workspace ID.
         /// </summary>
@@ -82,33 +82,33 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         private GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(
             string bucket,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> errorMessages,
+            ImmutableDictionary<string, object>? errorMessages,
 
             string fileName,
 
-            Outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult importConflictResolution,
+            Outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult? importConflictResolution,
 
             ImmutableArray<Outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult> importedObjects,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            string objectKeyForImport,
+            string? objectKeyForImport,
 
-            string objectStorageRegion,
+            string? objectStorageRegion,
 
-            string objectStorageTenancyId,
+            string? objectStorageTenancyId,
 
-            string status,
+            string? status,
 
-            string timeEndedInMillis,
+            string? timeEndedInMillis,
 
-            string timeStartedInMillis,
+            string? timeStartedInMillis,
 
-            int totalImportedObjectCount,
+            int? totalImportedObjectCount,
 
             string workspaceId)
         {

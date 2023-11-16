@@ -47,64 +47,64 @@ export interface GetExternalDatabaseConnectorResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
      */
-    readonly connectionCredentials: outputs.Database.GetExternalDatabaseConnectorConnectionCredential[];
+    readonly connectionCredentials?: outputs.Database.GetExternalDatabaseConnectorConnectionCredential[];
     /**
      * The status of connectivity to the external database.
      */
-    readonly connectionStatus: string;
+    readonly connectionStatus?: string;
     /**
      * The Oracle Database connection string.
      */
-    readonly connectionStrings: outputs.Database.GetExternalDatabaseConnectorConnectionString[];
+    readonly connectionStrings?: outputs.Database.GetExternalDatabaseConnectorConnectionString[];
     /**
      * The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    readonly connectorAgentId: string;
+    readonly connectorAgentId?: string;
     /**
      * The type of connector used by the external database resource.
      */
-    readonly connectorType: string;
+    readonly connectorType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalDatabaseConnectorId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
      */
-    readonly externalDatabaseId: string;
+    readonly externalDatabaseId?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the external database connector resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the `connectionStatus` of this external connector was last updated.
      */
-    readonly timeConnectionStatusLastUpdated: string;
+    readonly timeConnectionStatusLastUpdated?: string;
     /**
      * The date and time the external connector was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific External Database Connector resource in Oracle Cloud Infrastructure Database service.

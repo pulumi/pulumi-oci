@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
@@ -13,63 +15,63 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
      * @return The body of the detail captured as JSON.
      * 
      */
-    private String detail;
+    private @Nullable String detail;
     /**
      * @return Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Unique MediaWorkflowJob identifier.
      * 
      */
-    private String mediaWorkflowJobId;
+    private @Nullable String mediaWorkflowJobId;
     /**
      * @return Unique name. It is read-only and generated for the fact.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Types of details to include.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem() {}
     /**
      * @return The body of the detail captured as JSON.
      * 
      */
-    public String detail() {
-        return this.detail;
+    public Optional<String> detail() {
+        return Optional.ofNullable(this.detail);
     }
     /**
      * @return Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Unique MediaWorkflowJob identifier.
      * 
      */
-    public String mediaWorkflowJobId() {
-        return this.mediaWorkflowJobId;
+    public Optional<String> mediaWorkflowJobId() {
+        return Optional.ofNullable(this.mediaWorkflowJobId);
     }
     /**
      * @return Unique name. It is read-only and generated for the fact.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Types of details to include.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String detail;
-        private String key;
-        private String mediaWorkflowJobId;
-        private String name;
-        private String type;
+        private @Nullable String detail;
+        private @Nullable String key;
+        private @Nullable String mediaWorkflowJobId;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder detail(String detail) {
-            this.detail = Objects.requireNonNull(detail);
+        public Builder detail(@Nullable String detail) {
+            this.detail = detail;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+        public Builder mediaWorkflowJobId(@Nullable String mediaWorkflowJobId) {
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem build() {

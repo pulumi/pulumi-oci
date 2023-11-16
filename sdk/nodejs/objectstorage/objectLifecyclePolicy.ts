@@ -83,11 +83,11 @@ export class ObjectLifecyclePolicy extends pulumi.CustomResource {
     /**
      * (Updatable) The bucket's set of lifecycle policy rules.
      */
-    public readonly rules!: pulumi.Output<outputs.ObjectStorage.ObjectLifecyclePolicyRule[]>;
+    public readonly rules!: pulumi.Output<outputs.ObjectStorage.ObjectLifecyclePolicyRule[] | undefined>;
     /**
      * The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ObjectLifecyclePolicy resource with the given unique name, arguments, and options.

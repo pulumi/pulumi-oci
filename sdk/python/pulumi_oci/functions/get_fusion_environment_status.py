@@ -39,7 +39,7 @@ class GetFusionEnvironmentStatusResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -47,10 +47,7 @@ class GetFusionEnvironmentStatusResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The data plane status of FusionEnvironment.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
 
@@ -68,21 +65,7 @@ class AwaitableGetFusionEnvironmentStatusResult(GetFusionEnvironmentStatusResult
 def get_fusion_environment_status(fusion_environment_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentStatusResult:
     """
-    This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets the status of a Fusion environment identified by its OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -99,20 +82,6 @@ def get_fusion_environment_status(fusion_environment_id: Optional[str] = None,
 def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentStatusResult]:
     """
-    This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets the status of a Fusion environment identified by its OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     ...

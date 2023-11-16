@@ -6,6 +6,8 @@ package com.pulumi.oci.OspGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
@@ -13,315 +15,315 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
      * @return Address identifier.
      * 
      */
-    private String addressKey;
+    private @Nullable String addressKey;
     /**
      * @return Name of the city.
      * 
      */
-    private String city;
+    private @Nullable String city;
     /**
      * @return Name of the customer company.
      * 
      */
-    private String companyName;
+    private @Nullable String companyName;
     /**
      * @return Contributor class of the customer company.
      * 
      */
-    private String contributorClass;
+    private @Nullable String contributorClass;
     /**
      * @return Country of the address.
      * 
      */
-    private String country;
+    private @Nullable String country;
     /**
      * @return County of the address.
      * 
      */
-    private String county;
+    private @Nullable String county;
     /**
      * @return Department name of the customer company.
      * 
      */
-    private String departmentName;
+    private @Nullable String departmentName;
     /**
      * @return The email address of the paypal user.
      * 
      */
-    private String emailAddress;
+    private @Nullable String emailAddress;
     /**
      * @return First name of the paypal user.
      * 
      */
-    private String firstName;
+    private @Nullable String firstName;
     /**
      * @return Internal number of the customer company.
      * 
      */
-    private String internalNumber;
+    private @Nullable String internalNumber;
     /**
      * @return Job title of the contact person.
      * 
      */
-    private String jobTitle;
+    private @Nullable String jobTitle;
     /**
      * @return Last name of the paypal user.
      * 
      */
-    private String lastName;
+    private @Nullable String lastName;
     /**
      * @return Address line 1.
      * 
      */
-    private String line1;
+    private @Nullable String line1;
     /**
      * @return Address line 2.
      * 
      */
-    private String line2;
+    private @Nullable String line2;
     /**
      * @return Address line 3.
      * 
      */
-    private String line3;
+    private @Nullable String line3;
     /**
      * @return Address line 4.
      * 
      */
-    private String line4;
+    private @Nullable String line4;
     /**
      * @return Middle name of the contact person.
      * 
      */
-    private String middleName;
+    private @Nullable String middleName;
     /**
      * @return Municipal Inscription.
      * 
      */
-    private String municipalInscription;
+    private @Nullable String municipalInscription;
     /**
      * @return Phone country code of the contact person.
      * 
      */
-    private String phoneCountryCode;
+    private @Nullable String phoneCountryCode;
     /**
      * @return Phone number of the contact person.
      * 
      */
-    private String phoneNumber;
+    private @Nullable String phoneNumber;
     /**
      * @return Post code of the address.
      * 
      */
-    private String postalCode;
+    private @Nullable String postalCode;
     /**
      * @return Province of the address.
      * 
      */
-    private String province;
+    private @Nullable String province;
     /**
      * @return State of the address.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return State Inscription.
      * 
      */
-    private String stateInscription;
+    private @Nullable String stateInscription;
     /**
      * @return Street name of the address.
      * 
      */
-    private String streetName;
+    private @Nullable String streetName;
     /**
      * @return Street number of the address.
      * 
      */
-    private String streetNumber;
+    private @Nullable String streetNumber;
 
     private GetSubscriptionsSubscriptionCollectionItemBillingAddress() {}
     /**
      * @return Address identifier.
      * 
      */
-    public String addressKey() {
-        return this.addressKey;
+    public Optional<String> addressKey() {
+        return Optional.ofNullable(this.addressKey);
     }
     /**
      * @return Name of the city.
      * 
      */
-    public String city() {
-        return this.city;
+    public Optional<String> city() {
+        return Optional.ofNullable(this.city);
     }
     /**
      * @return Name of the customer company.
      * 
      */
-    public String companyName() {
-        return this.companyName;
+    public Optional<String> companyName() {
+        return Optional.ofNullable(this.companyName);
     }
     /**
      * @return Contributor class of the customer company.
      * 
      */
-    public String contributorClass() {
-        return this.contributorClass;
+    public Optional<String> contributorClass() {
+        return Optional.ofNullable(this.contributorClass);
     }
     /**
      * @return Country of the address.
      * 
      */
-    public String country() {
-        return this.country;
+    public Optional<String> country() {
+        return Optional.ofNullable(this.country);
     }
     /**
      * @return County of the address.
      * 
      */
-    public String county() {
-        return this.county;
+    public Optional<String> county() {
+        return Optional.ofNullable(this.county);
     }
     /**
      * @return Department name of the customer company.
      * 
      */
-    public String departmentName() {
-        return this.departmentName;
+    public Optional<String> departmentName() {
+        return Optional.ofNullable(this.departmentName);
     }
     /**
      * @return The email address of the paypal user.
      * 
      */
-    public String emailAddress() {
-        return this.emailAddress;
+    public Optional<String> emailAddress() {
+        return Optional.ofNullable(this.emailAddress);
     }
     /**
      * @return First name of the paypal user.
      * 
      */
-    public String firstName() {
-        return this.firstName;
+    public Optional<String> firstName() {
+        return Optional.ofNullable(this.firstName);
     }
     /**
      * @return Internal number of the customer company.
      * 
      */
-    public String internalNumber() {
-        return this.internalNumber;
+    public Optional<String> internalNumber() {
+        return Optional.ofNullable(this.internalNumber);
     }
     /**
      * @return Job title of the contact person.
      * 
      */
-    public String jobTitle() {
-        return this.jobTitle;
+    public Optional<String> jobTitle() {
+        return Optional.ofNullable(this.jobTitle);
     }
     /**
      * @return Last name of the paypal user.
      * 
      */
-    public String lastName() {
-        return this.lastName;
+    public Optional<String> lastName() {
+        return Optional.ofNullable(this.lastName);
     }
     /**
      * @return Address line 1.
      * 
      */
-    public String line1() {
-        return this.line1;
+    public Optional<String> line1() {
+        return Optional.ofNullable(this.line1);
     }
     /**
      * @return Address line 2.
      * 
      */
-    public String line2() {
-        return this.line2;
+    public Optional<String> line2() {
+        return Optional.ofNullable(this.line2);
     }
     /**
      * @return Address line 3.
      * 
      */
-    public String line3() {
-        return this.line3;
+    public Optional<String> line3() {
+        return Optional.ofNullable(this.line3);
     }
     /**
      * @return Address line 4.
      * 
      */
-    public String line4() {
-        return this.line4;
+    public Optional<String> line4() {
+        return Optional.ofNullable(this.line4);
     }
     /**
      * @return Middle name of the contact person.
      * 
      */
-    public String middleName() {
-        return this.middleName;
+    public Optional<String> middleName() {
+        return Optional.ofNullable(this.middleName);
     }
     /**
      * @return Municipal Inscription.
      * 
      */
-    public String municipalInscription() {
-        return this.municipalInscription;
+    public Optional<String> municipalInscription() {
+        return Optional.ofNullable(this.municipalInscription);
     }
     /**
      * @return Phone country code of the contact person.
      * 
      */
-    public String phoneCountryCode() {
-        return this.phoneCountryCode;
+    public Optional<String> phoneCountryCode() {
+        return Optional.ofNullable(this.phoneCountryCode);
     }
     /**
      * @return Phone number of the contact person.
      * 
      */
-    public String phoneNumber() {
-        return this.phoneNumber;
+    public Optional<String> phoneNumber() {
+        return Optional.ofNullable(this.phoneNumber);
     }
     /**
      * @return Post code of the address.
      * 
      */
-    public String postalCode() {
-        return this.postalCode;
+    public Optional<String> postalCode() {
+        return Optional.ofNullable(this.postalCode);
     }
     /**
      * @return Province of the address.
      * 
      */
-    public String province() {
-        return this.province;
+    public Optional<String> province() {
+        return Optional.ofNullable(this.province);
     }
     /**
      * @return State of the address.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return State Inscription.
      * 
      */
-    public String stateInscription() {
-        return this.stateInscription;
+    public Optional<String> stateInscription() {
+        return Optional.ofNullable(this.stateInscription);
     }
     /**
      * @return Street name of the address.
      * 
      */
-    public String streetName() {
-        return this.streetName;
+    public Optional<String> streetName() {
+        return Optional.ofNullable(this.streetName);
     }
     /**
      * @return Street number of the address.
      * 
      */
-    public String streetNumber() {
-        return this.streetNumber;
+    public Optional<String> streetNumber() {
+        return Optional.ofNullable(this.streetNumber);
     }
 
     public static Builder builder() {
@@ -333,32 +335,32 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String addressKey;
-        private String city;
-        private String companyName;
-        private String contributorClass;
-        private String country;
-        private String county;
-        private String departmentName;
-        private String emailAddress;
-        private String firstName;
-        private String internalNumber;
-        private String jobTitle;
-        private String lastName;
-        private String line1;
-        private String line2;
-        private String line3;
-        private String line4;
-        private String middleName;
-        private String municipalInscription;
-        private String phoneCountryCode;
-        private String phoneNumber;
-        private String postalCode;
-        private String province;
-        private String state;
-        private String stateInscription;
-        private String streetName;
-        private String streetNumber;
+        private @Nullable String addressKey;
+        private @Nullable String city;
+        private @Nullable String companyName;
+        private @Nullable String contributorClass;
+        private @Nullable String country;
+        private @Nullable String county;
+        private @Nullable String departmentName;
+        private @Nullable String emailAddress;
+        private @Nullable String firstName;
+        private @Nullable String internalNumber;
+        private @Nullable String jobTitle;
+        private @Nullable String lastName;
+        private @Nullable String line1;
+        private @Nullable String line2;
+        private @Nullable String line3;
+        private @Nullable String line4;
+        private @Nullable String middleName;
+        private @Nullable String municipalInscription;
+        private @Nullable String phoneCountryCode;
+        private @Nullable String phoneNumber;
+        private @Nullable String postalCode;
+        private @Nullable String province;
+        private @Nullable String state;
+        private @Nullable String stateInscription;
+        private @Nullable String streetName;
+        private @Nullable String streetNumber;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollectionItemBillingAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -391,133 +393,133 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
         }
 
         @CustomType.Setter
-        public Builder addressKey(String addressKey) {
-            this.addressKey = Objects.requireNonNull(addressKey);
+        public Builder addressKey(@Nullable String addressKey) {
+            this.addressKey = addressKey;
             return this;
         }
         @CustomType.Setter
-        public Builder city(String city) {
-            this.city = Objects.requireNonNull(city);
+        public Builder city(@Nullable String city) {
+            this.city = city;
             return this;
         }
         @CustomType.Setter
-        public Builder companyName(String companyName) {
-            this.companyName = Objects.requireNonNull(companyName);
+        public Builder companyName(@Nullable String companyName) {
+            this.companyName = companyName;
             return this;
         }
         @CustomType.Setter
-        public Builder contributorClass(String contributorClass) {
-            this.contributorClass = Objects.requireNonNull(contributorClass);
+        public Builder contributorClass(@Nullable String contributorClass) {
+            this.contributorClass = contributorClass;
             return this;
         }
         @CustomType.Setter
-        public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+        public Builder country(@Nullable String country) {
+            this.country = country;
             return this;
         }
         @CustomType.Setter
-        public Builder county(String county) {
-            this.county = Objects.requireNonNull(county);
+        public Builder county(@Nullable String county) {
+            this.county = county;
             return this;
         }
         @CustomType.Setter
-        public Builder departmentName(String departmentName) {
-            this.departmentName = Objects.requireNonNull(departmentName);
+        public Builder departmentName(@Nullable String departmentName) {
+            this.departmentName = departmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+        public Builder emailAddress(@Nullable String emailAddress) {
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+        public Builder firstName(@Nullable String firstName) {
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
-        public Builder internalNumber(String internalNumber) {
-            this.internalNumber = Objects.requireNonNull(internalNumber);
+        public Builder internalNumber(@Nullable String internalNumber) {
+            this.internalNumber = internalNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder jobTitle(String jobTitle) {
-            this.jobTitle = Objects.requireNonNull(jobTitle);
+        public Builder jobTitle(@Nullable String jobTitle) {
+            this.jobTitle = jobTitle;
             return this;
         }
         @CustomType.Setter
-        public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+        public Builder lastName(@Nullable String lastName) {
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
-        public Builder line1(String line1) {
-            this.line1 = Objects.requireNonNull(line1);
+        public Builder line1(@Nullable String line1) {
+            this.line1 = line1;
             return this;
         }
         @CustomType.Setter
-        public Builder line2(String line2) {
-            this.line2 = Objects.requireNonNull(line2);
+        public Builder line2(@Nullable String line2) {
+            this.line2 = line2;
             return this;
         }
         @CustomType.Setter
-        public Builder line3(String line3) {
-            this.line3 = Objects.requireNonNull(line3);
+        public Builder line3(@Nullable String line3) {
+            this.line3 = line3;
             return this;
         }
         @CustomType.Setter
-        public Builder line4(String line4) {
-            this.line4 = Objects.requireNonNull(line4);
+        public Builder line4(@Nullable String line4) {
+            this.line4 = line4;
             return this;
         }
         @CustomType.Setter
-        public Builder middleName(String middleName) {
-            this.middleName = Objects.requireNonNull(middleName);
+        public Builder middleName(@Nullable String middleName) {
+            this.middleName = middleName;
             return this;
         }
         @CustomType.Setter
-        public Builder municipalInscription(String municipalInscription) {
-            this.municipalInscription = Objects.requireNonNull(municipalInscription);
+        public Builder municipalInscription(@Nullable String municipalInscription) {
+            this.municipalInscription = municipalInscription;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneCountryCode(String phoneCountryCode) {
-            this.phoneCountryCode = Objects.requireNonNull(phoneCountryCode);
+        public Builder phoneCountryCode(@Nullable String phoneCountryCode) {
+            this.phoneCountryCode = phoneCountryCode;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+        public Builder phoneNumber(@Nullable String phoneNumber) {
+            this.phoneNumber = phoneNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+        public Builder postalCode(@Nullable String postalCode) {
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
-        public Builder province(String province) {
-            this.province = Objects.requireNonNull(province);
+        public Builder province(@Nullable String province) {
+            this.province = province;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateInscription(String stateInscription) {
-            this.stateInscription = Objects.requireNonNull(stateInscription);
+        public Builder stateInscription(@Nullable String stateInscription) {
+            this.stateInscription = stateInscription;
             return this;
         }
         @CustomType.Setter
-        public Builder streetName(String streetName) {
-            this.streetName = Objects.requireNonNull(streetName);
+        public Builder streetName(@Nullable String streetName) {
+            this.streetName = streetName;
             return this;
         }
         @CustomType.Setter
-        public Builder streetNumber(String streetNumber) {
-            this.streetNumber = Objects.requireNonNull(streetNumber);
+        public Builder streetNumber(@Nullable String streetNumber) {
+            this.streetNumber = streetNumber;
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemBillingAddress build() {

@@ -45,10 +45,7 @@ class GetAnnouncementsResult:
 
     @property
     @pulumi.getter(name="announcementCollections")
-    def announcement_collections(self) -> Sequence['outputs.GetAnnouncementsAnnouncementCollectionResult']:
-        """
-        The list of announcement_collection.
-        """
+    def announcement_collections(self) -> Optional[Sequence['outputs.GetAnnouncementsAnnouncementCollectionResult']]:
         return pulumi.get(self, "announcement_collections")
 
     @property
@@ -58,7 +55,7 @@ class GetAnnouncementsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -100,25 +97,7 @@ def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnounceme
                       time_start: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnouncementsResult:
     """
-    This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
-
-    Return a list of AnnouncementSummary items
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_announcements = oci.Jms.get_announcements(summary_contains=var["announcement_summary_contains"],
-        time_end=var["announcement_time_end"],
-        time_start=var["announcement_time_start"])
-    ```
-
-
-    :param str summary_contains: Filter the list with summary contains the given value.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -144,24 +123,6 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[pu
                              time_start: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnouncementsResult]:
     """
-    This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
-
-    Return a list of AnnouncementSummary items
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_announcements = oci.Jms.get_announcements(summary_contains=var["announcement_summary_contains"],
-        time_end=var["announcement_time_end"],
-        time_start=var["announcement_time_start"])
-    ```
-
-
-    :param str summary_contains: Filter the list with summary contains the given value.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

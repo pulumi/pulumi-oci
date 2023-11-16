@@ -61,50 +61,32 @@ class GetViewResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the view.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the view.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> Optional[bool]:
         return pulumi.get(self, "is_protected")
 
     @property
@@ -114,34 +96,22 @@ class GetViewResult:
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
@@ -174,25 +144,7 @@ def get_view(scope: Optional[str] = None,
              view_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetViewResult:
     """
-    This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about a specific view. Note that attempting to get a
-    view in the DELETED lifecycleState will result in a `404` response to be
-    consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_view = oci.Dns.get_view(view_id=oci_dns_view["test_view"]["id"],
-        scope="PRIVATE")
-    ```
-
-
-    :param str scope: Value must be `PRIVATE` when listing views for private zones.
-    :param str view_id: The OCID of the target view.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['scope'] = scope
@@ -220,24 +172,6 @@ def get_view_output(scope: Optional[pulumi.Input[Optional[str]]] = None,
                     view_id: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetViewResult]:
     """
-    This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
-
-    Gets information about a specific view. Note that attempting to get a
-    view in the DELETED lifecycleState will result in a `404` response to be
-    consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_view = oci.Dns.get_view(view_id=oci_dns_view["test_view"]["id"],
-        scope="PRIVATE")
-    ```
-
-
-    :param str scope: Value must be `PRIVATE` when listing views for private zones.
-    :param str view_id: The OCID of the target view.
+    Use this data source to access information about an existing resource.
     """
     ...

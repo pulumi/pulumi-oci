@@ -58,33 +58,21 @@ class GetDiscoveryJobsResultsResult:
     @property
     @pulumi.getter(name="columnNames")
     def column_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the sensitive column.
-        """
         return pulumi.get(self, "column_names")
 
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> str:
-        """
-        The OCID of the discovery job.
-        """
         return pulumi.get(self, "discovery_job_id")
 
     @property
     @pulumi.getter(name="discoveryJobResultCollections")
-    def discovery_job_result_collections(self) -> Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult']:
-        """
-        The list of discovery_job_result_collection.
-        """
+    def discovery_job_result_collections(self) -> Optional[Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult']]:
         return pulumi.get(self, "discovery_job_result_collections")
 
     @property
     @pulumi.getter(name="discoveryType")
     def discovery_type(self) -> Optional[str]:
-        """
-        The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
-        """
         return pulumi.get(self, "discovery_type")
 
     @property
@@ -94,7 +82,7 @@ class GetDiscoveryJobsResultsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,33 +91,21 @@ class GetDiscoveryJobsResultsResult:
     @property
     @pulumi.getter(name="isResultApplied")
     def is_result_applied(self) -> Optional[bool]:
-        """
-        Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
-        """
         return pulumi.get(self, "is_result_applied")
 
     @property
     @pulumi.getter
     def objects(self) -> Optional[Sequence[str]]:
-        """
-        The database object that contains the sensitive column.
-        """
         return pulumi.get(self, "objects")
 
     @property
     @pulumi.getter(name="plannedAction")
     def planned_action(self) -> Optional[str]:
-        """
-        Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
-        """
         return pulumi.get(self, "planned_action")
 
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The database schema that contains the sensitive column.
-        """
         return pulumi.get(self, "schema_names")
 
 
@@ -161,33 +137,7 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[str]] = None,
                                schema_names: Optional[Sequence[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobsResultsResult:
     """
-    This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of discovery results based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        column_names=var["discovery_jobs_result_column_name"],
-        discovery_type=var["discovery_jobs_result_discovery_type"],
-        is_result_applied=var["discovery_jobs_result_is_result_applied"],
-        objects=var["discovery_jobs_result_object"],
-        planned_action=var["discovery_jobs_result_planned_action"],
-        schema_names=var["discovery_jobs_result_schema_name"])
-    ```
-
-
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param str discovery_job_id: The OCID of the discovery job.
-    :param str discovery_type: A filter to return only the resources that match the specified discovery type.
-    :param bool is_result_applied: A filter to return the discovery result resources based on the value of their isResultApplied attribute.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param str planned_action: A filter to return only the resources that match the specified planned action.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['columnNames'] = column_names
@@ -225,32 +175,6 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
                                       schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobsResultsResult]:
     """
-    This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of discovery results based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        column_names=var["discovery_jobs_result_column_name"],
-        discovery_type=var["discovery_jobs_result_discovery_type"],
-        is_result_applied=var["discovery_jobs_result_is_result_applied"],
-        objects=var["discovery_jobs_result_object"],
-        planned_action=var["discovery_jobs_result_planned_action"],
-        schema_names=var["discovery_jobs_result_schema_name"])
-    ```
-
-
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param str discovery_job_id: The OCID of the discovery job.
-    :param str discovery_type: A filter to return only the resources that match the specified discovery type.
-    :param bool is_result_applied: A filter to return the discovery result resources based on the value of their isResultApplied attribute.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param str planned_action: A filter to return only the resources that match the specified planned action.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
+    Use this data source to access information about an existing resource.
     """
     ...

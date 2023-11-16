@@ -142,10 +142,6 @@ class LifecycleEnvironmentManagedInstanceId(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -154,17 +150,11 @@ class LifecycleEnvironmentManagedInstanceId(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
 
@@ -228,28 +218,6 @@ class LifecycleEnvironmentStage(dict):
                  time_created: Optional[str] = None,
                  time_modified: Optional[str] = None,
                  vendor_name: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param int rank: User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        :param str arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param str compartment_id: The OCID of the tenancy containing the lifecycle environment.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param str lifecycle_environment_id: The OCID of the lifecycle environment for the lifecycle stage.
-        :param Sequence['LifecycleEnvironmentStageManagedInstanceIdArgs'] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param str os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param Sequence['LifecycleEnvironmentStageSoftwareSourceIdArgs'] software_source_ids: Identifying information for the specified software source.
-        :param str state: The current state of the lifecycle environment.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param str vendor_name: The software source vendor name.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "rank", rank)
         if arch_type is not None:
@@ -284,133 +252,81 @@ class LifecycleEnvironmentStage(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def rank(self) -> int:
-        """
-        User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        """
         return pulumi.get(self, "rank")
 
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
-        """
-        The CPU architecture of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the lifecycle environment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> Optional[str]:
-        """
-        The OCID of the lifecycle environment for the lifecycle stage.
-        """
         return pulumi.get(self, "lifecycle_environment_id")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Optional[Sequence['outputs.LifecycleEnvironmentStageManagedInstanceId']]:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
-        """
-        The operating system type of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
     def software_source_ids(self) -> Optional[Sequence['outputs.LifecycleEnvironmentStageSoftwareSourceId']]:
-        """
-        Identifying information for the specified software source.
-        """
         return pulumi.get(self, "software_source_ids")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the lifecycle environment.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> Optional[str]:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[str]:
-        """
-        The software source vendor name.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 
 
@@ -436,10 +352,6 @@ class LifecycleEnvironmentStageManagedInstanceId(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -448,17 +360,11 @@ class LifecycleEnvironmentStageManagedInstanceId(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
 
@@ -488,12 +394,6 @@ class LifecycleEnvironmentStageSoftwareSourceId(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None,
                  software_source_type: Optional[str] = None):
-        """
-        :param str description: (Updatable) User specified information about the lifecycle environment.
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -506,33 +406,21 @@ class LifecycleEnvironmentStageSoftwareSourceId(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) User specified information about the lifecycle environment.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> Optional[str]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_type")
 
 
@@ -562,12 +450,6 @@ class ManagedInstanceGroupSoftwareSource(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None,
                  software_source_type: Optional[str] = None):
-        """
-        :param str description: (Updatable) Details about the managed instance group.
-        :param str display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -580,33 +462,21 @@ class ManagedInstanceGroupSoftwareSource(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) Details about the managed instance group.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> Optional[str]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_type")
 
 
@@ -617,16 +487,6 @@ class ManagementStationMirror(dict):
                  port: str,
                  sslport: str,
                  sslcert: Optional[str] = None):
-        """
-        :param str directory: (Updatable) Directory for the mirroring
-        :param str port: (Updatable) Port that the proxy will use
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str sslport: (Updatable) Default sslport for the mirror
-        :param str sslcert: (Updatable) Local path for the sslcert
-        """
         pulumi.set(__self__, "directory", directory)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "sslport", sslport)
@@ -636,37 +496,21 @@ class ManagementStationMirror(dict):
     @property
     @pulumi.getter
     def directory(self) -> str:
-        """
-        (Updatable) Directory for the mirroring
-        """
         return pulumi.get(self, "directory")
 
     @property
     @pulumi.getter
     def port(self) -> str:
-        """
-        (Updatable) Port that the proxy will use
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
     def sslport(self) -> str:
-        """
-        (Updatable) Default sslport for the mirror
-        """
         return pulumi.get(self, "sslport")
 
     @property
     @pulumi.getter
     def sslcert(self) -> Optional[str]:
-        """
-        (Updatable) Local path for the sslcert
-        """
         return pulumi.get(self, "sslcert")
 
 
@@ -678,13 +522,6 @@ class ManagementStationMirrorSyncStatus(dict):
                  synced: Optional[int] = None,
                  syncing: Optional[int] = None,
                  unsynced: Optional[int] = None):
-        """
-        :param int failed: Total of mirrors in 'failed' state
-        :param int queued: Total of mirrors in 'queued' state
-        :param int synced: Total of mirrors in 'synced' state
-        :param int syncing: Total of mirrors in 'syncing' state
-        :param int unsynced: Total of mirrors in 'failed' state
-        """
         if failed is not None:
             pulumi.set(__self__, "failed", failed)
         if queued is not None:
@@ -699,41 +536,26 @@ class ManagementStationMirrorSyncStatus(dict):
     @property
     @pulumi.getter
     def failed(self) -> Optional[int]:
-        """
-        Total of mirrors in 'failed' state
-        """
         return pulumi.get(self, "failed")
 
     @property
     @pulumi.getter
     def queued(self) -> Optional[int]:
-        """
-        Total of mirrors in 'queued' state
-        """
         return pulumi.get(self, "queued")
 
     @property
     @pulumi.getter
     def synced(self) -> Optional[int]:
-        """
-        Total of mirrors in 'synced' state
-        """
         return pulumi.get(self, "synced")
 
     @property
     @pulumi.getter
     def syncing(self) -> Optional[int]:
-        """
-        Total of mirrors in 'syncing' state
-        """
         return pulumi.get(self, "syncing")
 
     @property
     @pulumi.getter
     def unsynced(self) -> Optional[int]:
-        """
-        Total of mirrors in 'failed' state
-        """
         return pulumi.get(self, "unsynced")
 
 
@@ -761,16 +583,6 @@ class ManagementStationProxy(dict):
                  forward: Optional[str] = None,
                  hosts: Optional[Sequence[str]] = None,
                  port: Optional[str] = None):
-        """
-        :param bool is_enabled: (Updatable) To enable or disable the proxy (default true)
-        :param str forward: (Updatable) URL that the proxy will forward to
-        :param Sequence[str] hosts: (Updatable) List of hosts
-        :param str port: (Updatable) Port that the proxy will use
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if forward is not None:
             pulumi.set(__self__, "forward", forward)
@@ -782,37 +594,21 @@ class ManagementStationProxy(dict):
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
-        """
-        (Updatable) To enable or disable the proxy (default true)
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def forward(self) -> Optional[str]:
-        """
-        (Updatable) URL that the proxy will forward to
-        """
         return pulumi.get(self, "forward")
 
     @property
     @pulumi.getter
     def hosts(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of hosts
-        """
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[str]:
-        """
-        (Updatable) Port that the proxy will use
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "port")
 
 
@@ -838,10 +634,6 @@ class ProfileLifecycleEnvironment(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -850,17 +642,11 @@ class ProfileLifecycleEnvironment(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
 
@@ -886,10 +672,6 @@ class ProfileLifecycleStage(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -898,17 +680,11 @@ class ProfileLifecycleStage(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
 
@@ -934,10 +710,6 @@ class ProfileManagedInstanceGroup(dict):
     def __init__(__self__, *,
                  display_name: Optional[str] = None,
                  id: Optional[str] = None):
-        """
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if id is not None:
@@ -946,17 +718,11 @@ class ProfileManagedInstanceGroup(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
 
@@ -986,12 +752,6 @@ class ProfileSoftwareSource(dict):
                  display_name: Optional[str] = None,
                  id: Optional[str] = None,
                  software_source_type: Optional[str] = None):
-        """
-        :param str description: (Updatable) The description of the registration profile.
-        :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -1004,33 +764,21 @@ class ProfileSoftwareSource(dict):
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) The description of the registration profile.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the software source.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
     def software_source_type(self) -> Optional[str]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_type")
 
 
@@ -1061,11 +809,6 @@ class SoftwareSourceCustomSoftwareSourceFilter(dict):
                  module_stream_profile_filters: Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter']] = None,
                  package_filters: Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterPackageFilter']] = None,
                  package_group_filters: Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter']] = None):
-        """
-        :param Sequence['SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs'] module_stream_profile_filters: (Updatable) The list of module stream/profile filters.
-        :param Sequence['SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs'] package_filters: (Updatable) The list of package filters.
-        :param Sequence['SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs'] package_group_filters: (Updatable) The list of group filters.
-        """
         if module_stream_profile_filters is not None:
             pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
         if package_filters is not None:
@@ -1076,25 +819,16 @@ class SoftwareSourceCustomSoftwareSourceFilter(dict):
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
     def module_stream_profile_filters(self) -> Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter']]:
-        """
-        (Updatable) The list of module stream/profile filters.
-        """
         return pulumi.get(self, "module_stream_profile_filters")
 
     @property
     @pulumi.getter(name="packageFilters")
     def package_filters(self) -> Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterPackageFilter']]:
-        """
-        (Updatable) The list of package filters.
-        """
         return pulumi.get(self, "package_filters")
 
     @property
     @pulumi.getter(name="packageGroupFilters")
     def package_group_filters(self) -> Optional[Sequence['outputs.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter']]:
-        """
-        (Updatable) The list of group filters.
-        """
         return pulumi.get(self, "package_group_filters")
 
 
@@ -1128,12 +862,6 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter(dict):
                  module_name: str,
                  profile_name: Optional[str] = None,
                  stream_name: Optional[str] = None):
-        """
-        :param str filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param str module_name: (Updatable) Module name.
-        :param str profile_name: (Updatable) Profile name.
-        :param str stream_name: (Updatable) Stream name.
-        """
         pulumi.set(__self__, "filter_type", filter_type)
         pulumi.set(__self__, "module_name", module_name)
         if profile_name is not None:
@@ -1144,33 +872,21 @@ class SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter(dict):
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> str:
-        """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> str:
-        """
-        (Updatable) Module name.
-        """
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter(name="profileName")
     def profile_name(self) -> Optional[str]:
-        """
-        (Updatable) Profile name.
-        """
         return pulumi.get(self, "profile_name")
 
     @property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> Optional[str]:
-        """
-        (Updatable) Stream name.
-        """
         return pulumi.get(self, "stream_name")
 
 
@@ -1204,12 +920,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilter(dict):
                  package_name: Optional[str] = None,
                  package_name_pattern: Optional[str] = None,
                  package_version: Optional[str] = None):
-        """
-        :param str filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param str package_name: (Updatable) The package name.
-        :param str package_name_pattern: (Updatable) The package name pattern.
-        :param str package_version: (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
         pulumi.set(__self__, "filter_type", filter_type)
         if package_name is not None:
             pulumi.set(__self__, "package_name", package_name)
@@ -1221,33 +931,21 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageFilter(dict):
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> str:
-        """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="packageName")
     def package_name(self) -> Optional[str]:
-        """
-        (Updatable) The package name.
-        """
         return pulumi.get(self, "package_name")
 
     @property
     @pulumi.getter(name="packageNamePattern")
     def package_name_pattern(self) -> Optional[str]:
-        """
-        (Updatable) The package name pattern.
-        """
         return pulumi.get(self, "package_name_pattern")
 
     @property
     @pulumi.getter(name="packageVersion")
     def package_version(self) -> Optional[str]:
-        """
-        (Updatable) The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
         return pulumi.get(self, "package_version")
 
 
@@ -1275,10 +973,6 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter(dict):
     def __init__(__self__, *,
                  filter_type: str,
                  package_groups: Optional[Sequence[str]] = None):
-        """
-        :param str filter_type: (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param Sequence[str] package_groups: (Updatable) List of package group names.
-        """
         pulumi.set(__self__, "filter_type", filter_type)
         if package_groups is not None:
             pulumi.set(__self__, "package_groups", package_groups)
@@ -1286,17 +980,11 @@ class SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter(dict):
     @property
     @pulumi.getter(name="filterType")
     def filter_type(self) -> str:
-        """
-        (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="packageGroups")
     def package_groups(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) List of package group names.
-        """
         return pulumi.get(self, "package_groups")
 
 
@@ -1322,327 +1010,229 @@ class SoftwareSourceVendorSoftwareSource(dict):
     def __init__(__self__, *,
                  display_name: str,
                  id: str):
-        """
-        :param str display_name: (Updatable) User friendly name.
-        :param str id: (Updatable) The OCID of the resource that is immutable on creation.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
-        """
-        (Updatable) User friendly name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def id(self) -> str:
-        """
-        (Updatable) The OCID of the resource that is immutable on creation.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentManagedInstanceIdResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentStageResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_environment_id: str,
-                 managed_instance_ids: Sequence['outputs.GetLifecycleEnvironmentStageManagedInstanceIdResult'],
-                 os_family: str,
-                 rank: int,
-                 software_source_ids: Sequence['outputs.GetLifecycleEnvironmentStageSoftwareSourceIdResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_modified: str,
-                 vendor_name: str):
-        """
-        :param str arch_type: The CPU architecture of the target instances.
-        :param str compartment_id: The OCID of the tenancy containing the lifecycle stage.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: Software source name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param str lifecycle_environment_id: The OCID of the lifecycle environment.
-        :param Sequence['GetLifecycleEnvironmentStageManagedInstanceIdArgs'] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param str os_family: The operating system type of the target instances.
-        :param int rank: User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        :param Sequence['GetLifecycleEnvironmentStageSoftwareSourceIdArgs'] software_source_ids: Identifying information for the specified software source.
-        :param str state: The current state of the lifecycle environment.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param str vendor_name: The software source vendor name.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "rank", rank)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 arch_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_environment_id: Optional[str] = None,
+                 managed_instance_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentStageManagedInstanceIdResult']] = None,
+                 os_family: Optional[str] = None,
+                 rank: Optional[int] = None,
+                 software_source_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentStageSoftwareSourceIdResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 vendor_name: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_environment_id is not None:
+            pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if rank is not None:
+            pulumi.set(__self__, "rank", rank)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The CPU architecture of the target instances.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the lifecycle stage.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
-    def lifecycle_environment_id(self) -> str:
-        """
-        The OCID of the lifecycle environment.
-        """
+    def lifecycle_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_environment_id")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentStageManagedInstanceIdResult']:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
+    def managed_instance_ids(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentStageManagedInstanceIdResult']]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        The operating system type of the target instances.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def rank(self) -> int:
-        """
-        User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        """
+    def rank(self) -> Optional[int]:
         return pulumi.get(self, "rank")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
-    def software_source_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentStageSoftwareSourceIdResult']:
-        """
-        Identifying information for the specified software source.
-        """
+    def software_source_ids(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentStageSoftwareSourceIdResult']]:
         return pulumi.get(self, "software_source_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the lifecycle environment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The software source vendor name.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentStageManagedInstanceIdResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentStageSoftwareSourceIdResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
@@ -1676,556 +1266,408 @@ class GetLifecycleEnvironmentsFilterResult(dict):
 @pulumi.output_type
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 managed_instance_ids: Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult'],
-                 os_family: str,
-                 stages: Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_modified: str,
-                 vendor_name: str):
-        """
-        :param str arch_type: A filter to return only profiles that match the given archType.
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param Sequence['GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArgs'] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param str os_family: A filter to return only profiles that match the given osFamily.
-        :param Sequence['GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs'] stages: User specified list of lifecycle stages to be created for the lifecycle environment.
-        :param str state: A filter to return only the lifecycle environments that match the display name given.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param str vendor_name: The software source vendor name.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 arch_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 managed_instance_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult']] = None,
+                 os_family: Optional[str] = None,
+                 stages: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 vendor_name: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if stages is not None:
+            pulumi.set(__self__, "stages", stages)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        A filter to return only profiles that match the given archType.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult']:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
+    def managed_instance_ids(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult']]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        A filter to return only profiles that match the given osFamily.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult']:
-        """
-        User specified list of lifecycle stages to be created for the lifecycle environment.
-        """
+    def stages(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult']]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the lifecycle environments that match the display name given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The software source vendor name.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_environment_id: str,
-                 managed_instance_ids: Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult'],
-                 os_family: str,
-                 rank: int,
-                 software_source_ids: Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_modified: str,
-                 vendor_name: str):
-        """
-        :param str arch_type: A filter to return only profiles that match the given archType.
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A filter to return resources that match the given display names.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param str lifecycle_environment_id: The OCID of the lifecycle environment.
-        :param Sequence['GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArgs'] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param str os_family: A filter to return only profiles that match the given osFamily.
-        :param int rank: User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        :param Sequence['GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs'] software_source_ids: Identifying information for the specified software source.
-        :param str state: A filter to return only the lifecycle environments that match the display name given.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param str time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param str vendor_name: The software source vendor name.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "rank", rank)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 arch_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_environment_id: Optional[str] = None,
+                 managed_instance_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult']] = None,
+                 os_family: Optional[str] = None,
+                 rank: Optional[int] = None,
+                 software_source_ids: Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 vendor_name: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_environment_id is not None:
+            pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if rank is not None:
+            pulumi.set(__self__, "rank", rank)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        A filter to return only profiles that match the given archType.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
-    def lifecycle_environment_id(self) -> str:
-        """
-        The OCID of the lifecycle environment.
-        """
+    def lifecycle_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_environment_id")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult']:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
+    def managed_instance_ids(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult']]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        A filter to return only profiles that match the given osFamily.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def rank(self) -> int:
-        """
-        User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        """
+    def rank(self) -> Optional[int]:
         return pulumi.get(self, "rank")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
-    def software_source_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult']:
-        """
-        Identifying information for the specified software source.
-        """
+    def software_source_ids(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult']]:
         return pulumi.get(self, "software_source_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the lifecycle environments that match the display name given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The software source vendor name.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
 class GetLifecycleStageManagedInstanceIdResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleStageSoftwareSourceIdResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
@@ -2259,275 +1701,204 @@ class GetLifecycleStagesFilterResult(dict):
 @pulumi.output_type
 class GetLifecycleStagesLifecycleStageCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLifecycleStagesLifecycleStageCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_environment_id: str,
-                 managed_instance_ids: Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult'],
-                 os_family: str,
-                 rank: int,
-                 software_source_ids: Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_modified: str,
-                 vendor_name: str):
-        """
-        :param str arch_type: A filter to return only profiles that match the given archType.
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A filter to return resources that match the given display names.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param str lifecycle_environment_id: The OCID of the lifecycle environment for the lifecycle stage.
-        :param Sequence['GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs'] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param str os_family: A filter to return only profiles that match the given osFamily.
-        :param int rank: User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        :param Sequence['GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs'] software_source_ids: The OCID for the software source.
-        :param str state: A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-        :param str time_modified: The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-        :param str vendor_name: The software source vendor name.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "rank", rank)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 arch_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_environment_id: Optional[str] = None,
+                 managed_instance_ids: Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult']] = None,
+                 os_family: Optional[str] = None,
+                 rank: Optional[int] = None,
+                 software_source_ids: Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 vendor_name: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_environment_id is not None:
+            pulumi.set(__self__, "lifecycle_environment_id", lifecycle_environment_id)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if rank is not None:
+            pulumi.set(__self__, "rank", rank)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        A filter to return only profiles that match the given archType.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
-    def lifecycle_environment_id(self) -> str:
-        """
-        The OCID of the lifecycle environment for the lifecycle stage.
-        """
+    def lifecycle_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_environment_id")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult']:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
+    def managed_instance_ids(self) -> Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult']]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        A filter to return only profiles that match the given osFamily.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def rank(self) -> int:
-        """
-        User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-        """
+    def rank(self) -> Optional[int]:
         return pulumi.get(self, "rank")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
-    def software_source_ids(self) -> Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult']:
-        """
-        The OCID for the software source.
-        """
+    def software_source_ids(self) -> Optional[Sequence['outputs.GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult']]:
         return pulumi.get(self, "software_source_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The software source vendor name.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
@@ -2537,9 +1908,6 @@ class GetManagedInstanceGroupAvailableModulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The resource name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2548,9 +1916,6 @@ class GetManagedInstanceGroupAvailableModulesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The resource name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2567,47 +1932,34 @@ class GetManagedInstanceGroupAvailableModulesFilterResult(dict):
 @pulumi.output_type
 class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult']):
-        """
-        :param Sequence['GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs'] items: List of module stream profile.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult']:
-        """
-        List of module stream profile.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 software_source_id: str):
-        """
-        :param str name: The resource name.
-        :param str software_source_id: The OCID of the software source that provides this module.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "software_source_id", software_source_id)
+                 name: Optional[str] = None,
+                 software_source_id: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The resource name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> str:
-        """
-        The OCID of the software source that provides this module.
-        """
+    def software_source_id(self) -> Optional[str]:
         return pulumi.get(self, "software_source_id")
 
 
@@ -2617,9 +1969,6 @@ class GetManagedInstanceGroupAvailablePackagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2628,9 +1977,6 @@ class GetManagedInstanceGroupAvailablePackagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2647,211 +1993,153 @@ class GetManagedInstanceGroupAvailablePackagesFilterResult(dict):
 @pulumi.output_type
 class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult']):
-        """
-        :param Sequence['GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs'] items: List of available packages.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult']:
-        """
-        List of available packages.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult(dict):
     def __init__(__self__, *,
-                 architecture: str,
-                 display_name: str,
-                 is_latest: bool,
-                 name: str,
-                 software_sources: Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult'],
-                 type: str,
-                 version: str):
-        """
-        :param str architecture: The architecture for which this package was built.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
-        :param Sequence['GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArgs'] software_sources: List of software sources that provide the software package.
-        :param str type: Type of the package.
-        :param str version: Version of the installed package.
-        """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_latest", is_latest)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+                 architecture: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 is_latest: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 software_sources: Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult']] = None,
+                 type: Optional[str] = None,
+                 version: Optional[str] = None):
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if software_sources is not None:
+            pulumi.set(__self__, "software_sources", software_sources)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def architecture(self) -> str:
-        """
-        The architecture for which this package was built.
-        """
+    def architecture(self) -> Optional[str]:
         return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="isLatest")
-    def is_latest(self) -> bool:
-        """
-        A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-        """
+    def is_latest(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult']:
-        """
-        List of software sources that provide the software package.
-        """
+    def software_sources(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult']]:
         return pulumi.get(self, "software_sources")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the package.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Version of the installed package.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']):
-        """
-        :param Sequence['GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs'] items: List of available software sources.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']:
-        """
-        List of available software sources.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 display_name: str,
-                 id: str):
-        """
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: unique identifier that is immutable on creation.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 compartment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
@@ -2885,51 +2173,37 @@ class GetManagedInstanceGroupAvailableSoftwareSourcesFilterResult(dict):
 @pulumi.output_type
 class GetManagedInstanceGroupSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
@@ -2963,381 +2237,281 @@ class GetManagedInstanceGroupsFilterResult(dict):
 @pulumi.output_type
 class GetManagedInstanceGroupsManagedInstanceGroupCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupsManagedInstanceGroupCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 managed_instance_count: int,
-                 managed_instance_ids: Sequence[str],
-                 os_family: str,
-                 pending_job_count: int,
-                 software_source_ids: Sequence[str],
-                 software_sources: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_modified: str,
-                 vendor_name: str):
-        """
-        :param str arch_type: A filter to return only profiles that match the given archType.
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param int managed_instance_count: The number of Managed Instances in the managed instance group.
-        :param Sequence[str] managed_instance_ids: The list of managed instances OCIDs attached to the managed instance group.
-        :param str os_family: A filter to return only profiles that match the given osFamily.
-        :param int pending_job_count: The number of scheduled jobs pending against the managed instance group.
-        :param Sequence[str] software_source_ids: The list of software sources that the managed instance group will use.
-        :param Sequence['GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArgs'] software_sources: The list of software sources that the managed instance group will use.
-        :param str state: A filter to return only resources their lifecycle state matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the managed instance group was created. An RFC3339 formatted datetime string.
-        :param str time_modified: The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-        :param str vendor_name: The software source vendor name.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "pending_job_count", pending_job_count)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 arch_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 managed_instance_count: Optional[int] = None,
+                 managed_instance_ids: Optional[Sequence[str]] = None,
+                 os_family: Optional[str] = None,
+                 pending_job_count: Optional[int] = None,
+                 software_source_ids: Optional[Sequence[str]] = None,
+                 software_sources: Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 vendor_name: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_count is not None:
+            pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if pending_job_count is not None:
+            pulumi.set(__self__, "pending_job_count", pending_job_count)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
+        if software_sources is not None:
+            pulumi.set(__self__, "software_sources", software_sources)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        A filter to return only profiles that match the given archType.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
-    def managed_instance_count(self) -> int:
-        """
-        The number of Managed Instances in the managed instance group.
-        """
+    def managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Sequence[str]:
-        """
-        The list of managed instances OCIDs attached to the managed instance group.
-        """
+    def managed_instance_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        A filter to return only profiles that match the given osFamily.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="pendingJobCount")
-    def pending_job_count(self) -> int:
-        """
-        The number of scheduled jobs pending against the managed instance group.
-        """
+    def pending_job_count(self) -> Optional[int]:
         return pulumi.get(self, "pending_job_count")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
-    def software_source_ids(self) -> Sequence[str]:
-        """
-        The list of software sources that the managed instance group will use.
-        """
+    def software_source_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "software_source_ids")
 
     @property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult']:
-        """
-        The list of software sources that the managed instance group will use.
-        """
+    def software_sources(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult']]:
         return pulumi.get(self, "software_sources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their lifecycle state matches the given lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the managed instance group was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The software source vendor name.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
 class GetManagementStationMirrorResult(dict):
     def __init__(__self__, *,
-                 directory: str,
-                 port: str,
-                 sslcert: str,
-                 sslport: str):
-        """
-        :param str directory: Directory for the mirroring
-        :param str port: Port that the proxy will use
-        :param str sslcert: Local path for the sslcert
-        :param str sslport: Default sslport for the mirror
-        """
-        pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "sslcert", sslcert)
-        pulumi.set(__self__, "sslport", sslport)
+                 directory: Optional[str] = None,
+                 port: Optional[str] = None,
+                 sslcert: Optional[str] = None,
+                 sslport: Optional[str] = None):
+        if directory is not None:
+            pulumi.set(__self__, "directory", directory)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if sslcert is not None:
+            pulumi.set(__self__, "sslcert", sslcert)
+        if sslport is not None:
+            pulumi.set(__self__, "sslport", sslport)
 
     @property
     @pulumi.getter
-    def directory(self) -> str:
-        """
-        Directory for the mirroring
-        """
+    def directory(self) -> Optional[str]:
         return pulumi.get(self, "directory")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        Port that the proxy will use
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def sslcert(self) -> str:
-        """
-        Local path for the sslcert
-        """
+    def sslcert(self) -> Optional[str]:
         return pulumi.get(self, "sslcert")
 
     @property
     @pulumi.getter
-    def sslport(self) -> str:
-        """
-        Default sslport for the mirror
-        """
+    def sslport(self) -> Optional[str]:
         return pulumi.get(self, "sslport")
 
 
 @pulumi.output_type
 class GetManagementStationMirrorSyncStatusResult(dict):
     def __init__(__self__, *,
-                 failed: int,
-                 queued: int,
-                 synced: int,
-                 syncing: int,
-                 unsynced: int):
-        """
-        :param int failed: Total of mirrors in 'failed' state
-        :param int queued: Total of mirrors in 'queued' state
-        :param int synced: Total of mirrors in 'synced' state
-        :param int syncing: Total of mirrors in 'syncing' state
-        :param int unsynced: Total of mirrors in 'failed' state
-        """
-        pulumi.set(__self__, "failed", failed)
-        pulumi.set(__self__, "queued", queued)
-        pulumi.set(__self__, "synced", synced)
-        pulumi.set(__self__, "syncing", syncing)
-        pulumi.set(__self__, "unsynced", unsynced)
+                 failed: Optional[int] = None,
+                 queued: Optional[int] = None,
+                 synced: Optional[int] = None,
+                 syncing: Optional[int] = None,
+                 unsynced: Optional[int] = None):
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if queued is not None:
+            pulumi.set(__self__, "queued", queued)
+        if synced is not None:
+            pulumi.set(__self__, "synced", synced)
+        if syncing is not None:
+            pulumi.set(__self__, "syncing", syncing)
+        if unsynced is not None:
+            pulumi.set(__self__, "unsynced", unsynced)
 
     @property
     @pulumi.getter
-    def failed(self) -> int:
-        """
-        Total of mirrors in 'failed' state
-        """
+    def failed(self) -> Optional[int]:
         return pulumi.get(self, "failed")
 
     @property
     @pulumi.getter
-    def queued(self) -> int:
-        """
-        Total of mirrors in 'queued' state
-        """
+    def queued(self) -> Optional[int]:
         return pulumi.get(self, "queued")
 
     @property
     @pulumi.getter
-    def synced(self) -> int:
-        """
-        Total of mirrors in 'synced' state
-        """
+    def synced(self) -> Optional[int]:
         return pulumi.get(self, "synced")
 
     @property
     @pulumi.getter
-    def syncing(self) -> int:
-        """
-        Total of mirrors in 'syncing' state
-        """
+    def syncing(self) -> Optional[int]:
         return pulumi.get(self, "syncing")
 
     @property
     @pulumi.getter
-    def unsynced(self) -> int:
-        """
-        Total of mirrors in 'failed' state
-        """
+    def unsynced(self) -> Optional[int]:
         return pulumi.get(self, "unsynced")
 
 
@@ -3371,175 +2545,127 @@ class GetManagementStationMirrorsFilterResult(dict):
 @pulumi.output_type
 class GetManagementStationMirrorsMirrorsCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionItemResult']):
-        """
-        :param Sequence['GetManagementStationMirrorsMirrorsCollectionItemArgs'] items: List of mirrors
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionItemResult']:
-        """
-        List of mirrors
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagementStationMirrorsMirrorsCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetManagementStationMirrorsMirrorsCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 display_name: str,
-                 id: str,
-                 log: str,
-                 os_family: str,
-                 percentage: int,
-                 state: str,
-                 time_last_synced: str,
-                 type: str):
-        """
-        :param str arch_type: The architecture type supported by the Software Source
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param str id: OCID of a software source
-        :param str log: The current log from the management station plugin.
-        :param str os_family: The OS family the Software Source belongs to
-        :param int percentage: A decimal number representing the completness percentage
-        :param str state: Current state of the mirror
-        :param str time_last_synced: Timestamp of the last time the mirror was sync
-        :param str type: Type of the mirror
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "log", log)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "percentage", percentage)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_last_synced", time_last_synced)
-        pulumi.set(__self__, "type", type)
+                 arch_type: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 log: Optional[str] = None,
+                 os_family: Optional[str] = None,
+                 percentage: Optional[int] = None,
+                 state: Optional[str] = None,
+                 time_last_synced: Optional[str] = None,
+                 type: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if log is not None:
+            pulumi.set(__self__, "log", log)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if percentage is not None:
+            pulumi.set(__self__, "percentage", percentage)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_last_synced is not None:
+            pulumi.set(__self__, "time_last_synced", time_last_synced)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The architecture type supported by the Software Source
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID of a software source
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def log(self) -> str:
-        """
-        The current log from the management station plugin.
-        """
+    def log(self) -> Optional[str]:
         return pulumi.get(self, "log")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        The OS family the Software Source belongs to
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def percentage(self) -> int:
-        """
-        A decimal number representing the completness percentage
-        """
+    def percentage(self) -> Optional[int]:
         return pulumi.get(self, "percentage")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Current state of the mirror
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeLastSynced")
-    def time_last_synced(self) -> str:
-        """
-        Timestamp of the last time the mirror was sync
-        """
+    def time_last_synced(self) -> Optional[str]:
         return pulumi.get(self, "time_last_synced")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the mirror
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetManagementStationProxyResult(dict):
     def __init__(__self__, *,
-                 forward: str,
-                 hosts: Sequence[str],
-                 is_enabled: bool,
-                 port: str):
-        """
-        :param str forward: URL that the proxy will forward to
-        :param Sequence[str] hosts: List of hosts
-        :param bool is_enabled: To enable or disable the proxy (default true)
-        :param str port: Port that the proxy will use
-        """
-        pulumi.set(__self__, "forward", forward)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "port", port)
+                 forward: Optional[str] = None,
+                 hosts: Optional[Sequence[str]] = None,
+                 is_enabled: Optional[bool] = None,
+                 port: Optional[str] = None):
+        if forward is not None:
+            pulumi.set(__self__, "forward", forward)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def forward(self) -> str:
-        """
-        URL that the proxy will forward to
-        """
+    def forward(self) -> Optional[str]:
         return pulumi.get(self, "forward")
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence[str]:
-        """
-        List of hosts
-        """
+    def hosts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        To enable or disable the proxy (default true)
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        Port that the proxy will use
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
 
@@ -3573,530 +2699,389 @@ class GetManagementStationsFilterResult(dict):
 @pulumi.output_type
 class GetManagementStationsManagementStationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetManagementStationsManagementStationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagementStationsManagementStationCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetManagementStationsManagementStationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 hostname: str,
-                 id: str,
-                 managed_instance_id: str,
-                 mirror_capacity: int,
-                 mirror_sync_statuses: Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult'],
-                 mirrors: Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorResult'],
-                 overall_percentage: int,
-                 overall_state: str,
-                 profile_id: str,
-                 proxies: Sequence['outputs.GetManagementStationsManagementStationCollectionItemProxyResult'],
-                 scheduled_job_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 total_mirrors: int):
-        """
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: Details describing the ManagementStation config.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str hostname: Name of the host
-        :param str id: The OCID of the management station.
-        :param str managed_instance_id: The OCID of the managed instance for which to list resources.
-        :param int mirror_capacity: A decimal number representing the mirror capacity
-        :param Sequence['GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs'] mirror_sync_statuses: Status summary of all repos
-        :param Sequence['GetManagementStationsManagementStationCollectionItemMirrorArgs'] mirrors: Information for a mirror configuration
-        :param int overall_percentage: A decimal number representing the completeness percentage
-        :param str overall_state: Current state of the mirroring
-        :param str profile_id: OCID of the Profile associated with the Station
-        :param Sequence['GetManagementStationsManagementStationCollectionItemProxyArgs'] proxies: Information for a proxy configuration
-        :param str scheduled_job_id: OCID of the Scheduled Job for mirror sync
-        :param str state: The current lifecycle state for the object.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param int total_mirrors: A decimal number representing the total of repos
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "mirror_capacity", mirror_capacity)
-        pulumi.set(__self__, "mirror_sync_statuses", mirror_sync_statuses)
-        pulumi.set(__self__, "mirrors", mirrors)
-        pulumi.set(__self__, "overall_percentage", overall_percentage)
-        pulumi.set(__self__, "overall_state", overall_state)
-        pulumi.set(__self__, "profile_id", profile_id)
-        pulumi.set(__self__, "proxies", proxies)
-        pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "total_mirrors", total_mirrors)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 hostname: Optional[str] = None,
+                 id: Optional[str] = None,
+                 managed_instance_id: Optional[str] = None,
+                 mirror_capacity: Optional[int] = None,
+                 mirror_sync_statuses: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult']] = None,
+                 mirrors: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorResult']] = None,
+                 overall_percentage: Optional[int] = None,
+                 overall_state: Optional[str] = None,
+                 profile_id: Optional[str] = None,
+                 proxies: Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemProxyResult']] = None,
+                 scheduled_job_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 total_mirrors: Optional[int] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if mirror_capacity is not None:
+            pulumi.set(__self__, "mirror_capacity", mirror_capacity)
+        if mirror_sync_statuses is not None:
+            pulumi.set(__self__, "mirror_sync_statuses", mirror_sync_statuses)
+        if mirrors is not None:
+            pulumi.set(__self__, "mirrors", mirrors)
+        if overall_percentage is not None:
+            pulumi.set(__self__, "overall_percentage", overall_percentage)
+        if overall_state is not None:
+            pulumi.set(__self__, "overall_state", overall_state)
+        if profile_id is not None:
+            pulumi.set(__self__, "profile_id", profile_id)
+        if proxies is not None:
+            pulumi.set(__self__, "proxies", proxies)
+        if scheduled_job_id is not None:
+            pulumi.set(__self__, "scheduled_job_id", scheduled_job_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if total_mirrors is not None:
+            pulumi.set(__self__, "total_mirrors", total_mirrors)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Details describing the ManagementStation config.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        Name of the host
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the management station.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The OCID of the managed instance for which to list resources.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter(name="mirrorCapacity")
-    def mirror_capacity(self) -> int:
-        """
-        A decimal number representing the mirror capacity
-        """
+    def mirror_capacity(self) -> Optional[int]:
         return pulumi.get(self, "mirror_capacity")
 
     @property
     @pulumi.getter(name="mirrorSyncStatuses")
-    def mirror_sync_statuses(self) -> Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult']:
-        """
-        Status summary of all repos
-        """
+    def mirror_sync_statuses(self) -> Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult']]:
         return pulumi.get(self, "mirror_sync_statuses")
 
     @property
     @pulumi.getter
-    def mirrors(self) -> Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorResult']:
-        """
-        Information for a mirror configuration
-        """
+    def mirrors(self) -> Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemMirrorResult']]:
         return pulumi.get(self, "mirrors")
 
     @property
     @pulumi.getter(name="overallPercentage")
-    def overall_percentage(self) -> int:
-        """
-        A decimal number representing the completeness percentage
-        """
+    def overall_percentage(self) -> Optional[int]:
         return pulumi.get(self, "overall_percentage")
 
     @property
     @pulumi.getter(name="overallState")
-    def overall_state(self) -> str:
-        """
-        Current state of the mirroring
-        """
+    def overall_state(self) -> Optional[str]:
         return pulumi.get(self, "overall_state")
 
     @property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> str:
-        """
-        OCID of the Profile associated with the Station
-        """
+    def profile_id(self) -> Optional[str]:
         return pulumi.get(self, "profile_id")
 
     @property
     @pulumi.getter
-    def proxies(self) -> Sequence['outputs.GetManagementStationsManagementStationCollectionItemProxyResult']:
-        """
-        Information for a proxy configuration
-        """
+    def proxies(self) -> Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionItemProxyResult']]:
         return pulumi.get(self, "proxies")
 
     @property
     @pulumi.getter(name="scheduledJobId")
-    def scheduled_job_id(self) -> str:
-        """
-        OCID of the Scheduled Job for mirror sync
-        """
+    def scheduled_job_id(self) -> Optional[str]:
         return pulumi.get(self, "scheduled_job_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state for the object.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="totalMirrors")
-    def total_mirrors(self) -> int:
-        """
-        A decimal number representing the total of repos
-        """
+    def total_mirrors(self) -> Optional[int]:
         return pulumi.get(self, "total_mirrors")
 
 
 @pulumi.output_type
 class GetManagementStationsManagementStationCollectionItemMirrorResult(dict):
     def __init__(__self__, *,
-                 directory: str,
-                 port: str,
-                 sslcert: str,
-                 sslport: str):
-        """
-        :param str directory: Directory for the mirroring
-        :param str port: Port that the proxy will use
-        :param str sslcert: Local path for the sslcert
-        :param str sslport: Default sslport for the mirror
-        """
-        pulumi.set(__self__, "directory", directory)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "sslcert", sslcert)
-        pulumi.set(__self__, "sslport", sslport)
+                 directory: Optional[str] = None,
+                 port: Optional[str] = None,
+                 sslcert: Optional[str] = None,
+                 sslport: Optional[str] = None):
+        if directory is not None:
+            pulumi.set(__self__, "directory", directory)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if sslcert is not None:
+            pulumi.set(__self__, "sslcert", sslcert)
+        if sslport is not None:
+            pulumi.set(__self__, "sslport", sslport)
 
     @property
     @pulumi.getter
-    def directory(self) -> str:
-        """
-        Directory for the mirroring
-        """
+    def directory(self) -> Optional[str]:
         return pulumi.get(self, "directory")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        Port that the proxy will use
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def sslcert(self) -> str:
-        """
-        Local path for the sslcert
-        """
+    def sslcert(self) -> Optional[str]:
         return pulumi.get(self, "sslcert")
 
     @property
     @pulumi.getter
-    def sslport(self) -> str:
-        """
-        Default sslport for the mirror
-        """
+    def sslport(self) -> Optional[str]:
         return pulumi.get(self, "sslport")
 
 
 @pulumi.output_type
 class GetManagementStationsManagementStationCollectionItemMirrorSyncStatusResult(dict):
     def __init__(__self__, *,
-                 failed: int,
-                 queued: int,
-                 synced: int,
-                 syncing: int,
-                 unsynced: int):
-        """
-        :param int failed: Total of mirrors in 'failed' state
-        :param int queued: Total of mirrors in 'queued' state
-        :param int synced: Total of mirrors in 'synced' state
-        :param int syncing: Total of mirrors in 'syncing' state
-        :param int unsynced: Total of mirrors in 'failed' state
-        """
-        pulumi.set(__self__, "failed", failed)
-        pulumi.set(__self__, "queued", queued)
-        pulumi.set(__self__, "synced", synced)
-        pulumi.set(__self__, "syncing", syncing)
-        pulumi.set(__self__, "unsynced", unsynced)
+                 failed: Optional[int] = None,
+                 queued: Optional[int] = None,
+                 synced: Optional[int] = None,
+                 syncing: Optional[int] = None,
+                 unsynced: Optional[int] = None):
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if queued is not None:
+            pulumi.set(__self__, "queued", queued)
+        if synced is not None:
+            pulumi.set(__self__, "synced", synced)
+        if syncing is not None:
+            pulumi.set(__self__, "syncing", syncing)
+        if unsynced is not None:
+            pulumi.set(__self__, "unsynced", unsynced)
 
     @property
     @pulumi.getter
-    def failed(self) -> int:
-        """
-        Total of mirrors in 'failed' state
-        """
+    def failed(self) -> Optional[int]:
         return pulumi.get(self, "failed")
 
     @property
     @pulumi.getter
-    def queued(self) -> int:
-        """
-        Total of mirrors in 'queued' state
-        """
+    def queued(self) -> Optional[int]:
         return pulumi.get(self, "queued")
 
     @property
     @pulumi.getter
-    def synced(self) -> int:
-        """
-        Total of mirrors in 'synced' state
-        """
+    def synced(self) -> Optional[int]:
         return pulumi.get(self, "synced")
 
     @property
     @pulumi.getter
-    def syncing(self) -> int:
-        """
-        Total of mirrors in 'syncing' state
-        """
+    def syncing(self) -> Optional[int]:
         return pulumi.get(self, "syncing")
 
     @property
     @pulumi.getter
-    def unsynced(self) -> int:
-        """
-        Total of mirrors in 'failed' state
-        """
+    def unsynced(self) -> Optional[int]:
         return pulumi.get(self, "unsynced")
 
 
 @pulumi.output_type
 class GetManagementStationsManagementStationCollectionItemProxyResult(dict):
     def __init__(__self__, *,
-                 forward: str,
-                 hosts: Sequence[str],
-                 is_enabled: bool,
-                 port: str):
-        """
-        :param str forward: URL that the proxy will forward to
-        :param Sequence[str] hosts: List of hosts
-        :param bool is_enabled: To enable or disable the proxy (default true)
-        :param str port: Port that the proxy will use
-        """
-        pulumi.set(__self__, "forward", forward)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "port", port)
+                 forward: Optional[str] = None,
+                 hosts: Optional[Sequence[str]] = None,
+                 is_enabled: Optional[bool] = None,
+                 port: Optional[str] = None):
+        if forward is not None:
+            pulumi.set(__self__, "forward", forward)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def forward(self) -> str:
-        """
-        URL that the proxy will forward to
-        """
+    def forward(self) -> Optional[str]:
         return pulumi.get(self, "forward")
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence[str]:
-        """
-        List of hosts
-        """
+    def hosts(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        To enable or disable the proxy (default true)
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        Port that the proxy will use
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
 
 @pulumi.output_type
 class GetProfileLifecycleEnvironmentResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetProfileLifecycleStageResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetProfileManagedInstanceGroupResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetProfileSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
@@ -4130,547 +3115,410 @@ class GetProfilesFilterResult(dict):
 @pulumi.output_type
 class GetProfilesProfileCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetProfilesProfileCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetProfilesProfileCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetProfilesProfileCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_environments: Sequence['outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult'],
-                 lifecycle_stage_id: str,
-                 lifecycle_stages: Sequence['outputs.GetProfilesProfileCollectionItemLifecycleStageResult'],
-                 managed_instance_group_id: str,
-                 managed_instance_groups: Sequence['outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult'],
-                 management_station_id: str,
-                 os_family: str,
-                 profile_type: str,
-                 software_source_ids: Sequence[str],
-                 software_sources: Sequence['outputs.GetProfilesProfileCollectionItemSoftwareSourceResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 vendor_name: str):
-        """
-        :param str arch_type: A filter to return only profiles that match the given archType.
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the software source.
-        :param Sequence['GetProfilesProfileCollectionItemLifecycleEnvironmentArgs'] lifecycle_environments: Identifying information for the specified lifecycle environment.
-        :param Sequence['GetProfilesProfileCollectionItemLifecycleStageArgs'] lifecycle_stages: Identifying information for the specified lifecycle stage.
-        :param Sequence['GetProfilesProfileCollectionItemManagedInstanceGroupArgs'] managed_instance_groups: Identifying information for the specified managed instance group.
-        :param str management_station_id: The OCID of the management station.
-        :param str os_family: A filter to return only profiles that match the given osFamily.
-        :param str profile_type: A filter to return registration profiles that match the given profileType.
-        :param Sequence['GetProfilesProfileCollectionItemSoftwareSourceArgs'] software_sources: The list of software sources that the registration profile will use.
-        :param str state: A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the registration profile was created. An RFC3339 formatted datetime string.
-        :param str vendor_name: A filter to return only profiles that match the given vendorName.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
-        pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
-        pulumi.set(__self__, "lifecycle_stages", lifecycle_stages)
-        pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
-        pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
-        pulumi.set(__self__, "management_station_id", management_station_id)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "profile_type", profile_type)
-        pulumi.set(__self__, "software_source_ids", software_source_ids)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+                 arch_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_environments: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult']] = None,
+                 lifecycle_stage_id: Optional[str] = None,
+                 lifecycle_stages: Optional[Sequence['outputs.GetProfilesProfileCollectionItemLifecycleStageResult']] = None,
+                 managed_instance_group_id: Optional[str] = None,
+                 managed_instance_groups: Optional[Sequence['outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult']] = None,
+                 management_station_id: Optional[str] = None,
+                 os_family: Optional[str] = None,
+                 profile_type: Optional[str] = None,
+                 software_source_ids: Optional[Sequence[str]] = None,
+                 software_sources: Optional[Sequence['outputs.GetProfilesProfileCollectionItemSoftwareSourceResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 vendor_name: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_environments is not None:
+            pulumi.set(__self__, "lifecycle_environments", lifecycle_environments)
+        if lifecycle_stage_id is not None:
+            pulumi.set(__self__, "lifecycle_stage_id", lifecycle_stage_id)
+        if lifecycle_stages is not None:
+            pulumi.set(__self__, "lifecycle_stages", lifecycle_stages)
+        if managed_instance_group_id is not None:
+            pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
+        if managed_instance_groups is not None:
+            pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+        if management_station_id is not None:
+            pulumi.set(__self__, "management_station_id", management_station_id)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if profile_type is not None:
+            pulumi.set(__self__, "profile_type", profile_type)
+        if software_source_ids is not None:
+            pulumi.set(__self__, "software_source_ids", software_source_ids)
+        if software_sources is not None:
+            pulumi.set(__self__, "software_sources", software_sources)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        A filter to return only profiles that match the given archType.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleEnvironments")
-    def lifecycle_environments(self) -> Sequence['outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult']:
-        """
-        Identifying information for the specified lifecycle environment.
-        """
+    def lifecycle_environments(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemLifecycleEnvironmentResult']]:
         return pulumi.get(self, "lifecycle_environments")
 
     @property
     @pulumi.getter(name="lifecycleStageId")
-    def lifecycle_stage_id(self) -> str:
+    def lifecycle_stage_id(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_stage_id")
 
     @property
     @pulumi.getter(name="lifecycleStages")
-    def lifecycle_stages(self) -> Sequence['outputs.GetProfilesProfileCollectionItemLifecycleStageResult']:
-        """
-        Identifying information for the specified lifecycle stage.
-        """
+    def lifecycle_stages(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemLifecycleStageResult']]:
         return pulumi.get(self, "lifecycle_stages")
 
     @property
     @pulumi.getter(name="managedInstanceGroupId")
-    def managed_instance_group_id(self) -> str:
+    def managed_instance_group_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_group_id")
 
     @property
     @pulumi.getter(name="managedInstanceGroups")
-    def managed_instance_groups(self) -> Sequence['outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult']:
-        """
-        Identifying information for the specified managed instance group.
-        """
+    def managed_instance_groups(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemManagedInstanceGroupResult']]:
         return pulumi.get(self, "managed_instance_groups")
 
     @property
     @pulumi.getter(name="managementStationId")
-    def management_station_id(self) -> str:
-        """
-        The OCID of the management station.
-        """
+    def management_station_id(self) -> Optional[str]:
         return pulumi.get(self, "management_station_id")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        A filter to return only profiles that match the given osFamily.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="profileType")
-    def profile_type(self) -> str:
-        """
-        A filter to return registration profiles that match the given profileType.
-        """
+    def profile_type(self) -> Optional[str]:
         return pulumi.get(self, "profile_type")
 
     @property
     @pulumi.getter(name="softwareSourceIds")
-    def software_source_ids(self) -> Sequence[str]:
+    def software_source_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "software_source_ids")
 
     @property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Sequence['outputs.GetProfilesProfileCollectionItemSoftwareSourceResult']:
-        """
-        The list of software sources that the registration profile will use.
-        """
+    def software_sources(self) -> Optional[Sequence['outputs.GetProfilesProfileCollectionItemSoftwareSourceResult']]:
         return pulumi.get(self, "software_sources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the registration profile was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        A filter to return only profiles that match the given vendorName.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemLifecycleEnvironmentResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemLifecycleStageResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemManagedInstanceGroupResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetProfilesProfileCollectionItemSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: A filter to return resources that match the given display names.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return resources that match the given display names.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
 class GetSoftwareSourceCustomSoftwareSourceFilterResult(dict):
     def __init__(__self__, *,
-                 module_stream_profile_filters: Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult'],
-                 package_filters: Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult'],
-                 package_group_filters: Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult']):
-        """
-        :param Sequence['GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs'] module_stream_profile_filters: The list of module stream/profile filters.
-        :param Sequence['GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs'] package_filters: The list of package filters.
-        :param Sequence['GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs'] package_group_filters: The list of group filters.
-        """
-        pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
-        pulumi.set(__self__, "package_filters", package_filters)
-        pulumi.set(__self__, "package_group_filters", package_group_filters)
+                 module_stream_profile_filters: Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult']] = None,
+                 package_filters: Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult']] = None,
+                 package_group_filters: Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult']] = None):
+        if module_stream_profile_filters is not None:
+            pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
+        if package_filters is not None:
+            pulumi.set(__self__, "package_filters", package_filters)
+        if package_group_filters is not None:
+            pulumi.set(__self__, "package_group_filters", package_group_filters)
 
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
-    def module_stream_profile_filters(self) -> Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult']:
-        """
-        The list of module stream/profile filters.
-        """
+    def module_stream_profile_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult']]:
         return pulumi.get(self, "module_stream_profile_filters")
 
     @property
     @pulumi.getter(name="packageFilters")
-    def package_filters(self) -> Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult']:
-        """
-        The list of package filters.
-        """
+    def package_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult']]:
         return pulumi.get(self, "package_filters")
 
     @property
     @pulumi.getter(name="packageGroupFilters")
-    def package_group_filters(self) -> Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult']:
-        """
-        The list of group filters.
-        """
+    def package_group_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult']]:
         return pulumi.get(self, "package_group_filters")
 
 
 @pulumi.output_type
 class GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterResult(dict):
     def __init__(__self__, *,
-                 filter_type: str,
-                 module_name: str,
-                 profile_name: str,
-                 stream_name: str):
-        """
-        :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param str module_name: Module name.
-        :param str profile_name: Profile name.
-        :param str stream_name: Stream name.
-        """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "stream_name", stream_name)
+                 filter_type: Optional[str] = None,
+                 module_name: Optional[str] = None,
+                 profile_name: Optional[str] = None,
+                 stream_name: Optional[str] = None):
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if module_name is not None:
+            pulumi.set(__self__, "module_name", module_name)
+        if profile_name is not None:
+            pulumi.set(__self__, "profile_name", profile_name)
+        if stream_name is not None:
+            pulumi.set(__self__, "stream_name", stream_name)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="moduleName")
-    def module_name(self) -> str:
-        """
-        Module name.
-        """
+    def module_name(self) -> Optional[str]:
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter(name="profileName")
-    def profile_name(self) -> str:
-        """
-        Profile name.
-        """
+    def profile_name(self) -> Optional[str]:
         return pulumi.get(self, "profile_name")
 
     @property
     @pulumi.getter(name="streamName")
-    def stream_name(self) -> str:
-        """
-        Stream name.
-        """
+    def stream_name(self) -> Optional[str]:
         return pulumi.get(self, "stream_name")
 
 
 @pulumi.output_type
 class GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterResult(dict):
     def __init__(__self__, *,
-                 filter_type: str,
-                 package_name: str,
-                 package_name_pattern: str,
-                 package_version: str):
-        """
-        :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param str package_name: The package name.
-        :param str package_name_pattern: The package name pattern.
-        :param str package_version: The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_name", package_name)
-        pulumi.set(__self__, "package_name_pattern", package_name_pattern)
-        pulumi.set(__self__, "package_version", package_version)
+                 filter_type: Optional[str] = None,
+                 package_name: Optional[str] = None,
+                 package_name_pattern: Optional[str] = None,
+                 package_version: Optional[str] = None):
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if package_name is not None:
+            pulumi.set(__self__, "package_name", package_name)
+        if package_name_pattern is not None:
+            pulumi.set(__self__, "package_name_pattern", package_name_pattern)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="packageName")
-    def package_name(self) -> str:
-        """
-        The package name.
-        """
+    def package_name(self) -> Optional[str]:
         return pulumi.get(self, "package_name")
 
     @property
     @pulumi.getter(name="packageNamePattern")
-    def package_name_pattern(self) -> str:
-        """
-        The package name pattern.
-        """
+    def package_name_pattern(self) -> Optional[str]:
         return pulumi.get(self, "package_name_pattern")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
 
 @pulumi.output_type
 class GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterResult(dict):
     def __init__(__self__, *,
-                 filter_type: str,
-                 package_groups: Sequence[str]):
-        """
-        :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param Sequence[str] package_groups: List of package group names.
-        """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_groups", package_groups)
+                 filter_type: Optional[str] = None,
+                 package_groups: Optional[Sequence[str]] = None):
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if package_groups is not None:
+            pulumi.set(__self__, "package_groups", package_groups)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="packageGroups")
-    def package_groups(self) -> Sequence[str]:
-        """
-        List of package group names.
-        """
+    def package_groups(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "package_groups")
 
 
@@ -4680,9 +3528,6 @@ class GetSoftwareSourceModuleStreamProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4691,9 +3536,6 @@ class GetSoftwareSourceModuleStreamProfilesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4710,85 +3552,66 @@ class GetSoftwareSourceModuleStreamProfilesFilterResult(dict):
 @pulumi.output_type
 class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 is_default: bool,
-                 module_name: str,
-                 name: str,
-                 packages: Sequence[str],
-                 stream_name: str):
-        """
-        :param str description: A description of the contents of the module stream profile.
-        :param bool is_default: Indicates if this profile is the default for its module stream.
-        :param str module_name: The name of a module. This parameter is required if a streamName is specified.
-        :param str name: The name of the entity to be queried.
-        :param Sequence[str] packages: A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
-        :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "stream_name", stream_name)
+                 description: Optional[str] = None,
+                 is_default: Optional[bool] = None,
+                 module_name: Optional[str] = None,
+                 name: Optional[str] = None,
+                 packages: Optional[Sequence[str]] = None,
+                 stream_name: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_default is not None:
+            pulumi.set(__self__, "is_default", is_default)
+        if module_name is not None:
+            pulumi.set(__self__, "module_name", module_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if packages is not None:
+            pulumi.set(__self__, "packages", packages)
+        if stream_name is not None:
+            pulumi.set(__self__, "stream_name", stream_name)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the contents of the module stream profile.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Indicates if this profile is the default for its module stream.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="moduleName")
-    def module_name(self) -> str:
-        """
-        The name of a module. This parameter is required if a streamName is specified.
-        """
+    def module_name(self) -> Optional[str]:
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def packages(self) -> Sequence[str]:
-        """
-        A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
-        """
+    def packages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter(name="streamName")
-    def stream_name(self) -> str:
-        """
-        The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-        """
+    def stream_name(self) -> Optional[str]:
         return pulumi.get(self, "stream_name")
 
 
@@ -4798,9 +3621,6 @@ class GetSoftwareSourceModuleStreamsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4809,9 +3629,6 @@ class GetSoftwareSourceModuleStreamsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4828,118 +3645,90 @@ class GetSoftwareSourceModuleStreamsFilterResult(dict):
 @pulumi.output_type
 class GetSoftwareSourceModuleStreamsModuleStreamCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSoftwareSourceModuleStreamsModuleStreamCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 description: str,
-                 is_default: bool,
-                 is_latest: bool,
-                 module_name: str,
-                 name: str,
-                 packages: Sequence[str],
-                 profiles: Sequence[str],
-                 software_source_id: str):
-        """
-        :param str arch_type: The architecture for which the packages in this module stream were built.
-        :param str description: A description of the contents of the module stream.
-        :param bool is_default: Indicates if this stream is the default for its module.
-        :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-        :param str module_name: The name of a module. This parameter is required if a streamName is specified.
-        :param str name: The name of the entity to be queried.
-        :param Sequence[str] packages: A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
-        :param Sequence[str] profiles: A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
-        :param str software_source_id: The software source OCID.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "is_latest", is_latest)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "profiles", profiles)
-        pulumi.set(__self__, "software_source_id", software_source_id)
+                 arch_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 is_default: Optional[bool] = None,
+                 is_latest: Optional[bool] = None,
+                 module_name: Optional[str] = None,
+                 name: Optional[str] = None,
+                 packages: Optional[Sequence[str]] = None,
+                 profiles: Optional[Sequence[str]] = None,
+                 software_source_id: Optional[str] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_default is not None:
+            pulumi.set(__self__, "is_default", is_default)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
+        if module_name is not None:
+            pulumi.set(__self__, "module_name", module_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if packages is not None:
+            pulumi.set(__self__, "packages", packages)
+        if profiles is not None:
+            pulumi.set(__self__, "profiles", profiles)
+        if software_source_id is not None:
+            pulumi.set(__self__, "software_source_id", software_source_id)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The architecture for which the packages in this module stream were built.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the contents of the module stream.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Indicates if this stream is the default for its module.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="isLatest")
-    def is_latest(self) -> bool:
-        """
-        A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-        """
+    def is_latest(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="moduleName")
-    def module_name(self) -> str:
-        """
-        The name of a module. This parameter is required if a streamName is specified.
-        """
+    def module_name(self) -> Optional[str]:
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def packages(self) -> Sequence[str]:
-        """
-        A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
-        """
+    def packages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter
-    def profiles(self) -> Sequence[str]:
-        """
-        A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
-        """
+    def profiles(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "profiles")
 
     @property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> str:
-        """
-        The software source OCID.
-        """
+    def software_source_id(self) -> Optional[str]:
         return pulumi.get(self, "software_source_id")
 
 
@@ -4949,9 +3738,6 @@ class GetSoftwareSourcePackageGroupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4960,9 +3746,6 @@ class GetSoftwareSourcePackageGroupsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4979,282 +3762,209 @@ class GetSoftwareSourcePackageGroupsFilterResult(dict):
 @pulumi.output_type
 class GetSoftwareSourcePackageGroupsPackageGroupCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_order: int,
-                 group_type: str,
-                 id: str,
-                 is_default: bool,
-                 is_user_visible: bool,
-                 name: str,
-                 packages: Sequence[str],
-                 repositories: Sequence[str]):
-        """
-        :param str description: description of the package group.
-        :param int display_order: Indicates the order to display category or environment.
-        :param str group_type: A filter to return only package groups of the specified type.
-        :param str id: Package group identifier.
-        :param bool is_default: Indicates if this package group is the default.
-        :param bool is_user_visible: Indicates if this package group is visible by users.
-        :param str name: The name of the entity to be queried.
-        :param Sequence[str] packages: The list of packages in the package group.
-        :param Sequence[str] repositories: the IDs of the package group's repositories.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "group_type", group_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "is_user_visible", is_user_visible)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "repositories", repositories)
+                 description: Optional[str] = None,
+                 display_order: Optional[int] = None,
+                 group_type: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_default: Optional[bool] = None,
+                 is_user_visible: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 packages: Optional[Sequence[str]] = None,
+                 repositories: Optional[Sequence[str]] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_order is not None:
+            pulumi.set(__self__, "display_order", display_order)
+        if group_type is not None:
+            pulumi.set(__self__, "group_type", group_type)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_default is not None:
+            pulumi.set(__self__, "is_default", is_default)
+        if is_user_visible is not None:
+            pulumi.set(__self__, "is_user_visible", is_user_visible)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if packages is not None:
+            pulumi.set(__self__, "packages", packages)
+        if repositories is not None:
+            pulumi.set(__self__, "repositories", repositories)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        description of the package group.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayOrder")
-    def display_order(self) -> int:
-        """
-        Indicates the order to display category or environment.
-        """
+    def display_order(self) -> Optional[int]:
         return pulumi.get(self, "display_order")
 
     @property
     @pulumi.getter(name="groupType")
-    def group_type(self) -> str:
-        """
-        A filter to return only package groups of the specified type.
-        """
+    def group_type(self) -> Optional[str]:
         return pulumi.get(self, "group_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Package group identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Indicates if this package group is the default.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="isUserVisible")
-    def is_user_visible(self) -> bool:
-        """
-        Indicates if this package group is visible by users.
-        """
+    def is_user_visible(self) -> Optional[bool]:
         return pulumi.get(self, "is_user_visible")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def packages(self) -> Sequence[str]:
-        """
-        The list of packages in the package group.
-        """
+    def packages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter
-    def repositories(self) -> Sequence[str]:
-        """
-        the IDs of the package group's repositories.
-        """
+    def repositories(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "repositories")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackageDependencyResult(dict):
     def __init__(__self__, *,
-                 dependency: str,
-                 dependency_modifier: str,
-                 dependency_type: str):
-        """
-        :param str dependency: The software package's dependency.
-        :param str dependency_modifier: The modifier for the dependency.
-        :param str dependency_type: The type of the dependency.
-        """
-        pulumi.set(__self__, "dependency", dependency)
-        pulumi.set(__self__, "dependency_modifier", dependency_modifier)
-        pulumi.set(__self__, "dependency_type", dependency_type)
+                 dependency: Optional[str] = None,
+                 dependency_modifier: Optional[str] = None,
+                 dependency_type: Optional[str] = None):
+        if dependency is not None:
+            pulumi.set(__self__, "dependency", dependency)
+        if dependency_modifier is not None:
+            pulumi.set(__self__, "dependency_modifier", dependency_modifier)
+        if dependency_type is not None:
+            pulumi.set(__self__, "dependency_type", dependency_type)
 
     @property
     @pulumi.getter
-    def dependency(self) -> str:
-        """
-        The software package's dependency.
-        """
+    def dependency(self) -> Optional[str]:
         return pulumi.get(self, "dependency")
 
     @property
     @pulumi.getter(name="dependencyModifier")
-    def dependency_modifier(self) -> str:
-        """
-        The modifier for the dependency.
-        """
+    def dependency_modifier(self) -> Optional[str]:
         return pulumi.get(self, "dependency_modifier")
 
     @property
     @pulumi.getter(name="dependencyType")
-    def dependency_type(self) -> str:
-        """
-        The type of the dependency.
-        """
+    def dependency_type(self) -> Optional[str]:
         return pulumi.get(self, "dependency_type")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackageFileResult(dict):
     def __init__(__self__, *,
-                 checksum: str,
-                 checksum_type: str,
-                 path: str,
-                 size_in_bytes: str,
-                 time_modified: str,
-                 type: str):
-        """
-        :param str checksum: Checksum of the file.
-        :param str checksum_type: Type of the checksum.
-        :param str path: File path.
-        :param str size_in_bytes: Size of the package in bytes.
-        :param str time_modified: The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str type: Type of the package.
-        """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "type", type)
+                 checksum: Optional[str] = None,
+                 checksum_type: Optional[str] = None,
+                 path: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 type: Optional[str] = None):
+        if checksum is not None:
+            pulumi.set(__self__, "checksum", checksum)
+        if checksum_type is not None:
+            pulumi.set(__self__, "checksum_type", checksum_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        Checksum of the file.
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        Type of the checksum.
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        File path.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        Size of the package in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the package.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackageSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: Software source name.
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
@@ -5264,9 +3974,6 @@ class GetSoftwareSourceSoftwarePackagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5275,9 +3982,6 @@ class GetSoftwareSourceSoftwarePackagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -5294,366 +3998,270 @@ class GetSoftwareSourceSoftwarePackagesFilterResult(dict):
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult(dict):
     def __init__(__self__, *,
-                 architecture: str,
-                 checksum: str,
-                 checksum_type: str,
-                 dependencies: Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult'],
-                 description: str,
-                 display_name: str,
-                 files: Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult'],
-                 is_latest: bool,
-                 last_modified_date: str,
-                 name: str,
-                 size_in_bytes: str,
-                 software_sources: Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult'],
-                 type: str,
-                 version: str):
-        """
-        :param str architecture: The architecture for which this software was built
-        :param str checksum: Checksum of the file.
-        :param str checksum_type: Type of the checksum.
-        :param Sequence['GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArgs'] dependencies: List of dependencies for the software package.
-        :param str description: Software source description.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Sequence['GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs'] files: List of files for the software package.
-        :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-        :param str last_modified_date: Date of the last update to the package.
-        :param str name: Unique identifier for the package. NOTE - This is not an OCID.
-        :param str size_in_bytes: Size of the package in bytes.
-        :param Sequence['GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs'] software_sources: List of software sources that provide the software package.
-        :param str type: Type of the package.
-        :param str version: Version of the package.
-        """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "dependencies", dependencies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "files", files)
-        pulumi.set(__self__, "is_latest", is_latest)
-        pulumi.set(__self__, "last_modified_date", last_modified_date)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "software_sources", software_sources)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+                 architecture: Optional[str] = None,
+                 checksum: Optional[str] = None,
+                 checksum_type: Optional[str] = None,
+                 dependencies: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult']] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 files: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult']] = None,
+                 is_latest: Optional[bool] = None,
+                 last_modified_date: Optional[str] = None,
+                 name: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 software_sources: Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult']] = None,
+                 type: Optional[str] = None,
+                 version: Optional[str] = None):
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if checksum is not None:
+            pulumi.set(__self__, "checksum", checksum)
+        if checksum_type is not None:
+            pulumi.set(__self__, "checksum_type", checksum_type)
+        if dependencies is not None:
+            pulumi.set(__self__, "dependencies", dependencies)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if files is not None:
+            pulumi.set(__self__, "files", files)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
+        if last_modified_date is not None:
+            pulumi.set(__self__, "last_modified_date", last_modified_date)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if software_sources is not None:
+            pulumi.set(__self__, "software_sources", software_sources)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def architecture(self) -> str:
-        """
-        The architecture for which this software was built
-        """
+    def architecture(self) -> Optional[str]:
         return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        Checksum of the file.
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        Type of the checksum.
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter
-    def dependencies(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult']:
-        """
-        List of dependencies for the software package.
-        """
+    def dependencies(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult']]:
         return pulumi.get(self, "dependencies")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def files(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult']:
-        """
-        List of files for the software package.
-        """
+    def files(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult']]:
         return pulumi.get(self, "files")
 
     @property
     @pulumi.getter(name="isLatest")
-    def is_latest(self) -> bool:
-        """
-        A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-        """
+    def is_latest(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="lastModifiedDate")
-    def last_modified_date(self) -> str:
-        """
-        Date of the last update to the package.
-        """
+    def last_modified_date(self) -> Optional[str]:
         return pulumi.get(self, "last_modified_date")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Unique identifier for the package. NOTE - This is not an OCID.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        Size of the package in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult']:
-        """
-        List of software sources that provide the software package.
-        """
+    def software_sources(self) -> Optional[Sequence['outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult']]:
         return pulumi.get(self, "software_sources")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the package.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Version of the package.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult(dict):
     def __init__(__self__, *,
-                 dependency: str,
-                 dependency_modifier: str,
-                 dependency_type: str):
-        """
-        :param str dependency: The software package's dependency.
-        :param str dependency_modifier: The modifier for the dependency.
-        :param str dependency_type: The type of the dependency.
-        """
-        pulumi.set(__self__, "dependency", dependency)
-        pulumi.set(__self__, "dependency_modifier", dependency_modifier)
-        pulumi.set(__self__, "dependency_type", dependency_type)
+                 dependency: Optional[str] = None,
+                 dependency_modifier: Optional[str] = None,
+                 dependency_type: Optional[str] = None):
+        if dependency is not None:
+            pulumi.set(__self__, "dependency", dependency)
+        if dependency_modifier is not None:
+            pulumi.set(__self__, "dependency_modifier", dependency_modifier)
+        if dependency_type is not None:
+            pulumi.set(__self__, "dependency_type", dependency_type)
 
     @property
     @pulumi.getter
-    def dependency(self) -> str:
-        """
-        The software package's dependency.
-        """
+    def dependency(self) -> Optional[str]:
         return pulumi.get(self, "dependency")
 
     @property
     @pulumi.getter(name="dependencyModifier")
-    def dependency_modifier(self) -> str:
-        """
-        The modifier for the dependency.
-        """
+    def dependency_modifier(self) -> Optional[str]:
         return pulumi.get(self, "dependency_modifier")
 
     @property
     @pulumi.getter(name="dependencyType")
-    def dependency_type(self) -> str:
-        """
-        The type of the dependency.
-        """
+    def dependency_type(self) -> Optional[str]:
         return pulumi.get(self, "dependency_type")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult(dict):
     def __init__(__self__, *,
-                 checksum: str,
-                 checksum_type: str,
-                 path: str,
-                 size_in_bytes: str,
-                 time_modified: str,
-                 type: str):
-        """
-        :param str checksum: Checksum of the file.
-        :param str checksum_type: Type of the checksum.
-        :param str path: File path.
-        :param str size_in_bytes: Size of the package in bytes.
-        :param str time_modified: The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str type: Type of the package.
-        """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "type", type)
+                 checksum: Optional[str] = None,
+                 checksum_type: Optional[str] = None,
+                 path: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 type: Optional[str] = None):
+        if checksum is not None:
+            pulumi.set(__self__, "checksum", checksum)
+        if checksum_type is not None:
+            pulumi.set(__self__, "checksum_type", checksum_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        Checksum of the file.
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        Type of the checksum.
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        File path.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
-        """
-        Size of the package in bytes.
-        """
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the package.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 software_source_type: str):
-        """
-        :param str description: Software source description.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param str id: The OCID of the software source.
-        :param str software_source_type: Type of the software source.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 software_source_type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        Type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
 
 @pulumi.output_type
 class GetSoftwareSourceVendorSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: User friendly name.
-        :param str id: The OCID of the resource that is immutable on creation.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
@@ -5663,9 +4271,6 @@ class GetSoftwareSourceVendorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the entity to be queried.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5674,9 +4279,6 @@ class GetSoftwareSourceVendorsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -5693,58 +4295,42 @@ class GetSoftwareSourceVendorsFilterResult(dict):
 @pulumi.output_type
 class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult']):
-        """
-        :param Sequence['GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArgs'] items: List of SoftwareSourceVendor.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult']:
-        """
-        List of SoftwareSourceVendor.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_types: Sequence[str],
-                 name: str,
-                 os_families: Sequence[str]):
-        """
-        :param Sequence[str] arch_types: List of corresponding archTypes.
-        :param str name: The name of the entity to be queried.
-        :param Sequence[str] os_families: List of corresponding osFamilies.
-        """
-        pulumi.set(__self__, "arch_types", arch_types)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "os_families", os_families)
+                 arch_types: Optional[Sequence[str]] = None,
+                 name: Optional[str] = None,
+                 os_families: Optional[Sequence[str]] = None):
+        if arch_types is not None:
+            pulumi.set(__self__, "arch_types", arch_types)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if os_families is not None:
+            pulumi.set(__self__, "os_families", os_families)
 
     @property
     @pulumi.getter(name="archTypes")
-    def arch_types(self) -> Sequence[str]:
-        """
-        List of corresponding archTypes.
-        """
+    def arch_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "arch_types")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the entity to be queried.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="osFamilies")
-    def os_families(self) -> Sequence[str]:
-        """
-        List of corresponding osFamilies.
-        """
+    def os_families(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "os_families")
 
 
@@ -5778,494 +4364,363 @@ class GetSoftwareSourcesFilterResult(dict):
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 arch_type: str,
-                 availability: str,
-                 checksum_type: str,
-                 compartment_id: str,
-                 custom_software_source_filters: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult'],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 gpg_key_fingerprint: str,
-                 gpg_key_id: str,
-                 gpg_key_url: str,
-                 id: str,
-                 is_automatically_updated: bool,
-                 os_family: str,
-                 package_count: str,
-                 repo_id: str,
-                 software_source_type: str,
-                 software_source_version: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 url: str,
-                 vendor_name: str,
-                 vendor_software_sources: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult']):
-        """
-        :param str arch_type: A filter to return only instances whose architecture type matches the given architecture.
-        :param str availability: The availabilities of the software source for a tenant.
-        :param str checksum_type: The yum repository checksum type used by this software source.
-        :param str compartment_id: The OCID of the compartment that contains the resources to list.
-        :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArgs'] custom_software_source_filters: Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: Information specified by the user about the software source.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str gpg_key_fingerprint: Fingerprint of the GPG key for this software source.
-        :param str gpg_key_id: ID of the GPG key for this software source.
-        :param str gpg_key_url: URL of the GPG key for this software source.
-        :param str id: The OCID of the resource that is immutable on creation.
-        :param bool is_automatically_updated: Indicates whether service should automatically update the custom software source for the user.
-        :param str os_family: A filter to return only instances whose OS family type matches the given OS family.
-        :param str package_count: Number of packages.
-        :param str repo_id: The Repo ID for the software source.
-        :param str software_source_type: The type of the software source.
-        :param str software_source_version: The version to assign to this custom software source.
-        :param str state: A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str url: URL for the repository.
-        :param str vendor_name: A filter to return only profiles that match the given vendorName.
-        :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs'] vendor_software_sources: List of vendor software sources.
-        """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "availability", availability)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "custom_software_source_filters", custom_software_source_filters)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
-        pulumi.set(__self__, "gpg_key_id", gpg_key_id)
-        pulumi.set(__self__, "gpg_key_url", gpg_key_url)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "package_count", package_count)
-        pulumi.set(__self__, "repo_id", repo_id)
-        pulumi.set(__self__, "software_source_type", software_source_type)
-        pulumi.set(__self__, "software_source_version", software_source_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "vendor_name", vendor_name)
-        pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
+                 arch_type: Optional[str] = None,
+                 availability: Optional[str] = None,
+                 checksum_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 custom_software_source_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 gpg_key_fingerprint: Optional[str] = None,
+                 gpg_key_id: Optional[str] = None,
+                 gpg_key_url: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_automatically_updated: Optional[bool] = None,
+                 os_family: Optional[str] = None,
+                 package_count: Optional[str] = None,
+                 repo_id: Optional[str] = None,
+                 software_source_type: Optional[str] = None,
+                 software_source_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 url: Optional[str] = None,
+                 vendor_name: Optional[str] = None,
+                 vendor_software_sources: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult']] = None):
+        if arch_type is not None:
+            pulumi.set(__self__, "arch_type", arch_type)
+        if availability is not None:
+            pulumi.set(__self__, "availability", availability)
+        if checksum_type is not None:
+            pulumi.set(__self__, "checksum_type", checksum_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if custom_software_source_filters is not None:
+            pulumi.set(__self__, "custom_software_source_filters", custom_software_source_filters)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gpg_key_fingerprint is not None:
+            pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
+        if gpg_key_id is not None:
+            pulumi.set(__self__, "gpg_key_id", gpg_key_id)
+        if gpg_key_url is not None:
+            pulumi.set(__self__, "gpg_key_url", gpg_key_url)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_automatically_updated is not None:
+            pulumi.set(__self__, "is_automatically_updated", is_automatically_updated)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if package_count is not None:
+            pulumi.set(__self__, "package_count", package_count)
+        if repo_id is not None:
+            pulumi.set(__self__, "repo_id", repo_id)
+        if software_source_type is not None:
+            pulumi.set(__self__, "software_source_type", software_source_type)
+        if software_source_version is not None:
+            pulumi.set(__self__, "software_source_version", software_source_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if vendor_name is not None:
+            pulumi.set(__self__, "vendor_name", vendor_name)
+        if vendor_software_sources is not None:
+            pulumi.set(__self__, "vendor_software_sources", vendor_software_sources)
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        A filter to return only instances whose architecture type matches the given architecture.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter
-    def availability(self) -> str:
-        """
-        The availabilities of the software source for a tenant.
-        """
+    def availability(self) -> Optional[str]:
         return pulumi.get(self, "availability")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        The yum repository checksum type used by this software source.
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the resources to list.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="customSoftwareSourceFilters")
-    def custom_software_source_filters(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult']:
-        """
-        Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-        """
+    def custom_software_source_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult']]:
         return pulumi.get(self, "custom_software_source_filters")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Information specified by the user about the software source.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gpgKeyFingerprint")
-    def gpg_key_fingerprint(self) -> str:
-        """
-        Fingerprint of the GPG key for this software source.
-        """
+    def gpg_key_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_fingerprint")
 
     @property
     @pulumi.getter(name="gpgKeyId")
-    def gpg_key_id(self) -> str:
-        """
-        ID of the GPG key for this software source.
-        """
+    def gpg_key_id(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_id")
 
     @property
     @pulumi.getter(name="gpgKeyUrl")
-    def gpg_key_url(self) -> str:
-        """
-        URL of the GPG key for this software source.
-        """
+    def gpg_key_url(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutomaticallyUpdated")
-    def is_automatically_updated(self) -> bool:
-        """
-        Indicates whether service should automatically update the custom software source for the user.
-        """
+    def is_automatically_updated(self) -> Optional[bool]:
         return pulumi.get(self, "is_automatically_updated")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        A filter to return only instances whose OS family type matches the given OS family.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter(name="packageCount")
-    def package_count(self) -> str:
-        """
-        Number of packages.
-        """
+    def package_count(self) -> Optional[str]:
         return pulumi.get(self, "package_count")
 
     @property
     @pulumi.getter(name="repoId")
-    def repo_id(self) -> str:
-        """
-        The Repo ID for the software source.
-        """
+    def repo_id(self) -> Optional[str]:
         return pulumi.get(self, "repo_id")
 
     @property
     @pulumi.getter(name="softwareSourceType")
-    def software_source_type(self) -> str:
-        """
-        The type of the software source.
-        """
+    def software_source_type(self) -> Optional[str]:
         return pulumi.get(self, "software_source_type")
 
     @property
     @pulumi.getter(name="softwareSourceVersion")
-    def software_source_version(self) -> str:
-        """
-        The version to assign to this custom software source.
-        """
+    def software_source_version(self) -> Optional[str]:
         return pulumi.get(self, "software_source_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        URL for the repository.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        A filter to return only profiles that match the given vendorName.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
     @property
     @pulumi.getter(name="vendorSoftwareSources")
-    def vendor_software_sources(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult']:
-        """
-        List of vendor software sources.
-        """
+    def vendor_software_sources(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult']]:
         return pulumi.get(self, "vendor_software_sources")
 
 
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterResult(dict):
     def __init__(__self__, *,
-                 module_stream_profile_filters: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult'],
-                 package_filters: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult'],
-                 package_group_filters: Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult']):
-        """
-        :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArgs'] module_stream_profile_filters: The list of module stream/profile filters.
-        :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs'] package_filters: The list of package filters.
-        :param Sequence['GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArgs'] package_group_filters: The list of group filters.
-        """
-        pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
-        pulumi.set(__self__, "package_filters", package_filters)
-        pulumi.set(__self__, "package_group_filters", package_group_filters)
+                 module_stream_profile_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult']] = None,
+                 package_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult']] = None,
+                 package_group_filters: Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult']] = None):
+        if module_stream_profile_filters is not None:
+            pulumi.set(__self__, "module_stream_profile_filters", module_stream_profile_filters)
+        if package_filters is not None:
+            pulumi.set(__self__, "package_filters", package_filters)
+        if package_group_filters is not None:
+            pulumi.set(__self__, "package_group_filters", package_group_filters)
 
     @property
     @pulumi.getter(name="moduleStreamProfileFilters")
-    def module_stream_profile_filters(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult']:
-        """
-        The list of module stream/profile filters.
-        """
+    def module_stream_profile_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult']]:
         return pulumi.get(self, "module_stream_profile_filters")
 
     @property
     @pulumi.getter(name="packageFilters")
-    def package_filters(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult']:
-        """
-        The list of package filters.
-        """
+    def package_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult']]:
         return pulumi.get(self, "package_filters")
 
     @property
     @pulumi.getter(name="packageGroupFilters")
-    def package_group_filters(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult']:
-        """
-        The list of group filters.
-        """
+    def package_group_filters(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult']]:
         return pulumi.get(self, "package_group_filters")
 
 
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterResult(dict):
     def __init__(__self__, *,
-                 filter_type: str,
-                 module_name: str,
-                 profile_name: str,
-                 stream_name: str):
-        """
-        :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param str module_name: Module name.
-        :param str profile_name: Profile name.
-        :param str stream_name: Stream name.
-        """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "stream_name", stream_name)
+                 filter_type: Optional[str] = None,
+                 module_name: Optional[str] = None,
+                 profile_name: Optional[str] = None,
+                 stream_name: Optional[str] = None):
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if module_name is not None:
+            pulumi.set(__self__, "module_name", module_name)
+        if profile_name is not None:
+            pulumi.set(__self__, "profile_name", profile_name)
+        if stream_name is not None:
+            pulumi.set(__self__, "stream_name", stream_name)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="moduleName")
-    def module_name(self) -> str:
-        """
-        Module name.
-        """
+    def module_name(self) -> Optional[str]:
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter(name="profileName")
-    def profile_name(self) -> str:
-        """
-        Profile name.
-        """
+    def profile_name(self) -> Optional[str]:
         return pulumi.get(self, "profile_name")
 
     @property
     @pulumi.getter(name="streamName")
-    def stream_name(self) -> str:
-        """
-        Stream name.
-        """
+    def stream_name(self) -> Optional[str]:
         return pulumi.get(self, "stream_name")
 
 
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult(dict):
     def __init__(__self__, *,
-                 filter_type: str,
-                 package_name: str,
-                 package_name_pattern: str,
-                 package_version: str):
-        """
-        :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param str package_name: The package name.
-        :param str package_name_pattern: The package name pattern.
-        :param str package_version: The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_name", package_name)
-        pulumi.set(__self__, "package_name_pattern", package_name_pattern)
-        pulumi.set(__self__, "package_version", package_version)
+                 filter_type: Optional[str] = None,
+                 package_name: Optional[str] = None,
+                 package_name_pattern: Optional[str] = None,
+                 package_version: Optional[str] = None):
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if package_name is not None:
+            pulumi.set(__self__, "package_name", package_name)
+        if package_name_pattern is not None:
+            pulumi.set(__self__, "package_name_pattern", package_name_pattern)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="packageName")
-    def package_name(self) -> str:
-        """
-        The package name.
-        """
+    def package_name(self) -> Optional[str]:
         return pulumi.get(self, "package_name")
 
     @property
     @pulumi.getter(name="packageNamePattern")
-    def package_name_pattern(self) -> str:
-        """
-        The package name pattern.
-        """
+    def package_name_pattern(self) -> Optional[str]:
         return pulumi.get(self, "package_name_pattern")
 
     @property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> str:
-        """
-        The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-        """
+    def package_version(self) -> Optional[str]:
         return pulumi.get(self, "package_version")
 
 
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterResult(dict):
     def __init__(__self__, *,
-                 filter_type: str,
-                 package_groups: Sequence[str]):
-        """
-        :param str filter_type: The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        :param Sequence[str] package_groups: List of package group names.
-        """
-        pulumi.set(__self__, "filter_type", filter_type)
-        pulumi.set(__self__, "package_groups", package_groups)
+                 filter_type: Optional[str] = None,
+                 package_groups: Optional[Sequence[str]] = None):
+        if filter_type is not None:
+            pulumi.set(__self__, "filter_type", filter_type)
+        if package_groups is not None:
+            pulumi.set(__self__, "package_groups", package_groups)
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="packageGroups")
-    def package_groups(self) -> Sequence[str]:
-        """
-        List of package group names.
-        """
+    def package_groups(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "package_groups")
 
 
 @pulumi.output_type
 class GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 id: str):
-        """
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param str id: The OCID of the resource that is immutable on creation.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 

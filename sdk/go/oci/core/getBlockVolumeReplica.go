@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
@@ -60,29 +59,29 @@ type GetBlockVolumeReplicaArgs struct {
 // A collection of values returned by getBlockVolumeReplica.
 type GetBlockVolumeReplicaResult struct {
 	// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the source block volume.
-	BlockVolumeId        string `pulumi:"blockVolumeId"`
-	BlockVolumeReplicaId string `pulumi:"blockVolumeReplicaId"`
+	BlockVolumeId        *string `pulumi:"blockVolumeId"`
+	BlockVolumeReplicaId string  `pulumi:"blockVolumeReplicaId"`
 	// The OCID of the compartment that contains the block volume replica.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The size of the source block volume, in GBs.
-	SizeInGbs string `pulumi:"sizeInGbs"`
+	SizeInGbs *string `pulumi:"sizeInGbs"`
 	// The current state of a block volume replica.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the block volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the block volume replica was last synced from the source block volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeLastSynced       string `pulumi:"timeLastSynced"`
-	VolumeGroupReplicaId string `pulumi:"volumeGroupReplicaId"`
+	TimeLastSynced       *string `pulumi:"timeLastSynced"`
+	VolumeGroupReplicaId *string `pulumi:"volumeGroupReplicaId"`
 }
 
 func GetBlockVolumeReplicaOutput(ctx *pulumi.Context, args GetBlockVolumeReplicaOutputArgs, opts ...pulumi.InvokeOption) GetBlockVolumeReplicaResultOutput {
@@ -123,20 +122,14 @@ func (o GetBlockVolumeReplicaResultOutput) ToGetBlockVolumeReplicaResultOutputWi
 	return o
 }
 
-func (o GetBlockVolumeReplicaResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockVolumeReplicaResult] {
-	return pulumix.Output[GetBlockVolumeReplicaResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-func (o GetBlockVolumeReplicaResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source block volume.
-func (o GetBlockVolumeReplicaResultOutput) BlockVolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.BlockVolumeId }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) BlockVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.BlockVolumeId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBlockVolumeReplicaResultOutput) BlockVolumeReplicaId() pulumi.StringOutput {
@@ -144,8 +137,8 @@ func (o GetBlockVolumeReplicaResultOutput) BlockVolumeReplicaId() pulumi.StringO
 }
 
 // The OCID of the compartment that contains the block volume replica.
-func (o GetBlockVolumeReplicaResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -154,8 +147,8 @@ func (o GetBlockVolumeReplicaResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetBlockVolumeReplicaResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -164,32 +157,32 @@ func (o GetBlockVolumeReplicaResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBlockVolumeReplicaResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The size of the source block volume, in GBs.
-func (o GetBlockVolumeReplicaResultOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a block volume replica.
-func (o GetBlockVolumeReplicaResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the block volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetBlockVolumeReplicaResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the block volume replica was last synced from the source block volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetBlockVolumeReplicaResultOutput) TimeLastSynced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.TimeLastSynced }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) TimeLastSynced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.TimeLastSynced }).(pulumi.StringPtrOutput)
 }
 
-func (o GetBlockVolumeReplicaResultOutput) VolumeGroupReplicaId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockVolumeReplicaResult) string { return v.VolumeGroupReplicaId }).(pulumi.StringOutput)
+func (o GetBlockVolumeReplicaResultOutput) VolumeGroupReplicaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockVolumeReplicaResult) *string { return v.VolumeGroupReplicaId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

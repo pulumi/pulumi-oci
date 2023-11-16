@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
@@ -14,17 +16,17 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
      * @return Default phase two authentication algorithms.
      * 
      */
-    private List<String> defaultAuthenticationAlgorithms;
+    private @Nullable List<String> defaultAuthenticationAlgorithms;
     /**
      * @return Default phase two encryption algorithms.
      * 
      */
-    private List<String> defaultEncryptionAlgorithms;
+    private @Nullable List<String> defaultEncryptionAlgorithms;
     /**
      * @return Default perfect forward secrecy Diffie-Hellman groups.
      * 
      */
-    private String defaultPfsDhGroup;
+    private @Nullable String defaultPfsDhGroup;
 
     private GetIpsecAlgorithmDefaultPhaseTwoParameter() {}
     /**
@@ -32,21 +34,21 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
      * 
      */
     public List<String> defaultAuthenticationAlgorithms() {
-        return this.defaultAuthenticationAlgorithms;
+        return this.defaultAuthenticationAlgorithms == null ? List.of() : this.defaultAuthenticationAlgorithms;
     }
     /**
      * @return Default phase two encryption algorithms.
      * 
      */
     public List<String> defaultEncryptionAlgorithms() {
-        return this.defaultEncryptionAlgorithms;
+        return this.defaultEncryptionAlgorithms == null ? List.of() : this.defaultEncryptionAlgorithms;
     }
     /**
      * @return Default perfect forward secrecy Diffie-Hellman groups.
      * 
      */
-    public String defaultPfsDhGroup() {
-        return this.defaultPfsDhGroup;
+    public Optional<String> defaultPfsDhGroup() {
+        return Optional.ofNullable(this.defaultPfsDhGroup);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> defaultAuthenticationAlgorithms;
-        private List<String> defaultEncryptionAlgorithms;
-        private String defaultPfsDhGroup;
+        private @Nullable List<String> defaultAuthenticationAlgorithms;
+        private @Nullable List<String> defaultEncryptionAlgorithms;
+        private @Nullable String defaultPfsDhGroup;
         public Builder() {}
         public Builder(GetIpsecAlgorithmDefaultPhaseTwoParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,24 +72,24 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
         }
 
         @CustomType.Setter
-        public Builder defaultAuthenticationAlgorithms(List<String> defaultAuthenticationAlgorithms) {
-            this.defaultAuthenticationAlgorithms = Objects.requireNonNull(defaultAuthenticationAlgorithms);
+        public Builder defaultAuthenticationAlgorithms(@Nullable List<String> defaultAuthenticationAlgorithms) {
+            this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
             return this;
         }
         public Builder defaultAuthenticationAlgorithms(String... defaultAuthenticationAlgorithms) {
             return defaultAuthenticationAlgorithms(List.of(defaultAuthenticationAlgorithms));
         }
         @CustomType.Setter
-        public Builder defaultEncryptionAlgorithms(List<String> defaultEncryptionAlgorithms) {
-            this.defaultEncryptionAlgorithms = Objects.requireNonNull(defaultEncryptionAlgorithms);
+        public Builder defaultEncryptionAlgorithms(@Nullable List<String> defaultEncryptionAlgorithms) {
+            this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
             return this;
         }
         public Builder defaultEncryptionAlgorithms(String... defaultEncryptionAlgorithms) {
             return defaultEncryptionAlgorithms(List.of(defaultEncryptionAlgorithms));
         }
         @CustomType.Setter
-        public Builder defaultPfsDhGroup(String defaultPfsDhGroup) {
-            this.defaultPfsDhGroup = Objects.requireNonNull(defaultPfsDhGroup);
+        public Builder defaultPfsDhGroup(@Nullable String defaultPfsDhGroup) {
+            this.defaultPfsDhGroup = defaultPfsDhGroup;
             return this;
         }
         public GetIpsecAlgorithmDefaultPhaseTwoParameter build() {

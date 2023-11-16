@@ -108,23 +108,23 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// Name of the infrastructure layer associated with the operator action.
         /// </summary>
-        public readonly string Component;
+        public readonly string? Component;
         /// <summary>
         /// Display Name of the operator action.
         /// </summary>
-        public readonly string CustomerDisplayName;
+        public readonly string? CustomerDisplayName;
         /// <summary>
         /// Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the property
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string OperatorActionId;
         /// <summary>
         /// Fine grained properties associated with the operator control.
@@ -133,25 +133,25 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// resourceType for which the OperatorAction is applicable
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
 
         [OutputConstructor]
         private GetActionResult(
-            string component,
+            string? component,
 
-            string customerDisplayName,
+            string? customerDisplayName,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
             string operatorActionId,
 
             ImmutableArray<Outputs.GetActionPropertyResult> properties,
 
-            string resourceType)
+            string? resourceType)
         {
             Component = component;
             CustomerDisplayName = customerDisplayName;

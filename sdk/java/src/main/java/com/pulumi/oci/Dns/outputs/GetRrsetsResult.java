@@ -25,12 +25,12 @@ public final class GetRrsetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of rrsets.
      * 
      */
-    private List<GetRrsetsRrset> rrsets;
+    private @Nullable List<GetRrsetsRrset> rrsets;
     /**
      * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
@@ -58,15 +58,15 @@ public final class GetRrsetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of rrsets.
      * 
      */
     public List<GetRrsetsRrset> rrsets() {
-        return this.rrsets;
+        return this.rrsets == null ? List.of() : this.rrsets;
     }
     /**
      * @return The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
@@ -97,8 +97,8 @@ public final class GetRrsetsResult {
         private @Nullable String domain;
         private @Nullable String domainContains;
         private @Nullable List<GetRrsetsFilter> filters;
-        private String id;
-        private List<GetRrsetsRrset> rrsets;
+        private @Nullable String id;
+        private @Nullable List<GetRrsetsRrset> rrsets;
         private @Nullable String rtype;
         private @Nullable String scope;
         private @Nullable String viewId;
@@ -136,13 +136,13 @@ public final class GetRrsetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder rrsets(List<GetRrsetsRrset> rrsets) {
-            this.rrsets = Objects.requireNonNull(rrsets);
+        public Builder rrsets(@Nullable List<GetRrsetsRrset> rrsets) {
+            this.rrsets = rrsets;
             return this;
         }
         public Builder rrsets(GetRrsetsRrset... rrsets) {

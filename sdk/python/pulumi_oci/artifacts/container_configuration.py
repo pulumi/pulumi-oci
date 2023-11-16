@@ -18,7 +18,6 @@ class ContainerConfigurationArgs:
                  is_repository_created_on_first_push: pulumi.Input[bool]):
         """
         The set of arguments for constructing a ContainerConfiguration resource.
-        :param pulumi.Input[bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_repository_created_on_first_push", is_repository_created_on_first_push)
@@ -35,9 +34,6 @@ class ContainerConfigurationArgs:
     @property
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
     def is_repository_created_on_first_push(self) -> pulumi.Input[bool]:
-        """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-        """
         return pulumi.get(self, "is_repository_created_on_first_push")
 
     @is_repository_created_on_first_push.setter
@@ -53,8 +49,6 @@ class _ContainerConfigurationState:
                  namespace: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ContainerConfiguration resources.
-        :param pulumi.Input[bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-        :param pulumi.Input[str] namespace: The tenancy namespace used in the container repository path.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -75,9 +69,6 @@ class _ContainerConfigurationState:
     @property
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
     def is_repository_created_on_first_push(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-        """
         return pulumi.get(self, "is_repository_created_on_first_push")
 
     @is_repository_created_on_first_push.setter
@@ -87,9 +78,6 @@ class _ContainerConfigurationState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tenancy namespace used in the container repository path.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -106,28 +94,9 @@ class ContainerConfiguration(pulumi.CustomResource):
                  is_repository_created_on_first_push: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
-        ```
-
-        ## Import
-
-        ContainerConfiguration can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
-        ```
-
+        Create a ContainerConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         """
         ...
     @overload
@@ -136,25 +105,7 @@ class ContainerConfiguration(pulumi.CustomResource):
                  args: ContainerConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
-        ```
-
-        ## Import
-
-        ContainerConfiguration can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Artifacts/containerConfiguration:ContainerConfiguration test_container_configuration "container/configuration/compartmentId/{compartmentId}"
-        ```
-
+        Create a ContainerConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ContainerConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -208,8 +159,6 @@ class ContainerConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] is_repository_created_on_first_push: Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-        :param pulumi.Input[str] namespace: The tenancy namespace used in the container repository path.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -228,16 +177,10 @@ class ContainerConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="isRepositoryCreatedOnFirstPush")
     def is_repository_created_on_first_push(self) -> pulumi.Output[bool]:
-        """
-        Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-        """
         return pulumi.get(self, "is_repository_created_on_first_push")
 
     @property
     @pulumi.getter
-    def namespace(self) -> pulumi.Output[str]:
-        """
-        The tenancy namespace used in the container repository path.
-        """
+    def namespace(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "namespace")
 

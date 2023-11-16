@@ -196,7 +196,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of object findings related to indexes.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string? endExecIdLessThanOrEqualTo,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingResult> indexFindings,
 

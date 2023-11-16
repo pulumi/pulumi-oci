@@ -13,23 +13,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     [OutputType]
     public sealed class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult
     {
-        public readonly string Password;
-        public readonly string SslTrustStoreLocation;
-        public readonly string SslTrustStorePassword;
-        public readonly string SslTrustStoreType;
-        public readonly string Username;
+        public readonly string? Password;
+        public readonly string? SslTrustStoreLocation;
+        public readonly string? SslTrustStorePassword;
+        public readonly string? SslTrustStoreType;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfoResult(
-            string password,
+            string? password,
 
-            string sslTrustStoreLocation,
+            string? sslTrustStoreLocation,
 
-            string sslTrustStorePassword,
+            string? sslTrustStorePassword,
 
-            string sslTrustStoreType,
+            string? sslTrustStoreType,
 
-            string username)
+            string? username)
         {
             Password = password;
             SslTrustStoreLocation = sslTrustStoreLocation;

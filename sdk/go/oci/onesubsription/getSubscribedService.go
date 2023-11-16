@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
@@ -63,15 +62,15 @@ type GetSubscribedServiceArgs struct {
 // A collection of values returned by getSubscribedService.
 type GetSubscribedServiceResult struct {
 	// Subscribed service admin email id
-	AdminEmail string `pulumi:"adminEmail"`
+	AdminEmail *string `pulumi:"adminEmail"`
 	// Subscribed service agreement ID
-	AgreementId string `pulumi:"agreementId"`
+	AgreementId *string `pulumi:"agreementId"`
 	// Subscribed service agrrement name
-	AgreementName string `pulumi:"agreementName"`
+	AgreementName *string `pulumi:"agreementName"`
 	// Subscribed service agrrement type
-	AgreementType string `pulumi:"agreementType"`
+	AgreementType *string `pulumi:"agreementType"`
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Address.
 	BillToAddresses []GetSubscribedServiceBillToAddress `pulumi:"billToAddresses"`
 	// User.
@@ -79,29 +78,29 @@ type GetSubscribedServiceResult struct {
 	// Business partner.
 	BillToCustomers []GetSubscribedServiceBillToCustomer `pulumi:"billToCustomers"`
 	// Subscribed service invoice frequency
-	BillingFrequency string `pulumi:"billingFrequency"`
+	BillingFrequency *string `pulumi:"billingFrequency"`
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber string `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber *string `pulumi:"bookingOptyNumber"`
 	// Subscribed service buyer email id
-	BuyerEmail string `pulumi:"buyerEmail"`
+	BuyerEmail *string `pulumi:"buyerEmail"`
 	// Subscribed service commitment schedule Id
-	CommitmentScheduleId string `pulumi:"commitmentScheduleId"`
+	CommitmentScheduleId *string `pulumi:"commitmentScheduleId"`
 	// List of Commitment services of a line
 	CommitmentServices []GetSubscribedServiceCommitmentService `pulumi:"commitmentServices"`
 	// User that created the Payment term
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Subscribed service credit percentage
-	CreditPercentage string `pulumi:"creditPercentage"`
+	CreditPercentage *string `pulumi:"creditPercentage"`
 	// Subscribed service CSI number
-	Csi string `pulumi:"csi"`
+	Csi *string `pulumi:"csi"`
 	// Identifier for a customer's transactions for purchase of ay oracle services
-	CustomerTransactionReference string `pulumi:"customerTransactionReference"`
+	CustomerTransactionReference *string `pulumi:"customerTransactionReference"`
 	// Subscribed service data center
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// Subscribed service data center region
-	DataCenterRegion string `pulumi:"dataCenterRegion"`
+	DataCenterRegion *string `pulumi:"dataCenterRegion"`
 	// Subscribed service eligible to renew field
-	EligibleToRenew string `pulumi:"eligibleToRenew"`
+	EligibleToRenew *string `pulumi:"eligibleToRenew"`
 	// Address.
 	EndUserAddresses []GetSubscribedServiceEndUserAddress `pulumi:"endUserAddresses"`
 	// User.
@@ -110,97 +109,97 @@ type GetSubscribedServiceResult struct {
 	EndUserCustomers []GetSubscribedServiceEndUserCustomer `pulumi:"endUserCustomers"`
 	Fields           []string                              `pulumi:"fields"`
 	// Subscribed service fulfillment set
-	FulfillmentSet string `pulumi:"fulfillmentSet"`
+	FulfillmentSet *string `pulumi:"fulfillmentSet"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if a service can recieve usages and consequently have available amounts computed
-	IsAllowance bool `pulumi:"isAllowance"`
+	IsAllowance *bool `pulumi:"isAllowance"`
 	// If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
-	IsCapToPriceList bool `pulumi:"isCapToPriceList"`
+	IsCapToPriceList *bool `pulumi:"isCapToPriceList"`
 	// Used in context of service credit lines
-	IsCreditEnabled bool `pulumi:"isCreditEnabled"`
+	IsCreditEnabled *bool `pulumi:"isCreditEnabled"`
 	// Indicator on whether or not there has been usage for the subscribed service
-	IsHavingUsage bool `pulumi:"isHavingUsage"`
+	IsHavingUsage *bool `pulumi:"isHavingUsage"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Subscribed service payg flag
-	IsPayg bool `pulumi:"isPayg"`
+	IsPayg *bool `pulumi:"isPayg"`
 	// Indicates if the Subscribed service has a single ratecard
-	IsSingleRateCard bool `pulumi:"isSingleRateCard"`
+	IsSingleRateCard *bool `pulumi:"isSingleRateCard"`
 	// Indicates if the commitment lines can have different quantities
-	IsVariableCommitment bool `pulumi:"isVariableCommitment"`
+	IsVariableCommitment *bool `pulumi:"isVariableCommitment"`
 	// Subscribed service line net amount
-	LineNetAmount string `pulumi:"lineNetAmount"`
+	LineNetAmount *string `pulumi:"lineNetAmount"`
 	// Subscribed service Major Set
-	MajorSet string `pulumi:"majorSet"`
+	MajorSet *string `pulumi:"majorSet"`
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType string `pulumi:"operationType"`
+	OperationType *string `pulumi:"operationType"`
 	// Sales Order Header associated to the subscribed service
-	OrderHeaderId string `pulumi:"orderHeaderId"`
+	OrderHeaderId *string `pulumi:"orderHeaderId"`
 	// Sales Order Line Id associated to the subscribed service
-	OrderLineId string `pulumi:"orderLineId"`
+	OrderLineId *string `pulumi:"orderLineId"`
 	// Sales Order Line Number associated to the subscribed service
-	OrderLineNumber int `pulumi:"orderLineNumber"`
+	OrderLineNumber *int `pulumi:"orderLineNumber"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber string `pulumi:"orderNumber"`
+	OrderNumber *string `pulumi:"orderNumber"`
 	// Order Type of Subscribed Service
-	OrderType string `pulumi:"orderType"`
+	OrderType *string `pulumi:"orderType"`
 	// Subscribed service Promotion Amount
-	OriginalPromoAmount string `pulumi:"originalPromoAmount"`
+	OriginalPromoAmount *string `pulumi:"originalPromoAmount"`
 	// Overage Bill To of Subscribed Service
-	OverageBillTo string `pulumi:"overageBillTo"`
+	OverageBillTo *string `pulumi:"overageBillTo"`
 	// Subscribed service Overage Discount Percentage
-	OverageDiscountPercentage string `pulumi:"overageDiscountPercentage"`
+	OverageDiscountPercentage *string `pulumi:"overageDiscountPercentage"`
 	// Overage Policy of Subscribed Service
-	OveragePolicy string `pulumi:"overagePolicy"`
+	OveragePolicy *string `pulumi:"overagePolicy"`
 	// Subscribed service partner credit amount
-	PartnerCreditAmount string `pulumi:"partnerCreditAmount"`
+	PartnerCreditAmount *string `pulumi:"partnerCreditAmount"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType string `pulumi:"partnerTransactionType"`
+	PartnerTransactionType *string `pulumi:"partnerTransactionType"`
 	// Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
-	PaygPolicy string `pulumi:"paygPolicy"`
+	PaygPolicy *string `pulumi:"paygPolicy"`
 	// Payment Method of Subscribed Service
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Payment Number of Subscribed Service
-	PaymentNumber string `pulumi:"paymentNumber"`
+	PaymentNumber *string `pulumi:"paymentNumber"`
 	// Payment Term details
 	PaymentTerms []GetSubscribedServicePaymentTerm `pulumi:"paymentTerms"`
 	// Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
-	PricePeriod string `pulumi:"pricePeriod"`
+	PricePeriod *string `pulumi:"pricePeriod"`
 	// Subscribed service pricing model
-	PricingModel string `pulumi:"pricingModel"`
+	PricingModel *string `pulumi:"pricingModel"`
 	// Product description
 	Products []GetSubscribedServiceProduct `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType string `pulumi:"programType"`
+	ProgramType *string `pulumi:"programType"`
 	// Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
-	PromoOrderLineId string `pulumi:"promoOrderLineId"`
+	PromoOrderLineId *string `pulumi:"promoOrderLineId"`
 	// Subscribed service promotion type
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 	// Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
-	PromotionPricingType string `pulumi:"promotionPricingType"`
+	PromotionPricingType *string `pulumi:"promotionPricingType"`
 	// Subscribed service provisioning source
-	ProvisioningSource string `pulumi:"provisioningSource"`
+	ProvisioningSource *string `pulumi:"provisioningSource"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Subscribed service Rate Card Discount Percentage
-	RateCardDiscountPercentage string `pulumi:"rateCardDiscountPercentage"`
+	RateCardDiscountPercentage *string `pulumi:"rateCardDiscountPercentage"`
 	// List of Rate Cards of a Subscribed Service
 	RateCards []GetSubscribedServiceRateCard `pulumi:"rateCards"`
 	// SPM Ratecard Type
-	RatecardType string `pulumi:"ratecardType"`
+	RatecardType *string `pulumi:"ratecardType"`
 	// Subscribed service Opportunity Id
-	RenewalOptyId string `pulumi:"renewalOptyId"`
+	RenewalOptyId *string `pulumi:"renewalOptyId"`
 	// Renewal Opportunity Number of Subscribed Service
-	RenewalOptyNumber string `pulumi:"renewalOptyNumber"`
+	RenewalOptyNumber *string `pulumi:"renewalOptyNumber"`
 	// Renewal Opportunity Type of Subscribed Service
-	RenewalOptyType string `pulumi:"renewalOptyType"`
+	RenewalOptyType *string `pulumi:"renewalOptyType"`
 	// SPM renewed Subscription ID
-	RenewedSubscribedServiceId string `pulumi:"renewedSubscribedServiceId"`
+	RenewedSubscribedServiceId *string `pulumi:"renewedSubscribedServiceId"`
 	// Address.
 	ResellerAddresses []GetSubscribedServiceResellerAddress `pulumi:"resellerAddresses"`
 	// User.
@@ -208,19 +207,19 @@ type GetSubscribedServiceResult struct {
 	// Business partner.
 	ResellerCustomers []GetSubscribedServiceResellerCustomer `pulumi:"resellerCustomers"`
 	// Subscribed service Revenue Line Id
-	RevenueLineId string `pulumi:"revenueLineId"`
+	RevenueLineId *string `pulumi:"revenueLineId"`
 	// Revenue Line NUmber of Subscribed Service
-	RevenueLineNumber string `pulumi:"revenueLineNumber"`
+	RevenueLineNumber *string `pulumi:"revenueLineNumber"`
 	// Subscribed service Revised ARR
-	RevisedArrInLc string `pulumi:"revisedArrInLc"`
+	RevisedArrInLc *string `pulumi:"revisedArrInLc"`
 	// Subscribed service Revised ARR in Standard Currency
-	RevisedArrInSc string `pulumi:"revisedArrInSc"`
+	RevisedArrInSc *string `pulumi:"revisedArrInSc"`
 	// Subscribed service sales account party id
-	SalesAccountPartyId string `pulumi:"salesAccountPartyId"`
+	SalesAccountPartyId *string `pulumi:"salesAccountPartyId"`
 	// Sales Channel of Subscribed Service
-	SalesChannel string `pulumi:"salesChannel"`
+	SalesChannel *string `pulumi:"salesChannel"`
 	// Subscribed service line number
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// Address.
 	ServiceToAddresses []GetSubscribedServiceServiceToAddress `pulumi:"serviceToAddresses"`
 	// User.
@@ -232,61 +231,61 @@ type GetSubscribedServiceResult struct {
 	// Business partner.
 	SoldToCustomers []GetSubscribedServiceSoldToCustomer `pulumi:"soldToCustomers"`
 	// Subscribed service start date type
-	StartDateType string `pulumi:"startDateType"`
+	StartDateType *string `pulumi:"startDateType"`
 	// Subscribed service status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// SPM internal Subscribed Service ID
 	SubscribedServiceId string `pulumi:"subscribedServiceId"`
 	// Subscription ID associated to the subscribed service
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// Subscribed service source
-	SubscriptionSource string `pulumi:"subscriptionSource"`
+	SubscriptionSource *string `pulumi:"subscriptionSource"`
 	// Subscribed service System ARR
-	SystemArrInLc string `pulumi:"systemArrInLc"`
+	SystemArrInLc *string `pulumi:"systemArrInLc"`
 	// Subscribed service System ARR in Standard Currency
-	SystemArrInSc string `pulumi:"systemArrInSc"`
+	SystemArrInSc *string `pulumi:"systemArrInSc"`
 	// Subscribed service System ATR-ARR
-	SystemAtrArrInLc string `pulumi:"systemAtrArrInLc"`
+	SystemAtrArrInLc *string `pulumi:"systemAtrArrInLc"`
 	// Subscribed service System ATR-ARR in Standard Currency
-	SystemAtrArrInSc string `pulumi:"systemAtrArrInSc"`
+	SystemAtrArrInSc *string `pulumi:"systemAtrArrInSc"`
 	// Term value in Months
-	TermValue string `pulumi:"termValue"`
+	TermValue *string `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom string `pulumi:"termValueUom"`
+	TermValueUom *string `pulumi:"termValueUom"`
 	// Subscribed service agrrement end date
-	TimeAgreementEnd string `pulumi:"timeAgreementEnd"`
+	TimeAgreementEnd *string `pulumi:"timeAgreementEnd"`
 	// Subscribed service creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Subscribed service customer config date
-	TimeCustomerConfig string `pulumi:"timeCustomerConfig"`
+	TimeCustomerConfig *string `pulumi:"timeCustomerConfig"`
 	// Subscribed service end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed service Major Set End date
-	TimeMajorsetEnd string `pulumi:"timeMajorsetEnd"`
+	TimeMajorsetEnd *string `pulumi:"timeMajorsetEnd"`
 	// Subscribed service Major Set Start date
-	TimeMajorsetStart string `pulumi:"timeMajorsetStart"`
+	TimeMajorsetStart *string `pulumi:"timeMajorsetStart"`
 	// Subscribed service payment expiry date
-	TimePaymentExpiry string `pulumi:"timePaymentExpiry"`
+	TimePaymentExpiry *string `pulumi:"timePaymentExpiry"`
 	// Subscribed service provisioning date
-	TimeProvisioned string `pulumi:"timeProvisioned"`
+	TimeProvisioned *string `pulumi:"timeProvisioned"`
 	// Subscribed service service configuration email sent date
-	TimeServiceConfigurationEmailSent string `pulumi:"timeServiceConfigurationEmailSent"`
+	TimeServiceConfigurationEmailSent *string `pulumi:"timeServiceConfigurationEmailSent"`
 	// Subscribed service start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Subscribed service last update date
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Subscribed service welcome email sent date
-	TimeWelcomeEmailSent string `pulumi:"timeWelcomeEmailSent"`
+	TimeWelcomeEmailSent *string `pulumi:"timeWelcomeEmailSent"`
 	// Subscribed service total value
-	TotalValue string `pulumi:"totalValue"`
+	TotalValue *string `pulumi:"totalValue"`
 	// Subscribed service Transaction Extension Id
-	TransactionExtensionId string `pulumi:"transactionExtensionId"`
+	TransactionExtensionId *string `pulumi:"transactionExtensionId"`
 	// Subscribed Service line type
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// User that updated the subscribed service
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// Subscribed service used amount
-	UsedAmount string `pulumi:"usedAmount"`
+	UsedAmount *string `pulumi:"usedAmount"`
 }
 
 func GetSubscribedServiceOutput(ctx *pulumi.Context, args GetSubscribedServiceOutputArgs, opts ...pulumi.InvokeOption) GetSubscribedServiceResultOutput {
@@ -329,35 +328,29 @@ func (o GetSubscribedServiceResultOutput) ToGetSubscribedServiceResultOutputWith
 	return o
 }
 
-func (o GetSubscribedServiceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResult] {
-	return pulumix.Output[GetSubscribedServiceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Subscribed service admin email id
-func (o GetSubscribedServiceResultOutput) AdminEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.AdminEmail }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) AdminEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.AdminEmail }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agreement ID
-func (o GetSubscribedServiceResultOutput) AgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.AgreementId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) AgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.AgreementId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agrrement name
-func (o GetSubscribedServiceResultOutput) AgreementName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.AgreementName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) AgreementName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.AgreementName }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agrrement type
-func (o GetSubscribedServiceResultOutput) AgreementType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.AgreementType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) AgreementType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.AgreementType }).(pulumi.StringPtrOutput)
 }
 
 // Commitment available amount
-func (o GetSubscribedServiceResultOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -376,23 +369,23 @@ func (o GetSubscribedServiceResultOutput) BillToCustomers() GetSubscribedService
 }
 
 // Subscribed service invoice frequency
-func (o GetSubscribedServiceResultOutput) BillingFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.BillingFrequency }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) BillingFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.BillingFrequency }).(pulumi.StringPtrOutput)
 }
 
 // Booking Opportunity Number of Subscribed Service
-func (o GetSubscribedServiceResultOutput) BookingOptyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.BookingOptyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) BookingOptyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.BookingOptyNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service buyer email id
-func (o GetSubscribedServiceResultOutput) BuyerEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.BuyerEmail }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) BuyerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.BuyerEmail }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service commitment schedule Id
-func (o GetSubscribedServiceResultOutput) CommitmentScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.CommitmentScheduleId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) CommitmentScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.CommitmentScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // List of Commitment services of a line
@@ -403,38 +396,38 @@ func (o GetSubscribedServiceResultOutput) CommitmentServices() GetSubscribedServ
 }
 
 // User that created the Payment term
-func (o GetSubscribedServiceResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service credit percentage
-func (o GetSubscribedServiceResultOutput) CreditPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.CreditPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) CreditPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.CreditPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service CSI number
-func (o GetSubscribedServiceResultOutput) Csi() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.Csi }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) Csi() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.Csi }).(pulumi.StringPtrOutput)
 }
 
 // Identifier for a customer's transactions for purchase of ay oracle services
-func (o GetSubscribedServiceResultOutput) CustomerTransactionReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.CustomerTransactionReference }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) CustomerTransactionReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.CustomerTransactionReference }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service data center
-func (o GetSubscribedServiceResultOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service data center region
-func (o GetSubscribedServiceResultOutput) DataCenterRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.DataCenterRegion }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) DataCenterRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.DataCenterRegion }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service eligible to renew field
-func (o GetSubscribedServiceResultOutput) EligibleToRenew() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.EligibleToRenew }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) EligibleToRenew() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.EligibleToRenew }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -457,148 +450,148 @@ func (o GetSubscribedServiceResultOutput) Fields() pulumi.StringArrayOutput {
 }
 
 // Subscribed service fulfillment set
-func (o GetSubscribedServiceResultOutput) FulfillmentSet() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.FulfillmentSet }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) FulfillmentSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.FulfillmentSet }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscribedServiceResultOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscribedServiceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if a service can recieve usages and consequently have available amounts computed
-func (o GetSubscribedServiceResultOutput) IsAllowance() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsAllowance }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsAllowance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsAllowance }).(pulumi.BoolPtrOutput)
 }
 
 // If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
-func (o GetSubscribedServiceResultOutput) IsCapToPriceList() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsCapToPriceList }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsCapToPriceList() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsCapToPriceList }).(pulumi.BoolPtrOutput)
 }
 
 // Used in context of service credit lines
-func (o GetSubscribedServiceResultOutput) IsCreditEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsCreditEnabled }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsCreditEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsCreditEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicator on whether or not there has been usage for the subscribed service
-func (o GetSubscribedServiceResultOutput) IsHavingUsage() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsHavingUsage }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsHavingUsage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsHavingUsage }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service intent to pay flag
-func (o GetSubscribedServiceResultOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service payg flag
-func (o GetSubscribedServiceResultOutput) IsPayg() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsPayg }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsPayg() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsPayg }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the Subscribed service has a single ratecard
-func (o GetSubscribedServiceResultOutput) IsSingleRateCard() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsSingleRateCard }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsSingleRateCard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsSingleRateCard }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the commitment lines can have different quantities
-func (o GetSubscribedServiceResultOutput) IsVariableCommitment() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) bool { return v.IsVariableCommitment }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResultOutput) IsVariableCommitment() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *bool { return v.IsVariableCommitment }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service line net amount
-func (o GetSubscribedServiceResultOutput) LineNetAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.LineNetAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) LineNetAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.LineNetAmount }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Major Set
-func (o GetSubscribedServiceResultOutput) MajorSet() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.MajorSet }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) MajorSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.MajorSet }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier net unit price
-func (o GetSubscribedServiceResultOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service operation type
-func (o GetSubscribedServiceResultOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OperationType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OperationType }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Header associated to the subscribed service
-func (o GetSubscribedServiceResultOutput) OrderHeaderId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OrderHeaderId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OrderHeaderId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OrderHeaderId }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Line Id associated to the subscribed service
-func (o GetSubscribedServiceResultOutput) OrderLineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OrderLineId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OrderLineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OrderLineId }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Line Number associated to the subscribed service
-func (o GetSubscribedServiceResultOutput) OrderLineNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) int { return v.OrderLineNumber }).(pulumi.IntOutput)
+func (o GetSubscribedServiceResultOutput) OrderLineNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *int { return v.OrderLineNumber }).(pulumi.IntPtrOutput)
 }
 
 // Sales Order Number associated to the subscribed service
-func (o GetSubscribedServiceResultOutput) OrderNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OrderNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OrderNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OrderNumber }).(pulumi.StringPtrOutput)
 }
 
 // Order Type of Subscribed Service
-func (o GetSubscribedServiceResultOutput) OrderType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OrderType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OrderType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OrderType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Promotion Amount
-func (o GetSubscribedServiceResultOutput) OriginalPromoAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OriginalPromoAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OriginalPromoAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OriginalPromoAmount }).(pulumi.StringPtrOutput)
 }
 
 // Overage Bill To of Subscribed Service
-func (o GetSubscribedServiceResultOutput) OverageBillTo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OverageBillTo }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OverageBillTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OverageBillTo }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Overage Discount Percentage
-func (o GetSubscribedServiceResultOutput) OverageDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OverageDiscountPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OverageDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OverageDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Overage Policy of Subscribed Service
-func (o GetSubscribedServiceResultOutput) OveragePolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.OveragePolicy }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) OveragePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.OveragePolicy }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service partner credit amount
-func (o GetSubscribedServiceResultOutput) PartnerCreditAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PartnerCreditAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PartnerCreditAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PartnerCreditAmount }).(pulumi.StringPtrOutput)
 }
 
 // This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-func (o GetSubscribedServiceResultOutput) PartnerTransactionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PartnerTransactionType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PartnerTransactionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PartnerTransactionType }).(pulumi.StringPtrOutput)
 }
 
 // Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
-func (o GetSubscribedServiceResultOutput) PaygPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PaygPolicy }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PaygPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PaygPolicy }).(pulumi.StringPtrOutput)
 }
 
 // Payment Method of Subscribed Service
-func (o GetSubscribedServiceResultOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Payment Number of Subscribed Service
-func (o GetSubscribedServiceResultOutput) PaymentNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PaymentNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PaymentNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PaymentNumber }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term details
@@ -607,13 +600,13 @@ func (o GetSubscribedServiceResultOutput) PaymentTerms() GetSubscribedServicePay
 }
 
 // Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
-func (o GetSubscribedServiceResultOutput) PricePeriod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PricePeriod }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PricePeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PricePeriod }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service pricing model
-func (o GetSubscribedServiceResultOutput) PricingModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PricingModel }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PricingModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PricingModel }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -622,38 +615,38 @@ func (o GetSubscribedServiceResultOutput) Products() GetSubscribedServiceProduct
 }
 
 // Subscribed service program type
-func (o GetSubscribedServiceResultOutput) ProgramType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.ProgramType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) ProgramType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.ProgramType }).(pulumi.StringPtrOutput)
 }
 
 // Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
-func (o GetSubscribedServiceResultOutput) PromoOrderLineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PromoOrderLineId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PromoOrderLineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PromoOrderLineId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service promotion type
-func (o GetSubscribedServiceResultOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PromoType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
 
 // Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
-func (o GetSubscribedServiceResultOutput) PromotionPricingType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.PromotionPricingType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) PromotionPricingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.PromotionPricingType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service provisioning source
-func (o GetSubscribedServiceResultOutput) ProvisioningSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.ProvisioningSource }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) ProvisioningSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.ProvisioningSource }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscribedServiceResultOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Rate Card Discount Percentage
-func (o GetSubscribedServiceResultOutput) RateCardDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RateCardDiscountPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RateCardDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RateCardDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // List of Rate Cards of a Subscribed Service
@@ -662,28 +655,28 @@ func (o GetSubscribedServiceResultOutput) RateCards() GetSubscribedServiceRateCa
 }
 
 // SPM Ratecard Type
-func (o GetSubscribedServiceResultOutput) RatecardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RatecardType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RatecardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RatecardType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Opportunity Id
-func (o GetSubscribedServiceResultOutput) RenewalOptyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RenewalOptyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RenewalOptyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RenewalOptyId }).(pulumi.StringPtrOutput)
 }
 
 // Renewal Opportunity Number of Subscribed Service
-func (o GetSubscribedServiceResultOutput) RenewalOptyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RenewalOptyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RenewalOptyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RenewalOptyNumber }).(pulumi.StringPtrOutput)
 }
 
 // Renewal Opportunity Type of Subscribed Service
-func (o GetSubscribedServiceResultOutput) RenewalOptyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RenewalOptyType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RenewalOptyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RenewalOptyType }).(pulumi.StringPtrOutput)
 }
 
 // SPM renewed Subscription ID
-func (o GetSubscribedServiceResultOutput) RenewedSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RenewedSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RenewedSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RenewedSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -702,38 +695,38 @@ func (o GetSubscribedServiceResultOutput) ResellerCustomers() GetSubscribedServi
 }
 
 // Subscribed service Revenue Line Id
-func (o GetSubscribedServiceResultOutput) RevenueLineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RevenueLineId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RevenueLineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RevenueLineId }).(pulumi.StringPtrOutput)
 }
 
 // Revenue Line NUmber of Subscribed Service
-func (o GetSubscribedServiceResultOutput) RevenueLineNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RevenueLineNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RevenueLineNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RevenueLineNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Revised ARR
-func (o GetSubscribedServiceResultOutput) RevisedArrInLc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RevisedArrInLc }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RevisedArrInLc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RevisedArrInLc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Revised ARR in Standard Currency
-func (o GetSubscribedServiceResultOutput) RevisedArrInSc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.RevisedArrInSc }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) RevisedArrInSc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.RevisedArrInSc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service sales account party id
-func (o GetSubscribedServiceResultOutput) SalesAccountPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SalesAccountPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SalesAccountPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SalesAccountPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Sales Channel of Subscribed Service
-func (o GetSubscribedServiceResultOutput) SalesChannel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SalesChannel }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SalesChannel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SalesChannel }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service line number
-func (o GetSubscribedServiceResultOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -764,13 +757,13 @@ func (o GetSubscribedServiceResultOutput) SoldToCustomers() GetSubscribedService
 }
 
 // Subscribed service start date type
-func (o GetSubscribedServiceResultOutput) StartDateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.StartDateType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) StartDateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.StartDateType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service status
-func (o GetSubscribedServiceResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Subscribed Service ID
@@ -779,128 +772,128 @@ func (o GetSubscribedServiceResultOutput) SubscribedServiceId() pulumi.StringOut
 }
 
 // Subscription ID associated to the subscribed service
-func (o GetSubscribedServiceResultOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service source
-func (o GetSubscribedServiceResultOutput) SubscriptionSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SubscriptionSource }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SubscriptionSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SubscriptionSource }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ARR
-func (o GetSubscribedServiceResultOutput) SystemArrInLc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SystemArrInLc }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SystemArrInLc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SystemArrInLc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ARR in Standard Currency
-func (o GetSubscribedServiceResultOutput) SystemArrInSc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SystemArrInSc }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SystemArrInSc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SystemArrInSc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ATR-ARR
-func (o GetSubscribedServiceResultOutput) SystemAtrArrInLc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SystemAtrArrInLc }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SystemAtrArrInLc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SystemAtrArrInLc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ATR-ARR in Standard Currency
-func (o GetSubscribedServiceResultOutput) SystemAtrArrInSc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.SystemAtrArrInSc }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) SystemAtrArrInSc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.SystemAtrArrInSc }).(pulumi.StringPtrOutput)
 }
 
 // Term value in Months
-func (o GetSubscribedServiceResultOutput) TermValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TermValue }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TermValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TermValue }).(pulumi.StringPtrOutput)
 }
 
 // Term value UOM
-func (o GetSubscribedServiceResultOutput) TermValueUom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TermValueUom }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TermValueUom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TermValueUom }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agrrement end date
-func (o GetSubscribedServiceResultOutput) TimeAgreementEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeAgreementEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeAgreementEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeAgreementEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service creation date
-func (o GetSubscribedServiceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service customer config date
-func (o GetSubscribedServiceResultOutput) TimeCustomerConfig() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeCustomerConfig }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeCustomerConfig() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeCustomerConfig }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service end date
-func (o GetSubscribedServiceResultOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Major Set End date
-func (o GetSubscribedServiceResultOutput) TimeMajorsetEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeMajorsetEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeMajorsetEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeMajorsetEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Major Set Start date
-func (o GetSubscribedServiceResultOutput) TimeMajorsetStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeMajorsetStart }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeMajorsetStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeMajorsetStart }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service payment expiry date
-func (o GetSubscribedServiceResultOutput) TimePaymentExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimePaymentExpiry }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimePaymentExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimePaymentExpiry }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service provisioning date
-func (o GetSubscribedServiceResultOutput) TimeProvisioned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeProvisioned }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeProvisioned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeProvisioned }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service service configuration email sent date
-func (o GetSubscribedServiceResultOutput) TimeServiceConfigurationEmailSent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeServiceConfigurationEmailSent }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeServiceConfigurationEmailSent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeServiceConfigurationEmailSent }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service start date
-func (o GetSubscribedServiceResultOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service last update date
-func (o GetSubscribedServiceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service welcome email sent date
-func (o GetSubscribedServiceResultOutput) TimeWelcomeEmailSent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TimeWelcomeEmailSent }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TimeWelcomeEmailSent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TimeWelcomeEmailSent }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service total value
-func (o GetSubscribedServiceResultOutput) TotalValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TotalValue }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TotalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TotalValue }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Transaction Extension Id
-func (o GetSubscribedServiceResultOutput) TransactionExtensionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.TransactionExtensionId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) TransactionExtensionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.TransactionExtensionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed Service line type
-func (o GetSubscribedServiceResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // User that updated the subscribed service
-func (o GetSubscribedServiceResultOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service used amount
-func (o GetSubscribedServiceResultOutput) UsedAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResult) string { return v.UsedAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResultOutput) UsedAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResult) *string { return v.UsedAmount }).(pulumi.StringPtrOutput)
 }
 
 func init() {

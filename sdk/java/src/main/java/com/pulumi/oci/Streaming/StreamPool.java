@@ -17,6 +17,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -105,98 +106,98 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="customEncryptionKey", refs={StreamPoolCustomEncryptionKey.class}, tree="[0]")
-    private Output<StreamPoolCustomEncryptionKey> customEncryptionKey;
+    private Output</* @Nullable */ StreamPoolCustomEncryptionKey> customEncryptionKey;
 
     /**
      * @return (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
      * 
      */
-    public Output<StreamPoolCustomEncryptionKey> customEncryptionKey() {
-        return this.customEncryptionKey;
+    public Output<Optional<StreamPoolCustomEncryptionKey>> customEncryptionKey() {
+        return Codegen.optional(this.customEncryptionKey);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      * 
      */
     @Export(name="endpointFqdn", refs={String.class}, tree="[0]")
-    private Output<String> endpointFqdn;
+    private Output</* @Nullable */ String> endpointFqdn;
 
     /**
      * @return The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      * 
      */
-    public Output<String> endpointFqdn() {
-        return this.endpointFqdn;
+    public Output<Optional<String>> endpointFqdn() {
+        return Codegen.optional(this.endpointFqdn);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      * 
      */
     @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrivate;
+    private Output</* @Nullable */ Boolean> isPrivate;
 
     /**
      * @return True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      * 
      */
-    public Output<Boolean> isPrivate() {
-        return this.isPrivate;
+    public Output<Optional<Boolean>> isPrivate() {
+        return Codegen.optional(this.isPrivate);
     }
     /**
      * (Updatable) Settings for the Kafka compatibility layer.
      * 
      */
     @Export(name="kafkaSettings", refs={StreamPoolKafkaSettings.class}, tree="[0]")
-    private Output<StreamPoolKafkaSettings> kafkaSettings;
+    private Output</* @Nullable */ StreamPoolKafkaSettings> kafkaSettings;
 
     /**
      * @return (Updatable) Settings for the Kafka compatibility layer.
      * 
      */
-    public Output<StreamPoolKafkaSettings> kafkaSettings() {
-        return this.kafkaSettings;
+    public Output<Optional<StreamPoolKafkaSettings>> kafkaSettings() {
+        return Codegen.optional(this.kafkaSettings);
     }
     /**
      * Any additional details about the current state of the stream.
      * 
      */
     @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleStateDetails;
+    private Output</* @Nullable */ String> lifecycleStateDetails;
 
     /**
      * @return Any additional details about the current state of the stream.
      * 
      */
-    public Output<String> lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Output<Optional<String>> lifecycleStateDetails() {
+        return Codegen.optional(this.lifecycleStateDetails);
     }
     /**
      * (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
@@ -217,42 +218,42 @@ public class StreamPool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="privateEndpointSettings", refs={StreamPoolPrivateEndpointSettings.class}, tree="[0]")
-    private Output<StreamPoolPrivateEndpointSettings> privateEndpointSettings;
+    private Output</* @Nullable */ StreamPoolPrivateEndpointSettings> privateEndpointSettings;
 
     /**
      * @return Optional parameters if a private stream pool is requested.
      * 
      */
-    public Output<StreamPoolPrivateEndpointSettings> privateEndpointSettings() {
-        return this.privateEndpointSettings;
+    public Output<Optional<StreamPoolPrivateEndpointSettings>> privateEndpointSettings() {
+        return Codegen.optional(this.privateEndpointSettings);
     }
     /**
      * The current state of the stream pool.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the stream pool.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

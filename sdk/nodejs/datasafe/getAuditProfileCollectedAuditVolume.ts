@@ -73,11 +73,11 @@ export interface GetAuditProfileCollectedAuditVolumeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of collected audit volume summary.
      */
-    readonly items: outputs.DataSafe.GetAuditProfileCollectedAuditVolumeItem[];
+    readonly items?: outputs.DataSafe.GetAuditProfileCollectedAuditVolumeItem[];
     readonly monthInConsiderationGreaterThan?: string;
     readonly monthInConsiderationLessThan?: string;
     readonly workRequestId: string;

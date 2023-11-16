@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHttpProbeResultsHttpProbeResult {
@@ -19,42 +21,42 @@ public final class GetHttpProbeResultsHttpProbeResult {
      * @return The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
      * 
      */
-    private Double connectEnd;
+    private @Nullable Double connectEnd;
     /**
      * @return The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
      * 
      */
-    private Double connectStart;
+    private @Nullable Double connectStart;
     /**
      * @return TCP connection results.  All durations are in milliseconds.
      * 
      */
-    private List<GetHttpProbeResultsHttpProbeResultConnection> connections;
+    private @Nullable List<GetHttpProbeResultsHttpProbeResultConnection> connections;
     /**
      * @return The DNS resolution results.
      * 
      */
-    private List<GetHttpProbeResultsHttpProbeResultDn> dns;
+    private @Nullable List<GetHttpProbeResultsHttpProbeResultDn> dns;
     /**
      * @return The time immediately before the vantage point finishes the domain name lookup for the resource.
      * 
      */
-    private Double domainLookupEnd;
+    private @Nullable Double domainLookupEnd;
     /**
      * @return The time immediately before the vantage point starts the domain name lookup for the resource.
      * 
      */
-    private Double domainLookupStart;
+    private @Nullable Double domainLookupStart;
     /**
      * @return The total duration from start of request until response is fully consumed or the connection is closed.
      * 
      */
-    private Double duration;
+    private @Nullable Double duration;
     /**
      * @return The size, in octets, of the payload body prior to removing any applied content-codings.
      * 
      */
-    private Integer encodedBodySize;
+    private @Nullable Integer encodedBodySize;
     /**
      * @return The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
      * * NONE - No error
@@ -64,139 +66,139 @@ public final class GetHttpProbeResultsHttpProbeResult {
      * * SYSTEM - Internal system errors.
      * 
      */
-    private String errorCategory;
+    private @Nullable String errorCategory;
     /**
      * @return The error information indicating why a probe execution failed.
      * 
      */
-    private String errorMessage;
+    private @Nullable String errorMessage;
     /**
      * @return The time immediately before the vantage point starts to fetch the resource.
      * 
      */
-    private Double fetchStart;
+    private @Nullable Double fetchStart;
     /**
      * @return True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
      * 
      */
-    private Boolean isHealthy;
+    private @Nullable Boolean isHealthy;
     /**
      * @return True if the probe did not complete before the configured `timeoutInSeconds` value.
      * 
      */
-    private Boolean isTimedOut;
+    private @Nullable Boolean isTimedOut;
     /**
      * @return A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The OCID of a monitor or on-demand probe.
      * 
      */
-    private String probeConfigurationId;
+    private @Nullable String probeConfigurationId;
     /**
      * @return The supported protocols available for HTTP probes.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The time immediately before the vantage point starts requesting the resource from the server.
      * 
      */
-    private Double requestStart;
+    private @Nullable Double requestStart;
     /**
      * @return The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
      * 
      */
-    private Double responseEnd;
+    private @Nullable Double responseEnd;
     /**
      * @return The time immediately after the vantage point&#39;s HTTP parser receives the first byte of the response.
      * 
      */
-    private Double responseStart;
+    private @Nullable Double responseStart;
     /**
      * @return The time immediately before the vantage point starts the handshake process to secure the current connection.
      * 
      */
-    private Double secureConnectionStart;
+    private @Nullable Double secureConnectionStart;
     /**
      * @return The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
      * 
      */
-    private Double startTime;
+    private @Nullable Double startTime;
     /**
      * @return The HTTP response status code.
      * 
      */
-    private Integer statusCode;
+    private @Nullable Integer statusCode;
     /**
      * @return Filters results that match the `target`.
      * 
      */
-    private String target;
+    private @Nullable String target;
     /**
      * @return The name of the vantage point that executed the probe.
      * 
      */
-    private String vantagePointName;
+    private @Nullable String vantagePointName;
 
     private GetHttpProbeResultsHttpProbeResult() {}
     /**
      * @return The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
      * 
      */
-    public Double connectEnd() {
-        return this.connectEnd;
+    public Optional<Double> connectEnd() {
+        return Optional.ofNullable(this.connectEnd);
     }
     /**
      * @return The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
      * 
      */
-    public Double connectStart() {
-        return this.connectStart;
+    public Optional<Double> connectStart() {
+        return Optional.ofNullable(this.connectStart);
     }
     /**
      * @return TCP connection results.  All durations are in milliseconds.
      * 
      */
     public List<GetHttpProbeResultsHttpProbeResultConnection> connections() {
-        return this.connections;
+        return this.connections == null ? List.of() : this.connections;
     }
     /**
      * @return The DNS resolution results.
      * 
      */
     public List<GetHttpProbeResultsHttpProbeResultDn> dns() {
-        return this.dns;
+        return this.dns == null ? List.of() : this.dns;
     }
     /**
      * @return The time immediately before the vantage point finishes the domain name lookup for the resource.
      * 
      */
-    public Double domainLookupEnd() {
-        return this.domainLookupEnd;
+    public Optional<Double> domainLookupEnd() {
+        return Optional.ofNullable(this.domainLookupEnd);
     }
     /**
      * @return The time immediately before the vantage point starts the domain name lookup for the resource.
      * 
      */
-    public Double domainLookupStart() {
-        return this.domainLookupStart;
+    public Optional<Double> domainLookupStart() {
+        return Optional.ofNullable(this.domainLookupStart);
     }
     /**
      * @return The total duration from start of request until response is fully consumed or the connection is closed.
      * 
      */
-    public Double duration() {
-        return this.duration;
+    public Optional<Double> duration() {
+        return Optional.ofNullable(this.duration);
     }
     /**
      * @return The size, in octets, of the payload body prior to removing any applied content-codings.
      * 
      */
-    public Integer encodedBodySize() {
-        return this.encodedBodySize;
+    public Optional<Integer> encodedBodySize() {
+        return Optional.ofNullable(this.encodedBodySize);
     }
     /**
      * @return The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
@@ -207,113 +209,113 @@ public final class GetHttpProbeResultsHttpProbeResult {
      * * SYSTEM - Internal system errors.
      * 
      */
-    public String errorCategory() {
-        return this.errorCategory;
+    public Optional<String> errorCategory() {
+        return Optional.ofNullable(this.errorCategory);
     }
     /**
      * @return The error information indicating why a probe execution failed.
      * 
      */
-    public String errorMessage() {
-        return this.errorMessage;
+    public Optional<String> errorMessage() {
+        return Optional.ofNullable(this.errorMessage);
     }
     /**
      * @return The time immediately before the vantage point starts to fetch the resource.
      * 
      */
-    public Double fetchStart() {
-        return this.fetchStart;
+    public Optional<Double> fetchStart() {
+        return Optional.ofNullable(this.fetchStart);
     }
     /**
      * @return True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
      * 
      */
-    public Boolean isHealthy() {
-        return this.isHealthy;
+    public Optional<Boolean> isHealthy() {
+        return Optional.ofNullable(this.isHealthy);
     }
     /**
      * @return True if the probe did not complete before the configured `timeoutInSeconds` value.
      * 
      */
-    public Boolean isTimedOut() {
-        return this.isTimedOut;
+    public Optional<Boolean> isTimedOut() {
+        return Optional.ofNullable(this.isTimedOut);
     }
     /**
      * @return A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The OCID of a monitor or on-demand probe.
      * 
      */
-    public String probeConfigurationId() {
-        return this.probeConfigurationId;
+    public Optional<String> probeConfigurationId() {
+        return Optional.ofNullable(this.probeConfigurationId);
     }
     /**
      * @return The supported protocols available for HTTP probes.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The time immediately before the vantage point starts requesting the resource from the server.
      * 
      */
-    public Double requestStart() {
-        return this.requestStart;
+    public Optional<Double> requestStart() {
+        return Optional.ofNullable(this.requestStart);
     }
     /**
      * @return The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
      * 
      */
-    public Double responseEnd() {
-        return this.responseEnd;
+    public Optional<Double> responseEnd() {
+        return Optional.ofNullable(this.responseEnd);
     }
     /**
      * @return The time immediately after the vantage point&#39;s HTTP parser receives the first byte of the response.
      * 
      */
-    public Double responseStart() {
-        return this.responseStart;
+    public Optional<Double> responseStart() {
+        return Optional.ofNullable(this.responseStart);
     }
     /**
      * @return The time immediately before the vantage point starts the handshake process to secure the current connection.
      * 
      */
-    public Double secureConnectionStart() {
-        return this.secureConnectionStart;
+    public Optional<Double> secureConnectionStart() {
+        return Optional.ofNullable(this.secureConnectionStart);
     }
     /**
      * @return The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
      * 
      */
-    public Double startTime() {
-        return this.startTime;
+    public Optional<Double> startTime() {
+        return Optional.ofNullable(this.startTime);
     }
     /**
      * @return The HTTP response status code.
      * 
      */
-    public Integer statusCode() {
-        return this.statusCode;
+    public Optional<Integer> statusCode() {
+        return Optional.ofNullable(this.statusCode);
     }
     /**
      * @return Filters results that match the `target`.
      * 
      */
-    public String target() {
-        return this.target;
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
     /**
      * @return The name of the vantage point that executed the probe.
      * 
      */
-    public String vantagePointName() {
-        return this.vantagePointName;
+    public Optional<String> vantagePointName() {
+        return Optional.ofNullable(this.vantagePointName);
     }
 
     public static Builder builder() {
@@ -325,30 +327,30 @@ public final class GetHttpProbeResultsHttpProbeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double connectEnd;
-        private Double connectStart;
-        private List<GetHttpProbeResultsHttpProbeResultConnection> connections;
-        private List<GetHttpProbeResultsHttpProbeResultDn> dns;
-        private Double domainLookupEnd;
-        private Double domainLookupStart;
-        private Double duration;
-        private Integer encodedBodySize;
-        private String errorCategory;
-        private String errorMessage;
-        private Double fetchStart;
-        private Boolean isHealthy;
-        private Boolean isTimedOut;
-        private String key;
-        private String probeConfigurationId;
-        private String protocol;
-        private Double requestStart;
-        private Double responseEnd;
-        private Double responseStart;
-        private Double secureConnectionStart;
-        private Double startTime;
-        private Integer statusCode;
-        private String target;
-        private String vantagePointName;
+        private @Nullable Double connectEnd;
+        private @Nullable Double connectStart;
+        private @Nullable List<GetHttpProbeResultsHttpProbeResultConnection> connections;
+        private @Nullable List<GetHttpProbeResultsHttpProbeResultDn> dns;
+        private @Nullable Double domainLookupEnd;
+        private @Nullable Double domainLookupStart;
+        private @Nullable Double duration;
+        private @Nullable Integer encodedBodySize;
+        private @Nullable String errorCategory;
+        private @Nullable String errorMessage;
+        private @Nullable Double fetchStart;
+        private @Nullable Boolean isHealthy;
+        private @Nullable Boolean isTimedOut;
+        private @Nullable String key;
+        private @Nullable String probeConfigurationId;
+        private @Nullable String protocol;
+        private @Nullable Double requestStart;
+        private @Nullable Double responseEnd;
+        private @Nullable Double responseStart;
+        private @Nullable Double secureConnectionStart;
+        private @Nullable Double startTime;
+        private @Nullable Integer statusCode;
+        private @Nullable String target;
+        private @Nullable String vantagePointName;
         public Builder() {}
         public Builder(GetHttpProbeResultsHttpProbeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -379,129 +381,129 @@ public final class GetHttpProbeResultsHttpProbeResult {
         }
 
         @CustomType.Setter
-        public Builder connectEnd(Double connectEnd) {
-            this.connectEnd = Objects.requireNonNull(connectEnd);
+        public Builder connectEnd(@Nullable Double connectEnd) {
+            this.connectEnd = connectEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder connectStart(Double connectStart) {
-            this.connectStart = Objects.requireNonNull(connectStart);
+        public Builder connectStart(@Nullable Double connectStart) {
+            this.connectStart = connectStart;
             return this;
         }
         @CustomType.Setter
-        public Builder connections(List<GetHttpProbeResultsHttpProbeResultConnection> connections) {
-            this.connections = Objects.requireNonNull(connections);
+        public Builder connections(@Nullable List<GetHttpProbeResultsHttpProbeResultConnection> connections) {
+            this.connections = connections;
             return this;
         }
         public Builder connections(GetHttpProbeResultsHttpProbeResultConnection... connections) {
             return connections(List.of(connections));
         }
         @CustomType.Setter
-        public Builder dns(List<GetHttpProbeResultsHttpProbeResultDn> dns) {
-            this.dns = Objects.requireNonNull(dns);
+        public Builder dns(@Nullable List<GetHttpProbeResultsHttpProbeResultDn> dns) {
+            this.dns = dns;
             return this;
         }
         public Builder dns(GetHttpProbeResultsHttpProbeResultDn... dns) {
             return dns(List.of(dns));
         }
         @CustomType.Setter
-        public Builder domainLookupEnd(Double domainLookupEnd) {
-            this.domainLookupEnd = Objects.requireNonNull(domainLookupEnd);
+        public Builder domainLookupEnd(@Nullable Double domainLookupEnd) {
+            this.domainLookupEnd = domainLookupEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder domainLookupStart(Double domainLookupStart) {
-            this.domainLookupStart = Objects.requireNonNull(domainLookupStart);
+        public Builder domainLookupStart(@Nullable Double domainLookupStart) {
+            this.domainLookupStart = domainLookupStart;
             return this;
         }
         @CustomType.Setter
-        public Builder duration(Double duration) {
-            this.duration = Objects.requireNonNull(duration);
+        public Builder duration(@Nullable Double duration) {
+            this.duration = duration;
             return this;
         }
         @CustomType.Setter
-        public Builder encodedBodySize(Integer encodedBodySize) {
-            this.encodedBodySize = Objects.requireNonNull(encodedBodySize);
+        public Builder encodedBodySize(@Nullable Integer encodedBodySize) {
+            this.encodedBodySize = encodedBodySize;
             return this;
         }
         @CustomType.Setter
-        public Builder errorCategory(String errorCategory) {
-            this.errorCategory = Objects.requireNonNull(errorCategory);
+        public Builder errorCategory(@Nullable String errorCategory) {
+            this.errorCategory = errorCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessage(String errorMessage) {
-            this.errorMessage = Objects.requireNonNull(errorMessage);
+        public Builder errorMessage(@Nullable String errorMessage) {
+            this.errorMessage = errorMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder fetchStart(Double fetchStart) {
-            this.fetchStart = Objects.requireNonNull(fetchStart);
+        public Builder fetchStart(@Nullable Double fetchStart) {
+            this.fetchStart = fetchStart;
             return this;
         }
         @CustomType.Setter
-        public Builder isHealthy(Boolean isHealthy) {
-            this.isHealthy = Objects.requireNonNull(isHealthy);
+        public Builder isHealthy(@Nullable Boolean isHealthy) {
+            this.isHealthy = isHealthy;
             return this;
         }
         @CustomType.Setter
-        public Builder isTimedOut(Boolean isTimedOut) {
-            this.isTimedOut = Objects.requireNonNull(isTimedOut);
+        public Builder isTimedOut(@Nullable Boolean isTimedOut) {
+            this.isTimedOut = isTimedOut;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder probeConfigurationId(String probeConfigurationId) {
-            this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
+        public Builder probeConfigurationId(@Nullable String probeConfigurationId) {
+            this.probeConfigurationId = probeConfigurationId;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder requestStart(Double requestStart) {
-            this.requestStart = Objects.requireNonNull(requestStart);
+        public Builder requestStart(@Nullable Double requestStart) {
+            this.requestStart = requestStart;
             return this;
         }
         @CustomType.Setter
-        public Builder responseEnd(Double responseEnd) {
-            this.responseEnd = Objects.requireNonNull(responseEnd);
+        public Builder responseEnd(@Nullable Double responseEnd) {
+            this.responseEnd = responseEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder responseStart(Double responseStart) {
-            this.responseStart = Objects.requireNonNull(responseStart);
+        public Builder responseStart(@Nullable Double responseStart) {
+            this.responseStart = responseStart;
             return this;
         }
         @CustomType.Setter
-        public Builder secureConnectionStart(Double secureConnectionStart) {
-            this.secureConnectionStart = Objects.requireNonNull(secureConnectionStart);
+        public Builder secureConnectionStart(@Nullable Double secureConnectionStart) {
+            this.secureConnectionStart = secureConnectionStart;
             return this;
         }
         @CustomType.Setter
-        public Builder startTime(Double startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+        public Builder startTime(@Nullable Double startTime) {
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
-        public Builder statusCode(Integer statusCode) {
-            this.statusCode = Objects.requireNonNull(statusCode);
+        public Builder statusCode(@Nullable Integer statusCode) {
+            this.statusCode = statusCode;
             return this;
         }
         @CustomType.Setter
-        public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+        public Builder target(@Nullable String target) {
+            this.target = target;
             return this;
         }
         @CustomType.Setter
-        public Builder vantagePointName(String vantagePointName) {
-            this.vantagePointName = Objects.requireNonNull(vantagePointName);
+        public Builder vantagePointName(@Nullable String vantagePointName) {
+            this.vantagePointName = vantagePointName;
             return this;
         }
         public GetHttpProbeResultsHttpProbeResult build() {

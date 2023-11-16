@@ -68,12 +68,12 @@ export interface GetRepositoryDiffsResult {
     /**
      * The list of diff_collection.
      */
-    readonly diffCollections: outputs.DevOps.GetRepositoryDiffsDiffCollection[];
+    readonly diffCollections?: outputs.DevOps.GetRepositoryDiffsDiffCollection[];
     readonly filters?: outputs.DevOps.GetRepositoryDiffsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isComparisonFromMergeBase?: boolean;
     readonly repositoryId: string;
     readonly targetVersion: string;

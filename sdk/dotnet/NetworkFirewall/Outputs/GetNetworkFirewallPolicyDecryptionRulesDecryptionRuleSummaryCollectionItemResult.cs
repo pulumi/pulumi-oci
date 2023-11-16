@@ -38,11 +38,11 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this decryption rule belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// An object which defines the position of the rule.
         /// </summary>
-        public readonly Outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult Position;
+        public readonly Outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult? Position;
         public readonly string? PriorityOrder;
         /// <summary>
         /// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            Outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult position,
+            Outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult? position,
 
             string? priorityOrder,
 

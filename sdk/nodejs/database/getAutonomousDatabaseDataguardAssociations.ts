@@ -49,7 +49,7 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
     /**
      * The list of autonomous_database_dataguard_associations.
      */
-    readonly autonomousDatabaseDataguardAssociations: outputs.Database.GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation[];
+    readonly autonomousDatabaseDataguardAssociations?: outputs.Database.GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
      */
@@ -58,7 +58,7 @@ export interface GetAutonomousDatabaseDataguardAssociationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.

@@ -57,12 +57,12 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
     /**
      * The list of cursor_cache_statement_collection.
      */
-    readonly cursorCacheStatementCollections: outputs.DatabaseManagement.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection[];
+    readonly cursorCacheStatementCollections?: outputs.DatabaseManagement.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabaseCursorCacheStatementsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly limit?: number;
     readonly managedDatabaseId: string;
     /**

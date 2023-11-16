@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// The OCID of the CA Bundle resource.
         /// </summary>
-        public readonly string CaBundleId;
+        public readonly string? CaBundleId;
         /// <summary>
         /// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         /// </summary>
-        public readonly string SecretName;
+        public readonly string? SecretName;
         /// <summary>
         /// Type of certificate.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult(
-            string caBundleId,
+            string? caBundleId,
 
-            string secretName,
+            string? secretName,
 
-            string type)
+            string? type)
         {
             CaBundleId = caBundleId;
             SecretName = secretName;

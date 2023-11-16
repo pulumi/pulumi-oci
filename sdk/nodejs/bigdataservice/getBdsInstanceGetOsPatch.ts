@@ -57,15 +57,15 @@ export interface GetBdsInstanceGetOsPatchResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Minimum BDS version required to install current OS patch.
      */
-    readonly minBdsVersion: string;
+    readonly minBdsVersion?: string;
     /**
      * Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      */
-    readonly minCompatibleOdhVersionMap: {[key: string]: any};
+    readonly minCompatibleOdhVersionMap?: {[key: string]: any};
     /**
      * Version of the os patch.
      */
@@ -73,15 +73,15 @@ export interface GetBdsInstanceGetOsPatchResult {
     /**
      * Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
      */
-    readonly patchType: string;
+    readonly patchType?: string;
     /**
      * Released date of the OS patch.
      */
-    readonly releaseDate: string;
+    readonly releaseDate?: string;
     /**
      * List of summaries of individual target packages.
      */
-    readonly targetPackages: outputs.BigDataService.GetBdsInstanceGetOsPatchTargetPackage[];
+    readonly targetPackages?: outputs.BigDataService.GetBdsInstanceGetOsPatchTargetPackage[];
 }
 /**
  * This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.

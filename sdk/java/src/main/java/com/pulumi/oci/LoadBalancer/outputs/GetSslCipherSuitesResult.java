@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetSslCipherSuitesSslCipherSuite;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetSslCipherSuitesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
     /**
      * @return The list of ssl_cipher_suites.
      * 
      */
-    private List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
+    private @Nullable List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
 
     private GetSslCipherSuitesResult() {}
     public List<GetSslCipherSuitesFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetSslCipherSuitesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -45,7 +46,7 @@ public final class GetSslCipherSuitesResult {
      * 
      */
     public List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites() {
-        return this.sslCipherSuites;
+        return this.sslCipherSuites == null ? List.of() : this.sslCipherSuites;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetSslCipherSuitesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSslCipherSuitesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String loadBalancerId;
-        private List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
+        private @Nullable List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites;
         public Builder() {}
         public Builder(GetSslCipherSuitesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetSslCipherSuitesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetSslCipherSuitesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sslCipherSuites(List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites) {
-            this.sslCipherSuites = Objects.requireNonNull(sslCipherSuites);
+        public Builder sslCipherSuites(@Nullable List<GetSslCipherSuitesSslCipherSuite> sslCipherSuites) {
+            this.sslCipherSuites = sslCipherSuites;
             return this;
         }
         public Builder sslCipherSuites(GetSslCipherSuitesSslCipherSuite... sslCipherSuites) {

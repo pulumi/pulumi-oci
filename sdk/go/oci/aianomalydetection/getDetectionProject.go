@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -60,26 +59,26 @@ type GetDetectionProjectArgs struct {
 // A collection of values returned by getDetectionProject.
 type GetDetectionProjectResult struct {
 	// The OCID for the project's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the project.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the project that is immutable on creation.
-	Id        string `pulumi:"id"`
-	ProjectId string `pulumi:"projectId"`
+	Id        *string `pulumi:"id"`
+	ProjectId string  `pulumi:"projectId"`
 	// The lifecycle state of the Project.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetDetectionProjectOutput(ctx *pulumi.Context, args GetDetectionProjectOutputArgs, opts ...pulumi.InvokeOption) GetDetectionProjectResultOutput {
@@ -120,15 +119,9 @@ func (o GetDetectionProjectResultOutput) ToGetDetectionProjectResultOutputWithCo
 	return o
 }
 
-func (o GetDetectionProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectResult] {
-	return pulumix.Output[GetDetectionProjectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID for the project's compartment.
-func (o GetDetectionProjectResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -137,13 +130,13 @@ func (o GetDetectionProjectResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the project.
-func (o GetDetectionProjectResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o GetDetectionProjectResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -152,8 +145,8 @@ func (o GetDetectionProjectResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the project that is immutable on creation.
-func (o GetDetectionProjectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectionProjectResultOutput) ProjectId() pulumi.StringOutput {
@@ -161,8 +154,8 @@ func (o GetDetectionProjectResultOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The lifecycle state of the Project.
-func (o GetDetectionProjectResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -171,13 +164,13 @@ func (o GetDetectionProjectResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetDetectionProjectResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetDetectionProjectResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDetectionProjectResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

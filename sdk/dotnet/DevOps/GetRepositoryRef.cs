@@ -122,24 +122,24 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// Commit ID pointed to by the new branch.
         /// </summary>
-        public readonly string CommitId;
+        public readonly string? CommitId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique full reference name inside a repository.
         /// </summary>
-        public readonly string FullRefName;
-        public readonly string Id;
+        public readonly string? FullRefName;
+        public readonly string? Id;
         /// <summary>
         /// SHA-1 hash value of the object pointed to by the tag.
         /// </summary>
-        public readonly string ObjectId;
+        public readonly string? ObjectId;
         /// <summary>
         /// Unique reference name inside a repository.
         /// </summary>
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The type of reference (BRANCH or TAG).
         /// </summary>
-        public readonly string RefType;
+        public readonly string? RefType;
         /// <summary>
         /// The OCID of the repository containing the reference.
         /// </summary>
@@ -155,21 +155,21 @@ namespace Pulumi.Oci.DevOps
 
         [OutputConstructor]
         private GetRepositoryRefResult(
-            string commitId,
+            string? commitId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string fullRefName,
+            string? fullRefName,
 
-            string id,
+            string? id,
 
-            string objectId,
+            string? objectId,
 
             string refName,
 
-            string refType,
+            string? refType,
 
             string repositoryId)
         {

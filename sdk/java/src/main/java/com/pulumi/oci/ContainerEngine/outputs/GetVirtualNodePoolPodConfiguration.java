@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualNodePoolPodConfiguration {
@@ -14,17 +16,17 @@ public final class GetVirtualNodePoolPodConfiguration {
      * @return List of network security group IDs applied to the Pod VNIC.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return Shape of the pods.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The regional subnet where pods&#39; VNIC will be placed.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetVirtualNodePoolPodConfiguration() {}
     /**
@@ -32,21 +34,21 @@ public final class GetVirtualNodePoolPodConfiguration {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return Shape of the pods.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The regional subnet where pods&#39; VNIC will be placed.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetVirtualNodePoolPodConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> nsgIds;
-        private String shape;
-        private String subnetId;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String shape;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetVirtualNodePoolPodConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetVirtualNodePoolPodConfiguration {
         }
 
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetVirtualNodePoolPodConfiguration build() {

@@ -49,15 +49,15 @@ export interface GetAuthenticationPolicyResult {
      * Compartment OCID.
      */
     readonly compartmentId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * Network policy, Consists of a list of Network Source ids.
      */
-    readonly networkPolicies: outputs.Identity.GetAuthenticationPolicyNetworkPolicy[];
+    readonly networkPolicies?: outputs.Identity.GetAuthenticationPolicyNetworkPolicy[];
     /**
      * Password policy, currently set for the given compartment.
      */
-    readonly passwordPolicies: outputs.Identity.GetAuthenticationPolicyPasswordPolicy[];
+    readonly passwordPolicies?: outputs.Identity.GetAuthenticationPolicyPasswordPolicy[];
 }
 /**
  * This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.

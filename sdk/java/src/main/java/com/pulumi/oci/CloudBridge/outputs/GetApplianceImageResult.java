@@ -23,12 +23,12 @@ public final class GetApplianceImageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of appliance images.
      * 
      */
-    private List<GetApplianceImageItem> items;
+    private @Nullable List<GetApplianceImageItem> items;
 
     private GetApplianceImageResult() {}
     public String compartmentId() {
@@ -45,15 +45,15 @@ public final class GetApplianceImageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of appliance images.
      * 
      */
     public List<GetApplianceImageItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -67,8 +67,8 @@ public final class GetApplianceImageResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private String id;
-        private List<GetApplianceImageItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetApplianceImageItem> items;
         public Builder() {}
         public Builder(GetApplianceImageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -89,13 +89,13 @@ public final class GetApplianceImageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetApplianceImageItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetApplianceImageItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetApplianceImageItem... items) {

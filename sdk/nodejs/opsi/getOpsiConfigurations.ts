@@ -76,7 +76,7 @@ export interface GetOpsiConfigurationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * OPSI configuration type.
      */
@@ -84,7 +84,7 @@ export interface GetOpsiConfigurationsResult {
     /**
      * The list of opsi_configurations_collection.
      */
-    readonly opsiConfigurationsCollections: outputs.Opsi.GetOpsiConfigurationsOpsiConfigurationsCollection[];
+    readonly opsiConfigurationsCollections?: outputs.Opsi.GetOpsiConfigurationsOpsiConfigurationsCollection[];
     /**
      * OPSI configuration resource lifecycle state.
      */

@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Autoscaling
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsResult(
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Autoscaling
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AutoScalingConfigurations = autoScalingConfigurations;
             CompartmentId = compartmentId;

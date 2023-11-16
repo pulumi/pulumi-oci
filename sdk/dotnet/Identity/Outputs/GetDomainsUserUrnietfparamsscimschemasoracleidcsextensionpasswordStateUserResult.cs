@@ -20,49 +20,49 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
         /// </summary>
-        public readonly bool CantChange;
+        public readonly bool? CantChange;
         /// <summary>
         /// Indicates that the password expiry policy will not be applied for the current Resource
         /// </summary>
-        public readonly bool CantExpire;
+        public readonly bool? CantExpire;
         /// <summary>
         /// Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
         /// </summary>
-        public readonly bool Expired;
+        public readonly bool? Expired;
         /// <summary>
         /// A DateTime that specifies the date and time when last failed password validation was set
         /// </summary>
-        public readonly string LastFailedValidationDate;
+        public readonly string? LastFailedValidationDate;
         /// <summary>
         /// A DateTime that specifies the date and time when the current password was set
         /// </summary>
-        public readonly string LastSuccessfulSetDate;
+        public readonly string? LastSuccessfulSetDate;
         /// <summary>
         /// A DateTime that specifies the date and time when last successful password validation was set
         /// </summary>
-        public readonly string LastSuccessfulValidationDate;
+        public readonly string? LastSuccessfulValidationDate;
         /// <summary>
         /// Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
         /// </summary>
-        public readonly bool MustChange;
+        public readonly bool? MustChange;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserResult(
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyResult> applicablePasswordPolicies,
 
-            bool cantChange,
+            bool? cantChange,
 
-            bool cantExpire,
+            bool? cantExpire,
 
-            bool expired,
+            bool? expired,
 
-            string lastFailedValidationDate,
+            string? lastFailedValidationDate,
 
-            string lastSuccessfulSetDate,
+            string? lastSuccessfulSetDate,
 
-            string lastSuccessfulValidationDate,
+            string? lastSuccessfulValidationDate,
 
-            bool mustChange)
+            bool? mustChange)
         {
             ApplicablePasswordPolicies = applicablePasswordPolicies;
             CantChange = cantChange;

@@ -50,17 +50,17 @@ export interface GetRuleSetArgs {
  * A collection of values returned by getRuleSet.
  */
 export interface GetRuleSetResult {
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of rules that compose the rule set.
      */
-    readonly items: outputs.LoadBalancer.GetRuleSetItem[];
+    readonly items?: outputs.LoadBalancer.GetRuleSetItem[];
     readonly loadBalancerId: string;
     /**
      * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      */
     readonly name: string;
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.

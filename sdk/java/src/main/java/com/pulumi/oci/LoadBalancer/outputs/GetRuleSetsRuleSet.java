@@ -8,54 +8,56 @@ import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetsRuleSetItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRuleSetsRuleSet {
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of rules that compose the rule set.
      * 
      */
-    private List<GetRuleSetsRuleSetItem> items;
+    private @Nullable List<GetRuleSetsRuleSetItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
      * 
      */
-    private String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
-    private String name;
-    private String state;
+    private @Nullable String name;
+    private @Nullable String state;
 
     private GetRuleSetsRuleSet() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of rules that compose the rule set.
      * 
      */
     public List<GetRuleSetsRuleSetItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
      * 
      */
-    public String loadBalancerId() {
-        return this.loadBalancerId;
+    public Optional<String> loadBalancerId() {
+        return Optional.ofNullable(this.loadBalancerId);
     }
     /**
      * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -67,11 +69,11 @@ public final class GetRuleSetsRuleSet {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetRuleSetsRuleSetItem> items;
-        private String loadBalancerId;
-        private String name;
-        private String state;
+        private @Nullable String id;
+        private @Nullable List<GetRuleSetsRuleSetItem> items;
+        private @Nullable String loadBalancerId;
+        private @Nullable String name;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetRuleSetsRuleSet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,31 +85,31 @@ public final class GetRuleSetsRuleSet {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetRuleSetsRuleSetItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRuleSetsRuleSetItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRuleSetsRuleSetItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+        public Builder loadBalancerId(@Nullable String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetRuleSetsRuleSet build() {

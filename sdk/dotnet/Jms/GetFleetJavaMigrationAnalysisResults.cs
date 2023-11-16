@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of java_migration_analysis_result_collection.
         /// </summary>
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.Jms
 
             string fleetId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult> javaMigrationAnalysisResultCollections,
 

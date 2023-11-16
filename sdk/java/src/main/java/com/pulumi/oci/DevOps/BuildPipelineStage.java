@@ -21,6 +21,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -168,308 +169,308 @@ public class BuildPipelineStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="buildRunnerShapeConfig", refs={BuildPipelineStageBuildRunnerShapeConfig.class}, tree="[0]")
-    private Output<BuildPipelineStageBuildRunnerShapeConfig> buildRunnerShapeConfig;
+    private Output</* @Nullable */ BuildPipelineStageBuildRunnerShapeConfig> buildRunnerShapeConfig;
 
     /**
      * @return (Updatable) The information about build runner.
      * 
      */
-    public Output<BuildPipelineStageBuildRunnerShapeConfig> buildRunnerShapeConfig() {
-        return this.buildRunnerShapeConfig;
+    public Output<Optional<BuildPipelineStageBuildRunnerShapeConfig>> buildRunnerShapeConfig() {
+        return Codegen.optional(this.buildRunnerShapeConfig);
     }
     /**
      * (Updatable) Collection of build sources.
      * 
      */
     @Export(name="buildSourceCollection", refs={BuildPipelineStageBuildSourceCollection.class}, tree="[0]")
-    private Output<BuildPipelineStageBuildSourceCollection> buildSourceCollection;
+    private Output</* @Nullable */ BuildPipelineStageBuildSourceCollection> buildSourceCollection;
 
     /**
      * @return (Updatable) Collection of build sources.
      * 
      */
-    public Output<BuildPipelineStageBuildSourceCollection> buildSourceCollection() {
-        return this.buildSourceCollection;
+    public Output<Optional<BuildPipelineStageBuildSourceCollection>> buildSourceCollection() {
+        return Codegen.optional(this.buildSourceCollection);
     }
     /**
      * (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * 
      */
     @Export(name="buildSpecFile", refs={String.class}, tree="[0]")
-    private Output<String> buildSpecFile;
+    private Output</* @Nullable */ String> buildSpecFile;
 
     /**
      * @return (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      * 
      */
-    public Output<String> buildSpecFile() {
-        return this.buildSpecFile;
+    public Output<Optional<String>> buildSpecFile() {
+        return Codegen.optional(this.buildSpecFile);
     }
     /**
      * The OCID of the compartment where the pipeline is created.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment where the pipeline is created.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      * 
      */
     @Export(name="deliverArtifactCollection", refs={BuildPipelineStageDeliverArtifactCollection.class}, tree="[0]")
-    private Output<BuildPipelineStageDeliverArtifactCollection> deliverArtifactCollection;
+    private Output</* @Nullable */ BuildPipelineStageDeliverArtifactCollection> deliverArtifactCollection;
 
     /**
      * @return (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      * 
      */
-    public Output<BuildPipelineStageDeliverArtifactCollection> deliverArtifactCollection() {
-        return this.deliverArtifactCollection;
+    public Output<Optional<BuildPipelineStageDeliverArtifactCollection>> deliverArtifactCollection() {
+        return Codegen.optional(this.deliverArtifactCollection);
     }
     /**
      * (Updatable) A target deployment pipeline OCID that will run in this stage.
      * 
      */
     @Export(name="deployPipelineId", refs={String.class}, tree="[0]")
-    private Output<String> deployPipelineId;
+    private Output</* @Nullable */ String> deployPipelineId;
 
     /**
      * @return (Updatable) A target deployment pipeline OCID that will run in this stage.
      * 
      */
-    public Output<String> deployPipelineId() {
-        return this.deployPipelineId;
+    public Output<Optional<String>> deployPipelineId() {
+        return Codegen.optional(this.deployPipelineId);
     }
     /**
      * (Updatable) Optional description about the stage.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Optional description about the stage.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Image name for the build environment
      * 
      */
     @Export(name="image", refs={String.class}, tree="[0]")
-    private Output<String> image;
+    private Output</* @Nullable */ String> image;
 
     /**
      * @return (Updatable) Image name for the build environment
      * 
      */
-    public Output<String> image() {
-        return this.image;
+    public Output<Optional<String>> image() {
+        return Codegen.optional(this.image);
     }
     /**
      * (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      * 
      */
     @Export(name="isPassAllParametersEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPassAllParametersEnabled;
+    private Output</* @Nullable */ Boolean> isPassAllParametersEnabled;
 
     /**
      * @return (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      * 
      */
-    public Output<Boolean> isPassAllParametersEnabled() {
-        return this.isPassAllParametersEnabled;
+    public Output<Optional<Boolean>> isPassAllParametersEnabled() {
+        return Codegen.optional(this.isPassAllParametersEnabled);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      * 
      */
     @Export(name="primaryBuildSource", refs={String.class}, tree="[0]")
-    private Output<String> primaryBuildSource;
+    private Output</* @Nullable */ String> primaryBuildSource;
 
     /**
      * @return (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      * 
      */
-    public Output<String> primaryBuildSource() {
-        return this.primaryBuildSource;
+    public Output<Optional<String>> primaryBuildSource() {
+        return Codegen.optional(this.primaryBuildSource);
     }
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
     @Export(name="privateAccessConfig", refs={BuildPipelineStagePrivateAccessConfig.class}, tree="[0]")
-    private Output<BuildPipelineStagePrivateAccessConfig> privateAccessConfig;
+    private Output</* @Nullable */ BuildPipelineStagePrivateAccessConfig> privateAccessConfig;
 
     /**
      * @return (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    public Output<BuildPipelineStagePrivateAccessConfig> privateAccessConfig() {
-        return this.privateAccessConfig;
+    public Output<Optional<BuildPipelineStagePrivateAccessConfig>> privateAccessConfig() {
+        return Codegen.optional(this.privateAccessConfig);
     }
     /**
      * The OCID of the DevOps project.
      * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
-    private Output<String> projectId;
+    private Output</* @Nullable */ String> projectId;
 
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    public Output<String> projectId() {
-        return this.projectId;
+    public Output<Optional<String>> projectId() {
+        return Codegen.optional(this.projectId);
     }
     /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      * 
      */
     @Export(name="stageExecutionTimeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> stageExecutionTimeoutInSeconds;
+    private Output</* @Nullable */ Integer> stageExecutionTimeoutInSeconds;
 
     /**
      * @return (Updatable) Timeout for the build stage execution. Specify value in seconds.
      * 
      */
-    public Output<Integer> stageExecutionTimeoutInSeconds() {
-        return this.stageExecutionTimeoutInSeconds;
+    public Output<Optional<Integer>> stageExecutionTimeoutInSeconds() {
+        return Codegen.optional(this.stageExecutionTimeoutInSeconds);
     }
     /**
      * The current state of the stage.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the stage.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      * 
      */
     @Export(name="waitCriteria", refs={BuildPipelineStageWaitCriteria.class}, tree="[0]")
-    private Output<BuildPipelineStageWaitCriteria> waitCriteria;
+    private Output</* @Nullable */ BuildPipelineStageWaitCriteria> waitCriteria;
 
     /**
      * @return (Updatable) Specifies wait criteria for the Wait stage.
      * 
      */
-    public Output<BuildPipelineStageWaitCriteria> waitCriteria() {
-        return this.waitCriteria;
+    public Output<Optional<BuildPipelineStageWaitCriteria>> waitCriteria() {
+        return Codegen.optional(this.waitCriteria);
     }
 
     /**

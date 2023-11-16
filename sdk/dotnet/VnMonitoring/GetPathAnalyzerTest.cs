@@ -108,11 +108,11 @@ namespace Pulumi.Oci.VnMonitoring
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Information describing a source or destination in a `PathAnalyzerTest` resource.
         /// </summary>
@@ -120,20 +120,20 @@ namespace Pulumi.Oci.VnMonitoring
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A unique identifier established when the resource is created. The identifier can't be changed later.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string PathAnalyzerTestId;
         /// <summary>
         /// The IP protocol to use for the `PathAnalyzerTest` resource.
         /// </summary>
-        public readonly int Protocol;
+        public readonly int? Protocol;
         /// <summary>
         /// Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         /// </summary>
@@ -149,37 +149,37 @@ namespace Pulumi.Oci.VnMonitoring
         /// <summary>
         /// The current state of the `PathAnalyzerTest` resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetPathAnalyzerTestResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetPathAnalyzerTestDestinationEndpointResult> destinationEndpoints,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             string pathAnalyzerTestId,
 
-            int protocol,
+            int? protocol,
 
             ImmutableArray<Outputs.GetPathAnalyzerTestProtocolParameterResult> protocolParameters,
 
@@ -187,13 +187,13 @@ namespace Pulumi.Oci.VnMonitoring
 
             ImmutableArray<Outputs.GetPathAnalyzerTestSourceEndpointResult> sourceEndpoints,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

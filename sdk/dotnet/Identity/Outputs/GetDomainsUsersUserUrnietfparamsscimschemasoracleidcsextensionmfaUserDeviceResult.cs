@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The authentication method.
         /// </summary>
-        public readonly string AuthenticationMethod;
+        public readonly string? AuthenticationMethod;
         /// <summary>
         /// A human readable name, primarily used for display purposes.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The device authentication factor status.
         /// </summary>
-        public readonly string FactorStatus;
+        public readonly string? FactorStatus;
         /// <summary>
         /// Authentication Factor Type
         /// </summary>
-        public readonly string FactorType;
+        public readonly string? FactorType;
         /// <summary>
         /// The last sync time for device.
         /// </summary>
-        public readonly string LastSyncTime;
+        public readonly string? LastSyncTime;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// A supplemental status indicating the reason why a user is disabled
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The third-party factor vendor name.
         /// </summary>
-        public readonly string ThirdPartyVendorName;
+        public readonly string? ThirdPartyVendorName;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceResult(
-            string authenticationMethod,
+            string? authenticationMethod,
 
-            string display,
+            string? display,
 
-            string factorStatus,
+            string? factorStatus,
 
-            string factorType,
+            string? factorType,
 
-            string lastSyncTime,
+            string? lastSyncTime,
 
-            string @ref,
+            string? @ref,
 
-            string status,
+            string? status,
 
-            string thirdPartyVendorName,
+            string? thirdPartyVendorName,
 
-            string value)
+            string? value)
         {
             AuthenticationMethod = authenticationMethod;
             Display = display;

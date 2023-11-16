@@ -13,6 +13,7 @@ import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyServicePortRa
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -100,14 +101,14 @@ public class NetworkFirewallPolicyService extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this service belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * (Updatable) List of port-ranges to be used.

@@ -62,23 +62,17 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationResult:
 
     @property
     @pulumi.getter(name="autoCaptureFilters")
-    def auto_capture_filters(self) -> Sequence['outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult']:
-        """
-        The capture filters used in automatic initial plan capture.
-        """
+    def auto_capture_filters(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilterResult']]:
         return pulumi.get(self, "auto_capture_filters")
 
     @property
     @pulumi.getter(name="autoSpmEvolveTaskParameters")
-    def auto_spm_evolve_task_parameters(self) -> Sequence['outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterResult']:
-        """
-        The set of parameters used in an SPM evolve task.
-        """
+    def auto_spm_evolve_task_parameters(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterResult']]:
         return pulumi.get(self, "auto_spm_evolve_task_parameters")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,34 +80,22 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationResult:
 
     @property
     @pulumi.getter(name="isAutoSpmEvolveTaskEnabled")
-    def is_auto_spm_evolve_task_enabled(self) -> bool:
-        """
-        Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
-        """
+    def is_auto_spm_evolve_task_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_spm_evolve_task_enabled")
 
     @property
     @pulumi.getter(name="isAutomaticInitialPlanCaptureEnabled")
-    def is_automatic_initial_plan_capture_enabled(self) -> bool:
-        """
-        Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
-        """
+    def is_automatic_initial_plan_capture_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_automatic_initial_plan_capture_enabled")
 
     @property
     @pulumi.getter(name="isHighFrequencyAutoSpmEvolveTaskEnabled")
-    def is_high_frequency_auto_spm_evolve_task_enabled(self) -> bool:
-        """
-        Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
-        """
+    def is_high_frequency_auto_spm_evolve_task_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_high_frequency_auto_spm_evolve_task_enabled")
 
     @property
     @pulumi.getter(name="isSqlPlanBaselinesUsageEnabled")
-    def is_sql_plan_baselines_usage_enabled(self) -> bool:
-        """
-        Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
-        """
+    def is_sql_plan_baselines_usage_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_sql_plan_baselines_usage_enabled")
 
     @property
@@ -123,34 +105,22 @@ class GetManagedDatabaseSqlPlanBaselineConfigurationResult:
 
     @property
     @pulumi.getter(name="planRetentionWeeks")
-    def plan_retention_weeks(self) -> int:
-        """
-        The number of weeks to retain unused plans before they are purged.
-        """
+    def plan_retention_weeks(self) -> Optional[int]:
         return pulumi.get(self, "plan_retention_weeks")
 
     @property
     @pulumi.getter(name="spaceBudgetMb")
-    def space_budget_mb(self) -> float:
-        """
-        The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
-        """
+    def space_budget_mb(self) -> Optional[float]:
         return pulumi.get(self, "space_budget_mb")
 
     @property
     @pulumi.getter(name="spaceBudgetPercent")
-    def space_budget_percent(self) -> float:
-        """
-        The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
-        """
+    def space_budget_percent(self) -> Optional[float]:
         return pulumi.get(self, "space_budget_percent")
 
     @property
     @pulumi.getter(name="spaceUsedMb")
-    def space_used_mb(self) -> float:
-        """
-        The space used by SQL Management Base in MB.
-        """
+    def space_used_mb(self) -> Optional[float]:
         return pulumi.get(self, "space_used_mb")
 
 
@@ -177,23 +147,7 @@ class AwaitableGetManagedDatabaseSqlPlanBaselineConfigurationResult(GetManagedDa
 def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Optional[str] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlPlanBaselineConfigurationResult:
     """
-    This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the configuration details of SQL plan baselines for the specified
-    Managed Database. The details include the settings for the capture and use of
-    SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -219,22 +173,6 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
 def get_managed_database_sql_plan_baseline_configuration_output(managed_database_id: Optional[pulumi.Input[str]] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]:
     """
-    This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the configuration details of SQL plan baselines for the specified
-    Managed Database. The details include the settings for the capture and use of
-    SQL plan baselines, SPM Evolve Advisor task, and SQL Management Base.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     ...

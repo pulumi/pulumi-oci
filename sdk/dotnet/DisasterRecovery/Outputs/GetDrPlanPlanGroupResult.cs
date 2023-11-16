@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The display name of the group.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of steps in the group.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The type of the DR plan.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDrPlanPlanGroupResult(
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDrPlanPlanGroupStepResult> steps,
 
-            string type)
+            string? type)
         {
             DisplayName = displayName;
             Id = id;

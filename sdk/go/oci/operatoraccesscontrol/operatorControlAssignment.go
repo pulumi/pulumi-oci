@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -72,39 +71,39 @@ type OperatorControlAssignment struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the user who created this operator control assignment.
-	AssignerId pulumi.StringOutput `pulumi:"assignerId"`
+	AssignerId pulumi.StringPtrOutput `pulumi:"assignerId"`
 	// (Updatable) Comment about the assignment of the operator control to this target resource.
-	Comment pulumi.StringOutput `pulumi:"comment"`
+	Comment pulumi.StringPtrOutput `pulumi:"comment"`
 	// (Updatable) The OCID of the compartment that contains the operator control assignment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
-	DetachmentDescription pulumi.StringOutput `pulumi:"detachmentDescription"`
+	DetachmentDescription pulumi.StringPtrOutput `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
-	ErrorCode pulumi.IntOutput `pulumi:"errorCode"`
+	ErrorCode pulumi.IntPtrOutput `pulumi:"errorCode"`
 	// The message describing the error occurred during Assignment operation.
-	ErrorMessage pulumi.StringOutput `pulumi:"errorMessage"`
+	ErrorMessage pulumi.StringPtrOutput `pulumi:"errorMessage"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The boolean if true would autoApprove during maintenance.
-	IsAutoApproveDuringMaintenance pulumi.BoolOutput `pulumi:"isAutoApproveDuringMaintenance"`
+	IsAutoApproveDuringMaintenance pulumi.BoolPtrOutput `pulumi:"isAutoApproveDuringMaintenance"`
 	// Whether the assignment is a default assignment.
-	IsDefaultAssignment pulumi.BoolOutput `pulumi:"isDefaultAssignment"`
+	IsDefaultAssignment pulumi.BoolPtrOutput `pulumi:"isDefaultAssignment"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
 	IsEnforcedAlways pulumi.BoolOutput `pulumi:"isEnforcedAlways"`
 	// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
-	IsLogForwarded pulumi.BoolOutput `pulumi:"isLogForwarded"`
+	IsLogForwarded pulumi.BoolPtrOutput `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control that is being assigned to a target resource.
 	OperatorControlId pulumi.StringOutput `pulumi:"operatorControlId"`
 	// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
-	RemoteSyslogServerAddress pulumi.StringOutput `pulumi:"remoteSyslogServerAddress"`
+	RemoteSyslogServerAddress pulumi.StringPtrOutput `pulumi:"remoteSyslogServerAddress"`
 	// (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
-	RemoteSyslogServerCaCert pulumi.StringOutput `pulumi:"remoteSyslogServerCaCert"`
+	RemoteSyslogServerCaCert pulumi.StringPtrOutput `pulumi:"remoteSyslogServerCaCert"`
 	// (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-	RemoteSyslogServerPort pulumi.IntOutput `pulumi:"remoteSyslogServerPort"`
+	RemoteSyslogServerPort pulumi.IntPtrOutput `pulumi:"remoteSyslogServerPort"`
 	// The OCID of the compartment that contains the target resource.
 	ResourceCompartmentId pulumi.StringOutput `pulumi:"resourceCompartmentId"`
 	// The OCID of the target resource being brought under the governance of the operator control.
@@ -114,20 +113,20 @@ type OperatorControlAssignment struct {
 	// Type of the target resource.
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// The current lifcycle state of the OperatorControl.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeAssignmentFrom pulumi.StringOutput `pulumi:"timeAssignmentFrom"`
+	TimeAssignmentFrom pulumi.StringPtrOutput `pulumi:"timeAssignmentFrom"`
 	// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeAssignmentTo pulumi.StringOutput `pulumi:"timeAssignmentTo"`
+	TimeAssignmentTo pulumi.StringPtrOutput `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfAssignment pulumi.StringOutput `pulumi:"timeOfAssignment"`
+	TimeOfAssignment pulumi.StringPtrOutput `pulumi:"timeOfAssignment"`
 	// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	TimeOfDeletion pulumi.StringOutput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrOutput `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
-	UnassignerId pulumi.StringOutput `pulumi:"unassignerId"`
+	UnassignerId pulumi.StringPtrOutput `pulumi:"unassignerId"`
 }
 
 // NewOperatorControlAssignment registers a new resource with the given unique name, arguments, and options.
@@ -408,12 +407,6 @@ func (i *OperatorControlAssignment) ToOperatorControlAssignmentOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlAssignmentOutput)
 }
 
-func (i *OperatorControlAssignment) ToOutput(ctx context.Context) pulumix.Output[*OperatorControlAssignment] {
-	return pulumix.Output[*OperatorControlAssignment]{
-		OutputState: i.ToOperatorControlAssignmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OperatorControlAssignmentArrayInput is an input type that accepts OperatorControlAssignmentArray and OperatorControlAssignmentArrayOutput values.
 // You can construct a concrete instance of `OperatorControlAssignmentArrayInput` via:
 //
@@ -437,12 +430,6 @@ func (i OperatorControlAssignmentArray) ToOperatorControlAssignmentArrayOutput()
 
 func (i OperatorControlAssignmentArray) ToOperatorControlAssignmentArrayOutputWithContext(ctx context.Context) OperatorControlAssignmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlAssignmentArrayOutput)
-}
-
-func (i OperatorControlAssignmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControlAssignment] {
-	return pulumix.Output[[]*OperatorControlAssignment]{
-		OutputState: i.ToOperatorControlAssignmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OperatorControlAssignmentMapInput is an input type that accepts OperatorControlAssignmentMap and OperatorControlAssignmentMapOutput values.
@@ -470,12 +457,6 @@ func (i OperatorControlAssignmentMap) ToOperatorControlAssignmentMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(OperatorControlAssignmentMapOutput)
 }
 
-func (i OperatorControlAssignmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControlAssignment] {
-	return pulumix.Output[map[string]*OperatorControlAssignment]{
-		OutputState: i.ToOperatorControlAssignmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OperatorControlAssignmentOutput struct{ *pulumi.OutputState }
 
 func (OperatorControlAssignmentOutput) ElementType() reflect.Type {
@@ -490,20 +471,14 @@ func (o OperatorControlAssignmentOutput) ToOperatorControlAssignmentOutputWithCo
 	return o
 }
 
-func (o OperatorControlAssignmentOutput) ToOutput(ctx context.Context) pulumix.Output[*OperatorControlAssignment] {
-	return pulumix.Output[*OperatorControlAssignment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the user who created this operator control assignment.
-func (o OperatorControlAssignmentOutput) AssignerId() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.AssignerId }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) AssignerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.AssignerId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Comment about the assignment of the operator control to this target resource.
-func (o OperatorControlAssignmentOutput) Comment() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.Comment }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.Comment }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the operator control assignment.
@@ -517,18 +492,18 @@ func (o OperatorControlAssignmentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // description containing reason for releasing of OperatorControl.
-func (o OperatorControlAssignmentOutput) DetachmentDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.DetachmentDescription }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) DetachmentDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.DetachmentDescription }).(pulumi.StringPtrOutput)
 }
 
 // The code identifying the error occurred during Assignment operation.
-func (o OperatorControlAssignmentOutput) ErrorCode() pulumi.IntOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.IntOutput { return v.ErrorCode }).(pulumi.IntOutput)
+func (o OperatorControlAssignmentOutput) ErrorCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.IntPtrOutput { return v.ErrorCode }).(pulumi.IntPtrOutput)
 }
 
 // The message describing the error occurred during Assignment operation.
-func (o OperatorControlAssignmentOutput) ErrorMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.ErrorMessage }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.ErrorMessage }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -537,13 +512,13 @@ func (o OperatorControlAssignmentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The boolean if true would autoApprove during maintenance.
-func (o OperatorControlAssignmentOutput) IsAutoApproveDuringMaintenance() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsAutoApproveDuringMaintenance }).(pulumi.BoolOutput)
+func (o OperatorControlAssignmentOutput) IsAutoApproveDuringMaintenance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolPtrOutput { return v.IsAutoApproveDuringMaintenance }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the assignment is a default assignment.
-func (o OperatorControlAssignmentOutput) IsDefaultAssignment() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsDefaultAssignment }).(pulumi.BoolOutput)
+func (o OperatorControlAssignmentOutput) IsDefaultAssignment() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolPtrOutput { return v.IsDefaultAssignment }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If set, then the target resource is always governed by the operator control.
@@ -552,13 +527,13 @@ func (o OperatorControlAssignmentOutput) IsEnforcedAlways() pulumi.BoolOutput {
 }
 
 // (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
-func (o OperatorControlAssignmentOutput) IsLogForwarded() pulumi.BoolOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolOutput { return v.IsLogForwarded }).(pulumi.BoolOutput)
+func (o OperatorControlAssignmentOutput) IsLogForwarded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.BoolPtrOutput { return v.IsLogForwarded }).(pulumi.BoolPtrOutput)
 }
 
 // More in detail about the lifeCycleState.
-func (o OperatorControlAssignmentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the operator control that is being assigned to a target resource.
@@ -567,18 +542,18 @@ func (o OperatorControlAssignmentOutput) OperatorControlId() pulumi.StringOutput
 }
 
 // (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
-func (o OperatorControlAssignmentOutput) RemoteSyslogServerAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.RemoteSyslogServerAddress }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) RemoteSyslogServerAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.RemoteSyslogServerAddress }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
-func (o OperatorControlAssignmentOutput) RemoteSyslogServerCaCert() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.RemoteSyslogServerCaCert }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) RemoteSyslogServerCaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.RemoteSyslogServerCaCert }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-func (o OperatorControlAssignmentOutput) RemoteSyslogServerPort() pulumi.IntOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.IntOutput { return v.RemoteSyslogServerPort }).(pulumi.IntOutput)
+func (o OperatorControlAssignmentOutput) RemoteSyslogServerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.IntPtrOutput { return v.RemoteSyslogServerPort }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the compartment that contains the target resource.
@@ -602,36 +577,36 @@ func (o OperatorControlAssignmentOutput) ResourceType() pulumi.StringOutput {
 }
 
 // The current lifcycle state of the OperatorControl.
-func (o OperatorControlAssignmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o OperatorControlAssignmentOutput) TimeAssignmentFrom() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.TimeAssignmentFrom }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) TimeAssignmentFrom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.TimeAssignmentFrom }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OperatorControlAssignmentOutput) TimeAssignmentTo() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.TimeAssignmentTo }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) TimeAssignmentTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.TimeAssignmentTo }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o OperatorControlAssignmentOutput) TimeOfAssignment() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.TimeOfAssignment }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) TimeOfAssignment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.TimeOfAssignment }).(pulumi.StringPtrOutput)
 }
 
 // Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-func (o OperatorControlAssignmentOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // User id who released the operatorControl.
-func (o OperatorControlAssignmentOutput) UnassignerId() pulumi.StringOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringOutput { return v.UnassignerId }).(pulumi.StringOutput)
+func (o OperatorControlAssignmentOutput) UnassignerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringPtrOutput { return v.UnassignerId }).(pulumi.StringPtrOutput)
 }
 
 type OperatorControlAssignmentArrayOutput struct{ *pulumi.OutputState }
@@ -646,12 +621,6 @@ func (o OperatorControlAssignmentArrayOutput) ToOperatorControlAssignmentArrayOu
 
 func (o OperatorControlAssignmentArrayOutput) ToOperatorControlAssignmentArrayOutputWithContext(ctx context.Context) OperatorControlAssignmentArrayOutput {
 	return o
-}
-
-func (o OperatorControlAssignmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OperatorControlAssignment] {
-	return pulumix.Output[[]*OperatorControlAssignment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperatorControlAssignmentArrayOutput) Index(i pulumi.IntInput) OperatorControlAssignmentOutput {
@@ -672,12 +641,6 @@ func (o OperatorControlAssignmentMapOutput) ToOperatorControlAssignmentMapOutput
 
 func (o OperatorControlAssignmentMapOutput) ToOperatorControlAssignmentMapOutputWithContext(ctx context.Context) OperatorControlAssignmentMapOutput {
 	return o
-}
-
-func (o OperatorControlAssignmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OperatorControlAssignment] {
-	return pulumix.Output[map[string]*OperatorControlAssignment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OperatorControlAssignmentMapOutput) MapIndex(k pulumi.StringInput) OperatorControlAssignmentOutput {

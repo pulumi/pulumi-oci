@@ -55,14 +55,11 @@ class GetManagementAgentCountResult:
     @property
     @pulumi.getter(name="hasPlugins")
     def has_plugins(self) -> Optional[bool]:
-        """
-        Whether or not a managementAgent has at least one plugin
-        """
         return pulumi.get(self, "has_plugins")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,17 +68,11 @@ class GetManagementAgentCountResult:
     @property
     @pulumi.getter(name="installType")
     def install_type(self) -> Optional[str]:
-        """
-        The install type, either AGENT or GATEWAY
-        """
         return pulumi.get(self, "install_type")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagementAgentCountItemResult']:
-        """
-        List in which each item describes an aggregation of Managment Agents
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagementAgentCountItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -105,28 +96,7 @@ def get_management_agent_count(compartment_id: Optional[str] = None,
                                install_type: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentCountResult:
     """
-    This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
-    Supported groupBy parameters: availabilityStatus, platformType, version
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_count = oci.ManagementAgent.get_management_agent_count(compartment_id=var["compartment_id"],
-        group_bies=var["management_agent_count_group_by"],
-        has_plugins=var["management_agent_count_has_plugins"],
-        install_type=var["management_agent_count_install_type"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param Sequence[str] group_bies: The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
-    :param bool has_plugins: When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-    :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -152,27 +122,6 @@ def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[str]
                                       install_type: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentCountResult]:
     """
-    This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
-    Supported groupBy parameters: availabilityStatus, platformType, version
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_count = oci.ManagementAgent.get_management_agent_count(compartment_id=var["compartment_id"],
-        group_bies=var["management_agent_count_group_by"],
-        has_plugins=var["management_agent_count_has_plugins"],
-        install_type=var["management_agent_count_install_type"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param Sequence[str] group_bies: The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
-    :param bool has_plugins: When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-    :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+    Use this data source to access information about an existing resource.
     """
     ...

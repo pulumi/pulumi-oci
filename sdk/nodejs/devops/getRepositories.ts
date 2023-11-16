@@ -79,7 +79,7 @@ export interface GetRepositoriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique name of a repository. This value is mutable.
      */
@@ -91,7 +91,7 @@ export interface GetRepositoriesResult {
     /**
      * The list of repository_collection.
      */
-    readonly repositoryCollections: outputs.DevOps.GetRepositoriesRepositoryCollection[];
+    readonly repositoryCollections?: outputs.DevOps.GetRepositoriesRepositoryCollection[];
     readonly repositoryId?: string;
     /**
      * The current state of the repository.

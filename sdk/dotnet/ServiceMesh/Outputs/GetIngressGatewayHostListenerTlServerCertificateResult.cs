@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         /// </summary>
-        public readonly string CertificateId;
+        public readonly string? CertificateId;
         /// <summary>
         /// Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         /// </summary>
-        public readonly string SecretName;
+        public readonly string? SecretName;
         /// <summary>
         /// Type of certificate.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetIngressGatewayHostListenerTlServerCertificateResult(
-            string certificateId,
+            string? certificateId,
 
-            string secretName,
+            string? secretName,
 
-            string type)
+            string? type)
         {
             CertificateId = certificateId;
             SecretName = secretName;

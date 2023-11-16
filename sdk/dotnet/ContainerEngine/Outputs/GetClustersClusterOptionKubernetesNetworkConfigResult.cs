@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
         /// </summary>
-        public readonly string PodsCidr;
+        public readonly string? PodsCidr;
         /// <summary>
         /// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
         /// </summary>
-        public readonly string ServicesCidr;
+        public readonly string? ServicesCidr;
 
         [OutputConstructor]
         private GetClustersClusterOptionKubernetesNetworkConfigResult(
-            string podsCidr,
+            string? podsCidr,
 
-            string servicesCidr)
+            string? servicesCidr)
         {
             PodsCidr = podsCidr;
             ServicesCidr = servicesCidr;

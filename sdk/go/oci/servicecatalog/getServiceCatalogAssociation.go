@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -60,16 +59,16 @@ type GetServiceCatalogAssociationArgs struct {
 // A collection of values returned by getServiceCatalogAssociation.
 type GetServiceCatalogAssociationResult struct {
 	// Identifier of the entity being associated with service catalog.
-	EntityId string `pulumi:"entityId"`
+	EntityId *string `pulumi:"entityId"`
 	// The type of the entity that is associated with the service catalog.
-	EntityType string `pulumi:"entityType"`
+	EntityType *string `pulumi:"entityType"`
 	// Identifier of the association.
-	Id                          string `pulumi:"id"`
-	ServiceCatalogAssociationId string `pulumi:"serviceCatalogAssociationId"`
+	Id                          *string `pulumi:"id"`
+	ServiceCatalogAssociationId string  `pulumi:"serviceCatalogAssociationId"`
 	// Identifier of the service catalog.
-	ServiceCatalogId string `pulumi:"serviceCatalogId"`
+	ServiceCatalogId *string `pulumi:"serviceCatalogId"`
 	// Timestamp of when the resource was associated with service catalog.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func GetServiceCatalogAssociationOutput(ctx *pulumi.Context, args GetServiceCatalogAssociationOutputArgs, opts ...pulumi.InvokeOption) GetServiceCatalogAssociationResultOutput {
@@ -110,25 +109,19 @@ func (o GetServiceCatalogAssociationResultOutput) ToGetServiceCatalogAssociation
 	return o
 }
 
-func (o GetServiceCatalogAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogAssociationResult] {
-	return pulumix.Output[GetServiceCatalogAssociationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Identifier of the entity being associated with service catalog.
-func (o GetServiceCatalogAssociationResultOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogAssociationResult) string { return v.EntityId }).(pulumi.StringOutput)
+func (o GetServiceCatalogAssociationResultOutput) EntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogAssociationResult) *string { return v.EntityId }).(pulumi.StringPtrOutput)
 }
 
 // The type of the entity that is associated with the service catalog.
-func (o GetServiceCatalogAssociationResultOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogAssociationResult) string { return v.EntityType }).(pulumi.StringOutput)
+func (o GetServiceCatalogAssociationResultOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogAssociationResult) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
 // Identifier of the association.
-func (o GetServiceCatalogAssociationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogAssociationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceCatalogAssociationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogAssociationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetServiceCatalogAssociationResultOutput) ServiceCatalogAssociationId() pulumi.StringOutput {
@@ -136,13 +129,13 @@ func (o GetServiceCatalogAssociationResultOutput) ServiceCatalogAssociationId() 
 }
 
 // Identifier of the service catalog.
-func (o GetServiceCatalogAssociationResultOutput) ServiceCatalogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogAssociationResult) string { return v.ServiceCatalogId }).(pulumi.StringOutput)
+func (o GetServiceCatalogAssociationResultOutput) ServiceCatalogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogAssociationResult) *string { return v.ServiceCatalogId }).(pulumi.StringPtrOutput)
 }
 
 // Timestamp of when the resource was associated with service catalog.
-func (o GetServiceCatalogAssociationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogAssociationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetServiceCatalogAssociationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogAssociationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

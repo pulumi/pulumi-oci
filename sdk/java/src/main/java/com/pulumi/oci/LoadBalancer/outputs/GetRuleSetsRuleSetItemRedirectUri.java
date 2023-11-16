@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRuleSetsRuleSetItemRedirectUri {
@@ -14,63 +16,63 @@ public final class GetRuleSetsRuleSetItemRedirectUri {
      * @return The valid domain name (hostname) or IP address to use in the redirect URI.
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return The HTTP URI path to use in the redirect URI.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return The communication port to use in the redirect URI.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The HTTP protocol to use in the redirect URI.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The query string to use in the redirect URI.
      * 
      */
-    private String query;
+    private @Nullable String query;
 
     private GetRuleSetsRuleSetItemRedirectUri() {}
     /**
      * @return The valid domain name (hostname) or IP address to use in the redirect URI.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return The HTTP URI path to use in the redirect URI.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return The communication port to use in the redirect URI.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The HTTP protocol to use in the redirect URI.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The query string to use in the redirect URI.
      * 
      */
-    public String query() {
-        return this.query;
+    public Optional<String> query() {
+        return Optional.ofNullable(this.query);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetRuleSetsRuleSetItemRedirectUri {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
-        private String path;
-        private Integer port;
-        private String protocol;
-        private String query;
+        private @Nullable String host;
+        private @Nullable String path;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String query;
         public Builder() {}
         public Builder(GetRuleSetsRuleSetItemRedirectUri defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetRuleSetsRuleSetItemRedirectUri {
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+        public Builder query(@Nullable String query) {
+            this.query = query;
             return this;
         }
         public GetRuleSetsRuleSetItemRedirectUri build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -59,21 +58,21 @@ type GetPrivateApplicationPackageArgs struct {
 
 // A collection of values returned by getPrivateApplicationPackage.
 type GetPrivateApplicationPackageResult struct {
-	ContentUrl string `pulumi:"contentUrl"`
+	ContentUrl *string `pulumi:"contentUrl"`
 	// The display name of the package.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	MimeType string `pulumi:"mimeType"`
+	Id       *string `pulumi:"id"`
+	MimeType *string `pulumi:"mimeType"`
 	// The specified package's type.
-	PackageType string `pulumi:"packageType"`
+	PackageType *string `pulumi:"packageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
-	PrivateApplicationId        string `pulumi:"privateApplicationId"`
-	PrivateApplicationPackageId string `pulumi:"privateApplicationPackageId"`
+	PrivateApplicationId        *string `pulumi:"privateApplicationId"`
+	PrivateApplicationPackageId string  `pulumi:"privateApplicationPackageId"`
 	// The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The package version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func GetPrivateApplicationPackageOutput(ctx *pulumi.Context, args GetPrivateApplicationPackageOutputArgs, opts ...pulumi.InvokeOption) GetPrivateApplicationPackageResultOutput {
@@ -114,38 +113,32 @@ func (o GetPrivateApplicationPackageResultOutput) ToGetPrivateApplicationPackage
 	return o
 }
 
-func (o GetPrivateApplicationPackageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationPackageResult] {
-	return pulumix.Output[GetPrivateApplicationPackageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetPrivateApplicationPackageResultOutput) ContentUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.ContentUrl }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) ContentUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.ContentUrl }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the package.
-func (o GetPrivateApplicationPackageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPrivateApplicationPackageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetPrivateApplicationPackageResultOutput) MimeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.MimeType }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) MimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.MimeType }).(pulumi.StringPtrOutput)
 }
 
 // The specified package's type.
-func (o GetPrivateApplicationPackageResultOutput) PackageType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.PackageType }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
-func (o GetPrivateApplicationPackageResultOutput) PrivateApplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.PrivateApplicationId }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) PrivateApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.PrivateApplicationId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPrivateApplicationPackageResultOutput) PrivateApplicationPackageId() pulumi.StringOutput {
@@ -153,13 +146,13 @@ func (o GetPrivateApplicationPackageResultOutput) PrivateApplicationPackageId() 
 }
 
 // The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
-func (o GetPrivateApplicationPackageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The package version.
-func (o GetPrivateApplicationPackageResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateApplicationPackageResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetPrivateApplicationPackageResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateApplicationPackageResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

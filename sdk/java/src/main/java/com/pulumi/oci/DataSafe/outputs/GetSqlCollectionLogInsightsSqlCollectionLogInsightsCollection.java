@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection {
@@ -14,7 +15,7 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
      * @return The aggregated data point items.
      * 
      */
-    private List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items;
+    private @Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items;
 
     private GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
      * 
      */
     public List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items;
+        private @Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items;
         public Builder() {}
         public Builder(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem... items) {

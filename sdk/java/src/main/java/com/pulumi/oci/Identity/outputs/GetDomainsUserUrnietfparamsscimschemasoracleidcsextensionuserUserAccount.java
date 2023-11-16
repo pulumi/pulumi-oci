@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount {
@@ -14,63 +16,63 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * @return Status of the account
      * 
      */
-    private Boolean active;
+    private @Nullable Boolean active;
     /**
      * @return The ID of the App in this Grant.
      * 
      */
-    private String appId;
+    private @Nullable String appId;
     /**
      * @return Name of the account assigned to the User.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount() {}
     /**
      * @return Status of the account
      * 
      */
-    public Boolean active() {
-        return this.active;
+    public Optional<Boolean> active() {
+        return Optional.ofNullable(this.active);
     }
     /**
      * @return The ID of the App in this Grant.
      * 
      */
-    public String appId() {
-        return this.appId;
+    public Optional<String> appId() {
+        return Optional.ofNullable(this.appId);
     }
     /**
      * @return Name of the account assigned to the User.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean active;
-        private String appId;
-        private String name;
-        private String ref;
-        private String value;
+        private @Nullable Boolean active;
+        private @Nullable String appId;
+        private @Nullable String name;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
 
         @CustomType.Setter
-        public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+        public Builder active(@Nullable Boolean active) {
+            this.active = active;
             return this;
         }
         @CustomType.Setter
-        public Builder appId(String appId) {
-            this.appId = Objects.requireNonNull(appId);
+        public Builder appId(@Nullable String appId) {
+            this.appId = appId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount build() {

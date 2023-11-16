@@ -165,7 +165,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the ODMS on-premises Agent.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             ImmutableArray<Outputs.GetAgentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

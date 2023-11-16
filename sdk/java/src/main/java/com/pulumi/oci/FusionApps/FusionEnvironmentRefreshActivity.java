@@ -13,6 +13,7 @@ import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentRefreshActivityRefresh
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -67,14 +68,14 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A friendly name for the refresh activity. Can be changed later.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * unique FusionEnvironment identifier
@@ -95,48 +96,48 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     @Export(name="refreshActivityId", refs={String.class}, tree="[0]")
-    private Output<String> refreshActivityId;
+    private Output</* @Nullable */ String> refreshActivityId;
 
-    public Output<String> refreshActivityId() {
-        return this.refreshActivityId;
+    public Output<Optional<String>> refreshActivityId() {
+        return Codegen.optional(this.refreshActivityId);
     }
     /**
      * Details of refresh investigation information, each item represents a different issue.
      * 
      */
     @Export(name="refreshIssueDetailsLists", refs={List.class,FusionEnvironmentRefreshActivityRefreshIssueDetailsList.class}, tree="[0,1]")
-    private Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> refreshIssueDetailsLists;
+    private Output</* @Nullable */ List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> refreshIssueDetailsLists;
 
     /**
      * @return Details of refresh investigation information, each item represents a different issue.
      * 
      */
-    public Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> refreshIssueDetailsLists() {
-        return this.refreshIssueDetailsLists;
+    public Output<Optional<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>>> refreshIssueDetailsLists() {
+        return Codegen.optional(this.refreshIssueDetailsLists);
     }
     /**
      * Service availability / impact during refresh activity execution up down
      * 
      */
     @Export(name="serviceAvailability", refs={String.class}, tree="[0]")
-    private Output<String> serviceAvailability;
+    private Output</* @Nullable */ String> serviceAvailability;
 
     /**
      * @return Service availability / impact during refresh activity execution up down
      * 
      */
-    public Output<String> serviceAvailability() {
-        return this.serviceAvailability;
+    public Output<Optional<String>> serviceAvailability() {
+        return Codegen.optional(this.serviceAvailability);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
@@ -163,84 +164,84 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the refreshActivity.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeAccepted", refs={String.class}, tree="[0]")
-    private Output<String> timeAccepted;
+    private Output</* @Nullable */ String> timeAccepted;
 
     /**
      * @return The time the refresh activity record was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeAccepted() {
-        return this.timeAccepted;
+    public Output<Optional<String>> timeAccepted() {
+        return Codegen.optional(this.timeAccepted);
     }
     /**
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeExpectedFinish", refs={String.class}, tree="[0]")
-    private Output<String> timeExpectedFinish;
+    private Output</* @Nullable */ String> timeExpectedFinish;
 
     /**
      * @return The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeExpectedFinish() {
-        return this.timeExpectedFinish;
+    public Output<Optional<String>> timeExpectedFinish() {
+        return Codegen.optional(this.timeExpectedFinish);
     }
     /**
      * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * The date and time of the most recent source environment backup used for the environment refresh.
      * 
      */
     @Export(name="timeOfRestorationPoint", refs={String.class}, tree="[0]")
-    private Output<String> timeOfRestorationPoint;
+    private Output</* @Nullable */ String> timeOfRestorationPoint;
 
     /**
      * @return The date and time of the most recent source environment backup used for the environment refresh.
      * 
      */
-    public Output<String> timeOfRestorationPoint() {
-        return this.timeOfRestorationPoint;
+    public Output<Optional<String>> timeOfRestorationPoint() {
+        return Codegen.optional(this.timeOfRestorationPoint);
     }
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

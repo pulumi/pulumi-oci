@@ -80,7 +80,7 @@ export interface GetSoftwareSourcePackageGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Package group name.
      */
@@ -89,7 +89,7 @@ export interface GetSoftwareSourcePackageGroupsResult {
     /**
      * The list of package_group_collection.
      */
-    readonly packageGroupCollections: outputs.OsManagementHub.GetSoftwareSourcePackageGroupsPackageGroupCollection[];
+    readonly packageGroupCollections?: outputs.OsManagementHub.GetSoftwareSourcePackageGroupsPackageGroupCollection[];
     readonly softwareSourceId: string;
 }
 /**

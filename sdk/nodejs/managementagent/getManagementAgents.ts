@@ -143,7 +143,7 @@ export interface GetManagementAgentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The install type, either AGENT or GATEWAY
      */
@@ -155,7 +155,7 @@ export interface GetManagementAgentsResult {
     /**
      * The list of management_agents.
      */
-    readonly managementAgents: outputs.ManagementAgent.GetManagementAgentsManagementAgent[];
+    readonly managementAgents?: outputs.ManagementAgent.GetManagementAgentsManagementAgent[];
     /**
      * Platform Type
      */

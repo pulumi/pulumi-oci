@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The connector details used to connect to the external DB system component.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         /// </summary>
-        public readonly bool IsSelectedForMonitoring;
+        public readonly bool? IsSelectedForMonitoring;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult> connectors,
 
-            string displayName,
+            string? displayName,
 
-            bool isSelectedForMonitoring)
+            bool? isSelectedForMonitoring)
         {
             CompartmentId = compartmentId;
             Connectors = connectors;

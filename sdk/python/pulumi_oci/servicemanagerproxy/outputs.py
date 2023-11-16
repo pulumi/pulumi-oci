@@ -23,80 +23,58 @@ __all__ = [
 @pulumi.output_type
 class GetServiceEnvironmentServiceDefinitionResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 short_display_name: str,
-                 type: str):
-        """
-        :param str display_name: Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
-        :param str short_display_name: Short display name of the service. For example, "Retail Order Management".
-        :param str type: The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "short_display_name", short_display_name)
-        pulumi.set(__self__, "type", type)
+                 display_name: Optional[str] = None,
+                 short_display_name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if short_display_name is not None:
+            pulumi.set(__self__, "short_display_name", short_display_name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="shortDisplayName")
-    def short_display_name(self) -> str:
-        """
-        Short display name of the service. For example, "Retail Order Management".
-        """
+    def short_display_name(self) -> Optional[str]:
         return pulumi.get(self, "short_display_name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetServiceEnvironmentServiceEnvironmentEndpointResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 environment_type: str,
-                 url: str):
-        """
-        :param str description: Description of the environment link
-        :param str environment_type: Service environment endpoint type.
-        :param str url: Service environment instance URL.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "environment_type", environment_type)
-        pulumi.set(__self__, "url", url)
+                 description: Optional[str] = None,
+                 environment_type: Optional[str] = None,
+                 url: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if environment_type is not None:
+            pulumi.set(__self__, "environment_type", environment_type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the environment link
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="environmentType")
-    def environment_type(self) -> str:
-        """
-        Service environment endpoint type.
-        """
+    def environment_type(self) -> Optional[str]:
         return pulumi.get(self, "environment_type")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        Service environment instance URL.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -130,190 +108,148 @@ class GetServiceEnvironmentsFilterResult(dict):
 @pulumi.output_type
 class GetServiceEnvironmentsServiceEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 console_url: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 service_definitions: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult'],
-                 service_environment_endpoints: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult'],
-                 status: str,
-                 subscription_id: str):
-        """
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        :param str console_url: The URL for the console.
-        :param str id: Unqiue identifier for the entitlement related to the environment.
-        :param Sequence['GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionArgs'] service_definitions: Details for a service definition.
-        :param Sequence['GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointArgs'] service_environment_endpoints: Array of service environment end points.
-        :param str status: Status of the entitlement registration for the service.
-        :param str subscription_id: The unique subscription ID associated with the service environment ID.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "console_url", console_url)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_definitions", service_definitions)
-        pulumi.set(__self__, "service_environment_endpoints", service_environment_endpoints)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "subscription_id", subscription_id)
+                 compartment_id: Optional[str] = None,
+                 console_url: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 service_definitions: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult']] = None,
+                 service_environment_endpoints: Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult']] = None,
+                 status: Optional[str] = None,
+                 subscription_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if console_url is not None:
+            pulumi.set(__self__, "console_url", console_url)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if service_definitions is not None:
+            pulumi.set(__self__, "service_definitions", service_definitions)
+        if service_environment_endpoints is not None:
+            pulumi.set(__self__, "service_environment_endpoints", service_environment_endpoints)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consoleUrl")
-    def console_url(self) -> str:
-        """
-        The URL for the console.
-        """
+    def console_url(self) -> Optional[str]:
         return pulumi.get(self, "console_url")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unqiue identifier for the entitlement related to the environment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="serviceDefinitions")
-    def service_definitions(self) -> Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult']:
-        """
-        Details for a service definition.
-        """
+    def service_definitions(self) -> Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult']]:
         return pulumi.get(self, "service_definitions")
 
     @property
     @pulumi.getter(name="serviceEnvironmentEndpoints")
-    def service_environment_endpoints(self) -> Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult']:
-        """
-        Array of service environment end points.
-        """
+    def service_environment_endpoints(self) -> Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult']]:
         return pulumi.get(self, "service_environment_endpoints")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the entitlement registration for the service.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
-        """
-        The unique subscription ID associated with the service environment ID.
-        """
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
 
 @pulumi.output_type
 class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 short_display_name: str,
-                 type: str):
-        """
-        :param str display_name: The display name of the resource.
-        :param str short_display_name: Short display name of the service. For example, "Retail Order Management".
-        :param str type: The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "short_display_name", short_display_name)
-        pulumi.set(__self__, "type", type)
+                 display_name: Optional[str] = None,
+                 short_display_name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if short_display_name is not None:
+            pulumi.set(__self__, "short_display_name", short_display_name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="shortDisplayName")
-    def short_display_name(self) -> str:
-        """
-        Short display name of the service. For example, "Retail Order Management".
-        """
+    def short_display_name(self) -> Optional[str]:
         return pulumi.get(self, "short_display_name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 environment_type: str,
-                 url: str):
-        """
-        :param str description: Description of the environment link
-        :param str environment_type: Service environment endpoint type.
-        :param str url: Service environment instance URL.
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "environment_type", environment_type)
-        pulumi.set(__self__, "url", url)
+                 description: Optional[str] = None,
+                 environment_type: Optional[str] = None,
+                 url: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if environment_type is not None:
+            pulumi.set(__self__, "environment_type", environment_type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the environment link
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="environmentType")
-    def environment_type(self) -> str:
-        """
-        Service environment endpoint type.
-        """
+    def environment_type(self) -> Optional[str]:
         return pulumi.get(self, "environment_type")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        Service environment instance URL.
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 

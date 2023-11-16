@@ -47,78 +47,78 @@ export interface GetCertificateResult {
     /**
      * The data of the SSL certificate.
      */
-    readonly certificateData: string;
+    readonly certificateData?: string;
     readonly certificateId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name of the SSL certificate.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      */
-    readonly extensions: outputs.Waas.GetCertificateExtension[];
+    readonly extensions?: outputs.Waas.GetCertificateExtension[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
      */
-    readonly isTrustVerificationDisabled: boolean;
-    readonly issuedBy: string;
+    readonly isTrustVerificationDisabled?: boolean;
+    readonly issuedBy?: string;
     /**
      * The issuer of the certificate.
      */
-    readonly issuerNames: outputs.Waas.GetCertificateIssuerName[];
-    readonly privateKeyData: string;
+    readonly issuerNames?: outputs.Waas.GetCertificateIssuerName[];
+    readonly privateKeyData?: string;
     /**
      * Information about the public key and the algorithm used by the public key.
      */
-    readonly publicKeyInfos: outputs.Waas.GetCertificatePublicKeyInfo[];
+    readonly publicKeyInfos?: outputs.Waas.GetCertificatePublicKeyInfo[];
     /**
      * A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      */
-    readonly serialNumber: string;
+    readonly serialNumber?: string;
     /**
      * The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      */
-    readonly signatureAlgorithm: string;
+    readonly signatureAlgorithm?: string;
     /**
      * The current lifecycle state of the SSL certificate.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The entity to be secured by the certificate.
      */
-    readonly subjectNames: outputs.Waas.GetCertificateSubjectName[];
+    readonly subjectNames?: outputs.Waas.GetCertificateSubjectName[];
     /**
      * The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      */
-    readonly timeNotValidAfter: string;
+    readonly timeNotValidAfter?: string;
     /**
      * The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      */
-    readonly timeNotValidBefore: string;
+    readonly timeNotValidBefore?: string;
     /**
      * The version of the encoded certificate.
      */
-    readonly version: number;
+    readonly version?: number;
 }
 /**
  * This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

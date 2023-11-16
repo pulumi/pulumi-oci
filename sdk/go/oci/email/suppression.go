@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
@@ -67,17 +66,17 @@ type Suppression struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EmailAddress pulumi.StringOutput `pulumi:"emailAddress"`
 	// The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-	ErrorDetail pulumi.StringOutput `pulumi:"errorDetail"`
+	ErrorDetail pulumi.StringPtrOutput `pulumi:"errorDetail"`
 	// DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-	ErrorSource pulumi.StringOutput `pulumi:"errorSource"`
+	ErrorSource pulumi.StringPtrOutput `pulumi:"errorSource"`
 	// The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-	MessageId pulumi.StringOutput `pulumi:"messageId"`
+	MessageId pulumi.StringPtrOutput `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	Reason pulumi.StringOutput `pulumi:"reason"`
+	Reason pulumi.StringPtrOutput `pulumi:"reason"`
 	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeLastSuppressed pulumi.StringOutput `pulumi:"timeLastSuppressed"`
+	TimeLastSuppressed pulumi.StringPtrOutput `pulumi:"timeLastSuppressed"`
 }
 
 // NewSuppression registers a new resource with the given unique name, arguments, and options.
@@ -207,12 +206,6 @@ func (i *Suppression) ToSuppressionOutputWithContext(ctx context.Context) Suppre
 	return pulumi.ToOutputWithContext(ctx, i).(SuppressionOutput)
 }
 
-func (i *Suppression) ToOutput(ctx context.Context) pulumix.Output[*Suppression] {
-	return pulumix.Output[*Suppression]{
-		OutputState: i.ToSuppressionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SuppressionArrayInput is an input type that accepts SuppressionArray and SuppressionArrayOutput values.
 // You can construct a concrete instance of `SuppressionArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i SuppressionArray) ToSuppressionArrayOutput() SuppressionArrayOutput {
 
 func (i SuppressionArray) ToSuppressionArrayOutputWithContext(ctx context.Context) SuppressionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SuppressionArrayOutput)
-}
-
-func (i SuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Suppression] {
-	return pulumix.Output[[]*Suppression]{
-		OutputState: i.ToSuppressionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SuppressionMapInput is an input type that accepts SuppressionMap and SuppressionMapOutput values.
@@ -269,12 +256,6 @@ func (i SuppressionMap) ToSuppressionMapOutputWithContext(ctx context.Context) S
 	return pulumi.ToOutputWithContext(ctx, i).(SuppressionMapOutput)
 }
 
-func (i SuppressionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Suppression] {
-	return pulumix.Output[map[string]*Suppression]{
-		OutputState: i.ToSuppressionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SuppressionOutput struct{ *pulumi.OutputState }
 
 func (SuppressionOutput) ElementType() reflect.Type {
@@ -287,12 +268,6 @@ func (o SuppressionOutput) ToSuppressionOutput() SuppressionOutput {
 
 func (o SuppressionOutput) ToSuppressionOutputWithContext(ctx context.Context) SuppressionOutput {
 	return o
-}
-
-func (o SuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[*Suppression] {
-	return pulumix.Output[*Suppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
@@ -309,33 +284,33 @@ func (o SuppressionOutput) EmailAddress() pulumi.StringOutput {
 }
 
 // The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-func (o SuppressionOutput) ErrorDetail() pulumi.StringOutput {
-	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.ErrorDetail }).(pulumi.StringOutput)
+func (o SuppressionOutput) ErrorDetail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Suppression) pulumi.StringPtrOutput { return v.ErrorDetail }).(pulumi.StringPtrOutput)
 }
 
 // DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-func (o SuppressionOutput) ErrorSource() pulumi.StringOutput {
-	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.ErrorSource }).(pulumi.StringOutput)
+func (o SuppressionOutput) ErrorSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Suppression) pulumi.StringPtrOutput { return v.ErrorSource }).(pulumi.StringPtrOutput)
 }
 
 // The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-func (o SuppressionOutput) MessageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.MessageId }).(pulumi.StringOutput)
+func (o SuppressionOutput) MessageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Suppression) pulumi.StringPtrOutput { return v.MessageId }).(pulumi.StringPtrOutput)
 }
 
 // The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o SuppressionOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.Reason }).(pulumi.StringOutput)
+func (o SuppressionOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Suppression) pulumi.StringPtrOutput { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 // The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o SuppressionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SuppressionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Suppression) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o SuppressionOutput) TimeLastSuppressed() pulumi.StringOutput {
-	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.TimeLastSuppressed }).(pulumi.StringOutput)
+func (o SuppressionOutput) TimeLastSuppressed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Suppression) pulumi.StringPtrOutput { return v.TimeLastSuppressed }).(pulumi.StringPtrOutput)
 }
 
 type SuppressionArrayOutput struct{ *pulumi.OutputState }
@@ -350,12 +325,6 @@ func (o SuppressionArrayOutput) ToSuppressionArrayOutput() SuppressionArrayOutpu
 
 func (o SuppressionArrayOutput) ToSuppressionArrayOutputWithContext(ctx context.Context) SuppressionArrayOutput {
 	return o
-}
-
-func (o SuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Suppression] {
-	return pulumix.Output[[]*Suppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SuppressionArrayOutput) Index(i pulumi.IntInput) SuppressionOutput {
@@ -376,12 +345,6 @@ func (o SuppressionMapOutput) ToSuppressionMapOutput() SuppressionMapOutput {
 
 func (o SuppressionMapOutput) ToSuppressionMapOutputWithContext(ctx context.Context) SuppressionMapOutput {
 	return o
-}
-
-func (o SuppressionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Suppression] {
-	return pulumix.Output[map[string]*Suppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SuppressionMapOutput) MapIndex(k pulumi.StringInput) SuppressionOutput {

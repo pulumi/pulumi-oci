@@ -20,7 +20,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The name of the entity to be queried.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// List of corresponding osFamilies.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         private GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemResult(
             ImmutableArray<string> archTypes,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> osFamilies)
         {

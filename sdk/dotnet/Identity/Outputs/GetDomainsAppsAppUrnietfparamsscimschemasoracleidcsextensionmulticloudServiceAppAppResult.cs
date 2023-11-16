@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The multicloud platform service URL which the application will invoke for runtime operations such as AWSCredentials api invocation
         /// </summary>
-        public readonly string MulticloudPlatformUrl;
+        public readonly string? MulticloudPlatformUrl;
         /// <summary>
         /// Specifies the service type for which the application is configured for multicloud integration. For applicable external service types, app will invoke multicloud service for runtime operations
         /// </summary>
-        public readonly string MulticloudServiceType;
+        public readonly string? MulticloudServiceType;
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppResult(
-            string multicloudPlatformUrl,
+            string? multicloudPlatformUrl,
 
-            string multicloudServiceType)
+            string? multicloudServiceType)
         {
             MulticloudPlatformUrl = multicloudPlatformUrl;
             MulticloudServiceType = multicloudServiceType;

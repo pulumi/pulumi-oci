@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp {
@@ -14,39 +16,39 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionw
      * @return If this Attribute is true, resource ref id and resource ref name attributes will we included in wtp json response.
      * 
      */
-    private Boolean resourceRef;
+    private @Nullable Boolean resourceRef;
     /**
      * @return Webtier policy AZ Control
      * 
      */
-    private String webTierPolicyAzControl;
+    private @Nullable String webTierPolicyAzControl;
     /**
      * @return Store the web tier policy for an application as a string in Javascript Object Notification (JSON) format.
      * 
      */
-    private String webTierPolicyJson;
+    private @Nullable String webTierPolicyJson;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp() {}
     /**
      * @return If this Attribute is true, resource ref id and resource ref name attributes will we included in wtp json response.
      * 
      */
-    public Boolean resourceRef() {
-        return this.resourceRef;
+    public Optional<Boolean> resourceRef() {
+        return Optional.ofNullable(this.resourceRef);
     }
     /**
      * @return Webtier policy AZ Control
      * 
      */
-    public String webTierPolicyAzControl() {
-        return this.webTierPolicyAzControl;
+    public Optional<String> webTierPolicyAzControl() {
+        return Optional.ofNullable(this.webTierPolicyAzControl);
     }
     /**
      * @return Store the web tier policy for an application as a string in Javascript Object Notification (JSON) format.
      * 
      */
-    public String webTierPolicyJson() {
-        return this.webTierPolicyJson;
+    public Optional<String> webTierPolicyJson() {
+        return Optional.ofNullable(this.webTierPolicyJson);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionw
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean resourceRef;
-        private String webTierPolicyAzControl;
-        private String webTierPolicyJson;
+        private @Nullable Boolean resourceRef;
+        private @Nullable String webTierPolicyAzControl;
+        private @Nullable String webTierPolicyJson;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionw
         }
 
         @CustomType.Setter
-        public Builder resourceRef(Boolean resourceRef) {
-            this.resourceRef = Objects.requireNonNull(resourceRef);
+        public Builder resourceRef(@Nullable Boolean resourceRef) {
+            this.resourceRef = resourceRef;
             return this;
         }
         @CustomType.Setter
-        public Builder webTierPolicyAzControl(String webTierPolicyAzControl) {
-            this.webTierPolicyAzControl = Objects.requireNonNull(webTierPolicyAzControl);
+        public Builder webTierPolicyAzControl(@Nullable String webTierPolicyAzControl) {
+            this.webTierPolicyAzControl = webTierPolicyAzControl;
             return this;
         }
         @CustomType.Setter
-        public Builder webTierPolicyJson(String webTierPolicyJson) {
-            this.webTierPolicyJson = Objects.requireNonNull(webTierPolicyJson);
+        public Builder webTierPolicyJson(@Nullable String webTierPolicyJson) {
+            this.webTierPolicyJson = webTierPolicyJson;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp build() {

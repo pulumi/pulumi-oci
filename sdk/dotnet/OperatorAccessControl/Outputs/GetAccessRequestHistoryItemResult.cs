@@ -20,43 +20,43 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// <summary>
         /// Reason or description about the cause of change.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Duration for approval of request or extension depending on the type of action.
         /// </summary>
-        public readonly int Duration;
+        public readonly int? Duration;
         /// <summary>
         /// Whether the access request was automatically approved.
         /// </summary>
-        public readonly bool IsAutoApproved;
+        public readonly bool? IsAutoApproved;
         /// <summary>
         /// The current state of the AccessRequest.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
-        public readonly string TimeOfAction;
+        public readonly string? TimeOfAction;
         /// <summary>
         /// Approver who modified the access request.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetAccessRequestHistoryItemResult(
             ImmutableArray<string> actionsLists,
 
-            string description,
+            string? description,
 
-            int duration,
+            int? duration,
 
-            bool isAutoApproved,
+            bool? isAutoApproved,
 
-            string state,
+            string? state,
 
-            string timeOfAction,
+            string? timeOfAction,
 
-            string userId)
+            string? userId)
         {
             ActionsLists = actionsLists;
             Description = description;

@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetBlockchainPlatformPatchesResult(
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Blockchain
 
             ImmutableArray<Outputs.GetBlockchainPlatformPatchesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             BlockchainPlatformId = blockchainPlatformId;
             BlockchainPlatformPatchCollections = blockchainPlatformPatchCollections;

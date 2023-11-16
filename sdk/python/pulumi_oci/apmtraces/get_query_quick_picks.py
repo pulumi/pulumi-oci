@@ -49,7 +49,7 @@ class GetQueryQuickPicksResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetQueryQuickPicksResult:
 
     @property
     @pulumi.getter(name="quickPicks")
-    def quick_picks(self) -> Sequence['outputs.GetQueryQuickPicksQuickPickResult']:
-        """
-        The list of quick_picks.
-        """
+    def quick_picks(self) -> Optional[Sequence['outputs.GetQueryQuickPicksQuickPickResult']]:
         return pulumi.get(self, "quick_picks")
 
 
@@ -80,22 +77,7 @@ def get_query_quick_picks(apm_domain_id: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetQueryQuickPicksFilterArgs']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQueryQuickPicksResult:
     """
-    This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
-
-    Returns a list of predefined Quick Pick queries intended to assist the user
-    to choose a query to run.  There is no sorting applied on the results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -115,21 +97,6 @@ def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[str]] = No
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetQueryQuickPicksFilterArgs']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetQueryQuickPicksResult]:
     """
-    This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
-
-    Returns a list of predefined Quick Pick queries intended to assist the user
-    to choose a query to run.  There is no sorting applied on the results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
+    Use this data source to access information about an existing resource.
     """
     ...

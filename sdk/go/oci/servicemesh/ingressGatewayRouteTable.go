@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -91,27 +90,27 @@ type IngressGatewayRouteTable struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the service mesh in which this access policy is created.
 	IngressGatewayId pulumi.StringOutput `pulumi:"ingressGatewayId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Name of the ingress gateway host that this route should apply to.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-	Priority pulumi.IntOutput `pulumi:"priority"`
+	Priority pulumi.IntPtrOutput `pulumi:"priority"`
 	// (Updatable) The route rules for the ingress gateway.
 	RouteRules IngressGatewayRouteTableRouteRuleArrayOutput `pulumi:"routeRules"`
 	// The current state of the Resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewIngressGatewayRouteTable registers a new resource with the given unique name, arguments, and options.
@@ -276,12 +275,6 @@ func (i *IngressGatewayRouteTable) ToIngressGatewayRouteTableOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableOutput)
 }
 
-func (i *IngressGatewayRouteTable) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayRouteTable] {
-	return pulumix.Output[*IngressGatewayRouteTable]{
-		OutputState: i.ToIngressGatewayRouteTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IngressGatewayRouteTableArrayInput is an input type that accepts IngressGatewayRouteTableArray and IngressGatewayRouteTableArrayOutput values.
 // You can construct a concrete instance of `IngressGatewayRouteTableArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i IngressGatewayRouteTableArray) ToIngressGatewayRouteTableArrayOutput() I
 
 func (i IngressGatewayRouteTableArray) ToIngressGatewayRouteTableArrayOutputWithContext(ctx context.Context) IngressGatewayRouteTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableArrayOutput)
-}
-
-func (i IngressGatewayRouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*IngressGatewayRouteTable] {
-	return pulumix.Output[[]*IngressGatewayRouteTable]{
-		OutputState: i.ToIngressGatewayRouteTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IngressGatewayRouteTableMapInput is an input type that accepts IngressGatewayRouteTableMap and IngressGatewayRouteTableMapOutput values.
@@ -338,12 +325,6 @@ func (i IngressGatewayRouteTableMap) ToIngressGatewayRouteTableMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(IngressGatewayRouteTableMapOutput)
 }
 
-func (i IngressGatewayRouteTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngressGatewayRouteTable] {
-	return pulumix.Output[map[string]*IngressGatewayRouteTable]{
-		OutputState: i.ToIngressGatewayRouteTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IngressGatewayRouteTableOutput struct{ *pulumi.OutputState }
 
 func (IngressGatewayRouteTableOutput) ElementType() reflect.Type {
@@ -358,12 +339,6 @@ func (o IngressGatewayRouteTableOutput) ToIngressGatewayRouteTableOutputWithCont
 	return o
 }
 
-func (o IngressGatewayRouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[*IngressGatewayRouteTable] {
-	return pulumix.Output[*IngressGatewayRouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o IngressGatewayRouteTableOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -375,8 +350,8 @@ func (o IngressGatewayRouteTableOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o IngressGatewayRouteTableOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o IngressGatewayRouteTableOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -390,8 +365,8 @@ func (o IngressGatewayRouteTableOutput) IngressGatewayId() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o IngressGatewayRouteTableOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o IngressGatewayRouteTableOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Name of the ingress gateway host that this route should apply to.
@@ -400,8 +375,8 @@ func (o IngressGatewayRouteTableOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
-func (o IngressGatewayRouteTableOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
+func (o IngressGatewayRouteTableOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.IntPtrOutput { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The route rules for the ingress gateway.
@@ -410,8 +385,8 @@ func (o IngressGatewayRouteTableOutput) RouteRules() IngressGatewayRouteTableRou
 }
 
 // The current state of the Resource.
-func (o IngressGatewayRouteTableOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IngressGatewayRouteTableOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -420,13 +395,13 @@ func (o IngressGatewayRouteTableOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o IngressGatewayRouteTableOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o IngressGatewayRouteTableOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o IngressGatewayRouteTableOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o IngressGatewayRouteTableOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IngressGatewayRouteTable) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type IngressGatewayRouteTableArrayOutput struct{ *pulumi.OutputState }
@@ -441,12 +416,6 @@ func (o IngressGatewayRouteTableArrayOutput) ToIngressGatewayRouteTableArrayOutp
 
 func (o IngressGatewayRouteTableArrayOutput) ToIngressGatewayRouteTableArrayOutputWithContext(ctx context.Context) IngressGatewayRouteTableArrayOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IngressGatewayRouteTable] {
-	return pulumix.Output[[]*IngressGatewayRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayRouteTableArrayOutput) Index(i pulumi.IntInput) IngressGatewayRouteTableOutput {
@@ -467,12 +436,6 @@ func (o IngressGatewayRouteTableMapOutput) ToIngressGatewayRouteTableMapOutput()
 
 func (o IngressGatewayRouteTableMapOutput) ToIngressGatewayRouteTableMapOutputWithContext(ctx context.Context) IngressGatewayRouteTableMapOutput {
 	return o
-}
-
-func (o IngressGatewayRouteTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IngressGatewayRouteTable] {
-	return pulumix.Output[map[string]*IngressGatewayRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IngressGatewayRouteTableMapOutput) MapIndex(k pulumi.StringInput) IngressGatewayRouteTableOutput {

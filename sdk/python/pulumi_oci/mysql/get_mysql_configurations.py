@@ -55,9 +55,6 @@ class GetMysqlConfigurationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        OCID of the Compartment the Configuration exists in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -67,18 +64,12 @@ class GetMysqlConfigurationsResult:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetMysqlConfigurationsConfigurationResult']:
-        """
-        The list of configurations.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetMysqlConfigurationsConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the Configuration.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +79,7 @@ class GetMysqlConfigurationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,25 +88,16 @@ class GetMysqlConfigurationsResult:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[str]:
-        """
-        The name of the associated Shape.
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Configuration.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def types(self) -> Optional[Sequence[str]]:
-        """
-        The Configuration type, DEFAULT or CUSTOM.
-        """
         return pulumi.get(self, "types")
 
 
@@ -145,38 +127,7 @@ def get_mysql_configurations(compartment_id: Optional[str] = None,
                              types: Optional[Sequence[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlConfigurationsResult:
     """
-    This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
-
-    Lists the Configurations available when creating a DB System.
-
-    This may include DEFAULT configurations per Shape and CUSTOM configurations.
-
-    The default sort order is a multi-part sort by:
-      - shapeName, ascending
-      - DEFAULT-before-CUSTOM
-      - displayName ascending
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        display_name=var["mysql_configuration_display_name"],
-        shape_name=var["mysql_shape_name"],
-        state=var["mysql_configuration_state"],
-        types=var["mysql_configuration_type"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str configuration_id: The requested Configuration instance.
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param str shape_name: The requested Shape name.
-    :param str state: Configuration Lifecycle State
-    :param Sequence[str] types: The requested Configuration types.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -211,37 +162,6 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[str]] 
                                     types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlConfigurationsResult]:
     """
-    This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
-
-    Lists the Configurations available when creating a DB System.
-
-    This may include DEFAULT configurations per Shape and CUSTOM configurations.
-
-    The default sort order is a multi-part sort by:
-      - shapeName, ascending
-      - DEFAULT-before-CUSTOM
-      - displayName ascending
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=var["compartment_id"],
-        configuration_id=var["mysql_configuration_id"],
-        display_name=var["mysql_configuration_display_name"],
-        shape_name=var["mysql_shape_name"],
-        state=var["mysql_configuration_state"],
-        types=var["mysql_configuration_type"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str configuration_id: The requested Configuration instance.
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param str shape_name: The requested Shape name.
-    :param str state: Configuration Lifecycle State
-    :param Sequence[str] types: The requested Configuration types.
+    Use this data source to access information about an existing resource.
     """
     ...

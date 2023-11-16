@@ -13,83 +13,83 @@ namespace Pulumi.Oci.Artifacts.Outputs
     [OutputType]
     public sealed class GetGenericArtifactsGenericArtifactCollectionItemResult
     {
-        public readonly string ArtifactId;
+        public readonly string? ArtifactId;
         /// <summary>
         /// Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
         /// </summary>
-        public readonly string ArtifactPath;
+        public readonly string? ArtifactPath;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A filter to return the resources for the specified OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter to return the artifacts only for the specified repository OCID.
         /// </summary>
-        public readonly string RepositoryId;
+        public readonly string? RepositoryId;
         /// <summary>
         /// Filter results by a specified SHA256 digest for the artifact.
         /// </summary>
-        public readonly string Sha256;
+        public readonly string? Sha256;
         /// <summary>
         /// The size of the artifact in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state name exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An RFC 3339 timestamp indicating when the repository was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetGenericArtifactsGenericArtifactCollectionItemResult(
-            string artifactId,
+            string? artifactId,
 
-            string artifactPath,
+            string? artifactPath,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string repositoryId,
+            string? repositoryId,
 
-            string sha256,
+            string? sha256,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string version)
+            string? version)
         {
             ArtifactId = artifactId;
             ArtifactPath = artifactPath;

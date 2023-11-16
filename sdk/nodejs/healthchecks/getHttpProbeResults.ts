@@ -70,11 +70,11 @@ export interface GetHttpProbeResultsResult {
     /**
      * The list of http_probe_results.
      */
-    readonly httpProbeResults: outputs.HealthChecks.GetHttpProbeResultsHttpProbeResult[];
+    readonly httpProbeResults?: outputs.HealthChecks.GetHttpProbeResultsHttpProbeResult[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the monitor or on-demand probe responsible for creating this result.
      */

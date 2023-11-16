@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
@@ -63,34 +62,34 @@ type LookupPrivateIpArgs struct {
 // A collection of values returned by getPrivateIp.
 type LookupPrivateIpResult struct {
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-	IsPrimary bool `pulumi:"isPrimary"`
+	IsPrimary *bool `pulumi:"isPrimary"`
 	// true if the IP is reserved and can exist detached from vnic
-	IsReserved  bool   `pulumi:"isReserved"`
+	IsReserved  *bool  `pulumi:"isReserved"`
 	PrivateIpId string `pulumi:"privateIpId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Applicable only if the `PrivateIp` object is being used with a VLAN as part of the Oracle Cloud VMware Solution. The `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-	VlanId string `pulumi:"vlanId"`
+	VlanId *string `pulumi:"vlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet. However, if the `PrivateIp` object is being used with a VLAN as part of the Oracle Cloud VMware Solution, the `vnicId` is null.
-	VnicId string `pulumi:"vnicId"`
+	VnicId *string `pulumi:"vnicId"`
 }
 
 func LookupPrivateIpOutput(ctx *pulumi.Context, args LookupPrivateIpOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateIpResultOutput {
@@ -131,20 +130,14 @@ func (o LookupPrivateIpResultOutput) ToLookupPrivateIpResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupPrivateIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPrivateIpResult] {
-	return pulumix.Output[LookupPrivateIpResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
-func (o LookupPrivateIpResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
-func (o LookupPrivateIpResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -153,8 +146,8 @@ func (o LookupPrivateIpResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupPrivateIpResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -163,28 +156,28 @@ func (o LookupPrivateIpResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
-func (o LookupPrivateIpResultOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-func (o LookupPrivateIpResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
-func (o LookupPrivateIpResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
-func (o LookupPrivateIpResultOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o LookupPrivateIpResultOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *bool { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 // true if the IP is reserved and can exist detached from vnic
-func (o LookupPrivateIpResultOutput) IsReserved() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) bool { return v.IsReserved }).(pulumi.BoolOutput)
+func (o LookupPrivateIpResultOutput) IsReserved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *bool { return v.IsReserved }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupPrivateIpResultOutput) PrivateIpId() pulumi.StringOutput {
@@ -192,23 +185,23 @@ func (o LookupPrivateIpResultOutput) PrivateIpId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
-func (o LookupPrivateIpResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the private IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupPrivateIpResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Applicable only if the `PrivateIp` object is being used with a VLAN as part of the Oracle Cloud VMware Solution. The `vlanId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-func (o LookupPrivateIpResultOutput) VlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.VlanId }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) VlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.VlanId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP must be in the same subnet. However, if the `PrivateIp` object is being used with a VLAN as part of the Oracle Cloud VMware Solution, the `vnicId` is null.
-func (o LookupPrivateIpResultOutput) VnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.VnicId }).(pulumi.StringOutput)
+func (o LookupPrivateIpResultOutput) VnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) *string { return v.VnicId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -106,7 +106,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// An array of IP addresses.
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// Example: "ipMode":"IPV6"
         /// </summary>
         [Output("ipMode")]
-        public Output<string> IpMode { get; private set; } = null!;
+        public Output<string?> IpMode { get; private set; } = null!;
 
         /// <summary>
         /// Whether the load balancer has a VCN-local (private) IP address.
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// Example: `true`
         /// </summary>
         [Output("isPrivate")]
-        public Output<bool> IsPrivate { get; private set; } = null!;
+        public Output<bool?> IsPrivate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
@@ -188,13 +188,13 @@ namespace Pulumi.Oci.LoadBalancer
         /// (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         /// </summary>
         [Output("shapeDetails")]
-        public Output<Outputs.LoadBalancerShapeDetails> ShapeDetails { get; private set; } = null!;
+        public Output<Outputs.LoadBalancerShapeDetails?> ShapeDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the load balancer.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -210,13 +210,13 @@ namespace Pulumi.Oci.LoadBalancer
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

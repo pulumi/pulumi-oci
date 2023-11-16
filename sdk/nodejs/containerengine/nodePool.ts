@@ -135,23 +135,23 @@ export class NodePool extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
-    public readonly initialNodeLabels!: pulumi.Output<outputs.ContainerEngine.NodePoolInitialNodeLabel[]>;
+    public readonly initialNodeLabels!: pulumi.Output<outputs.ContainerEngine.NodePoolInitialNodeLabel[] | undefined>;
     /**
      * (Updatable) The version of Kubernetes to install on the nodes in the node pool.
      */
-    public readonly kubernetesVersion!: pulumi.Output<string>;
+    public readonly kubernetesVersion!: pulumi.Output<string | undefined>;
     /**
      * Details about the state of the node.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the node pool. Avoid entering confidential information.
      */
@@ -159,31 +159,31 @@ export class NodePool extends pulumi.CustomResource {
     /**
      * (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
      */
-    public readonly nodeConfigDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeConfigDetails>;
+    public readonly nodeConfigDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeConfigDetails | undefined>;
     /**
      * (Updatable) Node Eviction Details configuration
      */
-    public readonly nodeEvictionNodePoolSettings!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings>;
+    public readonly nodeEvictionNodePoolSettings!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeEvictionNodePoolSettings | undefined>;
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
      * @deprecated The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    public readonly nodeImageId!: pulumi.Output<string>;
+    public readonly nodeImageId!: pulumi.Output<string | undefined>;
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      *
      * @deprecated The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    public readonly nodeImageName!: pulumi.Output<string>;
+    public readonly nodeImageName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    public readonly nodeMetadata!: pulumi.Output<{[key: string]: any}>;
+    public readonly nodeMetadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Node Pool Cycling Details
      */
-    public readonly nodePoolCyclingDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodePoolCyclingDetails>;
+    public readonly nodePoolCyclingDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodePoolCyclingDetails | undefined>;
     /**
      * (Updatable) The name of the node shape of the nodes in the node pool.
      */
@@ -191,31 +191,31 @@ export class NodePool extends pulumi.CustomResource {
     /**
      * (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
      */
-    public readonly nodeShapeConfig!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeShapeConfig>;
+    public readonly nodeShapeConfig!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeShapeConfig | undefined>;
     /**
      * (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
      */
-    public readonly nodeSourceDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSourceDetails>;
+    public readonly nodeSourceDetails!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSourceDetails | undefined>;
     /**
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      */
-    public /*out*/ readonly nodeSources!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSource[]>;
+    public /*out*/ readonly nodeSources!: pulumi.Output<outputs.ContainerEngine.NodePoolNodeSource[] | undefined>;
     /**
      * The nodes in the node pool.
      */
-    public /*out*/ readonly nodes!: pulumi.Output<outputs.ContainerEngine.NodePoolNode[]>;
+    public /*out*/ readonly nodes!: pulumi.Output<outputs.ContainerEngine.NodePoolNode[] | undefined>;
     /**
      * (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
      */
-    public readonly quantityPerSubnet!: pulumi.Output<number>;
+    public readonly quantityPerSubnet!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The SSH public key on each node in the node pool on launch.
      */
-    public readonly sshPublicKey!: pulumi.Output<string>;
+    public readonly sshPublicKey!: pulumi.Output<string | undefined>;
     /**
      * The state of the nodepool.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
      *
@@ -223,7 +223,7 @@ export class NodePool extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly subnetIds!: pulumi.Output<string[]>;
+    public readonly subnetIds!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a NodePool resource with the given unique name, arguments, and options.

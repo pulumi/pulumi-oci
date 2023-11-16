@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesProblemEntityCollecti
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProblemEntitiesProblemEntityCollectionItem {
@@ -15,32 +17,32 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
      * @return List of event related to a DataSource
      * 
      */
-    private List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails;
+    private @Nullable List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails;
     /**
      * @return OCId of the problem.
      * 
      */
-    private String problemId;
+    private @Nullable String problemId;
     /**
      * @return Data source problem entities region
      * 
      */
-    private List<String> regions;
+    private @Nullable List<String> regions;
     /**
      * @return Log result query url for a data source query
      * 
      */
-    private String resultUrl;
+    private @Nullable String resultUrl;
     /**
      * @return Data source problem entities first detected time
      * 
      */
-    private String timeFirstDetected;
+    private @Nullable String timeFirstDetected;
     /**
      * @return Data source problem entities last detected time
      * 
      */
-    private String timeLastDetected;
+    private @Nullable String timeLastDetected;
 
     private GetProblemEntitiesProblemEntityCollectionItem() {}
     /**
@@ -48,42 +50,42 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
      * 
      */
     public List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails() {
-        return this.entityDetails;
+        return this.entityDetails == null ? List.of() : this.entityDetails;
     }
     /**
      * @return OCId of the problem.
      * 
      */
-    public String problemId() {
-        return this.problemId;
+    public Optional<String> problemId() {
+        return Optional.ofNullable(this.problemId);
     }
     /**
      * @return Data source problem entities region
      * 
      */
     public List<String> regions() {
-        return this.regions;
+        return this.regions == null ? List.of() : this.regions;
     }
     /**
      * @return Log result query url for a data source query
      * 
      */
-    public String resultUrl() {
-        return this.resultUrl;
+    public Optional<String> resultUrl() {
+        return Optional.ofNullable(this.resultUrl);
     }
     /**
      * @return Data source problem entities first detected time
      * 
      */
-    public String timeFirstDetected() {
-        return this.timeFirstDetected;
+    public Optional<String> timeFirstDetected() {
+        return Optional.ofNullable(this.timeFirstDetected);
     }
     /**
      * @return Data source problem entities last detected time
      * 
      */
-    public String timeLastDetected() {
-        return this.timeLastDetected;
+    public Optional<String> timeLastDetected() {
+        return Optional.ofNullable(this.timeLastDetected);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails;
-        private String problemId;
-        private List<String> regions;
-        private String resultUrl;
-        private String timeFirstDetected;
-        private String timeLastDetected;
+        private @Nullable List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails;
+        private @Nullable String problemId;
+        private @Nullable List<String> regions;
+        private @Nullable String resultUrl;
+        private @Nullable String timeFirstDetected;
+        private @Nullable String timeLastDetected;
         public Builder() {}
         public Builder(GetProblemEntitiesProblemEntityCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,39 +115,39 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder entityDetails(List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails) {
-            this.entityDetails = Objects.requireNonNull(entityDetails);
+        public Builder entityDetails(@Nullable List<GetProblemEntitiesProblemEntityCollectionItemEntityDetail> entityDetails) {
+            this.entityDetails = entityDetails;
             return this;
         }
         public Builder entityDetails(GetProblemEntitiesProblemEntityCollectionItemEntityDetail... entityDetails) {
             return entityDetails(List.of(entityDetails));
         }
         @CustomType.Setter
-        public Builder problemId(String problemId) {
-            this.problemId = Objects.requireNonNull(problemId);
+        public Builder problemId(@Nullable String problemId) {
+            this.problemId = problemId;
             return this;
         }
         @CustomType.Setter
-        public Builder regions(List<String> regions) {
-            this.regions = Objects.requireNonNull(regions);
+        public Builder regions(@Nullable List<String> regions) {
+            this.regions = regions;
             return this;
         }
         public Builder regions(String... regions) {
             return regions(List.of(regions));
         }
         @CustomType.Setter
-        public Builder resultUrl(String resultUrl) {
-            this.resultUrl = Objects.requireNonNull(resultUrl);
+        public Builder resultUrl(@Nullable String resultUrl) {
+            this.resultUrl = resultUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFirstDetected(String timeFirstDetected) {
-            this.timeFirstDetected = Objects.requireNonNull(timeFirstDetected);
+        public Builder timeFirstDetected(@Nullable String timeFirstDetected) {
+            this.timeFirstDetected = timeFirstDetected;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastDetected(String timeLastDetected) {
-            this.timeLastDetected = Objects.requireNonNull(timeLastDetected);
+        public Builder timeLastDetected(@Nullable String timeLastDetected) {
+            this.timeLastDetected = timeLastDetected;
             return this;
         }
         public GetProblemEntitiesProblemEntityCollectionItem build() {

@@ -73,13 +73,13 @@ export interface GetManagementStationMirrorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managementStationId: string;
     readonly mirrorStates?: string[];
     /**
      * The list of mirrors_collection.
      */
-    readonly mirrorsCollections: outputs.OsManagementHub.GetManagementStationMirrorsMirrorsCollection[];
+    readonly mirrorsCollections?: outputs.OsManagementHub.GetManagementStationMirrorsMirrorsCollection[];
 }
 /**
  * This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.

@@ -47,108 +47,108 @@ export interface GetManagedInstanceResult {
     /**
      * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      */
-    readonly autonomouses: outputs.OsManagement.GetManagedInstanceAutonomouse[];
+    readonly autonomouses?: outputs.OsManagement.GetManagedInstanceAutonomouse[];
     /**
      * Number of bug fix type updates available to be installed
      */
-    readonly bugUpdatesAvailable: number;
+    readonly bugUpdatesAvailable?: number;
     /**
      * list of child Software Sources attached to the Managed Instance
      */
-    readonly childSoftwareSources: outputs.OsManagement.GetManagedInstanceChildSoftwareSource[];
+    readonly childSoftwareSources?: outputs.OsManagement.GetManagedInstanceChildSoftwareSource[];
     /**
      * OCID for the Compartment
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Information specified by the user about the managed instance
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * User friendly name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Number of enhancement type updates available to be installed
      */
-    readonly enhancementUpdatesAvailable: number;
+    readonly enhancementUpdatesAvailable?: number;
     /**
      * software source identifier
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * True if user allow data collection for this instance
      */
-    readonly isDataCollectionAuthorized: boolean;
+    readonly isDataCollectionAuthorized?: boolean;
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      */
-    readonly isRebootRequired: boolean;
+    readonly isRebootRequired?: boolean;
     /**
      * The ksplice effective kernel version
      */
-    readonly kspliceEffectiveKernelVersion: string;
+    readonly kspliceEffectiveKernelVersion?: string;
     /**
      * Time at which the instance last booted
      */
-    readonly lastBoot: string;
+    readonly lastBoot?: string;
     /**
      * Time at which the instance last checked in
      */
-    readonly lastCheckin: string;
+    readonly lastCheckin?: string;
     /**
      * The ids of the managed instance groups of which this instance is a member.
      */
-    readonly managedInstanceGroups: outputs.OsManagement.GetManagedInstanceManagedInstanceGroup[];
+    readonly managedInstanceGroups?: outputs.OsManagement.GetManagedInstanceManagedInstanceGroup[];
     readonly managedInstanceId: string;
     /**
      * OCID of the ONS topic used to send notification to users
      */
-    readonly notificationTopicId: string;
+    readonly notificationTopicId?: string;
     /**
      * The Operating System type of the managed instance.
      */
-    readonly osFamily: string;
+    readonly osFamily?: string;
     /**
      * Operating System Kernel Version
      */
-    readonly osKernelVersion: string;
+    readonly osKernelVersion?: string;
     /**
      * Operating System Name
      */
-    readonly osName: string;
+    readonly osName?: string;
     /**
      * Operating System Version
      */
-    readonly osVersion: string;
+    readonly osVersion?: string;
     /**
      * Number of non-classified updates available to be installed
      */
-    readonly otherUpdatesAvailable: number;
+    readonly otherUpdatesAvailable?: number;
     /**
      * the parent (base) Software Source attached to the Managed Instance
      */
-    readonly parentSoftwareSources: outputs.OsManagement.GetManagedInstanceParentSoftwareSource[];
+    readonly parentSoftwareSources?: outputs.OsManagement.GetManagedInstanceParentSoftwareSource[];
     /**
      * Number of scheduled jobs associated with this instance
      */
-    readonly scheduledJobCount: number;
+    readonly scheduledJobCount?: number;
     /**
      * Number of security type updates available to be installed
      */
-    readonly securityUpdatesAvailable: number;
+    readonly securityUpdatesAvailable?: number;
     /**
      * status of the managed instance.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Number of updates available to be installed
      */
-    readonly updatesAvailable: number;
+    readonly updatesAvailable?: number;
     /**
      * Number of work requests associated with this instance
      */
-    readonly workRequestCount: number;
+    readonly workRequestCount?: number;
 }
 /**
  * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.

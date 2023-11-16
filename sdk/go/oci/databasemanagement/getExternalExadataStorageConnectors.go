@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -74,7 +73,7 @@ type GetExternalExadataStorageConnectorsResult struct {
 	ExternalExadataStorageConnectorCollections []GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection `pulumi:"externalExadataStorageConnectorCollections"`
 	Filters                                    []GetExternalExadataStorageConnectorsFilter                                    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalExadataStorageConnectorsOutput(ctx *pulumi.Context, args GetExternalExadataStorageConnectorsOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageConnectorsResultOutput {
@@ -120,12 +119,6 @@ func (o GetExternalExadataStorageConnectorsResultOutput) ToGetExternalExadataSto
 	return o
 }
 
-func (o GetExternalExadataStorageConnectorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageConnectorsResult] {
-	return pulumix.Output[GetExternalExadataStorageConnectorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExternalExadataStorageConnectorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageConnectorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -153,8 +146,8 @@ func (o GetExternalExadataStorageConnectorsResultOutput) Filters() GetExternalEx
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageConnectorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageConnectorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageConnectorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageConnectorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

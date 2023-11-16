@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of osn_collection.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Blockchain
 
             ImmutableArray<Outputs.GetOsnsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOsnsOsnCollectionResult> osnCollections)
         {

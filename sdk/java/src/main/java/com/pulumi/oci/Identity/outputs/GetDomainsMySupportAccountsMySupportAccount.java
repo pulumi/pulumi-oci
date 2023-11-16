@@ -13,6 +13,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMySupportAccountsMySupportAccount {
@@ -20,243 +22,243 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    private String authorization;
+    private @Nullable String authorization;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    private String idcsEndpoint;
+    private @Nullable String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMySupportAccountsMySupportAccountMeta> metas;
+    private @Nullable List<GetDomainsMySupportAccountsMySupportAccountMeta> metas;
     /**
      * @return User Support Account Provider
      * 
      */
-    private String mySupportAccountProvider;
+    private @Nullable String mySupportAccountProvider;
     /**
      * @return User&#39;s ocid
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    private String resourceTypeSchemaVersion;
+    private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMySupportAccountsMySupportAccountTag> tags;
+    private @Nullable List<GetDomainsMySupportAccountsMySupportAccountTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return User Support Account Token
      * 
      */
-    private String token;
+    private @Nullable String token;
     /**
      * @return User Support User Id
      * 
      */
-    private String userId;
+    private @Nullable String userId;
     /**
      * @return User linked to Support Account
      * 
      */
-    private List<GetDomainsMySupportAccountsMySupportAccountUser> users;
+    private @Nullable List<GetDomainsMySupportAccountsMySupportAccountUser> users;
 
     private GetDomainsMySupportAccountsMySupportAccount() {}
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    public String authorization() {
-        return this.authorization;
+    public Optional<String> authorization() {
+        return Optional.ofNullable(this.authorization);
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    public String idcsEndpoint() {
-        return this.idcsEndpoint;
+    public Optional<String> idcsEndpoint() {
+        return Optional.ofNullable(this.idcsEndpoint);
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMySupportAccountsMySupportAccountMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return User Support Account Provider
      * 
      */
-    public String mySupportAccountProvider() {
-        return this.mySupportAccountProvider;
+    public Optional<String> mySupportAccountProvider() {
+        return Optional.ofNullable(this.mySupportAccountProvider);
     }
     /**
      * @return User&#39;s ocid
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    public String resourceTypeSchemaVersion() {
-        return this.resourceTypeSchemaVersion;
+    public Optional<String> resourceTypeSchemaVersion() {
+        return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMySupportAccountsMySupportAccountTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return User Support Account Token
      * 
      */
-    public String token() {
-        return this.token;
+    public Optional<String> token() {
+        return Optional.ofNullable(this.token);
     }
     /**
      * @return User Support User Id
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
     /**
      * @return User linked to Support Account
      * 
      */
     public List<GetDomainsMySupportAccountsMySupportAccountUser> users() {
-        return this.users;
+        return this.users == null ? List.of() : this.users;
     }
 
     public static Builder builder() {
@@ -268,26 +270,26 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private String id;
-        private List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies;
-        private String idcsEndpoint;
-        private List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private List<GetDomainsMySupportAccountsMySupportAccountMeta> metas;
-        private String mySupportAccountProvider;
-        private String ocid;
-        private String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private List<GetDomainsMySupportAccountsMySupportAccountTag> tags;
-        private String tenancyOcid;
-        private String token;
-        private String userId;
-        private List<GetDomainsMySupportAccountsMySupportAccountUser> users;
+        private @Nullable String authorization;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String idcsEndpoint;
+        private @Nullable List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsMySupportAccountsMySupportAccountMeta> metas;
+        private @Nullable String mySupportAccountProvider;
+        private @Nullable String ocid;
+        private @Nullable String resourceTypeSchemaVersion;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsMySupportAccountsMySupportAccountTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String token;
+        private @Nullable String userId;
+        private @Nullable List<GetDomainsMySupportAccountsMySupportAccountUser> users;
         public Builder() {}
         public Builder(GetDomainsMySupportAccountsMySupportAccount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -314,121 +316,121 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
 
         @CustomType.Setter
-        public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+        public Builder authorization(@Nullable String authorization) {
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+        public Builder idcsEndpoint(@Nullable String idcsEndpoint) {
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMySupportAccountsMySupportAccountMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMySupportAccountsMySupportAccountMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMySupportAccountsMySupportAccountMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder mySupportAccountProvider(String mySupportAccountProvider) {
-            this.mySupportAccountProvider = Objects.requireNonNull(mySupportAccountProvider);
+        public Builder mySupportAccountProvider(@Nullable String mySupportAccountProvider) {
+            this.mySupportAccountProvider = mySupportAccountProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+        public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMySupportAccountsMySupportAccountTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMySupportAccountsMySupportAccountTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMySupportAccountsMySupportAccountTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder token(String token) {
-            this.token = Objects.requireNonNull(token);
+        public Builder token(@Nullable String token) {
+            this.token = token;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
-        public Builder users(List<GetDomainsMySupportAccountsMySupportAccountUser> users) {
-            this.users = Objects.requireNonNull(users);
+        public Builder users(@Nullable List<GetDomainsMySupportAccountsMySupportAccountUser> users) {
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMySupportAccountsMySupportAccountUser... users) {

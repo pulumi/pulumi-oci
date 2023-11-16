@@ -108,62 +108,62 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="discoveredComponents", refs={List.class,ExternalDbSystemDiscoveryDiscoveredComponent.class}, tree="[0,1]")
-    private Output<List<ExternalDbSystemDiscoveryDiscoveredComponent>> discoveredComponents;
+    private Output</* @Nullable */ List<ExternalDbSystemDiscoveryDiscoveredComponent>> discoveredComponents;
 
     /**
      * @return The list of DB system components that were found in the DB system discovery.
      * 
      */
-    public Output<List<ExternalDbSystemDiscoveryDiscoveredComponent>> discoveredComponents() {
-        return this.discoveredComponents;
+    public Output<Optional<List<ExternalDbSystemDiscoveryDiscoveredComponent>>> discoveredComponents() {
+        return Codegen.optional(this.discoveredComponents);
     }
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="externalDbSystemDiscoveryId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbSystemDiscoveryId;
+    private Output</* @Nullable */ String> externalDbSystemDiscoveryId;
 
-    public Output<String> externalDbSystemDiscoveryId() {
-        return this.externalDbSystemDiscoveryId;
+    public Output<Optional<String>> externalDbSystemDiscoveryId() {
+        return Codegen.optional(this.externalDbSystemDiscoveryId);
     }
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
     @Export(name="gridHome", refs={String.class}, tree="[0]")
-    private Output<String> gridHome;
+    private Output</* @Nullable */ String> gridHome;
 
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    public Output<String> gridHome() {
-        return this.gridHome;
+    public Output<Optional<String>> gridHome() {
+        return Codegen.optional(this.gridHome);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable)
@@ -184,56 +184,56 @@ public class ExternalDbSystemDiscovery extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="resourceId", refs={String.class}, tree="[0]")
-    private Output<String> resourceId;
+    private Output</* @Nullable */ String> resourceId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
      * 
      */
-    public Output<String> resourceId() {
-        return this.resourceId;
+    public Output<Optional<String>> resourceId() {
+        return Codegen.optional(this.resourceId);
     }
     /**
      * The current lifecycle state of the external DB system discovery resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external DB system discovery resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the external DB system discovery was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external DB system discovery was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external DB system discovery was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external DB system discovery was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

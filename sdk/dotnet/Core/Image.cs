@@ -140,13 +140,13 @@ namespace Pulumi.Oci.Core
         /// The OCID of the image originally used to launch the instance.
         /// </summary>
         [Output("baseImageId")]
-        public Output<string> BaseImageId { get; private set; } = null!;
+        public Output<string?> BaseImageId { get; private set; } = null!;
 
         /// <summary>
         /// The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
         /// </summary>
         [Output("billableSizeInGbs")]
-        public Output<string> BillableSizeInGbs { get; private set; } = null!;
+        public Output<string?> BillableSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment you want the image to be created in.
@@ -158,13 +158,13 @@ namespace Pulumi.Oci.Core
         /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
         /// </summary>
         [Output("createImageAllowed")]
-        public Output<bool> CreateImageAllowed { get; private set; } = null!;
+        public Output<bool?> CreateImageAllowed { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -174,13 +174,13 @@ namespace Pulumi.Oci.Core
         /// Example: `My Oracle Linux image`
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("imageSourceDetails")]
         public Output<Outputs.ImageImageSourceDetails?> ImageSourceDetails { get; private set; } = null!;
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Core
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         /// </summary>
         [Output("launchMode")]
-        public Output<string> LaunchMode { get; private set; } = null!;
+        public Output<string?> LaunchMode { get; private set; } = null!;
 
         /// <summary>
         /// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -207,37 +207,37 @@ namespace Pulumi.Oci.Core
         /// The listing type of the image. The default value is "NONE".
         /// </summary>
         [Output("listingType")]
-        public Output<string> ListingType { get; private set; } = null!;
+        public Output<string?> ListingType { get; private set; } = null!;
 
         /// <summary>
         /// The image's operating system.  Example: `Oracle Linux`
         /// </summary>
         [Output("operatingSystem")]
-        public Output<string> OperatingSystem { get; private set; } = null!;
+        public Output<string?> OperatingSystem { get; private set; } = null!;
 
         /// <summary>
         /// The image's operating system version.  Example: `7.2`
         /// </summary>
         [Output("operatingSystemVersion")]
-        public Output<string> OperatingSystemVersion { get; private set; } = null!;
+        public Output<string?> OperatingSystemVersion { get; private set; } = null!;
 
         /// <summary>
         /// The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
         /// </summary>
         [Output("sizeInMbs")]
-        public Output<string> SizeInMbs { get; private set; } = null!;
+        public Output<string?> SizeInMbs { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the image.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

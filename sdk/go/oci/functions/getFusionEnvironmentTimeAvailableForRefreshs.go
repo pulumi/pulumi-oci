@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.
@@ -63,7 +62,7 @@ type GetFusionEnvironmentTimeAvailableForRefreshsResult struct {
 	Filters             []GetFusionEnvironmentTimeAvailableForRefreshsFilter `pulumi:"filters"`
 	FusionEnvironmentId string                                               `pulumi:"fusionEnvironmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of time_available_for_refresh_collection.
 	TimeAvailableForRefreshCollections []GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection `pulumi:"timeAvailableForRefreshCollections"`
 }
@@ -107,12 +106,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsResultOutput) ToGetFusionEnv
 	return o
 }
 
-func (o GetFusionEnvironmentTimeAvailableForRefreshsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentTimeAvailableForRefreshsResultOutput) Filters() GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsResult) []GetFusionEnvironmentTimeAvailableForRefreshsFilter {
 		return v.Filters
@@ -124,8 +117,8 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsResultOutput) FusionEnvironm
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentTimeAvailableForRefreshsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentTimeAvailableForRefreshsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of time_available_for_refresh_collection.

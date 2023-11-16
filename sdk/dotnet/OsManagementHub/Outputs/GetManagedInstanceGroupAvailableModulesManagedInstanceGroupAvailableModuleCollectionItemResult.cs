@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The OCID of the software source that provides this module.
         /// </summary>
-        public readonly string SoftwareSourceId;
+        public readonly string? SoftwareSourceId;
 
         [OutputConstructor]
         private GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemResult(
-            string name,
+            string? name,
 
-            string softwareSourceId)
+            string? softwareSourceId)
         {
             Name = name;
             SoftwareSourceId = softwareSourceId;

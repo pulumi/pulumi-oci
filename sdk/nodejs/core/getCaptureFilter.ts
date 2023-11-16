@@ -48,43 +48,43 @@ export interface GetCaptureFilterResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Indicates which service will use this capture filter
      */
-    readonly filterType: string;
+    readonly filterType?: string;
     /**
      * The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
      */
-    readonly flowLogCaptureFilterRules: outputs.Core.GetCaptureFilterFlowLogCaptureFilterRule[];
+    readonly flowLogCaptureFilterRules?: outputs.Core.GetCaptureFilterFlowLogCaptureFilterRule[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The capture filter's current administrative state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The set of rules governing what traffic a VTAP mirrors.
      */
-    readonly vtapCaptureFilterRules: outputs.Core.GetCaptureFilterVtapCaptureFilterRule[];
+    readonly vtapCaptureFilterRules?: outputs.Core.GetCaptureFilterVtapCaptureFilterRule[];
 }
 /**
  * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.

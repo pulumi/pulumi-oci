@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem {
@@ -30,12 +32,12 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
      * @return OCID of the Network Firewall Policy this Address List belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Count of total Addresses in the AddressList
      * 
      */
-    private Integer totalAddresses;
+    private @Nullable Integer totalAddresses;
     /**
      * @return Type of address list.
      * 
@@ -68,15 +70,15 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
      * @return OCID of the Network Firewall Policy this Address List belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Count of total Addresses in the AddressList
      * 
      */
-    public Integer totalAddresses() {
-        return this.totalAddresses;
+    public Optional<Integer> totalAddresses() {
+        return Optional.ofNullable(this.totalAddresses);
     }
     /**
      * @return Type of address list.
@@ -98,8 +100,8 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
         private List<String> addresses;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private Integer totalAddresses;
+        private @Nullable String parentResourceId;
+        private @Nullable Integer totalAddresses;
         private String type;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem defaults) {
@@ -131,13 +133,13 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalAddresses(Integer totalAddresses) {
-            this.totalAddresses = Objects.requireNonNull(totalAddresses);
+        public Builder totalAddresses(@Nullable Integer totalAddresses) {
+            this.totalAddresses = totalAddresses;
             return this;
         }
         @CustomType.Setter

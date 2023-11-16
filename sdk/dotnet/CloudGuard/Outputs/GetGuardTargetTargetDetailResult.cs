@@ -16,15 +16,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The name of the security zone to associate this compartment with.
         /// </summary>
-        public readonly string SecurityZoneDisplayName;
+        public readonly string? SecurityZoneDisplayName;
         /// <summary>
         /// The OCID of the security zone to associate this compartment with.
         /// </summary>
-        public readonly string SecurityZoneId;
+        public readonly string? SecurityZoneId;
         /// <summary>
         /// possible type of targets
         /// </summary>
-        public readonly string TargetResourceType;
+        public readonly string? TargetResourceType;
         /// <summary>
         /// The list of security zone recipes to associate this compartment with.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private GetGuardTargetTargetDetailResult(
-            string securityZoneDisplayName,
+            string? securityZoneDisplayName,
 
-            string securityZoneId,
+            string? securityZoneId,
 
-            string targetResourceType,
+            string? targetResourceType,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult> targetSecurityZoneRecipes)
         {

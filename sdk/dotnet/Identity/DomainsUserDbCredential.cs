@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// The user's database password.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// Description
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Identity
         /// * returned: default
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates that the database password has expired.
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Identity
         /// * returned: default
         /// </summary>
         [Output("expired")]
-        public Output<bool> Expired { get; private set; } = null!;
+        public Output<bool?> Expired { get; private set; } = null!;
 
         /// <summary>
         /// When the user credential expires.
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("expiresOn")]
-        public Output<string> ExpiresOn { get; private set; } = null!;
+        public Output<string?> ExpiresOn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.Identity
         /// * returned: default
         /// </summary>
         [Output("lastSetDate")]
-        public Output<string> LastSetDate { get; private set; } = null!;
+        public Output<string?> LastSetDate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.Identity
         /// * required: false
         /// </summary>
         [Output("mixedDbPassword")]
-        public Output<string> MixedDbPassword { get; private set; } = null!;
+        public Output<string?> MixedDbPassword { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The mixed salt of the password.
@@ -261,7 +261,7 @@ namespace Pulumi.Oci.Identity
         /// * required: false
         /// </summary>
         [Output("mixedSalt")]
-        public Output<string> MixedSalt { get; private set; } = null!;
+        public Output<string?> MixedSalt { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The username.
@@ -277,7 +277,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// The user's OCID.
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -311,7 +311,7 @@ namespace Pulumi.Oci.Identity
         /// * required: false
         /// </summary>
         [Output("salt")]
-        public Output<string> Salt { get; private set; } = null!;
+        public Output<string?> Salt { get; private set; } = null!;
 
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -345,7 +345,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// A list of tags on this resource.
@@ -377,13 +377,13 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// Controls whether a user can update themselves or not via User related APIs
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionselfChangeUser")]
-        public Output<Outputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser?> UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; private set; } = null!;
 
         /// <summary>
         /// The user linked to the database credential.
@@ -400,7 +400,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("user")]
-        public Output<Outputs.DomainsUserDbCredentialUser> User { get; private set; } = null!;
+        public Output<Outputs.DomainsUserDbCredentialUser?> User { get; private set; } = null!;
 
 
         /// <summary>

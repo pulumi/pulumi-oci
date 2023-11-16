@@ -16,19 +16,19 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The algorithm intended for use with this key.
         /// </summary>
-        public readonly string Alg;
+        public readonly string? Alg;
         /// <summary>
         /// The base64 url encoded exponent of the RSA public key represented by this key.
         /// </summary>
-        public readonly string E;
+        public readonly string? E;
         /// <summary>
         /// The format of the public key.
         /// </summary>
-        public readonly string Format;
+        public readonly string? Format;
         /// <summary>
         /// Information around the values for selector of an authentication/ routing branch.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The operations for which this key is to be used.
         /// </summary>
@@ -36,39 +36,39 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
         /// </summary>
-        public readonly string Kid;
+        public readonly string? Kid;
         /// <summary>
         /// The key type.
         /// </summary>
-        public readonly string Kty;
+        public readonly string? Kty;
         /// <summary>
         /// The base64 url encoded modulus of the RSA public key represented by this key.
         /// </summary>
-        public readonly string N;
+        public readonly string? N;
         /// <summary>
         /// The intended use of the public key.
         /// </summary>
-        public readonly string Use;
+        public readonly string? Use;
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyKeyResult(
-            string alg,
+            string? alg,
 
-            string e,
+            string? e,
 
-            string format,
+            string? format,
 
-            string key,
+            string? key,
 
             ImmutableArray<string> keyOps,
 
-            string kid,
+            string? kid,
 
-            string kty,
+            string? kty,
 
-            string n,
+            string? n,
 
-            string use)
+            string? use)
         {
             Alg = alg;
             E = e;

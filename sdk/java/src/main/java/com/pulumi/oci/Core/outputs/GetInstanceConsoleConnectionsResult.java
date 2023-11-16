@@ -24,12 +24,12 @@ public final class GetInstanceConsoleConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of instance_console_connections.
      * 
      */
-    private List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
+    private @Nullable List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
     /**
      * @return The OCID of the instance the console connection connects to.
      * 
@@ -51,15 +51,15 @@ public final class GetInstanceConsoleConnectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of instance_console_connections.
      * 
      */
     public List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections() {
-        return this.instanceConsoleConnections;
+        return this.instanceConsoleConnections == null ? List.of() : this.instanceConsoleConnections;
     }
     /**
      * @return The OCID of the instance the console connection connects to.
@@ -80,8 +80,8 @@ public final class GetInstanceConsoleConnectionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInstanceConsoleConnectionsFilter> filters;
-        private String id;
-        private List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
+        private @Nullable String id;
+        private @Nullable List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections;
         private @Nullable String instanceId;
         public Builder() {}
         public Builder(GetInstanceConsoleConnectionsResult defaults) {
@@ -107,13 +107,13 @@ public final class GetInstanceConsoleConnectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConsoleConnections(List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections) {
-            this.instanceConsoleConnections = Objects.requireNonNull(instanceConsoleConnections);
+        public Builder instanceConsoleConnections(@Nullable List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections) {
+            this.instanceConsoleConnections = instanceConsoleConnections;
             return this;
         }
         public Builder instanceConsoleConnections(GetInstanceConsoleConnectionsInstanceConsoleConnection... instanceConsoleConnections) {

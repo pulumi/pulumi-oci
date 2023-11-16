@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthorityCertificateAuthorityConfigValidity {
@@ -13,27 +15,27 @@ public final class GetCertificateAuthorityCertificateAuthorityConfigValidity {
      * @return The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfValidityNotAfter;
+    private @Nullable String timeOfValidityNotAfter;
     /**
      * @return The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfValidityNotBefore;
+    private @Nullable String timeOfValidityNotBefore;
 
     private GetCertificateAuthorityCertificateAuthorityConfigValidity() {}
     /**
      * @return The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfValidityNotAfter() {
-        return this.timeOfValidityNotAfter;
+    public Optional<String> timeOfValidityNotAfter() {
+        return Optional.ofNullable(this.timeOfValidityNotAfter);
     }
     /**
      * @return The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfValidityNotBefore() {
-        return this.timeOfValidityNotBefore;
+    public Optional<String> timeOfValidityNotBefore() {
+        return Optional.ofNullable(this.timeOfValidityNotBefore);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetCertificateAuthorityCertificateAuthorityConfigValidity {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeOfValidityNotAfter;
-        private String timeOfValidityNotBefore;
+        private @Nullable String timeOfValidityNotAfter;
+        private @Nullable String timeOfValidityNotBefore;
         public Builder() {}
         public Builder(GetCertificateAuthorityCertificateAuthorityConfigValidity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetCertificateAuthorityCertificateAuthorityConfigValidity {
         }
 
         @CustomType.Setter
-        public Builder timeOfValidityNotAfter(String timeOfValidityNotAfter) {
-            this.timeOfValidityNotAfter = Objects.requireNonNull(timeOfValidityNotAfter);
+        public Builder timeOfValidityNotAfter(@Nullable String timeOfValidityNotAfter) {
+            this.timeOfValidityNotAfter = timeOfValidityNotAfter;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfValidityNotBefore(String timeOfValidityNotBefore) {
-            this.timeOfValidityNotBefore = Objects.requireNonNull(timeOfValidityNotBefore);
+        public Builder timeOfValidityNotBefore(@Nullable String timeOfValidityNotBefore) {
+            this.timeOfValidityNotBefore = timeOfValidityNotBefore;
             return this;
         }
         public GetCertificateAuthorityCertificateAuthorityConfigValidity build() {

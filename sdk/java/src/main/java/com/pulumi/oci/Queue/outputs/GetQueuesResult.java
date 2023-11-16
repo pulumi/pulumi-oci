@@ -34,7 +34,7 @@ public final class GetQueuesResult {
      * @return The list of queue_collection.
      * 
      */
-    private List<GetQueuesQueueCollection> queueCollections;
+    private @Nullable List<GetQueuesQueueCollection> queueCollections;
     /**
      * @return The current state of the queue.
      * 
@@ -71,7 +71,7 @@ public final class GetQueuesResult {
      * 
      */
     public List<GetQueuesQueueCollection> queueCollections() {
-        return this.queueCollections;
+        return this.queueCollections == null ? List.of() : this.queueCollections;
     }
     /**
      * @return The current state of the queue.
@@ -94,7 +94,7 @@ public final class GetQueuesResult {
         private @Nullable String displayName;
         private @Nullable List<GetQueuesFilter> filters;
         private @Nullable String id;
-        private List<GetQueuesQueueCollection> queueCollections;
+        private @Nullable List<GetQueuesQueueCollection> queueCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetQueuesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetQueuesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder queueCollections(List<GetQueuesQueueCollection> queueCollections) {
-            this.queueCollections = Objects.requireNonNull(queueCollections);
+        public Builder queueCollections(@Nullable List<GetQueuesQueueCollection> queueCollections) {
+            this.queueCollections = queueCollections;
             return this;
         }
         public Builder queueCollections(GetQueuesQueueCollection... queueCollections) {

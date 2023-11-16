@@ -121,84 +121,84 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="crossConnectGroupId", refs={String.class}, tree="[0]")
-    private Output<String> crossConnectGroupId;
+    private Output</* @Nullable */ String> crossConnectGroupId;
 
     /**
      * @return The OCID of the cross-connect group to put this cross-connect in.
      * 
      */
-    public Output<String> crossConnectGroupId() {
-        return this.crossConnectGroupId;
+    public Output<Optional<String>> crossConnectGroupId() {
+        return Codegen.optional(this.crossConnectGroupId);
     }
     /**
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      * 
      */
     @Export(name="customerReferenceName", refs={String.class}, tree="[0]")
-    private Output<String> customerReferenceName;
+    private Output</* @Nullable */ String> customerReferenceName;
 
     /**
      * @return (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      * 
      */
-    public Output<String> customerReferenceName() {
-        return this.customerReferenceName;
+    public Output<Optional<String>> customerReferenceName() {
+        return Codegen.optional(this.customerReferenceName);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
     @Export(name="farCrossConnectOrCrossConnectGroupId", refs={String.class}, tree="[0]")
-    private Output<String> farCrossConnectOrCrossConnectGroupId;
+    private Output</* @Nullable */ String> farCrossConnectOrCrossConnectGroupId;
 
     /**
      * @return If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
-    public Output<String> farCrossConnectOrCrossConnectGroupId() {
-        return this.farCrossConnectOrCrossConnectGroupId;
+    public Output<Optional<String>> farCrossConnectOrCrossConnectGroupId() {
+        return Codegen.optional(this.farCrossConnectOrCrossConnectGroupId);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you&#39;ve confirmed the cross-connect&#39;s light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
@@ -233,70 +233,70 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="macsecProperties", refs={CrossConnectMacsecProperties.class}, tree="[0]")
-    private Output<CrossConnectMacsecProperties> macsecProperties;
+    private Output</* @Nullable */ CrossConnectMacsecProperties> macsecProperties;
 
     /**
      * @return (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
-    public Output<CrossConnectMacsecProperties> macsecProperties() {
-        return this.macsecProperties;
+    public Output<Optional<CrossConnectMacsecProperties>> macsecProperties() {
+        return Codegen.optional(this.macsecProperties);
     }
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
     @Export(name="nearCrossConnectOrCrossConnectGroupId", refs={String.class}, tree="[0]")
-    private Output<String> nearCrossConnectOrCrossConnectGroupId;
+    private Output</* @Nullable */ String> nearCrossConnectOrCrossConnectGroupId;
 
     /**
      * @return If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      * 
      */
-    public Output<String> nearCrossConnectOrCrossConnectGroupId() {
-        return this.nearCrossConnectOrCrossConnectGroupId;
+    public Output<Optional<String>> nearCrossConnectOrCrossConnectGroupId() {
+        return Codegen.optional(this.nearCrossConnectOrCrossConnectGroupId);
     }
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      * 
      */
     @Export(name="ociLogicalDeviceName", refs={String.class}, tree="[0]")
-    private Output<String> ociLogicalDeviceName;
+    private Output</* @Nullable */ String> ociLogicalDeviceName;
 
     /**
      * @return The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      * 
      */
-    public Output<String> ociLogicalDeviceName() {
-        return this.ociLogicalDeviceName;
+    public Output<Optional<String>> ociLogicalDeviceName() {
+        return Codegen.optional(this.ociLogicalDeviceName);
     }
     /**
      * The FastConnect device that terminates the physical connection.
      * 
      */
     @Export(name="ociPhysicalDeviceName", refs={String.class}, tree="[0]")
-    private Output<String> ociPhysicalDeviceName;
+    private Output</* @Nullable */ String> ociPhysicalDeviceName;
 
     /**
      * @return The FastConnect device that terminates the physical connection.
      * 
      */
-    public Output<String> ociPhysicalDeviceName() {
-        return this.ociPhysicalDeviceName;
+    public Output<Optional<String>> ociPhysicalDeviceName() {
+        return Codegen.optional(this.ociPhysicalDeviceName);
     }
     /**
      * A string identifying the meet-me room port for this cross-connect.
      * 
      */
     @Export(name="portName", refs={String.class}, tree="[0]")
-    private Output<String> portName;
+    private Output</* @Nullable */ String> portName;
 
     /**
      * @return A string identifying the meet-me room port for this cross-connect.
      * 
      */
-    public Output<String> portName() {
-        return this.portName;
+    public Output<Optional<String>> portName() {
+        return Codegen.optional(this.portName);
     }
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
@@ -323,28 +323,28 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) Indicates whether or not MACsec is enabled.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

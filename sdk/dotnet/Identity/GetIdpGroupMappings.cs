@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the `IdentityProvider` this mapping belongs to.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Identity
         private GetIdpGroupMappingsResult(
             ImmutableArray<Outputs.GetIdpGroupMappingsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string identityProviderId,
 

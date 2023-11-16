@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterOptionClusterPodNetworkOption {
@@ -13,15 +15,15 @@ public final class GetClusterOptionClusterPodNetworkOption {
      * @return The CNI used by the node pools of this cluster
      * 
      */
-    private String cniType;
+    private @Nullable String cniType;
 
     private GetClusterOptionClusterPodNetworkOption() {}
     /**
      * @return The CNI used by the node pools of this cluster
      * 
      */
-    public String cniType() {
-        return this.cniType;
+    public Optional<String> cniType() {
+        return Optional.ofNullable(this.cniType);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetClusterOptionClusterPodNetworkOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cniType;
+        private @Nullable String cniType;
         public Builder() {}
         public Builder(GetClusterOptionClusterPodNetworkOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetClusterOptionClusterPodNetworkOption {
         }
 
         @CustomType.Setter
-        public Builder cniType(String cniType) {
-            this.cniType = Objects.requireNonNull(cniType);
+        public Builder cniType(@Nullable String cniType) {
+            this.cniType = cniType;
             return this;
         }
         public GetClusterOptionClusterPodNetworkOption build() {

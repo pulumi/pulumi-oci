@@ -20,7 +20,7 @@ public final class GetSoftwareSourceStreamProfileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the module that contains the stream profile
      * 
@@ -30,7 +30,7 @@ public final class GetSoftwareSourceStreamProfileResult {
      * @return The list of module_stream_profiles.
      * 
      */
-    private List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles;
+    private @Nullable List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles;
     /**
      * @return The name of the profile
      * 
@@ -54,8 +54,8 @@ public final class GetSoftwareSourceStreamProfileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the module that contains the stream profile
@@ -69,7 +69,7 @@ public final class GetSoftwareSourceStreamProfileResult {
      * 
      */
     public List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles() {
-        return this.moduleStreamProfiles;
+        return this.moduleStreamProfiles == null ? List.of() : this.moduleStreamProfiles;
     }
     /**
      * @return The name of the profile
@@ -100,9 +100,9 @@ public final class GetSoftwareSourceStreamProfileResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetSoftwareSourceStreamProfileFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String moduleName;
-        private List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles;
+        private @Nullable List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles;
         private @Nullable String profileName;
         private String softwareSourceId;
         private @Nullable String streamName;
@@ -133,8 +133,8 @@ public final class GetSoftwareSourceStreamProfileResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -143,8 +143,8 @@ public final class GetSoftwareSourceStreamProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder moduleStreamProfiles(List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles) {
-            this.moduleStreamProfiles = Objects.requireNonNull(moduleStreamProfiles);
+        public Builder moduleStreamProfiles(@Nullable List<GetSoftwareSourceStreamProfileModuleStreamProfile> moduleStreamProfiles) {
+            this.moduleStreamProfiles = moduleStreamProfiles;
             return this;
         }
         public Builder moduleStreamProfiles(GetSoftwareSourceStreamProfileModuleStreamProfile... moduleStreamProfiles) {

@@ -65,7 +65,7 @@ export interface GetCrossConnectGroupsResult {
     /**
      * The list of cross_connect_groups.
      */
-    readonly crossConnectGroups: outputs.Core.GetCrossConnectGroupsCrossConnectGroup[];
+    readonly crossConnectGroups?: outputs.Core.GetCrossConnectGroupsCrossConnectGroup[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -74,7 +74,7 @@ export interface GetCrossConnectGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The cross-connect group's current state.
      */

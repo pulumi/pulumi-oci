@@ -8,6 +8,7 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConf
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail {
@@ -15,12 +16,12 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
      * @return Client certificate in PEM format.
      * 
      */
-    private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates;
+    private @Nullable List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates;
     /**
      * @return The private key associated with the client certificate in PEM format.
      * 
      */
-    private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys;
+    private @Nullable List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys;
 
     private GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail() {}
     /**
@@ -28,14 +29,14 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
      * 
      */
     public List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates() {
-        return this.clientCertificates;
+        return this.clientCertificates == null ? List.of() : this.clientCertificates;
     }
     /**
      * @return The private key associated with the client certificate in PEM format.
      * 
      */
     public List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys() {
-        return this.privateKeys;
+        return this.privateKeys == null ? List.of() : this.privateKeys;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates;
-        private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys;
+        private @Nullable List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates;
+        private @Nullable List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetMonitorsMonitorCollectionItemConfigurationClientCertificat
         }
 
         @CustomType.Setter
-        public Builder clientCertificates(List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates) {
-            this.clientCertificates = Objects.requireNonNull(clientCertificates);
+        public Builder clientCertificates(@Nullable List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate> clientCertificates) {
+            this.clientCertificates = clientCertificates;
             return this;
         }
         public Builder clientCertificates(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificate... clientCertificates) {
             return clientCertificates(List.of(clientCertificates));
         }
         @CustomType.Setter
-        public Builder privateKeys(List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys) {
-            this.privateKeys = Objects.requireNonNull(privateKeys);
+        public Builder privateKeys(@Nullable List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey> privateKeys) {
+            this.privateKeys = privateKeys;
             return this;
         }
         public Builder privateKeys(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKey... privateKeys) {

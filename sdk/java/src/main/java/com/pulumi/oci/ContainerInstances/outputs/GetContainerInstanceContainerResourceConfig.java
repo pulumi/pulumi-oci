@@ -6,18 +6,20 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceContainerResourceConfig {
-    private Double memoryLimitInGbs;
-    private Double vcpusLimit;
+    private @Nullable Double memoryLimitInGbs;
+    private @Nullable Double vcpusLimit;
 
     private GetContainerInstanceContainerResourceConfig() {}
-    public Double memoryLimitInGbs() {
-        return this.memoryLimitInGbs;
+    public Optional<Double> memoryLimitInGbs() {
+        return Optional.ofNullable(this.memoryLimitInGbs);
     }
-    public Double vcpusLimit() {
-        return this.vcpusLimit;
+    public Optional<Double> vcpusLimit() {
+        return Optional.ofNullable(this.vcpusLimit);
     }
 
     public static Builder builder() {
@@ -29,8 +31,8 @@ public final class GetContainerInstanceContainerResourceConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double memoryLimitInGbs;
-        private Double vcpusLimit;
+        private @Nullable Double memoryLimitInGbs;
+        private @Nullable Double vcpusLimit;
         public Builder() {}
         public Builder(GetContainerInstanceContainerResourceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -39,13 +41,13 @@ public final class GetContainerInstanceContainerResourceConfig {
         }
 
         @CustomType.Setter
-        public Builder memoryLimitInGbs(Double memoryLimitInGbs) {
-            this.memoryLimitInGbs = Objects.requireNonNull(memoryLimitInGbs);
+        public Builder memoryLimitInGbs(@Nullable Double memoryLimitInGbs) {
+            this.memoryLimitInGbs = memoryLimitInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder vcpusLimit(Double vcpusLimit) {
-            this.vcpusLimit = Objects.requireNonNull(vcpusLimit);
+        public Builder vcpusLimit(@Nullable Double vcpusLimit) {
+            this.vcpusLimit = vcpusLimit;
             return this;
         }
         public GetContainerInstanceContainerResourceConfig build() {

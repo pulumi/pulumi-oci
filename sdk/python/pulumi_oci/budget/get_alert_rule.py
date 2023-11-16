@@ -79,121 +79,76 @@ class GetAlertRuleResult:
     @property
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> str:
-        """
-        The OCID of the budget.
-        """
         return pulumi.get(self, "budget_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the alert rule.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the alert rule. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the alert rule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def message(self) -> str:
-        """
-        The custom message that will be sent when the alert is triggered.
-        """
+    def message(self) -> Optional[str]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
-    def recipients(self) -> str:
-        """
-        The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
-        """
+    def recipients(self) -> Optional[str]:
         return pulumi.get(self, "recipients")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the alert rule.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def threshold(self) -> float:
-        """
-        The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
-        """
+    def threshold(self) -> Optional[float]:
         return pulumi.get(self, "threshold")
 
     @property
     @pulumi.getter(name="thresholdType")
-    def threshold_type(self) -> str:
-        """
-        The type of threshold.
-        """
+    def threshold_type(self) -> Optional[str]:
         return pulumi.get(self, "threshold_type")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the budget was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the budget was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        The version of the alert rule. Starts from 1 and increments by 1.
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
@@ -225,23 +180,7 @@ def get_alert_rule(alert_rule_id: Optional[str] = None,
                    budget_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertRuleResult:
     """
-    This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-
-    Gets an Alert Rule for a specified budget.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_rule = oci.Budget.get_alert_rule(alert_rule_id=oci_budget_alert_rule["test_alert_rule"]["id"],
-        budget_id=oci_budget_budget["test_budget"]["id"])
-    ```
-
-
-    :param str alert_rule_id: The unique Alert Rule OCID.
-    :param str budget_id: The unique budget OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['alertRuleId'] = alert_rule_id
@@ -273,22 +212,6 @@ def get_alert_rule_output(alert_rule_id: Optional[pulumi.Input[str]] = None,
                           budget_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertRuleResult]:
     """
-    This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-
-    Gets an Alert Rule for a specified budget.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_rule = oci.Budget.get_alert_rule(alert_rule_id=oci_budget_alert_rule["test_alert_rule"]["id"],
-        budget_id=oci_budget_budget["test_budget"]["id"])
-    ```
-
-
-    :param str alert_rule_id: The unique Alert Rule OCID.
-    :param str budget_id: The unique budget OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

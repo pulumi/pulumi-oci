@@ -116,7 +116,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -132,8 +132,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * The user&#39;s database password.
@@ -176,7 +176,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -192,8 +192,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * Description
@@ -209,7 +209,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return Description
@@ -224,8 +224,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * returned: default
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -242,7 +242,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -258,8 +258,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) Indicates that the database password has expired.
@@ -271,7 +271,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="expired", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> expired;
+    private Output</* @Nullable */ Boolean> expired;
 
     /**
      * @return (Updatable) Indicates that the database password has expired.
@@ -282,8 +282,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * returned: default
      * 
      */
-    public Output<Boolean> expired() {
-        return this.expired;
+    public Output<Optional<Boolean>> expired() {
+        return Codegen.optional(this.expired);
     }
     /**
      * When the user credential expires.
@@ -302,7 +302,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="expiresOn", refs={String.class}, tree="[0]")
-    private Output<String> expiresOn;
+    private Output</* @Nullable */ String> expiresOn;
 
     /**
      * @return When the user credential expires.
@@ -320,8 +320,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> expiresOn() {
-        return this.expiresOn;
+    public Output<Optional<String>> expiresOn() {
+        return Codegen.optional(this.expiresOn);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -336,7 +336,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsMyUserDbCredentialIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsMyUserDbCredentialIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsMyUserDbCredentialIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -350,8 +350,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * type: complex
      * 
      */
-    public Output<List<DomainsMyUserDbCredentialIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsMyUserDbCredentialIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -380,7 +380,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsMyUserDbCredentialIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsMyUserDbCredentialIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsMyUserDbCredentialIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -394,8 +394,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * type: complex
      * 
      */
-    public Output<List<DomainsMyUserDbCredentialIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsMyUserDbCredentialIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -412,7 +412,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -428,8 +428,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -445,7 +445,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -460,8 +460,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) A DateTime that specifies the date and time when the current database password was set.
@@ -473,7 +473,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="lastSetDate", refs={String.class}, tree="[0]")
-    private Output<String> lastSetDate;
+    private Output</* @Nullable */ String> lastSetDate;
 
     /**
      * @return (Updatable) A DateTime that specifies the date and time when the current database password was set.
@@ -484,8 +484,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * returned: default
      * 
      */
-    public Output<String> lastSetDate() {
-        return this.lastSetDate;
+    public Output<Optional<String>> lastSetDate() {
+        return Codegen.optional(this.lastSetDate);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -502,7 +502,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="metas", refs={List.class,DomainsMyUserDbCredentialMeta.class}, tree="[0,1]")
-    private Output<List<DomainsMyUserDbCredentialMeta>> metas;
+    private Output</* @Nullable */ List<DomainsMyUserDbCredentialMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -518,8 +518,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * type: complex
      * 
      */
-    public Output<List<DomainsMyUserDbCredentialMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsMyUserDbCredentialMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) The user&#39;s database password with mixed salt.
@@ -532,7 +532,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="mixedDbPassword", refs={String.class}, tree="[0]")
-    private Output<String> mixedDbPassword;
+    private Output</* @Nullable */ String> mixedDbPassword;
 
     /**
      * @return (Updatable) The user&#39;s database password with mixed salt.
@@ -544,8 +544,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * required: false
      * 
      */
-    public Output<String> mixedDbPassword() {
-        return this.mixedDbPassword;
+    public Output<Optional<String>> mixedDbPassword() {
+        return Codegen.optional(this.mixedDbPassword);
     }
     /**
      * (Updatable) The mixed salt of the password.
@@ -558,7 +558,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="mixedSalt", refs={String.class}, tree="[0]")
-    private Output<String> mixedSalt;
+    private Output</* @Nullable */ String> mixedSalt;
 
     /**
      * @return (Updatable) The mixed salt of the password.
@@ -570,8 +570,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * required: false
      * 
      */
-    public Output<String> mixedSalt() {
-        return this.mixedSalt;
+    public Output<Optional<String>> mixedSalt() {
+        return Codegen.optional(this.mixedSalt);
     }
     /**
      * (Updatable) The username.
@@ -588,7 +588,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return (Updatable) The username.
@@ -604,8 +604,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * The user&#39;s OCID.
@@ -622,7 +622,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return The user&#39;s OCID.
@@ -638,8 +638,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -666,7 +666,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="salt", refs={String.class}, tree="[0]")
-    private Output<String> salt;
+    private Output</* @Nullable */ String> salt;
 
     /**
      * @return (Updatable) The salt of the password.
@@ -678,8 +678,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * required: false
      * 
      */
-    public Output<String> salt() {
-        return this.salt;
+    public Output<Optional<String>> salt() {
+        return Codegen.optional(this.salt);
     }
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -732,7 +732,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return User credential status
@@ -750,8 +750,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * A list of tags on this resource.
@@ -768,7 +768,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="tags", refs={List.class,DomainsMyUserDbCredentialTag.class}, tree="[0,1]")
-    private Output<List<DomainsMyUserDbCredentialTag>> tags;
+    private Output</* @Nullable */ List<DomainsMyUserDbCredentialTag>> tags;
 
     /**
      * @return A list of tags on this resource.
@@ -784,8 +784,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsMyUserDbCredentialTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsMyUserDbCredentialTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -802,7 +802,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -818,8 +818,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * The user linked to the database credential.
@@ -837,7 +837,7 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="user", refs={DomainsMyUserDbCredentialUser.class}, tree="[0]")
-    private Output<DomainsMyUserDbCredentialUser> user;
+    private Output</* @Nullable */ DomainsMyUserDbCredentialUser> user;
 
     /**
      * @return The user linked to the database credential.
@@ -854,8 +854,8 @@ public class DomainsMyUserDbCredential extends com.pulumi.resources.CustomResour
      * * uniqueness: none
      * 
      */
-    public Output<DomainsMyUserDbCredentialUser> user() {
-        return this.user;
+    public Output<Optional<DomainsMyUserDbCredentialUser>> user() {
+        return Codegen.optional(this.user);
     }
 
     /**

@@ -37,7 +37,7 @@ class GetPrivateEndpointReachableIpResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -45,10 +45,7 @@ class GetPrivateEndpointReachableIpResult:
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
-        """
-        An IP address for the Resource Manager service to use for connection to the private resource.
-        """
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
@@ -78,23 +75,7 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[str] = None,
                                       private_ip: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointReachableIpResult:
     """
-    This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
-
-    Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
-        private_ip=var["private_endpoint_reachable_ip_private_ip"])
-    ```
-
-
-    :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-    :param str private_ip: The IP address of the resource in the private subnet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['privateEndpointId'] = private_endpoint_id
@@ -114,22 +95,6 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
                                              private_ip: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointReachableIpResult]:
     """
-    This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
-
-    Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
-        private_ip=var["private_endpoint_reachable_ip_private_ip"])
-    ```
-
-
-    :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-    :param str private_ip: The IP address of the resource in the private subnet.
+    Use this data source to access information about an existing resource.
     """
     ...

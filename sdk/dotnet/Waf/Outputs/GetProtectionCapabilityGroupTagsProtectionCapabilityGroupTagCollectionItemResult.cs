@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire name given.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult(string name)
+        private GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult(string? name)
         {
             Name = name;
         }

@@ -52,17 +52,11 @@ class GetManagementStationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the Management Station.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        ManagementStation name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -78,33 +72,21 @@ class GetManagementStationsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        OCID for the ManagementStation config
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
-        """
-        OCID for the Instance associated with the Management Station.
-        """
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter(name="managementStationCollections")
-    def management_station_collections(self) -> Sequence['outputs.GetManagementStationsManagementStationCollectionResult']:
-        """
-        The list of management_station_collection.
-        """
+    def management_station_collections(self) -> Optional[Sequence['outputs.GetManagementStationsManagementStationCollectionResult']]:
         return pulumi.get(self, "management_station_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Management Station config.
-        """
         return pulumi.get(self, "state")
 
 
@@ -133,31 +115,7 @@ def get_management_stations(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementStationsResult:
     """
-    This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists management stations in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=var["compartment_id"],
-        display_name=var["management_station_display_name"],
-        display_name_contains=var["management_station_display_name_contains"],
-        id=var["management_station_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        state=var["management_station_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str id: The OCID of the management station.
-    :param str managed_instance_id: The OCID of the managed instance for which to list resources.
-    :param str state: The current lifecycle state for the object.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -191,30 +149,6 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementStationsResult]:
     """
-    This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists management stations in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=var["compartment_id"],
-        display_name=var["management_station_display_name"],
-        display_name_contains=var["management_station_display_name_contains"],
-        id=var["management_station_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        state=var["management_station_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param str id: The OCID of the management station.
-    :param str managed_instance_id: The OCID of the managed instance for which to list resources.
-    :param str state: The current lifecycle state for the object.
+    Use this data source to access information about an existing resource.
     """
     ...

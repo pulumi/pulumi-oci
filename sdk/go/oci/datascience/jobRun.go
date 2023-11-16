@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Job Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -82,25 +81,25 @@ type JobRun struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly display name for the resource.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The job configuration details
-	JobConfigurationOverrideDetails JobRunJobConfigurationOverrideDetailsOutput `pulumi:"jobConfigurationOverrideDetails"`
+	JobConfigurationOverrideDetails JobRunJobConfigurationOverrideDetailsPtrOutput `pulumi:"jobConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId pulumi.StringOutput `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobRunJobInfrastructureConfigurationDetailArrayOutput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
-	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsOutput `pulumi:"jobLogConfigurationOverrideDetails"`
+	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrOutput `pulumi:"jobLogConfigurationOverrideDetails"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// Details of the state of the job run.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayOutput `pulumi:"logDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -109,13 +108,13 @@ type JobRun struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The state of the job run.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrOutput `pulumi:"timeAccepted"`
 	// The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeFinished pulumi.StringOutput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrOutput `pulumi:"timeFinished"`
 	// The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 }
 
 // NewJobRun registers a new resource with the given unique name, arguments, and options.
@@ -316,12 +315,6 @@ func (i *JobRun) ToJobRunOutputWithContext(ctx context.Context) JobRunOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobRunOutput)
 }
 
-func (i *JobRun) ToOutput(ctx context.Context) pulumix.Output[*JobRun] {
-	return pulumix.Output[*JobRun]{
-		OutputState: i.ToJobRunOutputWithContext(ctx).OutputState,
-	}
-}
-
 // JobRunArrayInput is an input type that accepts JobRunArray and JobRunArrayOutput values.
 // You can construct a concrete instance of `JobRunArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i JobRunArray) ToJobRunArrayOutput() JobRunArrayOutput {
 
 func (i JobRunArray) ToJobRunArrayOutputWithContext(ctx context.Context) JobRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(JobRunArrayOutput)
-}
-
-func (i JobRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*JobRun] {
-	return pulumix.Output[[]*JobRun]{
-		OutputState: i.ToJobRunArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // JobRunMapInput is an input type that accepts JobRunMap and JobRunMapOutput values.
@@ -378,12 +365,6 @@ func (i JobRunMap) ToJobRunMapOutputWithContext(ctx context.Context) JobRunMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(JobRunMapOutput)
 }
 
-func (i JobRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*JobRun] {
-	return pulumix.Output[map[string]*JobRun]{
-		OutputState: i.ToJobRunMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type JobRunOutput struct{ *pulumi.OutputState }
 
 func (JobRunOutput) ElementType() reflect.Type {
@@ -398,12 +379,6 @@ func (o JobRunOutput) ToJobRunOutputWithContext(ctx context.Context) JobRunOutpu
 	return o
 }
 
-func (o JobRunOutput) ToOutput(ctx context.Context) pulumix.Output[*JobRun] {
-	return pulumix.Output[*JobRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
 func (o JobRunOutput) Asynchronous() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *JobRun) pulumi.BoolPtrOutput { return v.Asynchronous }).(pulumi.BoolPtrOutput)
@@ -415,8 +390,8 @@ func (o JobRunOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
-func (o JobRunOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o JobRunOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -425,8 +400,8 @@ func (o JobRunOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly display name for the resource.
-func (o JobRunOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o JobRunOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -435,8 +410,10 @@ func (o JobRunOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The job configuration details
-func (o JobRunOutput) JobConfigurationOverrideDetails() JobRunJobConfigurationOverrideDetailsOutput {
-	return o.ApplyT(func(v *JobRun) JobRunJobConfigurationOverrideDetailsOutput { return v.JobConfigurationOverrideDetails }).(JobRunJobConfigurationOverrideDetailsOutput)
+func (o JobRunOutput) JobConfigurationOverrideDetails() JobRunJobConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobConfigurationOverrideDetailsPtrOutput {
+		return v.JobConfigurationOverrideDetails
+	}).(JobRunJobConfigurationOverrideDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
@@ -452,10 +429,10 @@ func (o JobRunOutput) JobInfrastructureConfigurationDetails() JobRunJobInfrastru
 }
 
 // Logging configuration for resource.
-func (o JobRunOutput) JobLogConfigurationOverrideDetails() JobRunJobLogConfigurationOverrideDetailsOutput {
-	return o.ApplyT(func(v *JobRun) JobRunJobLogConfigurationOverrideDetailsOutput {
+func (o JobRunOutput) JobLogConfigurationOverrideDetails() JobRunJobLogConfigurationOverrideDetailsPtrOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobLogConfigurationOverrideDetailsPtrOutput {
 		return v.JobLogConfigurationOverrideDetails
-	}).(JobRunJobLogConfigurationOverrideDetailsOutput)
+	}).(JobRunJobLogConfigurationOverrideDetailsPtrOutput)
 }
 
 // Collection of JobStorageMountConfigurationDetails.
@@ -466,8 +443,8 @@ func (o JobRunOutput) JobStorageMountConfigurationDetailsLists() JobRunJobStorag
 }
 
 // Details of the state of the job run.
-func (o JobRunOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o JobRunOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Customer logging details for job run.
@@ -484,23 +461,23 @@ func (o JobRunOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The state of the job run.
-func (o JobRunOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o JobRunOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o JobRunOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o JobRunOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o JobRunOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.TimeFinished }).(pulumi.StringOutput)
+func (o JobRunOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o JobRunOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o JobRunOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type JobRunArrayOutput struct{ *pulumi.OutputState }
@@ -515,12 +492,6 @@ func (o JobRunArrayOutput) ToJobRunArrayOutput() JobRunArrayOutput {
 
 func (o JobRunArrayOutput) ToJobRunArrayOutputWithContext(ctx context.Context) JobRunArrayOutput {
 	return o
-}
-
-func (o JobRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*JobRun] {
-	return pulumix.Output[[]*JobRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o JobRunArrayOutput) Index(i pulumi.IntInput) JobRunOutput {
@@ -541,12 +512,6 @@ func (o JobRunMapOutput) ToJobRunMapOutput() JobRunMapOutput {
 
 func (o JobRunMapOutput) ToJobRunMapOutputWithContext(ctx context.Context) JobRunMapOutput {
 	return o
-}
-
-func (o JobRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*JobRun] {
-	return pulumix.Output[map[string]*JobRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o JobRunMapOutput) MapIndex(k pulumi.StringInput) JobRunOutput {

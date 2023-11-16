@@ -66,13 +66,13 @@ namespace Pulumi.Oci.Budget
         /// The actual spend in currency for the current budget cycle.
         /// </summary>
         [Output("actualSpend")]
-        public Output<double> ActualSpend { get; private set; } = null!;
+        public Output<double?> ActualSpend { get; private set; } = null!;
 
         /// <summary>
         /// The total number of alert rules in the budget.
         /// </summary>
         [Output("alertRuleCount")]
-        public Output<int> AlertRuleCount { get; private set; } = null!;
+        public Output<int?> AlertRuleCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Budget
         /// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
         /// </summary>
         [Output("budgetProcessingPeriodStartOffset")]
-        public Output<int> BudgetProcessingPeriodStartOffset { get; private set; } = null!;
+        public Output<int?> BudgetProcessingPeriodStartOffset { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment.
@@ -96,43 +96,43 @@ namespace Pulumi.Oci.Budget
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the budget.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The displayName of the budget. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Output("endDate")]
-        public Output<string> EndDate { get; private set; } = null!;
+        public Output<string?> EndDate { get; private set; } = null!;
 
         /// <summary>
         /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
         [Output("forecastedSpend")]
-        public Output<double> ForecastedSpend { get; private set; } = null!;
+        public Output<double?> ForecastedSpend { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         /// </summary>
         [Output("processingPeriodType")]
-        public Output<string> ProcessingPeriodType { get; private set; } = null!;
+        public Output<string?> ProcessingPeriodType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -144,25 +144,25 @@ namespace Pulumi.Oci.Budget
         /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Output("startDate")]
-        public Output<string> StartDate { get; private set; } = null!;
+        public Output<string?> StartDate { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the budget.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// This is DEPRECATED. Set the target compartment ID in targets instead.
         /// </summary>
         [Output("targetCompartmentId")]
-        public Output<string> TargetCompartmentId { get; private set; } = null!;
+        public Output<string?> TargetCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The type of target on which the budget is applied.
         /// </summary>
         [Output("targetType")]
-        public Output<string> TargetType { get; private set; } = null!;
+        public Output<string?> TargetType { get; private set; } = null!;
 
         /// <summary>
         /// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
@@ -178,25 +178,25 @@ namespace Pulumi.Oci.Budget
         /// The time that the budget was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time that the budget spend was last computed.
         /// </summary>
         [Output("timeSpendComputed")]
-        public Output<string> TimeSpendComputed { get; private set; } = null!;
+        public Output<string?> TimeSpendComputed { get; private set; } = null!;
 
         /// <summary>
         /// The time that the budget was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The version of the budget. Starts from 1 and increments by 1.
         /// </summary>
         [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
+        public Output<int?> Version { get; private set; } = null!;
 
 
         /// <summary>

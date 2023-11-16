@@ -54,12 +54,12 @@ export interface GetTopUtilizedProductLicensesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     /**
      * Collection of top utilized product licenses.
      */
-    readonly items: outputs.LicenseManager.GetTopUtilizedProductLicensesItem[];
+    readonly items?: outputs.LicenseManager.GetTopUtilizedProductLicensesItem[];
 }
 /**
  * This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The platform or software version of the CPE device.
         /// </summary>
-        public readonly string PlatformSoftwareVersion;
+        public readonly string? PlatformSoftwareVersion;
         /// <summary>
         /// The vendor that makes the CPE device.
         /// </summary>
-        public readonly string Vendor;
+        public readonly string? Vendor;
 
         [OutputConstructor]
         private GetCpeDeviceShapeCpeDeviceInfoResult(
-            string platformSoftwareVersion,
+            string? platformSoftwareVersion,
 
-            string vendor)
+            string? vendor)
         {
             PlatformSoftwareVersion = platformSoftwareVersion;
             Vendor = vendor;

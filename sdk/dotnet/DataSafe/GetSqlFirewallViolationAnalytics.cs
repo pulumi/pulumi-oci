@@ -271,7 +271,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? QueryTimeZone;
         public readonly string? ScimQuery;
         /// <summary>
@@ -300,7 +300,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<string> groupBies,
 
-            string id,
+            string? id,
 
             string? queryTimeZone,
 

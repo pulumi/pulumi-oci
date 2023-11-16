@@ -34,43 +34,43 @@ namespace Pulumi.Oci.Optimizer
         /// The unique OCID associated with the category.
         /// </summary>
         [Output("categoryId")]
-        public Output<string> CategoryId { get; private set; } = null!;
+        public Output<string?> CategoryId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the tenancy. The tenancy is the root compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Text describing the recommendation.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// The estimated cost savings, in dollars, for the recommendation.
         /// </summary>
         [Output("estimatedCostSaving")]
-        public Output<double> EstimatedCostSaving { get; private set; } = null!;
+        public Output<double?> EstimatedCostSaving { get; private set; } = null!;
 
         /// <summary>
         /// Additional metadata key/value pairs for the recommendation.
         /// </summary>
         [Output("extendedMetadata")]
-        public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// The level of importance assigned to the recommendation.
         /// </summary>
         [Output("importance")]
-        public Output<string> Importance { get; private set; } = null!;
+        public Output<string?> Importance { get; private set; } = null!;
 
         /// <summary>
         /// The name of the profile level.
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// The unique OCID associated with the recommendation.
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.Optimizer
         /// The recommendation's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The status of the recommendation.
@@ -106,13 +106,13 @@ namespace Pulumi.Oci.Optimizer
         /// The date and time the recommendation details were created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the recommendation entered its current status. The format is defined by RFC3339.
         /// </summary>
         [Output("timeStatusBegin")]
-        public Output<string> TimeStatusBegin { get; private set; } = null!;
+        public Output<string?> TimeStatusBegin { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
@@ -124,13 +124,13 @@ namespace Pulumi.Oci.Optimizer
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeStatusEnd")]
-        public Output<string> TimeStatusEnd { get; private set; } = null!;
+        public Output<string?> TimeStatusEnd { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the recommendation details were last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

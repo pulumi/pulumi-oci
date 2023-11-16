@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Media Workflow Job Facts in Oracle Cloud Infrastructure Media Services service.
@@ -68,7 +67,7 @@ type GetMediaWorkflowJobFactsArgs struct {
 type GetMediaWorkflowJobFactsResult struct {
 	Filters []GetMediaWorkflowJobFactsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
 	Key *string `pulumi:"key"`
 	// The list of media_workflow_job_fact_collection.
@@ -122,19 +121,13 @@ func (o GetMediaWorkflowJobFactsResultOutput) ToGetMediaWorkflowJobFactsResultOu
 	return o
 }
 
-func (o GetMediaWorkflowJobFactsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowJobFactsResult] {
-	return pulumix.Output[GetMediaWorkflowJobFactsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowJobFactsResultOutput) Filters() GetMediaWorkflowJobFactsFilterArrayOutput {
 	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) []GetMediaWorkflowJobFactsFilter { return v.Filters }).(GetMediaWorkflowJobFactsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMediaWorkflowJobFactsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowJobFactsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobFactsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.

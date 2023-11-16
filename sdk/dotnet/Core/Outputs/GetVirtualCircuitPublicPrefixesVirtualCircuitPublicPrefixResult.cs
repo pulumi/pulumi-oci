@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Publix IP prefix (CIDR) that the customer specified.
         /// </summary>
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         /// <summary>
         /// A filter to only return resources that match the given verification state.
         /// 
         /// The state value is case-insensitive.
         /// </summary>
-        public readonly string VerificationState;
+        public readonly string? VerificationState;
 
         [OutputConstructor]
         private GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixResult(
-            string cidrBlock,
+            string? cidrBlock,
 
-            string verificationState)
+            string? verificationState)
         {
             CidrBlock = cidrBlock;
             VerificationState = verificationState;

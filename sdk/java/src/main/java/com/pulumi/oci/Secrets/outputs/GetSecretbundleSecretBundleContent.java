@@ -6,6 +6,8 @@ package com.pulumi.oci.Secrets.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecretbundleSecretBundleContent {
@@ -13,27 +15,27 @@ public final class GetSecretbundleSecretBundleContent {
      * @return The base64-encoded content of the secret.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return The formatting type of the secret contents.
      * 
      */
-    private String contentType;
+    private @Nullable String contentType;
 
     private GetSecretbundleSecretBundleContent() {}
     /**
      * @return The base64-encoded content of the secret.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return The formatting type of the secret contents.
      * 
      */
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetSecretbundleSecretBundleContent {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String contentType;
+        private @Nullable String content;
+        private @Nullable String contentType;
         public Builder() {}
         public Builder(GetSecretbundleSecretBundleContent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetSecretbundleSecretBundleContent {
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         public GetSecretbundleSecretBundleContent build() {

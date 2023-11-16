@@ -108,27 +108,27 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the compartment that contains the security assessment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the security assessment.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The display name of the security assessment.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the security assessment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         /// </summary>
@@ -140,36 +140,36 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
         /// </summary>
-        public readonly bool IsBaseline;
+        public readonly bool? IsBaseline;
         /// <summary>
         /// Indicates whether or not the security assessment deviates from the baseline.
         /// </summary>
-        public readonly bool IsDeviatedFromBaseline;
+        public readonly bool? IsDeviatedFromBaseline;
         /// <summary>
         /// The OCID of the baseline against which the latest security assessment was compared.
         /// </summary>
-        public readonly string LastComparedBaselineId;
+        public readonly string? LastComparedBaselineId;
         /// <summary>
         /// Details about the current state of the security assessment.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The summary of findings for the security assessment.
         /// </summary>
-        public readonly string Link;
+        public readonly string? Link;
         /// <summary>
         /// Schedule of the assessment that runs periodically in the specified format: - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
-        public readonly string Schedule;
+        public readonly string? Schedule;
         /// <summary>
         /// The OCID of the security assessment that is responsible for creating this scheduled save assessment.
         /// </summary>
-        public readonly string ScheduleSecurityAssessmentId;
+        public readonly string? ScheduleSecurityAssessmentId;
         public readonly string SecurityAssessmentId;
         /// <summary>
         /// The current state of the security assessment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
         /// </summary>
@@ -177,8 +177,8 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
-        public readonly string TargetId;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
+        public readonly string? TargetId;
         /// <summary>
         /// Array of database target OCIDs.
         /// </summary>
@@ -186,83 +186,83 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The version of the target database.
         /// </summary>
-        public readonly string TargetVersion;
+        public readonly string? TargetVersion;
         /// <summary>
         /// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeLastAssessed;
+        public readonly string? TimeLastAssessed;
         /// <summary>
         /// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Indicates whether the security assessment was created by system or by a user.
         /// </summary>
-        public readonly string TriggeredBy;
+        public readonly string? TriggeredBy;
         /// <summary>
         /// The type of this security assessment. The possible types are:
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetSecurityAssessmentResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> ignoredAssessmentIds,
 
             ImmutableArray<string> ignoredTargets,
 
-            bool isBaseline,
+            bool? isBaseline,
 
-            bool isDeviatedFromBaseline,
+            bool? isDeviatedFromBaseline,
 
-            string lastComparedBaselineId,
+            string? lastComparedBaselineId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string link,
+            string? link,
 
-            string schedule,
+            string? schedule,
 
-            string scheduleSecurityAssessmentId,
+            string? scheduleSecurityAssessmentId,
 
             string securityAssessmentId,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetSecurityAssessmentStatisticResult> statistics,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetId,
+            string? targetId,
 
             ImmutableArray<string> targetIds,
 
-            string targetVersion,
+            string? targetVersion,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastAssessed,
+            string? timeLastAssessed,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string triggeredBy,
+            string? triggeredBy,
 
-            string type)
+            string? type)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

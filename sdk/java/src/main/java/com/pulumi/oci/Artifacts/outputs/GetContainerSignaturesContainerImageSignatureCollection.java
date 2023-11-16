@@ -8,18 +8,20 @@ import com.pulumi.oci.Artifacts.outputs.GetContainerSignaturesContainerImageSign
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerSignaturesContainerImageSignatureCollection {
-    private List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
-    private Integer remainingItemsCount;
+    private @Nullable List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
+    private @Nullable Integer remainingItemsCount;
 
     private GetContainerSignaturesContainerImageSignatureCollection() {}
     public List<GetContainerSignaturesContainerImageSignatureCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
-    public Integer remainingItemsCount() {
-        return this.remainingItemsCount;
+    public Optional<Integer> remainingItemsCount() {
+        return Optional.ofNullable(this.remainingItemsCount);
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
-        private Integer remainingItemsCount;
+        private @Nullable List<GetContainerSignaturesContainerImageSignatureCollectionItem> items;
+        private @Nullable Integer remainingItemsCount;
         public Builder() {}
         public Builder(GetContainerSignaturesContainerImageSignatureCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,16 +43,16 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetContainerSignaturesContainerImageSignatureCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetContainerSignaturesContainerImageSignatureCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetContainerSignaturesContainerImageSignatureCollectionItem... items) {
             return items(List.of(items));
         }
         @CustomType.Setter
-        public Builder remainingItemsCount(Integer remainingItemsCount) {
-            this.remainingItemsCount = Objects.requireNonNull(remainingItemsCount);
+        public Builder remainingItemsCount(@Nullable Integer remainingItemsCount) {
+            this.remainingItemsCount = remainingItemsCount;
             return this;
         }
         public GetContainerSignaturesContainerImageSignatureCollection build() {

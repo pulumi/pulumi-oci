@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesE
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance {
@@ -15,75 +17,75 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    private String adrHomeDirectory;
+    private @Nullable String adrHomeDirectory;
     /**
      * @return The unique identifier of the Oracle cluster.
      * 
      */
-    private String clusterId;
+    private @Nullable String clusterId;
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors;
     /**
      * @return The Oracle base location of Cluster Ready Services (CRS).
      * 
      */
-    private String crsBaseDirectory;
+    private @Nullable String crsBaseDirectory;
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The role of the cluster node.
      * 
      */
-    private String nodeRole;
+    private @Nullable String nodeRole;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance() {}
     /**
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    public String adrHomeDirectory() {
-        return this.adrHomeDirectory;
+    public Optional<String> adrHomeDirectory() {
+        return Optional.ofNullable(this.adrHomeDirectory);
     }
     /**
      * @return The unique identifier of the Oracle cluster.
      * 
      */
-    public String clusterId() {
-        return this.clusterId;
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
     }
     /**
      * @return The connector details used to connect to the external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors() {
-        return this.connectors;
+        return this.connectors == null ? List.of() : this.connectors;
     }
     /**
      * @return The Oracle base location of Cluster Ready Services (CRS).
      * 
      */
-    public String crsBaseDirectory() {
-        return this.crsBaseDirectory;
+    public Optional<String> crsBaseDirectory() {
+        return Optional.ofNullable(this.crsBaseDirectory);
     }
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The role of the cluster node.
      * 
      */
-    public String nodeRole() {
-        return this.nodeRole;
+    public Optional<String> nodeRole() {
+        return Optional.ofNullable(this.nodeRole);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adrHomeDirectory;
-        private String clusterId;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors;
-        private String crsBaseDirectory;
-        private String hostName;
-        private String nodeRole;
+        private @Nullable String adrHomeDirectory;
+        private @Nullable String clusterId;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors;
+        private @Nullable String crsBaseDirectory;
+        private @Nullable String hostName;
+        private @Nullable String nodeRole;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+        public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+        public Builder clusterId(@Nullable String clusterId) {
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectors(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+        public Builder connectors(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector> connectors) {
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnector... connectors) {
             return connectors(List.of(connectors));
         }
         @CustomType.Setter
-        public Builder crsBaseDirectory(String crsBaseDirectory) {
-            this.crsBaseDirectory = Objects.requireNonNull(crsBaseDirectory);
+        public Builder crsBaseDirectory(@Nullable String crsBaseDirectory) {
+            this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeRole(String nodeRole) {
-            this.nodeRole = Objects.requireNonNull(nodeRole);
+        public Builder nodeRole(@Nullable String nodeRole) {
+            this.nodeRole = nodeRole;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance build() {

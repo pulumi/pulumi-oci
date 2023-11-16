@@ -34,7 +34,7 @@ public final class GetVolumesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of a volume.
      * 
@@ -49,7 +49,7 @@ public final class GetVolumesResult {
      * @return The list of volumes.
      * 
      */
-    private List<GetVolumesVolume> volumes;
+    private @Nullable List<GetVolumesVolume> volumes;
 
     private GetVolumesResult() {}
     /**
@@ -80,8 +80,8 @@ public final class GetVolumesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of a volume.
@@ -102,7 +102,7 @@ public final class GetVolumesResult {
      * 
      */
     public List<GetVolumesVolume> volumes() {
-        return this.volumes;
+        return this.volumes == null ? List.of() : this.volumes;
     }
 
     public static Builder builder() {
@@ -118,10 +118,10 @@ public final class GetVolumesResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String volumeGroupId;
-        private List<GetVolumesVolume> volumes;
+        private @Nullable List<GetVolumesVolume> volumes;
         public Builder() {}
         public Builder(GetVolumesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -159,8 +159,8 @@ public final class GetVolumesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -174,8 +174,8 @@ public final class GetVolumesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder volumes(List<GetVolumesVolume> volumes) {
-            this.volumes = Objects.requireNonNull(volumes);
+        public Builder volumes(@Nullable List<GetVolumesVolume> volumes) {
+            this.volumes = volumes;
             return this;
         }
         public Builder volumes(GetVolumesVolume... volumes) {

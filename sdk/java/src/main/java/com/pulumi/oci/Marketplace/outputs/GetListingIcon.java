@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingIcon {
@@ -13,51 +15,51 @@ public final class GetListingIcon {
      * @return The content URL of the screenshot.
      * 
      */
-    private String contentUrl;
+    private @Nullable String contentUrl;
     /**
      * @return The file extension of the screenshot.
      * 
      */
-    private String fileExtension;
+    private @Nullable String fileExtension;
     /**
      * @return The MIME type of the screenshot.
      * 
      */
-    private String mimeType;
+    private @Nullable String mimeType;
     /**
      * @return Text that describes the resource.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetListingIcon() {}
     /**
      * @return The content URL of the screenshot.
      * 
      */
-    public String contentUrl() {
-        return this.contentUrl;
+    public Optional<String> contentUrl() {
+        return Optional.ofNullable(this.contentUrl);
     }
     /**
      * @return The file extension of the screenshot.
      * 
      */
-    public String fileExtension() {
-        return this.fileExtension;
+    public Optional<String> fileExtension() {
+        return Optional.ofNullable(this.fileExtension);
     }
     /**
      * @return The MIME type of the screenshot.
      * 
      */
-    public String mimeType() {
-        return this.mimeType;
+    public Optional<String> mimeType() {
+        return Optional.ofNullable(this.mimeType);
     }
     /**
      * @return Text that describes the resource.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetListingIcon {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contentUrl;
-        private String fileExtension;
-        private String mimeType;
-        private String name;
+        private @Nullable String contentUrl;
+        private @Nullable String fileExtension;
+        private @Nullable String mimeType;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetListingIcon defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetListingIcon {
         }
 
         @CustomType.Setter
-        public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+        public Builder contentUrl(@Nullable String contentUrl) {
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder fileExtension(String fileExtension) {
-            this.fileExtension = Objects.requireNonNull(fileExtension);
+        public Builder fileExtension(@Nullable String fileExtension) {
+            this.fileExtension = fileExtension;
             return this;
         }
         @CustomType.Setter
-        public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+        public Builder mimeType(@Nullable String mimeType) {
+            this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetListingIcon build() {

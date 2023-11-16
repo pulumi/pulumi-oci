@@ -49,9 +49,6 @@ class GetIdentityProvidersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the `IdentityProvider`.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -61,7 +58,7 @@ class GetIdentityProvidersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -69,34 +66,22 @@ class GetIdentityProvidersResult:
 
     @property
     @pulumi.getter(name="identityProviders")
-    def identity_providers(self) -> Sequence['outputs.GetIdentityProvidersIdentityProviderResult']:
-        """
-        The list of identity_providers.
-        """
+    def identity_providers(self) -> Optional[Sequence['outputs.GetIdentityProvidersIdentityProviderResult']]:
         return pulumi.get(self, "identity_providers")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed. This is the name federated users see when choosing which identity provider to use when signing in to the Oracle Cloud Infrastructure Console.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def protocol(self) -> str:
-        """
-        The protocol used for federation. Allowed value: `SAML2`.  Example: `SAML2`
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,32 +107,7 @@ def get_identity_providers(compartment_id: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIdentityProvidersResult:
     """
-    This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
-
-    **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-    Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
-    identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
-    compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_identity_providers = oci.Identity.get_identity_providers(compartment_id=var["tenancy_ocid"],
-        protocol=var["identity_provider_protocol"],
-        name=var["identity_provider_name"],
-        state=var["identity_provider_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str protocol: The protocol used for federation.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,31 +136,6 @@ def get_identity_providers_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIdentityProvidersResult]:
     """
-    This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
-
-    **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
-
-    Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
-    identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
-    compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_identity_providers = oci.Identity.get_identity_providers(compartment_id=var["tenancy_ocid"],
-        protocol=var["identity_provider_protocol"],
-        name=var["identity_provider_name"],
-        state=var["identity_provider_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str protocol: The protocol used for federation.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

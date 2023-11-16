@@ -64,25 +64,16 @@ class GetDomainsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the domain.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The mutable display name of the domain
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def domains(self) -> Sequence['outputs.GetDomainsDomainResult']:
-        """
-        The list of domains.
-        """
+    def domains(self) -> Optional[Sequence['outputs.GetDomainsDomainResult']]:
         return pulumi.get(self, "domains")
 
     @property
@@ -93,14 +84,11 @@ class GetDomainsResult:
     @property
     @pulumi.getter(name="homeRegionUrl")
     def home_region_url(self) -> Optional[str]:
-        """
-        Region specific domain URL.
-        """
         return pulumi.get(self, "home_region_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,17 +97,11 @@ class GetDomainsResult:
     @property
     @pulumi.getter(name="isHiddenOnLogin")
     def is_hidden_on_login(self) -> Optional[bool]:
-        """
-        Indicates whether domain is hidden on login screen or not.
-        """
         return pulumi.get(self, "is_hidden_on_login")
 
     @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[str]:
-        """
-        The License type of Domain
-        """
         return pulumi.get(self, "license_type")
 
     @property
@@ -130,25 +112,16 @@ class GetDomainsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the domain.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
-        """
-        Region agnostic domain URL.
-        """
         return pulumi.get(self, "url")
 
 
@@ -184,38 +157,7 @@ def get_domains(compartment_id: Optional[str] = None,
                 url: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsResult:
     """
-    This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
-
-    List all domains that are homed or have a replica region in current region.
-    - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_domains = oci.Identity.get_domains(compartment_id=var["compartment_id"],
-        display_name=var["domain_display_name"],
-        home_region_url=var["domain_home_region_url"],
-        is_hidden_on_login=var["domain_is_hidden_on_login"],
-        license_type=var["domain_license_type"],
-        name=var["domain_name"],
-        state=var["domain_state"],
-        type=var["domain_type"],
-        url=var["domain_url"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str display_name: The mutable display name of the domain
-    :param str home_region_url: The region specific domain URL
-    :param bool is_hidden_on_login: Indicate if the domain is visible at login screen or not
-    :param str license_type: The domain license type
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str type: The domain type
-    :param str url: The region agnostic domain URL
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -259,37 +201,6 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        url: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsResult]:
     """
-    This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
-
-    List all domains that are homed or have a replica region in current region.
-    - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_domains = oci.Identity.get_domains(compartment_id=var["compartment_id"],
-        display_name=var["domain_display_name"],
-        home_region_url=var["domain_home_region_url"],
-        is_hidden_on_login=var["domain_is_hidden_on_login"],
-        license_type=var["domain_license_type"],
-        name=var["domain_name"],
-        state=var["domain_state"],
-        type=var["domain_type"],
-        url=var["domain_url"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str display_name: The mutable display name of the domain
-    :param str home_region_url: The region specific domain URL
-    :param bool is_hidden_on_login: Indicate if the domain is visible at login screen or not
-    :param str license_type: The domain license type
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str type: The domain type
-    :param str url: The region agnostic domain URL
+    Use this data source to access information about an existing resource.
     """
     ...

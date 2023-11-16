@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsFil
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
      * @return The list of autonomous_container_database_versions.
      * 
      */
-    private List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions;
+    private @Nullable List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions;
     private String compartmentId;
     private @Nullable List<GetAutonomousContainerDatabaseVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String serviceComponent;
 
     private GetAutonomousContainerDatabaseVersionsResult() {}
@@ -33,7 +34,7 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
      * 
      */
     public List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions() {
-        return this.autonomousContainerDatabaseVersions;
+        return this.autonomousContainerDatabaseVersions == null ? List.of() : this.autonomousContainerDatabaseVersions;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -45,8 +46,8 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String serviceComponent() {
         return this.serviceComponent;
@@ -61,10 +62,10 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions;
+        private @Nullable List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions;
         private String compartmentId;
         private @Nullable List<GetAutonomousContainerDatabaseVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String serviceComponent;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseVersionsResult defaults) {
@@ -77,8 +78,8 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseVersions(List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions) {
-            this.autonomousContainerDatabaseVersions = Objects.requireNonNull(autonomousContainerDatabaseVersions);
+        public Builder autonomousContainerDatabaseVersions(@Nullable List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions) {
+            this.autonomousContainerDatabaseVersions = autonomousContainerDatabaseVersions;
             return this;
         }
         public Builder autonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion... autonomousContainerDatabaseVersions) {
@@ -98,8 +99,8 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

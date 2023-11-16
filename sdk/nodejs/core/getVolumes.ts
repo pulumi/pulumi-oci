@@ -87,7 +87,7 @@ export interface GetVolumesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of a volume.
      */
@@ -99,7 +99,7 @@ export interface GetVolumesResult {
     /**
      * The list of volumes.
      */
-    readonly volumes: outputs.Core.GetVolumesVolume[];
+    readonly volumes?: outputs.Core.GetVolumesVolume[];
 }
 /**
  * This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.

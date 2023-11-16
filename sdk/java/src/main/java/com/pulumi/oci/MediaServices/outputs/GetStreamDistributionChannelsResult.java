@@ -39,7 +39,7 @@ public final class GetStreamDistributionChannelsResult {
      * @return The list of stream_distribution_channel_collection.
      * 
      */
-    private List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections;
+    private @Nullable List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections;
 
     private GetStreamDistributionChannelsResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetStreamDistributionChannelsResult {
      * 
      */
     public List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections() {
-        return this.streamDistributionChannelCollections;
+        return this.streamDistributionChannelCollections == null ? List.of() : this.streamDistributionChannelCollections;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetStreamDistributionChannelsResult {
         private @Nullable List<GetStreamDistributionChannelsFilter> filters;
         private @Nullable String id;
         private @Nullable String state;
-        private List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections;
+        private @Nullable List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections;
         public Builder() {}
         public Builder(GetStreamDistributionChannelsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -136,8 +136,8 @@ public final class GetStreamDistributionChannelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder streamDistributionChannelCollections(List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections) {
-            this.streamDistributionChannelCollections = Objects.requireNonNull(streamDistributionChannelCollections);
+        public Builder streamDistributionChannelCollections(@Nullable List<GetStreamDistributionChannelsStreamDistributionChannelCollection> streamDistributionChannelCollections) {
+            this.streamDistributionChannelCollections = streamDistributionChannelCollections;
             return this;
         }
         public Builder streamDistributionChannelCollections(GetStreamDistributionChannelsStreamDistributionChannelCollection... streamDistributionChannelCollections) {

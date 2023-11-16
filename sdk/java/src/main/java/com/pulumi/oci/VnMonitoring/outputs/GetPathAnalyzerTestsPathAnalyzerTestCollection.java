@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.VnMonitoring.outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathAnalyzerTestsPathAnalyzerTestCollection {
-    private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
+    private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
 
     private GetPathAnalyzerTestsPathAnalyzerTestCollection() {}
     public List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
+        private @Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items;
         public Builder() {}
         public Builder(GetPathAnalyzerTestsPathAnalyzerTestCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetPathAnalyzerTestsPathAnalyzerTestCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetPathAnalyzerTestsPathAnalyzerTestCollectionItem... items) {

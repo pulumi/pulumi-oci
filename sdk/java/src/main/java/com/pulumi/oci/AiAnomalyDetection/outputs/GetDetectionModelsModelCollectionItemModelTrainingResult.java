@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
@@ -19,99 +21,99 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
      * @return Accuracy metric for a signal.
      * 
      */
-    private Double fap;
+    private @Nullable Double fap;
     /**
      * @return A boolean value to indicate if train goal/targetFap is achieved for trained model
      * 
      */
-    private Boolean isTrainingGoalAchieved;
-    private Double mae;
-    private Integer maxInferenceSyncRows;
+    private @Nullable Boolean isTrainingGoalAchieved;
+    private @Nullable Double mae;
+    private @Nullable Integer maxInferenceSyncRows;
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
-    private Double multivariateFap;
-    private Double rmse;
+    private @Nullable Double multivariateFap;
+    private @Nullable Double rmse;
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
      * 
      */
-    private List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
+    private @Nullable List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
     /**
      * @return The list of signal details.
      * 
      */
-    private List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
+    private @Nullable List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
     /**
      * @return A warning message to explain the reason when targetFap cannot be achieved for trained model
      * 
      */
-    private String warning;
+    private @Nullable String warning;
     /**
      * @return Window size defined during training or deduced by the algorithm.
      * 
      */
-    private Integer windowSize;
+    private @Nullable Integer windowSize;
 
     private GetDetectionModelsModelCollectionItemModelTrainingResult() {}
     /**
      * @return Accuracy metric for a signal.
      * 
      */
-    public Double fap() {
-        return this.fap;
+    public Optional<Double> fap() {
+        return Optional.ofNullable(this.fap);
     }
     /**
      * @return A boolean value to indicate if train goal/targetFap is achieved for trained model
      * 
      */
-    public Boolean isTrainingGoalAchieved() {
-        return this.isTrainingGoalAchieved;
+    public Optional<Boolean> isTrainingGoalAchieved() {
+        return Optional.ofNullable(this.isTrainingGoalAchieved);
     }
-    public Double mae() {
-        return this.mae;
+    public Optional<Double> mae() {
+        return Optional.ofNullable(this.mae);
     }
-    public Integer maxInferenceSyncRows() {
-        return this.maxInferenceSyncRows;
+    public Optional<Integer> maxInferenceSyncRows() {
+        return Optional.ofNullable(this.maxInferenceSyncRows);
     }
     /**
      * @return The model accuracy metric on timestamp level.
      * 
      */
-    public Double multivariateFap() {
-        return this.multivariateFap;
+    public Optional<Double> multivariateFap() {
+        return Optional.ofNullable(this.multivariateFap);
     }
-    public Double rmse() {
-        return this.rmse;
+    public Optional<Double> rmse() {
+        return Optional.ofNullable(this.rmse);
     }
     /**
      * @return Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
      * 
      */
     public List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails() {
-        return this.rowReductionDetails;
+        return this.rowReductionDetails == null ? List.of() : this.rowReductionDetails;
     }
     /**
      * @return The list of signal details.
      * 
      */
     public List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails() {
-        return this.signalDetails;
+        return this.signalDetails == null ? List.of() : this.signalDetails;
     }
     /**
      * @return A warning message to explain the reason when targetFap cannot be achieved for trained model
      * 
      */
-    public String warning() {
-        return this.warning;
+    public Optional<String> warning() {
+        return Optional.ofNullable(this.warning);
     }
     /**
      * @return Window size defined during training or deduced by the algorithm.
      * 
      */
-    public Integer windowSize() {
-        return this.windowSize;
+    public Optional<Integer> windowSize() {
+        return Optional.ofNullable(this.windowSize);
     }
 
     public static Builder builder() {
@@ -123,16 +125,16 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double fap;
-        private Boolean isTrainingGoalAchieved;
-        private Double mae;
-        private Integer maxInferenceSyncRows;
-        private Double multivariateFap;
-        private Double rmse;
-        private List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
-        private List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
-        private String warning;
-        private Integer windowSize;
+        private @Nullable Double fap;
+        private @Nullable Boolean isTrainingGoalAchieved;
+        private @Nullable Double mae;
+        private @Nullable Integer maxInferenceSyncRows;
+        private @Nullable Double multivariateFap;
+        private @Nullable Double rmse;
+        private @Nullable List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails;
+        private @Nullable List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails;
+        private @Nullable String warning;
+        private @Nullable Integer windowSize;
         public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -149,59 +151,59 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResult {
         }
 
         @CustomType.Setter
-        public Builder fap(Double fap) {
-            this.fap = Objects.requireNonNull(fap);
+        public Builder fap(@Nullable Double fap) {
+            this.fap = fap;
             return this;
         }
         @CustomType.Setter
-        public Builder isTrainingGoalAchieved(Boolean isTrainingGoalAchieved) {
-            this.isTrainingGoalAchieved = Objects.requireNonNull(isTrainingGoalAchieved);
+        public Builder isTrainingGoalAchieved(@Nullable Boolean isTrainingGoalAchieved) {
+            this.isTrainingGoalAchieved = isTrainingGoalAchieved;
             return this;
         }
         @CustomType.Setter
-        public Builder mae(Double mae) {
-            this.mae = Objects.requireNonNull(mae);
+        public Builder mae(@Nullable Double mae) {
+            this.mae = mae;
             return this;
         }
         @CustomType.Setter
-        public Builder maxInferenceSyncRows(Integer maxInferenceSyncRows) {
-            this.maxInferenceSyncRows = Objects.requireNonNull(maxInferenceSyncRows);
+        public Builder maxInferenceSyncRows(@Nullable Integer maxInferenceSyncRows) {
+            this.maxInferenceSyncRows = maxInferenceSyncRows;
             return this;
         }
         @CustomType.Setter
-        public Builder multivariateFap(Double multivariateFap) {
-            this.multivariateFap = Objects.requireNonNull(multivariateFap);
+        public Builder multivariateFap(@Nullable Double multivariateFap) {
+            this.multivariateFap = multivariateFap;
             return this;
         }
         @CustomType.Setter
-        public Builder rmse(Double rmse) {
-            this.rmse = Objects.requireNonNull(rmse);
+        public Builder rmse(@Nullable Double rmse) {
+            this.rmse = rmse;
             return this;
         }
         @CustomType.Setter
-        public Builder rowReductionDetails(List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails) {
-            this.rowReductionDetails = Objects.requireNonNull(rowReductionDetails);
+        public Builder rowReductionDetails(@Nullable List<GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail> rowReductionDetails) {
+            this.rowReductionDetails = rowReductionDetails;
             return this;
         }
         public Builder rowReductionDetails(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail... rowReductionDetails) {
             return rowReductionDetails(List.of(rowReductionDetails));
         }
         @CustomType.Setter
-        public Builder signalDetails(List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails) {
-            this.signalDetails = Objects.requireNonNull(signalDetails);
+        public Builder signalDetails(@Nullable List<GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail> signalDetails) {
+            this.signalDetails = signalDetails;
             return this;
         }
         public Builder signalDetails(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail... signalDetails) {
             return signalDetails(List.of(signalDetails));
         }
         @CustomType.Setter
-        public Builder warning(String warning) {
-            this.warning = Objects.requireNonNull(warning);
+        public Builder warning(@Nullable String warning) {
+            this.warning = warning;
             return this;
         }
         @CustomType.Setter
-        public Builder windowSize(Integer windowSize) {
-            this.windowSize = Objects.requireNonNull(windowSize);
+        public Builder windowSize(@Nullable Integer windowSize) {
+            this.windowSize = windowSize;
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingResult build() {

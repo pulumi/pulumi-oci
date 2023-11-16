@@ -41,14 +41,14 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="auditCollectedVolume", refs={String.class}, tree="[0]")
-    private Output<String> auditCollectedVolume;
+    private Output</* @Nullable */ String> auditCollectedVolume;
 
     /**
      * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
-    public Output<String> auditCollectedVolume() {
-        return this.auditCollectedVolume;
+    public Output<Optional<String>> auditCollectedVolume() {
+        return Codegen.optional(this.auditCollectedVolume);
     }
     /**
      * The OCID of the audit.
@@ -69,14 +69,14 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="auditTrails", refs={List.class,AuditProfileAuditTrail.class}, tree="[0,1]")
-    private Output<List<AuditProfileAuditTrail>> auditTrails;
+    private Output</* @Nullable */ List<AuditProfileAuditTrail>> auditTrails;
 
     /**
      * @return Indicates the list of available audit trails on the target.
      * 
      */
-    public Output<List<AuditProfileAuditTrail>> auditTrails() {
-        return this.auditTrails;
+    public Output<Optional<List<AuditProfileAuditTrail>>> auditTrails() {
+        return Codegen.optional(this.auditTrails);
     }
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
@@ -103,210 +103,210 @@ public class AuditProfile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment that contains the audit.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the audit profile.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the audit profile.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the audit profile. The name does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      * 
      */
     @Export(name="isOverrideGlobalRetentionSetting", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOverrideGlobalRetentionSetting;
+    private Output</* @Nullable */ Boolean> isOverrideGlobalRetentionSetting;
 
     /**
      * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
      * 
      */
-    public Output<Boolean> isOverrideGlobalRetentionSetting() {
-        return this.isOverrideGlobalRetentionSetting;
+    public Output<Optional<Boolean>> isOverrideGlobalRetentionSetting() {
+        return Codegen.optional(this.isOverrideGlobalRetentionSetting);
     }
     /**
      * (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
      */
     @Export(name="isPaidUsageEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPaidUsageEnabled;
+    private Output</* @Nullable */ Boolean> isPaidUsageEnabled;
 
     /**
      * @return (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
      * 
      */
-    public Output<Boolean> isPaidUsageEnabled() {
-        return this.isPaidUsageEnabled;
+    public Output<Optional<Boolean>> isPaidUsageEnabled() {
+        return Codegen.optional(this.isPaidUsageEnabled);
     }
     /**
      * Details about the current state of the audit profile in Data Safe.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the audit profile in Data Safe.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      * 
      */
     @Export(name="offlineMonths", refs={Integer.class}, tree="[0]")
-    private Output<Integer> offlineMonths;
+    private Output</* @Nullable */ Integer> offlineMonths;
 
     /**
      * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
      * 
      */
-    public Output<Integer> offlineMonths() {
-        return this.offlineMonths;
+    public Output<Optional<Integer>> offlineMonths() {
+        return Codegen.optional(this.offlineMonths);
     }
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      * 
      */
     @Export(name="onlineMonths", refs={Integer.class}, tree="[0]")
-    private Output<Integer> onlineMonths;
+    private Output</* @Nullable */ Integer> onlineMonths;
 
     /**
      * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum:12 months
      * 
      */
-    public Output<Integer> onlineMonths() {
-        return this.onlineMonths;
+    public Output<Optional<Integer>> onlineMonths() {
+        return Codegen.optional(this.onlineMonths);
     }
     /**
      * The current state of the audit profile.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the audit profile.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of the Data Safe target for which the audit profile is created.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
     /**
      * @return The OCID of the Data Safe target for which the audit profile is created.
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the audit profile was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

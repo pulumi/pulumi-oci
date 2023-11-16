@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -63,23 +62,23 @@ type LookupLogAnalyticsLogGroupArgs struct {
 // A collection of values returned by getLogAnalyticsLogGroup.
 type LookupLogAnalyticsLogGroupResult struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id                     string `pulumi:"id"`
-	LogAnalyticsLogGroupId string `pulumi:"logAnalyticsLogGroupId"`
-	Namespace              string `pulumi:"namespace"`
+	Id                     *string `pulumi:"id"`
+	LogAnalyticsLogGroupId string  `pulumi:"logAnalyticsLogGroupId"`
+	Namespace              string  `pulumi:"namespace"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupLogAnalyticsLogGroupOutput(ctx *pulumi.Context, args LookupLogAnalyticsLogGroupOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsLogGroupResultOutput {
@@ -122,15 +121,9 @@ func (o LookupLogAnalyticsLogGroupResultOutput) ToLookupLogAnalyticsLogGroupResu
 	return o
 }
 
-func (o LookupLogAnalyticsLogGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogAnalyticsLogGroupResult] {
-	return pulumix.Output[LookupLogAnalyticsLogGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupLogAnalyticsLogGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsLogGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -139,13 +132,13 @@ func (o LookupLogAnalyticsLogGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description for this resource.
-func (o LookupLogAnalyticsLogGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsLogGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-func (o LookupLogAnalyticsLogGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsLogGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -154,8 +147,8 @@ func (o LookupLogAnalyticsLogGroupResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o LookupLogAnalyticsLogGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsLogGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogAnalyticsLogGroupResultOutput) LogAnalyticsLogGroupId() pulumi.StringOutput {
@@ -167,13 +160,13 @@ func (o LookupLogAnalyticsLogGroupResultOutput) Namespace() pulumi.StringOutput 
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o LookupLogAnalyticsLogGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsLogGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o LookupLogAnalyticsLogGroupResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsLogGroupResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsLogGroupResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

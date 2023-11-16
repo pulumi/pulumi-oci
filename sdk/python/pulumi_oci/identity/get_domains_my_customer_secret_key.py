@@ -95,10 +95,7 @@ class GetDomainsMyCustomerSecretKeyResult:
 
     @property
     @pulumi.getter(name="accessKey")
-    def access_key(self) -> str:
-        """
-        The access key.
-        """
+    def access_key(self) -> Optional[str]:
         return pulumi.get(self, "access_key")
 
     @property
@@ -108,66 +105,42 @@ class GetDomainsMyCustomerSecretKeyResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display Name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="expiresOn")
-    def expires_on(self) -> str:
-        """
-        When the user's credential expire.
-        """
+    def expires_on(self) -> Optional[str]:
         return pulumi.get(self, "expires_on")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsMyCustomerSecretKeyIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsMyCustomerSecretKeyIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -177,34 +150,22 @@ class GetDomainsMyCustomerSecretKeyResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsMyCustomerSecretKeyIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsMyCustomerSecretKeyIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsMyCustomerSecretKeyMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsMyCustomerSecretKeyMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
@@ -214,10 +175,7 @@ class GetDomainsMyCustomerSecretKeyResult:
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        The user's OCID.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
@@ -227,42 +185,27 @@ class GetDomainsMyCustomerSecretKeyResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The user's credential status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsMyCustomerSecretKeyTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsMyCustomerSecretKeyTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter
-    def users(self) -> Sequence['outputs.GetDomainsMyCustomerSecretKeyUserResult']:
-        """
-        User linked to customer secret key
-        """
+    def users(self) -> Optional[Sequence['outputs.GetDomainsMyCustomerSecretKeyUserResult']]:
         return pulumi.get(self, "users")
 
 
@@ -303,27 +246,7 @@ def get_domains_my_customer_secret_key(authorization: Optional[str] = None,
                                        resource_type_schema_version: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsMyCustomerSecretKeyResult:
     """
-    This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a user's own customer secret key.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_customer_secret_key = oci.Identity.get_domains_my_customer_secret_key(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_customer_secret_key_id=oci_identity_customer_secret_key["test_customer_secret_key"]["id"],
-        authorization=var["my_customer_secret_key_authorization"],
-        resource_type_schema_version=var["my_customer_secret_key_resource_type_schema_version"])
-    ```
-
-
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str my_customer_secret_key_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['authorization'] = authorization
@@ -366,26 +289,6 @@ def get_domains_my_customer_secret_key_output(authorization: Optional[pulumi.Inp
                                               resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyCustomerSecretKeyResult]:
     """
-    This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a user's own customer secret key.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_customer_secret_key = oci.Identity.get_domains_my_customer_secret_key(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_customer_secret_key_id=oci_identity_customer_secret_key["test_customer_secret_key"]["id"],
-        authorization=var["my_customer_secret_key_authorization"],
-        resource_type_schema_version=var["my_customer_secret_key_resource_type_schema_version"])
-    ```
-
-
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str my_customer_secret_key_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

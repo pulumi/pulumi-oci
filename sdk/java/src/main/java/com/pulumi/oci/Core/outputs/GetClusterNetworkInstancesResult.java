@@ -30,12 +30,12 @@ public final class GetClusterNetworkInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of instances.
      * 
      */
-    private List<GetClusterNetworkInstancesInstance> instances;
+    private @Nullable List<GetClusterNetworkInstancesInstance> instances;
 
     private GetClusterNetworkInstancesResult() {}
     public String clusterNetworkId() {
@@ -62,15 +62,15 @@ public final class GetClusterNetworkInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of instances.
      * 
      */
     public List<GetClusterNetworkInstancesInstance> instances() {
-        return this.instances;
+        return this.instances == null ? List.of() : this.instances;
     }
 
     public static Builder builder() {
@@ -86,8 +86,8 @@ public final class GetClusterNetworkInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetClusterNetworkInstancesFilter> filters;
-        private String id;
-        private List<GetClusterNetworkInstancesInstance> instances;
+        private @Nullable String id;
+        private @Nullable List<GetClusterNetworkInstancesInstance> instances;
         public Builder() {}
         public Builder(GetClusterNetworkInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,13 +123,13 @@ public final class GetClusterNetworkInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instances(List<GetClusterNetworkInstancesInstance> instances) {
-            this.instances = Objects.requireNonNull(instances);
+        public Builder instances(@Nullable List<GetClusterNetworkInstancesInstance> instances) {
+            this.instances = instances;
             return this;
         }
         public Builder instances(GetClusterNetworkInstancesInstance... instances) {

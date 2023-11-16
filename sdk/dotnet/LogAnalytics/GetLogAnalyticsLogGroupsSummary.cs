@@ -125,17 +125,17 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
-        public readonly int LogGroupCount;
+        public readonly string? Id;
+        public readonly int? LogGroupCount;
         public readonly string Namespace;
 
         [OutputConstructor]
         private GetLogAnalyticsLogGroupsSummaryResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
-            int logGroupCount,
+            int? logGroupCount,
 
             string @namespace)
         {

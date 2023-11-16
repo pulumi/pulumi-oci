@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetByoipRangeByoipRangeVcnIpv6allocation {
@@ -13,51 +15,51 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
      * 
      */
-    private String byoipRangeId;
+    private @Nullable String byoipRangeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
      */
-    private String ipv6cidrBlock;
+    private @Nullable String ipv6cidrBlock;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Vcn` resource to which the ByoipRange belongs.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetByoipRangeByoipRangeVcnIpv6allocation() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource containing the BYOIP CIDR block.
      * 
      */
-    public String byoipRangeId() {
-        return this.byoipRangeId;
+    public Optional<String> byoipRangeId() {
+        return Optional.ofNullable(this.byoipRangeId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      * 
      */
-    public String ipv6cidrBlock() {
-        return this.ipv6cidrBlock;
+    public Optional<String> ipv6cidrBlock() {
+        return Optional.ofNullable(this.ipv6cidrBlock);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `Vcn` resource to which the ByoipRange belongs.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String byoipRangeId;
-        private String compartmentId;
-        private String ipv6cidrBlock;
-        private String vcnId;
+        private @Nullable String byoipRangeId;
+        private @Nullable String compartmentId;
+        private @Nullable String ipv6cidrBlock;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetByoipRangeByoipRangeVcnIpv6allocation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
         }
 
         @CustomType.Setter
-        public Builder byoipRangeId(String byoipRangeId) {
-            this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
+        public Builder byoipRangeId(@Nullable String byoipRangeId) {
+            this.byoipRangeId = byoipRangeId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+        public Builder ipv6cidrBlock(@Nullable String ipv6cidrBlock) {
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetByoipRangeByoipRangeVcnIpv6allocation build() {

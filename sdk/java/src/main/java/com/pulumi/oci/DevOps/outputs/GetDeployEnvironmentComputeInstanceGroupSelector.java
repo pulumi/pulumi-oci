@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployEnvironmentComputeInstanceGroupSelectorItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployEnvironmentComputeInstanceGroupSelector {
@@ -14,7 +15,7 @@ public final class GetDeployEnvironmentComputeInstanceGroupSelector {
      * @return A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
      * 
      */
-    private List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items;
+    private @Nullable List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items;
 
     private GetDeployEnvironmentComputeInstanceGroupSelector() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployEnvironmentComputeInstanceGroupSelector {
      * 
      */
     public List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployEnvironmentComputeInstanceGroupSelector {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items;
+        private @Nullable List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items;
         public Builder() {}
         public Builder(GetDeployEnvironmentComputeInstanceGroupSelector defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployEnvironmentComputeInstanceGroupSelector {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployEnvironmentComputeInstanceGroupSelectorItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployEnvironmentComputeInstanceGroupSelectorItem... items) {

@@ -108,7 +108,7 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// The compartment identifier.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
         /// </summary>
@@ -116,31 +116,31 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// An optional description of the model.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A human-friendly name for the model, which can be changed.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A unique identifier that is immutable after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Set to true when the model is created by using multiple key value extraction models.
         /// </summary>
-        public readonly bool IsComposedModel;
+        public readonly bool? IsComposedModel;
         /// <summary>
         /// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
-        public readonly bool IsQuickMode;
+        public readonly bool? IsQuickMode;
         /// <summary>
         /// The collection of labels used to train the custom model.
         /// </summary>
@@ -148,11 +148,11 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The maximum model training time in hours, expressed as a decimal fraction.
         /// </summary>
-        public readonly double MaxTrainingTimeInHours;
+        public readonly double? MaxTrainingTimeInHours;
         /// <summary>
         /// Trained Model Metrics.
         /// </summary>
@@ -164,27 +164,27 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// The type of the Document model.
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// The version of the model.
         /// </summary>
-        public readonly string ModelVersion;
+        public readonly string? ModelVersion;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// The current state of the model.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The tenancy id of the model.
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
@@ -192,15 +192,15 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// When the model was created, as an RFC3339 datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// When the model was updated, as an RFC3339 datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The total hours actually used for model training.
         /// </summary>
-        public readonly double TrainedTimeInHours;
+        public readonly double? TrainedTimeInHours;
         /// <summary>
         /// The base entity which is the input for creating and training a model.
         /// </summary>
@@ -212,53 +212,53 @@ namespace Pulumi.Oci.AiDocument
 
         [OutputConstructor]
         private GetModelResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetModelComponentModelResult> componentModels,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isComposedModel,
+            bool? isComposedModel,
 
-            bool isQuickMode,
+            bool? isQuickMode,
 
             ImmutableArray<string> labels,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            double maxTrainingTimeInHours,
+            double? maxTrainingTimeInHours,
 
             ImmutableArray<Outputs.GetModelMetricResult> metrics,
 
             string modelId,
 
-            string modelType,
+            string? modelType,
 
-            string modelVersion,
+            string? modelVersion,
 
-            string projectId,
+            string? projectId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string tenancyId,
+            string? tenancyId,
 
             ImmutableArray<Outputs.GetModelTestingDatasetResult> testingDatasets,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            double trainedTimeInHours,
+            double? trainedTimeInHours,
 
             ImmutableArray<Outputs.GetModelTrainingDatasetResult> trainingDatasets,
 

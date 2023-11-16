@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The type of salt that the system will use to encrypt Kerberos-specific artifacts of this App unless another type of salt is specified.
         /// </summary>
-        public readonly string DefaultEncryptionSaltType;
+        public readonly string? DefaultEncryptionSaltType;
         /// <summary>
         /// The primary key that the system should use to encrypt artifacts that are specific to this Kerberos realm -- for example, to encrypt the Principal Key in each KerberosRealmUser.
         /// </summary>
-        public readonly string MasterKey;
+        public readonly string? MasterKey;
         /// <summary>
         /// Max Renewable Age in seconds
         /// </summary>
-        public readonly int MaxRenewableAge;
+        public readonly int? MaxRenewableAge;
         /// <summary>
         /// Max Ticket Life in seconds
         /// </summary>
-        public readonly int MaxTicketLife;
+        public readonly int? MaxTicketLife;
         /// <summary>
         /// The name of the Kerberos Realm that this App uses for authentication.
         /// </summary>
-        public readonly string RealmName;
+        public readonly string? RealmName;
         /// <summary>
         /// The types of salt that are available for the system to use when encrypting Kerberos-specific artifacts for this App.
         /// </summary>
@@ -40,23 +40,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Ticket Flags
         /// </summary>
-        public readonly int TicketFlags;
+        public readonly int? TicketFlags;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppResult(
-            string defaultEncryptionSaltType,
+            string? defaultEncryptionSaltType,
 
-            string masterKey,
+            string? masterKey,
 
-            int maxRenewableAge,
+            int? maxRenewableAge,
 
-            int maxTicketLife,
+            int? maxTicketLife,
 
-            string realmName,
+            string? realmName,
 
             ImmutableArray<string> supportedEncryptionSaltTypes,
 
-            int ticketFlags)
+            int? ticketFlags)
         {
             DefaultEncryptionSaltType = defaultEncryptionSaltType;
             MasterKey = masterKey;

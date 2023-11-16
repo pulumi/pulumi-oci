@@ -63,19 +63,12 @@ class AutoScalingConfigurationPolicyArgs:
     def __init__(__self__, *,
                  policy_type: pulumi.Input[str],
                  rules: pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]):
-        """
-        :param pulumi.Input[str] policy_type: Type of autoscaling policy.
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]] rules: (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
-        """
         pulumi.set(__self__, "policy_type", policy_type)
         pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Input[str]:
-        """
-        Type of autoscaling policy.
-        """
         return pulumi.get(self, "policy_type")
 
     @policy_type.setter
@@ -85,9 +78,6 @@ class AutoScalingConfigurationPolicyArgs:
     @property
     @pulumi.getter
     def rules(self) -> pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]:
-        """
-        (Updatable) The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -107,21 +97,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
                  schedule_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
                  trigger_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] policy_type: Type of autoscaling policy.
-        :param pulumi.Input[str] action_type: The type of autoscaling action to take.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs'] scale_down_config: (Updatable) Configration for a metric based vertical scale-down policy.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigArgs'] scale_in_config: (Updatable) Configration for a metric based horizontal scale-in policy.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs'] scale_out_config: (Updatable) Configration for a metric based horizontal scale-out policy.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs'] scale_up_config: (Updatable) Configration for a metric based vertical scale-up policy.
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]] schedule_details: (Updatable) Details of a horizontal scaling schedule.
-        :param pulumi.Input[str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] trigger_type: The type of autoscaling trigger.
-        """
         pulumi.set(__self__, "policy_type", policy_type)
         if action_type is not None:
             pulumi.set(__self__, "action_type", action_type)
@@ -143,9 +118,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Input[str]:
-        """
-        Type of autoscaling policy.
-        """
         return pulumi.get(self, "policy_type")
 
     @policy_type.setter
@@ -155,9 +127,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="actionType")
     def action_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of autoscaling action to take.
-        """
         return pulumi.get(self, "action_type")
 
     @action_type.setter
@@ -167,9 +136,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="scaleDownConfig")
     def scale_down_config(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs']]:
-        """
-        (Updatable) Configration for a metric based vertical scale-down policy.
-        """
         return pulumi.get(self, "scale_down_config")
 
     @scale_down_config.setter
@@ -179,9 +145,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="scaleInConfig")
     def scale_in_config(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigArgs']]:
-        """
-        (Updatable) Configration for a metric based horizontal scale-in policy.
-        """
         return pulumi.get(self, "scale_in_config")
 
     @scale_in_config.setter
@@ -191,9 +154,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="scaleOutConfig")
     def scale_out_config(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs']]:
-        """
-        (Updatable) Configration for a metric based horizontal scale-out policy.
-        """
         return pulumi.get(self, "scale_out_config")
 
     @scale_out_config.setter
@@ -203,9 +163,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="scaleUpConfig")
     def scale_up_config(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs']]:
-        """
-        (Updatable) Configration for a metric based vertical scale-up policy.
-        """
         return pulumi.get(self, "scale_up_config")
 
     @scale_up_config.setter
@@ -215,9 +172,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="scheduleDetails")
     def schedule_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailArgs']]]]:
-        """
-        (Updatable) Details of a horizontal scaling schedule.
-        """
         return pulumi.get(self, "schedule_details")
 
     @schedule_details.setter
@@ -227,13 +181,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter
     def timezone(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
@@ -243,9 +190,6 @@ class AutoScalingConfigurationPolicyDetailsArgs:
     @property
     @pulumi.getter(name="triggerType")
     def trigger_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of autoscaling trigger.
-        """
         return pulumi.get(self, "trigger_type")
 
     @trigger_type.setter
@@ -261,13 +205,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
                  min_memory_per_node: Optional[pulumi.Input[int]] = None,
                  min_ocpus_per_node: Optional[pulumi.Input[int]] = None,
                  ocpu_step_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs'] metric: (Updatable) Metric and threshold details for triggering an autoscale action.
-        :param pulumi.Input[int] min_memory_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input[int] min_ocpus_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input[int] ocpu_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
         if memory_step_size is not None:
             pulumi.set(__self__, "memory_step_size", memory_step_size)
         if metric is not None:
@@ -282,9 +219,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
     @property
     @pulumi.getter(name="memoryStepSize")
     def memory_step_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "memory_step_size")
 
     @memory_step_size.setter
@@ -294,9 +228,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs']]:
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -306,9 +237,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
     @property
     @pulumi.getter(name="minMemoryPerNode")
     def min_memory_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum memory in GBs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "min_memory_per_node")
 
     @min_memory_per_node.setter
@@ -318,9 +246,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
     @property
     @pulumi.getter(name="minOcpusPerNode")
     def min_ocpus_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the minimum number of OCPUs each node can be scaled-down to. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "min_ocpus_per_node")
 
     @min_ocpus_per_node.setter
@@ -330,9 +255,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs:
     @property
     @pulumi.getter(name="ocpuStepSize")
     def ocpu_step_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "ocpu_step_size")
 
     @ocpu_step_size.setter
@@ -345,10 +267,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
     def __init__(__self__, *,
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs']] = None):
-        """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
         if threshold is not None:
@@ -357,9 +275,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
     @property
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allowed value is CPU_UTILIZATION.
-        """
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
@@ -369,9 +284,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs:
     @property
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs']]:
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -385,11 +297,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
                  duration_in_minutes: Optional[pulumi.Input[int]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] duration_in_minutes: (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        :param pulumi.Input[str] operator: (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        :param pulumi.Input[int] value: (Updatable) Integer non-negative value. 0 < value < 100
-        """
         if duration_in_minutes is not None:
             pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
         if operator is not None:
@@ -400,9 +307,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
     @property
     @pulumi.getter(name="durationInMinutes")
     def duration_in_minutes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
         return pulumi.get(self, "duration_in_minutes")
 
     @duration_in_minutes.setter
@@ -412,9 +316,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -424,9 +325,6 @@ class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -440,11 +338,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
                  metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs']] = None,
                  min_node_count: Optional[pulumi.Input[int]] = None,
                  step_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs'] metric: (Updatable) Metric and threshold details for triggering an autoscale action.
-        :param pulumi.Input[int] min_node_count: (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
-        :param pulumi.Input[int] step_size: (Updatable) This value is the number of nodes to add during a scale-out event.
-        """
         if metric is not None:
             pulumi.set(__self__, "metric", metric)
         if min_node_count is not None:
@@ -455,9 +348,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs']]:
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -467,9 +357,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
     @property
     @pulumi.getter(name="minNodeCount")
     def min_node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the minimum number of nodes the cluster can be scaled-in to.
-        """
         return pulumi.get(self, "min_node_count")
 
     @min_node_count.setter
@@ -479,9 +366,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigArgs:
     @property
     @pulumi.getter(name="stepSize")
     def step_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the number of nodes to add during a scale-out event.
-        """
         return pulumi.get(self, "step_size")
 
     @step_size.setter
@@ -494,10 +378,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
     def __init__(__self__, *,
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs']] = None):
-        """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
         if threshold is not None:
@@ -506,9 +386,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
     @property
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allowed value is CPU_UTILIZATION.
-        """
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
@@ -518,9 +395,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricArgs:
     @property
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs']]:
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -534,11 +408,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
                  duration_in_minutes: Optional[pulumi.Input[int]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] duration_in_minutes: (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        :param pulumi.Input[str] operator: (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        :param pulumi.Input[int] value: (Updatable) Integer non-negative value. 0 < value < 100
-        """
         if duration_in_minutes is not None:
             pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
         if operator is not None:
@@ -549,9 +418,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
     @property
     @pulumi.getter(name="durationInMinutes")
     def duration_in_minutes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
         return pulumi.get(self, "duration_in_minutes")
 
     @duration_in_minutes.setter
@@ -561,9 +427,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -573,9 +436,6 @@ class AutoScalingConfigurationPolicyDetailsScaleInConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -589,11 +449,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
                  max_node_count: Optional[pulumi.Input[int]] = None,
                  metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs']] = None,
                  step_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] max_node_count: (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs'] metric: (Updatable) Metric and threshold details for triggering an autoscale action.
-        :param pulumi.Input[int] step_size: (Updatable) This value is the number of nodes to add during a scale-out event.
-        """
         if max_node_count is not None:
             pulumi.set(__self__, "max_node_count", max_node_count)
         if metric is not None:
@@ -604,9 +459,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
     @property
     @pulumi.getter(name="maxNodeCount")
     def max_node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
-        """
         return pulumi.get(self, "max_node_count")
 
     @max_node_count.setter
@@ -616,9 +468,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs']]:
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -628,9 +477,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs:
     @property
     @pulumi.getter(name="stepSize")
     def step_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the number of nodes to add during a scale-out event.
-        """
         return pulumi.get(self, "step_size")
 
     @step_size.setter
@@ -643,10 +489,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
     def __init__(__self__, *,
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs']] = None):
-        """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
         if threshold is not None:
@@ -655,9 +497,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
     @property
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allowed value is CPU_UTILIZATION.
-        """
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
@@ -667,9 +506,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricArgs:
     @property
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs']]:
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -683,11 +519,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
                  duration_in_minutes: Optional[pulumi.Input[int]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] duration_in_minutes: (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        :param pulumi.Input[str] operator: (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        :param pulumi.Input[int] value: (Updatable) Integer non-negative value. 0 < value < 100
-        """
         if duration_in_minutes is not None:
             pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
         if operator is not None:
@@ -698,9 +529,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
     @property
     @pulumi.getter(name="durationInMinutes")
     def duration_in_minutes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
         return pulumi.get(self, "duration_in_minutes")
 
     @duration_in_minutes.setter
@@ -710,9 +538,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -722,9 +547,6 @@ class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -740,13 +562,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
                  memory_step_size: Optional[pulumi.Input[int]] = None,
                  metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs']] = None,
                  ocpu_step_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] max_memory_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input[int] max_ocpus_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input[int] memory_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs'] metric: (Updatable) Metric and threshold details for triggering an autoscale action.
-        :param pulumi.Input[int] ocpu_step_size: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
         if max_memory_per_node is not None:
             pulumi.set(__self__, "max_memory_per_node", max_memory_per_node)
         if max_ocpus_per_node is not None:
@@ -761,9 +576,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
     @property
     @pulumi.getter(name="maxMemoryPerNode")
     def max_memory_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "max_memory_per_node")
 
     @max_memory_per_node.setter
@@ -773,9 +585,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
     @property
     @pulumi.getter(name="maxOcpusPerNode")
     def max_ocpus_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "max_ocpus_per_node")
 
     @max_ocpus_per_node.setter
@@ -785,9 +594,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
     @property
     @pulumi.getter(name="memoryStepSize")
     def memory_step_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "memory_step_size")
 
     @memory_step_size.setter
@@ -797,9 +603,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs']]:
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -809,9 +612,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs:
     @property
     @pulumi.getter(name="ocpuStepSize")
     def ocpu_step_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "ocpu_step_size")
 
     @ocpu_step_size.setter
@@ -824,10 +624,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
     def __init__(__self__, *,
                  metric_type: Optional[pulumi.Input[str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs']] = None):
-        """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
         if threshold is not None:
@@ -836,9 +632,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
     @property
     @pulumi.getter(name="metricType")
     def metric_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Allowed value is CPU_UTILIZATION.
-        """
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
@@ -848,9 +641,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs:
     @property
     @pulumi.getter
     def threshold(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs']]:
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -864,11 +654,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
                  duration_in_minutes: Optional[pulumi.Input[int]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] duration_in_minutes: (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        :param pulumi.Input[str] operator: (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        :param pulumi.Input[int] value: (Updatable) Integer non-negative value. 0 < value < 100
-        """
         if duration_in_minutes is not None:
             pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
         if operator is not None:
@@ -879,9 +664,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
     @property
     @pulumi.getter(name="durationInMinutes")
     def duration_in_minutes(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
         return pulumi.get(self, "duration_in_minutes")
 
     @duration_in_minutes.setter
@@ -891,9 +673,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def operator(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -903,9 +682,6 @@ class AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -919,11 +695,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
                  schedule_type: Optional[pulumi.Input[str]] = None,
                  time_and_horizontal_scaling_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]]] = None,
                  time_and_vertical_scaling_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]]] = None):
-        """
-        :param pulumi.Input[str] schedule_type: (Updatable) The type of schedule.
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]] time_and_horizontal_scaling_configs: (Updatable) Time of day and horizontal scaling configuration.
-        :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]] time_and_vertical_scaling_configs: (Updatable) Time of day and vertical scaling configuration
-        """
         if schedule_type is not None:
             pulumi.set(__self__, "schedule_type", schedule_type)
         if time_and_horizontal_scaling_configs is not None:
@@ -934,9 +705,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
     @property
     @pulumi.getter(name="scheduleType")
     def schedule_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of schedule.
-        """
         return pulumi.get(self, "schedule_type")
 
     @schedule_type.setter
@@ -946,9 +714,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
     @property
     @pulumi.getter(name="timeAndHorizontalScalingConfigs")
     def time_and_horizontal_scaling_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigArgs']]]]:
-        """
-        (Updatable) Time of day and horizontal scaling configuration.
-        """
         return pulumi.get(self, "time_and_horizontal_scaling_configs")
 
     @time_and_horizontal_scaling_configs.setter
@@ -958,9 +723,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailArgs:
     @property
     @pulumi.getter(name="timeAndVerticalScalingConfigs")
     def time_and_vertical_scaling_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfigArgs']]]]:
-        """
-        (Updatable) Time of day and vertical scaling configuration
-        """
         return pulumi.get(self, "time_and_vertical_scaling_configs")
 
     @time_and_vertical_scaling_configs.setter
@@ -973,10 +735,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalin
     def __init__(__self__, *,
                  target_node_count: Optional[pulumi.Input[int]] = None,
                  time_recurrence: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] target_node_count: (Updatable) This value is the desired number of nodes in the cluster.
-        :param pulumi.Input[str] time_recurrence: (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
-        """
         if target_node_count is not None:
             pulumi.set(__self__, "target_node_count", target_node_count)
         if time_recurrence is not None:
@@ -985,9 +743,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalin
     @property
     @pulumi.getter(name="targetNodeCount")
     def target_node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) This value is the desired number of nodes in the cluster.
-        """
         return pulumi.get(self, "target_node_count")
 
     @target_node_count.setter
@@ -997,9 +752,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalin
     @property
     @pulumi.getter(name="timeRecurrence")
     def time_recurrence(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
-        """
         return pulumi.get(self, "time_recurrence")
 
     @time_recurrence.setter
@@ -1014,12 +766,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
                  target_ocpus_per_node: Optional[pulumi.Input[int]] = None,
                  target_shape: Optional[pulumi.Input[str]] = None,
                  time_recurrence: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] target_memory_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input[int] target_ocpus_per_node: (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
-        :param pulumi.Input[str] target_shape: (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
-        :param pulumi.Input[str] time_recurrence: (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
-        """
         if target_memory_per_node is not None:
             pulumi.set(__self__, "target_memory_per_node", target_memory_per_node)
         if target_ocpus_per_node is not None:
@@ -1032,9 +778,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
     @property
     @pulumi.getter(name="targetMemoryPerNode")
     def target_memory_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired memory in GBs on each node. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "target_memory_per_node")
 
     @target_memory_per_node.setter
@@ -1044,9 +787,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
     @property
     @pulumi.getter(name="targetOcpusPerNode")
     def target_ocpus_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired OCPUs count on each node. This value is not used for nodes with fixed compute shapes.
-        """
         return pulumi.get(self, "target_ocpus_per_node")
 
     @target_ocpus_per_node.setter
@@ -1056,9 +796,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
     @property
     @pulumi.getter(name="targetShape")
     def target_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) For nodes with [fixed compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the desired shape of each node. This value is not used for nodes with flexible compute shapes.
-        """
         return pulumi.get(self, "target_shape")
 
     @target_shape.setter
@@ -1068,9 +805,6 @@ class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingC
     @property
     @pulumi.getter(name="timeRecurrence")
     def time_recurrence(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
-        """
         return pulumi.get(self, "time_recurrence")
 
     @time_recurrence.setter
@@ -1083,19 +817,12 @@ class AutoScalingConfigurationPolicyRuleArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[str],
                  metric: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']):
-        """
-        :param pulumi.Input[str] action: (Updatable) The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
-        :param pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs'] metric: (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "metric", metric)
 
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -1105,9 +832,6 @@ class AutoScalingConfigurationPolicyRuleArgs:
     @property
     @pulumi.getter
     def metric(self) -> pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']:
-        """
-        (Updatable) Metric and threshold details for triggering an autoscale action.
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -1120,19 +844,12 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
     def __init__(__self__, *,
                  metric_type: pulumi.Input[str],
                  threshold: pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']):
-        """
-        :param pulumi.Input[str] metric_type: (Updatable) Allowed value is CPU_UTILIZATION.
-        :param pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs'] threshold: (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         pulumi.set(__self__, "metric_type", metric_type)
         pulumi.set(__self__, "threshold", threshold)
 
     @property
     @pulumi.getter(name="metricType")
     def metric_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Allowed value is CPU_UTILIZATION.
-        """
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
@@ -1142,9 +859,6 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
     @property
     @pulumi.getter
     def threshold(self) -> pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']:
-        """
-        (Updatable) An autoscale action is triggered when a performance metric exceeds a threshold.
-        """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
@@ -1158,11 +872,6 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
                  duration_in_minutes: pulumi.Input[int],
                  operator: pulumi.Input[str],
                  value: pulumi.Input[int]):
-        """
-        :param pulumi.Input[int] duration_in_minutes: (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        :param pulumi.Input[str] operator: (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        :param pulumi.Input[int] value: (Updatable) Integer non-negative value. 0 < value < 100
-        """
         pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
         pulumi.set(__self__, "operator", operator)
         pulumi.set(__self__, "value", value)
@@ -1170,9 +879,6 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     @property
     @pulumi.getter(name="durationInMinutes")
     def duration_in_minutes(self) -> pulumi.Input[int]:
-        """
-        (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-        """
         return pulumi.get(self, "duration_in_minutes")
 
     @duration_in_minutes.setter
@@ -1182,9 +888,6 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     @property
     @pulumi.getter
     def operator(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The comparison operator to use. Options are greater than (GT) or less than (LT).
-        """
         return pulumi.get(self, "operator")
 
     @operator.setter
@@ -1194,9 +897,6 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Integer non-negative value. 0 < value < 100
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1215,18 +915,6 @@ class BdsInstanceCloudSqlDetailArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input[str] ip_address: IP address of the node
-        :param pulumi.Input[bool] is_kerberos_mapped_to_database_users: Boolean flag specifying whether or not are Kerberos principals mapped to database users.
-        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgs']]] kerberos_details: Details about Kerberos principals
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "shape", shape)
         if block_volume_size_in_gbs is not None:
             pulumi.set(__self__, "block_volume_size_in_gbs", block_volume_size_in_gbs)
@@ -1246,9 +934,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1258,9 +943,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -1270,9 +952,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        IP address of the node
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -1282,9 +961,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter(name="isKerberosMappedToDatabaseUsers")
     def is_kerberos_mapped_to_database_users(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Boolean flag specifying whether or not are Kerberos principals mapped to database users.
-        """
         return pulumi.get(self, "is_kerberos_mapped_to_database_users")
 
     @is_kerberos_mapped_to_database_users.setter
@@ -1294,9 +970,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter(name="kerberosDetails")
     def kerberos_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailKerberosDetailArgs']]]]:
-        """
-        Details about Kerberos principals
-        """
         return pulumi.get(self, "kerberos_details")
 
     @kerberos_details.setter
@@ -1306,9 +979,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1318,9 +988,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -1330,11 +997,6 @@ class BdsInstanceCloudSqlDetailArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1347,10 +1009,6 @@ class BdsInstanceCloudSqlDetailKerberosDetailArgs:
     def __init__(__self__, *,
                  keytab_file: Optional[pulumi.Input[str]] = None,
                  principal_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] keytab_file: Location of the keytab file
-        :param pulumi.Input[str] principal_name: Name of the Kerberos principal
-        """
         if keytab_file is not None:
             pulumi.set(__self__, "keytab_file", keytab_file)
         if principal_name is not None:
@@ -1359,9 +1017,6 @@ class BdsInstanceCloudSqlDetailKerberosDetailArgs:
     @property
     @pulumi.getter(name="keytabFile")
     def keytab_file(self) -> Optional[pulumi.Input[str]]:
-        """
-        Location of the keytab file
-        """
         return pulumi.get(self, "keytab_file")
 
     @keytab_file.setter
@@ -1371,9 +1026,6 @@ class BdsInstanceCloudSqlDetailKerberosDetailArgs:
     @property
     @pulumi.getter(name="principalName")
     def principal_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the Kerberos principal
-        """
         return pulumi.get(self, "principal_name")
 
     @principal_name.setter
@@ -1399,23 +1051,6 @@ class BdsInstanceClusterDetailArgs:
                  os_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_refreshed: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ambari_url: The URL of Ambari
-        :param pulumi.Input[str] bd_cell_version: Cloud SQL cell version.
-        :param pulumi.Input[str] bda_version: BDA version installed in the cluster
-        :param pulumi.Input[str] bdm_version: Big Data Manager version installed in the cluster.
-        :param pulumi.Input[str] bds_version: Big Data Service version installed in the cluster.
-        :param pulumi.Input[str] big_data_manager_url: The URL of Big Data Manager.
-        :param pulumi.Input[str] cloudera_manager_url: The URL of Cloudera Manager
-        :param pulumi.Input[str] csql_cell_version: Big Data SQL version.
-        :param pulumi.Input[str] db_version: Cloud SQL query server database version.
-        :param pulumi.Input[str] hue_server_url: The URL of the Hue server.
-        :param pulumi.Input[str] jupyter_hub_url: The URL of the Jupyterhub.
-        :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        :param pulumi.Input[str] os_version: Oracle Linux version installed in the cluster.
-        :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
-        """
         if ambari_url is not None:
             pulumi.set(__self__, "ambari_url", ambari_url)
         if bd_cell_version is not None:
@@ -1450,9 +1085,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="ambariUrl")
     def ambari_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of Ambari
-        """
         return pulumi.get(self, "ambari_url")
 
     @ambari_url.setter
@@ -1462,9 +1094,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="bdCellVersion")
     def bd_cell_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Cloud SQL cell version.
-        """
         return pulumi.get(self, "bd_cell_version")
 
     @bd_cell_version.setter
@@ -1474,9 +1103,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="bdaVersion")
     def bda_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        BDA version installed in the cluster
-        """
         return pulumi.get(self, "bda_version")
 
     @bda_version.setter
@@ -1486,9 +1112,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="bdmVersion")
     def bdm_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Big Data Manager version installed in the cluster.
-        """
         return pulumi.get(self, "bdm_version")
 
     @bdm_version.setter
@@ -1498,9 +1121,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="bdsVersion")
     def bds_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Big Data Service version installed in the cluster.
-        """
         return pulumi.get(self, "bds_version")
 
     @bds_version.setter
@@ -1510,9 +1130,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="bigDataManagerUrl")
     def big_data_manager_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of Big Data Manager.
-        """
         return pulumi.get(self, "big_data_manager_url")
 
     @big_data_manager_url.setter
@@ -1522,9 +1139,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="clouderaManagerUrl")
     def cloudera_manager_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of Cloudera Manager
-        """
         return pulumi.get(self, "cloudera_manager_url")
 
     @cloudera_manager_url.setter
@@ -1534,9 +1148,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="csqlCellVersion")
     def csql_cell_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Big Data SQL version.
-        """
         return pulumi.get(self, "csql_cell_version")
 
     @csql_cell_version.setter
@@ -1546,9 +1157,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Cloud SQL query server database version.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -1558,9 +1166,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="hueServerUrl")
     def hue_server_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of the Hue server.
-        """
         return pulumi.get(self, "hue_server_url")
 
     @hue_server_url.setter
@@ -1570,9 +1175,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="jupyterHubUrl")
     def jupyter_hub_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of the Jupyterhub.
-        """
         return pulumi.get(self, "jupyter_hub_url")
 
     @jupyter_hub_url.setter
@@ -1582,9 +1184,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="odhVersion")
     def odh_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        """
         return pulumi.get(self, "odh_version")
 
     @odh_version.setter
@@ -1594,9 +1193,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="osVersion")
     def os_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle Linux version installed in the cluster.
-        """
         return pulumi.get(self, "os_version")
 
     @os_version.setter
@@ -1606,9 +1202,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -1618,9 +1211,6 @@ class BdsInstanceClusterDetailArgs:
     @property
     @pulumi.getter(name="timeRefreshed")
     def time_refreshed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_refreshed")
 
     @time_refreshed.setter
@@ -1636,13 +1226,6 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
                  subnet_id: pulumi.Input[str],
                  block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
-        """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1654,9 +1237,6 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @property
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[int]:
-        """
-        The amount of worker nodes should be created
-        """
         return pulumi.get(self, "number_of_nodes")
 
     @number_of_nodes.setter
@@ -1666,9 +1246,6 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1678,9 +1255,6 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1690,9 +1264,6 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -1702,9 +1273,6 @@ class BdsInstanceComputeOnlyWorkerNodeArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs']]:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -1718,13 +1286,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -1735,9 +1296,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1747,9 +1305,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -1759,11 +1314,6 @@ class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1779,13 +1329,6 @@ class BdsInstanceEdgeNodeArgs:
                  subnet_id: pulumi.Input[str],
                  block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['BdsInstanceEdgeNodeShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input['BdsInstanceEdgeNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
-        """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1797,9 +1340,6 @@ class BdsInstanceEdgeNodeArgs:
     @property
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[int]:
-        """
-        The amount of worker nodes should be created
-        """
         return pulumi.get(self, "number_of_nodes")
 
     @number_of_nodes.setter
@@ -1809,9 +1349,6 @@ class BdsInstanceEdgeNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1821,9 +1358,6 @@ class BdsInstanceEdgeNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1833,9 +1367,6 @@ class BdsInstanceEdgeNodeArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -1845,9 +1376,6 @@ class BdsInstanceEdgeNodeArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['BdsInstanceEdgeNodeShapeConfigArgs']]:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -1861,13 +1389,6 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -1878,9 +1399,6 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1890,9 +1408,6 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -1902,11 +1417,6 @@ class BdsInstanceEdgeNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1922,12 +1432,6 @@ class BdsInstanceKafkaBrokerNodeArgs:
                  subnet_id: pulumi.Input[str],
                  block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
-        """
         pulumi.set(__self__, "number_of_kafka_nodes", number_of_kafka_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1948,9 +1452,6 @@ class BdsInstanceKafkaBrokerNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1960,9 +1461,6 @@ class BdsInstanceKafkaBrokerNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1972,9 +1470,6 @@ class BdsInstanceKafkaBrokerNodeArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -1984,9 +1479,6 @@ class BdsInstanceKafkaBrokerNodeArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeShapeConfigArgs']]:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -2000,13 +1492,6 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -2017,9 +1502,6 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2029,9 +1511,6 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -2041,11 +1520,6 @@ class BdsInstanceKafkaBrokerNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2061,13 +1535,6 @@ class BdsInstanceMasterNodeArgs:
                  subnet_id: pulumi.Input[str],
                  block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['BdsInstanceMasterNodeShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input['BdsInstanceMasterNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
-        """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2079,9 +1546,6 @@ class BdsInstanceMasterNodeArgs:
     @property
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[int]:
-        """
-        The amount of worker nodes should be created
-        """
         return pulumi.get(self, "number_of_nodes")
 
     @number_of_nodes.setter
@@ -2091,9 +1555,6 @@ class BdsInstanceMasterNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -2103,9 +1564,6 @@ class BdsInstanceMasterNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2115,9 +1573,6 @@ class BdsInstanceMasterNodeArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -2127,9 +1582,6 @@ class BdsInstanceMasterNodeArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['BdsInstanceMasterNodeShapeConfigArgs']]:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -2143,13 +1595,6 @@ class BdsInstanceMasterNodeShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -2160,9 +1605,6 @@ class BdsInstanceMasterNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2172,9 +1614,6 @@ class BdsInstanceMasterNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -2184,11 +1623,6 @@ class BdsInstanceMasterNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2201,10 +1635,6 @@ class BdsInstanceNetworkConfigArgs:
     def __init__(__self__, *,
                  cidr_block: Optional[pulumi.Input[str]] = None,
                  is_nat_gateway_required: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] cidr_block: The CIDR IP address block of the VCN.
-        :param pulumi.Input[bool] is_nat_gateway_required: A boolean flag whether to configure a NAT gateway.
-        """
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
         if is_nat_gateway_required is not None:
@@ -2213,9 +1643,6 @@ class BdsInstanceNetworkConfigArgs:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CIDR IP address block of the VCN.
-        """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -2225,9 +1652,6 @@ class BdsInstanceNetworkConfigArgs:
     @property
     @pulumi.getter(name="isNatGatewayRequired")
     def is_nat_gateway_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean flag whether to configure a NAT gateway.
-        """
         return pulumi.get(self, "is_nat_gateway_required")
 
     @is_nat_gateway_required.setter
@@ -2255,27 +1679,6 @@ class BdsInstanceNodeArgs:
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgs']]] attached_block_volumes: The list of block volumes attached to a given node.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain the node is running in
-        :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
-        :param pulumi.Input[str] fault_domain: The name of the fault domain the node is running in
-        :param pulumi.Input[str] hostname: The fully-qualified hostname (FQDN) of the node
-        :param pulumi.Input[str] image_id: The OCID of the image from which the node was created
-        :param pulumi.Input[str] instance_id: The OCID of the underlying compute instance
-        :param pulumi.Input[str] ip_address: IP address of the node
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[str] node_type: The Big Data Service cluster node type.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] ssh_fingerprint: The fingerprint of the SSH key used for node access
-        :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
-        """
         if attached_block_volumes is not None:
             pulumi.set(__self__, "attached_block_volumes", attached_block_volumes)
         if availability_domain is not None:
@@ -2314,9 +1717,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="attachedBlockVolumes")
     def attached_block_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeAttachedBlockVolumeArgs']]]]:
-        """
-        The list of block volumes attached to a given node.
-        """
         return pulumi.get(self, "attached_block_volumes")
 
     @attached_block_volumes.setter
@@ -2326,9 +1726,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the availability domain the node is running in
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -2338,9 +1735,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the BDS instance
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -2350,9 +1744,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the fault domain the node is running in
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -2362,9 +1753,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully-qualified hostname (FQDN) of the node
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -2374,9 +1762,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the image from which the node was created
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -2386,9 +1771,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the underlying compute instance
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -2398,9 +1780,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        IP address of the node
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -2410,9 +1789,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2422,9 +1798,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Big Data Service cluster node type.
-        """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
@@ -2434,11 +1807,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2448,9 +1816,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -2460,9 +1825,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="sshFingerprint")
     def ssh_fingerprint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fingerprint of the SSH key used for node access
-        """
         return pulumi.get(self, "ssh_fingerprint")
 
     @ssh_fingerprint.setter
@@ -2472,9 +1834,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -2484,9 +1843,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2496,9 +1852,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the BDS instance was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -2508,9 +1861,6 @@ class BdsInstanceNodeArgs:
     @property
     @pulumi.getter(name="timeMaintenanceRebootDue")
     def time_maintenance_reboot_due(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_maintenance_reboot_due")
 
     @time_maintenance_reboot_due.setter
@@ -2523,10 +1873,6 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
     def __init__(__self__, *,
                  volume_attachment_id: Optional[pulumi.Input[str]] = None,
                  volume_size_in_gbs: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] volume_attachment_id: The OCID of the volume attachment.
-        :param pulumi.Input[str] volume_size_in_gbs: The size of the volume in GBs.
-        """
         if volume_attachment_id is not None:
             pulumi.set(__self__, "volume_attachment_id", volume_attachment_id)
         if volume_size_in_gbs is not None:
@@ -2535,9 +1881,6 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
     @property
     @pulumi.getter(name="volumeAttachmentId")
     def volume_attachment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume attachment.
-        """
         return pulumi.get(self, "volume_attachment_id")
 
     @volume_attachment_id.setter
@@ -2547,9 +1890,6 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
     @property
     @pulumi.getter(name="volumeSizeInGbs")
     def volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of the volume in GBs.
-        """
         return pulumi.get(self, "volume_size_in_gbs")
 
     @volume_size_in_gbs.setter
@@ -2565,13 +1905,6 @@ class BdsInstanceUtilNodeArgs:
                  subnet_id: pulumi.Input[str],
                  block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['BdsInstanceUtilNodeShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input['BdsInstanceUtilNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
-        """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2583,9 +1916,6 @@ class BdsInstanceUtilNodeArgs:
     @property
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[int]:
-        """
-        The amount of worker nodes should be created
-        """
         return pulumi.get(self, "number_of_nodes")
 
     @number_of_nodes.setter
@@ -2595,9 +1925,6 @@ class BdsInstanceUtilNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -2607,9 +1934,6 @@ class BdsInstanceUtilNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2619,9 +1943,6 @@ class BdsInstanceUtilNodeArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -2631,9 +1952,6 @@ class BdsInstanceUtilNodeArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['BdsInstanceUtilNodeShapeConfigArgs']]:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -2647,13 +1965,6 @@ class BdsInstanceUtilNodeShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -2664,9 +1975,6 @@ class BdsInstanceUtilNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2676,9 +1984,6 @@ class BdsInstanceUtilNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -2688,11 +1993,6 @@ class BdsInstanceUtilNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -2708,13 +2008,6 @@ class BdsInstanceWorkerNodeArgs:
                  subnet_id: pulumi.Input[str],
                  block_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] shape: Shape of the node
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet in which the node should be created
-        :param pulumi.Input[str] block_volume_size_in_gbs: The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        :param pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgs'] shape_config: The shape configuration requested for the node.
-        """
         pulumi.set(__self__, "number_of_nodes", number_of_nodes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2726,9 +2019,6 @@ class BdsInstanceWorkerNodeArgs:
     @property
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Input[int]:
-        """
-        The amount of worker nodes should be created
-        """
         return pulumi.get(self, "number_of_nodes")
 
     @number_of_nodes.setter
@@ -2738,9 +2028,6 @@ class BdsInstanceWorkerNodeArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        Shape of the node
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -2750,9 +2037,6 @@ class BdsInstanceWorkerNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet in which the node should be created
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2762,9 +2046,6 @@ class BdsInstanceWorkerNodeArgs:
     @property
     @pulumi.getter(name="blockVolumeSizeInGbs")
     def block_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-        """
         return pulumi.get(self, "block_volume_size_in_gbs")
 
     @block_volume_size_in_gbs.setter
@@ -2774,9 +2055,6 @@ class BdsInstanceWorkerNodeArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['BdsInstanceWorkerNodeShapeConfigArgs']]:
-        """
-        The shape configuration requested for the node.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -2790,13 +2068,6 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes
-        :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if nvmes is not None:
@@ -2807,9 +2078,6 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total amount of memory available to the node, in gigabytes
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -2819,9 +2087,6 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def nvmes(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-        """
         return pulumi.get(self, "nvmes")
 
     @nvmes.setter
@@ -2831,11 +2096,6 @@ class BdsInstanceWorkerNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of OCPUs available to the node.
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter

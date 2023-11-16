@@ -92,7 +92,7 @@ export interface GetOpensearchClustersResult {
     /**
      * The list of opensearch_cluster_collection.
      */
-    readonly opensearchClusterCollections: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollection[];
+    readonly opensearchClusterCollections?: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollection[];
     /**
      * The current state of the cluster.
      */

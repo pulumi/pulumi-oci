@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Database
         /// The requested number of additional storage servers activated for the Exadata infrastructure.
         /// </summary>
         [Output("activatedStorageCount")]
-        public Output<int> ActivatedStorageCount { get; private set; } = null!;
+        public Output<int?> ActivatedStorageCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
@@ -125,13 +125,13 @@ namespace Pulumi.Oci.Database
         /// The requested number of additional compute servers for the Exadata infrastructure.
         /// </summary>
         [Output("additionalComputeCount")]
-        public Output<int> AdditionalComputeCount { get; private set; } = null!;
+        public Output<int?> AdditionalComputeCount { get; private set; } = null!;
 
         /// <summary>
         /// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         /// </summary>
         [Output("additionalComputeSystemModel")]
-        public Output<string> AdditionalComputeSystemModel { get; private set; } = null!;
+        public Output<string?> AdditionalComputeSystemModel { get; private set; } = null!;
 
         /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("additionalStorageCount")]
-        public Output<int> AdditionalStorageCount { get; private set; } = null!;
+        public Output<int?> AdditionalStorageCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The CIDR block for the Exadata administration network.
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.Database
         /// The name of the availability domain that the Exadata infrastructure is located in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The IP address for the first control plane server.
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Database
         /// The number of compute servers for the Exadata infrastructure.
         /// </summary>
         [Output("computeCount")]
-        public Output<int> ComputeCount { get; private set; } = null!;
+        public Output<int?> ComputeCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of contacts for the Exadata infrastructure.
@@ -188,13 +188,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         /// </summary>
         [Output("corporateProxy")]
-        public Output<string> CorporateProxy { get; private set; } = null!;
+        public Output<string?> CorporateProxy { get; private set; } = null!;
 
         /// <summary>
         /// The number of enabled CPU cores.
         /// </summary>
         [Output("cpusEnabled")]
-        public Output<int> CpusEnabled { get; private set; } = null!;
+        public Output<int?> CpusEnabled { get; private set; } = null!;
 
         [Output("createAsync")]
         public Output<bool?> CreateAsync { get; private set; } = null!;
@@ -203,31 +203,31 @@ namespace Pulumi.Oci.Database
         /// The CSI Number of the Exadata infrastructure.
         /// </summary>
         [Output("csiNumber")]
-        public Output<string> CsiNumber { get; private set; } = null!;
+        public Output<string?> CsiNumber { get; private set; } = null!;
 
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
-        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The software version of the database servers (dom0) in the Exadata infrastructure.
         /// </summary>
         [Output("dbServerVersion")]
-        public Output<string> DbServerVersion { get; private set; } = null!;
+        public Output<string?> DbServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The gateway for the control plane network.
@@ -263,67 +263,67 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
         /// </summary>
         [Output("isCpsOfflineReportEnabled")]
-        public Output<bool> IsCpsOfflineReportEnabled { get; private set; } = null!;
+        public Output<bool?> IsCpsOfflineReportEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if deployment is Multi-Rack or not.
         /// </summary>
         [Output("isMultiRackDeployment")]
-        public Output<bool> IsMultiRackDeployment { get; private set; } = null!;
+        public Output<bool?> IsMultiRackDeployment { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         /// </summary>
         [Output("maintenanceSloStatus")]
-        public Output<string> MaintenanceSloStatus { get; private set; } = null!;
+        public Output<string?> MaintenanceSloStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         [Output("maintenanceWindow")]
-        public Output<Outputs.ExadataInfrastructureMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+        public Output<Outputs.ExadataInfrastructureMaintenanceWindow?> MaintenanceWindow { get; private set; } = null!;
 
         /// <summary>
         /// The total number of CPU cores available.
         /// </summary>
         [Output("maxCpuCount")]
-        public Output<int> MaxCpuCount { get; private set; } = null!;
+        public Output<int?> MaxCpuCount { get; private set; } = null!;
 
         /// <summary>
         /// The total available DATA disk group size.
         /// </summary>
         [Output("maxDataStorageInTbs")]
-        public Output<double> MaxDataStorageInTbs { get; private set; } = null!;
+        public Output<double?> MaxDataStorageInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The total local node storage available in GBs.
         /// </summary>
         [Output("maxDbNodeStorageInGbs")]
-        public Output<int> MaxDbNodeStorageInGbs { get; private set; } = null!;
+        public Output<int?> MaxDbNodeStorageInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The total memory available in GBs.
         /// </summary>
         [Output("maxMemoryInGbs")]
-        public Output<int> MaxMemoryInGbs { get; private set; } = null!;
+        public Output<int?> MaxMemoryInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         /// </summary>
         [Output("monthlyDbServerVersion")]
-        public Output<string> MonthlyDbServerVersion { get; private set; } = null!;
+        public Output<string?> MonthlyDbServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The base64 encoded Multi-Rack configuration json file.
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
         /// </summary>
         [Output("networkBondingModeDetails")]
-        public Output<Outputs.ExadataInfrastructureNetworkBondingModeDetails> NetworkBondingModeDetails { get; private set; } = null!;
+        public Output<Outputs.ExadataInfrastructureNetworkBondingModeDetails?> NetworkBondingModeDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -353,7 +353,7 @@ namespace Pulumi.Oci.Database
         /// The serial number for the Exadata infrastructure.
         /// </summary>
         [Output("rackSerialNumber")]
-        public Output<string> RackSerialNumber { get; private set; } = null!;
+        public Output<string?> RackSerialNumber { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -365,25 +365,25 @@ namespace Pulumi.Oci.Database
         /// The current lifecycle state of the Exadata infrastructure.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The number of storage servers for the Exadata infrastructure.
         /// </summary>
         [Output("storageCount")]
-        public Output<int> StorageCount { get; private set; } = null!;
+        public Output<int?> StorageCount { get; private set; } = null!;
 
         /// <summary>
         /// The software version of the storage servers (cells) in the Exadata infrastructure.
         /// </summary>
         [Output("storageServerVersion")]
-        public Output<string> StorageServerVersion { get; private set; } = null!;
+        public Output<string?> StorageServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Exadata infrastructure was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

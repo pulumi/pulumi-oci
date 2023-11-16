@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.
@@ -84,42 +83,42 @@ type GetListingResult struct {
 	// The list of compatible architectures supported by the listing
 	CompatibleArchitectures []string `pulumi:"compatibleArchitectures"`
 	// The default package version.
-	DefaultPackageVersion string `pulumi:"defaultPackageVersion"`
+	DefaultPackageVersion *string `pulumi:"defaultPackageVersion"`
 	// Links to additional documentation provided by the publisher specifically for the listing.
 	DocumentationLinks []GetListingDocumentationLink `pulumi:"documentationLinks"`
 	// The model for upload data for images and icons.
 	Icons []GetListingIcon `pulumi:"icons"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the listing is included in Featured Listings.
-	IsFeatured bool `pulumi:"isFeatured"`
+	IsFeatured *bool `pulumi:"isFeatured"`
 	// Keywords associated with the listing.
-	Keywords string `pulumi:"keywords"`
+	Keywords *string `pulumi:"keywords"`
 	// Languages supported by the listing.
 	Languages []GetListingLanguage `pulumi:"languages"`
 	// A description of the publisher's licensing model for the listing.
-	LicenseModelDescription string `pulumi:"licenseModelDescription"`
+	LicenseModelDescription *string `pulumi:"licenseModelDescription"`
 	// Reference links.
 	Links     []GetListingLink `pulumi:"links"`
 	ListingId string           `pulumi:"listingId"`
 	// The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
-	ListingType string `pulumi:"listingType"`
+	ListingType *string `pulumi:"listingType"`
 	// A long description of the listing.
-	LongDescription string `pulumi:"longDescription"`
+	LongDescription *string `pulumi:"longDescription"`
 	// Text that describes the resource.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The listing's package type.
-	PackageType string `pulumi:"packageType"`
+	PackageType *string `pulumi:"packageType"`
 	// Summary details about the publisher of the listing.
 	Publishers []GetListingPublisher `pulumi:"publishers"`
 	// The regions where the listing is eligible to be deployed.
 	Regions []GetListingRegion `pulumi:"regions"`
 	// Release notes for the listing.
-	ReleaseNotes string `pulumi:"releaseNotes"`
+	ReleaseNotes *string `pulumi:"releaseNotes"`
 	// Screenshots of the listing.
 	Screenshots []GetListingScreenshot `pulumi:"screenshots"`
 	// A short description of the listing.
-	ShortDescription string `pulumi:"shortDescription"`
+	ShortDescription *string `pulumi:"shortDescription"`
 	// Contact information to use to get support from the publisher for the listing.
 	SupportContacts []GetListingSupportContact `pulumi:"supportContacts"`
 	// Links to support resources for the listing.
@@ -127,15 +126,15 @@ type GetListingResult struct {
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems []GetListingSupportedOperatingSystem `pulumi:"supportedOperatingSystems"`
 	// System requirements for the listing.
-	SystemRequirements string `pulumi:"systemRequirements"`
+	SystemRequirements *string `pulumi:"systemRequirements"`
 	// The tagline of the listing.
-	Tagline string `pulumi:"tagline"`
+	Tagline *string `pulumi:"tagline"`
 	// The release date of the listing.
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// Usage information for the listing.
-	UsageInformation string `pulumi:"usageInformation"`
+	UsageInformation *string `pulumi:"usageInformation"`
 	// The version of the listing.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 	// Videos of the listing.
 	Videos []GetListingVideo `pulumi:"videos"`
 }
@@ -180,12 +179,6 @@ func (o GetListingResultOutput) ToGetListingResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetListingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingResult] {
-	return pulumix.Output[GetListingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The model for upload data for images and icons.
 func (o GetListingResultOutput) Banners() GetListingBannerArrayOutput {
 	return o.ApplyT(func(v GetListingResult) []GetListingBanner { return v.Banners }).(GetListingBannerArrayOutput)
@@ -206,8 +199,8 @@ func (o GetListingResultOutput) CompatibleArchitectures() pulumi.StringArrayOutp
 }
 
 // The default package version.
-func (o GetListingResultOutput) DefaultPackageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.DefaultPackageVersion }).(pulumi.StringOutput)
+func (o GetListingResultOutput) DefaultPackageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.DefaultPackageVersion }).(pulumi.StringPtrOutput)
 }
 
 // Links to additional documentation provided by the publisher specifically for the listing.
@@ -221,18 +214,18 @@ func (o GetListingResultOutput) Icons() GetListingIconArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the listing is included in Featured Listings.
-func (o GetListingResultOutput) IsFeatured() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetListingResult) bool { return v.IsFeatured }).(pulumi.BoolOutput)
+func (o GetListingResultOutput) IsFeatured() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *bool { return v.IsFeatured }).(pulumi.BoolPtrOutput)
 }
 
 // Keywords associated with the listing.
-func (o GetListingResultOutput) Keywords() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.Keywords }).(pulumi.StringOutput)
+func (o GetListingResultOutput) Keywords() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.Keywords }).(pulumi.StringPtrOutput)
 }
 
 // Languages supported by the listing.
@@ -241,8 +234,8 @@ func (o GetListingResultOutput) Languages() GetListingLanguageArrayOutput {
 }
 
 // A description of the publisher's licensing model for the listing.
-func (o GetListingResultOutput) LicenseModelDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.LicenseModelDescription }).(pulumi.StringOutput)
+func (o GetListingResultOutput) LicenseModelDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.LicenseModelDescription }).(pulumi.StringPtrOutput)
 }
 
 // Reference links.
@@ -255,23 +248,23 @@ func (o GetListingResultOutput) ListingId() pulumi.StringOutput {
 }
 
 // The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
-func (o GetListingResultOutput) ListingType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.ListingType }).(pulumi.StringOutput)
+func (o GetListingResultOutput) ListingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.ListingType }).(pulumi.StringPtrOutput)
 }
 
 // A long description of the listing.
-func (o GetListingResultOutput) LongDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.LongDescription }).(pulumi.StringOutput)
+func (o GetListingResultOutput) LongDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.LongDescription }).(pulumi.StringPtrOutput)
 }
 
 // Text that describes the resource.
-func (o GetListingResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetListingResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The listing's package type.
-func (o GetListingResultOutput) PackageType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.PackageType }).(pulumi.StringOutput)
+func (o GetListingResultOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 // Summary details about the publisher of the listing.
@@ -285,8 +278,8 @@ func (o GetListingResultOutput) Regions() GetListingRegionArrayOutput {
 }
 
 // Release notes for the listing.
-func (o GetListingResultOutput) ReleaseNotes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.ReleaseNotes }).(pulumi.StringOutput)
+func (o GetListingResultOutput) ReleaseNotes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.ReleaseNotes }).(pulumi.StringPtrOutput)
 }
 
 // Screenshots of the listing.
@@ -295,8 +288,8 @@ func (o GetListingResultOutput) Screenshots() GetListingScreenshotArrayOutput {
 }
 
 // A short description of the listing.
-func (o GetListingResultOutput) ShortDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.ShortDescription }).(pulumi.StringOutput)
+func (o GetListingResultOutput) ShortDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.ShortDescription }).(pulumi.StringPtrOutput)
 }
 
 // Contact information to use to get support from the publisher for the listing.
@@ -315,28 +308,28 @@ func (o GetListingResultOutput) SupportedOperatingSystems() GetListingSupportedO
 }
 
 // System requirements for the listing.
-func (o GetListingResultOutput) SystemRequirements() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.SystemRequirements }).(pulumi.StringOutput)
+func (o GetListingResultOutput) SystemRequirements() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.SystemRequirements }).(pulumi.StringPtrOutput)
 }
 
 // The tagline of the listing.
-func (o GetListingResultOutput) Tagline() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.Tagline }).(pulumi.StringOutput)
+func (o GetListingResultOutput) Tagline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.Tagline }).(pulumi.StringPtrOutput)
 }
 
 // The release date of the listing.
-func (o GetListingResultOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetListingResultOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // Usage information for the listing.
-func (o GetListingResultOutput) UsageInformation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.UsageInformation }).(pulumi.StringOutput)
+func (o GetListingResultOutput) UsageInformation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.UsageInformation }).(pulumi.StringPtrOutput)
 }
 
 // The version of the listing.
-func (o GetListingResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetListingResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // Videos of the listing.

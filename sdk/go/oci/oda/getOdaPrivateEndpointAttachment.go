@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -60,20 +59,20 @@ type LookupOdaPrivateEndpointAttachmentArgs struct {
 // A collection of values returned by getOdaPrivateEndpointAttachment.
 type LookupOdaPrivateEndpointAttachmentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-	OdaInstanceId                  string `pulumi:"odaInstanceId"`
-	OdaPrivateEndpointAttachmentId string `pulumi:"odaPrivateEndpointAttachmentId"`
+	OdaInstanceId                  *string `pulumi:"odaInstanceId"`
+	OdaPrivateEndpointAttachmentId string  `pulumi:"odaPrivateEndpointAttachmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-	OdaPrivateEndpointId string `pulumi:"odaPrivateEndpointId"`
+	OdaPrivateEndpointId *string `pulumi:"odaPrivateEndpointId"`
 	// The current state of the ODA Private Endpoint attachment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupOdaPrivateEndpointAttachmentOutput(ctx *pulumi.Context, args LookupOdaPrivateEndpointAttachmentOutputArgs, opts ...pulumi.InvokeOption) LookupOdaPrivateEndpointAttachmentResultOutput {
@@ -114,25 +113,19 @@ func (o LookupOdaPrivateEndpointAttachmentResultOutput) ToLookupOdaPrivateEndpoi
 	return o
 }
 
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOdaPrivateEndpointAttachmentResult] {
-	return pulumix.Output[LookupOdaPrivateEndpointAttachmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) OdaInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.OdaInstanceId }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) OdaInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.OdaInstanceId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOdaPrivateEndpointAttachmentResultOutput) OdaPrivateEndpointAttachmentId() pulumi.StringOutput {
@@ -140,23 +133,23 @@ func (o LookupOdaPrivateEndpointAttachmentResultOutput) OdaPrivateEndpointAttach
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) OdaPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.OdaPrivateEndpointId }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) OdaPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.OdaPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ODA Private Endpoint attachment.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o LookupOdaPrivateEndpointAttachmentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOdaPrivateEndpointAttachmentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOdaPrivateEndpointAttachmentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

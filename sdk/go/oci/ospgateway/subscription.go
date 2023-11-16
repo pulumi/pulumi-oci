@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -30,25 +29,25 @@ type Subscription struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Account type.
-	AccountType pulumi.StringOutput `pulumi:"accountType"`
+	AccountType pulumi.StringPtrOutput `pulumi:"accountType"`
 	// (Updatable) Bill to customer Account id.
-	BillToCustAccountId pulumi.StringOutput `pulumi:"billToCustAccountId"`
+	BillToCustAccountId pulumi.StringPtrOutput `pulumi:"billToCustAccountId"`
 	// (Updatable) Address details model.
 	BillingAddresses SubscriptionBillingAddressArrayOutput `pulumi:"billingAddresses"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Currency code
-	CurrencyCode pulumi.StringOutput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrOutput `pulumi:"currencyCode"`
 	// (Updatable) User email
 	Email pulumi.StringOutput `pulumi:"email"`
 	// (Updatable) GSI Subscription external code.
-	GsiOrgCode pulumi.StringOutput `pulumi:"gsiOrgCode"`
+	GsiOrgCode pulumi.StringPtrOutput `pulumi:"gsiOrgCode"`
 	// (Updatable) Payment intension.
-	IsIntentToPay pulumi.BoolOutput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrOutput `pulumi:"isIntentToPay"`
 	// (Updatable) Language short code (en, de, hu, etc)
-	LanguageCode pulumi.StringOutput `pulumi:"languageCode"`
+	LanguageCode pulumi.StringPtrOutput `pulumi:"languageCode"`
 	// (Updatable) GSI organization external identifier.
-	OrganizationId pulumi.StringOutput `pulumi:"organizationId"`
+	OrganizationId pulumi.StringPtrOutput `pulumi:"organizationId"`
 	// (Updatable) The home region's public name of the logged in user.
 	OspHomeRegion pulumi.StringOutput `pulumi:"ospHomeRegion"`
 	// (Updatable) Payment gateway details.
@@ -56,11 +55,11 @@ type Subscription struct {
 	// (Updatable) Payment option list of a subscription.
 	PaymentOptions SubscriptionPaymentOptionArrayOutput `pulumi:"paymentOptions"`
 	// (Updatable) Subscription plan type.
-	PlanType pulumi.StringOutput `pulumi:"planType"`
+	PlanType pulumi.StringPtrOutput `pulumi:"planType"`
 	// (Updatable) Ship to customer account role.
-	ShipToCustAcctRoleId pulumi.StringOutput `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId pulumi.StringPtrOutput `pulumi:"shipToCustAcctRoleId"`
 	// (Updatable) Ship to customer account site address id.
-	ShipToCustAcctSiteId pulumi.StringOutput `pulumi:"shipToCustAcctSiteId"`
+	ShipToCustAcctSiteId pulumi.StringPtrOutput `pulumi:"shipToCustAcctSiteId"`
 	// (Updatable) Subscription details object which extends the SubscriptionSummary
 	Subscription SubscriptionSubscriptionOutput `pulumi:"subscription"`
 	// Subscription id(OCID).
@@ -69,19 +68,19 @@ type Subscription struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// (Updatable) Subscription plan number.
-	SubscriptionPlanNumber pulumi.StringOutput `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber pulumi.StringPtrOutput `pulumi:"subscriptionPlanNumber"`
 	// (Updatable) Tax details.
 	TaxInfos SubscriptionTaxInfoArrayOutput `pulumi:"taxInfos"`
 	// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv pulumi.StringOutput `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv pulumi.StringPtrOutput `pulumi:"timePersonalToCorporateConv"`
 	// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade pulumi.StringOutput `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade pulumi.StringPtrOutput `pulumi:"timePlanUpgrade"`
 	// (Updatable) Start date of the subscription.
-	TimeStart pulumi.StringOutput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrOutput `pulumi:"timeStart"`
 	// (Updatable) Status of the upgrade.
-	UpgradeState pulumi.StringOutput `pulumi:"upgradeState"`
+	UpgradeState pulumi.StringPtrOutput `pulumi:"upgradeState"`
 	// (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails pulumi.StringOutput `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails pulumi.StringPtrOutput `pulumi:"upgradeStateDetails"`
 }
 
 // NewSubscription registers a new resource with the given unique name, arguments, and options.
@@ -300,12 +299,6 @@ func (i *Subscription) ToSubscriptionOutputWithContext(ctx context.Context) Subs
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionOutput)
 }
 
-func (i *Subscription) ToOutput(ctx context.Context) pulumix.Output[*Subscription] {
-	return pulumix.Output[*Subscription]{
-		OutputState: i.ToSubscriptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionArrayInput is an input type that accepts SubscriptionArray and SubscriptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionArrayInput` via:
 //
@@ -329,12 +322,6 @@ func (i SubscriptionArray) ToSubscriptionArrayOutput() SubscriptionArrayOutput {
 
 func (i SubscriptionArray) ToSubscriptionArrayOutputWithContext(ctx context.Context) SubscriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionArrayOutput)
-}
-
-func (i SubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Subscription] {
-	return pulumix.Output[[]*Subscription]{
-		OutputState: i.ToSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SubscriptionMapInput is an input type that accepts SubscriptionMap and SubscriptionMapOutput values.
@@ -362,12 +349,6 @@ func (i SubscriptionMap) ToSubscriptionMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionMapOutput)
 }
 
-func (i SubscriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subscription] {
-	return pulumix.Output[map[string]*Subscription]{
-		OutputState: i.ToSubscriptionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionOutput) ElementType() reflect.Type {
@@ -382,20 +363,14 @@ func (o SubscriptionOutput) ToSubscriptionOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o SubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*Subscription] {
-	return pulumix.Output[*Subscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Account type.
-func (o SubscriptionOutput) AccountType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.AccountType }).(pulumi.StringOutput)
+func (o SubscriptionOutput) AccountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.AccountType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Bill to customer Account id.
-func (o SubscriptionOutput) BillToCustAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.BillToCustAccountId }).(pulumi.StringOutput)
+func (o SubscriptionOutput) BillToCustAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.BillToCustAccountId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Address details model.
@@ -409,8 +384,8 @@ func (o SubscriptionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Currency code
-func (o SubscriptionOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o SubscriptionOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User email
@@ -419,23 +394,23 @@ func (o SubscriptionOutput) Email() pulumi.StringOutput {
 }
 
 // (Updatable) GSI Subscription external code.
-func (o SubscriptionOutput) GsiOrgCode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.GsiOrgCode }).(pulumi.StringOutput)
+func (o SubscriptionOutput) GsiOrgCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.GsiOrgCode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Payment intension.
-func (o SubscriptionOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.BoolOutput { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o SubscriptionOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.BoolPtrOutput { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Language short code (en, de, hu, etc)
-func (o SubscriptionOutput) LanguageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.LanguageCode }).(pulumi.StringOutput)
+func (o SubscriptionOutput) LanguageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.LanguageCode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) GSI organization external identifier.
-func (o SubscriptionOutput) OrganizationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.OrganizationId }).(pulumi.StringOutput)
+func (o SubscriptionOutput) OrganizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.OrganizationId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The home region's public name of the logged in user.
@@ -454,18 +429,18 @@ func (o SubscriptionOutput) PaymentOptions() SubscriptionPaymentOptionArrayOutpu
 }
 
 // (Updatable) Subscription plan type.
-func (o SubscriptionOutput) PlanType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.PlanType }).(pulumi.StringOutput)
+func (o SubscriptionOutput) PlanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.PlanType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Ship to customer account role.
-func (o SubscriptionOutput) ShipToCustAcctRoleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.ShipToCustAcctRoleId }).(pulumi.StringOutput)
+func (o SubscriptionOutput) ShipToCustAcctRoleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.ShipToCustAcctRoleId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Ship to customer account site address id.
-func (o SubscriptionOutput) ShipToCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.ShipToCustAcctSiteId }).(pulumi.StringOutput)
+func (o SubscriptionOutput) ShipToCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.ShipToCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Subscription details object which extends the SubscriptionSummary
@@ -482,8 +457,8 @@ func (o SubscriptionOutput) SubscriptionId() pulumi.StringOutput {
 }
 
 // (Updatable) Subscription plan number.
-func (o SubscriptionOutput) SubscriptionPlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.SubscriptionPlanNumber }).(pulumi.StringOutput)
+func (o SubscriptionOutput) SubscriptionPlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.SubscriptionPlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Tax details.
@@ -492,28 +467,28 @@ func (o SubscriptionOutput) TaxInfos() SubscriptionTaxInfoArrayOutput {
 }
 
 // (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-func (o SubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.TimePersonalToCorporateConv }).(pulumi.StringOutput)
+func (o SubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.TimePersonalToCorporateConv }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-func (o SubscriptionOutput) TimePlanUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.TimePlanUpgrade }).(pulumi.StringOutput)
+func (o SubscriptionOutput) TimePlanUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.TimePlanUpgrade }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Start date of the subscription.
-func (o SubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.TimeStart }).(pulumi.StringOutput)
+func (o SubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Status of the upgrade.
-func (o SubscriptionOutput) UpgradeState() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.UpgradeState }).(pulumi.StringOutput)
+func (o SubscriptionOutput) UpgradeState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.UpgradeState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-func (o SubscriptionOutput) UpgradeStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.UpgradeStateDetails }).(pulumi.StringOutput)
+func (o SubscriptionOutput) UpgradeStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.StringPtrOutput { return v.UpgradeStateDetails }).(pulumi.StringPtrOutput)
 }
 
 type SubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -528,12 +503,6 @@ func (o SubscriptionArrayOutput) ToSubscriptionArrayOutput() SubscriptionArrayOu
 
 func (o SubscriptionArrayOutput) ToSubscriptionArrayOutputWithContext(ctx context.Context) SubscriptionArrayOutput {
 	return o
-}
-
-func (o SubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Subscription] {
-	return pulumix.Output[[]*Subscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionArrayOutput) Index(i pulumi.IntInput) SubscriptionOutput {
@@ -554,12 +523,6 @@ func (o SubscriptionMapOutput) ToSubscriptionMapOutput() SubscriptionMapOutput {
 
 func (o SubscriptionMapOutput) ToSubscriptionMapOutputWithContext(ctx context.Context) SubscriptionMapOutput {
 	return o
-}
-
-func (o SubscriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subscription] {
-	return pulumix.Output[map[string]*Subscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionMapOutput) MapIndex(k pulumi.StringInput) SubscriptionOutput {

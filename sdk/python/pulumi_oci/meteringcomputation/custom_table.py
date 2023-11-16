@@ -21,13 +21,6 @@ class CustomTableArgs:
                  saved_report_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a CustomTable resource.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
-        :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "saved_custom_table", saved_custom_table)
@@ -36,9 +29,6 @@ class CustomTableArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -48,9 +38,6 @@ class CustomTableArgs:
     @property
     @pulumi.getter(name="savedCustomTable")
     def saved_custom_table(self) -> pulumi.Input['CustomTableSavedCustomTableArgs']:
-        """
-        (Updatable) The custom table for Cost Analysis UI rendering.
-        """
         return pulumi.get(self, "saved_custom_table")
 
     @saved_custom_table.setter
@@ -60,13 +47,6 @@ class CustomTableArgs:
     @property
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> pulumi.Input[str]:
-        """
-        The associated saved report OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "saved_report_id")
 
     @saved_report_id.setter
@@ -82,13 +62,6 @@ class _CustomTableState:
                  saved_report_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CustomTable resources.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
-        :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -100,9 +73,6 @@ class _CustomTableState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -112,9 +82,6 @@ class _CustomTableState:
     @property
     @pulumi.getter(name="savedCustomTable")
     def saved_custom_table(self) -> Optional[pulumi.Input['CustomTableSavedCustomTableArgs']]:
-        """
-        (Updatable) The custom table for Cost Analysis UI rendering.
-        """
         return pulumi.get(self, "saved_custom_table")
 
     @saved_custom_table.setter
@@ -124,13 +91,6 @@ class _CustomTableState:
     @property
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The associated saved report OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "saved_report_id")
 
     @saved_report_id.setter
@@ -148,50 +108,9 @@ class CustomTable(pulumi.CustomResource):
                  saved_report_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created custom table.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_custom_table = oci.metering_computation.CustomTable("testCustomTable",
-            compartment_id=var["compartment_id"],
-            saved_custom_table=oci.metering_computation.CustomTableSavedCustomTableArgs(
-                display_name=var["custom_table_saved_custom_table_display_name"],
-                column_group_bies=var["custom_table_saved_custom_table_column_group_by"],
-                compartment_depth=var["custom_table_saved_custom_table_compartment_depth"],
-                group_by_tags=[oci.metering_computation.CustomTableSavedCustomTableGroupByTagArgs(
-                    key=var["custom_table_saved_custom_table_group_by_tag_key"],
-                    namespace=var["custom_table_saved_custom_table_group_by_tag_namespace"],
-                    value=var["custom_table_saved_custom_table_group_by_tag_value"],
-                )],
-                row_group_bies=var["custom_table_saved_custom_table_row_group_by"],
-                version=var["custom_table_saved_custom_table_version"],
-            ),
-            saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
-        ```
-
-        ## Import
-
-        CustomTables can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
-        ```
-
+        Create a CustomTable resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
-        :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -200,41 +119,7 @@ class CustomTable(pulumi.CustomResource):
                  args: CustomTableArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created custom table.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_custom_table = oci.metering_computation.CustomTable("testCustomTable",
-            compartment_id=var["compartment_id"],
-            saved_custom_table=oci.metering_computation.CustomTableSavedCustomTableArgs(
-                display_name=var["custom_table_saved_custom_table_display_name"],
-                column_group_bies=var["custom_table_saved_custom_table_column_group_by"],
-                compartment_depth=var["custom_table_saved_custom_table_compartment_depth"],
-                group_by_tags=[oci.metering_computation.CustomTableSavedCustomTableGroupByTagArgs(
-                    key=var["custom_table_saved_custom_table_group_by_tag_key"],
-                    namespace=var["custom_table_saved_custom_table_group_by_tag_namespace"],
-                    value=var["custom_table_saved_custom_table_group_by_tag_value"],
-                )],
-                row_group_bies=var["custom_table_saved_custom_table_row_group_by"],
-                version=var["custom_table_saved_custom_table_version"],
-            ),
-            saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
-        ```
-
-        ## Import
-
-        CustomTables can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:MeteringComputation/customTable:CustomTable test_custom_table "id"
-        ```
-
+        Create a CustomTable resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CustomTableArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -291,13 +176,6 @@ class CustomTable(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartment OCID.
-        :param pulumi.Input[pulumi.InputType['CustomTableSavedCustomTableArgs']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
-        :param pulumi.Input[str] saved_report_id: The associated saved report OCID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -311,28 +189,15 @@ class CustomTable(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="savedCustomTable")
     def saved_custom_table(self) -> pulumi.Output['outputs.CustomTableSavedCustomTable']:
-        """
-        (Updatable) The custom table for Cost Analysis UI rendering.
-        """
         return pulumi.get(self, "saved_custom_table")
 
     @property
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> pulumi.Output[str]:
-        """
-        The associated saved report OCID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "saved_report_id")
 

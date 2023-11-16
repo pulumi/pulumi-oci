@@ -73,25 +73,16 @@ class GetMediaAssetsResult:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The name of the object storage bucket where this represented asset is located.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The ID of the compartment containing the MediaAsset.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -106,7 +97,7 @@ class GetMediaAssetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -115,73 +106,46 @@ class GetMediaAssetsResult:
     @property
     @pulumi.getter(name="masterMediaAssetId")
     def master_media_asset_id(self) -> Optional[str]:
-        """
-        The ID of the senior most asset from which this asset is derived.
-        """
         return pulumi.get(self, "master_media_asset_id")
 
     @property
     @pulumi.getter(name="mediaAssetCollections")
-    def media_asset_collections(self) -> Sequence['outputs.GetMediaAssetsMediaAssetCollectionResult']:
-        """
-        The list of media_asset_collection.
-        """
+    def media_asset_collections(self) -> Optional[Sequence['outputs.GetMediaAssetsMediaAssetCollectionResult']]:
         return pulumi.get(self, "media_asset_collections")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
     def media_workflow_job_id(self) -> Optional[str]:
-        """
-        The ID of the MediaWorkflowJob used to produce this asset.
-        """
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        The object storage object name that identifies this asset.
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="parentMediaAssetId")
     def parent_media_asset_id(self) -> Optional[str]:
-        """
-        The ID of the parent asset from which this asset is derived.
-        """
         return pulumi.get(self, "parent_media_asset_id")
 
     @property
     @pulumi.getter(name="sourceMediaWorkflowId")
     def source_media_workflow_id(self) -> Optional[str]:
-        """
-        The ID of the MediaWorkflow used to produce this asset.
-        """
         return pulumi.get(self, "source_media_workflow_id")
 
     @property
     @pulumi.getter(name="sourceMediaWorkflowVersion")
     def source_media_workflow_version(self) -> Optional[str]:
-        """
-        The version of the MediaWorkflow used to produce this asset.
-        """
         return pulumi.get(self, "source_media_workflow_version")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the MediaAsset.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the media asset.
-        """
         return pulumi.get(self, "type")
 
 
@@ -223,43 +187,7 @@ def get_media_assets(bucket: Optional[str] = None,
                      type: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaAssetsResult:
     """
-    This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
-
-    Returns a list of MediaAssetSummary.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_assets = oci.MediaServices.get_media_assets(bucket=var["media_asset_bucket"],
-        compartment_id=var["compartment_id"],
-        display_name=var["media_asset_display_name"],
-        distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        master_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"],
-        object=var["media_asset_object"],
-        parent_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        source_media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        source_media_workflow_version=var["media_asset_source_media_workflow_version"],
-        state=var["media_asset_state"],
-        type=var["media_asset_type"])
-    ```
-
-
-    :param str bucket: Filter MediaAsset by the bucket where the object is stored.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str distribution_channel_id: Unique DistributionChannel identifier.
-    :param str master_media_asset_id: Unique MediaAsset identifier of the first asset upload.
-    :param str media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-    :param str object: Filter MediaAsset by the name of the object in object storage.
-    :param str parent_media_asset_id: Unique MediaAsset identifier of the asset from which this asset is derived.
-    :param str source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
-    :param str source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-    :param str type: Filter MediaAsset by the asset type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -312,42 +240,6 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
                             type: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetsResult]:
     """
-    This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
-
-    Returns a list of MediaAssetSummary.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_assets = oci.MediaServices.get_media_assets(bucket=var["media_asset_bucket"],
-        compartment_id=var["compartment_id"],
-        display_name=var["media_asset_display_name"],
-        distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        master_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"],
-        object=var["media_asset_object"],
-        parent_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        source_media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        source_media_workflow_version=var["media_asset_source_media_workflow_version"],
-        state=var["media_asset_state"],
-        type=var["media_asset_type"])
-    ```
-
-
-    :param str bucket: Filter MediaAsset by the bucket where the object is stored.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str distribution_channel_id: Unique DistributionChannel identifier.
-    :param str master_media_asset_id: Unique MediaAsset identifier of the first asset upload.
-    :param str media_workflow_job_id: The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
-    :param str object: Filter MediaAsset by the name of the object in object storage.
-    :param str parent_media_asset_id: Unique MediaAsset identifier of the asset from which this asset is derived.
-    :param str source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
-    :param str source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-    :param str type: Filter MediaAsset by the asset type.
+    Use this data source to access information about an existing resource.
     """
     ...

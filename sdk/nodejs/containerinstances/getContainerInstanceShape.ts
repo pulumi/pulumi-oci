@@ -55,11 +55,11 @@ export interface GetContainerInstanceShapeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of shapes.
      */
-    readonly items: outputs.ContainerInstances.GetContainerInstanceShapeItem[];
+    readonly items?: outputs.ContainerInstances.GetContainerInstanceShapeItem[];
 }
 /**
  * This data source provides details about a specific Container Instance Shape resource in Oracle Cloud Infrastructure Container Instances service.

@@ -10,6 +10,8 @@ import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateCertificateCo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateCertificateConfig {
@@ -17,115 +19,115 @@ public final class GetCertificateCertificateConfig {
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
-    private String certificateProfileType;
+    private @Nullable String certificateProfileType;
     /**
      * @return The origin of the certificate.
      * 
      */
-    private String configType;
-    private String csrPem;
+    private @Nullable String configType;
+    private @Nullable String csrPem;
     /**
      * @return The OCID of the certificate authority (CA) that issued the certificate.
      * 
      */
-    private String issuerCertificateAuthorityId;
+    private @Nullable String issuerCertificateAuthorityId;
     /**
      * @return The algorithm used to create key pairs.
      * 
      */
-    private String keyAlgorithm;
+    private @Nullable String keyAlgorithm;
     /**
      * @return The algorithm used to sign the public key certificate.
      * 
      */
-    private String signatureAlgorithm;
+    private @Nullable String signatureAlgorithm;
     /**
      * @return A list of subject alternative names.
      * 
      */
-    private List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
+    private @Nullable List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private List<GetCertificateCertificateConfigSubject> subjects;
+    private @Nullable List<GetCertificateCertificateConfigSubject> subjects;
     /**
      * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private List<GetCertificateCertificateConfigValidity> validities;
+    private @Nullable List<GetCertificateCertificateConfigValidity> validities;
     /**
      * @return The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
      * 
      */
-    private String versionName;
+    private @Nullable String versionName;
 
     private GetCertificateCertificateConfig() {}
     /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
-    public String certificateProfileType() {
-        return this.certificateProfileType;
+    public Optional<String> certificateProfileType() {
+        return Optional.ofNullable(this.certificateProfileType);
     }
     /**
      * @return The origin of the certificate.
      * 
      */
-    public String configType() {
-        return this.configType;
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
-    public String csrPem() {
-        return this.csrPem;
+    public Optional<String> csrPem() {
+        return Optional.ofNullable(this.csrPem);
     }
     /**
      * @return The OCID of the certificate authority (CA) that issued the certificate.
      * 
      */
-    public String issuerCertificateAuthorityId() {
-        return this.issuerCertificateAuthorityId;
+    public Optional<String> issuerCertificateAuthorityId() {
+        return Optional.ofNullable(this.issuerCertificateAuthorityId);
     }
     /**
      * @return The algorithm used to create key pairs.
      * 
      */
-    public String keyAlgorithm() {
-        return this.keyAlgorithm;
+    public Optional<String> keyAlgorithm() {
+        return Optional.ofNullable(this.keyAlgorithm);
     }
     /**
      * @return The algorithm used to sign the public key certificate.
      * 
      */
-    public String signatureAlgorithm() {
-        return this.signatureAlgorithm;
+    public Optional<String> signatureAlgorithm() {
+        return Optional.ofNullable(this.signatureAlgorithm);
     }
     /**
      * @return A list of subject alternative names.
      * 
      */
     public List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames() {
-        return this.subjectAlternativeNames;
+        return this.subjectAlternativeNames == null ? List.of() : this.subjectAlternativeNames;
     }
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
     public List<GetCertificateCertificateConfigSubject> subjects() {
-        return this.subjects;
+        return this.subjects == null ? List.of() : this.subjects;
     }
     /**
      * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
     public List<GetCertificateCertificateConfigValidity> validities() {
-        return this.validities;
+        return this.validities == null ? List.of() : this.validities;
     }
     /**
      * @return The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
      * 
      */
-    public String versionName() {
-        return this.versionName;
+    public Optional<String> versionName() {
+        return Optional.ofNullable(this.versionName);
     }
 
     public static Builder builder() {
@@ -137,16 +139,16 @@ public final class GetCertificateCertificateConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateProfileType;
-        private String configType;
-        private String csrPem;
-        private String issuerCertificateAuthorityId;
-        private String keyAlgorithm;
-        private String signatureAlgorithm;
-        private List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
-        private List<GetCertificateCertificateConfigSubject> subjects;
-        private List<GetCertificateCertificateConfigValidity> validities;
-        private String versionName;
+        private @Nullable String certificateProfileType;
+        private @Nullable String configType;
+        private @Nullable String csrPem;
+        private @Nullable String issuerCertificateAuthorityId;
+        private @Nullable String keyAlgorithm;
+        private @Nullable String signatureAlgorithm;
+        private @Nullable List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames;
+        private @Nullable List<GetCertificateCertificateConfigSubject> subjects;
+        private @Nullable List<GetCertificateCertificateConfigValidity> validities;
+        private @Nullable String versionName;
         public Builder() {}
         public Builder(GetCertificateCertificateConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -163,62 +165,62 @@ public final class GetCertificateCertificateConfig {
         }
 
         @CustomType.Setter
-        public Builder certificateProfileType(String certificateProfileType) {
-            this.certificateProfileType = Objects.requireNonNull(certificateProfileType);
+        public Builder certificateProfileType(@Nullable String certificateProfileType) {
+            this.certificateProfileType = certificateProfileType;
             return this;
         }
         @CustomType.Setter
-        public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+        public Builder configType(@Nullable String configType) {
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
-        public Builder csrPem(String csrPem) {
-            this.csrPem = Objects.requireNonNull(csrPem);
+        public Builder csrPem(@Nullable String csrPem) {
+            this.csrPem = csrPem;
             return this;
         }
         @CustomType.Setter
-        public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+        public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyAlgorithm(String keyAlgorithm) {
-            this.keyAlgorithm = Objects.requireNonNull(keyAlgorithm);
+        public Builder keyAlgorithm(@Nullable String keyAlgorithm) {
+            this.keyAlgorithm = keyAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder signatureAlgorithm(String signatureAlgorithm) {
-            this.signatureAlgorithm = Objects.requireNonNull(signatureAlgorithm);
+        public Builder signatureAlgorithm(@Nullable String signatureAlgorithm) {
+            this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder subjectAlternativeNames(List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames) {
-            this.subjectAlternativeNames = Objects.requireNonNull(subjectAlternativeNames);
+        public Builder subjectAlternativeNames(@Nullable List<GetCertificateCertificateConfigSubjectAlternativeName> subjectAlternativeNames) {
+            this.subjectAlternativeNames = subjectAlternativeNames;
             return this;
         }
         public Builder subjectAlternativeNames(GetCertificateCertificateConfigSubjectAlternativeName... subjectAlternativeNames) {
             return subjectAlternativeNames(List.of(subjectAlternativeNames));
         }
         @CustomType.Setter
-        public Builder subjects(List<GetCertificateCertificateConfigSubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+        public Builder subjects(@Nullable List<GetCertificateCertificateConfigSubject> subjects) {
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificateCertificateConfigSubject... subjects) {
             return subjects(List.of(subjects));
         }
         @CustomType.Setter
-        public Builder validities(List<GetCertificateCertificateConfigValidity> validities) {
-            this.validities = Objects.requireNonNull(validities);
+        public Builder validities(@Nullable List<GetCertificateCertificateConfigValidity> validities) {
+            this.validities = validities;
             return this;
         }
         public Builder validities(GetCertificateCertificateConfigValidity... validities) {
             return validities(List.of(validities));
         }
         @CustomType.Setter
-        public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+        public Builder versionName(@Nullable String versionName) {
+            this.versionName = versionName;
             return this;
         }
         public GetCertificateCertificateConfig build() {

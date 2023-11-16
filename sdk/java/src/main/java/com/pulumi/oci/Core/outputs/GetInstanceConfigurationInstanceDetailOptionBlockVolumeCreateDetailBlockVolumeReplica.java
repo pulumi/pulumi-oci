@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica {
@@ -13,27 +15,27 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica() {}
     /**
      * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String displayName;
+        private @Nullable String availabilityDomain;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica build() {

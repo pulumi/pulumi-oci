@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -77,7 +76,7 @@ type Policy struct {
 	pulumi.CustomResourceState
 
 	// Deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
-	ETag pulumi.StringOutput `pulumi:"ETag"`
+	ETag pulumi.StringPtrOutput `pulumi:"ETag"`
 	// The OCID of the compartment containing the policy (either the tenancy or another compartment).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -87,24 +86,24 @@ type Policy struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// Deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
-	LastUpdateETag pulumi.StringOutput `pulumi:"lastUpdateETag"`
+	LastUpdateETag pulumi.StringPtrOutput `pulumi:"lastUpdateETag"`
 	// The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
-	PolicyHash pulumi.StringOutput `pulumi:"policyHash"`
+	PolicyHash pulumi.StringPtrOutput `pulumi:"policyHash"`
 	// The policy's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
 	Statements pulumi.StringArrayOutput `pulumi:"statements"`
 	// Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VersionDate pulumi.StringOutput `pulumi:"versionDate"`
+	VersionDate pulumi.StringPtrOutput `pulumi:"versionDate"`
 }
 
 // NewPolicy registers a new resource with the given unique name, arguments, and options.
@@ -277,12 +276,6 @@ func (i *Policy) ToPolicyOutputWithContext(ctx context.Context) PolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOutput)
 }
 
-func (i *Policy) ToOutput(ctx context.Context) pulumix.Output[*Policy] {
-	return pulumix.Output[*Policy]{
-		OutputState: i.ToPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyArrayInput is an input type that accepts PolicyArray and PolicyArrayOutput values.
 // You can construct a concrete instance of `PolicyArrayInput` via:
 //
@@ -306,12 +299,6 @@ func (i PolicyArray) ToPolicyArrayOutput() PolicyArrayOutput {
 
 func (i PolicyArray) ToPolicyArrayOutputWithContext(ctx context.Context) PolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyArrayOutput)
-}
-
-func (i PolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*Policy] {
-	return pulumix.Output[[]*Policy]{
-		OutputState: i.ToPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PolicyMapInput is an input type that accepts PolicyMap and PolicyMapOutput values.
@@ -339,12 +326,6 @@ func (i PolicyMap) ToPolicyMapOutputWithContext(ctx context.Context) PolicyMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyMapOutput)
 }
 
-func (i PolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Policy] {
-	return pulumix.Output[map[string]*Policy]{
-		OutputState: i.ToPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOutput struct{ *pulumi.OutputState }
 
 func (PolicyOutput) ElementType() reflect.Type {
@@ -359,15 +340,9 @@ func (o PolicyOutput) ToPolicyOutputWithContext(ctx context.Context) PolicyOutpu
 	return o
 }
 
-func (o PolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*Policy] {
-	return pulumix.Output[*Policy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o PolicyOutput) ETag() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.ETag }).(pulumi.StringOutput)
+func (o PolicyOutput) ETag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.ETag }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing the policy (either the tenancy or another compartment).
@@ -391,13 +366,13 @@ func (o PolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o PolicyOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o PolicyOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o PolicyOutput) LastUpdateETag() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.LastUpdateETag }).(pulumi.StringOutput)
+func (o PolicyOutput) LastUpdateETag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.LastUpdateETag }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
@@ -406,13 +381,13 @@ func (o PolicyOutput) Name() pulumi.StringOutput {
 }
 
 // Deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o PolicyOutput) PolicyHash() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.PolicyHash }).(pulumi.StringOutput)
+func (o PolicyOutput) PolicyHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.PolicyHash }).(pulumi.StringPtrOutput)
 }
 
 // The policy's current state.
-func (o PolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
@@ -421,16 +396,16 @@ func (o PolicyOutput) Statements() pulumi.StringArrayOutput {
 }
 
 // Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o PolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o PolicyOutput) VersionDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.VersionDate }).(pulumi.StringOutput)
+func (o PolicyOutput) VersionDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.VersionDate }).(pulumi.StringPtrOutput)
 }
 
 type PolicyArrayOutput struct{ *pulumi.OutputState }
@@ -445,12 +420,6 @@ func (o PolicyArrayOutput) ToPolicyArrayOutput() PolicyArrayOutput {
 
 func (o PolicyArrayOutput) ToPolicyArrayOutputWithContext(ctx context.Context) PolicyArrayOutput {
 	return o
-}
-
-func (o PolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Policy] {
-	return pulumix.Output[[]*Policy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyArrayOutput) Index(i pulumi.IntInput) PolicyOutput {
@@ -471,12 +440,6 @@ func (o PolicyMapOutput) ToPolicyMapOutput() PolicyMapOutput {
 
 func (o PolicyMapOutput) ToPolicyMapOutputWithContext(ctx context.Context) PolicyMapOutput {
 	return o
-}
-
-func (o PolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Policy] {
-	return pulumix.Output[map[string]*Policy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyMapOutput) MapIndex(k pulumi.StringInput) PolicyOutput {

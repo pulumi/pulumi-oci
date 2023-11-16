@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,14 +85,14 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="caCertArchiveText", refs={String.class}, tree="[0]")
-    private Output<String> caCertArchiveText;
+    private Output</* @Nullable */ String> caCertArchiveText;
 
     /**
      * @return Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
      * 
      */
-    public Output<String> caCertArchiveText() {
-        return this.caCertArchiveText;
+    public Output<Optional<String>> caCertArchiveText() {
+        return Codegen.optional(this.caCertArchiveText);
     }
     /**
      * (Updatable) Compartment Identifier
@@ -112,14 +113,14 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="componentDetails", refs={List.class,BlockchainPlatformComponentDetail.class}, tree="[0,1]")
-    private Output<List<BlockchainPlatformComponentDetail>> componentDetails;
+    private Output</* @Nullable */ List<BlockchainPlatformComponentDetail>> componentDetails;
 
     /**
      * @return Blockchain Platform component details.
      * 
      */
-    public Output<List<BlockchainPlatformComponentDetail>> componentDetails() {
-        return this.componentDetails;
+    public Output<Optional<List<BlockchainPlatformComponentDetail>>> componentDetails() {
+        return Codegen.optional(this.componentDetails);
     }
     /**
      * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
@@ -140,28 +141,28 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Platform Instance Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Platform Instance Description
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * Platform Instance Display name, can be renamed
@@ -182,42 +183,42 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="federatedUserId", refs={String.class}, tree="[0]")
-    private Output<String> federatedUserId;
+    private Output</* @Nullable */ String> federatedUserId;
 
     /**
      * @return Identifier for a federated user
      * 
      */
-    public Output<String> federatedUserId() {
-        return this.federatedUserId;
+    public Output<Optional<String>> federatedUserId() {
+        return Codegen.optional(this.federatedUserId);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * List of OcpuUtilization for all hosts
      * 
      */
     @Export(name="hostOcpuUtilizationInfos", refs={List.class,BlockchainPlatformHostOcpuUtilizationInfo.class}, tree="[0,1]")
-    private Output<List<BlockchainPlatformHostOcpuUtilizationInfo>> hostOcpuUtilizationInfos;
+    private Output</* @Nullable */ List<BlockchainPlatformHostOcpuUtilizationInfo>> hostOcpuUtilizationInfos;
 
     /**
      * @return List of OcpuUtilization for all hosts
      * 
      */
-    public Output<List<BlockchainPlatformHostOcpuUtilizationInfo>> hostOcpuUtilizationInfos() {
-        return this.hostOcpuUtilizationInfos;
+    public Output<Optional<List<BlockchainPlatformHostOcpuUtilizationInfo>>> hostOcpuUtilizationInfos() {
+        return Codegen.optional(this.hostOcpuUtilizationInfos);
     }
     /**
      * IDCS access token with Identity Domain Administrator role
@@ -238,42 +239,42 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isByol", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isByol;
+    private Output</* @Nullable */ Boolean> isByol;
 
     /**
      * @return Bring your own license
      * 
      */
-    public Output<Boolean> isByol() {
-        return this.isByol;
+    public Output<Optional<Boolean>> isByol() {
+        return Codegen.optional(this.isByol);
     }
     /**
      * True for multi-AD blockchain plaforms, false for single-AD
      * 
      */
     @Export(name="isMultiAd", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMultiAd;
+    private Output</* @Nullable */ Boolean> isMultiAd;
 
     /**
      * @return True for multi-AD blockchain plaforms, false for single-AD
      * 
      */
-    public Output<Boolean> isMultiAd() {
-        return this.isMultiAd;
+    public Output<Optional<Boolean>> isMultiAd() {
+        return Codegen.optional(this.isMultiAd);
     }
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
@@ -283,7 +284,7 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="loadBalancerShape", refs={String.class}, tree="[0]")
-    private Output<String> loadBalancerShape;
+    private Output</* @Nullable */ String> loadBalancerShape;
 
     /**
      * @return (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
@@ -292,8 +293,8 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> loadBalancerShape() {
-        return this.loadBalancerShape;
+    public Output<Optional<String>> loadBalancerShape() {
+        return Codegen.optional(this.loadBalancerShape);
     }
     /**
      * Role of platform - founder or participant
@@ -314,154 +315,154 @@ public class BlockchainPlatform extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="platformShapeType", refs={String.class}, tree="[0]")
-    private Output<String> platformShapeType;
+    private Output</* @Nullable */ String> platformShapeType;
 
     /**
      * @return Type of Platform shape - DEFAULT or CUSTOM
      * 
      */
-    public Output<String> platformShapeType() {
-        return this.platformShapeType;
+    public Output<Optional<String>> platformShapeType() {
+        return Codegen.optional(this.platformShapeType);
     }
     /**
      * Platform version
      * 
      */
     @Export(name="platformVersion", refs={String.class}, tree="[0]")
-    private Output<String> platformVersion;
+    private Output</* @Nullable */ String> platformVersion;
 
     /**
      * @return Platform version
      * 
      */
-    public Output<String> platformVersion() {
-        return this.platformVersion;
+    public Output<Optional<String>> platformVersion() {
+        return Codegen.optional(this.platformVersion);
     }
     /**
      * Number of replicas of service components like Rest Proxy, CA and Console
      * 
      */
     @Export(name="replicas", refs={BlockchainPlatformReplicas.class}, tree="[0]")
-    private Output<BlockchainPlatformReplicas> replicas;
+    private Output</* @Nullable */ BlockchainPlatformReplicas> replicas;
 
     /**
      * @return Number of replicas of service components like Rest Proxy, CA and Console
      * 
      */
-    public Output<BlockchainPlatformReplicas> replicas() {
-        return this.replicas;
+    public Output<Optional<BlockchainPlatformReplicas>> replicas() {
+        return Codegen.optional(this.replicas);
     }
     /**
      * Service endpoint URL, valid post-provisioning
      * 
      */
     @Export(name="serviceEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> serviceEndpoint;
+    private Output</* @Nullable */ String> serviceEndpoint;
 
     /**
      * @return Service endpoint URL, valid post-provisioning
      * 
      */
-    public Output<String> serviceEndpoint() {
-        return this.serviceEndpoint;
+    public Output<Optional<String>> serviceEndpoint() {
+        return Codegen.optional(this.serviceEndpoint);
     }
     /**
      * The version of the Platform Instance.
      * 
      */
     @Export(name="serviceVersion", refs={String.class}, tree="[0]")
-    private Output<String> serviceVersion;
+    private Output</* @Nullable */ String> serviceVersion;
 
     /**
      * @return The version of the Platform Instance.
      * 
      */
-    public Output<String> serviceVersion() {
-        return this.serviceVersion;
+    public Output<Optional<String>> serviceVersion() {
+        return Codegen.optional(this.serviceVersion);
     }
     /**
      * The current state of the Platform Instance.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Platform Instance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Storage size in TBs
      * 
      */
     @Export(name="storageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> storageSizeInTbs;
+    private Output</* @Nullable */ Double> storageSizeInTbs;
 
     /**
      * @return Storage size in TBs
      * 
      */
-    public Output<Double> storageSizeInTbs() {
-        return this.storageSizeInTbs;
+    public Output<Optional<Double>> storageSizeInTbs() {
+        return Codegen.optional(this.storageSizeInTbs);
     }
     /**
      * Storage used in TBs
      * 
      */
     @Export(name="storageUsedInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> storageUsedInTbs;
+    private Output</* @Nullable */ Double> storageUsedInTbs;
 
     /**
      * @return Storage used in TBs
      * 
      */
-    public Output<Double> storageUsedInTbs() {
-        return this.storageUsedInTbs;
+    public Output<Optional<Double>> storageUsedInTbs() {
+        return Codegen.optional(this.storageUsedInTbs);
     }
     /**
      * The time the the Platform Instance was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the Platform Instance was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the Platform Instance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the Platform Instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Number of total OCPUs allocated to the platform cluster
      * 
      */
     @Export(name="totalOcpuCapacity", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalOcpuCapacity;
+    private Output</* @Nullable */ Integer> totalOcpuCapacity;
 
     /**
      * @return Number of total OCPUs allocated to the platform cluster
      * 
      */
-    public Output<Integer> totalOcpuCapacity() {
-        return this.totalOcpuCapacity;
+    public Output<Optional<Integer>> totalOcpuCapacity() {
+        return Codegen.optional(this.totalOcpuCapacity);
     }
 
     /**

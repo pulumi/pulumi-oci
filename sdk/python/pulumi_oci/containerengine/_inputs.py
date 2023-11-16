@@ -72,11 +72,6 @@ class AddonAddonErrorArgs:
                  code: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        :param pulumi.Input[str] message: A human-readable error string of the upstream error.
-        :param pulumi.Input[str] status: The status of the HTTP response encountered in the upstream error.
-        """
         if code is not None:
             pulumi.set(__self__, "code", code)
         if message is not None:
@@ -87,9 +82,6 @@ class AddonAddonErrorArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -99,9 +91,6 @@ class AddonAddonErrorArgs:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A human-readable error string of the upstream error.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -111,9 +100,6 @@ class AddonAddonErrorArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the HTTP response encountered in the upstream error.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -126,10 +112,6 @@ class AddonConfigurationArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: (Updatable) configuration key name
-        :param pulumi.Input[str] value: (Updatable) configuration value name
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if value is not None:
@@ -138,9 +120,6 @@ class AddonConfigurationArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) configuration key name
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -150,9 +129,6 @@ class AddonConfigurationArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) configuration value name
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -164,17 +140,11 @@ class AddonConfigurationArgs:
 class ClusterClusterPodNetworkOptionArgs:
     def __init__(__self__, *,
                  cni_type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] cni_type: The CNI used by the node pools of this cluster
-        """
         pulumi.set(__self__, "cni_type", cni_type)
 
     @property
     @pulumi.getter(name="cniType")
     def cni_type(self) -> pulumi.Input[str]:
-        """
-        The CNI used by the node pools of this cluster
-        """
         return pulumi.get(self, "cni_type")
 
     @cni_type.setter
@@ -189,12 +159,6 @@ class ClusterEndpointArgs:
                  private_endpoint: Optional[pulumi.Input[str]] = None,
                  public_endpoint: Optional[pulumi.Input[str]] = None,
                  vcn_hostname_endpoint: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kubernetes: The non-native networking Kubernetes API server endpoint.
-        :param pulumi.Input[str] private_endpoint: The private native networking Kubernetes API server endpoint.
-        :param pulumi.Input[str] public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
-        :param pulumi.Input[str] vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
-        """
         if kubernetes is not None:
             pulumi.set(__self__, "kubernetes", kubernetes)
         if private_endpoint is not None:
@@ -207,9 +171,6 @@ class ClusterEndpointArgs:
     @property
     @pulumi.getter
     def kubernetes(self) -> Optional[pulumi.Input[str]]:
-        """
-        The non-native networking Kubernetes API server endpoint.
-        """
         return pulumi.get(self, "kubernetes")
 
     @kubernetes.setter
@@ -219,9 +180,6 @@ class ClusterEndpointArgs:
     @property
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private native networking Kubernetes API server endpoint.
-        """
         return pulumi.get(self, "private_endpoint")
 
     @private_endpoint.setter
@@ -231,9 +189,6 @@ class ClusterEndpointArgs:
     @property
     @pulumi.getter(name="publicEndpoint")
     def public_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public native networking Kubernetes API server endpoint, if one was requested.
-        """
         return pulumi.get(self, "public_endpoint")
 
     @public_endpoint.setter
@@ -243,9 +198,6 @@ class ClusterEndpointArgs:
     @property
     @pulumi.getter(name="vcnHostnameEndpoint")
     def vcn_hostname_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
-        """
         return pulumi.get(self, "vcn_hostname_endpoint")
 
     @vcn_hostname_endpoint.setter
@@ -259,11 +211,6 @@ class ClusterEndpointConfigArgs:
                  subnet_id: pulumi.Input[str],
                  is_public_ip_enabled: Optional[pulumi.Input[bool]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] subnet_id: The OCID of the regional subnet in which to place the Cluster endpoint.
-        :param pulumi.Input[bool] is_public_ip_enabled: Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if is_public_ip_enabled is not None:
             pulumi.set(__self__, "is_public_ip_enabled", is_public_ip_enabled)
@@ -273,9 +220,6 @@ class ClusterEndpointConfigArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the regional subnet in which to place the Cluster endpoint.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -285,9 +229,6 @@ class ClusterEndpointConfigArgs:
     @property
     @pulumi.getter(name="isPublicIpEnabled")
     def is_public_ip_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
-        """
         return pulumi.get(self, "is_public_ip_enabled")
 
     @is_public_ip_enabled.setter
@@ -297,9 +238,6 @@ class ClusterEndpointConfigArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -312,10 +250,6 @@ class ClusterImagePolicyConfigArgs:
     def __init__(__self__, *,
                  is_policy_enabled: Optional[pulumi.Input[bool]] = None,
                  key_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]] = None):
-        """
-        :param pulumi.Input[bool] is_policy_enabled: (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-        :param pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]] key_details: (Updatable) A list of KMS key details.
-        """
         if is_policy_enabled is not None:
             pulumi.set(__self__, "is_policy_enabled", is_policy_enabled)
         if key_details is not None:
@@ -324,9 +258,6 @@ class ClusterImagePolicyConfigArgs:
     @property
     @pulumi.getter(name="isPolicyEnabled")
     def is_policy_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-        """
         return pulumi.get(self, "is_policy_enabled")
 
     @is_policy_enabled.setter
@@ -336,9 +267,6 @@ class ClusterImagePolicyConfigArgs:
     @property
     @pulumi.getter(name="keyDetails")
     def key_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]:
-        """
-        (Updatable) A list of KMS key details.
-        """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
@@ -350,18 +278,12 @@ class ClusterImagePolicyConfigArgs:
 class ClusterImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
                  kms_key_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        """
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -382,18 +304,6 @@ class ClusterMetadataArgs:
                  time_updated: Optional[pulumi.Input[str]] = None,
                  updated_by_user_id: Optional[pulumi.Input[str]] = None,
                  updated_by_work_request_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] created_by_user_id: The user who created the cluster.
-        :param pulumi.Input[str] created_by_work_request_id: The OCID of the work request which created the cluster.
-        :param pulumi.Input[str] deleted_by_user_id: The user who deleted the cluster.
-        :param pulumi.Input[str] deleted_by_work_request_id: The OCID of the work request which deleted the cluster.
-        :param pulumi.Input[str] time_created: The time the cluster was created.
-        :param pulumi.Input[str] time_credential_expiration: The time until which the cluster credential is valid.
-        :param pulumi.Input[str] time_deleted: The time the cluster was deleted.
-        :param pulumi.Input[str] time_updated: The time the cluster was updated.
-        :param pulumi.Input[str] updated_by_user_id: The user who updated the cluster.
-        :param pulumi.Input[str] updated_by_work_request_id: The OCID of the work request which updated the cluster.
-        """
         if created_by_user_id is not None:
             pulumi.set(__self__, "created_by_user_id", created_by_user_id)
         if created_by_work_request_id is not None:
@@ -418,9 +328,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="createdByUserId")
     def created_by_user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user who created the cluster.
-        """
         return pulumi.get(self, "created_by_user_id")
 
     @created_by_user_id.setter
@@ -430,9 +337,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="createdByWorkRequestId")
     def created_by_work_request_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the work request which created the cluster.
-        """
         return pulumi.get(self, "created_by_work_request_id")
 
     @created_by_work_request_id.setter
@@ -442,9 +346,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="deletedByUserId")
     def deleted_by_user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user who deleted the cluster.
-        """
         return pulumi.get(self, "deleted_by_user_id")
 
     @deleted_by_user_id.setter
@@ -454,9 +355,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="deletedByWorkRequestId")
     def deleted_by_work_request_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the work request which deleted the cluster.
-        """
         return pulumi.get(self, "deleted_by_work_request_id")
 
     @deleted_by_work_request_id.setter
@@ -466,9 +364,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the cluster was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -478,9 +373,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="timeCredentialExpiration")
     def time_credential_expiration(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time until which the cluster credential is valid.
-        """
         return pulumi.get(self, "time_credential_expiration")
 
     @time_credential_expiration.setter
@@ -490,9 +382,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="timeDeleted")
     def time_deleted(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the cluster was deleted.
-        """
         return pulumi.get(self, "time_deleted")
 
     @time_deleted.setter
@@ -502,9 +391,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the cluster was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -514,9 +400,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="updatedByUserId")
     def updated_by_user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user who updated the cluster.
-        """
         return pulumi.get(self, "updated_by_user_id")
 
     @updated_by_user_id.setter
@@ -526,9 +409,6 @@ class ClusterMetadataArgs:
     @property
     @pulumi.getter(name="updatedByWorkRequestId")
     def updated_by_work_request_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the work request which updated the cluster.
-        """
         return pulumi.get(self, "updated_by_work_request_id")
 
     @updated_by_work_request_id.setter
@@ -545,14 +425,6 @@ class ClusterOptionsArgs:
                  persistent_volume_config: Optional[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs']] = None,
                  service_lb_config: Optional[pulumi.Input['ClusterOptionsServiceLbConfigArgs']] = None,
                  service_lb_subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input['ClusterOptionsAddOnsArgs'] add_ons: Configurable cluster add-ons
-        :param pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs'] admission_controller_options: (Updatable) Configurable cluster admission controllers
-        :param pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs'] kubernetes_network_config: Network configuration for Kubernetes.
-        :param pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs'] persistent_volume_config: (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
-        :param pulumi.Input['ClusterOptionsServiceLbConfigArgs'] service_lb_config: (Updatable) Configuration to be applied to load balancers created by Kubernetes services
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] service_lb_subnet_ids: The OCIDs of the subnets used for Kubernetes services load balancers.
-        """
         if add_ons is not None:
             pulumi.set(__self__, "add_ons", add_ons)
         if admission_controller_options is not None:
@@ -569,9 +441,6 @@ class ClusterOptionsArgs:
     @property
     @pulumi.getter(name="addOns")
     def add_ons(self) -> Optional[pulumi.Input['ClusterOptionsAddOnsArgs']]:
-        """
-        Configurable cluster add-ons
-        """
         return pulumi.get(self, "add_ons")
 
     @add_ons.setter
@@ -581,9 +450,6 @@ class ClusterOptionsArgs:
     @property
     @pulumi.getter(name="admissionControllerOptions")
     def admission_controller_options(self) -> Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']]:
-        """
-        (Updatable) Configurable cluster admission controllers
-        """
         return pulumi.get(self, "admission_controller_options")
 
     @admission_controller_options.setter
@@ -593,9 +459,6 @@ class ClusterOptionsArgs:
     @property
     @pulumi.getter(name="kubernetesNetworkConfig")
     def kubernetes_network_config(self) -> Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']]:
-        """
-        Network configuration for Kubernetes.
-        """
         return pulumi.get(self, "kubernetes_network_config")
 
     @kubernetes_network_config.setter
@@ -605,9 +468,6 @@ class ClusterOptionsArgs:
     @property
     @pulumi.getter(name="persistentVolumeConfig")
     def persistent_volume_config(self) -> Optional[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs']]:
-        """
-        (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
-        """
         return pulumi.get(self, "persistent_volume_config")
 
     @persistent_volume_config.setter
@@ -617,9 +477,6 @@ class ClusterOptionsArgs:
     @property
     @pulumi.getter(name="serviceLbConfig")
     def service_lb_config(self) -> Optional[pulumi.Input['ClusterOptionsServiceLbConfigArgs']]:
-        """
-        (Updatable) Configuration to be applied to load balancers created by Kubernetes services
-        """
         return pulumi.get(self, "service_lb_config")
 
     @service_lb_config.setter
@@ -629,9 +486,6 @@ class ClusterOptionsArgs:
     @property
     @pulumi.getter(name="serviceLbSubnetIds")
     def service_lb_subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The OCIDs of the subnets used for Kubernetes services load balancers.
-        """
         return pulumi.get(self, "service_lb_subnet_ids")
 
     @service_lb_subnet_ids.setter
@@ -644,10 +498,6 @@ class ClusterOptionsAddOnsArgs:
     def __init__(__self__, *,
                  is_kubernetes_dashboard_enabled: Optional[pulumi.Input[bool]] = None,
                  is_tiller_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_kubernetes_dashboard_enabled: Whether or not to enable the Kubernetes Dashboard add-on.
-        :param pulumi.Input[bool] is_tiller_enabled: Whether or not to enable the Tiller add-on.
-        """
         if is_kubernetes_dashboard_enabled is not None:
             pulumi.set(__self__, "is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
         if is_tiller_enabled is not None:
@@ -656,9 +506,6 @@ class ClusterOptionsAddOnsArgs:
     @property
     @pulumi.getter(name="isKubernetesDashboardEnabled")
     def is_kubernetes_dashboard_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether or not to enable the Kubernetes Dashboard add-on.
-        """
         return pulumi.get(self, "is_kubernetes_dashboard_enabled")
 
     @is_kubernetes_dashboard_enabled.setter
@@ -668,9 +515,6 @@ class ClusterOptionsAddOnsArgs:
     @property
     @pulumi.getter(name="isTillerEnabled")
     def is_tiller_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether or not to enable the Tiller add-on.
-        """
         return pulumi.get(self, "is_tiller_enabled")
 
     @is_tiller_enabled.setter
@@ -682,18 +526,12 @@ class ClusterOptionsAddOnsArgs:
 class ClusterOptionsAdmissionControllerOptionsArgs:
     def __init__(__self__, *,
                  is_pod_security_policy_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_pod_security_policy_enabled: (Updatable) Whether or not to enable the Pod Security Policy admission controller.
-        """
         if is_pod_security_policy_enabled is not None:
             pulumi.set(__self__, "is_pod_security_policy_enabled", is_pod_security_policy_enabled)
 
     @property
     @pulumi.getter(name="isPodSecurityPolicyEnabled")
     def is_pod_security_policy_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not to enable the Pod Security Policy admission controller.
-        """
         return pulumi.get(self, "is_pod_security_policy_enabled")
 
     @is_pod_security_policy_enabled.setter
@@ -706,10 +544,6 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
     def __init__(__self__, *,
                  pods_cidr: Optional[pulumi.Input[str]] = None,
                  services_cidr: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] pods_cidr: The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-        :param pulumi.Input[str] services_cidr: The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-        """
         if pods_cidr is not None:
             pulumi.set(__self__, "pods_cidr", pods_cidr)
         if services_cidr is not None:
@@ -718,9 +552,6 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
     @property
     @pulumi.getter(name="podsCidr")
     def pods_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-        """
         return pulumi.get(self, "pods_cidr")
 
     @pods_cidr.setter
@@ -730,9 +561,6 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
     @property
     @pulumi.getter(name="servicesCidr")
     def services_cidr(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-        """
         return pulumi.get(self, "services_cidr")
 
     @services_cidr.setter
@@ -745,10 +573,6 @@ class ClusterOptionsPersistentVolumeConfigArgs:
     def __init__(__self__, *,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -757,9 +581,6 @@ class ClusterOptionsPersistentVolumeConfigArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -769,9 +590,6 @@ class ClusterOptionsPersistentVolumeConfigArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -784,10 +602,6 @@ class ClusterOptionsServiceLbConfigArgs:
     def __init__(__self__, *,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -796,9 +610,6 @@ class ClusterOptionsServiceLbConfigArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -808,9 +619,6 @@ class ClusterOptionsServiceLbConfigArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -846,46 +654,6 @@ class ContainerInstanceContainerArgs:
                  time_updated: Optional[pulumi.Input[str]] = None,
                  volume_mounts: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]] = None,
                  working_directory: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] image_url: A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
-               
-               If no registry is provided, will default the registry to public docker hub `docker.io/library`.
-               
-               The registry used for container image must be reachable over the Container Instance's VNIC.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: A list of string arguments for a container's ENTRYPOINT process.
-               
-               Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
-               
-               The total size of all arguments combined must be 64 KB or smaller.
-        :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] commands: The list of strings that will be simplified to a single command for checking the status of the container.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
-        :param pulumi.Input[str] container_id: The OCID of the container.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
-               
-               The total size of all environment variables combined, name and values, must be 64 KB or smaller.
-        :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]] health_checks: list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
-        :param pulumi.Input[bool] is_resource_principal_disabled: Determines if the container will have access to the container instance resource principal.
-               
-               This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
-        :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param pulumi.Input['ContainerInstanceContainerResourceConfigArgs'] resource_config: The size and amount of resources available to the container.
-        :param pulumi.Input['ContainerInstanceContainerSecurityContextArgs'] security_context: Security context for container.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        :param pulumi.Input[str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]] volume_mounts: List of the volume mounts.
-        :param pulumi.Input[str] working_directory: The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
-        """
         pulumi.set(__self__, "image_url", image_url)
         if arguments is not None:
             pulumi.set(__self__, "arguments", arguments)
@@ -939,13 +707,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="imageUrl")
     def image_url(self) -> pulumi.Input[str]:
-        """
-        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
-
-        If no registry is provided, will default the registry to public docker hub `docker.io/library`.
-
-        The registry used for container image must be reachable over the Container Instance's VNIC.
-        """
         return pulumi.get(self, "image_url")
 
     @image_url.setter
@@ -955,13 +716,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter
     def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of string arguments for a container's ENTRYPOINT process.
-
-        Many containers use an ENTRYPOINT process pointing to a shell (/bin/bash). For those containers, this argument list specifies the main command in the container process.
-
-        The total size of all arguments combined must be 64 KB or smaller.
-        """
         return pulumi.get(self, "arguments")
 
     @arguments.setter
@@ -971,9 +725,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain where the container instance runs.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -983,9 +734,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter
     def commands(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of strings that will be simplified to a single command for checking the status of the container.
-        """
         return pulumi.get(self, "commands")
 
     @commands.setter
@@ -995,9 +743,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -1007,9 +752,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="containerId")
     def container_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the container.
-        """
         return pulumi.get(self, "container_id")
 
     @container_id.setter
@@ -1028,9 +770,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -1040,9 +779,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1052,11 +788,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
-
-        The total size of all environment variables combined, name and values, must be 64 KB or smaller.
-        """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
@@ -1075,9 +806,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain where the container instance runs.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -1087,9 +815,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -1099,9 +824,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="healthChecks")
     def health_checks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]:
-        """
-        list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
-        """
         return pulumi.get(self, "health_checks")
 
     @health_checks.setter
@@ -1111,11 +833,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="isResourcePrincipalDisabled")
     def is_resource_principal_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Determines if the container will have access to the container instance resource principal.
-
-        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
-        """
         return pulumi.get(self, "is_resource_principal_disabled")
 
     @is_resource_principal_disabled.setter
@@ -1125,9 +842,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -1137,9 +851,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="resourceConfig")
     def resource_config(self) -> Optional[pulumi.Input['ContainerInstanceContainerResourceConfigArgs']]:
-        """
-        The size and amount of resources available to the container.
-        """
         return pulumi.get(self, "resource_config")
 
     @resource_config.setter
@@ -1149,9 +860,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="securityContext")
     def security_context(self) -> Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']]:
-        """
-        Security context for container.
-        """
         return pulumi.get(self, "security_context")
 
     @security_context.setter
@@ -1161,13 +869,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1177,9 +878,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -1189,9 +887,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -1210,9 +905,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -1222,9 +914,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="volumeMounts")
     def volume_mounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]:
-        """
-        List of the volume mounts.
-        """
         return pulumi.get(self, "volume_mounts")
 
     @volume_mounts.setter
@@ -1234,9 +923,6 @@ class ContainerInstanceContainerArgs:
     @property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
-        """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
@@ -1261,20 +947,6 @@ class ContainerInstanceContainerHealthCheckArgs:
                  status_details: Optional[pulumi.Input[str]] = None,
                  success_threshold: Optional[pulumi.Input[int]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] health_check_type: Container health check type.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] commands: The list of strings that will be simplified to a single command for checking the status of the container.
-        :param pulumi.Input[str] failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
-        :param pulumi.Input[int] failure_threshold: Number of consecutive failures at which we consider the check failed.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]] headers: Container health check HTTP headers.
-        :param pulumi.Input[int] initial_delay_in_seconds: The initial delay in seconds before start checking container health status.
-        :param pulumi.Input[int] interval_in_seconds: Number of seconds between two consecutive runs for checking container health.
-        :param pulumi.Input[str] name: The name of the volume. This must be unique within a single container instance.
-        :param pulumi.Input[str] path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        :param pulumi.Input[int] port: Container health check HTTP port.
-        :param pulumi.Input[int] success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
-        :param pulumi.Input[int] timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
-        """
         pulumi.set(__self__, "health_check_type", health_check_type)
         if commands is not None:
             pulumi.set(__self__, "commands", commands)
@@ -1306,9 +978,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> pulumi.Input[str]:
-        """
-        Container health check type.
-        """
         return pulumi.get(self, "health_check_type")
 
     @health_check_type.setter
@@ -1318,9 +987,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter
     def commands(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of strings that will be simplified to a single command for checking the status of the container.
-        """
         return pulumi.get(self, "commands")
 
     @commands.setter
@@ -1330,9 +996,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="failureAction")
     def failure_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
-        """
         return pulumi.get(self, "failure_action")
 
     @failure_action.setter
@@ -1342,9 +1005,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="failureThreshold")
     def failure_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of consecutive failures at which we consider the check failed.
-        """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
@@ -1354,9 +1014,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]:
-        """
-        Container health check HTTP headers.
-        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -1366,9 +1023,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="initialDelayInSeconds")
     def initial_delay_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The initial delay in seconds before start checking container health status.
-        """
         return pulumi.get(self, "initial_delay_in_seconds")
 
     @initial_delay_in_seconds.setter
@@ -1378,9 +1032,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of seconds between two consecutive runs for checking container health.
-        """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
@@ -1390,9 +1041,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1402,9 +1050,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -1414,9 +1059,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        Container health check HTTP port.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -1444,9 +1086,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="successThreshold")
     def success_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
-        """
         return pulumi.get(self, "success_threshold")
 
     @success_threshold.setter
@@ -1456,9 +1095,6 @@ class ContainerInstanceContainerHealthCheckArgs:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        Length of waiting time in seconds before marking health check failed.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -1471,10 +1107,6 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: The name of the volume. This must be unique within a single container instance.
-        :param pulumi.Input[str] value: Container HTTP header value.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -1483,9 +1115,6 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1495,9 +1124,6 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        Container HTTP header value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1510,18 +1136,6 @@ class ContainerInstanceContainerResourceConfigArgs:
     def __init__(__self__, *,
                  memory_limit_in_gbs: Optional[pulumi.Input[float]] = None,
                  vcpus_limit: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_limit_in_gbs: The maximum amount of memory that can be consumed by the container's process.
-               
-               If you do not set a value, then the process may use all available memory on the instance.
-        :param pulumi.Input[float] vcpus_limit: The maximum amount of CPUs that can be consumed by the container's process.
-               
-               If you do not set a value, then the process can use all available CPU resources on the instance.
-               
-               CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
-               
-               A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
-        """
         if memory_limit_in_gbs is not None:
             pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
         if vcpus_limit is not None:
@@ -1530,11 +1144,6 @@ class ContainerInstanceContainerResourceConfigArgs:
     @property
     @pulumi.getter(name="memoryLimitInGbs")
     def memory_limit_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The maximum amount of memory that can be consumed by the container's process.
-
-        If you do not set a value, then the process may use all available memory on the instance.
-        """
         return pulumi.get(self, "memory_limit_in_gbs")
 
     @memory_limit_in_gbs.setter
@@ -1544,15 +1153,6 @@ class ContainerInstanceContainerResourceConfigArgs:
     @property
     @pulumi.getter(name="vcpusLimit")
     def vcpus_limit(self) -> Optional[pulumi.Input[float]]:
-        """
-        The maximum amount of CPUs that can be consumed by the container's process.
-
-        If you do not set a value, then the process can use all available CPU resources on the instance.
-
-        CPU usage is defined in terms of logical CPUs. This means that the maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
-
-        A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
-        """
         return pulumi.get(self, "vcpus_limit")
 
     @vcpus_limit.setter
@@ -1568,13 +1168,6 @@ class ContainerInstanceContainerSecurityContextArgs:
                  run_as_group: Optional[pulumi.Input[int]] = None,
                  run_as_user: Optional[pulumi.Input[int]] = None,
                  security_context_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_non_root_user_check_enabled: Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
-        :param pulumi.Input[bool] is_root_file_system_readonly: Determines if the container will have a read-only root file system. Default value is false.
-        :param pulumi.Input[int] run_as_group: The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
-        :param pulumi.Input[int] run_as_user: The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
-        :param pulumi.Input[str] security_context_type: The type of security context
-        """
         if is_non_root_user_check_enabled is not None:
             pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         if is_root_file_system_readonly is not None:
@@ -1589,9 +1182,6 @@ class ContainerInstanceContainerSecurityContextArgs:
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
     def is_non_root_user_check_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
-        """
         return pulumi.get(self, "is_non_root_user_check_enabled")
 
     @is_non_root_user_check_enabled.setter
@@ -1601,9 +1191,6 @@ class ContainerInstanceContainerSecurityContextArgs:
     @property
     @pulumi.getter(name="isRootFileSystemReadonly")
     def is_root_file_system_readonly(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Determines if the container will have a read-only root file system. Default value is false.
-        """
         return pulumi.get(self, "is_root_file_system_readonly")
 
     @is_root_file_system_readonly.setter
@@ -1613,9 +1200,6 @@ class ContainerInstanceContainerSecurityContextArgs:
     @property
     @pulumi.getter(name="runAsGroup")
     def run_as_group(self) -> Optional[pulumi.Input[int]]:
-        """
-        The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
-        """
         return pulumi.get(self, "run_as_group")
 
     @run_as_group.setter
@@ -1625,9 +1209,6 @@ class ContainerInstanceContainerSecurityContextArgs:
     @property
     @pulumi.getter(name="runAsUser")
     def run_as_user(self) -> Optional[pulumi.Input[int]]:
-        """
-        The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
-        """
         return pulumi.get(self, "run_as_user")
 
     @run_as_user.setter
@@ -1637,9 +1218,6 @@ class ContainerInstanceContainerSecurityContextArgs:
     @property
     @pulumi.getter(name="securityContextType")
     def security_context_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of security context
-        """
         return pulumi.get(self, "security_context_type")
 
     @security_context_type.setter
@@ -1655,13 +1233,6 @@ class ContainerInstanceContainerVolumeMountArgs:
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  partition: Optional[pulumi.Input[int]] = None,
                  sub_path: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] mount_path: The volume access path.
-        :param pulumi.Input[str] volume_name: The name of the volume. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_read_only: Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
-        :param pulumi.Input[int] partition: If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
-        :param pulumi.Input[str] sub_path: A subpath inside the referenced volume.
-        """
         pulumi.set(__self__, "mount_path", mount_path)
         pulumi.set(__self__, "volume_name", volume_name)
         if is_read_only is not None:
@@ -1674,9 +1245,6 @@ class ContainerInstanceContainerVolumeMountArgs:
     @property
     @pulumi.getter(name="mountPath")
     def mount_path(self) -> pulumi.Input[str]:
-        """
-        The volume access path.
-        """
         return pulumi.get(self, "mount_path")
 
     @mount_path.setter
@@ -1686,9 +1254,6 @@ class ContainerInstanceContainerVolumeMountArgs:
     @property
     @pulumi.getter(name="volumeName")
     def volume_name(self) -> pulumi.Input[str]:
-        """
-        The name of the volume. Avoid entering confidential information.
-        """
         return pulumi.get(self, "volume_name")
 
     @volume_name.setter
@@ -1698,9 +1263,6 @@ class ContainerInstanceContainerVolumeMountArgs:
     @property
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
-        """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
@@ -1710,9 +1272,6 @@ class ContainerInstanceContainerVolumeMountArgs:
     @property
     @pulumi.getter
     def partition(self) -> Optional[pulumi.Input[int]]:
-        """
-        If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
-        """
         return pulumi.get(self, "partition")
 
     @partition.setter
@@ -1722,9 +1281,6 @@ class ContainerInstanceContainerVolumeMountArgs:
     @property
     @pulumi.getter(name="subPath")
     def sub_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        A subpath inside the referenced volume.
-        """
         return pulumi.get(self, "sub_path")
 
     @sub_path.setter
@@ -1738,11 +1294,6 @@ class ContainerInstanceDnsConfigArgs:
                  nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  options: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  searches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nameservers: IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] searches: Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
-        """
         if nameservers is not None:
             pulumi.set(__self__, "nameservers", nameservers)
         if options is not None:
@@ -1753,9 +1304,6 @@ class ContainerInstanceDnsConfigArgs:
     @property
     @pulumi.getter
     def nameservers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
-        """
         return pulumi.get(self, "nameservers")
 
     @nameservers.setter
@@ -1765,9 +1313,6 @@ class ContainerInstanceDnsConfigArgs:
     @property
     @pulumi.getter
     def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
-        """
         return pulumi.get(self, "options")
 
     @options.setter
@@ -1777,9 +1322,6 @@ class ContainerInstanceDnsConfigArgs:
     @property
     @pulumi.getter
     def searches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
-        """
         return pulumi.get(self, "searches")
 
     @searches.setter
@@ -1795,13 +1337,6 @@ class ContainerInstanceImagePullSecretArgs:
                  password: Optional[pulumi.Input[str]] = None,
                  secret_id: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] registry_endpoint: The registry endpoint of the container image.
-        :param pulumi.Input[str] secret_type: The type of ImagePullSecret.
-        :param pulumi.Input[str] password: The password which should be used with the registry for authentication. The value is expected in base64 format.
-        :param pulumi.Input[str] secret_id: The OCID of the secret for registry credentials.
-        :param pulumi.Input[str] username: The username which should be used with the registry for authentication. The value is expected in base64 format.
-        """
         pulumi.set(__self__, "registry_endpoint", registry_endpoint)
         pulumi.set(__self__, "secret_type", secret_type)
         if password is not None:
@@ -1814,9 +1349,6 @@ class ContainerInstanceImagePullSecretArgs:
     @property
     @pulumi.getter(name="registryEndpoint")
     def registry_endpoint(self) -> pulumi.Input[str]:
-        """
-        The registry endpoint of the container image.
-        """
         return pulumi.get(self, "registry_endpoint")
 
     @registry_endpoint.setter
@@ -1826,9 +1358,6 @@ class ContainerInstanceImagePullSecretArgs:
     @property
     @pulumi.getter(name="secretType")
     def secret_type(self) -> pulumi.Input[str]:
-        """
-        The type of ImagePullSecret.
-        """
         return pulumi.get(self, "secret_type")
 
     @secret_type.setter
@@ -1838,9 +1367,6 @@ class ContainerInstanceImagePullSecretArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password which should be used with the registry for authentication. The value is expected in base64 format.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -1850,9 +1376,6 @@ class ContainerInstanceImagePullSecretArgs:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the secret for registry credentials.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -1862,9 +1385,6 @@ class ContainerInstanceImagePullSecretArgs:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username which should be used with the registry for authentication. The value is expected in base64 format.
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -1879,12 +1399,6 @@ class ContainerInstanceShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  networking_bandwidth_in_gbps: Optional[pulumi.Input[float]] = None,
                  processor_description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the container instance.
-        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the container instance (GB).
-        :param pulumi.Input[float] networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
-        :param pulumi.Input[str] processor_description: A short description of the container instance's processor (CPU).
-        """
         pulumi.set(__self__, "ocpus", ocpus)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1896,9 +1410,6 @@ class ContainerInstanceShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> pulumi.Input[float]:
-        """
-        The total number of OCPUs available to the container instance.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -1908,9 +1419,6 @@ class ContainerInstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total amount of memory available to the container instance (GB).
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -1920,9 +1428,6 @@ class ContainerInstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="networkingBandwidthInGbps")
     def networking_bandwidth_in_gbps(self) -> Optional[pulumi.Input[float]]:
-        """
-        The networking bandwidth available to the container instance, in gigabits per second.
-        """
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
     @networking_bandwidth_in_gbps.setter
@@ -1932,9 +1437,6 @@ class ContainerInstanceShapeConfigArgs:
     @property
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short description of the container instance's processor (CPU).
-        """
         return pulumi.get(self, "processor_description")
 
     @processor_description.setter
@@ -1955,18 +1457,6 @@ class ContainerInstanceVnicArgs:
                  private_ip: Optional[pulumi.Input[str]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet to create the VNIC in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] hostname_label: The hostname for the VNIC's primary private IP. Used for DNS.
-        :param pulumi.Input[bool] is_public_ip_assigned: Whether the VNIC should be assigned a public IP address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
-        :param pulumi.Input[bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC.
-        :param pulumi.Input[str] vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
-        """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1990,9 +1480,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet to create the VNIC in.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2002,9 +1489,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -2014,9 +1498,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -2026,9 +1507,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -2038,9 +1516,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="hostnameLabel")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the VNIC's primary private IP. Used for DNS.
-        """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -2050,9 +1525,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="isPublicIpAssigned")
     def is_public_ip_assigned(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the VNIC should be assigned a public IP address.
-        """
         return pulumi.get(self, "is_public_ip_assigned")
 
     @is_public_ip_assigned.setter
@@ -2062,9 +1534,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -2074,9 +1543,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -2086,9 +1552,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="skipSourceDestCheck")
     def skip_source_dest_check(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the source/destination check is disabled on the VNIC.
-        """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
@@ -2098,9 +1561,6 @@ class ContainerInstanceVnicArgs:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
@@ -2115,12 +1575,6 @@ class ContainerInstanceVolumeArgs:
                  volume_type: pulumi.Input[str],
                  backing_store: Optional[pulumi.Input[str]] = None,
                  configs: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]] = None):
-        """
-        :param pulumi.Input[str] name: The name of the volume. This must be unique within a single container instance.
-        :param pulumi.Input[str] volume_type: The type of volume.
-        :param pulumi.Input[str] backing_store: The volume type of the empty directory, can be either File Storage or Memory.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]] configs: Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "volume_type", volume_type)
         if backing_store is not None:
@@ -2131,9 +1585,6 @@ class ContainerInstanceVolumeArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2143,9 +1594,6 @@ class ContainerInstanceVolumeArgs:
     @property
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> pulumi.Input[str]:
-        """
-        The type of volume.
-        """
         return pulumi.get(self, "volume_type")
 
     @volume_type.setter
@@ -2155,9 +1603,6 @@ class ContainerInstanceVolumeArgs:
     @property
     @pulumi.getter(name="backingStore")
     def backing_store(self) -> Optional[pulumi.Input[str]]:
-        """
-        The volume type of the empty directory, can be either File Storage or Memory.
-        """
         return pulumi.get(self, "backing_store")
 
     @backing_store.setter
@@ -2167,9 +1612,6 @@ class ContainerInstanceVolumeArgs:
     @property
     @pulumi.getter
     def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]:
-        """
-        Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
-        """
         return pulumi.get(self, "configs")
 
     @configs.setter
@@ -2183,11 +1625,6 @@ class ContainerInstanceVolumeConfigArgs:
                  data: Optional[pulumi.Input[str]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
                  path: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] data: The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
-        :param pulumi.Input[str] file_name: The name of the file. The fileName should be unique across the volume.
-        :param pulumi.Input[str] path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
         if data is not None:
             pulumi.set(__self__, "data", data)
         if file_name is not None:
@@ -2198,9 +1635,6 @@ class ContainerInstanceVolumeConfigArgs:
     @property
     @pulumi.getter
     def data(self) -> Optional[pulumi.Input[str]]:
-        """
-        The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
-        """
         return pulumi.get(self, "data")
 
     @data.setter
@@ -2210,9 +1644,6 @@ class ContainerInstanceVolumeConfigArgs:
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the file. The fileName should be unique across the volume.
-        """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
@@ -2222,9 +1653,6 @@ class ContainerInstanceVolumeConfigArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -2237,10 +1665,6 @@ class NodePoolInitialNodeLabelArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: (Updatable) The key of the pair.
-        :param pulumi.Input[str] value: (Updatable) The value of the pair.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if value is not None:
@@ -2249,9 +1673,6 @@ class NodePoolInitialNodeLabelArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key of the pair.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -2261,9 +1682,6 @@ class NodePoolInitialNodeLabelArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value of the pair.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -2288,22 +1706,6 @@ class NodePoolNodeArgs:
                  public_ip: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]] errors: An error that may be associated with the node.
-        :param pulumi.Input[str] fault_domain: The fault domain of this node.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] id: The OCID of the compute instance backing this node.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input[str] node_pool_id: The OCID of the node pool to which this node belongs.
-        :param pulumi.Input[str] private_ip: The private IP address of this node.
-        :param pulumi.Input[str] public_ip: The public IP address of this node.
-        :param pulumi.Input[str] state: The state of the nodepool.
-        :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
-        """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if defined_tags is not None:
@@ -2336,9 +1738,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -2348,9 +1747,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -2360,9 +1756,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter
     def errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]:
-        """
-        An error that may be associated with the node.
-        """
         return pulumi.get(self, "errors")
 
     @errors.setter
@@ -2372,9 +1765,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain of this node.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -2384,9 +1774,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -2396,9 +1783,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compute instance backing this node.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -2408,9 +1792,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        """
         return pulumi.get(self, "kubernetes_version")
 
     @kubernetes_version.setter
@@ -2420,9 +1801,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the state of the node.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -2432,9 +1810,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the node pool. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2444,9 +1819,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the node pool to which this node belongs.
-        """
         return pulumi.get(self, "node_pool_id")
 
     @node_pool_id.setter
@@ -2456,9 +1828,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address of this node.
-        """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
@@ -2468,9 +1837,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="publicIp")
     def public_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public IP address of this node.
-        """
         return pulumi.get(self, "public_ip")
 
     @public_ip.setter
@@ -2480,9 +1846,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the nodepool.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -2492,9 +1855,6 @@ class NodePoolNodeArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the subnet in which to place nodes.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2513,18 +1873,6 @@ class NodePoolNodeConfigDetailsArgs:
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  node_pool_pod_network_option_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigArgs']]] placement_configs: (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
-               
-               To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        :param pulumi.Input[int] size: (Updatable) The number of nodes that should be in the node pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-        :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
-        :param pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs'] node_pool_pod_network_option_details: (Updatable) The CNI related configuration of pods in the node pool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
         pulumi.set(__self__, "placement_configs", placement_configs)
         pulumi.set(__self__, "size", size)
         if defined_tags is not None:
@@ -2543,11 +1891,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="placementConfigs")
     def placement_configs(self) -> pulumi.Input[Sequence[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigArgs']]]:
-        """
-        (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
-
-        To use the node pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        """
         return pulumi.get(self, "placement_configs")
 
     @placement_configs.setter
@@ -2557,9 +1900,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter
     def size(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of nodes that should be in the node pool.
-        """
         return pulumi.get(self, "size")
 
     @size.setter
@@ -2569,9 +1909,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -2581,9 +1918,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -2593,9 +1927,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -2605,9 +1936,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -2617,9 +1945,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="nodePoolPodNetworkOptionDetails")
     def node_pool_pod_network_option_details(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]:
-        """
-        (Updatable) The CNI related configuration of pods in the node pool.
-        """
         return pulumi.get(self, "node_pool_pod_network_option_details")
 
     @node_pool_pod_network_option_details.setter
@@ -2629,9 +1954,6 @@ class NodePoolNodeConfigDetailsArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -2646,12 +1968,6 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
                  max_pods_per_node: Optional[pulumi.Input[int]] = None,
                  pod_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  pod_subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] cni_type: (Updatable) The CNI plugin used by this node pool
-        :param pulumi.Input[int] max_pods_per_node: (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] pod_nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] pod_subnet_ids: (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
-        """
         pulumi.set(__self__, "cni_type", cni_type)
         if max_pods_per_node is not None:
             pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
@@ -2663,9 +1979,6 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     @property
     @pulumi.getter(name="cniType")
     def cni_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The CNI plugin used by this node pool
-        """
         return pulumi.get(self, "cni_type")
 
     @cni_type.setter
@@ -2675,9 +1988,6 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     @property
     @pulumi.getter(name="maxPodsPerNode")
     def max_pods_per_node(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-        """
         return pulumi.get(self, "max_pods_per_node")
 
     @max_pods_per_node.setter
@@ -2687,9 +1997,6 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     @property
     @pulumi.getter(name="podNsgIds")
     def pod_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
         return pulumi.get(self, "pod_nsg_ids")
 
     @pod_nsg_ids.setter
@@ -2699,9 +2006,6 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     @property
     @pulumi.getter(name="podSubnetIds")
     def pod_subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
-        """
         return pulumi.get(self, "pod_subnet_ids")
 
     @pod_subnet_ids.setter
@@ -2717,13 +2021,6 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  preemptible_node_config: Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']] = None):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
-        :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) A list of fault domains in which to place nodes.
-        :param pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_config: (Updatable) Configuration options for preemptible nodes.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if capacity_reservation_id is not None:
@@ -2736,9 +2033,6 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -2748,9 +2042,6 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the subnet in which to place nodes.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2760,9 +2051,6 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @property
     @pulumi.getter(name="capacityReservationId")
     def capacity_reservation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
-        """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
@@ -2772,9 +2060,6 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @property
     @pulumi.getter(name="faultDomains")
     def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of fault domains in which to place nodes.
-        """
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
@@ -2784,9 +2069,6 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     @property
     @pulumi.getter(name="preemptibleNodeConfig")
     def preemptible_node_config(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]:
-        """
-        (Updatable) Configuration options for preemptible nodes.
-        """
         return pulumi.get(self, "preemptible_node_config")
 
     @preemptible_node_config.setter
@@ -2798,17 +2080,11 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
 class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs:
     def __init__(__self__, *,
                  preemption_action: pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs']):
-        """
-        :param pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs'] preemption_action: (Updatable) The action to run when the preemptible node is interrupted for eviction.
-        """
         pulumi.set(__self__, "preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
     def preemption_action(self) -> pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs']:
-        """
-        (Updatable) The action to run when the preemptible node is interrupted for eviction.
-        """
         return pulumi.get(self, "preemption_action")
 
     @preemption_action.setter
@@ -2821,10 +2097,6 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  is_preserve_boot_volume: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[bool] is_preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         pulumi.set(__self__, "type", type)
         if is_preserve_boot_volume is not None:
             pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
@@ -2832,9 +2104,6 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2844,9 +2113,6 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
     @property
     @pulumi.getter(name="isPreserveBootVolume")
     def is_preserve_boot_volume(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        """
         return pulumi.get(self, "is_preserve_boot_volume")
 
     @is_preserve_boot_volume.setter
@@ -2860,11 +2126,6 @@ class NodePoolNodeErrorArgs:
                  code: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        :param pulumi.Input[str] message: A human-readable error string of the upstream error.
-        :param pulumi.Input[str] status: The status of the HTTP response encountered in the upstream error.
-        """
         if code is not None:
             pulumi.set(__self__, "code", code)
         if message is not None:
@@ -2875,9 +2136,6 @@ class NodePoolNodeErrorArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -2887,9 +2145,6 @@ class NodePoolNodeErrorArgs:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        A human-readable error string of the upstream error.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -2899,9 +2154,6 @@ class NodePoolNodeErrorArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The status of the HTTP response encountered in the upstream error.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -2914,10 +2166,6 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
     def __init__(__self__, *,
                  eviction_grace_duration: Optional[pulumi.Input[str]] = None,
                  is_force_delete_after_grace_duration: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] eviction_grace_duration: (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-        :param pulumi.Input[bool] is_force_delete_after_grace_duration: (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-        """
         if eviction_grace_duration is not None:
             pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
         if is_force_delete_after_grace_duration is not None:
@@ -2926,9 +2174,6 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
     @property
     @pulumi.getter(name="evictionGraceDuration")
     def eviction_grace_duration(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-        """
         return pulumi.get(self, "eviction_grace_duration")
 
     @eviction_grace_duration.setter
@@ -2938,9 +2183,6 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
     @property
     @pulumi.getter(name="isForceDeleteAfterGraceDuration")
     def is_force_delete_after_grace_duration(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-        """
         return pulumi.get(self, "is_force_delete_after_grace_duration")
 
     @is_force_delete_after_grace_duration.setter
@@ -2954,11 +2196,6 @@ class NodePoolNodePoolCyclingDetailsArgs:
                  is_node_cycling_enabled: Optional[pulumi.Input[bool]] = None,
                  maximum_surge: Optional[pulumi.Input[str]] = None,
                  maximum_unavailable: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_node_cycling_enabled: (Updatable) If nodes in the nodepool will be cycled to have new changes.
-        :param pulumi.Input[str] maximum_surge: (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-        :param pulumi.Input[str] maximum_unavailable: (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-        """
         if is_node_cycling_enabled is not None:
             pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
         if maximum_surge is not None:
@@ -2969,9 +2206,6 @@ class NodePoolNodePoolCyclingDetailsArgs:
     @property
     @pulumi.getter(name="isNodeCyclingEnabled")
     def is_node_cycling_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If nodes in the nodepool will be cycled to have new changes.
-        """
         return pulumi.get(self, "is_node_cycling_enabled")
 
     @is_node_cycling_enabled.setter
@@ -2981,9 +2215,6 @@ class NodePoolNodePoolCyclingDetailsArgs:
     @property
     @pulumi.getter(name="maximumSurge")
     def maximum_surge(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-        """
         return pulumi.get(self, "maximum_surge")
 
     @maximum_surge.setter
@@ -2993,9 +2224,6 @@ class NodePoolNodePoolCyclingDetailsArgs:
     @property
     @pulumi.getter(name="maximumUnavailable")
     def maximum_unavailable(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-        """
         return pulumi.get(self, "maximum_unavailable")
 
     @maximum_unavailable.setter
@@ -3008,10 +2236,6 @@ class NodePoolNodeShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to each node, in gigabytes.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -3020,9 +2244,6 @@ class NodePoolNodeShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total amount of memory available to each node, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -3032,9 +2253,6 @@ class NodePoolNodeShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -3048,11 +2266,6 @@ class NodePoolNodeSourceArgs:
                  image_id: Optional[pulumi.Input[str]] = None,
                  source_name: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] image_id: (Updatable) The OCID of the image used to boot the node.
-        :param pulumi.Input[str] source_name: The user-friendly name of the entity corresponding to the OCID.
-        :param pulumi.Input[str] source_type: (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-        """
         if image_id is not None:
             pulumi.set(__self__, "image_id", image_id)
         if source_name is not None:
@@ -3063,9 +2276,6 @@ class NodePoolNodeSourceArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the image used to boot the node.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -3075,9 +2285,6 @@ class NodePoolNodeSourceArgs:
     @property
     @pulumi.getter(name="sourceName")
     def source_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name of the entity corresponding to the OCID.
-        """
         return pulumi.get(self, "source_name")
 
     @source_name.setter
@@ -3087,9 +2294,6 @@ class NodePoolNodeSourceArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -3103,11 +2307,6 @@ class NodePoolNodeSourceDetailsArgs:
                  image_id: pulumi.Input[str],
                  source_type: pulumi.Input[str],
                  boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] image_id: (Updatable) The OCID of the image used to boot the node.
-        :param pulumi.Input[str] source_type: (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-        :param pulumi.Input[str] boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-        """
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "source_type", source_type)
         if boot_volume_size_in_gbs is not None:
@@ -3116,9 +2315,6 @@ class NodePoolNodeSourceDetailsArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the image used to boot the node.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -3128,9 +2324,6 @@ class NodePoolNodeSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -3140,9 +2333,6 @@ class NodePoolNodeSourceDetailsArgs:
     @property
     @pulumi.getter(name="bootVolumeSizeInGbs")
     def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-        """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
@@ -3155,10 +2345,6 @@ class VirtualNodePoolInitialVirtualNodeLabelArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] key: (Updatable) The key of the pair.
-        :param pulumi.Input[str] value: (Updatable) The value of the pair.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if value is not None:
@@ -3167,9 +2353,6 @@ class VirtualNodePoolInitialVirtualNodeLabelArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key of the pair.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -3179,9 +2362,6 @@ class VirtualNodePoolInitialVirtualNodeLabelArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value of the pair.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3195,11 +2375,6 @@ class VirtualNodePoolPlacementConfigurationArgs:
                  availability_domain: pulumi.Input[str],
                  fault_domains: pulumi.Input[Sequence[pulumi.Input[str]]],
                  subnet_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] availability_domain: (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: (Updatable) The fault domain of this virtual node.
-        :param pulumi.Input[str] subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
-        """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -3207,9 +2382,6 @@ class VirtualNodePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -3219,9 +2391,6 @@ class VirtualNodePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="faultDomains")
     def fault_domains(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The fault domain of this virtual node.
-        """
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
@@ -3231,9 +2400,6 @@ class VirtualNodePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The regional subnet where pods' VNIC will be placed.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -3247,11 +2413,6 @@ class VirtualNodePoolPodConfigurationArgs:
                  shape: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] shape: (Updatable) Shape of the pods.
-        :param pulumi.Input[str] subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) List of network security group IDs applied to the Pod VNIC.
-        """
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if nsg_ids is not None:
@@ -3260,9 +2421,6 @@ class VirtualNodePoolPodConfigurationArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Shape of the pods.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -3272,9 +2430,6 @@ class VirtualNodePoolPodConfigurationArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The regional subnet where pods' VNIC will be placed.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -3284,9 +2439,6 @@ class VirtualNodePoolPodConfigurationArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of network security group IDs applied to the Pod VNIC.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -3300,11 +2452,6 @@ class VirtualNodePoolTaintArgs:
                  effect: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] effect: (Updatable) The effect of the pair.
-        :param pulumi.Input[str] key: (Updatable) The key of the pair.
-        :param pulumi.Input[str] value: (Updatable) The value of the pair.
-        """
         if effect is not None:
             pulumi.set(__self__, "effect", effect)
         if key is not None:
@@ -3315,9 +2462,6 @@ class VirtualNodePoolTaintArgs:
     @property
     @pulumi.getter
     def effect(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The effect of the pair.
-        """
         return pulumi.get(self, "effect")
 
     @effect.setter
@@ -3327,9 +2471,6 @@ class VirtualNodePoolTaintArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key of the pair.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -3339,9 +2480,6 @@ class VirtualNodePoolTaintArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value of the pair.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3354,14 +2492,6 @@ class VirtualNodePoolVirtualNodeTagsArgs:
     def __init__(__self__, *,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
-        """
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -3370,9 +2500,6 @@ class VirtualNodePoolVirtualNodeTagsArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -3382,13 +2509,6 @@ class VirtualNodePoolVirtualNodeTagsArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -3402,9 +2522,6 @@ class GetAddonOptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the addon and it would be unique.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3413,9 +2530,6 @@ class GetAddonOptionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the addon and it would be unique.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3525,9 +2639,6 @@ class GetClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name to filter on.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3536,9 +2647,6 @@ class GetClustersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name to filter on.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3570,9 +2678,6 @@ class GetNodePoolsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name to filter on.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3581,9 +2686,6 @@ class GetNodePoolsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name to filter on.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3615,9 +2717,6 @@ class GetPodShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name to filter on.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3626,9 +2725,6 @@ class GetPodShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name to filter on.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3660,9 +2756,6 @@ class GetVirtualNodePoolsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name to filter on.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3671,9 +2764,6 @@ class GetVirtualNodePoolsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name to filter on.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

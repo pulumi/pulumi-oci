@@ -11,6 +11,7 @@ import com.pulumi.oci.Marketplace.ListingPackageAgreementArgs;
 import com.pulumi.oci.Marketplace.inputs.ListingPackageAgreementState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -78,42 +79,42 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="author", refs={String.class}, tree="[0]")
-    private Output<String> author;
+    private Output</* @Nullable */ String> author;
 
     /**
      * @return Who authored the agreement.
      * 
      */
-    public Output<String> author() {
-        return this.author;
+    public Output<Optional<String>> author() {
+        return Codegen.optional(this.author);
     }
     /**
      * The unique identifier for the compartment, required in gov regions.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The unique identifier for the compartment, required in gov regions.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The content URL of the agreement.
      * 
      */
     @Export(name="contentUrl", refs={String.class}, tree="[0]")
-    private Output<String> contentUrl;
+    private Output</* @Nullable */ String> contentUrl;
 
     /**
      * @return The content URL of the agreement.
      * 
      */
-    public Output<String> contentUrl() {
-        return this.contentUrl;
+    public Output<Optional<String>> contentUrl() {
+        return Codegen.optional(this.contentUrl);
     }
     /**
      * The unique identifier for the listing.
@@ -148,28 +149,28 @@ public class ListingPackageAgreement extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="prompt", refs={String.class}, tree="[0]")
-    private Output<String> prompt;
+    private Output</* @Nullable */ String> prompt;
 
     /**
      * @return Textual prompt to read and accept the agreement.
      * 
      */
-    public Output<String> prompt() {
-        return this.prompt;
+    public Output<Optional<String>> prompt() {
+        return Codegen.optional(this.prompt);
     }
     /**
      * A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
      * 
      */
     @Export(name="signature", refs={String.class}, tree="[0]")
-    private Output<String> signature;
+    private Output</* @Nullable */ String> signature;
 
     /**
      * @return A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
      * 
      */
-    public Output<String> signature() {
-        return this.signature;
+    public Output<Optional<String>> signature() {
+        return Codegen.optional(this.signature);
     }
 
     /**

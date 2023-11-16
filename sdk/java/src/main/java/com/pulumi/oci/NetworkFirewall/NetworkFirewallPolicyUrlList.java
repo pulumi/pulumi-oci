@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -100,28 +101,28 @@ public class NetworkFirewallPolicyUrlList extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this URL List belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * Total count of URLs in the URL List
      * 
      */
     @Export(name="totalUrls", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalUrls;
+    private Output</* @Nullable */ Integer> totalUrls;
 
     /**
      * @return Total count of URLs in the URL List
      * 
      */
-    public Output<Integer> totalUrls() {
-        return this.totalUrls;
+    public Output<Optional<Integer>> totalUrls() {
+        return Codegen.optional(this.totalUrls);
     }
     /**
      * (Updatable) List of urls.

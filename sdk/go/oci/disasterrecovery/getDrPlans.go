@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -82,7 +81,7 @@ type GetDrPlansResult struct {
 	DrProtectionGroupId string             `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlansFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the DR plan.
 	State *string `pulumi:"state"`
 }
@@ -134,12 +133,6 @@ func (o GetDrPlansResultOutput) ToGetDrPlansResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetDrPlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlansResult] {
-	return pulumix.Output[GetDrPlansResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlansResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlansResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -168,8 +161,8 @@ func (o GetDrPlansResultOutput) Filters() GetDrPlansFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDrPlansResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlansResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlansResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlansResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DR plan.

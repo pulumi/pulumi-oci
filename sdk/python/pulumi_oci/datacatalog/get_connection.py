@@ -95,47 +95,32 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> str:
-        """
-        OCID of the user who created the connection.
-        """
+    def created_by_id(self) -> Optional[str]:
         return pulumi.get(self, "created_by_id")
 
     @property
     @pulumi.getter(name="dataAssetKey")
     def data_asset_key(self) -> str:
-        """
-        Unique key of the parent data asset.
-        """
         return pulumi.get(self, "data_asset_key")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the connection.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="encProperties")
-    def enc_properties(self) -> Mapping[str, Any]:
+    def enc_properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "enc_properties")
 
     @property
     @pulumi.getter(name="externalKey")
-    def external_key(self) -> str:
-        """
-        Unique external key of this object from the source system.
-        """
+    def external_key(self) -> Optional[str]:
         return pulumi.get(self, "external_key")
 
     @property
@@ -145,87 +130,57 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Indicates whether this connection is the default connection.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique connection key that is immutable.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
-        """
-        A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
-        """
+    def properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the connection.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeStatusUpdated")
-    def time_status_updated(self) -> str:
-        """
-        Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_status_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_status_updated")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="typeKey")
-    def type_key(self) -> str:
-        """
-        The key of the object type. Type key's can be found via the '/types' endpoint.
-        """
+    def type_key(self) -> Optional[str]:
         return pulumi.get(self, "type_key")
 
     @property
     @pulumi.getter(name="updatedById")
-    def updated_by_id(self) -> str:
-        """
-        OCID of the user who modified the connection.
-        """
+    def updated_by_id(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_id")
 
     @property
     @pulumi.getter
-    def uri(self) -> str:
-        """
-        URI to the connection instance in the API.
-        """
+    def uri(self) -> Optional[str]:
         return pulumi.get(self, "uri")
 
 
@@ -263,27 +218,7 @@ def get_connection(catalog_id: Optional[str] = None,
                    fields: Optional[Sequence[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionResult:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific data asset connection by key.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.DataCatalog.get_connection(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        connection_key=var["connection_connection_key"],
-        data_asset_key=var["connection_data_asset_key"],
-        fields=var["connection_fields"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str connection_key: Unique connection key.
-    :param str data_asset_key: Unique data asset key.
-    :param Sequence[str] fields: Specifies the fields to return in a connection response.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -323,26 +258,6 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
                           fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific data asset connection by key.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.DataCatalog.get_connection(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        connection_key=var["connection_connection_key"],
-        data_asset_key=var["connection_data_asset_key"],
-        fields=var["connection_fields"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str connection_key: Unique connection key.
-    :param str data_asset_key: Unique data asset key.
-    :param Sequence[str] fields: Specifies the fields to return in a connection response.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the maintenance update. Dependent on value of `lastAction`.
         /// </summary>
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Database
         private GetVmClusterUpdatesResult(
             ImmutableArray<Outputs.GetVmClusterUpdatesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

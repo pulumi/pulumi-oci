@@ -13,110 +13,110 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbSystemsDbSystemDbHomeDatabaseResult
     {
-        public readonly string AdminPassword;
+        public readonly string? AdminPassword;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
         /// </summary>
-        public readonly string BackupId;
-        public readonly string BackupTdePassword;
-        public readonly string CharacterSet;
+        public readonly string? BackupId;
+        public readonly string? BackupTdePassword;
+        public readonly string? CharacterSet;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeDatabaseConnectionStringResult> ConnectionStrings;
-        public readonly string DatabaseId;
-        public readonly string DatabaseSoftwareImageId;
+        public readonly string? DatabaseId;
+        public readonly string? DatabaseSoftwareImageId;
         public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult> DbBackupConfigs;
-        public readonly string DbDomain;
-        public readonly string DbName;
-        public readonly string DbUniqueName;
-        public readonly string DbWorkload;
+        public readonly string? DbDomain;
+        public readonly string? DbName;
+        public readonly string? DbUniqueName;
+        public readonly string? DbWorkload;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly string NcharacterSet;
-        public readonly string PdbName;
+        public readonly string? LifecycleDetails;
+        public readonly string? NcharacterSet;
+        public readonly string? PdbName;
         public readonly ImmutableArray<string> PluggableDatabases;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
-        public readonly string TdeWalletPassword;
+        public readonly string? State;
+        public readonly string? TdeWalletPassword;
         /// <summary>
         /// The date and time the DB system was created.
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly string TimeStampForPointInTimeRecovery;
-        public readonly string VaultId;
+        public readonly string? TimeCreated;
+        public readonly string? TimeStampForPointInTimeRecovery;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemDbHomeDatabaseResult(
-            string adminPassword,
+            string? adminPassword,
 
-            string backupId,
+            string? backupId,
 
-            string backupTdePassword,
+            string? backupTdePassword,
 
-            string characterSet,
+            string? characterSet,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeDatabaseConnectionStringResult> connectionStrings,
 
-            string databaseId,
+            string? databaseId,
 
-            string databaseSoftwareImageId,
+            string? databaseSoftwareImageId,
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult> dbBackupConfigs,
 
-            string dbDomain,
+            string? dbDomain,
 
-            string dbName,
+            string? dbName,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string dbWorkload,
+            string? dbWorkload,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string ncharacterSet,
+            string? ncharacterSet,
 
-            string pdbName,
+            string? pdbName,
 
             ImmutableArray<string> pluggableDatabases,
 
-            string state,
+            string? state,
 
-            string tdeWalletPassword,
+            string? tdeWalletPassword,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeStampForPointInTimeRecovery,
+            string? timeStampForPointInTimeRecovery,
 
-            string vaultId)
+            string? vaultId)
         {
             AdminPassword = adminPassword;
             BackupId = backupId;

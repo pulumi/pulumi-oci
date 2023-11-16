@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Database Migration service.
@@ -62,12 +61,12 @@ type LookupMigrationResult struct {
 	// Optional Pre-Migration advisor settings.
 	AdvisorSettings []GetMigrationAdvisorSetting `pulumi:"advisorSettings"`
 	// The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
-	AgentId string `pulumi:"agentId"`
+	AgentId *string `pulumi:"agentId"`
 	// OCID of the compartment where the secret containing the credentials will be created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
-	CredentialsSecretId string `pulumi:"credentialsSecretId"`
-	CsvText             string `pulumi:"csvText"`
+	CredentialsSecretId *string `pulumi:"credentialsSecretId"`
+	CsvText             *string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
 	DataTransferMediumDetails    []GetMigrationDataTransferMediumDetail    `pulumi:"dataTransferMediumDetails"`
 	DataTransferMediumDetailsV2s []GetMigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2s"`
@@ -76,13 +75,13 @@ type LookupMigrationResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Migration Display Name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Optional additional properties for dump transfer.
 	DumpTransferDetails []GetMigrationDumpTransferDetail `pulumi:"dumpTransferDetails"`
 	// Database objects to exclude from migration. If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
 	ExcludeObjects []GetMigrationExcludeObject `pulumi:"excludeObjects"`
 	// OCID of the current ODMS Job in execution for the Migration, if any.
-	ExecutingJobId string `pulumi:"executingJobId"`
+	ExecutingJobId *string `pulumi:"executingJobId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Details about Oracle GoldenGate Microservices.
@@ -90,34 +89,34 @@ type LookupMigrationResult struct {
 	// Details about Oracle GoldenGate GGS Deployment.
 	GoldenGateServiceDetails []GetMigrationGoldenGateServiceDetail `pulumi:"goldenGateServiceDetails"`
 	// The OCID of the resource
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Database objects to include from migration.
 	IncludeObjects []GetMigrationIncludeObject `pulumi:"includeObjects"`
 	// Additional status related to the execution and current state of the Migration.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	MigrationId      string `pulumi:"migrationId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	MigrationId      string  `pulumi:"migrationId"`
 	// The OCID of the Source Container Database Connection.
-	SourceContainerDatabaseConnectionId string `pulumi:"sourceContainerDatabaseConnectionId"`
+	SourceContainerDatabaseConnectionId *string `pulumi:"sourceContainerDatabaseConnectionId"`
 	// The OCID of the Source Database Connection.
-	SourceDatabaseConnectionId string `pulumi:"sourceDatabaseConnectionId"`
+	SourceDatabaseConnectionId *string `pulumi:"sourceDatabaseConnectionId"`
 	// The current state of the Migration resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the Target Database Connection.
-	TargetDatabaseConnectionId string `pulumi:"targetDatabaseConnectionId"`
+	TargetDatabaseConnectionId *string `pulumi:"targetDatabaseConnectionId"`
 	// The time the Migration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of last Migration. An RFC3339 formatted datetime string.
-	TimeLastMigration string `pulumi:"timeLastMigration"`
+	TimeLastMigration *string `pulumi:"timeLastMigration"`
 	// The time of the last Migration details update. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Migration type.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
 	VaultDetails []GetMigrationVaultDetail `pulumi:"vaultDetails"`
 	// Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
-	WaitAfter string `pulumi:"waitAfter"`
+	WaitAfter *string `pulumi:"waitAfter"`
 }
 
 func LookupMigrationOutput(ctx *pulumi.Context, args LookupMigrationOutputArgs, opts ...pulumi.InvokeOption) LookupMigrationResultOutput {
@@ -158,34 +157,28 @@ func (o LookupMigrationResultOutput) ToLookupMigrationResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupMigrationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMigrationResult] {
-	return pulumix.Output[LookupMigrationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional Pre-Migration advisor settings.
 func (o LookupMigrationResultOutput) AdvisorSettings() GetMigrationAdvisorSettingArrayOutput {
 	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationAdvisorSetting { return v.AdvisorSettings }).(GetMigrationAdvisorSettingArrayOutput)
 }
 
 // The OCID of the registered on-premises ODMS Agent. Only valid for Offline Migrations.
-func (o LookupMigrationResultOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.AgentId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the compartment where the secret containing the credentials will be created.
-func (o LookupMigrationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
-func (o LookupMigrationResultOutput) CredentialsSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.CredentialsSecretId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) CredentialsSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.CredentialsSecretId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupMigrationResultOutput) CsvText() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.CsvText }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) CsvText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.CsvText }).(pulumi.StringPtrOutput)
 }
 
 // Data Transfer Medium details for the Migration.
@@ -212,8 +205,8 @@ func (o LookupMigrationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Migration Display Name
-func (o LookupMigrationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Optional additional properties for dump transfer.
@@ -227,8 +220,8 @@ func (o LookupMigrationResultOutput) ExcludeObjects() GetMigrationExcludeObjectA
 }
 
 // OCID of the current ODMS Job in execution for the Migration, if any.
-func (o LookupMigrationResultOutput) ExecutingJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.ExecutingJobId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) ExecutingJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.ExecutingJobId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -247,8 +240,8 @@ func (o LookupMigrationResultOutput) GoldenGateServiceDetails() GetMigrationGold
 }
 
 // The OCID of the resource
-func (o LookupMigrationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Database objects to include from migration.
@@ -257,8 +250,8 @@ func (o LookupMigrationResultOutput) IncludeObjects() GetMigrationIncludeObjectA
 }
 
 // Additional status related to the execution and current state of the Migration.
-func (o LookupMigrationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMigrationResultOutput) MigrationId() pulumi.StringOutput {
@@ -266,18 +259,18 @@ func (o LookupMigrationResultOutput) MigrationId() pulumi.StringOutput {
 }
 
 // The OCID of the Source Container Database Connection.
-func (o LookupMigrationResultOutput) SourceContainerDatabaseConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.SourceContainerDatabaseConnectionId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) SourceContainerDatabaseConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.SourceContainerDatabaseConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Source Database Connection.
-func (o LookupMigrationResultOutput) SourceDatabaseConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.SourceDatabaseConnectionId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) SourceDatabaseConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.SourceDatabaseConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Migration resource.
-func (o LookupMigrationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -286,28 +279,28 @@ func (o LookupMigrationResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the Target Database Connection.
-func (o LookupMigrationResultOutput) TargetDatabaseConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.TargetDatabaseConnectionId }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) TargetDatabaseConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.TargetDatabaseConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // The time the Migration was created. An RFC3339 formatted datetime string.
-func (o LookupMigrationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of last Migration. An RFC3339 formatted datetime string.
-func (o LookupMigrationResultOutput) TimeLastMigration() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.TimeLastMigration }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) TimeLastMigration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.TimeLastMigration }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last Migration details update. An RFC3339 formatted datetime string.
-func (o LookupMigrationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Migration type.
-func (o LookupMigrationResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
@@ -316,8 +309,8 @@ func (o LookupMigrationResultOutput) VaultDetails() GetMigrationVaultDetailArray
 }
 
 // Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
-func (o LookupMigrationResultOutput) WaitAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMigrationResult) string { return v.WaitAfter }).(pulumi.StringOutput)
+func (o LookupMigrationResultOutput) WaitAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMigrationResult) *string { return v.WaitAfter }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -108,41 +108,41 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The architecture type.
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// The OCID of the tenancy containing the registration profile.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Software source description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Software source name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the software source.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Identifying information for the specified lifecycle environment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfileLifecycleEnvironmentResult> LifecycleEnvironments;
-        public readonly string LifecycleStageId;
+        public readonly string? LifecycleStageId;
         /// <summary>
         /// Identifying information for the specified lifecycle stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProfileLifecycleStageResult> LifecycleStages;
-        public readonly string ManagedInstanceGroupId;
+        public readonly string? ManagedInstanceGroupId;
         /// <summary>
         /// Identifying information for the specified managed instance group.
         /// </summary>
@@ -150,16 +150,16 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The OCID of the management station.
         /// </summary>
-        public readonly string ManagementStationId;
+        public readonly string? ManagementStationId;
         /// <summary>
         /// The operating system family.
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         public readonly string ProfileId;
         /// <summary>
         /// The type of Profile. One of SOFTWARESOURCE, GROUP or LIFECYCLE.
         /// </summary>
-        public readonly string ProfileType;
+        public readonly string? ProfileType;
         public readonly ImmutableArray<string> SoftwareSourceIds;
         /// <summary>
         /// The list of software sources that the registration profile will use.
@@ -168,65 +168,65 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The current state of the registration profile.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the registration profile was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The software source vendor name.
         /// </summary>
-        public readonly string VendorName;
+        public readonly string? VendorName;
 
         [OutputConstructor]
         private GetProfileResult(
-            string archType,
+            string? archType,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProfileLifecycleEnvironmentResult> lifecycleEnvironments,
 
-            string lifecycleStageId,
+            string? lifecycleStageId,
 
             ImmutableArray<Outputs.GetProfileLifecycleStageResult> lifecycleStages,
 
-            string managedInstanceGroupId,
+            string? managedInstanceGroupId,
 
             ImmutableArray<Outputs.GetProfileManagedInstanceGroupResult> managedInstanceGroups,
 
-            string managementStationId,
+            string? managementStationId,
 
-            string osFamily,
+            string? osFamily,
 
             string profileId,
 
-            string profileType,
+            string? profileType,
 
             ImmutableArray<string> softwareSourceIds,
 
             ImmutableArray<Outputs.GetProfileSoftwareSourceResult> softwareSources,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vendorName)
+            string? vendorName)
         {
             ArchType = archType;
             CompartmentId = compartmentId;

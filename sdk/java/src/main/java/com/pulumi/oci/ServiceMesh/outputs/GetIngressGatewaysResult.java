@@ -29,7 +29,7 @@ public final class GetIngressGatewaysResult {
      * @return The list of ingress_gateway_collection.
      * 
      */
-    private List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections;
+    private @Nullable List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections;
     /**
      * @return The OCID of the service mesh in which this ingress gateway is created.
      * 
@@ -69,7 +69,7 @@ public final class GetIngressGatewaysResult {
      * 
      */
     public List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections() {
-        return this.ingressGatewayCollections;
+        return this.ingressGatewayCollections == null ? List.of() : this.ingressGatewayCollections;
     }
     /**
      * @return The OCID of the service mesh in which this ingress gateway is created.
@@ -105,7 +105,7 @@ public final class GetIngressGatewaysResult {
         private String compartmentId;
         private @Nullable List<GetIngressGatewaysFilter> filters;
         private @Nullable String id;
-        private List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections;
+        private @Nullable List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections;
         private @Nullable String meshId;
         private @Nullable String name;
         private @Nullable String state;
@@ -140,8 +140,8 @@ public final class GetIngressGatewaysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ingressGatewayCollections(List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections) {
-            this.ingressGatewayCollections = Objects.requireNonNull(ingressGatewayCollections);
+        public Builder ingressGatewayCollections(@Nullable List<GetIngressGatewaysIngressGatewayCollection> ingressGatewayCollections) {
+            this.ingressGatewayCollections = ingressGatewayCollections;
             return this;
         }
         public Builder ingressGatewayCollections(GetIngressGatewaysIngressGatewayCollection... ingressGatewayCollections) {

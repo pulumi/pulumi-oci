@@ -108,214 +108,136 @@ class GetWorkspaceApplicationResult:
     @property
     @pulumi.getter(name="applicationKey")
     def application_key(self) -> str:
-        """
-        The source application key to use when creating the application.
-        """
         return pulumi.get(self, "application_key")
 
     @property
     @pulumi.getter(name="applicationVersion")
-    def application_version(self) -> int:
-        """
-        The source application version of the application.
-        """
+    def application_version(self) -> Optional[int]:
         return pulumi.get(self, "application_version")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dependentObjectMetadatas")
-    def dependent_object_metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationDependentObjectMetadataResult']:
-        """
-        A list of dependent objects in this patch.
-        """
+    def dependent_object_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationDependentObjectMetadataResult']]:
         return pulumi.get(self, "dependent_object_metadatas")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the aggregator.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID of the resource that is used to uniquely identify the application
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
+    def identifier(self) -> Optional[str]:
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The key of the object.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
-        """
-        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
+    def key_map(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "key_map")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationMetadataResult']:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> str:
-        """
-        The object type.
-        """
+    def model_type(self) -> Optional[str]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> str:
-        """
-        The object's model version.
-        """
+    def model_version(self) -> Optional[str]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> int:
-        """
-        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
+    def object_status(self) -> Optional[int]:
         return pulumi.get(self, "object_status")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> int:
-        """
-        The object version.
-        """
+    def object_version(self) -> Optional[int]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Sequence['outputs.GetWorkspaceApplicationParentRefResult']:
-        """
-        A reference to the object's parent.
-        """
+    def parent_reves(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationParentRefResult']]:
         return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="publishedObjectMetadatas")
-    def published_object_metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationPublishedObjectMetadataResult']:
-        """
-        A list of objects that are published or unpublished in this patch.
-        """
+    def published_object_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationPublishedObjectMetadataResult']]:
         return pulumi.get(self, "published_object_metadatas")
 
     @property
     @pulumi.getter(name="registryMetadatas")
-    def registry_metadatas(self) -> Sequence['outputs.GetWorkspaceApplicationRegistryMetadataResult']:
+    def registry_metadatas(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationRegistryMetadataResult']]:
         return pulumi.get(self, "registry_metadatas")
 
     @property
     @pulumi.getter(name="sourceApplicationInfos")
-    def source_application_infos(self) -> Sequence['outputs.GetWorkspaceApplicationSourceApplicationInfoResult']:
-        """
-        The information about the application.
-        """
+    def source_application_infos(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationSourceApplicationInfoResult']]:
         return pulumi.get(self, "source_application_infos")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the workspace.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timePatched")
-    def time_patched(self) -> str:
-        """
-        The date and time the application was patched, in the timestamp format defined by RFC3339.
-        """
+    def time_patched(self) -> Optional[str]:
         return pulumi.get(self, "time_patched")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> str:
-        """
-        The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
-        """
         return pulumi.get(self, "workspace_id")
 
 
@@ -358,23 +280,7 @@ def get_workspace_application(application_key: Optional[str] = None,
                               workspace_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceApplicationResult:
     """
-    This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves an application using the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=var["workspace_application_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str application_key: The application key.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationKey'] = application_key
@@ -417,22 +323,6 @@ def get_workspace_application_output(application_key: Optional[pulumi.Input[str]
                                      workspace_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceApplicationResult]:
     """
-    This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves an application using the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=var["workspace_application_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str application_key: The application key.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

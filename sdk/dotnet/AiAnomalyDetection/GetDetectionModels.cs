@@ -177,7 +177,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of model_collection.
         /// </summary>
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
 
             ImmutableArray<Outputs.GetDetectionModelsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDetectionModelsModelCollectionResult> modelCollections,
 

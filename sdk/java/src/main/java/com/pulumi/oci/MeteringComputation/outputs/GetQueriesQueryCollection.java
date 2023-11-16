@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueriesQueryCollection {
-    private List<GetQueriesQueryCollectionItem> items;
+    private @Nullable List<GetQueriesQueryCollectionItem> items;
 
     private GetQueriesQueryCollection() {}
     public List<GetQueriesQueryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetQueriesQueryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetQueriesQueryCollectionItem> items;
+        private @Nullable List<GetQueriesQueryCollectionItem> items;
         public Builder() {}
         public Builder(GetQueriesQueryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetQueriesQueryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetQueriesQueryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetQueriesQueryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetQueriesQueryCollectionItem... items) {

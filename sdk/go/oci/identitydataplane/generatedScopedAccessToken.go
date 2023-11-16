@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
@@ -64,7 +63,7 @@ type GeneratedScopedAccessToken struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringOutput `pulumi:"scope"`
 	// The security token, signed by auth service
-	Token pulumi.StringOutput `pulumi:"token"`
+	Token pulumi.StringPtrOutput `pulumi:"token"`
 }
 
 // NewGeneratedScopedAccessToken registers a new resource with the given unique name, arguments, and options.
@@ -174,12 +173,6 @@ func (i *GeneratedScopedAccessToken) ToGeneratedScopedAccessTokenOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedScopedAccessTokenOutput)
 }
 
-func (i *GeneratedScopedAccessToken) ToOutput(ctx context.Context) pulumix.Output[*GeneratedScopedAccessToken] {
-	return pulumix.Output[*GeneratedScopedAccessToken]{
-		OutputState: i.ToGeneratedScopedAccessTokenOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GeneratedScopedAccessTokenArrayInput is an input type that accepts GeneratedScopedAccessTokenArray and GeneratedScopedAccessTokenArrayOutput values.
 // You can construct a concrete instance of `GeneratedScopedAccessTokenArrayInput` via:
 //
@@ -203,12 +196,6 @@ func (i GeneratedScopedAccessTokenArray) ToGeneratedScopedAccessTokenArrayOutput
 
 func (i GeneratedScopedAccessTokenArray) ToGeneratedScopedAccessTokenArrayOutputWithContext(ctx context.Context) GeneratedScopedAccessTokenArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedScopedAccessTokenArrayOutput)
-}
-
-func (i GeneratedScopedAccessTokenArray) ToOutput(ctx context.Context) pulumix.Output[[]*GeneratedScopedAccessToken] {
-	return pulumix.Output[[]*GeneratedScopedAccessToken]{
-		OutputState: i.ToGeneratedScopedAccessTokenArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GeneratedScopedAccessTokenMapInput is an input type that accepts GeneratedScopedAccessTokenMap and GeneratedScopedAccessTokenMapOutput values.
@@ -236,12 +223,6 @@ func (i GeneratedScopedAccessTokenMap) ToGeneratedScopedAccessTokenMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedScopedAccessTokenMapOutput)
 }
 
-func (i GeneratedScopedAccessTokenMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GeneratedScopedAccessToken] {
-	return pulumix.Output[map[string]*GeneratedScopedAccessToken]{
-		OutputState: i.ToGeneratedScopedAccessTokenMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GeneratedScopedAccessTokenOutput struct{ *pulumi.OutputState }
 
 func (GeneratedScopedAccessTokenOutput) ElementType() reflect.Type {
@@ -254,12 +235,6 @@ func (o GeneratedScopedAccessTokenOutput) ToGeneratedScopedAccessTokenOutput() G
 
 func (o GeneratedScopedAccessTokenOutput) ToGeneratedScopedAccessTokenOutputWithContext(ctx context.Context) GeneratedScopedAccessTokenOutput {
 	return o
-}
-
-func (o GeneratedScopedAccessTokenOutput) ToOutput(ctx context.Context) pulumix.Output[*GeneratedScopedAccessToken] {
-	return pulumix.Output[*GeneratedScopedAccessToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
@@ -276,8 +251,8 @@ func (o GeneratedScopedAccessTokenOutput) Scope() pulumi.StringOutput {
 }
 
 // The security token, signed by auth service
-func (o GeneratedScopedAccessTokenOutput) Token() pulumi.StringOutput {
-	return o.ApplyT(func(v *GeneratedScopedAccessToken) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
+func (o GeneratedScopedAccessTokenOutput) Token() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GeneratedScopedAccessToken) pulumi.StringPtrOutput { return v.Token }).(pulumi.StringPtrOutput)
 }
 
 type GeneratedScopedAccessTokenArrayOutput struct{ *pulumi.OutputState }
@@ -292,12 +267,6 @@ func (o GeneratedScopedAccessTokenArrayOutput) ToGeneratedScopedAccessTokenArray
 
 func (o GeneratedScopedAccessTokenArrayOutput) ToGeneratedScopedAccessTokenArrayOutputWithContext(ctx context.Context) GeneratedScopedAccessTokenArrayOutput {
 	return o
-}
-
-func (o GeneratedScopedAccessTokenArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GeneratedScopedAccessToken] {
-	return pulumix.Output[[]*GeneratedScopedAccessToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GeneratedScopedAccessTokenArrayOutput) Index(i pulumi.IntInput) GeneratedScopedAccessTokenOutput {
@@ -318,12 +287,6 @@ func (o GeneratedScopedAccessTokenMapOutput) ToGeneratedScopedAccessTokenMapOutp
 
 func (o GeneratedScopedAccessTokenMapOutput) ToGeneratedScopedAccessTokenMapOutputWithContext(ctx context.Context) GeneratedScopedAccessTokenMapOutput {
 	return o
-}
-
-func (o GeneratedScopedAccessTokenMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GeneratedScopedAccessToken] {
-	return pulumix.Output[map[string]*GeneratedScopedAccessToken]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GeneratedScopedAccessTokenMapOutput) MapIndex(k pulumi.StringInput) GeneratedScopedAccessTokenOutput {

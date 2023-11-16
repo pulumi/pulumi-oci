@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -134,140 +135,140 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Details about the state of the notebook session.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the state of the notebook session.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Details for the notebook session configuration.
      * 
      */
     @Export(name="notebookSessionConfigDetails", refs={NotebookSessionNotebookSessionConfigDetails.class}, tree="[0]")
-    private Output<NotebookSessionNotebookSessionConfigDetails> notebookSessionConfigDetails;
+    private Output</* @Nullable */ NotebookSessionNotebookSessionConfigDetails> notebookSessionConfigDetails;
 
     /**
      * @return Details for the notebook session configuration.
      * 
      */
-    public Output<NotebookSessionNotebookSessionConfigDetails> notebookSessionConfigDetails() {
-        return this.notebookSessionConfigDetails;
+    public Output<Optional<NotebookSessionNotebookSessionConfigDetails>> notebookSessionConfigDetails() {
+        return Codegen.optional(this.notebookSessionConfigDetails);
     }
     /**
      * (Updatable) Details for the notebook session configuration.
      * 
      */
     @Export(name="notebookSessionConfigurationDetails", refs={NotebookSessionNotebookSessionConfigurationDetails.class}, tree="[0]")
-    private Output<NotebookSessionNotebookSessionConfigurationDetails> notebookSessionConfigurationDetails;
+    private Output</* @Nullable */ NotebookSessionNotebookSessionConfigurationDetails> notebookSessionConfigurationDetails;
 
     /**
      * @return (Updatable) Details for the notebook session configuration.
      * 
      */
-    public Output<NotebookSessionNotebookSessionConfigurationDetails> notebookSessionConfigurationDetails() {
-        return this.notebookSessionConfigurationDetails;
+    public Output<Optional<NotebookSessionNotebookSessionConfigurationDetails>> notebookSessionConfigurationDetails() {
+        return Codegen.optional(this.notebookSessionConfigurationDetails);
     }
     /**
      * (Updatable) Notebook Session runtime configuration details.
      * 
      */
     @Export(name="notebookSessionRuntimeConfigDetails", refs={NotebookSessionNotebookSessionRuntimeConfigDetails.class}, tree="[0]")
-    private Output<NotebookSessionNotebookSessionRuntimeConfigDetails> notebookSessionRuntimeConfigDetails;
+    private Output</* @Nullable */ NotebookSessionNotebookSessionRuntimeConfigDetails> notebookSessionRuntimeConfigDetails;
 
     /**
      * @return (Updatable) Notebook Session runtime configuration details.
      * 
      */
-    public Output<NotebookSessionNotebookSessionRuntimeConfigDetails> notebookSessionRuntimeConfigDetails() {
-        return this.notebookSessionRuntimeConfigDetails;
+    public Output<Optional<NotebookSessionNotebookSessionRuntimeConfigDetails>> notebookSessionRuntimeConfigDetails() {
+        return Codegen.optional(this.notebookSessionRuntimeConfigDetails);
     }
     /**
      * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
      * 
      */
     @Export(name="notebookSessionStorageMountConfigurationDetailsLists", refs={List.class,NotebookSessionNotebookSessionStorageMountConfigurationDetailsList.class}, tree="[0,1]")
-    private Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>> notebookSessionStorageMountConfigurationDetailsLists;
+    private Output</* @Nullable */ List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>> notebookSessionStorageMountConfigurationDetailsLists;
 
     /**
      * @return (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
      * 
      */
-    public Output<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>> notebookSessionStorageMountConfigurationDetailsLists() {
-        return this.notebookSessionStorageMountConfigurationDetailsLists;
+    public Output<Optional<List<NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>>> notebookSessionStorageMountConfigurationDetailsLists() {
+        return Codegen.optional(this.notebookSessionStorageMountConfigurationDetailsLists);
     }
     /**
      * The URL to interact with the notebook session.
      * 
      */
     @Export(name="notebookSessionUrl", refs={String.class}, tree="[0]")
-    private Output<String> notebookSessionUrl;
+    private Output</* @Nullable */ String> notebookSessionUrl;
 
     /**
      * @return The URL to interact with the notebook session.
      * 
      */
-    public Output<String> notebookSessionUrl() {
-        return this.notebookSessionUrl;
+    public Output<Optional<String>> notebookSessionUrl() {
+        return Codegen.optional(this.notebookSessionUrl);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
@@ -294,28 +295,28 @@ public class NotebookSession extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the notebook session.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

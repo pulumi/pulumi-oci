@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationsManagementStationCollectionItem {
@@ -20,231 +22,231 @@ public final class GetManagementStationsManagementStationCollectionItem {
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Details describing the ManagementStation config.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Name of the host
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The OCID of the management station.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the managed instance for which to list resources.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
     /**
      * @return A decimal number representing the mirror capacity
      * 
      */
-    private Integer mirrorCapacity;
+    private @Nullable Integer mirrorCapacity;
     /**
      * @return Status summary of all repos
      * 
      */
-    private List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses;
+    private @Nullable List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses;
     /**
      * @return Information for a mirror configuration
      * 
      */
-    private List<GetManagementStationsManagementStationCollectionItemMirror> mirrors;
+    private @Nullable List<GetManagementStationsManagementStationCollectionItemMirror> mirrors;
     /**
      * @return A decimal number representing the completeness percentage
      * 
      */
-    private Integer overallPercentage;
+    private @Nullable Integer overallPercentage;
     /**
      * @return Current state of the mirroring
      * 
      */
-    private String overallState;
+    private @Nullable String overallState;
     /**
      * @return OCID of the Profile associated with the Station
      * 
      */
-    private String profileId;
+    private @Nullable String profileId;
     /**
      * @return Information for a proxy configuration
      * 
      */
-    private List<GetManagementStationsManagementStationCollectionItemProxy> proxies;
+    private @Nullable List<GetManagementStationsManagementStationCollectionItemProxy> proxies;
     /**
      * @return OCID of the Scheduled Job for mirror sync
      * 
      */
-    private String scheduledJobId;
+    private @Nullable String scheduledJobId;
     /**
      * @return The current lifecycle state for the object.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return A decimal number representing the total of repos
      * 
      */
-    private Integer totalMirrors;
+    private @Nullable Integer totalMirrors;
 
     private GetManagementStationsManagementStationCollectionItem() {}
     /**
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Details describing the ManagementStation config.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Name of the host
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The OCID of the management station.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the managed instance for which to list resources.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return A decimal number representing the mirror capacity
      * 
      */
-    public Integer mirrorCapacity() {
-        return this.mirrorCapacity;
+    public Optional<Integer> mirrorCapacity() {
+        return Optional.ofNullable(this.mirrorCapacity);
     }
     /**
      * @return Status summary of all repos
      * 
      */
     public List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses() {
-        return this.mirrorSyncStatuses;
+        return this.mirrorSyncStatuses == null ? List.of() : this.mirrorSyncStatuses;
     }
     /**
      * @return Information for a mirror configuration
      * 
      */
     public List<GetManagementStationsManagementStationCollectionItemMirror> mirrors() {
-        return this.mirrors;
+        return this.mirrors == null ? List.of() : this.mirrors;
     }
     /**
      * @return A decimal number representing the completeness percentage
      * 
      */
-    public Integer overallPercentage() {
-        return this.overallPercentage;
+    public Optional<Integer> overallPercentage() {
+        return Optional.ofNullable(this.overallPercentage);
     }
     /**
      * @return Current state of the mirroring
      * 
      */
-    public String overallState() {
-        return this.overallState;
+    public Optional<String> overallState() {
+        return Optional.ofNullable(this.overallState);
     }
     /**
      * @return OCID of the Profile associated with the Station
      * 
      */
-    public String profileId() {
-        return this.profileId;
+    public Optional<String> profileId() {
+        return Optional.ofNullable(this.profileId);
     }
     /**
      * @return Information for a proxy configuration
      * 
      */
     public List<GetManagementStationsManagementStationCollectionItemProxy> proxies() {
-        return this.proxies;
+        return this.proxies == null ? List.of() : this.proxies;
     }
     /**
      * @return OCID of the Scheduled Job for mirror sync
      * 
      */
-    public String scheduledJobId() {
-        return this.scheduledJobId;
+    public Optional<String> scheduledJobId() {
+        return Optional.ofNullable(this.scheduledJobId);
     }
     /**
      * @return The current lifecycle state for the object.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return A decimal number representing the total of repos
      * 
      */
-    public Integer totalMirrors() {
-        return this.totalMirrors;
+    public Optional<Integer> totalMirrors() {
+        return Optional.ofNullable(this.totalMirrors);
     }
 
     public static Builder builder() {
@@ -256,25 +258,25 @@ public final class GetManagementStationsManagementStationCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String hostname;
-        private String id;
-        private String managedInstanceId;
-        private Integer mirrorCapacity;
-        private List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses;
-        private List<GetManagementStationsManagementStationCollectionItemMirror> mirrors;
-        private Integer overallPercentage;
-        private String overallState;
-        private String profileId;
-        private List<GetManagementStationsManagementStationCollectionItemProxy> proxies;
-        private String scheduledJobId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private Integer totalMirrors;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable String managedInstanceId;
+        private @Nullable Integer mirrorCapacity;
+        private @Nullable List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses;
+        private @Nullable List<GetManagementStationsManagementStationCollectionItemMirror> mirrors;
+        private @Nullable Integer overallPercentage;
+        private @Nullable String overallState;
+        private @Nullable String profileId;
+        private @Nullable List<GetManagementStationsManagementStationCollectionItemProxy> proxies;
+        private @Nullable String scheduledJobId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Integer totalMirrors;
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -300,107 +302,107 @@ public final class GetManagementStationsManagementStationCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorCapacity(Integer mirrorCapacity) {
-            this.mirrorCapacity = Objects.requireNonNull(mirrorCapacity);
+        public Builder mirrorCapacity(@Nullable Integer mirrorCapacity) {
+            this.mirrorCapacity = mirrorCapacity;
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorSyncStatuses(List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses) {
-            this.mirrorSyncStatuses = Objects.requireNonNull(mirrorSyncStatuses);
+        public Builder mirrorSyncStatuses(@Nullable List<GetManagementStationsManagementStationCollectionItemMirrorSyncStatus> mirrorSyncStatuses) {
+            this.mirrorSyncStatuses = mirrorSyncStatuses;
             return this;
         }
         public Builder mirrorSyncStatuses(GetManagementStationsManagementStationCollectionItemMirrorSyncStatus... mirrorSyncStatuses) {
             return mirrorSyncStatuses(List.of(mirrorSyncStatuses));
         }
         @CustomType.Setter
-        public Builder mirrors(List<GetManagementStationsManagementStationCollectionItemMirror> mirrors) {
-            this.mirrors = Objects.requireNonNull(mirrors);
+        public Builder mirrors(@Nullable List<GetManagementStationsManagementStationCollectionItemMirror> mirrors) {
+            this.mirrors = mirrors;
             return this;
         }
         public Builder mirrors(GetManagementStationsManagementStationCollectionItemMirror... mirrors) {
             return mirrors(List.of(mirrors));
         }
         @CustomType.Setter
-        public Builder overallPercentage(Integer overallPercentage) {
-            this.overallPercentage = Objects.requireNonNull(overallPercentage);
+        public Builder overallPercentage(@Nullable Integer overallPercentage) {
+            this.overallPercentage = overallPercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder overallState(String overallState) {
-            this.overallState = Objects.requireNonNull(overallState);
+        public Builder overallState(@Nullable String overallState) {
+            this.overallState = overallState;
             return this;
         }
         @CustomType.Setter
-        public Builder profileId(String profileId) {
-            this.profileId = Objects.requireNonNull(profileId);
+        public Builder profileId(@Nullable String profileId) {
+            this.profileId = profileId;
             return this;
         }
         @CustomType.Setter
-        public Builder proxies(List<GetManagementStationsManagementStationCollectionItemProxy> proxies) {
-            this.proxies = Objects.requireNonNull(proxies);
+        public Builder proxies(@Nullable List<GetManagementStationsManagementStationCollectionItemProxy> proxies) {
+            this.proxies = proxies;
             return this;
         }
         public Builder proxies(GetManagementStationsManagementStationCollectionItemProxy... proxies) {
             return proxies(List.of(proxies));
         }
         @CustomType.Setter
-        public Builder scheduledJobId(String scheduledJobId) {
-            this.scheduledJobId = Objects.requireNonNull(scheduledJobId);
+        public Builder scheduledJobId(@Nullable String scheduledJobId) {
+            this.scheduledJobId = scheduledJobId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder totalMirrors(Integer totalMirrors) {
-            this.totalMirrors = Objects.requireNonNull(totalMirrors);
+        public Builder totalMirrors(@Nullable Integer totalMirrors) {
+            this.totalMirrors = totalMirrors;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItem build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
@@ -60,15 +59,15 @@ type GetVaultUsageArgs struct {
 // A collection of values returned by getVaultUsage.
 type GetVaultUsageResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
-	KeyCount int `pulumi:"keyCount"`
+	KeyCount *int `pulumi:"keyCount"`
 	// The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
-	KeyVersionCount int `pulumi:"keyVersionCount"`
+	KeyVersionCount *int `pulumi:"keyVersionCount"`
 	// The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
-	SoftwareKeyCount int `pulumi:"softwareKeyCount"`
+	SoftwareKeyCount *int `pulumi:"softwareKeyCount"`
 	// The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
-	SoftwareKeyVersionCount int    `pulumi:"softwareKeyVersionCount"`
+	SoftwareKeyVersionCount *int   `pulumi:"softwareKeyVersionCount"`
 	VaultId                 string `pulumi:"vaultId"`
 }
 
@@ -110,35 +109,29 @@ func (o GetVaultUsageResultOutput) ToGetVaultUsageResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetVaultUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultUsageResult] {
-	return pulumix.Output[GetVaultUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetVaultUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVaultUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVaultUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVaultUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
-func (o GetVaultUsageResultOutput) KeyCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVaultUsageResult) int { return v.KeyCount }).(pulumi.IntOutput)
+func (o GetVaultUsageResultOutput) KeyCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVaultUsageResult) *int { return v.KeyCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
-func (o GetVaultUsageResultOutput) KeyVersionCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVaultUsageResult) int { return v.KeyVersionCount }).(pulumi.IntOutput)
+func (o GetVaultUsageResultOutput) KeyVersionCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVaultUsageResult) *int { return v.KeyVersionCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
-func (o GetVaultUsageResultOutput) SoftwareKeyCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVaultUsageResult) int { return v.SoftwareKeyCount }).(pulumi.IntOutput)
+func (o GetVaultUsageResultOutput) SoftwareKeyCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVaultUsageResult) *int { return v.SoftwareKeyCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
-func (o GetVaultUsageResultOutput) SoftwareKeyVersionCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVaultUsageResult) int { return v.SoftwareKeyVersionCount }).(pulumi.IntOutput)
+func (o GetVaultUsageResultOutput) SoftwareKeyVersionCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVaultUsageResult) *int { return v.SoftwareKeyVersionCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetVaultUsageResultOutput) VaultId() pulumi.StringOutput {

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The current state of the security policy deployment.
         /// </summary>
-        public readonly string DeploymentStatus;
+        public readonly string? DeploymentStatus;
         /// <summary>
         /// Details specific to the security policy entry.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Unique id of the security policy entry state.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the security policy deployment resource.
         /// </summary>
-        public readonly string SecurityPolicyDeploymentId;
+        public readonly string? SecurityPolicyDeploymentId;
         /// <summary>
         /// An optional filter to return only resources that match the specified security policy entry OCID.
         /// </summary>
-        public readonly string SecurityPolicyEntryId;
+        public readonly string? SecurityPolicyEntryId;
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemResult(
-            string deploymentStatus,
+            string? deploymentStatus,
 
             ImmutableArray<Outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetailResult> entryDetails,
 
-            string id,
+            string? id,
 
-            string securityPolicyDeploymentId,
+            string? securityPolicyDeploymentId,
 
-            string securityPolicyEntryId)
+            string? securityPolicyEntryId)
         {
             DeploymentStatus = deploymentStatus;
             EntryDetails = entryDetails;

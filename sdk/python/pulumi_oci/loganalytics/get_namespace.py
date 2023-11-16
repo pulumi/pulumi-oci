@@ -37,15 +37,12 @@ class GetNamespaceResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The is the tenancy ID
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -53,18 +50,12 @@ class GetNamespaceResult:
 
     @property
     @pulumi.getter(name="isOnboarded")
-    def is_onboarded(self) -> bool:
-        """
-        This indicates if the tenancy is onboarded to Logging Analytics
-        """
+    def is_onboarded(self) -> Optional[bool]:
         return pulumi.get(self, "is_onboarded")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        This is the namespace name of a tenancy
-        """
         return pulumi.get(self, "namespace")
 
 
@@ -83,21 +74,7 @@ class AwaitableGetNamespaceResult(GetNamespaceResult):
 def get_namespace(namespace: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceResult:
     """
-    This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=var["namespace_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -115,20 +92,6 @@ def get_namespace(namespace: Optional[str] = None,
 def get_namespace_output(namespace: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceResult]:
     """
-    This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=var["namespace_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

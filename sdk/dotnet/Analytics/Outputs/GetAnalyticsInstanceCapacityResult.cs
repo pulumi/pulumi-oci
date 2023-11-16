@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// The capacity model to use.
         /// </summary>
-        public readonly string CapacityType;
+        public readonly string? CapacityType;
         /// <summary>
         /// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         /// </summary>
-        public readonly int CapacityValue;
+        public readonly int? CapacityValue;
 
         [OutputConstructor]
         private GetAnalyticsInstanceCapacityResult(
-            string capacityType,
+            string? capacityType,
 
-            int capacityValue)
+            int? capacityValue)
         {
             CapacityType = capacityType;
             CapacityValue = capacityValue;

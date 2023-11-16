@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection {
-    private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
+    private @Nullable List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
 
     private GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection() {}
     public List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
+        private @Nullable List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items;
         public Builder() {}
         public Builder(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem... items) {

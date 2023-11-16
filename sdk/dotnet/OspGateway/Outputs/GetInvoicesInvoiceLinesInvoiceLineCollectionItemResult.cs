@@ -20,55 +20,55 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Unit price of the ordered product
         /// </summary>
-        public readonly double NetUnitPrice;
+        public readonly double? NetUnitPrice;
         /// <summary>
         /// Product of the item
         /// </summary>
-        public readonly string OrderNo;
+        public readonly string? OrderNo;
         /// <summary>
         /// Part number
         /// </summary>
-        public readonly string PartNumber;
+        public readonly string? PartNumber;
         /// <summary>
         /// Product of the item
         /// </summary>
-        public readonly string Product;
+        public readonly string? Product;
         /// <summary>
         /// Quantity of the ordered product
         /// </summary>
-        public readonly double Quantity;
+        public readonly double? Quantity;
         /// <summary>
         /// End date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Total price of the ordered product (Net unit price x quantity)
         /// </summary>
-        public readonly double TotalPrice;
+        public readonly double? TotalPrice;
 
         [OutputConstructor]
         private GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult(
             ImmutableArray<Outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult> currencies,
 
-            double netUnitPrice,
+            double? netUnitPrice,
 
-            string orderNo,
+            string? orderNo,
 
-            string partNumber,
+            string? partNumber,
 
-            string product,
+            string? product,
 
-            double quantity,
+            double? quantity,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart,
+            string? timeStart,
 
-            double totalPrice)
+            double? totalPrice)
         {
             Currencies = currencies;
             NetUnitPrice = netUnitPrice;

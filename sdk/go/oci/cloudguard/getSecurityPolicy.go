@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,34 +59,34 @@ type GetSecurityPolicyArgs struct {
 // A collection of values returned by getSecurityPolicy.
 type GetSecurityPolicyResult struct {
 	// The category of security policy
-	Category string `pulumi:"category"`
+	Category *string `pulumi:"category"`
 	// The id of the security policy's compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The security policy's description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The security policy's full name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A shorter version of the security policy's name
-	FriendlyName string `pulumi:"friendlyName"`
+	FriendlyName *string `pulumi:"friendlyName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The owner of the security policy
-	Owner            string `pulumi:"owner"`
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	Owner            *string `pulumi:"owner"`
+	SecurityPolicyId string  `pulumi:"securityPolicyId"`
 	// The list of services that the security policy protects
 	Services []string `pulumi:"services"`
 	// The current state of the security policy
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the security policy was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the security policy was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetSecurityPolicyOutput(ctx *pulumi.Context, args GetSecurityPolicyOutputArgs, opts ...pulumi.InvokeOption) GetSecurityPolicyResultOutput {
@@ -128,20 +127,14 @@ func (o GetSecurityPolicyResultOutput) ToGetSecurityPolicyResultOutputWithContex
 	return o
 }
 
-func (o GetSecurityPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityPolicyResult] {
-	return pulumix.Output[GetSecurityPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category of security policy
-func (o GetSecurityPolicyResultOutput) Category() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.Category }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // The id of the security policy's compartment
-func (o GetSecurityPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -150,13 +143,13 @@ func (o GetSecurityPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The security policy's description
-func (o GetSecurityPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The security policy's full name
-func (o GetSecurityPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -165,23 +158,23 @@ func (o GetSecurityPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A shorter version of the security policy's name
-func (o GetSecurityPolicyResultOutput) FriendlyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.FriendlyName }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) FriendlyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.FriendlyName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
-func (o GetSecurityPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The owner of the security policy
-func (o GetSecurityPolicyResultOutput) Owner() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.Owner }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput {
@@ -194,18 +187,18 @@ func (o GetSecurityPolicyResultOutput) Services() pulumi.StringArrayOutput {
 }
 
 // The current state of the security policy
-func (o GetSecurityPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the security policy was created. An RFC3339 formatted datetime string.
-func (o GetSecurityPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the security policy was last updated. An RFC3339 formatted datetime string.
-func (o GetSecurityPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSecurityPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

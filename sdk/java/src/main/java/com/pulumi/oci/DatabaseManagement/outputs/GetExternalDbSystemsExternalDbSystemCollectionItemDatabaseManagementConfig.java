@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig {
@@ -13,15 +15,15 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseMan
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
 
     private GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig() {}
     /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseMan
     }
     @CustomType.Builder
     public static final class Builder {
-        private String licenseModel;
+        private @Nullable String licenseModel;
         public Builder() {}
         public Builder(GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseMan
         }
 
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         public GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig build() {

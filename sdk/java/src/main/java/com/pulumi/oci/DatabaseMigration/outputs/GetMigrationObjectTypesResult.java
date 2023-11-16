@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationObjectTypesMigration
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetMigrationObjectTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of migration_object_type_summary_collection.
      * 
      */
-    private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
+    private @Nullable List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
 
     private GetMigrationObjectTypesResult() {}
     public List<GetMigrationObjectTypesFilter> filters() {
@@ -33,15 +34,15 @@ public final class GetMigrationObjectTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of migration_object_type_summary_collection.
      * 
      */
     public List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections() {
-        return this.migrationObjectTypeSummaryCollections;
+        return this.migrationObjectTypeSummaryCollections == null ? List.of() : this.migrationObjectTypeSummaryCollections;
     }
 
     public static Builder builder() {
@@ -54,8 +55,8 @@ public final class GetMigrationObjectTypesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetMigrationObjectTypesFilter> filters;
-        private String id;
-        private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
         public Builder() {}
         public Builder(GetMigrationObjectTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,13 +74,13 @@ public final class GetMigrationObjectTypesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder migrationObjectTypeSummaryCollections(List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections) {
-            this.migrationObjectTypeSummaryCollections = Objects.requireNonNull(migrationObjectTypeSummaryCollections);
+        public Builder migrationObjectTypeSummaryCollections(@Nullable List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections) {
+            this.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;
             return this;
         }
         public Builder migrationObjectTypeSummaryCollections(GetMigrationObjectTypesMigrationObjectTypeSummaryCollection... migrationObjectTypeSummaryCollections) {

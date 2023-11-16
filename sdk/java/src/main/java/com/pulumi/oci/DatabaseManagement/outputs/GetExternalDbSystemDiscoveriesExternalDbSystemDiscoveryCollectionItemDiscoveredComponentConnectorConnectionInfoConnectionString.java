@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString {
@@ -15,63 +17,63 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The list of host names of the ASM instances.
      * 
      */
-    private List<String> hosts;
+    private @Nullable List<String> hosts;
     /**
      * @return The port used to connect to the ASM instance.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol used to connect to the ASM instance.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The service name of the ASM instance.
      * 
      */
-    private String service;
+    private @Nullable String service;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString() {}
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The list of host names of the ASM instances.
      * 
      */
     public List<String> hosts() {
-        return this.hosts;
+        return this.hosts == null ? List.of() : this.hosts;
     }
     /**
      * @return The port used to connect to the ASM instance.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol used to connect to the ASM instance.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The service name of the ASM instance.
      * 
      */
-    public String service() {
-        return this.service;
+    public Optional<String> service() {
+        return Optional.ofNullable(this.service);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostName;
-        private List<String> hosts;
-        private Integer port;
-        private String protocol;
-        private String service;
+        private @Nullable String hostName;
+        private @Nullable List<String> hosts;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String service;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder hosts(List<String> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+        public Builder hosts(@Nullable List<String> hosts) {
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(String... hosts) {
             return hosts(List.of(hosts));
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+        public Builder service(@Nullable String service) {
+            this.service = service;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionString build() {

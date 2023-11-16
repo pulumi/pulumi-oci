@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
@@ -63,7 +62,7 @@ type GetImageShapeArgs struct {
 // A collection of values returned by getImageShape.
 type GetImageShapeResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ImageId string `pulumi:"imageId"`
 	// For a flexible image and shape, the amount of memory supported for instances that use this image.
@@ -71,8 +70,8 @@ type GetImageShapeResult struct {
 	// OCPU options for an image and shape.
 	OcpuConstraints []GetImageShapeOcpuConstraint `pulumi:"ocpuConstraints"`
 	// The shape name.
-	Shape     string `pulumi:"shape"`
-	ShapeName string `pulumi:"shapeName"`
+	Shape     *string `pulumi:"shape"`
+	ShapeName string  `pulumi:"shapeName"`
 }
 
 func GetImageShapeOutput(ctx *pulumi.Context, args GetImageShapeOutputArgs, opts ...pulumi.InvokeOption) GetImageShapeResultOutput {
@@ -115,15 +114,9 @@ func (o GetImageShapeResultOutput) ToGetImageShapeResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetImageShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImageShapeResult] {
-	return pulumix.Output[GetImageShapeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetImageShapeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImageShapeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetImageShapeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImageShapeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -142,8 +135,8 @@ func (o GetImageShapeResultOutput) OcpuConstraints() GetImageShapeOcpuConstraint
 }
 
 // The shape name.
-func (o GetImageShapeResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImageShapeResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetImageShapeResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImageShapeResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 func (o GetImageShapeResultOutput) ShapeName() pulumi.StringOutput {

@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The total count of the aggregated metric.
         /// </summary>
-        public readonly string SqlCollectionAnalyticCount;
+        public readonly string? SqlCollectionAnalyticCount;
 
         [OutputConstructor]
         private GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemResult(
             ImmutableArray<Outputs.GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionResult> dimensions,
 
-            string sqlCollectionAnalyticCount)
+            string? sqlCollectionAnalyticCount)
         {
             Dimensions = dimensions;
             SqlCollectionAnalyticCount = sqlCollectionAnalyticCount;

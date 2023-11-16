@@ -55,58 +55,37 @@ class GetSenderResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID for the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the sender.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="emailDomainId")
-    def email_domain_id(self) -> str:
-        """
-        The email domain used to assert responsibility for emails sent from this sender.
-        """
+    def email_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "email_domain_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID of the sender.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isSpf")
-    def is_spf(self) -> bool:
-        """
-        Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-        """
+    def is_spf(self) -> Optional[bool]:
         return pulumi.get(self, "is_spf")
 
     @property
@@ -116,18 +95,12 @@ class GetSenderResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current status of the approved sender.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -152,21 +125,7 @@ class AwaitableGetSenderResult(GetSenderResult):
 def get_sender(sender_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSenderResult:
     """
-    This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
-
-    Gets an approved sender for a given `senderId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sender = oci.Email.get_sender(sender_id=oci_email_sender["test_sender"]["id"])
-    ```
-
-
-    :param str sender_id: The unique OCID of the sender.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['senderId'] = sender_id
@@ -190,20 +149,6 @@ def get_sender(sender_id: Optional[str] = None,
 def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSenderResult]:
     """
-    This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
-
-    Gets an approved sender for a given `senderId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sender = oci.Email.get_sender(sender_id=oci_email_sender["test_sender"]["id"])
-    ```
-
-
-    :param str sender_id: The unique OCID of the sender.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -46,9 +46,6 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult:
     @property
     @pulumi.getter(name="deploymentStatus")
     def deployment_status(self) -> Optional[str]:
-        """
-        The current deployment status of the security policy deployment and the security policy entry associated.
-        """
         return pulumi.get(self, "deployment_status")
 
     @property
@@ -58,7 +55,7 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +64,16 @@ class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult:
     @property
     @pulumi.getter(name="securityPolicyDeploymentId")
     def security_policy_deployment_id(self) -> str:
-        """
-        The OCID of the security policy deployment associated.
-        """
         return pulumi.get(self, "security_policy_deployment_id")
 
     @property
     @pulumi.getter(name="securityPolicyEntryId")
     def security_policy_entry_id(self) -> Optional[str]:
-        """
-        The OCID of the security policy entry type associated.
-        """
         return pulumi.get(self, "security_policy_entry_id")
 
     @property
     @pulumi.getter(name="securityPolicyEntryStateCollections")
-    def security_policy_entry_state_collections(self) -> Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult']:
-        """
-        The list of security_policy_entry_state_collection.
-        """
+    def security_policy_entry_state_collections(self) -> Optional[Sequence['outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult']]:
         return pulumi.get(self, "security_policy_entry_state_collections")
 
 
@@ -109,27 +97,7 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
                                                                 security_policy_entry_id: Optional[str] = None,
                                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult:
     """
-    This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all security policy entry states in Data Safe.
-
-    The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_policy_deployment_security_policy_entry_states = oci.DataSafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
-        deployment_status=var["security_policy_deployment_security_policy_entry_state_deployment_status"],
-        security_policy_entry_id=oci_data_safe_security_policy_entry["test_security_policy_entry"]["id"])
-    ```
-
-
-    :param str deployment_status: The current state of the security policy deployment.
-    :param str security_policy_deployment_id: The OCID of the security policy deployment resource.
-    :param str security_policy_entry_id: An optional filter to return only resources that match the specified security policy entry OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentStatus'] = deployment_status
@@ -155,26 +123,6 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
                                                                        security_policy_entry_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult]:
     """
-    This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all security policy entry states in Data Safe.
-
-    The ListSecurityPolicyEntryStates operation returns only the security policy entry states for the specified security policy entry.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_policy_deployment_security_policy_entry_states = oci.DataSafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
-        deployment_status=var["security_policy_deployment_security_policy_entry_state_deployment_status"],
-        security_policy_entry_id=oci_data_safe_security_policy_entry["test_security_policy_entry"]["id"])
-    ```
-
-
-    :param str deployment_status: The current state of the security policy deployment.
-    :param str security_policy_deployment_id: The OCID of the security policy deployment resource.
-    :param str security_policy_entry_id: An optional filter to return only resources that match the specified security policy entry OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

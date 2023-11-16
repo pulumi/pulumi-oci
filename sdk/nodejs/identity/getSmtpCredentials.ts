@@ -51,11 +51,11 @@ export interface GetSmtpCredentialsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of smtp_credentials.
      */
-    readonly smtpCredentials: outputs.Identity.GetSmtpCredentialsSmtpCredential[];
+    readonly smtpCredentials?: outputs.Identity.GetSmtpCredentialsSmtpCredential[];
     /**
      * The OCID of the user the SMTP credential belongs to.
      */

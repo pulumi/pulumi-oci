@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the `IdentityProvider` this user belongs to.
         /// </summary>
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetUsersFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? identityProviderId,
 

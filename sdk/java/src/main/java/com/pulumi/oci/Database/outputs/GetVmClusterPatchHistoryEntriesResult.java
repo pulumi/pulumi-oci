@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetVmClusterPatchHistoryEntriesPatchHisto
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetVmClusterPatchHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of patch_history_entries.
      * 
      */
-    private List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
+    private @Nullable List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
     private String vmClusterId;
 
     private GetVmClusterPatchHistoryEntriesResult() {}
@@ -34,15 +35,15 @@ public final class GetVmClusterPatchHistoryEntriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of patch_history_entries.
      * 
      */
     public List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries() {
-        return this.patchHistoryEntries;
+        return this.patchHistoryEntries == null ? List.of() : this.patchHistoryEntries;
     }
     public String vmClusterId() {
         return this.vmClusterId;
@@ -58,8 +59,8 @@ public final class GetVmClusterPatchHistoryEntriesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters;
-        private String id;
-        private List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
+        private @Nullable String id;
+        private @Nullable List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries;
         private String vmClusterId;
         public Builder() {}
         public Builder(GetVmClusterPatchHistoryEntriesResult defaults) {
@@ -79,13 +80,13 @@ public final class GetVmClusterPatchHistoryEntriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder patchHistoryEntries(List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
-            this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
+        public Builder patchHistoryEntries(@Nullable List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
+            this.patchHistoryEntries = patchHistoryEntries;
             return this;
         }
         public Builder patchHistoryEntries(GetVmClusterPatchHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {

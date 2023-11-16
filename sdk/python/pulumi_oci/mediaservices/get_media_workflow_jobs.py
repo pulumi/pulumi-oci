@@ -49,17 +49,11 @@ class GetMediaWorkflowJobsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetMediaWorkflowJobsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The ID associated with the job output.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="mediaWorkflowId")
     def media_workflow_id(self) -> Optional[str]:
-        """
-        The workflow to execute.
-        """
         return pulumi.get(self, "media_workflow_id")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobCollections")
-    def media_workflow_job_collections(self) -> Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionResult']:
-        """
-        The list of media_workflow_job_collection.
-        """
+    def media_workflow_job_collections(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionResult']]:
         return pulumi.get(self, "media_workflow_job_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_media_workflow_jobs(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowJobsResult:
     """
-    This data source provides the list of Media Workflow Jobs in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the MediaWorkflowJobs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_jobs = oci.MediaServices.get_media_workflow_jobs(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_job_display_name"],
-        id=var["media_workflow_job_id"],
-        media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        state=var["media_workflow_job_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: unique MediaWorkflowJob identifier
-    :param str media_workflow_id: Unique MediaWorkflow identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_media_workflow_jobs_output(compartment_id: Optional[pulumi.Input[Optiona
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobsResult]:
     """
-    This data source provides the list of Media Workflow Jobs in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the MediaWorkflowJobs.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_jobs = oci.MediaServices.get_media_workflow_jobs(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_job_display_name"],
-        id=var["media_workflow_job_id"],
-        media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        state=var["media_workflow_job_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only the resources that match the entire display name given.
-    :param str id: unique MediaWorkflowJob identifier
-    :param str media_workflow_id: Unique MediaWorkflow identifier.
-    :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

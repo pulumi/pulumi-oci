@@ -68,42 +68,27 @@ class GetExternalDbSystemResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseManagementConfigs")
-    def database_management_configs(self) -> Sequence['outputs.GetExternalDbSystemDatabaseManagementConfigResult']:
-        """
-        The details required to enable Database Management for an external DB system.
-        """
+    def database_management_configs(self) -> Optional[Sequence['outputs.GetExternalDbSystemDatabaseManagementConfigResult']]:
         return pulumi.get(self, "database_management_configs")
 
     @property
     @pulumi.getter(name="dbSystemDiscoveryId")
-    def db_system_discovery_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
-        """
+    def db_system_discovery_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_discovery_id")
 
     @property
     @pulumi.getter(name="discoveryAgentId")
-    def discovery_agent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
-        """
+    def discovery_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "discovery_agent_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -113,66 +98,42 @@ class GetExternalDbSystemResult:
 
     @property
     @pulumi.getter(name="homeDirectory")
-    def home_directory(self) -> str:
-        """
-        The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
-        """
+    def home_directory(self) -> Optional[str]:
         return pulumi.get(self, "home_directory")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> bool:
-        """
-        Indicates whether the DB system is a cluster DB system or not.
-        """
+    def is_cluster(self) -> Optional[bool]:
         return pulumi.get(self, "is_cluster")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="stackMonitoringConfigs")
-    def stack_monitoring_configs(self) -> Sequence['outputs.GetExternalDbSystemStackMonitoringConfigResult']:
-        """
-        The configuration details of Stack Monitoring for an external DB system.
-        """
+    def stack_monitoring_configs(self) -> Optional[Sequence['outputs.GetExternalDbSystemStackMonitoringConfigResult']]:
         return pulumi.get(self, "stack_monitoring_configs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external DB system resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external DB system was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external DB system was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetExternalDbSystemResult(GetExternalDbSystemResult):
 def get_external_db_system(external_db_system_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemResult:
     """
-    This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB system specified by `externalDbSystemId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_system = oci.DatabaseManagement.get_external_db_system(external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalDbSystemId'] = external_db_system_id
@@ -243,20 +190,6 @@ def get_external_db_system(external_db_system_id: Optional[str] = None,
 def get_external_db_system_output(external_db_system_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemResult]:
     """
-    This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB system specified by `externalDbSystemId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_system = oci.DatabaseManagement.get_external_db_system(external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     ...

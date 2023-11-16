@@ -39,30 +39,21 @@ class GetAuthenticationPolicyResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="networkPolicies")
-    def network_policies(self) -> Sequence['outputs.GetAuthenticationPolicyNetworkPolicyResult']:
-        """
-        Network policy, Consists of a list of Network Source ids.
-        """
+    def network_policies(self) -> Optional[Sequence['outputs.GetAuthenticationPolicyNetworkPolicyResult']]:
         return pulumi.get(self, "network_policies")
 
     @property
     @pulumi.getter(name="passwordPolicies")
-    def password_policies(self) -> Sequence['outputs.GetAuthenticationPolicyPasswordPolicyResult']:
-        """
-        Password policy, currently set for the given compartment.
-        """
+    def password_policies(self) -> Optional[Sequence['outputs.GetAuthenticationPolicyPasswordPolicyResult']]:
         return pulumi.get(self, "password_policies")
 
 
@@ -81,22 +72,7 @@ class AwaitableGetAuthenticationPolicyResult(GetAuthenticationPolicyResult):
 def get_authentication_policy(compartment_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthenticationPolicyResult:
     """
-    This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
-    the compartment ID (remember that the tenancy is simply the root compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,21 +90,6 @@ def get_authentication_policy(compartment_id: Optional[str] = None,
 def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthenticationPolicyResult]:
     """
-    This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
-    the compartment ID (remember that the tenancy is simply the root compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

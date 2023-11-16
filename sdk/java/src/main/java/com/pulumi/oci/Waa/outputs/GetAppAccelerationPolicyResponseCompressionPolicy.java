@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppAccelerationPolicyResponseCompressionPolicy {
@@ -14,7 +15,7 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
      * @return An object that specifies the gzip compression policy.
      * 
      */
-    private List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
+    private @Nullable List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
 
     private GetAppAccelerationPolicyResponseCompressionPolicy() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
      * 
      */
     public List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions() {
-        return this.gzipCompressions;
+        return this.gzipCompressions == null ? List.of() : this.gzipCompressions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
+        private @Nullable List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions;
         public Builder() {}
         public Builder(GetAppAccelerationPolicyResponseCompressionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
         }
 
         @CustomType.Setter
-        public Builder gzipCompressions(List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions) {
-            this.gzipCompressions = Objects.requireNonNull(gzipCompressions);
+        public Builder gzipCompressions(@Nullable List<GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression> gzipCompressions) {
+            this.gzipCompressions = gzipCompressions;
             return this;
         }
         public Builder gzipCompressions(GetAppAccelerationPolicyResponseCompressionPolicyGzipCompression... gzipCompressions) {

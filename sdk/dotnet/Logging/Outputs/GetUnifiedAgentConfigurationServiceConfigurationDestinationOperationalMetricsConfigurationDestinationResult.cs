@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// The OCID of the compartment that the resource belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
 
         [OutputConstructor]
-        private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationResult(string compartmentId)
+        private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationResult(string? compartmentId)
         {
             CompartmentId = compartmentId;
         }

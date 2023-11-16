@@ -16,31 +16,31 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name associated with the compartment.
         /// </summary>
-        public readonly string CompartmentName;
+        public readonly string? CompartmentName;
         /// <summary>
         /// Text describing the category.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The estimated cost savings, in dollars, for the category.
         /// </summary>
-        public readonly double EstimatedCostSaving;
+        public readonly double? EstimatedCostSaving;
         /// <summary>
         /// Additional metadata key/value pairs for the category.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, object>? ExtendedMetadata;
         /// <summary>
         /// The unique OCID of the category.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
         /// </summary>
@@ -52,41 +52,41 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// A filter that returns results that match the lifecycle state specified.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the category details were created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the category details were last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetCategoriesCategoryCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string compartmentName,
+            string? compartmentName,
 
-            string description,
+            string? description,
 
-            double estimatedCostSaving,
+            double? estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, object>? extendedMetadata,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult> recommendationCounts,
 
             ImmutableArray<Outputs.GetCategoriesCategoryCollectionItemResourceCountResult> resourceCounts,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             CompartmentName = compartmentName;

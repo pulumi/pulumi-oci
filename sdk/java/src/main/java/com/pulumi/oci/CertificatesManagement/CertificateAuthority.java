@@ -99,42 +99,42 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
-    private Output<String> configType;
+    private Output</* @Nullable */ String> configType;
 
     /**
      * @return (Updatable) The origin of the CA.
      * 
      */
-    public Output<String> configType() {
-        return this.configType;
+    public Output<Optional<String>> configType() {
+        return Codegen.optional(this.configType);
     }
     /**
      * The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      * 
      */
     @Export(name="currentVersions", refs={List.class,CertificateAuthorityCurrentVersion.class}, tree="[0,1]")
-    private Output<List<CertificateAuthorityCurrentVersion>> currentVersions;
+    private Output</* @Nullable */ List<CertificateAuthorityCurrentVersion>> currentVersions;
 
     /**
      * @return The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      * 
      */
-    public Output<List<CertificateAuthorityCurrentVersion>> currentVersions() {
-        return this.currentVersions;
+    public Output<Optional<List<CertificateAuthorityCurrentVersion>>> currentVersions() {
+        return Codegen.optional(this.currentVersions);
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A brief description of the CA.
@@ -155,28 +155,28 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The OCID of the private CA.
      * 
      */
     @Export(name="issuerCertificateAuthorityId", refs={String.class}, tree="[0]")
-    private Output<String> issuerCertificateAuthorityId;
+    private Output</* @Nullable */ String> issuerCertificateAuthorityId;
 
     /**
      * @return The OCID of the private CA.
      * 
      */
-    public Output<String> issuerCertificateAuthorityId() {
-        return this.issuerCertificateAuthorityId;
+    public Output<Optional<String>> issuerCertificateAuthorityId() {
+        return Codegen.optional(this.issuerCertificateAuthorityId);
     }
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -197,14 +197,14 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current CA lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -231,70 +231,70 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="signingAlgorithm", refs={String.class}, tree="[0]")
-    private Output<String> signingAlgorithm;
+    private Output</* @Nullable */ String> signingAlgorithm;
 
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    public Output<String> signingAlgorithm() {
-        return this.signingAlgorithm;
+    public Output<Optional<String>> signingAlgorithm() {
+        return Codegen.optional(this.signingAlgorithm);
     }
     /**
      * The current lifecycle state of the certificate authority.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the certificate authority.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
     @Export(name="subjects", refs={List.class,CertificateAuthoritySubject.class}, tree="[0,1]")
-    private Output<List<CertificateAuthoritySubject>> subjects;
+    private Output</* @Nullable */ List<CertificateAuthoritySubject>> subjects;
 
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    public Output<List<CertificateAuthoritySubject>> subjects() {
-        return this.subjects;
+    public Output<Optional<List<CertificateAuthoritySubject>>> subjects() {
+        return Codegen.optional(this.subjects);
     }
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
 
     /**

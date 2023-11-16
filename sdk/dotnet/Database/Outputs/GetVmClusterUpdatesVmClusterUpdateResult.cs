@@ -20,55 +20,55 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Details of the maintenance update package.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The update action performed most recently using this maintenance update.
         /// </summary>
-        public readonly string LastAction;
+        public readonly string? LastAction;
         /// <summary>
         /// Descriptive text providing additional details about the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the maintenance update was released.
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// A filter to return only resources that match the given update type exactly.
         /// </summary>
-        public readonly string UpdateType;
+        public readonly string? UpdateType;
         /// <summary>
         /// The version of the maintenance update package.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetVmClusterUpdatesVmClusterUpdateResult(
             ImmutableArray<string> availableActions,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string lastAction,
+            string? lastAction,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeReleased,
+            string? timeReleased,
 
-            string updateType,
+            string? updateType,
 
-            string version)
+            string? version)
         {
             AvailableActions = availableActions;
             Description = description;

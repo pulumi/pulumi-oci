@@ -51,11 +51,11 @@ export interface GetRepositoryCommitResult {
     /**
      * Email of the author of the repository.
      */
-    readonly authorEmail: string;
+    readonly authorEmail?: string;
     /**
      * Name of the author of the repository.
      */
-    readonly authorName: string;
+    readonly authorName?: string;
     /**
      * Commit hash pointed to by reference name.
      */
@@ -63,32 +63,32 @@ export interface GetRepositoryCommitResult {
     /**
      * The commit message.
      */
-    readonly commitMessage: string;
+    readonly commitMessage?: string;
     /**
      * Email of who creates the commit.
      */
-    readonly committerEmail: string;
+    readonly committerEmail?: string;
     /**
      * Name of who creates the commit.
      */
-    readonly committerName: string;
+    readonly committerName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of parent commit IDs of created commit.
      */
-    readonly parentCommitIds: string[];
+    readonly parentCommitIds?: string[];
     readonly repositoryId: string;
     /**
      * The time at which commit was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Tree information for the specified commit.
      */
-    readonly treeId: string;
+    readonly treeId?: string;
 }
 /**
  * This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.

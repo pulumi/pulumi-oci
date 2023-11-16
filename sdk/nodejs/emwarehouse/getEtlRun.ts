@@ -68,11 +68,11 @@ export interface GetEtlRunResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of runs
      */
-    readonly items: outputs.EmWarehouse.GetEtlRunItem[];
+    readonly items?: outputs.EmWarehouse.GetEtlRunItem[];
 }
 /**
  * This data source provides details about a specific Em Warehouse Etl Run resource in Oracle Cloud Infrastructure Em Warehouse service.

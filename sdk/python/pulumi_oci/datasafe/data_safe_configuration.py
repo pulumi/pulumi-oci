@@ -20,12 +20,6 @@ class DataSafeConfigurationArgs:
                  compartment_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DataSafeConfiguration resource.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if compartment_id is not None:
@@ -34,13 +28,6 @@ class DataSafeConfigurationArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Indicates if Data Safe is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -50,9 +37,6 @@ class DataSafeConfigurationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A filter to return only resources that match the specified compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -74,19 +58,6 @@ class _DataSafeConfigurationState:
                  url: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DataSafeConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
-        :param pulumi.Input[str] data_safe_nat_gateway_ip_address: The Oracle Data Safe's NAT Gateway IP Address.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]] global_settings: Details of the tenancy level global settings in Data Safe.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of Data Safe.
-        :param pulumi.Input[str] time_enabled: The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] url: The URL of the Data Safe service.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -110,9 +81,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A filter to return only resources that match the specified compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -122,9 +90,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="dataSafeNatGatewayIpAddress")
     def data_safe_nat_gateway_ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Data Safe's NAT Gateway IP Address.
-        """
         return pulumi.get(self, "data_safe_nat_gateway_ip_address")
 
     @data_safe_nat_gateway_ip_address.setter
@@ -134,9 +99,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -146,9 +108,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -158,9 +117,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="globalSettings")
     def global_settings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]]:
-        """
-        Details of the tenancy level global settings in Data Safe.
-        """
         return pulumi.get(self, "global_settings")
 
     @global_settings.setter
@@ -170,13 +126,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if Data Safe is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -186,9 +135,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of Data Safe.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -198,9 +144,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter(name="timeEnabled")
     def time_enabled(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_enabled")
 
     @time_enabled.setter
@@ -210,9 +153,6 @@ class _DataSafeConfigurationState:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of the Data Safe service.
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -229,33 +169,9 @@ class DataSafeConfiguration(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Enables Data Safe in the tenancy and region.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_data_safe_configuration = oci.data_safe.DataSafeConfiguration("testDataSafeConfiguration",
-            is_enabled=var["data_safe_configuration_is_enabled"],
-            compartment_id=var["compartment_id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DataSafeConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -264,25 +180,7 @@ class DataSafeConfiguration(pulumi.CustomResource):
                  args: DataSafeConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Enables Data Safe in the tenancy and region.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_data_safe_configuration = oci.data_safe.DataSafeConfiguration("testDataSafeConfiguration",
-            is_enabled=var["data_safe_configuration_is_enabled"],
-            compartment_id=var["compartment_id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a DataSafeConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DataSafeConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -346,19 +244,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
-        :param pulumi.Input[str] data_safe_nat_gateway_ip_address: The Oracle Data Safe's NAT Gateway IP Address.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DataSafeConfigurationGlobalSettingArgs']]]] global_settings: Details of the tenancy level global settings in Data Safe.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of Data Safe.
-        :param pulumi.Input[str] time_enabled: The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] url: The URL of the Data Safe service.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -377,77 +262,46 @@ class DataSafeConfiguration(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A filter to return only resources that match the specified compartment OCID.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataSafeNatGatewayIpAddress")
-    def data_safe_nat_gateway_ip_address(self) -> pulumi.Output[str]:
-        """
-        The Oracle Data Safe's NAT Gateway IP Address.
-        """
+    def data_safe_nat_gateway_ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "data_safe_nat_gateway_ip_address")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="globalSettings")
-    def global_settings(self) -> pulumi.Output[Sequence['outputs.DataSafeConfigurationGlobalSetting']]:
-        """
-        Details of the tenancy level global settings in Data Safe.
-        """
+    def global_settings(self) -> pulumi.Output[Optional[Sequence['outputs.DataSafeConfigurationGlobalSetting']]]:
         return pulumi.get(self, "global_settings")
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if Data Safe is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of Data Safe.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeEnabled")
-    def time_enabled(self) -> pulumi.Output[str]:
-        """
-        The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_enabled(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_enabled")
 
     @property
     @pulumi.getter
-    def url(self) -> pulumi.Output[str]:
-        """
-        The URL of the Data Safe service.
-        """
+    def url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "url")
 

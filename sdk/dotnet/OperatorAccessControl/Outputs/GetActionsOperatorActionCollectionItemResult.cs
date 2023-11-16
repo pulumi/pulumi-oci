@@ -20,23 +20,23 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// <summary>
         /// Name of the infrastructure layer associated with the operator action.
         /// </summary>
-        public readonly string Component;
+        public readonly string? Component;
         /// <summary>
         /// Display Name of the operator action.
         /// </summary>
-        public readonly string CustomerDisplayName;
+        public readonly string? CustomerDisplayName;
         /// <summary>
         /// Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Unique Oracle assigned identifier for the operator action.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Fine grained properties associated with the operator control.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         /// <summary>
         /// A filter to return only lists of resources that match the entire given service type.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
         /// </summary>
@@ -54,19 +54,19 @@ namespace Pulumi.Oci.OperatorAccessControl.Outputs
         private GetActionsOperatorActionCollectionItemResult(
             string? compartmentId,
 
-            string component,
+            string? component,
 
-            string customerDisplayName,
+            string? customerDisplayName,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetActionsOperatorActionCollectionItemPropertyResult> properties,
 
-            string resourceType,
+            string? resourceType,
 
             string? state)
         {

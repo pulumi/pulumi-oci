@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -196,14 +197,14 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="actions", refs={List.class,AppFirewallPolicyAction.class}, tree="[0,1]")
-    private Output<List<AppFirewallPolicyAction>> actions;
+    private Output</* @Nullable */ List<AppFirewallPolicyAction>> actions;
 
     /**
      * @return (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      * 
      */
-    public Output<List<AppFirewallPolicyAction>> actions() {
-        return this.actions;
+    public Output<Optional<List<AppFirewallPolicyAction>>> actions() {
+        return Codegen.optional(this.actions);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -224,140 +225,140 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) WebAppFirewallPolicy display name, can be renamed.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) WebAppFirewallPolicy display name, can be renamed.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name &#39;Default Action&#39; are not allowed, since this name is reserved for default action logs.
      * 
      */
     @Export(name="requestAccessControl", refs={AppFirewallPolicyRequestAccessControl.class}, tree="[0]")
-    private Output<AppFirewallPolicyRequestAccessControl> requestAccessControl;
+    private Output</* @Nullable */ AppFirewallPolicyRequestAccessControl> requestAccessControl;
 
     /**
      * @return (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name &#39;Default Action&#39; are not allowed, since this name is reserved for default action logs.
      * 
      */
-    public Output<AppFirewallPolicyRequestAccessControl> requestAccessControl() {
-        return this.requestAccessControl;
+    public Output<Optional<AppFirewallPolicyRequestAccessControl>> requestAccessControl() {
+        return Codegen.optional(this.requestAccessControl);
     }
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      * 
      */
     @Export(name="requestProtection", refs={AppFirewallPolicyRequestProtection.class}, tree="[0]")
-    private Output<AppFirewallPolicyRequestProtection> requestProtection;
+    private Output</* @Nullable */ AppFirewallPolicyRequestProtection> requestProtection;
 
     /**
      * @return (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      * 
      */
-    public Output<AppFirewallPolicyRequestProtection> requestProtection() {
-        return this.requestProtection;
+    public Output<Optional<AppFirewallPolicyRequestProtection>> requestProtection() {
+        return Codegen.optional(this.requestProtection);
     }
     /**
      * (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      * 
      */
     @Export(name="requestRateLimiting", refs={AppFirewallPolicyRequestRateLimiting.class}, tree="[0]")
-    private Output<AppFirewallPolicyRequestRateLimiting> requestRateLimiting;
+    private Output</* @Nullable */ AppFirewallPolicyRequestRateLimiting> requestRateLimiting;
 
     /**
      * @return (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      * 
      */
-    public Output<AppFirewallPolicyRequestRateLimiting> requestRateLimiting() {
-        return this.requestRateLimiting;
+    public Output<Optional<AppFirewallPolicyRequestRateLimiting>> requestRateLimiting() {
+        return Codegen.optional(this.requestRateLimiting);
     }
     /**
      * (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      * 
      */
     @Export(name="responseAccessControl", refs={AppFirewallPolicyResponseAccessControl.class}, tree="[0]")
-    private Output<AppFirewallPolicyResponseAccessControl> responseAccessControl;
+    private Output</* @Nullable */ AppFirewallPolicyResponseAccessControl> responseAccessControl;
 
     /**
      * @return (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      * 
      */
-    public Output<AppFirewallPolicyResponseAccessControl> responseAccessControl() {
-        return this.responseAccessControl;
+    public Output<Optional<AppFirewallPolicyResponseAccessControl>> responseAccessControl() {
+        return Codegen.optional(this.responseAccessControl);
     }
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      * 
      */
     @Export(name="responseProtection", refs={AppFirewallPolicyResponseProtection.class}, tree="[0]")
-    private Output<AppFirewallPolicyResponseProtection> responseProtection;
+    private Output</* @Nullable */ AppFirewallPolicyResponseProtection> responseProtection;
 
     /**
      * @return (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      * 
      */
-    public Output<AppFirewallPolicyResponseProtection> responseProtection() {
-        return this.responseProtection;
+    public Output<Optional<AppFirewallPolicyResponseProtection>> responseProtection() {
+        return Codegen.optional(this.responseProtection);
     }
     /**
      * The current state of the WebAppFirewallPolicy.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the WebAppFirewallPolicy.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -367,7 +368,7 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -376,36 +377,36 @@ public class AppFirewallPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

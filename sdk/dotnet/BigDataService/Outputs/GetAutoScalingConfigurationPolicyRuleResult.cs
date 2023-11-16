@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The valid value are CHANGE_SHAPE_SCALE_UP or CHANGE_SHAPE_SCALE_DOWN.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Metric and threshold details for triggering an autoscale action.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleMetricResult> metrics)
         {

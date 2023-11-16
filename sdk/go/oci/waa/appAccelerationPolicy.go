@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
@@ -76,30 +75,30 @@ type AppAccelerationPolicy struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) WebAppAccelerationPolicy display name, can be renamed.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An object that specifies an HTTP response caching policy.
-	ResponseCachingPolicy AppAccelerationPolicyResponseCachingPolicyOutput `pulumi:"responseCachingPolicy"`
+	ResponseCachingPolicy AppAccelerationPolicyResponseCachingPolicyPtrOutput `pulumi:"responseCachingPolicy"`
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
 	//
 	// This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
 	//
 	// HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
-	ResponseCompressionPolicy AppAccelerationPolicyResponseCompressionPolicyOutput `pulumi:"responseCompressionPolicy"`
+	ResponseCompressionPolicy AppAccelerationPolicyResponseCompressionPolicyPtrOutput `pulumi:"responseCompressionPolicy"`
 	// The current state of the WebAppAccelerationPolicy.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAppAccelerationPolicy registers a new resource with the given unique name, arguments, and options.
@@ -274,12 +273,6 @@ func (i *AppAccelerationPolicy) ToAppAccelerationPolicyOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyOutput)
 }
 
-func (i *AppAccelerationPolicy) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicy] {
-	return pulumix.Output[*AppAccelerationPolicy]{
-		OutputState: i.ToAppAccelerationPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppAccelerationPolicyArrayInput is an input type that accepts AppAccelerationPolicyArray and AppAccelerationPolicyArrayOutput values.
 // You can construct a concrete instance of `AppAccelerationPolicyArrayInput` via:
 //
@@ -303,12 +296,6 @@ func (i AppAccelerationPolicyArray) ToAppAccelerationPolicyArrayOutput() AppAcce
 
 func (i AppAccelerationPolicyArray) ToAppAccelerationPolicyArrayOutputWithContext(ctx context.Context) AppAccelerationPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyArrayOutput)
-}
-
-func (i AppAccelerationPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppAccelerationPolicy] {
-	return pulumix.Output[[]*AppAccelerationPolicy]{
-		OutputState: i.ToAppAccelerationPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppAccelerationPolicyMapInput is an input type that accepts AppAccelerationPolicyMap and AppAccelerationPolicyMapOutput values.
@@ -336,12 +323,6 @@ func (i AppAccelerationPolicyMap) ToAppAccelerationPolicyMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationPolicyMapOutput)
 }
 
-func (i AppAccelerationPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAccelerationPolicy] {
-	return pulumix.Output[map[string]*AppAccelerationPolicy]{
-		OutputState: i.ToAppAccelerationPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppAccelerationPolicyOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationPolicyOutput) ElementType() reflect.Type {
@@ -356,12 +337,6 @@ func (o AppAccelerationPolicyOutput) ToAppAccelerationPolicyOutputWithContext(ct
 	return o
 }
 
-func (o AppAccelerationPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAccelerationPolicy] {
-	return pulumix.Output[*AppAccelerationPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o AppAccelerationPolicyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -373,8 +348,8 @@ func (o AppAccelerationPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) WebAppAccelerationPolicy display name, can be renamed.
-func (o AppAccelerationPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AppAccelerationPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -383,15 +358,15 @@ func (o AppAccelerationPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o AppAccelerationPolicyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AppAccelerationPolicyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An object that specifies an HTTP response caching policy.
-func (o AppAccelerationPolicyOutput) ResponseCachingPolicy() AppAccelerationPolicyResponseCachingPolicyOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) AppAccelerationPolicyResponseCachingPolicyOutput {
+func (o AppAccelerationPolicyOutput) ResponseCachingPolicy() AppAccelerationPolicyResponseCachingPolicyPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) AppAccelerationPolicyResponseCachingPolicyPtrOutput {
 		return v.ResponseCachingPolicy
-	}).(AppAccelerationPolicyResponseCachingPolicyOutput)
+	}).(AppAccelerationPolicyResponseCachingPolicyPtrOutput)
 }
 
 // (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
@@ -399,15 +374,15 @@ func (o AppAccelerationPolicyOutput) ResponseCachingPolicy() AppAccelerationPoli
 // This compression policy can be used to enable support for HTTP response compression algorithms like gzip and configure the conditions of when a compression algorithm will be used.
 //
 // HTTP responses will only be compressed if the client indicates support for one of the enabled compression algorithms via the "Accept-Encoding" request header.
-func (o AppAccelerationPolicyOutput) ResponseCompressionPolicy() AppAccelerationPolicyResponseCompressionPolicyOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) AppAccelerationPolicyResponseCompressionPolicyOutput {
+func (o AppAccelerationPolicyOutput) ResponseCompressionPolicy() AppAccelerationPolicyResponseCompressionPolicyPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) AppAccelerationPolicyResponseCompressionPolicyPtrOutput {
 		return v.ResponseCompressionPolicy
-	}).(AppAccelerationPolicyResponseCompressionPolicyOutput)
+	}).(AppAccelerationPolicyResponseCompressionPolicyPtrOutput)
 }
 
 // The current state of the WebAppAccelerationPolicy.
-func (o AppAccelerationPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AppAccelerationPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -419,13 +394,13 @@ func (o AppAccelerationPolicyOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
-func (o AppAccelerationPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AppAccelerationPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
-func (o AppAccelerationPolicyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AppAccelerationPolicyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AppAccelerationPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -440,12 +415,6 @@ func (o AppAccelerationPolicyArrayOutput) ToAppAccelerationPolicyArrayOutput() A
 
 func (o AppAccelerationPolicyArrayOutput) ToAppAccelerationPolicyArrayOutputWithContext(ctx context.Context) AppAccelerationPolicyArrayOutput {
 	return o
-}
-
-func (o AppAccelerationPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppAccelerationPolicy] {
-	return pulumix.Output[[]*AppAccelerationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationPolicyArrayOutput) Index(i pulumi.IntInput) AppAccelerationPolicyOutput {
@@ -466,12 +435,6 @@ func (o AppAccelerationPolicyMapOutput) ToAppAccelerationPolicyMapOutput() AppAc
 
 func (o AppAccelerationPolicyMapOutput) ToAppAccelerationPolicyMapOutputWithContext(ctx context.Context) AppAccelerationPolicyMapOutput {
 	return o
-}
-
-func (o AppAccelerationPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAccelerationPolicy] {
-	return pulumix.Output[map[string]*AppAccelerationPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationPolicyMapOutput) MapIndex(k pulumi.StringInput) AppAccelerationPolicyOutput {

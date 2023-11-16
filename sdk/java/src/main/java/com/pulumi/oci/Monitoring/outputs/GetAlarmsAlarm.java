@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlarmsAlarm {
@@ -18,279 +20,279 @@ public final class GetAlarmsAlarm {
      * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
-    private String body;
+    private @Nullable String body;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
      * 
      */
-    private List<String> destinations;
+    private @Nullable List<String> destinations;
     /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the alarm is enabled.  Example: `true`
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
      * 
      */
-    private Boolean isNotificationsPerMetricDimensionEnabled;
+    private @Nullable Boolean isNotificationsPerMetricDimensionEnabled;
     /**
      * @return The format to use for alarm notifications. The formats are:
      * 
      */
-    private String messageFormat;
+    private @Nullable String messageFormat;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
      * 
      */
-    private String metricCompartmentId;
+    private @Nullable String metricCompartmentId;
     /**
      * @return When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      * 
      */
-    private Boolean metricCompartmentIdInSubtree;
+    private @Nullable Boolean metricCompartmentIdInSubtree;
     /**
      * @return The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
      */
-    private String pendingDuration;
+    private @Nullable String pendingDuration;
     /**
      * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
      */
-    private String query;
+    private @Nullable String query;
     /**
      * @return The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
      * 
      */
-    private String repeatNotificationDuration;
+    private @Nullable String repeatNotificationDuration;
     /**
      * @return The time between calculated aggregation windows for the alarm. Supported value: `1m`
      * 
      */
-    private String resolution;
+    private @Nullable String resolution;
     /**
      * @return Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
     /**
      * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The configuration details for suppressing an alarm.
      * 
      */
-    private List<GetAlarmsAlarmSuppression> suppressions;
+    private @Nullable List<GetAlarmsAlarmSuppression> suppressions;
     /**
      * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetAlarmsAlarm() {}
     /**
      * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
-    public String body() {
-        return this.body;
+    public Optional<String> body() {
+        return Optional.ofNullable(this.body);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
      * 
      */
     public List<String> destinations() {
-        return this.destinations;
+        return this.destinations == null ? List.of() : this.destinations;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the alarm is enabled.  Example: `true`
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
      * 
      */
-    public Boolean isNotificationsPerMetricDimensionEnabled() {
-        return this.isNotificationsPerMetricDimensionEnabled;
+    public Optional<Boolean> isNotificationsPerMetricDimensionEnabled() {
+        return Optional.ofNullable(this.isNotificationsPerMetricDimensionEnabled);
     }
     /**
      * @return The format to use for alarm notifications. The formats are:
      * 
      */
-    public String messageFormat() {
-        return this.messageFormat;
+    public Optional<String> messageFormat() {
+        return Optional.ofNullable(this.messageFormat);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
      * 
      */
-    public String metricCompartmentId() {
-        return this.metricCompartmentId;
+    public Optional<String> metricCompartmentId() {
+        return Optional.ofNullable(this.metricCompartmentId);
     }
     /**
      * @return When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      * 
      */
-    public Boolean metricCompartmentIdInSubtree() {
-        return this.metricCompartmentIdInSubtree;
+    public Optional<Boolean> metricCompartmentIdInSubtree() {
+        return Optional.ofNullable(this.metricCompartmentIdInSubtree);
     }
     /**
      * @return The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34;. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;.
      * 
      */
-    public String pendingDuration() {
-        return this.pendingDuration;
+    public Optional<String> pendingDuration() {
+        return Optional.ofNullable(this.pendingDuration);
     }
     /**
      * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
      */
-    public String query() {
-        return this.query;
+    public Optional<String> query() {
+        return Optional.ofNullable(this.query);
     }
     /**
      * @return The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
      * 
      */
-    public String repeatNotificationDuration() {
-        return this.repeatNotificationDuration;
+    public Optional<String> repeatNotificationDuration() {
+        return Optional.ofNullable(this.repeatNotificationDuration);
     }
     /**
      * @return The time between calculated aggregation windows for the alarm. Supported value: `1m`
      * 
      */
-    public String resolution() {
-        return this.resolution;
+    public Optional<String> resolution() {
+        return Optional.ofNullable(this.resolution);
     }
     /**
      * @return Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
     /**
      * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The configuration details for suppressing an alarm.
      * 
      */
     public List<GetAlarmsAlarmSuppression> suppressions() {
-        return this.suppressions;
+        return this.suppressions == null ? List.of() : this.suppressions;
     }
     /**
      * @return The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -302,29 +304,29 @@ public final class GetAlarmsAlarm {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String body;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<String> destinations;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isEnabled;
-        private Boolean isNotificationsPerMetricDimensionEnabled;
-        private String messageFormat;
-        private String metricCompartmentId;
-        private Boolean metricCompartmentIdInSubtree;
-        private String namespace;
-        private String pendingDuration;
-        private String query;
-        private String repeatNotificationDuration;
-        private String resolution;
-        private String resourceGroup;
-        private String severity;
-        private String state;
-        private List<GetAlarmsAlarmSuppression> suppressions;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String body;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<String> destinations;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Boolean isNotificationsPerMetricDimensionEnabled;
+        private @Nullable String messageFormat;
+        private @Nullable String metricCompartmentId;
+        private @Nullable Boolean metricCompartmentIdInSubtree;
+        private @Nullable String namespace;
+        private @Nullable String pendingDuration;
+        private @Nullable String query;
+        private @Nullable String repeatNotificationDuration;
+        private @Nullable String resolution;
+        private @Nullable String resourceGroup;
+        private @Nullable String severity;
+        private @Nullable String state;
+        private @Nullable List<GetAlarmsAlarmSuppression> suppressions;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAlarmsAlarm defaults) {
     	      Objects.requireNonNull(defaults);
@@ -354,124 +356,124 @@ public final class GetAlarmsAlarm {
         }
 
         @CustomType.Setter
-        public Builder body(String body) {
-            this.body = Objects.requireNonNull(body);
+        public Builder body(@Nullable String body) {
+            this.body = body;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder destinations(List<String> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+        public Builder destinations(@Nullable List<String> destinations) {
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(String... destinations) {
             return destinations(List.of(destinations));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isNotificationsPerMetricDimensionEnabled(Boolean isNotificationsPerMetricDimensionEnabled) {
-            this.isNotificationsPerMetricDimensionEnabled = Objects.requireNonNull(isNotificationsPerMetricDimensionEnabled);
+        public Builder isNotificationsPerMetricDimensionEnabled(@Nullable Boolean isNotificationsPerMetricDimensionEnabled) {
+            this.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder messageFormat(String messageFormat) {
-            this.messageFormat = Objects.requireNonNull(messageFormat);
+        public Builder messageFormat(@Nullable String messageFormat) {
+            this.messageFormat = messageFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder metricCompartmentId(String metricCompartmentId) {
-            this.metricCompartmentId = Objects.requireNonNull(metricCompartmentId);
+        public Builder metricCompartmentId(@Nullable String metricCompartmentId) {
+            this.metricCompartmentId = metricCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder metricCompartmentIdInSubtree(Boolean metricCompartmentIdInSubtree) {
-            this.metricCompartmentIdInSubtree = Objects.requireNonNull(metricCompartmentIdInSubtree);
+        public Builder metricCompartmentIdInSubtree(@Nullable Boolean metricCompartmentIdInSubtree) {
+            this.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder pendingDuration(String pendingDuration) {
-            this.pendingDuration = Objects.requireNonNull(pendingDuration);
+        public Builder pendingDuration(@Nullable String pendingDuration) {
+            this.pendingDuration = pendingDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+        public Builder query(@Nullable String query) {
+            this.query = query;
             return this;
         }
         @CustomType.Setter
-        public Builder repeatNotificationDuration(String repeatNotificationDuration) {
-            this.repeatNotificationDuration = Objects.requireNonNull(repeatNotificationDuration);
+        public Builder repeatNotificationDuration(@Nullable String repeatNotificationDuration) {
+            this.repeatNotificationDuration = repeatNotificationDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder resolution(String resolution) {
-            this.resolution = Objects.requireNonNull(resolution);
+        public Builder resolution(@Nullable String resolution) {
+            this.resolution = resolution;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder suppressions(List<GetAlarmsAlarmSuppression> suppressions) {
-            this.suppressions = Objects.requireNonNull(suppressions);
+        public Builder suppressions(@Nullable List<GetAlarmsAlarmSuppression> suppressions) {
+            this.suppressions = suppressions;
             return this;
         }
         public Builder suppressions(GetAlarmsAlarmSuppression... suppressions) {
             return suppressions(List.of(suppressions));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAlarmsAlarm build() {

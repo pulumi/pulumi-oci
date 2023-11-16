@@ -58,25 +58,25 @@ export interface GetRepositoryObjectResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Flag to determine if the object contains binary file content or not.
      */
-    readonly isBinary: boolean;
+    readonly isBinary?: boolean;
     readonly refName?: string;
     readonly repositoryId: string;
     /**
      * SHA-1 hash of git object.
      */
-    readonly sha: string;
+    readonly sha?: string;
     /**
      * Size in bytes.
      */
-    readonly sizeInBytes: string;
+    readonly sizeInBytes?: string;
     /**
      * The type of git object.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.

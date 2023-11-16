@@ -29,84 +29,61 @@ __all__ = [
 @pulumi.output_type
 class GetCommitmentsCommitmentResult(dict):
     def __init__(__self__, *,
-                 available_amount: str,
-                 funded_allocation_value: str,
-                 id: str,
-                 quantity: str,
-                 time_end: str,
-                 time_start: str,
-                 used_amount: str):
-        """
-        :param str available_amount: Commitment available amount
-        :param str funded_allocation_value: Funded Allocation line value example: 12000.00
-        :param str id: SPM internal Commitment ID
-        :param str quantity: Commitment quantity
-        :param str time_end: Commitment end date
-        :param str time_start: Commitment start date
-        :param str used_amount: Commitment used amount
-        """
-        pulumi.set(__self__, "available_amount", available_amount)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "used_amount", used_amount)
+                 available_amount: Optional[str] = None,
+                 funded_allocation_value: Optional[str] = None,
+                 id: Optional[str] = None,
+                 quantity: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 used_amount: Optional[str] = None):
+        if available_amount is not None:
+            pulumi.set(__self__, "available_amount", available_amount)
+        if funded_allocation_value is not None:
+            pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if used_amount is not None:
+            pulumi.set(__self__, "used_amount", used_amount)
 
     @property
     @pulumi.getter(name="availableAmount")
-    def available_amount(self) -> str:
-        """
-        Commitment available amount
-        """
+    def available_amount(self) -> Optional[str]:
         return pulumi.get(self, "available_amount")
 
     @property
     @pulumi.getter(name="fundedAllocationValue")
-    def funded_allocation_value(self) -> str:
-        """
-        Funded Allocation line value example: 12000.00
-        """
+    def funded_allocation_value(self) -> Optional[str]:
         return pulumi.get(self, "funded_allocation_value")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        SPM internal Commitment ID
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Commitment quantity
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Commitment end date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Commitment start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="usedAmount")
-    def used_amount(self) -> str:
-        """
-        Commitment used amount
-        """
+    def used_amount(self) -> Optional[str]:
         return pulumi.get(self, "used_amount")
 
 
@@ -143,9 +120,6 @@ class GetRatecardsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -154,9 +128,6 @@ class GetRatecardsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -173,259 +144,188 @@ class GetRatecardsFilterResult(dict):
 @pulumi.output_type
 class GetRatecardsRateCardResult(dict):
     def __init__(__self__, *,
-                 currencies: Sequence['outputs.GetRatecardsRateCardCurrencyResult'],
-                 discretionary_discount_percentage: str,
-                 is_tier: bool,
-                 net_unit_price: str,
-                 overage_price: str,
-                 products: Sequence['outputs.GetRatecardsRateCardProductResult'],
-                 rate_card_tiers: Sequence['outputs.GetRatecardsRateCardRateCardTierResult'],
-                 time_end: str,
-                 time_start: str):
-        """
-        :param Sequence['GetRatecardsRateCardCurrencyArgs'] currencies: Currency details
-        :param str discretionary_discount_percentage: Rate card discretionary discount percentage
-        :param bool is_tier: Rate card price tier flag
-        :param str net_unit_price: Rate card tier net unit price
-        :param str overage_price: Rate card tier overage price
-        :param Sequence['GetRatecardsRateCardProductArgs'] products: Product description
-        :param Sequence['GetRatecardsRateCardRateCardTierArgs'] rate_card_tiers: List of tiered rate card prices
-        :param str time_end: Rate card end date
-        :param str time_start: Rate card start date
-        """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "discretionary_discount_percentage", discretionary_discount_percentage)
-        pulumi.set(__self__, "is_tier", is_tier)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "overage_price", overage_price)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "rate_card_tiers", rate_card_tiers)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+                 currencies: Optional[Sequence['outputs.GetRatecardsRateCardCurrencyResult']] = None,
+                 discretionary_discount_percentage: Optional[str] = None,
+                 is_tier: Optional[bool] = None,
+                 net_unit_price: Optional[str] = None,
+                 overage_price: Optional[str] = None,
+                 products: Optional[Sequence['outputs.GetRatecardsRateCardProductResult']] = None,
+                 rate_card_tiers: Optional[Sequence['outputs.GetRatecardsRateCardRateCardTierResult']] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None):
+        if currencies is not None:
+            pulumi.set(__self__, "currencies", currencies)
+        if discretionary_discount_percentage is not None:
+            pulumi.set(__self__, "discretionary_discount_percentage", discretionary_discount_percentage)
+        if is_tier is not None:
+            pulumi.set(__self__, "is_tier", is_tier)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if overage_price is not None:
+            pulumi.set(__self__, "overage_price", overage_price)
+        if products is not None:
+            pulumi.set(__self__, "products", products)
+        if rate_card_tiers is not None:
+            pulumi.set(__self__, "rate_card_tiers", rate_card_tiers)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetRatecardsRateCardCurrencyResult']:
-        """
-        Currency details
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetRatecardsRateCardCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter(name="discretionaryDiscountPercentage")
-    def discretionary_discount_percentage(self) -> str:
-        """
-        Rate card discretionary discount percentage
-        """
+    def discretionary_discount_percentage(self) -> Optional[str]:
         return pulumi.get(self, "discretionary_discount_percentage")
 
     @property
     @pulumi.getter(name="isTier")
-    def is_tier(self) -> bool:
-        """
-        Rate card price tier flag
-        """
+    def is_tier(self) -> Optional[bool]:
         return pulumi.get(self, "is_tier")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Rate card tier net unit price
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="overagePrice")
-    def overage_price(self) -> str:
-        """
-        Rate card tier overage price
-        """
+    def overage_price(self) -> Optional[str]:
         return pulumi.get(self, "overage_price")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetRatecardsRateCardProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetRatecardsRateCardProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter(name="rateCardTiers")
-    def rate_card_tiers(self) -> Sequence['outputs.GetRatecardsRateCardRateCardTierResult']:
-        """
-        List of tiered rate card prices
-        """
+    def rate_card_tiers(self) -> Optional[Sequence['outputs.GetRatecardsRateCardRateCardTierResult']]:
         return pulumi.get(self, "rate_card_tiers")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Rate card end date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Rate card start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
 class GetRatecardsRateCardCurrencyResult(dict):
     def __init__(__self__, *,
-                 iso_code: str,
-                 name: str,
-                 std_precision: str):
-        """
-        :param str iso_code: Currency Code
-        :param str name: Product name
-        :param str std_precision: Standard Precision of the Currency
-        """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+                 iso_code: Optional[str] = None,
+                 name: Optional[str] = None,
+                 std_precision: Optional[str] = None):
+        if iso_code is not None:
+            pulumi.set(__self__, "iso_code", iso_code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if std_precision is not None:
+            pulumi.set(__self__, "std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
-    def iso_code(self) -> str:
-        """
-        Currency Code
-        """
+    def iso_code(self) -> Optional[str]:
         return pulumi.get(self, "iso_code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="stdPrecision")
-    def std_precision(self) -> str:
-        """
-        Standard Precision of the Currency
-        """
+    def std_precision(self) -> Optional[str]:
         return pulumi.get(self, "std_precision")
 
 
 @pulumi.output_type
 class GetRatecardsRateCardProductResult(dict):
     def __init__(__self__, *,
-                 billing_category: str,
-                 name: str,
-                 part_number: str,
-                 product_category: str,
-                 ucm_rate_card_part_type: str,
-                 unit_of_measure: str):
-        """
-        :param str billing_category: Metered service billing category
-        :param str name: Product name
-        :param str part_number: This param is used to get the rate card(s) filterd by the partNumber
-        :param str product_category: Product category
-        :param str ucm_rate_card_part_type: Rate card part type of Product
-        :param str unit_of_measure: Unit of measure
-        """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 billing_category: Optional[str] = None,
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product_category: Optional[str] = None,
+                 ucm_rate_card_part_type: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if billing_category is not None:
+            pulumi.set(__self__, "billing_category", billing_category)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product_category is not None:
+            pulumi.set(__self__, "product_category", product_category)
+        if ucm_rate_card_part_type is not None:
+            pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
-    def billing_category(self) -> str:
-        """
-        Metered service billing category
-        """
+    def billing_category(self) -> Optional[str]:
         return pulumi.get(self, "billing_category")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        This param is used to get the rate card(s) filterd by the partNumber
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="productCategory")
-    def product_category(self) -> str:
-        """
-        Product category
-        """
+    def product_category(self) -> Optional[str]:
         return pulumi.get(self, "product_category")
 
     @property
     @pulumi.getter(name="ucmRateCardPartType")
-    def ucm_rate_card_part_type(self) -> str:
-        """
-        Rate card part type of Product
-        """
+    def ucm_rate_card_part_type(self) -> Optional[str]:
         return pulumi.get(self, "ucm_rate_card_part_type")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of measure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 
 @pulumi.output_type
 class GetRatecardsRateCardRateCardTierResult(dict):
     def __init__(__self__, *,
-                 net_unit_price: str,
-                 overage_price: str,
-                 up_to_quantity: str):
-        """
-        :param str net_unit_price: Rate card tier net unit price
-        :param str overage_price: Rate card tier overage price
-        :param str up_to_quantity: Rate card tier quantity range
-        """
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "overage_price", overage_price)
-        pulumi.set(__self__, "up_to_quantity", up_to_quantity)
+                 net_unit_price: Optional[str] = None,
+                 overage_price: Optional[str] = None,
+                 up_to_quantity: Optional[str] = None):
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if overage_price is not None:
+            pulumi.set(__self__, "overage_price", overage_price)
+        if up_to_quantity is not None:
+            pulumi.set(__self__, "up_to_quantity", up_to_quantity)
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Rate card tier net unit price
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="overagePrice")
-    def overage_price(self) -> str:
-        """
-        Rate card tier overage price
-        """
+    def overage_price(self) -> Optional[str]:
         return pulumi.get(self, "overage_price")
 
     @property
     @pulumi.getter(name="upToQuantity")
-    def up_to_quantity(self) -> str:
-        """
-        Rate card tier quantity range
-        """
+    def up_to_quantity(self) -> Optional[str]:
         return pulumi.get(self, "up_to_quantity")
 
 
@@ -435,9 +335,6 @@ class GetSubscriptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -446,9 +343,6 @@ class GetSubscriptionsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -465,486 +359,353 @@ class GetSubscriptionsFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionsSubscriptionResult(dict):
     def __init__(__self__, *,
-                 currencies: Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult'],
-                 service_name: str,
-                 status: str,
-                 subscribed_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult'],
-                 time_end: str,
-                 time_start: str):
-        """
-        :param Sequence['GetSubscriptionsSubscriptionCurrencyArgs'] currencies: Currency details
-        :param str service_name: Customer friendly service name provided by PRG
-        :param str status: Subscribed service status
-        :param Sequence['GetSubscriptionsSubscriptionSubscribedServiceArgs'] subscribed_services: List of Subscribed Services of the plan
-        :param str time_end: Represents the date when the last service of the subscription ends
-        :param str time_start: Represents the date when the first service of the subscription was activated
-        """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "subscribed_services", subscribed_services)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+                 currencies: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult']] = None,
+                 service_name: Optional[str] = None,
+                 status: Optional[str] = None,
+                 subscribed_services: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult']] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None):
+        if currencies is not None:
+            pulumi.set(__self__, "currencies", currencies)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if subscribed_services is not None:
+            pulumi.set(__self__, "subscribed_services", subscribed_services)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult']:
-        """
-        Currency details
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        Customer friendly service name provided by PRG
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Subscribed service status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="subscribedServices")
-    def subscribed_services(self) -> Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult']:
-        """
-        List of Subscribed Services of the plan
-        """
+    def subscribed_services(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult']]:
         return pulumi.get(self, "subscribed_services")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Represents the date when the last service of the subscription ends
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Represents the date when the first service of the subscription was activated
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCurrencyResult(dict):
     def __init__(__self__, *,
-                 iso_code: str,
-                 name: str,
-                 std_precision: str):
-        """
-        :param str iso_code: Currency Code
-        :param str name: Product name
-        :param str std_precision: Standard Precision of the Currency
-        """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+                 iso_code: Optional[str] = None,
+                 name: Optional[str] = None,
+                 std_precision: Optional[str] = None):
+        if iso_code is not None:
+            pulumi.set(__self__, "iso_code", iso_code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if std_precision is not None:
+            pulumi.set(__self__, "std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
-    def iso_code(self) -> str:
-        """
-        Currency Code
-        """
+    def iso_code(self) -> Optional[str]:
         return pulumi.get(self, "iso_code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="stdPrecision")
-    def std_precision(self) -> str:
-        """
-        Standard Precision of the Currency
-        """
+    def std_precision(self) -> Optional[str]:
         return pulumi.get(self, "std_precision")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionSubscribedServiceResult(dict):
     def __init__(__self__, *,
-                 booking_opty_number: str,
-                 commitment_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult'],
-                 csi: str,
-                 data_center_region: str,
-                 funded_allocation_value: str,
-                 id: str,
-                 is_intent_to_pay: bool,
-                 net_unit_price: str,
-                 operation_type: str,
-                 order_number: str,
-                 partner_transaction_type: str,
-                 pricing_model: str,
-                 products: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult'],
-                 program_type: str,
-                 promo_type: str,
-                 quantity: str,
-                 status: str,
-                 term_value: str,
-                 term_value_uom: str,
-                 time_end: str,
-                 time_start: str,
-                 total_value: str):
-        """
-        :param str booking_opty_number: Booking Opportunity Number of Subscribed Service
-        :param Sequence['GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs'] commitment_services: List of Commitment services of a line
-        :param str csi: Subscribed service CSI number
-        :param str data_center_region: Subscribed service data center region
-        :param str funded_allocation_value: Funded Allocation line value example: 12000.00
-        :param str id: SPM internal Subscribed Service ID
-        :param bool is_intent_to_pay: Subscribed service intent to pay flag
-        :param str net_unit_price: Subscribed service net unit price
-        :param str operation_type: Subscribed service operation type
-        :param str order_number: Sales Order Number associated to the subscribed service
-        :param str partner_transaction_type: This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-        :param str pricing_model: Subscribed service pricing model
-        :param Sequence['GetSubscriptionsSubscriptionSubscribedServiceProductArgs'] products: Product description
-        :param str program_type: Subscribed service program type
-        :param str promo_type: Subscribed service promotion type
-        :param str quantity: Subscribed service quantity
-        :param str status: Subscribed service status
-        :param str term_value: Term value in Months
-        :param str term_value_uom: Term value UOM
-        :param str time_end: Represents the date when the last service of the subscription ends
-        :param str time_start: Represents the date when the first service of the subscription was activated
-        :param str total_value: Subscribed service total value
-        """
-        pulumi.set(__self__, "booking_opty_number", booking_opty_number)
-        pulumi.set(__self__, "commitment_services", commitment_services)
-        pulumi.set(__self__, "csi", csi)
-        pulumi.set(__self__, "data_center_region", data_center_region)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "operation_type", operation_type)
-        pulumi.set(__self__, "order_number", order_number)
-        pulumi.set(__self__, "partner_transaction_type", partner_transaction_type)
-        pulumi.set(__self__, "pricing_model", pricing_model)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "program_type", program_type)
-        pulumi.set(__self__, "promo_type", promo_type)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "term_value", term_value)
-        pulumi.set(__self__, "term_value_uom", term_value_uom)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_value", total_value)
+                 booking_opty_number: Optional[str] = None,
+                 commitment_services: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult']] = None,
+                 csi: Optional[str] = None,
+                 data_center_region: Optional[str] = None,
+                 funded_allocation_value: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_intent_to_pay: Optional[bool] = None,
+                 net_unit_price: Optional[str] = None,
+                 operation_type: Optional[str] = None,
+                 order_number: Optional[str] = None,
+                 partner_transaction_type: Optional[str] = None,
+                 pricing_model: Optional[str] = None,
+                 products: Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult']] = None,
+                 program_type: Optional[str] = None,
+                 promo_type: Optional[str] = None,
+                 quantity: Optional[str] = None,
+                 status: Optional[str] = None,
+                 term_value: Optional[str] = None,
+                 term_value_uom: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 total_value: Optional[str] = None):
+        if booking_opty_number is not None:
+            pulumi.set(__self__, "booking_opty_number", booking_opty_number)
+        if commitment_services is not None:
+            pulumi.set(__self__, "commitment_services", commitment_services)
+        if csi is not None:
+            pulumi.set(__self__, "csi", csi)
+        if data_center_region is not None:
+            pulumi.set(__self__, "data_center_region", data_center_region)
+        if funded_allocation_value is not None:
+            pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_intent_to_pay is not None:
+            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if operation_type is not None:
+            pulumi.set(__self__, "operation_type", operation_type)
+        if order_number is not None:
+            pulumi.set(__self__, "order_number", order_number)
+        if partner_transaction_type is not None:
+            pulumi.set(__self__, "partner_transaction_type", partner_transaction_type)
+        if pricing_model is not None:
+            pulumi.set(__self__, "pricing_model", pricing_model)
+        if products is not None:
+            pulumi.set(__self__, "products", products)
+        if program_type is not None:
+            pulumi.set(__self__, "program_type", program_type)
+        if promo_type is not None:
+            pulumi.set(__self__, "promo_type", promo_type)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if term_value is not None:
+            pulumi.set(__self__, "term_value", term_value)
+        if term_value_uom is not None:
+            pulumi.set(__self__, "term_value_uom", term_value_uom)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if total_value is not None:
+            pulumi.set(__self__, "total_value", total_value)
 
     @property
     @pulumi.getter(name="bookingOptyNumber")
-    def booking_opty_number(self) -> str:
-        """
-        Booking Opportunity Number of Subscribed Service
-        """
+    def booking_opty_number(self) -> Optional[str]:
         return pulumi.get(self, "booking_opty_number")
 
     @property
     @pulumi.getter(name="commitmentServices")
-    def commitment_services(self) -> Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult']:
-        """
-        List of Commitment services of a line
-        """
+    def commitment_services(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult']]:
         return pulumi.get(self, "commitment_services")
 
     @property
     @pulumi.getter
-    def csi(self) -> str:
-        """
-        Subscribed service CSI number
-        """
+    def csi(self) -> Optional[str]:
         return pulumi.get(self, "csi")
 
     @property
     @pulumi.getter(name="dataCenterRegion")
-    def data_center_region(self) -> str:
-        """
-        Subscribed service data center region
-        """
+    def data_center_region(self) -> Optional[str]:
         return pulumi.get(self, "data_center_region")
 
     @property
     @pulumi.getter(name="fundedAllocationValue")
-    def funded_allocation_value(self) -> str:
-        """
-        Funded Allocation line value example: 12000.00
-        """
+    def funded_allocation_value(self) -> Optional[str]:
         return pulumi.get(self, "funded_allocation_value")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        SPM internal Subscribed Service ID
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> bool:
-        """
-        Subscribed service intent to pay flag
-        """
+    def is_intent_to_pay(self) -> Optional[bool]:
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Subscribed service net unit price
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="operationType")
-    def operation_type(self) -> str:
-        """
-        Subscribed service operation type
-        """
+    def operation_type(self) -> Optional[str]:
         return pulumi.get(self, "operation_type")
 
     @property
     @pulumi.getter(name="orderNumber")
-    def order_number(self) -> str:
-        """
-        Sales Order Number associated to the subscribed service
-        """
+    def order_number(self) -> Optional[str]:
         return pulumi.get(self, "order_number")
 
     @property
     @pulumi.getter(name="partnerTransactionType")
-    def partner_transaction_type(self) -> str:
-        """
-        This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-        """
+    def partner_transaction_type(self) -> Optional[str]:
         return pulumi.get(self, "partner_transaction_type")
 
     @property
     @pulumi.getter(name="pricingModel")
-    def pricing_model(self) -> str:
-        """
-        Subscribed service pricing model
-        """
+    def pricing_model(self) -> Optional[str]:
         return pulumi.get(self, "pricing_model")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter(name="programType")
-    def program_type(self) -> str:
-        """
-        Subscribed service program type
-        """
+    def program_type(self) -> Optional[str]:
         return pulumi.get(self, "program_type")
 
     @property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> str:
-        """
-        Subscribed service promotion type
-        """
+    def promo_type(self) -> Optional[str]:
         return pulumi.get(self, "promo_type")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Subscribed service quantity
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Subscribed service status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="termValue")
-    def term_value(self) -> str:
-        """
-        Term value in Months
-        """
+    def term_value(self) -> Optional[str]:
         return pulumi.get(self, "term_value")
 
     @property
     @pulumi.getter(name="termValueUom")
-    def term_value_uom(self) -> str:
-        """
-        Term value UOM
-        """
+    def term_value_uom(self) -> Optional[str]:
         return pulumi.get(self, "term_value_uom")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Represents the date when the last service of the subscription ends
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Represents the date when the first service of the subscription was activated
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="totalValue")
-    def total_value(self) -> str:
-        """
-        Subscribed service total value
-        """
+    def total_value(self) -> Optional[str]:
         return pulumi.get(self, "total_value")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult(dict):
     def __init__(__self__, *,
-                 available_amount: str,
-                 funded_allocation_value: str,
-                 line_net_amount: str,
-                 quantity: str,
-                 time_end: str,
-                 time_start: str):
-        """
-        :param str available_amount: Commitment available amount
-        :param str funded_allocation_value: Funded Allocation line value example: 12000.00
-        :param str line_net_amount: Commitment line net amount
-        :param str quantity: Subscribed service quantity
-        :param str time_end: Represents the date when the last service of the subscription ends
-        :param str time_start: Represents the date when the first service of the subscription was activated
-        """
-        pulumi.set(__self__, "available_amount", available_amount)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "line_net_amount", line_net_amount)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+                 available_amount: Optional[str] = None,
+                 funded_allocation_value: Optional[str] = None,
+                 line_net_amount: Optional[str] = None,
+                 quantity: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None):
+        if available_amount is not None:
+            pulumi.set(__self__, "available_amount", available_amount)
+        if funded_allocation_value is not None:
+            pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
+        if line_net_amount is not None:
+            pulumi.set(__self__, "line_net_amount", line_net_amount)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter(name="availableAmount")
-    def available_amount(self) -> str:
-        """
-        Commitment available amount
-        """
+    def available_amount(self) -> Optional[str]:
         return pulumi.get(self, "available_amount")
 
     @property
     @pulumi.getter(name="fundedAllocationValue")
-    def funded_allocation_value(self) -> str:
-        """
-        Funded Allocation line value example: 12000.00
-        """
+    def funded_allocation_value(self) -> Optional[str]:
         return pulumi.get(self, "funded_allocation_value")
 
     @property
     @pulumi.getter(name="lineNetAmount")
-    def line_net_amount(self) -> str:
-        """
-        Commitment line net amount
-        """
+    def line_net_amount(self) -> Optional[str]:
         return pulumi.get(self, "line_net_amount")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Subscribed service quantity
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Represents the date when the last service of the subscription ends
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Represents the date when the first service of the subscription was activated
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionSubscribedServiceProductResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 part_number: str,
-                 provisioning_group: str,
-                 unit_of_measure: str):
-        """
-        :param str name: Product name
-        :param str part_number: Product part numner
-        :param str provisioning_group: Product provisioning group
-        :param str unit_of_measure: Unit of measure
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 provisioning_group: Optional[str] = None,
+                 unit_of_measure: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if provisioning_group is not None:
+            pulumi.set(__self__, "provisioning_group", provisioning_group)
+        if unit_of_measure is not None:
+            pulumi.set(__self__, "unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Product part numner
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter(name="provisioningGroup")
-    def provisioning_group(self) -> str:
-        """
-        Product provisioning group
-        """
+    def provisioning_group(self) -> Optional[str]:
         return pulumi.get(self, "provisioning_group")
 
     @property
     @pulumi.getter(name="unitOfMeasure")
-    def unit_of_measure(self) -> str:
-        """
-        Unit of measure
-        """
+    def unit_of_measure(self) -> Optional[str]:
         return pulumi.get(self, "unit_of_measure")
 
 

@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
         /// </summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Identity
         private GetTagsResult(
             ImmutableArray<Outputs.GetTagsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

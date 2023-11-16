@@ -61,12 +61,12 @@ export interface GetInstanceDevicesResult {
     /**
      * The list of devices.
      */
-    readonly devices: outputs.Core.GetInstanceDevicesDevice[];
+    readonly devices?: outputs.Core.GetInstanceDevicesDevice[];
     readonly filters?: outputs.Core.GetInstanceDevicesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceId: string;
     /**
      * The flag denoting whether device is available.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Database Migration service.
@@ -61,31 +60,31 @@ type LookupAgentArgs struct {
 type LookupAgentResult struct {
 	AgentId string `pulumi:"agentId"`
 	// OCID of the compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// ODMS Agent name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resource
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// ODMS Agent public key.
-	PublicKey string `pulumi:"publicKey"`
+	PublicKey *string `pulumi:"publicKey"`
 	// The current state of the ODMS on-premises Agent.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the Stream
-	StreamId string `pulumi:"streamId"`
+	StreamId *string `pulumi:"streamId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of the last Agent details update. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// ODMS Agent version
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupAgentOutput(ctx *pulumi.Context, args LookupAgentOutputArgs, opts ...pulumi.InvokeOption) LookupAgentResultOutput {
@@ -126,19 +125,13 @@ func (o LookupAgentResultOutput) ToLookupAgentResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupAgentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAgentResult] {
-	return pulumix.Output[LookupAgentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAgentResultOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentResult) string { return v.AgentId }).(pulumi.StringOutput)
 }
 
 // OCID of the compartment
-func (o LookupAgentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -147,8 +140,8 @@ func (o LookupAgentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // ODMS Agent name
-func (o LookupAgentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -157,28 +150,28 @@ func (o LookupAgentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the resource
-func (o LookupAgentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupAgentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // ODMS Agent public key.
-func (o LookupAgentResultOutput) PublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.PublicKey }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) PublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.PublicKey }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the ODMS on-premises Agent.
-func (o LookupAgentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Stream
-func (o LookupAgentResultOutput) StreamId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.StreamId }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.StreamId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -187,18 +180,18 @@ func (o LookupAgentResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the Agent was created. An RFC3339 formatted datetime string.
-func (o LookupAgentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last Agent details update. An RFC3339 formatted datetime string.
-func (o LookupAgentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // ODMS Agent version
-func (o LookupAgentResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

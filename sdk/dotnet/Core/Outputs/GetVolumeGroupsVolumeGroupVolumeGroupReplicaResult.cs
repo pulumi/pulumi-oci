@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The volume group replica's Oracle ID (OCID).
         /// </summary>
-        public readonly string VolumeGroupReplicaId;
+        public readonly string? VolumeGroupReplicaId;
 
         [OutputConstructor]
         private GetVolumeGroupsVolumeGroupVolumeGroupReplicaResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string displayName,
+            string? displayName,
 
-            string volumeGroupReplicaId)
+            string? volumeGroupReplicaId)
         {
             AvailabilityDomain = availabilityDomain;
             DisplayName = displayName;

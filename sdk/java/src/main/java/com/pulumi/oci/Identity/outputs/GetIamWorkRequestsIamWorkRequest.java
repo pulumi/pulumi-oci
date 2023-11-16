@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIamWorkRequestsIamWorkRequest {
@@ -16,111 +18,111 @@ public final class GetIamWorkRequestsIamWorkRequest {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the work request.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The asynchronous operation tracked by this IAM work request.
      * 
      */
-    private String operationType;
+    private @Nullable String operationType;
     /**
      * @return How much progress the operation has made.
      * 
      */
-    private Double percentComplete;
+    private @Nullable Double percentComplete;
     /**
      * @return The resources this work request affects.
      * 
      */
-    private List<GetIamWorkRequestsIamWorkRequestResource> resources;
+    private @Nullable List<GetIamWorkRequestsIamWorkRequestResource> resources;
     /**
      * @return Status of the work request
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetIamWorkRequestsIamWorkRequest() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the work request.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The asynchronous operation tracked by this IAM work request.
      * 
      */
-    public String operationType() {
-        return this.operationType;
+    public Optional<String> operationType() {
+        return Optional.ofNullable(this.operationType);
     }
     /**
      * @return How much progress the operation has made.
      * 
      */
-    public Double percentComplete() {
-        return this.percentComplete;
+    public Optional<Double> percentComplete() {
+        return Optional.ofNullable(this.percentComplete);
     }
     /**
      * @return The resources this work request affects.
      * 
      */
     public List<GetIamWorkRequestsIamWorkRequestResource> resources() {
-        return this.resources;
+        return this.resources == null ? List.of() : this.resources;
     }
     /**
      * @return Status of the work request
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetIamWorkRequestsIamWorkRequest {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private String operationType;
-        private Double percentComplete;
-        private List<GetIamWorkRequestsIamWorkRequestResource> resources;
-        private String status;
-        private String timeAccepted;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String operationType;
+        private @Nullable Double percentComplete;
+        private @Nullable List<GetIamWorkRequestsIamWorkRequestResource> resources;
+        private @Nullable String status;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetIamWorkRequestsIamWorkRequest defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,51 +158,51 @@ public final class GetIamWorkRequestsIamWorkRequest {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operationType(String operationType) {
-            this.operationType = Objects.requireNonNull(operationType);
+        public Builder operationType(@Nullable String operationType) {
+            this.operationType = operationType;
             return this;
         }
         @CustomType.Setter
-        public Builder percentComplete(Double percentComplete) {
-            this.percentComplete = Objects.requireNonNull(percentComplete);
+        public Builder percentComplete(@Nullable Double percentComplete) {
+            this.percentComplete = percentComplete;
             return this;
         }
         @CustomType.Setter
-        public Builder resources(List<GetIamWorkRequestsIamWorkRequestResource> resources) {
-            this.resources = Objects.requireNonNull(resources);
+        public Builder resources(@Nullable List<GetIamWorkRequestsIamWorkRequestResource> resources) {
+            this.resources = resources;
             return this;
         }
         public Builder resources(GetIamWorkRequestsIamWorkRequestResource... resources) {
             return resources(List.of(resources));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetIamWorkRequestsIamWorkRequest build() {

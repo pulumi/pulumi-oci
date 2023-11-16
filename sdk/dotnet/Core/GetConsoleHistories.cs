@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the instance this console history was fetched from.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetConsoleHistoriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? instanceId,
 

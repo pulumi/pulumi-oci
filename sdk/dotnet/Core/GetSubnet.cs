@@ -108,43 +108,43 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The subnet's CIDR block.  Example: `10.0.1.0/24`
         /// </summary>
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the subnet.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
         /// </summary>
-        public readonly string DhcpOptionsId;
+        public readonly string? DhcpOptionsId;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
         /// </summary>
-        public readonly string DnsLabel;
+        public readonly string? DnsLabel;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
         /// </summary>
-        public readonly string Ipv6cidrBlock;
+        public readonly string? Ipv6cidrBlock;
         /// <summary>
         /// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
         /// </summary>
@@ -152,19 +152,19 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         /// </summary>
-        public readonly string Ipv6virtualRouterIp;
+        public readonly string? Ipv6virtualRouterIp;
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
         /// </summary>
-        public readonly bool ProhibitInternetIngress;
+        public readonly bool? ProhibitInternetIngress;
         /// <summary>
         /// Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).  Example: `true`
         /// </summary>
-        public readonly bool ProhibitPublicIpOnVnic;
+        public readonly bool? ProhibitPublicIpOnVnic;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the subnet uses.
         /// </summary>
-        public readonly string RouteTableId;
+        public readonly string? RouteTableId;
         /// <summary>
         /// The OCIDs of the security list or lists that the subnet uses. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
         /// </summary>
@@ -172,76 +172,76 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The subnet's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
         /// </summary>
-        public readonly string SubnetDomainName;
+        public readonly string? SubnetDomainName;
         public readonly string SubnetId;
         /// <summary>
         /// The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the subnet is in.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
         /// <summary>
         /// The IP address of the virtual router.  Example: `10.0.14.1`
         /// </summary>
-        public readonly string VirtualRouterIp;
+        public readonly string? VirtualRouterIp;
         /// <summary>
         /// The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
         /// </summary>
-        public readonly string VirtualRouterMac;
+        public readonly string? VirtualRouterMac;
 
         [OutputConstructor]
         private GetSubnetResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string cidrBlock,
+            string? cidrBlock,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string dhcpOptionsId,
+            string? dhcpOptionsId,
 
-            string displayName,
+            string? displayName,
 
-            string dnsLabel,
+            string? dnsLabel,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string ipv6cidrBlock,
+            string? ipv6cidrBlock,
 
             ImmutableArray<string> ipv6cidrBlocks,
 
-            string ipv6virtualRouterIp,
+            string? ipv6virtualRouterIp,
 
-            bool prohibitInternetIngress,
+            bool? prohibitInternetIngress,
 
-            bool prohibitPublicIpOnVnic,
+            bool? prohibitPublicIpOnVnic,
 
-            string routeTableId,
+            string? routeTableId,
 
             ImmutableArray<string> securityListIds,
 
-            string state,
+            string? state,
 
-            string subnetDomainName,
+            string? subnetDomainName,
 
             string subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vcnId,
+            string? vcnId,
 
-            string virtualRouterIp,
+            string? virtualRouterIp,
 
-            string virtualRouterMac)
+            string? virtualRouterMac)
         {
             AvailabilityDomain = availabilityDomain;
             CidrBlock = cidrBlock;

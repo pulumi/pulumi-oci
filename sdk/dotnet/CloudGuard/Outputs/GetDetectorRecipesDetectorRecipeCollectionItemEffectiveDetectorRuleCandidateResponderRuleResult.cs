@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Ocid for detector recipe
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Preferred state
         /// </summary>
-        public readonly bool IsPreferred;
+        public readonly bool? IsPreferred;
 
         [OutputConstructor]
         private GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult(
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isPreferred)
+            bool? isPreferred)
         {
             DisplayName = displayName;
             Id = id;

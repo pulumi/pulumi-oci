@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Trigger resource in Oracle Cloud Infrastructure Devops service.
@@ -83,38 +82,38 @@ type Trigger struct {
 	// (Updatable) The list of actions that are to be performed for this trigger.
 	Actions TriggerActionArrayOutput `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) The OCID of the connection resource used to get details for triggered events.
-	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
+	ConnectionId pulumi.StringPtrOutput `pulumi:"connectionId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional description about the trigger.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Trigger display name. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the DevOps project to which the trigger belongs to.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// (Updatable) The OCID of the DevOps code repository.
-	RepositoryId pulumi.StringOutput `pulumi:"repositoryId"`
+	RepositoryId pulumi.StringPtrOutput `pulumi:"repositoryId"`
 	// The current state of the trigger.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringOutput `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
-	TriggerUrl pulumi.StringOutput `pulumi:"triggerUrl"`
+	TriggerUrl pulumi.StringPtrOutput `pulumi:"triggerUrl"`
 }
 
 // NewTrigger registers a new resource with the given unique name, arguments, and options.
@@ -307,12 +306,6 @@ func (i *Trigger) ToTriggerOutputWithContext(ctx context.Context) TriggerOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(TriggerOutput)
 }
 
-func (i *Trigger) ToOutput(ctx context.Context) pulumix.Output[*Trigger] {
-	return pulumix.Output[*Trigger]{
-		OutputState: i.ToTriggerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TriggerArrayInput is an input type that accepts TriggerArray and TriggerArrayOutput values.
 // You can construct a concrete instance of `TriggerArrayInput` via:
 //
@@ -336,12 +329,6 @@ func (i TriggerArray) ToTriggerArrayOutput() TriggerArrayOutput {
 
 func (i TriggerArray) ToTriggerArrayOutputWithContext(ctx context.Context) TriggerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TriggerArrayOutput)
-}
-
-func (i TriggerArray) ToOutput(ctx context.Context) pulumix.Output[[]*Trigger] {
-	return pulumix.Output[[]*Trigger]{
-		OutputState: i.ToTriggerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TriggerMapInput is an input type that accepts TriggerMap and TriggerMapOutput values.
@@ -369,12 +356,6 @@ func (i TriggerMap) ToTriggerMapOutputWithContext(ctx context.Context) TriggerMa
 	return pulumi.ToOutputWithContext(ctx, i).(TriggerMapOutput)
 }
 
-func (i TriggerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Trigger] {
-	return pulumix.Output[map[string]*Trigger]{
-		OutputState: i.ToTriggerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TriggerOutput struct{ *pulumi.OutputState }
 
 func (TriggerOutput) ElementType() reflect.Type {
@@ -389,25 +370,19 @@ func (o TriggerOutput) ToTriggerOutputWithContext(ctx context.Context) TriggerOu
 	return o
 }
 
-func (o TriggerOutput) ToOutput(ctx context.Context) pulumix.Output[*Trigger] {
-	return pulumix.Output[*Trigger]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of actions that are to be performed for this trigger.
 func (o TriggerOutput) Actions() TriggerActionArrayOutput {
 	return o.ApplyT(func(v *Trigger) TriggerActionArrayOutput { return v.Actions }).(TriggerActionArrayOutput)
 }
 
 // The OCID of the compartment that contains the trigger.
-func (o TriggerOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o TriggerOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the connection resource used to get details for triggered events.
-func (o TriggerOutput) ConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.ConnectionId }).(pulumi.StringOutput)
+func (o TriggerOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.ConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -416,13 +391,13 @@ func (o TriggerOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Optional description about the trigger.
-func (o TriggerOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o TriggerOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Trigger display name. Avoid entering confidential information.
-func (o TriggerOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o TriggerOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -431,8 +406,8 @@ func (o TriggerOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o TriggerOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o TriggerOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DevOps project to which the trigger belongs to.
@@ -441,13 +416,13 @@ func (o TriggerOutput) ProjectId() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the DevOps code repository.
-func (o TriggerOutput) RepositoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.RepositoryId }).(pulumi.StringOutput)
+func (o TriggerOutput) RepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.RepositoryId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the trigger.
-func (o TriggerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TriggerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -456,13 +431,13 @@ func (o TriggerOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o TriggerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TriggerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o TriggerOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o TriggerOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
@@ -474,8 +449,8 @@ func (o TriggerOutput) TriggerSource() pulumi.StringOutput {
 }
 
 // The endpoint that listens to trigger events.
-func (o TriggerOutput) TriggerUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Trigger) pulumi.StringOutput { return v.TriggerUrl }).(pulumi.StringOutput)
+func (o TriggerOutput) TriggerUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Trigger) pulumi.StringPtrOutput { return v.TriggerUrl }).(pulumi.StringPtrOutput)
 }
 
 type TriggerArrayOutput struct{ *pulumi.OutputState }
@@ -490,12 +465,6 @@ func (o TriggerArrayOutput) ToTriggerArrayOutput() TriggerArrayOutput {
 
 func (o TriggerArrayOutput) ToTriggerArrayOutputWithContext(ctx context.Context) TriggerArrayOutput {
 	return o
-}
-
-func (o TriggerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Trigger] {
-	return pulumix.Output[[]*Trigger]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TriggerArrayOutput) Index(i pulumi.IntInput) TriggerOutput {
@@ -516,12 +485,6 @@ func (o TriggerMapOutput) ToTriggerMapOutput() TriggerMapOutput {
 
 func (o TriggerMapOutput) ToTriggerMapOutputWithContext(ctx context.Context) TriggerMapOutput {
 	return o
-}
-
-func (o TriggerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Trigger] {
-	return pulumix.Output[map[string]*Trigger]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TriggerMapOutput) MapIndex(k pulumi.StringInput) TriggerOutput {

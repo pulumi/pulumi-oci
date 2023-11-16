@@ -48,7 +48,7 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      */
-    public /*out*/ readonly approvalRequiredOpActionLists!: pulumi.Output<string[]>;
+    public /*out*/ readonly approvalRequiredOpActionLists!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
      */
@@ -56,7 +56,7 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
      */
-    public readonly approversLists!: pulumi.Output<string[]>;
+    public readonly approversLists!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains this operator control.
      */
@@ -64,23 +64,23 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the operator control.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of emailId.
      */
-    public readonly emailIdLists!: pulumi.Output<string[]>;
+    public readonly emailIdLists!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Whether the operator control is a default Operator Control.
      */
-    public /*out*/ readonly isDefaultOperatorControl!: pulumi.Output<boolean>;
+    public /*out*/ readonly isDefaultOperatorControl!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
@@ -88,7 +88,7 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * Description associated with the latest modification of the operator control.
      */
-    public /*out*/ readonly lastModifiedInfo!: pulumi.Output<string>;
+    public /*out*/ readonly lastModifiedInfo!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Name of the operator control.
      */
@@ -96,7 +96,7 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
      */
-    public readonly preApprovedOpActionLists!: pulumi.Output<string[]>;
+    public readonly preApprovedOpActionLists!: pulumi.Output<string[] | undefined>;
     /**
      * resourceType for which the OperatorControl is applicable
      */
@@ -104,7 +104,7 @@ export class OperatorControl extends pulumi.CustomResource {
     /**
      * The current lifecycle state of the operator control.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
      *
@@ -112,19 +112,19 @@ export class OperatorControl extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemMessage!: pulumi.Output<string>;
+    public readonly systemMessage!: pulumi.Output<string | undefined>;
     /**
      * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeOfCreation!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfCreation!: pulumi.Output<string | undefined>;
     /**
      * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string | undefined>;
     /**
      * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeOfModification!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfModification!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OperatorControl resource with the given unique name, arguments, and options.

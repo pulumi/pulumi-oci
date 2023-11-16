@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageRolloutPolicy {
@@ -15,63 +17,63 @@ public final class GetDeployStageRolloutPolicy {
      * @return The number that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    private Integer batchCount;
+    private @Nullable Integer batchCount;
     /**
      * @return The duration of delay between batch rollout. The default delay is 1 minute.
      * 
      */
-    private Integer batchDelayInSeconds;
+    private @Nullable Integer batchDelayInSeconds;
     /**
      * @return The percentage that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    private Integer batchPercentage;
+    private @Nullable Integer batchPercentage;
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
     /**
      * @return Indicates the criteria to stop.
      * 
      */
-    private Double rampLimitPercent;
+    private @Nullable Double rampLimitPercent;
 
     private GetDeployStageRolloutPolicy() {}
     /**
      * @return The number that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    public Integer batchCount() {
-        return this.batchCount;
+    public Optional<Integer> batchCount() {
+        return Optional.ofNullable(this.batchCount);
     }
     /**
      * @return The duration of delay between batch rollout. The default delay is 1 minute.
      * 
      */
-    public Integer batchDelayInSeconds() {
-        return this.batchDelayInSeconds;
+    public Optional<Integer> batchDelayInSeconds() {
+        return Optional.ofNullable(this.batchDelayInSeconds);
     }
     /**
      * @return The percentage that will be used to determine how many instances will be deployed concurrently.
      * 
      */
-    public Integer batchPercentage() {
-        return this.batchPercentage;
+    public Optional<Integer> batchPercentage() {
+        return Optional.ofNullable(this.batchPercentage);
     }
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
     /**
      * @return Indicates the criteria to stop.
      * 
      */
-    public Double rampLimitPercent() {
-        return this.rampLimitPercent;
+    public Optional<Double> rampLimitPercent() {
+        return Optional.ofNullable(this.rampLimitPercent);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetDeployStageRolloutPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer batchCount;
-        private Integer batchDelayInSeconds;
-        private Integer batchPercentage;
-        private String policyType;
-        private Double rampLimitPercent;
+        private @Nullable Integer batchCount;
+        private @Nullable Integer batchDelayInSeconds;
+        private @Nullable Integer batchPercentage;
+        private @Nullable String policyType;
+        private @Nullable Double rampLimitPercent;
         public Builder() {}
         public Builder(GetDeployStageRolloutPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetDeployStageRolloutPolicy {
         }
 
         @CustomType.Setter
-        public Builder batchCount(Integer batchCount) {
-            this.batchCount = Objects.requireNonNull(batchCount);
+        public Builder batchCount(@Nullable Integer batchCount) {
+            this.batchCount = batchCount;
             return this;
         }
         @CustomType.Setter
-        public Builder batchDelayInSeconds(Integer batchDelayInSeconds) {
-            this.batchDelayInSeconds = Objects.requireNonNull(batchDelayInSeconds);
+        public Builder batchDelayInSeconds(@Nullable Integer batchDelayInSeconds) {
+            this.batchDelayInSeconds = batchDelayInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder batchPercentage(Integer batchPercentage) {
-            this.batchPercentage = Objects.requireNonNull(batchPercentage);
+        public Builder batchPercentage(@Nullable Integer batchPercentage) {
+            this.batchPercentage = batchPercentage;
             return this;
         }
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
-        public Builder rampLimitPercent(Double rampLimitPercent) {
-            this.rampLimitPercent = Objects.requireNonNull(rampLimitPercent);
+        public Builder rampLimitPercent(@Nullable Double rampLimitPercent) {
+            this.rampLimitPercent = rampLimitPercent;
             return this;
         }
         public GetDeployStageRolloutPolicy build() {

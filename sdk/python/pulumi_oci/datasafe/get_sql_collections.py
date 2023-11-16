@@ -72,9 +72,6 @@ class GetSqlCollectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the SQL collection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,17 +82,11 @@ class GetSqlCollectionsResult:
     @property
     @pulumi.getter(name="dbUserName")
     def db_user_name(self) -> Optional[str]:
-        """
-        The database user name.
-        """
         return pulumi.get(self, "db_user_name")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the SQL collection.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -105,7 +96,7 @@ class GetSqlCollectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,10 +104,7 @@ class GetSqlCollectionsResult:
 
     @property
     @pulumi.getter(name="sqlCollectionCollections")
-    def sql_collection_collections(self) -> Sequence['outputs.GetSqlCollectionsSqlCollectionCollectionResult']:
-        """
-        The list of sql_collection_collection.
-        """
+    def sql_collection_collections(self) -> Optional[Sequence['outputs.GetSqlCollectionsSqlCollectionCollectionResult']]:
         return pulumi.get(self, "sql_collection_collections")
 
     @property
@@ -127,17 +115,11 @@ class GetSqlCollectionsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the SQL collection.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target corresponding to the security policy deployment.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -185,56 +167,7 @@ def get_sql_collections(access_level: Optional[str] = None,
                         time_created_less_than: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlCollectionsResult:
     """
-    This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all SQL collections in Data Safe.
-
-    The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collections = oci.DataSafe.get_sql_collections(compartment_id=var["compartment_id"],
-        access_level=var["sql_collection_access_level"],
-        compartment_id_in_subtree=var["sql_collection_compartment_id_in_subtree"],
-        db_user_name=oci_identity_user["test_user"]["name"],
-        display_name=var["sql_collection_display_name"],
-        sql_collection_id=oci_data_safe_sql_collection["test_sql_collection"]["id"],
-        state=var["sql_collection_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["sql_collection_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sql_collection_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str db_user_name: A filter to return only items that match the specified user name.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str sql_collection_id: An optional filter to return only resources that match the specified OCID of the SQL collection resource.
-    :param str state: The current state of the SQL collection.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -281,55 +214,6 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[str]
                                time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionsResult]:
     """
-    This data source provides the list of Sql Collections in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all SQL collections in Data Safe.
-
-    The ListSqlCollections operation returns only the SQL collections in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collections = oci.DataSafe.get_sql_collections(compartment_id=var["compartment_id"],
-        access_level=var["sql_collection_access_level"],
-        compartment_id_in_subtree=var["sql_collection_compartment_id_in_subtree"],
-        db_user_name=oci_identity_user["test_user"]["name"],
-        display_name=var["sql_collection_display_name"],
-        sql_collection_id=oci_data_safe_sql_collection["test_sql_collection"]["id"],
-        state=var["sql_collection_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["sql_collection_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sql_collection_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str db_user_name: A filter to return only items that match the specified user name.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str sql_collection_id: An optional filter to return only resources that match the specified OCID of the SQL collection resource.
-    :param str state: The current state of the SQL collection.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

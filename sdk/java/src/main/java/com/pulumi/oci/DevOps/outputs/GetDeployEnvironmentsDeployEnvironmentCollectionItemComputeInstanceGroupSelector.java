@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector {
@@ -14,7 +15,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
      * @return A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
      * 
      */
-    private List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items;
+    private @Nullable List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items;
 
     private GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
      * 
      */
     public List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items;
+        private @Nullable List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items;
         public Builder() {}
         public Builder(GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem... items) {

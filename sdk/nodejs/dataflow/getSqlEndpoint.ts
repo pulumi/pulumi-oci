@@ -47,104 +47,104 @@ export interface GetSqlEndpointResult {
     /**
      * The OCID of a compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the SQL Endpoint.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The SQL Endpoint name, which can be changed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The shape of the SQL Endpoint driver instance.
      */
-    readonly driverShape: string;
+    readonly driverShape?: string;
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    readonly driverShapeConfigs: outputs.DataFlow.GetSqlEndpointDriverShapeConfig[];
+    readonly driverShapeConfigs?: outputs.DataFlow.GetSqlEndpointDriverShapeConfig[];
     /**
      * The shape of the SQL Endpoint executor instance.
      */
-    readonly executorShape: string;
+    readonly executorShape?: string;
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    readonly executorShapeConfigs: outputs.DataFlow.GetSqlEndpointExecutorShapeConfig[];
+    readonly executorShapeConfigs?: outputs.DataFlow.GetSqlEndpointExecutorShapeConfig[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provision identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      */
-    readonly jdbcEndpointUrl: string;
+    readonly jdbcEndpointUrl?: string;
     /**
      * The OCID of Oracle Cloud Infrastructure Lake.
      */
-    readonly lakeId: string;
+    readonly lakeId?: string;
     /**
      * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      */
-    readonly lastAcceptedRequestToken: string;
+    readonly lastAcceptedRequestToken?: string;
     /**
      * The maximum number of executors.
      */
-    readonly maxExecutorCount: number;
+    readonly maxExecutorCount?: number;
     /**
      * The OCID of Oracle Cloud Infrastructure Hive Metastore.
      */
-    readonly metastoreId: string;
+    readonly metastoreId?: string;
     /**
      * The minimum number of executors.
      */
-    readonly minExecutorCount: number;
+    readonly minExecutorCount?: number;
     /**
      * The network configuration of a SQL Endpoint.
      */
-    readonly networkConfigurations: outputs.DataFlow.GetSqlEndpointNetworkConfiguration[];
+    readonly networkConfigurations?: outputs.DataFlow.GetSqlEndpointNetworkConfiguration[];
     /**
      * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    readonly sparkAdvancedConfigurations: {[key: string]: any};
+    readonly sparkAdvancedConfigurations?: {[key: string]: any};
     readonly sqlEndpointId: string;
     /**
      * The version of SQL Endpoint.
      */
-    readonly sqlEndpointVersion: string;
+    readonly sqlEndpointVersion?: string;
     /**
      * The current state of the Sql Endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      */
-    readonly stateMessage: string;
+    readonly stateMessage?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      */
-    readonly warehouseBucketUri: string;
+    readonly warehouseBucketUri?: string;
 }
 /**
  * This data source provides details about a specific Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.

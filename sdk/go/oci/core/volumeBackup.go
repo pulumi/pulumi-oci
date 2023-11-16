@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Backup resource in Oracle Cloud Infrastructure Core service.
@@ -69,47 +68,47 @@ type VolumeBackup struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the compartment that contains the volume backup.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-	ExpirationTime pulumi.StringOutput `pulumi:"expirationTime"`
+	ExpirationTime pulumi.StringPtrOutput `pulumi:"expirationTime"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The size of the volume, in GBs.
-	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
+	SizeInGbs pulumi.StringPtrOutput `pulumi:"sizeInGbs"`
 	// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs pulumi.StringOutput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrOutput `pulumi:"sizeInMbs"`
 	// Details of the volume backup source in the cloud.
 	SourceDetails VolumeBackupSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// Specifies whether the backup was created manually, or via scheduled backup policy.
-	SourceType pulumi.StringOutput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// The OCID of the source volume backup.
-	SourceVolumeBackupId pulumi.StringOutput `pulumi:"sourceVolumeBackupId"`
+	SourceVolumeBackupId pulumi.StringPtrOutput `pulumi:"sourceVolumeBackupId"`
 	// The current state of a volume backup.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-	TimeRequestReceived pulumi.StringOutput `pulumi:"timeRequestReceived"`
+	TimeRequestReceived pulumi.StringPtrOutput `pulumi:"timeRequestReceived"`
 	// The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
-	UniqueSizeInGbs pulumi.StringOutput `pulumi:"uniqueSizeInGbs"`
+	UniqueSizeInGbs pulumi.StringPtrOutput `pulumi:"uniqueSizeInGbs"`
 	// The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
 	//
 	// Deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.
-	UniqueSizeInMbs pulumi.StringOutput `pulumi:"uniqueSizeInMbs"`
+	UniqueSizeInMbs pulumi.StringPtrOutput `pulumi:"uniqueSizeInMbs"`
 	// The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
-	VolumeId pulumi.StringOutput `pulumi:"volumeId"`
+	VolumeId pulumi.StringPtrOutput `pulumi:"volumeId"`
 }
 
 // NewVolumeBackup registers a new resource with the given unique name, arguments, and options.
@@ -297,12 +296,6 @@ func (i *VolumeBackup) ToVolumeBackupOutputWithContext(ctx context.Context) Volu
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupOutput)
 }
 
-func (i *VolumeBackup) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackup] {
-	return pulumix.Output[*VolumeBackup]{
-		OutputState: i.ToVolumeBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VolumeBackupArrayInput is an input type that accepts VolumeBackupArray and VolumeBackupArrayOutput values.
 // You can construct a concrete instance of `VolumeBackupArrayInput` via:
 //
@@ -326,12 +319,6 @@ func (i VolumeBackupArray) ToVolumeBackupArrayOutput() VolumeBackupArrayOutput {
 
 func (i VolumeBackupArray) ToVolumeBackupArrayOutputWithContext(ctx context.Context) VolumeBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupArrayOutput)
-}
-
-func (i VolumeBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackup] {
-	return pulumix.Output[[]*VolumeBackup]{
-		OutputState: i.ToVolumeBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VolumeBackupMapInput is an input type that accepts VolumeBackupMap and VolumeBackupMapOutput values.
@@ -359,12 +346,6 @@ func (i VolumeBackupMap) ToVolumeBackupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupMapOutput)
 }
 
-func (i VolumeBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackup] {
-	return pulumix.Output[map[string]*VolumeBackup]{
-		OutputState: i.ToVolumeBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VolumeBackupOutput struct{ *pulumi.OutputState }
 
 func (VolumeBackupOutput) ElementType() reflect.Type {
@@ -379,15 +360,9 @@ func (o VolumeBackupOutput) ToVolumeBackupOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o VolumeBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeBackup] {
-	return pulumix.Output[*VolumeBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the volume backup.
-func (o VolumeBackupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -396,13 +371,13 @@ func (o VolumeBackupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VolumeBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-func (o VolumeBackupOutput) ExpirationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.ExpirationTime }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) ExpirationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.ExpirationTime }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -411,20 +386,20 @@ func (o VolumeBackupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-func (o VolumeBackupOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume, in GBs.
-func (o VolumeBackupOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
 //
 // Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-func (o VolumeBackupOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Details of the volume backup source in the cloud.
@@ -433,18 +408,18 @@ func (o VolumeBackupOutput) SourceDetails() VolumeBackupSourceDetailsPtrOutput {
 }
 
 // Specifies whether the backup was created manually, or via scheduled backup policy.
-func (o VolumeBackupOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source volume backup.
-func (o VolumeBackupOutput) SourceVolumeBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.SourceVolumeBackupId }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) SourceVolumeBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.SourceVolumeBackupId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a volume backup.
-func (o VolumeBackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -453,35 +428,35 @@ func (o VolumeBackupOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o VolumeBackupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-func (o VolumeBackupOutput) TimeRequestReceived() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.TimeRequestReceived }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) TimeRequestReceived() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.TimeRequestReceived }).(pulumi.StringPtrOutput)
 }
 
 // The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
-func (o VolumeBackupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
-func (o VolumeBackupOutput) UniqueSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.UniqueSizeInGbs }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) UniqueSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.UniqueSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
 //
 // Deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.
-func (o VolumeBackupOutput) UniqueSizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.UniqueSizeInMbs }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) UniqueSizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.UniqueSizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
-func (o VolumeBackupOutput) VolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeBackup) pulumi.StringOutput { return v.VolumeId }).(pulumi.StringOutput)
+func (o VolumeBackupOutput) VolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackup) pulumi.StringPtrOutput { return v.VolumeId }).(pulumi.StringPtrOutput)
 }
 
 type VolumeBackupArrayOutput struct{ *pulumi.OutputState }
@@ -496,12 +471,6 @@ func (o VolumeBackupArrayOutput) ToVolumeBackupArrayOutput() VolumeBackupArrayOu
 
 func (o VolumeBackupArrayOutput) ToVolumeBackupArrayOutputWithContext(ctx context.Context) VolumeBackupArrayOutput {
 	return o
-}
-
-func (o VolumeBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeBackup] {
-	return pulumix.Output[[]*VolumeBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeBackupArrayOutput) Index(i pulumi.IntInput) VolumeBackupOutput {
@@ -522,12 +491,6 @@ func (o VolumeBackupMapOutput) ToVolumeBackupMapOutput() VolumeBackupMapOutput {
 
 func (o VolumeBackupMapOutput) ToVolumeBackupMapOutputWithContext(ctx context.Context) VolumeBackupMapOutput {
 	return o
-}
-
-func (o VolumeBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeBackup] {
-	return pulumix.Output[map[string]*VolumeBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeBackupMapOutput) MapIndex(k pulumi.StringInput) VolumeBackupOutput {

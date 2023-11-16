@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pbf Listing resource in Oracle Cloud Infrastructure Functions service.
@@ -62,24 +61,24 @@ type GetPbfListingResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A brief descriptive name for the PBF trigger.
-	Name         string `pulumi:"name"`
-	PbfListingId string `pulumi:"pbfListingId"`
+	Name         *string `pulumi:"name"`
+	PbfListingId string  `pulumi:"pbfListingId"`
 	// Contains details about the publisher of this PBF Listing.
 	PublisherDetails []GetPbfListingPublisherDetail `pulumi:"publisherDetails"`
 	// The current state of the PBF resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the PbfListing was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An array of Trigger. A list of triggers that may activate the PBF.
 	Triggers []GetPbfListingTrigger `pulumi:"triggers"`
 }
@@ -122,20 +121,14 @@ func (o GetPbfListingResultOutput) ToGetPbfListingResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetPbfListingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingResult] {
-	return pulumix.Output[GetPbfListingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetPbfListingResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetPbfListingResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-func (o GetPbfListingResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPbfListingResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -144,13 +137,13 @@ func (o GetPbfListingResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPbfListingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPbfListingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A brief descriptive name for the PBF trigger.
-func (o GetPbfListingResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPbfListingResultOutput) PbfListingId() pulumi.StringOutput {
@@ -163,8 +156,8 @@ func (o GetPbfListingResultOutput) PublisherDetails() GetPbfListingPublisherDeta
 }
 
 // The current state of the PBF resource.
-func (o GetPbfListingResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetPbfListingResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -173,13 +166,13 @@ func (o GetPbfListingResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the PbfListing was created. An RFC3339 formatted datetime string.
-func (o GetPbfListingResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPbfListingResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last time the PbfListing was updated. An RFC3339 formatted datetime string.
-func (o GetPbfListingResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetPbfListingResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // An array of Trigger. A list of triggers that may activate the PBF.

@@ -44,94 +44,94 @@ export interface GetMonitoredResourceArgs {
  * A collection of values returned by getMonitoredResource.
  */
 export interface GetMonitoredResourceResult {
-    readonly additionalAliases: outputs.StackMonitoring.GetMonitoredResourceAdditionalAlias[];
-    readonly additionalCredentials: outputs.StackMonitoring.GetMonitoredResourceAdditionalCredential[];
+    readonly additionalAliases?: outputs.StackMonitoring.GetMonitoredResourceAdditionalAlias[];
+    readonly additionalCredentials?: outputs.StackMonitoring.GetMonitoredResourceAdditionalCredential[];
     /**
      * Monitored Resource Alias Credential Details
      */
-    readonly aliases: outputs.StackMonitoring.GetMonitoredResourceAlias[];
+    readonly aliases?: outputs.StackMonitoring.GetMonitoredResourceAlias[];
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Monitored Resource Credential Details.
      */
-    readonly credentials: outputs.StackMonitoring.GetMonitoredResourceCredential[];
+    readonly credentials?: outputs.StackMonitoring.GetMonitoredResourceCredential[];
     /**
      * Connection details for the database.
      */
-    readonly databaseConnectionDetails: outputs.StackMonitoring.GetMonitoredResourceDatabaseConnectionDetail[];
+    readonly databaseConnectionDetails?: outputs.StackMonitoring.GetMonitoredResourceDatabaseConnectionDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Monitored resource display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
-    readonly externalId: string;
-    readonly externalResourceId: string;
+    readonly externalId?: string;
+    readonly externalResourceId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Monitored resource host name.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * License edition of the monitored resource.
      */
-    readonly license: string;
+    readonly license?: string;
     /**
      * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly managementAgentId: string;
+    readonly managementAgentId?: string;
     readonly monitoredResourceId: string;
     /**
      * Property Name.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * List of monitored resource properties.
      */
-    readonly properties: outputs.StackMonitoring.GetMonitoredResourceProperty[];
+    readonly properties?: outputs.StackMonitoring.GetMonitoredResourceProperty[];
     /**
      * Time zone in the form of tz database canonical zone ID.
      */
-    readonly resourceTimeZone: string;
+    readonly resourceTimeZone?: string;
     /**
      * Lifecycle state of the monitored resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly tenantId: string;
+    readonly tenantId?: string;
     /**
      * The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Monitored Resource Type.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.

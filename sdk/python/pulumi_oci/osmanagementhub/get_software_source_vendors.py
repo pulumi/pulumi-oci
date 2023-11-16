@@ -52,7 +52,7 @@ class GetSoftwareSourceVendorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,17 +61,11 @@ class GetSoftwareSourceVendorsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the vendor providing the software source.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="softwareSourceVendorCollections")
-    def software_source_vendor_collections(self) -> Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionResult']:
-        """
-        The list of software_source_vendor_collection.
-        """
+    def software_source_vendor_collections(self) -> Optional[Sequence['outputs.GetSoftwareSourceVendorsSoftwareSourceVendorCollectionResult']]:
         return pulumi.get(self, "software_source_vendor_collections")
 
 
@@ -93,24 +87,7 @@ def get_software_source_vendors(compartment_id: Optional[str] = None,
                                 name: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceVendorsResult:
     """
-    This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available software source vendors. Filter the list against a variety of criteria including but not limited
-    to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=var["compartment_id"],
-        name=var["software_source_vendor_name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list. This parameter is required.
-    :param str name: The name of the entity to be queried.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -133,23 +110,6 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[str
                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceVendorsResult]:
     """
-    This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists available software source vendors. Filter the list against a variety of criteria including but not limited
-    to its name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=var["compartment_id"],
-        name=var["software_source_vendor_name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the resources to list. This parameter is required.
-    :param str name: The name of the entity to be queried.
+    Use this data source to access information about an existing resource.
     """
     ...

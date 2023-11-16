@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetMonitoredInstancesFilterArgs) ToGetMonitoredInstancesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesFilterOutput)
 }
 
-func (i GetMonitoredInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesFilter] {
-	return pulumix.Output[GetMonitoredInstancesFilter]{
-		OutputState: i.ToGetMonitoredInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredInstancesFilterArrayInput is an input type that accepts GetMonitoredInstancesFilterArray and GetMonitoredInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetMonitoredInstancesFilterArray) ToGetMonitoredInstancesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesFilterArrayOutput)
 }
 
-func (i GetMonitoredInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesFilter] {
-	return pulumix.Output[[]GetMonitoredInstancesFilter]{
-		OutputState: i.ToGetMonitoredInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredInstancesFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetMonitoredInstancesFilterOutput) ToGetMonitoredInstancesFilterOutput()
 
 func (o GetMonitoredInstancesFilterOutput) ToGetMonitoredInstancesFilterOutputWithContext(ctx context.Context) GetMonitoredInstancesFilterOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesFilter] {
-	return pulumix.Output[GetMonitoredInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetMonitoredInstancesFilterArrayOutput) ToGetMonitoredInstancesFilterArr
 
 func (o GetMonitoredInstancesFilterArrayOutput) ToGetMonitoredInstancesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesFilter] {
-	return pulumix.Output[[]GetMonitoredInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredInstancesFilterOutput {
@@ -175,12 +150,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionArgs) ToGetMonitoredInst
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredInstancesMonitoredInstanceCollectionArrayInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionArray and GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredInstancesMonitoredInstanceCollectionArrayInput` via:
 //
@@ -206,12 +175,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionArray) ToGetMonitoredIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredInstancesMonitoredInstanceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredInstancesMonitoredInstanceCollectionOutput) ElementType() reflect.Type {
@@ -224,12 +187,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) ToGetMonitoredIn
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) ToGetMonitoredInstancesMonitoredInstanceCollectionOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionOutput) Items() GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput {
@@ -252,12 +209,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) ToGetMonito
 	return o
 }
 
-func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredInstancesMonitoredInstanceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredInstancesMonitoredInstanceCollection {
 		return vs[0].([]GetMonitoredInstancesMonitoredInstanceCollection)[vs[1].(int)]
@@ -266,23 +217,23 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionArrayOutput) Index(i pul
 
 type GetMonitoredInstancesMonitoredInstanceCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-	InstanceId string `pulumi:"instanceId"`
+	InstanceId *string `pulumi:"instanceId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Monitoring status. Can be either enabled or disabled.
-	MonitoringState string `pulumi:"monitoringState"`
+	MonitoringState *string `pulumi:"monitoringState"`
 	// The current state of the monitored instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMonitoredInstancesMonitoredInstanceCollectionItemInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionItemArgs and GetMonitoredInstancesMonitoredInstanceCollectionItemOutput values.
@@ -298,23 +249,23 @@ type GetMonitoredInstancesMonitoredInstanceCollectionItemInput interface {
 
 type GetMonitoredInstancesMonitoredInstanceCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// Monitoring status. Can be either enabled or disabled.
-	MonitoringState pulumi.StringInput `pulumi:"monitoringState"`
+	MonitoringState pulumi.StringPtrInput `pulumi:"monitoringState"`
 	// The current state of the monitored instance.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ElementType() reflect.Type {
@@ -327,12 +278,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ToGetMonitored
 
 func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ToGetMonitoredInstancesMonitoredInstanceCollectionItemOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionItemOutput)
-}
-
-func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMonitoredInstancesMonitoredInstanceCollectionItemArrayInput is an input type that accepts GetMonitoredInstancesMonitoredInstanceCollectionItemArray and GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput values.
@@ -360,12 +305,6 @@ func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArray) ToGetMonitore
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput)
 }
 
-func (i GetMonitoredInstancesMonitoredInstanceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: i.ToGetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredInstancesMonitoredInstanceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ElementType() reflect.Type {
@@ -380,55 +319,49 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ToGetMonitor
 	return o
 }
 
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored instance.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.InstanceId }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used to invoke manage operations on Management Agent Cloud Service.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Monitoring status. Can be either enabled or disabled.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) MonitoringState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.MonitoringState }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) MonitoringState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.MonitoringState }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the monitored instance.
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the MonitoredInstance was created. An RFC3339 formatted datetime string
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMonitoredInstancesMonitoredInstanceCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredInstancesMonitoredInstanceCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -443,12 +376,6 @@ func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) ToGetMo
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) ToGetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem] {
-	return pulumix.Output[[]GetMonitoredInstancesMonitoredInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredInstancesMonitoredInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredInstancesMonitoredInstanceCollectionItemOutput {

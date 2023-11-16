@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DataIntegration
         /// This field controls if the references will be exported along with the objects
         /// </summary>
         [Output("areReferencesIncluded")]
-        public Output<bool> AreReferencesIncluded { get; private set; } = null!;
+        public Output<bool?> AreReferencesIncluded { get; private set; } = null!;
 
         /// <summary>
         /// Name of the Object Storage bucket where the object will be exported.
@@ -67,13 +67,13 @@ namespace Pulumi.Oci.DataIntegration
         /// Name of the user who initiated export request.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// Contains key of the error
         /// </summary>
         [Output("errorMessages")]
-        public Output<ImmutableDictionary<string, object>> ErrorMessages { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> ErrorMessages { get; private set; } = null!;
 
         /// <summary>
         /// The array of exported object details.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataIntegration
         /// Name of the exported zip file.
         /// </summary>
         [Output("fileName")]
-        public Output<string> FileName { get; private set; } = null!;
+        public Output<string?> FileName { get; private set; } = null!;
 
         /// <summary>
         /// Filters for exported objects
@@ -97,19 +97,19 @@ namespace Pulumi.Oci.DataIntegration
         /// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
         /// </summary>
         [Output("isObjectOverwriteEnabled")]
-        public Output<bool> IsObjectOverwriteEnabled { get; private set; } = null!;
+        public Output<bool?> IsObjectOverwriteEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Export object request key
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// Name of the export request.
         /// </summary>
         [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        public Output<string?> Name { get; private set; } = null!;
 
         /// <summary>
         /// Field is used to specify which object keys to export
@@ -121,43 +121,43 @@ namespace Pulumi.Oci.DataIntegration
         /// Region of the object storage (if using object storage of different region)
         /// </summary>
         [Output("objectStorageRegion")]
-        public Output<string> ObjectStorageRegion { get; private set; } = null!;
+        public Output<string?> ObjectStorageRegion { get; private set; } = null!;
 
         /// <summary>
         /// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         /// </summary>
         [Output("objectStorageTenancyId")]
-        public Output<string> ObjectStorageTenancyId { get; private set; } = null!;
+        public Output<string?> ObjectStorageTenancyId { get; private set; } = null!;
 
         /// <summary>
         /// The array of exported referenced objects.
         /// </summary>
         [Output("referencedItems")]
-        public Output<string> ReferencedItems { get; private set; } = null!;
+        public Output<string?> ReferencedItems { get; private set; } = null!;
 
         /// <summary>
         /// Export Objects request status.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the request was completely processed.
         /// </summary>
         [Output("timeEndedInMillis")]
-        public Output<string> TimeEndedInMillis { get; private set; } = null!;
+        public Output<string?> TimeEndedInMillis { get; private set; } = null!;
 
         /// <summary>
         /// Time at which the request started getting processed.
         /// </summary>
         [Output("timeStartedInMillis")]
-        public Output<string> TimeStartedInMillis { get; private set; } = null!;
+        public Output<string?> TimeStartedInMillis { get; private set; } = null!;
 
         /// <summary>
         /// Number of objects that are exported.
         /// </summary>
         [Output("totalExportedObjectCount")]
-        public Output<int> TotalExportedObjectCount { get; private set; } = null!;
+        public Output<int?> TotalExportedObjectCount { get; private set; } = null!;
 
         /// <summary>
         /// The workspace ID.

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// refresh time.
         /// </summary>
-        public readonly string TimeAvailableForRefresh;
+        public readonly string? TimeAvailableForRefresh;
 
         [OutputConstructor]
-        private GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult(string timeAvailableForRefresh)
+        private GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemResult(string? timeAvailableForRefresh)
         {
             TimeAvailableForRefresh = timeAvailableForRefresh;
         }

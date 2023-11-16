@@ -8,6 +8,8 @@ import com.pulumi.oci.DataLabellingService.outputs.GetAnnotationFormatItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnnotationFormatResult {
@@ -16,12 +18,12 @@ public final class GetAnnotationFormatResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of annotation formats.
      * 
      */
-    private List<GetAnnotationFormatItem> items;
+    private @Nullable List<GetAnnotationFormatItem> items;
 
     private GetAnnotationFormatResult() {}
     public String compartmentId() {
@@ -31,15 +33,15 @@ public final class GetAnnotationFormatResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of annotation formats.
      * 
      */
     public List<GetAnnotationFormatItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetAnnotationFormatResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private List<GetAnnotationFormatItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAnnotationFormatItem> items;
         public Builder() {}
         public Builder(GetAnnotationFormatResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetAnnotationFormatResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAnnotationFormatItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAnnotationFormatItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAnnotationFormatItem... items) {

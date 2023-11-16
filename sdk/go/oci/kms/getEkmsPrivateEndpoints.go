@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
@@ -66,7 +65,7 @@ type GetEkmsPrivateEndpointsResult struct {
 	EkmsPrivateEndpoints []GetEkmsPrivateEndpointsEkmsPrivateEndpoint `pulumi:"ekmsPrivateEndpoints"`
 	Filters              []GetEkmsPrivateEndpointsFilter              `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetEkmsPrivateEndpointsOutput(ctx *pulumi.Context, args GetEkmsPrivateEndpointsOutputArgs, opts ...pulumi.InvokeOption) GetEkmsPrivateEndpointsResultOutput {
@@ -108,12 +107,6 @@ func (o GetEkmsPrivateEndpointsResultOutput) ToGetEkmsPrivateEndpointsResultOutp
 	return o
 }
 
-func (o GetEkmsPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsResult] {
-	return pulumix.Output[GetEkmsPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Identifier of the compartment this EKMS private endpoint belongs to
 func (o GetEkmsPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEkmsPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -131,8 +124,8 @@ func (o GetEkmsPrivateEndpointsResultOutput) Filters() GetEkmsPrivateEndpointsFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetEkmsPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEkmsPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEkmsPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

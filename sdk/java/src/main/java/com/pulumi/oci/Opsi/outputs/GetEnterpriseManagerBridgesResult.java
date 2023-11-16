@@ -30,7 +30,7 @@ public final class GetEnterpriseManagerBridgesResult {
      * @return The list of enterprise_manager_bridge_collection.
      * 
      */
-    private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections;
+    private @Nullable List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections;
     private @Nullable List<GetEnterpriseManagerBridgesFilter> filters;
     /**
      * @return Enterprise Manager bridge identifier
@@ -66,7 +66,7 @@ public final class GetEnterpriseManagerBridgesResult {
      * 
      */
     public List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections() {
-        return this.enterpriseManagerBridgeCollections;
+        return this.enterpriseManagerBridgeCollections == null ? List.of() : this.enterpriseManagerBridgeCollections;
     }
     public List<GetEnterpriseManagerBridgesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -98,7 +98,7 @@ public final class GetEnterpriseManagerBridgesResult {
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
-        private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections;
+        private @Nullable List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections;
         private @Nullable List<GetEnterpriseManagerBridgesFilter> filters;
         private @Nullable String id;
         private @Nullable List<String> states;
@@ -130,8 +130,8 @@ public final class GetEnterpriseManagerBridgesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder enterpriseManagerBridgeCollections(List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections) {
-            this.enterpriseManagerBridgeCollections = Objects.requireNonNull(enterpriseManagerBridgeCollections);
+        public Builder enterpriseManagerBridgeCollections(@Nullable List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections) {
+            this.enterpriseManagerBridgeCollections = enterpriseManagerBridgeCollections;
             return this;
         }
         public Builder enterpriseManagerBridgeCollections(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection... enterpriseManagerBridgeCollections) {

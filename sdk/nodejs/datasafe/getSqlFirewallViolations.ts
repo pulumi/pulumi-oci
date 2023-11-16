@@ -76,12 +76,12 @@ export interface GetSqlFirewallViolationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly scimQuery?: string;
     /**
      * The list of sql_firewall_violations_collection.
      */
-    readonly sqlFirewallViolationsCollections: outputs.DataSafe.GetSqlFirewallViolationsSqlFirewallViolationsCollection[];
+    readonly sqlFirewallViolationsCollections?: outputs.DataSafe.GetSqlFirewallViolationsSqlFirewallViolationsCollection[];
 }
 /**
  * This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.

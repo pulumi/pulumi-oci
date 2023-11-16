@@ -63,13 +63,13 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// The OCID of the user who created this operator control assignment.
         /// </summary>
         [Output("assignerId")]
-        public Output<string> AssignerId { get; private set; } = null!;
+        public Output<string?> AssignerId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Comment about the assignment of the operator control to this target resource.
         /// </summary>
         [Output("comment")]
-        public Output<string> Comment { get; private set; } = null!;
+        public Output<string?> Comment { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the operator control assignment.
@@ -81,43 +81,43 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// description containing reason for releasing of OperatorControl.
         /// </summary>
         [Output("detachmentDescription")]
-        public Output<string> DetachmentDescription { get; private set; } = null!;
+        public Output<string?> DetachmentDescription { get; private set; } = null!;
 
         /// <summary>
         /// The code identifying the error occurred during Assignment operation.
         /// </summary>
         [Output("errorCode")]
-        public Output<int> ErrorCode { get; private set; } = null!;
+        public Output<int?> ErrorCode { get; private set; } = null!;
 
         /// <summary>
         /// The message describing the error occurred during Assignment operation.
         /// </summary>
         [Output("errorMessage")]
-        public Output<string> ErrorMessage { get; private set; } = null!;
+        public Output<string?> ErrorMessage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The boolean if true would autoApprove during maintenance.
         /// </summary>
         [Output("isAutoApproveDuringMaintenance")]
-        public Output<bool> IsAutoApproveDuringMaintenance { get; private set; } = null!;
+        public Output<bool?> IsAutoApproveDuringMaintenance { get; private set; } = null!;
 
         /// <summary>
         /// Whether the assignment is a default assignment.
         /// </summary>
         [Output("isDefaultAssignment")]
-        public Output<bool> IsDefaultAssignment { get; private set; } = null!;
+        public Output<bool?> IsDefaultAssignment { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If set, then the target resource is always governed by the operator control.
@@ -129,13 +129,13 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         /// </summary>
         [Output("isLogForwarded")]
-        public Output<bool> IsLogForwarded { get; private set; } = null!;
+        public Output<bool?> IsLogForwarded { get; private set; } = null!;
 
         /// <summary>
         /// More in detail about the lifeCycleState.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the operator control that is being assigned to a target resource.
@@ -147,19 +147,19 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         /// </summary>
         [Output("remoteSyslogServerAddress")]
-        public Output<string> RemoteSyslogServerAddress { get; private set; } = null!;
+        public Output<string?> RemoteSyslogServerAddress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
         /// </summary>
         [Output("remoteSyslogServerCaCert")]
-        public Output<string> RemoteSyslogServerCaCert { get; private set; } = null!;
+        public Output<string?> RemoteSyslogServerCaCert { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
         /// </summary>
         [Output("remoteSyslogServerPort")]
-        public Output<int> RemoteSyslogServerPort { get; private set; } = null!;
+        public Output<int?> RemoteSyslogServerPort { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment that contains the target resource.
@@ -189,13 +189,13 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// The current lifcycle state of the OperatorControl.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeAssignmentFrom")]
-        public Output<string> TimeAssignmentFrom { get; private set; } = null!;
+        public Output<string?> TimeAssignmentFrom { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
@@ -205,25 +205,25 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeAssignmentTo")]
-        public Output<string> TimeAssignmentTo { get; private set; } = null!;
+        public Output<string?> TimeAssignmentTo { get; private set; } = null!;
 
         /// <summary>
         /// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeOfAssignment")]
-        public Output<string> TimeOfAssignment { get; private set; } = null!;
+        public Output<string?> TimeOfAssignment { get; private set; } = null!;
 
         /// <summary>
         /// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Output("timeOfDeletion")]
-        public Output<string> TimeOfDeletion { get; private set; } = null!;
+        public Output<string?> TimeOfDeletion { get; private set; } = null!;
 
         /// <summary>
         /// User id who released the operatorControl.
         /// </summary>
         [Output("unassignerId")]
-        public Output<string> UnassignerId { get; private set; } = null!;
+        public Output<string?> UnassignerId { get; private set; } = null!;
 
 
         /// <summary>

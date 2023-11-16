@@ -70,12 +70,12 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedMySqlDatabaseId: string;
     /**
      * The list of my_sql_data_collection.
      */
-    readonly mySqlDataCollections: outputs.DatabaseManagement.GetManagedMySqlDatabaseSqlDataMySqlDataCollection[];
+    readonly mySqlDataCollections?: outputs.DatabaseManagement.GetManagedMySqlDatabaseSqlDataMySqlDataCollection[];
     readonly startTime: string;
 }
 /**

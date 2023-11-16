@@ -128,7 +128,7 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of organization_subscriptions.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.OneSubsription
 
             ImmutableArray<Outputs.GetOrganizationSubscriptionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOrganizationSubscriptionsOrganizationSubscriptionResult> organizationSubscriptions)
         {

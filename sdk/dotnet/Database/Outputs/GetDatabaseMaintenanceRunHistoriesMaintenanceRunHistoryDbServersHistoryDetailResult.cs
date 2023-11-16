@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The user-friendly name for the maintenance run.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The OCID of the maintenance run.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailResult(
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult> dbServerPatchingDetails,
 
-            string displayName,
+            string? displayName,
 
-            string id)
+            string? id)
         {
             DbServerPatchingDetails = dbServerPatchingDetails;
             DisplayName = displayName;

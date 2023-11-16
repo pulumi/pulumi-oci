@@ -93,11 +93,6 @@ class ActionCreateZoneFromZoneFileExternalDownstream(dict):
                  address: Optional[str] = None,
                  port: Optional[int] = None,
                  tsig_key_id: Optional[str] = None):
-        """
-        :param str address: The server's IP address (IPv4 or IPv6).
-        :param int port: The server's port.
-        :param str tsig_key_id: The OCID of the TSIG key.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if port is not None:
@@ -108,25 +103,16 @@ class ActionCreateZoneFromZoneFileExternalDownstream(dict):
     @property
     @pulumi.getter
     def address(self) -> Optional[str]:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        The server's port.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[str]:
-        """
-        The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
 
@@ -153,11 +139,6 @@ class ActionCreateZoneFromZoneFileExternalMaster(dict):
                  address: Optional[str] = None,
                  port: Optional[int] = None,
                  tsig_key_id: Optional[str] = None):
-        """
-        :param str address: The server's IP address (IPv4 or IPv6).
-        :param int port: The server's port.
-        :param str tsig_key_id: The OCID of the TSIG key.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if port is not None:
@@ -168,25 +149,16 @@ class ActionCreateZoneFromZoneFileExternalMaster(dict):
     @property
     @pulumi.getter
     def address(self) -> Optional[str]:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        The server's port.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[str]:
-        """
-        The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
 
@@ -194,18 +166,12 @@ class ActionCreateZoneFromZoneFileExternalMaster(dict):
 class ActionCreateZoneFromZoneFileNameserver(dict):
     def __init__(__self__, *,
                  hostname: Optional[str] = None):
-        """
-        :param str hostname: The hostname of the nameserver.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
     def hostname(self) -> Optional[str]:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
 
@@ -235,12 +201,6 @@ class ActionCreateZoneFromZoneFileZoneTransferServer(dict):
                  is_transfer_destination: Optional[bool] = None,
                  is_transfer_source: Optional[bool] = None,
                  port: Optional[int] = None):
-        """
-        :param str address: The server's IP address (IPv4 or IPv6).
-        :param bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        :param bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param int port: The server's port.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if is_transfer_destination is not None:
@@ -253,33 +213,21 @@ class ActionCreateZoneFromZoneFileZoneTransferServer(dict):
     @property
     @pulumi.getter
     def address(self) -> Optional[str]:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter(name="isTransferDestination")
     def is_transfer_destination(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
         return pulumi.get(self, "is_transfer_destination")
 
     @property
     @pulumi.getter(name="isTransferSource")
     def is_transfer_source(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
         return pulumi.get(self, "is_transfer_source")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        The server's port.
-        """
         return pulumi.get(self, "port")
 
 
@@ -304,17 +252,11 @@ class ResolverAttachedView(dict):
 
     def __init__(__self__, *,
                  view_id: str):
-        """
-        :param str view_id: (Updatable) The OCID of the view.
-        """
         pulumi.set(__self__, "view_id", view_id)
 
     @property
     @pulumi.getter(name="viewId")
     def view_id(self) -> str:
-        """
-        (Updatable) The OCID of the view.
-        """
         return pulumi.get(self, "view_id")
 
 
@@ -366,20 +308,6 @@ class ResolverEndpoint(dict):
                  subnet_id: Optional[str] = None,
                  time_created: Optional[str] = None,
                  time_updated: Optional[str] = None):
-        """
-        :param str compartment_id: (Updatable) The OCID of the owning compartment.
-        :param str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
-        :param str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param str name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The current state of the resource.
-        :param str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if endpoint_type is not None:
@@ -408,97 +336,61 @@ class ResolverEndpoint(dict):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        (Updatable) The OCID of the owning compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[str]:
-        """
-        The type of resolver endpoint. VNIC is currently the only supported type.
-        """
         return pulumi.get(self, "endpoint_type")
 
     @property
     @pulumi.getter(name="forwardingAddress")
     def forwarding_address(self) -> Optional[str]:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
         return pulumi.get(self, "forwarding_address")
 
     @property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
         return pulumi.get(self, "is_forwarding")
 
     @property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
         return pulumi.get(self, "is_listening")
 
     @property
     @pulumi.getter(name="listeningAddress")
     def listening_address(self) -> Optional[str]:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
         return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def self(self) -> Optional[str]:
-        """
-        The canonical absolute URL of the resource.
-        """
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[str]:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_updated")
 
 
@@ -533,13 +425,6 @@ class ResolverRule(dict):
                  source_endpoint_name: str,
                  client_address_conditions: Optional[Sequence[str]] = None,
                  qname_cover_conditions: Optional[Sequence[str]] = None):
-        """
-        :param str action: (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        :param Sequence[str] destination_addresses: (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
-        :param str source_endpoint_name: (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        :param Sequence[str] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        :param Sequence[str] qname_cover_conditions: (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "destination_addresses", destination_addresses)
         pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
@@ -551,41 +436,26 @@ class ResolverRule(dict):
     @property
     @pulumi.getter
     def action(self) -> str:
-        """
-        (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Sequence[str]:
-        """
-        (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
-        """
         return pulumi.get(self, "destination_addresses")
 
     @property
     @pulumi.getter(name="sourceEndpointName")
     def source_endpoint_name(self) -> str:
-        """
-        (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        """
         return pulumi.get(self, "source_endpoint_name")
 
     @property
     @pulumi.getter(name="clientAddressConditions")
     def client_address_conditions(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        """
         return pulumi.get(self, "client_address_conditions")
 
     @property
     @pulumi.getter(name="qnameCoverConditions")
     def qname_cover_conditions(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        """
         return pulumi.get(self, "qname_cover_conditions")
 
 
@@ -620,15 +490,6 @@ class RrsetItem(dict):
                  is_protected: Optional[bool] = None,
                  record_hash: Optional[str] = None,
                  rrset_version: Optional[str] = None):
-        """
-        :param str domain: The fully qualified domain name where the record can be located.
-        :param str rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param str rtype: The type of the target RRSet within the target zone.
-        :param int ttl: (Updatable) The Time To Live for the record, in seconds.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param str record_hash: A unique identifier for the record within its zone.
-        :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "rdata", rdata)
         pulumi.set(__self__, "rtype", rtype)
@@ -643,57 +504,36 @@ class RrsetItem(dict):
     @property
     @pulumi.getter
     def domain(self) -> str:
-        """
-        The fully qualified domain name where the record can be located.
-        """
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter
     def rdata(self) -> str:
-        """
-        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
 
     @property
     @pulumi.getter
     def rtype(self) -> str:
-        """
-        The type of the target RRSet within the target zone.
-        """
         return pulumi.get(self, "rtype")
 
     @property
     @pulumi.getter
     def ttl(self) -> int:
-        """
-        (Updatable) The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
 
     @property
     @pulumi.getter(name="isProtected")
     def is_protected(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter(name="recordHash")
     def record_hash(self) -> Optional[str]:
-        """
-        A unique identifier for the record within its zone.
-        """
         return pulumi.get(self, "record_hash")
 
     @property
     @pulumi.getter(name="rrsetVersion")
     def rrset_version(self) -> Optional[str]:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
         return pulumi.get(self, "rrset_version")
 
 
@@ -722,13 +562,6 @@ class SteeringPolicyAnswer(dict):
                  rtype: str,
                  is_disabled: Optional[bool] = None,
                  pool: Optional[str] = None):
-        """
-        :param str name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        :param str rtype: The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        :param bool is_disabled: Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        :param str pool: The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "rdata", rdata)
         pulumi.set(__self__, "rtype", rtype)
@@ -740,41 +573,26 @@ class SteeringPolicyAnswer(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def rdata(self) -> str:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
         return pulumi.get(self, "rdata")
 
     @property
     @pulumi.getter
     def rtype(self) -> str:
-        """
-        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
         return pulumi.get(self, "rtype")
 
     @property
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[bool]:
-        """
-        Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        """
         return pulumi.get(self, "is_disabled")
 
     @property
     @pulumi.getter
     def pool(self) -> Optional[str]:
-        """
-        The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
         return pulumi.get(self, "pool")
 
 
@@ -807,13 +625,6 @@ class SteeringPolicyRule(dict):
                  default_answer_datas: Optional[Sequence['outputs.SteeringPolicyRuleDefaultAnswerData']] = None,
                  default_count: Optional[int] = None,
                  description: Optional[str] = None):
-        """
-        :param str rule_type: The type of a rule determines its sorting/filtering behavior.
-        :param Sequence['SteeringPolicyRuleCaseArgs'] cases: An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        :param Sequence['SteeringPolicyRuleDefaultAnswerDataArgs'] default_answer_datas: Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        :param int default_count: Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        :param str description: A user-defined description of the rule's purpose or behavior.
-        """
         pulumi.set(__self__, "rule_type", rule_type)
         if cases is not None:
             pulumi.set(__self__, "cases", cases)
@@ -827,41 +638,26 @@ class SteeringPolicyRule(dict):
     @property
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> str:
-        """
-        The type of a rule determines its sorting/filtering behavior.
-        """
         return pulumi.get(self, "rule_type")
 
     @property
     @pulumi.getter
     def cases(self) -> Optional[Sequence['outputs.SteeringPolicyRuleCase']]:
-        """
-        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        """
         return pulumi.get(self, "cases")
 
     @property
     @pulumi.getter(name="defaultAnswerDatas")
     def default_answer_datas(self) -> Optional[Sequence['outputs.SteeringPolicyRuleDefaultAnswerData']]:
-        """
-        Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        """
         return pulumi.get(self, "default_answer_datas")
 
     @property
     @pulumi.getter(name="defaultCount")
     def default_count(self) -> Optional[int]:
-        """
-        Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        """
         return pulumi.get(self, "default_count")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        A user-defined description of the rule's purpose or behavior.
-        """
         return pulumi.get(self, "description")
 
 
@@ -890,11 +686,6 @@ class SteeringPolicyRuleCase(dict):
                  answer_datas: Optional[Sequence['outputs.SteeringPolicyRuleCaseAnswerData']] = None,
                  case_condition: Optional[str] = None,
                  count: Optional[int] = None):
-        """
-        :param Sequence['SteeringPolicyRuleCaseAnswerDataArgs'] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        :param int count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
         if answer_datas is not None:
             pulumi.set(__self__, "answer_datas", answer_datas)
         if case_condition is not None:
@@ -905,25 +696,16 @@ class SteeringPolicyRuleCase(dict):
     @property
     @pulumi.getter(name="answerDatas")
     def answer_datas(self) -> Optional[Sequence['outputs.SteeringPolicyRuleCaseAnswerData']]:
-        """
-        An array of `SteeringPolicyPriorityAnswerData` objects.
-        """
         return pulumi.get(self, "answer_datas")
 
     @property
     @pulumi.getter(name="caseCondition")
     def case_condition(self) -> Optional[str]:
-        """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        """
         return pulumi.get(self, "case_condition")
 
     @property
     @pulumi.getter
     def count(self) -> Optional[int]:
-        """
-        The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
         return pulumi.get(self, "count")
 
 
@@ -952,11 +734,6 @@ class SteeringPolicyRuleCaseAnswerData(dict):
                  answer_condition: Optional[str] = None,
                  should_keep: Optional[bool] = None,
                  value: Optional[int] = None):
-        """
-        :param str answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param bool should_keep: Keeps the answer only if the value is `true`.
-        :param int value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         if answer_condition is not None:
             pulumi.set(__self__, "answer_condition", answer_condition)
         if should_keep is not None:
@@ -967,25 +744,16 @@ class SteeringPolicyRuleCaseAnswerData(dict):
     @property
     @pulumi.getter(name="answerCondition")
     def answer_condition(self) -> Optional[str]:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
         return pulumi.get(self, "answer_condition")
 
     @property
     @pulumi.getter(name="shouldKeep")
     def should_keep(self) -> Optional[bool]:
-        """
-        Keeps the answer only if the value is `true`.
-        """
         return pulumi.get(self, "should_keep")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[int]:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         return pulumi.get(self, "value")
 
 
@@ -1014,11 +782,6 @@ class SteeringPolicyRuleDefaultAnswerData(dict):
                  answer_condition: Optional[str] = None,
                  should_keep: Optional[bool] = None,
                  value: Optional[int] = None):
-        """
-        :param str answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param bool should_keep: Keeps the answer only if the value is `true`.
-        :param int value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         if answer_condition is not None:
             pulumi.set(__self__, "answer_condition", answer_condition)
         if should_keep is not None:
@@ -1029,25 +792,16 @@ class SteeringPolicyRuleDefaultAnswerData(dict):
     @property
     @pulumi.getter(name="answerCondition")
     def answer_condition(self) -> Optional[str]:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
         return pulumi.get(self, "answer_condition")
 
     @property
     @pulumi.getter(name="shouldKeep")
     def should_keep(self) -> Optional[bool]:
-        """
-        Keeps the answer only if the value is `true`.
-        """
         return pulumi.get(self, "should_keep")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[int]:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
         return pulumi.get(self, "value")
 
 
@@ -1074,11 +828,6 @@ class ZoneExternalDownstream(dict):
                  address: str,
                  port: Optional[int] = None,
                  tsig_key_id: Optional[str] = None):
-        """
-        :param str address: (Updatable) The server's IP address (IPv4 or IPv6).
-        :param int port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param str tsig_key_id: (Updatable) The OCID of the TSIG key.
-        """
         pulumi.set(__self__, "address", address)
         if port is not None:
             pulumi.set(__self__, "port", port)
@@ -1088,25 +837,16 @@ class ZoneExternalDownstream(dict):
     @property
     @pulumi.getter
     def address(self) -> str:
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[str]:
-        """
-        (Updatable) The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
 
@@ -1133,11 +873,6 @@ class ZoneExternalMaster(dict):
                  address: str,
                  port: Optional[int] = None,
                  tsig_key_id: Optional[str] = None):
-        """
-        :param str address: (Updatable) The server's IP address (IPv4 or IPv6).
-        :param int port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param str tsig_key_id: (Updatable) The OCID of the TSIG key.
-        """
         pulumi.set(__self__, "address", address)
         if port is not None:
             pulumi.set(__self__, "port", port)
@@ -1147,25 +882,16 @@ class ZoneExternalMaster(dict):
     @property
     @pulumi.getter
     def address(self) -> str:
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[str]:
-        """
-        (Updatable) The OCID of the TSIG key.
-        """
         return pulumi.get(self, "tsig_key_id")
 
 
@@ -1173,18 +899,12 @@ class ZoneExternalMaster(dict):
 class ZoneNameserver(dict):
     def __init__(__self__, *,
                  hostname: Optional[str] = None):
-        """
-        :param str hostname: The hostname of the nameserver.
-        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
     def hostname(self) -> Optional[str]:
-        """
-        The hostname of the nameserver.
-        """
         return pulumi.get(self, "hostname")
 
 
@@ -1214,12 +934,6 @@ class ZoneZoneTransferServer(dict):
                  is_transfer_destination: Optional[bool] = None,
                  is_transfer_source: Optional[bool] = None,
                  port: Optional[int] = None):
-        """
-        :param str address: (Updatable) The server's IP address (IPv4 or IPv6).
-        :param bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        :param bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param int port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         if address is not None:
             pulumi.set(__self__, "address", address)
         if is_transfer_destination is not None:
@@ -1232,33 +946,21 @@ class ZoneZoneTransferServer(dict):
     @property
     @pulumi.getter
     def address(self) -> Optional[str]:
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter(name="isTransferDestination")
     def is_transfer_destination(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
         return pulumi.get(self, "is_transfer_destination")
 
     @property
     @pulumi.getter(name="isTransferSource")
     def is_transfer_source(self) -> Optional[bool]:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
         return pulumi.get(self, "is_transfer_source")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
         return pulumi.get(self, "port")
 
 
@@ -1293,79 +995,41 @@ class GetRecordsFilterResult(dict):
 class GetRecordsRecordResult(dict):
     def __init__(__self__, *,
                  domain: str,
-                 is_protected: bool,
-                 record_hash: str,
-                 rrset_version: str,
                  rtype: str,
                  zone_name_or_id: str,
                  compartment_id: Optional[str] = None,
+                 is_protected: Optional[bool] = None,
                  rdata: Optional[str] = None,
+                 record_hash: Optional[str] = None,
+                 rrset_version: Optional[str] = None,
                  ttl: Optional[int] = None):
-        """
-        :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param str record_hash: A unique identifier for the record within its zone.
-        :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        :param str zone_name_or_id: The name or OCID of the target zone.
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param int ttl: The Time To Live for the record, in seconds.
-        """
         pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "is_protected", is_protected)
-        pulumi.set(__self__, "record_hash", record_hash)
-        pulumi.set(__self__, "rrset_version", rrset_version)
         pulumi.set(__self__, "rtype", rtype)
         pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if is_protected is not None:
+            pulumi.set(__self__, "is_protected", is_protected)
         if rdata is not None:
             pulumi.set(__self__, "rdata", rdata)
+        if record_hash is not None:
+            pulumi.set(__self__, "record_hash", record_hash)
+        if rrset_version is not None:
+            pulumi.set(__self__, "rrset_version", rrset_version)
         if ttl is not None:
             pulumi.set(__self__, "ttl", ttl)
 
     @property
     @pulumi.getter
     def domain(self) -> str:
-        """
-        Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
         return pulumi.get(self, "domain")
 
     @property
-    @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
-        return pulumi.get(self, "is_protected")
-
-    @property
-    @pulumi.getter(name="recordHash")
-    def record_hash(self) -> str:
-        """
-        A unique identifier for the record within its zone.
-        """
-        return pulumi.get(self, "record_hash")
-
-    @property
-    @pulumi.getter(name="rrsetVersion")
-    def rrset_version(self) -> str:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
-        return pulumi.get(self, "rrset_version")
-
-    @property
     @pulumi.getter
     def rtype(self) -> str:
-        """
-        Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -1374,9 +1038,6 @@ class GetRecordsRecordResult(dict):
     @property
     @pulumi.getter(name="zoneNameOrId")
     def zone_name_or_id(self) -> str:
-        """
-        The name or OCID of the target zone.
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -1385,182 +1046,145 @@ class GetRecordsRecordResult(dict):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="isProtected")
+    def is_protected(self) -> Optional[bool]:
+        return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
     def rdata(self) -> Optional[str]:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
+
+    @property
+    @pulumi.getter(name="recordHash")
+    def record_hash(self) -> Optional[str]:
+        return pulumi.get(self, "record_hash")
+
+    @property
+    @pulumi.getter(name="rrsetVersion")
+    def rrset_version(self) -> Optional[str]:
+        return pulumi.get(self, "rrset_version")
 
     @property
     @pulumi.getter
     def ttl(self) -> Optional[int]:
-        """
-        The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
 
 
 @pulumi.output_type
 class GetResolverAttachedViewResult(dict):
     def __init__(__self__, *,
-                 view_id: str):
-        """
-        :param str view_id: The OCID of the view.
-        """
-        pulumi.set(__self__, "view_id", view_id)
+                 view_id: Optional[str] = None):
+        if view_id is not None:
+            pulumi.set(__self__, "view_id", view_id)
 
     @property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> str:
-        """
-        The OCID of the view.
-        """
+    def view_id(self) -> Optional[str]:
         return pulumi.get(self, "view_id")
 
 
 @pulumi.output_type
 class GetResolverEndpointResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 endpoint_type: str,
-                 forwarding_address: str,
-                 is_forwarding: bool,
-                 is_listening: bool,
-                 listening_address: str,
-                 name: str,
-                 self: str,
-                 state: str,
-                 subnet_id: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        :param str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
-        :param str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param str name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The current state of the resource.
-        :param str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "endpoint_type", endpoint_type)
-        pulumi.set(__self__, "forwarding_address", forwarding_address)
-        pulumi.set(__self__, "is_forwarding", is_forwarding)
-        pulumi.set(__self__, "is_listening", is_listening)
-        pulumi.set(__self__, "listening_address", listening_address)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 endpoint_type: Optional[str] = None,
+                 forwarding_address: Optional[str] = None,
+                 is_forwarding: Optional[bool] = None,
+                 is_listening: Optional[bool] = None,
+                 listening_address: Optional[str] = None,
+                 name: Optional[str] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if endpoint_type is not None:
+            pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if forwarding_address is not None:
+            pulumi.set(__self__, "forwarding_address", forwarding_address)
+        if is_forwarding is not None:
+            pulumi.set(__self__, "is_forwarding", is_forwarding)
+        if is_listening is not None:
+            pulumi.set(__self__, "is_listening", is_listening)
+        if listening_address is not None:
+            pulumi.set(__self__, "listening_address", listening_address)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> str:
-        """
-        The type of resolver endpoint. VNIC is currently the only supported type.
-        """
+    def endpoint_type(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_type")
 
     @property
     @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> str:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
+    def forwarding_address(self) -> Optional[str]:
         return pulumi.get(self, "forwarding_address")
 
     @property
     @pulumi.getter(name="isForwarding")
-    def is_forwarding(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
+    def is_forwarding(self) -> Optional[bool]:
         return pulumi.get(self, "is_forwarding")
 
     @property
     @pulumi.getter(name="isListening")
-    def is_listening(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
+    def is_listening(self) -> Optional[bool]:
         return pulumi.get(self, "is_listening")
 
     @property
     @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> str:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
+    def listening_address(self) -> Optional[str]:
         return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -1570,9 +1194,6 @@ class GetResolverEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of a resource.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1581,9 +1202,6 @@ class GetResolverEndpointsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of a resource.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1600,236 +1218,165 @@ class GetResolverEndpointsFilterResult(dict):
 @pulumi.output_type
 class GetResolverEndpointsResolverEndpointResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 endpoint_type: str,
-                 forwarding_address: str,
                  is_forwarding: bool,
                  is_listening: bool,
-                 listening_address: str,
                  name: str,
                  resolver_id: str,
-                 self: str,
-                 state: str,
                  subnet_id: str,
-                 time_created: str,
-                 time_updated: str,
+                 compartment_id: Optional[str] = None,
+                 endpoint_type: Optional[str] = None,
+                 forwarding_address: Optional[str] = None,
+                 listening_address: Optional[str] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
-                 scope: Optional[str] = None):
-        """
-        :param str compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        :param str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
-        :param str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        :param bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        :param bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        :param str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        :param str name: The name of a resource.
-        :param str resolver_id: The OCID of the target resolver.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param Sequence[str] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        :param str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "endpoint_type", endpoint_type)
-        pulumi.set(__self__, "forwarding_address", forwarding_address)
+                 scope: Optional[str] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
-        pulumi.set(__self__, "listening_address", listening_address)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "resolver_id", resolver_id)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if endpoint_type is not None:
+            pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if forwarding_address is not None:
+            pulumi.set(__self__, "forwarding_address", forwarding_address)
+        if listening_address is not None:
+            pulumi.set(__self__, "listening_address", listening_address)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
-
-    @property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @property
-    @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> str:
-        """
-        The type of resolver endpoint. VNIC is currently the only supported type.
-        """
-        return pulumi.get(self, "endpoint_type")
-
-    @property
-    @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> str:
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
-        return pulumi.get(self, "forwarding_address")
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
         return pulumi.get(self, "is_forwarding")
 
     @property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
         return pulumi.get(self, "is_listening")
-
-    @property
-    @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> str:
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
-        return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of a resource.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> str:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
-
-    @property
-    @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
-        return pulumi.get(self, "self")
-
-    @property
-    @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
-        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
-    @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        return pulumi.get(self, "time_created")
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        return pulumi.get(self, "compartment_id")
 
     @property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        return pulumi.get(self, "time_updated")
+    @pulumi.getter(name="endpointType")
+    def endpoint_type(self) -> Optional[str]:
+        return pulumi.get(self, "endpoint_type")
+
+    @property
+    @pulumi.getter(name="forwardingAddress")
+    def forwarding_address(self) -> Optional[str]:
+        return pulumi.get(self, "forwarding_address")
+
+    @property
+    @pulumi.getter(name="listeningAddress")
+    def listening_address(self) -> Optional[str]:
+        return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[Sequence[str]]:
-        """
-        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter
     def scope(self) -> Optional[str]:
-        """
-        Value must be `PRIVATE` when listing private name resolver endpoints.
-        """
         return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def self(self) -> Optional[str]:
+        return pulumi.get(self, "self")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetResolverRuleResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 client_address_conditions: Sequence[str],
-                 destination_addresses: Sequence[str],
-                 qname_cover_conditions: Sequence[str],
-                 source_endpoint_name: str):
-        """
-        :param str action: The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        :param Sequence[str] client_address_conditions: A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        :param Sequence[str] destination_addresses: IP addresses to which queries should be forwarded. Currently limited to a single address.
-        :param Sequence[str] qname_cover_conditions: A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        :param str source_endpoint_name: Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "client_address_conditions", client_address_conditions)
-        pulumi.set(__self__, "destination_addresses", destination_addresses)
-        pulumi.set(__self__, "qname_cover_conditions", qname_cover_conditions)
-        pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
+                 action: Optional[str] = None,
+                 client_address_conditions: Optional[Sequence[str]] = None,
+                 destination_addresses: Optional[Sequence[str]] = None,
+                 qname_cover_conditions: Optional[Sequence[str]] = None,
+                 source_endpoint_name: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if client_address_conditions is not None:
+            pulumi.set(__self__, "client_address_conditions", client_address_conditions)
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if qname_cover_conditions is not None:
+            pulumi.set(__self__, "qname_cover_conditions", qname_cover_conditions)
+        if source_endpoint_name is not None:
+            pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="clientAddressConditions")
-    def client_address_conditions(self) -> Sequence[str]:
-        """
-        A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        """
+    def client_address_conditions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "client_address_conditions")
 
     @property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Sequence[str]:
-        """
-        IP addresses to which queries should be forwarded. Currently limited to a single address.
-        """
+    def destination_addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "destination_addresses")
 
     @property
     @pulumi.getter(name="qnameCoverConditions")
-    def qname_cover_conditions(self) -> Sequence[str]:
-        """
-        A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        """
+    def qname_cover_conditions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "qname_cover_conditions")
 
     @property
     @pulumi.getter(name="sourceEndpointName")
-    def source_endpoint_name(self) -> str:
-        """
-        Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        """
+    def source_endpoint_name(self) -> Optional[str]:
         return pulumi.get(self, "source_endpoint_name")
 
 
@@ -1863,425 +1410,361 @@ class GetResolversFilterResult(dict):
 @pulumi.output_type
 class GetResolversResolverResult(dict):
     def __init__(__self__, *,
-                 attached_vcn_id: str,
-                 attached_views: Sequence['outputs.GetResolversResolverAttachedViewResult'],
-                 compartment_id: str,
-                 default_view_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 endpoints: Sequence['outputs.GetResolversResolverEndpointResult'],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_protected: bool,
-                 resolver_id: str,
-                 rules: Sequence['outputs.GetResolversResolverRuleResult'],
-                 scope: str,
-                 self: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str attached_vcn_id: The OCID of the attached VCN.
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param str default_view_id: The OCID of the default view.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str display_name: The displayName of a resource.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str id: The OCID of a resource.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param str scope: Value must be `PRIVATE` when listing private name resolvers.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        pulumi.set(__self__, "attached_vcn_id", attached_vcn_id)
-        pulumi.set(__self__, "attached_views", attached_views)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "default_view_id", default_view_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_protected", is_protected)
-        pulumi.set(__self__, "resolver_id", resolver_id)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "scope", scope)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 attached_vcn_id: Optional[str] = None,
+                 attached_views: Optional[Sequence['outputs.GetResolversResolverAttachedViewResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 default_view_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 endpoints: Optional[Sequence['outputs.GetResolversResolverEndpointResult']] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_protected: Optional[bool] = None,
+                 resolver_id: Optional[str] = None,
+                 rules: Optional[Sequence['outputs.GetResolversResolverRuleResult']] = None,
+                 scope: Optional[str] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if attached_vcn_id is not None:
+            pulumi.set(__self__, "attached_vcn_id", attached_vcn_id)
+        if attached_views is not None:
+            pulumi.set(__self__, "attached_views", attached_views)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if default_view_id is not None:
+            pulumi.set(__self__, "default_view_id", default_view_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if endpoints is not None:
+            pulumi.set(__self__, "endpoints", endpoints)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_protected is not None:
+            pulumi.set(__self__, "is_protected", is_protected)
+        if resolver_id is not None:
+            pulumi.set(__self__, "resolver_id", resolver_id)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="attachedVcnId")
-    def attached_vcn_id(self) -> str:
-        """
-        The OCID of the attached VCN.
-        """
+    def attached_vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "attached_vcn_id")
 
     @property
     @pulumi.getter(name="attachedViews")
-    def attached_views(self) -> Sequence['outputs.GetResolversResolverAttachedViewResult']:
+    def attached_views(self) -> Optional[Sequence['outputs.GetResolversResolverAttachedViewResult']]:
         return pulumi.get(self, "attached_views")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultViewId")
-    def default_view_id(self) -> str:
-        """
-        The OCID of the default view.
-        """
+    def default_view_id(self) -> Optional[str]:
         return pulumi.get(self, "default_view_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The displayName of a resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> Sequence['outputs.GetResolversResolverEndpointResult']:
+    def endpoints(self) -> Optional[Sequence['outputs.GetResolversResolverEndpointResult']]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> Optional[bool]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter(name="resolverId")
-    def resolver_id(self) -> str:
+    def resolver_id(self) -> Optional[str]:
         return pulumi.get(self, "resolver_id")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetResolversResolverRuleResult']:
+    def rules(self) -> Optional[Sequence['outputs.GetResolversResolverRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
-        """
-        Value must be `PRIVATE` when listing private name resolvers.
-        """
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetResolversResolverAttachedViewResult(dict):
     def __init__(__self__, *,
-                 view_id: str):
-        pulumi.set(__self__, "view_id", view_id)
+                 view_id: Optional[str] = None):
+        if view_id is not None:
+            pulumi.set(__self__, "view_id", view_id)
 
     @property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> str:
+    def view_id(self) -> Optional[str]:
         return pulumi.get(self, "view_id")
 
 
 @pulumi.output_type
 class GetResolversResolverEndpointResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 endpoint_type: str,
-                 forwarding_address: str,
-                 is_forwarding: bool,
-                 is_listening: bool,
-                 listening_address: str,
-                 name: str,
-                 self: str,
-                 state: str,
-                 subnet_id: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "endpoint_type", endpoint_type)
-        pulumi.set(__self__, "forwarding_address", forwarding_address)
-        pulumi.set(__self__, "is_forwarding", is_forwarding)
-        pulumi.set(__self__, "is_listening", is_listening)
-        pulumi.set(__self__, "listening_address", listening_address)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 endpoint_type: Optional[str] = None,
+                 forwarding_address: Optional[str] = None,
+                 is_forwarding: Optional[bool] = None,
+                 is_listening: Optional[bool] = None,
+                 listening_address: Optional[str] = None,
+                 name: Optional[str] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if endpoint_type is not None:
+            pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if forwarding_address is not None:
+            pulumi.set(__self__, "forwarding_address", forwarding_address)
+        if is_forwarding is not None:
+            pulumi.set(__self__, "is_forwarding", is_forwarding)
+        if is_listening is not None:
+            pulumi.set(__self__, "is_listening", is_listening)
+        if listening_address is not None:
+            pulumi.set(__self__, "listening_address", listening_address)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="endpointType")
-    def endpoint_type(self) -> str:
+    def endpoint_type(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_type")
 
     @property
     @pulumi.getter(name="forwardingAddress")
-    def forwarding_address(self) -> str:
+    def forwarding_address(self) -> Optional[str]:
         return pulumi.get(self, "forwarding_address")
 
     @property
     @pulumi.getter(name="isForwarding")
-    def is_forwarding(self) -> bool:
+    def is_forwarding(self) -> Optional[bool]:
         return pulumi.get(self, "is_forwarding")
 
     @property
     @pulumi.getter(name="isListening")
-    def is_listening(self) -> bool:
+    def is_listening(self) -> Optional[bool]:
         return pulumi.get(self, "is_listening")
 
     @property
     @pulumi.getter(name="listeningAddress")
-    def listening_address(self) -> str:
+    def listening_address(self) -> Optional[str]:
         return pulumi.get(self, "listening_address")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetResolversResolverRuleResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 client_address_conditions: Sequence[str],
-                 destination_addresses: Sequence[str],
-                 qname_cover_conditions: Sequence[str],
-                 source_endpoint_name: str):
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "client_address_conditions", client_address_conditions)
-        pulumi.set(__self__, "destination_addresses", destination_addresses)
-        pulumi.set(__self__, "qname_cover_conditions", qname_cover_conditions)
-        pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
+                 action: Optional[str] = None,
+                 client_address_conditions: Optional[Sequence[str]] = None,
+                 destination_addresses: Optional[Sequence[str]] = None,
+                 qname_cover_conditions: Optional[Sequence[str]] = None,
+                 source_endpoint_name: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if client_address_conditions is not None:
+            pulumi.set(__self__, "client_address_conditions", client_address_conditions)
+        if destination_addresses is not None:
+            pulumi.set(__self__, "destination_addresses", destination_addresses)
+        if qname_cover_conditions is not None:
+            pulumi.set(__self__, "qname_cover_conditions", qname_cover_conditions)
+        if source_endpoint_name is not None:
+            pulumi.set(__self__, "source_endpoint_name", source_endpoint_name)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="clientAddressConditions")
-    def client_address_conditions(self) -> Sequence[str]:
+    def client_address_conditions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "client_address_conditions")
 
     @property
     @pulumi.getter(name="destinationAddresses")
-    def destination_addresses(self) -> Sequence[str]:
+    def destination_addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "destination_addresses")
 
     @property
     @pulumi.getter(name="qnameCoverConditions")
-    def qname_cover_conditions(self) -> Sequence[str]:
+    def qname_cover_conditions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "qname_cover_conditions")
 
     @property
     @pulumi.getter(name="sourceEndpointName")
-    def source_endpoint_name(self) -> str:
+    def source_endpoint_name(self) -> Optional[str]:
         return pulumi.get(self, "source_endpoint_name")
 
 
 @pulumi.output_type
 class GetRrsetItemResult(dict):
     def __init__(__self__, *,
-                 domain: str,
-                 is_protected: bool,
-                 rdata: str,
-                 record_hash: str,
-                 rrset_version: str,
-                 rtype: str,
-                 ttl: int):
-        """
-        :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param str record_hash: A unique identifier for the record within its zone.
-        :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        :param str rtype: The type of the target RRSet within the target zone.
-        :param int ttl: The Time To Live for the record, in seconds.
-        """
-        pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "is_protected", is_protected)
-        pulumi.set(__self__, "rdata", rdata)
-        pulumi.set(__self__, "record_hash", record_hash)
-        pulumi.set(__self__, "rrset_version", rrset_version)
-        pulumi.set(__self__, "rtype", rtype)
-        pulumi.set(__self__, "ttl", ttl)
+                 domain: Optional[str] = None,
+                 is_protected: Optional[bool] = None,
+                 rdata: Optional[str] = None,
+                 record_hash: Optional[str] = None,
+                 rrset_version: Optional[str] = None,
+                 rtype: Optional[str] = None,
+                 ttl: Optional[int] = None):
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if is_protected is not None:
+            pulumi.set(__self__, "is_protected", is_protected)
+        if rdata is not None:
+            pulumi.set(__self__, "rdata", rdata)
+        if record_hash is not None:
+            pulumi.set(__self__, "record_hash", record_hash)
+        if rrset_version is not None:
+            pulumi.set(__self__, "rrset_version", rrset_version)
+        if rtype is not None:
+            pulumi.set(__self__, "rtype", rtype)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
 
     @property
     @pulumi.getter
-    def domain(self) -> str:
-        """
-        The target fully-qualified domain name (FQDN) within the target zone.
-        """
+    def domain(self) -> Optional[str]:
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
+    def is_protected(self) -> Optional[bool]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
-    def rdata(self) -> str:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
+    def rdata(self) -> Optional[str]:
         return pulumi.get(self, "rdata")
 
     @property
     @pulumi.getter(name="recordHash")
-    def record_hash(self) -> str:
-        """
-        A unique identifier for the record within its zone.
-        """
+    def record_hash(self) -> Optional[str]:
         return pulumi.get(self, "record_hash")
 
     @property
     @pulumi.getter(name="rrsetVersion")
-    def rrset_version(self) -> str:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
+    def rrset_version(self) -> Optional[str]:
         return pulumi.get(self, "rrset_version")
 
     @property
     @pulumi.getter
-    def rtype(self) -> str:
-        """
-        The type of the target RRSet within the target zone.
-        """
+    def rtype(self) -> Optional[str]:
         return pulumi.get(self, "rtype")
 
     @property
     @pulumi.getter
-    def ttl(self) -> int:
-        """
-        The Time To Live for the record, in seconds.
-        """
+    def ttl(self) -> Optional[int]:
         return pulumi.get(self, "ttl")
 
 
@@ -2318,10 +1801,6 @@ class GetRrsetsRrsetResult(dict):
                  domain: str,
                  items: Sequence['outputs.GetRrsetsRrsetItemResult'],
                  rtype: str):
-        """
-        :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "rtype", rtype)
@@ -2329,9 +1808,6 @@ class GetRrsetsRrsetResult(dict):
     @property
     @pulumi.getter
     def domain(self) -> str:
-        """
-        The target fully-qualified domain name (FQDN) within the target zone.
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -2342,9 +1818,6 @@ class GetRrsetsRrsetResult(dict):
     @property
     @pulumi.getter
     def rtype(self) -> str:
-        """
-        Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        """
         return pulumi.get(self, "rtype")
 
 
@@ -2352,84 +1825,57 @@ class GetRrsetsRrsetResult(dict):
 class GetRrsetsRrsetItemResult(dict):
     def __init__(__self__, *,
                  domain: str,
-                 is_protected: bool,
                  rdata: str,
-                 record_hash: str,
-                 rrset_version: str,
                  rtype: str,
-                 ttl: int):
-        """
-        :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param str record_hash: A unique identifier for the record within its zone.
-        :param str rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        :param int ttl: The Time To Live for the record, in seconds.
-        """
+                 ttl: int,
+                 is_protected: Optional[bool] = None,
+                 record_hash: Optional[str] = None,
+                 rrset_version: Optional[str] = None):
         pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "is_protected", is_protected)
         pulumi.set(__self__, "rdata", rdata)
-        pulumi.set(__self__, "record_hash", record_hash)
-        pulumi.set(__self__, "rrset_version", rrset_version)
         pulumi.set(__self__, "rtype", rtype)
         pulumi.set(__self__, "ttl", ttl)
+        if is_protected is not None:
+            pulumi.set(__self__, "is_protected", is_protected)
+        if record_hash is not None:
+            pulumi.set(__self__, "record_hash", record_hash)
+        if rrset_version is not None:
+            pulumi.set(__self__, "rrset_version", rrset_version)
 
     @property
     @pulumi.getter
     def domain(self) -> str:
-        """
-        The target fully-qualified domain name (FQDN) within the target zone.
-        """
         return pulumi.get(self, "domain")
-
-    @property
-    @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
-        return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
     def rdata(self) -> str:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
-
-    @property
-    @pulumi.getter(name="recordHash")
-    def record_hash(self) -> str:
-        """
-        A unique identifier for the record within its zone.
-        """
-        return pulumi.get(self, "record_hash")
-
-    @property
-    @pulumi.getter(name="rrsetVersion")
-    def rrset_version(self) -> str:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
-        return pulumi.get(self, "rrset_version")
 
     @property
     @pulumi.getter
     def rtype(self) -> str:
-        """
-        Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-        """
         return pulumi.get(self, "rtype")
 
     @property
     @pulumi.getter
     def ttl(self) -> int:
-        """
-        The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
+
+    @property
+    @pulumi.getter(name="isProtected")
+    def is_protected(self) -> Optional[bool]:
+        return pulumi.get(self, "is_protected")
+
+    @property
+    @pulumi.getter(name="recordHash")
+    def record_hash(self) -> Optional[str]:
+        return pulumi.get(self, "record_hash")
+
+    @property
+    @pulumi.getter(name="rrsetVersion")
+    def rrset_version(self) -> Optional[str]:
+        return pulumi.get(self, "rrset_version")
 
 
 @pulumi.output_type
@@ -2438,9 +1884,6 @@ class GetSteeringPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2449,9 +1892,6 @@ class GetSteeringPoliciesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2468,456 +1908,331 @@ class GetSteeringPoliciesFilterResult(dict):
 @pulumi.output_type
 class GetSteeringPoliciesSteeringPolicyResult(dict):
     def __init__(__self__, *,
-                 answers: Sequence['outputs.GetSteeringPoliciesSteeringPolicyAnswerResult'],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 health_check_monitor_id: str,
-                 id: str,
-                 rules: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleResult'],
-                 self: str,
-                 state: str,
-                 template: str,
-                 time_created: str,
-                 ttl: int):
-        """
-        :param Sequence['GetSteeringPoliciesSteeringPolicyAnswerArgs'] answers: The set of all answers that can potentially issue from the steering policy.
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str display_name: The displayName of a resource.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str health_check_monitor_id: Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-        :param str id: The OCID of a resource.
-        :param Sequence['GetSteeringPoliciesSteeringPolicyRuleArgs'] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str template: Search by steering template type. Will match any resource whose template type matches the provided value.
-        :param str time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param int ttl: The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-        """
-        pulumi.set(__self__, "answers", answers)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_check_monitor_id", health_check_monitor_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "template", template)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "ttl", ttl)
+                 answers: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyAnswerResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 health_check_monitor_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 rules: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleResult']] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 template: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 ttl: Optional[int] = None):
+        if answers is not None:
+            pulumi.set(__self__, "answers", answers)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if health_check_monitor_id is not None:
+            pulumi.set(__self__, "health_check_monitor_id", health_check_monitor_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if template is not None:
+            pulumi.set(__self__, "template", template)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
 
     @property
     @pulumi.getter
-    def answers(self) -> Sequence['outputs.GetSteeringPoliciesSteeringPolicyAnswerResult']:
-        """
-        The set of all answers that can potentially issue from the steering policy.
-        """
+    def answers(self) -> Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyAnswerResult']]:
         return pulumi.get(self, "answers")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The displayName of a resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="healthCheckMonitorId")
-    def health_check_monitor_id(self) -> str:
-        """
-        Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
-        """
+    def health_check_monitor_id(self) -> Optional[str]:
         return pulumi.get(self, "health_check_monitor_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleResult']:
-        """
-        The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def template(self) -> str:
-        """
-        Search by steering template type. Will match any resource whose template type matches the provided value.
-        """
+    def template(self) -> Optional[str]:
         return pulumi.get(self, "template")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def ttl(self) -> int:
-        """
-        The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-        """
+    def ttl(self) -> Optional[int]:
         return pulumi.get(self, "ttl")
 
 
 @pulumi.output_type
 class GetSteeringPoliciesSteeringPolicyAnswerResult(dict):
     def __init__(__self__, *,
-                 is_disabled: bool,
-                 name: str,
-                 pool: str,
-                 rdata: str,
-                 rtype: str):
-        """
-        :param bool is_disabled: Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        :param str name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        :param str pool: The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        :param str rtype: The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
-        pulumi.set(__self__, "is_disabled", is_disabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "pool", pool)
-        pulumi.set(__self__, "rdata", rdata)
-        pulumi.set(__self__, "rtype", rtype)
+                 is_disabled: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 pool: Optional[str] = None,
+                 rdata: Optional[str] = None,
+                 rtype: Optional[str] = None):
+        if is_disabled is not None:
+            pulumi.set(__self__, "is_disabled", is_disabled)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if pool is not None:
+            pulumi.set(__self__, "pool", pool)
+        if rdata is not None:
+            pulumi.set(__self__, "rdata", rdata)
+        if rtype is not None:
+            pulumi.set(__self__, "rtype", rtype)
 
     @property
     @pulumi.getter(name="isDisabled")
-    def is_disabled(self) -> bool:
-        """
-        Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        """
+    def is_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_disabled")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def pool(self) -> str:
-        """
-        The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
+    def pool(self) -> Optional[str]:
         return pulumi.get(self, "pool")
 
     @property
     @pulumi.getter
-    def rdata(self) -> str:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
+    def rdata(self) -> Optional[str]:
         return pulumi.get(self, "rdata")
 
     @property
     @pulumi.getter
-    def rtype(self) -> str:
-        """
-        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
+    def rtype(self) -> Optional[str]:
         return pulumi.get(self, "rtype")
 
 
 @pulumi.output_type
 class GetSteeringPoliciesSteeringPolicyRuleResult(dict):
     def __init__(__self__, *,
-                 cases: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseResult'],
-                 default_answer_datas: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult'],
-                 default_count: int,
-                 description: str,
-                 rule_type: str):
-        """
-        :param Sequence['GetSteeringPoliciesSteeringPolicyRuleCaseArgs'] cases: An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        :param Sequence['GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataArgs'] default_answer_datas: Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        :param int default_count: Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        :param str description: A user-defined description of the rule's purpose or behavior.
-        :param str rule_type: The type of a rule determines its sorting/filtering behavior.
-        """
-        pulumi.set(__self__, "cases", cases)
-        pulumi.set(__self__, "default_answer_datas", default_answer_datas)
-        pulumi.set(__self__, "default_count", default_count)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "rule_type", rule_type)
+                 cases: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseResult']] = None,
+                 default_answer_datas: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult']] = None,
+                 default_count: Optional[int] = None,
+                 description: Optional[str] = None,
+                 rule_type: Optional[str] = None):
+        if cases is not None:
+            pulumi.set(__self__, "cases", cases)
+        if default_answer_datas is not None:
+            pulumi.set(__self__, "default_answer_datas", default_answer_datas)
+        if default_count is not None:
+            pulumi.set(__self__, "default_count", default_count)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
 
     @property
     @pulumi.getter
-    def cases(self) -> Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseResult']:
-        """
-        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        """
+    def cases(self) -> Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseResult']]:
         return pulumi.get(self, "cases")
 
     @property
     @pulumi.getter(name="defaultAnswerDatas")
-    def default_answer_datas(self) -> Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult']:
-        """
-        Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        """
+    def default_answer_datas(self) -> Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult']]:
         return pulumi.get(self, "default_answer_datas")
 
     @property
     @pulumi.getter(name="defaultCount")
-    def default_count(self) -> int:
-        """
-        Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        """
+    def default_count(self) -> Optional[int]:
         return pulumi.get(self, "default_count")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-defined description of the rule's purpose or behavior.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="ruleType")
-    def rule_type(self) -> str:
-        """
-        The type of a rule determines its sorting/filtering behavior.
-        """
+    def rule_type(self) -> Optional[str]:
         return pulumi.get(self, "rule_type")
 
 
 @pulumi.output_type
 class GetSteeringPoliciesSteeringPolicyRuleCaseResult(dict):
     def __init__(__self__, *,
-                 answer_datas: Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult'],
-                 case_condition: str,
-                 count: int):
-        """
-        :param Sequence['GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataArgs'] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        :param int count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
-        pulumi.set(__self__, "answer_datas", answer_datas)
-        pulumi.set(__self__, "case_condition", case_condition)
-        pulumi.set(__self__, "count", count)
+                 answer_datas: Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult']] = None,
+                 case_condition: Optional[str] = None,
+                 count: Optional[int] = None):
+        if answer_datas is not None:
+            pulumi.set(__self__, "answer_datas", answer_datas)
+        if case_condition is not None:
+            pulumi.set(__self__, "case_condition", case_condition)
+        if count is not None:
+            pulumi.set(__self__, "count", count)
 
     @property
     @pulumi.getter(name="answerDatas")
-    def answer_datas(self) -> Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult']:
-        """
-        An array of `SteeringPolicyPriorityAnswerData` objects.
-        """
+    def answer_datas(self) -> Optional[Sequence['outputs.GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult']]:
         return pulumi.get(self, "answer_datas")
 
     @property
     @pulumi.getter(name="caseCondition")
-    def case_condition(self) -> str:
-        """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        """
+    def case_condition(self) -> Optional[str]:
         return pulumi.get(self, "case_condition")
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
 
 @pulumi.output_type
 class GetSteeringPoliciesSteeringPolicyRuleCaseAnswerDataResult(dict):
     def __init__(__self__, *,
-                 answer_condition: str,
-                 should_keep: bool,
-                 value: int):
-        """
-        :param str answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param bool should_keep: Keeps the answer only if the value is `true`.
-        :param int value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
-        pulumi.set(__self__, "answer_condition", answer_condition)
-        pulumi.set(__self__, "should_keep", should_keep)
-        pulumi.set(__self__, "value", value)
+                 answer_condition: Optional[str] = None,
+                 should_keep: Optional[bool] = None,
+                 value: Optional[int] = None):
+        if answer_condition is not None:
+            pulumi.set(__self__, "answer_condition", answer_condition)
+        if should_keep is not None:
+            pulumi.set(__self__, "should_keep", should_keep)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="answerCondition")
-    def answer_condition(self) -> str:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
+    def answer_condition(self) -> Optional[str]:
         return pulumi.get(self, "answer_condition")
 
     @property
     @pulumi.getter(name="shouldKeep")
-    def should_keep(self) -> bool:
-        """
-        Keeps the answer only if the value is `true`.
-        """
+    def should_keep(self) -> Optional[bool]:
         return pulumi.get(self, "should_keep")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetSteeringPoliciesSteeringPolicyRuleDefaultAnswerDataResult(dict):
     def __init__(__self__, *,
-                 answer_condition: str,
-                 should_keep: bool,
-                 value: int):
-        """
-        :param str answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param bool should_keep: Keeps the answer only if the value is `true`.
-        :param int value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
-        pulumi.set(__self__, "answer_condition", answer_condition)
-        pulumi.set(__self__, "should_keep", should_keep)
-        pulumi.set(__self__, "value", value)
+                 answer_condition: Optional[str] = None,
+                 should_keep: Optional[bool] = None,
+                 value: Optional[int] = None):
+        if answer_condition is not None:
+            pulumi.set(__self__, "answer_condition", answer_condition)
+        if should_keep is not None:
+            pulumi.set(__self__, "should_keep", should_keep)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="answerCondition")
-    def answer_condition(self) -> str:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
+    def answer_condition(self) -> Optional[str]:
         return pulumi.get(self, "answer_condition")
 
     @property
     @pulumi.getter(name="shouldKeep")
-    def should_keep(self) -> bool:
-        """
-        Keeps the answer only if the value is `true`.
-        """
+    def should_keep(self) -> Optional[bool]:
         return pulumi.get(self, "should_keep")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetSteeringPolicyAnswerResult(dict):
     def __init__(__self__, *,
-                 is_disabled: bool,
-                 name: str,
-                 pool: str,
-                 rdata: str,
-                 rtype: str):
-        """
-        :param bool is_disabled: Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        :param str name: A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        :param str pool: The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        :param str rdata: The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        :param str rtype: The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
-        pulumi.set(__self__, "is_disabled", is_disabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "pool", pool)
-        pulumi.set(__self__, "rdata", rdata)
-        pulumi.set(__self__, "rtype", rtype)
+                 is_disabled: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 pool: Optional[str] = None,
+                 rdata: Optional[str] = None,
+                 rtype: Optional[str] = None):
+        if is_disabled is not None:
+            pulumi.set(__self__, "is_disabled", is_disabled)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if pool is not None:
+            pulumi.set(__self__, "pool", pool)
+        if rdata is not None:
+            pulumi.set(__self__, "rdata", rdata)
+        if rtype is not None:
+            pulumi.set(__self__, "rtype", rtype)
 
     @property
     @pulumi.getter(name="isDisabled")
-    def is_disabled(self) -> bool:
-        """
-        Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        """
+    def is_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_disabled")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def pool(self) -> str:
-        """
-        The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
+    def pool(self) -> Optional[str]:
         return pulumi.get(self, "pool")
 
     @property
     @pulumi.getter
-    def rdata(self) -> str:
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
+    def rdata(self) -> Optional[str]:
         return pulumi.get(self, "rdata")
 
     @property
     @pulumi.getter
-    def rtype(self) -> str:
-        """
-        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
+    def rtype(self) -> Optional[str]:
         return pulumi.get(self, "rtype")
 
 
@@ -2951,299 +2266,217 @@ class GetSteeringPolicyAttachmentsFilterResult(dict):
 @pulumi.output_type
 class GetSteeringPolicyAttachmentsSteeringPolicyAttachmentResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 display_name: str,
-                 domain_name: str,
-                 id: str,
-                 rtypes: Sequence[str],
-                 self: str,
-                 state: str,
-                 steering_policy_id: str,
-                 time_created: str,
-                 zone_id: str):
-        """
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param str display_name: The displayName of a resource.
-        :param str domain_name: The attached domain within the attached zone.
-        :param str id: The OCID of a resource.
-        :param Sequence[str] rtypes: The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str steering_policy_id: Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-        :param str time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param str zone_id: Search by zone OCID. Will match any resource whose zone ID matches the provided value.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "domain_name", domain_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "rtypes", rtypes)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "steering_policy_id", steering_policy_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "zone_id", zone_id)
+                 compartment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 domain_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 rtypes: Optional[Sequence[str]] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 steering_policy_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 zone_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if rtypes is not None:
+            pulumi.set(__self__, "rtypes", rtypes)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if steering_policy_id is not None:
+            pulumi.set(__self__, "steering_policy_id", steering_policy_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The displayName of a resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> str:
-        """
-        The attached domain within the attached zone.
-        """
+    def domain_name(self) -> Optional[str]:
         return pulumi.get(self, "domain_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def rtypes(self) -> Sequence[str]:
-        """
-        The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
-        """
+    def rtypes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "rtypes")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="steeringPolicyId")
-    def steering_policy_id(self) -> str:
-        """
-        Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
-        """
+    def steering_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "steering_policy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> str:
-        """
-        Search by zone OCID. Will match any resource whose zone ID matches the provided value.
-        """
+    def zone_id(self) -> Optional[str]:
         return pulumi.get(self, "zone_id")
 
 
 @pulumi.output_type
 class GetSteeringPolicyRuleResult(dict):
     def __init__(__self__, *,
-                 cases: Sequence['outputs.GetSteeringPolicyRuleCaseResult'],
-                 default_answer_datas: Sequence['outputs.GetSteeringPolicyRuleDefaultAnswerDataResult'],
-                 default_count: int,
-                 description: str,
-                 rule_type: str):
-        """
-        :param Sequence['GetSteeringPolicyRuleCaseArgs'] cases: An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        :param Sequence['GetSteeringPolicyRuleDefaultAnswerDataArgs'] default_answer_datas: Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        :param int default_count: Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        :param str description: A user-defined description of the rule's purpose or behavior.
-        :param str rule_type: The type of a rule determines its sorting/filtering behavior.
-        """
-        pulumi.set(__self__, "cases", cases)
-        pulumi.set(__self__, "default_answer_datas", default_answer_datas)
-        pulumi.set(__self__, "default_count", default_count)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "rule_type", rule_type)
+                 cases: Optional[Sequence['outputs.GetSteeringPolicyRuleCaseResult']] = None,
+                 default_answer_datas: Optional[Sequence['outputs.GetSteeringPolicyRuleDefaultAnswerDataResult']] = None,
+                 default_count: Optional[int] = None,
+                 description: Optional[str] = None,
+                 rule_type: Optional[str] = None):
+        if cases is not None:
+            pulumi.set(__self__, "cases", cases)
+        if default_answer_datas is not None:
+            pulumi.set(__self__, "default_answer_datas", default_answer_datas)
+        if default_count is not None:
+            pulumi.set(__self__, "default_count", default_count)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
 
     @property
     @pulumi.getter
-    def cases(self) -> Sequence['outputs.GetSteeringPolicyRuleCaseResult']:
-        """
-        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        """
+    def cases(self) -> Optional[Sequence['outputs.GetSteeringPolicyRuleCaseResult']]:
         return pulumi.get(self, "cases")
 
     @property
     @pulumi.getter(name="defaultAnswerDatas")
-    def default_answer_datas(self) -> Sequence['outputs.GetSteeringPolicyRuleDefaultAnswerDataResult']:
-        """
-        Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        """
+    def default_answer_datas(self) -> Optional[Sequence['outputs.GetSteeringPolicyRuleDefaultAnswerDataResult']]:
         return pulumi.get(self, "default_answer_datas")
 
     @property
     @pulumi.getter(name="defaultCount")
-    def default_count(self) -> int:
-        """
-        Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        """
+    def default_count(self) -> Optional[int]:
         return pulumi.get(self, "default_count")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-defined description of the rule's purpose or behavior.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="ruleType")
-    def rule_type(self) -> str:
-        """
-        The type of a rule determines its sorting/filtering behavior.
-        """
+    def rule_type(self) -> Optional[str]:
         return pulumi.get(self, "rule_type")
 
 
 @pulumi.output_type
 class GetSteeringPolicyRuleCaseResult(dict):
     def __init__(__self__, *,
-                 answer_datas: Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult'],
-                 case_condition: str,
-                 count: int):
-        """
-        :param Sequence['GetSteeringPolicyRuleCaseAnswerDataArgs'] answer_datas: An array of `SteeringPolicyPriorityAnswerData` objects.
-        :param str case_condition: An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        :param int count: The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
-        pulumi.set(__self__, "answer_datas", answer_datas)
-        pulumi.set(__self__, "case_condition", case_condition)
-        pulumi.set(__self__, "count", count)
+                 answer_datas: Optional[Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult']] = None,
+                 case_condition: Optional[str] = None,
+                 count: Optional[int] = None):
+        if answer_datas is not None:
+            pulumi.set(__self__, "answer_datas", answer_datas)
+        if case_condition is not None:
+            pulumi.set(__self__, "case_condition", case_condition)
+        if count is not None:
+            pulumi.set(__self__, "count", count)
 
     @property
     @pulumi.getter(name="answerDatas")
-    def answer_datas(self) -> Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult']:
-        """
-        An array of `SteeringPolicyPriorityAnswerData` objects.
-        """
+    def answer_datas(self) -> Optional[Sequence['outputs.GetSteeringPolicyRuleCaseAnswerDataResult']]:
         return pulumi.get(self, "answer_datas")
 
     @property
     @pulumi.getter(name="caseCondition")
-    def case_condition(self) -> str:
-        """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.subnet in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        """
+    def case_condition(self) -> Optional[str]:
         return pulumi.get(self, "case_condition")
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
 
 @pulumi.output_type
 class GetSteeringPolicyRuleCaseAnswerDataResult(dict):
     def __init__(__self__, *,
-                 answer_condition: str,
-                 should_keep: bool,
-                 value: int):
-        """
-        :param str answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param bool should_keep: Keeps the answer only if the value is `true`.
-        :param int value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
-        pulumi.set(__self__, "answer_condition", answer_condition)
-        pulumi.set(__self__, "should_keep", should_keep)
-        pulumi.set(__self__, "value", value)
+                 answer_condition: Optional[str] = None,
+                 should_keep: Optional[bool] = None,
+                 value: Optional[int] = None):
+        if answer_condition is not None:
+            pulumi.set(__self__, "answer_condition", answer_condition)
+        if should_keep is not None:
+            pulumi.set(__self__, "should_keep", should_keep)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="answerCondition")
-    def answer_condition(self) -> str:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
+    def answer_condition(self) -> Optional[str]:
         return pulumi.get(self, "answer_condition")
 
     @property
     @pulumi.getter(name="shouldKeep")
-    def should_keep(self) -> bool:
-        """
-        Keeps the answer only if the value is `true`.
-        """
+    def should_keep(self) -> Optional[bool]:
         return pulumi.get(self, "should_keep")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetSteeringPolicyRuleDefaultAnswerDataResult(dict):
     def __init__(__self__, *,
-                 answer_condition: str,
-                 should_keep: bool,
-                 value: int):
-        """
-        :param str answer_condition: An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        :param bool should_keep: Keeps the answer only if the value is `true`.
-        :param int value: The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
-        pulumi.set(__self__, "answer_condition", answer_condition)
-        pulumi.set(__self__, "should_keep", should_keep)
-        pulumi.set(__self__, "value", value)
+                 answer_condition: Optional[str] = None,
+                 should_keep: Optional[bool] = None,
+                 value: Optional[int] = None):
+        if answer_condition is not None:
+            pulumi.set(__self__, "answer_condition", answer_condition)
+        if should_keep is not None:
+            pulumi.set(__self__, "should_keep", should_keep)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="answerCondition")
-    def answer_condition(self) -> str:
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
+    def answer_condition(self) -> Optional[str]:
         return pulumi.get(self, "answer_condition")
 
     @property
     @pulumi.getter(name="shouldKeep")
-    def should_keep(self) -> bool:
-        """
-        Keeps the answer only if the value is `true`.
-        """
+    def should_keep(self) -> Optional[bool]:
         return pulumi.get(self, "should_keep")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
@@ -3253,9 +2486,6 @@ class GetTsigKeysFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of a resource.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3264,9 +2494,6 @@ class GetTsigKeysFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of a resource.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -3283,128 +2510,93 @@ class GetTsigKeysFilterResult(dict):
 @pulumi.output_type
 class GetTsigKeysTsigKeyResult(dict):
     def __init__(__self__, *,
-                 algorithm: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 name: str,
-                 secret: str,
-                 self: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str algorithm: TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str id: The OCID of a resource.
-        :param str name: The name of a resource.
-        :param str secret: A base64 string encoding the binary shared secret.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param str time_updated: The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-        """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "secret", secret)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 algorithm: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 secret: Optional[str] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if algorithm is not None:
+            pulumi.set(__self__, "algorithm", algorithm)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if secret is not None:
+            pulumi.set(__self__, "secret", secret)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
-    def algorithm(self) -> str:
-        """
-        TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
-        """
+    def algorithm(self) -> Optional[str]:
         return pulumi.get(self, "algorithm")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of a resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def secret(self) -> str:
-        """
-        A base64 string encoding the binary shared secret.
-        """
+    def secret(self) -> Optional[str]:
         return pulumi.get(self, "secret")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -3438,128 +2630,93 @@ class GetViewsFilterResult(dict):
 @pulumi.output_type
 class GetViewsViewResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_protected: bool,
-                 scope: str,
-                 self: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str display_name: The displayName of a resource.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str id: The OCID of a resource.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param str scope: Value must be `PRIVATE` when listing private views.
-        :param str self: The canonical absolute URL of the resource.
-        :param str state: The state of a resource.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_protected", is_protected)
-        pulumi.set(__self__, "scope", scope)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_protected: Optional[bool] = None,
+                 scope: Optional[str] = None,
+                 self: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_protected is not None:
+            pulumi.set(__self__, "is_protected", is_protected)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The displayName of a resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> Optional[bool]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
-        """
-        Value must be `PRIVATE` when listing private views.
-        """
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -3569,9 +2726,6 @@ class GetZonesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3580,9 +2734,6 @@ class GetZonesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -3599,356 +2750,257 @@ class GetZonesFilterResult(dict):
 @pulumi.output_type
 class GetZonesZoneResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 external_downstreams: Sequence['outputs.GetZonesZoneExternalDownstreamResult'],
-                 external_masters: Sequence['outputs.GetZonesZoneExternalMasterResult'],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_protected: bool,
-                 name: str,
-                 nameservers: Sequence['outputs.GetZonesZoneNameserverResult'],
-                 scope: str,
-                 self: str,
-                 serial: int,
-                 state: str,
-                 time_created: str,
-                 version: str,
-                 view_id: str,
-                 zone_transfer_servers: Sequence['outputs.GetZonesZoneZoneTransferServerResult'],
-                 zone_type: str):
-        """
-        :param str compartment_id: The OCID of the compartment the resource belongs to.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Sequence['GetZonesZoneExternalDownstreamArgs'] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        :param Sequence['GetZonesZoneExternalMasterArgs'] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param str id: The OCID of the zone.
-        :param bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        :param Sequence['GetZonesZoneNameserverArgs'] nameservers: The authoritative nameservers for the zone.
-        :param str scope: Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-               for zones in the global DNS and `PRIVATE` when listing private zones.
-        :param str self: The canonical absolute URL of the resource.
-        :param int serial: The current serial of the zone. As seen in the zone's SOA record.
-        :param str state: The state of a resource.
-        :param str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param str version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-        :param str view_id: The OCID of the view the resource is associated with.
-        :param Sequence['GetZonesZoneZoneTransferServerArgs'] zone_transfer_servers: The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        :param str zone_type: Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "external_downstreams", external_downstreams)
-        pulumi.set(__self__, "external_masters", external_masters)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_protected", is_protected)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "scope", scope)
-        pulumi.set(__self__, "self", self)
-        pulumi.set(__self__, "serial", serial)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
-        pulumi.set(__self__, "view_id", view_id)
-        pulumi.set(__self__, "zone_transfer_servers", zone_transfer_servers)
-        pulumi.set(__self__, "zone_type", zone_type)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 external_downstreams: Optional[Sequence['outputs.GetZonesZoneExternalDownstreamResult']] = None,
+                 external_masters: Optional[Sequence['outputs.GetZonesZoneExternalMasterResult']] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_protected: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 nameservers: Optional[Sequence['outputs.GetZonesZoneNameserverResult']] = None,
+                 scope: Optional[str] = None,
+                 self: Optional[str] = None,
+                 serial: Optional[int] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 version: Optional[str] = None,
+                 view_id: Optional[str] = None,
+                 zone_transfer_servers: Optional[Sequence['outputs.GetZonesZoneZoneTransferServerResult']] = None,
+                 zone_type: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if external_downstreams is not None:
+            pulumi.set(__self__, "external_downstreams", external_downstreams)
+        if external_masters is not None:
+            pulumi.set(__self__, "external_masters", external_masters)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_protected is not None:
+            pulumi.set(__self__, "is_protected", is_protected)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if nameservers is not None:
+            pulumi.set(__self__, "nameservers", nameservers)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if self is not None:
+            pulumi.set(__self__, "self", self)
+        if serial is not None:
+            pulumi.set(__self__, "serial", serial)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if view_id is not None:
+            pulumi.set(__self__, "view_id", view_id)
+        if zone_transfer_servers is not None:
+            pulumi.set(__self__, "zone_transfer_servers", zone_transfer_servers)
+        if zone_type is not None:
+            pulumi.set(__self__, "zone_type", zone_type)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="externalDownstreams")
-    def external_downstreams(self) -> Sequence['outputs.GetZonesZoneExternalDownstreamResult']:
-        """
-        External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
-        """
+    def external_downstreams(self) -> Optional[Sequence['outputs.GetZonesZoneExternalDownstreamResult']]:
         return pulumi.get(self, "external_downstreams")
 
     @property
     @pulumi.getter(name="externalMasters")
-    def external_masters(self) -> Sequence['outputs.GetZonesZoneExternalMasterResult']:
-        """
-        External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        """
+    def external_masters(self) -> Optional[Sequence['outputs.GetZonesZoneExternalMasterResult']]:
         return pulumi.get(self, "external_masters")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the zone.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> bool:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> Optional[bool]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def nameservers(self) -> Sequence['outputs.GetZonesZoneNameserverResult']:
-        """
-        The authoritative nameservers for the zone.
-        """
+    def nameservers(self) -> Optional[Sequence['outputs.GetZonesZoneNameserverResult']]:
         return pulumi.get(self, "nameservers")
 
     @property
     @pulumi.getter
-    def scope(self) -> str:
-        """
-        Specifies to operate only on resources that have a matching DNS scope. This value will be null 
-        for zones in the global DNS and `PRIVATE` when listing private zones.
-        """
+    def scope(self) -> Optional[str]:
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def self(self) -> str:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> Optional[str]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def serial(self) -> int:
-        """
-        The current serial of the zone. As seen in the zone's SOA record.
-        """
+    def serial(self) -> Optional[int]:
         return pulumi.get(self, "serial")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter(name="viewId")
-    def view_id(self) -> str:
-        """
-        The OCID of the view the resource is associated with.
-        """
+    def view_id(self) -> Optional[str]:
         return pulumi.get(self, "view_id")
 
     @property
     @pulumi.getter(name="zoneTransferServers")
-    def zone_transfer_servers(self) -> Sequence['outputs.GetZonesZoneZoneTransferServerResult']:
-        """
-        The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
-        """
+    def zone_transfer_servers(self) -> Optional[Sequence['outputs.GetZonesZoneZoneTransferServerResult']]:
         return pulumi.get(self, "zone_transfer_servers")
 
     @property
     @pulumi.getter(name="zoneType")
-    def zone_type(self) -> str:
-        """
-        Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
-        """
+    def zone_type(self) -> Optional[str]:
         return pulumi.get(self, "zone_type")
 
 
 @pulumi.output_type
 class GetZonesZoneExternalDownstreamResult(dict):
     def __init__(__self__, *,
-                 address: str,
-                 port: int,
-                 tsig_key_id: str):
-        """
-        :param str address: The server's IP address (IPv4 or IPv6).
-        :param int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param str tsig_key_id: Search for zones that are associated with a TSIG key.
-        """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+                 address: Optional[str] = None,
+                 port: Optional[int] = None,
+                 tsig_key_id: Optional[str] = None):
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
 
     @property
     @pulumi.getter
-    def address(self) -> str:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
+    def address(self) -> Optional[str]:
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="tsigKeyId")
-    def tsig_key_id(self) -> str:
-        """
-        Search for zones that are associated with a TSIG key.
-        """
+    def tsig_key_id(self) -> Optional[str]:
         return pulumi.get(self, "tsig_key_id")
 
 
 @pulumi.output_type
 class GetZonesZoneExternalMasterResult(dict):
     def __init__(__self__, *,
-                 address: str,
-                 port: int,
-                 tsig_key_id: str):
-        """
-        :param str address: The server's IP address (IPv4 or IPv6).
-        :param int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param str tsig_key_id: Search for zones that are associated with a TSIG key.
-        """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "tsig_key_id", tsig_key_id)
+                 address: Optional[str] = None,
+                 port: Optional[int] = None,
+                 tsig_key_id: Optional[str] = None):
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if tsig_key_id is not None:
+            pulumi.set(__self__, "tsig_key_id", tsig_key_id)
 
     @property
     @pulumi.getter
-    def address(self) -> str:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
+    def address(self) -> Optional[str]:
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="tsigKeyId")
-    def tsig_key_id(self) -> str:
-        """
-        Search for zones that are associated with a TSIG key.
-        """
+    def tsig_key_id(self) -> Optional[str]:
         return pulumi.get(self, "tsig_key_id")
 
 
 @pulumi.output_type
 class GetZonesZoneNameserverResult(dict):
     def __init__(__self__, *,
-                 hostname: str):
-        """
-        :param str hostname: The hostname of the nameserver.
-        """
-        pulumi.set(__self__, "hostname", hostname)
+                 hostname: Optional[str] = None):
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        The hostname of the nameserver.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
 
 @pulumi.output_type
 class GetZonesZoneZoneTransferServerResult(dict):
     def __init__(__self__, *,
-                 address: str,
-                 is_transfer_destination: bool,
-                 is_transfer_source: bool,
-                 port: int):
-        """
-        :param str address: The server's IP address (IPv4 or IPv6).
-        :param bool is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        :param bool is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param int port: The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
-        pulumi.set(__self__, "is_transfer_source", is_transfer_source)
-        pulumi.set(__self__, "port", port)
+                 address: Optional[str] = None,
+                 is_transfer_destination: Optional[bool] = None,
+                 is_transfer_source: Optional[bool] = None,
+                 port: Optional[int] = None):
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if is_transfer_destination is not None:
+            pulumi.set(__self__, "is_transfer_destination", is_transfer_destination)
+        if is_transfer_source is not None:
+            pulumi.set(__self__, "is_transfer_source", is_transfer_source)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def address(self) -> str:
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
+    def address(self) -> Optional[str]:
         return pulumi.get(self, "address")
 
     @property
     @pulumi.getter(name="isTransferDestination")
-    def is_transfer_destination(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
+    def is_transfer_destination(self) -> Optional[bool]:
         return pulumi.get(self, "is_transfer_destination")
 
     @property
     @pulumi.getter(name="isTransferSource")
-    def is_transfer_source(self) -> bool:
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
+    def is_transfer_source(self) -> Optional[bool]:
         return pulumi.get(self, "is_transfer_source")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
 

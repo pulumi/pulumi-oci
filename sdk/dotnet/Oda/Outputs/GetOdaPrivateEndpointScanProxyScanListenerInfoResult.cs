@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Oda.Outputs
         /// <summary>
         /// FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
         /// </summary>
-        public readonly string ScanListenerFqdn;
+        public readonly string? ScanListenerFqdn;
         /// <summary>
         /// A SCAN listener's IP of the customer's Real Application Cluster (RAC).
         /// </summary>
-        public readonly string ScanListenerIp;
+        public readonly string? ScanListenerIp;
         /// <summary>
         /// The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
         /// </summary>
-        public readonly int ScanListenerPort;
+        public readonly int? ScanListenerPort;
 
         [OutputConstructor]
         private GetOdaPrivateEndpointScanProxyScanListenerInfoResult(
-            string scanListenerFqdn,
+            string? scanListenerFqdn,
 
-            string scanListenerIp,
+            string? scanListenerIp,
 
-            int scanListenerPort)
+            int? scanListenerPort)
         {
             ScanListenerFqdn = scanListenerFqdn;
             ScanListenerIp = scanListenerIp;

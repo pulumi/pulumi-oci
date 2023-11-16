@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The server's IP address (IPv4 or IPv6).
         /// </summary>
-        public readonly string Address;
+        public readonly string? Address;
         /// <summary>
         /// The server's port. Port value must be a value of 53, otherwise omit the port value.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// Search for zones that are associated with a TSIG key.
         /// </summary>
-        public readonly string TsigKeyId;
+        public readonly string? TsigKeyId;
 
         [OutputConstructor]
         private GetZonesZoneExternalMasterResult(
-            string address,
+            string? address,
 
-            int port,
+            int? port,
 
-            string tsigKeyId)
+            string? tsigKeyId)
         {
             Address = address;
             Port = port;

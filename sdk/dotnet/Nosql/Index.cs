@@ -58,13 +58,13 @@ namespace Pulumi.Oci.Nosql
         /// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         /// </summary>
         [Output("isIfNotExists")]
-        public Output<bool> IsIfNotExists { get; private set; } = null!;
+        public Output<bool?> IsIfNotExists { get; private set; } = null!;
 
         /// <summary>
         /// A set of keys for a secondary index.
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Nosql
         /// A message describing the current state in more detail.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Index name.
@@ -88,19 +88,19 @@ namespace Pulumi.Oci.Nosql
         /// The state of an index.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// the OCID of the table to which this index belongs.
         /// </summary>
         [Output("tableId")]
-        public Output<string> TableId { get; private set; } = null!;
+        public Output<string?> TableId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the table to which this index belongs.
         /// </summary>
         [Output("tableName")]
-        public Output<string> TableName { get; private set; } = null!;
+        public Output<string?> TableName { get; private set; } = null!;
 
         /// <summary>
         /// A table name within the compartment, or a table OCID.

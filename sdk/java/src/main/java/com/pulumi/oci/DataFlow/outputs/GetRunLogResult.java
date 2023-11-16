@@ -17,17 +17,17 @@ public final class GetRunLogResult {
      * @return The content of the run log.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return The content type of the run log.
      * 
      */
-    private String contentType;
+    private @Nullable String contentType;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String name;
     private String runId;
 
@@ -39,22 +39,22 @@ public final class GetRunLogResult {
      * @return The content of the run log.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return The content type of the run log.
      * 
      */
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String name() {
         return this.name;
@@ -73,9 +73,9 @@ public final class GetRunLogResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
-        private String content;
-        private String contentType;
-        private String id;
+        private @Nullable String content;
+        private @Nullable String contentType;
+        private @Nullable String id;
         private String name;
         private String runId;
         public Builder() {}
@@ -95,18 +95,18 @@ public final class GetRunLogResult {
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

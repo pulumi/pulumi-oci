@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         /// </summary>
-        public readonly string CapacityMode;
+        public readonly string? CapacityMode;
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Maximum sustained write throughput limit for the table.
         /// </summary>
-        public readonly int MaxWriteUnits;
-        public readonly string Region;
+        public readonly int? MaxWriteUnits;
+        public readonly string? Region;
         /// <summary>
         /// Filter list by the lifecycle state of the item.
         /// </summary>
-        public readonly string State;
-        public readonly string TableId;
+        public readonly string? State;
+        public readonly string? TableId;
 
         [OutputConstructor]
         private GetTablesTableCollectionReplicaResult(
-            string capacityMode,
+            string? capacityMode,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int maxWriteUnits,
+            int? maxWriteUnits,
 
-            string region,
+            string? region,
 
-            string state,
+            string? state,
 
-            string tableId)
+            string? tableId)
         {
             CapacityMode = capacityMode;
             LifecycleDetails = lifecycleDetails;

@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryMirrorRecordResult {
@@ -13,42 +15,42 @@ public final class GetRepositoryMirrorRecordResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String mirrorRecordType;
     /**
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
      */
-    private String mirrorStatus;
+    private @Nullable String mirrorStatus;
     private String repositoryId;
     /**
      * @return The time taken to complete a mirror operation. Value is null if not completed.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The time to enqueue a mirror operation.
      * 
      */
-    private String timeEnqueued;
+    private @Nullable String timeEnqueued;
     /**
      * @return The time to start a mirror operation.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return Workrequest ID to track current mirror operation.
      * 
      */
-    private String workRequestId;
+    private @Nullable String workRequestId;
 
     private GetRepositoryMirrorRecordResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String mirrorRecordType() {
         return this.mirrorRecordType;
@@ -57,8 +59,8 @@ public final class GetRepositoryMirrorRecordResult {
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
      */
-    public String mirrorStatus() {
-        return this.mirrorStatus;
+    public Optional<String> mirrorStatus() {
+        return Optional.ofNullable(this.mirrorStatus);
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -67,29 +69,29 @@ public final class GetRepositoryMirrorRecordResult {
      * @return The time taken to complete a mirror operation. Value is null if not completed.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The time to enqueue a mirror operation.
      * 
      */
-    public String timeEnqueued() {
-        return this.timeEnqueued;
+    public Optional<String> timeEnqueued() {
+        return Optional.ofNullable(this.timeEnqueued);
     }
     /**
      * @return The time to start a mirror operation.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return Workrequest ID to track current mirror operation.
      * 
      */
-    public String workRequestId() {
-        return this.workRequestId;
+    public Optional<String> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     public static Builder builder() {
@@ -101,14 +103,14 @@ public final class GetRepositoryMirrorRecordResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String mirrorRecordType;
-        private String mirrorStatus;
+        private @Nullable String mirrorStatus;
         private String repositoryId;
-        private String timeEnded;
-        private String timeEnqueued;
-        private String timeStarted;
-        private String workRequestId;
+        private @Nullable String timeEnded;
+        private @Nullable String timeEnqueued;
+        private @Nullable String timeStarted;
+        private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetRepositoryMirrorRecordResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,8 +125,8 @@ public final class GetRepositoryMirrorRecordResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -133,8 +135,8 @@ public final class GetRepositoryMirrorRecordResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorStatus(String mirrorStatus) {
-            this.mirrorStatus = Objects.requireNonNull(mirrorStatus);
+        public Builder mirrorStatus(@Nullable String mirrorStatus) {
+            this.mirrorStatus = mirrorStatus;
             return this;
         }
         @CustomType.Setter
@@ -143,23 +145,23 @@ public final class GetRepositoryMirrorRecordResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnqueued(String timeEnqueued) {
-            this.timeEnqueued = Objects.requireNonNull(timeEnqueued);
+        public Builder timeEnqueued(@Nullable String timeEnqueued) {
+            this.timeEnqueued = timeEnqueued;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+        public Builder workRequestId(@Nullable String workRequestId) {
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetRepositoryMirrorRecordResult build() {

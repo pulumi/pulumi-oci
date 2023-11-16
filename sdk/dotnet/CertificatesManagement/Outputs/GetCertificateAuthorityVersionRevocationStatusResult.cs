@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The reason the certificate or certificate authority (CA) was revoked.
         /// </summary>
-        public readonly string RevocationReason;
+        public readonly string? RevocationReason;
         /// <summary>
         /// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfRevocation;
+        public readonly string? TimeOfRevocation;
 
         [OutputConstructor]
         private GetCertificateAuthorityVersionRevocationStatusResult(
-            string revocationReason,
+            string? revocationReason,
 
-            string timeOfRevocation)
+            string? timeOfRevocation)
         {
             RevocationReason = revocationReason;
             TimeOfRevocation = timeOfRevocation;

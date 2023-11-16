@@ -9,6 +9,8 @@ import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig {
@@ -16,75 +18,75 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
      * @return The origin of the CA.
      * 
      */
-    private String configType;
+    private @Nullable String configType;
     /**
      * @return The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
      * 
      */
-    private String issuerCertificateAuthorityId;
+    private @Nullable String issuerCertificateAuthorityId;
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    private String signingAlgorithm;
+    private @Nullable String signingAlgorithm;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects;
+    private @Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects;
     /**
      * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
-    private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities;
+    private @Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities;
     /**
      * @return The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
-    private String versionName;
+    private @Nullable String versionName;
 
     private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig() {}
     /**
      * @return The origin of the CA.
      * 
      */
-    public String configType() {
-        return this.configType;
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
     /**
      * @return The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
      * 
      */
-    public String issuerCertificateAuthorityId() {
-        return this.issuerCertificateAuthorityId;
+    public Optional<String> issuerCertificateAuthorityId() {
+        return Optional.ofNullable(this.issuerCertificateAuthorityId);
     }
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    public String signingAlgorithm() {
-        return this.signingAlgorithm;
+    public Optional<String> signingAlgorithm() {
+        return Optional.ofNullable(this.signingAlgorithm);
     }
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
     public List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects() {
-        return this.subjects;
+        return this.subjects == null ? List.of() : this.subjects;
     }
     /**
      * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
     public List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities() {
-        return this.validities;
+        return this.validities == null ? List.of() : this.validities;
     }
     /**
      * @return The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
-    public String versionName() {
-        return this.versionName;
+    public Optional<String> versionName() {
+        return Optional.ofNullable(this.versionName);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configType;
-        private String issuerCertificateAuthorityId;
-        private String signingAlgorithm;
-        private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects;
-        private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities;
-        private String versionName;
+        private @Nullable String configType;
+        private @Nullable String issuerCertificateAuthorityId;
+        private @Nullable String signingAlgorithm;
+        private @Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects;
+        private @Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities;
+        private @Nullable String versionName;
         public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,39 +116,39 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         }
 
         @CustomType.Setter
-        public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+        public Builder configType(@Nullable String configType) {
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
-        public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+        public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
-        public Builder signingAlgorithm(String signingAlgorithm) {
-            this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
+        public Builder signingAlgorithm(@Nullable String signingAlgorithm) {
+            this.signingAlgorithm = signingAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder subjects(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+        public Builder subjects(@Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects) {
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject... subjects) {
             return subjects(List.of(subjects));
         }
         @CustomType.Setter
-        public Builder validities(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities) {
-            this.validities = Objects.requireNonNull(validities);
+        public Builder validities(@Nullable List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities) {
+            this.validities = validities;
             return this;
         }
         public Builder validities(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity... validities) {
             return validities(List.of(validities));
         }
         @CustomType.Setter
-        public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+        public Builder versionName(@Nullable String versionName) {
+            this.versionName = versionName;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig build() {

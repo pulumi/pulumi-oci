@@ -71,26 +71,17 @@ class GetExternalExadataStorageGridResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
+    def exadata_infrastructure_id(self) -> Optional[str]:
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
@@ -100,7 +91,7 @@ class GetExternalExadataStorageGridResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -108,82 +99,52 @@ class GetExternalExadataStorageGridResult:
 
     @property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> str:
-        """
-        The internal ID of the Exadata resource.
-        """
+    def internal_id(self) -> Optional[str]:
         return pulumi.get(self, "internal_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        The type of Exadata resource.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter(name="serverCount")
-    def server_count(self) -> float:
-        """
-        The number of Exadata storage servers in the Exadata infrastructure.
-        """
+    def server_count(self) -> Optional[float]:
         return pulumi.get(self, "server_count")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the database resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the Exadata resource.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="storageServers")
-    def storage_servers(self) -> Sequence['outputs.GetExternalExadataStorageGridStorageServerResult']:
-        """
-        A list of monitored Exadata storage servers.
-        """
+    def storage_servers(self) -> Optional[Sequence['outputs.GetExternalExadataStorageGridStorageServerResult']]:
         return pulumi.get(self, "storage_servers")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the Exadata resource.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -213,21 +174,7 @@ class AwaitableGetExternalExadataStorageGridResult(GetExternalExadataStorageGrid
 def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataStorageGridResult:
     """
-    This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=oci_database_management_external_exadata_storage_grid["test_external_exadata_storage_grid"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_grid_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalExadataStorageGridId'] = external_exadata_storage_grid_id
@@ -256,20 +203,6 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
 def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataStorageGridResult]:
     """
-    This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Exadata storage server grid specified by exadataStorageGridId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=oci_database_management_external_exadata_storage_grid["test_external_exadata_storage_grid"]["id"])
-    ```
-
-
-    :param str external_exadata_storage_grid_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
+    Use this data source to access information about an existing resource.
     """
     ...

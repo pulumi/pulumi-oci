@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
@@ -76,9 +75,9 @@ type Log struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment that the resource belongs to.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Log object configuration.
-	Configuration LogConfigurationOutput `pulumi:"configuration"`
+	Configuration LogConfigurationPtrOutput `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -86,7 +85,7 @@ type Log struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this resource is currently enabled.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// (Updatable) OCID of a log group to work with.
 	LogGroupId pulumi.StringOutput `pulumi:"logGroupId"`
 	// The logType that the log object is for, whether custom or service.
@@ -95,15 +94,15 @@ type Log struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	RetentionDuration pulumi.IntOutput `pulumi:"retentionDuration"`
+	RetentionDuration pulumi.IntPtrOutput `pulumi:"retentionDuration"`
 	// The pipeline state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of the tenancy.
-	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
+	TenancyId pulumi.StringPtrOutput `pulumi:"tenancyId"`
 	// Time the resource was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified pulumi.StringOutput `pulumi:"timeLastModified"`
+	TimeLastModified pulumi.StringPtrOutput `pulumi:"timeLastModified"`
 }
 
 // NewLog registers a new resource with the given unique name, arguments, and options.
@@ -280,12 +279,6 @@ func (i *Log) ToLogOutputWithContext(ctx context.Context) LogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogOutput)
 }
 
-func (i *Log) ToOutput(ctx context.Context) pulumix.Output[*Log] {
-	return pulumix.Output[*Log]{
-		OutputState: i.ToLogOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogArrayInput is an input type that accepts LogArray and LogArrayOutput values.
 // You can construct a concrete instance of `LogArrayInput` via:
 //
@@ -309,12 +302,6 @@ func (i LogArray) ToLogArrayOutput() LogArrayOutput {
 
 func (i LogArray) ToLogArrayOutputWithContext(ctx context.Context) LogArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogArrayOutput)
-}
-
-func (i LogArray) ToOutput(ctx context.Context) pulumix.Output[[]*Log] {
-	return pulumix.Output[[]*Log]{
-		OutputState: i.ToLogArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogMapInput is an input type that accepts LogMap and LogMapOutput values.
@@ -342,12 +329,6 @@ func (i LogMap) ToLogMapOutputWithContext(ctx context.Context) LogMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogMapOutput)
 }
 
-func (i LogMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Log] {
-	return pulumix.Output[map[string]*Log]{
-		OutputState: i.ToLogMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogOutput struct{ *pulumi.OutputState }
 
 func (LogOutput) ElementType() reflect.Type {
@@ -362,20 +343,14 @@ func (o LogOutput) ToLogOutputWithContext(ctx context.Context) LogOutput {
 	return o
 }
 
-func (o LogOutput) ToOutput(ctx context.Context) pulumix.Output[*Log] {
-	return pulumix.Output[*Log]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
-func (o LogOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Log) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LogOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Log object configuration.
-func (o LogOutput) Configuration() LogConfigurationOutput {
-	return o.ApplyT(func(v *Log) LogConfigurationOutput { return v.Configuration }).(LogConfigurationOutput)
+func (o LogOutput) Configuration() LogConfigurationPtrOutput {
+	return o.ApplyT(func(v *Log) LogConfigurationPtrOutput { return v.Configuration }).(LogConfigurationPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -394,8 +369,8 @@ func (o LogOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Whether or not this resource is currently enabled.
-func (o LogOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Log) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LogOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) OCID of a log group to work with.
@@ -412,28 +387,28 @@ func (o LogOutput) LogType() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o LogOutput) RetentionDuration() pulumi.IntOutput {
-	return o.ApplyT(func(v *Log) pulumi.IntOutput { return v.RetentionDuration }).(pulumi.IntOutput)
+func (o LogOutput) RetentionDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.IntPtrOutput { return v.RetentionDuration }).(pulumi.IntPtrOutput)
 }
 
 // The pipeline state.
-func (o LogOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Log) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LogOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy.
-func (o LogOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Log) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
+func (o LogOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.StringPtrOutput { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LogOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Log) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LogOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LogOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *Log) pulumi.StringOutput { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LogOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Log) pulumi.StringPtrOutput { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 type LogArrayOutput struct{ *pulumi.OutputState }
@@ -448,12 +423,6 @@ func (o LogArrayOutput) ToLogArrayOutput() LogArrayOutput {
 
 func (o LogArrayOutput) ToLogArrayOutputWithContext(ctx context.Context) LogArrayOutput {
 	return o
-}
-
-func (o LogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Log] {
-	return pulumix.Output[[]*Log]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogArrayOutput) Index(i pulumi.IntInput) LogOutput {
@@ -474,12 +443,6 @@ func (o LogMapOutput) ToLogMapOutput() LogMapOutput {
 
 func (o LogMapOutput) ToLogMapOutputWithContext(ctx context.Context) LogMapOutput {
 	return o
-}
-
-func (o LogMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Log] {
-	return pulumix.Output[map[string]*Log]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogMapOutput) MapIndex(k pulumi.StringInput) LogOutput {

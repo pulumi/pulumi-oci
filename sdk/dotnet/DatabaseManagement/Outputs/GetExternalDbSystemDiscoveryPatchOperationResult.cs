@@ -13,15 +13,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     [OutputType]
     public sealed class GetExternalDbSystemDiscoveryPatchOperationResult
     {
-        public readonly string Operation;
-        public readonly string Selection;
+        public readonly string? Operation;
+        public readonly string? Selection;
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryPatchOperationValueResult> Values;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryPatchOperationResult(
-            string operation,
+            string? operation,
 
-            string selection,
+            string? selection,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryPatchOperationValueResult> values)
         {

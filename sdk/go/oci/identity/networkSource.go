@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Source resource in Oracle Cloud Infrastructure Identity service.
@@ -90,7 +89,7 @@ type NetworkSource struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) A list of allowed public IP addresses and CIDR ranges.
@@ -98,9 +97,9 @@ type NetworkSource struct {
 	// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
 	Services pulumi.StringArrayOutput `pulumi:"services"`
 	// The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
 	//
 	// ** IMPORTANT **
@@ -271,12 +270,6 @@ func (i *NetworkSource) ToNetworkSourceOutputWithContext(ctx context.Context) Ne
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSourceOutput)
 }
 
-func (i *NetworkSource) ToOutput(ctx context.Context) pulumix.Output[*NetworkSource] {
-	return pulumix.Output[*NetworkSource]{
-		OutputState: i.ToNetworkSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkSourceArrayInput is an input type that accepts NetworkSourceArray and NetworkSourceArrayOutput values.
 // You can construct a concrete instance of `NetworkSourceArrayInput` via:
 //
@@ -300,12 +293,6 @@ func (i NetworkSourceArray) ToNetworkSourceArrayOutput() NetworkSourceArrayOutpu
 
 func (i NetworkSourceArray) ToNetworkSourceArrayOutputWithContext(ctx context.Context) NetworkSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSourceArrayOutput)
-}
-
-func (i NetworkSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSource] {
-	return pulumix.Output[[]*NetworkSource]{
-		OutputState: i.ToNetworkSourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkSourceMapInput is an input type that accepts NetworkSourceMap and NetworkSourceMapOutput values.
@@ -333,12 +320,6 @@ func (i NetworkSourceMap) ToNetworkSourceMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSourceMapOutput)
 }
 
-func (i NetworkSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSource] {
-	return pulumix.Output[map[string]*NetworkSource]{
-		OutputState: i.ToNetworkSourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkSourceOutput struct{ *pulumi.OutputState }
 
 func (NetworkSourceOutput) ElementType() reflect.Type {
@@ -351,12 +332,6 @@ func (o NetworkSourceOutput) ToNetworkSourceOutput() NetworkSourceOutput {
 
 func (o NetworkSourceOutput) ToNetworkSourceOutputWithContext(ctx context.Context) NetworkSourceOutput {
 	return o
-}
-
-func (o NetworkSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkSource] {
-	return pulumix.Output[*NetworkSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy (root compartment) containing the network source object.
@@ -380,8 +355,8 @@ func (o NetworkSourceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o NetworkSourceOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSource) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o NetworkSourceOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSource) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -400,13 +375,13 @@ func (o NetworkSourceOutput) Services() pulumi.StringArrayOutput {
 }
 
 // The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-func (o NetworkSourceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSource) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NetworkSourceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSource) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o NetworkSourceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkSource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NetworkSourceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkSource) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
@@ -431,12 +406,6 @@ func (o NetworkSourceArrayOutput) ToNetworkSourceArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o NetworkSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSource] {
-	return pulumix.Output[[]*NetworkSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkSourceArrayOutput) Index(i pulumi.IntInput) NetworkSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkSource {
 		return vs[0].([]*NetworkSource)[vs[1].(int)]
@@ -455,12 +424,6 @@ func (o NetworkSourceMapOutput) ToNetworkSourceMapOutput() NetworkSourceMapOutpu
 
 func (o NetworkSourceMapOutput) ToNetworkSourceMapOutputWithContext(ctx context.Context) NetworkSourceMapOutput {
 	return o
-}
-
-func (o NetworkSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSource] {
-	return pulumix.Output[map[string]*NetworkSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkSourceMapOutput) MapIndex(k pulumi.StringInput) NetworkSourceOutput {

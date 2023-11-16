@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<Outputs.VirtualNetworkByoipv6cidrDetail>> Byoipv6cidrDetails { get; private set; } = null!;
 
         [Output("cidrBlock")]
-        public Output<string> CidrBlock { get; private set; } = null!;
+        public Output<string?> CidrBlock { get; private set; } = null!;
 
         [Output("cidrBlocks")]
         public Output<ImmutableArray<string>> CidrBlocks { get; private set; } = null!;
@@ -28,25 +28,25 @@ namespace Pulumi.Oci.Core
         public Output<string> CompartmentId { get; private set; } = null!;
 
         [Output("defaultDhcpOptionsId")]
-        public Output<string> DefaultDhcpOptionsId { get; private set; } = null!;
+        public Output<string?> DefaultDhcpOptionsId { get; private set; } = null!;
 
         [Output("defaultRouteTableId")]
-        public Output<string> DefaultRouteTableId { get; private set; } = null!;
+        public Output<string?> DefaultRouteTableId { get; private set; } = null!;
 
         [Output("defaultSecurityListId")]
-        public Output<string> DefaultSecurityListId { get; private set; } = null!;
+        public Output<string?> DefaultSecurityListId { get; private set; } = null!;
 
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("dnsLabel")]
-        public Output<string> DnsLabel { get; private set; } = null!;
+        public Output<string?> DnsLabel { get; private set; } = null!;
 
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("ipv6cidrBlocks")]
         public Output<ImmutableArray<string>> Ipv6cidrBlocks { get; private set; } = null!;
@@ -55,19 +55,19 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<string>> Ipv6privateCidrBlocks { get; private set; } = null!;
 
         [Output("isIpv6enabled")]
-        public Output<bool> IsIpv6enabled { get; private set; } = null!;
+        public Output<bool?> IsIpv6enabled { get; private set; } = null!;
 
         [Output("isOracleGuaAllocationEnabled")]
-        public Output<bool> IsOracleGuaAllocationEnabled { get; private set; } = null!;
+        public Output<bool?> IsOracleGuaAllocationEnabled { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         [Output("vcnDomainName")]
-        public Output<string> VcnDomainName { get; private set; } = null!;
+        public Output<string?> VcnDomainName { get; private set; } = null!;
 
 
         /// <summary>

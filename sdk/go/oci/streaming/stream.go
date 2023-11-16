@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Stream resource in Oracle Cloud Infrastructure Streaming service.
@@ -67,30 +66,30 @@ type Stream struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The OCID of the compartment that contains the stream.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrOutput `pulumi:"lifecycleStateDetails"`
 	// The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-	MessagesEndpoint pulumi.StringOutput `pulumi:"messagesEndpoint"`
+	MessagesEndpoint pulumi.StringPtrOutput `pulumi:"messagesEndpoint"`
 	// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The number of partitions in the stream.
 	Partitions pulumi.IntOutput `pulumi:"partitions"`
 	// The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
-	RetentionInHours pulumi.IntOutput `pulumi:"retentionInHours"`
+	RetentionInHours pulumi.IntPtrOutput `pulumi:"retentionInHours"`
 	// The current state of the stream.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The OCID of the stream pool that contains the stream.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StreamPoolId pulumi.StringOutput `pulumi:"streamPoolId"`
+	StreamPoolId pulumi.StringPtrOutput `pulumi:"streamPoolId"`
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewStream registers a new resource with the given unique name, arguments, and options.
@@ -249,12 +248,6 @@ func (i *Stream) ToStreamOutputWithContext(ctx context.Context) StreamOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamOutput)
 }
 
-func (i *Stream) ToOutput(ctx context.Context) pulumix.Output[*Stream] {
-	return pulumix.Output[*Stream]{
-		OutputState: i.ToStreamOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StreamArrayInput is an input type that accepts StreamArray and StreamArrayOutput values.
 // You can construct a concrete instance of `StreamArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i StreamArray) ToStreamArrayOutput() StreamArrayOutput {
 
 func (i StreamArray) ToStreamArrayOutputWithContext(ctx context.Context) StreamArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamArrayOutput)
-}
-
-func (i StreamArray) ToOutput(ctx context.Context) pulumix.Output[[]*Stream] {
-	return pulumix.Output[[]*Stream]{
-		OutputState: i.ToStreamArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StreamMapInput is an input type that accepts StreamMap and StreamMapOutput values.
@@ -311,12 +298,6 @@ func (i StreamMap) ToStreamMapOutputWithContext(ctx context.Context) StreamMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(StreamMapOutput)
 }
 
-func (i StreamMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Stream] {
-	return pulumix.Output[map[string]*Stream]{
-		OutputState: i.ToStreamMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamOutput struct{ *pulumi.OutputState }
 
 func (StreamOutput) ElementType() reflect.Type {
@@ -331,15 +312,9 @@ func (o StreamOutput) ToStreamOutputWithContext(ctx context.Context) StreamOutpu
 	return o
 }
 
-func (o StreamOutput) ToOutput(ctx context.Context) pulumix.Output[*Stream] {
-	return pulumix.Output[*Stream]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the stream.
-func (o StreamOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o StreamOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -353,13 +328,13 @@ func (o StreamOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Any additional details about the current state of the stream.
-func (o StreamOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o StreamOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.StringPtrOutput { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-func (o StreamOutput) MessagesEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.MessagesEndpoint }).(pulumi.StringOutput)
+func (o StreamOutput) MessagesEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.StringPtrOutput { return v.MessagesEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
@@ -373,26 +348,26 @@ func (o StreamOutput) Partitions() pulumi.IntOutput {
 }
 
 // The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
-func (o StreamOutput) RetentionInHours() pulumi.IntOutput {
-	return o.ApplyT(func(v *Stream) pulumi.IntOutput { return v.RetentionInHours }).(pulumi.IntOutput)
+func (o StreamOutput) RetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.IntPtrOutput { return v.RetentionInHours }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the stream.
-func (o StreamOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o StreamOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the stream pool that contains the stream.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o StreamOutput) StreamPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.StreamPoolId }).(pulumi.StringOutput)
+func (o StreamOutput) StreamPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.StringPtrOutput { return v.StreamPoolId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o StreamOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Stream) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o StreamOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Stream) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type StreamArrayOutput struct{ *pulumi.OutputState }
@@ -407,12 +382,6 @@ func (o StreamArrayOutput) ToStreamArrayOutput() StreamArrayOutput {
 
 func (o StreamArrayOutput) ToStreamArrayOutputWithContext(ctx context.Context) StreamArrayOutput {
 	return o
-}
-
-func (o StreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Stream] {
-	return pulumix.Output[[]*Stream]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamArrayOutput) Index(i pulumi.IntInput) StreamOutput {
@@ -433,12 +402,6 @@ func (o StreamMapOutput) ToStreamMapOutput() StreamMapOutput {
 
 func (o StreamMapOutput) ToStreamMapOutputWithContext(ctx context.Context) StreamMapOutput {
 	return o
-}
-
-func (o StreamMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Stream] {
-	return pulumix.Output[map[string]*Stream]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamMapOutput) MapIndex(k pulumi.StringInput) StreamOutput {

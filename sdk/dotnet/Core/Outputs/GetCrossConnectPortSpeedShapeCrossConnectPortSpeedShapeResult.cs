@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The name of the port speed shape.  Example: `10 Gbps`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The port speed in Gbps.  Example: `10`
         /// </summary>
-        public readonly int PortSpeedInGbps;
+        public readonly int? PortSpeedInGbps;
 
         [OutputConstructor]
         private GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShapeResult(
-            string name,
+            string? name,
 
-            int portSpeedInGbps)
+            int? portSpeedInGbps)
         {
             Name = name;
             PortSpeedInGbps = portSpeedInGbps;

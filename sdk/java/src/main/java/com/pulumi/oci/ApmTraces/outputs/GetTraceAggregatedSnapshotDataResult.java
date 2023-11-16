@@ -8,6 +8,8 @@ import com.pulumi.oci.ApmTraces.outputs.GetTraceAggregatedSnapshotDataDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceAggregatedSnapshotDataResult {
@@ -16,12 +18,12 @@ public final class GetTraceAggregatedSnapshotDataResult {
      * @return Aggregated snapshot details.
      * 
      */
-    private List<GetTraceAggregatedSnapshotDataDetail> details;
+    private @Nullable List<GetTraceAggregatedSnapshotDataDetail> details;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String traceKey;
 
     private GetTraceAggregatedSnapshotDataResult() {}
@@ -33,14 +35,14 @@ public final class GetTraceAggregatedSnapshotDataResult {
      * 
      */
     public List<GetTraceAggregatedSnapshotDataDetail> details() {
-        return this.details;
+        return this.details == null ? List.of() : this.details;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String traceKey() {
         return this.traceKey;
@@ -56,8 +58,8 @@ public final class GetTraceAggregatedSnapshotDataResult {
     @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
-        private List<GetTraceAggregatedSnapshotDataDetail> details;
-        private String id;
+        private @Nullable List<GetTraceAggregatedSnapshotDataDetail> details;
+        private @Nullable String id;
         private String traceKey;
         public Builder() {}
         public Builder(GetTraceAggregatedSnapshotDataResult defaults) {
@@ -74,16 +76,16 @@ public final class GetTraceAggregatedSnapshotDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder details(List<GetTraceAggregatedSnapshotDataDetail> details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable List<GetTraceAggregatedSnapshotDataDetail> details) {
+            this.details = details;
             return this;
         }
         public Builder details(GetTraceAggregatedSnapshotDataDetail... details) {
             return details(List.of(details));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

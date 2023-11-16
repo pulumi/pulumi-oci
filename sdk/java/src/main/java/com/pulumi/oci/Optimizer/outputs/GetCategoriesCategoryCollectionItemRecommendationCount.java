@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCategoriesCategoryCollectionItemRecommendationCount {
@@ -14,27 +16,27 @@ public final class GetCategoriesCategoryCollectionItemRecommendationCount {
      * @return The count of resources.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    private String importance;
+    private @Nullable String importance;
 
     private GetCategoriesCategoryCollectionItemRecommendationCount() {}
     /**
      * @return The count of resources.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return The level of importance assigned to the recommendation.
      * 
      */
-    public String importance() {
-        return this.importance;
+    public Optional<String> importance() {
+        return Optional.ofNullable(this.importance);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetCategoriesCategoryCollectionItemRecommendationCount {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private String importance;
+        private @Nullable Integer count;
+        private @Nullable String importance;
         public Builder() {}
         public Builder(GetCategoriesCategoryCollectionItemRecommendationCount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetCategoriesCategoryCollectionItemRecommendationCount {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder importance(String importance) {
-            this.importance = Objects.requireNonNull(importance);
+        public Builder importance(@Nullable String importance) {
+            this.importance = importance;
             return this;
         }
         public GetCategoriesCategoryCollectionItemRecommendationCount build() {

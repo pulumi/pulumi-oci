@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
@@ -14,7 +15,7 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
      * @return List of protection capabilities.
      * 
      */
-    private List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
+    private @Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
 
     private GetProtectionCapabilitiesProtectionCapabilityCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
      * 
      */
     public List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
+        private @Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items;
         public Builder() {}
         public Builder(GetProtectionCapabilitiesProtectionCapabilityCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProtectionCapabilitiesProtectionCapabilityCollectionItem... items) {

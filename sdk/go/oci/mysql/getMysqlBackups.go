@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Mysql Backups in Oracle Cloud Infrastructure MySQL Database service.
@@ -88,7 +87,7 @@ type GetMysqlBackupsResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetMysqlBackupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The state of the backup.
 	State *string `pulumi:"state"`
 }
@@ -142,12 +141,6 @@ func (o GetMysqlBackupsResultOutput) ToGetMysqlBackupsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetMysqlBackupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMysqlBackupsResult] {
-	return pulumix.Output[GetMysqlBackupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMysqlBackupsResultOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMysqlBackupsResult) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
@@ -182,8 +175,8 @@ func (o GetMysqlBackupsResultOutput) Filters() GetMysqlBackupsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMysqlBackupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMysqlBackupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The state of the backup.

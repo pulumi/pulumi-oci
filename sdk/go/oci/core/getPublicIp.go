@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Public Ip resource in Oracle Cloud Infrastructure Core service.
@@ -122,35 +121,35 @@ type LookupPublicIpArgs struct {
 // A collection of values returned by getPublicIp.
 type LookupPublicIpResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-	AssignedEntityId string `pulumi:"assignedEntityId"`
+	AssignedEntityId *string `pulumi:"assignedEntityId"`
 	// The type of entity the public IP is assigned to, or in the process of being assigned to.
-	AssignedEntityType string `pulumi:"assignedEntityType"`
+	AssignedEntityType *string `pulumi:"assignedEntityType"`
 	// The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is the compartment of its assigned entity (which can be a private IP or a regional entity such as a NAT gateway). For a reserved public IP that is currently assigned, its compartment can be different from the assigned private IP's.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Defines when the public IP is deleted and released back to Oracle's public IP pool.
-	Lifetime string `pulumi:"lifetime"`
+	Lifetime *string `pulumi:"lifetime"`
 	// Deprecated. Use `assignedEntityId` instead.
-	PrivateIpId string `pulumi:"privateIpId"`
+	PrivateIpId *string `pulumi:"privateIpId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
-	PublicIpPoolId string `pulumi:"publicIpPoolId"`
+	PublicIpPoolId *string `pulumi:"publicIpPoolId"`
 	// Whether the public IP is regional or specific to a particular availability domain.
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 	// The public IP's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupPublicIpOutput(ctx *pulumi.Context, args LookupPublicIpOutputArgs, opts ...pulumi.InvokeOption) LookupPublicIpResultOutput {
@@ -195,30 +194,24 @@ func (o LookupPublicIpResultOutput) ToLookupPublicIpResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupPublicIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPublicIpResult] {
-	return pulumix.Output[LookupPublicIpResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-func (o LookupPublicIpResultOutput) AssignedEntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.AssignedEntityId }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) AssignedEntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.AssignedEntityId }).(pulumi.StringPtrOutput)
 }
 
 // The type of entity the public IP is assigned to, or in the process of being assigned to.
-func (o LookupPublicIpResultOutput) AssignedEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.AssignedEntityType }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) AssignedEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.AssignedEntityType }).(pulumi.StringPtrOutput)
 }
 
 // The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-func (o LookupPublicIpResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is the compartment of its assigned entity (which can be a private IP or a regional entity such as a NAT gateway). For a reserved public IP that is currently assigned, its compartment can be different from the assigned private IP's.
-func (o LookupPublicIpResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -227,8 +220,8 @@ func (o LookupPublicIpResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupPublicIpResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -237,43 +230,43 @@ func (o LookupPublicIpResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-func (o LookupPublicIpResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-func (o LookupPublicIpResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Defines when the public IP is deleted and released back to Oracle's public IP pool.
-func (o LookupPublicIpResultOutput) Lifetime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.Lifetime }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) Lifetime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.Lifetime }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. Use `assignedEntityId` instead.
-func (o LookupPublicIpResultOutput) PrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.PrivateIpId }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) PrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.PrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
-func (o LookupPublicIpResultOutput) PublicIpPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.PublicIpPoolId }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) PublicIpPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.PublicIpPoolId }).(pulumi.StringPtrOutput)
 }
 
 // Whether the public IP is regional or specific to a particular availability domain.
-func (o LookupPublicIpResultOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.Scope }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The public IP's current state.
-func (o LookupPublicIpResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupPublicIpResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPublicIpResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

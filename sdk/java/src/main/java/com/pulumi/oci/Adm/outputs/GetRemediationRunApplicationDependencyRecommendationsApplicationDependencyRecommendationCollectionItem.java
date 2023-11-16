@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem {
@@ -14,22 +16,22 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      * @return List of (application dependencies) node identifiers from which this node depends.
      * 
      */
-    private List<String> applicationDependencyNodeIds;
+    private @Nullable List<String> applicationDependencyNodeIds;
     /**
      * @return A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
      * 
      */
-    private String gav;
+    private @Nullable String gav;
     /**
      * @return Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
      * 
      */
-    private String nodeId;
+    private @Nullable String nodeId;
     /**
      * @return Recommended application dependency in &#34;group:artifact:version&#34; (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
      * 
      */
-    private String recommendedGav;
+    private @Nullable String recommendedGav;
 
     private GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem() {}
     /**
@@ -37,28 +39,28 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
      * 
      */
     public List<String> applicationDependencyNodeIds() {
-        return this.applicationDependencyNodeIds;
+        return this.applicationDependencyNodeIds == null ? List.of() : this.applicationDependencyNodeIds;
     }
     /**
      * @return A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
      * 
      */
-    public String gav() {
-        return this.gav;
+    public Optional<String> gav() {
+        return Optional.ofNullable(this.gav);
     }
     /**
      * @return Unique node identifier of an application dependency with an associated Recommendation, e.g. nodeId1.
      * 
      */
-    public String nodeId() {
-        return this.nodeId;
+    public Optional<String> nodeId() {
+        return Optional.ofNullable(this.nodeId);
     }
     /**
      * @return Recommended application dependency in &#34;group:artifact:version&#34; (GAV) format, e.g. org.graalvm.nativeimage:svm:21.2.0.
      * 
      */
-    public String recommendedGav() {
-        return this.recommendedGav;
+    public Optional<String> recommendedGav() {
+        return Optional.ofNullable(this.recommendedGav);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> applicationDependencyNodeIds;
-        private String gav;
-        private String nodeId;
-        private String recommendedGav;
+        private @Nullable List<String> applicationDependencyNodeIds;
+        private @Nullable String gav;
+        private @Nullable String nodeId;
+        private @Nullable String recommendedGav;
         public Builder() {}
         public Builder(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,26 +86,26 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         }
 
         @CustomType.Setter
-        public Builder applicationDependencyNodeIds(List<String> applicationDependencyNodeIds) {
-            this.applicationDependencyNodeIds = Objects.requireNonNull(applicationDependencyNodeIds);
+        public Builder applicationDependencyNodeIds(@Nullable List<String> applicationDependencyNodeIds) {
+            this.applicationDependencyNodeIds = applicationDependencyNodeIds;
             return this;
         }
         public Builder applicationDependencyNodeIds(String... applicationDependencyNodeIds) {
             return applicationDependencyNodeIds(List.of(applicationDependencyNodeIds));
         }
         @CustomType.Setter
-        public Builder gav(String gav) {
-            this.gav = Objects.requireNonNull(gav);
+        public Builder gav(@Nullable String gav) {
+            this.gav = gav;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeId(String nodeId) {
-            this.nodeId = Objects.requireNonNull(nodeId);
+        public Builder nodeId(@Nullable String nodeId) {
+            this.nodeId = nodeId;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendedGav(String recommendedGav) {
-            this.recommendedGav = Objects.requireNonNull(recommendedGav);
+        public Builder recommendedGav(@Nullable String recommendedGav) {
+            this.recommendedGav = recommendedGav;
             return this;
         }
         public GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem build() {

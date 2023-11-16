@@ -53,13 +53,13 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
         /// </summary>
         [Output("caBundleId")]
-        public Output<string> CaBundleId { get; private set; } = null!;
+        public Output<string?> CaBundleId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
         /// </summary>
         [Output("certificateAuthorityId")]
-        public Output<string> CertificateAuthorityId { get; private set; } = null!;
+        public Output<string?> CertificateAuthorityId { get; private set; } = null!;
 
         /// <summary>
         /// Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("certificateId")]
-        public Output<string> CertificateId { get; private set; } = null!;
+        public Output<string?> CertificateId { get; private set; } = null!;
 
 
         /// <summary>

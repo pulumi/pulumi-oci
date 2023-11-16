@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppCatalogListingResult {
@@ -13,22 +15,22 @@ public final class GetAppCatalogListingResult {
      * @return Listing&#39;s contact URL.
      * 
      */
-    private String contactUrl;
+    private @Nullable String contactUrl;
     /**
      * @return Description of the listing.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return the region free ocid of the listing resource.
      * 
@@ -38,51 +40,51 @@ public final class GetAppCatalogListingResult {
      * @return Publisher&#39;s logo URL.
      * 
      */
-    private String publisherLogoUrl;
+    private @Nullable String publisherLogoUrl;
     /**
      * @return The name of the publisher who published this listing.
      * 
      */
-    private String publisherName;
+    private @Nullable String publisherName;
     /**
      * @return The short summary for the listing.
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    private String timePublished;
+    private @Nullable String timePublished;
 
     private GetAppCatalogListingResult() {}
     /**
      * @return Listing&#39;s contact URL.
      * 
      */
-    public String contactUrl() {
-        return this.contactUrl;
+    public Optional<String> contactUrl() {
+        return Optional.ofNullable(this.contactUrl);
     }
     /**
      * @return Description of the listing.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return the region free ocid of the listing resource.
@@ -95,29 +97,29 @@ public final class GetAppCatalogListingResult {
      * @return Publisher&#39;s logo URL.
      * 
      */
-    public String publisherLogoUrl() {
-        return this.publisherLogoUrl;
+    public Optional<String> publisherLogoUrl() {
+        return Optional.ofNullable(this.publisherLogoUrl);
     }
     /**
      * @return The name of the publisher who published this listing.
      * 
      */
-    public String publisherName() {
-        return this.publisherName;
+    public Optional<String> publisherName() {
+        return Optional.ofNullable(this.publisherName);
     }
     /**
      * @return The short summary for the listing.
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    public String timePublished() {
-        return this.timePublished;
+    public Optional<String> timePublished() {
+        return Optional.ofNullable(this.timePublished);
     }
 
     public static Builder builder() {
@@ -129,15 +131,15 @@ public final class GetAppCatalogListingResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contactUrl;
-        private String description;
-        private String displayName;
-        private String id;
+        private @Nullable String contactUrl;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String id;
         private String listingId;
-        private String publisherLogoUrl;
-        private String publisherName;
-        private String summary;
-        private String timePublished;
+        private @Nullable String publisherLogoUrl;
+        private @Nullable String publisherName;
+        private @Nullable String summary;
+        private @Nullable String timePublished;
         public Builder() {}
         public Builder(GetAppCatalogListingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,23 +155,23 @@ public final class GetAppCatalogListingResult {
         }
 
         @CustomType.Setter
-        public Builder contactUrl(String contactUrl) {
-            this.contactUrl = Objects.requireNonNull(contactUrl);
+        public Builder contactUrl(@Nullable String contactUrl) {
+            this.contactUrl = contactUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -178,23 +180,23 @@ public final class GetAppCatalogListingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder publisherLogoUrl(String publisherLogoUrl) {
-            this.publisherLogoUrl = Objects.requireNonNull(publisherLogoUrl);
+        public Builder publisherLogoUrl(@Nullable String publisherLogoUrl) {
+            this.publisherLogoUrl = publisherLogoUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder publisherName(String publisherName) {
-            this.publisherName = Objects.requireNonNull(publisherName);
+        public Builder publisherName(@Nullable String publisherName) {
+            this.publisherName = publisherName;
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder timePublished(String timePublished) {
-            this.timePublished = Objects.requireNonNull(timePublished);
+        public Builder timePublished(@Nullable String timePublished) {
+            this.timePublished = timePublished;
             return this;
         }
         public GetAppCatalogListingResult build() {

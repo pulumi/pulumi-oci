@@ -80,74 +80,47 @@ class GetFleetResult:
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
-    def approximate_application_count(self) -> int:
-        """
-        The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_application_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_application_count")
 
     @property
     @pulumi.getter(name="approximateInstallationCount")
-    def approximate_installation_count(self) -> int:
-        """
-        The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_installation_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_installation_count")
 
     @property
     @pulumi.getter(name="approximateJavaServerCount")
-    def approximate_java_server_count(self) -> int:
-        """
-        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_java_server_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_java_server_count")
 
     @property
     @pulumi.getter(name="approximateJreCount")
-    def approximate_jre_count(self) -> int:
-        """
-        The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_jre_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_jre_count")
 
     @property
     @pulumi.getter(name="approximateManagedInstanceCount")
-    def approximate_managed_instance_count(self) -> int:
-        """
-        The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_managed_instance_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The Fleet's description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the Fleet.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -157,66 +130,42 @@ class GetFleetResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inventoryLogs")
-    def inventory_logs(self) -> Sequence['outputs.GetFleetInventoryLogResult']:
-        """
-        Custom Log for inventory or operation log.
-        """
+    def inventory_logs(self) -> Optional[Sequence['outputs.GetFleetInventoryLogResult']]:
         return pulumi.get(self, "inventory_logs")
 
     @property
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
-    def is_advanced_features_enabled(self) -> bool:
-        """
-        Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-        """
+    def is_advanced_features_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_advanced_features_enabled")
 
     @property
     @pulumi.getter(name="operationLogs")
-    def operation_logs(self) -> Sequence['outputs.GetFleetOperationLogResult']:
-        """
-        Custom Log for inventory or operation log.
-        """
+    def operation_logs(self) -> Optional[Sequence['outputs.GetFleetOperationLogResult']]:
         return pulumi.get(self, "operation_logs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the Fleet.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -249,21 +198,7 @@ class AwaitableGetFleetResult(GetFleetResult):
 def get_fleet(fleet_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetResult:
     """
-    This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve a Fleet with the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet = oci.Jms.get_fleet(fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -295,20 +230,6 @@ def get_fleet(fleet_id: Optional[str] = None,
 def get_fleet_output(fleet_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetResult]:
     """
-    This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve a Fleet with the specified identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet = oci.Jms.get_fleet(fleet_id=oci_jms_fleet["test_fleet"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+    Use this data source to access information about an existing resource.
     """
     ...

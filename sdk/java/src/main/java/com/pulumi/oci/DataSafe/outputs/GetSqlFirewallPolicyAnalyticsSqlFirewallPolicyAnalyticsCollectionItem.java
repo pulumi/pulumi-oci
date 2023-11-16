@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyAnalyticsSqlFirewallP
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem {
@@ -15,12 +17,12 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
      * @return The dimensions available for SQL firewall policy analytics.
      * 
      */
-    private List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions;
+    private @Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The total count of the aggregated metric.
      * 
      */
-    private String sqlFirewallPolicyAnalyticCount;
+    private @Nullable String sqlFirewallPolicyAnalyticCount;
 
     private GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem() {}
     /**
@@ -28,14 +30,14 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
      * 
      */
     public List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The total count of the aggregated metric.
      * 
      */
-    public String sqlFirewallPolicyAnalyticCount() {
-        return this.sqlFirewallPolicyAnalyticCount;
+    public Optional<String> sqlFirewallPolicyAnalyticCount() {
+        return Optional.ofNullable(this.sqlFirewallPolicyAnalyticCount);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions;
-        private String sqlFirewallPolicyAnalyticCount;
+        private @Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions;
+        private @Nullable String sqlFirewallPolicyAnalyticCount;
         public Builder() {}
         public Builder(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollec
         }
 
         @CustomType.Setter
-        public Builder dimensions(List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder sqlFirewallPolicyAnalyticCount(String sqlFirewallPolicyAnalyticCount) {
-            this.sqlFirewallPolicyAnalyticCount = Objects.requireNonNull(sqlFirewallPolicyAnalyticCount);
+        public Builder sqlFirewallPolicyAnalyticCount(@Nullable String sqlFirewallPolicyAnalyticCount) {
+            this.sqlFirewallPolicyAnalyticCount = sqlFirewallPolicyAnalyticCount;
             return this;
         }
         public GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollectionItem build() {

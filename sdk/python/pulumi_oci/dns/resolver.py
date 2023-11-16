@@ -26,22 +26,6 @@ class ResolverArgs:
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Resolver resource.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]] attached_views: (Updatable) The attached views. Views are evaluated in order.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "resolver_id", resolver_id)
         if attached_views is not None:
@@ -62,9 +46,6 @@ class ResolverArgs:
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
 
     @resolver_id.setter
@@ -74,9 +55,6 @@ class ResolverArgs:
     @property
     @pulumi.getter(name="attachedViews")
     def attached_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]]]:
-        """
-        (Updatable) The attached views. Views are evaluated in order.
-        """
         return pulumi.get(self, "attached_views")
 
     @attached_views.setter
@@ -86,9 +64,6 @@ class ResolverArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the owning compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -98,11 +73,6 @@ class ResolverArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-
-        **Example:** `{"Operations": {"CostCenter": "42"}}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -112,9 +82,6 @@ class ResolverArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the resolver.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -124,11 +91,6 @@ class ResolverArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-
-        **Example:** `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -138,9 +100,6 @@ class ResolverArgs:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]]:
-        """
-        (Updatable) Rules for the resolver. Rules are evaluated in order.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -150,13 +109,6 @@ class ResolverArgs:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        If specified, must be `PRIVATE` when creating private name resolvers. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -185,30 +137,6 @@ class _ResolverState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Resolver resources.
-        :param pulumi.Input[str] attached_vcn_id: The OCID of the attached VCN.
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]] attached_views: (Updatable) The attached views. Views are evaluated in order.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
-        :param pulumi.Input[str] default_view_id: The OCID of the default view.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverEndpointArgs']]] endpoints: Read-only array of endpoints for the resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         if attached_vcn_id is not None:
             pulumi.set(__self__, "attached_vcn_id", attached_vcn_id)
@@ -246,9 +174,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="attachedVcnId")
     def attached_vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the attached VCN.
-        """
         return pulumi.get(self, "attached_vcn_id")
 
     @attached_vcn_id.setter
@@ -258,9 +183,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="attachedViews")
     def attached_views(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]]]:
-        """
-        (Updatable) The attached views. Views are evaluated in order.
-        """
         return pulumi.get(self, "attached_views")
 
     @attached_views.setter
@@ -270,9 +192,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the owning compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -282,9 +201,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="defaultViewId")
     def default_view_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the default view.
-        """
         return pulumi.get(self, "default_view_id")
 
     @default_view_id.setter
@@ -294,11 +210,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-
-        **Example:** `{"Operations": {"CostCenter": "42"}}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -308,9 +219,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the resolver.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -320,9 +228,6 @@ class _ResolverState:
     @property
     @pulumi.getter
     def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverEndpointArgs']]]]:
-        """
-        Read-only array of endpoints for the resolver.
-        """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
@@ -332,11 +237,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-
-        **Example:** `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -346,9 +246,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="isProtected")
     def is_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
         return pulumi.get(self, "is_protected")
 
     @is_protected.setter
@@ -358,9 +255,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
 
     @resolver_id.setter
@@ -370,9 +264,6 @@ class _ResolverState:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]]:
-        """
-        (Updatable) Rules for the resolver. Rules are evaluated in order.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -382,13 +273,6 @@ class _ResolverState:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        If specified, must be `PRIVATE` when creating private name resolvers. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -398,9 +282,6 @@ class _ResolverState:
     @property
     @pulumi.getter
     def self(self) -> Optional[pulumi.Input[str]]:
-        """
-        The canonical absolute URL of the resource.
-        """
         return pulumi.get(self, "self")
 
     @self.setter
@@ -410,9 +291,6 @@ class _ResolverState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -422,9 +300,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -434,9 +309,6 @@ class _ResolverState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -459,39 +331,9 @@ class Resolver(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
-
-        Updates the specified resolver with your new information.
-
-        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
-        Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
-
-        ## Import
-
-        Resolvers can be imported using their OCID, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
-        ```
-
+        Create a Resolver resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Department": "Finance"}`
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -500,21 +342,7 @@ class Resolver(pulumi.CustomResource):
                  args: ResolverArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
-
-        Updates the specified resolver with your new information.
-
-        Note: Resolvers are associated with VCNs and created when a VCN is created. Wait until created VCN's state shows as Available in OCI console before updating DNS resolver properties.
-        Also a VCN cannot be deleted while its resolver has resolver endpoints. Additionally a resolver endpoint cannot be deleted if it is referenced in the resolver's rules. To remove the rules from a resolver user needs to update the resolver resource. Since DNS Resolver gets deleted when VCN is deleted there is no support for Delete for DNS Resolver.
-
-        ## Import
-
-        Resolvers can be imported using their OCID, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/resolver:Resolver test_resolver "id"
-        ```
-
+        Create a Resolver resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ResolverArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -598,30 +426,6 @@ class Resolver(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attached_vcn_id: The OCID of the attached VCN.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverAttachedViewArgs']]]] attached_views: (Updatable) The attached views. Views are evaluated in order.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the owning compartment.
-        :param pulumi.Input[str] default_view_id: The OCID of the default view.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Operations": {"CostCenter": "42"}}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverEndpointArgs']]]] endpoints: Read-only array of endpoints for the resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-               
-               **Example:** `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        :param pulumi.Input[str] resolver_id: The OCID of the target resolver.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ResolverRuleArgs']]]] rules: (Updatable) Rules for the resolver. Rules are evaluated in order.
-        :param pulumi.Input[str] scope: If specified, must be `PRIVATE` when creating private name resolvers. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -647,137 +451,81 @@ class Resolver(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="attachedVcnId")
-    def attached_vcn_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the attached VCN.
-        """
+    def attached_vcn_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "attached_vcn_id")
 
     @property
     @pulumi.getter(name="attachedViews")
     def attached_views(self) -> pulumi.Output[Optional[Sequence['outputs.ResolverAttachedView']]]:
-        """
-        (Updatable) The attached views. Views are evaluated in order.
-        """
         return pulumi.get(self, "attached_views")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the owning compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultViewId")
-    def default_view_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the default view.
-        """
+    def default_view_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "default_view_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-
-        **Example:** `{"Operations": {"CostCenter": "42"}}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the resolver.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoints(self) -> pulumi.Output[Sequence['outputs.ResolverEndpoint']]:
-        """
-        Read-only array of endpoints for the resolver.
-        """
+    def endpoints(self) -> pulumi.Output[Optional[Sequence['outputs.ResolverEndpoint']]]:
         return pulumi.get(self, "endpoints")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-
-        **Example:** `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> pulumi.Output[bool]:
-        """
-        A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-        """
+    def is_protected(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the target resolver.
-        """
         return pulumi.get(self, "resolver_id")
 
     @property
     @pulumi.getter
     def rules(self) -> pulumi.Output[Optional[Sequence['outputs.ResolverRule']]]:
-        """
-        (Updatable) Rules for the resolver. Rules are evaluated in order.
-        """
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
     def scope(self) -> pulumi.Output[Optional[str]]:
-        """
-        If specified, must be `PRIVATE` when creating private name resolvers. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def self(self) -> pulumi.Output[str]:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

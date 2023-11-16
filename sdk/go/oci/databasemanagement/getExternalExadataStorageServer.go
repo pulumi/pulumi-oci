@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
@@ -64,46 +63,46 @@ type GetExternalExadataStorageServerResult struct {
 	// The connector of the Exadata storage server.
 	Connectors []GetExternalExadataStorageServerConnector `pulumi:"connectors"`
 	// The CPU count of the Exadata storage server.
-	CpuCount float64 `pulumi:"cpuCount"`
+	CpuCount *float64 `pulumi:"cpuCount"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-	ExadataInfrastructureId        string `pulumi:"exadataInfrastructureId"`
-	ExternalExadataStorageServerId string `pulumi:"externalExadataStorageServerId"`
+	ExadataInfrastructureId        *string `pulumi:"exadataInfrastructureId"`
+	ExternalExadataStorageServerId string  `pulumi:"externalExadataStorageServerId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The internal ID of the Exadata resource.
-	InternalId string `pulumi:"internalId"`
+	InternalId *string `pulumi:"internalId"`
 	// The IP address of the Exadata storage server.
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// The details of the lifecycle state of the Exadata resource.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The make model of the Exadata storage server.
-	MakeModel string `pulumi:"makeModel"`
+	MakeModel *string `pulumi:"makeModel"`
 	// The maximum flash disk IO operations per second of the Exadata storage server.
-	MaxFlashDiskIops int `pulumi:"maxFlashDiskIops"`
+	MaxFlashDiskIops *int `pulumi:"maxFlashDiskIops"`
 	// The maximum flash disk IO throughput in MB/s of the Exadata storage server.
-	MaxFlashDiskThroughput int `pulumi:"maxFlashDiskThroughput"`
+	MaxFlashDiskThroughput *int `pulumi:"maxFlashDiskThroughput"`
 	// The maximum hard disk IO operations per second of the Exadata storage server.
-	MaxHardDiskIops int `pulumi:"maxHardDiskIops"`
+	MaxHardDiskIops *int `pulumi:"maxHardDiskIops"`
 	// The maximum hard disk IO throughput in MB/s of the Exadata storage server.
-	MaxHardDiskThroughput int `pulumi:"maxHardDiskThroughput"`
+	MaxHardDiskThroughput *int `pulumi:"maxHardDiskThroughput"`
 	// The Exadata storage server memory size in GB.
-	MemoryGb float64 `pulumi:"memoryGb"`
+	MemoryGb *float64 `pulumi:"memoryGb"`
 	// The type of Exadata resource.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The current lifecycle state of the database resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The status of the Exadata resource.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
-	StorageGridId string `pulumi:"storageGridId"`
+	StorageGridId *string `pulumi:"storageGridId"`
 	// The timestamp of the creation of the Exadata resource.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The version of the Exadata resource.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func GetExternalExadataStorageServerOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerResultOutput {
@@ -144,12 +143,6 @@ func (o GetExternalExadataStorageServerResultOutput) ToGetExternalExadataStorage
 	return o
 }
 
-func (o GetExternalExadataStorageServerResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerResult] {
-	return pulumix.Output[GetExternalExadataStorageServerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o GetExternalExadataStorageServerResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServerResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
@@ -163,18 +156,18 @@ func (o GetExternalExadataStorageServerResultOutput) Connectors() GetExternalExa
 }
 
 // The CPU count of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) CpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) float64 { return v.CpuCount }).(pulumi.Float64Output)
+func (o GetExternalExadataStorageServerResultOutput) CpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *float64 { return v.CpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-func (o GetExternalExadataStorageServerResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-func (o GetExternalExadataStorageServerResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) ExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExternalExadataStorageServerResultOutput) ExternalExadataStorageServerId() pulumi.StringOutput {
@@ -182,88 +175,88 @@ func (o GetExternalExadataStorageServerResultOutput) ExternalExadataStorageServe
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageServerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The internal ID of the Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) InternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.InternalId }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) InternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.InternalId }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The details of the lifecycle state of the Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The make model of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) MakeModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.MakeModel }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) MakeModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.MakeModel }).(pulumi.StringPtrOutput)
 }
 
 // The maximum flash disk IO operations per second of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) MaxFlashDiskIops() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) int { return v.MaxFlashDiskIops }).(pulumi.IntOutput)
+func (o GetExternalExadataStorageServerResultOutput) MaxFlashDiskIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *int { return v.MaxFlashDiskIops }).(pulumi.IntPtrOutput)
 }
 
 // The maximum flash disk IO throughput in MB/s of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) MaxFlashDiskThroughput() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) int { return v.MaxFlashDiskThroughput }).(pulumi.IntOutput)
+func (o GetExternalExadataStorageServerResultOutput) MaxFlashDiskThroughput() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *int { return v.MaxFlashDiskThroughput }).(pulumi.IntPtrOutput)
 }
 
 // The maximum hard disk IO operations per second of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) MaxHardDiskIops() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) int { return v.MaxHardDiskIops }).(pulumi.IntOutput)
+func (o GetExternalExadataStorageServerResultOutput) MaxHardDiskIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *int { return v.MaxHardDiskIops }).(pulumi.IntPtrOutput)
 }
 
 // The maximum hard disk IO throughput in MB/s of the Exadata storage server.
-func (o GetExternalExadataStorageServerResultOutput) MaxHardDiskThroughput() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) int { return v.MaxHardDiskThroughput }).(pulumi.IntOutput)
+func (o GetExternalExadataStorageServerResultOutput) MaxHardDiskThroughput() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *int { return v.MaxHardDiskThroughput }).(pulumi.IntPtrOutput)
 }
 
 // The Exadata storage server memory size in GB.
-func (o GetExternalExadataStorageServerResultOutput) MemoryGb() pulumi.Float64Output {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) float64 { return v.MemoryGb }).(pulumi.Float64Output)
+func (o GetExternalExadataStorageServerResultOutput) MemoryGb() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *float64 { return v.MemoryGb }).(pulumi.Float64PtrOutput)
 }
 
 // The type of Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the database resource.
-func (o GetExternalExadataStorageServerResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
-func (o GetExternalExadataStorageServerResultOutput) StorageGridId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.StorageGridId }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) StorageGridId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.StorageGridId }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the creation of the Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The timestamp of the last update of the Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the Exadata resource.
-func (o GetExternalExadataStorageServerResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

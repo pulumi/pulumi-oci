@@ -64,71 +64,47 @@ class GetPreauthrequestResult:
 
     @property
     @pulumi.getter(name="accessType")
-    def access_type(self) -> str:
-        """
-        The operation that can be performed on this resource.
-        """
+    def access_type(self) -> Optional[str]:
         return pulumi.get(self, "access_type")
 
     @property
     @pulumi.getter(name="accessUri")
-    def access_uri(self) -> str:
-        """
-        The URI to embed in the URL when using the pre-authenticated request.
-        """
+    def access_uri(self) -> Optional[str]:
         return pulumi.get(self, "access_uri")
 
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        The name of the bucket.  Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="bucketListingAction")
-    def bucket_listing_action(self) -> str:
-        """
-        Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        """
+    def bucket_listing_action(self) -> Optional[str]:
         return pulumi.get(self, "bucket_listing_action")
 
     @property
     @pulumi.getter(name="fullPath")
-    def full_path(self) -> str:
+    def full_path(self) -> Optional[str]:
         return pulumi.get(self, "full_path")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier to use when directly addressing the pre-authenticated request.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The user-provided name of the pre-authenticated request.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-        """
+    def object(self) -> Optional[str]:
         warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
         pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
 
@@ -136,10 +112,7 @@ class GetPreauthrequestResult:
 
     @property
     @pulumi.getter(name="objectName")
-    def object_name(self) -> str:
-        """
-        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-        """
+    def object_name(self) -> Optional[str]:
         return pulumi.get(self, "object_name")
 
     @property
@@ -149,18 +122,12 @@ class GetPreauthrequestResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> str:
-        """
-        The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
-        """
+    def time_expires(self) -> Optional[str]:
         return pulumi.get(self, "time_expires")
 
 
@@ -190,25 +157,7 @@ def get_preauthrequest(bucket: Optional[str] = None,
                        par_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPreauthrequestResult:
     """
-    This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the pre-authenticated request for the bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        par_id=oci_objectstorage_preauthrequest["test_par"]["id"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str par_id: The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -239,24 +188,6 @@ def get_preauthrequest_output(bucket: Optional[pulumi.Input[str]] = None,
                               par_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPreauthrequestResult]:
     """
-    This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the pre-authenticated request for the bucket.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        par_id=oci_objectstorage_preauthrequest["test_par"]["id"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str par_id: The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
+    Use this data source to access information about an existing resource.
     """
     ...

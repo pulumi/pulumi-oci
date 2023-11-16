@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser {
@@ -14,63 +16,63 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return General information about the POSIX account such as their real name and phone number
      * 
      */
-    private String gecos;
+    private @Nullable String gecos;
     /**
      * @return Primary Group identifier of the POSIX user
      * 
      */
-    private Integer gidNumber;
+    private @Nullable Integer gidNumber;
     /**
      * @return The absolute path to the home directory of the POSIX account
      * 
      */
-    private String homeDirectory;
+    private @Nullable String homeDirectory;
     /**
      * @return The path to the login shell of the POSIX account
      * 
      */
-    private String loginShell;
+    private @Nullable String loginShell;
     /**
      * @return Integer uniquely identifying a user in a POSIX administrative domain
      * 
      */
-    private Integer uidNumber;
+    private @Nullable Integer uidNumber;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser() {}
     /**
      * @return General information about the POSIX account such as their real name and phone number
      * 
      */
-    public String gecos() {
-        return this.gecos;
+    public Optional<String> gecos() {
+        return Optional.ofNullable(this.gecos);
     }
     /**
      * @return Primary Group identifier of the POSIX user
      * 
      */
-    public Integer gidNumber() {
-        return this.gidNumber;
+    public Optional<Integer> gidNumber() {
+        return Optional.ofNullable(this.gidNumber);
     }
     /**
      * @return The absolute path to the home directory of the POSIX account
      * 
      */
-    public String homeDirectory() {
-        return this.homeDirectory;
+    public Optional<String> homeDirectory() {
+        return Optional.ofNullable(this.homeDirectory);
     }
     /**
      * @return The path to the login shell of the POSIX account
      * 
      */
-    public String loginShell() {
-        return this.loginShell;
+    public Optional<String> loginShell() {
+        return Optional.ofNullable(this.loginShell);
     }
     /**
      * @return Integer uniquely identifying a user in a POSIX administrative domain
      * 
      */
-    public Integer uidNumber() {
-        return this.uidNumber;
+    public Optional<Integer> uidNumber() {
+        return Optional.ofNullable(this.uidNumber);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String gecos;
-        private Integer gidNumber;
-        private String homeDirectory;
-        private String loginShell;
-        private Integer uidNumber;
+        private @Nullable String gecos;
+        private @Nullable Integer gidNumber;
+        private @Nullable String homeDirectory;
+        private @Nullable String loginShell;
+        private @Nullable Integer uidNumber;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder gecos(String gecos) {
-            this.gecos = Objects.requireNonNull(gecos);
+        public Builder gecos(@Nullable String gecos) {
+            this.gecos = gecos;
             return this;
         }
         @CustomType.Setter
-        public Builder gidNumber(Integer gidNumber) {
-            this.gidNumber = Objects.requireNonNull(gidNumber);
+        public Builder gidNumber(@Nullable Integer gidNumber) {
+            this.gidNumber = gidNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+        public Builder homeDirectory(@Nullable String homeDirectory) {
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder loginShell(String loginShell) {
-            this.loginShell = Objects.requireNonNull(loginShell);
+        public Builder loginShell(@Nullable String loginShell) {
+            this.loginShell = loginShell;
             return this;
         }
         @CustomType.Setter
-        public Builder uidNumber(Integer uidNumber) {
-            this.uidNumber = Objects.requireNonNull(uidNumber);
+        public Builder uidNumber(@Nullable Integer uidNumber) {
+            this.uidNumber = uidNumber;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser build() {

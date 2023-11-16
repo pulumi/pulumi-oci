@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -88,28 +89,28 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="homeRegion", refs={String.class}, tree="[0]")
-    private Output<String> homeRegion;
+    private Output</* @Nullable */ String> homeRegion;
 
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    public Output<String> homeRegion() {
-        return this.homeRegion;
+    public Output<Optional<String>> homeRegion() {
+        return Codegen.optional(this.homeRegion);
     }
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
-    private Output<Integer> port;
+    private Output</* @Nullable */ Integer> port;
 
     /**
      * @return The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
      * The protocols for ping probes.
@@ -130,14 +131,14 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="resultsUrl", refs={String.class}, tree="[0]")
-    private Output<String> resultsUrl;
+    private Output</* @Nullable */ String> resultsUrl;
 
     /**
      * @return A URL for fetching the probe results.
      * 
      */
-    public Output<String> resultsUrl() {
-        return this.resultsUrl;
+    public Output<Optional<String>> resultsUrl() {
+        return Codegen.optional(this.resultsUrl);
     }
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
@@ -158,28 +159,28 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
     @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> timeoutInSeconds;
+    private Output</* @Nullable */ Integer> timeoutInSeconds;
 
     /**
      * @return The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    public Output<Integer> timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Output<Optional<Integer>> timeoutInSeconds() {
+        return Codegen.optional(this.timeoutInSeconds);
     }
     /**
      * A list of names of vantage points from which to execute the probe.
@@ -189,7 +190,7 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vantagePointNames", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> vantagePointNames;
+    private Output</* @Nullable */ List<String>> vantagePointNames;
 
     /**
      * @return A list of names of vantage points from which to execute the probe.
@@ -198,8 +199,8 @@ public class PingProbe extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> vantagePointNames() {
-        return this.vantagePointNames;
+    public Output<Optional<List<String>>> vantagePointNames() {
+        return Codegen.optional(this.vantagePointNames);
     }
 
     /**

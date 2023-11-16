@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
@@ -16,17 +18,17 @@ public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
      * @return List of document classification confidence report.
      * 
      */
-    private List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries;
+    private @Nullable List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries;
     /**
      * @return Total test documents in the label.
      * 
      */
-    private Integer documentCount;
+    private @Nullable Integer documentCount;
     /**
      * @return Mean average precision under different thresholds
      * 
      */
-    private Double meanAveragePrecision;
+    private @Nullable Double meanAveragePrecision;
 
     private GetModelsModelCollectionItemMetricOverallMetricsReport() {}
     /**
@@ -34,21 +36,21 @@ public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
      * 
      */
     public List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries() {
-        return this.confidenceEntries;
+        return this.confidenceEntries == null ? List.of() : this.confidenceEntries;
     }
     /**
      * @return Total test documents in the label.
      * 
      */
-    public Integer documentCount() {
-        return this.documentCount;
+    public Optional<Integer> documentCount() {
+        return Optional.ofNullable(this.documentCount);
     }
     /**
      * @return Mean average precision under different thresholds
      * 
      */
-    public Double meanAveragePrecision() {
-        return this.meanAveragePrecision;
+    public Optional<Double> meanAveragePrecision() {
+        return Optional.ofNullable(this.meanAveragePrecision);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries;
-        private Integer documentCount;
-        private Double meanAveragePrecision;
+        private @Nullable List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries;
+        private @Nullable Integer documentCount;
+        private @Nullable Double meanAveragePrecision;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemMetricOverallMetricsReport defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetModelsModelCollectionItemMetricOverallMetricsReport {
         }
 
         @CustomType.Setter
-        public Builder confidenceEntries(List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries) {
-            this.confidenceEntries = Objects.requireNonNull(confidenceEntries);
+        public Builder confidenceEntries(@Nullable List<GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry> confidenceEntries) {
+            this.confidenceEntries = confidenceEntries;
             return this;
         }
         public Builder confidenceEntries(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntry... confidenceEntries) {
             return confidenceEntries(List.of(confidenceEntries));
         }
         @CustomType.Setter
-        public Builder documentCount(Integer documentCount) {
-            this.documentCount = Objects.requireNonNull(documentCount);
+        public Builder documentCount(@Nullable Integer documentCount) {
+            this.documentCount = documentCount;
             return this;
         }
         @CustomType.Setter
-        public Builder meanAveragePrecision(Double meanAveragePrecision) {
-            this.meanAveragePrecision = Objects.requireNonNull(meanAveragePrecision);
+        public Builder meanAveragePrecision(@Nullable Double meanAveragePrecision) {
+            this.meanAveragePrecision = meanAveragePrecision;
             return this;
         }
         public GetModelsModelCollectionItemMetricOverallMetricsReport build() {

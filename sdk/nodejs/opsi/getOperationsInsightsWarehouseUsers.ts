@@ -87,7 +87,7 @@ export interface GetOperationsInsightsWarehouseUsersResult {
     /**
      * The list of operations_insights_warehouse_user_summary_collection.
      */
-    readonly operationsInsightsWarehouseUserSummaryCollections: outputs.Opsi.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection[];
+    readonly operationsInsightsWarehouseUserSummaryCollections?: outputs.Opsi.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection[];
     /**
      * Possible lifecycle states
      */

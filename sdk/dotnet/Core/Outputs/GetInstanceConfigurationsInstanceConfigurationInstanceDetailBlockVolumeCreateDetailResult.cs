@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         /// </summary>
-        public readonly string BackupPolicyId;
+        public readonly string? BackupPolicyId;
         /// <summary>
         /// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         /// </summary>
@@ -32,64 +32,64 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
-        public readonly bool IsAutoTuneEnabled;
+        public readonly bool? IsAutoTuneEnabled;
         /// <summary>
         /// The OCID of the Vault service key to assign as the master encryption key for the volume.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The size of the volume in GBs.
         /// </summary>
-        public readonly string SizeInGbs;
+        public readonly string? SizeInGbs;
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult> SourceDetails;
         /// <summary>
         /// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
-        public readonly string VpusPerGb;
+        public readonly string? VpusPerGb;
 
         [OutputConstructor]
         private GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicyResult> autotunePolicies,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string backupPolicyId,
+            string? backupPolicyId,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult> blockVolumeReplicas,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            bool isAutoTuneEnabled,
+            bool? isAutoTuneEnabled,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string sizeInGbs,
+            string? sizeInGbs,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetailResult> sourceDetails,
 
-            string vpusPerGb)
+            string? vpusPerGb)
         {
             AutotunePolicies = autotunePolicies;
             AvailabilityDomain = availabilityDomain;

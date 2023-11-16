@@ -39,10 +39,7 @@ class GetCustomerSecretKeysResult:
 
     @property
     @pulumi.getter(name="customerSecretKeys")
-    def customer_secret_keys(self) -> Sequence['outputs.GetCustomerSecretKeysCustomerSecretKeyResult']:
-        """
-        The list of customer_secret_keys.
-        """
+    def customer_secret_keys(self) -> Optional[Sequence['outputs.GetCustomerSecretKeysCustomerSecretKeyResult']]:
         return pulumi.get(self, "customer_secret_keys")
 
     @property
@@ -52,7 +49,7 @@ class GetCustomerSecretKeysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,9 +58,6 @@ class GetCustomerSecretKeysResult:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        The OCID of the user the password belongs to.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -83,22 +77,7 @@ def get_customer_secret_keys(filters: Optional[Sequence[pulumi.InputType['GetCus
                              user_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomerSecretKeysResult:
     """
-    This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
-
-    Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
-    the secret key itself. The actual secret key is returned only upon creation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -118,21 +97,6 @@ def get_customer_secret_keys_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     user_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomerSecretKeysResult]:
     """
-    This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
-
-    Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
-    the secret key itself. The actual secret key is returned only upon creation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

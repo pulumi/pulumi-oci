@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Certificate alias
         /// </summary>
-        public readonly string CertAlias;
+        public readonly string? CertAlias;
         /// <summary>
         /// Certificate kid
         /// </summary>
-        public readonly string Kid;
+        public readonly string? Kid;
         /// <summary>
         /// sha1Thumbprint
         /// </summary>
-        public readonly string Sha1thumbprint;
+        public readonly string? Sha1thumbprint;
         /// <summary>
         /// Base-64-encoded certificate.
         /// </summary>
-        public readonly string X509base64certificate;
+        public readonly string? X509base64certificate;
         /// <summary>
         /// Certificate x5t
         /// </summary>
-        public readonly string X5t;
+        public readonly string? X5t;
 
         [OutputConstructor]
         private GetDomainsAppCertificateResult(
-            string certAlias,
+            string? certAlias,
 
-            string kid,
+            string? kid,
 
-            string sha1thumbprint,
+            string? sha1thumbprint,
 
-            string x509base64certificate,
+            string? x509base64certificate,
 
-            string x5t)
+            string? x5t)
         {
             CertAlias = certAlias;
             Kid = kid;

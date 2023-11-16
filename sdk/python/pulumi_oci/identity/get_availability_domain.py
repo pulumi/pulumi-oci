@@ -37,34 +37,22 @@ class GetAvailabilityDomainResult:
 
     @property
     @pulumi.getter(name="adNumber")
-    def ad_number(self) -> int:
-        """
-        The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be "1"
-        """
+    def ad_number(self) -> Optional[int]:
         return pulumi.get(self, "ad_number")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Availability Domain.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the Availability Domain.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -85,23 +73,7 @@ def get_availability_domain(ad_number: Optional[int] = None,
                             id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAvailabilityDomainResult:
     """
-    This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compartment = oci.Identity.get_availability_domain(compartment_id=var["tenancy_ocid"],
-        id=var["id"],
-        ad_number=var["ad_number"])
-    ```
-
-
-    :param int ad_number: The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
-    :param str compartment_id: The OCID of the tenancy.
-    :param str id: The OCID of the Availability Domain. Required if `ad_number` is not specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['adNumber'] = ad_number
@@ -123,22 +95,6 @@ def get_availability_domain_output(ad_number: Optional[pulumi.Input[Optional[int
                                    id: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAvailabilityDomainResult]:
     """
-    This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compartment = oci.Identity.get_availability_domain(compartment_id=var["tenancy_ocid"],
-        id=var["id"],
-        ad_number=var["ad_number"])
-    ```
-
-
-    :param int ad_number: The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
-    :param str compartment_id: The OCID of the tenancy.
-    :param str id: The OCID of the Availability Domain. Required if `ad_number` is not specified.
+    Use this data source to access information about an existing resource.
     """
     ...

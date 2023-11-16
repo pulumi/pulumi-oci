@@ -20,25 +20,25 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The entity include or exclude selection.
         /// </summary>
-        public readonly string EntitySelection;
+        public readonly string? EntitySelection;
         /// <summary>
         /// The entity type that the policy must be enabled for.
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// The operation status that the policy must be enabled for.
         /// </summary>
-        public readonly string OperationStatus;
+        public readonly string? OperationStatus;
 
         [OutputConstructor]
         private GetAuditPolicyAuditConditionEnableConditionResult(
             ImmutableArray<string> entityNames,
 
-            string entitySelection,
+            string? entitySelection,
 
-            string entityType,
+            string? entityType,
 
-            string operationStatus)
+            string? operationStatus)
         {
             EntityNames = entityNames;
             EntitySelection = entitySelection;

@@ -66,15 +66,15 @@ export interface GetSecretbundleResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Customer-provided contextual metadata for the secret.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata?: {[key: string]: any};
     /**
      * The contents of the secret.
      */
-    readonly secretBundleContents: outputs.Secrets.GetSecretbundleSecretBundleContent[];
+    readonly secretBundleContents?: outputs.Secrets.GetSecretbundleSecretBundleContent[];
     /**
      * The OCID of the secret.
      */
@@ -84,27 +84,27 @@ export interface GetSecretbundleResult {
     /**
      * A list of possible rotation states for the secret version.
      */
-    readonly stages: string[];
+    readonly stages?: string[];
     /**
      * The time when the secret bundle was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfExpiry: string;
+    readonly timeOfExpiry?: string;
     /**
      * The name of the secret version. Labels are unique across the different versions of a particular secret.
      */
-    readonly versionName: string;
+    readonly versionName?: string;
     /**
      * The version number of the secret.
      */
-    readonly versionNumber: string;
+    readonly versionNumber?: string;
 }
 /**
  * This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.

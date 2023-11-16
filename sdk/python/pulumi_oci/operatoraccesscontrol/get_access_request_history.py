@@ -40,7 +40,7 @@ class GetAccessRequestHistoryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetAccessRequestHistoryResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAccessRequestHistoryItemResult']:
-        """
-        contains AccessRequestHistorySummary
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAccessRequestHistoryItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetAccessRequestHistoryResult(GetAccessRequestHistoryResult):
 def get_access_request_history(access_request_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccessRequestHistoryResult:
     """
-    This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Returns a history of all status associated with the accessRequestId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_access_request_history = oci.OperatorAccessControl.get_access_request_history(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"])
-    ```
-
-
-    :param str access_request_id: unique AccessRequest identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessRequestId'] = access_request_id
@@ -100,20 +83,6 @@ def get_access_request_history(access_request_id: Optional[str] = None,
 def get_access_request_history_output(access_request_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestHistoryResult]:
     """
-    This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Returns a history of all status associated with the accessRequestId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_access_request_history = oci.OperatorAccessControl.get_access_request_history(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"])
-    ```
-
-
-    :param str access_request_id: unique AccessRequest identifier
+    Use this data source to access information about an existing resource.
     """
     ...

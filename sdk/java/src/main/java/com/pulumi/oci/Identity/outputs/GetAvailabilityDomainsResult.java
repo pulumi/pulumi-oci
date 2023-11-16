@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetAvailabilityDomainsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetAvailabilityDomainsResult {
      * @return The list of availability_domains.
      * 
      */
-    private List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
+    private @Nullable List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
     /**
      * @return The OCID of the tenancy.
      * 
@@ -28,7 +29,7 @@ public final class GetAvailabilityDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAvailabilityDomainsResult() {}
     /**
@@ -36,7 +37,7 @@ public final class GetAvailabilityDomainsResult {
      * 
      */
     public List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains() {
-        return this.availabilityDomains;
+        return this.availabilityDomains == null ? List.of() : this.availabilityDomains;
     }
     /**
      * @return The OCID of the tenancy.
@@ -52,8 +53,8 @@ public final class GetAvailabilityDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -65,10 +66,10 @@ public final class GetAvailabilityDomainsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
+        private @Nullable List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains;
         private String compartmentId;
         private @Nullable List<GetAvailabilityDomainsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAvailabilityDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetAvailabilityDomainsResult {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomains(List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains) {
-            this.availabilityDomains = Objects.requireNonNull(availabilityDomains);
+        public Builder availabilityDomains(@Nullable List<GetAvailabilityDomainsAvailabilityDomain> availabilityDomains) {
+            this.availabilityDomains = availabilityDomains;
             return this;
         }
         public Builder availabilityDomains(GetAvailabilityDomainsAvailabilityDomain... availabilityDomains) {
@@ -100,8 +101,8 @@ public final class GetAvailabilityDomainsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAvailabilityDomainsResult build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserName {
@@ -13,75 +15,75 @@ public final class GetDomainsUserName {
      * @return Last name
      * 
      */
-    private String familyName;
+    private @Nullable String familyName;
     /**
      * @return Full name
      * 
      */
-    private String formatted;
+    private @Nullable String formatted;
     /**
      * @return First name
      * 
      */
-    private String givenName;
+    private @Nullable String givenName;
     /**
      * @return Prefix
      * 
      */
-    private String honorificPrefix;
+    private @Nullable String honorificPrefix;
     /**
      * @return Suffix
      * 
      */
-    private String honorificSuffix;
+    private @Nullable String honorificSuffix;
     /**
      * @return Middle name
      * 
      */
-    private String middleName;
+    private @Nullable String middleName;
 
     private GetDomainsUserName() {}
     /**
      * @return Last name
      * 
      */
-    public String familyName() {
-        return this.familyName;
+    public Optional<String> familyName() {
+        return Optional.ofNullable(this.familyName);
     }
     /**
      * @return Full name
      * 
      */
-    public String formatted() {
-        return this.formatted;
+    public Optional<String> formatted() {
+        return Optional.ofNullable(this.formatted);
     }
     /**
      * @return First name
      * 
      */
-    public String givenName() {
-        return this.givenName;
+    public Optional<String> givenName() {
+        return Optional.ofNullable(this.givenName);
     }
     /**
      * @return Prefix
      * 
      */
-    public String honorificPrefix() {
-        return this.honorificPrefix;
+    public Optional<String> honorificPrefix() {
+        return Optional.ofNullable(this.honorificPrefix);
     }
     /**
      * @return Suffix
      * 
      */
-    public String honorificSuffix() {
-        return this.honorificSuffix;
+    public Optional<String> honorificSuffix() {
+        return Optional.ofNullable(this.honorificSuffix);
     }
     /**
      * @return Middle name
      * 
      */
-    public String middleName() {
-        return this.middleName;
+    public Optional<String> middleName() {
+        return Optional.ofNullable(this.middleName);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetDomainsUserName {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String familyName;
-        private String formatted;
-        private String givenName;
-        private String honorificPrefix;
-        private String honorificSuffix;
-        private String middleName;
+        private @Nullable String familyName;
+        private @Nullable String formatted;
+        private @Nullable String givenName;
+        private @Nullable String honorificPrefix;
+        private @Nullable String honorificSuffix;
+        private @Nullable String middleName;
         public Builder() {}
         public Builder(GetDomainsUserName defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetDomainsUserName {
         }
 
         @CustomType.Setter
-        public Builder familyName(String familyName) {
-            this.familyName = Objects.requireNonNull(familyName);
+        public Builder familyName(@Nullable String familyName) {
+            this.familyName = familyName;
             return this;
         }
         @CustomType.Setter
-        public Builder formatted(String formatted) {
-            this.formatted = Objects.requireNonNull(formatted);
+        public Builder formatted(@Nullable String formatted) {
+            this.formatted = formatted;
             return this;
         }
         @CustomType.Setter
-        public Builder givenName(String givenName) {
-            this.givenName = Objects.requireNonNull(givenName);
+        public Builder givenName(@Nullable String givenName) {
+            this.givenName = givenName;
             return this;
         }
         @CustomType.Setter
-        public Builder honorificPrefix(String honorificPrefix) {
-            this.honorificPrefix = Objects.requireNonNull(honorificPrefix);
+        public Builder honorificPrefix(@Nullable String honorificPrefix) {
+            this.honorificPrefix = honorificPrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder honorificSuffix(String honorificSuffix) {
-            this.honorificSuffix = Objects.requireNonNull(honorificSuffix);
+        public Builder honorificSuffix(@Nullable String honorificSuffix) {
+            this.honorificSuffix = honorificSuffix;
             return this;
         }
         @CustomType.Setter
-        public Builder middleName(String middleName) {
-            this.middleName = Objects.requireNonNull(middleName);
+        public Builder middleName(@Nullable String middleName) {
+            this.middleName = middleName;
             return this;
         }
         public GetDomainsUserName build() {

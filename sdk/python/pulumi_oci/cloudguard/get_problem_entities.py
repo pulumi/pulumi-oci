@@ -44,7 +44,7 @@ class GetProblemEntitiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,18 +52,12 @@ class GetProblemEntitiesResult:
 
     @property
     @pulumi.getter(name="problemEntityCollections")
-    def problem_entity_collections(self) -> Sequence['outputs.GetProblemEntitiesProblemEntityCollectionResult']:
-        """
-        The list of problem_entity_collection.
-        """
+    def problem_entity_collections(self) -> Optional[Sequence['outputs.GetProblemEntitiesProblemEntityCollectionResult']]:
         return pulumi.get(self, "problem_entity_collections")
 
     @property
     @pulumi.getter(name="problemId")
     def problem_id(self) -> str:
-        """
-        Attached problem id
-        """
         return pulumi.get(self, "problem_id")
 
 
@@ -83,21 +77,7 @@ def get_problem_entities(filters: Optional[Sequence[pulumi.InputType['GetProblem
                          problem_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProblemEntitiesResult:
     """
-    This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of entities for a CloudGuard Problem
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_problem_entities = oci.CloudGuard.get_problem_entities(problem_id=oci_cloud_guard_problem["test_problem"]["id"])
-    ```
-
-
-    :param str problem_id: OCId of the problem.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_problem_entities_output(filters: Optional[pulumi.Input[Optional[Sequence
                                 problem_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProblemEntitiesResult]:
     """
-    This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of entities for a CloudGuard Problem
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_problem_entities = oci.CloudGuard.get_problem_entities(problem_id=oci_cloud_guard_problem["test_problem"]["id"])
-    ```
-
-
-    :param str problem_id: OCId of the problem.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,19 +16,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Unique name of the configuration
         /// </summary>
-        public readonly string ConfigKey;
+        public readonly string? ConfigKey;
         /// <summary>
         /// configuration data type
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// configuration name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// configuration value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
         /// <summary>
         /// List of configuration values
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(
-            string configKey,
+            string? configKey,
 
-            string dataType,
+            string? dataType,
 
-            string name,
+            string? name,
 
-            string value,
+            string? value,
 
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult> values)
         {

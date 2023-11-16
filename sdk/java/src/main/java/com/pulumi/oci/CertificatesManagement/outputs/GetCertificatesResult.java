@@ -18,7 +18,7 @@ public final class GetCertificatesResult {
      * @return The list of certificate_collection.
      * 
      */
-    private List<GetCertificatesCertificateCollection> certificateCollections;
+    private @Nullable List<GetCertificatesCertificateCollection> certificateCollections;
     /**
      * @return The OCID of the certificate.
      * 
@@ -34,7 +34,7 @@ public final class GetCertificatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the certificate authority (CA) that issued the certificate.
      * 
@@ -57,7 +57,7 @@ public final class GetCertificatesResult {
      * 
      */
     public List<GetCertificatesCertificateCollection> certificateCollections() {
-        return this.certificateCollections;
+        return this.certificateCollections == null ? List.of() : this.certificateCollections;
     }
     /**
      * @return The OCID of the certificate.
@@ -80,8 +80,8 @@ public final class GetCertificatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the certificate authority (CA) that issued the certificate.
@@ -114,11 +114,11 @@ public final class GetCertificatesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCertificatesCertificateCollection> certificateCollections;
+        private @Nullable List<GetCertificatesCertificateCollection> certificateCollections;
         private @Nullable String certificateId;
         private @Nullable String compartmentId;
         private @Nullable List<GetCertificatesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String issuerCertificateAuthorityId;
         private @Nullable String name;
         private @Nullable String state;
@@ -136,8 +136,8 @@ public final class GetCertificatesResult {
         }
 
         @CustomType.Setter
-        public Builder certificateCollections(List<GetCertificatesCertificateCollection> certificateCollections) {
-            this.certificateCollections = Objects.requireNonNull(certificateCollections);
+        public Builder certificateCollections(@Nullable List<GetCertificatesCertificateCollection> certificateCollections) {
+            this.certificateCollections = certificateCollections;
             return this;
         }
         public Builder certificateCollections(GetCertificatesCertificateCollection... certificateCollections) {
@@ -162,8 +162,8 @@ public final class GetCertificatesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

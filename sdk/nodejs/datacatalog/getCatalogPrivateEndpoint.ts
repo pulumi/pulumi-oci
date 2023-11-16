@@ -45,52 +45,52 @@ export interface GetCatalogPrivateEndpointResult {
     /**
      * The list of catalogs using the private reverse connection endpoint
      */
-    readonly attachedCatalogs: string[];
+    readonly attachedCatalogs?: string[];
     readonly catalogPrivateEndpointId: string;
     /**
      * Identifier of the compartment this private endpoint belongs to
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Mutable name of the Private Reverse Connection Endpoint
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
      */
-    readonly dnsZones: string[];
+    readonly dnsZones?: string[];
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current state of the private endpoint resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Subnet Identifier
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.

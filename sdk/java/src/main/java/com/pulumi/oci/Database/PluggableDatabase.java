@@ -47,42 +47,42 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      * 
      */
     @Export(name="connectionStrings", refs={List.class,PluggableDatabaseConnectionString.class}, tree="[0,1]")
-    private Output<List<PluggableDatabaseConnectionString>> connectionStrings;
+    private Output</* @Nullable */ List<PluggableDatabaseConnectionString>> connectionStrings;
 
     /**
      * @return Connection strings to connect to an Oracle Pluggable Database.
      * 
      */
-    public Output<List<PluggableDatabaseConnectionString>> connectionStrings() {
-        return this.connectionStrings;
+    public Output<Optional<List<PluggableDatabaseConnectionString>>> connectionStrings() {
+        return Codegen.optional(this.connectionStrings);
     }
     /**
      * The DB system administrator password of the Container Database.
      * 
      */
     @Export(name="containerDatabaseAdminPassword", refs={String.class}, tree="[0]")
-    private Output<String> containerDatabaseAdminPassword;
+    private Output</* @Nullable */ String> containerDatabaseAdminPassword;
 
     /**
      * @return The DB system administrator password of the Container Database.
      * 
      */
-    public Output<String> containerDatabaseAdminPassword() {
-        return this.containerDatabaseAdminPassword;
+    public Output<Optional<String>> containerDatabaseAdminPassword() {
+        return Codegen.optional(this.containerDatabaseAdminPassword);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
@@ -117,84 +117,84 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      * 
      */
     @Export(name="isRestricted", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRestricted;
+    private Output</* @Nullable */ Boolean> isRestricted;
 
     /**
      * @return The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      * 
      */
-    public Output<Boolean> isRestricted() {
-        return this.isRestricted;
+    public Output<Optional<Boolean>> isRestricted() {
+        return Codegen.optional(this.isRestricted);
     }
     /**
      * Detailed message for the lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
     @Export(name="openMode", refs={String.class}, tree="[0]")
-    private Output<String> openMode;
+    private Output</* @Nullable */ String> openMode;
 
     /**
      * @return The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      * 
      */
-    public Output<String> openMode() {
-        return this.openMode;
+    public Output<Optional<String>> openMode() {
+        return Codegen.optional(this.openMode);
     }
     /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
     @Export(name="pdbAdminPassword", refs={String.class}, tree="[0]")
-    private Output<String> pdbAdminPassword;
+    private Output</* @Nullable */ String> pdbAdminPassword;
 
     /**
      * @return A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
-    public Output<String> pdbAdminPassword() {
-        return this.pdbAdminPassword;
+    public Output<Optional<String>> pdbAdminPassword() {
+        return Codegen.optional(this.pdbAdminPassword);
     }
     /**
      * The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
@@ -203,7 +203,7 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pdbCreationTypeDetails", refs={PluggableDatabasePdbCreationTypeDetails.class}, tree="[0]")
-    private Output<PluggableDatabasePdbCreationTypeDetails> pdbCreationTypeDetails;
+    private Output</* @Nullable */ PluggableDatabasePdbCreationTypeDetails> pdbCreationTypeDetails;
 
     /**
      * @return The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
@@ -211,8 +211,8 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
      * 
      */
-    public Output<PluggableDatabasePdbCreationTypeDetails> pdbCreationTypeDetails() {
-        return this.pdbCreationTypeDetails;
+    public Output<Optional<PluggableDatabasePdbCreationTypeDetails>> pdbCreationTypeDetails() {
+        return Codegen.optional(this.pdbCreationTypeDetails);
     }
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -233,28 +233,28 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pdbNodeLevelDetails", refs={List.class,PluggableDatabasePdbNodeLevelDetail.class}, tree="[0,1]")
-    private Output<List<PluggableDatabasePdbNodeLevelDetail>> pdbNodeLevelDetails;
+    private Output</* @Nullable */ List<PluggableDatabasePdbNodeLevelDetail>> pdbNodeLevelDetails;
 
     /**
      * @return Pluggable Database Node Level Details. Example: [{&#34;nodeName&#34; : &#34;node1&#34;, &#34;openMode&#34; : &#34;READ_WRITE&#34;}, {&#34;nodeName&#34; : &#34;node2&#34;, &#34;openMode&#34; : &#34;READ_ONLY&#34;}]
      * 
      */
-    public Output<List<PluggableDatabasePdbNodeLevelDetail>> pdbNodeLevelDetails() {
-        return this.pdbNodeLevelDetails;
+    public Output<Optional<List<PluggableDatabasePdbNodeLevelDetail>>> pdbNodeLevelDetails() {
+        return Codegen.optional(this.pdbNodeLevelDetails);
     }
     /**
      * The configuration of the Pluggable Database Management service.
      * 
      */
     @Export(name="pluggableDatabaseManagementConfigs", refs={List.class,PluggableDatabasePluggableDatabaseManagementConfig.class}, tree="[0,1]")
-    private Output<List<PluggableDatabasePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
+    private Output</* @Nullable */ List<PluggableDatabasePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
 
     /**
      * @return The configuration of the Pluggable Database Management service.
      * 
      */
-    public Output<List<PluggableDatabasePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs() {
-        return this.pluggableDatabaseManagementConfigs;
+    public Output<Optional<List<PluggableDatabasePluggableDatabaseManagementConfig>>> pluggableDatabaseManagementConfigs() {
+        return Codegen.optional(this.pluggableDatabaseManagementConfigs);
     }
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -275,14 +275,14 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="refreshableCloneConfigs", refs={List.class,PluggableDatabaseRefreshableCloneConfig.class}, tree="[0,1]")
-    private Output<List<PluggableDatabaseRefreshableCloneConfig>> refreshableCloneConfigs;
+    private Output</* @Nullable */ List<PluggableDatabaseRefreshableCloneConfig>> refreshableCloneConfigs;
 
     /**
      * @return Pluggable Database Refreshable Clone Configuration.
      * 
      */
-    public Output<List<PluggableDatabaseRefreshableCloneConfig>> refreshableCloneConfigs() {
-        return this.refreshableCloneConfigs;
+    public Output<Optional<List<PluggableDatabaseRefreshableCloneConfig>>> refreshableCloneConfigs() {
+        return Codegen.optional(this.refreshableCloneConfigs);
     }
     /**
      * (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
@@ -309,70 +309,70 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shouldCreatePdbBackup", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldCreatePdbBackup;
+    private Output</* @Nullable */ Boolean> shouldCreatePdbBackup;
 
     /**
      * @return Indicates whether to take Pluggable Database Backup after the operation.
      * 
      */
-    public Output<Boolean> shouldCreatePdbBackup() {
-        return this.shouldCreatePdbBackup;
+    public Output<Optional<Boolean>> shouldCreatePdbBackup() {
+        return Codegen.optional(this.shouldCreatePdbBackup);
     }
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
     @Export(name="shouldPdbAdminAccountBeLocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldPdbAdminAccountBeLocked;
+    private Output</* @Nullable */ Boolean> shouldPdbAdminAccountBeLocked;
 
     /**
      * @return The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
-    public Output<Boolean> shouldPdbAdminAccountBeLocked() {
-        return this.shouldPdbAdminAccountBeLocked;
+    public Output<Optional<Boolean>> shouldPdbAdminAccountBeLocked() {
+        return Codegen.optional(this.shouldPdbAdminAccountBeLocked);
     }
     /**
      * The current state of the pluggable database.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the pluggable database.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The existing TDE wallet password of the CDB.
      * 
      */
     @Export(name="tdeWalletPassword", refs={String.class}, tree="[0]")
-    private Output<String> tdeWalletPassword;
+    private Output</* @Nullable */ String> tdeWalletPassword;
 
     /**
      * @return The existing TDE wallet password of the CDB.
      * 
      */
-    public Output<String> tdeWalletPassword() {
-        return this.tdeWalletPassword;
+    public Output<Optional<String>> tdeWalletPassword() {
+        return Codegen.optional(this.tdeWalletPassword);
     }
     /**
      * The date and time the pluggable database was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the pluggable database was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -67,25 +66,25 @@ type LookupDedicatedVantagePointResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails []GetDedicatedVantagePointDvpStackDetail `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps []GetDedicatedVantagePointMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
 	// Unique permanent name of the dedicated vantage point. This is the same as the displayName.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Name of the region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Status of the dedicated vantage point.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDedicatedVantagePointOutput(ctx *pulumi.Context, args LookupDedicatedVantagePointOutputArgs, opts ...pulumi.InvokeOption) LookupDedicatedVantagePointResultOutput {
@@ -128,12 +127,6 @@ func (o LookupDedicatedVantagePointResultOutput) ToLookupDedicatedVantagePointRe
 	return o
 }
 
-func (o LookupDedicatedVantagePointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDedicatedVantagePointResult] {
-	return pulumix.Output[LookupDedicatedVantagePointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDedicatedVantagePointResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -148,8 +141,8 @@ func (o LookupDedicatedVantagePointResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
-func (o LookupDedicatedVantagePointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
@@ -165,8 +158,8 @@ func (o LookupDedicatedVantagePointResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-func (o LookupDedicatedVantagePointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -177,28 +170,28 @@ func (o LookupDedicatedVantagePointResultOutput) MonitorStatusCountMaps() GetDed
 }
 
 // Unique permanent name of the dedicated vantage point. This is the same as the displayName.
-func (o LookupDedicatedVantagePointResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Name of the region.
-func (o LookupDedicatedVantagePointResultOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.Region }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Status of the dedicated vantage point.
-func (o LookupDedicatedVantagePointResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o LookupDedicatedVantagePointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o LookupDedicatedVantagePointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDedicatedVantagePointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

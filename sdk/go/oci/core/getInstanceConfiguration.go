@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
@@ -60,23 +59,23 @@ type LookupInstanceConfigurationArgs struct {
 // A collection of values returned by getInstanceConfiguration.
 type LookupInstanceConfigurationResult struct {
 	// The OCID of the compartment containing images to search
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
 	DeferredFields []string `pulumi:"deferredFields"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the volume backup.
-	Id                      string                                   `pulumi:"id"`
+	Id                      *string                                  `pulumi:"id"`
 	InstanceConfigurationId string                                   `pulumi:"instanceConfigurationId"`
 	InstanceDetails         []GetInstanceConfigurationInstanceDetail `pulumi:"instanceDetails"`
-	InstanceId              string                                   `pulumi:"instanceId"`
-	Source                  string                                   `pulumi:"source"`
+	InstanceId              *string                                  `pulumi:"instanceId"`
+	Source                  *string                                  `pulumi:"source"`
 	// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupInstanceConfigurationOutput(ctx *pulumi.Context, args LookupInstanceConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceConfigurationResultOutput {
@@ -117,15 +116,9 @@ func (o LookupInstanceConfigurationResultOutput) ToLookupInstanceConfigurationRe
 	return o
 }
 
-func (o LookupInstanceConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstanceConfigurationResult] {
-	return pulumix.Output[LookupInstanceConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing images to search
-func (o LookupInstanceConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupInstanceConfigurationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
@@ -139,8 +132,8 @@ func (o LookupInstanceConfigurationResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupInstanceConfigurationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupInstanceConfigurationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -149,8 +142,8 @@ func (o LookupInstanceConfigurationResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The OCID of the volume backup.
-func (o LookupInstanceConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupInstanceConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupInstanceConfigurationResultOutput) InstanceConfigurationId() pulumi.StringOutput {
@@ -163,17 +156,17 @@ func (o LookupInstanceConfigurationResultOutput) InstanceDetails() GetInstanceCo
 	}).(GetInstanceConfigurationInstanceDetailArrayOutput)
 }
 
-func (o LookupInstanceConfigurationResultOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.InstanceId }).(pulumi.StringOutput)
+func (o LookupInstanceConfigurationResultOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupInstanceConfigurationResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupInstanceConfigurationResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupInstanceConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupInstanceConfigurationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

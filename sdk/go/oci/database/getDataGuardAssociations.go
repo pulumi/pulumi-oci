@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Guard Associations in Oracle Cloud Infrastructure Database service.
@@ -66,7 +65,7 @@ type GetDataGuardAssociationsResult struct {
 	DatabaseId string                           `pulumi:"databaseId"`
 	Filters    []GetDataGuardAssociationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDataGuardAssociationsOutput(ctx *pulumi.Context, args GetDataGuardAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetDataGuardAssociationsResultOutput {
@@ -108,12 +107,6 @@ func (o GetDataGuardAssociationsResultOutput) ToGetDataGuardAssociationsResultOu
 	return o
 }
 
-func (o GetDataGuardAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataGuardAssociationsResult] {
-	return pulumix.Output[GetDataGuardAssociationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of data_guard_associations.
 func (o GetDataGuardAssociationsResultOutput) DataGuardAssociations() GetDataGuardAssociationsDataGuardAssociationArrayOutput {
 	return o.ApplyT(func(v GetDataGuardAssociationsResult) []GetDataGuardAssociationsDataGuardAssociation {
@@ -131,8 +124,8 @@ func (o GetDataGuardAssociationsResultOutput) Filters() GetDataGuardAssociations
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataGuardAssociationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataGuardAssociationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataGuardAssociationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

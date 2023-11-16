@@ -55,7 +55,7 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabasesResult {
     /**
      * The list of associated_database_collection.
      */
-    readonly associatedDatabaseCollections: outputs.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection[];
+    readonly associatedDatabaseCollections?: outputs.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection[];
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
@@ -65,7 +65,7 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.

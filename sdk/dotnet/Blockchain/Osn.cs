@@ -64,19 +64,19 @@ namespace Pulumi.Oci.Blockchain
         /// (Updatable) OCPU allocation parameter
         /// </summary>
         [Output("ocpuAllocationParam")]
-        public Output<Outputs.OsnOcpuAllocationParam> OcpuAllocationParam { get; private set; } = null!;
+        public Output<Outputs.OsnOcpuAllocationParam?> OcpuAllocationParam { get; private set; } = null!;
 
         /// <summary>
         /// OSN identifier
         /// </summary>
         [Output("osnKey")]
-        public Output<string> OsnKey { get; private set; } = null!;
+        public Output<string?> OsnKey { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the OSN.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIndexResult {
@@ -17,39 +19,39 @@ public final class GetIndexResult {
      * 
      */
     private String compartmentId;
-    private String id;
+    private @Nullable String id;
     private String indexName;
-    private Boolean isIfNotExists;
+    private @Nullable Boolean isIfNotExists;
     /**
      * @return A set of keys for a secondary index.
      * 
      */
-    private List<GetIndexKey> keys;
+    private @Nullable List<GetIndexKey> keys;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Index name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The state of an index.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    private String tableId;
+    private @Nullable String tableId;
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    private String tableName;
+    private @Nullable String tableName;
     private String tableNameOrId;
 
     private GetIndexResult() {}
@@ -60,56 +62,56 @@ public final class GetIndexResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String indexName() {
         return this.indexName;
     }
-    public Boolean isIfNotExists() {
-        return this.isIfNotExists;
+    public Optional<Boolean> isIfNotExists() {
+        return Optional.ofNullable(this.isIfNotExists);
     }
     /**
      * @return A set of keys for a secondary index.
      * 
      */
     public List<GetIndexKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Index name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The state of an index.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return the OCID of the table to which this index belongs.
      * 
      */
-    public String tableId() {
-        return this.tableId;
+    public Optional<String> tableId() {
+        return Optional.ofNullable(this.tableId);
     }
     /**
      * @return The name of the table to which this index belongs.
      * 
      */
-    public String tableName() {
-        return this.tableName;
+    public Optional<String> tableName() {
+        return Optional.ofNullable(this.tableName);
     }
     public String tableNameOrId() {
         return this.tableNameOrId;
@@ -125,15 +127,15 @@ public final class GetIndexResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String indexName;
-        private Boolean isIfNotExists;
-        private List<GetIndexKey> keys;
-        private String lifecycleDetails;
-        private String name;
-        private String state;
-        private String tableId;
-        private String tableName;
+        private @Nullable Boolean isIfNotExists;
+        private @Nullable List<GetIndexKey> keys;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String tableId;
+        private @Nullable String tableName;
         private String tableNameOrId;
         public Builder() {}
         public Builder(GetIndexResult defaults) {
@@ -157,8 +159,8 @@ public final class GetIndexResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -167,41 +169,41 @@ public final class GetIndexResult {
             return this;
         }
         @CustomType.Setter
-        public Builder isIfNotExists(Boolean isIfNotExists) {
-            this.isIfNotExists = Objects.requireNonNull(isIfNotExists);
+        public Builder isIfNotExists(@Nullable Boolean isIfNotExists) {
+            this.isIfNotExists = isIfNotExists;
             return this;
         }
         @CustomType.Setter
-        public Builder keys(List<GetIndexKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetIndexKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetIndexKey... keys) {
             return keys(List.of(keys));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tableId(String tableId) {
-            this.tableId = Objects.requireNonNull(tableId);
+        public Builder tableId(@Nullable String tableId) {
+            this.tableId = tableId;
             return this;
         }
         @CustomType.Setter
-        public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+        public Builder tableName(@Nullable String tableName) {
+            this.tableName = tableName;
             return this;
         }
         @CustomType.Setter

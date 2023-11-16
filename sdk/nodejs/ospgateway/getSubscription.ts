@@ -59,92 +59,92 @@ export interface GetSubscriptionResult {
     /**
      * Account type.
      */
-    readonly accountType: string;
+    readonly accountType?: string;
     /**
      * Bill to customer Account id.
      */
-    readonly billToCustAccountId: string;
+    readonly billToCustAccountId?: string;
     /**
      * Address details model.
      */
-    readonly billingAddresses: outputs.OspGateway.GetSubscriptionBillingAddress[];
+    readonly billingAddresses?: outputs.OspGateway.GetSubscriptionBillingAddress[];
     readonly compartmentId: string;
     /**
      * Currency code
      */
-    readonly currencyCode: string;
-    readonly email: string;
+    readonly currencyCode?: string;
+    readonly email?: string;
     /**
      * GSI Subscription external code.
      */
-    readonly gsiOrgCode: string;
+    readonly gsiOrgCode?: string;
     /**
      * Subscription id identifier (OCID).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Payment intension.
      */
-    readonly isIntentToPay: boolean;
+    readonly isIntentToPay?: boolean;
     /**
      * Language short code (en, de, hu, etc)
      */
-    readonly languageCode: string;
+    readonly languageCode?: string;
     /**
      * GSI organization external identifier.
      */
-    readonly organizationId: string;
+    readonly organizationId?: string;
     readonly ospHomeRegion: string;
     /**
      * Payment gateway details.
      */
-    readonly paymentGateways: outputs.OspGateway.GetSubscriptionPaymentGateway[];
+    readonly paymentGateways?: outputs.OspGateway.GetSubscriptionPaymentGateway[];
     /**
      * Payment option list of a subscription.
      */
-    readonly paymentOptions: outputs.OspGateway.GetSubscriptionPaymentOption[];
+    readonly paymentOptions?: outputs.OspGateway.GetSubscriptionPaymentOption[];
     /**
      * Subscription plan type.
      */
-    readonly planType: string;
+    readonly planType?: string;
     /**
      * Ship to customer account role.
      */
-    readonly shipToCustAcctRoleId: string;
+    readonly shipToCustAcctRoleId?: string;
     /**
      * Ship to customer account site address id.
      */
-    readonly shipToCustAcctSiteId: string;
+    readonly shipToCustAcctSiteId?: string;
     readonly subscriptionId: string;
     /**
      * Subscription plan number.
      */
-    readonly subscriptionPlanNumber: string;
-    readonly subscriptions: outputs.OspGateway.GetSubscriptionSubscription[];
+    readonly subscriptionPlanNumber?: string;
+    readonly subscriptions?: outputs.OspGateway.GetSubscriptionSubscription[];
     /**
      * Tax details.
      */
-    readonly taxInfos: outputs.OspGateway.GetSubscriptionTaxInfo[];
+    readonly taxInfos?: outputs.OspGateway.GetSubscriptionTaxInfo[];
     /**
      * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      */
-    readonly timePersonalToCorporateConv: string;
+    readonly timePersonalToCorporateConv?: string;
     /**
      * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
-    readonly timePlanUpgrade: string;
+    readonly timePlanUpgrade?: string;
     /**
      * Start date of the subscription.
      */
-    readonly timeStart: string;
+    readonly timeStart?: string;
     /**
      * Status of the upgrade.
      */
-    readonly upgradeState: string;
+    readonly upgradeState?: string;
     /**
      * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      */
-    readonly upgradeStateDetails: string;
+    readonly upgradeStateDetails?: string;
 }
 /**
  * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.

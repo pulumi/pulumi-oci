@@ -341,7 +341,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
         /// </summary>
@@ -380,7 +380,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSecurityAssessmentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isBaseline,
 

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
-        public readonly string ParentFileSystemId;
+        public readonly string? ParentFileSystemId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
-        public readonly string SourceSnapshotId;
+        public readonly string? SourceSnapshotId;
 
         [OutputConstructor]
         private GetFileSystemsFileSystemSourceDetailResult(
-            string parentFileSystemId,
+            string? parentFileSystemId,
 
-            string sourceSnapshotId)
+            string? sourceSnapshotId)
         {
             ParentFileSystemId = parentFileSystemId;
             SourceSnapshotId = sourceSnapshotId;

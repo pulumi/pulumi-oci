@@ -46,17 +46,11 @@ class GetOperationsInsightsWarehousesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetOperationsInsightsWarehousesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        OPSI Warehouse OCID
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseSummaryCollections")
-    def operations_insights_warehouse_summary_collections(self) -> Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionResult']:
-        """
-        The list of operations_insights_warehouse_summary_collection.
-        """
+    def operations_insights_warehouse_summary_collections(self) -> Optional[Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionResult']]:
         return pulumi.get(self, "operations_insights_warehouse_summary_collections")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        Possible lifecycle states
-        """
         return pulumi.get(self, "states")
 
 
@@ -110,28 +95,7 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
                                        states: Optional[Sequence[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOperationsInsightsWarehousesResult:
     """
-    This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
-    There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=var["compartment_id"],
-        display_name=var["operations_insights_warehouse_display_name"],
-        id=var["operations_insights_warehouse_id"],
-        states=var["operations_insights_warehouse_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Operations Insights Warehouse identifier
-    :param Sequence[str] states: Lifecycle states
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -159,27 +123,6 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
                                               states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOperationsInsightsWarehousesResult]:
     """
-    This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
-    There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operations_insights_warehouses = oci.Opsi.get_operations_insights_warehouses(compartment_id=var["compartment_id"],
-        display_name=var["operations_insights_warehouse_display_name"],
-        id=var["operations_insights_warehouse_id"],
-        states=var["operations_insights_warehouse_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Operations Insights Warehouse identifier
-    :param Sequence[str] states: Lifecycle states
+    Use this data source to access information about an existing resource.
     """
     ...

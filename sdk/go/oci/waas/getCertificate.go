@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -60,44 +59,44 @@ type LookupCertificateArgs struct {
 // A collection of values returned by getCertificate.
 type LookupCertificateResult struct {
 	// The data of the SSL certificate.
-	CertificateData string `pulumi:"certificateData"`
-	CertificateId   string `pulumi:"certificateId"`
+	CertificateData *string `pulumi:"certificateData"`
+	CertificateId   string  `pulumi:"certificateId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the SSL certificate.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions []GetCertificateExtension `pulumi:"extensions"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
-	IsTrustVerificationDisabled bool   `pulumi:"isTrustVerificationDisabled"`
-	IssuedBy                    string `pulumi:"issuedBy"`
+	IsTrustVerificationDisabled *bool   `pulumi:"isTrustVerificationDisabled"`
+	IssuedBy                    *string `pulumi:"issuedBy"`
 	// The issuer of the certificate.
 	IssuerNames    []GetCertificateIssuerName `pulumi:"issuerNames"`
-	PrivateKeyData string                     `pulumi:"privateKeyData"`
+	PrivateKeyData *string                    `pulumi:"privateKeyData"`
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos []GetCertificatePublicKeyInfo `pulumi:"publicKeyInfos"`
 	// A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the SSL certificate.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The entity to be secured by the certificate.
 	SubjectNames []GetCertificateSubjectName `pulumi:"subjectNames"`
 	// The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-	TimeNotValidAfter string `pulumi:"timeNotValidAfter"`
+	TimeNotValidAfter *string `pulumi:"timeNotValidAfter"`
 	// The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-	TimeNotValidBefore string `pulumi:"timeNotValidBefore"`
+	TimeNotValidBefore *string `pulumi:"timeNotValidBefore"`
 	// The version of the encoded certificate.
-	Version int `pulumi:"version"`
+	Version *int `pulumi:"version"`
 }
 
 func LookupCertificateOutput(ctx *pulumi.Context, args LookupCertificateOutputArgs, opts ...pulumi.InvokeOption) LookupCertificateResultOutput {
@@ -138,15 +137,9 @@ func (o LookupCertificateResultOutput) ToLookupCertificateResultOutputWithContex
 	return o
 }
 
-func (o LookupCertificateResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCertificateResult] {
-	return pulumix.Output[LookupCertificateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data of the SSL certificate.
-func (o LookupCertificateResultOutput) CertificateData() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.CertificateData }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) CertificateData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.CertificateData }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
@@ -154,8 +147,8 @@ func (o LookupCertificateResultOutput) CertificateId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
-func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -164,8 +157,8 @@ func (o LookupCertificateResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the SSL certificate.
-func (o LookupCertificateResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
@@ -179,17 +172,17 @@ func (o LookupCertificateResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
-func (o LookupCertificateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
-func (o LookupCertificateResultOutput) IsTrustVerificationDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCertificateResult) bool { return v.IsTrustVerificationDisabled }).(pulumi.BoolOutput)
+func (o LookupCertificateResultOutput) IsTrustVerificationDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *bool { return v.IsTrustVerificationDisabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupCertificateResultOutput) IssuedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.IssuedBy }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) IssuedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.IssuedBy }).(pulumi.StringPtrOutput)
 }
 
 // The issuer of the certificate.
@@ -197,8 +190,8 @@ func (o LookupCertificateResultOutput) IssuerNames() GetCertificateIssuerNameArr
 	return o.ApplyT(func(v LookupCertificateResult) []GetCertificateIssuerName { return v.IssuerNames }).(GetCertificateIssuerNameArrayOutput)
 }
 
-func (o LookupCertificateResultOutput) PrivateKeyData() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.PrivateKeyData }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) PrivateKeyData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.PrivateKeyData }).(pulumi.StringPtrOutput)
 }
 
 // Information about the public key and the algorithm used by the public key.
@@ -207,18 +200,18 @@ func (o LookupCertificateResultOutput) PublicKeyInfos() GetCertificatePublicKeyI
 }
 
 // A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-func (o LookupCertificateResultOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-func (o LookupCertificateResultOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the SSL certificate.
-func (o LookupCertificateResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The entity to be secured by the certificate.
@@ -227,23 +220,23 @@ func (o LookupCertificateResultOutput) SubjectNames() GetCertificateSubjectNameA
 }
 
 // The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-func (o LookupCertificateResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-func (o LookupCertificateResultOutput) TimeNotValidAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeNotValidAfter }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeNotValidAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeNotValidAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-func (o LookupCertificateResultOutput) TimeNotValidBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCertificateResult) string { return v.TimeNotValidBefore }).(pulumi.StringOutput)
+func (o LookupCertificateResultOutput) TimeNotValidBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *string { return v.TimeNotValidBefore }).(pulumi.StringPtrOutput)
 }
 
 // The version of the encoded certificate.
-func (o LookupCertificateResultOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupCertificateResult) int { return v.Version }).(pulumi.IntOutput)
+func (o LookupCertificateResultOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupCertificateResult) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 func init() {

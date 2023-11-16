@@ -243,7 +243,7 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsBillingDonorsOnly;
         public readonly bool? IsSwapBillingOnly;
         /// <summary>
@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetExsiHostsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isBillingDonorsOnly,
 

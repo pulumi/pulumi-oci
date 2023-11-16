@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Job output line.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
 
         [OutputConstructor]
-        private GetJobOutputItemResult(string message)
+        private GetJobOutputItemResult(string? message)
         {
             Message = message;
         }

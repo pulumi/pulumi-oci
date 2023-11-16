@@ -45,44 +45,44 @@ export interface GetSteeringPolicyAttachmentResult {
     /**
      * The OCID of the compartment containing the steering policy attachment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The attached domain within the attached zone.
      */
-    readonly domainName: string;
+    readonly domainName?: string;
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      */
-    readonly rtypes: string[];
+    readonly rtypes?: string[];
     /**
      * The canonical absolute URL of the resource.
      */
-    readonly self: string;
+    readonly self?: string;
     /**
      * The current state of the resource.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly steeringPolicyAttachmentId: string;
     /**
      * The OCID of the attached steering policy.
      */
-    readonly steeringPolicyId: string;
+    readonly steeringPolicyId?: string;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The OCID of the attached zone.
      */
-    readonly zoneId: string;
+    readonly zoneId?: string;
 }
 /**
  * This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.

@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -77,28 +78,28 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="areLogsCollected", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> areLogsCollected;
+    private Output</* @Nullable */ Boolean> areLogsCollected;
 
     /**
      * @return The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      * 
      */
-    public Output<Boolean> areLogsCollected() {
-        return this.areLogsCollected;
+    public Output<Optional<Boolean>> areLogsCollected() {
+        return Codegen.optional(this.areLogsCollected);
     }
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
     @Export(name="cloudResourceId", refs={String.class}, tree="[0]")
-    private Output<String> cloudResourceId;
+    private Output</* @Nullable */ String> cloudResourceId;
 
     /**
      * @return The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      * 
      */
-    public Output<String> cloudResourceId() {
-        return this.cloudResourceId;
+    public Output<Optional<String>> cloudResourceId() {
+        return Codegen.optional(this.cloudResourceId);
     }
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -119,28 +120,28 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Internal name for the log analytics entity type.
      * 
      */
     @Export(name="entityTypeInternalName", refs={String.class}, tree="[0]")
-    private Output<String> entityTypeInternalName;
+    private Output</* @Nullable */ String> entityTypeInternalName;
 
     /**
      * @return Internal name for the log analytics entity type.
      * 
      */
-    public Output<String> entityTypeInternalName() {
-        return this.entityTypeInternalName;
+    public Output<Optional<String>> entityTypeInternalName() {
+        return Codegen.optional(this.entityTypeInternalName);
     }
     /**
      * Log analytics entity type name.
@@ -161,84 +162,84 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
-    private Output<String> hostname;
+    private Output</* @Nullable */ String> hostname;
 
     /**
      * @return (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      * 
      */
-    public Output<String> hostname() {
-        return this.hostname;
+    public Output<Optional<String>> hostname() {
+        return Codegen.optional(this.hostname);
     }
     /**
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Management agent (management-agents resource kind) compartment OCID
      * 
      */
     @Export(name="managementAgentCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> managementAgentCompartmentId;
+    private Output</* @Nullable */ String> managementAgentCompartmentId;
 
     /**
      * @return Management agent (management-agents resource kind) compartment OCID
      * 
      */
-    public Output<String> managementAgentCompartmentId() {
-        return this.managementAgentCompartmentId;
+    public Output<Optional<String>> managementAgentCompartmentId() {
+        return Codegen.optional(this.managementAgentCompartmentId);
     }
     /**
      * Management agent (management-agents resource kind) display name
      * 
      */
     @Export(name="managementAgentDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> managementAgentDisplayName;
+    private Output</* @Nullable */ String> managementAgentDisplayName;
 
     /**
      * @return Management agent (management-agents resource kind) display name
      * 
      */
-    public Output<String> managementAgentDisplayName() {
-        return this.managementAgentDisplayName;
+    public Output<Optional<String>> managementAgentDisplayName() {
+        return Codegen.optional(this.managementAgentDisplayName);
     }
     /**
      * (Updatable) The OCID of the Management Agent.
      * 
      */
     @Export(name="managementAgentId", refs={String.class}, tree="[0]")
-    private Output<String> managementAgentId;
+    private Output</* @Nullable */ String> managementAgentId;
 
     /**
      * @return (Updatable) The OCID of the Management Agent.
      * 
      */
-    public Output<String> managementAgentId() {
-        return this.managementAgentId;
+    public Output<Optional<String>> managementAgentId() {
+        return Codegen.optional(this.managementAgentId);
     }
     /**
      * (Updatable) Log analytics entity name.
@@ -273,70 +274,70 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> properties;
+    private Output</* @Nullable */ Map<String,Object>> properties;
 
     /**
      * @return (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      * 
      */
-    public Output<Map<String,Object>> properties() {
-        return this.properties;
+    public Output<Optional<Map<String,Object>>> properties() {
+        return Codegen.optional(this.properties);
     }
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      * 
      */
     @Export(name="sourceId", refs={String.class}, tree="[0]")
-    private Output<String> sourceId;
+    private Output</* @Nullable */ String> sourceId;
 
     /**
      * @return This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      * 
      */
-    public Output<String> sourceId() {
-        return this.sourceId;
+    public Output<Optional<String>> sourceId() {
+        return Codegen.optional(this.sourceId);
     }
     /**
      * The current state of the log analytics entity.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the log analytics entity.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The timezone region of the log analytics entity.
@@ -346,7 +347,7 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timezoneRegion", refs={String.class}, tree="[0]")
-    private Output<String> timezoneRegion;
+    private Output</* @Nullable */ String> timezoneRegion;
 
     /**
      * @return (Updatable) The timezone region of the log analytics entity.
@@ -355,8 +356,8 @@ public class LogAnalyticsEntity extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timezoneRegion() {
-        return this.timezoneRegion;
+    public Output<Optional<String>> timezoneRegion() {
+        return Codegen.optional(this.timezoneRegion);
     }
 
     /**

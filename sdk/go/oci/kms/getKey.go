@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
@@ -68,29 +67,29 @@ type LookupKeyArgs struct {
 // A collection of values returned by getKey.
 type LookupKeyResult struct {
 	// The OCID of the compartment that contains this master encryption key.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-	CurrentKeyVersion string `pulumi:"currentKeyVersion"`
+	CurrentKeyVersion *string `pulumi:"currentKeyVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
-	DesiredState string                 `pulumi:"desiredState"`
+	DesiredState *string                `pulumi:"desiredState"`
 	// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails []GetKeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	ExternalKeyReferences       []GetKeyExternalKeyReference       `pulumi:"externalKeyReferences"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the key.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
-	IsPrimary bool   `pulumi:"isPrimary"`
+	IsPrimary *bool  `pulumi:"isPrimary"`
 	KeyId     string `pulumi:"keyId"`
 	// The cryptographic properties of a key.
 	KeyShapes          []GetKeyKeyShape `pulumi:"keyShapes"`
 	ManagementEndpoint string           `pulumi:"managementEndpoint"`
 	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-	ProtectionMode string `pulumi:"protectionMode"`
+	ProtectionMode *string `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails []GetKeyReplicaDetail `pulumi:"replicaDetails"`
 	// Details where key was backed up.
@@ -98,17 +97,17 @@ type LookupKeyResult struct {
 	// Details where key was backed up
 	RestoreFromObjectStores []GetKeyRestoreFromObjectStore `pulumi:"restoreFromObjectStores"`
 	// When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported.
-	RestoreTrigger bool `pulumi:"restoreTrigger"`
+	RestoreTrigger *bool `pulumi:"restoreTrigger"`
 	// The OCID of the key from which this key was restored.
-	RestoredFromKeyId string `pulumi:"restoredFromKeyId"`
+	RestoredFromKeyId *string `pulumi:"restoredFromKeyId"`
 	// The key's current lifecycle state.  Example: `ENABLED`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key.
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 }
 
 func LookupKeyOutput(ctx *pulumi.Context, args LookupKeyOutputArgs, opts ...pulumi.InvokeOption) LookupKeyResultOutput {
@@ -151,20 +150,14 @@ func (o LookupKeyResultOutput) ToLookupKeyResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o LookupKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKeyResult] {
-	return pulumix.Output[LookupKeyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains this master encryption key.
-func (o LookupKeyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-func (o LookupKeyResultOutput) CurrentKeyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.CurrentKeyVersion }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) CurrentKeyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.CurrentKeyVersion }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -172,13 +165,13 @@ func (o LookupKeyResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupKeyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o LookupKeyResultOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.DesiredState }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) DesiredState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.DesiredState }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-func (o LookupKeyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Key reference data to be returned to the customer as a response.
@@ -196,13 +189,13 @@ func (o LookupKeyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the key.
-func (o LookupKeyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
-func (o LookupKeyResultOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupKeyResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o LookupKeyResultOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *bool { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupKeyResultOutput) KeyId() pulumi.StringOutput {
@@ -219,8 +212,8 @@ func (o LookupKeyResultOutput) ManagementEndpoint() pulumi.StringOutput {
 }
 
 // The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-func (o LookupKeyResultOutput) ProtectionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) ProtectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.ProtectionMode }).(pulumi.StringPtrOutput)
 }
 
 // Key replica details
@@ -239,33 +232,33 @@ func (o LookupKeyResultOutput) RestoreFromObjectStores() GetKeyRestoreFromObject
 }
 
 // When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported.
-func (o LookupKeyResultOutput) RestoreTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupKeyResult) bool { return v.RestoreTrigger }).(pulumi.BoolOutput)
+func (o LookupKeyResultOutput) RestoreTrigger() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *bool { return v.RestoreTrigger }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the key from which this key was restored.
-func (o LookupKeyResultOutput) RestoredFromKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.RestoredFromKeyId }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) RestoredFromKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.RestoredFromKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The key's current lifecycle state.  Example: `ENABLED`
-func (o LookupKeyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
-func (o LookupKeyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o LookupKeyResultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault that contains this key.
-func (o LookupKeyResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

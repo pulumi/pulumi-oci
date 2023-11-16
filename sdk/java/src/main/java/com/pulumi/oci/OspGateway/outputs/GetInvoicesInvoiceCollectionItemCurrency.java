@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceCollectionItemCurrency {
@@ -14,63 +16,63 @@ public final class GetInvoicesInvoiceCollectionItemCurrency {
      * @return Currency code
      * 
      */
-    private String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return Currency symbol
      * 
      */
-    private String currencySymbol;
+    private @Nullable String currencySymbol;
     /**
      * @return Name of the currency
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Round decimal point
      * 
      */
-    private Double roundDecimalPoint;
+    private @Nullable Double roundDecimalPoint;
     /**
      * @return USD conversion rate of the currency
      * 
      */
-    private Double usdConversion;
+    private @Nullable Double usdConversion;
 
     private GetInvoicesInvoiceCollectionItemCurrency() {}
     /**
      * @return Currency code
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
     /**
      * @return Currency symbol
      * 
      */
-    public String currencySymbol() {
-        return this.currencySymbol;
+    public Optional<String> currencySymbol() {
+        return Optional.ofNullable(this.currencySymbol);
     }
     /**
      * @return Name of the currency
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Round decimal point
      * 
      */
-    public Double roundDecimalPoint() {
-        return this.roundDecimalPoint;
+    public Optional<Double> roundDecimalPoint() {
+        return Optional.ofNullable(this.roundDecimalPoint);
     }
     /**
      * @return USD conversion rate of the currency
      * 
      */
-    public Double usdConversion() {
-        return this.usdConversion;
+    public Optional<Double> usdConversion() {
+        return Optional.ofNullable(this.usdConversion);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetInvoicesInvoiceCollectionItemCurrency {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currencyCode;
-        private String currencySymbol;
-        private String name;
-        private Double roundDecimalPoint;
-        private Double usdConversion;
+        private @Nullable String currencyCode;
+        private @Nullable String currencySymbol;
+        private @Nullable String name;
+        private @Nullable Double roundDecimalPoint;
+        private @Nullable Double usdConversion;
         public Builder() {}
         public Builder(GetInvoicesInvoiceCollectionItemCurrency defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetInvoicesInvoiceCollectionItemCurrency {
         }
 
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder currencySymbol(String currencySymbol) {
-            this.currencySymbol = Objects.requireNonNull(currencySymbol);
+        public Builder currencySymbol(@Nullable String currencySymbol) {
+            this.currencySymbol = currencySymbol;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder roundDecimalPoint(Double roundDecimalPoint) {
-            this.roundDecimalPoint = Objects.requireNonNull(roundDecimalPoint);
+        public Builder roundDecimalPoint(@Nullable Double roundDecimalPoint) {
+            this.roundDecimalPoint = roundDecimalPoint;
             return this;
         }
         @CustomType.Setter
-        public Builder usdConversion(Double usdConversion) {
-            this.usdConversion = Objects.requireNonNull(usdConversion);
+        public Builder usdConversion(@Nullable Double usdConversion) {
+            this.usdConversion = usdConversion;
             return this;
         }
         public GetInvoicesInvoiceCollectionItemCurrency build() {

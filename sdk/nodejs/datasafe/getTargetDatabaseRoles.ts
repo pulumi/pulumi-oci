@@ -78,7 +78,7 @@ export interface GetTargetDatabaseRolesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Is the role oracle maintained.
      */
@@ -91,7 +91,7 @@ export interface GetTargetDatabaseRolesResult {
     /**
      * The list of roles.
      */
-    readonly roles: outputs.DataSafe.GetTargetDatabaseRolesRole[];
+    readonly roles?: outputs.DataSafe.GetTargetDatabaseRolesRole[];
     readonly targetDatabaseId: string;
 }
 /**

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
@@ -61,27 +60,27 @@ type GetAutonomousPatchArgs struct {
 type GetAutonomousPatchResult struct {
 	AutonomousPatchId string `pulumi:"autonomousPatchId"`
 	// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
-	AutonomousPatchType string `pulumi:"autonomousPatchType"`
+	AutonomousPatchType *string `pulumi:"autonomousPatchType"`
 	// The text describing this patch package.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
-	PatchModel string `pulumi:"patchModel"`
+	PatchModel *string `pulumi:"patchModel"`
 	// First month of the quarter in which the patch was released.
-	Quarter string `pulumi:"quarter"`
+	Quarter *string `pulumi:"quarter"`
 	// The current state of the patch as a result of lastAction.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time that the patch was released.
-	TimeReleased string `pulumi:"timeReleased"`
+	TimeReleased *string `pulumi:"timeReleased"`
 	// The type of patch. BUNDLE is one example.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The version of this patch package.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 	// Year in which the patch was released.
-	Year string `pulumi:"year"`
+	Year *string `pulumi:"year"`
 }
 
 func GetAutonomousPatchOutput(ctx *pulumi.Context, args GetAutonomousPatchOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousPatchResultOutput {
@@ -122,69 +121,63 @@ func (o GetAutonomousPatchResultOutput) ToGetAutonomousPatchResultOutputWithCont
 	return o
 }
 
-func (o GetAutonomousPatchResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousPatchResult] {
-	return pulumix.Output[GetAutonomousPatchResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousPatchResultOutput) AutonomousPatchId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.AutonomousPatchId }).(pulumi.StringOutput)
 }
 
 // Maintenance run type, either "QUARTERLY" or "TIMEZONE".
-func (o GetAutonomousPatchResultOutput) AutonomousPatchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.AutonomousPatchType }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) AutonomousPatchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.AutonomousPatchType }).(pulumi.StringPtrOutput)
 }
 
 // The text describing this patch package.
-func (o GetAutonomousPatchResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousPatchResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-func (o GetAutonomousPatchResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
-func (o GetAutonomousPatchResultOutput) PatchModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.PatchModel }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) PatchModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.PatchModel }).(pulumi.StringPtrOutput)
 }
 
 // First month of the quarter in which the patch was released.
-func (o GetAutonomousPatchResultOutput) Quarter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.Quarter }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) Quarter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.Quarter }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the patch as a result of lastAction.
-func (o GetAutonomousPatchResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the patch was released.
-func (o GetAutonomousPatchResultOutput) TimeReleased() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.TimeReleased }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) TimeReleased() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.TimeReleased }).(pulumi.StringPtrOutput)
 }
 
 // The type of patch. BUNDLE is one example.
-func (o GetAutonomousPatchResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The version of this patch package.
-func (o GetAutonomousPatchResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // Year in which the patch was released.
-func (o GetAutonomousPatchResultOutput) Year() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousPatchResult) string { return v.Year }).(pulumi.StringOutput)
+func (o GetAutonomousPatchResultOutput) Year() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousPatchResult) *string { return v.Year }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption {
@@ -14,12 +16,12 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
      * @return Whether virtualization instructions can be enabled.
      * 
      */
-    private List<String> allowedValues;
+    private @Nullable List<String> allowedValues;
     /**
      * @return The default percentage of cores enabled.
      * 
      */
-    private String defaultValue;
+    private @Nullable String defaultValue;
 
     private GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption() {}
     /**
@@ -27,14 +29,14 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
      * 
      */
     public List<String> allowedValues() {
-        return this.allowedValues;
+        return this.allowedValues == null ? List.of() : this.allowedValues;
     }
     /**
      * @return The default percentage of cores enabled.
      * 
      */
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> allowedValues;
-        private String defaultValue;
+        private @Nullable List<String> allowedValues;
+        private @Nullable String defaultValue;
         public Builder() {}
         public Builder(GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +58,16 @@ public final class GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformO
         }
 
         @CustomType.Setter
-        public Builder allowedValues(List<String> allowedValues) {
-            this.allowedValues = Objects.requireNonNull(allowedValues);
+        public Builder allowedValues(@Nullable List<String> allowedValues) {
+            this.allowedValues = allowedValues;
             return this;
         }
         public Builder allowedValues(String... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         public GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {

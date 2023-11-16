@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The description of the aggregator.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The identifier of the aggregator.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
         /// <summary>
         /// The key of the aggregator object.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The type of the aggregator.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetWorkspaceFolderMetadataAggregatorResult(
-            string description,
+            string? description,
 
-            string identifier,
+            string? identifier,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            string type)
+            string? type)
         {
             Description = description;
             Identifier = identifier;

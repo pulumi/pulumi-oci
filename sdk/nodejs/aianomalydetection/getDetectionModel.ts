@@ -47,60 +47,60 @@ export interface GetDetectionModelResult {
     /**
      * The OCID for the model's compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A short description of the Model.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the model that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly modelId: string;
     /**
      * Specifies the details of the MSET model during the create call.
      */
-    readonly modelTrainingDetails: outputs.AiAnomalyDetection.GetDetectionModelModelTrainingDetail[];
+    readonly modelTrainingDetails?: outputs.AiAnomalyDetection.GetDetectionModelModelTrainingDetail[];
     /**
      * Specifies the details for an Anomaly Detection model trained with MSET.
      */
-    readonly modelTrainingResults: outputs.AiAnomalyDetection.GetDetectionModelModelTrainingResult[];
+    readonly modelTrainingResults?: outputs.AiAnomalyDetection.GetDetectionModelModelTrainingResult[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The state of the model.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the Model was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Model was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.

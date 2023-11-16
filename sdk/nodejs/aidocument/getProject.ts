@@ -45,48 +45,48 @@ export interface GetProjectResult {
     /**
      * The compartment identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * An optional description of the project.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A human-friendly name for the project, which can be changed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A unique identifier that is immutable after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail, that can provide actionable information if creation failed.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly projectId: string;
     /**
      * The current state of the project.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * When the project was created, as an RFC3339 datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * When the project was updated, as an RFC3339 datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Document service.

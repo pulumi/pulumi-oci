@@ -66,7 +66,7 @@ export interface GetBootVolumesResult {
     /**
      * The list of boot_volumes.
      */
-    readonly bootVolumes: outputs.Core.GetBootVolumesBootVolume[];
+    readonly bootVolumes?: outputs.Core.GetBootVolumesBootVolume[];
     /**
      * The OCID of the compartment that contains the boot volume.
      */
@@ -75,7 +75,7 @@ export interface GetBootVolumesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the source volume group.
      */

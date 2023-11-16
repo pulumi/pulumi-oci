@@ -69,13 +69,13 @@ export interface GetCommitmentAggregatedsResult {
     /**
      * The list of computed_usage_aggregateds.
      */
-    readonly computedUsageAggregateds: outputs.OsubUsage.GetCommitmentAggregatedsComputedUsageAggregated[];
+    readonly computedUsageAggregateds?: outputs.OsubUsage.GetCommitmentAggregatedsComputedUsageAggregated[];
     readonly filters?: outputs.OsubUsage.GetCommitmentAggregatedsFilter[];
     readonly grouping?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Product description
      */

@@ -9,62 +9,64 @@ import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectAnomalyJobInputDetailO
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectAnomalyJobInputDetail {
-    private String content;
-    private String contentType;
-    private List<GetDetectAnomalyJobInputDetailData> datas;
+    private @Nullable String content;
+    private @Nullable String contentType;
+    private @Nullable List<GetDetectAnomalyJobInputDetailData> datas;
     /**
      * @return The type of input location Allowed values are:
      * 
      */
-    private String inputType;
+    private @Nullable String inputType;
     /**
      * @return Inline input details.
      * 
      */
-    private String message;
+    private @Nullable String message;
     /**
      * @return List of ObjectLocations.
      * 
      */
-    private List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations;
-    private List<String> signalNames;
+    private @Nullable List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations;
+    private @Nullable List<String> signalNames;
 
     private GetDetectAnomalyJobInputDetail() {}
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
     public List<GetDetectAnomalyJobInputDetailData> datas() {
-        return this.datas;
+        return this.datas == null ? List.of() : this.datas;
     }
     /**
      * @return The type of input location Allowed values are:
      * 
      */
-    public String inputType() {
-        return this.inputType;
+    public Optional<String> inputType() {
+        return Optional.ofNullable(this.inputType);
     }
     /**
      * @return Inline input details.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
     /**
      * @return List of ObjectLocations.
      * 
      */
     public List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations() {
-        return this.objectLocations;
+        return this.objectLocations == null ? List.of() : this.objectLocations;
     }
     public List<String> signalNames() {
-        return this.signalNames;
+        return this.signalNames == null ? List.of() : this.signalNames;
     }
 
     public static Builder builder() {
@@ -76,13 +78,13 @@ public final class GetDetectAnomalyJobInputDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String contentType;
-        private List<GetDetectAnomalyJobInputDetailData> datas;
-        private String inputType;
-        private String message;
-        private List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations;
-        private List<String> signalNames;
+        private @Nullable String content;
+        private @Nullable String contentType;
+        private @Nullable List<GetDetectAnomalyJobInputDetailData> datas;
+        private @Nullable String inputType;
+        private @Nullable String message;
+        private @Nullable List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations;
+        private @Nullable List<String> signalNames;
         public Builder() {}
         public Builder(GetDetectAnomalyJobInputDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -96,44 +98,44 @@ public final class GetDetectAnomalyJobInputDetail {
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
-        public Builder datas(List<GetDetectAnomalyJobInputDetailData> datas) {
-            this.datas = Objects.requireNonNull(datas);
+        public Builder datas(@Nullable List<GetDetectAnomalyJobInputDetailData> datas) {
+            this.datas = datas;
             return this;
         }
         public Builder datas(GetDetectAnomalyJobInputDetailData... datas) {
             return datas(List.of(datas));
         }
         @CustomType.Setter
-        public Builder inputType(String inputType) {
-            this.inputType = Objects.requireNonNull(inputType);
+        public Builder inputType(@Nullable String inputType) {
+            this.inputType = inputType;
             return this;
         }
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         @CustomType.Setter
-        public Builder objectLocations(List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations) {
-            this.objectLocations = Objects.requireNonNull(objectLocations);
+        public Builder objectLocations(@Nullable List<GetDetectAnomalyJobInputDetailObjectLocation> objectLocations) {
+            this.objectLocations = objectLocations;
             return this;
         }
         public Builder objectLocations(GetDetectAnomalyJobInputDetailObjectLocation... objectLocations) {
             return objectLocations(List.of(objectLocations));
         }
         @CustomType.Setter
-        public Builder signalNames(List<String> signalNames) {
-            this.signalNames = Objects.requireNonNull(signalNames);
+        public Builder signalNames(@Nullable List<String> signalNames) {
+            this.signalNames = signalNames;
             return this;
         }
         public Builder signalNames(String... signalNames) {

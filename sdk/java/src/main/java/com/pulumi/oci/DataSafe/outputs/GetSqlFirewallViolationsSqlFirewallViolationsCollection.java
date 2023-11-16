@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallViolationsSqlFirewallViolationsCollection {
@@ -14,7 +15,7 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollection {
      * @return Array of SQL violation summary.
      * 
      */
-    private List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items;
+    private @Nullable List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items;
 
     private GetSqlFirewallViolationsSqlFirewallViolationsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollection {
      * 
      */
     public List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items;
+        private @Nullable List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items;
         public Builder() {}
         public Builder(GetSqlFirewallViolationsSqlFirewallViolationsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSqlFirewallViolationsSqlFirewallViolationsCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlFirewallViolationsSqlFirewallViolationsCollectionItem... items) {

@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotificationTopicsNotificationTopic {
@@ -15,147 +17,147 @@ public final class GetNotificationTopicsNotificationTopic {
      * @return The endpoint for managing subscriptions or publishing messages to the topic.
      * 
      */
-    private String apiEndpoint;
+    private @Nullable String apiEndpoint;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the topic.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to only return resources that match the given id exactly.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A unique short topic Id. This is used only for SMS subscriptions.
      * 
      */
-    private String shortTopicId;
+    private @Nullable String shortTopicId;
     /**
      * @return Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the topic was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    private String topicId;
+    private @Nullable String topicId;
 
     private GetNotificationTopicsNotificationTopic() {}
     /**
      * @return The endpoint for managing subscriptions or publishing messages to the topic.
      * 
      */
-    public String apiEndpoint() {
-        return this.apiEndpoint;
+    public Optional<String> apiEndpoint() {
+        return Optional.ofNullable(this.apiEndpoint);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the topic.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A filter to only return resources that match the given id exactly.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A unique short topic Id. This is used only for SMS subscriptions.
      * 
      */
-    public String shortTopicId() {
-        return this.shortTopicId;
+    public Optional<String> shortTopicId() {
+        return Optional.ofNullable(this.shortTopicId);
     }
     /**
      * @return Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the topic was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    public String topicId() {
-        return this.topicId;
+    public Optional<String> topicId() {
+        return Optional.ofNullable(this.topicId);
     }
 
     public static Builder builder() {
@@ -167,18 +169,18 @@ public final class GetNotificationTopicsNotificationTopic {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String apiEndpoint;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String etag;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String name;
-        private String shortTopicId;
-        private String state;
-        private String timeCreated;
-        private String topicId;
+        private @Nullable String apiEndpoint;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String etag;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String shortTopicId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String topicId;
         public Builder() {}
         public Builder(GetNotificationTopicsNotificationTopic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -197,63 +199,63 @@ public final class GetNotificationTopicsNotificationTopic {
         }
 
         @CustomType.Setter
-        public Builder apiEndpoint(String apiEndpoint) {
-            this.apiEndpoint = Objects.requireNonNull(apiEndpoint);
+        public Builder apiEndpoint(@Nullable String apiEndpoint) {
+            this.apiEndpoint = apiEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder shortTopicId(String shortTopicId) {
-            this.shortTopicId = Objects.requireNonNull(shortTopicId);
+        public Builder shortTopicId(@Nullable String shortTopicId) {
+            this.shortTopicId = shortTopicId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+        public Builder topicId(@Nullable String topicId) {
+            this.topicId = topicId;
             return this;
         }
         public GetNotificationTopicsNotificationTopic build() {

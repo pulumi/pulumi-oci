@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedMySqlDatabaseResult {
@@ -13,62 +15,62 @@ public final class GetManagedMySqlDatabaseResult {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return MySQL Database Name
      * 
      */
-    private String dbName;
+    private @Nullable String dbName;
     /**
      * @return MySQL Database Version
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedMySqlDatabaseId;
     /**
      * @return The name of the Managed MySQL Database.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The date and time the Managed Database was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetManagedMySqlDatabaseResult() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return MySQL Database Name
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
     /**
      * @return MySQL Database Version
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedMySqlDatabaseId() {
         return this.managedMySqlDatabaseId;
@@ -77,15 +79,15 @@ public final class GetManagedMySqlDatabaseResult {
      * @return The name of the Managed MySQL Database.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The date and time the Managed Database was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -97,13 +99,13 @@ public final class GetManagedMySqlDatabaseResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String dbName;
-        private String dbVersion;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String dbName;
+        private @Nullable String dbVersion;
+        private @Nullable String id;
         private String managedMySqlDatabaseId;
-        private String name;
-        private String timeCreated;
+        private @Nullable String name;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,23 +119,23 @@ public final class GetManagedMySqlDatabaseResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,13 +144,13 @@ public final class GetManagedMySqlDatabaseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetManagedMySqlDatabaseResult build() {

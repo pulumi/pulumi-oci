@@ -51,11 +51,11 @@ export interface GetAuthTokensResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of tokens.
      */
-    readonly tokens: outputs.Identity.GetAuthTokensToken[];
+    readonly tokens?: outputs.Identity.GetAuthTokensToken[];
     /**
      * The OCID of the user the auth token belongs to.
      */

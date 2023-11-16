@@ -47,76 +47,76 @@ export interface GetResourceActionResult {
     /**
      * Details about the recommended action.
      */
-    readonly actions: outputs.Optimizer.GetResourceActionAction[];
+    readonly actions?: outputs.Optimizer.GetResourceActionAction[];
     /**
      * The unique OCID associated with the category.
      */
-    readonly categoryId: string;
+    readonly categoryId?: string;
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name associated with the compartment.
      */
-    readonly compartmentName: string;
+    readonly compartmentName?: string;
     /**
      * The estimated cost savings, in dollars, for the resource action.
      */
-    readonly estimatedCostSaving: number;
+    readonly estimatedCostSaving?: number;
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    readonly extendedMetadata: {[key: string]: any};
+    readonly extendedMetadata?: {[key: string]: any};
     /**
      * The unique OCID associated with the resource action.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata?: {[key: string]: any};
     /**
      * The name assigned to the resource.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The unique OCID associated with the recommendation.
      */
-    readonly recommendationId: string;
+    readonly recommendationId?: string;
     readonly resourceActionId: string;
     /**
      * The unique OCID associated with the resource.
      */
-    readonly resourceId: string;
+    readonly resourceId?: string;
     /**
      * The kind of resource.
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
     /**
      * The resource action's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The current status of the resource action.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The date and time the resource action details were created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      */
-    readonly timeStatusBegin: string;
+    readonly timeStatusBegin?: string;
     /**
      * The date and time the current status will change. The format is defined by RFC3339.
      */
-    readonly timeStatusEnd: string;
+    readonly timeStatusEnd?: string;
     /**
      * The date and time the resource action details were last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.

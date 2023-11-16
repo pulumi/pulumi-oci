@@ -100,51 +100,36 @@ class GetObjectResult:
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="cacheControl")
-    def cache_control(self) -> str:
+    def cache_control(self) -> Optional[str]:
         return pulumi.get(self, "cache_control")
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        The object to upload to the object store.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentDisposition")
-    def content_disposition(self) -> str:
+    def content_disposition(self) -> Optional[str]:
         return pulumi.get(self, "content_disposition")
 
     @property
     @pulumi.getter(name="contentEncoding")
-    def content_encoding(self) -> str:
-        """
-        The content encoding of the object.
-        """
+    def content_encoding(self) -> Optional[str]:
         return pulumi.get(self, "content_encoding")
 
     @property
     @pulumi.getter(name="contentLanguage")
-    def content_language(self) -> str:
-        """
-        The content language of the object.
-        """
+    def content_language(self) -> Optional[str]:
         return pulumi.get(self, "content_language")
 
     @property
     @pulumi.getter(name="contentLength")
-    def content_length(self) -> str:
-        """
-        The content length of the body.
-        """
+    def content_length(self) -> Optional[str]:
         return pulumi.get(self, "content_length")
 
     @property
@@ -154,18 +139,12 @@ class GetObjectResult:
 
     @property
     @pulumi.getter(name="contentMd5")
-    def content_md5(self) -> str:
-        """
-        The base-64 encoded MD5 hash of the body.
-        """
+    def content_md5(self) -> Optional[str]:
         return pulumi.get(self, "content_md5")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
@@ -200,7 +179,7 @@ class GetObjectResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -208,39 +187,27 @@ class GetObjectResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The top-level namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> str:
-        """
-        The name of the object. Avoid entering confidential information. Example: `test/object1.log`
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> str:
-        """
-        The storage tier that the object is stored in.
-        """
+    def storage_tier(self) -> Optional[str]:
         return pulumi.get(self, "storage_tier")
 
     @property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> str:
+    def version_id(self) -> Optional[str]:
         return pulumi.get(self, "version_id")
 
 
@@ -289,40 +256,7 @@ def get_object(base64_encode_content: Optional[bool] = None,
                version_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetObjectResult:
     """
-    This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the metadata and body of an object.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object = oci.ObjectStorage.get_object(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"],
-        http_response_cache_control=var["object_http_response_cache_control"],
-        http_response_content_disposition=var["object_http_response_content_disposition"],
-        http_response_content_encoding=var["object_http_response_content_encoding"],
-        http_response_content_language=var["object_http_response_content_language"],
-        http_response_content_type=var["object_http_response_content_type"],
-        http_response_expires=var["object_http_response_expires"],
-        version_id=oci_objectstorage_version["test_version"]["id"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param int content_length_limit: The limit of the content length of the object body to download from the object store. The default is 1Mb.
-    :param str http_response_cache_control: Specify this query parameter to override the Cache-Control response header in the GetObject response.
-    :param str http_response_content_disposition: Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
-    :param str http_response_content_encoding: Specify this query parameter to override the Content-Encoding response header in the GetObject response.
-    :param str http_response_content_language: Specify this query parameter to override the Content-Language response header in the GetObject response.
-    :param str http_response_content_type: Specify this query parameter to override the Content-Type response header in the GetObject response.
-    :param str http_response_expires: Specify this query parameter to override the Expires response header in the GetObject response.
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str object: The name of the object. Avoid entering confidential information. Example: `test/object1.log`
-    :param str version_id: VersionId used to identify a particular version of the object
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['base64EncodeContent'] = base64_encode_content
@@ -381,39 +315,6 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
                       version_id: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectResult]:
     """
-    This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets the metadata and body of an object.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object = oci.ObjectStorage.get_object(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"],
-        http_response_cache_control=var["object_http_response_cache_control"],
-        http_response_content_disposition=var["object_http_response_content_disposition"],
-        http_response_content_encoding=var["object_http_response_content_encoding"],
-        http_response_content_language=var["object_http_response_content_language"],
-        http_response_content_type=var["object_http_response_content_type"],
-        http_response_expires=var["object_http_response_expires"],
-        version_id=oci_objectstorage_version["test_version"]["id"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param int content_length_limit: The limit of the content length of the object body to download from the object store. The default is 1Mb.
-    :param str http_response_cache_control: Specify this query parameter to override the Cache-Control response header in the GetObject response.
-    :param str http_response_content_disposition: Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
-    :param str http_response_content_encoding: Specify this query parameter to override the Content-Encoding response header in the GetObject response.
-    :param str http_response_content_language: Specify this query parameter to override the Content-Language response header in the GetObject response.
-    :param str http_response_content_type: Specify this query parameter to override the Content-Type response header in the GetObject response.
-    :param str http_response_expires: Specify this query parameter to override the Expires response header in the GetObject response.
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str object: The name of the object. Avoid entering confidential information. Example: `test/object1.log`
-    :param str version_id: VersionId used to identify a particular version of the object
+    Use this data source to access information about an existing resource.
     """
     ...

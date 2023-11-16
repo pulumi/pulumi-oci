@@ -53,7 +53,7 @@ class GetTargetDatabasesSchemasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,9 +62,6 @@ class GetTargetDatabasesSchemasResult:
     @property
     @pulumi.getter(name="isOracleMaintained")
     def is_oracle_maintained(self) -> Optional[bool]:
-        """
-        Indicates if the schema is oracle supplied.
-        """
         return pulumi.get(self, "is_oracle_maintained")
 
     @property
@@ -75,17 +72,11 @@ class GetTargetDatabasesSchemasResult:
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        Name of the schema.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence['outputs.GetTargetDatabasesSchemasSchemaResult']:
-        """
-        The list of schemas.
-        """
+    def schemas(self) -> Optional[Sequence['outputs.GetTargetDatabasesSchemasSchemaResult']]:
         return pulumi.get(self, "schemas")
 
     @property
@@ -116,27 +107,7 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
                                  target_database_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabasesSchemasResult:
     """
-    This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns list of schema.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        is_oracle_maintained=var["target_databases_schema_is_oracle_maintained"],
-        schema_names=var["target_databases_schema_schema_name"],
-        schema_name_contains=var["target_databases_schema_schema_name_contains"])
-    ```
-
-
-    :param bool is_oracle_maintained: A filter to return only items related to specific type of schema.
-    :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -165,26 +136,6 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
                                         target_database_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesSchemasResult]:
     """
-    This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns list of schema.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        is_oracle_maintained=var["target_databases_schema_is_oracle_maintained"],
-        schema_names=var["target_databases_schema_schema_name"],
-        schema_name_contains=var["target_databases_schema_schema_name_contains"])
-    ```
-
-
-    :param bool is_oracle_maintained: A filter to return only items related to specific type of schema.
-    :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     ...

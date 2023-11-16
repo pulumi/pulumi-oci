@@ -64,82 +64,52 @@ class GetStreamResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the stream.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the stream.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> str:
-        """
-        Any additional details about the current state of the stream.
-        """
+    def lifecycle_state_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_state_details")
 
     @property
     @pulumi.getter(name="messagesEndpoint")
-    def messages_endpoint(self) -> str:
-        """
-        The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-        """
+    def messages_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "messages_endpoint")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def partitions(self) -> int:
-        """
-        The number of partitions in the stream.
-        """
+    def partitions(self) -> Optional[int]:
         return pulumi.get(self, "partitions")
 
     @property
     @pulumi.getter(name="retentionInHours")
-    def retention_in_hours(self) -> int:
-        """
-        The retention period of the stream, in hours. This property is read-only.
-        """
+    def retention_in_hours(self) -> Optional[int]:
         return pulumi.get(self, "retention_in_hours")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the stream.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -149,18 +119,12 @@ class GetStreamResult:
 
     @property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> str:
-        """
-        The OCID of the stream pool that contains the stream.
-        """
+    def stream_pool_id(self) -> Optional[str]:
         return pulumi.get(self, "stream_pool_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -188,21 +152,7 @@ class AwaitableGetStreamResult(GetStreamResult):
 def get_stream(stream_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamResult:
     """
-    This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
-
-    Gets detailed information about a stream, including the number of partitions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream = oci.Streaming.get_stream(stream_id=oci_streaming_stream["test_stream"]["id"])
-    ```
-
-
-    :param str stream_id: The OCID of the stream.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['streamId'] = stream_id
@@ -229,20 +179,6 @@ def get_stream(stream_id: Optional[str] = None,
 def get_stream_output(stream_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamResult]:
     """
-    This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
-
-    Gets detailed information about a stream, including the number of partitions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream = oci.Streaming.get_stream(stream_id=oci_streaming_stream["test_stream"]["id"])
-    ```
-
-
-    :param str stream_id: The OCID of the stream.
+    Use this data source to access information about an existing resource.
     """
     ...

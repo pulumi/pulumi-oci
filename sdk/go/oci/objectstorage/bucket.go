@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.
@@ -83,27 +82,27 @@ type Bucket struct {
 	// (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
 	AccessType pulumi.StringPtrOutput `pulumi:"accessType"`
 	// The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
-	ApproximateCount pulumi.StringOutput `pulumi:"approximateCount"`
+	ApproximateCount pulumi.StringPtrOutput `pulumi:"approximateCount"`
 	// The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
-	ApproximateSize pulumi.StringOutput `pulumi:"approximateSize"`
+	ApproximateSize pulumi.StringPtrOutput `pulumi:"approximateSize"`
 	// (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-	AutoTiering pulumi.StringOutput `pulumi:"autoTiering"`
+	AutoTiering pulumi.StringPtrOutput `pulumi:"autoTiering"`
 	// The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
-	BucketId pulumi.StringOutput `pulumi:"bucketId"`
+	BucketId pulumi.StringPtrOutput `pulumi:"bucketId"`
 	// (Updatable) The ID of the compartment in which to create the bucket.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The entity tag (ETag) for the bucket.
-	Etag pulumi.StringOutput `pulumi:"etag"`
+	Etag pulumi.StringPtrOutput `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
-	IsReadOnly pulumi.BoolOutput `pulumi:"isReadOnly"`
+	IsReadOnly pulumi.BoolPtrOutput `pulumi:"isReadOnly"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
 	Metadata pulumi.MapOutput `pulumi:"metadata"`
 	// The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
@@ -111,22 +110,22 @@ type Bucket struct {
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-	ObjectEventsEnabled pulumi.BoolOutput `pulumi:"objectEventsEnabled"`
+	ObjectEventsEnabled pulumi.BoolPtrOutput `pulumi:"objectEventsEnabled"`
 	// The entity tag (ETag) for the live object lifecycle policy on the bucket.
-	ObjectLifecyclePolicyEtag pulumi.StringOutput `pulumi:"objectLifecyclePolicyEtag"`
+	ObjectLifecyclePolicyEtag pulumi.StringPtrOutput `pulumi:"objectLifecyclePolicyEtag"`
 	// Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-	ReplicationEnabled pulumi.BoolOutput `pulumi:"replicationEnabled"`
+	ReplicationEnabled pulumi.BoolPtrOutput `pulumi:"replicationEnabled"`
 	// (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
 	RetentionRules BucketRetentionRuleArrayOutput `pulumi:"retentionRules"`
 	// The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
-	StorageTier pulumi.StringOutput `pulumi:"storageTier"`
+	StorageTier pulumi.StringPtrOutput `pulumi:"storageTier"`
 	// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Versioning pulumi.StringOutput `pulumi:"versioning"`
+	Versioning pulumi.StringPtrOutput `pulumi:"versioning"`
 }
 
 // NewBucket registers a new resource with the given unique name, arguments, and options.
@@ -356,12 +355,6 @@ func (i *Bucket) ToBucketOutputWithContext(ctx context.Context) BucketOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BucketOutput)
 }
 
-func (i *Bucket) ToOutput(ctx context.Context) pulumix.Output[*Bucket] {
-	return pulumix.Output[*Bucket]{
-		OutputState: i.ToBucketOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BucketArrayInput is an input type that accepts BucketArray and BucketArrayOutput values.
 // You can construct a concrete instance of `BucketArrayInput` via:
 //
@@ -385,12 +378,6 @@ func (i BucketArray) ToBucketArrayOutput() BucketArrayOutput {
 
 func (i BucketArray) ToBucketArrayOutputWithContext(ctx context.Context) BucketArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BucketArrayOutput)
-}
-
-func (i BucketArray) ToOutput(ctx context.Context) pulumix.Output[[]*Bucket] {
-	return pulumix.Output[[]*Bucket]{
-		OutputState: i.ToBucketArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BucketMapInput is an input type that accepts BucketMap and BucketMapOutput values.
@@ -418,12 +405,6 @@ func (i BucketMap) ToBucketMapOutputWithContext(ctx context.Context) BucketMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(BucketMapOutput)
 }
 
-func (i BucketMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Bucket] {
-	return pulumix.Output[map[string]*Bucket]{
-		OutputState: i.ToBucketMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BucketOutput struct{ *pulumi.OutputState }
 
 func (BucketOutput) ElementType() reflect.Type {
@@ -438,35 +419,29 @@ func (o BucketOutput) ToBucketOutputWithContext(ctx context.Context) BucketOutpu
 	return o
 }
 
-func (o BucketOutput) ToOutput(ctx context.Context) pulumix.Output[*Bucket] {
-	return pulumix.Output[*Bucket]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
 func (o BucketOutput) AccessType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.AccessType }).(pulumi.StringPtrOutput)
 }
 
 // The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
-func (o BucketOutput) ApproximateCount() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.ApproximateCount }).(pulumi.StringOutput)
+func (o BucketOutput) ApproximateCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.ApproximateCount }).(pulumi.StringPtrOutput)
 }
 
 // The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
-func (o BucketOutput) ApproximateSize() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.ApproximateSize }).(pulumi.StringOutput)
+func (o BucketOutput) ApproximateSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.ApproximateSize }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
-func (o BucketOutput) AutoTiering() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.AutoTiering }).(pulumi.StringOutput)
+func (o BucketOutput) AutoTiering() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.AutoTiering }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
-func (o BucketOutput) BucketId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.BucketId }).(pulumi.StringOutput)
+func (o BucketOutput) BucketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.BucketId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The ID of the compartment in which to create the bucket.
@@ -475,8 +450,8 @@ func (o BucketOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-func (o BucketOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o BucketOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -485,8 +460,8 @@ func (o BucketOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The entity tag (ETag) for the bucket.
-func (o BucketOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.Etag }).(pulumi.StringOutput)
+func (o BucketOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -495,13 +470,13 @@ func (o BucketOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
-func (o BucketOutput) IsReadOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.BoolOutput { return v.IsReadOnly }).(pulumi.BoolOutput)
+func (o BucketOutput) IsReadOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.BoolPtrOutput { return v.IsReadOnly }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-func (o BucketOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o BucketOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -520,18 +495,18 @@ func (o BucketOutput) Namespace() pulumi.StringOutput {
 }
 
 // (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
-func (o BucketOutput) ObjectEventsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.BoolOutput { return v.ObjectEventsEnabled }).(pulumi.BoolOutput)
+func (o BucketOutput) ObjectEventsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.BoolPtrOutput { return v.ObjectEventsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The entity tag (ETag) for the live object lifecycle policy on the bucket.
-func (o BucketOutput) ObjectLifecyclePolicyEtag() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.ObjectLifecyclePolicyEtag }).(pulumi.StringOutput)
+func (o BucketOutput) ObjectLifecyclePolicyEtag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.ObjectLifecyclePolicyEtag }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
-func (o BucketOutput) ReplicationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.BoolOutput { return v.ReplicationEnabled }).(pulumi.BoolOutput)
+func (o BucketOutput) ReplicationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.BoolPtrOutput { return v.ReplicationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
@@ -540,21 +515,21 @@ func (o BucketOutput) RetentionRules() BucketRetentionRuleArrayOutput {
 }
 
 // The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
-func (o BucketOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.StorageTier }).(pulumi.StringOutput)
+func (o BucketOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-func (o BucketOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BucketOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o BucketOutput) Versioning() pulumi.StringOutput {
-	return o.ApplyT(func(v *Bucket) pulumi.StringOutput { return v.Versioning }).(pulumi.StringOutput)
+func (o BucketOutput) Versioning() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.StringPtrOutput { return v.Versioning }).(pulumi.StringPtrOutput)
 }
 
 type BucketArrayOutput struct{ *pulumi.OutputState }
@@ -569,12 +544,6 @@ func (o BucketArrayOutput) ToBucketArrayOutput() BucketArrayOutput {
 
 func (o BucketArrayOutput) ToBucketArrayOutputWithContext(ctx context.Context) BucketArrayOutput {
 	return o
-}
-
-func (o BucketArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Bucket] {
-	return pulumix.Output[[]*Bucket]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BucketArrayOutput) Index(i pulumi.IntInput) BucketOutput {
@@ -595,12 +564,6 @@ func (o BucketMapOutput) ToBucketMapOutput() BucketMapOutput {
 
 func (o BucketMapOutput) ToBucketMapOutputWithContext(ctx context.Context) BucketMapOutput {
 	return o
-}
-
-func (o BucketMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Bucket] {
-	return pulumix.Output[map[string]*Bucket]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BucketMapOutput) MapIndex(k pulumi.StringInput) BucketOutput {

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Type of encryption cipher suite to use for the MACsec connection.
         /// </summary>
-        public readonly string EncryptionCipher;
+        public readonly string? EncryptionCipher;
         /// <summary>
         /// Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         /// </summary>
-        public readonly bool IsUnprotectedTrafficAllowed;
+        public readonly bool? IsUnprotectedTrafficAllowed;
         /// <summary>
         /// An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult(
-            string encryptionCipher,
+            string? encryptionCipher,
 
-            bool isUnprotectedTrafficAllowed,
+            bool? isUnprotectedTrafficAllowed,
 
             ImmutableArray<Outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyResult> primaryKeys,
 
-            string state)
+            string? state)
         {
             EncryptionCipher = encryptionCipher;
             IsUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;

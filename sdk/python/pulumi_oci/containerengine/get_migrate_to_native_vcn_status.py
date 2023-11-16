@@ -42,7 +42,7 @@ class GetMigrateToNativeVcnStatusResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -50,12 +50,12 @@ class GetMigrateToNativeVcnStatusResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeDecommissionScheduled")
-    def time_decommission_scheduled(self) -> str:
+    def time_decommission_scheduled(self) -> Optional[str]:
         return pulumi.get(self, "time_decommission_scheduled")
 
 

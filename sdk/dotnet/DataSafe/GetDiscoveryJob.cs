@@ -108,44 +108,44 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the compartment that contains the discovery job.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         public readonly string DiscoveryJobId;
         /// <summary>
         /// The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
         /// </summary>
-        public readonly string DiscoveryType;
+        public readonly string? DiscoveryType;
         /// <summary>
         /// The display name of the discovery job.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the discovery job.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
         /// </summary>
-        public readonly bool IsAppDefinedRelationDiscoveryEnabled;
+        public readonly bool? IsAppDefinedRelationDiscoveryEnabled;
         /// <summary>
         /// Indicates if all the schemas in the associated target database are used for data discovery. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
         /// </summary>
-        public readonly bool IsIncludeAllSchemas;
+        public readonly bool? IsIncludeAllSchemas;
         /// <summary>
         /// Indicates if all the existing sensitive types are used for data discovery. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used.
         /// </summary>
-        public readonly bool IsIncludeAllSensitiveTypes;
+        public readonly bool? IsIncludeAllSensitiveTypes;
         /// <summary>
         /// Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         /// </summary>
-        public readonly bool IsSampleDataCollectionEnabled;
+        public readonly bool? IsSampleDataCollectionEnabled;
         /// <summary>
         /// The schemas used for data discovery.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the sensitive data model associated with the discovery job.
         /// </summary>
-        public readonly string SensitiveDataModelId;
+        public readonly string? SensitiveDataModelId;
         /// <summary>
         /// The OCIDs of the sensitive types used for data discovery.
         /// </summary>
@@ -161,99 +161,99 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The current state of the discovery job.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The OCID of the target database associated with the discovery job.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The total number of columns scanned by the discovery job.
         /// </summary>
-        public readonly string TotalColumnsScanned;
+        public readonly string? TotalColumnsScanned;
         /// <summary>
         /// The total number of deleted sensitive columns identified by the discovery job.
         /// </summary>
-        public readonly string TotalDeletedSensitiveColumns;
+        public readonly string? TotalDeletedSensitiveColumns;
         /// <summary>
         /// The total number of modified sensitive columns identified by the discovery job.
         /// </summary>
-        public readonly string TotalModifiedSensitiveColumns;
+        public readonly string? TotalModifiedSensitiveColumns;
         /// <summary>
         /// The total number of new sensitive columns identified by the discovery job.
         /// </summary>
-        public readonly string TotalNewSensitiveColumns;
+        public readonly string? TotalNewSensitiveColumns;
         /// <summary>
         /// The total number of objects (tables and editioning views) scanned by the discovery job.
         /// </summary>
-        public readonly string TotalObjectsScanned;
+        public readonly string? TotalObjectsScanned;
         /// <summary>
         /// The total number of schemas scanned by the discovery job.
         /// </summary>
-        public readonly string TotalSchemasScanned;
+        public readonly string? TotalSchemasScanned;
 
         [OutputConstructor]
         private GetDiscoveryJobResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             string discoveryJobId,
 
-            string discoveryType,
+            string? discoveryType,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAppDefinedRelationDiscoveryEnabled,
+            bool? isAppDefinedRelationDiscoveryEnabled,
 
-            bool isIncludeAllSchemas,
+            bool? isIncludeAllSchemas,
 
-            bool isIncludeAllSensitiveTypes,
+            bool? isIncludeAllSensitiveTypes,
 
-            bool isSampleDataCollectionEnabled,
+            bool? isSampleDataCollectionEnabled,
 
             ImmutableArray<string> schemasForDiscoveries,
 
-            string sensitiveDataModelId,
+            string? sensitiveDataModelId,
 
             ImmutableArray<string> sensitiveTypeIdsForDiscoveries,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetId,
+            string? targetId,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string totalColumnsScanned,
+            string? totalColumnsScanned,
 
-            string totalDeletedSensitiveColumns,
+            string? totalDeletedSensitiveColumns,
 
-            string totalModifiedSensitiveColumns,
+            string? totalModifiedSensitiveColumns,
 
-            string totalNewSensitiveColumns,
+            string? totalNewSensitiveColumns,
 
-            string totalObjectsScanned,
+            string? totalObjectsScanned,
 
-            string totalSchemasScanned)
+            string? totalSchemasScanned)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

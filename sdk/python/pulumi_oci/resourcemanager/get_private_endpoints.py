@@ -49,17 +49,11 @@ class GetPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +71,7 @@ class GetPrivateEndpointsResult:
 
     @property
     @pulumi.getter(name="privateEndpointCollections")
-    def private_endpoint_collections(self) -> Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionResult']:
-        """
-        The list of private_endpoint_collection.
-        """
+    def private_endpoint_collections(self) -> Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "private_endpoint_collections")
 
     @property
@@ -91,9 +82,6 @@ class GetPrivateEndpointsResult:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -119,29 +107,7 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
                           vcn_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointsResult:
     """
-    This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
-
-    Lists private endpoints according to the specified filter.
-    - For `compartmentId`, lists all private endpoint in the matching compartment.
-    - For `privateEndpointId`, lists the matching private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["private_endpoint_display_name"],
-        private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
-    :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -170,28 +136,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[
                                  vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
-    This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
-
-    Lists private endpoints according to the specified filter.
-    - For `compartmentId`, lists all private endpoint in the matching compartment.
-    - For `privateEndpointId`, lists the matching private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoints = oci.ResourceManager.get_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["private_endpoint_display_name"],
-        private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
-    :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

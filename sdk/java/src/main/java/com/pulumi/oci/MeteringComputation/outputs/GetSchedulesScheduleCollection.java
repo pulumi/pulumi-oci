@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesScheduleCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSchedulesScheduleCollection {
-    private List<GetSchedulesScheduleCollectionItem> items;
+    private @Nullable List<GetSchedulesScheduleCollectionItem> items;
 
     private GetSchedulesScheduleCollection() {}
     public List<GetSchedulesScheduleCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSchedulesScheduleCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSchedulesScheduleCollectionItem> items;
+        private @Nullable List<GetSchedulesScheduleCollectionItem> items;
         public Builder() {}
         public Builder(GetSchedulesScheduleCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSchedulesScheduleCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSchedulesScheduleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSchedulesScheduleCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSchedulesScheduleCollectionItem... items) {

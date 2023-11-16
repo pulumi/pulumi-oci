@@ -24,12 +24,12 @@ public final class GetLocalPeeringGatewaysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of local_peering_gateways.
      * 
      */
-    private List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways;
+    private @Nullable List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
      * 
@@ -51,15 +51,15 @@ public final class GetLocalPeeringGatewaysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of local_peering_gateways.
      * 
      */
     public List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways() {
-        return this.localPeeringGateways;
+        return this.localPeeringGateways == null ? List.of() : this.localPeeringGateways;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
@@ -80,8 +80,8 @@ public final class GetLocalPeeringGatewaysResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetLocalPeeringGatewaysFilter> filters;
-        private String id;
-        private List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways;
+        private @Nullable String id;
+        private @Nullable List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways;
         private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetLocalPeeringGatewaysResult defaults) {
@@ -107,13 +107,13 @@ public final class GetLocalPeeringGatewaysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder localPeeringGateways(List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways) {
-            this.localPeeringGateways = Objects.requireNonNull(localPeeringGateways);
+        public Builder localPeeringGateways(@Nullable List<GetLocalPeeringGatewaysLocalPeeringGateway> localPeeringGateways) {
+            this.localPeeringGateways = localPeeringGateways;
             return this;
         }
         public Builder localPeeringGateways(GetLocalPeeringGatewaysLocalPeeringGateway... localPeeringGateways) {

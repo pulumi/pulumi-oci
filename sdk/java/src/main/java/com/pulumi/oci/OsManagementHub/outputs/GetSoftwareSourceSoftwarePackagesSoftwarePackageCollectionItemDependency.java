@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency {
@@ -13,39 +15,39 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
      * @return The software package&#39;s dependency.
      * 
      */
-    private String dependency;
+    private @Nullable String dependency;
     /**
      * @return The modifier for the dependency.
      * 
      */
-    private String dependencyModifier;
+    private @Nullable String dependencyModifier;
     /**
      * @return The type of the dependency.
      * 
      */
-    private String dependencyType;
+    private @Nullable String dependencyType;
 
     private GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency() {}
     /**
      * @return The software package&#39;s dependency.
      * 
      */
-    public String dependency() {
-        return this.dependency;
+    public Optional<String> dependency() {
+        return Optional.ofNullable(this.dependency);
     }
     /**
      * @return The modifier for the dependency.
      * 
      */
-    public String dependencyModifier() {
-        return this.dependencyModifier;
+    public Optional<String> dependencyModifier() {
+        return Optional.ofNullable(this.dependencyModifier);
     }
     /**
      * @return The type of the dependency.
      * 
      */
-    public String dependencyType() {
-        return this.dependencyType;
+    public Optional<String> dependencyType() {
+        return Optional.ofNullable(this.dependencyType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dependency;
-        private String dependencyModifier;
-        private String dependencyType;
+        private @Nullable String dependency;
+        private @Nullable String dependencyModifier;
+        private @Nullable String dependencyType;
         public Builder() {}
         public Builder(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
         }
 
         @CustomType.Setter
-        public Builder dependency(String dependency) {
-            this.dependency = Objects.requireNonNull(dependency);
+        public Builder dependency(@Nullable String dependency) {
+            this.dependency = dependency;
             return this;
         }
         @CustomType.Setter
-        public Builder dependencyModifier(String dependencyModifier) {
-            this.dependencyModifier = Objects.requireNonNull(dependencyModifier);
+        public Builder dependencyModifier(@Nullable String dependencyModifier) {
+            this.dependencyModifier = dependencyModifier;
             return this;
         }
         @CustomType.Setter
-        public Builder dependencyType(String dependencyType) {
-            this.dependencyType = Objects.requireNonNull(dependencyType);
+        public Builder dependencyType(@Nullable String dependencyType) {
+            this.dependencyType = dependencyType;
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency build() {

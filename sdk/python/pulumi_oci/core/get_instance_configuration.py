@@ -59,50 +59,32 @@ class GetInstanceConfigurationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing images to search
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deferredFields")
-    def deferred_fields(self) -> Sequence[str]:
-        """
-        Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
-        """
+    def deferred_fields(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "deferred_fields")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the volume backup.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -112,25 +94,22 @@ class GetInstanceConfigurationResult:
 
     @property
     @pulumi.getter(name="instanceDetails")
-    def instance_details(self) -> Sequence['outputs.GetInstanceConfigurationInstanceDetailResult']:
+    def instance_details(self) -> Optional[Sequence['outputs.GetInstanceConfigurationInstanceDetailResult']]:
         return pulumi.get(self, "instance_details")
 
     @property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> str:
+    def instance_id(self) -> Optional[str]:
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -156,21 +135,7 @@ class AwaitableGetInstanceConfigurationResult(GetInstanceConfigurationResult):
 def get_instance_configuration(instance_configuration_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceConfigurationResult:
     """
-    This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified instance configuration
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"])
-    ```
-
-
-    :param str instance_configuration_id: The OCID of the instance configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instanceConfigurationId'] = instance_configuration_id
@@ -195,20 +160,6 @@ def get_instance_configuration(instance_configuration_id: Optional[str] = None,
 def get_instance_configuration_output(instance_configuration_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceConfigurationResult]:
     """
-    This data source provides details about a specific Instance Configuration resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified instance configuration
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"])
-    ```
-
-
-    :param str instance_configuration_id: The OCID of the instance configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

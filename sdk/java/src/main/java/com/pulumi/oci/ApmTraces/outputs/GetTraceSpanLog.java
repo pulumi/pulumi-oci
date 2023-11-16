@@ -8,6 +8,8 @@ import com.pulumi.oci.ApmTraces.outputs.GetTraceSpanLogSpanLog;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceSpanLog {
@@ -15,12 +17,12 @@ public final class GetTraceSpanLog {
      * @return List of logs associated with the span at the given timestamp.
      * 
      */
-    private List<GetTraceSpanLogSpanLog> spanLogs;
+    private @Nullable List<GetTraceSpanLogSpanLog> spanLogs;
     /**
      * @return Timestamp at which the log is created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetTraceSpanLog() {}
     /**
@@ -28,14 +30,14 @@ public final class GetTraceSpanLog {
      * 
      */
     public List<GetTraceSpanLogSpanLog> spanLogs() {
-        return this.spanLogs;
+        return this.spanLogs == null ? List.of() : this.spanLogs;
     }
     /**
      * @return Timestamp at which the log is created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetTraceSpanLog {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTraceSpanLogSpanLog> spanLogs;
-        private String timeCreated;
+        private @Nullable List<GetTraceSpanLogSpanLog> spanLogs;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetTraceSpanLog defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetTraceSpanLog {
         }
 
         @CustomType.Setter
-        public Builder spanLogs(List<GetTraceSpanLogSpanLog> spanLogs) {
-            this.spanLogs = Objects.requireNonNull(spanLogs);
+        public Builder spanLogs(@Nullable List<GetTraceSpanLogSpanLog> spanLogs) {
+            this.spanLogs = spanLogs;
             return this;
         }
         public Builder spanLogs(GetTraceSpanLogSpanLog... spanLogs) {
             return spanLogs(List.of(spanLogs));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetTraceSpanLog build() {

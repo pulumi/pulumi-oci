@@ -97,11 +97,11 @@ export interface GetUserAssessmentProfileAnalyticsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of profile_aggregations.
      */
-    readonly profileAggregations: outputs.DataSafe.GetUserAssessmentProfileAnalyticsProfileAggregation[];
+    readonly profileAggregations?: outputs.DataSafe.GetUserAssessmentProfileAnalyticsProfileAggregation[];
     readonly profileName?: string;
     readonly targetId?: string;
     readonly userAssessmentId: string;

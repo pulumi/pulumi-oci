@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -91,22 +90,22 @@ type GetObjectArgs struct {
 type GetObjectResult struct {
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-	Bucket       string `pulumi:"bucket"`
-	CacheControl string `pulumi:"cacheControl"`
+	Bucket       string  `pulumi:"bucket"`
+	CacheControl *string `pulumi:"cacheControl"`
 	// The object to upload to the object store.
-	Content            string `pulumi:"content"`
-	ContentDisposition string `pulumi:"contentDisposition"`
+	Content            *string `pulumi:"content"`
+	ContentDisposition *string `pulumi:"contentDisposition"`
 	// The content encoding of the object.
-	ContentEncoding string `pulumi:"contentEncoding"`
+	ContentEncoding *string `pulumi:"contentEncoding"`
 	// The content language of the object.
-	ContentLanguage string `pulumi:"contentLanguage"`
+	ContentLanguage *string `pulumi:"contentLanguage"`
 	// The content length of the body.
-	ContentLength      string `pulumi:"contentLength"`
-	ContentLengthLimit *int   `pulumi:"contentLengthLimit"`
+	ContentLength      *string `pulumi:"contentLength"`
+	ContentLengthLimit *int    `pulumi:"contentLengthLimit"`
 	// The base-64 encoded MD5 hash of the body.
-	ContentMd5 string `pulumi:"contentMd5"`
+	ContentMd5 *string `pulumi:"contentMd5"`
 	// The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
-	ContentType                    string  `pulumi:"contentType"`
+	ContentType                    *string `pulumi:"contentType"`
 	HttpResponseCacheControl       *string `pulumi:"httpResponseCacheControl"`
 	HttpResponseContentDisposition *string `pulumi:"httpResponseContentDisposition"`
 	HttpResponseContentEncoding    *string `pulumi:"httpResponseContentEncoding"`
@@ -114,7 +113,7 @@ type GetObjectResult struct {
 	HttpResponseContentType        *string `pulumi:"httpResponseContentType"`
 	HttpResponseExpires            *string `pulumi:"httpResponseExpires"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The top-level namespace used for the request.
@@ -122,8 +121,8 @@ type GetObjectResult struct {
 	// The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 	Object string `pulumi:"object"`
 	// The storage tier that the object is stored in.
-	StorageTier string `pulumi:"storageTier"`
-	VersionId   string `pulumi:"versionId"`
+	StorageTier *string `pulumi:"storageTier"`
+	VersionId   *string `pulumi:"versionId"`
 }
 
 func GetObjectOutput(ctx *pulumi.Context, args GetObjectOutputArgs, opts ...pulumi.InvokeOption) GetObjectResultOutput {
@@ -185,12 +184,6 @@ func (o GetObjectResultOutput) ToGetObjectResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetObjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectResult] {
-	return pulumix.Output[GetObjectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetObjectResultOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetObjectResult) *bool { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
@@ -200,32 +193,32 @@ func (o GetObjectResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetObjectResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-func (o GetObjectResultOutput) CacheControl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.CacheControl }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) CacheControl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.CacheControl }).(pulumi.StringPtrOutput)
 }
 
 // The object to upload to the object store.
-func (o GetObjectResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-func (o GetObjectResultOutput) ContentDisposition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.ContentDisposition }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) ContentDisposition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.ContentDisposition }).(pulumi.StringPtrOutput)
 }
 
 // The content encoding of the object.
-func (o GetObjectResultOutput) ContentEncoding() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.ContentEncoding }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) ContentEncoding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.ContentEncoding }).(pulumi.StringPtrOutput)
 }
 
 // The content language of the object.
-func (o GetObjectResultOutput) ContentLanguage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.ContentLanguage }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) ContentLanguage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.ContentLanguage }).(pulumi.StringPtrOutput)
 }
 
 // The content length of the body.
-func (o GetObjectResultOutput) ContentLength() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.ContentLength }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) ContentLength() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.ContentLength }).(pulumi.StringPtrOutput)
 }
 
 func (o GetObjectResultOutput) ContentLengthLimit() pulumi.IntPtrOutput {
@@ -233,13 +226,13 @@ func (o GetObjectResultOutput) ContentLengthLimit() pulumi.IntPtrOutput {
 }
 
 // The base-64 encoded MD5 hash of the body.
-func (o GetObjectResultOutput) ContentMd5() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.ContentMd5 }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) ContentMd5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.ContentMd5 }).(pulumi.StringPtrOutput)
 }
 
 // The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
-func (o GetObjectResultOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetObjectResultOutput) HttpResponseCacheControl() pulumi.StringPtrOutput {
@@ -267,8 +260,8 @@ func (o GetObjectResultOutput) HttpResponseExpires() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetObjectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
@@ -287,12 +280,12 @@ func (o GetObjectResultOutput) Object() pulumi.StringOutput {
 }
 
 // The storage tier that the object is stored in.
-func (o GetObjectResultOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.StorageTier }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
-func (o GetObjectResultOutput) VersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectResult) string { return v.VersionId }).(pulumi.StringOutput)
+func (o GetObjectResultOutput) VersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectResult) *string { return v.VersionId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

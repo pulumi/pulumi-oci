@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -114,9 +113,9 @@ type VirtualNodePool struct {
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayOutput `pulumi:"initialVirtualNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrOutput `pulumi:"kubernetesVersion"`
 	// Details about the state of the Virtual Node Pool.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) List of network security group IDs applied to the Pod VNIC.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
@@ -126,17 +125,17 @@ type VirtualNodePool struct {
 	// (Updatable) The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
 	Size pulumi.IntOutput `pulumi:"size"`
 	// The state of the Virtual Node Pool.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints VirtualNodePoolTaintArrayOutput `pulumi:"taints"`
 	// The time the virtual node pool was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
-	VirtualNodeTags VirtualNodePoolVirtualNodeTagsOutput `pulumi:"virtualNodeTags"`
+	VirtualNodeTags VirtualNodePoolVirtualNodeTagsPtrOutput `pulumi:"virtualNodeTags"`
 }
 
 // NewVirtualNodePool registers a new resource with the given unique name, arguments, and options.
@@ -358,12 +357,6 @@ func (i *VirtualNodePool) ToVirtualNodePoolOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolOutput)
 }
 
-func (i *VirtualNodePool) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePool] {
-	return pulumix.Output[*VirtualNodePool]{
-		OutputState: i.ToVirtualNodePoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualNodePoolArrayInput is an input type that accepts VirtualNodePoolArray and VirtualNodePoolArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolArrayInput` via:
 //
@@ -387,12 +380,6 @@ func (i VirtualNodePoolArray) ToVirtualNodePoolArrayOutput() VirtualNodePoolArra
 
 func (i VirtualNodePoolArray) ToVirtualNodePoolArrayOutputWithContext(ctx context.Context) VirtualNodePoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolArrayOutput)
-}
-
-func (i VirtualNodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualNodePool] {
-	return pulumix.Output[[]*VirtualNodePool]{
-		OutputState: i.ToVirtualNodePoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualNodePoolMapInput is an input type that accepts VirtualNodePoolMap and VirtualNodePoolMapOutput values.
@@ -420,12 +407,6 @@ func (i VirtualNodePoolMap) ToVirtualNodePoolMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolMapOutput)
 }
 
-func (i VirtualNodePoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualNodePool] {
-	return pulumix.Output[map[string]*VirtualNodePool]{
-		OutputState: i.ToVirtualNodePoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNodePoolOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolOutput) ElementType() reflect.Type {
@@ -438,12 +419,6 @@ func (o VirtualNodePoolOutput) ToVirtualNodePoolOutput() VirtualNodePoolOutput {
 
 func (o VirtualNodePoolOutput) ToVirtualNodePoolOutputWithContext(ctx context.Context) VirtualNodePoolOutput {
 	return o
-}
-
-func (o VirtualNodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePool] {
-	return pulumix.Output[*VirtualNodePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
@@ -482,13 +457,13 @@ func (o VirtualNodePoolOutput) InitialVirtualNodeLabels() VirtualNodePoolInitial
 }
 
 // The version of Kubernetes running on the nodes in the node pool.
-func (o VirtualNodePoolOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o VirtualNodePoolOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringPtrOutput { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the Virtual Node Pool.
-func (o VirtualNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o VirtualNodePoolOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of network security group IDs applied to the Pod VNIC.
@@ -514,8 +489,8 @@ func (o VirtualNodePoolOutput) Size() pulumi.IntOutput {
 }
 
 // The state of the Virtual Node Pool.
-func (o VirtualNodePoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VirtualNodePoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -529,18 +504,18 @@ func (o VirtualNodePoolOutput) Taints() VirtualNodePoolTaintArrayOutput {
 }
 
 // The time the virtual node pool was created.
-func (o VirtualNodePoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VirtualNodePoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the virtual node pool was updated.
-func (o VirtualNodePoolOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o VirtualNodePoolOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The tags associated to the virtual nodes in this virtual node pool.
-func (o VirtualNodePoolOutput) VirtualNodeTags() VirtualNodePoolVirtualNodeTagsOutput {
-	return o.ApplyT(func(v *VirtualNodePool) VirtualNodePoolVirtualNodeTagsOutput { return v.VirtualNodeTags }).(VirtualNodePoolVirtualNodeTagsOutput)
+func (o VirtualNodePoolOutput) VirtualNodeTags() VirtualNodePoolVirtualNodeTagsPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePool) VirtualNodePoolVirtualNodeTagsPtrOutput { return v.VirtualNodeTags }).(VirtualNodePoolVirtualNodeTagsPtrOutput)
 }
 
 type VirtualNodePoolArrayOutput struct{ *pulumi.OutputState }
@@ -555,12 +530,6 @@ func (o VirtualNodePoolArrayOutput) ToVirtualNodePoolArrayOutput() VirtualNodePo
 
 func (o VirtualNodePoolArrayOutput) ToVirtualNodePoolArrayOutputWithContext(ctx context.Context) VirtualNodePoolArrayOutput {
 	return o
-}
-
-func (o VirtualNodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualNodePool] {
-	return pulumix.Output[[]*VirtualNodePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolOutput {
@@ -581,12 +550,6 @@ func (o VirtualNodePoolMapOutput) ToVirtualNodePoolMapOutput() VirtualNodePoolMa
 
 func (o VirtualNodePoolMapOutput) ToVirtualNodePoolMapOutputWithContext(ctx context.Context) VirtualNodePoolMapOutput {
 	return o
-}
-
-func (o VirtualNodePoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualNodePool] {
-	return pulumix.Output[map[string]*VirtualNodePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolMapOutput) MapIndex(k pulumi.StringInput) VirtualNodePoolOutput {

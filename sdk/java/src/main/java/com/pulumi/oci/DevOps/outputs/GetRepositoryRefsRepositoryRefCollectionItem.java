@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryRefsRepositoryRefCollectionItem {
@@ -15,103 +17,103 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
      * @return Commit ID in a repository.
      * 
      */
-    private String commitId;
+    private @Nullable String commitId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique full reference name inside a repository.
      * 
      */
-    private String fullRefName;
-    private String id;
+    private @Nullable String fullRefName;
+    private @Nullable String id;
     /**
      * @return SHA-1 hash value of the object pointed to by the tag.
      * 
      */
-    private String objectId;
+    private @Nullable String objectId;
     /**
      * @return A filter to return only resources that match the given reference name.
      * 
      */
-    private String refName;
+    private @Nullable String refName;
     /**
      * @return Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      * 
      */
-    private String refType;
+    private @Nullable String refType;
     /**
      * @return Unique repository identifier.
      * 
      */
-    private String repositoryId;
+    private @Nullable String repositoryId;
 
     private GetRepositoryRefsRepositoryRefCollectionItem() {}
     /**
      * @return Commit ID in a repository.
      * 
      */
-    public String commitId() {
-        return this.commitId;
+    public Optional<String> commitId() {
+        return Optional.ofNullable(this.commitId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique full reference name inside a repository.
      * 
      */
-    public String fullRefName() {
-        return this.fullRefName;
+    public Optional<String> fullRefName() {
+        return Optional.ofNullable(this.fullRefName);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return SHA-1 hash value of the object pointed to by the tag.
      * 
      */
-    public String objectId() {
-        return this.objectId;
+    public Optional<String> objectId() {
+        return Optional.ofNullable(this.objectId);
     }
     /**
      * @return A filter to return only resources that match the given reference name.
      * 
      */
-    public String refName() {
-        return this.refName;
+    public Optional<String> refName() {
+        return Optional.ofNullable(this.refName);
     }
     /**
      * @return Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      * 
      */
-    public String refType() {
-        return this.refType;
+    public Optional<String> refType() {
+        return Optional.ofNullable(this.refType);
     }
     /**
      * @return Unique repository identifier.
      * 
      */
-    public String repositoryId() {
-        return this.repositoryId;
+    public Optional<String> repositoryId() {
+        return Optional.ofNullable(this.repositoryId);
     }
 
     public static Builder builder() {
@@ -123,15 +125,15 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commitId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String fullRefName;
-        private String id;
-        private String objectId;
-        private String refName;
-        private String refType;
-        private String repositoryId;
+        private @Nullable String commitId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String fullRefName;
+        private @Nullable String id;
+        private @Nullable String objectId;
+        private @Nullable String refName;
+        private @Nullable String refType;
+        private @Nullable String repositoryId;
         public Builder() {}
         public Builder(GetRepositoryRefsRepositoryRefCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -147,48 +149,48 @@ public final class GetRepositoryRefsRepositoryRefCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder commitId(String commitId) {
-            this.commitId = Objects.requireNonNull(commitId);
+        public Builder commitId(@Nullable String commitId) {
+            this.commitId = commitId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder fullRefName(String fullRefName) {
-            this.fullRefName = Objects.requireNonNull(fullRefName);
+        public Builder fullRefName(@Nullable String fullRefName) {
+            this.fullRefName = fullRefName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder objectId(String objectId) {
-            this.objectId = Objects.requireNonNull(objectId);
+        public Builder objectId(@Nullable String objectId) {
+            this.objectId = objectId;
             return this;
         }
         @CustomType.Setter
-        public Builder refName(String refName) {
-            this.refName = Objects.requireNonNull(refName);
+        public Builder refName(@Nullable String refName) {
+            this.refName = refName;
             return this;
         }
         @CustomType.Setter
-        public Builder refType(String refType) {
-            this.refType = Objects.requireNonNull(refType);
+        public Builder refType(@Nullable String refType) {
+            this.refType = refType;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+        public Builder repositoryId(@Nullable String repositoryId) {
+            this.repositoryId = repositoryId;
             return this;
         }
         public GetRepositoryRefsRepositoryRefCollectionItem build() {

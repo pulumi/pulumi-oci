@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
@@ -76,7 +75,7 @@ type GetTargetDatabaseRolesResult struct {
 	AuthenticationType *string                        `pulumi:"authenticationType"`
 	Filters            []GetTargetDatabaseRolesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Is the role oracle maintained.
 	IsOracleMaintained *bool   `pulumi:"isOracleMaintained"`
 	RoleNameContains   *string `pulumi:"roleNameContains"`
@@ -134,12 +133,6 @@ func (o GetTargetDatabaseRolesResultOutput) ToGetTargetDatabaseRolesResultOutput
 	return o
 }
 
-func (o GetTargetDatabaseRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabaseRolesResult] {
-	return pulumix.Output[GetTargetDatabaseRolesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of authentication.
 func (o GetTargetDatabaseRolesResultOutput) AuthenticationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabaseRolesResult) *string { return v.AuthenticationType }).(pulumi.StringPtrOutput)
@@ -150,8 +143,8 @@ func (o GetTargetDatabaseRolesResultOutput) Filters() GetTargetDatabaseRolesFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTargetDatabaseRolesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTargetDatabaseRolesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTargetDatabaseRolesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabaseRolesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Is the role oracle maintained.

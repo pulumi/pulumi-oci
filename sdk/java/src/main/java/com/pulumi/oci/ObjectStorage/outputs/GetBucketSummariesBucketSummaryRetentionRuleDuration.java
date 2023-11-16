@@ -6,18 +6,20 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBucketSummariesBucketSummaryRetentionRuleDuration {
-    private String timeAmount;
-    private String timeUnit;
+    private @Nullable String timeAmount;
+    private @Nullable String timeUnit;
 
     private GetBucketSummariesBucketSummaryRetentionRuleDuration() {}
-    public String timeAmount() {
-        return this.timeAmount;
+    public Optional<String> timeAmount() {
+        return Optional.ofNullable(this.timeAmount);
     }
-    public String timeUnit() {
-        return this.timeUnit;
+    public Optional<String> timeUnit() {
+        return Optional.ofNullable(this.timeUnit);
     }
 
     public static Builder builder() {
@@ -29,8 +31,8 @@ public final class GetBucketSummariesBucketSummaryRetentionRuleDuration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeAmount;
-        private String timeUnit;
+        private @Nullable String timeAmount;
+        private @Nullable String timeUnit;
         public Builder() {}
         public Builder(GetBucketSummariesBucketSummaryRetentionRuleDuration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -39,13 +41,13 @@ public final class GetBucketSummariesBucketSummaryRetentionRuleDuration {
         }
 
         @CustomType.Setter
-        public Builder timeAmount(String timeAmount) {
-            this.timeAmount = Objects.requireNonNull(timeAmount);
+        public Builder timeAmount(@Nullable String timeAmount) {
+            this.timeAmount = timeAmount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUnit(String timeUnit) {
-            this.timeUnit = Objects.requireNonNull(timeUnit);
+        public Builder timeUnit(@Nullable String timeUnit) {
+            this.timeUnit = timeUnit;
             return this;
         }
         public GetBucketSummariesBucketSummaryRetentionRuleDuration build() {

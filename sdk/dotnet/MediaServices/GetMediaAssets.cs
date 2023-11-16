@@ -294,7 +294,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The ID of the senior most asset from which this asset is derived.
         /// </summary>
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.MediaServices
 
             ImmutableArray<Outputs.GetMediaAssetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? masterMediaAssetId,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i GetInstVbsInstancesFilterArgs) ToGetInstVbsInstancesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesFilterOutput)
 }
 
-func (i GetInstVbsInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesFilter] {
-	return pulumix.Output[GetInstVbsInstancesFilter]{
-		OutputState: i.ToGetInstVbsInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstVbsInstancesFilterArrayInput is an input type that accepts GetInstVbsInstancesFilterArray and GetInstVbsInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInstVbsInstancesFilterArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i GetInstVbsInstancesFilterArray) ToGetInstVbsInstancesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesFilterArrayOutput)
 }
 
-func (i GetInstVbsInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesFilter] {
-	return pulumix.Output[[]GetInstVbsInstancesFilter]{
-		OutputState: i.ToGetInstVbsInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstVbsInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInstVbsInstancesFilterOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o GetInstVbsInstancesFilterOutput) ToGetInstVbsInstancesFilterOutput() Get
 
 func (o GetInstVbsInstancesFilterOutput) ToGetInstVbsInstancesFilterOutputWithContext(ctx context.Context) GetInstVbsInstancesFilterOutput {
 	return o
-}
-
-func (o GetInstVbsInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesFilter] {
-	return pulumix.Output[GetInstVbsInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire name given.
@@ -133,12 +114,6 @@ func (o GetInstVbsInstancesFilterArrayOutput) ToGetInstVbsInstancesFilterArrayOu
 
 func (o GetInstVbsInstancesFilterArrayOutput) ToGetInstVbsInstancesFilterArrayOutputWithContext(ctx context.Context) GetInstVbsInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetInstVbsInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesFilter] {
-	return pulumix.Output[[]GetInstVbsInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstVbsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetInstVbsInstancesFilterOutput {
@@ -178,12 +153,6 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArgs) ToGetInstVbsInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionOutput)
 }
 
-func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection] {
-	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection]{
-		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInstVbsInstancesVbsInstanceSummaryCollectionArrayInput is an input type that accepts GetInstVbsInstancesVbsInstanceSummaryCollectionArray and GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInstVbsInstancesVbsInstanceSummaryCollectionArrayInput` via:
 //
@@ -209,12 +178,6 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArray) ToGetInstVbsInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput)
 }
 
-func (i GetInstVbsInstancesVbsInstanceSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection] {
-	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection]{
-		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstVbsInstancesVbsInstanceSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ElementType() reflect.Type {
@@ -227,12 +190,6 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ToGetInstVbsInsta
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ToGetInstVbsInstancesVbsInstanceSummaryCollectionOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionOutput {
 	return o
-}
-
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection] {
-	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionOutput) Items() GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput {
@@ -255,12 +212,6 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) ToGetInstVbs
 	return o
 }
 
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection] {
-	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetInstVbsInstancesVbsInstanceSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstVbsInstancesVbsInstanceSummaryCollection {
 		return vs[0].([]GetInstVbsInstancesVbsInstanceSummaryCollection)[vs[1].(int)]
@@ -269,34 +220,34 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionArrayOutput) Index(i pulu
 
 type GetInstVbsInstancesVbsInstanceSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Service instance display name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique VbsInstance identifier
-	Id              string `pulumi:"id"`
-	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	Id              *string `pulumi:"id"`
+	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
-	IsResourceUsageAgreementGranted bool `pulumi:"isResourceUsageAgreementGranted"`
+	IsResourceUsageAgreementGranted *bool `pulumi:"isResourceUsageAgreementGranted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// A filter to return only resources that match the entire name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Compartment where VBS may create additional resources for the service instance
-	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Public web URL for accessing the VBS service instance
-	VbsAccessUrl string `pulumi:"vbsAccessUrl"`
+	VbsAccessUrl *string `pulumi:"vbsAccessUrl"`
 }
 
 // GetInstVbsInstancesVbsInstanceSummaryCollectionItemInput is an input type that accepts GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs and GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput values.
@@ -312,34 +263,34 @@ type GetInstVbsInstancesVbsInstanceSummaryCollectionItemInput interface {
 
 type GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Service instance display name
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique VbsInstance identifier
-	Id              pulumi.StringInput `pulumi:"id"`
-	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
+	Id              pulumi.StringPtrInput `pulumi:"id"`
+	IdcsAccessToken pulumi.StringPtrInput `pulumi:"idcsAccessToken"`
 	// Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
-	IsResourceUsageAgreementGranted pulumi.BoolInput `pulumi:"isResourceUsageAgreementGranted"`
+	IsResourceUsageAgreementGranted pulumi.BoolPtrInput `pulumi:"isResourceUsageAgreementGranted"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringInput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrInput `pulumi:"lifecyleDetails"`
 	// A filter to return only resources that match the entire name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Compartment where VBS may create additional resources for the service instance
-	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId pulumi.StringPtrInput `pulumi:"resourceCompartmentId"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Public web URL for accessing the VBS service instance
-	VbsAccessUrl pulumi.StringInput `pulumi:"vbsAccessUrl"`
+	VbsAccessUrl pulumi.StringPtrInput `pulumi:"vbsAccessUrl"`
 }
 
 func (GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -352,12 +303,6 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs) ToGetInstVbsIns
 
 func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs) ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput)
-}
-
-func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
-	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
-		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayInput is an input type that accepts GetInstVbsInstancesVbsInstanceSummaryCollectionItemArray and GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput values.
@@ -385,12 +330,6 @@ func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArray) ToGetInstVbsIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput)
 }
 
-func (i GetInstVbsInstancesVbsInstanceSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
-	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
-		OutputState: i.ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -405,15 +344,9 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ToGetInstVbsI
 	return o
 }
 
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
-	return pulumix.Output[GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -424,8 +357,8 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) DefinedTags()
 }
 
 // Service instance display name
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -436,39 +369,39 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) FreeformTags(
 }
 
 // unique VbsInstance identifier
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
 // Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) IsResourceUsageAgreementGranted() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) bool {
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) IsResourceUsageAgreementGranted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *bool {
 		return v.IsResourceUsageAgreementGranted
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire name given.
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Compartment where VBS may create additional resources for the service instance
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ResourceCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.ResourceCompartmentId }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) ResourceCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.ResourceCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -479,18 +412,18 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) SystemTags() 
 }
 
 // The time the the VbsInstance was created. An RFC3339 formatted datetime string
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the VbsInstance was updated. An RFC3339 formatted datetime string
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Public web URL for accessing the VBS service instance
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) VbsAccessUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) string { return v.VbsAccessUrl }).(pulumi.StringOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) VbsAccessUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) *string { return v.VbsAccessUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -505,12 +438,6 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) ToGetIns
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) ToGetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem] {
-	return pulumix.Output[[]GetInstVbsInstancesVbsInstanceSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput {

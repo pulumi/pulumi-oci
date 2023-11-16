@@ -20,19 +20,19 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The latest kubernetes version.
         /// </summary>
-        public readonly string MaximumVersion;
+        public readonly string? MaximumVersion;
         /// <summary>
         /// The earliest kubernetes version.
         /// </summary>
-        public readonly string MinimalVersion;
+        public readonly string? MinimalVersion;
 
         [OutputConstructor]
         private GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult(
             ImmutableArray<string> exactKubernetesVersions,
 
-            string maximumVersion,
+            string? maximumVersion,
 
-            string minimalVersion)
+            string? minimalVersion)
         {
             ExactKubernetesVersions = exactKubernetesVersions;
             MaximumVersion = maximumVersion;

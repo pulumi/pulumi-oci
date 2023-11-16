@@ -49,19 +49,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         /// </summary>
         [Output("agentId")]
-        public Output<string> AgentId { get; private set; } = null!;
+        public Output<string?> AgentId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The error message indicating the reason for connection failure or `null` if the connection was successful.
         /// </summary>
         [Output("connectionFailureMessage")]
-        public Output<string> ConnectionFailureMessage { get; private set; } = null!;
+        public Output<string?> ConnectionFailureMessage { get; private set; } = null!;
 
         /// <summary>
         /// The connection details required to connect to an external DB system component.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The status of connectivity to the external DB system component.
         /// </summary>
         [Output("connectionStatus")]
-        public Output<string> ConnectionStatus { get; private set; } = null!;
+        public Output<string?> ConnectionStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of connector.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The user-friendly name for the external connector. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -101,31 +101,31 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the external DB system connector.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the connectionStatus of the external DB system connector was last updated.
         /// </summary>
         [Output("timeConnectionStatusLastUpdated")]
-        public Output<string> TimeConnectionStatusLastUpdated { get; private set; } = null!;
+        public Output<string?> TimeConnectionStatusLastUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB system connector was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB system connector was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

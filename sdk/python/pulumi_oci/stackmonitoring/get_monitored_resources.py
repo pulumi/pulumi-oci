@@ -46,9 +46,6 @@ class GetMonitoredResourcesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetMonitoredResourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,18 +63,12 @@ class GetMonitoredResourcesResult:
 
     @property
     @pulumi.getter(name="monitoredResourceCollections")
-    def monitored_resource_collections(self) -> Sequence['outputs.GetMonitoredResourcesMonitoredResourceCollectionResult']:
-        """
-        The list of monitored_resource_collection.
-        """
+    def monitored_resource_collections(self) -> Optional[Sequence['outputs.GetMonitoredResourcesMonitoredResourceCollectionResult']]:
         return pulumi.get(self, "monitored_resource_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Property Name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -106,25 +97,7 @@ def get_monitored_resources(compartment_id: Optional[str] = None,
                             work_request_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourcesResult:
     """
-    This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns a list of monitored resources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=var["compartment_id"],
-        name=var["monitored_resource_name"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str name: A filter to return resources that match exact resource name.
-    :param str work_request_id: A filter to return resources which were impacted as part of this work request identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[str]] =
                                    work_request_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourcesResult]:
     """
-    This data source provides the list of Monitored Resources in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns a list of monitored resources.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=var["compartment_id"],
-        name=var["monitored_resource_name"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which data is listed.
-    :param str name: A filter to return resources that match exact resource name.
-    :param str work_request_id: A filter to return resources which were impacted as part of this work request identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

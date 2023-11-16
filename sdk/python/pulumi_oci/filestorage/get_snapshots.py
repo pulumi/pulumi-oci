@@ -54,17 +54,11 @@ class GetSnapshotsResult:
     @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
-        """
         return pulumi.get(self, "file_system_id")
 
     @property
     @pulumi.getter(name="filesystemSnapshotPolicyId")
     def filesystem_snapshot_policy_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
-        """
         return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
@@ -75,25 +69,16 @@ class GetSnapshotsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Sequence['outputs.GetSnapshotsSnapshotResult']:
-        """
-        The list of snapshots.
-        """
+    def snapshots(self) -> Optional[Sequence['outputs.GetSnapshotsSnapshotResult']]:
         return pulumi.get(self, "snapshots")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the snapshot.
-        """
         return pulumi.get(self, "state")
 
 
@@ -120,35 +105,7 @@ def get_snapshots(compartment_id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSnapshotsResult:
     """
-    This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
-
-    Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
-    or by file system snapshot policy and file system.
-
-    If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
-
-    Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
-    (sort by name is NOT supported for listing snapshots by policy and compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=var["compartment_id"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
-        id=var["snapshot_id"],
-        state=var["snapshot_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -179,34 +136,6 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSnapshotsResult]:
     """
-    This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
-
-    Lists snapshots of the specified file system, or by file system snapshot policy and compartment,
-    or by file system snapshot policy and file system.
-
-    If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
-
-    Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
-    (sort by name is NOT supported for listing snapshots by policy and compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_snapshots = oci.FileStorage.get_snapshots(compartment_id=var["compartment_id"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
-        id=var["snapshot_id"],
-        state=var["snapshot_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-    :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

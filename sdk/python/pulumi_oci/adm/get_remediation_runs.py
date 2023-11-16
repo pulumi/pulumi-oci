@@ -49,17 +49,11 @@ class GetRemediationRunsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the remediation run.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetRemediationRunsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="remediationRecipeId")
     def remediation_recipe_id(self) -> Optional[str]:
-        """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
-        """
         return pulumi.get(self, "remediation_recipe_id")
 
     @property
     @pulumi.getter(name="remediationRunCollections")
-    def remediation_run_collections(self) -> Sequence['outputs.GetRemediationRunsRemediationRunCollectionResult']:
-        """
-        The list of remediation_run_collection.
-        """
+    def remediation_run_collections(self) -> Optional[Sequence['outputs.GetRemediationRunsRemediationRunCollectionResult']]:
         return pulumi.get(self, "remediation_run_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the remediation run.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,30 +105,7 @@ def get_remediation_runs(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRunsResult:
     """
-    This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of remediation runs contained by a compartment.
-    The query parameter `compartmentId` is required unless the query parameter `id` is specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=var["compartment_id"],
-        display_name=var["remediation_run_display_name"],
-        id=var["remediation_run_id"],
-        remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
-        state=var["remediation_run_state"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
-    :param str remediation_recipe_id: A filter to return only resources that match the specified Remediation Recipe identifier.
-    :param str state: A filter to return only Remediation Runs that match the specified lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -177,29 +136,6 @@ def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunsResult]:
     """
-    This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of remediation runs contained by a compartment.
-    The query parameter `compartmentId` is required unless the query parameter `id` is specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=var["compartment_id"],
-        display_name=var["remediation_run_display_name"],
-        id=var["remediation_run_id"],
-        remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
-        state=var["remediation_run_state"])
-    ```
-
-
-    :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
-    :param str remediation_recipe_id: A filter to return only resources that match the specified Remediation Recipe identifier.
-    :param str state: A filter to return only Remediation Runs that match the specified lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

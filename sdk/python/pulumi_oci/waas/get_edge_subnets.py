@@ -36,10 +36,7 @@ class GetEdgeSubnetsResult:
 
     @property
     @pulumi.getter(name="edgeSubnets")
-    def edge_subnets(self) -> Sequence['outputs.GetEdgeSubnetsEdgeSubnetResult']:
-        """
-        The list of edge_subnets.
-        """
+    def edge_subnets(self) -> Optional[Sequence['outputs.GetEdgeSubnetsEdgeSubnetResult']]:
         return pulumi.get(self, "edge_subnets")
 
     @property
@@ -49,7 +46,7 @@ class GetEdgeSubnetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,18 +67,7 @@ class AwaitableGetEdgeSubnetsResult(GetEdgeSubnetsResult):
 def get_edge_subnets(filters: Optional[Sequence[pulumi.InputType['GetEdgeSubnetsFilterArgs']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeSubnetsResult:
     """
-    This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Return the list of the tenant's edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_edge_subnets = oci.Waas.get_edge_subnets()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -98,17 +84,6 @@ def get_edge_subnets(filters: Optional[Sequence[pulumi.InputType['GetEdgeSubnets
 def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEdgeSubnetsFilterArgs']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeSubnetsResult]:
     """
-    This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Return the list of the tenant's edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by Oracle Cloud Infrastructure and forward traffic to customer origins. They are not associated with specific regions or compartments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_edge_subnets = oci.Waas.get_edge_subnets()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

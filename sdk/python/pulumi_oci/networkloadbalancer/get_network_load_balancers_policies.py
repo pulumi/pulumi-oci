@@ -41,7 +41,7 @@ class GetNetworkLoadBalancersPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetNetworkLoadBalancersPoliciesResult:
 
     @property
     @pulumi.getter(name="networkLoadBalancersPolicyCollections")
-    def network_load_balancers_policy_collections(self) -> Sequence['outputs.GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionResult']:
-        """
-        The list of network_load_balancers_policy_collection.
-        """
+    def network_load_balancers_policy_collections(self) -> Optional[Sequence['outputs.GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionResult']]:
         return pulumi.get(self, "network_load_balancers_policy_collections")
 
 
@@ -70,18 +67,7 @@ class AwaitableGetNetworkLoadBalancersPoliciesResult(GetNetworkLoadBalancersPoli
 def get_network_load_balancers_policies(filters: Optional[Sequence[pulumi.InputType['GetNetworkLoadBalancersPoliciesFilterArgs']]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancersPoliciesResult:
     """
-    This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists the available network load balancer policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -98,17 +84,6 @@ def get_network_load_balancers_policies(filters: Optional[Sequence[pulumi.InputT
 def get_network_load_balancers_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkLoadBalancersPoliciesFilterArgs']]]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancersPoliciesResult]:
     """
-    This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists the available network load balancer policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancers_policies = oci.NetworkLoadBalancer.get_network_load_balancers_policies()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

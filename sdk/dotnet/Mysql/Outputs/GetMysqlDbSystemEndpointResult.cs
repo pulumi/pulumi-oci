@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The network address of the DB System.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// The access modes from the client that this endpoint supports.
         /// </summary>
@@ -28,47 +28,47 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         /// </summary>
-        public readonly int PortX;
+        public readonly int? PortX;
         /// <summary>
         /// The OCID of the resource that this endpoint is attached to.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The type of endpoint that clients and connectors can connect to.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Additional information about the current endpoint status.
         /// </summary>
-        public readonly string StatusDetails;
+        public readonly string? StatusDetails;
 
         [OutputConstructor]
         private GetMysqlDbSystemEndpointResult(
-            string hostname,
+            string? hostname,
 
-            string ipAddress,
+            string? ipAddress,
 
             ImmutableArray<string> modes,
 
-            int port,
+            int? port,
 
-            int portX,
+            int? portX,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceType,
+            string? resourceType,
 
-            string status,
+            string? status,
 
-            string statusDetails)
+            string? statusDetails)
         {
             Hostname = hostname;
             IpAddress = ipAddress;

@@ -46,33 +46,21 @@ class GetIpsecConnectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def connections(self) -> Sequence['outputs.GetIpsecConnectionsConnectionResult']:
-        """
-        The list of connections.
-        """
+    def connections(self) -> Optional[Sequence['outputs.GetIpsecConnectionsConnectionResult']]:
         return pulumi.get(self, "connections")
 
     @property
     @pulumi.getter(name="cpeId")
     def cpe_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        """
         return pulumi.get(self, "cpe_id")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
@@ -82,7 +70,7 @@ class GetIpsecConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,26 +97,7 @@ def get_ipsec_connections(compartment_id: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetIpsecConnectionsFilterArgs']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionsResult:
     """
-    This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
-
-    Lists the IPSec connections for the specified compartment. You can filter the
-    results by DRG or CPE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=var["compartment_id"],
-        cpe_id=oci_core_cpe["test_cpe"]["id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,25 +123,6 @@ def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetIpsecConnectionsFilterArgs']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionsResult]:
     """
-    This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
-
-    Lists the IPSec connections for the specified compartment. You can filter the
-    results by DRG or CPE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=var["compartment_id"],
-        cpe_id=oci_core_cpe["test_cpe"]["id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+    Use this data source to access information about an existing resource.
     """
     ...

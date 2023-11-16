@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
@@ -61,10 +60,10 @@ type GetInstanceMaintenanceRebootArgs struct {
 // A collection of values returned by getInstanceMaintenanceReboot.
 type GetInstanceMaintenanceRebootResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id         string `pulumi:"id"`
-	InstanceId string `pulumi:"instanceId"`
+	Id         *string `pulumi:"id"`
+	InstanceId string  `pulumi:"instanceId"`
 	// The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
-	TimeMaintenanceRebootDueMax string `pulumi:"timeMaintenanceRebootDueMax"`
+	TimeMaintenanceRebootDueMax *string `pulumi:"timeMaintenanceRebootDueMax"`
 }
 
 func GetInstanceMaintenanceRebootOutput(ctx *pulumi.Context, args GetInstanceMaintenanceRebootOutputArgs, opts ...pulumi.InvokeOption) GetInstanceMaintenanceRebootResultOutput {
@@ -105,15 +104,9 @@ func (o GetInstanceMaintenanceRebootResultOutput) ToGetInstanceMaintenanceReboot
 	return o
 }
 
-func (o GetInstanceMaintenanceRebootResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceMaintenanceRebootResult] {
-	return pulumix.Output[GetInstanceMaintenanceRebootResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceMaintenanceRebootResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceMaintenanceRebootResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceMaintenanceRebootResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceRebootResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInstanceMaintenanceRebootResultOutput) InstanceId() pulumi.StringOutput {
@@ -121,8 +114,8 @@ func (o GetInstanceMaintenanceRebootResultOutput) InstanceId() pulumi.StringOutp
 }
 
 // The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
-func (o GetInstanceMaintenanceRebootResultOutput) TimeMaintenanceRebootDueMax() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceMaintenanceRebootResult) string { return v.TimeMaintenanceRebootDueMax }).(pulumi.StringOutput)
+func (o GetInstanceMaintenanceRebootResultOutput) TimeMaintenanceRebootDueMax() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceRebootResult) *string { return v.TimeMaintenanceRebootDueMax }).(pulumi.StringPtrOutput)
 }
 
 func init() {

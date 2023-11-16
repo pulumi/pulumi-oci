@@ -70,11 +70,11 @@ export interface GetIntegrationInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of integration_instances.
      */
-    readonly integrationInstances: outputs.Integration.GetIntegrationInstancesIntegrationInstance[];
+    readonly integrationInstances?: outputs.Integration.GetIntegrationInstancesIntegrationInstance[];
     /**
      * The current state of the integration instance.
      */

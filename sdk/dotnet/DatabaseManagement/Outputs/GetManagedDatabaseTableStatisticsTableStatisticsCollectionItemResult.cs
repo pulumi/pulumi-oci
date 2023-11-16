@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of objects aggregated by status category.
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
         /// <summary>
         /// The percentage of objects with a particular status.
         /// </summary>
-        public readonly double Percentage;
+        public readonly double? Percentage;
         /// <summary>
         /// The valid status categories of table statistics.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetManagedDatabaseTableStatisticsTableStatisticsCollectionItemResult(
-            int count,
+            int? count,
 
-            double percentage,
+            double? percentage,
 
-            string type)
+            string? type)
         {
             Count = count;
             Percentage = percentage;

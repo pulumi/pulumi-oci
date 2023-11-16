@@ -50,12 +50,12 @@ export interface GetRuleSetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * The list of rule_sets.
      */
-    readonly ruleSets: outputs.LoadBalancer.GetRuleSetsRuleSet[];
+    readonly ruleSets?: outputs.LoadBalancer.GetRuleSetsRuleSet[];
 }
 /**
  * This data source provides the list of Rule Sets in Oracle Cloud Infrastructure Load Balancer service.

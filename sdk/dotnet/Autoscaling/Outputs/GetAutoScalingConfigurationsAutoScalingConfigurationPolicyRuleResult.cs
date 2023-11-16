@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// ID of the condition that is assigned after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Metric and threshold details for triggering an autoscaling action.
         /// </summary>
@@ -34,9 +34,9 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult(
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult> actions,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult> metrics)
         {

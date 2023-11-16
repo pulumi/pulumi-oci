@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -121,28 +122,28 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user-friendly description. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -163,98 +164,98 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      * 
      */
     @Export(name="idleTimeoutInMinutes", refs={Integer.class}, tree="[0]")
-    private Output<Integer> idleTimeoutInMinutes;
+    private Output</* @Nullable */ Integer> idleTimeoutInMinutes;
 
     /**
      * @return (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
      * 
      */
-    public Output<Integer> idleTimeoutInMinutes() {
-        return this.idleTimeoutInMinutes;
+    public Output<Optional<Integer>> idleTimeoutInMinutes() {
+        return Codegen.optional(this.idleTimeoutInMinutes);
     }
     /**
      * The detailed messages about the lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The detailed messages about the lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The OCID of the user who created the resource.
      * 
      */
     @Export(name="ownerPrincipalId", refs={String.class}, tree="[0]")
-    private Output<String> ownerPrincipalId;
+    private Output</* @Nullable */ String> ownerPrincipalId;
 
     /**
      * @return The OCID of the user who created the resource.
      * 
      */
-    public Output<String> ownerPrincipalId() {
-        return this.ownerPrincipalId;
+    public Output<Optional<String>> ownerPrincipalId() {
+        return Codegen.optional(this.ownerPrincipalId);
     }
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
     @Export(name="ownerUserName", refs={String.class}, tree="[0]")
-    private Output<String> ownerUserName;
+    private Output</* @Nullable */ String> ownerUserName;
 
     /**
      * @return The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      * 
      */
-    public Output<String> ownerUserName() {
-        return this.ownerUserName;
+    public Output<Optional<String>> ownerUserName() {
+        return Codegen.optional(this.ownerUserName);
     }
     /**
      * A collection of metrics related to a particular pool.
      * 
      */
     @Export(name="poolMetrics", refs={List.class,PoolPoolMetric.class}, tree="[0,1]")
-    private Output<List<PoolPoolMetric>> poolMetrics;
+    private Output</* @Nullable */ List<PoolPoolMetric>> poolMetrics;
 
     /**
      * @return A collection of metrics related to a particular pool.
      * 
      */
-    public Output<List<PoolPoolMetric>> poolMetrics() {
-        return this.poolMetrics;
+    public Output<Optional<List<PoolPoolMetric>>> poolMetrics() {
+        return Codegen.optional(this.poolMetrics);
     }
     /**
      * (Updatable) A list of schedules for pool to auto start and stop.
      * 
      */
     @Export(name="schedules", refs={List.class,PoolSchedule.class}, tree="[0,1]")
-    private Output<List<PoolSchedule>> schedules;
+    private Output</* @Nullable */ List<PoolSchedule>> schedules;
 
     /**
      * @return (Updatable) A list of schedules for pool to auto start and stop.
      * 
      */
-    public Output<List<PoolSchedule>> schedules() {
-        return this.schedules;
+    public Output<Optional<List<PoolSchedule>>> schedules() {
+        return Codegen.optional(this.schedules);
     }
     /**
      * (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
@@ -264,7 +265,7 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
@@ -273,36 +274,36 @@ public class Pool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -24,12 +24,12 @@ public final class GetIamWorkRequestsResult {
      * @return The list of iam_work_requests.
      * 
      */
-    private List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
+    private @Nullable List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String resourceIdentifier;
 
     private GetIamWorkRequestsResult() {}
@@ -48,14 +48,14 @@ public final class GetIamWorkRequestsResult {
      * 
      */
     public List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests() {
-        return this.iamWorkRequests;
+        return this.iamWorkRequests == null ? List.of() : this.iamWorkRequests;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> resourceIdentifier() {
         return Optional.ofNullable(this.resourceIdentifier);
@@ -72,8 +72,8 @@ public final class GetIamWorkRequestsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetIamWorkRequestsFilter> filters;
-        private List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
-        private String id;
+        private @Nullable List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests;
+        private @Nullable String id;
         private @Nullable String resourceIdentifier;
         public Builder() {}
         public Builder(GetIamWorkRequestsResult defaults) {
@@ -99,16 +99,16 @@ public final class GetIamWorkRequestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder iamWorkRequests(List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests) {
-            this.iamWorkRequests = Objects.requireNonNull(iamWorkRequests);
+        public Builder iamWorkRequests(@Nullable List<GetIamWorkRequestsIamWorkRequest> iamWorkRequests) {
+            this.iamWorkRequests = iamWorkRequests;
             return this;
         }
         public Builder iamWorkRequests(GetIamWorkRequestsIamWorkRequest... iamWorkRequests) {
             return iamWorkRequests(List.of(iamWorkRequests));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

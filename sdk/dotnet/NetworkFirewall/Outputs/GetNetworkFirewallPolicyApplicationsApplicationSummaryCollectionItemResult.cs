@@ -16,7 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// The value of the ICMP6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
-        public readonly int IcmpCode;
+        public readonly int? IcmpCode;
         /// <summary>
         /// The value of the ICMP6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this application belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Describes the type of Application.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItemResult(
-            int icmpCode,
+            int? icmpCode,
 
             int icmpType,
 
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             string type)
         {

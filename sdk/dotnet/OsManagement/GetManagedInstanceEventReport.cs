@@ -150,11 +150,11 @@ namespace Pulumi.Oci.OsManagement
     public sealed class GetManagedInstanceEventReportResult
     {
         public readonly string CompartmentId;
-        public readonly int Counts;
+        public readonly int? Counts;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? LatestTimestampGreaterThanOrEqualTo;
         public readonly string? LatestTimestampLessThan;
         public readonly string ManagedInstanceId;
@@ -163,9 +163,9 @@ namespace Pulumi.Oci.OsManagement
         private GetManagedInstanceEventReportResult(
             string compartmentId,
 
-            int counts,
+            int? counts,
 
-            string id,
+            string? id,
 
             string? latestTimestampGreaterThanOrEqualTo,
 

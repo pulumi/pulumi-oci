@@ -20,12 +20,12 @@ public final class GetResourceQuotasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of resource_quotum_collection.
      * 
      */
-    private List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections;
+    private @Nullable List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections;
     private @Nullable String serviceEntitlement;
     private String serviceName;
 
@@ -40,15 +40,15 @@ public final class GetResourceQuotasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of resource_quotum_collection.
      * 
      */
     public List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections() {
-        return this.resourceQuotumCollections;
+        return this.resourceQuotumCollections == null ? List.of() : this.resourceQuotumCollections;
     }
     public Optional<String> serviceEntitlement() {
         return Optional.ofNullable(this.serviceEntitlement);
@@ -68,8 +68,8 @@ public final class GetResourceQuotasResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetResourceQuotasFilter> filters;
-        private String id;
-        private List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections;
+        private @Nullable String id;
+        private @Nullable List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections;
         private @Nullable String serviceEntitlement;
         private String serviceName;
         public Builder() {}
@@ -97,13 +97,13 @@ public final class GetResourceQuotasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceQuotumCollections(List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections) {
-            this.resourceQuotumCollections = Objects.requireNonNull(resourceQuotumCollections);
+        public Builder resourceQuotumCollections(@Nullable List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections) {
+            this.resourceQuotumCollections = resourceQuotumCollections;
             return this;
         }
         public Builder resourceQuotumCollections(GetResourceQuotasResourceQuotumCollection... resourceQuotumCollections) {

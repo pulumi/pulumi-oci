@@ -67,34 +67,22 @@ class GetFusionEnvironmentServiceAttachmentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Service Attachment Display name, can be renamed
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -104,18 +92,12 @@ class GetFusionEnvironmentServiceAttachmentResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isSkuBased")
-    def is_sku_based(self) -> bool:
-        """
-        Whether this service is provisioned due to the customer being subscribed to a specific SKU
-        """
+    def is_sku_based(self) -> Optional[bool]:
         return pulumi.get(self, "is_sku_based")
 
     @property
@@ -125,50 +107,32 @@ class GetFusionEnvironmentServiceAttachmentResult:
 
     @property
     @pulumi.getter(name="serviceInstanceId")
-    def service_instance_id(self) -> str:
-        """
-        The ID of the service instance created that can be used to identify this on the service control plane
-        """
+    def service_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "service_instance_id")
 
     @property
     @pulumi.getter(name="serviceInstanceType")
-    def service_instance_type(self) -> str:
-        """
-        Type of the serviceInstance.
-        """
+    def service_instance_type(self) -> Optional[str]:
         return pulumi.get(self, "service_instance_type")
 
     @property
     @pulumi.getter(name="serviceUrl")
-    def service_url(self) -> str:
-        """
-        Public URL
-        """
+    def service_url(self) -> Optional[str]:
         return pulumi.get(self, "service_url")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the ServiceInstance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -198,23 +162,7 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[st
                                               service_attachment_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentServiceAttachmentResult:
     """
-    This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a Service Attachment by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_service_attachment = oci.Functions.get_fusion_environment_service_attachment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        service_attachment_id=oci_fusion_apps_service_attachment["test_service_attachment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str service_attachment_id: OCID of the Service Attachment
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -244,22 +192,6 @@ def get_fusion_environment_service_attachment_output(fusion_environment_id: Opti
                                                      service_attachment_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentResult]:
     """
-    This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a Service Attachment by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_service_attachment = oci.Functions.get_fusion_environment_service_attachment(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        service_attachment_id=oci_fusion_apps_service_attachment["test_service_attachment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str service_attachment_id: OCID of the Service Attachment
+    Use this data source to access information about an existing resource.
     """
     ...

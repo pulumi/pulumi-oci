@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The name of the statistic (e.g., `p95`).
         /// </summary>
-        public readonly string Statistic;
+        public readonly string? Statistic;
         /// <summary>
         /// Optional. The metric value that the recommendation will target.
         /// </summary>
-        public readonly double Target;
+        public readonly double? Target;
         /// <summary>
         /// The threshold that must be crossed for the recommendation to appear.
         /// </summary>
-        public readonly double Threshold;
+        public readonly double? Threshold;
 
         [OutputConstructor]
         private GetProfileLevelsProfileLevelCollectionItemMetricResult(
-            string name,
+            string? name,
 
-            string statistic,
+            string? statistic,
 
-            double target,
+            double? target,
 
-            double threshold)
+            double? threshold)
         {
             Name = name;
             Statistic = statistic;

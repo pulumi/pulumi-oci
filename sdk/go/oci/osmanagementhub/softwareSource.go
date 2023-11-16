@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -97,51 +96,51 @@ type SoftwareSource struct {
 	pulumi.CustomResourceState
 
 	// The architecture type supported by the software source.
-	ArchType pulumi.StringOutput `pulumi:"archType"`
+	ArchType pulumi.StringPtrOutput `pulumi:"archType"`
 	// Possible availabilities of a software source.
-	Availability pulumi.StringOutput `pulumi:"availability"`
+	Availability pulumi.StringPtrOutput `pulumi:"availability"`
 	// The yum repository checksum type used by this software source.
-	ChecksumType pulumi.StringOutput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrOutput `pulumi:"checksumType"`
 	// (Updatable) The OCID of the tenancy containing the software source.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-	CustomSoftwareSourceFilter SoftwareSourceCustomSoftwareSourceFilterOutput `pulumi:"customSoftwareSourceFilter"`
+	CustomSoftwareSourceFilter SoftwareSourceCustomSoftwareSourceFilterPtrOutput `pulumi:"customSoftwareSourceFilter"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the software source.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User friendly name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source.
-	GpgKeyFingerprint pulumi.StringOutput `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint pulumi.StringPtrOutput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
-	GpgKeyId pulumi.StringOutput `pulumi:"gpgKeyId"`
+	GpgKeyId pulumi.StringPtrOutput `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source.
-	GpgKeyUrl pulumi.StringOutput `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl pulumi.StringPtrOutput `pulumi:"gpgKeyUrl"`
 	// (Updatable) Indicates whether service should automatically update the custom software source for the user.
-	IsAutomaticallyUpdated pulumi.BoolOutput `pulumi:"isAutomaticallyUpdated"`
+	IsAutomaticallyUpdated pulumi.BoolPtrOutput `pulumi:"isAutomaticallyUpdated"`
 	// The OS family the software source belongs to.
-	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrOutput `pulumi:"osFamily"`
 	// Number of packages.
-	PackageCount pulumi.StringOutput `pulumi:"packageCount"`
+	PackageCount pulumi.StringPtrOutput `pulumi:"packageCount"`
 	// The Repo ID for the software source.
-	RepoId pulumi.StringOutput `pulumi:"repoId"`
+	RepoId pulumi.StringPtrOutput `pulumi:"repoId"`
 	// (Updatable) Type of the software source.
 	SoftwareSourceType pulumi.StringOutput `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
-	SoftwareSourceVersion pulumi.StringOutput `pulumi:"softwareSourceVersion"`
+	SoftwareSourceVersion pulumi.StringPtrOutput `pulumi:"softwareSourceVersion"`
 	// The current state of the software source.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// URL for the repository.
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
 	// Name of the vendor providing the software source.
-	VendorName pulumi.StringOutput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrOutput `pulumi:"vendorName"`
 	// (Updatable) List of vendor software sources.
 	VendorSoftwareSources SoftwareSourceVendorSoftwareSourceArrayOutput `pulumi:"vendorSoftwareSources"`
 }
@@ -363,12 +362,6 @@ func (i *SoftwareSource) ToSoftwareSourceOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceOutput)
 }
 
-func (i *SoftwareSource) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSource] {
-	return pulumix.Output[*SoftwareSource]{
-		OutputState: i.ToSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceArrayInput is an input type that accepts SoftwareSourceArray and SoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceArrayInput` via:
 //
@@ -392,12 +385,6 @@ func (i SoftwareSourceArray) ToSoftwareSourceArrayOutput() SoftwareSourceArrayOu
 
 func (i SoftwareSourceArray) ToSoftwareSourceArrayOutputWithContext(ctx context.Context) SoftwareSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceArrayOutput)
-}
-
-func (i SoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*SoftwareSource] {
-	return pulumix.Output[[]*SoftwareSource]{
-		OutputState: i.ToSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SoftwareSourceMapInput is an input type that accepts SoftwareSourceMap and SoftwareSourceMapOutput values.
@@ -425,12 +412,6 @@ func (i SoftwareSourceMap) ToSoftwareSourceMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceMapOutput)
 }
 
-func (i SoftwareSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SoftwareSource] {
-	return pulumix.Output[map[string]*SoftwareSource]{
-		OutputState: i.ToSoftwareSourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceOutput) ElementType() reflect.Type {
@@ -445,25 +426,19 @@ func (o SoftwareSourceOutput) ToSoftwareSourceOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o SoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSource] {
-	return pulumix.Output[*SoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type supported by the software source.
-func (o SoftwareSourceOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // Possible availabilities of a software source.
-func (o SoftwareSourceOutput) Availability() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Availability }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) Availability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.Availability }).(pulumi.StringPtrOutput)
 }
 
 // The yum repository checksum type used by this software source.
-func (o SoftwareSourceOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.ChecksumType }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the tenancy containing the software source.
@@ -472,10 +447,10 @@ func (o SoftwareSourceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
-func (o SoftwareSourceOutput) CustomSoftwareSourceFilter() SoftwareSourceCustomSoftwareSourceFilterOutput {
-	return o.ApplyT(func(v *SoftwareSource) SoftwareSourceCustomSoftwareSourceFilterOutput {
+func (o SoftwareSourceOutput) CustomSoftwareSourceFilter() SoftwareSourceCustomSoftwareSourceFilterPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) SoftwareSourceCustomSoftwareSourceFilterPtrOutput {
 		return v.CustomSoftwareSourceFilter
-	}).(SoftwareSourceCustomSoftwareSourceFilterOutput)
+	}).(SoftwareSourceCustomSoftwareSourceFilterPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -484,8 +459,8 @@ func (o SoftwareSourceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Information specified by the user about the software source.
-func (o SoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User friendly name.
@@ -499,38 +474,38 @@ func (o SoftwareSourceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Fingerprint of the GPG key for this software source.
-func (o SoftwareSourceOutput) GpgKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyFingerprint }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) GpgKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.GpgKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // ID of the GPG key for this software source.
-func (o SoftwareSourceOutput) GpgKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyId }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) GpgKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.GpgKeyId }).(pulumi.StringPtrOutput)
 }
 
 // URL of the GPG key for this software source.
-func (o SoftwareSourceOutput) GpgKeyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.GpgKeyUrl }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) GpgKeyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.GpgKeyUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether service should automatically update the custom software source for the user.
-func (o SoftwareSourceOutput) IsAutomaticallyUpdated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolOutput { return v.IsAutomaticallyUpdated }).(pulumi.BoolOutput)
+func (o SoftwareSourceOutput) IsAutomaticallyUpdated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.BoolPtrOutput { return v.IsAutomaticallyUpdated }).(pulumi.BoolPtrOutput)
 }
 
 // The OS family the software source belongs to.
-func (o SoftwareSourceOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // Number of packages.
-func (o SoftwareSourceOutput) PackageCount() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.PackageCount }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) PackageCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.PackageCount }).(pulumi.StringPtrOutput)
 }
 
 // The Repo ID for the software source.
-func (o SoftwareSourceOutput) RepoId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.RepoId }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) RepoId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.RepoId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of the software source.
@@ -539,13 +514,13 @@ func (o SoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
 }
 
 // The version to assign to this custom software source.
-func (o SoftwareSourceOutput) SoftwareSourceVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.SoftwareSourceVersion }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) SoftwareSourceVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.SoftwareSourceVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the software source.
-func (o SoftwareSourceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -554,18 +529,18 @@ func (o SoftwareSourceOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o SoftwareSourceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // URL for the repository.
-func (o SoftwareSourceOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 // Name of the vendor providing the software source.
-func (o SoftwareSourceOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.VendorName }).(pulumi.StringOutput)
+func (o SoftwareSourceOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringPtrOutput { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of vendor software sources.
@@ -587,12 +562,6 @@ func (o SoftwareSourceArrayOutput) ToSoftwareSourceArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o SoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SoftwareSource] {
-	return pulumix.Output[[]*SoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SoftwareSourceArrayOutput) Index(i pulumi.IntInput) SoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SoftwareSource {
 		return vs[0].([]*SoftwareSource)[vs[1].(int)]
@@ -611,12 +580,6 @@ func (o SoftwareSourceMapOutput) ToSoftwareSourceMapOutput() SoftwareSourceMapOu
 
 func (o SoftwareSourceMapOutput) ToSoftwareSourceMapOutputWithContext(ctx context.Context) SoftwareSourceMapOutput {
 	return o
-}
-
-func (o SoftwareSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SoftwareSource] {
-	return pulumix.Output[map[string]*SoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceMapOutput) MapIndex(k pulumi.StringInput) SoftwareSourceOutput {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// User friendly name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetManagedInstanceGroupManagedInstanceResult(
-            string displayName,
+            string? displayName,
 
-            string id)
+            string? id)
         {
             DisplayName = displayName;
             Id = id;

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
@@ -72,20 +71,20 @@ type MediaWorkflowConfiguration struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Parameters pulumi.StringOutput `pulumi:"parameters"`
 	// The current state of the MediaWorkflowConfiguration.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMediaWorkflowConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -238,12 +237,6 @@ func (i *MediaWorkflowConfiguration) ToMediaWorkflowConfigurationOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationOutput)
 }
 
-func (i *MediaWorkflowConfiguration) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowConfiguration] {
-	return pulumix.Output[*MediaWorkflowConfiguration]{
-		OutputState: i.ToMediaWorkflowConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowConfigurationArrayInput is an input type that accepts MediaWorkflowConfigurationArray and MediaWorkflowConfigurationArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowConfigurationArrayInput` via:
 //
@@ -267,12 +260,6 @@ func (i MediaWorkflowConfigurationArray) ToMediaWorkflowConfigurationArrayOutput
 
 func (i MediaWorkflowConfigurationArray) ToMediaWorkflowConfigurationArrayOutputWithContext(ctx context.Context) MediaWorkflowConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationArrayOutput)
-}
-
-func (i MediaWorkflowConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowConfiguration] {
-	return pulumix.Output[[]*MediaWorkflowConfiguration]{
-		OutputState: i.ToMediaWorkflowConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MediaWorkflowConfigurationMapInput is an input type that accepts MediaWorkflowConfigurationMap and MediaWorkflowConfigurationMapOutput values.
@@ -300,12 +287,6 @@ func (i MediaWorkflowConfigurationMap) ToMediaWorkflowConfigurationMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationMapOutput)
 }
 
-func (i MediaWorkflowConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowConfiguration] {
-	return pulumix.Output[map[string]*MediaWorkflowConfiguration]{
-		OutputState: i.ToMediaWorkflowConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowConfigurationOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowConfigurationOutput) ElementType() reflect.Type {
@@ -318,12 +299,6 @@ func (o MediaWorkflowConfigurationOutput) ToMediaWorkflowConfigurationOutput() M
 
 func (o MediaWorkflowConfigurationOutput) ToMediaWorkflowConfigurationOutputWithContext(ctx context.Context) MediaWorkflowConfigurationOutput {
 	return o
-}
-
-func (o MediaWorkflowConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowConfiguration] {
-	return pulumix.Output[*MediaWorkflowConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier.
@@ -347,8 +322,8 @@ func (o MediaWorkflowConfigurationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o MediaWorkflowConfigurationOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o MediaWorkflowConfigurationOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refers to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
@@ -360,8 +335,8 @@ func (o MediaWorkflowConfigurationOutput) Parameters() pulumi.StringOutput {
 }
 
 // The current state of the MediaWorkflowConfiguration.
-func (o MediaWorkflowConfigurationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MediaWorkflowConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -370,13 +345,13 @@ func (o MediaWorkflowConfigurationOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-func (o MediaWorkflowConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MediaWorkflowConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-func (o MediaWorkflowConfigurationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MediaWorkflowConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaWorkflowConfiguration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MediaWorkflowConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -391,12 +366,6 @@ func (o MediaWorkflowConfigurationArrayOutput) ToMediaWorkflowConfigurationArray
 
 func (o MediaWorkflowConfigurationArrayOutput) ToMediaWorkflowConfigurationArrayOutputWithContext(ctx context.Context) MediaWorkflowConfigurationArrayOutput {
 	return o
-}
-
-func (o MediaWorkflowConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowConfiguration] {
-	return pulumix.Output[[]*MediaWorkflowConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowConfigurationArrayOutput) Index(i pulumi.IntInput) MediaWorkflowConfigurationOutput {
@@ -417,12 +386,6 @@ func (o MediaWorkflowConfigurationMapOutput) ToMediaWorkflowConfigurationMapOutp
 
 func (o MediaWorkflowConfigurationMapOutput) ToMediaWorkflowConfigurationMapOutputWithContext(ctx context.Context) MediaWorkflowConfigurationMapOutput {
 	return o
-}
-
-func (o MediaWorkflowConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowConfiguration] {
-	return pulumix.Output[map[string]*MediaWorkflowConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowConfigurationMapOutput) MapIndex(k pulumi.StringInput) MediaWorkflowConfigurationOutput {

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The start time of the maintenance window.
         /// </summary>
-        public readonly string WindowStartTime;
+        public readonly string? WindowStartTime;
 
         [OutputConstructor]
-        private GetMysqlDbSystemsDbSystemMaintenanceResult(string windowStartTime)
+        private GetMysqlDbSystemsDbSystemMaintenanceResult(string? windowStartTime)
         {
             WindowStartTime = windowStartTime;
         }

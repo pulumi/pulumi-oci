@@ -16,29 +16,29 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The category name to which this resource belongs.
         /// </summary>
-        public readonly string CategoryName;
+        public readonly string? CategoryName;
         /// <summary>
         /// The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
         /// </summary>
-        public readonly bool IsSystem;
+        public readonly bool? IsSystem;
         /// <summary>
         /// The unique identifier of the resource, usually a name or ocid.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The resource type.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
 
         [OutputConstructor]
         private GetLogAnalyticsResourceCategoriesListItemResult(
-            string categoryName,
+            string? categoryName,
 
-            bool isSystem,
+            bool? isSystem,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceType)
+            string? resourceType)
         {
             CategoryName = categoryName;
             IsSystem = isSystem;

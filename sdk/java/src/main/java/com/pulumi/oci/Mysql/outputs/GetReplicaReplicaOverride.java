@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicaReplicaOverride {
@@ -13,39 +15,39 @@ public final class GetReplicaReplicaOverride {
      * @return The OCID of the Configuration to be used by the read replica.
      * 
      */
-    private String configurationId;
+    private @Nullable String configurationId;
     /**
      * @return The MySQL version to be used by the read replica.
      * 
      */
-    private String mysqlVersion;
+    private @Nullable String mysqlVersion;
     /**
      * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
 
     private GetReplicaReplicaOverride() {}
     /**
      * @return The OCID of the Configuration to be used by the read replica.
      * 
      */
-    public String configurationId() {
-        return this.configurationId;
+    public Optional<String> configurationId() {
+        return Optional.ofNullable(this.configurationId);
     }
     /**
      * @return The MySQL version to be used by the read replica.
      * 
      */
-    public String mysqlVersion() {
-        return this.mysqlVersion;
+    public Optional<String> mysqlVersion() {
+        return Optional.ofNullable(this.mysqlVersion);
     }
     /**
      * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetReplicaReplicaOverride {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configurationId;
-        private String mysqlVersion;
-        private String shapeName;
+        private @Nullable String configurationId;
+        private @Nullable String mysqlVersion;
+        private @Nullable String shapeName;
         public Builder() {}
         public Builder(GetReplicaReplicaOverride defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetReplicaReplicaOverride {
         }
 
         @CustomType.Setter
-        public Builder configurationId(String configurationId) {
-            this.configurationId = Objects.requireNonNull(configurationId);
+        public Builder configurationId(@Nullable String configurationId) {
+            this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
-        public Builder mysqlVersion(String mysqlVersion) {
-            this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
+        public Builder mysqlVersion(@Nullable String mysqlVersion) {
+            this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         public GetReplicaReplicaOverride build() {

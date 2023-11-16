@@ -29,12 +29,12 @@ public final class GetSecurityListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of security_lists.
      * 
      */
-    private List<GetSecurityListsSecurityList> securityLists;
+    private @Nullable List<GetSecurityListsSecurityList> securityLists;
     /**
      * @return The security list&#39;s current state.
      * 
@@ -68,15 +68,15 @@ public final class GetSecurityListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of security_lists.
      * 
      */
     public List<GetSecurityListsSecurityList> securityLists() {
-        return this.securityLists;
+        return this.securityLists == null ? List.of() : this.securityLists;
     }
     /**
      * @return The security list&#39;s current state.
@@ -105,8 +105,8 @@ public final class GetSecurityListsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetSecurityListsFilter> filters;
-        private String id;
-        private List<GetSecurityListsSecurityList> securityLists;
+        private @Nullable String id;
+        private @Nullable List<GetSecurityListsSecurityList> securityLists;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -140,13 +140,13 @@ public final class GetSecurityListsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder securityLists(List<GetSecurityListsSecurityList> securityLists) {
-            this.securityLists = Objects.requireNonNull(securityLists);
+        public Builder securityLists(@Nullable List<GetSecurityListsSecurityList> securityLists) {
+            this.securityLists = securityLists;
             return this;
         }
         public Builder securityLists(GetSecurityListsSecurityList... securityLists) {

@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeIds`
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The OCID of the volume group backup to restore from, if the type is `volumeGroupBackup`
         /// </summary>
-        public readonly string VolumeGroupBackupId;
+        public readonly string? VolumeGroupBackupId;
         /// <summary>
         /// The OCID of the volume group to clone from, if the type is `volumeGroup`
         /// </summary>
-        public readonly string VolumeGroupId;
+        public readonly string? VolumeGroupId;
         /// <summary>
         /// The volume group replica's Oracle ID (OCID).
         /// </summary>
-        public readonly string VolumeGroupReplicaId;
+        public readonly string? VolumeGroupReplicaId;
         /// <summary>
         /// OCIDs for the volumes in this volume group.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetVolumeGroupsVolumeGroupSourceDetailResult(
-            string type,
+            string? type,
 
-            string volumeGroupBackupId,
+            string? volumeGroupBackupId,
 
-            string volumeGroupId,
+            string? volumeGroupId,
 
-            string volumeGroupReplicaId,
+            string? volumeGroupReplicaId,
 
             ImmutableArray<string> volumeIds)
         {

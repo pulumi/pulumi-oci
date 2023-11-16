@@ -80,37 +80,37 @@ namespace Pulumi.Oci.Bastion
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
         /// </summary>
         [Output("dnsProxyStatus")]
-        public Output<string> DnsProxyStatus { get; private set; } = null!;
+        public Output<string?> DnsProxyStatus { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum amount of time that any session on the bastion can remain active.
         /// </summary>
         [Output("maxSessionTtlInSeconds")]
-        public Output<int> MaxSessionTtlInSeconds { get; private set; } = null!;
+        public Output<int?> MaxSessionTtlInSeconds { get; private set; } = null!;
 
         /// <summary>
         /// The maximum number of active sessions allowed on the bastion.
         /// </summary>
         [Output("maxSessionsAllowed")]
-        public Output<int> MaxSessionsAllowed { get; private set; } = null!;
+        public Output<int?> MaxSessionsAllowed { get; private set; } = null!;
 
         /// <summary>
         /// The name of the bastion, which can't be changed after creation.
@@ -122,19 +122,19 @@ namespace Pulumi.Oci.Bastion
         /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         /// </summary>
         [Output("phoneBookEntry")]
-        public Output<string> PhoneBookEntry { get; private set; } = null!;
+        public Output<string?> PhoneBookEntry { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address of the created private endpoint.
         /// </summary>
         [Output("privateEndpointIpAddress")]
-        public Output<string> PrivateEndpointIpAddress { get; private set; } = null!;
+        public Output<string?> PrivateEndpointIpAddress { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the bastion.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.Bastion
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The unique identifier (OCID) of the subnet that the bastion connects to.
@@ -162,19 +162,19 @@ namespace Pulumi.Oci.Bastion
         /// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
         /// </summary>
         [Output("targetVcnId")]
-        public Output<string> TargetVcnId { get; private set; } = null!;
+        public Output<string?> TargetVcnId { get; private set; } = null!;
 
         /// <summary>
         /// The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

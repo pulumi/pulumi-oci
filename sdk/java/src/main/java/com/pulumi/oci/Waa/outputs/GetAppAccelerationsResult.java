@@ -39,7 +39,7 @@ public final class GetAppAccelerationsResult {
      * @return The list of web_app_acceleration_collection.
      * 
      */
-    private List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections;
+    private @Nullable List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
      * 
@@ -83,7 +83,7 @@ public final class GetAppAccelerationsResult {
      * 
      */
     public List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections() {
-        return this.webAppAccelerationCollections;
+        return this.webAppAccelerationCollections == null ? List.of() : this.webAppAccelerationCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
@@ -107,7 +107,7 @@ public final class GetAppAccelerationsResult {
         private @Nullable List<GetAppAccelerationsFilter> filters;
         private @Nullable String id;
         private @Nullable List<String> states;
-        private List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections;
+        private @Nullable List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections;
         private @Nullable String webAppAccelerationPolicyId;
         public Builder() {}
         public Builder(GetAppAccelerationsResult defaults) {
@@ -153,8 +153,8 @@ public final class GetAppAccelerationsResult {
             return states(List.of(states));
         }
         @CustomType.Setter
-        public Builder webAppAccelerationCollections(List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections) {
-            this.webAppAccelerationCollections = Objects.requireNonNull(webAppAccelerationCollections);
+        public Builder webAppAccelerationCollections(@Nullable List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections) {
+            this.webAppAccelerationCollections = webAppAccelerationCollections;
             return this;
         }
         public Builder webAppAccelerationCollections(GetAppAccelerationsWebAppAccelerationCollection... webAppAccelerationCollections) {

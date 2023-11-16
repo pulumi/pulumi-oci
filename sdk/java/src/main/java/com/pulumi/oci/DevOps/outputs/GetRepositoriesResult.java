@@ -24,7 +24,7 @@ public final class GetRepositoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique name of a repository. This value is mutable.
      * 
@@ -39,7 +39,7 @@ public final class GetRepositoriesResult {
      * @return The list of repository_collection.
      * 
      */
-    private List<GetRepositoriesRepositoryCollection> repositoryCollections;
+    private @Nullable List<GetRepositoriesRepositoryCollection> repositoryCollections;
     private @Nullable String repositoryId;
     /**
      * @return The current state of the repository.
@@ -62,8 +62,8 @@ public final class GetRepositoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique name of a repository. This value is mutable.
@@ -84,7 +84,7 @@ public final class GetRepositoriesResult {
      * 
      */
     public List<GetRepositoriesRepositoryCollection> repositoryCollections() {
-        return this.repositoryCollections;
+        return this.repositoryCollections == null ? List.of() : this.repositoryCollections;
     }
     public Optional<String> repositoryId() {
         return Optional.ofNullable(this.repositoryId);
@@ -108,10 +108,10 @@ public final class GetRepositoriesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetRepositoriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String projectId;
-        private List<GetRepositoriesRepositoryCollection> repositoryCollections;
+        private @Nullable List<GetRepositoriesRepositoryCollection> repositoryCollections;
         private @Nullable String repositoryId;
         private @Nullable String state;
         public Builder() {}
@@ -141,8 +141,8 @@ public final class GetRepositoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -156,8 +156,8 @@ public final class GetRepositoriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryCollections(List<GetRepositoriesRepositoryCollection> repositoryCollections) {
-            this.repositoryCollections = Objects.requireNonNull(repositoryCollections);
+        public Builder repositoryCollections(@Nullable List<GetRepositoriesRepositoryCollection> repositoryCollections) {
+            this.repositoryCollections = repositoryCollections;
             return this;
         }
         public Builder repositoryCollections(GetRepositoriesRepositoryCollection... repositoryCollections) {

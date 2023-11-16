@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Upstream git repository connection identifer.
         /// </summary>
-        public readonly string ConnectorId;
+        public readonly string? ConnectorId;
         /// <summary>
         /// URL of external repository you want to mirror.
         /// </summary>
-        public readonly string RepositoryUrl;
+        public readonly string? RepositoryUrl;
         /// <summary>
         /// Specifies a trigger schedule. Timing information for when to initiate automated syncs.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private GetRepositoryMirrorRepositoryConfigResult(
-            string connectorId,
+            string? connectorId,
 
-            string repositoryUrl,
+            string? repositoryUrl,
 
             ImmutableArray<Outputs.GetRepositoryMirrorRepositoryConfigTriggerScheduleResult> triggerSchedules)
         {

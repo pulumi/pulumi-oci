@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
@@ -69,7 +68,7 @@ type GetVaultsResult struct {
 	CompartmentId string            `pulumi:"compartmentId"`
 	Filters       []GetVaultsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of vaults.
 	Vaults []GetVaultsVault `pulumi:"vaults"`
 }
@@ -113,12 +112,6 @@ func (o GetVaultsResultOutput) ToGetVaultsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetVaultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsResult] {
-	return pulumix.Output[GetVaultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains a particular vault.
 func (o GetVaultsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVaultsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -129,8 +122,8 @@ func (o GetVaultsResultOutput) Filters() GetVaultsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVaultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVaultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVaultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVaultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of vaults.

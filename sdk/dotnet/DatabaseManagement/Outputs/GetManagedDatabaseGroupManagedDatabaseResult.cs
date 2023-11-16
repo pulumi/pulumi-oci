@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         /// </summary>
-        public readonly string DatabaseSubType;
+        public readonly string? DatabaseSubType;
         /// <summary>
         /// The type of Oracle Database installation.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the Managed Database Group.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The date and time the Managed Database was added to the group.
         /// </summary>
-        public readonly string TimeAdded;
+        public readonly string? TimeAdded;
         /// <summary>
         /// The workload type of the Autonomous Database.
         /// </summary>
-        public readonly string WorkloadType;
+        public readonly string? WorkloadType;
 
         [OutputConstructor]
         private GetManagedDatabaseGroupManagedDatabaseResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseSubType,
+            string? databaseSubType,
 
-            string databaseType,
+            string? databaseType,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string timeAdded,
+            string? timeAdded,
 
-            string workloadType)
+            string? workloadType)
         {
             CompartmentId = compartmentId;
             DatabaseSubType = databaseSubType;

@@ -51,11 +51,11 @@ export interface GetProtocolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of protocols.
      */
-    readonly protocols: outputs.LoadBalancer.GetProtocolsProtocol[];
+    readonly protocols?: outputs.LoadBalancer.GetProtocolsProtocol[];
 }
 /**
  * This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.

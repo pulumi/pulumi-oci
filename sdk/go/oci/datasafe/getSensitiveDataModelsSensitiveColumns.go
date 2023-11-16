@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -119,8 +118,8 @@ type GetSensitiveDataModelsSensitiveColumnsResult struct {
 	DataTypes []string                                       `pulumi:"dataTypes"`
 	Filters   []GetSensitiveDataModelsSensitiveColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	IsCaseInSensitive *bool  `pulumi:"isCaseInSensitive"`
+	Id                *string `pulumi:"id"`
+	IsCaseInSensitive *bool   `pulumi:"isCaseInSensitive"`
 	// The type of the database object that contains the sensitive column.
 	ObjectTypes []string `pulumi:"objectTypes"`
 	// The database object that contains the sensitive column.
@@ -220,12 +219,6 @@ func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ToGetSensitiveDataMo
 	return o
 }
 
-func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelsSensitiveColumnsResult] {
-	return pulumix.Output[GetSensitiveDataModelsSensitiveColumnsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ColumnGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) *string { return v.ColumnGroup }).(pulumi.StringPtrOutput)
 }
@@ -247,8 +240,8 @@ func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) Filters() GetSensiti
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) IsCaseInSensitive() pulumi.BoolPtrOutput {

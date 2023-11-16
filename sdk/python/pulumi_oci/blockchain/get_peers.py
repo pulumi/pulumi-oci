@@ -57,7 +57,7 @@ class GetPeersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetPeersResult:
 
     @property
     @pulumi.getter(name="peerCollections")
-    def peer_collections(self) -> Sequence['outputs.GetPeersPeerCollectionResult']:
-        """
-        The list of peer_collection.
-        """
+    def peer_collections(self) -> Optional[Sequence['outputs.GetPeersPeerCollectionResult']]:
         return pulumi.get(self, "peer_collections")
 
 
@@ -90,23 +87,7 @@ def get_peers(blockchain_platform_id: Optional[str] = None,
               filters: Optional[Sequence[pulumi.InputType['GetPeersFilterArgs']]] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPeersResult:
     """
-    This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
-
-    List Blockchain Platform Peers
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_peers = oci.Blockchain.get_peers(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        display_name=var["peer_display_name"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
@@ -129,22 +110,6 @@ def get_peers_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPeersFilterArgs']]]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeersResult]:
     """
-    This data source provides the list of Peers in Oracle Cloud Infrastructure Blockchain service.
-
-    List Blockchain Platform Peers
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_peers = oci.Blockchain.get_peers(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        display_name=var["peer_display_name"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
+    Use this data source to access information about an existing resource.
     """
     ...

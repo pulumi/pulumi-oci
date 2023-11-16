@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingsListingDocumentationLink {
@@ -13,39 +15,39 @@ public final class GetListingsListingDocumentationLink {
      * @return The category that the document belongs to.
      * 
      */
-    private String documentCategory;
+    private @Nullable String documentCategory;
     /**
      * @return The name of the listing.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The URL of the resource.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetListingsListingDocumentationLink() {}
     /**
      * @return The category that the document belongs to.
      * 
      */
-    public String documentCategory() {
-        return this.documentCategory;
+    public Optional<String> documentCategory() {
+        return Optional.ofNullable(this.documentCategory);
     }
     /**
      * @return The name of the listing.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The URL of the resource.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetListingsListingDocumentationLink {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String documentCategory;
-        private String name;
-        private String url;
+        private @Nullable String documentCategory;
+        private @Nullable String name;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetListingsListingDocumentationLink defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetListingsListingDocumentationLink {
         }
 
         @CustomType.Setter
-        public Builder documentCategory(String documentCategory) {
-            this.documentCategory = Objects.requireNonNull(documentCategory);
+        public Builder documentCategory(@Nullable String documentCategory) {
+            this.documentCategory = documentCategory;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetListingsListingDocumentationLink build() {

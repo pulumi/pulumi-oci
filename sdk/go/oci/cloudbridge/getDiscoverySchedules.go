@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Discovery Schedules in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -78,7 +77,7 @@ type GetDiscoverySchedulesResult struct {
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetDiscoverySchedulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Current state of the discovery schedule.
 	State *string `pulumi:"state"`
 }
@@ -128,12 +127,6 @@ func (o GetDiscoverySchedulesResultOutput) ToGetDiscoverySchedulesResultOutputWi
 	return o
 }
 
-func (o GetDiscoverySchedulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesResult] {
-	return pulumix.Output[GetDiscoverySchedulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule exists.
 func (o GetDiscoverySchedulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoverySchedulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -160,8 +153,8 @@ func (o GetDiscoverySchedulesResultOutput) Filters() GetDiscoverySchedulesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDiscoverySchedulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Current state of the discovery schedule.

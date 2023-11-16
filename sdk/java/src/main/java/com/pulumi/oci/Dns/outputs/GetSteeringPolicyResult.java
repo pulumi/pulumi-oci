@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSteeringPolicyResult {
@@ -19,68 +21,68 @@ public final class GetSteeringPolicyResult {
      * @return The set of all answers that can potentially issue from the steering policy.
      * 
      */
-    private List<GetSteeringPolicyAnswer> answers;
+    private @Nullable List<GetSteeringPolicyAnswer> answers;
     /**
      * @return The OCID of the compartment containing the steering policy.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      * 
      */
-    private String healthCheckMonitorId;
+    private @Nullable String healthCheckMonitorId;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      * 
      */
-    private List<GetSteeringPolicyRule> rules;
+    private @Nullable List<GetSteeringPolicyRule> rules;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     private String steeringPolicyId;
     /**
      * @return A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
      * 
      */
-    private String template;
+    private @Nullable String template;
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
      * 
      */
-    private Integer ttl;
+    private @Nullable Integer ttl;
 
     private GetSteeringPolicyResult() {}
     /**
@@ -88,70 +90,70 @@ public final class GetSteeringPolicyResult {
      * 
      */
     public List<GetSteeringPolicyAnswer> answers() {
-        return this.answers;
+        return this.answers == null ? List.of() : this.answers;
     }
     /**
      * @return The OCID of the compartment containing the steering policy.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      * 
      */
-    public String healthCheckMonitorId() {
-        return this.healthCheckMonitorId;
+    public Optional<String> healthCheckMonitorId() {
+        return Optional.ofNullable(this.healthCheckMonitorId);
     }
     /**
      * @return The OCID of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      * 
      */
     public List<GetSteeringPolicyRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The current state of the resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     public String steeringPolicyId() {
         return this.steeringPolicyId;
@@ -160,22 +162,22 @@ public final class GetSteeringPolicyResult {
      * @return A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management&#39;s rules in a different order to produce the desired results when answering DNS queries.
      * 
      */
-    public String template() {
-        return this.template;
+    public Optional<String> template() {
+        return Optional.ofNullable(this.template);
     }
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
      * 
      */
-    public Integer ttl() {
-        return this.ttl;
+    public Optional<Integer> ttl() {
+        return Optional.ofNullable(this.ttl);
     }
 
     public static Builder builder() {
@@ -187,20 +189,20 @@ public final class GetSteeringPolicyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSteeringPolicyAnswer> answers;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String healthCheckMonitorId;
-        private String id;
-        private List<GetSteeringPolicyRule> rules;
-        private String self;
-        private String state;
+        private @Nullable List<GetSteeringPolicyAnswer> answers;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String healthCheckMonitorId;
+        private @Nullable String id;
+        private @Nullable List<GetSteeringPolicyRule> rules;
+        private @Nullable String self;
+        private @Nullable String state;
         private String steeringPolicyId;
-        private String template;
-        private String timeCreated;
-        private Integer ttl;
+        private @Nullable String template;
+        private @Nullable String timeCreated;
+        private @Nullable Integer ttl;
         public Builder() {}
         public Builder(GetSteeringPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -221,59 +223,59 @@ public final class GetSteeringPolicyResult {
         }
 
         @CustomType.Setter
-        public Builder answers(List<GetSteeringPolicyAnswer> answers) {
-            this.answers = Objects.requireNonNull(answers);
+        public Builder answers(@Nullable List<GetSteeringPolicyAnswer> answers) {
+            this.answers = answers;
             return this;
         }
         public Builder answers(GetSteeringPolicyAnswer... answers) {
             return answers(List.of(answers));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder healthCheckMonitorId(String healthCheckMonitorId) {
-            this.healthCheckMonitorId = Objects.requireNonNull(healthCheckMonitorId);
+        public Builder healthCheckMonitorId(@Nullable String healthCheckMonitorId) {
+            this.healthCheckMonitorId = healthCheckMonitorId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetSteeringPolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetSteeringPolicyRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetSteeringPolicyRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
@@ -282,18 +284,18 @@ public final class GetSteeringPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+        public Builder template(@Nullable String template) {
+            this.template = template;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+        public Builder ttl(@Nullable Integer ttl) {
+            this.ttl = ttl;
             return this;
         }
         public GetSteeringPolicyResult build() {

@@ -87,25 +87,25 @@ namespace Pulumi.Oci.ObjectStorage
         /// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// A human-readable description of the status.
         /// </summary>
         [Output("statusMessage")]
-        public Output<string> StatusMessage { get; private set; } = null!;
+        public Output<string?> StatusMessage { get; private set; } = null!;
 
         /// <summary>
         /// The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Changes made to the source bucket before this time has been replicated.
         /// </summary>
         [Output("timeLastSync")]
-        public Output<string> TimeLastSync { get; private set; } = null!;
+        public Output<string?> TimeLastSync { get; private set; } = null!;
 
 
         /// <summary>

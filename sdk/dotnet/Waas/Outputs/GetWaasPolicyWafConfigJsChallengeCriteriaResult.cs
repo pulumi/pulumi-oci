@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// When enabled, the condition will be matched with case-sensitive rules.
         /// </summary>
-        public readonly bool IsCaseSensitive;
+        public readonly bool? IsCaseSensitive;
         /// <summary>
         /// The value of the header.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Waas.Outputs
         private GetWaasPolicyWafConfigJsChallengeCriteriaResult(
             string condition,
 
-            bool isCaseSensitive,
+            bool? isCaseSensitive,
 
             string value)
         {

@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationPlanTargetEnvironment {
@@ -13,111 +15,111 @@ public final class GetMigrationPlanTargetEnvironment {
      * @return Availability Domain of the VM configuration.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return OCID of the dedicated VM configuration host.
      * 
      */
-    private String dedicatedVmHost;
+    private @Nullable String dedicatedVmHost;
     /**
      * @return Fault domain of the VM configuration.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return Microsoft license for the VM configuration.
      * 
      */
-    private String msLicense;
+    private @Nullable String msLicense;
     /**
      * @return Preferred VM shape type provided by the customer.
      * 
      */
-    private String preferredShapeType;
+    private @Nullable String preferredShapeType;
     /**
      * @return OCID of the VM configuration subnet.
      * 
      */
-    private String subnet;
+    private @Nullable String subnet;
     /**
      * @return Target compartment identifier
      * 
      */
-    private String targetCompartmentId;
+    private @Nullable String targetCompartmentId;
     /**
      * @return The type of target environment.
      * 
      */
-    private String targetEnvironmentType;
+    private @Nullable String targetEnvironmentType;
     /**
      * @return OCID of the VM configuration VCN.
      * 
      */
-    private String vcn;
+    private @Nullable String vcn;
 
     private GetMigrationPlanTargetEnvironment() {}
     /**
      * @return Availability Domain of the VM configuration.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return OCID of the dedicated VM configuration host.
      * 
      */
-    public String dedicatedVmHost() {
-        return this.dedicatedVmHost;
+    public Optional<String> dedicatedVmHost() {
+        return Optional.ofNullable(this.dedicatedVmHost);
     }
     /**
      * @return Fault domain of the VM configuration.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Microsoft license for the VM configuration.
      * 
      */
-    public String msLicense() {
-        return this.msLicense;
+    public Optional<String> msLicense() {
+        return Optional.ofNullable(this.msLicense);
     }
     /**
      * @return Preferred VM shape type provided by the customer.
      * 
      */
-    public String preferredShapeType() {
-        return this.preferredShapeType;
+    public Optional<String> preferredShapeType() {
+        return Optional.ofNullable(this.preferredShapeType);
     }
     /**
      * @return OCID of the VM configuration subnet.
      * 
      */
-    public String subnet() {
-        return this.subnet;
+    public Optional<String> subnet() {
+        return Optional.ofNullable(this.subnet);
     }
     /**
      * @return Target compartment identifier
      * 
      */
-    public String targetCompartmentId() {
-        return this.targetCompartmentId;
+    public Optional<String> targetCompartmentId() {
+        return Optional.ofNullable(this.targetCompartmentId);
     }
     /**
      * @return The type of target environment.
      * 
      */
-    public String targetEnvironmentType() {
-        return this.targetEnvironmentType;
+    public Optional<String> targetEnvironmentType() {
+        return Optional.ofNullable(this.targetEnvironmentType);
     }
     /**
      * @return OCID of the VM configuration VCN.
      * 
      */
-    public String vcn() {
-        return this.vcn;
+    public Optional<String> vcn() {
+        return Optional.ofNullable(this.vcn);
     }
 
     public static Builder builder() {
@@ -129,15 +131,15 @@ public final class GetMigrationPlanTargetEnvironment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String dedicatedVmHost;
-        private String faultDomain;
-        private String msLicense;
-        private String preferredShapeType;
-        private String subnet;
-        private String targetCompartmentId;
-        private String targetEnvironmentType;
-        private String vcn;
+        private @Nullable String availabilityDomain;
+        private @Nullable String dedicatedVmHost;
+        private @Nullable String faultDomain;
+        private @Nullable String msLicense;
+        private @Nullable String preferredShapeType;
+        private @Nullable String subnet;
+        private @Nullable String targetCompartmentId;
+        private @Nullable String targetEnvironmentType;
+        private @Nullable String vcn;
         public Builder() {}
         public Builder(GetMigrationPlanTargetEnvironment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,48 +155,48 @@ public final class GetMigrationPlanTargetEnvironment {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder dedicatedVmHost(String dedicatedVmHost) {
-            this.dedicatedVmHost = Objects.requireNonNull(dedicatedVmHost);
+        public Builder dedicatedVmHost(@Nullable String dedicatedVmHost) {
+            this.dedicatedVmHost = dedicatedVmHost;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder msLicense(String msLicense) {
-            this.msLicense = Objects.requireNonNull(msLicense);
+        public Builder msLicense(@Nullable String msLicense) {
+            this.msLicense = msLicense;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredShapeType(String preferredShapeType) {
-            this.preferredShapeType = Objects.requireNonNull(preferredShapeType);
+        public Builder preferredShapeType(@Nullable String preferredShapeType) {
+            this.preferredShapeType = preferredShapeType;
             return this;
         }
         @CustomType.Setter
-        public Builder subnet(String subnet) {
-            this.subnet = Objects.requireNonNull(subnet);
+        public Builder subnet(@Nullable String subnet) {
+            this.subnet = subnet;
             return this;
         }
         @CustomType.Setter
-        public Builder targetCompartmentId(String targetCompartmentId) {
-            this.targetCompartmentId = Objects.requireNonNull(targetCompartmentId);
+        public Builder targetCompartmentId(@Nullable String targetCompartmentId) {
+            this.targetCompartmentId = targetCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetEnvironmentType(String targetEnvironmentType) {
-            this.targetEnvironmentType = Objects.requireNonNull(targetEnvironmentType);
+        public Builder targetEnvironmentType(@Nullable String targetEnvironmentType) {
+            this.targetEnvironmentType = targetEnvironmentType;
             return this;
         }
         @CustomType.Setter
-        public Builder vcn(String vcn) {
-            this.vcn = Objects.requireNonNull(vcn);
+        public Builder vcn(@Nullable String vcn) {
+            this.vcn = vcn;
             return this;
         }
         public GetMigrationPlanTargetEnvironment build() {

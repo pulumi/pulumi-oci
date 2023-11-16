@@ -26,20 +26,6 @@ class PrivateEndpointArgs:
                  nsg_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a PrivateEndpoint resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        :param pulumi.Input[str] display_name: (Updatable) The private endpoint display name. Avoid entering confidential information.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_used_with_configuration_source_provider: (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_id_lists: (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -61,9 +47,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -73,9 +56,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The private endpoint display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -85,9 +65,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -97,13 +74,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -113,9 +83,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -125,9 +92,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -137,9 +101,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        """
         return pulumi.get(self, "dns_zones")
 
     @dns_zones.setter
@@ -149,9 +110,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -161,9 +119,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="isUsedWithConfigurationSourceProvider")
     def is_used_with_configuration_source_provider(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        """
         return pulumi.get(self, "is_used_with_configuration_source_provider")
 
     @is_used_with_configuration_source_provider.setter
@@ -173,9 +128,6 @@ class PrivateEndpointArgs:
     @property
     @pulumi.getter(name="nsgIdLists")
     def nsg_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
-        """
         return pulumi.get(self, "nsg_id_lists")
 
     @nsg_id_lists.setter
@@ -201,23 +153,6 @@ class _PrivateEndpointState:
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PrivateEndpoint resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) The private endpoint display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_used_with_configuration_source_provider: (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_id_lists: (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_ips: The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
-        :param pulumi.Input[str] state: The current lifecycle state of the private endpoint.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        :param pulumi.Input[str] time_created: The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -249,9 +184,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -261,9 +193,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -273,9 +202,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -285,9 +211,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The private endpoint display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -297,9 +220,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        """
         return pulumi.get(self, "dns_zones")
 
     @dns_zones.setter
@@ -309,9 +229,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -321,9 +238,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="isUsedWithConfigurationSourceProvider")
     def is_used_with_configuration_source_provider(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        """
         return pulumi.get(self, "is_used_with_configuration_source_provider")
 
     @is_used_with_configuration_source_provider.setter
@@ -333,9 +247,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="nsgIdLists")
     def nsg_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
-        """
         return pulumi.get(self, "nsg_id_lists")
 
     @nsg_id_lists.setter
@@ -345,9 +256,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="sourceIps")
     def source_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
-        """
         return pulumi.get(self, "source_ips")
 
     @source_ips.setter
@@ -357,9 +265,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the private endpoint.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -369,9 +274,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -381,9 +283,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -393,13 +292,6 @@ class _PrivateEndpointState:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -424,57 +316,9 @@ class PrivateEndpoint(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
-
-        Creates a a private endpoint in the specified compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_private_endpoint = oci.resource_manager.PrivateEndpoint("testPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_endpoint_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["private_endpoint_description"],
-            dns_zones=var["private_endpoint_dns_zones"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_used_with_configuration_source_provider=var["private_endpoint_is_used_with_configuration_source_provider"],
-            nsg_id_lists=var["private_endpoint_nsg_id_list"])
-        ```
-
-        ## Import
-
-        PrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
-        ```
-
+        Create a PrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) The private endpoint display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_used_with_configuration_source_provider: (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_id_lists: (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -483,41 +327,7 @@ class PrivateEndpoint(pulumi.CustomResource):
                  args: PrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
-
-        Creates a a private endpoint in the specified compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_private_endpoint = oci.resource_manager.PrivateEndpoint("testPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_endpoint_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["private_endpoint_description"],
-            dns_zones=var["private_endpoint_dns_zones"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_used_with_configuration_source_provider=var["private_endpoint_is_used_with_configuration_source_provider"],
-            nsg_id_lists=var["private_endpoint_nsg_id_list"])
-        ```
-
-        ## Import
-
-        PrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ResourceManager/privateEndpoint:PrivateEndpoint test_private_endpoint "id"
-        ```
-
+        Create a PrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PrivateEndpointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -603,23 +413,6 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) The private endpoint display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_used_with_configuration_source_provider: (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_id_lists: (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_ips: The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
-        :param pulumi.Input[str] state: The current lifecycle state of the private endpoint.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        :param pulumi.Input[str] time_created: The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-        :param pulumi.Input[str] vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -643,108 +436,65 @@ class PrivateEndpoint(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the private endpoint. Avoid entering confidential information.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The private endpoint display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        """
+    def dns_zones(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isUsedWithConfigurationSourceProvider")
-    def is_used_with_configuration_source_provider(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
-        """
+    def is_used_with_configuration_source_provider(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_used_with_configuration_source_provider")
 
     @property
     @pulumi.getter(name="nsgIdLists")
-    def nsg_id_lists(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
-        """
+    def nsg_id_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nsg_id_lists")
 
     @property
     @pulumi.getter(name="sourceIps")
-    def source_ips(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
-        """
+    def source_ips(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "source_ips")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the private endpoint.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vcn_id")
 

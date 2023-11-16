@@ -51,12 +51,12 @@ export interface GetAlertPolicyRulesResult {
     /**
      * The list of alert_policy_rule_collection.
      */
-    readonly alertPolicyRuleCollections: outputs.DataSafe.GetAlertPolicyRulesAlertPolicyRuleCollection[];
+    readonly alertPolicyRuleCollections?: outputs.DataSafe.GetAlertPolicyRulesAlertPolicyRuleCollection[];
     readonly filters?: outputs.DataSafe.GetAlertPolicyRulesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.

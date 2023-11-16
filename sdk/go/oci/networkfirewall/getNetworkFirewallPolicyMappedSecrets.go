@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
@@ -64,7 +63,7 @@ type GetNetworkFirewallPolicyMappedSecretsArgs struct {
 type GetNetworkFirewallPolicyMappedSecretsResult struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of mapped_secret_summary_collection.
 	MappedSecretSummaryCollections []GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollection `pulumi:"mappedSecretSummaryCollections"`
 	NetworkFirewallPolicyId        string                                                               `pulumi:"networkFirewallPolicyId"`
@@ -110,19 +109,13 @@ func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) ToGetNetworkFirewallP
 	return o
 }
 
-func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyMappedSecretsResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyMappedSecretsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyMappedSecretsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyMappedSecretsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyMappedSecretsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyMappedSecretsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of mapped_secret_summary_collection.

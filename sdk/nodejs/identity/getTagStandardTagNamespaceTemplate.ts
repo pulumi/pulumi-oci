@@ -54,11 +54,11 @@ export interface GetTagStandardTagNamespaceTemplateResult {
     /**
      * The default description of the tag namespace that users can use to create the tag definition
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The reserved name of this standard tag namespace
      */
@@ -66,11 +66,11 @@ export interface GetTagStandardTagNamespaceTemplateResult {
     /**
      * The status of the standard tag namespace
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
      */
-    readonly tagDefinitionTemplates: outputs.Identity.GetTagStandardTagNamespaceTemplateTagDefinitionTemplate[];
+    readonly tagDefinitionTemplates?: outputs.Identity.GetTagStandardTagNamespaceTemplateTagDefinitionTemplate[];
 }
 /**
  * This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Container Databases in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetExternalContainerDatabasesResult struct {
 	ExternalContainerDatabases []GetExternalContainerDatabasesExternalContainerDatabase `pulumi:"externalContainerDatabases"`
 	Filters                    []GetExternalContainerDatabasesFilter                    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetExternalContainerDatabasesResultOutput) ToGetExternalContainerDatabas
 	return o
 }
 
-func (o GetExternalContainerDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalContainerDatabasesResult] {
-	return pulumix.Output[GetExternalContainerDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalContainerDatabasesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalContainerDatabasesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -150,8 +143,8 @@ func (o GetExternalContainerDatabasesResultOutput) Filters() GetExternalContaine
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalContainerDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalContainerDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalContainerDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.

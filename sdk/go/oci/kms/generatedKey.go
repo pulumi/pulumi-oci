@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
@@ -61,7 +60,7 @@ type GeneratedKey struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
 	AssociatedData pulumi.MapOutput `pulumi:"associatedData"`
 	// The encrypted data encryption key generated from a master encryption key.
-	Ciphertext pulumi.StringOutput `pulumi:"ciphertext"`
+	Ciphertext pulumi.StringPtrOutput `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint pulumi.StringOutput `pulumi:"cryptoEndpoint"`
 	// If true, the generated key is also returned unencrypted.
@@ -76,9 +75,9 @@ type GeneratedKey struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	LoggingContext pulumi.MapOutput `pulumi:"loggingContext"`
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-	Plaintext pulumi.StringOutput `pulumi:"plaintext"`
+	Plaintext pulumi.StringPtrOutput `pulumi:"plaintext"`
 	// The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-	PlaintextChecksum pulumi.StringOutput `pulumi:"plaintextChecksum"`
+	PlaintextChecksum pulumi.StringPtrOutput `pulumi:"plaintextChecksum"`
 }
 
 // NewGeneratedKey registers a new resource with the given unique name, arguments, and options.
@@ -234,12 +233,6 @@ func (i *GeneratedKey) ToGeneratedKeyOutputWithContext(ctx context.Context) Gene
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyOutput)
 }
 
-func (i *GeneratedKey) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKey] {
-	return pulumix.Output[*GeneratedKey]{
-		OutputState: i.ToGeneratedKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GeneratedKeyArrayInput is an input type that accepts GeneratedKeyArray and GeneratedKeyArrayOutput values.
 // You can construct a concrete instance of `GeneratedKeyArrayInput` via:
 //
@@ -263,12 +256,6 @@ func (i GeneratedKeyArray) ToGeneratedKeyArrayOutput() GeneratedKeyArrayOutput {
 
 func (i GeneratedKeyArray) ToGeneratedKeyArrayOutputWithContext(ctx context.Context) GeneratedKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyArrayOutput)
-}
-
-func (i GeneratedKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*GeneratedKey] {
-	return pulumix.Output[[]*GeneratedKey]{
-		OutputState: i.ToGeneratedKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GeneratedKeyMapInput is an input type that accepts GeneratedKeyMap and GeneratedKeyMapOutput values.
@@ -296,12 +283,6 @@ func (i GeneratedKeyMap) ToGeneratedKeyMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GeneratedKeyMapOutput)
 }
 
-func (i GeneratedKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GeneratedKey] {
-	return pulumix.Output[map[string]*GeneratedKey]{
-		OutputState: i.ToGeneratedKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GeneratedKeyOutput struct{ *pulumi.OutputState }
 
 func (GeneratedKeyOutput) ElementType() reflect.Type {
@@ -316,20 +297,14 @@ func (o GeneratedKeyOutput) ToGeneratedKeyOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GeneratedKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*GeneratedKey] {
-	return pulumix.Output[*GeneratedKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
 func (o GeneratedKeyOutput) AssociatedData() pulumi.MapOutput {
 	return o.ApplyT(func(v *GeneratedKey) pulumi.MapOutput { return v.AssociatedData }).(pulumi.MapOutput)
 }
 
 // The encrypted data encryption key generated from a master encryption key.
-func (o GeneratedKeyOutput) Ciphertext() pulumi.StringOutput {
-	return o.ApplyT(func(v *GeneratedKey) pulumi.StringOutput { return v.Ciphertext }).(pulumi.StringOutput)
+func (o GeneratedKeyOutput) Ciphertext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GeneratedKey) pulumi.StringPtrOutput { return v.Ciphertext }).(pulumi.StringPtrOutput)
 }
 
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -361,13 +336,13 @@ func (o GeneratedKeyOutput) LoggingContext() pulumi.MapOutput {
 }
 
 // The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-func (o GeneratedKeyOutput) Plaintext() pulumi.StringOutput {
-	return o.ApplyT(func(v *GeneratedKey) pulumi.StringOutput { return v.Plaintext }).(pulumi.StringOutput)
+func (o GeneratedKeyOutput) Plaintext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GeneratedKey) pulumi.StringPtrOutput { return v.Plaintext }).(pulumi.StringPtrOutput)
 }
 
 // The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
-func (o GeneratedKeyOutput) PlaintextChecksum() pulumi.StringOutput {
-	return o.ApplyT(func(v *GeneratedKey) pulumi.StringOutput { return v.PlaintextChecksum }).(pulumi.StringOutput)
+func (o GeneratedKeyOutput) PlaintextChecksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GeneratedKey) pulumi.StringPtrOutput { return v.PlaintextChecksum }).(pulumi.StringPtrOutput)
 }
 
 type GeneratedKeyArrayOutput struct{ *pulumi.OutputState }
@@ -382,12 +357,6 @@ func (o GeneratedKeyArrayOutput) ToGeneratedKeyArrayOutput() GeneratedKeyArrayOu
 
 func (o GeneratedKeyArrayOutput) ToGeneratedKeyArrayOutputWithContext(ctx context.Context) GeneratedKeyArrayOutput {
 	return o
-}
-
-func (o GeneratedKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GeneratedKey] {
-	return pulumix.Output[[]*GeneratedKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GeneratedKeyArrayOutput) Index(i pulumi.IntInput) GeneratedKeyOutput {
@@ -408,12 +377,6 @@ func (o GeneratedKeyMapOutput) ToGeneratedKeyMapOutput() GeneratedKeyMapOutput {
 
 func (o GeneratedKeyMapOutput) ToGeneratedKeyMapOutputWithContext(ctx context.Context) GeneratedKeyMapOutput {
 	return o
-}
-
-func (o GeneratedKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GeneratedKey] {
-	return pulumix.Output[map[string]*GeneratedKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GeneratedKeyMapOutput) MapIndex(k pulumi.StringInput) GeneratedKeyOutput {

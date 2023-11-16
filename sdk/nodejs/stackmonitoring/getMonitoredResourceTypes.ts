@@ -99,7 +99,7 @@ export interface GetMonitoredResourceTypesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isExcludeSystemTypes?: boolean;
     /**
      * Metric namespace for resource type.
@@ -108,7 +108,7 @@ export interface GetMonitoredResourceTypesResult {
     /**
      * The list of monitored_resource_types_collection.
      */
-    readonly monitoredResourceTypesCollections: outputs.StackMonitoring.GetMonitoredResourceTypesMonitoredResourceTypesCollection[];
+    readonly monitoredResourceTypesCollections?: outputs.StackMonitoring.GetMonitoredResourceTypesMonitoredResourceTypesCollection[];
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      */

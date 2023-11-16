@@ -20,15 +20,15 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// A short description of the step.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A flag to indicate whether the artifact has been uploaded for this step or not.
         /// </summary>
-        public readonly bool IsArtifactUploaded;
+        public readonly bool? IsArtifactUploaded;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
         /// </summary>
-        public readonly string JobId;
+        public readonly string? JobId;
         /// <summary>
         /// The configuration details of a step.
         /// </summary>
@@ -40,29 +40,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         /// </summary>
-        public readonly string StepName;
+        public readonly string? StepName;
         /// <summary>
         /// The type of step.
         /// </summary>
-        public readonly string StepType;
+        public readonly string? StepType;
 
         [OutputConstructor]
         private GetPipelinesPipelineStepDetailResult(
             ImmutableArray<string> dependsOns,
 
-            string description,
+            string? description,
 
-            bool isArtifactUploaded,
+            bool? isArtifactUploaded,
 
-            string jobId,
+            string? jobId,
 
             ImmutableArray<Outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult> stepConfigurationDetails,
 
             ImmutableArray<Outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult> stepInfrastructureConfigurationDetails,
 
-            string stepName,
+            string? stepName,
 
-            string stepType)
+            string? stepType)
         {
             DependsOns = dependsOns;
             Description = description;

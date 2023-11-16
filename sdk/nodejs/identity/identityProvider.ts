@@ -90,7 +90,7 @@ export class IdentityProvider extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
      */
@@ -98,15 +98,15 @@ export class IdentityProvider extends pulumi.CustomResource {
     /**
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
      */
-    public readonly freeformAttributes!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformAttributes!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The XML that contains the information required for federating.
      */
@@ -134,19 +134,19 @@ export class IdentityProvider extends pulumi.CustomResource {
     /**
      * The URL to redirect federated users to for authentication with the identity provider.
      */
-    public /*out*/ readonly redirectUrl!: pulumi.Output<string>;
+    public /*out*/ readonly redirectUrl!: pulumi.Output<string | undefined>;
     /**
      * The identity provider's signing certificate used by the IAM Service to validate the SAML2 token.
      */
-    public /*out*/ readonly signingCertificate!: pulumi.Output<string>;
+    public /*out*/ readonly signingCertificate!: pulumi.Output<string | undefined>;
     /**
      * The current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a IdentityProvider resource with the given unique name, arguments, and options.

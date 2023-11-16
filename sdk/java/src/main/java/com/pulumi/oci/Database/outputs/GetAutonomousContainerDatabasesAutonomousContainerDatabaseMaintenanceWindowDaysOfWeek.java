@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeek {
@@ -13,15 +15,15 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
      * @return Name of the month of the year.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeek() {}
     /**
      * @return Name of the month of the year.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeek defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeek build() {

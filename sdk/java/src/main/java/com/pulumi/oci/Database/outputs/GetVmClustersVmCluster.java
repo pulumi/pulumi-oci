@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClustersVmCluster {
@@ -20,339 +22,339 @@ public final class GetVmClustersVmCluster {
      * @return The name of the availability domain that the VM cluster is located in.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
-    private Integer cpuCoreCount;
+    private @Nullable String compartmentId;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return The number of enabled CPU cores.
      * 
      */
-    private Integer cpusEnabled;
+    private @Nullable Integer cpusEnabled;
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    private List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
+    private @Nullable List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
     /**
      * @return Size of the DATA disk group in GBs.
      * 
      */
-    private Double dataStorageSizeInGb;
+    private @Nullable Double dataStorageSizeInGb;
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    private Double dataStorageSizeInTbs;
+    private @Nullable Double dataStorageSizeInTbs;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The list of Db server.
      * 
      */
-    private List<String> dbServers;
+    private @Nullable List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return If provided, filters the results for the given Exadata Infrastructure.
      * 
      */
-    private String exadataInfrastructureId;
+    private @Nullable String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The Oracle Grid Infrastructure software version for the VM cluster.
      * 
      */
-    private String giVersion;
+    private @Nullable String giVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
-    private Boolean isLocalBackupEnabled;
+    private @Nullable Boolean isLocalBackupEnabled;
     /**
      * @return If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
      */
-    private Boolean isSparseDiskgroupEnabled;
+    private @Nullable Boolean isSparseDiskgroupEnabled;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    private String lastPatchHistoryEntryId;
+    private @Nullable String lastPatchHistoryEntryId;
     /**
      * @return The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private Integer memorySizeInGbs;
-    private Double ocpuCount;
-    private Double ocpusEnabled;
+    private @Nullable Integer memorySizeInGbs;
+    private @Nullable Double ocpuCount;
+    private @Nullable Double ocpusEnabled;
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
      */
-    private List<String> sshPublicKeys;
+    private @Nullable List<String> sshPublicKeys;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Operating system version of the image.
      * 
      */
-    private String systemVersion;
+    private @Nullable String systemVersion;
     /**
      * @return The date and time that the VM cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    private String timeZone;
+    private @Nullable String timeZone;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    private String vmClusterNetworkId;
+    private @Nullable String vmClusterNetworkId;
 
     private GetVmClustersVmCluster() {}
     /**
      * @return The name of the availability domain that the VM cluster is located in.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return The number of enabled CPU cores.
      * 
      */
-    public Integer cpusEnabled() {
-        return this.cpusEnabled;
+    public Optional<Integer> cpusEnabled() {
+        return Optional.ofNullable(this.cpusEnabled);
     }
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     public List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+        return this.dataCollectionOptions == null ? List.of() : this.dataCollectionOptions;
     }
     /**
      * @return Size of the DATA disk group in GBs.
      * 
      */
-    public Double dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Optional<Double> dataStorageSizeInGb() {
+        return Optional.ofNullable(this.dataStorageSizeInGb);
     }
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    public Double dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Optional<Double> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
     }
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The list of Db server.
      * 
      */
     public List<String> dbServers() {
-        return this.dbServers;
+        return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return If provided, filters the results for the given Exadata Infrastructure.
      * 
      */
-    public String exadataInfrastructureId() {
-        return this.exadataInfrastructureId;
+    public Optional<String> exadataInfrastructureId() {
+        return Optional.ofNullable(this.exadataInfrastructureId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The Oracle Grid Infrastructure software version for the VM cluster.
      * 
      */
-    public String giVersion() {
-        return this.giVersion;
+    public Optional<String> giVersion() {
+        return Optional.ofNullable(this.giVersion);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      * 
      */
-    public Boolean isLocalBackupEnabled() {
-        return this.isLocalBackupEnabled;
+    public Optional<Boolean> isLocalBackupEnabled() {
+        return Optional.ofNullable(this.isLocalBackupEnabled);
     }
     /**
      * @return If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      * 
      */
-    public Boolean isSparseDiskgroupEnabled() {
-        return this.isSparseDiskgroupEnabled;
+    public Optional<Boolean> isSparseDiskgroupEnabled() {
+        return Optional.ofNullable(this.isSparseDiskgroupEnabled);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    public String lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Optional<String> lastPatchHistoryEntryId() {
+        return Optional.ofNullable(this.lastPatchHistoryEntryId);
     }
     /**
      * @return The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
-    public Double ocpuCount() {
-        return this.ocpuCount;
+    public Optional<Double> ocpuCount() {
+        return Optional.ofNullable(this.ocpuCount);
     }
-    public Double ocpusEnabled() {
-        return this.ocpusEnabled;
+    public Optional<Double> ocpusEnabled() {
+        return Optional.ofNullable(this.ocpusEnabled);
     }
     /**
      * @return The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The public key portion of one or more key pairs used for SSH access to the VM cluster.
      * 
      */
     public List<String> sshPublicKeys() {
-        return this.sshPublicKeys;
+        return this.sshPublicKeys == null ? List.of() : this.sshPublicKeys;
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Operating system version of the image.
      * 
      */
-    public String systemVersion() {
-        return this.systemVersion;
+    public Optional<String> systemVersion() {
+        return Optional.ofNullable(this.systemVersion);
     }
     /**
      * @return The date and time that the VM cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    public String timeZone() {
-        return this.timeZone;
+    public Optional<String> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      * 
      */
-    public String vmClusterNetworkId() {
-        return this.vmClusterNetworkId;
+    public Optional<String> vmClusterNetworkId() {
+        return Optional.ofNullable(this.vmClusterNetworkId);
     }
 
     public static Builder builder() {
@@ -364,36 +366,36 @@ public final class GetVmClustersVmCluster {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private Integer cpuCoreCount;
-        private Integer cpusEnabled;
-        private List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
-        private Double dataStorageSizeInGb;
-        private Double dataStorageSizeInTbs;
-        private Integer dbNodeStorageSizeInGbs;
-        private List<String> dbServers;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String exadataInfrastructureId;
-        private Map<String,Object> freeformTags;
-        private String giVersion;
-        private String id;
-        private Boolean isLocalBackupEnabled;
-        private Boolean isSparseDiskgroupEnabled;
-        private String lastPatchHistoryEntryId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private Integer memorySizeInGbs;
-        private Double ocpuCount;
-        private Double ocpusEnabled;
-        private String shape;
-        private List<String> sshPublicKeys;
-        private String state;
-        private String systemVersion;
-        private String timeCreated;
-        private String timeZone;
-        private String vmClusterNetworkId;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable Integer cpusEnabled;
+        private @Nullable List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions;
+        private @Nullable Double dataStorageSizeInGb;
+        private @Nullable Double dataStorageSizeInTbs;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable List<String> dbServers;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String exadataInfrastructureId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String giVersion;
+        private @Nullable String id;
+        private @Nullable Boolean isLocalBackupEnabled;
+        private @Nullable Boolean isSparseDiskgroupEnabled;
+        private @Nullable String lastPatchHistoryEntryId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable Double ocpuCount;
+        private @Nullable Double ocpusEnabled;
+        private @Nullable String shape;
+        private @Nullable List<String> sshPublicKeys;
+        private @Nullable String state;
+        private @Nullable String systemVersion;
+        private @Nullable String timeCreated;
+        private @Nullable String timeZone;
+        private @Nullable String vmClusterNetworkId;
         public Builder() {}
         public Builder(GetVmClustersVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
@@ -430,162 +432,162 @@ public final class GetVmClustersVmCluster {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder cpusEnabled(Integer cpusEnabled) {
-            this.cpusEnabled = Objects.requireNonNull(cpusEnabled);
+        public Builder cpusEnabled(@Nullable Integer cpusEnabled) {
+            this.cpusEnabled = cpusEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCollectionOptions(List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions) {
-            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+        public Builder dataCollectionOptions(@Nullable List<GetVmClustersVmClusterDataCollectionOption> dataCollectionOptions) {
+            this.dataCollectionOptions = dataCollectionOptions;
             return this;
         }
         public Builder dataCollectionOptions(GetVmClustersVmClusterDataCollectionOption... dataCollectionOptions) {
             return dataCollectionOptions(List.of(dataCollectionOptions));
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+        public Builder dataStorageSizeInGb(@Nullable Double dataStorageSizeInGb) {
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+        public Builder dataStorageSizeInTbs(@Nullable Double dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServers(List<String> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(String... dbServers) {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
-            this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+        public Builder exadataInfrastructureId(@Nullable String exadataInfrastructureId) {
+            this.exadataInfrastructureId = exadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder giVersion(String giVersion) {
-            this.giVersion = Objects.requireNonNull(giVersion);
+        public Builder giVersion(@Nullable String giVersion) {
+            this.giVersion = giVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isLocalBackupEnabled(Boolean isLocalBackupEnabled) {
-            this.isLocalBackupEnabled = Objects.requireNonNull(isLocalBackupEnabled);
+        public Builder isLocalBackupEnabled(@Nullable Boolean isLocalBackupEnabled) {
+            this.isLocalBackupEnabled = isLocalBackupEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isSparseDiskgroupEnabled(Boolean isSparseDiskgroupEnabled) {
-            this.isSparseDiskgroupEnabled = Objects.requireNonNull(isSparseDiskgroupEnabled);
+        public Builder isSparseDiskgroupEnabled(@Nullable Boolean isSparseDiskgroupEnabled) {
+            this.isSparseDiskgroupEnabled = isSparseDiskgroupEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
+        public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+        public Builder ocpuCount(@Nullable Double ocpuCount) {
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpusEnabled(Double ocpusEnabled) {
-            this.ocpusEnabled = Objects.requireNonNull(ocpusEnabled);
+        public Builder ocpusEnabled(@Nullable Double ocpusEnabled) {
+            this.ocpusEnabled = ocpusEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder sshPublicKeys(List<String> sshPublicKeys) {
-            this.sshPublicKeys = Objects.requireNonNull(sshPublicKeys);
+        public Builder sshPublicKeys(@Nullable List<String> sshPublicKeys) {
+            this.sshPublicKeys = sshPublicKeys;
             return this;
         }
         public Builder sshPublicKeys(String... sshPublicKeys) {
             return sshPublicKeys(List.of(sshPublicKeys));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemVersion(String systemVersion) {
-            this.systemVersion = Objects.requireNonNull(systemVersion);
+        public Builder systemVersion(@Nullable String systemVersion) {
+            this.systemVersion = systemVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+        public Builder timeZone(@Nullable String timeZone) {
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterNetworkId(String vmClusterNetworkId) {
-            this.vmClusterNetworkId = Objects.requireNonNull(vmClusterNetworkId);
+        public Builder vmClusterNetworkId(@Nullable String vmClusterNetworkId) {
+            this.vmClusterNetworkId = vmClusterNetworkId;
             return this;
         }
         public GetVmClustersVmCluster build() {

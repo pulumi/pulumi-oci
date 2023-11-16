@@ -57,12 +57,12 @@ export interface GetExternalListenerServicesResult {
     /**
      * The list of external_listener_service_collection.
      */
-    readonly externalListenerServiceCollections: outputs.DatabaseManagement.GetExternalListenerServicesExternalListenerServiceCollection[];
+    readonly externalListenerServiceCollections?: outputs.DatabaseManagement.GetExternalListenerServicesExternalListenerServiceCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalListenerServicesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

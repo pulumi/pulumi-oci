@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting {
@@ -13,63 +15,63 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
      * @return Hostname to access the Duo security account
      * 
      */
-    private String apiHostname;
+    private @Nullable String apiHostname;
     /**
      * @return Attestation key to attest the request and response between Duo Security
      * 
      */
-    private String attestationKey;
+    private @Nullable String attestationKey;
     /**
      * @return Integration key from Duo Security authenticator
      * 
      */
-    private String integrationKey;
+    private @Nullable String integrationKey;
     /**
      * @return Secret key from Duo Security authenticator
      * 
      */
-    private String secretKey;
+    private @Nullable String secretKey;
     /**
      * @return User attribute mapping value
      * 
      */
-    private String userMappingAttribute;
+    private @Nullable String userMappingAttribute;
 
     private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting() {}
     /**
      * @return Hostname to access the Duo security account
      * 
      */
-    public String apiHostname() {
-        return this.apiHostname;
+    public Optional<String> apiHostname() {
+        return Optional.ofNullable(this.apiHostname);
     }
     /**
      * @return Attestation key to attest the request and response between Duo Security
      * 
      */
-    public String attestationKey() {
-        return this.attestationKey;
+    public Optional<String> attestationKey() {
+        return Optional.ofNullable(this.attestationKey);
     }
     /**
      * @return Integration key from Duo Security authenticator
      * 
      */
-    public String integrationKey() {
-        return this.integrationKey;
+    public Optional<String> integrationKey() {
+        return Optional.ofNullable(this.integrationKey);
     }
     /**
      * @return Secret key from Duo Security authenticator
      * 
      */
-    public String secretKey() {
-        return this.secretKey;
+    public Optional<String> secretKey() {
+        return Optional.ofNullable(this.secretKey);
     }
     /**
      * @return User attribute mapping value
      * 
      */
-    public String userMappingAttribute() {
-        return this.userMappingAttribute;
+    public Optional<String> userMappingAttribute() {
+        return Optional.ofNullable(this.userMappingAttribute);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
     }
     @CustomType.Builder
     public static final class Builder {
-        private String apiHostname;
-        private String attestationKey;
-        private String integrationKey;
-        private String secretKey;
-        private String userMappingAttribute;
+        private @Nullable String apiHostname;
+        private @Nullable String attestationKey;
+        private @Nullable String integrationKey;
+        private @Nullable String secretKey;
+        private @Nullable String userMappingAttribute;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
 
         @CustomType.Setter
-        public Builder apiHostname(String apiHostname) {
-            this.apiHostname = Objects.requireNonNull(apiHostname);
+        public Builder apiHostname(@Nullable String apiHostname) {
+            this.apiHostname = apiHostname;
             return this;
         }
         @CustomType.Setter
-        public Builder attestationKey(String attestationKey) {
-            this.attestationKey = Objects.requireNonNull(attestationKey);
+        public Builder attestationKey(@Nullable String attestationKey) {
+            this.attestationKey = attestationKey;
             return this;
         }
         @CustomType.Setter
-        public Builder integrationKey(String integrationKey) {
-            this.integrationKey = Objects.requireNonNull(integrationKey);
+        public Builder integrationKey(@Nullable String integrationKey) {
+            this.integrationKey = integrationKey;
             return this;
         }
         @CustomType.Setter
-        public Builder secretKey(String secretKey) {
-            this.secretKey = Objects.requireNonNull(secretKey);
+        public Builder secretKey(@Nullable String secretKey) {
+            this.secretKey = secretKey;
             return this;
         }
         @CustomType.Setter
-        public Builder userMappingAttribute(String userMappingAttribute) {
-            this.userMappingAttribute = Objects.requireNonNull(userMappingAttribute);
+        public Builder userMappingAttribute(@Nullable String userMappingAttribute) {
+            this.userMappingAttribute = userMappingAttribute;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting build() {

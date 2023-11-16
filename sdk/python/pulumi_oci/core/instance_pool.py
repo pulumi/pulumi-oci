@@ -29,23 +29,6 @@ class InstancePoolArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InstancePool resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-               
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
@@ -69,9 +52,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -81,9 +61,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="instanceConfigurationId")
     def instance_configuration_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
@@ -93,11 +70,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]:
-        """
-        (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-
-        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        """
         return pulumi.get(self, "placement_configurations")
 
     @placement_configurations.setter
@@ -107,9 +79,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter
     def size(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        """
         return pulumi.get(self, "size")
 
     @size.setter
@@ -119,9 +88,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -131,9 +97,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -143,9 +106,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -155,9 +115,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="instanceDisplayNameFormatter")
     def instance_display_name_formatter(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        """
         return pulumi.get(self, "instance_display_name_formatter")
 
     @instance_display_name_formatter.setter
@@ -167,9 +124,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="instanceHostnameFormatter")
     def instance_hostname_formatter(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        """
         return pulumi.get(self, "instance_hostname_formatter")
 
     @instance_hostname_formatter.setter
@@ -179,9 +133,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
-        """
-        The load balancers to attach to the instance pool.
-        """
         return pulumi.get(self, "load_balancers")
 
     @load_balancers.setter
@@ -191,13 +142,6 @@ class InstancePoolArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -223,25 +167,6 @@ class _InstancePoolState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering InstancePool resources.
-        :param pulumi.Input[int] actual_size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-               
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         if actual_size is not None:
             pulumi.set(__self__, "actual_size", actual_size)
@@ -273,9 +198,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="actualSize")
     def actual_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-        """
         return pulumi.get(self, "actual_size")
 
     @actual_size.setter
@@ -285,9 +207,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -297,9 +216,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -309,9 +225,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -321,9 +234,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -333,9 +243,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="instanceConfigurationId")
     def instance_configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
@@ -345,9 +252,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="instanceDisplayNameFormatter")
     def instance_display_name_formatter(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        """
         return pulumi.get(self, "instance_display_name_formatter")
 
     @instance_display_name_formatter.setter
@@ -357,9 +261,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="instanceHostnameFormatter")
     def instance_hostname_formatter(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        """
         return pulumi.get(self, "instance_hostname_formatter")
 
     @instance_hostname_formatter.setter
@@ -369,9 +270,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="loadBalancers")
     def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
-        """
-        The load balancers to attach to the instance pool.
-        """
         return pulumi.get(self, "load_balancers")
 
     @load_balancers.setter
@@ -381,11 +279,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]]:
-        """
-        (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-
-        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        """
         return pulumi.get(self, "placement_configurations")
 
     @placement_configurations.setter
@@ -395,9 +288,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        """
         return pulumi.get(self, "size")
 
     @size.setter
@@ -407,13 +297,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -423,9 +306,6 @@ class _InstancePoolState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -451,88 +331,9 @@ class InstancePool(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
-
-        Creates an instance pool.
-
-        To determine whether capacity is available for a specific shape before you create an instance pool,
-        use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
-        operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_pool = oci.core.InstancePool("testInstancePool",
-            compartment_id=var["compartment_id"],
-            instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
-            placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                fault_domains=var["instance_pool_placement_configurations_fault_domains"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                    )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip"],
-                ),
-                secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                    )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip"],
-                )],
-            )],
-            size=var["instance_pool_size"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["instance_pool_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_display_name_formatter=var["instance_pool_instance_display_name_formatter"],
-            instance_hostname_formatter=var["instance_pool_instance_hostname_formatter"],
-            load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                port=var["instance_pool_load_balancers_port"],
-                vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
-            )])
-        ```
-
-        ## Import
-
-        InstancePools can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
-        ```
-
+        Create a InstancePool resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-               
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -541,69 +342,7 @@ class InstancePool(pulumi.CustomResource):
                  args: InstancePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
-
-        Creates an instance pool.
-
-        To determine whether capacity is available for a specific shape before you create an instance pool,
-        use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
-        operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_pool = oci.core.InstancePool("testInstancePool",
-            compartment_id=var["compartment_id"],
-            instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
-            placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                fault_domains=var["instance_pool_placement_configurations_fault_domains"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
-                primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                    )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip"],
-                ),
-                secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
-                    ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
-                    )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip"],
-                )],
-            )],
-            size=var["instance_pool_size"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["instance_pool_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_display_name_formatter=var["instance_pool_instance_display_name_formatter"],
-            instance_hostname_formatter=var["instance_pool_instance_hostname_formatter"],
-            load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                port=var["instance_pool_load_balancers_port"],
-                vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
-            )])
-        ```
-
-        ## Import
-
-        InstancePools can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/instancePool:InstancePool test_instance_pool "id"
-        ```
-
+        Create a InstancePool resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param InstancePoolArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -690,25 +429,6 @@ class InstancePool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] actual_size: The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        :param pulumi.Input[str] instance_display_name_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        :param pulumi.Input[str] instance_hostname_formatter: (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolLoadBalancerArgs']]]] load_balancers: The load balancers to attach to the instance pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InstancePoolPlacementConfigurationArgs']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-               
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        :param pulumi.Input[int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        :param pulumi.Input[str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -731,111 +451,66 @@ class InstancePool(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="actualSize")
-    def actual_size(self) -> pulumi.Output[int]:
-        """
-        The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-        """
+    def actual_size(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "actual_size")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="instanceConfigurationId")
     def instance_configuration_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
-        """
         return pulumi.get(self, "instance_configuration_id")
 
     @property
     @pulumi.getter(name="instanceDisplayNameFormatter")
-    def instance_display_name_formatter(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-        """
+    def instance_display_name_formatter(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_display_name_formatter")
 
     @property
     @pulumi.getter(name="instanceHostnameFormatter")
-    def instance_hostname_formatter(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-        """
+    def instance_hostname_formatter(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "instance_hostname_formatter")
 
     @property
     @pulumi.getter(name="loadBalancers")
-    def load_balancers(self) -> pulumi.Output[Sequence['outputs.InstancePoolLoadBalancer']]:
-        """
-        The load balancers to attach to the instance pool.
-        """
+    def load_balancers(self) -> pulumi.Output[Optional[Sequence['outputs.InstancePoolLoadBalancer']]]:
         return pulumi.get(self, "load_balancers")
 
     @property
     @pulumi.getter(name="placementConfigurations")
     def placement_configurations(self) -> pulumi.Output[Sequence['outputs.InstancePoolPlacementConfiguration']]:
-        """
-        (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
-
-        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
-        """
         return pulumi.get(self, "placement_configurations")
 
     @property
     @pulumi.getter
     def size(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
-        """
         return pulumi.get(self, "size")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

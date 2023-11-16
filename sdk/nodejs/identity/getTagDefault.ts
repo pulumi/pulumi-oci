@@ -45,42 +45,42 @@ export interface GetTagDefaultResult {
     /**
      * The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The OCID of the tag default.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to "true", the value is set during resource creation.
      * * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
      */
-    readonly isRequired: boolean;
+    readonly isRequired?: boolean;
     /**
      * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly tagDefaultId: string;
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      */
-    readonly tagDefinitionId: string;
+    readonly tagDefinitionId?: string;
     /**
      * The name used in the tag definition. This field is informational in the context of the tag default.
      */
-    readonly tagDefinitionName: string;
+    readonly tagDefinitionName?: string;
     /**
      * The OCID of the tag namespace that contains the tag definition.
      */
-    readonly tagNamespaceId: string;
+    readonly tagNamespaceId?: string;
     /**
      * Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The default value for the tag definition. This will be applied to all new resources created in the compartment.
      */
-    readonly value: string;
+    readonly value?: string;
 }
 /**
  * This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.

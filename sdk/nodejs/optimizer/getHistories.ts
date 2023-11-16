@@ -100,11 +100,11 @@ export interface GetHistoriesResult {
     /**
      * The list of history_collection.
      */
-    readonly historyCollections: outputs.Optimizer.GetHistoriesHistoryCollection[];
+    readonly historyCollections?: outputs.Optimizer.GetHistoriesHistoryCollection[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name assigned to the resource.
      */

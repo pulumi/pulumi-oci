@@ -29,7 +29,7 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The database object that contains the difference column.
      * 
@@ -49,7 +49,7 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
      * @return The list of sdm_masking_policy_difference_column_collection.
      * 
      */
-    private List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections;
+    private @Nullable List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections;
     private String sdmMaskingPolicyDifferenceId;
     /**
      * @return Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.
@@ -79,8 +79,8 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The database object that contains the difference column.
@@ -108,7 +108,7 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
      * 
      */
     public List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections() {
-        return this.sdmMaskingPolicyDifferenceColumnCollections;
+        return this.sdmMaskingPolicyDifferenceColumnCollections == null ? List.of() : this.sdmMaskingPolicyDifferenceColumnCollections;
     }
     public String sdmMaskingPolicyDifferenceId() {
         return this.sdmMaskingPolicyDifferenceId;
@@ -133,11 +133,11 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
         private @Nullable List<String> columnNames;
         private @Nullable String differenceType;
         private @Nullable List<GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> objects;
         private @Nullable String plannedAction;
         private @Nullable List<String> schemaNames;
-        private List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections;
+        private @Nullable List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections;
         private String sdmMaskingPolicyDifferenceId;
         private @Nullable String syncStatus;
         public Builder() {}
@@ -177,8 +177,8 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -203,8 +203,8 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
             return schemaNames(List.of(schemaNames));
         }
         @CustomType.Setter
-        public Builder sdmMaskingPolicyDifferenceColumnCollections(List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections) {
-            this.sdmMaskingPolicyDifferenceColumnCollections = Objects.requireNonNull(sdmMaskingPolicyDifferenceColumnCollections);
+        public Builder sdmMaskingPolicyDifferenceColumnCollections(@Nullable List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections) {
+            this.sdmMaskingPolicyDifferenceColumnCollections = sdmMaskingPolicyDifferenceColumnCollections;
             return this;
         }
         public Builder sdmMaskingPolicyDifferenceColumnCollections(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection... sdmMaskingPolicyDifferenceColumnCollections) {

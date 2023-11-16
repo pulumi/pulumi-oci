@@ -52,46 +52,31 @@ class GetFusionEnvironmentDataMaskingActivityResult:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> str:
-        """
-        Fusion Environment Identifier.
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isResumeDataMasking")
-    def is_resume_data_masking(self) -> bool:
+    def is_resume_data_masking(self) -> Optional[bool]:
         return pulumi.get(self, "is_resume_data_masking")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DataMaskingActivity.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeMaskingFinish")
-    def time_masking_finish(self) -> str:
-        """
-        The time the data masking activity ended. An RFC3339 formatted datetime string.
-        """
+    def time_masking_finish(self) -> Optional[str]:
         return pulumi.get(self, "time_masking_finish")
 
     @property
     @pulumi.getter(name="timeMaskingStart")
-    def time_masking_start(self) -> str:
-        """
-        The time the data masking activity started. An RFC3339 formatted datetime string.
-        """
+    def time_masking_start(self) -> Optional[str]:
         return pulumi.get(self, "time_masking_start")
 
 
@@ -114,23 +99,7 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
                                                  fusion_environment_id: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentDataMaskingActivityResult:
     """
-    This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a DataMaskingActivity by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=oci_fusion_apps_data_masking_activity["test_data_masking_activity"]["id"],
-        fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str data_masking_activity_id: Unique DataMasking run identifier.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dataMaskingActivityId'] = data_masking_activity_id
@@ -153,22 +122,6 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
                                                         fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivityResult]:
     """
-    This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a DataMaskingActivity by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=oci_fusion_apps_data_masking_activity["test_data_masking_activity"]["id"],
-        fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str data_masking_activity_id: Unique DataMasking run identifier.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     ...

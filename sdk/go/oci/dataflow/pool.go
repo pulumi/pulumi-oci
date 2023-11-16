@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
@@ -89,19 +88,19 @@ type Pool struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-	IdleTimeoutInMinutes pulumi.IntOutput `pulumi:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes pulumi.IntPtrOutput `pulumi:"idleTimeoutInMinutes"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId pulumi.StringOutput `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId pulumi.StringPtrOutput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName pulumi.StringOutput `pulumi:"ownerUserName"`
+	OwnerUserName pulumi.StringPtrOutput `pulumi:"ownerUserName"`
 	// A collection of metrics related to a particular pool.
 	PoolMetrics PoolPoolMetricArrayOutput `pulumi:"poolMetrics"`
 	// (Updatable) A list of schedules for pool to auto start and stop.
@@ -110,11 +109,11 @@ type Pool struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewPool registers a new resource with the given unique name, arguments, and options.
@@ -303,12 +302,6 @@ func (i *Pool) ToPoolOutputWithContext(ctx context.Context) PoolOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PoolOutput)
 }
 
-func (i *Pool) ToOutput(ctx context.Context) pulumix.Output[*Pool] {
-	return pulumix.Output[*Pool]{
-		OutputState: i.ToPoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PoolArrayInput is an input type that accepts PoolArray and PoolArrayOutput values.
 // You can construct a concrete instance of `PoolArrayInput` via:
 //
@@ -332,12 +325,6 @@ func (i PoolArray) ToPoolArrayOutput() PoolArrayOutput {
 
 func (i PoolArray) ToPoolArrayOutputWithContext(ctx context.Context) PoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PoolArrayOutput)
-}
-
-func (i PoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*Pool] {
-	return pulumix.Output[[]*Pool]{
-		OutputState: i.ToPoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PoolMapInput is an input type that accepts PoolMap and PoolMapOutput values.
@@ -365,12 +352,6 @@ func (i PoolMap) ToPoolMapOutputWithContext(ctx context.Context) PoolMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PoolMapOutput)
 }
 
-func (i PoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Pool] {
-	return pulumix.Output[map[string]*Pool]{
-		OutputState: i.ToPoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PoolOutput struct{ *pulumi.OutputState }
 
 func (PoolOutput) ElementType() reflect.Type {
@@ -383,12 +364,6 @@ func (o PoolOutput) ToPoolOutput() PoolOutput {
 
 func (o PoolOutput) ToPoolOutputWithContext(ctx context.Context) PoolOutput {
 	return o
-}
-
-func (o PoolOutput) ToOutput(ctx context.Context) pulumix.Output[*Pool] {
-	return pulumix.Output[*Pool]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of a compartment.
@@ -407,8 +382,8 @@ func (o PoolOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly description. Avoid entering confidential information.
-func (o PoolOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o PoolOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -422,23 +397,23 @@ func (o PoolOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-func (o PoolOutput) IdleTimeoutInMinutes() pulumi.IntOutput {
-	return o.ApplyT(func(v *Pool) pulumi.IntOutput { return v.IdleTimeoutInMinutes }).(pulumi.IntOutput)
+func (o PoolOutput) IdleTimeoutInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.IntPtrOutput { return v.IdleTimeoutInMinutes }).(pulumi.IntPtrOutput)
 }
 
 // The detailed messages about the lifecycle state.
-func (o PoolOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o PoolOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user who created the resource.
-func (o PoolOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o PoolOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o PoolOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o PoolOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 // A collection of metrics related to a particular pool.
@@ -455,18 +430,18 @@ func (o PoolOutput) Schedules() PoolScheduleArrayOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o PoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o PoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o PoolOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pool) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o PoolOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pool) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type PoolArrayOutput struct{ *pulumi.OutputState }
@@ -481,12 +456,6 @@ func (o PoolArrayOutput) ToPoolArrayOutput() PoolArrayOutput {
 
 func (o PoolArrayOutput) ToPoolArrayOutputWithContext(ctx context.Context) PoolArrayOutput {
 	return o
-}
-
-func (o PoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Pool] {
-	return pulumix.Output[[]*Pool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PoolArrayOutput) Index(i pulumi.IntInput) PoolOutput {
@@ -507,12 +476,6 @@ func (o PoolMapOutput) ToPoolMapOutput() PoolMapOutput {
 
 func (o PoolMapOutput) ToPoolMapOutputWithContext(ctx context.Context) PoolMapOutput {
 	return o
-}
-
-func (o PoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Pool] {
-	return pulumix.Output[map[string]*Pool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PoolMapOutput) MapIndex(k pulumi.StringInput) PoolOutput {

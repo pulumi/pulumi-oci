@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,140 +92,140 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the user assessment.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the user assessment.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the user assessment.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the user assessment.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     @Export(name="ignoredAssessmentIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> ignoredAssessmentIds;
+    private Output</* @Nullable */ List<String>> ignoredAssessmentIds;
 
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    public Output<List<String>> ignoredAssessmentIds() {
-        return this.ignoredAssessmentIds;
+    public Output<Optional<List<String>>> ignoredAssessmentIds() {
+        return Codegen.optional(this.ignoredAssessmentIds);
     }
     /**
      * List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     @Export(name="ignoredTargets", refs={List.class,UserAssessmentIgnoredTarget.class}, tree="[0,1]")
-    private Output<List<UserAssessmentIgnoredTarget>> ignoredTargets;
+    private Output</* @Nullable */ List<UserAssessmentIgnoredTarget>> ignoredTargets;
 
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    public Output<List<UserAssessmentIgnoredTarget>> ignoredTargets() {
-        return this.ignoredTargets;
+    public Output<Optional<List<UserAssessmentIgnoredTarget>>> ignoredTargets() {
+        return Codegen.optional(this.ignoredTargets);
     }
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      * 
      */
     @Export(name="isBaseline", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBaseline;
+    private Output</* @Nullable */ Boolean> isBaseline;
 
     /**
      * @return Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      * 
      */
-    public Output<Boolean> isBaseline() {
-        return this.isBaseline;
+    public Output<Optional<Boolean>> isBaseline() {
+        return Codegen.optional(this.isBaseline);
     }
     /**
      * Indicates if the user assessment deviates from the baseline.
      * 
      */
     @Export(name="isDeviatedFromBaseline", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDeviatedFromBaseline;
+    private Output</* @Nullable */ Boolean> isDeviatedFromBaseline;
 
     /**
      * @return Indicates if the user assessment deviates from the baseline.
      * 
      */
-    public Output<Boolean> isDeviatedFromBaseline() {
-        return this.isDeviatedFromBaseline;
+    public Output<Optional<Boolean>> isDeviatedFromBaseline() {
+        return Codegen.optional(this.isDeviatedFromBaseline);
     }
     /**
      * The OCID of the last user assessment baseline against which the latest assessment was compared.
      * 
      */
     @Export(name="lastComparedBaselineId", refs={String.class}, tree="[0]")
-    private Output<String> lastComparedBaselineId;
+    private Output</* @Nullable */ String> lastComparedBaselineId;
 
     /**
      * @return The OCID of the last user assessment baseline against which the latest assessment was compared.
      * 
      */
-    public Output<String> lastComparedBaselineId() {
-        return this.lastComparedBaselineId;
+    public Output<Optional<String>> lastComparedBaselineId() {
+        return Codegen.optional(this.lastComparedBaselineId);
     }
     /**
      * Details about the current state of the user assessment.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the user assessment.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
@@ -233,7 +234,7 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="schedule", refs={String.class}, tree="[0]")
-    private Output<String> schedule;
+    private Output</* @Nullable */ String> schedule;
 
     /**
      * @return (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
@@ -241,64 +242,64 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
      * 
      */
-    public Output<String> schedule() {
-        return this.schedule;
+    public Output<Optional<String>> schedule() {
+        return Codegen.optional(this.schedule);
     }
     /**
      * The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      * 
      */
     @Export(name="scheduleAssessmentId", refs={String.class}, tree="[0]")
-    private Output<String> scheduleAssessmentId;
+    private Output</* @Nullable */ String> scheduleAssessmentId;
 
     /**
      * @return The OCID of the user assessment that is responsible for creating this scheduled save assessment.
      * 
      */
-    public Output<String> scheduleAssessmentId() {
-        return this.scheduleAssessmentId;
+    public Output<Optional<String>> scheduleAssessmentId() {
+        return Codegen.optional(this.scheduleAssessmentId);
     }
     /**
      * The current state of the user assessment.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the user assessment.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
     @Export(name="statistics", refs={String.class}, tree="[0]")
-    private Output<String> statistics;
+    private Output</* @Nullable */ String> statistics;
 
     /**
      * @return Map that contains maps of values. Example: `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
      * 
      */
-    public Output<String> statistics() {
-        return this.statistics;
+    public Output<Optional<String>> statistics() {
+        return Codegen.optional(this.statistics);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of the target database on which the user assessment is to be run.
@@ -325,84 +326,84 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> targetIds;
+    private Output</* @Nullable */ List<String>> targetIds;
 
     /**
      * @return Array of database target OCIDs.
      * 
      */
-    public Output<List<String>> targetIds() {
-        return this.targetIds;
+    public Output<Optional<List<String>>> targetIds() {
+        return Codegen.optional(this.targetIds);
     }
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeLastAssessed", refs={String.class}, tree="[0]")
-    private Output<String> timeLastAssessed;
+    private Output</* @Nullable */ String> timeLastAssessed;
 
     /**
      * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeLastAssessed() {
-        return this.timeLastAssessed;
+    public Output<Optional<String>> timeLastAssessed() {
+        return Codegen.optional(this.timeLastAssessed);
     }
     /**
      * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Indicates whether the user assessment was created by the system or the user.
      * 
      */
     @Export(name="triggeredBy", refs={String.class}, tree="[0]")
-    private Output<String> triggeredBy;
+    private Output</* @Nullable */ String> triggeredBy;
 
     /**
      * @return Indicates whether the user assessment was created by the system or the user.
      * 
      */
-    public Output<String> triggeredBy() {
-        return this.triggeredBy;
+    public Output<Optional<String>> triggeredBy() {
+        return Codegen.optional(this.triggeredBy);
     }
     /**
      * The type of the user assessment. The possible types are:
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The type of the user assessment. The possible types are:
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
 
     /**

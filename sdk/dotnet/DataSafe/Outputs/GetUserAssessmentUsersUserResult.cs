@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items that match the specified account status.
         /// </summary>
-        public readonly string AccountStatus;
+        public readonly string? AccountStatus;
         /// <summary>
         /// The admin roles granted to the user.
         /// </summary>
@@ -24,39 +24,39 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items that match the specified authentication type.
         /// </summary>
-        public readonly string AuthenticationType;
+        public readonly string? AuthenticationType;
         /// <summary>
         /// The unique user key. This is a system-generated identifier. Use ListUsers to get the user key for a user.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeLastLogin;
+        public readonly string? TimeLastLogin;
         /// <summary>
         /// The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimePasswordChanged;
+        public readonly string? TimePasswordChanged;
         /// <summary>
         /// The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUserCreated;
+        public readonly string? TimeUserCreated;
         /// <summary>
         /// A filter to return only items that match the specified user category.
         /// </summary>
-        public readonly string UserCategory;
+        public readonly string? UserCategory;
         /// <summary>
         /// A filter to return only items that match the specified user name.
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
         /// <summary>
         /// A filter to return only items that match the specified user profile.
         /// </summary>
-        public readonly string UserProfile;
+        public readonly string? UserProfile;
         /// <summary>
         /// The user type, which can be a combination of the following:
         /// </summary>
@@ -64,27 +64,27 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetUserAssessmentUsersUserResult(
-            string accountStatus,
+            string? accountStatus,
 
             ImmutableArray<string> adminRoles,
 
-            string authenticationType,
+            string? authenticationType,
 
-            string key,
+            string? key,
 
-            string targetId,
+            string? targetId,
 
-            string timeLastLogin,
+            string? timeLastLogin,
 
-            string timePasswordChanged,
+            string? timePasswordChanged,
 
-            string timeUserCreated,
+            string? timeUserCreated,
 
-            string userCategory,
+            string? userCategory,
 
-            string userName,
+            string? userName,
 
-            string userProfile,
+            string? userProfile,
 
             ImmutableArray<string> userTypes)
         {

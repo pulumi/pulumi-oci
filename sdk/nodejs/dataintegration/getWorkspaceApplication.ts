@@ -57,100 +57,100 @@ export interface GetWorkspaceApplicationResult {
     /**
      * The source application version of the application.
      */
-    readonly applicationVersion: number;
+    readonly applicationVersion?: number;
     /**
      * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A list of dependent objects in this patch.
      */
-    readonly dependentObjectMetadatas: outputs.DataIntegration.GetWorkspaceApplicationDependentObjectMetadata[];
+    readonly dependentObjectMetadatas?: outputs.DataIntegration.GetWorkspaceApplicationDependentObjectMetadata[];
     /**
      * The description of the aggregator.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * OCID of the resource that is used to uniquely identify the application
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    readonly identifier: string;
+    readonly identifier?: string;
     /**
      * The key of the object.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    readonly keyMap: {[key: string]: any};
+    readonly keyMap?: {[key: string]: any};
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    readonly metadatas: outputs.DataIntegration.GetWorkspaceApplicationMetadata[];
+    readonly metadatas?: outputs.DataIntegration.GetWorkspaceApplicationMetadata[];
     /**
      * The object type.
      */
-    readonly modelType: string;
+    readonly modelType?: string;
     /**
      * The object's model version.
      */
-    readonly modelVersion: string;
+    readonly modelVersion?: string;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    readonly objectStatus: number;
+    readonly objectStatus?: number;
     /**
      * The object version.
      */
-    readonly objectVersion: number;
+    readonly objectVersion?: number;
     /**
      * A reference to the object's parent.
      */
-    readonly parentReves: outputs.DataIntegration.GetWorkspaceApplicationParentRef[];
+    readonly parentReves?: outputs.DataIntegration.GetWorkspaceApplicationParentRef[];
     /**
      * A list of objects that are published or unpublished in this patch.
      */
-    readonly publishedObjectMetadatas: outputs.DataIntegration.GetWorkspaceApplicationPublishedObjectMetadata[];
-    readonly registryMetadatas: outputs.DataIntegration.GetWorkspaceApplicationRegistryMetadata[];
+    readonly publishedObjectMetadatas?: outputs.DataIntegration.GetWorkspaceApplicationPublishedObjectMetadata[];
+    readonly registryMetadatas?: outputs.DataIntegration.GetWorkspaceApplicationRegistryMetadata[];
     /**
      * The information about the application.
      */
-    readonly sourceApplicationInfos: outputs.DataIntegration.GetWorkspaceApplicationSourceApplicationInfo[];
+    readonly sourceApplicationInfos?: outputs.DataIntegration.GetWorkspaceApplicationSourceApplicationInfo[];
     /**
      * The current state of the workspace.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the application was created, in the timestamp format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the application was patched, in the timestamp format defined by RFC3339.
      */
-    readonly timePatched: string;
+    readonly timePatched?: string;
     /**
      * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      */

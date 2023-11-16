@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waf.outputs.GetNetworkAddressListsNetworkAddressListCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkAddressListsNetworkAddressListCollection {
-    private List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
+    private @Nullable List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
 
     private GetNetworkAddressListsNetworkAddressListCollection() {}
     public List<GetNetworkAddressListsNetworkAddressListCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNetworkAddressListsNetworkAddressListCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
+        private @Nullable List<GetNetworkAddressListsNetworkAddressListCollectionItem> items;
         public Builder() {}
         public Builder(GetNetworkAddressListsNetworkAddressListCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNetworkAddressListsNetworkAddressListCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNetworkAddressListsNetworkAddressListCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNetworkAddressListsNetworkAddressListCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNetworkAddressListsNetworkAddressListCollectionItem... items) {

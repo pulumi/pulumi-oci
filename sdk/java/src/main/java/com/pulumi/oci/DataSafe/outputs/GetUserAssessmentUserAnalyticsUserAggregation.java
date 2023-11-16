@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentUserAnalyticsUserAggregationItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentUserAnalyticsUserAggregation {
@@ -14,7 +15,7 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
      * @return The array of user aggregation data.
      * 
      */
-    private List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
+    private @Nullable List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
 
     private GetUserAssessmentUserAnalyticsUserAggregation() {}
     /**
@@ -22,7 +23,7 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
      * 
      */
     public List<GetUserAssessmentUserAnalyticsUserAggregationItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
+        private @Nullable List<GetUserAssessmentUserAnalyticsUserAggregationItem> items;
         public Builder() {}
         public Builder(GetUserAssessmentUserAnalyticsUserAggregation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetUserAssessmentUserAnalyticsUserAggregationItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetUserAssessmentUserAnalyticsUserAggregationItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetUserAssessmentUserAnalyticsUserAggregationItem... items) {

@@ -29,12 +29,12 @@ public final class GetServiceEnvironmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of service_environment_collection.
      * 
      */
-    private List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections;
+    private @Nullable List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections;
     private @Nullable String serviceEnvironmentId;
     private @Nullable String serviceEnvironmentType;
 
@@ -60,15 +60,15 @@ public final class GetServiceEnvironmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of service_environment_collection.
      * 
      */
     public List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections() {
-        return this.serviceEnvironmentCollections;
+        return this.serviceEnvironmentCollections == null ? List.of() : this.serviceEnvironmentCollections;
     }
     public Optional<String> serviceEnvironmentId() {
         return Optional.ofNullable(this.serviceEnvironmentId);
@@ -89,8 +89,8 @@ public final class GetServiceEnvironmentsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetServiceEnvironmentsFilter> filters;
-        private String id;
-        private List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections;
+        private @Nullable String id;
+        private @Nullable List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections;
         private @Nullable String serviceEnvironmentId;
         private @Nullable String serviceEnvironmentType;
         public Builder() {}
@@ -124,13 +124,13 @@ public final class GetServiceEnvironmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceEnvironmentCollections(List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections) {
-            this.serviceEnvironmentCollections = Objects.requireNonNull(serviceEnvironmentCollections);
+        public Builder serviceEnvironmentCollections(@Nullable List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections) {
+            this.serviceEnvironmentCollections = serviceEnvironmentCollections;
             return this;
         }
         public Builder serviceEnvironmentCollections(GetServiceEnvironmentsServiceEnvironmentCollection... serviceEnvironmentCollections) {

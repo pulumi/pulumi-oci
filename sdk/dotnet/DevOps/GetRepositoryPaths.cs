@@ -185,7 +185,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? PathsInSubtree;
         public readonly string? Ref;
         public readonly string RepositoryId;
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.DevOps
 
             string? folderPath,
 
-            string id,
+            string? id,
 
             bool? pathsInSubtree,
 

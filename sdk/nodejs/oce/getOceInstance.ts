@@ -45,109 +45,109 @@ export interface GetOceInstanceResult {
     /**
      * a list of add-on features for the ocm instance
      */
-    readonly addOnFeatures: string[];
+    readonly addOnFeatures?: string[];
     /**
      * Admin Email for Notification
      */
-    readonly adminEmail: string;
+    readonly adminEmail?: string;
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * OceInstance description, can be updated
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * disaster recovery paired ragion name
      */
-    readonly drRegion: string;
+    readonly drRegion?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique GUID identifier that is immutable on creation
      */
-    readonly guid: string;
+    readonly guid?: string;
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
-    readonly idcsAccessToken: string;
+    readonly id?: string;
+    readonly idcsAccessToken?: string;
     /**
      * IDCS Tenancy Identifier
      */
-    readonly idcsTenancy: string;
+    readonly idcsTenancy?: string;
     /**
      * Flag indicating whether the instance access is private or public
      */
-    readonly instanceAccessType: string;
+    readonly instanceAccessType?: string;
     /**
      * Flag indicating whether the instance license is new cloud or bring your own license
      */
-    readonly instanceLicenseType: string;
+    readonly instanceLicenseType?: string;
     /**
      * Instance type based on its usage
      */
-    readonly instanceUsageType: string;
+    readonly instanceUsageType?: string;
     /**
      * Details of the current state of the instance lifecycle
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * OceInstance Name
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Object Storage Namespace of tenancy
      */
-    readonly objectStorageNamespace: string;
+    readonly objectStorageNamespace?: string;
     readonly oceInstanceId: string;
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    readonly service: {[key: string]: any};
+    readonly service?: {[key: string]: any};
     /**
      * The current state of the instance lifecycle.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly stateMessage: string;
+    readonly stateMessage?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Tenancy Identifier
      */
-    readonly tenancyId: string;
+    readonly tenancyId?: string;
     /**
      * Tenancy Name
      */
-    readonly tenancyName: string;
+    readonly tenancyName?: string;
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the OceInstance was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      */
-    readonly upgradeSchedule: string;
+    readonly upgradeSchedule?: string;
     /**
      * Web Application Firewall(WAF) primary domain
      */
-    readonly wafPrimaryDomain: string;
+    readonly wafPrimaryDomain?: string;
 }
 /**
  * This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.

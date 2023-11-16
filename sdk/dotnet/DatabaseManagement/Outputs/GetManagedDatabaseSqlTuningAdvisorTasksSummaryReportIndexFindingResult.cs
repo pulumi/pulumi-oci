@@ -20,37 +20,37 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Numerical representation of the index.
         /// </summary>
-        public readonly string IndexHashValue;
+        public readonly string? IndexHashValue;
         /// <summary>
         /// Name of the index.
         /// </summary>
-        public readonly string IndexName;
+        public readonly string? IndexName;
         /// <summary>
         /// The number of the times the object is referenced within the SQL Tuning advisor task findings.
         /// </summary>
-        public readonly int ReferenceCount;
+        public readonly int? ReferenceCount;
         /// <summary>
         /// Schema of the object.
         /// </summary>
-        public readonly string Schema;
+        public readonly string? Schema;
         /// <summary>
         /// Table's name related to the index.
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFindingResult(
             ImmutableArray<string> indexColumns,
 
-            string indexHashValue,
+            string? indexHashValue,
 
-            string indexName,
+            string? indexName,
 
-            int referenceCount,
+            int? referenceCount,
 
-            string schema,
+            string? schema,
 
-            string tableName)
+            string? tableName)
         {
             IndexColumns = indexColumns;
             IndexHashValue = indexHashValue;

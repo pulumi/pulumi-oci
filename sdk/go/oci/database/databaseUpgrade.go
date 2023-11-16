@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
@@ -37,67 +36,67 @@ type DatabaseUpgrade struct {
 	// The database upgrade action.
 	Action pulumi.StringOutput `pulumi:"action"`
 	// The character set for the database.
-	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
+	CharacterSet pulumi.StringPtrOutput `pulumi:"characterSet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The Connection strings used to connect to the Oracle Database.
 	ConnectionStrings DatabaseUpgradeConnectionStringArrayOutput `pulumi:"connectionStrings"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
-	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
+	DatabaseSoftwareImageId pulumi.StringPtrOutput `pulumi:"databaseSoftwareImageId"`
 	// Details for the database upgrade source.
-	DatabaseUpgradeSourceDetails DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput `pulumi:"databaseUpgradeSourceDetails"`
+	DatabaseUpgradeSourceDetails DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput `pulumi:"databaseUpgradeSourceDetails"`
 	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 	DbBackupConfigs DatabaseUpgradeDbBackupConfigArrayOutput `pulumi:"dbBackupConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	DbHomeId pulumi.StringOutput `pulumi:"dbHomeId"`
+	DbHomeId pulumi.StringPtrOutput `pulumi:"dbHomeId"`
 	// The database name.
-	DbName pulumi.StringOutput `pulumi:"dbName"`
+	DbName pulumi.StringPtrOutput `pulumi:"dbName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrOutput `pulumi:"dbSystemId"`
 	// A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbUniqueName pulumi.StringPtrOutput `pulumi:"dbUniqueName"`
 	// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-	DbWorkload pulumi.StringOutput `pulumi:"dbWorkload"`
+	DbWorkload pulumi.StringPtrOutput `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// True if the database is a container database.
-	IsCdb pulumi.BoolOutput `pulumi:"isCdb"`
+	IsCdb pulumi.BoolPtrOutput `pulumi:"isCdb"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
+	KeyStoreId pulumi.StringPtrOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
+	KeyStoreWalletName pulumi.StringPtrOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId pulumi.StringPtrOutput `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
-	LastBackupDurationInSeconds pulumi.IntOutput `pulumi:"lastBackupDurationInSeconds"`
+	LastBackupDurationInSeconds pulumi.IntPtrOutput `pulumi:"lastBackupDurationInSeconds"`
 	// The date and time when the latest database backup was created.
-	LastBackupTimestamp pulumi.StringOutput `pulumi:"lastBackupTimestamp"`
+	LastBackupTimestamp pulumi.StringPtrOutput `pulumi:"lastBackupTimestamp"`
 	// The date and time when the latest database backup failed.
-	LastFailedBackupTimestamp pulumi.StringOutput `pulumi:"lastFailedBackupTimestamp"`
+	LastFailedBackupTimestamp pulumi.StringPtrOutput `pulumi:"lastFailedBackupTimestamp"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The national character set for the database.
-	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	NcharacterSet pulumi.StringPtrOutput `pulumi:"ncharacterSet"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-	PdbName pulumi.StringOutput `pulumi:"pdbName"`
+	PdbName pulumi.StringPtrOutput `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
-	SidPrefix pulumi.StringOutput `pulumi:"sidPrefix"`
+	SidPrefix pulumi.StringPtrOutput `pulumi:"sidPrefix"`
 	// Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
+	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringPtrOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// The current state of the database.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	VaultId pulumi.StringPtrOutput `pulumi:"vaultId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-	VmClusterId pulumi.StringOutput `pulumi:"vmClusterId"`
+	VmClusterId pulumi.StringPtrOutput `pulumi:"vmClusterId"`
 }
 
 // NewDatabaseUpgrade registers a new resource with the given unique name, arguments, and options.
@@ -315,12 +314,6 @@ func (i *DatabaseUpgrade) ToDatabaseUpgradeOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseUpgradeOutput)
 }
 
-func (i *DatabaseUpgrade) ToOutput(ctx context.Context) pulumix.Output[*DatabaseUpgrade] {
-	return pulumix.Output[*DatabaseUpgrade]{
-		OutputState: i.ToDatabaseUpgradeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseUpgradeArrayInput is an input type that accepts DatabaseUpgradeArray and DatabaseUpgradeArrayOutput values.
 // You can construct a concrete instance of `DatabaseUpgradeArrayInput` via:
 //
@@ -344,12 +337,6 @@ func (i DatabaseUpgradeArray) ToDatabaseUpgradeArrayOutput() DatabaseUpgradeArra
 
 func (i DatabaseUpgradeArray) ToDatabaseUpgradeArrayOutputWithContext(ctx context.Context) DatabaseUpgradeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseUpgradeArrayOutput)
-}
-
-func (i DatabaseUpgradeArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseUpgrade] {
-	return pulumix.Output[[]*DatabaseUpgrade]{
-		OutputState: i.ToDatabaseUpgradeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseUpgradeMapInput is an input type that accepts DatabaseUpgradeMap and DatabaseUpgradeMapOutput values.
@@ -377,12 +364,6 @@ func (i DatabaseUpgradeMap) ToDatabaseUpgradeMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseUpgradeMapOutput)
 }
 
-func (i DatabaseUpgradeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseUpgrade] {
-	return pulumix.Output[map[string]*DatabaseUpgrade]{
-		OutputState: i.ToDatabaseUpgradeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseUpgradeOutput struct{ *pulumi.OutputState }
 
 func (DatabaseUpgradeOutput) ElementType() reflect.Type {
@@ -397,25 +378,19 @@ func (o DatabaseUpgradeOutput) ToDatabaseUpgradeOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o DatabaseUpgradeOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseUpgrade] {
-	return pulumix.Output[*DatabaseUpgrade]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The database upgrade action.
 func (o DatabaseUpgradeOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
 }
 
 // The character set for the database.
-func (o DatabaseUpgradeOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.CharacterSet }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o DatabaseUpgradeOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Connection strings used to connect to the Oracle Database.
@@ -429,15 +404,15 @@ func (o DatabaseUpgradeOutput) DatabaseId() pulumi.StringOutput {
 }
 
 // The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
-func (o DatabaseUpgradeOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) DatabaseSoftwareImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringPtrOutput)
 }
 
 // Details for the database upgrade source.
-func (o DatabaseUpgradeOutput) DatabaseUpgradeSourceDetails() DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput {
+func (o DatabaseUpgradeOutput) DatabaseUpgradeSourceDetails() DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput {
 		return v.DatabaseUpgradeSourceDetails
-	}).(DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput)
+	}).(DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrOutput)
 }
 
 // Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -446,28 +421,28 @@ func (o DatabaseUpgradeOutput) DbBackupConfigs() DatabaseUpgradeDbBackupConfigAr
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-func (o DatabaseUpgradeOutput) DbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DbHomeId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) DbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.DbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // The database name.
-func (o DatabaseUpgradeOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.DbName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-func (o DatabaseUpgradeOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-func (o DatabaseUpgradeOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-func (o DatabaseUpgradeOutput) DbWorkload() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DbWorkload }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) DbWorkload() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.DbWorkload }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -481,88 +456,88 @@ func (o DatabaseUpgradeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // True if the database is a container database.
-func (o DatabaseUpgradeOutput) IsCdb() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.BoolOutput { return v.IsCdb }).(pulumi.BoolOutput)
+func (o DatabaseUpgradeOutput) IsCdb() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.BoolPtrOutput { return v.IsCdb }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o DatabaseUpgradeOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KeyStoreId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The wallet name for Oracle Key Vault.
-func (o DatabaseUpgradeOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) KeyStoreWalletName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.KeyStoreWalletName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o DatabaseUpgradeOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o DatabaseUpgradeOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The duration when the latest database backup created.
-func (o DatabaseUpgradeOutput) LastBackupDurationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.IntOutput { return v.LastBackupDurationInSeconds }).(pulumi.IntOutput)
+func (o DatabaseUpgradeOutput) LastBackupDurationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.IntPtrOutput { return v.LastBackupDurationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The date and time when the latest database backup was created.
-func (o DatabaseUpgradeOutput) LastBackupTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.LastBackupTimestamp }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) LastBackupTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.LastBackupTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the latest database backup failed.
-func (o DatabaseUpgradeOutput) LastFailedBackupTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.LastFailedBackupTimestamp }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) LastFailedBackupTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.LastFailedBackupTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o DatabaseUpgradeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The national character set for the database.
-func (o DatabaseUpgradeOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-func (o DatabaseUpgradeOutput) PdbName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.PdbName }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) PdbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.PdbName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies a prefix for the `Oracle SID` of the database to be created.
-func (o DatabaseUpgradeOutput) SidPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.SidPrefix }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) SidPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.SidPrefix }).(pulumi.StringPtrOutput)
 }
 
 // Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-func (o DatabaseUpgradeOutput) SourceDatabasePointInTimeRecoveryTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.SourceDatabasePointInTimeRecoveryTimestamp }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) SourceDatabasePointInTimeRecoveryTimestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.SourceDatabasePointInTimeRecoveryTimestamp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database.
-func (o DatabaseUpgradeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database was created.
-func (o DatabaseUpgradeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o DatabaseUpgradeOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
-func (o DatabaseUpgradeOutput) VmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.VmClusterId }).(pulumi.StringOutput)
+func (o DatabaseUpgradeOutput) VmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringPtrOutput { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
 
 type DatabaseUpgradeArrayOutput struct{ *pulumi.OutputState }
@@ -577,12 +552,6 @@ func (o DatabaseUpgradeArrayOutput) ToDatabaseUpgradeArrayOutput() DatabaseUpgra
 
 func (o DatabaseUpgradeArrayOutput) ToDatabaseUpgradeArrayOutputWithContext(ctx context.Context) DatabaseUpgradeArrayOutput {
 	return o
-}
-
-func (o DatabaseUpgradeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseUpgrade] {
-	return pulumix.Output[[]*DatabaseUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseUpgradeArrayOutput) Index(i pulumi.IntInput) DatabaseUpgradeOutput {
@@ -603,12 +572,6 @@ func (o DatabaseUpgradeMapOutput) ToDatabaseUpgradeMapOutput() DatabaseUpgradeMa
 
 func (o DatabaseUpgradeMapOutput) ToDatabaseUpgradeMapOutputWithContext(ctx context.Context) DatabaseUpgradeMapOutput {
 	return o
-}
-
-func (o DatabaseUpgradeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseUpgrade] {
-	return pulumix.Output[map[string]*DatabaseUpgrade]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseUpgradeMapOutput) MapIndex(k pulumi.StringInput) DatabaseUpgradeOutput {

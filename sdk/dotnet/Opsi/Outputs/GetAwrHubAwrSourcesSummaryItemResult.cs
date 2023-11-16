@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Unique Awr Hub identifier
         /// </summary>
-        public readonly string AwrHubId;
+        public readonly string? AwrHubId;
         /// <summary>
         /// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
         /// </summary>
-        public readonly string AwrSourceDatabaseId;
+        public readonly string? AwrSourceDatabaseId;
         /// <summary>
         /// Number of hours since last AWR snapshots import happened from the Source database.
         /// </summary>
-        public readonly double HoursSinceLastImport;
+        public readonly double? HoursSinceLastImport;
         /// <summary>
         /// The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
         /// </summary>
-        public readonly double MaxSnapshotIdentifier;
+        public readonly double? MaxSnapshotIdentifier;
         /// <summary>
         /// The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
         /// </summary>
-        public readonly double MinSnapshotIdentifier;
+        public readonly double? MinSnapshotIdentifier;
         /// <summary>
         /// Name for an Awr source database
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Number of AWR snapshots uploaded from the Source database.
         /// </summary>
-        public readonly double SnapshotsUploaded;
+        public readonly double? SnapshotsUploaded;
         /// <summary>
         /// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeFirstSnapshotGenerated;
+        public readonly string? TimeFirstSnapshotGenerated;
         /// <summary>
         /// The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeLastSnapshotGenerated;
+        public readonly string? TimeLastSnapshotGenerated;
 
         [OutputConstructor]
         private GetAwrHubAwrSourcesSummaryItemResult(
-            string awrHubId,
+            string? awrHubId,
 
-            string awrSourceDatabaseId,
+            string? awrSourceDatabaseId,
 
-            double hoursSinceLastImport,
+            double? hoursSinceLastImport,
 
-            double maxSnapshotIdentifier,
+            double? maxSnapshotIdentifier,
 
-            double minSnapshotIdentifier,
+            double? minSnapshotIdentifier,
 
-            string name,
+            string? name,
 
-            double snapshotsUploaded,
+            double? snapshotsUploaded,
 
-            string timeFirstSnapshotGenerated,
+            string? timeFirstSnapshotGenerated,
 
-            string timeLastSnapshotGenerated)
+            string? timeLastSnapshotGenerated)
         {
             AwrHubId = awrHubId;
             AwrSourceDatabaseId = awrSourceDatabaseId;

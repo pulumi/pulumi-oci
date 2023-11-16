@@ -49,17 +49,11 @@ class GetServiceCatalogAssociationsResult:
     @property
     @pulumi.getter(name="entityId")
     def entity_id(self) -> Optional[str]:
-        """
-        Identifier of the entity being associated with service catalog.
-        """
         return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[str]:
-        """
-        The type of the entity that is associated with the service catalog.
-        """
         return pulumi.get(self, "entity_type")
 
     @property
@@ -69,7 +63,7 @@ class GetServiceCatalogAssociationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +71,7 @@ class GetServiceCatalogAssociationsResult:
 
     @property
     @pulumi.getter(name="serviceCatalogAssociationCollections")
-    def service_catalog_association_collections(self) -> Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult']:
-        """
-        The list of service_catalog_association_collection.
-        """
+    def service_catalog_association_collections(self) -> Optional[Sequence['outputs.GetServiceCatalogAssociationsServiceCatalogAssociationCollectionResult']]:
         return pulumi.get(self, "service_catalog_association_collections")
 
     @property
@@ -91,9 +82,6 @@ class GetServiceCatalogAssociationsResult:
     @property
     @pulumi.getter(name="serviceCatalogId")
     def service_catalog_id(self) -> Optional[str]:
-        """
-        Identifier of the service catalog.
-        """
         return pulumi.get(self, "service_catalog_id")
 
 
@@ -119,27 +107,7 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
                                      service_catalog_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogAssociationsResult:
     """
-    This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists all the resource associations for a specific service catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=oci_service_catalog_entity["test_entity"]["id"],
-        entity_type=var["service_catalog_association_entity_type"],
-        service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"],
-        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
-    ```
-
-
-    :param str entity_id: The unique identifier of the entity associated with service catalog.
-    :param str entity_type: The type of the application in the service catalog.
-    :param str service_catalog_association_id: The unique identifier for the service catalog association.
-    :param str service_catalog_id: The unique identifier for the service catalog.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['entityId'] = entity_id
@@ -168,26 +136,6 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
                                             service_catalog_id: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogAssociationsResult]:
     """
-    This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists all the resource associations for a specific service catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=oci_service_catalog_entity["test_entity"]["id"],
-        entity_type=var["service_catalog_association_entity_type"],
-        service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"],
-        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
-    ```
-
-
-    :param str entity_id: The unique identifier of the entity associated with service catalog.
-    :param str entity_type: The type of the application in the service catalog.
-    :param str service_catalog_association_id: The unique identifier for the service catalog association.
-    :param str service_catalog_id: The unique identifier for the service catalog.
+    Use this data source to access information about an existing resource.
     """
     ...

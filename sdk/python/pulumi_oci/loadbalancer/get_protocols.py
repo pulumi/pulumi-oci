@@ -49,7 +49,7 @@ class GetProtocolsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetProtocolsResult:
 
     @property
     @pulumi.getter
-    def protocols(self) -> Sequence['outputs.GetProtocolsProtocolResult']:
-        """
-        The list of protocols.
-        """
+    def protocols(self) -> Optional[Sequence['outputs.GetProtocolsProtocolResult']]:
         return pulumi.get(self, "protocols")
 
 
@@ -80,21 +77,7 @@ def get_protocols(compartment_id: Optional[str] = None,
                   filters: Optional[Sequence[pulumi.InputType['GetProtocolsFilterArgs']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtocolsResult:
     """
-    This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all supported traffic protocols.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_protocols = oci.LoadBalancer.get_protocols(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer protocols to list.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_protocols_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtocolsFilterArgs']]]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtocolsResult]:
     """
-    This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all supported traffic protocols.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_protocols = oci.LoadBalancer.get_protocols(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer protocols to list.
+    Use this data source to access information about an existing resource.
     """
     ...

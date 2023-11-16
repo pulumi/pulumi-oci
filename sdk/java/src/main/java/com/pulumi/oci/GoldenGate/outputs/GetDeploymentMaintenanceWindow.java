@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentMaintenanceWindow {
@@ -14,27 +16,27 @@ public final class GetDeploymentMaintenanceWindow {
      * @return Days of the week.
      * 
      */
-    private String day;
+    private @Nullable String day;
     /**
      * @return Start hour for maintenance period. Hour is in UTC.
      * 
      */
-    private Integer startHour;
+    private @Nullable Integer startHour;
 
     private GetDeploymentMaintenanceWindow() {}
     /**
      * @return Days of the week.
      * 
      */
-    public String day() {
-        return this.day;
+    public Optional<String> day() {
+        return Optional.ofNullable(this.day);
     }
     /**
      * @return Start hour for maintenance period. Hour is in UTC.
      * 
      */
-    public Integer startHour() {
-        return this.startHour;
+    public Optional<Integer> startHour() {
+        return Optional.ofNullable(this.startHour);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDeploymentMaintenanceWindow {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String day;
-        private Integer startHour;
+        private @Nullable String day;
+        private @Nullable Integer startHour;
         public Builder() {}
         public Builder(GetDeploymentMaintenanceWindow defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDeploymentMaintenanceWindow {
         }
 
         @CustomType.Setter
-        public Builder day(String day) {
-            this.day = Objects.requireNonNull(day);
+        public Builder day(@Nullable String day) {
+            this.day = day;
             return this;
         }
         @CustomType.Setter
-        public Builder startHour(Integer startHour) {
-            this.startHour = Objects.requireNonNull(startHour);
+        public Builder startHour(@Nullable Integer startHour) {
+            this.startHour = startHour;
             return this;
         }
         public GetDeploymentMaintenanceWindow build() {

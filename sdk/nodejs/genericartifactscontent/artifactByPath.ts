@@ -54,7 +54,7 @@ export class ArtifactByPath extends pulumi.CustomResource {
         return obj['__pulumiType'] === ArtifactByPath.__pulumiType;
     }
 
-    public /*out*/ readonly artifactId!: pulumi.Output<string>;
+    public /*out*/ readonly artifactId!: pulumi.Output<string | undefined>;
     /**
      * A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
      */
@@ -62,7 +62,7 @@ export class ArtifactByPath extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
      *
@@ -74,15 +74,15 @@ export class ArtifactByPath extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
@@ -90,11 +90,11 @@ export class ArtifactByPath extends pulumi.CustomResource {
     /**
      * The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
      */
-    public /*out*/ readonly sha256!: pulumi.Output<string>;
+    public /*out*/ readonly sha256!: pulumi.Output<string | undefined>;
     /**
      * The size of the artifact in bytes.
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInBytes!: pulumi.Output<string | undefined>;
     /**
      * A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
      */
@@ -102,11 +102,11 @@ export class ArtifactByPath extends pulumi.CustomResource {
     /**
      * The current state of the artifact.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`
      */

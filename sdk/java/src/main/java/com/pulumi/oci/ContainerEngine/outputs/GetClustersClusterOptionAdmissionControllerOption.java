@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterOptionAdmissionControllerOption {
@@ -13,15 +15,15 @@ public final class GetClustersClusterOptionAdmissionControllerOption {
      * @return Whether or not to enable the Pod Security Policy admission controller.
      * 
      */
-    private Boolean isPodSecurityPolicyEnabled;
+    private @Nullable Boolean isPodSecurityPolicyEnabled;
 
     private GetClustersClusterOptionAdmissionControllerOption() {}
     /**
      * @return Whether or not to enable the Pod Security Policy admission controller.
      * 
      */
-    public Boolean isPodSecurityPolicyEnabled() {
-        return this.isPodSecurityPolicyEnabled;
+    public Optional<Boolean> isPodSecurityPolicyEnabled() {
+        return Optional.ofNullable(this.isPodSecurityPolicyEnabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetClustersClusterOptionAdmissionControllerOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isPodSecurityPolicyEnabled;
+        private @Nullable Boolean isPodSecurityPolicyEnabled;
         public Builder() {}
         public Builder(GetClustersClusterOptionAdmissionControllerOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetClustersClusterOptionAdmissionControllerOption {
         }
 
         @CustomType.Setter
-        public Builder isPodSecurityPolicyEnabled(Boolean isPodSecurityPolicyEnabled) {
-            this.isPodSecurityPolicyEnabled = Objects.requireNonNull(isPodSecurityPolicyEnabled);
+        public Builder isPodSecurityPolicyEnabled(@Nullable Boolean isPodSecurityPolicyEnabled) {
+            this.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
             return this;
         }
         public GetClustersClusterOptionAdmissionControllerOption build() {

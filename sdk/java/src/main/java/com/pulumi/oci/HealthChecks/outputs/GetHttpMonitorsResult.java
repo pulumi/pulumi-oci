@@ -34,12 +34,12 @@ public final class GetHttpMonitorsResult {
      * @return The list of http_monitors.
      * 
      */
-    private List<GetHttpMonitorsHttpMonitor> httpMonitors;
+    private @Nullable List<GetHttpMonitorsHttpMonitor> httpMonitors;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetHttpMonitorsResult() {}
     /**
@@ -71,14 +71,14 @@ public final class GetHttpMonitorsResult {
      * 
      */
     public List<GetHttpMonitorsHttpMonitor> httpMonitors() {
-        return this.httpMonitors;
+        return this.httpMonitors == null ? List.of() : this.httpMonitors;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -94,8 +94,8 @@ public final class GetHttpMonitorsResult {
         private @Nullable String displayName;
         private @Nullable List<GetHttpMonitorsFilter> filters;
         private @Nullable String homeRegion;
-        private List<GetHttpMonitorsHttpMonitor> httpMonitors;
-        private String id;
+        private @Nullable List<GetHttpMonitorsHttpMonitor> httpMonitors;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetHttpMonitorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,16 +131,16 @@ public final class GetHttpMonitorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder httpMonitors(List<GetHttpMonitorsHttpMonitor> httpMonitors) {
-            this.httpMonitors = Objects.requireNonNull(httpMonitors);
+        public Builder httpMonitors(@Nullable List<GetHttpMonitorsHttpMonitor> httpMonitors) {
+            this.httpMonitors = httpMonitors;
             return this;
         }
         public Builder httpMonitors(GetHttpMonitorsHttpMonitor... httpMonitors) {
             return httpMonitors(List.of(httpMonitors));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetHttpMonitorsResult build() {

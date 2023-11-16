@@ -66,19 +66,19 @@ export class UserCapabilitiesManagement extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates if the user can use API keys.
      */
-    public readonly canUseApiKeys!: pulumi.Output<boolean>;
+    public readonly canUseApiKeys!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      */
-    public readonly canUseAuthTokens!: pulumi.Output<boolean>;
+    public readonly canUseAuthTokens!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can log in to the console.
      */
-    public readonly canUseConsolePassword!: pulumi.Output<boolean>;
+    public readonly canUseConsolePassword!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SigV4 symmetric keys.
      */
-    public readonly canUseCustomerSecretKeys!: pulumi.Output<boolean>;
+    public readonly canUseCustomerSecretKeys!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
      *
@@ -86,7 +86,7 @@ export class UserCapabilitiesManagement extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly canUseSmtpCredentials!: pulumi.Output<boolean>;
+    public readonly canUseSmtpCredentials!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the user.
      */

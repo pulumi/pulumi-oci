@@ -72,11 +72,11 @@ export interface GetIndexesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of index_collection.
      */
-    readonly indexCollections: outputs.Nosql.GetIndexesIndexCollection[];
+    readonly indexCollections?: outputs.Nosql.GetIndexesIndexCollection[];
     /**
      * Index name.
      */

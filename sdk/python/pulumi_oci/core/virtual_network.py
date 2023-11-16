@@ -538,22 +538,22 @@ class VirtualNetwork(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="byoipv6cidrBlocks")
-    def byoipv6cidr_blocks(self) -> pulumi.Output[Sequence[str]]:
+    def byoipv6cidr_blocks(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "byoipv6cidr_blocks")
 
     @property
     @pulumi.getter(name="byoipv6cidrDetails")
-    def byoipv6cidr_details(self) -> pulumi.Output[Sequence['outputs.VirtualNetworkByoipv6cidrDetail']]:
+    def byoipv6cidr_details(self) -> pulumi.Output[Optional[Sequence['outputs.VirtualNetworkByoipv6cidrDetail']]]:
         return pulumi.get(self, "byoipv6cidr_details")
 
     @property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> pulumi.Output[str]:
+    def cidr_block(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cidr_block")
 
     @property
     @pulumi.getter(name="cidrBlocks")
-    def cidr_blocks(self) -> pulumi.Output[Sequence[str]]:
+    def cidr_blocks(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "cidr_blocks")
 
     @property
@@ -563,71 +563,71 @@ class VirtualNetwork(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="defaultDhcpOptionsId")
-    def default_dhcp_options_id(self) -> pulumi.Output[str]:
+    def default_dhcp_options_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "default_dhcp_options_id")
 
     @property
     @pulumi.getter(name="defaultRouteTableId")
-    def default_route_table_id(self) -> pulumi.Output[str]:
+    def default_route_table_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "default_route_table_id")
 
     @property
     @pulumi.getter(name="defaultSecurityListId")
-    def default_security_list_id(self) -> pulumi.Output[str]:
+    def default_security_list_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "default_security_list_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> pulumi.Output[str]:
+    def dns_label(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dns_label")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> pulumi.Output[Sequence[str]]:
+    def ipv6cidr_blocks(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @property
     @pulumi.getter(name="ipv6privateCidrBlocks")
-    def ipv6private_cidr_blocks(self) -> pulumi.Output[Sequence[str]]:
+    def ipv6private_cidr_blocks(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
     @property
     @pulumi.getter(name="isIpv6enabled")
-    def is_ipv6enabled(self) -> pulumi.Output[bool]:
+    def is_ipv6enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_ipv6enabled")
 
     @property
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
-    def is_oracle_gua_allocation_enabled(self) -> pulumi.Output[bool]:
+    def is_oracle_gua_allocation_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnDomainName")
-    def vcn_domain_name(self) -> pulumi.Output[str]:
+    def vcn_domain_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vcn_domain_name")
 

@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetDataSourceEventItemEventInfo;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourceEventItem {
@@ -15,87 +17,87 @@ public final class GetDataSourceEventItem {
      * @return Data source event comments
      * 
      */
-    private String comments;
+    private @Nullable String comments;
     /**
      * @return DataSource OCID
      * 
      */
-    private String dataSourceId;
+    private @Nullable String dataSourceId;
     /**
      * @return Data source event date time
      * 
      */
-    private String eventDate;
+    private @Nullable String eventDate;
     /**
      * @return Event info of a data source.
      * 
      */
-    private List<GetDataSourceEventItemEventInfo> eventInfos;
+    private @Nullable List<GetDataSourceEventItemEventInfo> eventInfos;
     /**
      * @return A filter to return only resource their region matches the given region.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Current data source event info status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Data source event created time
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetDataSourceEventItem() {}
     /**
      * @return Data source event comments
      * 
      */
-    public String comments() {
-        return this.comments;
+    public Optional<String> comments() {
+        return Optional.ofNullable(this.comments);
     }
     /**
      * @return DataSource OCID
      * 
      */
-    public String dataSourceId() {
-        return this.dataSourceId;
+    public Optional<String> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
     }
     /**
      * @return Data source event date time
      * 
      */
-    public String eventDate() {
-        return this.eventDate;
+    public Optional<String> eventDate() {
+        return Optional.ofNullable(this.eventDate);
     }
     /**
      * @return Event info of a data source.
      * 
      */
     public List<GetDataSourceEventItemEventInfo> eventInfos() {
-        return this.eventInfos;
+        return this.eventInfos == null ? List.of() : this.eventInfos;
     }
     /**
      * @return A filter to return only resource their region matches the given region.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Current data source event info status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Data source event created time
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetDataSourceEventItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String comments;
-        private String dataSourceId;
-        private String eventDate;
-        private List<GetDataSourceEventItemEventInfo> eventInfos;
-        private String region;
-        private String status;
-        private String timeCreated;
+        private @Nullable String comments;
+        private @Nullable String dataSourceId;
+        private @Nullable String eventDate;
+        private @Nullable List<GetDataSourceEventItemEventInfo> eventInfos;
+        private @Nullable String region;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetDataSourceEventItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,41 +129,41 @@ public final class GetDataSourceEventItem {
         }
 
         @CustomType.Setter
-        public Builder comments(String comments) {
-            this.comments = Objects.requireNonNull(comments);
+        public Builder comments(@Nullable String comments) {
+            this.comments = comments;
             return this;
         }
         @CustomType.Setter
-        public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+        public Builder dataSourceId(@Nullable String dataSourceId) {
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder eventDate(String eventDate) {
-            this.eventDate = Objects.requireNonNull(eventDate);
+        public Builder eventDate(@Nullable String eventDate) {
+            this.eventDate = eventDate;
             return this;
         }
         @CustomType.Setter
-        public Builder eventInfos(List<GetDataSourceEventItemEventInfo> eventInfos) {
-            this.eventInfos = Objects.requireNonNull(eventInfos);
+        public Builder eventInfos(@Nullable List<GetDataSourceEventItemEventInfo> eventInfos) {
+            this.eventInfos = eventInfos;
             return this;
         }
         public Builder eventInfos(GetDataSourceEventItemEventInfo... eventInfos) {
             return eventInfos(List.of(eventInfos));
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDataSourceEventItem build() {

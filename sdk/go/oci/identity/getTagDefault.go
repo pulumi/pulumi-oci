@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
@@ -60,26 +59,26 @@ type LookupTagDefaultArgs struct {
 // A collection of values returned by getTagDefault.
 type LookupTagDefaultResult struct {
 	// The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the tag default.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 	// * If the `isRequired` flag is set to "true", the value is set during resource creation.
 	// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
-	State        string `pulumi:"state"`
-	TagDefaultId string `pulumi:"tagDefaultId"`
+	State        *string `pulumi:"state"`
+	TagDefaultId string  `pulumi:"tagDefaultId"`
 	// The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
-	TagDefinitionId string `pulumi:"tagDefinitionId"`
+	TagDefinitionId *string `pulumi:"tagDefinitionId"`
 	// The name used in the tag definition. This field is informational in the context of the tag default.
-	TagDefinitionName string `pulumi:"tagDefinitionName"`
+	TagDefinitionName *string `pulumi:"tagDefinitionName"`
 	// The OCID of the tag namespace that contains the tag definition.
-	TagNamespaceId string `pulumi:"tagNamespaceId"`
+	TagNamespaceId *string `pulumi:"tagNamespaceId"`
 	// Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The default value for the tag definition. This will be applied to all new resources created in the compartment.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 func LookupTagDefaultOutput(ctx *pulumi.Context, args LookupTagDefaultOutputArgs, opts ...pulumi.InvokeOption) LookupTagDefaultResultOutput {
@@ -120,32 +119,26 @@ func (o LookupTagDefaultResultOutput) ToLookupTagDefaultResultOutputWithContext(
 	return o
 }
 
-func (o LookupTagDefaultResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTagDefaultResult] {
-	return pulumix.Output[LookupTagDefaultResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
-func (o LookupTagDefaultResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tag default.
-func (o LookupTagDefaultResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
 // * If the `isRequired` flag is set to "true", the value is set during resource creation.
 // * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
-func (o LookupTagDefaultResultOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) bool { return v.IsRequired }).(pulumi.BoolOutput)
+func (o LookupTagDefaultResultOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *bool { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
-func (o LookupTagDefaultResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupTagDefaultResultOutput) TagDefaultId() pulumi.StringOutput {
@@ -153,28 +146,28 @@ func (o LookupTagDefaultResultOutput) TagDefaultId() pulumi.StringOutput {
 }
 
 // The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
-func (o LookupTagDefaultResultOutput) TagDefinitionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.TagDefinitionId }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) TagDefinitionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.TagDefinitionId }).(pulumi.StringPtrOutput)
 }
 
 // The name used in the tag definition. This field is informational in the context of the tag default.
-func (o LookupTagDefaultResultOutput) TagDefinitionName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.TagDefinitionName }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) TagDefinitionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.TagDefinitionName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tag namespace that contains the tag definition.
-func (o LookupTagDefaultResultOutput) TagNamespaceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.TagNamespaceId }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) TagNamespaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.TagNamespaceId }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupTagDefaultResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The default value for the tag definition. This will be applied to all new resources created in the compartment.
-func (o LookupTagDefaultResultOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagDefaultResult) string { return v.Value }).(pulumi.StringOutput)
+func (o LookupTagDefaultResultOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagDefaultResult) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 func init() {

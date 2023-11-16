@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items that match the specified user grant depth level.
         /// </summary>
-        public readonly int DepthLevel;
+        public readonly int? DepthLevel;
         /// <summary>
         /// A filter to return only items that match the specified user grant name.
         /// </summary>
-        public readonly string GrantName;
+        public readonly string? GrantName;
         /// <summary>
         /// The unique key of a user grant.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A filter to return only items that match the specified user privilege category.
         /// </summary>
-        public readonly string PrivilegeCategory;
+        public readonly string? PrivilegeCategory;
         /// <summary>
         /// A filter to return only items that match the specified privilege grant type.
         /// </summary>
-        public readonly string PrivilegeType;
+        public readonly string? PrivilegeType;
 
         [OutputConstructor]
         private GetListUserGrantsGrantResult(
-            int depthLevel,
+            int? depthLevel,
 
-            string grantName,
+            string? grantName,
 
-            string key,
+            string? key,
 
-            string privilegeCategory,
+            string? privilegeCategory,
 
-            string privilegeType)
+            string? privilegeType)
         {
             DepthLevel = depthLevel;
             GrantName = grantName;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
@@ -59,10 +58,10 @@ type GetApiContentArgs struct {
 
 // A collection of values returned by getApiContent.
 type GetApiContentResult struct {
-	ApiId   string `pulumi:"apiId"`
-	Content string `pulumi:"content"`
+	ApiId   string  `pulumi:"apiId"`
+	Content *string `pulumi:"content"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetApiContentOutput(ctx *pulumi.Context, args GetApiContentOutputArgs, opts ...pulumi.InvokeOption) GetApiContentResultOutput {
@@ -103,23 +102,17 @@ func (o GetApiContentResultOutput) ToGetApiContentResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetApiContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApiContentResult] {
-	return pulumix.Output[GetApiContentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApiContentResultOutput) ApiId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApiContentResult) string { return v.ApiId }).(pulumi.StringOutput)
 }
 
-func (o GetApiContentResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApiContentResult) string { return v.Content }).(pulumi.StringOutput)
+func (o GetApiContentResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApiContentResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApiContentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApiContentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApiContentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApiContentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

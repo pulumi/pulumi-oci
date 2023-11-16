@@ -16,27 +16,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// X509 Certificate Matching Attribute
         /// </summary>
-        public readonly string CertMatchAttribute;
+        public readonly string? CertMatchAttribute;
         /// <summary>
         /// Fallback on CRL Validation if OCSP fails.
         /// </summary>
-        public readonly bool CrlCheckOnOcspFailureEnabled;
+        public readonly bool? CrlCheckOnOcspFailureEnabled;
         /// <summary>
         /// Set to true to enable CRL Validation
         /// </summary>
-        public readonly bool CrlEnabled;
+        public readonly bool? CrlEnabled;
         /// <summary>
         /// CRL Location URL
         /// </summary>
-        public readonly string CrlLocation;
+        public readonly string? CrlLocation;
         /// <summary>
         /// Fetch the CRL contents every X minutes
         /// </summary>
-        public readonly int CrlReloadDuration;
+        public readonly int? CrlReloadDuration;
         /// <summary>
         /// Set to true to enable EKU Validation
         /// </summary>
-        public readonly bool EkuValidationEnabled;
+        public readonly bool? EkuValidationEnabled;
         /// <summary>
         /// List of EKU which needs to be validated
         /// </summary>
@@ -44,27 +44,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
         /// </summary>
-        public readonly bool OcspAllowUnknownResponseStatus;
+        public readonly bool? OcspAllowUnknownResponseStatus;
         /// <summary>
         /// Describes if the OCSP response is signed
         /// </summary>
-        public readonly bool OcspEnableSignedResponse;
+        public readonly bool? OcspEnableSignedResponse;
         /// <summary>
         /// Set to true to enable OCSP Validation
         /// </summary>
-        public readonly bool OcspEnabled;
+        public readonly bool? OcspEnabled;
         /// <summary>
         /// This property specifies OCSP Responder URL.
         /// </summary>
-        public readonly string OcspResponderUrl;
+        public readonly string? OcspResponderUrl;
         /// <summary>
         /// Revalidate OCSP status for user after X hours
         /// </summary>
-        public readonly int OcspRevalidateTime;
+        public readonly int? OcspRevalidateTime;
         /// <summary>
         /// This property specifies the OCSP Server alias name
         /// </summary>
-        public readonly string OcspServerName;
+        public readonly string? OcspServerName;
         /// <summary>
         /// OCSP Trusted Certificate Chain
         /// </summary>
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Check for specific conditions of other certificate attributes
         /// </summary>
-        public readonly string OtherCertMatchAttribute;
+        public readonly string? OtherCertMatchAttribute;
         /// <summary>
         /// Certificate alias list to create a chain for the incoming client certificate
         /// </summary>
@@ -80,43 +80,43 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// This property specifies the userstore attribute value that must match the incoming certificate attribute.
         /// </summary>
-        public readonly string UserMatchAttribute;
+        public readonly string? UserMatchAttribute;
 
         [OutputConstructor]
         private GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderResult(
-            string certMatchAttribute,
+            string? certMatchAttribute,
 
-            bool crlCheckOnOcspFailureEnabled,
+            bool? crlCheckOnOcspFailureEnabled,
 
-            bool crlEnabled,
+            bool? crlEnabled,
 
-            string crlLocation,
+            string? crlLocation,
 
-            int crlReloadDuration,
+            int? crlReloadDuration,
 
-            bool ekuValidationEnabled,
+            bool? ekuValidationEnabled,
 
             ImmutableArray<string> ekuValues,
 
-            bool ocspAllowUnknownResponseStatus,
+            bool? ocspAllowUnknownResponseStatus,
 
-            bool ocspEnableSignedResponse,
+            bool? ocspEnableSignedResponse,
 
-            bool ocspEnabled,
+            bool? ocspEnabled,
 
-            string ocspResponderUrl,
+            string? ocspResponderUrl,
 
-            int ocspRevalidateTime,
+            int? ocspRevalidateTime,
 
-            string ocspServerName,
+            string? ocspServerName,
 
             ImmutableArray<string> ocspTrustCertChains,
 
-            string otherCertMatchAttribute,
+            string? otherCertMatchAttribute,
 
             ImmutableArray<string> signingCertificateChains,
 
-            string userMatchAttribute)
+            string? userMatchAttribute)
         {
             CertMatchAttribute = certMatchAttribute;
             CrlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;

@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudBridge.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetVm {
@@ -13,39 +15,39 @@ public final class GetAssetVm {
      * @return Host name/IP address of VM on which the host is running.
      * 
      */
-    private String hypervisorHost;
+    private @Nullable String hypervisorHost;
     /**
      * @return Hypervisor vendor.
      * 
      */
-    private String hypervisorVendor;
+    private @Nullable String hypervisorVendor;
     /**
      * @return Hypervisor version.
      * 
      */
-    private String hypervisorVersion;
+    private @Nullable String hypervisorVersion;
 
     private GetAssetVm() {}
     /**
      * @return Host name/IP address of VM on which the host is running.
      * 
      */
-    public String hypervisorHost() {
-        return this.hypervisorHost;
+    public Optional<String> hypervisorHost() {
+        return Optional.ofNullable(this.hypervisorHost);
     }
     /**
      * @return Hypervisor vendor.
      * 
      */
-    public String hypervisorVendor() {
-        return this.hypervisorVendor;
+    public Optional<String> hypervisorVendor() {
+        return Optional.ofNullable(this.hypervisorVendor);
     }
     /**
      * @return Hypervisor version.
      * 
      */
-    public String hypervisorVersion() {
-        return this.hypervisorVersion;
+    public Optional<String> hypervisorVersion() {
+        return Optional.ofNullable(this.hypervisorVersion);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAssetVm {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hypervisorHost;
-        private String hypervisorVendor;
-        private String hypervisorVersion;
+        private @Nullable String hypervisorHost;
+        private @Nullable String hypervisorVendor;
+        private @Nullable String hypervisorVersion;
         public Builder() {}
         public Builder(GetAssetVm defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAssetVm {
         }
 
         @CustomType.Setter
-        public Builder hypervisorHost(String hypervisorHost) {
-            this.hypervisorHost = Objects.requireNonNull(hypervisorHost);
+        public Builder hypervisorHost(@Nullable String hypervisorHost) {
+            this.hypervisorHost = hypervisorHost;
             return this;
         }
         @CustomType.Setter
-        public Builder hypervisorVendor(String hypervisorVendor) {
-            this.hypervisorVendor = Objects.requireNonNull(hypervisorVendor);
+        public Builder hypervisorVendor(@Nullable String hypervisorVendor) {
+            this.hypervisorVendor = hypervisorVendor;
             return this;
         }
         @CustomType.Setter
-        public Builder hypervisorVersion(String hypervisorVersion) {
-            this.hypervisorVersion = Objects.requireNonNull(hypervisorVersion);
+        public Builder hypervisorVersion(@Nullable String hypervisorVersion) {
+            this.hypervisorVersion = hypervisorVersion;
             return this;
         }
         public GetAssetVm build() {

@@ -10,6 +10,7 @@ import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildOutputExportedVariable;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildOutput {
@@ -17,22 +18,22 @@ public final class GetBuildRunBuildOutput {
      * @return Specifies the list of artifact override arguments at the time of deployment.
      * 
      */
-    private List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
+    private @Nullable List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
     /**
      * @return Specifies the list of artifacts delivered through the Deliver Artifacts stage.
      * 
      */
-    private List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
+    private @Nullable List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
     /**
      * @return Specifies list of exported variables.
      * 
      */
-    private List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
+    private @Nullable List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
     /**
      * @return List of vulnerability audit summary.
      * 
      */
-    private List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
+    private @Nullable List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
 
     private GetBuildRunBuildOutput() {}
     /**
@@ -40,28 +41,28 @@ public final class GetBuildRunBuildOutput {
      * 
      */
     public List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters() {
-        return this.artifactOverrideParameters;
+        return this.artifactOverrideParameters == null ? List.of() : this.artifactOverrideParameters;
     }
     /**
      * @return Specifies the list of artifacts delivered through the Deliver Artifacts stage.
      * 
      */
     public List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts() {
-        return this.deliveredArtifacts;
+        return this.deliveredArtifacts == null ? List.of() : this.deliveredArtifacts;
     }
     /**
      * @return Specifies list of exported variables.
      * 
      */
     public List<GetBuildRunBuildOutputExportedVariable> exportedVariables() {
-        return this.exportedVariables;
+        return this.exportedVariables == null ? List.of() : this.exportedVariables;
     }
     /**
      * @return List of vulnerability audit summary.
      * 
      */
     public List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections() {
-        return this.vulnerabilityAuditSummaryCollections;
+        return this.vulnerabilityAuditSummaryCollections == null ? List.of() : this.vulnerabilityAuditSummaryCollections;
     }
 
     public static Builder builder() {
@@ -73,10 +74,10 @@ public final class GetBuildRunBuildOutput {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
-        private List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
-        private List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
-        private List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
+        private @Nullable List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters;
+        private @Nullable List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts;
+        private @Nullable List<GetBuildRunBuildOutputExportedVariable> exportedVariables;
+        private @Nullable List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections;
         public Builder() {}
         public Builder(GetBuildRunBuildOutput defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,32 +88,32 @@ public final class GetBuildRunBuildOutput {
         }
 
         @CustomType.Setter
-        public Builder artifactOverrideParameters(List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters) {
-            this.artifactOverrideParameters = Objects.requireNonNull(artifactOverrideParameters);
+        public Builder artifactOverrideParameters(@Nullable List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters) {
+            this.artifactOverrideParameters = artifactOverrideParameters;
             return this;
         }
         public Builder artifactOverrideParameters(GetBuildRunBuildOutputArtifactOverrideParameter... artifactOverrideParameters) {
             return artifactOverrideParameters(List.of(artifactOverrideParameters));
         }
         @CustomType.Setter
-        public Builder deliveredArtifacts(List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts) {
-            this.deliveredArtifacts = Objects.requireNonNull(deliveredArtifacts);
+        public Builder deliveredArtifacts(@Nullable List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts) {
+            this.deliveredArtifacts = deliveredArtifacts;
             return this;
         }
         public Builder deliveredArtifacts(GetBuildRunBuildOutputDeliveredArtifact... deliveredArtifacts) {
             return deliveredArtifacts(List.of(deliveredArtifacts));
         }
         @CustomType.Setter
-        public Builder exportedVariables(List<GetBuildRunBuildOutputExportedVariable> exportedVariables) {
-            this.exportedVariables = Objects.requireNonNull(exportedVariables);
+        public Builder exportedVariables(@Nullable List<GetBuildRunBuildOutputExportedVariable> exportedVariables) {
+            this.exportedVariables = exportedVariables;
             return this;
         }
         public Builder exportedVariables(GetBuildRunBuildOutputExportedVariable... exportedVariables) {
             return exportedVariables(List.of(exportedVariables));
         }
         @CustomType.Setter
-        public Builder vulnerabilityAuditSummaryCollections(List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
-            this.vulnerabilityAuditSummaryCollections = Objects.requireNonNull(vulnerabilityAuditSummaryCollections);
+        public Builder vulnerabilityAuditSummaryCollections(@Nullable List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
+            this.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
             return this;
         }
         public Builder vulnerabilityAuditSummaryCollections(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection... vulnerabilityAuditSummaryCollections) {

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Name of Credential
         /// </summary>
-        public readonly string CredentialName;
+        public readonly string? CredentialName;
         /// <summary>
         /// Name of Credential Type
         /// </summary>
-        public readonly string CredentialType;
+        public readonly string? CredentialType;
         /// <summary>
         /// Property Details
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
         [OutputConstructor]
         private GetDiscoveryJobDiscoveryDetailCredentialItemResult(
-            string credentialName,
+            string? credentialName,
 
-            string credentialType,
+            string? credentialType,
 
             ImmutableArray<Outputs.GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult> properties)
         {

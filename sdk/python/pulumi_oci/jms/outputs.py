@@ -102,35 +102,17 @@ class FleetInventoryLog(dict):
     def __init__(__self__, *,
                  log_group_id: str,
                  log_id: str):
-        """
-        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -158,104 +140,67 @@ class FleetOperationLog(dict):
     def __init__(__self__, *,
                  log_group_id: str,
                  log_id: str):
-        """
-        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetAnnouncementsAnnouncementCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']):
-        """
-        :param Sequence['GetAnnouncementsAnnouncementCollectionItemArgs'] items: List of AnnouncementSummary items
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']:
-        """
-        List of AnnouncementSummary items
-        """
+    def items(self) -> Optional[Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAnnouncementsAnnouncementCollectionItemResult(dict):
     def __init__(__self__, *,
-                 key: int,
-                 summary: str,
-                 time_released: str,
-                 url: str):
-        """
-        :param int key: Unique id of the announcement
-        :param str summary: Summary text of the announcement
-        :param str time_released: Date time on which the announcement was released
-        :param str url: URL to the announcement web page
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "time_released", time_released)
-        pulumi.set(__self__, "url", url)
+                 key: Optional[int] = None,
+                 summary: Optional[str] = None,
+                 time_released: Optional[str] = None,
+                 url: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if summary is not None:
+            pulumi.set(__self__, "summary", summary)
+        if time_released is not None:
+            pulumi.set(__self__, "time_released", time_released)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def key(self) -> int:
-        """
-        Unique id of the announcement
-        """
+    def key(self) -> Optional[int]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def summary(self) -> str:
-        """
-        Summary text of the announcement
-        """
+    def summary(self) -> Optional[str]:
         return pulumi.get(self, "summary")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        Date time on which the announcement was released
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        URL to the announcement web page
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -289,483 +234,337 @@ class GetAnnouncementsFilterResult(dict):
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool):
-        """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+                 is_enabled: Optional[bool] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool,
-                 summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']):
-        """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
-        :param Sequence['GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs'] summarized_events_logs: Summarized events log for advanced feature.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "summarized_events_logs", summarized_events_logs)
+                 is_enabled: Optional[bool] = None,
+                 summarized_events_logs: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if summarized_events_logs is not None:
+            pulumi.set(__self__, "summarized_events_logs", summarized_events_logs)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="summarizedEventsLogs")
-    def summarized_events_logs(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']:
-        """
-        Summarized events log for advanced feature.
-        """
+    def summarized_events_logs(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']]:
         return pulumi.get(self, "summarized_events_logs")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool):
-        """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+                 is_enabled: Optional[bool] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool):
-        """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+                 is_enabled: Optional[bool] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool,
-                 post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']):
-        """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
-        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs'] post_installation_actions: List of available post actions you can execute after the successful Java installation.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+                 is_enabled: Optional[bool] = None,
+                 post_installation_actions: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if post_installation_actions is not None:
+            pulumi.set(__self__, "post_installation_actions", post_installation_actions)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="postInstallationActions")
-    def post_installation_actions(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']:
-        """
-        List of available post actions you can execute after the successful Java installation.
-        """
+    def post_installation_actions(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']]:
         return pulumi.get(self, "post_installation_actions")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
     def __init__(__self__, *,
-                 add_logging_handler: bool,
-                 disabled_tls_versions: Sequence[str],
-                 global_logging_level: str,
-                 minimum_key_size_settings: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult'],
-                 proxies: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult'],
-                 should_replace_certificates_operating_system: bool):
-        """
-        :param bool add_logging_handler: Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
-        :param Sequence[str] disabled_tls_versions: The following post JRE installation actions are supported by the field:
-               * Disable TLS 1.0 , TLS 1.1
-        :param str global_logging_level: Sets the logging level in logging.properties file.
-        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs'] minimum_key_size_settings: test
-        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArgs'] proxies: List of proxy properties to be configured in net.properties file.
-        :param bool should_replace_certificates_operating_system: Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-               * Replace JDK root certificates with a list provided by the operating system.
-        """
-        pulumi.set(__self__, "add_logging_handler", add_logging_handler)
-        pulumi.set(__self__, "disabled_tls_versions", disabled_tls_versions)
-        pulumi.set(__self__, "global_logging_level", global_logging_level)
-        pulumi.set(__self__, "minimum_key_size_settings", minimum_key_size_settings)
-        pulumi.set(__self__, "proxies", proxies)
-        pulumi.set(__self__, "should_replace_certificates_operating_system", should_replace_certificates_operating_system)
+                 add_logging_handler: Optional[bool] = None,
+                 disabled_tls_versions: Optional[Sequence[str]] = None,
+                 global_logging_level: Optional[str] = None,
+                 minimum_key_size_settings: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult']] = None,
+                 proxies: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult']] = None,
+                 should_replace_certificates_operating_system: Optional[bool] = None):
+        if add_logging_handler is not None:
+            pulumi.set(__self__, "add_logging_handler", add_logging_handler)
+        if disabled_tls_versions is not None:
+            pulumi.set(__self__, "disabled_tls_versions", disabled_tls_versions)
+        if global_logging_level is not None:
+            pulumi.set(__self__, "global_logging_level", global_logging_level)
+        if minimum_key_size_settings is not None:
+            pulumi.set(__self__, "minimum_key_size_settings", minimum_key_size_settings)
+        if proxies is not None:
+            pulumi.set(__self__, "proxies", proxies)
+        if should_replace_certificates_operating_system is not None:
+            pulumi.set(__self__, "should_replace_certificates_operating_system", should_replace_certificates_operating_system)
 
     @property
     @pulumi.getter(name="addLoggingHandler")
-    def add_logging_handler(self) -> bool:
-        """
-        Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
-        """
+    def add_logging_handler(self) -> Optional[bool]:
         return pulumi.get(self, "add_logging_handler")
 
     @property
     @pulumi.getter(name="disabledTlsVersions")
-    def disabled_tls_versions(self) -> Sequence[str]:
-        """
-        The following post JRE installation actions are supported by the field:
-        * Disable TLS 1.0 , TLS 1.1
-        """
+    def disabled_tls_versions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "disabled_tls_versions")
 
     @property
     @pulumi.getter(name="globalLoggingLevel")
-    def global_logging_level(self) -> str:
-        """
-        Sets the logging level in logging.properties file.
-        """
+    def global_logging_level(self) -> Optional[str]:
         return pulumi.get(self, "global_logging_level")
 
     @property
     @pulumi.getter(name="minimumKeySizeSettings")
-    def minimum_key_size_settings(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult']:
-        """
-        test
-        """
+    def minimum_key_size_settings(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult']]:
         return pulumi.get(self, "minimum_key_size_settings")
 
     @property
     @pulumi.getter
-    def proxies(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult']:
-        """
-        List of proxy properties to be configured in net.properties file.
-        """
+    def proxies(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult']]:
         return pulumi.get(self, "proxies")
 
     @property
     @pulumi.getter(name="shouldReplaceCertificatesOperatingSystem")
-    def should_replace_certificates_operating_system(self) -> bool:
-        """
-        Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-        * Replace JDK root certificates with a list provided by the operating system.
-        """
+    def should_replace_certificates_operating_system(self) -> Optional[bool]:
         return pulumi.get(self, "should_replace_certificates_operating_system")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult(dict):
     def __init__(__self__, *,
-                 certpaths: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult'],
-                 jars: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult'],
-                 tls: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']):
-        """
-        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs'] certpaths: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
-               * Changing minimum key length for RSA signed jars
-               * Changing minimum key length for EC
-               * Changing minimum key length for DSA
-        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs'] jars: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
-               * Changing minimum key length for RSA signed jars
-               * Changing minimum key length for EC
-               * Changing minimum key length for DSA
-        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs'] tls: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
-               * Changing minimum key length for Diffie-Hellman
-        """
-        pulumi.set(__self__, "certpaths", certpaths)
-        pulumi.set(__self__, "jars", jars)
-        pulumi.set(__self__, "tls", tls)
+                 certpaths: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult']] = None,
+                 jars: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult']] = None,
+                 tls: Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']] = None):
+        if certpaths is not None:
+            pulumi.set(__self__, "certpaths", certpaths)
+        if jars is not None:
+            pulumi.set(__self__, "jars", jars)
+        if tls is not None:
+            pulumi.set(__self__, "tls", tls)
 
     @property
     @pulumi.getter
-    def certpaths(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult']:
-        """
-        Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
-        * Changing minimum key length for RSA signed jars
-        * Changing minimum key length for EC
-        * Changing minimum key length for DSA
-        """
+    def certpaths(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult']]:
         return pulumi.get(self, "certpaths")
 
     @property
     @pulumi.getter
-    def jars(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult']:
-        """
-        Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
-        * Changing minimum key length for RSA signed jars
-        * Changing minimum key length for EC
-        * Changing minimum key length for DSA
-        """
+    def jars(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult']]:
         return pulumi.get(self, "jars")
 
     @property
     @pulumi.getter
-    def tls(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']:
-        """
-        Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
-        * Changing minimum key length for Diffie-Hellman
-        """
+    def tls(self) -> Optional[Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']]:
         return pulumi.get(self, "tls")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult(dict):
     def __init__(__self__, *,
-                 key_size: int,
-                 name: str):
-        """
-        :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        :param str name: The algorithm name.
-        """
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "name", name)
+                 key_size: Optional[int] = None,
+                 name: Optional[str] = None):
+        if key_size is not None:
+            pulumi.set(__self__, "key_size", key_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="keySize")
-    def key_size(self) -> int:
-        """
-        Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        """
+    def key_size(self) -> Optional[int]:
         return pulumi.get(self, "key_size")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The algorithm name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult(dict):
     def __init__(__self__, *,
-                 key_size: int,
-                 name: str):
-        """
-        :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        :param str name: The algorithm name.
-        """
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "name", name)
+                 key_size: Optional[int] = None,
+                 name: Optional[str] = None):
+        if key_size is not None:
+            pulumi.set(__self__, "key_size", key_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="keySize")
-    def key_size(self) -> int:
-        """
-        Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        """
+    def key_size(self) -> Optional[int]:
         return pulumi.get(self, "key_size")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The algorithm name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult(dict):
     def __init__(__self__, *,
-                 key_size: int,
-                 name: str):
-        """
-        :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        :param str name: The algorithm name.
-        """
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "name", name)
+                 key_size: Optional[int] = None,
+                 name: Optional[str] = None):
+        if key_size is not None:
+            pulumi.set(__self__, "key_size", key_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="keySize")
-    def key_size(self) -> int:
-        """
-        Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        """
+    def key_size(self) -> Optional[int]:
         return pulumi.get(self, "key_size")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The algorithm name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult(dict):
     def __init__(__self__, *,
-                 ftp_proxy_host: str,
-                 ftp_proxy_port: int,
-                 http_proxy_host: str,
-                 http_proxy_port: int,
-                 https_proxy_host: str,
-                 https_proxy_port: int,
-                 socks_proxy_host: str,
-                 socks_proxy_port: int,
-                 use_system_proxies: bool):
-        """
-        :param str ftp_proxy_host: Ftp host to be set in net.properties file.
-        :param int ftp_proxy_port: Ftp port number to be set in net.properties file.
-        :param str http_proxy_host: Http host to be set in net.properties file.
-        :param int http_proxy_port: Http port number to be set in net.properties file.
-        :param str https_proxy_host: Https host to be set in net.properties file.
-        :param int https_proxy_port: Https port number to be set in net.properties file.
-        :param str socks_proxy_host: Socks host to be set in net.properties file.
-        :param int socks_proxy_port: Socks port number to be set in net.properties file.
-        :param bool use_system_proxies: Sets "java.net.useSystemProxies=true" in net.properties when they exist.
-        """
-        pulumi.set(__self__, "ftp_proxy_host", ftp_proxy_host)
-        pulumi.set(__self__, "ftp_proxy_port", ftp_proxy_port)
-        pulumi.set(__self__, "http_proxy_host", http_proxy_host)
-        pulumi.set(__self__, "http_proxy_port", http_proxy_port)
-        pulumi.set(__self__, "https_proxy_host", https_proxy_host)
-        pulumi.set(__self__, "https_proxy_port", https_proxy_port)
-        pulumi.set(__self__, "socks_proxy_host", socks_proxy_host)
-        pulumi.set(__self__, "socks_proxy_port", socks_proxy_port)
-        pulumi.set(__self__, "use_system_proxies", use_system_proxies)
+                 ftp_proxy_host: Optional[str] = None,
+                 ftp_proxy_port: Optional[int] = None,
+                 http_proxy_host: Optional[str] = None,
+                 http_proxy_port: Optional[int] = None,
+                 https_proxy_host: Optional[str] = None,
+                 https_proxy_port: Optional[int] = None,
+                 socks_proxy_host: Optional[str] = None,
+                 socks_proxy_port: Optional[int] = None,
+                 use_system_proxies: Optional[bool] = None):
+        if ftp_proxy_host is not None:
+            pulumi.set(__self__, "ftp_proxy_host", ftp_proxy_host)
+        if ftp_proxy_port is not None:
+            pulumi.set(__self__, "ftp_proxy_port", ftp_proxy_port)
+        if http_proxy_host is not None:
+            pulumi.set(__self__, "http_proxy_host", http_proxy_host)
+        if http_proxy_port is not None:
+            pulumi.set(__self__, "http_proxy_port", http_proxy_port)
+        if https_proxy_host is not None:
+            pulumi.set(__self__, "https_proxy_host", https_proxy_host)
+        if https_proxy_port is not None:
+            pulumi.set(__self__, "https_proxy_port", https_proxy_port)
+        if socks_proxy_host is not None:
+            pulumi.set(__self__, "socks_proxy_host", socks_proxy_host)
+        if socks_proxy_port is not None:
+            pulumi.set(__self__, "socks_proxy_port", socks_proxy_port)
+        if use_system_proxies is not None:
+            pulumi.set(__self__, "use_system_proxies", use_system_proxies)
 
     @property
     @pulumi.getter(name="ftpProxyHost")
-    def ftp_proxy_host(self) -> str:
-        """
-        Ftp host to be set in net.properties file.
-        """
+    def ftp_proxy_host(self) -> Optional[str]:
         return pulumi.get(self, "ftp_proxy_host")
 
     @property
     @pulumi.getter(name="ftpProxyPort")
-    def ftp_proxy_port(self) -> int:
-        """
-        Ftp port number to be set in net.properties file.
-        """
+    def ftp_proxy_port(self) -> Optional[int]:
         return pulumi.get(self, "ftp_proxy_port")
 
     @property
     @pulumi.getter(name="httpProxyHost")
-    def http_proxy_host(self) -> str:
-        """
-        Http host to be set in net.properties file.
-        """
+    def http_proxy_host(self) -> Optional[str]:
         return pulumi.get(self, "http_proxy_host")
 
     @property
     @pulumi.getter(name="httpProxyPort")
-    def http_proxy_port(self) -> int:
-        """
-        Http port number to be set in net.properties file.
-        """
+    def http_proxy_port(self) -> Optional[int]:
         return pulumi.get(self, "http_proxy_port")
 
     @property
     @pulumi.getter(name="httpsProxyHost")
-    def https_proxy_host(self) -> str:
-        """
-        Https host to be set in net.properties file.
-        """
+    def https_proxy_host(self) -> Optional[str]:
         return pulumi.get(self, "https_proxy_host")
 
     @property
     @pulumi.getter(name="httpsProxyPort")
-    def https_proxy_port(self) -> int:
-        """
-        Https port number to be set in net.properties file.
-        """
+    def https_proxy_port(self) -> Optional[int]:
         return pulumi.get(self, "https_proxy_port")
 
     @property
     @pulumi.getter(name="socksProxyHost")
-    def socks_proxy_host(self) -> str:
-        """
-        Socks host to be set in net.properties file.
-        """
+    def socks_proxy_host(self) -> Optional[str]:
         return pulumi.get(self, "socks_proxy_host")
 
     @property
     @pulumi.getter(name="socksProxyPort")
-    def socks_proxy_port(self) -> int:
-        """
-        Socks port number to be set in net.properties file.
-        """
+    def socks_proxy_port(self) -> Optional[int]:
         return pulumi.get(self, "socks_proxy_port")
 
     @property
     @pulumi.getter(name="useSystemProxies")
-    def use_system_proxies(self) -> bool:
-        """
-        Sets "java.net.useSystemProxies=true" in net.properties when they exist.
-        """
+    def use_system_proxies(self) -> Optional[bool]:
         return pulumi.get(self, "use_system_proxies")
 
 
 @pulumi.output_type
 class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool):
-        """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+                 is_enabled: Optional[bool] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
 
@@ -799,297 +598,220 @@ class GetFleetBlocklistsFilterResult(dict):
 @pulumi.output_type
 class GetFleetBlocklistsItemResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 operation: str,
-                 reason: str,
-                 targets: Sequence['outputs.GetFleetBlocklistsItemTargetResult']):
-        """
-        :param str key: The unique identifier of this blocklist record.
-        :param str operation: The operation type.
-        :param str reason: The reason why the operation is blocklisted.
-        :param Sequence['GetFleetBlocklistsItemTargetArgs'] targets: A resource to blocklist for certain operation.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "reason", reason)
-        pulumi.set(__self__, "targets", targets)
+                 key: Optional[str] = None,
+                 operation: Optional[str] = None,
+                 reason: Optional[str] = None,
+                 targets: Optional[Sequence['outputs.GetFleetBlocklistsItemTargetResult']] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if operation is not None:
+            pulumi.set(__self__, "operation", operation)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique identifier of this blocklist record.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def operation(self) -> str:
-        """
-        The operation type.
-        """
+    def operation(self) -> Optional[str]:
         return pulumi.get(self, "operation")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        The reason why the operation is blocklisted.
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
     @property
     @pulumi.getter
-    def targets(self) -> Sequence['outputs.GetFleetBlocklistsItemTargetResult']:
-        """
-        A resource to blocklist for certain operation.
-        """
+    def targets(self) -> Optional[Sequence['outputs.GetFleetBlocklistsItemTargetResult']]:
         return pulumi.get(self, "targets")
 
 
 @pulumi.output_type
 class GetFleetBlocklistsItemTargetResult(dict):
     def __init__(__self__, *,
-                 fleet_id: str,
-                 installation_key: str,
-                 managed_instance_id: str):
-        """
-        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str installation_key: The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        """
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "installation_key", installation_key)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+                 fleet_id: Optional[str] = None,
+                 installation_key: Optional[str] = None,
+                 managed_instance_id: Optional[str] = None):
+        if fleet_id is not None:
+            pulumi.set(__self__, "fleet_id", fleet_id)
+        if installation_key is not None:
+            pulumi.set(__self__, "installation_key", installation_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
 
     @property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        """
+    def fleet_id(self) -> Optional[str]:
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="installationKey")
-    def installation_key(self) -> str:
-        """
-        The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        """
+    def installation_key(self) -> Optional[str]:
         return pulumi.get(self, "installation_key")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related managed instance.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
 
 @pulumi.output_type
 class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict):
     def __init__(__self__, *,
-                 aggregation_mode: str,
-                 bucket: str,
-                 crypto_roadmap_version: str,
-                 finding_count: int,
-                 fleet_id: str,
-                 host_name: str,
-                 id: str,
-                 managed_instance_id: str,
-                 namespace: str,
-                 non_compliant_finding_count: int,
-                 object: str,
-                 summarized_event_count: int,
-                 time_created: str,
-                 time_first_event: str,
-                 time_last_event: str,
-                 total_event_count: int,
-                 work_request_id: str):
-        """
-        :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
-        :param str bucket: The Object Storage bucket name of this analysis result.
-        :param str crypto_roadmap_version: The Crypto Roadmap version used to perform the analysis.
-        :param int finding_count: Total number of findings with the analysis.
-        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str host_name: The hostname of the managed instance.
-        :param str id: The OCID to identify this analysis results.
-        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        :param str namespace: The Object Storage namespace of this analysis result.
-        :param int non_compliant_finding_count: Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-        :param str object: The Object Storage object name of this analysis result.
-        :param int summarized_event_count: Total number of summarized events. Summarized events are deduplicated events of interest.
-        :param str time_created: The time the result is compiled.
-        :param str time_first_event: Time of the first event in the analysis.
-        :param str time_last_event: Time of the last event in the analysis.
-        :param int total_event_count: Total number of events in the analysis.
-        :param str work_request_id: The OCID of the work request to start the analysis.
-        """
-        pulumi.set(__self__, "aggregation_mode", aggregation_mode)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "crypto_roadmap_version", crypto_roadmap_version)
-        pulumi.set(__self__, "finding_count", finding_count)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "non_compliant_finding_count", non_compliant_finding_count)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "summarized_event_count", summarized_event_count)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_first_event", time_first_event)
-        pulumi.set(__self__, "time_last_event", time_last_event)
-        pulumi.set(__self__, "total_event_count", total_event_count)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+                 aggregation_mode: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 crypto_roadmap_version: Optional[str] = None,
+                 finding_count: Optional[int] = None,
+                 fleet_id: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 managed_instance_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 non_compliant_finding_count: Optional[int] = None,
+                 object: Optional[str] = None,
+                 summarized_event_count: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_first_event: Optional[str] = None,
+                 time_last_event: Optional[str] = None,
+                 total_event_count: Optional[int] = None,
+                 work_request_id: Optional[str] = None):
+        if aggregation_mode is not None:
+            pulumi.set(__self__, "aggregation_mode", aggregation_mode)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if crypto_roadmap_version is not None:
+            pulumi.set(__self__, "crypto_roadmap_version", crypto_roadmap_version)
+        if finding_count is not None:
+            pulumi.set(__self__, "finding_count", finding_count)
+        if fleet_id is not None:
+            pulumi.set(__self__, "fleet_id", fleet_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if non_compliant_finding_count is not None:
+            pulumi.set(__self__, "non_compliant_finding_count", non_compliant_finding_count)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if summarized_event_count is not None:
+            pulumi.set(__self__, "summarized_event_count", summarized_event_count)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_first_event is not None:
+            pulumi.set(__self__, "time_first_event", time_first_event)
+        if time_last_event is not None:
+            pulumi.set(__self__, "time_last_event", time_last_event)
+        if total_event_count is not None:
+            pulumi.set(__self__, "total_event_count", total_event_count)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="aggregationMode")
-    def aggregation_mode(self) -> str:
-        """
-        The aggregation mode of the crypto event analysis result.
-        """
+    def aggregation_mode(self) -> Optional[str]:
         return pulumi.get(self, "aggregation_mode")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The Object Storage bucket name of this analysis result.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="cryptoRoadmapVersion")
-    def crypto_roadmap_version(self) -> str:
-        """
-        The Crypto Roadmap version used to perform the analysis.
-        """
+    def crypto_roadmap_version(self) -> Optional[str]:
         return pulumi.get(self, "crypto_roadmap_version")
 
     @property
     @pulumi.getter(name="findingCount")
-    def finding_count(self) -> int:
-        """
-        Total number of findings with the analysis.
-        """
+    def finding_count(self) -> Optional[int]:
         return pulumi.get(self, "finding_count")
 
     @property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        """
+    def fleet_id(self) -> Optional[str]:
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The hostname of the managed instance.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID to identify this analysis results.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related managed instance.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Object Storage namespace of this analysis result.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="nonCompliantFindingCount")
-    def non_compliant_finding_count(self) -> int:
-        """
-        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the Crypto Roadmap version used by the analysis.
-        """
+    def non_compliant_finding_count(self) -> Optional[int]:
         return pulumi.get(self, "non_compliant_finding_count")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The Object Storage object name of this analysis result.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="summarizedEventCount")
-    def summarized_event_count(self) -> int:
-        """
-        Total number of summarized events. Summarized events are deduplicated events of interest.
-        """
+    def summarized_event_count(self) -> Optional[int]:
         return pulumi.get(self, "summarized_event_count")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the result is compiled.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFirstEvent")
-    def time_first_event(self) -> str:
-        """
-        Time of the first event in the analysis.
-        """
+    def time_first_event(self) -> Optional[str]:
         return pulumi.get(self, "time_first_event")
 
     @property
     @pulumi.getter(name="timeLastEvent")
-    def time_last_event(self) -> str:
-        """
-        Time of the last event in the analysis.
-        """
+    def time_last_event(self) -> Optional[str]:
         return pulumi.get(self, "time_last_event")
 
     @property
     @pulumi.getter(name="totalEventCount")
-    def total_event_count(self) -> int:
-        """
-        Total number of events in the analysis.
-        """
+    def total_event_count(self) -> Optional[int]:
         return pulumi.get(self, "total_event_count")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the work request to start the analysis.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -1150,98 +872,71 @@ class GetFleetDiagnosesFilterResult(dict):
 @pulumi.output_type
 class GetFleetDiagnosesFleetDiagnosisCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']):
-        """
-        :param Sequence['GetFleetDiagnosesFleetDiagnosisCollectionItemArgs'] items: A list of the fleet resource diagnosis.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']:
-        """
-        A list of the fleet resource diagnosis.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetFleetDiagnosesFleetDiagnosisCollectionItemResult(dict):
     def __init__(__self__, *,
-                 resource_diagnosis: str,
-                 resource_id: str,
-                 resource_state: str,
-                 resource_type: str):
-        """
-        :param str resource_diagnosis: The diagnosis message.
-        :param str resource_id: The OCID of the external resouce needed by the fleet.
-        :param str resource_state: The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
-        :param str resource_type: The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
-        """
-        pulumi.set(__self__, "resource_diagnosis", resource_diagnosis)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_state", resource_state)
-        pulumi.set(__self__, "resource_type", resource_type)
+                 resource_diagnosis: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_state: Optional[str] = None,
+                 resource_type: Optional[str] = None):
+        if resource_diagnosis is not None:
+            pulumi.set(__self__, "resource_diagnosis", resource_diagnosis)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_state is not None:
+            pulumi.set(__self__, "resource_state", resource_state)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
 
     @property
     @pulumi.getter(name="resourceDiagnosis")
-    def resource_diagnosis(self) -> str:
-        """
-        The diagnosis message.
-        """
+    def resource_diagnosis(self) -> Optional[str]:
         return pulumi.get(self, "resource_diagnosis")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The OCID of the external resouce needed by the fleet.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceState")
-    def resource_state(self) -> str:
-        """
-        The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
-        """
+    def resource_state(self) -> Optional[str]:
         return pulumi.get(self, "resource_state")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
 
 @pulumi.output_type
 class GetFleetInventoryLogResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
@@ -1275,224 +970,167 @@ class GetFleetJavaMigrationAnalysisResultsFilterResult(dict):
 @pulumi.output_type
 class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult(dict):
     def __init__(__self__, *,
-                 application_execution_type: str,
-                 application_name: str,
-                 application_path: str,
-                 bucket: str,
-                 fleet_id: str,
-                 host_name: str,
-                 id: str,
-                 managed_instance_id: str,
-                 metadata: str,
-                 namespace: str,
-                 object_lists: Sequence[str],
-                 object_storage_upload_dir_path: str,
-                 source_jdk_version: str,
-                 target_jdk_version: str,
-                 time_created: str,
-                 work_request_id: str):
-        """
-        :param str application_execution_type: Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-        :param str application_name: The name of the application for which the Java migration analysis was performed.
-        :param str application_path: The installation path of the application for which the Java migration analysis was performed.
-        :param str bucket: The name of the object storage bucket that contains the results of the migration analysis.
-        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str host_name: The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-        :param str id: The OCID of the migration analysis report.
-        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        :param str metadata: Additional info reserved for future use.
-        :param str namespace: The object storage namespace that contains the results of the migration analysis.
-        :param Sequence[str] object_lists: The names of the object storage objects that contain the results of the migration analysis.
-        :param str object_storage_upload_dir_path: The directory path of the object storage bucket that contains the results of the migration analysis.
-        :param str source_jdk_version: The source JDK version of the application that's currently running.
-        :param str target_jdk_version: The target JDK version of the application to be migrated.
-        :param str time_created: The time the result is compiled.
-        :param str work_request_id: The OCID of the work request of this analysis.
-        """
-        pulumi.set(__self__, "application_execution_type", application_execution_type)
-        pulumi.set(__self__, "application_name", application_name)
-        pulumi.set(__self__, "application_path", application_path)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_lists", object_lists)
-        pulumi.set(__self__, "object_storage_upload_dir_path", object_storage_upload_dir_path)
-        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
-        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+                 application_execution_type: Optional[str] = None,
+                 application_name: Optional[str] = None,
+                 application_path: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 fleet_id: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 managed_instance_id: Optional[str] = None,
+                 metadata: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object_lists: Optional[Sequence[str]] = None,
+                 object_storage_upload_dir_path: Optional[str] = None,
+                 source_jdk_version: Optional[str] = None,
+                 target_jdk_version: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 work_request_id: Optional[str] = None):
+        if application_execution_type is not None:
+            pulumi.set(__self__, "application_execution_type", application_execution_type)
+        if application_name is not None:
+            pulumi.set(__self__, "application_name", application_name)
+        if application_path is not None:
+            pulumi.set(__self__, "application_path", application_path)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if fleet_id is not None:
+            pulumi.set(__self__, "fleet_id", fleet_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object_lists is not None:
+            pulumi.set(__self__, "object_lists", object_lists)
+        if object_storage_upload_dir_path is not None:
+            pulumi.set(__self__, "object_storage_upload_dir_path", object_storage_upload_dir_path)
+        if source_jdk_version is not None:
+            pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        if target_jdk_version is not None:
+            pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="applicationExecutionType")
-    def application_execution_type(self) -> str:
-        """
-        Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-        """
+    def application_execution_type(self) -> Optional[str]:
         return pulumi.get(self, "application_execution_type")
 
     @property
     @pulumi.getter(name="applicationName")
-    def application_name(self) -> str:
-        """
-        The name of the application for which the Java migration analysis was performed.
-        """
+    def application_name(self) -> Optional[str]:
         return pulumi.get(self, "application_name")
 
     @property
     @pulumi.getter(name="applicationPath")
-    def application_path(self) -> str:
-        """
-        The installation path of the application for which the Java migration analysis was performed.
-        """
+    def application_path(self) -> Optional[str]:
         return pulumi.get(self, "application_path")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the object storage bucket that contains the results of the migration analysis.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        """
+    def fleet_id(self) -> Optional[str]:
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the migration analysis report.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related managed instance.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
-    def metadata(self) -> str:
-        """
-        Additional info reserved for future use.
-        """
+    def metadata(self) -> Optional[str]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace that contains the results of the migration analysis.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="objectLists")
-    def object_lists(self) -> Sequence[str]:
-        """
-        The names of the object storage objects that contain the results of the migration analysis.
-        """
+    def object_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "object_lists")
 
     @property
     @pulumi.getter(name="objectStorageUploadDirPath")
-    def object_storage_upload_dir_path(self) -> str:
-        """
-        The directory path of the object storage bucket that contains the results of the migration analysis.
-        """
+    def object_storage_upload_dir_path(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_upload_dir_path")
 
     @property
     @pulumi.getter(name="sourceJdkVersion")
-    def source_jdk_version(self) -> str:
-        """
-        The source JDK version of the application that's currently running.
-        """
+    def source_jdk_version(self) -> Optional[str]:
         return pulumi.get(self, "source_jdk_version")
 
     @property
     @pulumi.getter(name="targetJdkVersion")
-    def target_jdk_version(self) -> str:
-        """
-        The target JDK version of the application to be migrated.
-        """
+    def target_jdk_version(self) -> Optional[str]:
         return pulumi.get(self, "target_jdk_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the result is compiled.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the work request of this analysis.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
 @pulumi.output_type
 class GetFleetOperationLogResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
@@ -1526,206 +1164,154 @@ class GetFleetPerformanceTuningAnalysisResultsFilterResult(dict):
 @pulumi.output_type
 class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult(dict):
     def __init__(__self__, *,
-                 application_id: str,
-                 application_installation_id: str,
-                 application_installation_path: str,
-                 application_name: str,
-                 bucket: str,
-                 fleet_id: str,
-                 host_name: str,
-                 id: str,
-                 managed_instance_id: str,
-                 namespace: str,
-                 object: str,
-                 result: str,
-                 time_created: str,
-                 time_finished: str,
-                 time_started: str,
-                 warning_count: int,
-                 work_request_id: str):
-        """
-        :param str application_id: The Fleet-unique identifier of the related application.
-        :param str application_installation_id: The internal identifier of the application installation for which the report has been generated.
-        :param str application_installation_path: The installation path of the application for which the report has been generated.
-        :param str application_name: The name of the application for which the report has been generated.
-        :param str bucket: The Object Storage bucket name of this analysis result.
-        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        :param str host_name: The hostname of the managed instance.
-        :param str id: The OCID to identify this analysis results.
-        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        :param str namespace: The Object Storage namespace of this analysis result.
-        :param str object: The Object Storage object name of this analysis result.
-        :param str result: Result of the analysis based on whether warnings have been found or not.
-        :param str time_created: The time the result is compiled.
-        :param str time_finished: The time the JFR capture finished.
-        :param str time_started: The time the JFR capture started.
-        :param int warning_count: Total number of warnings reported by the analysis.
-        :param str work_request_id: The OCID of the work request to start the analysis.
-        """
-        pulumi.set(__self__, "application_id", application_id)
-        pulumi.set(__self__, "application_installation_id", application_installation_id)
-        pulumi.set(__self__, "application_installation_path", application_installation_path)
-        pulumi.set(__self__, "application_name", application_name)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "result", result)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "warning_count", warning_count)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+                 application_id: Optional[str] = None,
+                 application_installation_id: Optional[str] = None,
+                 application_installation_path: Optional[str] = None,
+                 application_name: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 fleet_id: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 managed_instance_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 result: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None,
+                 warning_count: Optional[int] = None,
+                 work_request_id: Optional[str] = None):
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
+        if application_installation_id is not None:
+            pulumi.set(__self__, "application_installation_id", application_installation_id)
+        if application_installation_path is not None:
+            pulumi.set(__self__, "application_installation_path", application_installation_path)
+        if application_name is not None:
+            pulumi.set(__self__, "application_name", application_name)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if fleet_id is not None:
+            pulumi.set(__self__, "fleet_id", fleet_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if result is not None:
+            pulumi.set(__self__, "result", result)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+        if warning_count is not None:
+            pulumi.set(__self__, "warning_count", warning_count)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related application.
-        """
+    def application_id(self) -> Optional[str]:
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="applicationInstallationId")
-    def application_installation_id(self) -> str:
-        """
-        The internal identifier of the application installation for which the report has been generated.
-        """
+    def application_installation_id(self) -> Optional[str]:
         return pulumi.get(self, "application_installation_id")
 
     @property
     @pulumi.getter(name="applicationInstallationPath")
-    def application_installation_path(self) -> str:
-        """
-        The installation path of the application for which the report has been generated.
-        """
+    def application_installation_path(self) -> Optional[str]:
         return pulumi.get(self, "application_installation_path")
 
     @property
     @pulumi.getter(name="applicationName")
-    def application_name(self) -> str:
-        """
-        The name of the application for which the report has been generated.
-        """
+    def application_name(self) -> Optional[str]:
         return pulumi.get(self, "application_name")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The Object Storage bucket name of this analysis result.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        """
+    def fleet_id(self) -> Optional[str]:
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The hostname of the managed instance.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID to identify this analysis results.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related managed instance.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Object Storage namespace of this analysis result.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The Object Storage object name of this analysis result.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter
-    def result(self) -> str:
-        """
-        Result of the analysis based on whether warnings have been found or not.
-        """
+    def result(self) -> Optional[str]:
         return pulumi.get(self, "result")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the result is compiled.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The time the JFR capture finished.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The time the JFR capture started.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="warningCount")
-    def warning_count(self) -> int:
-        """
-        Total number of warnings reported by the analysis.
-        """
+    def warning_count(self) -> Optional[int]:
         return pulumi.get(self, "warning_count")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the work request to start the analysis.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -1759,523 +1345,384 @@ class GetFleetsFilterResult(dict):
 @pulumi.output_type
 class GetFleetsFleetCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetFleetsFleetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetFleetsFleetCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFleetsFleetCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetFleetsFleetCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetFleetsFleetCollectionItemResult(dict):
     def __init__(__self__, *,
-                 approximate_application_count: int,
-                 approximate_installation_count: int,
-                 approximate_java_server_count: int,
-                 approximate_jre_count: int,
-                 approximate_managed_instance_count: int,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 inventory_logs: Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult'],
-                 is_advanced_features_enabled: bool,
-                 operation_logs: Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult'],
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str):
-        """
-        :param int approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        :param int approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        :param int approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        :param int approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        :param int approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-        :param str description: The Fleet's description.
-        :param str display_name: The display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        :param str id: The ID of the Fleet.
-        :param Sequence['GetFleetsFleetCollectionItemInventoryLogArgs'] inventory_logs: Custom Log for inventory or operation log.
-        :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-        :param Sequence['GetFleetsFleetCollectionItemOperationLogArgs'] operation_logs: Custom Log for inventory or operation log.
-        :param str state: The state of the lifecycle.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
-        pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
-        pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
-        pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inventory_logs", inventory_logs)
-        pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
-        pulumi.set(__self__, "operation_logs", operation_logs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+                 approximate_application_count: Optional[int] = None,
+                 approximate_installation_count: Optional[int] = None,
+                 approximate_java_server_count: Optional[int] = None,
+                 approximate_jre_count: Optional[int] = None,
+                 approximate_managed_instance_count: Optional[int] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 inventory_logs: Optional[Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult']] = None,
+                 is_advanced_features_enabled: Optional[bool] = None,
+                 operation_logs: Optional[Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult']] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None):
+        if approximate_application_count is not None:
+            pulumi.set(__self__, "approximate_application_count", approximate_application_count)
+        if approximate_installation_count is not None:
+            pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
+        if approximate_java_server_count is not None:
+            pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
+        if approximate_jre_count is not None:
+            pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
+        if approximate_managed_instance_count is not None:
+            pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if inventory_logs is not None:
+            pulumi.set(__self__, "inventory_logs", inventory_logs)
+        if is_advanced_features_enabled is not None:
+            pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+        if operation_logs is not None:
+            pulumi.set(__self__, "operation_logs", operation_logs)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
-    def approximate_application_count(self) -> int:
-        """
-        The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_application_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_application_count")
 
     @property
     @pulumi.getter(name="approximateInstallationCount")
-    def approximate_installation_count(self) -> int:
-        """
-        The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_installation_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_installation_count")
 
     @property
     @pulumi.getter(name="approximateJavaServerCount")
-    def approximate_java_server_count(self) -> int:
-        """
-        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_java_server_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_java_server_count")
 
     @property
     @pulumi.getter(name="approximateJreCount")
-    def approximate_jre_count(self) -> int:
-        """
-        The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_jre_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_jre_count")
 
     @property
     @pulumi.getter(name="approximateManagedInstanceCount")
-    def approximate_managed_instance_count(self) -> int:
-        """
-        The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
-        """
+    def approximate_managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_managed_instance_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The Fleet's description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ID of the Fleet.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inventoryLogs")
-    def inventory_logs(self) -> Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult']:
-        """
-        Custom Log for inventory or operation log.
-        """
+    def inventory_logs(self) -> Optional[Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult']]:
         return pulumi.get(self, "inventory_logs")
 
     @property
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
-    def is_advanced_features_enabled(self) -> bool:
-        """
-        Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
-        """
+    def is_advanced_features_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_advanced_features_enabled")
 
     @property
     @pulumi.getter(name="operationLogs")
-    def operation_logs(self) -> Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult']:
-        """
-        Custom Log for inventory or operation log.
-        """
+    def operation_logs(self) -> Optional[Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult']]:
         return pulumi.get(self, "operation_logs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the lifecycle.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetFleetsFleetCollectionItemInventoryLogResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetFleetsFleetCollectionItemOperationLogResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetInstallationSiteItemResult(dict):
     def __init__(__self__, *,
-                 approximate_application_count: int,
-                 blocklists: Sequence['outputs.GetInstallationSiteItemBlocklistResult'],
-                 installation_key: str,
-                 jres: Sequence['outputs.GetInstallationSiteItemJreResult'],
-                 managed_instance_id: str,
-                 operating_systems: Sequence['outputs.GetInstallationSiteItemOperatingSystemResult'],
-                 path: str,
-                 security_status: str,
-                 state: str,
-                 time_last_seen: str):
-        """
-        :param int approximate_application_count: The approximate count of applications running on this installation
-        :param Sequence['GetInstallationSiteItemBlocklistArgs'] blocklists: The list of operations that are blocklisted.
-        :param str installation_key: The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        :param Sequence['GetInstallationSiteItemJreArgs'] jres: The essential properties to identify a Java Runtime.
-        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        :param Sequence['GetInstallationSiteItemOperatingSystemArgs'] operating_systems: Operating System of the platform on which the Java Runtime was reported.
-        :param str path: The file system path of the installation.
-        :param str security_status: The security status of the Java Runtime.
-        :param str state: The lifecycle state of the installation site.
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "blocklists", blocklists)
-        pulumi.set(__self__, "installation_key", installation_key)
-        pulumi.set(__self__, "jres", jres)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "security_status", security_status)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_last_seen", time_last_seen)
+                 approximate_application_count: Optional[int] = None,
+                 blocklists: Optional[Sequence['outputs.GetInstallationSiteItemBlocklistResult']] = None,
+                 installation_key: Optional[str] = None,
+                 jres: Optional[Sequence['outputs.GetInstallationSiteItemJreResult']] = None,
+                 managed_instance_id: Optional[str] = None,
+                 operating_systems: Optional[Sequence['outputs.GetInstallationSiteItemOperatingSystemResult']] = None,
+                 path: Optional[str] = None,
+                 security_status: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_last_seen: Optional[str] = None):
+        if approximate_application_count is not None:
+            pulumi.set(__self__, "approximate_application_count", approximate_application_count)
+        if blocklists is not None:
+            pulumi.set(__self__, "blocklists", blocklists)
+        if installation_key is not None:
+            pulumi.set(__self__, "installation_key", installation_key)
+        if jres is not None:
+            pulumi.set(__self__, "jres", jres)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if security_status is not None:
+            pulumi.set(__self__, "security_status", security_status)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_last_seen is not None:
+            pulumi.set(__self__, "time_last_seen", time_last_seen)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
-    def approximate_application_count(self) -> int:
-        """
-        The approximate count of applications running on this installation
-        """
+    def approximate_application_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_application_count")
 
     @property
     @pulumi.getter
-    def blocklists(self) -> Sequence['outputs.GetInstallationSiteItemBlocklistResult']:
-        """
-        The list of operations that are blocklisted.
-        """
+    def blocklists(self) -> Optional[Sequence['outputs.GetInstallationSiteItemBlocklistResult']]:
         return pulumi.get(self, "blocklists")
 
     @property
     @pulumi.getter(name="installationKey")
-    def installation_key(self) -> str:
-        """
-        The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        """
+    def installation_key(self) -> Optional[str]:
         return pulumi.get(self, "installation_key")
 
     @property
     @pulumi.getter
-    def jres(self) -> Sequence['outputs.GetInstallationSiteItemJreResult']:
-        """
-        The essential properties to identify a Java Runtime.
-        """
+    def jres(self) -> Optional[Sequence['outputs.GetInstallationSiteItemJreResult']]:
         return pulumi.get(self, "jres")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related managed instance.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetInstallationSiteItemOperatingSystemResult']:
-        """
-        Operating System of the platform on which the Java Runtime was reported.
-        """
+    def operating_systems(self) -> Optional[Sequence['outputs.GetInstallationSiteItemOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        The file system path of the installation.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter(name="securityStatus")
-    def security_status(self) -> str:
-        """
-        The security status of the Java Runtime.
-        """
+    def security_status(self) -> Optional[str]:
         return pulumi.get(self, "security_status")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the installation site.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeLastSeen")
-    def time_last_seen(self) -> str:
-        """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        """
+    def time_last_seen(self) -> Optional[str]:
         return pulumi.get(self, "time_last_seen")
 
 
 @pulumi.output_type
 class GetInstallationSiteItemBlocklistResult(dict):
     def __init__(__self__, *,
-                 operation: str,
-                 reason: str):
-        """
-        :param str operation: The operation type.
-        :param str reason: The reason why the operation is blocklisted.
-        """
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "reason", reason)
+                 operation: Optional[str] = None,
+                 reason: Optional[str] = None):
+        if operation is not None:
+            pulumi.set(__self__, "operation", operation)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
 
     @property
     @pulumi.getter
-    def operation(self) -> str:
-        """
-        The operation type.
-        """
+    def operation(self) -> Optional[str]:
         return pulumi.get(self, "operation")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        The reason why the operation is blocklisted.
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
 
 @pulumi.output_type
 class GetInstallationSiteItemJreResult(dict):
     def __init__(__self__, *,
-                 distribution: str,
-                 jre_key: str,
-                 vendor: str,
-                 version: str):
-        """
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-        :param str jre_key: The unique identifier for a Java Runtime.
-        :param str vendor: The vendor of the Java Runtime.
-        :param str version: The version of the operating system as provided by the Java system property os.version.
-        """
-        pulumi.set(__self__, "distribution", distribution)
-        pulumi.set(__self__, "jre_key", jre_key)
-        pulumi.set(__self__, "vendor", vendor)
-        pulumi.set(__self__, "version", version)
+                 distribution: Optional[str] = None,
+                 jre_key: Optional[str] = None,
+                 vendor: Optional[str] = None,
+                 version: Optional[str] = None):
+        if distribution is not None:
+            pulumi.set(__self__, "distribution", distribution)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def distribution(self) -> str:
-        """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-        """
+    def distribution(self) -> Optional[str]:
         return pulumi.get(self, "distribution")
 
     @property
     @pulumi.getter(name="jreKey")
-    def jre_key(self) -> str:
-        """
-        The unique identifier for a Java Runtime.
-        """
+    def jre_key(self) -> Optional[str]:
         return pulumi.get(self, "jre_key")
 
     @property
     @pulumi.getter
-    def vendor(self) -> str:
-        """
-        The vendor of the Java Runtime.
-        """
+    def vendor(self) -> Optional[str]:
         return pulumi.get(self, "vendor")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the operating system as provided by the Java system property os.version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetInstallationSiteItemOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 architecture: str,
-                 family: str,
-                 managed_instance_count: int,
-                 name: str,
-                 version: str):
-        """
-        :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
-        :param str family: The operating system type, such as Windows or Linux
-        :param int managed_instance_count: Number of instances running the operating system
-        :param str name: The name of the operating system as provided by the Java system property os.name.
-        :param str version: The version of the operating system as provided by the Java system property os.version.
-        """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+                 architecture: Optional[str] = None,
+                 family: Optional[str] = None,
+                 managed_instance_count: Optional[int] = None,
+                 name: Optional[str] = None,
+                 version: Optional[str] = None):
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if managed_instance_count is not None:
+            pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def architecture(self) -> str:
-        """
-        The architecture of the operating system as provided by the Java system property os.arch.
-        """
+    def architecture(self) -> Optional[str]:
         return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter
-    def family(self) -> str:
-        """
-        The operating system type, such as Windows or Linux
-        """
+    def family(self) -> Optional[str]:
         return pulumi.get(self, "family")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
-    def managed_instance_count(self) -> int:
-        """
-        Number of instances running the operating system
-        """
+    def managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system as provided by the Java system property os.name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the operating system as provided by the Java system property os.version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -2285,9 +1732,6 @@ class GetInstallationSitesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the operating system as provided by the Java system property os.name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2296,9 +1740,6 @@ class GetInstallationSitesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the operating system as provided by the Java system property os.name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2315,295 +1756,214 @@ class GetInstallationSitesFilterResult(dict):
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult']):
-        """
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemArgs'] items: A list of Java installation sites.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult']:
-        """
-        A list of Java installation sites.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']):
-        """
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemArgs'] items: A list of Java installation sites.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']:
-        """
-        A list of Java installation sites.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 approximate_application_count: int,
-                 blocklists: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult'],
-                 installation_key: str,
-                 jres: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult'],
-                 managed_instance_id: str,
-                 operating_systems: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult'],
-                 path: str,
-                 security_status: str,
-                 state: str,
-                 time_last_seen: str):
-        """
-        :param int approximate_application_count: The approximate count of applications running on this installation
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs'] blocklists: The list of operations that are blocklisted.
-        :param str installation_key: The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemJreArgs'] jres: The essential properties to identify a Java Runtime.
-        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs'] operating_systems: Operating System of the platform on which the Java Runtime was reported.
-        :param str path: The file system path of the installation.
-        :param str security_status: The security status of the Java Runtime.
-        :param str state: The lifecycle state of the installation site.
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "blocklists", blocklists)
-        pulumi.set(__self__, "installation_key", installation_key)
-        pulumi.set(__self__, "jres", jres)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "security_status", security_status)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_last_seen", time_last_seen)
+                 approximate_application_count: Optional[int] = None,
+                 blocklists: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult']] = None,
+                 installation_key: Optional[str] = None,
+                 jres: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult']] = None,
+                 managed_instance_id: Optional[str] = None,
+                 operating_systems: Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult']] = None,
+                 path: Optional[str] = None,
+                 security_status: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_last_seen: Optional[str] = None):
+        if approximate_application_count is not None:
+            pulumi.set(__self__, "approximate_application_count", approximate_application_count)
+        if blocklists is not None:
+            pulumi.set(__self__, "blocklists", blocklists)
+        if installation_key is not None:
+            pulumi.set(__self__, "installation_key", installation_key)
+        if jres is not None:
+            pulumi.set(__self__, "jres", jres)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if security_status is not None:
+            pulumi.set(__self__, "security_status", security_status)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_last_seen is not None:
+            pulumi.set(__self__, "time_last_seen", time_last_seen)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
-    def approximate_application_count(self) -> int:
-        """
-        The approximate count of applications running on this installation
-        """
+    def approximate_application_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_application_count")
 
     @property
     @pulumi.getter
-    def blocklists(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult']:
-        """
-        The list of operations that are blocklisted.
-        """
+    def blocklists(self) -> Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult']]:
         return pulumi.get(self, "blocklists")
 
     @property
     @pulumi.getter(name="installationKey")
-    def installation_key(self) -> str:
-        """
-        The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        """
+    def installation_key(self) -> Optional[str]:
         return pulumi.get(self, "installation_key")
 
     @property
     @pulumi.getter
-    def jres(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult']:
-        """
-        The essential properties to identify a Java Runtime.
-        """
+    def jres(self) -> Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult']]:
         return pulumi.get(self, "jres")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The Fleet-unique identifier of the related managed instance.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult']:
-        """
-        Operating System of the platform on which the Java Runtime was reported.
-        """
+    def operating_systems(self) -> Optional[Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter
-    def path(self) -> str:
-        """
-        The file system path of the installation.
-        """
+    def path(self) -> Optional[str]:
         return pulumi.get(self, "path")
 
     @property
     @pulumi.getter(name="securityStatus")
-    def security_status(self) -> str:
-        """
-        The security status of the Java Runtime.
-        """
+    def security_status(self) -> Optional[str]:
         return pulumi.get(self, "security_status")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the installation site.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeLastSeen")
-    def time_last_seen(self) -> str:
-        """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        """
+    def time_last_seen(self) -> Optional[str]:
         return pulumi.get(self, "time_last_seen")
 
 
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult(dict):
     def __init__(__self__, *,
-                 operation: str,
-                 reason: str):
-        """
-        :param str operation: The operation type.
-        :param str reason: The reason why the operation is blocklisted.
-        """
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "reason", reason)
+                 operation: Optional[str] = None,
+                 reason: Optional[str] = None):
+        if operation is not None:
+            pulumi.set(__self__, "operation", operation)
+        if reason is not None:
+            pulumi.set(__self__, "reason", reason)
 
     @property
     @pulumi.getter
-    def operation(self) -> str:
-        """
-        The operation type.
-        """
+    def operation(self) -> Optional[str]:
         return pulumi.get(self, "operation")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        The reason why the operation is blocklisted.
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
 
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
     def __init__(__self__, *,
-                 distribution: str,
-                 jre_key: str,
-                 vendor: str,
-                 version: str):
-        """
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-        :param str jre_key: The unique identifier for a Java Runtime.
-        :param str vendor: The vendor of the Java Runtime.
-        :param str version: The version of the operating system as provided by the Java system property os.version.
-        """
-        pulumi.set(__self__, "distribution", distribution)
-        pulumi.set(__self__, "jre_key", jre_key)
-        pulumi.set(__self__, "vendor", vendor)
-        pulumi.set(__self__, "version", version)
+                 distribution: Optional[str] = None,
+                 jre_key: Optional[str] = None,
+                 vendor: Optional[str] = None,
+                 version: Optional[str] = None):
+        if distribution is not None:
+            pulumi.set(__self__, "distribution", distribution)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def distribution(self) -> str:
-        """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-        """
+    def distribution(self) -> Optional[str]:
         return pulumi.get(self, "distribution")
 
     @property
     @pulumi.getter(name="jreKey")
-    def jre_key(self) -> str:
-        """
-        The unique identifier for a Java Runtime.
-        """
+    def jre_key(self) -> Optional[str]:
         return pulumi.get(self, "jre_key")
 
     @property
     @pulumi.getter
-    def vendor(self) -> str:
-        """
-        The vendor of the Java Runtime.
-        """
+    def vendor(self) -> Optional[str]:
         return pulumi.get(self, "vendor")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the operating system as provided by the Java system property os.version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 architecture: str,
-                 family: str,
-                 managed_instance_count: int,
-                 name: str,
-                 version: str):
-        """
-        :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
-        :param str family: The operating system type, such as Windows or Linux
-        :param int managed_instance_count: Number of instances running the operating system.
-        :param str name: The name of the operating system as provided by the Java system property os.name.
-        :param str version: The version of the operating system as provided by the Java system property os.version.
-        """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+                 architecture: Optional[str] = None,
+                 family: Optional[str] = None,
+                 managed_instance_count: Optional[int] = None,
+                 name: Optional[str] = None,
+                 version: Optional[str] = None):
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if managed_instance_count is not None:
+            pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def architecture(self) -> str:
-        """
-        The architecture of the operating system as provided by the Java system property os.arch.
-        """
+    def architecture(self) -> Optional[str]:
         return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter
-    def family(self) -> str:
-        """
-        The operating system type, such as Windows or Linux
-        """
+    def family(self) -> Optional[str]:
         return pulumi.get(self, "family")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
-    def managed_instance_count(self) -> int:
-        """
-        Number of instances running the operating system.
-        """
+    def managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system as provided by the Java system property os.name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the operating system as provided by the Java system property os.version.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -2637,238 +1997,177 @@ class GetJavaFamiliesFilterResult(dict):
 @pulumi.output_type
 class GetJavaFamiliesJavaFamilyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 doc_url: str,
-                 end_of_support_life_date: str,
-                 family_version: str,
-                 support_type: str):
-        """
-        :param str display_name: The display name for the Java family.
-        :param str doc_url: Link to access the documentation for the release.
-        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str family_version: The version identifier for the Java family.
-        :param str support_type: This indicates the support category for the Java release family.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "doc_url", doc_url)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "support_type", support_type)
+                 display_name: Optional[str] = None,
+                 doc_url: Optional[str] = None,
+                 end_of_support_life_date: Optional[str] = None,
+                 family_version: Optional[str] = None,
+                 support_type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if doc_url is not None:
+            pulumi.set(__self__, "doc_url", doc_url)
+        if end_of_support_life_date is not None:
+            pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        if family_version is not None:
+            pulumi.set(__self__, "family_version", family_version)
+        if support_type is not None:
+            pulumi.set(__self__, "support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name for the Java family.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="docUrl")
-    def doc_url(self) -> str:
-        """
-        Link to access the documentation for the release.
-        """
+    def doc_url(self) -> Optional[str]:
         return pulumi.get(self, "doc_url")
 
     @property
     @pulumi.getter(name="endOfSupportLifeDate")
-    def end_of_support_life_date(self) -> str:
-        """
-        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def end_of_support_life_date(self) -> Optional[str]:
         return pulumi.get(self, "end_of_support_life_date")
 
     @property
     @pulumi.getter(name="familyVersion")
-    def family_version(self) -> str:
-        """
-        The version identifier for the Java family.
-        """
+    def family_version(self) -> Optional[str]:
         return pulumi.get(self, "family_version")
 
     @property
     @pulumi.getter(name="supportType")
-    def support_type(self) -> str:
-        """
-        This indicates the support category for the Java release family.
-        """
+    def support_type(self) -> Optional[str]:
         return pulumi.get(self, "support_type")
 
 
 @pulumi.output_type
 class GetJavaReleaseArtifactResult(dict):
     def __init__(__self__, *,
-                 approximate_file_size_in_bytes: str,
-                 artifact_content_type: str,
-                 artifact_description: str,
-                 artifact_id: str,
-                 sha256: str):
-        """
-        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
-        :param str artifact_content_type: Product content type of this artifact.
-        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-        :param str artifact_id: Unique identifier for the artifact.
-        :param str sha256: SHA256 checksum of the artifact.
-        """
-        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
-        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
-        pulumi.set(__self__, "artifact_description", artifact_description)
-        pulumi.set(__self__, "artifact_id", artifact_id)
-        pulumi.set(__self__, "sha256", sha256)
+                 approximate_file_size_in_bytes: Optional[str] = None,
+                 artifact_content_type: Optional[str] = None,
+                 artifact_description: Optional[str] = None,
+                 artifact_id: Optional[str] = None,
+                 sha256: Optional[str] = None):
+        if approximate_file_size_in_bytes is not None:
+            pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        if artifact_content_type is not None:
+            pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        if artifact_description is not None:
+            pulumi.set(__self__, "artifact_description", artifact_description)
+        if artifact_id is not None:
+            pulumi.set(__self__, "artifact_id", artifact_id)
+        if sha256 is not None:
+            pulumi.set(__self__, "sha256", sha256)
 
     @property
     @pulumi.getter(name="approximateFileSizeInBytes")
-    def approximate_file_size_in_bytes(self) -> str:
-        """
-        Approximate compressed file size in bytes.
-        """
+    def approximate_file_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "approximate_file_size_in_bytes")
 
     @property
     @pulumi.getter(name="artifactContentType")
-    def artifact_content_type(self) -> str:
-        """
-        Product content type of this artifact.
-        """
+    def artifact_content_type(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_type")
 
     @property
     @pulumi.getter(name="artifactDescription")
-    def artifact_description(self) -> str:
-        """
-        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-        """
+    def artifact_description(self) -> Optional[str]:
         return pulumi.get(self, "artifact_description")
 
     @property
     @pulumi.getter(name="artifactId")
-    def artifact_id(self) -> str:
-        """
-        Unique identifier for the artifact.
-        """
+    def artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "artifact_id")
 
     @property
     @pulumi.getter
-    def sha256(self) -> str:
-        """
-        SHA256 checksum of the artifact.
-        """
+    def sha256(self) -> Optional[str]:
         return pulumi.get(self, "sha256")
 
 
 @pulumi.output_type
 class GetJavaReleaseFamilyDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 doc_url: str,
-                 end_of_support_life_date: str,
-                 family_version: str,
-                 support_type: str):
-        """
-        :param str display_name: Commonly used name for the license type.
-        :param str doc_url: Link to access the documentation for the release.
-        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str family_version: Java release family identifier.
-        :param str support_type: This indicates the support category for the Java release family.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "doc_url", doc_url)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "support_type", support_type)
+                 display_name: Optional[str] = None,
+                 doc_url: Optional[str] = None,
+                 end_of_support_life_date: Optional[str] = None,
+                 family_version: Optional[str] = None,
+                 support_type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if doc_url is not None:
+            pulumi.set(__self__, "doc_url", doc_url)
+        if end_of_support_life_date is not None:
+            pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        if family_version is not None:
+            pulumi.set(__self__, "family_version", family_version)
+        if support_type is not None:
+            pulumi.set(__self__, "support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Commonly used name for the license type.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="docUrl")
-    def doc_url(self) -> str:
-        """
-        Link to access the documentation for the release.
-        """
+    def doc_url(self) -> Optional[str]:
         return pulumi.get(self, "doc_url")
 
     @property
     @pulumi.getter(name="endOfSupportLifeDate")
-    def end_of_support_life_date(self) -> str:
-        """
-        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def end_of_support_life_date(self) -> Optional[str]:
         return pulumi.get(self, "end_of_support_life_date")
 
     @property
     @pulumi.getter(name="familyVersion")
-    def family_version(self) -> str:
-        """
-        Java release family identifier.
-        """
+    def family_version(self) -> Optional[str]:
         return pulumi.get(self, "family_version")
 
     @property
     @pulumi.getter(name="supportType")
-    def support_type(self) -> str:
-        """
-        This indicates the support category for the Java release family.
-        """
+    def support_type(self) -> Optional[str]:
         return pulumi.get(self, "support_type")
 
 
 @pulumi.output_type
 class GetJavaReleaseLicenseDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 license_type: str,
-                 license_url: str):
-        """
-        :param str display_name: Commonly used name for the license type.
-        :param str license_type: License type for the Java version.
-        :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "license_url", license_url)
+                 display_name: Optional[str] = None,
+                 license_type: Optional[str] = None,
+                 license_url: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+        if license_url is not None:
+            pulumi.set(__self__, "license_url", license_url)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Commonly used name for the license type.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> str:
-        """
-        License type for the Java version.
-        """
+    def license_type(self) -> Optional[str]:
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="licenseUrl")
-    def license_url(self) -> str:
-        """
-        Publicly accessible license URL containing the detailed terms and conditions.
-        """
+    def license_url(self) -> Optional[str]:
         return pulumi.get(self, "license_url")
 
 
@@ -2902,593 +2201,435 @@ class GetJavaReleasesFilterResult(dict):
 @pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
     def __init__(__self__, *,
-                 artifact_content_types: Sequence[str],
-                 artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult'],
-                 family_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult'],
-                 family_version: str,
-                 license_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult'],
-                 license_type: str,
-                 parent_release_version: str,
-                 release_date: str,
-                 release_notes_url: str,
-                 release_type: str,
-                 release_version: str,
-                 security_status: str):
-        """
-        :param Sequence[str] artifact_content_types: Artifact content types for the Java version.
-        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemArtifactArgs'] artifacts: List of Java artifacts.
-        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs'] family_details: Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
-        :param str family_version: The version identifier for the Java family.
-        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs'] license_details: Information about a license type for Java.
-        :param str license_type: Java license type.
-        :param str parent_release_version: Parent Java release version identifier. This is applicable for BPR releases.
-        :param str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str release_notes_url: Release notes associated with the Java version.
-        :param str release_type: Java release type.
-        :param str release_version: Unique Java release version identifier
-        :param str security_status: The security status of the Java version.
-        """
-        pulumi.set(__self__, "artifact_content_types", artifact_content_types)
-        pulumi.set(__self__, "artifacts", artifacts)
-        pulumi.set(__self__, "family_details", family_details)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "license_details", license_details)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "parent_release_version", parent_release_version)
-        pulumi.set(__self__, "release_date", release_date)
-        pulumi.set(__self__, "release_notes_url", release_notes_url)
-        pulumi.set(__self__, "release_type", release_type)
-        pulumi.set(__self__, "release_version", release_version)
-        pulumi.set(__self__, "security_status", security_status)
+                 artifact_content_types: Optional[Sequence[str]] = None,
+                 artifacts: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult']] = None,
+                 family_details: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult']] = None,
+                 family_version: Optional[str] = None,
+                 license_details: Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult']] = None,
+                 license_type: Optional[str] = None,
+                 parent_release_version: Optional[str] = None,
+                 release_date: Optional[str] = None,
+                 release_notes_url: Optional[str] = None,
+                 release_type: Optional[str] = None,
+                 release_version: Optional[str] = None,
+                 security_status: Optional[str] = None):
+        if artifact_content_types is not None:
+            pulumi.set(__self__, "artifact_content_types", artifact_content_types)
+        if artifacts is not None:
+            pulumi.set(__self__, "artifacts", artifacts)
+        if family_details is not None:
+            pulumi.set(__self__, "family_details", family_details)
+        if family_version is not None:
+            pulumi.set(__self__, "family_version", family_version)
+        if license_details is not None:
+            pulumi.set(__self__, "license_details", license_details)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+        if parent_release_version is not None:
+            pulumi.set(__self__, "parent_release_version", parent_release_version)
+        if release_date is not None:
+            pulumi.set(__self__, "release_date", release_date)
+        if release_notes_url is not None:
+            pulumi.set(__self__, "release_notes_url", release_notes_url)
+        if release_type is not None:
+            pulumi.set(__self__, "release_type", release_type)
+        if release_version is not None:
+            pulumi.set(__self__, "release_version", release_version)
+        if security_status is not None:
+            pulumi.set(__self__, "security_status", security_status)
 
     @property
     @pulumi.getter(name="artifactContentTypes")
-    def artifact_content_types(self) -> Sequence[str]:
-        """
-        Artifact content types for the Java version.
-        """
+    def artifact_content_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "artifact_content_types")
 
     @property
     @pulumi.getter
-    def artifacts(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult']:
-        """
-        List of Java artifacts.
-        """
+    def artifacts(self) -> Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult']]:
         return pulumi.get(self, "artifacts")
 
     @property
     @pulumi.getter(name="familyDetails")
-    def family_details(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult']:
-        """
-        Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
-        """
+    def family_details(self) -> Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult']]:
         return pulumi.get(self, "family_details")
 
     @property
     @pulumi.getter(name="familyVersion")
-    def family_version(self) -> str:
-        """
-        The version identifier for the Java family.
-        """
+    def family_version(self) -> Optional[str]:
         return pulumi.get(self, "family_version")
 
     @property
     @pulumi.getter(name="licenseDetails")
-    def license_details(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult']:
-        """
-        Information about a license type for Java.
-        """
+    def license_details(self) -> Optional[Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult']]:
         return pulumi.get(self, "license_details")
 
     @property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> str:
-        """
-        Java license type.
-        """
+    def license_type(self) -> Optional[str]:
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="parentReleaseVersion")
-    def parent_release_version(self) -> str:
-        """
-        Parent Java release version identifier. This is applicable for BPR releases.
-        """
+    def parent_release_version(self) -> Optional[str]:
         return pulumi.get(self, "parent_release_version")
 
     @property
     @pulumi.getter(name="releaseDate")
-    def release_date(self) -> str:
-        """
-        The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def release_date(self) -> Optional[str]:
         return pulumi.get(self, "release_date")
 
     @property
     @pulumi.getter(name="releaseNotesUrl")
-    def release_notes_url(self) -> str:
-        """
-        Release notes associated with the Java version.
-        """
+    def release_notes_url(self) -> Optional[str]:
         return pulumi.get(self, "release_notes_url")
 
     @property
     @pulumi.getter(name="releaseType")
-    def release_type(self) -> str:
-        """
-        Java release type.
-        """
+    def release_type(self) -> Optional[str]:
         return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter(name="releaseVersion")
-    def release_version(self) -> str:
-        """
-        Unique Java release version identifier
-        """
+    def release_version(self) -> Optional[str]:
         return pulumi.get(self, "release_version")
 
     @property
     @pulumi.getter(name="securityStatus")
-    def security_status(self) -> str:
-        """
-        The security status of the Java version.
-        """
+    def security_status(self) -> Optional[str]:
         return pulumi.get(self, "security_status")
 
 
 @pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
     def __init__(__self__, *,
-                 approximate_file_size_in_bytes: str,
-                 artifact_content_type: str,
-                 artifact_description: str,
-                 artifact_id: str,
-                 sha256: str):
-        """
-        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
-        :param str artifact_content_type: Product content type of this artifact.
-        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-        :param str artifact_id: Unique identifier for the artifact.
-        :param str sha256: SHA256 checksum of the artifact.
-        """
-        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
-        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
-        pulumi.set(__self__, "artifact_description", artifact_description)
-        pulumi.set(__self__, "artifact_id", artifact_id)
-        pulumi.set(__self__, "sha256", sha256)
+                 approximate_file_size_in_bytes: Optional[str] = None,
+                 artifact_content_type: Optional[str] = None,
+                 artifact_description: Optional[str] = None,
+                 artifact_id: Optional[str] = None,
+                 sha256: Optional[str] = None):
+        if approximate_file_size_in_bytes is not None:
+            pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        if artifact_content_type is not None:
+            pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        if artifact_description is not None:
+            pulumi.set(__self__, "artifact_description", artifact_description)
+        if artifact_id is not None:
+            pulumi.set(__self__, "artifact_id", artifact_id)
+        if sha256 is not None:
+            pulumi.set(__self__, "sha256", sha256)
 
     @property
     @pulumi.getter(name="approximateFileSizeInBytes")
-    def approximate_file_size_in_bytes(self) -> str:
-        """
-        Approximate compressed file size in bytes.
-        """
+    def approximate_file_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "approximate_file_size_in_bytes")
 
     @property
     @pulumi.getter(name="artifactContentType")
-    def artifact_content_type(self) -> str:
-        """
-        Product content type of this artifact.
-        """
+    def artifact_content_type(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_type")
 
     @property
     @pulumi.getter(name="artifactDescription")
-    def artifact_description(self) -> str:
-        """
-        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-        """
+    def artifact_description(self) -> Optional[str]:
         return pulumi.get(self, "artifact_description")
 
     @property
     @pulumi.getter(name="artifactId")
-    def artifact_id(self) -> str:
-        """
-        Unique identifier for the artifact.
-        """
+    def artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "artifact_id")
 
     @property
     @pulumi.getter
-    def sha256(self) -> str:
-        """
-        SHA256 checksum of the artifact.
-        """
+    def sha256(self) -> Optional[str]:
         return pulumi.get(self, "sha256")
 
 
 @pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 doc_url: str,
-                 end_of_support_life_date: str,
-                 family_version: str,
-                 support_type: str):
-        """
-        :param str display_name: Commonly used name for the license type.
-        :param str doc_url: Link to access the documentation for the release.
-        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str family_version: The version identifier for the Java family.
-        :param str support_type: This indicates the support category for the Java release family.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "doc_url", doc_url)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "support_type", support_type)
+                 display_name: Optional[str] = None,
+                 doc_url: Optional[str] = None,
+                 end_of_support_life_date: Optional[str] = None,
+                 family_version: Optional[str] = None,
+                 support_type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if doc_url is not None:
+            pulumi.set(__self__, "doc_url", doc_url)
+        if end_of_support_life_date is not None:
+            pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        if family_version is not None:
+            pulumi.set(__self__, "family_version", family_version)
+        if support_type is not None:
+            pulumi.set(__self__, "support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Commonly used name for the license type.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="docUrl")
-    def doc_url(self) -> str:
-        """
-        Link to access the documentation for the release.
-        """
+    def doc_url(self) -> Optional[str]:
         return pulumi.get(self, "doc_url")
 
     @property
     @pulumi.getter(name="endOfSupportLifeDate")
-    def end_of_support_life_date(self) -> str:
-        """
-        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def end_of_support_life_date(self) -> Optional[str]:
         return pulumi.get(self, "end_of_support_life_date")
 
     @property
     @pulumi.getter(name="familyVersion")
-    def family_version(self) -> str:
-        """
-        The version identifier for the Java family.
-        """
+    def family_version(self) -> Optional[str]:
         return pulumi.get(self, "family_version")
 
     @property
     @pulumi.getter(name="supportType")
-    def support_type(self) -> str:
-        """
-        This indicates the support category for the Java release family.
-        """
+    def support_type(self) -> Optional[str]:
         return pulumi.get(self, "support_type")
 
 
 @pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 license_type: str,
-                 license_url: str):
-        """
-        :param str display_name: Commonly used name for the license type.
-        :param str license_type: Java license type.
-        :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "license_url", license_url)
+                 display_name: Optional[str] = None,
+                 license_type: Optional[str] = None,
+                 license_url: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+        if license_url is not None:
+            pulumi.set(__self__, "license_url", license_url)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Commonly used name for the license type.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> str:
-        """
-        Java license type.
-        """
+    def license_type(self) -> Optional[str]:
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="licenseUrl")
-    def license_url(self) -> str:
-        """
-        Publicly accessible license URL containing the detailed terms and conditions.
-        """
+    def license_url(self) -> Optional[str]:
         return pulumi.get(self, "license_url")
 
 
 @pulumi.output_type
 class GetListJreUsageItemResult(dict):
     def __init__(__self__, *,
-                 approximate_application_count: int,
-                 approximate_installation_count: int,
-                 approximate_managed_instance_count: int,
-                 approximate_pending_work_request_count: int,
-                 days_under_security_baseline: int,
-                 distribution: str,
-                 end_of_support_life_date: str,
-                 fleet_id: str,
-                 id: str,
-                 managed_instance_id: str,
-                 operating_systems: Sequence['outputs.GetListJreUsageItemOperatingSystemResult'],
-                 release_date: str,
-                 security_status: str,
-                 time_end: str,
-                 time_first_seen: str,
-                 time_last_seen: str,
-                 time_start: str,
-                 vendor: str,
-                 version: str):
-        """
-        :param int approximate_application_count: The approximate count of the applications running on this Java Runtime.
-        :param int approximate_installation_count: The approximate count of installations that are installations of this Java Runtime.
-        :param int approximate_managed_instance_count: The approximate count of the managed instances that report this Java Runtime.
-        :param int approximate_pending_work_request_count: The approximate count of work requests working on this Java Runtime.
-        :param int days_under_security_baseline: The number of days since this release has been under the security baseline.
-        :param str distribution: The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-        :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
-        :param str id: The internal identifier of the Java Runtime.
-        :param str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
-        :param Sequence['GetListJreUsageItemOperatingSystemArgs'] operating_systems: The operating systems that have this Java Runtime installed.
-        :param str release_date: The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str security_status: The security status of the Java Runtime.
-        :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str time_first_seen: The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str vendor: The vendor of the Java Runtime.
-        :param str version: The version of the Java Runtime.
-        """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
-        pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
-        pulumi.set(__self__, "approximate_pending_work_request_count", approximate_pending_work_request_count)
-        pulumi.set(__self__, "days_under_security_baseline", days_under_security_baseline)
-        pulumi.set(__self__, "distribution", distribution)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "release_date", release_date)
-        pulumi.set(__self__, "security_status", security_status)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_first_seen", time_first_seen)
-        pulumi.set(__self__, "time_last_seen", time_last_seen)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "vendor", vendor)
-        pulumi.set(__self__, "version", version)
+                 approximate_application_count: Optional[int] = None,
+                 approximate_installation_count: Optional[int] = None,
+                 approximate_managed_instance_count: Optional[int] = None,
+                 approximate_pending_work_request_count: Optional[int] = None,
+                 days_under_security_baseline: Optional[int] = None,
+                 distribution: Optional[str] = None,
+                 end_of_support_life_date: Optional[str] = None,
+                 fleet_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 managed_instance_id: Optional[str] = None,
+                 operating_systems: Optional[Sequence['outputs.GetListJreUsageItemOperatingSystemResult']] = None,
+                 release_date: Optional[str] = None,
+                 security_status: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_first_seen: Optional[str] = None,
+                 time_last_seen: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 vendor: Optional[str] = None,
+                 version: Optional[str] = None):
+        if approximate_application_count is not None:
+            pulumi.set(__self__, "approximate_application_count", approximate_application_count)
+        if approximate_installation_count is not None:
+            pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
+        if approximate_managed_instance_count is not None:
+            pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
+        if approximate_pending_work_request_count is not None:
+            pulumi.set(__self__, "approximate_pending_work_request_count", approximate_pending_work_request_count)
+        if days_under_security_baseline is not None:
+            pulumi.set(__self__, "days_under_security_baseline", days_under_security_baseline)
+        if distribution is not None:
+            pulumi.set(__self__, "distribution", distribution)
+        if end_of_support_life_date is not None:
+            pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
+        if fleet_id is not None:
+            pulumi.set(__self__, "fleet_id", fleet_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+        if release_date is not None:
+            pulumi.set(__self__, "release_date", release_date)
+        if security_status is not None:
+            pulumi.set(__self__, "security_status", security_status)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_first_seen is not None:
+            pulumi.set(__self__, "time_first_seen", time_first_seen)
+        if time_last_seen is not None:
+            pulumi.set(__self__, "time_last_seen", time_last_seen)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
-    def approximate_application_count(self) -> int:
-        """
-        The approximate count of the applications running on this Java Runtime.
-        """
+    def approximate_application_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_application_count")
 
     @property
     @pulumi.getter(name="approximateInstallationCount")
-    def approximate_installation_count(self) -> int:
-        """
-        The approximate count of installations that are installations of this Java Runtime.
-        """
+    def approximate_installation_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_installation_count")
 
     @property
     @pulumi.getter(name="approximateManagedInstanceCount")
-    def approximate_managed_instance_count(self) -> int:
-        """
-        The approximate count of the managed instances that report this Java Runtime.
-        """
+    def approximate_managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_managed_instance_count")
 
     @property
     @pulumi.getter(name="approximatePendingWorkRequestCount")
-    def approximate_pending_work_request_count(self) -> int:
-        """
-        The approximate count of work requests working on this Java Runtime.
-        """
+    def approximate_pending_work_request_count(self) -> Optional[int]:
         return pulumi.get(self, "approximate_pending_work_request_count")
 
     @property
     @pulumi.getter(name="daysUnderSecurityBaseline")
-    def days_under_security_baseline(self) -> int:
-        """
-        The number of days since this release has been under the security baseline.
-        """
+    def days_under_security_baseline(self) -> Optional[int]:
         return pulumi.get(self, "days_under_security_baseline")
 
     @property
     @pulumi.getter
-    def distribution(self) -> str:
-        """
-        The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
-        """
+    def distribution(self) -> Optional[str]:
         return pulumi.get(self, "distribution")
 
     @property
     @pulumi.getter(name="endOfSupportLifeDate")
-    def end_of_support_life_date(self) -> str:
-        """
-        The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def end_of_support_life_date(self) -> Optional[str]:
         return pulumi.get(self, "end_of_support_life_date")
 
     @property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
-        """
+    def fleet_id(self) -> Optional[str]:
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The internal identifier of the Java Runtime.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetListJreUsageItemOperatingSystemResult']:
-        """
-        The operating systems that have this Java Runtime installed.
-        """
+    def operating_systems(self) -> Optional[Sequence['outputs.GetListJreUsageItemOperatingSystemResult']]:
         return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter(name="releaseDate")
-    def release_date(self) -> str:
-        """
-        The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def release_date(self) -> Optional[str]:
         return pulumi.get(self, "release_date")
 
     @property
     @pulumi.getter(name="securityStatus")
-    def security_status(self) -> str:
-        """
-        The security status of the Java Runtime.
-        """
+    def security_status(self) -> Optional[str]:
         return pulumi.get(self, "security_status")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeFirstSeen")
-    def time_first_seen(self) -> str:
-        """
-        The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        """
+    def time_first_seen(self) -> Optional[str]:
         return pulumi.get(self, "time_first_seen")
 
     @property
     @pulumi.getter(name="timeLastSeen")
-    def time_last_seen(self) -> str:
-        """
-        The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-        """
+    def time_last_seen(self) -> Optional[str]:
         return pulumi.get(self, "time_last_seen")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter
-    def vendor(self) -> str:
-        """
-        The vendor of the Java Runtime.
-        """
+    def vendor(self) -> Optional[str]:
         return pulumi.get(self, "vendor")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the Java Runtime.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetListJreUsageItemOperatingSystemResult(dict):
     def __init__(__self__, *,
-                 architecture: str,
-                 family: str,
-                 managed_instance_count: int,
-                 name: str,
-                 version: str):
-        """
-        :param str architecture: The architecture of the operating system as provided by the Java system property os.arch.
-        :param str family: The operating system type, such as Windows or Linux
-        :param int managed_instance_count: Number of instances running the operating system
-        :param str name: The name of the operating system as provided by the Java system property os.name.
-        :param str version: The version of the Java Runtime.
-        """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+                 architecture: Optional[str] = None,
+                 family: Optional[str] = None,
+                 managed_instance_count: Optional[int] = None,
+                 name: Optional[str] = None,
+                 version: Optional[str] = None):
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if managed_instance_count is not None:
+            pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def architecture(self) -> str:
-        """
-        The architecture of the operating system as provided by the Java system property os.arch.
-        """
+    def architecture(self) -> Optional[str]:
         return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter
-    def family(self) -> str:
-        """
-        The operating system type, such as Windows or Linux
-        """
+    def family(self) -> Optional[str]:
         return pulumi.get(self, "family")
 
     @property
     @pulumi.getter(name="managedInstanceCount")
-    def managed_instance_count(self) -> int:
-        """
-        Number of instances running the operating system
-        """
+    def managed_instance_count(self) -> Optional[int]:
         return pulumi.get(self, "managed_instance_count")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the operating system as provided by the Java system property os.name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the Java Runtime.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 

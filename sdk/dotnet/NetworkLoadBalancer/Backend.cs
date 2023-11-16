@@ -61,25 +61,25 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// The IP address of the backend server. Example: `10.0.0.3`
         /// </summary>
         [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        public Output<string?> IpAddress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         /// </summary>
         [Output("isBackup")]
-        public Output<bool> IsBackup { get; private set; } = null!;
+        public Output<bool?> IsBackup { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         /// </summary>
         [Output("isDrain")]
-        public Output<bool> IsDrain { get; private set; } = null!;
+        public Output<bool?> IsDrain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         /// </summary>
         [Output("isOffline")]
-        public Output<bool> IsOffline { get; private set; } = null!;
+        public Output<bool?> IsOffline { get; private set; } = null!;
 
         /// <summary>
         /// Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;`
         /// </summary>
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("weight")]
-        public Output<int> Weight { get; private set; } = null!;
+        public Output<int?> Weight { get; private set; } = null!;
 
 
         /// <summary>

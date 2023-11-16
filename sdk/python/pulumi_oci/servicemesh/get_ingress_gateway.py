@@ -74,58 +74,37 @@ class GetIngressGatewayResult:
 
     @property
     @pulumi.getter(name="accessLoggings")
-    def access_loggings(self) -> Sequence['outputs.GetIngressGatewayAccessLoggingResult']:
-        """
-        This configuration determines if logging is enabled and where the logs will be output.
-        """
+    def access_loggings(self) -> Optional[Sequence['outputs.GetIngressGatewayAccessLoggingResult']]:
         return pulumi.get(self, "access_loggings")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hosts(self) -> Sequence['outputs.GetIngressGatewayHostResult']:
-        """
-        Array of hostnames and their listener configuration that this gateway will bind to.
-        """
+    def hosts(self) -> Optional[Sequence['outputs.GetIngressGatewayHostResult']]:
         return pulumi.get(self, "hosts")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -135,66 +114,42 @@ class GetIngressGatewayResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="meshId")
-    def mesh_id(self) -> str:
-        """
-        The OCID of the service mesh in which this ingress gateway is created.
-        """
+    def mesh_id(self) -> Optional[str]:
         return pulumi.get(self, "mesh_id")
 
     @property
     @pulumi.getter
-    def mtls(self) -> Sequence['outputs.GetIngressGatewayMtlResult']:
-        """
-        Mutual TLS settings used when sending requests to virtual services within the mesh.
-        """
+    def mtls(self) -> Optional[Sequence['outputs.GetIngressGatewayMtlResult']]:
         return pulumi.get(self, "mtls")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetIngressGatewayResult(GetIngressGatewayResult):
 def get_ingress_gateway(ingress_gateway_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIngressGatewayResult:
     """
-    This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
-
-    Gets an IngressGateway by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ingress_gateway = oci.ServiceMesh.get_ingress_gateway(ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"])
-    ```
-
-
-    :param str ingress_gateway_id: Unique IngressGateway identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['ingressGatewayId'] = ingress_gateway_id
@@ -269,20 +210,6 @@ def get_ingress_gateway(ingress_gateway_id: Optional[str] = None,
 def get_ingress_gateway_output(ingress_gateway_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIngressGatewayResult]:
     """
-    This data source provides details about a specific Ingress Gateway resource in Oracle Cloud Infrastructure Service Mesh service.
-
-    Gets an IngressGateway by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ingress_gateway = oci.ServiceMesh.get_ingress_gateway(ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"])
-    ```
-
-
-    :param str ingress_gateway_id: Unique IngressGateway identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

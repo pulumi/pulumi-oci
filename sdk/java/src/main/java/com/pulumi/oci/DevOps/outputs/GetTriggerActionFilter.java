@@ -9,6 +9,8 @@ import com.pulumi.oci.DevOps.outputs.GetTriggerActionFilterInclude;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTriggerActionFilter {
@@ -16,18 +18,18 @@ public final class GetTriggerActionFilter {
      * @return The events, for example, PUSH, PULL_REQUEST_MERGE.
      * 
      */
-    private List<String> events;
-    private List<GetTriggerActionFilterExclude> excludes;
+    private @Nullable List<String> events;
+    private @Nullable List<GetTriggerActionFilterExclude> excludes;
     /**
      * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
-    private List<GetTriggerActionFilterInclude> includes;
+    private @Nullable List<GetTriggerActionFilterInclude> includes;
     /**
      * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
-    private String triggerSource;
+    private @Nullable String triggerSource;
 
     private GetTriggerActionFilter() {}
     /**
@@ -35,24 +37,24 @@ public final class GetTriggerActionFilter {
      * 
      */
     public List<String> events() {
-        return this.events;
+        return this.events == null ? List.of() : this.events;
     }
     public List<GetTriggerActionFilterExclude> excludes() {
-        return this.excludes;
+        return this.excludes == null ? List.of() : this.excludes;
     }
     /**
      * @return Attributes to filter GitLab self-hosted server events.
      * 
      */
     public List<GetTriggerActionFilterInclude> includes() {
-        return this.includes;
+        return this.includes == null ? List.of() : this.includes;
     }
     /**
      * @return Source of the trigger. Allowed values are, GITHUB and GITLAB.
      * 
      */
-    public String triggerSource() {
-        return this.triggerSource;
+    public Optional<String> triggerSource() {
+        return Optional.ofNullable(this.triggerSource);
     }
 
     public static Builder builder() {
@@ -64,10 +66,10 @@ public final class GetTriggerActionFilter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> events;
-        private List<GetTriggerActionFilterExclude> excludes;
-        private List<GetTriggerActionFilterInclude> includes;
-        private String triggerSource;
+        private @Nullable List<String> events;
+        private @Nullable List<GetTriggerActionFilterExclude> excludes;
+        private @Nullable List<GetTriggerActionFilterInclude> includes;
+        private @Nullable String triggerSource;
         public Builder() {}
         public Builder(GetTriggerActionFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -78,32 +80,32 @@ public final class GetTriggerActionFilter {
         }
 
         @CustomType.Setter
-        public Builder events(List<String> events) {
-            this.events = Objects.requireNonNull(events);
+        public Builder events(@Nullable List<String> events) {
+            this.events = events;
             return this;
         }
         public Builder events(String... events) {
             return events(List.of(events));
         }
         @CustomType.Setter
-        public Builder excludes(List<GetTriggerActionFilterExclude> excludes) {
-            this.excludes = Objects.requireNonNull(excludes);
+        public Builder excludes(@Nullable List<GetTriggerActionFilterExclude> excludes) {
+            this.excludes = excludes;
             return this;
         }
         public Builder excludes(GetTriggerActionFilterExclude... excludes) {
             return excludes(List.of(excludes));
         }
         @CustomType.Setter
-        public Builder includes(List<GetTriggerActionFilterInclude> includes) {
-            this.includes = Objects.requireNonNull(includes);
+        public Builder includes(@Nullable List<GetTriggerActionFilterInclude> includes) {
+            this.includes = includes;
             return this;
         }
         public Builder includes(GetTriggerActionFilterInclude... includes) {
             return includes(List.of(includes));
         }
         @CustomType.Setter
-        public Builder triggerSource(String triggerSource) {
-            this.triggerSource = Objects.requireNonNull(triggerSource);
+        public Builder triggerSource(@Nullable String triggerSource) {
+            this.triggerSource = triggerSource;
             return this;
         }
         public GetTriggerActionFilter build() {

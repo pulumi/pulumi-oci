@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSteeringPolicyAnswer {
@@ -14,63 +16,63 @@ public final class GetSteeringPolicyAnswer {
      * @return Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer&#39;s `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
      * 
      */
-    private Boolean isDisabled;
+    private @Nullable Boolean isDisabled;
     /**
      * @return A user-friendly name for the answer, unique within the steering policy. An answer&#39;s `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The freeform name of a group of one or more records in which this record is included, such as &#34;LAX data center&#34;. An answer&#39;s `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
      * 
      */
-    private String pool;
+    private @Nullable String pool;
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      * 
      */
-    private String rdata;
+    private @Nullable String rdata;
     /**
      * @return The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      * 
      */
-    private String rtype;
+    private @Nullable String rtype;
 
     private GetSteeringPolicyAnswer() {}
     /**
      * @return Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer&#39;s `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
      * 
      */
-    public Boolean isDisabled() {
-        return this.isDisabled;
+    public Optional<Boolean> isDisabled() {
+        return Optional.ofNullable(this.isDisabled);
     }
     /**
      * @return A user-friendly name for the answer, unique within the steering policy. An answer&#39;s `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The freeform name of a group of one or more records in which this record is included, such as &#34;LAX data center&#34;. An answer&#39;s `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
      * 
      */
-    public String pool() {
-        return this.pool;
+    public Optional<String> pool() {
+        return Optional.ofNullable(this.pool);
     }
     /**
      * @return The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      * 
      */
-    public String rdata() {
-        return this.rdata;
+    public Optional<String> rdata() {
+        return Optional.ofNullable(this.rdata);
     }
     /**
      * @return The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      * 
      */
-    public String rtype() {
-        return this.rtype;
+    public Optional<String> rtype() {
+        return Optional.ofNullable(this.rtype);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetSteeringPolicyAnswer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isDisabled;
-        private String name;
-        private String pool;
-        private String rdata;
-        private String rtype;
+        private @Nullable Boolean isDisabled;
+        private @Nullable String name;
+        private @Nullable String pool;
+        private @Nullable String rdata;
+        private @Nullable String rtype;
         public Builder() {}
         public Builder(GetSteeringPolicyAnswer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetSteeringPolicyAnswer {
         }
 
         @CustomType.Setter
-        public Builder isDisabled(Boolean isDisabled) {
-            this.isDisabled = Objects.requireNonNull(isDisabled);
+        public Builder isDisabled(@Nullable Boolean isDisabled) {
+            this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder pool(String pool) {
-            this.pool = Objects.requireNonNull(pool);
+        public Builder pool(@Nullable String pool) {
+            this.pool = pool;
             return this;
         }
         @CustomType.Setter
-        public Builder rdata(String rdata) {
-            this.rdata = Objects.requireNonNull(rdata);
+        public Builder rdata(@Nullable String rdata) {
+            this.rdata = rdata;
             return this;
         }
         @CustomType.Setter
-        public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+        public Builder rtype(@Nullable String rtype) {
+            this.rtype = rtype;
             return this;
         }
         public GetSteeringPolicyAnswer build() {

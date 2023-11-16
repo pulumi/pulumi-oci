@@ -11,6 +11,7 @@ import com.pulumi.oci.DatabaseManagement.ExternalClusterInstanceArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalClusterInstanceState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -34,84 +35,84 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="adrHomeDirectory", refs={String.class}, tree="[0]")
-    private Output<String> adrHomeDirectory;
+    private Output</* @Nullable */ String> adrHomeDirectory;
 
     /**
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    public Output<String> adrHomeDirectory() {
-        return this.adrHomeDirectory;
+    public Output<Optional<String>> adrHomeDirectory() {
+        return Codegen.optional(this.adrHomeDirectory);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The name of the external cluster instance.
      * 
      */
     @Export(name="componentName", refs={String.class}, tree="[0]")
-    private Output<String> componentName;
+    private Output</* @Nullable */ String> componentName;
 
     /**
      * @return The name of the external cluster instance.
      * 
      */
-    public Output<String> componentName() {
-        return this.componentName;
+    public Output<Optional<String>> componentName() {
+        return Codegen.optional(this.componentName);
     }
     /**
      * The Oracle base location of Cluster Ready Services (CRS).
      * 
      */
     @Export(name="crsBaseDirectory", refs={String.class}, tree="[0]")
-    private Output<String> crsBaseDirectory;
+    private Output</* @Nullable */ String> crsBaseDirectory;
 
     /**
      * @return The Oracle base location of Cluster Ready Services (CRS).
      * 
      */
-    public Output<String> crsBaseDirectory() {
-        return this.crsBaseDirectory;
+    public Output<Optional<String>> crsBaseDirectory() {
+        return Codegen.optional(this.crsBaseDirectory);
     }
     /**
      * The user-friendly name for the cluster instance. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the cluster instance. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
      * 
      */
     @Export(name="externalClusterId", refs={String.class}, tree="[0]")
-    private Output<String> externalClusterId;
+    private Output</* @Nullable */ String> externalClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
      * 
      */
-    public Output<String> externalClusterId() {
-        return this.externalClusterId;
+    public Output<Optional<String>> externalClusterId() {
+        return Codegen.optional(this.externalClusterId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -135,7 +136,7 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
-    private Output<String> externalConnectorId;
+    private Output</* @Nullable */ String> externalConnectorId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
@@ -144,120 +145,120 @@ public class ExternalClusterInstance extends com.pulumi.resources.CustomResource
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> externalConnectorId() {
-        return this.externalConnectorId;
+    public Output<Optional<String>> externalConnectorId() {
+        return Codegen.optional(this.externalConnectorId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
     @Export(name="externalDbNodeId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbNodeId;
+    private Output</* @Nullable */ String> externalDbNodeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    public Output<String> externalDbNodeId() {
-        return this.externalDbNodeId;
+    public Output<Optional<String>> externalDbNodeId() {
+        return Codegen.optional(this.externalDbNodeId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
      * 
      */
     @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbSystemId;
+    private Output</* @Nullable */ String> externalDbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
      * 
      */
-    public Output<String> externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Output<Optional<String>> externalDbSystemId() {
+        return Codegen.optional(this.externalDbSystemId);
     }
     /**
      * The name of the host on which the cluster instance is running.
      * 
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
-    private Output<String> hostName;
+    private Output</* @Nullable */ String> hostName;
 
     /**
      * @return The name of the host on which the cluster instance is running.
      * 
      */
-    public Output<String> hostName() {
-        return this.hostName;
+    public Output<Optional<String>> hostName() {
+        return Codegen.optional(this.hostName);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The role of the cluster node.
      * 
      */
     @Export(name="nodeRole", refs={String.class}, tree="[0]")
-    private Output<String> nodeRole;
+    private Output</* @Nullable */ String> nodeRole;
 
     /**
      * @return The role of the cluster node.
      * 
      */
-    public Output<String> nodeRole() {
-        return this.nodeRole;
+    public Output<Optional<String>> nodeRole() {
+        return Codegen.optional(this.nodeRole);
     }
     /**
      * The current lifecycle state of the external cluster instance.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external cluster instance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the external cluster instance was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external cluster instance was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external cluster instance was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external cluster instance was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

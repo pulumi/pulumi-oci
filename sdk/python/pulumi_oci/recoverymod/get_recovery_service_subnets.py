@@ -49,17 +49,11 @@ class GetRecoveryServiceSubnetsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-provided name for the recovery service subnet.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,39 +64,21 @@ class GetRecoveryServiceSubnetsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The recovery service subnet OCID.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetCollections")
-    def recovery_service_subnet_collections(self) -> Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult']:
-        """
-        The list of recovery_service_subnet_collection.
-        """
+    def recovery_service_subnet_collections(self) -> Optional[Sequence['outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult']]:
         return pulumi.get(self, "recovery_service_subnet_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the recovery service subnet. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        VCN Identifier.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -129,35 +105,7 @@ def get_recovery_service_subnets(compartment_id: Optional[str] = None,
                                  vcn_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecoveryServiceSubnetsResult:
     """
-    This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
-
-    Returns a list of Recovery Service Subnets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recovery_service_subnets = oci.RecoveryMod.get_recovery_service_subnets(compartment_id=var["compartment_id"],
-        display_name=var["recovery_service_subnet_display_name"],
-        id=var["recovery_service_subnet_id"],
-        state=var["recovery_service_subnet_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment OCID.
-    :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-    :param str id: The recovery service subnet OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-           * CREATING
-           * UPDATING
-           * ACTIVE
-           * DELETING
-           * DELETED
-           * FAILED
-    :param str vcn_id: The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -188,34 +136,6 @@ def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[st
                                         vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecoveryServiceSubnetsResult]:
     """
-    This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
-
-    Returns a list of Recovery Service Subnets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recovery_service_subnets = oci.RecoveryMod.get_recovery_service_subnets(compartment_id=var["compartment_id"],
-        display_name=var["recovery_service_subnet_display_name"],
-        id=var["recovery_service_subnet_id"],
-        state=var["recovery_service_subnet_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The compartment OCID.
-    :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-    :param str id: The recovery service subnet OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-           * CREATING
-           * UPDATING
-           * ACTIVE
-           * DELETING
-           * DELETED
-           * FAILED
-    :param str vcn_id: The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
+    Use this data source to access information about an existing resource.
     """
     ...

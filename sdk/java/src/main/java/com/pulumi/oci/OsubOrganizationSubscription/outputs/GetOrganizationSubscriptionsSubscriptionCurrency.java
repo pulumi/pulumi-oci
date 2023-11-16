@@ -6,6 +6,8 @@ package com.pulumi.oci.OsubOrganizationSubscription.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOrganizationSubscriptionsSubscriptionCurrency {
@@ -13,39 +15,39 @@ public final class GetOrganizationSubscriptionsSubscriptionCurrency {
      * @return Currency Code
      * 
      */
-    private String isoCode;
+    private @Nullable String isoCode;
     /**
      * @return Currency name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Standard Precision of the Currency
      * 
      */
-    private String stdPrecision;
+    private @Nullable String stdPrecision;
 
     private GetOrganizationSubscriptionsSubscriptionCurrency() {}
     /**
      * @return Currency Code
      * 
      */
-    public String isoCode() {
-        return this.isoCode;
+    public Optional<String> isoCode() {
+        return Optional.ofNullable(this.isoCode);
     }
     /**
      * @return Currency name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Standard Precision of the Currency
      * 
      */
-    public String stdPrecision() {
-        return this.stdPrecision;
+    public Optional<String> stdPrecision() {
+        return Optional.ofNullable(this.stdPrecision);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetOrganizationSubscriptionsSubscriptionCurrency {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String isoCode;
-        private String name;
-        private String stdPrecision;
+        private @Nullable String isoCode;
+        private @Nullable String name;
+        private @Nullable String stdPrecision;
         public Builder() {}
         public Builder(GetOrganizationSubscriptionsSubscriptionCurrency defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetOrganizationSubscriptionsSubscriptionCurrency {
         }
 
         @CustomType.Setter
-        public Builder isoCode(String isoCode) {
-            this.isoCode = Objects.requireNonNull(isoCode);
+        public Builder isoCode(@Nullable String isoCode) {
+            this.isoCode = isoCode;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder stdPrecision(String stdPrecision) {
-            this.stdPrecision = Objects.requireNonNull(stdPrecision);
+        public Builder stdPrecision(@Nullable String stdPrecision) {
+            this.stdPrecision = stdPrecision;
             return this;
         }
         public GetOrganizationSubscriptionsSubscriptionCurrency build() {

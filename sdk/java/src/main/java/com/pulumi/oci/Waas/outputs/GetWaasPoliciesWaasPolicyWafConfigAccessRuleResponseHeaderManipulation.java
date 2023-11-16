@@ -6,6 +6,8 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
@@ -13,39 +15,39 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderMan
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return A header field name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    private String header;
+    private @Nullable String header;
     /**
      * @return The value of the header.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return A header field name that conforms to RFC 7230.  Example: `example_header_name`
      * 
      */
-    public String header() {
-        return this.header;
+    public Optional<String> header() {
+        return Optional.ofNullable(this.header);
     }
     /**
      * @return The value of the header.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderMan
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String header;
-        private String value;
+        private @Nullable String action;
+        private @Nullable String header;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderMan
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder header(String header) {
-            this.header = Objects.requireNonNull(header);
+        public Builder header(@Nullable String header) {
+            this.header = header;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation build() {

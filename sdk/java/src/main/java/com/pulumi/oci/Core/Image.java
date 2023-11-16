@@ -180,42 +180,42 @@ public class Image extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="agentFeatures", refs={List.class,ImageAgentFeature.class}, tree="[0,1]")
-    private Output<List<ImageAgentFeature>> agentFeatures;
+    private Output</* @Nullable */ List<ImageAgentFeature>> agentFeatures;
 
     /**
      * @return Oracle Cloud Agent features supported on the image.
      * 
      */
-    public Output<List<ImageAgentFeature>> agentFeatures() {
-        return this.agentFeatures;
+    public Output<Optional<List<ImageAgentFeature>>> agentFeatures() {
+        return Codegen.optional(this.agentFeatures);
     }
     /**
      * The OCID of the image originally used to launch the instance.
      * 
      */
     @Export(name="baseImageId", refs={String.class}, tree="[0]")
-    private Output<String> baseImageId;
+    private Output</* @Nullable */ String> baseImageId;
 
     /**
      * @return The OCID of the image originally used to launch the instance.
      * 
      */
-    public Output<String> baseImageId() {
-        return this.baseImageId;
+    public Output<Optional<String>> baseImageId() {
+        return Codegen.optional(this.baseImageId);
     }
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      * 
      */
     @Export(name="billableSizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> billableSizeInGbs;
+    private Output</* @Nullable */ String> billableSizeInGbs;
 
     /**
      * @return The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      * 
      */
-    public Output<String> billableSizeInGbs() {
-        return this.billableSizeInGbs;
+    public Output<Optional<String>> billableSizeInGbs() {
+        return Codegen.optional(this.billableSizeInGbs);
     }
     /**
      * (Updatable) The OCID of the compartment you want the image to be created in.
@@ -236,28 +236,28 @@ public class Image extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createImageAllowed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> createImageAllowed;
+    private Output</* @Nullable */ Boolean> createImageAllowed;
 
     /**
      * @return Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      * 
      */
-    public Output<Boolean> createImageAllowed() {
-        return this.createImageAllowed;
+    public Output<Optional<Boolean>> createImageAllowed() {
+        return Codegen.optional(this.createImageAllowed);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -268,7 +268,7 @@ public class Image extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name for the image. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -278,22 +278,22 @@ public class Image extends com.pulumi.resources.CustomResource {
      * Example: `My Oracle Linux image`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="imageSourceDetails", refs={ImageImageSourceDetails.class}, tree="[0]")
     private Output</* @Nullable */ ImageImageSourceDetails> imageSourceDetails;
@@ -320,112 +320,112 @@ public class Image extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="launchMode", refs={String.class}, tree="[0]")
-    private Output<String> launchMode;
+    private Output</* @Nullable */ String> launchMode;
 
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * 
      */
-    public Output<String> launchMode() {
-        return this.launchMode;
+    public Output<Optional<String>> launchMode() {
+        return Codegen.optional(this.launchMode);
     }
     /**
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
     @Export(name="launchOptions", refs={List.class,ImageLaunchOption.class}, tree="[0,1]")
-    private Output<List<ImageLaunchOption>> launchOptions;
+    private Output</* @Nullable */ List<ImageLaunchOption>> launchOptions;
 
     /**
      * @return Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      * 
      */
-    public Output<List<ImageLaunchOption>> launchOptions() {
-        return this.launchOptions;
+    public Output<Optional<List<ImageLaunchOption>>> launchOptions() {
+        return Codegen.optional(this.launchOptions);
     }
     /**
      * The listing type of the image. The default value is &#34;NONE&#34;.
      * 
      */
     @Export(name="listingType", refs={String.class}, tree="[0]")
-    private Output<String> listingType;
+    private Output</* @Nullable */ String> listingType;
 
     /**
      * @return The listing type of the image. The default value is &#34;NONE&#34;.
      * 
      */
-    public Output<String> listingType() {
-        return this.listingType;
+    public Output<Optional<String>> listingType() {
+        return Codegen.optional(this.listingType);
     }
     /**
      * The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
     @Export(name="operatingSystem", refs={String.class}, tree="[0]")
-    private Output<String> operatingSystem;
+    private Output</* @Nullable */ String> operatingSystem;
 
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    public Output<String> operatingSystem() {
-        return this.operatingSystem;
+    public Output<Optional<String>> operatingSystem() {
+        return Codegen.optional(this.operatingSystem);
     }
     /**
      * The image&#39;s operating system version.  Example: `7.2`
      * 
      */
     @Export(name="operatingSystemVersion", refs={String.class}, tree="[0]")
-    private Output<String> operatingSystemVersion;
+    private Output</* @Nullable */ String> operatingSystemVersion;
 
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    public Output<String> operatingSystemVersion() {
-        return this.operatingSystemVersion;
+    public Output<Optional<String>> operatingSystemVersion() {
+        return Codegen.optional(this.operatingSystemVersion);
     }
     /**
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      * 
      */
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInMbs;
+    private Output</* @Nullable */ String> sizeInMbs;
 
     /**
      * @return The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      * 
      */
-    public Output<String> sizeInMbs() {
-        return this.sizeInMbs;
+    public Output<Optional<String>> sizeInMbs() {
+        return Codegen.optional(this.sizeInMbs);
     }
     /**
      * The current state of the image.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the image.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

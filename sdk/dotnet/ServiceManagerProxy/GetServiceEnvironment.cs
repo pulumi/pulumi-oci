@@ -132,11 +132,11 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// <summary>
         /// The URL for the console.
         /// </summary>
-        public readonly string ConsoleUrl;
+        public readonly string? ConsoleUrl;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details for a service definition.
         /// </summary>
@@ -149,19 +149,19 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// <summary>
         /// Status of the entitlement registration for the service.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The unique subscription ID associated with the service environment ID.
         /// </summary>
-        public readonly string SubscriptionId;
+        public readonly string? SubscriptionId;
 
         [OutputConstructor]
         private GetServiceEnvironmentResult(
             string compartmentId,
 
-            string consoleUrl,
+            string? consoleUrl,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetServiceEnvironmentServiceDefinitionResult> serviceDefinitions,
 
@@ -169,9 +169,9 @@ namespace Pulumi.Oci.ServiceManagerProxy
 
             string serviceEnvironmentId,
 
-            string status,
+            string? status,
 
-            string subscriptionId)
+            string? subscriptionId)
         {
             CompartmentId = compartmentId;
             ConsoleUrl = consoleUrl;

@@ -52,18 +52,12 @@ class GetConnectionAssignmentResult:
 
     @property
     @pulumi.getter(name="aliasName")
-    def alias_name(self) -> str:
-        """
-        Credential store alias.
-        """
+    def alias_name(self) -> Optional[str]:
         return pulumi.get(self, "alias_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -73,50 +67,32 @@ class GetConnectionAssignmentResult:
 
     @property
     @pulumi.getter(name="connectionId")
-    def connection_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
+    def connection_id(self) -> Optional[str]:
         return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Possible lifecycle states for connection assignments.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -140,21 +116,7 @@ class AwaitableGetConnectionAssignmentResult(GetConnectionAssignmentResult):
 def get_connection_assignment(connection_assignment_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionAssignmentResult:
     """
-    This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a Connection Assignment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection_assignment = oci.GoldenGate.get_connection_assignment(connection_assignment_id=oci_golden_gate_connection_assignment["test_connection_assignment"]["id"])
-    ```
-
-
-    :param str connection_assignment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Connection Assignment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['connectionAssignmentId'] = connection_assignment_id
@@ -177,20 +139,6 @@ def get_connection_assignment(connection_assignment_id: Optional[str] = None,
 def get_connection_assignment_output(connection_assignment_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionAssignmentResult]:
     """
-    This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a Connection Assignment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection_assignment = oci.GoldenGate.get_connection_assignment(connection_assignment_id=oci_golden_gate_connection_assignment["test_connection_assignment"]["id"])
-    ```
-
-
-    :param str connection_assignment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Connection Assignment.
+    Use this data source to access information about an existing resource.
     """
     ...

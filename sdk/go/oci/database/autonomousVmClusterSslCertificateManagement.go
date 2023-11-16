@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Vm Cluster Ssl Certificate Management resource in Oracle Cloud Infrastructure Database service.
@@ -56,16 +55,16 @@ type AutonomousVmClusterSslCertificateManagement struct {
 	// The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousVmClusterId pulumi.StringOutput `pulumi:"autonomousVmClusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-	CaBundleId pulumi.StringOutput `pulumi:"caBundleId"`
+	CaBundleId pulumi.StringPtrOutput `pulumi:"caBundleId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-	CertificateAuthorityId pulumi.StringOutput `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId pulumi.StringPtrOutput `pulumi:"certificateAuthorityId"`
 	// Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
 	CertificateGenerationType pulumi.StringOutput `pulumi:"certificateGenerationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrOutput `pulumi:"certificateId"`
 }
 
 // NewAutonomousVmClusterSslCertificateManagement registers a new resource with the given unique name, arguments, and options.
@@ -195,12 +194,6 @@ func (i *AutonomousVmClusterSslCertificateManagement) ToAutonomousVmClusterSslCe
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterSslCertificateManagementOutput)
 }
 
-func (i *AutonomousVmClusterSslCertificateManagement) ToOutput(ctx context.Context) pulumix.Output[*AutonomousVmClusterSslCertificateManagement] {
-	return pulumix.Output[*AutonomousVmClusterSslCertificateManagement]{
-		OutputState: i.ToAutonomousVmClusterSslCertificateManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutonomousVmClusterSslCertificateManagementArrayInput is an input type that accepts AutonomousVmClusterSslCertificateManagementArray and AutonomousVmClusterSslCertificateManagementArrayOutput values.
 // You can construct a concrete instance of `AutonomousVmClusterSslCertificateManagementArrayInput` via:
 //
@@ -224,12 +217,6 @@ func (i AutonomousVmClusterSslCertificateManagementArray) ToAutonomousVmClusterS
 
 func (i AutonomousVmClusterSslCertificateManagementArray) ToAutonomousVmClusterSslCertificateManagementArrayOutputWithContext(ctx context.Context) AutonomousVmClusterSslCertificateManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterSslCertificateManagementArrayOutput)
-}
-
-func (i AutonomousVmClusterSslCertificateManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousVmClusterSslCertificateManagement] {
-	return pulumix.Output[[]*AutonomousVmClusterSslCertificateManagement]{
-		OutputState: i.ToAutonomousVmClusterSslCertificateManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutonomousVmClusterSslCertificateManagementMapInput is an input type that accepts AutonomousVmClusterSslCertificateManagementMap and AutonomousVmClusterSslCertificateManagementMapOutput values.
@@ -257,12 +244,6 @@ func (i AutonomousVmClusterSslCertificateManagementMap) ToAutonomousVmClusterSsl
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousVmClusterSslCertificateManagementMapOutput)
 }
 
-func (i AutonomousVmClusterSslCertificateManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousVmClusterSslCertificateManagement] {
-	return pulumix.Output[map[string]*AutonomousVmClusterSslCertificateManagement]{
-		OutputState: i.ToAutonomousVmClusterSslCertificateManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutonomousVmClusterSslCertificateManagementOutput struct{ *pulumi.OutputState }
 
 func (AutonomousVmClusterSslCertificateManagementOutput) ElementType() reflect.Type {
@@ -277,12 +258,6 @@ func (o AutonomousVmClusterSslCertificateManagementOutput) ToAutonomousVmCluster
 	return o
 }
 
-func (o AutonomousVmClusterSslCertificateManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousVmClusterSslCertificateManagement] {
-	return pulumix.Output[*AutonomousVmClusterSslCertificateManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o AutonomousVmClusterSslCertificateManagementOutput) AutonomousVmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringOutput {
@@ -291,15 +266,15 @@ func (o AutonomousVmClusterSslCertificateManagementOutput) AutonomousVmClusterId
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-func (o AutonomousVmClusterSslCertificateManagementOutput) CaBundleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringOutput { return v.CaBundleId }).(pulumi.StringOutput)
+func (o AutonomousVmClusterSslCertificateManagementOutput) CaBundleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringPtrOutput { return v.CaBundleId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-func (o AutonomousVmClusterSslCertificateManagementOutput) CertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringOutput {
+func (o AutonomousVmClusterSslCertificateManagementOutput) CertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringPtrOutput {
 		return v.CertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
@@ -313,8 +288,8 @@ func (o AutonomousVmClusterSslCertificateManagementOutput) CertificateGeneration
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AutonomousVmClusterSslCertificateManagementOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
+func (o AutonomousVmClusterSslCertificateManagementOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousVmClusterSslCertificateManagement) pulumi.StringPtrOutput { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 type AutonomousVmClusterSslCertificateManagementArrayOutput struct{ *pulumi.OutputState }
@@ -329,12 +304,6 @@ func (o AutonomousVmClusterSslCertificateManagementArrayOutput) ToAutonomousVmCl
 
 func (o AutonomousVmClusterSslCertificateManagementArrayOutput) ToAutonomousVmClusterSslCertificateManagementArrayOutputWithContext(ctx context.Context) AutonomousVmClusterSslCertificateManagementArrayOutput {
 	return o
-}
-
-func (o AutonomousVmClusterSslCertificateManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousVmClusterSslCertificateManagement] {
-	return pulumix.Output[[]*AutonomousVmClusterSslCertificateManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousVmClusterSslCertificateManagementArrayOutput) Index(i pulumi.IntInput) AutonomousVmClusterSslCertificateManagementOutput {
@@ -355,12 +324,6 @@ func (o AutonomousVmClusterSslCertificateManagementMapOutput) ToAutonomousVmClus
 
 func (o AutonomousVmClusterSslCertificateManagementMapOutput) ToAutonomousVmClusterSslCertificateManagementMapOutputWithContext(ctx context.Context) AutonomousVmClusterSslCertificateManagementMapOutput {
 	return o
-}
-
-func (o AutonomousVmClusterSslCertificateManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousVmClusterSslCertificateManagement] {
-	return pulumix.Output[map[string]*AutonomousVmClusterSslCertificateManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousVmClusterSslCertificateManagementMapOutput) MapIndex(k pulumi.StringInput) AutonomousVmClusterSslCertificateManagementOutput {

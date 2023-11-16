@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetCustomerSecretKeysFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetCustomerSecretKeysResult {
      * @return The list of customer_secret_keys.
      * 
      */
-    private List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
+    private @Nullable List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
     private @Nullable List<GetCustomerSecretKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the user the password belongs to.
      * 
@@ -36,7 +37,7 @@ public final class GetCustomerSecretKeysResult {
      * 
      */
     public List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys() {
-        return this.customerSecretKeys;
+        return this.customerSecretKeys == null ? List.of() : this.customerSecretKeys;
     }
     public List<GetCustomerSecretKeysFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -45,8 +46,8 @@ public final class GetCustomerSecretKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the user the password belongs to.
@@ -65,9 +66,9 @@ public final class GetCustomerSecretKeysResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
+        private @Nullable List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
         private @Nullable List<GetCustomerSecretKeysFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String userId;
         public Builder() {}
         public Builder(GetCustomerSecretKeysResult defaults) {
@@ -79,8 +80,8 @@ public final class GetCustomerSecretKeysResult {
         }
 
         @CustomType.Setter
-        public Builder customerSecretKeys(List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys) {
-            this.customerSecretKeys = Objects.requireNonNull(customerSecretKeys);
+        public Builder customerSecretKeys(@Nullable List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys) {
+            this.customerSecretKeys = customerSecretKeys;
             return this;
         }
         public Builder customerSecretKeys(GetCustomerSecretKeysCustomerSecretKey... customerSecretKeys) {
@@ -95,8 +96,8 @@ public final class GetCustomerSecretKeysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

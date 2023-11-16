@@ -10,6 +10,8 @@ import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
@@ -17,27 +19,27 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
      * @return The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
      * 
      */
-    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors;
+    private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors;
     /**
      * @return The type descriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return The logs for this Logging source.
      * 
      */
-    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources;
+    private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources;
     /**
      * @return The list of metric namespaces to retrieve data from.
      * 
      */
-    private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources;
+    private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    private String streamId;
+    private @Nullable String streamId;
 
     private GetServiceConnectorsServiceConnectorCollectionItemSource() {}
     /**
@@ -45,35 +47,35 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
      * 
      */
     public List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors() {
-        return this.cursors;
+        return this.cursors == null ? List.of() : this.cursors;
     }
     /**
      * @return The type descriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return The logs for this Logging source.
      * 
      */
     public List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources() {
-        return this.logSources;
+        return this.logSources == null ? List.of() : this.logSources;
     }
     /**
      * @return The list of metric namespaces to retrieve data from.
      * 
      */
     public List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources() {
-        return this.monitoringSources;
+        return this.monitoringSources == null ? List.of() : this.monitoringSources;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
      * 
      */
-    public String streamId() {
-        return this.streamId;
+    public Optional<String> streamId() {
+        return Optional.ofNullable(this.streamId);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors;
-        private String kind;
-        private List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources;
-        private List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources;
-        private String streamId;
+        private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors;
+        private @Nullable String kind;
+        private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources;
+        private @Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources;
+        private @Nullable String streamId;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,37 +103,37 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         }
 
         @CustomType.Setter
-        public Builder cursors(List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors) {
-            this.cursors = Objects.requireNonNull(cursors);
+        public Builder cursors(@Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors) {
+            this.cursors = cursors;
             return this;
         }
         public Builder cursors(GetServiceConnectorsServiceConnectorCollectionItemSourceCursor... cursors) {
             return cursors(List.of(cursors));
         }
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder logSources(List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources) {
-            this.logSources = Objects.requireNonNull(logSources);
+        public Builder logSources(@Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources) {
+            this.logSources = logSources;
             return this;
         }
         public Builder logSources(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource... logSources) {
             return logSources(List.of(logSources));
         }
         @CustomType.Setter
-        public Builder monitoringSources(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources) {
-            this.monitoringSources = Objects.requireNonNull(monitoringSources);
+        public Builder monitoringSources(@Nullable List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources) {
+            this.monitoringSources = monitoringSources;
             return this;
         }
         public Builder monitoringSources(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource... monitoringSources) {
             return monitoringSources(List.of(monitoringSources));
         }
         @CustomType.Setter
-        public Builder streamId(String streamId) {
-            this.streamId = Objects.requireNonNull(streamId);
+        public Builder streamId(@Nullable String streamId) {
+            this.streamId = streamId;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSource build() {

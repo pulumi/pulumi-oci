@@ -16,12 +16,12 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
         /// </summary>
-        public readonly string LocalMountPointPath;
-        public readonly string MountType;
+        public readonly string? LocalMountPointPath;
+        public readonly string? MountType;
         /// <summary>
         /// Specifies the directory on which to mount the file system
         /// </summary>
-        public readonly string NfsServerExport;
+        public readonly string? NfsServerExport;
         /// <summary>
         /// Host names or IP addresses for NFS Auto mount.
         /// </summary>
@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetBackupDestinationsBackupDestinationMountTypeDetailResult(
-            string localMountPointPath,
+            string? localMountPointPath,
 
-            string mountType,
+            string? mountType,
 
-            string nfsServerExport,
+            string? nfsServerExport,
 
             ImmutableArray<string> nfsServers)
         {

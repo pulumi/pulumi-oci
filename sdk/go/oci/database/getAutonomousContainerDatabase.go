@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -61,104 +60,104 @@ type LookupAutonomousContainerDatabaseArgs struct {
 type LookupAutonomousContainerDatabaseResult struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
-	AutonomousExadataInfrastructureId string `pulumi:"autonomousExadataInfrastructureId"`
+	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
-	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`
+	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-	AvailableCpus float64 `pulumi:"availableCpus"`
+	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// Backup options for the Autonomous Container Database.
 	BackupConfigs []GetAutonomousContainerDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-	CloudAutonomousVmClusterId string `pulumi:"cloudAutonomousVmClusterId"`
+	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous VM Cluster.
-	ComputeModel string `pulumi:"computeModel"`
+	ComputeModel *string `pulumi:"computeModel"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-	DbName       string `pulumi:"dbName"`
-	DbUniqueName string `pulumi:"dbUniqueName"`
+	DbName       *string `pulumi:"dbName"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// Oracle Database version of the Autonomous Container Database.
-	DbVersion string `pulumi:"dbVersion"`
+	DbVersion *string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-provided name for the Autonomous Container Database.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// DST Time Zone File version of the Autonomous Container Database.
-	DstFileVersion                     string `pulumi:"dstFileVersion"`
-	FastStartFailOverLagLimitInSeconds int    `pulumi:"fastStartFailOverLagLimitInSeconds"`
+	DstFileVersion                     *string `pulumi:"dstFileVersion"`
+	FastStartFailOverLagLimitInSeconds *int    `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The infrastructure type this resource belongs to.
-	InfrastructureType         string `pulumi:"infrastructureType"`
-	IsAutomaticFailoverEnabled bool   `pulumi:"isAutomaticFailoverEnabled"`
+	InfrastructureType         *string `pulumi:"infrastructureType"`
+	IsAutomaticFailoverEnabled *bool   `pulumi:"isAutomaticFailoverEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
+	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousContainerDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	KeyStoreId string `pulumi:"keyStoreId"`
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
+	KeyStoreWalletName *string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-	LargestProvisionableAutonomousDatabaseInCpus float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
+	LargestProvisionableAutonomousDatabaseInCpus *float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
+	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails         string                                                  `pulumi:"lifecycleDetails"`
+	LifecycleDetails         *string                                                 `pulumi:"lifecycleDetails"`
 	MaintenanceWindowDetails []GetAutonomousContainerDatabaseMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetAutonomousContainerDatabaseMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
+	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-	PatchId string `pulumi:"patchId"`
+	PatchId *string `pulumi:"patchId"`
 	// Database patch model preference.
-	PatchModel                                   string                                                                      `pulumi:"patchModel"`
+	PatchModel                                   *string                                                                     `pulumi:"patchModel"`
 	PeerAutonomousContainerDatabaseBackupConfigs []GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig `pulumi:"peerAutonomousContainerDatabaseBackupConfigs"`
-	PeerAutonomousContainerDatabaseCompartmentId string                                                                      `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
-	PeerAutonomousContainerDatabaseDisplayName   string                                                                      `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
-	PeerAutonomousExadataInfrastructureId        string                                                                      `pulumi:"peerAutonomousExadataInfrastructureId"`
-	PeerAutonomousVmClusterId                    string                                                                      `pulumi:"peerAutonomousVmClusterId"`
-	PeerCloudAutonomousVmClusterId               string                                                                      `pulumi:"peerCloudAutonomousVmClusterId"`
-	PeerDbUniqueName                             string                                                                      `pulumi:"peerDbUniqueName"`
-	ProtectionMode                               string                                                                      `pulumi:"protectionMode"`
+	PeerAutonomousContainerDatabaseCompartmentId *string                                                                     `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
+	PeerAutonomousContainerDatabaseDisplayName   *string                                                                     `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
+	PeerAutonomousExadataInfrastructureId        *string                                                                     `pulumi:"peerAutonomousExadataInfrastructureId"`
+	PeerAutonomousVmClusterId                    *string                                                                     `pulumi:"peerAutonomousVmClusterId"`
+	PeerCloudAutonomousVmClusterId               *string                                                                     `pulumi:"peerCloudAutonomousVmClusterId"`
+	PeerDbUniqueName                             *string                                                                     `pulumi:"peerDbUniqueName"`
+	ProtectionMode                               *string                                                                     `pulumi:"protectionMode"`
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The number of CPUs provisioned in an Autonomous Container Database.
-	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous Container Database.
-	ReservedCpus float64 `pulumi:"reservedCpus"`
+	ReservedCpus *float64 `pulumi:"reservedCpus"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-	Role             string `pulumi:"role"`
-	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
+	Role             *string `pulumi:"role"`
+	RotateKeyTrigger *bool   `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the container database. The default is STANDARD.
-	ServiceLevelAgreementType string `pulumi:"serviceLevelAgreementType"`
+	ServiceLevelAgreementType *string `pulumi:"serviceLevelAgreementType"`
 	// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
-	StandbyMaintenanceBufferInDays int `pulumi:"standbyMaintenanceBufferInDays"`
+	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-	TimeSnapshotStandbyRevert string `pulumi:"timeSnapshotStandbyRevert"`
+	TimeSnapshotStandbyRevert *string `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	TotalCpus int `pulumi:"totalCpus"`
+	TotalCpus *int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 	// The next maintenance version preference.
-	VersionPreference string `pulumi:"versionPreference"`
+	VersionPreference *string `pulumi:"versionPreference"`
 }
 
 func LookupAutonomousContainerDatabaseOutput(ctx *pulumi.Context, args LookupAutonomousContainerDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousContainerDatabaseResultOutput {
@@ -199,34 +198,28 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ToLookupAutonomousContain
 	return o
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousContainerDatabaseResult] {
-	return pulumix.Output[LookupAutonomousContainerDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
 
 // **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
-func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Autonomous VM Cluster.
-func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousVmClusterId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.AutonomousVmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain of the Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-func (o LookupAutonomousContainerDatabaseResultOutput) AvailableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
+func (o LookupAutonomousContainerDatabaseResultOutput) AvailableCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *float64 { return v.AvailableCpus }).(pulumi.Float64PtrOutput)
 }
 
 // Backup options for the Autonomous Container Database.
@@ -237,32 +230,32 @@ func (o LookupAutonomousContainerDatabaseResultOutput) BackupConfigs() GetAutono
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-func (o LookupAutonomousContainerDatabaseResultOutput) CloudAutonomousVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.CloudAutonomousVmClusterId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) CloudAutonomousVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.CloudAutonomousVmClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o LookupAutonomousContainerDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The compute model of the Autonomous VM Cluster.
-func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.ComputeModel }).(pulumi.StringPtrOutput)
 }
 
 // The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-func (o LookupAutonomousContainerDatabaseResultOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Database version of the Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) DbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) DbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -271,17 +264,17 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DefinedTags() pulumi.MapO
 }
 
 // The user-provided name for the Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // DST Time Zone File version of the Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) DstFileVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DstFileVersion }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) DstFileVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.DstFileVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.FastStartFailOverLagLimitInSeconds }).(pulumi.IntOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) FastStartFailOverLagLimitInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *int { return v.FastStartFailOverLagLimitInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -290,22 +283,22 @@ func (o LookupAutonomousContainerDatabaseResultOutput) FreeformTags() pulumi.Map
 }
 
 // The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-func (o LookupAutonomousContainerDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The infrastructure type this resource belongs to.
-func (o LookupAutonomousContainerDatabaseResultOutput) InfrastructureType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.InfrastructureType }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) InfrastructureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) IsAutomaticFailoverEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.IsAutomaticFailoverEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) IsAutomaticFailoverEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *bool { return v.IsAutomaticFailoverEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-func (o LookupAutonomousContainerDatabaseResultOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) IsDstFileUpdateEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Key History Entry.
@@ -316,35 +309,35 @@ func (o LookupAutonomousContainerDatabaseResultOutput) KeyHistoryEntries() GetAu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o LookupAutonomousContainerDatabaseResultOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.KeyStoreId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The wallet name for Oracle Key Vault.
-func (o LookupAutonomousContainerDatabaseResultOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) KeyStoreWalletName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.KeyStoreWalletName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o LookupAutonomousContainerDatabaseResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 {
+func (o LookupAutonomousContainerDatabaseResultOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *float64 {
 		return v.LargestProvisionableAutonomousDatabaseInCpus
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-func (o LookupAutonomousContainerDatabaseResultOutput) LastMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) LastMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.LastMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupAutonomousContainerDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseResultOutput) MaintenanceWindowDetails() GetAutonomousContainerDatabaseMaintenanceWindowDetailArrayOutput {
@@ -361,23 +354,23 @@ func (o LookupAutonomousContainerDatabaseResultOutput) MaintenanceWindows() GetA
 }
 
 // The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-func (o LookupAutonomousContainerDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-func (o LookupAutonomousContainerDatabaseResultOutput) NextMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) NextMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.NextMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-func (o LookupAutonomousContainerDatabaseResultOutput) PatchId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.PatchId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) PatchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.PatchId }).(pulumi.StringPtrOutput)
 }
 
 // Database patch model preference.
-func (o LookupAutonomousContainerDatabaseResultOutput) PatchModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.PatchModel }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) PatchModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.PatchModel }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousContainerDatabaseBackupConfigs() GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayOutput {
@@ -386,36 +379,38 @@ func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousContainerDa
 	}).(GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArrayOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousContainerDatabaseCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string {
+func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousContainerDatabaseCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string {
 		return v.PeerAutonomousContainerDatabaseCompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousContainerDatabaseDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string {
+func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousContainerDatabaseDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string {
 		return v.PeerAutonomousContainerDatabaseDisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousExadataInfrastructureId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.PeerAutonomousExadataInfrastructureId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousExadataInfrastructureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string {
+		return v.PeerAutonomousExadataInfrastructureId
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.PeerAutonomousVmClusterId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) PeerAutonomousVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.PeerAutonomousVmClusterId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) PeerCloudAutonomousVmClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.PeerCloudAutonomousVmClusterId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) PeerCloudAutonomousVmClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.PeerCloudAutonomousVmClusterId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) PeerDbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.PeerDbUniqueName }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) PeerDbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.PeerDbUniqueName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) ProtectionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) ProtectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.ProtectionMode }).(pulumi.StringPtrOutput)
 }
 
 // An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -424,69 +419,69 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionableCpuses() pul
 }
 
 // The number of CPUs provisioned in an Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
+func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *float64 { return v.ProvisionedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // For Autonomous Databases on Dedicated Exadata Infrastructure:
 // * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 // * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-func (o LookupAutonomousContainerDatabaseResultOutput) ReclaimableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+func (o LookupAutonomousContainerDatabaseResultOutput) ReclaimableCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *float64 { return v.ReclaimableCpus }).(pulumi.Float64PtrOutput)
 }
 
 // The number of CPUs reserved in an Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) ReservedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ReservedCpus }).(pulumi.Float64Output)
+func (o LookupAutonomousContainerDatabaseResultOutput) ReservedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *float64 { return v.ReservedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-func (o LookupAutonomousContainerDatabaseResultOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.Role }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousContainerDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.RotateKeyTrigger }).(pulumi.BoolOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) RotateKeyTrigger() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *bool { return v.RotateKeyTrigger }).(pulumi.BoolPtrOutput)
 }
 
 // The service level agreement type of the container database. The default is STANDARD.
-func (o LookupAutonomousContainerDatabaseResultOutput) ServiceLevelAgreementType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ServiceLevelAgreementType }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) ServiceLevelAgreementType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.ServiceLevelAgreementType }).(pulumi.StringPtrOutput)
 }
 
 // The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
-func (o LookupAutonomousContainerDatabaseResultOutput) StandbyMaintenanceBufferInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.StandbyMaintenanceBufferInDays }).(pulumi.IntOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) StandbyMaintenanceBufferInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *int { return v.StandbyMaintenanceBufferInDays }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the Autonomous Container Database.
-func (o LookupAutonomousContainerDatabaseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Autonomous Container Database was created.
-func (o LookupAutonomousContainerDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-func (o LookupAutonomousContainerDatabaseResultOutput) TimeSnapshotStandbyRevert() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeSnapshotStandbyRevert }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) TimeSnapshotStandbyRevert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.TimeSnapshotStandbyRevert }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-func (o LookupAutonomousContainerDatabaseResultOutput) TotalCpus() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) int { return v.TotalCpus }).(pulumi.IntOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) TotalCpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *int { return v.TotalCpus }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o LookupAutonomousContainerDatabaseResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 // The next maintenance version preference.
-func (o LookupAutonomousContainerDatabaseResultOutput) VersionPreference() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.VersionPreference }).(pulumi.StringOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) VersionPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) *string { return v.VersionPreference }).(pulumi.StringPtrOutput)
 }
 
 func init() {

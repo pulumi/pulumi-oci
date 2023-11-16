@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem {
@@ -24,7 +26,7 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
      * @return OCID of the Network Firewall Policy this Mapped Secret belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Source of the secrets, where the secrets are stored.
      * 
@@ -65,8 +67,8 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
      * @return OCID of the Network Firewall Policy this Mapped Secret belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Source of the secrets, where the secrets are stored.
@@ -108,7 +110,7 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
     public static final class Builder {
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
+        private @Nullable String parentResourceId;
         private String source;
         private String type;
         private String vaultSecretId;
@@ -136,8 +138,8 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter

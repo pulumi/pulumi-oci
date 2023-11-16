@@ -22,14 +22,6 @@ class LoadBalancerRoutingPolicyArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LoadBalancerRoutingPolicy resource.
-        :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "condition_language_version", condition_language_version)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -40,9 +32,6 @@ class LoadBalancerRoutingPolicyArgs:
     @property
     @pulumi.getter(name="conditionLanguageVersion")
     def condition_language_version(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The version of the language in which `condition` of `rules` are composed.
-        """
         return pulumi.get(self, "condition_language_version")
 
     @condition_language_version.setter
@@ -52,9 +41,6 @@ class LoadBalancerRoutingPolicyArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -64,9 +50,6 @@ class LoadBalancerRoutingPolicyArgs:
     @property
     @pulumi.getter
     def rules(self) -> pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]:
-        """
-        (Updatable) The list of routing rules.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -76,13 +59,6 @@ class LoadBalancerRoutingPolicyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -100,14 +76,6 @@ class _LoadBalancerRoutingPolicyState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LoadBalancerRoutingPolicy resources.
-        :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]] rules: (Updatable) The list of routing rules.
         """
         if condition_language_version is not None:
             pulumi.set(__self__, "condition_language_version", condition_language_version)
@@ -123,9 +91,6 @@ class _LoadBalancerRoutingPolicyState:
     @property
     @pulumi.getter(name="conditionLanguageVersion")
     def condition_language_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of the language in which `condition` of `rules` are composed.
-        """
         return pulumi.get(self, "condition_language_version")
 
     @condition_language_version.setter
@@ -135,9 +100,6 @@ class _LoadBalancerRoutingPolicyState:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -147,13 +109,6 @@ class _LoadBalancerRoutingPolicyState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -163,9 +118,6 @@ class _LoadBalancerRoutingPolicyState:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]]:
-        """
-        (Updatable) The list of routing rules.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -193,48 +145,9 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerRoutingPolicyRuleArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a routing policy to a load balancer. For more information, see
-        [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy",
-            condition_language_version=var["load_balancer_routing_policy_condition_language_version"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
-                actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                    name=var["load_balancer_routing_policy_rules_actions_name"],
-                )],
-                condition=var["load_balancer_routing_policy_rules_condition"],
-                name=var["load_balancer_routing_policy_rules_name"],
-            )])
-        ```
-
-        ## Import
-
-        LoadBalancerRoutingPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
-        ```
-
+        Create a LoadBalancerRoutingPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerRoutingPolicyRuleArgs']]]] rules: (Updatable) The list of routing rules.
         """
         ...
     @overload
@@ -243,38 +156,7 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                  args: LoadBalancerRoutingPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a routing policy to a load balancer. For more information, see
-        [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy",
-            condition_language_version=var["load_balancer_routing_policy_condition_language_version"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
-                actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                    name=var["load_balancer_routing_policy_rules_actions_name"],
-                )],
-                condition=var["load_balancer_routing_policy_rules_condition"],
-                name=var["load_balancer_routing_policy_rules_name"],
-            )])
-        ```
-
-        ## Import
-
-        LoadBalancerRoutingPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy test_load_balancer_routing_policy "loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
-        ```
-
+        Create a LoadBalancerRoutingPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LoadBalancerRoutingPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -336,14 +218,6 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_language_version: (Updatable) The version of the language in which `condition` of `rules` are composed.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        :param pulumi.Input[str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerRoutingPolicyRuleArgs']]]] rules: (Updatable) The list of routing rules.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -359,41 +233,25 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="conditionLanguageVersion")
     def condition_language_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The version of the language in which `condition` of `rules` are composed.
-        """
         return pulumi.get(self, "condition_language_version")
 
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def rules(self) -> pulumi.Output[Sequence['outputs.LoadBalancerRoutingPolicyRule']]:
-        """
-        (Updatable) The list of routing rules.
-        """
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

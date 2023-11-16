@@ -70,7 +70,7 @@ export class Connection extends pulumi.CustomResource {
     /**
      * OCID of the user who created the connection.
      */
-    public /*out*/ readonly createdById!: pulumi.Output<string>;
+    public /*out*/ readonly createdById!: pulumi.Output<string | undefined>;
     /**
      * Unique data asset key.
      */
@@ -78,7 +78,7 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) A description of the connection.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -90,32 +90,32 @@ export class Connection extends pulumi.CustomResource {
     /**
      * Unique external key of this object from the source system.
      */
-    public /*out*/ readonly externalKey!: pulumi.Output<string>;
+    public /*out*/ readonly externalKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      */
-    public readonly isDefault!: pulumi.Output<boolean>;
+    public readonly isDefault!: pulumi.Output<boolean | undefined>;
     /**
      * Unique connection key that is immutable.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     public readonly properties!: pulumi.Output<{[key: string]: any}>;
     /**
      * The current state of the connection.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeStatusUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeStatusUpdated!: pulumi.Output<string | undefined>;
     /**
      * The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      *
@@ -127,11 +127,11 @@ export class Connection extends pulumi.CustomResource {
     /**
      * OCID of the user who modified the connection.
      */
-    public /*out*/ readonly updatedById!: pulumi.Output<string>;
+    public /*out*/ readonly updatedById!: pulumi.Output<string | undefined>;
     /**
      * URI to the connection instance in the API.
      */
-    public /*out*/ readonly uri!: pulumi.Output<string>;
+    public /*out*/ readonly uri!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.

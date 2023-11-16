@@ -108,23 +108,23 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// OCID of the reserved public IP address created with the virtual cloud network.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of IP addresses.
         /// </summary>
@@ -132,15 +132,15 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
         /// </summary>
-        public readonly bool IsPreserveSourceDestination;
+        public readonly bool? IsPreserveSourceDestination;
         /// <summary>
         /// Whether the network load balancer has a virtual cloud network-local (private) IP address.
         /// </summary>
-        public readonly bool IsPrivate;
+        public readonly bool? IsPrivate;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly string NetworkLoadBalancerId;
         /// <summary>
         /// An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -149,66 +149,66 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// IP version associated with the NLB.
         /// </summary>
-        public readonly string NlbIpVersion;
+        public readonly string? NlbIpVersion;
         public readonly ImmutableArray<Outputs.GetNetworkLoadBalancerReservedIpResult> ReservedIps;
         /// <summary>
         /// The current state of the network load balancer.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetNetworkLoadBalancerResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNetworkLoadBalancerIpAddressResult> ipAddresses,
 
-            bool isPreserveSourceDestination,
+            bool? isPreserveSourceDestination,
 
-            bool isPrivate,
+            bool? isPrivate,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string networkLoadBalancerId,
 
             ImmutableArray<string> networkSecurityGroupIds,
 
-            string nlbIpVersion,
+            string? nlbIpVersion,
 
             ImmutableArray<Outputs.GetNetworkLoadBalancerReservedIpResult> reservedIps,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

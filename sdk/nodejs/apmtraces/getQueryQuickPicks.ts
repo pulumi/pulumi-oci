@@ -52,11 +52,11 @@ export interface GetQueryQuickPicksResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of quick_picks.
      */
-    readonly quickPicks: outputs.ApmTraces.GetQueryQuickPicksQuickPick[];
+    readonly quickPicks?: outputs.ApmTraces.GetQueryQuickPicksQuickPick[];
 }
 /**
  * This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
@@ -13,39 +15,39 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    private String adrHomeDirectory;
+    private @Nullable String adrHomeDirectory;
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The name of the ASM instance.
      * 
      */
-    private String instanceName;
+    private @Nullable String instanceName;
 
     private GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance() {}
     /**
      * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
      * 
      */
-    public String adrHomeDirectory() {
-        return this.adrHomeDirectory;
+    public Optional<String> adrHomeDirectory() {
+        return Optional.ofNullable(this.adrHomeDirectory);
     }
     /**
      * @return The host name of the database or the SCAN name in case of a RAC database.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The name of the ASM instance.
      * 
      */
-    public String instanceName() {
-        return this.instanceName;
+    public Optional<String> instanceName() {
+        return Optional.ofNullable(this.instanceName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adrHomeDirectory;
-        private String hostName;
-        private String instanceName;
+        private @Nullable String adrHomeDirectory;
+        private @Nullable String hostName;
+        private @Nullable String instanceName;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
         }
 
         @CustomType.Setter
-        public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+        public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceName(String instanceName) {
-            this.instanceName = Objects.requireNonNull(instanceName);
+        public Builder instanceName(@Nullable String instanceName) {
+            this.instanceName = instanceName;
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance build() {

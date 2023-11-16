@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPolicyWafConfigWhitelist {
@@ -14,12 +15,12 @@ public final class GetWaasPolicyWafConfigWhitelist {
      * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
      * 
      */
-    private List<String> addressLists;
+    private @Nullable List<String> addressLists;
     /**
      * @return A set of IP addresses or CIDR notations to include in the whitelist.
      * 
      */
-    private List<String> addresses;
+    private @Nullable List<String> addresses;
     /**
      * @return The unique name of the whitelist.
      * 
@@ -32,14 +33,14 @@ public final class GetWaasPolicyWafConfigWhitelist {
      * 
      */
     public List<String> addressLists() {
-        return this.addressLists;
+        return this.addressLists == null ? List.of() : this.addressLists;
     }
     /**
      * @return A set of IP addresses or CIDR notations to include in the whitelist.
      * 
      */
     public List<String> addresses() {
-        return this.addresses;
+        return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return The unique name of the whitelist.
@@ -58,8 +59,8 @@ public final class GetWaasPolicyWafConfigWhitelist {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> addressLists;
-        private List<String> addresses;
+        private @Nullable List<String> addressLists;
+        private @Nullable List<String> addresses;
         private String name;
         public Builder() {}
         public Builder(GetWaasPolicyWafConfigWhitelist defaults) {
@@ -70,16 +71,16 @@ public final class GetWaasPolicyWafConfigWhitelist {
         }
 
         @CustomType.Setter
-        public Builder addressLists(List<String> addressLists) {
-            this.addressLists = Objects.requireNonNull(addressLists);
+        public Builder addressLists(@Nullable List<String> addressLists) {
+            this.addressLists = addressLists;
             return this;
         }
         public Builder addressLists(String... addressLists) {
             return addressLists(List.of(addressLists));
         }
         @CustomType.Setter
-        public Builder addresses(List<String> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+        public Builder addresses(@Nullable List<String> addresses) {
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(String... addresses) {

@@ -23,17 +23,6 @@ class AppCatalogSubscriptionArgs:
                  eula_link: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppCatalogSubscription resource.
-        :param pulumi.Input[str] compartment_id: The compartmentID for the subscription.
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_version: Listing resource version.
-        :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
-        :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] eula_link: EULA link
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "listing_id", listing_id)
@@ -47,9 +36,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The compartmentID for the subscription.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -59,9 +45,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -71,9 +54,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter(name="listingResourceVersion")
     def listing_resource_version(self) -> pulumi.Input[str]:
-        """
-        Listing resource version.
-        """
         return pulumi.get(self, "listing_resource_version")
 
     @listing_resource_version.setter
@@ -83,9 +63,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter(name="oracleTermsOfUseLink")
     def oracle_terms_of_use_link(self) -> pulumi.Input[str]:
-        """
-        Oracle TOU link
-        """
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @oracle_terms_of_use_link.setter
@@ -95,9 +72,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter
     def signature(self) -> pulumi.Input[str]:
-        """
-        A generated signature for this listing resource version retrieved the agreements API.
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -107,13 +81,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Input[str]:
-        """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_retrieved")
 
     @time_retrieved.setter
@@ -123,9 +90,6 @@ class AppCatalogSubscriptionArgs:
     @property
     @pulumi.getter(name="eulaLink")
     def eula_link(self) -> Optional[pulumi.Input[str]]:
-        """
-        EULA link
-        """
         return pulumi.get(self, "eula_link")
 
     @eula_link.setter
@@ -150,22 +114,6 @@ class _AppCatalogSubscriptionState:
                  time_retrieved: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppCatalogSubscription resources.
-        :param pulumi.Input[str] compartment_id: The compartmentID for the subscription.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] eula_link: EULA link
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_id: Listing resource id.
-        :param pulumi.Input[str] listing_resource_version: Listing resource version.
-        :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
-        :param pulumi.Input[str] publisher_name: Name of the publisher who published this listing.
-        :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[str] summary: The short summary to the listing.
-        :param pulumi.Input[str] time_created: Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -195,9 +143,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compartmentID for the subscription.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -207,9 +152,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -219,9 +161,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="eulaLink")
     def eula_link(self) -> Optional[pulumi.Input[str]]:
-        """
-        EULA link
-        """
         return pulumi.get(self, "eula_link")
 
     @eula_link.setter
@@ -231,9 +170,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -243,9 +179,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="listingResourceId")
     def listing_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Listing resource id.
-        """
         return pulumi.get(self, "listing_resource_id")
 
     @listing_resource_id.setter
@@ -255,9 +188,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="listingResourceVersion")
     def listing_resource_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Listing resource version.
-        """
         return pulumi.get(self, "listing_resource_version")
 
     @listing_resource_version.setter
@@ -267,9 +197,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="oracleTermsOfUseLink")
     def oracle_terms_of_use_link(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle TOU link
-        """
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @oracle_terms_of_use_link.setter
@@ -279,9 +206,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="publisherName")
     def publisher_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the publisher who published this listing.
-        """
         return pulumi.get(self, "publisher_name")
 
     @publisher_name.setter
@@ -291,9 +215,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter
     def signature(self) -> Optional[pulumi.Input[str]]:
-        """
-        A generated signature for this listing resource version retrieved the agreements API.
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -303,9 +224,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter
     def summary(self) -> Optional[pulumi.Input[str]]:
-        """
-        The short summary to the listing.
-        """
         return pulumi.get(self, "summary")
 
     @summary.setter
@@ -315,9 +233,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -327,13 +242,6 @@ class _AppCatalogSubscriptionState:
     @property
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_retrieved")
 
     @time_retrieved.setter
@@ -355,47 +263,9 @@ class AppCatalogSubscription(pulumi.CustomResource):
                  time_retrieved: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
-
-        Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_app_catalog_subscription = oci.core.AppCatalogSubscription("testAppCatalogSubscription",
-            compartment_id=var["compartment_id"],
-            listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-            listing_resource_version=var["app_catalog_subscription_listing_resource_version"],
-            oracle_terms_of_use_link=var["app_catalog_subscription_oracle_terms_of_use_link"],
-            signature=var["app_catalog_subscription_signature"],
-            time_retrieved=var["app_catalog_subscription_time_retrieved"],
-            eula_link=var["app_catalog_subscription_eula_link"])
-        ```
-
-        ## Import
-
-        AppCatalogSubscriptions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
-        ```
-
+        Create a AppCatalogSubscription resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartmentID for the subscription.
-        :param pulumi.Input[str] eula_link: EULA link
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_version: Listing resource version.
-        :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
-        :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -404,34 +274,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
                  args: AppCatalogSubscriptionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
-
-        Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_app_catalog_subscription = oci.core.AppCatalogSubscription("testAppCatalogSubscription",
-            compartment_id=var["compartment_id"],
-            listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-            listing_resource_version=var["app_catalog_subscription_listing_resource_version"],
-            oracle_terms_of_use_link=var["app_catalog_subscription_oracle_terms_of_use_link"],
-            signature=var["app_catalog_subscription_signature"],
-            time_retrieved=var["app_catalog_subscription_time_retrieved"],
-            eula_link=var["app_catalog_subscription_eula_link"])
-        ```
-
-        ## Import
-
-        AppCatalogSubscriptions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/appCatalogSubscription:AppCatalogSubscription test_app_catalog_subscription "compartmentId/{compartmentId}/listingId/{listingId}/listingResourceVersion/{listingResourceVersion}"
-        ```
-
+        Create a AppCatalogSubscription resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppCatalogSubscriptionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -516,22 +359,6 @@ class AppCatalogSubscription(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The compartmentID for the subscription.
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] eula_link: EULA link
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_id: Listing resource id.
-        :param pulumi.Input[str] listing_resource_version: Listing resource version.
-        :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
-        :param pulumi.Input[str] publisher_name: Name of the publisher who published this listing.
-        :param pulumi.Input[str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[str] summary: The short summary to the listing.
-        :param pulumi.Input[str] time_created: Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -554,100 +381,60 @@ class AppCatalogSubscription(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The compartmentID for the subscription.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="eulaLink")
     def eula_link(self) -> pulumi.Output[Optional[str]]:
-        """
-        EULA link
-        """
         return pulumi.get(self, "eula_link")
 
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="listingResourceId")
-    def listing_resource_id(self) -> pulumi.Output[str]:
-        """
-        Listing resource id.
-        """
+    def listing_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "listing_resource_id")
 
     @property
     @pulumi.getter(name="listingResourceVersion")
     def listing_resource_version(self) -> pulumi.Output[str]:
-        """
-        Listing resource version.
-        """
         return pulumi.get(self, "listing_resource_version")
 
     @property
     @pulumi.getter(name="oracleTermsOfUseLink")
     def oracle_terms_of_use_link(self) -> pulumi.Output[str]:
-        """
-        Oracle TOU link
-        """
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @property
     @pulumi.getter(name="publisherName")
-    def publisher_name(self) -> pulumi.Output[str]:
-        """
-        Name of the publisher who published this listing.
-        """
+    def publisher_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "publisher_name")
 
     @property
     @pulumi.getter
     def signature(self) -> pulumi.Output[str]:
-        """
-        A generated signature for this listing resource version retrieved the agreements API.
-        """
         return pulumi.get(self, "signature")
 
     @property
     @pulumi.getter
-    def summary(self) -> pulumi.Output[str]:
-        """
-        The short summary to the listing.
-        """
+    def summary(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "summary")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Output[str]:
-        """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_retrieved")
 

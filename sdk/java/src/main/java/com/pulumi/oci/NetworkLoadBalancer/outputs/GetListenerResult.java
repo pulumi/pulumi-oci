@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenerResult {
@@ -14,48 +16,48 @@ public final class GetListenerResult {
      * @return The name of the associated backend set.  Example: `example_backend_set`
      * 
      */
-    private String defaultBackendSetName;
-    private String id;
+    private @Nullable String defaultBackendSetName;
+    private @Nullable String id;
     /**
      * @return IP version associated with the listener.
      * 
      */
-    private String ipVersion;
+    private @Nullable String ipVersion;
     private String listenerName;
     /**
      * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String networkLoadBalancerId;
     /**
      * @return The communication port for the listener.  Example: `80`
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
 
     private GetListenerResult() {}
     /**
      * @return The name of the associated backend set.  Example: `example_backend_set`
      * 
      */
-    public String defaultBackendSetName() {
-        return this.defaultBackendSetName;
+    public Optional<String> defaultBackendSetName() {
+        return Optional.ofNullable(this.defaultBackendSetName);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return IP version associated with the listener.
      * 
      */
-    public String ipVersion() {
-        return this.ipVersion;
+    public Optional<String> ipVersion() {
+        return Optional.ofNullable(this.ipVersion);
     }
     public String listenerName() {
         return this.listenerName;
@@ -64,8 +66,8 @@ public final class GetListenerResult {
      * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String networkLoadBalancerId() {
         return this.networkLoadBalancerId;
@@ -74,15 +76,15 @@ public final class GetListenerResult {
      * @return The communication port for the listener.  Example: `80`
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
 
     public static Builder builder() {
@@ -94,14 +96,14 @@ public final class GetListenerResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultBackendSetName;
-        private String id;
-        private String ipVersion;
+        private @Nullable String defaultBackendSetName;
+        private @Nullable String id;
+        private @Nullable String ipVersion;
         private String listenerName;
-        private String name;
+        private @Nullable String name;
         private String networkLoadBalancerId;
-        private Integer port;
-        private String protocol;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
         public Builder() {}
         public Builder(GetListenerResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -116,18 +118,18 @@ public final class GetListenerResult {
         }
 
         @CustomType.Setter
-        public Builder defaultBackendSetName(String defaultBackendSetName) {
-            this.defaultBackendSetName = Objects.requireNonNull(defaultBackendSetName);
+        public Builder defaultBackendSetName(@Nullable String defaultBackendSetName) {
+            this.defaultBackendSetName = defaultBackendSetName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ipVersion(String ipVersion) {
-            this.ipVersion = Objects.requireNonNull(ipVersion);
+        public Builder ipVersion(@Nullable String ipVersion) {
+            this.ipVersion = ipVersion;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +138,8 @@ public final class GetListenerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -146,13 +148,13 @@ public final class GetListenerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         public GetListenerResult build() {

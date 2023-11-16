@@ -71,7 +71,7 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -79,11 +79,11 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      */
-    public /*out*/ readonly databaseCompartments!: pulumi.Output<string[]>;
+    public /*out*/ readonly databaseCompartments!: pulumi.Output<string[] | undefined>;
     /**
      * A list of DB systems.
      */
-    public /*out*/ readonly databaseSystems!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureDatabaseSystem[]>;
+    public /*out*/ readonly databaseSystems!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureDatabaseSystem[] | undefined>;
     /**
      * (Updatable) The list of DB systems in the Exadata infrastructure.
      */
@@ -91,7 +91,7 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) The unique key of the discovery request.
      */
-    public readonly discoveryKey!: pulumi.Output<string>;
+    public readonly discoveryKey!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the Exadata infrastructure.
      */
@@ -99,31 +99,31 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The internal ID of the Exadata resource.
      */
-    public /*out*/ readonly internalId!: pulumi.Output<string>;
+    public /*out*/ readonly internalId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the database management resources.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The rack size of the Exadata infrastructure.
      */
-    public /*out*/ readonly rackSize!: pulumi.Output<string>;
+    public /*out*/ readonly rackSize!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the database resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The status of the Exadata resource.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * The Exadata storage server grid of the Exadata infrastructure.
      */
-    public /*out*/ readonly storageGrids!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid[]>;
+    public /*out*/ readonly storageGrids!: pulumi.Output<outputs.DatabaseManagement.ExternalExadataInfrastructureStorageGrid[] | undefined>;
     /**
      * (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
      *
@@ -135,15 +135,15 @@ export class ExternalExadataInfrastructure extends pulumi.CustomResource {
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The version of the Exadata resource.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalExadataInfrastructure resource with the given unique name, arguments, and options.

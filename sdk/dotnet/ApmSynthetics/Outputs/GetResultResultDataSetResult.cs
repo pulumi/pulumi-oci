@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Data content in byte format. Example: Zip or Screenshot.
         /// </summary>
-        public readonly string ByteContent;
+        public readonly string? ByteContent;
         /// <summary>
         /// Name of the data.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Data content in string format. Example: HAR.
         /// </summary>
-        public readonly string StringContent;
+        public readonly string? StringContent;
         /// <summary>
         /// The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetResultResultDataSetResult(
-            string byteContent,
+            string? byteContent,
 
-            string name,
+            string? name,
 
-            string stringContent,
+            string? stringContent,
 
-            string timestamp)
+            string? timestamp)
         {
             ByteContent = byteContent;
             Name = name;

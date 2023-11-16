@@ -27,21 +27,6 @@ class HostInsightArgs:
                  status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a HostInsight resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the host entity.
-        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
-        :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] exadata_insight_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_source", entity_source)
@@ -67,9 +52,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier of host
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -79,9 +61,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Source of the host entity.
-        """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
@@ -91,9 +70,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="computeId")
     def compute_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
         return pulumi.get(self, "compute_id")
 
     @compute_id.setter
@@ -103,9 +79,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -115,9 +88,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
     def enterprise_manager_bridge_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @enterprise_manager_bridge_id.setter
@@ -127,9 +97,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
     def enterprise_manager_entity_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @enterprise_manager_entity_identifier.setter
@@ -139,9 +106,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
     def enterprise_manager_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Unique Identifier
-        """
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @enterprise_manager_identifier.setter
@@ -151,9 +115,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
         return pulumi.get(self, "exadata_insight_id")
 
     @exadata_insight_id.setter
@@ -163,9 +124,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -175,13 +133,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
@@ -191,9 +142,6 @@ class HostInsightArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -232,36 +180,6 @@ class _HostInsightState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering HostInsight resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
-        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
-        :param pulumi.Input[str] enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
-        :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param pulumi.Input[str] enterprise_manager_entity_name: Enterprise Manager Entity Name
-        :param pulumi.Input[str] enterprise_manager_entity_type: Enterprise Manager Entity Type
-        :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the host entity.
-        :param pulumi.Input[str] exadata_insight_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] host_display_name: The user-friendly name for the host. The name does not have to be unique.
-        :param pulumi.Input[str] host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param pulumi.Input[str] host_type: Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        :param pulumi.Input[str] platform_name: Platform name.
-        :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        :param pulumi.Input[str] platform_version: Platform version.
-        :param pulumi.Input[int] processor_count: Processor count.
-        :param pulumi.Input[str] state: The current state of the host.
-        :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -319,9 +237,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier of host
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -331,9 +246,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="computeId")
     def compute_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
         return pulumi.get(self, "compute_id")
 
     @compute_id.setter
@@ -343,9 +255,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -355,9 +264,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
     def enterprise_manager_bridge_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @enterprise_manager_bridge_id.setter
@@ -367,9 +273,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
     def enterprise_manager_entity_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Entity Display Name
-        """
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @enterprise_manager_entity_display_name.setter
@@ -379,9 +282,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
     def enterprise_manager_entity_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @enterprise_manager_entity_identifier.setter
@@ -391,9 +291,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
     def enterprise_manager_entity_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Entity Name
-        """
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @enterprise_manager_entity_name.setter
@@ -403,9 +300,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
     def enterprise_manager_entity_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Entity Type
-        """
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @enterprise_manager_entity_type.setter
@@ -415,9 +309,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
     def enterprise_manager_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        Enterprise Manager Unique Identifier
-        """
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @enterprise_manager_identifier.setter
@@ -427,9 +318,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Source of the host entity.
-        """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
@@ -439,9 +327,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
         return pulumi.get(self, "exadata_insight_id")
 
     @exadata_insight_id.setter
@@ -451,9 +336,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -463,9 +345,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="hostDisplayName")
     def host_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the host. The name does not have to be unique.
-        """
         return pulumi.get(self, "host_display_name")
 
     @host_display_name.setter
@@ -475,9 +354,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -487,9 +363,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="hostType")
     def host_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-        """
         return pulumi.get(self, "host_type")
 
     @host_type.setter
@@ -499,9 +372,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -511,13 +381,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
@@ -527,9 +390,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="platformName")
     def platform_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform name.
-        """
         return pulumi.get(self, "platform_name")
 
     @platform_name.setter
@@ -539,9 +399,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="platformType")
     def platform_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        """
         return pulumi.get(self, "platform_type")
 
     @platform_type.setter
@@ -551,9 +408,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="platformVersion")
     def platform_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Platform version.
-        """
         return pulumi.get(self, "platform_version")
 
     @platform_version.setter
@@ -563,9 +417,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Processor count.
-        """
         return pulumi.get(self, "processor_count")
 
     @processor_count.setter
@@ -575,9 +426,6 @@ class _HostInsightState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the host.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -587,9 +435,6 @@ class _HostInsightState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -599,9 +444,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -611,9 +453,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -623,9 +462,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the host insight was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -651,59 +487,9 @@ class HostInsight(pulumi.CustomResource):
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_host_insight = oci.opsi.HostInsight("testHostInsight",
-            compartment_id=var["compartment_id"],
-            entity_source=var["host_insight_entity_source"],
-            compute_id=oci_opsi_compute["test_compute"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-            enterprise_manager_entity_identifier=var["host_insight_enterprise_manager_entity_identifier"],
-            enterprise_manager_identifier=var["host_insight_enterprise_manager_identifier"],
-            exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            status="DISABLED")
-        ```
-
-        ## Import
-
-        HostInsights can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
-        ```
-
+        Create a HostInsight resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
-        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
-        :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the host entity.
-        :param pulumi.Input[str] exadata_insight_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         """
         ...
     @overload
@@ -712,42 +498,7 @@ class HostInsight(pulumi.CustomResource):
                  args: HostInsightArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_host_insight = oci.opsi.HostInsight("testHostInsight",
-            compartment_id=var["compartment_id"],
-            entity_source=var["host_insight_entity_source"],
-            compute_id=oci_opsi_compute["test_compute"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-            enterprise_manager_entity_identifier=var["host_insight_enterprise_manager_entity_identifier"],
-            enterprise_manager_identifier=var["host_insight_enterprise_manager_identifier"],
-            exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            status="DISABLED")
-        ```
-
-        ## Import
-
-        HostInsights can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/hostInsight:HostInsight test_host_insight "id"
-        ```
-
+        Create a HostInsight resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param HostInsightArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -856,36 +607,6 @@ class HostInsight(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of host
-        :param pulumi.Input[str] compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] enterprise_manager_bridge_id: OPSI Enterprise Manager Bridge OCID
-        :param pulumi.Input[str] enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
-        :param pulumi.Input[str] enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
-        :param pulumi.Input[str] enterprise_manager_entity_name: Enterprise Manager Entity Name
-        :param pulumi.Input[str] enterprise_manager_entity_type: Enterprise Manager Entity Type
-        :param pulumi.Input[str] enterprise_manager_identifier: Enterprise Manager Unique Identifier
-        :param pulumi.Input[str] entity_source: (Updatable) Source of the host entity.
-        :param pulumi.Input[str] exadata_insight_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] host_display_name: The user-friendly name for the host. The name does not have to be unique.
-        :param pulumi.Input[str] host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param pulumi.Input[str] host_type: Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        :param pulumi.Input[str] platform_name: Platform name.
-        :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        :param pulumi.Input[str] platform_version: Platform version.
-        :param pulumi.Input[int] processor_count: Processor count.
-        :param pulumi.Input[str] state: The current state of the host.
-        :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -922,212 +643,130 @@ class HostInsight(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier of host
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeId")
-    def compute_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        """
+    def compute_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
-    def enterprise_manager_bridge_id(self) -> pulumi.Output[str]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
+    def enterprise_manager_bridge_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityDisplayName")
-    def enterprise_manager_entity_display_name(self) -> pulumi.Output[str]:
-        """
-        Enterprise Manager Entity Display Name
-        """
+    def enterprise_manager_entity_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enterprise_manager_entity_display_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityIdentifier")
-    def enterprise_manager_entity_identifier(self) -> pulumi.Output[str]:
-        """
-        Enterprise Manager Entity Unique Identifier
-        """
+    def enterprise_manager_entity_identifier(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enterprise_manager_entity_identifier")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityName")
-    def enterprise_manager_entity_name(self) -> pulumi.Output[str]:
-        """
-        Enterprise Manager Entity Name
-        """
+    def enterprise_manager_entity_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enterprise_manager_entity_name")
 
     @property
     @pulumi.getter(name="enterpriseManagerEntityType")
-    def enterprise_manager_entity_type(self) -> pulumi.Output[str]:
-        """
-        Enterprise Manager Entity Type
-        """
+    def enterprise_manager_entity_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enterprise_manager_entity_type")
 
     @property
     @pulumi.getter(name="enterpriseManagerIdentifier")
-    def enterprise_manager_identifier(self) -> pulumi.Output[str]:
-        """
-        Enterprise Manager Unique Identifier
-        """
+    def enterprise_manager_identifier(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "enterprise_manager_identifier")
 
     @property
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Source of the host entity.
-        """
         return pulumi.get(self, "entity_source")
 
     @property
     @pulumi.getter(name="exadataInsightId")
-    def exadata_insight_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
+    def exadata_insight_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "exadata_insight_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostDisplayName")
-    def host_display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the host. The name does not have to be unique.
-        """
+    def host_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host_display_name")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> pulumi.Output[str]:
-        """
-        The host name. The host name is unique amongst the hosts managed by the same management agent.
-        """
+    def host_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="hostType")
-    def host_type(self) -> pulumi.Output[str]:
-        """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-        """
+    def host_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same Management agent OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
-        """
+    def management_agent_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> pulumi.Output[str]:
-        """
-        Platform name.
-        """
+    def platform_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "platform_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> pulumi.Output[str]:
-        """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
-        """
+    def platform_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> pulumi.Output[str]:
-        """
-        Platform version.
-        """
+    def platform_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter(name="processorCount")
-    def processor_count(self) -> pulumi.Output[int]:
-        """
-        Processor count.
-        """
+    def processor_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "processor_count")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the host.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the host insight was first enabled. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the host insight was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

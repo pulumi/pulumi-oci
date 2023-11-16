@@ -72,7 +72,7 @@ export interface GetRecommendationStrategiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the strategy parameter.
      */
@@ -81,7 +81,7 @@ export interface GetRecommendationStrategiesResult {
     /**
      * The list of recommendation_strategy_collection.
      */
-    readonly recommendationStrategyCollections: outputs.Optimizer.GetRecommendationStrategiesRecommendationStrategyCollection[];
+    readonly recommendationStrategyCollections?: outputs.Optimizer.GetRecommendationStrategiesRecommendationStrategyCollection[];
 }
 /**
  * This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.

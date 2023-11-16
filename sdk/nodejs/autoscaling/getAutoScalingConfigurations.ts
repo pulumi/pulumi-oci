@@ -55,7 +55,7 @@ export interface GetAutoScalingConfigurationsResult {
     /**
      * The list of auto_scaling_configurations.
      */
-    readonly autoScalingConfigurations: outputs.Autoscaling.GetAutoScalingConfigurationsAutoScalingConfiguration[];
+    readonly autoScalingConfigurations?: outputs.Autoscaling.GetAutoScalingConfigurationsAutoScalingConfiguration[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      */
@@ -68,7 +68,7 @@ export interface GetAutoScalingConfigurationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.

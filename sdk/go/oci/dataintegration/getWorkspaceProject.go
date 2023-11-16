@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
@@ -63,26 +62,26 @@ type LookupWorkspaceProjectArgs struct {
 // A collection of values returned by getWorkspaceProject.
 type LookupWorkspaceProjectResult struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
-	Id          string `pulumi:"id"`
+	Description *string `pulumi:"description"`
+	Id          *string `pulumi:"id"`
 	// The identifier of the aggregator.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceProjectMetadata `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The model version of an object.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus int `pulumi:"objectStatus"`
+	ObjectStatus *int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves       []GetWorkspaceProjectParentRef        `pulumi:"parentReves"`
 	ProjectKey        string                                `pulumi:"projectKey"`
@@ -130,29 +129,23 @@ func (o LookupWorkspaceProjectResultOutput) ToLookupWorkspaceProjectResultOutput
 	return o
 }
 
-func (o LookupWorkspaceProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceProjectResult] {
-	return pulumix.Output[LookupWorkspaceProjectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o LookupWorkspaceProjectResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupWorkspaceProjectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the aggregator.
-func (o LookupWorkspaceProjectResultOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.Identifier }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o LookupWorkspaceProjectResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -166,28 +159,28 @@ func (o LookupWorkspaceProjectResultOutput) Metadatas() GetWorkspaceProjectMetad
 }
 
 // The type of the object.
-func (o LookupWorkspaceProjectResultOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.ModelType }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The model version of an object.
-func (o LookupWorkspaceProjectResultOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o LookupWorkspaceProjectResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupWorkspaceProjectResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o LookupWorkspaceProjectResultOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) int { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o LookupWorkspaceProjectResultOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The version of the object that is used to track changes in the object instance.
-func (o LookupWorkspaceProjectResultOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o LookupWorkspaceProjectResultOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.

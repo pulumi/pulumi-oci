@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -117,56 +118,56 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      * 
      */
     @Export(name="policyPrefix", refs={String.class}, tree="[0]")
-    private Output<String> policyPrefix;
+    private Output</* @Nullable */ String> policyPrefix;
 
     /**
      * @return (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
      * 
      */
-    public Output<String> policyPrefix() {
-        return this.policyPrefix;
+    public Output<Optional<String>> policyPrefix() {
+        return Codegen.optional(this.policyPrefix);
     }
     /**
      * (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -175,7 +176,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="schedules", refs={List.class,FilesystemSnapshotPolicySchedule.class}, tree="[0,1]")
-    private Output<List<FilesystemSnapshotPolicySchedule>> schedules;
+    private Output</* @Nullable */ List<FilesystemSnapshotPolicySchedule>> schedules;
 
     /**
      * @return (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -183,8 +184,8 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules &#39;[{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;DAILY&#34;,&#34;hourOfDay&#34;:18},{&#34;timeZone&#34;:&#34;UTC&#34;,&#34;period&#34;:&#34;HOURLY&#34;}]&#39;```
      * 
      */
-    public Output<List<FilesystemSnapshotPolicySchedule>> schedules() {
-        return this.schedules;
+    public Output<Optional<List<FilesystemSnapshotPolicySchedule>>> schedules() {
+        return Codegen.optional(this.schedules);
     }
     /**
      * (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
@@ -194,7 +195,7 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`.
@@ -203,22 +204,22 @@ public class FilesystemSnapshotPolicy extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

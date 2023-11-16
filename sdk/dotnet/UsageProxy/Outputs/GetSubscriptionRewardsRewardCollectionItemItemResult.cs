@@ -16,77 +16,77 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The number of rewards available for a specific usage period.
         /// </summary>
-        public readonly double AvailableRewards;
+        public readonly double? AvailableRewards;
         /// <summary>
         /// The number of rewards earned for the specific usage period.
         /// </summary>
-        public readonly double EarnedRewards;
+        public readonly double? EarnedRewards;
         /// <summary>
         /// The eligible usage amount for the usage period.
         /// </summary>
-        public readonly double EligibleUsageAmount;
+        public readonly double? EligibleUsageAmount;
         /// <summary>
         /// The ineligible usage amount for the usage period.
         /// </summary>
-        public readonly double IneligibleUsageAmount;
+        public readonly double? IneligibleUsageAmount;
         /// <summary>
         /// The boolean parameter to indicate whether or not the available rewards are manually posted.
         /// </summary>
-        public readonly bool IsManual;
+        public readonly bool? IsManual;
         /// <summary>
         /// The number of rewards redeemed for a specific month.
         /// </summary>
-        public readonly double RedeemedRewards;
+        public readonly double? RedeemedRewards;
         /// <summary>
         /// The date and time when rewards accrue.
         /// </summary>
-        public readonly string TimeRewardsEarned;
+        public readonly string? TimeRewardsEarned;
         /// <summary>
         /// The date and time when rewards expire.
         /// </summary>
-        public readonly string TimeRewardsExpired;
+        public readonly string? TimeRewardsExpired;
         /// <summary>
         /// The end date and time for the usage period.
         /// </summary>
-        public readonly string TimeUsageEnded;
+        public readonly string? TimeUsageEnded;
         /// <summary>
         /// The start date and time for the usage period.
         /// </summary>
-        public readonly string TimeUsageStarted;
+        public readonly string? TimeUsageStarted;
         /// <summary>
         /// The usage amount for the usage period.
         /// </summary>
-        public readonly double UsageAmount;
+        public readonly double? UsageAmount;
         /// <summary>
         /// The usage period ID.
         /// </summary>
-        public readonly string UsagePeriodKey;
+        public readonly string? UsagePeriodKey;
 
         [OutputConstructor]
         private GetSubscriptionRewardsRewardCollectionItemItemResult(
-            double availableRewards,
+            double? availableRewards,
 
-            double earnedRewards,
+            double? earnedRewards,
 
-            double eligibleUsageAmount,
+            double? eligibleUsageAmount,
 
-            double ineligibleUsageAmount,
+            double? ineligibleUsageAmount,
 
-            bool isManual,
+            bool? isManual,
 
-            double redeemedRewards,
+            double? redeemedRewards,
 
-            string timeRewardsEarned,
+            string? timeRewardsEarned,
 
-            string timeRewardsExpired,
+            string? timeRewardsExpired,
 
-            string timeUsageEnded,
+            string? timeUsageEnded,
 
-            string timeUsageStarted,
+            string? timeUsageStarted,
 
-            double usageAmount,
+            double? usageAmount,
 
-            string usagePeriodKey)
+            string? usagePeriodKey)
         {
             AvailableRewards = availableRewards;
             EarnedRewards = earnedRewards;

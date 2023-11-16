@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
@@ -77,7 +76,7 @@ type GetOdaInstancesResult struct {
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetOdaInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of oda_instances.
 	OdaInstances []GetOdaInstancesOdaInstance `pulumi:"odaInstances"`
 	// The current state of the Digital Assistant instance.
@@ -127,12 +126,6 @@ func (o GetOdaInstancesResultOutput) ToGetOdaInstancesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetOdaInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaInstancesResult] {
-	return pulumix.Output[GetOdaInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Identifier of the compartment that the instance belongs to.
 func (o GetOdaInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOdaInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -148,8 +141,8 @@ func (o GetOdaInstancesResultOutput) Filters() GetOdaInstancesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOdaInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of oda_instances.

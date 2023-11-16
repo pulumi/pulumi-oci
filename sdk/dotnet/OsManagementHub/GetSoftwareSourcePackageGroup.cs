@@ -124,31 +124,31 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// description of the package group.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Indicates the order to display category or environment.
         /// </summary>
-        public readonly int DisplayOrder;
+        public readonly int? DisplayOrder;
         /// <summary>
         /// Indicates if this is a group, category or environment.
         /// </summary>
-        public readonly string GroupType;
+        public readonly string? GroupType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if this package group is the default.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// Indicates if this package group is visible by users.
         /// </summary>
-        public readonly bool IsUserVisible;
+        public readonly bool? IsUserVisible;
         /// <summary>
         /// Package group name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string PackageGroupId;
         /// <summary>
         /// The list of packages in the package group.
@@ -162,19 +162,19 @@ namespace Pulumi.Oci.OsManagementHub
 
         [OutputConstructor]
         private GetSoftwareSourcePackageGroupResult(
-            string description,
+            string? description,
 
-            int displayOrder,
+            int? displayOrder,
 
-            string groupType,
+            string? groupType,
 
-            string id,
+            string? id,
 
-            bool isDefault,
+            bool? isDefault,
 
-            bool isUserVisible,
+            bool? isUserVisible,
 
-            string name,
+            string? name,
 
             string packageGroupId,
 

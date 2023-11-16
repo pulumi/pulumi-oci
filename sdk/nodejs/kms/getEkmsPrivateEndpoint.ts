@@ -45,60 +45,60 @@ export interface GetEkmsPrivateEndpointResult {
     /**
      * CABundle to validate TLS certificate of the external key manager system in PEM format
      */
-    readonly caBundle: string;
+    readonly caBundle?: string;
     /**
      * Identifier of the compartment this EKMS private endpoint belongs to
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Mutable name of the EKMS private endpoint
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly ekmsPrivateEndpointId: string;
     /**
      * Private IP of the external key manager system to connect to from the EKMS private endpoint
      */
-    readonly externalKeyManagerIp: string;
+    readonly externalKeyManagerIp?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The port of the external key manager system
      */
-    readonly port: number;
+    readonly port?: number;
     /**
      * The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
      */
-    readonly privateEndpointIp: string;
+    readonly privateEndpointIp?: string;
     /**
      * The current state of the EKMS private endpoint resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Subnet Identifier
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.

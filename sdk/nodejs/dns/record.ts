@@ -76,7 +76,7 @@ export class Record extends pulumi.CustomResource {
     /**
      * A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      */
-    public /*out*/ readonly isProtected!: pulumi.Output<boolean>;
+    public /*out*/ readonly isProtected!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      */
@@ -84,11 +84,11 @@ export class Record extends pulumi.CustomResource {
     /**
      * A unique identifier for the record within its zone.
      */
-    public /*out*/ readonly recordHash!: pulumi.Output<string>;
+    public /*out*/ readonly recordHash!: pulumi.Output<string | undefined>;
     /**
      * The latest version of the record's zone in which its RRSet differs from the preceding version.
      */
-    public /*out*/ readonly rrsetVersion!: pulumi.Output<string>;
+    public /*out*/ readonly rrsetVersion!: pulumi.Output<string | undefined>;
     /**
      * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -64,32 +63,32 @@ type LookupScriptArgs struct {
 type LookupScriptResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// File name of the uploaded script content.
-	ContentFileName string `pulumi:"contentFileName"`
+	ContentFileName *string `pulumi:"contentFileName"`
 	// Size of the script content.
-	ContentSizeInBytes int `pulumi:"contentSizeInBytes"`
+	ContentSizeInBytes *int `pulumi:"contentSizeInBytes"`
 	// Content type of the script.
-	ContentType string `pulumi:"contentType"`
+	ContentType *string `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique name that can be edited. The name should not contain any confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps []GetScriptMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
 	// List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
 	Parameters []GetScriptParameter `pulumi:"parameters"`
 	ScriptId   string               `pulumi:"scriptId"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The time the script was uploaded.
-	TimeUploaded string `pulumi:"timeUploaded"`
+	TimeUploaded *string `pulumi:"timeUploaded"`
 }
 
 func LookupScriptOutput(ctx *pulumi.Context, args LookupScriptOutputArgs, opts ...pulumi.InvokeOption) LookupScriptResultOutput {
@@ -132,34 +131,28 @@ func (o LookupScriptResultOutput) ToLookupScriptResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupScriptResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupScriptResult] {
-	return pulumix.Output[LookupScriptResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupScriptResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScriptResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
 // The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-func (o LookupScriptResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.Content }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // File name of the uploaded script content.
-func (o LookupScriptResultOutput) ContentFileName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.ContentFileName }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) ContentFileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.ContentFileName }).(pulumi.StringPtrOutput)
 }
 
 // Size of the script content.
-func (o LookupScriptResultOutput) ContentSizeInBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupScriptResult) int { return v.ContentSizeInBytes }).(pulumi.IntOutput)
+func (o LookupScriptResultOutput) ContentSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *int { return v.ContentSizeInBytes }).(pulumi.IntPtrOutput)
 }
 
 // Content type of the script.
-func (o LookupScriptResultOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.ContentType }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -168,8 +161,8 @@ func (o LookupScriptResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Unique name that can be edited. The name should not contain any confidential information.
-func (o LookupScriptResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -178,8 +171,8 @@ func (o LookupScriptResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-func (o LookupScriptResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -197,18 +190,18 @@ func (o LookupScriptResultOutput) ScriptId() pulumi.StringOutput {
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o LookupScriptResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o LookupScriptResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The time the script was uploaded.
-func (o LookupScriptResultOutput) TimeUploaded() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupScriptResult) string { return v.TimeUploaded }).(pulumi.StringOutput)
+func (o LookupScriptResultOutput) TimeUploaded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupScriptResult) *string { return v.TimeUploaded }).(pulumi.StringPtrOutput)
 }
 
 func init() {

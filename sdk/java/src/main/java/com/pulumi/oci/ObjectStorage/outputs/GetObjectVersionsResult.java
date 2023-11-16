@@ -23,19 +23,19 @@ public final class GetObjectVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of object version summaries.
      * 
      */
-    private List<GetObjectVersionsItem> items;
+    private @Nullable List<GetObjectVersionsItem> items;
     private String namespace;
     private @Nullable String prefix;
     /**
      * @return Prefixes that are common to the results returned by the request if the request specified a delimiter.
      * 
      */
-    private List<String> prefixes;
+    private @Nullable List<String> prefixes;
     private @Nullable String start;
     private @Nullable String startAfter;
 
@@ -59,15 +59,15 @@ public final class GetObjectVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of object version summaries.
      * 
      */
     public List<GetObjectVersionsItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String namespace() {
         return this.namespace;
@@ -80,7 +80,7 @@ public final class GetObjectVersionsResult {
      * 
      */
     public List<String> prefixes() {
-        return this.prefixes;
+        return this.prefixes == null ? List.of() : this.prefixes;
     }
     public Optional<String> start() {
         return Optional.ofNullable(this.start);
@@ -103,11 +103,11 @@ public final class GetObjectVersionsResult {
         private @Nullable String end;
         private @Nullable String fields;
         private @Nullable List<GetObjectVersionsFilter> filters;
-        private String id;
-        private List<GetObjectVersionsItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetObjectVersionsItem> items;
         private String namespace;
         private @Nullable String prefix;
-        private List<String> prefixes;
+        private @Nullable List<String> prefixes;
         private @Nullable String start;
         private @Nullable String startAfter;
         public Builder() {}
@@ -156,13 +156,13 @@ public final class GetObjectVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetObjectVersionsItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetObjectVersionsItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetObjectVersionsItem... items) {
@@ -179,8 +179,8 @@ public final class GetObjectVersionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder prefixes(List<String> prefixes) {
-            this.prefixes = Objects.requireNonNull(prefixes);
+        public Builder prefixes(@Nullable List<String> prefixes) {
+            this.prefixes = prefixes;
             return this;
         }
         public Builder prefixes(String... prefixes) {

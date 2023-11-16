@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
@@ -57,15 +56,15 @@ type UserGroupMembership struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the tenancy containing the user, group, and membership object.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The OCID of the group.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The membership's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
@@ -196,12 +195,6 @@ func (i *UserGroupMembership) ToUserGroupMembershipOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupMembershipOutput)
 }
 
-func (i *UserGroupMembership) ToOutput(ctx context.Context) pulumix.Output[*UserGroupMembership] {
-	return pulumix.Output[*UserGroupMembership]{
-		OutputState: i.ToUserGroupMembershipOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UserGroupMembershipArrayInput is an input type that accepts UserGroupMembershipArray and UserGroupMembershipArrayOutput values.
 // You can construct a concrete instance of `UserGroupMembershipArrayInput` via:
 //
@@ -225,12 +218,6 @@ func (i UserGroupMembershipArray) ToUserGroupMembershipArrayOutput() UserGroupMe
 
 func (i UserGroupMembershipArray) ToUserGroupMembershipArrayOutputWithContext(ctx context.Context) UserGroupMembershipArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupMembershipArrayOutput)
-}
-
-func (i UserGroupMembershipArray) ToOutput(ctx context.Context) pulumix.Output[[]*UserGroupMembership] {
-	return pulumix.Output[[]*UserGroupMembership]{
-		OutputState: i.ToUserGroupMembershipArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UserGroupMembershipMapInput is an input type that accepts UserGroupMembershipMap and UserGroupMembershipMapOutput values.
@@ -258,12 +245,6 @@ func (i UserGroupMembershipMap) ToUserGroupMembershipMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(UserGroupMembershipMapOutput)
 }
 
-func (i UserGroupMembershipMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserGroupMembership] {
-	return pulumix.Output[map[string]*UserGroupMembership]{
-		OutputState: i.ToUserGroupMembershipMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UserGroupMembershipOutput struct{ *pulumi.OutputState }
 
 func (UserGroupMembershipOutput) ElementType() reflect.Type {
@@ -278,15 +259,9 @@ func (o UserGroupMembershipOutput) ToUserGroupMembershipOutputWithContext(ctx co
 	return o
 }
 
-func (o UserGroupMembershipOutput) ToOutput(ctx context.Context) pulumix.Output[*UserGroupMembership] {
-	return pulumix.Output[*UserGroupMembership]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the user, group, and membership object.
-func (o UserGroupMembershipOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o UserGroupMembershipOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the group.
@@ -295,18 +270,18 @@ func (o UserGroupMembershipOutput) GroupId() pulumi.StringOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o UserGroupMembershipOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o UserGroupMembershipOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The membership's current state.
-func (o UserGroupMembershipOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o UserGroupMembershipOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o UserGroupMembershipOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o UserGroupMembershipOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserGroupMembership) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -331,12 +306,6 @@ func (o UserGroupMembershipArrayOutput) ToUserGroupMembershipArrayOutputWithCont
 	return o
 }
 
-func (o UserGroupMembershipArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*UserGroupMembership] {
-	return pulumix.Output[[]*UserGroupMembership]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UserGroupMembershipArrayOutput) Index(i pulumi.IntInput) UserGroupMembershipOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *UserGroupMembership {
 		return vs[0].([]*UserGroupMembership)[vs[1].(int)]
@@ -355,12 +324,6 @@ func (o UserGroupMembershipMapOutput) ToUserGroupMembershipMapOutput() UserGroup
 
 func (o UserGroupMembershipMapOutput) ToUserGroupMembershipMapOutputWithContext(ctx context.Context) UserGroupMembershipMapOutput {
 	return o
-}
-
-func (o UserGroupMembershipMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*UserGroupMembership] {
-	return pulumix.Output[map[string]*UserGroupMembership]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserGroupMembershipMapOutput) MapIndex(k pulumi.StringInput) UserGroupMembershipOutput {

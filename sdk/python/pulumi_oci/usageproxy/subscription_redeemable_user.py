@@ -22,14 +22,6 @@ class SubscriptionRedeemableUserArgs:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SubscriptionRedeemableUser resource.
-        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]] items: The list of new user to be added to the list of user that can redeem rewards.
-        :param pulumi.Input[str] subscription_id: The subscription ID for which rewards information is requested for.
-        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
-        :param pulumi.Input[str] user_id: The user ID of the person to send a copy of an email.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -40,9 +32,6 @@ class SubscriptionRedeemableUserArgs:
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]:
-        """
-        The list of new user to be added to the list of user that can redeem rewards.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -52,9 +41,6 @@ class SubscriptionRedeemableUserArgs:
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Input[str]:
-        """
-        The subscription ID for which rewards information is requested for.
-        """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
@@ -64,9 +50,6 @@ class SubscriptionRedeemableUserArgs:
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
@@ -76,13 +59,6 @@ class SubscriptionRedeemableUserArgs:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user ID of the person to send a copy of an email.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -99,14 +75,6 @@ class _SubscriptionRedeemableUserState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SubscriptionRedeemableUser resources.
-        :param pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]] items: The list of new user to be added to the list of user that can redeem rewards.
-        :param pulumi.Input[str] subscription_id: The subscription ID for which rewards information is requested for.
-        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
-        :param pulumi.Input[str] user_id: The user ID of the person to send a copy of an email.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -120,9 +88,6 @@ class _SubscriptionRedeemableUserState:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionRedeemableUserItemArgs']]]]:
-        """
-        The list of new user to be added to the list of user that can redeem rewards.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -132,9 +97,6 @@ class _SubscriptionRedeemableUserState:
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The subscription ID for which rewards information is requested for.
-        """
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
@@ -144,9 +106,6 @@ class _SubscriptionRedeemableUserState:
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
@@ -156,13 +115,6 @@ class _SubscriptionRedeemableUserState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user ID of the person to send a copy of an email.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -181,45 +133,9 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
-
-        Adds the list of redeemable user summary for a subscription ID.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser",
-            subscription_id=oci_ons_subscription["test_subscription"]["id"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-            items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=oci_usage_proxy_email["test_email"]["id"],
-                first_name=var["subscription_redeemable_user_items_first_name"],
-                last_name=var["subscription_redeemable_user_items_last_name"],
-            )],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        SubscriptionRedeemableUsers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
-        ```
-
+        Create a SubscriptionRedeemableUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]] items: The list of new user to be added to the list of user that can redeem rewards.
-        :param pulumi.Input[str] subscription_id: The subscription ID for which rewards information is requested for.
-        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
-        :param pulumi.Input[str] user_id: The user ID of the person to send a copy of an email.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -228,35 +144,7 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
                  args: SubscriptionRedeemableUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
-
-        Adds the list of redeemable user summary for a subscription ID.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser",
-            subscription_id=oci_ons_subscription["test_subscription"]["id"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-            items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=oci_usage_proxy_email["test_email"]["id"],
-                first_name=var["subscription_redeemable_user_items_first_name"],
-                last_name=var["subscription_redeemable_user_items_last_name"],
-            )],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        SubscriptionRedeemableUsers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser test_subscription_redeemable_user "subscriptions/{subscriptionId}/redeemableUsers/tenancyId/{tenancyId}"
-        ```
-
+        Create a SubscriptionRedeemableUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SubscriptionRedeemableUserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -316,14 +204,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SubscriptionRedeemableUserItemArgs']]]] items: The list of new user to be added to the list of user that can redeem rewards.
-        :param pulumi.Input[str] subscription_id: The subscription ID for which rewards information is requested for.
-        :param pulumi.Input[str] tenancy_id: The OCID of the tenancy.
-        :param pulumi.Input[str] user_id: The user ID of the person to send a copy of an email.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -338,36 +218,20 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     @property
     @pulumi.getter
     def items(self) -> pulumi.Output[Sequence['outputs.SubscriptionRedeemableUserItem']]:
-        """
-        The list of new user to be added to the list of user that can redeem rewards.
-        """
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Output[str]:
-        """
-        The subscription ID for which rewards information is requested for.
-        """
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> pulumi.Output[str]:
-        """
-        The user ID of the person to send a copy of an email.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def user_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "user_id")
 

@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbServerResult {
@@ -18,48 +20,48 @@ public final class GetDbServerResult {
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
      * 
      */
-    private List<String> autonomousVirtualMachineIds;
+    private @Nullable List<String> autonomousVirtualMachineIds;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
      * 
      */
-    private List<String> autonomousVmClusterIds;
+    private @Nullable List<String> autonomousVmClusterIds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of CPU cores enabled on the Db server.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
      * 
      */
-    private List<String> dbNodeIds;
+    private @Nullable List<String> dbNodeIds;
     /**
      * @return The allocated local node storage in GBs on the Db server.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     private String dbServerId;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails;
+    private @Nullable List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Db server. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * 
@@ -69,57 +71,57 @@ public final class GetDbServerResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    private Integer maxCpuCount;
+    private @Nullable Integer maxCpuCount;
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    private Integer maxDbNodeStorageInGbs;
+    private @Nullable Integer maxDbNodeStorageInGbs;
     /**
      * @return The total memory available in GBs.
      * 
      */
-    private Integer maxMemoryInGbs;
+    private @Nullable Integer maxMemoryInGbs;
     /**
      * @return The allocated memory in GBs on the Db server.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The current state of the Db server.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time that the Db Server was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
      * 
      */
-    private List<String> vmClusterIds;
+    private @Nullable List<String> vmClusterIds;
 
     private GetDbServerResult() {}
     /**
@@ -127,42 +129,42 @@ public final class GetDbServerResult {
      * 
      */
     public List<String> autonomousVirtualMachineIds() {
-        return this.autonomousVirtualMachineIds;
+        return this.autonomousVirtualMachineIds == null ? List.of() : this.autonomousVirtualMachineIds;
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
      * 
      */
     public List<String> autonomousVmClusterIds() {
-        return this.autonomousVmClusterIds;
+        return this.autonomousVmClusterIds == null ? List.of() : this.autonomousVmClusterIds;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of CPU cores enabled on the Db server.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
      * 
      */
     public List<String> dbNodeIds() {
-        return this.dbNodeIds;
+        return this.dbNodeIds == null ? List.of() : this.dbNodeIds;
     }
     /**
      * @return The allocated local node storage in GBs on the Db server.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     public String dbServerId() {
         return this.dbServerId;
@@ -172,21 +174,21 @@ public final class GetDbServerResult {
      * 
      */
     public List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails() {
-        return this.dbServerPatchingDetails;
+        return this.dbServerPatchingDetails == null ? List.of() : this.dbServerPatchingDetails;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the Db server. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -200,77 +202,77 @@ public final class GetDbServerResult {
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    public Integer maxCpuCount() {
-        return this.maxCpuCount;
+    public Optional<Integer> maxCpuCount() {
+        return Optional.ofNullable(this.maxCpuCount);
     }
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    public Integer maxDbNodeStorageInGbs() {
-        return this.maxDbNodeStorageInGbs;
+    public Optional<Integer> maxDbNodeStorageInGbs() {
+        return Optional.ofNullable(this.maxDbNodeStorageInGbs);
     }
     /**
      * @return The total memory available in GBs.
      * 
      */
-    public Integer maxMemoryInGbs() {
-        return this.maxMemoryInGbs;
+    public Optional<Integer> maxMemoryInGbs() {
+        return Optional.ofNullable(this.maxMemoryInGbs);
     }
     /**
      * @return The allocated memory in GBs on the Db server.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The current state of the Db server.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time that the Db Server was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
      * 
      */
     public List<String> vmClusterIds() {
-        return this.vmClusterIds;
+        return this.vmClusterIds == null ? List.of() : this.vmClusterIds;
     }
 
     public static Builder builder() {
@@ -282,28 +284,28 @@ public final class GetDbServerResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> autonomousVirtualMachineIds;
-        private List<String> autonomousVmClusterIds;
-        private String compartmentId;
-        private Integer cpuCoreCount;
-        private List<String> dbNodeIds;
-        private Integer dbNodeStorageSizeInGbs;
+        private @Nullable List<String> autonomousVirtualMachineIds;
+        private @Nullable List<String> autonomousVmClusterIds;
+        private @Nullable String compartmentId;
+        private @Nullable Integer cpuCoreCount;
+        private @Nullable List<String> dbNodeIds;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
         private String dbServerId;
-        private List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails;
-        private Map<String,Object> definedTags;
-        private String displayName;
+        private @Nullable List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
         private String exadataInfrastructureId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private Integer maxCpuCount;
-        private Integer maxDbNodeStorageInGbs;
-        private Integer maxMemoryInGbs;
-        private Integer memorySizeInGbs;
-        private String shape;
-        private String state;
-        private String timeCreated;
-        private List<String> vmClusterIds;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer maxCpuCount;
+        private @Nullable Integer maxDbNodeStorageInGbs;
+        private @Nullable Integer maxMemoryInGbs;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable String shape;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable List<String> vmClusterIds;
         public Builder() {}
         public Builder(GetDbServerResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -332,42 +334,42 @@ public final class GetDbServerResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousVirtualMachineIds(List<String> autonomousVirtualMachineIds) {
-            this.autonomousVirtualMachineIds = Objects.requireNonNull(autonomousVirtualMachineIds);
+        public Builder autonomousVirtualMachineIds(@Nullable List<String> autonomousVirtualMachineIds) {
+            this.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
             return this;
         }
         public Builder autonomousVirtualMachineIds(String... autonomousVirtualMachineIds) {
             return autonomousVirtualMachineIds(List.of(autonomousVirtualMachineIds));
         }
         @CustomType.Setter
-        public Builder autonomousVmClusterIds(List<String> autonomousVmClusterIds) {
-            this.autonomousVmClusterIds = Objects.requireNonNull(autonomousVmClusterIds);
+        public Builder autonomousVmClusterIds(@Nullable List<String> autonomousVmClusterIds) {
+            this.autonomousVmClusterIds = autonomousVmClusterIds;
             return this;
         }
         public Builder autonomousVmClusterIds(String... autonomousVmClusterIds) {
             return autonomousVmClusterIds(List.of(autonomousVmClusterIds));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeIds(List<String> dbNodeIds) {
-            this.dbNodeIds = Objects.requireNonNull(dbNodeIds);
+        public Builder dbNodeIds(@Nullable List<String> dbNodeIds) {
+            this.dbNodeIds = dbNodeIds;
             return this;
         }
         public Builder dbNodeIds(String... dbNodeIds) {
             return dbNodeIds(List.of(dbNodeIds));
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -376,21 +378,21 @@ public final class GetDbServerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbServerPatchingDetails(List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails) {
-            this.dbServerPatchingDetails = Objects.requireNonNull(dbServerPatchingDetails);
+        public Builder dbServerPatchingDetails(@Nullable List<GetDbServerDbServerPatchingDetail> dbServerPatchingDetails) {
+            this.dbServerPatchingDetails = dbServerPatchingDetails;
             return this;
         }
         public Builder dbServerPatchingDetails(GetDbServerDbServerPatchingDetail... dbServerPatchingDetails) {
             return dbServerPatchingDetails(List.of(dbServerPatchingDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -399,58 +401,58 @@ public final class GetDbServerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maxCpuCount(Integer maxCpuCount) {
-            this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
+        public Builder maxCpuCount(@Nullable Integer maxCpuCount) {
+            this.maxCpuCount = maxCpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
-            this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
+        public Builder maxDbNodeStorageInGbs(@Nullable Integer maxDbNodeStorageInGbs) {
+            this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
-            this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
+        public Builder maxMemoryInGbs(@Nullable Integer maxMemoryInGbs) {
+            this.maxMemoryInGbs = maxMemoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterIds(List<String> vmClusterIds) {
-            this.vmClusterIds = Objects.requireNonNull(vmClusterIds);
+        public Builder vmClusterIds(@Nullable List<String> vmClusterIds) {
+            this.vmClusterIds = vmClusterIds;
             return this;
         }
         public Builder vmClusterIds(String... vmClusterIds) {

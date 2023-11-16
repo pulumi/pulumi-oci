@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditEventAnalyticItemDimension {
@@ -14,57 +15,57 @@ public final class GetAuditEventAnalyticItemDimension {
      * @return Time of audit event occurrence in the target database.
      * 
      */
-    private List<String> auditEventTimes;
+    private @Nullable List<String> auditEventTimes;
     /**
      * @return Type of auditing.
      * 
      */
-    private List<String> auditTypes;
+    private @Nullable List<String> auditTypes;
     /**
      * @return Name of the host machine from which the session was spawned.
      * 
      */
-    private List<String> clientHostnames;
+    private @Nullable List<String> clientHostnames;
     /**
      * @return The client identifier in each Oracle session.
      * 
      */
-    private List<String> clientIds;
+    private @Nullable List<String> clientIds;
     /**
      * @return The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
      * 
      */
-    private List<String> clientPrograms;
+    private @Nullable List<String> clientPrograms;
     /**
      * @return Name of the database user whose actions were audited.
      * 
      */
-    private List<String> dbUserNames;
+    private @Nullable List<String> dbUserNames;
     /**
      * @return Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      * 
      */
-    private List<String> eventNames;
+    private @Nullable List<String> eventNames;
     /**
      * @return Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      * 
      */
-    private List<String> objectTypes;
+    private @Nullable List<String> objectTypes;
     /**
      * @return Class of the target that was audited.
      * 
      */
-    private List<String> targetClasses;
+    private @Nullable List<String> targetClasses;
     /**
      * @return The OCID of the target database that was audited.
      * 
      */
-    private List<String> targetIds;
+    private @Nullable List<String> targetIds;
     /**
      * @return The name of the target database that was audited.
      * 
      */
-    private List<String> targetNames;
+    private @Nullable List<String> targetNames;
 
     private GetAuditEventAnalyticItemDimension() {}
     /**
@@ -72,77 +73,77 @@ public final class GetAuditEventAnalyticItemDimension {
      * 
      */
     public List<String> auditEventTimes() {
-        return this.auditEventTimes;
+        return this.auditEventTimes == null ? List.of() : this.auditEventTimes;
     }
     /**
      * @return Type of auditing.
      * 
      */
     public List<String> auditTypes() {
-        return this.auditTypes;
+        return this.auditTypes == null ? List.of() : this.auditTypes;
     }
     /**
      * @return Name of the host machine from which the session was spawned.
      * 
      */
     public List<String> clientHostnames() {
-        return this.clientHostnames;
+        return this.clientHostnames == null ? List.of() : this.clientHostnames;
     }
     /**
      * @return The client identifier in each Oracle session.
      * 
      */
     public List<String> clientIds() {
-        return this.clientIds;
+        return this.clientIds == null ? List.of() : this.clientIds;
     }
     /**
      * @return The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
      * 
      */
     public List<String> clientPrograms() {
-        return this.clientPrograms;
+        return this.clientPrograms == null ? List.of() : this.clientPrograms;
     }
     /**
      * @return Name of the database user whose actions were audited.
      * 
      */
     public List<String> dbUserNames() {
-        return this.dbUserNames;
+        return this.dbUserNames == null ? List.of() : this.dbUserNames;
     }
     /**
      * @return Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
      * 
      */
     public List<String> eventNames() {
-        return this.eventNames;
+        return this.eventNames == null ? List.of() : this.eventNames;
     }
     /**
      * @return Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
      * 
      */
     public List<String> objectTypes() {
-        return this.objectTypes;
+        return this.objectTypes == null ? List.of() : this.objectTypes;
     }
     /**
      * @return Class of the target that was audited.
      * 
      */
     public List<String> targetClasses() {
-        return this.targetClasses;
+        return this.targetClasses == null ? List.of() : this.targetClasses;
     }
     /**
      * @return The OCID of the target database that was audited.
      * 
      */
     public List<String> targetIds() {
-        return this.targetIds;
+        return this.targetIds == null ? List.of() : this.targetIds;
     }
     /**
      * @return The name of the target database that was audited.
      * 
      */
     public List<String> targetNames() {
-        return this.targetNames;
+        return this.targetNames == null ? List.of() : this.targetNames;
     }
 
     public static Builder builder() {
@@ -154,17 +155,17 @@ public final class GetAuditEventAnalyticItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> auditEventTimes;
-        private List<String> auditTypes;
-        private List<String> clientHostnames;
-        private List<String> clientIds;
-        private List<String> clientPrograms;
-        private List<String> dbUserNames;
-        private List<String> eventNames;
-        private List<String> objectTypes;
-        private List<String> targetClasses;
-        private List<String> targetIds;
-        private List<String> targetNames;
+        private @Nullable List<String> auditEventTimes;
+        private @Nullable List<String> auditTypes;
+        private @Nullable List<String> clientHostnames;
+        private @Nullable List<String> clientIds;
+        private @Nullable List<String> clientPrograms;
+        private @Nullable List<String> dbUserNames;
+        private @Nullable List<String> eventNames;
+        private @Nullable List<String> objectTypes;
+        private @Nullable List<String> targetClasses;
+        private @Nullable List<String> targetIds;
+        private @Nullable List<String> targetNames;
         public Builder() {}
         public Builder(GetAuditEventAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -182,88 +183,88 @@ public final class GetAuditEventAnalyticItemDimension {
         }
 
         @CustomType.Setter
-        public Builder auditEventTimes(List<String> auditEventTimes) {
-            this.auditEventTimes = Objects.requireNonNull(auditEventTimes);
+        public Builder auditEventTimes(@Nullable List<String> auditEventTimes) {
+            this.auditEventTimes = auditEventTimes;
             return this;
         }
         public Builder auditEventTimes(String... auditEventTimes) {
             return auditEventTimes(List.of(auditEventTimes));
         }
         @CustomType.Setter
-        public Builder auditTypes(List<String> auditTypes) {
-            this.auditTypes = Objects.requireNonNull(auditTypes);
+        public Builder auditTypes(@Nullable List<String> auditTypes) {
+            this.auditTypes = auditTypes;
             return this;
         }
         public Builder auditTypes(String... auditTypes) {
             return auditTypes(List.of(auditTypes));
         }
         @CustomType.Setter
-        public Builder clientHostnames(List<String> clientHostnames) {
-            this.clientHostnames = Objects.requireNonNull(clientHostnames);
+        public Builder clientHostnames(@Nullable List<String> clientHostnames) {
+            this.clientHostnames = clientHostnames;
             return this;
         }
         public Builder clientHostnames(String... clientHostnames) {
             return clientHostnames(List.of(clientHostnames));
         }
         @CustomType.Setter
-        public Builder clientIds(List<String> clientIds) {
-            this.clientIds = Objects.requireNonNull(clientIds);
+        public Builder clientIds(@Nullable List<String> clientIds) {
+            this.clientIds = clientIds;
             return this;
         }
         public Builder clientIds(String... clientIds) {
             return clientIds(List.of(clientIds));
         }
         @CustomType.Setter
-        public Builder clientPrograms(List<String> clientPrograms) {
-            this.clientPrograms = Objects.requireNonNull(clientPrograms);
+        public Builder clientPrograms(@Nullable List<String> clientPrograms) {
+            this.clientPrograms = clientPrograms;
             return this;
         }
         public Builder clientPrograms(String... clientPrograms) {
             return clientPrograms(List.of(clientPrograms));
         }
         @CustomType.Setter
-        public Builder dbUserNames(List<String> dbUserNames) {
-            this.dbUserNames = Objects.requireNonNull(dbUserNames);
+        public Builder dbUserNames(@Nullable List<String> dbUserNames) {
+            this.dbUserNames = dbUserNames;
             return this;
         }
         public Builder dbUserNames(String... dbUserNames) {
             return dbUserNames(List.of(dbUserNames));
         }
         @CustomType.Setter
-        public Builder eventNames(List<String> eventNames) {
-            this.eventNames = Objects.requireNonNull(eventNames);
+        public Builder eventNames(@Nullable List<String> eventNames) {
+            this.eventNames = eventNames;
             return this;
         }
         public Builder eventNames(String... eventNames) {
             return eventNames(List.of(eventNames));
         }
         @CustomType.Setter
-        public Builder objectTypes(List<String> objectTypes) {
-            this.objectTypes = Objects.requireNonNull(objectTypes);
+        public Builder objectTypes(@Nullable List<String> objectTypes) {
+            this.objectTypes = objectTypes;
             return this;
         }
         public Builder objectTypes(String... objectTypes) {
             return objectTypes(List.of(objectTypes));
         }
         @CustomType.Setter
-        public Builder targetClasses(List<String> targetClasses) {
-            this.targetClasses = Objects.requireNonNull(targetClasses);
+        public Builder targetClasses(@Nullable List<String> targetClasses) {
+            this.targetClasses = targetClasses;
             return this;
         }
         public Builder targetClasses(String... targetClasses) {
             return targetClasses(List.of(targetClasses));
         }
         @CustomType.Setter
-        public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+        public Builder targetIds(@Nullable List<String> targetIds) {
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
         }
         @CustomType.Setter
-        public Builder targetNames(List<String> targetNames) {
-            this.targetNames = Objects.requireNonNull(targetNames);
+        public Builder targetNames(@Nullable List<String> targetNames) {
+            this.targetNames = targetNames;
             return this;
         }
         public Builder targetNames(String... targetNames) {

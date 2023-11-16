@@ -50,12 +50,12 @@ export interface GetExternalAsmUsersResult {
     /**
      * The list of external_asm_user_collection.
      */
-    readonly externalAsmUserCollections: outputs.DatabaseManagement.GetExternalAsmUsersExternalAsmUserCollection[];
+    readonly externalAsmUserCollections?: outputs.DatabaseManagement.GetExternalAsmUsersExternalAsmUserCollection[];
     readonly filters?: outputs.DatabaseManagement.GetExternalAsmUsersFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Asm Users in Oracle Cloud Infrastructure Database Management service.

@@ -9,6 +9,8 @@ import com.pulumi.oci.OsubSubscription.outputs.GetSubscriptionsSubscriptionSubsc
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscription {
@@ -16,32 +18,32 @@ public final class GetSubscriptionsSubscription {
      * @return Currency details
      * 
      */
-    private List<GetSubscriptionsSubscriptionCurrency> currencies;
+    private @Nullable List<GetSubscriptionsSubscriptionCurrency> currencies;
     /**
      * @return Customer friendly service name provided by PRG
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return Subscribed service status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return List of Subscribed Services of the plan
      * 
      */
-    private List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices;
+    private @Nullable List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices;
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetSubscriptionsSubscription() {}
     /**
@@ -49,42 +51,42 @@ public final class GetSubscriptionsSubscription {
      * 
      */
     public List<GetSubscriptionsSubscriptionCurrency> currencies() {
-        return this.currencies;
+        return this.currencies == null ? List.of() : this.currencies;
     }
     /**
      * @return Customer friendly service name provided by PRG
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return Subscribed service status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return List of Subscribed Services of the plan
      * 
      */
     public List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices() {
-        return this.subscribedServices;
+        return this.subscribedServices == null ? List.of() : this.subscribedServices;
     }
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetSubscriptionsSubscription {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionsSubscriptionCurrency> currencies;
-        private String serviceName;
-        private String status;
-        private List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices;
-        private String timeEnd;
-        private String timeStart;
+        private @Nullable List<GetSubscriptionsSubscriptionCurrency> currencies;
+        private @Nullable String serviceName;
+        private @Nullable String status;
+        private @Nullable List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetSubscriptionsSubscription defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,39 +116,39 @@ public final class GetSubscriptionsSubscription {
         }
 
         @CustomType.Setter
-        public Builder currencies(List<GetSubscriptionsSubscriptionCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+        public Builder currencies(@Nullable List<GetSubscriptionsSubscriptionCurrency> currencies) {
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetSubscriptionsSubscriptionCurrency... currencies) {
             return currencies(List.of(currencies));
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder subscribedServices(List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices) {
-            this.subscribedServices = Objects.requireNonNull(subscribedServices);
+        public Builder subscribedServices(@Nullable List<GetSubscriptionsSubscriptionSubscribedService> subscribedServices) {
+            this.subscribedServices = subscribedServices;
             return this;
         }
         public Builder subscribedServices(GetSubscriptionsSubscriptionSubscribedService... subscribedServices) {
             return subscribedServices(List.of(subscribedServices));
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetSubscriptionsSubscription build() {

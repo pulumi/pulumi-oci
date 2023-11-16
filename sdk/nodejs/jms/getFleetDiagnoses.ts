@@ -50,12 +50,12 @@ export interface GetFleetDiagnosesResult {
     /**
      * The list of fleet_diagnosis_collection.
      */
-    readonly fleetDiagnosisCollections: outputs.Jms.GetFleetDiagnosesFleetDiagnosisCollection[];
+    readonly fleetDiagnosisCollections?: outputs.Jms.GetFleetDiagnosesFleetDiagnosisCollection[];
     readonly fleetId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.

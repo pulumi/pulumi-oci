@@ -38,13 +38,13 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The description of CreateSQLEndpointDetails.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// The SQL Endpoint name, which can be changed.
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataFlow
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
         [Output("driverShapeConfig")]
-        public Output<Outputs.SqlEndpointDriverShapeConfig> DriverShapeConfig { get; private set; } = null!;
+        public Output<Outputs.SqlEndpointDriverShapeConfig?> DriverShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the SQL Endpoint worker instance.
@@ -74,31 +74,31 @@ namespace Pulumi.Oci.DataFlow
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
         [Output("executorShapeConfig")]
-        public Output<Outputs.SqlEndpointExecutorShapeConfig> ExecutorShapeConfig { get; private set; } = null!;
+        public Output<Outputs.SqlEndpointExecutorShapeConfig?> ExecutorShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
         /// </summary>
         [Output("jdbcEndpointUrl")]
-        public Output<string> JdbcEndpointUrl { get; private set; } = null!;
+        public Output<string?> JdbcEndpointUrl { get; private set; } = null!;
 
         /// <summary>
         /// Oracle Cloud Infrastructure lake OCID
         /// </summary>
         [Output("lakeId")]
-        public Output<string> LakeId { get; private set; } = null!;
+        public Output<string?> LakeId { get; private set; } = null!;
 
         /// <summary>
         /// This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
         /// </summary>
         [Output("lastAcceptedRequestToken")]
-        public Output<string> LastAcceptedRequestToken { get; private set; } = null!;
+        public Output<string?> LastAcceptedRequestToken { get; private set; } = null!;
 
         /// <summary>
         /// The maximum number of executors.
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.DataFlow
         /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         [Output("sparkAdvancedConfigurations")]
-        public Output<ImmutableDictionary<string, object>> SparkAdvancedConfigurations { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SparkAdvancedConfigurations { get; private set; } = null!;
 
         /// <summary>
         /// The version of the SQL Endpoint.
@@ -140,31 +140,31 @@ namespace Pulumi.Oci.DataFlow
         /// The current state of the Sql Endpoint.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Output("stateMessage")]
-        public Output<string> StateMessage { get; private set; } = null!;
+        public Output<string?> StateMessage { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.DataFlow
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("warehouseBucketUri")]
-        public Output<string> WarehouseBucketUri { get; private set; } = null!;
+        public Output<string?> WarehouseBucketUri { get; private set; } = null!;
 
 
         /// <summary>

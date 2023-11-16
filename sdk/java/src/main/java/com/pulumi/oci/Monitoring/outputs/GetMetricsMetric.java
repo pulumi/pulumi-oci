@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricsMetric {
@@ -22,39 +24,39 @@ public final class GetMetricsMetric {
      * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      * 
      */
-    private Boolean compartmentIdInSubtree;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
-    private Map<String,Object> dimensionFilters;
+    private @Nullable Map<String,Object> dimensionFilters;
     /**
      * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
-    private Map<String,Object> dimensions;
+    private @Nullable Map<String,Object> dimensions;
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
      * 
      * Example - group by namespace: `[ &#34;namespace&#34; ]`
      * 
      */
-    private List<String> groupBies;
+    private @Nullable List<String> groupBies;
     /**
      * @return The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
 
     private GetMetricsMetric() {}
     /**
@@ -68,22 +70,22 @@ public final class GetMetricsMetric {
      * @return When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      * 
      */
-    public Boolean compartmentIdInSubtree() {
-        return this.compartmentIdInSubtree;
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
     public Map<String,Object> dimensionFilters() {
-        return this.dimensionFilters;
+        return this.dimensionFilters == null ? Map.of() : this.dimensionFilters;
     }
     /**
      * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `&#34;resourceId&#34;: &#34;ocid1.instance.region1.phx.exampleuniqueID&#34;`
      * 
      */
     public Map<String,Object> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? Map.of() : this.dimensions;
     }
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
@@ -92,28 +94,28 @@ public final class GetMetricsMetric {
      * 
      */
     public List<String> groupBies() {
-        return this.groupBies;
+        return this.groupBies == null ? List.of() : this.groupBies;
     }
     /**
      * @return The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
 
     public static Builder builder() {
@@ -126,13 +128,13 @@ public final class GetMetricsMetric {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Boolean compartmentIdInSubtree;
-        private Map<String,Object> dimensionFilters;
-        private Map<String,Object> dimensions;
-        private List<String> groupBies;
-        private String name;
-        private String namespace;
-        private String resourceGroup;
+        private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable Map<String,Object> dimensionFilters;
+        private @Nullable Map<String,Object> dimensions;
+        private @Nullable List<String> groupBies;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable String resourceGroup;
         public Builder() {}
         public Builder(GetMetricsMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -152,41 +154,41 @@ public final class GetMetricsMetric {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensionFilters(Map<String,Object> dimensionFilters) {
-            this.dimensionFilters = Objects.requireNonNull(dimensionFilters);
+        public Builder dimensionFilters(@Nullable Map<String,Object> dimensionFilters) {
+            this.dimensionFilters = dimensionFilters;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable Map<String,Object> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         @CustomType.Setter
-        public Builder groupBies(List<String> groupBies) {
-            this.groupBies = Objects.requireNonNull(groupBies);
+        public Builder groupBies(@Nullable List<String> groupBies) {
+            this.groupBies = groupBies;
             return this;
         }
         public Builder groupBies(String... groupBies) {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         public GetMetricsMetric build() {

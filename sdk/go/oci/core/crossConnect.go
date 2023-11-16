@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cross Connect resource in Oracle Cloud Infrastructure Core service.
@@ -98,15 +97,15 @@ type CrossConnect struct {
 	// (Updatable) The OCID of the compartment to contain the cross-connect.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The OCID of the cross-connect group to put this cross-connect in.
-	CrossConnectGroupId pulumi.StringOutput `pulumi:"crossConnectGroupId"`
+	CrossConnectGroupId pulumi.StringPtrOutput `pulumi:"crossConnectGroupId"`
 	// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
-	CustomerReferenceName pulumi.StringOutput `pulumi:"customerReferenceName"`
+	CustomerReferenceName pulumi.StringPtrOutput `pulumi:"customerReferenceName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
-	FarCrossConnectOrCrossConnectGroupId pulumi.StringOutput `pulumi:"farCrossConnectOrCrossConnectGroupId"`
+	FarCrossConnectOrCrossConnectGroupId pulumi.StringPtrOutput `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
@@ -114,24 +113,24 @@ type CrossConnect struct {
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
 	LocationName pulumi.StringOutput `pulumi:"locationName"`
 	// (Updatable) Properties used to configure MACsec (if capable).
-	MacsecProperties CrossConnectMacsecPropertiesOutput `pulumi:"macsecProperties"`
+	MacsecProperties CrossConnectMacsecPropertiesPtrOutput `pulumi:"macsecProperties"`
 	// If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
-	NearCrossConnectOrCrossConnectGroupId pulumi.StringOutput `pulumi:"nearCrossConnectOrCrossConnectGroupId"`
+	NearCrossConnectOrCrossConnectGroupId pulumi.StringPtrOutput `pulumi:"nearCrossConnectOrCrossConnectGroupId"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-	OciLogicalDeviceName pulumi.StringOutput `pulumi:"ociLogicalDeviceName"`
+	OciLogicalDeviceName pulumi.StringPtrOutput `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
-	OciPhysicalDeviceName pulumi.StringOutput `pulumi:"ociPhysicalDeviceName"`
+	OciPhysicalDeviceName pulumi.StringPtrOutput `pulumi:"ociPhysicalDeviceName"`
 	// A string identifying the meet-me room port for this cross-connect.
-	PortName pulumi.StringOutput `pulumi:"portName"`
+	PortName pulumi.StringPtrOutput `pulumi:"portName"`
 	// The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName pulumi.StringOutput `pulumi:"portSpeedShapeName"`
 	// (Updatable) Indicates whether or not MACsec is enabled.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewCrossConnect registers a new resource with the given unique name, arguments, and options.
@@ -340,12 +339,6 @@ func (i *CrossConnect) ToCrossConnectOutputWithContext(ctx context.Context) Cros
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectOutput)
 }
 
-func (i *CrossConnect) ToOutput(ctx context.Context) pulumix.Output[*CrossConnect] {
-	return pulumix.Output[*CrossConnect]{
-		OutputState: i.ToCrossConnectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CrossConnectArrayInput is an input type that accepts CrossConnectArray and CrossConnectArrayOutput values.
 // You can construct a concrete instance of `CrossConnectArrayInput` via:
 //
@@ -369,12 +362,6 @@ func (i CrossConnectArray) ToCrossConnectArrayOutput() CrossConnectArrayOutput {
 
 func (i CrossConnectArray) ToCrossConnectArrayOutputWithContext(ctx context.Context) CrossConnectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectArrayOutput)
-}
-
-func (i CrossConnectArray) ToOutput(ctx context.Context) pulumix.Output[[]*CrossConnect] {
-	return pulumix.Output[[]*CrossConnect]{
-		OutputState: i.ToCrossConnectArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CrossConnectMapInput is an input type that accepts CrossConnectMap and CrossConnectMapOutput values.
@@ -402,12 +389,6 @@ func (i CrossConnectMap) ToCrossConnectMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectMapOutput)
 }
 
-func (i CrossConnectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CrossConnect] {
-	return pulumix.Output[map[string]*CrossConnect]{
-		OutputState: i.ToCrossConnectMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CrossConnectOutput struct{ *pulumi.OutputState }
 
 func (CrossConnectOutput) ElementType() reflect.Type {
@@ -422,25 +403,19 @@ func (o CrossConnectOutput) ToCrossConnectOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o CrossConnectOutput) ToOutput(ctx context.Context) pulumix.Output[*CrossConnect] {
-	return pulumix.Output[*CrossConnect]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment to contain the cross-connect.
 func (o CrossConnectOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The OCID of the cross-connect group to put this cross-connect in.
-func (o CrossConnectOutput) CrossConnectGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.CrossConnectGroupId }).(pulumi.StringOutput)
+func (o CrossConnectOutput) CrossConnectGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.CrossConnectGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
-func (o CrossConnectOutput) CustomerReferenceName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.CustomerReferenceName }).(pulumi.StringOutput)
+func (o CrossConnectOutput) CustomerReferenceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.CustomerReferenceName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -449,13 +424,13 @@ func (o CrossConnectOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o CrossConnectOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CrossConnectOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
-func (o CrossConnectOutput) FarCrossConnectOrCrossConnectGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.FarCrossConnectOrCrossConnectGroupId }).(pulumi.StringOutput)
+func (o CrossConnectOutput) FarCrossConnectOrCrossConnectGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.FarCrossConnectOrCrossConnectGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -474,28 +449,28 @@ func (o CrossConnectOutput) LocationName() pulumi.StringOutput {
 }
 
 // (Updatable) Properties used to configure MACsec (if capable).
-func (o CrossConnectOutput) MacsecProperties() CrossConnectMacsecPropertiesOutput {
-	return o.ApplyT(func(v *CrossConnect) CrossConnectMacsecPropertiesOutput { return v.MacsecProperties }).(CrossConnectMacsecPropertiesOutput)
+func (o CrossConnectOutput) MacsecProperties() CrossConnectMacsecPropertiesPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) CrossConnectMacsecPropertiesPtrOutput { return v.MacsecProperties }).(CrossConnectMacsecPropertiesPtrOutput)
 }
 
 // If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
-func (o CrossConnectOutput) NearCrossConnectOrCrossConnectGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.NearCrossConnectOrCrossConnectGroupId }).(pulumi.StringOutput)
+func (o CrossConnectOutput) NearCrossConnectOrCrossConnectGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.NearCrossConnectOrCrossConnectGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
-func (o CrossConnectOutput) OciLogicalDeviceName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.OciLogicalDeviceName }).(pulumi.StringOutput)
+func (o CrossConnectOutput) OciLogicalDeviceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.OciLogicalDeviceName }).(pulumi.StringPtrOutput)
 }
 
 // The FastConnect device that terminates the physical connection.
-func (o CrossConnectOutput) OciPhysicalDeviceName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.OciPhysicalDeviceName }).(pulumi.StringOutput)
+func (o CrossConnectOutput) OciPhysicalDeviceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.OciPhysicalDeviceName }).(pulumi.StringPtrOutput)
 }
 
 // A string identifying the meet-me room port for this cross-connect.
-func (o CrossConnectOutput) PortName() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.PortName }).(pulumi.StringOutput)
+func (o CrossConnectOutput) PortName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.PortName }).(pulumi.StringPtrOutput)
 }
 
 // The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`
@@ -507,13 +482,13 @@ func (o CrossConnectOutput) PortSpeedShapeName() pulumi.StringOutput {
 }
 
 // (Updatable) Indicates whether or not MACsec is enabled.
-func (o CrossConnectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CrossConnectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o CrossConnectOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CrossConnectOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type CrossConnectArrayOutput struct{ *pulumi.OutputState }
@@ -528,12 +503,6 @@ func (o CrossConnectArrayOutput) ToCrossConnectArrayOutput() CrossConnectArrayOu
 
 func (o CrossConnectArrayOutput) ToCrossConnectArrayOutputWithContext(ctx context.Context) CrossConnectArrayOutput {
 	return o
-}
-
-func (o CrossConnectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CrossConnect] {
-	return pulumix.Output[[]*CrossConnect]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CrossConnectArrayOutput) Index(i pulumi.IntInput) CrossConnectOutput {
@@ -554,12 +523,6 @@ func (o CrossConnectMapOutput) ToCrossConnectMapOutput() CrossConnectMapOutput {
 
 func (o CrossConnectMapOutput) ToCrossConnectMapOutputWithContext(ctx context.Context) CrossConnectMapOutput {
 	return o
-}
-
-func (o CrossConnectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CrossConnect] {
-	return pulumix.Output[map[string]*CrossConnect]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CrossConnectMapOutput) MapIndex(k pulumi.StringInput) CrossConnectOutput {

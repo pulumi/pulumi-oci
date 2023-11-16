@@ -115,11 +115,11 @@ export interface GetSecurityPolicyDeploymentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of security_policy_deployment_collection.
      */
-    readonly securityPolicyDeploymentCollections: outputs.DataSafe.GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection[];
+    readonly securityPolicyDeploymentCollections?: outputs.DataSafe.GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollection[];
     readonly securityPolicyDeploymentId?: string;
     /**
      * The OCID of the security policy corresponding to the security policy deployment.

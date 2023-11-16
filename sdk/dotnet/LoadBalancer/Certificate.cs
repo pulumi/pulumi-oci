@@ -58,7 +58,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// -----END CERTIFICATE-----
         /// </summary>
         [Output("caCertificate")]
-        public Output<string> CaCertificate { get; private set; } = null!;
+        public Output<string?> CaCertificate { get; private set; } = null!;
 
         /// <summary>
         /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
@@ -92,7 +92,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// -----END RSA PRIVATE KEY-----
         /// </summary>
         [Output("privateKey")]
-        public Output<string> PrivateKey { get; private set; } = null!;
+        public Output<string?> PrivateKey { get; private set; } = null!;
 
         /// <summary>
         /// The public certificate, in PEM format, that you received from your SSL certificate provider.
@@ -113,10 +113,10 @@ namespace Pulumi.Oci.LoadBalancer
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("publicCertificate")]
-        public Output<string> PublicCertificate { get; private set; } = null!;
+        public Output<string?> PublicCertificate { get; private set; } = null!;
 
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

@@ -84,7 +84,7 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * The name of the availability domain that the VM cluster is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -93,31 +93,31 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * The number of enabled CPU cores.
      */
-    public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
+    public /*out*/ readonly cpusEnabled!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterDataCollectionOptions>;
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.VmClusterDataCollectionOptions | undefined>;
     /**
      * (Updatable) The data disk group size to be allocated in GBs.
      */
-    public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    public readonly dataStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
      */
-    public readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    public readonly dataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The local node storage to be allocated in GBs.
      */
-    public readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    public readonly dbNodeStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The list of Db server.
      */
-    public readonly dbServers!: pulumi.Output<string[]>;
+    public readonly dbServers!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-friendly name for the VM cluster. The name does not need to be unique.
      */
@@ -129,7 +129,7 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The Oracle Grid Infrastructure software version for the VM cluster.
      */
@@ -137,33 +137,33 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      */
-    public readonly isLocalBackupEnabled!: pulumi.Output<boolean>;
+    public readonly isLocalBackupEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
      */
-    public readonly isSparseDiskgroupEnabled!: pulumi.Output<boolean>;
+    public readonly isSparseDiskgroupEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string>;
+    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The memory to be allocated in GBs.
      */
-    public readonly memorySizeInGbs!: pulumi.Output<number>;
-    public readonly ocpuCount!: pulumi.Output<number>;
-    public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
+    public readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
+    public readonly ocpuCount!: pulumi.Output<number | undefined>;
+    public /*out*/ readonly ocpusEnabled!: pulumi.Output<number | undefined>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */
@@ -171,19 +171,19 @@ export class VmCluster extends pulumi.CustomResource {
     /**
      * The current state of the VM cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Operating system version of the image.
      */
-    public /*out*/ readonly systemVersion!: pulumi.Output<string>;
+    public /*out*/ readonly systemVersion!: pulumi.Output<string | undefined>;
     /**
      * The date and time that the VM cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    public readonly timeZone!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      *

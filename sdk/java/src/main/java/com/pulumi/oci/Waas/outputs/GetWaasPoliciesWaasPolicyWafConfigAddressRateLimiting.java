@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
@@ -14,51 +16,51 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
      * @return The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
      * 
      */
-    private Integer allowedRatePerAddress;
+    private @Nullable Integer allowedRatePerAddress;
     /**
      * @return The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    private Integer blockResponseCode;
+    private @Nullable Integer blockResponseCode;
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
      * 
      */
-    private Integer maxDelayedCountPerAddress;
+    private @Nullable Integer maxDelayedCountPerAddress;
 
     private GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting() {}
     /**
      * @return The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
      * 
      */
-    public Integer allowedRatePerAddress() {
-        return this.allowedRatePerAddress;
+    public Optional<Integer> allowedRatePerAddress() {
+        return Optional.ofNullable(this.allowedRatePerAddress);
     }
     /**
      * @return The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
-    public Integer blockResponseCode() {
-        return this.blockResponseCode;
+    public Optional<Integer> blockResponseCode() {
+        return Optional.ofNullable(this.blockResponseCode);
     }
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
      * 
      */
-    public Integer maxDelayedCountPerAddress() {
-        return this.maxDelayedCountPerAddress;
+    public Optional<Integer> maxDelayedCountPerAddress() {
+        return Optional.ofNullable(this.maxDelayedCountPerAddress);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer allowedRatePerAddress;
-        private Integer blockResponseCode;
-        private Boolean isEnabled;
-        private Integer maxDelayedCountPerAddress;
+        private @Nullable Integer allowedRatePerAddress;
+        private @Nullable Integer blockResponseCode;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Integer maxDelayedCountPerAddress;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
         }
 
         @CustomType.Setter
-        public Builder allowedRatePerAddress(Integer allowedRatePerAddress) {
-            this.allowedRatePerAddress = Objects.requireNonNull(allowedRatePerAddress);
+        public Builder allowedRatePerAddress(@Nullable Integer allowedRatePerAddress) {
+            this.allowedRatePerAddress = allowedRatePerAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder blockResponseCode(Integer blockResponseCode) {
-            this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
+        public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
+            this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder maxDelayedCountPerAddress(Integer maxDelayedCountPerAddress) {
-            this.maxDelayedCountPerAddress = Objects.requireNonNull(maxDelayedCountPerAddress);
+        public Builder maxDelayedCountPerAddress(@Nullable Integer maxDelayedCountPerAddress) {
+            this.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting build() {

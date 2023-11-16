@@ -25,7 +25,7 @@ public final class GetDeploymentsResult {
      * @return The list of deployment_collection.
      * 
      */
-    private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+    private @Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections;
     /**
      * @return An object&#39;s Display Name.
      * 
@@ -41,7 +41,7 @@ public final class GetDeploymentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
@@ -73,7 +73,7 @@ public final class GetDeploymentsResult {
      * 
      */
     public List<GetDeploymentsDeploymentCollection> deploymentCollections() {
-        return this.deploymentCollections;
+        return this.deploymentCollections == null ? List.of() : this.deploymentCollections;
     }
     /**
      * @return An object&#39;s Display Name.
@@ -96,8 +96,8 @@ public final class GetDeploymentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Possible GGS lifecycle sub-states.
@@ -129,11 +129,11 @@ public final class GetDeploymentsResult {
         private @Nullable String assignableConnectionId;
         private @Nullable String assignedConnectionId;
         private String compartmentId;
-        private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+        private @Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentsFilter> filters;
         private @Nullable String fqdn;
-        private String id;
+        private @Nullable String id;
         private @Nullable String lifecycleSubState;
         private @Nullable String state;
         private @Nullable String supportedConnectionType;
@@ -169,8 +169,8 @@ public final class GetDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentCollections(List<GetDeploymentsDeploymentCollection> deploymentCollections) {
-            this.deploymentCollections = Objects.requireNonNull(deploymentCollections);
+        public Builder deploymentCollections(@Nullable List<GetDeploymentsDeploymentCollection> deploymentCollections) {
+            this.deploymentCollections = deploymentCollections;
             return this;
         }
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {
@@ -195,8 +195,8 @@ public final class GetDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

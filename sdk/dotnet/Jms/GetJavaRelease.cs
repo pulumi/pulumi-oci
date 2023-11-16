@@ -120,11 +120,11 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// Java release family identifier.
         /// </summary>
-        public readonly string FamilyVersion;
+        public readonly string? FamilyVersion;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Information about a license type for Java.
         /// </summary>
@@ -132,23 +132,23 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// License type for the Java version.
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
         /// <summary>
         /// Parent Java release version identifier. This is applicable for BPR releases.
         /// </summary>
-        public readonly string ParentReleaseVersion;
+        public readonly string? ParentReleaseVersion;
         /// <summary>
         /// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string ReleaseDate;
+        public readonly string? ReleaseDate;
         /// <summary>
         /// Release notes associated with the Java version.
         /// </summary>
-        public readonly string ReleaseNotesUrl;
+        public readonly string? ReleaseNotesUrl;
         /// <summary>
         /// Release category of the Java version.
         /// </summary>
-        public readonly string ReleaseType;
+        public readonly string? ReleaseType;
         /// <summary>
         /// Java release version identifier.
         /// </summary>
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The security status of the Java version.
         /// </summary>
-        public readonly string SecurityStatus;
+        public readonly string? SecurityStatus;
 
         [OutputConstructor]
         private GetJavaReleaseResult(
@@ -166,25 +166,25 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetJavaReleaseFamilyDetailResult> familyDetails,
 
-            string familyVersion,
+            string? familyVersion,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetJavaReleaseLicenseDetailResult> licenseDetails,
 
-            string licenseType,
+            string? licenseType,
 
-            string parentReleaseVersion,
+            string? parentReleaseVersion,
 
-            string releaseDate,
+            string? releaseDate,
 
-            string releaseNotesUrl,
+            string? releaseNotesUrl,
 
-            string releaseType,
+            string? releaseType,
 
             string releaseVersion,
 
-            string securityStatus)
+            string? securityStatus)
         {
             ArtifactContentTypes = artifactContentTypes;
             Artifacts = artifacts;

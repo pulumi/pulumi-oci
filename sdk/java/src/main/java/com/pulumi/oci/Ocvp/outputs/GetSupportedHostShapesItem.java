@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedHostShapesItem {
@@ -16,42 +18,42 @@ public final class GetSupportedHostShapesItem {
      * @return The default OCPU count of the shape.
      * 
      */
-    private Double defaultOcpuCount;
+    private @Nullable Double defaultOcpuCount;
     /**
      * @return Description of the shape.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Whether the shape supports &#34;MONTH&#34; SKU.
      * 
      */
-    private Boolean isSupportMonthlySku;
+    private @Nullable Boolean isSupportMonthlySku;
     /**
      * @return Indicates whether the shape supports shielded instances.
      * 
      */
-    private Boolean isSupportShieldedInstances;
+    private @Nullable Boolean isSupportShieldedInstances;
     /**
      * @return A filter to return only resources that match the given name exactly.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The family of the shape. ESXi hosts of one SDDC must have the same shape family.
      * 
      */
-    private String shapeFamily;
+    private @Nullable String shapeFamily;
     /**
      * @return Support OCPU count of the shape.
      * 
      */
-    private List<Double> supportedOcpuCounts;
+    private @Nullable List<Double> supportedOcpuCounts;
     /**
      * @return The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
      * 
      */
-    private List<String> supportedOperations;
+    private @Nullable List<String> supportedOperations;
     /**
      * @return The supported SDDC types for the shape.
      * 
@@ -60,69 +62,69 @@ public final class GetSupportedHostShapesItem {
      * 
      */
     @Deprecated /* The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
-    private List<String> supportedSddcTypes;
+    private @Nullable List<String> supportedSddcTypes;
     /**
      * @return The VMware software versions supported by the shape.
      * 
      */
-    private List<String> supportedVmwareSoftwareVersions;
+    private @Nullable List<String> supportedVmwareSoftwareVersions;
 
     private GetSupportedHostShapesItem() {}
     /**
      * @return The default OCPU count of the shape.
      * 
      */
-    public Double defaultOcpuCount() {
-        return this.defaultOcpuCount;
+    public Optional<Double> defaultOcpuCount() {
+        return Optional.ofNullable(this.defaultOcpuCount);
     }
     /**
      * @return Description of the shape.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Whether the shape supports &#34;MONTH&#34; SKU.
      * 
      */
-    public Boolean isSupportMonthlySku() {
-        return this.isSupportMonthlySku;
+    public Optional<Boolean> isSupportMonthlySku() {
+        return Optional.ofNullable(this.isSupportMonthlySku);
     }
     /**
      * @return Indicates whether the shape supports shielded instances.
      * 
      */
-    public Boolean isSupportShieldedInstances() {
-        return this.isSupportShieldedInstances;
+    public Optional<Boolean> isSupportShieldedInstances() {
+        return Optional.ofNullable(this.isSupportShieldedInstances);
     }
     /**
      * @return A filter to return only resources that match the given name exactly.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The family of the shape. ESXi hosts of one SDDC must have the same shape family.
      * 
      */
-    public String shapeFamily() {
-        return this.shapeFamily;
+    public Optional<String> shapeFamily() {
+        return Optional.ofNullable(this.shapeFamily);
     }
     /**
      * @return Support OCPU count of the shape.
      * 
      */
     public List<Double> supportedOcpuCounts() {
-        return this.supportedOcpuCounts;
+        return this.supportedOcpuCounts == null ? List.of() : this.supportedOcpuCounts;
     }
     /**
      * @return The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
      * 
      */
     public List<String> supportedOperations() {
-        return this.supportedOperations;
+        return this.supportedOperations == null ? List.of() : this.supportedOperations;
     }
     /**
      * @return The supported SDDC types for the shape.
@@ -133,14 +135,14 @@ public final class GetSupportedHostShapesItem {
      */
     @Deprecated /* The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
     public List<String> supportedSddcTypes() {
-        return this.supportedSddcTypes;
+        return this.supportedSddcTypes == null ? List.of() : this.supportedSddcTypes;
     }
     /**
      * @return The VMware software versions supported by the shape.
      * 
      */
     public List<String> supportedVmwareSoftwareVersions() {
-        return this.supportedVmwareSoftwareVersions;
+        return this.supportedVmwareSoftwareVersions == null ? List.of() : this.supportedVmwareSoftwareVersions;
     }
 
     public static Builder builder() {
@@ -152,16 +154,16 @@ public final class GetSupportedHostShapesItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double defaultOcpuCount;
-        private String description;
-        private Boolean isSupportMonthlySku;
-        private Boolean isSupportShieldedInstances;
-        private String name;
-        private String shapeFamily;
-        private List<Double> supportedOcpuCounts;
-        private List<String> supportedOperations;
-        private List<String> supportedSddcTypes;
-        private List<String> supportedVmwareSoftwareVersions;
+        private @Nullable Double defaultOcpuCount;
+        private @Nullable String description;
+        private @Nullable Boolean isSupportMonthlySku;
+        private @Nullable Boolean isSupportShieldedInstances;
+        private @Nullable String name;
+        private @Nullable String shapeFamily;
+        private @Nullable List<Double> supportedOcpuCounts;
+        private @Nullable List<String> supportedOperations;
+        private @Nullable List<String> supportedSddcTypes;
+        private @Nullable List<String> supportedVmwareSoftwareVersions;
         public Builder() {}
         public Builder(GetSupportedHostShapesItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -178,62 +180,62 @@ public final class GetSupportedHostShapesItem {
         }
 
         @CustomType.Setter
-        public Builder defaultOcpuCount(Double defaultOcpuCount) {
-            this.defaultOcpuCount = Objects.requireNonNull(defaultOcpuCount);
+        public Builder defaultOcpuCount(@Nullable Double defaultOcpuCount) {
+            this.defaultOcpuCount = defaultOcpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isSupportMonthlySku(Boolean isSupportMonthlySku) {
-            this.isSupportMonthlySku = Objects.requireNonNull(isSupportMonthlySku);
+        public Builder isSupportMonthlySku(@Nullable Boolean isSupportMonthlySku) {
+            this.isSupportMonthlySku = isSupportMonthlySku;
             return this;
         }
         @CustomType.Setter
-        public Builder isSupportShieldedInstances(Boolean isSupportShieldedInstances) {
-            this.isSupportShieldedInstances = Objects.requireNonNull(isSupportShieldedInstances);
+        public Builder isSupportShieldedInstances(@Nullable Boolean isSupportShieldedInstances) {
+            this.isSupportShieldedInstances = isSupportShieldedInstances;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeFamily(String shapeFamily) {
-            this.shapeFamily = Objects.requireNonNull(shapeFamily);
+        public Builder shapeFamily(@Nullable String shapeFamily) {
+            this.shapeFamily = shapeFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedOcpuCounts(List<Double> supportedOcpuCounts) {
-            this.supportedOcpuCounts = Objects.requireNonNull(supportedOcpuCounts);
+        public Builder supportedOcpuCounts(@Nullable List<Double> supportedOcpuCounts) {
+            this.supportedOcpuCounts = supportedOcpuCounts;
             return this;
         }
         public Builder supportedOcpuCounts(Double... supportedOcpuCounts) {
             return supportedOcpuCounts(List.of(supportedOcpuCounts));
         }
         @CustomType.Setter
-        public Builder supportedOperations(List<String> supportedOperations) {
-            this.supportedOperations = Objects.requireNonNull(supportedOperations);
+        public Builder supportedOperations(@Nullable List<String> supportedOperations) {
+            this.supportedOperations = supportedOperations;
             return this;
         }
         public Builder supportedOperations(String... supportedOperations) {
             return supportedOperations(List.of(supportedOperations));
         }
         @CustomType.Setter
-        public Builder supportedSddcTypes(List<String> supportedSddcTypes) {
-            this.supportedSddcTypes = Objects.requireNonNull(supportedSddcTypes);
+        public Builder supportedSddcTypes(@Nullable List<String> supportedSddcTypes) {
+            this.supportedSddcTypes = supportedSddcTypes;
             return this;
         }
         public Builder supportedSddcTypes(String... supportedSddcTypes) {
             return supportedSddcTypes(List.of(supportedSddcTypes));
         }
         @CustomType.Setter
-        public Builder supportedVmwareSoftwareVersions(List<String> supportedVmwareSoftwareVersions) {
-            this.supportedVmwareSoftwareVersions = Objects.requireNonNull(supportedVmwareSoftwareVersions);
+        public Builder supportedVmwareSoftwareVersions(@Nullable List<String> supportedVmwareSoftwareVersions) {
+            this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
             return this;
         }
         public Builder supportedVmwareSoftwareVersions(String... supportedVmwareSoftwareVersions) {

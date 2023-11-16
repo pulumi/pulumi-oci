@@ -47,92 +47,92 @@ export interface GetExternalExadataStorageServerResult {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The connector of the Exadata storage server.
      */
-    readonly connectors: outputs.DatabaseManagement.GetExternalExadataStorageServerConnector[];
+    readonly connectors?: outputs.DatabaseManagement.GetExternalExadataStorageServerConnector[];
     /**
      * The CPU count of the Exadata storage server.
      */
-    readonly cpuCount: number;
+    readonly cpuCount?: number;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    readonly exadataInfrastructureId: string;
+    readonly exadataInfrastructureId?: string;
     readonly externalExadataStorageServerId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The internal ID of the Exadata resource.
      */
-    readonly internalId: string;
+    readonly internalId?: string;
     /**
      * The IP address of the Exadata storage server.
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The make model of the Exadata storage server.
      */
-    readonly makeModel: string;
+    readonly makeModel?: string;
     /**
      * The maximum flash disk IO operations per second of the Exadata storage server.
      */
-    readonly maxFlashDiskIops: number;
+    readonly maxFlashDiskIops?: number;
     /**
      * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
      */
-    readonly maxFlashDiskThroughput: number;
+    readonly maxFlashDiskThroughput?: number;
     /**
      * The maximum hard disk IO operations per second of the Exadata storage server.
      */
-    readonly maxHardDiskIops: number;
+    readonly maxHardDiskIops?: number;
     /**
      * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
      */
-    readonly maxHardDiskThroughput: number;
+    readonly maxHardDiskThroughput?: number;
     /**
      * The Exadata storage server memory size in GB.
      */
-    readonly memoryGb: number;
+    readonly memoryGb?: number;
     /**
      * The type of Exadata resource.
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
     /**
      * The current lifecycle state of the database resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The status of the Exadata resource.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
      */
-    readonly storageGridId: string;
+    readonly storageGridId?: string;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The version of the Exadata resource.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.

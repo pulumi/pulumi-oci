@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
@@ -75,7 +74,7 @@ type GetSessionsResult struct {
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetSessionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                    string  `pulumi:"id"`
+	Id                    *string `pulumi:"id"`
 	SessionId             *string `pulumi:"sessionId"`
 	SessionLifecycleState *string `pulumi:"sessionLifecycleState"`
 	// The list of sessions.
@@ -127,12 +126,6 @@ func (o GetSessionsResultOutput) ToGetSessionsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetSessionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSessionsResult] {
-	return pulumix.Output[GetSessionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique identifier (OCID) of the bastion that is hosting this session.
 func (o GetSessionsResultOutput) BastionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSessionsResult) string { return v.BastionId }).(pulumi.StringOutput)
@@ -148,8 +141,8 @@ func (o GetSessionsResultOutput) Filters() GetSessionsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSessionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSessionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSessionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSessionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSessionsResultOutput) SessionId() pulumi.StringPtrOutput {

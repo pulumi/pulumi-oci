@@ -52,11 +52,11 @@ export interface GetBackendSetHealthResult {
     /**
      * A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.4:8080`
      */
-    readonly criticalStateBackendNames: string[];
+    readonly criticalStateBackendNames?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * Overall health status of the backend set.
@@ -65,19 +65,19 @@ export interface GetBackendSetHealthResult {
      * *  **CRITICAL:** Fewer than half of the backend set's backend servers return a status of `OK`.
      * *  **UNKNOWN:** More than half of the backend set's backend servers return a status of `UNKNOWN`, the system was unable to retrieve metrics, or the backend set does not have a listener attached.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The total number of backend servers in this backend set.  Example: `7`
      */
-    readonly totalBackendCount: number;
+    readonly totalBackendCount?: number;
     /**
      * A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.5:8080`
      */
-    readonly unknownStateBackendNames: string[];
+    readonly unknownStateBackendNames?: string[];
     /**
      * A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by IP address and port.  Example: `10.0.0.3:8080`
      */
-    readonly warningStateBackendNames: string[];
+    readonly warningStateBackendNames?: string[];
 }
 /**
  * This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.

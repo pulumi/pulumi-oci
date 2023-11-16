@@ -40,9 +40,6 @@ class GetVolumeBackupPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment that contains the volume backup.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetVolumeBackupPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetVolumeBackupPoliciesResult:
 
     @property
     @pulumi.getter(name="volumeBackupPolicies")
-    def volume_backup_policies(self) -> Sequence['outputs.GetVolumeBackupPoliciesVolumeBackupPolicyResult']:
-        """
-        The list of volume_backup_policies.
-        """
+    def volume_backup_policies(self) -> Optional[Sequence['outputs.GetVolumeBackupPoliciesVolumeBackupPolicyResult']]:
         return pulumi.get(self, "volume_backup_policies")
 
 
@@ -83,24 +77,7 @@ def get_volume_backup_policies(compartment_id: Optional[str] = None,
                                filters: Optional[Sequence[pulumi.InputType['GetVolumeBackupPoliciesFilterArgs']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeBackupPoliciesResult:
     """
-    This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
-
-    Lists all the volume backup policies available in the specified compartment.
-
-    For more information about Oracle defined backup policies and user defined backup policies,
-    see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -120,23 +97,6 @@ def get_volume_backup_policies_output(compartment_id: Optional[pulumi.Input[Opti
                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumeBackupPoliciesFilterArgs']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeBackupPoliciesResult]:
     """
-    This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
-
-    Lists all the volume backup policies available in the specified compartment.
-
-    For more information about Oracle defined backup policies and user defined backup policies,
-    see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
+    Use this data source to access information about an existing resource.
     """
     ...

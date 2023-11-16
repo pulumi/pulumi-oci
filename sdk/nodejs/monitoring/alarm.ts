@@ -95,7 +95,7 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      */
-    public readonly body!: pulumi.Output<string>;
+    public readonly body!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      */
@@ -103,7 +103,7 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
      */
@@ -119,7 +119,7 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Whether the alarm is enabled.  Example: `true`
      */
@@ -127,11 +127,11 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
      */
-    public readonly isNotificationsPerMetricDimensionEnabled!: pulumi.Output<boolean>;
+    public readonly isNotificationsPerMetricDimensionEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
      */
-    public readonly messageFormat!: pulumi.Output<string>;
+    public readonly messageFormat!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
      */
@@ -139,7 +139,7 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
      */
-    public readonly metricCompartmentIdInSubtree!: pulumi.Output<boolean>;
+    public readonly metricCompartmentIdInSubtree!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      */
@@ -155,7 +155,7 @@ export class Alarm extends pulumi.CustomResource {
      *
      * Example: `PT5M`
      */
-    public readonly pendingDuration!: pulumi.Output<string>;
+    public readonly pendingDuration!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
@@ -183,15 +183,15 @@ export class Alarm extends pulumi.CustomResource {
      *
      * Example: `PT2H`
      */
-    public readonly repeatNotificationDuration!: pulumi.Output<string>;
+    public readonly repeatNotificationDuration!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
      */
-    public readonly resolution!: pulumi.Output<string>;
+    public readonly resolution!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
      */
-    public readonly resourceGroup!: pulumi.Output<string>;
+    public readonly resourceGroup!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
      */
@@ -199,19 +199,19 @@ export class Alarm extends pulumi.CustomResource {
     /**
      * The current lifecycle state of the alarm.  Example: `DELETED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The configuration details for suppressing an alarm.
      */
-    public readonly suppression!: pulumi.Output<outputs.Monitoring.AlarmSuppression>;
+    public readonly suppression!: pulumi.Output<outputs.Monitoring.AlarmSuppression | undefined>;
     /**
      * The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Alarm resource with the given unique name, arguments, and options.

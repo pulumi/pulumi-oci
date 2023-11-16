@@ -79,11 +79,11 @@ export interface GetRouteTablesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of route_tables.
      */
-    readonly routeTables: outputs.Core.GetRouteTablesRouteTable[];
+    readonly routeTables?: outputs.Core.GetRouteTablesRouteTable[];
     /**
      * The route table's current state.
      */

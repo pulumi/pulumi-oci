@@ -28,7 +28,7 @@ public final class GetExternalDbSystemConnectorsResult {
      * @return The list of external_db_system_connector_collection.
      * 
      */
-    private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections;
+    private @Nullable List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
      * 
@@ -39,7 +39,7 @@ public final class GetExternalDbSystemConnectorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalDbSystemConnectorsResult() {}
     /**
@@ -61,7 +61,7 @@ public final class GetExternalDbSystemConnectorsResult {
      * 
      */
     public List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections() {
-        return this.externalDbSystemConnectorCollections;
+        return this.externalDbSystemConnectorCollections == null ? List.of() : this.externalDbSystemConnectorCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the connector is a part of.
@@ -77,8 +77,8 @@ public final class GetExternalDbSystemConnectorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetExternalDbSystemConnectorsResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections;
+        private @Nullable List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections;
         private @Nullable String externalDbSystemId;
         private @Nullable List<GetExternalDbSystemConnectorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalDbSystemConnectorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetExternalDbSystemConnectorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemConnectorCollections(List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections) {
-            this.externalDbSystemConnectorCollections = Objects.requireNonNull(externalDbSystemConnectorCollections);
+        public Builder externalDbSystemConnectorCollections(@Nullable List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections) {
+            this.externalDbSystemConnectorCollections = externalDbSystemConnectorCollections;
             return this;
         }
         public Builder externalDbSystemConnectorCollections(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection... externalDbSystemConnectorCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalDbSystemConnectorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalDbSystemConnectorsResult build() {

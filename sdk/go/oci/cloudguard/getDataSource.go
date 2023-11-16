@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,34 +59,34 @@ type GetDataSourceArgs struct {
 // A collection of values returned by getDataSource.
 type GetDataSourceResult struct {
 	// CompartmentId of Data source.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Details specific to the data source type.
 	DataSourceDetails []GetDataSourceDataSourceDetail `pulumi:"dataSourceDetails"`
 	// Information about the detector recipe and rule attached
 	DataSourceDetectorMappingInfos []GetDataSourceDataSourceDetectorMappingInfo `pulumi:"dataSourceDetectorMappingInfos"`
 	// Possible type of dataSourceFeed Provider(LoggingQuery)
-	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
-	DataSourceId           string `pulumi:"dataSourceId"`
+	DataSourceFeedProvider *string `pulumi:"dataSourceFeedProvider"`
+	DataSourceId           string  `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// DisplayName of Data source.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Ocid for Data source
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Information about the region and status of query replication
 	RegionStatusDetails []GetDataSourceRegionStatusDetail `pulumi:"regionStatusDetails"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Status of data Source
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Data source was updated. Format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetDataSourceOutput(ctx *pulumi.Context, args GetDataSourceOutputArgs, opts ...pulumi.InvokeOption) GetDataSourceResultOutput {
@@ -128,15 +127,9 @@ func (o GetDataSourceResultOutput) ToGetDataSourceResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetDataSourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceResult] {
-	return pulumix.Output[GetDataSourceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // CompartmentId of Data source.
-func (o GetDataSourceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Details specific to the data source type.
@@ -152,8 +145,8 @@ func (o GetDataSourceResultOutput) DataSourceDetectorMappingInfos() GetDataSourc
 }
 
 // Possible type of dataSourceFeed Provider(LoggingQuery)
-func (o GetDataSourceResultOutput) DataSourceFeedProvider() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) DataSourceFeedProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.DataSourceFeedProvider }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDataSourceResultOutput) DataSourceId() pulumi.StringOutput {
@@ -166,8 +159,8 @@ func (o GetDataSourceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // DisplayName of Data source.
-func (o GetDataSourceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -176,8 +169,8 @@ func (o GetDataSourceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Ocid for Data source
-func (o GetDataSourceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Information about the region and status of query replication
@@ -186,13 +179,13 @@ func (o GetDataSourceResultOutput) RegionStatusDetails() GetDataSourceRegionStat
 }
 
 // The current state of the resource.
-func (o GetDataSourceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Status of data Source
-func (o GetDataSourceResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -201,13 +194,13 @@ func (o GetDataSourceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the Data source was created. Format defined by RFC3339.
-func (o GetDataSourceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Data source was updated. Format defined by RFC3339.
-func (o GetDataSourceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSourceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDataSourceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSourceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

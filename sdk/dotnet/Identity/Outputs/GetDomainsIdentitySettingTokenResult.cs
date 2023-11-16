@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates the number of minutes after which the token expires automatically.
         /// </summary>
-        public readonly int ExpiresAfter;
+        public readonly int? ExpiresAfter;
         /// <summary>
         /// The token type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDomainsIdentitySettingTokenResult(
-            int expiresAfter,
+            int? expiresAfter,
 
-            string type)
+            string? type)
         {
             ExpiresAfter = expiresAfter;
             Type = type;

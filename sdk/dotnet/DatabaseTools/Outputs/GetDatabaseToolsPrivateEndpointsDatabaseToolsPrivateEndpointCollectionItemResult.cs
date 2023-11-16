@@ -20,39 +20,39 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A description of the Database Tools private endpoint.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Then FQDN to use for the private endpoint.
         /// </summary>
-        public readonly string EndpointFqdn;
+        public readonly string? EndpointFqdn;
         /// <summary>
         /// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
         /// </summary>
-        public readonly string EndpointServiceId;
+        public readonly string? EndpointServiceId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         /// </summary>
@@ -60,11 +60,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// The private IP address that represents the access point for the associated endpoint service.
         /// </summary>
-        public readonly string PrivateEndpointIp;
+        public readonly string? PrivateEndpointIp;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
         /// </summary>
-        public readonly string PrivateEndpointVnicId;
+        public readonly string? PrivateEndpointVnicId;
         /// <summary>
         /// Reverse connection configuration details of the private endpoint.
         /// </summary>
@@ -72,69 +72,69 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A filter to return only resources their `subnetId` matches the specified `subnetId`.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult(
             ImmutableArray<string> additionalFqdns,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string endpointFqdn,
+            string? endpointFqdn,
 
-            string endpointServiceId,
+            string? endpointServiceId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> nsgIds,
 
-            string privateEndpointIp,
+            string? privateEndpointIp,
 
-            string privateEndpointVnicId,
+            string? privateEndpointVnicId,
 
             ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult> reverseConnectionConfigurations,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string vcnId)
+            string? vcnId)
         {
             AdditionalFqdns = additionalFqdns;
             CompartmentId = compartmentId;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata {
@@ -14,87 +16,87 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemDepen
      * @return The patch action indicating if object was created, updated, or deleted.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Used to filter by the identifier of the published object.
      * 
      */
-    private String identifier;
+    private @Nullable String identifier;
     /**
      * @return The key of the object.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The fully qualified path of the published object, which would include its project and folder.
      * 
      */
-    private String namePath;
+    private @Nullable String namePath;
     /**
      * @return The object version.
      * 
      */
-    private Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
      * @return The type of the object in patch.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata() {}
     /**
      * @return The patch action indicating if object was created, updated, or deleted.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Used to filter by the identifier of the published object.
      * 
      */
-    public String identifier() {
-        return this.identifier;
+    public Optional<String> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
     /**
      * @return The key of the object.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The fully qualified path of the published object, which would include its project and folder.
      * 
      */
-    public String namePath() {
-        return this.namePath;
+    public Optional<String> namePath() {
+        return Optional.ofNullable(this.namePath);
     }
     /**
      * @return The object version.
      * 
      */
-    public Integer objectVersion() {
-        return this.objectVersion;
+    public Optional<Integer> objectVersion() {
+        return Optional.ofNullable(this.objectVersion);
     }
     /**
      * @return The type of the object in patch.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemDepen
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String identifier;
-        private String key;
-        private String name;
-        private String namePath;
-        private Integer objectVersion;
-        private String type;
+        private @Nullable String action;
+        private @Nullable String identifier;
+        private @Nullable String key;
+        private @Nullable String name;
+        private @Nullable String namePath;
+        private @Nullable Integer objectVersion;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemDepen
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+        public Builder identifier(@Nullable String identifier) {
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namePath(String namePath) {
-            this.namePath = Objects.requireNonNull(namePath);
+        public Builder namePath(@Nullable String namePath) {
+            this.namePath = namePath;
             return this;
         }
         @CustomType.Setter
-        public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+        public Builder objectVersion(@Nullable Integer objectVersion) {
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata build() {

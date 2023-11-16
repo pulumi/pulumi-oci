@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         /// </summary>
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Dns
         private GetResolverEndpointsResult(
             ImmutableArray<Outputs.GetResolverEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

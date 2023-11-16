@@ -29,12 +29,12 @@ public final class GetImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of images.
      * 
      */
-    private List<GetImagesImage> images;
+    private @Nullable List<GetImagesImage> images;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
@@ -76,15 +76,15 @@ public final class GetImagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of images.
      * 
      */
     public List<GetImagesImage> images() {
-        return this.images;
+        return this.images == null ? List.of() : this.images;
     }
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
@@ -129,8 +129,8 @@ public final class GetImagesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetImagesFilter> filters;
-        private String id;
-        private List<GetImagesImage> images;
+        private @Nullable String id;
+        private @Nullable List<GetImagesImage> images;
         private @Nullable String operatingSystem;
         private @Nullable String operatingSystemVersion;
         private @Nullable String shape;
@@ -172,13 +172,13 @@ public final class GetImagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder images(List<GetImagesImage> images) {
-            this.images = Objects.requireNonNull(images);
+        public Builder images(@Nullable List<GetImagesImage> images) {
+            this.images = images;
             return this;
         }
         public Builder images(GetImagesImage... images) {

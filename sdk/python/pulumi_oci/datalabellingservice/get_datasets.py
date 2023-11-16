@@ -49,33 +49,21 @@ class GetDatasetsResult:
     @property
     @pulumi.getter(name="annotationFormat")
     def annotation_format(self) -> Optional[str]:
-        """
-        The annotation format name required for labeling records.
-        """
         return pulumi.get(self, "annotation_format")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment of the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="datasetCollections")
-    def dataset_collections(self) -> Sequence['outputs.GetDatasetsDatasetCollectionResult']:
-        """
-        The list of dataset_collection.
-        """
+    def dataset_collections(self) -> Optional[Sequence['outputs.GetDatasetsDatasetCollectionResult']]:
         return pulumi.get(self, "dataset_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -86,17 +74,11 @@ class GetDatasetsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the Dataset.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_datasets(annotation_format: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatasetsResult:
     """
-    This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
-
-    Returns a list of Datasets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=var["compartment_id"],
-        annotation_format=var["dataset_annotation_format"],
-        display_name=var["dataset_display_name"],
-        id=var["dataset_id"],
-        state=var["dataset_state"])
-    ```
-
-
-    :param str annotation_format: A filter to return only resources that match the entire annotation format given.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique Dataset OCID
-    :param str state: A filter to return only resources whose lifecycleState matches this query param.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['annotationFormat'] = annotation_format
@@ -176,28 +136,6 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[str]]]
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatasetsResult]:
     """
-    This data source provides the list of Datasets in Oracle Cloud Infrastructure Data Labeling Service service.
-
-    Returns a list of Datasets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_datasets = oci.DataLabellingService.get_datasets(compartment_id=var["compartment_id"],
-        annotation_format=var["dataset_annotation_format"],
-        display_name=var["dataset_display_name"],
-        id=var["dataset_id"],
-        state=var["dataset_state"])
-    ```
-
-
-    :param str annotation_format: A filter to return only resources that match the entire annotation format given.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique Dataset OCID
-    :param str state: A filter to return only resources whose lifecycleState matches this query param.
+    Use this data source to access information about an existing resource.
     """
     ...

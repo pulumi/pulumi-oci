@@ -24,7 +24,7 @@ public final class GetPublicationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      * 
@@ -41,7 +41,7 @@ public final class GetPublicationsResult {
      * @return The list of publications.
      * 
      */
-    private List<GetPublicationsPublication> publications;
+    private @Nullable List<GetPublicationsPublication> publications;
 
     private GetPublicationsResult() {}
     /**
@@ -58,8 +58,8 @@ public final class GetPublicationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
@@ -86,7 +86,7 @@ public final class GetPublicationsResult {
      * 
      */
     public List<GetPublicationsPublication> publications() {
-        return this.publications;
+        return this.publications == null ? List.of() : this.publications;
     }
 
     public static Builder builder() {
@@ -100,12 +100,12 @@ public final class GetPublicationsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetPublicationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String listingType;
         private @Nullable List<String> names;
         private @Nullable List<String> operatingSystems;
         private @Nullable String publicationId;
-        private List<GetPublicationsPublication> publications;
+        private @Nullable List<GetPublicationsPublication> publications;
         public Builder() {}
         public Builder(GetPublicationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -133,8 +133,8 @@ public final class GetPublicationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -164,8 +164,8 @@ public final class GetPublicationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder publications(List<GetPublicationsPublication> publications) {
-            this.publications = Objects.requireNonNull(publications);
+        public Builder publications(@Nullable List<GetPublicationsPublication> publications) {
+            this.publications = publications;
             return this;
         }
         public Builder publications(GetPublicationsPublication... publications) {

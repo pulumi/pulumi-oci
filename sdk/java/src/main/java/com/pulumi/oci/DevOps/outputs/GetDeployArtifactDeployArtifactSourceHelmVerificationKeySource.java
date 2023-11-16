@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource {
@@ -13,51 +15,51 @@ public final class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourc
      * @return Current version of Base64 encoding of the public key which is in binary GPG exported format.
      * 
      */
-    private String currentPublicKey;
+    private @Nullable String currentPublicKey;
     /**
      * @return Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
      * 
      */
-    private String previousPublicKey;
+    private @Nullable String previousPublicKey;
     /**
      * @return The OCID of the Vault Secret containing the verification key versions.
      * 
      */
-    private String vaultSecretId;
+    private @Nullable String vaultSecretId;
     /**
      * @return Specifies type of verification material.
      * 
      */
-    private String verificationKeySourceType;
+    private @Nullable String verificationKeySourceType;
 
     private GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource() {}
     /**
      * @return Current version of Base64 encoding of the public key which is in binary GPG exported format.
      * 
      */
-    public String currentPublicKey() {
-        return this.currentPublicKey;
+    public Optional<String> currentPublicKey() {
+        return Optional.ofNullable(this.currentPublicKey);
     }
     /**
      * @return Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
      * 
      */
-    public String previousPublicKey() {
-        return this.previousPublicKey;
+    public Optional<String> previousPublicKey() {
+        return Optional.ofNullable(this.previousPublicKey);
     }
     /**
      * @return The OCID of the Vault Secret containing the verification key versions.
      * 
      */
-    public String vaultSecretId() {
-        return this.vaultSecretId;
+    public Optional<String> vaultSecretId() {
+        return Optional.ofNullable(this.vaultSecretId);
     }
     /**
      * @return Specifies type of verification material.
      * 
      */
-    public String verificationKeySourceType() {
-        return this.verificationKeySourceType;
+    public Optional<String> verificationKeySourceType() {
+        return Optional.ofNullable(this.verificationKeySourceType);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourc
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currentPublicKey;
-        private String previousPublicKey;
-        private String vaultSecretId;
-        private String verificationKeySourceType;
+        private @Nullable String currentPublicKey;
+        private @Nullable String previousPublicKey;
+        private @Nullable String vaultSecretId;
+        private @Nullable String verificationKeySourceType;
         public Builder() {}
         public Builder(GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourc
         }
 
         @CustomType.Setter
-        public Builder currentPublicKey(String currentPublicKey) {
-            this.currentPublicKey = Objects.requireNonNull(currentPublicKey);
+        public Builder currentPublicKey(@Nullable String currentPublicKey) {
+            this.currentPublicKey = currentPublicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder previousPublicKey(String previousPublicKey) {
-            this.previousPublicKey = Objects.requireNonNull(previousPublicKey);
+        public Builder previousPublicKey(@Nullable String previousPublicKey) {
+            this.previousPublicKey = previousPublicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultSecretId(String vaultSecretId) {
-            this.vaultSecretId = Objects.requireNonNull(vaultSecretId);
+        public Builder vaultSecretId(@Nullable String vaultSecretId) {
+            this.vaultSecretId = vaultSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder verificationKeySourceType(String verificationKeySourceType) {
-            this.verificationKeySourceType = Objects.requireNonNull(verificationKeySourceType);
+        public Builder verificationKeySourceType(@Nullable String verificationKeySourceType) {
+            this.verificationKeySourceType = verificationKeySourceType;
             return this;
         }
         public GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource build() {

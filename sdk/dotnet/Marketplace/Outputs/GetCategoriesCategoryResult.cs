@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// Name of the product category.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetCategoriesCategoryResult(string name)
+        private GetCategoriesCategoryResult(string? name)
         {
             Name = name;
         }

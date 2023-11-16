@@ -23,7 +23,7 @@ public final class GetBootVolumeReplicasResult {
      * @return The list of boot_volume_replicas.
      * 
      */
-    private List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas;
+    private @Nullable List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas;
     /**
      * @return The OCID of the compartment that contains the boot volume replica.
      * 
@@ -39,7 +39,7 @@ public final class GetBootVolumeReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of a boot volume replica.
      * 
@@ -60,7 +60,7 @@ public final class GetBootVolumeReplicasResult {
      * 
      */
     public List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas() {
-        return this.bootVolumeReplicas;
+        return this.bootVolumeReplicas == null ? List.of() : this.bootVolumeReplicas;
     }
     /**
      * @return The OCID of the compartment that contains the boot volume replica.
@@ -83,8 +83,8 @@ public final class GetBootVolumeReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of a boot volume replica.
@@ -107,11 +107,11 @@ public final class GetBootVolumeReplicasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
-        private List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas;
+        private @Nullable List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBootVolumeReplicasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String volumeGroupReplicaId;
         public Builder() {}
@@ -133,8 +133,8 @@ public final class GetBootVolumeReplicasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bootVolumeReplicas(List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas) {
-            this.bootVolumeReplicas = Objects.requireNonNull(bootVolumeReplicas);
+        public Builder bootVolumeReplicas(@Nullable List<GetBootVolumeReplicasBootVolumeReplica> bootVolumeReplicas) {
+            this.bootVolumeReplicas = bootVolumeReplicas;
             return this;
         }
         public Builder bootVolumeReplicas(GetBootVolumeReplicasBootVolumeReplica... bootVolumeReplicas) {
@@ -159,8 +159,8 @@ public final class GetBootVolumeReplicasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

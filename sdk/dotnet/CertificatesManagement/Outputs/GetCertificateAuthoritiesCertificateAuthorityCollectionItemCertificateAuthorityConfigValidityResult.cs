@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfValidityNotAfter;
+        public readonly string? TimeOfValidityNotAfter;
         /// <summary>
         /// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfValidityNotBefore;
+        public readonly string? TimeOfValidityNotBefore;
 
         [OutputConstructor]
         private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityResult(
-            string timeOfValidityNotAfter,
+            string? timeOfValidityNotAfter,
 
-            string timeOfValidityNotBefore)
+            string? timeOfValidityNotBefore)
         {
             TimeOfValidityNotAfter = timeOfValidityNotAfter;
             TimeOfValidityNotBefore = timeOfValidityNotBefore;

@@ -72,7 +72,7 @@ export interface GetProfileLevelsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A unique name for the profile level.
      */
@@ -80,7 +80,7 @@ export interface GetProfileLevelsResult {
     /**
      * The list of profile_level_collection.
      */
-    readonly profileLevelCollections: outputs.Optimizer.GetProfileLevelsProfileLevelCollection[];
+    readonly profileLevelCollections?: outputs.Optimizer.GetProfileLevelsProfileLevelCollection[];
     /**
      * The name of the recommendation this profile level applies to.
      */

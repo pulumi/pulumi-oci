@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsDiffCollectionItemChangeD
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryDiffsDiffCollectionItemChange {
@@ -15,63 +17,63 @@ public final class GetRepositoryDiffsDiffCollectionItemChange {
      * @return The number of a line in the base version.
      * 
      */
-    private Integer baseLine;
+    private @Nullable Integer baseLine;
     /**
      * @return Number of lines chunk spans in base version.
      * 
      */
-    private Integer baseSpan;
+    private @Nullable Integer baseSpan;
     /**
      * @return List of difference section.
      * 
      */
-    private List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections;
+    private @Nullable List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections;
     /**
      * @return Line number in target version where changes begin.
      * 
      */
-    private Integer targetLine;
+    private @Nullable Integer targetLine;
     /**
      * @return Number of lines chunk spans in target version.
      * 
      */
-    private Integer targetSpan;
+    private @Nullable Integer targetSpan;
 
     private GetRepositoryDiffsDiffCollectionItemChange() {}
     /**
      * @return The number of a line in the base version.
      * 
      */
-    public Integer baseLine() {
-        return this.baseLine;
+    public Optional<Integer> baseLine() {
+        return Optional.ofNullable(this.baseLine);
     }
     /**
      * @return Number of lines chunk spans in base version.
      * 
      */
-    public Integer baseSpan() {
-        return this.baseSpan;
+    public Optional<Integer> baseSpan() {
+        return Optional.ofNullable(this.baseSpan);
     }
     /**
      * @return List of difference section.
      * 
      */
     public List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections() {
-        return this.diffSections;
+        return this.diffSections == null ? List.of() : this.diffSections;
     }
     /**
      * @return Line number in target version where changes begin.
      * 
      */
-    public Integer targetLine() {
-        return this.targetLine;
+    public Optional<Integer> targetLine() {
+        return Optional.ofNullable(this.targetLine);
     }
     /**
      * @return Number of lines chunk spans in target version.
      * 
      */
-    public Integer targetSpan() {
-        return this.targetSpan;
+    public Optional<Integer> targetSpan() {
+        return Optional.ofNullable(this.targetSpan);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetRepositoryDiffsDiffCollectionItemChange {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer baseLine;
-        private Integer baseSpan;
-        private List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections;
-        private Integer targetLine;
-        private Integer targetSpan;
+        private @Nullable Integer baseLine;
+        private @Nullable Integer baseSpan;
+        private @Nullable List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections;
+        private @Nullable Integer targetLine;
+        private @Nullable Integer targetSpan;
         public Builder() {}
         public Builder(GetRepositoryDiffsDiffCollectionItemChange defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetRepositoryDiffsDiffCollectionItemChange {
         }
 
         @CustomType.Setter
-        public Builder baseLine(Integer baseLine) {
-            this.baseLine = Objects.requireNonNull(baseLine);
+        public Builder baseLine(@Nullable Integer baseLine) {
+            this.baseLine = baseLine;
             return this;
         }
         @CustomType.Setter
-        public Builder baseSpan(Integer baseSpan) {
-            this.baseSpan = Objects.requireNonNull(baseSpan);
+        public Builder baseSpan(@Nullable Integer baseSpan) {
+            this.baseSpan = baseSpan;
             return this;
         }
         @CustomType.Setter
-        public Builder diffSections(List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections) {
-            this.diffSections = Objects.requireNonNull(diffSections);
+        public Builder diffSections(@Nullable List<GetRepositoryDiffsDiffCollectionItemChangeDiffSection> diffSections) {
+            this.diffSections = diffSections;
             return this;
         }
         public Builder diffSections(GetRepositoryDiffsDiffCollectionItemChangeDiffSection... diffSections) {
             return diffSections(List.of(diffSections));
         }
         @CustomType.Setter
-        public Builder targetLine(Integer targetLine) {
-            this.targetLine = Objects.requireNonNull(targetLine);
+        public Builder targetLine(@Nullable Integer targetLine) {
+            this.targetLine = targetLine;
             return this;
         }
         @CustomType.Setter
-        public Builder targetSpan(Integer targetSpan) {
-            this.targetSpan = Objects.requireNonNull(targetSpan);
+        public Builder targetSpan(@Nullable Integer targetSpan) {
+            this.targetSpan = targetSpan;
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItemChange build() {

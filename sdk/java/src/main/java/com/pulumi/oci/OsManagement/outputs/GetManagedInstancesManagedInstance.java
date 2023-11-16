@@ -13,6 +13,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstancesManagedInstance {
@@ -20,133 +22,133 @@ public final class GetManagedInstancesManagedInstance {
      * @return if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      * 
      */
-    private List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses;
+    private @Nullable List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses;
     /**
      * @return Number of bug fix type updates available to be installed
      * 
      */
-    private Integer bugUpdatesAvailable;
+    private @Nullable Integer bugUpdatesAvailable;
     /**
      * @return list of child Software Sources attached to the Managed Instance
      * 
      */
-    private List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources;
+    private @Nullable List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Information specified by the user about the managed instance
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Number of enhancement type updates available to be installed
      * 
      */
-    private Integer enhancementUpdatesAvailable;
+    private @Nullable Integer enhancementUpdatesAvailable;
     /**
      * @return software source identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return True if user allow data collection for this instance
      * 
      */
-    private Boolean isDataCollectionAuthorized;
+    private @Nullable Boolean isDataCollectionAuthorized;
     /**
      * @return Indicates whether a reboot is required to complete installation of updates.
      * 
      */
-    private Boolean isRebootRequired;
+    private @Nullable Boolean isRebootRequired;
     /**
      * @return The ksplice effective kernel version
      * 
      */
-    private String kspliceEffectiveKernelVersion;
+    private @Nullable String kspliceEffectiveKernelVersion;
     /**
      * @return Time at which the instance last booted
      * 
      */
-    private String lastBoot;
+    private @Nullable String lastBoot;
     /**
      * @return Time at which the instance last checked in
      * 
      */
-    private String lastCheckin;
+    private @Nullable String lastCheckin;
     /**
      * @return The ids of the managed instance groups of which this instance is a member.
      * 
      */
-    private List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups;
-    private String managedInstanceId;
+    private @Nullable List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups;
+    private @Nullable String managedInstanceId;
     /**
      * @return OCID of the ONS topic used to send notification to users
      * 
      */
-    private String notificationTopicId;
+    private @Nullable String notificationTopicId;
     /**
      * @return The OS family for which to list resources.
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return Operating System Kernel Version
      * 
      */
-    private String osKernelVersion;
+    private @Nullable String osKernelVersion;
     /**
      * @return Operating System Name
      * 
      */
-    private String osName;
+    private @Nullable String osName;
     /**
      * @return Operating System Version
      * 
      */
-    private String osVersion;
+    private @Nullable String osVersion;
     /**
      * @return Number of non-classified updates available to be installed
      * 
      */
-    private Integer otherUpdatesAvailable;
+    private @Nullable Integer otherUpdatesAvailable;
     /**
      * @return the parent (base) Software Source attached to the Managed Instance
      * 
      */
-    private List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources;
+    private @Nullable List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources;
     /**
      * @return Number of scheduled jobs associated with this instance
      * 
      */
-    private Integer scheduledJobCount;
+    private @Nullable Integer scheduledJobCount;
     /**
      * @return Number of security type updates available to be installed
      * 
      */
-    private Integer securityUpdatesAvailable;
+    private @Nullable Integer securityUpdatesAvailable;
     /**
      * @return status of the managed instance.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Number of updates available to be installed
      * 
      */
-    private Integer updatesAvailable;
+    private @Nullable Integer updatesAvailable;
     /**
      * @return Number of work requests associated with this instance
      * 
      */
-    private Integer workRequestCount;
+    private @Nullable Integer workRequestCount;
 
     private GetManagedInstancesManagedInstance() {}
     /**
@@ -154,185 +156,185 @@ public final class GetManagedInstancesManagedInstance {
      * 
      */
     public List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses() {
-        return this.autonomouses;
+        return this.autonomouses == null ? List.of() : this.autonomouses;
     }
     /**
      * @return Number of bug fix type updates available to be installed
      * 
      */
-    public Integer bugUpdatesAvailable() {
-        return this.bugUpdatesAvailable;
+    public Optional<Integer> bugUpdatesAvailable() {
+        return Optional.ofNullable(this.bugUpdatesAvailable);
     }
     /**
      * @return list of child Software Sources attached to the Managed Instance
      * 
      */
     public List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources() {
-        return this.childSoftwareSources;
+        return this.childSoftwareSources == null ? List.of() : this.childSoftwareSources;
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Information specified by the user about the managed instance
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Number of enhancement type updates available to be installed
      * 
      */
-    public Integer enhancementUpdatesAvailable() {
-        return this.enhancementUpdatesAvailable;
+    public Optional<Integer> enhancementUpdatesAvailable() {
+        return Optional.ofNullable(this.enhancementUpdatesAvailable);
     }
     /**
      * @return software source identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return True if user allow data collection for this instance
      * 
      */
-    public Boolean isDataCollectionAuthorized() {
-        return this.isDataCollectionAuthorized;
+    public Optional<Boolean> isDataCollectionAuthorized() {
+        return Optional.ofNullable(this.isDataCollectionAuthorized);
     }
     /**
      * @return Indicates whether a reboot is required to complete installation of updates.
      * 
      */
-    public Boolean isRebootRequired() {
-        return this.isRebootRequired;
+    public Optional<Boolean> isRebootRequired() {
+        return Optional.ofNullable(this.isRebootRequired);
     }
     /**
      * @return The ksplice effective kernel version
      * 
      */
-    public String kspliceEffectiveKernelVersion() {
-        return this.kspliceEffectiveKernelVersion;
+    public Optional<String> kspliceEffectiveKernelVersion() {
+        return Optional.ofNullable(this.kspliceEffectiveKernelVersion);
     }
     /**
      * @return Time at which the instance last booted
      * 
      */
-    public String lastBoot() {
-        return this.lastBoot;
+    public Optional<String> lastBoot() {
+        return Optional.ofNullable(this.lastBoot);
     }
     /**
      * @return Time at which the instance last checked in
      * 
      */
-    public String lastCheckin() {
-        return this.lastCheckin;
+    public Optional<String> lastCheckin() {
+        return Optional.ofNullable(this.lastCheckin);
     }
     /**
      * @return The ids of the managed instance groups of which this instance is a member.
      * 
      */
     public List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups() {
-        return this.managedInstanceGroups;
+        return this.managedInstanceGroups == null ? List.of() : this.managedInstanceGroups;
     }
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return OCID of the ONS topic used to send notification to users
      * 
      */
-    public String notificationTopicId() {
-        return this.notificationTopicId;
+    public Optional<String> notificationTopicId() {
+        return Optional.ofNullable(this.notificationTopicId);
     }
     /**
      * @return The OS family for which to list resources.
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return Operating System Kernel Version
      * 
      */
-    public String osKernelVersion() {
-        return this.osKernelVersion;
+    public Optional<String> osKernelVersion() {
+        return Optional.ofNullable(this.osKernelVersion);
     }
     /**
      * @return Operating System Name
      * 
      */
-    public String osName() {
-        return this.osName;
+    public Optional<String> osName() {
+        return Optional.ofNullable(this.osName);
     }
     /**
      * @return Operating System Version
      * 
      */
-    public String osVersion() {
-        return this.osVersion;
+    public Optional<String> osVersion() {
+        return Optional.ofNullable(this.osVersion);
     }
     /**
      * @return Number of non-classified updates available to be installed
      * 
      */
-    public Integer otherUpdatesAvailable() {
-        return this.otherUpdatesAvailable;
+    public Optional<Integer> otherUpdatesAvailable() {
+        return Optional.ofNullable(this.otherUpdatesAvailable);
     }
     /**
      * @return the parent (base) Software Source attached to the Managed Instance
      * 
      */
     public List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources() {
-        return this.parentSoftwareSources;
+        return this.parentSoftwareSources == null ? List.of() : this.parentSoftwareSources;
     }
     /**
      * @return Number of scheduled jobs associated with this instance
      * 
      */
-    public Integer scheduledJobCount() {
-        return this.scheduledJobCount;
+    public Optional<Integer> scheduledJobCount() {
+        return Optional.ofNullable(this.scheduledJobCount);
     }
     /**
      * @return Number of security type updates available to be installed
      * 
      */
-    public Integer securityUpdatesAvailable() {
-        return this.securityUpdatesAvailable;
+    public Optional<Integer> securityUpdatesAvailable() {
+        return Optional.ofNullable(this.securityUpdatesAvailable);
     }
     /**
      * @return status of the managed instance.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Number of updates available to be installed
      * 
      */
-    public Integer updatesAvailable() {
-        return this.updatesAvailable;
+    public Optional<Integer> updatesAvailable() {
+        return Optional.ofNullable(this.updatesAvailable);
     }
     /**
      * @return Number of work requests associated with this instance
      * 
      */
-    public Integer workRequestCount() {
-        return this.workRequestCount;
+    public Optional<Integer> workRequestCount() {
+        return Optional.ofNullable(this.workRequestCount);
     }
 
     public static Builder builder() {
@@ -344,33 +346,33 @@ public final class GetManagedInstancesManagedInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses;
-        private Integer bugUpdatesAvailable;
-        private List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources;
-        private String compartmentId;
-        private String description;
-        private String displayName;
-        private Integer enhancementUpdatesAvailable;
-        private String id;
-        private Boolean isDataCollectionAuthorized;
-        private Boolean isRebootRequired;
-        private String kspliceEffectiveKernelVersion;
-        private String lastBoot;
-        private String lastCheckin;
-        private List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups;
-        private String managedInstanceId;
-        private String notificationTopicId;
-        private String osFamily;
-        private String osKernelVersion;
-        private String osName;
-        private String osVersion;
-        private Integer otherUpdatesAvailable;
-        private List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources;
-        private Integer scheduledJobCount;
-        private Integer securityUpdatesAvailable;
-        private String status;
-        private Integer updatesAvailable;
-        private Integer workRequestCount;
+        private @Nullable List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses;
+        private @Nullable Integer bugUpdatesAvailable;
+        private @Nullable List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources;
+        private @Nullable String compartmentId;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Integer enhancementUpdatesAvailable;
+        private @Nullable String id;
+        private @Nullable Boolean isDataCollectionAuthorized;
+        private @Nullable Boolean isRebootRequired;
+        private @Nullable String kspliceEffectiveKernelVersion;
+        private @Nullable String lastBoot;
+        private @Nullable String lastCheckin;
+        private @Nullable List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups;
+        private @Nullable String managedInstanceId;
+        private @Nullable String notificationTopicId;
+        private @Nullable String osFamily;
+        private @Nullable String osKernelVersion;
+        private @Nullable String osName;
+        private @Nullable String osVersion;
+        private @Nullable Integer otherUpdatesAvailable;
+        private @Nullable List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources;
+        private @Nullable Integer scheduledJobCount;
+        private @Nullable Integer securityUpdatesAvailable;
+        private @Nullable String status;
+        private @Nullable Integer updatesAvailable;
+        private @Nullable Integer workRequestCount;
         public Builder() {}
         public Builder(GetManagedInstancesManagedInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -404,150 +406,150 @@ public final class GetManagedInstancesManagedInstance {
         }
 
         @CustomType.Setter
-        public Builder autonomouses(List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses) {
-            this.autonomouses = Objects.requireNonNull(autonomouses);
+        public Builder autonomouses(@Nullable List<GetManagedInstancesManagedInstanceAutonomouse> autonomouses) {
+            this.autonomouses = autonomouses;
             return this;
         }
         public Builder autonomouses(GetManagedInstancesManagedInstanceAutonomouse... autonomouses) {
             return autonomouses(List.of(autonomouses));
         }
         @CustomType.Setter
-        public Builder bugUpdatesAvailable(Integer bugUpdatesAvailable) {
-            this.bugUpdatesAvailable = Objects.requireNonNull(bugUpdatesAvailable);
+        public Builder bugUpdatesAvailable(@Nullable Integer bugUpdatesAvailable) {
+            this.bugUpdatesAvailable = bugUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder childSoftwareSources(List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources) {
-            this.childSoftwareSources = Objects.requireNonNull(childSoftwareSources);
+        public Builder childSoftwareSources(@Nullable List<GetManagedInstancesManagedInstanceChildSoftwareSource> childSoftwareSources) {
+            this.childSoftwareSources = childSoftwareSources;
             return this;
         }
         public Builder childSoftwareSources(GetManagedInstancesManagedInstanceChildSoftwareSource... childSoftwareSources) {
             return childSoftwareSources(List.of(childSoftwareSources));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enhancementUpdatesAvailable(Integer enhancementUpdatesAvailable) {
-            this.enhancementUpdatesAvailable = Objects.requireNonNull(enhancementUpdatesAvailable);
+        public Builder enhancementUpdatesAvailable(@Nullable Integer enhancementUpdatesAvailable) {
+            this.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDataCollectionAuthorized(Boolean isDataCollectionAuthorized) {
-            this.isDataCollectionAuthorized = Objects.requireNonNull(isDataCollectionAuthorized);
+        public Builder isDataCollectionAuthorized(@Nullable Boolean isDataCollectionAuthorized) {
+            this.isDataCollectionAuthorized = isDataCollectionAuthorized;
             return this;
         }
         @CustomType.Setter
-        public Builder isRebootRequired(Boolean isRebootRequired) {
-            this.isRebootRequired = Objects.requireNonNull(isRebootRequired);
+        public Builder isRebootRequired(@Nullable Boolean isRebootRequired) {
+            this.isRebootRequired = isRebootRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder kspliceEffectiveKernelVersion(String kspliceEffectiveKernelVersion) {
-            this.kspliceEffectiveKernelVersion = Objects.requireNonNull(kspliceEffectiveKernelVersion);
+        public Builder kspliceEffectiveKernelVersion(@Nullable String kspliceEffectiveKernelVersion) {
+            this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder lastBoot(String lastBoot) {
-            this.lastBoot = Objects.requireNonNull(lastBoot);
+        public Builder lastBoot(@Nullable String lastBoot) {
+            this.lastBoot = lastBoot;
             return this;
         }
         @CustomType.Setter
-        public Builder lastCheckin(String lastCheckin) {
-            this.lastCheckin = Objects.requireNonNull(lastCheckin);
+        public Builder lastCheckin(@Nullable String lastCheckin) {
+            this.lastCheckin = lastCheckin;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceGroups(List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups) {
-            this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
+        public Builder managedInstanceGroups(@Nullable List<GetManagedInstancesManagedInstanceManagedInstanceGroup> managedInstanceGroups) {
+            this.managedInstanceGroups = managedInstanceGroups;
             return this;
         }
         public Builder managedInstanceGroups(GetManagedInstancesManagedInstanceManagedInstanceGroup... managedInstanceGroups) {
             return managedInstanceGroups(List.of(managedInstanceGroups));
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder notificationTopicId(String notificationTopicId) {
-            this.notificationTopicId = Objects.requireNonNull(notificationTopicId);
+        public Builder notificationTopicId(@Nullable String notificationTopicId) {
+            this.notificationTopicId = notificationTopicId;
             return this;
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder osKernelVersion(String osKernelVersion) {
-            this.osKernelVersion = Objects.requireNonNull(osKernelVersion);
+        public Builder osKernelVersion(@Nullable String osKernelVersion) {
+            this.osKernelVersion = osKernelVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder osName(String osName) {
-            this.osName = Objects.requireNonNull(osName);
+        public Builder osName(@Nullable String osName) {
+            this.osName = osName;
             return this;
         }
         @CustomType.Setter
-        public Builder osVersion(String osVersion) {
-            this.osVersion = Objects.requireNonNull(osVersion);
+        public Builder osVersion(@Nullable String osVersion) {
+            this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder otherUpdatesAvailable(Integer otherUpdatesAvailable) {
-            this.otherUpdatesAvailable = Objects.requireNonNull(otherUpdatesAvailable);
+        public Builder otherUpdatesAvailable(@Nullable Integer otherUpdatesAvailable) {
+            this.otherUpdatesAvailable = otherUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder parentSoftwareSources(List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources) {
-            this.parentSoftwareSources = Objects.requireNonNull(parentSoftwareSources);
+        public Builder parentSoftwareSources(@Nullable List<GetManagedInstancesManagedInstanceParentSoftwareSource> parentSoftwareSources) {
+            this.parentSoftwareSources = parentSoftwareSources;
             return this;
         }
         public Builder parentSoftwareSources(GetManagedInstancesManagedInstanceParentSoftwareSource... parentSoftwareSources) {
             return parentSoftwareSources(List.of(parentSoftwareSources));
         }
         @CustomType.Setter
-        public Builder scheduledJobCount(Integer scheduledJobCount) {
-            this.scheduledJobCount = Objects.requireNonNull(scheduledJobCount);
+        public Builder scheduledJobCount(@Nullable Integer scheduledJobCount) {
+            this.scheduledJobCount = scheduledJobCount;
             return this;
         }
         @CustomType.Setter
-        public Builder securityUpdatesAvailable(Integer securityUpdatesAvailable) {
-            this.securityUpdatesAvailable = Objects.requireNonNull(securityUpdatesAvailable);
+        public Builder securityUpdatesAvailable(@Nullable Integer securityUpdatesAvailable) {
+            this.securityUpdatesAvailable = securityUpdatesAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder updatesAvailable(Integer updatesAvailable) {
-            this.updatesAvailable = Objects.requireNonNull(updatesAvailable);
+        public Builder updatesAvailable(@Nullable Integer updatesAvailable) {
+            this.updatesAvailable = updatesAvailable;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestCount(Integer workRequestCount) {
-            this.workRequestCount = Objects.requireNonNull(workRequestCount);
+        public Builder workRequestCount(@Nullable Integer workRequestCount) {
+            this.workRequestCount = workRequestCount;
             return this;
         }
         public GetManagedInstancesManagedInstance build() {

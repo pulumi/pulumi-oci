@@ -46,7 +46,7 @@ class GetScheduledRunResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -54,18 +54,12 @@ class GetScheduledRunResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional details about scheduled run failure
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="scheduleId")
-    def schedule_id(self) -> str:
-        """
-        The ocid representing unique shedule
-        """
+    def schedule_id(self) -> Optional[str]:
         return pulumi.get(self, "schedule_id")
 
     @property
@@ -75,26 +69,17 @@ class GetScheduledRunResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Specifies if the schedule job was run successfully or not.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when schedule started executing
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The time when schedule finished executing
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
 
@@ -116,21 +101,7 @@ class AwaitableGetScheduledRunResult(GetScheduledRunResult):
 def get_scheduled_run(scheduled_run_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScheduledRunResult:
     """
-    This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved schedule run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=oci_metering_computation_scheduled_run["test_scheduled_run"]["id"])
-    ```
-
-
-    :param str scheduled_run_id: The scheduledRun unique OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['scheduledRunId'] = scheduled_run_id
@@ -151,20 +122,6 @@ def get_scheduled_run(scheduled_run_id: Optional[str] = None,
 def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduledRunResult]:
     """
-    This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved schedule run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=oci_metering_computation_scheduled_run["test_scheduled_run"]["id"])
-    ```
-
-
-    :param str scheduled_run_id: The scheduledRun unique OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

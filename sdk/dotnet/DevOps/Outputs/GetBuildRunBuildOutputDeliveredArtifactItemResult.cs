@@ -16,59 +16,59 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the artifact registry repository used by the DeliverArtifactStage
         /// </summary>
-        public readonly string ArtifactRepositoryId;
+        public readonly string? ArtifactRepositoryId;
         /// <summary>
         /// Type of artifact delivered.
         /// </summary>
-        public readonly string ArtifactType;
+        public readonly string? ArtifactType;
         /// <summary>
         /// The hash of the container registry artifact pushed by the Deliver Artifacts stage.
         /// </summary>
-        public readonly string DeliveredArtifactHash;
+        public readonly string? DeliveredArtifactHash;
         /// <summary>
         /// The OCID of the artifact pushed by the Deliver Artifacts stage.
         /// </summary>
-        public readonly string DeliveredArtifactId;
+        public readonly string? DeliveredArtifactId;
         /// <summary>
         /// The OCID of the deployment artifact definition.
         /// </summary>
-        public readonly string DeployArtifactId;
+        public readonly string? DeployArtifactId;
         /// <summary>
         /// The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
         /// </summary>
-        public readonly string ImageUri;
+        public readonly string? ImageUri;
         /// <summary>
         /// Name of the output artifact defined in the build specification file.
         /// </summary>
-        public readonly string OutputArtifactName;
+        public readonly string? OutputArtifactName;
         /// <summary>
         /// Path of the repository where artifact was pushed
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Version of the artifact pushed
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetBuildRunBuildOutputDeliveredArtifactItemResult(
-            string artifactRepositoryId,
+            string? artifactRepositoryId,
 
-            string artifactType,
+            string? artifactType,
 
-            string deliveredArtifactHash,
+            string? deliveredArtifactHash,
 
-            string deliveredArtifactId,
+            string? deliveredArtifactId,
 
-            string deployArtifactId,
+            string? deployArtifactId,
 
-            string imageUri,
+            string? imageUri,
 
-            string outputArtifactName,
+            string? outputArtifactName,
 
-            string path,
+            string? path,
 
-            string version)
+            string? version)
         {
             ArtifactRepositoryId = artifactRepositoryId;
             ArtifactType = artifactType;

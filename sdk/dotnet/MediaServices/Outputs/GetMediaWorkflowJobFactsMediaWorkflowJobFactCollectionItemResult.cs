@@ -16,35 +16,35 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The body of the detail captured as JSON.
         /// </summary>
-        public readonly string Detail;
+        public readonly string? Detail;
         /// <summary>
         /// Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Unique MediaWorkflowJob identifier.
         /// </summary>
-        public readonly string MediaWorkflowJobId;
+        public readonly string? MediaWorkflowJobId;
         /// <summary>
         /// Unique name. It is read-only and generated for the fact.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Types of details to include.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(
-            string detail,
+            string? detail,
 
-            string key,
+            string? key,
 
-            string mediaWorkflowJobId,
+            string? mediaWorkflowJobId,
 
-            string name,
+            string? name,
 
-            string type)
+            string? type)
         {
             Detail = detail;
             Key = key;

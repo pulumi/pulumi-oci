@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Maximum number of days until an endpoint can be trusted
         /// </summary>
-        public readonly int MaxEndpointTrustDurationInDays;
+        public readonly int? MaxEndpointTrustDurationInDays;
         /// <summary>
         /// Maximum number of enrolled devices per user
         /// </summary>
-        public readonly int MaxEnrolledDevices;
+        public readonly int? MaxEnrolledDevices;
         /// <summary>
         /// An integer that represents the maximum number of failed MFA logins before an account is locked
         /// </summary>
-        public readonly int MaxIncorrectAttempts;
+        public readonly int? MaxIncorrectAttempts;
         /// <summary>
         /// Max number of trusted endpoints per user
         /// </summary>
-        public readonly int MaxTrustedEndpoints;
+        public readonly int? MaxTrustedEndpoints;
         /// <summary>
         /// Specify if trusted endpoints are enabled
         /// </summary>
-        public readonly bool TrustedEndpointsEnabled;
+        public readonly bool? TrustedEndpointsEnabled;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestrictionResult(
-            int maxEndpointTrustDurationInDays,
+            int? maxEndpointTrustDurationInDays,
 
-            int maxEnrolledDevices,
+            int? maxEnrolledDevices,
 
-            int maxIncorrectAttempts,
+            int? maxIncorrectAttempts,
 
-            int maxTrustedEndpoints,
+            int? maxTrustedEndpoints,
 
-            bool trustedEndpointsEnabled)
+            bool? trustedEndpointsEnabled)
         {
             MaxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
             MaxEnrolledDevices = maxEnrolledDevices;

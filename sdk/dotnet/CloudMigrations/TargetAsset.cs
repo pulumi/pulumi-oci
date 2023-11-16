@@ -134,13 +134,13 @@ namespace Pulumi.Oci.CloudMigrations
         /// (Updatable) Performance of the block volumes.
         /// </summary>
         [Output("blockVolumesPerformance")]
-        public Output<int> BlockVolumesPerformance { get; private set; } = null!;
+        public Output<int?> BlockVolumesPerformance { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Messages about the compatibility issues.
@@ -152,13 +152,13 @@ namespace Pulumi.Oci.CloudMigrations
         /// Created resource identifier
         /// </summary>
         [Output("createdResourceId")]
-        public Output<string> CreatedResourceId { get; private set; } = null!;
+        public Output<string?> CreatedResourceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Cost estimation description
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Description of the migration asset.
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// (Updatable) Microsoft license for the VM configuration.
         /// </summary>
         [Output("msLicense")]
-        public Output<string> MsLicense { get; private set; } = null!;
+        public Output<string?> MsLicense { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Preferred VM shape type that you provide.
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// The current state of the target asset.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
@@ -224,19 +224,19 @@ namespace Pulumi.Oci.CloudMigrations
         /// The time when the assessment was done. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeAssessed")]
-        public Output<string> TimeAssessed { get; private set; } = null!;
+        public Output<string?> TimeAssessed { get; private set; } = null!;
 
         /// <summary>
         /// The time when the target asset was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when the target asset was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of action to run when the instance is interrupted for eviction.

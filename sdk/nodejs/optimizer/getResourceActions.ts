@@ -122,7 +122,7 @@ export interface GetResourceActionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly includeOrganization?: boolean;
     /**
      * The name assigned to the resource.
@@ -136,7 +136,7 @@ export interface GetResourceActionsResult {
     /**
      * The list of resource_action_collection.
      */
-    readonly resourceActionCollections: outputs.Optimizer.GetResourceActionsResourceActionCollection[];
+    readonly resourceActionCollections?: outputs.Optimizer.GetResourceActionsResourceActionCollection[];
     /**
      * The kind of resource.
      */

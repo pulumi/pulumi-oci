@@ -55,7 +55,7 @@ class GetSupportedHostShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,18 +63,12 @@ class GetSupportedHostShapesResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSupportedHostShapesItemResult']:
-        """
-        A list of the supported compute shapes for ESXi hosts.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSupportedHostShapesItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the supported compute shape.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -106,25 +100,7 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
                               sddc_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedHostShapesResult:
     """
-    This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists supported compute shapes for ESXi hosts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
-        name=var["supported_host_shape_name"],
-        sddc_type=var["supported_host_shape_sddc_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +126,6 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
                                      sddc_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
     """
-    This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists supported compute shapes for ESXi hosts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
-        name=var["supported_host_shape_name"],
-        sddc_type=var["supported_host_shape_sddc_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

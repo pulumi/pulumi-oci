@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaintenanceRunEstimatedPatchingTime {
@@ -13,51 +15,51 @@ public final class GetMaintenanceRunEstimatedPatchingTime {
      * @return The estimated time required in minutes for database server patching.
      * 
      */
-    private Integer estimatedDbServerPatchingTime;
+    private @Nullable Integer estimatedDbServerPatchingTime;
     /**
      * @return The estimated time required in minutes for network switch patching.
      * 
      */
-    private Integer estimatedNetworkSwitchesPatchingTime;
+    private @Nullable Integer estimatedNetworkSwitchesPatchingTime;
     /**
      * @return The estimated time required in minutes for storage server patching.
      * 
      */
-    private Integer estimatedStorageServerPatchingTime;
+    private @Nullable Integer estimatedStorageServerPatchingTime;
     /**
      * @return The estimated total time required in minutes for all patching operations.
      * 
      */
-    private Integer totalEstimatedPatchingTime;
+    private @Nullable Integer totalEstimatedPatchingTime;
 
     private GetMaintenanceRunEstimatedPatchingTime() {}
     /**
      * @return The estimated time required in minutes for database server patching.
      * 
      */
-    public Integer estimatedDbServerPatchingTime() {
-        return this.estimatedDbServerPatchingTime;
+    public Optional<Integer> estimatedDbServerPatchingTime() {
+        return Optional.ofNullable(this.estimatedDbServerPatchingTime);
     }
     /**
      * @return The estimated time required in minutes for network switch patching.
      * 
      */
-    public Integer estimatedNetworkSwitchesPatchingTime() {
-        return this.estimatedNetworkSwitchesPatchingTime;
+    public Optional<Integer> estimatedNetworkSwitchesPatchingTime() {
+        return Optional.ofNullable(this.estimatedNetworkSwitchesPatchingTime);
     }
     /**
      * @return The estimated time required in minutes for storage server patching.
      * 
      */
-    public Integer estimatedStorageServerPatchingTime() {
-        return this.estimatedStorageServerPatchingTime;
+    public Optional<Integer> estimatedStorageServerPatchingTime() {
+        return Optional.ofNullable(this.estimatedStorageServerPatchingTime);
     }
     /**
      * @return The estimated total time required in minutes for all patching operations.
      * 
      */
-    public Integer totalEstimatedPatchingTime() {
-        return this.totalEstimatedPatchingTime;
+    public Optional<Integer> totalEstimatedPatchingTime() {
+        return Optional.ofNullable(this.totalEstimatedPatchingTime);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetMaintenanceRunEstimatedPatchingTime {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer estimatedDbServerPatchingTime;
-        private Integer estimatedNetworkSwitchesPatchingTime;
-        private Integer estimatedStorageServerPatchingTime;
-        private Integer totalEstimatedPatchingTime;
+        private @Nullable Integer estimatedDbServerPatchingTime;
+        private @Nullable Integer estimatedNetworkSwitchesPatchingTime;
+        private @Nullable Integer estimatedStorageServerPatchingTime;
+        private @Nullable Integer totalEstimatedPatchingTime;
         public Builder() {}
         public Builder(GetMaintenanceRunEstimatedPatchingTime defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetMaintenanceRunEstimatedPatchingTime {
         }
 
         @CustomType.Setter
-        public Builder estimatedDbServerPatchingTime(Integer estimatedDbServerPatchingTime) {
-            this.estimatedDbServerPatchingTime = Objects.requireNonNull(estimatedDbServerPatchingTime);
+        public Builder estimatedDbServerPatchingTime(@Nullable Integer estimatedDbServerPatchingTime) {
+            this.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedNetworkSwitchesPatchingTime(Integer estimatedNetworkSwitchesPatchingTime) {
-            this.estimatedNetworkSwitchesPatchingTime = Objects.requireNonNull(estimatedNetworkSwitchesPatchingTime);
+        public Builder estimatedNetworkSwitchesPatchingTime(@Nullable Integer estimatedNetworkSwitchesPatchingTime) {
+            this.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedStorageServerPatchingTime(Integer estimatedStorageServerPatchingTime) {
-            this.estimatedStorageServerPatchingTime = Objects.requireNonNull(estimatedStorageServerPatchingTime);
+        public Builder estimatedStorageServerPatchingTime(@Nullable Integer estimatedStorageServerPatchingTime) {
+            this.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
             return this;
         }
         @CustomType.Setter
-        public Builder totalEstimatedPatchingTime(Integer totalEstimatedPatchingTime) {
-            this.totalEstimatedPatchingTime = Objects.requireNonNull(totalEstimatedPatchingTime);
+        public Builder totalEstimatedPatchingTime(@Nullable Integer totalEstimatedPatchingTime) {
+            this.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
             return this;
         }
         public GetMaintenanceRunEstimatedPatchingTime build() {

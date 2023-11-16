@@ -16,26 +16,26 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The target branch for pull requests; not applicable for push requests.
         /// </summary>
-        public readonly string BaseRef;
+        public readonly string? BaseRef;
         public readonly ImmutableArray<Outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult> FileFilters;
         /// <summary>
         /// Branch for push event; source branch for pull requests.
         /// </summary>
-        public readonly string HeadRef;
+        public readonly string? HeadRef;
         /// <summary>
         /// The repository name for trigger events.
         /// </summary>
-        public readonly string RepositoryName;
+        public readonly string? RepositoryName;
 
         [OutputConstructor]
         private GetTriggersTriggerCollectionItemActionFilterIncludeResult(
-            string baseRef,
+            string? baseRef,
 
             ImmutableArray<Outputs.GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterResult> fileFilters,
 
-            string headRef,
+            string? headRef,
 
-            string repositoryName)
+            string? repositoryName)
         {
             BaseRef = baseRef;
             FileFilters = fileFilters;

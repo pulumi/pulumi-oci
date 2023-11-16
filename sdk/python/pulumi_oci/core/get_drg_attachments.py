@@ -66,41 +66,26 @@ class GetDrgAttachmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drgAttachments")
-    def drg_attachments(self) -> Sequence['outputs.GetDrgAttachmentsDrgAttachmentResult']:
-        """
-        The list of drg_attachments.
-        """
+    def drg_attachments(self) -> Optional[Sequence['outputs.GetDrgAttachmentsDrgAttachmentResult']]:
         return pulumi.get(self, "drg_attachments")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
     @pulumi.getter(name="drgRouteTableId")
     def drg_route_table_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-        """
         return pulumi.get(self, "drg_route_table_id")
 
     @property
@@ -110,7 +95,7 @@ class GetDrgAttachmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -124,17 +109,11 @@ class GetDrgAttachmentsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The DRG attachment's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -168,40 +147,7 @@ def get_drg_attachments(attachment_type: Optional[str] = None,
                         vcn_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrgAttachmentsResult:
     """
-    This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
-
-    Lists the `DrgAttachment` resource for the specified compartment. You can filter the
-    results by DRG, attached network, attachment type, DRG route table or
-    VCN route table.
-
-    The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
-    but you may request to list ALL attachments of ALL types.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=var["compartment_id"],
-        attachment_type=var["drg_attachment_attachment_type"],
-        display_name=var["drg_attachment_display_name"],
-        drg_id=oci_core_drg["test_drg"]["id"],
-        drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-        network_id=oci_core_network["test_network"]["id"],
-        state=var["drg_attachment_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str attachment_type: The type for the network resource attached to the DRG.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-    :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-    :param str network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attachmentType'] = attachment_type
@@ -242,39 +188,6 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
                                vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrgAttachmentsResult]:
     """
-    This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
-
-    Lists the `DrgAttachment` resource for the specified compartment. You can filter the
-    results by DRG, attached network, attachment type, DRG route table or
-    VCN route table.
-
-    The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
-    but you may request to list ALL attachments of ALL types.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=var["compartment_id"],
-        attachment_type=var["drg_attachment_attachment_type"],
-        display_name=var["drg_attachment_display_name"],
-        drg_id=oci_core_drg["test_drg"]["id"],
-        drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-        network_id=oci_core_network["test_network"]["id"],
-        state=var["drg_attachment_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str attachment_type: The type for the network resource attached to the DRG.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-    :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
-    :param str network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

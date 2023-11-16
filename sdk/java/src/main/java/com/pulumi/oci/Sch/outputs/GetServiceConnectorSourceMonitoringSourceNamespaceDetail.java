@@ -8,6 +8,8 @@ import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceMonitoringSourceNames
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
@@ -15,27 +17,27 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
      * @return The type descriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return The namespaces for the compartment-specific list.
      * 
      */
-    private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
+    private @Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
 
     private GetServiceConnectorSourceMonitoringSourceNamespaceDetail() {}
     /**
      * @return The type descriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return The namespaces for the compartment-specific list.
      * 
      */
     public List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces() {
-        return this.namespaces;
+        return this.namespaces == null ? List.of() : this.namespaces;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kind;
-        private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
+        private @Nullable String kind;
+        private @Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces;
         public Builder() {}
         public Builder(GetServiceConnectorSourceMonitoringSourceNamespaceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
         }
 
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaces(List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
-            this.namespaces = Objects.requireNonNull(namespaces);
+        public Builder namespaces(@Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace> namespaces) {
+            this.namespaces = namespaces;
             return this;
         }
         public Builder namespaces(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace... namespaces) {

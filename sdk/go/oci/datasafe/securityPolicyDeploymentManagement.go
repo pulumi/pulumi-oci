@@ -9,24 +9,23 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type SecurityPolicyDeploymentManagement struct {
 	pulumi.CustomResourceState
 
-	CompartmentId    pulumi.StringOutput `pulumi:"compartmentId"`
-	DefinedTags      pulumi.MapOutput    `pulumi:"definedTags"`
-	Description      pulumi.StringOutput `pulumi:"description"`
-	DisplayName      pulumi.StringOutput `pulumi:"displayName"`
-	FreeformTags     pulumi.MapOutput    `pulumi:"freeformTags"`
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	State            pulumi.StringOutput `pulumi:"state"`
-	SystemTags       pulumi.MapOutput    `pulumi:"systemTags"`
-	TargetId         pulumi.StringOutput `pulumi:"targetId"`
-	TimeCreated      pulumi.StringOutput `pulumi:"timeCreated"`
-	TimeUpdated      pulumi.StringOutput `pulumi:"timeUpdated"`
+	CompartmentId    pulumi.StringPtrOutput `pulumi:"compartmentId"`
+	DefinedTags      pulumi.MapOutput       `pulumi:"definedTags"`
+	Description      pulumi.StringPtrOutput `pulumi:"description"`
+	DisplayName      pulumi.StringPtrOutput `pulumi:"displayName"`
+	FreeformTags     pulumi.MapOutput       `pulumi:"freeformTags"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
+	SecurityPolicyId pulumi.StringPtrOutput `pulumi:"securityPolicyId"`
+	State            pulumi.StringPtrOutput `pulumi:"state"`
+	SystemTags       pulumi.MapOutput       `pulumi:"systemTags"`
+	TargetId         pulumi.StringPtrOutput `pulumi:"targetId"`
+	TimeCreated      pulumi.StringPtrOutput `pulumi:"timeCreated"`
+	TimeUpdated      pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewSecurityPolicyDeploymentManagement registers a new resource with the given unique name, arguments, and options.
@@ -134,12 +133,6 @@ func (i *SecurityPolicyDeploymentManagement) ToSecurityPolicyDeploymentManagemen
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyDeploymentManagementOutput)
 }
 
-func (i *SecurityPolicyDeploymentManagement) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[*SecurityPolicyDeploymentManagement]{
-		OutputState: i.ToSecurityPolicyDeploymentManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityPolicyDeploymentManagementArrayInput is an input type that accepts SecurityPolicyDeploymentManagementArray and SecurityPolicyDeploymentManagementArrayOutput values.
 // You can construct a concrete instance of `SecurityPolicyDeploymentManagementArrayInput` via:
 //
@@ -163,12 +156,6 @@ func (i SecurityPolicyDeploymentManagementArray) ToSecurityPolicyDeploymentManag
 
 func (i SecurityPolicyDeploymentManagementArray) ToSecurityPolicyDeploymentManagementArrayOutputWithContext(ctx context.Context) SecurityPolicyDeploymentManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyDeploymentManagementArrayOutput)
-}
-
-func (i SecurityPolicyDeploymentManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[[]*SecurityPolicyDeploymentManagement]{
-		OutputState: i.ToSecurityPolicyDeploymentManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityPolicyDeploymentManagementMapInput is an input type that accepts SecurityPolicyDeploymentManagementMap and SecurityPolicyDeploymentManagementMapOutput values.
@@ -196,12 +183,6 @@ func (i SecurityPolicyDeploymentManagementMap) ToSecurityPolicyDeploymentManagem
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyDeploymentManagementMapOutput)
 }
 
-func (i SecurityPolicyDeploymentManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[map[string]*SecurityPolicyDeploymentManagement]{
-		OutputState: i.ToSecurityPolicyDeploymentManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityPolicyDeploymentManagementOutput struct{ *pulumi.OutputState }
 
 func (SecurityPolicyDeploymentManagementOutput) ElementType() reflect.Type {
@@ -216,58 +197,52 @@ func (o SecurityPolicyDeploymentManagementOutput) ToSecurityPolicyDeploymentMana
 	return o
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[*SecurityPolicyDeploymentManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o SecurityPolicyDeploymentManagementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) SecurityPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o SecurityPolicyDeploymentManagementOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type SecurityPolicyDeploymentManagementArrayOutput struct{ *pulumi.OutputState }
@@ -282,12 +257,6 @@ func (o SecurityPolicyDeploymentManagementArrayOutput) ToSecurityPolicyDeploymen
 
 func (o SecurityPolicyDeploymentManagementArrayOutput) ToSecurityPolicyDeploymentManagementArrayOutputWithContext(ctx context.Context) SecurityPolicyDeploymentManagementArrayOutput {
 	return o
-}
-
-func (o SecurityPolicyDeploymentManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[[]*SecurityPolicyDeploymentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyDeploymentManagementArrayOutput) Index(i pulumi.IntInput) SecurityPolicyDeploymentManagementOutput {
@@ -308,12 +277,6 @@ func (o SecurityPolicyDeploymentManagementMapOutput) ToSecurityPolicyDeploymentM
 
 func (o SecurityPolicyDeploymentManagementMapOutput) ToSecurityPolicyDeploymentManagementMapOutputWithContext(ctx context.Context) SecurityPolicyDeploymentManagementMapOutput {
 	return o
-}
-
-func (o SecurityPolicyDeploymentManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[map[string]*SecurityPolicyDeploymentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyDeploymentManagementMapOutput) MapIndex(k pulumi.StringInput) SecurityPolicyDeploymentManagementOutput {

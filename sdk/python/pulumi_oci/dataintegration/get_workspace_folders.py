@@ -55,9 +55,6 @@ class GetWorkspaceFoldersResult:
     @property
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[str]:
-        """
-        The owning object key for this object.
-        """
         return pulumi.get(self, "aggregator_key")
 
     @property
@@ -72,15 +69,12 @@ class GetWorkspaceFoldersResult:
 
     @property
     @pulumi.getter(name="folderSummaryCollections")
-    def folder_summary_collections(self) -> Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionResult']:
-        """
-        The list of folder_summary_collection.
-        """
+    def folder_summary_collections(self) -> Optional[Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionResult']]:
         return pulumi.get(self, "folder_summary_collections")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,17 +83,11 @@ class GetWorkspaceFoldersResult:
     @property
     @pulumi.getter
     def identifiers(self) -> Optional[Sequence[str]]:
-        """
-        The identifier of the aggregator.
-        """
         return pulumi.get(self, "identifiers")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -139,31 +127,7 @@ def get_workspace_folders(aggregator_key: Optional[str] = None,
                           workspace_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceFoldersResult:
     """
-    This data source provides the list of Workspace Folders in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a list of folders in a project and provides options to filter the list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        aggregator_key=var["workspace_folder_aggregator_key"],
-        fields=var["workspace_folder_fields"],
-        identifiers=var["workspace_folder_identifier"],
-        name=var["workspace_folder_name"],
-        name_contains=var["workspace_folder_name_contains"])
-    ```
-
-
-    :param str aggregator_key: Used to filter by the project or the folder object.
-    :param Sequence[str] fields: Specifies the fields to get for an object.
-    :param Sequence[str] identifiers: Used to filter by the identifier of the object.
-    :param str name: Used to filter by the name of the object.
-    :param str name_contains: This parameter can be used to filter objects by the names that match partially or fully with the given value.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['aggregatorKey'] = aggregator_key
@@ -198,30 +162,6 @@ def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[
                                  workspace_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceFoldersResult]:
     """
-    This data source provides the list of Workspace Folders in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a list of folders in a project and provides options to filter the list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_folders = oci.DataIntegration.get_workspace_folders(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        aggregator_key=var["workspace_folder_aggregator_key"],
-        fields=var["workspace_folder_fields"],
-        identifiers=var["workspace_folder_identifier"],
-        name=var["workspace_folder_name"],
-        name_contains=var["workspace_folder_name_contains"])
-    ```
-
-
-    :param str aggregator_key: Used to filter by the project or the folder object.
-    :param Sequence[str] fields: Specifies the fields to get for an object.
-    :param Sequence[str] identifiers: Used to filter by the identifier of the object.
-    :param str name: Used to filter by the name of the object.
-    :param str name_contains: This parameter can be used to filter objects by the names that match partially or fully with the given value.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

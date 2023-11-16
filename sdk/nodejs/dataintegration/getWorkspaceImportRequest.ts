@@ -53,65 +53,65 @@ export interface GetWorkspaceImportRequestResult {
     /**
      * The name of the Object Storage Bucket where the objects will be imported from
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * Name of the user who initiated import request.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Contains key of the error
      */
-    readonly errorMessages: {[key: string]: any};
+    readonly errorMessages?: {[key: string]: any};
     /**
      * Name of the zip file from which objects will be imported.
      */
-    readonly fileName: string;
-    readonly id: string;
+    readonly fileName?: string;
+    readonly id?: string;
     /**
      * Import Objects Conflict resolution.
      */
-    readonly importConflictResolutions: outputs.DataIntegration.GetWorkspaceImportRequestImportConflictResolution[];
+    readonly importConflictResolutions?: outputs.DataIntegration.GetWorkspaceImportRequestImportConflictResolution[];
     readonly importRequestKey: string;
     /**
      * The array of imported object details.
      */
-    readonly importedObjects: outputs.DataIntegration.GetWorkspaceImportRequestImportedObject[];
+    readonly importedObjects?: outputs.DataIntegration.GetWorkspaceImportRequestImportedObject[];
     /**
      * Import object request key
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * Name of the import request.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Key of the object inside which all the objects will be imported
      */
-    readonly objectKeyForImport: string;
+    readonly objectKeyForImport?: string;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    readonly objectStorageRegion: string;
+    readonly objectStorageRegion?: string;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    readonly objectStorageTenancyId: string;
+    readonly objectStorageTenancyId?: string;
     /**
      * Import Objects request status.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Time at which the request was completely processed.
      */
-    readonly timeEndedInMillis: string;
+    readonly timeEndedInMillis?: string;
     /**
      * Time at which the request started getting processed.
      */
-    readonly timeStartedInMillis: string;
+    readonly timeStartedInMillis?: string;
     /**
      * Number of objects that are imported.
      */
-    readonly totalImportedObjectCount: number;
+    readonly totalImportedObjectCount?: number;
     readonly workspaceId: string;
 }
 /**

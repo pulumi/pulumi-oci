@@ -21,6 +21,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,98 +99,98 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="applicationVersion", refs={Integer.class}, tree="[0]")
-    private Output<Integer> applicationVersion;
+    private Output</* @Nullable */ Integer> applicationVersion;
 
     /**
      * @return The source application version of the application.
      * 
      */
-    public Output<Integer> applicationVersion() {
-        return this.applicationVersion;
+    public Output<Optional<Integer>> applicationVersion() {
+        return Codegen.optional(this.applicationVersion);
     }
     /**
      * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * A list of dependent objects in this patch.
      * 
      */
     @Export(name="dependentObjectMetadatas", refs={List.class,WorkspaceApplicationDependentObjectMetadata.class}, tree="[0,1]")
-    private Output<List<WorkspaceApplicationDependentObjectMetadata>> dependentObjectMetadatas;
+    private Output</* @Nullable */ List<WorkspaceApplicationDependentObjectMetadata>> dependentObjectMetadatas;
 
     /**
      * @return A list of dependent objects in this patch.
      * 
      */
-    public Output<List<WorkspaceApplicationDependentObjectMetadata>> dependentObjectMetadatas() {
-        return this.dependentObjectMetadatas;
+    public Output<Optional<List<WorkspaceApplicationDependentObjectMetadata>>> dependentObjectMetadatas() {
+        return Codegen.optional(this.dependentObjectMetadatas);
     }
     /**
      * (Updatable) Detailed description for the object.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Detailed description for the object.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -210,42 +211,42 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return The identifying key for the object.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> keyMap;
+    private Output</* @Nullable */ Map<String,Object>> keyMap;
 
     /**
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Output<Map<String,Object>> keyMap() {
-        return this.keyMap;
+    public Output<Optional<Map<String,Object>>> keyMap() {
+        return Codegen.optional(this.keyMap);
     }
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Export(name="metadatas", refs={List.class,WorkspaceApplicationMetadata.class}, tree="[0,1]")
-    private Output<List<WorkspaceApplicationMetadata>> metadatas;
+    private Output</* @Nullable */ List<WorkspaceApplicationMetadata>> metadatas;
 
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    public Output<List<WorkspaceApplicationMetadata>> metadatas() {
-        return this.metadatas;
+    public Output<Optional<List<WorkspaceApplicationMetadata>>> metadatas() {
+        return Codegen.optional(this.metadatas);
     }
     /**
      * (Updatable) The type of the application.
@@ -266,14 +267,14 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="modelVersion", refs={String.class}, tree="[0]")
-    private Output<String> modelVersion;
+    private Output</* @Nullable */ String> modelVersion;
 
     /**
      * @return (Updatable) The object&#39;s model version.
      * 
      */
-    public Output<String> modelVersion() {
-        return this.modelVersion;
+    public Output<Optional<String>> modelVersion() {
+        return Codegen.optional(this.modelVersion);
     }
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -294,140 +295,140 @@ public class WorkspaceApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="objectStatus", refs={Integer.class}, tree="[0]")
-    private Output<Integer> objectStatus;
+    private Output</* @Nullable */ Integer> objectStatus;
 
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    public Output<Integer> objectStatus() {
-        return this.objectStatus;
+    public Output<Optional<Integer>> objectStatus() {
+        return Codegen.optional(this.objectStatus);
     }
     /**
      * The object version.
      * 
      */
     @Export(name="objectVersion", refs={Integer.class}, tree="[0]")
-    private Output<Integer> objectVersion;
+    private Output</* @Nullable */ Integer> objectVersion;
 
     /**
      * @return The object version.
      * 
      */
-    public Output<Integer> objectVersion() {
-        return this.objectVersion;
+    public Output<Optional<Integer>> objectVersion() {
+        return Codegen.optional(this.objectVersion);
     }
     /**
      * A reference to the object&#39;s parent.
      * 
      */
     @Export(name="parentReves", refs={List.class,WorkspaceApplicationParentRef.class}, tree="[0,1]")
-    private Output<List<WorkspaceApplicationParentRef>> parentReves;
+    private Output</* @Nullable */ List<WorkspaceApplicationParentRef>> parentReves;
 
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
-    public Output<List<WorkspaceApplicationParentRef>> parentReves() {
-        return this.parentReves;
+    public Output<Optional<List<WorkspaceApplicationParentRef>>> parentReves() {
+        return Codegen.optional(this.parentReves);
     }
     /**
      * A list of objects that are published or unpublished in this patch.
      * 
      */
     @Export(name="publishedObjectMetadatas", refs={List.class,WorkspaceApplicationPublishedObjectMetadata.class}, tree="[0,1]")
-    private Output<List<WorkspaceApplicationPublishedObjectMetadata>> publishedObjectMetadatas;
+    private Output</* @Nullable */ List<WorkspaceApplicationPublishedObjectMetadata>> publishedObjectMetadatas;
 
     /**
      * @return A list of objects that are published or unpublished in this patch.
      * 
      */
-    public Output<List<WorkspaceApplicationPublishedObjectMetadata>> publishedObjectMetadatas() {
-        return this.publishedObjectMetadatas;
+    public Output<Optional<List<WorkspaceApplicationPublishedObjectMetadata>>> publishedObjectMetadatas() {
+        return Codegen.optional(this.publishedObjectMetadatas);
     }
     /**
      * Information about the object and its parent.
      * 
      */
     @Export(name="registryMetadata", refs={WorkspaceApplicationRegistryMetadata.class}, tree="[0]")
-    private Output<WorkspaceApplicationRegistryMetadata> registryMetadata;
+    private Output</* @Nullable */ WorkspaceApplicationRegistryMetadata> registryMetadata;
 
     /**
      * @return Information about the object and its parent.
      * 
      */
-    public Output<WorkspaceApplicationRegistryMetadata> registryMetadata() {
-        return this.registryMetadata;
+    public Output<Optional<WorkspaceApplicationRegistryMetadata>> registryMetadata() {
+        return Codegen.optional(this.registryMetadata);
     }
     /**
      * The information about the application.
      * 
      */
     @Export(name="sourceApplicationInfo", refs={WorkspaceApplicationSourceApplicationInfo.class}, tree="[0]")
-    private Output<WorkspaceApplicationSourceApplicationInfo> sourceApplicationInfo;
+    private Output</* @Nullable */ WorkspaceApplicationSourceApplicationInfo> sourceApplicationInfo;
 
     /**
      * @return The information about the application.
      * 
      */
-    public Output<WorkspaceApplicationSourceApplicationInfo> sourceApplicationInfo() {
-        return this.sourceApplicationInfo;
+    public Output<Optional<WorkspaceApplicationSourceApplicationInfo>> sourceApplicationInfo() {
+        return Codegen.optional(this.sourceApplicationInfo);
     }
     /**
      * (Updatable) The current state of the workspace.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The current state of the workspace.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the application was created, in the timestamp format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the application was created, in the timestamp format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the application was patched, in the timestamp format defined by RFC3339.
      * 
      */
     @Export(name="timePatched", refs={String.class}, tree="[0]")
-    private Output<String> timePatched;
+    private Output</* @Nullable */ String> timePatched;
 
     /**
      * @return The date and time the application was patched, in the timestamp format defined by RFC3339.
      * 
      */
-    public Output<String> timePatched() {
-        return this.timePatched;
+    public Output<Optional<String>> timePatched() {
+        return Codegen.optional(this.timePatched);
     }
     /**
      * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The workspace ID.

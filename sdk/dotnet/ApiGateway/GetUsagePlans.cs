@@ -161,7 +161,7 @@ namespace Pulumi.Oci.ApiGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the usage plan.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.ApiGateway
 
             ImmutableArray<Outputs.GetUsagePlansFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

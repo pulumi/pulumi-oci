@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The network number from which VIPs are obtained.
         /// </summary>
-        public readonly int NetworkNumber;
+        public readonly int? NetworkNumber;
         /// <summary>
         /// The network type.
         /// </summary>
-        public readonly string NetworkType;
+        public readonly string? NetworkType;
         /// <summary>
         /// The subnet for the network.
         /// </summary>
-        public readonly string Subnet;
+        public readonly string? Subnet;
 
         [OutputConstructor]
         private GetExternalClusterNetworkConfigurationResult(
-            int networkNumber,
+            int? networkNumber,
 
-            string networkType,
+            string? networkType,
 
-            string subnet)
+            string? subnet)
         {
             NetworkNumber = networkNumber;
             NetworkType = networkType;

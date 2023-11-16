@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Backend Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -70,14 +69,14 @@ type GetBackendHealthResult struct {
 	// A list of the most recent health check results returned for the specified backend server.
 	HealthCheckResults []GetBackendHealthHealthCheckResult `pulumi:"healthCheckResults"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	// The general health status of the specified backend server as reported by the primary and standby load balancers.
 	// *   **OK:** Both health checks returned `OK`.
 	// *   **WARNING:** One health check returned `OK` and one did not.
 	// *   **CRITICAL:** Neither health check returned `OK`.
 	// *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 func GetBackendHealthOutput(ctx *pulumi.Context, args GetBackendHealthOutputArgs, opts ...pulumi.InvokeOption) GetBackendHealthResultOutput {
@@ -122,12 +121,6 @@ func (o GetBackendHealthResultOutput) ToGetBackendHealthResultOutputWithContext(
 	return o
 }
 
-func (o GetBackendHealthResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendHealthResult] {
-	return pulumix.Output[GetBackendHealthResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendHealthResultOutput) BackendName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendHealthResult) string { return v.BackendName }).(pulumi.StringOutput)
 }
@@ -142,8 +135,8 @@ func (o GetBackendHealthResultOutput) HealthCheckResults() GetBackendHealthHealt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBackendHealthResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendHealthResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBackendHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
@@ -155,8 +148,8 @@ func (o GetBackendHealthResultOutput) LoadBalancerId() pulumi.StringOutput {
 // *   **WARNING:** One health check returned `OK` and one did not.
 // *   **CRITICAL:** Neither health check returned `OK`.
 // *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
-func (o GetBackendHealthResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetBackendHealthResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 func init() {

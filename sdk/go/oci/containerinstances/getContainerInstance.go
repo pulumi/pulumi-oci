@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
@@ -60,50 +59,50 @@ type GetContainerInstanceArgs struct {
 // A collection of values returned by getContainerInstance.
 type GetContainerInstanceResult struct {
 	// The availability domain to place the container instance.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of containers on the container instance.
-	ContainerCount      int    `pulumi:"containerCount"`
+	ContainerCount      *int   `pulumi:"containerCount"`
 	ContainerInstanceId string `pulumi:"containerInstanceId"`
 	// The container restart policy is applied for all containers in container instance.
-	ContainerRestartPolicy string `pulumi:"containerRestartPolicy"`
+	ContainerRestartPolicy *string `pulumi:"containerRestartPolicy"`
 	// The containers on the container instance.
 	Containers []GetContainerInstanceContainer `pulumi:"containers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// DNS settings for containers.
 	DnsConfigs []GetContainerInstanceDnsConfig `pulumi:"dnsConfigs"`
 	// The fault domain to place the container instance.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-	GracefulShutdownTimeoutInSeconds string `pulumi:"gracefulShutdownTimeoutInSeconds"`
+	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// An OCID that cannot be changed.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets []GetContainerInstanceImagePullSecret `pulumi:"imagePullSecrets"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
 	ShapeConfigs []GetContainerInstanceShapeConfig `pulumi:"shapeConfigs"`
 	// The current state of the container instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The virtual networks available to the containers in the container instance.
 	Vnics []GetContainerInstanceVnic `pulumi:"vnics"`
 	// The number of volumes that are attached to the container instance.
-	VolumeCount int `pulumi:"volumeCount"`
+	VolumeCount *int `pulumi:"volumeCount"`
 	// A volume is a directory with data that is accessible across multiple containers in a container instance.
 	Volumes []GetContainerInstanceVolume `pulumi:"volumes"`
 }
@@ -146,25 +145,19 @@ func (o GetContainerInstanceResultOutput) ToGetContainerInstanceResultOutputWith
 	return o
 }
 
-func (o GetContainerInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceResult] {
-	return pulumix.Output[GetContainerInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain to place the container instance.
-func (o GetContainerInstanceResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetContainerInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of containers on the container instance.
-func (o GetContainerInstanceResultOutput) ContainerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) int { return v.ContainerCount }).(pulumi.IntOutput)
+func (o GetContainerInstanceResultOutput) ContainerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *int { return v.ContainerCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetContainerInstanceResultOutput) ContainerInstanceId() pulumi.StringOutput {
@@ -172,8 +165,8 @@ func (o GetContainerInstanceResultOutput) ContainerInstanceId() pulumi.StringOut
 }
 
 // The container restart policy is applied for all containers in container instance.
-func (o GetContainerInstanceResultOutput) ContainerRestartPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.ContainerRestartPolicy }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) ContainerRestartPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.ContainerRestartPolicy }).(pulumi.StringPtrOutput)
 }
 
 // The containers on the container instance.
@@ -187,8 +180,8 @@ func (o GetContainerInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetContainerInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // DNS settings for containers.
@@ -197,8 +190,8 @@ func (o GetContainerInstanceResultOutput) DnsConfigs() GetContainerInstanceDnsCo
 }
 
 // The fault domain to place the container instance.
-func (o GetContainerInstanceResultOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -207,13 +200,13 @@ func (o GetContainerInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-func (o GetContainerInstanceResultOutput) GracefulShutdownTimeoutInSeconds() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.GracefulShutdownTimeoutInSeconds }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) GracefulShutdownTimeoutInSeconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.GracefulShutdownTimeoutInSeconds }).(pulumi.StringPtrOutput)
 }
 
 // An OCID that cannot be changed.
-func (o GetContainerInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The image pulls secrets so you can access private registry to pull container images.
@@ -222,13 +215,13 @@ func (o GetContainerInstanceResultOutput) ImagePullSecrets() GetContainerInstanc
 }
 
 // A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-func (o GetContainerInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
-func (o GetContainerInstanceResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
@@ -237,8 +230,8 @@ func (o GetContainerInstanceResultOutput) ShapeConfigs() GetContainerInstanceSha
 }
 
 // The current state of the container instance.
-func (o GetContainerInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
@@ -247,13 +240,13 @@ func (o GetContainerInstanceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetContainerInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o GetContainerInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetContainerInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The virtual networks available to the containers in the container instance.
@@ -262,8 +255,8 @@ func (o GetContainerInstanceResultOutput) Vnics() GetContainerInstanceVnicArrayO
 }
 
 // The number of volumes that are attached to the container instance.
-func (o GetContainerInstanceResultOutput) VolumeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerInstanceResult) int { return v.VolumeCount }).(pulumi.IntOutput)
+func (o GetContainerInstanceResultOutput) VolumeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) *int { return v.VolumeCount }).(pulumi.IntPtrOutput)
 }
 
 // A volume is a directory with data that is accessible across multiple containers in a container instance.

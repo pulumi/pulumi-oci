@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
         /// <summary>
         /// A unique name for the target AnnotationFormat for the Dataset.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetAnnotationFormatItemResult(string name)
+        private GetAnnotationFormatItemResult(string? name)
         {
             Name = name;
         }

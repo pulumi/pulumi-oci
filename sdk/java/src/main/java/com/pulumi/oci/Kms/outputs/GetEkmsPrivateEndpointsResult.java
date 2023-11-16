@@ -9,6 +9,7 @@ import com.pulumi.oci.Kms.outputs.GetEkmsPrivateEndpointsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -22,13 +23,13 @@ public final class GetEkmsPrivateEndpointsResult {
      * @return The list of ekms_private_endpoints.
      * 
      */
-    private List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints;
+    private @Nullable List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints;
     private @Nullable List<GetEkmsPrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetEkmsPrivateEndpointsResult() {}
     /**
@@ -43,7 +44,7 @@ public final class GetEkmsPrivateEndpointsResult {
      * 
      */
     public List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints() {
-        return this.ekmsPrivateEndpoints;
+        return this.ekmsPrivateEndpoints == null ? List.of() : this.ekmsPrivateEndpoints;
     }
     public List<GetEkmsPrivateEndpointsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -52,8 +53,8 @@ public final class GetEkmsPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -66,9 +67,9 @@ public final class GetEkmsPrivateEndpointsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints;
+        private @Nullable List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints;
         private @Nullable List<GetEkmsPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetEkmsPrivateEndpointsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,8 +85,8 @@ public final class GetEkmsPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ekmsPrivateEndpoints(List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints) {
-            this.ekmsPrivateEndpoints = Objects.requireNonNull(ekmsPrivateEndpoints);
+        public Builder ekmsPrivateEndpoints(@Nullable List<GetEkmsPrivateEndpointsEkmsPrivateEndpoint> ekmsPrivateEndpoints) {
+            this.ekmsPrivateEndpoints = ekmsPrivateEndpoints;
             return this;
         }
         public Builder ekmsPrivateEndpoints(GetEkmsPrivateEndpointsEkmsPrivateEndpoint... ekmsPrivateEndpoints) {
@@ -100,8 +101,8 @@ public final class GetEkmsPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetEkmsPrivateEndpointsResult build() {

@@ -108,84 +108,84 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="autonomousDataStoragePercentage", refs={Double.class}, tree="[0]")
-    private Output<Double> autonomousDataStoragePercentage;
+    private Output</* @Nullable */ Double> autonomousDataStoragePercentage;
 
     /**
      * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
      * 
      */
-    public Output<Double> autonomousDataStoragePercentage() {
-        return this.autonomousDataStoragePercentage;
+    public Output<Optional<Double>> autonomousDataStoragePercentage() {
+        return Codegen.optional(this.autonomousDataStoragePercentage);
     }
     /**
      * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Export(name="autonomousDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> autonomousDataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> autonomousDataStorageSizeInTbs;
 
     /**
      * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
-    public Output<Double> autonomousDataStorageSizeInTbs() {
-        return this.autonomousDataStorageSizeInTbs;
+    public Output<Optional<Double>> autonomousDataStorageSizeInTbs() {
+        return Codegen.optional(this.autonomousDataStorageSizeInTbs);
     }
     /**
      * The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the availability domain that the cloud Autonomous VM cluster is located in.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
     @Export(name="availableAutonomousDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> availableAutonomousDataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> availableAutonomousDataStorageSizeInTbs;
 
     /**
      * @return The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    public Output<Double> availableAutonomousDataStorageSizeInTbs() {
-        return this.availableAutonomousDataStorageSizeInTbs;
+    public Output<Optional<Double>> availableAutonomousDataStorageSizeInTbs() {
+        return Codegen.optional(this.availableAutonomousDataStorageSizeInTbs);
     }
     /**
      * The number of Autonomous Container Databases that can be created with the currently available local storage.
      * 
      */
     @Export(name="availableContainerDatabases", refs={Integer.class}, tree="[0]")
-    private Output<Integer> availableContainerDatabases;
+    private Output</* @Nullable */ Integer> availableContainerDatabases;
 
     /**
      * @return The number of Autonomous Container Databases that can be created with the currently available local storage.
      * 
      */
-    public Output<Integer> availableContainerDatabases() {
-        return this.availableContainerDatabases;
+    public Output<Optional<Integer>> availableContainerDatabases() {
+        return Codegen.optional(this.availableContainerDatabases);
     }
     /**
      * CPU cores available for allocation to Autonomous Databases.
      * 
      */
     @Export(name="availableCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> availableCpus;
+    private Output</* @Nullable */ Double> availableCpus;
 
     /**
      * @return CPU cores available for allocation to Autonomous Databases.
      * 
      */
-    public Output<Double> availableCpus() {
-        return this.availableCpus;
+    public Output<Optional<Double>> availableCpus() {
+        return Codegen.optional(this.availableCpus);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
@@ -206,14 +206,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="clusterTimeZone", refs={String.class}, tree="[0]")
-    private Output<String> clusterTimeZone;
+    private Output</* @Nullable */ String> clusterTimeZone;
 
     /**
      * @return The time zone to use for the Cloud Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
-    public Output<String> clusterTimeZone() {
-        return this.clusterTimeZone;
+    public Output<Optional<String>> clusterTimeZone() {
+        return Codegen.optional(this.clusterTimeZone);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -234,140 +234,140 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
-    private Output<String> computeModel;
+    private Output</* @Nullable */ String> computeModel;
 
     /**
      * @return The compute model of the Cloud Autonomous VM Cluster.
      * 
      */
-    public Output<String> computeModel() {
-        return this.computeModel;
+    public Output<Optional<String>> computeModel() {
+        return Codegen.optional(this.computeModel);
     }
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpuCoreCount;
+    private Output</* @Nullable */ Integer> cpuCoreCount;
 
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
-    public Output<Integer> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Output<Optional<Integer>> cpuCoreCount() {
+        return Codegen.optional(this.cpuCoreCount);
     }
     /**
      * The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     @Export(name="cpuCoreCountPerNode", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpuCoreCountPerNode;
+    private Output</* @Nullable */ Integer> cpuCoreCountPerNode;
 
     /**
      * @return The number of CPU cores to be enabled per VM cluster node.
      * 
      */
-    public Output<Integer> cpuCoreCountPerNode() {
-        return this.cpuCoreCountPerNode;
+    public Output<Optional<Integer>> cpuCoreCountPerNode() {
+        return Codegen.optional(this.cpuCoreCountPerNode);
     }
     /**
      * The percentage of total number of CPUs used in an Autonomous VM Cluster.
      * 
      */
     @Export(name="cpuPercentage", refs={Double.class}, tree="[0]")
-    private Output<Double> cpuPercentage;
+    private Output</* @Nullable */ Double> cpuPercentage;
 
     /**
      * @return The percentage of total number of CPUs used in an Autonomous VM Cluster.
      * 
      */
-    public Output<Double> cpuPercentage() {
-        return this.cpuPercentage;
+    public Output<Optional<Double>> cpuPercentage() {
+        return Codegen.optional(this.cpuPercentage);
     }
     /**
      * The total data storage allocated, in gigabytes (GB).
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Double.class}, tree="[0]")
-    private Output<Double> dataStorageSizeInGb;
+    private Output</* @Nullable */ Double> dataStorageSizeInGb;
 
     /**
      * @return The total data storage allocated, in gigabytes (GB).
      * 
      */
-    public Output<Double> dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Output<Optional<Double>> dataStorageSizeInGb() {
+        return Codegen.optional(this.dataStorageSizeInGb);
     }
     /**
      * The total data storage allocated, in terabytes (TB).
      * 
      */
     @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> dataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> dataStorageSizeInTbs;
 
     /**
      * @return The total data storage allocated, in terabytes (TB).
      * 
      */
-    public Output<Double> dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Output<Optional<Double>> dataStorageSizeInTbs() {
+        return Codegen.optional(this.dataStorageSizeInTbs);
     }
     /**
      * The local node storage allocated in GBs.
      * 
      */
     @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dbNodeStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> dbNodeStorageSizeInGbs;
 
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Output<Integer> dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Output<Optional<Integer>> dbNodeStorageSizeInGbs() {
+        return Codegen.optional(this.dbNodeStorageSizeInGbs);
     }
     /**
      * The list of database servers.
      * 
      */
     @Export(name="dbServers", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> dbServers;
+    private Output</* @Nullable */ List<String>> dbServers;
 
     /**
      * @return The list of database servers.
      * 
      */
-    public Output<List<String>> dbServers() {
-        return this.dbServers;
+    public Output<Optional<List<String>>> dbServers() {
+        return Codegen.optional(this.dbServers);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) User defined description of the cloud Autonomous VM cluster.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) User defined description of the cloud Autonomous VM cluster.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -388,84 +388,84 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
-    private Output<String> domain;
+    private Output</* @Nullable */ String> domain;
 
     /**
      * @return The domain name for the cloud Autonomous VM cluster.
      * 
      */
-    public Output<String> domain() {
-        return this.domain;
+    public Output<Optional<String>> domain() {
+        return Codegen.optional(this.domain);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The hostname for the cloud Autonomous VM cluster.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
-    private Output<String> hostname;
+    private Output</* @Nullable */ String> hostname;
 
     /**
      * @return The hostname for the cloud Autonomous VM cluster.
      * 
      */
-    public Output<String> hostname() {
-        return this.hostname;
+    public Output<Optional<String>> hostname() {
+        return Codegen.optional(this.hostname);
     }
     /**
      * Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
     @Export(name="isMtlsEnabledVmCluster", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMtlsEnabledVmCluster;
+    private Output</* @Nullable */ Boolean> isMtlsEnabledVmCluster;
 
     /**
      * @return Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
      * 
      */
-    public Output<Boolean> isMtlsEnabledVmCluster() {
-        return this.isMtlsEnabledVmCluster;
+    public Output<Optional<Boolean>> isMtlsEnabledVmCluster() {
+        return Codegen.optional(this.isMtlsEnabledVmCluster);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
     @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> lastMaintenanceRunId;
+    private Output</* @Nullable */ String> lastMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public Output<String> lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Output<Optional<String>> lastMaintenanceRunId() {
+        return Codegen.optional(this.lastMaintenanceRunId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
      * 
      */
     @Export(name="lastUpdateHistoryEntryId", refs={String.class}, tree="[0]")
-    private Output<String> lastUpdateHistoryEntryId;
+    private Output</* @Nullable */ String> lastUpdateHistoryEntryId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
      * 
      */
-    public Output<String> lastUpdateHistoryEntryId() {
-        return this.lastUpdateHistoryEntryId;
+    public Output<Optional<String>> lastUpdateHistoryEntryId() {
+        return Codegen.optional(this.lastUpdateHistoryEntryId);
     }
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
@@ -474,7 +474,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
@@ -482,22 +482,22 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -518,84 +518,84 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="maintenanceWindows", refs={List.class,CloudAutonomousVmClusterMaintenanceWindow.class}, tree="[0,1]")
-    private Output<List<CloudAutonomousVmClusterMaintenanceWindow>> maintenanceWindows;
+    private Output</* @Nullable */ List<CloudAutonomousVmClusterMaintenanceWindow>> maintenanceWindows;
 
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    public Output<List<CloudAutonomousVmClusterMaintenanceWindow>> maintenanceWindows() {
-        return this.maintenanceWindows;
+    public Output<Optional<List<CloudAutonomousVmClusterMaintenanceWindow>>> maintenanceWindows() {
+        return Codegen.optional(this.maintenanceWindows);
     }
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memoryPerOracleComputeUnitInGbs;
+    private Output</* @Nullable */ Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
      * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
-    public Output<Integer> memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Output<Optional<Integer>> memoryPerOracleComputeUnitInGbs() {
+        return Codegen.optional(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * The memory allocated in GBs.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
     @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> nextMaintenanceRunId;
+    private Output</* @Nullable */ String> nextMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public Output<String> nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Output<Optional<String>> nextMaintenanceRunId() {
+        return Codegen.optional(this.nextMaintenanceRunId);
     }
     /**
      * The number of database servers in the cloud VM cluster.
      * 
      */
     @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> nodeCount;
+    private Output</* @Nullable */ Integer> nodeCount;
 
     /**
      * @return The number of database servers in the cloud VM cluster.
      * 
      */
-    public Output<Integer> nodeCount() {
-        return this.nodeCount;
+    public Output<Optional<Integer>> nodeCount() {
+        return Codegen.optional(this.nodeCount);
     }
     /**
      * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
     @Export(name="nonProvisionableAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
-    private Output<Integer> nonProvisionableAutonomousContainerDatabases;
+    private Output</* @Nullable */ Integer> nonProvisionableAutonomousContainerDatabases;
 
     /**
      * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Output<Integer> nonProvisionableAutonomousContainerDatabases() {
-        return this.nonProvisionableAutonomousContainerDatabases;
+    public Output<Optional<Integer>> nonProvisionableAutonomousContainerDatabases() {
+        return Codegen.optional(this.nonProvisionableAutonomousContainerDatabases);
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -603,71 +603,71 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     @Export(name="ocpuCount", refs={Double.class}, tree="[0]")
-    private Output<Double> ocpuCount;
+    private Output</* @Nullable */ Double> ocpuCount;
 
     /**
      * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
-    public Output<Double> ocpuCount() {
-        return this.ocpuCount;
+    public Output<Optional<Double>> ocpuCount() {
+        return Codegen.optional(this.ocpuCount);
     }
     /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
     @Export(name="provisionableAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
-    private Output<Integer> provisionableAutonomousContainerDatabases;
+    private Output</* @Nullable */ Integer> provisionableAutonomousContainerDatabases;
 
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Output<Integer> provisionableAutonomousContainerDatabases() {
-        return this.provisionableAutonomousContainerDatabases;
+    public Output<Optional<Integer>> provisionableAutonomousContainerDatabases() {
+        return Codegen.optional(this.provisionableAutonomousContainerDatabases);
     }
     /**
      * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
     @Export(name="provisionedAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
-    private Output<Integer> provisionedAutonomousContainerDatabases;
+    private Output</* @Nullable */ Integer> provisionedAutonomousContainerDatabases;
 
     /**
      * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Output<Integer> provisionedAutonomousContainerDatabases() {
-        return this.provisionedAutonomousContainerDatabases;
+    public Output<Optional<Integer>> provisionedAutonomousContainerDatabases() {
+        return Codegen.optional(this.provisionedAutonomousContainerDatabases);
     }
     /**
      * The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
     @Export(name="provisionedCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> provisionedCpus;
+    private Output</* @Nullable */ Double> provisionedCpus;
 
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    public Output<Double> provisionedCpus() {
-        return this.provisionedCpus;
+    public Output<Optional<Double>> provisionedCpus() {
+        return Codegen.optional(this.provisionedCpus);
     }
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -676,7 +676,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="reclaimableCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> reclaimableCpus;
+    private Output</* @Nullable */ Double> reclaimableCpus;
 
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -684,78 +684,78 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Output<Double> reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Output<Optional<Double>> reclaimableCpus() {
+        return Codegen.optional(this.reclaimableCpus);
     }
     /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
     @Export(name="reservedCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> reservedCpus;
+    private Output</* @Nullable */ Double> reservedCpus;
 
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    public Output<Double> reservedCpus() {
-        return this.reservedCpus;
+    public Output<Optional<Double>> reservedCpus() {
+        return Codegen.optional(this.reservedCpus);
     }
     /**
      * The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
     @Export(name="scanListenerPortNonTls", refs={Integer.class}, tree="[0]")
-    private Output<Integer> scanListenerPortNonTls;
+    private Output</* @Nullable */ Integer> scanListenerPortNonTls;
 
     /**
      * @return The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
-    public Output<Integer> scanListenerPortNonTls() {
-        return this.scanListenerPortNonTls;
+    public Output<Optional<Integer>> scanListenerPortNonTls() {
+        return Codegen.optional(this.scanListenerPortNonTls);
     }
     /**
      * The SCAN Listener TLS port. Default is 2484.
      * 
      */
     @Export(name="scanListenerPortTls", refs={Integer.class}, tree="[0]")
-    private Output<Integer> scanListenerPortTls;
+    private Output</* @Nullable */ Integer> scanListenerPortTls;
 
     /**
      * @return The SCAN Listener TLS port. Default is 2484.
      * 
      */
-    public Output<Integer> scanListenerPortTls() {
-        return this.scanListenerPortTls;
+    public Output<Optional<Integer>> scanListenerPortTls() {
+        return Codegen.optional(this.scanListenerPortTls);
     }
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * The current state of the cloud Autonomous VM cluster.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the cloud Autonomous VM cluster.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
@@ -776,14 +776,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
@@ -804,14 +804,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="totalAutonomousDataStorageInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> totalAutonomousDataStorageInTbs;
+    private Output</* @Nullable */ Double> totalAutonomousDataStorageInTbs;
 
     /**
      * @return The total data disk group size for Autonomous Databases, in TBs.
      * 
      */
-    public Output<Double> totalAutonomousDataStorageInTbs() {
-        return this.totalAutonomousDataStorageInTbs;
+    public Output<Optional<Double>> totalAutonomousDataStorageInTbs() {
+        return Codegen.optional(this.totalAutonomousDataStorageInTbs);
     }
     /**
      * The total number of Autonomous Container Databases that can be created.
@@ -821,7 +821,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="totalContainerDatabases", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalContainerDatabases;
+    private Output</* @Nullable */ Integer> totalContainerDatabases;
 
     /**
      * @return The total number of Autonomous Container Databases that can be created.
@@ -830,22 +830,22 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> totalContainerDatabases() {
-        return this.totalContainerDatabases;
+    public Output<Optional<Integer>> totalContainerDatabases() {
+        return Codegen.optional(this.totalContainerDatabases);
     }
     /**
      * The total number of CPUs in an Autonomous VM Cluster.
      * 
      */
     @Export(name="totalCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> totalCpus;
+    private Output</* @Nullable */ Double> totalCpus;
 
     /**
      * @return The total number of CPUs in an Autonomous VM Cluster.
      * 
      */
-    public Output<Double> totalCpus() {
-        return this.totalCpus;
+    public Output<Optional<Double>> totalCpus() {
+        return Codegen.optional(this.totalCpus);
     }
 
     /**

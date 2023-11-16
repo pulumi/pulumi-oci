@@ -85,7 +85,7 @@ export interface GetFleetsResult {
     /**
      * The list of fleet_collection.
      */
-    readonly fleetCollections: outputs.Jms.GetFleetsFleetCollection[];
+    readonly fleetCollections?: outputs.Jms.GetFleetsFleetCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
@@ -79,7 +78,7 @@ type GetDeploymentUpgradesResult struct {
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetDeploymentUpgradesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Possible lifecycle states.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetDeploymentUpgradesResultOutput) ToGetDeploymentUpgradesResultOutputWi
 	return o
 }
 
-func (o GetDeploymentUpgradesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentUpgradesResult] {
-	return pulumix.Output[GetDeploymentUpgradesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 func (o GetDeploymentUpgradesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -162,8 +155,8 @@ func (o GetDeploymentUpgradesResultOutput) Filters() GetDeploymentUpgradesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDeploymentUpgradesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDeploymentUpgradesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states.

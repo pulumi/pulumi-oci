@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourcesDataSourceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourcesDataSourceCollection {
-    private List<GetDataSourcesDataSourceCollectionItem> items;
+    private @Nullable List<GetDataSourcesDataSourceCollectionItem> items;
 
     private GetDataSourcesDataSourceCollection() {}
     public List<GetDataSourcesDataSourceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDataSourcesDataSourceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDataSourcesDataSourceCollectionItem> items;
+        private @Nullable List<GetDataSourcesDataSourceCollectionItem> items;
         public Builder() {}
         public Builder(GetDataSourcesDataSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDataSourcesDataSourceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDataSourcesDataSourceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDataSourcesDataSourceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDataSourcesDataSourceCollectionItem... items) {

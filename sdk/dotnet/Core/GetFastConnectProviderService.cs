@@ -112,44 +112,44 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Who is responsible for managing the virtual circuit bandwidth.
         /// </summary>
-        public readonly string BandwithShapeManagement;
+        public readonly string? BandwithShapeManagement;
         /// <summary>
         /// Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
         /// </summary>
-        public readonly string CustomerAsnManagement;
+        public readonly string? CustomerAsnManagement;
         /// <summary>
         /// The location of the provider's website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Who is responsible for managing the private peering BGP information.
         /// </summary>
-        public readonly string PrivatePeeringBgpManagement;
+        public readonly string? PrivatePeeringBgpManagement;
         /// <summary>
         /// The name of the provider.
         /// </summary>
-        public readonly string ProviderName;
+        public readonly string? ProviderName;
         public readonly string ProviderServiceId;
         /// <summary>
         /// Who is responsible for managing the provider service key.
         /// </summary>
-        public readonly string ProviderServiceKeyManagement;
+        public readonly string? ProviderServiceKeyManagement;
         /// <summary>
         /// The name of the service offered by the provider.
         /// </summary>
-        public readonly string ProviderServiceName;
+        public readonly string? ProviderServiceName;
         /// <summary>
         /// Who is responsible for managing the public peering BGP information.
         /// </summary>
-        public readonly string PublicPeeringBgpManagement;
+        public readonly string? PublicPeeringBgpManagement;
         /// <summary>
         /// Total number of cross-connect or cross-connect groups required for the virtual circuit.
         /// </summary>
-        public readonly int RequiredTotalCrossConnects;
+        public readonly int? RequiredTotalCrossConnects;
         /// <summary>
         /// An array of virtual circuit types supported by this service.
         /// </summary>
@@ -157,35 +157,35 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Provider service type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetFastConnectProviderServiceResult(
-            string bandwithShapeManagement,
+            string? bandwithShapeManagement,
 
-            string customerAsnManagement,
+            string? customerAsnManagement,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string privatePeeringBgpManagement,
+            string? privatePeeringBgpManagement,
 
-            string providerName,
+            string? providerName,
 
             string providerServiceId,
 
-            string providerServiceKeyManagement,
+            string? providerServiceKeyManagement,
 
-            string providerServiceName,
+            string? providerServiceName,
 
-            string publicPeeringBgpManagement,
+            string? publicPeeringBgpManagement,
 
-            int requiredTotalCrossConnects,
+            int? requiredTotalCrossConnects,
 
             ImmutableArray<string> supportedVirtualCircuitTypes,
 
-            string type)
+            string? type)
         {
             BandwithShapeManagement = bandwithShapeManagement;
             CustomerAsnManagement = customerAsnManagement;

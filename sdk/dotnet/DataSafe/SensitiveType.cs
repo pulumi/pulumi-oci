@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) A regular expression to be used by data discovery for matching column comments.
         /// </summary>
         [Output("commentPattern")]
-        public Output<string> CommentPattern { get; private set; } = null!;
+        public Output<string?> CommentPattern { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment where the sensitive type should be created.
@@ -79,31 +79,31 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) A regular expression to be used by data discovery for matching column data values.
         /// </summary>
         [Output("dataPattern")]
-        public Output<string> DataPattern { get; private set; } = null!;
+        public Output<string?> DataPattern { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
         /// </summary>
         [Output("defaultMaskingFormatId")]
-        public Output<string> DefaultMaskingFormatId { get; private set; } = null!;
+        public Output<string?> DefaultMaskingFormatId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the sensitive type.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
@@ -115,25 +115,25 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A regular expression to be used by data discovery for matching column names.
         /// </summary>
         [Output("namePattern")]
-        public Output<string> NamePattern { get; private set; } = null!;
+        public Output<string?> NamePattern { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the parent sensitive category.
         /// </summary>
         [Output("parentCategoryId")]
-        public Output<string> ParentCategoryId { get; private set; } = null!;
+        public Output<string?> ParentCategoryId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
         /// </summary>
         [Output("searchType")]
-        public Output<string> SearchType { get; private set; } = null!;
+        public Output<string?> SearchType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The short name of the sensitive type.
@@ -143,37 +143,37 @@ namespace Pulumi.Oci.DataSafe
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shortName")]
-        public Output<string> ShortName { get; private set; } = null!;
+        public Output<string?> ShortName { get; private set; } = null!;
 
         /// <summary>
         /// Specifies whether the sensitive type is user-defined or predefined.
         /// </summary>
         [Output("source")]
-        public Output<string> Source { get; private set; } = null!;
+        public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the sensitive type.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

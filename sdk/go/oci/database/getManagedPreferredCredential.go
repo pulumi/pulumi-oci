@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
@@ -65,20 +64,20 @@ type GetManagedPreferredCredentialResult struct {
 	// The name of the preferred credential.
 	CredentialName string `pulumi:"credentialName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the preferred credential is accessible.
-	IsAccessible      bool   `pulumi:"isAccessible"`
+	IsAccessible      *bool  `pulumi:"isAccessible"`
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// The role of the database user.
-	Role string `pulumi:"role"`
+	Role *string `pulumi:"role"`
 	// The status of the preferred credential.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The type of preferred credential. Only 'BASIC' is supported currently.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The user name used to connect to the database.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 }
 
 func GetManagedPreferredCredentialOutput(ctx *pulumi.Context, args GetManagedPreferredCredentialOutputArgs, opts ...pulumi.InvokeOption) GetManagedPreferredCredentialResultOutput {
@@ -121,25 +120,19 @@ func (o GetManagedPreferredCredentialResultOutput) ToGetManagedPreferredCredenti
 	return o
 }
 
-func (o GetManagedPreferredCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedPreferredCredentialResult] {
-	return pulumix.Output[GetManagedPreferredCredentialResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the preferred credential.
 func (o GetManagedPreferredCredentialResultOutput) CredentialName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.CredentialName }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedPreferredCredentialResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the preferred credential is accessible.
-func (o GetManagedPreferredCredentialResultOutput) IsAccessible() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) bool { return v.IsAccessible }).(pulumi.BoolOutput)
+func (o GetManagedPreferredCredentialResultOutput) IsAccessible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *bool { return v.IsAccessible }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetManagedPreferredCredentialResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -147,28 +140,28 @@ func (o GetManagedPreferredCredentialResultOutput) ManagedDatabaseId() pulumi.St
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
-func (o GetManagedPreferredCredentialResultOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialResultOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The role of the database user.
-func (o GetManagedPreferredCredentialResultOutput) Role() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.Role }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialResultOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *string { return v.Role }).(pulumi.StringPtrOutput)
 }
 
 // The status of the preferred credential.
-func (o GetManagedPreferredCredentialResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The type of preferred credential. Only 'BASIC' is supported currently.
-func (o GetManagedPreferredCredentialResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The user name used to connect to the database.
-func (o GetManagedPreferredCredentialResultOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedPreferredCredentialResult) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetManagedPreferredCredentialResultOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedPreferredCredentialResult) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

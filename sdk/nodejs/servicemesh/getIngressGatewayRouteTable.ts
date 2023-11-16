@@ -47,60 +47,60 @@ export interface GetIngressGatewayRouteTableResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the ingress gateway.
      */
-    readonly ingressGatewayId: string;
+    readonly ingressGatewayId?: string;
     readonly ingressGatewayRouteTableId: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Name of the ingress gateway host that this route should apply to.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
      */
-    readonly priority: number;
+    readonly priority?: number;
     /**
      * The route rules for the ingress gateway.
      */
-    readonly routeRules: outputs.ServiceMesh.GetIngressGatewayRouteTableRouteRule[];
+    readonly routeRules?: outputs.ServiceMesh.GetIngressGatewayRouteTableRouteRule[];
     /**
      * The current state of the Resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when this resource was created in an RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when this resource was updated in an RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.

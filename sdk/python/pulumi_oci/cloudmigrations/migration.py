@@ -22,16 +22,6 @@ class MigrationArgs:
                  replication_schedule_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Migration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[str] display_name: (Updatable) Migration identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -47,9 +37,6 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -59,9 +46,6 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Migration identifier
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -71,9 +55,6 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -83,9 +64,6 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -95,9 +73,6 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="isCompleted")
     def is_completed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether migration is marked as complete.
-        """
         return pulumi.get(self, "is_completed")
 
     @is_completed.setter
@@ -107,13 +82,6 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Replication schedule identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
@@ -137,21 +105,6 @@ class _MigrationState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Migration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Migration identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of migration.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the migration project was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time when the migration project was updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -179,9 +132,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -191,9 +141,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -203,9 +150,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Migration identifier
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -215,9 +159,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -227,9 +168,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="isCompleted")
     def is_completed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether migration is marked as complete.
-        """
         return pulumi.get(self, "is_completed")
 
     @is_completed.setter
@@ -239,9 +177,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -251,13 +186,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Replication schedule identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
@@ -267,9 +195,6 @@ class _MigrationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of migration.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -279,9 +204,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -291,9 +213,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the migration project was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -303,9 +222,6 @@ class _MigrationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the migration project was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -326,49 +242,9 @@ class Migration(pulumi.CustomResource):
                  replication_schedule_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_migration = oci.cloud_migrations.Migration("testMigration",
-            compartment_id=var["compartment_id"],
-            display_name=var["migration_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_completed=var["migration_is_completed"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
-        ```
-
-        ## Import
-
-        Migrations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
-        ```
-
+        Create a Migration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Migration identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -377,37 +253,7 @@ class Migration(pulumi.CustomResource):
                  args: MigrationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_migration = oci.cloud_migrations.Migration("testMigration",
-            compartment_id=var["compartment_id"],
-            display_name=var["migration_display_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_completed=var["migration_is_completed"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
-        ```
-
-        ## Import
-
-        Migrations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudMigrations/migration:Migration test_migration "id"
-        ```
-
+        Create a Migration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MigrationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -481,21 +327,6 @@ class Migration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Migration identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_completed: (Updatable) Indicates whether migration is marked as complete.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of migration.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when the migration project was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time when the migration project was updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -517,92 +348,55 @@ class Migration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Migration identifier
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isCompleted")
-    def is_completed(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether migration is marked as complete.
-        """
+    def is_completed(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_completed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="replicationScheduleId")
-    def replication_schedule_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Replication schedule identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def replication_schedule_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "replication_schedule_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of migration.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the migration project was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the migration project was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

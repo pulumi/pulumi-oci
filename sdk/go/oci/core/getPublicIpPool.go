@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -62,20 +61,20 @@ type LookupPublicIpPoolResult struct {
 	// The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
 	CidrBlocks []string `pulumi:"cidrBlocks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this pool.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-	Id             string `pulumi:"id"`
-	PublicIpPoolId string `pulumi:"publicIpPoolId"`
+	Id             *string `pulumi:"id"`
+	PublicIpPoolId string  `pulumi:"publicIpPoolId"`
 	// The public IP pool's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupPublicIpPoolOutput(ctx *pulumi.Context, args LookupPublicIpPoolOutputArgs, opts ...pulumi.InvokeOption) LookupPublicIpPoolResultOutput {
@@ -116,20 +115,14 @@ func (o LookupPublicIpPoolResultOutput) ToLookupPublicIpPoolResultOutputWithCont
 	return o
 }
 
-func (o LookupPublicIpPoolResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPublicIpPoolResult] {
-	return pulumix.Output[LookupPublicIpPoolResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
 func (o LookupPublicIpPoolResultOutput) CidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPublicIpPoolResult) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this pool.
-func (o LookupPublicIpPoolResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPublicIpPoolResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -138,8 +131,8 @@ func (o LookupPublicIpPoolResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupPublicIpPoolResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPublicIpPoolResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -148,8 +141,8 @@ func (o LookupPublicIpPoolResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-func (o LookupPublicIpPoolResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPublicIpPoolResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPublicIpPoolResultOutput) PublicIpPoolId() pulumi.StringOutput {
@@ -157,13 +150,13 @@ func (o LookupPublicIpPoolResultOutput) PublicIpPoolId() pulumi.StringOutput {
 }
 
 // The public IP pool's current state.
-func (o LookupPublicIpPoolResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPublicIpPoolResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupPublicIpPoolResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPublicIpPoolResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

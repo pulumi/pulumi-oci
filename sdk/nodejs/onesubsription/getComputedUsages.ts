@@ -65,12 +65,12 @@ export interface GetComputedUsagesResult {
     /**
      * The list of computed_usages.
      */
-    readonly computedUsages: outputs.OneSubsription.GetComputedUsagesComputedUsage[];
+    readonly computedUsages?: outputs.OneSubsription.GetComputedUsagesComputedUsage[];
     readonly filters?: outputs.OneSubsription.GetComputedUsagesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Product description
      */

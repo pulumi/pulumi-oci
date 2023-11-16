@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitor Plugin Management resource in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -51,16 +50,16 @@ import (
 type MonitorPluginManagement struct {
 	pulumi.CustomResourceState
 
-	CompartmentId                pulumi.StringOutput `pulumi:"compartmentId"`
-	MonitoredInstanceDescription pulumi.StringOutput `pulumi:"monitoredInstanceDescription"`
-	MonitoredInstanceDisplayName pulumi.StringOutput `pulumi:"monitoredInstanceDisplayName"`
+	CompartmentId                pulumi.StringPtrOutput `pulumi:"compartmentId"`
+	MonitoredInstanceDescription pulumi.StringPtrOutput `pulumi:"monitoredInstanceDescription"`
+	MonitoredInstanceDisplayName pulumi.StringPtrOutput `pulumi:"monitoredInstanceDisplayName"`
 	// OCID of monitored instance.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	MonitoredInstanceId                pulumi.StringOutput `pulumi:"monitoredInstanceId"`
-	MonitoredInstanceManagementAgentId pulumi.StringOutput `pulumi:"monitoredInstanceManagementAgentId"`
-	State                              pulumi.StringOutput `pulumi:"state"`
+	MonitoredInstanceId                pulumi.StringOutput    `pulumi:"monitoredInstanceId"`
+	MonitoredInstanceManagementAgentId pulumi.StringPtrOutput `pulumi:"monitoredInstanceManagementAgentId"`
+	State                              pulumi.StringPtrOutput `pulumi:"state"`
 }
 
 // NewMonitorPluginManagement registers a new resource with the given unique name, arguments, and options.
@@ -165,12 +164,6 @@ func (i *MonitorPluginManagement) ToMonitorPluginManagementOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(MonitorPluginManagementOutput)
 }
 
-func (i *MonitorPluginManagement) ToOutput(ctx context.Context) pulumix.Output[*MonitorPluginManagement] {
-	return pulumix.Output[*MonitorPluginManagement]{
-		OutputState: i.ToMonitorPluginManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitorPluginManagementArrayInput is an input type that accepts MonitorPluginManagementArray and MonitorPluginManagementArrayOutput values.
 // You can construct a concrete instance of `MonitorPluginManagementArrayInput` via:
 //
@@ -194,12 +187,6 @@ func (i MonitorPluginManagementArray) ToMonitorPluginManagementArrayOutput() Mon
 
 func (i MonitorPluginManagementArray) ToMonitorPluginManagementArrayOutputWithContext(ctx context.Context) MonitorPluginManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitorPluginManagementArrayOutput)
-}
-
-func (i MonitorPluginManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitorPluginManagement] {
-	return pulumix.Output[[]*MonitorPluginManagement]{
-		OutputState: i.ToMonitorPluginManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MonitorPluginManagementMapInput is an input type that accepts MonitorPluginManagementMap and MonitorPluginManagementMapOutput values.
@@ -227,12 +214,6 @@ func (i MonitorPluginManagementMap) ToMonitorPluginManagementMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MonitorPluginManagementMapOutput)
 }
 
-func (i MonitorPluginManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitorPluginManagement] {
-	return pulumix.Output[map[string]*MonitorPluginManagement]{
-		OutputState: i.ToMonitorPluginManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitorPluginManagementOutput struct{ *pulumi.OutputState }
 
 func (MonitorPluginManagementOutput) ElementType() reflect.Type {
@@ -247,22 +228,16 @@ func (o MonitorPluginManagementOutput) ToMonitorPluginManagementOutputWithContex
 	return o
 }
 
-func (o MonitorPluginManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitorPluginManagement] {
-	return pulumix.Output[*MonitorPluginManagement]{
-		OutputState: o.OutputState,
-	}
+func (o MonitorPluginManagementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o MonitorPluginManagementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o MonitorPluginManagementOutput) MonitoredInstanceDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringPtrOutput { return v.MonitoredInstanceDescription }).(pulumi.StringPtrOutput)
 }
 
-func (o MonitorPluginManagementOutput) MonitoredInstanceDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.MonitoredInstanceDescription }).(pulumi.StringOutput)
-}
-
-func (o MonitorPluginManagementOutput) MonitoredInstanceDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.MonitoredInstanceDisplayName }).(pulumi.StringOutput)
+func (o MonitorPluginManagementOutput) MonitoredInstanceDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringPtrOutput { return v.MonitoredInstanceDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of monitored instance.
@@ -273,12 +248,12 @@ func (o MonitorPluginManagementOutput) MonitoredInstanceId() pulumi.StringOutput
 	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.MonitoredInstanceId }).(pulumi.StringOutput)
 }
 
-func (o MonitorPluginManagementOutput) MonitoredInstanceManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.MonitoredInstanceManagementAgentId }).(pulumi.StringOutput)
+func (o MonitorPluginManagementOutput) MonitoredInstanceManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringPtrOutput { return v.MonitoredInstanceManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
-func (o MonitorPluginManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MonitorPluginManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitorPluginManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type MonitorPluginManagementArrayOutput struct{ *pulumi.OutputState }
@@ -293,12 +268,6 @@ func (o MonitorPluginManagementArrayOutput) ToMonitorPluginManagementArrayOutput
 
 func (o MonitorPluginManagementArrayOutput) ToMonitorPluginManagementArrayOutputWithContext(ctx context.Context) MonitorPluginManagementArrayOutput {
 	return o
-}
-
-func (o MonitorPluginManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitorPluginManagement] {
-	return pulumix.Output[[]*MonitorPluginManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitorPluginManagementArrayOutput) Index(i pulumi.IntInput) MonitorPluginManagementOutput {
@@ -319,12 +288,6 @@ func (o MonitorPluginManagementMapOutput) ToMonitorPluginManagementMapOutput() M
 
 func (o MonitorPluginManagementMapOutput) ToMonitorPluginManagementMapOutputWithContext(ctx context.Context) MonitorPluginManagementMapOutput {
 	return o
-}
-
-func (o MonitorPluginManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitorPluginManagement] {
-	return pulumix.Output[map[string]*MonitorPluginManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitorPluginManagementMapOutput) MapIndex(k pulumi.StringInput) MonitorPluginManagementOutput {

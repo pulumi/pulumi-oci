@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersCluster {
@@ -22,92 +24,92 @@ public final class GetClustersCluster {
      * @return Available Kubernetes versions to which the clusters masters may be upgraded.
      * 
      */
-    private List<String> availableKubernetesUpgrades;
+    private @Nullable List<String> availableKubernetesUpgrades;
     /**
      * @return Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
-    private List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
+    private @Nullable List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The network configuration for access to the Cluster control plane.
      * 
      */
-    private List<GetClustersClusterEndpointConfig> endpointConfigs;
+    private @Nullable List<GetClustersClusterEndpointConfig> endpointConfigs;
     /**
      * @return Endpoints served up by the cluster masters.
      * 
      */
-    private List<GetClustersClusterEndpoint> endpoints;
+    private @Nullable List<GetClustersClusterEndpoint> endpoints;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the cluster.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The image verification policy for signature validation.
      * 
      */
-    private List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
+    private @Nullable List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
     /**
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The version of Kubernetes running on the cluster masters.
      * 
      */
-    private String kubernetesVersion;
+    private @Nullable String kubernetesVersion;
     /**
      * @return Details about the state of the cluster masters.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Metadata about the cluster.
      * 
      */
-    private List<GetClustersClusterMetadata> metadatas;
+    private @Nullable List<GetClustersClusterMetadata> metadatas;
     /**
      * @return The name to filter on.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Optional attributes for the cluster.
      * 
      */
-    private List<GetClustersClusterOption> options;
+    private @Nullable List<GetClustersClusterOption> options;
     /**
      * @return A cluster lifecycle state to filter on. Can have multiple parameters of this name.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The OCID of the virtual cloud network (VCN) in which the cluster exists.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetClustersCluster() {}
     /**
@@ -115,126 +117,126 @@ public final class GetClustersCluster {
      * 
      */
     public List<String> availableKubernetesUpgrades() {
-        return this.availableKubernetesUpgrades;
+        return this.availableKubernetesUpgrades == null ? List.of() : this.availableKubernetesUpgrades;
     }
     /**
      * @return Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
     public List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions() {
-        return this.clusterPodNetworkOptions;
+        return this.clusterPodNetworkOptions == null ? List.of() : this.clusterPodNetworkOptions;
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The network configuration for access to the Cluster control plane.
      * 
      */
     public List<GetClustersClusterEndpointConfig> endpointConfigs() {
-        return this.endpointConfigs;
+        return this.endpointConfigs == null ? List.of() : this.endpointConfigs;
     }
     /**
      * @return Endpoints served up by the cluster masters.
      * 
      */
     public List<GetClustersClusterEndpoint> endpoints() {
-        return this.endpoints;
+        return this.endpoints == null ? List.of() : this.endpoints;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the cluster.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The image verification policy for signature validation.
      * 
      */
     public List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs() {
-        return this.imagePolicyConfigs;
+        return this.imagePolicyConfigs == null ? List.of() : this.imagePolicyConfigs;
     }
     /**
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The version of Kubernetes running on the cluster masters.
      * 
      */
-    public String kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Optional<String> kubernetesVersion() {
+        return Optional.ofNullable(this.kubernetesVersion);
     }
     /**
      * @return Details about the state of the cluster masters.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Metadata about the cluster.
      * 
      */
     public List<GetClustersClusterMetadata> metadatas() {
-        return this.metadatas;
+        return this.metadatas == null ? List.of() : this.metadatas;
     }
     /**
      * @return The name to filter on.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Optional attributes for the cluster.
      * 
      */
     public List<GetClustersClusterOption> options() {
-        return this.options;
+        return this.options == null ? List.of() : this.options;
     }
     /**
      * @return A cluster lifecycle state to filter on. Can have multiple parameters of this name.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The OCID of the virtual cloud network (VCN) in which the cluster exists.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -246,24 +248,24 @@ public final class GetClustersCluster {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> availableKubernetesUpgrades;
-        private List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<GetClustersClusterEndpointConfig> endpointConfigs;
-        private List<GetClustersClusterEndpoint> endpoints;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
-        private String kmsKeyId;
-        private String kubernetesVersion;
-        private String lifecycleDetails;
-        private List<GetClustersClusterMetadata> metadatas;
-        private String name;
-        private List<GetClustersClusterOption> options;
-        private String state;
-        private String type;
-        private String vcnId;
+        private @Nullable List<String> availableKubernetesUpgrades;
+        private @Nullable List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetClustersClusterEndpointConfig> endpointConfigs;
+        private @Nullable List<GetClustersClusterEndpoint> endpoints;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
+        private @Nullable String kmsKeyId;
+        private @Nullable String kubernetesVersion;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetClustersClusterMetadata> metadatas;
+        private @Nullable String name;
+        private @Nullable List<GetClustersClusterOption> options;
+        private @Nullable String state;
+        private @Nullable String type;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetClustersCluster defaults) {
     	      Objects.requireNonNull(defaults);
@@ -288,114 +290,114 @@ public final class GetClustersCluster {
         }
 
         @CustomType.Setter
-        public Builder availableKubernetesUpgrades(List<String> availableKubernetesUpgrades) {
-            this.availableKubernetesUpgrades = Objects.requireNonNull(availableKubernetesUpgrades);
+        public Builder availableKubernetesUpgrades(@Nullable List<String> availableKubernetesUpgrades) {
+            this.availableKubernetesUpgrades = availableKubernetesUpgrades;
             return this;
         }
         public Builder availableKubernetesUpgrades(String... availableKubernetesUpgrades) {
             return availableKubernetesUpgrades(List.of(availableKubernetesUpgrades));
         }
         @CustomType.Setter
-        public Builder clusterPodNetworkOptions(List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions) {
-            this.clusterPodNetworkOptions = Objects.requireNonNull(clusterPodNetworkOptions);
+        public Builder clusterPodNetworkOptions(@Nullable List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions) {
+            this.clusterPodNetworkOptions = clusterPodNetworkOptions;
             return this;
         }
         public Builder clusterPodNetworkOptions(GetClustersClusterClusterPodNetworkOption... clusterPodNetworkOptions) {
             return clusterPodNetworkOptions(List.of(clusterPodNetworkOptions));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder endpointConfigs(List<GetClustersClusterEndpointConfig> endpointConfigs) {
-            this.endpointConfigs = Objects.requireNonNull(endpointConfigs);
+        public Builder endpointConfigs(@Nullable List<GetClustersClusterEndpointConfig> endpointConfigs) {
+            this.endpointConfigs = endpointConfigs;
             return this;
         }
         public Builder endpointConfigs(GetClustersClusterEndpointConfig... endpointConfigs) {
             return endpointConfigs(List.of(endpointConfigs));
         }
         @CustomType.Setter
-        public Builder endpoints(List<GetClustersClusterEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+        public Builder endpoints(@Nullable List<GetClustersClusterEndpoint> endpoints) {
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetClustersClusterEndpoint... endpoints) {
             return endpoints(List.of(endpoints));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder imagePolicyConfigs(List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs) {
-            this.imagePolicyConfigs = Objects.requireNonNull(imagePolicyConfigs);
+        public Builder imagePolicyConfigs(@Nullable List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs) {
+            this.imagePolicyConfigs = imagePolicyConfigs;
             return this;
         }
         public Builder imagePolicyConfigs(GetClustersClusterImagePolicyConfig... imagePolicyConfigs) {
             return imagePolicyConfigs(List.of(imagePolicyConfigs));
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+        public Builder kubernetesVersion(@Nullable String kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder metadatas(List<GetClustersClusterMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+        public Builder metadatas(@Nullable List<GetClustersClusterMetadata> metadatas) {
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetClustersClusterMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder options(List<GetClustersClusterOption> options) {
-            this.options = Objects.requireNonNull(options);
+        public Builder options(@Nullable List<GetClustersClusterOption> options) {
+            this.options = options;
             return this;
         }
         public Builder options(GetClustersClusterOption... options) {
             return options(List.of(options));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetClustersCluster build() {

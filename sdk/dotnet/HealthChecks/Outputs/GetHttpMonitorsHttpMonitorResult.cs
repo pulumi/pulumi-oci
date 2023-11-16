@@ -16,59 +16,59 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// Filters results by compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Filters results that exactly match the `displayName` field.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A dictionary of HTTP request headers.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Headers;
+        public readonly ImmutableDictionary<string, object>? Headers;
         /// <summary>
         /// Filters results that match the `homeRegion`.
         /// </summary>
-        public readonly string HomeRegion;
+        public readonly string? HomeRegion;
         /// <summary>
         /// The OCID of the resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The monitor interval in seconds. Valid values: 10, 30, and 60.
         /// </summary>
-        public readonly int IntervalInSeconds;
+        public readonly int? IntervalInSeconds;
         /// <summary>
         /// Enables or disables the monitor. Set to 'true' to launch monitoring.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The supported HTTP methods available for probes.
         /// </summary>
-        public readonly string Method;
+        public readonly string? Method;
         /// <summary>
         /// The optional URL path to probe, including query parameters.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The supported protocols available for HTTP probes.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// A URL for fetching the probe results.
         /// </summary>
-        public readonly string ResultsUrl;
+        public readonly string? ResultsUrl;
         /// <summary>
         /// A list of targets (hostnames or IP addresses) of the probe.
         /// </summary>
@@ -76,11 +76,11 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The RFC 3339-formatted creation date and time of the probe.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         /// </summary>
-        public readonly int TimeoutInSeconds;
+        public readonly int? TimeoutInSeconds;
         /// <summary>
         /// A list of names of vantage points from which to execute the probe.
         /// </summary>
@@ -88,39 +88,39 @@ namespace Pulumi.Oci.HealthChecks.Outputs
 
         [OutputConstructor]
         private GetHttpMonitorsHttpMonitorResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            ImmutableDictionary<string, object> headers,
+            ImmutableDictionary<string, object>? headers,
 
-            string homeRegion,
+            string? homeRegion,
 
-            string id,
+            string? id,
 
-            int intervalInSeconds,
+            int? intervalInSeconds,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string method,
+            string? method,
 
-            string path,
+            string? path,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string resultsUrl,
+            string? resultsUrl,
 
             ImmutableArray<string> targets,
 
-            string timeCreated,
+            string? timeCreated,
 
-            int timeoutInSeconds,
+            int? timeoutInSeconds,
 
             ImmutableArray<string> vantagePointNames)
         {

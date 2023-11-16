@@ -73,13 +73,13 @@ namespace Pulumi.Oci.Waas
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
@@ -91,16 +91,16 @@ namespace Pulumi.Oci.Waas
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Set to `true` if the SSL certificate is self-signed.
         /// </summary>
         [Output("isTrustVerificationDisabled")]
-        public Output<bool> IsTrustVerificationDisabled { get; private set; } = null!;
+        public Output<bool?> IsTrustVerificationDisabled { get; private set; } = null!;
 
         [Output("issuedBy")]
-        public Output<string> IssuedBy { get; private set; } = null!;
+        public Output<string?> IssuedBy { get; private set; } = null!;
 
         /// <summary>
         /// The issuer of the certificate.
@@ -128,19 +128,19 @@ namespace Pulumi.Oci.Waas
         /// A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
         /// </summary>
         [Output("serialNumber")]
-        public Output<string> SerialNumber { get; private set; } = null!;
+        public Output<string?> SerialNumber { get; private set; } = null!;
 
         /// <summary>
         /// The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
         /// </summary>
         [Output("signatureAlgorithm")]
-        public Output<string> SignatureAlgorithm { get; private set; } = null!;
+        public Output<string?> SignatureAlgorithm { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the SSL certificate.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The entity to be secured by the certificate.
@@ -152,25 +152,25 @@ namespace Pulumi.Oci.Waas
         /// The date and time the certificate was created, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeNotValidAfter")]
-        public Output<string> TimeNotValidAfter { get; private set; } = null!;
+        public Output<string?> TimeNotValidAfter { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeNotValidBefore")]
-        public Output<string> TimeNotValidBefore { get; private set; } = null!;
+        public Output<string?> TimeNotValidBefore { get; private set; } = null!;
 
         /// <summary>
         /// The version of the encoded certificate.
         /// </summary>
         [Output("version")]
-        public Output<int> Version { get; private set; } = null!;
+        public Output<int?> Version { get; private set; } = null!;
 
 
         /// <summary>

@@ -14,6 +14,7 @@ import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -37,98 +38,98 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalDetails;
+    private Output</* @Nullable */ Map<String,Object>> additionalDetails;
 
     /**
      * @return The additional details of the external DB node defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalDetails() {
-        return this.additionalDetails;
+    public Output<Optional<Map<String,Object>>> additionalDetails() {
+        return Codegen.optional(this.additionalDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The name of the external DB node.
      * 
      */
     @Export(name="componentName", refs={String.class}, tree="[0]")
-    private Output<String> componentName;
+    private Output</* @Nullable */ String> componentName;
 
     /**
      * @return The name of the external DB node.
      * 
      */
-    public Output<String> componentName() {
-        return this.componentName;
+    public Output<Optional<String>> componentName() {
+        return Codegen.optional(this.componentName);
     }
     /**
      * The number of CPU cores available on the DB node.
      * 
      */
     @Export(name="cpuCoreCount", refs={Double.class}, tree="[0]")
-    private Output<Double> cpuCoreCount;
+    private Output</* @Nullable */ Double> cpuCoreCount;
 
     /**
      * @return The number of CPU cores available on the DB node.
      * 
      */
-    public Output<Double> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Output<Optional<Double>> cpuCoreCount() {
+        return Codegen.optional(this.cpuCoreCount);
     }
     /**
      * The user-friendly name for the external DB node. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the external DB node. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Name of the domain.
      * 
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
-    private Output<String> domainName;
+    private Output</* @Nullable */ String> domainName;
 
     /**
      * @return Name of the domain.
      * 
      */
-    public Output<String> domainName() {
-        return this.domainName;
+    public Output<Optional<String>> domainName() {
+        return Codegen.optional(this.domainName);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
     @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
-    private Output<String> externalConnectorId;
+    private Output</* @Nullable */ String> externalConnectorId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    public Output<String> externalConnectorId() {
-        return this.externalConnectorId;
+    public Output<Optional<String>> externalConnectorId() {
+        return Codegen.optional(this.externalConnectorId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
@@ -155,98 +156,98 @@ public class ExternalDbNode extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbSystemId;
+    private Output</* @Nullable */ String> externalDbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
      * 
      */
-    public Output<String> externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Output<Optional<String>> externalDbSystemId() {
+        return Codegen.optional(this.externalDbSystemId);
     }
     /**
      * The host name for the DB node.
      * 
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
-    private Output<String> hostName;
+    private Output</* @Nullable */ String> hostName;
 
     /**
      * @return The host name for the DB node.
      * 
      */
-    public Output<String> hostName() {
-        return this.hostName;
+    public Output<Optional<String>> hostName() {
+        return Codegen.optional(this.hostName);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The total memory in gigabytes (GB) on the DB node.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Double.class}, tree="[0]")
-    private Output<Double> memorySizeInGbs;
+    private Output</* @Nullable */ Double> memorySizeInGbs;
 
     /**
      * @return The total memory in gigabytes (GB) on the DB node.
      * 
      */
-    public Output<Double> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Double>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The current lifecycle state of the external DB node.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external DB node.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the external DB node was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external DB node was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external DB node was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external DB node was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

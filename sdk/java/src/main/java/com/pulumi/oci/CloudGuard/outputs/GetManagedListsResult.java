@@ -32,7 +32,7 @@ public final class GetManagedListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return type of the list
      * 
@@ -42,7 +42,7 @@ public final class GetManagedListsResult {
      * @return The list of managed_list_collection.
      * 
      */
-    private List<GetManagedListsManagedListCollection> managedListCollections;
+    private @Nullable List<GetManagedListsManagedListCollection> managedListCollections;
     private @Nullable Boolean resourceMetadataOnly;
     /**
      * @return The current state of the resource.
@@ -78,8 +78,8 @@ public final class GetManagedListsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return type of the list
@@ -93,7 +93,7 @@ public final class GetManagedListsResult {
      * 
      */
     public List<GetManagedListsManagedListCollection> managedListCollections() {
-        return this.managedListCollections;
+        return this.managedListCollections == null ? List.of() : this.managedListCollections;
     }
     public Optional<Boolean> resourceMetadataOnly() {
         return Optional.ofNullable(this.resourceMetadataOnly);
@@ -120,9 +120,9 @@ public final class GetManagedListsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetManagedListsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String listType;
-        private List<GetManagedListsManagedListCollection> managedListCollections;
+        private @Nullable List<GetManagedListsManagedListCollection> managedListCollections;
         private @Nullable Boolean resourceMetadataOnly;
         private @Nullable String state;
         public Builder() {}
@@ -169,8 +169,8 @@ public final class GetManagedListsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -179,8 +179,8 @@ public final class GetManagedListsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedListCollections(List<GetManagedListsManagedListCollection> managedListCollections) {
-            this.managedListCollections = Objects.requireNonNull(managedListCollections);
+        public Builder managedListCollections(@Nullable List<GetManagedListsManagedListCollection> managedListCollections) {
+            this.managedListCollections = managedListCollections;
             return this;
         }
         public Builder managedListCollections(GetManagedListsManagedListCollection... managedListCollections) {

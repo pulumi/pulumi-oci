@@ -81,7 +81,7 @@ export interface GetProjectsResult {
     /**
      * The list of project_collection.
      */
-    readonly projectCollections: outputs.AiDocument.GetProjectsProjectCollection[];
+    readonly projectCollections?: outputs.AiDocument.GetProjectsProjectCollection[];
     /**
      * The current state of the project.
      */

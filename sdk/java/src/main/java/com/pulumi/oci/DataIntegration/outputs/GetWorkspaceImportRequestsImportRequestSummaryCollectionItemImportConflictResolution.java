@@ -6,6 +6,8 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution {
@@ -13,12 +15,12 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemI
      * @return In case of DUPLICATE mode, prefix will be used to disambiguate the object.
      * 
      */
-    private String duplicatePrefix;
+    private @Nullable String duplicatePrefix;
     /**
      * @return In case of DUPLICATE mode, suffix will be used to disambiguate the object.
      * 
      */
-    private String duplicateSuffix;
+    private @Nullable String duplicateSuffix;
     /**
      * @return Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
      * 
@@ -30,15 +32,15 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemI
      * @return In case of DUPLICATE mode, prefix will be used to disambiguate the object.
      * 
      */
-    public String duplicatePrefix() {
-        return this.duplicatePrefix;
+    public Optional<String> duplicatePrefix() {
+        return Optional.ofNullable(this.duplicatePrefix);
     }
     /**
      * @return In case of DUPLICATE mode, suffix will be used to disambiguate the object.
      * 
      */
-    public String duplicateSuffix() {
-        return this.duplicateSuffix;
+    public Optional<String> duplicateSuffix() {
+        return Optional.ofNullable(this.duplicateSuffix);
     }
     /**
      * @return Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
@@ -57,8 +59,8 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String duplicatePrefix;
-        private String duplicateSuffix;
+        private @Nullable String duplicatePrefix;
+        private @Nullable String duplicateSuffix;
         private String importConflictResolutionType;
         public Builder() {}
         public Builder(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution defaults) {
@@ -69,13 +71,13 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemI
         }
 
         @CustomType.Setter
-        public Builder duplicatePrefix(String duplicatePrefix) {
-            this.duplicatePrefix = Objects.requireNonNull(duplicatePrefix);
+        public Builder duplicatePrefix(@Nullable String duplicatePrefix) {
+            this.duplicatePrefix = duplicatePrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder duplicateSuffix(String duplicateSuffix) {
-            this.duplicateSuffix = Objects.requireNonNull(duplicateSuffix);
+        public Builder duplicateSuffix(@Nullable String duplicateSuffix) {
+            this.duplicateSuffix = duplicateSuffix;
             return this;
         }
         @CustomType.Setter

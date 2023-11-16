@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -41,56 +42,56 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalDetails;
+    private Output</* @Nullable */ Map<String,Object>> additionalDetails;
 
     /**
      * @return The additional details of the external cluster defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalDetails() {
-        return this.additionalDetails;
+    public Output<Optional<Map<String,Object>>> additionalDetails() {
+        return Codegen.optional(this.additionalDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The name of the external cluster.
      * 
      */
     @Export(name="componentName", refs={String.class}, tree="[0]")
-    private Output<String> componentName;
+    private Output</* @Nullable */ String> componentName;
 
     /**
      * @return The name of the external cluster.
      * 
      */
-    public Output<String> componentName() {
-        return this.componentName;
+    public Output<Optional<String>> componentName() {
+        return Codegen.optional(this.componentName);
     }
     /**
      * The user-friendly name for the external cluster. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the external cluster. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -114,7 +115,7 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
-    private Output<String> externalConnectorId;
+    private Output</* @Nullable */ String> externalConnectorId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
@@ -123,176 +124,176 @@ public class ExternalCluster extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> externalConnectorId() {
-        return this.externalConnectorId;
+    public Output<Optional<String>> externalConnectorId() {
+        return Codegen.optional(this.externalConnectorId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      * 
      */
     @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbSystemId;
+    private Output</* @Nullable */ String> externalDbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      * 
      */
-    public Output<String> externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Output<Optional<String>> externalDbSystemId() {
+        return Codegen.optional(this.externalDbSystemId);
     }
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
     @Export(name="gridHome", refs={String.class}, tree="[0]")
-    private Output<String> gridHome;
+    private Output</* @Nullable */ String> gridHome;
 
     /**
      * @return The directory in which Oracle Grid Infrastructure is installed.
      * 
      */
-    public Output<String> gridHome() {
-        return this.gridHome;
+    public Output<Optional<String>> gridHome() {
+        return Codegen.optional(this.gridHome);
     }
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
      * 
      */
     @Export(name="isFlexCluster", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isFlexCluster;
+    private Output</* @Nullable */ Boolean> isFlexCluster;
 
     /**
      * @return Indicates whether the cluster is Oracle Flex Cluster or not.
      * 
      */
-    public Output<Boolean> isFlexCluster() {
-        return this.isFlexCluster;
+    public Output<Optional<Boolean>> isFlexCluster() {
+        return Codegen.optional(this.isFlexCluster);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The list of network address configurations of the external cluster.
      * 
      */
     @Export(name="networkConfigurations", refs={List.class,ExternalClusterNetworkConfiguration.class}, tree="[0,1]")
-    private Output<List<ExternalClusterNetworkConfiguration>> networkConfigurations;
+    private Output</* @Nullable */ List<ExternalClusterNetworkConfiguration>> networkConfigurations;
 
     /**
      * @return The list of network address configurations of the external cluster.
      * 
      */
-    public Output<List<ExternalClusterNetworkConfiguration>> networkConfigurations() {
-        return this.networkConfigurations;
+    public Output<Optional<List<ExternalClusterNetworkConfiguration>>> networkConfigurations() {
+        return Codegen.optional(this.networkConfigurations);
     }
     /**
      * The location of the Oracle Cluster Registry (OCR).
      * 
      */
     @Export(name="ocrFileLocation", refs={String.class}, tree="[0]")
-    private Output<String> ocrFileLocation;
+    private Output</* @Nullable */ String> ocrFileLocation;
 
     /**
      * @return The location of the Oracle Cluster Registry (OCR).
      * 
      */
-    public Output<String> ocrFileLocation() {
-        return this.ocrFileLocation;
+    public Output<Optional<String>> ocrFileLocation() {
+        return Codegen.optional(this.ocrFileLocation);
     }
     /**
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
     @Export(name="scanConfigurations", refs={List.class,ExternalClusterScanConfiguration.class}, tree="[0,1]")
-    private Output<List<ExternalClusterScanConfiguration>> scanConfigurations;
+    private Output</* @Nullable */ List<ExternalClusterScanConfiguration>> scanConfigurations;
 
     /**
      * @return The list of Single Client Access Name (SCAN) configurations of the external cluster.
      * 
      */
-    public Output<List<ExternalClusterScanConfiguration>> scanConfigurations() {
-        return this.scanConfigurations;
+    public Output<Optional<List<ExternalClusterScanConfiguration>>> scanConfigurations() {
+        return Codegen.optional(this.scanConfigurations);
     }
     /**
      * The current lifecycle state of the external cluster.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external cluster.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the external cluster was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external cluster was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external cluster was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external cluster was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The cluster version.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return The cluster version.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
     /**
      * The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
     @Export(name="vipConfigurations", refs={List.class,ExternalClusterVipConfiguration.class}, tree="[0,1]")
-    private Output<List<ExternalClusterVipConfiguration>> vipConfigurations;
+    private Output</* @Nullable */ List<ExternalClusterVipConfiguration>> vipConfigurations;
 
     /**
      * @return The list of Virtual IP (VIP) configurations of the external cluster.
      * 
      */
-    public Output<List<ExternalClusterVipConfiguration>> vipConfigurations() {
-        return this.vipConfigurations;
+    public Output<Optional<List<ExternalClusterVipConfiguration>>> vipConfigurations() {
+        return Codegen.optional(this.vipConfigurations);
     }
 
     /**

@@ -49,7 +49,7 @@ class GetDbHomePatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetDbHomePatchesResult:
 
     @property
     @pulumi.getter
-    def patches(self) -> Sequence['outputs.GetDbHomePatchesPatchResult']:
-        """
-        The list of patches.
-        """
+    def patches(self) -> Optional[Sequence['outputs.GetDbHomePatchesPatchResult']]:
         return pulumi.get(self, "patches")
 
 
@@ -80,21 +77,7 @@ def get_db_home_patches(db_home_id: Optional[str] = None,
                         filters: Optional[Sequence[pulumi.InputType['GetDbHomePatchesFilterArgs']]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomePatchesResult:
     """
-    This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists patches applicable to the requested Database Home.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_home_patches = oci.Database.get_db_home_patches(db_home_id=oci_database_db_home["test_db_home"]["id"])
-    ```
-
-
-    :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbHomeId'] = db_home_id
@@ -114,20 +97,6 @@ def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbHomePatchesFilterArgs']]]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomePatchesResult]:
     """
-    This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
-
-    Lists patches applicable to the requested Database Home.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_home_patches = oci.Database.get_db_home_patches(db_home_id=oci_database_db_home["test_db_home"]["id"])
-    ```
-
-
-    :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

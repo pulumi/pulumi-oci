@@ -6,6 +6,8 @@ package com.pulumi.oci.NetworkLoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendHealthHealthCheckResult {
@@ -13,27 +15,27 @@ public final class GetBackendHealthHealthCheckResult {
      * @return The result of the most recent health check.
      * 
      */
-    private String healthCheckStatus;
+    private @Nullable String healthCheckStatus;
     /**
      * @return The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
 
     private GetBackendHealthHealthCheckResult() {}
     /**
      * @return The result of the most recent health check.
      * 
      */
-    public String healthCheckStatus() {
-        return this.healthCheckStatus;
+    public Optional<String> healthCheckStatus() {
+        return Optional.ofNullable(this.healthCheckStatus);
     }
     /**
      * @return The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBackendHealthHealthCheckResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String healthCheckStatus;
-        private String timestamp;
+        private @Nullable String healthCheckStatus;
+        private @Nullable String timestamp;
         public Builder() {}
         public Builder(GetBackendHealthHealthCheckResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBackendHealthHealthCheckResult {
         }
 
         @CustomType.Setter
-        public Builder healthCheckStatus(String healthCheckStatus) {
-            this.healthCheckStatus = Objects.requireNonNull(healthCheckStatus);
+        public Builder healthCheckStatus(@Nullable String healthCheckStatus) {
+            this.healthCheckStatus = healthCheckStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         public GetBackendHealthHealthCheckResult build() {

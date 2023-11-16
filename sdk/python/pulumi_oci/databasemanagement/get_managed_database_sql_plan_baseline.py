@@ -79,63 +79,42 @@ class GetManagedDatabaseSqlPlanBaselineResult:
 
     @property
     @pulumi.getter
-    def accepted(self) -> str:
-        """
-        Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
-        """
+    def accepted(self) -> Optional[str]:
         return pulumi.get(self, "accepted")
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The application action.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def adaptive(self) -> str:
-        """
-        Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
-        """
+    def adaptive(self) -> Optional[str]:
         return pulumi.get(self, "adaptive")
 
     @property
     @pulumi.getter(name="autoPurge")
-    def auto_purge(self) -> str:
-        """
-        Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
-        """
+    def auto_purge(self) -> Optional[str]:
         return pulumi.get(self, "auto_purge")
 
     @property
     @pulumi.getter
-    def enabled(self) -> str:
-        """
-        Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
-        """
+    def enabled(self) -> Optional[str]:
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter(name="executionPlan")
-    def execution_plan(self) -> str:
-        """
-        The execution plan for the SQL statement.
-        """
+    def execution_plan(self) -> Optional[str]:
         return pulumi.get(self, "execution_plan")
 
     @property
     @pulumi.getter
-    def fixed(self) -> str:
-        """
-        Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
-        """
+    def fixed(self) -> Optional[str]:
         return pulumi.get(self, "fixed")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -148,74 +127,47 @@ class GetManagedDatabaseSqlPlanBaselineResult:
 
     @property
     @pulumi.getter
-    def module(self) -> str:
-        """
-        The application module name.
-        """
+    def module(self) -> Optional[str]:
         return pulumi.get(self, "module")
 
     @property
     @pulumi.getter
-    def origin(self) -> str:
-        """
-        The origin of the SQL plan baseline.
-        """
+    def origin(self) -> Optional[str]:
         return pulumi.get(self, "origin")
 
     @property
     @pulumi.getter(name="planName")
     def plan_name(self) -> str:
-        """
-        The unique plan identifier.
-        """
         return pulumi.get(self, "plan_name")
 
     @property
     @pulumi.getter
-    def reproduced(self) -> str:
-        """
-        Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
-        """
+    def reproduced(self) -> Optional[str]:
         return pulumi.get(self, "reproduced")
 
     @property
     @pulumi.getter(name="sqlHandle")
-    def sql_handle(self) -> str:
-        """
-        The unique SQL identifier.
-        """
+    def sql_handle(self) -> Optional[str]:
         return pulumi.get(self, "sql_handle")
 
     @property
     @pulumi.getter(name="sqlText")
-    def sql_text(self) -> str:
-        """
-        The SQL text.
-        """
+    def sql_text(self) -> Optional[str]:
         return pulumi.get(self, "sql_text")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time when the plan baseline was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastExecuted")
-    def time_last_executed(self) -> str:
-        """
-        The date and time when the plan baseline was last executed.
-        """
+    def time_last_executed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_executed")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> str:
-        """
-        The date and time when the plan baseline was last modified.
-        """
+    def time_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_last_modified")
 
 
@@ -249,23 +201,7 @@ def get_managed_database_sql_plan_baseline(managed_database_id: Optional[str] = 
                                            plan_name: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlPlanBaselineResult:
     """
-    This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the SQL plan baseline details for the specified planName.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baseline = oci.DatabaseManagement.get_managed_database_sql_plan_baseline(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str plan_name: The plan name of the SQL plan baseline.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -299,22 +235,6 @@ def get_managed_database_sql_plan_baseline_output(managed_database_id: Optional[
                                                   plan_name: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineResult]:
     """
-    This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the SQL plan baseline details for the specified planName.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baseline = oci.DatabaseManagement.get_managed_database_sql_plan_baseline(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        plan_name=var["managed_database_sql_plan_baseline_plan_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str plan_name: The plan name of the SQL plan baseline.
+    Use this data source to access information about an existing resource.
     """
     ...

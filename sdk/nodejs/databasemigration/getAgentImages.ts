@@ -43,12 +43,12 @@ export interface GetAgentImagesResult {
     /**
      * The list of agent_image_collection.
      */
-    readonly agentImageCollections: outputs.DatabaseMigration.GetAgentImagesAgentImageCollection[];
+    readonly agentImageCollections?: outputs.DatabaseMigration.GetAgentImagesAgentImageCollection[];
     readonly filters?: outputs.DatabaseMigration.GetAgentImagesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.

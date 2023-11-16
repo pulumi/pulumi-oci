@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of time_available_for_refresh_collection.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Functions
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionResult> timeAvailableForRefreshCollections)
         {

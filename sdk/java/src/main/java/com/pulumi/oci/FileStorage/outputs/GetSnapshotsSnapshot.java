@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSnapshotsSnapshot {
@@ -16,52 +18,52 @@ public final class GetSnapshotsSnapshot {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The time when this snapshot will be deleted.
      * 
      */
-    private String expirationTime;
+    private @Nullable String expirationTime;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    private String fileSystemId;
+    private @Nullable String fileSystemId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
      * 
      */
-    private String filesystemSnapshotPolicyId;
+    private @Nullable String filesystemSnapshotPolicyId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    private Boolean isCloneSource;
+    private @Nullable Boolean isCloneSource;
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Name of the snapshot. This value is immutable.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    private String provenanceId;
+    private @Nullable String provenanceId;
     /**
      * @return The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
      * * If the snapshot is created in the original file system directory.
@@ -69,22 +71,22 @@ public final class GetSnapshotsSnapshot {
      * * If the snapshot is replicated from a file system.
      * 
      */
-    private String snapshotTime;
+    private @Nullable String snapshotTime;
     /**
      * @return Specifies the generation type of the snapshot.
      * 
      */
-    private String snapshotType;
+    private @Nullable String snapshotType;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetSnapshotsSnapshot() {}
     /**
@@ -92,70 +94,70 @@ public final class GetSnapshotsSnapshot {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The time when this snapshot will be deleted.
      * 
      */
-    public String expirationTime() {
-        return this.expirationTime;
+    public Optional<String> expirationTime() {
+        return Optional.ofNullable(this.expirationTime);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      * 
      */
-    public String fileSystemId() {
-        return this.fileSystemId;
+    public Optional<String> fileSystemId() {
+        return Optional.ofNullable(this.fileSystemId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
      * 
      */
-    public String filesystemSnapshotPolicyId() {
-        return this.filesystemSnapshotPolicyId;
+    public Optional<String> filesystemSnapshotPolicyId() {
+        return Optional.ofNullable(this.filesystemSnapshotPolicyId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public Boolean isCloneSource() {
-        return this.isCloneSource;
+    public Optional<Boolean> isCloneSource() {
+        return Optional.ofNullable(this.isCloneSource);
     }
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Name of the snapshot. This value is immutable.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent&#39;s `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
-    public String provenanceId() {
-        return this.provenanceId;
+    public Optional<String> provenanceId() {
+        return Optional.ofNullable(this.provenanceId);
     }
     /**
      * @return The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
@@ -164,29 +166,29 @@ public final class GetSnapshotsSnapshot {
      * * If the snapshot is replicated from a file system.
      * 
      */
-    public String snapshotTime() {
-        return this.snapshotTime;
+    public Optional<String> snapshotTime() {
+        return Optional.ofNullable(this.snapshotTime);
     }
     /**
      * @return Specifies the generation type of the snapshot.
      * 
      */
-    public String snapshotType() {
-        return this.snapshotType;
+    public Optional<String> snapshotType() {
+        return Optional.ofNullable(this.snapshotType);
     }
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -198,20 +200,20 @@ public final class GetSnapshotsSnapshot {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private String expirationTime;
-        private String fileSystemId;
-        private String filesystemSnapshotPolicyId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCloneSource;
-        private String lifecycleDetails;
-        private String name;
-        private String provenanceId;
-        private String snapshotTime;
-        private String snapshotType;
-        private String state;
-        private String timeCreated;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String expirationTime;
+        private @Nullable String fileSystemId;
+        private @Nullable String filesystemSnapshotPolicyId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCloneSource;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String provenanceId;
+        private @Nullable String snapshotTime;
+        private @Nullable String snapshotType;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetSnapshotsSnapshot defaults) {
     	      Objects.requireNonNull(defaults);
@@ -232,73 +234,73 @@ public final class GetSnapshotsSnapshot {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder expirationTime(String expirationTime) {
-            this.expirationTime = Objects.requireNonNull(expirationTime);
+        public Builder expirationTime(@Nullable String expirationTime) {
+            this.expirationTime = expirationTime;
             return this;
         }
         @CustomType.Setter
-        public Builder fileSystemId(String fileSystemId) {
-            this.fileSystemId = Objects.requireNonNull(fileSystemId);
+        public Builder fileSystemId(@Nullable String fileSystemId) {
+            this.fileSystemId = fileSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
-            this.filesystemSnapshotPolicyId = Objects.requireNonNull(filesystemSnapshotPolicyId);
+        public Builder filesystemSnapshotPolicyId(@Nullable String filesystemSnapshotPolicyId) {
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCloneSource(Boolean isCloneSource) {
-            this.isCloneSource = Objects.requireNonNull(isCloneSource);
+        public Builder isCloneSource(@Nullable Boolean isCloneSource) {
+            this.isCloneSource = isCloneSource;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder provenanceId(String provenanceId) {
-            this.provenanceId = Objects.requireNonNull(provenanceId);
+        public Builder provenanceId(@Nullable String provenanceId) {
+            this.provenanceId = provenanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder snapshotTime(String snapshotTime) {
-            this.snapshotTime = Objects.requireNonNull(snapshotTime);
+        public Builder snapshotTime(@Nullable String snapshotTime) {
+            this.snapshotTime = snapshotTime;
             return this;
         }
         @CustomType.Setter
-        public Builder snapshotType(String snapshotType) {
-            this.snapshotType = Objects.requireNonNull(snapshotType);
+        public Builder snapshotType(@Nullable String snapshotType) {
+            this.snapshotType = snapshotType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetSnapshotsSnapshot build() {

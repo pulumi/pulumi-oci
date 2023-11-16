@@ -163,7 +163,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of metastores.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.DataCatalog
 
             ImmutableArray<Outputs.GetMetastoresFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMetastoresMetastoreResult> metastores,
 

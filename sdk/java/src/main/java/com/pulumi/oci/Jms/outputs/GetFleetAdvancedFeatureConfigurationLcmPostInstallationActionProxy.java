@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy {
@@ -15,111 +17,111 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * @return Ftp host to be set in net.properties file.
      * 
      */
-    private String ftpProxyHost;
+    private @Nullable String ftpProxyHost;
     /**
      * @return Ftp port number to be set in net.properties file.
      * 
      */
-    private Integer ftpProxyPort;
+    private @Nullable Integer ftpProxyPort;
     /**
      * @return Http host to be set in net.properties file.
      * 
      */
-    private String httpProxyHost;
+    private @Nullable String httpProxyHost;
     /**
      * @return Http port number to be set in net.properties file.
      * 
      */
-    private Integer httpProxyPort;
+    private @Nullable Integer httpProxyPort;
     /**
      * @return Https host to be set in net.properties file.
      * 
      */
-    private String httpsProxyHost;
+    private @Nullable String httpsProxyHost;
     /**
      * @return Https port number to be set in net.properties file.
      * 
      */
-    private Integer httpsProxyPort;
+    private @Nullable Integer httpsProxyPort;
     /**
      * @return Socks host to be set in net.properties file.
      * 
      */
-    private String socksProxyHost;
+    private @Nullable String socksProxyHost;
     /**
      * @return Socks port number to be set in net.properties file.
      * 
      */
-    private Integer socksProxyPort;
+    private @Nullable Integer socksProxyPort;
     /**
      * @return Sets &#34;java.net.useSystemProxies=true&#34; in net.properties when they exist.
      * 
      */
-    private Boolean useSystemProxies;
+    private @Nullable Boolean useSystemProxies;
 
     private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy() {}
     /**
      * @return Ftp host to be set in net.properties file.
      * 
      */
-    public String ftpProxyHost() {
-        return this.ftpProxyHost;
+    public Optional<String> ftpProxyHost() {
+        return Optional.ofNullable(this.ftpProxyHost);
     }
     /**
      * @return Ftp port number to be set in net.properties file.
      * 
      */
-    public Integer ftpProxyPort() {
-        return this.ftpProxyPort;
+    public Optional<Integer> ftpProxyPort() {
+        return Optional.ofNullable(this.ftpProxyPort);
     }
     /**
      * @return Http host to be set in net.properties file.
      * 
      */
-    public String httpProxyHost() {
-        return this.httpProxyHost;
+    public Optional<String> httpProxyHost() {
+        return Optional.ofNullable(this.httpProxyHost);
     }
     /**
      * @return Http port number to be set in net.properties file.
      * 
      */
-    public Integer httpProxyPort() {
-        return this.httpProxyPort;
+    public Optional<Integer> httpProxyPort() {
+        return Optional.ofNullable(this.httpProxyPort);
     }
     /**
      * @return Https host to be set in net.properties file.
      * 
      */
-    public String httpsProxyHost() {
-        return this.httpsProxyHost;
+    public Optional<String> httpsProxyHost() {
+        return Optional.ofNullable(this.httpsProxyHost);
     }
     /**
      * @return Https port number to be set in net.properties file.
      * 
      */
-    public Integer httpsProxyPort() {
-        return this.httpsProxyPort;
+    public Optional<Integer> httpsProxyPort() {
+        return Optional.ofNullable(this.httpsProxyPort);
     }
     /**
      * @return Socks host to be set in net.properties file.
      * 
      */
-    public String socksProxyHost() {
-        return this.socksProxyHost;
+    public Optional<String> socksProxyHost() {
+        return Optional.ofNullable(this.socksProxyHost);
     }
     /**
      * @return Socks port number to be set in net.properties file.
      * 
      */
-    public Integer socksProxyPort() {
-        return this.socksProxyPort;
+    public Optional<Integer> socksProxyPort() {
+        return Optional.ofNullable(this.socksProxyPort);
     }
     /**
      * @return Sets &#34;java.net.useSystemProxies=true&#34; in net.properties when they exist.
      * 
      */
-    public Boolean useSystemProxies() {
-        return this.useSystemProxies;
+    public Optional<Boolean> useSystemProxies() {
+        return Optional.ofNullable(this.useSystemProxies);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ftpProxyHost;
-        private Integer ftpProxyPort;
-        private String httpProxyHost;
-        private Integer httpProxyPort;
-        private String httpsProxyHost;
-        private Integer httpsProxyPort;
-        private String socksProxyHost;
-        private Integer socksProxyPort;
-        private Boolean useSystemProxies;
+        private @Nullable String ftpProxyHost;
+        private @Nullable Integer ftpProxyPort;
+        private @Nullable String httpProxyHost;
+        private @Nullable Integer httpProxyPort;
+        private @Nullable String httpsProxyHost;
+        private @Nullable Integer httpsProxyPort;
+        private @Nullable String socksProxyHost;
+        private @Nullable Integer socksProxyPort;
+        private @Nullable Boolean useSystemProxies;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,48 +157,48 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
 
         @CustomType.Setter
-        public Builder ftpProxyHost(String ftpProxyHost) {
-            this.ftpProxyHost = Objects.requireNonNull(ftpProxyHost);
+        public Builder ftpProxyHost(@Nullable String ftpProxyHost) {
+            this.ftpProxyHost = ftpProxyHost;
             return this;
         }
         @CustomType.Setter
-        public Builder ftpProxyPort(Integer ftpProxyPort) {
-            this.ftpProxyPort = Objects.requireNonNull(ftpProxyPort);
+        public Builder ftpProxyPort(@Nullable Integer ftpProxyPort) {
+            this.ftpProxyPort = ftpProxyPort;
             return this;
         }
         @CustomType.Setter
-        public Builder httpProxyHost(String httpProxyHost) {
-            this.httpProxyHost = Objects.requireNonNull(httpProxyHost);
+        public Builder httpProxyHost(@Nullable String httpProxyHost) {
+            this.httpProxyHost = httpProxyHost;
             return this;
         }
         @CustomType.Setter
-        public Builder httpProxyPort(Integer httpProxyPort) {
-            this.httpProxyPort = Objects.requireNonNull(httpProxyPort);
+        public Builder httpProxyPort(@Nullable Integer httpProxyPort) {
+            this.httpProxyPort = httpProxyPort;
             return this;
         }
         @CustomType.Setter
-        public Builder httpsProxyHost(String httpsProxyHost) {
-            this.httpsProxyHost = Objects.requireNonNull(httpsProxyHost);
+        public Builder httpsProxyHost(@Nullable String httpsProxyHost) {
+            this.httpsProxyHost = httpsProxyHost;
             return this;
         }
         @CustomType.Setter
-        public Builder httpsProxyPort(Integer httpsProxyPort) {
-            this.httpsProxyPort = Objects.requireNonNull(httpsProxyPort);
+        public Builder httpsProxyPort(@Nullable Integer httpsProxyPort) {
+            this.httpsProxyPort = httpsProxyPort;
             return this;
         }
         @CustomType.Setter
-        public Builder socksProxyHost(String socksProxyHost) {
-            this.socksProxyHost = Objects.requireNonNull(socksProxyHost);
+        public Builder socksProxyHost(@Nullable String socksProxyHost) {
+            this.socksProxyHost = socksProxyHost;
             return this;
         }
         @CustomType.Setter
-        public Builder socksProxyPort(Integer socksProxyPort) {
-            this.socksProxyPort = Objects.requireNonNull(socksProxyPort);
+        public Builder socksProxyPort(@Nullable Integer socksProxyPort) {
+            this.socksProxyPort = socksProxyPort;
             return this;
         }
         @CustomType.Setter
-        public Builder useSystemProxies(Boolean useSystemProxies) {
-            this.useSystemProxies = Objects.requireNonNull(useSystemProxies);
+        public Builder useSystemProxies(@Nullable Boolean useSystemProxies) {
+            this.useSystemProxies = useSystemProxies;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy build() {

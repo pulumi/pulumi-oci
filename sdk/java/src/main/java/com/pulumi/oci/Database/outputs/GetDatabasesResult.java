@@ -23,7 +23,7 @@ public final class GetDatabasesResult {
      * @return The list of databases.
      * 
      */
-    private List<GetDatabasesDatabase> databases;
+    private @Nullable List<GetDatabasesDatabase> databases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
@@ -39,7 +39,7 @@ public final class GetDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the database.
      * 
@@ -60,7 +60,7 @@ public final class GetDatabasesResult {
      * 
      */
     public List<GetDatabasesDatabase> databases() {
-        return this.databases;
+        return this.databases == null ? List.of() : this.databases;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -83,8 +83,8 @@ public final class GetDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the database.
@@ -107,11 +107,11 @@ public final class GetDatabasesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDatabasesDatabase> databases;
+        private @Nullable List<GetDatabasesDatabase> databases;
         private @Nullable String dbHomeId;
         private @Nullable String dbName;
         private @Nullable List<GetDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String systemId;
         public Builder() {}
@@ -133,8 +133,8 @@ public final class GetDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databases(List<GetDatabasesDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+        public Builder databases(@Nullable List<GetDatabasesDatabase> databases) {
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDatabasesDatabase... databases) {
@@ -159,8 +159,8 @@ public final class GetDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

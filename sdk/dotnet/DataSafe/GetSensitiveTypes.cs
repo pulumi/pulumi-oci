@@ -307,7 +307,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the parent sensitive category.
         /// </summary>
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSensitiveTypesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? parentCategoryId,
 

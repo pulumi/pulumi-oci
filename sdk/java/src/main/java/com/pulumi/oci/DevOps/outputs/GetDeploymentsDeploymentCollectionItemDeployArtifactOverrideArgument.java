@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument {
@@ -14,7 +15,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
+    private @Nullable List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
 
     private GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
      * 
      */
     public List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
+        private @Nullable List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideA
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentItem... items) {

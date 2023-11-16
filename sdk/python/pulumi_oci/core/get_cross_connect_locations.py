@@ -44,10 +44,7 @@ class GetCrossConnectLocationsResult:
 
     @property
     @pulumi.getter(name="crossConnectLocations")
-    def cross_connect_locations(self) -> Sequence['outputs.GetCrossConnectLocationsCrossConnectLocationResult']:
-        """
-        The list of cross_connect_locations.
-        """
+    def cross_connect_locations(self) -> Optional[Sequence['outputs.GetCrossConnectLocationsCrossConnectLocationResult']]:
         return pulumi.get(self, "cross_connect_locations")
 
     @property
@@ -57,7 +54,7 @@ class GetCrossConnectLocationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,22 +77,7 @@ def get_cross_connect_locations(compartment_id: Optional[str] = None,
                                 filters: Optional[Sequence[pulumi.InputType['GetCrossConnectLocationsFilterArgs']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectLocationsResult:
     """
-    This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
-
-    Lists the available FastConnect locations for cross-connect installation. You need
-    this information so you can specify your desired location when you create a cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -115,21 +97,6 @@ def get_cross_connect_locations_output(compartment_id: Optional[pulumi.Input[str
                                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCrossConnectLocationsFilterArgs']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectLocationsResult]:
     """
-    This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
-
-    Lists the available FastConnect locations for cross-connect installation. You need
-    this information so you can specify your desired location when you create a cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

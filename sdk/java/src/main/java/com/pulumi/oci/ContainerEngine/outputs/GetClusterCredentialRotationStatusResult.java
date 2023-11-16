@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterCredentialRotationStatusResult {
@@ -14,22 +16,22 @@ public final class GetClusterCredentialRotationStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action. COMPLETED: New credentials are functional on kuberentes cluster.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
      * 
      */
-    private String statusDetails;
+    private @Nullable String statusDetails;
     /**
      * @return The time by which retirement of old credentials should start.
      * 
      */
-    private String timeAutoCompletionScheduled;
+    private @Nullable String timeAutoCompletionScheduled;
 
     private GetClusterCredentialRotationStatusResult() {}
     public String clusterId() {
@@ -39,29 +41,29 @@ public final class GetClusterCredentialRotationStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action. COMPLETED: New credentials are functional on kuberentes cluster.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
      * 
      */
-    public String statusDetails() {
-        return this.statusDetails;
+    public Optional<String> statusDetails() {
+        return Optional.ofNullable(this.statusDetails);
     }
     /**
      * @return The time by which retirement of old credentials should start.
      * 
      */
-    public String timeAutoCompletionScheduled() {
-        return this.timeAutoCompletionScheduled;
+    public Optional<String> timeAutoCompletionScheduled() {
+        return Optional.ofNullable(this.timeAutoCompletionScheduled);
     }
 
     public static Builder builder() {
@@ -74,10 +76,10 @@ public final class GetClusterCredentialRotationStatusResult {
     @CustomType.Builder
     public static final class Builder {
         private String clusterId;
-        private String id;
-        private String status;
-        private String statusDetails;
-        private String timeAutoCompletionScheduled;
+        private @Nullable String id;
+        private @Nullable String status;
+        private @Nullable String statusDetails;
+        private @Nullable String timeAutoCompletionScheduled;
         public Builder() {}
         public Builder(GetClusterCredentialRotationStatusResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,23 +96,23 @@ public final class GetClusterCredentialRotationStatusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+        public Builder statusDetails(@Nullable String statusDetails) {
+            this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAutoCompletionScheduled(String timeAutoCompletionScheduled) {
-            this.timeAutoCompletionScheduled = Objects.requireNonNull(timeAutoCompletionScheduled);
+        public Builder timeAutoCompletionScheduled(@Nullable String timeAutoCompletionScheduled) {
+            this.timeAutoCompletionScheduled = timeAutoCompletionScheduled;
             return this;
         }
         public GetClusterCredentialRotationStatusResult build() {

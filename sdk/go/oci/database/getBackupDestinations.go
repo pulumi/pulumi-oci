@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
@@ -69,7 +68,7 @@ type GetBackupDestinationsResult struct {
 	CompartmentId string                        `pulumi:"compartmentId"`
 	Filters       []GetBackupDestinationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the backup destination.
 	Type *string `pulumi:"type"`
 }
@@ -115,12 +114,6 @@ func (o GetBackupDestinationsResultOutput) ToGetBackupDestinationsResultOutputWi
 	return o
 }
 
-func (o GetBackupDestinationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackupDestinationsResult] {
-	return pulumix.Output[GetBackupDestinationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of backup_destinations.
 func (o GetBackupDestinationsResultOutput) BackupDestinations() GetBackupDestinationsBackupDestinationArrayOutput {
 	return o.ApplyT(func(v GetBackupDestinationsResult) []GetBackupDestinationsBackupDestination {
@@ -138,8 +131,8 @@ func (o GetBackupDestinationsResultOutput) Filters() GetBackupDestinationsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBackupDestinationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackupDestinationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackupDestinationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupDestinationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the backup destination.

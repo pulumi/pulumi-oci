@@ -8,67 +8,69 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetArtifactByPathResult {
-    private String artifactId;
+    private @Nullable String artifactId;
     private String artifactPath;
-    private String compartmentId;
-    private String content;
-    private Map<String,Object> definedTags;
-    private String displayName;
-    private Map<String,Object> freeformTags;
-    private String id;
+    private @Nullable String compartmentId;
+    private @Nullable String content;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable String displayName;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String id;
     private String repositoryId;
-    private String sha256;
-    private String sizeInBytes;
-    private String source;
-    private String state;
-    private String timeCreated;
+    private @Nullable String sha256;
+    private @Nullable String sizeInBytes;
+    private @Nullable String source;
+    private @Nullable String state;
+    private @Nullable String timeCreated;
     private String version;
 
     private GetArtifactByPathResult() {}
-    public String artifactId() {
-        return this.artifactId;
+    public Optional<String> artifactId() {
+        return Optional.ofNullable(this.artifactId);
     }
     public String artifactPath() {
         return this.artifactPath;
     }
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String repositoryId() {
         return this.repositoryId;
     }
-    public String sha256() {
-        return this.sha256;
+    public Optional<String> sha256() {
+        return Optional.ofNullable(this.sha256);
     }
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     public String version() {
         return this.version;
@@ -83,20 +85,20 @@ public final class GetArtifactByPathResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String artifactId;
+        private @Nullable String artifactId;
         private String artifactPath;
-        private String compartmentId;
-        private String content;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String content;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private String repositoryId;
-        private String sha256;
-        private String sizeInBytes;
-        private String source;
-        private String state;
-        private String timeCreated;
+        private @Nullable String sha256;
+        private @Nullable String sizeInBytes;
+        private @Nullable String source;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         private String version;
         public Builder() {}
         public Builder(GetArtifactByPathResult defaults) {
@@ -119,8 +121,8 @@ public final class GetArtifactByPathResult {
         }
 
         @CustomType.Setter
-        public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+        public Builder artifactId(@Nullable String artifactId) {
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
@@ -129,33 +131,33 @@ public final class GetArtifactByPathResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -164,28 +166,28 @@ public final class GetArtifactByPathResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sha256(String sha256) {
-            this.sha256 = Objects.requireNonNull(sha256);
+        public Builder sha256(@Nullable String sha256) {
+            this.sha256 = sha256;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter

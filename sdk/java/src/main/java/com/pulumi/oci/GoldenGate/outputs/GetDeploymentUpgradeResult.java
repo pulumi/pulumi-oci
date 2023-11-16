@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentUpgradeResult {
@@ -16,172 +18,172 @@ public final class GetDeploymentUpgradeResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    private String deploymentId;
+    private @Nullable String deploymentId;
     private String deploymentUpgradeId;
     /**
      * @return The type of the deployment upgrade: MANUAL or AUTOMATIC
      * 
      */
-    private String deploymentUpgradeType;
+    private @Nullable String deploymentUpgradeType;
     /**
      * @return Metadata about this specific object.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
      * 
      */
-    private Boolean isCancelAllowed;
+    private @Nullable Boolean isCancelAllowed;
     /**
      * @return Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
      * 
      */
-    private Boolean isRescheduleAllowed;
+    private @Nullable Boolean isRescheduleAllowed;
     /**
      * @return Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
      * * Manual upgrade is allowed to rollback only until the old version isn&#39;t deprecated yet.
      * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
      * 
      */
-    private Boolean isRollbackAllowed;
+    private @Nullable Boolean isRollbackAllowed;
     /**
      * @return Indicates if OGG release contains security fix.
      * 
      */
-    private Boolean isSecurityFix;
+    private @Nullable Boolean isSecurityFix;
     /**
      * @return Indicates if upgrade notifications are snoozed or not.
      * 
      */
-    private Boolean isSnoozed;
+    private @Nullable Boolean isSnoozed;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    private String lifecycleSubState;
+    private @Nullable String lifecycleSubState;
     /**
      * @return Version of OGG
      * 
      */
-    private String oggVersion;
+    private @Nullable String oggVersion;
     /**
      * @return Version of OGG
      * 
      */
-    private String previousOggVersion;
+    private @Nullable String previousOggVersion;
     /**
      * @return The type of release.
      * 
      */
-    private String releaseType;
+    private @Nullable String releaseType;
     /**
      * @return Possible lifecycle states.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeOggVersionSupportedUntil;
+    private @Nullable String timeOggVersionSupportedUntil;
     /**
      * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeSchedule;
+    private @Nullable String timeSchedule;
     /**
      * @return Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeScheduleMax;
+    private @Nullable String timeScheduleMax;
     /**
      * @return The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeSnoozedUntil;
+    private @Nullable String timeSnoozedUntil;
     /**
      * @return The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDeploymentUpgradeResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    public String deploymentId() {
-        return this.deploymentId;
+    public Optional<String> deploymentId() {
+        return Optional.ofNullable(this.deploymentId);
     }
     public String deploymentUpgradeId() {
         return this.deploymentUpgradeId;
@@ -190,50 +192,50 @@ public final class GetDeploymentUpgradeResult {
      * @return The type of the deployment upgrade: MANUAL or AUTOMATIC
      * 
      */
-    public String deploymentUpgradeType() {
-        return this.deploymentUpgradeType;
+    public Optional<String> deploymentUpgradeType() {
+        return Optional.ofNullable(this.deploymentUpgradeType);
     }
     /**
      * @return Metadata about this specific object.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return An object&#39;s Display Name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
      * 
      */
-    public Boolean isCancelAllowed() {
-        return this.isCancelAllowed;
+    public Optional<Boolean> isCancelAllowed() {
+        return Optional.ofNullable(this.isCancelAllowed);
     }
     /**
      * @return Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
      * 
      */
-    public Boolean isRescheduleAllowed() {
-        return this.isRescheduleAllowed;
+    public Optional<Boolean> isRescheduleAllowed() {
+        return Optional.ofNullable(this.isRescheduleAllowed);
     }
     /**
      * @return Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
@@ -241,134 +243,134 @@ public final class GetDeploymentUpgradeResult {
      * * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
      * 
      */
-    public Boolean isRollbackAllowed() {
-        return this.isRollbackAllowed;
+    public Optional<Boolean> isRollbackAllowed() {
+        return Optional.ofNullable(this.isRollbackAllowed);
     }
     /**
      * @return Indicates if OGG release contains security fix.
      * 
      */
-    public Boolean isSecurityFix() {
-        return this.isSecurityFix;
+    public Optional<Boolean> isSecurityFix() {
+        return Optional.ofNullable(this.isSecurityFix);
     }
     /**
      * @return Indicates if upgrade notifications are snoozed or not.
      * 
      */
-    public Boolean isSnoozed() {
-        return this.isSnoozed;
+    public Optional<Boolean> isSnoozed() {
+        return Optional.ofNullable(this.isSnoozed);
     }
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Possible GGS lifecycle sub-states.
      * 
      */
-    public String lifecycleSubState() {
-        return this.lifecycleSubState;
+    public Optional<String> lifecycleSubState() {
+        return Optional.ofNullable(this.lifecycleSubState);
     }
     /**
      * @return Version of OGG
      * 
      */
-    public String oggVersion() {
-        return this.oggVersion;
+    public Optional<String> oggVersion() {
+        return Optional.ofNullable(this.oggVersion);
     }
     /**
      * @return Version of OGG
      * 
      */
-    public String previousOggVersion() {
-        return this.previousOggVersion;
+    public Optional<String> previousOggVersion() {
+        return Optional.ofNullable(this.previousOggVersion);
     }
     /**
      * @return The type of release.
      * 
      */
-    public String releaseType() {
-        return this.releaseType;
+    public Optional<String> releaseType() {
+        return Optional.ofNullable(this.releaseType);
     }
     /**
      * @return Possible lifecycle states.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeOggVersionSupportedUntil() {
-        return this.timeOggVersionSupportedUntil;
+    public Optional<String> timeOggVersionSupportedUntil() {
+        return Optional.ofNullable(this.timeOggVersionSupportedUntil);
     }
     /**
      * @return The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeSchedule() {
-        return this.timeSchedule;
+    public Optional<String> timeSchedule() {
+        return Optional.ofNullable(this.timeSchedule);
     }
     /**
      * @return Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeScheduleMax() {
-        return this.timeScheduleMax;
+    public Optional<String> timeScheduleMax() {
+        return Optional.ofNullable(this.timeScheduleMax);
     }
     /**
      * @return The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeSnoozedUntil() {
-        return this.timeSnoozedUntil;
+    public Optional<String> timeSnoozedUntil() {
+        return Optional.ofNullable(this.timeSnoozedUntil);
     }
     /**
      * @return The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -380,36 +382,36 @@ public final class GetDeploymentUpgradeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String deploymentId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deploymentId;
         private String deploymentUpgradeId;
-        private String deploymentUpgradeType;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCancelAllowed;
-        private Boolean isRescheduleAllowed;
-        private Boolean isRollbackAllowed;
-        private Boolean isSecurityFix;
-        private Boolean isSnoozed;
-        private String lifecycleDetails;
-        private String lifecycleSubState;
-        private String oggVersion;
-        private String previousOggVersion;
-        private String releaseType;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeFinished;
-        private String timeOggVersionSupportedUntil;
-        private String timeReleased;
-        private String timeSchedule;
-        private String timeScheduleMax;
-        private String timeSnoozedUntil;
-        private String timeStarted;
-        private String timeUpdated;
+        private @Nullable String deploymentUpgradeType;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCancelAllowed;
+        private @Nullable Boolean isRescheduleAllowed;
+        private @Nullable Boolean isRollbackAllowed;
+        private @Nullable Boolean isSecurityFix;
+        private @Nullable Boolean isSnoozed;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String lifecycleSubState;
+        private @Nullable String oggVersion;
+        private @Nullable String previousOggVersion;
+        private @Nullable String releaseType;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeFinished;
+        private @Nullable String timeOggVersionSupportedUntil;
+        private @Nullable String timeReleased;
+        private @Nullable String timeSchedule;
+        private @Nullable String timeScheduleMax;
+        private @Nullable String timeSnoozedUntil;
+        private @Nullable String timeStarted;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDeploymentUpgradeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -446,18 +448,18 @@ public final class GetDeploymentUpgradeResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+        public Builder deploymentId(@Nullable String deploymentId) {
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
@@ -466,133 +468,133 @@ public final class GetDeploymentUpgradeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentUpgradeType(String deploymentUpgradeType) {
-            this.deploymentUpgradeType = Objects.requireNonNull(deploymentUpgradeType);
+        public Builder deploymentUpgradeType(@Nullable String deploymentUpgradeType) {
+            this.deploymentUpgradeType = deploymentUpgradeType;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCancelAllowed(Boolean isCancelAllowed) {
-            this.isCancelAllowed = Objects.requireNonNull(isCancelAllowed);
+        public Builder isCancelAllowed(@Nullable Boolean isCancelAllowed) {
+            this.isCancelAllowed = isCancelAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isRescheduleAllowed(Boolean isRescheduleAllowed) {
-            this.isRescheduleAllowed = Objects.requireNonNull(isRescheduleAllowed);
+        public Builder isRescheduleAllowed(@Nullable Boolean isRescheduleAllowed) {
+            this.isRescheduleAllowed = isRescheduleAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isRollbackAllowed(Boolean isRollbackAllowed) {
-            this.isRollbackAllowed = Objects.requireNonNull(isRollbackAllowed);
+        public Builder isRollbackAllowed(@Nullable Boolean isRollbackAllowed) {
+            this.isRollbackAllowed = isRollbackAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isSecurityFix(Boolean isSecurityFix) {
-            this.isSecurityFix = Objects.requireNonNull(isSecurityFix);
+        public Builder isSecurityFix(@Nullable Boolean isSecurityFix) {
+            this.isSecurityFix = isSecurityFix;
             return this;
         }
         @CustomType.Setter
-        public Builder isSnoozed(Boolean isSnoozed) {
-            this.isSnoozed = Objects.requireNonNull(isSnoozed);
+        public Builder isSnoozed(@Nullable Boolean isSnoozed) {
+            this.isSnoozed = isSnoozed;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+        public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
-        public Builder oggVersion(String oggVersion) {
-            this.oggVersion = Objects.requireNonNull(oggVersion);
+        public Builder oggVersion(@Nullable String oggVersion) {
+            this.oggVersion = oggVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder previousOggVersion(String previousOggVersion) {
-            this.previousOggVersion = Objects.requireNonNull(previousOggVersion);
+        public Builder previousOggVersion(@Nullable String previousOggVersion) {
+            this.previousOggVersion = previousOggVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+        public Builder releaseType(@Nullable String releaseType) {
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
-            this.timeOggVersionSupportedUntil = Objects.requireNonNull(timeOggVersionSupportedUntil);
+        public Builder timeOggVersionSupportedUntil(@Nullable String timeOggVersionSupportedUntil) {
+            this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSchedule(String timeSchedule) {
-            this.timeSchedule = Objects.requireNonNull(timeSchedule);
+        public Builder timeSchedule(@Nullable String timeSchedule) {
+            this.timeSchedule = timeSchedule;
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduleMax(String timeScheduleMax) {
-            this.timeScheduleMax = Objects.requireNonNull(timeScheduleMax);
+        public Builder timeScheduleMax(@Nullable String timeScheduleMax) {
+            this.timeScheduleMax = timeScheduleMax;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSnoozedUntil(String timeSnoozedUntil) {
-            this.timeSnoozedUntil = Objects.requireNonNull(timeSnoozedUntil);
+        public Builder timeSnoozedUntil(@Nullable String timeSnoozedUntil) {
+            this.timeSnoozedUntil = timeSnoozedUntil;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDeploymentUpgradeResult build() {

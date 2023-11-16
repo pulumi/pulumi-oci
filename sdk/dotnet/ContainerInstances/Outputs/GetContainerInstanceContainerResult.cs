@@ -17,118 +17,118 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The availability domain to place the container instance.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         public readonly ImmutableArray<string> Commands;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the container.
         /// </summary>
-        public readonly string ContainerId;
+        public readonly string? ContainerId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
         /// </summary>
-        public readonly string ContainerInstanceId;
+        public readonly string? ContainerInstanceId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> EnvironmentVariables;
-        public readonly int ExitCode;
+        public readonly string? DisplayName;
+        public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
+        public readonly int? ExitCode;
         /// <summary>
         /// The fault domain to place the container instance.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerHealthCheckResult> HealthChecks;
-        public readonly string ImageUrl;
-        public readonly bool IsResourcePrincipalDisabled;
+        public readonly string? ImageUrl;
+        public readonly bool? IsResourcePrincipalDisabled;
         /// <summary>
         /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerResourceConfigResult> ResourceConfigs;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerSecurityContextResult> SecurityContexts;
         /// <summary>
         /// The current state of the container instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly string TimeTerminated;
+        public readonly string? TimeCreated;
+        public readonly string? TimeTerminated;
         /// <summary>
         /// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         public readonly ImmutableArray<Outputs.GetContainerInstanceContainerVolumeMountResult> VolumeMounts;
-        public readonly string WorkingDirectory;
+        public readonly string? WorkingDirectory;
 
         [OutputConstructor]
         private GetContainerInstanceContainerResult(
             ImmutableArray<string> arguments,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<string> commands,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string containerId,
+            string? containerId,
 
-            string containerInstanceId,
+            string? containerInstanceId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> environmentVariables,
+            ImmutableDictionary<string, object>? environmentVariables,
 
-            int exitCode,
+            int? exitCode,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetContainerInstanceContainerHealthCheckResult> healthChecks,
 
-            string imageUrl,
+            string? imageUrl,
 
-            bool isResourcePrincipalDisabled,
+            bool? isResourcePrincipalDisabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetContainerInstanceContainerResourceConfigResult> resourceConfigs,
 
             ImmutableArray<Outputs.GetContainerInstanceContainerSecurityContextResult> securityContexts,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeTerminated,
+            string? timeTerminated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetContainerInstanceContainerVolumeMountResult> volumeMounts,
 
-            string workingDirectory)
+            string? workingDirectory)
         {
             Arguments = arguments;
             AvailabilityDomain = availabilityDomain;

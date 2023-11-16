@@ -16,35 +16,35 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Currency code
         /// </summary>
-        public readonly string CurrencyCode;
+        public readonly string? CurrencyCode;
         /// <summary>
         /// Currency symbol
         /// </summary>
-        public readonly string CurrencySymbol;
+        public readonly string? CurrencySymbol;
         /// <summary>
         /// Name of the currency
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Round decimal point
         /// </summary>
-        public readonly double RoundDecimalPoint;
+        public readonly double? RoundDecimalPoint;
         /// <summary>
         /// USD conversion rate of the currency
         /// </summary>
-        public readonly double UsdConversion;
+        public readonly double? UsdConversion;
 
         [OutputConstructor]
         private GetInvoiceCurrencyResult(
-            string currencyCode,
+            string? currencyCode,
 
-            string currencySymbol,
+            string? currencySymbol,
 
-            string name,
+            string? name,
 
-            double roundDecimalPoint,
+            double? roundDecimalPoint,
 
-            double usdConversion)
+            double? usdConversion)
         {
             CurrencyCode = currencyCode;
             CurrencySymbol = currencySymbol;

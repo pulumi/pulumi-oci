@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
@@ -78,7 +77,7 @@ type GetOpsiConfigurationConfigurationItemResult struct {
 	ConfigItems                   []GetOpsiConfigurationConfigurationItemConfigItem `pulumi:"configItems"`
 	ConfigItemsApplicableContexts []string                                          `pulumi:"configItemsApplicableContexts"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of configuration item.
 	Name *string `pulumi:"name"`
 	// OPSI configuration type.
@@ -131,12 +130,6 @@ func (o GetOpsiConfigurationConfigurationItemResultOutput) ToGetOpsiConfiguratio
 	return o
 }
 
-func (o GetOpsiConfigurationConfigurationItemResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpsiConfigurationConfigurationItemResult] {
-	return pulumix.Output[GetOpsiConfigurationConfigurationItemResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpsiConfigurationConfigurationItemResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -157,8 +150,8 @@ func (o GetOpsiConfigurationConfigurationItemResultOutput) ConfigItemsApplicable
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOpsiConfigurationConfigurationItemResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOpsiConfigurationConfigurationItemResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationConfigurationItemResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of configuration item.

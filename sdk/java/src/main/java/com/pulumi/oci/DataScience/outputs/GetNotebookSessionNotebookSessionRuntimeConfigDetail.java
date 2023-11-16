@@ -10,6 +10,7 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNotebookSessionNotebookSessionRuntimeConfigDetail {
@@ -17,12 +18,12 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetail {
      * @return Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    private Map<String,Object> customEnvironmentVariables;
+    private @Nullable Map<String,Object> customEnvironmentVariables;
     /**
      * @return Git configuration Details.
      * 
      */
-    private List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
+    private @Nullable List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
 
     private GetNotebookSessionNotebookSessionRuntimeConfigDetail() {}
     /**
@@ -30,14 +31,14 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetail {
      * 
      */
     public Map<String,Object> customEnvironmentVariables() {
-        return this.customEnvironmentVariables;
+        return this.customEnvironmentVariables == null ? Map.of() : this.customEnvironmentVariables;
     }
     /**
      * @return Git configuration Details.
      * 
      */
     public List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails() {
-        return this.notebookSessionGitConfigDetails;
+        return this.notebookSessionGitConfigDetails == null ? List.of() : this.notebookSessionGitConfigDetails;
     }
 
     public static Builder builder() {
@@ -49,8 +50,8 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> customEnvironmentVariables;
-        private List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
+        private @Nullable Map<String,Object> customEnvironmentVariables;
+        private @Nullable List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
         public Builder() {}
         public Builder(GetNotebookSessionNotebookSessionRuntimeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,13 +60,13 @@ public final class GetNotebookSessionNotebookSessionRuntimeConfigDetail {
         }
 
         @CustomType.Setter
-        public Builder customEnvironmentVariables(Map<String,Object> customEnvironmentVariables) {
-            this.customEnvironmentVariables = Objects.requireNonNull(customEnvironmentVariables);
+        public Builder customEnvironmentVariables(@Nullable Map<String,Object> customEnvironmentVariables) {
+            this.customEnvironmentVariables = customEnvironmentVariables;
             return this;
         }
         @CustomType.Setter
-        public Builder notebookSessionGitConfigDetails(List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails) {
-            this.notebookSessionGitConfigDetails = Objects.requireNonNull(notebookSessionGitConfigDetails);
+        public Builder notebookSessionGitConfigDetails(@Nullable List<GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails) {
+            this.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
             return this;
         }
         public Builder notebookSessionGitConfigDetails(GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail... notebookSessionGitConfigDetails) {

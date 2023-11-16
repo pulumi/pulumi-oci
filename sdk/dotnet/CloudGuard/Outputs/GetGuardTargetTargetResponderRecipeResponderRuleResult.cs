@@ -16,11 +16,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// ResponderRule description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Details of ResponderRule.
         /// </summary>
@@ -28,11 +28,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// ResponderRule display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// List of Policy
         /// </summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Unique ResponderRule identifier.
         /// </summary>
-        public readonly string ResponderRuleId;
+        public readonly string? ResponderRuleId;
         /// <summary>
         /// The current state of the ResponderRule.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Supported Execution Modes
         /// </summary>
@@ -52,41 +52,41 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The date and time the target was created. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the target was updated. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Type of Responder
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetGuardTargetTargetResponderRecipeResponderRuleResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetGuardTargetTargetResponderRecipeResponderRuleDetailResult> details,
 
-            string displayName,
+            string? displayName,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> policies,
 
-            string responderRuleId,
+            string? responderRuleId,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> supportedModes,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type)
+            string? type)
         {
             CompartmentId = compartmentId;
             Description = description;

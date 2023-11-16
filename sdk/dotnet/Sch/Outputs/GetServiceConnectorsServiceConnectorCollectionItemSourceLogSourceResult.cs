@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             CompartmentId = compartmentId;
             LogGroupId = logGroupId;

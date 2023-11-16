@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **Deprecated. Use Database.AutonomousDatabaseWallet instead.**
@@ -77,11 +76,11 @@ type LookupAutonomousDatabaseWalletResult struct {
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	Base64EncodeContent  *bool  `pulumi:"base64EncodeContent"`
 	// content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-	Content      string  `pulumi:"content"`
+	Content      *string `pulumi:"content"`
 	GenerateType *string `pulumi:"generateType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string `pulumi:"id"`
-	Password string `pulumi:"password"`
+	Id       *string `pulumi:"id"`
+	Password string  `pulumi:"password"`
 }
 
 func LookupAutonomousDatabaseWalletOutput(ctx *pulumi.Context, args LookupAutonomousDatabaseWalletOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseWalletResultOutput {
@@ -131,12 +130,6 @@ func (o LookupAutonomousDatabaseWalletResultOutput) ToLookupAutonomousDatabaseWa
 	return o
 }
 
-func (o LookupAutonomousDatabaseWalletResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseWalletResult] {
-	return pulumix.Output[LookupAutonomousDatabaseWalletResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Deprecated: The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.
 func (o LookupAutonomousDatabaseWalletResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseWalletResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
@@ -147,8 +140,8 @@ func (o LookupAutonomousDatabaseWalletResultOutput) Base64EncodeContent() pulumi
 }
 
 // content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-func (o LookupAutonomousDatabaseWalletResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseWalletResult) string { return v.Content }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseWalletResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseWalletResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAutonomousDatabaseWalletResultOutput) GenerateType() pulumi.StringPtrOutput {
@@ -156,8 +149,8 @@ func (o LookupAutonomousDatabaseWalletResultOutput) GenerateType() pulumi.String
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupAutonomousDatabaseWalletResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseWalletResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseWalletResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseWalletResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAutonomousDatabaseWalletResultOutput) Password() pulumi.StringOutput {

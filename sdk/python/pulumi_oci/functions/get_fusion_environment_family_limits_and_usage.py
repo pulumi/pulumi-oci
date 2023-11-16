@@ -41,10 +41,7 @@ class GetFusionEnvironmentFamilyLimitsAndUsageResult:
 
     @property
     @pulumi.getter(name="developmentLimitAndUsages")
-    def development_limit_and_usages(self) -> Sequence['outputs.GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult']:
-        """
-        The limit and usage for a specific environment type, for example, production, development, or test.
-        """
+    def development_limit_and_usages(self) -> Optional[Sequence['outputs.GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageResult']]:
         return pulumi.get(self, "development_limit_and_usages")
 
     @property
@@ -54,7 +51,7 @@ class GetFusionEnvironmentFamilyLimitsAndUsageResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,18 +59,12 @@ class GetFusionEnvironmentFamilyLimitsAndUsageResult:
 
     @property
     @pulumi.getter(name="productionLimitAndUsages")
-    def production_limit_and_usages(self) -> Sequence['outputs.GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult']:
-        """
-        The limit and usage for a specific environment type, for example, production, development, or test.
-        """
+    def production_limit_and_usages(self) -> Optional[Sequence['outputs.GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageResult']]:
         return pulumi.get(self, "production_limit_and_usages")
 
     @property
     @pulumi.getter(name="testLimitAndUsages")
-    def test_limit_and_usages(self) -> Sequence['outputs.GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult']:
-        """
-        The limit and usage for a specific environment type, for example, production, development, or test.
-        """
+    def test_limit_and_usages(self) -> Optional[Sequence['outputs.GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageResult']]:
         return pulumi.get(self, "test_limit_and_usages")
 
 
@@ -93,21 +84,7 @@ class AwaitableGetFusionEnvironmentFamilyLimitsAndUsageResult(GetFusionEnvironme
 def get_fusion_environment_family_limits_and_usage(fusion_environment_family_id: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentFamilyLimitsAndUsageResult:
     """
-    This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that's allowed to be created based on the group's associated subscriptions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_family_limits_and_usage = oci.Functions.get_fusion_environment_family_limits_and_usage(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
-    ```
-
-
-    :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentFamilyId'] = fusion_environment_family_id
@@ -126,20 +103,6 @@ def get_fusion_environment_family_limits_and_usage(fusion_environment_family_id:
 def get_fusion_environment_family_limits_and_usage_output(fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentFamilyLimitsAndUsageResult]:
     """
-    This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets the number of environments (usage) of each type in the fusion environment family, as well as the limit that's allowed to be created based on the group's associated subscriptions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_family_limits_and_usage = oci.Functions.get_fusion_environment_family_limits_and_usage(fusion_environment_family_id=oci_fusion_apps_fusion_environment_family["test_fusion_environment_family"]["id"])
-    ```
-
-
-    :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
+    Use this data source to access information about an existing resource.
     """
     ...

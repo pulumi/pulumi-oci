@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.
@@ -60,52 +59,52 @@ type LookupMediaAssetArgs struct {
 // A collection of values returned by getMediaAsset.
 type LookupMediaAssetResult struct {
 	// The name of the object storage bucket where this represented asset is located.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The ID of the compartment containing the MediaAsset.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The ID of the senior most asset from which this asset is derived.
-	MasterMediaAssetId string `pulumi:"masterMediaAssetId"`
-	MediaAssetId       string `pulumi:"mediaAssetId"`
+	MasterMediaAssetId *string `pulumi:"masterMediaAssetId"`
+	MediaAssetId       string  `pulumi:"mediaAssetId"`
 	// List of tags for the MediaAsset.
 	MediaAssetTags []GetMediaAssetMediaAssetTag `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset.
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId *string `pulumi:"mediaWorkflowJobId"`
 	// JSON string containing the technial metadata for the media asset.
 	Metadatas []GetMediaAssetMetadata `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The object storage object name that identifies this asset.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// eTag of the underlying object storage object.
-	ObjectEtag string `pulumi:"objectEtag"`
+	ObjectEtag *string `pulumi:"objectEtag"`
 	// The ID of the parent asset from which this asset is derived.
-	ParentMediaAssetId string `pulumi:"parentMediaAssetId"`
+	ParentMediaAssetId *string `pulumi:"parentMediaAssetId"`
 	// The end index of video segment files.
-	SegmentRangeEndIndex string `pulumi:"segmentRangeEndIndex"`
+	SegmentRangeEndIndex *string `pulumi:"segmentRangeEndIndex"`
 	// The start index for video segment files.
-	SegmentRangeStartIndex string `pulumi:"segmentRangeStartIndex"`
+	SegmentRangeStartIndex *string `pulumi:"segmentRangeStartIndex"`
 	// The ID of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowId string `pulumi:"sourceMediaWorkflowId"`
+	SourceMediaWorkflowId *string `pulumi:"sourceMediaWorkflowId"`
 	// The version of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowVersion string `pulumi:"sourceMediaWorkflowVersion"`
+	SourceMediaWorkflowVersion *string `pulumi:"sourceMediaWorkflowVersion"`
 	// The current state of the MediaAsset.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of the media asset.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupMediaAssetOutput(ctx *pulumi.Context, args LookupMediaAssetOutputArgs, opts ...pulumi.InvokeOption) LookupMediaAssetResultOutput {
@@ -146,20 +145,14 @@ func (o LookupMediaAssetResultOutput) ToLookupMediaAssetResultOutputWithContext(
 	return o
 }
 
-func (o LookupMediaAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMediaAssetResult] {
-	return pulumix.Output[LookupMediaAssetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the object storage bucket where this represented asset is located.
-func (o LookupMediaAssetResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment containing the MediaAsset.
-func (o LookupMediaAssetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -168,8 +161,8 @@ func (o LookupMediaAssetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupMediaAssetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -178,13 +171,13 @@ func (o LookupMediaAssetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupMediaAssetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the senior most asset from which this asset is derived.
-func (o LookupMediaAssetResultOutput) MasterMediaAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.MasterMediaAssetId }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) MasterMediaAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.MasterMediaAssetId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMediaAssetResultOutput) MediaAssetId() pulumi.StringOutput {
@@ -197,8 +190,8 @@ func (o LookupMediaAssetResultOutput) MediaAssetTags() GetMediaAssetMediaAssetTa
 }
 
 // The ID of the MediaWorkflowJob used to produce this asset.
-func (o LookupMediaAssetResultOutput) MediaWorkflowJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) MediaWorkflowJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.MediaWorkflowJobId }).(pulumi.StringPtrOutput)
 }
 
 // JSON string containing the technial metadata for the media asset.
@@ -207,48 +200,48 @@ func (o LookupMediaAssetResultOutput) Metadatas() GetMediaAssetMetadataArrayOutp
 }
 
 // The object storage namespace where this asset is located.
-func (o LookupMediaAssetResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object storage object name that identifies this asset.
-func (o LookupMediaAssetResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Object }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // eTag of the underlying object storage object.
-func (o LookupMediaAssetResultOutput) ObjectEtag() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.ObjectEtag }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) ObjectEtag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.ObjectEtag }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the parent asset from which this asset is derived.
-func (o LookupMediaAssetResultOutput) ParentMediaAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.ParentMediaAssetId }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) ParentMediaAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.ParentMediaAssetId }).(pulumi.StringPtrOutput)
 }
 
 // The end index of video segment files.
-func (o LookupMediaAssetResultOutput) SegmentRangeEndIndex() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.SegmentRangeEndIndex }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) SegmentRangeEndIndex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.SegmentRangeEndIndex }).(pulumi.StringPtrOutput)
 }
 
 // The start index for video segment files.
-func (o LookupMediaAssetResultOutput) SegmentRangeStartIndex() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.SegmentRangeStartIndex }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) SegmentRangeStartIndex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.SegmentRangeStartIndex }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the MediaWorkflow used to produce this asset.
-func (o LookupMediaAssetResultOutput) SourceMediaWorkflowId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.SourceMediaWorkflowId }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) SourceMediaWorkflowId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.SourceMediaWorkflowId }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflow used to produce this asset.
-func (o LookupMediaAssetResultOutput) SourceMediaWorkflowVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.SourceMediaWorkflowVersion }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) SourceMediaWorkflowVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.SourceMediaWorkflowVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the MediaAsset.
-func (o LookupMediaAssetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -257,18 +250,18 @@ func (o LookupMediaAssetResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-func (o LookupMediaAssetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-func (o LookupMediaAssetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The type of the media asset.
-func (o LookupMediaAssetResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaAssetResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupMediaAssetResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaAssetResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

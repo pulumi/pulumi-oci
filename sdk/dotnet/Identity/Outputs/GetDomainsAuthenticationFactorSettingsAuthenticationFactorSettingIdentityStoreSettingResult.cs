@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
         /// </summary>
-        public readonly bool MobileNumberEnabled;
+        public readonly bool? MobileNumberEnabled;
         /// <summary>
         /// If true, indicates that the user can update the mobile number in the user's Multi-Factor Authentication profile
         /// </summary>
-        public readonly bool MobileNumberUpdateEnabled;
+        public readonly bool? MobileNumberUpdateEnabled;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdentityStoreSettingResult(
-            bool mobileNumberEnabled,
+            bool? mobileNumberEnabled,
 
-            bool mobileNumberUpdateEnabled)
+            bool? mobileNumberUpdateEnabled)
         {
             MobileNumberEnabled = mobileNumberEnabled;
             MobileNumberUpdateEnabled = mobileNumberUpdateEnabled;

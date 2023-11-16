@@ -88,11 +88,11 @@ export interface GetRecordsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of records.
      */
-    readonly records: outputs.Dns.GetRecordsRecord[];
+    readonly records?: outputs.Dns.GetRecordsRecord[];
     /**
      * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      */

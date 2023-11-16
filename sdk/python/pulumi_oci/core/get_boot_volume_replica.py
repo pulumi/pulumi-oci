@@ -67,18 +67,12 @@ class GetBootVolumeReplicaResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="bootVolumeId")
-    def boot_volume_id(self) -> str:
-        """
-        The OCID of the source boot volume.
-        """
+    def boot_volume_id(self) -> Optional[str]:
         return pulumi.get(self, "boot_volume_id")
 
     @property
@@ -88,39 +82,27 @@ class GetBootVolumeReplicaResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the boot volume replica.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -128,47 +110,32 @@ class GetBootVolumeReplicaResult:
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
-        """
-        The image OCID used to create the boot volume the replica is replicated from.
-        """
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> str:
-        """
-        The size of the source boot volume, in GBs.
-        """
+    def size_in_gbs(self) -> Optional[str]:
         return pulumi.get(self, "size_in_gbs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of a boot volume replica.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the boot volume replica was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastSynced")
-    def time_last_synced(self) -> str:
-        """
-        The date and time the boot volume replica was last synced from the source boot volume. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_last_synced(self) -> Optional[str]:
         return pulumi.get(self, "time_last_synced")
 
     @property
     @pulumi.getter(name="volumeGroupReplicaId")
-    def volume_group_replica_id(self) -> str:
+    def volume_group_replica_id(self) -> Optional[str]:
         return pulumi.get(self, "volume_group_replica_id")
 
 
@@ -197,21 +164,7 @@ class AwaitableGetBootVolumeReplicaResult(GetBootVolumeReplicaResult):
 def get_boot_volume_replica(boot_volume_replica_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumeReplicaResult:
     """
-    This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information for the specified boot volume replica.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_boot_volume_replica = oci.Core.get_boot_volume_replica(boot_volume_replica_id=oci_core_boot_volume_replica["test_boot_volume_replica"]["id"])
-    ```
-
-
-    :param str boot_volume_replica_id: The OCID of the boot volume replica.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bootVolumeReplicaId'] = boot_volume_replica_id
@@ -239,20 +192,6 @@ def get_boot_volume_replica(boot_volume_replica_id: Optional[str] = None,
 def get_boot_volume_replica_output(boot_volume_replica_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumeReplicaResult]:
     """
-    This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information for the specified boot volume replica.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_boot_volume_replica = oci.Core.get_boot_volume_replica(boot_volume_replica_id=oci_core_boot_volume_replica["test_boot_volume_replica"]["id"])
-    ```
-
-
-    :param str boot_volume_replica_id: The OCID of the boot volume replica.
+    Use this data source to access information about an existing resource.
     """
     ...

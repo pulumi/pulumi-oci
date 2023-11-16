@@ -14,6 +14,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPublicationResult {
@@ -21,145 +23,145 @@ public final class GetPublicationResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The model for upload data for images and icons.
      * 
      */
-    private List<GetPublicationIcon> icons;
+    private @Nullable List<GetPublicationIcon> icons;
     /**
      * @return The unique identifier for the publication in Marketplace.
      * 
      */
-    private String id;
-    private Boolean isAgreementAcknowledged;
+    private @Nullable String id;
+    private @Nullable Boolean isAgreementAcknowledged;
     /**
      * @return The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    private String listingType;
+    private @Nullable String listingType;
     /**
      * @return A long description of the publication to use in the listing.
      * 
      */
-    private String longDescription;
+    private @Nullable String longDescription;
     /**
      * @return The name of the operating system.
      * 
      */
-    private String name;
-    private List<GetPublicationPackageDetail> packageDetails;
+    private @Nullable String name;
+    private @Nullable List<GetPublicationPackageDetail> packageDetails;
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    private String packageType;
+    private @Nullable String packageType;
     private String publicationId;
     /**
      * @return A short description of the publication to use in the listing.
      * 
      */
-    private String shortDescription;
+    private @Nullable String shortDescription;
     /**
      * @return The lifecycle state of the publication.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Contact information for getting support from the publisher for the listing.
      * 
      */
-    private List<GetPublicationSupportContact> supportContacts;
+    private @Nullable List<GetPublicationSupportContact> supportContacts;
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
-    private List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems;
+    private @Nullable List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems;
     /**
      * @return The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetPublicationResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The model for upload data for images and icons.
      * 
      */
     public List<GetPublicationIcon> icons() {
-        return this.icons;
+        return this.icons == null ? List.of() : this.icons;
     }
     /**
      * @return The unique identifier for the publication in Marketplace.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isAgreementAcknowledged() {
-        return this.isAgreementAcknowledged;
+    public Optional<Boolean> isAgreementAcknowledged() {
+        return Optional.ofNullable(this.isAgreementAcknowledged);
     }
     /**
      * @return The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      * 
      */
-    public String listingType() {
-        return this.listingType;
+    public Optional<String> listingType() {
+        return Optional.ofNullable(this.listingType);
     }
     /**
      * @return A long description of the publication to use in the listing.
      * 
      */
-    public String longDescription() {
-        return this.longDescription;
+    public Optional<String> longDescription() {
+        return Optional.ofNullable(this.longDescription);
     }
     /**
      * @return The name of the operating system.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public List<GetPublicationPackageDetail> packageDetails() {
-        return this.packageDetails;
+        return this.packageDetails == null ? List.of() : this.packageDetails;
     }
     /**
      * @return The listing&#39;s package type.
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
     public String publicationId() {
         return this.publicationId;
@@ -168,36 +170,36 @@ public final class GetPublicationResult {
      * @return A short description of the publication to use in the listing.
      * 
      */
-    public String shortDescription() {
-        return this.shortDescription;
+    public Optional<String> shortDescription() {
+        return Optional.ofNullable(this.shortDescription);
     }
     /**
      * @return The lifecycle state of the publication.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Contact information for getting support from the publisher for the listing.
      * 
      */
     public List<GetPublicationSupportContact> supportContacts() {
-        return this.supportContacts;
+        return this.supportContacts == null ? List.of() : this.supportContacts;
     }
     /**
      * @return The list of operating systems supported by the listing.
      * 
      */
     public List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems() {
-        return this.supportedOperatingSystems;
+        return this.supportedOperatingSystems == null ? List.of() : this.supportedOperatingSystems;
     }
     /**
      * @return The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -209,23 +211,23 @@ public final class GetPublicationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private List<GetPublicationIcon> icons;
-        private String id;
-        private Boolean isAgreementAcknowledged;
-        private String listingType;
-        private String longDescription;
-        private String name;
-        private List<GetPublicationPackageDetail> packageDetails;
-        private String packageType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<GetPublicationIcon> icons;
+        private @Nullable String id;
+        private @Nullable Boolean isAgreementAcknowledged;
+        private @Nullable String listingType;
+        private @Nullable String longDescription;
+        private @Nullable String name;
+        private @Nullable List<GetPublicationPackageDetail> packageDetails;
+        private @Nullable String packageType;
         private String publicationId;
-        private String shortDescription;
-        private String state;
-        private List<GetPublicationSupportContact> supportContacts;
-        private List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems;
-        private String timeCreated;
+        private @Nullable String shortDescription;
+        private @Nullable String state;
+        private @Nullable List<GetPublicationSupportContact> supportContacts;
+        private @Nullable List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetPublicationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -249,64 +251,64 @@ public final class GetPublicationResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder icons(List<GetPublicationIcon> icons) {
-            this.icons = Objects.requireNonNull(icons);
+        public Builder icons(@Nullable List<GetPublicationIcon> icons) {
+            this.icons = icons;
             return this;
         }
         public Builder icons(GetPublicationIcon... icons) {
             return icons(List.of(icons));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAgreementAcknowledged(Boolean isAgreementAcknowledged) {
-            this.isAgreementAcknowledged = Objects.requireNonNull(isAgreementAcknowledged);
+        public Builder isAgreementAcknowledged(@Nullable Boolean isAgreementAcknowledged) {
+            this.isAgreementAcknowledged = isAgreementAcknowledged;
             return this;
         }
         @CustomType.Setter
-        public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+        public Builder listingType(@Nullable String listingType) {
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
-        public Builder longDescription(String longDescription) {
-            this.longDescription = Objects.requireNonNull(longDescription);
+        public Builder longDescription(@Nullable String longDescription) {
+            this.longDescription = longDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder packageDetails(List<GetPublicationPackageDetail> packageDetails) {
-            this.packageDetails = Objects.requireNonNull(packageDetails);
+        public Builder packageDetails(@Nullable List<GetPublicationPackageDetail> packageDetails) {
+            this.packageDetails = packageDetails;
             return this;
         }
         public Builder packageDetails(GetPublicationPackageDetail... packageDetails) {
             return packageDetails(List.of(packageDetails));
         }
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
@@ -315,34 +317,34 @@ public final class GetPublicationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder shortDescription(String shortDescription) {
-            this.shortDescription = Objects.requireNonNull(shortDescription);
+        public Builder shortDescription(@Nullable String shortDescription) {
+            this.shortDescription = shortDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder supportContacts(List<GetPublicationSupportContact> supportContacts) {
-            this.supportContacts = Objects.requireNonNull(supportContacts);
+        public Builder supportContacts(@Nullable List<GetPublicationSupportContact> supportContacts) {
+            this.supportContacts = supportContacts;
             return this;
         }
         public Builder supportContacts(GetPublicationSupportContact... supportContacts) {
             return supportContacts(List.of(supportContacts));
         }
         @CustomType.Setter
-        public Builder supportedOperatingSystems(List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems) {
-            this.supportedOperatingSystems = Objects.requireNonNull(supportedOperatingSystems);
+        public Builder supportedOperatingSystems(@Nullable List<GetPublicationSupportedOperatingSystem> supportedOperatingSystems) {
+            this.supportedOperatingSystems = supportedOperatingSystems;
             return this;
         }
         public Builder supportedOperatingSystems(GetPublicationSupportedOperatingSystem... supportedOperatingSystems) {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetPublicationResult build() {

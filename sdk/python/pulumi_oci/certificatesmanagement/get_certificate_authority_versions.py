@@ -43,17 +43,11 @@ class GetCertificateAuthorityVersionsResult:
     @property
     @pulumi.getter(name="certificateAuthorityId")
     def certificate_authority_id(self) -> str:
-        """
-        The OCID of the CA.
-        """
         return pulumi.get(self, "certificate_authority_id")
 
     @property
     @pulumi.getter(name="certificateAuthorityVersionCollections")
-    def certificate_authority_version_collections(self) -> Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionResult']:
-        """
-        The list of certificate_authority_version_collection.
-        """
+    def certificate_authority_version_collections(self) -> Optional[Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionResult']]:
         return pulumi.get(self, "certificate_authority_version_collections")
 
     @property
@@ -63,7 +57,7 @@ class GetCertificateAuthorityVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetCertificateAuthorityVersionsResult:
     @property
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> Optional[str]:
-        """
-        The version number of the CA.
-        """
         return pulumi.get(self, "version_number")
 
 
@@ -96,24 +87,7 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
                                        version_number: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateAuthorityVersionsResult:
     """
-    This data source provides the list of Certificate Authority Versions in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all versions for the specified certificate authority (CA).
-    Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        version_number=var["certificate_authority_version_version_number"])
-    ```
-
-
-    :param str certificate_authority_id: The OCID of the certificate authority (CA).
-    :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateAuthorityId'] = certificate_authority_id
@@ -136,23 +110,6 @@ def get_certificate_authority_versions_output(certificate_authority_id: Optional
                                               version_number: Optional[pulumi.Input[Optional[str]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateAuthorityVersionsResult]:
     """
-    This data source provides the list of Certificate Authority Versions in Oracle Cloud Infrastructure Certificates Management service.
-
-    Lists all versions for the specified certificate authority (CA).
-    Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        version_number=var["certificate_authority_version_version_number"])
-    ```
-
-
-    :param str certificate_authority_id: The OCID of the certificate authority (CA).
-    :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
+    Use this data source to access information about an existing resource.
     """
     ...

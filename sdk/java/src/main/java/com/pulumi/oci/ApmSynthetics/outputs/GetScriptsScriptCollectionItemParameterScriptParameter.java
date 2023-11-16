@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScriptsScriptCollectionItemParameterScriptParameter {
@@ -14,39 +16,39 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
      * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
-    private Boolean isSecret;
+    private @Nullable Boolean isSecret;
     /**
      * @return Name of the parameter.
      * 
      */
-    private String paramName;
+    private @Nullable String paramName;
     /**
      * @return Value of the parameter.
      * 
      */
-    private String paramValue;
+    private @Nullable String paramValue;
 
     private GetScriptsScriptCollectionItemParameterScriptParameter() {}
     /**
      * @return If the parameter value is secret and should be kept confidential, then set isSecret to true.
      * 
      */
-    public Boolean isSecret() {
-        return this.isSecret;
+    public Optional<Boolean> isSecret() {
+        return Optional.ofNullable(this.isSecret);
     }
     /**
      * @return Name of the parameter.
      * 
      */
-    public String paramName() {
-        return this.paramName;
+    public Optional<String> paramName() {
+        return Optional.ofNullable(this.paramName);
     }
     /**
      * @return Value of the parameter.
      * 
      */
-    public String paramValue() {
-        return this.paramValue;
+    public Optional<String> paramValue() {
+        return Optional.ofNullable(this.paramValue);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isSecret;
-        private String paramName;
-        private String paramValue;
+        private @Nullable Boolean isSecret;
+        private @Nullable String paramName;
+        private @Nullable String paramValue;
         public Builder() {}
         public Builder(GetScriptsScriptCollectionItemParameterScriptParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
         }
 
         @CustomType.Setter
-        public Builder isSecret(Boolean isSecret) {
-            this.isSecret = Objects.requireNonNull(isSecret);
+        public Builder isSecret(@Nullable Boolean isSecret) {
+            this.isSecret = isSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+        public Builder paramName(@Nullable String paramName) {
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
-        public Builder paramValue(String paramValue) {
-            this.paramValue = Objects.requireNonNull(paramValue);
+        public Builder paramValue(@Nullable String paramValue) {
+            this.paramValue = paramValue;
             return this;
         }
         public GetScriptsScriptCollectionItemParameterScriptParameter build() {

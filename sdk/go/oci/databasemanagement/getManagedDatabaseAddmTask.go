@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
@@ -67,7 +66,7 @@ type GetManagedDatabaseAddmTaskArgs struct {
 // A collection of values returned by getManagedDatabaseAddmTask.
 type GetManagedDatabaseAddmTaskResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of ADDM task metadata.
 	Items []GetManagedDatabaseAddmTaskItem `pulumi:"items"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -118,15 +117,9 @@ func (o GetManagedDatabaseAddmTaskResultOutput) ToGetManagedDatabaseAddmTaskResu
 	return o
 }
 
-func (o GetManagedDatabaseAddmTaskResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAddmTaskResult] {
-	return pulumix.Output[GetManagedDatabaseAddmTaskResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseAddmTaskResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseAddmTaskResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseAddmTaskResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAddmTaskResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of ADDM task metadata.

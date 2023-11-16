@@ -41,38 +41,26 @@ class GetConfigurationResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the configuration is specified.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="emailIds")
-    def email_ids(self) -> Sequence[str]:
-        """
-        The list of associated configuration email IDs.
-        """
+    def email_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "email_ids")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -92,21 +80,7 @@ class AwaitableGetConfigurationResult(GetConfigurationResult):
 def get_configuration(compartment_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigurationResult:
     """
-    This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves configuration for a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configuration = oci.LicenseManager.get_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -125,20 +99,6 @@ def get_configuration(compartment_id: Optional[str] = None,
 def get_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationResult]:
     """
-    This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves configuration for a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configuration = oci.LicenseManager.get_configuration(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

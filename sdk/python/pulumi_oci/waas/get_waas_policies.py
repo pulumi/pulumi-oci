@@ -55,9 +55,6 @@ class GetWaasPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,7 +69,7 @@ class GetWaasPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -100,10 +97,7 @@ class GetWaasPoliciesResult:
 
     @property
     @pulumi.getter(name="waasPolicies")
-    def waas_policies(self) -> Sequence['outputs.GetWaasPoliciesWaasPolicyResult']:
-        """
-        The list of waas_policies.
-        """
+    def waas_policies(self) -> Optional[Sequence['outputs.GetWaasPoliciesWaasPolicyResult']]:
         return pulumi.get(self, "waas_policies")
 
 
@@ -133,31 +127,7 @@ def get_waas_policies(compartment_id: Optional[str] = None,
                       time_created_less_than: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWaasPoliciesResult:
     """
-    This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of WAAS policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_waas_policies = oci.Waas.get_waas_policies(compartment_id=var["compartment_id"],
-        display_names=var["waas_policy_display_names"],
-        ids=var["waas_policy_ids"],
-        states=var["waas_policy_states"],
-        time_created_greater_than_or_equal_to=var["waas_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["waas_policy_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter policies using a list of display names.
-    :param Sequence[str] ids: Filter policies using a list of policy OCIDs.
-    :param Sequence[str] states: Filter policies using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches policies created on or after the specified date and time.
-    :param str time_created_less_than: A filter that matches policies created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -192,30 +162,6 @@ def get_waas_policies_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWaasPoliciesResult]:
     """
-    This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of WAAS policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_waas_policies = oci.Waas.get_waas_policies(compartment_id=var["compartment_id"],
-        display_names=var["waas_policy_display_names"],
-        ids=var["waas_policy_ids"],
-        states=var["waas_policy_states"],
-        time_created_greater_than_or_equal_to=var["waas_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["waas_policy_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] display_names: Filter policies using a list of display names.
-    :param Sequence[str] ids: Filter policies using a list of policy OCIDs.
-    :param Sequence[str] states: Filter policies using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches policies created on or after the specified date and time.
-    :param str time_created_less_than: A filter that matches policies created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     ...

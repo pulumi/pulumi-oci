@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader {
@@ -13,27 +15,27 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
      * @return Name of the header.
      * 
      */
-    private String headerName;
+    private @Nullable String headerName;
     /**
      * @return Value of the header.
      * 
      */
-    private String headerValue;
+    private @Nullable String headerValue;
 
     private GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader() {}
     /**
      * @return Name of the header.
      * 
      */
-    public String headerName() {
-        return this.headerName;
+    public Optional<String> headerName() {
+        return Optional.ofNullable(this.headerName);
     }
     /**
      * @return Value of the header.
      * 
      */
-    public String headerValue() {
-        return this.headerValue;
+    public Optional<String> headerValue() {
+        return Optional.ofNullable(this.headerValue);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String headerName;
-        private String headerValue;
+        private @Nullable String headerName;
+        private @Nullable String headerValue;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
         }
 
         @CustomType.Setter
-        public Builder headerName(String headerName) {
-            this.headerName = Objects.requireNonNull(headerName);
+        public Builder headerName(@Nullable String headerName) {
+            this.headerName = headerName;
             return this;
         }
         @CustomType.Setter
-        public Builder headerValue(String headerValue) {
-            this.headerValue = Objects.requireNonNull(headerValue);
+        public Builder headerValue(@Nullable String headerValue) {
+            this.headerValue = headerValue;
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader build() {

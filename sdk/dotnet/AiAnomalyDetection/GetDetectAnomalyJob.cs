@@ -108,28 +108,28 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// <summary>
         /// The OCID of the compartment that starts the job.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Detect anomaly job description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         public readonly string DetectAnomalyJobId;
         /// <summary>
         /// Detect anomaly job display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Id of the job.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Input details for detect anomaly job.
         /// </summary>
@@ -137,11 +137,11 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// <summary>
         /// The current state details of the batch document job.
         /// </summary>
-        public readonly string LifecycleStateDetails;
+        public readonly string? LifecycleStateDetails;
         /// <summary>
         /// The OCID of the trained model.
         /// </summary>
-        public readonly string ModelId;
+        public readonly string? ModelId;
         /// <summary>
         /// Output details for detect anomaly job.
         /// </summary>
@@ -149,69 +149,69 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// <summary>
         /// The OCID of the project.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// The value that customer can adjust to control the sensitivity of anomaly detection
         /// </summary>
-        public readonly double Sensitivity;
+        public readonly double? Sensitivity;
         /// <summary>
         /// The current state of the batch document job.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Job accepted time
         /// </summary>
-        public readonly string TimeAccepted;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// Job finished time
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// Job started time
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetDetectAnomalyJobResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
             string detectAnomalyJobId,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDetectAnomalyJobInputDetailResult> inputDetails,
 
-            string lifecycleStateDetails,
+            string? lifecycleStateDetails,
 
-            string modelId,
+            string? modelId,
 
             ImmutableArray<Outputs.GetDetectAnomalyJobOutputDetailResult> outputDetails,
 
-            string projectId,
+            string? projectId,
 
-            double sensitivity,
+            double? sensitivity,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted)
+            string? timeStarted)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -63,27 +62,27 @@ type LookupComputeImageCapabilitySchemaArgs struct {
 // A collection of values returned by getComputeImageCapabilitySchema.
 type LookupComputeImageCapabilitySchemaResult struct {
 	// The OCID of the compartment containing the compute global image capability schema
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The ocid of the compute global image capability schema
-	ComputeGlobalImageCapabilitySchemaId string `pulumi:"computeGlobalImageCapabilitySchemaId"`
+	ComputeGlobalImageCapabilitySchemaId *string `pulumi:"computeGlobalImageCapabilitySchemaId"`
 	// The name of the compute global image capability schema version
-	ComputeGlobalImageCapabilitySchemaVersionName string `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
-	ComputeImageCapabilitySchemaId                string `pulumi:"computeImageCapabilitySchemaId"`
+	ComputeGlobalImageCapabilitySchemaVersionName *string `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
+	ComputeImageCapabilitySchemaId                string  `pulumi:"computeImageCapabilitySchemaId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the image associated with this compute image capability schema
-	ImageId        string  `pulumi:"imageId"`
+	ImageId        *string `pulumi:"imageId"`
 	IsMergeEnabled *string `pulumi:"isMergeEnabled"`
 	// A mapping of each capability name to its ImageCapabilityDescriptor.
 	SchemaData map[string]interface{} `pulumi:"schemaData"`
 	// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupComputeImageCapabilitySchemaOutput(ctx *pulumi.Context, args LookupComputeImageCapabilitySchemaOutputArgs, opts ...pulumi.InvokeOption) LookupComputeImageCapabilitySchemaResultOutput {
@@ -126,27 +125,23 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) ToLookupComputeImageCapa
 	return o
 }
 
-func (o LookupComputeImageCapabilitySchemaResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupComputeImageCapabilitySchemaResult] {
-	return pulumix.Output[LookupComputeImageCapabilitySchemaResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the compute global image capability schema
-func (o LookupComputeImageCapabilitySchemaResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The ocid of the compute global image capability schema
-func (o LookupComputeImageCapabilitySchemaResultOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string { return v.ComputeGlobalImageCapabilitySchemaId }).(pulumi.StringOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string {
+		return v.ComputeGlobalImageCapabilitySchemaId
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the compute global image capability schema version
-func (o LookupComputeImageCapabilitySchemaResultOutput) ComputeGlobalImageCapabilitySchemaVersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string {
+func (o LookupComputeImageCapabilitySchemaResultOutput) ComputeGlobalImageCapabilitySchemaVersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string {
 		return v.ComputeGlobalImageCapabilitySchemaVersionName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o LookupComputeImageCapabilitySchemaResultOutput) ComputeImageCapabilitySchemaId() pulumi.StringOutput {
@@ -159,8 +154,8 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) DefinedTags() pulumi.Map
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupComputeImageCapabilitySchemaResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -169,13 +164,13 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) FreeformTags() pulumi.Ma
 }
 
 // The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupComputeImageCapabilitySchemaResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the image associated with this compute image capability schema
-func (o LookupComputeImageCapabilitySchemaResultOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string { return v.ImageId }).(pulumi.StringOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupComputeImageCapabilitySchemaResultOutput) IsMergeEnabled() pulumi.StringPtrOutput {
@@ -188,8 +183,8 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) SchemaData() pulumi.MapO
 }
 
 // The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupComputeImageCapabilitySchemaResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

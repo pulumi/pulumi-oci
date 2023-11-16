@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgsDrg {
@@ -17,115 +19,115 @@ public final class GetDrgsDrg {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The default DRG route table for this DRG. Each network type has a default DRG route table.
      * 
      */
-    private List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables;
+    private @Nullable List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DRG&#39;s default export route distribution for the DRG attachments.
      * 
      */
-    private String defaultExportDrgRouteDistributionId;
+    private @Nullable String defaultExportDrgRouteDistributionId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The DRG&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
-    private String redundancyStatus;
+    private @Nullable String id;
+    private @Nullable String redundancyStatus;
     /**
      * @return The DRG&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the DRG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetDrgsDrg() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The default DRG route table for this DRG. Each network type has a default DRG route table.
      * 
      */
     public List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables() {
-        return this.defaultDrgRouteTables;
+        return this.defaultDrgRouteTables == null ? List.of() : this.defaultDrgRouteTables;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DRG&#39;s default export route distribution for the DRG attachments.
      * 
      */
-    public String defaultExportDrgRouteDistributionId() {
-        return this.defaultExportDrgRouteDistributionId;
+    public Optional<String> defaultExportDrgRouteDistributionId() {
+        return Optional.ofNullable(this.defaultExportDrgRouteDistributionId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The DRG&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String redundancyStatus() {
-        return this.redundancyStatus;
+    public Optional<String> redundancyStatus() {
+        return Optional.ofNullable(this.redundancyStatus);
     }
     /**
      * @return The DRG&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the DRG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -137,16 +139,16 @@ public final class GetDrgsDrg {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables;
-        private String defaultExportDrgRouteDistributionId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String redundancyStatus;
-        private String state;
-        private String timeCreated;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables;
+        private @Nullable String defaultExportDrgRouteDistributionId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String redundancyStatus;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetDrgsDrg defaults) {
     	      Objects.requireNonNull(defaults);
@@ -163,56 +165,56 @@ public final class GetDrgsDrg {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultDrgRouteTables(List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables) {
-            this.defaultDrgRouteTables = Objects.requireNonNull(defaultDrgRouteTables);
+        public Builder defaultDrgRouteTables(@Nullable List<GetDrgsDrgDefaultDrgRouteTable> defaultDrgRouteTables) {
+            this.defaultDrgRouteTables = defaultDrgRouteTables;
             return this;
         }
         public Builder defaultDrgRouteTables(GetDrgsDrgDefaultDrgRouteTable... defaultDrgRouteTables) {
             return defaultDrgRouteTables(List.of(defaultDrgRouteTables));
         }
         @CustomType.Setter
-        public Builder defaultExportDrgRouteDistributionId(String defaultExportDrgRouteDistributionId) {
-            this.defaultExportDrgRouteDistributionId = Objects.requireNonNull(defaultExportDrgRouteDistributionId);
+        public Builder defaultExportDrgRouteDistributionId(@Nullable String defaultExportDrgRouteDistributionId) {
+            this.defaultExportDrgRouteDistributionId = defaultExportDrgRouteDistributionId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder redundancyStatus(String redundancyStatus) {
-            this.redundancyStatus = Objects.requireNonNull(redundancyStatus);
+        public Builder redundancyStatus(@Nullable String redundancyStatus) {
+            this.redundancyStatus = redundancyStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDrgsDrg build() {

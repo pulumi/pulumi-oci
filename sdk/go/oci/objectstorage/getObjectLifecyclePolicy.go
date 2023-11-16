@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -62,13 +61,13 @@ type LookupObjectLifecyclePolicyArgs struct {
 
 // A collection of values returned by getObjectLifecyclePolicy.
 type LookupObjectLifecyclePolicyResult struct {
-	Bucket    string `pulumi:"bucket"`
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Bucket    string  `pulumi:"bucket"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// The live lifecycle policy on the bucket.
 	Rules []GetObjectLifecyclePolicyRule `pulumi:"rules"`
 	// The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupObjectLifecyclePolicyOutput(ctx *pulumi.Context, args LookupObjectLifecyclePolicyOutputArgs, opts ...pulumi.InvokeOption) LookupObjectLifecyclePolicyResultOutput {
@@ -111,18 +110,12 @@ func (o LookupObjectLifecyclePolicyResultOutput) ToLookupObjectLifecyclePolicyRe
 	return o
 }
 
-func (o LookupObjectLifecyclePolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupObjectLifecyclePolicyResult] {
-	return pulumix.Output[LookupObjectLifecyclePolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupObjectLifecyclePolicyResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupObjectLifecyclePolicyResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-func (o LookupObjectLifecyclePolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupObjectLifecyclePolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupObjectLifecyclePolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupObjectLifecyclePolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupObjectLifecyclePolicyResultOutput) Namespace() pulumi.StringOutput {
@@ -135,8 +128,8 @@ func (o LookupObjectLifecyclePolicyResultOutput) Rules() GetObjectLifecyclePolic
 }
 
 // The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupObjectLifecyclePolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupObjectLifecyclePolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupObjectLifecyclePolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupObjectLifecyclePolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

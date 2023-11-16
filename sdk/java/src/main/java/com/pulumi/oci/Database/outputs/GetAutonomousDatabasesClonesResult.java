@@ -19,7 +19,7 @@ public final class GetAutonomousDatabasesClonesResult {
      * @return The list of autonomous_databases.
      * 
      */
-    private List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases;
+    private @Nullable List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases;
     private @Nullable String cloneType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -36,7 +36,7 @@ public final class GetAutonomousDatabasesClonesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Autonomous Database.
      * 
@@ -52,7 +52,7 @@ public final class GetAutonomousDatabasesClonesResult {
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases() {
-        return this.autonomousDatabases;
+        return this.autonomousDatabases == null ? List.of() : this.autonomousDatabases;
     }
     public Optional<String> cloneType() {
         return Optional.ofNullable(this.cloneType);
@@ -78,8 +78,8 @@ public final class GetAutonomousDatabasesClonesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Autonomous Database.
@@ -99,12 +99,12 @@ public final class GetAutonomousDatabasesClonesResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseId;
-        private List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases;
+        private @Nullable List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases;
         private @Nullable String cloneType;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAutonomousDatabasesClonesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesResult defaults) {
@@ -125,8 +125,8 @@ public final class GetAutonomousDatabasesClonesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousDatabases(List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases) {
-            this.autonomousDatabases = Objects.requireNonNull(autonomousDatabases);
+        public Builder autonomousDatabases(@Nullable List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases) {
+            this.autonomousDatabases = autonomousDatabases;
             return this;
         }
         public Builder autonomousDatabases(GetAutonomousDatabasesClonesAutonomousDatabase... autonomousDatabases) {
@@ -156,8 +156,8 @@ public final class GetAutonomousDatabasesClonesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

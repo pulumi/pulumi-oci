@@ -19,7 +19,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the job.
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
      * @return The list of sql_plan_baseline_job_collection.
      * 
      */
-    private List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections;
+    private @Nullable List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections;
 
     private GetManagedDatabaseSqlPlanBaselineJobsResult() {}
     public List<GetManagedDatabaseSqlPlanBaselineJobsFilter> filters() {
@@ -40,8 +40,8 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -58,7 +58,7 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
      * 
      */
     public List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections() {
-        return this.sqlPlanBaselineJobCollections;
+        return this.sqlPlanBaselineJobCollections == null ? List.of() : this.sqlPlanBaselineJobCollections;
     }
 
     public static Builder builder() {
@@ -71,10 +71,10 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseSqlPlanBaselineJobsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections;
+        private @Nullable List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineJobsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -109,8 +109,8 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlPlanBaselineJobCollections(List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections) {
-            this.sqlPlanBaselineJobCollections = Objects.requireNonNull(sqlPlanBaselineJobCollections);
+        public Builder sqlPlanBaselineJobCollections(@Nullable List<GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection> sqlPlanBaselineJobCollections) {
+            this.sqlPlanBaselineJobCollections = sqlPlanBaselineJobCollections;
             return this;
         }
         public Builder sqlPlanBaselineJobCollections(GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection... sqlPlanBaselineJobCollections) {

@@ -101,15 +101,15 @@ export class Schedule extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the schedule.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The unique name of the user-created schedule.
      */
@@ -117,11 +117,11 @@ export class Schedule extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies supported output file format.
      */
-    public readonly outputFileFormat!: pulumi.Output<string>;
+    public readonly outputFileFormat!: pulumi.Output<string | undefined>;
     /**
      * The query properties.
      */
-    public readonly queryProperties!: pulumi.Output<outputs.MeteringComputation.ScheduleQueryProperties>;
+    public readonly queryProperties!: pulumi.Output<outputs.MeteringComputation.ScheduleQueryProperties | undefined>;
     /**
      * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
@@ -129,7 +129,7 @@ export class Schedule extends pulumi.CustomResource {
     /**
      * The saved report id which can also be used to generate query.
      */
-    public readonly savedReportId!: pulumi.Output<string>;
+    public readonly savedReportId!: pulumi.Output<string | undefined>;
     /**
      * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
@@ -137,19 +137,19 @@ export class Schedule extends pulumi.CustomResource {
     /**
      * The schedule lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the schedule was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the next job execution.
      */
-    public /*out*/ readonly timeNextRun!: pulumi.Output<string>;
+    public /*out*/ readonly timeNextRun!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the first time job execution.
      *

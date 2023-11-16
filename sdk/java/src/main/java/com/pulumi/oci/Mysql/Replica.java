@@ -16,6 +16,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -80,42 +81,42 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the Availability Domain the read replica is located in.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The OCID of the compartment that contains the read replica.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment that contains the read replica.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) The OCID of the Configuration to be used by the read replica.
      * 
      */
     @Export(name="configurationId", refs={String.class}, tree="[0]")
-    private Output<String> configurationId;
+    private Output</* @Nullable */ String> configurationId;
 
     /**
      * @return (Updatable) The OCID of the Configuration to be used by the read replica.
      * 
      */
-    public Output<String> configurationId() {
-        return this.configurationId;
+    public Output<Optional<String>> configurationId() {
+        return Codegen.optional(this.configurationId);
     }
     /**
      * The OCID of the DB System the read replica is associated with.
@@ -136,168 +137,168 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) User provided description of the read replica.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) User provided description of the read replica.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The name of the Fault Domain the read replica is located in.
      * 
      */
     @Export(name="faultDomain", refs={String.class}, tree="[0]")
-    private Output<String> faultDomain;
+    private Output</* @Nullable */ String> faultDomain;
 
     /**
      * @return The name of the Fault Domain the read replica is located in.
      * 
      */
-    public Output<String> faultDomain() {
-        return this.faultDomain;
+    public Output<Optional<String>> faultDomain() {
+        return Codegen.optional(this.faultDomain);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The IP address the read replica is configured to listen on.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
-    private Output<String> ipAddress;
+    private Output</* @Nullable */ String> ipAddress;
 
     /**
      * @return The IP address the read replica is configured to listen on.
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    public Output<Optional<String>> ipAddress() {
+        return Codegen.optional(this.ipAddress);
     }
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
      */
     @Export(name="isDeleteProtected", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDeleteProtected;
+    private Output</* @Nullable */ Boolean> isDeleteProtected;
 
     /**
      * @return (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
      */
-    public Output<Boolean> isDeleteProtected() {
-        return this.isDeleteProtected;
+    public Output<Optional<Boolean>> isDeleteProtected() {
+        return Codegen.optional(this.isDeleteProtected);
     }
     /**
      * A message describing the state of the read replica.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the state of the read replica.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The MySQL version to be used by the read replica.
      * 
      */
     @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
-    private Output<String> mysqlVersion;
+    private Output</* @Nullable */ String> mysqlVersion;
 
     /**
      * @return (Updatable) The MySQL version to be used by the read replica.
      * 
      */
-    public Output<String> mysqlVersion() {
-        return this.mysqlVersion;
+    public Output<Optional<String>> mysqlVersion() {
+        return Codegen.optional(this.mysqlVersion);
     }
     /**
      * The port the read replica is configured to listen on.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
-    private Output<Integer> port;
+    private Output</* @Nullable */ Integer> port;
 
     /**
      * @return The port the read replica is configured to listen on.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      * 
      */
     @Export(name="portX", refs={Integer.class}, tree="[0]")
-    private Output<Integer> portX;
+    private Output</* @Nullable */ Integer> portX;
 
     /**
      * @return The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      * 
      */
-    public Output<Integer> portX() {
-        return this.portX;
+    public Output<Optional<Integer>> portX() {
+        return Codegen.optional(this.portX);
     }
     /**
      * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
      * 
      */
     @Export(name="replicaOverrides", refs={ReplicaReplicaOverrides.class}, tree="[0]")
-    private Output<ReplicaReplicaOverrides> replicaOverrides;
+    private Output</* @Nullable */ ReplicaReplicaOverrides> replicaOverrides;
 
     /**
      * @return (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
      * 
      */
-    public Output<ReplicaReplicaOverrides> replicaOverrides() {
-        return this.replicaOverrides;
+    public Output<Optional<ReplicaReplicaOverrides>> replicaOverrides() {
+        return Codegen.optional(this.replicaOverrides);
     }
     /**
      * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -307,7 +308,7 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shapeName", refs={String.class}, tree="[0]")
-    private Output<String> shapeName;
+    private Output</* @Nullable */ String> shapeName;
 
     /**
      * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -316,50 +317,50 @@ public class Replica extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> shapeName() {
-        return this.shapeName;
+    public Output<Optional<String>> shapeName() {
+        return Codegen.optional(this.shapeName);
     }
     /**
      * The state of the read replica.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the read replica.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

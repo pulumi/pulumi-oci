@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The version identifier for the Java family.
         /// </summary>
-        public readonly string FamilyVersion;
+        public readonly string? FamilyVersion;
         /// <summary>
         /// Information about a license type for Java.
         /// </summary>
@@ -36,31 +36,31 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Java license type.
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
         /// <summary>
         /// Parent Java release version identifier. This is applicable for BPR releases.
         /// </summary>
-        public readonly string ParentReleaseVersion;
+        public readonly string? ParentReleaseVersion;
         /// <summary>
         /// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string ReleaseDate;
+        public readonly string? ReleaseDate;
         /// <summary>
         /// Release notes associated with the Java version.
         /// </summary>
-        public readonly string ReleaseNotesUrl;
+        public readonly string? ReleaseNotesUrl;
         /// <summary>
         /// Java release type.
         /// </summary>
-        public readonly string ReleaseType;
+        public readonly string? ReleaseType;
         /// <summary>
         /// Unique Java release version identifier
         /// </summary>
-        public readonly string ReleaseVersion;
+        public readonly string? ReleaseVersion;
         /// <summary>
         /// The security status of the Java version.
         /// </summary>
-        public readonly string SecurityStatus;
+        public readonly string? SecurityStatus;
 
         [OutputConstructor]
         private GetJavaReleasesJavaReleaseCollectionItemResult(
@@ -70,23 +70,23 @@ namespace Pulumi.Oci.Jms.Outputs
 
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult> familyDetails,
 
-            string familyVersion,
+            string? familyVersion,
 
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult> licenseDetails,
 
-            string licenseType,
+            string? licenseType,
 
-            string parentReleaseVersion,
+            string? parentReleaseVersion,
 
-            string releaseDate,
+            string? releaseDate,
 
-            string releaseNotesUrl,
+            string? releaseNotesUrl,
 
-            string releaseType,
+            string? releaseType,
 
-            string releaseVersion,
+            string? releaseVersion,
 
-            string securityStatus)
+            string? securityStatus)
         {
             ArtifactContentTypes = artifactContentTypes;
             Artifacts = artifacts;

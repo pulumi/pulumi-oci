@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Number of hops.
         /// </summary>
-        public readonly int NumberOfHops;
+        public readonly int? NumberOfHops;
         /// <summary>
         /// Type of probe mode when TCP protocol is selected.
         /// </summary>
-        public readonly string ProbeMode;
+        public readonly string? ProbeMode;
         /// <summary>
         /// Number of probes per hop.
         /// </summary>
-        public readonly int ProbePerHop;
+        public readonly int? ProbePerHop;
         /// <summary>
         /// Type of protocol.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Number of probe packets sent out simultaneously.
         /// </summary>
-        public readonly int TransmissionRate;
+        public readonly int? TransmissionRate;
 
         [OutputConstructor]
         private GetMonitorConfigurationNetworkConfigurationResult(
-            int numberOfHops,
+            int? numberOfHops,
 
-            string probeMode,
+            string? probeMode,
 
-            int probePerHop,
+            int? probePerHop,
 
-            string protocol,
+            string? protocol,
 
-            int transmissionRate)
+            int? transmissionRate)
         {
             NumberOfHops = numberOfHops;
             ProbeMode = probeMode;

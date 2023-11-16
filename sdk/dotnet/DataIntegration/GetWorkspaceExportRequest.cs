@@ -124,19 +124,19 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Controls if the references will be exported along with the objects
         /// </summary>
-        public readonly bool AreReferencesIncluded;
+        public readonly bool? AreReferencesIncluded;
         /// <summary>
         /// The name of the Object Storage Bucket where the objects will be exported to
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Name of the user who initiated export request.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Contains key of the error
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ErrorMessages;
+        public readonly ImmutableDictionary<string, object>? ErrorMessages;
         public readonly string ExportRequestKey;
         /// <summary>
         /// The array of exported object details.
@@ -145,24 +145,24 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Name of the exported zip file.
         /// </summary>
-        public readonly string FileName;
+        public readonly string? FileName;
         /// <summary>
         /// Export multiple objects based on filters.
         /// </summary>
         public readonly ImmutableArray<string> Filters;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
         /// </summary>
-        public readonly bool IsObjectOverwriteEnabled;
+        public readonly bool? IsObjectOverwriteEnabled;
         /// <summary>
         /// Export object request key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Name of the export request.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The list of the objects to be exported
         /// </summary>
@@ -170,74 +170,74 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Region of the object storage (if using object storage of different region)
         /// </summary>
-        public readonly string ObjectStorageRegion;
+        public readonly string? ObjectStorageRegion;
         /// <summary>
         /// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         /// </summary>
-        public readonly string ObjectStorageTenancyId;
+        public readonly string? ObjectStorageTenancyId;
         /// <summary>
         /// The array of exported referenced objects.
         /// </summary>
-        public readonly string ReferencedItems;
+        public readonly string? ReferencedItems;
         /// <summary>
         /// Export Objects request status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Time at which the request was completely processed.
         /// </summary>
-        public readonly string TimeEndedInMillis;
+        public readonly string? TimeEndedInMillis;
         /// <summary>
         /// Time at which the request started getting processed.
         /// </summary>
-        public readonly string TimeStartedInMillis;
+        public readonly string? TimeStartedInMillis;
         /// <summary>
         /// Number of objects that are exported.
         /// </summary>
-        public readonly int TotalExportedObjectCount;
+        public readonly int? TotalExportedObjectCount;
         public readonly string WorkspaceId;
 
         [OutputConstructor]
         private GetWorkspaceExportRequestResult(
-            bool areReferencesIncluded,
+            bool? areReferencesIncluded,
 
-            string bucket,
+            string? bucket,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> errorMessages,
+            ImmutableDictionary<string, object>? errorMessages,
 
             string exportRequestKey,
 
             ImmutableArray<Outputs.GetWorkspaceExportRequestExportedItemResult> exportedItems,
 
-            string fileName,
+            string? fileName,
 
             ImmutableArray<string> filters,
 
-            string id,
+            string? id,
 
-            bool isObjectOverwriteEnabled,
+            bool? isObjectOverwriteEnabled,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> objectKeys,
 
-            string objectStorageRegion,
+            string? objectStorageRegion,
 
-            string objectStorageTenancyId,
+            string? objectStorageTenancyId,
 
-            string referencedItems,
+            string? referencedItems,
 
-            string status,
+            string? status,
 
-            string timeEndedInMillis,
+            string? timeEndedInMillis,
 
-            string timeStartedInMillis,
+            string? timeStartedInMillis,
 
-            int totalExportedObjectCount,
+            int? totalExportedObjectCount,
 
             string workspaceId)
         {

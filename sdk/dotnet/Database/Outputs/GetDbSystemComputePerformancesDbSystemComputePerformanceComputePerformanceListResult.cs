@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The number of OCPU cores available.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// The amount of memory allocated for the VMDB System.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The network bandwidth of the VMDB system in gbps.
         /// </summary>
-        public readonly double NetworkBandwidthInGbps;
+        public readonly double? NetworkBandwidthInGbps;
         /// <summary>
         /// IOPS for the VMDB System.
         /// </summary>
-        public readonly double NetworkIops;
+        public readonly double? NetworkIops;
         /// <summary>
         /// Network throughput for the VMDB System.
         /// </summary>
-        public readonly double NetworkThroughputInMbps;
+        public readonly double? NetworkThroughputInMbps;
 
         [OutputConstructor]
         private GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceListResult(
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double networkBandwidthInGbps,
+            double? networkBandwidthInGbps,
 
-            double networkIops,
+            double? networkIops,
 
-            double networkThroughputInMbps)
+            double? networkThroughputInMbps)
         {
             CpuCoreCount = cpuCoreCount;
             MemoryInGbs = memoryInGbs;

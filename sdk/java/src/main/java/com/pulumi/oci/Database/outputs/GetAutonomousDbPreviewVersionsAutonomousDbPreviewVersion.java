@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
@@ -17,27 +19,27 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    private String dbWorkload;
+    private @Nullable String dbWorkload;
     /**
      * @return A URL that points to a detailed description of the preview version.
      * 
      */
-    private String details;
+    private @Nullable String details;
     /**
      * @return The date and time when the preview version availability begins.
      * 
      */
-    private String timePreviewBegin;
+    private @Nullable String timePreviewBegin;
     /**
      * @return The date and time when the preview version availability ends.
      * 
      */
-    private String timePreviewEnd;
+    private @Nullable String timePreviewEnd;
     /**
      * @return A valid Autonomous Database preview version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion() {}
     /**
@@ -48,36 +50,36 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
      */
-    public String dbWorkload() {
-        return this.dbWorkload;
+    public Optional<String> dbWorkload() {
+        return Optional.ofNullable(this.dbWorkload);
     }
     /**
      * @return A URL that points to a detailed description of the preview version.
      * 
      */
-    public String details() {
-        return this.details;
+    public Optional<String> details() {
+        return Optional.ofNullable(this.details);
     }
     /**
      * @return The date and time when the preview version availability begins.
      * 
      */
-    public String timePreviewBegin() {
-        return this.timePreviewBegin;
+    public Optional<String> timePreviewBegin() {
+        return Optional.ofNullable(this.timePreviewBegin);
     }
     /**
      * @return The date and time when the preview version availability ends.
      * 
      */
-    public String timePreviewEnd() {
-        return this.timePreviewEnd;
+    public Optional<String> timePreviewEnd() {
+        return Optional.ofNullable(this.timePreviewEnd);
     }
     /**
      * @return A valid Autonomous Database preview version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -89,11 +91,11 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbWorkload;
-        private String details;
-        private String timePreviewBegin;
-        private String timePreviewEnd;
-        private String version;
+        private @Nullable String dbWorkload;
+        private @Nullable String details;
+        private @Nullable String timePreviewBegin;
+        private @Nullable String timePreviewEnd;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -105,28 +107,28 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
         }
 
         @CustomType.Setter
-        public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+        public Builder dbWorkload(@Nullable String dbWorkload) {
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
-        public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable String details) {
+            this.details = details;
             return this;
         }
         @CustomType.Setter
-        public Builder timePreviewBegin(String timePreviewBegin) {
-            this.timePreviewBegin = Objects.requireNonNull(timePreviewBegin);
+        public Builder timePreviewBegin(@Nullable String timePreviewBegin) {
+            this.timePreviewBegin = timePreviewBegin;
             return this;
         }
         @CustomType.Setter
-        public Builder timePreviewEnd(String timePreviewEnd) {
-            this.timePreviewEnd = Objects.requireNonNull(timePreviewEnd);
+        public Builder timePreviewEnd(@Nullable String timePreviewEnd) {
+            this.timePreviewEnd = timePreviewEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion build() {

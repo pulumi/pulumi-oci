@@ -6,26 +6,28 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentComparisonSummaryCurrent {
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    private String userAssessmentId;
+    private @Nullable String userAssessmentId;
 
     private GetUserAssessmentComparisonSummaryCurrent() {}
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The OCID of the user assessment.
      * 
      */
-    public String userAssessmentId() {
-        return this.userAssessmentId;
+    public Optional<String> userAssessmentId() {
+        return Optional.ofNullable(this.userAssessmentId);
     }
 
     public static Builder builder() {
@@ -37,8 +39,8 @@ public final class GetUserAssessmentComparisonSummaryCurrent {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String targetId;
-        private String userAssessmentId;
+        private @Nullable String targetId;
+        private @Nullable String userAssessmentId;
         public Builder() {}
         public Builder(GetUserAssessmentComparisonSummaryCurrent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,13 +49,13 @@ public final class GetUserAssessmentComparisonSummaryCurrent {
         }
 
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+        public Builder userAssessmentId(@Nullable String userAssessmentId) {
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         public GetUserAssessmentComparisonSummaryCurrent build() {

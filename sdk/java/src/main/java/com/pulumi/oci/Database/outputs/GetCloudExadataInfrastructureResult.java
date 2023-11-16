@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudExadataInfrastructureResult {
@@ -20,192 +22,192 @@ public final class GetCloudExadataInfrastructureResult {
      * @return The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
      */
-    private Integer activatedStorageCount;
+    private @Nullable Integer activatedStorageCount;
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
-    private Integer additionalStorageCount;
+    private @Nullable Integer additionalStorageCount;
     /**
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      * 
      */
-    private Integer availableStorageSizeInGbs;
+    private @Nullable Integer availableStorageSizeInGbs;
     private String cloudExadataInfrastructureId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The number of compute servers for the cloud Exadata infrastructure.
      * 
      */
-    private Integer computeCount;
+    private @Nullable Integer computeCount;
     /**
      * @return The total number of CPU cores allocated.
      * 
      */
-    private Integer cpuCount;
+    private @Nullable Integer cpuCount;
     /**
      * @return The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
      * 
      */
-    private List<GetCloudExadataInfrastructureCustomerContact> customerContacts;
+    private @Nullable List<GetCloudExadataInfrastructureCustomerContact> customerContacts;
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    private Double dataStorageSizeInTbs;
+    private @Nullable Double dataStorageSizeInTbs;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    private String dbServerVersion;
+    private @Nullable String dbServerVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private String lastMaintenanceRunId;
+    private @Nullable String lastMaintenanceRunId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
+    private @Nullable List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    private Integer maxCpuCount;
+    private @Nullable Integer maxCpuCount;
     /**
      * @return The total available DATA disk group size.
      * 
      */
-    private Double maxDataStorageInTbs;
+    private @Nullable Double maxDataStorageInTbs;
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    private Integer maxDbNodeStorageInGbs;
+    private @Nullable Integer maxDbNodeStorageInGbs;
     /**
      * @return The total memory available in GBs.
      * 
      */
-    private Integer maxMemoryInGbs;
+    private @Nullable Integer maxMemoryInGbs;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    private String monthlyDbServerVersion;
+    private @Nullable String monthlyDbServerVersion;
     /**
      * @return The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    private String monthlyStorageServerVersion;
+    private @Nullable String monthlyStorageServerVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private String nextMaintenanceRunId;
+    private @Nullable String nextMaintenanceRunId;
     /**
      * @return The model name of the cloud Exadata infrastructure resource.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The current lifecycle state of the cloud Exadata infrastructure resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The number of storage servers for the cloud Exadata infrastructure.
      * 
      */
-    private Integer storageCount;
+    private @Nullable Integer storageCount;
     /**
      * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    private String storageServerVersion;
+    private @Nullable String storageServerVersion;
     /**
      * @return The date and time the cloud Exadata infrastructure resource was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      * 
      */
-    private Integer totalStorageSizeInGbs;
+    private @Nullable Integer totalStorageSizeInGbs;
 
     private GetCloudExadataInfrastructureResult() {}
     /**
      * @return The requested number of additional storage servers activated for the Exadata infrastructure.
      * 
      */
-    public Integer activatedStorageCount() {
-        return this.activatedStorageCount;
+    public Optional<Integer> activatedStorageCount() {
+        return Optional.ofNullable(this.activatedStorageCount);
     }
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
-    public Integer additionalStorageCount() {
-        return this.additionalStorageCount;
+    public Optional<Integer> additionalStorageCount() {
+        return Optional.ofNullable(this.additionalStorageCount);
     }
     /**
      * @return The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      * 
      */
-    public Integer availableStorageSizeInGbs() {
-        return this.availableStorageSizeInGbs;
+    public Optional<Integer> availableStorageSizeInGbs() {
+        return Optional.ofNullable(this.availableStorageSizeInGbs);
     }
     public String cloudExadataInfrastructureId() {
         return this.cloudExadataInfrastructureId;
@@ -214,197 +216,197 @@ public final class GetCloudExadataInfrastructureResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The number of compute servers for the cloud Exadata infrastructure.
      * 
      */
-    public Integer computeCount() {
-        return this.computeCount;
+    public Optional<Integer> computeCount() {
+        return Optional.ofNullable(this.computeCount);
     }
     /**
      * @return The total number of CPU cores allocated.
      * 
      */
-    public Integer cpuCount() {
-        return this.cpuCount;
+    public Optional<Integer> cpuCount() {
+        return Optional.ofNullable(this.cpuCount);
     }
     /**
      * @return The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
      * 
      */
     public List<GetCloudExadataInfrastructureCustomerContact> customerContacts() {
-        return this.customerContacts;
+        return this.customerContacts == null ? List.of() : this.customerContacts;
     }
     /**
      * @return Size, in terabytes, of the DATA disk group.
      * 
      */
-    public Double dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Optional<Double> dataStorageSizeInTbs() {
+        return Optional.ofNullable(this.dataStorageSizeInTbs);
     }
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    public String dbServerVersion() {
-        return this.dbServerVersion;
+    public Optional<String> dbServerVersion() {
+        return Optional.ofNullable(this.dbServerVersion);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public String lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Optional<String> lastMaintenanceRunId() {
+        return Optional.ofNullable(this.lastMaintenanceRunId);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
     public List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows() {
-        return this.maintenanceWindows;
+        return this.maintenanceWindows == null ? List.of() : this.maintenanceWindows;
     }
     /**
      * @return The total number of CPU cores available.
      * 
      */
-    public Integer maxCpuCount() {
-        return this.maxCpuCount;
+    public Optional<Integer> maxCpuCount() {
+        return Optional.ofNullable(this.maxCpuCount);
     }
     /**
      * @return The total available DATA disk group size.
      * 
      */
-    public Double maxDataStorageInTbs() {
-        return this.maxDataStorageInTbs;
+    public Optional<Double> maxDataStorageInTbs() {
+        return Optional.ofNullable(this.maxDataStorageInTbs);
     }
     /**
      * @return The total local node storage available in GBs.
      * 
      */
-    public Integer maxDbNodeStorageInGbs() {
-        return this.maxDbNodeStorageInGbs;
+    public Optional<Integer> maxDbNodeStorageInGbs() {
+        return Optional.ofNullable(this.maxDbNodeStorageInGbs);
     }
     /**
      * @return The total memory available in GBs.
      * 
      */
-    public Integer maxMemoryInGbs() {
-        return this.maxMemoryInGbs;
+    public Optional<Integer> maxMemoryInGbs() {
+        return Optional.ofNullable(this.maxMemoryInGbs);
     }
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    public String monthlyDbServerVersion() {
-        return this.monthlyDbServerVersion;
+    public Optional<String> monthlyDbServerVersion() {
+        return Optional.ofNullable(this.monthlyDbServerVersion);
     }
     /**
      * @return The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    public String monthlyStorageServerVersion() {
-        return this.monthlyStorageServerVersion;
+    public Optional<String> monthlyStorageServerVersion() {
+        return Optional.ofNullable(this.monthlyStorageServerVersion);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public String nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Optional<String> nextMaintenanceRunId() {
+        return Optional.ofNullable(this.nextMaintenanceRunId);
     }
     /**
      * @return The model name of the cloud Exadata infrastructure resource.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The current lifecycle state of the cloud Exadata infrastructure resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The number of storage servers for the cloud Exadata infrastructure.
      * 
      */
-    public Integer storageCount() {
-        return this.storageCount;
+    public Optional<Integer> storageCount() {
+        return Optional.ofNullable(this.storageCount);
     }
     /**
      * @return The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      * 
      */
-    public String storageServerVersion() {
-        return this.storageServerVersion;
+    public Optional<String> storageServerVersion() {
+        return Optional.ofNullable(this.storageServerVersion);
     }
     /**
      * @return The date and time the cloud Exadata infrastructure resource was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      * 
      */
-    public Integer totalStorageSizeInGbs() {
-        return this.totalStorageSizeInGbs;
+    public Optional<Integer> totalStorageSizeInGbs() {
+        return Optional.ofNullable(this.totalStorageSizeInGbs);
     }
 
     public static Builder builder() {
@@ -416,39 +418,39 @@ public final class GetCloudExadataInfrastructureResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer activatedStorageCount;
-        private Integer additionalStorageCount;
-        private String availabilityDomain;
-        private Integer availableStorageSizeInGbs;
+        private @Nullable Integer activatedStorageCount;
+        private @Nullable Integer additionalStorageCount;
+        private @Nullable String availabilityDomain;
+        private @Nullable Integer availableStorageSizeInGbs;
         private String cloudExadataInfrastructureId;
-        private String compartmentId;
-        private Integer computeCount;
-        private Integer cpuCount;
-        private List<GetCloudExadataInfrastructureCustomerContact> customerContacts;
-        private Double dataStorageSizeInTbs;
-        private Integer dbNodeStorageSizeInGbs;
-        private String dbServerVersion;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lastMaintenanceRunId;
-        private String lifecycleDetails;
-        private List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
-        private Integer maxCpuCount;
-        private Double maxDataStorageInTbs;
-        private Integer maxDbNodeStorageInGbs;
-        private Integer maxMemoryInGbs;
-        private Integer memorySizeInGbs;
-        private String monthlyDbServerVersion;
-        private String monthlyStorageServerVersion;
-        private String nextMaintenanceRunId;
-        private String shape;
-        private String state;
-        private Integer storageCount;
-        private String storageServerVersion;
-        private String timeCreated;
-        private Integer totalStorageSizeInGbs;
+        private @Nullable String compartmentId;
+        private @Nullable Integer computeCount;
+        private @Nullable Integer cpuCount;
+        private @Nullable List<GetCloudExadataInfrastructureCustomerContact> customerContacts;
+        private @Nullable Double dataStorageSizeInTbs;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable String dbServerVersion;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lastMaintenanceRunId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows;
+        private @Nullable Integer maxCpuCount;
+        private @Nullable Double maxDataStorageInTbs;
+        private @Nullable Integer maxDbNodeStorageInGbs;
+        private @Nullable Integer maxMemoryInGbs;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable String monthlyDbServerVersion;
+        private @Nullable String monthlyStorageServerVersion;
+        private @Nullable String nextMaintenanceRunId;
+        private @Nullable String shape;
+        private @Nullable String state;
+        private @Nullable Integer storageCount;
+        private @Nullable String storageServerVersion;
+        private @Nullable String timeCreated;
+        private @Nullable Integer totalStorageSizeInGbs;
         public Builder() {}
         public Builder(GetCloudExadataInfrastructureResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -488,23 +490,23 @@ public final class GetCloudExadataInfrastructureResult {
         }
 
         @CustomType.Setter
-        public Builder activatedStorageCount(Integer activatedStorageCount) {
-            this.activatedStorageCount = Objects.requireNonNull(activatedStorageCount);
+        public Builder activatedStorageCount(@Nullable Integer activatedStorageCount) {
+            this.activatedStorageCount = activatedStorageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder additionalStorageCount(Integer additionalStorageCount) {
-            this.additionalStorageCount = Objects.requireNonNull(additionalStorageCount);
+        public Builder additionalStorageCount(@Nullable Integer additionalStorageCount) {
+            this.additionalStorageCount = additionalStorageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder availableStorageSizeInGbs(Integer availableStorageSizeInGbs) {
-            this.availableStorageSizeInGbs = Objects.requireNonNull(availableStorageSizeInGbs);
+        public Builder availableStorageSizeInGbs(@Nullable Integer availableStorageSizeInGbs) {
+            this.availableStorageSizeInGbs = availableStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -513,149 +515,149 @@ public final class GetCloudExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeCount(Integer computeCount) {
-            this.computeCount = Objects.requireNonNull(computeCount);
+        public Builder computeCount(@Nullable Integer computeCount) {
+            this.computeCount = computeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCount(Integer cpuCount) {
-            this.cpuCount = Objects.requireNonNull(cpuCount);
+        public Builder cpuCount(@Nullable Integer cpuCount) {
+            this.cpuCount = cpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder customerContacts(List<GetCloudExadataInfrastructureCustomerContact> customerContacts) {
-            this.customerContacts = Objects.requireNonNull(customerContacts);
+        public Builder customerContacts(@Nullable List<GetCloudExadataInfrastructureCustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
             return this;
         }
         public Builder customerContacts(GetCloudExadataInfrastructureCustomerContact... customerContacts) {
             return customerContacts(List.of(customerContacts));
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
-            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+        public Builder dataStorageSizeInTbs(@Nullable Double dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = dataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServerVersion(String dbServerVersion) {
-            this.dbServerVersion = Objects.requireNonNull(dbServerVersion);
+        public Builder dbServerVersion(@Nullable String dbServerVersion) {
+            this.dbServerVersion = dbServerVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+        public Builder lastMaintenanceRunId(@Nullable String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceWindows(List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+        public Builder maintenanceWindows(@Nullable List<GetCloudExadataInfrastructureMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetCloudExadataInfrastructureMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
-        public Builder maxCpuCount(Integer maxCpuCount) {
-            this.maxCpuCount = Objects.requireNonNull(maxCpuCount);
+        public Builder maxCpuCount(@Nullable Integer maxCpuCount) {
+            this.maxCpuCount = maxCpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder maxDataStorageInTbs(Double maxDataStorageInTbs) {
-            this.maxDataStorageInTbs = Objects.requireNonNull(maxDataStorageInTbs);
+        public Builder maxDataStorageInTbs(@Nullable Double maxDataStorageInTbs) {
+            this.maxDataStorageInTbs = maxDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxDbNodeStorageInGbs(Integer maxDbNodeStorageInGbs) {
-            this.maxDbNodeStorageInGbs = Objects.requireNonNull(maxDbNodeStorageInGbs);
+        public Builder maxDbNodeStorageInGbs(@Nullable Integer maxDbNodeStorageInGbs) {
+            this.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxMemoryInGbs(Integer maxMemoryInGbs) {
-            this.maxMemoryInGbs = Objects.requireNonNull(maxMemoryInGbs);
+        public Builder maxMemoryInGbs(@Nullable Integer maxMemoryInGbs) {
+            this.maxMemoryInGbs = maxMemoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
-            this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
+        public Builder monthlyDbServerVersion(@Nullable String monthlyDbServerVersion) {
+            this.monthlyDbServerVersion = monthlyDbServerVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder monthlyStorageServerVersion(String monthlyStorageServerVersion) {
-            this.monthlyStorageServerVersion = Objects.requireNonNull(monthlyStorageServerVersion);
+        public Builder monthlyStorageServerVersion(@Nullable String monthlyStorageServerVersion) {
+            this.monthlyStorageServerVersion = monthlyStorageServerVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+        public Builder nextMaintenanceRunId(@Nullable String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder storageCount(Integer storageCount) {
-            this.storageCount = Objects.requireNonNull(storageCount);
+        public Builder storageCount(@Nullable Integer storageCount) {
+            this.storageCount = storageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder storageServerVersion(String storageServerVersion) {
-            this.storageServerVersion = Objects.requireNonNull(storageServerVersion);
+        public Builder storageServerVersion(@Nullable String storageServerVersion) {
+            this.storageServerVersion = storageServerVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder totalStorageSizeInGbs(Integer totalStorageSizeInGbs) {
-            this.totalStorageSizeInGbs = Objects.requireNonNull(totalStorageSizeInGbs);
+        public Builder totalStorageSizeInGbs(@Nullable Integer totalStorageSizeInGbs) {
+            this.totalStorageSizeInGbs = totalStorageSizeInGbs;
             return this;
         }
         public GetCloudExadataInfrastructureResult build() {

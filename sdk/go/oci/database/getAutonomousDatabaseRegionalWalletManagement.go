@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -51,13 +50,13 @@ func LookupAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context, opts 
 
 // A collection of values returned by getAutonomousDatabaseRegionalWalletManagement.
 type LookupAutonomousDatabaseRegionalWalletManagementResult struct {
-	GracePeriod  int    `pulumi:"gracePeriod"`
-	Id           string `pulumi:"id"`
-	ShouldRotate bool   `pulumi:"shouldRotate"`
+	GracePeriod  *int    `pulumi:"gracePeriod"`
+	Id           *string `pulumi:"id"`
+	ShouldRotate *bool   `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
-	TimeRotated string `pulumi:"timeRotated"`
+	TimeRotated *string `pulumi:"timeRotated"`
 }
 
 func LookupAutonomousDatabaseRegionalWalletManagementOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) LookupAutonomousDatabaseRegionalWalletManagementResultOutput {
@@ -86,32 +85,26 @@ func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToLookupAu
 	return o
 }
 
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousDatabaseRegionalWalletManagementResult] {
-	return pulumix.Output[LookupAutonomousDatabaseRegionalWalletManagementResult]{
-		OutputState: o.OutputState,
-	}
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) GracePeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) *int { return v.GracePeriod }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) GracePeriod() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) int { return v.GracePeriod }).(pulumi.IntOutput)
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ShouldRotate() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) bool { return v.ShouldRotate }).(pulumi.BoolOutput)
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) ShouldRotate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) *bool { return v.ShouldRotate }).(pulumi.BoolPtrOutput)
 }
 
 // The current lifecycle state of the Autonomous Database wallet.
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the wallet was last rotated.
-func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) TimeRotated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) string { return v.TimeRotated }).(pulumi.StringOutput)
+func (o LookupAutonomousDatabaseRegionalWalletManagementResultOutput) TimeRotated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseRegionalWalletManagementResult) *string { return v.TimeRotated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

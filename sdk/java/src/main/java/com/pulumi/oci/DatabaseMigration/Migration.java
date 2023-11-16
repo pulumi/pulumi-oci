@@ -24,6 +24,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -251,28 +252,28 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="advisorSettings", refs={MigrationAdvisorSettings.class}, tree="[0]")
-    private Output<MigrationAdvisorSettings> advisorSettings;
+    private Output</* @Nullable */ MigrationAdvisorSettings> advisorSettings;
 
     /**
      * @return (Updatable) Optional Pre-Migration advisor settings.
      * 
      */
-    public Output<MigrationAdvisorSettings> advisorSettings() {
-        return this.advisorSettings;
+    public Output<Optional<MigrationAdvisorSettings>> advisorSettings() {
+        return Codegen.optional(this.advisorSettings);
     }
     /**
      * (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
      * 
      */
     @Export(name="agentId", refs={String.class}, tree="[0]")
-    private Output<String> agentId;
+    private Output</* @Nullable */ String> agentId;
 
     /**
      * @return (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
      * 
      */
-    public Output<String> agentId() {
-        return this.agentId;
+    public Output<Optional<String>> agentId() {
+        return Codegen.optional(this.agentId);
     }
     /**
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -293,216 +294,216 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="credentialsSecretId", refs={String.class}, tree="[0]")
-    private Output<String> credentialsSecretId;
+    private Output</* @Nullable */ String> credentialsSecretId;
 
     /**
      * @return OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
      * 
      */
-    public Output<String> credentialsSecretId() {
-        return this.credentialsSecretId;
+    public Output<Optional<String>> credentialsSecretId() {
+        return Codegen.optional(this.credentialsSecretId);
     }
     /**
      * Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
      * 
      */
     @Export(name="csvText", refs={String.class}, tree="[0]")
-    private Output<String> csvText;
+    private Output</* @Nullable */ String> csvText;
 
     /**
      * @return Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
      * 
      */
-    public Output<String> csvText() {
-        return this.csvText;
+    public Output<Optional<String>> csvText() {
+        return Codegen.optional(this.csvText);
     }
     /**
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      * 
      */
     @Export(name="dataTransferMediumDetails", refs={MigrationDataTransferMediumDetails.class}, tree="[0]")
-    private Output<MigrationDataTransferMediumDetails> dataTransferMediumDetails;
+    private Output</* @Nullable */ MigrationDataTransferMediumDetails> dataTransferMediumDetails;
 
     /**
      * @return (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      * 
      */
-    public Output<MigrationDataTransferMediumDetails> dataTransferMediumDetails() {
-        return this.dataTransferMediumDetails;
+    public Output<Optional<MigrationDataTransferMediumDetails>> dataTransferMediumDetails() {
+        return Codegen.optional(this.dataTransferMediumDetails);
     }
     @Export(name="dataTransferMediumDetailsV2", refs={MigrationDataTransferMediumDetailsV2.class}, tree="[0]")
-    private Output<MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2;
+    private Output</* @Nullable */ MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2;
 
-    public Output<MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2() {
-        return this.dataTransferMediumDetailsV2;
+    public Output<Optional<MigrationDataTransferMediumDetailsV2>> dataTransferMediumDetailsV2() {
+        return Codegen.optional(this.dataTransferMediumDetailsV2);
     }
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      * 
      */
     @Export(name="datapumpSettings", refs={MigrationDatapumpSettings.class}, tree="[0]")
-    private Output<MigrationDatapumpSettings> datapumpSettings;
+    private Output</* @Nullable */ MigrationDatapumpSettings> datapumpSettings;
 
     /**
      * @return (Updatable) Optional settings for Data Pump Export and Import jobs
      * 
      */
-    public Output<MigrationDatapumpSettings> datapumpSettings() {
-        return this.datapumpSettings;
+    public Output<Optional<MigrationDatapumpSettings>> datapumpSettings() {
+        return Codegen.optional(this.datapumpSettings);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Migration Display Name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Migration Display Name
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Optional additional properties for dump transfer.
      * 
      */
     @Export(name="dumpTransferDetails", refs={MigrationDumpTransferDetails.class}, tree="[0]")
-    private Output<MigrationDumpTransferDetails> dumpTransferDetails;
+    private Output</* @Nullable */ MigrationDumpTransferDetails> dumpTransferDetails;
 
     /**
      * @return (Updatable) Optional additional properties for dump transfer.
      * 
      */
-    public Output<MigrationDumpTransferDetails> dumpTransferDetails() {
-        return this.dumpTransferDetails;
+    public Output<Optional<MigrationDumpTransferDetails>> dumpTransferDetails() {
+        return Codegen.optional(this.dumpTransferDetails);
     }
     /**
      * (Updatable) Database objects to exclude from migration, cannot be specified alongside &#39;includeObjects&#39;
      * 
      */
     @Export(name="excludeObjects", refs={List.class,MigrationExcludeObject.class}, tree="[0,1]")
-    private Output<List<MigrationExcludeObject>> excludeObjects;
+    private Output</* @Nullable */ List<MigrationExcludeObject>> excludeObjects;
 
     /**
      * @return (Updatable) Database objects to exclude from migration, cannot be specified alongside &#39;includeObjects&#39;
      * 
      */
-    public Output<List<MigrationExcludeObject>> excludeObjects() {
-        return this.excludeObjects;
+    public Output<Optional<List<MigrationExcludeObject>>> excludeObjects() {
+        return Codegen.optional(this.excludeObjects);
     }
     /**
      * OCID of the current ODMS Job in execution for the Migration, if any.
      * 
      */
     @Export(name="executingJobId", refs={String.class}, tree="[0]")
-    private Output<String> executingJobId;
+    private Output</* @Nullable */ String> executingJobId;
 
     /**
      * @return OCID of the current ODMS Job in execution for the Migration, if any.
      * 
      */
-    public Output<String> executingJobId() {
-        return this.executingJobId;
+    public Output<Optional<String>> executingJobId() {
+        return Codegen.optional(this.executingJobId);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      * 
      */
     @Export(name="goldenGateDetails", refs={MigrationGoldenGateDetails.class}, tree="[0]")
-    private Output<MigrationGoldenGateDetails> goldenGateDetails;
+    private Output</* @Nullable */ MigrationGoldenGateDetails> goldenGateDetails;
 
     /**
      * @return (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
      * 
      */
-    public Output<MigrationGoldenGateDetails> goldenGateDetails() {
-        return this.goldenGateDetails;
+    public Output<Optional<MigrationGoldenGateDetails>> goldenGateDetails() {
+        return Codegen.optional(this.goldenGateDetails);
     }
     /**
      * (Updatable) Details about Oracle GoldenGate GGS Deployment.
      * 
      */
     @Export(name="goldenGateServiceDetails", refs={MigrationGoldenGateServiceDetails.class}, tree="[0]")
-    private Output<MigrationGoldenGateServiceDetails> goldenGateServiceDetails;
+    private Output</* @Nullable */ MigrationGoldenGateServiceDetails> goldenGateServiceDetails;
 
     /**
      * @return (Updatable) Details about Oracle GoldenGate GGS Deployment.
      * 
      */
-    public Output<MigrationGoldenGateServiceDetails> goldenGateServiceDetails() {
-        return this.goldenGateServiceDetails;
+    public Output<Optional<MigrationGoldenGateServiceDetails>> goldenGateServiceDetails() {
+        return Codegen.optional(this.goldenGateServiceDetails);
     }
     /**
      * (Updatable) Database objects to include from migration, cannot be specified alongside &#39;excludeObjects&#39;
      * 
      */
     @Export(name="includeObjects", refs={List.class,MigrationIncludeObject.class}, tree="[0,1]")
-    private Output<List<MigrationIncludeObject>> includeObjects;
+    private Output</* @Nullable */ List<MigrationIncludeObject>> includeObjects;
 
     /**
      * @return (Updatable) Database objects to include from migration, cannot be specified alongside &#39;excludeObjects&#39;
      * 
      */
-    public Output<List<MigrationIncludeObject>> includeObjects() {
-        return this.includeObjects;
+    public Output<Optional<List<MigrationIncludeObject>>> includeObjects() {
+        return Codegen.optional(this.includeObjects);
     }
     /**
      * Additional status related to the execution and current state of the Migration.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional status related to the execution and current state of the Migration.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
      * 
      */
     @Export(name="sourceContainerDatabaseConnectionId", refs={String.class}, tree="[0]")
-    private Output<String> sourceContainerDatabaseConnectionId;
+    private Output</* @Nullable */ String> sourceContainerDatabaseConnectionId;
 
     /**
      * @return (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
      * 
      */
-    public Output<String> sourceContainerDatabaseConnectionId() {
-        return this.sourceContainerDatabaseConnectionId;
+    public Output<Optional<String>> sourceContainerDatabaseConnectionId() {
+        return Codegen.optional(this.sourceContainerDatabaseConnectionId);
     }
     /**
      * (Updatable) The OCID of the Source Database Connection.
@@ -523,28 +524,28 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Migration resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * (Updatable) The OCID of the Target Database Connection.
@@ -565,42 +566,42 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the Migration was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time of last Migration. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeLastMigration", refs={String.class}, tree="[0]")
-    private Output<String> timeLastMigration;
+    private Output</* @Nullable */ String> timeLastMigration;
 
     /**
      * @return The time of last Migration. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeLastMigration() {
-        return this.timeLastMigration;
+    public Output<Optional<String>> timeLastMigration() {
+        return Codegen.optional(this.timeLastMigration);
     }
     /**
      * The time of the last Migration details update. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time of the last Migration details update. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Migration type.
@@ -621,28 +622,28 @@ public class Migration extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vaultDetails", refs={MigrationVaultDetails.class}, tree="[0]")
-    private Output<MigrationVaultDetails> vaultDetails;
+    private Output</* @Nullable */ MigrationVaultDetails> vaultDetails;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
-    public Output<MigrationVaultDetails> vaultDetails() {
-        return this.vaultDetails;
+    public Output<Optional<MigrationVaultDetails>> vaultDetails() {
+        return Codegen.optional(this.vaultDetails);
     }
     /**
      * Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
      * 
      */
     @Export(name="waitAfter", refs={String.class}, tree="[0]")
-    private Output<String> waitAfter;
+    private Output</* @Nullable */ String> waitAfter;
 
     /**
      * @return Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
      * 
      */
-    public Output<String> waitAfter() {
-        return this.waitAfter;
+    public Output<Optional<String>> waitAfter() {
+        return Codegen.optional(this.waitAfter);
     }
 
     /**

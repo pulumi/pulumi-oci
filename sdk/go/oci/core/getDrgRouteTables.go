@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drg Route Tables in Oracle Cloud Infrastructure Core service.
@@ -79,7 +78,7 @@ type GetDrgRouteTablesResult struct {
 	DrgRouteTables []GetDrgRouteTablesDrgRouteTable `pulumi:"drgRouteTables"`
 	Filters        []GetDrgRouteTablesFilter        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
 	ImportDrgRouteDistributionId *string `pulumi:"importDrgRouteDistributionId"`
 	// The DRG route table's current state.
@@ -131,12 +130,6 @@ func (o GetDrgRouteTablesResultOutput) ToGetDrgRouteTablesResultOutputWithContex
 	return o
 }
 
-func (o GetDrgRouteTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteTablesResult] {
-	return pulumix.Output[GetDrgRouteTablesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetDrgRouteTablesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrgRouteTablesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -157,8 +150,8 @@ func (o GetDrgRouteTablesResultOutput) Filters() GetDrgRouteTablesFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDrgRouteTablesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteTablesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrgRouteTablesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteTablesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.

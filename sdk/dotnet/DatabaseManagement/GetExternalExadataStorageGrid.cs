@@ -110,44 +110,44 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
-        public readonly string ExadataInfrastructureId;
+        public readonly string? ExadataInfrastructureId;
         public readonly string ExternalExadataStorageGridId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The internal ID of the Exadata resource.
         /// </summary>
-        public readonly string InternalId;
+        public readonly string? InternalId;
         /// <summary>
         /// The details of the lifecycle state of the Exadata resource.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The type of Exadata resource.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The number of Exadata storage servers in the Exadata infrastructure.
         /// </summary>
-        public readonly double ServerCount;
+        public readonly double? ServerCount;
         /// <summary>
         /// The current lifecycle state of the database resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The status of the Exadata resource.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// A list of monitored Exadata storage servers.
         /// </summary>
@@ -155,47 +155,47 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The timestamp of the last update of the Exadata resource.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The version of the Exadata resource.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetExternalExadataStorageGridResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string displayName,
+            string? displayName,
 
-            string exadataInfrastructureId,
+            string? exadataInfrastructureId,
 
             string externalExadataStorageGridId,
 
-            string id,
+            string? id,
 
-            string internalId,
+            string? internalId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string resourceType,
+            string? resourceType,
 
-            double serverCount,
+            double? serverCount,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
             ImmutableArray<Outputs.GetExternalExadataStorageGridStorageServerResult> storageServers,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             AdditionalDetails = additionalDetails;
             DisplayName = displayName;

@@ -32,7 +32,7 @@ public final class GetSdmMaskingPolicyDifferencesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the masking policy associated with the SDM masking policy difference.
      * 
@@ -42,7 +42,7 @@ public final class GetSdmMaskingPolicyDifferencesResult {
      * @return The list of sdm_masking_policy_difference_collection.
      * 
      */
-    private List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections;
+    private @Nullable List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections;
     /**
      * @return The OCID of the sensitive data model associated with the SDM masking policy difference.
      * 
@@ -82,8 +82,8 @@ public final class GetSdmMaskingPolicyDifferencesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the masking policy associated with the SDM masking policy difference.
@@ -97,7 +97,7 @@ public final class GetSdmMaskingPolicyDifferencesResult {
      * 
      */
     public List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections() {
-        return this.sdmMaskingPolicyDifferenceCollections;
+        return this.sdmMaskingPolicyDifferenceCollections == null ? List.of() : this.sdmMaskingPolicyDifferenceCollections;
     }
     /**
      * @return The OCID of the sensitive data model associated with the SDM masking policy difference.
@@ -128,9 +128,9 @@ public final class GetSdmMaskingPolicyDifferencesResult {
         private @Nullable String differenceAccessLevel;
         private @Nullable String displayName;
         private @Nullable List<GetSdmMaskingPolicyDifferencesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String maskingPolicyId;
-        private List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections;
+        private @Nullable List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections;
         private @Nullable String sensitiveDataModelId;
         private @Nullable String state;
         public Builder() {}
@@ -177,8 +177,8 @@ public final class GetSdmMaskingPolicyDifferencesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -187,8 +187,8 @@ public final class GetSdmMaskingPolicyDifferencesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sdmMaskingPolicyDifferenceCollections(List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections) {
-            this.sdmMaskingPolicyDifferenceCollections = Objects.requireNonNull(sdmMaskingPolicyDifferenceCollections);
+        public Builder sdmMaskingPolicyDifferenceCollections(@Nullable List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection> sdmMaskingPolicyDifferenceCollections) {
+            this.sdmMaskingPolicyDifferenceCollections = sdmMaskingPolicyDifferenceCollections;
             return this;
         }
         public Builder sdmMaskingPolicyDifferenceCollections(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection... sdmMaskingPolicyDifferenceCollections) {

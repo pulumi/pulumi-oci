@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
@@ -66,7 +65,7 @@ type GetCrossConnectLocationsResult struct {
 	CrossConnectLocations []GetCrossConnectLocationsCrossConnectLocation `pulumi:"crossConnectLocations"`
 	Filters               []GetCrossConnectLocationsFilter               `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCrossConnectLocationsOutput(ctx *pulumi.Context, args GetCrossConnectLocationsOutputArgs, opts ...pulumi.InvokeOption) GetCrossConnectLocationsResultOutput {
@@ -108,12 +107,6 @@ func (o GetCrossConnectLocationsResultOutput) ToGetCrossConnectLocationsResultOu
 	return o
 }
 
-func (o GetCrossConnectLocationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCrossConnectLocationsResult] {
-	return pulumix.Output[GetCrossConnectLocationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCrossConnectLocationsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectLocationsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -130,8 +123,8 @@ func (o GetCrossConnectLocationsResultOutput) Filters() GetCrossConnectLocations
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCrossConnectLocationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCrossConnectLocationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCrossConnectLocationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCrossConnectLocationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

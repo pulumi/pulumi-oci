@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of the supported compute shapes for ESXi hosts.
         /// </summary>
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetSupportedHostShapesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSupportedHostShapesItemResult> items,
 

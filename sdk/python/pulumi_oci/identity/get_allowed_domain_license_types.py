@@ -39,10 +39,7 @@ class GetAllowedDomainLicenseTypesResult:
 
     @property
     @pulumi.getter(name="allowedDomainLicenseTypes")
-    def allowed_domain_license_types(self) -> Sequence['outputs.GetAllowedDomainLicenseTypesAllowedDomainLicenseTypeResult']:
-        """
-        The list of allowed_domain_license_types.
-        """
+    def allowed_domain_license_types(self) -> Optional[Sequence['outputs.GetAllowedDomainLicenseTypesAllowedDomainLicenseTypeResult']]:
         return pulumi.get(self, "allowed_domain_license_types")
 
     @property
@@ -57,7 +54,7 @@ class GetAllowedDomainLicenseTypesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,26 +77,7 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[str] = 
                                      filters: Optional[Sequence[pulumi.InputType['GetAllowedDomainLicenseTypesFilterArgs']]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAllowedDomainLicenseTypesResult:
     """
-    This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
-
-    List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-    If {@code name} is provided, it filters and returns resources that match the given license type name.
-    Otherwise, returns all valid license types that are currently supported.
-
-    - If license type details are retrieved sucessfully, return 202 ACCEPTED.
-    - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=var["allowed_domain_license_type_current_license_type_name"])
-    ```
-
-
-    :param str current_license_type_name: The domain license type
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['currentLicenseTypeName'] = current_license_type_name
@@ -119,25 +97,6 @@ def get_allowed_domain_license_types_output(current_license_type_name: Optional[
                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAllowedDomainLicenseTypesFilterArgs']]]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAllowedDomainLicenseTypesResult]:
     """
-    This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.
-
-    List the allowed domain license types supported by Oracle Cloud Infrastructure If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-    If {@code name} is provided, it filters and returns resources that match the given license type name.
-    Otherwise, returns all valid license types that are currently supported.
-
-    - If license type details are retrieved sucessfully, return 202 ACCEPTED.
-    - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=var["allowed_domain_license_type_current_license_type_name"])
-    ```
-
-
-    :param str current_license_type_name: The domain license type
+    Use this data source to access information about an existing resource.
     """
     ...

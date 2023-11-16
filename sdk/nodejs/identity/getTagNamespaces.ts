@@ -66,7 +66,7 @@ export interface GetTagNamespacesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly includeSubcompartments?: boolean;
     /**
      * The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
@@ -75,7 +75,7 @@ export interface GetTagNamespacesResult {
     /**
      * The list of tag_namespaces.
      */
-    readonly tagNamespaces: outputs.Identity.GetTagNamespacesTagNamespace[];
+    readonly tagNamespaces?: outputs.Identity.GetTagNamespacesTagNamespace[];
 }
 /**
  * This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.

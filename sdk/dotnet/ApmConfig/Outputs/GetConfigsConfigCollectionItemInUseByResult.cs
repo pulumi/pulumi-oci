@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// <summary>
         /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// A filter to return resources that match the given display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter to return OPTIONS resources that match the given group.
         /// </summary>
-        public readonly string OptionsGroup;
+        public readonly string? OptionsGroup;
 
         [OutputConstructor]
         private GetConfigsConfigCollectionItemInUseByResult(
-            string configType,
+            string? configType,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string optionsGroup)
+            string? optionsGroup)
         {
             ConfigType = configType;
             DisplayName = displayName;

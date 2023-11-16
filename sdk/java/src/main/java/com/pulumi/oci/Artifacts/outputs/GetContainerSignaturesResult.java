@@ -25,7 +25,7 @@ public final class GetContainerSignaturesResult {
      * @return The list of container_image_signature_collection.
      * 
      */
-    private List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections;
+    private @Nullable List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections;
     /**
      * @return The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      * 
@@ -36,7 +36,7 @@ public final class GetContainerSignaturesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String imageDigest;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -77,7 +77,7 @@ public final class GetContainerSignaturesResult {
      * 
      */
     public List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections() {
-        return this.containerImageSignatureCollections;
+        return this.containerImageSignatureCollections == null ? List.of() : this.containerImageSignatureCollections;
     }
     /**
      * @return The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
@@ -93,8 +93,8 @@ public final class GetContainerSignaturesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> imageDigest() {
         return Optional.ofNullable(this.imageDigest);
@@ -145,10 +145,10 @@ public final class GetContainerSignaturesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections;
+        private @Nullable List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections;
         private @Nullable String displayName;
         private @Nullable List<GetContainerSignaturesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String imageDigest;
         private @Nullable String imageId;
         private @Nullable String kmsKeyId;
@@ -185,8 +185,8 @@ public final class GetContainerSignaturesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder containerImageSignatureCollections(List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections) {
-            this.containerImageSignatureCollections = Objects.requireNonNull(containerImageSignatureCollections);
+        public Builder containerImageSignatureCollections(@Nullable List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections) {
+            this.containerImageSignatureCollections = containerImageSignatureCollections;
             return this;
         }
         public Builder containerImageSignatureCollections(GetContainerSignaturesContainerImageSignatureCollection... containerImageSignatureCollections) {
@@ -206,8 +206,8 @@ public final class GetContainerSignaturesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -64,11 +64,11 @@ export interface GetResourceQuotasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of resource_quotum_collection.
      */
-    readonly resourceQuotumCollections: outputs.UsageProxy.GetResourceQuotasResourceQuotumCollection[];
+    readonly resourceQuotumCollections?: outputs.UsageProxy.GetResourceQuotasResourceQuotumCollection[];
     readonly serviceEntitlement?: string;
     readonly serviceName: string;
 }

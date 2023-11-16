@@ -125,20 +125,20 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// Display Name of the Private Access Channel.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
         /// </summary>
         public readonly ImmutableArray<string> EgressSourceIpAddresses;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// IP Address of the Private Access channel.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Private Access Channel unique identifier key.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Network Security Group OCIDs for an Analytics instance.
         /// </summary>
@@ -155,25 +155,25 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// OCID of the customer subnet connected to private access channel.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// OCID of the customer VCN peered with private access channel.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetAnalyticsInstancePrivateAccessChannelResult(
             string analyticsInstanceId,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<string> egressSourceIpAddresses,
 
-            string id,
+            string? id,
 
-            string ipAddress,
+            string? ipAddress,
 
-            string key,
+            string? key,
 
             ImmutableArray<string> networkSecurityGroupIds,
 
@@ -183,9 +183,9 @@ namespace Pulumi.Oci.Analytics
 
             ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult> privateSourceScanHosts,
 
-            string subnetId,
+            string? subnetId,
 
-            string vcnId)
+            string? vcnId)
         {
             AnalyticsInstanceId = analyticsInstanceId;
             DisplayName = displayName;

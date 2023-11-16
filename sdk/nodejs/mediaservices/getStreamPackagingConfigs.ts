@@ -76,7 +76,7 @@ export interface GetStreamPackagingConfigsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Packaging Configuration.
      */
@@ -84,7 +84,7 @@ export interface GetStreamPackagingConfigsResult {
     /**
      * The list of stream_packaging_config_collection.
      */
-    readonly streamPackagingConfigCollections: outputs.MediaServices.GetStreamPackagingConfigsStreamPackagingConfigCollection[];
+    readonly streamPackagingConfigCollections?: outputs.MediaServices.GetStreamPackagingConfigsStreamPackagingConfigCollection[];
     readonly streamPackagingConfigId?: string;
 }
 /**

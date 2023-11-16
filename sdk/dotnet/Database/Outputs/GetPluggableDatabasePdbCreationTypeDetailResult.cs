@@ -13,26 +13,26 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetPluggableDatabasePdbCreationTypeDetailResult
     {
-        public readonly string CreationType;
-        public readonly string DblinkUserPassword;
-        public readonly string DblinkUsername;
+        public readonly string? CreationType;
+        public readonly string? DblinkUserPassword;
+        public readonly string? DblinkUsername;
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult> RefreshableCloneDetails;
-        public readonly string SourceContainerDatabaseAdminPassword;
-        public readonly string SourcePluggableDatabaseId;
+        public readonly string? SourceContainerDatabaseAdminPassword;
+        public readonly string? SourcePluggableDatabaseId;
 
         [OutputConstructor]
         private GetPluggableDatabasePdbCreationTypeDetailResult(
-            string creationType,
+            string? creationType,
 
-            string dblinkUserPassword,
+            string? dblinkUserPassword,
 
-            string dblinkUsername,
+            string? dblinkUsername,
 
             ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult> refreshableCloneDetails,
 
-            string sourceContainerDatabaseAdminPassword,
+            string? sourceContainerDatabaseAdminPassword,
 
-            string sourcePluggableDatabaseId)
+            string? sourcePluggableDatabaseId)
         {
             CreationType = creationType;
             DblinkUserPassword = dblinkUserPassword;

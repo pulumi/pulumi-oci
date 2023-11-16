@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCrossConnectStatusResult {
@@ -19,22 +21,22 @@ public final class GetCrossConnectStatusResult {
      * @return Encryption status of the CrossConnect
      * 
      */
-    private String encryptionStatus;
+    private @Nullable String encryptionStatus;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether Oracle&#39;s side of the interface is up or down.
      * 
      */
-    private String interfaceState;
+    private @Nullable String interfaceState;
     /**
      * @return The light level of the cross-connect (in dBm).  Example: `14.0`
      * 
      */
-    private Double lightLevelIndBm;
+    private @Nullable Double lightLevelIndBm;
     /**
      * @return Status indicator corresponding to the light level.
      * * **NO_LIGHT:** No measurable light
@@ -44,7 +46,7 @@ public final class GetCrossConnectStatusResult {
      * * **GOOD:** Good light level
      * 
      */
-    private String lightLevelIndicator;
+    private @Nullable String lightLevelIndicator;
 
     private GetCrossConnectStatusResult() {}
     /**
@@ -58,29 +60,29 @@ public final class GetCrossConnectStatusResult {
      * @return Encryption status of the CrossConnect
      * 
      */
-    public String encryptionStatus() {
-        return this.encryptionStatus;
+    public Optional<String> encryptionStatus() {
+        return Optional.ofNullable(this.encryptionStatus);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether Oracle&#39;s side of the interface is up or down.
      * 
      */
-    public String interfaceState() {
-        return this.interfaceState;
+    public Optional<String> interfaceState() {
+        return Optional.ofNullable(this.interfaceState);
     }
     /**
      * @return The light level of the cross-connect (in dBm).  Example: `14.0`
      * 
      */
-    public Double lightLevelIndBm() {
-        return this.lightLevelIndBm;
+    public Optional<Double> lightLevelIndBm() {
+        return Optional.ofNullable(this.lightLevelIndBm);
     }
     /**
      * @return Status indicator corresponding to the light level.
@@ -91,8 +93,8 @@ public final class GetCrossConnectStatusResult {
      * * **GOOD:** Good light level
      * 
      */
-    public String lightLevelIndicator() {
-        return this.lightLevelIndicator;
+    public Optional<String> lightLevelIndicator() {
+        return Optional.ofNullable(this.lightLevelIndicator);
     }
 
     public static Builder builder() {
@@ -105,11 +107,11 @@ public final class GetCrossConnectStatusResult {
     @CustomType.Builder
     public static final class Builder {
         private String crossConnectId;
-        private String encryptionStatus;
-        private String id;
-        private String interfaceState;
-        private Double lightLevelIndBm;
-        private String lightLevelIndicator;
+        private @Nullable String encryptionStatus;
+        private @Nullable String id;
+        private @Nullable String interfaceState;
+        private @Nullable Double lightLevelIndBm;
+        private @Nullable String lightLevelIndicator;
         public Builder() {}
         public Builder(GetCrossConnectStatusResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,28 +129,28 @@ public final class GetCrossConnectStatusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder encryptionStatus(String encryptionStatus) {
-            this.encryptionStatus = Objects.requireNonNull(encryptionStatus);
+        public Builder encryptionStatus(@Nullable String encryptionStatus) {
+            this.encryptionStatus = encryptionStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder interfaceState(String interfaceState) {
-            this.interfaceState = Objects.requireNonNull(interfaceState);
+        public Builder interfaceState(@Nullable String interfaceState) {
+            this.interfaceState = interfaceState;
             return this;
         }
         @CustomType.Setter
-        public Builder lightLevelIndBm(Double lightLevelIndBm) {
-            this.lightLevelIndBm = Objects.requireNonNull(lightLevelIndBm);
+        public Builder lightLevelIndBm(@Nullable Double lightLevelIndBm) {
+            this.lightLevelIndBm = lightLevelIndBm;
             return this;
         }
         @CustomType.Setter
-        public Builder lightLevelIndicator(String lightLevelIndicator) {
-            this.lightLevelIndicator = Objects.requireNonNull(lightLevelIndicator);
+        public Builder lightLevelIndicator(@Nullable String lightLevelIndicator) {
+            this.lightLevelIndicator = lightLevelIndicator;
             return this;
         }
         public GetCrossConnectStatusResult build() {

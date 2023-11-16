@@ -55,21 +55,21 @@ export interface GetExadataIormConfigResult {
     /**
      * An array of IORM settings for all the database in the Exadata DB system.
      */
-    readonly dbPlans: outputs.Database.GetExadataIormConfigDbPlan[];
+    readonly dbPlans?: outputs.Database.GetExadataIormConfigDbPlan[];
     readonly dbSystemId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current value for the IORM objective. The default is `AUTO`.
      */
-    readonly objective: string;
+    readonly objective?: string;
     /**
      * The current state of IORM configuration for the Exadata DB system.
      */
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.

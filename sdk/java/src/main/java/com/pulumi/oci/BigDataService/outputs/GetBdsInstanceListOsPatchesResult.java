@@ -9,6 +9,7 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceListOsPatchesOsPatch;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetBdsInstanceListOsPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of os_patches.
      * 
      */
-    private List<GetBdsInstanceListOsPatchesOsPatch> osPatches;
+    private @Nullable List<GetBdsInstanceListOsPatchesOsPatch> osPatches;
 
     private GetBdsInstanceListOsPatchesResult() {}
     public String bdsInstanceId() {
@@ -37,15 +38,15 @@ public final class GetBdsInstanceListOsPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of os_patches.
      * 
      */
     public List<GetBdsInstanceListOsPatchesOsPatch> osPatches() {
-        return this.osPatches;
+        return this.osPatches == null ? List.of() : this.osPatches;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetBdsInstanceListOsPatchesResult {
     public static final class Builder {
         private String bdsInstanceId;
         private @Nullable List<GetBdsInstanceListOsPatchesFilter> filters;
-        private String id;
-        private List<GetBdsInstanceListOsPatchesOsPatch> osPatches;
+        private @Nullable String id;
+        private @Nullable List<GetBdsInstanceListOsPatchesOsPatch> osPatches;
         public Builder() {}
         public Builder(GetBdsInstanceListOsPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetBdsInstanceListOsPatchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder osPatches(List<GetBdsInstanceListOsPatchesOsPatch> osPatches) {
-            this.osPatches = Objects.requireNonNull(osPatches);
+        public Builder osPatches(@Nullable List<GetBdsInstanceListOsPatchesOsPatch> osPatches) {
+            this.osPatches = osPatches;
             return this;
         }
         public Builder osPatches(GetBdsInstanceListOsPatchesOsPatch... osPatches) {

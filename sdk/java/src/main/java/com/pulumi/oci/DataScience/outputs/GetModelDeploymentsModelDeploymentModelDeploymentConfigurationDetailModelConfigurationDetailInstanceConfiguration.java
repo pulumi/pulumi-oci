@@ -8,6 +8,8 @@ import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentMode
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
@@ -15,27 +17,27 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * @return The shape used to launch the model deployment instances.
      * 
      */
-    private String instanceShapeName;
+    private @Nullable String instanceShapeName;
     /**
      * @return Details for the model-deployment instance shape configuration.
      * 
      */
-    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
+    private @Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration() {}
     /**
      * @return The shape used to launch the model deployment instances.
      * 
      */
-    public String instanceShapeName() {
-        return this.instanceShapeName;
+    public Optional<String> instanceShapeName() {
+        return Optional.ofNullable(this.instanceShapeName);
     }
     /**
      * @return Details for the model-deployment instance shape configuration.
      * 
      */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails() {
-        return this.modelDeploymentInstanceShapeConfigDetails;
+        return this.modelDeploymentInstanceShapeConfigDetails == null ? List.of() : this.modelDeploymentInstanceShapeConfigDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String instanceShapeName;
-        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
+        private @Nullable String instanceShapeName;
+        private @Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         }
 
         @CustomType.Setter
-        public Builder instanceShapeName(String instanceShapeName) {
-            this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
+        public Builder instanceShapeName(@Nullable String instanceShapeName) {
+            this.instanceShapeName = instanceShapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder modelDeploymentInstanceShapeConfigDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails) {
-            this.modelDeploymentInstanceShapeConfigDetails = Objects.requireNonNull(modelDeploymentInstanceShapeConfigDetails);
+        public Builder modelDeploymentInstanceShapeConfigDetails(@Nullable List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails) {
+            this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             return this;
         }
         public Builder modelDeploymentInstanceShapeConfigDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail... modelDeploymentInstanceShapeConfigDetails) {

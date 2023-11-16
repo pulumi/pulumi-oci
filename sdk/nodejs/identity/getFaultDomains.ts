@@ -65,12 +65,12 @@ export interface GetFaultDomainsResult {
     /**
      * The list of fault_domains.
      */
-    readonly faultDomains: outputs.Identity.GetFaultDomainsFaultDomain[];
+    readonly faultDomains?: outputs.Identity.GetFaultDomainsFaultDomain[];
     readonly filters?: outputs.Identity.GetFaultDomainsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.

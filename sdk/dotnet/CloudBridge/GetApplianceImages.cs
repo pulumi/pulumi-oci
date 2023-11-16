@@ -150,7 +150,7 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetApplianceImagesResult(
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.CloudBridge
 
             ImmutableArray<Outputs.GetApplianceImagesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             ApplianceImageCollections = applianceImageCollections;
             CompartmentId = compartmentId;

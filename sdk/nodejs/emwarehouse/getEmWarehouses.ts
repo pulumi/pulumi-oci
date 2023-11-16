@@ -82,7 +82,7 @@ export interface GetEmWarehousesResult {
     /**
      * The list of em_warehouse_collection.
      */
-    readonly emWarehouseCollections: outputs.EmWarehouse.GetEmWarehousesEmWarehouseCollection[];
+    readonly emWarehouseCollections?: outputs.EmWarehouse.GetEmWarehousesEmWarehouseCollection[];
     readonly filters?: outputs.EmWarehouse.GetEmWarehousesFilter[];
     /**
      * Unique identifier that is immutable on creation

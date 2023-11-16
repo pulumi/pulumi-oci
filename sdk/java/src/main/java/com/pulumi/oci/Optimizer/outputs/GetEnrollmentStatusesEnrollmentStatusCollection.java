@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEnrollmentStatusesEnrollmentStatusCollection {
-    private List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
+    private @Nullable List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
 
     private GetEnrollmentStatusesEnrollmentStatusCollection() {}
     public List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
+        private @Nullable List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items;
         public Builder() {}
         public Builder(GetEnrollmentStatusesEnrollmentStatusCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetEnrollmentStatusesEnrollmentStatusCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetEnrollmentStatusesEnrollmentStatusCollectionItem... items) {

@@ -86,55 +86,37 @@ class GetContainerImageResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment OCID to which the container image belongs. Inferred from the container repository.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The OCID of the user or principal that pushed the version.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def digest(self) -> str:
-        """
-        The sha256 digest of the image layer.
-        """
+    def digest(self) -> Optional[str]:
         return pulumi.get(self, "digest")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -147,98 +129,62 @@ class GetContainerImageResult:
 
     @property
     @pulumi.getter
-    def layers(self) -> Sequence['outputs.GetContainerImageLayerResult']:
-        """
-        Layers of which the image is composed, ordered by the layer digest.
-        """
+    def layers(self) -> Optional[Sequence['outputs.GetContainerImageLayerResult']]:
         return pulumi.get(self, "layers")
 
     @property
     @pulumi.getter(name="layersSizeInBytes")
-    def layers_size_in_bytes(self) -> str:
-        """
-        The total size of the container image layers in bytes.
-        """
+    def layers_size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "layers_size_in_bytes")
 
     @property
     @pulumi.getter(name="manifestSizeInBytes")
-    def manifest_size_in_bytes(self) -> int:
-        """
-        The size of the container image manifest in bytes.
-        """
+    def manifest_size_in_bytes(self) -> Optional[int]:
         return pulumi.get(self, "manifest_size_in_bytes")
 
     @property
     @pulumi.getter(name="pullCount")
-    def pull_count(self) -> str:
-        """
-        Total number of pulls.
-        """
+    def pull_count(self) -> Optional[str]:
         return pulumi.get(self, "pull_count")
 
     @property
     @pulumi.getter(name="repositoryId")
-    def repository_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-        """
+    def repository_id(self) -> Optional[str]:
         return pulumi.get(self, "repository_id")
 
     @property
     @pulumi.getter(name="repositoryName")
-    def repository_name(self) -> str:
-        """
-        The container repository name.
-        """
+    def repository_name(self) -> Optional[str]:
         return pulumi.get(self, "repository_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the container image.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation time of the version.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastPulled")
-    def time_last_pulled(self) -> str:
-        """
-        An RFC 3339 timestamp indicating when the image was last pulled.
-        """
+    def time_last_pulled(self) -> Optional[str]:
         return pulumi.get(self, "time_last_pulled")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version name.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
-    def versions(self) -> Sequence['outputs.GetContainerImageVersionResult']:
-        """
-        The versions associated with this image.
-        """
+    def versions(self) -> Optional[Sequence['outputs.GetContainerImageVersionResult']]:
         return pulumi.get(self, "versions")
 
 
@@ -273,21 +219,7 @@ class AwaitableGetContainerImageResult(GetContainerImageResult):
 def get_container_image(image_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerImageResult:
     """
-    This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Get container image metadata.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_image = oci.Artifacts.get_container_image(image_id=var["container_image_id"])
-    ```
-
-
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['imageId'] = image_id
@@ -321,20 +253,6 @@ def get_container_image(image_id: Optional[str] = None,
 def get_container_image_output(image_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerImageResult]:
     """
-    This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
-
-    Get container image metadata.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_image = oci.Artifacts.get_container_image(image_id=var["container_image_id"])
-    ```
-
-
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
+    Use this data source to access information about an existing resource.
     """
     ...

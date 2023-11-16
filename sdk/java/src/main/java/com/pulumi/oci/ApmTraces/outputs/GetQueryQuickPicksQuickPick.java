@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmTraces.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueryQuickPicksQuickPick {
@@ -13,27 +15,27 @@ public final class GetQueryQuickPicksQuickPick {
      * @return Quick Pick name for the query.
      * 
      */
-    private String quickPickName;
+    private @Nullable String quickPickName;
     /**
      * @return Query for the Quick Pick.
      * 
      */
-    private String quickPickQuery;
+    private @Nullable String quickPickQuery;
 
     private GetQueryQuickPicksQuickPick() {}
     /**
      * @return Quick Pick name for the query.
      * 
      */
-    public String quickPickName() {
-        return this.quickPickName;
+    public Optional<String> quickPickName() {
+        return Optional.ofNullable(this.quickPickName);
     }
     /**
      * @return Query for the Quick Pick.
      * 
      */
-    public String quickPickQuery() {
-        return this.quickPickQuery;
+    public Optional<String> quickPickQuery() {
+        return Optional.ofNullable(this.quickPickQuery);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetQueryQuickPicksQuickPick {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String quickPickName;
-        private String quickPickQuery;
+        private @Nullable String quickPickName;
+        private @Nullable String quickPickQuery;
         public Builder() {}
         public Builder(GetQueryQuickPicksQuickPick defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetQueryQuickPicksQuickPick {
         }
 
         @CustomType.Setter
-        public Builder quickPickName(String quickPickName) {
-            this.quickPickName = Objects.requireNonNull(quickPickName);
+        public Builder quickPickName(@Nullable String quickPickName) {
+            this.quickPickName = quickPickName;
             return this;
         }
         @CustomType.Setter
-        public Builder quickPickQuery(String quickPickQuery) {
-            this.quickPickQuery = Objects.requireNonNull(quickPickQuery);
+        public Builder quickPickQuery(@Nullable String quickPickQuery) {
+            this.quickPickQuery = quickPickQuery;
             return this;
         }
         public GetQueryQuickPicksQuickPick build() {

@@ -108,24 +108,24 @@ namespace Pulumi.Oci.ServiceCatalog
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The name used to refer to the uploaded data.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The unique identifier for the private application in Marketplace.
         /// </summary>
-        public readonly string Id;
-        public readonly string LogoFileBase64encoded;
+        public readonly string? Id;
+        public readonly string? LogoFileBase64encoded;
         /// <summary>
         /// The model for uploaded binary data, like logos and images.
         /// </summary>
@@ -133,61 +133,61 @@ namespace Pulumi.Oci.ServiceCatalog
         /// <summary>
         /// A long description of the private application.
         /// </summary>
-        public readonly string LongDescription;
+        public readonly string? LongDescription;
         public readonly ImmutableArray<Outputs.GetPrivateApplicationPackageDetailResult> PackageDetails;
         /// <summary>
         /// Type of packages within this private application.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         public readonly string PrivateApplicationId;
         /// <summary>
         /// A short description of the private application.
         /// </summary>
-        public readonly string ShortDescription;
+        public readonly string? ShortDescription;
         /// <summary>
         /// The lifecycle state of the private application.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetPrivateApplicationResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string logoFileBase64encoded,
+            string? logoFileBase64encoded,
 
             ImmutableArray<Outputs.GetPrivateApplicationLogoResult> logos,
 
-            string longDescription,
+            string? longDescription,
 
             ImmutableArray<Outputs.GetPrivateApplicationPackageDetailResult> packageDetails,
 
-            string packageType,
+            string? packageType,
 
             string privateApplicationId,
 
-            string shortDescription,
+            string? shortDescription,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlansDrPlanCollectionItem {
@@ -17,183 +19,183 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    private String drProtectionGroupId;
+    private @Nullable String drProtectionGroupId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the DR plan&#39;s current state in more detail.
      * 
      */
-    private String lifeCycleDetails;
+    private @Nullable String lifeCycleDetails;
     /**
      * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    private String peerDrProtectionGroupId;
+    private @Nullable String peerDrProtectionGroupId;
     /**
      * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
-    private String peerRegion;
+    private @Nullable String peerRegion;
     /**
      * @return The list of groups in this DR plan.
      * 
      */
-    private List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
+    private @Nullable List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
     /**
      * @return A filter to return only DR plans that match the given lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The type of the DR plan.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDrPlansDrPlanCollectionItem() {}
     /**
      * @return The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    public String drProtectionGroupId() {
-        return this.drProtectionGroupId;
+    public Optional<String> drProtectionGroupId() {
+        return Optional.ofNullable(this.drProtectionGroupId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the DR plan&#39;s current state in more detail.
      * 
      */
-    public String lifeCycleDetails() {
-        return this.lifeCycleDetails;
+    public Optional<String> lifeCycleDetails() {
+        return Optional.ofNullable(this.lifeCycleDetails);
     }
     /**
      * @return The OCID of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    public String peerDrProtectionGroupId() {
-        return this.peerDrProtectionGroupId;
+    public Optional<String> peerDrProtectionGroupId() {
+        return Optional.ofNullable(this.peerDrProtectionGroupId);
     }
     /**
      * @return The region of the peer DR protection group associated with this plan&#39;s DR protection group.  Example: `us-ashburn-1`
      * 
      */
-    public String peerRegion() {
-        return this.peerRegion;
+    public Optional<String> peerRegion() {
+        return Optional.ofNullable(this.peerRegion);
     }
     /**
      * @return The list of groups in this DR plan.
      * 
      */
     public List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups() {
-        return this.planGroups;
+        return this.planGroups == null ? List.of() : this.planGroups;
     }
     /**
      * @return A filter to return only DR plans that match the given lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The type of the DR plan.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -205,21 +207,21 @@ public final class GetDrPlansDrPlanCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String drProtectionGroupId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifeCycleDetails;
-        private String peerDrProtectionGroupId;
-        private String peerRegion;
-        private List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String type;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String drProtectionGroupId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifeCycleDetails;
+        private @Nullable String peerDrProtectionGroupId;
+        private @Nullable String peerRegion;
+        private @Nullable List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDrPlansDrPlanCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -241,81 +243,81 @@ public final class GetDrPlansDrPlanCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder drProtectionGroupId(String drProtectionGroupId) {
-            this.drProtectionGroupId = Objects.requireNonNull(drProtectionGroupId);
+        public Builder drProtectionGroupId(@Nullable String drProtectionGroupId) {
+            this.drProtectionGroupId = drProtectionGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifeCycleDetails(String lifeCycleDetails) {
-            this.lifeCycleDetails = Objects.requireNonNull(lifeCycleDetails);
+        public Builder lifeCycleDetails(@Nullable String lifeCycleDetails) {
+            this.lifeCycleDetails = lifeCycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder peerDrProtectionGroupId(String peerDrProtectionGroupId) {
-            this.peerDrProtectionGroupId = Objects.requireNonNull(peerDrProtectionGroupId);
+        public Builder peerDrProtectionGroupId(@Nullable String peerDrProtectionGroupId) {
+            this.peerDrProtectionGroupId = peerDrProtectionGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerRegion(String peerRegion) {
-            this.peerRegion = Objects.requireNonNull(peerRegion);
+        public Builder peerRegion(@Nullable String peerRegion) {
+            this.peerRegion = peerRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder planGroups(List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups) {
-            this.planGroups = Objects.requireNonNull(planGroups);
+        public Builder planGroups(@Nullable List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups) {
+            this.planGroups = planGroups;
             return this;
         }
         public Builder planGroups(GetDrPlansDrPlanCollectionItemPlanGroup... planGroups) {
             return planGroups(List.of(planGroups));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDrPlansDrPlanCollectionItem build() {

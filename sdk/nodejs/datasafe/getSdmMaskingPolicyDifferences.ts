@@ -96,7 +96,7 @@ export interface GetSdmMaskingPolicyDifferencesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the masking policy associated with the SDM masking policy difference.
      */
@@ -104,7 +104,7 @@ export interface GetSdmMaskingPolicyDifferencesResult {
     /**
      * The list of sdm_masking_policy_difference_collection.
      */
-    readonly sdmMaskingPolicyDifferenceCollections: outputs.DataSafe.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection[];
+    readonly sdmMaskingPolicyDifferenceCollections?: outputs.DataSafe.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection[];
     /**
      * The OCID of the sensitive data model associated with the SDM masking policy difference.
      */

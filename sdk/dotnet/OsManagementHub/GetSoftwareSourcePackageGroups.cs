@@ -202,7 +202,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Package group name.
         /// </summary>
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<string> groupTypes,
 
-            string id,
+            string? id,
 
             string? name,
 

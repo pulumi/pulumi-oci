@@ -52,7 +52,7 @@ class GetWorkRequestLogEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetWorkRequestLogEntriesResult:
 
     @property
     @pulumi.getter(name="workRequestLogEntries")
-    def work_request_log_entries(self) -> Sequence['outputs.GetWorkRequestLogEntriesWorkRequestLogEntryResult']:
-        """
-        The list of work_request_log_entries.
-        """
+    def work_request_log_entries(self) -> Optional[Sequence['outputs.GetWorkRequestLogEntriesWorkRequestLogEntryResult']]:
         return pulumi.get(self, "work_request_log_entries")
 
 
@@ -90,23 +87,7 @@ def get_work_request_log_entries(compartment_id: Optional[str] = None,
                                  work_request_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkRequestLogEntriesResult:
     """
-    This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the logs of a work request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_work_request_log_entries = oci.ContainerEngine.get_work_request_log_entries(compartment_id=var["compartment_id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str work_request_id: The OCID of the work request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_work_request_log_entries_output(compartment_id: Optional[pulumi.Input[st
                                         work_request_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkRequestLogEntriesResult]:
     """
-    This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the logs of a work request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_work_request_log_entries = oci.ContainerEngine.get_work_request_log_entries(compartment_id=var["compartment_id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str work_request_id: The OCID of the work request.
+    Use this data source to access information about an existing resource.
     """
     ...

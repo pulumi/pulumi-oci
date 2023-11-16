@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCrossConnectMacsecProperty {
@@ -16,51 +18,51 @@ public final class GetCrossConnectMacsecProperty {
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
-    private String encryptionCipher;
+    private @Nullable String encryptionCipher;
     /**
      * @return Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
      * 
      */
-    private Boolean isUnprotectedTrafficAllowed;
+    private @Nullable Boolean isUnprotectedTrafficAllowed;
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
      * 
      */
-    private List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys;
+    private @Nullable List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys;
     /**
      * @return The cross-connect&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetCrossConnectMacsecProperty() {}
     /**
      * @return Type of encryption cipher suite to use for the MACsec connection.
      * 
      */
-    public String encryptionCipher() {
-        return this.encryptionCipher;
+    public Optional<String> encryptionCipher() {
+        return Optional.ofNullable(this.encryptionCipher);
     }
     /**
      * @return Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
      * 
      */
-    public Boolean isUnprotectedTrafficAllowed() {
-        return this.isUnprotectedTrafficAllowed;
+    public Optional<Boolean> isUnprotectedTrafficAllowed() {
+        return Optional.ofNullable(this.isUnprotectedTrafficAllowed);
     }
     /**
      * @return An object defining the Secrets-in-Vault OCIDs representing the MACsec key.
      * 
      */
     public List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys() {
-        return this.primaryKeys;
+        return this.primaryKeys == null ? List.of() : this.primaryKeys;
     }
     /**
      * @return The cross-connect&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetCrossConnectMacsecProperty {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String encryptionCipher;
-        private Boolean isUnprotectedTrafficAllowed;
-        private List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys;
-        private String state;
+        private @Nullable String encryptionCipher;
+        private @Nullable Boolean isUnprotectedTrafficAllowed;
+        private @Nullable List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetCrossConnectMacsecProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,26 +88,26 @@ public final class GetCrossConnectMacsecProperty {
         }
 
         @CustomType.Setter
-        public Builder encryptionCipher(String encryptionCipher) {
-            this.encryptionCipher = Objects.requireNonNull(encryptionCipher);
+        public Builder encryptionCipher(@Nullable String encryptionCipher) {
+            this.encryptionCipher = encryptionCipher;
             return this;
         }
         @CustomType.Setter
-        public Builder isUnprotectedTrafficAllowed(Boolean isUnprotectedTrafficAllowed) {
-            this.isUnprotectedTrafficAllowed = Objects.requireNonNull(isUnprotectedTrafficAllowed);
+        public Builder isUnprotectedTrafficAllowed(@Nullable Boolean isUnprotectedTrafficAllowed) {
+            this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder primaryKeys(List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys) {
-            this.primaryKeys = Objects.requireNonNull(primaryKeys);
+        public Builder primaryKeys(@Nullable List<GetCrossConnectMacsecPropertyPrimaryKey> primaryKeys) {
+            this.primaryKeys = primaryKeys;
             return this;
         }
         public Builder primaryKeys(GetCrossConnectMacsecPropertyPrimaryKey... primaryKeys) {
             return primaryKeys(List.of(primaryKeys));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetCrossConnectMacsecProperty build() {

@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of identity_provider_groups.
         /// </summary>
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.Identity
         private GetIdentityProviderGroupsResult(
             ImmutableArray<Outputs.GetIdentityProviderGroupsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetIdentityProviderGroupsIdentityProviderGroupResult> identityProviderGroups,
 

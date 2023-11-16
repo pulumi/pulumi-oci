@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
@@ -14,17 +16,17 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
      * @return List of corresponding archTypes.
      * 
      */
-    private List<String> archTypes;
+    private @Nullable List<String> archTypes;
     /**
      * @return The name of the entity to be queried.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return List of corresponding osFamilies.
      * 
      */
-    private List<String> osFamilies;
+    private @Nullable List<String> osFamilies;
 
     private GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem() {}
     /**
@@ -32,21 +34,21 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
      * 
      */
     public List<String> archTypes() {
-        return this.archTypes;
+        return this.archTypes == null ? List.of() : this.archTypes;
     }
     /**
      * @return The name of the entity to be queried.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return List of corresponding osFamilies.
      * 
      */
     public List<String> osFamilies() {
-        return this.osFamilies;
+        return this.osFamilies == null ? List.of() : this.osFamilies;
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> archTypes;
-        private String name;
-        private List<String> osFamilies;
+        private @Nullable List<String> archTypes;
+        private @Nullable String name;
+        private @Nullable List<String> osFamilies;
         public Builder() {}
         public Builder(GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder archTypes(List<String> archTypes) {
-            this.archTypes = Objects.requireNonNull(archTypes);
+        public Builder archTypes(@Nullable List<String> archTypes) {
+            this.archTypes = archTypes;
             return this;
         }
         public Builder archTypes(String... archTypes) {
             return archTypes(List.of(archTypes));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder osFamilies(List<String> osFamilies) {
-            this.osFamilies = Objects.requireNonNull(osFamilies);
+        public Builder osFamilies(@Nullable List<String> osFamilies) {
+            this.osFamilies = osFamilies;
             return this;
         }
         public Builder osFamilies(String... osFamilies) {

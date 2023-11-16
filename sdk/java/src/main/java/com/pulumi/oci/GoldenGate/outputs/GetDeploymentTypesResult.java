@@ -24,7 +24,7 @@ public final class GetDeploymentTypesResult {
      * @return The list of deployment_type_collection.
      * 
      */
-    private List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections;
+    private @Nullable List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections;
     /**
      * @return An object&#39;s Display Name.
      * 
@@ -35,7 +35,7 @@ public final class GetDeploymentTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Version of OGG
      * 
@@ -58,7 +58,7 @@ public final class GetDeploymentTypesResult {
      * 
      */
     public List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections() {
-        return this.deploymentTypeCollections;
+        return this.deploymentTypeCollections == null ? List.of() : this.deploymentTypeCollections;
     }
     /**
      * @return An object&#39;s Display Name.
@@ -74,8 +74,8 @@ public final class GetDeploymentTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Version of OGG
@@ -96,10 +96,10 @@ public final class GetDeploymentTypesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String deploymentType;
-        private List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections;
+        private @Nullable List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentTypesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String oggVersion;
         public Builder() {}
         public Builder(GetDeploymentTypesResult defaults) {
@@ -124,8 +124,8 @@ public final class GetDeploymentTypesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentTypeCollections(List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections) {
-            this.deploymentTypeCollections = Objects.requireNonNull(deploymentTypeCollections);
+        public Builder deploymentTypeCollections(@Nullable List<GetDeploymentTypesDeploymentTypeCollection> deploymentTypeCollections) {
+            this.deploymentTypeCollections = deploymentTypeCollections;
             return this;
         }
         public Builder deploymentTypeCollections(GetDeploymentTypesDeploymentTypeCollection... deploymentTypeCollections) {
@@ -145,8 +145,8 @@ public final class GetDeploymentTypesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

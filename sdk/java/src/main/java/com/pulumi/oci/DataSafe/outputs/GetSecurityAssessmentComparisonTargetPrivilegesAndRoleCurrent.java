@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentComparisonTargetPriv
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent {
@@ -15,37 +17,37 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
-    private List<String> details;
+    private @Nullable List<String> details;
     /**
      * @return A unique identifier for the finding. This is common for the finding across targets.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
      * 
      */
-    private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references;
+    private @Nullable List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references;
     /**
      * @return The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * 
      */
-    private String remarks;
+    private @Nullable String remarks;
     /**
      * @return The severity of this diff.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return The short title for the finding.
      * 
      */
-    private String title;
+    private @Nullable String title;
 
     private GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent() {}
     /**
@@ -53,49 +55,49 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent
      * 
      */
     public List<String> details() {
-        return this.details;
+        return this.details == null ? List.of() : this.details;
     }
     /**
      * @return A unique identifier for the finding. This is common for the finding across targets.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
      * 
      */
     public List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references() {
-        return this.references;
+        return this.references == null ? List.of() : this.references;
     }
     /**
      * @return The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * 
      */
-    public String remarks() {
-        return this.remarks;
+    public Optional<String> remarks() {
+        return Optional.ofNullable(this.remarks);
     }
     /**
      * @return The severity of this diff.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return The short title for the finding.
      * 
      */
-    public String title() {
-        return this.title;
+    public Optional<String> title() {
+        return Optional.ofNullable(this.title);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> details;
-        private String key;
-        private List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references;
-        private String remarks;
-        private String severity;
-        private String summary;
-        private String title;
+        private @Nullable List<String> details;
+        private @Nullable String key;
+        private @Nullable List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references;
+        private @Nullable String remarks;
+        private @Nullable String severity;
+        private @Nullable String summary;
+        private @Nullable String title;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,44 +129,44 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent
         }
 
         @CustomType.Setter
-        public Builder details(List<String> details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable List<String> details) {
+            this.details = details;
             return this;
         }
         public Builder details(String... details) {
             return details(List.of(details));
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder references(List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references) {
-            this.references = Objects.requireNonNull(references);
+        public Builder references(@Nullable List<GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference> references) {
+            this.references = references;
             return this;
         }
         public Builder references(GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference... references) {
             return references(List.of(references));
         }
         @CustomType.Setter
-        public Builder remarks(String remarks) {
-            this.remarks = Objects.requireNonNull(remarks);
+        public Builder remarks(@Nullable String remarks) {
+            this.remarks = remarks;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+        public Builder title(@Nullable String title) {
+            this.title = title;
             return this;
         }
         public GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent build() {

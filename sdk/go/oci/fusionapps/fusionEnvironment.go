@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -103,9 +102,9 @@ type FusionEnvironment struct {
 	// (Updatable) FusionEnvironment Identifier can be renamed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// DNS prefix.
-	DnsPrefix pulumi.StringOutput `pulumi:"dnsPrefix"`
+	DnsPrefix pulumi.StringPtrOutput `pulumi:"dnsPrefix"`
 	// The IDCS domain created for the fusion instance
-	DomainId pulumi.StringOutput `pulumi:"domainId"`
+	DomainId pulumi.StringPtrOutput `pulumi:"domainId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
@@ -113,39 +112,39 @@ type FusionEnvironment struct {
 	// The type of environment. Valid values are Production, Test, or Development.
 	FusionEnvironmentType pulumi.StringOutput `pulumi:"fusionEnvironmentType"`
 	// The IDCS Domain URL
-	IdcsDomainUrl pulumi.StringOutput `pulumi:"idcsDomainUrl"`
+	IdcsDomainUrl pulumi.StringPtrOutput `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
-	IsBreakGlassEnabled pulumi.BoolOutput `pulumi:"isBreakGlassEnabled"`
+	IsBreakGlassEnabled pulumi.BoolPtrOutput `pulumi:"isBreakGlassEnabled"`
 	// (Updatable) byok kms keyId
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// BYOK key info
 	KmsKeyInfos FusionEnvironmentKmsKeyInfoArrayOutput `pulumi:"kmsKeyInfos"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-	LockboxId pulumi.StringOutput `pulumi:"lockboxId"`
+	LockboxId pulumi.StringPtrOutput `pulumi:"lockboxId"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-	MaintenancePolicy FusionEnvironmentMaintenancePolicyOutput `pulumi:"maintenancePolicy"`
+	MaintenancePolicy FusionEnvironmentMaintenancePolicyPtrOutput `pulumi:"maintenancePolicy"`
 	// Public URL
-	PublicUrl pulumi.StringOutput `pulumi:"publicUrl"`
+	PublicUrl pulumi.StringPtrOutput `pulumi:"publicUrl"`
 	// Describes a refresh of a fusion environment
 	Refreshes FusionEnvironmentRefreshArrayOutput `pulumi:"refreshes"`
 	// (Updatable) Rules.
 	Rules FusionEnvironmentRuleArrayOutput `pulumi:"rules"`
 	// The current state of the ServiceInstance.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// List of subscription IDs.
 	SubscriptionIds pulumi.StringArrayOutput `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName pulumi.StringOutput `pulumi:"systemName"`
+	SystemName pulumi.StringPtrOutput `pulumi:"systemName"`
 	// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The next maintenance for this environment
-	TimeUpcomingMaintenance pulumi.StringOutput `pulumi:"timeUpcomingMaintenance"`
+	TimeUpcomingMaintenance pulumi.StringPtrOutput `pulumi:"timeUpcomingMaintenance"`
 	// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Version of Fusion Apps used by this environment
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewFusionEnvironment registers a new resource with the given unique name, arguments, and options.
@@ -392,12 +391,6 @@ func (i *FusionEnvironment) ToFusionEnvironmentOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentOutput)
 }
 
-func (i *FusionEnvironment) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironment] {
-	return pulumix.Output[*FusionEnvironment]{
-		OutputState: i.ToFusionEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentArrayInput is an input type that accepts FusionEnvironmentArray and FusionEnvironmentArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentArrayInput` via:
 //
@@ -421,12 +414,6 @@ func (i FusionEnvironmentArray) ToFusionEnvironmentArrayOutput() FusionEnvironme
 
 func (i FusionEnvironmentArray) ToFusionEnvironmentArrayOutputWithContext(ctx context.Context) FusionEnvironmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentArrayOutput)
-}
-
-func (i FusionEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironment] {
-	return pulumix.Output[[]*FusionEnvironment]{
-		OutputState: i.ToFusionEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentMapInput is an input type that accepts FusionEnvironmentMap and FusionEnvironmentMapOutput values.
@@ -454,12 +441,6 @@ func (i FusionEnvironmentMap) ToFusionEnvironmentMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentMapOutput)
 }
 
-func (i FusionEnvironmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironment] {
-	return pulumix.Output[map[string]*FusionEnvironment]{
-		OutputState: i.ToFusionEnvironmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentOutput) ElementType() reflect.Type {
@@ -472,12 +453,6 @@ func (o FusionEnvironmentOutput) ToFusionEnvironmentOutput() FusionEnvironmentOu
 
 func (o FusionEnvironmentOutput) ToFusionEnvironmentOutputWithContext(ctx context.Context) FusionEnvironmentOutput {
 	return o
-}
-
-func (o FusionEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironment] {
-	return pulumix.Output[*FusionEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Language packs.
@@ -513,13 +488,13 @@ func (o FusionEnvironmentOutput) DisplayName() pulumi.StringOutput {
 }
 
 // DNS prefix.
-func (o FusionEnvironmentOutput) DnsPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.DnsPrefix }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) DnsPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.DnsPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS domain created for the fusion instance
-func (o FusionEnvironmentOutput) DomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.DomainId }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -538,18 +513,18 @@ func (o FusionEnvironmentOutput) FusionEnvironmentType() pulumi.StringOutput {
 }
 
 // The IDCS Domain URL
-func (o FusionEnvironmentOutput) IdcsDomainUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.IdcsDomainUrl }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) IdcsDomainUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.IdcsDomainUrl }).(pulumi.StringPtrOutput)
 }
 
 // If it's true, then the Break Glass feature is enabled
-func (o FusionEnvironmentOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolOutput { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+func (o FusionEnvironmentOutput) IsBreakGlassEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolPtrOutput { return v.IsBreakGlassEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) byok kms keyId
-func (o FusionEnvironmentOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // BYOK key info
@@ -558,23 +533,23 @@ func (o FusionEnvironmentOutput) KmsKeyInfos() FusionEnvironmentKmsKeyInfoArrayO
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o FusionEnvironmentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-func (o FusionEnvironmentOutput) LockboxId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.LockboxId }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) LockboxId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.LockboxId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-func (o FusionEnvironmentOutput) MaintenancePolicy() FusionEnvironmentMaintenancePolicyOutput {
-	return o.ApplyT(func(v *FusionEnvironment) FusionEnvironmentMaintenancePolicyOutput { return v.MaintenancePolicy }).(FusionEnvironmentMaintenancePolicyOutput)
+func (o FusionEnvironmentOutput) MaintenancePolicy() FusionEnvironmentMaintenancePolicyPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) FusionEnvironmentMaintenancePolicyPtrOutput { return v.MaintenancePolicy }).(FusionEnvironmentMaintenancePolicyPtrOutput)
 }
 
 // Public URL
-func (o FusionEnvironmentOutput) PublicUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.PublicUrl }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) PublicUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.PublicUrl }).(pulumi.StringPtrOutput)
 }
 
 // Describes a refresh of a fusion environment
@@ -588,8 +563,8 @@ func (o FusionEnvironmentOutput) Rules() FusionEnvironmentRuleArrayOutput {
 }
 
 // The current state of the ServiceInstance.
-func (o FusionEnvironmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // List of subscription IDs.
@@ -598,28 +573,28 @@ func (o FusionEnvironmentOutput) SubscriptionIds() pulumi.StringArrayOutput {
 }
 
 // Environment Specific Guid/ System Name
-func (o FusionEnvironmentOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.SystemName }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 // The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-func (o FusionEnvironmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The next maintenance for this environment
-func (o FusionEnvironmentOutput) TimeUpcomingMaintenance() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.TimeUpcomingMaintenance }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) TimeUpcomingMaintenance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.TimeUpcomingMaintenance }).(pulumi.StringPtrOutput)
 }
 
 // The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-func (o FusionEnvironmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Version of Fusion Apps used by this environment
-func (o FusionEnvironmentOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o FusionEnvironmentOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type FusionEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -634,12 +609,6 @@ func (o FusionEnvironmentArrayOutput) ToFusionEnvironmentArrayOutput() FusionEnv
 
 func (o FusionEnvironmentArrayOutput) ToFusionEnvironmentArrayOutputWithContext(ctx context.Context) FusionEnvironmentArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironment] {
-	return pulumix.Output[[]*FusionEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentOutput {
@@ -660,12 +629,6 @@ func (o FusionEnvironmentMapOutput) ToFusionEnvironmentMapOutput() FusionEnviron
 
 func (o FusionEnvironmentMapOutput) ToFusionEnvironmentMapOutputWithContext(ctx context.Context) FusionEnvironmentMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironment] {
-	return pulumix.Output[map[string]*FusionEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentOutput {

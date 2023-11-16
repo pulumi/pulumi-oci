@@ -61,62 +61,62 @@ export interface GetDataAssetResult {
     /**
      * OCID of the user who created the data asset.
      */
-    readonly createdById: string;
+    readonly createdById?: string;
     readonly dataAssetKey: string;
     /**
      * Detailed description of the data asset.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * External URI that can be used to reference the object. Format will differ based on the type of object.
      */
-    readonly externalKey: string;
+    readonly externalKey?: string;
     readonly fields?: string[];
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique data asset key that is immutable.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
      */
-    readonly properties: {[key: string]: any};
+    readonly properties?: {[key: string]: any};
     /**
      * The current state of the data asset.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeHarvested: string;
+    readonly timeHarvested?: string;
     /**
      * The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      */
-    readonly typeKey: string;
+    readonly typeKey?: string;
     /**
      * OCID of the user who last modified the data asset.
      */
-    readonly updatedById: string;
+    readonly updatedById?: string;
     /**
      * URI to the data asset instance in the API.
      */
-    readonly uri: string;
+    readonly uri?: string;
 }
 /**
  * This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.

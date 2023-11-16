@@ -16,35 +16,35 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
         /// </summary>
-        public readonly int BundleReleaseUpgradePeriodInDays;
+        public readonly int? BundleReleaseUpgradePeriodInDays;
         /// <summary>
         /// Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
         /// </summary>
-        public readonly int InterimReleaseUpgradePeriodInDays;
+        public readonly int? InterimReleaseUpgradePeriodInDays;
         /// <summary>
         /// By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
         /// </summary>
-        public readonly bool IsInterimReleaseAutoUpgradeEnabled;
+        public readonly bool? IsInterimReleaseAutoUpgradeEnabled;
         /// <summary>
         /// Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         /// </summary>
-        public readonly int MajorReleaseUpgradePeriodInDays;
+        public readonly int? MajorReleaseUpgradePeriodInDays;
         /// <summary>
         /// Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         /// </summary>
-        public readonly int SecurityPatchUpgradePeriodInDays;
+        public readonly int? SecurityPatchUpgradePeriodInDays;
 
         [OutputConstructor]
         private GetDeploymentMaintenanceConfigurationResult(
-            int bundleReleaseUpgradePeriodInDays,
+            int? bundleReleaseUpgradePeriodInDays,
 
-            int interimReleaseUpgradePeriodInDays,
+            int? interimReleaseUpgradePeriodInDays,
 
-            bool isInterimReleaseAutoUpgradeEnabled,
+            bool? isInterimReleaseAutoUpgradeEnabled,
 
-            int majorReleaseUpgradePeriodInDays,
+            int? majorReleaseUpgradePeriodInDays,
 
-            int securityPatchUpgradePeriodInDays)
+            int? securityPatchUpgradePeriodInDays)
         {
             BundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
             InterimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;

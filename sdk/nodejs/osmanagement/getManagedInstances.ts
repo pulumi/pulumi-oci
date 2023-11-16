@@ -70,11 +70,11 @@ export interface GetManagedInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of managed_instances.
      */
-    readonly managedInstances: outputs.OsManagement.GetManagedInstancesManagedInstance[];
+    readonly managedInstances?: outputs.OsManagement.GetManagedInstancesManagedInstance[];
     /**
      * The Operating System type of the managed instance.
      */

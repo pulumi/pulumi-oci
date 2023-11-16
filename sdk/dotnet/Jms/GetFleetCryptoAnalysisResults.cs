@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The managed instance OCID.
         /// </summary>
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.Jms
 
             string fleetId,
 
-            string id,
+            string? id,
 
             string? managedInstanceId,
 

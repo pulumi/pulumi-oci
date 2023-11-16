@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseInstanceWalletManagementResult {
@@ -16,23 +18,23 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
      * 
      */
     private String autonomousDatabaseId;
-    private Integer gracePeriod;
-    private String id;
+    private @Nullable Integer gracePeriod;
+    private @Nullable String id;
     /**
      * @return Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      * 
      */
-    private Boolean shouldRotate;
+    private @Nullable Boolean shouldRotate;
     /**
      * @return The current lifecycle state of the Autonomous Database wallet.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the wallet was last rotated.
      * 
      */
-    private String timeRotated;
+    private @Nullable String timeRotated;
 
     private GetAutonomousDatabaseInstanceWalletManagementResult() {}
     /**
@@ -42,32 +44,32 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
-    public Integer gracePeriod() {
-        return this.gracePeriod;
+    public Optional<Integer> gracePeriod() {
+        return Optional.ofNullable(this.gracePeriod);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      * 
      */
-    public Boolean shouldRotate() {
-        return this.shouldRotate;
+    public Optional<Boolean> shouldRotate() {
+        return Optional.ofNullable(this.shouldRotate);
     }
     /**
      * @return The current lifecycle state of the Autonomous Database wallet.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the wallet was last rotated.
      * 
      */
-    public String timeRotated() {
-        return this.timeRotated;
+    public Optional<String> timeRotated() {
+        return Optional.ofNullable(this.timeRotated);
     }
 
     public static Builder builder() {
@@ -80,11 +82,11 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousDatabaseId;
-        private Integer gracePeriod;
-        private String id;
-        private Boolean shouldRotate;
-        private String state;
-        private String timeRotated;
+        private @Nullable Integer gracePeriod;
+        private @Nullable String id;
+        private @Nullable Boolean shouldRotate;
+        private @Nullable String state;
+        private @Nullable String timeRotated;
         public Builder() {}
         public Builder(GetAutonomousDatabaseInstanceWalletManagementResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,28 +104,28 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
             return this;
         }
         @CustomType.Setter
-        public Builder gracePeriod(Integer gracePeriod) {
-            this.gracePeriod = Objects.requireNonNull(gracePeriod);
+        public Builder gracePeriod(@Nullable Integer gracePeriod) {
+            this.gracePeriod = gracePeriod;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldRotate(Boolean shouldRotate) {
-            this.shouldRotate = Objects.requireNonNull(shouldRotate);
+        public Builder shouldRotate(@Nullable Boolean shouldRotate) {
+            this.shouldRotate = shouldRotate;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRotated(String timeRotated) {
-            this.timeRotated = Objects.requireNonNull(timeRotated);
+        public Builder timeRotated(@Nullable String timeRotated) {
+            this.timeRotated = timeRotated;
             return this;
         }
         public GetAutonomousDatabaseInstanceWalletManagementResult build() {

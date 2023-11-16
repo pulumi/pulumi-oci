@@ -46,17 +46,11 @@ class GetOdaInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Identifier of the compartment that the instance belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User-defined name for the Digital Assistant instance. Avoid entering confidential information. You can change this value.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetOdaInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetOdaInstancesResult:
 
     @property
     @pulumi.getter(name="odaInstances")
-    def oda_instances(self) -> Sequence['outputs.GetOdaInstancesOdaInstanceResult']:
-        """
-        The list of oda_instances.
-        """
+    def oda_instances(self) -> Optional[Sequence['outputs.GetOdaInstancesOdaInstanceResult']]:
         return pulumi.get(self, "oda_instances")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Digital Assistant instance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,30 +97,7 @@ def get_oda_instances(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOdaInstancesResult:
     """
-    This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of Digital Assistant instances that belong to the specified
-    compartment.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_instances = oci.Oda.get_oda_instances(compartment_id=var["compartment_id"],
-        display_name=var["oda_instance_display_name"],
-        state=var["oda_instance_state"])
-    ```
-
-
-    :param str compartment_id: List the Digital Assistant instances that belong to this compartment.
-    :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-    :param str state: List only the Digital Assistant instances that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,29 +123,6 @@ def get_oda_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOdaInstancesResult]:
     """
-    This data source provides the list of Oda Instances in Oracle Cloud Infrastructure Digital Assistant service.
-
-    Returns a page of Digital Assistant instances that belong to the specified
-    compartment.
-
-    If the `opc-next-page` header appears in the response, then
-    there are more items to retrieve. To get the next page in the subsequent
-    GET request, include the header's value as the `page` query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_oda_instances = oci.Oda.get_oda_instances(compartment_id=var["compartment_id"],
-        display_name=var["oda_instance_display_name"],
-        state=var["oda_instance_state"])
-    ```
-
-
-    :param str compartment_id: List the Digital Assistant instances that belong to this compartment.
-    :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-    :param str state: List only the Digital Assistant instances that are in this lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

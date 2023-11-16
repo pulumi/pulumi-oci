@@ -66,11 +66,11 @@ export interface GetRepoFileLineResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of lines in the file.
      */
-    readonly lines: outputs.DevOps.GetRepoFileLineLine[];
+    readonly lines?: outputs.DevOps.GetRepoFileLineLine[];
     readonly repositoryId: string;
     readonly revision: string;
     readonly startLineNumber?: number;

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates if the region is the home region or not.
         /// </summary>
-        public readonly bool IsHomeRegion;
+        public readonly bool? IsHomeRegion;
         /// <summary>
         /// The region's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
         /// </summary>
@@ -24,8 +24,8 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
         /// </summary>
-        public readonly string RegionName;
-        public readonly string State;
+        public readonly string? RegionName;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the tenancy.
         /// </summary>
@@ -33,13 +33,13 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetRegionSubscriptionsRegionSubscriptionResult(
-            bool isHomeRegion,
+            bool? isHomeRegion,
 
             string regionKey,
 
-            string regionName,
+            string? regionName,
 
-            string state,
+            string? state,
 
             string tenancyId)
         {

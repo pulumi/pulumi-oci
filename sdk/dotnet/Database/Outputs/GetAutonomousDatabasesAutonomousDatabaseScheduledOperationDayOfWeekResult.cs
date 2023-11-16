@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Name of the day of the week.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult(string name)
+        private GetAutonomousDatabasesAutonomousDatabaseScheduledOperationDayOfWeekResult(string? name)
         {
             Name = name;
         }

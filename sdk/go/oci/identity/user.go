@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User resource in Oracle Cloud Infrastructure Identity service.
@@ -96,41 +95,41 @@ type User struct {
 	// Properties indicating how the user is allowed to authenticate.
 	Capabilities UserCapabilityArrayOutput `pulumi:"capabilities"`
 	// The OCID of the tenancy containing the user.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// DB username of the DB credential. Has to be unique across the tenancy.
-	DbUserName pulumi.StringOutput `pulumi:"dbUserName"`
+	DbUserName pulumi.StringPtrOutput `pulumi:"dbUserName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The email you assign to the user. Has to be unique across the tenancy.
-	Email pulumi.StringOutput `pulumi:"email"`
+	Email pulumi.StringPtrOutput `pulumi:"email"`
 	// Whether the email address has been validated.
-	EmailVerified pulumi.BoolOutput `pulumi:"emailVerified"`
+	EmailVerified pulumi.BoolPtrOutput `pulumi:"emailVerified"`
 	// Identifier of the user in the identity provider
-	ExternalIdentifier pulumi.StringOutput `pulumi:"externalIdentifier"`
+	ExternalIdentifier pulumi.StringPtrOutput `pulumi:"externalIdentifier"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the `IdentityProvider` this user belongs to.
-	IdentityProviderId pulumi.StringOutput `pulumi:"identityProviderId"`
+	IdentityProviderId pulumi.StringPtrOutput `pulumi:"identityProviderId"`
 	// Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
 	// * bit 0: SUSPENDED (reserved for future use)
 	// * bit 1: DISABLED (reserved for future use)
 	// * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
-	LastSuccessfulLoginTime pulumi.StringOutput `pulumi:"lastSuccessfulLoginTime"`
+	LastSuccessfulLoginTime pulumi.StringPtrOutput `pulumi:"lastSuccessfulLoginTime"`
 	// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
-	PreviousSuccessfulLoginTime pulumi.StringOutput `pulumi:"previousSuccessfulLoginTime"`
+	PreviousSuccessfulLoginTime pulumi.StringPtrOutput `pulumi:"previousSuccessfulLoginTime"`
 	// The user's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewUser registers a new resource with the given unique name, arguments, and options.
@@ -311,12 +310,6 @@ func (i *User) ToUserOutputWithContext(ctx context.Context) UserOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserOutput)
 }
 
-func (i *User) ToOutput(ctx context.Context) pulumix.Output[*User] {
-	return pulumix.Output[*User]{
-		OutputState: i.ToUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UserArrayInput is an input type that accepts UserArray and UserArrayOutput values.
 // You can construct a concrete instance of `UserArrayInput` via:
 //
@@ -340,12 +333,6 @@ func (i UserArray) ToUserArrayOutput() UserArrayOutput {
 
 func (i UserArray) ToUserArrayOutputWithContext(ctx context.Context) UserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserArrayOutput)
-}
-
-func (i UserArray) ToOutput(ctx context.Context) pulumix.Output[[]*User] {
-	return pulumix.Output[[]*User]{
-		OutputState: i.ToUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UserMapInput is an input type that accepts UserMap and UserMapOutput values.
@@ -373,12 +360,6 @@ func (i UserMap) ToUserMapOutputWithContext(ctx context.Context) UserMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UserMapOutput)
 }
 
-func (i UserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*User] {
-	return pulumix.Output[map[string]*User]{
-		OutputState: i.ToUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UserOutput struct{ *pulumi.OutputState }
 
 func (UserOutput) ElementType() reflect.Type {
@@ -393,25 +374,19 @@ func (o UserOutput) ToUserOutputWithContext(ctx context.Context) UserOutput {
 	return o
 }
 
-func (o UserOutput) ToOutput(ctx context.Context) pulumix.Output[*User] {
-	return pulumix.Output[*User]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Properties indicating how the user is allowed to authenticate.
 func (o UserOutput) Capabilities() UserCapabilityArrayOutput {
 	return o.ApplyT(func(v *User) UserCapabilityArrayOutput { return v.Capabilities }).(UserCapabilityArrayOutput)
 }
 
 // The OCID of the tenancy containing the user.
-func (o UserOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o UserOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // DB username of the DB credential. Has to be unique across the tenancy.
-func (o UserOutput) DbUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.DbUserName }).(pulumi.StringOutput)
+func (o UserOutput) DbUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.DbUserName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -425,18 +400,18 @@ func (o UserOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) The email you assign to the user. Has to be unique across the tenancy.
-func (o UserOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
+func (o UserOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // Whether the email address has been validated.
-func (o UserOutput) EmailVerified() pulumi.BoolOutput {
-	return o.ApplyT(func(v *User) pulumi.BoolOutput { return v.EmailVerified }).(pulumi.BoolOutput)
+func (o UserOutput) EmailVerified() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.BoolPtrOutput { return v.EmailVerified }).(pulumi.BoolPtrOutput)
 }
 
 // Identifier of the user in the identity provider
-func (o UserOutput) ExternalIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.ExternalIdentifier }).(pulumi.StringOutput)
+func (o UserOutput) ExternalIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.ExternalIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -445,21 +420,21 @@ func (o UserOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the `IdentityProvider` this user belongs to.
-func (o UserOutput) IdentityProviderId() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.IdentityProviderId }).(pulumi.StringOutput)
+func (o UserOutput) IdentityProviderId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.IdentityProviderId }).(pulumi.StringPtrOutput)
 }
 
 // Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
 // * bit 0: SUSPENDED (reserved for future use)
 // * bit 1: DISABLED (reserved for future use)
 // * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
-func (o UserOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o UserOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
-func (o UserOutput) LastSuccessfulLoginTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.LastSuccessfulLoginTime }).(pulumi.StringOutput)
+func (o UserOutput) LastSuccessfulLoginTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.LastSuccessfulLoginTime }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
@@ -471,18 +446,18 @@ func (o UserOutput) Name() pulumi.StringOutput {
 }
 
 // The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
-func (o UserOutput) PreviousSuccessfulLoginTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.PreviousSuccessfulLoginTime }).(pulumi.StringOutput)
+func (o UserOutput) PreviousSuccessfulLoginTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.PreviousSuccessfulLoginTime }).(pulumi.StringPtrOutput)
 }
 
 // The user's current state.
-func (o UserOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o UserOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o UserOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o UserOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *User) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type UserArrayOutput struct{ *pulumi.OutputState }
@@ -497,12 +472,6 @@ func (o UserArrayOutput) ToUserArrayOutput() UserArrayOutput {
 
 func (o UserArrayOutput) ToUserArrayOutputWithContext(ctx context.Context) UserArrayOutput {
 	return o
-}
-
-func (o UserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*User] {
-	return pulumix.Output[[]*User]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserArrayOutput) Index(i pulumi.IntInput) UserOutput {
@@ -523,12 +492,6 @@ func (o UserMapOutput) ToUserMapOutput() UserMapOutput {
 
 func (o UserMapOutput) ToUserMapOutputWithContext(ctx context.Context) UserMapOutput {
 	return o
-}
-
-func (o UserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*User] {
-	return pulumix.Output[map[string]*User]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UserMapOutput) MapIndex(k pulumi.StringInput) UserOutput {

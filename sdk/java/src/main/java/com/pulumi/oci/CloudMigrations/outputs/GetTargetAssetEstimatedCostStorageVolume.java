@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetEstimatedCostStorageVolume {
@@ -14,51 +16,51 @@ public final class GetTargetAssetEstimatedCostStorageVolume {
      * @return Gigabyte storage capacity
      * 
      */
-    private Double capacityGb;
+    private @Nullable Double capacityGb;
     /**
      * @return Volume description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Gigabyte storage capacity per month.
      * 
      */
-    private Double totalGbPerMonth;
+    private @Nullable Double totalGbPerMonth;
     /**
      * @return Gigabyte storage capacity per month by subscription
      * 
      */
-    private Double totalGbPerMonthBySubscription;
+    private @Nullable Double totalGbPerMonthBySubscription;
 
     private GetTargetAssetEstimatedCostStorageVolume() {}
     /**
      * @return Gigabyte storage capacity
      * 
      */
-    public Double capacityGb() {
-        return this.capacityGb;
+    public Optional<Double> capacityGb() {
+        return Optional.ofNullable(this.capacityGb);
     }
     /**
      * @return Volume description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Gigabyte storage capacity per month.
      * 
      */
-    public Double totalGbPerMonth() {
-        return this.totalGbPerMonth;
+    public Optional<Double> totalGbPerMonth() {
+        return Optional.ofNullable(this.totalGbPerMonth);
     }
     /**
      * @return Gigabyte storage capacity per month by subscription
      * 
      */
-    public Double totalGbPerMonthBySubscription() {
-        return this.totalGbPerMonthBySubscription;
+    public Optional<Double> totalGbPerMonthBySubscription() {
+        return Optional.ofNullable(this.totalGbPerMonthBySubscription);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetTargetAssetEstimatedCostStorageVolume {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double capacityGb;
-        private String description;
-        private Double totalGbPerMonth;
-        private Double totalGbPerMonthBySubscription;
+        private @Nullable Double capacityGb;
+        private @Nullable String description;
+        private @Nullable Double totalGbPerMonth;
+        private @Nullable Double totalGbPerMonthBySubscription;
         public Builder() {}
         public Builder(GetTargetAssetEstimatedCostStorageVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetTargetAssetEstimatedCostStorageVolume {
         }
 
         @CustomType.Setter
-        public Builder capacityGb(Double capacityGb) {
-            this.capacityGb = Objects.requireNonNull(capacityGb);
+        public Builder capacityGb(@Nullable Double capacityGb) {
+            this.capacityGb = capacityGb;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder totalGbPerMonth(Double totalGbPerMonth) {
-            this.totalGbPerMonth = Objects.requireNonNull(totalGbPerMonth);
+        public Builder totalGbPerMonth(@Nullable Double totalGbPerMonth) {
+            this.totalGbPerMonth = totalGbPerMonth;
             return this;
         }
         @CustomType.Setter
-        public Builder totalGbPerMonthBySubscription(Double totalGbPerMonthBySubscription) {
-            this.totalGbPerMonthBySubscription = Objects.requireNonNull(totalGbPerMonthBySubscription);
+        public Builder totalGbPerMonthBySubscription(@Nullable Double totalGbPerMonthBySubscription) {
+            this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
             return this;
         }
         public GetTargetAssetEstimatedCostStorageVolume build() {

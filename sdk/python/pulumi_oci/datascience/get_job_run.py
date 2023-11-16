@@ -86,87 +86,57 @@ class GetJobRunResult:
 
     @property
     @pulumi.getter
-    def asynchronous(self) -> bool:
+    def asynchronous(self) -> Optional[bool]:
         return pulumi.get(self, "asynchronous")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="jobConfigurationOverrideDetails")
-    def job_configuration_override_details(self) -> Sequence['outputs.GetJobRunJobConfigurationOverrideDetailResult']:
-        """
-        The job configuration details
-        """
+    def job_configuration_override_details(self) -> Optional[Sequence['outputs.GetJobRunJobConfigurationOverrideDetailResult']]:
         return pulumi.get(self, "job_configuration_override_details")
 
     @property
     @pulumi.getter(name="jobId")
-    def job_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
-        """
+    def job_id(self) -> Optional[str]:
         return pulumi.get(self, "job_id")
 
     @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
-    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailResult']:
-        """
-        The job infrastructure configuration details (shape, block storage, etc.)
-        """
+    def job_infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="jobLogConfigurationOverrideDetails")
-    def job_log_configuration_override_details(self) -> Sequence['outputs.GetJobRunJobLogConfigurationOverrideDetailResult']:
-        """
-        Logging configuration for resource.
-        """
+    def job_log_configuration_override_details(self) -> Optional[Sequence['outputs.GetJobRunJobLogConfigurationOverrideDetailResult']]:
         return pulumi.get(self, "job_log_configuration_override_details")
 
     @property
@@ -176,66 +146,42 @@ class GetJobRunResult:
 
     @property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
-    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobRunJobStorageMountConfigurationDetailsListResult']:
-        """
-        Collection of JobStorageMountConfigurationDetails.
-        """
+    def job_storage_mount_configuration_details_lists(self) -> Optional[Sequence['outputs.GetJobRunJobStorageMountConfigurationDetailsListResult']]:
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of the job run.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logDetails")
-    def log_details(self) -> Sequence['outputs.GetJobRunLogDetailResult']:
-        """
-        Customer logging details for job run.
-        """
+    def log_details(self) -> Optional[Sequence['outputs.GetJobRunLogDetailResult']]:
         return pulumi.get(self, "log_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the job run.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -270,21 +216,7 @@ class AwaitableGetJobRunResult(GetJobRunResult):
 def get_job_run(job_run_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobRunResult:
     """
-    This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets a job run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_run = oci.DataScience.get_job_run(job_run_id=oci_datascience_job_run["test_job_run"]["id"])
-    ```
-
-
-    :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['jobRunId'] = job_run_id
@@ -318,20 +250,6 @@ def get_job_run(job_run_id: Optional[str] = None,
 def get_job_run_output(job_run_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobRunResult]:
     """
-    This data source provides details about a specific Job Run resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets a job run.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_run = oci.DataScience.get_job_run(job_run_id=oci_datascience_job_run["test_job_run"]["id"])
-    ```
-
-
-    :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run.
+    Use this data source to access information about an existing resource.
     """
     ...

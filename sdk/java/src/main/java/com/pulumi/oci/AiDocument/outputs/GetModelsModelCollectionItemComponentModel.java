@@ -6,6 +6,8 @@ package com.pulumi.oci.AiDocument.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemComponentModel {
@@ -13,15 +15,15 @@ public final class GetModelsModelCollectionItemComponentModel {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
      * 
      */
-    private String modelId;
+    private @Nullable String modelId;
 
     private GetModelsModelCollectionItemComponentModel() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
      * 
      */
-    public String modelId() {
-        return this.modelId;
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetModelsModelCollectionItemComponentModel {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String modelId;
+        private @Nullable String modelId;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemComponentModel defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetModelsModelCollectionItemComponentModel {
         }
 
         @CustomType.Setter
-        public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+        public Builder modelId(@Nullable String modelId) {
+            this.modelId = modelId;
             return this;
         }
         public GetModelsModelCollectionItemComponentModel build() {

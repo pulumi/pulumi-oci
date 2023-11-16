@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.
@@ -57,44 +56,44 @@ type Backup struct {
 	pulumi.CustomResourceState
 
 	// The name of the availability domain where the database backup is stored.
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The Oracle Database edition of the DB system from which the database backup was taken.
-	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
+	DatabaseEdition pulumi.StringPtrOutput `pulumi:"databaseEdition"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// The size of the database in gigabytes at the time the backup was taken.
-	DatabaseSizeInGbs pulumi.Float64Output `pulumi:"databaseSizeInGbs"`
+	DatabaseSizeInGbs pulumi.Float64PtrOutput `pulumi:"databaseSizeInGbs"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-	KeyStoreId pulumi.StringOutput `pulumi:"keyStoreId"`
+	KeyStoreId pulumi.StringPtrOutput `pulumi:"keyStoreId"`
 	// The wallet name for Oracle Key Vault.
-	KeyStoreWalletName pulumi.StringOutput `pulumi:"keyStoreWalletName"`
+	KeyStoreWalletName pulumi.StringPtrOutput `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId pulumi.StringPtrOutput `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Shape of the backup's source database.
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The current state of the backup.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the backup was completed.
-	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrOutput `pulumi:"timeEnded"`
 	// The date and time the backup started.
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 	// The type of backup.
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	VaultId pulumi.StringPtrOutput `pulumi:"vaultId"`
 	// Version of the backup's source database
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewBackup registers a new resource with the given unique name, arguments, and options.
@@ -264,12 +263,6 @@ func (i *Backup) ToBackupOutputWithContext(ctx context.Context) BackupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackupOutput)
 }
 
-func (i *Backup) ToOutput(ctx context.Context) pulumix.Output[*Backup] {
-	return pulumix.Output[*Backup]{
-		OutputState: i.ToBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackupArrayInput is an input type that accepts BackupArray and BackupArrayOutput values.
 // You can construct a concrete instance of `BackupArrayInput` via:
 //
@@ -293,12 +286,6 @@ func (i BackupArray) ToBackupArrayOutput() BackupArrayOutput {
 
 func (i BackupArray) ToBackupArrayOutputWithContext(ctx context.Context) BackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackupArrayOutput)
-}
-
-func (i BackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*Backup] {
-	return pulumix.Output[[]*Backup]{
-		OutputState: i.ToBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackupMapInput is an input type that accepts BackupMap and BackupMapOutput values.
@@ -326,12 +313,6 @@ func (i BackupMap) ToBackupMapOutputWithContext(ctx context.Context) BackupMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(BackupMapOutput)
 }
 
-func (i BackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Backup] {
-	return pulumix.Output[map[string]*Backup]{
-		OutputState: i.ToBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackupOutput struct{ *pulumi.OutputState }
 
 func (BackupOutput) ElementType() reflect.Type {
@@ -346,25 +327,19 @@ func (o BackupOutput) ToBackupOutputWithContext(ctx context.Context) BackupOutpu
 	return o
 }
 
-func (o BackupOutput) ToOutput(ctx context.Context) pulumix.Output[*Backup] {
-	return pulumix.Output[*Backup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain where the database backup is stored.
-func (o BackupOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o BackupOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o BackupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o BackupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database edition of the DB system from which the database backup was taken.
-func (o BackupOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o BackupOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -373,8 +348,8 @@ func (o BackupOutput) DatabaseId() pulumi.StringOutput {
 }
 
 // The size of the database in gigabytes at the time the backup was taken.
-func (o BackupOutput) DatabaseSizeInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v *Backup) pulumi.Float64Output { return v.DatabaseSizeInGbs }).(pulumi.Float64Output)
+func (o BackupOutput) DatabaseSizeInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.Float64PtrOutput { return v.DatabaseSizeInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The user-friendly name for the backup. The name does not have to be unique.
@@ -386,63 +361,63 @@ func (o BackupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-func (o BackupOutput) KeyStoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.KeyStoreId }).(pulumi.StringOutput)
+func (o BackupOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.KeyStoreId }).(pulumi.StringPtrOutput)
 }
 
 // The wallet name for Oracle Key Vault.
-func (o BackupOutput) KeyStoreWalletName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.KeyStoreWalletName }).(pulumi.StringOutput)
+func (o BackupOutput) KeyStoreWalletName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.KeyStoreWalletName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-func (o BackupOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o BackupOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-func (o BackupOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o BackupOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o BackupOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o BackupOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Shape of the backup's source database.
-func (o BackupOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o BackupOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the backup.
-func (o BackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BackupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the backup was completed.
-func (o BackupOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeEnded }).(pulumi.StringOutput)
+func (o BackupOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the backup started.
-func (o BackupOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o BackupOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The type of backup.
-func (o BackupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o BackupOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-func (o BackupOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+func (o BackupOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 // Version of the backup's source database
-func (o BackupOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o BackupOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backup) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type BackupArrayOutput struct{ *pulumi.OutputState }
@@ -457,12 +432,6 @@ func (o BackupArrayOutput) ToBackupArrayOutput() BackupArrayOutput {
 
 func (o BackupArrayOutput) ToBackupArrayOutputWithContext(ctx context.Context) BackupArrayOutput {
 	return o
-}
-
-func (o BackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Backup] {
-	return pulumix.Output[[]*Backup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackupArrayOutput) Index(i pulumi.IntInput) BackupOutput {
@@ -483,12 +452,6 @@ func (o BackupMapOutput) ToBackupMapOutput() BackupMapOutput {
 
 func (o BackupMapOutput) ToBackupMapOutputWithContext(ctx context.Context) BackupMapOutput {
 	return o
-}
-
-func (o BackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Backup] {
-	return pulumix.Output[map[string]*Backup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackupMapOutput) MapIndex(k pulumi.StringInput) BackupOutput {

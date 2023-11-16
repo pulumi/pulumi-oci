@@ -80,124 +80,82 @@ class GetVmClusterNetworkResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the VM cluster network. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def dns(self) -> Sequence[str]:
-        """
-        The list of DNS server IP addresses. Maximum of 3 allowed.
-        """
+    def dns(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="drScans")
-    def dr_scans(self) -> Sequence['outputs.GetVmClusterNetworkDrScanResult']:
-        """
-        The SCAN details for DR network
-        """
+    def dr_scans(self) -> Optional[Sequence['outputs.GetVmClusterNetworkDrScanResult']]:
         return pulumi.get(self, "dr_scans")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def ntps(self) -> Sequence[str]:
-        """
-        The list of NTP server IP addresses. Maximum of 3 allowed.
-        """
+    def ntps(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ntps")
 
     @property
     @pulumi.getter
-    def scans(self) -> Sequence['outputs.GetVmClusterNetworkScanResult']:
-        """
-        The SCAN details.
-        """
+    def scans(self) -> Optional[Sequence['outputs.GetVmClusterNetworkScanResult']]:
         return pulumi.get(self, "scans")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time when the VM cluster network was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="validateVmClusterNetwork")
-    def validate_vm_cluster_network(self) -> bool:
+    def validate_vm_cluster_network(self) -> Optional[bool]:
         return pulumi.get(self, "validate_vm_cluster_network")
 
     @property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        """
+    def vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "vm_cluster_id")
 
     @property
@@ -207,10 +165,7 @@ class GetVmClusterNetworkResult:
 
     @property
     @pulumi.getter(name="vmNetworks")
-    def vm_networks(self) -> Sequence['outputs.GetVmClusterNetworkVmNetworkResult']:
-        """
-        Details of the client and backup networks.
-        """
+    def vm_networks(self) -> Optional[Sequence['outputs.GetVmClusterNetworkVmNetworkResult']]:
         return pulumi.get(self, "vm_networks")
 
 
@@ -244,24 +199,7 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[str] = None,
                            vm_cluster_network_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterNetworkResult:
     """
-    This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-    To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_network = oci.Database.get_vm_cluster_network(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"])
-    ```
-
-
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['exadataInfrastructureId'] = exadata_infrastructure_id
@@ -295,23 +233,6 @@ def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Inp
                                   vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterNetworkResult]:
     """
-    This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
-    To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_network = oci.Database.get_vm_cluster_network(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"])
-    ```
-
-
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str vm_cluster_network_id: The VM cluster network [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

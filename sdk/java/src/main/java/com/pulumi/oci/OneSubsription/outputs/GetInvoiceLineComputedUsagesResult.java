@@ -9,6 +9,7 @@ import com.pulumi.oci.OneSubsription.outputs.GetInvoiceLineComputedUsagesInvoice
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -20,13 +21,13 @@ public final class GetInvoiceLineComputedUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String invoiceLineId;
     /**
      * @return The list of invoiceline_computed_usages.
      * 
      */
-    private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
+    private @Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
 
     private GetInvoiceLineComputedUsagesResult() {}
     public String compartmentId() {
@@ -42,8 +43,8 @@ public final class GetInvoiceLineComputedUsagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String invoiceLineId() {
         return this.invoiceLineId;
@@ -53,7 +54,7 @@ public final class GetInvoiceLineComputedUsagesResult {
      * 
      */
     public List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages() {
-        return this.invoicelineComputedUsages;
+        return this.invoicelineComputedUsages == null ? List.of() : this.invoicelineComputedUsages;
     }
 
     public static Builder builder() {
@@ -68,9 +69,9 @@ public final class GetInvoiceLineComputedUsagesResult {
         private String compartmentId;
         private @Nullable List<String> fields;
         private @Nullable List<GetInvoiceLineComputedUsagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String invoiceLineId;
-        private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
+        private @Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages;
         public Builder() {}
         public Builder(GetInvoiceLineComputedUsagesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,8 +105,8 @@ public final class GetInvoiceLineComputedUsagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -114,8 +115,8 @@ public final class GetInvoiceLineComputedUsagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder invoicelineComputedUsages(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages) {
-            this.invoicelineComputedUsages = Objects.requireNonNull(invoicelineComputedUsages);
+        public Builder invoicelineComputedUsages(@Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages) {
+            this.invoicelineComputedUsages = invoicelineComputedUsages;
             return this;
         }
         public Builder invoicelineComputedUsages(GetInvoiceLineComputedUsagesInvoicelineComputedUsage... invoicelineComputedUsages) {

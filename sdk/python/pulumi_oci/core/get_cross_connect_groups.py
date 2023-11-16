@@ -46,25 +46,16 @@ class GetCrossConnectGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="crossConnectGroups")
-    def cross_connect_groups(self) -> Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupResult']:
-        """
-        The list of cross_connect_groups.
-        """
+    def cross_connect_groups(self) -> Optional[Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupResult']]:
         return pulumi.get(self, "cross_connect_groups")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetCrossConnectGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetCrossConnectGroupsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The cross-connect group's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_cross_connect_groups(compartment_id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectGroupsResult:
     """
-    This data source provides the list of Cross Connect Groups in Oracle Cloud Infrastructure Core service.
-
-    Lists the cross-connect groups in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_groups = oci.Core.get_cross_connect_groups(compartment_id=var["compartment_id"],
-        display_name=var["cross_connect_group_display_name"],
-        state=var["cross_connect_group_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_cross_connect_groups_output(compartment_id: Optional[pulumi.Input[str]] 
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectGroupsResult]:
     """
-    This data source provides the list of Cross Connect Groups in Oracle Cloud Infrastructure Core service.
-
-    Lists the cross-connect groups in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connect_groups = oci.Core.get_cross_connect_groups(compartment_id=var["compartment_id"],
-        display_name=var["cross_connect_group_display_name"],
-        state=var["cross_connect_group_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

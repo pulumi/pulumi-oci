@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The unique key of protection capability to filter by.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The weight of contributing protection capability.
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult(
-            string displayName,
+            string? displayName,
 
-            string key,
+            string? key,
 
-            int weight)
+            int? weight)
         {
             DisplayName = displayName;
             Key = key;

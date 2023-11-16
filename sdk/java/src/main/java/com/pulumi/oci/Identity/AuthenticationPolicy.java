@@ -13,6 +13,7 @@ import com.pulumi.oci.Identity.outputs.AuthenticationPolicyNetworkPolicy;
 import com.pulumi.oci.Identity.outputs.AuthenticationPolicyPasswordPolicy;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -93,28 +94,28 @@ public class AuthenticationPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="networkPolicy", refs={AuthenticationPolicyNetworkPolicy.class}, tree="[0]")
-    private Output<AuthenticationPolicyNetworkPolicy> networkPolicy;
+    private Output</* @Nullable */ AuthenticationPolicyNetworkPolicy> networkPolicy;
 
     /**
      * @return (Updatable) Network policy, Consists of a list of Network Source ids.
      * 
      */
-    public Output<AuthenticationPolicyNetworkPolicy> networkPolicy() {
-        return this.networkPolicy;
+    public Output<Optional<AuthenticationPolicyNetworkPolicy>> networkPolicy() {
+        return Codegen.optional(this.networkPolicy);
     }
     /**
      * (Updatable) Password policy, currently set for the given compartment.
      * 
      */
     @Export(name="passwordPolicy", refs={AuthenticationPolicyPasswordPolicy.class}, tree="[0]")
-    private Output<AuthenticationPolicyPasswordPolicy> passwordPolicy;
+    private Output</* @Nullable */ AuthenticationPolicyPasswordPolicy> passwordPolicy;
 
     /**
      * @return (Updatable) Password policy, currently set for the given compartment.
      * 
      */
-    public Output<AuthenticationPolicyPasswordPolicy> passwordPolicy() {
-        return this.passwordPolicy;
+    public Output<Optional<AuthenticationPolicyPasswordPolicy>> passwordPolicy() {
+        return Codegen.optional(this.passwordPolicy);
     }
 
     /**

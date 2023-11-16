@@ -34,28 +34,6 @@ class DatabaseRegistrationArgs:
                  wallet: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DatabaseRegistration resource.
-        :param pulumi.Input[str] alias_name: (Updatable) Credential store alias.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        :param pulumi.Input[str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        :param pulumi.Input[str] key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] secret_compartment_id: The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[str] vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "alias_name", alias_name)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -91,9 +69,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="aliasName")
     def alias_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Credential store alias.
-        """
         return pulumi.get(self, "alias_name")
 
     @alias_name.setter
@@ -103,9 +78,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -115,9 +87,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -127,9 +96,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter
     def fqdn(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
@@ -139,9 +105,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -151,9 +114,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -163,9 +123,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
@@ -175,9 +132,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -187,9 +141,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -199,9 +150,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Metadata about this specific object.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -211,9 +159,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -223,9 +168,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -235,9 +177,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -247,9 +186,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="secretCompartmentId")
     def secret_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
         return pulumi.get(self, "secret_compartment_id")
 
     @secret_compartment_id.setter
@@ -259,9 +195,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        """
         return pulumi.get(self, "session_mode")
 
     @session_mode.setter
@@ -271,9 +204,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -283,9 +213,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -295,13 +222,6 @@ class DatabaseRegistrationArgs:
     @property
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "wallet")
 
     @wallet.setter
@@ -339,35 +259,6 @@ class _DatabaseRegistrationState:
                  wallet: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DatabaseRegistration resources.
-        :param pulumi.Input[str] alias_name: (Updatable) Credential store alias.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        :param pulumi.Input[str] key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        :param pulumi.Input[str] rce_private_ip: A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        :param pulumi.Input[str] secret_compartment_id: The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] secret_id: The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-        :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] state: Possible lifecycle states.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        :param pulumi.Input[str] vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if alias_name is not None:
             pulumi.set(__self__, "alias_name", alias_name)
@@ -423,9 +314,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="aliasName")
     def alias_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Credential store alias.
-        """
         return pulumi.get(self, "alias_name")
 
     @alias_name.setter
@@ -435,9 +323,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -447,9 +332,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
@@ -459,9 +341,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -471,9 +350,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -483,9 +359,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Metadata about this specific object.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -495,9 +368,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -507,9 +377,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
@@ -519,9 +386,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -531,9 +395,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -543,9 +404,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -555,9 +413,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -567,9 +422,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -579,9 +431,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="rcePrivateIp")
     def rce_private_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        """
         return pulumi.get(self, "rce_private_ip")
 
     @rce_private_ip.setter
@@ -591,9 +440,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="secretCompartmentId")
     def secret_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
         return pulumi.get(self, "secret_compartment_id")
 
     @secret_compartment_id.setter
@@ -603,9 +449,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -615,9 +458,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        """
         return pulumi.get(self, "session_mode")
 
     @session_mode.setter
@@ -627,9 +467,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -639,9 +476,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -651,9 +485,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -663,9 +494,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -675,9 +503,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -687,9 +512,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -699,9 +521,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -711,13 +530,6 @@ class _DatabaseRegistrationState:
     @property
     @pulumi.getter
     def wallet(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "wallet")
 
     @wallet.setter
@@ -750,74 +562,9 @@ class DatabaseRegistration(pulumi.CustomResource):
                  wallet: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Note: Deprecated. Use the /connections API instead.
-        Creates a new DatabaseRegistration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database_registration = oci.golden_gate.DatabaseRegistration("testDatabaseRegistration",
-            alias_name=var["database_registration_alias_name"],
-            compartment_id=var["compartment_id"],
-            display_name=var["database_registration_display_name"],
-            fqdn=var["database_registration_fqdn"],
-            password=var["database_registration_password"],
-            username=var["database_registration_username"],
-            connection_string=var["database_registration_connection_string"],
-            database_id=oci_database_database["test_database"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["database_registration_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            ip_address=var["database_registration_ip_address"],
-            key_id=oci_kms_key["test_key"]["id"],
-            secret_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            session_mode=var["database_registration_session_mode"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            wallet=var["database_registration_wallet"])
-        ```
-
-        ## Import
-
-        DatabaseRegistrations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
-        ```
-
+        Create a DatabaseRegistration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alias_name: (Updatable) Credential store alias.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        :param pulumi.Input[str] key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        :param pulumi.Input[str] secret_compartment_id: The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        :param pulumi.Input[str] vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -826,50 +573,7 @@ class DatabaseRegistration(pulumi.CustomResource):
                  args: DatabaseRegistrationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Note: Deprecated. Use the /connections API instead.
-        Creates a new DatabaseRegistration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database_registration = oci.golden_gate.DatabaseRegistration("testDatabaseRegistration",
-            alias_name=var["database_registration_alias_name"],
-            compartment_id=var["compartment_id"],
-            display_name=var["database_registration_display_name"],
-            fqdn=var["database_registration_fqdn"],
-            password=var["database_registration_password"],
-            username=var["database_registration_username"],
-            connection_string=var["database_registration_connection_string"],
-            database_id=oci_database_database["test_database"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["database_registration_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            ip_address=var["database_registration_ip_address"],
-            key_id=oci_kms_key["test_key"]["id"],
-            secret_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            session_mode=var["database_registration_session_mode"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            wallet=var["database_registration_wallet"])
-        ```
-
-        ## Import
-
-        DatabaseRegistrations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/databaseRegistration:DatabaseRegistration test_database_registration "id"
-        ```
-
+        Create a DatabaseRegistration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DatabaseRegistrationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -993,35 +697,6 @@ class DatabaseRegistration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alias_name: (Updatable) Credential store alias.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_string: (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
-        :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
-        :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        :param pulumi.Input[str] key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        :param pulumi.Input[str] rce_private_ip: A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        :param pulumi.Input[str] secret_compartment_id: The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param pulumi.Input[str] secret_id: The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-        :param pulumi.Input[str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param pulumi.Input[str] state: Possible lifecycle states.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] username: (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        :param pulumi.Input[str] vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        :param pulumi.Input[str] wallet: (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1057,204 +732,125 @@ class DatabaseRegistration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="aliasName")
     def alias_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Credential store alias.
-        """
         return pulumi.get(self, "alias_name")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Connect descriptor or Easy Connect Naming method used to connect to a database.
-        """
+    def connection_string(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        """
+    def database_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Metadata about this specific object.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def fqdn(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> pulumi.Output[str]:
-        """
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        """
+    def ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> pulumi.Output[str]:
-        """
-        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
+    def key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-        """
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="rcePrivateIp")
-    def rce_private_ip(self) -> pulumi.Output[str]:
-        """
-        A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        """
+    def rce_private_ip(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "rce_private_ip")
 
     @property
     @pulumi.getter(name="secretCompartmentId")
-    def secret_compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
+    def secret_compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "secret_compartment_id")
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-        """
+    def secret_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="sessionMode")
-    def session_mode(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        """
+    def session_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "session_mode")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Possible lifecycle states.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
+    def subnet_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def username(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        """
         return pulumi.get(self, "username")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
+    def vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter
-    def wallet(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def wallet(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "wallet")
 

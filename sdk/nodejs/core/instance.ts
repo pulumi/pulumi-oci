@@ -92,12 +92,12 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
      */
-    public readonly agentConfig!: pulumi.Output<outputs.Core.InstanceAgentConfig>;
+    public readonly agentConfig!: pulumi.Output<outputs.Core.InstanceAgentConfig | undefined>;
     public readonly async!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
      */
-    public readonly availabilityConfig!: pulumi.Output<outputs.Core.InstanceAvailabilityConfig>;
+    public readonly availabilityConfig!: pulumi.Output<outputs.Core.InstanceAvailabilityConfig | undefined>;
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
@@ -105,11 +105,11 @@ export class Instance extends pulumi.CustomResource {
     /**
      * The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      */
-    public /*out*/ readonly bootVolumeId!: pulumi.Output<string>;
+    public /*out*/ readonly bootVolumeId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      */
-    public readonly capacityReservationId!: pulumi.Output<string>;
+    public readonly capacityReservationId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing images to search
      */
@@ -117,24 +117,24 @@ export class Instance extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      */
-    public readonly computeClusterId!: pulumi.Output<string>;
+    public readonly computeClusterId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
-    public readonly createVnicDetails!: pulumi.Output<outputs.Core.InstanceCreateVnicDetails>;
+    public readonly createVnicDetails!: pulumi.Output<outputs.Core.InstanceCreateVnicDetails | undefined>;
     /**
      * The OCID of the dedicated virtual machine host to place the instance on.
      */
-    public readonly dedicatedVmHostId!: pulumi.Output<string>;
+    public readonly dedicatedVmHostId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public readonly extendedMetadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      *
@@ -144,31 +144,31 @@ export class Instance extends pulumi.CustomResource {
      *
      * Example: `FAULT-DOMAIN-1`
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    public readonly faultDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      *
      * @deprecated The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
      */
-    public readonly hostnameLabel!: pulumi.Output<string>;
+    public readonly hostnameLabel!: pulumi.Output<string | undefined>;
     /**
      * Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
      *
      * @deprecated The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
      */
-    public readonly image!: pulumi.Output<string>;
+    public readonly image!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
      */
-    public readonly instanceConfigurationId!: pulumi.Output<string>;
+    public readonly instanceConfigurationId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Optional mutable instance options
      */
-    public readonly instanceOptions!: pulumi.Output<outputs.Core.InstanceInstanceOptions>;
+    public readonly instanceOptions!: pulumi.Output<outputs.Core.InstanceInstanceOptions | undefined>;
     /**
      * This is an advanced option.
      *
@@ -184,23 +184,23 @@ export class Instance extends pulumi.CustomResource {
      *
      * For more information about iPXE, see http://ipxe.org.
      */
-    public readonly ipxeScript!: pulumi.Output<string>;
+    public readonly ipxeScript!: pulumi.Output<string | undefined>;
     /**
      * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      */
-    public /*out*/ readonly isCrossNumaNode!: pulumi.Output<boolean>;
+    public /*out*/ readonly isCrossNumaNode!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
      */
-    public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean>;
+    public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      */
-    public /*out*/ readonly launchMode!: pulumi.Output<string>;
+    public /*out*/ readonly launchMode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    public readonly launchOptions!: pulumi.Output<outputs.Core.InstanceLaunchOptions>;
+    public readonly launchOptions!: pulumi.Output<outputs.Core.InstanceLaunchOptions | undefined>;
     /**
      * (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      *
@@ -233,7 +233,7 @@ export class Instance extends pulumi.CustomResource {
      *
      * **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: any}>;
+    public readonly metadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The platform configuration requested for the instance.
      *
@@ -245,11 +245,11 @@ export class Instance extends pulumi.CustomResource {
      *
      * For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
      */
-    public readonly platformConfig!: pulumi.Output<outputs.Core.InstancePlatformConfig>;
+    public readonly platformConfig!: pulumi.Output<outputs.Core.InstancePlatformConfig | undefined>;
     /**
      * Configuration options for preemptible instances.
      */
-    public readonly preemptibleInstanceConfig!: pulumi.Output<outputs.Core.InstancePreemptibleInstanceConfig>;
+    public readonly preemptibleInstanceConfig!: pulumi.Output<outputs.Core.InstancePreemptibleInstanceConfig | undefined>;
     /**
      * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
      */
@@ -261,21 +261,21 @@ export class Instance extends pulumi.CustomResource {
      *
      * Example: `10.0.3.3`
      */
-    public /*out*/ readonly privateIp!: pulumi.Output<string>;
+    public /*out*/ readonly privateIp!: pulumi.Output<string | undefined>;
     /**
      * The public IP address of instance VNIC (if enabled).
      */
-    public /*out*/ readonly publicIp!: pulumi.Output<string>;
+    public /*out*/ readonly publicIp!: pulumi.Output<string | undefined>;
     /**
      * The region that contains the availability domain the instance is running in.
      */
-    public /*out*/ readonly region!: pulumi.Output<string>;
+    public /*out*/ readonly region!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      *
      * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
      */
-    public readonly shape!: pulumi.Output<string>;
+    public readonly shape!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The shape configuration requested for the instance.
      *
@@ -283,36 +283,36 @@ export class Instance extends pulumi.CustomResource {
      *
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      */
-    public readonly shapeConfig!: pulumi.Output<outputs.Core.InstanceShapeConfig>;
+    public readonly shapeConfig!: pulumi.Output<outputs.Core.InstanceShapeConfig | undefined>;
     /**
      * (Updatable)
      */
-    public readonly sourceDetails!: pulumi.Output<outputs.Core.InstanceSourceDetails>;
+    public readonly sourceDetails!: pulumi.Output<outputs.Core.InstanceSourceDetails | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to RUNNING or STOPPED.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
      *
      * @deprecated The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    public readonly subnetId!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeMaintenanceRebootDue!: pulumi.Output<string>;
+    public /*out*/ readonly timeMaintenanceRebootDue!: pulumi.Output<string | undefined>;
     public readonly updateOperationConstraint!: pulumi.Output<string | undefined>;
 
     /**

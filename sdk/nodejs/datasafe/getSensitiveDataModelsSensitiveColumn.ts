@@ -51,64 +51,64 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
     /**
      * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      */
-    readonly appDefinedChildColumnKeys: string[];
+    readonly appDefinedChildColumnKeys?: string[];
     /**
      * The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
      */
-    readonly appName: string;
+    readonly appName?: string;
     /**
      * The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      */
-    readonly columnGroups: string[];
+    readonly columnGroups?: string[];
     /**
      * The name of the sensitive column.
      */
-    readonly columnName: string;
+    readonly columnName?: string;
     /**
      * The data type of the sensitive column.
      */
-    readonly dataType: string;
+    readonly dataType?: string;
     /**
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      */
-    readonly dbDefinedChildColumnKeys: string[];
+    readonly dbDefinedChildColumnKeys?: string[];
     /**
      * The estimated number of data values the column has in the associated database.
      */
-    readonly estimatedDataValueCount: string;
-    readonly id: string;
+    readonly estimatedDataValueCount?: string;
+    readonly id?: string;
     /**
      * The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * Details about the current state of the sensitive column.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The database object that contains the sensitive column.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * The type of the database object that contains the sensitive column.
      */
-    readonly objectType: string;
+    readonly objectType?: string;
     /**
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      */
-    readonly parentColumnKeys: string[];
+    readonly parentColumnKeys?: string[];
     /**
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      */
-    readonly relationType: string;
+    readonly relationType?: string;
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      */
-    readonly sampleDataValues: string[];
+    readonly sampleDataValues?: string[];
     /**
      * The database schema that contains the sensitive column.
      */
-    readonly schemaName: string;
+    readonly schemaName?: string;
     readonly sensitiveColumnKey: string;
     /**
      * The OCID of the sensitive data model that contains the sensitive column.
@@ -117,27 +117,27 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
     /**
      * The OCID of the sensitive type associated with the sensitive column.
      */
-    readonly sensitiveTypeId: string;
+    readonly sensitiveTypeId?: string;
     /**
      * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      */
-    readonly source: string;
+    readonly source?: string;
     /**
      * The current state of the sensitive column.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.

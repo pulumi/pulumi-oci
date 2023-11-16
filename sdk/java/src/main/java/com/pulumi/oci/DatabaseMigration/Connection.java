@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -133,14 +134,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="certificateTdn", refs={String.class}, tree="[0]")
-    private Output<String> certificateTdn;
+    private Output</* @Nullable */ String> certificateTdn;
 
     /**
      * @return (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
      * 
      */
-    public Output<String> certificateTdn() {
-        return this.certificateTdn;
+    public Output<Optional<String>> certificateTdn() {
+        return Codegen.optional(this.certificateTdn);
     }
     /**
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -161,42 +162,42 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="connectDescriptor", refs={ConnectionConnectDescriptor.class}, tree="[0]")
-    private Output<ConnectionConnectDescriptor> connectDescriptor;
+    private Output</* @Nullable */ ConnectionConnectDescriptor> connectDescriptor;
 
     /**
      * @return (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
      * 
      */
-    public Output<ConnectionConnectDescriptor> connectDescriptor() {
-        return this.connectDescriptor;
+    public Output<Optional<ConnectionConnectDescriptor>> connectDescriptor() {
+        return Codegen.optional(this.connectDescriptor);
     }
     /**
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      * 
      */
     @Export(name="credentialsSecretId", refs={String.class}, tree="[0]")
-    private Output<String> credentialsSecretId;
+    private Output</* @Nullable */ String> credentialsSecretId;
 
     /**
      * @return OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      * 
      */
-    public Output<String> credentialsSecretId() {
-        return this.credentialsSecretId;
+    public Output<Optional<String>> credentialsSecretId() {
+        return Codegen.optional(this.credentialsSecretId);
     }
     /**
      * (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
      * 
      */
     @Export(name="databaseId", refs={String.class}, tree="[0]")
-    private Output<String> databaseId;
+    private Output</* @Nullable */ String> databaseId;
 
     /**
      * @return (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
      * 
      */
-    public Output<String> databaseId() {
-        return this.databaseId;
+    public Output<Optional<String>> databaseId() {
+        return Codegen.optional(this.databaseId);
     }
     /**
      * Database connection type.
@@ -217,196 +218,196 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Database Connection display name identifier.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Database Connection display name identifier.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      * 
      */
     @Export(name="privateEndpoint", refs={ConnectionPrivateEndpoint.class}, tree="[0]")
-    private Output<ConnectionPrivateEndpoint> privateEndpoint;
+    private Output</* @Nullable */ ConnectionPrivateEndpoint> privateEndpoint;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      * 
      */
-    public Output<ConnectionPrivateEndpoint> privateEndpoint() {
-        return this.privateEndpoint;
+    public Output<Optional<ConnectionPrivateEndpoint>> privateEndpoint() {
+        return Codegen.optional(this.privateEndpoint);
     }
     /**
      * (Updatable) Database Administrator Credentials details.
      * 
      */
     @Export(name="replicationCredentials", refs={ConnectionReplicationCredentials.class}, tree="[0]")
-    private Output<ConnectionReplicationCredentials> replicationCredentials;
+    private Output</* @Nullable */ ConnectionReplicationCredentials> replicationCredentials;
 
     /**
      * @return (Updatable) Database Administrator Credentials details.
      * 
      */
-    public Output<ConnectionReplicationCredentials> replicationCredentials() {
-        return this.replicationCredentials;
+    public Output<Optional<ConnectionReplicationCredentials>> replicationCredentials() {
+        return Codegen.optional(this.replicationCredentials);
     }
     /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      * 
      */
     @Export(name="sshDetails", refs={ConnectionSshDetails.class}, tree="[0]")
-    private Output<ConnectionSshDetails> sshDetails;
+    private Output</* @Nullable */ ConnectionSshDetails> sshDetails;
 
     /**
      * @return (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      * 
      */
-    public Output<ConnectionSshDetails> sshDetails() {
-        return this.sshDetails;
+    public Output<Optional<ConnectionSshDetails>> sshDetails() {
+        return Codegen.optional(this.sshDetails);
     }
     /**
      * The current state of the Connection resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Connection resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the Connection resource was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the Connection resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
      * 
      */
     @Export(name="tlsKeystore", refs={String.class}, tree="[0]")
-    private Output<String> tlsKeystore;
+    private Output</* @Nullable */ String> tlsKeystore;
 
     /**
      * @return (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
      * 
      */
-    public Output<String> tlsKeystore() {
-        return this.tlsKeystore;
+    public Output<Optional<String>> tlsKeystore() {
+        return Codegen.optional(this.tlsKeystore);
     }
     /**
      * (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
      * 
      */
     @Export(name="tlsWallet", refs={String.class}, tree="[0]")
-    private Output<String> tlsWallet;
+    private Output</* @Nullable */ String> tlsWallet;
 
     /**
      * @return (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
      * 
      */
-    public Output<String> tlsWallet() {
-        return this.tlsWallet;
+    public Output<Optional<String>> tlsWallet() {
+        return Codegen.optional(this.tlsWallet);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets

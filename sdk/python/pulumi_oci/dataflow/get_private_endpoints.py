@@ -52,17 +52,11 @@ class GetPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +71,7 @@ class GetPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,25 +80,16 @@ class GetPrivateEndpointsResult:
     @property
     @pulumi.getter(name="ownerPrincipalId")
     def owner_principal_id(self) -> Optional[str]:
-        """
-        The OCID of the user who created the resource.
-        """
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="privateEndpointCollections")
-    def private_endpoint_collections(self) -> Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionResult']:
-        """
-        The list of private_endpoint_collection.
-        """
+    def private_endpoint_collections(self) -> Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "private_endpoint_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of this private endpoint.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointsResult:
     """
-    This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["private_endpoint_display_name"],
-        display_name_starts_with=var["private_endpoint_display_name_starts_with"],
-        owner_principal_id=var["owner_principal_id"],
-        state=var["private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str state: The LifecycleState of the private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointsResult]:
     """
-    This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["private_endpoint_display_name"],
-        display_name_starts_with=var["private_endpoint_display_name_starts_with"],
-        owner_principal_id=var["owner_principal_id"],
-        state=var["private_endpoint_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str state: The LifecycleState of the private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

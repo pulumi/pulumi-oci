@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceCloudSqlDetail {
@@ -17,99 +19,99 @@ public final class GetBdsInstanceCloudSqlDetail {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private String blockVolumeSizeInGbs;
+    private @Nullable String blockVolumeSizeInGbs;
     /**
      * @return IP address of the node.
      * 
      */
-    private String ipAddress;
+    private @Nullable String ipAddress;
     /**
      * @return Boolean flag specifying whether or not Kerberos principals are mapped to database users.
      * 
      */
-    private Boolean isKerberosMappedToDatabaseUsers;
+    private @Nullable Boolean isKerberosMappedToDatabaseUsers;
     /**
      * @return Details about the Kerberos principals.
      * 
      */
-    private List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
+    private @Nullable List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
     /**
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    private Integer nvmes;
+    private @Nullable Integer nvmes;
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    private Integer ocpus;
+    private @Nullable Integer ocpus;
     /**
      * @return Shape of the node.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
 
     private GetBdsInstanceCloudSqlDetail() {}
     /**
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    public String blockVolumeSizeInGbs() {
-        return this.blockVolumeSizeInGbs;
+    public Optional<String> blockVolumeSizeInGbs() {
+        return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
      * @return IP address of the node.
      * 
      */
-    public String ipAddress() {
-        return this.ipAddress;
+    public Optional<String> ipAddress() {
+        return Optional.ofNullable(this.ipAddress);
     }
     /**
      * @return Boolean flag specifying whether or not Kerberos principals are mapped to database users.
      * 
      */
-    public Boolean isKerberosMappedToDatabaseUsers() {
-        return this.isKerberosMappedToDatabaseUsers;
+    public Optional<Boolean> isKerberosMappedToDatabaseUsers() {
+        return Optional.ofNullable(this.isKerberosMappedToDatabaseUsers);
     }
     /**
      * @return Details about the Kerberos principals.
      * 
      */
     public List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails() {
-        return this.kerberosDetails;
+        return this.kerberosDetails == null ? List.of() : this.kerberosDetails;
     }
     /**
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    public Integer nvmes() {
-        return this.nvmes;
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
     }
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    public Integer ocpus() {
-        return this.ocpus;
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
     /**
      * @return Shape of the node.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     public static Builder builder() {
@@ -121,14 +123,14 @@ public final class GetBdsInstanceCloudSqlDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String blockVolumeSizeInGbs;
-        private String ipAddress;
-        private Boolean isKerberosMappedToDatabaseUsers;
-        private List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
-        private Integer memoryInGbs;
-        private Integer nvmes;
-        private Integer ocpus;
-        private String shape;
+        private @Nullable String blockVolumeSizeInGbs;
+        private @Nullable String ipAddress;
+        private @Nullable Boolean isKerberosMappedToDatabaseUsers;
+        private @Nullable List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable Integer nvmes;
+        private @Nullable Integer ocpus;
+        private @Nullable String shape;
         public Builder() {}
         public Builder(GetBdsInstanceCloudSqlDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -143,46 +145,46 @@ public final class GetBdsInstanceCloudSqlDetail {
         }
 
         @CustomType.Setter
-        public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
-            this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
+        public Builder blockVolumeSizeInGbs(@Nullable String blockVolumeSizeInGbs) {
+            this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+        public Builder ipAddress(@Nullable String ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder isKerberosMappedToDatabaseUsers(Boolean isKerberosMappedToDatabaseUsers) {
-            this.isKerberosMappedToDatabaseUsers = Objects.requireNonNull(isKerberosMappedToDatabaseUsers);
+        public Builder isKerberosMappedToDatabaseUsers(@Nullable Boolean isKerberosMappedToDatabaseUsers) {
+            this.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             return this;
         }
         @CustomType.Setter
-        public Builder kerberosDetails(List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails) {
-            this.kerberosDetails = Objects.requireNonNull(kerberosDetails);
+        public Builder kerberosDetails(@Nullable List<GetBdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails) {
+            this.kerberosDetails = kerberosDetails;
             return this;
         }
         public Builder kerberosDetails(GetBdsInstanceCloudSqlDetailKerberosDetail... kerberosDetails) {
             return kerberosDetails(List.of(kerberosDetails));
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+        public Builder nvmes(@Nullable Integer nvmes) {
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         public GetBdsInstanceCloudSqlDetail build() {

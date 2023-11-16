@@ -70,7 +70,7 @@ export interface GetExternalDbHomesResult {
     /**
      * The list of external_db_home_collection.
      */
-    readonly externalDbHomeCollections: outputs.DatabaseManagement.GetExternalDbHomesExternalDbHomeCollection[];
+    readonly externalDbHomeCollections?: outputs.DatabaseManagement.GetExternalDbHomesExternalDbHomeCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
      */
@@ -79,7 +79,7 @@ export interface GetExternalDbHomesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Db Homes in Oracle Cloud Infrastructure Database Management service.

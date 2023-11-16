@@ -80,98 +80,62 @@ class GetPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> Sequence[str]:
-        """
-        An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        """
+    def dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed messages about the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxHostCount")
-    def max_host_count(self) -> int:
-        """
-        The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-        """
+    def max_host_count(self) -> Optional[int]:
         return pulumi.get(self, "max_host_count")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of network security group OCIDs.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> str:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> str:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> Optional[str]:
         return pulumi.get(self, "owner_user_name")
 
     @property
@@ -181,42 +145,27 @@ class GetPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="scanDetails")
-    def scan_details(self) -> Sequence['outputs.GetPrivateEndpointScanDetailResult']:
-        """
-        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
-        """
+    def scan_details(self) -> Optional[Sequence['outputs.GetPrivateEndpointScanDetailResult']]:
         return pulumi.get(self, "scan_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of this private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of a subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -249,21 +198,7 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
 def get_private_endpoint(private_endpoint_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointResult:
     """
-    This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves an private endpoint using a `privateEndpointId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
-    ```
-
-
-    :param str private_endpoint_id: The unique ID for a private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['privateEndpointId'] = private_endpoint_id
@@ -295,20 +230,6 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
 def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
-    This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves an private endpoint using a `privateEndpointId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
-    ```
-
-
-    :param str private_endpoint_id: The unique ID for a private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

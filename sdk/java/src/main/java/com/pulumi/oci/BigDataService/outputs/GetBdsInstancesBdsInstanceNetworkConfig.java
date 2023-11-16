@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstancesBdsInstanceNetworkConfig {
@@ -14,27 +16,27 @@ public final class GetBdsInstancesBdsInstanceNetworkConfig {
      * @return The CIDR IP address block of the VCN.
      * 
      */
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return A boolean flag whether to configure a NAT gateway.
      * 
      */
-    private Boolean isNatGatewayRequired;
+    private @Nullable Boolean isNatGatewayRequired;
 
     private GetBdsInstancesBdsInstanceNetworkConfig() {}
     /**
      * @return The CIDR IP address block of the VCN.
      * 
      */
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     /**
      * @return A boolean flag whether to configure a NAT gateway.
      * 
      */
-    public Boolean isNatGatewayRequired() {
-        return this.isNatGatewayRequired;
+    public Optional<Boolean> isNatGatewayRequired() {
+        return Optional.ofNullable(this.isNatGatewayRequired);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetBdsInstancesBdsInstanceNetworkConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidrBlock;
-        private Boolean isNatGatewayRequired;
+        private @Nullable String cidrBlock;
+        private @Nullable Boolean isNatGatewayRequired;
         public Builder() {}
         public Builder(GetBdsInstancesBdsInstanceNetworkConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetBdsInstancesBdsInstanceNetworkConfig {
         }
 
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder isNatGatewayRequired(Boolean isNatGatewayRequired) {
-            this.isNatGatewayRequired = Objects.requireNonNull(isNatGatewayRequired);
+        public Builder isNatGatewayRequired(@Nullable Boolean isNatGatewayRequired) {
+            this.isNatGatewayRequired = isNatGatewayRequired;
             return this;
         }
         public GetBdsInstancesBdsInstanceNetworkConfig build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Agent Images in Oracle Cloud Infrastructure Database Migration service.
@@ -60,7 +59,7 @@ type GetAgentImagesResult struct {
 	AgentImageCollections []GetAgentImagesAgentImageCollection `pulumi:"agentImageCollections"`
 	Filters               []GetAgentImagesFilter               `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAgentImagesOutput(ctx *pulumi.Context, args GetAgentImagesOutputArgs, opts ...pulumi.InvokeOption) GetAgentImagesResultOutput {
@@ -100,12 +99,6 @@ func (o GetAgentImagesResultOutput) ToGetAgentImagesResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAgentImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentImagesResult] {
-	return pulumix.Output[GetAgentImagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of agent_image_collection.
 func (o GetAgentImagesResultOutput) AgentImageCollections() GetAgentImagesAgentImageCollectionArrayOutput {
 	return o.ApplyT(func(v GetAgentImagesResult) []GetAgentImagesAgentImageCollection { return v.AgentImageCollections }).(GetAgentImagesAgentImageCollectionArrayOutput)
@@ -116,8 +109,8 @@ func (o GetAgentImagesResultOutput) Filters() GetAgentImagesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAgentImagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentImagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAgentImagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentImagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

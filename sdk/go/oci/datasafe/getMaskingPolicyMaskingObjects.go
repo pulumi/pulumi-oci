@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
@@ -71,7 +70,7 @@ type GetMaskingPolicyMaskingObjectsArgs struct {
 type GetMaskingPolicyMaskingObjectsResult struct {
 	Filters []GetMaskingPolicyMaskingObjectsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of masking_object_collection.
 	MaskingObjectCollections []GetMaskingPolicyMaskingObjectsMaskingObjectCollection `pulumi:"maskingObjectCollections"`
 	MaskingPolicyId          string                                                  `pulumi:"maskingPolicyId"`
@@ -128,19 +127,13 @@ func (o GetMaskingPolicyMaskingObjectsResultOutput) ToGetMaskingPolicyMaskingObj
 	return o
 }
 
-func (o GetMaskingPolicyMaskingObjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPolicyMaskingObjectsResult] {
-	return pulumix.Output[GetMaskingPolicyMaskingObjectsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMaskingPolicyMaskingObjectsResultOutput) Filters() GetMaskingPolicyMaskingObjectsFilterArrayOutput {
 	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsResult) []GetMaskingPolicyMaskingObjectsFilter { return v.Filters }).(GetMaskingPolicyMaskingObjectsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingPolicyMaskingObjectsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingPolicyMaskingObjectsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyMaskingObjectsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of masking_object_collection.

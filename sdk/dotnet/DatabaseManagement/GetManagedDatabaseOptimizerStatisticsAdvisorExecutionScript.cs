@@ -137,23 +137,23 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The Optimizer Statistics Advisor execution script.
         /// </summary>
-        public readonly string Script;
+        public readonly string? Script;
         public readonly string TaskName;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult(
             string executionName,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 
-            string script,
+            string? script,
 
             string taskName)
         {

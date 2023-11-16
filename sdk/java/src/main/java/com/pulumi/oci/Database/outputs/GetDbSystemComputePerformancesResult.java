@@ -18,14 +18,14 @@ public final class GetDbSystemComputePerformancesResult {
      * @return The list of db_system_compute_performances.
      * 
      */
-    private List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
+    private @Nullable List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
     private @Nullable String dbSystemShape;
     private @Nullable List<GetDbSystemComputePerformancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDbSystemComputePerformancesResult() {}
     /**
@@ -33,7 +33,7 @@ public final class GetDbSystemComputePerformancesResult {
      * 
      */
     public List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances() {
-        return this.dbSystemComputePerformances;
+        return this.dbSystemComputePerformances == null ? List.of() : this.dbSystemComputePerformances;
     }
     public Optional<String> dbSystemShape() {
         return Optional.ofNullable(this.dbSystemShape);
@@ -45,8 +45,8 @@ public final class GetDbSystemComputePerformancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,10 +58,10 @@ public final class GetDbSystemComputePerformancesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
+        private @Nullable List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances;
         private @Nullable String dbSystemShape;
         private @Nullable List<GetDbSystemComputePerformancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDbSystemComputePerformancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,8 +72,8 @@ public final class GetDbSystemComputePerformancesResult {
         }
 
         @CustomType.Setter
-        public Builder dbSystemComputePerformances(List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances) {
-            this.dbSystemComputePerformances = Objects.requireNonNull(dbSystemComputePerformances);
+        public Builder dbSystemComputePerformances(@Nullable List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances) {
+            this.dbSystemComputePerformances = dbSystemComputePerformances;
             return this;
         }
         public Builder dbSystemComputePerformances(GetDbSystemComputePerformancesDbSystemComputePerformance... dbSystemComputePerformances) {
@@ -93,8 +93,8 @@ public final class GetDbSystemComputePerformancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDbSystemComputePerformancesResult build() {

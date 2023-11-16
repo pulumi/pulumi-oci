@@ -81,15 +81,15 @@ export class Log extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that the resource belongs to.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Log object configuration.
      */
-    public readonly configuration!: pulumi.Output<outputs.Logging.LogConfiguration>;
+    public readonly configuration!: pulumi.Output<outputs.Logging.LogConfiguration | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
@@ -97,11 +97,11 @@ export class Log extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    public readonly isEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) OCID of a log group to work with.
      */
@@ -117,23 +117,23 @@ export class Log extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionDuration!: pulumi.Output<number>;
+    public readonly retentionDuration!: pulumi.Output<number | undefined>;
     /**
      * The pipeline state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the tenancy.
      */
-    public /*out*/ readonly tenancyId!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyId!: pulumi.Output<string | undefined>;
     /**
      * Time the resource was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time the resource was last modified.
      */
-    public /*out*/ readonly timeLastModified!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastModified!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Log resource with the given unique name, arguments, and options.

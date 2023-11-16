@@ -67,13 +67,13 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this URL List belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// Total count of URLs in the URL List
         /// </summary>
         [Output("totalUrls")]
-        public Output<int> TotalUrls { get; private set; } = null!;
+        public Output<int?> TotalUrls { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of urls.

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The id of the attached DataSource.
         /// </summary>
-        public readonly string DataSourceId;
+        public readonly string? DataSourceId;
         /// <summary>
         /// ResponderRule description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Details of ResponderRule.
         /// </summary>
@@ -28,15 +28,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// detector for the rule
         /// </summary>
-        public readonly string Detector;
+        public readonly string? Detector;
         /// <summary>
         /// The unique identifier of the detector rule.
         /// </summary>
-        public readonly string DetectorRuleId;
+        public readonly string? DetectorRuleId;
         /// <summary>
         /// ResponderRule display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Data Source entities mapping for a Detector Rule
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// List of cloudguard managed list types related to this rule
         /// </summary>
@@ -52,59 +52,59 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Recommendation for TargetDetectorRecipeDetectorRule
         /// </summary>
-        public readonly string Recommendation;
+        public readonly string? Recommendation;
         /// <summary>
         /// resource type of the configuration to which the rule is applied
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// service type of the configuration to which the rule is applied
         /// </summary>
-        public readonly string ServiceType;
+        public readonly string? ServiceType;
         /// <summary>
         /// The current state of the ResponderRule.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the target was created. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the target was updated. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeDetectorRuleResult(
-            string dataSourceId,
+            string? dataSourceId,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult> details,
 
-            string detector,
+            string? detector,
 
-            string detectorRuleId,
+            string? detectorRuleId,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult> entitiesMappings,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> managedListTypes,
 
-            string recommendation,
+            string? recommendation,
 
-            string resourceType,
+            string? resourceType,
 
-            string serviceType,
+            string? serviceType,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             DataSourceId = dataSourceId;
             Description = description;

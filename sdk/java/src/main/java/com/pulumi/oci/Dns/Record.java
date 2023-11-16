@@ -106,14 +106,14 @@ public class Record extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isProtected;
+    private Output</* @Nullable */ Boolean> isProtected;
 
     /**
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      * 
      */
-    public Output<Boolean> isProtected() {
-        return this.isProtected;
+    public Output<Optional<Boolean>> isProtected() {
+        return Codegen.optional(this.isProtected);
     }
     /**
      * (Updatable) The record&#39;s data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
@@ -134,28 +134,28 @@ public class Record extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="recordHash", refs={String.class}, tree="[0]")
-    private Output<String> recordHash;
+    private Output</* @Nullable */ String> recordHash;
 
     /**
      * @return A unique identifier for the record within its zone.
      * 
      */
-    public Output<String> recordHash() {
-        return this.recordHash;
+    public Output<Optional<String>> recordHash() {
+        return Codegen.optional(this.recordHash);
     }
     /**
      * The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
     @Export(name="rrsetVersion", refs={String.class}, tree="[0]")
-    private Output<String> rrsetVersion;
+    private Output</* @Nullable */ String> rrsetVersion;
 
     /**
      * @return The latest version of the record&#39;s zone in which its RRSet differs from the preceding version.
      * 
      */
-    public Output<String> rrsetVersion() {
-        return this.rrsetVersion;
+    public Output<Optional<String>> rrsetVersion() {
+        return Codegen.optional(this.rrsetVersion);
     }
     /**
      * The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).

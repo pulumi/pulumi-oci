@@ -89,34 +89,22 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
 
     @property
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
-    def autonomous_data_storage_size_in_tbs(self) -> float:
-        """
-        The data disk group size allocated for Autonomous Databases, in TBs.
-        """
+    def autonomous_data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="autonomousVmResourceUsages")
-    def autonomous_vm_resource_usages(self) -> Sequence['outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult']:
-        """
-        List of Autonomous VM resource usages.
-        """
+    def autonomous_vm_resource_usages(self) -> Optional[Sequence['outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult']]:
         return pulumi.get(self, "autonomous_vm_resource_usages")
 
     @property
     @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
-    def available_autonomous_data_storage_size_in_tbs(self) -> float:
-        """
-        The data disk group size available for Autonomous Databases, in TBs.
-        """
+    def available_autonomous_data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="availableCpus")
-    def available_cpus(self) -> float:
-        """
-        The number of CPU cores available.
-        """
+    def available_cpus(self) -> Optional[float]:
         return pulumi.get(self, "available_cpus")
 
     @property
@@ -126,31 +114,22 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The local node storage allocated in GBs.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataStorageInTbs")
-    def exadata_storage_in_tbs(self) -> float:
-        """
-        Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
-        """
+    def exadata_storage_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "exadata_storage_in_tbs")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -158,98 +137,62 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
 
     @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> int:
-        """
-        The amount of memory (in GBs) to be enabled per each CPU core.
-        """
+    def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The memory allocated in GBs.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="nonProvisionableAutonomousContainerDatabases")
-    def non_provisionable_autonomous_container_databases(self) -> int:
-        """
-        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-        """
+    def non_provisionable_autonomous_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "non_provisionable_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionableAutonomousContainerDatabases")
-    def provisionable_autonomous_container_databases(self) -> int:
-        """
-        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-        """
+    def provisionable_autonomous_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "provisionable_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedAutonomousContainerDatabases")
-    def provisioned_autonomous_container_databases(self) -> int:
-        """
-        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
-        """
+    def provisioned_autonomous_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "provisioned_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedCpus")
-    def provisioned_cpus(self) -> float:
-        """
-        The number of CPUs provisioned in an Autonomous VM Cluster.
-        """
+    def provisioned_cpus(self) -> Optional[float]:
         return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
-    def reclaimable_cpus(self) -> float:
-        """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-        """
+    def reclaimable_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
-    def reserved_cpus(self) -> float:
-        """
-        The number of CPUs reserved in an Autonomous VM Cluster.
-        """
+    def reserved_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter(name="totalContainerDatabases")
-    def total_container_databases(self) -> int:
-        """
-        The total number of Autonomous Container Databases that can be created.
-        """
+    def total_container_databases(self) -> Optional[int]:
         return pulumi.get(self, "total_container_databases")
 
     @property
     @pulumi.getter(name="totalCpus")
-    def total_cpus(self) -> float:
-        """
-        The number of CPU cores enabled on the Cloud Autonomous VM cluster.
-        """
+    def total_cpus(self) -> Optional[float]:
         return pulumi.get(self, "total_cpus")
 
     @property
     @pulumi.getter(name="usedAutonomousDataStorageSizeInTbs")
-    def used_autonomous_data_storage_size_in_tbs(self) -> float:
-        """
-        The data disk group size used for Autonomous Databases, in TBs.
-        """
+    def used_autonomous_data_storage_size_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "used_autonomous_data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="usedCpus")
-    def used_cpus(self) -> float:
-        """
-        The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
-        """
+    def used_cpus(self) -> Optional[float]:
         return pulumi.get(self, "used_cpus")
 
 
@@ -285,21 +228,7 @@ class AwaitableGetCloudAutonomousVmClusterResourceUsageResult(GetCloudAutonomous
 def get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_id: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClusterResourceUsageResult:
     """
-    This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
-
-    Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_cluster_resource_usage = oci.Database.get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"])
-    ```
-
-
-    :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
@@ -334,20 +263,6 @@ def get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_i
 def get_cloud_autonomous_vm_cluster_resource_usage_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResourceUsageResult]:
     """
-    This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
-
-    Get the resource usage details for the specified Cloud Autonomous Exadata VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_cluster_resource_usage = oci.Database.get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"])
-    ```
-
-
-    :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

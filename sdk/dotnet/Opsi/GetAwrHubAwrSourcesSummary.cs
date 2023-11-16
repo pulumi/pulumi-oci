@@ -143,7 +143,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of AwrSource summary objects.
         /// </summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Opsi
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAwrHubAwrSourcesSummaryItemResult> items,
 

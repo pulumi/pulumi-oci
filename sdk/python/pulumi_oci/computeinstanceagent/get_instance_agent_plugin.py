@@ -54,7 +54,7 @@ class GetInstanceAgentPluginResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,18 +67,12 @@ class GetInstanceAgentPluginResult:
 
     @property
     @pulumi.getter
-    def message(self) -> str:
-        """
-        The optional message from the agent plugin
-        """
+    def message(self) -> Optional[str]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The plugin name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -88,18 +82,12 @@ class GetInstanceAgentPluginResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeLastUpdatedUtc")
-    def time_last_updated_utc(self) -> str:
-        """
-        The last update time of the plugin in UTC
-        """
+    def time_last_updated_utc(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated_utc")
 
 
@@ -124,23 +112,7 @@ def get_instance_agent_plugin(compartment_id: Optional[str] = None,
                               plugin_name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceAgentPluginResult:
     """
-    This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
-
-    The API to get information for a plugin.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=oci_computeinstanceagent_instanceagent["test_instanceagent"]["id"],
-        plugin_name=var["instance_agent_plugin_plugin_name"])
-    ```
-
-
-    :param str instanceagent_id: The OCID of the instance.
-    :param str plugin_name: The name of the plugin.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -166,22 +138,6 @@ def get_instance_agent_plugin_output(compartment_id: Optional[pulumi.Input[str]]
                                      plugin_name: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceAgentPluginResult]:
     """
-    This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
-
-    The API to get information for a plugin.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=oci_computeinstanceagent_instanceagent["test_instanceagent"]["id"],
-        plugin_name=var["instance_agent_plugin_plugin_name"])
-    ```
-
-
-    :param str instanceagent_id: The OCID of the instance.
-    :param str plugin_name: The name of the plugin.
+    Use this data source to access information about an existing resource.
     """
     ...

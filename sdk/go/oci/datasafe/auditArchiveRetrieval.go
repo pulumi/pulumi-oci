@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
@@ -69,27 +68,27 @@ type AuditArchiveRetrieval struct {
 	pulumi.CustomResourceState
 
 	// Total count of audit events to be retrieved from the archive for the specified date range.
-	AuditEventCount pulumi.StringOutput `pulumi:"auditEventCount"`
+	AuditEventCount pulumi.StringPtrOutput `pulumi:"auditEventCount"`
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the archive retrieval.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// End month of the archive retrieval, in the format defined by RFC3339.
 	EndDate pulumi.StringOutput `pulumi:"endDate"`
 	// The Error details of a failed archive retrieval.
-	ErrorInfo pulumi.StringOutput `pulumi:"errorInfo"`
+	ErrorInfo pulumi.StringPtrOutput `pulumi:"errorInfo"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the archive retrieval.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Start month of the archive retrieval, in the format defined by RFC3339.
 	StartDate pulumi.StringOutput `pulumi:"startDate"`
 	// The current state of the archive retrieval.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
@@ -98,11 +97,11 @@ type AuditArchiveRetrieval struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-	TimeCompleted pulumi.StringOutput `pulumi:"timeCompleted"`
+	TimeCompleted pulumi.StringPtrOutput `pulumi:"timeCompleted"`
 	// The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-	TimeOfExpiry pulumi.StringOutput `pulumi:"timeOfExpiry"`
+	TimeOfExpiry pulumi.StringPtrOutput `pulumi:"timeOfExpiry"`
 	// The date time when archive retrieval was requested, in the format defined by RFC3339.
-	TimeRequested pulumi.StringOutput `pulumi:"timeRequested"`
+	TimeRequested pulumi.StringPtrOutput `pulumi:"timeRequested"`
 }
 
 // NewAuditArchiveRetrieval registers a new resource with the given unique name, arguments, and options.
@@ -294,12 +293,6 @@ func (i *AuditArchiveRetrieval) ToAuditArchiveRetrievalOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(AuditArchiveRetrievalOutput)
 }
 
-func (i *AuditArchiveRetrieval) ToOutput(ctx context.Context) pulumix.Output[*AuditArchiveRetrieval] {
-	return pulumix.Output[*AuditArchiveRetrieval]{
-		OutputState: i.ToAuditArchiveRetrievalOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AuditArchiveRetrievalArrayInput is an input type that accepts AuditArchiveRetrievalArray and AuditArchiveRetrievalArrayOutput values.
 // You can construct a concrete instance of `AuditArchiveRetrievalArrayInput` via:
 //
@@ -323,12 +316,6 @@ func (i AuditArchiveRetrievalArray) ToAuditArchiveRetrievalArrayOutput() AuditAr
 
 func (i AuditArchiveRetrievalArray) ToAuditArchiveRetrievalArrayOutputWithContext(ctx context.Context) AuditArchiveRetrievalArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AuditArchiveRetrievalArrayOutput)
-}
-
-func (i AuditArchiveRetrievalArray) ToOutput(ctx context.Context) pulumix.Output[[]*AuditArchiveRetrieval] {
-	return pulumix.Output[[]*AuditArchiveRetrieval]{
-		OutputState: i.ToAuditArchiveRetrievalArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AuditArchiveRetrievalMapInput is an input type that accepts AuditArchiveRetrievalMap and AuditArchiveRetrievalMapOutput values.
@@ -356,12 +343,6 @@ func (i AuditArchiveRetrievalMap) ToAuditArchiveRetrievalMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AuditArchiveRetrievalMapOutput)
 }
 
-func (i AuditArchiveRetrievalMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditArchiveRetrieval] {
-	return pulumix.Output[map[string]*AuditArchiveRetrieval]{
-		OutputState: i.ToAuditArchiveRetrievalMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AuditArchiveRetrievalOutput struct{ *pulumi.OutputState }
 
 func (AuditArchiveRetrievalOutput) ElementType() reflect.Type {
@@ -376,15 +357,9 @@ func (o AuditArchiveRetrievalOutput) ToAuditArchiveRetrievalOutputWithContext(ct
 	return o
 }
 
-func (o AuditArchiveRetrievalOutput) ToOutput(ctx context.Context) pulumix.Output[*AuditArchiveRetrieval] {
-	return pulumix.Output[*AuditArchiveRetrieval]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total count of audit events to be retrieved from the archive for the specified date range.
-func (o AuditArchiveRetrievalOutput) AuditEventCount() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.AuditEventCount }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) AuditEventCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.AuditEventCount }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the archival retrieval.
@@ -398,13 +373,13 @@ func (o AuditArchiveRetrievalOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the archive retrieval.
-func (o AuditArchiveRetrievalOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-func (o AuditArchiveRetrievalOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // End month of the archive retrieval, in the format defined by RFC3339.
@@ -413,8 +388,8 @@ func (o AuditArchiveRetrievalOutput) EndDate() pulumi.StringOutput {
 }
 
 // The Error details of a failed archive retrieval.
-func (o AuditArchiveRetrievalOutput) ErrorInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.ErrorInfo }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) ErrorInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.ErrorInfo }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -423,8 +398,8 @@ func (o AuditArchiveRetrievalOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the current state of the archive retrieval.
-func (o AuditArchiveRetrievalOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Start month of the archive retrieval, in the format defined by RFC3339.
@@ -433,8 +408,8 @@ func (o AuditArchiveRetrievalOutput) StartDate() pulumi.StringOutput {
 }
 
 // The current state of the archive retrieval.
-func (o AuditArchiveRetrievalOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -451,18 +426,18 @@ func (o AuditArchiveRetrievalOutput) TargetId() pulumi.StringOutput {
 }
 
 // The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-func (o AuditArchiveRetrievalOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-func (o AuditArchiveRetrievalOutput) TimeOfExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.TimeOfExpiry }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) TimeOfExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.TimeOfExpiry }).(pulumi.StringPtrOutput)
 }
 
 // The date time when archive retrieval was requested, in the format defined by RFC3339.
-func (o AuditArchiveRetrievalOutput) TimeRequested() pulumi.StringOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringOutput { return v.TimeRequested }).(pulumi.StringOutput)
+func (o AuditArchiveRetrievalOutput) TimeRequested() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringPtrOutput { return v.TimeRequested }).(pulumi.StringPtrOutput)
 }
 
 type AuditArchiveRetrievalArrayOutput struct{ *pulumi.OutputState }
@@ -477,12 +452,6 @@ func (o AuditArchiveRetrievalArrayOutput) ToAuditArchiveRetrievalArrayOutput() A
 
 func (o AuditArchiveRetrievalArrayOutput) ToAuditArchiveRetrievalArrayOutputWithContext(ctx context.Context) AuditArchiveRetrievalArrayOutput {
 	return o
-}
-
-func (o AuditArchiveRetrievalArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AuditArchiveRetrieval] {
-	return pulumix.Output[[]*AuditArchiveRetrieval]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuditArchiveRetrievalArrayOutput) Index(i pulumi.IntInput) AuditArchiveRetrievalOutput {
@@ -503,12 +472,6 @@ func (o AuditArchiveRetrievalMapOutput) ToAuditArchiveRetrievalMapOutput() Audit
 
 func (o AuditArchiveRetrievalMapOutput) ToAuditArchiveRetrievalMapOutputWithContext(ctx context.Context) AuditArchiveRetrievalMapOutput {
 	return o
-}
-
-func (o AuditArchiveRetrievalMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AuditArchiveRetrieval] {
-	return pulumix.Output[map[string]*AuditArchiveRetrieval]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AuditArchiveRetrievalMapOutput) MapIndex(k pulumi.StringInput) AuditArchiveRetrievalOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
@@ -13,27 +15,27 @@ public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
      * @return True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      * 
      */
-    private Boolean isIgnoreErrors;
+    private @Nullable Boolean isIgnoreErrors;
     /**
      * @return True to skip the Pre-Migration Advisor execution. Default is false.
      * 
      */
-    private Boolean isSkipAdvisor;
+    private @Nullable Boolean isSkipAdvisor;
 
     private GetMigrationsMigrationCollectionItemAdvisorSetting() {}
     /**
      * @return True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
      * 
      */
-    public Boolean isIgnoreErrors() {
-        return this.isIgnoreErrors;
+    public Optional<Boolean> isIgnoreErrors() {
+        return Optional.ofNullable(this.isIgnoreErrors);
     }
     /**
      * @return True to skip the Pre-Migration Advisor execution. Default is false.
      * 
      */
-    public Boolean isSkipAdvisor() {
-        return this.isSkipAdvisor;
+    public Optional<Boolean> isSkipAdvisor() {
+        return Optional.ofNullable(this.isSkipAdvisor);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isIgnoreErrors;
-        private Boolean isSkipAdvisor;
+        private @Nullable Boolean isIgnoreErrors;
+        private @Nullable Boolean isSkipAdvisor;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemAdvisorSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
         }
 
         @CustomType.Setter
-        public Builder isIgnoreErrors(Boolean isIgnoreErrors) {
-            this.isIgnoreErrors = Objects.requireNonNull(isIgnoreErrors);
+        public Builder isIgnoreErrors(@Nullable Boolean isIgnoreErrors) {
+            this.isIgnoreErrors = isIgnoreErrors;
             return this;
         }
         @CustomType.Setter
-        public Builder isSkipAdvisor(Boolean isSkipAdvisor) {
-            this.isSkipAdvisor = Objects.requireNonNull(isSkipAdvisor);
+        public Builder isSkipAdvisor(@Nullable Boolean isSkipAdvisor) {
+            this.isSkipAdvisor = isSkipAdvisor;
             return this;
         }
         public GetMigrationsMigrationCollectionItemAdvisorSetting build() {

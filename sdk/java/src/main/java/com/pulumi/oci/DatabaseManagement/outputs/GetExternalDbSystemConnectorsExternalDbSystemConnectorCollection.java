@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection {
-    private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items;
+    private @Nullable List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items;
 
     private GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection() {}
     public List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items;
+        private @Nullable List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items;
         public Builder() {}
         public Builder(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
         }
 
         @CustomType.Setter
-        public Builder items(List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem... items) {

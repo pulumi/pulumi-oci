@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig {
@@ -14,27 +16,27 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndH
      * @return This value is the desired number of nodes in the cluster.
      * 
      */
-    private Integer targetNodeCount;
+    private @Nullable Integer targetNodeCount;
     /**
      * @return Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      * 
      */
-    private String timeRecurrence;
+    private @Nullable String timeRecurrence;
 
     private GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig() {}
     /**
      * @return This value is the desired number of nodes in the cluster.
      * 
      */
-    public Integer targetNodeCount() {
-        return this.targetNodeCount;
+    public Optional<Integer> targetNodeCount() {
+        return Optional.ofNullable(this.targetNodeCount);
     }
     /**
      * @return Day/time recurrence (specified following RFC 5545) at which to trigger autoscaling action. Currently only WEEKLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR and BYMINUTE fields. Other fields are not supported.
      * 
      */
-    public String timeRecurrence() {
-        return this.timeRecurrence;
+    public Optional<String> timeRecurrence() {
+        return Optional.ofNullable(this.timeRecurrence);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndH
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer targetNodeCount;
-        private String timeRecurrence;
+        private @Nullable Integer targetNodeCount;
+        private @Nullable String timeRecurrence;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndH
         }
 
         @CustomType.Setter
-        public Builder targetNodeCount(Integer targetNodeCount) {
-            this.targetNodeCount = Objects.requireNonNull(targetNodeCount);
+        public Builder targetNodeCount(@Nullable Integer targetNodeCount) {
+            this.targetNodeCount = targetNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRecurrence(String timeRecurrence) {
-            this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
+        public Builder timeRecurrence(@Nullable String timeRecurrence) {
+            this.timeRecurrence = timeRecurrence;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {

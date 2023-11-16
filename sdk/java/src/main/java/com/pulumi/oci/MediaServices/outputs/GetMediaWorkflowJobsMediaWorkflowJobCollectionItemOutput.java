@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
@@ -13,63 +15,63 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
      * @return Type of job output.
      * 
      */
-    private String assetType;
+    private @Nullable String assetType;
     /**
      * @return The bucket name of the job output.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return unique MediaWorkflowJob identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The namespace name of the job output.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The object name of the job output.
      * 
      */
-    private String object;
+    private @Nullable String object;
 
     private GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput() {}
     /**
      * @return Type of job output.
      * 
      */
-    public String assetType() {
-        return this.assetType;
+    public Optional<String> assetType() {
+        return Optional.ofNullable(this.assetType);
     }
     /**
      * @return The bucket name of the job output.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return unique MediaWorkflowJob identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The namespace name of the job output.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The object name of the job output.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String assetType;
-        private String bucket;
-        private String id;
-        private String namespace;
-        private String object;
+        private @Nullable String assetType;
+        private @Nullable String bucket;
+        private @Nullable String id;
+        private @Nullable String namespace;
+        private @Nullable String object;
         public Builder() {}
         public Builder(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
         }
 
         @CustomType.Setter
-        public Builder assetType(String assetType) {
-            this.assetType = Objects.requireNonNull(assetType);
+        public Builder assetType(@Nullable String assetType) {
+            this.assetType = assetType;
             return this;
         }
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         public GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput build() {

@@ -64,9 +64,6 @@ class GetRecommendationsResult:
     @property
     @pulumi.getter(name="categoryId")
     def category_id(self) -> Optional[str]:
-        """
-        The unique OCID associated with the category.
-        """
         return pulumi.get(self, "category_id")
 
     @property
@@ -82,9 +79,6 @@ class GetRecommendationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -99,7 +93,7 @@ class GetRecommendationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -113,33 +107,21 @@ class GetRecommendationsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the profile level.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationCollections")
-    def recommendation_collections(self) -> Sequence['outputs.GetRecommendationsRecommendationCollectionResult']:
-        """
-        The list of recommendation_collection.
-        """
+    def recommendation_collections(self) -> Optional[Sequence['outputs.GetRecommendationsRecommendationCollectionResult']]:
         return pulumi.get(self, "recommendation_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The recommendation's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        The current status of the recommendation.
-        """
         return pulumi.get(self, "status")
 
 
@@ -175,49 +157,7 @@ def get_recommendations(category_id: Optional[str] = None,
                         status: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecommendationsResult:
     """
-    This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the Cloud Advisor recommendations that are currently supported.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_compartment_id_in_subtree"],
-        category_id=oci_optimizer_category["test_category"]["id"],
-        category_name=oci_optimizer_category["test_category"]["name"],
-        child_tenancy_ids=var["recommendation_child_tenancy_ids"],
-        include_organization=var["recommendation_include_organization"],
-        name=var["recommendation_name"],
-        state=var["recommendation_state"],
-        status=var["recommendation_status"])
-    ```
-
-
-    :param str category_id: The unique OCID associated with the category.
-    :param str category_name: Optional. A filter that returns results that match the category name specified.
-    :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
-           
-           If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
-           
-           It is important to note that if you are setting the includeOrganization parameter value as true and  also populating the childTenancyIds parameter with a list of child tenancies, the request will fail. The childTenancyIds and includeOrganization should be used exclusively.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param bool include_organization: When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
-           
-           Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
-    :param str status: A filter that returns recommendations that match the status specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['categoryId'] = category_id
@@ -261,48 +201,6 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
                                status: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationsResult]:
     """
-    This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the Cloud Advisor recommendations that are currently supported.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_compartment_id_in_subtree"],
-        category_id=oci_optimizer_category["test_category"]["id"],
-        category_name=oci_optimizer_category["test_category"]["name"],
-        child_tenancy_ids=var["recommendation_child_tenancy_ids"],
-        include_organization=var["recommendation_include_organization"],
-        name=var["recommendation_name"],
-        state=var["recommendation_state"],
-        status=var["recommendation_status"])
-    ```
-
-
-    :param str category_id: The unique OCID associated with the category.
-    :param str category_name: Optional. A filter that returns results that match the category name specified.
-    :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
-           
-           If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
-           
-           It is important to note that if you are setting the includeOrganization parameter value as true and  also populating the childTenancyIds parameter with a list of child tenancies, the request will fail. The childTenancyIds and includeOrganization should be used exclusively.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param bool include_organization: When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
-           
-           Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
-    :param str status: A filter that returns recommendations that match the status specified.
+    Use this data source to access information about an existing resource.
     """
     ...

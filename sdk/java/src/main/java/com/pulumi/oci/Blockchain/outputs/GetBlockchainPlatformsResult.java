@@ -18,7 +18,7 @@ public final class GetBlockchainPlatformsResult {
      * @return The list of blockchain_platform_collection.
      * 
      */
-    private List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections;
+    private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections;
     /**
      * @return Compartment Identifier
      * 
@@ -34,7 +34,7 @@ public final class GetBlockchainPlatformsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Platform Instance.
      * 
@@ -47,7 +47,7 @@ public final class GetBlockchainPlatformsResult {
      * 
      */
     public List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections() {
-        return this.blockchainPlatformCollections;
+        return this.blockchainPlatformCollections == null ? List.of() : this.blockchainPlatformCollections;
     }
     /**
      * @return Compartment Identifier
@@ -70,8 +70,8 @@ public final class GetBlockchainPlatformsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Platform Instance.
@@ -90,11 +90,11 @@ public final class GetBlockchainPlatformsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections;
+        private @Nullable List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBlockchainPlatformsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetBlockchainPlatformsResult defaults) {
@@ -108,8 +108,8 @@ public final class GetBlockchainPlatformsResult {
         }
 
         @CustomType.Setter
-        public Builder blockchainPlatformCollections(List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections) {
-            this.blockchainPlatformCollections = Objects.requireNonNull(blockchainPlatformCollections);
+        public Builder blockchainPlatformCollections(@Nullable List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections) {
+            this.blockchainPlatformCollections = blockchainPlatformCollections;
             return this;
         }
         public Builder blockchainPlatformCollections(GetBlockchainPlatformsBlockchainPlatformCollection... blockchainPlatformCollections) {
@@ -134,8 +134,8 @@ public final class GetBlockchainPlatformsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

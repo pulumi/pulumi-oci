@@ -47,11 +47,11 @@ export interface GetNamespaceStorageEncryptionKeyInfoResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * This is an array of encryption key info. There are at most 2 items in the list.
      */
-    readonly items: outputs.LogAnalytics.GetNamespaceStorageEncryptionKeyInfoItem[];
+    readonly items?: outputs.LogAnalytics.GetNamespaceStorageEncryptionKeyInfoItem[];
     readonly namespace: string;
 }
 /**

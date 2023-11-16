@@ -184,12 +184,12 @@ class NamespaceMetadata(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="defaultS3compartmentId")
-    def default_s3compartment_id(self) -> pulumi.Output[str]:
+    def default_s3compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "default_s3compartment_id")
 
     @property
     @pulumi.getter(name="defaultSwiftCompartmentId")
-    def default_swift_compartment_id(self) -> pulumi.Output[str]:
+    def default_swift_compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "default_swift_compartment_id")
 
     @property

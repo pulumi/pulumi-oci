@@ -18,12 +18,6 @@ class ConnectionAssignmentArgs:
                  deployment_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a ConnectionAssignment resource.
-        :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "deployment_id", deployment_id)
@@ -31,9 +25,6 @@ class ConnectionAssignmentArgs:
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
@@ -43,13 +34,6 @@ class ConnectionAssignmentArgs:
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
@@ -69,17 +53,6 @@ class _ConnectionAssignmentState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ConnectionAssignment resources.
-        :param pulumi.Input[str] alias_name: Credential store alias.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Possible lifecycle states for connection assignments.
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         if alias_name is not None:
             pulumi.set(__self__, "alias_name", alias_name)
@@ -99,9 +72,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter(name="aliasName")
     def alias_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Credential store alias.
-        """
         return pulumi.get(self, "alias_name")
 
     @alias_name.setter
@@ -111,9 +81,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -123,9 +90,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
         return pulumi.get(self, "connection_id")
 
     @connection_id.setter
@@ -135,13 +99,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
@@ -151,9 +108,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states for connection assignments.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -163,9 +117,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -175,9 +126,6 @@ class _ConnectionAssignmentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -194,37 +142,9 @@ class ConnectionAssignment(pulumi.CustomResource):
                  deployment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Connection Assignment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_connection_assignment = oci.golden_gate.ConnectionAssignment("testConnectionAssignment",
-            connection_id=oci_golden_gate_connection["test_connection"]["id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
-        ```
-
-        ## Import
-
-        ConnectionAssignments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
-        ```
-
+        Create a ConnectionAssignment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -233,29 +153,7 @@ class ConnectionAssignment(pulumi.CustomResource):
                  args: ConnectionAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Connection Assignment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_connection_assignment = oci.golden_gate.ConnectionAssignment("testConnectionAssignment",
-            connection_id=oci_golden_gate_connection["test_connection"]["id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
-        ```
-
-        ## Import
-
-        ConnectionAssignments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:GoldenGate/connectionAssignment:ConnectionAssignment test_connection_assignment "id"
-        ```
-
+        Create a ConnectionAssignment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ConnectionAssignmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -317,17 +215,6 @@ class ConnectionAssignment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alias_name: Credential store alias.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Possible lifecycle states for connection assignments.
-        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -344,61 +231,36 @@ class ConnectionAssignment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="aliasName")
-    def alias_name(self) -> pulumi.Output[str]:
-        """
-        Credential store alias.
-        """
+    def alias_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "alias_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
         return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Possible lifecycle states for connection assignments.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

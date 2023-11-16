@@ -105,7 +105,7 @@ export interface GetDataSourcesResult {
     /**
      * The list of data_source_collection.
      */
-    readonly dataSourceCollections: outputs.CloudGuard.GetDataSourcesDataSourceCollection[];
+    readonly dataSourceCollections?: outputs.CloudGuard.GetDataSourcesDataSourceCollection[];
     /**
      * Possible type of dataSourceFeed Provider(LoggingQuery)
      */
@@ -118,7 +118,7 @@ export interface GetDataSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Logging query type for data source (Sighting/Insight)
      */

@@ -67,9 +67,6 @@ class GetContainerSignaturesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -79,18 +76,12 @@ class GetContainerSignaturesResult:
 
     @property
     @pulumi.getter(name="containerImageSignatureCollections")
-    def container_image_signature_collections(self) -> Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionResult']:
-        """
-        The list of container_image_signature_collection.
-        """
+    def container_image_signature_collections(self) -> Optional[Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionResult']]:
         return pulumi.get(self, "container_image_signature_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -100,7 +91,7 @@ class GetContainerSignaturesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -114,25 +105,16 @@ class GetContainerSignaturesResult:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyId used to sign the container image.  Example: `ocid1.key.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @property
@@ -148,9 +130,6 @@ class GetContainerSignaturesResult:
     @property
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> Optional[str]:
-        """
-        The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-        """
         return pulumi.get(self, "signing_algorithm")
 
 
@@ -188,39 +167,7 @@ def get_container_signatures(compartment_id: Optional[str] = None,
                              signing_algorithm: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerSignaturesResult:
     """
-    This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
-
-    List container image signatures in an image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_image_signature_compartment_id_in_subtree"],
-        display_name=var["container_image_signature_display_name"],
-        image_digest=var["container_image_signature_image_digest"],
-        image_id=oci_core_image["test_image"]["id"],
-        kms_key_id=oci_kms_key["test_key"]["id"],
-        kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        repository_name=oci_artifacts_repository["test_repository"]["name"],
-        signing_algorithm=var["container_image_signature_signing_algorithm"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str image_digest: The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
-    :param str image_id: A filter to return a container image summary only for the specified container image OCID.
-    :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-    :param str kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-    :param str repository_id: A filter to return container images only for the specified container repository OCID.
-    :param str repository_name: A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-    :param str signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -267,38 +214,6 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] 
                                     signing_algorithm: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerSignaturesResult]:
     """
-    This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
-
-    List container image signatures in an image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_image_signature_compartment_id_in_subtree"],
-        display_name=var["container_image_signature_display_name"],
-        image_digest=var["container_image_signature_image_digest"],
-        image_id=oci_core_image["test_image"]["id"],
-        kms_key_id=oci_kms_key["test_key"]["id"],
-        kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        repository_name=oci_artifacts_repository["test_repository"]["name"],
-        signing_algorithm=var["container_image_signature_signing_algorithm"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str image_digest: The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
-    :param str image_id: A filter to return a container image summary only for the specified container image OCID.
-    :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-    :param str kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-    :param str repository_id: A filter to return container images only for the specified container repository OCID.
-    :param str repository_name: A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-    :param str signing_algorithm: The algorithm to be used for signing. These are the only supported signing algorithms for container images.
+    Use this data source to access information about an existing resource.
     """
     ...

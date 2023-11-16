@@ -74,7 +74,7 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
      */
-    public readonly cccUpgradeScheduleId!: pulumi.Output<string>;
+    public readonly cccUpgradeScheduleId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
      */
@@ -82,19 +82,19 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) A message describing the current connection state in more detail.
      */
-    public readonly connectionDetails!: pulumi.Output<string>;
+    public readonly connectionDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      */
-    public readonly connectionState!: pulumi.Output<string>;
+    public readonly connectionState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
@@ -102,35 +102,35 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
-    public /*out*/ readonly infrastructureInventories!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureInventory[]>;
+    public /*out*/ readonly infrastructureInventories!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureInventory[] | undefined>;
     /**
      * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
-    public /*out*/ readonly infrastructureNetworkConfigurations!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration[]>;
+    public /*out*/ readonly infrastructureNetworkConfigurations!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration[] | undefined>;
     /**
      * A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      */
-    public /*out*/ readonly provisioningFingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly provisioningFingerprint!: pulumi.Output<string | undefined>;
     /**
      * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      */
-    public /*out*/ readonly provisioningPin!: pulumi.Output<string>;
+    public /*out*/ readonly provisioningPin!: pulumi.Output<string | undefined>;
     /**
      * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      */
-    public /*out*/ readonly shortName!: pulumi.Output<string>;
+    public /*out*/ readonly shortName!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Compute Cloud@Customer infrastructure.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
      *
@@ -142,19 +142,19 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      */
-    public /*out*/ readonly upgradeInformations!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureUpgradeInformation[]>;
+    public /*out*/ readonly upgradeInformations!: pulumi.Output<outputs.ComputeCloud.AtCustomerCccInfrastructureUpgradeInformation[] | undefined>;
 
     /**
      * Create a AtCustomerCccInfrastructure resource with the given unique name, arguments, and options.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
@@ -91,7 +90,7 @@ type GetHistoriesResult struct {
 	// The list of history_collection.
 	HistoryCollections []GetHistoriesHistoryCollection `pulumi:"historyCollections"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name assigned to the resource.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -161,12 +160,6 @@ func (o GetHistoriesResultOutput) ToGetHistoriesResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesResult] {
-	return pulumix.Output[GetHistoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o GetHistoriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHistoriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -186,8 +179,8 @@ func (o GetHistoriesResultOutput) HistoryCollections() GetHistoriesHistoryCollec
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetHistoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHistoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHistoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHistoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name assigned to the resource.

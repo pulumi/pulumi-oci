@@ -68,7 +68,7 @@ export interface GetSensitiveDataModelSensitiveObjectsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The type of the database object that contains the sensitive column.
      */
@@ -85,7 +85,7 @@ export interface GetSensitiveDataModelSensitiveObjectsResult {
     /**
      * The list of sensitive_object_collection.
      */
-    readonly sensitiveObjectCollections: outputs.DataSafe.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection[];
+    readonly sensitiveObjectCollections?: outputs.DataSafe.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection[];
 }
 /**
  * This data source provides the list of Sensitive Data Model Sensitive Objects in Oracle Cloud Infrastructure Data Safe service.

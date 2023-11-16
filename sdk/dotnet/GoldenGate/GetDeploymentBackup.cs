@@ -110,128 +110,128 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// Possible Deployment backup types.
         /// </summary>
-        public readonly string BackupType;
+        public readonly string? BackupType;
         /// <summary>
         /// Name of the bucket where the object is to be uploaded in the object storage
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         public readonly string DeploymentBackupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
-        public readonly string DeploymentId;
+        public readonly string? DeploymentId;
         /// <summary>
         /// An object's Display Name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// True if this object is automatically created
         /// </summary>
-        public readonly bool IsAutomatic;
+        public readonly bool? IsAutomatic;
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Name of the object to be uploaded to object storage
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Version of OGG
         /// </summary>
-        public readonly string OggVersion;
+        public readonly string? OggVersion;
         /// <summary>
         /// The size of the backup stored in object storage (in bytes)
         /// </summary>
-        public readonly double SizeInBytes;
+        public readonly double? SizeInBytes;
         /// <summary>
         /// Possible lifecycle states.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeBackupFinished;
+        public readonly string? TimeBackupFinished;
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeOfBackup;
+        public readonly string? TimeOfBackup;
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDeploymentBackupResult(
-            string backupType,
+            string? backupType,
 
-            string bucket,
+            string? bucket,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             string deploymentBackupId,
 
-            string deploymentId,
+            string? deploymentId,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAutomatic,
+            bool? isAutomatic,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string oggVersion,
+            string? oggVersion,
 
-            double sizeInBytes,
+            double? sizeInBytes,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeBackupFinished,
+            string? timeBackupFinished,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfBackup,
+            string? timeOfBackup,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             BackupType = backupType;
             Bucket = bucket;

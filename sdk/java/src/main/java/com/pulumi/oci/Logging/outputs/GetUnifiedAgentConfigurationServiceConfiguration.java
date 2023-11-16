@@ -9,6 +9,8 @@ import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfiguration {
@@ -16,39 +18,39 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
      * @return Type of Unified Agent service configuration.
      * 
      */
-    private String configurationType;
+    private @Nullable String configurationType;
     /**
      * @return Unified monitoring agent operational metrics destination object.
      * 
      */
-    private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
+    private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
     /**
      * @return Logging source object.
      * 
      */
-    private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
+    private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
 
     private GetUnifiedAgentConfigurationServiceConfiguration() {}
     /**
      * @return Type of Unified Agent service configuration.
      * 
      */
-    public String configurationType() {
-        return this.configurationType;
+    public Optional<String> configurationType() {
+        return Optional.ofNullable(this.configurationType);
     }
     /**
      * @return Unified monitoring agent operational metrics destination object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations() {
-        return this.destinations;
+        return this.destinations == null ? List.of() : this.destinations;
     }
     /**
      * @return Logging source object.
      * 
      */
     public List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configurationType;
-        private List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
-        private List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
+        private @Nullable String configurationType;
+        private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations;
+        private @Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
         }
 
         @CustomType.Setter
-        public Builder configurationType(String configurationType) {
-            this.configurationType = Objects.requireNonNull(configurationType);
+        public Builder configurationType(@Nullable String configurationType) {
+            this.configurationType = configurationType;
             return this;
         }
         @CustomType.Setter
-        public Builder destinations(List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+        public Builder destinations(@Nullable List<GetUnifiedAgentConfigurationServiceConfigurationDestination> destinations) {
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetUnifiedAgentConfigurationServiceConfigurationDestination... destinations) {
             return destinations(List.of(destinations));
         }
         @CustomType.Setter
-        public Builder sources(List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetUnifiedAgentConfigurationServiceConfigurationSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetUnifiedAgentConfigurationServiceConfigurationSource... sources) {

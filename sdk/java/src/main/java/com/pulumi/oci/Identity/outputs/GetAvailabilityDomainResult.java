@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAvailabilityDomainResult {
@@ -14,7 +16,7 @@ public final class GetAvailabilityDomainResult {
      * @return The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
      * 
      */
-    private Integer adNumber;
+    private @Nullable Integer adNumber;
     /**
      * @return The OCID of the tenancy.
      * 
@@ -24,20 +26,20 @@ public final class GetAvailabilityDomainResult {
      * @return The OCID of the Availability Domain.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the Availability Domain.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAvailabilityDomainResult() {}
     /**
      * @return The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
      * 
      */
-    public Integer adNumber() {
-        return this.adNumber;
+    public Optional<Integer> adNumber() {
+        return Optional.ofNullable(this.adNumber);
     }
     /**
      * @return The OCID of the tenancy.
@@ -50,15 +52,15 @@ public final class GetAvailabilityDomainResult {
      * @return The OCID of the Availability Domain.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the Availability Domain.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetAvailabilityDomainResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer adNumber;
+        private @Nullable Integer adNumber;
         private String compartmentId;
-        private String id;
-        private String name;
+        private @Nullable String id;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAvailabilityDomainResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,8 +86,8 @@ public final class GetAvailabilityDomainResult {
         }
 
         @CustomType.Setter
-        public Builder adNumber(Integer adNumber) {
-            this.adNumber = Objects.requireNonNull(adNumber);
+        public Builder adNumber(@Nullable Integer adNumber) {
+            this.adNumber = adNumber;
             return this;
         }
         @CustomType.Setter
@@ -94,13 +96,13 @@ public final class GetAvailabilityDomainResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAvailabilityDomainResult build() {

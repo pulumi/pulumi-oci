@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -88,7 +89,7 @@ public class Export extends com.pulumi.resources.CustomResource {
      * 
      */
     @com.pulumi.core.annotations.Export(name="exportOptions", refs={List.class,ExportExportOption.class}, tree="[0,1]")
-    private Output<List<ExportExportOption>> exportOptions;
+    private Output</* @Nullable */ List<ExportExportOption>> exportOptions;
 
     /**
      * @return (Updatable) Export options for the new export. If left unspecified, defaults to:
@@ -101,8 +102,8 @@ public class Export extends com.pulumi.resources.CustomResource {
      * The export&#39;s `exportOptions` can be changed after creation using the `UpdateExport` operation.
      * 
      */
-    public Output<List<ExportExportOption>> exportOptions() {
-        return this.exportOptions;
+    public Output<Optional<List<ExportExportOption>>> exportOptions() {
+        return Codegen.optional(this.exportOptions);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s export set.
@@ -137,14 +138,14 @@ public class Export extends com.pulumi.resources.CustomResource {
      * 
      */
     @com.pulumi.core.annotations.Export(name="isIdmapGroupsForSysAuth", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isIdmapGroupsForSysAuth;
+    private Output</* @Nullable */ Boolean> isIdmapGroupsForSysAuth;
 
     /**
      * @return (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request&#39;s RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      * 
      */
-    public Output<Boolean> isIdmapGroupsForSysAuth() {
-        return this.isIdmapGroupsForSysAuth;
+    public Output<Optional<Boolean>> isIdmapGroupsForSysAuth() {
+        return Codegen.optional(this.isIdmapGroupsForSysAuth);
     }
     /**
      * Path used to access the associated file system.
@@ -179,28 +180,28 @@ public class Export extends com.pulumi.resources.CustomResource {
      * 
      */
     @com.pulumi.core.annotations.Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of this export.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @com.pulumi.core.annotations.Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
@@ -105,8 +104,8 @@ type GetRecommendationsResult struct {
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetRecommendationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IncludeOrganization *bool  `pulumi:"includeOrganization"`
+	Id                  *string `pulumi:"id"`
+	IncludeOrganization *bool   `pulumi:"includeOrganization"`
 	// The name of the profile level.
 	Name *string `pulumi:"name"`
 	// The list of recommendation_collection.
@@ -184,12 +183,6 @@ func (o GetRecommendationsResultOutput) ToGetRecommendationsResultOutputWithCont
 	return o
 }
 
-func (o GetRecommendationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsResult] {
-	return pulumix.Output[GetRecommendationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique OCID associated with the category.
 func (o GetRecommendationsResultOutput) CategoryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRecommendationsResult) *string { return v.CategoryId }).(pulumi.StringPtrOutput)
@@ -217,8 +210,8 @@ func (o GetRecommendationsResultOutput) Filters() GetRecommendationsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRecommendationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecommendationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRecommendationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecommendationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRecommendationsResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {

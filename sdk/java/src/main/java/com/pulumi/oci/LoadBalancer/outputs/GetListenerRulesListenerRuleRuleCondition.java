@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenerRulesListenerRuleRuleCondition {
@@ -13,12 +15,12 @@ public final class GetListenerRulesListenerRuleRuleCondition {
      * @return The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
-    private String attributeName;
+    private @Nullable String attributeName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet must match.
      * 
      */
-    private String attributeValue;
+    private @Nullable String attributeValue;
     /**
      * @return A string that specifies how to compare the PathMatchCondition object&#39;s `attributeValue` string to the incoming URI.
      * *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
@@ -27,22 +29,22 @@ public final class GetListenerRulesListenerRuleRuleCondition {
      * *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
      * 
      */
-    private String operator;
+    private @Nullable String operator;
 
     private GetListenerRulesListenerRuleRuleCondition() {}
     /**
      * @return The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
-    public String attributeName() {
-        return this.attributeName;
+    public Optional<String> attributeName() {
+        return Optional.ofNullable(this.attributeName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet must match.
      * 
      */
-    public String attributeValue() {
-        return this.attributeValue;
+    public Optional<String> attributeValue() {
+        return Optional.ofNullable(this.attributeValue);
     }
     /**
      * @return A string that specifies how to compare the PathMatchCondition object&#39;s `attributeValue` string to the incoming URI.
@@ -52,8 +54,8 @@ public final class GetListenerRulesListenerRuleRuleCondition {
      * *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
      * 
      */
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
 
     public static Builder builder() {
@@ -65,9 +67,9 @@ public final class GetListenerRulesListenerRuleRuleCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String attributeName;
-        private String attributeValue;
-        private String operator;
+        private @Nullable String attributeName;
+        private @Nullable String attributeValue;
+        private @Nullable String operator;
         public Builder() {}
         public Builder(GetListenerRulesListenerRuleRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -77,18 +79,18 @@ public final class GetListenerRulesListenerRuleRuleCondition {
         }
 
         @CustomType.Setter
-        public Builder attributeName(String attributeName) {
-            this.attributeName = Objects.requireNonNull(attributeName);
+        public Builder attributeName(@Nullable String attributeName) {
+            this.attributeName = attributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder attributeValue(String attributeValue) {
-            this.attributeValue = Objects.requireNonNull(attributeValue);
+        public Builder attributeValue(@Nullable String attributeValue) {
+            this.attributeValue = attributeValue;
             return this;
         }
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         public GetListenerRulesListenerRuleRuleCondition build() {

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
@@ -14,17 +15,17 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
      * @return Allowed phase two authentication algorithms.
      * 
      */
-    private List<String> authenticationAlgorithms;
+    private @Nullable List<String> authenticationAlgorithms;
     /**
      * @return Allowed phase one Diffie-Hellman groups.
      * 
      */
-    private List<String> dhGroups;
+    private @Nullable List<String> dhGroups;
     /**
      * @return Allowed phase two encryption algorithms.
      * 
      */
-    private List<String> encryptionAlgorithms;
+    private @Nullable List<String> encryptionAlgorithms;
 
     private GetIpsecAlgorithmAllowedPhaseOneParameter() {}
     /**
@@ -32,21 +33,21 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
      * 
      */
     public List<String> authenticationAlgorithms() {
-        return this.authenticationAlgorithms;
+        return this.authenticationAlgorithms == null ? List.of() : this.authenticationAlgorithms;
     }
     /**
      * @return Allowed phase one Diffie-Hellman groups.
      * 
      */
     public List<String> dhGroups() {
-        return this.dhGroups;
+        return this.dhGroups == null ? List.of() : this.dhGroups;
     }
     /**
      * @return Allowed phase two encryption algorithms.
      * 
      */
     public List<String> encryptionAlgorithms() {
-        return this.encryptionAlgorithms;
+        return this.encryptionAlgorithms == null ? List.of() : this.encryptionAlgorithms;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> authenticationAlgorithms;
-        private List<String> dhGroups;
-        private List<String> encryptionAlgorithms;
+        private @Nullable List<String> authenticationAlgorithms;
+        private @Nullable List<String> dhGroups;
+        private @Nullable List<String> encryptionAlgorithms;
         public Builder() {}
         public Builder(GetIpsecAlgorithmAllowedPhaseOneParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,24 +71,24 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
         }
 
         @CustomType.Setter
-        public Builder authenticationAlgorithms(List<String> authenticationAlgorithms) {
-            this.authenticationAlgorithms = Objects.requireNonNull(authenticationAlgorithms);
+        public Builder authenticationAlgorithms(@Nullable List<String> authenticationAlgorithms) {
+            this.authenticationAlgorithms = authenticationAlgorithms;
             return this;
         }
         public Builder authenticationAlgorithms(String... authenticationAlgorithms) {
             return authenticationAlgorithms(List.of(authenticationAlgorithms));
         }
         @CustomType.Setter
-        public Builder dhGroups(List<String> dhGroups) {
-            this.dhGroups = Objects.requireNonNull(dhGroups);
+        public Builder dhGroups(@Nullable List<String> dhGroups) {
+            this.dhGroups = dhGroups;
             return this;
         }
         public Builder dhGroups(String... dhGroups) {
             return dhGroups(List.of(dhGroups));
         }
         @CustomType.Setter
-        public Builder encryptionAlgorithms(List<String> encryptionAlgorithms) {
-            this.encryptionAlgorithms = Objects.requireNonNull(encryptionAlgorithms);
+        public Builder encryptionAlgorithms(@Nullable List<String> encryptionAlgorithms) {
+            this.encryptionAlgorithms = encryptionAlgorithms;
             return this;
         }
         public Builder encryptionAlgorithms(String... encryptionAlgorithms) {

@@ -86,7 +86,7 @@ export interface GetJobExecutionsStatusResult {
     /**
      * A list of JobExecutionsSummary objects.
      */
-    readonly items: outputs.DatabaseManagement.GetJobExecutionsStatusItem[];
+    readonly items?: outputs.DatabaseManagement.GetJobExecutionsStatusItem[];
     readonly managedDatabaseGroupId?: string;
     readonly managedDatabaseId?: string;
     readonly name?: string;

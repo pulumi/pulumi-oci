@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Opensearch.Outputs
         /// <summary>
         /// The version of OpenSearch.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
-        private GetOpensearchVersionItemResult(string version)
+        private GetOpensearchVersionItemResult(string? version)
         {
             Version = version;
         }

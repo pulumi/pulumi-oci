@@ -16,35 +16,35 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The earned rewards for the product.
         /// </summary>
-        public readonly double EarnedRewards;
+        public readonly double? EarnedRewards;
         /// <summary>
         /// The boolean parameter to indicate if the product is eligible to earn rewards.
         /// </summary>
-        public readonly bool IsEligibleToEarnRewards;
+        public readonly bool? IsEligibleToEarnRewards;
         /// <summary>
         /// The rate card product name.
         /// </summary>
-        public readonly string ProductName;
+        public readonly string? ProductName;
         /// <summary>
         /// The rate card product number.
         /// </summary>
-        public readonly string ProductNumber;
+        public readonly string? ProductNumber;
         /// <summary>
         /// The rate card product usage amount.
         /// </summary>
-        public readonly double UsageAmount;
+        public readonly double? UsageAmount;
 
         [OutputConstructor]
         private GetSubscriptionProductItemResult(
-            double earnedRewards,
+            double? earnedRewards,
 
-            bool isEligibleToEarnRewards,
+            bool? isEligibleToEarnRewards,
 
-            string productName,
+            string? productName,
 
-            string productNumber,
+            string? productNumber,
 
-            double usageAmount)
+            double? usageAmount)
         {
             EarnedRewards = earnedRewards;
             IsEligibleToEarnRewards = isEligibleToEarnRewards;

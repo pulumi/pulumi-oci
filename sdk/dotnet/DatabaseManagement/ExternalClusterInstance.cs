@@ -29,37 +29,37 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         /// </summary>
         [Output("adrHomeDirectory")]
-        public Output<string> AdrHomeDirectory { get; private set; } = null!;
+        public Output<string?> AdrHomeDirectory { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the external cluster instance.
         /// </summary>
         [Output("componentName")]
-        public Output<string> ComponentName { get; private set; } = null!;
+        public Output<string?> ComponentName { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle base location of Cluster Ready Services (CRS).
         /// </summary>
         [Output("crsBaseDirectory")]
-        public Output<string> CrsBaseDirectory { get; private set; } = null!;
+        public Output<string?> CrsBaseDirectory { get; private set; } = null!;
 
         /// <summary>
         /// The user-friendly name for the cluster instance. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
         /// </summary>
         [Output("externalClusterId")]
-        public Output<string> ExternalClusterId { get; private set; } = null!;
+        public Output<string?> ExternalClusterId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -75,55 +75,55 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("externalConnectorId")]
-        public Output<string> ExternalConnectorId { get; private set; } = null!;
+        public Output<string?> ExternalConnectorId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         /// </summary>
         [Output("externalDbNodeId")]
-        public Output<string> ExternalDbNodeId { get; private set; } = null!;
+        public Output<string?> ExternalDbNodeId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
         /// </summary>
         [Output("externalDbSystemId")]
-        public Output<string> ExternalDbSystemId { get; private set; } = null!;
+        public Output<string?> ExternalDbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// The name of the host on which the cluster instance is running.
         /// </summary>
         [Output("hostName")]
-        public Output<string> HostName { get; private set; } = null!;
+        public Output<string?> HostName { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The role of the cluster node.
         /// </summary>
         [Output("nodeRole")]
-        public Output<string> NodeRole { get; private set; } = null!;
+        public Output<string?> NodeRole { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the external cluster instance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external cluster instance was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external cluster instance was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

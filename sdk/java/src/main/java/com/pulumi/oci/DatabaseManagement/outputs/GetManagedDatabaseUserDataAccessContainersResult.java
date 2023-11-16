@@ -18,13 +18,13 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
      * @return The list of data_access_container_collection.
      * 
      */
-    private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
+    private @Nullable List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
     private @Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the container included in the attribute.
@@ -39,7 +39,7 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
      * 
      */
     public List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections() {
-        return this.dataAccessContainerCollections;
+        return this.dataAccessContainerCollections == null ? List.of() : this.dataAccessContainerCollections;
     }
     public List<GetManagedDatabaseUserDataAccessContainersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -48,8 +48,8 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -74,9 +74,9 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
+        private @Nullable List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections;
         private @Nullable List<GetManagedDatabaseUserDataAccessContainersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
@@ -92,8 +92,8 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
         }
 
         @CustomType.Setter
-        public Builder dataAccessContainerCollections(List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections) {
-            this.dataAccessContainerCollections = Objects.requireNonNull(dataAccessContainerCollections);
+        public Builder dataAccessContainerCollections(@Nullable List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection> dataAccessContainerCollections) {
+            this.dataAccessContainerCollections = dataAccessContainerCollections;
             return this;
         }
         public Builder dataAccessContainerCollections(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection... dataAccessContainerCollections) {
@@ -108,8 +108,8 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

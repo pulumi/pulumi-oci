@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
@@ -60,44 +59,44 @@ type LookupMediaWorkflowJobArgs struct {
 // A collection of values returned by getMediaWorkflowJob.
 type LookupMediaWorkflowJobResult struct {
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID associated with the job output.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The lifecycle details of MediaWorkflowJob task.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Configurations to be applied to this run of the workflow.
 	MediaWorkflowConfigurationIds []string `pulumi:"mediaWorkflowConfigurationIds"`
 	// The workflow to execute.
-	MediaWorkflowId    string `pulumi:"mediaWorkflowId"`
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
-	MediaWorkflowName  string `pulumi:"mediaWorkflowName"`
+	MediaWorkflowId    *string `pulumi:"mediaWorkflowId"`
+	MediaWorkflowJobId string  `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowName  *string `pulumi:"mediaWorkflowName"`
 	// A list of JobOutput for the workflowJob.
 	Outputs []GetMediaWorkflowJobOutput `pulumi:"outputs"`
 	// Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-	Parameters string `pulumi:"parameters"`
+	Parameters *string `pulumi:"parameters"`
 	// A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-	Runnable string `pulumi:"runnable"`
+	Runnable *string `pulumi:"runnable"`
 	// The current state of the MediaWorkflowJob task.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates []GetMediaWorkflowJobTaskLifecycleState `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// Time when the job started to execute. An RFC3339 formatted datetime string.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// Updated time of the job. An RFC3339 formatted datetime string.
-	TimeUpdated            string `pulumi:"timeUpdated"`
-	WorkflowIdentifierType string `pulumi:"workflowIdentifierType"`
+	TimeUpdated            *string `pulumi:"timeUpdated"`
+	WorkflowIdentifierType *string `pulumi:"workflowIdentifierType"`
 }
 
 func LookupMediaWorkflowJobOutput(ctx *pulumi.Context, args LookupMediaWorkflowJobOutputArgs, opts ...pulumi.InvokeOption) LookupMediaWorkflowJobResultOutput {
@@ -138,15 +137,9 @@ func (o LookupMediaWorkflowJobResultOutput) ToLookupMediaWorkflowJobResultOutput
 	return o
 }
 
-func (o LookupMediaWorkflowJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMediaWorkflowJobResult] {
-	return pulumix.Output[LookupMediaWorkflowJobResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
-func (o LookupMediaWorkflowJobResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -155,8 +148,8 @@ func (o LookupMediaWorkflowJobResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-func (o LookupMediaWorkflowJobResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -165,13 +158,13 @@ func (o LookupMediaWorkflowJobResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The ID associated with the job output.
-func (o LookupMediaWorkflowJobResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle details of MediaWorkflowJob task.
-func (o LookupMediaWorkflowJobResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Configurations to be applied to this run of the workflow.
@@ -180,16 +173,16 @@ func (o LookupMediaWorkflowJobResultOutput) MediaWorkflowConfigurationIds() pulu
 }
 
 // The workflow to execute.
-func (o LookupMediaWorkflowJobResultOutput) MediaWorkflowId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.MediaWorkflowId }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) MediaWorkflowId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.MediaWorkflowId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMediaWorkflowJobResultOutput) MediaWorkflowJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
 }
 
-func (o LookupMediaWorkflowJobResultOutput) MediaWorkflowName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.MediaWorkflowName }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) MediaWorkflowName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.MediaWorkflowName }).(pulumi.StringPtrOutput)
 }
 
 // A list of JobOutput for the workflowJob.
@@ -198,18 +191,18 @@ func (o LookupMediaWorkflowJobResultOutput) Outputs() GetMediaWorkflowJobOutputA
 }
 
 // Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-func (o LookupMediaWorkflowJobResultOutput) Parameters() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.Parameters }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
 
 // A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-func (o LookupMediaWorkflowJobResultOutput) Runnable() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.Runnable }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) Runnable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.Runnable }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the MediaWorkflowJob task.
-func (o LookupMediaWorkflowJobResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -225,27 +218,27 @@ func (o LookupMediaWorkflowJobResultOutput) TaskLifecycleStates() GetMediaWorkfl
 }
 
 // Creation time of the job. An RFC3339 formatted datetime string.
-func (o LookupMediaWorkflowJobResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time when the job finished. An RFC3339 formatted datetime string.
-func (o LookupMediaWorkflowJobResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Time when the job started to execute. An RFC3339 formatted datetime string.
-func (o LookupMediaWorkflowJobResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // Updated time of the job. An RFC3339 formatted datetime string.
-func (o LookupMediaWorkflowJobResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupMediaWorkflowJobResultOutput) WorkflowIdentifierType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowJobResult) string { return v.WorkflowIdentifierType }).(pulumi.StringOutput)
+func (o LookupMediaWorkflowJobResultOutput) WorkflowIdentifierType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowJobResult) *string { return v.WorkflowIdentifierType }).(pulumi.StringPtrOutput)
 }
 
 func init() {

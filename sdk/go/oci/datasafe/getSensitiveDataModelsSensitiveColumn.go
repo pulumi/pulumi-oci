@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -65,49 +64,49 @@ type LookupSensitiveDataModelsSensitiveColumnResult struct {
 	// Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
 	AppDefinedChildColumnKeys []string `pulumi:"appDefinedChildColumnKeys"`
 	// The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
-	AppName string `pulumi:"appName"`
+	AppName *string `pulumi:"appName"`
 	// The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
 	ColumnGroups []string `pulumi:"columnGroups"`
 	// The name of the sensitive column.
-	ColumnName string `pulumi:"columnName"`
+	ColumnName *string `pulumi:"columnName"`
 	// The data type of the sensitive column.
-	DataType string `pulumi:"dataType"`
+	DataType *string `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys []string `pulumi:"dbDefinedChildColumnKeys"`
 	// The estimated number of data values the column has in the associated database.
-	EstimatedDataValueCount string `pulumi:"estimatedDataValueCount"`
-	Id                      string `pulumi:"id"`
+	EstimatedDataValueCount *string `pulumi:"estimatedDataValueCount"`
+	Id                      *string `pulumi:"id"`
 	// The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Details about the current state of the sensitive column.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The database object that contains the sensitive column.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// The type of the database object that contains the sensitive column.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 	// Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
 	ParentColumnKeys []string `pulumi:"parentColumnKeys"`
 	// The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-	RelationType string `pulumi:"relationType"`
+	RelationType *string `pulumi:"relationType"`
 	// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
 	SampleDataValues []string `pulumi:"sampleDataValues"`
 	// The database schema that contains the sensitive column.
-	SchemaName         string `pulumi:"schemaName"`
-	SensitiveColumnKey string `pulumi:"sensitiveColumnKey"`
+	SchemaName         *string `pulumi:"schemaName"`
+	SensitiveColumnKey string  `pulumi:"sensitiveColumnKey"`
 	// The OCID of the sensitive data model that contains the sensitive column.
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
 	// The OCID of the sensitive type associated with the sensitive column.
-	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 	// The current state of the sensitive column.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupSensitiveDataModelsSensitiveColumnOutput(ctx *pulumi.Context, args LookupSensitiveDataModelsSensitiveColumnOutputArgs, opts ...pulumi.InvokeOption) LookupSensitiveDataModelsSensitiveColumnResultOutput {
@@ -150,20 +149,14 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ToLookupSensitiveD
 	return o
 }
 
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSensitiveDataModelsSensitiveColumnResult] {
-	return pulumix.Output[LookupSensitiveDataModelsSensitiveColumnResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
 func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) AppDefinedChildColumnKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) []string { return v.AppDefinedChildColumnKeys }).(pulumi.StringArrayOutput)
 }
 
 // The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) AppName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.AppName }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) AppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.AppName }).(pulumi.StringPtrOutput)
 }
 
 // The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
@@ -172,13 +165,13 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ColumnGroups() pul
 }
 
 // The name of the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ColumnName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.ColumnName }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ColumnName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.ColumnName }).(pulumi.StringPtrOutput)
 }
 
 // The data type of the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.DataType }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -187,32 +180,32 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) DbDefinedChildColu
 }
 
 // The estimated number of data values the column has in the associated database.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) EstimatedDataValueCount() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.EstimatedDataValueCount }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) EstimatedDataValueCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.EstimatedDataValueCount }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The database object that contains the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.Object }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // The type of the database object that contains the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 // Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
@@ -221,8 +214,8 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ParentColumnKeys()
 }
 
 // The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) RelationType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.RelationType }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) RelationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.RelationType }).(pulumi.StringPtrOutput)
 }
 
 // Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
@@ -231,8 +224,8 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SampleDataValues()
 }
 
 // The database schema that contains the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SchemaName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.SchemaName }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SchemaName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SensitiveColumnKey() pulumi.StringOutput {
@@ -245,33 +238,33 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SensitiveDataModel
 }
 
 // The OCID of the sensitive type associated with the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SensitiveTypeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.SensitiveTypeId }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
 }
 
 // The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.Source }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the sensitive column.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
-func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

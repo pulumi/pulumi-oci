@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesFleetDiagnosisCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetDiagnosesFleetDiagnosisCollection {
@@ -14,7 +15,7 @@ public final class GetFleetDiagnosesFleetDiagnosisCollection {
      * @return A list of the fleet resource diagnosis.
      * 
      */
-    private List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items;
+    private @Nullable List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items;
 
     private GetFleetDiagnosesFleetDiagnosisCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetFleetDiagnosesFleetDiagnosisCollection {
      * 
      */
     public List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetFleetDiagnosesFleetDiagnosisCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items;
+        private @Nullable List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items;
         public Builder() {}
         public Builder(GetFleetDiagnosesFleetDiagnosisCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetFleetDiagnosesFleetDiagnosisCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFleetDiagnosesFleetDiagnosisCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetDiagnosesFleetDiagnosisCollectionItem... items) {

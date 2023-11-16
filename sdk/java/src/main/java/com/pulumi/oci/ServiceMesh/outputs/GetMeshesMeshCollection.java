@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ServiceMesh.outputs.GetMeshesMeshCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMeshesMeshCollection {
-    private List<GetMeshesMeshCollectionItem> items;
+    private @Nullable List<GetMeshesMeshCollectionItem> items;
 
     private GetMeshesMeshCollection() {}
     public List<GetMeshesMeshCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMeshesMeshCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMeshesMeshCollectionItem> items;
+        private @Nullable List<GetMeshesMeshCollectionItem> items;
         public Builder() {}
         public Builder(GetMeshesMeshCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMeshesMeshCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMeshesMeshCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMeshesMeshCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMeshesMeshCollectionItem... items) {

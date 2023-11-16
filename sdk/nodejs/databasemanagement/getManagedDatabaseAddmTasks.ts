@@ -62,12 +62,12 @@ export interface GetManagedDatabaseAddmTasksResult {
     /**
      * The list of addm_tasks_collection.
      */
-    readonly addmTasksCollections: outputs.DatabaseManagement.GetManagedDatabaseAddmTasksAddmTasksCollection[];
+    readonly addmTasksCollections?: outputs.DatabaseManagement.GetManagedDatabaseAddmTasksAddmTasksCollection[];
     readonly filters?: outputs.DatabaseManagement.GetManagedDatabaseAddmTasksFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
@@ -60,40 +59,40 @@ type LookupPrivateEndpointArgs struct {
 // A collection of values returned by getPrivateEndpoint.
 type LookupPrivateEndpointResult struct {
 	// The OCID of a compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed messages about the lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-	MaxHostCount int `pulumi:"maxHostCount"`
+	MaxHostCount *int `pulumi:"maxHostCount"`
 	// An array of network security group OCIDs.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCID of the user who created the resource.
-	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
+	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-	OwnerUserName     string `pulumi:"ownerUserName"`
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	OwnerUserName     *string `pulumi:"ownerUserName"`
+	PrivateEndpointId string  `pulumi:"privateEndpointId"`
 	// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
 	ScanDetails []GetPrivateEndpointScanDetail `pulumi:"scanDetails"`
 	// The current state of this private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of a subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupPrivateEndpointOutput(ctx *pulumi.Context, args LookupPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateEndpointResultOutput {
@@ -134,15 +133,9 @@ func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutputWi
 	return o
 }
 
-func (o LookupPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPrivateEndpointResult] {
-	return pulumix.Output[LookupPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of a compartment.
-func (o LookupPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -151,13 +144,13 @@ func (o LookupPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly description. Avoid entering confidential information.
-func (o LookupPrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-func (o LookupPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
@@ -171,18 +164,18 @@ func (o LookupPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of a private endpoint.
-func (o LookupPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed messages about the lifecycle state.
-func (o LookupPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-func (o LookupPrivateEndpointResultOutput) MaxHostCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) int { return v.MaxHostCount }).(pulumi.IntOutput)
+func (o LookupPrivateEndpointResultOutput) MaxHostCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *int { return v.MaxHostCount }).(pulumi.IntPtrOutput)
 }
 
 // An array of network security group OCIDs.
@@ -191,13 +184,13 @@ func (o LookupPrivateEndpointResultOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The OCID of the user who created the resource.
-func (o LookupPrivateEndpointResultOutput) OwnerPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.OwnerPrincipalId }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) OwnerPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.OwnerPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-func (o LookupPrivateEndpointResultOutput) OwnerUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.OwnerUserName }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) OwnerUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPrivateEndpointResultOutput) PrivateEndpointId() pulumi.StringOutput {
@@ -210,23 +203,23 @@ func (o LookupPrivateEndpointResultOutput) ScanDetails() GetPrivateEndpointScanD
 }
 
 // The current state of this private endpoint.
-func (o LookupPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a subnet.
-func (o LookupPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o LookupPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o LookupPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupPrivateEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

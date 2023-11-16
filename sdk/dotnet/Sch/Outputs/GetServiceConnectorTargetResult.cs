@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// The batch rollover size in megabytes.
         /// </summary>
-        public readonly int BatchRolloverSizeInMbs;
+        public readonly int? BatchRolloverSizeInMbs;
         /// <summary>
         /// The batch rollover time in milliseconds.
         /// </summary>
-        public readonly int BatchRolloverTimeInMs;
+        public readonly int? BatchRolloverTimeInMs;
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// List of dimension names and values.
         /// </summary>
@@ -36,81 +36,81 @@ namespace Pulumi.Oci.Sch.Outputs
         /// <summary>
         /// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.  Example: `true`
         /// </summary>
-        public readonly bool EnableFormattedMessaging;
+        public readonly bool? EnableFormattedMessaging;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
         /// </summary>
-        public readonly string FunctionId;
+        public readonly string? FunctionId;
         /// <summary>
         /// The type descriminator.
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
         /// </summary>
-        public readonly string LogSourceIdentifier;
+        public readonly string? LogSourceIdentifier;
         /// <summary>
         /// The name of the metric.  Example: `CpuUtilization`
         /// </summary>
-        public readonly string Metric;
+        public readonly string? Metric;
         /// <summary>
         /// The namespace of the metric.  Example: `oci_computeagent`
         /// </summary>
-        public readonly string MetricNamespace;
+        public readonly string? MetricNamespace;
         /// <summary>
         /// The namespace.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The prefix of the objects. Avoid entering confidential information.
         /// </summary>
-        public readonly string ObjectNamePrefix;
+        public readonly string? ObjectNamePrefix;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         /// </summary>
-        public readonly string StreamId;
+        public readonly string? StreamId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         /// </summary>
-        public readonly string TopicId;
+        public readonly string? TopicId;
 
         [OutputConstructor]
         private GetServiceConnectorTargetResult(
-            int batchRolloverSizeInMbs,
+            int? batchRolloverSizeInMbs,
 
-            int batchRolloverTimeInMs,
+            int? batchRolloverTimeInMs,
 
-            string bucket,
+            string? bucket,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetServiceConnectorTargetDimensionResult> dimensions,
 
-            bool enableFormattedMessaging,
+            bool? enableFormattedMessaging,
 
-            string functionId,
+            string? functionId,
 
-            string kind,
+            string? kind,
 
-            string logGroupId,
+            string? logGroupId,
 
-            string logSourceIdentifier,
+            string? logSourceIdentifier,
 
-            string metric,
+            string? metric,
 
-            string metricNamespace,
+            string? metricNamespace,
 
-            string @namespace,
+            string? @namespace,
 
-            string objectNamePrefix,
+            string? objectNamePrefix,
 
-            string streamId,
+            string? streamId,
 
-            string topicId)
+            string? topicId)
         {
             BatchRolloverSizeInMbs = batchRolloverSizeInMbs;
             BatchRolloverTimeInMs = batchRolloverTimeInMs;

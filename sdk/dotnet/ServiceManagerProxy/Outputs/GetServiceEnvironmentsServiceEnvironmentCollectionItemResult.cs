@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ServiceManagerProxy.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The URL for the console.
         /// </summary>
-        public readonly string ConsoleUrl;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly string? ConsoleUrl;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unqiue identifier for the entitlement related to the environment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details for a service definition.
         /// </summary>
@@ -38,31 +38,31 @@ namespace Pulumi.Oci.ServiceManagerProxy.Outputs
         /// <summary>
         /// Status of the entitlement registration for the service.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The unique subscription ID associated with the service environment ID.
         /// </summary>
-        public readonly string SubscriptionId;
+        public readonly string? SubscriptionId;
 
         [OutputConstructor]
         private GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string consoleUrl,
+            string? consoleUrl,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult> serviceDefinitions,
 
             ImmutableArray<Outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult> serviceEnvironmentEndpoints,
 
-            string status,
+            string? status,
 
-            string subscriptionId)
+            string? subscriptionId)
         {
             CompartmentId = compartmentId;
             ConsoleUrl = consoleUrl;

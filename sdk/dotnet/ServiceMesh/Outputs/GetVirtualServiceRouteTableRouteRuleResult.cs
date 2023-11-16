@@ -20,37 +20,37 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
         /// </summary>
-        public readonly bool IsGrpc;
+        public readonly bool? IsGrpc;
         /// <summary>
         /// Route to match
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Match type for the route
         /// </summary>
-        public readonly string PathType;
+        public readonly string? PathType;
         /// <summary>
         /// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         /// </summary>
-        public readonly string RequestTimeoutInMs;
+        public readonly string? RequestTimeoutInMs;
         /// <summary>
         /// Type of protocol.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetVirtualServiceRouteTableRouteRuleResult(
             ImmutableArray<Outputs.GetVirtualServiceRouteTableRouteRuleDestinationResult> destinations,
 
-            bool isGrpc,
+            bool? isGrpc,
 
-            string path,
+            string? path,
 
-            string pathType,
+            string? pathType,
 
-            string requestTimeoutInMs,
+            string? requestTimeoutInMs,
 
-            string type)
+            string? type)
         {
             Destinations = destinations;
             IsGrpc = isGrpc;

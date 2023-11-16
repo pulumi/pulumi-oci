@@ -45,56 +45,56 @@ export interface GetTargetAlertPolicyAssociationResult {
     /**
      * The OCID of the compartment that contains the policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Describes the target-alert policy association.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the target-alert policy association.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the target-alert policy association.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if the target-alert policy association is enabled or disabled by user.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     /**
      * The OCID of the alert policy.
      */
-    readonly policyId: string;
+    readonly policyId?: string;
     /**
      * The current state of the target-alert policy association.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     readonly targetAlertPolicyAssociationId: string;
     /**
      * The OCID of the target on which alert policy is to be applied.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.

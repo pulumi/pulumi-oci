@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The name to filter on.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// ShapeNetworkBandwidthOptions.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// A short description of the VM's processor (CPU).
         /// </summary>
-        public readonly string ProcessorDescription;
+        public readonly string? ProcessorDescription;
 
         [OutputConstructor]
         private GetPodShapesPodShapeResult(
             ImmutableArray<Outputs.GetPodShapesPodShapeMemoryOptionResult> memoryOptions,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult> networkBandwidthOptions,
 
             ImmutableArray<Outputs.GetPodShapesPodShapeOcpuOptionResult> ocpuOptions,
 
-            string processorDescription)
+            string? processorDescription)
         {
             MemoryOptions = memoryOptions;
             Name = name;

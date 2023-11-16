@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetCpesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -22,13 +23,13 @@ public final class GetCpesResult {
      * @return The list of cpes.
      * 
      */
-    private List<GetCpesCpe> cpes;
+    private @Nullable List<GetCpesCpe> cpes;
     private @Nullable List<GetCpesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCpesResult() {}
     /**
@@ -43,7 +44,7 @@ public final class GetCpesResult {
      * 
      */
     public List<GetCpesCpe> cpes() {
-        return this.cpes;
+        return this.cpes == null ? List.of() : this.cpes;
     }
     public List<GetCpesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -52,8 +53,8 @@ public final class GetCpesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -66,9 +67,9 @@ public final class GetCpesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetCpesCpe> cpes;
+        private @Nullable List<GetCpesCpe> cpes;
         private @Nullable List<GetCpesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCpesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,8 +85,8 @@ public final class GetCpesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cpes(List<GetCpesCpe> cpes) {
-            this.cpes = Objects.requireNonNull(cpes);
+        public Builder cpes(@Nullable List<GetCpesCpe> cpes) {
+            this.cpes = cpes;
             return this;
         }
         public Builder cpes(GetCpesCpe... cpes) {
@@ -100,8 +101,8 @@ public final class GetCpesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCpesResult build() {

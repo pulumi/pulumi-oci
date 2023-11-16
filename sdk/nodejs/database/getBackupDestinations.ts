@@ -55,7 +55,7 @@ export interface GetBackupDestinationsResult {
     /**
      * The list of backup_destinations.
      */
-    readonly backupDestinations: outputs.Database.GetBackupDestinationsBackupDestination[];
+    readonly backupDestinations?: outputs.Database.GetBackupDestinationsBackupDestination[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -64,7 +64,7 @@ export interface GetBackupDestinationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Type of the backup destination.
      */

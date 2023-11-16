@@ -108,80 +108,80 @@ namespace Pulumi.Oci.Streaming
         /// <summary>
         /// The OCID of the compartment that contains the stream.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the stream.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Any additional details about the current state of the stream.
         /// </summary>
-        public readonly string LifecycleStateDetails;
+        public readonly string? LifecycleStateDetails;
         /// <summary>
         /// The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
         /// </summary>
-        public readonly string MessagesEndpoint;
+        public readonly string? MessagesEndpoint;
         /// <summary>
         /// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The number of partitions in the stream.
         /// </summary>
-        public readonly int Partitions;
+        public readonly int? Partitions;
         /// <summary>
         /// The retention period of the stream, in hours. This property is read-only.
         /// </summary>
-        public readonly int RetentionInHours;
+        public readonly int? RetentionInHours;
         /// <summary>
         /// The current state of the stream.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         public readonly string StreamId;
         /// <summary>
         /// The OCID of the stream pool that contains the stream.
         /// </summary>
-        public readonly string StreamPoolId;
+        public readonly string? StreamPoolId;
         /// <summary>
         /// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetStreamResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleStateDetails,
+            string? lifecycleStateDetails,
 
-            string messagesEndpoint,
+            string? messagesEndpoint,
 
-            string name,
+            string? name,
 
-            int partitions,
+            int? partitions,
 
-            int retentionInHours,
+            int? retentionInHours,
 
-            string state,
+            string? state,
 
             string streamId,
 
-            string streamPoolId,
+            string? streamPoolId,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

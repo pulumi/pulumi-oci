@@ -210,7 +210,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.DataIntegration
 
             ImmutableArray<Outputs.GetWorkspaceApplicationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> identifiers,
 

@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
     public partial class Policy : global::Pulumi.CustomResource
     {
         [Output("ETag")]
-        public Output<string> ETag { get; private set; } = null!;
+        public Output<string?> ETag { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment containing the policy (either the tenancy or another compartment).
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
@@ -91,16 +91,16 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
         [Output("inactiveState")]
-        public Output<string> InactiveState { get; private set; } = null!;
+        public Output<string?> InactiveState { get; private set; } = null!;
 
         [Output("lastUpdateETag")]
-        public Output<string> LastUpdateETag { get; private set; } = null!;
+        public Output<string?> LastUpdateETag { get; private set; } = null!;
 
         /// <summary>
         /// The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
@@ -109,13 +109,13 @@ namespace Pulumi.Oci.Identity
         public Output<string> Name { get; private set; } = null!;
 
         [Output("policyHash")]
-        public Output<string> PolicyHash { get; private set; } = null!;
+        public Output<string?> PolicyHash { get; private set; } = null!;
 
         /// <summary>
         /// The policy's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Identity
         /// Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("versionDate")]
-        public Output<string> VersionDate { get; private set; } = null!;
+        public Output<string?> VersionDate { get; private set; } = null!;
 
 
         /// <summary>

@@ -6,6 +6,8 @@ package com.pulumi.oci.StackMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionQueryPropertyScriptDetail {
@@ -13,27 +15,27 @@ public final class GetMetricExtensionQueryPropertyScriptDetail {
      * @return Sql statement or script file content as base64 encoded string
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return Name of the script file
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetMetricExtensionQueryPropertyScriptDetail() {}
     /**
      * @return Sql statement or script file content as base64 encoded string
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return Name of the script file
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMetricExtensionQueryPropertyScriptDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String name;
+        private @Nullable String content;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetMetricExtensionQueryPropertyScriptDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMetricExtensionQueryPropertyScriptDetail {
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetMetricExtensionQueryPropertyScriptDetail build() {

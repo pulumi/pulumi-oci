@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabasesDatabaseDatabaseManagementConfig {
@@ -13,27 +15,27 @@ public final class GetDatabasesDatabaseDatabaseManagementConfig {
      * @return The status of the Database Management service.
      * 
      */
-    private String managementStatus;
+    private @Nullable String managementStatus;
     /**
      * @return The Database Management type.
      * 
      */
-    private String managementType;
+    private @Nullable String managementType;
 
     private GetDatabasesDatabaseDatabaseManagementConfig() {}
     /**
      * @return The status of the Database Management service.
      * 
      */
-    public String managementStatus() {
-        return this.managementStatus;
+    public Optional<String> managementStatus() {
+        return Optional.ofNullable(this.managementStatus);
     }
     /**
      * @return The Database Management type.
      * 
      */
-    public String managementType() {
-        return this.managementType;
+    public Optional<String> managementType() {
+        return Optional.ofNullable(this.managementType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDatabasesDatabaseDatabaseManagementConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String managementStatus;
-        private String managementType;
+        private @Nullable String managementStatus;
+        private @Nullable String managementType;
         public Builder() {}
         public Builder(GetDatabasesDatabaseDatabaseManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDatabasesDatabaseDatabaseManagementConfig {
         }
 
         @CustomType.Setter
-        public Builder managementStatus(String managementStatus) {
-            this.managementStatus = Objects.requireNonNull(managementStatus);
+        public Builder managementStatus(@Nullable String managementStatus) {
+            this.managementStatus = managementStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder managementType(String managementType) {
-            this.managementType = Objects.requireNonNull(managementType);
+        public Builder managementType(@Nullable String managementType) {
+            this.managementType = managementType;
             return this;
         }
         public GetDatabasesDatabaseDatabaseManagementConfig build() {

@@ -45,68 +45,68 @@ export interface GetOperationsInsightsPrivateEndpointResult {
     /**
      * The compartment OCID of the Private service accessed database.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the private endpoint.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the private endpoint.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the Private service accessed database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The flag is to identify if private endpoint is used for rac database or not
      */
-    readonly isUsedForRacDbs: boolean;
+    readonly isUsedForRacDbs?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCIDs of the network security groups that the private endpoint belongs to.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     readonly operationsInsightsPrivateEndpointId: string;
     /**
      * A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
      */
-    readonly privateEndpointStatusDetails: string;
+    readonly privateEndpointStatusDetails?: string;
     /**
      * The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
      */
-    readonly privateIp: string;
+    readonly privateIp?: string;
     /**
      * The current state of the private endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The OCID of the VCN.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.

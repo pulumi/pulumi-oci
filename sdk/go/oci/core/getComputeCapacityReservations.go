@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
@@ -82,7 +81,7 @@ type GetComputeCapacityReservationsResult struct {
 	DisplayName *string                                `pulumi:"displayName"`
 	Filters     []GetComputeCapacityReservationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the compute capacity reservation.
 	State *string `pulumi:"state"`
 }
@@ -132,12 +131,6 @@ func (o GetComputeCapacityReservationsResultOutput) ToGetComputeCapacityReservat
 	return o
 }
 
-func (o GetComputeCapacityReservationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeCapacityReservationsResult] {
-	return pulumix.Output[GetComputeCapacityReservationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of the compute capacity reservation.  Example: `Uocm:PHX-AD-1`
 func (o GetComputeCapacityReservationsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeCapacityReservationsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -165,8 +158,8 @@ func (o GetComputeCapacityReservationsResultOutput) Filters() GetComputeCapacity
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeCapacityReservationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeCapacityReservationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeCapacityReservationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeCapacityReservationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the compute capacity reservation.

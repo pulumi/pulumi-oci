@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeyVersionsKeyVersion {
@@ -17,187 +19,187 @@ public final class GetKeyVersionsKeyVersion {
      * @return The OCID of the compartment that contains this key version.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Key reference data to be returned to the customer as a response.
      * 
      */
-    private List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
+    private @Nullable List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
     /**
      * @return Key version ID associated with the external key.
      * 
      */
-    private String externalKeyVersionId;
+    private @Nullable String externalKeyVersionId;
     /**
      * @return The OCID of the key version.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
-    private Boolean isPrimary;
+    private @Nullable Boolean isPrimary;
     /**
      * @return The OCID of the key.
      * 
      */
-    private String keyId;
+    private @Nullable String keyId;
     /**
      * @return The OCID of the key version.
      * 
      */
-    private String keyVersionId;
+    private @Nullable String keyVersionId;
     /**
      * @return The service endpoint to perform management operations against. Management operations include &#39;Create,&#39; &#39;Update,&#39; &#39;List,&#39; &#39;Get,&#39; and &#39;Delete&#39; operations. See Vault Management endpoint.
      * 
      */
-    private String managementEndpoint;
+    private @Nullable String managementEndpoint;
     /**
      * @return The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      * 
      */
-    private String publicKey;
+    private @Nullable String publicKey;
     /**
      * @return KeyVersion replica details
      * 
      */
-    private List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails;
-    private String restoredFromKeyId;
+    private @Nullable List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails;
+    private @Nullable String restoredFromKeyId;
     /**
      * @return The OCID of the key version from which this key version was restored.
      * 
      */
-    private String restoredFromKeyVersionId;
+    private @Nullable String restoredFromKeyVersionId;
     /**
      * @return The key version&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: &#34;2018-04-03T21:10:29.600Z&#34;
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfDeletion;
+    private @Nullable String timeOfDeletion;
     /**
      * @return The OCID of the vault that contains this key version.
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
 
     private GetKeyVersionsKeyVersion() {}
     /**
      * @return The OCID of the compartment that contains this key version.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Key reference data to be returned to the customer as a response.
      * 
      */
     public List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails() {
-        return this.externalKeyReferenceDetails;
+        return this.externalKeyReferenceDetails == null ? List.of() : this.externalKeyReferenceDetails;
     }
     /**
      * @return Key version ID associated with the external key.
      * 
      */
-    public String externalKeyVersionId() {
-        return this.externalKeyVersionId;
+    public Optional<String> externalKeyVersionId() {
+        return Optional.ofNullable(this.externalKeyVersionId);
     }
     /**
      * @return The OCID of the key version.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
-    public Boolean isPrimary() {
-        return this.isPrimary;
+    public Optional<Boolean> isPrimary() {
+        return Optional.ofNullable(this.isPrimary);
     }
     /**
      * @return The OCID of the key.
      * 
      */
-    public String keyId() {
-        return this.keyId;
+    public Optional<String> keyId() {
+        return Optional.ofNullable(this.keyId);
     }
     /**
      * @return The OCID of the key version.
      * 
      */
-    public String keyVersionId() {
-        return this.keyVersionId;
+    public Optional<String> keyVersionId() {
+        return Optional.ofNullable(this.keyVersionId);
     }
     /**
      * @return The service endpoint to perform management operations against. Management operations include &#39;Create,&#39; &#39;Update,&#39; &#39;List,&#39; &#39;Get,&#39; and &#39;Delete&#39; operations. See Vault Management endpoint.
      * 
      */
-    public String managementEndpoint() {
-        return this.managementEndpoint;
+    public Optional<String> managementEndpoint() {
+        return Optional.ofNullable(this.managementEndpoint);
     }
     /**
      * @return The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      * 
      */
-    public String publicKey() {
-        return this.publicKey;
+    public Optional<String> publicKey() {
+        return Optional.ofNullable(this.publicKey);
     }
     /**
      * @return KeyVersion replica details
      * 
      */
     public List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails() {
-        return this.replicaDetails;
+        return this.replicaDetails == null ? List.of() : this.replicaDetails;
     }
-    public String restoredFromKeyId() {
-        return this.restoredFromKeyId;
+    public Optional<String> restoredFromKeyId() {
+        return Optional.ofNullable(this.restoredFromKeyId);
     }
     /**
      * @return The OCID of the key version from which this key version was restored.
      * 
      */
-    public String restoredFromKeyVersionId() {
-        return this.restoredFromKeyVersionId;
+    public Optional<String> restoredFromKeyVersionId() {
+        return Optional.ofNullable(this.restoredFromKeyVersionId);
     }
     /**
      * @return The key version&#39;s current lifecycle state.  Example: `ENABLED`
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: &#34;2018-04-03T21:10:29.600Z&#34;
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Optional<String> timeOfDeletion() {
+        return Optional.ofNullable(this.timeOfDeletion);
     }
     /**
      * @return The OCID of the vault that contains this key version.
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -209,22 +211,22 @@ public final class GetKeyVersionsKeyVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
-        private String externalKeyVersionId;
-        private String id;
-        private Boolean isPrimary;
-        private String keyId;
-        private String keyVersionId;
-        private String managementEndpoint;
-        private String publicKey;
-        private List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails;
-        private String restoredFromKeyId;
-        private String restoredFromKeyVersionId;
-        private String state;
-        private String timeCreated;
-        private String timeOfDeletion;
-        private String vaultId;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
+        private @Nullable String externalKeyVersionId;
+        private @Nullable String id;
+        private @Nullable Boolean isPrimary;
+        private @Nullable String keyId;
+        private @Nullable String keyVersionId;
+        private @Nullable String managementEndpoint;
+        private @Nullable String publicKey;
+        private @Nullable List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails;
+        private @Nullable String restoredFromKeyId;
+        private @Nullable String restoredFromKeyVersionId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfDeletion;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetKeyVersionsKeyVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -247,89 +249,89 @@ public final class GetKeyVersionsKeyVersion {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalKeyReferenceDetails(List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails) {
-            this.externalKeyReferenceDetails = Objects.requireNonNull(externalKeyReferenceDetails);
+        public Builder externalKeyReferenceDetails(@Nullable List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
             return this;
         }
         public Builder externalKeyReferenceDetails(GetKeyVersionsKeyVersionExternalKeyReferenceDetail... externalKeyReferenceDetails) {
             return externalKeyReferenceDetails(List.of(externalKeyReferenceDetails));
         }
         @CustomType.Setter
-        public Builder externalKeyVersionId(String externalKeyVersionId) {
-            this.externalKeyVersionId = Objects.requireNonNull(externalKeyVersionId);
+        public Builder externalKeyVersionId(@Nullable String externalKeyVersionId) {
+            this.externalKeyVersionId = externalKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+        public Builder isPrimary(@Nullable Boolean isPrimary) {
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
-        public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+        public Builder keyId(@Nullable String keyId) {
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyVersionId(String keyVersionId) {
-            this.keyVersionId = Objects.requireNonNull(keyVersionId);
+        public Builder keyVersionId(@Nullable String keyVersionId) {
+            this.keyVersionId = keyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+        public Builder managementEndpoint(@Nullable String managementEndpoint) {
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+        public Builder publicKey(@Nullable String publicKey) {
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder replicaDetails(List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+        public Builder replicaDetails(@Nullable List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails) {
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetKeyVersionsKeyVersionReplicaDetail... replicaDetails) {
             return replicaDetails(List.of(replicaDetails));
         }
         @CustomType.Setter
-        public Builder restoredFromKeyId(String restoredFromKeyId) {
-            this.restoredFromKeyId = Objects.requireNonNull(restoredFromKeyId);
+        public Builder restoredFromKeyId(@Nullable String restoredFromKeyId) {
+            this.restoredFromKeyId = restoredFromKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder restoredFromKeyVersionId(String restoredFromKeyVersionId) {
-            this.restoredFromKeyVersionId = Objects.requireNonNull(restoredFromKeyVersionId);
+        public Builder restoredFromKeyVersionId(@Nullable String restoredFromKeyVersionId) {
+            this.restoredFromKeyVersionId = restoredFromKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+        public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetKeyVersionsKeyVersion build() {

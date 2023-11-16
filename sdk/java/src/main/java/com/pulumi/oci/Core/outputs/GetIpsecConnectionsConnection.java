@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionsConnection {
@@ -16,159 +18,159 @@ public final class GetIpsecConnectionsConnection {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
      * 
      */
-    private String cpeId;
+    private @Nullable String cpeId;
     /**
      * @return Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
      * 
      */
-    private String cpeLocalIdentifier;
+    private @Nullable String cpeLocalIdentifier;
     /**
      * @return The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
      * 
      */
-    private String cpeLocalIdentifierType;
+    private @Nullable String cpeLocalIdentifierType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    private String drgId;
+    private @Nullable String drgId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The IPSec connection&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The IPSec connection&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Static routes to the CPE. The CIDR must not be a multicast address or class E address.
      * 
      */
-    private List<String> staticRoutes;
+    private @Nullable List<String> staticRoutes;
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The transport type used for the IPSec connection.
      * 
      */
-    private String transportType;
+    private @Nullable String transportType;
 
     private GetIpsecConnectionsConnection() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
      * 
      */
-    public String cpeId() {
-        return this.cpeId;
+    public Optional<String> cpeId() {
+        return Optional.ofNullable(this.cpeId);
     }
     /**
      * @return Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
      * 
      */
-    public String cpeLocalIdentifier() {
-        return this.cpeLocalIdentifier;
+    public Optional<String> cpeLocalIdentifier() {
+        return Optional.ofNullable(this.cpeLocalIdentifier);
     }
     /**
      * @return The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
      * 
      */
-    public String cpeLocalIdentifierType() {
-        return this.cpeLocalIdentifierType;
+    public Optional<String> cpeLocalIdentifierType() {
+        return Optional.ofNullable(this.cpeLocalIdentifierType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
      */
-    public String drgId() {
-        return this.drgId;
+    public Optional<String> drgId() {
+        return Optional.ofNullable(this.drgId);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The IPSec connection&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The IPSec connection&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Static routes to the CPE. The CIDR must not be a multicast address or class E address.
      * 
      */
     public List<String> staticRoutes() {
-        return this.staticRoutes;
+        return this.staticRoutes == null ? List.of() : this.staticRoutes;
     }
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The transport type used for the IPSec connection.
      * 
      */
-    public String transportType() {
-        return this.transportType;
+    public Optional<String> transportType() {
+        return Optional.ofNullable(this.transportType);
     }
 
     public static Builder builder() {
@@ -180,19 +182,19 @@ public final class GetIpsecConnectionsConnection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String cpeId;
-        private String cpeLocalIdentifier;
-        private String cpeLocalIdentifierType;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String drgId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String state;
-        private List<String> staticRoutes;
-        private String timeCreated;
-        private String transportType;
+        private @Nullable String compartmentId;
+        private @Nullable String cpeId;
+        private @Nullable String cpeLocalIdentifier;
+        private @Nullable String cpeLocalIdentifierType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String drgId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String state;
+        private @Nullable List<String> staticRoutes;
+        private @Nullable String timeCreated;
+        private @Nullable String transportType;
         public Builder() {}
         public Builder(GetIpsecConnectionsConnection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -212,71 +214,71 @@ public final class GetIpsecConnectionsConnection {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpeId(String cpeId) {
-            this.cpeId = Objects.requireNonNull(cpeId);
+        public Builder cpeId(@Nullable String cpeId) {
+            this.cpeId = cpeId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpeLocalIdentifier(String cpeLocalIdentifier) {
-            this.cpeLocalIdentifier = Objects.requireNonNull(cpeLocalIdentifier);
+        public Builder cpeLocalIdentifier(@Nullable String cpeLocalIdentifier) {
+            this.cpeLocalIdentifier = cpeLocalIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder cpeLocalIdentifierType(String cpeLocalIdentifierType) {
-            this.cpeLocalIdentifierType = Objects.requireNonNull(cpeLocalIdentifierType);
+        public Builder cpeLocalIdentifierType(@Nullable String cpeLocalIdentifierType) {
+            this.cpeLocalIdentifierType = cpeLocalIdentifierType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+        public Builder drgId(@Nullable String drgId) {
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder staticRoutes(List<String> staticRoutes) {
-            this.staticRoutes = Objects.requireNonNull(staticRoutes);
+        public Builder staticRoutes(@Nullable List<String> staticRoutes) {
+            this.staticRoutes = staticRoutes;
             return this;
         }
         public Builder staticRoutes(String... staticRoutes) {
             return staticRoutes(List.of(staticRoutes));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder transportType(String transportType) {
-            this.transportType = Objects.requireNonNull(transportType);
+        public Builder transportType(@Nullable String transportType) {
+            this.transportType = transportType;
             return this;
         }
         public GetIpsecConnectionsConnection build() {

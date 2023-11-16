@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Volume Backup Policies in Oracle Cloud Infrastructure Core service.
@@ -67,7 +66,7 @@ type GetVolumeBackupPoliciesResult struct {
 	CompartmentId *string                         `pulumi:"compartmentId"`
 	Filters       []GetVolumeBackupPoliciesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of volume_backup_policies.
 	VolumeBackupPolicies []GetVolumeBackupPoliciesVolumeBackupPolicy `pulumi:"volumeBackupPolicies"`
 }
@@ -111,12 +110,6 @@ func (o GetVolumeBackupPoliciesResultOutput) ToGetVolumeBackupPoliciesResultOutp
 	return o
 }
 
-func (o GetVolumeBackupPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPoliciesResult] {
-	return pulumix.Output[GetVolumeBackupPoliciesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the volume backup.
 func (o GetVolumeBackupPoliciesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVolumeBackupPoliciesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -127,8 +120,8 @@ func (o GetVolumeBackupPoliciesResultOutput) Filters() GetVolumeBackupPoliciesFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVolumeBackupPoliciesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeBackupPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVolumeBackupPoliciesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeBackupPoliciesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of volume_backup_policies.

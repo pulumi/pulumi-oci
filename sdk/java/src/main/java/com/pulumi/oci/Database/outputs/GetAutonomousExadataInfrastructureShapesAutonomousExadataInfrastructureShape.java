@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape {
@@ -14,75 +16,75 @@ public final class GetAutonomousExadataInfrastructureShapesAutonomousExadataInfr
      * @return The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
      * 
      */
-    private Integer availableCoreCount;
+    private @Nullable Integer availableCoreCount;
     /**
      * @return The increment in which core count can be increased or decreased.
      * 
      */
-    private Integer coreCountIncrement;
+    private @Nullable Integer coreCountIncrement;
     /**
      * @return The maximum number of nodes available for the shape.
      * 
      */
-    private Integer maximumNodeCount;
+    private @Nullable Integer maximumNodeCount;
     /**
      * @return The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
      * 
      */
-    private Integer minimumCoreCount;
+    private @Nullable Integer minimumCoreCount;
     /**
      * @return The minimum number of nodes available for the shape.
      * 
      */
-    private Integer minimumNodeCount;
+    private @Nullable Integer minimumNodeCount;
     /**
      * @return The name of the shape used for the Autonomous Exadata Infrastructure.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape() {}
     /**
      * @return The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
      * 
      */
-    public Integer availableCoreCount() {
-        return this.availableCoreCount;
+    public Optional<Integer> availableCoreCount() {
+        return Optional.ofNullable(this.availableCoreCount);
     }
     /**
      * @return The increment in which core count can be increased or decreased.
      * 
      */
-    public Integer coreCountIncrement() {
-        return this.coreCountIncrement;
+    public Optional<Integer> coreCountIncrement() {
+        return Optional.ofNullable(this.coreCountIncrement);
     }
     /**
      * @return The maximum number of nodes available for the shape.
      * 
      */
-    public Integer maximumNodeCount() {
-        return this.maximumNodeCount;
+    public Optional<Integer> maximumNodeCount() {
+        return Optional.ofNullable(this.maximumNodeCount);
     }
     /**
      * @return The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
      * 
      */
-    public Integer minimumCoreCount() {
-        return this.minimumCoreCount;
+    public Optional<Integer> minimumCoreCount() {
+        return Optional.ofNullable(this.minimumCoreCount);
     }
     /**
      * @return The minimum number of nodes available for the shape.
      * 
      */
-    public Integer minimumNodeCount() {
-        return this.minimumNodeCount;
+    public Optional<Integer> minimumNodeCount() {
+        return Optional.ofNullable(this.minimumNodeCount);
     }
     /**
      * @return The name of the shape used for the Autonomous Exadata Infrastructure.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetAutonomousExadataInfrastructureShapesAutonomousExadataInfr
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer availableCoreCount;
-        private Integer coreCountIncrement;
-        private Integer maximumNodeCount;
-        private Integer minimumCoreCount;
-        private Integer minimumNodeCount;
-        private String name;
+        private @Nullable Integer availableCoreCount;
+        private @Nullable Integer coreCountIncrement;
+        private @Nullable Integer maximumNodeCount;
+        private @Nullable Integer minimumCoreCount;
+        private @Nullable Integer minimumNodeCount;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetAutonomousExadataInfrastructureShapesAutonomousExadataInfr
         }
 
         @CustomType.Setter
-        public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
+        public Builder availableCoreCount(@Nullable Integer availableCoreCount) {
+            this.availableCoreCount = availableCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder coreCountIncrement(Integer coreCountIncrement) {
-            this.coreCountIncrement = Objects.requireNonNull(coreCountIncrement);
+        public Builder coreCountIncrement(@Nullable Integer coreCountIncrement) {
+            this.coreCountIncrement = coreCountIncrement;
             return this;
         }
         @CustomType.Setter
-        public Builder maximumNodeCount(Integer maximumNodeCount) {
-            this.maximumNodeCount = Objects.requireNonNull(maximumNodeCount);
+        public Builder maximumNodeCount(@Nullable Integer maximumNodeCount) {
+            this.maximumNodeCount = maximumNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
+        public Builder minimumCoreCount(@Nullable Integer minimumCoreCount) {
+            this.minimumCoreCount = minimumCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumNodeCount(Integer minimumNodeCount) {
-            this.minimumNodeCount = Objects.requireNonNull(minimumNodeCount);
+        public Builder minimumNodeCount(@Nullable Integer minimumNodeCount) {
+            this.minimumNodeCount = minimumNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape build() {

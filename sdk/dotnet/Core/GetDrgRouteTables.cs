@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
         /// </summary>
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetDrgRouteTablesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? importDrgRouteDistributionId,
 

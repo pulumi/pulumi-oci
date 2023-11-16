@@ -56,31 +56,22 @@ class GetProtectionRuleResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the protection rule.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def exclusions(self) -> Sequence['outputs.GetProtectionRuleExclusionResult']:
-        """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
+    def exclusions(self) -> Optional[Sequence['outputs.GetProtectionRuleExclusionResult']]:
         return pulumi.get(self, "exclusions")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,34 +79,22 @@ class GetProtectionRuleResult:
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key of the protection rule.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence[str]:
-        """
-        The list of labels for the protection rule.
-        """
+    def labels(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter(name="modSecurityRuleIds")
-    def mod_security_rule_ids(self) -> Sequence[str]:
-        """
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
-        """
+    def mod_security_rule_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "mod_security_rule_ids")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the protection rule.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -151,23 +130,7 @@ def get_protection_rule(protection_rule_key: Optional[str] = None,
                         waas_policy_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionRuleResult:
     """
-    This data source provides details about a specific Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_rule = oci.Waas.get_protection_rule(protection_rule_key=var["protection_rule_protection_rule_key"],
-        waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
-    ```
-
-
-    :param str protection_rule_key: The protection rule key.
-    :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['protectionRuleKey'] = protection_rule_key
@@ -193,22 +156,6 @@ def get_protection_rule_output(protection_rule_key: Optional[pulumi.Input[str]] 
                                waas_policy_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRuleResult]:
     """
-    This data source provides details about a specific Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of a protection rule in the Web Application Firewall configuration for a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_rule = oci.Waas.get_protection_rule(protection_rule_key=var["protection_rule_protection_rule_key"],
-        waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
-    ```
-
-
-    :param str protection_rule_key: The protection rule key.
-    :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+    Use this data source to access information about an existing resource.
     """
     ...

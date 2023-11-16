@@ -52,10 +52,7 @@ class GetConnectHarnessResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the connect harness.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -65,58 +62,37 @@ class GetConnectHarnessResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the connect harness.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> str:
-        """
-        Any additional details about the current state of the connect harness.
-        """
+    def lifecycle_state_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_state_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the connect harness.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -140,21 +116,7 @@ class AwaitableGetConnectHarnessResult(GetConnectHarnessResult):
 def get_connect_harness(connect_harness_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectHarnessResult:
     """
-    This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
-
-    Gets detailed information about a connect harness.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connect_harness = oci.Streaming.get_connect_harness(connect_harness_id=oci_streaming_connect_harnes["test_connect_harnes"]["id"])
-    ```
-
-
-    :param str connect_harness_id: The OCID of the connect harness.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['connectHarnessId'] = connect_harness_id
@@ -177,20 +139,6 @@ def get_connect_harness(connect_harness_id: Optional[str] = None,
 def get_connect_harness_output(connect_harness_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectHarnessResult]:
     """
-    This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
-
-    Gets detailed information about a connect harness.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connect_harness = oci.Streaming.get_connect_harness(connect_harness_id=oci_streaming_connect_harnes["test_connect_harnes"]["id"])
-    ```
-
-
-    :param str connect_harness_id: The OCID of the connect harness.
+    Use this data source to access information about an existing resource.
     """
     ...

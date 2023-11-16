@@ -20,13 +20,13 @@ public final class GetMediaWorkflowTaskDeclarationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCurrent;
     /**
      * @return List of MediaWorkflowTaskDeclaration objects.
      * 
      */
-    private List<GetMediaWorkflowTaskDeclarationItem> items;
+    private @Nullable List<GetMediaWorkflowTaskDeclarationItem> items;
     /**
      * @return MediaWorkflowTaskDeclaration identifier. The name and version should be unique among MediaWorkflowTaskDeclarations.
      * 
@@ -46,8 +46,8 @@ public final class GetMediaWorkflowTaskDeclarationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCurrent() {
         return Optional.ofNullable(this.isCurrent);
@@ -57,7 +57,7 @@ public final class GetMediaWorkflowTaskDeclarationResult {
      * 
      */
     public List<GetMediaWorkflowTaskDeclarationItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return MediaWorkflowTaskDeclaration identifier. The name and version should be unique among MediaWorkflowTaskDeclarations.
@@ -84,9 +84,9 @@ public final class GetMediaWorkflowTaskDeclarationResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCurrent;
-        private List<GetMediaWorkflowTaskDeclarationItem> items;
+        private @Nullable List<GetMediaWorkflowTaskDeclarationItem> items;
         private @Nullable String name;
         private @Nullable Integer version;
         public Builder() {}
@@ -106,8 +106,8 @@ public final class GetMediaWorkflowTaskDeclarationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -116,8 +116,8 @@ public final class GetMediaWorkflowTaskDeclarationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetMediaWorkflowTaskDeclarationItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMediaWorkflowTaskDeclarationItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMediaWorkflowTaskDeclarationItem... items) {

@@ -25,195 +25,146 @@ __all__ = [
 @pulumi.output_type
 class GetEmWarehousesEmWarehouseCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetEmWarehousesEmWarehouseCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 em_bridge_id: str,
-                 em_warehouse_type: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 latest_etl_run_message: str,
-                 latest_etl_run_status: str,
-                 latest_etl_run_time: str,
-                 lifecycle_details: str,
-                 operations_insights_warehouse_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str em_bridge_id: EMBridge Identifier
-        :param str em_warehouse_type: Type of the EmWarehouse.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique EmWarehouse identifier
-        :param str latest_etl_run_message: Data Flow Run Status Message
-        :param str latest_etl_run_status: Data Flow Run Status
-        :param str latest_etl_run_time: Data Flow Run Total Time
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str operations_insights_warehouse_id: unique operationsInsightsWarehouseId identifier
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "em_bridge_id", em_bridge_id)
-        pulumi.set(__self__, "em_warehouse_type", em_warehouse_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "latest_etl_run_message", latest_etl_run_message)
-        pulumi.set(__self__, "latest_etl_run_status", latest_etl_run_status)
-        pulumi.set(__self__, "latest_etl_run_time", latest_etl_run_time)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 em_bridge_id: Optional[str] = None,
+                 em_warehouse_type: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 latest_etl_run_message: Optional[str] = None,
+                 latest_etl_run_status: Optional[str] = None,
+                 latest_etl_run_time: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 operations_insights_warehouse_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if em_bridge_id is not None:
+            pulumi.set(__self__, "em_bridge_id", em_bridge_id)
+        if em_warehouse_type is not None:
+            pulumi.set(__self__, "em_warehouse_type", em_warehouse_type)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if latest_etl_run_message is not None:
+            pulumi.set(__self__, "latest_etl_run_message", latest_etl_run_message)
+        if latest_etl_run_status is not None:
+            pulumi.set(__self__, "latest_etl_run_status", latest_etl_run_status)
+        if latest_etl_run_time is not None:
+            pulumi.set(__self__, "latest_etl_run_time", latest_etl_run_time)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if operations_insights_warehouse_id is not None:
+            pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="emBridgeId")
-    def em_bridge_id(self) -> str:
-        """
-        EMBridge Identifier
-        """
+    def em_bridge_id(self) -> Optional[str]:
         return pulumi.get(self, "em_bridge_id")
 
     @property
     @pulumi.getter(name="emWarehouseType")
-    def em_warehouse_type(self) -> str:
-        """
-        Type of the EmWarehouse.
-        """
+    def em_warehouse_type(self) -> Optional[str]:
         return pulumi.get(self, "em_warehouse_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique EmWarehouse identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="latestEtlRunMessage")
-    def latest_etl_run_message(self) -> str:
-        """
-        Data Flow Run Status Message
-        """
+    def latest_etl_run_message(self) -> Optional[str]:
         return pulumi.get(self, "latest_etl_run_message")
 
     @property
     @pulumi.getter(name="latestEtlRunStatus")
-    def latest_etl_run_status(self) -> str:
-        """
-        Data Flow Run Status
-        """
+    def latest_etl_run_status(self) -> Optional[str]:
         return pulumi.get(self, "latest_etl_run_status")
 
     @property
     @pulumi.getter(name="latestEtlRunTime")
-    def latest_etl_run_time(self) -> str:
-        """
-        Data Flow Run Total Time
-        """
+    def latest_etl_run_time(self) -> Optional[str]:
         return pulumi.get(self, "latest_etl_run_time")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> str:
-        """
-        unique operationsInsightsWarehouseId identifier
-        """
+    def operations_insights_warehouse_id(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -247,292 +198,212 @@ class GetEmWarehousesFilterResult(dict):
 @pulumi.output_type
 class GetEtlRunItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 data_read_in_bytes: str,
-                 data_written: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 lifecycle_details: str,
-                 run_duration_in_milliseconds: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str data_read_in_bytes: Data read by the dataflow run
-        :param str data_written: Data written by the dataflow run
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str lifecycle_details: Details of the lifecycle state
-        :param str run_duration_in_milliseconds: Dataflow run duration
-        :param str state: The current state of the etlRun.
-        :param str time_created: Time when the dataflow run was created
-        :param str time_updated: Time when the dataflow run was updated
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written", data_written)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 data_read_in_bytes: Optional[str] = None,
+                 data_written: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 lifecycle_details: Optional[str] = None,
+                 run_duration_in_milliseconds: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_read_in_bytes is not None:
+            pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
+        if data_written is not None:
+            pulumi.set(__self__, "data_written", data_written)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if run_duration_in_milliseconds is not None:
+            pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataReadInBytes")
-    def data_read_in_bytes(self) -> str:
-        """
-        Data read by the dataflow run
-        """
+    def data_read_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "data_read_in_bytes")
 
     @property
     @pulumi.getter(name="dataWritten")
-    def data_written(self) -> str:
-        """
-        Data written by the dataflow run
-        """
+    def data_written(self) -> Optional[str]:
         return pulumi.get(self, "data_written")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the lifecycle state
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="runDurationInMilliseconds")
-    def run_duration_in_milliseconds(self) -> str:
-        """
-        Dataflow run duration
-        """
+    def run_duration_in_milliseconds(self) -> Optional[str]:
         return pulumi.get(self, "run_duration_in_milliseconds")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the etlRun.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time when the dataflow run was created
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Time when the dataflow run was updated
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetEtlRunsEtlRunCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult']):
-        """
-        :param Sequence['GetEtlRunsEtlRunCollectionItemArgs'] items: List of runs
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult']:
-        """
-        List of runs
-        """
+    def items(self) -> Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetEtlRunsEtlRunCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult']):
-        """
-        :param Sequence['GetEtlRunsEtlRunCollectionItemItemArgs'] items: List of runs
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult']:
-        """
-        List of runs
-        """
+    def items(self) -> Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetEtlRunsEtlRunCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 data_read_in_bytes: str,
-                 data_written: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 lifecycle_details: str,
-                 run_duration_in_milliseconds: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str data_read_in_bytes: Data read by the dataflow run
-        :param str data_written: Data written by the dataflow run
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str lifecycle_details: Details of the lifecycle state
-        :param str run_duration_in_milliseconds: Dataflow run duration
-        :param str state: The current state of the etlRun.
-        :param str time_created: Time when the dataflow run was created
-        :param str time_updated: Time when the dataflow run was updated
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written", data_written)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 data_read_in_bytes: Optional[str] = None,
+                 data_written: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 lifecycle_details: Optional[str] = None,
+                 run_duration_in_milliseconds: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_read_in_bytes is not None:
+            pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
+        if data_written is not None:
+            pulumi.set(__self__, "data_written", data_written)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if run_duration_in_milliseconds is not None:
+            pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataReadInBytes")
-    def data_read_in_bytes(self) -> str:
-        """
-        Data read by the dataflow run
-        """
+    def data_read_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "data_read_in_bytes")
 
     @property
     @pulumi.getter(name="dataWritten")
-    def data_written(self) -> str:
-        """
-        Data written by the dataflow run
-        """
+    def data_written(self) -> Optional[str]:
         return pulumi.get(self, "data_written")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the lifecycle state
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="runDurationInMilliseconds")
-    def run_duration_in_milliseconds(self) -> str:
-        """
-        Dataflow run duration
-        """
+    def run_duration_in_milliseconds(self) -> Optional[str]:
         return pulumi.get(self, "run_duration_in_milliseconds")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the etlRun.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time when the dataflow run was created
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Time when the dataflow run was updated
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -566,51 +437,37 @@ class GetEtlRunsFilterResult(dict):
 @pulumi.output_type
 class GetResourceUsageEmInstanceResult(dict):
     def __init__(__self__, *,
-                 em_discoverer_url: str,
-                 em_host: str,
-                 em_id: str,
-                 targets_count: int):
-        """
-        :param str em_discoverer_url: emdDiscoverer url
-        :param str em_host: emHost name
-        :param str em_id: operations Insights Warehouse Identifier
-        :param int targets_count: EmInstance Target count
-        """
-        pulumi.set(__self__, "em_discoverer_url", em_discoverer_url)
-        pulumi.set(__self__, "em_host", em_host)
-        pulumi.set(__self__, "em_id", em_id)
-        pulumi.set(__self__, "targets_count", targets_count)
+                 em_discoverer_url: Optional[str] = None,
+                 em_host: Optional[str] = None,
+                 em_id: Optional[str] = None,
+                 targets_count: Optional[int] = None):
+        if em_discoverer_url is not None:
+            pulumi.set(__self__, "em_discoverer_url", em_discoverer_url)
+        if em_host is not None:
+            pulumi.set(__self__, "em_host", em_host)
+        if em_id is not None:
+            pulumi.set(__self__, "em_id", em_id)
+        if targets_count is not None:
+            pulumi.set(__self__, "targets_count", targets_count)
 
     @property
     @pulumi.getter(name="emDiscovererUrl")
-    def em_discoverer_url(self) -> str:
-        """
-        emdDiscoverer url
-        """
+    def em_discoverer_url(self) -> Optional[str]:
         return pulumi.get(self, "em_discoverer_url")
 
     @property
     @pulumi.getter(name="emHost")
-    def em_host(self) -> str:
-        """
-        emHost name
-        """
+    def em_host(self) -> Optional[str]:
         return pulumi.get(self, "em_host")
 
     @property
     @pulumi.getter(name="emId")
-    def em_id(self) -> str:
-        """
-        operations Insights Warehouse Identifier
-        """
+    def em_id(self) -> Optional[str]:
         return pulumi.get(self, "em_id")
 
     @property
     @pulumi.getter(name="targetsCount")
-    def targets_count(self) -> int:
-        """
-        EmInstance Target count
-        """
+    def targets_count(self) -> Optional[int]:
         return pulumi.get(self, "targets_count")
 
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
@@ -71,7 +70,7 @@ type GetComputeGlobalImageCapabilitySchemasVersionsResult struct {
 	DisplayName *string                                                `pulumi:"displayName"`
 	Filters     []GetComputeGlobalImageCapabilitySchemasVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetComputeGlobalImageCapabilitySchemasVersionsOutput(ctx *pulumi.Context, args GetComputeGlobalImageCapabilitySchemasVersionsOutputArgs, opts ...pulumi.InvokeOption) GetComputeGlobalImageCapabilitySchemasVersionsResultOutput {
@@ -115,12 +114,6 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionsResultOutput) ToGetCompute
 	return o
 }
 
-func (o GetComputeGlobalImageCapabilitySchemasVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult] {
-	return pulumix.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ocid of the compute global image capability schema
 func (o GetComputeGlobalImageCapabilitySchemasVersionsResultOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionsResult) string {
@@ -147,8 +140,8 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionsResultOutput) Filters() Ge
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeGlobalImageCapabilitySchemasVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemasVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

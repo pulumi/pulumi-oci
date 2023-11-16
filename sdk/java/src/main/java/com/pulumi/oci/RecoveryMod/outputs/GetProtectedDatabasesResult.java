@@ -34,7 +34,7 @@ public final class GetProtectedDatabasesResult {
      * @return The list of protected_database_collection.
      * 
      */
-    private List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections;
+    private @Nullable List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections;
     /**
      * @return The OCID of the protection policy associated with the protected database.
      * 
@@ -81,7 +81,7 @@ public final class GetProtectedDatabasesResult {
      * 
      */
     public List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections() {
-        return this.protectedDatabaseCollections;
+        return this.protectedDatabaseCollections == null ? List.of() : this.protectedDatabaseCollections;
     }
     /**
      * @return The OCID of the protection policy associated with the protected database.
@@ -118,7 +118,7 @@ public final class GetProtectedDatabasesResult {
         private @Nullable String displayName;
         private @Nullable List<GetProtectedDatabasesFilter> filters;
         private @Nullable String id;
-        private List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections;
+        private @Nullable List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections;
         private @Nullable String protectionPolicyId;
         private @Nullable String recoveryServiceSubnetId;
         private @Nullable String state;
@@ -159,8 +159,8 @@ public final class GetProtectedDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder protectedDatabaseCollections(List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections) {
-            this.protectedDatabaseCollections = Objects.requireNonNull(protectedDatabaseCollections);
+        public Builder protectedDatabaseCollections(@Nullable List<GetProtectedDatabasesProtectedDatabaseCollection> protectedDatabaseCollections) {
+            this.protectedDatabaseCollections = protectedDatabaseCollections;
             return this;
         }
         public Builder protectedDatabaseCollections(GetProtectedDatabasesProtectedDatabaseCollection... protectedDatabaseCollections) {

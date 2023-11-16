@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dynamic Group resource in Oracle Cloud Infrastructure Identity service.
@@ -86,7 +85,7 @@ type DynamicGroup struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
 	MatchingRule pulumi.StringOutput `pulumi:"matchingRule"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -95,9 +94,9 @@ type DynamicGroup struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The group's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewDynamicGroup registers a new resource with the given unique name, arguments, and options.
@@ -250,12 +249,6 @@ func (i *DynamicGroup) ToDynamicGroupOutputWithContext(ctx context.Context) Dyna
 	return pulumi.ToOutputWithContext(ctx, i).(DynamicGroupOutput)
 }
 
-func (i *DynamicGroup) ToOutput(ctx context.Context) pulumix.Output[*DynamicGroup] {
-	return pulumix.Output[*DynamicGroup]{
-		OutputState: i.ToDynamicGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DynamicGroupArrayInput is an input type that accepts DynamicGroupArray and DynamicGroupArrayOutput values.
 // You can construct a concrete instance of `DynamicGroupArrayInput` via:
 //
@@ -279,12 +272,6 @@ func (i DynamicGroupArray) ToDynamicGroupArrayOutput() DynamicGroupArrayOutput {
 
 func (i DynamicGroupArray) ToDynamicGroupArrayOutputWithContext(ctx context.Context) DynamicGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DynamicGroupArrayOutput)
-}
-
-func (i DynamicGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DynamicGroup] {
-	return pulumix.Output[[]*DynamicGroup]{
-		OutputState: i.ToDynamicGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DynamicGroupMapInput is an input type that accepts DynamicGroupMap and DynamicGroupMapOutput values.
@@ -312,12 +299,6 @@ func (i DynamicGroupMap) ToDynamicGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DynamicGroupMapOutput)
 }
 
-func (i DynamicGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DynamicGroup] {
-	return pulumix.Output[map[string]*DynamicGroup]{
-		OutputState: i.ToDynamicGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DynamicGroupOutput struct{ *pulumi.OutputState }
 
 func (DynamicGroupOutput) ElementType() reflect.Type {
@@ -330,12 +311,6 @@ func (o DynamicGroupOutput) ToDynamicGroupOutput() DynamicGroupOutput {
 
 func (o DynamicGroupOutput) ToDynamicGroupOutputWithContext(ctx context.Context) DynamicGroupOutput {
 	return o
-}
-
-func (o DynamicGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DynamicGroup] {
-	return pulumix.Output[*DynamicGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy containing the group.
@@ -359,8 +334,8 @@ func (o DynamicGroupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o DynamicGroupOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *DynamicGroup) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o DynamicGroupOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicGroup) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The matching rule to dynamically match an instance certificate to this dynamic group. For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm).
@@ -377,13 +352,13 @@ func (o DynamicGroupOutput) Name() pulumi.StringOutput {
 }
 
 // The group's current state.
-func (o DynamicGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DynamicGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DynamicGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicGroup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o DynamicGroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DynamicGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DynamicGroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DynamicGroup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DynamicGroupArrayOutput struct{ *pulumi.OutputState }
@@ -398,12 +373,6 @@ func (o DynamicGroupArrayOutput) ToDynamicGroupArrayOutput() DynamicGroupArrayOu
 
 func (o DynamicGroupArrayOutput) ToDynamicGroupArrayOutputWithContext(ctx context.Context) DynamicGroupArrayOutput {
 	return o
-}
-
-func (o DynamicGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DynamicGroup] {
-	return pulumix.Output[[]*DynamicGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DynamicGroupArrayOutput) Index(i pulumi.IntInput) DynamicGroupOutput {
@@ -424,12 +393,6 @@ func (o DynamicGroupMapOutput) ToDynamicGroupMapOutput() DynamicGroupMapOutput {
 
 func (o DynamicGroupMapOutput) ToDynamicGroupMapOutputWithContext(ctx context.Context) DynamicGroupMapOutput {
 	return o
-}
-
-func (o DynamicGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DynamicGroup] {
-	return pulumix.Output[map[string]*DynamicGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DynamicGroupMapOutput) MapIndex(k pulumi.StringInput) DynamicGroupOutput {

@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,70 +99,70 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return Created user id
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Is the metric created out of box, default false
      * 
      */
     @Export(name="isOutOfBox", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOutOfBox;
+    private Output</* @Nullable */ Boolean> isOutOfBox;
 
     /**
      * @return Is the metric created out of box, default false
      * 
      */
-    public Output<Boolean> isOutOfBox() {
-        return this.isOutOfBox;
+    public Output<Optional<Boolean>> isOutOfBox() {
+        return Codegen.optional(this.isOutOfBox);
     }
     /**
      * last Updated user id
      * 
      */
     @Export(name="lastUpdatedBy", refs={String.class}, tree="[0]")
-    private Output<String> lastUpdatedBy;
+    private Output</* @Nullable */ String> lastUpdatedBy;
 
     /**
      * @return last Updated user id
      * 
      */
-    public Output<String> lastUpdatedBy() {
-        return this.lastUpdatedBy;
+    public Output<Optional<String>> lastUpdatedBy() {
+        return Codegen.optional(this.lastUpdatedBy);
     }
     /**
      * (Updatable) name of the metric
@@ -216,70 +217,70 @@ public class BaselineableMetric extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the metric extension
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * OCID of the tenancy
      * 
      */
     @Export(name="tenancyId", refs={String.class}, tree="[0]")
-    private Output<String> tenancyId;
+    private Output</* @Nullable */ String> tenancyId;
 
     /**
      * @return OCID of the tenancy
      * 
      */
-    public Output<String> tenancyId() {
-        return this.tenancyId;
+    public Output<Optional<String>> tenancyId() {
+        return Codegen.optional(this.tenancyId);
     }
     /**
      * creation date
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return creation date
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * last updated time
      * 
      */
     @Export(name="timeLastUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeLastUpdated;
+    private Output</* @Nullable */ String> timeLastUpdated;
 
     /**
      * @return last updated time
      * 
      */
-    public Output<String> timeLastUpdated() {
-        return this.timeLastUpdated;
+    public Output<Optional<String>> timeLastUpdated() {
+        return Codegen.optional(this.timeLastUpdated);
     }
 
     /**

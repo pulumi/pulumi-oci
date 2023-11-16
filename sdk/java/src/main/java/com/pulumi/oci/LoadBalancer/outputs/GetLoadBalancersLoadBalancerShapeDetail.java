@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancersLoadBalancerShapeDetail {
@@ -13,27 +15,27 @@ public final class GetLoadBalancersLoadBalancerShapeDetail {
      * @return Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
      * 
      */
-    private Integer maximumBandwidthInMbps;
+    private @Nullable Integer maximumBandwidthInMbps;
     /**
      * @return Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
      * 
      */
-    private Integer minimumBandwidthInMbps;
+    private @Nullable Integer minimumBandwidthInMbps;
 
     private GetLoadBalancersLoadBalancerShapeDetail() {}
     /**
      * @return Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
      * 
      */
-    public Integer maximumBandwidthInMbps() {
-        return this.maximumBandwidthInMbps;
+    public Optional<Integer> maximumBandwidthInMbps() {
+        return Optional.ofNullable(this.maximumBandwidthInMbps);
     }
     /**
      * @return Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
      * 
      */
-    public Integer minimumBandwidthInMbps() {
-        return this.minimumBandwidthInMbps;
+    public Optional<Integer> minimumBandwidthInMbps() {
+        return Optional.ofNullable(this.minimumBandwidthInMbps);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetLoadBalancersLoadBalancerShapeDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maximumBandwidthInMbps;
-        private Integer minimumBandwidthInMbps;
+        private @Nullable Integer maximumBandwidthInMbps;
+        private @Nullable Integer minimumBandwidthInMbps;
         public Builder() {}
         public Builder(GetLoadBalancersLoadBalancerShapeDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetLoadBalancersLoadBalancerShapeDetail {
         }
 
         @CustomType.Setter
-        public Builder maximumBandwidthInMbps(Integer maximumBandwidthInMbps) {
-            this.maximumBandwidthInMbps = Objects.requireNonNull(maximumBandwidthInMbps);
+        public Builder maximumBandwidthInMbps(@Nullable Integer maximumBandwidthInMbps) {
+            this.maximumBandwidthInMbps = maximumBandwidthInMbps;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumBandwidthInMbps(Integer minimumBandwidthInMbps) {
-            this.minimumBandwidthInMbps = Objects.requireNonNull(minimumBandwidthInMbps);
+        public Builder minimumBandwidthInMbps(@Nullable Integer minimumBandwidthInMbps) {
+            this.minimumBandwidthInMbps = minimumBandwidthInMbps;
             return this;
         }
         public GetLoadBalancersLoadBalancerShapeDetail build() {

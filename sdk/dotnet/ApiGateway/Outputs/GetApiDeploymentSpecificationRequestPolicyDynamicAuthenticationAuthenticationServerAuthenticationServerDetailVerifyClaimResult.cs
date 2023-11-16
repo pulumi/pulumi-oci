@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
         /// </summary>
-        public readonly bool IsRequired;
+        public readonly bool? IsRequired;
         /// <summary>
         /// Information around the values for selector of an authentication/ routing branch.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimResult(
-            bool isRequired,
+            bool? isRequired,
 
-            string key,
+            string? key,
 
             ImmutableArray<string> values)
         {

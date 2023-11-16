@@ -80,14 +80,14 @@ public class DrgAttachmentsList extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="drgAllAttachments", refs={List.class,DrgAttachmentsListDrgAllAttachment.class}, tree="[0,1]")
-    private Output<List<DrgAttachmentsListDrgAllAttachment>> drgAllAttachments;
+    private Output</* @Nullable */ List<DrgAttachmentsListDrgAllAttachment>> drgAllAttachments;
 
     /**
      * @return The list of drg_attachments.
      * 
      */
-    public Output<List<DrgAttachmentsListDrgAllAttachment>> drgAllAttachments() {
-        return this.drgAllAttachments;
+    public Output<Optional<List<DrgAttachmentsListDrgAllAttachment>>> drgAllAttachments() {
+        return Codegen.optional(this.drgAllAttachments);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.

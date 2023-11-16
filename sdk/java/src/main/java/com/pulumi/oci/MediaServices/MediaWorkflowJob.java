@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,238 +92,238 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The lifecycle details of MediaWorkflowJob task.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Configurations to be applied to this run of the workflow.
      * 
      */
     @Export(name="mediaWorkflowConfigurationIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> mediaWorkflowConfigurationIds;
+    private Output</* @Nullable */ List<String>> mediaWorkflowConfigurationIds;
 
     /**
      * @return Configurations to be applied to this run of the workflow.
      * 
      */
-    public Output<List<String>> mediaWorkflowConfigurationIds() {
-        return this.mediaWorkflowConfigurationIds;
+    public Output<Optional<List<String>>> mediaWorkflowConfigurationIds() {
+        return Codegen.optional(this.mediaWorkflowConfigurationIds);
     }
     /**
      * OCID of the MediaWorkflow that should be run.
      * 
      */
     @Export(name="mediaWorkflowId", refs={String.class}, tree="[0]")
-    private Output<String> mediaWorkflowId;
+    private Output</* @Nullable */ String> mediaWorkflowId;
 
     /**
      * @return OCID of the MediaWorkflow that should be run.
      * 
      */
-    public Output<String> mediaWorkflowId() {
-        return this.mediaWorkflowId;
+    public Output<Optional<String>> mediaWorkflowId() {
+        return Codegen.optional(this.mediaWorkflowId);
     }
     /**
      * Name of the system MediaWorkflow that should be run.
      * 
      */
     @Export(name="mediaWorkflowName", refs={String.class}, tree="[0]")
-    private Output<String> mediaWorkflowName;
+    private Output</* @Nullable */ String> mediaWorkflowName;
 
     /**
      * @return Name of the system MediaWorkflow that should be run.
      * 
      */
-    public Output<String> mediaWorkflowName() {
-        return this.mediaWorkflowName;
+    public Output<Optional<String>> mediaWorkflowName() {
+        return Codegen.optional(this.mediaWorkflowName);
     }
     /**
      * A list of JobOutput for the workflowJob.
      * 
      */
     @Export(name="outputs", refs={List.class,MediaWorkflowJobOutput.class}, tree="[0,1]")
-    private Output<List<MediaWorkflowJobOutput>> outputs;
+    private Output</* @Nullable */ List<MediaWorkflowJobOutput>> outputs;
 
     /**
      * @return A list of JobOutput for the workflowJob.
      * 
      */
-    public Output<List<MediaWorkflowJobOutput>> outputs() {
-        return this.outputs;
+    public Output<Optional<List<MediaWorkflowJobOutput>>> outputs() {
+        return Codegen.optional(this.outputs);
     }
     /**
      * Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow&#39;s MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task&#39;s key and the 2nd level keys refer to a parameter&#39;s name.
      * 
      */
     @Export(name="parameters", refs={String.class}, tree="[0]")
-    private Output<String> parameters;
+    private Output</* @Nullable */ String> parameters;
 
     /**
      * @return Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow&#39;s MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task&#39;s key and the 2nd level keys refer to a parameter&#39;s name.
      * 
      */
-    public Output<String> parameters() {
-        return this.parameters;
+    public Output<Optional<String>> parameters() {
+        return Codegen.optional(this.parameters);
     }
     /**
      * A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
      * 
      */
     @Export(name="runnable", refs={String.class}, tree="[0]")
-    private Output<String> runnable;
+    private Output</* @Nullable */ String> runnable;
 
     /**
      * @return A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
      * 
      */
-    public Output<String> runnable() {
-        return this.runnable;
+    public Output<Optional<String>> runnable() {
+        return Codegen.optional(this.runnable);
     }
     /**
      * The current state of the MediaWorkflowJob task.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the MediaWorkflowJob task.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * Status of each task.
      * 
      */
     @Export(name="taskLifecycleStates", refs={List.class,MediaWorkflowJobTaskLifecycleState.class}, tree="[0,1]")
-    private Output<List<MediaWorkflowJobTaskLifecycleState>> taskLifecycleStates;
+    private Output</* @Nullable */ List<MediaWorkflowJobTaskLifecycleState>> taskLifecycleStates;
 
     /**
      * @return Status of each task.
      * 
      */
-    public Output<List<MediaWorkflowJobTaskLifecycleState>> taskLifecycleStates() {
-        return this.taskLifecycleStates;
+    public Output<Optional<List<MediaWorkflowJobTaskLifecycleState>>> taskLifecycleStates() {
+        return Codegen.optional(this.taskLifecycleStates);
     }
     /**
      * Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Time when the job finished. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeEnded", refs={String.class}, tree="[0]")
-    private Output<String> timeEnded;
+    private Output</* @Nullable */ String> timeEnded;
 
     /**
      * @return Time when the job finished. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeEnded() {
-        return this.timeEnded;
+    public Output<Optional<String>> timeEnded() {
+        return Codegen.optional(this.timeEnded);
     }
     /**
      * Time when the job started to execute. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return Time when the job started to execute. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
     /**
      * Updated time of the job. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return Updated time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.

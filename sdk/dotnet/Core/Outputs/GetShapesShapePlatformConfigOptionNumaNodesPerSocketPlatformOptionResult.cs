@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The default percentage of cores enabled.
         /// </summary>
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
 
         [OutputConstructor]
         private GetShapesShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult(
             ImmutableArray<string> allowedValues,
 
-            string defaultValue)
+            string? defaultValue)
         {
             AllowedValues = allowedValues;
             DefaultValue = defaultValue;

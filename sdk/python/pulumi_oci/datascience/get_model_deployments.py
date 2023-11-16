@@ -52,25 +52,16 @@ class GetModelDeploymentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-        """
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,33 +72,21 @@ class GetModelDeploymentsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="modelDeployments")
-    def model_deployments(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentResult']:
-        """
-        The list of model_deployments.
-        """
+    def model_deployments(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentResult']]:
         return pulumi.get(self, "model_deployments")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the model deployment.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_model_deployments(compartment_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelDeploymentsResult:
     """
-    This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
-
-    Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_deployments = oci.DataScience.get_model_deployments(compartment_id=var["compartment_id"],
-        created_by=var["model_deployment_created_by"],
-        display_name=var["model_deployment_display_name"],
-        id=var["model_deployment_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_deployment_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,30 +149,6 @@ def get_model_deployments_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelDeploymentsResult]:
     """
-    This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
-
-    Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_deployments = oci.DataScience.get_model_deployments(compartment_id=var["compartment_id"],
-        created_by=var["model_deployment_created_by"],
-        display_name=var["model_deployment_display_name"],
-        id=var["model_deployment_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_deployment_state"])
-    ```
-
-
-    :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-    :param str display_name: <b>Filter</b> results by its user-friendly name.
-    :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-    :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-    :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

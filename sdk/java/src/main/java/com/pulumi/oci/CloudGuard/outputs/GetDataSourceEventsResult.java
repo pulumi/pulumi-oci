@@ -18,7 +18,7 @@ public final class GetDataSourceEventsResult {
      * @return The list of data_source_event_collection.
      * 
      */
-    private List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections;
+    private @Nullable List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections;
     /**
      * @return Attached data Source
      * 
@@ -29,7 +29,7 @@ public final class GetDataSourceEventsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Data source event region
      * 
@@ -42,7 +42,7 @@ public final class GetDataSourceEventsResult {
      * 
      */
     public List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections() {
-        return this.dataSourceEventCollections;
+        return this.dataSourceEventCollections == null ? List.of() : this.dataSourceEventCollections;
     }
     /**
      * @return Attached data Source
@@ -58,8 +58,8 @@ public final class GetDataSourceEventsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Data source event region
@@ -78,10 +78,10 @@ public final class GetDataSourceEventsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections;
+        private @Nullable List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections;
         private String dataSourceId;
         private @Nullable List<GetDataSourceEventsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String region;
         public Builder() {}
         public Builder(GetDataSourceEventsResult defaults) {
@@ -94,8 +94,8 @@ public final class GetDataSourceEventsResult {
         }
 
         @CustomType.Setter
-        public Builder dataSourceEventCollections(List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections) {
-            this.dataSourceEventCollections = Objects.requireNonNull(dataSourceEventCollections);
+        public Builder dataSourceEventCollections(@Nullable List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections) {
+            this.dataSourceEventCollections = dataSourceEventCollections;
             return this;
         }
         public Builder dataSourceEventCollections(GetDataSourceEventsDataSourceEventCollection... dataSourceEventCollections) {
@@ -115,8 +115,8 @@ public final class GetDataSourceEventsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

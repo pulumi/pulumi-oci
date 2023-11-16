@@ -46,33 +46,21 @@ class GetExternalClusterInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the cluster instance. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalClusterId")
     def external_cluster_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-        """
         return pulumi.get(self, "external_cluster_id")
 
     @property
     @pulumi.getter(name="externalClusterInstanceCollections")
-    def external_cluster_instance_collections(self) -> Sequence['outputs.GetExternalClusterInstancesExternalClusterInstanceCollectionResult']:
-        """
-        The list of external_cluster_instance_collection.
-        """
+    def external_cluster_instance_collections(self) -> Optional[Sequence['outputs.GetExternalClusterInstancesExternalClusterInstanceCollectionResult']]:
         return pulumi.get(self, "external_cluster_instance_collections")
 
     @property
@@ -82,7 +70,7 @@ class GetExternalClusterInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,25 +97,7 @@ def get_external_cluster_instances(compartment_id: Optional[str] = None,
                                    filters: Optional[Sequence[pulumi.InputType['GetExternalClusterInstancesFilterArgs']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClusterInstancesResult:
     """
-    This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the cluster instances in the specified external cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_cluster_instance_display_name"],
-        external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[
                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalClusterInstancesFilterArgs']]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClusterInstancesResult]:
     """
-    This data source provides the list of External Cluster Instances in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the cluster instances in the specified external cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_cluster_instance_display_name"],
-        external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

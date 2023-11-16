@@ -22,14 +22,14 @@ public final class GetDomainsPasswordPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String idcsEndpoint;
-    private Integer itemsPerPage;
+    private @Nullable Integer itemsPerPage;
     /**
      * @return The list of password_policies.
      * 
      */
-    private List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies;
+    private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies;
     private @Nullable Integer passwordPolicyCount;
     private @Nullable String passwordPolicyFilter;
     private @Nullable String resourceTypeSchemaVersion;
@@ -37,11 +37,11 @@ public final class GetDomainsPasswordPoliciesResult {
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     private @Nullable String sortBy;
     private @Nullable String sortOrder;
     private @Nullable Integer startIndex;
-    private Integer totalResults;
+    private @Nullable Integer totalResults;
 
     private GetDomainsPasswordPoliciesResult() {}
     public List<String> attributeSets() {
@@ -60,21 +60,21 @@ public final class GetDomainsPasswordPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
     }
-    public Integer itemsPerPage() {
-        return this.itemsPerPage;
+    public Optional<Integer> itemsPerPage() {
+        return Optional.ofNullable(this.itemsPerPage);
     }
     /**
      * @return The list of password_policies.
      * 
      */
     public List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies() {
-        return this.passwordPolicies;
+        return this.passwordPolicies == null ? List.of() : this.passwordPolicies;
     }
     public Optional<Integer> passwordPolicyCount() {
         return Optional.ofNullable(this.passwordPolicyCount);
@@ -90,7 +90,7 @@ public final class GetDomainsPasswordPoliciesResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public Optional<String> sortBy() {
         return Optional.ofNullable(this.sortBy);
@@ -101,8 +101,8 @@ public final class GetDomainsPasswordPoliciesResult {
     public Optional<Integer> startIndex() {
         return Optional.ofNullable(this.startIndex);
     }
-    public Integer totalResults() {
-        return this.totalResults;
+    public Optional<Integer> totalResults() {
+        return Optional.ofNullable(this.totalResults);
     }
 
     public static Builder builder() {
@@ -118,18 +118,18 @@ public final class GetDomainsPasswordPoliciesResult {
         private @Nullable String attributes;
         private @Nullable String authorization;
         private @Nullable String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String idcsEndpoint;
-        private Integer itemsPerPage;
-        private List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies;
+        private @Nullable Integer itemsPerPage;
+        private @Nullable List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies;
         private @Nullable Integer passwordPolicyCount;
         private @Nullable String passwordPolicyFilter;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
+        private @Nullable List<String> schemas;
         private @Nullable String sortBy;
         private @Nullable String sortOrder;
         private @Nullable Integer startIndex;
-        private Integer totalResults;
+        private @Nullable Integer totalResults;
         public Builder() {}
         public Builder(GetDomainsPasswordPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -175,8 +175,8 @@ public final class GetDomainsPasswordPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -185,13 +185,13 @@ public final class GetDomainsPasswordPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+        public Builder itemsPerPage(@Nullable Integer itemsPerPage) {
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordPolicies(List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies) {
-            this.passwordPolicies = Objects.requireNonNull(passwordPolicies);
+        public Builder passwordPolicies(@Nullable List<GetDomainsPasswordPoliciesPasswordPolicy> passwordPolicies) {
+            this.passwordPolicies = passwordPolicies;
             return this;
         }
         public Builder passwordPolicies(GetDomainsPasswordPoliciesPasswordPolicy... passwordPolicies) {
@@ -213,8 +213,8 @@ public final class GetDomainsPasswordPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -236,8 +236,8 @@ public final class GetDomainsPasswordPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+        public Builder totalResults(@Nullable Integer totalResults) {
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsPasswordPoliciesResult build() {

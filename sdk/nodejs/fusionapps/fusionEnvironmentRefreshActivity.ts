@@ -62,7 +62,7 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
     /**
      * A friendly name for the refresh activity. Can be changed later.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
@@ -70,16 +70,16 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public /*out*/ readonly refreshActivityId!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly refreshActivityId!: pulumi.Output<string | undefined>;
     /**
      * Details of refresh investigation information, each item represents a different issue.
      */
-    public /*out*/ readonly refreshIssueDetailsLists!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList[]>;
+    public /*out*/ readonly refreshIssueDetailsLists!: pulumi.Output<outputs.FusionApps.FusionEnvironmentRefreshActivityRefreshIssueDetailsList[] | undefined>;
     /**
      * Service availability / impact during refresh activity execution up down
      */
-    public /*out*/ readonly serviceAvailability!: pulumi.Output<string>;
+    public /*out*/ readonly serviceAvailability!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
      *
@@ -91,27 +91,27 @@ export class FusionEnvironmentRefreshActivity extends pulumi.CustomResource {
     /**
      * The current state of the refreshActivity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    public /*out*/ readonly timeAccepted!: pulumi.Output<string | undefined>;
     /**
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeExpectedFinish!: pulumi.Output<string>;
+    public /*out*/ readonly timeExpectedFinish!: pulumi.Output<string | undefined>;
     /**
      * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeFinished!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the most recent source environment backup used for the environment refresh.
      */
-    public /*out*/ readonly timeOfRestorationPoint!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfRestorationPoint!: pulumi.Output<string | undefined>;
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a FusionEnvironmentRefreshActivity resource with the given unique name, arguments, and options.

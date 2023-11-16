@@ -77,11 +77,11 @@ export class TagDefault extends pulumi.CustomResource {
      *
      * Example: `false`
      */
-    public readonly isRequired!: pulumi.Output<boolean>;
+    public readonly isRequired!: pulumi.Output<boolean | undefined>;
     /**
      * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      */
@@ -89,15 +89,15 @@ export class TagDefault extends pulumi.CustomResource {
     /**
      * The name used in the tag definition. This field is informational in the context of the tag default.
      */
-    public /*out*/ readonly tagDefinitionName!: pulumi.Output<string>;
+    public /*out*/ readonly tagDefinitionName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the tag namespace that contains the tag definition.
      */
-    public /*out*/ readonly tagNamespaceId!: pulumi.Output<string>;
+    public /*out*/ readonly tagNamespaceId!: pulumi.Output<string | undefined>;
     /**
      * Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
      *

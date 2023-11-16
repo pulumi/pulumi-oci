@@ -19,13 +19,6 @@ class DbNodeArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DbNode resource.
-        :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "db_node_id", db_node_id)
         if defined_tags is not None:
@@ -36,9 +29,6 @@ class DbNodeArgs:
     @property
     @pulumi.getter(name="dbNodeId")
     def db_node_id(self) -> pulumi.Input[str]:
-        """
-        The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "db_node_id")
 
     @db_node_id.setter
@@ -48,9 +38,6 @@ class DbNodeArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -60,13 +47,6 @@ class DbNodeArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -103,34 +83,6 @@ class _DbNodeState:
                  vnic_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DbNode resources.
-        :param pulumi.Input[str] additional_details: Additional information about the planned maintenance.
-        :param pulumi.Input[str] backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        :param pulumi.Input[str] backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-        :param pulumi.Input[str] backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-        :param pulumi.Input[int] cpu_core_count: The number of CPU cores enabled on the Db node.
-        :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
-        :param pulumi.Input[str] db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-        :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] fault_domain: The name of the Fault Domain the instance is contained in.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        :param pulumi.Input[str] hostname: The host name for the database node.
-        :param pulumi.Input[str] lifecycle_details: Information about the current lifecycle state.
-        :param pulumi.Input[str] maintenance_type: The type of database node maintenance.
-        :param pulumi.Input[int] memory_size_in_gbs: The allocated memory in GBs on the Db node.
-        :param pulumi.Input[int] software_storage_size_in_gb: The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-        :param pulumi.Input[str] state: The current state of the database node.
-        :param pulumi.Input[str] time_created: The date and time that the database node was created.
-        :param pulumi.Input[str] time_maintenance_window_end: End date and time of maintenance window.
-        :param pulumi.Input[str] time_maintenance_window_start: Start date and time of maintenance window.
-        :param pulumi.Input[str] vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-        :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         """
         if additional_details is not None:
             pulumi.set(__self__, "additional_details", additional_details)
@@ -184,9 +136,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the planned maintenance.
-        """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
@@ -196,9 +145,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="backupIpId")
     def backup_ip_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        """
         return pulumi.get(self, "backup_ip_id")
 
     @backup_ip_id.setter
@@ -208,9 +154,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="backupVnic2id")
     def backup_vnic2id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-        """
         return pulumi.get(self, "backup_vnic2id")
 
     @backup_vnic2id.setter
@@ -220,9 +163,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="backupVnicId")
     def backup_vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-        """
         return pulumi.get(self, "backup_vnic_id")
 
     @backup_vnic_id.setter
@@ -232,9 +172,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of CPU cores enabled on the Db node.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -244,9 +181,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="dbNodeId")
     def db_node_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "db_node_id")
 
     @db_node_id.setter
@@ -256,9 +190,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
     def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The allocated local node storage in GBs on the Db node.
-        """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @db_node_storage_size_in_gbs.setter
@@ -268,9 +199,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="dbServerId")
     def db_server_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-        """
         return pulumi.get(self, "db_server_id")
 
     @db_server_id.setter
@@ -280,9 +208,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
@@ -292,9 +217,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -304,9 +226,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Fault Domain the instance is contained in.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -316,13 +235,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -332,9 +244,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="hostIpId")
     def host_ip_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        """
         return pulumi.get(self, "host_ip_id")
 
     @host_ip_id.setter
@@ -344,9 +253,6 @@ class _DbNodeState:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name for the database node.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -356,9 +262,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -368,9 +271,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="maintenanceType")
     def maintenance_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of database node maintenance.
-        """
         return pulumi.get(self, "maintenance_type")
 
     @maintenance_type.setter
@@ -380,9 +280,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The allocated memory in GBs on the Db node.
-        """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
@@ -392,9 +289,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="softwareStorageSizeInGb")
     def software_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
-        """
-        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-        """
         return pulumi.get(self, "software_storage_size_in_gb")
 
     @software_storage_size_in_gb.setter
@@ -404,9 +298,6 @@ class _DbNodeState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the database node.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -416,9 +307,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time that the database node was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -428,9 +316,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="timeMaintenanceWindowEnd")
     def time_maintenance_window_end(self) -> Optional[pulumi.Input[str]]:
-        """
-        End date and time of maintenance window.
-        """
         return pulumi.get(self, "time_maintenance_window_end")
 
     @time_maintenance_window_end.setter
@@ -440,9 +325,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="timeMaintenanceWindowStart")
     def time_maintenance_window_start(self) -> Optional[pulumi.Input[str]]:
-        """
-        Start date and time of maintenance window.
-        """
         return pulumi.get(self, "time_maintenance_window_start")
 
     @time_maintenance_window_start.setter
@@ -452,9 +334,6 @@ class _DbNodeState:
     @property
     @pulumi.getter
     def vnic2id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-        """
         return pulumi.get(self, "vnic2id")
 
     @vnic2id.setter
@@ -464,9 +343,6 @@ class _DbNodeState:
     @property
     @pulumi.getter(name="vnicId")
     def vnic_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
-        """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
@@ -484,27 +360,9 @@ class DbNode(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the specified database node.
-
-        ## Import
-
-        DbNodes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
-        ```
-
+        Create a DbNode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -513,18 +371,7 @@ class DbNode(pulumi.CustomResource):
                  args: DbNodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the specified database node.
-
-        ## Import
-
-        DbNodes can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/dbNode:DbNode test_db_node "id"
-        ```
-
+        Create a DbNode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DbNodeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -619,34 +466,6 @@ class DbNode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] additional_details: Additional information about the planned maintenance.
-        :param pulumi.Input[str] backup_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        :param pulumi.Input[str] backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-        :param pulumi.Input[str] backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-        :param pulumi.Input[int] cpu_core_count: The number of CPU cores enabled on the Db node.
-        :param pulumi.Input[str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
-        :param pulumi.Input[str] db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-        :param pulumi.Input[str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] fault_domain: The name of the Fault Domain the instance is contained in.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        :param pulumi.Input[str] hostname: The host name for the database node.
-        :param pulumi.Input[str] lifecycle_details: Information about the current lifecycle state.
-        :param pulumi.Input[str] maintenance_type: The type of database node maintenance.
-        :param pulumi.Input[int] memory_size_in_gbs: The allocated memory in GBs on the Db node.
-        :param pulumi.Input[int] software_storage_size_in_gb: The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-        :param pulumi.Input[str] state: The current state of the database node.
-        :param pulumi.Input[str] time_created: The date and time that the database node was created.
-        :param pulumi.Input[str] time_maintenance_window_end: End date and time of maintenance window.
-        :param pulumi.Input[str] time_maintenance_window_start: Start date and time of maintenance window.
-        :param pulumi.Input[str] vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-        :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -680,197 +499,121 @@ class DbNode(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the planned maintenance.
-        """
+    def additional_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="backupIpId")
-    def backup_ip_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        """
+    def backup_ip_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_ip_id")
 
     @property
     @pulumi.getter(name="backupVnic2id")
-    def backup_vnic2id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-        """
+    def backup_vnic2id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_vnic2id")
 
     @property
     @pulumi.getter(name="backupVnicId")
-    def backup_vnic_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-        """
+    def backup_vnic_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "backup_vnic_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> pulumi.Output[int]:
-        """
-        The number of CPU cores enabled on the Db node.
-        """
+    def cpu_core_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="dbNodeId")
     def db_node_id(self) -> pulumi.Output[str]:
-        """
-        The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "db_node_id")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> pulumi.Output[int]:
-        """
-        The allocated local node storage in GBs on the Db node.
-        """
+    def db_node_storage_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServerId")
-    def db_server_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-        """
+    def db_server_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
+    def db_system_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> pulumi.Output[str]:
-        """
-        The name of the Fault Domain the instance is contained in.
-        """
+    def fault_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostIpId")
-    def host_ip_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        """
+    def host_ip_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host_ip_id")
 
     @property
     @pulumi.getter
-    def hostname(self) -> pulumi.Output[str]:
-        """
-        The host name for the database node.
-        """
+    def hostname(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceType")
-    def maintenance_type(self) -> pulumi.Output[str]:
-        """
-        The type of database node maintenance.
-        """
+    def maintenance_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "maintenance_type")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> pulumi.Output[int]:
-        """
-        The allocated memory in GBs on the Db node.
-        """
+    def memory_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="softwareStorageSizeInGb")
-    def software_storage_size_in_gb(self) -> pulumi.Output[int]:
-        """
-        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-        """
+    def software_storage_size_in_gb(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "software_storage_size_in_gb")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the database node.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time that the database node was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMaintenanceWindowEnd")
-    def time_maintenance_window_end(self) -> pulumi.Output[str]:
-        """
-        End date and time of maintenance window.
-        """
+    def time_maintenance_window_end(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_maintenance_window_end")
 
     @property
     @pulumi.getter(name="timeMaintenanceWindowStart")
-    def time_maintenance_window_start(self) -> pulumi.Output[str]:
-        """
-        Start date and time of maintenance window.
-        """
+    def time_maintenance_window_start(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_maintenance_window_start")
 
     @property
     @pulumi.getter
-    def vnic2id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-        """
+    def vnic2id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vnic2id")
 
     @property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
-        """
+    def vnic_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vnic_id")
 

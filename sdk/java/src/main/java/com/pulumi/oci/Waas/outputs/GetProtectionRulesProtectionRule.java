@@ -8,6 +8,8 @@ import com.pulumi.oci.Waas.outputs.GetProtectionRulesProtectionRuleExclusion;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionRulesProtectionRule {
@@ -15,17 +17,17 @@ public final class GetProtectionRulesProtectionRule {
      * @return Filter rules using a list of actions.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The description of the protection rule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
-    private List<GetProtectionRulesProtectionRuleExclusion> exclusions;
+    private @Nullable List<GetProtectionRulesProtectionRuleExclusion> exclusions;
     /**
      * @return The unique key of the protection rule.
      * 
@@ -35,17 +37,17 @@ public final class GetProtectionRulesProtectionRule {
      * @return The list of labels for the protection rule.
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity&#39;s open source WAF rules, see [Mod Security&#39;s documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * 
      */
-    private List<String> modSecurityRuleIds;
+    private @Nullable List<String> modSecurityRuleIds;
     /**
      * @return The name of the protection rule.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      * 
@@ -57,22 +59,22 @@ public final class GetProtectionRulesProtectionRule {
      * @return Filter rules using a list of actions.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The description of the protection rule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
      * 
      */
     public List<GetProtectionRulesProtectionRuleExclusion> exclusions() {
-        return this.exclusions;
+        return this.exclusions == null ? List.of() : this.exclusions;
     }
     /**
      * @return The unique key of the protection rule.
@@ -86,21 +88,21 @@ public final class GetProtectionRulesProtectionRule {
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity&#39;s open source WAF rules, see [Mod Security&#39;s documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      * 
      */
     public List<String> modSecurityRuleIds() {
-        return this.modSecurityRuleIds;
+        return this.modSecurityRuleIds == null ? List.of() : this.modSecurityRuleIds;
     }
     /**
      * @return The name of the protection rule.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -119,13 +121,13 @@ public final class GetProtectionRulesProtectionRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String description;
-        private List<GetProtectionRulesProtectionRuleExclusion> exclusions;
+        private @Nullable String action;
+        private @Nullable String description;
+        private @Nullable List<GetProtectionRulesProtectionRuleExclusion> exclusions;
         private String key;
-        private List<String> labels;
-        private List<String> modSecurityRuleIds;
-        private String name;
+        private @Nullable List<String> labels;
+        private @Nullable List<String> modSecurityRuleIds;
+        private @Nullable String name;
         private String waasPolicyId;
         public Builder() {}
         public Builder(GetProtectionRulesProtectionRule defaults) {
@@ -141,18 +143,18 @@ public final class GetProtectionRulesProtectionRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder exclusions(List<GetProtectionRulesProtectionRuleExclusion> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+        public Builder exclusions(@Nullable List<GetProtectionRulesProtectionRuleExclusion> exclusions) {
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(GetProtectionRulesProtectionRuleExclusion... exclusions) {
@@ -164,24 +166,24 @@ public final class GetProtectionRulesProtectionRule {
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder modSecurityRuleIds(List<String> modSecurityRuleIds) {
-            this.modSecurityRuleIds = Objects.requireNonNull(modSecurityRuleIds);
+        public Builder modSecurityRuleIds(@Nullable List<String> modSecurityRuleIds) {
+            this.modSecurityRuleIds = modSecurityRuleIds;
             return this;
         }
         public Builder modSecurityRuleIds(String... modSecurityRuleIds) {
             return modSecurityRuleIds(List.of(modSecurityRuleIds));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter

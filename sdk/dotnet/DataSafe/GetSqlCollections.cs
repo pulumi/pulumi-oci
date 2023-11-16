@@ -301,7 +301,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of sql_collection_collection.
         /// </summary>
@@ -332,7 +332,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSqlCollectionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSqlCollectionsSqlCollectionCollectionResult> sqlCollectionCollections,
 

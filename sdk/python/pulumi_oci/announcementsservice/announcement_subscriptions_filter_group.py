@@ -21,13 +21,6 @@ class AnnouncementSubscriptionsFilterGroupArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AnnouncementSubscriptionsFilterGroup resource.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
         pulumi.set(__self__, "filters", filters)
@@ -37,9 +30,6 @@ class AnnouncementSubscriptionsFilterGroupArgs:
     @property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the announcement subscription.
-        """
         return pulumi.get(self, "announcement_subscription_id")
 
     @announcement_subscription_id.setter
@@ -49,9 +39,6 @@ class AnnouncementSubscriptionsFilterGroupArgs:
     @property
     @pulumi.getter
     def filters(self) -> pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]:
-        """
-        (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -61,13 +48,6 @@ class AnnouncementSubscriptionsFilterGroupArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -83,13 +63,6 @@ class _AnnouncementSubscriptionsFilterGroupState:
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AnnouncementSubscriptionsFilterGroup resources.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if announcement_subscription_id is not None:
             pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
@@ -101,9 +74,6 @@ class _AnnouncementSubscriptionsFilterGroupState:
     @property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the announcement subscription.
-        """
         return pulumi.get(self, "announcement_subscription_id")
 
     @announcement_subscription_id.setter
@@ -113,9 +83,6 @@ class _AnnouncementSubscriptionsFilterGroupState:
     @property
     @pulumi.getter
     def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]]:
-        """
-        (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        """
         return pulumi.get(self, "filters")
 
     @filters.setter
@@ -125,13 +92,6 @@ class _AnnouncementSubscriptionsFilterGroupState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -149,43 +109,9 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Announcement Subscriptions Filter Group resource in Oracle Cloud Infrastructure Announcements Service service.
-
-        Creates a new filter group in the specified announcement subscription.
-
-        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
-            filters=[oci.announcements_service.AnnouncementSubscriptionsFilterGroupFilterArgs(
-                type=var["announcement_subscriptions_filter_group_filters_type"],
-                value=var["announcement_subscriptions_filter_group_filters_value"],
-            )])
-        ```
-
-        ## Import
-
-        AnnouncementSubscriptionsFilterGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
-        ```
-
+        Create a AnnouncementSubscriptionsFilterGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -194,34 +120,7 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
                  args: AnnouncementSubscriptionsFilterGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Announcement Subscriptions Filter Group resource in Oracle Cloud Infrastructure Announcements Service service.
-
-        Creates a new filter group in the specified announcement subscription.
-
-        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
-            filters=[oci.announcements_service.AnnouncementSubscriptionsFilterGroupFilterArgs(
-                type=var["announcement_subscriptions_filter_group_filters_type"],
-                value=var["announcement_subscriptions_filter_group_filters_value"],
-            )])
-        ```
-
-        ## Import
-
-        AnnouncementSubscriptionsFilterGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup test_announcement_subscriptions_filter_group "id"
-        ```
-
+        Create a AnnouncementSubscriptionsFilterGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AnnouncementSubscriptionsFilterGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -276,13 +175,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] announcement_subscription_id: The OCID of the announcement subscription.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] filters: (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        :param pulumi.Input[str] name: The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -296,28 +188,15 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the announcement subscription.
-        """
         return pulumi.get(self, "announcement_subscription_id")
 
     @property
     @pulumi.getter
     def filters(self) -> pulumi.Output[Sequence['outputs.AnnouncementSubscriptionsFilterGroupFilter']]:
-        """
-        (Updatable) A list of filters against which the Announcements service will match announcements. You cannot have more than one of any given filter type within a filter group.
-        """
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 

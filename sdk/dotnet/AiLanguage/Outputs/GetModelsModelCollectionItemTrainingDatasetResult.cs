@@ -16,11 +16,11 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// Data Science Labelling Service OCID
         /// </summary>
-        public readonly string DatasetId;
+        public readonly string? DatasetId;
         /// <summary>
         /// Possible data sets
         /// </summary>
-        public readonly string DatasetType;
+        public readonly string? DatasetType;
         /// <summary>
         /// Possible object storage location types
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
         [OutputConstructor]
         private GetModelsModelCollectionItemTrainingDatasetResult(
-            string datasetId,
+            string? datasetId,
 
-            string datasetType,
+            string? datasetType,
 
             ImmutableArray<Outputs.GetModelsModelCollectionItemTrainingDatasetLocationDetailResult> locationDetails)
         {

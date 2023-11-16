@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem {
@@ -15,207 +17,207 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
      * @return default value of variable
      * 
      */
-    private String defaultValue;
+    private @Nullable String defaultValue;
     /**
      * @return Description of the variable
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Host from where this value was set. Empty for MySql Database System
      * 
      */
-    private String hostSet;
+    private @Nullable String hostSet;
     /**
      * @return Whether this variable is configurable
      * 
      */
-    private Boolean isConfigurable;
+    private @Nullable Boolean isConfigurable;
     /**
      * @return Whether variable can be set dynamically or not
      * 
      */
-    private Boolean isDynamic;
+    private @Nullable Boolean isDynamic;
     /**
      * @return whether variable is set at server startup
      * 
      */
-    private Boolean isInit;
+    private @Nullable Boolean isInit;
     /**
      * @return Maximum value of variable
      * 
      */
-    private Double maxValue;
+    private @Nullable Double maxValue;
     /**
      * @return Minimum value of variable
      * 
      */
-    private Double minValue;
+    private @Nullable Double minValue;
     /**
      * @return The name of variable
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Comma separated list of possible values for the variable in value:valueDescription format
      * 
      */
-    private String possibleValues;
+    private @Nullable String possibleValues;
     /**
      * @return The source from which the variable was most recently set
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return Comma separated list of MySql versions where this variable is supported
      * 
      */
-    private String supportedVersions;
+    private @Nullable String supportedVersions;
     /**
      * @return Time when value was set
      * 
      */
-    private String timeSet;
+    private @Nullable String timeSet;
     /**
      * @return type of variable
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return User who set this value. Empty for MySql Database System
      * 
      */
-    private String userSet;
+    private @Nullable String userSet;
     /**
      * @return The value of variable
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem() {}
     /**
      * @return default value of variable
      * 
      */
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
     /**
      * @return Description of the variable
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Host from where this value was set. Empty for MySql Database System
      * 
      */
-    public String hostSet() {
-        return this.hostSet;
+    public Optional<String> hostSet() {
+        return Optional.ofNullable(this.hostSet);
     }
     /**
      * @return Whether this variable is configurable
      * 
      */
-    public Boolean isConfigurable() {
-        return this.isConfigurable;
+    public Optional<Boolean> isConfigurable() {
+        return Optional.ofNullable(this.isConfigurable);
     }
     /**
      * @return Whether variable can be set dynamically or not
      * 
      */
-    public Boolean isDynamic() {
-        return this.isDynamic;
+    public Optional<Boolean> isDynamic() {
+        return Optional.ofNullable(this.isDynamic);
     }
     /**
      * @return whether variable is set at server startup
      * 
      */
-    public Boolean isInit() {
-        return this.isInit;
+    public Optional<Boolean> isInit() {
+        return Optional.ofNullable(this.isInit);
     }
     /**
      * @return Maximum value of variable
      * 
      */
-    public Double maxValue() {
-        return this.maxValue;
+    public Optional<Double> maxValue() {
+        return Optional.ofNullable(this.maxValue);
     }
     /**
      * @return Minimum value of variable
      * 
      */
-    public Double minValue() {
-        return this.minValue;
+    public Optional<Double> minValue() {
+        return Optional.ofNullable(this.minValue);
     }
     /**
      * @return The name of variable
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return If the variable was set from an option file, VARIABLE_PATH is the path name of that file. Otherwise, the value is the empty string.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Comma separated list of possible values for the variable in value:valueDescription format
      * 
      */
-    public String possibleValues() {
-        return this.possibleValues;
+    public Optional<String> possibleValues() {
+        return Optional.ofNullable(this.possibleValues);
     }
     /**
      * @return The source from which the variable was most recently set
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return Comma separated list of MySql versions where this variable is supported
      * 
      */
-    public String supportedVersions() {
-        return this.supportedVersions;
+    public Optional<String> supportedVersions() {
+        return Optional.ofNullable(this.supportedVersions);
     }
     /**
      * @return Time when value was set
      * 
      */
-    public String timeSet() {
-        return this.timeSet;
+    public Optional<String> timeSet() {
+        return Optional.ofNullable(this.timeSet);
     }
     /**
      * @return type of variable
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return User who set this value. Empty for MySql Database System
      * 
      */
-    public String userSet() {
-        return this.userSet;
+    public Optional<String> userSet() {
+        return Optional.ofNullable(this.userSet);
     }
     /**
      * @return The value of variable
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -227,23 +229,23 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultValue;
-        private String description;
-        private String hostSet;
-        private Boolean isConfigurable;
-        private Boolean isDynamic;
-        private Boolean isInit;
-        private Double maxValue;
-        private Double minValue;
-        private String name;
-        private String path;
-        private String possibleValues;
-        private String source;
-        private String supportedVersions;
-        private String timeSet;
-        private String type;
-        private String userSet;
-        private String value;
+        private @Nullable String defaultValue;
+        private @Nullable String description;
+        private @Nullable String hostSet;
+        private @Nullable Boolean isConfigurable;
+        private @Nullable Boolean isDynamic;
+        private @Nullable Boolean isInit;
+        private @Nullable Double maxValue;
+        private @Nullable Double minValue;
+        private @Nullable String name;
+        private @Nullable String path;
+        private @Nullable String possibleValues;
+        private @Nullable String source;
+        private @Nullable String supportedVersions;
+        private @Nullable String timeSet;
+        private @Nullable String type;
+        private @Nullable String userSet;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -267,88 +269,88 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
         }
 
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder hostSet(String hostSet) {
-            this.hostSet = Objects.requireNonNull(hostSet);
+        public Builder hostSet(@Nullable String hostSet) {
+            this.hostSet = hostSet;
             return this;
         }
         @CustomType.Setter
-        public Builder isConfigurable(Boolean isConfigurable) {
-            this.isConfigurable = Objects.requireNonNull(isConfigurable);
+        public Builder isConfigurable(@Nullable Boolean isConfigurable) {
+            this.isConfigurable = isConfigurable;
             return this;
         }
         @CustomType.Setter
-        public Builder isDynamic(Boolean isDynamic) {
-            this.isDynamic = Objects.requireNonNull(isDynamic);
+        public Builder isDynamic(@Nullable Boolean isDynamic) {
+            this.isDynamic = isDynamic;
             return this;
         }
         @CustomType.Setter
-        public Builder isInit(Boolean isInit) {
-            this.isInit = Objects.requireNonNull(isInit);
+        public Builder isInit(@Nullable Boolean isInit) {
+            this.isInit = isInit;
             return this;
         }
         @CustomType.Setter
-        public Builder maxValue(Double maxValue) {
-            this.maxValue = Objects.requireNonNull(maxValue);
+        public Builder maxValue(@Nullable Double maxValue) {
+            this.maxValue = maxValue;
             return this;
         }
         @CustomType.Setter
-        public Builder minValue(Double minValue) {
-            this.minValue = Objects.requireNonNull(minValue);
+        public Builder minValue(@Nullable Double minValue) {
+            this.minValue = minValue;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder possibleValues(String possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+        public Builder possibleValues(@Nullable String possibleValues) {
+            this.possibleValues = possibleValues;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedVersions(String supportedVersions) {
-            this.supportedVersions = Objects.requireNonNull(supportedVersions);
+        public Builder supportedVersions(@Nullable String supportedVersions) {
+            this.supportedVersions = supportedVersions;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSet(String timeSet) {
-            this.timeSet = Objects.requireNonNull(timeSet);
+        public Builder timeSet(@Nullable String timeSet) {
+            this.timeSet = timeSet;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder userSet(String userSet) {
-            this.userSet = Objects.requireNonNull(userSet);
+        public Builder userSet(@Nullable String userSet) {
+            this.userSet = userSet;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem build() {

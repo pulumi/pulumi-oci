@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
@@ -63,7 +62,7 @@ type GetDbHomePatchesResult struct {
 	DbHomeId string                   `pulumi:"dbHomeId"`
 	Filters  []GetDbHomePatchesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of patches.
 	Patches []GetDbHomePatchesPatch `pulumi:"patches"`
 }
@@ -107,12 +106,6 @@ func (o GetDbHomePatchesResultOutput) ToGetDbHomePatchesResultOutputWithContext(
 	return o
 }
 
-func (o GetDbHomePatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbHomePatchesResult] {
-	return pulumix.Output[GetDbHomePatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDbHomePatchesResultOutput) DbHomeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomePatchesResult) string { return v.DbHomeId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetDbHomePatchesResultOutput) Filters() GetDbHomePatchesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbHomePatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbHomePatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbHomePatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbHomePatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of patches.

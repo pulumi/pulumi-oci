@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// A short description of the model.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
         /// * useCaseType
@@ -30,21 +30,21 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// * hyperParameters
         /// * testartifactresults
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetModelsModelDefinedMetadataListResult(
-            string category,
+            string? category,
 
-            string description,
+            string? description,
 
-            string key,
+            string? key,
 
-            string value)
+            string? value)
         {
             Category = category;
             Description = description;

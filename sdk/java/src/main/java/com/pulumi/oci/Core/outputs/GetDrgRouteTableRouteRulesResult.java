@@ -18,14 +18,14 @@ public final class GetDrgRouteTableRouteRulesResult {
      * @return The list of drg_route_rules.
      * 
      */
-    private List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
+    private @Nullable List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
     private String drgRouteTableId;
     private @Nullable List<GetDrgRouteTableRouteRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      * 
@@ -38,7 +38,7 @@ public final class GetDrgRouteTableRouteRulesResult {
      * 
      */
     public List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules() {
-        return this.drgRouteRules;
+        return this.drgRouteRules == null ? List.of() : this.drgRouteRules;
     }
     public String drgRouteTableId() {
         return this.drgRouteTableId;
@@ -50,8 +50,8 @@ public final class GetDrgRouteTableRouteRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
@@ -70,10 +70,10 @@ public final class GetDrgRouteTableRouteRulesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
+        private @Nullable List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules;
         private String drgRouteTableId;
         private @Nullable List<GetDrgRouteTableRouteRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String routeType;
         public Builder() {}
         public Builder(GetDrgRouteTableRouteRulesResult defaults) {
@@ -86,8 +86,8 @@ public final class GetDrgRouteTableRouteRulesResult {
         }
 
         @CustomType.Setter
-        public Builder drgRouteRules(List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules) {
-            this.drgRouteRules = Objects.requireNonNull(drgRouteRules);
+        public Builder drgRouteRules(@Nullable List<GetDrgRouteTableRouteRulesDrgRouteRule> drgRouteRules) {
+            this.drgRouteRules = drgRouteRules;
             return this;
         }
         public Builder drgRouteRules(GetDrgRouteTableRouteRulesDrgRouteRule... drgRouteRules) {
@@ -107,8 +107,8 @@ public final class GetDrgRouteTableRouteRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -27,19 +27,6 @@ class LifecycleEnvironmentArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a LifecycleEnvironment resource.
-        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the lifecycle environment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]] stages: (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) User specified information about the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "arch_type", arch_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -57,9 +44,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Input[str]:
-        """
-        The CPU architecture of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "arch_type")
 
     @arch_type.setter
@@ -69,9 +53,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the tenancy containing the lifecycle environment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -81,9 +62,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -93,9 +71,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Input[str]:
-        """
-        The operating system type of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
@@ -105,9 +80,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter
     def stages(self) -> pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]:
-        """
-        (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        """
         return pulumi.get(self, "stages")
 
     @stages.setter
@@ -117,13 +89,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Input[str]:
-        """
-        The software source vendor name.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
@@ -133,9 +98,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -145,9 +107,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User specified information about the lifecycle environment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -157,9 +116,6 @@ class LifecycleEnvironmentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -186,24 +142,6 @@ class _LifecycleEnvironmentState:
                  vendor_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LifecycleEnvironment resources.
-        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) User specified information about the lifecycle environment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]] stages: (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        :param pulumi.Input[str] state: The current state of the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if arch_type is not None:
             pulumi.set(__self__, "arch_type", arch_type)
@@ -237,9 +175,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CPU architecture of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "arch_type")
 
     @arch_type.setter
@@ -249,9 +184,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the tenancy containing the lifecycle environment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -261,9 +193,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -273,9 +202,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User specified information about the lifecycle environment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -285,9 +211,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -297,9 +220,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -309,9 +229,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="managedInstanceIds")
     def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentManagedInstanceIdArgs']]]]:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
         return pulumi.get(self, "managed_instance_ids")
 
     @managed_instance_ids.setter
@@ -321,9 +238,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
-        """
-        The operating system type of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "os_family")
 
     @os_family.setter
@@ -333,9 +247,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter
     def stages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LifecycleEnvironmentStageArgs']]]]:
-        """
-        (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        """
         return pulumi.get(self, "stages")
 
     @stages.setter
@@ -345,9 +256,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the lifecycle environment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -357,9 +265,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -369,9 +274,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -381,9 +283,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_modified")
 
     @time_modified.setter
@@ -393,13 +292,6 @@ class _LifecycleEnvironmentState:
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The software source vendor name.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 
     @vendor_name.setter
@@ -423,64 +315,9 @@ class LifecycleEnvironment(pulumi.CustomResource):
                  vendor_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a new lifecycle environment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_lifecycle_environment = oci.os_management_hub.LifecycleEnvironment("testLifecycleEnvironment",
-            arch_type=var["lifecycle_environment_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["lifecycle_environment_display_name"],
-            os_family=var["lifecycle_environment_os_family"],
-            stages=[oci.os_management_hub.LifecycleEnvironmentStageArgs(
-                display_name=var["lifecycle_environment_stages_display_name"],
-                rank=var["lifecycle_environment_stages_rank"],
-                defined_tags={
-                    "Operations.CostCenter": "42",
-                },
-                freeform_tags={
-                    "Department": "Finance",
-                },
-            )],
-            vendor_name=var["lifecycle_environment_vendor_name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["lifecycle_environment_description"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        LifecycleEnvironments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
-        ```
-
+        Create a LifecycleEnvironment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) User specified information about the lifecycle environment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LifecycleEnvironmentStageArgs']]]] stages: (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -489,49 +326,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
                  args: LifecycleEnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a new lifecycle environment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_lifecycle_environment = oci.os_management_hub.LifecycleEnvironment("testLifecycleEnvironment",
-            arch_type=var["lifecycle_environment_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["lifecycle_environment_display_name"],
-            os_family=var["lifecycle_environment_os_family"],
-            stages=[oci.os_management_hub.LifecycleEnvironmentStageArgs(
-                display_name=var["lifecycle_environment_stages_display_name"],
-                rank=var["lifecycle_environment_stages_rank"],
-                defined_tags={
-                    "Operations.CostCenter": "42",
-                },
-                freeform_tags={
-                    "Department": "Finance",
-                },
-            )],
-            vendor_name=var["lifecycle_environment_vendor_name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["lifecycle_environment_description"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        LifecycleEnvironments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment test_lifecycle_environment "id"
-        ```
-
+        Create a LifecycleEnvironment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LifecycleEnvironmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -622,24 +417,6 @@ class LifecycleEnvironment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] arch_type: The CPU architecture of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[str] compartment_id: The OCID of the tenancy containing the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) User specified information about the lifecycle environment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LifecycleEnvironmentManagedInstanceIdArgs']]]] managed_instance_ids: The list of managed instances specified lifecycle stage.
-        :param pulumi.Input[str] os_family: The operating system type of the managed instance(s) in the lifecycle environment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LifecycleEnvironmentStageArgs']]]] stages: (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        :param pulumi.Input[str] state: The current state of the lifecycle environment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_modified: The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] vendor_name: The software source vendor name.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -664,116 +441,70 @@ class LifecycleEnvironment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[str]:
-        """
-        The CPU architecture of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the tenancy containing the lifecycle environment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User specified information about the lifecycle environment.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> pulumi.Output[Sequence['outputs.LifecycleEnvironmentManagedInstanceId']]:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
+    def managed_instance_ids(self) -> pulumi.Output[Optional[Sequence['outputs.LifecycleEnvironmentManagedInstanceId']]]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Output[str]:
-        """
-        The operating system type of the managed instance(s) in the lifecycle environment.
-        """
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
     def stages(self) -> pulumi.Output[Sequence['outputs.LifecycleEnvironmentStage']]:
-        """
-        (Updatable) User specified list of ranked lifecycle stages to be created for the lifecycle environment.
-        """
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the lifecycle environment.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> pulumi.Output[str]:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Output[str]:
-        """
-        The software source vendor name.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vendor_name")
 

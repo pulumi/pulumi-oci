@@ -108,76 +108,76 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// The actual spend in currency for the current budget cycle.
         /// </summary>
-        public readonly double ActualSpend;
+        public readonly double? ActualSpend;
         /// <summary>
         /// The total number of alert rules in the budget.
         /// </summary>
-        public readonly int AlertRuleCount;
+        public readonly int? AlertRuleCount;
         /// <summary>
         /// The amount of the budget, expressed in the currency of the customer's rate card.
         /// </summary>
-        public readonly int Amount;
+        public readonly int? Amount;
         public readonly string BudgetId;
         /// <summary>
         /// The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
         /// </summary>
-        public readonly int BudgetProcessingPeriodStartOffset;
+        public readonly int? BudgetProcessingPeriodStartOffset;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the budget.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The display name of the budget. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
-        public readonly string EndDate;
+        public readonly string? EndDate;
         /// <summary>
         /// The forecasted spend in currency by the end of the current budget cycle.
         /// </summary>
-        public readonly double ForecastedSpend;
+        public readonly double? ForecastedSpend;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the budget.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         /// </summary>
-        public readonly string ProcessingPeriodType;
+        public readonly string? ProcessingPeriodType;
         /// <summary>
         /// The reset period for the budget.
         /// </summary>
-        public readonly string ResetPeriod;
+        public readonly string? ResetPeriod;
         /// <summary>
         /// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
-        public readonly string StartDate;
+        public readonly string? StartDate;
         /// <summary>
         /// The current state of the budget.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         /// </summary>
-        public readonly string TargetCompartmentId;
+        public readonly string? TargetCompartmentId;
         /// <summary>
         /// The type of target on which the budget is applied.
         /// </summary>
-        public readonly string TargetType;
+        public readonly string? TargetType;
         /// <summary>
         /// The list of targets on which the budget is applied. If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
         /// </summary>
@@ -185,69 +185,69 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// The time that the budget was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time that the budget spend was last computed.
         /// </summary>
-        public readonly string TimeSpendComputed;
+        public readonly string? TimeSpendComputed;
         /// <summary>
         /// The time that the budget was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The version of the budget. Starts from 1 and increments by 1.
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetBudgetResult(
-            double actualSpend,
+            double? actualSpend,
 
-            int alertRuleCount,
+            int? alertRuleCount,
 
-            int amount,
+            int? amount,
 
             string budgetId,
 
-            int budgetProcessingPeriodStartOffset,
+            int? budgetProcessingPeriodStartOffset,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string endDate,
+            string? endDate,
 
-            double forecastedSpend,
+            double? forecastedSpend,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string processingPeriodType,
+            string? processingPeriodType,
 
-            string resetPeriod,
+            string? resetPeriod,
 
-            string startDate,
+            string? startDate,
 
-            string state,
+            string? state,
 
-            string targetCompartmentId,
+            string? targetCompartmentId,
 
-            string targetType,
+            string? targetType,
 
             ImmutableArray<string> targets,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeSpendComputed,
+            string? timeSpendComputed,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int version)
+            int? version)
         {
             ActualSpend = actualSpend;
             AlertRuleCount = alertRuleCount;

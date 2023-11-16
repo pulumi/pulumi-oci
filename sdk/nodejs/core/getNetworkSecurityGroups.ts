@@ -84,11 +84,11 @@ export interface GetNetworkSecurityGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of network_security_groups.
      */
-    readonly networkSecurityGroups: outputs.Core.GetNetworkSecurityGroupsNetworkSecurityGroup[];
+    readonly networkSecurityGroups?: outputs.Core.GetNetworkSecurityGroupsNetworkSecurityGroup[];
     /**
      * The network security group's current state.
      */

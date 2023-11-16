@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -36,17 +35,17 @@ type LookupNetworkFirewallPolicyApplicationArgs struct {
 // A collection of values returned by getNetworkFirewallPolicyApplication.
 type LookupNetworkFirewallPolicyApplicationResult struct {
 	// The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-	IcmpCode int `pulumi:"icmpCode"`
+	IcmpCode *int `pulumi:"icmpCode"`
 	// The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-	IcmpType int    `pulumi:"icmpType"`
-	Id       string `pulumi:"id"`
+	IcmpType *int    `pulumi:"icmpType"`
+	Id       *string `pulumi:"id"`
 	// Name of the application.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this application belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// Describes the type of application.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupNetworkFirewallPolicyApplicationOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyApplicationOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyApplicationResultOutput {
@@ -89,24 +88,18 @@ func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToLookupNetworkFirew
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyApplicationResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyApplicationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) IcmpCode() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) int { return v.IcmpCode }).(pulumi.IntOutput)
+func (o LookupNetworkFirewallPolicyApplicationResultOutput) IcmpCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) *int { return v.IcmpCode }).(pulumi.IntPtrOutput)
 }
 
 // The value of the ICMP/ICMP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) IcmpType() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) int { return v.IcmpType }).(pulumi.IntOutput)
+func (o LookupNetworkFirewallPolicyApplicationResultOutput) IcmpType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) *int { return v.IcmpType }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyApplicationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the application.
@@ -119,13 +112,13 @@ func (o LookupNetworkFirewallPolicyApplicationResultOutput) NetworkFirewallPolic
 }
 
 // OCID of the Network Firewall Policy this application belongs to.
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyApplicationResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Describes the type of application.
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyApplicationResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

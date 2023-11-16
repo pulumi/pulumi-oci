@@ -40,7 +40,7 @@ public final class GetRepositoriesResult {
      * @return The list of repository_collection.
      * 
      */
-    private List<GetRepositoriesRepositoryCollection> repositoryCollections;
+    private @Nullable List<GetRepositoriesRepositoryCollection> repositoryCollections;
     /**
      * @return The current state of the repository.
      * 
@@ -84,7 +84,7 @@ public final class GetRepositoriesResult {
      * 
      */
     public List<GetRepositoriesRepositoryCollection> repositoryCollections() {
-        return this.repositoryCollections;
+        return this.repositoryCollections == null ? List.of() : this.repositoryCollections;
     }
     /**
      * @return The current state of the repository.
@@ -108,7 +108,7 @@ public final class GetRepositoriesResult {
         private @Nullable List<GetRepositoriesFilter> filters;
         private @Nullable String id;
         private @Nullable Boolean isImmutable;
-        private List<GetRepositoriesRepositoryCollection> repositoryCollections;
+        private @Nullable List<GetRepositoriesRepositoryCollection> repositoryCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetRepositoriesResult defaults) {
@@ -151,8 +151,8 @@ public final class GetRepositoriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryCollections(List<GetRepositoriesRepositoryCollection> repositoryCollections) {
-            this.repositoryCollections = Objects.requireNonNull(repositoryCollections);
+        public Builder repositoryCollections(@Nullable List<GetRepositoriesRepositoryCollection> repositoryCollections) {
+            this.repositoryCollections = repositoryCollections;
             return this;
         }
         public Builder repositoryCollections(GetRepositoriesRepositoryCollection... repositoryCollections) {

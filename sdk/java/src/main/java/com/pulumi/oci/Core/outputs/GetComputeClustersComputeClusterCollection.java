@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetComputeClustersComputeClusterCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeClustersComputeClusterCollection {
-    private List<GetComputeClustersComputeClusterCollectionItem> items;
+    private @Nullable List<GetComputeClustersComputeClusterCollectionItem> items;
 
     private GetComputeClustersComputeClusterCollection() {}
     public List<GetComputeClustersComputeClusterCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetComputeClustersComputeClusterCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetComputeClustersComputeClusterCollectionItem> items;
+        private @Nullable List<GetComputeClustersComputeClusterCollectionItem> items;
         public Builder() {}
         public Builder(GetComputeClustersComputeClusterCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetComputeClustersComputeClusterCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetComputeClustersComputeClusterCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetComputeClustersComputeClusterCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetComputeClustersComputeClusterCollectionItem... items) {

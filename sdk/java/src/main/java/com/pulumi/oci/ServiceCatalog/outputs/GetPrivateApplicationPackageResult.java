@@ -6,77 +6,79 @@ package com.pulumi.oci.ServiceCatalog.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateApplicationPackageResult {
-    private String contentUrl;
+    private @Nullable String contentUrl;
     /**
      * @return The display name of the package.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
-    private String mimeType;
+    private @Nullable String id;
+    private @Nullable String mimeType;
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    private String packageType;
+    private @Nullable String packageType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
      * 
      */
-    private String privateApplicationId;
+    private @Nullable String privateApplicationId;
     private String privateApplicationPackageId;
     /**
      * @return The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The package version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetPrivateApplicationPackageResult() {}
-    public String contentUrl() {
-        return this.contentUrl;
+    public Optional<String> contentUrl() {
+        return Optional.ofNullable(this.contentUrl);
     }
     /**
      * @return The display name of the package.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String mimeType() {
-        return this.mimeType;
+    public Optional<String> mimeType() {
+        return Optional.ofNullable(this.mimeType);
     }
     /**
      * @return The specified package&#39;s type.
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
      * 
      */
-    public String privateApplicationId() {
-        return this.privateApplicationId;
+    public Optional<String> privateApplicationId() {
+        return Optional.ofNullable(this.privateApplicationId);
     }
     public String privateApplicationPackageId() {
         return this.privateApplicationPackageId;
@@ -85,15 +87,15 @@ public final class GetPrivateApplicationPackageResult {
      * @return The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The package version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -105,15 +107,15 @@ public final class GetPrivateApplicationPackageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contentUrl;
-        private String displayName;
-        private String id;
-        private String mimeType;
-        private String packageType;
-        private String privateApplicationId;
+        private @Nullable String contentUrl;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String mimeType;
+        private @Nullable String packageType;
+        private @Nullable String privateApplicationId;
         private String privateApplicationPackageId;
-        private String timeCreated;
-        private String version;
+        private @Nullable String timeCreated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetPrivateApplicationPackageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -129,33 +131,33 @@ public final class GetPrivateApplicationPackageResult {
         }
 
         @CustomType.Setter
-        public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+        public Builder contentUrl(@Nullable String contentUrl) {
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+        public Builder mimeType(@Nullable String mimeType) {
+            this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
-        public Builder privateApplicationId(String privateApplicationId) {
-            this.privateApplicationId = Objects.requireNonNull(privateApplicationId);
+        public Builder privateApplicationId(@Nullable String privateApplicationId) {
+            this.privateApplicationId = privateApplicationId;
             return this;
         }
         @CustomType.Setter
@@ -164,13 +166,13 @@ public final class GetPrivateApplicationPackageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetPrivateApplicationPackageResult build() {

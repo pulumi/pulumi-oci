@@ -8,6 +8,8 @@ import com.pulumi.oci.Blockchain.outputs.GetPeerOcpuAllocationParam;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPeerResult {
@@ -15,55 +17,55 @@ public final class GetPeerResult {
      * @return Availability Domain of peer
      * 
      */
-    private String ad;
+    private @Nullable String ad;
     /**
      * @return peer alias
      * 
      */
-    private String alias;
+    private @Nullable String alias;
     private String blockchainPlatformId;
     /**
      * @return Host on which the Peer exists
      * 
      */
-    private String host;
-    private String id;
+    private @Nullable String host;
+    private @Nullable String id;
     /**
      * @return OCPU allocation parameter
      * 
      */
-    private List<GetPeerOcpuAllocationParam> ocpuAllocationParams;
+    private @Nullable List<GetPeerOcpuAllocationParam> ocpuAllocationParams;
     private String peerId;
     /**
      * @return peer identifier
      * 
      */
-    private String peerKey;
+    private @Nullable String peerKey;
     /**
      * @return Peer role
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return The current state of the peer.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetPeerResult() {}
     /**
      * @return Availability Domain of peer
      * 
      */
-    public String ad() {
-        return this.ad;
+    public Optional<String> ad() {
+        return Optional.ofNullable(this.ad);
     }
     /**
      * @return peer alias
      * 
      */
-    public String alias() {
-        return this.alias;
+    public Optional<String> alias() {
+        return Optional.ofNullable(this.alias);
     }
     public String blockchainPlatformId() {
         return this.blockchainPlatformId;
@@ -72,18 +74,18 @@ public final class GetPeerResult {
      * @return Host on which the Peer exists
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return OCPU allocation parameter
      * 
      */
     public List<GetPeerOcpuAllocationParam> ocpuAllocationParams() {
-        return this.ocpuAllocationParams;
+        return this.ocpuAllocationParams == null ? List.of() : this.ocpuAllocationParams;
     }
     public String peerId() {
         return this.peerId;
@@ -92,22 +94,22 @@ public final class GetPeerResult {
      * @return peer identifier
      * 
      */
-    public String peerKey() {
-        return this.peerKey;
+    public Optional<String> peerKey() {
+        return Optional.ofNullable(this.peerKey);
     }
     /**
      * @return Peer role
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return The current state of the peer.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -119,16 +121,16 @@ public final class GetPeerResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ad;
-        private String alias;
+        private @Nullable String ad;
+        private @Nullable String alias;
         private String blockchainPlatformId;
-        private String host;
-        private String id;
-        private List<GetPeerOcpuAllocationParam> ocpuAllocationParams;
+        private @Nullable String host;
+        private @Nullable String id;
+        private @Nullable List<GetPeerOcpuAllocationParam> ocpuAllocationParams;
         private String peerId;
-        private String peerKey;
-        private String role;
-        private String state;
+        private @Nullable String peerKey;
+        private @Nullable String role;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetPeerResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,13 +147,13 @@ public final class GetPeerResult {
         }
 
         @CustomType.Setter
-        public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+        public Builder ad(@Nullable String ad) {
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
-        public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+        public Builder alias(@Nullable String alias) {
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
@@ -160,18 +162,18 @@ public final class GetPeerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuAllocationParams(List<GetPeerOcpuAllocationParam> ocpuAllocationParams) {
-            this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
+        public Builder ocpuAllocationParams(@Nullable List<GetPeerOcpuAllocationParam> ocpuAllocationParams) {
+            this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
         public Builder ocpuAllocationParams(GetPeerOcpuAllocationParam... ocpuAllocationParams) {
@@ -183,18 +185,18 @@ public final class GetPeerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder peerKey(String peerKey) {
-            this.peerKey = Objects.requireNonNull(peerKey);
+        public Builder peerKey(@Nullable String peerKey) {
+            this.peerKey = peerKey;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetPeerResult build() {

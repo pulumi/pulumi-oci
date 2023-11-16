@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentServiceAttachmentResult {
@@ -16,93 +18,93 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Service Attachment Display name, can be renamed
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     private String fusionEnvironmentId;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether this service is provisioned due to the customer being subscribed to a specific SKU
      * 
      */
-    private Boolean isSkuBased;
+    private @Nullable Boolean isSkuBased;
     private String serviceAttachmentId;
     /**
      * @return The ID of the service instance created that can be used to identify this on the service control plane
      * 
      */
-    private String serviceInstanceId;
+    private @Nullable String serviceInstanceId;
     /**
      * @return Type of the serviceInstance.
      * 
      */
-    private String serviceInstanceType;
+    private @Nullable String serviceInstanceType;
     /**
      * @return Public URL
      * 
      */
-    private String serviceUrl;
+    private @Nullable String serviceUrl;
     /**
      * @return The current state of the ServiceInstance.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetFusionEnvironmentServiceAttachmentResult() {}
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Service Attachment Display name, can be renamed
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     public String fusionEnvironmentId() {
         return this.fusionEnvironmentId;
@@ -111,15 +113,15 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether this service is provisioned due to the customer being subscribed to a specific SKU
      * 
      */
-    public Boolean isSkuBased() {
-        return this.isSkuBased;
+    public Optional<Boolean> isSkuBased() {
+        return Optional.ofNullable(this.isSkuBased);
     }
     public String serviceAttachmentId() {
         return this.serviceAttachmentId;
@@ -128,43 +130,43 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
      * @return The ID of the service instance created that can be used to identify this on the service control plane
      * 
      */
-    public String serviceInstanceId() {
-        return this.serviceInstanceId;
+    public Optional<String> serviceInstanceId() {
+        return Optional.ofNullable(this.serviceInstanceId);
     }
     /**
      * @return Type of the serviceInstance.
      * 
      */
-    public String serviceInstanceType() {
-        return this.serviceInstanceType;
+    public Optional<String> serviceInstanceType() {
+        return Optional.ofNullable(this.serviceInstanceType);
     }
     /**
      * @return Public URL
      * 
      */
-    public String serviceUrl() {
-        return this.serviceUrl;
+    public Optional<String> serviceUrl() {
+        return Optional.ofNullable(this.serviceUrl);
     }
     /**
      * @return The current state of the ServiceInstance.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -176,20 +178,20 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
         private String fusionEnvironmentId;
-        private String id;
-        private Boolean isSkuBased;
+        private @Nullable String id;
+        private @Nullable Boolean isSkuBased;
         private String serviceAttachmentId;
-        private String serviceInstanceId;
-        private String serviceInstanceType;
-        private String serviceUrl;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String serviceInstanceId;
+        private @Nullable String serviceInstanceType;
+        private @Nullable String serviceUrl;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetFusionEnvironmentServiceAttachmentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -210,23 +212,23 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -235,13 +237,13 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isSkuBased(Boolean isSkuBased) {
-            this.isSkuBased = Objects.requireNonNull(isSkuBased);
+        public Builder isSkuBased(@Nullable Boolean isSkuBased) {
+            this.isSkuBased = isSkuBased;
             return this;
         }
         @CustomType.Setter
@@ -250,33 +252,33 @@ public final class GetFusionEnvironmentServiceAttachmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder serviceInstanceId(String serviceInstanceId) {
-            this.serviceInstanceId = Objects.requireNonNull(serviceInstanceId);
+        public Builder serviceInstanceId(@Nullable String serviceInstanceId) {
+            this.serviceInstanceId = serviceInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceInstanceType(String serviceInstanceType) {
-            this.serviceInstanceType = Objects.requireNonNull(serviceInstanceType);
+        public Builder serviceInstanceType(@Nullable String serviceInstanceType) {
+            this.serviceInstanceType = serviceInstanceType;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceUrl(String serviceUrl) {
-            this.serviceUrl = Objects.requireNonNull(serviceUrl);
+        public Builder serviceUrl(@Nullable String serviceUrl) {
+            this.serviceUrl = serviceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentServiceAttachmentResult build() {

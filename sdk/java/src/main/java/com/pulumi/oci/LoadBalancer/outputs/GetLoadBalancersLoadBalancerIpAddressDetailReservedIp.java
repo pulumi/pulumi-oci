@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
@@ -13,15 +15,15 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
      * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetLoadBalancersLoadBalancerIpAddressDetailReservedIp() {}
     /**
      * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetLoadBalancersLoadBalancerIpAddressDetailReservedIp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetLoadBalancersLoadBalancerIpAddressDetailReservedIp build() {

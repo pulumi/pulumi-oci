@@ -11,6 +11,7 @@ import com.pulumi.oci.ObjectStorage.PreauthrequestArgs;
 import com.pulumi.oci.ObjectStorage.inputs.PreauthrequestState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -83,14 +84,14 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accessUri", refs={String.class}, tree="[0]")
-    private Output<String> accessUri;
+    private Output</* @Nullable */ String> accessUri;
 
     /**
      * @return The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
      * 
      */
-    public Output<String> accessUri() {
-        return this.accessUri;
+    public Output<Optional<String>> accessUri() {
+        return Codegen.optional(this.accessUri);
     }
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -111,28 +112,28 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bucketListingAction", refs={String.class}, tree="[0]")
-    private Output<String> bucketListingAction;
+    private Output</* @Nullable */ String> bucketListingAction;
 
     /**
      * @return Specifies whether a list operation is allowed on a PAR with accessType &#34;AnyObjectRead&#34; or &#34;AnyObjectReadWrite&#34;. Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      * 
      */
-    public Output<String> bucketListingAction() {
-        return this.bucketListingAction;
+    public Output<Optional<String>> bucketListingAction() {
+        return Codegen.optional(this.bucketListingAction);
     }
     /**
      * The full Path for the object.
      * 
      */
     @Export(name="fullPath", refs={String.class}, tree="[0]")
-    private Output<String> fullPath;
+    private Output</* @Nullable */ String> fullPath;
 
     /**
      * @return The full Path for the object.
      * 
      */
-    public Output<String> fullPath() {
-        return this.fullPath;
+    public Output<Optional<String>> fullPath() {
+        return Codegen.optional(this.fullPath);
     }
     /**
      * A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
@@ -171,56 +172,56 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
     @Export(name="object", refs={String.class}, tree="[0]")
-    private Output<String> object;
+    private Output</* @Nullable */ String> object;
 
     /**
      * @return Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
      */
-    public Output<String> object() {
-        return this.object;
+    public Output<Optional<String>> object() {
+        return Codegen.optional(this.object);
     }
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
      */
     @Export(name="objectName", refs={String.class}, tree="[0]")
-    private Output<String> objectName;
+    private Output</* @Nullable */ String> objectName;
 
     /**
      * @return The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
      */
-    public Output<String> objectName() {
-        return this.objectName;
+    public Output<Optional<String>> objectName() {
+        return Codegen.optional(this.objectName);
     }
     /**
      * The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
      * 
      */
     @Export(name="parId", refs={String.class}, tree="[0]")
-    private Output<String> parId;
+    private Output</* @Nullable */ String> parId;
 
     /**
      * @return The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
      * 
      */
-    public Output<String> parId() {
-        return this.parId;
+    public Output<Optional<String>> parId() {
+        return Codegen.optional(this.parId);
     }
     /**
      * The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.

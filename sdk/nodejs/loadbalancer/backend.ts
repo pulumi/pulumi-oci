@@ -78,7 +78,7 @@ export class Backend extends pulumi.CustomResource {
     /**
      * (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
      */
-    public readonly drain!: pulumi.Output<boolean>;
+    public readonly drain!: pulumi.Output<boolean | undefined>;
     /**
      * The IP address of the backend server.  Example: `10.0.0.3`
      */
@@ -90,16 +90,16 @@ export class Backend extends pulumi.CustomResource {
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */
-    public readonly offline!: pulumi.Output<boolean>;
+    public readonly offline!: pulumi.Output<boolean | undefined>;
     /**
      * The communication port for the backend server.  Example: `8080`
      */
     public readonly port!: pulumi.Output<number>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3` 
      *
@@ -107,7 +107,7 @@ export class Backend extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly weight!: pulumi.Output<number>;
+    public readonly weight!: pulumi.Output<number | undefined>;
 
     /**
      * Create a Backend resource with the given unique name, arguments, and options.

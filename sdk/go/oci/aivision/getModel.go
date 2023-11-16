@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -60,56 +59,56 @@ type LookupModelArgs struct {
 // A collection of values returned by getModel.
 type LookupModelResult struct {
 	// Average precision of the trained model
-	AveragePrecision float64 `pulumi:"averagePrecision"`
+	AveragePrecision *float64 `pulumi:"averagePrecision"`
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Confidence ratio of the calculation
-	ConfidenceThreshold float64 `pulumi:"confidenceThreshold"`
+	ConfidenceThreshold *float64 `pulumi:"confidenceThreshold"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Model Identifier, can be renamed
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If It's true, Training is set for recommended epochs needed for quick training.
-	IsQuickMode bool `pulumi:"isQuickMode"`
+	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The maximum duration in hours for which the training will run.
-	MaxTrainingDurationInHours float64 `pulumi:"maxTrainingDurationInHours"`
+	MaxTrainingDurationInHours *float64 `pulumi:"maxTrainingDurationInHours"`
 	// Complete Training Metrics for successful trained model
-	Metrics string `pulumi:"metrics"`
-	ModelId string `pulumi:"modelId"`
+	Metrics *string `pulumi:"metrics"`
+	ModelId string  `pulumi:"modelId"`
 	// Type of the Model.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The version of the model
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Precision of the trained model
-	Precision float64 `pulumi:"precision"`
+	Precision *float64 `pulumi:"precision"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// Recall of the trained model
-	Recall float64 `pulumi:"recall"`
+	Recall *float64 `pulumi:"recall"`
 	// The current state of the Model.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Total number of testing Images
-	TestImageCount int `pulumi:"testImageCount"`
+	TestImageCount *int `pulumi:"testImageCount"`
 	// The base entity for a Dataset, which is the input for Model creation.
 	TestingDatasets []GetModelTestingDataset `pulumi:"testingDatasets"`
 	// The time the Model was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Model was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Total number of training Images
-	TotalImageCount int `pulumi:"totalImageCount"`
+	TotalImageCount *int `pulumi:"totalImageCount"`
 	// Total hours actually used for training
-	TrainedDurationInHours float64 `pulumi:"trainedDurationInHours"`
+	TrainedDurationInHours *float64 `pulumi:"trainedDurationInHours"`
 	// The base entity for a Dataset, which is the input for Model creation.
 	TrainingDatasets []GetModelTrainingDataset `pulumi:"trainingDatasets"`
 	// The base entity for a Dataset, which is the input for Model creation.
@@ -154,25 +153,19 @@ func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupModelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelResult] {
-	return pulumix.Output[LookupModelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Average precision of the trained model
-func (o LookupModelResultOutput) AveragePrecision() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.AveragePrecision }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) AveragePrecision() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.AveragePrecision }).(pulumi.Float64PtrOutput)
 }
 
 // Compartment Identifier
-func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Confidence ratio of the calculation
-func (o LookupModelResultOutput) ConfidenceThreshold() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.ConfidenceThreshold }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) ConfidenceThreshold() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.ConfidenceThreshold }).(pulumi.Float64PtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -181,13 +174,13 @@ func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the model.
-func (o LookupModelResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Model Identifier, can be renamed
-func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -196,28 +189,28 @@ func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupModelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If It's true, Training is set for recommended epochs needed for quick training.
-func (o LookupModelResultOutput) IsQuickMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupModelResult) bool { return v.IsQuickMode }).(pulumi.BoolOutput)
+func (o LookupModelResultOutput) IsQuickMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *bool { return v.IsQuickMode }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum duration in hours for which the training will run.
-func (o LookupModelResultOutput) MaxTrainingDurationInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.MaxTrainingDurationInHours }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) MaxTrainingDurationInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.MaxTrainingDurationInHours }).(pulumi.Float64PtrOutput)
 }
 
 // Complete Training Metrics for successful trained model
-func (o LookupModelResultOutput) Metrics() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.Metrics }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) Metrics() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.Metrics }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
@@ -225,33 +218,33 @@ func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 }
 
 // Type of the Model.
-func (o LookupModelResultOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ModelType }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the model
-func (o LookupModelResultOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Precision of the trained model
-func (o LookupModelResultOutput) Precision() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.Precision }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) Precision() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.Precision }).(pulumi.Float64PtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-func (o LookupModelResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // Recall of the trained model
-func (o LookupModelResultOutput) Recall() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.Recall }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) Recall() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.Recall }).(pulumi.Float64PtrOutput)
 }
 
 // The current state of the Model.
-func (o LookupModelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -260,8 +253,8 @@ func (o LookupModelResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Total number of testing Images
-func (o LookupModelResultOutput) TestImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupModelResult) int { return v.TestImageCount }).(pulumi.IntOutput)
+func (o LookupModelResultOutput) TestImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *int { return v.TestImageCount }).(pulumi.IntPtrOutput)
 }
 
 // The base entity for a Dataset, which is the input for Model creation.
@@ -270,23 +263,23 @@ func (o LookupModelResultOutput) TestingDatasets() GetModelTestingDatasetArrayOu
 }
 
 // The time the Model was created. An RFC3339 formatted datetime string
-func (o LookupModelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Model was updated. An RFC3339 formatted datetime string
-func (o LookupModelResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupModelResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Total number of training Images
-func (o LookupModelResultOutput) TotalImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupModelResult) int { return v.TotalImageCount }).(pulumi.IntOutput)
+func (o LookupModelResultOutput) TotalImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *int { return v.TotalImageCount }).(pulumi.IntPtrOutput)
 }
 
 // Total hours actually used for training
-func (o LookupModelResultOutput) TrainedDurationInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupModelResult) float64 { return v.TrainedDurationInHours }).(pulumi.Float64Output)
+func (o LookupModelResultOutput) TrainedDurationInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupModelResult) *float64 { return v.TrainedDurationInHours }).(pulumi.Float64PtrOutput)
 }
 
 // The base entity for a Dataset, which is the input for Model creation.

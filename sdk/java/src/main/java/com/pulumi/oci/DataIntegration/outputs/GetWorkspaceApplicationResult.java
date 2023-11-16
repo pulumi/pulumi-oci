@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceApplicationResult {
@@ -28,123 +30,123 @@ public final class GetWorkspaceApplicationResult {
      * @return The source application version of the application.
      * 
      */
-    private Integer applicationVersion;
+    private @Nullable Integer applicationVersion;
     /**
      * @return OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A list of dependent objects in this patch.
      * 
      */
-    private List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas;
+    private @Nullable List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas;
     /**
      * @return The description of the aggregator.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return OCID of the resource that is used to uniquely identify the application
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
-    private String identifier;
+    private @Nullable String identifier;
     /**
      * @return The key of the object.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    private Map<String,Object> keyMap;
+    private @Nullable Map<String,Object> keyMap;
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    private List<GetWorkspaceApplicationMetadata> metadatas;
+    private @Nullable List<GetWorkspaceApplicationMetadata> metadatas;
     /**
      * @return The object type.
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return The object&#39;s model version.
      * 
      */
-    private String modelVersion;
+    private @Nullable String modelVersion;
     /**
      * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return The object version.
      * 
      */
-    private Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
-    private List<GetWorkspaceApplicationParentRef> parentReves;
+    private @Nullable List<GetWorkspaceApplicationParentRef> parentReves;
     /**
      * @return A list of objects that are published or unpublished in this patch.
      * 
      */
-    private List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas;
-    private List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas;
+    private @Nullable List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas;
+    private @Nullable List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas;
     /**
      * @return The information about the application.
      * 
      */
-    private List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos;
+    private @Nullable List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos;
     /**
      * @return The current state of the workspace.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the application was created, in the timestamp format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the application was patched, in the timestamp format defined by RFC3339.
      * 
      */
-    private String timePatched;
+    private @Nullable String timePatched;
     /**
      * @return The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      * 
@@ -163,172 +165,172 @@ public final class GetWorkspaceApplicationResult {
      * @return The source application version of the application.
      * 
      */
-    public Integer applicationVersion() {
-        return this.applicationVersion;
+    public Optional<Integer> applicationVersion() {
+        return Optional.ofNullable(this.applicationVersion);
     }
     /**
      * @return OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A list of dependent objects in this patch.
      * 
      */
     public List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas() {
-        return this.dependentObjectMetadatas;
+        return this.dependentObjectMetadatas == null ? List.of() : this.dependentObjectMetadatas;
     }
     /**
      * @return The description of the aggregator.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return OCID of the resource that is used to uniquely identify the application
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
-    public String identifier() {
-        return this.identifier;
+    public Optional<String> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
     /**
      * @return The key of the object.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     public Map<String,Object> keyMap() {
-        return this.keyMap;
+        return this.keyMap == null ? Map.of() : this.keyMap;
     }
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     public List<GetWorkspaceApplicationMetadata> metadatas() {
-        return this.metadatas;
+        return this.metadatas == null ? List.of() : this.metadatas;
     }
     /**
      * @return The object type.
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return The object&#39;s model version.
      * 
      */
-    public String modelVersion() {
-        return this.modelVersion;
+    public Optional<String> modelVersion() {
+        return Optional.ofNullable(this.modelVersion);
     }
     /**
      * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    public Integer objectStatus() {
-        return this.objectStatus;
+    public Optional<Integer> objectStatus() {
+        return Optional.ofNullable(this.objectStatus);
     }
     /**
      * @return The object version.
      * 
      */
-    public Integer objectVersion() {
-        return this.objectVersion;
+    public Optional<Integer> objectVersion() {
+        return Optional.ofNullable(this.objectVersion);
     }
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
     public List<GetWorkspaceApplicationParentRef> parentReves() {
-        return this.parentReves;
+        return this.parentReves == null ? List.of() : this.parentReves;
     }
     /**
      * @return A list of objects that are published or unpublished in this patch.
      * 
      */
     public List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas() {
-        return this.publishedObjectMetadatas;
+        return this.publishedObjectMetadatas == null ? List.of() : this.publishedObjectMetadatas;
     }
     public List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas() {
-        return this.registryMetadatas;
+        return this.registryMetadatas == null ? List.of() : this.registryMetadatas;
     }
     /**
      * @return The information about the application.
      * 
      */
     public List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos() {
-        return this.sourceApplicationInfos;
+        return this.sourceApplicationInfos == null ? List.of() : this.sourceApplicationInfos;
     }
     /**
      * @return The current state of the workspace.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the application was created, in the timestamp format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the application was patched, in the timestamp format defined by RFC3339.
      * 
      */
-    public String timePatched() {
-        return this.timePatched;
+    public Optional<String> timePatched() {
+        return Optional.ofNullable(this.timePatched);
     }
     /**
      * @return The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
@@ -348,31 +350,31 @@ public final class GetWorkspaceApplicationResult {
     @CustomType.Builder
     public static final class Builder {
         private String applicationKey;
-        private Integer applicationVersion;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String identifier;
-        private String key;
-        private Map<String,Object> keyMap;
-        private List<GetWorkspaceApplicationMetadata> metadatas;
-        private String modelType;
-        private String modelVersion;
-        private String name;
-        private Integer objectStatus;
-        private Integer objectVersion;
-        private List<GetWorkspaceApplicationParentRef> parentReves;
-        private List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas;
-        private List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas;
-        private List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos;
-        private String state;
-        private String timeCreated;
-        private String timePatched;
-        private String timeUpdated;
+        private @Nullable Integer applicationVersion;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String identifier;
+        private @Nullable String key;
+        private @Nullable Map<String,Object> keyMap;
+        private @Nullable List<GetWorkspaceApplicationMetadata> metadatas;
+        private @Nullable String modelType;
+        private @Nullable String modelVersion;
+        private @Nullable String name;
+        private @Nullable Integer objectStatus;
+        private @Nullable Integer objectVersion;
+        private @Nullable List<GetWorkspaceApplicationParentRef> parentReves;
+        private @Nullable List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas;
+        private @Nullable List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas;
+        private @Nullable List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timePatched;
+        private @Nullable String timeUpdated;
         private String workspaceId;
         public Builder() {}
         public Builder(GetWorkspaceApplicationResult defaults) {
@@ -412,146 +414,146 @@ public final class GetWorkspaceApplicationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder applicationVersion(Integer applicationVersion) {
-            this.applicationVersion = Objects.requireNonNull(applicationVersion);
+        public Builder applicationVersion(@Nullable Integer applicationVersion) {
+            this.applicationVersion = applicationVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder dependentObjectMetadatas(List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas) {
-            this.dependentObjectMetadatas = Objects.requireNonNull(dependentObjectMetadatas);
+        public Builder dependentObjectMetadatas(@Nullable List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas) {
+            this.dependentObjectMetadatas = dependentObjectMetadatas;
             return this;
         }
         public Builder dependentObjectMetadatas(GetWorkspaceApplicationDependentObjectMetadata... dependentObjectMetadatas) {
             return dependentObjectMetadatas(List.of(dependentObjectMetadatas));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+        public Builder identifier(@Nullable String identifier) {
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+        public Builder keyMap(@Nullable Map<String,Object> keyMap) {
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
-        public Builder metadatas(List<GetWorkspaceApplicationMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+        public Builder metadatas(@Nullable List<GetWorkspaceApplicationMetadata> metadatas) {
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceApplicationMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+        public Builder modelVersion(@Nullable String modelVersion) {
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+        public Builder objectStatus(@Nullable Integer objectStatus) {
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+        public Builder objectVersion(@Nullable Integer objectVersion) {
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder parentReves(List<GetWorkspaceApplicationParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+        public Builder parentReves(@Nullable List<GetWorkspaceApplicationParentRef> parentReves) {
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceApplicationParentRef... parentReves) {
             return parentReves(List.of(parentReves));
         }
         @CustomType.Setter
-        public Builder publishedObjectMetadatas(List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas) {
-            this.publishedObjectMetadatas = Objects.requireNonNull(publishedObjectMetadatas);
+        public Builder publishedObjectMetadatas(@Nullable List<GetWorkspaceApplicationPublishedObjectMetadata> publishedObjectMetadatas) {
+            this.publishedObjectMetadatas = publishedObjectMetadatas;
             return this;
         }
         public Builder publishedObjectMetadatas(GetWorkspaceApplicationPublishedObjectMetadata... publishedObjectMetadatas) {
             return publishedObjectMetadatas(List.of(publishedObjectMetadatas));
         }
         @CustomType.Setter
-        public Builder registryMetadatas(List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas) {
-            this.registryMetadatas = Objects.requireNonNull(registryMetadatas);
+        public Builder registryMetadatas(@Nullable List<GetWorkspaceApplicationRegistryMetadata> registryMetadatas) {
+            this.registryMetadatas = registryMetadatas;
             return this;
         }
         public Builder registryMetadatas(GetWorkspaceApplicationRegistryMetadata... registryMetadatas) {
             return registryMetadatas(List.of(registryMetadatas));
         }
         @CustomType.Setter
-        public Builder sourceApplicationInfos(List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos) {
-            this.sourceApplicationInfos = Objects.requireNonNull(sourceApplicationInfos);
+        public Builder sourceApplicationInfos(@Nullable List<GetWorkspaceApplicationSourceApplicationInfo> sourceApplicationInfos) {
+            this.sourceApplicationInfos = sourceApplicationInfos;
             return this;
         }
         public Builder sourceApplicationInfos(GetWorkspaceApplicationSourceApplicationInfo... sourceApplicationInfos) {
             return sourceApplicationInfos(List.of(sourceApplicationInfos));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timePatched(String timePatched) {
-            this.timePatched = Objects.requireNonNull(timePatched);
+        public Builder timePatched(@Nullable String timePatched) {
+            this.timePatched = timePatched;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter

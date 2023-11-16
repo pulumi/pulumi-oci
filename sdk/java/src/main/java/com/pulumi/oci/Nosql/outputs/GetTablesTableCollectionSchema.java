@@ -10,30 +10,32 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTablesTableCollectionSchema {
-    private List<GetTablesTableCollectionSchemaColumn> columns;
-    private List<GetTablesTableCollectionSchemaIdentity> identities;
-    private List<String> primaryKeys;
-    private List<String> shardKeys;
-    private Integer ttl;
+    private @Nullable List<GetTablesTableCollectionSchemaColumn> columns;
+    private @Nullable List<GetTablesTableCollectionSchemaIdentity> identities;
+    private @Nullable List<String> primaryKeys;
+    private @Nullable List<String> shardKeys;
+    private @Nullable Integer ttl;
 
     private GetTablesTableCollectionSchema() {}
     public List<GetTablesTableCollectionSchemaColumn> columns() {
-        return this.columns;
+        return this.columns == null ? List.of() : this.columns;
     }
     public List<GetTablesTableCollectionSchemaIdentity> identities() {
-        return this.identities;
+        return this.identities == null ? List.of() : this.identities;
     }
     public List<String> primaryKeys() {
-        return this.primaryKeys;
+        return this.primaryKeys == null ? List.of() : this.primaryKeys;
     }
     public List<String> shardKeys() {
-        return this.shardKeys;
+        return this.shardKeys == null ? List.of() : this.shardKeys;
     }
-    public Integer ttl() {
-        return this.ttl;
+    public Optional<Integer> ttl() {
+        return Optional.ofNullable(this.ttl);
     }
 
     public static Builder builder() {
@@ -45,11 +47,11 @@ public final class GetTablesTableCollectionSchema {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTablesTableCollectionSchemaColumn> columns;
-        private List<GetTablesTableCollectionSchemaIdentity> identities;
-        private List<String> primaryKeys;
-        private List<String> shardKeys;
-        private Integer ttl;
+        private @Nullable List<GetTablesTableCollectionSchemaColumn> columns;
+        private @Nullable List<GetTablesTableCollectionSchemaIdentity> identities;
+        private @Nullable List<String> primaryKeys;
+        private @Nullable List<String> shardKeys;
+        private @Nullable Integer ttl;
         public Builder() {}
         public Builder(GetTablesTableCollectionSchema defaults) {
     	      Objects.requireNonNull(defaults);
@@ -61,40 +63,40 @@ public final class GetTablesTableCollectionSchema {
         }
 
         @CustomType.Setter
-        public Builder columns(List<GetTablesTableCollectionSchemaColumn> columns) {
-            this.columns = Objects.requireNonNull(columns);
+        public Builder columns(@Nullable List<GetTablesTableCollectionSchemaColumn> columns) {
+            this.columns = columns;
             return this;
         }
         public Builder columns(GetTablesTableCollectionSchemaColumn... columns) {
             return columns(List.of(columns));
         }
         @CustomType.Setter
-        public Builder identities(List<GetTablesTableCollectionSchemaIdentity> identities) {
-            this.identities = Objects.requireNonNull(identities);
+        public Builder identities(@Nullable List<GetTablesTableCollectionSchemaIdentity> identities) {
+            this.identities = identities;
             return this;
         }
         public Builder identities(GetTablesTableCollectionSchemaIdentity... identities) {
             return identities(List.of(identities));
         }
         @CustomType.Setter
-        public Builder primaryKeys(List<String> primaryKeys) {
-            this.primaryKeys = Objects.requireNonNull(primaryKeys);
+        public Builder primaryKeys(@Nullable List<String> primaryKeys) {
+            this.primaryKeys = primaryKeys;
             return this;
         }
         public Builder primaryKeys(String... primaryKeys) {
             return primaryKeys(List.of(primaryKeys));
         }
         @CustomType.Setter
-        public Builder shardKeys(List<String> shardKeys) {
-            this.shardKeys = Objects.requireNonNull(shardKeys);
+        public Builder shardKeys(@Nullable List<String> shardKeys) {
+            this.shardKeys = shardKeys;
             return this;
         }
         public Builder shardKeys(String... shardKeys) {
             return shardKeys(List.of(shardKeys));
         }
         @CustomType.Setter
-        public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+        public Builder ttl(@Nullable Integer ttl) {
+            this.ttl = ttl;
             return this;
         }
         public GetTablesTableCollectionSchema build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageContainerConfigNetworkChannel {
@@ -14,39 +16,39 @@ public final class GetDeployStageContainerConfigNetworkChannel {
      * @return Network channel type.
      * 
      */
-    private String networkChannelType;
+    private @Nullable String networkChannelType;
     /**
      * @return An array of network security group OCIDs.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The OCID of the subnet where VNIC resources will be created for private endpoint.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetDeployStageContainerConfigNetworkChannel() {}
     /**
      * @return Network channel type.
      * 
      */
-    public String networkChannelType() {
-        return this.networkChannelType;
+    public Optional<String> networkChannelType() {
+        return Optional.ofNullable(this.networkChannelType);
     }
     /**
      * @return An array of network security group OCIDs.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The OCID of the subnet where VNIC resources will be created for private endpoint.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDeployStageContainerConfigNetworkChannel {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String networkChannelType;
-        private List<String> nsgIds;
-        private String subnetId;
+        private @Nullable String networkChannelType;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetDeployStageContainerConfigNetworkChannel defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetDeployStageContainerConfigNetworkChannel {
         }
 
         @CustomType.Setter
-        public Builder networkChannelType(String networkChannelType) {
-            this.networkChannelType = Objects.requireNonNull(networkChannelType);
+        public Builder networkChannelType(@Nullable String networkChannelType) {
+            this.networkChannelType = networkChannelType;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetDeployStageContainerConfigNetworkChannel build() {

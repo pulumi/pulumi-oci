@@ -80,7 +80,7 @@ namespace Pulumi.Oci.UsageProxy
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userId")]
-        public Output<string> UserId { get; private set; } = null!;
+        public Output<string?> UserId { get; private set; } = null!;
 
 
         /// <summary>

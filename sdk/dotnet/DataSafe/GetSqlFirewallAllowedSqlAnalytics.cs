@@ -229,7 +229,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ScimQuery;
         /// <summary>
         /// The list of sql_firewall_allowed_sql_analytics_collection.
@@ -248,7 +248,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<string> groupBies,
 
-            string id,
+            string? id,
 
             string? scimQuery,
 

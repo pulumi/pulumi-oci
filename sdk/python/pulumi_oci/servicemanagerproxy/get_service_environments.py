@@ -49,17 +49,11 @@ class GetServiceEnvironmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetServiceEnvironmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +71,7 @@ class GetServiceEnvironmentsResult:
 
     @property
     @pulumi.getter(name="serviceEnvironmentCollections")
-    def service_environment_collections(self) -> Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionResult']:
-        """
-        The list of service_environment_collection.
-        """
+    def service_environment_collections(self) -> Optional[Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionResult']]:
         return pulumi.get(self, "service_environment_collections")
 
     @property
@@ -116,30 +107,7 @@ def get_service_environments(compartment_id: Optional[str] = None,
                              service_environment_type: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceEnvironmentsResult:
     """
-    This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
-
-    List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
-    Information includes the service instance endpoints and service definition details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=var["compartment_id"],
-        display_name=var["service_environment_display_name"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"],
-        service_environment_type=var["service_environment_service_environment_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-    :param str display_name: The display name of the resource.
-    :param str service_environment_id: The unique identifier associated with the service environment. 
-           
-           **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,29 +136,6 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
                                     service_environment_type: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceEnvironmentsResult]:
     """
-    This data source provides the list of Service Environments in Oracle Cloud Infrastructure Service Manager Proxy service.
-
-    List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
-    Information includes the service instance endpoints and service definition details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_environments = oci.ServiceManagerProxy.get_service_environments(compartment_id=var["compartment_id"],
-        display_name=var["service_environment_display_name"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"],
-        service_environment_type=var["service_environment_service_environment_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-    :param str display_name: The display name of the resource.
-    :param str service_environment_id: The unique identifier associated with the service environment. 
-           
-           **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -93,19 +93,19 @@ namespace Pulumi.Oci.Identity
         /// The OCID of the tenancy containing the user.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// DB username of the DB credential. Has to be unique across the tenancy.
         /// </summary>
         [Output("dbUserName")]
-        public Output<string> DbUserName { get; private set; } = null!;
+        public Output<string?> DbUserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
@@ -117,31 +117,31 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) The email you assign to the user. Has to be unique across the tenancy.
         /// </summary>
         [Output("email")]
-        public Output<string> Email { get; private set; } = null!;
+        public Output<string?> Email { get; private set; } = null!;
 
         /// <summary>
         /// Whether the email address has been validated.
         /// </summary>
         [Output("emailVerified")]
-        public Output<bool> EmailVerified { get; private set; } = null!;
+        public Output<bool?> EmailVerified { get; private set; } = null!;
 
         /// <summary>
         /// Identifier of the user in the identity provider
         /// </summary>
         [Output("externalIdentifier")]
-        public Output<string> ExternalIdentifier { get; private set; } = null!;
+        public Output<string?> ExternalIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the `IdentityProvider` this user belongs to.
         /// </summary>
         [Output("identityProviderId")]
-        public Output<string> IdentityProviderId { get; private set; } = null!;
+        public Output<string?> IdentityProviderId { get; private set; } = null!;
 
         /// <summary>
         /// Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
@@ -150,13 +150,13 @@ namespace Pulumi.Oci.Identity
         /// * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
         /// </summary>
         [Output("inactiveState")]
-        public Output<string> InactiveState { get; private set; } = null!;
+        public Output<string?> InactiveState { get; private set; } = null!;
 
         /// <summary>
         /// The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
         /// </summary>
         [Output("lastSuccessfulLoginTime")]
-        public Output<string> LastSuccessfulLoginTime { get; private set; } = null!;
+        public Output<string?> LastSuccessfulLoginTime { get; private set; } = null!;
 
         /// <summary>
         /// The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
@@ -172,19 +172,19 @@ namespace Pulumi.Oci.Identity
         /// The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
         /// </summary>
         [Output("previousSuccessfulLoginTime")]
-        public Output<string> PreviousSuccessfulLoginTime { get; private set; } = null!;
+        public Output<string?> PreviousSuccessfulLoginTime { get; private set; } = null!;
 
         /// <summary>
         /// The user's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

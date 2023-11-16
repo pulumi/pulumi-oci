@@ -133,51 +133,51 @@ namespace Pulumi.Oci.GenericArtifactsContent
     [OutputType]
     public sealed class GetArtifactByPathResult
     {
-        public readonly string ArtifactId;
+        public readonly string? ArtifactId;
         public readonly string ArtifactPath;
-        public readonly string CompartmentId;
-        public readonly string Content;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
-        public readonly string Id;
+        public readonly string? CompartmentId;
+        public readonly string? Content;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly string? DisplayName;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly string? Id;
         public readonly string RepositoryId;
-        public readonly string Sha256;
-        public readonly string SizeInBytes;
-        public readonly string Source;
-        public readonly string State;
-        public readonly string TimeCreated;
+        public readonly string? Sha256;
+        public readonly string? SizeInBytes;
+        public readonly string? Source;
+        public readonly string? State;
+        public readonly string? TimeCreated;
         public readonly string Version;
 
         [OutputConstructor]
         private GetArtifactByPathResult(
-            string artifactId,
+            string? artifactId,
 
             string artifactPath,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string content,
+            string? content,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             string repositoryId,
 
-            string sha256,
+            string? sha256,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
-            string source,
+            string? source,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             string version)
         {

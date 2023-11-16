@@ -8,158 +8,160 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGenericArtifactsGenericArtifactCollectionItem {
-    private String artifactId;
+    private @Nullable String artifactId;
     /**
      * @return Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
      * 
      */
-    private String artifactPath;
+    private @Nullable String artifactPath;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to return the resources for the specified OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter to return the artifacts only for the specified repository OCID.
      * 
      */
-    private String repositoryId;
+    private @Nullable String repositoryId;
     /**
      * @return Filter results by a specified SHA256 digest for the artifact.
      * 
      */
-    private String sha256;
+    private @Nullable String sha256;
     /**
      * @return The size of the artifact in bytes.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetGenericArtifactsGenericArtifactCollectionItem() {}
-    public String artifactId() {
-        return this.artifactId;
+    public Optional<String> artifactId() {
+        return Optional.ofNullable(this.artifactId);
     }
     /**
      * @return Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
      * 
      */
-    public String artifactPath() {
-        return this.artifactPath;
+    public Optional<String> artifactPath() {
+        return Optional.ofNullable(this.artifactPath);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A filter to return the resources for the specified OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter to return the artifacts only for the specified repository OCID.
      * 
      */
-    public String repositoryId() {
-        return this.repositoryId;
+    public Optional<String> repositoryId() {
+        return Optional.ofNullable(this.repositoryId);
     }
     /**
      * @return Filter results by a specified SHA256 digest for the artifact.
      * 
      */
-    public String sha256() {
-        return this.sha256;
+    public Optional<String> sha256() {
+        return Optional.ofNullable(this.sha256);
     }
     /**
      * @return The size of the artifact in bytes.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -171,19 +173,19 @@ public final class GetGenericArtifactsGenericArtifactCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String artifactId;
-        private String artifactPath;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String repositoryId;
-        private String sha256;
-        private String sizeInBytes;
-        private String state;
-        private String timeCreated;
-        private String version;
+        private @Nullable String artifactId;
+        private @Nullable String artifactPath;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String repositoryId;
+        private @Nullable String sha256;
+        private @Nullable String sizeInBytes;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetGenericArtifactsGenericArtifactCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -203,68 +205,68 @@ public final class GetGenericArtifactsGenericArtifactCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+        public Builder artifactId(@Nullable String artifactId) {
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactPath(String artifactPath) {
-            this.artifactPath = Objects.requireNonNull(artifactPath);
+        public Builder artifactPath(@Nullable String artifactPath) {
+            this.artifactPath = artifactPath;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+        public Builder repositoryId(@Nullable String repositoryId) {
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder sha256(String sha256) {
-            this.sha256 = Objects.requireNonNull(sha256);
+        public Builder sha256(@Nullable String sha256) {
+            this.sha256 = sha256;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetGenericArtifactsGenericArtifactCollectionItem build() {

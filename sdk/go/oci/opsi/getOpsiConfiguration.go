@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
@@ -74,7 +73,7 @@ type LookupOpsiConfigurationArgs struct {
 // A collection of values returned by getOpsiConfiguration.
 type LookupOpsiConfigurationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId            string   `pulumi:"compartmentId"`
+	CompartmentId            *string  `pulumi:"compartmentId"`
 	ConfigItemCustomStatuses []string `pulumi:"configItemCustomStatuses"`
 	ConfigItemFields         []string `pulumi:"configItemFields"`
 	// Array of configuration item summary objects.
@@ -83,27 +82,27 @@ type LookupOpsiConfigurationResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of OPSI configuration.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User-friendly display name for the OPSI configuration. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string  `pulumi:"lifecycleDetails"`
 	OpsiConfigFields []string `pulumi:"opsiConfigFields"`
 	// OPSI configuration type.
-	OpsiConfigType      string `pulumi:"opsiConfigType"`
-	OpsiConfigurationId string `pulumi:"opsiConfigurationId"`
+	OpsiConfigType      *string `pulumi:"opsiConfigType"`
+	OpsiConfigurationId string  `pulumi:"opsiConfigurationId"`
 	// OPSI configuration resource lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupOpsiConfigurationOutput(ctx *pulumi.Context, args LookupOpsiConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupOpsiConfigurationResultOutput {
@@ -152,15 +151,9 @@ func (o LookupOpsiConfigurationResultOutput) ToLookupOpsiConfigurationResultOutp
 	return o
 }
 
-func (o LookupOpsiConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOpsiConfigurationResult] {
-	return pulumix.Output[LookupOpsiConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupOpsiConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOpsiConfigurationResultOutput) ConfigItemCustomStatuses() pulumi.StringArrayOutput {
@@ -186,13 +179,13 @@ func (o LookupOpsiConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of OPSI configuration.
-func (o LookupOpsiConfigurationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User-friendly display name for the OPSI configuration. The name does not have to be unique.
-func (o LookupOpsiConfigurationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -201,13 +194,13 @@ func (o LookupOpsiConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-func (o LookupOpsiConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupOpsiConfigurationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOpsiConfigurationResultOutput) OpsiConfigFields() pulumi.StringArrayOutput {
@@ -215,8 +208,8 @@ func (o LookupOpsiConfigurationResultOutput) OpsiConfigFields() pulumi.StringArr
 }
 
 // OPSI configuration type.
-func (o LookupOpsiConfigurationResultOutput) OpsiConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.OpsiConfigType }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) OpsiConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.OpsiConfigType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOpsiConfigurationResultOutput) OpsiConfigurationId() pulumi.StringOutput {
@@ -224,8 +217,8 @@ func (o LookupOpsiConfigurationResultOutput) OpsiConfigurationId() pulumi.String
 }
 
 // OPSI configuration resource lifecycle state.
-func (o LookupOpsiConfigurationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -234,13 +227,13 @@ func (o LookupOpsiConfigurationResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
-func (o LookupOpsiConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the resource was last updated. An RFC3339 formatted datetime string
-func (o LookupOpsiConfigurationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpsiConfigurationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOpsiConfigurationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpsiConfigurationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

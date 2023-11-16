@@ -16,23 +16,23 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Rate card tier net unit price
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// Rate card tier overage price
         /// </summary>
-        public readonly string OveragePrice;
+        public readonly string? OveragePrice;
         /// <summary>
         /// Rate card tier quantity range
         /// </summary>
-        public readonly string UpToQuantity;
+        public readonly string? UpToQuantity;
 
         [OutputConstructor]
         private GetSubscribedServicesSubscribedServiceRateCardRateCardTierResult(
-            string netUnitPrice,
+            string? netUnitPrice,
 
-            string overagePrice,
+            string? overagePrice,
 
-            string upToQuantity)
+            string? upToQuantity)
         {
             NetUnitPrice = netUnitPrice;
             OveragePrice = overagePrice;

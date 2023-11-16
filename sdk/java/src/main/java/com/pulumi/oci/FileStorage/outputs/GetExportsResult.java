@@ -24,7 +24,7 @@ public final class GetExportsResult {
      * @return The list of exports.
      * 
      */
-    private List<GetExportsExport> exports;
+    private @Nullable List<GetExportsExport> exports;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s file system.
      * 
@@ -58,7 +58,7 @@ public final class GetExportsResult {
      * 
      */
     public List<GetExportsExport> exports() {
-        return this.exports;
+        return this.exports == null ? List.of() : this.exports;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export&#39;s file system.
@@ -96,7 +96,7 @@ public final class GetExportsResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String exportSetId;
-        private List<GetExportsExport> exports;
+        private @Nullable List<GetExportsExport> exports;
         private @Nullable String fileSystemId;
         private @Nullable List<GetExportsFilter> filters;
         private @Nullable String id;
@@ -124,8 +124,8 @@ public final class GetExportsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exports(List<GetExportsExport> exports) {
-            this.exports = Objects.requireNonNull(exports);
+        public Builder exports(@Nullable List<GetExportsExport> exports) {
+            this.exports = exports;
             return this;
         }
         public Builder exports(GetExportsExport... exports) {

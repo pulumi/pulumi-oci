@@ -27,15 +27,6 @@ class MysqlConfigurationArgs:
                  variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
         """
         The set of arguments for constructing a MysqlConfiguration resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] shape_name: The name of the associated Shape.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User-provided data about the Configuration.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the Configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MysqlConfigurationInitVariablesArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: User-defined service variables.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -57,9 +48,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -69,9 +57,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
-        """
-        The name of the associated Shape.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -81,9 +66,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -93,9 +75,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-provided data about the Configuration.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -105,9 +84,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the Configuration.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -117,9 +93,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -129,9 +102,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
-        """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        """
         return pulumi.get(self, "init_variables")
 
     @init_variables.setter
@@ -141,9 +111,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter(name="parentConfigurationId")
     def parent_configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        """
         return pulumi.get(self, "parent_configuration_id")
 
     @parent_configuration_id.setter
@@ -153,9 +120,6 @@ class MysqlConfigurationArgs:
     @property
     @pulumi.getter
     def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
-        """
-        User-defined service variables.
-        """
         return pulumi.get(self, "variables")
 
     @variables.setter
@@ -181,19 +145,6 @@ class _MysqlConfigurationState:
                  variables: Optional[pulumi.Input['MysqlConfigurationVariablesArgs']] = None):
         """
         Input properties used for looking up and filtering MysqlConfiguration resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User-provided data about the Configuration.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the Configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input['MysqlConfigurationInitVariablesArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        :param pulumi.Input[str] shape_name: The name of the associated Shape.
-        :param pulumi.Input[str] state: The current state of the Configuration.
-        :param pulumi.Input[str] time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] type: The Configuration type, DEFAULT or CUSTOM.
-        :param pulumi.Input['MysqlConfigurationVariablesArgs'] variables: User-defined service variables.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -225,9 +176,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -237,9 +185,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -249,9 +194,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-provided data about the Configuration.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -261,9 +203,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the Configuration.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -273,9 +212,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -285,9 +221,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="initVariables")
     def init_variables(self) -> Optional[pulumi.Input['MysqlConfigurationInitVariablesArgs']]:
-        """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        """
         return pulumi.get(self, "init_variables")
 
     @init_variables.setter
@@ -297,9 +230,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="parentConfigurationId")
     def parent_configuration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        """
         return pulumi.get(self, "parent_configuration_id")
 
     @parent_configuration_id.setter
@@ -309,9 +239,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the associated Shape.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -321,9 +248,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Configuration.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -333,9 +257,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -345,9 +266,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -357,9 +275,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Configuration type, DEFAULT or CUSTOM.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -369,9 +284,6 @@ class _MysqlConfigurationState:
     @property
     @pulumi.getter
     def variables(self) -> Optional[pulumi.Input['MysqlConfigurationVariablesArgs']]:
-        """
-        User-defined service variables.
-        """
         return pulumi.get(self, "variables")
 
     @variables.setter
@@ -395,133 +307,9 @@ class MysqlConfiguration(pulumi.CustomResource):
                  variables: Optional[pulumi.Input[pulumi.InputType['MysqlConfigurationVariablesArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a new Configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mysql_configuration = oci.mysql.MysqlConfiguration("testMysqlConfiguration",
-            compartment_id=var["compartment_id"],
-            shape_name=oci_mysql_shape["test_shape"]["name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["mysql_configuration_description"],
-            display_name=var["mysql_configuration_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            init_variables=oci.mysql.MysqlConfigurationInitVariablesArgs(
-                lower_case_table_names=var["mysql_configuration_init_variables_lower_case_table_names"],
-            ),
-            parent_configuration_id=oci_audit_configuration["test_configuration"]["id"],
-            variables=oci.mysql.MysqlConfigurationVariablesArgs(
-                autocommit=var["mysql_configuration_variables_autocommit"],
-                big_tables=var["mysql_configuration_variables_big_tables"],
-                binlog_expire_logs_seconds=var["mysql_configuration_variables_binlog_expire_logs_seconds"],
-                binlog_row_metadata=var["mysql_configuration_variables_binlog_row_metadata"],
-                binlog_row_value_options=var["mysql_configuration_variables_binlog_row_value_options"],
-                binlog_transaction_compression=var["mysql_configuration_variables_binlog_transaction_compression"],
-                completion_type=var["mysql_configuration_variables_completion_type"],
-                connect_timeout=var["mysql_configuration_variables_connect_timeout"],
-                connection_memory_chunk_size=var["mysql_configuration_variables_connection_memory_chunk_size"],
-                connection_memory_limit=var["mysql_configuration_variables_connection_memory_limit"],
-                cte_max_recursion_depth=var["mysql_configuration_variables_cte_max_recursion_depth"],
-                default_authentication_plugin=var["mysql_configuration_variables_default_authentication_plugin"],
-                foreign_key_checks=var["mysql_configuration_variables_foreign_key_checks"],
-                generated_random_password_length=var["mysql_configuration_variables_generated_random_password_length"],
-                global_connection_memory_limit=var["mysql_configuration_variables_global_connection_memory_limit"],
-                global_connection_memory_tracking=var["mysql_configuration_variables_global_connection_memory_tracking"],
-                group_replication_consistency=var["mysql_configuration_variables_group_replication_consistency"],
-                information_schema_stats_expiry=var["mysql_configuration_variables_information_schema_stats_expiry"],
-                innodb_buffer_pool_dump_pct=var["mysql_configuration_variables_innodb_buffer_pool_dump_pct"],
-                innodb_buffer_pool_instances=var["mysql_configuration_variables_innodb_buffer_pool_instances"],
-                innodb_buffer_pool_size=var["mysql_configuration_variables_innodb_buffer_pool_size"],
-                innodb_ddl_buffer_size=var["mysql_configuration_variables_innodb_ddl_buffer_size"],
-                innodb_ddl_threads=var["mysql_configuration_variables_innodb_ddl_threads"],
-                innodb_ft_enable_stopword=var["mysql_configuration_variables_innodb_ft_enable_stopword"],
-                innodb_ft_max_token_size=var["mysql_configuration_variables_innodb_ft_max_token_size"],
-                innodb_ft_min_token_size=var["mysql_configuration_variables_innodb_ft_min_token_size"],
-                innodb_ft_num_word_optimize=var["mysql_configuration_variables_innodb_ft_num_word_optimize"],
-                innodb_ft_result_cache_limit=var["mysql_configuration_variables_innodb_ft_result_cache_limit"],
-                innodb_ft_server_stopword_table=var["mysql_configuration_variables_innodb_ft_server_stopword_table"],
-                innodb_lock_wait_timeout=var["mysql_configuration_variables_innodb_lock_wait_timeout"],
-                innodb_log_writer_threads=var["mysql_configuration_variables_innodb_log_writer_threads"],
-                innodb_max_purge_lag=var["mysql_configuration_variables_innodb_max_purge_lag"],
-                innodb_max_purge_lag_delay=var["mysql_configuration_variables_innodb_max_purge_lag_delay"],
-                innodb_stats_persistent_sample_pages=var["mysql_configuration_variables_innodb_stats_persistent_sample_pages"],
-                innodb_stats_transient_sample_pages=var["mysql_configuration_variables_innodb_stats_transient_sample_pages"],
-                interactive_timeout=var["mysql_configuration_variables_interactive_timeout"],
-                local_infile=var["mysql_configuration_variables_local_infile"],
-                mandatory_roles=var["mysql_configuration_variables_mandatory_roles"],
-                max_allowed_packet=var["mysql_configuration_variables_max_allowed_packet"],
-                max_binlog_cache_size=var["mysql_configuration_variables_max_binlog_cache_size"],
-                max_connect_errors=var["mysql_configuration_variables_max_connect_errors"],
-                max_connections=var["mysql_configuration_variables_max_connections"],
-                max_execution_time=var["mysql_configuration_variables_max_execution_time"],
-                max_heap_table_size=var["mysql_configuration_variables_max_heap_table_size"],
-                max_prepared_stmt_count=var["mysql_configuration_variables_max_prepared_stmt_count"],
-                mysql_firewall_mode=var["mysql_configuration_variables_mysql_firewall_mode"],
-                mysql_zstd_default_compression_level=var["mysql_configuration_variables_mysql_zstd_default_compression_level"],
-                mysqlx_connect_timeout=var["mysql_configuration_variables_mysqlx_connect_timeout"],
-                mysqlx_deflate_default_compression_level=var["mysql_configuration_variables_mysqlx_deflate_default_compression_level"],
-                mysqlx_deflate_max_client_compression_level=var["mysql_configuration_variables_mysqlx_deflate_max_client_compression_level"],
-                mysqlx_document_id_unique_prefix=var["mysql_configuration_variables_mysqlx_document_id_unique_prefix"],
-                mysqlx_enable_hello_notice=var["mysql_configuration_variables_mysqlx_enable_hello_notice"],
-                mysqlx_idle_worker_thread_timeout=var["mysql_configuration_variables_mysqlx_idle_worker_thread_timeout"],
-                mysqlx_interactive_timeout=var["mysql_configuration_variables_mysqlx_interactive_timeout"],
-                mysqlx_lz4default_compression_level=var["mysql_configuration_variables_mysqlx_lz4default_compression_level"],
-                mysqlx_lz4max_client_compression_level=var["mysql_configuration_variables_mysqlx_lz4max_client_compression_level"],
-                mysqlx_max_allowed_packet=var["mysql_configuration_variables_mysqlx_max_allowed_packet"],
-                mysqlx_min_worker_threads=var["mysql_configuration_variables_mysqlx_min_worker_threads"],
-                mysqlx_read_timeout=var["mysql_configuration_variables_mysqlx_read_timeout"],
-                mysqlx_wait_timeout=var["mysql_configuration_variables_mysqlx_wait_timeout"],
-                mysqlx_write_timeout=var["mysql_configuration_variables_mysqlx_write_timeout"],
-                mysqlx_zstd_default_compression_level=var["mysql_configuration_variables_mysqlx_zstd_default_compression_level"],
-                mysqlx_zstd_max_client_compression_level=var["mysql_configuration_variables_mysqlx_zstd_max_client_compression_level"],
-                net_read_timeout=var["mysql_configuration_variables_net_read_timeout"],
-                net_write_timeout=var["mysql_configuration_variables_net_write_timeout"],
-                parser_max_mem_size=var["mysql_configuration_variables_parser_max_mem_size"],
-                query_alloc_block_size=var["mysql_configuration_variables_query_alloc_block_size"],
-                query_prealloc_size=var["mysql_configuration_variables_query_prealloc_size"],
-                regexp_time_limit=var["mysql_configuration_variables_regexp_time_limit"],
-                sort_buffer_size=var["mysql_configuration_variables_sort_buffer_size"],
-                sql_mode=var["mysql_configuration_variables_sql_mode"],
-                sql_require_primary_key=var["mysql_configuration_variables_sql_require_primary_key"],
-                sql_warnings=var["mysql_configuration_variables_sql_warnings"],
-                thread_pool_dedicated_listeners=var["mysql_configuration_variables_thread_pool_dedicated_listeners"],
-                thread_pool_max_transactions_limit=var["mysql_configuration_variables_thread_pool_max_transactions_limit"],
-                time_zone=var["mysql_configuration_variables_time_zone"],
-                tmp_table_size=var["mysql_configuration_variables_tmp_table_size"],
-                transaction_isolation=var["mysql_configuration_variables_transaction_isolation"],
-                wait_timeout=var["mysql_configuration_variables_wait_timeout"],
-            ))
-        ```
-
-        ## Import
-
-        MysqlConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
-        ```
-
+        Create a MysqlConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User-provided data about the Configuration.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the Configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MysqlConfigurationInitVariablesArgs']] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        :param pulumi.Input[str] shape_name: The name of the associated Shape.
-        :param pulumi.Input[pulumi.InputType['MysqlConfigurationVariablesArgs']] variables: User-defined service variables.
         """
         ...
     @overload
@@ -530,122 +318,7 @@ class MysqlConfiguration(pulumi.CustomResource):
                  args: MysqlConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a new Configuration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_mysql_configuration = oci.mysql.MysqlConfiguration("testMysqlConfiguration",
-            compartment_id=var["compartment_id"],
-            shape_name=oci_mysql_shape["test_shape"]["name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["mysql_configuration_description"],
-            display_name=var["mysql_configuration_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            init_variables=oci.mysql.MysqlConfigurationInitVariablesArgs(
-                lower_case_table_names=var["mysql_configuration_init_variables_lower_case_table_names"],
-            ),
-            parent_configuration_id=oci_audit_configuration["test_configuration"]["id"],
-            variables=oci.mysql.MysqlConfigurationVariablesArgs(
-                autocommit=var["mysql_configuration_variables_autocommit"],
-                big_tables=var["mysql_configuration_variables_big_tables"],
-                binlog_expire_logs_seconds=var["mysql_configuration_variables_binlog_expire_logs_seconds"],
-                binlog_row_metadata=var["mysql_configuration_variables_binlog_row_metadata"],
-                binlog_row_value_options=var["mysql_configuration_variables_binlog_row_value_options"],
-                binlog_transaction_compression=var["mysql_configuration_variables_binlog_transaction_compression"],
-                completion_type=var["mysql_configuration_variables_completion_type"],
-                connect_timeout=var["mysql_configuration_variables_connect_timeout"],
-                connection_memory_chunk_size=var["mysql_configuration_variables_connection_memory_chunk_size"],
-                connection_memory_limit=var["mysql_configuration_variables_connection_memory_limit"],
-                cte_max_recursion_depth=var["mysql_configuration_variables_cte_max_recursion_depth"],
-                default_authentication_plugin=var["mysql_configuration_variables_default_authentication_plugin"],
-                foreign_key_checks=var["mysql_configuration_variables_foreign_key_checks"],
-                generated_random_password_length=var["mysql_configuration_variables_generated_random_password_length"],
-                global_connection_memory_limit=var["mysql_configuration_variables_global_connection_memory_limit"],
-                global_connection_memory_tracking=var["mysql_configuration_variables_global_connection_memory_tracking"],
-                group_replication_consistency=var["mysql_configuration_variables_group_replication_consistency"],
-                information_schema_stats_expiry=var["mysql_configuration_variables_information_schema_stats_expiry"],
-                innodb_buffer_pool_dump_pct=var["mysql_configuration_variables_innodb_buffer_pool_dump_pct"],
-                innodb_buffer_pool_instances=var["mysql_configuration_variables_innodb_buffer_pool_instances"],
-                innodb_buffer_pool_size=var["mysql_configuration_variables_innodb_buffer_pool_size"],
-                innodb_ddl_buffer_size=var["mysql_configuration_variables_innodb_ddl_buffer_size"],
-                innodb_ddl_threads=var["mysql_configuration_variables_innodb_ddl_threads"],
-                innodb_ft_enable_stopword=var["mysql_configuration_variables_innodb_ft_enable_stopword"],
-                innodb_ft_max_token_size=var["mysql_configuration_variables_innodb_ft_max_token_size"],
-                innodb_ft_min_token_size=var["mysql_configuration_variables_innodb_ft_min_token_size"],
-                innodb_ft_num_word_optimize=var["mysql_configuration_variables_innodb_ft_num_word_optimize"],
-                innodb_ft_result_cache_limit=var["mysql_configuration_variables_innodb_ft_result_cache_limit"],
-                innodb_ft_server_stopword_table=var["mysql_configuration_variables_innodb_ft_server_stopword_table"],
-                innodb_lock_wait_timeout=var["mysql_configuration_variables_innodb_lock_wait_timeout"],
-                innodb_log_writer_threads=var["mysql_configuration_variables_innodb_log_writer_threads"],
-                innodb_max_purge_lag=var["mysql_configuration_variables_innodb_max_purge_lag"],
-                innodb_max_purge_lag_delay=var["mysql_configuration_variables_innodb_max_purge_lag_delay"],
-                innodb_stats_persistent_sample_pages=var["mysql_configuration_variables_innodb_stats_persistent_sample_pages"],
-                innodb_stats_transient_sample_pages=var["mysql_configuration_variables_innodb_stats_transient_sample_pages"],
-                interactive_timeout=var["mysql_configuration_variables_interactive_timeout"],
-                local_infile=var["mysql_configuration_variables_local_infile"],
-                mandatory_roles=var["mysql_configuration_variables_mandatory_roles"],
-                max_allowed_packet=var["mysql_configuration_variables_max_allowed_packet"],
-                max_binlog_cache_size=var["mysql_configuration_variables_max_binlog_cache_size"],
-                max_connect_errors=var["mysql_configuration_variables_max_connect_errors"],
-                max_connections=var["mysql_configuration_variables_max_connections"],
-                max_execution_time=var["mysql_configuration_variables_max_execution_time"],
-                max_heap_table_size=var["mysql_configuration_variables_max_heap_table_size"],
-                max_prepared_stmt_count=var["mysql_configuration_variables_max_prepared_stmt_count"],
-                mysql_firewall_mode=var["mysql_configuration_variables_mysql_firewall_mode"],
-                mysql_zstd_default_compression_level=var["mysql_configuration_variables_mysql_zstd_default_compression_level"],
-                mysqlx_connect_timeout=var["mysql_configuration_variables_mysqlx_connect_timeout"],
-                mysqlx_deflate_default_compression_level=var["mysql_configuration_variables_mysqlx_deflate_default_compression_level"],
-                mysqlx_deflate_max_client_compression_level=var["mysql_configuration_variables_mysqlx_deflate_max_client_compression_level"],
-                mysqlx_document_id_unique_prefix=var["mysql_configuration_variables_mysqlx_document_id_unique_prefix"],
-                mysqlx_enable_hello_notice=var["mysql_configuration_variables_mysqlx_enable_hello_notice"],
-                mysqlx_idle_worker_thread_timeout=var["mysql_configuration_variables_mysqlx_idle_worker_thread_timeout"],
-                mysqlx_interactive_timeout=var["mysql_configuration_variables_mysqlx_interactive_timeout"],
-                mysqlx_lz4default_compression_level=var["mysql_configuration_variables_mysqlx_lz4default_compression_level"],
-                mysqlx_lz4max_client_compression_level=var["mysql_configuration_variables_mysqlx_lz4max_client_compression_level"],
-                mysqlx_max_allowed_packet=var["mysql_configuration_variables_mysqlx_max_allowed_packet"],
-                mysqlx_min_worker_threads=var["mysql_configuration_variables_mysqlx_min_worker_threads"],
-                mysqlx_read_timeout=var["mysql_configuration_variables_mysqlx_read_timeout"],
-                mysqlx_wait_timeout=var["mysql_configuration_variables_mysqlx_wait_timeout"],
-                mysqlx_write_timeout=var["mysql_configuration_variables_mysqlx_write_timeout"],
-                mysqlx_zstd_default_compression_level=var["mysql_configuration_variables_mysqlx_zstd_default_compression_level"],
-                mysqlx_zstd_max_client_compression_level=var["mysql_configuration_variables_mysqlx_zstd_max_client_compression_level"],
-                net_read_timeout=var["mysql_configuration_variables_net_read_timeout"],
-                net_write_timeout=var["mysql_configuration_variables_net_write_timeout"],
-                parser_max_mem_size=var["mysql_configuration_variables_parser_max_mem_size"],
-                query_alloc_block_size=var["mysql_configuration_variables_query_alloc_block_size"],
-                query_prealloc_size=var["mysql_configuration_variables_query_prealloc_size"],
-                regexp_time_limit=var["mysql_configuration_variables_regexp_time_limit"],
-                sort_buffer_size=var["mysql_configuration_variables_sort_buffer_size"],
-                sql_mode=var["mysql_configuration_variables_sql_mode"],
-                sql_require_primary_key=var["mysql_configuration_variables_sql_require_primary_key"],
-                sql_warnings=var["mysql_configuration_variables_sql_warnings"],
-                thread_pool_dedicated_listeners=var["mysql_configuration_variables_thread_pool_dedicated_listeners"],
-                thread_pool_max_transactions_limit=var["mysql_configuration_variables_thread_pool_max_transactions_limit"],
-                time_zone=var["mysql_configuration_variables_time_zone"],
-                tmp_table_size=var["mysql_configuration_variables_tmp_table_size"],
-                transaction_isolation=var["mysql_configuration_variables_transaction_isolation"],
-                wait_timeout=var["mysql_configuration_variables_wait_timeout"],
-            ))
-        ```
-
-        ## Import
-
-        MysqlConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Mysql/mysqlConfiguration:MysqlConfiguration test_mysql_configuration "configurations/{configurationId}"
-        ```
-
+        Create a MysqlConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MysqlConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -726,19 +399,6 @@ class MysqlConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) User-provided data about the Configuration.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the Configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['MysqlConfigurationInitVariablesArgs']] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        :param pulumi.Input[str] parent_configuration_id: The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        :param pulumi.Input[str] shape_name: The name of the associated Shape.
-        :param pulumi.Input[str] state: The current state of the Configuration.
-        :param pulumi.Input[str] time_created: The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] type: The Configuration type, DEFAULT or CUSTOM.
-        :param pulumi.Input[pulumi.InputType['MysqlConfigurationVariablesArgs']] variables: User-defined service variables.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -762,104 +422,65 @@ class MysqlConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User-provided data about the Configuration.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the Configuration.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="initVariables")
-    def init_variables(self) -> pulumi.Output['outputs.MysqlConfigurationInitVariables']:
-        """
-        User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
-        """
+    def init_variables(self) -> pulumi.Output[Optional['outputs.MysqlConfigurationInitVariables']]:
         return pulumi.get(self, "init_variables")
 
     @property
     @pulumi.getter(name="parentConfigurationId")
-    def parent_configuration_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
-        """
+    def parent_configuration_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_configuration_id")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Output[str]:
-        """
-        The name of the associated Shape.
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Configuration.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The Configuration type, DEFAULT or CUSTOM.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def variables(self) -> pulumi.Output['outputs.MysqlConfigurationVariables']:
-        """
-        User-defined service variables.
-        """
+    def variables(self) -> pulumi.Output[Optional['outputs.MysqlConfigurationVariables']]:
         return pulumi.get(self, "variables")
 

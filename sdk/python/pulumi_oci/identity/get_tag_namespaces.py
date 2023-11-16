@@ -46,9 +46,6 @@ class GetTagNamespacesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the tag namespace.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetTagNamespacesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,17 +69,11 @@ class GetTagNamespacesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tagNamespaces")
-    def tag_namespaces(self) -> Sequence['outputs.GetTagNamespacesTagNamespaceResult']:
-        """
-        The list of tag_namespaces.
-        """
+    def tag_namespaces(self) -> Optional[Sequence['outputs.GetTagNamespacesTagNamespaceResult']]:
         return pulumi.get(self, "tag_namespaces")
 
 
@@ -106,25 +97,7 @@ def get_tag_namespaces(compartment_id: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagNamespacesResult:
     """
-    This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
-
-    Lists the tag namespaces in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=var["compartment_id"],
-        include_subcompartments=var["tag_namespace_include_subcompartments"],
-        state=var["tag_namespace_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param bool include_subcompartments: An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_tag_namespaces_output(compartment_id: Optional[pulumi.Input[str]] = None
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagNamespacesResult]:
     """
-    This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
-
-    Lists the tag namespaces in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_namespaces = oci.Identity.get_tag_namespaces(compartment_id=var["compartment_id"],
-        include_subcompartments=var["tag_namespace_include_subcompartments"],
-        state=var["tag_namespace_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param bool include_subcompartments: An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

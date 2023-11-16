@@ -49,9 +49,6 @@ class GetIngressGatewayRouteTablesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,41 +59,26 @@ class GetIngressGatewayRouteTablesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ingressGatewayId")
     def ingress_gateway_id(self) -> Optional[str]:
-        """
-        The OCID of the ingress gateway.
-        """
         return pulumi.get(self, "ingress_gateway_id")
 
     @property
     @pulumi.getter(name="ingressGatewayRouteTableCollections")
-    def ingress_gateway_route_table_collections(self) -> Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult']:
-        """
-        The list of ingress_gateway_route_table_collection.
-        """
+    def ingress_gateway_route_table_collections(self) -> Optional[Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult']]:
         return pulumi.get(self, "ingress_gateway_route_table_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the ingress gateway host that this route should apply to.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_ingress_gateway_route_tables(compartment_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIngressGatewayRouteTablesResult:
     """
-    This data source provides the list of Ingress Gateway Route Tables in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of IngressGatewayRouteTable objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ingress_gateway_route_tables = oci.ServiceMesh.get_ingress_gateway_route_tables(compartment_id=var["compartment_id"],
-        id=var["ingress_gateway_route_table_id"],
-        ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-        name=var["ingress_gateway_route_table_name"],
-        state=var["ingress_gateway_route_table_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: Unique IngressGatewayRouteTable identifier.
-    :param str ingress_gateway_id: Unique IngressGateway identifier.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources that match the life cycle state given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_ingress_gateway_route_tables_output(compartment_id: Optional[pulumi.Inpu
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIngressGatewayRouteTablesResult]:
     """
-    This data source provides the list of Ingress Gateway Route Tables in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of IngressGatewayRouteTable objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ingress_gateway_route_tables = oci.ServiceMesh.get_ingress_gateway_route_tables(compartment_id=var["compartment_id"],
-        id=var["ingress_gateway_route_table_id"],
-        ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-        name=var["ingress_gateway_route_table_name"],
-        state=var["ingress_gateway_route_table_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: Unique IngressGatewayRouteTable identifier.
-    :param str ingress_gateway_id: Unique IngressGateway identifier.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources that match the life cycle state given.
+    Use this data source to access information about an existing resource.
     """
     ...

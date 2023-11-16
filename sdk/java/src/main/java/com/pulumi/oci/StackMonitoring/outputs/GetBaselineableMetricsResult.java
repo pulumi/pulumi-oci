@@ -19,7 +19,7 @@ public final class GetBaselineableMetricsResult {
      * @return The list of baselineable_metric_summary_collection.
      * 
      */
-    private List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections;
+    private @Nullable List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections;
     /**
      * @return OCID of the compartment
      * 
@@ -30,7 +30,7 @@ public final class GetBaselineableMetricsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String metricNamespace;
     /**
      * @return name of the metric
@@ -52,7 +52,7 @@ public final class GetBaselineableMetricsResult {
      * 
      */
     public List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections() {
-        return this.baselineableMetricSummaryCollections;
+        return this.baselineableMetricSummaryCollections == null ? List.of() : this.baselineableMetricSummaryCollections;
     }
     /**
      * @return OCID of the compartment
@@ -68,8 +68,8 @@ public final class GetBaselineableMetricsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> metricNamespace() {
         return Optional.ofNullable(this.metricNamespace);
@@ -99,10 +99,10 @@ public final class GetBaselineableMetricsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String baselineableMetricId;
-        private List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections;
+        private @Nullable List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections;
         private @Nullable String compartmentId;
         private @Nullable List<GetBaselineableMetricsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String metricNamespace;
         private @Nullable String name;
         private @Nullable String resourceGroup;
@@ -125,8 +125,8 @@ public final class GetBaselineableMetricsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder baselineableMetricSummaryCollections(List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections) {
-            this.baselineableMetricSummaryCollections = Objects.requireNonNull(baselineableMetricSummaryCollections);
+        public Builder baselineableMetricSummaryCollections(@Nullable List<GetBaselineableMetricsBaselineableMetricSummaryCollection> baselineableMetricSummaryCollections) {
+            this.baselineableMetricSummaryCollections = baselineableMetricSummaryCollections;
             return this;
         }
         public Builder baselineableMetricSummaryCollections(GetBaselineableMetricsBaselineableMetricSummaryCollection... baselineableMetricSummaryCollections) {
@@ -146,8 +146,8 @@ public final class GetBaselineableMetricsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

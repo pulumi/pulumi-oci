@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The number of cores associated with this notebook session shape.
         /// </summary>
-        public readonly int CoreCount;
+        public readonly int? CoreCount;
         /// <summary>
         /// The amount of memory in GBs associated with this notebook session shape.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The name of the notebook session shape.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The family that the compute shape belongs to.
         /// </summary>
-        public readonly string ShapeSeries;
+        public readonly string? ShapeSeries;
 
         [OutputConstructor]
         private GetNotebookSessionShapesNotebookSessionShapeResult(
-            int coreCount,
+            int? coreCount,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            string name,
+            string? name,
 
-            string shapeSeries)
+            string? shapeSeries)
         {
             CoreCount = coreCount;
             MemoryInGbs = memoryInGbs;

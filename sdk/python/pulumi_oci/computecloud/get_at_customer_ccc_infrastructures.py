@@ -62,10 +62,7 @@ class GetAtCustomerCccInfrastructuresResult:
 
     @property
     @pulumi.getter(name="cccInfrastructureCollections")
-    def ccc_infrastructure_collections(self) -> Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionResult']:
-        """
-        The list of ccc_infrastructure_collection.
-        """
+    def ccc_infrastructure_collections(self) -> Optional[Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionResult']]:
         return pulumi.get(self, "ccc_infrastructure_collections")
 
     @property
@@ -76,9 +73,6 @@ class GetAtCustomerCccInfrastructuresResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -89,9 +83,6 @@ class GetAtCustomerCccInfrastructuresResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -106,7 +97,7 @@ class GetAtCustomerCccInfrastructuresResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -115,9 +106,6 @@ class GetAtCustomerCccInfrastructuresResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Compute Cloud@Customer infrastructure.
-        """
         return pulumi.get(self, "state")
 
 
@@ -149,33 +137,7 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[str] = None,
                                         state: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAtCustomerCccInfrastructuresResult:
     """
-    This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-    Returns a list of Compute Cloud@Customer infrastructures.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=var["ccc_infrastructure_access_level"],
-        ccc_infrastructure_id=oci_compute_cloud_at_customer_ccc_infrastructure["test_ccc_infrastructure"]["id"],
-        compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["ccc_infrastructure_compartment_id_in_subtree"],
-        display_name=var["ccc_infrastructure_display_name"],
-        display_name_contains=var["ccc_infrastructure_display_name_contains"],
-        state=var["ccc_infrastructure_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str ccc_infrastructure_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and sub-compartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str display_name_contains: A filter to return only resources whose display name contains the substring.
-    :param str state: A filter used to return only resources that match the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -213,32 +175,6 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
                                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAtCustomerCccInfrastructuresResult]:
     """
-    This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-    Returns a list of Compute Cloud@Customer infrastructures.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=var["ccc_infrastructure_access_level"],
-        ccc_infrastructure_id=oci_compute_cloud_at_customer_ccc_infrastructure["test_ccc_infrastructure"]["id"],
-        compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["ccc_infrastructure_compartment_id_in_subtree"],
-        display_name=var["ccc_infrastructure_display_name"],
-        display_name_contains=var["ccc_infrastructure_display_name_contains"],
-        state=var["ccc_infrastructure_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str ccc_infrastructure_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and sub-compartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str display_name_contains: A filter to return only resources whose display name contains the substring.
-    :param str state: A filter used to return only resources that match the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

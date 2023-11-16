@@ -32,11 +32,11 @@ export interface GetProxyDetailResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Proxy container image version to be deployed.
      */
-    readonly proxyImage: string;
+    readonly proxyImage?: string;
 }
 /**
  * This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.

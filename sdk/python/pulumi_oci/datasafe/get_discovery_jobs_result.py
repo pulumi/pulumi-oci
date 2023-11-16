@@ -92,58 +92,37 @@ class GetDiscoveryJobsResultResult:
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
-    def app_defined_child_column_keys(self) -> Sequence[str]:
-        """
-        Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-        """
+    def app_defined_child_column_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "app_defined_child_column_keys")
 
     @property
     @pulumi.getter(name="appName")
-    def app_name(self) -> str:
-        """
-        The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
-        """
+    def app_name(self) -> Optional[str]:
         return pulumi.get(self, "app_name")
 
     @property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> str:
-        """
-        The name of the sensitive column.
-        """
+    def column_name(self) -> Optional[str]:
         return pulumi.get(self, "column_name")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        The data type of the sensitive column.
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="dbDefinedChildColumnKeys")
-    def db_defined_child_column_keys(self) -> Sequence[str]:
-        """
-        Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-        """
+    def db_defined_child_column_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "db_defined_child_column_keys")
 
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> str:
-        """
-        The OCID of the discovery job.
-        """
         return pulumi.get(self, "discovery_job_id")
 
     @property
     @pulumi.getter(name="discoveryType")
-    def discovery_type(self) -> str:
-        """
-        The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
-        """
+    def discovery_type(self) -> Optional[str]:
         warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
 
@@ -151,31 +130,22 @@ class GetDiscoveryJobsResultResult:
 
     @property
     @pulumi.getter(name="estimatedDataValueCount")
-    def estimated_data_value_count(self) -> str:
-        """
-        The estimated number of data values the column has in the associated database.
-        """
+    def estimated_data_value_count(self) -> Optional[str]:
         return pulumi.get(self, "estimated_data_value_count")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isResultApplied")
-    def is_result_applied(self) -> bool:
-        """
-        Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
-        """
+    def is_result_applied(self) -> Optional[bool]:
         return pulumi.get(self, "is_result_applied")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The unique key that identifies the discovery result.
-        """
+    def key(self) -> Optional[str]:
         warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
 
@@ -183,50 +153,32 @@ class GetDiscoveryJobsResultResult:
 
     @property
     @pulumi.getter(name="modifiedAttributes")
-    def modified_attributes(self) -> Sequence['outputs.GetDiscoveryJobsResultModifiedAttributeResult']:
-        """
-        The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
-        """
+    def modified_attributes(self) -> Optional[Sequence['outputs.GetDiscoveryJobsResultModifiedAttributeResult']]:
         return pulumi.get(self, "modified_attributes")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The database object that contains the sensitive column.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> str:
-        """
-        The type of the database object that contains the sensitive column.
-        """
+    def object_type(self) -> Optional[str]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="parentColumnKeys")
-    def parent_column_keys(self) -> Sequence[str]:
-        """
-        Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
-        """
+    def parent_column_keys(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "parent_column_keys")
 
     @property
     @pulumi.getter(name="plannedAction")
-    def planned_action(self) -> str:
-        """
-        Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
-        """
+    def planned_action(self) -> Optional[str]:
         return pulumi.get(self, "planned_action")
 
     @property
     @pulumi.getter(name="relationType")
-    def relation_type(self) -> str:
-        """
-        The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-        """
+    def relation_type(self) -> Optional[str]:
         return pulumi.get(self, "relation_type")
 
     @property
@@ -236,34 +188,22 @@ class GetDiscoveryJobsResultResult:
 
     @property
     @pulumi.getter(name="sampleDataValues")
-    def sample_data_values(self) -> Sequence[str]:
-        """
-        Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
-        """
+    def sample_data_values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "sample_data_values")
 
     @property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> str:
-        """
-        The database schema that contains the sensitive column.
-        """
+    def schema_name(self) -> Optional[str]:
         return pulumi.get(self, "schema_name")
 
     @property
     @pulumi.getter(name="sensitiveColumnkey")
-    def sensitive_columnkey(self) -> str:
-        """
-        The unique key that identifies the sensitive column represented by the discovery result.
-        """
+    def sensitive_columnkey(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_columnkey")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> str:
-        """
-        The OCID of the sensitive type associated with the sensitive column.
-        """
+    def sensitive_type_id(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_type_id")
 
 
@@ -301,23 +241,7 @@ def get_discovery_jobs_result(discovery_job_id: Optional[str] = None,
                               result_key: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryJobsResultResult:
     """
-    This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified discovery result.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        result_key=var["discovery_jobs_result_result_key"])
-    ```
-
-
-    :param str discovery_job_id: The OCID of the discovery job.
-    :param str result_key: The unique key that identifies the discovery result.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['discoveryJobId'] = discovery_job_id
@@ -355,22 +279,6 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[str
                                      result_key: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryJobsResultResult]:
     """
-    This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified discovery result.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=oci_data_safe_discovery_job["test_discovery_job"]["id"],
-        result_key=var["discovery_jobs_result_result_key"])
-    ```
-
-
-    :param str discovery_job_id: The OCID of the discovery job.
-    :param str result_key: The unique key that identifies the discovery result.
+    Use this data source to access information about an existing resource.
     """
     ...

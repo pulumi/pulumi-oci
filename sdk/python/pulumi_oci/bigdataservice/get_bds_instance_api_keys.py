@@ -48,7 +48,7 @@ class GetBdsInstanceApiKeysResult:
 
     @property
     @pulumi.getter(name="bdsApiKeys")
-    def bds_api_keys(self) -> Sequence['outputs.GetBdsInstanceApiKeysBdsApiKeyResult']:
+    def bds_api_keys(self) -> Optional[Sequence['outputs.GetBdsInstanceApiKeysBdsApiKeyResult']]:
         return pulumi.get(self, "bds_api_keys")
 
     @property
@@ -68,7 +68,7 @@ class GetBdsInstanceApiKeysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,17 +77,11 @@ class GetBdsInstanceApiKeysResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current status of the API key.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[str]:
-        """
-        The user OCID for which this API key was created.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -113,24 +107,7 @@ def get_bds_instance_api_keys(bds_instance_id: Optional[str] = None,
                               user_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceApiKeysResult:
     """
-    This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns the user's API key information for the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=oci_identity_api_key["test_api_key"]["id"],
-        bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str state: The current status of the API key.
-    :param str user_id: The user OCID for which this API key was created.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -159,23 +136,6 @@ def get_bds_instance_api_keys_output(bds_instance_id: Optional[pulumi.Input[str]
                                      user_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceApiKeysResult]:
     """
-    This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-
-    Returns the user's API key information for the given ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=oci_identity_api_key["test_api_key"]["id"],
-        bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str state: The current status of the API key.
-    :param str user_id: The user OCID for which this API key was created.
+    Use this data source to access information about an existing resource.
     """
     ...

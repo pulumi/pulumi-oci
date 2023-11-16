@@ -8,30 +8,32 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceContainerSecurityContext {
-    private Boolean isNonRootUserCheckEnabled;
-    private Boolean isRootFileSystemReadonly;
-    private Integer runAsGroup;
-    private Integer runAsUser;
-    private String securityContextType;
+    private @Nullable Boolean isNonRootUserCheckEnabled;
+    private @Nullable Boolean isRootFileSystemReadonly;
+    private @Nullable Integer runAsGroup;
+    private @Nullable Integer runAsUser;
+    private @Nullable String securityContextType;
 
     private GetContainerInstanceContainerSecurityContext() {}
-    public Boolean isNonRootUserCheckEnabled() {
-        return this.isNonRootUserCheckEnabled;
+    public Optional<Boolean> isNonRootUserCheckEnabled() {
+        return Optional.ofNullable(this.isNonRootUserCheckEnabled);
     }
-    public Boolean isRootFileSystemReadonly() {
-        return this.isRootFileSystemReadonly;
+    public Optional<Boolean> isRootFileSystemReadonly() {
+        return Optional.ofNullable(this.isRootFileSystemReadonly);
     }
-    public Integer runAsGroup() {
-        return this.runAsGroup;
+    public Optional<Integer> runAsGroup() {
+        return Optional.ofNullable(this.runAsGroup);
     }
-    public Integer runAsUser() {
-        return this.runAsUser;
+    public Optional<Integer> runAsUser() {
+        return Optional.ofNullable(this.runAsUser);
     }
-    public String securityContextType() {
-        return this.securityContextType;
+    public Optional<String> securityContextType() {
+        return Optional.ofNullable(this.securityContextType);
     }
 
     public static Builder builder() {
@@ -43,11 +45,11 @@ public final class GetContainerInstanceContainerSecurityContext {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isNonRootUserCheckEnabled;
-        private Boolean isRootFileSystemReadonly;
-        private Integer runAsGroup;
-        private Integer runAsUser;
-        private String securityContextType;
+        private @Nullable Boolean isNonRootUserCheckEnabled;
+        private @Nullable Boolean isRootFileSystemReadonly;
+        private @Nullable Integer runAsGroup;
+        private @Nullable Integer runAsUser;
+        private @Nullable String securityContextType;
         public Builder() {}
         public Builder(GetContainerInstanceContainerSecurityContext defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,28 +61,28 @@ public final class GetContainerInstanceContainerSecurityContext {
         }
 
         @CustomType.Setter
-        public Builder isNonRootUserCheckEnabled(Boolean isNonRootUserCheckEnabled) {
-            this.isNonRootUserCheckEnabled = Objects.requireNonNull(isNonRootUserCheckEnabled);
+        public Builder isNonRootUserCheckEnabled(@Nullable Boolean isNonRootUserCheckEnabled) {
+            this.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isRootFileSystemReadonly(Boolean isRootFileSystemReadonly) {
-            this.isRootFileSystemReadonly = Objects.requireNonNull(isRootFileSystemReadonly);
+        public Builder isRootFileSystemReadonly(@Nullable Boolean isRootFileSystemReadonly) {
+            this.isRootFileSystemReadonly = isRootFileSystemReadonly;
             return this;
         }
         @CustomType.Setter
-        public Builder runAsGroup(Integer runAsGroup) {
-            this.runAsGroup = Objects.requireNonNull(runAsGroup);
+        public Builder runAsGroup(@Nullable Integer runAsGroup) {
+            this.runAsGroup = runAsGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder runAsUser(Integer runAsUser) {
-            this.runAsUser = Objects.requireNonNull(runAsUser);
+        public Builder runAsUser(@Nullable Integer runAsUser) {
+            this.runAsUser = runAsUser;
             return this;
         }
         @CustomType.Setter
-        public Builder securityContextType(String securityContextType) {
-            this.securityContextType = Objects.requireNonNull(securityContextType);
+        public Builder securityContextType(@Nullable String securityContextType) {
+            this.securityContextType = securityContextType;
             return this;
         }
         public GetContainerInstanceContainerSecurityContext build() {

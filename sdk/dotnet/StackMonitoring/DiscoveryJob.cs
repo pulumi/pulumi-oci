@@ -94,13 +94,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Client who submits discovery job.
         /// </summary>
         [Output("discoveryClient")]
-        public Output<string> DiscoveryClient { get; private set; } = null!;
+        public Output<string?> DiscoveryClient { get; private set; } = null!;
 
         /// <summary>
         /// The request of DiscoveryJob Resource details.
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
@@ -128,49 +128,49 @@ namespace Pulumi.Oci.StackMonitoring
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shouldPropagateTagsToDiscoveredResources")]
-        public Output<bool> ShouldPropagateTagsToDiscoveredResources { get; private set; } = null!;
+        public Output<bool?> ShouldPropagateTagsToDiscoveredResources { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the DiscoveryJob Resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the status of the discovery job
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// The short summary of the status of the discovery job
         /// </summary>
         [Output("statusMessage")]
-        public Output<string> StatusMessage { get; private set; } = null!;
+        public Output<string?> StatusMessage { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of Tenant
         /// </summary>
         [Output("tenantId")]
-        public Output<string> TenantId { get; private set; } = null!;
+        public Output<string?> TenantId { get; private set; } = null!;
 
         /// <summary>
         /// The time the discovery Job was updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of user in which the job is submitted
         /// </summary>
         [Output("userId")]
-        public Output<string> UserId { get; private set; } = null!;
+        public Output<string?> UserId { get; private set; } = null!;
 
 
         /// <summary>

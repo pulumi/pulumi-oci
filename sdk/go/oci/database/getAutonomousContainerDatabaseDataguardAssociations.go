@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
@@ -66,7 +65,7 @@ type GetAutonomousContainerDatabaseDataguardAssociationsResult struct {
 	AutonomousContainerDatabaseId string                                                      `pulumi:"autonomousContainerDatabaseId"`
 	Filters                       []GetAutonomousContainerDatabaseDataguardAssociationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousContainerDatabaseDataguardAssociationsOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseDataguardAssociationsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseDataguardAssociationsResultOutput {
@@ -108,12 +107,6 @@ func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) ToGetAu
 	return o
 }
 
-func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult] {
-	return pulumix.Output[GetAutonomousContainerDatabaseDataguardAssociationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_container_database_dataguard_associations.
 func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) AutonomousContainerDatabaseDataguardAssociations() GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationArrayOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseDataguardAssociationsResult) []GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation {
@@ -135,8 +128,8 @@ func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) Filters
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseDataguardAssociationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousContainerDatabaseDataguardAssociationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseDataguardAssociationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

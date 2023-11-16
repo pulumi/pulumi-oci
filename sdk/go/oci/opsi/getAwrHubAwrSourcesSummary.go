@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
@@ -69,7 +68,7 @@ type GetAwrHubAwrSourcesSummaryResult struct {
 	AwrHubId      string  `pulumi:"awrHubId"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of AwrSource summary objects.
 	Items []GetAwrHubAwrSourcesSummaryItem `pulumi:"items"`
 	// Database name of the Source database for which AWR Data will be uploaded to AWR Hub.
@@ -118,12 +117,6 @@ func (o GetAwrHubAwrSourcesSummaryResultOutput) ToGetAwrHubAwrSourcesSummaryResu
 	return o
 }
 
-func (o GetAwrHubAwrSourcesSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAwrHubAwrSourcesSummaryResult] {
-	return pulumix.Output[GetAwrHubAwrSourcesSummaryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // AWR Hub OCID
 func (o GetAwrHubAwrSourcesSummaryResultOutput) AwrHubId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryResult) string { return v.AwrHubId }).(pulumi.StringOutput)
@@ -134,8 +127,8 @@ func (o GetAwrHubAwrSourcesSummaryResultOutput) CompartmentId() pulumi.StringPtr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAwrHubAwrSourcesSummaryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAwrHubAwrSourcesSummaryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAwrHubAwrSourcesSummaryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of AwrSource summary objects.

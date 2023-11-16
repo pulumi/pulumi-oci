@@ -51,45 +51,45 @@ export interface GetComputeImageCapabilitySchemaResult {
     /**
      * The OCID of the compartment containing the compute global image capability schema
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The ocid of the compute global image capability schema
      */
-    readonly computeGlobalImageCapabilitySchemaId: string;
+    readonly computeGlobalImageCapabilitySchemaId?: string;
     /**
      * The name of the compute global image capability schema version
      */
-    readonly computeGlobalImageCapabilitySchemaVersionName: string;
+    readonly computeGlobalImageCapabilitySchemaVersionName?: string;
     readonly computeImageCapabilitySchemaId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the image associated with this compute image capability schema
      */
-    readonly imageId: string;
+    readonly imageId?: string;
     readonly isMergeEnabled?: string;
     /**
      * A mapping of each capability name to its ImageCapabilityDescriptor.
      */
-    readonly schemaData: {[key: string]: any};
+    readonly schemaData?: {[key: string]: any};
     /**
      * The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.

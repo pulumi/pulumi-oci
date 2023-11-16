@@ -49,23 +49,17 @@ class GetMediaAssetDistributionChannelAttachmentResult:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
     def distribution_channel_id(self) -> str:
-        """
-        OCID of associated Distribution Channel.
-        """
         return pulumi.get(self, "distribution_channel_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,34 +72,22 @@ class GetMediaAssetDistributionChannelAttachmentResult:
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
-    def media_workflow_job_id(self) -> str:
-        """
-        The ingest MediaWorkflowJob ID that created this attachment.
-        """
+    def media_workflow_job_id(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter(name="metadataRef")
-    def metadata_ref(self) -> str:
-        """
-        The identifier for the metadata.
-        """
+    def metadata_ref(self) -> Optional[str]:
         return pulumi.get(self, "metadata_ref")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle state of the attachment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Version of the attachment.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -129,13 +111,7 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
                                                     media_asset_id: Optional[str] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaAssetDistributionChannelAttachmentResult:
     """
-    This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
-
-
-    :param str distribution_channel_id: Unique DistributionChannel identifier.
-    :param str media_asset_id: Unique MediaAsset identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['distributionChannelId'] = distribution_channel_id
@@ -159,12 +135,6 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
                                                            media_asset_id: Optional[pulumi.Input[str]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetDistributionChannelAttachmentResult]:
     """
-    This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
-
-
-    :param str distribution_channel_id: Unique DistributionChannel identifier.
-    :param str media_asset_id: Unique MediaAsset identifier
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DataIntegration
         /// (Updatable) A user defined description for the project.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -72,13 +72,13 @@ namespace Pulumi.Oci.DataIntegration
         /// (Updatable) The identifying key for the object.
         /// </summary>
         [Output("key")]
-        public Output<string> Key { get; private set; } = null!;
+        public Output<string?> Key { get; private set; } = null!;
 
         /// <summary>
         /// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
         [Output("keyMap")]
-        public Output<ImmutableDictionary<string, object>> KeyMap { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> KeyMap { get; private set; } = null!;
 
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -90,13 +90,13 @@ namespace Pulumi.Oci.DataIntegration
         /// The type of the object.
         /// </summary>
         [Output("modelType")]
-        public Output<string> ModelType { get; private set; } = null!;
+        public Output<string?> ModelType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The model version of an object.
         /// </summary>
         [Output("modelVersion")]
-        public Output<string> ModelVersion { get; private set; } = null!;
+        public Output<string?> ModelVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -108,13 +108,13 @@ namespace Pulumi.Oci.DataIntegration
         /// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         /// </summary>
         [Output("objectStatus")]
-        public Output<int> ObjectStatus { get; private set; } = null!;
+        public Output<int?> ObjectStatus { get; private set; } = null!;
 
         /// <summary>
         /// The version of the object that is used to track changes in the object instance.
         /// </summary>
         [Output("objectVersion")]
-        public Output<int> ObjectVersion { get; private set; } = null!;
+        public Output<int?> ObjectVersion { get; private set; } = null!;
 
         /// <summary>
         /// A reference to the object's parent.
@@ -123,13 +123,13 @@ namespace Pulumi.Oci.DataIntegration
         public Output<ImmutableArray<Outputs.WorkspaceProjectParentRef>> ParentReves { get; private set; } = null!;
 
         [Output("projectKey")]
-        public Output<string> ProjectKey { get; private set; } = null!;
+        public Output<string?> ProjectKey { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information about the object and its parent.
         /// </summary>
         [Output("registryMetadata")]
-        public Output<Outputs.WorkspaceProjectRegistryMetadata> RegistryMetadata { get; private set; } = null!;
+        public Output<Outputs.WorkspaceProjectRegistryMetadata?> RegistryMetadata { get; private set; } = null!;
 
         /// <summary>
         /// The workspace ID.

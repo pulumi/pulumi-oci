@@ -29,31 +29,31 @@ namespace Pulumi.Oci.Database
         /// Additional information about the planned maintenance.
         /// </summary>
         [Output("additionalDetails")]
-        public Output<string> AdditionalDetails { get; private set; } = null!;
+        public Output<string?> AdditionalDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         /// </summary>
         [Output("backupIpId")]
-        public Output<string> BackupIpId { get; private set; } = null!;
+        public Output<string?> BackupIpId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         /// </summary>
         [Output("backupVnic2id")]
-        public Output<string> BackupVnic2id { get; private set; } = null!;
+        public Output<string?> BackupVnic2id { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         /// </summary>
         [Output("backupVnicId")]
-        public Output<string> BackupVnicId { get; private set; } = null!;
+        public Output<string?> BackupVnicId { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores enabled on the Db node.
         /// </summary>
         [Output("cpuCoreCount")]
-        public Output<int> CpuCoreCount { get; private set; } = null!;
+        public Output<int?> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -65,31 +65,31 @@ namespace Pulumi.Oci.Database
         /// The allocated local node storage in GBs on the Db node.
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
         /// </summary>
         [Output("dbServerId")]
-        public Output<string> DbServerId { get; private set; } = null!;
+        public Output<string?> DbServerId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         [Output("dbSystemId")]
-        public Output<string> DbSystemId { get; private set; } = null!;
+        public Output<string?> DbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The name of the Fault Domain the instance is contained in.
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
@@ -99,79 +99,79 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         /// </summary>
         [Output("hostIpId")]
-        public Output<string> HostIpId { get; private set; } = null!;
+        public Output<string?> HostIpId { get; private set; } = null!;
 
         /// <summary>
         /// The host name for the database node.
         /// </summary>
         [Output("hostname")]
-        public Output<string> Hostname { get; private set; } = null!;
+        public Output<string?> Hostname { get; private set; } = null!;
 
         /// <summary>
         /// Information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The type of database node maintenance.
         /// </summary>
         [Output("maintenanceType")]
-        public Output<string> MaintenanceType { get; private set; } = null!;
+        public Output<string?> MaintenanceType { get; private set; } = null!;
 
         /// <summary>
         /// The allocated memory in GBs on the Db node.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
         /// </summary>
         [Output("softwareStorageSizeInGb")]
-        public Output<int> SoftwareStorageSizeInGb { get; private set; } = null!;
+        public Output<int?> SoftwareStorageSizeInGb { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the database node.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the database node was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// End date and time of maintenance window.
         /// </summary>
         [Output("timeMaintenanceWindowEnd")]
-        public Output<string> TimeMaintenanceWindowEnd { get; private set; } = null!;
+        public Output<string?> TimeMaintenanceWindowEnd { get; private set; } = null!;
 
         /// <summary>
         /// Start date and time of maintenance window.
         /// </summary>
         [Output("timeMaintenanceWindowStart")]
-        public Output<string> TimeMaintenanceWindowStart { get; private set; } = null!;
+        public Output<string?> TimeMaintenanceWindowStart { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         /// </summary>
         [Output("vnic2id")]
-        public Output<string> Vnic2id { get; private set; } = null!;
+        public Output<string?> Vnic2id { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         /// </summary>
         [Output("vnicId")]
-        public Output<string> VnicId { get; private set; } = null!;
+        public Output<string?> VnicId { get; private set; } = null!;
 
 
         /// <summary>

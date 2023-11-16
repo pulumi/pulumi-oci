@@ -23,17 +23,6 @@ class CertificateArgs:
                  intermediate_certificates: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Certificate resource.
-        :param pulumi.Input[str] certificate: The data of the leaf certificate in pem format.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        :param pulumi.Input[str] private_key: The private key associated with the certificate in pem format.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
         """
         pulumi.set(__self__, "certificate", certificate)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,9 +39,6 @@ class CertificateArgs:
     @property
     @pulumi.getter
     def certificate(self) -> pulumi.Input[str]:
-        """
-        The data of the leaf certificate in pem format.
-        """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
@@ -62,9 +48,6 @@ class CertificateArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -74,13 +57,6 @@ class CertificateArgs:
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[str]:
-        """
-        The private key associated with the certificate in pem format.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
@@ -90,9 +66,6 @@ class CertificateArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -102,9 +75,6 @@ class CertificateArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -114,9 +84,6 @@ class CertificateArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -126,9 +93,6 @@ class CertificateArgs:
     @property
     @pulumi.getter(name="intermediateCertificates")
     def intermediate_certificates(self) -> Optional[pulumi.Input[str]]:
-        """
-        The intermediate certificate data associated with the certificate in pem format.
-        """
         return pulumi.get(self, "intermediate_certificates")
 
     @intermediate_certificates.setter
@@ -154,23 +118,6 @@ class _CertificateState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Certificate resources.
-        :param pulumi.Input[str] certificate: The data of the leaf certificate in pem format.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] private_key: The private key associated with the certificate in pem format.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the certificate.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subject_names: The entity to be secured by the certificate and additional host names.
-        :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_not_valid_after: The date and time the certificate will expire.
-        :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
@@ -202,9 +149,6 @@ class _CertificateState:
     @property
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        The data of the leaf certificate in pem format.
-        """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
@@ -214,9 +158,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -226,9 +167,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -238,9 +176,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -250,9 +185,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -262,9 +194,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="intermediateCertificates")
     def intermediate_certificates(self) -> Optional[pulumi.Input[str]]:
-        """
-        The intermediate certificate data associated with the certificate in pem format.
-        """
         return pulumi.get(self, "intermediate_certificates")
 
     @intermediate_certificates.setter
@@ -274,9 +203,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -286,13 +212,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private key associated with the certificate in pem format.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
@@ -302,9 +221,6 @@ class _CertificateState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the certificate.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -314,9 +230,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="subjectNames")
     def subject_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The entity to be secured by the certificate and additional host names.
-        """
         return pulumi.get(self, "subject_names")
 
     @subject_names.setter
@@ -326,9 +239,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -338,9 +248,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="timeNotValidAfter")
     def time_not_valid_after(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the certificate will expire.
-        """
         return pulumi.get(self, "time_not_valid_after")
 
     @time_not_valid_after.setter
@@ -350,9 +257,6 @@ class _CertificateState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -374,51 +278,9 @@ class Certificate(pulumi.CustomResource):
                  private_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new Certificate.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_certificate = oci.api_gateway.Certificate("testCertificate",
-            certificate=var["certificate_certificate"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["certificate_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            intermediate_certificates=var["certificate_intermediate_certificates"],
-            private_key=var["certificate_private_key"])
-        ```
-
-        ## Import
-
-        Certificates can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
-        ```
-
+        Create a Certificate resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] certificate: The data of the leaf certificate in pem format.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
-        :param pulumi.Input[str] private_key: The private key associated with the certificate in pem format.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -427,38 +289,7 @@ class Certificate(pulumi.CustomResource):
                  args: CertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new Certificate.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_certificate = oci.api_gateway.Certificate("testCertificate",
-            certificate=var["certificate_certificate"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["certificate_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            intermediate_certificates=var["certificate_intermediate_certificates"],
-            private_key=var["certificate_private_key"])
-        ```
-
-        ## Import
-
-        Certificates can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"
-        ```
-
+        Create a Certificate resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CertificateArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -541,23 +372,6 @@ class Certificate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] certificate: The data of the leaf certificate in pem format.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] private_key: The private key associated with the certificate in pem format.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the certificate.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subject_names: The entity to be secured by the certificate and additional host names.
-        :param pulumi.Input[str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_not_valid_after: The date and time the certificate will expire.
-        :param pulumi.Input[str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -581,108 +395,65 @@ class Certificate(pulumi.CustomResource):
     @property
     @pulumi.getter
     def certificate(self) -> pulumi.Output[str]:
-        """
-        The data of the leaf certificate in pem format.
-        """
         return pulumi.get(self, "certificate")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="intermediateCertificates")
-    def intermediate_certificates(self) -> pulumi.Output[str]:
-        """
-        The intermediate certificate data associated with the certificate in pem format.
-        """
+    def intermediate_certificates(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "intermediate_certificates")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Output[str]:
-        """
-        The private key associated with the certificate in pem format.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "private_key")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the certificate.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subjectNames")
-    def subject_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The entity to be secured by the certificate and additional host names.
-        """
+    def subject_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "subject_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeNotValidAfter")
-    def time_not_valid_after(self) -> pulumi.Output[str]:
-        """
-        The date and time the certificate will expire.
-        """
+    def time_not_valid_after(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_not_valid_after")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

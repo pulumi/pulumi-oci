@@ -84,7 +84,7 @@ export interface GetContainerRepositoriesResult {
     /**
      * The list of container_repository_collection.
      */
-    readonly containerRepositoryCollections: outputs.Artifacts.GetContainerRepositoriesContainerRepositoryCollection[];
+    readonly containerRepositoryCollections?: outputs.Artifacts.GetContainerRepositoriesContainerRepositoryCollection[];
     /**
      * The container repository name.
      */
@@ -93,7 +93,7 @@ export interface GetContainerRepositoriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether the repository is public. A public repository allows unauthenticated access.
      */

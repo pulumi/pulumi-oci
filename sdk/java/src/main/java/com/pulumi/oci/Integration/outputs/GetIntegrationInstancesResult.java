@@ -29,12 +29,12 @@ public final class GetIntegrationInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of integration_instances.
      * 
      */
-    private List<GetIntegrationInstancesIntegrationInstance> integrationInstances;
+    private @Nullable List<GetIntegrationInstancesIntegrationInstance> integrationInstances;
     /**
      * @return The current state of the integration instance.
      * 
@@ -63,15 +63,15 @@ public final class GetIntegrationInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of integration_instances.
      * 
      */
     public List<GetIntegrationInstancesIntegrationInstance> integrationInstances() {
-        return this.integrationInstances;
+        return this.integrationInstances == null ? List.of() : this.integrationInstances;
     }
     /**
      * @return The current state of the integration instance.
@@ -93,8 +93,8 @@ public final class GetIntegrationInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetIntegrationInstancesFilter> filters;
-        private String id;
-        private List<GetIntegrationInstancesIntegrationInstance> integrationInstances;
+        private @Nullable String id;
+        private @Nullable List<GetIntegrationInstancesIntegrationInstance> integrationInstances;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetIntegrationInstancesResult defaults) {
@@ -126,13 +126,13 @@ public final class GetIntegrationInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder integrationInstances(List<GetIntegrationInstancesIntegrationInstance> integrationInstances) {
-            this.integrationInstances = Objects.requireNonNull(integrationInstances);
+        public Builder integrationInstances(@Nullable List<GetIntegrationInstancesIntegrationInstance> integrationInstances) {
+            this.integrationInstances = integrationInstances;
             return this;
         }
         public Builder integrationInstances(GetIntegrationInstancesIntegrationInstance... integrationInstances) {

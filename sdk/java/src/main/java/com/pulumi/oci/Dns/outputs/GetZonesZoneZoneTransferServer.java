@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetZonesZoneZoneTransferServer {
@@ -15,51 +17,51 @@ public final class GetZonesZoneZoneTransferServer {
      * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
-    private String address;
+    private @Nullable String address;
     /**
      * @return A Boolean flag indicating whether or not the server is a zone data transfer destination.
      * 
      */
-    private Boolean isTransferDestination;
+    private @Nullable Boolean isTransferDestination;
     /**
      * @return A Boolean flag indicating whether or not the server is a zone data transfer source.
      * 
      */
-    private Boolean isTransferSource;
+    private @Nullable Boolean isTransferSource;
     /**
      * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
 
     private GetZonesZoneZoneTransferServer() {}
     /**
      * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
-    public String address() {
-        return this.address;
+    public Optional<String> address() {
+        return Optional.ofNullable(this.address);
     }
     /**
      * @return A Boolean flag indicating whether or not the server is a zone data transfer destination.
      * 
      */
-    public Boolean isTransferDestination() {
-        return this.isTransferDestination;
+    public Optional<Boolean> isTransferDestination() {
+        return Optional.ofNullable(this.isTransferDestination);
     }
     /**
      * @return A Boolean flag indicating whether or not the server is a zone data transfer source.
      * 
      */
-    public Boolean isTransferSource() {
-        return this.isTransferSource;
+    public Optional<Boolean> isTransferSource() {
+        return Optional.ofNullable(this.isTransferSource);
     }
     /**
      * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetZonesZoneZoneTransferServer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String address;
-        private Boolean isTransferDestination;
-        private Boolean isTransferSource;
-        private Integer port;
+        private @Nullable String address;
+        private @Nullable Boolean isTransferDestination;
+        private @Nullable Boolean isTransferSource;
+        private @Nullable Integer port;
         public Builder() {}
         public Builder(GetZonesZoneZoneTransferServer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetZonesZoneZoneTransferServer {
         }
 
         @CustomType.Setter
-        public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+        public Builder address(@Nullable String address) {
+            this.address = address;
             return this;
         }
         @CustomType.Setter
-        public Builder isTransferDestination(Boolean isTransferDestination) {
-            this.isTransferDestination = Objects.requireNonNull(isTransferDestination);
+        public Builder isTransferDestination(@Nullable Boolean isTransferDestination) {
+            this.isTransferDestination = isTransferDestination;
             return this;
         }
         @CustomType.Setter
-        public Builder isTransferSource(Boolean isTransferSource) {
-            this.isTransferSource = Objects.requireNonNull(isTransferSource);
+        public Builder isTransferSource(@Nullable Boolean isTransferSource) {
+            this.isTransferSource = isTransferSource;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         public GetZonesZoneZoneTransferServer build() {

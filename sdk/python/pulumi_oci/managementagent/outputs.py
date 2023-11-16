@@ -40,11 +40,6 @@ class ManagementAgentManagementAgentProperty(dict):
                  name: Optional[str] = None,
                  units: Optional[str] = None,
                  values: Optional[Sequence[str]] = None):
-        """
-        :param str name: Name of the property
-        :param str units: Unit for the property
-        :param Sequence[str] values: Values of the property
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if units is not None:
@@ -55,25 +50,16 @@ class ManagementAgentManagementAgentProperty(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the property
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def units(self) -> Optional[str]:
-        """
-        Unit for the property
-        """
         return pulumi.get(self, "units")
 
     @property
     @pulumi.getter
     def values(self) -> Optional[Sequence[str]]:
-        """
-        Values of the property
-        """
         return pulumi.get(self, "values")
 
 
@@ -116,15 +102,6 @@ class ManagementAgentPluginList(dict):
                  plugin_status: Optional[str] = None,
                  plugin_status_message: Optional[str] = None,
                  plugin_version: Optional[str] = None):
-        """
-        :param bool is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
-        :param str plugin_display_name: Management Agent Plugin Identifier, can be renamed
-        :param str plugin_id: Plugin Id
-        :param str plugin_name: Management Agent Plugin Name
-        :param str plugin_status: Plugin Status
-        :param str plugin_status_message: Status message of the Plugin
-        :param str plugin_version: Plugin Version
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
         if plugin_display_name is not None:
@@ -143,108 +120,73 @@ class ManagementAgentPluginList(dict):
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
-        """
-        flag indicating whether the plugin is in enabled mode or disabled mode.
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="pluginDisplayName")
     def plugin_display_name(self) -> Optional[str]:
-        """
-        Management Agent Plugin Identifier, can be renamed
-        """
         return pulumi.get(self, "plugin_display_name")
 
     @property
     @pulumi.getter(name="pluginId")
     def plugin_id(self) -> Optional[str]:
-        """
-        Plugin Id
-        """
         return pulumi.get(self, "plugin_id")
 
     @property
     @pulumi.getter(name="pluginName")
     def plugin_name(self) -> Optional[str]:
-        """
-        Management Agent Plugin Name
-        """
         return pulumi.get(self, "plugin_name")
 
     @property
     @pulumi.getter(name="pluginStatus")
     def plugin_status(self) -> Optional[str]:
-        """
-        Plugin Status
-        """
         return pulumi.get(self, "plugin_status")
 
     @property
     @pulumi.getter(name="pluginStatusMessage")
     def plugin_status_message(self) -> Optional[str]:
-        """
-        Status message of the Plugin
-        """
         return pulumi.get(self, "plugin_status_message")
 
     @property
     @pulumi.getter(name="pluginVersion")
     def plugin_version(self) -> Optional[str]:
-        """
-        Plugin Version
-        """
         return pulumi.get(self, "plugin_version")
 
 
 @pulumi.output_type
 class GetManagementAgentAvailableHistoriesAvailabilityHistoryResult(dict):
     def __init__(__self__, *,
-                 availability_status: str,
-                 management_agent_id: str,
-                 time_availability_status_ended: str,
-                 time_availability_status_started: str):
-        """
-        :param str availability_status: The availability status of managementAgent
-        :param str management_agent_id: Unique Management Agent identifier
-        :param str time_availability_status_ended: The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
-        :param str time_availability_status_started: The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "availability_status", availability_status)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "time_availability_status_ended", time_availability_status_ended)
-        pulumi.set(__self__, "time_availability_status_started", time_availability_status_started)
+                 availability_status: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 time_availability_status_ended: Optional[str] = None,
+                 time_availability_status_started: Optional[str] = None):
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if time_availability_status_ended is not None:
+            pulumi.set(__self__, "time_availability_status_ended", time_availability_status_ended)
+        if time_availability_status_started is not None:
+            pulumi.set(__self__, "time_availability_status_started", time_availability_status_started)
 
     @property
     @pulumi.getter(name="availabilityStatus")
-    def availability_status(self) -> str:
-        """
-        The availability status of managementAgent
-        """
+    def availability_status(self) -> Optional[str]:
         return pulumi.get(self, "availability_status")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        Unique Management Agent identifier
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter(name="timeAvailabilityStatusEnded")
-    def time_availability_status_ended(self) -> str:
-        """
-        The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
-        """
+    def time_availability_status_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_availability_status_ended")
 
     @property
     @pulumi.getter(name="timeAvailabilityStatusStarted")
-    def time_availability_status_started(self) -> str:
-        """
-        The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
-        """
+    def time_availability_status_started(self) -> Optional[str]:
         return pulumi.get(self, "time_availability_status_started")
 
 
@@ -278,91 +220,66 @@ class GetManagementAgentAvailableHistoriesFilterResult(dict):
 @pulumi.output_type
 class GetManagementAgentCountItemResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 dimensions: Sequence['outputs.GetManagementAgentCountItemDimensionResult']):
-        """
-        :param int count: The number of Management Agents in this group
-        :param Sequence['GetManagementAgentCountItemDimensionArgs'] dimensions: The Aggregation of Management Agent Dimensions
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
+                 count: Optional[int] = None,
+                 dimensions: Optional[Sequence['outputs.GetManagementAgentCountItemDimensionResult']] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The number of Management Agents in this group
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Sequence['outputs.GetManagementAgentCountItemDimensionResult']:
-        """
-        The Aggregation of Management Agent Dimensions
-        """
+    def dimensions(self) -> Optional[Sequence['outputs.GetManagementAgentCountItemDimensionResult']]:
         return pulumi.get(self, "dimensions")
 
 
 @pulumi.output_type
 class GetManagementAgentCountItemDimensionResult(dict):
     def __init__(__self__, *,
-                 availability_status: str,
-                 has_plugins: bool,
-                 install_type: str,
-                 platform_type: str,
-                 version: str):
-        """
-        :param str availability_status: The availability status of managementAgent
-        :param bool has_plugins: When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-        :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-        :param str platform_type: Platform Type
-        :param str version: Agent image version
-        """
-        pulumi.set(__self__, "availability_status", availability_status)
-        pulumi.set(__self__, "has_plugins", has_plugins)
-        pulumi.set(__self__, "install_type", install_type)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "version", version)
+                 availability_status: Optional[str] = None,
+                 has_plugins: Optional[bool] = None,
+                 install_type: Optional[str] = None,
+                 platform_type: Optional[str] = None,
+                 version: Optional[str] = None):
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if has_plugins is not None:
+            pulumi.set(__self__, "has_plugins", has_plugins)
+        if install_type is not None:
+            pulumi.set(__self__, "install_type", install_type)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="availabilityStatus")
-    def availability_status(self) -> str:
-        """
-        The availability status of managementAgent
-        """
+    def availability_status(self) -> Optional[str]:
         return pulumi.get(self, "availability_status")
 
     @property
     @pulumi.getter(name="hasPlugins")
-    def has_plugins(self) -> bool:
-        """
-        When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-        """
+    def has_plugins(self) -> Optional[bool]:
         return pulumi.get(self, "has_plugins")
 
     @property
     @pulumi.getter(name="installType")
-    def install_type(self) -> str:
-        """
-        A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-        """
+    def install_type(self) -> Optional[str]:
         return pulumi.get(self, "install_type")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Platform Type
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Agent image version
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -372,9 +289,6 @@ class GetManagementAgentImagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire platform name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -383,9 +297,6 @@ class GetManagementAgentImagesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire platform name given.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -402,190 +313,138 @@ class GetManagementAgentImagesFilterResult(dict):
 @pulumi.output_type
 class GetManagementAgentImagesManagementAgentImageResult(dict):
     def __init__(__self__, *,
-                 checksum: str,
-                 id: str,
-                 image_object_storage_details: Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult'],
-                 object_url: str,
-                 package_architecture_type: str,
-                 package_type: str,
-                 platform_name: str,
-                 platform_type: str,
-                 size: float,
-                 state: str,
-                 version: str):
-        """
-        :param str checksum: Object content SHA256 Hash
-        :param str id: Agent image resource id
-        :param Sequence['GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs'] image_object_storage_details: Details of the Objectstorage object
-        :param str object_url: Object storage URL for download
-        :param str package_architecture_type: The installation package target architecture type
-        :param str package_type: The installation package type
-        :param str platform_name: Agent image platform display name
-        :param str platform_type: Agent image platform type
-        :param float size: Agent image size in bytes
-        :param str state: Filter to return only Management Agents in the particular lifecycle state.
-        :param str version: Agent image version
-        """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_object_storage_details", image_object_storage_details)
-        pulumi.set(__self__, "object_url", object_url)
-        pulumi.set(__self__, "package_architecture_type", package_architecture_type)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "platform_name", platform_name)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "version", version)
+                 checksum: Optional[str] = None,
+                 id: Optional[str] = None,
+                 image_object_storage_details: Optional[Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult']] = None,
+                 object_url: Optional[str] = None,
+                 package_architecture_type: Optional[str] = None,
+                 package_type: Optional[str] = None,
+                 platform_name: Optional[str] = None,
+                 platform_type: Optional[str] = None,
+                 size: Optional[float] = None,
+                 state: Optional[str] = None,
+                 version: Optional[str] = None):
+        if checksum is not None:
+            pulumi.set(__self__, "checksum", checksum)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if image_object_storage_details is not None:
+            pulumi.set(__self__, "image_object_storage_details", image_object_storage_details)
+        if object_url is not None:
+            pulumi.set(__self__, "object_url", object_url)
+        if package_architecture_type is not None:
+            pulumi.set(__self__, "package_architecture_type", package_architecture_type)
+        if package_type is not None:
+            pulumi.set(__self__, "package_type", package_type)
+        if platform_name is not None:
+            pulumi.set(__self__, "platform_name", platform_name)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        Object content SHA256 Hash
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Agent image resource id
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageObjectStorageDetails")
-    def image_object_storage_details(self) -> Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult']:
-        """
-        Details of the Objectstorage object
-        """
+    def image_object_storage_details(self) -> Optional[Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult']]:
         return pulumi.get(self, "image_object_storage_details")
 
     @property
     @pulumi.getter(name="objectUrl")
-    def object_url(self) -> str:
-        """
-        Object storage URL for download
-        """
+    def object_url(self) -> Optional[str]:
         return pulumi.get(self, "object_url")
 
     @property
     @pulumi.getter(name="packageArchitectureType")
-    def package_architecture_type(self) -> str:
-        """
-        The installation package target architecture type
-        """
+    def package_architecture_type(self) -> Optional[str]:
         return pulumi.get(self, "package_architecture_type")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The installation package type
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> str:
-        """
-        Agent image platform display name
-        """
+    def platform_name(self) -> Optional[str]:
         return pulumi.get(self, "platform_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Agent image platform type
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter
-    def size(self) -> float:
-        """
-        Agent image size in bytes
-        """
+    def size(self) -> Optional[float]:
         return pulumi.get(self, "size")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter to return only Management Agents in the particular lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Agent image version
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult(dict):
     def __init__(__self__, *,
-                 checksum: str,
-                 object: str,
-                 object_bucket: str,
-                 object_namespace: str,
-                 object_url: str):
-        """
-        :param str checksum: Object content SHA256 Hash
-        :param str object: Objectstorage object name reference providing the original location of this object
-        :param str object_bucket: Objectstorage bucket reference providing the original location of this object
-        :param str object_namespace: Objectstorage namespace reference providing the original location of this object
-        :param str object_url: Object storage URL for download
-        """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_bucket", object_bucket)
-        pulumi.set(__self__, "object_namespace", object_namespace)
-        pulumi.set(__self__, "object_url", object_url)
+                 checksum: Optional[str] = None,
+                 object: Optional[str] = None,
+                 object_bucket: Optional[str] = None,
+                 object_namespace: Optional[str] = None,
+                 object_url: Optional[str] = None):
+        if checksum is not None:
+            pulumi.set(__self__, "checksum", checksum)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if object_bucket is not None:
+            pulumi.set(__self__, "object_bucket", object_bucket)
+        if object_namespace is not None:
+            pulumi.set(__self__, "object_namespace", object_namespace)
+        if object_url is not None:
+            pulumi.set(__self__, "object_url", object_url)
 
     @property
     @pulumi.getter
-    def checksum(self) -> str:
-        """
-        Object content SHA256 Hash
-        """
+    def checksum(self) -> Optional[str]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Objectstorage object name reference providing the original location of this object
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectBucket")
-    def object_bucket(self) -> str:
-        """
-        Objectstorage bucket reference providing the original location of this object
-        """
+    def object_bucket(self) -> Optional[str]:
         return pulumi.get(self, "object_bucket")
 
     @property
     @pulumi.getter(name="objectNamespace")
-    def object_namespace(self) -> str:
-        """
-        Objectstorage namespace reference providing the original location of this object
-        """
+    def object_namespace(self) -> Optional[str]:
         return pulumi.get(self, "object_namespace")
 
     @property
     @pulumi.getter(name="objectUrl")
-    def object_url(self) -> str:
-        """
-        Object storage URL for download
-        """
+    def object_url(self) -> Optional[str]:
         return pulumi.get(self, "object_url")
 
 
@@ -619,332 +478,241 @@ class GetManagementAgentInstallKeysFilterResult(dict):
 @pulumi.output_type
 class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
     def __init__(__self__, *,
-                 allowed_key_install_count: int,
-                 compartment_id: str,
-                 created_by_principal_id: str,
-                 current_key_install_count: int,
-                 display_name: str,
-                 id: str,
-                 is_unlimited: bool,
-                 key: str,
-                 lifecycle_details: str,
-                 state: str,
-                 time_created: str,
-                 time_expires: str,
-                 time_updated: str):
-        """
-        :param int allowed_key_install_count: Total number of install for this keys
-        :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-        :param str created_by_principal_id: Principal id of user who created the Agent Install key
-        :param int current_key_install_count: Total number of install for this keys
-        :param str display_name: The display name for which the Key needs to be listed.
-        :param str id: Agent install Key identifier
-        :param bool is_unlimited: If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
-        :param str key: Management Agent Install Key
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str state: Filter to return only Management Agents in the particular lifecycle state.
-        :param str time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        :param str time_expires: date after which key would expire after creation
-        :param str time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-        """
-        pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by_principal_id", created_by_principal_id)
-        pulumi.set(__self__, "current_key_install_count", current_key_install_count)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_expires", time_expires)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 allowed_key_install_count: Optional[int] = None,
+                 compartment_id: Optional[str] = None,
+                 created_by_principal_id: Optional[str] = None,
+                 current_key_install_count: Optional[int] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_unlimited: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_expires: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if allowed_key_install_count is not None:
+            pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by_principal_id is not None:
+            pulumi.set(__self__, "created_by_principal_id", created_by_principal_id)
+        if current_key_install_count is not None:
+            pulumi.set(__self__, "current_key_install_count", current_key_install_count)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_unlimited is not None:
+            pulumi.set(__self__, "is_unlimited", is_unlimited)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_expires is not None:
+            pulumi.set(__self__, "time_expires", time_expires)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
-    def allowed_key_install_count(self) -> int:
-        """
-        Total number of install for this keys
-        """
+    def allowed_key_install_count(self) -> Optional[int]:
         return pulumi.get(self, "allowed_key_install_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to which a request will be scoped.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdByPrincipalId")
-    def created_by_principal_id(self) -> str:
-        """
-        Principal id of user who created the Agent Install key
-        """
+    def created_by_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "created_by_principal_id")
 
     @property
     @pulumi.getter(name="currentKeyInstallCount")
-    def current_key_install_count(self) -> int:
-        """
-        Total number of install for this keys
-        """
+    def current_key_install_count(self) -> Optional[int]:
         return pulumi.get(self, "current_key_install_count")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name for which the Key needs to be listed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Agent install Key identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Management Agent Install Key
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter to return only Management Agents in the particular lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> str:
-        """
-        date after which key would expire after creation
-        """
+    def time_expires(self) -> Optional[str]:
         return pulumi.get(self, "time_expires")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetManagementAgentManagementAgentPropertyResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 units: str,
-                 values: Sequence[str]):
-        """
-        :param str name: Name of the property
-        :param str units: Unit for the property
-        :param Sequence[str] values: Values of the property
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "units", units)
-        pulumi.set(__self__, "values", values)
+                 name: Optional[str] = None,
+                 units: Optional[str] = None,
+                 values: Optional[Sequence[str]] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if units is not None:
+            pulumi.set(__self__, "units", units)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the property
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def units(self) -> str:
-        """
-        Unit for the property
-        """
+    def units(self) -> Optional[str]:
         return pulumi.get(self, "units")
 
     @property
     @pulumi.getter
-    def values(self) -> Sequence[str]:
-        """
-        Values of the property
-        """
+    def values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "values")
 
 
 @pulumi.output_type
 class GetManagementAgentPluginCountItemResult(dict):
     def __init__(__self__, *,
-                 count: int,
-                 dimensions: Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult']):
-        """
-        :param int count: The number of Management Agent Plugins in this group
-        :param Sequence['GetManagementAgentPluginCountItemDimensionArgs'] dimensions: The Aggregation of Management Agent Plugin Dimensions
-        """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
+                 count: Optional[int] = None,
+                 dimensions: Optional[Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult']] = None):
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
 
     @property
     @pulumi.getter
-    def count(self) -> int:
-        """
-        The number of Management Agent Plugins in this group
-        """
+    def count(self) -> Optional[int]:
         return pulumi.get(self, "count")
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult']:
-        """
-        The Aggregation of Management Agent Plugin Dimensions
-        """
+    def dimensions(self) -> Optional[Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult']]:
         return pulumi.get(self, "dimensions")
 
 
 @pulumi.output_type
 class GetManagementAgentPluginCountItemDimensionResult(dict):
     def __init__(__self__, *,
-                 plugin_display_name: str,
-                 plugin_name: str):
-        """
-        :param str plugin_display_name: Management Agent Plugin Display Name
-        :param str plugin_name: Management Agent Plugin Name
-        """
-        pulumi.set(__self__, "plugin_display_name", plugin_display_name)
-        pulumi.set(__self__, "plugin_name", plugin_name)
+                 plugin_display_name: Optional[str] = None,
+                 plugin_name: Optional[str] = None):
+        if plugin_display_name is not None:
+            pulumi.set(__self__, "plugin_display_name", plugin_display_name)
+        if plugin_name is not None:
+            pulumi.set(__self__, "plugin_name", plugin_name)
 
     @property
     @pulumi.getter(name="pluginDisplayName")
-    def plugin_display_name(self) -> str:
-        """
-        Management Agent Plugin Display Name
-        """
+    def plugin_display_name(self) -> Optional[str]:
         return pulumi.get(self, "plugin_display_name")
 
     @property
     @pulumi.getter(name="pluginName")
-    def plugin_name(self) -> str:
-        """
-        Management Agent Plugin Name
-        """
+    def plugin_name(self) -> Optional[str]:
         return pulumi.get(self, "plugin_name")
 
 
 @pulumi.output_type
 class GetManagementAgentPluginListResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool,
-                 plugin_display_name: str,
-                 plugin_id: str,
-                 plugin_name: str,
-                 plugin_status: str,
-                 plugin_status_message: str,
-                 plugin_version: str):
-        """
-        :param bool is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
-        :param str plugin_display_name: Management Agent Plugin Identifier, can be renamed
-        :param str plugin_id: Plugin Id
-        :param str plugin_name: Management Agent Plugin Name
-        :param str plugin_status: Plugin Status
-        :param str plugin_status_message: Status message of the Plugin
-        :param str plugin_version: Plugin Version
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "plugin_display_name", plugin_display_name)
-        pulumi.set(__self__, "plugin_id", plugin_id)
-        pulumi.set(__self__, "plugin_name", plugin_name)
-        pulumi.set(__self__, "plugin_status", plugin_status)
-        pulumi.set(__self__, "plugin_status_message", plugin_status_message)
-        pulumi.set(__self__, "plugin_version", plugin_version)
+                 is_enabled: Optional[bool] = None,
+                 plugin_display_name: Optional[str] = None,
+                 plugin_id: Optional[str] = None,
+                 plugin_name: Optional[str] = None,
+                 plugin_status: Optional[str] = None,
+                 plugin_status_message: Optional[str] = None,
+                 plugin_version: Optional[str] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if plugin_display_name is not None:
+            pulumi.set(__self__, "plugin_display_name", plugin_display_name)
+        if plugin_id is not None:
+            pulumi.set(__self__, "plugin_id", plugin_id)
+        if plugin_name is not None:
+            pulumi.set(__self__, "plugin_name", plugin_name)
+        if plugin_status is not None:
+            pulumi.set(__self__, "plugin_status", plugin_status)
+        if plugin_status_message is not None:
+            pulumi.set(__self__, "plugin_status_message", plugin_status_message)
+        if plugin_version is not None:
+            pulumi.set(__self__, "plugin_version", plugin_version)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        flag indicating whether the plugin is in enabled mode or disabled mode.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="pluginDisplayName")
-    def plugin_display_name(self) -> str:
-        """
-        Management Agent Plugin Identifier, can be renamed
-        """
+    def plugin_display_name(self) -> Optional[str]:
         return pulumi.get(self, "plugin_display_name")
 
     @property
     @pulumi.getter(name="pluginId")
-    def plugin_id(self) -> str:
-        """
-        Plugin Id
-        """
+    def plugin_id(self) -> Optional[str]:
         return pulumi.get(self, "plugin_id")
 
     @property
     @pulumi.getter(name="pluginName")
-    def plugin_name(self) -> str:
-        """
-        Management Agent Plugin Name
-        """
+    def plugin_name(self) -> Optional[str]:
         return pulumi.get(self, "plugin_name")
 
     @property
     @pulumi.getter(name="pluginStatus")
-    def plugin_status(self) -> str:
-        """
-        Plugin Status
-        """
+    def plugin_status(self) -> Optional[str]:
         return pulumi.get(self, "plugin_status")
 
     @property
     @pulumi.getter(name="pluginStatusMessage")
-    def plugin_status_message(self) -> str:
-        """
-        Status message of the Plugin
-        """
+    def plugin_status_message(self) -> Optional[str]:
         return pulumi.get(self, "plugin_status_message")
 
     @property
     @pulumi.getter(name="pluginVersion")
-    def plugin_version(self) -> str:
-        """
-        Plugin Version
-        """
+    def plugin_version(self) -> Optional[str]:
         return pulumi.get(self, "plugin_version")
 
 
@@ -954,9 +722,6 @@ class GetManagementAgentPluginsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Management Agent Plugin Name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -965,9 +730,6 @@ class GetManagementAgentPluginsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Management Agent Plugin Name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -984,95 +746,69 @@ class GetManagementAgentPluginsFilterResult(dict):
 @pulumi.output_type
 class GetManagementAgentPluginsManagementAgentPluginResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 id: str,
-                 is_console_deployable: bool,
-                 name: str,
-                 state: str,
-                 supported_platform_types: Sequence[str],
-                 version: int):
-        """
-        :param str description: Management Agent Plugin description
-        :param str display_name: Filter to return only Management Agent Plugins having the particular display name.
-        :param str id: Management Agent Plugin Id
-        :param bool is_console_deployable: A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-        :param str name: Management Agent Plugin Name
-        :param str state: Filter to return only Management Agents in the particular lifecycle state.
-        :param Sequence[str] supported_platform_types: Supported Platform Types
-        :param int version: Management Agent Plugin Version
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_console_deployable", is_console_deployable)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_platform_types", supported_platform_types)
-        pulumi.set(__self__, "version", version)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_console_deployable: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 supported_platform_types: Optional[Sequence[str]] = None,
+                 version: Optional[int] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_console_deployable is not None:
+            pulumi.set(__self__, "is_console_deployable", is_console_deployable)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if supported_platform_types is not None:
+            pulumi.set(__self__, "supported_platform_types", supported_platform_types)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Management Agent Plugin description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filter to return only Management Agent Plugins having the particular display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Management Agent Plugin Id
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isConsoleDeployable")
-    def is_console_deployable(self) -> bool:
-        """
-        A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-        """
+    def is_console_deployable(self) -> Optional[bool]:
         return pulumi.get(self, "is_console_deployable")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Management Agent Plugin Name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter to return only Management Agents in the particular lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="supportedPlatformTypes")
-    def supported_platform_types(self) -> Sequence[str]:
-        """
-        Supported Platform Types
-        """
+    def supported_platform_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "supported_platform_types")
 
     @property
     @pulumi.getter
-    def version(self) -> int:
-        """
-        Management Agent Plugin Version
-        """
+    def version(self) -> Optional[int]:
         return pulumi.get(self, "version")
 
 
@@ -1082,10 +818,6 @@ class GetManagementAgentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the property
-        :param Sequence[str] values: Values of the property
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1094,17 +826,11 @@ class GetManagementAgentsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the property
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def values(self) -> Sequence[str]:
-        """
-        Values of the property
-        """
         return pulumi.get(self, "values")
 
     @property
@@ -1116,420 +842,311 @@ class GetManagementAgentsFilterResult(dict):
 @pulumi.output_type
 class GetManagementAgentsManagementAgentResult(dict):
     def __init__(__self__, *,
-                 availability_status: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deploy_plugins_ids: Sequence[str],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 host: str,
-                 host_id: str,
-                 id: str,
-                 install_key_id: str,
-                 install_path: str,
-                 install_type: str,
-                 is_agent_auto_upgradable: bool,
-                 is_customer_deployed: bool,
-                 lifecycle_details: str,
-                 managed_agent_id: str,
-                 management_agent_properties: Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult'],
-                 platform_name: str,
-                 platform_type: str,
-                 platform_version: str,
-                 plugin_lists: Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult'],
-                 resource_artifact_version: str,
-                 state: str,
-                 time_created: str,
-                 time_last_heartbeat: str,
-                 time_updated: str,
-                 version: str):
-        """
-        :param str availability_status: Filter to return only Management Agents in the particular availability status.
-        :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: Filter to return only Management Agents having the particular display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str host: Management Agent host machine name
-        :param str host_id: Filter to return only Management Agents having the particular agent host id.
-        :param str id: agent identifier
-        :param str install_key_id: agent install key identifier
-        :param str install_path: Path where Management Agent is installed
-        :param str install_type: A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-        :param bool is_agent_auto_upgradable: true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-        :param bool is_customer_deployed: true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence['GetManagementAgentsManagementAgentManagementAgentPropertyArgs'] management_agent_properties: Additional properties for this Management Agent
-        :param str platform_name: Platform Name
-        :param str platform_type: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-        :param str platform_version: Platform Version
-        :param Sequence['GetManagementAgentsManagementAgentPluginListArgs'] plugin_lists: list of managementAgentPlugins associated with the agent
-        :param str resource_artifact_version: Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-        :param str state: Filter to return only Management Agents in the particular lifecycle state.
-        :param str time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
-        :param str time_last_heartbeat: The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-        :param str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
-        :param str version: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
-        """
-        pulumi.set(__self__, "availability_status", availability_status)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deploy_plugins_ids", deploy_plugins_ids)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "host_id", host_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "install_key_id", install_key_id)
-        pulumi.set(__self__, "install_path", install_path)
-        pulumi.set(__self__, "install_type", install_type)
-        pulumi.set(__self__, "is_agent_auto_upgradable", is_agent_auto_upgradable)
-        pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_agent_id", managed_agent_id)
-        pulumi.set(__self__, "management_agent_properties", management_agent_properties)
-        pulumi.set(__self__, "platform_name", platform_name)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "platform_version", platform_version)
-        pulumi.set(__self__, "plugin_lists", plugin_lists)
-        pulumi.set(__self__, "resource_artifact_version", resource_artifact_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_heartbeat", time_last_heartbeat)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+                 availability_status: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deploy_plugins_ids: Optional[Sequence[str]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 host: Optional[str] = None,
+                 host_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 install_key_id: Optional[str] = None,
+                 install_path: Optional[str] = None,
+                 install_type: Optional[str] = None,
+                 is_agent_auto_upgradable: Optional[bool] = None,
+                 is_customer_deployed: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 managed_agent_id: Optional[str] = None,
+                 management_agent_properties: Optional[Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult']] = None,
+                 platform_name: Optional[str] = None,
+                 platform_type: Optional[str] = None,
+                 platform_version: Optional[str] = None,
+                 plugin_lists: Optional[Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult']] = None,
+                 resource_artifact_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_last_heartbeat: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 version: Optional[str] = None):
+        if availability_status is not None:
+            pulumi.set(__self__, "availability_status", availability_status)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deploy_plugins_ids is not None:
+            pulumi.set(__self__, "deploy_plugins_ids", deploy_plugins_ids)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if install_key_id is not None:
+            pulumi.set(__self__, "install_key_id", install_key_id)
+        if install_path is not None:
+            pulumi.set(__self__, "install_path", install_path)
+        if install_type is not None:
+            pulumi.set(__self__, "install_type", install_type)
+        if is_agent_auto_upgradable is not None:
+            pulumi.set(__self__, "is_agent_auto_upgradable", is_agent_auto_upgradable)
+        if is_customer_deployed is not None:
+            pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if managed_agent_id is not None:
+            pulumi.set(__self__, "managed_agent_id", managed_agent_id)
+        if management_agent_properties is not None:
+            pulumi.set(__self__, "management_agent_properties", management_agent_properties)
+        if platform_name is not None:
+            pulumi.set(__self__, "platform_name", platform_name)
+        if platform_type is not None:
+            pulumi.set(__self__, "platform_type", platform_type)
+        if platform_version is not None:
+            pulumi.set(__self__, "platform_version", platform_version)
+        if plugin_lists is not None:
+            pulumi.set(__self__, "plugin_lists", plugin_lists)
+        if resource_artifact_version is not None:
+            pulumi.set(__self__, "resource_artifact_version", resource_artifact_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_last_heartbeat is not None:
+            pulumi.set(__self__, "time_last_heartbeat", time_last_heartbeat)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="availabilityStatus")
-    def availability_status(self) -> str:
-        """
-        Filter to return only Management Agents in the particular availability status.
-        """
+    def availability_status(self) -> Optional[str]:
         return pulumi.get(self, "availability_status")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to which a request will be scoped.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployPluginsIds")
-    def deploy_plugins_ids(self) -> Sequence[str]:
+    def deploy_plugins_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "deploy_plugins_ids")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Filter to return only Management Agents having the particular display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        Management Agent host machine name
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter(name="hostId")
-    def host_id(self) -> str:
-        """
-        Filter to return only Management Agents having the particular agent host id.
-        """
+    def host_id(self) -> Optional[str]:
         return pulumi.get(self, "host_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        agent identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="installKeyId")
-    def install_key_id(self) -> str:
-        """
-        agent install key identifier
-        """
+    def install_key_id(self) -> Optional[str]:
         return pulumi.get(self, "install_key_id")
 
     @property
     @pulumi.getter(name="installPath")
-    def install_path(self) -> str:
-        """
-        Path where Management Agent is installed
-        """
+    def install_path(self) -> Optional[str]:
         return pulumi.get(self, "install_path")
 
     @property
     @pulumi.getter(name="installType")
-    def install_type(self) -> str:
-        """
-        A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-        """
+    def install_type(self) -> Optional[str]:
         return pulumi.get(self, "install_type")
 
     @property
     @pulumi.getter(name="isAgentAutoUpgradable")
-    def is_agent_auto_upgradable(self) -> bool:
-        """
-        true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-        """
+    def is_agent_auto_upgradable(self) -> Optional[bool]:
         return pulumi.get(self, "is_agent_auto_upgradable")
 
     @property
     @pulumi.getter(name="isCustomerDeployed")
-    def is_customer_deployed(self) -> bool:
-        """
-        true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-        """
+    def is_customer_deployed(self) -> Optional[bool]:
         return pulumi.get(self, "is_customer_deployed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managedAgentId")
-    def managed_agent_id(self) -> str:
+    def managed_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_agent_id")
 
     @property
     @pulumi.getter(name="managementAgentProperties")
-    def management_agent_properties(self) -> Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult']:
-        """
-        Additional properties for this Management Agent
-        """
+    def management_agent_properties(self) -> Optional[Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult']]:
         return pulumi.get(self, "management_agent_properties")
 
     @property
     @pulumi.getter(name="platformName")
-    def platform_name(self) -> str:
-        """
-        Platform Name
-        """
+    def platform_name(self) -> Optional[str]:
         return pulumi.get(self, "platform_name")
 
     @property
     @pulumi.getter(name="platformType")
-    def platform_type(self) -> str:
-        """
-        Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-        """
+    def platform_type(self) -> Optional[str]:
         return pulumi.get(self, "platform_type")
 
     @property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> str:
-        """
-        Platform Version
-        """
+    def platform_version(self) -> Optional[str]:
         return pulumi.get(self, "platform_version")
 
     @property
     @pulumi.getter(name="pluginLists")
-    def plugin_lists(self) -> Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult']:
-        """
-        list of managementAgentPlugins associated with the agent
-        """
+    def plugin_lists(self) -> Optional[Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult']]:
         return pulumi.get(self, "plugin_lists")
 
     @property
     @pulumi.getter(name="resourceArtifactVersion")
-    def resource_artifact_version(self) -> str:
-        """
-        Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-        """
+    def resource_artifact_version(self) -> Optional[str]:
         return pulumi.get(self, "resource_artifact_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Filter to return only Management Agents in the particular lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Management Agent was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastHeartbeat")
-    def time_last_heartbeat(self) -> str:
-        """
-        The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-        """
+    def time_last_heartbeat(self) -> Optional[str]:
         return pulumi.get(self, "time_last_heartbeat")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Management Agent was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetManagementAgentsManagementAgentManagementAgentPropertyResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 units: str,
-                 values: Sequence[str]):
-        """
-        :param str name: Name of the property
-        :param str units: Unit for the property
-        :param Sequence[str] values: Values of the property
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "units", units)
-        pulumi.set(__self__, "values", values)
+                 name: Optional[str] = None,
+                 units: Optional[str] = None,
+                 values: Optional[Sequence[str]] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if units is not None:
+            pulumi.set(__self__, "units", units)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the property
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def units(self) -> str:
-        """
-        Unit for the property
-        """
+    def units(self) -> Optional[str]:
         return pulumi.get(self, "units")
 
     @property
     @pulumi.getter
-    def values(self) -> Sequence[str]:
-        """
-        Values of the property
-        """
+    def values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "values")
 
 
 @pulumi.output_type
 class GetManagementAgentsManagementAgentPluginListResult(dict):
     def __init__(__self__, *,
-                 is_enabled: bool,
-                 plugin_display_name: str,
-                 plugin_id: str,
-                 plugin_name: str,
-                 plugin_status: str,
-                 plugin_status_message: str,
-                 plugin_version: str):
-        """
-        :param bool is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
-        :param str plugin_display_name: Management Agent Plugin Identifier, can be renamed
-        :param str plugin_id: Plugin Id
-        :param str plugin_name: Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
-        :param str plugin_status: Plugin Status
-        :param str plugin_status_message: Status message of the Plugin
-        :param str plugin_version: Plugin Version
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "plugin_display_name", plugin_display_name)
-        pulumi.set(__self__, "plugin_id", plugin_id)
-        pulumi.set(__self__, "plugin_name", plugin_name)
-        pulumi.set(__self__, "plugin_status", plugin_status)
-        pulumi.set(__self__, "plugin_status_message", plugin_status_message)
-        pulumi.set(__self__, "plugin_version", plugin_version)
+                 is_enabled: Optional[bool] = None,
+                 plugin_display_name: Optional[str] = None,
+                 plugin_id: Optional[str] = None,
+                 plugin_name: Optional[str] = None,
+                 plugin_status: Optional[str] = None,
+                 plugin_status_message: Optional[str] = None,
+                 plugin_version: Optional[str] = None):
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if plugin_display_name is not None:
+            pulumi.set(__self__, "plugin_display_name", plugin_display_name)
+        if plugin_id is not None:
+            pulumi.set(__self__, "plugin_id", plugin_id)
+        if plugin_name is not None:
+            pulumi.set(__self__, "plugin_name", plugin_name)
+        if plugin_status is not None:
+            pulumi.set(__self__, "plugin_status", plugin_status)
+        if plugin_status_message is not None:
+            pulumi.set(__self__, "plugin_status_message", plugin_status_message)
+        if plugin_version is not None:
+            pulumi.set(__self__, "plugin_version", plugin_version)
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        flag indicating whether the plugin is in enabled mode or disabled mode.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="pluginDisplayName")
-    def plugin_display_name(self) -> str:
-        """
-        Management Agent Plugin Identifier, can be renamed
-        """
+    def plugin_display_name(self) -> Optional[str]:
         return pulumi.get(self, "plugin_display_name")
 
     @property
     @pulumi.getter(name="pluginId")
-    def plugin_id(self) -> str:
-        """
-        Plugin Id
-        """
+    def plugin_id(self) -> Optional[str]:
         return pulumi.get(self, "plugin_id")
 
     @property
     @pulumi.getter(name="pluginName")
-    def plugin_name(self) -> str:
-        """
-        Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
-        """
+    def plugin_name(self) -> Optional[str]:
         return pulumi.get(self, "plugin_name")
 
     @property
     @pulumi.getter(name="pluginStatus")
-    def plugin_status(self) -> str:
-        """
-        Plugin Status
-        """
+    def plugin_status(self) -> Optional[str]:
         return pulumi.get(self, "plugin_status")
 
     @property
     @pulumi.getter(name="pluginStatusMessage")
-    def plugin_status_message(self) -> str:
-        """
-        Status message of the Plugin
-        """
+    def plugin_status_message(self) -> Optional[str]:
         return pulumi.get(self, "plugin_status_message")
 
     @property
     @pulumi.getter(name="pluginVersion")
-    def plugin_version(self) -> str:
-        """
-        Plugin Version
-        """
+    def plugin_version(self) -> Optional[str]:
         return pulumi.get(self, "plugin_version")
 
 

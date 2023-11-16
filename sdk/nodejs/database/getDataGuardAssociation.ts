@@ -53,95 +53,95 @@ export interface GetDataGuardAssociationResult {
     /**
      * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      */
-    readonly applyLag: string;
+    readonly applyLag?: string;
     /**
      * The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      */
-    readonly applyRate: string;
-    readonly availabilityDomain: string;
-    readonly backupNetworkNsgIds: string[];
-    readonly cpuCoreCount: number;
-    readonly createAsync: boolean;
-    readonly creationType: string;
-    readonly dataCollectionOptions: outputs.Database.GetDataGuardAssociationDataCollectionOption[];
+    readonly applyRate?: string;
+    readonly availabilityDomain?: string;
+    readonly backupNetworkNsgIds?: string[];
+    readonly cpuCoreCount?: number;
+    readonly createAsync?: boolean;
+    readonly creationType?: string;
+    readonly dataCollectionOptions?: outputs.Database.GetDataGuardAssociationDataCollectionOption[];
     readonly dataGuardAssociationId: string;
-    readonly databaseAdminPassword: string;
-    readonly databaseDefinedTags: {[key: string]: any};
-    readonly databaseFreeformTags: {[key: string]: any};
+    readonly databaseAdminPassword?: string;
+    readonly databaseDefinedTags?: {[key: string]: any};
+    readonly databaseFreeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      */
     readonly databaseId: string;
-    readonly databaseSoftwareImageId: string;
-    readonly dbSystemDefinedTags: {[key: string]: any};
-    readonly dbSystemFreeformTags: {[key: string]: any};
-    readonly deleteStandbyDbHomeOnDelete: string;
-    readonly displayName: string;
-    readonly faultDomains: string[];
-    readonly hostname: string;
+    readonly databaseSoftwareImageId?: string;
+    readonly dbSystemDefinedTags?: {[key: string]: any};
+    readonly dbSystemFreeformTags?: {[key: string]: any};
+    readonly deleteStandbyDbHomeOnDelete?: string;
+    readonly displayName?: string;
+    readonly faultDomains?: string[];
+    readonly hostname?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * True if active Data Guard is enabled.
      */
-    readonly isActiveDataGuardEnabled: boolean;
-    readonly licenseModel: string;
+    readonly isActiveDataGuardEnabled?: boolean;
+    readonly licenseModel?: string;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    readonly lifecycleDetails: string;
-    readonly nodeCount: number;
-    readonly nsgIds: string[];
+    readonly lifecycleDetails?: string;
+    readonly nodeCount?: number;
+    readonly nsgIds?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
      */
-    readonly peerDataGuardAssociationId: string;
+    readonly peerDataGuardAssociationId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
      */
-    readonly peerDatabaseId: string;
+    readonly peerDatabaseId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
      */
-    readonly peerDbHomeId: string;
+    readonly peerDbHomeId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
      */
-    readonly peerDbSystemId: string;
-    readonly peerDbUniqueName: string;
+    readonly peerDbSystemId?: string;
+    readonly peerDbUniqueName?: string;
     /**
      * The role of the peer database in this Data Guard association.
      */
-    readonly peerRole: string;
-    readonly peerSidPrefix: string;
-    readonly peerVmClusterId: string;
-    readonly privateIp: string;
+    readonly peerRole?: string;
+    readonly peerSidPrefix?: string;
+    readonly peerVmClusterId?: string;
+    readonly privateIp?: string;
     /**
      * The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    readonly protectionMode: string;
+    readonly protectionMode?: string;
     /**
      * The role of the reporting database in this Data Guard association.
      */
-    readonly role: string;
-    readonly shape: string;
+    readonly role?: string;
+    readonly shape?: string;
     /**
      * The current state of the Data Guard association.
      */
-    readonly state: string;
-    readonly storageVolumePerformanceMode: string;
-    readonly subnetId: string;
+    readonly state?: string;
+    readonly storageVolumePerformanceMode?: string;
+    readonly subnetId?: string;
     /**
      * The date and time the Data Guard association was created.
      */
-    readonly timeCreated: string;
-    readonly timeZone: string;
+    readonly timeCreated?: string;
+    readonly timeZone?: string;
     /**
      * The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
      */
-    readonly transportType: string;
+    readonly transportType?: string;
 }
 /**
  * This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.

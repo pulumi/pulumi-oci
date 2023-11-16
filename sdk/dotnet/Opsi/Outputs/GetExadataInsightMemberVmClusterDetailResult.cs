@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Compartment identifier of the Exadata insight resource
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string DbmPrivateEndpointId;
+        public readonly string? CompartmentId;
+        public readonly string? DbmPrivateEndpointId;
         public readonly ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult> MemberDatabaseDetails;
-        public readonly string OpsiPrivateEndpointId;
-        public readonly string VmclusterId;
+        public readonly string? OpsiPrivateEndpointId;
+        public readonly string? VmclusterId;
 
         [OutputConstructor]
         private GetExadataInsightMemberVmClusterDetailResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string dbmPrivateEndpointId,
+            string? dbmPrivateEndpointId,
 
             ImmutableArray<Outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult> memberDatabaseDetails,
 
-            string opsiPrivateEndpointId,
+            string? opsiPrivateEndpointId,
 
-            string vmclusterId)
+            string? vmclusterId)
         {
             CompartmentId = compartmentId;
             DbmPrivateEndpointId = dbmPrivateEndpointId;

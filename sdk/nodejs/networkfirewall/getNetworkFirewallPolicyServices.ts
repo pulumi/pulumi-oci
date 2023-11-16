@@ -57,12 +57,12 @@ export interface GetNetworkFirewallPolicyServicesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkFirewallPolicyId: string;
     /**
      * The list of service_summary_collection.
      */
-    readonly serviceSummaryCollections: outputs.NetworkFirewall.GetNetworkFirewallPolicyServicesServiceSummaryCollection[];
+    readonly serviceSummaryCollections?: outputs.NetworkFirewall.GetNetworkFirewallPolicyServicesServiceSummaryCollection[];
 }
 /**
  * This data source provides the list of Network Firewall Policy Services in Oracle Cloud Infrastructure Network Firewall service.

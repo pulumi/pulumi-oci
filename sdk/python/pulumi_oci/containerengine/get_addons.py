@@ -39,10 +39,7 @@ class GetAddonsResult:
 
     @property
     @pulumi.getter
-    def addons(self) -> Sequence['outputs.GetAddonsAddonResult']:
-        """
-        The list of addons.
-        """
+    def addons(self) -> Optional[Sequence['outputs.GetAddonsAddonResult']]:
         return pulumi.get(self, "addons")
 
     @property
@@ -57,7 +54,7 @@ class GetAddonsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_addons(cluster_id: Optional[str] = None,
                filters: Optional[Sequence[pulumi.InputType['GetAddonsFilterArgs']]] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddonsResult:
     """
-    This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
-
-    List addon for a provisioned cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_addons = oci.ContainerEngine.get_addons(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -114,20 +97,6 @@ def get_addons_output(cluster_id: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAddonsFilterArgs']]]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddonsResult]:
     """
-    This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
-
-    List addon for a provisioned cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_addons = oci.ContainerEngine.get_addons(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

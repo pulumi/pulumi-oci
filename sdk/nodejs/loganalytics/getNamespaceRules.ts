@@ -82,7 +82,7 @@ export interface GetNamespaceRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The kind of rule - either an ingest time rule or a scheduled task.
      */
@@ -91,7 +91,7 @@ export interface GetNamespaceRulesResult {
     /**
      * The list of rule_summary_collection.
      */
-    readonly ruleSummaryCollections: outputs.LogAnalytics.GetNamespaceRulesRuleSummaryCollection[];
+    readonly ruleSummaryCollections?: outputs.LogAnalytics.GetNamespaceRulesRuleSummaryCollection[];
     /**
      * The current state of the logging analytics rule.
      */

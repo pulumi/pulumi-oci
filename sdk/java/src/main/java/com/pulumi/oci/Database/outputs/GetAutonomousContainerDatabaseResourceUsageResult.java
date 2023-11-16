@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseResourceUsageResult {
@@ -19,62 +21,62 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      * @return List of autonomous container database resource usage per autonomous virtual machine.
      * 
      */
-    private List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages;
+    private @Nullable List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages;
     /**
      * @return CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
      * 
      */
-    private Double availableCpus;
+    private @Nullable Double availableCpus;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Largest provisionable ADB in the Autonomous Container Database.
      * 
      */
-    private Double largestProvisionableAutonomousDatabaseInCpus;
+    private @Nullable Double largestProvisionableAutonomousDatabaseInCpus;
     /**
      * @return Valid list of provisionable CPUs / cores for ADB creation.
      * 
      */
-    private List<Double> provisionableCpuses;
+    private @Nullable List<Double> provisionableCpuses;
     /**
      * @return CPUs / cores assigned to ADBs in the Autonomous Container Database.
      * 
      */
-    private Double provisionedCpus;
+    private @Nullable Double provisionedCpus;
     /**
      * @return CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
      * 
      */
-    private Double reclaimableCpus;
+    private @Nullable Double reclaimableCpus;
     /**
      * @return CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
      * 
      */
-    private Double reservedCpus;
+    private @Nullable Double reservedCpus;
     /**
      * @return CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
      * 
      */
-    private Double usedCpus;
+    private @Nullable Double usedCpus;
 
     private GetAutonomousContainerDatabaseResourceUsageResult() {}
     public String autonomousContainerDatabaseId() {
@@ -85,84 +87,84 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      * 
      */
     public List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages() {
-        return this.autonomousContainerDatabaseVmUsages;
+        return this.autonomousContainerDatabaseVmUsages == null ? List.of() : this.autonomousContainerDatabaseVmUsages;
     }
     /**
      * @return CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
      * 
      */
-    public Double availableCpus() {
-        return this.availableCpus;
+    public Optional<Double> availableCpus() {
+        return Optional.ofNullable(this.availableCpus);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Largest provisionable ADB in the Autonomous Container Database.
      * 
      */
-    public Double largestProvisionableAutonomousDatabaseInCpus() {
-        return this.largestProvisionableAutonomousDatabaseInCpus;
+    public Optional<Double> largestProvisionableAutonomousDatabaseInCpus() {
+        return Optional.ofNullable(this.largestProvisionableAutonomousDatabaseInCpus);
     }
     /**
      * @return Valid list of provisionable CPUs / cores for ADB creation.
      * 
      */
     public List<Double> provisionableCpuses() {
-        return this.provisionableCpuses;
+        return this.provisionableCpuses == null ? List.of() : this.provisionableCpuses;
     }
     /**
      * @return CPUs / cores assigned to ADBs in the Autonomous Container Database.
      * 
      */
-    public Double provisionedCpus() {
-        return this.provisionedCpus;
+    public Optional<Double> provisionedCpus() {
+        return Optional.ofNullable(this.provisionedCpus);
     }
     /**
      * @return CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
      * 
      */
-    public Double reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Optional<Double> reclaimableCpus() {
+        return Optional.ofNullable(this.reclaimableCpus);
     }
     /**
      * @return CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
      * 
      */
-    public Double reservedCpus() {
-        return this.reservedCpus;
+    public Optional<Double> reservedCpus() {
+        return Optional.ofNullable(this.reservedCpus);
     }
     /**
      * @return CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
      * 
      */
-    public Double usedCpus() {
-        return this.usedCpus;
+    public Optional<Double> usedCpus() {
+        return Optional.ofNullable(this.usedCpus);
     }
 
     public static Builder builder() {
@@ -175,18 +177,18 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousContainerDatabaseId;
-        private List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages;
-        private Double availableCpus;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Double largestProvisionableAutonomousDatabaseInCpus;
-        private List<Double> provisionableCpuses;
-        private Double provisionedCpus;
-        private Double reclaimableCpus;
-        private Double reservedCpus;
-        private Double usedCpus;
+        private @Nullable List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages;
+        private @Nullable Double availableCpus;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Double largestProvisionableAutonomousDatabaseInCpus;
+        private @Nullable List<Double> provisionableCpuses;
+        private @Nullable Double provisionedCpus;
+        private @Nullable Double reclaimableCpus;
+        private @Nullable Double reservedCpus;
+        private @Nullable Double usedCpus;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseResourceUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -211,69 +213,69 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseVmUsages(List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages) {
-            this.autonomousContainerDatabaseVmUsages = Objects.requireNonNull(autonomousContainerDatabaseVmUsages);
+        public Builder autonomousContainerDatabaseVmUsages(@Nullable List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages) {
+            this.autonomousContainerDatabaseVmUsages = autonomousContainerDatabaseVmUsages;
             return this;
         }
         public Builder autonomousContainerDatabaseVmUsages(GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage... autonomousContainerDatabaseVmUsages) {
             return autonomousContainerDatabaseVmUsages(List.of(autonomousContainerDatabaseVmUsages));
         }
         @CustomType.Setter
-        public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+        public Builder availableCpus(@Nullable Double availableCpus) {
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder largestProvisionableAutonomousDatabaseInCpus(Double largestProvisionableAutonomousDatabaseInCpus) {
-            this.largestProvisionableAutonomousDatabaseInCpus = Objects.requireNonNull(largestProvisionableAutonomousDatabaseInCpus);
+        public Builder largestProvisionableAutonomousDatabaseInCpus(@Nullable Double largestProvisionableAutonomousDatabaseInCpus) {
+            this.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionableCpuses(List<Double> provisionableCpuses) {
-            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+        public Builder provisionableCpuses(@Nullable List<Double> provisionableCpuses) {
+            this.provisionableCpuses = provisionableCpuses;
             return this;
         }
         public Builder provisionableCpuses(Double... provisionableCpuses) {
             return provisionableCpuses(List.of(provisionableCpuses));
         }
         @CustomType.Setter
-        public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+        public Builder provisionedCpus(@Nullable Double provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+        public Builder reclaimableCpus(@Nullable Double reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+        public Builder reservedCpus(@Nullable Double reservedCpus) {
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder usedCpus(Double usedCpus) {
-            this.usedCpus = Objects.requireNonNull(usedCpus);
+        public Builder usedCpus(@Nullable Double usedCpus) {
+            this.usedCpus = usedCpus;
             return this;
         }
         public GetAutonomousContainerDatabaseResourceUsageResult build() {

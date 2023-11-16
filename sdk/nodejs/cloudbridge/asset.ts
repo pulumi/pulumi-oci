@@ -162,7 +162,7 @@ export class Asset extends pulumi.CustomResource {
     /**
      * (Updatable) List of asset source OCID.
      */
-    public readonly assetSourceIds!: pulumi.Output<string[]>;
+    public readonly assetSourceIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The type of asset.
      */
@@ -174,15 +174,15 @@ export class Asset extends pulumi.CustomResource {
     /**
      * (Updatable) Compute related properties.
      */
-    public readonly compute!: pulumi.Output<outputs.CloudBridge.AssetCompute>;
+    public readonly compute!: pulumi.Output<outputs.CloudBridge.AssetCompute | undefined>;
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Asset display name.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The key of the asset from the external environment.
      */
@@ -190,7 +190,7 @@ export class Asset extends pulumi.CustomResource {
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Inventory ID to which an asset belongs.
      */
@@ -202,31 +202,31 @@ export class Asset extends pulumi.CustomResource {
     /**
      * The current state of the asset.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time when the asset was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the asset was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Virtual machine related properties.
      */
-    public readonly vm!: pulumi.Output<outputs.CloudBridge.AssetVm>;
+    public readonly vm!: pulumi.Output<outputs.CloudBridge.AssetVm | undefined>;
     /**
      * (Updatable) VMware vCenter related properties.
      */
-    public readonly vmwareVcenter!: pulumi.Output<outputs.CloudBridge.AssetVmwareVcenter>;
+    public readonly vmwareVcenter!: pulumi.Output<outputs.CloudBridge.AssetVmwareVcenter | undefined>;
     /**
      * (Updatable) VMware virtual machine related properties.
      */
-    public readonly vmwareVm!: pulumi.Output<outputs.CloudBridge.AssetVmwareVm>;
+    public readonly vmwareVm!: pulumi.Output<outputs.CloudBridge.AssetVmwareVm | undefined>;
 
     /**
      * Create a Asset resource with the given unique name, arguments, and options.

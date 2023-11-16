@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerIormPlanDbPlanItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerIormPlanDbPlan {
@@ -14,7 +15,7 @@ public final class GetExternalExadataStorageServerIormPlanDbPlan {
      * @return A list of DatabasePlanDirectives.
      * 
      */
-    private List<GetExternalExadataStorageServerIormPlanDbPlanItem> items;
+    private @Nullable List<GetExternalExadataStorageServerIormPlanDbPlanItem> items;
 
     private GetExternalExadataStorageServerIormPlanDbPlan() {}
     /**
@@ -22,7 +23,7 @@ public final class GetExternalExadataStorageServerIormPlanDbPlan {
      * 
      */
     public List<GetExternalExadataStorageServerIormPlanDbPlanItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetExternalExadataStorageServerIormPlanDbPlan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalExadataStorageServerIormPlanDbPlanItem> items;
+        private @Nullable List<GetExternalExadataStorageServerIormPlanDbPlanItem> items;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerIormPlanDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetExternalExadataStorageServerIormPlanDbPlan {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetExternalExadataStorageServerIormPlanDbPlanItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetExternalExadataStorageServerIormPlanDbPlanItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetExternalExadataStorageServerIormPlanDbPlanItem... items) {

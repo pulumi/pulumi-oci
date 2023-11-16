@@ -26,18 +26,6 @@ class DeployArtifactArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DeployArtifact resource.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        :param pulumi.Input['DeployArtifactDeployArtifactSourceArgs'] deploy_artifact_source: (Updatable) Specifies source of an artifact.
-        :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "argument_substitution_mode", argument_substitution_mode)
         pulumi.set(__self__, "deploy_artifact_source", deploy_artifact_source)
@@ -55,9 +43,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        """
         return pulumi.get(self, "argument_substitution_mode")
 
     @argument_substitution_mode.setter
@@ -67,9 +52,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="deployArtifactSource")
     def deploy_artifact_source(self) -> pulumi.Input['DeployArtifactDeployArtifactSourceArgs']:
-        """
-        (Updatable) Specifies source of an artifact.
-        """
         return pulumi.get(self, "deploy_artifact_source")
 
     @deploy_artifact_source.setter
@@ -79,9 +61,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="deployArtifactType")
     def deploy_artifact_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the deployment artifact.
-        """
         return pulumi.get(self, "deploy_artifact_type")
 
     @deploy_artifact_type.setter
@@ -91,13 +70,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -107,9 +79,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -119,9 +88,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional description about the deployment artifact.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -131,9 +97,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -143,9 +106,6 @@ class DeployArtifactArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -172,24 +132,6 @@ class _DeployArtifactState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DeployArtifact resources.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input['DeployArtifactDeployArtifactSourceArgs'] deploy_artifact_source: (Updatable) Specifies source of an artifact.
-        :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Current state of the deployment artifact.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         if argument_substitution_mode is not None:
             pulumi.set(__self__, "argument_substitution_mode", argument_substitution_mode)
@@ -223,9 +165,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        """
         return pulumi.get(self, "argument_substitution_mode")
 
     @argument_substitution_mode.setter
@@ -235,9 +174,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -247,9 +183,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -259,9 +192,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="deployArtifactSource")
     def deploy_artifact_source(self) -> Optional[pulumi.Input['DeployArtifactDeployArtifactSourceArgs']]:
-        """
-        (Updatable) Specifies source of an artifact.
-        """
         return pulumi.get(self, "deploy_artifact_source")
 
     @deploy_artifact_source.setter
@@ -271,9 +201,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="deployArtifactType")
     def deploy_artifact_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of the deployment artifact.
-        """
         return pulumi.get(self, "deploy_artifact_type")
 
     @deploy_artifact_type.setter
@@ -283,9 +210,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional description about the deployment artifact.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -295,9 +219,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -307,9 +228,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -319,9 +237,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -331,13 +246,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -347,9 +255,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Current state of the deployment artifact.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -359,9 +264,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -371,9 +273,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -383,9 +282,6 @@ class _DeployArtifactState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -408,68 +304,9 @@ class DeployArtifact(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment artifact.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_deploy_artifact = oci.dev_ops.DeployArtifact("testDeployArtifact",
-            argument_substitution_mode=var["deploy_artifact_argument_substitution_mode"],
-            deploy_artifact_source=oci.dev_ops.DeployArtifactDeployArtifactSourceArgs(
-                deploy_artifact_source_type=var["deploy_artifact_deploy_artifact_source_deploy_artifact_source_type"],
-                base64encoded_content=var["deploy_artifact_deploy_artifact_source_base64encoded_content"],
-                chart_url=var["deploy_artifact_deploy_artifact_source_chart_url"],
-                deploy_artifact_path=var["deploy_artifact_deploy_artifact_source_deploy_artifact_path"],
-                deploy_artifact_version=var["deploy_artifact_deploy_artifact_source_deploy_artifact_version"],
-                helm_verification_key_source=oci.dev_ops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs(
-                    verification_key_source_type=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type"],
-                    current_public_key=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key"],
-                    previous_public_key=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key"],
-                    vault_secret_id=oci_vault_secret["test_secret"]["id"],
-                ),
-                image_digest=var["deploy_artifact_deploy_artifact_source_image_digest"],
-                image_uri=var["deploy_artifact_deploy_artifact_source_image_uri"],
-                repository_id=oci_devops_repository["test_repository"]["id"],
-            ),
-            deploy_artifact_type=var["deploy_artifact_deploy_artifact_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["deploy_artifact_description"],
-            display_name=var["deploy_artifact_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        DeployArtifacts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
-        ```
-
+        Create a DeployArtifact resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
-        :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -478,54 +315,7 @@ class DeployArtifact(pulumi.CustomResource):
                  args: DeployArtifactArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment artifact.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_deploy_artifact = oci.dev_ops.DeployArtifact("testDeployArtifact",
-            argument_substitution_mode=var["deploy_artifact_argument_substitution_mode"],
-            deploy_artifact_source=oci.dev_ops.DeployArtifactDeployArtifactSourceArgs(
-                deploy_artifact_source_type=var["deploy_artifact_deploy_artifact_source_deploy_artifact_source_type"],
-                base64encoded_content=var["deploy_artifact_deploy_artifact_source_base64encoded_content"],
-                chart_url=var["deploy_artifact_deploy_artifact_source_chart_url"],
-                deploy_artifact_path=var["deploy_artifact_deploy_artifact_source_deploy_artifact_path"],
-                deploy_artifact_version=var["deploy_artifact_deploy_artifact_source_deploy_artifact_version"],
-                helm_verification_key_source=oci.dev_ops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs(
-                    verification_key_source_type=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type"],
-                    current_public_key=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key"],
-                    previous_public_key=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key"],
-                    vault_secret_id=oci_vault_secret["test_secret"]["id"],
-                ),
-                image_digest=var["deploy_artifact_deploy_artifact_source_image_digest"],
-                image_uri=var["deploy_artifact_deploy_artifact_source_image_uri"],
-                repository_id=oci_devops_repository["test_repository"]["id"],
-            ),
-            deploy_artifact_type=var["deploy_artifact_deploy_artifact_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["deploy_artifact_description"],
-            display_name=var["deploy_artifact_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        DeployArtifacts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/deployArtifact:DeployArtifact test_deploy_artifact "id"
-        ```
-
+        Create a DeployArtifact resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DeployArtifactArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -611,24 +401,6 @@ class DeployArtifact(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] argument_substitution_mode: (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[pulumi.InputType['DeployArtifactDeployArtifactSourceArgs']] deploy_artifact_source: (Updatable) Specifies source of an artifact.
-        :param pulumi.Input[str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment artifact.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Current state of the deployment artifact.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -653,116 +425,70 @@ class DeployArtifact(pulumi.CustomResource):
     @property
     @pulumi.getter(name="argumentSubstitutionMode")
     def argument_substitution_mode(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
-        """
         return pulumi.get(self, "argument_substitution_mode")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployArtifactSource")
     def deploy_artifact_source(self) -> pulumi.Output['outputs.DeployArtifactDeployArtifactSource']:
-        """
-        (Updatable) Specifies source of an artifact.
-        """
         return pulumi.get(self, "deploy_artifact_source")
 
     @property
     @pulumi.getter(name="deployArtifactType")
     def deploy_artifact_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Type of the deployment artifact.
-        """
         return pulumi.get(self, "deploy_artifact_type")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Optional description about the deployment artifact.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Deployment artifact display name. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Current state of the deployment artifact.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

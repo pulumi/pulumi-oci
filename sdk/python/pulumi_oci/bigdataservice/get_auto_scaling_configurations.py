@@ -48,7 +48,7 @@ class GetAutoScalingConfigurationsResult:
 
     @property
     @pulumi.getter(name="autoScalingConfigurations")
-    def auto_scaling_configurations(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationResult']:
+    def auto_scaling_configurations(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationResult']]:
         return pulumi.get(self, "auto_scaling_configurations")
 
     @property
@@ -73,7 +73,7 @@ class GetAutoScalingConfigurationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """

@@ -43,41 +43,32 @@ class GetUiPasswordResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inactiveStatus")
-    def inactive_status(self) -> str:
+    def inactive_status(self) -> Optional[str]:
         return pulumi.get(self, "inactive_status")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The password's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        The OCID of the user.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -98,22 +89,7 @@ class AwaitableGetUiPasswordResult(GetUiPasswordResult):
 def get_ui_password(user_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUiPasswordResult:
     """
-    This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified user's console password information. The returned object contains the user's OCID,
-    but not the password itself. The actual password is returned only when created or reset.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ui_password = oci.Identity.get_ui_password(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['userId'] = user_id
@@ -133,21 +109,6 @@ def get_ui_password(user_id: Optional[str] = None,
 def get_ui_password_output(user_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUiPasswordResult]:
     """
-    This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified user's console password information. The returned object contains the user's OCID,
-    but not the password itself. The actual password is returned only when created or reset.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ui_password = oci.Identity.get_ui_password(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

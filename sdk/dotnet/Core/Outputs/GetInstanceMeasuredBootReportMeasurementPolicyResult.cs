@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The type of algorithm used to calculate the hash.
         /// </summary>
-        public readonly string HashAlgorithm;
+        public readonly string? HashAlgorithm;
         /// <summary>
         /// The index of the policy.
         /// </summary>
-        public readonly string PcrIndex;
+        public readonly string? PcrIndex;
         /// <summary>
         /// The hashed PCR value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetInstanceMeasuredBootReportMeasurementPolicyResult(
-            string hashAlgorithm,
+            string? hashAlgorithm,
 
-            string pcrIndex,
+            string? pcrIndex,
 
-            string value)
+            string? value)
         {
             HashAlgorithm = hashAlgorithm;
             PcrIndex = pcrIndex;

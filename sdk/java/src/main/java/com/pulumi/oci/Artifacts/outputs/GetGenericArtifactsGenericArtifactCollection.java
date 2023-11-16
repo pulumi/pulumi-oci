@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Artifacts.outputs.GetGenericArtifactsGenericArtifactCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGenericArtifactsGenericArtifactCollection {
-    private List<GetGenericArtifactsGenericArtifactCollectionItem> items;
+    private @Nullable List<GetGenericArtifactsGenericArtifactCollectionItem> items;
 
     private GetGenericArtifactsGenericArtifactCollection() {}
     public List<GetGenericArtifactsGenericArtifactCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetGenericArtifactsGenericArtifactCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetGenericArtifactsGenericArtifactCollectionItem> items;
+        private @Nullable List<GetGenericArtifactsGenericArtifactCollectionItem> items;
         public Builder() {}
         public Builder(GetGenericArtifactsGenericArtifactCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetGenericArtifactsGenericArtifactCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetGenericArtifactsGenericArtifactCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetGenericArtifactsGenericArtifactCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetGenericArtifactsGenericArtifactCollectionItem... items) {

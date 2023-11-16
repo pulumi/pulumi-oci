@@ -72,7 +72,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -100,7 +100,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -113,7 +113,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    public readonly externalId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -125,7 +125,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -141,7 +141,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsKmsiSettingIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -155,7 +155,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -168,7 +168,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Identifier represents KMSI feature is enabled or not.
      *
@@ -181,7 +181,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly kmsiFeatureEnabled!: pulumi.Output<boolean>;
+    public readonly kmsiFeatureEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Identifier represents KMSI to be prompted to user or not.
      *
@@ -194,7 +194,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly kmsiPromptEnabled!: pulumi.Output<boolean>;
+    public readonly kmsiPromptEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * ID of the resource
      */
@@ -214,7 +214,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly lastEnabledOn!: pulumi.Output<string>;
+    public readonly lastEnabledOn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Identifier represents duration in days within which kmsi token must be used.
      *
@@ -229,7 +229,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: none
      */
-    public readonly lastUsedValidityInDays!: pulumi.Output<number>;
+    public readonly lastUsedValidityInDays!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
      *
@@ -244,7 +244,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: none
      */
-    public readonly maxAllowedSessions!: pulumi.Output<number>;
+    public readonly maxAllowedSessions!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -258,7 +258,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsKmsiSettingMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsKmsiSettingMeta[] | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -272,7 +272,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -304,7 +304,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsKmsiSettingTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsKmsiSettingTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -318,7 +318,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Identifier represents validity duration in days.
      *
@@ -333,7 +333,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * * idcsMinValue: 1
      * * uniqueness: none
      */
-    public readonly tokenValidityInDays!: pulumi.Output<number>;
+    public readonly tokenValidityInDays!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Identifier represents whether user is prompted for ToU or not.
      *
@@ -350,7 +350,7 @@ export class DomainsKmsiSetting extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly touPromptDisabled!: pulumi.Output<boolean>;
+    public readonly touPromptDisabled!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a DomainsKmsiSetting resource with the given unique name, arguments, and options.

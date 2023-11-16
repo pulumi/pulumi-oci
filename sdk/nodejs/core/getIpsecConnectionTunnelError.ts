@@ -51,28 +51,28 @@ export interface GetIpsecConnectionTunnelErrorResult {
     /**
      * Unique code describes the error type.
      */
-    readonly errorCode: string;
+    readonly errorCode?: string;
     /**
      * A detailed description of the error.
      */
-    readonly errorDescription: string;
+    readonly errorDescription?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ipsecId: string;
     /**
      * Link to more Oracle resources or relevant documentation.
      */
-    readonly ociResourcesLink: string;
+    readonly ociResourcesLink?: string;
     /**
      * Resolution for the error.
      */
-    readonly solution: string;
+    readonly solution?: string;
     /**
      * Timestamp when the error occurred.
      */
-    readonly timestamp: string;
+    readonly timestamp?: string;
     readonly tunnelId: string;
 }
 /**

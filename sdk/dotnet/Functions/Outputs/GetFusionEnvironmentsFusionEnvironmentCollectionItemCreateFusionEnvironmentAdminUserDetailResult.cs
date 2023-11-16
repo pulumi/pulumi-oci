@@ -13,23 +13,23 @@ namespace Pulumi.Oci.Functions.Outputs
     [OutputType]
     public sealed class GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult
     {
-        public readonly string EmailAddress;
-        public readonly string FirstName;
-        public readonly string LastName;
-        public readonly string Password;
-        public readonly string Username;
+        public readonly string? EmailAddress;
+        public readonly string? FirstName;
+        public readonly string? LastName;
+        public readonly string? Password;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult(
-            string emailAddress,
+            string? emailAddress,
 
-            string firstName,
+            string? firstName,
 
-            string lastName,
+            string? lastName,
 
-            string password,
+            string? password,
 
-            string username)
+            string? username)
         {
             EmailAddress = emailAddress;
             FirstName = firstName;

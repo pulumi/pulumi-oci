@@ -21,9 +21,9 @@ public final class GetVirtualNetworksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String state;
-    private List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
+    private @Nullable List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
 
     private GetVirtualNetworksResult() {}
     public String compartmentId() {
@@ -39,14 +39,14 @@ public final class GetVirtualNetworksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     public List<GetVirtualNetworksVirtualNetwork> virtualNetworks() {
-        return this.virtualNetworks;
+        return this.virtualNetworks == null ? List.of() : this.virtualNetworks;
     }
 
     public static Builder builder() {
@@ -61,9 +61,9 @@ public final class GetVirtualNetworksResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVirtualNetworksFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
+        private @Nullable List<GetVirtualNetworksVirtualNetwork> virtualNetworks;
         public Builder() {}
         public Builder(GetVirtualNetworksResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -94,8 +94,8 @@ public final class GetVirtualNetworksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -104,8 +104,8 @@ public final class GetVirtualNetworksResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualNetworks(List<GetVirtualNetworksVirtualNetwork> virtualNetworks) {
-            this.virtualNetworks = Objects.requireNonNull(virtualNetworks);
+        public Builder virtualNetworks(@Nullable List<GetVirtualNetworksVirtualNetwork> virtualNetworks) {
+            this.virtualNetworks = virtualNetworks;
             return this;
         }
         public Builder virtualNetworks(GetVirtualNetworksVirtualNetwork... virtualNetworks) {

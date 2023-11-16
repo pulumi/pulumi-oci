@@ -63,9 +63,6 @@ class GetMaintenanceRunsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -75,7 +72,7 @@ class GetMaintenanceRunsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,50 +80,32 @@ class GetMaintenanceRunsResult:
 
     @property
     @pulumi.getter(name="maintenanceRuns")
-    def maintenance_runs(self) -> Sequence['outputs.GetMaintenanceRunsMaintenanceRunResult']:
-        """
-        The list of maintenance_runs.
-        """
+    def maintenance_runs(self) -> Optional[Sequence['outputs.GetMaintenanceRunsMaintenanceRunResult']]:
         return pulumi.get(self, "maintenance_runs")
 
     @property
     @pulumi.getter(name="maintenanceSubtype")
     def maintenance_subtype(self) -> Optional[str]:
-        """
-        Maintenance sub-type.
-        """
         return pulumi.get(self, "maintenance_subtype")
 
     @property
     @pulumi.getter(name="maintenanceType")
     def maintenance_type(self) -> Optional[str]:
-        """
-        Maintenance type.
-        """
         return pulumi.get(self, "maintenance_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[str]:
-        """
-        The ID of the target resource on which the maintenance run occurs.
-        """
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> Optional[str]:
-        """
-        The type of the target resource on which the maintenance run occurs.
-        """
         return pulumi.get(self, "target_resource_type")
 
 
@@ -158,33 +137,7 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
                          target_resource_type: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaintenanceRunsResult:
     """
-    This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the maintenance runs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_availability_domain"],
-        maintenance_subtype=var["maintenance_run_maintenance_subtype"],
-        maintenance_type=var["maintenance_run_maintenance_type"],
-        state=var["maintenance_run_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_target_resource_type"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str maintenance_subtype: The sub-type of the maintenance run.
-    :param str maintenance_type: The maintenance type.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str target_resource_id: The target resource ID.
-    :param str target_resource_type: The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -222,32 +175,6 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
                                 target_resource_type: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaintenanceRunsResult]:
     """
-    This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the maintenance runs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_availability_domain"],
-        maintenance_subtype=var["maintenance_run_maintenance_subtype"],
-        maintenance_type=var["maintenance_run_maintenance_type"],
-        state=var["maintenance_run_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_target_resource_type"])
-    ```
-
-
-    :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str maintenance_subtype: The sub-type of the maintenance run.
-    :param str maintenance_type: The maintenance type.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str target_resource_id: The target resource ID.
-    :param str target_resource_type: The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
+    Use this data source to access information about an existing resource.
     """
     ...

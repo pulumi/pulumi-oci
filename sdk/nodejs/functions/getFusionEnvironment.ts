@@ -47,117 +47,117 @@ export interface GetFusionEnvironmentResult {
     /**
      * Language packs
      */
-    readonly additionalLanguagePacks: string[];
+    readonly additionalLanguagePacks?: string[];
     /**
      * Patch bundle names
      */
-    readonly appliedPatchBundles: string[];
+    readonly appliedPatchBundles?: string[];
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
-    readonly createFusionEnvironmentAdminUserDetails: outputs.Functions.GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail[];
+    readonly compartmentId?: string;
+    readonly createFusionEnvironmentAdminUserDetails?: outputs.Functions.GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * FusionEnvironment Identifier, can be renamed
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * DNS prefix
      */
-    readonly dnsPrefix: string;
+    readonly dnsPrefix?: string;
     /**
      * The IDCS domain created for the fusion instance
      */
-    readonly domainId: string;
+    readonly domainId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * FusionEnvironmentFamily Identifier
      */
-    readonly fusionEnvironmentFamilyId: string;
+    readonly fusionEnvironmentFamilyId?: string;
     readonly fusionEnvironmentId: string;
     /**
      * Type of the FusionEnvironment.
      */
-    readonly fusionEnvironmentType: string;
+    readonly fusionEnvironmentType?: string;
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The IDCS Domain URL
      */
-    readonly idcsDomainUrl: string;
+    readonly idcsDomainUrl?: string;
     /**
      * If it's true, then the Break Glass feature is enabled
      */
-    readonly isBreakGlassEnabled: boolean;
+    readonly isBreakGlassEnabled?: boolean;
     /**
      * BYOK key id
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * BYOK key info
      */
-    readonly kmsKeyInfos: outputs.Functions.GetFusionEnvironmentKmsKeyInfo[];
+    readonly kmsKeyInfos?: outputs.Functions.GetFusionEnvironmentKmsKeyInfo[];
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
      */
-    readonly lockboxId: string;
+    readonly lockboxId?: string;
     /**
      * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    readonly maintenancePolicies: outputs.Functions.GetFusionEnvironmentMaintenancePolicy[];
+    readonly maintenancePolicies?: outputs.Functions.GetFusionEnvironmentMaintenancePolicy[];
     /**
      * Public URL
      */
-    readonly publicUrl: string;
+    readonly publicUrl?: string;
     /**
      * Describes a refresh of a fusion environment
      */
-    readonly refreshes: outputs.Functions.GetFusionEnvironmentRefresh[];
+    readonly refreshes?: outputs.Functions.GetFusionEnvironmentRefresh[];
     /**
      * Network Access Control Rules
      */
-    readonly rules: outputs.Functions.GetFusionEnvironmentRule[];
+    readonly rules?: outputs.Functions.GetFusionEnvironmentRule[];
     /**
      * The current state of the ServiceInstance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * List of subscription IDs.
      */
-    readonly subscriptionIds: string[];
+    readonly subscriptionIds?: string[];
     /**
      * Environment Specific Guid/ System Name
      */
-    readonly systemName: string;
+    readonly systemName?: string;
     /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The next maintenance for this environment
      */
-    readonly timeUpcomingMaintenance: string;
+    readonly timeUpcomingMaintenance?: string;
     /**
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Version of Fusion Apps used by this environment
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.

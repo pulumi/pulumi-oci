@@ -81,7 +81,7 @@ export interface GetProjectsResult {
     /**
      * The list of project_collection.
      */
-    readonly projectCollections: outputs.AiVision.GetProjectsProjectCollection[];
+    readonly projectCollections?: outputs.AiVision.GetProjectsProjectCollection[];
     /**
      * The current state of the Project.
      */

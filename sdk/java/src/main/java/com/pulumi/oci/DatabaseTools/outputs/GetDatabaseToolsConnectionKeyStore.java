@@ -9,6 +9,8 @@ import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionKeyStoreKe
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseToolsConnectionKeyStore {
@@ -16,17 +18,17 @@ public final class GetDatabaseToolsConnectionKeyStore {
      * @return The key store content.
      * 
      */
-    private List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
+    private @Nullable List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
     /**
      * @return The key store password.
      * 
      */
-    private List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
+    private @Nullable List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
     /**
      * @return The key store type.
      * 
      */
-    private String keyStoreType;
+    private @Nullable String keyStoreType;
 
     private GetDatabaseToolsConnectionKeyStore() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDatabaseToolsConnectionKeyStore {
      * 
      */
     public List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents() {
-        return this.keyStoreContents;
+        return this.keyStoreContents == null ? List.of() : this.keyStoreContents;
     }
     /**
      * @return The key store password.
      * 
      */
     public List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords() {
-        return this.keyStorePasswords;
+        return this.keyStorePasswords == null ? List.of() : this.keyStorePasswords;
     }
     /**
      * @return The key store type.
      * 
      */
-    public String keyStoreType() {
-        return this.keyStoreType;
+    public Optional<String> keyStoreType() {
+        return Optional.ofNullable(this.keyStoreType);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDatabaseToolsConnectionKeyStore {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
-        private List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
-        private String keyStoreType;
+        private @Nullable List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents;
+        private @Nullable List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords;
+        private @Nullable String keyStoreType;
         public Builder() {}
         public Builder(GetDatabaseToolsConnectionKeyStore defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +74,24 @@ public final class GetDatabaseToolsConnectionKeyStore {
         }
 
         @CustomType.Setter
-        public Builder keyStoreContents(List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents) {
-            this.keyStoreContents = Objects.requireNonNull(keyStoreContents);
+        public Builder keyStoreContents(@Nullable List<GetDatabaseToolsConnectionKeyStoreKeyStoreContent> keyStoreContents) {
+            this.keyStoreContents = keyStoreContents;
             return this;
         }
         public Builder keyStoreContents(GetDatabaseToolsConnectionKeyStoreKeyStoreContent... keyStoreContents) {
             return keyStoreContents(List.of(keyStoreContents));
         }
         @CustomType.Setter
-        public Builder keyStorePasswords(List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords) {
-            this.keyStorePasswords = Objects.requireNonNull(keyStorePasswords);
+        public Builder keyStorePasswords(@Nullable List<GetDatabaseToolsConnectionKeyStoreKeyStorePassword> keyStorePasswords) {
+            this.keyStorePasswords = keyStorePasswords;
             return this;
         }
         public Builder keyStorePasswords(GetDatabaseToolsConnectionKeyStoreKeyStorePassword... keyStorePasswords) {
             return keyStorePasswords(List.of(keyStorePasswords));
         }
         @CustomType.Setter
-        public Builder keyStoreType(String keyStoreType) {
-            this.keyStoreType = Objects.requireNonNull(keyStoreType);
+        public Builder keyStoreType(@Nullable String keyStoreType) {
+            this.keyStoreType = keyStoreType;
             return this;
         }
         public GetDatabaseToolsConnectionKeyStore build() {

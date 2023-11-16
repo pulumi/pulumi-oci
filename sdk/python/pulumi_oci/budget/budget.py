@@ -30,24 +30,6 @@ class BudgetArgs:
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a Budget resource.
-        :param pulumi.Input[int] amount: (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        :param pulumi.Input[int] budget_processing_period_start_offset: (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the budget.
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
-        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
-        :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "amount", amount)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -81,9 +63,6 @@ class BudgetArgs:
     @property
     @pulumi.getter
     def amount(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        """
         return pulumi.get(self, "amount")
 
     @amount.setter
@@ -93,9 +72,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -105,9 +81,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="resetPeriod")
     def reset_period(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        """
         return pulumi.get(self, "reset_period")
 
     @reset_period.setter
@@ -117,9 +90,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="budgetProcessingPeriodStartOffset")
     def budget_processing_period_start_offset(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        """
         return pulumi.get(self, "budget_processing_period_start_offset")
 
     @budget_processing_period_start_offset.setter
@@ -129,9 +99,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -141,9 +108,6 @@ class BudgetArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the budget.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -153,9 +117,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The displayName of the budget. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -165,9 +126,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
@@ -177,9 +135,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -189,9 +144,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        """
         return pulumi.get(self, "processing_period_type")
 
     @processing_period_type.setter
@@ -201,9 +153,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
@@ -213,9 +162,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        This is DEPRECATED. Set the target compartment ID in targets instead.
-        """
         warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
         pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
@@ -228,9 +174,6 @@ class BudgetArgs:
     @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of target on which the budget is applied.
-        """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
@@ -240,13 +183,6 @@ class BudgetArgs:
     @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "targets")
 
     @targets.setter
@@ -281,32 +217,6 @@ class _BudgetState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Budget resources.
-        :param pulumi.Input[float] actual_spend: The actual spend in currency for the current budget cycle.
-        :param pulumi.Input[int] alert_rule_count: The total number of alert rules in the budget.
-        :param pulumi.Input[int] amount: (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        :param pulumi.Input[int] budget_processing_period_start_offset: (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the budget.
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
-        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[float] forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[str] state: The current state of the budget.
-        :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
-        :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time that the budget was created.
-        :param pulumi.Input[str] time_spend_computed: The time that the budget spend was last computed.
-        :param pulumi.Input[str] time_updated: The time that the budget was updated.
-        :param pulumi.Input[int] version: The version of the budget. Starts from 1 and increments by 1.
         """
         if actual_spend is not None:
             pulumi.set(__self__, "actual_spend", actual_spend)
@@ -359,9 +269,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="actualSpend")
     def actual_spend(self) -> Optional[pulumi.Input[float]]:
-        """
-        The actual spend in currency for the current budget cycle.
-        """
         return pulumi.get(self, "actual_spend")
 
     @actual_spend.setter
@@ -371,9 +278,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="alertRuleCount")
     def alert_rule_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The total number of alert rules in the budget.
-        """
         return pulumi.get(self, "alert_rule_count")
 
     @alert_rule_count.setter
@@ -383,9 +287,6 @@ class _BudgetState:
     @property
     @pulumi.getter
     def amount(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        """
         return pulumi.get(self, "amount")
 
     @amount.setter
@@ -395,9 +296,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="budgetProcessingPeriodStartOffset")
     def budget_processing_period_start_offset(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        """
         return pulumi.get(self, "budget_processing_period_start_offset")
 
     @budget_processing_period_start_offset.setter
@@ -407,9 +305,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -419,9 +314,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -431,9 +323,6 @@ class _BudgetState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the budget.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -443,9 +332,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The displayName of the budget. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -455,9 +341,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="endDate")
     def end_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        """
         return pulumi.get(self, "end_date")
 
     @end_date.setter
@@ -467,9 +350,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="forecastedSpend")
     def forecasted_spend(self) -> Optional[pulumi.Input[float]]:
-        """
-        The forecasted spend in currency by the end of the current budget cycle.
-        """
         return pulumi.get(self, "forecasted_spend")
 
     @forecasted_spend.setter
@@ -479,9 +359,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -491,9 +368,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="processingPeriodType")
     def processing_period_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        """
         return pulumi.get(self, "processing_period_type")
 
     @processing_period_type.setter
@@ -503,9 +377,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="resetPeriod")
     def reset_period(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        """
         return pulumi.get(self, "reset_period")
 
     @reset_period.setter
@@ -515,9 +386,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="startDate")
     def start_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        """
         return pulumi.get(self, "start_date")
 
     @start_date.setter
@@ -527,9 +395,6 @@ class _BudgetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the budget.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -539,9 +404,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="targetCompartmentId")
     def target_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        This is DEPRECATED. Set the target compartment ID in targets instead.
-        """
         warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
         pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
@@ -554,9 +416,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of target on which the budget is applied.
-        """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
@@ -566,13 +425,6 @@ class _BudgetState:
     @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "targets")
 
     @targets.setter
@@ -582,9 +434,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time that the budget was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -594,9 +443,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="timeSpendComputed")
     def time_spend_computed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time that the budget spend was last computed.
-        """
         return pulumi.get(self, "time_spend_computed")
 
     @time_spend_computed.setter
@@ -606,9 +452,6 @@ class _BudgetState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time that the budget was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -618,9 +461,6 @@ class _BudgetState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version of the budget. Starts from 1 and increments by 1.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -649,65 +489,9 @@ class Budget(pulumi.CustomResource):
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new budget.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_budget = oci.budget.Budget("testBudget",
-            amount=var["budget_amount"],
-            compartment_id=var["tenancy_ocid"],
-            reset_period=var["budget_reset_period"],
-            budget_processing_period_start_offset=var["budget_budget_processing_period_start_offset"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["budget_description"],
-            display_name=var["budget_display_name"],
-            end_date=var["budget_end_date"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            processing_period_type=var["budget_processing_period_type"],
-            start_date=var["budget_start_date"],
-            target_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            target_type=var["budget_target_type"],
-            targets=var["budget_targets"])
-        ```
-
-        ## Import
-
-        Budgets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Budget/budget:Budget test_budget "id"
-        ```
-
+        Create a Budget resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] amount: (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        :param pulumi.Input[int] budget_processing_period_start_offset: (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the budget.
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
-        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
-        :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -716,45 +500,7 @@ class Budget(pulumi.CustomResource):
                  args: BudgetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new budget.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_budget = oci.budget.Budget("testBudget",
-            amount=var["budget_amount"],
-            compartment_id=var["tenancy_ocid"],
-            reset_period=var["budget_reset_period"],
-            budget_processing_period_start_offset=var["budget_budget_processing_period_start_offset"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["budget_description"],
-            display_name=var["budget_display_name"],
-            end_date=var["budget_end_date"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            processing_period_type=var["budget_processing_period_type"],
-            start_date=var["budget_start_date"],
-            target_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            target_type=var["budget_target_type"],
-            targets=var["budget_targets"])
-        ```
-
-        ## Import
-
-        Budgets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Budget/budget:Budget test_budget "id"
-        ```
-
+        Create a Budget resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BudgetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -860,32 +606,6 @@ class Budget(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[float] actual_spend: The actual spend in currency for the current budget cycle.
-        :param pulumi.Input[int] alert_rule_count: The total number of alert rules in the budget.
-        :param pulumi.Input[int] amount: (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        :param pulumi.Input[int] budget_processing_period_start_offset: (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the budget.
-        :param pulumi.Input[str] display_name: (Updatable) The displayName of the budget. Avoid entering confidential information.
-        :param pulumi.Input[str] end_date: (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[float] forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] processing_period_type: (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        :param pulumi.Input[str] reset_period: (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        :param pulumi.Input[str] start_date: (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        :param pulumi.Input[str] state: The current state of the budget.
-        :param pulumi.Input[str] target_compartment_id: This is DEPRECATED. Set the target compartment ID in targets instead.
-        :param pulumi.Input[str] target_type: The type of target on which the budget is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time that the budget was created.
-        :param pulumi.Input[str] time_spend_computed: The time that the budget spend was last computed.
-        :param pulumi.Input[str] time_updated: The time that the budget was updated.
-        :param pulumi.Input[int] version: The version of the budget. Starts from 1 and increments by 1.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -917,130 +637,82 @@ class Budget(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="actualSpend")
-    def actual_spend(self) -> pulumi.Output[float]:
-        """
-        The actual spend in currency for the current budget cycle.
-        """
+    def actual_spend(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "actual_spend")
 
     @property
     @pulumi.getter(name="alertRuleCount")
-    def alert_rule_count(self) -> pulumi.Output[int]:
-        """
-        The total number of alert rules in the budget.
-        """
+    def alert_rule_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "alert_rule_count")
 
     @property
     @pulumi.getter
     def amount(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
-        """
         return pulumi.get(self, "amount")
 
     @property
     @pulumi.getter(name="budgetProcessingPeriodStartOffset")
-    def budget_processing_period_start_offset(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-        """
+    def budget_processing_period_start_offset(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "budget_processing_period_start_offset")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the budget.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The displayName of the budget. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endDate")
-    def end_date(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        """
+    def end_date(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "end_date")
 
     @property
     @pulumi.getter(name="forecastedSpend")
-    def forecasted_spend(self) -> pulumi.Output[float]:
-        """
-        The forecasted spend in currency by the end of the current budget cycle.
-        """
+    def forecasted_spend(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "forecasted_spend")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="processingPeriodType")
-    def processing_period_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-        """
+    def processing_period_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "processing_period_type")
 
     @property
     @pulumi.getter(name="resetPeriod")
     def reset_period(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The reset period for the budget. Valid value is MONTHLY.
-        """
         return pulumi.get(self, "reset_period")
 
     @property
     @pulumi.getter(name="startDate")
-    def start_date(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-        """
+    def start_date(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "start_date")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the budget.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetCompartmentId")
-    def target_compartment_id(self) -> pulumi.Output[str]:
-        """
-        This is DEPRECATED. Set the target compartment ID in targets instead.
-        """
+    def target_compartment_id(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
         pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
 
@@ -1048,53 +720,31 @@ class Budget(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> pulumi.Output[str]:
-        """
-        The type of target on which the budget is applied.
-        """
+    def target_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target_type")
 
     @property
     @pulumi.getter
-    def targets(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def targets(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time that the budget was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeSpendComputed")
-    def time_spend_computed(self) -> pulumi.Output[str]:
-        """
-        The time that the budget spend was last computed.
-        """
+    def time_spend_computed(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_spend_computed")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time that the budget was updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[int]:
-        """
-        The version of the budget. Starts from 1 and increments by 1.
-        """
+    def version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "version")
 

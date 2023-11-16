@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetQueryQuickPicksFilterArgs) ToGetQueryQuickPicksFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksFilterOutput)
 }
 
-func (i GetQueryQuickPicksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksFilter] {
-	return pulumix.Output[GetQueryQuickPicksFilter]{
-		OutputState: i.ToGetQueryQuickPicksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetQueryQuickPicksFilterArrayInput is an input type that accepts GetQueryQuickPicksFilterArray and GetQueryQuickPicksFilterArrayOutput values.
 // You can construct a concrete instance of `GetQueryQuickPicksFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetQueryQuickPicksFilterArray) ToGetQueryQuickPicksFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksFilterArrayOutput)
 }
 
-func (i GetQueryQuickPicksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksFilter] {
-	return pulumix.Output[[]GetQueryQuickPicksFilter]{
-		OutputState: i.ToGetQueryQuickPicksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQuickPicksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQuickPicksFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetQueryQuickPicksFilterOutput) ToGetQueryQuickPicksFilterOutput() GetQu
 
 func (o GetQueryQuickPicksFilterOutput) ToGetQueryQuickPicksFilterOutputWithContext(ctx context.Context) GetQueryQuickPicksFilterOutput {
 	return o
-}
-
-func (o GetQueryQuickPicksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksFilter] {
-	return pulumix.Output[GetQueryQuickPicksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetQueryQuickPicksFilterOutput) Name() pulumi.StringOutput {
@@ -132,12 +113,6 @@ func (o GetQueryQuickPicksFilterArrayOutput) ToGetQueryQuickPicksFilterArrayOutp
 	return o
 }
 
-func (o GetQueryQuickPicksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksFilter] {
-	return pulumix.Output[[]GetQueryQuickPicksFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQuickPicksFilterArrayOutput) Index(i pulumi.IntInput) GetQueryQuickPicksFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQuickPicksFilter {
 		return vs[0].([]GetQueryQuickPicksFilter)[vs[1].(int)]
@@ -146,9 +121,9 @@ func (o GetQueryQuickPicksFilterArrayOutput) Index(i pulumi.IntInput) GetQueryQu
 
 type GetQueryQuickPicksQuickPick struct {
 	// Quick Pick name for the query.
-	QuickPickName string `pulumi:"quickPickName"`
+	QuickPickName *string `pulumi:"quickPickName"`
 	// Query for the Quick Pick.
-	QuickPickQuery string `pulumi:"quickPickQuery"`
+	QuickPickQuery *string `pulumi:"quickPickQuery"`
 }
 
 // GetQueryQuickPicksQuickPickInput is an input type that accepts GetQueryQuickPicksQuickPickArgs and GetQueryQuickPicksQuickPickOutput values.
@@ -164,9 +139,9 @@ type GetQueryQuickPicksQuickPickInput interface {
 
 type GetQueryQuickPicksQuickPickArgs struct {
 	// Quick Pick name for the query.
-	QuickPickName pulumi.StringInput `pulumi:"quickPickName"`
+	QuickPickName pulumi.StringPtrInput `pulumi:"quickPickName"`
 	// Query for the Quick Pick.
-	QuickPickQuery pulumi.StringInput `pulumi:"quickPickQuery"`
+	QuickPickQuery pulumi.StringPtrInput `pulumi:"quickPickQuery"`
 }
 
 func (GetQueryQuickPicksQuickPickArgs) ElementType() reflect.Type {
@@ -179,12 +154,6 @@ func (i GetQueryQuickPicksQuickPickArgs) ToGetQueryQuickPicksQuickPickOutput() G
 
 func (i GetQueryQuickPicksQuickPickArgs) ToGetQueryQuickPicksQuickPickOutputWithContext(ctx context.Context) GetQueryQuickPicksQuickPickOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksQuickPickOutput)
-}
-
-func (i GetQueryQuickPicksQuickPickArgs) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksQuickPick] {
-	return pulumix.Output[GetQueryQuickPicksQuickPick]{
-		OutputState: i.ToGetQueryQuickPicksQuickPickOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetQueryQuickPicksQuickPickArrayInput is an input type that accepts GetQueryQuickPicksQuickPickArray and GetQueryQuickPicksQuickPickArrayOutput values.
@@ -212,12 +181,6 @@ func (i GetQueryQuickPicksQuickPickArray) ToGetQueryQuickPicksQuickPickArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetQueryQuickPicksQuickPickArrayOutput)
 }
 
-func (i GetQueryQuickPicksQuickPickArray) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksQuickPick] {
-	return pulumix.Output[[]GetQueryQuickPicksQuickPick]{
-		OutputState: i.ToGetQueryQuickPicksQuickPickArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetQueryQuickPicksQuickPickOutput struct{ *pulumi.OutputState }
 
 func (GetQueryQuickPicksQuickPickOutput) ElementType() reflect.Type {
@@ -232,20 +195,14 @@ func (o GetQueryQuickPicksQuickPickOutput) ToGetQueryQuickPicksQuickPickOutputWi
 	return o
 }
 
-func (o GetQueryQuickPicksQuickPickOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksQuickPick] {
-	return pulumix.Output[GetQueryQuickPicksQuickPick]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Quick Pick name for the query.
-func (o GetQueryQuickPicksQuickPickOutput) QuickPickName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQuickPicksQuickPick) string { return v.QuickPickName }).(pulumi.StringOutput)
+func (o GetQueryQuickPicksQuickPickOutput) QuickPickName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQuickPicksQuickPick) *string { return v.QuickPickName }).(pulumi.StringPtrOutput)
 }
 
 // Query for the Quick Pick.
-func (o GetQueryQuickPicksQuickPickOutput) QuickPickQuery() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQuickPicksQuickPick) string { return v.QuickPickQuery }).(pulumi.StringOutput)
+func (o GetQueryQuickPicksQuickPickOutput) QuickPickQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQuickPicksQuickPick) *string { return v.QuickPickQuery }).(pulumi.StringPtrOutput)
 }
 
 type GetQueryQuickPicksQuickPickArrayOutput struct{ *pulumi.OutputState }
@@ -262,12 +219,6 @@ func (o GetQueryQuickPicksQuickPickArrayOutput) ToGetQueryQuickPicksQuickPickArr
 	return o
 }
 
-func (o GetQueryQuickPicksQuickPickArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetQueryQuickPicksQuickPick] {
-	return pulumix.Output[[]GetQueryQuickPicksQuickPick]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQuickPicksQuickPickArrayOutput) Index(i pulumi.IntInput) GetQueryQuickPicksQuickPickOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQuickPicksQuickPick {
 		return vs[0].([]GetQueryQuickPicksQuickPick)[vs[1].(int)]
@@ -276,9 +227,9 @@ func (o GetQueryQuickPicksQuickPickArrayOutput) Index(i pulumi.IntInput) GetQuer
 
 type GetTraceAggregatedSnapshotDataDetail struct {
 	// Name of the property.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Value of the property.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetTraceAggregatedSnapshotDataDetailInput is an input type that accepts GetTraceAggregatedSnapshotDataDetailArgs and GetTraceAggregatedSnapshotDataDetailOutput values.
@@ -294,9 +245,9 @@ type GetTraceAggregatedSnapshotDataDetailInput interface {
 
 type GetTraceAggregatedSnapshotDataDetailArgs struct {
 	// Name of the property.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Value of the property.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetTraceAggregatedSnapshotDataDetailArgs) ElementType() reflect.Type {
@@ -309,12 +260,6 @@ func (i GetTraceAggregatedSnapshotDataDetailArgs) ToGetTraceAggregatedSnapshotDa
 
 func (i GetTraceAggregatedSnapshotDataDetailArgs) ToGetTraceAggregatedSnapshotDataDetailOutputWithContext(ctx context.Context) GetTraceAggregatedSnapshotDataDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceAggregatedSnapshotDataDetailOutput)
-}
-
-func (i GetTraceAggregatedSnapshotDataDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceAggregatedSnapshotDataDetail] {
-	return pulumix.Output[GetTraceAggregatedSnapshotDataDetail]{
-		OutputState: i.ToGetTraceAggregatedSnapshotDataDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceAggregatedSnapshotDataDetailArrayInput is an input type that accepts GetTraceAggregatedSnapshotDataDetailArray and GetTraceAggregatedSnapshotDataDetailArrayOutput values.
@@ -342,12 +287,6 @@ func (i GetTraceAggregatedSnapshotDataDetailArray) ToGetTraceAggregatedSnapshotD
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceAggregatedSnapshotDataDetailArrayOutput)
 }
 
-func (i GetTraceAggregatedSnapshotDataDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail] {
-	return pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail]{
-		OutputState: i.ToGetTraceAggregatedSnapshotDataDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceAggregatedSnapshotDataDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTraceAggregatedSnapshotDataDetailOutput) ElementType() reflect.Type {
@@ -362,20 +301,14 @@ func (o GetTraceAggregatedSnapshotDataDetailOutput) ToGetTraceAggregatedSnapshot
 	return o
 }
 
-func (o GetTraceAggregatedSnapshotDataDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceAggregatedSnapshotDataDetail] {
-	return pulumix.Output[GetTraceAggregatedSnapshotDataDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the property.
-func (o GetTraceAggregatedSnapshotDataDetailOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataDetail) string { return v.Key }).(pulumi.StringOutput)
+func (o GetTraceAggregatedSnapshotDataDetailOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataDetail) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Value of the property.
-func (o GetTraceAggregatedSnapshotDataDetailOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataDetail) string { return v.Value }).(pulumi.StringOutput)
+func (o GetTraceAggregatedSnapshotDataDetailOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceAggregatedSnapshotDataDetail) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceAggregatedSnapshotDataDetailArrayOutput struct{ *pulumi.OutputState }
@@ -392,12 +325,6 @@ func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) ToGetTraceAggregatedSna
 	return o
 }
 
-func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail] {
-	return pulumix.Output[[]GetTraceAggregatedSnapshotDataDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) Index(i pulumi.IntInput) GetTraceAggregatedSnapshotDataDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceAggregatedSnapshotDataDetail {
 		return vs[0].([]GetTraceAggregatedSnapshotDataDetail)[vs[1].(int)]
@@ -406,11 +333,11 @@ func (o GetTraceAggregatedSnapshotDataDetailArrayOutput) Index(i pulumi.IntInput
 
 type GetTraceServiceSummary struct {
 	// Number of spans with errors for serviceName in the trace.
-	ErrorSpans string `pulumi:"errorSpans"`
+	ErrorSpans *string `pulumi:"errorSpans"`
 	// Name associated with the service.
-	SpanServiceName string `pulumi:"spanServiceName"`
+	SpanServiceName *string `pulumi:"spanServiceName"`
 	// Number of spans for serviceName in the trace.
-	TotalSpans string `pulumi:"totalSpans"`
+	TotalSpans *string `pulumi:"totalSpans"`
 }
 
 // GetTraceServiceSummaryInput is an input type that accepts GetTraceServiceSummaryArgs and GetTraceServiceSummaryOutput values.
@@ -426,11 +353,11 @@ type GetTraceServiceSummaryInput interface {
 
 type GetTraceServiceSummaryArgs struct {
 	// Number of spans with errors for serviceName in the trace.
-	ErrorSpans pulumi.StringInput `pulumi:"errorSpans"`
+	ErrorSpans pulumi.StringPtrInput `pulumi:"errorSpans"`
 	// Name associated with the service.
-	SpanServiceName pulumi.StringInput `pulumi:"spanServiceName"`
+	SpanServiceName pulumi.StringPtrInput `pulumi:"spanServiceName"`
 	// Number of spans for serviceName in the trace.
-	TotalSpans pulumi.StringInput `pulumi:"totalSpans"`
+	TotalSpans pulumi.StringPtrInput `pulumi:"totalSpans"`
 }
 
 func (GetTraceServiceSummaryArgs) ElementType() reflect.Type {
@@ -443,12 +370,6 @@ func (i GetTraceServiceSummaryArgs) ToGetTraceServiceSummaryOutput() GetTraceSer
 
 func (i GetTraceServiceSummaryArgs) ToGetTraceServiceSummaryOutputWithContext(ctx context.Context) GetTraceServiceSummaryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceServiceSummaryOutput)
-}
-
-func (i GetTraceServiceSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceServiceSummary] {
-	return pulumix.Output[GetTraceServiceSummary]{
-		OutputState: i.ToGetTraceServiceSummaryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceServiceSummaryArrayInput is an input type that accepts GetTraceServiceSummaryArray and GetTraceServiceSummaryArrayOutput values.
@@ -476,12 +397,6 @@ func (i GetTraceServiceSummaryArray) ToGetTraceServiceSummaryArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceServiceSummaryArrayOutput)
 }
 
-func (i GetTraceServiceSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceServiceSummary] {
-	return pulumix.Output[[]GetTraceServiceSummary]{
-		OutputState: i.ToGetTraceServiceSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceServiceSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetTraceServiceSummaryOutput) ElementType() reflect.Type {
@@ -496,25 +411,19 @@ func (o GetTraceServiceSummaryOutput) ToGetTraceServiceSummaryOutputWithContext(
 	return o
 }
 
-func (o GetTraceServiceSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceServiceSummary] {
-	return pulumix.Output[GetTraceServiceSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of spans with errors for serviceName in the trace.
-func (o GetTraceServiceSummaryOutput) ErrorSpans() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceServiceSummary) string { return v.ErrorSpans }).(pulumi.StringOutput)
+func (o GetTraceServiceSummaryOutput) ErrorSpans() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceServiceSummary) *string { return v.ErrorSpans }).(pulumi.StringPtrOutput)
 }
 
 // Name associated with the service.
-func (o GetTraceServiceSummaryOutput) SpanServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceServiceSummary) string { return v.SpanServiceName }).(pulumi.StringOutput)
+func (o GetTraceServiceSummaryOutput) SpanServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceServiceSummary) *string { return v.SpanServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Number of spans for serviceName in the trace.
-func (o GetTraceServiceSummaryOutput) TotalSpans() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceServiceSummary) string { return v.TotalSpans }).(pulumi.StringOutput)
+func (o GetTraceServiceSummaryOutput) TotalSpans() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceServiceSummary) *string { return v.TotalSpans }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceServiceSummaryArrayOutput struct{ *pulumi.OutputState }
@@ -531,12 +440,6 @@ func (o GetTraceServiceSummaryArrayOutput) ToGetTraceServiceSummaryArrayOutputWi
 	return o
 }
 
-func (o GetTraceServiceSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceServiceSummary] {
-	return pulumix.Output[[]GetTraceServiceSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceServiceSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceServiceSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceServiceSummary {
 		return vs[0].([]GetTraceServiceSummary)[vs[1].(int)]
@@ -545,9 +448,9 @@ func (o GetTraceServiceSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceServ
 
 type GetTraceSnapshotDataTraceSnapshotDetail struct {
 	// Name of the property.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Value of the property.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetTraceSnapshotDataTraceSnapshotDetailInput is an input type that accepts GetTraceSnapshotDataTraceSnapshotDetailArgs and GetTraceSnapshotDataTraceSnapshotDetailOutput values.
@@ -563,9 +466,9 @@ type GetTraceSnapshotDataTraceSnapshotDetailInput interface {
 
 type GetTraceSnapshotDataTraceSnapshotDetailArgs struct {
 	// Name of the property.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Value of the property.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetTraceSnapshotDataTraceSnapshotDetailArgs) ElementType() reflect.Type {
@@ -578,12 +481,6 @@ func (i GetTraceSnapshotDataTraceSnapshotDetailArgs) ToGetTraceSnapshotDataTrace
 
 func (i GetTraceSnapshotDataTraceSnapshotDetailArgs) ToGetTraceSnapshotDataTraceSnapshotDetailOutputWithContext(ctx context.Context) GetTraceSnapshotDataTraceSnapshotDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSnapshotDataTraceSnapshotDetailOutput)
-}
-
-func (i GetTraceSnapshotDataTraceSnapshotDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail] {
-	return pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail]{
-		OutputState: i.ToGetTraceSnapshotDataTraceSnapshotDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSnapshotDataTraceSnapshotDetailArrayInput is an input type that accepts GetTraceSnapshotDataTraceSnapshotDetailArray and GetTraceSnapshotDataTraceSnapshotDetailArrayOutput values.
@@ -611,12 +508,6 @@ func (i GetTraceSnapshotDataTraceSnapshotDetailArray) ToGetTraceSnapshotDataTrac
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSnapshotDataTraceSnapshotDetailArrayOutput)
 }
 
-func (i GetTraceSnapshotDataTraceSnapshotDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail] {
-	return pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail]{
-		OutputState: i.ToGetTraceSnapshotDataTraceSnapshotDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSnapshotDataTraceSnapshotDetailOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSnapshotDataTraceSnapshotDetailOutput) ElementType() reflect.Type {
@@ -631,20 +522,14 @@ func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) ToGetTraceSnapshotDataTra
 	return o
 }
 
-func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail] {
-	return pulumix.Output[GetTraceSnapshotDataTraceSnapshotDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the property.
-func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSnapshotDataTraceSnapshotDetail) string { return v.Key }).(pulumi.StringOutput)
+func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSnapshotDataTraceSnapshotDetail) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Value of the property.
-func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSnapshotDataTraceSnapshotDetail) string { return v.Value }).(pulumi.StringOutput)
+func (o GetTraceSnapshotDataTraceSnapshotDetailOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSnapshotDataTraceSnapshotDetail) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSnapshotDataTraceSnapshotDetailArrayOutput struct{ *pulumi.OutputState }
@@ -661,12 +546,6 @@ func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) ToGetTraceSnapshotDa
 	return o
 }
 
-func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail] {
-	return pulumix.Output[[]GetTraceSnapshotDataTraceSnapshotDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) Index(i pulumi.IntInput) GetTraceSnapshotDataTraceSnapshotDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSnapshotDataTraceSnapshotDetail {
 		return vs[0].([]GetTraceSnapshotDataTraceSnapshotDetail)[vs[1].(int)]
@@ -675,29 +554,29 @@ func (o GetTraceSnapshotDataTraceSnapshotDetailArrayOutput) Index(i pulumi.IntIn
 
 type GetTraceSpan struct {
 	// Total span duration in milliseconds.
-	DurationInMs string `pulumi:"durationInMs"`
+	DurationInMs *string `pulumi:"durationInMs"`
 	// Indicates if the span has an error.
-	IsError bool `pulumi:"isError"`
+	IsError *bool `pulumi:"isError"`
 	// Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Kind associated with the span.
-	Kind string `pulumi:"kind"`
+	Kind *string `pulumi:"kind"`
 	// List of logs associated with the span.
 	Logs []GetTraceSpanLog `pulumi:"logs"`
 	// Span name associated with the trace.  This is usually the method or URI of the request.
-	OperationName string `pulumi:"operationName"`
+	OperationName *string `pulumi:"operationName"`
 	// Unique parent identifier for the span if one exists. For root spans this will be null.
-	ParentSpanKey string `pulumi:"parentSpanKey"`
+	ParentSpanKey *string `pulumi:"parentSpanKey"`
 	// Service name associated with the span.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// List of tags associated with the span.
 	Tags []GetTraceSpanTag `pulumi:"tags"`
 	// Span end time.  Timestamp when the span was completed.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// Span start time.  Timestamp when the span was started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
-	TraceKey string `pulumi:"traceKey"`
+	TraceKey *string `pulumi:"traceKey"`
 }
 
 // GetTraceSpanInput is an input type that accepts GetTraceSpanArgs and GetTraceSpanOutput values.
@@ -713,29 +592,29 @@ type GetTraceSpanInput interface {
 
 type GetTraceSpanArgs struct {
 	// Total span duration in milliseconds.
-	DurationInMs pulumi.StringInput `pulumi:"durationInMs"`
+	DurationInMs pulumi.StringPtrInput `pulumi:"durationInMs"`
 	// Indicates if the span has an error.
-	IsError pulumi.BoolInput `pulumi:"isError"`
+	IsError pulumi.BoolPtrInput `pulumi:"isError"`
 	// Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Kind associated with the span.
-	Kind pulumi.StringInput `pulumi:"kind"`
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// List of logs associated with the span.
 	Logs GetTraceSpanLogArrayInput `pulumi:"logs"`
 	// Span name associated with the trace.  This is usually the method or URI of the request.
-	OperationName pulumi.StringInput `pulumi:"operationName"`
+	OperationName pulumi.StringPtrInput `pulumi:"operationName"`
 	// Unique parent identifier for the span if one exists. For root spans this will be null.
-	ParentSpanKey pulumi.StringInput `pulumi:"parentSpanKey"`
+	ParentSpanKey pulumi.StringPtrInput `pulumi:"parentSpanKey"`
 	// Service name associated with the span.
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// List of tags associated with the span.
 	Tags GetTraceSpanTagArrayInput `pulumi:"tags"`
 	// Span end time.  Timestamp when the span was completed.
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrInput `pulumi:"timeEnded"`
 	// Span start time.  Timestamp when the span was started.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
-	TraceKey pulumi.StringInput `pulumi:"traceKey"`
+	TraceKey pulumi.StringPtrInput `pulumi:"traceKey"`
 }
 
 func (GetTraceSpanArgs) ElementType() reflect.Type {
@@ -748,12 +627,6 @@ func (i GetTraceSpanArgs) ToGetTraceSpanOutput() GetTraceSpanOutput {
 
 func (i GetTraceSpanArgs) ToGetTraceSpanOutputWithContext(ctx context.Context) GetTraceSpanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanOutput)
-}
-
-func (i GetTraceSpanArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpan] {
-	return pulumix.Output[GetTraceSpan]{
-		OutputState: i.ToGetTraceSpanOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSpanArrayInput is an input type that accepts GetTraceSpanArray and GetTraceSpanArrayOutput values.
@@ -781,12 +654,6 @@ func (i GetTraceSpanArray) ToGetTraceSpanArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanArrayOutput)
 }
 
-func (i GetTraceSpanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpan] {
-	return pulumix.Output[[]GetTraceSpan]{
-		OutputState: i.ToGetTraceSpanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSpanOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanOutput) ElementType() reflect.Type {
@@ -801,30 +668,24 @@ func (o GetTraceSpanOutput) ToGetTraceSpanOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o GetTraceSpanOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpan] {
-	return pulumix.Output[GetTraceSpan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total span duration in milliseconds.
-func (o GetTraceSpanOutput) DurationInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.DurationInMs }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) DurationInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.DurationInMs }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the span has an error.
-func (o GetTraceSpanOutput) IsError() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetTraceSpan) bool { return v.IsError }).(pulumi.BoolOutput)
+func (o GetTraceSpanOutput) IsError() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *bool { return v.IsError }).(pulumi.BoolPtrOutput)
 }
 
 // Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-func (o GetTraceSpanOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.Key }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Kind associated with the span.
-func (o GetTraceSpanOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.Kind }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
 
 // List of logs associated with the span.
@@ -833,18 +694,18 @@ func (o GetTraceSpanOutput) Logs() GetTraceSpanLogArrayOutput {
 }
 
 // Span name associated with the trace.  This is usually the method or URI of the request.
-func (o GetTraceSpanOutput) OperationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.OperationName }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) OperationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.OperationName }).(pulumi.StringPtrOutput)
 }
 
 // Unique parent identifier for the span if one exists. For root spans this will be null.
-func (o GetTraceSpanOutput) ParentSpanKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.ParentSpanKey }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) ParentSpanKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.ParentSpanKey }).(pulumi.StringPtrOutput)
 }
 
 // Service name associated with the span.
-func (o GetTraceSpanOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // List of tags associated with the span.
@@ -853,18 +714,18 @@ func (o GetTraceSpanOutput) Tags() GetTraceSpanTagArrayOutput {
 }
 
 // Span end time.  Timestamp when the span was completed.
-func (o GetTraceSpanOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // Span start time.  Timestamp when the span was started.
-func (o GetTraceSpanOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // Unique Application Performance Monitoring trace identifier (traceId).
-func (o GetTraceSpanOutput) TraceKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpan) string { return v.TraceKey }).(pulumi.StringOutput)
+func (o GetTraceSpanOutput) TraceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpan) *string { return v.TraceKey }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSpanArrayOutput struct{ *pulumi.OutputState }
@@ -881,12 +742,6 @@ func (o GetTraceSpanArrayOutput) ToGetTraceSpanArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetTraceSpanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpan] {
-	return pulumix.Output[[]GetTraceSpan]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSpanArrayOutput) Index(i pulumi.IntInput) GetTraceSpanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpan {
 		return vs[0].([]GetTraceSpan)[vs[1].(int)]
@@ -897,7 +752,7 @@ type GetTraceSpanLog struct {
 	// List of logs associated with the span at the given timestamp.
 	SpanLogs []GetTraceSpanLogSpanLog `pulumi:"spanLogs"`
 	// Timestamp at which the log is created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetTraceSpanLogInput is an input type that accepts GetTraceSpanLogArgs and GetTraceSpanLogOutput values.
@@ -915,7 +770,7 @@ type GetTraceSpanLogArgs struct {
 	// List of logs associated with the span at the given timestamp.
 	SpanLogs GetTraceSpanLogSpanLogArrayInput `pulumi:"spanLogs"`
 	// Timestamp at which the log is created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetTraceSpanLogArgs) ElementType() reflect.Type {
@@ -928,12 +783,6 @@ func (i GetTraceSpanLogArgs) ToGetTraceSpanLogOutput() GetTraceSpanLogOutput {
 
 func (i GetTraceSpanLogArgs) ToGetTraceSpanLogOutputWithContext(ctx context.Context) GetTraceSpanLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogOutput)
-}
-
-func (i GetTraceSpanLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLog] {
-	return pulumix.Output[GetTraceSpanLog]{
-		OutputState: i.ToGetTraceSpanLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSpanLogArrayInput is an input type that accepts GetTraceSpanLogArray and GetTraceSpanLogArrayOutput values.
@@ -961,12 +810,6 @@ func (i GetTraceSpanLogArray) ToGetTraceSpanLogArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogArrayOutput)
 }
 
-func (i GetTraceSpanLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLog] {
-	return pulumix.Output[[]GetTraceSpanLog]{
-		OutputState: i.ToGetTraceSpanLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSpanLogOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanLogOutput) ElementType() reflect.Type {
@@ -981,20 +824,14 @@ func (o GetTraceSpanLogOutput) ToGetTraceSpanLogOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetTraceSpanLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLog] {
-	return pulumix.Output[GetTraceSpanLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of logs associated with the span at the given timestamp.
 func (o GetTraceSpanLogOutput) SpanLogs() GetTraceSpanLogSpanLogArrayOutput {
 	return o.ApplyT(func(v GetTraceSpanLog) []GetTraceSpanLogSpanLog { return v.SpanLogs }).(GetTraceSpanLogSpanLogArrayOutput)
 }
 
 // Timestamp at which the log is created.
-func (o GetTraceSpanLogOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanLog) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetTraceSpanLogOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanLog) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSpanLogArrayOutput struct{ *pulumi.OutputState }
@@ -1011,12 +848,6 @@ func (o GetTraceSpanLogArrayOutput) ToGetTraceSpanLogArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetTraceSpanLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLog] {
-	return pulumix.Output[[]GetTraceSpanLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSpanLogArrayOutput) Index(i pulumi.IntInput) GetTraceSpanLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpanLog {
 		return vs[0].([]GetTraceSpanLog)[vs[1].(int)]
@@ -1025,9 +856,9 @@ func (o GetTraceSpanLogArrayOutput) Index(i pulumi.IntInput) GetTraceSpanLogOutp
 
 type GetTraceSpanLogSpanLog struct {
 	// Key that specifies the log name.
-	LogKey string `pulumi:"logKey"`
+	LogKey *string `pulumi:"logKey"`
 	// Value associated with the log key.
-	LogValue string `pulumi:"logValue"`
+	LogValue *string `pulumi:"logValue"`
 }
 
 // GetTraceSpanLogSpanLogInput is an input type that accepts GetTraceSpanLogSpanLogArgs and GetTraceSpanLogSpanLogOutput values.
@@ -1043,9 +874,9 @@ type GetTraceSpanLogSpanLogInput interface {
 
 type GetTraceSpanLogSpanLogArgs struct {
 	// Key that specifies the log name.
-	LogKey pulumi.StringInput `pulumi:"logKey"`
+	LogKey pulumi.StringPtrInput `pulumi:"logKey"`
 	// Value associated with the log key.
-	LogValue pulumi.StringInput `pulumi:"logValue"`
+	LogValue pulumi.StringPtrInput `pulumi:"logValue"`
 }
 
 func (GetTraceSpanLogSpanLogArgs) ElementType() reflect.Type {
@@ -1058,12 +889,6 @@ func (i GetTraceSpanLogSpanLogArgs) ToGetTraceSpanLogSpanLogOutput() GetTraceSpa
 
 func (i GetTraceSpanLogSpanLogArgs) ToGetTraceSpanLogSpanLogOutputWithContext(ctx context.Context) GetTraceSpanLogSpanLogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogSpanLogOutput)
-}
-
-func (i GetTraceSpanLogSpanLogArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLogSpanLog] {
-	return pulumix.Output[GetTraceSpanLogSpanLog]{
-		OutputState: i.ToGetTraceSpanLogSpanLogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSpanLogSpanLogArrayInput is an input type that accepts GetTraceSpanLogSpanLogArray and GetTraceSpanLogSpanLogArrayOutput values.
@@ -1091,12 +916,6 @@ func (i GetTraceSpanLogSpanLogArray) ToGetTraceSpanLogSpanLogArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanLogSpanLogArrayOutput)
 }
 
-func (i GetTraceSpanLogSpanLogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLogSpanLog] {
-	return pulumix.Output[[]GetTraceSpanLogSpanLog]{
-		OutputState: i.ToGetTraceSpanLogSpanLogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSpanLogSpanLogOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanLogSpanLogOutput) ElementType() reflect.Type {
@@ -1111,20 +930,14 @@ func (o GetTraceSpanLogSpanLogOutput) ToGetTraceSpanLogSpanLogOutputWithContext(
 	return o
 }
 
-func (o GetTraceSpanLogSpanLogOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanLogSpanLog] {
-	return pulumix.Output[GetTraceSpanLogSpanLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key that specifies the log name.
-func (o GetTraceSpanLogSpanLogOutput) LogKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanLogSpanLog) string { return v.LogKey }).(pulumi.StringOutput)
+func (o GetTraceSpanLogSpanLogOutput) LogKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanLogSpanLog) *string { return v.LogKey }).(pulumi.StringPtrOutput)
 }
 
 // Value associated with the log key.
-func (o GetTraceSpanLogSpanLogOutput) LogValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanLogSpanLog) string { return v.LogValue }).(pulumi.StringOutput)
+func (o GetTraceSpanLogSpanLogOutput) LogValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanLogSpanLog) *string { return v.LogValue }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSpanLogSpanLogArrayOutput struct{ *pulumi.OutputState }
@@ -1141,12 +954,6 @@ func (o GetTraceSpanLogSpanLogArrayOutput) ToGetTraceSpanLogSpanLogArrayOutputWi
 	return o
 }
 
-func (o GetTraceSpanLogSpanLogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanLogSpanLog] {
-	return pulumix.Output[[]GetTraceSpanLogSpanLog]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSpanLogSpanLogArrayOutput) Index(i pulumi.IntInput) GetTraceSpanLogSpanLogOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpanLogSpanLog {
 		return vs[0].([]GetTraceSpanLogSpanLog)[vs[1].(int)]
@@ -1155,37 +962,37 @@ func (o GetTraceSpanLogSpanLogArrayOutput) Index(i pulumi.IntInput) GetTraceSpan
 
 type GetTraceSpanSummary struct {
 	// The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
-	ErrorSpanCount int `pulumi:"errorSpanCount"`
+	ErrorSpanCount *int `pulumi:"errorSpanCount"`
 	// Boolean flag that indicates whether the trace has an error.
-	IsFault bool `pulumi:"isFault"`
+	IsFault *bool `pulumi:"isFault"`
 	// Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Time taken for the root span operation to complete in milliseconds.
-	RootSpanDurationInMs int `pulumi:"rootSpanDurationInMs"`
+	RootSpanDurationInMs *int `pulumi:"rootSpanDurationInMs"`
 	// Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
-	RootSpanOperationName string `pulumi:"rootSpanOperationName"`
+	RootSpanOperationName *string `pulumi:"rootSpanOperationName"`
 	// Service associated with the trace.
-	RootSpanServiceName string `pulumi:"rootSpanServiceName"`
+	RootSpanServiceName *string `pulumi:"rootSpanServiceName"`
 	// A summary of the spans by service.
 	ServiceSummaries []GetTraceSpanSummaryServiceSummary `pulumi:"serviceSummaries"`
 	// The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
-	SpanCount int `pulumi:"spanCount"`
+	SpanCount *int `pulumi:"spanCount"`
 	// Start time of the earliest span in the span collection.
-	TimeEarliestSpanStarted string `pulumi:"timeEarliestSpanStarted"`
+	TimeEarliestSpanStarted *string `pulumi:"timeEarliestSpanStarted"`
 	// End time of the span that most recently ended in the span collection.
-	TimeLatestSpanEnded string `pulumi:"timeLatestSpanEnded"`
+	TimeLatestSpanEnded *string `pulumi:"timeLatestSpanEnded"`
 	// End time of the root span for the span collection.
-	TimeRootSpanEnded string `pulumi:"timeRootSpanEnded"`
+	TimeRootSpanEnded *string `pulumi:"timeRootSpanEnded"`
 	// Start time of the root span for the span collection.
-	TimeRootSpanStarted string `pulumi:"timeRootSpanStarted"`
+	TimeRootSpanStarted *string `pulumi:"timeRootSpanStarted"`
 	// Time between the start of the earliest span and the end of the most recent span in milliseconds.
-	TraceDurationInMs int `pulumi:"traceDurationInMs"`
+	TraceDurationInMs *int `pulumi:"traceDurationInMs"`
 	// Error code of the trace.
-	TraceErrorCode string `pulumi:"traceErrorCode"`
+	TraceErrorCode *string `pulumi:"traceErrorCode"`
 	// Error type of the trace.
-	TraceErrorType string `pulumi:"traceErrorType"`
+	TraceErrorType *string `pulumi:"traceErrorType"`
 	// The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
-	TraceStatus string `pulumi:"traceStatus"`
+	TraceStatus *string `pulumi:"traceStatus"`
 }
 
 // GetTraceSpanSummaryInput is an input type that accepts GetTraceSpanSummaryArgs and GetTraceSpanSummaryOutput values.
@@ -1201,37 +1008,37 @@ type GetTraceSpanSummaryInput interface {
 
 type GetTraceSpanSummaryArgs struct {
 	// The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
-	ErrorSpanCount pulumi.IntInput `pulumi:"errorSpanCount"`
+	ErrorSpanCount pulumi.IntPtrInput `pulumi:"errorSpanCount"`
 	// Boolean flag that indicates whether the trace has an error.
-	IsFault pulumi.BoolInput `pulumi:"isFault"`
+	IsFault pulumi.BoolPtrInput `pulumi:"isFault"`
 	// Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Time taken for the root span operation to complete in milliseconds.
-	RootSpanDurationInMs pulumi.IntInput `pulumi:"rootSpanDurationInMs"`
+	RootSpanDurationInMs pulumi.IntPtrInput `pulumi:"rootSpanDurationInMs"`
 	// Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
-	RootSpanOperationName pulumi.StringInput `pulumi:"rootSpanOperationName"`
+	RootSpanOperationName pulumi.StringPtrInput `pulumi:"rootSpanOperationName"`
 	// Service associated with the trace.
-	RootSpanServiceName pulumi.StringInput `pulumi:"rootSpanServiceName"`
+	RootSpanServiceName pulumi.StringPtrInput `pulumi:"rootSpanServiceName"`
 	// A summary of the spans by service.
 	ServiceSummaries GetTraceSpanSummaryServiceSummaryArrayInput `pulumi:"serviceSummaries"`
 	// The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
-	SpanCount pulumi.IntInput `pulumi:"spanCount"`
+	SpanCount pulumi.IntPtrInput `pulumi:"spanCount"`
 	// Start time of the earliest span in the span collection.
-	TimeEarliestSpanStarted pulumi.StringInput `pulumi:"timeEarliestSpanStarted"`
+	TimeEarliestSpanStarted pulumi.StringPtrInput `pulumi:"timeEarliestSpanStarted"`
 	// End time of the span that most recently ended in the span collection.
-	TimeLatestSpanEnded pulumi.StringInput `pulumi:"timeLatestSpanEnded"`
+	TimeLatestSpanEnded pulumi.StringPtrInput `pulumi:"timeLatestSpanEnded"`
 	// End time of the root span for the span collection.
-	TimeRootSpanEnded pulumi.StringInput `pulumi:"timeRootSpanEnded"`
+	TimeRootSpanEnded pulumi.StringPtrInput `pulumi:"timeRootSpanEnded"`
 	// Start time of the root span for the span collection.
-	TimeRootSpanStarted pulumi.StringInput `pulumi:"timeRootSpanStarted"`
+	TimeRootSpanStarted pulumi.StringPtrInput `pulumi:"timeRootSpanStarted"`
 	// Time between the start of the earliest span and the end of the most recent span in milliseconds.
-	TraceDurationInMs pulumi.IntInput `pulumi:"traceDurationInMs"`
+	TraceDurationInMs pulumi.IntPtrInput `pulumi:"traceDurationInMs"`
 	// Error code of the trace.
-	TraceErrorCode pulumi.StringInput `pulumi:"traceErrorCode"`
+	TraceErrorCode pulumi.StringPtrInput `pulumi:"traceErrorCode"`
 	// Error type of the trace.
-	TraceErrorType pulumi.StringInput `pulumi:"traceErrorType"`
+	TraceErrorType pulumi.StringPtrInput `pulumi:"traceErrorType"`
 	// The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
-	TraceStatus pulumi.StringInput `pulumi:"traceStatus"`
+	TraceStatus pulumi.StringPtrInput `pulumi:"traceStatus"`
 }
 
 func (GetTraceSpanSummaryArgs) ElementType() reflect.Type {
@@ -1244,12 +1051,6 @@ func (i GetTraceSpanSummaryArgs) ToGetTraceSpanSummaryOutput() GetTraceSpanSumma
 
 func (i GetTraceSpanSummaryArgs) ToGetTraceSpanSummaryOutputWithContext(ctx context.Context) GetTraceSpanSummaryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryOutput)
-}
-
-func (i GetTraceSpanSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummary] {
-	return pulumix.Output[GetTraceSpanSummary]{
-		OutputState: i.ToGetTraceSpanSummaryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSpanSummaryArrayInput is an input type that accepts GetTraceSpanSummaryArray and GetTraceSpanSummaryArrayOutput values.
@@ -1277,12 +1078,6 @@ func (i GetTraceSpanSummaryArray) ToGetTraceSpanSummaryArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryArrayOutput)
 }
 
-func (i GetTraceSpanSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummary] {
-	return pulumix.Output[[]GetTraceSpanSummary]{
-		OutputState: i.ToGetTraceSpanSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSpanSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanSummaryOutput) ElementType() reflect.Type {
@@ -1297,40 +1092,34 @@ func (o GetTraceSpanSummaryOutput) ToGetTraceSpanSummaryOutputWithContext(ctx co
 	return o
 }
 
-func (o GetTraceSpanSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummary] {
-	return pulumix.Output[GetTraceSpanSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
-func (o GetTraceSpanSummaryOutput) ErrorSpanCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) int { return v.ErrorSpanCount }).(pulumi.IntOutput)
+func (o GetTraceSpanSummaryOutput) ErrorSpanCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *int { return v.ErrorSpanCount }).(pulumi.IntPtrOutput)
 }
 
 // Boolean flag that indicates whether the trace has an error.
-func (o GetTraceSpanSummaryOutput) IsFault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) bool { return v.IsFault }).(pulumi.BoolOutput)
+func (o GetTraceSpanSummaryOutput) IsFault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *bool { return v.IsFault }).(pulumi.BoolPtrOutput)
 }
 
 // Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-func (o GetTraceSpanSummaryOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.Key }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Time taken for the root span operation to complete in milliseconds.
-func (o GetTraceSpanSummaryOutput) RootSpanDurationInMs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) int { return v.RootSpanDurationInMs }).(pulumi.IntOutput)
+func (o GetTraceSpanSummaryOutput) RootSpanDurationInMs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *int { return v.RootSpanDurationInMs }).(pulumi.IntPtrOutput)
 }
 
 // Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
-func (o GetTraceSpanSummaryOutput) RootSpanOperationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.RootSpanOperationName }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) RootSpanOperationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.RootSpanOperationName }).(pulumi.StringPtrOutput)
 }
 
 // Service associated with the trace.
-func (o GetTraceSpanSummaryOutput) RootSpanServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.RootSpanServiceName }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) RootSpanServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.RootSpanServiceName }).(pulumi.StringPtrOutput)
 }
 
 // A summary of the spans by service.
@@ -1339,48 +1128,48 @@ func (o GetTraceSpanSummaryOutput) ServiceSummaries() GetTraceSpanSummaryService
 }
 
 // The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
-func (o GetTraceSpanSummaryOutput) SpanCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) int { return v.SpanCount }).(pulumi.IntOutput)
+func (o GetTraceSpanSummaryOutput) SpanCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *int { return v.SpanCount }).(pulumi.IntPtrOutput)
 }
 
 // Start time of the earliest span in the span collection.
-func (o GetTraceSpanSummaryOutput) TimeEarliestSpanStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TimeEarliestSpanStarted }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TimeEarliestSpanStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TimeEarliestSpanStarted }).(pulumi.StringPtrOutput)
 }
 
 // End time of the span that most recently ended in the span collection.
-func (o GetTraceSpanSummaryOutput) TimeLatestSpanEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TimeLatestSpanEnded }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TimeLatestSpanEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TimeLatestSpanEnded }).(pulumi.StringPtrOutput)
 }
 
 // End time of the root span for the span collection.
-func (o GetTraceSpanSummaryOutput) TimeRootSpanEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TimeRootSpanEnded }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TimeRootSpanEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TimeRootSpanEnded }).(pulumi.StringPtrOutput)
 }
 
 // Start time of the root span for the span collection.
-func (o GetTraceSpanSummaryOutput) TimeRootSpanStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TimeRootSpanStarted }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TimeRootSpanStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TimeRootSpanStarted }).(pulumi.StringPtrOutput)
 }
 
 // Time between the start of the earliest span and the end of the most recent span in milliseconds.
-func (o GetTraceSpanSummaryOutput) TraceDurationInMs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) int { return v.TraceDurationInMs }).(pulumi.IntOutput)
+func (o GetTraceSpanSummaryOutput) TraceDurationInMs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *int { return v.TraceDurationInMs }).(pulumi.IntPtrOutput)
 }
 
 // Error code of the trace.
-func (o GetTraceSpanSummaryOutput) TraceErrorCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TraceErrorCode }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TraceErrorCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TraceErrorCode }).(pulumi.StringPtrOutput)
 }
 
 // Error type of the trace.
-func (o GetTraceSpanSummaryOutput) TraceErrorType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TraceErrorType }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TraceErrorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TraceErrorType }).(pulumi.StringPtrOutput)
 }
 
 // The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
-func (o GetTraceSpanSummaryOutput) TraceStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummary) string { return v.TraceStatus }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryOutput) TraceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummary) *string { return v.TraceStatus }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSpanSummaryArrayOutput struct{ *pulumi.OutputState }
@@ -1397,12 +1186,6 @@ func (o GetTraceSpanSummaryArrayOutput) ToGetTraceSpanSummaryArrayOutputWithCont
 	return o
 }
 
-func (o GetTraceSpanSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummary] {
-	return pulumix.Output[[]GetTraceSpanSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSpanSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceSpanSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpanSummary {
 		return vs[0].([]GetTraceSpanSummary)[vs[1].(int)]
@@ -1411,11 +1194,11 @@ func (o GetTraceSpanSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceSpanSum
 
 type GetTraceSpanSummaryServiceSummary struct {
 	// Number of spans with errors for serviceName in the trace.
-	ErrorSpans string `pulumi:"errorSpans"`
+	ErrorSpans *string `pulumi:"errorSpans"`
 	// Name associated with the service.
-	SpanServiceName string `pulumi:"spanServiceName"`
+	SpanServiceName *string `pulumi:"spanServiceName"`
 	// Number of spans for serviceName in the trace.
-	TotalSpans string `pulumi:"totalSpans"`
+	TotalSpans *string `pulumi:"totalSpans"`
 }
 
 // GetTraceSpanSummaryServiceSummaryInput is an input type that accepts GetTraceSpanSummaryServiceSummaryArgs and GetTraceSpanSummaryServiceSummaryOutput values.
@@ -1431,11 +1214,11 @@ type GetTraceSpanSummaryServiceSummaryInput interface {
 
 type GetTraceSpanSummaryServiceSummaryArgs struct {
 	// Number of spans with errors for serviceName in the trace.
-	ErrorSpans pulumi.StringInput `pulumi:"errorSpans"`
+	ErrorSpans pulumi.StringPtrInput `pulumi:"errorSpans"`
 	// Name associated with the service.
-	SpanServiceName pulumi.StringInput `pulumi:"spanServiceName"`
+	SpanServiceName pulumi.StringPtrInput `pulumi:"spanServiceName"`
 	// Number of spans for serviceName in the trace.
-	TotalSpans pulumi.StringInput `pulumi:"totalSpans"`
+	TotalSpans pulumi.StringPtrInput `pulumi:"totalSpans"`
 }
 
 func (GetTraceSpanSummaryServiceSummaryArgs) ElementType() reflect.Type {
@@ -1448,12 +1231,6 @@ func (i GetTraceSpanSummaryServiceSummaryArgs) ToGetTraceSpanSummaryServiceSumma
 
 func (i GetTraceSpanSummaryServiceSummaryArgs) ToGetTraceSpanSummaryServiceSummaryOutputWithContext(ctx context.Context) GetTraceSpanSummaryServiceSummaryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryServiceSummaryOutput)
-}
-
-func (i GetTraceSpanSummaryServiceSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummaryServiceSummary] {
-	return pulumix.Output[GetTraceSpanSummaryServiceSummary]{
-		OutputState: i.ToGetTraceSpanSummaryServiceSummaryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSpanSummaryServiceSummaryArrayInput is an input type that accepts GetTraceSpanSummaryServiceSummaryArray and GetTraceSpanSummaryServiceSummaryArrayOutput values.
@@ -1481,12 +1258,6 @@ func (i GetTraceSpanSummaryServiceSummaryArray) ToGetTraceSpanSummaryServiceSumm
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanSummaryServiceSummaryArrayOutput)
 }
 
-func (i GetTraceSpanSummaryServiceSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummaryServiceSummary] {
-	return pulumix.Output[[]GetTraceSpanSummaryServiceSummary]{
-		OutputState: i.ToGetTraceSpanSummaryServiceSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSpanSummaryServiceSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanSummaryServiceSummaryOutput) ElementType() reflect.Type {
@@ -1501,25 +1272,19 @@ func (o GetTraceSpanSummaryServiceSummaryOutput) ToGetTraceSpanSummaryServiceSum
 	return o
 }
 
-func (o GetTraceSpanSummaryServiceSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanSummaryServiceSummary] {
-	return pulumix.Output[GetTraceSpanSummaryServiceSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of spans with errors for serviceName in the trace.
-func (o GetTraceSpanSummaryServiceSummaryOutput) ErrorSpans() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummaryServiceSummary) string { return v.ErrorSpans }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryServiceSummaryOutput) ErrorSpans() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummaryServiceSummary) *string { return v.ErrorSpans }).(pulumi.StringPtrOutput)
 }
 
 // Name associated with the service.
-func (o GetTraceSpanSummaryServiceSummaryOutput) SpanServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummaryServiceSummary) string { return v.SpanServiceName }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryServiceSummaryOutput) SpanServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummaryServiceSummary) *string { return v.SpanServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Number of spans for serviceName in the trace.
-func (o GetTraceSpanSummaryServiceSummaryOutput) TotalSpans() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanSummaryServiceSummary) string { return v.TotalSpans }).(pulumi.StringOutput)
+func (o GetTraceSpanSummaryServiceSummaryOutput) TotalSpans() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanSummaryServiceSummary) *string { return v.TotalSpans }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSpanSummaryServiceSummaryArrayOutput struct{ *pulumi.OutputState }
@@ -1536,12 +1301,6 @@ func (o GetTraceSpanSummaryServiceSummaryArrayOutput) ToGetTraceSpanSummaryServi
 	return o
 }
 
-func (o GetTraceSpanSummaryServiceSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanSummaryServiceSummary] {
-	return pulumix.Output[[]GetTraceSpanSummaryServiceSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTraceSpanSummaryServiceSummaryArrayOutput) Index(i pulumi.IntInput) GetTraceSpanSummaryServiceSummaryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTraceSpanSummaryServiceSummary {
 		return vs[0].([]GetTraceSpanSummaryServiceSummary)[vs[1].(int)]
@@ -1550,9 +1309,9 @@ func (o GetTraceSpanSummaryServiceSummaryArrayOutput) Index(i pulumi.IntInput) G
 
 type GetTraceSpanTag struct {
 	// Key that specifies the tag name.
-	TagName string `pulumi:"tagName"`
+	TagName *string `pulumi:"tagName"`
 	// Value associated with the tag key.
-	TagValue string `pulumi:"tagValue"`
+	TagValue *string `pulumi:"tagValue"`
 }
 
 // GetTraceSpanTagInput is an input type that accepts GetTraceSpanTagArgs and GetTraceSpanTagOutput values.
@@ -1568,9 +1327,9 @@ type GetTraceSpanTagInput interface {
 
 type GetTraceSpanTagArgs struct {
 	// Key that specifies the tag name.
-	TagName pulumi.StringInput `pulumi:"tagName"`
+	TagName pulumi.StringPtrInput `pulumi:"tagName"`
 	// Value associated with the tag key.
-	TagValue pulumi.StringInput `pulumi:"tagValue"`
+	TagValue pulumi.StringPtrInput `pulumi:"tagValue"`
 }
 
 func (GetTraceSpanTagArgs) ElementType() reflect.Type {
@@ -1583,12 +1342,6 @@ func (i GetTraceSpanTagArgs) ToGetTraceSpanTagOutput() GetTraceSpanTagOutput {
 
 func (i GetTraceSpanTagArgs) ToGetTraceSpanTagOutputWithContext(ctx context.Context) GetTraceSpanTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanTagOutput)
-}
-
-func (i GetTraceSpanTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanTag] {
-	return pulumix.Output[GetTraceSpanTag]{
-		OutputState: i.ToGetTraceSpanTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetTraceSpanTagArrayInput is an input type that accepts GetTraceSpanTagArray and GetTraceSpanTagArrayOutput values.
@@ -1616,12 +1369,6 @@ func (i GetTraceSpanTagArray) ToGetTraceSpanTagArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetTraceSpanTagArrayOutput)
 }
 
-func (i GetTraceSpanTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanTag] {
-	return pulumix.Output[[]GetTraceSpanTag]{
-		OutputState: i.ToGetTraceSpanTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetTraceSpanTagOutput struct{ *pulumi.OutputState }
 
 func (GetTraceSpanTagOutput) ElementType() reflect.Type {
@@ -1636,20 +1383,14 @@ func (o GetTraceSpanTagOutput) ToGetTraceSpanTagOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetTraceSpanTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetTraceSpanTag] {
-	return pulumix.Output[GetTraceSpanTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key that specifies the tag name.
-func (o GetTraceSpanTagOutput) TagName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanTag) string { return v.TagName }).(pulumi.StringOutput)
+func (o GetTraceSpanTagOutput) TagName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
 // Value associated with the tag key.
-func (o GetTraceSpanTagOutput) TagValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTraceSpanTag) string { return v.TagValue }).(pulumi.StringOutput)
+func (o GetTraceSpanTagOutput) TagValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTraceSpanTag) *string { return v.TagValue }).(pulumi.StringPtrOutput)
 }
 
 type GetTraceSpanTagArrayOutput struct{ *pulumi.OutputState }
@@ -1664,12 +1405,6 @@ func (o GetTraceSpanTagArrayOutput) ToGetTraceSpanTagArrayOutput() GetTraceSpanT
 
 func (o GetTraceSpanTagArrayOutput) ToGetTraceSpanTagArrayOutputWithContext(ctx context.Context) GetTraceSpanTagArrayOutput {
 	return o
-}
-
-func (o GetTraceSpanTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetTraceSpanTag] {
-	return pulumix.Output[[]GetTraceSpanTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetTraceSpanTagArrayOutput) Index(i pulumi.IntInput) GetTraceSpanTagOutput {

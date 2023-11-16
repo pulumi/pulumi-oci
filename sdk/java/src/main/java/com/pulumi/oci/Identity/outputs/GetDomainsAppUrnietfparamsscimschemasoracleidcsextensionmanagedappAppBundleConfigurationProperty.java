@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty {
@@ -16,99 +18,99 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
      * @return If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \&#34;isConfidential\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private Boolean confidential;
+    private @Nullable Boolean confidential;
     /**
      * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Help message of the flatfile bundle configuration property. This attribute maps to \&#34;helpMessage\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private String helpMessage;
+    private @Nullable String helpMessage;
     /**
      * @return ICF data type of flatfile the bundle configuration property. This attribute maps to \&#34;type\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private String icfType;
+    private @Nullable String icfType;
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Display sequence of the bundle configuration property.
      * 
      */
-    private Integer order;
+    private @Nullable Integer order;
     /**
      * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    private Boolean required;
+    private @Nullable Boolean required;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty() {}
     /**
      * @return If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \&#34;isConfidential\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public Boolean confidential() {
-        return this.confidential;
+    public Optional<Boolean> confidential() {
+        return Optional.ofNullable(this.confidential);
     }
     /**
      * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Help message of the flatfile bundle configuration property. This attribute maps to \&#34;helpMessage\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public String helpMessage() {
-        return this.helpMessage;
+    public Optional<String> helpMessage() {
+        return Optional.ofNullable(this.helpMessage);
     }
     /**
      * @return ICF data type of flatfile the bundle configuration property. This attribute maps to \&#34;type\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public String icfType() {
-        return this.icfType;
+    public Optional<String> icfType() {
+        return Optional.ofNullable(this.icfType);
     }
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Display sequence of the bundle configuration property.
      * 
      */
-    public Integer order() {
-        return this.order;
+    public Optional<Integer> order() {
+        return Optional.ofNullable(this.order);
     }
     /**
      * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      */
-    public Boolean required() {
-        return this.required;
+    public Optional<Boolean> required() {
+        return Optional.ofNullable(this.required);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -120,14 +122,14 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean confidential;
-        private String displayName;
-        private String helpMessage;
-        private String icfType;
-        private String name;
-        private Integer order;
-        private Boolean required;
-        private List<String> values;
+        private @Nullable Boolean confidential;
+        private @Nullable String displayName;
+        private @Nullable String helpMessage;
+        private @Nullable String icfType;
+        private @Nullable String name;
+        private @Nullable Integer order;
+        private @Nullable Boolean required;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,43 +144,43 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
 
         @CustomType.Setter
-        public Builder confidential(Boolean confidential) {
-            this.confidential = Objects.requireNonNull(confidential);
+        public Builder confidential(@Nullable Boolean confidential) {
+            this.confidential = confidential;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder helpMessage(String helpMessage) {
-            this.helpMessage = Objects.requireNonNull(helpMessage);
+        public Builder helpMessage(@Nullable String helpMessage) {
+            this.helpMessage = helpMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder icfType(String icfType) {
-            this.icfType = Objects.requireNonNull(icfType);
+        public Builder icfType(@Nullable String icfType) {
+            this.icfType = icfType;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder order(Integer order) {
-            this.order = Objects.requireNonNull(order);
+        public Builder order(@Nullable Integer order) {
+            this.order = order;
             return this;
         }
         @CustomType.Setter
-        public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+        public Builder required(@Nullable Boolean required) {
+            this.required = required;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Host name/IP address of VM on which the host is running.
         /// </summary>
-        public readonly string HypervisorHost;
+        public readonly string? HypervisorHost;
         /// <summary>
         /// Hypervisor vendor.
         /// </summary>
-        public readonly string HypervisorVendor;
+        public readonly string? HypervisorVendor;
         /// <summary>
         /// Hypervisor version.
         /// </summary>
-        public readonly string HypervisorVersion;
+        public readonly string? HypervisorVersion;
 
         [OutputConstructor]
         private GetAssetVmResult(
-            string hypervisorHost,
+            string? hypervisorHost,
 
-            string hypervisorVendor,
+            string? hypervisorVendor,
 
-            string hypervisorVersion)
+            string? hypervisorVersion)
         {
             HypervisorHost = hypervisorHost;
             HypervisorVendor = hypervisorVendor;

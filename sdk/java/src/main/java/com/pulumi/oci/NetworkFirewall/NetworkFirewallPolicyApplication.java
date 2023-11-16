@@ -12,6 +12,7 @@ import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyApplicationSta
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -68,14 +69,14 @@ public class NetworkFirewallPolicyApplication extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="icmpCode", refs={Integer.class}, tree="[0]")
-    private Output<Integer> icmpCode;
+    private Output</* @Nullable */ Integer> icmpCode;
 
     /**
      * @return (Updatable) The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
      * 
      */
-    public Output<Integer> icmpCode() {
-        return this.icmpCode;
+    public Output<Optional<Integer>> icmpCode() {
+        return Codegen.optional(this.icmpCode);
     }
     /**
      * (Updatable) The value of the ICMP/IMCP_V6 message Type field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).
@@ -124,14 +125,14 @@ public class NetworkFirewallPolicyApplication extends com.pulumi.resources.Custo
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this application belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * Describes the type of application. The accepted values are - * ICMP * ICMP_V6

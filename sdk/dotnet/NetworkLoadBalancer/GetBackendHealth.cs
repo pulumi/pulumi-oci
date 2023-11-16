@@ -142,7 +142,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkLoadBalancerId;
         /// <summary>
         /// The general health status of the specified backend server.
@@ -152,7 +152,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// *   **UNKNOWN:** One of the health checks probes return `UNKNOWN`,
         /// *   or the system is unable to retrieve metrics at this time.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetBackendHealthResult(
@@ -162,11 +162,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             ImmutableArray<Outputs.GetBackendHealthHealthCheckResultResult> healthCheckResults,
 
-            string id,
+            string? id,
 
             string networkLoadBalancerId,
 
-            string status)
+            string? status)
         {
             BackendName = backendName;
             BackendSetName = backendSetName;

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Type of the virtual service routing policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
-        private GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult(string type)
+        private GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult(string? type)
         {
             Type = type;
         }

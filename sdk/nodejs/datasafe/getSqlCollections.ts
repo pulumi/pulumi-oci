@@ -135,11 +135,11 @@ export interface GetSqlCollectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of sql_collection_collection.
      */
-    readonly sqlCollectionCollections: outputs.DataSafe.GetSqlCollectionsSqlCollectionCollection[];
+    readonly sqlCollectionCollections?: outputs.DataSafe.GetSqlCollectionsSqlCollectionCollection[];
     readonly sqlCollectionId?: string;
     /**
      * The current state of the SQL collection.

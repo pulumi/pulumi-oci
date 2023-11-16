@@ -53,26 +53,17 @@ class GetManagedDatabaseGroupResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The information specified by the user about the Managed Database Group.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -82,42 +73,27 @@ class GetManagedDatabaseGroupResult:
 
     @property
     @pulumi.getter(name="managedDatabases")
-    def managed_databases(self) -> Sequence['outputs.GetManagedDatabaseGroupManagedDatabaseResult']:
-        """
-        A list of Managed Databases in the Managed Database Group.
-        """
+    def managed_databases(self) -> Optional[Sequence['outputs.GetManagedDatabaseGroupManagedDatabaseResult']]:
         return pulumi.get(self, "managed_databases")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the Managed Database Group.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the Managed Database Group.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Managed Database Group was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the Managed Database Group was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -141,21 +117,7 @@ class AwaitableGetManagedDatabaseGroupResult(GetManagedDatabaseGroupResult):
 def get_managed_database_group(managed_database_group_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseGroupResult:
     """
-    This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"])
-    ```
-
-
-    :param str managed_database_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseGroupId'] = managed_database_group_id
@@ -178,20 +140,6 @@ def get_managed_database_group(managed_database_group_id: Optional[str] = None,
 def get_managed_database_group_output(managed_database_group_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseGroupResult]:
     """
-    This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"])
-    ```
-
-
-    :param str managed_database_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+    Use this data source to access information about an existing resource.
     """
     ...

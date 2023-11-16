@@ -8,6 +8,8 @@ import com.pulumi.oci.LogAnalytics.outputs.GetNamespacePropertiesMetadataPropert
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem {
@@ -15,63 +17,63 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
      * @return The default property value.
      * 
      */
-    private String defaultValue;
+    private @Nullable String defaultValue;
     /**
      * @return The property description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The property display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A list of levels at which the property could be defined.
      * 
      */
-    private List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels;
+    private @Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels;
     /**
      * @return The property name used for filtering.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem() {}
     /**
      * @return The default property value.
      * 
      */
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
     /**
      * @return The property description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The property display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A list of levels at which the property could be defined.
      * 
      */
     public List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels() {
-        return this.levels;
+        return this.levels == null ? List.of() : this.levels;
     }
     /**
      * @return The property name used for filtering.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultValue;
-        private String description;
-        private String displayName;
-        private List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels;
-        private String name;
+        private @Nullable String defaultValue;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
         }
 
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder levels(List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels) {
-            this.levels = Objects.requireNonNull(levels);
+        public Builder levels(@Nullable List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels) {
+            this.levels = levels;
             return this;
         }
         public Builder levels(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel... levels) {
             return levels(List.of(levels));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem build() {

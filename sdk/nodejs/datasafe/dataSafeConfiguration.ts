@@ -58,23 +58,23 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) A filter to return only resources that match the specified compartment OCID.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Data Safe's NAT Gateway IP Address.
      */
-    public /*out*/ readonly dataSafeNatGatewayIpAddress!: pulumi.Output<string>;
+    public /*out*/ readonly dataSafeNatGatewayIpAddress!: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details of the tenancy level global settings in Data Safe.
      */
-    public /*out*/ readonly globalSettings!: pulumi.Output<outputs.DataSafe.DataSafeConfigurationGlobalSetting[]>;
+    public /*out*/ readonly globalSettings!: pulumi.Output<outputs.DataSafe.DataSafeConfigurationGlobalSetting[] | undefined>;
     /**
      * (Updatable) Indicates if Data Safe is enabled.
      *
@@ -86,15 +86,15 @@ export class DataSafeConfiguration extends pulumi.CustomResource {
     /**
      * The current state of Data Safe.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeEnabled!: pulumi.Output<string>;
+    public /*out*/ readonly timeEnabled!: pulumi.Output<string | undefined>;
     /**
      * The URL of the Data Safe service.
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    public /*out*/ readonly url!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DataSafeConfiguration resource with the given unique name, arguments, and options.

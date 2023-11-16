@@ -34,7 +34,7 @@ public final class GetModelVersionSetsResult {
      * @return The list of model_version_sets.
      * 
      */
-    private List<GetModelVersionSetsModelVersionSet> modelVersionSets;
+    private @Nullable List<GetModelVersionSetsModelVersionSet> modelVersionSets;
     /**
      * @return A user-friendly name for the resource. It must be unique and can&#39;t be modified.
      * 
@@ -81,7 +81,7 @@ public final class GetModelVersionSetsResult {
      * 
      */
     public List<GetModelVersionSetsModelVersionSet> modelVersionSets() {
-        return this.modelVersionSets;
+        return this.modelVersionSets == null ? List.of() : this.modelVersionSets;
     }
     /**
      * @return A user-friendly name for the resource. It must be unique and can&#39;t be modified.
@@ -118,7 +118,7 @@ public final class GetModelVersionSetsResult {
         private @Nullable String createdBy;
         private @Nullable List<GetModelVersionSetsFilter> filters;
         private @Nullable String id;
-        private List<GetModelVersionSetsModelVersionSet> modelVersionSets;
+        private @Nullable List<GetModelVersionSetsModelVersionSet> modelVersionSets;
         private @Nullable String name;
         private @Nullable String projectId;
         private @Nullable String state;
@@ -159,8 +159,8 @@ public final class GetModelVersionSetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder modelVersionSets(List<GetModelVersionSetsModelVersionSet> modelVersionSets) {
-            this.modelVersionSets = Objects.requireNonNull(modelVersionSets);
+        public Builder modelVersionSets(@Nullable List<GetModelVersionSetsModelVersionSet> modelVersionSets) {
+            this.modelVersionSets = modelVersionSets;
             return this;
         }
         public Builder modelVersionSets(GetModelVersionSetsModelVersionSet... modelVersionSets) {

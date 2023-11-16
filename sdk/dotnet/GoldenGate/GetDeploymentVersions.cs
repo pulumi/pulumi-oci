@@ -165,7 +165,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetDeploymentVersionsResult(
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetDeploymentVersionsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             DeploymentId = deploymentId;

@@ -101,7 +101,7 @@ namespace Pulumi.Oci.DataSafe
         /// Specifies the name of the category that this report belongs to.
         /// </summary>
         [Output("category")]
-        public Output<string> Category { get; private set; } = null!;
+        public Output<string?> Category { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
@@ -137,19 +137,19 @@ namespace Pulumi.Oci.DataSafe
         /// Specifies the name of a resource that provides data for the report. For example alerts, events.
         /// </summary>
         [Output("dataSource")]
-        public Output<string> DataSource { get; private set; } = null!;
+        public Output<string?> DataSource { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the report definition.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the name of the report definition.
@@ -161,19 +161,19 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Specifies the order in which the summary must be displayed.
         /// </summary>
         [Output("displayOrder")]
-        public Output<int> DisplayOrder { get; private set; } = null!;
+        public Output<int?> DisplayOrder { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         /// </summary>
         [Output("isSeeded")]
-        public Output<bool> IsSeeded { get; private set; } = null!;
+        public Output<bool?> IsSeeded { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the parent report definition.
@@ -185,37 +185,37 @@ namespace Pulumi.Oci.DataSafe
         /// The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         /// </summary>
         [Output("recordTimeSpan")]
-        public Output<string> RecordTimeSpan { get; private set; } = null!;
+        public Output<string?> RecordTimeSpan { get; private set; } = null!;
 
         /// <summary>
         /// The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
         [Output("schedule")]
-        public Output<string> Schedule { get; private set; } = null!;
+        public Output<string?> Schedule { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment in which the scheduled resource should be created.
         /// </summary>
         [Output("scheduledReportCompartmentId")]
-        public Output<string> ScheduledReportCompartmentId { get; private set; } = null!;
+        public Output<string?> ScheduledReportCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the format of the report ( either XLS or PDF )
         /// </summary>
         [Output("scheduledReportMimeType")]
-        public Output<string> ScheduledReportMimeType { get; private set; } = null!;
+        public Output<string?> ScheduledReportMimeType { get; private set; } = null!;
 
         /// <summary>
         /// The name of the report to be scheduled.
         /// </summary>
         [Output("scheduledReportName")]
-        public Output<string> ScheduledReportName { get; private set; } = null!;
+        public Output<string?> ScheduledReportName { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the limit on the number of rows in the report.
         /// </summary>
         [Output("scheduledReportRowLimit")]
-        public Output<int> ScheduledReportRowLimit { get; private set; } = null!;
+        public Output<int?> ScheduledReportRowLimit { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Additional scim filters used to get the specific summary.
@@ -225,13 +225,13 @@ namespace Pulumi.Oci.DataSafe
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("scimFilter")]
-        public Output<string> ScimFilter { get; private set; } = null!;
+        public Output<string?> ScimFilter { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the report.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -243,19 +243,19 @@ namespace Pulumi.Oci.DataSafe
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the data and time the report definition was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the report definition was update.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

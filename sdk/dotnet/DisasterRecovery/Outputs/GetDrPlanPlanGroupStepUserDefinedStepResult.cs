@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
         /// </summary>
-        public readonly string FunctionId;
+        public readonly string? FunctionId;
         /// <summary>
         /// The region in which the function is deployed.  Example: `us-ashburn-1`
         /// </summary>
-        public readonly string FunctionRegion;
+        public readonly string? FunctionRegion;
         /// <summary>
         /// The details of an object storage script location for a user-defined step in a DR plan.
         /// </summary>
@@ -28,47 +28,47 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
         /// </summary>
-        public readonly string RequestBody;
+        public readonly string? RequestBody;
         /// <summary>
         /// The userid on the instance to be used for executing the script or command.  Example: `opc`
         /// </summary>
-        public readonly string RunAsUser;
+        public readonly string? RunAsUser;
         /// <summary>
         /// The OCID of the instance on which this script or command should be executed.
         /// </summary>
-        public readonly string RunOnInstanceId;
+        public readonly string? RunOnInstanceId;
         /// <summary>
         /// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
         /// </summary>
-        public readonly string RunOnInstanceRegion;
+        public readonly string? RunOnInstanceRegion;
         /// <summary>
         /// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         /// </summary>
-        public readonly string ScriptCommand;
+        public readonly string? ScriptCommand;
         /// <summary>
         /// The type of the user-defined step.
         /// </summary>
-        public readonly string StepType;
+        public readonly string? StepType;
 
         [OutputConstructor]
         private GetDrPlanPlanGroupStepUserDefinedStepResult(
-            string functionId,
+            string? functionId,
 
-            string functionRegion,
+            string? functionRegion,
 
             ImmutableArray<Outputs.GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult> objectStorageScriptLocations,
 
-            string requestBody,
+            string? requestBody,
 
-            string runAsUser,
+            string? runAsUser,
 
-            string runOnInstanceId,
+            string? runOnInstanceId,
 
-            string runOnInstanceRegion,
+            string? runOnInstanceRegion,
 
-            string scriptCommand,
+            string? scriptCommand,
 
-            string stepType)
+            string? stepType)
         {
             FunctionId = functionId;
             FunctionRegion = functionRegion;

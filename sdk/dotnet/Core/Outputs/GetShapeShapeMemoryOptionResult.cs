@@ -13,26 +13,26 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetShapeShapeMemoryOptionResult
     {
-        public readonly double DefaultPerOcpuInGbs;
-        public readonly double MaxInGbs;
-        public readonly double MaxPerNumaNodeInGbs;
-        public readonly double MaxPerOcpuInGbs;
-        public readonly double MinInGbs;
-        public readonly double MinPerOcpuInGbs;
+        public readonly double? DefaultPerOcpuInGbs;
+        public readonly double? MaxInGbs;
+        public readonly double? MaxPerNumaNodeInGbs;
+        public readonly double? MaxPerOcpuInGbs;
+        public readonly double? MinInGbs;
+        public readonly double? MinPerOcpuInGbs;
 
         [OutputConstructor]
         private GetShapeShapeMemoryOptionResult(
-            double defaultPerOcpuInGbs,
+            double? defaultPerOcpuInGbs,
 
-            double maxInGbs,
+            double? maxInGbs,
 
-            double maxPerNumaNodeInGbs,
+            double? maxPerNumaNodeInGbs,
 
-            double maxPerOcpuInGbs,
+            double? maxPerOcpuInGbs,
 
-            double minInGbs,
+            double? minInGbs,
 
-            double minPerOcpuInGbs)
+            double? minPerOcpuInGbs)
         {
             DefaultPerOcpuInGbs = defaultPerOcpuInGbs;
             MaxInGbs = maxInGbs;

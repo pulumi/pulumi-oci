@@ -49,13 +49,13 @@ export interface GetAnnotationFormatsResult {
     /**
      * The list of annotation_format_collection.
      */
-    readonly annotationFormatCollections: outputs.DataLabellingService.GetAnnotationFormatsAnnotationFormatCollection[];
+    readonly annotationFormatCollections?: outputs.DataLabellingService.GetAnnotationFormatsAnnotationFormatCollection[];
     readonly compartmentId: string;
     readonly filters?: outputs.DataLabellingService.GetAnnotationFormatsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Annotation Formats in Oracle Cloud Infrastructure Data Labeling Service service.

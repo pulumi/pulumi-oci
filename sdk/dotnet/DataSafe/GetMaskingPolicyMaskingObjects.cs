@@ -205,7 +205,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of masking_object_collection.
         /// </summary>
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.DataSafe
         private GetMaskingPolicyMaskingObjectsResult(
             ImmutableArray<Outputs.GetMaskingPolicyMaskingObjectsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult> maskingObjectCollections,
 

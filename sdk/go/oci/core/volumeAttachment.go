@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -68,49 +67,49 @@ type VolumeAttachment struct {
 	// The type of volume. The only supported values are "iscsi" and "paravirtualized".
 	AttachmentType pulumi.StringOutput `pulumi:"attachmentType"`
 	// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
-	ChapSecret pulumi.StringOutput `pulumi:"chapSecret"`
+	ChapSecret pulumi.StringPtrOutput `pulumi:"chapSecret"`
 	// The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
-	ChapUsername pulumi.StringOutput `pulumi:"chapUsername"`
+	ChapUsername pulumi.StringPtrOutput `pulumi:"chapUsername"`
 	// The OCID of the compartment.
 	//
 	// Deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-	Device pulumi.StringOutput `pulumi:"device"`
+	Device pulumi.StringPtrOutput `pulumi:"device"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-	EncryptionInTransitType pulumi.StringOutput `pulumi:"encryptionInTransitType"`
+	EncryptionInTransitType pulumi.StringPtrOutput `pulumi:"encryptionInTransitType"`
 	// The OCID of the instance.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The volume's iSCSI IP address.  Example: `169.254.2.2`
-	Ipv4 pulumi.StringOutput `pulumi:"ipv4"`
+	Ipv4 pulumi.StringPtrOutput `pulumi:"ipv4"`
 	// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-	Iqn pulumi.StringOutput `pulumi:"iqn"`
+	Iqn pulumi.StringPtrOutput `pulumi:"iqn"`
 	// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-	IsAgentAutoIscsiLoginEnabled pulumi.BoolOutput `pulumi:"isAgentAutoIscsiLoginEnabled"`
+	IsAgentAutoIscsiLoginEnabled pulumi.BoolPtrOutput `pulumi:"isAgentAutoIscsiLoginEnabled"`
 	// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-	IsMultipath pulumi.BoolOutput `pulumi:"isMultipath"`
+	IsMultipath pulumi.BoolPtrOutput `pulumi:"isMultipath"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-	IsPvEncryptionInTransitEnabled pulumi.BoolOutput `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsPvEncryptionInTransitEnabled pulumi.BoolPtrOutput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Whether the attachment was created in read-only mode.
-	IsReadOnly pulumi.BoolOutput `pulumi:"isReadOnly"`
+	IsReadOnly pulumi.BoolPtrOutput `pulumi:"isReadOnly"`
 	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-	IsShareable pulumi.BoolOutput `pulumi:"isShareable"`
+	IsShareable pulumi.BoolPtrOutput `pulumi:"isShareable"`
 	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-	IscsiLoginState pulumi.StringOutput `pulumi:"iscsiLoginState"`
+	IscsiLoginState pulumi.StringPtrOutput `pulumi:"iscsiLoginState"`
 	// A list of secondary multipath devices
 	MultipathDevices VolumeAttachmentMultipathDeviceArrayOutput `pulumi:"multipathDevices"`
 	// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// The current state of the volume attachment.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
-	UseChap pulumi.BoolOutput `pulumi:"useChap"`
+	UseChap pulumi.BoolPtrOutput `pulumi:"useChap"`
 	// The OCID of the volume.
 	//
 	// ** IMPORTANT **
@@ -356,12 +355,6 @@ func (i *VolumeAttachment) ToVolumeAttachmentOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeAttachmentOutput)
 }
 
-func (i *VolumeAttachment) ToOutput(ctx context.Context) pulumix.Output[*VolumeAttachment] {
-	return pulumix.Output[*VolumeAttachment]{
-		OutputState: i.ToVolumeAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VolumeAttachmentArrayInput is an input type that accepts VolumeAttachmentArray and VolumeAttachmentArrayOutput values.
 // You can construct a concrete instance of `VolumeAttachmentArrayInput` via:
 //
@@ -385,12 +378,6 @@ func (i VolumeAttachmentArray) ToVolumeAttachmentArrayOutput() VolumeAttachmentA
 
 func (i VolumeAttachmentArray) ToVolumeAttachmentArrayOutputWithContext(ctx context.Context) VolumeAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeAttachmentArrayOutput)
-}
-
-func (i VolumeAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeAttachment] {
-	return pulumix.Output[[]*VolumeAttachment]{
-		OutputState: i.ToVolumeAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VolumeAttachmentMapInput is an input type that accepts VolumeAttachmentMap and VolumeAttachmentMapOutput values.
@@ -418,12 +405,6 @@ func (i VolumeAttachmentMap) ToVolumeAttachmentMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeAttachmentMapOutput)
 }
 
-func (i VolumeAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeAttachment] {
-	return pulumix.Output[map[string]*VolumeAttachment]{
-		OutputState: i.ToVolumeAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VolumeAttachmentOutput struct{ *pulumi.OutputState }
 
 func (VolumeAttachmentOutput) ElementType() reflect.Type {
@@ -438,52 +419,46 @@ func (o VolumeAttachmentOutput) ToVolumeAttachmentOutputWithContext(ctx context.
 	return o
 }
 
-func (o VolumeAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeAttachment] {
-	return pulumix.Output[*VolumeAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of volume. The only supported values are "iscsi" and "paravirtualized".
 func (o VolumeAttachmentOutput) AttachmentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.AttachmentType }).(pulumi.StringOutput)
 }
 
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-func (o VolumeAttachmentOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
-func (o VolumeAttachmentOutput) ChapSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.ChapSecret }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) ChapSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.ChapSecret }).(pulumi.StringPtrOutput)
 }
 
 // The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
-func (o VolumeAttachmentOutput) ChapUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.ChapUsername }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) ChapUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.ChapUsername }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
 //
 // Deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o VolumeAttachmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-func (o VolumeAttachmentOutput) Device() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.Device }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) Device() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.Device }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VolumeAttachmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-func (o VolumeAttachmentOutput) EncryptionInTransitType() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.EncryptionInTransitType }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) EncryptionInTransitType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.EncryptionInTransitType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance.
@@ -492,43 +467,43 @@ func (o VolumeAttachmentOutput) InstanceId() pulumi.StringOutput {
 }
 
 // The volume's iSCSI IP address.  Example: `169.254.2.2`
-func (o VolumeAttachmentOutput) Ipv4() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.Ipv4 }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) Ipv4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.Ipv4 }).(pulumi.StringPtrOutput)
 }
 
 // The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-func (o VolumeAttachmentOutput) Iqn() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.Iqn }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) Iqn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.Iqn }).(pulumi.StringPtrOutput)
 }
 
 // Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-func (o VolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolOutput)
+func (o VolumeAttachmentOutput) IsAgentAutoIscsiLoginEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolPtrOutput { return v.IsAgentAutoIscsiLoginEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-func (o VolumeAttachmentOutput) IsMultipath() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsMultipath }).(pulumi.BoolOutput)
+func (o VolumeAttachmentOutput) IsMultipath() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolPtrOutput { return v.IsMultipath }).(pulumi.BoolPtrOutput)
 }
 
 // Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-func (o VolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+func (o VolumeAttachmentOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolPtrOutput { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the attachment was created in read-only mode.
-func (o VolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsReadOnly }).(pulumi.BoolOutput)
+func (o VolumeAttachmentOutput) IsReadOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolPtrOutput { return v.IsReadOnly }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-func (o VolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsShareable }).(pulumi.BoolOutput)
+func (o VolumeAttachmentOutput) IsShareable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolPtrOutput { return v.IsShareable }).(pulumi.BoolPtrOutput)
 }
 
 // The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-func (o VolumeAttachmentOutput) IscsiLoginState() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.IscsiLoginState }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) IscsiLoginState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.IscsiLoginState }).(pulumi.StringPtrOutput)
 }
 
 // A list of secondary multipath devices
@@ -537,23 +512,23 @@ func (o VolumeAttachmentOutput) MultipathDevices() VolumeAttachmentMultipathDevi
 }
 
 // The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-func (o VolumeAttachmentOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o VolumeAttachmentOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the volume attachment.
-func (o VolumeAttachmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o VolumeAttachmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VolumeAttachmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Whether to use CHAP authentication for the volume attachment. Defaults to false.
-func (o VolumeAttachmentOutput) UseChap() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.UseChap }).(pulumi.BoolOutput)
+func (o VolumeAttachmentOutput) UseChap() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolPtrOutput { return v.UseChap }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the volume.
@@ -578,12 +553,6 @@ func (o VolumeAttachmentArrayOutput) ToVolumeAttachmentArrayOutputWithContext(ct
 	return o
 }
 
-func (o VolumeAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeAttachment] {
-	return pulumix.Output[[]*VolumeAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VolumeAttachmentArrayOutput) Index(i pulumi.IntInput) VolumeAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VolumeAttachment {
 		return vs[0].([]*VolumeAttachment)[vs[1].(int)]
@@ -602,12 +571,6 @@ func (o VolumeAttachmentMapOutput) ToVolumeAttachmentMapOutput() VolumeAttachmen
 
 func (o VolumeAttachmentMapOutput) ToVolumeAttachmentMapOutputWithContext(ctx context.Context) VolumeAttachmentMapOutput {
 	return o
-}
-
-func (o VolumeAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeAttachment] {
-	return pulumix.Output[map[string]*VolumeAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeAttachmentMapOutput) MapIndex(k pulumi.StringInput) VolumeAttachmentOutput {

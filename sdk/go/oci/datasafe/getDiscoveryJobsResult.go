@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
@@ -65,11 +64,11 @@ type LookupDiscoveryJobsResultResult struct {
 	// Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
 	AppDefinedChildColumnKeys []string `pulumi:"appDefinedChildColumnKeys"`
 	// The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
-	AppName string `pulumi:"appName"`
+	AppName *string `pulumi:"appName"`
 	// The name of the sensitive column.
-	ColumnName string `pulumi:"columnName"`
+	ColumnName *string `pulumi:"columnName"`
 	// The data type of the sensitive column.
-	DataType string `pulumi:"dataType"`
+	DataType *string `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
 	DbDefinedChildColumnKeys []string `pulumi:"dbDefinedChildColumnKeys"`
 	// The OCID of the discovery job.
@@ -77,37 +76,37 @@ type LookupDiscoveryJobsResultResult struct {
 	// The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
 	//
 	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
-	DiscoveryType string `pulumi:"discoveryType"`
+	DiscoveryType *string `pulumi:"discoveryType"`
 	// The estimated number of data values the column has in the associated database.
-	EstimatedDataValueCount string `pulumi:"estimatedDataValueCount"`
-	Id                      string `pulumi:"id"`
+	EstimatedDataValueCount *string `pulumi:"estimatedDataValueCount"`
+	Id                      *string `pulumi:"id"`
 	// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
-	IsResultApplied bool `pulumi:"isResultApplied"`
+	IsResultApplied *bool `pulumi:"isResultApplied"`
 	// The unique key that identifies the discovery result.
 	//
 	// Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
 	ModifiedAttributes []GetDiscoveryJobsResultModifiedAttribute `pulumi:"modifiedAttributes"`
 	// The database object that contains the sensitive column.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// The type of the database object that contains the sensitive column.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 	// Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
 	ParentColumnKeys []string `pulumi:"parentColumnKeys"`
 	// Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
-	PlannedAction string `pulumi:"plannedAction"`
+	PlannedAction *string `pulumi:"plannedAction"`
 	// The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-	RelationType string `pulumi:"relationType"`
-	ResultKey    string `pulumi:"resultKey"`
+	RelationType *string `pulumi:"relationType"`
+	ResultKey    string  `pulumi:"resultKey"`
 	// Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
 	SampleDataValues []string `pulumi:"sampleDataValues"`
 	// The database schema that contains the sensitive column.
-	SchemaName string `pulumi:"schemaName"`
+	SchemaName *string `pulumi:"schemaName"`
 	// The unique key that identifies the sensitive column represented by the discovery result.
-	SensitiveColumnkey string `pulumi:"sensitiveColumnkey"`
+	SensitiveColumnkey *string `pulumi:"sensitiveColumnkey"`
 	// The OCID of the sensitive type associated with the sensitive column.
-	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 }
 
 func LookupDiscoveryJobsResultOutput(ctx *pulumi.Context, args LookupDiscoveryJobsResultOutputArgs, opts ...pulumi.InvokeOption) LookupDiscoveryJobsResultResultOutput {
@@ -150,30 +149,24 @@ func (o LookupDiscoveryJobsResultResultOutput) ToLookupDiscoveryJobsResultResult
 	return o
 }
 
-func (o LookupDiscoveryJobsResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDiscoveryJobsResultResult] {
-	return pulumix.Output[LookupDiscoveryJobsResultResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
 func (o LookupDiscoveryJobsResultResultOutput) AppDefinedChildColumnKeys() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) []string { return v.AppDefinedChildColumnKeys }).(pulumi.StringArrayOutput)
 }
 
 // The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
-func (o LookupDiscoveryJobsResultResultOutput) AppName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.AppName }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) AppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.AppName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the sensitive column.
-func (o LookupDiscoveryJobsResultResultOutput) ColumnName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.ColumnName }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) ColumnName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.ColumnName }).(pulumi.StringPtrOutput)
 }
 
 // The data type of the sensitive column.
-func (o LookupDiscoveryJobsResultResultOutput) DataType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.DataType }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
 // Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -189,29 +182,29 @@ func (o LookupDiscoveryJobsResultResultOutput) DiscoveryJobId() pulumi.StringOut
 // The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
 //
 // Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
-func (o LookupDiscoveryJobsResultResultOutput) DiscoveryType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.DiscoveryType }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) DiscoveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.DiscoveryType }).(pulumi.StringPtrOutput)
 }
 
 // The estimated number of data values the column has in the associated database.
-func (o LookupDiscoveryJobsResultResultOutput) EstimatedDataValueCount() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.EstimatedDataValueCount }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) EstimatedDataValueCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.EstimatedDataValueCount }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDiscoveryJobsResultResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
-func (o LookupDiscoveryJobsResultResultOutput) IsResultApplied() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) bool { return v.IsResultApplied }).(pulumi.BoolOutput)
+func (o LookupDiscoveryJobsResultResultOutput) IsResultApplied() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *bool { return v.IsResultApplied }).(pulumi.BoolPtrOutput)
 }
 
 // The unique key that identifies the discovery result.
 //
 // Deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
-func (o LookupDiscoveryJobsResultResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
@@ -222,13 +215,13 @@ func (o LookupDiscoveryJobsResultResultOutput) ModifiedAttributes() GetDiscovery
 }
 
 // The database object that contains the sensitive column.
-func (o LookupDiscoveryJobsResultResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.Object }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // The type of the database object that contains the sensitive column.
-func (o LookupDiscoveryJobsResultResultOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 // Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
@@ -237,13 +230,13 @@ func (o LookupDiscoveryJobsResultResultOutput) ParentColumnKeys() pulumi.StringA
 }
 
 // Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
-func (o LookupDiscoveryJobsResultResultOutput) PlannedAction() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.PlannedAction }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) PlannedAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.PlannedAction }).(pulumi.StringPtrOutput)
 }
 
 // The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-func (o LookupDiscoveryJobsResultResultOutput) RelationType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.RelationType }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) RelationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.RelationType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDiscoveryJobsResultResultOutput) ResultKey() pulumi.StringOutput {
@@ -256,18 +249,18 @@ func (o LookupDiscoveryJobsResultResultOutput) SampleDataValues() pulumi.StringA
 }
 
 // The database schema that contains the sensitive column.
-func (o LookupDiscoveryJobsResultResultOutput) SchemaName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.SchemaName }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) SchemaName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
 
 // The unique key that identifies the sensitive column represented by the discovery result.
-func (o LookupDiscoveryJobsResultResultOutput) SensitiveColumnkey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.SensitiveColumnkey }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) SensitiveColumnkey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.SensitiveColumnkey }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the sensitive type associated with the sensitive column.
-func (o LookupDiscoveryJobsResultResultOutput) SensitiveTypeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.SensitiveTypeId }).(pulumi.StringOutput)
+func (o LookupDiscoveryJobsResultResultOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

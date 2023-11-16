@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmTraces.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTraceSpanLogSpanLog {
@@ -13,27 +15,27 @@ public final class GetTraceSpanLogSpanLog {
      * @return Key that specifies the log name.
      * 
      */
-    private String logKey;
+    private @Nullable String logKey;
     /**
      * @return Value associated with the log key.
      * 
      */
-    private String logValue;
+    private @Nullable String logValue;
 
     private GetTraceSpanLogSpanLog() {}
     /**
      * @return Key that specifies the log name.
      * 
      */
-    public String logKey() {
-        return this.logKey;
+    public Optional<String> logKey() {
+        return Optional.ofNullable(this.logKey);
     }
     /**
      * @return Value associated with the log key.
      * 
      */
-    public String logValue() {
-        return this.logValue;
+    public Optional<String> logValue() {
+        return Optional.ofNullable(this.logValue);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetTraceSpanLogSpanLog {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String logKey;
-        private String logValue;
+        private @Nullable String logKey;
+        private @Nullable String logValue;
         public Builder() {}
         public Builder(GetTraceSpanLogSpanLog defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetTraceSpanLogSpanLog {
         }
 
         @CustomType.Setter
-        public Builder logKey(String logKey) {
-            this.logKey = Objects.requireNonNull(logKey);
+        public Builder logKey(@Nullable String logKey) {
+            this.logKey = logKey;
             return this;
         }
         @CustomType.Setter
-        public Builder logValue(String logValue) {
-            this.logValue = Objects.requireNonNull(logValue);
+        public Builder logValue(@Nullable String logValue) {
+            this.logValue = logValue;
             return this;
         }
         public GetTraceSpanLogSpanLog build() {

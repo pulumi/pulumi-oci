@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolsNodePoolNode {
@@ -17,131 +19,131 @@ public final class GetNodePoolsNodePoolNode {
      * @return The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
-    private List<GetNodePoolsNodePoolNodeError> errors;
-    private String faultDomain;
+    private @Nullable Map<String,Object> definedTags;
+    private @Nullable List<GetNodePoolsNodePoolNodeError> errors;
+    private @Nullable String faultDomain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the node pool.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
-    private String kubernetesVersion;
+    private @Nullable String kubernetesVersion;
     /**
      * @return Details about the state of the nodepool.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The name to filter on.
      * 
      */
-    private String name;
-    private String nodePoolId;
-    private String privateIp;
-    private String publicIp;
+    private @Nullable String name;
+    private @Nullable String nodePoolId;
+    private @Nullable String privateIp;
+    private @Nullable String publicIp;
     /**
      * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the subnet in which to place nodes.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetNodePoolsNodePoolNode() {}
     /**
      * @return The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     public List<GetNodePoolsNodePoolNodeError> errors() {
-        return this.errors;
+        return this.errors == null ? List.of() : this.errors;
     }
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the node pool.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
-    public String kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Optional<String> kubernetesVersion() {
+        return Optional.ofNullable(this.kubernetesVersion);
     }
     /**
      * @return Details about the state of the nodepool.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The name to filter on.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
-    public String nodePoolId() {
-        return this.nodePoolId;
+    public Optional<String> nodePoolId() {
+        return Optional.ofNullable(this.nodePoolId);
     }
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
-    public String publicIp() {
-        return this.publicIp;
+    public Optional<String> publicIp() {
+        return Optional.ofNullable(this.publicIp);
     }
     /**
      * @return A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the subnet in which to place nodes.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -153,20 +155,20 @@ public final class GetNodePoolsNodePoolNode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private Map<String,Object> definedTags;
-        private List<GetNodePoolsNodePoolNodeError> errors;
-        private String faultDomain;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String kubernetesVersion;
-        private String lifecycleDetails;
-        private String name;
-        private String nodePoolId;
-        private String privateIp;
-        private String publicIp;
-        private String state;
-        private String subnetId;
+        private @Nullable String availabilityDomain;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable List<GetNodePoolsNodePoolNodeError> errors;
+        private @Nullable String faultDomain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String kubernetesVersion;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String nodePoolId;
+        private @Nullable String privateIp;
+        private @Nullable String publicIp;
+        private @Nullable String state;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -187,76 +189,76 @@ public final class GetNodePoolsNodePoolNode {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder errors(List<GetNodePoolsNodePoolNodeError> errors) {
-            this.errors = Objects.requireNonNull(errors);
+        public Builder errors(@Nullable List<GetNodePoolsNodePoolNodeError> errors) {
+            this.errors = errors;
             return this;
         }
         public Builder errors(GetNodePoolsNodePoolNodeError... errors) {
             return errors(List.of(errors));
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder kubernetesVersion(String kubernetesVersion) {
-            this.kubernetesVersion = Objects.requireNonNull(kubernetesVersion);
+        public Builder kubernetesVersion(@Nullable String kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder nodePoolId(String nodePoolId) {
-            this.nodePoolId = Objects.requireNonNull(nodePoolId);
+        public Builder nodePoolId(@Nullable String nodePoolId) {
+            this.nodePoolId = nodePoolId;
             return this;
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder publicIp(String publicIp) {
-            this.publicIp = Objects.requireNonNull(publicIp);
+        public Builder publicIp(@Nullable String publicIp) {
+            this.publicIp = publicIp;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetNodePoolsNodePoolNode build() {

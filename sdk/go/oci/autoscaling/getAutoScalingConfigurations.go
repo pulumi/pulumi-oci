@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
@@ -71,7 +70,7 @@ type GetAutoScalingConfigurationsResult struct {
 	DisplayName *string                              `pulumi:"displayName"`
 	Filters     []GetAutoScalingConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutoScalingConfigurationsOutput(ctx *pulumi.Context, args GetAutoScalingConfigurationsOutputArgs, opts ...pulumi.InvokeOption) GetAutoScalingConfigurationsResultOutput {
@@ -115,12 +114,6 @@ func (o GetAutoScalingConfigurationsResultOutput) ToGetAutoScalingConfigurations
 	return o
 }
 
-func (o GetAutoScalingConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutoScalingConfigurationsResult] {
-	return pulumix.Output[GetAutoScalingConfigurationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of auto_scaling_configurations.
 func (o GetAutoScalingConfigurationsResultOutput) AutoScalingConfigurations() GetAutoScalingConfigurationsAutoScalingConfigurationArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationsResult) []GetAutoScalingConfigurationsAutoScalingConfiguration {
@@ -143,8 +136,8 @@ func (o GetAutoScalingConfigurationsResultOutput) Filters() GetAutoScalingConfig
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutoScalingConfigurationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutoScalingConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutoScalingConfigurationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

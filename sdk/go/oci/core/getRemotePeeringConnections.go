@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
@@ -70,7 +69,7 @@ type GetRemotePeeringConnectionsResult struct {
 	DrgId   *string                             `pulumi:"drgId"`
 	Filters []GetRemotePeeringConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of remote_peering_connections.
 	RemotePeeringConnections []GetRemotePeeringConnectionsRemotePeeringConnection `pulumi:"remotePeeringConnections"`
 }
@@ -116,12 +115,6 @@ func (o GetRemotePeeringConnectionsResultOutput) ToGetRemotePeeringConnectionsRe
 	return o
 }
 
-func (o GetRemotePeeringConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemotePeeringConnectionsResult] {
-	return pulumix.Output[GetRemotePeeringConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the RPC.
 func (o GetRemotePeeringConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRemotePeeringConnectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetRemotePeeringConnectionsResultOutput) Filters() GetRemotePeeringConne
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRemotePeeringConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRemotePeeringConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRemotePeeringConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRemotePeeringConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of remote_peering_connections.

@@ -61,12 +61,12 @@ export interface GetDbCredentialsResult {
     /**
      * The list of db_credentials.
      */
-    readonly dbCredentials: outputs.Identity.GetDbCredentialsDbCredential[];
+    readonly dbCredentials?: outputs.Identity.GetDbCredentialsDbCredential[];
     readonly filters?: outputs.Identity.GetDbCredentialsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly name?: string;
     /**
      * The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.

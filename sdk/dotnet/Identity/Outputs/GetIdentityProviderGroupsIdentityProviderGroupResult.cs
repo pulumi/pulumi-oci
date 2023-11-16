@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Display name of the group
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Identifier of the group in the identity provider
         /// </summary>
-        public readonly string ExternalIdentifier;
+        public readonly string? ExternalIdentifier;
         /// <summary>
         /// The OCID of the `IdentityProviderGroup`.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the identity provider.
         /// </summary>
-        public readonly string IdentityProviderId;
+        public readonly string? IdentityProviderId;
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Date and time the `IdentityProviderGroup` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Date and time the `IdentityProviderGroup` was last modified, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
 
         [OutputConstructor]
         private GetIdentityProviderGroupsIdentityProviderGroupResult(
-            string displayName,
+            string? displayName,
 
-            string externalIdentifier,
+            string? externalIdentifier,
 
-            string id,
+            string? id,
 
-            string identityProviderId,
+            string? identityProviderId,
 
-            string name,
+            string? name,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeModified)
+            string? timeModified)
         {
             DisplayName = displayName;
             ExternalIdentifier = externalIdentifier;

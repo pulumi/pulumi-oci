@@ -39,10 +39,7 @@ class GetBackendSetsResult:
 
     @property
     @pulumi.getter
-    def backendsets(self) -> Sequence['outputs.GetBackendSetsBackendsetResult']:
-        """
-        The list of backendsets.
-        """
+    def backendsets(self) -> Optional[Sequence['outputs.GetBackendSetsBackendsetResult']]:
         return pulumi.get(self, "backendsets")
 
     @property
@@ -52,7 +49,7 @@ class GetBackendSetsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,25 +77,7 @@ def get_backend_sets(filters: Optional[Sequence[pulumi.InputType['GetBackendSets
                      load_balancer_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendSetsResult:
     """
-    This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all backend sets associated with a given load balancer.
-
-    ## Supported Aliases
-
-    * `oci_load_balancer_backendsets`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_sets = oci.LoadBalancer.get_backend_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -118,24 +97,6 @@ def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
                             load_balancer_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendSetsResult]:
     """
-    This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all backend sets associated with a given load balancer.
-
-    ## Supported Aliases
-
-    * `oci_load_balancer_backendsets`
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backend_sets = oci.LoadBalancer.get_backend_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
+    Use this data source to access information about an existing resource.
     """
     ...

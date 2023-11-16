@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
@@ -80,7 +79,7 @@ type GetManagementAgentInstallKeysResult struct {
 	DisplayName *string                               `pulumi:"displayName"`
 	Filters     []GetManagementAgentInstallKeysFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of management_agent_install_keys.
 	ManagementAgentInstallKeys []GetManagementAgentInstallKeysManagementAgentInstallKey `pulumi:"managementAgentInstallKeys"`
 	// Status of Key
@@ -134,12 +133,6 @@ func (o GetManagementAgentInstallKeysResultOutput) ToGetManagementAgentInstallKe
 	return o
 }
 
-func (o GetManagementAgentInstallKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysResult] {
-	return pulumix.Output[GetManagementAgentInstallKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentInstallKeysResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementAgentInstallKeysResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -163,8 +156,8 @@ func (o GetManagementAgentInstallKeysResultOutput) Filters() GetManagementAgentI
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentInstallKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of management_agent_install_keys.

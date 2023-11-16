@@ -68,10 +68,7 @@ class GetFusionEnvironmentRefreshActivityResult:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A friendly name for the refresh activity. Can be changed later.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -81,18 +78,12 @@ class GetFusionEnvironmentRefreshActivityResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -102,74 +93,47 @@ class GetFusionEnvironmentRefreshActivityResult:
 
     @property
     @pulumi.getter(name="refreshIssueDetailsLists")
-    def refresh_issue_details_lists(self) -> Sequence['outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult']:
-        """
-        Details of refresh investigation information, each item represents a different issue.
-        """
+    def refresh_issue_details_lists(self) -> Optional[Sequence['outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult']]:
         return pulumi.get(self, "refresh_issue_details_lists")
 
     @property
     @pulumi.getter(name="serviceAvailability")
-    def service_availability(self) -> str:
-        """
-        Service availability / impact during refresh activity execution up down
-        """
+    def service_availability(self) -> Optional[str]:
         return pulumi.get(self, "service_availability")
 
     @property
     @pulumi.getter(name="sourceFusionEnvironmentId")
-    def source_fusion_environment_id(self) -> str:
-        """
-        The OCID of the Fusion environment that is the source environment for the refresh.
-        """
+    def source_fusion_environment_id(self) -> Optional[str]:
         return pulumi.get(self, "source_fusion_environment_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the refreshActivity.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        The time the refresh activity record was created. An RFC3339 formatted datetime string.
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeExpectedFinish")
-    def time_expected_finish(self) -> str:
-        """
-        The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-        """
+    def time_expected_finish(self) -> Optional[str]:
         return pulumi.get(self, "time_expected_finish")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeOfRestorationPoint")
-    def time_of_restoration_point(self) -> str:
-        """
-        The date and time of the most recent source environment backup used for the environment refresh.
-        """
+    def time_of_restoration_point(self) -> Optional[str]:
         return pulumi.get(self, "time_of_restoration_point")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -199,23 +163,7 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
                                             refresh_activity_id: Optional[str] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentRefreshActivityResult:
     """
-    This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a RefreshActivity by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        refresh_activity_id=oci_fusion_apps_refresh_activity["test_refresh_activity"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str refresh_activity_id: The unique identifier (OCID) of the Refresh activity.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -245,22 +193,6 @@ def get_fusion_environment_refresh_activity_output(fusion_environment_id: Option
                                                    refresh_activity_id: Optional[pulumi.Input[str]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivityResult]:
     """
-    This data source provides details about a specific Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Gets a RefreshActivity by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_refresh_activity = oci.Functions.get_fusion_environment_refresh_activity(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        refresh_activity_id=oci_fusion_apps_refresh_activity["test_refresh_activity"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str refresh_activity_id: The unique identifier (OCID) of the Refresh activity.
+    Use this data source to access information about an existing resource.
     """
     ...

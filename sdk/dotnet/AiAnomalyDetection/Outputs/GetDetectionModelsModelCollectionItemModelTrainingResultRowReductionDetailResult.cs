@@ -16,25 +16,25 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// A boolean value to indicate if row reduction is applied
         /// </summary>
-        public readonly bool IsReductionEnabled;
+        public readonly bool? IsReductionEnabled;
         /// <summary>
         /// Method for row reduction:
         /// * DELETE_ROW - delete rows with equal intervals
         /// * AVERAGE_ROW - average multiple rows to one row
         /// </summary>
-        public readonly string ReductionMethod;
+        public readonly string? ReductionMethod;
         /// <summary>
         /// A percentage to reduce data size down to on top of original data
         /// </summary>
-        public readonly double ReductionPercentage;
+        public readonly double? ReductionPercentage;
 
         [OutputConstructor]
         private GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult(
-            bool isReductionEnabled,
+            bool? isReductionEnabled,
 
-            string reductionMethod,
+            string? reductionMethod,
 
-            double reductionPercentage)
+            double? reductionPercentage)
         {
             IsReductionEnabled = isReductionEnabled;
             ReductionMethod = reductionMethod;

@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ListingId;
 
         [OutputConstructor]
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetListingResourceVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string listingId)
         {

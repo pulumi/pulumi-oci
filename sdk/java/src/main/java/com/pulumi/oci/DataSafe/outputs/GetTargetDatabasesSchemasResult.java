@@ -20,7 +20,7 @@ public final class GetTargetDatabasesSchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if the schema is oracle supplied.
      * 
@@ -36,7 +36,7 @@ public final class GetTargetDatabasesSchemasResult {
      * @return The list of schemas.
      * 
      */
-    private List<GetTargetDatabasesSchemasSchema> schemas;
+    private @Nullable List<GetTargetDatabasesSchemasSchema> schemas;
     private String targetDatabaseId;
 
     private GetTargetDatabasesSchemasResult() {}
@@ -47,8 +47,8 @@ public final class GetTargetDatabasesSchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if the schema is oracle supplied.
@@ -72,7 +72,7 @@ public final class GetTargetDatabasesSchemasResult {
      * 
      */
     public List<GetTargetDatabasesSchemasSchema> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public String targetDatabaseId() {
         return this.targetDatabaseId;
@@ -88,11 +88,11 @@ public final class GetTargetDatabasesSchemasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetTargetDatabasesSchemasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isOracleMaintained;
         private @Nullable String schemaNameContains;
         private @Nullable List<String> schemaNames;
-        private List<GetTargetDatabasesSchemasSchema> schemas;
+        private @Nullable List<GetTargetDatabasesSchemasSchema> schemas;
         private String targetDatabaseId;
         public Builder() {}
         public Builder(GetTargetDatabasesSchemasResult defaults) {
@@ -115,8 +115,8 @@ public final class GetTargetDatabasesSchemasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -138,8 +138,8 @@ public final class GetTargetDatabasesSchemasResult {
             return schemaNames(List.of(schemaNames));
         }
         @CustomType.Setter
-        public Builder schemas(List<GetTargetDatabasesSchemasSchema> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<GetTargetDatabasesSchemasSchema> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(GetTargetDatabasesSchemasSchema... schemas) {

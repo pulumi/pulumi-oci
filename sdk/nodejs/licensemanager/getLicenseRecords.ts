@@ -50,11 +50,11 @@ export interface GetLicenseRecordsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of license_record_collection.
      */
-    readonly licenseRecordCollections: outputs.LicenseManager.GetLicenseRecordsLicenseRecordCollection[];
+    readonly licenseRecordCollections?: outputs.LicenseManager.GetLicenseRecordsLicenseRecordCollection[];
     /**
      * The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
      */

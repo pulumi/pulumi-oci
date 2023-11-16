@@ -30,7 +30,7 @@ public final class GetFleetsResult {
      * @return The list of fleet_collection.
      * 
      */
-    private List<GetFleetsFleetCollection> fleetCollections;
+    private @Nullable List<GetFleetsFleetCollection> fleetCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
@@ -68,7 +68,7 @@ public final class GetFleetsResult {
      * 
      */
     public List<GetFleetsFleetCollection> fleetCollections() {
-        return this.fleetCollections;
+        return this.fleetCollections == null ? List.of() : this.fleetCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -98,7 +98,7 @@ public final class GetFleetsResult {
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<GetFleetsFilter> filters;
-        private List<GetFleetsFleetCollection> fleetCollections;
+        private @Nullable List<GetFleetsFleetCollection> fleetCollections;
         private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
@@ -137,8 +137,8 @@ public final class GetFleetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder fleetCollections(List<GetFleetsFleetCollection> fleetCollections) {
-            this.fleetCollections = Objects.requireNonNull(fleetCollections);
+        public Builder fleetCollections(@Nullable List<GetFleetsFleetCollection> fleetCollections) {
+            this.fleetCollections = fleetCollections;
             return this;
         }
         public Builder fleetCollections(GetFleetsFleetCollection... fleetCollections) {

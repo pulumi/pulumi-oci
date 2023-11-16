@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tag key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The ID of the App.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsGroupsGroupTagResult(
-            string key,
+            string? key,
 
-            string value)
+            string? value)
         {
             Key = key;
             Value = value;

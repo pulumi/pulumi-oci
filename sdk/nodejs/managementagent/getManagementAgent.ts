@@ -47,106 +47,106 @@ export interface GetManagementAgentResult {
     /**
      * The current availability status of managementAgent
      */
-    readonly availabilityStatus: string;
+    readonly availabilityStatus?: string;
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
-    readonly deployPluginsIds: string[];
+    readonly definedTags?: {[key: string]: any};
+    readonly deployPluginsIds?: string[];
     /**
      * Management Agent Name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Management Agent host machine name
      */
-    readonly host: string;
+    readonly host?: string;
     /**
      * Host resource ocid
      */
-    readonly hostId: string;
+    readonly hostId?: string;
     /**
      * agent identifier
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * agent install key identifier
      */
-    readonly installKeyId: string;
+    readonly installKeyId?: string;
     /**
      * Path where Management Agent is installed
      */
-    readonly installPath: string;
+    readonly installPath?: string;
     /**
      * The install type, either AGENT or GATEWAY
      */
-    readonly installType: string;
+    readonly installType?: string;
     /**
      * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      */
-    readonly isAgentAutoUpgradable: boolean;
+    readonly isAgentAutoUpgradable?: boolean;
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
-    readonly isCustomerDeployed: boolean;
+    readonly isCustomerDeployed?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
-    readonly managedAgentId: string;
+    readonly lifecycleDetails?: string;
+    readonly managedAgentId?: string;
     readonly managementAgentId: string;
     /**
      * Additional properties for this Management Agent
      */
-    readonly managementAgentProperties: outputs.ManagementAgent.GetManagementAgentManagementAgentProperty[];
+    readonly managementAgentProperties?: outputs.ManagementAgent.GetManagementAgentManagementAgentProperty[];
     /**
      * Platform Name
      */
-    readonly platformName: string;
+    readonly platformName?: string;
     /**
      * Platform Type
      */
-    readonly platformType: string;
+    readonly platformType?: string;
     /**
      * Platform Version
      */
-    readonly platformVersion: string;
+    readonly platformVersion?: string;
     /**
      * list of managementAgentPlugins associated with the agent
      */
-    readonly pluginLists: outputs.ManagementAgent.GetManagementAgentPluginList[];
+    readonly pluginLists?: outputs.ManagementAgent.GetManagementAgentPluginList[];
     /**
      * Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
      */
-    readonly resourceArtifactVersion: string;
+    readonly resourceArtifactVersion?: string;
     /**
      * The current state of managementAgent
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
      */
-    readonly timeLastHeartbeat: string;
+    readonly timeLastHeartbeat?: string;
     /**
      * The time the Management Agent was last updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Management Agent Version
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Management Agent resource in Oracle Cloud Infrastructure Management Agent service.

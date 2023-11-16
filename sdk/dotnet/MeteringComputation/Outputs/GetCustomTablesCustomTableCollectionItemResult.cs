@@ -16,11 +16,11 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The compartment ID in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The custom table OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The custom table for Cost Analysis UI rendering.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The saved report ID in which to list resources.
         /// </summary>
-        public readonly string SavedReportId;
+        public readonly string? SavedReportId;
 
         [OutputConstructor]
         private GetCustomTablesCustomTableCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableResult> savedCustomTables,
 
-            string savedReportId)
+            string? savedReportId)
         {
             CompartmentId = compartmentId;
             Id = id;

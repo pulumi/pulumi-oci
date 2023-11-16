@@ -75,7 +75,7 @@ export interface GetUsagelimitsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The limit type of the usage limit
      */
@@ -86,7 +86,7 @@ export interface GetUsagelimitsResult {
     /**
      * The list of usage_limit_collection.
      */
-    readonly usageLimitCollections: outputs.UsageProxy.GetUsagelimitsUsageLimitCollection[];
+    readonly usageLimitCollections?: outputs.UsageProxy.GetUsagelimitsUsageLimitCollection[];
 }
 /**
  * This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.

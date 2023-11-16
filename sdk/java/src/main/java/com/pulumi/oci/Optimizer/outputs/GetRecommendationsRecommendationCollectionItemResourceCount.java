@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationsRecommendationCollectionItemResourceCount {
@@ -14,27 +16,27 @@ public final class GetRecommendationsRecommendationCollectionItemResourceCount {
      * @return The count of resources.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetRecommendationsRecommendationCollectionItemResourceCount() {}
     /**
      * @return The count of resources.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetRecommendationsRecommendationCollectionItemResourceCount {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private String status;
+        private @Nullable Integer count;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetRecommendationsRecommendationCollectionItemResourceCount defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetRecommendationsRecommendationCollectionItemResourceCount {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetRecommendationsRecommendationCollectionItemResourceCount build() {

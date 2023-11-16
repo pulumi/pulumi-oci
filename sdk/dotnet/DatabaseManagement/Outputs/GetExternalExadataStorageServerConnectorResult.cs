@@ -16,89 +16,89 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// The unique string of the connection. For example, "https://&lt;storage-server-name&gt;/MS/RESTService/".
         /// </summary>
-        public readonly string ConnectionUri;
+        public readonly string? ConnectionUri;
         /// <summary>
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The internal ID of the Exadata resource.
         /// </summary>
-        public readonly string InternalId;
+        public readonly string? InternalId;
         /// <summary>
         /// The details of the lifecycle state of the Exadata resource.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The type of Exadata resource.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The current lifecycle state of the database resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The status of the Exadata resource.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
         /// </summary>
-        public readonly string StorageServerId;
+        public readonly string? StorageServerId;
         /// <summary>
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The timestamp of the last update of the Exadata resource.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The version of the Exadata resource.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetExternalExadataStorageServerConnectorResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string agentId,
+            string? agentId,
 
-            string connectionUri,
+            string? connectionUri,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string internalId,
+            string? internalId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string resourceType,
+            string? resourceType,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string storageServerId,
+            string? storageServerId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             AdditionalDetails = additionalDetails;
             AgentId = agentId;

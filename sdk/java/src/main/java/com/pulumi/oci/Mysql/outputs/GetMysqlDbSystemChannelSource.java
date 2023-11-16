@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemChannelSource {
@@ -17,37 +19,37 @@ public final class GetMysqlDbSystemChannelSource {
      * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
      * 
      */
-    private List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
+    private @Nullable List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
     /**
      * @return The network address of the DB System.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The specific source identifier.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
     /**
      * @return The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
      * 
      */
-    private List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
+    private @Nullable List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
     /**
      * @return The SSL mode of the Channel.
      * 
      */
-    private String sslMode;
+    private @Nullable String sslMode;
     /**
      * @return The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetMysqlDbSystemChannelSource() {}
     /**
@@ -55,49 +57,49 @@ public final class GetMysqlDbSystemChannelSource {
      * 
      */
     public List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings() {
-        return this.anonymousTransactionsHandlings;
+        return this.anonymousTransactionsHandlings == null ? List.of() : this.anonymousTransactionsHandlings;
     }
     /**
      * @return The network address of the DB System.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The port for primary endpoint of the DB System to listen on.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The specific source identifier.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
     /**
      * @return The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
      * 
      */
     public List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates() {
-        return this.sslCaCertificates;
+        return this.sslCaCertificates == null ? List.of() : this.sslCaCertificates;
     }
     /**
      * @return The SSL mode of the Channel.
      * 
      */
-    public String sslMode() {
-        return this.sslMode;
+    public Optional<String> sslMode() {
+        return Optional.ofNullable(this.sslMode);
     }
     /**
      * @return The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -109,13 +111,13 @@ public final class GetMysqlDbSystemChannelSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
-        private String hostname;
-        private Integer port;
-        private String sourceType;
-        private List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
-        private String sslMode;
-        private String username;
+        private @Nullable List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings;
+        private @Nullable String hostname;
+        private @Nullable Integer port;
+        private @Nullable String sourceType;
+        private @Nullable List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates;
+        private @Nullable String sslMode;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetMysqlDbSystemChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -129,44 +131,44 @@ public final class GetMysqlDbSystemChannelSource {
         }
 
         @CustomType.Setter
-        public Builder anonymousTransactionsHandlings(List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
-            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+        public Builder anonymousTransactionsHandlings(@Nullable List<GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
+            this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             return this;
         }
         public Builder anonymousTransactionsHandlings(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
             return anonymousTransactionsHandlings(List.of(anonymousTransactionsHandlings));
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder sslCaCertificates(List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates) {
-            this.sslCaCertificates = Objects.requireNonNull(sslCaCertificates);
+        public Builder sslCaCertificates(@Nullable List<GetMysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates) {
+            this.sslCaCertificates = sslCaCertificates;
             return this;
         }
         public Builder sslCaCertificates(GetMysqlDbSystemChannelSourceSslCaCertificate... sslCaCertificates) {
             return sslCaCertificates(List.of(sslCaCertificates));
         }
         @CustomType.Setter
-        public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+        public Builder sslMode(@Nullable String sslMode) {
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetMysqlDbSystemChannelSource build() {

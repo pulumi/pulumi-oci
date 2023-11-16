@@ -184,7 +184,7 @@ namespace Pulumi.Oci.UsageProxy
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The limit type of the usage limit
         /// </summary>
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.UsageProxy
 
             ImmutableArray<Outputs.GetUsagelimitsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? limitType,
 

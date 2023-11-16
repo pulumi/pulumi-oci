@@ -94,7 +94,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -110,8 +110,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -128,7 +128,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -144,8 +144,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -162,7 +162,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -178,8 +178,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -195,7 +195,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalId", refs={String.class}, tree="[0]")
-    private Output<String> externalId;
+    private Output</* @Nullable */ String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -210,8 +210,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> externalId() {
-        return this.externalId;
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -226,7 +226,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsKmsiSettingIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsKmsiSettingIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsKmsiSettingIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -240,8 +240,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsKmsiSettingIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsKmsiSettingIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -270,7 +270,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsKmsiSettingIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsKmsiSettingIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsKmsiSettingIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -284,8 +284,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsKmsiSettingIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsKmsiSettingIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -302,7 +302,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -318,8 +318,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -335,7 +335,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -350,8 +350,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) Identifier represents KMSI feature is enabled or not.
@@ -367,7 +367,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="kmsiFeatureEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> kmsiFeatureEnabled;
+    private Output</* @Nullable */ Boolean> kmsiFeatureEnabled;
 
     /**
      * @return (Updatable) Identifier represents KMSI feature is enabled or not.
@@ -382,8 +382,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> kmsiFeatureEnabled() {
-        return this.kmsiFeatureEnabled;
+    public Output<Optional<Boolean>> kmsiFeatureEnabled() {
+        return Codegen.optional(this.kmsiFeatureEnabled);
     }
     /**
      * (Updatable) Identifier represents KMSI to be prompted to user or not.
@@ -399,7 +399,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="kmsiPromptEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> kmsiPromptEnabled;
+    private Output</* @Nullable */ Boolean> kmsiPromptEnabled;
 
     /**
      * @return (Updatable) Identifier represents KMSI to be prompted to user or not.
@@ -414,8 +414,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> kmsiPromptEnabled() {
-        return this.kmsiPromptEnabled;
+    public Output<Optional<Boolean>> kmsiPromptEnabled() {
+        return Codegen.optional(this.kmsiPromptEnabled);
     }
     /**
      * ID of the resource
@@ -448,7 +448,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lastEnabledOn", refs={String.class}, tree="[0]")
-    private Output<String> lastEnabledOn;
+    private Output</* @Nullable */ String> lastEnabledOn;
 
     /**
      * @return (Updatable) Timestamp of when the KmsiSettings was enabled last time.
@@ -466,8 +466,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> lastEnabledOn() {
-        return this.lastEnabledOn;
+    public Output<Optional<String>> lastEnabledOn() {
+        return Codegen.optional(this.lastEnabledOn);
     }
     /**
      * (Updatable) Identifier represents duration in days within which kmsi token must be used.
@@ -485,7 +485,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lastUsedValidityInDays", refs={Integer.class}, tree="[0]")
-    private Output<Integer> lastUsedValidityInDays;
+    private Output</* @Nullable */ Integer> lastUsedValidityInDays;
 
     /**
      * @return (Updatable) Identifier represents duration in days within which kmsi token must be used.
@@ -502,8 +502,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> lastUsedValidityInDays() {
-        return this.lastUsedValidityInDays;
+    public Output<Optional<Integer>> lastUsedValidityInDays() {
+        return Codegen.optional(this.lastUsedValidityInDays);
     }
     /**
      * (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
@@ -521,7 +521,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maxAllowedSessions", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxAllowedSessions;
+    private Output</* @Nullable */ Integer> maxAllowedSessions;
 
     /**
      * @return (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
@@ -538,8 +538,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> maxAllowedSessions() {
-        return this.maxAllowedSessions;
+    public Output<Optional<Integer>> maxAllowedSessions() {
+        return Codegen.optional(this.maxAllowedSessions);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -556,7 +556,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metas", refs={List.class,DomainsKmsiSettingMeta.class}, tree="[0,1]")
-    private Output<List<DomainsKmsiSettingMeta>> metas;
+    private Output</* @Nullable */ List<DomainsKmsiSettingMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -572,8 +572,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsKmsiSettingMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsKmsiSettingMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -590,7 +590,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -606,8 +606,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -672,7 +672,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tags", refs={List.class,DomainsKmsiSettingTag.class}, tree="[0,1]")
-    private Output<List<DomainsKmsiSettingTag>> tags;
+    private Output</* @Nullable */ List<DomainsKmsiSettingTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
@@ -688,8 +688,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsKmsiSettingTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsKmsiSettingTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -706,7 +706,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -722,8 +722,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) Identifier represents validity duration in days.
@@ -741,7 +741,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tokenValidityInDays", refs={Integer.class}, tree="[0]")
-    private Output<Integer> tokenValidityInDays;
+    private Output</* @Nullable */ Integer> tokenValidityInDays;
 
     /**
      * @return (Updatable) Identifier represents validity duration in days.
@@ -758,8 +758,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> tokenValidityInDays() {
-        return this.tokenValidityInDays;
+    public Output<Optional<Integer>> tokenValidityInDays() {
+        return Codegen.optional(this.tokenValidityInDays);
     }
     /**
      * (Updatable) Identifier represents whether user is prompted for ToU or not.
@@ -778,7 +778,7 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="touPromptDisabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> touPromptDisabled;
+    private Output</* @Nullable */ Boolean> touPromptDisabled;
 
     /**
      * @return (Updatable) Identifier represents whether user is prompted for ToU or not.
@@ -796,8 +796,8 @@ public class DomainsKmsiSetting extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> touPromptDisabled() {
-        return this.touPromptDisabled;
+    public Output<Optional<Boolean>> touPromptDisabled() {
+        return Codegen.optional(this.touPromptDisabled);
     }
 
     /**

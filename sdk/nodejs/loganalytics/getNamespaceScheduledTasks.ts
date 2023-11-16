@@ -76,12 +76,12 @@ export interface GetNamespaceScheduledTasksResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * The list of scheduled_task_collection.
      */
-    readonly scheduledTaskCollections: outputs.LogAnalytics.GetNamespaceScheduledTasksScheduledTaskCollection[];
+    readonly scheduledTaskCollections?: outputs.LogAnalytics.GetNamespaceScheduledTasksScheduledTaskCollection[];
     /**
      * Task type.
      */

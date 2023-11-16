@@ -45,44 +45,44 @@ export interface GetLogSavedSearchResult {
     /**
      * The OCID of the compartment that the resource belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description for this resource.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly logSavedSearchId: string;
     /**
      * The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The search query that is saved.
      */
-    readonly query: string;
+    readonly query?: string;
     /**
      * The state of the LogSavedSearch
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Time the resource was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time the resource was last modified.
      */
-    readonly timeLastModified: string;
+    readonly timeLastModified?: string;
 }
 /**
  * This data source provides details about a specific Log Saved Search resource in Oracle Cloud Infrastructure Logging service.

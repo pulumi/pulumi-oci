@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
@@ -14,39 +16,39 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
      * @return Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
      * 
      */
-    private String automaticBackupRetention;
+    private @Nullable String automaticBackupRetention;
     /**
      * @return Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
      * 
      */
-    private String finalBackup;
+    private @Nullable String finalBackup;
     /**
      * @return Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
      * 
      */
-    private Boolean isDeleteProtected;
+    private @Nullable Boolean isDeleteProtected;
 
     private GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy() {}
     /**
      * @return Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
      * 
      */
-    public String automaticBackupRetention() {
-        return this.automaticBackupRetention;
+    public Optional<String> automaticBackupRetention() {
+        return Optional.ofNullable(this.automaticBackupRetention);
     }
     /**
      * @return Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
      * 
      */
-    public String finalBackup() {
-        return this.finalBackup;
+    public Optional<String> finalBackup() {
+        return Optional.ofNullable(this.finalBackup);
     }
     /**
      * @return Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
      * 
      */
-    public Boolean isDeleteProtected() {
-        return this.isDeleteProtected;
+    public Optional<Boolean> isDeleteProtected() {
+        return Optional.ofNullable(this.isDeleteProtected);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String automaticBackupRetention;
-        private String finalBackup;
-        private Boolean isDeleteProtected;
+        private @Nullable String automaticBackupRetention;
+        private @Nullable String finalBackup;
+        private @Nullable Boolean isDeleteProtected;
         public Builder() {}
         public Builder(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
         }
 
         @CustomType.Setter
-        public Builder automaticBackupRetention(String automaticBackupRetention) {
-            this.automaticBackupRetention = Objects.requireNonNull(automaticBackupRetention);
+        public Builder automaticBackupRetention(@Nullable String automaticBackupRetention) {
+            this.automaticBackupRetention = automaticBackupRetention;
             return this;
         }
         @CustomType.Setter
-        public Builder finalBackup(String finalBackup) {
-            this.finalBackup = Objects.requireNonNull(finalBackup);
+        public Builder finalBackup(@Nullable String finalBackup) {
+            this.finalBackup = finalBackup;
             return this;
         }
         @CustomType.Setter
-        public Builder isDeleteProtected(Boolean isDeleteProtected) {
-            this.isDeleteProtected = Objects.requireNonNull(isDeleteProtected);
+        public Builder isDeleteProtected(@Nullable Boolean isDeleteProtected) {
+            this.isDeleteProtected = isDeleteProtected;
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy build() {

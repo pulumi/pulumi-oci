@@ -160,7 +160,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of trail_file_collection.
         /// </summary>
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetTrailFilesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetTrailFilesTrailFileCollectionResult> trailFileCollections,
 

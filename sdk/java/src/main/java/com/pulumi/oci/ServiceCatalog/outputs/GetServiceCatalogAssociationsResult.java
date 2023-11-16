@@ -29,12 +29,12 @@ public final class GetServiceCatalogAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of service_catalog_association_collection.
      * 
      */
-    private List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
+    private @Nullable List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
     private @Nullable String serviceCatalogAssociationId;
     /**
      * @return Identifier of the service catalog.
@@ -64,15 +64,15 @@ public final class GetServiceCatalogAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of service_catalog_association_collection.
      * 
      */
     public List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections() {
-        return this.serviceCatalogAssociationCollections;
+        return this.serviceCatalogAssociationCollections == null ? List.of() : this.serviceCatalogAssociationCollections;
     }
     public Optional<String> serviceCatalogAssociationId() {
         return Optional.ofNullable(this.serviceCatalogAssociationId);
@@ -97,8 +97,8 @@ public final class GetServiceCatalogAssociationsResult {
         private @Nullable String entityId;
         private @Nullable String entityType;
         private @Nullable List<GetServiceCatalogAssociationsFilter> filters;
-        private String id;
-        private List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
+        private @Nullable String id;
+        private @Nullable List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections;
         private @Nullable String serviceCatalogAssociationId;
         private @Nullable String serviceCatalogId;
         public Builder() {}
@@ -132,13 +132,13 @@ public final class GetServiceCatalogAssociationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceCatalogAssociationCollections(List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections) {
-            this.serviceCatalogAssociationCollections = Objects.requireNonNull(serviceCatalogAssociationCollections);
+        public Builder serviceCatalogAssociationCollections(@Nullable List<GetServiceCatalogAssociationsServiceCatalogAssociationCollection> serviceCatalogAssociationCollections) {
+            this.serviceCatalogAssociationCollections = serviceCatalogAssociationCollections;
             return this;
         }
         public Builder serviceCatalogAssociationCollections(GetServiceCatalogAssociationsServiceCatalogAssociationCollection... serviceCatalogAssociationCollections) {

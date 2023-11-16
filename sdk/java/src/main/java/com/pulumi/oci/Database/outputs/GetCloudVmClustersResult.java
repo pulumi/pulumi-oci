@@ -23,7 +23,7 @@ public final class GetCloudVmClustersResult {
      * @return The list of cloud_vm_clusters.
      * 
      */
-    private List<GetCloudVmClustersCloudVmCluster> cloudVmClusters;
+    private @Nullable List<GetCloudVmClustersCloudVmCluster> cloudVmClusters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -39,7 +39,7 @@ public final class GetCloudVmClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the cloud VM cluster.
      * 
@@ -59,7 +59,7 @@ public final class GetCloudVmClustersResult {
      * 
      */
     public List<GetCloudVmClustersCloudVmCluster> cloudVmClusters() {
-        return this.cloudVmClusters;
+        return this.cloudVmClusters == null ? List.of() : this.cloudVmClusters;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -82,8 +82,8 @@ public final class GetCloudVmClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the cloud VM cluster.
@@ -103,11 +103,11 @@ public final class GetCloudVmClustersResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String cloudExadataInfrastructureId;
-        private List<GetCloudVmClustersCloudVmCluster> cloudVmClusters;
+        private @Nullable List<GetCloudVmClustersCloudVmCluster> cloudVmClusters;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetCloudVmClustersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCloudVmClustersResult defaults) {
@@ -127,8 +127,8 @@ public final class GetCloudVmClustersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cloudVmClusters(List<GetCloudVmClustersCloudVmCluster> cloudVmClusters) {
-            this.cloudVmClusters = Objects.requireNonNull(cloudVmClusters);
+        public Builder cloudVmClusters(@Nullable List<GetCloudVmClustersCloudVmCluster> cloudVmClusters) {
+            this.cloudVmClusters = cloudVmClusters;
             return this;
         }
         public Builder cloudVmClusters(GetCloudVmClustersCloudVmCluster... cloudVmClusters) {
@@ -153,8 +153,8 @@ public final class GetCloudVmClustersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

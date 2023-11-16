@@ -16,29 +16,29 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
         /// </summary>
-        public readonly string FilterType;
+        public readonly string? FilterType;
         /// <summary>
         /// The package name.
         /// </summary>
-        public readonly string PackageName;
+        public readonly string? PackageName;
         /// <summary>
         /// The package name pattern.
         /// </summary>
-        public readonly string PackageNamePattern;
+        public readonly string? PackageNamePattern;
         /// <summary>
         /// The package version, which is denoted by 'version-release', or 'epoch:version-release'.
         /// </summary>
-        public readonly string PackageVersion;
+        public readonly string? PackageVersion;
 
         [OutputConstructor]
         private GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterResult(
-            string filterType,
+            string? filterType,
 
-            string packageName,
+            string? packageName,
 
-            string packageNamePattern,
+            string? packageNamePattern,
 
-            string packageVersion)
+            string? packageVersion)
         {
             FilterType = filterType;
             PackageName = packageName;

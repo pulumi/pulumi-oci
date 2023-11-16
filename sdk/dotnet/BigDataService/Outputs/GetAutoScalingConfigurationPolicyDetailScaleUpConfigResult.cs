@@ -16,15 +16,15 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum memory in GBs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int MaxMemoryPerNode;
+        public readonly int? MaxMemoryPerNode;
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the maximum number of OCPUs each node can be scaled-up to. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int MaxOcpusPerNode;
+        public readonly int? MaxOcpusPerNode;
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int MemoryStepSize;
+        public readonly int? MemoryStepSize;
         /// <summary>
         /// Metric and threshold details for triggering an autoscale action.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
         /// </summary>
-        public readonly int OcpuStepSize;
+        public readonly int? OcpuStepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScaleUpConfigResult(
-            int maxMemoryPerNode,
+            int? maxMemoryPerNode,
 
-            int maxOcpusPerNode,
+            int? maxOcpusPerNode,
 
-            int memoryStepSize,
+            int? memoryStepSize,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricResult> metrics,
 
-            int ocpuStepSize)
+            int? ocpuStepSize)
         {
             MaxMemoryPerNode = maxMemoryPerNode;
             MaxOcpusPerNode = maxOcpusPerNode;

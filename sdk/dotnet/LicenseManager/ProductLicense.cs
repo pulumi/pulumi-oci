@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LicenseManager
         /// The number of active license records associated with the product license.
         /// </summary>
         [Output("activeLicenseRecordCount")]
-        public Output<int> ActiveLicenseRecordCount { get; private set; } = null!;
+        public Output<int?> ActiveLicenseRecordCount { get; private set; } = null!;
 
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.LicenseManager
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Name of the product license.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.LicenseManager
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The image details associated with the product license.
@@ -103,13 +103,13 @@ namespace Pulumi.Oci.LicenseManager
         /// Specifies whether or not the product license is oversubscribed.
         /// </summary>
         [Output("isOverSubscribed")]
-        public Output<bool> IsOverSubscribed { get; private set; } = null!;
+        public Output<bool?> IsOverSubscribed { get; private set; } = null!;
 
         /// <summary>
         /// Specifies if the license unit count is unlimited.
         /// </summary>
         [Output("isUnlimited")]
-        public Output<bool> IsUnlimited { get; private set; } = null!;
+        public Output<bool?> IsUnlimited { get; private set; } = null!;
 
         /// <summary>
         /// Specifies if the product license vendor is Oracle or a third party.
@@ -127,55 +127,55 @@ namespace Pulumi.Oci.LicenseManager
         /// The current product license state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The current product license status.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// Status description for the current product license status.
         /// </summary>
         [Output("statusDescription")]
-        public Output<string> StatusDescription { get; private set; } = null!;
+        public Output<string?> StatusDescription { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
         /// </summary>
         [Output("totalActiveLicenseUnitCount")]
-        public Output<int> TotalActiveLicenseUnitCount { get; private set; } = null!;
+        public Output<int?> TotalActiveLicenseUnitCount { get; private set; } = null!;
 
         /// <summary>
         /// The number of license records associated with the product license.
         /// </summary>
         [Output("totalLicenseRecordCount")]
-        public Output<int> TotalLicenseRecordCount { get; private set; } = null!;
+        public Output<int?> TotalLicenseRecordCount { get; private set; } = null!;
 
         /// <summary>
         /// The number of license units consumed. Updated after each allocation run.
         /// </summary>
         [Output("totalLicenseUnitsConsumed")]
-        public Output<double> TotalLicenseUnitsConsumed { get; private set; } = null!;
+        public Output<double?> TotalLicenseUnitsConsumed { get; private set; } = null!;
 
         /// <summary>
         /// The product license vendor name, for example: Microsoft, RHEL, and so on. 
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.LicenseManager
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vendorName")]
-        public Output<string> VendorName { get; private set; } = null!;
+        public Output<string?> VendorName { get; private set; } = null!;
 
 
         /// <summary>

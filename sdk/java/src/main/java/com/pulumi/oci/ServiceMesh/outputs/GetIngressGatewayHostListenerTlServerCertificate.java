@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayHostListenerTlServerCertificate {
@@ -13,39 +15,39 @@ public final class GetIngressGatewayHostListenerTlServerCertificate {
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    private String certificateId;
+    private @Nullable String certificateId;
     /**
      * @return Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    private String secretName;
+    private @Nullable String secretName;
     /**
      * @return Type of certificate.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetIngressGatewayHostListenerTlServerCertificate() {}
     /**
      * @return The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
      * 
      */
-    public String certificateId() {
-        return this.certificateId;
+    public Optional<String> certificateId() {
+        return Optional.ofNullable(this.certificateId);
     }
     /**
      * @return Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      * 
      */
-    public String secretName() {
-        return this.secretName;
+    public Optional<String> secretName() {
+        return Optional.ofNullable(this.secretName);
     }
     /**
      * @return Type of certificate.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetIngressGatewayHostListenerTlServerCertificate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateId;
-        private String secretName;
-        private String type;
+        private @Nullable String certificateId;
+        private @Nullable String secretName;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetIngressGatewayHostListenerTlServerCertificate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetIngressGatewayHostListenerTlServerCertificate {
         }
 
         @CustomType.Setter
-        public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+        public Builder certificateId(@Nullable String certificateId) {
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
-        public Builder secretName(String secretName) {
-            this.secretName = Objects.requireNonNull(secretName);
+        public Builder secretName(@Nullable String secretName) {
+            this.secretName = secretName;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetIngressGatewayHostListenerTlServerCertificate build() {

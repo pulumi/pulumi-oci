@@ -55,7 +55,7 @@ export interface GetAvailabilityDomainResult {
     /**
      * The number of the Availability Domain. For example, the `adNumber` for YXol:US-ASHBURN-AD-1 would be "1"
      */
-    readonly adNumber: number;
+    readonly adNumber?: number;
     /**
      * The OCID of the tenancy.
      */
@@ -63,11 +63,11 @@ export interface GetAvailabilityDomainResult {
     /**
      * The OCID of the Availability Domain.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the Availability Domain.
      */
-    readonly name: string;
+    readonly name?: string;
 }
 /**
  * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.

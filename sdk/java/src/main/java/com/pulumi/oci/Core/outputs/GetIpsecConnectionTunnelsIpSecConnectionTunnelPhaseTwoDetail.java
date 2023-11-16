@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail {
@@ -15,147 +17,147 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
      * @return Phase two authentication algorithm proposed during tunnel negotiation.
      * 
      */
-    private String customAuthenticationAlgorithm;
+    private @Nullable String customAuthenticationAlgorithm;
     /**
      * @return The proposed custom phase two encryption algorithm.
      * 
      */
-    private String customEncryptionAlgorithm;
+    private @Nullable String customEncryptionAlgorithm;
     /**
      * @return The proposed Diffie-Hellman group.
      * 
      */
-    private String dhGroup;
+    private @Nullable String dhGroup;
     /**
      * @return Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
      * 
      */
-    private Boolean isCustomPhaseTwoConfig;
+    private @Nullable Boolean isCustomPhaseTwoConfig;
     /**
      * @return Indicates that ESP phase two is established.
      * 
      */
-    private Boolean isEspEstablished;
+    private @Nullable Boolean isEspEstablished;
     /**
      * @return Indicates that PFS (perfect forward secrecy) is enabled.
      * 
      */
-    private Boolean isPfsEnabled;
+    private @Nullable Boolean isPfsEnabled;
     /**
      * @return The total configured lifetime of the IKE security association.
      * 
      */
-    private Integer lifetime;
+    private @Nullable Integer lifetime;
     /**
      * @return The negotiated phase two authentication algorithm.
      * 
      */
-    private String negotiatedAuthenticationAlgorithm;
+    private @Nullable String negotiatedAuthenticationAlgorithm;
     /**
      * @return The negotiated Diffie-Hellman group.
      * 
      */
-    private String negotiatedDhGroup;
+    private @Nullable String negotiatedDhGroup;
     /**
      * @return The negotiated encryption algorithm.
      * 
      */
-    private String negotiatedEncryptionAlgorithm;
+    private @Nullable String negotiatedEncryptionAlgorithm;
     /**
      * @return The remaining lifetime before the key is refreshed.
      * 
      */
-    private String remainingLifetime;
+    private @Nullable String remainingLifetime;
     /**
      * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String remainingLifetimeLastRetrieved;
+    private @Nullable String remainingLifetimeLastRetrieved;
 
     private GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail() {}
     /**
      * @return Phase two authentication algorithm proposed during tunnel negotiation.
      * 
      */
-    public String customAuthenticationAlgorithm() {
-        return this.customAuthenticationAlgorithm;
+    public Optional<String> customAuthenticationAlgorithm() {
+        return Optional.ofNullable(this.customAuthenticationAlgorithm);
     }
     /**
      * @return The proposed custom phase two encryption algorithm.
      * 
      */
-    public String customEncryptionAlgorithm() {
-        return this.customEncryptionAlgorithm;
+    public Optional<String> customEncryptionAlgorithm() {
+        return Optional.ofNullable(this.customEncryptionAlgorithm);
     }
     /**
      * @return The proposed Diffie-Hellman group.
      * 
      */
-    public String dhGroup() {
-        return this.dhGroup;
+    public Optional<String> dhGroup() {
+        return Optional.ofNullable(this.dhGroup);
     }
     /**
      * @return Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
      * 
      */
-    public Boolean isCustomPhaseTwoConfig() {
-        return this.isCustomPhaseTwoConfig;
+    public Optional<Boolean> isCustomPhaseTwoConfig() {
+        return Optional.ofNullable(this.isCustomPhaseTwoConfig);
     }
     /**
      * @return Indicates that ESP phase two is established.
      * 
      */
-    public Boolean isEspEstablished() {
-        return this.isEspEstablished;
+    public Optional<Boolean> isEspEstablished() {
+        return Optional.ofNullable(this.isEspEstablished);
     }
     /**
      * @return Indicates that PFS (perfect forward secrecy) is enabled.
      * 
      */
-    public Boolean isPfsEnabled() {
-        return this.isPfsEnabled;
+    public Optional<Boolean> isPfsEnabled() {
+        return Optional.ofNullable(this.isPfsEnabled);
     }
     /**
      * @return The total configured lifetime of the IKE security association.
      * 
      */
-    public Integer lifetime() {
-        return this.lifetime;
+    public Optional<Integer> lifetime() {
+        return Optional.ofNullable(this.lifetime);
     }
     /**
      * @return The negotiated phase two authentication algorithm.
      * 
      */
-    public String negotiatedAuthenticationAlgorithm() {
-        return this.negotiatedAuthenticationAlgorithm;
+    public Optional<String> negotiatedAuthenticationAlgorithm() {
+        return Optional.ofNullable(this.negotiatedAuthenticationAlgorithm);
     }
     /**
      * @return The negotiated Diffie-Hellman group.
      * 
      */
-    public String negotiatedDhGroup() {
-        return this.negotiatedDhGroup;
+    public Optional<String> negotiatedDhGroup() {
+        return Optional.ofNullable(this.negotiatedDhGroup);
     }
     /**
      * @return The negotiated encryption algorithm.
      * 
      */
-    public String negotiatedEncryptionAlgorithm() {
-        return this.negotiatedEncryptionAlgorithm;
+    public Optional<String> negotiatedEncryptionAlgorithm() {
+        return Optional.ofNullable(this.negotiatedEncryptionAlgorithm);
     }
     /**
      * @return The remaining lifetime before the key is refreshed.
      * 
      */
-    public String remainingLifetime() {
-        return this.remainingLifetime;
+    public Optional<String> remainingLifetime() {
+        return Optional.ofNullable(this.remainingLifetime);
     }
     /**
      * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String remainingLifetimeLastRetrieved() {
-        return this.remainingLifetimeLastRetrieved;
+    public Optional<String> remainingLifetimeLastRetrieved() {
+        return Optional.ofNullable(this.remainingLifetimeLastRetrieved);
     }
 
     public static Builder builder() {
@@ -167,18 +169,18 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String customAuthenticationAlgorithm;
-        private String customEncryptionAlgorithm;
-        private String dhGroup;
-        private Boolean isCustomPhaseTwoConfig;
-        private Boolean isEspEstablished;
-        private Boolean isPfsEnabled;
-        private Integer lifetime;
-        private String negotiatedAuthenticationAlgorithm;
-        private String negotiatedDhGroup;
-        private String negotiatedEncryptionAlgorithm;
-        private String remainingLifetime;
-        private String remainingLifetimeLastRetrieved;
+        private @Nullable String customAuthenticationAlgorithm;
+        private @Nullable String customEncryptionAlgorithm;
+        private @Nullable String dhGroup;
+        private @Nullable Boolean isCustomPhaseTwoConfig;
+        private @Nullable Boolean isEspEstablished;
+        private @Nullable Boolean isPfsEnabled;
+        private @Nullable Integer lifetime;
+        private @Nullable String negotiatedAuthenticationAlgorithm;
+        private @Nullable String negotiatedDhGroup;
+        private @Nullable String negotiatedEncryptionAlgorithm;
+        private @Nullable String remainingLifetime;
+        private @Nullable String remainingLifetimeLastRetrieved;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -197,63 +199,63 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
         }
 
         @CustomType.Setter
-        public Builder customAuthenticationAlgorithm(String customAuthenticationAlgorithm) {
-            this.customAuthenticationAlgorithm = Objects.requireNonNull(customAuthenticationAlgorithm);
+        public Builder customAuthenticationAlgorithm(@Nullable String customAuthenticationAlgorithm) {
+            this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder customEncryptionAlgorithm(String customEncryptionAlgorithm) {
-            this.customEncryptionAlgorithm = Objects.requireNonNull(customEncryptionAlgorithm);
+        public Builder customEncryptionAlgorithm(@Nullable String customEncryptionAlgorithm) {
+            this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder dhGroup(String dhGroup) {
-            this.dhGroup = Objects.requireNonNull(dhGroup);
+        public Builder dhGroup(@Nullable String dhGroup) {
+            this.dhGroup = dhGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder isCustomPhaseTwoConfig(Boolean isCustomPhaseTwoConfig) {
-            this.isCustomPhaseTwoConfig = Objects.requireNonNull(isCustomPhaseTwoConfig);
+        public Builder isCustomPhaseTwoConfig(@Nullable Boolean isCustomPhaseTwoConfig) {
+            this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             return this;
         }
         @CustomType.Setter
-        public Builder isEspEstablished(Boolean isEspEstablished) {
-            this.isEspEstablished = Objects.requireNonNull(isEspEstablished);
+        public Builder isEspEstablished(@Nullable Boolean isEspEstablished) {
+            this.isEspEstablished = isEspEstablished;
             return this;
         }
         @CustomType.Setter
-        public Builder isPfsEnabled(Boolean isPfsEnabled) {
-            this.isPfsEnabled = Objects.requireNonNull(isPfsEnabled);
+        public Builder isPfsEnabled(@Nullable Boolean isPfsEnabled) {
+            this.isPfsEnabled = isPfsEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifetime(Integer lifetime) {
-            this.lifetime = Objects.requireNonNull(lifetime);
+        public Builder lifetime(@Nullable Integer lifetime) {
+            this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
-        public Builder negotiatedAuthenticationAlgorithm(String negotiatedAuthenticationAlgorithm) {
-            this.negotiatedAuthenticationAlgorithm = Objects.requireNonNull(negotiatedAuthenticationAlgorithm);
+        public Builder negotiatedAuthenticationAlgorithm(@Nullable String negotiatedAuthenticationAlgorithm) {
+            this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder negotiatedDhGroup(String negotiatedDhGroup) {
-            this.negotiatedDhGroup = Objects.requireNonNull(negotiatedDhGroup);
+        public Builder negotiatedDhGroup(@Nullable String negotiatedDhGroup) {
+            this.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder negotiatedEncryptionAlgorithm(String negotiatedEncryptionAlgorithm) {
-            this.negotiatedEncryptionAlgorithm = Objects.requireNonNull(negotiatedEncryptionAlgorithm);
+        public Builder negotiatedEncryptionAlgorithm(@Nullable String negotiatedEncryptionAlgorithm) {
+            this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder remainingLifetime(String remainingLifetime) {
-            this.remainingLifetime = Objects.requireNonNull(remainingLifetime);
+        public Builder remainingLifetime(@Nullable String remainingLifetime) {
+            this.remainingLifetime = remainingLifetime;
             return this;
         }
         @CustomType.Setter
-        public Builder remainingLifetimeLastRetrieved(String remainingLifetimeLastRetrieved) {
-            this.remainingLifetimeLastRetrieved = Objects.requireNonNull(remainingLifetimeLastRetrieved);
+        public Builder remainingLifetimeLastRetrieved(@Nullable String remainingLifetimeLastRetrieved) {
+            this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail build() {

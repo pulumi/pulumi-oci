@@ -20,19 +20,19 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// Patch version of the os patch.
         /// </summary>
-        public readonly string OsPatchVersion;
+        public readonly string? OsPatchVersion;
         /// <summary>
         /// The time when the OS patch was released.
         /// </summary>
-        public readonly string ReleaseDate;
+        public readonly string? ReleaseDate;
 
         [OutputConstructor]
         private GetBdsInstanceListOsPatchesOsPatchResult(
             string bdsInstanceId,
 
-            string osPatchVersion,
+            string? osPatchVersion,
 
-            string releaseDate)
+            string? releaseDate)
         {
             BdsInstanceId = bdsInstanceId;
             OsPatchVersion = osPatchVersion;

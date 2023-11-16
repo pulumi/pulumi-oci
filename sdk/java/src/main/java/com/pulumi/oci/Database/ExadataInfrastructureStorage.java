@@ -24,10 +24,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage")
 public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomResource {
     @Export(name="activatedStorageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> activatedStorageCount;
+    private Output</* @Nullable */ Integer> activatedStorageCount;
 
-    public Output<Integer> activatedStorageCount() {
-        return this.activatedStorageCount;
+    public Output<Optional<Integer>> activatedStorageCount() {
+        return Codegen.optional(this.activatedStorageCount);
     }
     @Export(name="activationFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> activationFile;
@@ -36,10 +36,10 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return Codegen.optional(this.activationFile);
     }
     @Export(name="additionalStorageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> additionalStorageCount;
+    private Output</* @Nullable */ Integer> additionalStorageCount;
 
-    public Output<Integer> additionalStorageCount() {
-        return this.additionalStorageCount;
+    public Output<Optional<Integer>> additionalStorageCount() {
+        return Codegen.optional(this.additionalStorageCount);
     }
     @Export(name="adminNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> adminNetworkCidr;
@@ -66,10 +66,10 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return this.compartmentId;
     }
     @Export(name="computeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> computeCount;
+    private Output</* @Nullable */ Integer> computeCount;
 
-    public Output<Integer> computeCount() {
-        return this.computeCount;
+    public Output<Optional<Integer>> computeCount() {
+        return Codegen.optional(this.computeCount);
     }
     @Export(name="contacts", refs={List.class,ExadataInfrastructureStorageContact.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ExadataInfrastructureStorageContact>> contacts;
@@ -78,40 +78,40 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return Codegen.optional(this.contacts);
     }
     @Export(name="corporateProxy", refs={String.class}, tree="[0]")
-    private Output<String> corporateProxy;
+    private Output</* @Nullable */ String> corporateProxy;
 
-    public Output<String> corporateProxy() {
-        return this.corporateProxy;
+    public Output<Optional<String>> corporateProxy() {
+        return Codegen.optional(this.corporateProxy);
     }
     @Export(name="cpusEnabled", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpusEnabled;
+    private Output</* @Nullable */ Integer> cpusEnabled;
 
-    public Output<Integer> cpusEnabled() {
-        return this.cpusEnabled;
+    public Output<Optional<Integer>> cpusEnabled() {
+        return Codegen.optional(this.cpusEnabled);
     }
     @Export(name="csiNumber", refs={String.class}, tree="[0]")
-    private Output<String> csiNumber;
+    private Output</* @Nullable */ String> csiNumber;
 
-    public Output<String> csiNumber() {
-        return this.csiNumber;
+    public Output<Optional<String>> csiNumber() {
+        return Codegen.optional(this.csiNumber);
     }
     @Export(name="dataStorageSizeInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> dataStorageSizeInTbs;
+    private Output</* @Nullable */ Double> dataStorageSizeInTbs;
 
-    public Output<Double> dataStorageSizeInTbs() {
-        return this.dataStorageSizeInTbs;
+    public Output<Optional<Double>> dataStorageSizeInTbs() {
+        return Codegen.optional(this.dataStorageSizeInTbs);
     }
     @Export(name="dbNodeStorageSizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dbNodeStorageSizeInGbs;
+    private Output</* @Nullable */ Integer> dbNodeStorageSizeInGbs;
 
-    public Output<Integer> dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Output<Optional<Integer>> dbNodeStorageSizeInGbs() {
+        return Codegen.optional(this.dbNodeStorageSizeInGbs);
     }
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
@@ -132,10 +132,10 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return Codegen.optional(this.exadataInfrastructureId);
     }
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="gateway", refs={String.class}, tree="[0]")
     private Output<String> gateway;
@@ -150,52 +150,52 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return this.infiniBandNetworkCidr;
     }
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     @Export(name="maintenanceSloStatus", refs={String.class}, tree="[0]")
-    private Output<String> maintenanceSloStatus;
+    private Output</* @Nullable */ String> maintenanceSloStatus;
 
-    public Output<String> maintenanceSloStatus() {
-        return this.maintenanceSloStatus;
+    public Output<Optional<String>> maintenanceSloStatus() {
+        return Codegen.optional(this.maintenanceSloStatus);
     }
     @Export(name="maintenanceWindow", refs={ExadataInfrastructureStorageMaintenanceWindow.class}, tree="[0]")
-    private Output<ExadataInfrastructureStorageMaintenanceWindow> maintenanceWindow;
+    private Output</* @Nullable */ ExadataInfrastructureStorageMaintenanceWindow> maintenanceWindow;
 
-    public Output<ExadataInfrastructureStorageMaintenanceWindow> maintenanceWindow() {
-        return this.maintenanceWindow;
+    public Output<Optional<ExadataInfrastructureStorageMaintenanceWindow>> maintenanceWindow() {
+        return Codegen.optional(this.maintenanceWindow);
     }
     @Export(name="maxCpuCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxCpuCount;
+    private Output</* @Nullable */ Integer> maxCpuCount;
 
-    public Output<Integer> maxCpuCount() {
-        return this.maxCpuCount;
+    public Output<Optional<Integer>> maxCpuCount() {
+        return Codegen.optional(this.maxCpuCount);
     }
     @Export(name="maxDataStorageInTbs", refs={Double.class}, tree="[0]")
-    private Output<Double> maxDataStorageInTbs;
+    private Output</* @Nullable */ Double> maxDataStorageInTbs;
 
-    public Output<Double> maxDataStorageInTbs() {
-        return this.maxDataStorageInTbs;
+    public Output<Optional<Double>> maxDataStorageInTbs() {
+        return Codegen.optional(this.maxDataStorageInTbs);
     }
     @Export(name="maxDbNodeStorageInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxDbNodeStorageInGbs;
+    private Output</* @Nullable */ Integer> maxDbNodeStorageInGbs;
 
-    public Output<Integer> maxDbNodeStorageInGbs() {
-        return this.maxDbNodeStorageInGbs;
+    public Output<Optional<Integer>> maxDbNodeStorageInGbs() {
+        return Codegen.optional(this.maxDbNodeStorageInGbs);
     }
     @Export(name="maxMemoryInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxMemoryInGbs;
+    private Output</* @Nullable */ Integer> maxMemoryInGbs;
 
-    public Output<Integer> maxMemoryInGbs() {
-        return this.maxMemoryInGbs;
+    public Output<Optional<Integer>> maxMemoryInGbs() {
+        return Codegen.optional(this.maxMemoryInGbs);
     }
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     @Export(name="netmask", refs={String.class}, tree="[0]")
     private Output<String> netmask;
@@ -216,22 +216,22 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
         return this.shape;
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     @Export(name="storageCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> storageCount;
+    private Output</* @Nullable */ Integer> storageCount;
 
-    public Output<Integer> storageCount() {
-        return this.storageCount;
+    public Output<Optional<Integer>> storageCount() {
+        return Codegen.optional(this.storageCount);
     }
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetZonesZoneExternalMaster {
@@ -14,39 +16,39 @@ public final class GetZonesZoneExternalMaster {
      * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
-    private String address;
+    private @Nullable String address;
     /**
      * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return Search for zones that are associated with a TSIG key.
      * 
      */
-    private String tsigKeyId;
+    private @Nullable String tsigKeyId;
 
     private GetZonesZoneExternalMaster() {}
     /**
      * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
-    public String address() {
-        return this.address;
+    public Optional<String> address() {
+        return Optional.ofNullable(this.address);
     }
     /**
      * @return The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return Search for zones that are associated with a TSIG key.
      * 
      */
-    public String tsigKeyId() {
-        return this.tsigKeyId;
+    public Optional<String> tsigKeyId() {
+        return Optional.ofNullable(this.tsigKeyId);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetZonesZoneExternalMaster {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String address;
-        private Integer port;
-        private String tsigKeyId;
+        private @Nullable String address;
+        private @Nullable Integer port;
+        private @Nullable String tsigKeyId;
         public Builder() {}
         public Builder(GetZonesZoneExternalMaster defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetZonesZoneExternalMaster {
         }
 
         @CustomType.Setter
-        public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+        public Builder address(@Nullable String address) {
+            this.address = address;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder tsigKeyId(String tsigKeyId) {
-            this.tsigKeyId = Objects.requireNonNull(tsigKeyId);
+        public Builder tsigKeyId(@Nullable String tsigKeyId) {
+            this.tsigKeyId = tsigKeyId;
             return this;
         }
         public GetZonesZoneExternalMaster build() {

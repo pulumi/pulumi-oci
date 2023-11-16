@@ -105,39 +105,39 @@ namespace Pulumi.Oci.Core
     [OutputType]
     public sealed class GetInstancePoolResult
     {
-        public readonly int ActualSize;
+        public readonly int? ActualSize;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         /// </summary>
-        public readonly string InstanceConfigurationId;
+        public readonly string? InstanceConfigurationId;
         /// <summary>
         /// A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         /// </summary>
-        public readonly string InstanceDisplayNameFormatter;
+        public readonly string? InstanceDisplayNameFormatter;
         /// <summary>
         /// A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         /// </summary>
-        public readonly string InstanceHostnameFormatter;
+        public readonly string? InstanceHostnameFormatter;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         /// </summary>
@@ -153,35 +153,35 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         /// </summary>
-        public readonly int Size;
+        public readonly int? Size;
         /// <summary>
         /// The current state of the instance pool.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetInstancePoolResult(
-            int actualSize,
+            int? actualSize,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string instanceConfigurationId,
+            string? instanceConfigurationId,
 
-            string instanceDisplayNameFormatter,
+            string? instanceDisplayNameFormatter,
 
-            string instanceHostnameFormatter,
+            string? instanceHostnameFormatter,
 
             string instancePoolId,
 
@@ -189,11 +189,11 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetInstancePoolPlacementConfigurationResult> placementConfigurations,
 
-            int size,
+            int? size,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ActualSize = actualSize;
             CompartmentId = compartmentId;

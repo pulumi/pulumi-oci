@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Secrets.Outputs
         /// <summary>
         /// The base64-encoded content of the secret.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// The formatting type of the secret contents.
         /// </summary>
-        public readonly string ContentType;
+        public readonly string? ContentType;
 
         [OutputConstructor]
         private GetSecretbundleSecretBundleContentResult(
-            string content,
+            string? content,
 
-            string contentType)
+            string? contentType)
         {
             Content = content;
             ContentType = contentType;

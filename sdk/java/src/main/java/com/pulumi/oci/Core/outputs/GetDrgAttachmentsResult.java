@@ -29,7 +29,7 @@ public final class GetDrgAttachmentsResult {
      * @return The list of drg_attachments.
      * 
      */
-    private List<GetDrgAttachmentsDrgAttachment> drgAttachments;
+    private @Nullable List<GetDrgAttachmentsDrgAttachment> drgAttachments;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * 
@@ -45,7 +45,7 @@ public final class GetDrgAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String networkId;
     /**
      * @return The DRG attachment&#39;s current state.
@@ -81,7 +81,7 @@ public final class GetDrgAttachmentsResult {
      * 
      */
     public List<GetDrgAttachmentsDrgAttachment> drgAttachments() {
-        return this.drgAttachments;
+        return this.drgAttachments == null ? List.of() : this.drgAttachments;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -104,8 +104,8 @@ public final class GetDrgAttachmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> networkId() {
         return Optional.ofNullable(this.networkId);
@@ -137,11 +137,11 @@ public final class GetDrgAttachmentsResult {
         private @Nullable String attachmentType;
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetDrgAttachmentsDrgAttachment> drgAttachments;
+        private @Nullable List<GetDrgAttachmentsDrgAttachment> drgAttachments;
         private @Nullable String drgId;
         private @Nullable String drgRouteTableId;
         private @Nullable List<GetDrgAttachmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String networkId;
         private @Nullable String state;
         private @Nullable String vcnId;
@@ -177,8 +177,8 @@ public final class GetDrgAttachmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drgAttachments(List<GetDrgAttachmentsDrgAttachment> drgAttachments) {
-            this.drgAttachments = Objects.requireNonNull(drgAttachments);
+        public Builder drgAttachments(@Nullable List<GetDrgAttachmentsDrgAttachment> drgAttachments) {
+            this.drgAttachments = drgAttachments;
             return this;
         }
         public Builder drgAttachments(GetDrgAttachmentsDrgAttachment... drgAttachments) {
@@ -203,8 +203,8 @@ public final class GetDrgAttachmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

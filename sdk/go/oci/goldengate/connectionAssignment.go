@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -57,9 +56,9 @@ type ConnectionAssignment struct {
 	pulumi.CustomResourceState
 
 	// Credential store alias.
-	AliasName pulumi.StringOutput `pulumi:"aliasName"`
+	AliasName pulumi.StringPtrOutput `pulumi:"aliasName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -68,11 +67,11 @@ type ConnectionAssignment struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
 	// Possible lifecycle states for connection assignments.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewConnectionAssignment registers a new resource with the given unique name, arguments, and options.
@@ -198,12 +197,6 @@ func (i *ConnectionAssignment) ToConnectionAssignmentOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAssignmentOutput)
 }
 
-func (i *ConnectionAssignment) ToOutput(ctx context.Context) pulumix.Output[*ConnectionAssignment] {
-	return pulumix.Output[*ConnectionAssignment]{
-		OutputState: i.ToConnectionAssignmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectionAssignmentArrayInput is an input type that accepts ConnectionAssignmentArray and ConnectionAssignmentArrayOutput values.
 // You can construct a concrete instance of `ConnectionAssignmentArrayInput` via:
 //
@@ -227,12 +220,6 @@ func (i ConnectionAssignmentArray) ToConnectionAssignmentArrayOutput() Connectio
 
 func (i ConnectionAssignmentArray) ToConnectionAssignmentArrayOutputWithContext(ctx context.Context) ConnectionAssignmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAssignmentArrayOutput)
-}
-
-func (i ConnectionAssignmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectionAssignment] {
-	return pulumix.Output[[]*ConnectionAssignment]{
-		OutputState: i.ToConnectionAssignmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectionAssignmentMapInput is an input type that accepts ConnectionAssignmentMap and ConnectionAssignmentMapOutput values.
@@ -260,12 +247,6 @@ func (i ConnectionAssignmentMap) ToConnectionAssignmentMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAssignmentMapOutput)
 }
 
-func (i ConnectionAssignmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectionAssignment] {
-	return pulumix.Output[map[string]*ConnectionAssignment]{
-		OutputState: i.ToConnectionAssignmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectionAssignmentOutput struct{ *pulumi.OutputState }
 
 func (ConnectionAssignmentOutput) ElementType() reflect.Type {
@@ -280,20 +261,14 @@ func (o ConnectionAssignmentOutput) ToConnectionAssignmentOutputWithContext(ctx 
 	return o
 }
 
-func (o ConnectionAssignmentOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectionAssignment] {
-	return pulumix.Output[*ConnectionAssignment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential store alias.
-func (o ConnectionAssignmentOutput) AliasName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.AliasName }).(pulumi.StringOutput)
+func (o ConnectionAssignmentOutput) AliasName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringPtrOutput { return v.AliasName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-func (o ConnectionAssignmentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ConnectionAssignmentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
@@ -310,18 +285,18 @@ func (o ConnectionAssignmentOutput) DeploymentId() pulumi.StringOutput {
 }
 
 // Possible lifecycle states for connection assignments.
-func (o ConnectionAssignmentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectionAssignmentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o ConnectionAssignmentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectionAssignmentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o ConnectionAssignmentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConnectionAssignmentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ConnectionAssignmentArrayOutput struct{ *pulumi.OutputState }
@@ -336,12 +311,6 @@ func (o ConnectionAssignmentArrayOutput) ToConnectionAssignmentArrayOutput() Con
 
 func (o ConnectionAssignmentArrayOutput) ToConnectionAssignmentArrayOutputWithContext(ctx context.Context) ConnectionAssignmentArrayOutput {
 	return o
-}
-
-func (o ConnectionAssignmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectionAssignment] {
-	return pulumix.Output[[]*ConnectionAssignment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionAssignmentArrayOutput) Index(i pulumi.IntInput) ConnectionAssignmentOutput {
@@ -362,12 +331,6 @@ func (o ConnectionAssignmentMapOutput) ToConnectionAssignmentMapOutput() Connect
 
 func (o ConnectionAssignmentMapOutput) ToConnectionAssignmentMapOutputWithContext(ctx context.Context) ConnectionAssignmentMapOutput {
 	return o
-}
-
-func (o ConnectionAssignmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectionAssignment] {
-	return pulumix.Output[map[string]*ConnectionAssignment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionAssignmentMapOutput) MapIndex(k pulumi.StringInput) ConnectionAssignmentOutput {

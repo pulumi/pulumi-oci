@@ -92,127 +92,82 @@ class GetOpaInstanceResult:
 
     @property
     @pulumi.getter
-    def attachments(self) -> Sequence['outputs.GetOpaInstanceAttachmentResult']:
-        """
-        A list of associated attachments to other services
-        """
+    def attachments(self) -> Optional[Sequence['outputs.GetOpaInstanceAttachmentResult']]:
         return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> str:
-        """
-        The entitlement used for billing purposes
-        """
+    def consumption_model(self) -> Optional[str]:
         return pulumi.get(self, "consumption_model")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the Process Automation instance.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        OpaInstance Identifier, can be renamed
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAt")
-    def idcs_at(self) -> str:
+    def idcs_at(self) -> Optional[str]:
         return pulumi.get(self, "idcs_at")
 
     @property
     @pulumi.getter(name="identityAppDisplayName")
-    def identity_app_display_name(self) -> str:
-        """
-        This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_app_display_name(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_display_name")
 
     @property
     @pulumi.getter(name="identityAppGuid")
-    def identity_app_guid(self) -> str:
-        """
-        This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_app_guid(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_guid")
 
     @property
     @pulumi.getter(name="identityAppOpcServiceInstanceGuid")
-    def identity_app_opc_service_instance_guid(self) -> str:
-        """
-        This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_app_opc_service_instance_guid(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_opc_service_instance_guid")
 
     @property
     @pulumi.getter(name="identityDomainUrl")
-    def identity_domain_url(self) -> str:
-        """
-        This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_domain_url(self) -> Optional[str]:
         return pulumi.get(self, "identity_domain_url")
 
     @property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> str:
-        """
-        OPA Instance URL
-        """
+    def instance_url(self) -> Optional[str]:
         return pulumi.get(self, "instance_url")
 
     @property
     @pulumi.getter(name="isBreakglassEnabled")
-    def is_breakglass_enabled(self) -> bool:
-        """
-        indicates if breakGlass is enabled for the opa instance.
-        """
+    def is_breakglass_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_breakglass_enabled")
 
     @property
     @pulumi.getter(name="meteringType")
-    def metering_type(self) -> str:
-        """
-        MeteringType Identifier
-        """
+    def metering_type(self) -> Optional[str]:
         return pulumi.get(self, "metering_type")
 
     @property
@@ -222,42 +177,27 @@ class GetOpaInstanceResult:
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        Shape of the instance.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the OpaInstance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when OpaInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the OpaInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -294,21 +234,7 @@ class AwaitableGetOpaInstanceResult(GetOpaInstanceResult):
 def get_opa_instance(opa_instance_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpaInstanceResult:
     """
-    This data source provides details about a specific Opa Instance resource in Oracle Cloud Infrastructure Opa service.
-
-    Gets a OpaInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opa_instance = oci.Opa.get_opa_instance(opa_instance_id=oci_opa_opa_instance["test_opa_instance"]["id"])
-    ```
-
-
-    :param str opa_instance_id: unique OpaInstance identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['opaInstanceId'] = opa_instance_id
@@ -344,20 +270,6 @@ def get_opa_instance(opa_instance_id: Optional[str] = None,
 def get_opa_instance_output(opa_instance_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpaInstanceResult]:
     """
-    This data source provides details about a specific Opa Instance resource in Oracle Cloud Infrastructure Opa service.
-
-    Gets a OpaInstance by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opa_instance = oci.Opa.get_opa_instance(opa_instance_id=oci_opa_opa_instance["test_opa_instance"]["id"])
-    ```
-
-
-    :param str opa_instance_id: unique OpaInstance identifier
+    Use this data source to access information about an existing resource.
     """
     ...

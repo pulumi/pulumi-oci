@@ -8,6 +8,7 @@ import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionI
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration {
@@ -15,12 +16,12 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
      * @return File format details used for importing dataset
      * 
      */
-    private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats;
+    private @Nullable List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats;
     /**
      * @return Object storage path for the metadata file
      * 
      */
-    private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
+    private @Nullable List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
 
     private GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
      * 
      */
     public List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats() {
-        return this.importFormats;
+        return this.importFormats == null ? List.of() : this.importFormats;
     }
     /**
      * @return Object storage path for the metadata file
      * 
      */
     public List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths() {
-        return this.importMetadataPaths;
+        return this.importMetadataPaths == null ? List.of() : this.importMetadataPaths;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats;
-        private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
+        private @Nullable List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats;
+        private @Nullable List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
         public Builder() {}
         public Builder(GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
         }
 
         @CustomType.Setter
-        public Builder importFormats(List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats) {
-            this.importFormats = Objects.requireNonNull(importFormats);
+        public Builder importFormats(@Nullable List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats) {
+            this.importFormats = importFormats;
             return this;
         }
         public Builder importFormats(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat... importFormats) {
             return importFormats(List.of(importFormats));
         }
         @CustomType.Setter
-        public Builder importMetadataPaths(List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths) {
-            this.importMetadataPaths = Objects.requireNonNull(importMetadataPaths);
+        public Builder importMetadataPaths(@Nullable List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths) {
+            this.importMetadataPaths = importMetadataPaths;
             return this;
         }
         public Builder importMetadataPaths(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath... importMetadataPaths) {

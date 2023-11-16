@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -78,14 +79,14 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="areReferencesIncluded", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> areReferencesIncluded;
+    private Output</* @Nullable */ Boolean> areReferencesIncluded;
 
     /**
      * @return This field controls if the references will be exported along with the objects
      * 
      */
-    public Output<Boolean> areReferencesIncluded() {
-        return this.areReferencesIncluded;
+    public Output<Optional<Boolean>> areReferencesIncluded() {
+        return Codegen.optional(this.areReferencesIncluded);
     }
     /**
      * Name of the Object Storage bucket where the object will be exported.
@@ -106,224 +107,224 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return Name of the user who initiated export request.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * Contains key of the error
      * 
      */
     @Export(name="errorMessages", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> errorMessages;
+    private Output</* @Nullable */ Map<String,Object>> errorMessages;
 
     /**
      * @return Contains key of the error
      * 
      */
-    public Output<Map<String,Object>> errorMessages() {
-        return this.errorMessages;
+    public Output<Optional<Map<String,Object>>> errorMessages() {
+        return Codegen.optional(this.errorMessages);
     }
     /**
      * The array of exported object details.
      * 
      */
     @Export(name="exportedItems", refs={List.class,WorkspaceExportRequestExportedItem.class}, tree="[0,1]")
-    private Output<List<WorkspaceExportRequestExportedItem>> exportedItems;
+    private Output</* @Nullable */ List<WorkspaceExportRequestExportedItem>> exportedItems;
 
     /**
      * @return The array of exported object details.
      * 
      */
-    public Output<List<WorkspaceExportRequestExportedItem>> exportedItems() {
-        return this.exportedItems;
+    public Output<Optional<List<WorkspaceExportRequestExportedItem>>> exportedItems() {
+        return Codegen.optional(this.exportedItems);
     }
     /**
      * Name of the exported zip file.
      * 
      */
     @Export(name="fileName", refs={String.class}, tree="[0]")
-    private Output<String> fileName;
+    private Output</* @Nullable */ String> fileName;
 
     /**
      * @return Name of the exported zip file.
      * 
      */
-    public Output<String> fileName() {
-        return this.fileName;
+    public Output<Optional<String>> fileName() {
+        return Codegen.optional(this.fileName);
     }
     /**
      * Filters for exported objects
      * 
      */
     @Export(name="filters", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> filters;
+    private Output</* @Nullable */ List<String>> filters;
 
     /**
      * @return Filters for exported objects
      * 
      */
-    public Output<List<String>> filters() {
-        return this.filters;
+    public Output<Optional<List<String>>> filters() {
+        return Codegen.optional(this.filters);
     }
     /**
      * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      * 
      */
     @Export(name="isObjectOverwriteEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isObjectOverwriteEnabled;
+    private Output</* @Nullable */ Boolean> isObjectOverwriteEnabled;
 
     /**
      * @return Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      * 
      */
-    public Output<Boolean> isObjectOverwriteEnabled() {
-        return this.isObjectOverwriteEnabled;
+    public Output<Optional<Boolean>> isObjectOverwriteEnabled() {
+        return Codegen.optional(this.isObjectOverwriteEnabled);
     }
     /**
      * Export object request key
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return Export object request key
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * Name of the export request.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return Name of the export request.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * Field is used to specify which object keys to export
      * 
      */
     @Export(name="objectKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> objectKeys;
+    private Output</* @Nullable */ List<String>> objectKeys;
 
     /**
      * @return Field is used to specify which object keys to export
      * 
      */
-    public Output<List<String>> objectKeys() {
-        return this.objectKeys;
+    public Output<Optional<List<String>>> objectKeys() {
+        return Codegen.optional(this.objectKeys);
     }
     /**
      * Region of the object storage (if using object storage of different region)
      * 
      */
     @Export(name="objectStorageRegion", refs={String.class}, tree="[0]")
-    private Output<String> objectStorageRegion;
+    private Output</* @Nullable */ String> objectStorageRegion;
 
     /**
      * @return Region of the object storage (if using object storage of different region)
      * 
      */
-    public Output<String> objectStorageRegion() {
-        return this.objectStorageRegion;
+    public Output<Optional<String>> objectStorageRegion() {
+        return Codegen.optional(this.objectStorageRegion);
     }
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
     @Export(name="objectStorageTenancyId", refs={String.class}, tree="[0]")
-    private Output<String> objectStorageTenancyId;
+    private Output</* @Nullable */ String> objectStorageTenancyId;
 
     /**
      * @return Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
-    public Output<String> objectStorageTenancyId() {
-        return this.objectStorageTenancyId;
+    public Output<Optional<String>> objectStorageTenancyId() {
+        return Codegen.optional(this.objectStorageTenancyId);
     }
     /**
      * The array of exported referenced objects.
      * 
      */
     @Export(name="referencedItems", refs={String.class}, tree="[0]")
-    private Output<String> referencedItems;
+    private Output</* @Nullable */ String> referencedItems;
 
     /**
      * @return The array of exported referenced objects.
      * 
      */
-    public Output<String> referencedItems() {
-        return this.referencedItems;
+    public Output<Optional<String>> referencedItems() {
+        return Codegen.optional(this.referencedItems);
     }
     /**
      * Export Objects request status.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return Export Objects request status.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * Time at which the request was completely processed.
      * 
      */
     @Export(name="timeEndedInMillis", refs={String.class}, tree="[0]")
-    private Output<String> timeEndedInMillis;
+    private Output</* @Nullable */ String> timeEndedInMillis;
 
     /**
      * @return Time at which the request was completely processed.
      * 
      */
-    public Output<String> timeEndedInMillis() {
-        return this.timeEndedInMillis;
+    public Output<Optional<String>> timeEndedInMillis() {
+        return Codegen.optional(this.timeEndedInMillis);
     }
     /**
      * Time at which the request started getting processed.
      * 
      */
     @Export(name="timeStartedInMillis", refs={String.class}, tree="[0]")
-    private Output<String> timeStartedInMillis;
+    private Output</* @Nullable */ String> timeStartedInMillis;
 
     /**
      * @return Time at which the request started getting processed.
      * 
      */
-    public Output<String> timeStartedInMillis() {
-        return this.timeStartedInMillis;
+    public Output<Optional<String>> timeStartedInMillis() {
+        return Codegen.optional(this.timeStartedInMillis);
     }
     /**
      * Number of objects that are exported.
      * 
      */
     @Export(name="totalExportedObjectCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalExportedObjectCount;
+    private Output</* @Nullable */ Integer> totalExportedObjectCount;
 
     /**
      * @return Number of objects that are exported.
      * 
      */
-    public Output<Integer> totalExportedObjectCount() {
-        return this.totalExportedObjectCount;
+    public Output<Optional<Integer>> totalExportedObjectCount() {
+        return Codegen.optional(this.totalExportedObjectCount);
     }
     /**
      * The workspace ID.

@@ -55,17 +55,11 @@ class GetUnifiedAgentConfigurationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -80,7 +74,7 @@ class GetUnifiedAgentConfigurationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,17 +93,11 @@ class GetUnifiedAgentConfigurationsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The pipeline state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="unifiedAgentConfigurationCollections")
-    def unified_agent_configuration_collections(self) -> Sequence['outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionResult']:
-        """
-        The list of unified_agent_configuration_collection.
-        """
+    def unified_agent_configuration_collections(self) -> Optional[Sequence['outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionResult']]:
         return pulumi.get(self, "unified_agent_configuration_collections")
 
 
@@ -139,31 +127,7 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
                                      state: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUnifiedAgentConfigurationsResult:
     """
-    This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
-
-    Lists all unified agent configurations in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=var["compartment_id"],
-        display_name=var["unified_agent_configuration_display_name"],
-        group_id=oci_identity_group["test_group"]["id"],
-        is_compartment_id_in_subtree=var["unified_agent_configuration_is_compartment_id_in_subtree"],
-        log_id=oci_logging_log["test_log"]["id"],
-        state=var["unified_agent_configuration_state"])
-    ```
-
-
-    :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name.
-    :param str group_id: The OCID of a group or a dynamic group.
-    :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
-    :param str log_id: Custom log OCID to list resources with the log as destination.
-    :param str state: Lifecycle state of the log object
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -198,30 +162,6 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
                                             state: Optional[pulumi.Input[Optional[str]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUnifiedAgentConfigurationsResult]:
     """
-    This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
-
-    Lists all unified agent configurations in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=var["compartment_id"],
-        display_name=var["unified_agent_configuration_display_name"],
-        group_id=oci_identity_group["test_group"]["id"],
-        is_compartment_id_in_subtree=var["unified_agent_configuration_is_compartment_id_in_subtree"],
-        log_id=oci_logging_log["test_log"]["id"],
-        state=var["unified_agent_configuration_state"])
-    ```
-
-
-    :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str display_name: Resource name.
-    :param str group_id: The OCID of a group or a dynamic group.
-    :param bool is_compartment_id_in_subtree: Specifies whether or not nested compartments should be traversed. Defaults to false.
-    :param str log_id: Custom log OCID to list resources with the log as destination.
-    :param str state: Lifecycle state of the log object
+    Use this data source to access information about an existing resource.
     """
     ...

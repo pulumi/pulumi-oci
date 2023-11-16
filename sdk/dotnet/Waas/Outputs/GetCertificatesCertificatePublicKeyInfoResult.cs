@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The algorithm identifier and parameters for the public key.
         /// </summary>
-        public readonly string Algorithm;
+        public readonly string? Algorithm;
         /// <summary>
         /// The private key exponent.
         /// </summary>
-        public readonly int Exponent;
+        public readonly int? Exponent;
         /// <summary>
         /// The number of bits in a key used by a cryptographic algorithm.
         /// </summary>
-        public readonly int KeySize;
+        public readonly int? KeySize;
 
         [OutputConstructor]
         private GetCertificatesCertificatePublicKeyInfoResult(
-            string algorithm,
+            string? algorithm,
 
-            int exponent,
+            int? exponent,
 
-            int keySize)
+            int? keySize)
         {
             Algorithm = algorithm;
             Exponent = exponent;

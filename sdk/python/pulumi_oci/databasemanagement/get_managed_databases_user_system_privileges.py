@@ -50,7 +50,7 @@ class GetManagedDatabasesUserSystemPrivilegesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -64,17 +64,11 @@ class GetManagedDatabasesUserSystemPrivilegesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of a system privilege.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="systemPrivilegeCollections")
-    def system_privilege_collections(self) -> Sequence['outputs.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionResult']:
-        """
-        The list of system_privilege_collection.
-        """
+    def system_privilege_collections(self) -> Optional[Sequence['outputs.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionResult']]:
         return pulumi.get(self, "system_privilege_collections")
 
     @property
@@ -103,25 +97,7 @@ def get_managed_databases_user_system_privileges(filters: Optional[Sequence[pulu
                                                  user_name: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabasesUserSystemPrivilegesResult:
     """
-    This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of system privileges granted to a specific user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_system_privilege_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -147,24 +123,6 @@ def get_managed_databases_user_system_privileges_output(filters: Optional[pulumi
                                                         user_name: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabasesUserSystemPrivilegesResult]:
     """
-    This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of system privileges granted to a specific user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_databases_user_system_privileges = oci.DatabaseManagement.get_managed_databases_user_system_privileges(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_system_privilege_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     ...

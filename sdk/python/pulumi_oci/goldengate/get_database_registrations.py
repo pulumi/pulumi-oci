@@ -46,25 +46,16 @@ class GetDatabaseRegistrationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseRegistrationCollections")
-    def database_registration_collections(self) -> Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionResult']:
-        """
-        The list of database_registration_collection.
-        """
+    def database_registration_collections(self) -> Optional[Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionResult']]:
         return pulumi.get(self, "database_registration_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +65,7 @@ class GetDatabaseRegistrationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetDatabaseRegistrationsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,26 +97,7 @@ def get_database_registrations(compartment_id: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseRegistrationsResult:
     """
-    This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
-
-    Note: Deprecated. Use the /connections API instead.
-    Lists the DatabaseRegistrations in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=var["compartment_id"],
-        display_name=var["database_registration_display_name"],
-        state=var["database_registration_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str state: A filter to return only the resources that match the 'lifecycleState' given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -154,25 +123,6 @@ def get_database_registrations_output(compartment_id: Optional[pulumi.Input[str]
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseRegistrationsResult]:
     """
-    This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
-
-    Note: Deprecated. Use the /connections API instead.
-    Lists the DatabaseRegistrations in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=var["compartment_id"],
-        display_name=var["database_registration_display_name"],
-        state=var["database_registration_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str state: A filter to return only the resources that match the 'lifecycleState' given.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -18,7 +18,7 @@ public final class GetBuildPipelinesResult {
      * @return The list of build_pipeline_collection.
      * 
      */
-    private List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
+    private @Nullable List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
     /**
      * @return The OCID of the compartment where the build pipeline is created.
      * 
@@ -52,7 +52,7 @@ public final class GetBuildPipelinesResult {
      * 
      */
     public List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections() {
-        return this.buildPipelineCollections;
+        return this.buildPipelineCollections == null ? List.of() : this.buildPipelineCollections;
     }
     /**
      * @return The OCID of the compartment where the build pipeline is created.
@@ -102,7 +102,7 @@ public final class GetBuildPipelinesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
+        private @Nullable List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBuildPipelinesFilter> filters;
@@ -122,8 +122,8 @@ public final class GetBuildPipelinesResult {
         }
 
         @CustomType.Setter
-        public Builder buildPipelineCollections(List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections) {
-            this.buildPipelineCollections = Objects.requireNonNull(buildPipelineCollections);
+        public Builder buildPipelineCollections(@Nullable List<GetBuildPipelinesBuildPipelineCollection> buildPipelineCollections) {
+            this.buildPipelineCollections = buildPipelineCollections;
             return this;
         }
         public Builder buildPipelineCollections(GetBuildPipelinesBuildPipelineCollection... buildPipelineCollections) {

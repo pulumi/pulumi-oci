@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -67,25 +66,25 @@ type LookupReplicationPolicyArgs struct {
 type LookupReplicationPolicyResult struct {
 	Bucket string `pulumi:"bucket"`
 	// Deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
-	DeleteObjectInDestinationBucket string `pulumi:"deleteObjectInDestinationBucket"`
+	DeleteObjectInDestinationBucket *string `pulumi:"deleteObjectInDestinationBucket"`
 	// The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-	DestinationBucketName string `pulumi:"destinationBucketName"`
+	DestinationBucketName *string `pulumi:"destinationBucketName"`
 	// The destination region to replicate to, for example "us-ashburn-1".
-	DestinationRegionName string `pulumi:"destinationRegionName"`
+	DestinationRegionName *string `pulumi:"destinationRegionName"`
 	// The id of the replication policy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the policy.
-	Name          string `pulumi:"name"`
-	Namespace     string `pulumi:"namespace"`
-	ReplicationId string `pulumi:"replicationId"`
+	Name          *string `pulumi:"name"`
+	Namespace     string  `pulumi:"namespace"`
+	ReplicationId string  `pulumi:"replicationId"`
 	// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A human-readable description of the status.
-	StatusMessage string `pulumi:"statusMessage"`
+	StatusMessage *string `pulumi:"statusMessage"`
 	// The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Changes made to the source bucket before this time has been replicated.
-	TimeLastSync string `pulumi:"timeLastSync"`
+	TimeLastSync *string `pulumi:"timeLastSync"`
 }
 
 func LookupReplicationPolicyOutput(ctx *pulumi.Context, args LookupReplicationPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupReplicationPolicyResultOutput {
@@ -130,39 +129,33 @@ func (o LookupReplicationPolicyResultOutput) ToLookupReplicationPolicyResultOutp
 	return o
 }
 
-func (o LookupReplicationPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReplicationPolicyResult] {
-	return pulumix.Output[LookupReplicationPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupReplicationPolicyResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
 // Deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.
-func (o LookupReplicationPolicyResultOutput) DeleteObjectInDestinationBucket() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.DeleteObjectInDestinationBucket }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) DeleteObjectInDestinationBucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.DeleteObjectInDestinationBucket }).(pulumi.StringPtrOutput)
 }
 
 // The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
-func (o LookupReplicationPolicyResultOutput) DestinationBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.DestinationBucketName }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) DestinationBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.DestinationBucketName }).(pulumi.StringPtrOutput)
 }
 
 // The destination region to replicate to, for example "us-ashburn-1".
-func (o LookupReplicationPolicyResultOutput) DestinationRegionName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.DestinationRegionName }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) DestinationRegionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.DestinationRegionName }).(pulumi.StringPtrOutput)
 }
 
 // The id of the replication policy.
-func (o LookupReplicationPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the policy.
-func (o LookupReplicationPolicyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupReplicationPolicyResultOutput) Namespace() pulumi.StringOutput {
@@ -174,23 +167,23 @@ func (o LookupReplicationPolicyResultOutput) ReplicationId() pulumi.StringOutput
 }
 
 // The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
-func (o LookupReplicationPolicyResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable description of the status.
-func (o LookupReplicationPolicyResultOutput) StatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.StatusMessage }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) StatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.StatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupReplicationPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Changes made to the source bucket before this time has been replicated.
-func (o LookupReplicationPolicyResultOutput) TimeLastSync() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupReplicationPolicyResult) string { return v.TimeLastSync }).(pulumi.StringOutput)
+func (o LookupReplicationPolicyResultOutput) TimeLastSync() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupReplicationPolicyResult) *string { return v.TimeLastSync }).(pulumi.StringPtrOutput)
 }
 
 func init() {

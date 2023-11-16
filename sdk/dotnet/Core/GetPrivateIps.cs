@@ -259,7 +259,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
         /// </summary>
@@ -285,7 +285,7 @@ namespace Pulumi.Oci.Core
         private GetPrivateIpsResult(
             ImmutableArray<Outputs.GetPrivateIpsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? ipAddress,
 

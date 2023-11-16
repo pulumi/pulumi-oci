@@ -54,18 +54,12 @@ class GetAccessRequestsResult:
 
     @property
     @pulumi.getter(name="accessRequestCollections")
-    def access_request_collections(self) -> Sequence['outputs.GetAccessRequestsAccessRequestCollectionResult']:
-        """
-        The list of access_request_collection.
-        """
+    def access_request_collections(self) -> Optional[Sequence['outputs.GetAccessRequestsAccessRequestCollectionResult']]:
         return pulumi.get(self, "access_request_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the access request.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -75,7 +69,7 @@ class GetAccessRequestsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -84,25 +78,16 @@ class GetAccessRequestsResult:
     @property
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[str]:
-        """
-        The name of the target resource.
-        """
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
-        """
-        resourceType for which the AccessRequest is applicable
-        """
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the AccessRequest.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -142,31 +127,7 @@ def get_access_requests(compartment_id: Optional[str] = None,
                         time_start: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccessRequestsResult:
     """
-    This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists all access requests in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=var["compartment_id"],
-        resource_name=var["access_request_resource_name"],
-        resource_type=var["access_request_resource_type"],
-        state=var["access_request_state"],
-        time_end=var["access_request_time_end"],
-        time_start=var["access_request_time_start"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str resource_name: A filter to return only resources that match the given ResourceName.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-    :param str time_end: Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.
-    :param str time_start: Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -201,30 +162,6 @@ def get_access_requests_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessRequestsResult]:
     """
-    This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists all access requests in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_access_requests = oci.OperatorAccessControl.get_access_requests(compartment_id=var["compartment_id"],
-        resource_name=var["access_request_resource_name"],
-        resource_type=var["access_request_resource_type"],
-        state=var["access_request_state"],
-        time_end=var["access_request_time_end"],
-        time_start=var["access_request_time_start"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str resource_name: A filter to return only resources that match the given ResourceName.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-    :param str time_end: Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.
-    :param str time_start: Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters are used together.
+    Use this data source to access information about an existing resource.
     """
     ...

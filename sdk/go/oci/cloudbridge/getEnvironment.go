@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -60,26 +59,26 @@ type LookupEnvironmentArgs struct {
 // A collection of values returned by getEnvironment.
 type LookupEnvironmentResult struct {
 	// Compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Environment identifier, which can be renamed.
-	DisplayName   string `pulumi:"displayName"`
-	EnvironmentId string `pulumi:"environmentId"`
+	DisplayName   *string `pulumi:"displayName"`
+	EnvironmentId string  `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the source environment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the source environment was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the source environment was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupEnvironmentOutput(ctx *pulumi.Context, args LookupEnvironmentOutputArgs, opts ...pulumi.InvokeOption) LookupEnvironmentResultOutput {
@@ -120,15 +119,9 @@ func (o LookupEnvironmentResultOutput) ToLookupEnvironmentResultOutputWithContex
 	return o
 }
 
-func (o LookupEnvironmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEnvironmentResult] {
-	return pulumix.Output[LookupEnvironmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier.
-func (o LookupEnvironmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -137,8 +130,8 @@ func (o LookupEnvironmentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Environment identifier, which can be renamed.
-func (o LookupEnvironmentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEnvironmentResultOutput) EnvironmentId() pulumi.StringOutput {
@@ -151,18 +144,18 @@ func (o LookupEnvironmentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupEnvironmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o LookupEnvironmentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the source environment.
-func (o LookupEnvironmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -171,13 +164,13 @@ func (o LookupEnvironmentResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the source environment was created. An RFC3339 formatted datetime string.
-func (o LookupEnvironmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the source environment was updated. An RFC3339 formatted datetime string.
-func (o LookupEnvironmentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnvironmentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupEnvironmentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnvironmentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceParentSoftwareSource {
@@ -13,27 +15,27 @@ public final class GetManagedInstanceParentSoftwareSource {
      * @return software source identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return software source name
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetManagedInstanceParentSoftwareSource() {}
     /**
      * @return software source identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return software source name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetManagedInstanceParentSoftwareSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String name;
+        private @Nullable String id;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetManagedInstanceParentSoftwareSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetManagedInstanceParentSoftwareSource {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetManagedInstanceParentSoftwareSource build() {

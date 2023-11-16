@@ -18,12 +18,6 @@ class BackupCancelManagementArgs:
                  cancel_backup_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a BackupCancelManagement resource.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] cancel_backup_trigger: When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "backup_id", backup_id)
         if cancel_backup_trigger is not None:
@@ -32,9 +26,6 @@ class BackupCancelManagementArgs:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> pulumi.Input[str]:
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
@@ -44,13 +35,6 @@ class BackupCancelManagementArgs:
     @property
     @pulumi.getter(name="cancelBackupTrigger")
     def cancel_backup_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cancel_backup_trigger")
 
     @cancel_backup_trigger.setter
@@ -65,12 +49,6 @@ class _BackupCancelManagementState:
                  cancel_backup_trigger: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering BackupCancelManagement resources.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] cancel_backup_trigger: When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
@@ -80,9 +58,6 @@ class _BackupCancelManagementState:
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
@@ -92,13 +67,6 @@ class _BackupCancelManagementState:
     @property
     @pulumi.getter(name="cancelBackupTrigger")
     def cancel_backup_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cancel_backup_trigger")
 
     @cancel_backup_trigger.setter
@@ -115,33 +83,9 @@ class BackupCancelManagement(pulumi.CustomResource):
                  cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
-
-        Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backup_cancel_management = oci.database.BackupCancelManagement("testBackupCancelManagement",
-            backup_id=oci_database_backup["test_backup"]["id"],
-            cancel_backup_trigger=1)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a BackupCancelManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] cancel_backup_trigger: When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -150,25 +94,7 @@ class BackupCancelManagement(pulumi.CustomResource):
                  args: BackupCancelManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
-
-        Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backup_cancel_management = oci.database.BackupCancelManagement("testBackupCancelManagement",
-            backup_id=oci_database_backup["test_backup"]["id"],
-            cancel_backup_trigger=1)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a BackupCancelManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BackupCancelManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -218,12 +144,6 @@ class BackupCancelManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] cancel_backup_trigger: When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -236,20 +156,10 @@ class BackupCancelManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> pulumi.Output[str]:
-        """
-        The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "backup_id")
 
     @property
     @pulumi.getter(name="cancelBackupTrigger")
     def cancel_backup_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cancel_backup_trigger")
 

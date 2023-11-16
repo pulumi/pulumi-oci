@@ -6,22 +6,24 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeysKeyRestoreFromFile {
-    private String contentLength;
-    private String contentMd5;
-    private String restoreKeyFromFileDetails;
+    private @Nullable String contentLength;
+    private @Nullable String contentMd5;
+    private @Nullable String restoreKeyFromFileDetails;
 
     private GetKeysKeyRestoreFromFile() {}
-    public String contentLength() {
-        return this.contentLength;
+    public Optional<String> contentLength() {
+        return Optional.ofNullable(this.contentLength);
     }
-    public String contentMd5() {
-        return this.contentMd5;
+    public Optional<String> contentMd5() {
+        return Optional.ofNullable(this.contentMd5);
     }
-    public String restoreKeyFromFileDetails() {
-        return this.restoreKeyFromFileDetails;
+    public Optional<String> restoreKeyFromFileDetails() {
+        return Optional.ofNullable(this.restoreKeyFromFileDetails);
     }
 
     public static Builder builder() {
@@ -33,9 +35,9 @@ public final class GetKeysKeyRestoreFromFile {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contentLength;
-        private String contentMd5;
-        private String restoreKeyFromFileDetails;
+        private @Nullable String contentLength;
+        private @Nullable String contentMd5;
+        private @Nullable String restoreKeyFromFileDetails;
         public Builder() {}
         public Builder(GetKeysKeyRestoreFromFile defaults) {
     	      Objects.requireNonNull(defaults);
@@ -45,18 +47,18 @@ public final class GetKeysKeyRestoreFromFile {
         }
 
         @CustomType.Setter
-        public Builder contentLength(String contentLength) {
-            this.contentLength = Objects.requireNonNull(contentLength);
+        public Builder contentLength(@Nullable String contentLength) {
+            this.contentLength = contentLength;
             return this;
         }
         @CustomType.Setter
-        public Builder contentMd5(String contentMd5) {
-            this.contentMd5 = Objects.requireNonNull(contentMd5);
+        public Builder contentMd5(@Nullable String contentMd5) {
+            this.contentMd5 = contentMd5;
             return this;
         }
         @CustomType.Setter
-        public Builder restoreKeyFromFileDetails(String restoreKeyFromFileDetails) {
-            this.restoreKeyFromFileDetails = Objects.requireNonNull(restoreKeyFromFileDetails);
+        public Builder restoreKeyFromFileDetails(@Nullable String restoreKeyFromFileDetails) {
+            this.restoreKeyFromFileDetails = restoreKeyFromFileDetails;
             return this;
         }
         public GetKeysKeyRestoreFromFile build() {

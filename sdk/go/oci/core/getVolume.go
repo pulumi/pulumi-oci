@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.
@@ -60,51 +59,51 @@ type LookupVolumeArgs struct {
 // A collection of values returned by getVolume.
 type LookupVolumeResult struct {
 	// The number of Volume Performance Units per GB that this volume is effectively tuned to.
-	AutoTunedVpusPerGb string `pulumi:"autoTunedVpusPerGb"`
+	AutoTunedVpusPerGb *string `pulumi:"autoTunedVpusPerGb"`
 	// The list of autotune policies enabled for this volume.
 	AutotunePolicies []GetVolumeAutotunePolicy `pulumi:"autotunePolicies"`
 	// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-	BackupPolicyId string `pulumi:"backupPolicyId"`
+	BackupPolicyId *string `pulumi:"backupPolicyId"`
 	// The list of block volume replicas of this volume.
 	BlockVolumeReplicas         []GetVolumeBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
-	BlockVolumeReplicasDeletion bool                          `pulumi:"blockVolumeReplicasDeletion"`
+	BlockVolumeReplicasDeletion *bool                         `pulumi:"blockVolumeReplicasDeletion"`
 	// The OCID of the compartment that contains the volume.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the block volume replica.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
+	IsAutoTuneEnabled *bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-	IsHydrated bool `pulumi:"isHydrated"`
+	IsHydrated *bool `pulumi:"isHydrated"`
 	// The OCID of the Vault service key which is the master encryption key for the volume.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The size of the volume in GBs.
-	SizeInGbs string `pulumi:"sizeInGbs"`
+	SizeInGbs *string `pulumi:"sizeInGbs"`
 	// The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 	//
 	// Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-	SizeInMbs     string                  `pulumi:"sizeInMbs"`
+	SizeInMbs     *string                 `pulumi:"sizeInMbs"`
 	SourceDetails []GetVolumeSourceDetail `pulumi:"sourceDetails"`
 	// The current state of a volume.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated    string `pulumi:"timeCreated"`
-	VolumeBackupId string `pulumi:"volumeBackupId"`
+	TimeCreated    *string `pulumi:"timeCreated"`
+	VolumeBackupId *string `pulumi:"volumeBackupId"`
 	// The OCID of the source volume group.
-	VolumeGroupId string `pulumi:"volumeGroupId"`
-	VolumeId      string `pulumi:"volumeId"`
+	VolumeGroupId *string `pulumi:"volumeGroupId"`
+	VolumeId      string  `pulumi:"volumeId"`
 	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-	VpusPerGb string `pulumi:"vpusPerGb"`
+	VpusPerGb *string `pulumi:"vpusPerGb"`
 }
 
 func LookupVolumeOutput(ctx *pulumi.Context, args LookupVolumeOutputArgs, opts ...pulumi.InvokeOption) LookupVolumeResultOutput {
@@ -145,15 +144,9 @@ func (o LookupVolumeResultOutput) ToLookupVolumeResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupVolumeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVolumeResult] {
-	return pulumix.Output[LookupVolumeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of Volume Performance Units per GB that this volume is effectively tuned to.
-func (o LookupVolumeResultOutput) AutoTunedVpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.AutoTunedVpusPerGb }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) AutoTunedVpusPerGb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.AutoTunedVpusPerGb }).(pulumi.StringPtrOutput)
 }
 
 // The list of autotune policies enabled for this volume.
@@ -162,13 +155,13 @@ func (o LookupVolumeResultOutput) AutotunePolicies() GetVolumeAutotunePolicyArra
 }
 
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
-func (o LookupVolumeResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-func (o LookupVolumeResultOutput) BackupPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.BackupPolicyId }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) BackupPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.BackupPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // The list of block volume replicas of this volume.
@@ -176,13 +169,13 @@ func (o LookupVolumeResultOutput) BlockVolumeReplicas() GetVolumeBlockVolumeRepl
 	return o.ApplyT(func(v LookupVolumeResult) []GetVolumeBlockVolumeReplica { return v.BlockVolumeReplicas }).(GetVolumeBlockVolumeReplicaArrayOutput)
 }
 
-func (o LookupVolumeResultOutput) BlockVolumeReplicasDeletion() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupVolumeResult) bool { return v.BlockVolumeReplicasDeletion }).(pulumi.BoolOutput)
+func (o LookupVolumeResultOutput) BlockVolumeReplicasDeletion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *bool { return v.BlockVolumeReplicasDeletion }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the compartment that contains the volume.
-func (o LookupVolumeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -191,8 +184,8 @@ func (o LookupVolumeResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupVolumeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -201,35 +194,35 @@ func (o LookupVolumeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the block volume replica.
-func (o LookupVolumeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
-func (o LookupVolumeResultOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupVolumeResult) bool { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
+func (o LookupVolumeResultOutput) IsAutoTuneEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *bool { return v.IsAutoTuneEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the cloned volume's data has finished copying from the source volume or backup.
-func (o LookupVolumeResultOutput) IsHydrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupVolumeResult) bool { return v.IsHydrated }).(pulumi.BoolOutput)
+func (o LookupVolumeResultOutput) IsHydrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *bool { return v.IsHydrated }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the Vault service key which is the master encryption key for the volume.
-func (o LookupVolumeResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in GBs.
-func (o LookupVolumeResultOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
 //
 // Deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
-func (o LookupVolumeResultOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupVolumeResultOutput) SourceDetails() GetVolumeSourceDetailArrayOutput {
@@ -237,8 +230,8 @@ func (o LookupVolumeResultOutput) SourceDetails() GetVolumeSourceDetailArrayOutp
 }
 
 // The current state of a volume.
-func (o LookupVolumeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -247,17 +240,17 @@ func (o LookupVolumeResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupVolumeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupVolumeResultOutput) VolumeBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.VolumeBackupId }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) VolumeBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.VolumeBackupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source volume group.
-func (o LookupVolumeResultOutput) VolumeGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.VolumeGroupId }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) VolumeGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.VolumeGroupId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupVolumeResultOutput) VolumeId() pulumi.StringOutput {
@@ -265,8 +258,8 @@ func (o LookupVolumeResultOutput) VolumeId() pulumi.StringOutput {
 }
 
 // The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-func (o LookupVolumeResultOutput) VpusPerGb() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupVolumeResult) string { return v.VpusPerGb }).(pulumi.StringOutput)
+func (o LookupVolumeResultOutput) VpusPerGb() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupVolumeResult) *string { return v.VpusPerGb }).(pulumi.StringPtrOutput)
 }
 
 func init() {

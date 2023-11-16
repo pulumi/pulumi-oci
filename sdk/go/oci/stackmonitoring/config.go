@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -79,26 +78,26 @@ type Config struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// (Updatable) License edition.
-	License pulumi.StringOutput `pulumi:"license"`
+	License pulumi.StringPtrOutput `pulumi:"license"`
 	// The type of resource to configure for automatic promotion.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrOutput `pulumi:"resourceType"`
 	// The current state of the configuration.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the configuration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the Config was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewConfig registers a new resource with the given unique name, arguments, and options.
@@ -268,12 +267,6 @@ func (i *Config) ToConfigOutputWithContext(ctx context.Context) ConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigOutput)
 }
 
-func (i *Config) ToOutput(ctx context.Context) pulumix.Output[*Config] {
-	return pulumix.Output[*Config]{
-		OutputState: i.ToConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConfigArrayInput is an input type that accepts ConfigArray and ConfigArrayOutput values.
 // You can construct a concrete instance of `ConfigArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i ConfigArray) ToConfigArrayOutput() ConfigArrayOutput {
 
 func (i ConfigArray) ToConfigArrayOutputWithContext(ctx context.Context) ConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigArrayOutput)
-}
-
-func (i ConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*Config] {
-	return pulumix.Output[[]*Config]{
-		OutputState: i.ToConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConfigMapInput is an input type that accepts ConfigMap and ConfigMapOutput values.
@@ -330,12 +317,6 @@ func (i ConfigMap) ToConfigMapOutputWithContext(ctx context.Context) ConfigMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigMapOutput)
 }
 
-func (i ConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Config] {
-	return pulumix.Output[map[string]*Config]{
-		OutputState: i.ToConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConfigOutput struct{ *pulumi.OutputState }
 
 func (ConfigOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o ConfigOutput) ToConfigOutput() ConfigOutput {
 
 func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutput {
 	return o
-}
-
-func (o ConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*Config] {
-	return pulumix.Output[*Config]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment in which the configuration is created.
@@ -372,8 +347,8 @@ func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The display name of the configuration.
-func (o ConfigOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ConfigOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -382,26 +357,26 @@ func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-func (o ConfigOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o ConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) License edition.
-func (o ConfigOutput) License() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.License }).(pulumi.StringOutput)
+func (o ConfigOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.License }).(pulumi.StringPtrOutput)
 }
 
 // The type of resource to configure for automatic promotion.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConfigOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
+func (o ConfigOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the configuration.
-func (o ConfigOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConfigOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -410,13 +385,13 @@ func (o ConfigOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the configuration was created. An RFC3339 formatted datetime string.
-func (o ConfigOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConfigOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Config was updated.
-func (o ConfigOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConfigOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ConfigArrayOutput struct{ *pulumi.OutputState }
@@ -431,12 +406,6 @@ func (o ConfigArrayOutput) ToConfigArrayOutput() ConfigArrayOutput {
 
 func (o ConfigArrayOutput) ToConfigArrayOutputWithContext(ctx context.Context) ConfigArrayOutput {
 	return o
-}
-
-func (o ConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Config] {
-	return pulumix.Output[[]*Config]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigArrayOutput) Index(i pulumi.IntInput) ConfigOutput {
@@ -457,12 +426,6 @@ func (o ConfigMapOutput) ToConfigMapOutput() ConfigMapOutput {
 
 func (o ConfigMapOutput) ToConfigMapOutputWithContext(ctx context.Context) ConfigMapOutput {
 	return o
-}
-
-func (o ConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Config] {
-	return pulumix.Output[map[string]*Config]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConfigMapOutput) MapIndex(k pulumi.StringInput) ConfigOutput {

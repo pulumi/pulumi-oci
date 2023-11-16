@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStageWaitCriteria {
@@ -13,27 +15,27 @@ public final class GetBuildPipelineStageWaitCriteria {
      * @return The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
      * 
      */
-    private String waitDuration;
+    private @Nullable String waitDuration;
     /**
      * @return Wait criteria type.
      * 
      */
-    private String waitType;
+    private @Nullable String waitType;
 
     private GetBuildPipelineStageWaitCriteria() {}
     /**
      * @return The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
      * 
      */
-    public String waitDuration() {
-        return this.waitDuration;
+    public Optional<String> waitDuration() {
+        return Optional.ofNullable(this.waitDuration);
     }
     /**
      * @return Wait criteria type.
      * 
      */
-    public String waitType() {
-        return this.waitType;
+    public Optional<String> waitType() {
+        return Optional.ofNullable(this.waitType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBuildPipelineStageWaitCriteria {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String waitDuration;
-        private String waitType;
+        private @Nullable String waitDuration;
+        private @Nullable String waitType;
         public Builder() {}
         public Builder(GetBuildPipelineStageWaitCriteria defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBuildPipelineStageWaitCriteria {
         }
 
         @CustomType.Setter
-        public Builder waitDuration(String waitDuration) {
-            this.waitDuration = Objects.requireNonNull(waitDuration);
+        public Builder waitDuration(@Nullable String waitDuration) {
+            this.waitDuration = waitDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder waitType(String waitType) {
-            this.waitType = Objects.requireNonNull(waitType);
+        public Builder waitType(@Nullable String waitType) {
+            this.waitType = waitType;
             return this;
         }
         public GetBuildPipelineStageWaitCriteria build() {

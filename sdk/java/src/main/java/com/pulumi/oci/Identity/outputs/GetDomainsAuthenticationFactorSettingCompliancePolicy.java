@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingCompliancePolicy {
@@ -13,39 +15,39 @@ public final class GetDomainsAuthenticationFactorSettingCompliancePolicy {
      * @return The action to be taken if the value of the attribute is not as expected
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The name of the attribute being evaluated
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Value of the tag.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAuthenticationFactorSettingCompliancePolicy() {}
     /**
      * @return The action to be taken if the value of the attribute is not as expected
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The name of the attribute being evaluated
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Value of the tag.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsAuthenticationFactorSettingCompliancePolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String name;
-        private String value;
+        private @Nullable String action;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingCompliancePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsAuthenticationFactorSettingCompliancePolicy {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingCompliancePolicy build() {

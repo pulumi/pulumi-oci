@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Enrollment Statuses in Oracle Cloud Infrastructure Optimizer service.
@@ -72,7 +71,7 @@ type GetEnrollmentStatusesResult struct {
 	EnrollmentStatusCollections []GetEnrollmentStatusesEnrollmentStatusCollection `pulumi:"enrollmentStatusCollections"`
 	Filters                     []GetEnrollmentStatusesFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The enrollment status' current state.
 	State *string `pulumi:"state"`
 	// The current Cloud Advisor enrollment status.
@@ -122,12 +121,6 @@ func (o GetEnrollmentStatusesResultOutput) ToGetEnrollmentStatusesResultOutputWi
 	return o
 }
 
-func (o GetEnrollmentStatusesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesResult] {
-	return pulumix.Output[GetEnrollmentStatusesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
 func (o GetEnrollmentStatusesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEnrollmentStatusesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -145,8 +138,8 @@ func (o GetEnrollmentStatusesResultOutput) Filters() GetEnrollmentStatusesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetEnrollmentStatusesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnrollmentStatusesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEnrollmentStatusesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnrollmentStatusesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The enrollment status' current state.

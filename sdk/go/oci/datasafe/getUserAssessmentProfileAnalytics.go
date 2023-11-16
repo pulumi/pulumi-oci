@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -94,7 +93,7 @@ type GetUserAssessmentProfileAnalyticsResult struct {
 	CompartmentIdInSubtree *bool                                     `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentProfileAnalyticsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of profile_aggregations.
 	ProfileAggregations []GetUserAssessmentProfileAnalyticsProfileAggregation `pulumi:"profileAggregations"`
 	ProfileName         *string                                               `pulumi:"profileName"`
@@ -151,12 +150,6 @@ func (o GetUserAssessmentProfileAnalyticsResultOutput) ToGetUserAssessmentProfil
 	return o
 }
 
-func (o GetUserAssessmentProfileAnalyticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentProfileAnalyticsResult] {
-	return pulumix.Output[GetUserAssessmentProfileAnalyticsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUserAssessmentProfileAnalyticsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -176,8 +169,8 @@ func (o GetUserAssessmentProfileAnalyticsResultOutput) Filters() GetUserAssessme
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserAssessmentProfileAnalyticsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserAssessmentProfileAnalyticsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of profile_aggregations.

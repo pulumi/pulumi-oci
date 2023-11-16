@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Whether this is the default recommendation strategy.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// The list of strategies for the parameters.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The name of the strategy.
         /// </summary>
-        public readonly string StrategyName;
+        public readonly string? StrategyName;
 
         [OutputConstructor]
         private GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult(
-            bool isDefault,
+            bool? isDefault,
 
             ImmutableArray<Outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult> parametersDefinitions,
 
-            string strategyName)
+            string? strategyName)
         {
             IsDefault = isDefault;
             ParametersDefinitions = parametersDefinitions;

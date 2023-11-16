@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -66,42 +65,42 @@ type LookupSqlFirewallPolicyResult struct {
 	// The list of allowed client programs for the SQL firewall policy.
 	AllowedClientPrograms []string `pulumi:"allowedClientPrograms"`
 	// The OCID of the compartment containing the SQL firewall policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The database user name.
-	DbUserName string `pulumi:"dbUserName"`
+	DbUserName *string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the SQL firewall policy.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the SQL firewall policy.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Specifies the SQL firewall policy enforcement option.
-	EnforcementScope string `pulumi:"enforcementScope"`
+	EnforcementScope *string `pulumi:"enforcementScope"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the SQL firewall policy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details about the current state of the SQL firewall policy in Data Safe.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the security policy corresponding to the SQL firewall policy.
-	SecurityPolicyId    string `pulumi:"securityPolicyId"`
-	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
+	SecurityPolicyId    *string `pulumi:"securityPolicyId"`
+	SqlFirewallPolicyId string  `pulumi:"sqlFirewallPolicyId"`
 	// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-	SqlLevel string `pulumi:"sqlLevel"`
+	SqlLevel *string `pulumi:"sqlLevel"`
 	// The current state of the SQL firewall policy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Specifies whether the SQL firewall policy is enabled or disabled.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time that the SQL firewall policy was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Specifies the mode in which the SQL firewall policy is enabled.
-	ViolationAction string `pulumi:"violationAction"`
+	ViolationAction *string `pulumi:"violationAction"`
 	// Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-	ViolationAudit string `pulumi:"violationAudit"`
+	ViolationAudit *string `pulumi:"violationAudit"`
 }
 
 func LookupSqlFirewallPolicyOutput(ctx *pulumi.Context, args LookupSqlFirewallPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupSqlFirewallPolicyResultOutput {
@@ -142,12 +141,6 @@ func (o LookupSqlFirewallPolicyResultOutput) ToLookupSqlFirewallPolicyResultOutp
 	return o
 }
 
-func (o LookupSqlFirewallPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSqlFirewallPolicyResult] {
-	return pulumix.Output[LookupSqlFirewallPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of allowed ip addresses for the SQL firewall policy.
 func (o LookupSqlFirewallPolicyResultOutput) AllowedClientIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) []string { return v.AllowedClientIps }).(pulumi.StringArrayOutput)
@@ -164,13 +157,13 @@ func (o LookupSqlFirewallPolicyResultOutput) AllowedClientPrograms() pulumi.Stri
 }
 
 // The OCID of the compartment containing the SQL firewall policy.
-func (o LookupSqlFirewallPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The database user name.
-func (o LookupSqlFirewallPolicyResultOutput) DbUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.DbUserName }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) DbUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.DbUserName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -179,18 +172,18 @@ func (o LookupSqlFirewallPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the SQL firewall policy.
-func (o LookupSqlFirewallPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the SQL firewall policy.
-func (o LookupSqlFirewallPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the SQL firewall policy enforcement option.
-func (o LookupSqlFirewallPolicyResultOutput) EnforcementScope() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.EnforcementScope }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) EnforcementScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.EnforcementScope }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -199,18 +192,18 @@ func (o LookupSqlFirewallPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the SQL firewall policy.
-func (o LookupSqlFirewallPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the SQL firewall policy in Data Safe.
-func (o LookupSqlFirewallPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the security policy corresponding to the SQL firewall policy.
-func (o LookupSqlFirewallPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) SecurityPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSqlFirewallPolicyResultOutput) SqlFirewallPolicyId() pulumi.StringOutput {
@@ -218,18 +211,18 @@ func (o LookupSqlFirewallPolicyResultOutput) SqlFirewallPolicyId() pulumi.String
 }
 
 // Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
-func (o LookupSqlFirewallPolicyResultOutput) SqlLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.SqlLevel }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) SqlLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.SqlLevel }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the SQL firewall policy.
-func (o LookupSqlFirewallPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the SQL firewall policy is enabled or disabled.
-func (o LookupSqlFirewallPolicyResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -238,23 +231,23 @@ func (o LookupSqlFirewallPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time that the SQL firewall policy was created, in the format defined by RFC3339.
-func (o LookupSqlFirewallPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
-func (o LookupSqlFirewallPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the mode in which the SQL firewall policy is enabled.
-func (o LookupSqlFirewallPolicyResultOutput) ViolationAction() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.ViolationAction }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) ViolationAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.ViolationAction }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
-func (o LookupSqlFirewallPolicyResultOutput) ViolationAudit() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) string { return v.ViolationAudit }).(pulumi.StringOutput)
+func (o LookupSqlFirewallPolicyResultOutput) ViolationAudit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSqlFirewallPolicyResult) *string { return v.ViolationAudit }).(pulumi.StringPtrOutput)
 }
 
 func init() {

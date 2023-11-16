@@ -16,36 +16,36 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// An optional filter to return only resources that match the specified OCID of the database security configuration resource.
         /// </summary>
-        public readonly string DatabaseSecurityConfigId;
+        public readonly string? DatabaseSecurityConfigId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the database security config.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the database security config.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details about the current state of the database security config in Data Safe.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly int RefreshTrigger;
+        public readonly string? LifecycleDetails;
+        public readonly int? RefreshTrigger;
         /// <summary>
         /// The SQL firewall related configurations.
         /// </summary>
@@ -53,61 +53,61 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The current state of the database security configuration.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The time that the database security config was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The last date and time the database security config was refreshed, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeLastRefreshed;
+        public readonly string? TimeLastRefreshed;
         /// <summary>
         /// The date and time the database security configuration was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseSecurityConfigId,
+            string? databaseSecurityConfigId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int refreshTrigger,
+            int? refreshTrigger,
 
             ImmutableArray<Outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionItemSqlFirewallConfigResult> sqlFirewallConfigs,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetId,
+            string? targetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastRefreshed,
+            string? timeLastRefreshed,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DatabaseSecurityConfigId = databaseSecurityConfigId;

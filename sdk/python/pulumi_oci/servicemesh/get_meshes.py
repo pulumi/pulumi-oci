@@ -46,17 +46,11 @@ class GetMeshesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetMeshesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="meshCollections")
-    def mesh_collections(self) -> Sequence['outputs.GetMeshesMeshCollectionResult']:
-        """
-        The list of mesh_collection.
-        """
+    def mesh_collections(self) -> Optional[Sequence['outputs.GetMeshesMeshCollectionResult']]:
         return pulumi.get(self, "mesh_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_meshes(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMeshesResult:
     """
-    This data source provides the list of Meshes in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of Mesh objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_meshes = oci.ServiceMesh.get_meshes(compartment_id=var["compartment_id"],
-        display_name=var["mesh_display_name"],
-        id=var["mesh_id"],
-        state=var["mesh_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire displayName given.
-    :param str id: Unique Mesh identifier.
-    :param str state: A filter to return only resources that match the life cycle state given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_meshes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMeshesResult]:
     """
-    This data source provides the list of Meshes in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of Mesh objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_meshes = oci.ServiceMesh.get_meshes(compartment_id=var["compartment_id"],
-        display_name=var["mesh_display_name"],
-        id=var["mesh_id"],
-        state=var["mesh_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire displayName given.
-    :param str id: Unique Mesh identifier.
-    :param str state: A filter to return only resources that match the life cycle state given.
+    Use this data source to access information about an existing resource.
     """
     ...

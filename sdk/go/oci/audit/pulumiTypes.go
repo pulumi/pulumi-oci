@@ -9,28 +9,27 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetEventsAuditEvent struct {
 	// The version of the CloudEvents specification. The structure of the envelope follows the  [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
-	CloudEventsVersion string `pulumi:"cloudEventsVersion"`
+	CloudEventsVersion *string `pulumi:"cloudEventsVersion"`
 	// The content type of the data contained in `data`.  Example: `application/json`
-	ContentType string `pulumi:"contentType"`
+	ContentType *string `pulumi:"contentType"`
 	// The payload of the event. Information within `data` comes from the resource emitting the event.
 	Datas []GetEventsAuditEventData `pulumi:"datas"`
 	// The GUID of the event.
-	EventId string `pulumi:"eventId"`
+	EventId *string `pulumi:"eventId"`
 	// The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.252Z`
-	EventTime string `pulumi:"eventTime"`
+	EventTime *string `pulumi:"eventTime"`
 	// The type of event that happened.
-	EventType string `pulumi:"eventType"`
+	EventType *string `pulumi:"eventType"`
 	// The version of the event type. This version applies to the payload of the event, not the envelope. Use `cloudEventsVersion` to determine the version of the envelope.  Example: `2.0`
-	EventTypeVersion string `pulumi:"eventTypeVersion"`
+	EventTypeVersion *string `pulumi:"eventTypeVersion"`
 	// The source of the event.  Example: `ComputeApi`
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 }
 
 // GetEventsAuditEventInput is an input type that accepts GetEventsAuditEventArgs and GetEventsAuditEventOutput values.
@@ -46,21 +45,21 @@ type GetEventsAuditEventInput interface {
 
 type GetEventsAuditEventArgs struct {
 	// The version of the CloudEvents specification. The structure of the envelope follows the  [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
-	CloudEventsVersion pulumi.StringInput `pulumi:"cloudEventsVersion"`
+	CloudEventsVersion pulumi.StringPtrInput `pulumi:"cloudEventsVersion"`
 	// The content type of the data contained in `data`.  Example: `application/json`
-	ContentType pulumi.StringInput `pulumi:"contentType"`
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
 	// The payload of the event. Information within `data` comes from the resource emitting the event.
 	Datas GetEventsAuditEventDataArrayInput `pulumi:"datas"`
 	// The GUID of the event.
-	EventId pulumi.StringInput `pulumi:"eventId"`
+	EventId pulumi.StringPtrInput `pulumi:"eventId"`
 	// The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.252Z`
-	EventTime pulumi.StringInput `pulumi:"eventTime"`
+	EventTime pulumi.StringPtrInput `pulumi:"eventTime"`
 	// The type of event that happened.
-	EventType pulumi.StringInput `pulumi:"eventType"`
+	EventType pulumi.StringPtrInput `pulumi:"eventType"`
 	// The version of the event type. This version applies to the payload of the event, not the envelope. Use `cloudEventsVersion` to determine the version of the envelope.  Example: `2.0`
-	EventTypeVersion pulumi.StringInput `pulumi:"eventTypeVersion"`
+	EventTypeVersion pulumi.StringPtrInput `pulumi:"eventTypeVersion"`
 	// The source of the event.  Example: `ComputeApi`
-	Source pulumi.StringInput `pulumi:"source"`
+	Source pulumi.StringPtrInput `pulumi:"source"`
 }
 
 func (GetEventsAuditEventArgs) ElementType() reflect.Type {
@@ -73,12 +72,6 @@ func (i GetEventsAuditEventArgs) ToGetEventsAuditEventOutput() GetEventsAuditEve
 
 func (i GetEventsAuditEventArgs) ToGetEventsAuditEventOutputWithContext(ctx context.Context) GetEventsAuditEventOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventOutput)
-}
-
-func (i GetEventsAuditEventArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEvent] {
-	return pulumix.Output[GetEventsAuditEvent]{
-		OutputState: i.ToGetEventsAuditEventOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEventsAuditEventArrayInput is an input type that accepts GetEventsAuditEventArray and GetEventsAuditEventArrayOutput values.
@@ -106,12 +99,6 @@ func (i GetEventsAuditEventArray) ToGetEventsAuditEventArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventArrayOutput)
 }
 
-func (i GetEventsAuditEventArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEvent] {
-	return pulumix.Output[[]GetEventsAuditEvent]{
-		OutputState: i.ToGetEventsAuditEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventOutput) ElementType() reflect.Type {
@@ -126,20 +113,14 @@ func (o GetEventsAuditEventOutput) ToGetEventsAuditEventOutputWithContext(ctx co
 	return o
 }
 
-func (o GetEventsAuditEventOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEvent] {
-	return pulumix.Output[GetEventsAuditEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The version of the CloudEvents specification. The structure of the envelope follows the  [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
-func (o GetEventsAuditEventOutput) CloudEventsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.CloudEventsVersion }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) CloudEventsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.CloudEventsVersion }).(pulumi.StringPtrOutput)
 }
 
 // The content type of the data contained in `data`.  Example: `application/json`
-func (o GetEventsAuditEventOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // The payload of the event. Information within `data` comes from the resource emitting the event.
@@ -148,28 +129,28 @@ func (o GetEventsAuditEventOutput) Datas() GetEventsAuditEventDataArrayOutput {
 }
 
 // The GUID of the event.
-func (o GetEventsAuditEventOutput) EventId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.EventId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) EventId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.EventId }).(pulumi.StringPtrOutput)
 }
 
 // The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.252Z`
-func (o GetEventsAuditEventOutput) EventTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.EventTime }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) EventTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.EventTime }).(pulumi.StringPtrOutput)
 }
 
 // The type of event that happened.
-func (o GetEventsAuditEventOutput) EventType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.EventType }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) EventType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.EventType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the event type. This version applies to the payload of the event, not the envelope. Use `cloudEventsVersion` to determine the version of the envelope.  Example: `2.0`
-func (o GetEventsAuditEventOutput) EventTypeVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.EventTypeVersion }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) EventTypeVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.EventTypeVersion }).(pulumi.StringPtrOutput)
 }
 
 // The source of the event.  Example: `ComputeApi`
-func (o GetEventsAuditEventOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEvent) string { return v.Source }).(pulumi.StringOutput)
+func (o GetEventsAuditEventOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEvent) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 type GetEventsAuditEventArrayOutput struct{ *pulumi.OutputState }
@@ -186,12 +167,6 @@ func (o GetEventsAuditEventArrayOutput) ToGetEventsAuditEventArrayOutputWithCont
 	return o
 }
 
-func (o GetEventsAuditEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEvent] {
-	return pulumix.Output[[]GetEventsAuditEvent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEventsAuditEventArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsAuditEvent {
 		return vs[0].([]GetEventsAuditEvent)[vs[1].(int)]
@@ -202,17 +177,17 @@ type GetEventsAuditEventData struct {
 	// A container object for attribues unique to the resource emitting the event.
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The availability domain where the resource resides.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
-	CompartmentName string `pulumi:"compartmentName"`
+	CompartmentName *string `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
-	EventGroupingId string `pulumi:"eventGroupingId"`
+	EventGroupingId *string `pulumi:"eventGroupingId"`
 	// Name of the API operation that generated this event.  Example: `GetInstance`
-	EventName string `pulumi:"eventName"`
+	EventName *string `pulumi:"eventName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A container object for identity attributes.
@@ -220,9 +195,9 @@ type GetEventsAuditEventData struct {
 	// A container object for request attributes.
 	Requests []GetEventsAuditEventDataRequest `pulumi:"requests"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// The name of the resource emitting the event.
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// A container object for response attributes.
 	Responses []GetEventsAuditEventDataResponse `pulumi:"responses"`
 	// A container object for state change attributes.
@@ -244,17 +219,17 @@ type GetEventsAuditEventDataArgs struct {
 	// A container object for attribues unique to the resource emitting the event.
 	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
 	// The availability domain where the resource resides.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
-	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	CompartmentName pulumi.StringPtrInput `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
-	EventGroupingId pulumi.StringInput `pulumi:"eventGroupingId"`
+	EventGroupingId pulumi.StringPtrInput `pulumi:"eventGroupingId"`
 	// Name of the API operation that generated this event.  Example: `GetInstance`
-	EventName pulumi.StringInput `pulumi:"eventName"`
+	EventName pulumi.StringPtrInput `pulumi:"eventName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A container object for identity attributes.
@@ -262,9 +237,9 @@ type GetEventsAuditEventDataArgs struct {
 	// A container object for request attributes.
 	Requests GetEventsAuditEventDataRequestArrayInput `pulumi:"requests"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// The name of the resource emitting the event.
-	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// A container object for response attributes.
 	Responses GetEventsAuditEventDataResponseArrayInput `pulumi:"responses"`
 	// A container object for state change attributes.
@@ -281,12 +256,6 @@ func (i GetEventsAuditEventDataArgs) ToGetEventsAuditEventDataOutput() GetEvents
 
 func (i GetEventsAuditEventDataArgs) ToGetEventsAuditEventDataOutputWithContext(ctx context.Context) GetEventsAuditEventDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataOutput)
-}
-
-func (i GetEventsAuditEventDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventData] {
-	return pulumix.Output[GetEventsAuditEventData]{
-		OutputState: i.ToGetEventsAuditEventDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEventsAuditEventDataArrayInput is an input type that accepts GetEventsAuditEventDataArray and GetEventsAuditEventDataArrayOutput values.
@@ -314,12 +283,6 @@ func (i GetEventsAuditEventDataArray) ToGetEventsAuditEventDataArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataArrayOutput)
 }
 
-func (i GetEventsAuditEventDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventData] {
-	return pulumix.Output[[]GetEventsAuditEventData]{
-		OutputState: i.ToGetEventsAuditEventDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataOutput) ElementType() reflect.Type {
@@ -334,30 +297,24 @@ func (o GetEventsAuditEventDataOutput) ToGetEventsAuditEventDataOutputWithContex
 	return o
 }
 
-func (o GetEventsAuditEventDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventData] {
-	return pulumix.Output[GetEventsAuditEventData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A container object for attribues unique to the resource emitting the event.
 func (o GetEventsAuditEventDataOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v GetEventsAuditEventData) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The availability domain where the resource resides.
-func (o GetEventsAuditEventDataOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetEventsAuditEventDataOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
-func (o GetEventsAuditEventDataOutput) CompartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.CompartmentName }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.CompartmentName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -366,13 +323,13 @@ func (o GetEventsAuditEventDataOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
-func (o GetEventsAuditEventDataOutput) EventGroupingId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.EventGroupingId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) EventGroupingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.EventGroupingId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the API operation that generated this event.  Example: `GetInstance`
-func (o GetEventsAuditEventDataOutput) EventName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.EventName }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) EventName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.EventName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -391,13 +348,13 @@ func (o GetEventsAuditEventDataOutput) Requests() GetEventsAuditEventDataRequest
 }
 
 // An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
-func (o GetEventsAuditEventDataOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the resource emitting the event.
-func (o GetEventsAuditEventDataOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // A container object for response attributes.
@@ -424,12 +381,6 @@ func (o GetEventsAuditEventDataArrayOutput) ToGetEventsAuditEventDataArrayOutput
 	return o
 }
 
-func (o GetEventsAuditEventDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventData] {
-	return pulumix.Output[[]GetEventsAuditEventData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEventsAuditEventDataArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsAuditEventData {
 		return vs[0].([]GetEventsAuditEventData)[vs[1].(int)]
@@ -438,25 +389,25 @@ func (o GetEventsAuditEventDataArrayOutput) Index(i pulumi.IntInput) GetEventsAu
 
 type GetEventsAuditEventDataIdentity struct {
 	// The type of authentication used.  Example: `natv`
-	AuthType string `pulumi:"authType"`
+	AuthType *string `pulumi:"authType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a  request on behalf of the prinicpal.
-	CallerId string `pulumi:"callerId"`
+	CallerId *string `pulumi:"callerId"`
 	// The name of the user or service. This value is the friendly name associated with `callerId`.
-	CallerName string `pulumi:"callerName"`
+	CallerName *string `pulumi:"callerName"`
 	// This value identifies any Console session associated with this request.
-	ConsoleSessionId string `pulumi:"consoleSessionId"`
+	ConsoleSessionId *string `pulumi:"consoleSessionId"`
 	// The credential ID of the user. This value is extracted from the HTTP 'Authorization' request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
-	Credentials string `pulumi:"credentials"`
+	Credentials *string `pulumi:"credentials"`
 	// The IP address of the source of the request.  Example: `172.24.80.88`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-	PrincipalId string `pulumi:"principalId"`
+	PrincipalId *string `pulumi:"principalId"`
 	// The name of the user or service. This value is the friendly name associated with `principalId`.  Example: `ExampleName`
-	PrincipalName string `pulumi:"principalName"`
+	PrincipalName *string `pulumi:"principalName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
-	UserAgent string `pulumi:"userAgent"`
+	UserAgent *string `pulumi:"userAgent"`
 }
 
 // GetEventsAuditEventDataIdentityInput is an input type that accepts GetEventsAuditEventDataIdentityArgs and GetEventsAuditEventDataIdentityOutput values.
@@ -472,25 +423,25 @@ type GetEventsAuditEventDataIdentityInput interface {
 
 type GetEventsAuditEventDataIdentityArgs struct {
 	// The type of authentication used.  Example: `natv`
-	AuthType pulumi.StringInput `pulumi:"authType"`
+	AuthType pulumi.StringPtrInput `pulumi:"authType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a  request on behalf of the prinicpal.
-	CallerId pulumi.StringInput `pulumi:"callerId"`
+	CallerId pulumi.StringPtrInput `pulumi:"callerId"`
 	// The name of the user or service. This value is the friendly name associated with `callerId`.
-	CallerName pulumi.StringInput `pulumi:"callerName"`
+	CallerName pulumi.StringPtrInput `pulumi:"callerName"`
 	// This value identifies any Console session associated with this request.
-	ConsoleSessionId pulumi.StringInput `pulumi:"consoleSessionId"`
+	ConsoleSessionId pulumi.StringPtrInput `pulumi:"consoleSessionId"`
 	// The credential ID of the user. This value is extracted from the HTTP 'Authorization' request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
-	Credentials pulumi.StringInput `pulumi:"credentials"`
+	Credentials pulumi.StringPtrInput `pulumi:"credentials"`
 	// The IP address of the source of the request.  Example: `172.24.80.88`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-	PrincipalId pulumi.StringInput `pulumi:"principalId"`
+	PrincipalId pulumi.StringPtrInput `pulumi:"principalId"`
 	// The name of the user or service. This value is the friendly name associated with `principalId`.  Example: `ExampleName`
-	PrincipalName pulumi.StringInput `pulumi:"principalName"`
+	PrincipalName pulumi.StringPtrInput `pulumi:"principalName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrInput `pulumi:"tenantId"`
 	// The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
-	UserAgent pulumi.StringInput `pulumi:"userAgent"`
+	UserAgent pulumi.StringPtrInput `pulumi:"userAgent"`
 }
 
 func (GetEventsAuditEventDataIdentityArgs) ElementType() reflect.Type {
@@ -503,12 +454,6 @@ func (i GetEventsAuditEventDataIdentityArgs) ToGetEventsAuditEventDataIdentityOu
 
 func (i GetEventsAuditEventDataIdentityArgs) ToGetEventsAuditEventDataIdentityOutputWithContext(ctx context.Context) GetEventsAuditEventDataIdentityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataIdentityOutput)
-}
-
-func (i GetEventsAuditEventDataIdentityArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[GetEventsAuditEventDataIdentity]{
-		OutputState: i.ToGetEventsAuditEventDataIdentityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEventsAuditEventDataIdentityArrayInput is an input type that accepts GetEventsAuditEventDataIdentityArray and GetEventsAuditEventDataIdentityArrayOutput values.
@@ -536,12 +481,6 @@ func (i GetEventsAuditEventDataIdentityArray) ToGetEventsAuditEventDataIdentityA
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataIdentityArrayOutput)
 }
 
-func (i GetEventsAuditEventDataIdentityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[[]GetEventsAuditEventDataIdentity]{
-		OutputState: i.ToGetEventsAuditEventDataIdentityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataIdentityOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataIdentityOutput) ElementType() reflect.Type {
@@ -556,60 +495,54 @@ func (o GetEventsAuditEventDataIdentityOutput) ToGetEventsAuditEventDataIdentity
 	return o
 }
 
-func (o GetEventsAuditEventDataIdentityOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[GetEventsAuditEventDataIdentity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of authentication used.  Example: `natv`
-func (o GetEventsAuditEventDataIdentityOutput) AuthType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.AuthType }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) AuthType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.AuthType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a  request on behalf of the prinicpal.
-func (o GetEventsAuditEventDataIdentityOutput) CallerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.CallerId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) CallerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.CallerId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the user or service. This value is the friendly name associated with `callerId`.
-func (o GetEventsAuditEventDataIdentityOutput) CallerName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.CallerName }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) CallerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.CallerName }).(pulumi.StringPtrOutput)
 }
 
 // This value identifies any Console session associated with this request.
-func (o GetEventsAuditEventDataIdentityOutput) ConsoleSessionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.ConsoleSessionId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) ConsoleSessionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.ConsoleSessionId }).(pulumi.StringPtrOutput)
 }
 
 // The credential ID of the user. This value is extracted from the HTTP 'Authorization' request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
-func (o GetEventsAuditEventDataIdentityOutput) Credentials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.Credentials }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) Credentials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.Credentials }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of the source of the request.  Example: `172.24.80.88`
-func (o GetEventsAuditEventDataIdentityOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-func (o GetEventsAuditEventDataIdentityOutput) PrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.PrincipalId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) PrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.PrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the user or service. This value is the friendly name associated with `principalId`.  Example: `ExampleName`
-func (o GetEventsAuditEventDataIdentityOutput) PrincipalName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.PrincipalName }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) PrincipalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.PrincipalName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
-func (o GetEventsAuditEventDataIdentityOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.TenantId }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
-func (o GetEventsAuditEventDataIdentityOutput) UserAgent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) string { return v.UserAgent }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataIdentityOutput) UserAgent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataIdentity) *string { return v.UserAgent }).(pulumi.StringPtrOutput)
 }
 
 type GetEventsAuditEventDataIdentityArrayOutput struct{ *pulumi.OutputState }
@@ -626,12 +559,6 @@ func (o GetEventsAuditEventDataIdentityArrayOutput) ToGetEventsAuditEventDataIde
 	return o
 }
 
-func (o GetEventsAuditEventDataIdentityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[[]GetEventsAuditEventDataIdentity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEventsAuditEventDataIdentityArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataIdentityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsAuditEventDataIdentity {
 		return vs[0].([]GetEventsAuditEventDataIdentity)[vs[1].(int)]
@@ -640,15 +567,15 @@ func (o GetEventsAuditEventDataIdentityArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetEventsAuditEventDataRequest struct {
 	// The HTTP method of the request.  Example: `GET`
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The headers of the response.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// The opc-request-id of the request.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The parameters supplied by the caller during this operation.
 	Parameters map[string]interface{} `pulumi:"parameters"`
 	// The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 }
 
 // GetEventsAuditEventDataRequestInput is an input type that accepts GetEventsAuditEventDataRequestArgs and GetEventsAuditEventDataRequestOutput values.
@@ -664,15 +591,15 @@ type GetEventsAuditEventDataRequestInput interface {
 
 type GetEventsAuditEventDataRequestArgs struct {
 	// The HTTP method of the request.  Example: `GET`
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The headers of the response.
 	Headers pulumi.MapInput `pulumi:"headers"`
 	// The opc-request-id of the request.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The parameters supplied by the caller during this operation.
 	Parameters pulumi.MapInput `pulumi:"parameters"`
 	// The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 }
 
 func (GetEventsAuditEventDataRequestArgs) ElementType() reflect.Type {
@@ -685,12 +612,6 @@ func (i GetEventsAuditEventDataRequestArgs) ToGetEventsAuditEventDataRequestOutp
 
 func (i GetEventsAuditEventDataRequestArgs) ToGetEventsAuditEventDataRequestOutputWithContext(ctx context.Context) GetEventsAuditEventDataRequestOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataRequestOutput)
-}
-
-func (i GetEventsAuditEventDataRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataRequest] {
-	return pulumix.Output[GetEventsAuditEventDataRequest]{
-		OutputState: i.ToGetEventsAuditEventDataRequestOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEventsAuditEventDataRequestArrayInput is an input type that accepts GetEventsAuditEventDataRequestArray and GetEventsAuditEventDataRequestArrayOutput values.
@@ -718,12 +639,6 @@ func (i GetEventsAuditEventDataRequestArray) ToGetEventsAuditEventDataRequestArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataRequestArrayOutput)
 }
 
-func (i GetEventsAuditEventDataRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataRequest] {
-	return pulumix.Output[[]GetEventsAuditEventDataRequest]{
-		OutputState: i.ToGetEventsAuditEventDataRequestArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataRequestOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataRequestOutput) ElementType() reflect.Type {
@@ -738,15 +653,9 @@ func (o GetEventsAuditEventDataRequestOutput) ToGetEventsAuditEventDataRequestOu
 	return o
 }
 
-func (o GetEventsAuditEventDataRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataRequest] {
-	return pulumix.Output[GetEventsAuditEventDataRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The HTTP method of the request.  Example: `GET`
-func (o GetEventsAuditEventDataRequestOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataRequest) string { return v.Action }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataRequestOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataRequest) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The headers of the response.
@@ -755,8 +664,8 @@ func (o GetEventsAuditEventDataRequestOutput) Headers() pulumi.MapOutput {
 }
 
 // The opc-request-id of the request.
-func (o GetEventsAuditEventDataRequestOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataRequest) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataRequestOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataRequest) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The parameters supplied by the caller during this operation.
@@ -765,8 +674,8 @@ func (o GetEventsAuditEventDataRequestOutput) Parameters() pulumi.MapOutput {
 }
 
 // The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
-func (o GetEventsAuditEventDataRequestOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataRequest) string { return v.Path }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataRequestOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataRequest) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 type GetEventsAuditEventDataRequestArrayOutput struct{ *pulumi.OutputState }
@@ -783,12 +692,6 @@ func (o GetEventsAuditEventDataRequestArrayOutput) ToGetEventsAuditEventDataRequ
 	return o
 }
 
-func (o GetEventsAuditEventDataRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataRequest] {
-	return pulumix.Output[[]GetEventsAuditEventDataRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEventsAuditEventDataRequestArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsAuditEventDataRequest {
 		return vs[0].([]GetEventsAuditEventDataRequest)[vs[1].(int)]
@@ -799,13 +702,13 @@ type GetEventsAuditEventDataResponse struct {
 	// The headers of the response.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// A friendly description of what happened during the operation. Use this for troubleshooting.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
 	Payload map[string]interface{} `pulumi:"payload"`
 	// The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
-	ResponseTime string `pulumi:"responseTime"`
+	ResponseTime *string `pulumi:"responseTime"`
 	// The status code of the response.  Example: `200`
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetEventsAuditEventDataResponseInput is an input type that accepts GetEventsAuditEventDataResponseArgs and GetEventsAuditEventDataResponseOutput values.
@@ -823,13 +726,13 @@ type GetEventsAuditEventDataResponseArgs struct {
 	// The headers of the response.
 	Headers pulumi.MapInput `pulumi:"headers"`
 	// A friendly description of what happened during the operation. Use this for troubleshooting.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
 	Payload pulumi.MapInput `pulumi:"payload"`
 	// The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
-	ResponseTime pulumi.StringInput `pulumi:"responseTime"`
+	ResponseTime pulumi.StringPtrInput `pulumi:"responseTime"`
 	// The status code of the response.  Example: `200`
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetEventsAuditEventDataResponseArgs) ElementType() reflect.Type {
@@ -842,12 +745,6 @@ func (i GetEventsAuditEventDataResponseArgs) ToGetEventsAuditEventDataResponseOu
 
 func (i GetEventsAuditEventDataResponseArgs) ToGetEventsAuditEventDataResponseOutputWithContext(ctx context.Context) GetEventsAuditEventDataResponseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataResponseOutput)
-}
-
-func (i GetEventsAuditEventDataResponseArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataResponse] {
-	return pulumix.Output[GetEventsAuditEventDataResponse]{
-		OutputState: i.ToGetEventsAuditEventDataResponseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEventsAuditEventDataResponseArrayInput is an input type that accepts GetEventsAuditEventDataResponseArray and GetEventsAuditEventDataResponseArrayOutput values.
@@ -875,12 +772,6 @@ func (i GetEventsAuditEventDataResponseArray) ToGetEventsAuditEventDataResponseA
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataResponseArrayOutput)
 }
 
-func (i GetEventsAuditEventDataResponseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataResponse] {
-	return pulumix.Output[[]GetEventsAuditEventDataResponse]{
-		OutputState: i.ToGetEventsAuditEventDataResponseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataResponseOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataResponseOutput) ElementType() reflect.Type {
@@ -895,20 +786,14 @@ func (o GetEventsAuditEventDataResponseOutput) ToGetEventsAuditEventDataResponse
 	return o
 }
 
-func (o GetEventsAuditEventDataResponseOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataResponse] {
-	return pulumix.Output[GetEventsAuditEventDataResponse]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The headers of the response.
 func (o GetEventsAuditEventDataResponseOutput) Headers() pulumi.MapOutput {
 	return o.ApplyT(func(v GetEventsAuditEventDataResponse) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
 }
 
 // A friendly description of what happened during the operation. Use this for troubleshooting.
-func (o GetEventsAuditEventDataResponseOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataResponse) string { return v.Message }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataResponseOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataResponse) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
@@ -917,13 +802,13 @@ func (o GetEventsAuditEventDataResponseOutput) Payload() pulumi.MapOutput {
 }
 
 // The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
-func (o GetEventsAuditEventDataResponseOutput) ResponseTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataResponse) string { return v.ResponseTime }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataResponseOutput) ResponseTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataResponse) *string { return v.ResponseTime }).(pulumi.StringPtrOutput)
 }
 
 // The status code of the response.  Example: `200`
-func (o GetEventsAuditEventDataResponseOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataResponse) string { return v.Status }).(pulumi.StringOutput)
+func (o GetEventsAuditEventDataResponseOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataResponse) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetEventsAuditEventDataResponseArrayOutput struct{ *pulumi.OutputState }
@@ -938,12 +823,6 @@ func (o GetEventsAuditEventDataResponseArrayOutput) ToGetEventsAuditEventDataRes
 
 func (o GetEventsAuditEventDataResponseArrayOutput) ToGetEventsAuditEventDataResponseArrayOutputWithContext(ctx context.Context) GetEventsAuditEventDataResponseArrayOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataResponseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataResponse] {
-	return pulumix.Output[[]GetEventsAuditEventDataResponse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsAuditEventDataResponseArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataResponseOutput {
@@ -989,12 +868,6 @@ func (i GetEventsAuditEventDataStateChangeArgs) ToGetEventsAuditEventDataStateCh
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataStateChangeOutput)
 }
 
-func (i GetEventsAuditEventDataStateChangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[GetEventsAuditEventDataStateChange]{
-		OutputState: i.ToGetEventsAuditEventDataStateChangeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventDataStateChangeArrayInput is an input type that accepts GetEventsAuditEventDataStateChangeArray and GetEventsAuditEventDataStateChangeArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataStateChangeArrayInput` via:
 //
@@ -1020,12 +893,6 @@ func (i GetEventsAuditEventDataStateChangeArray) ToGetEventsAuditEventDataStateC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataStateChangeArrayOutput)
 }
 
-func (i GetEventsAuditEventDataStateChangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[[]GetEventsAuditEventDataStateChange]{
-		OutputState: i.ToGetEventsAuditEventDataStateChangeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataStateChangeOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataStateChangeOutput) ElementType() reflect.Type {
@@ -1038,12 +905,6 @@ func (o GetEventsAuditEventDataStateChangeOutput) ToGetEventsAuditEventDataState
 
 func (o GetEventsAuditEventDataStateChangeOutput) ToGetEventsAuditEventDataStateChangeOutputWithContext(ctx context.Context) GetEventsAuditEventDataStateChangeOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataStateChangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[GetEventsAuditEventDataStateChange]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
@@ -1068,12 +929,6 @@ func (o GetEventsAuditEventDataStateChangeArrayOutput) ToGetEventsAuditEventData
 
 func (o GetEventsAuditEventDataStateChangeArrayOutput) ToGetEventsAuditEventDataStateChangeArrayOutputWithContext(ctx context.Context) GetEventsAuditEventDataStateChangeArrayOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataStateChangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[[]GetEventsAuditEventDataStateChange]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsAuditEventDataStateChangeArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataStateChangeOutput {
@@ -1117,12 +972,6 @@ func (i GetEventsFilterArgs) ToGetEventsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsFilterOutput)
 }
 
-func (i GetEventsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsFilter] {
-	return pulumix.Output[GetEventsFilter]{
-		OutputState: i.ToGetEventsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsFilterArrayInput is an input type that accepts GetEventsFilterArray and GetEventsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEventsFilterArrayInput` via:
 //
@@ -1148,12 +997,6 @@ func (i GetEventsFilterArray) ToGetEventsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsFilterArrayOutput)
 }
 
-func (i GetEventsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsFilter] {
-	return pulumix.Output[[]GetEventsFilter]{
-		OutputState: i.ToGetEventsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEventsFilterOutput) ElementType() reflect.Type {
@@ -1166,12 +1009,6 @@ func (o GetEventsFilterOutput) ToGetEventsFilterOutput() GetEventsFilterOutput {
 
 func (o GetEventsFilterOutput) ToGetEventsFilterOutputWithContext(ctx context.Context) GetEventsFilterOutput {
 	return o
-}
-
-func (o GetEventsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsFilter] {
-	return pulumix.Output[GetEventsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsFilterOutput) Name() pulumi.StringOutput {
@@ -1198,12 +1035,6 @@ func (o GetEventsFilterArrayOutput) ToGetEventsFilterArrayOutput() GetEventsFilt
 
 func (o GetEventsFilterArrayOutput) ToGetEventsFilterArrayOutputWithContext(ctx context.Context) GetEventsFilterArrayOutput {
 	return o
-}
-
-func (o GetEventsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsFilter] {
-	return pulumix.Output[[]GetEventsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsFilterArrayOutput) Index(i pulumi.IntInput) GetEventsFilterOutput {

@@ -51,11 +51,11 @@ export interface GetPrivateEndpointReachableIpResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An IP address for the Resource Manager service to use for connection to the private resource.
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     readonly privateEndpointId: string;
     readonly privateIp: string;
 }

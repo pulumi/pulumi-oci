@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
         /// </summary>
-        public readonly string Minimum;
+        public readonly string? Minimum;
 
         [OutputConstructor]
-        private GetMeshesMeshCollectionItemMtlResult(string minimum)
+        private GetMeshesMeshCollectionItemMtlResult(string? minimum)
         {
             Minimum = minimum;
         }

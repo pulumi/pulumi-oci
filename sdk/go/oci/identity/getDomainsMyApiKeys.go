@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Api Keys in Oracle Cloud Infrastructure Identity Domains service.
@@ -80,9 +79,9 @@ type GetDomainsMyApiKeysResult struct {
 	Authorization *string `pulumi:"authorization"`
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string  `pulumi:"id"`
+	Id             *string `pulumi:"id"`
 	IdcsEndpoint   string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage   int     `pulumi:"itemsPerPage"`
+	ItemsPerPage   *int    `pulumi:"itemsPerPage"`
 	MyApiKeyCount  *int    `pulumi:"myApiKeyCount"`
 	MyApiKeyFilter *string `pulumi:"myApiKeyFilter"`
 	// The list of my_api_keys.
@@ -93,7 +92,7 @@ type GetDomainsMyApiKeysResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyApiKeysOutput(ctx *pulumi.Context, args GetDomainsMyApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyApiKeysResultOutput {
@@ -147,12 +146,6 @@ func (o GetDomainsMyApiKeysResultOutput) ToGetDomainsMyApiKeysResultOutputWithCo
 	return o
 }
 
-func (o GetDomainsMyApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyApiKeysResult] {
-	return pulumix.Output[GetDomainsMyApiKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyApiKeysResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyApiKeysResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
@@ -162,16 +155,16 @@ func (o GetDomainsMyApiKeysResultOutput) CompartmentId() pulumi.StringPtrOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyApiKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyApiKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyApiKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyApiKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyApiKeysResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyApiKeysResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyApiKeysResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyApiKeysResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyApiKeysResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyApiKeysResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyApiKeysResultOutput) MyApiKeyCount() pulumi.IntPtrOutput {
@@ -208,8 +201,8 @@ func (o GetDomainsMyApiKeysResultOutput) StartIndex() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetDomainsMyApiKeysResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyApiKeysResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyApiKeysResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyApiKeysResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyApiKeysResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

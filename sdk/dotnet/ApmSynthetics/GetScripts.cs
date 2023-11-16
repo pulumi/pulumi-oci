@@ -164,7 +164,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of script_collection.
         /// </summary>
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.ApmSynthetics
 
             ImmutableArray<Outputs.GetScriptsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetScriptsScriptCollectionResult> scriptCollections)
         {

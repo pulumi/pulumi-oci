@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddonOptionsAddonOptionVersionConfiguration {
@@ -14,63 +16,63 @@ public final class GetAddonOptionsAddonOptionVersionConfiguration {
      * @return Information about the addon version.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Display name of addon version.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return If the the configuration is required or not.
      * 
      */
-    private Boolean isRequired;
+    private @Nullable Boolean isRequired;
     /**
      * @return Addon configuration key
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Addon configuration value
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetAddonOptionsAddonOptionVersionConfiguration() {}
     /**
      * @return Information about the addon version.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Display name of addon version.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return If the the configuration is required or not.
      * 
      */
-    public Boolean isRequired() {
-        return this.isRequired;
+    public Optional<Boolean> isRequired() {
+        return Optional.ofNullable(this.isRequired);
     }
     /**
      * @return Addon configuration key
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Addon configuration value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetAddonOptionsAddonOptionVersionConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String displayName;
-        private Boolean isRequired;
-        private String key;
-        private String value;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Boolean isRequired;
+        private @Nullable String key;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetAddonOptionsAddonOptionVersionConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetAddonOptionsAddonOptionVersionConfiguration {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+        public Builder isRequired(@Nullable Boolean isRequired) {
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetAddonOptionsAddonOptionVersionConfiguration build() {

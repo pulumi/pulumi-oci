@@ -26,7 +26,7 @@ public final class GetDataSafePrivateEndpointsResult {
      * @return The list of data_safe_private_endpoints.
      * 
      */
-    private List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints;
+    private @Nullable List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints;
     /**
      * @return The display name of the private endpoint.
      * 
@@ -37,7 +37,7 @@ public final class GetDataSafePrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the private endpoint.
      * 
@@ -68,7 +68,7 @@ public final class GetDataSafePrivateEndpointsResult {
      * 
      */
     public List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints() {
-        return this.dataSafePrivateEndpoints;
+        return this.dataSafePrivateEndpoints == null ? List.of() : this.dataSafePrivateEndpoints;
     }
     /**
      * @return The display name of the private endpoint.
@@ -84,8 +84,8 @@ public final class GetDataSafePrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the private endpoint.
@@ -114,10 +114,10 @@ public final class GetDataSafePrivateEndpointsResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints;
+        private @Nullable List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints;
         private @Nullable String displayName;
         private @Nullable List<GetDataSafePrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -150,8 +150,8 @@ public final class GetDataSafePrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataSafePrivateEndpoints(List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints) {
-            this.dataSafePrivateEndpoints = Objects.requireNonNull(dataSafePrivateEndpoints);
+        public Builder dataSafePrivateEndpoints(@Nullable List<GetDataSafePrivateEndpointsDataSafePrivateEndpoint> dataSafePrivateEndpoints) {
+            this.dataSafePrivateEndpoints = dataSafePrivateEndpoints;
             return this;
         }
         public Builder dataSafePrivateEndpoints(GetDataSafePrivateEndpointsDataSafePrivateEndpoint... dataSafePrivateEndpoints) {
@@ -171,8 +171,8 @@ public final class GetDataSafePrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

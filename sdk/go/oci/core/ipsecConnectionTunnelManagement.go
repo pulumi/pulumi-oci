@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
@@ -82,40 +81,40 @@ type IpsecConnectionTunnelManagement struct {
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
 	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput `pulumi:"bgpSessionInfos"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
-	CpeIp pulumi.StringOutput `pulumi:"cpeIp"`
+	CpeIp pulumi.StringPtrOutput `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName     pulumi.StringOutput                                 `pulumi:"displayName"`
+	DisplayName     pulumi.StringPtrOutput                              `pulumi:"displayName"`
 	DpdConfigs      IpsecConnectionTunnelManagementDpdConfigArrayOutput `pulumi:"dpdConfigs"`
-	DpdMode         pulumi.StringOutput                                 `pulumi:"dpdMode"`
-	DpdTimeoutInSec pulumi.IntOutput                                    `pulumi:"dpdTimeoutInSec"`
+	DpdMode         pulumi.StringPtrOutput                              `pulumi:"dpdMode"`
+	DpdTimeoutInSec pulumi.IntPtrOutput                                 `pulumi:"dpdTimeoutInSec"`
 	// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-	EncryptionDomainConfig IpsecConnectionTunnelManagementEncryptionDomainConfigOutput `pulumi:"encryptionDomainConfig"`
+	EncryptionDomainConfig IpsecConnectionTunnelManagementEncryptionDomainConfigPtrOutput `pulumi:"encryptionDomainConfig"`
 	// Internet Key Exchange protocol version.
-	IkeVersion pulumi.StringOutput `pulumi:"ikeVersion"`
+	IkeVersion pulumi.StringPtrOutput `pulumi:"ikeVersion"`
 	// The OCID of the IPSec connection.
 	IpsecId               pulumi.StringOutput                                      `pulumi:"ipsecId"`
-	NatTranslationEnabled pulumi.StringOutput                                      `pulumi:"natTranslationEnabled"`
-	OracleCanInitiate     pulumi.StringOutput                                      `pulumi:"oracleCanInitiate"`
+	NatTranslationEnabled pulumi.StringPtrOutput                                   `pulumi:"natTranslationEnabled"`
+	OracleCanInitiate     pulumi.StringPtrOutput                                   `pulumi:"oracleCanInitiate"`
 	PhaseOneDetails       IpsecConnectionTunnelManagementPhaseOneDetailArrayOutput `pulumi:"phaseOneDetails"`
 	PhaseTwoDetails       IpsecConnectionTunnelManagementPhaseTwoDetailArrayOutput `pulumi:"phaseTwoDetails"`
 	// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
 	Routing pulumi.StringOutput `pulumi:"routing"`
 	// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-	SharedSecret pulumi.StringOutput `pulumi:"sharedSecret"`
+	SharedSecret pulumi.StringPtrOutput `pulumi:"sharedSecret"`
 	// The IPSec connection's tunnel's lifecycle state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The tunnel's current state.
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeStatusUpdated pulumi.StringOutput `pulumi:"timeStatusUpdated"`
+	TimeStatusUpdated pulumi.StringPtrOutput `pulumi:"timeStatusUpdated"`
 	// The OCID of the IPSec connection's tunnel.
 	TunnelId pulumi.StringOutput `pulumi:"tunnelId"`
 	// The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-	VpnIp pulumi.StringOutput `pulumi:"vpnIp"`
+	VpnIp pulumi.StringPtrOutput `pulumi:"vpnIp"`
 }
 
 // NewIpsecConnectionTunnelManagement registers a new resource with the given unique name, arguments, and options.
@@ -316,12 +315,6 @@ func (i *IpsecConnectionTunnelManagement) ToIpsecConnectionTunnelManagementOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecConnectionTunnelManagementOutput)
 }
 
-func (i *IpsecConnectionTunnelManagement) ToOutput(ctx context.Context) pulumix.Output[*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[*IpsecConnectionTunnelManagement]{
-		OutputState: i.ToIpsecConnectionTunnelManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IpsecConnectionTunnelManagementArrayInput is an input type that accepts IpsecConnectionTunnelManagementArray and IpsecConnectionTunnelManagementArrayOutput values.
 // You can construct a concrete instance of `IpsecConnectionTunnelManagementArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i IpsecConnectionTunnelManagementArray) ToIpsecConnectionTunnelManagementA
 
 func (i IpsecConnectionTunnelManagementArray) ToIpsecConnectionTunnelManagementArrayOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecConnectionTunnelManagementArrayOutput)
-}
-
-func (i IpsecConnectionTunnelManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[[]*IpsecConnectionTunnelManagement]{
-		OutputState: i.ToIpsecConnectionTunnelManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IpsecConnectionTunnelManagementMapInput is an input type that accepts IpsecConnectionTunnelManagementMap and IpsecConnectionTunnelManagementMapOutput values.
@@ -378,12 +365,6 @@ func (i IpsecConnectionTunnelManagementMap) ToIpsecConnectionTunnelManagementMap
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecConnectionTunnelManagementMapOutput)
 }
 
-func (i IpsecConnectionTunnelManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[map[string]*IpsecConnectionTunnelManagement]{
-		OutputState: i.ToIpsecConnectionTunnelManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IpsecConnectionTunnelManagementOutput struct{ *pulumi.OutputState }
 
 func (IpsecConnectionTunnelManagementOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o IpsecConnectionTunnelManagementOutput) ToIpsecConnectionTunnelManagement
 
 func (o IpsecConnectionTunnelManagementOutput) ToIpsecConnectionTunnelManagementOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementOutput {
 	return o
-}
-
-func (o IpsecConnectionTunnelManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[*IpsecConnectionTunnelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
@@ -419,18 +394,18 @@ func (o IpsecConnectionTunnelManagementOutput) BgpSessionInfos() IpsecConnection
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
-func (o IpsecConnectionTunnelManagementOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
-func (o IpsecConnectionTunnelManagementOutput) CpeIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.CpeIp }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) CpeIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.CpeIp }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o IpsecConnectionTunnelManagementOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o IpsecConnectionTunnelManagementOutput) DpdConfigs() IpsecConnectionTunnelManagementDpdConfigArrayOutput {
@@ -439,24 +414,24 @@ func (o IpsecConnectionTunnelManagementOutput) DpdConfigs() IpsecConnectionTunne
 	}).(IpsecConnectionTunnelManagementDpdConfigArrayOutput)
 }
 
-func (o IpsecConnectionTunnelManagementOutput) DpdMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.DpdMode }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) DpdMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.DpdMode }).(pulumi.StringPtrOutput)
 }
 
-func (o IpsecConnectionTunnelManagementOutput) DpdTimeoutInSec() pulumi.IntOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.IntOutput { return v.DpdTimeoutInSec }).(pulumi.IntOutput)
+func (o IpsecConnectionTunnelManagementOutput) DpdTimeoutInSec() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.IntPtrOutput { return v.DpdTimeoutInSec }).(pulumi.IntPtrOutput)
 }
 
 // Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
-func (o IpsecConnectionTunnelManagementOutput) EncryptionDomainConfig() IpsecConnectionTunnelManagementEncryptionDomainConfigOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementEncryptionDomainConfigOutput {
+func (o IpsecConnectionTunnelManagementOutput) EncryptionDomainConfig() IpsecConnectionTunnelManagementEncryptionDomainConfigPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementEncryptionDomainConfigPtrOutput {
 		return v.EncryptionDomainConfig
-	}).(IpsecConnectionTunnelManagementEncryptionDomainConfigOutput)
+	}).(IpsecConnectionTunnelManagementEncryptionDomainConfigPtrOutput)
 }
 
 // Internet Key Exchange protocol version.
-func (o IpsecConnectionTunnelManagementOutput) IkeVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.IkeVersion }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) IkeVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.IkeVersion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the IPSec connection.
@@ -464,12 +439,12 @@ func (o IpsecConnectionTunnelManagementOutput) IpsecId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.IpsecId }).(pulumi.StringOutput)
 }
 
-func (o IpsecConnectionTunnelManagementOutput) NatTranslationEnabled() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.NatTranslationEnabled }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) NatTranslationEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.NatTranslationEnabled }).(pulumi.StringPtrOutput)
 }
 
-func (o IpsecConnectionTunnelManagementOutput) OracleCanInitiate() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.OracleCanInitiate }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) OracleCanInitiate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.OracleCanInitiate }).(pulumi.StringPtrOutput)
 }
 
 func (o IpsecConnectionTunnelManagementOutput) PhaseOneDetails() IpsecConnectionTunnelManagementPhaseOneDetailArrayOutput {
@@ -490,28 +465,28 @@ func (o IpsecConnectionTunnelManagementOutput) Routing() pulumi.StringOutput {
 }
 
 // The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
-func (o IpsecConnectionTunnelManagementOutput) SharedSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.SharedSecret }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) SharedSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.SharedSecret }).(pulumi.StringPtrOutput)
 }
 
 // The IPSec connection's tunnel's lifecycle state.
-func (o IpsecConnectionTunnelManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The tunnel's current state.
-func (o IpsecConnectionTunnelManagementOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o IpsecConnectionTunnelManagementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o IpsecConnectionTunnelManagementOutput) TimeStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the IPSec connection's tunnel.
@@ -520,8 +495,8 @@ func (o IpsecConnectionTunnelManagementOutput) TunnelId() pulumi.StringOutput {
 }
 
 // The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
-func (o IpsecConnectionTunnelManagementOutput) VpnIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringOutput { return v.VpnIp }).(pulumi.StringOutput)
+func (o IpsecConnectionTunnelManagementOutput) VpnIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) pulumi.StringPtrOutput { return v.VpnIp }).(pulumi.StringPtrOutput)
 }
 
 type IpsecConnectionTunnelManagementArrayOutput struct{ *pulumi.OutputState }
@@ -536,12 +511,6 @@ func (o IpsecConnectionTunnelManagementArrayOutput) ToIpsecConnectionTunnelManag
 
 func (o IpsecConnectionTunnelManagementArrayOutput) ToIpsecConnectionTunnelManagementArrayOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementArrayOutput {
 	return o
-}
-
-func (o IpsecConnectionTunnelManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[[]*IpsecConnectionTunnelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IpsecConnectionTunnelManagementArrayOutput) Index(i pulumi.IntInput) IpsecConnectionTunnelManagementOutput {
@@ -562,12 +531,6 @@ func (o IpsecConnectionTunnelManagementMapOutput) ToIpsecConnectionTunnelManagem
 
 func (o IpsecConnectionTunnelManagementMapOutput) ToIpsecConnectionTunnelManagementMapOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementMapOutput {
 	return o
-}
-
-func (o IpsecConnectionTunnelManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[map[string]*IpsecConnectionTunnelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IpsecConnectionTunnelManagementMapOutput) MapIndex(k pulumi.StringInput) IpsecConnectionTunnelManagementOutput {

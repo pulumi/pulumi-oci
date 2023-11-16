@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The Autonomous Container Database version end of support date.
         /// </summary>
-        public readonly string EndOfSupport;
+        public readonly string? EndOfSupport;
         /// <summary>
         /// Indicates if the image is certified.
         /// </summary>
-        public readonly bool IsCertified;
+        public readonly bool? IsCertified;
         /// <summary>
         /// The Autonomous Container Database version release date.
         /// </summary>
-        public readonly string ReleaseDate;
+        public readonly string? ReleaseDate;
         /// <summary>
         /// The name of the supported application.
         /// </summary>
-        public readonly string SupportedAppName;
+        public readonly string? SupportedAppName;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult(
-            string endOfSupport,
+            string? endOfSupport,
 
-            bool isCertified,
+            bool? isCertified,
 
-            string releaseDate,
+            string? releaseDate,
 
-            string supportedAppName)
+            string? supportedAppName)
         {
             EndOfSupport = endOfSupport;
             IsCertified = isCertified;

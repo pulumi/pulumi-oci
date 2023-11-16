@@ -71,76 +71,52 @@ class GetPrivateApplicationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name used to refer to the uploaded data.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier for the private application in Marketplace.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="logoFileBase64encoded")
-    def logo_file_base64encoded(self) -> str:
+    def logo_file_base64encoded(self) -> Optional[str]:
         return pulumi.get(self, "logo_file_base64encoded")
 
     @property
     @pulumi.getter
-    def logos(self) -> Sequence['outputs.GetPrivateApplicationLogoResult']:
-        """
-        The model for uploaded binary data, like logos and images.
-        """
+    def logos(self) -> Optional[Sequence['outputs.GetPrivateApplicationLogoResult']]:
         return pulumi.get(self, "logos")
 
     @property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> str:
-        """
-        A long description of the private application.
-        """
+    def long_description(self) -> Optional[str]:
         return pulumi.get(self, "long_description")
 
     @property
     @pulumi.getter(name="packageDetails")
-    def package_details(self) -> Sequence['outputs.GetPrivateApplicationPackageDetailResult']:
+    def package_details(self) -> Optional[Sequence['outputs.GetPrivateApplicationPackageDetailResult']]:
         return pulumi.get(self, "package_details")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        Type of packages within this private application.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
@@ -150,34 +126,22 @@ class GetPrivateApplicationResult:
 
     @property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> str:
-        """
-        A short description of the private application.
-        """
+    def short_description(self) -> Optional[str]:
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the private application.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -207,21 +171,7 @@ class AwaitableGetPrivateApplicationResult(GetPrivateApplicationResult):
 def get_private_application(private_application_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateApplicationResult:
     """
-    This data source provides details about a specific Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-
-    Gets the details of the specified private application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_application = oci.ServiceCatalog.get_private_application(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
-    ```
-
-
-    :param str private_application_id: The unique identifier for the private application.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['privateApplicationId'] = private_application_id
@@ -250,20 +200,6 @@ def get_private_application(private_application_id: Optional[str] = None,
 def get_private_application_output(private_application_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationResult]:
     """
-    This data source provides details about a specific Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-
-    Gets the details of the specified private application.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_application = oci.ServiceCatalog.get_private_application(private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
-    ```
-
-
-    :param str private_application_id: The unique identifier for the private application.
+    Use this data source to access information about an existing resource.
     """
     ...

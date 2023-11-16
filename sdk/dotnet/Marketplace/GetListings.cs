@@ -357,7 +357,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ImageId;
         /// <summary>
         /// Indicates whether the listing is included in Featured Listings.
@@ -389,7 +389,7 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<Outputs.GetListingsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? imageId,
 

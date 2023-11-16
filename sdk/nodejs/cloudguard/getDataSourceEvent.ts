@@ -57,11 +57,11 @@ export interface GetDataSourceEventResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of event related to a DataSource
      */
-    readonly items: outputs.CloudGuard.GetDataSourceEventItem[];
+    readonly items?: outputs.CloudGuard.GetDataSourceEventItem[];
     /**
      * Data source event region
      */

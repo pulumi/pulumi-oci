@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// Binary object download link.
         /// </summary>
-        public readonly string DownloadLink;
+        public readonly string? DownloadLink;
         /// <summary>
         /// Binary object description.
         /// </summary>
-        public readonly string LinkDescription;
+        public readonly string? LinkDescription;
 
         [OutputConstructor]
         private GetSddcVsphereUpgradeObjectResult(
-            string downloadLink,
+            string? downloadLink,
 
-            string linkDescription)
+            string? linkDescription)
         {
             DownloadLink = downloadLink;
             LinkDescription = linkDescription;

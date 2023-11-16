@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo {
@@ -13,27 +15,27 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappi
      * @return Id of the attached detectorRecipeId to the Data Source.
      * 
      */
-    private String detectorRecipeId;
+    private @Nullable String detectorRecipeId;
     /**
      * @return Id of the attached detectorRuleId to the Data Source.
      * 
      */
-    private String detectorRuleId;
+    private @Nullable String detectorRuleId;
 
     private GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo() {}
     /**
      * @return Id of the attached detectorRecipeId to the Data Source.
      * 
      */
-    public String detectorRecipeId() {
-        return this.detectorRecipeId;
+    public Optional<String> detectorRecipeId() {
+        return Optional.ofNullable(this.detectorRecipeId);
     }
     /**
      * @return Id of the attached detectorRuleId to the Data Source.
      * 
      */
-    public String detectorRuleId() {
-        return this.detectorRuleId;
+    public Optional<String> detectorRuleId() {
+        return Optional.ofNullable(this.detectorRuleId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappi
     }
     @CustomType.Builder
     public static final class Builder {
-        private String detectorRecipeId;
-        private String detectorRuleId;
+        private @Nullable String detectorRecipeId;
+        private @Nullable String detectorRuleId;
         public Builder() {}
         public Builder(GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappi
         }
 
         @CustomType.Setter
-        public Builder detectorRecipeId(String detectorRecipeId) {
-            this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
+        public Builder detectorRecipeId(@Nullable String detectorRecipeId) {
+            this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
-        public Builder detectorRuleId(String detectorRuleId) {
-            this.detectorRuleId = Objects.requireNonNull(detectorRuleId);
+        public Builder detectorRuleId(@Nullable String detectorRuleId) {
+            this.detectorRuleId = detectorRuleId;
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo build() {

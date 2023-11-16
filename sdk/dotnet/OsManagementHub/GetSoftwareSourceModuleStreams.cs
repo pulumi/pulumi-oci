@@ -185,7 +185,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether this module stream is the latest.
         /// </summary>
@@ -212,7 +212,7 @@ namespace Pulumi.Oci.OsManagementHub
         private GetSoftwareSourceModuleStreamsResult(
             ImmutableArray<Outputs.GetSoftwareSourceModuleStreamsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isLatest,
 

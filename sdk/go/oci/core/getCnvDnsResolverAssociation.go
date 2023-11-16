@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
@@ -61,10 +60,10 @@ type GetCnvDnsResolverAssociationArgs struct {
 type GetCnvDnsResolverAssociationResult struct {
 	// The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn
 	// is created, we will create it asynchronously. It would be null until it is actually created.
-	DnsResolverId string `pulumi:"dnsResolverId"`
+	DnsResolverId *string `pulumi:"dnsResolverId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string `pulumi:"id"`
-	State string `pulumi:"state"`
+	Id    *string `pulumi:"id"`
+	State *string `pulumi:"state"`
 	// The OCID of the VCN in the association.
 	VcnId string `pulumi:"vcnId"`
 }
@@ -107,25 +106,19 @@ func (o GetCnvDnsResolverAssociationResultOutput) ToGetCnvDnsResolverAssociation
 	return o
 }
 
-func (o GetCnvDnsResolverAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCnvDnsResolverAssociationResult] {
-	return pulumix.Output[GetCnvDnsResolverAssociationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn
 // is created, we will create it asynchronously. It would be null until it is actually created.
-func (o GetCnvDnsResolverAssociationResultOutput) DnsResolverId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCnvDnsResolverAssociationResult) string { return v.DnsResolverId }).(pulumi.StringOutput)
+func (o GetCnvDnsResolverAssociationResultOutput) DnsResolverId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCnvDnsResolverAssociationResult) *string { return v.DnsResolverId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCnvDnsResolverAssociationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCnvDnsResolverAssociationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCnvDnsResolverAssociationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCnvDnsResolverAssociationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetCnvDnsResolverAssociationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCnvDnsResolverAssociationResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetCnvDnsResolverAssociationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCnvDnsResolverAssociationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the VCN in the association.

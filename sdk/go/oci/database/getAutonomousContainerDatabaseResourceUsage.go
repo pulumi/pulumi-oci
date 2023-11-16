@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
@@ -63,27 +62,27 @@ type GetAutonomousContainerDatabaseResourceUsageResult struct {
 	// List of autonomous container database resource usage per autonomous virtual machine.
 	AutonomousContainerDatabaseVmUsages []GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage `pulumi:"autonomousContainerDatabaseVmUsages"`
 	// CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
-	AvailableCpus float64 `pulumi:"availableCpus"`
+	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Largest provisionable ADB in the Autonomous Container Database.
-	LargestProvisionableAutonomousDatabaseInCpus float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
+	LargestProvisionableAutonomousDatabaseInCpus *float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
 	// Valid list of provisionable CPUs / cores for ADB creation.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
-	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
 	// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
-	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
 	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-	ReservedCpus float64 `pulumi:"reservedCpus"`
+	ReservedCpus *float64 `pulumi:"reservedCpus"`
 	// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-	UsedCpus float64 `pulumi:"usedCpus"`
+	UsedCpus *float64 `pulumi:"usedCpus"`
 }
 
 func GetAutonomousContainerDatabaseResourceUsageOutput(ctx *pulumi.Context, args GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousContainerDatabaseResourceUsageResultOutput {
@@ -124,12 +123,6 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ToGetAutonomous
 	return o
 }
 
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousContainerDatabaseResourceUsageResult] {
-	return pulumix.Output[GetAutonomousContainerDatabaseResourceUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) string {
 		return v.AutonomousContainerDatabaseId
@@ -144,8 +137,8 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AutonomousConta
 }
 
 // CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AvailableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AvailableCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *float64 { return v.AvailableCpus }).(pulumi.Float64PtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -154,8 +147,8 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) DefinedTags() p
 }
 
 // The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -166,15 +159,15 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) FreeformTags() 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Largest provisionable ADB in the Autonomous Container Database.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 {
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *float64 {
 		return v.LargestProvisionableAutonomousDatabaseInCpus
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // Valid list of provisionable CPUs / cores for ADB creation.
@@ -183,23 +176,23 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ProvisionableCp
 }
 
 // CPUs / cores assigned to ADBs in the Autonomous Container Database.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ProvisionedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ProvisionedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *float64 { return v.ProvisionedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ReclaimableCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ReclaimableCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *float64 { return v.ReclaimableCpus }).(pulumi.Float64PtrOutput)
 }
 
 // CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ReservedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.ReservedCpus }).(pulumi.Float64Output)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ReservedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *float64 { return v.ReservedCpus }).(pulumi.Float64PtrOutput)
 }
 
 // CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
-func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) UsedCpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.UsedCpus }).(pulumi.Float64Output)
+func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) UsedCpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) *float64 { return v.UsedCpus }).(pulumi.Float64PtrOutput)
 }
 
 func init() {

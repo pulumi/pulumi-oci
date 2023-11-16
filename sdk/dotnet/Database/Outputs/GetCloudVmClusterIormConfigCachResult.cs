@@ -20,25 +20,25 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current value for the IORM objective. The default is `AUTO`.
         /// </summary>
-        public readonly string Objective;
+        public readonly string? Objective;
         /// <summary>
         /// The current state of the cloud VM cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetCloudVmClusterIormConfigCachResult(
             ImmutableArray<Outputs.GetCloudVmClusterIormConfigCachDbPlanResult> dbPlans,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string objective,
+            string? objective,
 
-            string state)
+            string? state)
         {
             DbPlans = dbPlans;
             LifecycleDetails = lifecycleDetails;

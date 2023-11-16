@@ -45,7 +45,7 @@ class GetClusterCredentialRotationStatusResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -53,26 +53,17 @@ class GetClusterCredentialRotationStatusResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action. COMPLETED: New credentials are functional on kuberentes cluster.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusDetails")
-    def status_details(self) -> str:
-        """
-        Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
-        """
+    def status_details(self) -> Optional[str]:
         return pulumi.get(self, "status_details")
 
     @property
     @pulumi.getter(name="timeAutoCompletionScheduled")
-    def time_auto_completion_scheduled(self) -> str:
-        """
-        The time by which retirement of old credentials should start.
-        """
+    def time_auto_completion_scheduled(self) -> Optional[str]:
         return pulumi.get(self, "time_auto_completion_scheduled")
 
 
@@ -92,21 +83,7 @@ class AwaitableGetClusterCredentialRotationStatusResult(GetClusterCredentialRota
 def get_cluster_credential_rotation_status(cluster_id: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterCredentialRotationStatusResult:
     """
-    This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get cluster credential rotation status.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -125,20 +102,6 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[str] = None,
 def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterCredentialRotationStatusResult]:
     """
-    This data source provides details about a specific Cluster Credential Rotation Status resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get cluster credential rotation status.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

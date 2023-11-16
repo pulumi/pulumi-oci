@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The name of the role granted to the user.
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseUserRolesResult(
             ImmutableArray<Outputs.GetManagedDatabaseUserRolesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

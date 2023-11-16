@@ -67,82 +67,52 @@ class GetTargetAlertPolicyAssociationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the policy.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Describes the target-alert policy association.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the target-alert policy association.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the target-alert policy association.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Indicates if the target-alert policy association is enabled or disabled by user.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="policyId")
-    def policy_id(self) -> str:
-        """
-        The OCID of the alert policy.
-        """
+    def policy_id(self) -> Optional[str]:
         return pulumi.get(self, "policy_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the target-alert policy association.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
@@ -152,26 +122,17 @@ class GetTargetAlertPolicyAssociationResult:
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target on which alert policy is to be applied.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetTargetAlertPolicyAssociationResult(GetTargetAlertPolicyAssocia
 def get_target_alert_policy_association(target_alert_policy_association_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetAlertPolicyAssociationResult:
     """
-    This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of target-alert policy association by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"])
-    ```
-
-
-    :param str target_alert_policy_association_id: The OCID of the target-alert policy association.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['targetAlertPolicyAssociationId'] = target_alert_policy_association_id
@@ -242,20 +189,6 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
 def get_target_alert_policy_association_output(target_alert_policy_association_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationResult]:
     """
-    This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of target-alert policy association by its ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"])
-    ```
-
-
-    :param str target_alert_policy_association_id: The OCID of the target-alert policy association.
+    Use this data source to access information about an existing resource.
     """
     ...

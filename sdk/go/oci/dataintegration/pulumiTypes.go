@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -71,12 +70,6 @@ func (i WorkspaceApplicationDependentObjectMetadataArgs) ToWorkspaceApplicationD
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationDependentObjectMetadataOutput)
 }
 
-func (i WorkspaceApplicationDependentObjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[WorkspaceApplicationDependentObjectMetadata]{
-		OutputState: i.ToWorkspaceApplicationDependentObjectMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationDependentObjectMetadataArrayInput is an input type that accepts WorkspaceApplicationDependentObjectMetadataArray and WorkspaceApplicationDependentObjectMetadataArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationDependentObjectMetadataArrayInput` via:
 //
@@ -102,12 +95,6 @@ func (i WorkspaceApplicationDependentObjectMetadataArray) ToWorkspaceApplication
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationDependentObjectMetadataArrayOutput)
 }
 
-func (i WorkspaceApplicationDependentObjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[[]WorkspaceApplicationDependentObjectMetadata]{
-		OutputState: i.ToWorkspaceApplicationDependentObjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationDependentObjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationDependentObjectMetadataOutput) ElementType() reflect.Type {
@@ -120,12 +107,6 @@ func (o WorkspaceApplicationDependentObjectMetadataOutput) ToWorkspaceApplicatio
 
 func (o WorkspaceApplicationDependentObjectMetadataOutput) ToWorkspaceApplicationDependentObjectMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationDependentObjectMetadataOutput {
 	return o
-}
-
-func (o WorkspaceApplicationDependentObjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[WorkspaceApplicationDependentObjectMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The patch action indicating if object was created, updated, or deleted.
@@ -175,12 +156,6 @@ func (o WorkspaceApplicationDependentObjectMetadataArrayOutput) ToWorkspaceAppli
 
 func (o WorkspaceApplicationDependentObjectMetadataArrayOutput) ToWorkspaceApplicationDependentObjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationDependentObjectMetadataArrayOutput {
 	return o
-}
-
-func (o WorkspaceApplicationDependentObjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[[]WorkspaceApplicationDependentObjectMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationDependentObjectMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationDependentObjectMetadataOutput {
@@ -274,12 +249,6 @@ func (i WorkspaceApplicationMetadataArgs) ToWorkspaceApplicationMetadataOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataOutput)
 }
 
-func (i WorkspaceApplicationMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadata] {
-	return pulumix.Output[WorkspaceApplicationMetadata]{
-		OutputState: i.ToWorkspaceApplicationMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationMetadataArrayInput is an input type that accepts WorkspaceApplicationMetadataArray and WorkspaceApplicationMetadataArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationMetadataArrayInput` via:
 //
@@ -305,12 +274,6 @@ func (i WorkspaceApplicationMetadataArray) ToWorkspaceApplicationMetadataArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataArrayOutput)
 }
 
-func (i WorkspaceApplicationMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadata] {
-	return pulumix.Output[[]WorkspaceApplicationMetadata]{
-		OutputState: i.ToWorkspaceApplicationMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationMetadataOutput) ElementType() reflect.Type {
@@ -323,12 +286,6 @@ func (o WorkspaceApplicationMetadataOutput) ToWorkspaceApplicationMetadataOutput
 
 func (o WorkspaceApplicationMetadataOutput) ToWorkspaceApplicationMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationMetadataOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadata] {
-	return pulumix.Output[WorkspaceApplicationMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The owning object's key for this object.
@@ -417,12 +374,6 @@ func (o WorkspaceApplicationMetadataArrayOutput) ToWorkspaceApplicationMetadataA
 	return o
 }
 
-func (o WorkspaceApplicationMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadata] {
-	return pulumix.Output[[]WorkspaceApplicationMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceApplicationMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationMetadata {
 		return vs[0].([]WorkspaceApplicationMetadata)[vs[1].(int)]
@@ -478,12 +429,6 @@ func (i WorkspaceApplicationMetadataAggregatorArgs) ToWorkspaceApplicationMetada
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataAggregatorOutput)
 }
 
-func (i WorkspaceApplicationMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[WorkspaceApplicationMetadataAggregator]{
-		OutputState: i.ToWorkspaceApplicationMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationMetadataAggregatorArrayInput is an input type that accepts WorkspaceApplicationMetadataAggregatorArray and WorkspaceApplicationMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationMetadataAggregatorArrayInput` via:
 //
@@ -509,12 +454,6 @@ func (i WorkspaceApplicationMetadataAggregatorArray) ToWorkspaceApplicationMetad
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataAggregatorArrayOutput)
 }
 
-func (i WorkspaceApplicationMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[[]WorkspaceApplicationMetadataAggregator]{
-		OutputState: i.ToWorkspaceApplicationMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -527,12 +466,6 @@ func (o WorkspaceApplicationMetadataAggregatorOutput) ToWorkspaceApplicationMeta
 
 func (o WorkspaceApplicationMetadataAggregatorOutput) ToWorkspaceApplicationMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceApplicationMetadataAggregatorOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[WorkspaceApplicationMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Detailed description for the object.
@@ -574,12 +507,6 @@ func (o WorkspaceApplicationMetadataAggregatorArrayOutput) ToWorkspaceApplicatio
 	return o
 }
 
-func (o WorkspaceApplicationMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[[]WorkspaceApplicationMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceApplicationMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationMetadataAggregatorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceApplicationMetadataAggregator {
 		return vs[0].([]WorkspaceApplicationMetadataAggregator)[vs[1].(int)]
@@ -619,12 +546,6 @@ func (i WorkspaceApplicationMetadataCountStatisticArgs) ToWorkspaceApplicationMe
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataCountStatisticOutput)
 }
 
-func (i WorkspaceApplicationMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[WorkspaceApplicationMetadataCountStatistic]{
-		OutputState: i.ToWorkspaceApplicationMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationMetadataCountStatisticArrayInput is an input type that accepts WorkspaceApplicationMetadataCountStatisticArray and WorkspaceApplicationMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationMetadataCountStatisticArrayInput` via:
 //
@@ -650,12 +571,6 @@ func (i WorkspaceApplicationMetadataCountStatisticArray) ToWorkspaceApplicationM
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataCountStatisticArrayOutput)
 }
 
-func (i WorkspaceApplicationMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[[]WorkspaceApplicationMetadataCountStatistic]{
-		OutputState: i.ToWorkspaceApplicationMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -668,12 +583,6 @@ func (o WorkspaceApplicationMetadataCountStatisticOutput) ToWorkspaceApplication
 
 func (o WorkspaceApplicationMetadataCountStatisticOutput) ToWorkspaceApplicationMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceApplicationMetadataCountStatisticOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[WorkspaceApplicationMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -695,12 +604,6 @@ func (o WorkspaceApplicationMetadataCountStatisticArrayOutput) ToWorkspaceApplic
 
 func (o WorkspaceApplicationMetadataCountStatisticArrayOutput) ToWorkspaceApplicationMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceApplicationMetadataCountStatisticArrayOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[[]WorkspaceApplicationMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationMetadataCountStatisticOutput {
@@ -746,12 +649,6 @@ func (i WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs) ToWor
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput)
 }
 
-func (i WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[WorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray and WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayInput` via:
 //
@@ -777,12 +674,6 @@ func (i WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray) ToWo
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]WorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -795,12 +686,6 @@ func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ToW
 
 func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[WorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The value for the count statistic object.
@@ -825,12 +710,6 @@ func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput
 
 func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]WorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput {
@@ -876,12 +755,6 @@ func (i WorkspaceApplicationParentRefArgs) ToWorkspaceApplicationParentRefOutput
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationParentRefOutput)
 }
 
-func (i WorkspaceApplicationParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationParentRef] {
-	return pulumix.Output[WorkspaceApplicationParentRef]{
-		OutputState: i.ToWorkspaceApplicationParentRefOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationParentRefArrayInput is an input type that accepts WorkspaceApplicationParentRefArray and WorkspaceApplicationParentRefArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationParentRefArrayInput` via:
 //
@@ -907,12 +780,6 @@ func (i WorkspaceApplicationParentRefArray) ToWorkspaceApplicationParentRefArray
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationParentRefArrayOutput)
 }
 
-func (i WorkspaceApplicationParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationParentRef] {
-	return pulumix.Output[[]WorkspaceApplicationParentRef]{
-		OutputState: i.ToWorkspaceApplicationParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationParentRefOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationParentRefOutput) ElementType() reflect.Type {
@@ -925,12 +792,6 @@ func (o WorkspaceApplicationParentRefOutput) ToWorkspaceApplicationParentRefOutp
 
 func (o WorkspaceApplicationParentRefOutput) ToWorkspaceApplicationParentRefOutputWithContext(ctx context.Context) WorkspaceApplicationParentRefOutput {
 	return o
-}
-
-func (o WorkspaceApplicationParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationParentRef] {
-	return pulumix.Output[WorkspaceApplicationParentRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key of the parent object.
@@ -955,12 +816,6 @@ func (o WorkspaceApplicationParentRefArrayOutput) ToWorkspaceApplicationParentRe
 
 func (o WorkspaceApplicationParentRefArrayOutput) ToWorkspaceApplicationParentRefArrayOutputWithContext(ctx context.Context) WorkspaceApplicationParentRefArrayOutput {
 	return o
-}
-
-func (o WorkspaceApplicationParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationParentRef] {
-	return pulumix.Output[[]WorkspaceApplicationParentRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationParentRefOutput {
@@ -1026,12 +881,6 @@ func (i WorkspaceApplicationPublishedObjectMetadataArgs) ToWorkspaceApplicationP
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPublishedObjectMetadataOutput)
 }
 
-func (i WorkspaceApplicationPublishedObjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[WorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: i.ToWorkspaceApplicationPublishedObjectMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationPublishedObjectMetadataArrayInput is an input type that accepts WorkspaceApplicationPublishedObjectMetadataArray and WorkspaceApplicationPublishedObjectMetadataArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationPublishedObjectMetadataArrayInput` via:
 //
@@ -1057,12 +906,6 @@ func (i WorkspaceApplicationPublishedObjectMetadataArray) ToWorkspaceApplication
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationPublishedObjectMetadataArrayOutput)
 }
 
-func (i WorkspaceApplicationPublishedObjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[[]WorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: i.ToWorkspaceApplicationPublishedObjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationPublishedObjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationPublishedObjectMetadataOutput) ElementType() reflect.Type {
@@ -1075,12 +918,6 @@ func (o WorkspaceApplicationPublishedObjectMetadataOutput) ToWorkspaceApplicatio
 
 func (o WorkspaceApplicationPublishedObjectMetadataOutput) ToWorkspaceApplicationPublishedObjectMetadataOutputWithContext(ctx context.Context) WorkspaceApplicationPublishedObjectMetadataOutput {
 	return o
-}
-
-func (o WorkspaceApplicationPublishedObjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[WorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The patch action indicating if object was created, updated, or deleted.
@@ -1130,12 +967,6 @@ func (o WorkspaceApplicationPublishedObjectMetadataArrayOutput) ToWorkspaceAppli
 
 func (o WorkspaceApplicationPublishedObjectMetadataArrayOutput) ToWorkspaceApplicationPublishedObjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceApplicationPublishedObjectMetadataArrayOutput {
 	return o
-}
-
-func (o WorkspaceApplicationPublishedObjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[[]WorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationPublishedObjectMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationPublishedObjectMetadataOutput {
@@ -1193,12 +1024,6 @@ func (i WorkspaceApplicationRegistryMetadataArgs) ToWorkspaceApplicationRegistry
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationRegistryMetadataOutput)
 }
 
-func (i WorkspaceApplicationRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[WorkspaceApplicationRegistryMetadata]{
-		OutputState: i.ToWorkspaceApplicationRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i WorkspaceApplicationRegistryMetadataArgs) ToWorkspaceApplicationRegistryMetadataPtrOutput() WorkspaceApplicationRegistryMetadataPtrOutput {
 	return i.ToWorkspaceApplicationRegistryMetadataPtrOutputWithContext(context.Background())
 }
@@ -1240,12 +1065,6 @@ func (i *workspaceApplicationRegistryMetadataPtrType) ToWorkspaceApplicationRegi
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationRegistryMetadataPtrOutput)
 }
 
-func (i *workspaceApplicationRegistryMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[*WorkspaceApplicationRegistryMetadata]{
-		OutputState: i.ToWorkspaceApplicationRegistryMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationRegistryMetadataOutput) ElementType() reflect.Type {
@@ -1268,12 +1087,6 @@ func (o WorkspaceApplicationRegistryMetadataOutput) ToWorkspaceApplicationRegist
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceApplicationRegistryMetadata) *WorkspaceApplicationRegistryMetadata {
 		return &v
 	}).(WorkspaceApplicationRegistryMetadataPtrOutput)
-}
-
-func (o WorkspaceApplicationRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[WorkspaceApplicationRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The owning object's key for this object.
@@ -1313,12 +1126,6 @@ func (o WorkspaceApplicationRegistryMetadataPtrOutput) ToWorkspaceApplicationReg
 
 func (o WorkspaceApplicationRegistryMetadataPtrOutput) ToWorkspaceApplicationRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceApplicationRegistryMetadataPtrOutput {
 	return o
-}
-
-func (o WorkspaceApplicationRegistryMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[*WorkspaceApplicationRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationRegistryMetadataPtrOutput) Elem() WorkspaceApplicationRegistryMetadataOutput {
@@ -1436,12 +1243,6 @@ func (i WorkspaceApplicationSourceApplicationInfoArgs) ToWorkspaceApplicationSou
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationSourceApplicationInfoOutput)
 }
 
-func (i WorkspaceApplicationSourceApplicationInfoArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[WorkspaceApplicationSourceApplicationInfo]{
-		OutputState: i.ToWorkspaceApplicationSourceApplicationInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i WorkspaceApplicationSourceApplicationInfoArgs) ToWorkspaceApplicationSourceApplicationInfoPtrOutput() WorkspaceApplicationSourceApplicationInfoPtrOutput {
 	return i.ToWorkspaceApplicationSourceApplicationInfoPtrOutputWithContext(context.Background())
 }
@@ -1483,12 +1284,6 @@ func (i *workspaceApplicationSourceApplicationInfoPtrType) ToWorkspaceApplicatio
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationSourceApplicationInfoPtrOutput)
 }
 
-func (i *workspaceApplicationSourceApplicationInfoPtrType) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[*WorkspaceApplicationSourceApplicationInfo]{
-		OutputState: i.ToWorkspaceApplicationSourceApplicationInfoPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationSourceApplicationInfoOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationSourceApplicationInfoOutput) ElementType() reflect.Type {
@@ -1511,12 +1306,6 @@ func (o WorkspaceApplicationSourceApplicationInfoOutput) ToWorkspaceApplicationS
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceApplicationSourceApplicationInfo) *WorkspaceApplicationSourceApplicationInfo {
 		return &v
 	}).(WorkspaceApplicationSourceApplicationInfoPtrOutput)
-}
-
-func (o WorkspaceApplicationSourceApplicationInfoOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[WorkspaceApplicationSourceApplicationInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The source application key to use when creating the application.
@@ -1559,12 +1348,6 @@ func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) ToWorkspaceApplicati
 
 func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) ToWorkspaceApplicationSourceApplicationInfoPtrOutputWithContext(ctx context.Context) WorkspaceApplicationSourceApplicationInfoPtrOutput {
 	return o
-}
-
-func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[*WorkspaceApplicationSourceApplicationInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationSourceApplicationInfoPtrOutput) Elem() WorkspaceApplicationSourceApplicationInfoOutput {
@@ -1691,12 +1474,6 @@ func (i WorkspaceExportRequestExportedItemArgs) ToWorkspaceExportRequestExported
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceExportRequestExportedItemOutput)
 }
 
-func (i WorkspaceExportRequestExportedItemArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceExportRequestExportedItem] {
-	return pulumix.Output[WorkspaceExportRequestExportedItem]{
-		OutputState: i.ToWorkspaceExportRequestExportedItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceExportRequestExportedItemArrayInput is an input type that accepts WorkspaceExportRequestExportedItemArray and WorkspaceExportRequestExportedItemArrayOutput values.
 // You can construct a concrete instance of `WorkspaceExportRequestExportedItemArrayInput` via:
 //
@@ -1722,12 +1499,6 @@ func (i WorkspaceExportRequestExportedItemArray) ToWorkspaceExportRequestExporte
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceExportRequestExportedItemArrayOutput)
 }
 
-func (i WorkspaceExportRequestExportedItemArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceExportRequestExportedItem] {
-	return pulumix.Output[[]WorkspaceExportRequestExportedItem]{
-		OutputState: i.ToWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceExportRequestExportedItemOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceExportRequestExportedItemOutput) ElementType() reflect.Type {
@@ -1740,12 +1511,6 @@ func (o WorkspaceExportRequestExportedItemOutput) ToWorkspaceExportRequestExport
 
 func (o WorkspaceExportRequestExportedItemOutput) ToWorkspaceExportRequestExportedItemOutputWithContext(ctx context.Context) WorkspaceExportRequestExportedItemOutput {
 	return o
-}
-
-func (o WorkspaceExportRequestExportedItemOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceExportRequestExportedItem] {
-	return pulumix.Output[WorkspaceExportRequestExportedItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Aggregator key
@@ -1800,12 +1565,6 @@ func (o WorkspaceExportRequestExportedItemArrayOutput) ToWorkspaceExportRequestE
 
 func (o WorkspaceExportRequestExportedItemArrayOutput) ToWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx context.Context) WorkspaceExportRequestExportedItemArrayOutput {
 	return o
-}
-
-func (o WorkspaceExportRequestExportedItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceExportRequestExportedItem] {
-	return pulumix.Output[[]WorkspaceExportRequestExportedItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceExportRequestExportedItemArrayOutput) Index(i pulumi.IntInput) WorkspaceExportRequestExportedItemOutput {
@@ -1899,12 +1658,6 @@ func (i WorkspaceFolderMetadataArgs) ToWorkspaceFolderMetadataOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataOutput)
 }
 
-func (i WorkspaceFolderMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadata] {
-	return pulumix.Output[WorkspaceFolderMetadata]{
-		OutputState: i.ToWorkspaceFolderMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceFolderMetadataArrayInput is an input type that accepts WorkspaceFolderMetadataArray and WorkspaceFolderMetadataArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderMetadataArrayInput` via:
 //
@@ -1930,12 +1683,6 @@ func (i WorkspaceFolderMetadataArray) ToWorkspaceFolderMetadataArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataArrayOutput)
 }
 
-func (i WorkspaceFolderMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadata] {
-	return pulumix.Output[[]WorkspaceFolderMetadata]{
-		OutputState: i.ToWorkspaceFolderMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderMetadataOutput) ElementType() reflect.Type {
@@ -1948,12 +1695,6 @@ func (o WorkspaceFolderMetadataOutput) ToWorkspaceFolderMetadataOutput() Workspa
 
 func (o WorkspaceFolderMetadataOutput) ToWorkspaceFolderMetadataOutputWithContext(ctx context.Context) WorkspaceFolderMetadataOutput {
 	return o
-}
-
-func (o WorkspaceFolderMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadata] {
-	return pulumix.Output[WorkspaceFolderMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The owning object's key for this object.
@@ -2040,12 +1781,6 @@ func (o WorkspaceFolderMetadataArrayOutput) ToWorkspaceFolderMetadataArrayOutput
 	return o
 }
 
-func (o WorkspaceFolderMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadata] {
-	return pulumix.Output[[]WorkspaceFolderMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceFolderMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderMetadata {
 		return vs[0].([]WorkspaceFolderMetadata)[vs[1].(int)]
@@ -2101,12 +1836,6 @@ func (i WorkspaceFolderMetadataAggregatorArgs) ToWorkspaceFolderMetadataAggregat
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataAggregatorOutput)
 }
 
-func (i WorkspaceFolderMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[WorkspaceFolderMetadataAggregator]{
-		OutputState: i.ToWorkspaceFolderMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceFolderMetadataAggregatorArrayInput is an input type that accepts WorkspaceFolderMetadataAggregatorArray and WorkspaceFolderMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderMetadataAggregatorArrayInput` via:
 //
@@ -2132,12 +1861,6 @@ func (i WorkspaceFolderMetadataAggregatorArray) ToWorkspaceFolderMetadataAggrega
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataAggregatorArrayOutput)
 }
 
-func (i WorkspaceFolderMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[[]WorkspaceFolderMetadataAggregator]{
-		OutputState: i.ToWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -2150,12 +1873,6 @@ func (o WorkspaceFolderMetadataAggregatorOutput) ToWorkspaceFolderMetadataAggreg
 
 func (o WorkspaceFolderMetadataAggregatorOutput) ToWorkspaceFolderMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceFolderMetadataAggregatorOutput {
 	return o
-}
-
-func (o WorkspaceFolderMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[WorkspaceFolderMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user defined description for the folder.
@@ -2197,12 +1914,6 @@ func (o WorkspaceFolderMetadataAggregatorArrayOutput) ToWorkspaceFolderMetadataA
 	return o
 }
 
-func (o WorkspaceFolderMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[[]WorkspaceFolderMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceFolderMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataAggregatorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderMetadataAggregator {
 		return vs[0].([]WorkspaceFolderMetadataAggregator)[vs[1].(int)]
@@ -2242,12 +1953,6 @@ func (i WorkspaceFolderMetadataCountStatisticArgs) ToWorkspaceFolderMetadataCoun
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticOutput)
 }
 
-func (i WorkspaceFolderMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[WorkspaceFolderMetadataCountStatistic]{
-		OutputState: i.ToWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceFolderMetadataCountStatisticArrayInput is an input type that accepts WorkspaceFolderMetadataCountStatisticArray and WorkspaceFolderMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderMetadataCountStatisticArrayInput` via:
 //
@@ -2273,12 +1978,6 @@ func (i WorkspaceFolderMetadataCountStatisticArray) ToWorkspaceFolderMetadataCou
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticArrayOutput)
 }
 
-func (i WorkspaceFolderMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[[]WorkspaceFolderMetadataCountStatistic]{
-		OutputState: i.ToWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -2291,12 +1990,6 @@ func (o WorkspaceFolderMetadataCountStatisticOutput) ToWorkspaceFolderMetadataCo
 
 func (o WorkspaceFolderMetadataCountStatisticOutput) ToWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticOutput {
 	return o
-}
-
-func (o WorkspaceFolderMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[WorkspaceFolderMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -2318,12 +2011,6 @@ func (o WorkspaceFolderMetadataCountStatisticArrayOutput) ToWorkspaceFolderMetad
 
 func (o WorkspaceFolderMetadataCountStatisticArrayOutput) ToWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticArrayOutput {
 	return o
-}
-
-func (o WorkspaceFolderMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[[]WorkspaceFolderMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceFolderMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataCountStatisticOutput {
@@ -2369,12 +2056,6 @@ func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToWorkspac
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput)
 }
 
-func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[WorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray and WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput` via:
 //
@@ -2400,12 +2081,6 @@ func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToWorkspa
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]WorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -2418,12 +2093,6 @@ func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToWorksp
 
 func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
 	return o
-}
-
-func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[WorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The value for the count statistic object.
@@ -2448,12 +2117,6 @@ func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToW
 
 func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
 	return o
-}
-
-func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]WorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
@@ -2499,12 +2162,6 @@ func (i WorkspaceFolderParentRefArgs) ToWorkspaceFolderParentRefOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderParentRefOutput)
 }
 
-func (i WorkspaceFolderParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderParentRef] {
-	return pulumix.Output[WorkspaceFolderParentRef]{
-		OutputState: i.ToWorkspaceFolderParentRefOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceFolderParentRefArrayInput is an input type that accepts WorkspaceFolderParentRefArray and WorkspaceFolderParentRefArrayOutput values.
 // You can construct a concrete instance of `WorkspaceFolderParentRefArrayInput` via:
 //
@@ -2530,12 +2187,6 @@ func (i WorkspaceFolderParentRefArray) ToWorkspaceFolderParentRefArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderParentRefArrayOutput)
 }
 
-func (i WorkspaceFolderParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderParentRef] {
-	return pulumix.Output[[]WorkspaceFolderParentRef]{
-		OutputState: i.ToWorkspaceFolderParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderParentRefOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderParentRefOutput) ElementType() reflect.Type {
@@ -2548,12 +2199,6 @@ func (o WorkspaceFolderParentRefOutput) ToWorkspaceFolderParentRefOutput() Works
 
 func (o WorkspaceFolderParentRefOutput) ToWorkspaceFolderParentRefOutputWithContext(ctx context.Context) WorkspaceFolderParentRefOutput {
 	return o
-}
-
-func (o WorkspaceFolderParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderParentRef] {
-	return pulumix.Output[WorkspaceFolderParentRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key of the parent object.
@@ -2578,12 +2223,6 @@ func (o WorkspaceFolderParentRefArrayOutput) ToWorkspaceFolderParentRefArrayOutp
 
 func (o WorkspaceFolderParentRefArrayOutput) ToWorkspaceFolderParentRefArrayOutputWithContext(ctx context.Context) WorkspaceFolderParentRefArrayOutput {
 	return o
-}
-
-func (o WorkspaceFolderParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceFolderParentRef] {
-	return pulumix.Output[[]WorkspaceFolderParentRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceFolderParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderParentRefOutput {
@@ -2641,12 +2280,6 @@ func (i WorkspaceFolderRegistryMetadataArgs) ToWorkspaceFolderRegistryMetadataOu
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderRegistryMetadataOutput)
 }
 
-func (i WorkspaceFolderRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[WorkspaceFolderRegistryMetadata]{
-		OutputState: i.ToWorkspaceFolderRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i WorkspaceFolderRegistryMetadataArgs) ToWorkspaceFolderRegistryMetadataPtrOutput() WorkspaceFolderRegistryMetadataPtrOutput {
 	return i.ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(context.Background())
 }
@@ -2688,12 +2321,6 @@ func (i *workspaceFolderRegistryMetadataPtrType) ToWorkspaceFolderRegistryMetada
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderRegistryMetadataPtrOutput)
 }
 
-func (i *workspaceFolderRegistryMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[*WorkspaceFolderRegistryMetadata]{
-		OutputState: i.ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceFolderRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceFolderRegistryMetadataOutput) ElementType() reflect.Type {
@@ -2716,12 +2343,6 @@ func (o WorkspaceFolderRegistryMetadataOutput) ToWorkspaceFolderRegistryMetadata
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceFolderRegistryMetadata) *WorkspaceFolderRegistryMetadata {
 		return &v
 	}).(WorkspaceFolderRegistryMetadataPtrOutput)
-}
-
-func (o WorkspaceFolderRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[WorkspaceFolderRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The owning object's key for this object.
@@ -2761,12 +2382,6 @@ func (o WorkspaceFolderRegistryMetadataPtrOutput) ToWorkspaceFolderRegistryMetad
 
 func (o WorkspaceFolderRegistryMetadataPtrOutput) ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataPtrOutput {
 	return o
-}
-
-func (o WorkspaceFolderRegistryMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[*WorkspaceFolderRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceFolderRegistryMetadataPtrOutput) Elem() WorkspaceFolderRegistryMetadataOutput {
@@ -2870,12 +2485,6 @@ func (i WorkspaceImportRequestImportConflictResolutionArgs) ToWorkspaceImportReq
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportConflictResolutionOutput)
 }
 
-func (i WorkspaceImportRequestImportConflictResolutionArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[WorkspaceImportRequestImportConflictResolution]{
-		OutputState: i.ToWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i WorkspaceImportRequestImportConflictResolutionArgs) ToWorkspaceImportRequestImportConflictResolutionPtrOutput() WorkspaceImportRequestImportConflictResolutionPtrOutput {
 	return i.ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(context.Background())
 }
@@ -2917,12 +2526,6 @@ func (i *workspaceImportRequestImportConflictResolutionPtrType) ToWorkspaceImpor
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportConflictResolutionPtrOutput)
 }
 
-func (i *workspaceImportRequestImportConflictResolutionPtrType) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[*WorkspaceImportRequestImportConflictResolution]{
-		OutputState: i.ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceImportRequestImportConflictResolutionOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceImportRequestImportConflictResolutionOutput) ElementType() reflect.Type {
@@ -2945,12 +2548,6 @@ func (o WorkspaceImportRequestImportConflictResolutionOutput) ToWorkspaceImportR
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceImportRequestImportConflictResolution) *WorkspaceImportRequestImportConflictResolution {
 		return &v
 	}).(WorkspaceImportRequestImportConflictResolutionPtrOutput)
-}
-
-func (o WorkspaceImportRequestImportConflictResolutionOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[WorkspaceImportRequestImportConflictResolution]{
-		OutputState: o.OutputState,
-	}
 }
 
 // In case of DUPLICATE mode, prefix will be used to disambiguate the object.
@@ -2980,12 +2577,6 @@ func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ToWorkspaceImpo
 
 func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ToWorkspaceImportRequestImportConflictResolutionPtrOutputWithContext(ctx context.Context) WorkspaceImportRequestImportConflictResolutionPtrOutput {
 	return o
-}
-
-func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[*WorkspaceImportRequestImportConflictResolution]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceImportRequestImportConflictResolutionPtrOutput) Elem() WorkspaceImportRequestImportConflictResolutionOutput {
@@ -3097,12 +2688,6 @@ func (i WorkspaceImportRequestImportedObjectArgs) ToWorkspaceImportRequestImport
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportedObjectOutput)
 }
 
-func (i WorkspaceImportRequestImportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportedObject] {
-	return pulumix.Output[WorkspaceImportRequestImportedObject]{
-		OutputState: i.ToWorkspaceImportRequestImportedObjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceImportRequestImportedObjectArrayInput is an input type that accepts WorkspaceImportRequestImportedObjectArray and WorkspaceImportRequestImportedObjectArrayOutput values.
 // You can construct a concrete instance of `WorkspaceImportRequestImportedObjectArrayInput` via:
 //
@@ -3128,12 +2713,6 @@ func (i WorkspaceImportRequestImportedObjectArray) ToWorkspaceImportRequestImpor
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceImportRequestImportedObjectArrayOutput)
 }
 
-func (i WorkspaceImportRequestImportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceImportRequestImportedObject] {
-	return pulumix.Output[[]WorkspaceImportRequestImportedObject]{
-		OutputState: i.ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceImportRequestImportedObjectOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceImportRequestImportedObjectOutput) ElementType() reflect.Type {
@@ -3146,12 +2725,6 @@ func (o WorkspaceImportRequestImportedObjectOutput) ToWorkspaceImportRequestImpo
 
 func (o WorkspaceImportRequestImportedObjectOutput) ToWorkspaceImportRequestImportedObjectOutputWithContext(ctx context.Context) WorkspaceImportRequestImportedObjectOutput {
 	return o
-}
-
-func (o WorkspaceImportRequestImportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceImportRequestImportedObject] {
-	return pulumix.Output[WorkspaceImportRequestImportedObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Aggregator key
@@ -3216,12 +2789,6 @@ func (o WorkspaceImportRequestImportedObjectArrayOutput) ToWorkspaceImportReques
 
 func (o WorkspaceImportRequestImportedObjectArrayOutput) ToWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx context.Context) WorkspaceImportRequestImportedObjectArrayOutput {
 	return o
-}
-
-func (o WorkspaceImportRequestImportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceImportRequestImportedObject] {
-	return pulumix.Output[[]WorkspaceImportRequestImportedObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceImportRequestImportedObjectArrayOutput) Index(i pulumi.IntInput) WorkspaceImportRequestImportedObjectOutput {
@@ -3315,12 +2882,6 @@ func (i WorkspaceProjectMetadataArgs) ToWorkspaceProjectMetadataOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataOutput)
 }
 
-func (i WorkspaceProjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadata] {
-	return pulumix.Output[WorkspaceProjectMetadata]{
-		OutputState: i.ToWorkspaceProjectMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceProjectMetadataArrayInput is an input type that accepts WorkspaceProjectMetadataArray and WorkspaceProjectMetadataArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectMetadataArrayInput` via:
 //
@@ -3346,12 +2907,6 @@ func (i WorkspaceProjectMetadataArray) ToWorkspaceProjectMetadataArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataArrayOutput)
 }
 
-func (i WorkspaceProjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadata] {
-	return pulumix.Output[[]WorkspaceProjectMetadata]{
-		OutputState: i.ToWorkspaceProjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectMetadataOutput) ElementType() reflect.Type {
@@ -3364,12 +2919,6 @@ func (o WorkspaceProjectMetadataOutput) ToWorkspaceProjectMetadataOutput() Works
 
 func (o WorkspaceProjectMetadataOutput) ToWorkspaceProjectMetadataOutputWithContext(ctx context.Context) WorkspaceProjectMetadataOutput {
 	return o
-}
-
-func (o WorkspaceProjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadata] {
-	return pulumix.Output[WorkspaceProjectMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The owning object's key for this object.
@@ -3456,12 +3005,6 @@ func (o WorkspaceProjectMetadataArrayOutput) ToWorkspaceProjectMetadataArrayOutp
 	return o
 }
 
-func (o WorkspaceProjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadata] {
-	return pulumix.Output[[]WorkspaceProjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceProjectMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectMetadata {
 		return vs[0].([]WorkspaceProjectMetadata)[vs[1].(int)]
@@ -3517,12 +3060,6 @@ func (i WorkspaceProjectMetadataAggregatorArgs) ToWorkspaceProjectMetadataAggreg
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataAggregatorOutput)
 }
 
-func (i WorkspaceProjectMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[WorkspaceProjectMetadataAggregator]{
-		OutputState: i.ToWorkspaceProjectMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceProjectMetadataAggregatorArrayInput is an input type that accepts WorkspaceProjectMetadataAggregatorArray and WorkspaceProjectMetadataAggregatorArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectMetadataAggregatorArrayInput` via:
 //
@@ -3548,12 +3085,6 @@ func (i WorkspaceProjectMetadataAggregatorArray) ToWorkspaceProjectMetadataAggre
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataAggregatorArrayOutput)
 }
 
-func (i WorkspaceProjectMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[[]WorkspaceProjectMetadataAggregator]{
-		OutputState: i.ToWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -3566,12 +3097,6 @@ func (o WorkspaceProjectMetadataAggregatorOutput) ToWorkspaceProjectMetadataAggr
 
 func (o WorkspaceProjectMetadataAggregatorOutput) ToWorkspaceProjectMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceProjectMetadataAggregatorOutput {
 	return o
-}
-
-func (o WorkspaceProjectMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[WorkspaceProjectMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user defined description for the project.
@@ -3613,12 +3138,6 @@ func (o WorkspaceProjectMetadataAggregatorArrayOutput) ToWorkspaceProjectMetadat
 	return o
 }
 
-func (o WorkspaceProjectMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[[]WorkspaceProjectMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceProjectMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataAggregatorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectMetadataAggregator {
 		return vs[0].([]WorkspaceProjectMetadataAggregator)[vs[1].(int)]
@@ -3658,12 +3177,6 @@ func (i WorkspaceProjectMetadataCountStatisticArgs) ToWorkspaceProjectMetadataCo
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticOutput)
 }
 
-func (i WorkspaceProjectMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[WorkspaceProjectMetadataCountStatistic]{
-		OutputState: i.ToWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceProjectMetadataCountStatisticArrayInput is an input type that accepts WorkspaceProjectMetadataCountStatisticArray and WorkspaceProjectMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectMetadataCountStatisticArrayInput` via:
 //
@@ -3689,12 +3202,6 @@ func (i WorkspaceProjectMetadataCountStatisticArray) ToWorkspaceProjectMetadataC
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticArrayOutput)
 }
 
-func (i WorkspaceProjectMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[[]WorkspaceProjectMetadataCountStatistic]{
-		OutputState: i.ToWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -3707,12 +3214,6 @@ func (o WorkspaceProjectMetadataCountStatisticOutput) ToWorkspaceProjectMetadata
 
 func (o WorkspaceProjectMetadataCountStatisticOutput) ToWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticOutput {
 	return o
-}
-
-func (o WorkspaceProjectMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[WorkspaceProjectMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -3734,12 +3235,6 @@ func (o WorkspaceProjectMetadataCountStatisticArrayOutput) ToWorkspaceProjectMet
 
 func (o WorkspaceProjectMetadataCountStatisticArrayOutput) ToWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticArrayOutput {
 	return o
-}
-
-func (o WorkspaceProjectMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[[]WorkspaceProjectMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceProjectMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataCountStatisticOutput {
@@ -3785,12 +3280,6 @@ func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToWorkspa
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput)
 }
 
-func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[WorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray and WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput` via:
 //
@@ -3816,12 +3305,6 @@ func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToWorksp
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]WorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -3834,12 +3317,6 @@ func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToWorks
 
 func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
 	return o
-}
-
-func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[WorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The value for the count statistic object.
@@ -3864,12 +3341,6 @@ func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) To
 
 func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
 	return o
-}
-
-func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]WorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
@@ -3915,12 +3386,6 @@ func (i WorkspaceProjectParentRefArgs) ToWorkspaceProjectParentRefOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectParentRefOutput)
 }
 
-func (i WorkspaceProjectParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectParentRef] {
-	return pulumix.Output[WorkspaceProjectParentRef]{
-		OutputState: i.ToWorkspaceProjectParentRefOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceProjectParentRefArrayInput is an input type that accepts WorkspaceProjectParentRefArray and WorkspaceProjectParentRefArrayOutput values.
 // You can construct a concrete instance of `WorkspaceProjectParentRefArrayInput` via:
 //
@@ -3946,12 +3411,6 @@ func (i WorkspaceProjectParentRefArray) ToWorkspaceProjectParentRefArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectParentRefArrayOutput)
 }
 
-func (i WorkspaceProjectParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectParentRef] {
-	return pulumix.Output[[]WorkspaceProjectParentRef]{
-		OutputState: i.ToWorkspaceProjectParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectParentRefOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectParentRefOutput) ElementType() reflect.Type {
@@ -3964,12 +3423,6 @@ func (o WorkspaceProjectParentRefOutput) ToWorkspaceProjectParentRefOutput() Wor
 
 func (o WorkspaceProjectParentRefOutput) ToWorkspaceProjectParentRefOutputWithContext(ctx context.Context) WorkspaceProjectParentRefOutput {
 	return o
-}
-
-func (o WorkspaceProjectParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectParentRef] {
-	return pulumix.Output[WorkspaceProjectParentRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key of the parent object.
@@ -3994,12 +3447,6 @@ func (o WorkspaceProjectParentRefArrayOutput) ToWorkspaceProjectParentRefArrayOu
 
 func (o WorkspaceProjectParentRefArrayOutput) ToWorkspaceProjectParentRefArrayOutputWithContext(ctx context.Context) WorkspaceProjectParentRefArrayOutput {
 	return o
-}
-
-func (o WorkspaceProjectParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]WorkspaceProjectParentRef] {
-	return pulumix.Output[[]WorkspaceProjectParentRef]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceProjectParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectParentRefOutput {
@@ -4057,12 +3504,6 @@ func (i WorkspaceProjectRegistryMetadataArgs) ToWorkspaceProjectRegistryMetadata
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectRegistryMetadataOutput)
 }
 
-func (i WorkspaceProjectRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[WorkspaceProjectRegistryMetadata]{
-		OutputState: i.ToWorkspaceProjectRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i WorkspaceProjectRegistryMetadataArgs) ToWorkspaceProjectRegistryMetadataPtrOutput() WorkspaceProjectRegistryMetadataPtrOutput {
 	return i.ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(context.Background())
 }
@@ -4104,12 +3545,6 @@ func (i *workspaceProjectRegistryMetadataPtrType) ToWorkspaceProjectRegistryMeta
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectRegistryMetadataPtrOutput)
 }
 
-func (i *workspaceProjectRegistryMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[*WorkspaceProjectRegistryMetadata]{
-		OutputState: i.ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceProjectRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceProjectRegistryMetadataOutput) ElementType() reflect.Type {
@@ -4132,12 +3567,6 @@ func (o WorkspaceProjectRegistryMetadataOutput) ToWorkspaceProjectRegistryMetada
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceProjectRegistryMetadata) *WorkspaceProjectRegistryMetadata {
 		return &v
 	}).(WorkspaceProjectRegistryMetadataPtrOutput)
-}
-
-func (o WorkspaceProjectRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[WorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[WorkspaceProjectRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The owning object's key for this object.
@@ -4177,12 +3606,6 @@ func (o WorkspaceProjectRegistryMetadataPtrOutput) ToWorkspaceProjectRegistryMet
 
 func (o WorkspaceProjectRegistryMetadataPtrOutput) ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataPtrOutput {
 	return o
-}
-
-func (o WorkspaceProjectRegistryMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[*WorkspaceProjectRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceProjectRegistryMetadataPtrOutput) Elem() WorkspaceProjectRegistryMetadataOutput {
@@ -4247,19 +3670,19 @@ func (o WorkspaceProjectRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntP
 
 type GetWorkspaceApplicationDependentObjectMetadata struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceApplicationDependentObjectMetadataInput is an input type that accepts GetWorkspaceApplicationDependentObjectMetadataArgs and GetWorkspaceApplicationDependentObjectMetadataOutput values.
@@ -4275,19 +3698,19 @@ type GetWorkspaceApplicationDependentObjectMetadataInput interface {
 
 type GetWorkspaceApplicationDependentObjectMetadataArgs struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceApplicationDependentObjectMetadataArgs) ElementType() reflect.Type {
@@ -4300,12 +3723,6 @@ func (i GetWorkspaceApplicationDependentObjectMetadataArgs) ToGetWorkspaceApplic
 
 func (i GetWorkspaceApplicationDependentObjectMetadataArgs) ToGetWorkspaceApplicationDependentObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationDependentObjectMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationDependentObjectMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationDependentObjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationDependentObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationDependentObjectMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationDependentObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationDependentObjectMetadataArray and GetWorkspaceApplicationDependentObjectMetadataArrayOutput values.
@@ -4333,12 +3750,6 @@ func (i GetWorkspaceApplicationDependentObjectMetadataArray) ToGetWorkspaceAppli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationDependentObjectMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationDependentObjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationDependentObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationDependentObjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationDependentObjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationDependentObjectMetadataOutput) ElementType() reflect.Type {
@@ -4353,45 +3764,39 @@ func (o GetWorkspaceApplicationDependentObjectMetadataOutput) ToGetWorkspaceAppl
 	return o
 }
 
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationDependentObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The patch action indicating if object was created, updated, or deleted.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified path of the published object, which would include its project and folder.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) string { return v.NamePath }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *string { return v.NamePath }).(pulumi.StringPtrOutput)
 }
 
 // The object version.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // The type of the object in patch.
-func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationDependentObjectMetadataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationDependentObjectMetadata) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationDependentObjectMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -4408,12 +3813,6 @@ func (o GetWorkspaceApplicationDependentObjectMetadataArrayOutput) ToGetWorkspac
 	return o
 }
 
-func (o GetWorkspaceApplicationDependentObjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationDependentObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationDependentObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationDependentObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationDependentObjectMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationDependentObjectMetadata {
 		return vs[0].([]GetWorkspaceApplicationDependentObjectMetadata)[vs[1].(int)]
@@ -4422,33 +3821,33 @@ func (o GetWorkspaceApplicationDependentObjectMetadataArrayOutput) Index(i pulum
 
 type GetWorkspaceApplicationMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []GetWorkspaceApplicationMetadataAggregator `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics []GetWorkspaceApplicationMetadataCountStatistic `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName string `pulumi:"createdByName"`
+	CreatedByName *string `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath string `pulumi:"identifierPath"`
+	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName string `pulumi:"updatedByName"`
+	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
 // GetWorkspaceApplicationMetadataInput is an input type that accepts GetWorkspaceApplicationMetadataArgs and GetWorkspaceApplicationMetadataOutput values.
@@ -4464,33 +3863,33 @@ type GetWorkspaceApplicationMetadataInput interface {
 
 type GetWorkspaceApplicationMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators GetWorkspaceApplicationMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics GetWorkspaceApplicationMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
 func (GetWorkspaceApplicationMetadataArgs) ElementType() reflect.Type {
@@ -4503,12 +3902,6 @@ func (i GetWorkspaceApplicationMetadataArgs) ToGetWorkspaceApplicationMetadataOu
 
 func (i GetWorkspaceApplicationMetadataArgs) ToGetWorkspaceApplicationMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationMetadataArrayInput is an input type that accepts GetWorkspaceApplicationMetadataArray and GetWorkspaceApplicationMetadataArrayOutput values.
@@ -4536,12 +3929,6 @@ func (i GetWorkspaceApplicationMetadataArray) ToGetWorkspaceApplicationMetadataA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationMetadataOutput) ElementType() reflect.Type {
@@ -4556,15 +3943,9 @@ func (o GetWorkspaceApplicationMetadataOutput) ToGetWorkspaceApplicationMetadata
 	return o
 }
 
-func (o GetWorkspaceApplicationMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceApplicationMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -4582,18 +3963,18 @@ func (o GetWorkspaceApplicationMetadataOutput) CountStatistics() GetWorkspaceApp
 }
 
 // The user that created the object.
-func (o GetWorkspaceApplicationMetadataOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that created the object.
-func (o GetWorkspaceApplicationMetadataOutput) CreatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
 // The full path to identify this object.
-func (o GetWorkspaceApplicationMetadataOutput) IdentifierPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
 // Information property fields.
@@ -4602,8 +3983,8 @@ func (o GetWorkspaceApplicationMetadataOutput) InfoFields() pulumi.MapOutput {
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceApplicationMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceApplicationMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -4612,28 +3993,28 @@ func (o GetWorkspaceApplicationMetadataOutput) Labels() pulumi.StringArrayOutput
 }
 
 // The registry version of the object.
-func (o GetWorkspaceApplicationMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 // The date and time the application was created, in the timestamp format defined by RFC3339.
-func (o GetWorkspaceApplicationMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-func (o GetWorkspaceApplicationMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceApplicationMetadataOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceApplicationMetadataOutput) UpdatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -4650,12 +4031,6 @@ func (o GetWorkspaceApplicationMetadataArrayOutput) ToGetWorkspaceApplicationMet
 	return o
 }
 
-func (o GetWorkspaceApplicationMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationMetadata {
 		return vs[0].([]GetWorkspaceApplicationMetadata)[vs[1].(int)]
@@ -4664,15 +4039,15 @@ func (o GetWorkspaceApplicationMetadataArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetWorkspaceApplicationMetadataAggregator struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of the object in patch.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceApplicationMetadataAggregatorInput is an input type that accepts GetWorkspaceApplicationMetadataAggregatorArgs and GetWorkspaceApplicationMetadataAggregatorOutput values.
@@ -4688,15 +4063,15 @@ type GetWorkspaceApplicationMetadataAggregatorInput interface {
 
 type GetWorkspaceApplicationMetadataAggregatorArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the object in patch.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceApplicationMetadataAggregatorArgs) ElementType() reflect.Type {
@@ -4709,12 +4084,6 @@ func (i GetWorkspaceApplicationMetadataAggregatorArgs) ToGetWorkspaceApplication
 
 func (i GetWorkspaceApplicationMetadataAggregatorArgs) ToGetWorkspaceApplicationMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationMetadataAggregatorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataAggregatorOutput)
-}
-
-func (i GetWorkspaceApplicationMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceApplicationMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceApplicationMetadataAggregatorArray and GetWorkspaceApplicationMetadataAggregatorArrayOutput values.
@@ -4742,12 +4111,6 @@ func (i GetWorkspaceApplicationMetadataAggregatorArray) ToGetWorkspaceApplicatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataAggregatorArrayOutput)
 }
 
-func (i GetWorkspaceApplicationMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -4762,35 +4125,29 @@ func (o GetWorkspaceApplicationMetadataAggregatorOutput) ToGetWorkspaceApplicati
 	return o
 }
 
-func (o GetWorkspaceApplicationMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceApplicationMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceApplicationMetadataAggregatorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-func (o GetWorkspaceApplicationMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationMetadataAggregatorOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o GetWorkspaceApplicationMetadataAggregatorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The type of the object in patch.
-func (o GetWorkspaceApplicationMetadataAggregatorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
@@ -4805,12 +4162,6 @@ func (o GetWorkspaceApplicationMetadataAggregatorArrayOutput) ToGetWorkspaceAppl
 
 func (o GetWorkspaceApplicationMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationMetadataAggregatorArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceApplicationMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationMetadataAggregatorOutput {
@@ -4852,12 +4203,6 @@ func (i GetWorkspaceApplicationMetadataCountStatisticArgs) ToGetWorkspaceApplica
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataCountStatisticOutput)
 }
 
-func (i GetWorkspaceApplicationMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceApplicationMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceApplicationMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceApplicationMetadataCountStatisticArray and GetWorkspaceApplicationMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceApplicationMetadataCountStatisticArrayInput` via:
 //
@@ -4883,12 +4228,6 @@ func (i GetWorkspaceApplicationMetadataCountStatisticArray) ToGetWorkspaceApplic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataCountStatisticArrayOutput)
 }
 
-func (i GetWorkspaceApplicationMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -4901,12 +4240,6 @@ func (o GetWorkspaceApplicationMetadataCountStatisticOutput) ToGetWorkspaceAppli
 
 func (o GetWorkspaceApplicationMetadataCountStatisticOutput) ToGetWorkspaceApplicationMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationMetadataCountStatisticOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceApplicationMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -4930,12 +4263,6 @@ func (o GetWorkspaceApplicationMetadataCountStatisticArrayOutput) ToGetWorkspace
 	return o
 }
 
-func (o GetWorkspaceApplicationMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationMetadataCountStatisticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationMetadataCountStatistic {
 		return vs[0].([]GetWorkspaceApplicationMetadataCountStatistic)[vs[1].(int)]
@@ -4944,9 +4271,9 @@ func (o GetWorkspaceApplicationMetadataCountStatisticArrayOutput) Index(i pulumi
 
 type GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList struct {
 	// The value for the count statistic object.
-	ObjectCount string `pulumi:"objectCount"`
+	ObjectCount *string `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 }
 
 // GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput values.
@@ -4962,9 +4289,9 @@ type GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListInput inter
 
 type GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs struct {
 	// The value for the count statistic object.
-	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
 func (GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
@@ -4977,12 +4304,6 @@ func (i GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs) To
 
 func (i GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput)
-}
-
-func (i GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput values.
@@ -5010,12 +4331,6 @@ func (i GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -5030,20 +4345,14 @@ func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) 
 	return o
 }
 
-func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value for the count statistic object.
-func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList) string { return v.ObjectCount }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectCount }).(pulumi.StringPtrOutput)
 }
 
 // The type of object for the count statistic object.
-func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
@@ -5060,12 +4369,6 @@ func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOut
 	return o
 }
 
-func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList {
 		return vs[0].([]GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
@@ -5074,9 +4377,9 @@ func (o GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArrayOut
 
 type GetWorkspaceApplicationParentRef struct {
 	// Key of the parent object.
-	Parent string `pulumi:"parent"`
+	Parent *string `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId string `pulumi:"rootDocId"`
+	RootDocId *string `pulumi:"rootDocId"`
 }
 
 // GetWorkspaceApplicationParentRefInput is an input type that accepts GetWorkspaceApplicationParentRefArgs and GetWorkspaceApplicationParentRefOutput values.
@@ -5092,9 +4395,9 @@ type GetWorkspaceApplicationParentRefInput interface {
 
 type GetWorkspaceApplicationParentRefArgs struct {
 	// Key of the parent object.
-	Parent pulumi.StringInput `pulumi:"parent"`
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
 }
 
 func (GetWorkspaceApplicationParentRefArgs) ElementType() reflect.Type {
@@ -5107,12 +4410,6 @@ func (i GetWorkspaceApplicationParentRefArgs) ToGetWorkspaceApplicationParentRef
 
 func (i GetWorkspaceApplicationParentRefArgs) ToGetWorkspaceApplicationParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationParentRefOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationParentRefOutput)
-}
-
-func (i GetWorkspaceApplicationParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationParentRef] {
-	return pulumix.Output[GetWorkspaceApplicationParentRef]{
-		OutputState: i.ToGetWorkspaceApplicationParentRefOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationParentRefArrayInput is an input type that accepts GetWorkspaceApplicationParentRefArray and GetWorkspaceApplicationParentRefArrayOutput values.
@@ -5140,12 +4437,6 @@ func (i GetWorkspaceApplicationParentRefArray) ToGetWorkspaceApplicationParentRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationParentRefArrayOutput)
 }
 
-func (i GetWorkspaceApplicationParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationParentRef] {
-	return pulumix.Output[[]GetWorkspaceApplicationParentRef]{
-		OutputState: i.ToGetWorkspaceApplicationParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationParentRefOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationParentRefOutput) ElementType() reflect.Type {
@@ -5160,20 +4451,14 @@ func (o GetWorkspaceApplicationParentRefOutput) ToGetWorkspaceApplicationParentR
 	return o
 }
 
-func (o GetWorkspaceApplicationParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationParentRef] {
-	return pulumix.Output[GetWorkspaceApplicationParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key of the parent object.
-func (o GetWorkspaceApplicationParentRefOutput) Parent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationParentRef) string { return v.Parent }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
 }
 
 // Key of the root document object.
-func (o GetWorkspaceApplicationParentRefOutput) RootDocId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationParentRefArrayOutput struct{ *pulumi.OutputState }
@@ -5190,12 +4475,6 @@ func (o GetWorkspaceApplicationParentRefArrayOutput) ToGetWorkspaceApplicationPa
 	return o
 }
 
-func (o GetWorkspaceApplicationParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationParentRef] {
-	return pulumix.Output[[]GetWorkspaceApplicationParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationParentRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationParentRef {
 		return vs[0].([]GetWorkspaceApplicationParentRef)[vs[1].(int)]
@@ -5204,19 +4483,19 @@ func (o GetWorkspaceApplicationParentRefArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetWorkspaceApplicationPublishedObjectMetadata struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceApplicationPublishedObjectMetadataInput is an input type that accepts GetWorkspaceApplicationPublishedObjectMetadataArgs and GetWorkspaceApplicationPublishedObjectMetadataOutput values.
@@ -5232,19 +4511,19 @@ type GetWorkspaceApplicationPublishedObjectMetadataInput interface {
 
 type GetWorkspaceApplicationPublishedObjectMetadataArgs struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceApplicationPublishedObjectMetadataArgs) ElementType() reflect.Type {
@@ -5257,12 +4536,6 @@ func (i GetWorkspaceApplicationPublishedObjectMetadataArgs) ToGetWorkspaceApplic
 
 func (i GetWorkspaceApplicationPublishedObjectMetadataArgs) ToGetWorkspaceApplicationPublishedObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationPublishedObjectMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPublishedObjectMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationPublishedObjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationPublishedObjectMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationPublishedObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationPublishedObjectMetadataArray and GetWorkspaceApplicationPublishedObjectMetadataArrayOutput values.
@@ -5290,12 +4563,6 @@ func (i GetWorkspaceApplicationPublishedObjectMetadataArray) ToGetWorkspaceAppli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationPublishedObjectMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationPublishedObjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationPublishedObjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationPublishedObjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationPublishedObjectMetadataOutput) ElementType() reflect.Type {
@@ -5310,45 +4577,39 @@ func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) ToGetWorkspaceAppl
 	return o
 }
 
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The patch action indicating if object was created, updated, or deleted.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified path of the published object, which would include its project and folder.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) string { return v.NamePath }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *string { return v.NamePath }).(pulumi.StringPtrOutput)
 }
 
 // The object version.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // The type of the object in patch.
-func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationPublishedObjectMetadataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPublishedObjectMetadata) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationPublishedObjectMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -5365,12 +4626,6 @@ func (o GetWorkspaceApplicationPublishedObjectMetadataArrayOutput) ToGetWorkspac
 	return o
 }
 
-func (o GetWorkspaceApplicationPublishedObjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationPublishedObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationPublishedObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationPublishedObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationPublishedObjectMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationPublishedObjectMetadata {
 		return vs[0].([]GetWorkspaceApplicationPublishedObjectMetadata)[vs[1].(int)]
@@ -5379,15 +4634,15 @@ func (o GetWorkspaceApplicationPublishedObjectMetadataArrayOutput) Index(i pulum
 
 type GetWorkspaceApplicationRegistryMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
 // GetWorkspaceApplicationRegistryMetadataInput is an input type that accepts GetWorkspaceApplicationRegistryMetadataArgs and GetWorkspaceApplicationRegistryMetadataOutput values.
@@ -5403,15 +4658,15 @@ type GetWorkspaceApplicationRegistryMetadataInput interface {
 
 type GetWorkspaceApplicationRegistryMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
 func (GetWorkspaceApplicationRegistryMetadataArgs) ElementType() reflect.Type {
@@ -5424,12 +4679,6 @@ func (i GetWorkspaceApplicationRegistryMetadataArgs) ToGetWorkspaceApplicationRe
 
 func (i GetWorkspaceApplicationRegistryMetadataArgs) ToGetWorkspaceApplicationRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationRegistryMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationRegistryMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationRegistryMetadataArrayInput is an input type that accepts GetWorkspaceApplicationRegistryMetadataArray and GetWorkspaceApplicationRegistryMetadataArrayOutput values.
@@ -5457,12 +4706,6 @@ func (i GetWorkspaceApplicationRegistryMetadataArray) ToGetWorkspaceApplicationR
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationRegistryMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationRegistryMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationRegistryMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationRegistryMetadataOutput) ElementType() reflect.Type {
@@ -5477,25 +4720,19 @@ func (o GetWorkspaceApplicationRegistryMetadataOutput) ToGetWorkspaceApplication
 	return o
 }
 
-func (o GetWorkspaceApplicationRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceApplicationRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceApplicationRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceApplicationRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationRegistryMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -5504,8 +4741,8 @@ func (o GetWorkspaceApplicationRegistryMetadataOutput) Labels() pulumi.StringArr
 }
 
 // The registry version of the object.
-func (o GetWorkspaceApplicationRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 type GetWorkspaceApplicationRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -5522,12 +4759,6 @@ func (o GetWorkspaceApplicationRegistryMetadataArrayOutput) ToGetWorkspaceApplic
 	return o
 }
 
-func (o GetWorkspaceApplicationRegistryMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationRegistryMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationRegistryMetadata {
 		return vs[0].([]GetWorkspaceApplicationRegistryMetadata)[vs[1].(int)]
@@ -5536,14 +4767,14 @@ func (o GetWorkspaceApplicationRegistryMetadataArrayOutput) Index(i pulumi.IntIn
 
 type GetWorkspaceApplicationSourceApplicationInfo struct {
 	// The application key.
-	ApplicationKey string `pulumi:"applicationKey"`
+	ApplicationKey *string `pulumi:"applicationKey"`
 	// The source application version of the application.
-	ApplicationVersion string `pulumi:"applicationVersion"`
-	CopyType           string `pulumi:"copyType"`
+	ApplicationVersion *string `pulumi:"applicationVersion"`
+	CopyType           *string `pulumi:"copyType"`
 	// The last patch key for the application.
-	LastPatchKey string `pulumi:"lastPatchKey"`
+	LastPatchKey *string `pulumi:"lastPatchKey"`
 	// The workspace ID.
-	WorkspaceId string `pulumi:"workspaceId"`
+	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
 // GetWorkspaceApplicationSourceApplicationInfoInput is an input type that accepts GetWorkspaceApplicationSourceApplicationInfoArgs and GetWorkspaceApplicationSourceApplicationInfoOutput values.
@@ -5559,14 +4790,14 @@ type GetWorkspaceApplicationSourceApplicationInfoInput interface {
 
 type GetWorkspaceApplicationSourceApplicationInfoArgs struct {
 	// The application key.
-	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	ApplicationKey pulumi.StringPtrInput `pulumi:"applicationKey"`
 	// The source application version of the application.
-	ApplicationVersion pulumi.StringInput `pulumi:"applicationVersion"`
-	CopyType           pulumi.StringInput `pulumi:"copyType"`
+	ApplicationVersion pulumi.StringPtrInput `pulumi:"applicationVersion"`
+	CopyType           pulumi.StringPtrInput `pulumi:"copyType"`
 	// The last patch key for the application.
-	LastPatchKey pulumi.StringInput `pulumi:"lastPatchKey"`
+	LastPatchKey pulumi.StringPtrInput `pulumi:"lastPatchKey"`
 	// The workspace ID.
-	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
 
 func (GetWorkspaceApplicationSourceApplicationInfoArgs) ElementType() reflect.Type {
@@ -5579,12 +4810,6 @@ func (i GetWorkspaceApplicationSourceApplicationInfoArgs) ToGetWorkspaceApplicat
 
 func (i GetWorkspaceApplicationSourceApplicationInfoArgs) ToGetWorkspaceApplicationSourceApplicationInfoOutputWithContext(ctx context.Context) GetWorkspaceApplicationSourceApplicationInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSourceApplicationInfoOutput)
-}
-
-func (i GetWorkspaceApplicationSourceApplicationInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[GetWorkspaceApplicationSourceApplicationInfo]{
-		OutputState: i.ToGetWorkspaceApplicationSourceApplicationInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationSourceApplicationInfoArrayInput is an input type that accepts GetWorkspaceApplicationSourceApplicationInfoArray and GetWorkspaceApplicationSourceApplicationInfoArrayOutput values.
@@ -5612,12 +4837,6 @@ func (i GetWorkspaceApplicationSourceApplicationInfoArray) ToGetWorkspaceApplica
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationSourceApplicationInfoArrayOutput)
 }
 
-func (i GetWorkspaceApplicationSourceApplicationInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[[]GetWorkspaceApplicationSourceApplicationInfo]{
-		OutputState: i.ToGetWorkspaceApplicationSourceApplicationInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationSourceApplicationInfoOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationSourceApplicationInfoOutput) ElementType() reflect.Type {
@@ -5632,34 +4851,28 @@ func (o GetWorkspaceApplicationSourceApplicationInfoOutput) ToGetWorkspaceApplic
 	return o
 }
 
-func (o GetWorkspaceApplicationSourceApplicationInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[GetWorkspaceApplicationSourceApplicationInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The application key.
-func (o GetWorkspaceApplicationSourceApplicationInfoOutput) ApplicationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) string { return v.ApplicationKey }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationSourceApplicationInfoOutput) ApplicationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) *string { return v.ApplicationKey }).(pulumi.StringPtrOutput)
 }
 
 // The source application version of the application.
-func (o GetWorkspaceApplicationSourceApplicationInfoOutput) ApplicationVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) string { return v.ApplicationVersion }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationSourceApplicationInfoOutput) ApplicationVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) *string { return v.ApplicationVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspaceApplicationSourceApplicationInfoOutput) CopyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) string { return v.CopyType }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationSourceApplicationInfoOutput) CopyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) *string { return v.CopyType }).(pulumi.StringPtrOutput)
 }
 
 // The last patch key for the application.
-func (o GetWorkspaceApplicationSourceApplicationInfoOutput) LastPatchKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) string { return v.LastPatchKey }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationSourceApplicationInfoOutput) LastPatchKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) *string { return v.LastPatchKey }).(pulumi.StringPtrOutput)
 }
 
 // The workspace ID.
-func (o GetWorkspaceApplicationSourceApplicationInfoOutput) WorkspaceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) string { return v.WorkspaceId }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationSourceApplicationInfoOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSourceApplicationInfo) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationSourceApplicationInfoArrayOutput struct{ *pulumi.OutputState }
@@ -5674,12 +4887,6 @@ func (o GetWorkspaceApplicationSourceApplicationInfoArrayOutput) ToGetWorkspaceA
 
 func (o GetWorkspaceApplicationSourceApplicationInfoArrayOutput) ToGetWorkspaceApplicationSourceApplicationInfoArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationSourceApplicationInfoArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationSourceApplicationInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationSourceApplicationInfo] {
-	return pulumix.Output[[]GetWorkspaceApplicationSourceApplicationInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceApplicationSourceApplicationInfoArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationSourceApplicationInfoOutput {
@@ -5719,12 +4926,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionArgs) ToGetWorkspace
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollection]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceApplicationsApplicationSummaryCollectionArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionArray and GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceApplicationsApplicationSummaryCollectionArrayInput` via:
 //
@@ -5750,12 +4951,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionArray) ToGetWorkspac
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollection]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionOutput) ElementType() reflect.Type {
@@ -5768,12 +4963,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionOutput) ToGetWorkspa
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionOutput) ToGetWorkspaceApplicationsApplicationSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionOutput) Items() GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput {
@@ -5796,12 +4985,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput) ToGetWo
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollection {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollection)[vs[1].(int)]
@@ -5810,39 +4993,39 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionArrayOutput) Index(i
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItem struct {
 	// The source application version of the application.
-	ApplicationVersion int `pulumi:"applicationVersion"`
+	ApplicationVersion *int `pulumi:"applicationVersion"`
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas []GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata `pulumi:"dependentObjectMetadatas"`
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the resource that is used to uniquely identify the application
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Used to filter by the identifier of the published object.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The object type.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The object's model version.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus int `pulumi:"objectStatus"`
+	ObjectStatus *int `pulumi:"objectStatus"`
 	// The object version.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves []GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef `pulumi:"parentReves"`
 	// A list of objects that are published or unpublished in this patch.
@@ -5851,15 +5034,15 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItem struct {
 	// The information about the application.
 	SourceApplicationInfos []GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo `pulumi:"sourceApplicationInfos"`
 	// The current state of the workspace.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the application was patched, in the timestamp format defined by RFC3339.
-	TimePatched string `pulumi:"timePatched"`
+	TimePatched *string `pulumi:"timePatched"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The workspace ID.
-	WorkspaceId string `pulumi:"workspaceId"`
+	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput values.
@@ -5875,39 +5058,39 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemInput interface {
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs struct {
 	// The source application version of the application.
-	ApplicationVersion pulumi.IntInput `pulumi:"applicationVersion"`
+	ApplicationVersion pulumi.IntPtrInput `pulumi:"applicationVersion"`
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayInput `pulumi:"dependentObjectMetadatas"`
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// OCID of the resource that is used to uniquely identify the application
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Used to filter by the identifier of the published object.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The object type.
-	ModelType pulumi.StringInput `pulumi:"modelType"`
+	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// The object's model version.
-	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// The object version.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayInput `pulumi:"parentReves"`
 	// A list of objects that are published or unpublished in this patch.
@@ -5916,15 +5099,15 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs struct {
 	// The information about the application.
 	SourceApplicationInfos GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayInput `pulumi:"sourceApplicationInfos"`
 	// The current state of the workspace.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the application was patched, in the timestamp format defined by RFC3339.
-	TimePatched pulumi.StringInput `pulumi:"timePatched"`
+	TimePatched pulumi.StringPtrInput `pulumi:"timePatched"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The workspace ID.
-	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -5937,12 +5120,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs) ToGetWorks
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput values.
@@ -5970,12 +5147,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemArray) ToGetWork
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -5990,20 +5161,14 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ToGetWor
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source application version of the application.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ApplicationVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) int { return v.ApplicationVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ApplicationVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *int { return v.ApplicationVersion }).(pulumi.IntPtrOutput)
 }
 
 // OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -6021,13 +5186,13 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Dependen
 }
 
 // The description of the aggregator.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -6038,18 +5203,18 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Freeform
 }
 
 // OCID of the resource that is used to uniquely identify the application
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the published object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -6067,28 +5232,28 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Metadata
 }
 
 // The object type.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The object's model version.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The object version.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -6119,28 +5284,28 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) SourceAp
 }
 
 // The current state of the workspace.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was created, in the timestamp format defined by RFC3339.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was patched, in the timestamp format defined by RFC3339.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) TimePatched() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.TimePatched }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) TimePatched() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.TimePatched }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The workspace ID.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6157,12 +5322,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput) ToG
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItem {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItem)[vs[1].(int)]
@@ -6171,19 +5330,19 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemArrayOutput) Ind
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Used to filter by the identifier of the published object.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput values.
@@ -6199,19 +5358,19 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMeta
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Used to filter by the identifier of the published object.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs) ElementType() reflect.Type {
@@ -6224,12 +5383,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectM
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayOutput values.
@@ -6257,12 +5410,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectM
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) ElementType() reflect.Type {
@@ -6277,59 +5424,53 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectM
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The patch action indicating if object was created, updated, or deleted.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *string {
 		return v.Action
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the published object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *string {
 		return v.Identifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *string {
 		return v.Key
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified path of the published object, which would include its project and folder.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *string {
 		return v.NamePath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object version.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) int {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *int {
 		return v.ObjectVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The type of the object in patch.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -6346,12 +5487,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectM
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata)[vs[1].(int)]
@@ -6360,33 +5495,33 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectM
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics []GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName string `pulumi:"createdByName"`
+	CreatedByName *string `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath string `pulumi:"identifierPath"`
+	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName string `pulumi:"updatedByName"`
+	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput values.
@@ -6402,33 +5537,33 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataInput inter
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
@@ -6441,12 +5576,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs) To
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOutput values.
@@ -6474,12 +5603,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
@@ -6494,17 +5617,11 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) 
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string {
 		return v.AggregatorKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -6522,22 +5639,22 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) 
 }
 
 // The user that created the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that created the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string {
 		return v.CreatedByName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The full path to identify this object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string {
 		return v.IdentifierPath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Information property fields.
@@ -6548,8 +5665,8 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) 
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -6558,30 +5675,32 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) 
 }
 
 // The registry version of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *int {
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
 }
 
 // The date and time the application was created, in the timestamp format defined by RFC3339.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) *string {
 		return v.UpdatedByName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -6598,12 +5717,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOut
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata)[vs[1].(int)]
@@ -6612,15 +5725,15 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayOut
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Used to filter by the identifier of the published object.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of the object in patch.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput values.
@@ -6636,15 +5749,15 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorI
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Used to filter by the identifier of the published object.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the object in patch.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
@@ -6657,12 +5770,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregat
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput values.
@@ -6690,12 +5797,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregat
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -6710,45 +5811,39 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregat
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the published object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) *string {
 		return v.Identifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) *string {
 		return v.Key
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of the object in patch.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
@@ -6763,12 +5858,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregat
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorOutput {
@@ -6810,12 +5899,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayInput` via:
 //
@@ -6841,12 +5924,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -6859,12 +5936,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -6888,12 +5959,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
@@ -6902,9 +5967,9 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
 	// The value for the count statistic object.
-	ObjectCount string `pulumi:"objectCount"`
+	ObjectCount *string `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
@@ -6920,9 +5985,9 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatis
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
 	// The value for the count statistic object.
-	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
@@ -6935,12 +6000,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
@@ -6968,12 +6027,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -6988,24 +6041,18 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value for the count statistic object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectCount
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of object for the count statistic object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
@@ -7022,12 +6069,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
@@ -7036,9 +6077,9 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountSta
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef struct {
 	// Key of the parent object.
-	Parent string `pulumi:"parent"`
+	Parent *string `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId string `pulumi:"rootDocId"`
+	RootDocId *string `pulumi:"rootDocId"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput values.
@@ -7054,9 +6095,9 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefInput inte
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs struct {
 	// Key of the parent object.
-	Parent pulumi.StringInput `pulumi:"parent"`
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
@@ -7069,12 +6110,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs) T
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOutput values.
@@ -7102,12 +6137,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
@@ -7122,20 +6151,14 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput)
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key of the parent object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
 }
 
 // Key of the root document object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
@@ -7152,12 +6175,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOu
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef)[vs[1].(int)]
@@ -7166,19 +6183,19 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefArrayOu
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Used to filter by the identifier of the published object.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput values.
@@ -7194,19 +6211,19 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMeta
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArgs struct {
 	// The patch action indicating if object was created, updated, or deleted.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// Used to filter by the identifier of the published object.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The fully qualified path of the published object, which would include its project and folder.
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// The object version.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// The type of the object in patch.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArgs) ElementType() reflect.Type {
@@ -7219,12 +6236,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectM
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayOutput values.
@@ -7252,12 +6263,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectM
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) ElementType() reflect.Type {
@@ -7272,59 +6277,53 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectM
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The patch action indicating if object was created, updated, or deleted.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *string {
 		return v.Action
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the published object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *string {
 		return v.Identifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *string {
 		return v.Key
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified path of the published object, which would include its project and folder.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *string {
 		return v.NamePath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object version.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) int {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *int {
 		return v.ObjectVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The type of the object in patch.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -7341,12 +6340,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectM
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata)[vs[1].(int)]
@@ -7355,15 +6348,15 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectM
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// The key of the object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput values.
@@ -7379,15 +6372,15 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataInp
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// The key of the object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
@@ -7400,12 +6393,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayOutput values.
@@ -7433,12 +6420,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) ElementType() reflect.Type {
@@ -7453,29 +6434,23 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) *string {
 		return v.AggregatorKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) bool {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) *bool {
 		return v.IsFavorite
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The key of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -7486,10 +6461,10 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata
 }
 
 // The registry version of the object.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) int {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata) *int {
 		return v.RegistryVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -7506,12 +6481,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata {
 		return vs[0].([]GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata)[vs[1].(int)]
@@ -7520,14 +6489,14 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo struct {
 	// The source application key to use when creating the application.
-	ApplicationKey string `pulumi:"applicationKey"`
+	ApplicationKey *string `pulumi:"applicationKey"`
 	// The source application version of the application.
-	ApplicationVersion string `pulumi:"applicationVersion"`
-	CopyType           string `pulumi:"copyType"`
+	ApplicationVersion *string `pulumi:"applicationVersion"`
+	CopyType           *string `pulumi:"copyType"`
 	// The last patch key for the application.
-	LastPatchKey string `pulumi:"lastPatchKey"`
+	LastPatchKey *string `pulumi:"lastPatchKey"`
 	// The workspace ID.
-	WorkspaceId string `pulumi:"workspaceId"`
+	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArgs and GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput values.
@@ -7543,14 +6512,14 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationIn
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArgs struct {
 	// The source application key to use when creating the application.
-	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	ApplicationKey pulumi.StringPtrInput `pulumi:"applicationKey"`
 	// The source application version of the application.
-	ApplicationVersion pulumi.StringInput `pulumi:"applicationVersion"`
-	CopyType           pulumi.StringInput `pulumi:"copyType"`
+	ApplicationVersion pulumi.StringPtrInput `pulumi:"applicationVersion"`
+	CopyType           pulumi.StringPtrInput `pulumi:"copyType"`
 	// The last patch key for the application.
-	LastPatchKey pulumi.StringInput `pulumi:"lastPatchKey"`
+	LastPatchKey pulumi.StringPtrInput `pulumi:"lastPatchKey"`
 	// The workspace ID.
-	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArgs) ElementType() reflect.Type {
@@ -7563,12 +6532,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicatio
 
 func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArgs) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput)
-}
-
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayInput is an input type that accepts GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArray and GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput values.
@@ -7596,12 +6559,6 @@ func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo]{
-		OutputState: i.ToGetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) ElementType() reflect.Type {
@@ -7616,44 +6573,38 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicatio
 	return o
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo] {
-	return pulumix.Output[GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source application key to use when creating the application.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) ApplicationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) ApplicationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) *string {
 		return v.ApplicationKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The source application version of the application.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) ApplicationVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) ApplicationVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) *string {
 		return v.ApplicationVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) CopyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) CopyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) *string {
 		return v.CopyType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The last patch key for the application.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) LastPatchKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) LastPatchKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) *string {
 		return v.LastPatchKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The workspace ID.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) WorkspaceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) string {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo) *string {
 		return v.WorkspaceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput struct{ *pulumi.OutputState }
@@ -7668,12 +6619,6 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicatio
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput) ToGetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutputWithContext(ctx context.Context) GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo] {
-	return pulumix.Output[[]GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoOutput {
@@ -7719,12 +6664,6 @@ func (i GetWorkspaceApplicationsFilterArgs) ToGetWorkspaceApplicationsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsFilterOutput)
 }
 
-func (i GetWorkspaceApplicationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsFilter] {
-	return pulumix.Output[GetWorkspaceApplicationsFilter]{
-		OutputState: i.ToGetWorkspaceApplicationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceApplicationsFilterArrayInput is an input type that accepts GetWorkspaceApplicationsFilterArray and GetWorkspaceApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceApplicationsFilterArrayInput` via:
 //
@@ -7750,12 +6689,6 @@ func (i GetWorkspaceApplicationsFilterArray) ToGetWorkspaceApplicationsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceApplicationsFilterArrayOutput)
 }
 
-func (i GetWorkspaceApplicationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsFilter] {
-	return pulumix.Output[[]GetWorkspaceApplicationsFilter]{
-		OutputState: i.ToGetWorkspaceApplicationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceApplicationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceApplicationsFilterOutput) ElementType() reflect.Type {
@@ -7768,12 +6701,6 @@ func (o GetWorkspaceApplicationsFilterOutput) ToGetWorkspaceApplicationsFilterOu
 
 func (o GetWorkspaceApplicationsFilterOutput) ToGetWorkspaceApplicationsFilterOutputWithContext(ctx context.Context) GetWorkspaceApplicationsFilterOutput {
 	return o
-}
-
-func (o GetWorkspaceApplicationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceApplicationsFilter] {
-	return pulumix.Output[GetWorkspaceApplicationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Used to filter by the name of the object.
@@ -7803,12 +6730,6 @@ func (o GetWorkspaceApplicationsFilterArrayOutput) ToGetWorkspaceApplicationsFil
 	return o
 }
 
-func (o GetWorkspaceApplicationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceApplicationsFilter] {
-	return pulumix.Output[[]GetWorkspaceApplicationsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceApplicationsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceApplicationsFilter {
 		return vs[0].([]GetWorkspaceApplicationsFilter)[vs[1].(int)]
@@ -7817,21 +6738,21 @@ func (o GetWorkspaceApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetW
 
 type GetWorkspaceExportRequestExportedItem struct {
 	// Aggregator key
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// Export object request key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Name of the export request.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Object name path
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// Object type
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 	// Object version
-	ObjectVersion string `pulumi:"objectVersion"`
+	ObjectVersion *string `pulumi:"objectVersion"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis *string `pulumi:"timeUpdatedInMillis"`
 }
 
 // GetWorkspaceExportRequestExportedItemInput is an input type that accepts GetWorkspaceExportRequestExportedItemArgs and GetWorkspaceExportRequestExportedItemOutput values.
@@ -7847,21 +6768,21 @@ type GetWorkspaceExportRequestExportedItemInput interface {
 
 type GetWorkspaceExportRequestExportedItemArgs struct {
 	// Aggregator key
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// Export object request key
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Name of the export request.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Object name path
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// Object type
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 	// Object version
-	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.StringPtrInput `pulumi:"objectVersion"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis pulumi.StringPtrInput `pulumi:"timeUpdatedInMillis"`
 }
 
 func (GetWorkspaceExportRequestExportedItemArgs) ElementType() reflect.Type {
@@ -7874,12 +6795,6 @@ func (i GetWorkspaceExportRequestExportedItemArgs) ToGetWorkspaceExportRequestEx
 
 func (i GetWorkspaceExportRequestExportedItemArgs) ToGetWorkspaceExportRequestExportedItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestExportedItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestExportedItemOutput)
-}
-
-func (i GetWorkspaceExportRequestExportedItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestExportedItem] {
-	return pulumix.Output[GetWorkspaceExportRequestExportedItem]{
-		OutputState: i.ToGetWorkspaceExportRequestExportedItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceExportRequestExportedItemArrayInput is an input type that accepts GetWorkspaceExportRequestExportedItemArray and GetWorkspaceExportRequestExportedItemArrayOutput values.
@@ -7907,12 +6822,6 @@ func (i GetWorkspaceExportRequestExportedItemArray) ToGetWorkspaceExportRequestE
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestExportedItemArrayOutput)
 }
 
-func (i GetWorkspaceExportRequestExportedItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestExportedItem] {
-	return pulumix.Output[[]GetWorkspaceExportRequestExportedItem]{
-		OutputState: i.ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceExportRequestExportedItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceExportRequestExportedItemOutput) ElementType() reflect.Type {
@@ -7927,50 +6836,44 @@ func (o GetWorkspaceExportRequestExportedItemOutput) ToGetWorkspaceExportRequest
 	return o
 }
 
-func (o GetWorkspaceExportRequestExportedItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestExportedItem] {
-	return pulumix.Output[GetWorkspaceExportRequestExportedItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregator key
-func (o GetWorkspaceExportRequestExportedItemOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // Object identifier
-func (o GetWorkspaceExportRequestExportedItemOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // Export object request key
-func (o GetWorkspaceExportRequestExportedItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Name of the export request.
-func (o GetWorkspaceExportRequestExportedItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Object name path
-func (o GetWorkspaceExportRequestExportedItemOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.NamePath }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.NamePath }).(pulumi.StringPtrOutput)
 }
 
 // Object type
-func (o GetWorkspaceExportRequestExportedItemOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 // Object version
-func (o GetWorkspaceExportRequestExportedItemOutput) ObjectVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.ObjectVersion }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) ObjectVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.ObjectVersion }).(pulumi.StringPtrOutput)
 }
 
 // time at which this object was last updated.
-func (o GetWorkspaceExportRequestExportedItemOutput) TimeUpdatedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) string { return v.TimeUpdatedInMillis }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestExportedItemOutput) TimeUpdatedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestExportedItem) *string { return v.TimeUpdatedInMillis }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceExportRequestExportedItemArrayOutput struct{ *pulumi.OutputState }
@@ -7985,12 +6888,6 @@ func (o GetWorkspaceExportRequestExportedItemArrayOutput) ToGetWorkspaceExportRe
 
 func (o GetWorkspaceExportRequestExportedItemArrayOutput) ToGetWorkspaceExportRequestExportedItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestExportedItemArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceExportRequestExportedItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestExportedItem] {
-	return pulumix.Output[[]GetWorkspaceExportRequestExportedItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceExportRequestExportedItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestExportedItemOutput {
@@ -8030,12 +6927,6 @@ func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs) ToGetWorks
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput)
 }
 
-func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection] {
-	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection]{
-		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionArray and GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayInput` via:
 //
@@ -8061,12 +6952,6 @@ func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArray) ToGetWork
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput)
 }
 
-func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection]{
-		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ElementType() reflect.Type {
@@ -8079,12 +6964,6 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ToGetWor
 
 func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
 	return o
-}
-
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection] {
-	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput) Items() GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput {
@@ -8107,12 +6986,6 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) ToG
 	return o
 }
 
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsExportRequestSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsExportRequestSummaryCollection {
 		return vs[0].([]GetWorkspaceExportRequestsExportRequestSummaryCollection)[vs[1].(int)]
@@ -8121,41 +6994,41 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput) Ind
 
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItem struct {
 	// Controls if the references will be exported along with the objects
-	AreReferencesIncluded bool `pulumi:"areReferencesIncluded"`
+	AreReferencesIncluded *bool `pulumi:"areReferencesIncluded"`
 	// The name of the Object Storage Bucket where the objects will be exported to
 	Bucket string `pulumi:"bucket"`
 	// Name of the user who initiated export request.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Contains key of the error
 	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
 	// The array of exported object details.
 	ExportedItems []GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem `pulumi:"exportedItems"`
 	// Name of the exported zip file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 	// Export multiple objects based on filters.
 	Filters []string `pulumi:"filters"`
 	// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-	IsObjectOverwriteEnabled bool `pulumi:"isObjectOverwriteEnabled"`
+	IsObjectOverwriteEnabled *bool `pulumi:"isObjectOverwriteEnabled"`
 	// Export object request key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of the objects to be exported
 	ObjectKeys []string `pulumi:"objectKeys"`
 	// Region of the object storage (if using object storage of different region)
-	ObjectStorageRegion string `pulumi:"objectStorageRegion"`
+	ObjectStorageRegion *string `pulumi:"objectStorageRegion"`
 	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-	ObjectStorageTenancyId string `pulumi:"objectStorageTenancyId"`
+	ObjectStorageTenancyId *string `pulumi:"objectStorageTenancyId"`
 	// The array of exported referenced objects.
-	ReferencedItems string `pulumi:"referencedItems"`
+	ReferencedItems *string `pulumi:"referencedItems"`
 	// Export Objects request status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Specifies end time of a copy object request.
-	TimeEndedInMillis string `pulumi:"timeEndedInMillis"`
+	TimeEndedInMillis *string `pulumi:"timeEndedInMillis"`
 	// Specifies start time of a copy object request.
-	TimeStartedInMillis string `pulumi:"timeStartedInMillis"`
+	TimeStartedInMillis *string `pulumi:"timeStartedInMillis"`
 	// Number of objects that are exported.
-	TotalExportedObjectCount int `pulumi:"totalExportedObjectCount"`
+	TotalExportedObjectCount *int `pulumi:"totalExportedObjectCount"`
 	// The workspace ID.
 	WorkspaceId string `pulumi:"workspaceId"`
 }
@@ -8173,41 +7046,41 @@ type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemInput interface
 
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs struct {
 	// Controls if the references will be exported along with the objects
-	AreReferencesIncluded pulumi.BoolInput `pulumi:"areReferencesIncluded"`
+	AreReferencesIncluded pulumi.BoolPtrInput `pulumi:"areReferencesIncluded"`
 	// The name of the Object Storage Bucket where the objects will be exported to
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// Name of the user who initiated export request.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Contains key of the error
 	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
 	// The array of exported object details.
 	ExportedItems GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput `pulumi:"exportedItems"`
 	// Name of the exported zip file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 	// Export multiple objects based on filters.
 	Filters pulumi.StringArrayInput `pulumi:"filters"`
 	// Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-	IsObjectOverwriteEnabled pulumi.BoolInput `pulumi:"isObjectOverwriteEnabled"`
+	IsObjectOverwriteEnabled pulumi.BoolPtrInput `pulumi:"isObjectOverwriteEnabled"`
 	// Export object request key
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The list of the objects to be exported
 	ObjectKeys pulumi.StringArrayInput `pulumi:"objectKeys"`
 	// Region of the object storage (if using object storage of different region)
-	ObjectStorageRegion pulumi.StringInput `pulumi:"objectStorageRegion"`
+	ObjectStorageRegion pulumi.StringPtrInput `pulumi:"objectStorageRegion"`
 	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-	ObjectStorageTenancyId pulumi.StringInput `pulumi:"objectStorageTenancyId"`
+	ObjectStorageTenancyId pulumi.StringPtrInput `pulumi:"objectStorageTenancyId"`
 	// The array of exported referenced objects.
-	ReferencedItems pulumi.StringInput `pulumi:"referencedItems"`
+	ReferencedItems pulumi.StringPtrInput `pulumi:"referencedItems"`
 	// Export Objects request status.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Specifies end time of a copy object request.
-	TimeEndedInMillis pulumi.StringInput `pulumi:"timeEndedInMillis"`
+	TimeEndedInMillis pulumi.StringPtrInput `pulumi:"timeEndedInMillis"`
 	// Specifies start time of a copy object request.
-	TimeStartedInMillis pulumi.StringInput `pulumi:"timeStartedInMillis"`
+	TimeStartedInMillis pulumi.StringPtrInput `pulumi:"timeStartedInMillis"`
 	// Number of objects that are exported.
-	TotalExportedObjectCount pulumi.IntInput `pulumi:"totalExportedObjectCount"`
+	TotalExportedObjectCount pulumi.IntPtrInput `pulumi:"totalExportedObjectCount"`
 	// The workspace ID.
 	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
 }
@@ -8222,12 +7095,6 @@ func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ToGetW
 
 func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput)
-}
-
-func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput values.
@@ -8255,12 +7122,6 @@ func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput)
 }
 
-func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -8275,17 +7136,11 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ToGe
 	return o
 }
 
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Controls if the references will be exported along with the objects
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) AreReferencesIncluded() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) bool {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) AreReferencesIncluded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *bool {
 		return v.AreReferencesIncluded
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The name of the Object Storage Bucket where the objects will be exported to
@@ -8294,8 +7149,8 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Buck
 }
 
 // Name of the user who initiated export request.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Contains key of the error
@@ -8313,8 +7168,8 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Expo
 }
 
 // Name of the exported zip file.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.FileName }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
 
 // Export multiple objects based on filters.
@@ -8323,20 +7178,20 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Filt
 }
 
 // Flag to control whether to overwrite the object if it is already present at the provided object storage location.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) IsObjectOverwriteEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) bool {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) IsObjectOverwriteEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *bool {
 		return v.IsObjectOverwriteEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Export object request key
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The list of the objects to be exported
@@ -8345,48 +7200,48 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Obje
 }
 
 // Region of the object storage (if using object storage of different region)
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectStorageRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectStorageRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string {
 		return v.ObjectStorageRegion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectStorageTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ObjectStorageTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string {
 		return v.ObjectStorageTenancyId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The array of exported referenced objects.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ReferencedItems() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.ReferencedItems }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ReferencedItems() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string { return v.ReferencedItems }).(pulumi.StringPtrOutput)
 }
 
 // Export Objects request status.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Specifies end time of a copy object request.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TimeEndedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TimeEndedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string {
 		return v.TimeEndedInMillis
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies start time of a copy object request.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TimeStartedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TimeStartedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *string {
 		return v.TimeStartedInMillis
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Number of objects that are exported.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TotalExportedObjectCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) int {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) TotalExportedObjectCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) *int {
 		return v.TotalExportedObjectCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The workspace ID.
@@ -8408,12 +7263,6 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput)
 	return o
 }
 
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsExportRequestSummaryCollectionItem {
 		return vs[0].([]GetWorkspaceExportRequestsExportRequestSummaryCollectionItem)[vs[1].(int)]
@@ -8422,21 +7271,21 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArrayOutput)
 
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem struct {
 	// Aggregator key
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// Export object request key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Object name path
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// Object type
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 	// Object version
-	ObjectVersion string `pulumi:"objectVersion"`
+	ObjectVersion *string `pulumi:"objectVersion"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis *string `pulumi:"timeUpdatedInMillis"`
 }
 
 // GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput values.
@@ -8452,21 +7301,21 @@ type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemInp
 
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs struct {
 	// Aggregator key
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// Export object request key
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Object name path
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// Object type
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 	// Object version
-	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.StringPtrInput `pulumi:"objectVersion"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis pulumi.StringPtrInput `pulumi:"timeUpdatedInMillis"`
 }
 
 func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ElementType() reflect.Type {
@@ -8479,12 +7328,6 @@ func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem
 
 func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput)
-}
-
-func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
-	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
-		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput is an input type that accepts GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray and GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput values.
@@ -8512,12 +7355,6 @@ func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput)
 }
 
-func (i GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
-		OutputState: i.ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ElementType() reflect.Type {
@@ -8532,62 +7369,58 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem
 	return o
 }
 
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
-	return pulumix.Output[GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregator key
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
 		return v.AggregatorKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object identifier
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
 		return v.Identifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Export object request key
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object name path
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
 		return v.NamePath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object type
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
 		return v.ObjectType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object version
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ObjectVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) ObjectVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
 		return v.ObjectVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // time at which this object was last updated.
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) TimeUpdatedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) string {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput) TimeUpdatedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem) *string {
 		return v.TimeUpdatedInMillis
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput struct{ *pulumi.OutputState }
@@ -8602,12 +7435,6 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem
 
 func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) ToGetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemOutput {
@@ -8653,12 +7480,6 @@ func (i GetWorkspaceExportRequestsFilterArgs) ToGetWorkspaceExportRequestsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsFilterOutput)
 }
 
-func (i GetWorkspaceExportRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsFilter] {
-	return pulumix.Output[GetWorkspaceExportRequestsFilter]{
-		OutputState: i.ToGetWorkspaceExportRequestsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceExportRequestsFilterArrayInput is an input type that accepts GetWorkspaceExportRequestsFilterArray and GetWorkspaceExportRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceExportRequestsFilterArrayInput` via:
 //
@@ -8684,12 +7505,6 @@ func (i GetWorkspaceExportRequestsFilterArray) ToGetWorkspaceExportRequestsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceExportRequestsFilterArrayOutput)
 }
 
-func (i GetWorkspaceExportRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsFilter] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsFilter]{
-		OutputState: i.ToGetWorkspaceExportRequestsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceExportRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceExportRequestsFilterOutput) ElementType() reflect.Type {
@@ -8702,12 +7517,6 @@ func (o GetWorkspaceExportRequestsFilterOutput) ToGetWorkspaceExportRequestsFilt
 
 func (o GetWorkspaceExportRequestsFilterOutput) ToGetWorkspaceExportRequestsFilterOutputWithContext(ctx context.Context) GetWorkspaceExportRequestsFilterOutput {
 	return o
-}
-
-func (o GetWorkspaceExportRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsFilter] {
-	return pulumix.Output[GetWorkspaceExportRequestsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Used to filter by the name of the object.
@@ -8737,12 +7546,6 @@ func (o GetWorkspaceExportRequestsFilterArrayOutput) ToGetWorkspaceExportRequest
 	return o
 }
 
-func (o GetWorkspaceExportRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceExportRequestsFilter] {
-	return pulumix.Output[[]GetWorkspaceExportRequestsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceExportRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceExportRequestsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceExportRequestsFilter {
 		return vs[0].([]GetWorkspaceExportRequestsFilter)[vs[1].(int)]
@@ -8751,33 +7554,33 @@ func (o GetWorkspaceExportRequestsFilterArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetWorkspaceFolderMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []GetWorkspaceFolderMetadataAggregator `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics []GetWorkspaceFolderMetadataCountStatistic `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName string `pulumi:"createdByName"`
+	CreatedByName *string `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath string `pulumi:"identifierPath"`
+	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName string `pulumi:"updatedByName"`
+	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
 // GetWorkspaceFolderMetadataInput is an input type that accepts GetWorkspaceFolderMetadataArgs and GetWorkspaceFolderMetadataOutput values.
@@ -8793,33 +7596,33 @@ type GetWorkspaceFolderMetadataInput interface {
 
 type GetWorkspaceFolderMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators GetWorkspaceFolderMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics GetWorkspaceFolderMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
 func (GetWorkspaceFolderMetadataArgs) ElementType() reflect.Type {
@@ -8832,12 +7635,6 @@ func (i GetWorkspaceFolderMetadataArgs) ToGetWorkspaceFolderMetadataOutput() Get
 
 func (i GetWorkspaceFolderMetadataArgs) ToGetWorkspaceFolderMetadataOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataOutput)
-}
-
-func (i GetWorkspaceFolderMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadata] {
-	return pulumix.Output[GetWorkspaceFolderMetadata]{
-		OutputState: i.ToGetWorkspaceFolderMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFolderMetadataArrayInput is an input type that accepts GetWorkspaceFolderMetadataArray and GetWorkspaceFolderMetadataArrayOutput values.
@@ -8865,12 +7662,6 @@ func (i GetWorkspaceFolderMetadataArray) ToGetWorkspaceFolderMetadataArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataArrayOutput)
 }
 
-func (i GetWorkspaceFolderMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadata] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadata]{
-		OutputState: i.ToGetWorkspaceFolderMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFolderMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFolderMetadataOutput) ElementType() reflect.Type {
@@ -8885,15 +7676,9 @@ func (o GetWorkspaceFolderMetadataOutput) ToGetWorkspaceFolderMetadataOutputWith
 	return o
 }
 
-func (o GetWorkspaceFolderMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadata] {
-	return pulumix.Output[GetWorkspaceFolderMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceFolderMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -8909,18 +7694,18 @@ func (o GetWorkspaceFolderMetadataOutput) CountStatistics() GetWorkspaceFolderMe
 }
 
 // The user that created the object.
-func (o GetWorkspaceFolderMetadataOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that created the object.
-func (o GetWorkspaceFolderMetadataOutput) CreatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
 // The full path to identify this object.
-func (o GetWorkspaceFolderMetadataOutput) IdentifierPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
 // Information property fields.
@@ -8929,8 +7714,8 @@ func (o GetWorkspaceFolderMetadataOutput) InfoFields() pulumi.MapOutput {
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceFolderMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceFolderMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -8939,28 +7724,28 @@ func (o GetWorkspaceFolderMetadataOutput) Labels() pulumi.StringArrayOutput {
 }
 
 // The registry version of the object.
-func (o GetWorkspaceFolderMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceFolderMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 // The date and time that the object was created.
-func (o GetWorkspaceFolderMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the object was updated.
-func (o GetWorkspaceFolderMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceFolderMetadataOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceFolderMetadataOutput) UpdatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFolderMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -8977,12 +7762,6 @@ func (o GetWorkspaceFolderMetadataArrayOutput) ToGetWorkspaceFolderMetadataArray
 	return o
 }
 
-func (o GetWorkspaceFolderMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadata] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFolderMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadata {
 		return vs[0].([]GetWorkspaceFolderMetadata)[vs[1].(int)]
@@ -8991,15 +7770,15 @@ func (o GetWorkspaceFolderMetadataArrayOutput) Index(i pulumi.IntInput) GetWorks
 
 type GetWorkspaceFolderMetadataAggregator struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The identifier of the aggregator.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of the aggregator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceFolderMetadataAggregatorInput is an input type that accepts GetWorkspaceFolderMetadataAggregatorArgs and GetWorkspaceFolderMetadataAggregatorOutput values.
@@ -9015,15 +7794,15 @@ type GetWorkspaceFolderMetadataAggregatorInput interface {
 
 type GetWorkspaceFolderMetadataAggregatorArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The identifier of the aggregator.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the aggregator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceFolderMetadataAggregatorArgs) ElementType() reflect.Type {
@@ -9036,12 +7815,6 @@ func (i GetWorkspaceFolderMetadataAggregatorArgs) ToGetWorkspaceFolderMetadataAg
 
 func (i GetWorkspaceFolderMetadataAggregatorArgs) ToGetWorkspaceFolderMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataAggregatorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataAggregatorOutput)
-}
-
-func (i GetWorkspaceFolderMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceFolderMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceFolderMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFolderMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceFolderMetadataAggregatorArray and GetWorkspaceFolderMetadataAggregatorArrayOutput values.
@@ -9069,12 +7842,6 @@ func (i GetWorkspaceFolderMetadataAggregatorArray) ToGetWorkspaceFolderMetadataA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataAggregatorArrayOutput)
 }
 
-func (i GetWorkspaceFolderMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFolderMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFolderMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -9089,35 +7856,29 @@ func (o GetWorkspaceFolderMetadataAggregatorOutput) ToGetWorkspaceFolderMetadata
 	return o
 }
 
-func (o GetWorkspaceFolderMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceFolderMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceFolderMetadataAggregatorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the aggregator.
-func (o GetWorkspaceFolderMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceFolderMetadataAggregatorOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o GetWorkspaceFolderMetadataAggregatorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The type of the aggregator.
-func (o GetWorkspaceFolderMetadataAggregatorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFolderMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
@@ -9132,12 +7893,6 @@ func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) ToGetWorkspaceFolderMet
 
 func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) ToGetWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataAggregatorArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataAggregatorOutput {
@@ -9179,12 +7934,6 @@ func (i GetWorkspaceFolderMetadataCountStatisticArgs) ToGetWorkspaceFolderMetada
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticOutput)
 }
 
-func (i GetWorkspaceFolderMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceFolderMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceFolderMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticArray and GetWorkspaceFolderMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceFolderMetadataCountStatisticArrayInput` via:
 //
@@ -9210,12 +7959,6 @@ func (i GetWorkspaceFolderMetadataCountStatisticArray) ToGetWorkspaceFolderMetad
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticArrayOutput)
 }
 
-func (i GetWorkspaceFolderMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFolderMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFolderMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -9228,12 +7971,6 @@ func (o GetWorkspaceFolderMetadataCountStatisticOutput) ToGetWorkspaceFolderMeta
 
 func (o GetWorkspaceFolderMetadataCountStatisticOutput) ToGetWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticOutput {
 	return o
-}
-
-func (o GetWorkspaceFolderMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceFolderMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -9257,12 +7994,6 @@ func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) ToGetWorkspaceFolde
 	return o
 }
 
-func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataCountStatisticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadataCountStatistic {
 		return vs[0].([]GetWorkspaceFolderMetadataCountStatistic)[vs[1].(int)]
@@ -9271,9 +8002,9 @@ func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) Index(i pulumi.IntI
 
 type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList struct {
 	// The value for the count statistic object.
-	ObjectCount string `pulumi:"objectCount"`
+	ObjectCount *string `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 }
 
 // GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput values.
@@ -9289,9 +8020,9 @@ type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput interface 
 
 type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs struct {
 	// The value for the count statistic object.
-	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
 func (GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
@@ -9304,12 +8035,6 @@ func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToGetWo
 
 func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput)
-}
-
-func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput values.
@@ -9337,12 +8062,6 @@ func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -9357,20 +8076,14 @@ func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToGet
 	return o
 }
 
-func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value for the count statistic object.
-func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList) string { return v.ObjectCount }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectCount }).(pulumi.StringPtrOutput)
 }
 
 // The type of object for the count statistic object.
-func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
@@ -9387,12 +8100,6 @@ func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) 
 	return o
 }
 
-func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList {
 		return vs[0].([]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
@@ -9401,9 +8108,9 @@ func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) 
 
 type GetWorkspaceFolderParentRef struct {
 	// Key of the parent object.
-	Parent string `pulumi:"parent"`
+	Parent *string `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId string `pulumi:"rootDocId"`
+	RootDocId *string `pulumi:"rootDocId"`
 }
 
 // GetWorkspaceFolderParentRefInput is an input type that accepts GetWorkspaceFolderParentRefArgs and GetWorkspaceFolderParentRefOutput values.
@@ -9419,9 +8126,9 @@ type GetWorkspaceFolderParentRefInput interface {
 
 type GetWorkspaceFolderParentRefArgs struct {
 	// Key of the parent object.
-	Parent pulumi.StringInput `pulumi:"parent"`
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
 }
 
 func (GetWorkspaceFolderParentRefArgs) ElementType() reflect.Type {
@@ -9434,12 +8141,6 @@ func (i GetWorkspaceFolderParentRefArgs) ToGetWorkspaceFolderParentRefOutput() G
 
 func (i GetWorkspaceFolderParentRefArgs) ToGetWorkspaceFolderParentRefOutputWithContext(ctx context.Context) GetWorkspaceFolderParentRefOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderParentRefOutput)
-}
-
-func (i GetWorkspaceFolderParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderParentRef] {
-	return pulumix.Output[GetWorkspaceFolderParentRef]{
-		OutputState: i.ToGetWorkspaceFolderParentRefOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFolderParentRefArrayInput is an input type that accepts GetWorkspaceFolderParentRefArray and GetWorkspaceFolderParentRefArrayOutput values.
@@ -9467,12 +8168,6 @@ func (i GetWorkspaceFolderParentRefArray) ToGetWorkspaceFolderParentRefArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderParentRefArrayOutput)
 }
 
-func (i GetWorkspaceFolderParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderParentRef] {
-	return pulumix.Output[[]GetWorkspaceFolderParentRef]{
-		OutputState: i.ToGetWorkspaceFolderParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFolderParentRefOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFolderParentRefOutput) ElementType() reflect.Type {
@@ -9487,20 +8182,14 @@ func (o GetWorkspaceFolderParentRefOutput) ToGetWorkspaceFolderParentRefOutputWi
 	return o
 }
 
-func (o GetWorkspaceFolderParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderParentRef] {
-	return pulumix.Output[GetWorkspaceFolderParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key of the parent object.
-func (o GetWorkspaceFolderParentRefOutput) Parent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderParentRef) string { return v.Parent }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
 }
 
 // Key of the root document object.
-func (o GetWorkspaceFolderParentRefOutput) RootDocId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFolderParentRefArrayOutput struct{ *pulumi.OutputState }
@@ -9517,12 +8206,6 @@ func (o GetWorkspaceFolderParentRefArrayOutput) ToGetWorkspaceFolderParentRefArr
 	return o
 }
 
-func (o GetWorkspaceFolderParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderParentRef] {
-	return pulumix.Output[[]GetWorkspaceFolderParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFolderParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderParentRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderParentRef {
 		return vs[0].([]GetWorkspaceFolderParentRef)[vs[1].(int)]
@@ -9531,15 +8214,15 @@ func (o GetWorkspaceFolderParentRefArrayOutput) Index(i pulumi.IntInput) GetWork
 
 type GetWorkspaceFolderRegistryMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
 // GetWorkspaceFolderRegistryMetadataInput is an input type that accepts GetWorkspaceFolderRegistryMetadataArgs and GetWorkspaceFolderRegistryMetadataOutput values.
@@ -9555,15 +8238,15 @@ type GetWorkspaceFolderRegistryMetadataInput interface {
 
 type GetWorkspaceFolderRegistryMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
 func (GetWorkspaceFolderRegistryMetadataArgs) ElementType() reflect.Type {
@@ -9576,12 +8259,6 @@ func (i GetWorkspaceFolderRegistryMetadataArgs) ToGetWorkspaceFolderRegistryMeta
 
 func (i GetWorkspaceFolderRegistryMetadataArgs) ToGetWorkspaceFolderRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceFolderRegistryMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderRegistryMetadataOutput)
-}
-
-func (i GetWorkspaceFolderRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceFolderRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceFolderRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFolderRegistryMetadataArrayInput is an input type that accepts GetWorkspaceFolderRegistryMetadataArray and GetWorkspaceFolderRegistryMetadataArrayOutput values.
@@ -9609,12 +8286,6 @@ func (i GetWorkspaceFolderRegistryMetadataArray) ToGetWorkspaceFolderRegistryMet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderRegistryMetadataArrayOutput)
 }
 
-func (i GetWorkspaceFolderRegistryMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceFolderRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceFolderRegistryMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFolderRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFolderRegistryMetadataOutput) ElementType() reflect.Type {
@@ -9629,25 +8300,19 @@ func (o GetWorkspaceFolderRegistryMetadataOutput) ToGetWorkspaceFolderRegistryMe
 	return o
 }
 
-func (o GetWorkspaceFolderRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceFolderRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceFolderRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceFolderRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceFolderRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceFolderRegistryMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceFolderRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -9656,8 +8321,8 @@ func (o GetWorkspaceFolderRegistryMetadataOutput) Labels() pulumi.StringArrayOut
 }
 
 // The registry version of the object.
-func (o GetWorkspaceFolderRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceFolderRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 type GetWorkspaceFolderRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -9672,12 +8337,6 @@ func (o GetWorkspaceFolderRegistryMetadataArrayOutput) ToGetWorkspaceFolderRegis
 
 func (o GetWorkspaceFolderRegistryMetadataArrayOutput) ToGetWorkspaceFolderRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderRegistryMetadataArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceFolderRegistryMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFolderRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceFolderRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceFolderRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderRegistryMetadataOutput {
@@ -9723,12 +8382,6 @@ func (i GetWorkspaceFoldersFilterArgs) ToGetWorkspaceFoldersFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFilterOutput)
 }
 
-func (i GetWorkspaceFoldersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFilter] {
-	return pulumix.Output[GetWorkspaceFoldersFilter]{
-		OutputState: i.ToGetWorkspaceFoldersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceFoldersFilterArrayInput is an input type that accepts GetWorkspaceFoldersFilterArray and GetWorkspaceFoldersFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceFoldersFilterArrayInput` via:
 //
@@ -9754,12 +8407,6 @@ func (i GetWorkspaceFoldersFilterArray) ToGetWorkspaceFoldersFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFilterArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFilter] {
-	return pulumix.Output[[]GetWorkspaceFoldersFilter]{
-		OutputState: i.ToGetWorkspaceFoldersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFilterOutput) ElementType() reflect.Type {
@@ -9772,12 +8419,6 @@ func (o GetWorkspaceFoldersFilterOutput) ToGetWorkspaceFoldersFilterOutput() Get
 
 func (o GetWorkspaceFoldersFilterOutput) ToGetWorkspaceFoldersFilterOutputWithContext(ctx context.Context) GetWorkspaceFoldersFilterOutput {
 	return o
-}
-
-func (o GetWorkspaceFoldersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFilter] {
-	return pulumix.Output[GetWorkspaceFoldersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Used to filter by the name of the object.
@@ -9805,12 +8446,6 @@ func (o GetWorkspaceFoldersFilterArrayOutput) ToGetWorkspaceFoldersFilterArrayOu
 
 func (o GetWorkspaceFoldersFilterArrayOutput) ToGetWorkspaceFoldersFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFilterArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceFoldersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFilter] {
-	return pulumix.Output[[]GetWorkspaceFoldersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceFoldersFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFilterOutput {
@@ -9850,12 +8485,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionArgs) ToGetWorkspaceFoldersFol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollection] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollection]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceFoldersFolderSummaryCollectionArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionArray and GetWorkspaceFoldersFolderSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionArrayInput` via:
 //
@@ -9881,12 +8510,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionArray) ToGetWorkspaceFoldersFo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollection]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionOutput) ElementType() reflect.Type {
@@ -9899,12 +8522,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) ToGetWorkspaceFoldersF
 
 func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) ToGetWorkspaceFoldersFolderSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionOutput {
 	return o
-}
-
-func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollection] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) Items() GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput {
@@ -9927,12 +8544,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) ToGetWorkspaceFol
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollection {
 		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollection)[vs[1].(int)]
@@ -9941,28 +8552,28 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) Index(i pulumi.In
 
 type GetWorkspaceFoldersFolderSummaryCollectionItem struct {
 	// The category name.
-	CategoryName string `pulumi:"categoryName"`
+	CategoryName *string `pulumi:"categoryName"`
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
-	FolderKey   string `pulumi:"folderKey"`
+	Description *string `pulumi:"description"`
+	FolderKey   *string `pulumi:"folderKey"`
 	// Used to filter by the identifier of the object.
 	Identifier string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceFoldersFolderSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The model version of an object.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus int `pulumi:"objectStatus"`
+	ObjectStatus *int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves      []GetWorkspaceFoldersFolderSummaryCollectionItemParentRef      `pulumi:"parentReves"`
 	RegistryMetadata GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
@@ -9983,28 +8594,28 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemInput interface {
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemArgs struct {
 	// The category name.
-	CategoryName pulumi.StringInput `pulumi:"categoryName"`
+	CategoryName pulumi.StringPtrInput `pulumi:"categoryName"`
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
-	FolderKey   pulumi.StringInput `pulumi:"folderKey"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	FolderKey   pulumi.StringPtrInput `pulumi:"folderKey"`
 	// Used to filter by the identifier of the object.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType pulumi.StringInput `pulumi:"modelType"`
+	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// The model version of an object.
-	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves      GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput   `pulumi:"parentReves"`
 	RegistryMetadata GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
@@ -10022,12 +8633,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemArgs) ToGetWorkspaceFolder
 
 func (i GetWorkspaceFoldersFolderSummaryCollectionItemArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemOutput)
-}
-
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemArray and GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput values.
@@ -10055,12 +8660,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemArray) ToGetWorkspaceFolde
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -10075,24 +8674,18 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ToGetWorkspaceFold
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category name.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) CategoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.CategoryName }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) CategoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *string { return v.CategoryName }).(pulumi.StringPtrOutput)
 }
 
 // The description of the aggregator.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) FolderKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.FolderKey }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) FolderKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *string { return v.FolderKey }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the object.
@@ -10101,8 +8694,8 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Identifier() pulum
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -10118,13 +8711,13 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Metadatas() GetWor
 }
 
 // The type of the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The model version of an object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
@@ -10133,13 +8726,13 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Name() pulumi.Stri
 }
 
 // The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The version of the object that is used to track changes in the object instance.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -10174,12 +8767,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) ToGetWorkspac
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItem {
 		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItem)[vs[1].(int)]
@@ -10188,33 +8775,33 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) Index(i pulum
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadata struct {
 	// Used to filter by the project or the folder object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName string `pulumi:"createdByName"`
+	CreatedByName *string `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath string `pulumi:"identifierPath"`
+	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName string `pulumi:"updatedByName"`
+	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput values.
@@ -10230,33 +8817,33 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput interface {
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs struct {
 	// Used to filter by the project or the folder object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
@@ -10269,12 +8856,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ToGetWorkspa
 
 func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput)
-}
-
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadata] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadata]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput values.
@@ -10302,12 +8883,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray) ToGetWorksp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
@@ -10322,15 +8897,9 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) ToGetWorks
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadata] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Used to filter by the project or the folder object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -10348,18 +8917,18 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CountStati
 }
 
 // The user that created the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that created the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
 // The full path to identify this object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
 // Information property fields.
@@ -10370,8 +8939,8 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) InfoFields
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -10380,28 +8949,28 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) Labels() p
 }
 
 // The registry version of the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 // The date and time that the object was created.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the object was updated.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -10418,12 +8987,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) ToGet
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadata {
 		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata)[vs[1].(int)]
@@ -10432,15 +8995,15 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) Index
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Used to filter by the identifier of the object.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of the aggregator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput values.
@@ -10456,15 +9019,15 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput inter
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Used to filter by the identifier of the object.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the aggregator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
@@ -10477,12 +9040,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) To
 
 func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput)
-}
-
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput values.
@@ -10510,12 +9067,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -10530,35 +9081,29 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) 
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The type of the aggregator.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
@@ -10573,12 +9118,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOut
 
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
@@ -10620,12 +9159,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput` via:
 //
@@ -10651,12 +9184,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -10669,12 +9196,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutp
 
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
 	return o
-}
-
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -10698,12 +9219,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArra
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic {
 		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
@@ -10712,9 +9227,9 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArra
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
 	// The value for the count statistic object.
-	ObjectCount string `pulumi:"objectCount"`
+	ObjectCount *string `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
@@ -10730,9 +9245,9 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectT
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
 	// The value for the count statistic object.
-	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
@@ -10745,12 +9260,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObje
 
 func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
-}
-
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
@@ -10778,12 +9287,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObje
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -10798,24 +9301,18 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObje
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value for the count statistic object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectCount
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of object for the count statistic object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
@@ -10832,12 +9329,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObje
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
 		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
@@ -10846,9 +9337,9 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObje
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemParentRef struct {
 	// Key of the parent object.
-	Parent string `pulumi:"parent"`
+	Parent *string `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId string `pulumi:"rootDocId"`
+	RootDocId *string `pulumi:"rootDocId"`
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs and GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput values.
@@ -10864,9 +9355,9 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput interface {
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs struct {
 	// Key of the parent object.
-	Parent pulumi.StringInput `pulumi:"parent"`
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
 }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
@@ -10879,12 +9370,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ToGetWorksp
 
 func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput)
-}
-
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemParentRef] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemParentRef]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray and GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput values.
@@ -10912,12 +9397,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray) ToGetWorks
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput)
 }
 
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
@@ -10932,20 +9411,14 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) ToGetWork
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemParentRef] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key of the parent object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
 }
 
 // Key of the root document object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
@@ -10962,12 +9435,6 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) ToGe
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef] {
-	return pulumix.Output[[]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemParentRef {
 		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef)[vs[1].(int)]
@@ -10976,15 +9443,15 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) Inde
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata struct {
 	// Used to filter by the project or the folder object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
 // GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput values.
@@ -11000,15 +9467,15 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput interfa
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs struct {
 	// Used to filter by the project or the folder object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
 func (GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
@@ -11021,12 +9488,6 @@ func (i GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ToGe
 
 func (i GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput)
-}
-
-func (i GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
@@ -11043,25 +9504,19 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) To
 	return o
 }
 
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Used to filter by the project or the folder object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -11070,17 +9525,17 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) La
 }
 
 // The registry version of the object.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 type GetWorkspaceImportRequestImportConflictResolution struct {
 	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-	DuplicatePrefix string `pulumi:"duplicatePrefix"`
+	DuplicatePrefix *string `pulumi:"duplicatePrefix"`
 	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-	DuplicateSuffix string `pulumi:"duplicateSuffix"`
+	DuplicateSuffix *string `pulumi:"duplicateSuffix"`
 	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-	ImportConflictResolutionType string `pulumi:"importConflictResolutionType"`
+	ImportConflictResolutionType *string `pulumi:"importConflictResolutionType"`
 }
 
 // GetWorkspaceImportRequestImportConflictResolutionInput is an input type that accepts GetWorkspaceImportRequestImportConflictResolutionArgs and GetWorkspaceImportRequestImportConflictResolutionOutput values.
@@ -11096,11 +9551,11 @@ type GetWorkspaceImportRequestImportConflictResolutionInput interface {
 
 type GetWorkspaceImportRequestImportConflictResolutionArgs struct {
 	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-	DuplicatePrefix pulumi.StringInput `pulumi:"duplicatePrefix"`
+	DuplicatePrefix pulumi.StringPtrInput `pulumi:"duplicatePrefix"`
 	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-	DuplicateSuffix pulumi.StringInput `pulumi:"duplicateSuffix"`
+	DuplicateSuffix pulumi.StringPtrInput `pulumi:"duplicateSuffix"`
 	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-	ImportConflictResolutionType pulumi.StringInput `pulumi:"importConflictResolutionType"`
+	ImportConflictResolutionType pulumi.StringPtrInput `pulumi:"importConflictResolutionType"`
 }
 
 func (GetWorkspaceImportRequestImportConflictResolutionArgs) ElementType() reflect.Type {
@@ -11113,12 +9568,6 @@ func (i GetWorkspaceImportRequestImportConflictResolutionArgs) ToGetWorkspaceImp
 
 func (i GetWorkspaceImportRequestImportConflictResolutionArgs) ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportConflictResolutionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportConflictResolutionOutput)
-}
-
-func (i GetWorkspaceImportRequestImportConflictResolutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[GetWorkspaceImportRequestImportConflictResolution]{
-		OutputState: i.ToGetWorkspaceImportRequestImportConflictResolutionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceImportRequestImportConflictResolutionArrayInput is an input type that accepts GetWorkspaceImportRequestImportConflictResolutionArray and GetWorkspaceImportRequestImportConflictResolutionArrayOutput values.
@@ -11146,12 +9595,6 @@ func (i GetWorkspaceImportRequestImportConflictResolutionArray) ToGetWorkspaceIm
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportConflictResolutionArrayOutput)
 }
 
-func (i GetWorkspaceImportRequestImportConflictResolutionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution]{
-		OutputState: i.ToGetWorkspaceImportRequestImportConflictResolutionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceImportRequestImportConflictResolutionOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceImportRequestImportConflictResolutionOutput) ElementType() reflect.Type {
@@ -11166,27 +9609,21 @@ func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ToGetWorkspaceI
 	return o
 }
 
-func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[GetWorkspaceImportRequestImportConflictResolution]{
-		OutputState: o.OutputState,
-	}
-}
-
 // In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-func (o GetWorkspaceImportRequestImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) string { return v.DuplicatePrefix }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) *string { return v.DuplicatePrefix }).(pulumi.StringPtrOutput)
 }
 
 // In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-func (o GetWorkspaceImportRequestImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) string { return v.DuplicateSuffix }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) *string { return v.DuplicateSuffix }).(pulumi.StringPtrOutput)
 }
 
 // Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ImportConflictResolutionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) string {
+func (o GetWorkspaceImportRequestImportConflictResolutionOutput) ImportConflictResolutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportConflictResolution) *string {
 		return v.ImportConflictResolutionType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceImportRequestImportConflictResolutionArrayOutput struct{ *pulumi.OutputState }
@@ -11203,12 +9640,6 @@ func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) ToGetWorks
 	return o
 }
 
-func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution] {
-	return pulumix.Output[[]GetWorkspaceImportRequestImportConflictResolution]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestImportConflictResolutionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestImportConflictResolution {
 		return vs[0].([]GetWorkspaceImportRequestImportConflictResolution)[vs[1].(int)]
@@ -11217,25 +9648,25 @@ func (o GetWorkspaceImportRequestImportConflictResolutionArrayOutput) Index(i pu
 
 type GetWorkspaceImportRequestImportedObject struct {
 	// Aggregator key
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// Name of the import request.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Object name path
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// New key of the object
-	NewKey string `pulumi:"newKey"`
+	NewKey *string `pulumi:"newKey"`
 	// Object type
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 	// Object version
-	ObjectVersion string `pulumi:"objectVersion"`
+	ObjectVersion *string `pulumi:"objectVersion"`
 	// Old key of the object
-	OldKey string `pulumi:"oldKey"`
+	OldKey *string `pulumi:"oldKey"`
 	// Object resolution action
-	ResolutionAction string `pulumi:"resolutionAction"`
+	ResolutionAction *string `pulumi:"resolutionAction"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis *string `pulumi:"timeUpdatedInMillis"`
 }
 
 // GetWorkspaceImportRequestImportedObjectInput is an input type that accepts GetWorkspaceImportRequestImportedObjectArgs and GetWorkspaceImportRequestImportedObjectOutput values.
@@ -11251,25 +9682,25 @@ type GetWorkspaceImportRequestImportedObjectInput interface {
 
 type GetWorkspaceImportRequestImportedObjectArgs struct {
 	// Aggregator key
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// Name of the import request.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Object name path
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// New key of the object
-	NewKey pulumi.StringInput `pulumi:"newKey"`
+	NewKey pulumi.StringPtrInput `pulumi:"newKey"`
 	// Object type
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 	// Object version
-	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.StringPtrInput `pulumi:"objectVersion"`
 	// Old key of the object
-	OldKey pulumi.StringInput `pulumi:"oldKey"`
+	OldKey pulumi.StringPtrInput `pulumi:"oldKey"`
 	// Object resolution action
-	ResolutionAction pulumi.StringInput `pulumi:"resolutionAction"`
+	ResolutionAction pulumi.StringPtrInput `pulumi:"resolutionAction"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis pulumi.StringPtrInput `pulumi:"timeUpdatedInMillis"`
 }
 
 func (GetWorkspaceImportRequestImportedObjectArgs) ElementType() reflect.Type {
@@ -11282,12 +9713,6 @@ func (i GetWorkspaceImportRequestImportedObjectArgs) ToGetWorkspaceImportRequest
 
 func (i GetWorkspaceImportRequestImportedObjectArgs) ToGetWorkspaceImportRequestImportedObjectOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportedObjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportedObjectOutput)
-}
-
-func (i GetWorkspaceImportRequestImportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportedObject] {
-	return pulumix.Output[GetWorkspaceImportRequestImportedObject]{
-		OutputState: i.ToGetWorkspaceImportRequestImportedObjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceImportRequestImportedObjectArrayInput is an input type that accepts GetWorkspaceImportRequestImportedObjectArray and GetWorkspaceImportRequestImportedObjectArrayOutput values.
@@ -11315,12 +9740,6 @@ func (i GetWorkspaceImportRequestImportedObjectArray) ToGetWorkspaceImportReques
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestImportedObjectArrayOutput)
 }
 
-func (i GetWorkspaceImportRequestImportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportedObject] {
-	return pulumix.Output[[]GetWorkspaceImportRequestImportedObject]{
-		OutputState: i.ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceImportRequestImportedObjectOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceImportRequestImportedObjectOutput) ElementType() reflect.Type {
@@ -11335,60 +9754,54 @@ func (o GetWorkspaceImportRequestImportedObjectOutput) ToGetWorkspaceImportReque
 	return o
 }
 
-func (o GetWorkspaceImportRequestImportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestImportedObject] {
-	return pulumix.Output[GetWorkspaceImportRequestImportedObject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregator key
-func (o GetWorkspaceImportRequestImportedObjectOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // Object identifier
-func (o GetWorkspaceImportRequestImportedObjectOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // Name of the import request.
-func (o GetWorkspaceImportRequestImportedObjectOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Object name path
-func (o GetWorkspaceImportRequestImportedObjectOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.NamePath }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.NamePath }).(pulumi.StringPtrOutput)
 }
 
 // New key of the object
-func (o GetWorkspaceImportRequestImportedObjectOutput) NewKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.NewKey }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) NewKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.NewKey }).(pulumi.StringPtrOutput)
 }
 
 // Object type
-func (o GetWorkspaceImportRequestImportedObjectOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 // Object version
-func (o GetWorkspaceImportRequestImportedObjectOutput) ObjectVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.ObjectVersion }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) ObjectVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.ObjectVersion }).(pulumi.StringPtrOutput)
 }
 
 // Old key of the object
-func (o GetWorkspaceImportRequestImportedObjectOutput) OldKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.OldKey }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) OldKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.OldKey }).(pulumi.StringPtrOutput)
 }
 
 // Object resolution action
-func (o GetWorkspaceImportRequestImportedObjectOutput) ResolutionAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.ResolutionAction }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) ResolutionAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.ResolutionAction }).(pulumi.StringPtrOutput)
 }
 
 // time at which this object was last updated.
-func (o GetWorkspaceImportRequestImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) string { return v.TimeUpdatedInMillis }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestImportedObject) *string { return v.TimeUpdatedInMillis }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceImportRequestImportedObjectArrayOutput struct{ *pulumi.OutputState }
@@ -11403,12 +9816,6 @@ func (o GetWorkspaceImportRequestImportedObjectArrayOutput) ToGetWorkspaceImport
 
 func (o GetWorkspaceImportRequestImportedObjectArrayOutput) ToGetWorkspaceImportRequestImportedObjectArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestImportedObjectArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceImportRequestImportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestImportedObject] {
-	return pulumix.Output[[]GetWorkspaceImportRequestImportedObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceImportRequestImportedObjectArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestImportedObjectOutput {
@@ -11454,12 +9861,6 @@ func (i GetWorkspaceImportRequestsFilterArgs) ToGetWorkspaceImportRequestsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsFilterOutput)
 }
 
-func (i GetWorkspaceImportRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsFilter] {
-	return pulumix.Output[GetWorkspaceImportRequestsFilter]{
-		OutputState: i.ToGetWorkspaceImportRequestsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceImportRequestsFilterArrayInput is an input type that accepts GetWorkspaceImportRequestsFilterArray and GetWorkspaceImportRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceImportRequestsFilterArrayInput` via:
 //
@@ -11485,12 +9886,6 @@ func (i GetWorkspaceImportRequestsFilterArray) ToGetWorkspaceImportRequestsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsFilterArrayOutput)
 }
 
-func (i GetWorkspaceImportRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsFilter] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsFilter]{
-		OutputState: i.ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceImportRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceImportRequestsFilterOutput) ElementType() reflect.Type {
@@ -11503,12 +9898,6 @@ func (o GetWorkspaceImportRequestsFilterOutput) ToGetWorkspaceImportRequestsFilt
 
 func (o GetWorkspaceImportRequestsFilterOutput) ToGetWorkspaceImportRequestsFilterOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsFilterOutput {
 	return o
-}
-
-func (o GetWorkspaceImportRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsFilter] {
-	return pulumix.Output[GetWorkspaceImportRequestsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Used to filter by the name of the object.
@@ -11536,12 +9925,6 @@ func (o GetWorkspaceImportRequestsFilterArrayOutput) ToGetWorkspaceImportRequest
 
 func (o GetWorkspaceImportRequestsFilterArrayOutput) ToGetWorkspaceImportRequestsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsFilterArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceImportRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsFilter] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceImportRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsFilterOutput {
@@ -11581,12 +9964,6 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs) ToGetWorks
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput)
 }
 
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionArray and GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayInput` via:
 //
@@ -11612,12 +9989,6 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArray) ToGetWork
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput)
 }
 
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ElementType() reflect.Type {
@@ -11630,12 +10001,6 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ToGetWor
 
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
 	return o
-}
-
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput) Items() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput {
@@ -11658,12 +10023,6 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) ToG
 	return o
 }
 
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsImportRequestSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsImportRequestSummaryCollection {
 		return vs[0].([]GetWorkspaceImportRequestsImportRequestSummaryCollection)[vs[1].(int)]
@@ -11674,33 +10033,33 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItem struct {
 	// The name of the Object Storage Bucket where the objects will be imported from
 	Bucket string `pulumi:"bucket"`
 	// Name of the user who initiated import request.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Contains key of the error
 	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
 	// Name of the zip file from which objects will be imported.
 	FileName string `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
-	ImportConflictResolution GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution `pulumi:"importConflictResolution"`
+	ImportConflictResolution *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution `pulumi:"importConflictResolution"`
 	// The array of imported object details.
 	ImportedObjects []GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject `pulumi:"importedObjects"`
 	// Import object request key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Key of the object inside which all the objects will be imported
-	ObjectKeyForImport string `pulumi:"objectKeyForImport"`
+	ObjectKeyForImport *string `pulumi:"objectKeyForImport"`
 	// Region of the object storage (if using object storage of different region)
-	ObjectStorageRegion string `pulumi:"objectStorageRegion"`
+	ObjectStorageRegion *string `pulumi:"objectStorageRegion"`
 	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-	ObjectStorageTenancyId string `pulumi:"objectStorageTenancyId"`
+	ObjectStorageTenancyId *string `pulumi:"objectStorageTenancyId"`
 	// Import Objects request status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Specifies end time of a copy object request.
-	TimeEndedInMillis string `pulumi:"timeEndedInMillis"`
+	TimeEndedInMillis *string `pulumi:"timeEndedInMillis"`
 	// Specifies start time of a copy object request.
-	TimeStartedInMillis string `pulumi:"timeStartedInMillis"`
+	TimeStartedInMillis *string `pulumi:"timeStartedInMillis"`
 	// Number of objects that are imported.
-	TotalImportedObjectCount int `pulumi:"totalImportedObjectCount"`
+	TotalImportedObjectCount *int `pulumi:"totalImportedObjectCount"`
 	// The workspace ID.
 	WorkspaceId string `pulumi:"workspaceId"`
 }
@@ -11720,33 +10079,33 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs struct {
 	// The name of the Object Storage Bucket where the objects will be imported from
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// Name of the user who initiated import request.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Contains key of the error
 	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
 	// Name of the zip file from which objects will be imported.
 	FileName pulumi.StringInput `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
-	ImportConflictResolution GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput `pulumi:"importConflictResolution"`
+	ImportConflictResolution GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrInput `pulumi:"importConflictResolution"`
 	// The array of imported object details.
 	ImportedObjects GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput `pulumi:"importedObjects"`
 	// Import object request key
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Key of the object inside which all the objects will be imported
-	ObjectKeyForImport pulumi.StringInput `pulumi:"objectKeyForImport"`
+	ObjectKeyForImport pulumi.StringPtrInput `pulumi:"objectKeyForImport"`
 	// Region of the object storage (if using object storage of different region)
-	ObjectStorageRegion pulumi.StringInput `pulumi:"objectStorageRegion"`
+	ObjectStorageRegion pulumi.StringPtrInput `pulumi:"objectStorageRegion"`
 	// Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-	ObjectStorageTenancyId pulumi.StringInput `pulumi:"objectStorageTenancyId"`
+	ObjectStorageTenancyId pulumi.StringPtrInput `pulumi:"objectStorageTenancyId"`
 	// Import Objects request status.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Specifies end time of a copy object request.
-	TimeEndedInMillis pulumi.StringInput `pulumi:"timeEndedInMillis"`
+	TimeEndedInMillis pulumi.StringPtrInput `pulumi:"timeEndedInMillis"`
 	// Specifies start time of a copy object request.
-	TimeStartedInMillis pulumi.StringInput `pulumi:"timeStartedInMillis"`
+	TimeStartedInMillis pulumi.StringPtrInput `pulumi:"timeStartedInMillis"`
 	// Number of objects that are imported.
-	TotalImportedObjectCount pulumi.IntInput `pulumi:"totalImportedObjectCount"`
+	TotalImportedObjectCount pulumi.IntPtrInput `pulumi:"totalImportedObjectCount"`
 	// The workspace ID.
 	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
 }
@@ -11761,12 +10120,6 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ToGetW
 
 func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput)
-}
-
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput values.
@@ -11794,12 +10147,6 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput)
 }
 
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -11814,20 +10161,14 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToGe
 	return o
 }
 
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the Object Storage Bucket where the objects will be imported from
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
 // Name of the user who initiated import request.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Contains key of the error
@@ -11843,10 +10184,10 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) File
 }
 
 // Import Objects Conflict resolution.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ImportConflictResolution() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ImportConflictResolution() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution {
 		return v.ImportConflictResolution
-	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput)
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput)
 }
 
 // The array of imported object details.
@@ -11857,60 +10198,60 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Impo
 }
 
 // Import object request key
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Key of the object inside which all the objects will be imported
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectKeyForImport() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectKeyForImport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string {
 		return v.ObjectKeyForImport
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Region of the object storage (if using object storage of different region)
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectStorageRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectStorageRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string {
 		return v.ObjectStorageRegion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectStorageTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ObjectStorageTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string {
 		return v.ObjectStorageTenancyId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Import Objects request status.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Specifies end time of a copy object request.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TimeEndedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TimeEndedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string {
 		return v.TimeEndedInMillis
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies start time of a copy object request.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TimeStartedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TimeStartedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *string {
 		return v.TimeStartedInMillis
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Number of objects that are imported.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TotalImportedObjectCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) int {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) TotalImportedObjectCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) *int {
 		return v.TotalImportedObjectCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The workspace ID.
@@ -11932,12 +10273,6 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput)
 	return o
 }
 
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsImportRequestSummaryCollectionItem {
 		return vs[0].([]GetWorkspaceImportRequestsImportRequestSummaryCollectionItem)[vs[1].(int)]
@@ -11946,9 +10281,9 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput)
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution struct {
 	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-	DuplicatePrefix string `pulumi:"duplicatePrefix"`
+	DuplicatePrefix *string `pulumi:"duplicatePrefix"`
 	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-	DuplicateSuffix string `pulumi:"duplicateSuffix"`
+	DuplicateSuffix *string `pulumi:"duplicateSuffix"`
 	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
 	ImportConflictResolutionType string `pulumi:"importConflictResolutionType"`
 }
@@ -11966,9 +10301,9 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictR
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs struct {
 	// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-	DuplicatePrefix pulumi.StringInput `pulumi:"duplicatePrefix"`
+	DuplicatePrefix pulumi.StringPtrInput `pulumi:"duplicatePrefix"`
 	// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-	DuplicateSuffix pulumi.StringInput `pulumi:"duplicateSuffix"`
+	DuplicateSuffix pulumi.StringPtrInput `pulumi:"duplicateSuffix"`
 	// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
 	ImportConflictResolutionType pulumi.StringInput `pulumi:"importConflictResolutionType"`
 }
@@ -11985,10 +10320,45 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConfli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput)
 }
 
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutputWithContext(ctx).OutputState,
-	}
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput).ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(ctx)
+}
+
+// GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs, GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtr and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput values.
+// You can construct a concrete instance of `GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrInput` via:
+//
+//	        GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput
+	ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput
+}
+
+type getWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrType GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs
+
+func GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtr(v *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrInput {
+	return (*getWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrType)(v)
+}
+
+func (*getWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution)(nil)).Elem()
+}
+
+func (i *getWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrType) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(context.Background())
+}
+
+func (i *getWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrType) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput)
 }
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput struct{ *pulumi.OutputState }
@@ -12005,24 +10375,28 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConfli
 	return o
 }
 
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution]{
-		OutputState: o.OutputState,
-	}
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return o.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(context.Background())
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution {
+		return &v
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput)
 }
 
 // In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) DuplicatePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) *string {
 		return v.DuplicatePrefix
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput) DuplicateSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) *string {
 		return v.DuplicateSuffix
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
@@ -12032,27 +10406,81 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConfli
 	}).(pulumi.StringOutput)
 }
 
+type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution)(nil)).Elem()
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput {
+	return o
+}
+
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) Elem() GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput {
+	return o.ApplyT(func(v *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution {
+		if v != nil {
+			return *v
+		}
+		var ret GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution
+		return ret
+	}).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput)
+}
+
+// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) DuplicatePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DuplicatePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) DuplicateSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DuplicateSuffix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput) ImportConflictResolutionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ImportConflictResolutionType
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject struct {
 	// Aggregator key
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Object name path
-	NamePath string `pulumi:"namePath"`
+	NamePath *string `pulumi:"namePath"`
 	// New key of the object
-	NewKey string `pulumi:"newKey"`
+	NewKey *string `pulumi:"newKey"`
 	// Object type
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 	// Object version
-	ObjectVersion string `pulumi:"objectVersion"`
+	ObjectVersion *string `pulumi:"objectVersion"`
 	// Old key of the object
-	OldKey string `pulumi:"oldKey"`
+	OldKey *string `pulumi:"oldKey"`
 	// Object resolution action
-	ResolutionAction string `pulumi:"resolutionAction"`
+	ResolutionAction *string `pulumi:"resolutionAction"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis string `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis *string `pulumi:"timeUpdatedInMillis"`
 }
 
 // GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput values.
@@ -12068,25 +10496,25 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectI
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs struct {
 	// Aggregator key
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Object identifier
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Object name path
-	NamePath pulumi.StringInput `pulumi:"namePath"`
+	NamePath pulumi.StringPtrInput `pulumi:"namePath"`
 	// New key of the object
-	NewKey pulumi.StringInput `pulumi:"newKey"`
+	NewKey pulumi.StringPtrInput `pulumi:"newKey"`
 	// Object type
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 	// Object version
-	ObjectVersion pulumi.StringInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.StringPtrInput `pulumi:"objectVersion"`
 	// Old key of the object
-	OldKey pulumi.StringInput `pulumi:"oldKey"`
+	OldKey pulumi.StringPtrInput `pulumi:"oldKey"`
 	// Object resolution action
-	ResolutionAction pulumi.StringInput `pulumi:"resolutionAction"`
+	ResolutionAction pulumi.StringPtrInput `pulumi:"resolutionAction"`
 	// time at which this object was last updated.
-	TimeUpdatedInMillis pulumi.StringInput `pulumi:"timeUpdatedInMillis"`
+	TimeUpdatedInMillis pulumi.StringPtrInput `pulumi:"timeUpdatedInMillis"`
 }
 
 func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ElementType() reflect.Type {
@@ -12099,12 +10527,6 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObje
 
 func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(ctx context.Context) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput)
-}
-
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput is an input type that accepts GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray and GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput values.
@@ -12132,12 +10554,6 @@ func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObje
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput)
 }
 
-func (i GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
-		OutputState: i.ToGetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ElementType() reflect.Type {
@@ -12152,80 +10568,74 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObje
 	return o
 }
 
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
-	return pulumix.Output[GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregator key
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.AggregatorKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object identifier
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.Identifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object name path
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) NamePath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) NamePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.NamePath
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // New key of the object
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) NewKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) NewKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.NewKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object type
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.ObjectType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object version
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ObjectVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ObjectVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.ObjectVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Old key of the object
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) OldKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) OldKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.OldKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object resolution action
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ResolutionAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) ResolutionAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.ResolutionAction
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // time at which this object was last updated.
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) string {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput) TimeUpdatedInMillis() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject) *string {
 		return v.TimeUpdatedInMillis
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput struct{ *pulumi.OutputState }
@@ -12242,12 +10652,6 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObje
 	return o
 }
 
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject] {
-	return pulumix.Output[[]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput) Index(i pulumi.IntInput) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject {
 		return vs[0].([]GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject)[vs[1].(int)]
@@ -12256,33 +10660,33 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObje
 
 type GetWorkspaceProjectMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []GetWorkspaceProjectMetadataAggregator `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics []GetWorkspaceProjectMetadataCountStatistic `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName string `pulumi:"createdByName"`
+	CreatedByName *string `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath string `pulumi:"identifierPath"`
+	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName string `pulumi:"updatedByName"`
+	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
 // GetWorkspaceProjectMetadataInput is an input type that accepts GetWorkspaceProjectMetadataArgs and GetWorkspaceProjectMetadataOutput values.
@@ -12298,33 +10702,33 @@ type GetWorkspaceProjectMetadataInput interface {
 
 type GetWorkspaceProjectMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators GetWorkspaceProjectMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics GetWorkspaceProjectMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
 func (GetWorkspaceProjectMetadataArgs) ElementType() reflect.Type {
@@ -12337,12 +10741,6 @@ func (i GetWorkspaceProjectMetadataArgs) ToGetWorkspaceProjectMetadataOutput() G
 
 func (i GetWorkspaceProjectMetadataArgs) ToGetWorkspaceProjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataOutput)
-}
-
-func (i GetWorkspaceProjectMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadata] {
-	return pulumix.Output[GetWorkspaceProjectMetadata]{
-		OutputState: i.ToGetWorkspaceProjectMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectMetadataArrayInput is an input type that accepts GetWorkspaceProjectMetadataArray and GetWorkspaceProjectMetadataArrayOutput values.
@@ -12370,12 +10768,6 @@ func (i GetWorkspaceProjectMetadataArray) ToGetWorkspaceProjectMetadataArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataArrayOutput)
 }
 
-func (i GetWorkspaceProjectMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadata]{
-		OutputState: i.ToGetWorkspaceProjectMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectMetadataOutput) ElementType() reflect.Type {
@@ -12390,15 +10782,9 @@ func (o GetWorkspaceProjectMetadataOutput) ToGetWorkspaceProjectMetadataOutputWi
 	return o
 }
 
-func (o GetWorkspaceProjectMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadata] {
-	return pulumix.Output[GetWorkspaceProjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceProjectMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -12414,18 +10800,18 @@ func (o GetWorkspaceProjectMetadataOutput) CountStatistics() GetWorkspaceProject
 }
 
 // The user that created the object.
-func (o GetWorkspaceProjectMetadataOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that created the object.
-func (o GetWorkspaceProjectMetadataOutput) CreatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
 // The full path to identify this object.
-func (o GetWorkspaceProjectMetadataOutput) IdentifierPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
 // Information property fields.
@@ -12434,8 +10820,8 @@ func (o GetWorkspaceProjectMetadataOutput) InfoFields() pulumi.MapOutput {
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceProjectMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceProjectMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -12444,28 +10830,28 @@ func (o GetWorkspaceProjectMetadataOutput) Labels() pulumi.StringArrayOutput {
 }
 
 // The registry version of the object.
-func (o GetWorkspaceProjectMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceProjectMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 // The date and time that the object was created.
-func (o GetWorkspaceProjectMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the object was updated.
-func (o GetWorkspaceProjectMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceProjectMetadataOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceProjectMetadataOutput) UpdatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -12482,12 +10868,6 @@ func (o GetWorkspaceProjectMetadataArrayOutput) ToGetWorkspaceProjectMetadataArr
 	return o
 }
 
-func (o GetWorkspaceProjectMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadata] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadata {
 		return vs[0].([]GetWorkspaceProjectMetadata)[vs[1].(int)]
@@ -12496,15 +10876,15 @@ func (o GetWorkspaceProjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWork
 
 type GetWorkspaceProjectMetadataAggregator struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The identifier of the aggregator.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of the aggregator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceProjectMetadataAggregatorInput is an input type that accepts GetWorkspaceProjectMetadataAggregatorArgs and GetWorkspaceProjectMetadataAggregatorOutput values.
@@ -12520,15 +10900,15 @@ type GetWorkspaceProjectMetadataAggregatorInput interface {
 
 type GetWorkspaceProjectMetadataAggregatorArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The identifier of the aggregator.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the aggregator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceProjectMetadataAggregatorArgs) ElementType() reflect.Type {
@@ -12541,12 +10921,6 @@ func (i GetWorkspaceProjectMetadataAggregatorArgs) ToGetWorkspaceProjectMetadata
 
 func (i GetWorkspaceProjectMetadataAggregatorArgs) ToGetWorkspaceProjectMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataAggregatorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataAggregatorOutput)
-}
-
-func (i GetWorkspaceProjectMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceProjectMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceProjectMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceProjectMetadataAggregatorArray and GetWorkspaceProjectMetadataAggregatorArrayOutput values.
@@ -12574,12 +10948,6 @@ func (i GetWorkspaceProjectMetadataAggregatorArray) ToGetWorkspaceProjectMetadat
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataAggregatorArrayOutput)
 }
 
-func (i GetWorkspaceProjectMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -12594,35 +10962,29 @@ func (o GetWorkspaceProjectMetadataAggregatorOutput) ToGetWorkspaceProjectMetada
 	return o
 }
 
-func (o GetWorkspaceProjectMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceProjectMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceProjectMetadataAggregatorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the aggregator.
-func (o GetWorkspaceProjectMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceProjectMetadataAggregatorOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o GetWorkspaceProjectMetadataAggregatorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The type of the aggregator.
-func (o GetWorkspaceProjectMetadataAggregatorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
@@ -12637,12 +10999,6 @@ func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) ToGetWorkspaceProjectM
 
 func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) ToGetWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataAggregatorArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataAggregatorOutput {
@@ -12684,12 +11040,6 @@ func (i GetWorkspaceProjectMetadataCountStatisticArgs) ToGetWorkspaceProjectMeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticOutput)
 }
 
-func (i GetWorkspaceProjectMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceProjectMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceProjectMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticArray and GetWorkspaceProjectMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceProjectMetadataCountStatisticArrayInput` via:
 //
@@ -12715,12 +11065,6 @@ func (i GetWorkspaceProjectMetadataCountStatisticArray) ToGetWorkspaceProjectMet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticArrayOutput)
 }
 
-func (i GetWorkspaceProjectMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -12733,12 +11077,6 @@ func (o GetWorkspaceProjectMetadataCountStatisticOutput) ToGetWorkspaceProjectMe
 
 func (o GetWorkspaceProjectMetadataCountStatisticOutput) ToGetWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceProjectMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -12762,12 +11100,6 @@ func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) ToGetWorkspaceProj
 	return o
 }
 
-func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataCountStatisticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadataCountStatistic {
 		return vs[0].([]GetWorkspaceProjectMetadataCountStatistic)[vs[1].(int)]
@@ -12776,9 +11108,9 @@ func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) Index(i pulumi.Int
 
 type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList struct {
 	// The value for the count statistic object.
-	ObjectCount string `pulumi:"objectCount"`
+	ObjectCount *string `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 }
 
 // GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput values.
@@ -12794,9 +11126,9 @@ type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput interface
 
 type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs struct {
 	// The value for the count statistic object.
-	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
 func (GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
@@ -12809,12 +11141,6 @@ func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToGetW
 
 func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput)
-}
-
-func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput values.
@@ -12842,12 +11168,6 @@ func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -12862,20 +11182,14 @@ func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToGe
 	return o
 }
 
-func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value for the count statistic object.
-func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList) string { return v.ObjectCount }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectCount }).(pulumi.StringPtrOutput)
 }
 
 // The type of object for the count statistic object.
-func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList) string { return v.ObjectType }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
@@ -12892,12 +11206,6 @@ func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
 	return o
 }
 
-func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList {
 		return vs[0].([]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
@@ -12906,9 +11214,9 @@ func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
 
 type GetWorkspaceProjectParentRef struct {
 	// Key of the parent object.
-	Parent string `pulumi:"parent"`
+	Parent *string `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId string `pulumi:"rootDocId"`
+	RootDocId *string `pulumi:"rootDocId"`
 }
 
 // GetWorkspaceProjectParentRefInput is an input type that accepts GetWorkspaceProjectParentRefArgs and GetWorkspaceProjectParentRefOutput values.
@@ -12924,9 +11232,9 @@ type GetWorkspaceProjectParentRefInput interface {
 
 type GetWorkspaceProjectParentRefArgs struct {
 	// Key of the parent object.
-	Parent pulumi.StringInput `pulumi:"parent"`
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
 }
 
 func (GetWorkspaceProjectParentRefArgs) ElementType() reflect.Type {
@@ -12939,12 +11247,6 @@ func (i GetWorkspaceProjectParentRefArgs) ToGetWorkspaceProjectParentRefOutput()
 
 func (i GetWorkspaceProjectParentRefArgs) ToGetWorkspaceProjectParentRefOutputWithContext(ctx context.Context) GetWorkspaceProjectParentRefOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectParentRefOutput)
-}
-
-func (i GetWorkspaceProjectParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectParentRef] {
-	return pulumix.Output[GetWorkspaceProjectParentRef]{
-		OutputState: i.ToGetWorkspaceProjectParentRefOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectParentRefArrayInput is an input type that accepts GetWorkspaceProjectParentRefArray and GetWorkspaceProjectParentRefArrayOutput values.
@@ -12972,12 +11274,6 @@ func (i GetWorkspaceProjectParentRefArray) ToGetWorkspaceProjectParentRefArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectParentRefArrayOutput)
 }
 
-func (i GetWorkspaceProjectParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectParentRef] {
-	return pulumix.Output[[]GetWorkspaceProjectParentRef]{
-		OutputState: i.ToGetWorkspaceProjectParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectParentRefOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectParentRefOutput) ElementType() reflect.Type {
@@ -12992,20 +11288,14 @@ func (o GetWorkspaceProjectParentRefOutput) ToGetWorkspaceProjectParentRefOutput
 	return o
 }
 
-func (o GetWorkspaceProjectParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectParentRef] {
-	return pulumix.Output[GetWorkspaceProjectParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key of the parent object.
-func (o GetWorkspaceProjectParentRefOutput) Parent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectParentRef) string { return v.Parent }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
 }
 
 // Key of the root document object.
-func (o GetWorkspaceProjectParentRefOutput) RootDocId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectParentRefArrayOutput struct{ *pulumi.OutputState }
@@ -13022,12 +11312,6 @@ func (o GetWorkspaceProjectParentRefArrayOutput) ToGetWorkspaceProjectParentRefA
 	return o
 }
 
-func (o GetWorkspaceProjectParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectParentRef] {
-	return pulumix.Output[[]GetWorkspaceProjectParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectParentRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectParentRef {
 		return vs[0].([]GetWorkspaceProjectParentRef)[vs[1].(int)]
@@ -13036,15 +11320,15 @@ func (o GetWorkspaceProjectParentRefArrayOutput) Index(i pulumi.IntInput) GetWor
 
 type GetWorkspaceProjectRegistryMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
 // GetWorkspaceProjectRegistryMetadataInput is an input type that accepts GetWorkspaceProjectRegistryMetadataArgs and GetWorkspaceProjectRegistryMetadataOutput values.
@@ -13060,15 +11344,15 @@ type GetWorkspaceProjectRegistryMetadataInput interface {
 
 type GetWorkspaceProjectRegistryMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
 func (GetWorkspaceProjectRegistryMetadataArgs) ElementType() reflect.Type {
@@ -13081,12 +11365,6 @@ func (i GetWorkspaceProjectRegistryMetadataArgs) ToGetWorkspaceProjectRegistryMe
 
 func (i GetWorkspaceProjectRegistryMetadataArgs) ToGetWorkspaceProjectRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectRegistryMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectRegistryMetadataOutput)
-}
-
-func (i GetWorkspaceProjectRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceProjectRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceProjectRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectRegistryMetadataArrayInput is an input type that accepts GetWorkspaceProjectRegistryMetadataArray and GetWorkspaceProjectRegistryMetadataArrayOutput values.
@@ -13114,12 +11392,6 @@ func (i GetWorkspaceProjectRegistryMetadataArray) ToGetWorkspaceProjectRegistryM
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectRegistryMetadataArrayOutput)
 }
 
-func (i GetWorkspaceProjectRegistryMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceProjectRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceProjectRegistryMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectRegistryMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectRegistryMetadataOutput) ElementType() reflect.Type {
@@ -13134,25 +11406,19 @@ func (o GetWorkspaceProjectRegistryMetadataOutput) ToGetWorkspaceProjectRegistry
 	return o
 }
 
-func (o GetWorkspaceProjectRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceProjectRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceProjectRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceProjectRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceProjectRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceProjectRegistryMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -13161,8 +11427,8 @@ func (o GetWorkspaceProjectRegistryMetadataOutput) Labels() pulumi.StringArrayOu
 }
 
 // The registry version of the object.
-func (o GetWorkspaceProjectRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceProjectRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 type GetWorkspaceProjectRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -13177,12 +11443,6 @@ func (o GetWorkspaceProjectRegistryMetadataArrayOutput) ToGetWorkspaceProjectReg
 
 func (o GetWorkspaceProjectRegistryMetadataArrayOutput) ToGetWorkspaceProjectRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectRegistryMetadataArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectRegistryMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectRegistryMetadata] {
-	return pulumix.Output[[]GetWorkspaceProjectRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceProjectRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectRegistryMetadataOutput {
@@ -13228,12 +11488,6 @@ func (i GetWorkspaceProjectsFilterArgs) ToGetWorkspaceProjectsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsFilterOutput)
 }
 
-func (i GetWorkspaceProjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsFilter] {
-	return pulumix.Output[GetWorkspaceProjectsFilter]{
-		OutputState: i.ToGetWorkspaceProjectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceProjectsFilterArrayInput is an input type that accepts GetWorkspaceProjectsFilterArray and GetWorkspaceProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceProjectsFilterArrayInput` via:
 //
@@ -13259,12 +11513,6 @@ func (i GetWorkspaceProjectsFilterArray) ToGetWorkspaceProjectsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsFilterArrayOutput)
 }
 
-func (i GetWorkspaceProjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsFilter] {
-	return pulumix.Output[[]GetWorkspaceProjectsFilter]{
-		OutputState: i.ToGetWorkspaceProjectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsFilterOutput) ElementType() reflect.Type {
@@ -13277,12 +11525,6 @@ func (o GetWorkspaceProjectsFilterOutput) ToGetWorkspaceProjectsFilterOutput() G
 
 func (o GetWorkspaceProjectsFilterOutput) ToGetWorkspaceProjectsFilterOutputWithContext(ctx context.Context) GetWorkspaceProjectsFilterOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsFilter] {
-	return pulumix.Output[GetWorkspaceProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Used to filter by the name of the object.
@@ -13310,12 +11552,6 @@ func (o GetWorkspaceProjectsFilterArrayOutput) ToGetWorkspaceProjectsFilterArray
 
 func (o GetWorkspaceProjectsFilterArrayOutput) ToGetWorkspaceProjectsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsFilterArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsFilter] {
-	return pulumix.Output[[]GetWorkspaceProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsFilterOutput {
@@ -13355,12 +11591,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionArgs) ToGetWorkspaceProjects
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollection] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollection]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceProjectsProjectSummaryCollectionArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionArray and GetWorkspaceProjectsProjectSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionArrayInput` via:
 //
@@ -13386,12 +11616,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionArray) ToGetWorkspaceProject
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollection]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionOutput) ElementType() reflect.Type {
@@ -13404,12 +11628,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) ToGetWorkspaceProjec
 
 func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) ToGetWorkspaceProjectsProjectSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollection] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) Items() GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput {
@@ -13432,12 +11650,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) ToGetWorkspaceP
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollection] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollection {
 		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollection)[vs[1].(int)]
@@ -13446,29 +11658,29 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) Index(i pulumi.
 
 type GetWorkspaceProjectsProjectSummaryCollectionItem struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Used to filter by the identifier of the object.
 	Identifier string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceProjectsProjectSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The model version of an object.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus int `pulumi:"objectStatus"`
+	ObjectStatus *int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// A reference to the object's parent.
-	ParentReves      []GetWorkspaceProjectsProjectSummaryCollectionItemParentRef      `pulumi:"parentReves"`
-	ProjectKey       string                                                           `pulumi:"projectKey"`
-	RegistryMetadata GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
+	ParentReves      []GetWorkspaceProjectsProjectSummaryCollectionItemParentRef       `pulumi:"parentReves"`
+	ProjectKey       *string                                                           `pulumi:"projectKey"`
+	RegistryMetadata *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
 	// The workspace ID.
 	WorkspaceId string `pulumi:"workspaceId"`
 }
@@ -13486,29 +11698,29 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemInput interface {
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Used to filter by the identifier of the object.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType pulumi.StringInput `pulumi:"modelType"`
+	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// The model version of an object.
-	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
 	// Used to filter by the name of the object.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	ObjectStatus pulumi.IntPtrInput `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 	// A reference to the object's parent.
-	ParentReves      GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput   `pulumi:"parentReves"`
-	ProjectKey       pulumi.StringInput                                                    `pulumi:"projectKey"`
-	RegistryMetadata GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
+	ParentReves      GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput      `pulumi:"parentReves"`
+	ProjectKey       pulumi.StringPtrInput                                                    `pulumi:"projectKey"`
+	RegistryMetadata GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrInput `pulumi:"registryMetadata"`
 	// The workspace ID.
 	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
 }
@@ -13523,12 +11735,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemArgs) ToGetWorkspaceProj
 
 func (i GetWorkspaceProjectsProjectSummaryCollectionItemArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemOutput)
-}
-
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemArray and GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput values.
@@ -13556,12 +11762,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemArray) ToGetWorkspacePro
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItem]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -13576,15 +11776,9 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ToGetWorkspacePr
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItem] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the object.
@@ -13593,8 +11787,8 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Identifier() pul
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -13610,13 +11804,13 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Metadatas() GetW
 }
 
 // The type of the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The model version of an object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
@@ -13625,13 +11819,13 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Name() pulumi.St
 }
 
 // The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The version of the object that is used to track changes in the object instance.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -13641,14 +11835,14 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ParentReves() Ge
 	}).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput)
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ProjectKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.ProjectKey }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ProjectKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *string { return v.ProjectKey }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) RegistryMetadata() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata {
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) RegistryMetadata() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata {
 		return v.RegistryMetadata
-	}).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput)
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput)
 }
 
 // The workspace ID.
@@ -13670,12 +11864,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) ToGetWorksp
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItem] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItem {
 		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItem)[vs[1].(int)]
@@ -13684,33 +11872,33 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) Index(i pul
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName string `pulumi:"createdByName"`
+	CreatedByName *string `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath string `pulumi:"identifierPath"`
+	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields map[string]interface{} `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName string `pulumi:"updatedByName"`
+	UpdatedByName *string `pulumi:"updatedByName"`
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput values.
@@ -13726,33 +11914,33 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput interface {
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// A summary type containing information about the object's aggregator including its type, key, name and description.
 	Aggregators GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
 	// A count statistics.
 	CountStatistics GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
 	// The user that created the object.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The user that created the object.
-	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
 	// The full path to identify this object.
-	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
 	InfoFields pulumi.MapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 	// The date and time that the object was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the object was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user that updated the object.
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// The user that updated the object.
-	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
 }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
@@ -13765,12 +11953,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ToGetWorks
 
 func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput)
-}
-
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadata] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadata]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput values.
@@ -13798,12 +11980,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray) ToGetWork
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
@@ -13818,15 +11994,9 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) ToGetWor
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadata] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
 }
 
 // A summary type containing information about the object's aggregator including its type, key, name and description.
@@ -13844,18 +12014,18 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CountSta
 }
 
 // The user that created the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that created the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
 }
 
 // The full path to identify this object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
 }
 
 // Information property fields.
@@ -13866,8 +12036,8 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) InfoFiel
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -13876,28 +12046,28 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) Labels()
 }
 
 // The registry version of the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
 }
 
 // The date and time that the object was created.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the object was updated.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The user that updated the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -13914,12 +12084,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) ToG
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadata {
 		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata)[vs[1].(int)]
@@ -13928,15 +12092,15 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) Ind
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator struct {
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Used to filter by the identifier of the object.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The type of the aggregator.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput values.
@@ -13952,15 +12116,15 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput int
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs struct {
 	// The description of the aggregator.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Used to filter by the identifier of the object.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Used to filter by the name of the object.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the aggregator.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
@@ -13973,12 +12137,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) 
 
 func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput)
-}
-
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput values.
@@ -14006,12 +12164,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
@@ -14026,37 +12178,33 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of the aggregator.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string {
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the identifier of the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) *string {
+		return v.Identifier
+	}).(pulumi.StringPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Used to filter by the name of the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The type of the aggregator.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
@@ -14071,12 +12219,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayO
 
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
@@ -14118,12 +12260,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput values.
 // You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput` via:
 //
@@ -14149,12 +12285,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
@@ -14167,12 +12297,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOu
 
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
 	return o
-}
-
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The array of statistics.
@@ -14196,12 +12320,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticAr
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic {
 		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
@@ -14210,9 +12328,9 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticAr
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
 	// The value for the count statistic object.
-	ObjectCount string `pulumi:"objectCount"`
+	ObjectCount *string `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType string `pulumi:"objectType"`
+	ObjectType *string `pulumi:"objectType"`
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
@@ -14228,9 +12346,9 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjec
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
 	// The value for the count statistic object.
-	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
 	// The type of object for the count statistic object.
-	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
 }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
@@ -14243,12 +12361,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOb
 
 func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
-}
-
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
@@ -14276,12 +12388,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOb
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
@@ -14296,24 +12402,18 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOb
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The value for the count statistic object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectCount
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of object for the count statistic object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) *string {
 		return v.ObjectType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
@@ -14330,12 +12430,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOb
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
 		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
@@ -14344,9 +12438,9 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOb
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemParentRef struct {
 	// Key of the parent object.
-	Parent string `pulumi:"parent"`
+	Parent *string `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId string `pulumi:"rootDocId"`
+	RootDocId *string `pulumi:"rootDocId"`
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs and GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput values.
@@ -14362,9 +12456,9 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput interface {
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs struct {
 	// Key of the parent object.
-	Parent pulumi.StringInput `pulumi:"parent"`
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
 	// Key of the root document object.
-	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
 }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
@@ -14377,12 +12471,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ToGetWork
 
 func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput)
-}
-
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemParentRef] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemParentRef]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray and GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput values.
@@ -14410,12 +12498,6 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray) ToGetWor
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
@@ -14430,20 +12512,14 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) ToGetWo
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemParentRef] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key of the parent object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
 }
 
 // Key of the root document object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
@@ -14460,12 +12536,6 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) To
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef] {
-	return pulumix.Output[[]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemParentRef {
 		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef)[vs[1].(int)]
@@ -14474,15 +12544,15 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) In
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata struct {
 	// The owning object key for this object.
-	AggregatorKey string `pulumi:"aggregatorKey"`
+	AggregatorKey *string `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite bool `pulumi:"isFavorite"`
+	IsFavorite *bool `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels []string `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion int `pulumi:"registryVersion"`
+	RegistryVersion *int `pulumi:"registryVersion"`
 }
 
 // GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput values.
@@ -14498,15 +12568,15 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput inter
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs struct {
 	// The owning object key for this object.
-	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
 	// Specifies whether this object is a favorite or not.
-	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// The key of the aggregator object.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
 	// The registry version of the object.
-	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
 }
 
 func (GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
@@ -14521,10 +12591,45 @@ func (i GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput)
 }
 
-func (i GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata]{
-		OutputState: i.ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutputWithContext(ctx).OutputState,
-	}
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput).ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(ctx)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs, GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtr and GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrInput` via:
+//
+//	        GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput
+}
+
+type getWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrType GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs
+
+func GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtr(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrInput {
+	return (*getWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrType)(v)
+}
+
+func (*getWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (i *getWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrType) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *getWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrType) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput)
 }
 
 type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
@@ -14541,27 +12646,31 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) 
 	return o
 }
 
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata] {
-	return pulumix.Output[GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata]{
-		OutputState: o.OutputState,
-	}
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return o.ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata {
+		return &v
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput)
 }
 
 // The owning object key for this object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) string {
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *string {
 		return v.AggregatorKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether this object is a favorite or not.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -14570,8 +12679,84 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) 
 }
 
 // The registry version of the object.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *int {
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) Elem() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
+	return o.ApplyT(func(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata
+		return ret
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput)
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AggregatorKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsFavorite
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWorkspacesFilter struct {
@@ -14611,12 +12796,6 @@ func (i GetWorkspacesFilterArgs) ToGetWorkspacesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspacesFilterOutput)
 }
 
-func (i GetWorkspacesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspacesFilter] {
-	return pulumix.Output[GetWorkspacesFilter]{
-		OutputState: i.ToGetWorkspacesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkspacesFilterArrayInput is an input type that accepts GetWorkspacesFilterArray and GetWorkspacesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkspacesFilterArrayInput` via:
 //
@@ -14642,12 +12821,6 @@ func (i GetWorkspacesFilterArray) ToGetWorkspacesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspacesFilterArrayOutput)
 }
 
-func (i GetWorkspacesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspacesFilter] {
-	return pulumix.Output[[]GetWorkspacesFilter]{
-		OutputState: i.ToGetWorkspacesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspacesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspacesFilterOutput) ElementType() reflect.Type {
@@ -14660,12 +12833,6 @@ func (o GetWorkspacesFilterOutput) ToGetWorkspacesFilterOutput() GetWorkspacesFi
 
 func (o GetWorkspacesFilterOutput) ToGetWorkspacesFilterOutputWithContext(ctx context.Context) GetWorkspacesFilterOutput {
 	return o
-}
-
-func (o GetWorkspacesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspacesFilter] {
-	return pulumix.Output[GetWorkspacesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Used to filter by the name of the object.
@@ -14695,12 +12862,6 @@ func (o GetWorkspacesFilterArrayOutput) ToGetWorkspacesFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetWorkspacesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspacesFilter] {
-	return pulumix.Output[[]GetWorkspacesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkspacesFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspacesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspacesFilter {
 		return vs[0].([]GetWorkspacesFilter)[vs[1].(int)]
@@ -14709,46 +12870,46 @@ func (o GetWorkspacesFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspacesFi
 
 type GetWorkspacesWorkspace struct {
 	// The OCID of the compartment containing the resources you want to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user defined description for the workspace.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The IP of the custom DNS.
-	DnsServerIp string `pulumi:"dnsServerIp"`
+	DnsServerIp *string `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
-	DnsServerZone         string `pulumi:"dnsServerZone"`
-	EndpointCompartmentId string `pulumi:"endpointCompartmentId"`
+	DnsServerZone         *string `pulumi:"dnsServerZone"`
+	EndpointCompartmentId *string `pulumi:"endpointCompartmentId"`
 	// DCMS endpoint associated with the container/workspace. Returns null if there is none.
-	EndpointId string `pulumi:"endpointId"`
+	EndpointId *string `pulumi:"endpointId"`
 	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-	EndpointName string `pulumi:"endpointName"`
+	EndpointName *string `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
-	Id               string `pulumi:"id"`
-	IsForceOperation bool   `pulumi:"isForceOperation"`
+	Id               *string `pulumi:"id"`
+	IsForceOperation *bool   `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled bool   `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          int    `pulumi:"quiesceTimeout"`
-	RegistryCompartmentId   string `pulumi:"registryCompartmentId"`
+	IsPrivateNetworkEnabled *bool   `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          *int    `pulumi:"quiesceTimeout"`
+	RegistryCompartmentId   *string `pulumi:"registryCompartmentId"`
 	// DCMS registry associated with the container/workspace. Returns null if there is none.
-	RegistryId   string `pulumi:"registryId"`
-	RegistryName string `pulumi:"registryName"`
+	RegistryId   *string `pulumi:"registryId"`
+	RegistryName *string `pulumi:"registryName"`
 	// The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// The OCID of the subnet for customer connected databases.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the workspace was created, in the timestamp format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the VCN the subnet is in.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetWorkspacesWorkspaceInput is an input type that accepts GetWorkspacesWorkspaceArgs and GetWorkspacesWorkspaceOutput values.
@@ -14764,46 +12925,46 @@ type GetWorkspacesWorkspaceInput interface {
 
 type GetWorkspacesWorkspaceArgs struct {
 	// The OCID of the compartment containing the resources you want to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user defined description for the workspace.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The IP of the custom DNS.
-	DnsServerIp pulumi.StringInput `pulumi:"dnsServerIp"`
+	DnsServerIp pulumi.StringPtrInput `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
-	DnsServerZone         pulumi.StringInput `pulumi:"dnsServerZone"`
-	EndpointCompartmentId pulumi.StringInput `pulumi:"endpointCompartmentId"`
+	DnsServerZone         pulumi.StringPtrInput `pulumi:"dnsServerZone"`
+	EndpointCompartmentId pulumi.StringPtrInput `pulumi:"endpointCompartmentId"`
 	// DCMS endpoint associated with the container/workspace. Returns null if there is none.
-	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
 	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+	EndpointName pulumi.StringPtrInput `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
-	Id               pulumi.StringInput `pulumi:"id"`
-	IsForceOperation pulumi.BoolInput   `pulumi:"isForceOperation"`
+	Id               pulumi.StringPtrInput `pulumi:"id"`
+	IsForceOperation pulumi.BoolPtrInput   `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled pulumi.BoolInput   `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          pulumi.IntInput    `pulumi:"quiesceTimeout"`
-	RegistryCompartmentId   pulumi.StringInput `pulumi:"registryCompartmentId"`
+	IsPrivateNetworkEnabled pulumi.BoolPtrInput   `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          pulumi.IntPtrInput    `pulumi:"quiesceTimeout"`
+	RegistryCompartmentId   pulumi.StringPtrInput `pulumi:"registryCompartmentId"`
 	// DCMS registry associated with the container/workspace. Returns null if there is none.
-	RegistryId   pulumi.StringInput `pulumi:"registryId"`
-	RegistryName pulumi.StringInput `pulumi:"registryName"`
+	RegistryId   pulumi.StringPtrInput `pulumi:"registryId"`
+	RegistryName pulumi.StringPtrInput `pulumi:"registryName"`
 	// The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrInput `pulumi:"stateMessage"`
 	// The OCID of the subnet for customer connected databases.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the workspace was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The OCID of the VCN the subnet is in.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetWorkspacesWorkspaceArgs) ElementType() reflect.Type {
@@ -14816,12 +12977,6 @@ func (i GetWorkspacesWorkspaceArgs) ToGetWorkspacesWorkspaceOutput() GetWorkspac
 
 func (i GetWorkspacesWorkspaceArgs) ToGetWorkspacesWorkspaceOutputWithContext(ctx context.Context) GetWorkspacesWorkspaceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspacesWorkspaceOutput)
-}
-
-func (i GetWorkspacesWorkspaceArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkspacesWorkspace] {
-	return pulumix.Output[GetWorkspacesWorkspace]{
-		OutputState: i.ToGetWorkspacesWorkspaceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkspacesWorkspaceArrayInput is an input type that accepts GetWorkspacesWorkspaceArray and GetWorkspacesWorkspaceArrayOutput values.
@@ -14849,12 +13004,6 @@ func (i GetWorkspacesWorkspaceArray) ToGetWorkspacesWorkspaceArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspacesWorkspaceArrayOutput)
 }
 
-func (i GetWorkspacesWorkspaceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspacesWorkspace] {
-	return pulumix.Output[[]GetWorkspacesWorkspace]{
-		OutputState: i.ToGetWorkspacesWorkspaceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkspacesWorkspaceOutput struct{ *pulumi.OutputState }
 
 func (GetWorkspacesWorkspaceOutput) ElementType() reflect.Type {
@@ -14869,15 +13018,9 @@ func (o GetWorkspacesWorkspaceOutput) ToGetWorkspacesWorkspaceOutputWithContext(
 	return o
 }
 
-func (o GetWorkspacesWorkspaceOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspacesWorkspace] {
-	return pulumix.Output[GetWorkspacesWorkspace]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the resources you want to list.
-func (o GetWorkspacesWorkspaceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -14886,37 +13029,37 @@ func (o GetWorkspacesWorkspaceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user defined description for the workspace.
-func (o GetWorkspacesWorkspaceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.Description }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
-func (o GetWorkspacesWorkspaceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The IP of the custom DNS.
-func (o GetWorkspacesWorkspaceOutput) DnsServerIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.DnsServerIp }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) DnsServerIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.DnsServerIp }).(pulumi.StringPtrOutput)
 }
 
 // The DNS zone of the custom DNS to use to resolve names.
-func (o GetWorkspacesWorkspaceOutput) DnsServerZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.DnsServerZone }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) DnsServerZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.DnsServerZone }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspacesWorkspaceOutput) EndpointCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.EndpointCompartmentId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) EndpointCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.EndpointCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // DCMS endpoint associated with the container/workspace. Returns null if there is none.
-func (o GetWorkspacesWorkspaceOutput) EndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.EndpointId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) EndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-func (o GetWorkspacesWorkspaceOutput) EndpointName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.EndpointName }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) EndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.EndpointName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -14925,64 +13068,64 @@ func (o GetWorkspacesWorkspaceOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A system-generated and immutable identifier assigned to the workspace upon creation.
-func (o GetWorkspacesWorkspaceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspacesWorkspaceOutput) IsForceOperation() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) bool { return v.IsForceOperation }).(pulumi.BoolOutput)
+func (o GetWorkspacesWorkspaceOutput) IsForceOperation() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *bool { return v.IsForceOperation }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the private network connection is enabled or disabled.
-func (o GetWorkspacesWorkspaceOutput) IsPrivateNetworkEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) bool { return v.IsPrivateNetworkEnabled }).(pulumi.BoolOutput)
+func (o GetWorkspacesWorkspaceOutput) IsPrivateNetworkEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *bool { return v.IsPrivateNetworkEnabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetWorkspacesWorkspaceOutput) QuiesceTimeout() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) int { return v.QuiesceTimeout }).(pulumi.IntOutput)
+func (o GetWorkspacesWorkspaceOutput) QuiesceTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *int { return v.QuiesceTimeout }).(pulumi.IntPtrOutput)
 }
 
-func (o GetWorkspacesWorkspaceOutput) RegistryCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.RegistryCompartmentId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) RegistryCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.RegistryCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // DCMS registry associated with the container/workspace. Returns null if there is none.
-func (o GetWorkspacesWorkspaceOutput) RegistryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.RegistryId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) RegistryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.RegistryId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWorkspacesWorkspaceOutput) RegistryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.RegistryName }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) RegistryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.RegistryName }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
-func (o GetWorkspacesWorkspaceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.State }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
-func (o GetWorkspacesWorkspaceOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet for customer connected databases.
-func (o GetWorkspacesWorkspaceOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the workspace was created, in the timestamp format defined by RFC3339.
-func (o GetWorkspacesWorkspaceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetWorkspacesWorkspaceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the VCN the subnet is in.
-func (o GetWorkspacesWorkspaceOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetWorkspacesWorkspaceOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkspacesWorkspaceArrayOutput struct{ *pulumi.OutputState }
@@ -14997,12 +13140,6 @@ func (o GetWorkspacesWorkspaceArrayOutput) ToGetWorkspacesWorkspaceArrayOutput()
 
 func (o GetWorkspacesWorkspaceArrayOutput) ToGetWorkspacesWorkspaceArrayOutputWithContext(ctx context.Context) GetWorkspacesWorkspaceArrayOutput {
 	return o
-}
-
-func (o GetWorkspacesWorkspaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkspacesWorkspace] {
-	return pulumix.Output[[]GetWorkspacesWorkspace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkspacesWorkspaceArrayOutput) Index(i pulumi.IntInput) GetWorkspacesWorkspaceOutput {
@@ -15152,6 +13289,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayInput)(nil)).Elem(), GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataInput)(nil)).Elem(), GetWorkspaceProjectMetadataArgs{})
@@ -15183,6 +13321,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesFilterInput)(nil)).Elem(), GetWorkspacesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesFilterArrayInput)(nil)).Elem(), GetWorkspacesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesWorkspaceInput)(nil)).Elem(), GetWorkspacesWorkspaceArgs{})
@@ -15327,6 +13466,7 @@ func init() {
 	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionPtrOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataOutput{})
@@ -15358,6 +13498,7 @@ func init() {
 	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataPtrOutput{})
 	pulumi.RegisterOutputType(GetWorkspacesFilterOutput{})
 	pulumi.RegisterOutputType(GetWorkspacesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspacesWorkspaceOutput{})

@@ -11,190 +11,192 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomeDatabase {
-    private String adminPassword;
-    private String backupId;
-    private String backupTdePassword;
-    private String characterSet;
-    private List<GetDbHomeDatabaseConnectionString> connectionStrings;
-    private String databaseId;
+    private @Nullable String adminPassword;
+    private @Nullable String backupId;
+    private @Nullable String backupTdePassword;
+    private @Nullable String characterSet;
+    private @Nullable List<GetDbHomeDatabaseConnectionString> connectionStrings;
+    private @Nullable String databaseId;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private String databaseSoftwareImageId;
-    private List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
-    private String dbName;
-    private String dbUniqueName;
-    private String dbWorkload;
+    private @Nullable String databaseSoftwareImageId;
+    private @Nullable List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
+    private @Nullable String dbName;
+    private @Nullable String dbUniqueName;
+    private @Nullable String dbWorkload;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
-    private String ncharacterSet;
+    private @Nullable String lifecycleDetails;
+    private @Nullable String ncharacterSet;
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    private List<String> oneOffPatches;
-    private String pdbName;
-    private List<String> pluggableDatabases;
-    private String sidPrefix;
+    private @Nullable List<String> oneOffPatches;
+    private @Nullable String pdbName;
+    private @Nullable List<String> pluggableDatabases;
+    private @Nullable String sidPrefix;
     /**
      * @return The current state of the Database Home.
      * 
      */
-    private String state;
-    private String tdeWalletPassword;
+    private @Nullable String state;
+    private @Nullable String tdeWalletPassword;
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    private String timeCreated;
-    private String timeStampForPointInTimeRecovery;
-    private String vaultId;
+    private @Nullable String timeCreated;
+    private @Nullable String timeStampForPointInTimeRecovery;
+    private @Nullable String vaultId;
 
     private GetDbHomeDatabase() {}
-    public String adminPassword() {
-        return this.adminPassword;
+    public Optional<String> adminPassword() {
+        return Optional.ofNullable(this.adminPassword);
     }
-    public String backupId() {
-        return this.backupId;
+    public Optional<String> backupId() {
+        return Optional.ofNullable(this.backupId);
     }
-    public String backupTdePassword() {
-        return this.backupTdePassword;
+    public Optional<String> backupTdePassword() {
+        return Optional.ofNullable(this.backupTdePassword);
     }
-    public String characterSet() {
-        return this.characterSet;
+    public Optional<String> characterSet() {
+        return Optional.ofNullable(this.characterSet);
     }
     public List<GetDbHomeDatabaseConnectionString> connectionStrings() {
-        return this.connectionStrings;
+        return this.connectionStrings == null ? List.of() : this.connectionStrings;
     }
-    public String databaseId() {
-        return this.databaseId;
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public String databaseSoftwareImageId() {
-        return this.databaseSoftwareImageId;
+    public Optional<String> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
     }
     public List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs() {
-        return this.dbBackupConfigs;
+        return this.dbBackupConfigs == null ? List.of() : this.dbBackupConfigs;
     }
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
-    public String dbWorkload() {
-        return this.dbWorkload;
+    public Optional<String> dbWorkload() {
+        return Optional.ofNullable(this.dbWorkload);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public String ncharacterSet() {
-        return this.ncharacterSet;
+    public Optional<String> ncharacterSet() {
+        return Optional.ofNullable(this.ncharacterSet);
     }
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
     public List<String> oneOffPatches() {
-        return this.oneOffPatches;
+        return this.oneOffPatches == null ? List.of() : this.oneOffPatches;
     }
-    public String pdbName() {
-        return this.pdbName;
+    public Optional<String> pdbName() {
+        return Optional.ofNullable(this.pdbName);
     }
     public List<String> pluggableDatabases() {
-        return this.pluggableDatabases;
+        return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
     }
-    public String sidPrefix() {
-        return this.sidPrefix;
+    public Optional<String> sidPrefix() {
+        return Optional.ofNullable(this.sidPrefix);
     }
     /**
      * @return The current state of the Database Home.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
-    public String tdeWalletPassword() {
-        return this.tdeWalletPassword;
+    public Optional<String> tdeWalletPassword() {
+        return Optional.ofNullable(this.tdeWalletPassword);
     }
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
-    public String timeStampForPointInTimeRecovery() {
-        return this.timeStampForPointInTimeRecovery;
+    public Optional<String> timeStampForPointInTimeRecovery() {
+        return Optional.ofNullable(this.timeStampForPointInTimeRecovery);
     }
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -206,33 +208,33 @@ public final class GetDbHomeDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminPassword;
-        private String backupId;
-        private String backupTdePassword;
-        private String characterSet;
-        private List<GetDbHomeDatabaseConnectionString> connectionStrings;
-        private String databaseId;
-        private String databaseSoftwareImageId;
-        private List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
-        private String dbName;
-        private String dbUniqueName;
-        private String dbWorkload;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String kmsKeyId;
-        private String kmsKeyVersionId;
-        private String lifecycleDetails;
-        private String ncharacterSet;
-        private List<String> oneOffPatches;
-        private String pdbName;
-        private List<String> pluggableDatabases;
-        private String sidPrefix;
-        private String state;
-        private String tdeWalletPassword;
-        private String timeCreated;
-        private String timeStampForPointInTimeRecovery;
-        private String vaultId;
+        private @Nullable String adminPassword;
+        private @Nullable String backupId;
+        private @Nullable String backupTdePassword;
+        private @Nullable String characterSet;
+        private @Nullable List<GetDbHomeDatabaseConnectionString> connectionStrings;
+        private @Nullable String databaseId;
+        private @Nullable String databaseSoftwareImageId;
+        private @Nullable List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs;
+        private @Nullable String dbName;
+        private @Nullable String dbUniqueName;
+        private @Nullable String dbWorkload;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String kmsKeyId;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String ncharacterSet;
+        private @Nullable List<String> oneOffPatches;
+        private @Nullable String pdbName;
+        private @Nullable List<String> pluggableDatabases;
+        private @Nullable String sidPrefix;
+        private @Nullable String state;
+        private @Nullable String tdeWalletPassword;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStampForPointInTimeRecovery;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetDbHomeDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -266,150 +268,150 @@ public final class GetDbHomeDatabase {
         }
 
         @CustomType.Setter
-        public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+        public Builder adminPassword(@Nullable String adminPassword) {
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder backupId(String backupId) {
-            this.backupId = Objects.requireNonNull(backupId);
+        public Builder backupId(@Nullable String backupId) {
+            this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
-        public Builder backupTdePassword(String backupTdePassword) {
-            this.backupTdePassword = Objects.requireNonNull(backupTdePassword);
+        public Builder backupTdePassword(@Nullable String backupTdePassword) {
+            this.backupTdePassword = backupTdePassword;
             return this;
         }
         @CustomType.Setter
-        public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+        public Builder characterSet(@Nullable String characterSet) {
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionStrings(List<GetDbHomeDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+        public Builder connectionStrings(@Nullable List<GetDbHomeDatabaseConnectionString> connectionStrings) {
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetDbHomeDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
         @CustomType.Setter
-        public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+        public Builder databaseId(@Nullable String databaseId) {
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+        public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbBackupConfigs(List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs) {
-            this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
+        public Builder dbBackupConfigs(@Nullable List<GetDbHomeDatabaseDbBackupConfig> dbBackupConfigs) {
+            this.dbBackupConfigs = dbBackupConfigs;
             return this;
         }
         public Builder dbBackupConfigs(GetDbHomeDatabaseDbBackupConfig... dbBackupConfigs) {
             return dbBackupConfigs(List.of(dbBackupConfigs));
         }
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+        public Builder dbWorkload(@Nullable String dbWorkload) {
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+        public Builder ncharacterSet(@Nullable String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder oneOffPatches(List<String> oneOffPatches) {
-            this.oneOffPatches = Objects.requireNonNull(oneOffPatches);
+        public Builder oneOffPatches(@Nullable List<String> oneOffPatches) {
+            this.oneOffPatches = oneOffPatches;
             return this;
         }
         public Builder oneOffPatches(String... oneOffPatches) {
             return oneOffPatches(List.of(oneOffPatches));
         }
         @CustomType.Setter
-        public Builder pdbName(String pdbName) {
-            this.pdbName = Objects.requireNonNull(pdbName);
+        public Builder pdbName(@Nullable String pdbName) {
+            this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
-        public Builder pluggableDatabases(List<String> pluggableDatabases) {
-            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+        public Builder pluggableDatabases(@Nullable List<String> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
             return this;
         }
         public Builder pluggableDatabases(String... pluggableDatabases) {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
-        public Builder sidPrefix(String sidPrefix) {
-            this.sidPrefix = Objects.requireNonNull(sidPrefix);
+        public Builder sidPrefix(@Nullable String sidPrefix) {
+            this.sidPrefix = sidPrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tdeWalletPassword(String tdeWalletPassword) {
-            this.tdeWalletPassword = Objects.requireNonNull(tdeWalletPassword);
+        public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
+            this.tdeWalletPassword = tdeWalletPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStampForPointInTimeRecovery(String timeStampForPointInTimeRecovery) {
-            this.timeStampForPointInTimeRecovery = Objects.requireNonNull(timeStampForPointInTimeRecovery);
+        public Builder timeStampForPointInTimeRecovery(@Nullable String timeStampForPointInTimeRecovery) {
+            this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetDbHomeDatabase build() {

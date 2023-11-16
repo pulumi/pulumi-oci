@@ -122,50 +122,32 @@ class GetDomainsKmsiSettingResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsKmsiSettingIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsKmsiSettingIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -175,42 +157,27 @@ class GetDomainsKmsiSettingResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsKmsiSettingIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsKmsiSettingIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="kmsiFeatureEnabled")
-    def kmsi_feature_enabled(self) -> bool:
-        """
-        Identifier represents KMSI feature is enabled or not.
-        """
+    def kmsi_feature_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "kmsi_feature_enabled")
 
     @property
     @pulumi.getter(name="kmsiPromptEnabled")
-    def kmsi_prompt_enabled(self) -> bool:
-        """
-        Identifier represents KMSI to be prompted to user or not.
-        """
+    def kmsi_prompt_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "kmsi_prompt_enabled")
 
     @property
@@ -220,42 +187,27 @@ class GetDomainsKmsiSettingResult:
 
     @property
     @pulumi.getter(name="lastEnabledOn")
-    def last_enabled_on(self) -> str:
-        """
-        Timestamp of when the KmsiSettings was enabled last time.
-        """
+    def last_enabled_on(self) -> Optional[str]:
         return pulumi.get(self, "last_enabled_on")
 
     @property
     @pulumi.getter(name="lastUsedValidityInDays")
-    def last_used_validity_in_days(self) -> int:
-        """
-        Identifier represents duration in days within which kmsi token must be used.
-        """
+    def last_used_validity_in_days(self) -> Optional[int]:
         return pulumi.get(self, "last_used_validity_in_days")
 
     @property
     @pulumi.getter(name="maxAllowedSessions")
-    def max_allowed_sessions(self) -> int:
-        """
-        Identifier represents maximum KMSI sessions allowed in the system.
-        """
+    def max_allowed_sessions(self) -> Optional[int]:
         return pulumi.get(self, "max_allowed_sessions")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsKmsiSettingMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsKmsiSettingMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
@@ -265,42 +217,27 @@ class GetDomainsKmsiSettingResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsKmsiSettingTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsKmsiSettingTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="tokenValidityInDays")
-    def token_validity_in_days(self) -> int:
-        """
-        Identifier represents validity duration in days.
-        """
+    def token_validity_in_days(self) -> Optional[int]:
         return pulumi.get(self, "token_validity_in_days")
 
     @property
     @pulumi.getter(name="touPromptDisabled")
-    def tou_prompt_disabled(self) -> bool:
-        """
-        Identifier represents whether user is prompted for ToU or not.
-        """
+    def tou_prompt_disabled(self) -> Optional[bool]:
         return pulumi.get(self, "tou_prompt_disabled")
 
 
@@ -347,31 +284,7 @@ def get_domains_kmsi_setting(attribute_sets: Optional[Sequence[str]] = None,
                              resource_type_schema_version: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsKmsiSettingResult:
     """
-    This data source provides details about a specific Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get KmsiSettings
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        kmsi_setting_id=oci_identity_domains_kmsi_setting["test_kmsi_setting"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["kmsi_setting_authorization"],
-        resource_type_schema_version=var["kmsi_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str kmsi_setting_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -422,30 +335,6 @@ def get_domains_kmsi_setting_output(attribute_sets: Optional[pulumi.Input[Option
                                     resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsKmsiSettingResult]:
     """
-    This data source provides details about a specific Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get KmsiSettings
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_kmsi_setting = oci.Identity.get_domains_kmsi_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        kmsi_setting_id=oci_identity_domains_kmsi_setting["test_kmsi_setting"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["kmsi_setting_authorization"],
-        resource_type_schema_version=var["kmsi_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str kmsi_setting_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

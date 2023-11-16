@@ -157,38 +157,6 @@ class AddressActionVerificationAddress(dict):
                  state_inscription: Optional[str] = None,
                  street_name: Optional[str] = None,
                  street_number: Optional[str] = None):
-        """
-        :param str address_key: Address identifier.
-        :param str city: Name of the city.
-        :param str company_name: Name of the customer company.
-        :param str contributor_class: Contributor class of the customer company.
-        :param str country: Country of the address.
-        :param str county: County of the address.
-        :param str department_name: Department name of the customer company.
-        :param str email_address: Contact person email address.
-        :param str first_name: First name of the contact person.
-        :param str internal_number: Internal number of the customer company.
-        :param str job_title: Job title of the contact person.
-        :param str last_name: Last name of the contact person.
-        :param str line1: Address line 1.
-        :param str line2: Address line 2.
-        :param str line3: Address line 3.
-        :param str line4: Address line 4.
-        :param str middle_name: Middle name of the contact person.
-        :param str municipal_inscription: Municipal Inscription.
-        :param str phone_country_code: Phone country code of the contact person.
-        :param str phone_number: Phone number of the contact person.
-        :param str postal_code: Post code of the address.
-        :param str province: Province of the address.
-        :param str state: State of the address.
-        :param str state_inscription: State Inscription.
-        :param str street_name: Street name of the address.
-        :param str street_number: Street number of the address.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
         if city is not None:
@@ -245,213 +213,131 @@ class AddressActionVerificationAddress(dict):
     @property
     @pulumi.getter(name="addressKey")
     def address_key(self) -> Optional[str]:
-        """
-        Address identifier.
-        """
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
     def city(self) -> Optional[str]:
-        """
-        Name of the city.
-        """
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
     def company_name(self) -> Optional[str]:
-        """
-        Name of the customer company.
-        """
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
     def contributor_class(self) -> Optional[str]:
-        """
-        Contributor class of the customer company.
-        """
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
     def country(self) -> Optional[str]:
-        """
-        Country of the address.
-        """
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
     def county(self) -> Optional[str]:
-        """
-        County of the address.
-        """
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
     def department_name(self) -> Optional[str]:
-        """
-        Department name of the customer company.
-        """
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        Contact person email address.
-        """
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[str]:
-        """
-        First name of the contact person.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
     def internal_number(self) -> Optional[str]:
-        """
-        Internal number of the customer company.
-        """
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
     def job_title(self) -> Optional[str]:
-        """
-        Job title of the contact person.
-        """
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[str]:
-        """
-        Last name of the contact person.
-        """
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
     def line1(self) -> Optional[str]:
-        """
-        Address line 1.
-        """
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
     def line2(self) -> Optional[str]:
-        """
-        Address line 2.
-        """
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
     def line3(self) -> Optional[str]:
-        """
-        Address line 3.
-        """
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
     def line4(self) -> Optional[str]:
-        """
-        Address line 4.
-        """
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
     def middle_name(self) -> Optional[str]:
-        """
-        Middle name of the contact person.
-        """
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
     def municipal_inscription(self) -> Optional[str]:
-        """
-        Municipal Inscription.
-        """
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
     def phone_country_code(self) -> Optional[str]:
-        """
-        Phone country code of the contact person.
-        """
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[str]:
-        """
-        Phone number of the contact person.
-        """
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[str]:
-        """
-        Post code of the address.
-        """
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
     def province(self) -> Optional[str]:
-        """
-        Province of the address.
-        """
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        State of the address.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
     def state_inscription(self) -> Optional[str]:
-        """
-        State Inscription.
-        """
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
     def street_name(self) -> Optional[str]:
-        """
-        Street name of the address.
-        """
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
     def street_number(self) -> Optional[str]:
-        """
-        Street number of the address.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "street_number")
 
 
@@ -533,34 +419,6 @@ class SubscriptionBillingAddress(dict):
                  state_inscription: Optional[str] = None,
                  street_name: Optional[str] = None,
                  street_number: Optional[str] = None):
-        """
-        :param str address_key: (Updatable) Address identifier.
-        :param str city: (Updatable) Name of the city.
-        :param str company_name: (Updatable) Name of the customer company.
-        :param str contributor_class: (Updatable) Contributor class of the customer company.
-        :param str country: (Updatable) Country of the address.
-        :param str county: (Updatable) County of the address.
-        :param str department_name: (Updatable) Department name of the customer company.
-        :param str email_address: (Updatable) The email address of the paypal user.
-        :param str first_name: (Updatable) First name of the paypal user.
-        :param str internal_number: (Updatable) Internal number of the customer company.
-        :param str job_title: (Updatable) Job title of the contact person.
-        :param str last_name: (Updatable) Last name of the paypal user.
-        :param str line1: (Updatable) Address line 1.
-        :param str line2: (Updatable) Address line 2.
-        :param str line3: (Updatable) Address line 3.
-        :param str line4: (Updatable) Address line 4.
-        :param str middle_name: (Updatable) Middle name of the contact person.
-        :param str municipal_inscription: (Updatable) Municipal Inscription.
-        :param str phone_country_code: (Updatable) Phone country code of the contact person.
-        :param str phone_number: (Updatable) Phone number of the contact person.
-        :param str postal_code: (Updatable) Post code of the address.
-        :param str province: (Updatable) Province of the address.
-        :param str state: (Updatable) State of the address.
-        :param str state_inscription: (Updatable) State Inscription.
-        :param str street_name: (Updatable) Street name of the address.
-        :param str street_number: (Updatable) Street number of the address.
-        """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
         if city is not None:
@@ -617,209 +475,131 @@ class SubscriptionBillingAddress(dict):
     @property
     @pulumi.getter(name="addressKey")
     def address_key(self) -> Optional[str]:
-        """
-        (Updatable) Address identifier.
-        """
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
     def city(self) -> Optional[str]:
-        """
-        (Updatable) Name of the city.
-        """
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
     def company_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the customer company.
-        """
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
     def contributor_class(self) -> Optional[str]:
-        """
-        (Updatable) Contributor class of the customer company.
-        """
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
     def country(self) -> Optional[str]:
-        """
-        (Updatable) Country of the address.
-        """
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
     def county(self) -> Optional[str]:
-        """
-        (Updatable) County of the address.
-        """
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
     def department_name(self) -> Optional[str]:
-        """
-        (Updatable) Department name of the customer company.
-        """
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        (Updatable) The email address of the paypal user.
-        """
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[str]:
-        """
-        (Updatable) First name of the paypal user.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
     def internal_number(self) -> Optional[str]:
-        """
-        (Updatable) Internal number of the customer company.
-        """
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
     def job_title(self) -> Optional[str]:
-        """
-        (Updatable) Job title of the contact person.
-        """
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[str]:
-        """
-        (Updatable) Last name of the paypal user.
-        """
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
     def line1(self) -> Optional[str]:
-        """
-        (Updatable) Address line 1.
-        """
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
     def line2(self) -> Optional[str]:
-        """
-        (Updatable) Address line 2.
-        """
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
     def line3(self) -> Optional[str]:
-        """
-        (Updatable) Address line 3.
-        """
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
     def line4(self) -> Optional[str]:
-        """
-        (Updatable) Address line 4.
-        """
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
     def middle_name(self) -> Optional[str]:
-        """
-        (Updatable) Middle name of the contact person.
-        """
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
     def municipal_inscription(self) -> Optional[str]:
-        """
-        (Updatable) Municipal Inscription.
-        """
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
     def phone_country_code(self) -> Optional[str]:
-        """
-        (Updatable) Phone country code of the contact person.
-        """
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[str]:
-        """
-        (Updatable) Phone number of the contact person.
-        """
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[str]:
-        """
-        (Updatable) Post code of the address.
-        """
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
     def province(self) -> Optional[str]:
-        """
-        (Updatable) Province of the address.
-        """
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        (Updatable) State of the address.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
     def state_inscription(self) -> Optional[str]:
-        """
-        (Updatable) State Inscription.
-        """
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
     def street_name(self) -> Optional[str]:
-        """
-        (Updatable) Street name of the address.
-        """
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
     def street_number(self) -> Optional[str]:
-        """
-        (Updatable) Street number of the address.
-        """
         return pulumi.get(self, "street_number")
 
 
@@ -844,18 +624,12 @@ class SubscriptionPaymentGateway(dict):
 
     def __init__(__self__, *,
                  merchant_defined_datas: Optional[Sequence['outputs.SubscriptionPaymentGatewayMerchantDefinedData']] = None):
-        """
-        :param Sequence['SubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: (Updatable) Merchant details.
-        """
         if merchant_defined_datas is not None:
             pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
     def merchant_defined_datas(self) -> Optional[Sequence['outputs.SubscriptionPaymentGatewayMerchantDefinedData']]:
-        """
-        (Updatable) Merchant details.
-        """
         return pulumi.get(self, "merchant_defined_datas")
 
 
@@ -883,10 +657,6 @@ class SubscriptionPaymentGatewayMerchantDefinedData(dict):
     def __init__(__self__, *,
                  cloud_account_name: Optional[str] = None,
                  promo_type: Optional[str] = None):
-        """
-        :param str cloud_account_name: (Updatable) Cloud account name.
-        :param str promo_type: (Updatable) Promotion type code.
-        """
         if cloud_account_name is not None:
             pulumi.set(__self__, "cloud_account_name", cloud_account_name)
         if promo_type is not None:
@@ -895,17 +665,11 @@ class SubscriptionPaymentGatewayMerchantDefinedData(dict):
     @property
     @pulumi.getter(name="cloudAccountName")
     def cloud_account_name(self) -> Optional[str]:
-        """
-        (Updatable) Cloud account name.
-        """
         return pulumi.get(self, "cloud_account_name")
 
     @property
     @pulumi.getter(name="promoType")
     def promo_type(self) -> Optional[str]:
-        """
-        (Updatable) Promotion type code.
-        """
         return pulumi.get(self, "promo_type")
 
 
@@ -960,19 +724,6 @@ class SubscriptionPaymentOption(dict):
                  time_expiration: Optional[str] = None,
                  wallet_instrument_id: Optional[str] = None,
                  wallet_transaction_id: Optional[str] = None):
-        """
-        :param str credit_card_type: (Updatable) Credit card type.
-        :param str email_address: (Updatable) The email address of the paypal user.
-        :param str ext_billing_agreement_id: (Updatable) Agreement id for the paypal account.
-        :param str first_name: (Updatable) First name of the paypal user.
-        :param str last_digits: (Updatable) Last four digits of the card.
-        :param str last_name: (Updatable) Last name of the paypal user.
-        :param str name_on_card: (Updatable) Name on the credit card.
-        :param str payment_method: (Updatable) Payment method
-        :param str time_expiration: (Updatable) Expired date of the credit card.
-        :param str wallet_instrument_id: (Updatable) Wallet instrument internal id.
-        :param str wallet_transaction_id: (Updatable) Wallet transaction id.
-        """
         if credit_card_type is not None:
             pulumi.set(__self__, "credit_card_type", credit_card_type)
         if email_address is not None:
@@ -999,89 +750,56 @@ class SubscriptionPaymentOption(dict):
     @property
     @pulumi.getter(name="creditCardType")
     def credit_card_type(self) -> Optional[str]:
-        """
-        (Updatable) Credit card type.
-        """
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        (Updatable) The email address of the paypal user.
-        """
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="extBillingAgreementId")
     def ext_billing_agreement_id(self) -> Optional[str]:
-        """
-        (Updatable) Agreement id for the paypal account.
-        """
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[str]:
-        """
-        (Updatable) First name of the paypal user.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastDigits")
     def last_digits(self) -> Optional[str]:
-        """
-        (Updatable) Last four digits of the card.
-        """
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[str]:
-        """
-        (Updatable) Last name of the paypal user.
-        """
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter(name="nameOnCard")
     def name_on_card(self) -> Optional[str]:
-        """
-        (Updatable) Name on the credit card.
-        """
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paymentMethod")
     def payment_method(self) -> Optional[str]:
-        """
-        (Updatable) Payment method
-        """
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="timeExpiration")
     def time_expiration(self) -> Optional[str]:
-        """
-        (Updatable) Expired date of the credit card.
-        """
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="walletInstrumentId")
     def wallet_instrument_id(self) -> Optional[str]:
-        """
-        (Updatable) Wallet instrument internal id.
-        """
         return pulumi.get(self, "wallet_instrument_id")
 
     @property
     @pulumi.getter(name="walletTransactionId")
     def wallet_transaction_id(self) -> Optional[str]:
-        """
-        (Updatable) Wallet transaction id.
-        """
         return pulumi.get(self, "wallet_transaction_id")
 
 
@@ -1164,29 +882,6 @@ class SubscriptionSubscription(dict):
                  time_start: Optional[str] = None,
                  upgrade_state: Optional[str] = None,
                  upgrade_state_details: Optional[str] = None):
-        """
-        :param str subscription_plan_number: (Updatable) Subscription plan number.
-        :param str account_type: (Updatable) Account type.
-        :param str bill_to_cust_account_id: (Updatable) Bill to customer Account id.
-        :param Sequence['SubscriptionSubscriptionBillingAddressArgs'] billing_addresses: (Updatable) Address details model.
-        :param str currency_code: (Updatable) Currency code
-        :param str gsi_org_code: (Updatable) GSI Subscription external code.
-        :param str id: (Updatable) Subscription id identifier (OCID).
-        :param bool is_intent_to_pay: (Updatable) Payment intension.
-        :param str language_code: (Updatable) Language short code (en, de, hu, etc)
-        :param str organization_id: (Updatable) GSI organization external identifier.
-        :param 'SubscriptionSubscriptionPaymentGatewayArgs' payment_gateway: (Updatable) Payment gateway details.
-        :param Sequence['SubscriptionSubscriptionPaymentOptionArgs'] payment_options: (Updatable) Payment option list of a subscription.
-        :param str plan_type: (Updatable) Subscription plan type.
-        :param str ship_to_cust_acct_role_id: (Updatable) Ship to customer account role.
-        :param str ship_to_cust_acct_site_id: (Updatable) Ship to customer account site address id.
-        :param 'SubscriptionSubscriptionTaxInfoArgs' tax_info: (Updatable) Tax details.
-        :param str time_personal_to_corporate_conv: (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        :param str time_plan_upgrade: (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        :param str time_start: (Updatable) Start date of the subscription.
-        :param str upgrade_state: (Updatable) Status of the upgrade.
-        :param str upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
         pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
         if account_type is not None:
             pulumi.set(__self__, "account_type", account_type)
@@ -1232,169 +927,106 @@ class SubscriptionSubscription(dict):
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
     def subscription_plan_number(self) -> str:
-        """
-        (Updatable) Subscription plan number.
-        """
         return pulumi.get(self, "subscription_plan_number")
 
     @property
     @pulumi.getter(name="accountType")
     def account_type(self) -> Optional[str]:
-        """
-        (Updatable) Account type.
-        """
         return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter(name="billToCustAccountId")
     def bill_to_cust_account_id(self) -> Optional[str]:
-        """
-        (Updatable) Bill to customer Account id.
-        """
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @property
     @pulumi.getter(name="billingAddresses")
     def billing_addresses(self) -> Optional[Sequence['outputs.SubscriptionSubscriptionBillingAddress']]:
-        """
-        (Updatable) Address details model.
-        """
         return pulumi.get(self, "billing_addresses")
 
     @property
     @pulumi.getter(name="currencyCode")
     def currency_code(self) -> Optional[str]:
-        """
-        (Updatable) Currency code
-        """
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="gsiOrgCode")
     def gsi_org_code(self) -> Optional[str]:
-        """
-        (Updatable) GSI Subscription external code.
-        """
         return pulumi.get(self, "gsi_org_code")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        (Updatable) Subscription id identifier (OCID).
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIntentToPay")
     def is_intent_to_pay(self) -> Optional[bool]:
-        """
-        (Updatable) Payment intension.
-        """
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="languageCode")
     def language_code(self) -> Optional[str]:
-        """
-        (Updatable) Language short code (en, de, hu, etc)
-        """
         return pulumi.get(self, "language_code")
 
     @property
     @pulumi.getter(name="organizationId")
     def organization_id(self) -> Optional[str]:
-        """
-        (Updatable) GSI organization external identifier.
-        """
         return pulumi.get(self, "organization_id")
 
     @property
     @pulumi.getter(name="paymentGateway")
     def payment_gateway(self) -> Optional['outputs.SubscriptionSubscriptionPaymentGateway']:
-        """
-        (Updatable) Payment gateway details.
-        """
         return pulumi.get(self, "payment_gateway")
 
     @property
     @pulumi.getter(name="paymentOptions")
     def payment_options(self) -> Optional[Sequence['outputs.SubscriptionSubscriptionPaymentOption']]:
-        """
-        (Updatable) Payment option list of a subscription.
-        """
         return pulumi.get(self, "payment_options")
 
     @property
     @pulumi.getter(name="planType")
     def plan_type(self) -> Optional[str]:
-        """
-        (Updatable) Subscription plan type.
-        """
         return pulumi.get(self, "plan_type")
 
     @property
     @pulumi.getter(name="shipToCustAcctRoleId")
     def ship_to_cust_acct_role_id(self) -> Optional[str]:
-        """
-        (Updatable) Ship to customer account role.
-        """
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @property
     @pulumi.getter(name="shipToCustAcctSiteId")
     def ship_to_cust_acct_site_id(self) -> Optional[str]:
-        """
-        (Updatable) Ship to customer account site address id.
-        """
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @property
     @pulumi.getter(name="taxInfo")
     def tax_info(self) -> Optional['outputs.SubscriptionSubscriptionTaxInfo']:
-        """
-        (Updatable) Tax details.
-        """
         return pulumi.get(self, "tax_info")
 
     @property
     @pulumi.getter(name="timePersonalToCorporateConv")
     def time_personal_to_corporate_conv(self) -> Optional[str]:
-        """
-        (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        """
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @property
     @pulumi.getter(name="timePlanUpgrade")
     def time_plan_upgrade(self) -> Optional[str]:
-        """
-        (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        """
         return pulumi.get(self, "time_plan_upgrade")
 
     @property
     @pulumi.getter(name="timeStart")
     def time_start(self) -> Optional[str]:
-        """
-        (Updatable) Start date of the subscription.
-        """
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="upgradeState")
     def upgrade_state(self) -> Optional[str]:
-        """
-        (Updatable) Status of the upgrade.
-        """
         return pulumi.get(self, "upgrade_state")
 
     @property
     @pulumi.getter(name="upgradeStateDetails")
     def upgrade_state_details(self) -> Optional[str]:
-        """
-        (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
         return pulumi.get(self, "upgrade_state_details")
 
 
@@ -1476,34 +1108,6 @@ class SubscriptionSubscriptionBillingAddress(dict):
                  state_inscription: Optional[str] = None,
                  street_name: Optional[str] = None,
                  street_number: Optional[str] = None):
-        """
-        :param str address_key: (Updatable) Address identifier.
-        :param str city: (Updatable) Name of the city.
-        :param str company_name: (Updatable) Name of the customer company.
-        :param str contributor_class: (Updatable) Contributor class of the customer company.
-        :param str country: (Updatable) Country of the address.
-        :param str county: (Updatable) County of the address.
-        :param str department_name: (Updatable) Department name of the customer company.
-        :param str email_address: (Updatable) The email address of the paypal user.
-        :param str first_name: (Updatable) First name of the paypal user.
-        :param str internal_number: (Updatable) Internal number of the customer company.
-        :param str job_title: (Updatable) Job title of the contact person.
-        :param str last_name: (Updatable) Last name of the paypal user.
-        :param str line1: (Updatable) Address line 1.
-        :param str line2: (Updatable) Address line 2.
-        :param str line3: (Updatable) Address line 3.
-        :param str line4: (Updatable) Address line 4.
-        :param str middle_name: (Updatable) Middle name of the contact person.
-        :param str municipal_inscription: (Updatable) Municipal Inscription.
-        :param str phone_country_code: (Updatable) Phone country code of the contact person.
-        :param str phone_number: (Updatable) Phone number of the contact person.
-        :param str postal_code: (Updatable) Post code of the address.
-        :param str province: (Updatable) Province of the address.
-        :param str state: (Updatable) State of the address.
-        :param str state_inscription: (Updatable) State Inscription.
-        :param str street_name: (Updatable) Street name of the address.
-        :param str street_number: (Updatable) Street number of the address.
-        """
         if address_key is not None:
             pulumi.set(__self__, "address_key", address_key)
         if city is not None:
@@ -1560,209 +1164,131 @@ class SubscriptionSubscriptionBillingAddress(dict):
     @property
     @pulumi.getter(name="addressKey")
     def address_key(self) -> Optional[str]:
-        """
-        (Updatable) Address identifier.
-        """
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
     def city(self) -> Optional[str]:
-        """
-        (Updatable) Name of the city.
-        """
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
     def company_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the customer company.
-        """
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
     def contributor_class(self) -> Optional[str]:
-        """
-        (Updatable) Contributor class of the customer company.
-        """
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
     def country(self) -> Optional[str]:
-        """
-        (Updatable) Country of the address.
-        """
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
     def county(self) -> Optional[str]:
-        """
-        (Updatable) County of the address.
-        """
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
     def department_name(self) -> Optional[str]:
-        """
-        (Updatable) Department name of the customer company.
-        """
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        (Updatable) The email address of the paypal user.
-        """
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[str]:
-        """
-        (Updatable) First name of the paypal user.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
     def internal_number(self) -> Optional[str]:
-        """
-        (Updatable) Internal number of the customer company.
-        """
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
     def job_title(self) -> Optional[str]:
-        """
-        (Updatable) Job title of the contact person.
-        """
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[str]:
-        """
-        (Updatable) Last name of the paypal user.
-        """
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
     def line1(self) -> Optional[str]:
-        """
-        (Updatable) Address line 1.
-        """
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
     def line2(self) -> Optional[str]:
-        """
-        (Updatable) Address line 2.
-        """
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
     def line3(self) -> Optional[str]:
-        """
-        (Updatable) Address line 3.
-        """
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
     def line4(self) -> Optional[str]:
-        """
-        (Updatable) Address line 4.
-        """
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
     def middle_name(self) -> Optional[str]:
-        """
-        (Updatable) Middle name of the contact person.
-        """
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
     def municipal_inscription(self) -> Optional[str]:
-        """
-        (Updatable) Municipal Inscription.
-        """
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
     def phone_country_code(self) -> Optional[str]:
-        """
-        (Updatable) Phone country code of the contact person.
-        """
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
     def phone_number(self) -> Optional[str]:
-        """
-        (Updatable) Phone number of the contact person.
-        """
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
     def postal_code(self) -> Optional[str]:
-        """
-        (Updatable) Post code of the address.
-        """
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
     def province(self) -> Optional[str]:
-        """
-        (Updatable) Province of the address.
-        """
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        (Updatable) State of the address.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
     def state_inscription(self) -> Optional[str]:
-        """
-        (Updatable) State Inscription.
-        """
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
     def street_name(self) -> Optional[str]:
-        """
-        (Updatable) Street name of the address.
-        """
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
     def street_number(self) -> Optional[str]:
-        """
-        (Updatable) Street number of the address.
-        """
         return pulumi.get(self, "street_number")
 
 
@@ -1787,18 +1313,12 @@ class SubscriptionSubscriptionPaymentGateway(dict):
 
     def __init__(__self__, *,
                  merchant_defined_data: Optional['outputs.SubscriptionSubscriptionPaymentGatewayMerchantDefinedData'] = None):
-        """
-        :param 'SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs' merchant_defined_data: (Updatable) Merchant details.
-        """
         if merchant_defined_data is not None:
             pulumi.set(__self__, "merchant_defined_data", merchant_defined_data)
 
     @property
     @pulumi.getter(name="merchantDefinedData")
     def merchant_defined_data(self) -> Optional['outputs.SubscriptionSubscriptionPaymentGatewayMerchantDefinedData']:
-        """
-        (Updatable) Merchant details.
-        """
         return pulumi.get(self, "merchant_defined_data")
 
 
@@ -1826,10 +1346,6 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedData(dict):
     def __init__(__self__, *,
                  cloud_account_name: Optional[str] = None,
                  promo_type: Optional[str] = None):
-        """
-        :param str cloud_account_name: (Updatable) Cloud account name.
-        :param str promo_type: (Updatable) Promotion type code.
-        """
         if cloud_account_name is not None:
             pulumi.set(__self__, "cloud_account_name", cloud_account_name)
         if promo_type is not None:
@@ -1838,17 +1354,11 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedData(dict):
     @property
     @pulumi.getter(name="cloudAccountName")
     def cloud_account_name(self) -> Optional[str]:
-        """
-        (Updatable) Cloud account name.
-        """
         return pulumi.get(self, "cloud_account_name")
 
     @property
     @pulumi.getter(name="promoType")
     def promo_type(self) -> Optional[str]:
-        """
-        (Updatable) Promotion type code.
-        """
         return pulumi.get(self, "promo_type")
 
 
@@ -1903,19 +1413,6 @@ class SubscriptionSubscriptionPaymentOption(dict):
                  time_expiration: Optional[str] = None,
                  wallet_instrument_id: Optional[str] = None,
                  wallet_transaction_id: Optional[str] = None):
-        """
-        :param str payment_method: (Updatable) Payment method
-        :param str credit_card_type: (Updatable) Credit card type.
-        :param str email_address: (Updatable) The email address of the paypal user.
-        :param str ext_billing_agreement_id: (Updatable) Agreement id for the paypal account.
-        :param str first_name: (Updatable) First name of the paypal user.
-        :param str last_digits: (Updatable) Last four digits of the card.
-        :param str last_name: (Updatable) Last name of the paypal user.
-        :param str name_on_card: (Updatable) Name on the credit card.
-        :param str time_expiration: (Updatable) Expired date of the credit card.
-        :param str wallet_instrument_id: (Updatable) Wallet instrument internal id.
-        :param str wallet_transaction_id: (Updatable) Wallet transaction id.
-        """
         pulumi.set(__self__, "payment_method", payment_method)
         if credit_card_type is not None:
             pulumi.set(__self__, "credit_card_type", credit_card_type)
@@ -1941,89 +1438,56 @@ class SubscriptionSubscriptionPaymentOption(dict):
     @property
     @pulumi.getter(name="paymentMethod")
     def payment_method(self) -> str:
-        """
-        (Updatable) Payment method
-        """
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="creditCardType")
     def credit_card_type(self) -> Optional[str]:
-        """
-        (Updatable) Credit card type.
-        """
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        (Updatable) The email address of the paypal user.
-        """
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="extBillingAgreementId")
     def ext_billing_agreement_id(self) -> Optional[str]:
-        """
-        (Updatable) Agreement id for the paypal account.
-        """
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[str]:
-        """
-        (Updatable) First name of the paypal user.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastDigits")
     def last_digits(self) -> Optional[str]:
-        """
-        (Updatable) Last four digits of the card.
-        """
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[str]:
-        """
-        (Updatable) Last name of the paypal user.
-        """
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter(name="nameOnCard")
     def name_on_card(self) -> Optional[str]:
-        """
-        (Updatable) Name on the credit card.
-        """
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="timeExpiration")
     def time_expiration(self) -> Optional[str]:
-        """
-        (Updatable) Expired date of the credit card.
-        """
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="walletInstrumentId")
     def wallet_instrument_id(self) -> Optional[str]:
-        """
-        (Updatable) Wallet instrument internal id.
-        """
         return pulumi.get(self, "wallet_instrument_id")
 
     @property
     @pulumi.getter(name="walletTransactionId")
     def wallet_transaction_id(self) -> Optional[str]:
-        """
-        (Updatable) Wallet transaction id.
-        """
         return pulumi.get(self, "wallet_transaction_id")
 
 
@@ -2060,13 +1524,6 @@ class SubscriptionSubscriptionTaxInfo(dict):
                  tax_cnpj: Optional[str] = None,
                  tax_payer_id: Optional[str] = None,
                  tax_reg_number: Optional[str] = None):
-        """
-        :param str no_tax_reason_code: (Updatable) Tax exemption reason code.
-        :param str no_tax_reason_code_details: (Updatable) Tax exemption reason description.
-        :param str tax_cnpj: (Updatable) Brazilian companies' CNPJ number.
-        :param str tax_payer_id: (Updatable) Tay payer identifier.
-        :param str tax_reg_number: (Updatable) Tax registration number.
-        """
         if no_tax_reason_code is not None:
             pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2081,41 +1538,26 @@ class SubscriptionSubscriptionTaxInfo(dict):
     @property
     @pulumi.getter(name="noTaxReasonCode")
     def no_tax_reason_code(self) -> Optional[str]:
-        """
-        (Updatable) Tax exemption reason code.
-        """
         return pulumi.get(self, "no_tax_reason_code")
 
     @property
     @pulumi.getter(name="noTaxReasonCodeDetails")
     def no_tax_reason_code_details(self) -> Optional[str]:
-        """
-        (Updatable) Tax exemption reason description.
-        """
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @property
     @pulumi.getter(name="taxCnpj")
     def tax_cnpj(self) -> Optional[str]:
-        """
-        (Updatable) Brazilian companies' CNPJ number.
-        """
         return pulumi.get(self, "tax_cnpj")
 
     @property
     @pulumi.getter(name="taxPayerId")
     def tax_payer_id(self) -> Optional[str]:
-        """
-        (Updatable) Tay payer identifier.
-        """
         return pulumi.get(self, "tax_payer_id")
 
     @property
     @pulumi.getter(name="taxRegNumber")
     def tax_reg_number(self) -> Optional[str]:
-        """
-        (Updatable) Tax registration number.
-        """
         return pulumi.get(self, "tax_reg_number")
 
 
@@ -2152,13 +1594,6 @@ class SubscriptionTaxInfo(dict):
                  tax_cnpj: Optional[str] = None,
                  tax_payer_id: Optional[str] = None,
                  tax_reg_number: Optional[str] = None):
-        """
-        :param str no_tax_reason_code: (Updatable) Tax exemption reason code.
-        :param str no_tax_reason_code_details: (Updatable) Tax exemption reason description.
-        :param str tax_cnpj: (Updatable) Brazilian companies' CNPJ number.
-        :param str tax_payer_id: (Updatable) Tay payer identifier.
-        :param str tax_reg_number: (Updatable) Tax registration number.
-        """
         if no_tax_reason_code is not None:
             pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
@@ -2173,912 +1608,658 @@ class SubscriptionTaxInfo(dict):
     @property
     @pulumi.getter(name="noTaxReasonCode")
     def no_tax_reason_code(self) -> Optional[str]:
-        """
-        (Updatable) Tax exemption reason code.
-        """
         return pulumi.get(self, "no_tax_reason_code")
 
     @property
     @pulumi.getter(name="noTaxReasonCodeDetails")
     def no_tax_reason_code_details(self) -> Optional[str]:
-        """
-        (Updatable) Tax exemption reason description.
-        """
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @property
     @pulumi.getter(name="taxCnpj")
     def tax_cnpj(self) -> Optional[str]:
-        """
-        (Updatable) Brazilian companies' CNPJ number.
-        """
         return pulumi.get(self, "tax_cnpj")
 
     @property
     @pulumi.getter(name="taxPayerId")
     def tax_payer_id(self) -> Optional[str]:
-        """
-        (Updatable) Tay payer identifier.
-        """
         return pulumi.get(self, "tax_payer_id")
 
     @property
     @pulumi.getter(name="taxRegNumber")
     def tax_reg_number(self) -> Optional[str]:
-        """
-        (Updatable) Tax registration number.
-        """
         return pulumi.get(self, "tax_reg_number")
 
 
 @pulumi.output_type
 class GetAddressRuleAddressResult(dict):
     def __init__(__self__, *,
-                 fields: Sequence['outputs.GetAddressRuleAddressFieldResult'],
-                 third_party_validation: str):
-        """
-        :param Sequence['GetAddressRuleAddressFieldArgs'] fields: Tax type rule fields
-        :param str third_party_validation: Third party validation.
-        """
-        pulumi.set(__self__, "fields", fields)
-        pulumi.set(__self__, "third_party_validation", third_party_validation)
+                 fields: Optional[Sequence['outputs.GetAddressRuleAddressFieldResult']] = None,
+                 third_party_validation: Optional[str] = None):
+        if fields is not None:
+            pulumi.set(__self__, "fields", fields)
+        if third_party_validation is not None:
+            pulumi.set(__self__, "third_party_validation", third_party_validation)
 
     @property
     @pulumi.getter
-    def fields(self) -> Sequence['outputs.GetAddressRuleAddressFieldResult']:
-        """
-        Tax type rule fields
-        """
+    def fields(self) -> Optional[Sequence['outputs.GetAddressRuleAddressFieldResult']]:
         return pulumi.get(self, "fields")
 
     @property
     @pulumi.getter(name="thirdPartyValidation")
-    def third_party_validation(self) -> str:
-        """
-        Third party validation.
-        """
+    def third_party_validation(self) -> Optional[str]:
         return pulumi.get(self, "third_party_validation")
 
 
 @pulumi.output_type
 class GetAddressRuleAddressFieldResult(dict):
     def __init__(__self__, *,
-                 formats: Sequence['outputs.GetAddressRuleAddressFieldFormatResult'],
-                 is_required: bool,
-                 labels: Sequence['outputs.GetAddressRuleAddressFieldLabelResult'],
-                 language: str,
-                 name: str):
-        """
-        :param Sequence['GetAddressRuleAddressFieldFormatArgs'] formats: Format information
-        :param bool is_required: The given field is requeired or not
-        :param Sequence['GetAddressRuleAddressFieldLabelArgs'] labels: Label information
-        :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        :param str name: The field name
-        """
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "name", name)
+                 formats: Optional[Sequence['outputs.GetAddressRuleAddressFieldFormatResult']] = None,
+                 is_required: Optional[bool] = None,
+                 labels: Optional[Sequence['outputs.GetAddressRuleAddressFieldLabelResult']] = None,
+                 language: Optional[str] = None,
+                 name: Optional[str] = None):
+        if formats is not None:
+            pulumi.set(__self__, "formats", formats)
+        if is_required is not None:
+            pulumi.set(__self__, "is_required", is_required)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def formats(self) -> Sequence['outputs.GetAddressRuleAddressFieldFormatResult']:
-        """
-        Format information
-        """
+    def formats(self) -> Optional[Sequence['outputs.GetAddressRuleAddressFieldFormatResult']]:
         return pulumi.get(self, "formats")
 
     @property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> bool:
-        """
-        The given field is requeired or not
-        """
+    def is_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_required")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence['outputs.GetAddressRuleAddressFieldLabelResult']:
-        """
-        Label information
-        """
+    def labels(self) -> Optional[Sequence['outputs.GetAddressRuleAddressFieldLabelResult']]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter
-    def language(self) -> str:
-        """
-        Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        """
+    def language(self) -> Optional[str]:
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The field name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetAddressRuleAddressFieldFormatResult(dict):
     def __init__(__self__, *,
-                 example: str,
-                 value: str):
-        """
-        :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
-        """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+                 example: Optional[str] = None,
+                 value: Optional[str] = None):
+        if example is not None:
+            pulumi.set(__self__, "example", example)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def example(self) -> str:
-        """
-        English translation of the label (for reference only - translation is not provided)
-        """
+    def example(self) -> Optional[str]:
         return pulumi.get(self, "example")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Language token of the required label
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAddressRuleAddressFieldLabelResult(dict):
     def __init__(__self__, *,
-                 example: str,
-                 value: str):
-        """
-        :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
-        """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+                 example: Optional[str] = None,
+                 value: Optional[str] = None):
+        if example is not None:
+            pulumi.set(__self__, "example", example)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def example(self) -> str:
-        """
-        English translation of the label (for reference only - translation is not provided)
-        """
+    def example(self) -> Optional[str]:
         return pulumi.get(self, "example")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Language token of the required label
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAddressRuleContactResult(dict):
     def __init__(__self__, *,
-                 fields: Sequence['outputs.GetAddressRuleContactFieldResult']):
-        """
-        :param Sequence['GetAddressRuleContactFieldArgs'] fields: Tax type rule fields
-        """
-        pulumi.set(__self__, "fields", fields)
+                 fields: Optional[Sequence['outputs.GetAddressRuleContactFieldResult']] = None):
+        if fields is not None:
+            pulumi.set(__self__, "fields", fields)
 
     @property
     @pulumi.getter
-    def fields(self) -> Sequence['outputs.GetAddressRuleContactFieldResult']:
-        """
-        Tax type rule fields
-        """
+    def fields(self) -> Optional[Sequence['outputs.GetAddressRuleContactFieldResult']]:
         return pulumi.get(self, "fields")
 
 
 @pulumi.output_type
 class GetAddressRuleContactFieldResult(dict):
     def __init__(__self__, *,
-                 formats: Sequence['outputs.GetAddressRuleContactFieldFormatResult'],
-                 is_required: bool,
-                 labels: Sequence['outputs.GetAddressRuleContactFieldLabelResult'],
-                 language: str,
-                 name: str):
-        """
-        :param Sequence['GetAddressRuleContactFieldFormatArgs'] formats: Format information
-        :param bool is_required: The given field is requeired or not
-        :param Sequence['GetAddressRuleContactFieldLabelArgs'] labels: Label information
-        :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        :param str name: The field name
-        """
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "name", name)
+                 formats: Optional[Sequence['outputs.GetAddressRuleContactFieldFormatResult']] = None,
+                 is_required: Optional[bool] = None,
+                 labels: Optional[Sequence['outputs.GetAddressRuleContactFieldLabelResult']] = None,
+                 language: Optional[str] = None,
+                 name: Optional[str] = None):
+        if formats is not None:
+            pulumi.set(__self__, "formats", formats)
+        if is_required is not None:
+            pulumi.set(__self__, "is_required", is_required)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def formats(self) -> Sequence['outputs.GetAddressRuleContactFieldFormatResult']:
-        """
-        Format information
-        """
+    def formats(self) -> Optional[Sequence['outputs.GetAddressRuleContactFieldFormatResult']]:
         return pulumi.get(self, "formats")
 
     @property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> bool:
-        """
-        The given field is requeired or not
-        """
+    def is_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_required")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence['outputs.GetAddressRuleContactFieldLabelResult']:
-        """
-        Label information
-        """
+    def labels(self) -> Optional[Sequence['outputs.GetAddressRuleContactFieldLabelResult']]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter
-    def language(self) -> str:
-        """
-        Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        """
+    def language(self) -> Optional[str]:
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The field name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetAddressRuleContactFieldFormatResult(dict):
     def __init__(__self__, *,
-                 example: str,
-                 value: str):
-        """
-        :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
-        """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+                 example: Optional[str] = None,
+                 value: Optional[str] = None):
+        if example is not None:
+            pulumi.set(__self__, "example", example)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def example(self) -> str:
-        """
-        English translation of the label (for reference only - translation is not provided)
-        """
+    def example(self) -> Optional[str]:
         return pulumi.get(self, "example")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Language token of the required label
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAddressRuleContactFieldLabelResult(dict):
     def __init__(__self__, *,
-                 example: str,
-                 value: str):
-        """
-        :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
-        """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+                 example: Optional[str] = None,
+                 value: Optional[str] = None):
+        if example is not None:
+            pulumi.set(__self__, "example", example)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def example(self) -> str:
-        """
-        English translation of the label (for reference only - translation is not provided)
-        """
+    def example(self) -> Optional[str]:
         return pulumi.get(self, "example")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Language token of the required label
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAddressRuleTaxResult(dict):
     def __init__(__self__, *,
-                 fields: Sequence['outputs.GetAddressRuleTaxFieldResult']):
-        """
-        :param Sequence['GetAddressRuleTaxFieldArgs'] fields: Tax type rule fields
-        """
-        pulumi.set(__self__, "fields", fields)
+                 fields: Optional[Sequence['outputs.GetAddressRuleTaxFieldResult']] = None):
+        if fields is not None:
+            pulumi.set(__self__, "fields", fields)
 
     @property
     @pulumi.getter
-    def fields(self) -> Sequence['outputs.GetAddressRuleTaxFieldResult']:
-        """
-        Tax type rule fields
-        """
+    def fields(self) -> Optional[Sequence['outputs.GetAddressRuleTaxFieldResult']]:
         return pulumi.get(self, "fields")
 
 
 @pulumi.output_type
 class GetAddressRuleTaxFieldResult(dict):
     def __init__(__self__, *,
-                 formats: Sequence['outputs.GetAddressRuleTaxFieldFormatResult'],
-                 is_required: bool,
-                 labels: Sequence['outputs.GetAddressRuleTaxFieldLabelResult'],
-                 language: str,
-                 name: str):
-        """
-        :param Sequence['GetAddressRuleTaxFieldFormatArgs'] formats: Format information
-        :param bool is_required: The given field is requeired or not
-        :param Sequence['GetAddressRuleTaxFieldLabelArgs'] labels: Label information
-        :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        :param str name: The field name
-        """
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "name", name)
+                 formats: Optional[Sequence['outputs.GetAddressRuleTaxFieldFormatResult']] = None,
+                 is_required: Optional[bool] = None,
+                 labels: Optional[Sequence['outputs.GetAddressRuleTaxFieldLabelResult']] = None,
+                 language: Optional[str] = None,
+                 name: Optional[str] = None):
+        if formats is not None:
+            pulumi.set(__self__, "formats", formats)
+        if is_required is not None:
+            pulumi.set(__self__, "is_required", is_required)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def formats(self) -> Sequence['outputs.GetAddressRuleTaxFieldFormatResult']:
-        """
-        Format information
-        """
+    def formats(self) -> Optional[Sequence['outputs.GetAddressRuleTaxFieldFormatResult']]:
         return pulumi.get(self, "formats")
 
     @property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> bool:
-        """
-        The given field is requeired or not
-        """
+    def is_required(self) -> Optional[bool]:
         return pulumi.get(self, "is_required")
 
     @property
     @pulumi.getter
-    def labels(self) -> Sequence['outputs.GetAddressRuleTaxFieldLabelResult']:
-        """
-        Label information
-        """
+    def labels(self) -> Optional[Sequence['outputs.GetAddressRuleTaxFieldLabelResult']]:
         return pulumi.get(self, "labels")
 
     @property
     @pulumi.getter
-    def language(self) -> str:
-        """
-        Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-        """
+    def language(self) -> Optional[str]:
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The field name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetAddressRuleTaxFieldFormatResult(dict):
     def __init__(__self__, *,
-                 example: str,
-                 value: str):
-        """
-        :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
-        """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+                 example: Optional[str] = None,
+                 value: Optional[str] = None):
+        if example is not None:
+            pulumi.set(__self__, "example", example)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def example(self) -> str:
-        """
-        English translation of the label (for reference only - translation is not provided)
-        """
+    def example(self) -> Optional[str]:
         return pulumi.get(self, "example")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Language token of the required label
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAddressRuleTaxFieldLabelResult(dict):
     def __init__(__self__, *,
-                 example: str,
-                 value: str):
-        """
-        :param str example: English translation of the label (for reference only - translation is not provided)
-        :param str value: Language token of the required label
-        """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+                 example: Optional[str] = None,
+                 value: Optional[str] = None):
+        if example is not None:
+            pulumi.set(__self__, "example", example)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def example(self) -> str:
-        """
-        English translation of the label (for reference only - translation is not provided)
-        """
+    def example(self) -> Optional[str]:
         return pulumi.get(self, "example")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Language token of the required label
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetInvoiceBillToAddressResult(dict):
     def __init__(__self__, *,
-                 address_line1: str,
-                 address_line2: str,
-                 address_line3: str,
-                 address_line4: str,
-                 city: str,
-                 company_name: str,
-                 contact_name: str,
-                 countries: Sequence['outputs.GetInvoiceBillToAddressCountryResult'],
-                 county: str,
-                 postal_code: str,
-                 province: str,
-                 state: str,
-                 street_name: str,
-                 street_number: str):
-        """
-        :param str address_line1: Address line 1
-        :param str address_line2: Address line 2
-        :param str address_line3: Address line 3
-        :param str address_line4: Address line 4
-        :param str city: Name of the city
-        :param str company_name: Name of the customer company
-        :param str contact_name: Name of the contact person
-        :param Sequence['GetInvoiceBillToAddressCountryArgs'] countries: Country details model
-        :param str county: County name
-        :param str postal_code: ZIP no
-        :param str province: Name of the province
-        :param str state: Name of the state
-        :param str street_name: Street name
-        :param str street_number: House no
-        """
-        pulumi.set(__self__, "address_line1", address_line1)
-        pulumi.set(__self__, "address_line2", address_line2)
-        pulumi.set(__self__, "address_line3", address_line3)
-        pulumi.set(__self__, "address_line4", address_line4)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contact_name", contact_name)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+                 address_line1: Optional[str] = None,
+                 address_line2: Optional[str] = None,
+                 address_line3: Optional[str] = None,
+                 address_line4: Optional[str] = None,
+                 city: Optional[str] = None,
+                 company_name: Optional[str] = None,
+                 contact_name: Optional[str] = None,
+                 countries: Optional[Sequence['outputs.GetInvoiceBillToAddressCountryResult']] = None,
+                 county: Optional[str] = None,
+                 postal_code: Optional[str] = None,
+                 province: Optional[str] = None,
+                 state: Optional[str] = None,
+                 street_name: Optional[str] = None,
+                 street_number: Optional[str] = None):
+        if address_line1 is not None:
+            pulumi.set(__self__, "address_line1", address_line1)
+        if address_line2 is not None:
+            pulumi.set(__self__, "address_line2", address_line2)
+        if address_line3 is not None:
+            pulumi.set(__self__, "address_line3", address_line3)
+        if address_line4 is not None:
+            pulumi.set(__self__, "address_line4", address_line4)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contact_name is not None:
+            pulumi.set(__self__, "contact_name", contact_name)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressLine1")
-    def address_line1(self) -> str:
-        """
-        Address line 1
-        """
+    def address_line1(self) -> Optional[str]:
         return pulumi.get(self, "address_line1")
 
     @property
     @pulumi.getter(name="addressLine2")
-    def address_line2(self) -> str:
-        """
-        Address line 2
-        """
+    def address_line2(self) -> Optional[str]:
         return pulumi.get(self, "address_line2")
 
     @property
     @pulumi.getter(name="addressLine3")
-    def address_line3(self) -> str:
-        """
-        Address line 3
-        """
+    def address_line3(self) -> Optional[str]:
         return pulumi.get(self, "address_line3")
 
     @property
     @pulumi.getter(name="addressLine4")
-    def address_line4(self) -> str:
-        """
-        Address line 4
-        """
+    def address_line4(self) -> Optional[str]:
         return pulumi.get(self, "address_line4")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contactName")
-    def contact_name(self) -> str:
-        """
-        Name of the contact person
-        """
+    def contact_name(self) -> Optional[str]:
         return pulumi.get(self, "contact_name")
 
     @property
     @pulumi.getter
-    def countries(self) -> Sequence['outputs.GetInvoiceBillToAddressCountryResult']:
-        """
-        Country details model
-        """
+    def countries(self) -> Optional[Sequence['outputs.GetInvoiceBillToAddressCountryResult']]:
         return pulumi.get(self, "countries")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County name
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        ZIP no
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Name of the province
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Name of the state
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        House no
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
 @pulumi.output_type
 class GetInvoiceBillToAddressCountryResult(dict):
     def __init__(__self__, *,
-                 ascii3country_code: str,
-                 country_code: str,
-                 country_id: float,
-                 country_name: str,
-                 language_id: float):
-        """
-        :param str ascii3country_code: Country code in ISO-3166-1 3-letter format
-        :param str country_code: Country code in ISO-3166-1 2-letter format
-        :param float country_id: Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-        :param str country_name: Name of the country
-        :param float language_id: Language identifier
-        """
-        pulumi.set(__self__, "ascii3country_code", ascii3country_code)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_id", country_id)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "language_id", language_id)
+                 ascii3country_code: Optional[str] = None,
+                 country_code: Optional[str] = None,
+                 country_id: Optional[float] = None,
+                 country_name: Optional[str] = None,
+                 language_id: Optional[float] = None):
+        if ascii3country_code is not None:
+            pulumi.set(__self__, "ascii3country_code", ascii3country_code)
+        if country_code is not None:
+            pulumi.set(__self__, "country_code", country_code)
+        if country_id is not None:
+            pulumi.set(__self__, "country_id", country_id)
+        if country_name is not None:
+            pulumi.set(__self__, "country_name", country_name)
+        if language_id is not None:
+            pulumi.set(__self__, "language_id", language_id)
 
     @property
     @pulumi.getter(name="ascii3countryCode")
-    def ascii3country_code(self) -> str:
-        """
-        Country code in ISO-3166-1 3-letter format
-        """
+    def ascii3country_code(self) -> Optional[str]:
         return pulumi.get(self, "ascii3country_code")
 
     @property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> str:
-        """
-        Country code in ISO-3166-1 2-letter format
-        """
+    def country_code(self) -> Optional[str]:
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter(name="countryId")
-    def country_id(self) -> float:
-        """
-        Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-        """
+    def country_id(self) -> Optional[float]:
         return pulumi.get(self, "country_id")
 
     @property
     @pulumi.getter(name="countryName")
-    def country_name(self) -> str:
-        """
-        Name of the country
-        """
+    def country_name(self) -> Optional[str]:
         return pulumi.get(self, "country_name")
 
     @property
     @pulumi.getter(name="languageId")
-    def language_id(self) -> float:
-        """
-        Language identifier
-        """
+    def language_id(self) -> Optional[float]:
         return pulumi.get(self, "language_id")
 
 
 @pulumi.output_type
 class GetInvoiceCurrencyResult(dict):
     def __init__(__self__, *,
-                 currency_code: str,
-                 currency_symbol: str,
-                 name: str,
-                 round_decimal_point: float,
-                 usd_conversion: float):
-        """
-        :param str currency_code: Currency code
-        :param str currency_symbol: Currency symbol
-        :param str name: Name of the currency
-        :param float round_decimal_point: Round decimal point
-        :param float usd_conversion: USD conversion rate of the currency
-        """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+                 currency_code: Optional[str] = None,
+                 currency_symbol: Optional[str] = None,
+                 name: Optional[str] = None,
+                 round_decimal_point: Optional[float] = None,
+                 usd_conversion: Optional[float] = None):
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if currency_symbol is not None:
+            pulumi.set(__self__, "currency_symbol", currency_symbol)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if round_decimal_point is not None:
+            pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        if usd_conversion is not None:
+            pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="currencySymbol")
-    def currency_symbol(self) -> str:
-        """
-        Currency symbol
-        """
+    def currency_symbol(self) -> Optional[str]:
         return pulumi.get(self, "currency_symbol")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the currency
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="roundDecimalPoint")
-    def round_decimal_point(self) -> float:
-        """
-        Round decimal point
-        """
+    def round_decimal_point(self) -> Optional[float]:
         return pulumi.get(self, "round_decimal_point")
 
     @property
     @pulumi.getter(name="usdConversion")
-    def usd_conversion(self) -> float:
-        """
-        USD conversion rate of the currency
-        """
+    def usd_conversion(self) -> Optional[float]:
         return pulumi.get(self, "usd_conversion")
 
 
 @pulumi.output_type
 class GetInvoiceLastPaymentDetailResult(dict):
     def __init__(__self__, *,
-                 account_number: str,
-                 amount_paid: float,
-                 card_type: str,
-                 credit_card_type: str,
-                 echeck_routing: str,
-                 last_digits: str,
-                 name_on_card: str,
-                 paid_by: str,
-                 payment_method: str,
-                 paypal_id: str,
-                 paypal_reference: str,
-                 routing_number: str,
-                 time_expiration: str,
-                 time_paid_on: str):
-        """
-        :param str account_number: Account number of the card owner
-        :param float amount_paid: Amount that paid
-        :param str card_type: Echeck card type
-        :param str credit_card_type: Credit card type
-        :param str echeck_routing: Last four routing digits of the card
-        :param str last_digits: Last four digits of the card
-        :param str name_on_card: Name on the credit card
-        :param str paid_by: example
-        :param str payment_method: Payment method
-        :param str paypal_id: The id (email address) of the paypal payment
-        :param str paypal_reference: paypal payment reference
-        :param str routing_number: Routing number of the echeck card
-        :param str time_expiration: Expired date of the credit card
-        :param str time_paid_on: Paid the invoice on this day
-        """
-        pulumi.set(__self__, "account_number", account_number)
-        pulumi.set(__self__, "amount_paid", amount_paid)
-        pulumi.set(__self__, "card_type", card_type)
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "echeck_routing", echeck_routing)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "paid_by", paid_by)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "paypal_id", paypal_id)
-        pulumi.set(__self__, "paypal_reference", paypal_reference)
-        pulumi.set(__self__, "routing_number", routing_number)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "time_paid_on", time_paid_on)
+                 account_number: Optional[str] = None,
+                 amount_paid: Optional[float] = None,
+                 card_type: Optional[str] = None,
+                 credit_card_type: Optional[str] = None,
+                 echeck_routing: Optional[str] = None,
+                 last_digits: Optional[str] = None,
+                 name_on_card: Optional[str] = None,
+                 paid_by: Optional[str] = None,
+                 payment_method: Optional[str] = None,
+                 paypal_id: Optional[str] = None,
+                 paypal_reference: Optional[str] = None,
+                 routing_number: Optional[str] = None,
+                 time_expiration: Optional[str] = None,
+                 time_paid_on: Optional[str] = None):
+        if account_number is not None:
+            pulumi.set(__self__, "account_number", account_number)
+        if amount_paid is not None:
+            pulumi.set(__self__, "amount_paid", amount_paid)
+        if card_type is not None:
+            pulumi.set(__self__, "card_type", card_type)
+        if credit_card_type is not None:
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
+        if echeck_routing is not None:
+            pulumi.set(__self__, "echeck_routing", echeck_routing)
+        if last_digits is not None:
+            pulumi.set(__self__, "last_digits", last_digits)
+        if name_on_card is not None:
+            pulumi.set(__self__, "name_on_card", name_on_card)
+        if paid_by is not None:
+            pulumi.set(__self__, "paid_by", paid_by)
+        if payment_method is not None:
+            pulumi.set(__self__, "payment_method", payment_method)
+        if paypal_id is not None:
+            pulumi.set(__self__, "paypal_id", paypal_id)
+        if paypal_reference is not None:
+            pulumi.set(__self__, "paypal_reference", paypal_reference)
+        if routing_number is not None:
+            pulumi.set(__self__, "routing_number", routing_number)
+        if time_expiration is not None:
+            pulumi.set(__self__, "time_expiration", time_expiration)
+        if time_paid_on is not None:
+            pulumi.set(__self__, "time_paid_on", time_paid_on)
 
     @property
     @pulumi.getter(name="accountNumber")
-    def account_number(self) -> str:
-        """
-        Account number of the card owner
-        """
+    def account_number(self) -> Optional[str]:
         return pulumi.get(self, "account_number")
 
     @property
     @pulumi.getter(name="amountPaid")
-    def amount_paid(self) -> float:
-        """
-        Amount that paid
-        """
+    def amount_paid(self) -> Optional[float]:
         return pulumi.get(self, "amount_paid")
 
     @property
     @pulumi.getter(name="cardType")
-    def card_type(self) -> str:
-        """
-        Echeck card type
-        """
+    def card_type(self) -> Optional[str]:
         return pulumi.get(self, "card_type")
 
     @property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> str:
-        """
-        Credit card type
-        """
+    def credit_card_type(self) -> Optional[str]:
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="echeckRouting")
-    def echeck_routing(self) -> str:
-        """
-        Last four routing digits of the card
-        """
+    def echeck_routing(self) -> Optional[str]:
         return pulumi.get(self, "echeck_routing")
 
     @property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> str:
-        """
-        Last four digits of the card
-        """
+    def last_digits(self) -> Optional[str]:
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> str:
-        """
-        Name on the credit card
-        """
+    def name_on_card(self) -> Optional[str]:
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paidBy")
-    def paid_by(self) -> str:
-        """
-        example
-        """
+    def paid_by(self) -> Optional[str]:
         return pulumi.get(self, "paid_by")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment method
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="paypalId")
-    def paypal_id(self) -> str:
-        """
-        The id (email address) of the paypal payment
-        """
+    def paypal_id(self) -> Optional[str]:
         return pulumi.get(self, "paypal_id")
 
     @property
     @pulumi.getter(name="paypalReference")
-    def paypal_reference(self) -> str:
-        """
-        paypal payment reference
-        """
+    def paypal_reference(self) -> Optional[str]:
         return pulumi.get(self, "paypal_reference")
 
     @property
     @pulumi.getter(name="routingNumber")
-    def routing_number(self) -> str:
-        """
-        Routing number of the echeck card
-        """
+    def routing_number(self) -> Optional[str]:
         return pulumi.get(self, "routing_number")
 
     @property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> str:
-        """
-        Expired date of the credit card
-        """
+    def time_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="timePaidOn")
-    def time_paid_on(self) -> str:
-        """
-        Paid the invoice on this day
-        """
+    def time_paid_on(self) -> Optional[str]:
         return pulumi.get(self, "time_paid_on")
 
 
@@ -3088,9 +2269,6 @@ class GetInvoicesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the currency
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3099,9 +2277,6 @@ class GetInvoicesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the currency
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -3118,943 +2293,704 @@ class GetInvoicesFilterResult(dict):
 @pulumi.output_type
 class GetInvoicesInvoiceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 bill_to_addresses: Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressResult'],
-                 currencies: Sequence['outputs.GetInvoicesInvoiceCollectionItemCurrencyResult'],
-                 internal_invoice_id: str,
-                 invoice_amount: float,
-                 invoice_amount_adjusted: float,
-                 invoice_amount_applied: float,
-                 invoice_amount_credited: float,
-                 invoice_amount_due: float,
-                 invoice_amount_in_dispute: float,
-                 invoice_id: str,
-                 invoice_number: str,
-                 invoice_po_number: str,
-                 invoice_ref_number: str,
-                 invoice_status: str,
-                 invoice_type: str,
-                 is_credit_card_payable: bool,
-                 is_display_download_pdf: bool,
-                 is_display_view_pdf: bool,
-                 is_paid: bool,
-                 is_payable: bool,
-                 is_payment_failed: bool,
-                 is_pdf_email_available: bool,
-                 last_payment_details: Sequence['outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult'],
-                 party_name: str,
-                 payment_terms: str,
-                 preferred_email: str,
-                 subscription_ids: Sequence[str],
-                 tax: float,
-                 time_invoice: str,
-                 time_invoice_due: str):
-        """
-        :param Sequence['GetInvoicesInvoiceCollectionItemBillToAddressArgs'] bill_to_addresses: Address details model
-        :param Sequence['GetInvoicesInvoiceCollectionItemCurrencyArgs'] currencies: Currency details model
-        :param str internal_invoice_id: Transaction identifier
-        :param float invoice_amount: Total amount of invoice
-        :param float invoice_amount_adjusted: Invoice amount adjust
-        :param float invoice_amount_applied: Invoice amount applied
-        :param float invoice_amount_credited: Invoice amount credit
-        :param float invoice_amount_due: Balance of invoice
-        :param str invoice_id: The invoice query param (not unique).
-        :param str invoice_number: Invoice external reference
-        :param str invoice_po_number: Invoice PO number
-        :param str invoice_ref_number: Invoice reference number
-        :param str invoice_status: Invoice status
-        :param str invoice_type: Type of invoice
-        :param bool is_credit_card_payable: Is credit card payment eligible
-        :param bool is_display_download_pdf: Is pdf download access allowed
-        :param bool is_payable: Whether invoice can be payed
-        :param bool is_pdf_email_available: Is emailing pdf allowed
-        :param Sequence['GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs'] last_payment_details: Payment related details
-        :param str payment_terms: Payment terms
-        :param str preferred_email: Preferred Email on the invoice
-        :param Sequence[str] subscription_ids: List of subscription identifiers
-        :param float tax: Tax of invoice amount
-        :param str time_invoice: Date of invoice
-        :param str time_invoice_due: Due date of invoice
-        """
-        pulumi.set(__self__, "bill_to_addresses", bill_to_addresses)
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "internal_invoice_id", internal_invoice_id)
-        pulumi.set(__self__, "invoice_amount", invoice_amount)
-        pulumi.set(__self__, "invoice_amount_adjusted", invoice_amount_adjusted)
-        pulumi.set(__self__, "invoice_amount_applied", invoice_amount_applied)
-        pulumi.set(__self__, "invoice_amount_credited", invoice_amount_credited)
-        pulumi.set(__self__, "invoice_amount_due", invoice_amount_due)
-        pulumi.set(__self__, "invoice_amount_in_dispute", invoice_amount_in_dispute)
-        pulumi.set(__self__, "invoice_id", invoice_id)
-        pulumi.set(__self__, "invoice_number", invoice_number)
-        pulumi.set(__self__, "invoice_po_number", invoice_po_number)
-        pulumi.set(__self__, "invoice_ref_number", invoice_ref_number)
-        pulumi.set(__self__, "invoice_status", invoice_status)
-        pulumi.set(__self__, "invoice_type", invoice_type)
-        pulumi.set(__self__, "is_credit_card_payable", is_credit_card_payable)
-        pulumi.set(__self__, "is_display_download_pdf", is_display_download_pdf)
-        pulumi.set(__self__, "is_display_view_pdf", is_display_view_pdf)
-        pulumi.set(__self__, "is_paid", is_paid)
-        pulumi.set(__self__, "is_payable", is_payable)
-        pulumi.set(__self__, "is_payment_failed", is_payment_failed)
-        pulumi.set(__self__, "is_pdf_email_available", is_pdf_email_available)
-        pulumi.set(__self__, "last_payment_details", last_payment_details)
-        pulumi.set(__self__, "party_name", party_name)
-        pulumi.set(__self__, "payment_terms", payment_terms)
-        pulumi.set(__self__, "preferred_email", preferred_email)
-        pulumi.set(__self__, "subscription_ids", subscription_ids)
-        pulumi.set(__self__, "tax", tax)
-        pulumi.set(__self__, "time_invoice", time_invoice)
-        pulumi.set(__self__, "time_invoice_due", time_invoice_due)
+                 bill_to_addresses: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressResult']] = None,
+                 currencies: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemCurrencyResult']] = None,
+                 internal_invoice_id: Optional[str] = None,
+                 invoice_amount: Optional[float] = None,
+                 invoice_amount_adjusted: Optional[float] = None,
+                 invoice_amount_applied: Optional[float] = None,
+                 invoice_amount_credited: Optional[float] = None,
+                 invoice_amount_due: Optional[float] = None,
+                 invoice_amount_in_dispute: Optional[float] = None,
+                 invoice_id: Optional[str] = None,
+                 invoice_number: Optional[str] = None,
+                 invoice_po_number: Optional[str] = None,
+                 invoice_ref_number: Optional[str] = None,
+                 invoice_status: Optional[str] = None,
+                 invoice_type: Optional[str] = None,
+                 is_credit_card_payable: Optional[bool] = None,
+                 is_display_download_pdf: Optional[bool] = None,
+                 is_display_view_pdf: Optional[bool] = None,
+                 is_paid: Optional[bool] = None,
+                 is_payable: Optional[bool] = None,
+                 is_payment_failed: Optional[bool] = None,
+                 is_pdf_email_available: Optional[bool] = None,
+                 last_payment_details: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult']] = None,
+                 party_name: Optional[str] = None,
+                 payment_terms: Optional[str] = None,
+                 preferred_email: Optional[str] = None,
+                 subscription_ids: Optional[Sequence[str]] = None,
+                 tax: Optional[float] = None,
+                 time_invoice: Optional[str] = None,
+                 time_invoice_due: Optional[str] = None):
+        if bill_to_addresses is not None:
+            pulumi.set(__self__, "bill_to_addresses", bill_to_addresses)
+        if currencies is not None:
+            pulumi.set(__self__, "currencies", currencies)
+        if internal_invoice_id is not None:
+            pulumi.set(__self__, "internal_invoice_id", internal_invoice_id)
+        if invoice_amount is not None:
+            pulumi.set(__self__, "invoice_amount", invoice_amount)
+        if invoice_amount_adjusted is not None:
+            pulumi.set(__self__, "invoice_amount_adjusted", invoice_amount_adjusted)
+        if invoice_amount_applied is not None:
+            pulumi.set(__self__, "invoice_amount_applied", invoice_amount_applied)
+        if invoice_amount_credited is not None:
+            pulumi.set(__self__, "invoice_amount_credited", invoice_amount_credited)
+        if invoice_amount_due is not None:
+            pulumi.set(__self__, "invoice_amount_due", invoice_amount_due)
+        if invoice_amount_in_dispute is not None:
+            pulumi.set(__self__, "invoice_amount_in_dispute", invoice_amount_in_dispute)
+        if invoice_id is not None:
+            pulumi.set(__self__, "invoice_id", invoice_id)
+        if invoice_number is not None:
+            pulumi.set(__self__, "invoice_number", invoice_number)
+        if invoice_po_number is not None:
+            pulumi.set(__self__, "invoice_po_number", invoice_po_number)
+        if invoice_ref_number is not None:
+            pulumi.set(__self__, "invoice_ref_number", invoice_ref_number)
+        if invoice_status is not None:
+            pulumi.set(__self__, "invoice_status", invoice_status)
+        if invoice_type is not None:
+            pulumi.set(__self__, "invoice_type", invoice_type)
+        if is_credit_card_payable is not None:
+            pulumi.set(__self__, "is_credit_card_payable", is_credit_card_payable)
+        if is_display_download_pdf is not None:
+            pulumi.set(__self__, "is_display_download_pdf", is_display_download_pdf)
+        if is_display_view_pdf is not None:
+            pulumi.set(__self__, "is_display_view_pdf", is_display_view_pdf)
+        if is_paid is not None:
+            pulumi.set(__self__, "is_paid", is_paid)
+        if is_payable is not None:
+            pulumi.set(__self__, "is_payable", is_payable)
+        if is_payment_failed is not None:
+            pulumi.set(__self__, "is_payment_failed", is_payment_failed)
+        if is_pdf_email_available is not None:
+            pulumi.set(__self__, "is_pdf_email_available", is_pdf_email_available)
+        if last_payment_details is not None:
+            pulumi.set(__self__, "last_payment_details", last_payment_details)
+        if party_name is not None:
+            pulumi.set(__self__, "party_name", party_name)
+        if payment_terms is not None:
+            pulumi.set(__self__, "payment_terms", payment_terms)
+        if preferred_email is not None:
+            pulumi.set(__self__, "preferred_email", preferred_email)
+        if subscription_ids is not None:
+            pulumi.set(__self__, "subscription_ids", subscription_ids)
+        if tax is not None:
+            pulumi.set(__self__, "tax", tax)
+        if time_invoice is not None:
+            pulumi.set(__self__, "time_invoice", time_invoice)
+        if time_invoice_due is not None:
+            pulumi.set(__self__, "time_invoice_due", time_invoice_due)
 
     @property
     @pulumi.getter(name="billToAddresses")
-    def bill_to_addresses(self) -> Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressResult']:
-        """
-        Address details model
-        """
+    def bill_to_addresses(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressResult']]:
         return pulumi.get(self, "bill_to_addresses")
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetInvoicesInvoiceCollectionItemCurrencyResult']:
-        """
-        Currency details model
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter(name="internalInvoiceId")
-    def internal_invoice_id(self) -> str:
-        """
-        Transaction identifier
-        """
+    def internal_invoice_id(self) -> Optional[str]:
         return pulumi.get(self, "internal_invoice_id")
 
     @property
     @pulumi.getter(name="invoiceAmount")
-    def invoice_amount(self) -> float:
-        """
-        Total amount of invoice
-        """
+    def invoice_amount(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount")
 
     @property
     @pulumi.getter(name="invoiceAmountAdjusted")
-    def invoice_amount_adjusted(self) -> float:
-        """
-        Invoice amount adjust
-        """
+    def invoice_amount_adjusted(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_adjusted")
 
     @property
     @pulumi.getter(name="invoiceAmountApplied")
-    def invoice_amount_applied(self) -> float:
-        """
-        Invoice amount applied
-        """
+    def invoice_amount_applied(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_applied")
 
     @property
     @pulumi.getter(name="invoiceAmountCredited")
-    def invoice_amount_credited(self) -> float:
-        """
-        Invoice amount credit
-        """
+    def invoice_amount_credited(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_credited")
 
     @property
     @pulumi.getter(name="invoiceAmountDue")
-    def invoice_amount_due(self) -> float:
-        """
-        Balance of invoice
-        """
+    def invoice_amount_due(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_due")
 
     @property
     @pulumi.getter(name="invoiceAmountInDispute")
-    def invoice_amount_in_dispute(self) -> float:
+    def invoice_amount_in_dispute(self) -> Optional[float]:
         return pulumi.get(self, "invoice_amount_in_dispute")
 
     @property
     @pulumi.getter(name="invoiceId")
-    def invoice_id(self) -> str:
-        """
-        The invoice query param (not unique).
-        """
+    def invoice_id(self) -> Optional[str]:
         return pulumi.get(self, "invoice_id")
 
     @property
     @pulumi.getter(name="invoiceNumber")
-    def invoice_number(self) -> str:
-        """
-        Invoice external reference
-        """
+    def invoice_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_number")
 
     @property
     @pulumi.getter(name="invoicePoNumber")
-    def invoice_po_number(self) -> str:
-        """
-        Invoice PO number
-        """
+    def invoice_po_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_po_number")
 
     @property
     @pulumi.getter(name="invoiceRefNumber")
-    def invoice_ref_number(self) -> str:
-        """
-        Invoice reference number
-        """
+    def invoice_ref_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_ref_number")
 
     @property
     @pulumi.getter(name="invoiceStatus")
-    def invoice_status(self) -> str:
-        """
-        Invoice status
-        """
+    def invoice_status(self) -> Optional[str]:
         return pulumi.get(self, "invoice_status")
 
     @property
     @pulumi.getter(name="invoiceType")
-    def invoice_type(self) -> str:
-        """
-        Type of invoice
-        """
+    def invoice_type(self) -> Optional[str]:
         return pulumi.get(self, "invoice_type")
 
     @property
     @pulumi.getter(name="isCreditCardPayable")
-    def is_credit_card_payable(self) -> bool:
-        """
-        Is credit card payment eligible
-        """
+    def is_credit_card_payable(self) -> Optional[bool]:
         return pulumi.get(self, "is_credit_card_payable")
 
     @property
     @pulumi.getter(name="isDisplayDownloadPdf")
-    def is_display_download_pdf(self) -> bool:
-        """
-        Is pdf download access allowed
-        """
+    def is_display_download_pdf(self) -> Optional[bool]:
         return pulumi.get(self, "is_display_download_pdf")
 
     @property
     @pulumi.getter(name="isDisplayViewPdf")
-    def is_display_view_pdf(self) -> bool:
+    def is_display_view_pdf(self) -> Optional[bool]:
         return pulumi.get(self, "is_display_view_pdf")
 
     @property
     @pulumi.getter(name="isPaid")
-    def is_paid(self) -> bool:
+    def is_paid(self) -> Optional[bool]:
         return pulumi.get(self, "is_paid")
 
     @property
     @pulumi.getter(name="isPayable")
-    def is_payable(self) -> bool:
-        """
-        Whether invoice can be payed
-        """
+    def is_payable(self) -> Optional[bool]:
         return pulumi.get(self, "is_payable")
 
     @property
     @pulumi.getter(name="isPaymentFailed")
-    def is_payment_failed(self) -> bool:
+    def is_payment_failed(self) -> Optional[bool]:
         return pulumi.get(self, "is_payment_failed")
 
     @property
     @pulumi.getter(name="isPdfEmailAvailable")
-    def is_pdf_email_available(self) -> bool:
-        """
-        Is emailing pdf allowed
-        """
+    def is_pdf_email_available(self) -> Optional[bool]:
         return pulumi.get(self, "is_pdf_email_available")
 
     @property
     @pulumi.getter(name="lastPaymentDetails")
-    def last_payment_details(self) -> Sequence['outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult']:
-        """
-        Payment related details
-        """
+    def last_payment_details(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult']]:
         return pulumi.get(self, "last_payment_details")
 
     @property
     @pulumi.getter(name="partyName")
-    def party_name(self) -> str:
+    def party_name(self) -> Optional[str]:
         return pulumi.get(self, "party_name")
 
     @property
     @pulumi.getter(name="paymentTerms")
-    def payment_terms(self) -> str:
-        """
-        Payment terms
-        """
+    def payment_terms(self) -> Optional[str]:
         return pulumi.get(self, "payment_terms")
 
     @property
     @pulumi.getter(name="preferredEmail")
-    def preferred_email(self) -> str:
-        """
-        Preferred Email on the invoice
-        """
+    def preferred_email(self) -> Optional[str]:
         return pulumi.get(self, "preferred_email")
 
     @property
     @pulumi.getter(name="subscriptionIds")
-    def subscription_ids(self) -> Sequence[str]:
-        """
-        List of subscription identifiers
-        """
+    def subscription_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "subscription_ids")
 
     @property
     @pulumi.getter
-    def tax(self) -> float:
-        """
-        Tax of invoice amount
-        """
+    def tax(self) -> Optional[float]:
         return pulumi.get(self, "tax")
 
     @property
     @pulumi.getter(name="timeInvoice")
-    def time_invoice(self) -> str:
-        """
-        Date of invoice
-        """
+    def time_invoice(self) -> Optional[str]:
         return pulumi.get(self, "time_invoice")
 
     @property
     @pulumi.getter(name="timeInvoiceDue")
-    def time_invoice_due(self) -> str:
-        """
-        Due date of invoice
-        """
+    def time_invoice_due(self) -> Optional[str]:
         return pulumi.get(self, "time_invoice_due")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceCollectionItemBillToAddressResult(dict):
     def __init__(__self__, *,
-                 address_line1: str,
-                 address_line2: str,
-                 address_line3: str,
-                 address_line4: str,
-                 city: str,
-                 company_name: str,
-                 contact_name: str,
-                 countries: Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult'],
-                 county: str,
-                 postal_code: str,
-                 province: str,
-                 state: str,
-                 street_name: str,
-                 street_number: str):
-        """
-        :param str address_line1: Address line 1
-        :param str address_line2: Address line 2
-        :param str address_line3: Address line 3
-        :param str address_line4: Address line 4
-        :param str city: Name of the city
-        :param str company_name: Name of the customer company
-        :param str contact_name: Name of the contact person
-        :param Sequence['GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs'] countries: Country details model
-        :param str county: County name
-        :param str postal_code: ZIP no
-        :param str province: Name of the province
-        :param str state: Name of the state
-        :param str street_name: Street name
-        :param str street_number: House no
-        """
-        pulumi.set(__self__, "address_line1", address_line1)
-        pulumi.set(__self__, "address_line2", address_line2)
-        pulumi.set(__self__, "address_line3", address_line3)
-        pulumi.set(__self__, "address_line4", address_line4)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contact_name", contact_name)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+                 address_line1: Optional[str] = None,
+                 address_line2: Optional[str] = None,
+                 address_line3: Optional[str] = None,
+                 address_line4: Optional[str] = None,
+                 city: Optional[str] = None,
+                 company_name: Optional[str] = None,
+                 contact_name: Optional[str] = None,
+                 countries: Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult']] = None,
+                 county: Optional[str] = None,
+                 postal_code: Optional[str] = None,
+                 province: Optional[str] = None,
+                 state: Optional[str] = None,
+                 street_name: Optional[str] = None,
+                 street_number: Optional[str] = None):
+        if address_line1 is not None:
+            pulumi.set(__self__, "address_line1", address_line1)
+        if address_line2 is not None:
+            pulumi.set(__self__, "address_line2", address_line2)
+        if address_line3 is not None:
+            pulumi.set(__self__, "address_line3", address_line3)
+        if address_line4 is not None:
+            pulumi.set(__self__, "address_line4", address_line4)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contact_name is not None:
+            pulumi.set(__self__, "contact_name", contact_name)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressLine1")
-    def address_line1(self) -> str:
-        """
-        Address line 1
-        """
+    def address_line1(self) -> Optional[str]:
         return pulumi.get(self, "address_line1")
 
     @property
     @pulumi.getter(name="addressLine2")
-    def address_line2(self) -> str:
-        """
-        Address line 2
-        """
+    def address_line2(self) -> Optional[str]:
         return pulumi.get(self, "address_line2")
 
     @property
     @pulumi.getter(name="addressLine3")
-    def address_line3(self) -> str:
-        """
-        Address line 3
-        """
+    def address_line3(self) -> Optional[str]:
         return pulumi.get(self, "address_line3")
 
     @property
     @pulumi.getter(name="addressLine4")
-    def address_line4(self) -> str:
-        """
-        Address line 4
-        """
+    def address_line4(self) -> Optional[str]:
         return pulumi.get(self, "address_line4")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contactName")
-    def contact_name(self) -> str:
-        """
-        Name of the contact person
-        """
+    def contact_name(self) -> Optional[str]:
         return pulumi.get(self, "contact_name")
 
     @property
     @pulumi.getter
-    def countries(self) -> Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult']:
-        """
-        Country details model
-        """
+    def countries(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult']]:
         return pulumi.get(self, "countries")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County name
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        ZIP no
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Name of the province
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Name of the state
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        House no
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceCollectionItemBillToAddressCountryResult(dict):
     def __init__(__self__, *,
-                 ascii3country_code: str,
-                 country_code: str,
-                 country_id: float,
-                 country_name: str,
-                 language_id: float):
-        """
-        :param str ascii3country_code: Country code in ISO-3166-1 3-letter format
-        :param str country_code: Country code in ISO-3166-1 2-letter format
-        :param float country_id: Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-        :param str country_name: Name of the country
-        :param float language_id: Language identifier
-        """
-        pulumi.set(__self__, "ascii3country_code", ascii3country_code)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_id", country_id)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "language_id", language_id)
+                 ascii3country_code: Optional[str] = None,
+                 country_code: Optional[str] = None,
+                 country_id: Optional[float] = None,
+                 country_name: Optional[str] = None,
+                 language_id: Optional[float] = None):
+        if ascii3country_code is not None:
+            pulumi.set(__self__, "ascii3country_code", ascii3country_code)
+        if country_code is not None:
+            pulumi.set(__self__, "country_code", country_code)
+        if country_id is not None:
+            pulumi.set(__self__, "country_id", country_id)
+        if country_name is not None:
+            pulumi.set(__self__, "country_name", country_name)
+        if language_id is not None:
+            pulumi.set(__self__, "language_id", language_id)
 
     @property
     @pulumi.getter(name="ascii3countryCode")
-    def ascii3country_code(self) -> str:
-        """
-        Country code in ISO-3166-1 3-letter format
-        """
+    def ascii3country_code(self) -> Optional[str]:
         return pulumi.get(self, "ascii3country_code")
 
     @property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> str:
-        """
-        Country code in ISO-3166-1 2-letter format
-        """
+    def country_code(self) -> Optional[str]:
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter(name="countryId")
-    def country_id(self) -> float:
-        """
-        Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-        """
+    def country_id(self) -> Optional[float]:
         return pulumi.get(self, "country_id")
 
     @property
     @pulumi.getter(name="countryName")
-    def country_name(self) -> str:
-        """
-        Name of the country
-        """
+    def country_name(self) -> Optional[str]:
         return pulumi.get(self, "country_name")
 
     @property
     @pulumi.getter(name="languageId")
-    def language_id(self) -> float:
-        """
-        Language identifier
-        """
+    def language_id(self) -> Optional[float]:
         return pulumi.get(self, "language_id")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceCollectionItemCurrencyResult(dict):
     def __init__(__self__, *,
-                 currency_code: str,
-                 currency_symbol: str,
-                 name: str,
-                 round_decimal_point: float,
-                 usd_conversion: float):
-        """
-        :param str currency_code: Currency code
-        :param str currency_symbol: Currency symbol
-        :param str name: Name of the currency
-        :param float round_decimal_point: Round decimal point
-        :param float usd_conversion: USD conversion rate of the currency
-        """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+                 currency_code: Optional[str] = None,
+                 currency_symbol: Optional[str] = None,
+                 name: Optional[str] = None,
+                 round_decimal_point: Optional[float] = None,
+                 usd_conversion: Optional[float] = None):
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if currency_symbol is not None:
+            pulumi.set(__self__, "currency_symbol", currency_symbol)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if round_decimal_point is not None:
+            pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        if usd_conversion is not None:
+            pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="currencySymbol")
-    def currency_symbol(self) -> str:
-        """
-        Currency symbol
-        """
+    def currency_symbol(self) -> Optional[str]:
         return pulumi.get(self, "currency_symbol")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the currency
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="roundDecimalPoint")
-    def round_decimal_point(self) -> float:
-        """
-        Round decimal point
-        """
+    def round_decimal_point(self) -> Optional[float]:
         return pulumi.get(self, "round_decimal_point")
 
     @property
     @pulumi.getter(name="usdConversion")
-    def usd_conversion(self) -> float:
-        """
-        USD conversion rate of the currency
-        """
+    def usd_conversion(self) -> Optional[float]:
         return pulumi.get(self, "usd_conversion")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceCollectionItemLastPaymentDetailResult(dict):
     def __init__(__self__, *,
-                 account_number: str,
-                 amount_paid: float,
-                 card_type: str,
-                 credit_card_type: str,
-                 echeck_routing: str,
-                 last_digits: str,
-                 name_on_card: str,
-                 paid_by: str,
-                 payment_method: str,
-                 paypal_id: str,
-                 paypal_reference: str,
-                 routing_number: str,
-                 time_expiration: str,
-                 time_paid_on: str):
-        """
-        :param str account_number: Account number of the card owner
-        :param float amount_paid: Amount that paid
-        :param str card_type: Echeck card type
-        :param str credit_card_type: Credit card type
-        :param str echeck_routing: Last four routing digits of the card
-        :param str last_digits: Last four digits of the card
-        :param str name_on_card: Name on the credit card
-        :param str paid_by: example
-        :param str payment_method: Payment method
-        :param str paypal_id: The id (email address) of the paypal payment
-        :param str paypal_reference: paypal payment reference
-        :param str routing_number: Routing number of the echeck card
-        :param str time_expiration: Expired date of the credit card
-        :param str time_paid_on: Paid the invoice on this day
-        """
-        pulumi.set(__self__, "account_number", account_number)
-        pulumi.set(__self__, "amount_paid", amount_paid)
-        pulumi.set(__self__, "card_type", card_type)
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "echeck_routing", echeck_routing)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "paid_by", paid_by)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "paypal_id", paypal_id)
-        pulumi.set(__self__, "paypal_reference", paypal_reference)
-        pulumi.set(__self__, "routing_number", routing_number)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "time_paid_on", time_paid_on)
+                 account_number: Optional[str] = None,
+                 amount_paid: Optional[float] = None,
+                 card_type: Optional[str] = None,
+                 credit_card_type: Optional[str] = None,
+                 echeck_routing: Optional[str] = None,
+                 last_digits: Optional[str] = None,
+                 name_on_card: Optional[str] = None,
+                 paid_by: Optional[str] = None,
+                 payment_method: Optional[str] = None,
+                 paypal_id: Optional[str] = None,
+                 paypal_reference: Optional[str] = None,
+                 routing_number: Optional[str] = None,
+                 time_expiration: Optional[str] = None,
+                 time_paid_on: Optional[str] = None):
+        if account_number is not None:
+            pulumi.set(__self__, "account_number", account_number)
+        if amount_paid is not None:
+            pulumi.set(__self__, "amount_paid", amount_paid)
+        if card_type is not None:
+            pulumi.set(__self__, "card_type", card_type)
+        if credit_card_type is not None:
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
+        if echeck_routing is not None:
+            pulumi.set(__self__, "echeck_routing", echeck_routing)
+        if last_digits is not None:
+            pulumi.set(__self__, "last_digits", last_digits)
+        if name_on_card is not None:
+            pulumi.set(__self__, "name_on_card", name_on_card)
+        if paid_by is not None:
+            pulumi.set(__self__, "paid_by", paid_by)
+        if payment_method is not None:
+            pulumi.set(__self__, "payment_method", payment_method)
+        if paypal_id is not None:
+            pulumi.set(__self__, "paypal_id", paypal_id)
+        if paypal_reference is not None:
+            pulumi.set(__self__, "paypal_reference", paypal_reference)
+        if routing_number is not None:
+            pulumi.set(__self__, "routing_number", routing_number)
+        if time_expiration is not None:
+            pulumi.set(__self__, "time_expiration", time_expiration)
+        if time_paid_on is not None:
+            pulumi.set(__self__, "time_paid_on", time_paid_on)
 
     @property
     @pulumi.getter(name="accountNumber")
-    def account_number(self) -> str:
-        """
-        Account number of the card owner
-        """
+    def account_number(self) -> Optional[str]:
         return pulumi.get(self, "account_number")
 
     @property
     @pulumi.getter(name="amountPaid")
-    def amount_paid(self) -> float:
-        """
-        Amount that paid
-        """
+    def amount_paid(self) -> Optional[float]:
         return pulumi.get(self, "amount_paid")
 
     @property
     @pulumi.getter(name="cardType")
-    def card_type(self) -> str:
-        """
-        Echeck card type
-        """
+    def card_type(self) -> Optional[str]:
         return pulumi.get(self, "card_type")
 
     @property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> str:
-        """
-        Credit card type
-        """
+    def credit_card_type(self) -> Optional[str]:
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="echeckRouting")
-    def echeck_routing(self) -> str:
-        """
-        Last four routing digits of the card
-        """
+    def echeck_routing(self) -> Optional[str]:
         return pulumi.get(self, "echeck_routing")
 
     @property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> str:
-        """
-        Last four digits of the card
-        """
+    def last_digits(self) -> Optional[str]:
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> str:
-        """
-        Name on the credit card
-        """
+    def name_on_card(self) -> Optional[str]:
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paidBy")
-    def paid_by(self) -> str:
-        """
-        example
-        """
+    def paid_by(self) -> Optional[str]:
         return pulumi.get(self, "paid_by")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment method
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="paypalId")
-    def paypal_id(self) -> str:
-        """
-        The id (email address) of the paypal payment
-        """
+    def paypal_id(self) -> Optional[str]:
         return pulumi.get(self, "paypal_id")
 
     @property
     @pulumi.getter(name="paypalReference")
-    def paypal_reference(self) -> str:
-        """
-        paypal payment reference
-        """
+    def paypal_reference(self) -> Optional[str]:
         return pulumi.get(self, "paypal_reference")
 
     @property
     @pulumi.getter(name="routingNumber")
-    def routing_number(self) -> str:
-        """
-        Routing number of the echeck card
-        """
+    def routing_number(self) -> Optional[str]:
         return pulumi.get(self, "routing_number")
 
     @property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> str:
-        """
-        Expired date of the credit card
-        """
+    def time_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="timePaidOn")
-    def time_paid_on(self) -> str:
-        """
-        Paid the invoice on this day
-        """
+    def time_paid_on(self) -> Optional[str]:
         return pulumi.get(self, "time_paid_on")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceLineItemResult(dict):
     def __init__(__self__, *,
-                 currencies: Sequence['outputs.GetInvoicesInvoiceLineItemCurrencyResult'],
-                 net_unit_price: float,
-                 order_no: str,
-                 part_number: str,
-                 product: str,
-                 quantity: float,
-                 time_end: str,
-                 time_start: str,
-                 total_price: float):
-        """
-        :param Sequence['GetInvoicesInvoiceLineItemCurrencyArgs'] currencies: Currency details model
-        :param float net_unit_price: Unit price of the ordered product
-        :param str order_no: Product of the item
-        :param str part_number: Part number
-        :param str product: Product of the item
-        :param float quantity: Quantity of the ordered product
-        :param str time_end: End date
-        :param str time_start: Start date
-        :param float total_price: Total price of the ordered product (Net unit price x quantity)
-        """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "order_no", order_no)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product", product)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_price", total_price)
+                 currencies: Optional[Sequence['outputs.GetInvoicesInvoiceLineItemCurrencyResult']] = None,
+                 net_unit_price: Optional[float] = None,
+                 order_no: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product: Optional[str] = None,
+                 quantity: Optional[float] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 total_price: Optional[float] = None):
+        if currencies is not None:
+            pulumi.set(__self__, "currencies", currencies)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if order_no is not None:
+            pulumi.set(__self__, "order_no", order_no)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product is not None:
+            pulumi.set(__self__, "product", product)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if total_price is not None:
+            pulumi.set(__self__, "total_price", total_price)
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetInvoicesInvoiceLineItemCurrencyResult']:
-        """
-        Currency details model
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceLineItemCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> float:
-        """
-        Unit price of the ordered product
-        """
+    def net_unit_price(self) -> Optional[float]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="orderNo")
-    def order_no(self) -> str:
-        """
-        Product of the item
-        """
+    def order_no(self) -> Optional[str]:
         return pulumi.get(self, "order_no")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter
-    def product(self) -> str:
-        """
-        Product of the item
-        """
+    def product(self) -> Optional[str]:
         return pulumi.get(self, "product")
 
     @property
     @pulumi.getter
-    def quantity(self) -> float:
-        """
-        Quantity of the ordered product
-        """
+    def quantity(self) -> Optional[float]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        End date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="totalPrice")
-    def total_price(self) -> float:
-        """
-        Total price of the ordered product (Net unit price x quantity)
-        """
+    def total_price(self) -> Optional[float]:
         return pulumi.get(self, "total_price")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceLineItemCurrencyResult(dict):
     def __init__(__self__, *,
-                 currency_code: str,
-                 currency_symbol: str,
-                 name: str,
-                 round_decimal_point: float,
-                 usd_conversion: float):
-        """
-        :param str currency_code: Currency code
-        :param str currency_symbol: Currency symbol
-        :param str name: Name of the currency
-        :param float round_decimal_point: Round decimal point
-        :param float usd_conversion: USD conversion rate of the currency
-        """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+                 currency_code: Optional[str] = None,
+                 currency_symbol: Optional[str] = None,
+                 name: Optional[str] = None,
+                 round_decimal_point: Optional[float] = None,
+                 usd_conversion: Optional[float] = None):
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if currency_symbol is not None:
+            pulumi.set(__self__, "currency_symbol", currency_symbol)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if round_decimal_point is not None:
+            pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        if usd_conversion is not None:
+            pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="currencySymbol")
-    def currency_symbol(self) -> str:
-        """
-        Currency symbol
-        """
+    def currency_symbol(self) -> Optional[str]:
         return pulumi.get(self, "currency_symbol")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the currency
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="roundDecimalPoint")
-    def round_decimal_point(self) -> float:
-        """
-        Round decimal point
-        """
+    def round_decimal_point(self) -> Optional[float]:
         return pulumi.get(self, "round_decimal_point")
 
     @property
     @pulumi.getter(name="usdConversion")
-    def usd_conversion(self) -> float:
-        """
-        USD conversion rate of the currency
-        """
+    def usd_conversion(self) -> Optional[float]:
         return pulumi.get(self, "usd_conversion")
 
 
@@ -4064,9 +3000,6 @@ class GetInvoicesInvoiceLinesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the currency
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4075,9 +3008,6 @@ class GetInvoicesInvoiceLinesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the currency
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4094,1484 +3024,1078 @@ class GetInvoicesInvoiceLinesFilterResult(dict):
 @pulumi.output_type
 class GetInvoicesInvoiceLinesInvoiceLineCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult']):
-        """
-        :param Sequence['GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs'] items: Invoice line list elements
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult']:
-        """
-        Invoice line list elements
-        """
+    def items(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult(dict):
     def __init__(__self__, *,
-                 currencies: Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult'],
-                 net_unit_price: float,
-                 order_no: str,
-                 part_number: str,
-                 product: str,
-                 quantity: float,
-                 time_end: str,
-                 time_start: str,
-                 total_price: float):
-        """
-        :param Sequence['GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs'] currencies: Currency details model
-        :param float net_unit_price: Unit price of the ordered product
-        :param str order_no: Product of the item
-        :param str part_number: Part number
-        :param str product: Product of the item
-        :param float quantity: Quantity of the ordered product
-        :param str time_end: End date
-        :param str time_start: Start date
-        :param float total_price: Total price of the ordered product (Net unit price x quantity)
-        """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "order_no", order_no)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product", product)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_price", total_price)
+                 currencies: Optional[Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult']] = None,
+                 net_unit_price: Optional[float] = None,
+                 order_no: Optional[str] = None,
+                 part_number: Optional[str] = None,
+                 product: Optional[str] = None,
+                 quantity: Optional[float] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 total_price: Optional[float] = None):
+        if currencies is not None:
+            pulumi.set(__self__, "currencies", currencies)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if order_no is not None:
+            pulumi.set(__self__, "order_no", order_no)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
+        if product is not None:
+            pulumi.set(__self__, "product", product)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if total_price is not None:
+            pulumi.set(__self__, "total_price", total_price)
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult']:
-        """
-        Currency details model
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> float:
-        """
-        Unit price of the ordered product
-        """
+    def net_unit_price(self) -> Optional[float]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="orderNo")
-    def order_no(self) -> str:
-        """
-        Product of the item
-        """
+    def order_no(self) -> Optional[str]:
         return pulumi.get(self, "order_no")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Part number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
     @property
     @pulumi.getter
-    def product(self) -> str:
-        """
-        Product of the item
-        """
+    def product(self) -> Optional[str]:
         return pulumi.get(self, "product")
 
     @property
     @pulumi.getter
-    def quantity(self) -> float:
-        """
-        Quantity of the ordered product
-        """
+    def quantity(self) -> Optional[float]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        End date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="totalPrice")
-    def total_price(self) -> float:
-        """
-        Total price of the ordered product (Net unit price x quantity)
-        """
+    def total_price(self) -> Optional[float]:
         return pulumi.get(self, "total_price")
 
 
 @pulumi.output_type
 class GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult(dict):
     def __init__(__self__, *,
-                 currency_code: str,
-                 currency_symbol: str,
-                 name: str,
-                 round_decimal_point: float,
-                 usd_conversion: float):
-        """
-        :param str currency_code: Currency code
-        :param str currency_symbol: Currency symbol
-        :param str name: Name of the currency
-        :param float round_decimal_point: Round decimal point
-        :param float usd_conversion: USD conversion rate of the currency
-        """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+                 currency_code: Optional[str] = None,
+                 currency_symbol: Optional[str] = None,
+                 name: Optional[str] = None,
+                 round_decimal_point: Optional[float] = None,
+                 usd_conversion: Optional[float] = None):
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if currency_symbol is not None:
+            pulumi.set(__self__, "currency_symbol", currency_symbol)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if round_decimal_point is not None:
+            pulumi.set(__self__, "round_decimal_point", round_decimal_point)
+        if usd_conversion is not None:
+            pulumi.set(__self__, "usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="currencySymbol")
-    def currency_symbol(self) -> str:
-        """
-        Currency symbol
-        """
+    def currency_symbol(self) -> Optional[str]:
         return pulumi.get(self, "currency_symbol")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the currency
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="roundDecimalPoint")
-    def round_decimal_point(self) -> float:
-        """
-        Round decimal point
-        """
+    def round_decimal_point(self) -> Optional[float]:
         return pulumi.get(self, "round_decimal_point")
 
     @property
     @pulumi.getter(name="usdConversion")
-    def usd_conversion(self) -> float:
-        """
-        USD conversion rate of the currency
-        """
+    def usd_conversion(self) -> Optional[float]:
         return pulumi.get(self, "usd_conversion")
 
 
 @pulumi.output_type
 class GetSubscriptionBillingAddressResult(dict):
     def __init__(__self__, *,
-                 address_key: str,
-                 city: str,
-                 company_name: str,
-                 contributor_class: str,
-                 country: str,
-                 county: str,
-                 department_name: str,
-                 email_address: str,
-                 first_name: str,
-                 internal_number: str,
-                 job_title: str,
-                 last_name: str,
-                 line1: str,
-                 line2: str,
-                 line3: str,
-                 line4: str,
-                 middle_name: str,
-                 municipal_inscription: str,
-                 phone_country_code: str,
-                 phone_number: str,
-                 postal_code: str,
-                 province: str,
-                 state: str,
-                 state_inscription: str,
-                 street_name: str,
-                 street_number: str):
-        """
-        :param str address_key: Address identifier.
-        :param str city: Name of the city.
-        :param str company_name: Name of the customer company.
-        :param str contributor_class: Contributor class of the customer company.
-        :param str country: Country of the address.
-        :param str county: County of the address.
-        :param str department_name: Department name of the customer company.
-        :param str email_address: The email address of the paypal user.
-        :param str first_name: First name of the paypal user.
-        :param str internal_number: Internal number of the customer company.
-        :param str job_title: Job title of the contact person.
-        :param str last_name: Last name of the paypal user.
-        :param str line1: Address line 1.
-        :param str line2: Address line 2.
-        :param str line3: Address line 3.
-        :param str line4: Address line 4.
-        :param str middle_name: Middle name of the contact person.
-        :param str municipal_inscription: Municipal Inscription.
-        :param str phone_country_code: Phone country code of the contact person.
-        :param str phone_number: Phone number of the contact person.
-        :param str postal_code: Post code of the address.
-        :param str province: Province of the address.
-        :param str state: State of the address.
-        :param str state_inscription: State Inscription.
-        :param str street_name: Street name of the address.
-        :param str street_number: Street number of the address.
-        """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+                 address_key: Optional[str] = None,
+                 city: Optional[str] = None,
+                 company_name: Optional[str] = None,
+                 contributor_class: Optional[str] = None,
+                 country: Optional[str] = None,
+                 county: Optional[str] = None,
+                 department_name: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 internal_number: Optional[str] = None,
+                 job_title: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 line1: Optional[str] = None,
+                 line2: Optional[str] = None,
+                 line3: Optional[str] = None,
+                 line4: Optional[str] = None,
+                 middle_name: Optional[str] = None,
+                 municipal_inscription: Optional[str] = None,
+                 phone_country_code: Optional[str] = None,
+                 phone_number: Optional[str] = None,
+                 postal_code: Optional[str] = None,
+                 province: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_inscription: Optional[str] = None,
+                 street_name: Optional[str] = None,
+                 street_number: Optional[str] = None):
+        if address_key is not None:
+            pulumi.set(__self__, "address_key", address_key)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if line1 is not None:
+            pulumi.set(__self__, "line1", line1)
+        if line2 is not None:
+            pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> str:
-        """
-        Address identifier.
-        """
+    def address_key(self) -> Optional[str]:
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city.
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company.
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> str:
-        """
-        Contributor class of the customer company.
-        """
+    def contributor_class(self) -> Optional[str]:
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
-    def country(self) -> str:
-        """
-        Country of the address.
-        """
+    def country(self) -> Optional[str]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County of the address.
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> str:
-        """
-        Department name of the customer company.
-        """
+    def department_name(self) -> Optional[str]:
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> str:
-        """
-        Internal number of the customer company.
-        """
+    def internal_number(self) -> Optional[str]:
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> str:
-        """
-        Job title of the contact person.
-        """
+    def job_title(self) -> Optional[str]:
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def line1(self) -> str:
-        """
-        Address line 1.
-        """
+    def line1(self) -> Optional[str]:
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
-    def line2(self) -> str:
-        """
-        Address line 2.
-        """
+    def line2(self) -> Optional[str]:
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
-    def line3(self) -> str:
-        """
-        Address line 3.
-        """
+    def line3(self) -> Optional[str]:
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
-    def line4(self) -> str:
-        """
-        Address line 4.
-        """
+    def line4(self) -> Optional[str]:
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> str:
-        """
-        Middle name of the contact person.
-        """
+    def middle_name(self) -> Optional[str]:
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> str:
-        """
-        Municipal Inscription.
-        """
+    def municipal_inscription(self) -> Optional[str]:
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> str:
-        """
-        Phone country code of the contact person.
-        """
+    def phone_country_code(self) -> Optional[str]:
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> str:
-        """
-        Phone number of the contact person.
-        """
+    def phone_number(self) -> Optional[str]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        Post code of the address.
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Province of the address.
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        State of the address.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> str:
-        """
-        State Inscription.
-        """
+    def state_inscription(self) -> Optional[str]:
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name of the address.
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        Street number of the address.
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
 @pulumi.output_type
 class GetSubscriptionPaymentGatewayResult(dict):
     def __init__(__self__, *,
-                 merchant_defined_datas: Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult']):
-        """
-        :param Sequence['GetSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
-        """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+                 merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult']] = None):
+        if merchant_defined_datas is not None:
+            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
-    def merchant_defined_datas(self) -> Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult']:
-        """
-        Merchant details.
-        """
+    def merchant_defined_datas(self) -> Optional[Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult']]:
         return pulumi.get(self, "merchant_defined_datas")
 
 
 @pulumi.output_type
 class GetSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
     def __init__(__self__, *,
-                 cloud_account_name: str,
-                 promo_type: str):
-        """
-        :param str cloud_account_name: Cloud account name.
-        :param str promo_type: Promotion type code.
-        """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+                 cloud_account_name: Optional[str] = None,
+                 promo_type: Optional[str] = None):
+        if cloud_account_name is not None:
+            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        if promo_type is not None:
+            pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> str:
-        """
-        Cloud account name.
-        """
+    def cloud_account_name(self) -> Optional[str]:
         return pulumi.get(self, "cloud_account_name")
 
     @property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> str:
-        """
-        Promotion type code.
-        """
+    def promo_type(self) -> Optional[str]:
         return pulumi.get(self, "promo_type")
 
 
 @pulumi.output_type
 class GetSubscriptionPaymentOptionResult(dict):
     def __init__(__self__, *,
-                 credit_card_type: str,
-                 email_address: str,
-                 ext_billing_agreement_id: str,
-                 first_name: str,
-                 last_digits: str,
-                 last_name: str,
-                 name_on_card: str,
-                 payment_method: str,
-                 time_expiration: str,
-                 wallet_instrument_id: str,
-                 wallet_transaction_id: str):
-        """
-        :param str credit_card_type: Credit card type.
-        :param str email_address: The email address of the paypal user.
-        :param str ext_billing_agreement_id: Agreement id for the paypal account.
-        :param str first_name: First name of the paypal user.
-        :param str last_digits: Last four digits of the card.
-        :param str last_name: Last name of the paypal user.
-        :param str name_on_card: Name on the credit card.
-        :param str payment_method: Payment method
-        :param str time_expiration: Expired date of the credit card.
-        :param str wallet_instrument_id: Wallet instrument internal id.
-        :param str wallet_transaction_id: Wallet transaction id.
-        """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+                 credit_card_type: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 ext_billing_agreement_id: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 last_digits: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 name_on_card: Optional[str] = None,
+                 payment_method: Optional[str] = None,
+                 time_expiration: Optional[str] = None,
+                 wallet_instrument_id: Optional[str] = None,
+                 wallet_transaction_id: Optional[str] = None):
+        if credit_card_type is not None:
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if ext_billing_agreement_id is not None:
+            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_digits is not None:
+            pulumi.set(__self__, "last_digits", last_digits)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if name_on_card is not None:
+            pulumi.set(__self__, "name_on_card", name_on_card)
+        if payment_method is not None:
+            pulumi.set(__self__, "payment_method", payment_method)
+        if time_expiration is not None:
+            pulumi.set(__self__, "time_expiration", time_expiration)
+        if wallet_instrument_id is not None:
+            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        if wallet_transaction_id is not None:
+            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> str:
-        """
-        Credit card type.
-        """
+    def credit_card_type(self) -> Optional[str]:
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="extBillingAgreementId")
-    def ext_billing_agreement_id(self) -> str:
-        """
-        Agreement id for the paypal account.
-        """
+    def ext_billing_agreement_id(self) -> Optional[str]:
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> str:
-        """
-        Last four digits of the card.
-        """
+    def last_digits(self) -> Optional[str]:
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> str:
-        """
-        Name on the credit card.
-        """
+    def name_on_card(self) -> Optional[str]:
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment method
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> str:
-        """
-        Expired date of the credit card.
-        """
+    def time_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="walletInstrumentId")
-    def wallet_instrument_id(self) -> str:
-        """
-        Wallet instrument internal id.
-        """
+    def wallet_instrument_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_instrument_id")
 
     @property
     @pulumi.getter(name="walletTransactionId")
-    def wallet_transaction_id(self) -> str:
-        """
-        Wallet transaction id.
-        """
+    def wallet_transaction_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_transaction_id")
 
 
 @pulumi.output_type
 class GetSubscriptionSubscriptionResult(dict):
     def __init__(__self__, *,
-                 account_type: str,
-                 bill_to_cust_account_id: str,
-                 billing_addresses: Sequence['outputs.GetSubscriptionSubscriptionBillingAddressResult'],
-                 currency_code: str,
-                 gsi_org_code: str,
-                 id: str,
-                 is_intent_to_pay: bool,
-                 language_code: str,
-                 organization_id: str,
-                 payment_gateways: Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayResult'],
-                 payment_options: Sequence['outputs.GetSubscriptionSubscriptionPaymentOptionResult'],
-                 plan_type: str,
-                 ship_to_cust_acct_role_id: str,
-                 ship_to_cust_acct_site_id: str,
-                 subscription_plan_number: str,
-                 tax_infos: Sequence['outputs.GetSubscriptionSubscriptionTaxInfoResult'],
-                 time_personal_to_corporate_conv: str,
-                 time_plan_upgrade: str,
-                 time_start: str,
-                 upgrade_state: str,
-                 upgrade_state_details: str):
-        """
-        :param str account_type: Account type.
-        :param str bill_to_cust_account_id: Bill to customer Account id.
-        :param Sequence['GetSubscriptionSubscriptionBillingAddressArgs'] billing_addresses: Address details model.
-        :param str currency_code: Currency code
-        :param str gsi_org_code: GSI Subscription external code.
-        :param str id: Subscription id identifier (OCID).
-        :param bool is_intent_to_pay: Payment intension.
-        :param str language_code: Language short code (en, de, hu, etc)
-        :param str organization_id: GSI organization external identifier.
-        :param Sequence['GetSubscriptionSubscriptionPaymentGatewayArgs'] payment_gateways: Payment gateway details.
-        :param Sequence['GetSubscriptionSubscriptionPaymentOptionArgs'] payment_options: Payment option list of a subscription.
-        :param str plan_type: Subscription plan type.
-        :param str ship_to_cust_acct_role_id: Ship to customer account role.
-        :param str ship_to_cust_acct_site_id: Ship to customer account site address id.
-        :param str subscription_plan_number: Subscription plan number.
-        :param Sequence['GetSubscriptionSubscriptionTaxInfoArgs'] tax_infos: Tax details.
-        :param str time_personal_to_corporate_conv: Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        :param str time_plan_upgrade: Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        :param str time_start: Start date of the subscription.
-        :param str upgrade_state: Status of the upgrade.
-        :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
-        pulumi.set(__self__, "account_type", account_type)
-        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
-        pulumi.set(__self__, "billing_addresses", billing_addresses)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "organization_id", organization_id)
-        pulumi.set(__self__, "payment_gateways", payment_gateways)
-        pulumi.set(__self__, "payment_options", payment_options)
-        pulumi.set(__self__, "plan_type", plan_type)
-        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
-        pulumi.set(__self__, "tax_infos", tax_infos)
-        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "upgrade_state", upgrade_state)
-        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+                 account_type: Optional[str] = None,
+                 bill_to_cust_account_id: Optional[str] = None,
+                 billing_addresses: Optional[Sequence['outputs.GetSubscriptionSubscriptionBillingAddressResult']] = None,
+                 currency_code: Optional[str] = None,
+                 gsi_org_code: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_intent_to_pay: Optional[bool] = None,
+                 language_code: Optional[str] = None,
+                 organization_id: Optional[str] = None,
+                 payment_gateways: Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayResult']] = None,
+                 payment_options: Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentOptionResult']] = None,
+                 plan_type: Optional[str] = None,
+                 ship_to_cust_acct_role_id: Optional[str] = None,
+                 ship_to_cust_acct_site_id: Optional[str] = None,
+                 subscription_plan_number: Optional[str] = None,
+                 tax_infos: Optional[Sequence['outputs.GetSubscriptionSubscriptionTaxInfoResult']] = None,
+                 time_personal_to_corporate_conv: Optional[str] = None,
+                 time_plan_upgrade: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 upgrade_state: Optional[str] = None,
+                 upgrade_state_details: Optional[str] = None):
+        if account_type is not None:
+            pulumi.set(__self__, "account_type", account_type)
+        if bill_to_cust_account_id is not None:
+            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+        if billing_addresses is not None:
+            pulumi.set(__self__, "billing_addresses", billing_addresses)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if gsi_org_code is not None:
+            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_intent_to_pay is not None:
+            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        if language_code is not None:
+            pulumi.set(__self__, "language_code", language_code)
+        if organization_id is not None:
+            pulumi.set(__self__, "organization_id", organization_id)
+        if payment_gateways is not None:
+            pulumi.set(__self__, "payment_gateways", payment_gateways)
+        if payment_options is not None:
+            pulumi.set(__self__, "payment_options", payment_options)
+        if plan_type is not None:
+            pulumi.set(__self__, "plan_type", plan_type)
+        if ship_to_cust_acct_role_id is not None:
+            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        if ship_to_cust_acct_site_id is not None:
+            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        if subscription_plan_number is not None:
+            pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        if tax_infos is not None:
+            pulumi.set(__self__, "tax_infos", tax_infos)
+        if time_personal_to_corporate_conv is not None:
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        if time_plan_upgrade is not None:
+            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if upgrade_state is not None:
+            pulumi.set(__self__, "upgrade_state", upgrade_state)
+        if upgrade_state_details is not None:
+            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> str:
-        """
-        Account type.
-        """
+    def account_type(self) -> Optional[str]:
         return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter(name="billToCustAccountId")
-    def bill_to_cust_account_id(self) -> str:
-        """
-        Bill to customer Account id.
-        """
+    def bill_to_cust_account_id(self) -> Optional[str]:
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @property
     @pulumi.getter(name="billingAddresses")
-    def billing_addresses(self) -> Sequence['outputs.GetSubscriptionSubscriptionBillingAddressResult']:
-        """
-        Address details model.
-        """
+    def billing_addresses(self) -> Optional[Sequence['outputs.GetSubscriptionSubscriptionBillingAddressResult']]:
         return pulumi.get(self, "billing_addresses")
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="gsiOrgCode")
-    def gsi_org_code(self) -> str:
-        """
-        GSI Subscription external code.
-        """
+    def gsi_org_code(self) -> Optional[str]:
         return pulumi.get(self, "gsi_org_code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Subscription id identifier (OCID).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> bool:
-        """
-        Payment intension.
-        """
+    def is_intent_to_pay(self) -> Optional[bool]:
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> str:
-        """
-        Language short code (en, de, hu, etc)
-        """
+    def language_code(self) -> Optional[str]:
         return pulumi.get(self, "language_code")
 
     @property
     @pulumi.getter(name="organizationId")
-    def organization_id(self) -> str:
-        """
-        GSI organization external identifier.
-        """
+    def organization_id(self) -> Optional[str]:
         return pulumi.get(self, "organization_id")
 
     @property
     @pulumi.getter(name="paymentGateways")
-    def payment_gateways(self) -> Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayResult']:
-        """
-        Payment gateway details.
-        """
+    def payment_gateways(self) -> Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayResult']]:
         return pulumi.get(self, "payment_gateways")
 
     @property
     @pulumi.getter(name="paymentOptions")
-    def payment_options(self) -> Sequence['outputs.GetSubscriptionSubscriptionPaymentOptionResult']:
-        """
-        Payment option list of a subscription.
-        """
+    def payment_options(self) -> Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentOptionResult']]:
         return pulumi.get(self, "payment_options")
 
     @property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> str:
-        """
-        Subscription plan type.
-        """
+    def plan_type(self) -> Optional[str]:
         return pulumi.get(self, "plan_type")
 
     @property
     @pulumi.getter(name="shipToCustAcctRoleId")
-    def ship_to_cust_acct_role_id(self) -> str:
-        """
-        Ship to customer account role.
-        """
+    def ship_to_cust_acct_role_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @property
     @pulumi.getter(name="shipToCustAcctSiteId")
-    def ship_to_cust_acct_site_id(self) -> str:
-        """
-        Ship to customer account site address id.
-        """
+    def ship_to_cust_acct_site_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
-    def subscription_plan_number(self) -> str:
-        """
-        Subscription plan number.
-        """
+    def subscription_plan_number(self) -> Optional[str]:
         return pulumi.get(self, "subscription_plan_number")
 
     @property
     @pulumi.getter(name="taxInfos")
-    def tax_infos(self) -> Sequence['outputs.GetSubscriptionSubscriptionTaxInfoResult']:
-        """
-        Tax details.
-        """
+    def tax_infos(self) -> Optional[Sequence['outputs.GetSubscriptionSubscriptionTaxInfoResult']]:
         return pulumi.get(self, "tax_infos")
 
     @property
     @pulumi.getter(name="timePersonalToCorporateConv")
-    def time_personal_to_corporate_conv(self) -> str:
-        """
-        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        """
+    def time_personal_to_corporate_conv(self) -> Optional[str]:
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @property
     @pulumi.getter(name="timePlanUpgrade")
-    def time_plan_upgrade(self) -> str:
-        """
-        Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        """
+    def time_plan_upgrade(self) -> Optional[str]:
         return pulumi.get(self, "time_plan_upgrade")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Start date of the subscription.
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="upgradeState")
-    def upgrade_state(self) -> str:
-        """
-        Status of the upgrade.
-        """
+    def upgrade_state(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state")
 
     @property
     @pulumi.getter(name="upgradeStateDetails")
-    def upgrade_state_details(self) -> str:
-        """
-        This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
+    def upgrade_state_details(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state_details")
 
 
 @pulumi.output_type
 class GetSubscriptionSubscriptionBillingAddressResult(dict):
     def __init__(__self__, *,
-                 address_key: str,
-                 city: str,
-                 company_name: str,
-                 contributor_class: str,
-                 country: str,
-                 county: str,
-                 department_name: str,
-                 email_address: str,
-                 first_name: str,
-                 internal_number: str,
-                 job_title: str,
-                 last_name: str,
-                 line1: str,
-                 line2: str,
-                 line3: str,
-                 line4: str,
-                 middle_name: str,
-                 municipal_inscription: str,
-                 phone_country_code: str,
-                 phone_number: str,
-                 postal_code: str,
-                 province: str,
-                 state: str,
-                 state_inscription: str,
-                 street_name: str,
-                 street_number: str):
-        """
-        :param str address_key: Address identifier.
-        :param str city: Name of the city.
-        :param str company_name: Name of the customer company.
-        :param str contributor_class: Contributor class of the customer company.
-        :param str country: Country of the address.
-        :param str county: County of the address.
-        :param str department_name: Department name of the customer company.
-        :param str email_address: The email address of the paypal user.
-        :param str first_name: First name of the paypal user.
-        :param str internal_number: Internal number of the customer company.
-        :param str job_title: Job title of the contact person.
-        :param str last_name: Last name of the paypal user.
-        :param str line1: Address line 1.
-        :param str line2: Address line 2.
-        :param str line3: Address line 3.
-        :param str line4: Address line 4.
-        :param str middle_name: Middle name of the contact person.
-        :param str municipal_inscription: Municipal Inscription.
-        :param str phone_country_code: Phone country code of the contact person.
-        :param str phone_number: Phone number of the contact person.
-        :param str postal_code: Post code of the address.
-        :param str province: Province of the address.
-        :param str state: State of the address.
-        :param str state_inscription: State Inscription.
-        :param str street_name: Street name of the address.
-        :param str street_number: Street number of the address.
-        """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+                 address_key: Optional[str] = None,
+                 city: Optional[str] = None,
+                 company_name: Optional[str] = None,
+                 contributor_class: Optional[str] = None,
+                 country: Optional[str] = None,
+                 county: Optional[str] = None,
+                 department_name: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 internal_number: Optional[str] = None,
+                 job_title: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 line1: Optional[str] = None,
+                 line2: Optional[str] = None,
+                 line3: Optional[str] = None,
+                 line4: Optional[str] = None,
+                 middle_name: Optional[str] = None,
+                 municipal_inscription: Optional[str] = None,
+                 phone_country_code: Optional[str] = None,
+                 phone_number: Optional[str] = None,
+                 postal_code: Optional[str] = None,
+                 province: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_inscription: Optional[str] = None,
+                 street_name: Optional[str] = None,
+                 street_number: Optional[str] = None):
+        if address_key is not None:
+            pulumi.set(__self__, "address_key", address_key)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if line1 is not None:
+            pulumi.set(__self__, "line1", line1)
+        if line2 is not None:
+            pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> str:
-        """
-        Address identifier.
-        """
+    def address_key(self) -> Optional[str]:
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city.
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company.
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> str:
-        """
-        Contributor class of the customer company.
-        """
+    def contributor_class(self) -> Optional[str]:
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
-    def country(self) -> str:
-        """
-        Country of the address.
-        """
+    def country(self) -> Optional[str]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County of the address.
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> str:
-        """
-        Department name of the customer company.
-        """
+    def department_name(self) -> Optional[str]:
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> str:
-        """
-        Internal number of the customer company.
-        """
+    def internal_number(self) -> Optional[str]:
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> str:
-        """
-        Job title of the contact person.
-        """
+    def job_title(self) -> Optional[str]:
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def line1(self) -> str:
-        """
-        Address line 1.
-        """
+    def line1(self) -> Optional[str]:
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
-    def line2(self) -> str:
-        """
-        Address line 2.
-        """
+    def line2(self) -> Optional[str]:
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
-    def line3(self) -> str:
-        """
-        Address line 3.
-        """
+    def line3(self) -> Optional[str]:
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
-    def line4(self) -> str:
-        """
-        Address line 4.
-        """
+    def line4(self) -> Optional[str]:
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> str:
-        """
-        Middle name of the contact person.
-        """
+    def middle_name(self) -> Optional[str]:
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> str:
-        """
-        Municipal Inscription.
-        """
+    def municipal_inscription(self) -> Optional[str]:
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> str:
-        """
-        Phone country code of the contact person.
-        """
+    def phone_country_code(self) -> Optional[str]:
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> str:
-        """
-        Phone number of the contact person.
-        """
+    def phone_number(self) -> Optional[str]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        Post code of the address.
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Province of the address.
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        State of the address.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> str:
-        """
-        State Inscription.
-        """
+    def state_inscription(self) -> Optional[str]:
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name of the address.
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        Street number of the address.
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
 @pulumi.output_type
 class GetSubscriptionSubscriptionPaymentGatewayResult(dict):
     def __init__(__self__, *,
-                 merchant_defined_datas: Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult']):
-        """
-        :param Sequence['GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
-        """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+                 merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult']] = None):
+        if merchant_defined_datas is not None:
+            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
-    def merchant_defined_datas(self) -> Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult']:
-        """
-        Merchant details.
-        """
+    def merchant_defined_datas(self) -> Optional[Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult']]:
         return pulumi.get(self, "merchant_defined_datas")
 
 
 @pulumi.output_type
 class GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
     def __init__(__self__, *,
-                 cloud_account_name: str,
-                 promo_type: str):
-        """
-        :param str cloud_account_name: Cloud account name.
-        :param str promo_type: Promotion type code.
-        """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+                 cloud_account_name: Optional[str] = None,
+                 promo_type: Optional[str] = None):
+        if cloud_account_name is not None:
+            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        if promo_type is not None:
+            pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> str:
-        """
-        Cloud account name.
-        """
+    def cloud_account_name(self) -> Optional[str]:
         return pulumi.get(self, "cloud_account_name")
 
     @property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> str:
-        """
-        Promotion type code.
-        """
+    def promo_type(self) -> Optional[str]:
         return pulumi.get(self, "promo_type")
 
 
 @pulumi.output_type
 class GetSubscriptionSubscriptionPaymentOptionResult(dict):
     def __init__(__self__, *,
-                 credit_card_type: str,
-                 email_address: str,
-                 ext_billing_agreement_id: str,
-                 first_name: str,
-                 last_digits: str,
-                 last_name: str,
-                 name_on_card: str,
-                 payment_method: str,
-                 time_expiration: str,
-                 wallet_instrument_id: str,
-                 wallet_transaction_id: str):
-        """
-        :param str credit_card_type: Credit card type.
-        :param str email_address: The email address of the paypal user.
-        :param str ext_billing_agreement_id: Agreement id for the paypal account.
-        :param str first_name: First name of the paypal user.
-        :param str last_digits: Last four digits of the card.
-        :param str last_name: Last name of the paypal user.
-        :param str name_on_card: Name on the credit card.
-        :param str payment_method: Payment method
-        :param str time_expiration: Expired date of the credit card.
-        :param str wallet_instrument_id: Wallet instrument internal id.
-        :param str wallet_transaction_id: Wallet transaction id.
-        """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+                 credit_card_type: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 ext_billing_agreement_id: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 last_digits: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 name_on_card: Optional[str] = None,
+                 payment_method: Optional[str] = None,
+                 time_expiration: Optional[str] = None,
+                 wallet_instrument_id: Optional[str] = None,
+                 wallet_transaction_id: Optional[str] = None):
+        if credit_card_type is not None:
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if ext_billing_agreement_id is not None:
+            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_digits is not None:
+            pulumi.set(__self__, "last_digits", last_digits)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if name_on_card is not None:
+            pulumi.set(__self__, "name_on_card", name_on_card)
+        if payment_method is not None:
+            pulumi.set(__self__, "payment_method", payment_method)
+        if time_expiration is not None:
+            pulumi.set(__self__, "time_expiration", time_expiration)
+        if wallet_instrument_id is not None:
+            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        if wallet_transaction_id is not None:
+            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> str:
-        """
-        Credit card type.
-        """
+    def credit_card_type(self) -> Optional[str]:
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="extBillingAgreementId")
-    def ext_billing_agreement_id(self) -> str:
-        """
-        Agreement id for the paypal account.
-        """
+    def ext_billing_agreement_id(self) -> Optional[str]:
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> str:
-        """
-        Last four digits of the card.
-        """
+    def last_digits(self) -> Optional[str]:
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> str:
-        """
-        Name on the credit card.
-        """
+    def name_on_card(self) -> Optional[str]:
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment method
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> str:
-        """
-        Expired date of the credit card.
-        """
+    def time_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="walletInstrumentId")
-    def wallet_instrument_id(self) -> str:
-        """
-        Wallet instrument internal id.
-        """
+    def wallet_instrument_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_instrument_id")
 
     @property
     @pulumi.getter(name="walletTransactionId")
-    def wallet_transaction_id(self) -> str:
-        """
-        Wallet transaction id.
-        """
+    def wallet_transaction_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_transaction_id")
 
 
 @pulumi.output_type
 class GetSubscriptionSubscriptionTaxInfoResult(dict):
     def __init__(__self__, *,
-                 no_tax_reason_code: str,
-                 no_tax_reason_code_details: str,
-                 tax_cnpj: str,
-                 tax_payer_id: str,
-                 tax_reg_number: str):
-        """
-        :param str no_tax_reason_code: Tax exemption reason code.
-        :param str no_tax_reason_code_details: Tax exemption reason description.
-        :param str tax_cnpj: Brazilian companies' CNPJ number.
-        :param str tax_payer_id: Tay payer identifier.
-        :param str tax_reg_number: Tax registration number.
-        """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+                 no_tax_reason_code: Optional[str] = None,
+                 no_tax_reason_code_details: Optional[str] = None,
+                 tax_cnpj: Optional[str] = None,
+                 tax_payer_id: Optional[str] = None,
+                 tax_reg_number: Optional[str] = None):
+        if no_tax_reason_code is not None:
+            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        if no_tax_reason_code_details is not None:
+            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        if tax_cnpj is not None:
+            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        if tax_payer_id is not None:
+            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        if tax_reg_number is not None:
+            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
-    def no_tax_reason_code(self) -> str:
-        """
-        Tax exemption reason code.
-        """
+    def no_tax_reason_code(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code")
 
     @property
     @pulumi.getter(name="noTaxReasonCodeDetails")
-    def no_tax_reason_code_details(self) -> str:
-        """
-        Tax exemption reason description.
-        """
+    def no_tax_reason_code_details(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @property
     @pulumi.getter(name="taxCnpj")
-    def tax_cnpj(self) -> str:
-        """
-        Brazilian companies' CNPJ number.
-        """
+    def tax_cnpj(self) -> Optional[str]:
         return pulumi.get(self, "tax_cnpj")
 
     @property
     @pulumi.getter(name="taxPayerId")
-    def tax_payer_id(self) -> str:
-        """
-        Tay payer identifier.
-        """
+    def tax_payer_id(self) -> Optional[str]:
         return pulumi.get(self, "tax_payer_id")
 
     @property
     @pulumi.getter(name="taxRegNumber")
-    def tax_reg_number(self) -> str:
-        """
-        Tax registration number.
-        """
+    def tax_reg_number(self) -> Optional[str]:
         return pulumi.get(self, "tax_reg_number")
 
 
 @pulumi.output_type
 class GetSubscriptionTaxInfoResult(dict):
     def __init__(__self__, *,
-                 no_tax_reason_code: str,
-                 no_tax_reason_code_details: str,
-                 tax_cnpj: str,
-                 tax_payer_id: str,
-                 tax_reg_number: str):
-        """
-        :param str no_tax_reason_code: Tax exemption reason code.
-        :param str no_tax_reason_code_details: Tax exemption reason description.
-        :param str tax_cnpj: Brazilian companies' CNPJ number.
-        :param str tax_payer_id: Tay payer identifier.
-        :param str tax_reg_number: Tax registration number.
-        """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+                 no_tax_reason_code: Optional[str] = None,
+                 no_tax_reason_code_details: Optional[str] = None,
+                 tax_cnpj: Optional[str] = None,
+                 tax_payer_id: Optional[str] = None,
+                 tax_reg_number: Optional[str] = None):
+        if no_tax_reason_code is not None:
+            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        if no_tax_reason_code_details is not None:
+            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        if tax_cnpj is not None:
+            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        if tax_payer_id is not None:
+            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        if tax_reg_number is not None:
+            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
-    def no_tax_reason_code(self) -> str:
-        """
-        Tax exemption reason code.
-        """
+    def no_tax_reason_code(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code")
 
     @property
     @pulumi.getter(name="noTaxReasonCodeDetails")
-    def no_tax_reason_code_details(self) -> str:
-        """
-        Tax exemption reason description.
-        """
+    def no_tax_reason_code_details(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @property
     @pulumi.getter(name="taxCnpj")
-    def tax_cnpj(self) -> str:
-        """
-        Brazilian companies' CNPJ number.
-        """
+    def tax_cnpj(self) -> Optional[str]:
         return pulumi.get(self, "tax_cnpj")
 
     @property
     @pulumi.getter(name="taxPayerId")
-    def tax_payer_id(self) -> str:
-        """
-        Tay payer identifier.
-        """
+    def tax_payer_id(self) -> Optional[str]:
         return pulumi.get(self, "tax_payer_id")
 
     @property
     @pulumi.getter(name="taxRegNumber")
-    def tax_reg_number(self) -> str:
-        """
-        Tax registration number.
-        """
+    def tax_reg_number(self) -> Optional[str]:
         return pulumi.get(self, "tax_reg_number")
 
 
@@ -5605,1591 +4129,1169 @@ class GetSubscriptionsFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 account_type: str,
-                 bill_to_cust_account_id: str,
-                 billing_addresses: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemBillingAddressResult'],
-                 compartment_id: str,
-                 currency_code: str,
-                 email: str,
-                 gsi_org_code: str,
-                 id: str,
-                 is_intent_to_pay: bool,
-                 language_code: str,
-                 organization_id: str,
-                 osp_home_region: str,
-                 payment_gateways: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult'],
-                 payment_options: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult'],
-                 plan_type: str,
-                 ship_to_cust_acct_role_id: str,
-                 ship_to_cust_acct_site_id: str,
-                 subscription_id: str,
-                 subscription_plan_number: str,
-                 subscriptions: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionResult'],
-                 tax_infos: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemTaxInfoResult'],
-                 time_personal_to_corporate_conv: str,
-                 time_plan_upgrade: str,
-                 time_start: str,
-                 upgrade_state: str,
-                 upgrade_state_details: str):
-        """
-        :param str account_type: Account type.
-        :param str bill_to_cust_account_id: Bill to customer Account id.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs'] billing_addresses: Address details model.
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str currency_code: Currency code
-        :param str gsi_org_code: GSI Subscription external code.
-        :param str id: Subscription id identifier (OCID).
-        :param bool is_intent_to_pay: Payment intension.
-        :param str language_code: Language short code (en, de, hu, etc)
-        :param str organization_id: GSI organization external identifier.
-        :param str osp_home_region: The home region's public name of the logged in user.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs'] payment_gateways: Payment gateway details.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs'] payment_options: Payment option list of a subscription.
-        :param str plan_type: Subscription plan type.
-        :param str ship_to_cust_acct_role_id: Ship to customer account role.
-        :param str ship_to_cust_acct_site_id: Ship to customer account site address id.
-        :param str subscription_plan_number: Subscription plan number.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs'] tax_infos: Tax details.
-        :param str time_personal_to_corporate_conv: Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        :param str time_plan_upgrade: Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        :param str time_start: Start date of the subscription.
-        :param str upgrade_state: Status of the upgrade.
-        :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
-        pulumi.set(__self__, "account_type", account_type)
-        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
-        pulumi.set(__self__, "billing_addresses", billing_addresses)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "organization_id", organization_id)
-        pulumi.set(__self__, "osp_home_region", osp_home_region)
-        pulumi.set(__self__, "payment_gateways", payment_gateways)
-        pulumi.set(__self__, "payment_options", payment_options)
-        pulumi.set(__self__, "plan_type", plan_type)
-        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
-        pulumi.set(__self__, "subscriptions", subscriptions)
-        pulumi.set(__self__, "tax_infos", tax_infos)
-        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "upgrade_state", upgrade_state)
-        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+                 account_type: Optional[str] = None,
+                 bill_to_cust_account_id: Optional[str] = None,
+                 billing_addresses: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemBillingAddressResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 currency_code: Optional[str] = None,
+                 email: Optional[str] = None,
+                 gsi_org_code: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_intent_to_pay: Optional[bool] = None,
+                 language_code: Optional[str] = None,
+                 organization_id: Optional[str] = None,
+                 osp_home_region: Optional[str] = None,
+                 payment_gateways: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult']] = None,
+                 payment_options: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult']] = None,
+                 plan_type: Optional[str] = None,
+                 ship_to_cust_acct_role_id: Optional[str] = None,
+                 ship_to_cust_acct_site_id: Optional[str] = None,
+                 subscription_id: Optional[str] = None,
+                 subscription_plan_number: Optional[str] = None,
+                 subscriptions: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionResult']] = None,
+                 tax_infos: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemTaxInfoResult']] = None,
+                 time_personal_to_corporate_conv: Optional[str] = None,
+                 time_plan_upgrade: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 upgrade_state: Optional[str] = None,
+                 upgrade_state_details: Optional[str] = None):
+        if account_type is not None:
+            pulumi.set(__self__, "account_type", account_type)
+        if bill_to_cust_account_id is not None:
+            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+        if billing_addresses is not None:
+            pulumi.set(__self__, "billing_addresses", billing_addresses)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if gsi_org_code is not None:
+            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_intent_to_pay is not None:
+            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        if language_code is not None:
+            pulumi.set(__self__, "language_code", language_code)
+        if organization_id is not None:
+            pulumi.set(__self__, "organization_id", organization_id)
+        if osp_home_region is not None:
+            pulumi.set(__self__, "osp_home_region", osp_home_region)
+        if payment_gateways is not None:
+            pulumi.set(__self__, "payment_gateways", payment_gateways)
+        if payment_options is not None:
+            pulumi.set(__self__, "payment_options", payment_options)
+        if plan_type is not None:
+            pulumi.set(__self__, "plan_type", plan_type)
+        if ship_to_cust_acct_role_id is not None:
+            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        if ship_to_cust_acct_site_id is not None:
+            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
+        if subscription_plan_number is not None:
+            pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        if subscriptions is not None:
+            pulumi.set(__self__, "subscriptions", subscriptions)
+        if tax_infos is not None:
+            pulumi.set(__self__, "tax_infos", tax_infos)
+        if time_personal_to_corporate_conv is not None:
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        if time_plan_upgrade is not None:
+            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if upgrade_state is not None:
+            pulumi.set(__self__, "upgrade_state", upgrade_state)
+        if upgrade_state_details is not None:
+            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> str:
-        """
-        Account type.
-        """
+    def account_type(self) -> Optional[str]:
         return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter(name="billToCustAccountId")
-    def bill_to_cust_account_id(self) -> str:
-        """
-        Bill to customer Account id.
-        """
+    def bill_to_cust_account_id(self) -> Optional[str]:
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @property
     @pulumi.getter(name="billingAddresses")
-    def billing_addresses(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemBillingAddressResult']:
-        """
-        Address details model.
-        """
+    def billing_addresses(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemBillingAddressResult']]:
         return pulumi.get(self, "billing_addresses")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter
-    def email(self) -> str:
+    def email(self) -> Optional[str]:
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter(name="gsiOrgCode")
-    def gsi_org_code(self) -> str:
-        """
-        GSI Subscription external code.
-        """
+    def gsi_org_code(self) -> Optional[str]:
         return pulumi.get(self, "gsi_org_code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Subscription id identifier (OCID).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> bool:
-        """
-        Payment intension.
-        """
+    def is_intent_to_pay(self) -> Optional[bool]:
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> str:
-        """
-        Language short code (en, de, hu, etc)
-        """
+    def language_code(self) -> Optional[str]:
         return pulumi.get(self, "language_code")
 
     @property
     @pulumi.getter(name="organizationId")
-    def organization_id(self) -> str:
-        """
-        GSI organization external identifier.
-        """
+    def organization_id(self) -> Optional[str]:
         return pulumi.get(self, "organization_id")
 
     @property
     @pulumi.getter(name="ospHomeRegion")
-    def osp_home_region(self) -> str:
-        """
-        The home region's public name of the logged in user.
-        """
+    def osp_home_region(self) -> Optional[str]:
         return pulumi.get(self, "osp_home_region")
 
     @property
     @pulumi.getter(name="paymentGateways")
-    def payment_gateways(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult']:
-        """
-        Payment gateway details.
-        """
+    def payment_gateways(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult']]:
         return pulumi.get(self, "payment_gateways")
 
     @property
     @pulumi.getter(name="paymentOptions")
-    def payment_options(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult']:
-        """
-        Payment option list of a subscription.
-        """
+    def payment_options(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult']]:
         return pulumi.get(self, "payment_options")
 
     @property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> str:
-        """
-        Subscription plan type.
-        """
+    def plan_type(self) -> Optional[str]:
         return pulumi.get(self, "plan_type")
 
     @property
     @pulumi.getter(name="shipToCustAcctRoleId")
-    def ship_to_cust_acct_role_id(self) -> str:
-        """
-        Ship to customer account role.
-        """
+    def ship_to_cust_acct_role_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @property
     @pulumi.getter(name="shipToCustAcctSiteId")
-    def ship_to_cust_acct_site_id(self) -> str:
-        """
-        Ship to customer account site address id.
-        """
+    def ship_to_cust_acct_site_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
-    def subscription_plan_number(self) -> str:
-        """
-        Subscription plan number.
-        """
+    def subscription_plan_number(self) -> Optional[str]:
         return pulumi.get(self, "subscription_plan_number")
 
     @property
     @pulumi.getter
-    def subscriptions(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionResult']:
+    def subscriptions(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionResult']]:
         return pulumi.get(self, "subscriptions")
 
     @property
     @pulumi.getter(name="taxInfos")
-    def tax_infos(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemTaxInfoResult']:
-        """
-        Tax details.
-        """
+    def tax_infos(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemTaxInfoResult']]:
         return pulumi.get(self, "tax_infos")
 
     @property
     @pulumi.getter(name="timePersonalToCorporateConv")
-    def time_personal_to_corporate_conv(self) -> str:
-        """
-        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        """
+    def time_personal_to_corporate_conv(self) -> Optional[str]:
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @property
     @pulumi.getter(name="timePlanUpgrade")
-    def time_plan_upgrade(self) -> str:
-        """
-        Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        """
+    def time_plan_upgrade(self) -> Optional[str]:
         return pulumi.get(self, "time_plan_upgrade")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Start date of the subscription.
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="upgradeState")
-    def upgrade_state(self) -> str:
-        """
-        Status of the upgrade.
-        """
+    def upgrade_state(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state")
 
     @property
     @pulumi.getter(name="upgradeStateDetails")
-    def upgrade_state_details(self) -> str:
-        """
-        This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
+    def upgrade_state_details(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state_details")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemBillingAddressResult(dict):
     def __init__(__self__, *,
-                 address_key: str,
-                 city: str,
-                 company_name: str,
-                 contributor_class: str,
-                 country: str,
-                 county: str,
-                 department_name: str,
-                 email_address: str,
-                 first_name: str,
-                 internal_number: str,
-                 job_title: str,
-                 last_name: str,
-                 line1: str,
-                 line2: str,
-                 line3: str,
-                 line4: str,
-                 middle_name: str,
-                 municipal_inscription: str,
-                 phone_country_code: str,
-                 phone_number: str,
-                 postal_code: str,
-                 province: str,
-                 state: str,
-                 state_inscription: str,
-                 street_name: str,
-                 street_number: str):
-        """
-        :param str address_key: Address identifier.
-        :param str city: Name of the city.
-        :param str company_name: Name of the customer company.
-        :param str contributor_class: Contributor class of the customer company.
-        :param str country: Country of the address.
-        :param str county: County of the address.
-        :param str department_name: Department name of the customer company.
-        :param str email_address: The email address of the paypal user.
-        :param str first_name: First name of the paypal user.
-        :param str internal_number: Internal number of the customer company.
-        :param str job_title: Job title of the contact person.
-        :param str last_name: Last name of the paypal user.
-        :param str line1: Address line 1.
-        :param str line2: Address line 2.
-        :param str line3: Address line 3.
-        :param str line4: Address line 4.
-        :param str middle_name: Middle name of the contact person.
-        :param str municipal_inscription: Municipal Inscription.
-        :param str phone_country_code: Phone country code of the contact person.
-        :param str phone_number: Phone number of the contact person.
-        :param str postal_code: Post code of the address.
-        :param str province: Province of the address.
-        :param str state: State of the address.
-        :param str state_inscription: State Inscription.
-        :param str street_name: Street name of the address.
-        :param str street_number: Street number of the address.
-        """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+                 address_key: Optional[str] = None,
+                 city: Optional[str] = None,
+                 company_name: Optional[str] = None,
+                 contributor_class: Optional[str] = None,
+                 country: Optional[str] = None,
+                 county: Optional[str] = None,
+                 department_name: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 internal_number: Optional[str] = None,
+                 job_title: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 line1: Optional[str] = None,
+                 line2: Optional[str] = None,
+                 line3: Optional[str] = None,
+                 line4: Optional[str] = None,
+                 middle_name: Optional[str] = None,
+                 municipal_inscription: Optional[str] = None,
+                 phone_country_code: Optional[str] = None,
+                 phone_number: Optional[str] = None,
+                 postal_code: Optional[str] = None,
+                 province: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_inscription: Optional[str] = None,
+                 street_name: Optional[str] = None,
+                 street_number: Optional[str] = None):
+        if address_key is not None:
+            pulumi.set(__self__, "address_key", address_key)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if line1 is not None:
+            pulumi.set(__self__, "line1", line1)
+        if line2 is not None:
+            pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> str:
-        """
-        Address identifier.
-        """
+    def address_key(self) -> Optional[str]:
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city.
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company.
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> str:
-        """
-        Contributor class of the customer company.
-        """
+    def contributor_class(self) -> Optional[str]:
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
-    def country(self) -> str:
-        """
-        Country of the address.
-        """
+    def country(self) -> Optional[str]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County of the address.
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> str:
-        """
-        Department name of the customer company.
-        """
+    def department_name(self) -> Optional[str]:
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> str:
-        """
-        Internal number of the customer company.
-        """
+    def internal_number(self) -> Optional[str]:
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> str:
-        """
-        Job title of the contact person.
-        """
+    def job_title(self) -> Optional[str]:
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def line1(self) -> str:
-        """
-        Address line 1.
-        """
+    def line1(self) -> Optional[str]:
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
-    def line2(self) -> str:
-        """
-        Address line 2.
-        """
+    def line2(self) -> Optional[str]:
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
-    def line3(self) -> str:
-        """
-        Address line 3.
-        """
+    def line3(self) -> Optional[str]:
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
-    def line4(self) -> str:
-        """
-        Address line 4.
-        """
+    def line4(self) -> Optional[str]:
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> str:
-        """
-        Middle name of the contact person.
-        """
+    def middle_name(self) -> Optional[str]:
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> str:
-        """
-        Municipal Inscription.
-        """
+    def municipal_inscription(self) -> Optional[str]:
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> str:
-        """
-        Phone country code of the contact person.
-        """
+    def phone_country_code(self) -> Optional[str]:
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> str:
-        """
-        Phone number of the contact person.
-        """
+    def phone_number(self) -> Optional[str]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        Post code of the address.
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Province of the address.
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        State of the address.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> str:
-        """
-        State Inscription.
-        """
+    def state_inscription(self) -> Optional[str]:
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name of the address.
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        Street number of the address.
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult(dict):
     def __init__(__self__, *,
-                 merchant_defined_datas: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult']):
-        """
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
-        """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+                 merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult']] = None):
+        if merchant_defined_datas is not None:
+            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
-    def merchant_defined_datas(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult']:
-        """
-        Merchant details.
-        """
+    def merchant_defined_datas(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult']]:
         return pulumi.get(self, "merchant_defined_datas")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult(dict):
     def __init__(__self__, *,
-                 cloud_account_name: str,
-                 promo_type: str):
-        """
-        :param str cloud_account_name: Cloud account name.
-        :param str promo_type: Promotion type code.
-        """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+                 cloud_account_name: Optional[str] = None,
+                 promo_type: Optional[str] = None):
+        if cloud_account_name is not None:
+            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        if promo_type is not None:
+            pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> str:
-        """
-        Cloud account name.
-        """
+    def cloud_account_name(self) -> Optional[str]:
         return pulumi.get(self, "cloud_account_name")
 
     @property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> str:
-        """
-        Promotion type code.
-        """
+    def promo_type(self) -> Optional[str]:
         return pulumi.get(self, "promo_type")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult(dict):
     def __init__(__self__, *,
-                 credit_card_type: str,
-                 email_address: str,
-                 ext_billing_agreement_id: str,
-                 first_name: str,
-                 last_digits: str,
-                 last_name: str,
-                 name_on_card: str,
-                 payment_method: str,
-                 time_expiration: str,
-                 wallet_instrument_id: str,
-                 wallet_transaction_id: str):
-        """
-        :param str credit_card_type: Credit card type.
-        :param str email_address: The email address of the paypal user.
-        :param str ext_billing_agreement_id: Agreement id for the paypal account.
-        :param str first_name: First name of the paypal user.
-        :param str last_digits: Last four digits of the card.
-        :param str last_name: Last name of the paypal user.
-        :param str name_on_card: Name on the credit card.
-        :param str payment_method: Payment method
-        :param str time_expiration: Expired date of the credit card.
-        :param str wallet_instrument_id: Wallet instrument internal id.
-        :param str wallet_transaction_id: Wallet transaction id.
-        """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+                 credit_card_type: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 ext_billing_agreement_id: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 last_digits: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 name_on_card: Optional[str] = None,
+                 payment_method: Optional[str] = None,
+                 time_expiration: Optional[str] = None,
+                 wallet_instrument_id: Optional[str] = None,
+                 wallet_transaction_id: Optional[str] = None):
+        if credit_card_type is not None:
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if ext_billing_agreement_id is not None:
+            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_digits is not None:
+            pulumi.set(__self__, "last_digits", last_digits)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if name_on_card is not None:
+            pulumi.set(__self__, "name_on_card", name_on_card)
+        if payment_method is not None:
+            pulumi.set(__self__, "payment_method", payment_method)
+        if time_expiration is not None:
+            pulumi.set(__self__, "time_expiration", time_expiration)
+        if wallet_instrument_id is not None:
+            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        if wallet_transaction_id is not None:
+            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> str:
-        """
-        Credit card type.
-        """
+    def credit_card_type(self) -> Optional[str]:
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="extBillingAgreementId")
-    def ext_billing_agreement_id(self) -> str:
-        """
-        Agreement id for the paypal account.
-        """
+    def ext_billing_agreement_id(self) -> Optional[str]:
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> str:
-        """
-        Last four digits of the card.
-        """
+    def last_digits(self) -> Optional[str]:
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> str:
-        """
-        Name on the credit card.
-        """
+    def name_on_card(self) -> Optional[str]:
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment method
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> str:
-        """
-        Expired date of the credit card.
-        """
+    def time_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="walletInstrumentId")
-    def wallet_instrument_id(self) -> str:
-        """
-        Wallet instrument internal id.
-        """
+    def wallet_instrument_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_instrument_id")
 
     @property
     @pulumi.getter(name="walletTransactionId")
-    def wallet_transaction_id(self) -> str:
-        """
-        Wallet transaction id.
-        """
+    def wallet_transaction_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_transaction_id")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
     def __init__(__self__, *,
-                 account_type: str,
-                 bill_to_cust_account_id: str,
-                 billing_addresses: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult'],
-                 currency_code: str,
-                 gsi_org_code: str,
-                 id: str,
-                 is_intent_to_pay: bool,
-                 language_code: str,
-                 organization_id: str,
-                 payment_gateways: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult'],
-                 payment_options: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult'],
-                 plan_type: str,
-                 ship_to_cust_acct_role_id: str,
-                 ship_to_cust_acct_site_id: str,
-                 subscription_plan_number: str,
-                 tax_infos: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult'],
-                 time_personal_to_corporate_conv: str,
-                 time_plan_upgrade: str,
-                 time_start: str,
-                 upgrade_state: str,
-                 upgrade_state_details: str):
-        """
-        :param str account_type: Account type.
-        :param str bill_to_cust_account_id: Bill to customer Account id.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs'] billing_addresses: Address details model.
-        :param str currency_code: Currency code
-        :param str gsi_org_code: GSI Subscription external code.
-        :param str id: Subscription id identifier (OCID).
-        :param bool is_intent_to_pay: Payment intension.
-        :param str language_code: Language short code (en, de, hu, etc)
-        :param str organization_id: GSI organization external identifier.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs'] payment_gateways: Payment gateway details.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs'] payment_options: Payment option list of a subscription.
-        :param str plan_type: Subscription plan type.
-        :param str ship_to_cust_acct_role_id: Ship to customer account role.
-        :param str ship_to_cust_acct_site_id: Ship to customer account site address id.
-        :param str subscription_plan_number: Subscription plan number.
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs'] tax_infos: Tax details.
-        :param str time_personal_to_corporate_conv: Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        :param str time_plan_upgrade: Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        :param str time_start: Start date of the subscription.
-        :param str upgrade_state: Status of the upgrade.
-        :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
-        pulumi.set(__self__, "account_type", account_type)
-        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
-        pulumi.set(__self__, "billing_addresses", billing_addresses)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "organization_id", organization_id)
-        pulumi.set(__self__, "payment_gateways", payment_gateways)
-        pulumi.set(__self__, "payment_options", payment_options)
-        pulumi.set(__self__, "plan_type", plan_type)
-        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
-        pulumi.set(__self__, "tax_infos", tax_infos)
-        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "upgrade_state", upgrade_state)
-        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+                 account_type: Optional[str] = None,
+                 bill_to_cust_account_id: Optional[str] = None,
+                 billing_addresses: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult']] = None,
+                 currency_code: Optional[str] = None,
+                 gsi_org_code: Optional[str] = None,
+                 id: Optional[str] = None,
+                 is_intent_to_pay: Optional[bool] = None,
+                 language_code: Optional[str] = None,
+                 organization_id: Optional[str] = None,
+                 payment_gateways: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult']] = None,
+                 payment_options: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult']] = None,
+                 plan_type: Optional[str] = None,
+                 ship_to_cust_acct_role_id: Optional[str] = None,
+                 ship_to_cust_acct_site_id: Optional[str] = None,
+                 subscription_plan_number: Optional[str] = None,
+                 tax_infos: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult']] = None,
+                 time_personal_to_corporate_conv: Optional[str] = None,
+                 time_plan_upgrade: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 upgrade_state: Optional[str] = None,
+                 upgrade_state_details: Optional[str] = None):
+        if account_type is not None:
+            pulumi.set(__self__, "account_type", account_type)
+        if bill_to_cust_account_id is not None:
+            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+        if billing_addresses is not None:
+            pulumi.set(__self__, "billing_addresses", billing_addresses)
+        if currency_code is not None:
+            pulumi.set(__self__, "currency_code", currency_code)
+        if gsi_org_code is not None:
+            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_intent_to_pay is not None:
+            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+        if language_code is not None:
+            pulumi.set(__self__, "language_code", language_code)
+        if organization_id is not None:
+            pulumi.set(__self__, "organization_id", organization_id)
+        if payment_gateways is not None:
+            pulumi.set(__self__, "payment_gateways", payment_gateways)
+        if payment_options is not None:
+            pulumi.set(__self__, "payment_options", payment_options)
+        if plan_type is not None:
+            pulumi.set(__self__, "plan_type", plan_type)
+        if ship_to_cust_acct_role_id is not None:
+            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        if ship_to_cust_acct_site_id is not None:
+            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        if subscription_plan_number is not None:
+            pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        if tax_infos is not None:
+            pulumi.set(__self__, "tax_infos", tax_infos)
+        if time_personal_to_corporate_conv is not None:
+            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        if time_plan_upgrade is not None:
+            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if upgrade_state is not None:
+            pulumi.set(__self__, "upgrade_state", upgrade_state)
+        if upgrade_state_details is not None:
+            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> str:
-        """
-        Account type.
-        """
+    def account_type(self) -> Optional[str]:
         return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter(name="billToCustAccountId")
-    def bill_to_cust_account_id(self) -> str:
-        """
-        Bill to customer Account id.
-        """
+    def bill_to_cust_account_id(self) -> Optional[str]:
         return pulumi.get(self, "bill_to_cust_account_id")
 
     @property
     @pulumi.getter(name="billingAddresses")
-    def billing_addresses(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult']:
-        """
-        Address details model.
-        """
+    def billing_addresses(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult']]:
         return pulumi.get(self, "billing_addresses")
 
     @property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        """
-        Currency code
-        """
+    def currency_code(self) -> Optional[str]:
         return pulumi.get(self, "currency_code")
 
     @property
     @pulumi.getter(name="gsiOrgCode")
-    def gsi_org_code(self) -> str:
-        """
-        GSI Subscription external code.
-        """
+    def gsi_org_code(self) -> Optional[str]:
         return pulumi.get(self, "gsi_org_code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Subscription id identifier (OCID).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isIntentToPay")
-    def is_intent_to_pay(self) -> bool:
-        """
-        Payment intension.
-        """
+    def is_intent_to_pay(self) -> Optional[bool]:
         return pulumi.get(self, "is_intent_to_pay")
 
     @property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> str:
-        """
-        Language short code (en, de, hu, etc)
-        """
+    def language_code(self) -> Optional[str]:
         return pulumi.get(self, "language_code")
 
     @property
     @pulumi.getter(name="organizationId")
-    def organization_id(self) -> str:
-        """
-        GSI organization external identifier.
-        """
+    def organization_id(self) -> Optional[str]:
         return pulumi.get(self, "organization_id")
 
     @property
     @pulumi.getter(name="paymentGateways")
-    def payment_gateways(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult']:
-        """
-        Payment gateway details.
-        """
+    def payment_gateways(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult']]:
         return pulumi.get(self, "payment_gateways")
 
     @property
     @pulumi.getter(name="paymentOptions")
-    def payment_options(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult']:
-        """
-        Payment option list of a subscription.
-        """
+    def payment_options(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult']]:
         return pulumi.get(self, "payment_options")
 
     @property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> str:
-        """
-        Subscription plan type.
-        """
+    def plan_type(self) -> Optional[str]:
         return pulumi.get(self, "plan_type")
 
     @property
     @pulumi.getter(name="shipToCustAcctRoleId")
-    def ship_to_cust_acct_role_id(self) -> str:
-        """
-        Ship to customer account role.
-        """
+    def ship_to_cust_acct_role_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_role_id")
 
     @property
     @pulumi.getter(name="shipToCustAcctSiteId")
-    def ship_to_cust_acct_site_id(self) -> str:
-        """
-        Ship to customer account site address id.
-        """
+    def ship_to_cust_acct_site_id(self) -> Optional[str]:
         return pulumi.get(self, "ship_to_cust_acct_site_id")
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
-    def subscription_plan_number(self) -> str:
-        """
-        Subscription plan number.
-        """
+    def subscription_plan_number(self) -> Optional[str]:
         return pulumi.get(self, "subscription_plan_number")
 
     @property
     @pulumi.getter(name="taxInfos")
-    def tax_infos(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult']:
-        """
-        Tax details.
-        """
+    def tax_infos(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult']]:
         return pulumi.get(self, "tax_infos")
 
     @property
     @pulumi.getter(name="timePersonalToCorporateConv")
-    def time_personal_to_corporate_conv(self) -> str:
-        """
-        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-        """
+    def time_personal_to_corporate_conv(self) -> Optional[str]:
         return pulumi.get(self, "time_personal_to_corporate_conv")
 
     @property
     @pulumi.getter(name="timePlanUpgrade")
-    def time_plan_upgrade(self) -> str:
-        """
-        Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-        """
+    def time_plan_upgrade(self) -> Optional[str]:
         return pulumi.get(self, "time_plan_upgrade")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Start date of the subscription.
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="upgradeState")
-    def upgrade_state(self) -> str:
-        """
-        Status of the upgrade.
-        """
+    def upgrade_state(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state")
 
     @property
     @pulumi.getter(name="upgradeStateDetails")
-    def upgrade_state_details(self) -> str:
-        """
-        This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-        """
+    def upgrade_state_details(self) -> Optional[str]:
         return pulumi.get(self, "upgrade_state_details")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult(dict):
     def __init__(__self__, *,
-                 address_key: str,
-                 city: str,
-                 company_name: str,
-                 contributor_class: str,
-                 country: str,
-                 county: str,
-                 department_name: str,
-                 email_address: str,
-                 first_name: str,
-                 internal_number: str,
-                 job_title: str,
-                 last_name: str,
-                 line1: str,
-                 line2: str,
-                 line3: str,
-                 line4: str,
-                 middle_name: str,
-                 municipal_inscription: str,
-                 phone_country_code: str,
-                 phone_number: str,
-                 postal_code: str,
-                 province: str,
-                 state: str,
-                 state_inscription: str,
-                 street_name: str,
-                 street_number: str):
-        """
-        :param str address_key: Address identifier.
-        :param str city: Name of the city.
-        :param str company_name: Name of the customer company.
-        :param str contributor_class: Contributor class of the customer company.
-        :param str country: Country of the address.
-        :param str county: County of the address.
-        :param str department_name: Department name of the customer company.
-        :param str email_address: The email address of the paypal user.
-        :param str first_name: First name of the paypal user.
-        :param str internal_number: Internal number of the customer company.
-        :param str job_title: Job title of the contact person.
-        :param str last_name: Last name of the paypal user.
-        :param str line1: Address line 1.
-        :param str line2: Address line 2.
-        :param str line3: Address line 3.
-        :param str line4: Address line 4.
-        :param str middle_name: Middle name of the contact person.
-        :param str municipal_inscription: Municipal Inscription.
-        :param str phone_country_code: Phone country code of the contact person.
-        :param str phone_number: Phone number of the contact person.
-        :param str postal_code: Post code of the address.
-        :param str province: Province of the address.
-        :param str state: State of the address.
-        :param str state_inscription: State Inscription.
-        :param str street_name: Street name of the address.
-        :param str street_number: Street number of the address.
-        """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+                 address_key: Optional[str] = None,
+                 city: Optional[str] = None,
+                 company_name: Optional[str] = None,
+                 contributor_class: Optional[str] = None,
+                 country: Optional[str] = None,
+                 county: Optional[str] = None,
+                 department_name: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 internal_number: Optional[str] = None,
+                 job_title: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 line1: Optional[str] = None,
+                 line2: Optional[str] = None,
+                 line3: Optional[str] = None,
+                 line4: Optional[str] = None,
+                 middle_name: Optional[str] = None,
+                 municipal_inscription: Optional[str] = None,
+                 phone_country_code: Optional[str] = None,
+                 phone_number: Optional[str] = None,
+                 postal_code: Optional[str] = None,
+                 province: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_inscription: Optional[str] = None,
+                 street_name: Optional[str] = None,
+                 street_number: Optional[str] = None):
+        if address_key is not None:
+            pulumi.set(__self__, "address_key", address_key)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if company_name is not None:
+            pulumi.set(__self__, "company_name", company_name)
+        if contributor_class is not None:
+            pulumi.set(__self__, "contributor_class", contributor_class)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if county is not None:
+            pulumi.set(__self__, "county", county)
+        if department_name is not None:
+            pulumi.set(__self__, "department_name", department_name)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if internal_number is not None:
+            pulumi.set(__self__, "internal_number", internal_number)
+        if job_title is not None:
+            pulumi.set(__self__, "job_title", job_title)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if line1 is not None:
+            pulumi.set(__self__, "line1", line1)
+        if line2 is not None:
+            pulumi.set(__self__, "line2", line2)
+        if line3 is not None:
+            pulumi.set(__self__, "line3", line3)
+        if line4 is not None:
+            pulumi.set(__self__, "line4", line4)
+        if middle_name is not None:
+            pulumi.set(__self__, "middle_name", middle_name)
+        if municipal_inscription is not None:
+            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+        if phone_country_code is not None:
+            pulumi.set(__self__, "phone_country_code", phone_country_code)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+        if postal_code is not None:
+            pulumi.set(__self__, "postal_code", postal_code)
+        if province is not None:
+            pulumi.set(__self__, "province", province)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_inscription is not None:
+            pulumi.set(__self__, "state_inscription", state_inscription)
+        if street_name is not None:
+            pulumi.set(__self__, "street_name", street_name)
+        if street_number is not None:
+            pulumi.set(__self__, "street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> str:
-        """
-        Address identifier.
-        """
+    def address_key(self) -> Optional[str]:
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city.
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company.
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> str:
-        """
-        Contributor class of the customer company.
-        """
+    def contributor_class(self) -> Optional[str]:
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
-    def country(self) -> str:
-        """
-        Country of the address.
-        """
+    def country(self) -> Optional[str]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County of the address.
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> str:
-        """
-        Department name of the customer company.
-        """
+    def department_name(self) -> Optional[str]:
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> str:
-        """
-        Internal number of the customer company.
-        """
+    def internal_number(self) -> Optional[str]:
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> str:
-        """
-        Job title of the contact person.
-        """
+    def job_title(self) -> Optional[str]:
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def line1(self) -> str:
-        """
-        Address line 1.
-        """
+    def line1(self) -> Optional[str]:
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
-    def line2(self) -> str:
-        """
-        Address line 2.
-        """
+    def line2(self) -> Optional[str]:
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
-    def line3(self) -> str:
-        """
-        Address line 3.
-        """
+    def line3(self) -> Optional[str]:
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
-    def line4(self) -> str:
-        """
-        Address line 4.
-        """
+    def line4(self) -> Optional[str]:
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> str:
-        """
-        Middle name of the contact person.
-        """
+    def middle_name(self) -> Optional[str]:
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> str:
-        """
-        Municipal Inscription.
-        """
+    def municipal_inscription(self) -> Optional[str]:
         return pulumi.get(self, "municipal_inscription")
 
     @property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> str:
-        """
-        Phone country code of the contact person.
-        """
+    def phone_country_code(self) -> Optional[str]:
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> str:
-        """
-        Phone number of the contact person.
-        """
+    def phone_number(self) -> Optional[str]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        Post code of the address.
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Province of the address.
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        State of the address.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> str:
-        """
-        State Inscription.
-        """
+    def state_inscription(self) -> Optional[str]:
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name of the address.
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        Street number of the address.
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult(dict):
     def __init__(__self__, *,
-                 merchant_defined_datas: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult']):
-        """
-        :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
-        """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+                 merchant_defined_datas: Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult']] = None):
+        if merchant_defined_datas is not None:
+            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
-    def merchant_defined_datas(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult']:
-        """
-        Merchant details.
-        """
+    def merchant_defined_datas(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult']]:
         return pulumi.get(self, "merchant_defined_datas")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
     def __init__(__self__, *,
-                 cloud_account_name: str,
-                 promo_type: str):
-        """
-        :param str cloud_account_name: Cloud account name.
-        :param str promo_type: Promotion type code.
-        """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+                 cloud_account_name: Optional[str] = None,
+                 promo_type: Optional[str] = None):
+        if cloud_account_name is not None:
+            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+        if promo_type is not None:
+            pulumi.set(__self__, "promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
-    def cloud_account_name(self) -> str:
-        """
-        Cloud account name.
-        """
+    def cloud_account_name(self) -> Optional[str]:
         return pulumi.get(self, "cloud_account_name")
 
     @property
     @pulumi.getter(name="promoType")
-    def promo_type(self) -> str:
-        """
-        Promotion type code.
-        """
+    def promo_type(self) -> Optional[str]:
         return pulumi.get(self, "promo_type")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult(dict):
     def __init__(__self__, *,
-                 credit_card_type: str,
-                 email_address: str,
-                 ext_billing_agreement_id: str,
-                 first_name: str,
-                 last_digits: str,
-                 last_name: str,
-                 name_on_card: str,
-                 payment_method: str,
-                 time_expiration: str,
-                 wallet_instrument_id: str,
-                 wallet_transaction_id: str):
-        """
-        :param str credit_card_type: Credit card type.
-        :param str email_address: The email address of the paypal user.
-        :param str ext_billing_agreement_id: Agreement id for the paypal account.
-        :param str first_name: First name of the paypal user.
-        :param str last_digits: Last four digits of the card.
-        :param str last_name: Last name of the paypal user.
-        :param str name_on_card: Name on the credit card.
-        :param str payment_method: Payment method
-        :param str time_expiration: Expired date of the credit card.
-        :param str wallet_instrument_id: Wallet instrument internal id.
-        :param str wallet_transaction_id: Wallet transaction id.
-        """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+                 credit_card_type: Optional[str] = None,
+                 email_address: Optional[str] = None,
+                 ext_billing_agreement_id: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 last_digits: Optional[str] = None,
+                 last_name: Optional[str] = None,
+                 name_on_card: Optional[str] = None,
+                 payment_method: Optional[str] = None,
+                 time_expiration: Optional[str] = None,
+                 wallet_instrument_id: Optional[str] = None,
+                 wallet_transaction_id: Optional[str] = None):
+        if credit_card_type is not None:
+            pulumi.set(__self__, "credit_card_type", credit_card_type)
+        if email_address is not None:
+            pulumi.set(__self__, "email_address", email_address)
+        if ext_billing_agreement_id is not None:
+            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_digits is not None:
+            pulumi.set(__self__, "last_digits", last_digits)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if name_on_card is not None:
+            pulumi.set(__self__, "name_on_card", name_on_card)
+        if payment_method is not None:
+            pulumi.set(__self__, "payment_method", payment_method)
+        if time_expiration is not None:
+            pulumi.set(__self__, "time_expiration", time_expiration)
+        if wallet_instrument_id is not None:
+            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+        if wallet_transaction_id is not None:
+            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
-    def credit_card_type(self) -> str:
-        """
-        Credit card type.
-        """
+    def credit_card_type(self) -> Optional[str]:
         return pulumi.get(self, "credit_card_type")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the paypal user.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="extBillingAgreementId")
-    def ext_billing_agreement_id(self) -> str:
-        """
-        Agreement id for the paypal account.
-        """
+    def ext_billing_agreement_id(self) -> Optional[str]:
         return pulumi.get(self, "ext_billing_agreement_id")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the paypal user.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastDigits")
-    def last_digits(self) -> str:
-        """
-        Last four digits of the card.
-        """
+    def last_digits(self) -> Optional[str]:
         return pulumi.get(self, "last_digits")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the paypal user.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter(name="nameOnCard")
-    def name_on_card(self) -> str:
-        """
-        Name on the credit card.
-        """
+    def name_on_card(self) -> Optional[str]:
         return pulumi.get(self, "name_on_card")
 
     @property
     @pulumi.getter(name="paymentMethod")
-    def payment_method(self) -> str:
-        """
-        Payment method
-        """
+    def payment_method(self) -> Optional[str]:
         return pulumi.get(self, "payment_method")
 
     @property
     @pulumi.getter(name="timeExpiration")
-    def time_expiration(self) -> str:
-        """
-        Expired date of the credit card.
-        """
+    def time_expiration(self) -> Optional[str]:
         return pulumi.get(self, "time_expiration")
 
     @property
     @pulumi.getter(name="walletInstrumentId")
-    def wallet_instrument_id(self) -> str:
-        """
-        Wallet instrument internal id.
-        """
+    def wallet_instrument_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_instrument_id")
 
     @property
     @pulumi.getter(name="walletTransactionId")
-    def wallet_transaction_id(self) -> str:
-        """
-        Wallet transaction id.
-        """
+    def wallet_transaction_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_transaction_id")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult(dict):
     def __init__(__self__, *,
-                 no_tax_reason_code: str,
-                 no_tax_reason_code_details: str,
-                 tax_cnpj: str,
-                 tax_payer_id: str,
-                 tax_reg_number: str):
-        """
-        :param str no_tax_reason_code: Tax exemption reason code.
-        :param str no_tax_reason_code_details: Tax exemption reason description.
-        :param str tax_cnpj: Brazilian companies' CNPJ number.
-        :param str tax_payer_id: Tay payer identifier.
-        :param str tax_reg_number: Tax registration number.
-        """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+                 no_tax_reason_code: Optional[str] = None,
+                 no_tax_reason_code_details: Optional[str] = None,
+                 tax_cnpj: Optional[str] = None,
+                 tax_payer_id: Optional[str] = None,
+                 tax_reg_number: Optional[str] = None):
+        if no_tax_reason_code is not None:
+            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        if no_tax_reason_code_details is not None:
+            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        if tax_cnpj is not None:
+            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        if tax_payer_id is not None:
+            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        if tax_reg_number is not None:
+            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
-    def no_tax_reason_code(self) -> str:
-        """
-        Tax exemption reason code.
-        """
+    def no_tax_reason_code(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code")
 
     @property
     @pulumi.getter(name="noTaxReasonCodeDetails")
-    def no_tax_reason_code_details(self) -> str:
-        """
-        Tax exemption reason description.
-        """
+    def no_tax_reason_code_details(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @property
     @pulumi.getter(name="taxCnpj")
-    def tax_cnpj(self) -> str:
-        """
-        Brazilian companies' CNPJ number.
-        """
+    def tax_cnpj(self) -> Optional[str]:
         return pulumi.get(self, "tax_cnpj")
 
     @property
     @pulumi.getter(name="taxPayerId")
-    def tax_payer_id(self) -> str:
-        """
-        Tay payer identifier.
-        """
+    def tax_payer_id(self) -> Optional[str]:
         return pulumi.get(self, "tax_payer_id")
 
     @property
     @pulumi.getter(name="taxRegNumber")
-    def tax_reg_number(self) -> str:
-        """
-        Tax registration number.
-        """
+    def tax_reg_number(self) -> Optional[str]:
         return pulumi.get(self, "tax_reg_number")
 
 
 @pulumi.output_type
 class GetSubscriptionsSubscriptionCollectionItemTaxInfoResult(dict):
     def __init__(__self__, *,
-                 no_tax_reason_code: str,
-                 no_tax_reason_code_details: str,
-                 tax_cnpj: str,
-                 tax_payer_id: str,
-                 tax_reg_number: str):
-        """
-        :param str no_tax_reason_code: Tax exemption reason code.
-        :param str no_tax_reason_code_details: Tax exemption reason description.
-        :param str tax_cnpj: Brazilian companies' CNPJ number.
-        :param str tax_payer_id: Tay payer identifier.
-        :param str tax_reg_number: Tax registration number.
-        """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+                 no_tax_reason_code: Optional[str] = None,
+                 no_tax_reason_code_details: Optional[str] = None,
+                 tax_cnpj: Optional[str] = None,
+                 tax_payer_id: Optional[str] = None,
+                 tax_reg_number: Optional[str] = None):
+        if no_tax_reason_code is not None:
+            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+        if no_tax_reason_code_details is not None:
+            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+        if tax_cnpj is not None:
+            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+        if tax_payer_id is not None:
+            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+        if tax_reg_number is not None:
+            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
-    def no_tax_reason_code(self) -> str:
-        """
-        Tax exemption reason code.
-        """
+    def no_tax_reason_code(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code")
 
     @property
     @pulumi.getter(name="noTaxReasonCodeDetails")
-    def no_tax_reason_code_details(self) -> str:
-        """
-        Tax exemption reason description.
-        """
+    def no_tax_reason_code_details(self) -> Optional[str]:
         return pulumi.get(self, "no_tax_reason_code_details")
 
     @property
     @pulumi.getter(name="taxCnpj")
-    def tax_cnpj(self) -> str:
-        """
-        Brazilian companies' CNPJ number.
-        """
+    def tax_cnpj(self) -> Optional[str]:
         return pulumi.get(self, "tax_cnpj")
 
     @property
     @pulumi.getter(name="taxPayerId")
-    def tax_payer_id(self) -> str:
-        """
-        Tay payer identifier.
-        """
+    def tax_payer_id(self) -> Optional[str]:
         return pulumi.get(self, "tax_payer_id")
 
     @property
     @pulumi.getter(name="taxRegNumber")
-    def tax_reg_number(self) -> str:
-        """
-        Tax registration number.
-        """
+    def tax_reg_number(self) -> Optional[str]:
         return pulumi.get(self, "tax_reg_number")
 
 

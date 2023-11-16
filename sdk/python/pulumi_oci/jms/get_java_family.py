@@ -43,39 +43,27 @@ class GetJavaFamilyResult:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the release family.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="docUrl")
-    def doc_url(self) -> str:
-        """
-        Link to access the documentation for the release.
-        """
+    def doc_url(self) -> Optional[str]:
         return pulumi.get(self, "doc_url")
 
     @property
     @pulumi.getter(name="endOfSupportLifeDate")
-    def end_of_support_life_date(self) -> str:
-        """
-        The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def end_of_support_life_date(self) -> Optional[str]:
         return pulumi.get(self, "end_of_support_life_date")
 
     @property
     @pulumi.getter(name="familyVersion")
     def family_version(self) -> str:
-        """
-        The Java release family identifier.
-        """
         return pulumi.get(self, "family_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,10 +71,7 @@ class GetJavaFamilyResult:
 
     @property
     @pulumi.getter(name="supportType")
-    def support_type(self) -> str:
-        """
-        This indicates the support category for the Java release family.
-        """
+    def support_type(self) -> Optional[str]:
         return pulumi.get(self, "support_type")
 
 
@@ -107,21 +92,7 @@ class AwaitableGetJavaFamilyResult(GetJavaFamilyResult):
 def get_java_family(family_version: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaFamilyResult:
     """
-    This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
-
-    Returns metadata associated with a specific Java release family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_family = oci.Jms.get_java_family(family_version=var["java_family_family_version"])
-    ```
-
-
-    :param str family_version: Unique Java family version identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['familyVersion'] = family_version
@@ -141,20 +112,6 @@ def get_java_family(family_version: Optional[str] = None,
 def get_java_family_output(family_version: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaFamilyResult]:
     """
-    This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
-
-    Returns metadata associated with a specific Java release family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_family = oci.Jms.get_java_family(family_version=var["java_family_family_version"])
-    ```
-
-
-    :param str family_version: Unique Java family version identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

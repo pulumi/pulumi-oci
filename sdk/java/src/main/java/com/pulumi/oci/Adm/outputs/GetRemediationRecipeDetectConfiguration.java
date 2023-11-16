@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRecipeDetectConfiguration {
@@ -15,22 +17,22 @@ public final class GetRemediationRecipeDetectConfiguration {
      * @return The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the &#39;group:artifact:version&#39; or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
      * 
      */
-    private List<String> exclusions;
+    private @Nullable List<String> exclusions;
     /**
      * @return The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
      * 
      */
-    private Double maxPermissibleCvssV2score;
+    private @Nullable Double maxPermissibleCvssV2score;
     /**
      * @return The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
      * 
      */
-    private Double maxPermissibleCvssV3score;
+    private @Nullable Double maxPermissibleCvssV3score;
     /**
      * @return The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
      * 
      */
-    private String upgradePolicy;
+    private @Nullable String upgradePolicy;
 
     private GetRemediationRecipeDetectConfiguration() {}
     /**
@@ -38,28 +40,28 @@ public final class GetRemediationRecipeDetectConfiguration {
      * 
      */
     public List<String> exclusions() {
-        return this.exclusions;
+        return this.exclusions == null ? List.of() : this.exclusions;
     }
     /**
      * @return The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
      * 
      */
-    public Double maxPermissibleCvssV2score() {
-        return this.maxPermissibleCvssV2score;
+    public Optional<Double> maxPermissibleCvssV2score() {
+        return Optional.ofNullable(this.maxPermissibleCvssV2score);
     }
     /**
      * @return The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
      * 
      */
-    public Double maxPermissibleCvssV3score() {
-        return this.maxPermissibleCvssV3score;
+    public Optional<Double> maxPermissibleCvssV3score() {
+        return Optional.ofNullable(this.maxPermissibleCvssV3score);
     }
     /**
      * @return The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
      * 
      */
-    public String upgradePolicy() {
-        return this.upgradePolicy;
+    public Optional<String> upgradePolicy() {
+        return Optional.ofNullable(this.upgradePolicy);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetRemediationRecipeDetectConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> exclusions;
-        private Double maxPermissibleCvssV2score;
-        private Double maxPermissibleCvssV3score;
-        private String upgradePolicy;
+        private @Nullable List<String> exclusions;
+        private @Nullable Double maxPermissibleCvssV2score;
+        private @Nullable Double maxPermissibleCvssV3score;
+        private @Nullable String upgradePolicy;
         public Builder() {}
         public Builder(GetRemediationRecipeDetectConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetRemediationRecipeDetectConfiguration {
         }
 
         @CustomType.Setter
-        public Builder exclusions(List<String> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+        public Builder exclusions(@Nullable List<String> exclusions) {
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(String... exclusions) {
             return exclusions(List.of(exclusions));
         }
         @CustomType.Setter
-        public Builder maxPermissibleCvssV2score(Double maxPermissibleCvssV2score) {
-            this.maxPermissibleCvssV2score = Objects.requireNonNull(maxPermissibleCvssV2score);
+        public Builder maxPermissibleCvssV2score(@Nullable Double maxPermissibleCvssV2score) {
+            this.maxPermissibleCvssV2score = maxPermissibleCvssV2score;
             return this;
         }
         @CustomType.Setter
-        public Builder maxPermissibleCvssV3score(Double maxPermissibleCvssV3score) {
-            this.maxPermissibleCvssV3score = Objects.requireNonNull(maxPermissibleCvssV3score);
+        public Builder maxPermissibleCvssV3score(@Nullable Double maxPermissibleCvssV3score) {
+            this.maxPermissibleCvssV3score = maxPermissibleCvssV3score;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradePolicy(String upgradePolicy) {
-            this.upgradePolicy = Objects.requireNonNull(upgradePolicy);
+        public Builder upgradePolicy(@Nullable String upgradePolicy) {
+            this.upgradePolicy = upgradePolicy;
             return this;
         }
         public GetRemediationRecipeDetectConfiguration build() {

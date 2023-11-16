@@ -46,10 +46,7 @@ class GetClusterOptionResult:
 
     @property
     @pulumi.getter(name="clusterPodNetworkOptions")
-    def cluster_pod_network_options(self) -> Sequence['outputs.GetClusterOptionClusterPodNetworkOptionResult']:
-        """
-        Available CNIs and network options for existing and new node pools of the cluster
-        """
+    def cluster_pod_network_options(self) -> Optional[Sequence['outputs.GetClusterOptionClusterPodNetworkOptionResult']]:
         return pulumi.get(self, "cluster_pod_network_options")
 
     @property
@@ -59,7 +56,7 @@ class GetClusterOptionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,10 +64,7 @@ class GetClusterOptionResult:
 
     @property
     @pulumi.getter(name="kubernetesVersions")
-    def kubernetes_versions(self) -> Sequence[str]:
-        """
-        Available Kubernetes versions.
-        """
+    def kubernetes_versions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "kubernetes_versions")
 
 
@@ -91,23 +85,7 @@ def get_cluster_option(cluster_option_id: Optional[str] = None,
                        compartment_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterOptionResult:
     """
-    This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get options available for clusters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=oci_containerengine_cluster_option["test_cluster_option"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterOptionId'] = cluster_option_id
@@ -128,22 +106,6 @@ def get_cluster_option_output(cluster_option_id: Optional[pulumi.Input[str]] = N
                               compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterOptionResult]:
     """
-    This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get options available for clusters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_option = oci.ContainerEngine.get_cluster_option(cluster_option_id=oci_containerengine_cluster_option["test_cluster_option"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str cluster_option_id: The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

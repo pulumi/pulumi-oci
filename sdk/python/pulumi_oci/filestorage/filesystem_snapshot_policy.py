@@ -26,20 +26,6 @@ class FilesystemSnapshotPolicyArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a FilesystemSnapshotPolicy resource.
-        :param pulumi.Input[str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-               
-               If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        :param pulumi.Input[str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -59,9 +45,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -71,9 +54,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -83,9 +63,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -95,9 +72,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -107,9 +81,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -119,9 +90,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter(name="policyPrefix")
     def policy_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        """
         return pulumi.get(self, "policy_prefix")
 
     @policy_prefix.setter
@@ -131,11 +99,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]]]:
-        """
-        (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-
-        If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -145,13 +108,6 @@ class FilesystemSnapshotPolicyArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -173,21 +129,6 @@ class _FilesystemSnapshotPolicyState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FilesystemSnapshotPolicy resources.
-        :param pulumi.Input[str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-               
-               If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        :param pulumi.Input[str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -211,9 +152,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -223,9 +161,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -235,9 +170,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -247,9 +179,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -259,9 +188,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -271,9 +197,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="policyPrefix")
     def policy_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        """
         return pulumi.get(self, "policy_prefix")
 
     @policy_prefix.setter
@@ -283,11 +206,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FilesystemSnapshotPolicyScheduleArgs']]]]:
-        """
-        (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-
-        If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -297,13 +215,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -313,9 +224,6 @@ class _FilesystemSnapshotPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -338,68 +246,9 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new file system snapshot policy in the specified compartment and
-        availability domain.
-
-        After you create a file system snapshot policy, you can associate it with
-        file systems.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_filesystem_snapshot_policy = oci.file_storage.FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy",
-            availability_domain=var["filesystem_snapshot_policy_availability_domain"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["filesystem_snapshot_policy_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            policy_prefix=var["filesystem_snapshot_policy_policy_prefix"],
-            schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=var["filesystem_snapshot_policy_schedules_period"],
-                time_zone=var["filesystem_snapshot_policy_schedules_time_zone"],
-                day_of_month=var["filesystem_snapshot_policy_schedules_day_of_month"],
-                day_of_week=var["filesystem_snapshot_policy_schedules_day_of_week"],
-                hour_of_day=var["filesystem_snapshot_policy_schedules_hour_of_day"],
-                month=var["filesystem_snapshot_policy_schedules_month"],
-                retention_duration_in_seconds=var["filesystem_snapshot_policy_schedules_retention_duration_in_seconds"],
-                schedule_prefix=var["filesystem_snapshot_policy_schedules_schedule_prefix"],
-                time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
-            )])
-        ```
-
-        ## Import
-
-        FilesystemSnapshotPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
-        ```
-
+        Create a FilesystemSnapshotPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-               
-               If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        :param pulumi.Input[str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -408,52 +257,7 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  args: FilesystemSnapshotPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new file system snapshot policy in the specified compartment and
-        availability domain.
-
-        After you create a file system snapshot policy, you can associate it with
-        file systems.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_filesystem_snapshot_policy = oci.file_storage.FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy",
-            availability_domain=var["filesystem_snapshot_policy_availability_domain"],
-            compartment_id=var["compartment_id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["filesystem_snapshot_policy_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            policy_prefix=var["filesystem_snapshot_policy_policy_prefix"],
-            schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=var["filesystem_snapshot_policy_schedules_period"],
-                time_zone=var["filesystem_snapshot_policy_schedules_time_zone"],
-                day_of_month=var["filesystem_snapshot_policy_schedules_day_of_month"],
-                day_of_week=var["filesystem_snapshot_policy_schedules_day_of_week"],
-                hour_of_day=var["filesystem_snapshot_policy_schedules_hour_of_day"],
-                month=var["filesystem_snapshot_policy_schedules_month"],
-                retention_duration_in_seconds=var["filesystem_snapshot_policy_schedules_retention_duration_in_seconds"],
-                schedule_prefix=var["filesystem_snapshot_policy_schedules_schedule_prefix"],
-                time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
-            )])
-        ```
-
-        ## Import
-
-        FilesystemSnapshotPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy test_filesystem_snapshot_policy "id"
-        ```
-
+        Create a FilesystemSnapshotPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param FilesystemSnapshotPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -525,21 +329,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] policy_prefix: (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FilesystemSnapshotPolicyScheduleArgs']]]] schedules: (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-               
-               If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        :param pulumi.Input[str] state: (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -559,78 +348,45 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="policyPrefix")
-    def policy_prefix(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-        """
+    def policy_prefix(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "policy_prefix")
 
     @property
     @pulumi.getter
-    def schedules(self) -> pulumi.Output[Sequence['outputs.FilesystemSnapshotPolicySchedule']]:
-        """
-        (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
-
-        If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ``` --schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]' ```
-        """
+    def schedules(self) -> pulumi.Output[Optional[Sequence['outputs.FilesystemSnapshotPolicySchedule']]]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the Filesystem Snapshot Policy. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

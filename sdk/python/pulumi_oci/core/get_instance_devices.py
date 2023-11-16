@@ -45,10 +45,7 @@ class GetInstanceDevicesResult:
 
     @property
     @pulumi.getter
-    def devices(self) -> Sequence['outputs.GetInstanceDevicesDeviceResult']:
-        """
-        The list of devices.
-        """
+    def devices(self) -> Optional[Sequence['outputs.GetInstanceDevicesDeviceResult']]:
         return pulumi.get(self, "devices")
 
     @property
@@ -58,7 +55,7 @@ class GetInstanceDevicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,17 +69,11 @@ class GetInstanceDevicesResult:
     @property
     @pulumi.getter(name="isAvailable")
     def is_available(self) -> Optional[bool]:
-        """
-        The flag denoting whether device is available.
-        """
         return pulumi.get(self, "is_available")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The device name.
-        """
         return pulumi.get(self, "name")
 
 
@@ -106,25 +97,7 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
                          name: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceDevicesResult:
     """
-    This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
-
-    Gets a list of all the devices for given instance. You can optionally filter results by device availability.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=oci_core_instance["test_instance"]["id"],
-        is_available=var["instance_device_is_available"],
-        name=var["instance_device_name"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-    :param bool is_available: A filter to return only available devices or only used devices.
-    :param str name: A filter to return only devices that match the given name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -150,24 +123,6 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
                                 name: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceDevicesResult]:
     """
-    This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
-
-    Gets a list of all the devices for given instance. You can optionally filter results by device availability.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=oci_core_instance["test_instance"]["id"],
-        is_available=var["instance_device_is_available"],
-        name=var["instance_device_name"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
-    :param bool is_available: A filter to return only available devices or only used devices.
-    :param str name: A filter to return only devices that match the given name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

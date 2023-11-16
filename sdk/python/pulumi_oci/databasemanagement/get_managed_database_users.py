@@ -47,7 +47,7 @@ class GetManagedDatabaseUsersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,17 +61,11 @@ class GetManagedDatabaseUsersResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the User.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="userCollections")
-    def user_collections(self) -> Sequence['outputs.GetManagedDatabaseUsersUserCollectionResult']:
-        """
-        The list of user_collection.
-        """
+    def user_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseUsersUserCollectionResult']]:
         return pulumi.get(self, "user_collections")
 
 
@@ -93,23 +87,7 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
                                name: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUsersResult:
     """
-    This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of users for the specified managedDatabaseId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_user_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -132,22 +110,6 @@ def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Se
                                       name: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUsersResult]:
     """
-    This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of users for the specified managedDatabaseId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_user_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
+    Use this data source to access information about an existing resource.
     """
     ...

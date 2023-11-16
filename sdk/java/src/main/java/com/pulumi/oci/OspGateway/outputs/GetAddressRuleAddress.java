@@ -8,6 +8,8 @@ import com.pulumi.oci.OspGateway.outputs.GetAddressRuleAddressField;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddressRuleAddress {
@@ -15,12 +17,12 @@ public final class GetAddressRuleAddress {
      * @return Tax type rule fields
      * 
      */
-    private List<GetAddressRuleAddressField> fields;
+    private @Nullable List<GetAddressRuleAddressField> fields;
     /**
      * @return Third party validation.
      * 
      */
-    private String thirdPartyValidation;
+    private @Nullable String thirdPartyValidation;
 
     private GetAddressRuleAddress() {}
     /**
@@ -28,14 +30,14 @@ public final class GetAddressRuleAddress {
      * 
      */
     public List<GetAddressRuleAddressField> fields() {
-        return this.fields;
+        return this.fields == null ? List.of() : this.fields;
     }
     /**
      * @return Third party validation.
      * 
      */
-    public String thirdPartyValidation() {
-        return this.thirdPartyValidation;
+    public Optional<String> thirdPartyValidation() {
+        return Optional.ofNullable(this.thirdPartyValidation);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAddressRuleAddress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddressRuleAddressField> fields;
-        private String thirdPartyValidation;
+        private @Nullable List<GetAddressRuleAddressField> fields;
+        private @Nullable String thirdPartyValidation;
         public Builder() {}
         public Builder(GetAddressRuleAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetAddressRuleAddress {
         }
 
         @CustomType.Setter
-        public Builder fields(List<GetAddressRuleAddressField> fields) {
-            this.fields = Objects.requireNonNull(fields);
+        public Builder fields(@Nullable List<GetAddressRuleAddressField> fields) {
+            this.fields = fields;
             return this;
         }
         public Builder fields(GetAddressRuleAddressField... fields) {
             return fields(List.of(fields));
         }
         @CustomType.Setter
-        public Builder thirdPartyValidation(String thirdPartyValidation) {
-            this.thirdPartyValidation = Objects.requireNonNull(thirdPartyValidation);
+        public Builder thirdPartyValidation(@Nullable String thirdPartyValidation) {
+            this.thirdPartyValidation = thirdPartyValidation;
             return this;
         }
         public GetAddressRuleAddress build() {

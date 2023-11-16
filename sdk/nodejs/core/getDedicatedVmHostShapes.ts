@@ -66,12 +66,12 @@ export interface GetDedicatedVmHostShapesResult {
     /**
      * The list of dedicated_vm_host_shapes.
      */
-    readonly dedicatedVmHostShapes: outputs.Core.GetDedicatedVmHostShapesDedicatedVmHostShape[];
+    readonly dedicatedVmHostShapes?: outputs.Core.GetDedicatedVmHostShapesDedicatedVmHostShape[];
     readonly filters?: outputs.Core.GetDedicatedVmHostShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instanceShapeName?: string;
 }
 /**

@@ -11,6 +11,7 @@ import com.pulumi.oci.ServiceCatalog.CatalogAssociationArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.CatalogAssociationState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -80,14 +81,14 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="entityType", refs={String.class}, tree="[0]")
-    private Output<String> entityType;
+    private Output</* @Nullable */ String> entityType;
 
     /**
      * @return The type of the entity that is associated with the service catalog.
      * 
      */
-    public Output<String> entityType() {
-        return this.entityType;
+    public Output<Optional<String>> entityType() {
+        return Codegen.optional(this.entityType);
     }
     /**
      * Identifier of the service catalog.
@@ -114,14 +115,14 @@ public class CatalogAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Timestamp of when the resource was associated with service catalog.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

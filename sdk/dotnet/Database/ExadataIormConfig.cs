@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// Additional information about the current `lifecycleState`.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Value for the IORM objective Default is "Auto" 
@@ -81,13 +81,13 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("objective")]
-        public Output<string> Objective { get; private set; } = null!;
+        public Output<string?> Objective { get; private set; } = null!;
 
         /// <summary>
         /// The current state of IORM configuration for the Exadata DB system.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

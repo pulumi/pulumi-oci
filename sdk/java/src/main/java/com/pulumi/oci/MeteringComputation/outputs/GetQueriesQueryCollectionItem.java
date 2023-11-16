@@ -8,6 +8,8 @@ import com.pulumi.oci.MeteringComputation.outputs.GetQueriesQueryCollectionItemQ
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueriesQueryCollectionItem {
@@ -15,39 +17,39 @@ public final class GetQueriesQueryCollectionItem {
      * @return The compartment ID in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The query OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The common fields for queries.
      * 
      */
-    private List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions;
+    private @Nullable List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions;
 
     private GetQueriesQueryCollectionItem() {}
     /**
      * @return The compartment ID in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The query OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The common fields for queries.
      * 
      */
     public List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions() {
-        return this.queryDefinitions;
+        return this.queryDefinitions == null ? List.of() : this.queryDefinitions;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetQueriesQueryCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions;
         public Builder() {}
         public Builder(GetQueriesQueryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetQueriesQueryCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder queryDefinitions(List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions) {
-            this.queryDefinitions = Objects.requireNonNull(queryDefinitions);
+        public Builder queryDefinitions(@Nullable List<GetQueriesQueryCollectionItemQueryDefinition> queryDefinitions) {
+            this.queryDefinitions = queryDefinitions;
             return this;
         }
         public Builder queryDefinitions(GetQueriesQueryCollectionItemQueryDefinition... queryDefinitions) {

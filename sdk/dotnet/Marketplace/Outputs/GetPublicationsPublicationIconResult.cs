@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The content URL of the upload data.
         /// </summary>
-        public readonly string ContentUrl;
+        public readonly string? ContentUrl;
         /// <summary>
         /// The file extension of the upload data.
         /// </summary>
-        public readonly string FileExtension;
+        public readonly string? FileExtension;
         /// <summary>
         /// The MIME type of the upload data.
         /// </summary>
-        public readonly string MimeType;
+        public readonly string? MimeType;
         /// <summary>
         /// The name of the publication.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetPublicationsPublicationIconResult(
-            string contentUrl,
+            string? contentUrl,
 
-            string fileExtension,
+            string? fileExtension,
 
-            string mimeType,
+            string? mimeType,
 
-            string name)
+            string? name)
         {
             ContentUrl = contentUrl;
             FileExtension = fileExtension;

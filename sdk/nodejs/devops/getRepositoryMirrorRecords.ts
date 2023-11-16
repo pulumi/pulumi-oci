@@ -50,12 +50,12 @@ export interface GetRepositoryMirrorRecordsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly repositoryId: string;
     /**
      * The list of repository_mirror_record_collection.
      */
-    readonly repositoryMirrorRecordCollections: outputs.DevOps.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection[];
+    readonly repositoryMirrorRecordCollections?: outputs.DevOps.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection[];
 }
 /**
  * This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.

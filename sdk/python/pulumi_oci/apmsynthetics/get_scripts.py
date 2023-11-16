@@ -51,17 +51,11 @@ class GetScriptsResult:
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> Optional[str]:
-        """
-        Content type of the script.
-        """
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -71,7 +65,7 @@ class GetScriptsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +73,7 @@ class GetScriptsResult:
 
     @property
     @pulumi.getter(name="scriptCollections")
-    def script_collections(self) -> Sequence['outputs.GetScriptsScriptCollectionResult']:
-        """
-        The list of script_collection.
-        """
+    def script_collections(self) -> Optional[Sequence['outputs.GetScriptsScriptCollectionResult']]:
         return pulumi.get(self, "script_collections")
 
 
@@ -106,25 +97,7 @@ def get_scripts(apm_domain_id: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetScriptsFilterArgs']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScriptsResult:
     """
-    This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of scripts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        content_type=var["script_content_type"],
-        display_name=var["script_display_name"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str content_type: A filter to return only resources that match the content type given.
-    :param str display_name: A filter to return only the resources that match the entire display name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -150,24 +123,6 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetScriptsFilterArgs']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScriptsResult]:
     """
-    This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Returns a list of scripts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        content_type=var["script_content_type"],
-        display_name=var["script_display_name"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str content_type: A filter to return only resources that match the content type given.
-    :param str display_name: A filter to return only the resources that match the entire display name.
+    Use this data source to access information about an existing resource.
     """
     ...

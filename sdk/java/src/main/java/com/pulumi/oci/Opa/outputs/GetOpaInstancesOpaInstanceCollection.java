@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opa.outputs.GetOpaInstancesOpaInstanceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpaInstancesOpaInstanceCollection {
-    private List<GetOpaInstancesOpaInstanceCollectionItem> items;
+    private @Nullable List<GetOpaInstancesOpaInstanceCollectionItem> items;
 
     private GetOpaInstancesOpaInstanceCollection() {}
     public List<GetOpaInstancesOpaInstanceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetOpaInstancesOpaInstanceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOpaInstancesOpaInstanceCollectionItem> items;
+        private @Nullable List<GetOpaInstancesOpaInstanceCollectionItem> items;
         public Builder() {}
         public Builder(GetOpaInstancesOpaInstanceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetOpaInstancesOpaInstanceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOpaInstancesOpaInstanceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOpaInstancesOpaInstanceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOpaInstancesOpaInstanceCollectionItem... items) {

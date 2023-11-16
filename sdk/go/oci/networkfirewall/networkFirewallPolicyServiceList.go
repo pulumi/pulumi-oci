@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -61,14 +60,14 @@ type NetworkFirewallPolicyServiceList struct {
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this serviceList belongs to.
-	ParentResourceId pulumi.StringOutput `pulumi:"parentResourceId"`
+	ParentResourceId pulumi.StringPtrOutput `pulumi:"parentResourceId"`
 	// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Services pulumi.StringArrayOutput `pulumi:"services"`
 	// Count of total services in the given service List.
-	TotalServices pulumi.IntOutput `pulumi:"totalServices"`
+	TotalServices pulumi.IntPtrOutput `pulumi:"totalServices"`
 }
 
 // NewNetworkFirewallPolicyServiceList registers a new resource with the given unique name, arguments, and options.
@@ -190,12 +189,6 @@ func (i *NetworkFirewallPolicyServiceList) ToNetworkFirewallPolicyServiceListOut
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyServiceListOutput)
 }
 
-func (i *NetworkFirewallPolicyServiceList) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyServiceList] {
-	return pulumix.Output[*NetworkFirewallPolicyServiceList]{
-		OutputState: i.ToNetworkFirewallPolicyServiceListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyServiceListArrayInput is an input type that accepts NetworkFirewallPolicyServiceListArray and NetworkFirewallPolicyServiceListArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyServiceListArrayInput` via:
 //
@@ -219,12 +212,6 @@ func (i NetworkFirewallPolicyServiceListArray) ToNetworkFirewallPolicyServiceLis
 
 func (i NetworkFirewallPolicyServiceListArray) ToNetworkFirewallPolicyServiceListArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyServiceListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyServiceListArrayOutput)
-}
-
-func (i NetworkFirewallPolicyServiceListArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyServiceList] {
-	return pulumix.Output[[]*NetworkFirewallPolicyServiceList]{
-		OutputState: i.ToNetworkFirewallPolicyServiceListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyServiceListMapInput is an input type that accepts NetworkFirewallPolicyServiceListMap and NetworkFirewallPolicyServiceListMapOutput values.
@@ -252,12 +239,6 @@ func (i NetworkFirewallPolicyServiceListMap) ToNetworkFirewallPolicyServiceListM
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyServiceListMapOutput)
 }
 
-func (i NetworkFirewallPolicyServiceListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyServiceList] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyServiceList]{
-		OutputState: i.ToNetworkFirewallPolicyServiceListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyServiceListOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyServiceListOutput) ElementType() reflect.Type {
@@ -272,12 +253,6 @@ func (o NetworkFirewallPolicyServiceListOutput) ToNetworkFirewallPolicyServiceLi
 	return o
 }
 
-func (o NetworkFirewallPolicyServiceListOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyServiceList] {
-	return pulumix.Output[*NetworkFirewallPolicyServiceList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the service Group.
 func (o NetworkFirewallPolicyServiceListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyServiceList) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
@@ -289,8 +264,8 @@ func (o NetworkFirewallPolicyServiceListOutput) NetworkFirewallPolicyId() pulumi
 }
 
 // OCID of the Network Firewall Policy this serviceList belongs to.
-func (o NetworkFirewallPolicyServiceListOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyServiceList) pulumi.StringOutput { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyServiceListOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyServiceList) pulumi.StringPtrOutput { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
@@ -302,8 +277,8 @@ func (o NetworkFirewallPolicyServiceListOutput) Services() pulumi.StringArrayOut
 }
 
 // Count of total services in the given service List.
-func (o NetworkFirewallPolicyServiceListOutput) TotalServices() pulumi.IntOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyServiceList) pulumi.IntOutput { return v.TotalServices }).(pulumi.IntOutput)
+func (o NetworkFirewallPolicyServiceListOutput) TotalServices() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyServiceList) pulumi.IntPtrOutput { return v.TotalServices }).(pulumi.IntPtrOutput)
 }
 
 type NetworkFirewallPolicyServiceListArrayOutput struct{ *pulumi.OutputState }
@@ -318,12 +293,6 @@ func (o NetworkFirewallPolicyServiceListArrayOutput) ToNetworkFirewallPolicyServ
 
 func (o NetworkFirewallPolicyServiceListArrayOutput) ToNetworkFirewallPolicyServiceListArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyServiceListArrayOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyServiceListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyServiceList] {
-	return pulumix.Output[[]*NetworkFirewallPolicyServiceList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyServiceListArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyServiceListOutput {
@@ -344,12 +313,6 @@ func (o NetworkFirewallPolicyServiceListMapOutput) ToNetworkFirewallPolicyServic
 
 func (o NetworkFirewallPolicyServiceListMapOutput) ToNetworkFirewallPolicyServiceListMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyServiceListMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyServiceListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyServiceList] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyServiceList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyServiceListMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyServiceListOutput {

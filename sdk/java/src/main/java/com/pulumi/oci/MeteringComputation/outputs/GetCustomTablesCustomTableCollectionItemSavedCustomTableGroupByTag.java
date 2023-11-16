@@ -6,6 +6,8 @@ package com.pulumi.oci.MeteringComputation.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag {
@@ -13,39 +15,39 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
      * @return The tag key.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The tag namespace.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The tag value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag() {}
     /**
      * @return The tag key.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The tag namespace.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The tag value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
     }
     @CustomType.Builder
     public static final class Builder {
-        private String key;
-        private String namespace;
-        private String value;
+        private @Nullable String key;
+        private @Nullable String namespace;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
         }
 
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag build() {

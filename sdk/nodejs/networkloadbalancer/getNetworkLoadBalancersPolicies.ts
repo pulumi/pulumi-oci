@@ -44,11 +44,11 @@ export interface GetNetworkLoadBalancersPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of network_load_balancers_policy_collection.
      */
-    readonly networkLoadBalancersPolicyCollections: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection[];
+    readonly networkLoadBalancersPolicyCollections?: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection[];
 }
 /**
  * This data source provides the list of Network Load Balancers Policies in Oracle Cloud Infrastructure Network Load Balancer service.

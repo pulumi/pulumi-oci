@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backend resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -66,13 +65,13 @@ type Backend struct {
 	// The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
 	BackendSetName pulumi.StringOutput `pulumi:"backendSetName"`
 	// The IP address of the backend server. Example: `10.0.0.3`
-	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrOutput `pulumi:"ipAddress"`
 	// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-	IsBackup pulumi.BoolOutput `pulumi:"isBackup"`
+	IsBackup pulumi.BoolPtrOutput `pulumi:"isBackup"`
 	// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-	IsDrain pulumi.BoolOutput `pulumi:"isDrain"`
+	IsDrain pulumi.BoolPtrOutput `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	IsOffline pulumi.BoolOutput `pulumi:"isOffline"`
+	IsOffline pulumi.BoolPtrOutput `pulumi:"isOffline"`
 	// Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -80,12 +79,12 @@ type Backend struct {
 	// The communication port for the backend server.  Example: `8080`
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Weight pulumi.IntOutput `pulumi:"weight"`
+	Weight pulumi.IntPtrOutput `pulumi:"weight"`
 }
 
 // NewBackend registers a new resource with the given unique name, arguments, and options.
@@ -258,12 +257,6 @@ func (i *Backend) ToBackendOutputWithContext(ctx context.Context) BackendOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(BackendOutput)
 }
 
-func (i *Backend) ToOutput(ctx context.Context) pulumix.Output[*Backend] {
-	return pulumix.Output[*Backend]{
-		OutputState: i.ToBackendOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackendArrayInput is an input type that accepts BackendArray and BackendArrayOutput values.
 // You can construct a concrete instance of `BackendArrayInput` via:
 //
@@ -287,12 +280,6 @@ func (i BackendArray) ToBackendArrayOutput() BackendArrayOutput {
 
 func (i BackendArray) ToBackendArrayOutputWithContext(ctx context.Context) BackendArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackendArrayOutput)
-}
-
-func (i BackendArray) ToOutput(ctx context.Context) pulumix.Output[[]*Backend] {
-	return pulumix.Output[[]*Backend]{
-		OutputState: i.ToBackendArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackendMapInput is an input type that accepts BackendMap and BackendMapOutput values.
@@ -320,12 +307,6 @@ func (i BackendMap) ToBackendMapOutputWithContext(ctx context.Context) BackendMa
 	return pulumi.ToOutputWithContext(ctx, i).(BackendMapOutput)
 }
 
-func (i BackendMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Backend] {
-	return pulumix.Output[map[string]*Backend]{
-		OutputState: i.ToBackendMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendOutput struct{ *pulumi.OutputState }
 
 func (BackendOutput) ElementType() reflect.Type {
@@ -340,35 +321,29 @@ func (o BackendOutput) ToBackendOutputWithContext(ctx context.Context) BackendOu
 	return o
 }
 
-func (o BackendOutput) ToOutput(ctx context.Context) pulumix.Output[*Backend] {
-	return pulumix.Output[*Backend]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
 func (o BackendOutput) BackendSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backend) pulumi.StringOutput { return v.BackendSetName }).(pulumi.StringOutput)
 }
 
 // The IP address of the backend server. Example: `10.0.0.3`
-func (o BackendOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backend) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+func (o BackendOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backend) pulumi.StringPtrOutput { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-func (o BackendOutput) IsBackup() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Backend) pulumi.BoolOutput { return v.IsBackup }).(pulumi.BoolOutput)
+func (o BackendOutput) IsBackup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Backend) pulumi.BoolPtrOutput { return v.IsBackup }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-func (o BackendOutput) IsDrain() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Backend) pulumi.BoolOutput { return v.IsDrain }).(pulumi.BoolOutput)
+func (o BackendOutput) IsDrain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Backend) pulumi.BoolPtrOutput { return v.IsDrain }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-func (o BackendOutput) IsOffline() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Backend) pulumi.BoolOutput { return v.IsOffline }).(pulumi.BoolOutput)
+func (o BackendOutput) IsOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Backend) pulumi.BoolPtrOutput { return v.IsOffline }).(pulumi.BoolPtrOutput)
 }
 
 // Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
@@ -387,16 +362,16 @@ func (o BackendOutput) Port() pulumi.IntOutput {
 }
 
 // The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-func (o BackendOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Backend) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+func (o BackendOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Backend) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o BackendOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v *Backend) pulumi.IntOutput { return v.Weight }).(pulumi.IntOutput)
+func (o BackendOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Backend) pulumi.IntPtrOutput { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type BackendArrayOutput struct{ *pulumi.OutputState }
@@ -411,12 +386,6 @@ func (o BackendArrayOutput) ToBackendArrayOutput() BackendArrayOutput {
 
 func (o BackendArrayOutput) ToBackendArrayOutputWithContext(ctx context.Context) BackendArrayOutput {
 	return o
-}
-
-func (o BackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Backend] {
-	return pulumix.Output[[]*Backend]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendArrayOutput) Index(i pulumi.IntInput) BackendOutput {
@@ -437,12 +406,6 @@ func (o BackendMapOutput) ToBackendMapOutput() BackendMapOutput {
 
 func (o BackendMapOutput) ToBackendMapOutputWithContext(ctx context.Context) BackendMapOutput {
 	return o
-}
-
-func (o BackendMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Backend] {
-	return pulumix.Output[map[string]*Backend]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendMapOutput) MapIndex(k pulumi.StringInput) BackendOutput {

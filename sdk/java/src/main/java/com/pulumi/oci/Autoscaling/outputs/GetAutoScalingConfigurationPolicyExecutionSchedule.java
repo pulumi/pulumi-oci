@@ -6,6 +6,8 @@ package com.pulumi.oci.Autoscaling.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicyExecutionSchedule {
@@ -13,39 +15,39 @@ public final class GetAutoScalingConfigurationPolicyExecutionSchedule {
      * @return A cron expression that represents the time at which to execute the autoscaling policy.
      * 
      */
-    private String expression;
+    private @Nullable String expression;
     /**
      * @return The time zone for the execution schedule.
      * 
      */
-    private String timezone;
+    private @Nullable String timezone;
     /**
      * @return The type of action to take.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetAutoScalingConfigurationPolicyExecutionSchedule() {}
     /**
      * @return A cron expression that represents the time at which to execute the autoscaling policy.
      * 
      */
-    public String expression() {
-        return this.expression;
+    public Optional<String> expression() {
+        return Optional.ofNullable(this.expression);
     }
     /**
      * @return The time zone for the execution schedule.
      * 
      */
-    public String timezone() {
-        return this.timezone;
+    public Optional<String> timezone() {
+        return Optional.ofNullable(this.timezone);
     }
     /**
      * @return The type of action to take.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAutoScalingConfigurationPolicyExecutionSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String expression;
-        private String timezone;
-        private String type;
+        private @Nullable String expression;
+        private @Nullable String timezone;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicyExecutionSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAutoScalingConfigurationPolicyExecutionSchedule {
         }
 
         @CustomType.Setter
-        public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+        public Builder expression(@Nullable String expression) {
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
-        public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+        public Builder timezone(@Nullable String timezone) {
+            this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetAutoScalingConfigurationPolicyExecutionSchedule build() {

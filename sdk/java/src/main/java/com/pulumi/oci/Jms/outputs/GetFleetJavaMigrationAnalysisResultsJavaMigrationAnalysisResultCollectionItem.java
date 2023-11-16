@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem {
@@ -14,195 +16,195 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
      * @return Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
      * 
      */
-    private String applicationExecutionType;
+    private @Nullable String applicationExecutionType;
     /**
      * @return The name of the application for which the Java migration analysis was performed.
      * 
      */
-    private String applicationName;
+    private @Nullable String applicationName;
     /**
      * @return The installation path of the application for which the Java migration analysis was performed.
      * 
      */
-    private String applicationPath;
+    private @Nullable String applicationPath;
     /**
      * @return The name of the object storage bucket that contains the results of the migration analysis.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    private String fleetId;
+    private @Nullable String fleetId;
     /**
      * @return The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The OCID of the migration analysis report.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
     /**
      * @return Additional info reserved for future use.
      * 
      */
-    private String metadata;
+    private @Nullable String metadata;
     /**
      * @return The object storage namespace that contains the results of the migration analysis.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The names of the object storage objects that contain the results of the migration analysis.
      * 
      */
-    private List<String> objectLists;
+    private @Nullable List<String> objectLists;
     /**
      * @return The directory path of the object storage bucket that contains the results of the migration analysis.
      * 
      */
-    private String objectStorageUploadDirPath;
+    private @Nullable String objectStorageUploadDirPath;
     /**
      * @return The source JDK version of the application that&#39;s currently running.
      * 
      */
-    private String sourceJdkVersion;
+    private @Nullable String sourceJdkVersion;
     /**
      * @return The target JDK version of the application to be migrated.
      * 
      */
-    private String targetJdkVersion;
+    private @Nullable String targetJdkVersion;
     /**
      * @return The time the result is compiled.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The OCID of the work request of this analysis.
      * 
      */
-    private String workRequestId;
+    private @Nullable String workRequestId;
 
     private GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem() {}
     /**
      * @return Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
      * 
      */
-    public String applicationExecutionType() {
-        return this.applicationExecutionType;
+    public Optional<String> applicationExecutionType() {
+        return Optional.ofNullable(this.applicationExecutionType);
     }
     /**
      * @return The name of the application for which the Java migration analysis was performed.
      * 
      */
-    public String applicationName() {
-        return this.applicationName;
+    public Optional<String> applicationName() {
+        return Optional.ofNullable(this.applicationName);
     }
     /**
      * @return The installation path of the application for which the Java migration analysis was performed.
      * 
      */
-    public String applicationPath() {
-        return this.applicationPath;
+    public Optional<String> applicationPath() {
+        return Optional.ofNullable(this.applicationPath);
     }
     /**
      * @return The name of the object storage bucket that contains the results of the migration analysis.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * 
      */
-    public String fleetId() {
-        return this.fleetId;
+    public Optional<String> fleetId() {
+        return Optional.ofNullable(this.fleetId);
     }
     /**
      * @return The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The OCID of the migration analysis report.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The Fleet-unique identifier of the related managed instance.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return Additional info reserved for future use.
      * 
      */
-    public String metadata() {
-        return this.metadata;
+    public Optional<String> metadata() {
+        return Optional.ofNullable(this.metadata);
     }
     /**
      * @return The object storage namespace that contains the results of the migration analysis.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The names of the object storage objects that contain the results of the migration analysis.
      * 
      */
     public List<String> objectLists() {
-        return this.objectLists;
+        return this.objectLists == null ? List.of() : this.objectLists;
     }
     /**
      * @return The directory path of the object storage bucket that contains the results of the migration analysis.
      * 
      */
-    public String objectStorageUploadDirPath() {
-        return this.objectStorageUploadDirPath;
+    public Optional<String> objectStorageUploadDirPath() {
+        return Optional.ofNullable(this.objectStorageUploadDirPath);
     }
     /**
      * @return The source JDK version of the application that&#39;s currently running.
      * 
      */
-    public String sourceJdkVersion() {
-        return this.sourceJdkVersion;
+    public Optional<String> sourceJdkVersion() {
+        return Optional.ofNullable(this.sourceJdkVersion);
     }
     /**
      * @return The target JDK version of the application to be migrated.
      * 
      */
-    public String targetJdkVersion() {
-        return this.targetJdkVersion;
+    public Optional<String> targetJdkVersion() {
+        return Optional.ofNullable(this.targetJdkVersion);
     }
     /**
      * @return The time the result is compiled.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The OCID of the work request of this analysis.
      * 
      */
-    public String workRequestId() {
-        return this.workRequestId;
+    public Optional<String> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     public static Builder builder() {
@@ -214,22 +216,22 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applicationExecutionType;
-        private String applicationName;
-        private String applicationPath;
-        private String bucket;
-        private String fleetId;
-        private String hostName;
-        private String id;
-        private String managedInstanceId;
-        private String metadata;
-        private String namespace;
-        private List<String> objectLists;
-        private String objectStorageUploadDirPath;
-        private String sourceJdkVersion;
-        private String targetJdkVersion;
-        private String timeCreated;
-        private String workRequestId;
+        private @Nullable String applicationExecutionType;
+        private @Nullable String applicationName;
+        private @Nullable String applicationPath;
+        private @Nullable String bucket;
+        private @Nullable String fleetId;
+        private @Nullable String hostName;
+        private @Nullable String id;
+        private @Nullable String managedInstanceId;
+        private @Nullable String metadata;
+        private @Nullable String namespace;
+        private @Nullable List<String> objectLists;
+        private @Nullable String objectStorageUploadDirPath;
+        private @Nullable String sourceJdkVersion;
+        private @Nullable String targetJdkVersion;
+        private @Nullable String timeCreated;
+        private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -252,86 +254,86 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
         }
 
         @CustomType.Setter
-        public Builder applicationExecutionType(String applicationExecutionType) {
-            this.applicationExecutionType = Objects.requireNonNull(applicationExecutionType);
+        public Builder applicationExecutionType(@Nullable String applicationExecutionType) {
+            this.applicationExecutionType = applicationExecutionType;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationName(String applicationName) {
-            this.applicationName = Objects.requireNonNull(applicationName);
+        public Builder applicationName(@Nullable String applicationName) {
+            this.applicationName = applicationName;
             return this;
         }
         @CustomType.Setter
-        public Builder applicationPath(String applicationPath) {
-            this.applicationPath = Objects.requireNonNull(applicationPath);
+        public Builder applicationPath(@Nullable String applicationPath) {
+            this.applicationPath = applicationPath;
             return this;
         }
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+        public Builder fleetId(@Nullable String fleetId) {
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable String metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectLists(List<String> objectLists) {
-            this.objectLists = Objects.requireNonNull(objectLists);
+        public Builder objectLists(@Nullable List<String> objectLists) {
+            this.objectLists = objectLists;
             return this;
         }
         public Builder objectLists(String... objectLists) {
             return objectLists(List.of(objectLists));
         }
         @CustomType.Setter
-        public Builder objectStorageUploadDirPath(String objectStorageUploadDirPath) {
-            this.objectStorageUploadDirPath = Objects.requireNonNull(objectStorageUploadDirPath);
+        public Builder objectStorageUploadDirPath(@Nullable String objectStorageUploadDirPath) {
+            this.objectStorageUploadDirPath = objectStorageUploadDirPath;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceJdkVersion(String sourceJdkVersion) {
-            this.sourceJdkVersion = Objects.requireNonNull(sourceJdkVersion);
+        public Builder sourceJdkVersion(@Nullable String sourceJdkVersion) {
+            this.sourceJdkVersion = sourceJdkVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder targetJdkVersion(String targetJdkVersion) {
-            this.targetJdkVersion = Objects.requireNonNull(targetJdkVersion);
+        public Builder targetJdkVersion(@Nullable String targetJdkVersion) {
+            this.targetJdkVersion = targetJdkVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+        public Builder workRequestId(@Nullable String workRequestId) {
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem build() {

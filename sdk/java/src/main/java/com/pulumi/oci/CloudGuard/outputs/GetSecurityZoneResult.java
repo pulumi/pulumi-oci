@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityZoneResult {
@@ -16,125 +18,125 @@ public final class GetSecurityZoneResult {
      * @return The OCID of the compartment for the security zone
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The security zone&#39;s description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The security zone&#39;s name
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of inherited compartments
      * 
      */
-    private List<String> inheritedByCompartments;
+    private @Nullable List<String> inheritedByCompartments;
     /**
      * @return A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     private String securityZoneId;
     /**
      * @return The OCID of the recipe (`SecurityRecipe`) for the security zone
      * 
      */
-    private String securityZoneRecipeId;
+    private @Nullable String securityZoneRecipeId;
     /**
      * @return The OCID of the target associated with the security zone
      * 
      */
-    private String securityZoneTargetId;
+    private @Nullable String securityZoneTargetId;
     /**
      * @return The current state of the security zone
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the security zone was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the security zone was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetSecurityZoneResult() {}
     /**
      * @return The OCID of the compartment for the security zone
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The security zone&#39;s description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The security zone&#39;s name
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of inherited compartments
      * 
      */
     public List<String> inheritedByCompartments() {
-        return this.inheritedByCompartments;
+        return this.inheritedByCompartments == null ? List.of() : this.inheritedByCompartments;
     }
     /**
      * @return A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public String securityZoneId() {
         return this.securityZoneId;
@@ -143,36 +145,36 @@ public final class GetSecurityZoneResult {
      * @return The OCID of the recipe (`SecurityRecipe`) for the security zone
      * 
      */
-    public String securityZoneRecipeId() {
-        return this.securityZoneRecipeId;
+    public Optional<String> securityZoneRecipeId() {
+        return Optional.ofNullable(this.securityZoneRecipeId);
     }
     /**
      * @return The OCID of the target associated with the security zone
      * 
      */
-    public String securityZoneTargetId() {
-        return this.securityZoneTargetId;
+    public Optional<String> securityZoneTargetId() {
+        return Optional.ofNullable(this.securityZoneTargetId);
     }
     /**
      * @return The current state of the security zone
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the security zone was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the security zone was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -184,20 +186,20 @@ public final class GetSecurityZoneResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<String> inheritedByCompartments;
-        private String lifecycleDetails;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<String> inheritedByCompartments;
+        private @Nullable String lifecycleDetails;
         private String securityZoneId;
-        private String securityZoneRecipeId;
-        private String securityZoneTargetId;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String securityZoneRecipeId;
+        private @Nullable String securityZoneTargetId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetSecurityZoneResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -218,46 +220,46 @@ public final class GetSecurityZoneResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inheritedByCompartments(List<String> inheritedByCompartments) {
-            this.inheritedByCompartments = Objects.requireNonNull(inheritedByCompartments);
+        public Builder inheritedByCompartments(@Nullable List<String> inheritedByCompartments) {
+            this.inheritedByCompartments = inheritedByCompartments;
             return this;
         }
         public Builder inheritedByCompartments(String... inheritedByCompartments) {
             return inheritedByCompartments(List.of(inheritedByCompartments));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -266,28 +268,28 @@ public final class GetSecurityZoneResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityZoneRecipeId(String securityZoneRecipeId) {
-            this.securityZoneRecipeId = Objects.requireNonNull(securityZoneRecipeId);
+        public Builder securityZoneRecipeId(@Nullable String securityZoneRecipeId) {
+            this.securityZoneRecipeId = securityZoneRecipeId;
             return this;
         }
         @CustomType.Setter
-        public Builder securityZoneTargetId(String securityZoneTargetId) {
-            this.securityZoneTargetId = Objects.requireNonNull(securityZoneTargetId);
+        public Builder securityZoneTargetId(@Nullable String securityZoneTargetId) {
+            this.securityZoneTargetId = securityZoneTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSecurityZoneResult build() {

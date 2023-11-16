@@ -78,7 +78,7 @@ class GetInstallationSiteResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,10 +91,7 @@ class GetInstallationSiteResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInstallationSiteItemResult']:
-        """
-        A list of Java installation sites.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetInstallationSiteItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -120,9 +117,6 @@ class GetInstallationSiteResult:
     @property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
-        """
         return pulumi.get(self, "managed_instance_id")
 
     @property
@@ -182,43 +176,7 @@ def get_installation_site(application_id: Optional[str] = None,
                           time_start: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstallationSiteResult:
     """
-    This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
-
-    List Java installation sites in a Fleet filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_installation_site = oci.Jms.get_installation_site(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        installation_path=var["fleet_installation_site_installation_path"],
-        jre_distribution=var["fleet_installation_site_jre_distribution"],
-        jre_security_status=var["fleet_installation_site_jre_security_status"],
-        jre_vendor=var["fleet_installation_site_jre_vendor"],
-        jre_version=var["fleet_installation_site_jre_version"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        os_families=var["fleet_installation_site_os_family"],
-        path_contains=var["fleet_installation_site_path_contains"],
-        time_end=var["fleet_installation_site_time_end"],
-        time_start=var["fleet_installation_site_time_start"])
-    ```
-
-
-    :param str application_id: The Fleet-unique identifier of the related application.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str installation_path: The file system path of the installation.
-    :param str jre_distribution: The distribution of the related Java Runtime.
-    :param str jre_security_status: The security status of the Java Runtime.
-    :param str jre_vendor: The vendor of the related Java Runtime.
-    :param str jre_version: The version of the related Java Runtime.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param Sequence[str] os_families: The operating system type.
-    :param str path_contains: Filter the list with path contains the given value.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
@@ -268,42 +226,6 @@ def get_installation_site_output(application_id: Optional[pulumi.Input[Optional[
                                  time_start: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstallationSiteResult]:
     """
-    This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
-
-    List Java installation sites in a Fleet filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_installation_site = oci.Jms.get_installation_site(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        installation_path=var["fleet_installation_site_installation_path"],
-        jre_distribution=var["fleet_installation_site_jre_distribution"],
-        jre_security_status=var["fleet_installation_site_jre_security_status"],
-        jre_vendor=var["fleet_installation_site_jre_vendor"],
-        jre_version=var["fleet_installation_site_jre_version"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        os_families=var["fleet_installation_site_os_family"],
-        path_contains=var["fleet_installation_site_path_contains"],
-        time_end=var["fleet_installation_site_time_end"],
-        time_start=var["fleet_installation_site_time_start"])
-    ```
-
-
-    :param str application_id: The Fleet-unique identifier of the related application.
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str installation_path: The file system path of the installation.
-    :param str jre_distribution: The distribution of the related Java Runtime.
-    :param str jre_security_status: The security status of the Java Runtime.
-    :param str jre_vendor: The vendor of the related Java Runtime.
-    :param str jre_version: The version of the related Java Runtime.
-    :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-    :param Sequence[str] os_families: The operating system type.
-    :param str path_contains: Filter the list with path contains the given value.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

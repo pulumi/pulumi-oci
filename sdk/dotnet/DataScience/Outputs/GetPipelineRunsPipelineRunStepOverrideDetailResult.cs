@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The name of the step.
         /// </summary>
-        public readonly string StepName;
+        public readonly string? StepName;
 
         [OutputConstructor]
         private GetPipelineRunsPipelineRunStepOverrideDetailResult(
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult> stepConfigurationDetails,
 
-            string stepName)
+            string? stepName)
         {
             StepConfigurationDetails = stepConfigurationDetails;
             StepName = stepName;

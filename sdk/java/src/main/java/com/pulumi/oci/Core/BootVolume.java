@@ -100,28 +100,28 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="autoTunedVpusPerGb", refs={String.class}, tree="[0]")
-    private Output<String> autoTunedVpusPerGb;
+    private Output</* @Nullable */ String> autoTunedVpusPerGb;
 
     /**
      * @return The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      * 
      */
-    public Output<String> autoTunedVpusPerGb() {
-        return this.autoTunedVpusPerGb;
+    public Output<Optional<String>> autoTunedVpusPerGb() {
+        return Codegen.optional(this.autoTunedVpusPerGb);
     }
     /**
      * (Updatable) The list of autotune policies to be enabled for this volume.
      * 
      */
     @Export(name="autotunePolicies", refs={List.class,BootVolumeAutotunePolicy.class}, tree="[0,1]")
-    private Output<List<BootVolumeAutotunePolicy>> autotunePolicies;
+    private Output</* @Nullable */ List<BootVolumeAutotunePolicy>> autotunePolicies;
 
     /**
      * @return (Updatable) The list of autotune policies to be enabled for this volume.
      * 
      */
-    public Output<List<BootVolumeAutotunePolicy>> autotunePolicies() {
-        return this.autotunePolicies;
+    public Output<Optional<List<BootVolumeAutotunePolicy>>> autotunePolicies() {
+        return Codegen.optional(this.autotunePolicies);
     }
     /**
      * (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -146,28 +146,28 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     @Export(name="backupPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> backupPolicyId;
+    private Output</* @Nullable */ String> backupPolicyId;
 
     /**
      * @return If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
      * 
      */
-    public Output<String> backupPolicyId() {
-        return this.backupPolicyId;
+    public Output<Optional<String>> backupPolicyId() {
+        return Codegen.optional(this.backupPolicyId);
     }
     /**
      * (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
      * 
      */
     @Export(name="bootVolumeReplicas", refs={List.class,BootVolumeBootVolumeReplica.class}, tree="[0,1]")
-    private Output<List<BootVolumeBootVolumeReplica>> bootVolumeReplicas;
+    private Output</* @Nullable */ List<BootVolumeBootVolumeReplica>> bootVolumeReplicas;
 
     /**
      * @return (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
      * 
      */
-    public Output<List<BootVolumeBootVolumeReplica>> bootVolumeReplicas() {
-        return this.bootVolumeReplicas;
+    public Output<Optional<List<BootVolumeBootVolumeReplica>>> bootVolumeReplicas() {
+        return Codegen.optional(this.bootVolumeReplicas);
     }
     @Export(name="bootVolumeReplicasDeletion", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> bootVolumeReplicasDeletion;
@@ -194,126 +194,126 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The image OCID used to create the boot volume.
      * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
-    private Output<String> imageId;
+    private Output</* @Nullable */ String> imageId;
 
     /**
      * @return The image OCID used to create the boot volume.
      * 
      */
-    public Output<String> imageId() {
-        return this.imageId;
+    public Output<Optional<String>> imageId() {
+        return Codegen.optional(this.imageId);
     }
     /**
      * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     @Export(name="isAutoTuneEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoTuneEnabled;
+    private Output</* @Nullable */ Boolean> isAutoTuneEnabled;
 
     /**
      * @return (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
-    public Output<Boolean> isAutoTuneEnabled() {
-        return this.isAutoTuneEnabled;
+    public Output<Optional<Boolean>> isAutoTuneEnabled() {
+        return Codegen.optional(this.isAutoTuneEnabled);
     }
     /**
      * Specifies whether the boot volume&#39;s data has finished copying from the source boot volume or boot volume backup.
      * 
      */
     @Export(name="isHydrated", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHydrated;
+    private Output</* @Nullable */ Boolean> isHydrated;
 
     /**
      * @return Specifies whether the boot volume&#39;s data has finished copying from the source boot volume or boot volume backup.
      * 
      */
-    public Output<Boolean> isHydrated() {
-        return this.isHydrated;
+    public Output<Optional<Boolean>> isHydrated() {
+        return Codegen.optional(this.isHydrated);
     }
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * (Updatable) The size of the volume in GBs.
      * 
      */
     @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInGbs;
+    private Output</* @Nullable */ String> sizeInGbs;
 
     /**
      * @return (Updatable) The size of the volume in GBs.
      * 
      */
-    public Output<String> sizeInGbs() {
-        return this.sizeInGbs;
+    public Output<Optional<String>> sizeInGbs() {
+        return Codegen.optional(this.sizeInGbs);
     }
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
      * 
      */
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInMbs;
+    private Output</* @Nullable */ String> sizeInMbs;
 
     /**
      * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
      * 
      */
-    public Output<String> sizeInMbs() {
-        return this.sizeInMbs;
+    public Output<Optional<String>> sizeInMbs() {
+        return Codegen.optional(this.sizeInMbs);
     }
     @Export(name="sourceDetails", refs={BootVolumeSourceDetails.class}, tree="[0]")
     private Output<BootVolumeSourceDetails> sourceDetails;
@@ -326,56 +326,56 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of a boot volume.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the source volume group.
      * 
      */
     @Export(name="volumeGroupId", refs={String.class}, tree="[0]")
-    private Output<String> volumeGroupId;
+    private Output</* @Nullable */ String> volumeGroupId;
 
     /**
      * @return The OCID of the source volume group.
      * 
      */
-    public Output<String> volumeGroupId() {
-        return this.volumeGroupId;
+    public Output<Optional<String>> volumeGroupId() {
+        return Codegen.optional(this.volumeGroupId);
     }
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -384,7 +384,7 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vpusPerGb", refs={String.class}, tree="[0]")
-    private Output<String> vpusPerGb;
+    private Output</* @Nullable */ String> vpusPerGb;
 
     /**
      * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -392,8 +392,8 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
      * Allowed values:
      * 
      */
-    public Output<String> vpusPerGb() {
-        return this.vpusPerGb;
+    public Output<Optional<String>> vpusPerGb() {
+        return Codegen.optional(this.vpusPerGb);
     }
 
     /**

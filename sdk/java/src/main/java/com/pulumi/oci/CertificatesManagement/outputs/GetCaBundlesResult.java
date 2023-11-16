@@ -18,7 +18,7 @@ public final class GetCaBundlesResult {
      * @return The list of ca_bundle_collection.
      * 
      */
-    private List<GetCaBundlesCaBundleCollection> caBundleCollections;
+    private @Nullable List<GetCaBundlesCaBundleCollection> caBundleCollections;
     private @Nullable String caBundleId;
     /**
      * @return The OCID of the compartment for the CA bundle.
@@ -30,7 +30,7 @@ public final class GetCaBundlesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
@@ -48,7 +48,7 @@ public final class GetCaBundlesResult {
      * 
      */
     public List<GetCaBundlesCaBundleCollection> caBundleCollections() {
-        return this.caBundleCollections;
+        return this.caBundleCollections == null ? List.of() : this.caBundleCollections;
     }
     public Optional<String> caBundleId() {
         return Optional.ofNullable(this.caBundleId);
@@ -67,8 +67,8 @@ public final class GetCaBundlesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -94,11 +94,11 @@ public final class GetCaBundlesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCaBundlesCaBundleCollection> caBundleCollections;
+        private @Nullable List<GetCaBundlesCaBundleCollection> caBundleCollections;
         private @Nullable String caBundleId;
         private @Nullable String compartmentId;
         private @Nullable List<GetCaBundlesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -114,8 +114,8 @@ public final class GetCaBundlesResult {
         }
 
         @CustomType.Setter
-        public Builder caBundleCollections(List<GetCaBundlesCaBundleCollection> caBundleCollections) {
-            this.caBundleCollections = Objects.requireNonNull(caBundleCollections);
+        public Builder caBundleCollections(@Nullable List<GetCaBundlesCaBundleCollection> caBundleCollections) {
+            this.caBundleCollections = caBundleCollections;
             return this;
         }
         public Builder caBundleCollections(GetCaBundlesCaBundleCollection... caBundleCollections) {
@@ -140,8 +140,8 @@ public final class GetCaBundlesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -98,19 +98,19 @@ namespace Pulumi.Oci.DataScience
         /// The configuration details of a pipeline.
         /// </summary>
         [Output("configurationOverrideDetails")]
-        public Output<Outputs.PipelineRunConfigurationOverrideDetails> ConfigurationOverrideDetails { get; private set; } = null!;
+        public Output<Outputs.PipelineRunConfigurationOverrideDetails?> ConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("deleteRelatedJobRuns")]
         public Output<bool?> DeleteRelatedJobRuns { get; private set; } = null!;
@@ -119,25 +119,25 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) A user-friendly display name for the resource.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details of the state of the step run.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The pipeline log configuration details.
         /// </summary>
         [Output("logConfigurationOverrideDetails")]
-        public Output<Outputs.PipelineRunLogConfigurationOverrideDetails> LogConfigurationOverrideDetails { get; private set; } = null!;
+        public Output<Outputs.PipelineRunLogConfigurationOverrideDetails?> LogConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
         /// Customer logging details for pipeline run.
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.DataScience
         /// The state of the step run.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -183,31 +183,31 @@ namespace Pulumi.Oci.DataScience
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeAccepted")]
-        public Output<string> TimeAccepted { get; private set; } = null!;
+        public Output<string?> TimeAccepted { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeFinished")]
-        public Output<string> TimeFinished { get; private set; } = null!;
+        public Output<string?> TimeFinished { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

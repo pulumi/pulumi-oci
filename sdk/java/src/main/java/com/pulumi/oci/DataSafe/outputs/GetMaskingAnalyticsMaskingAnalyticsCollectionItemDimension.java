@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
@@ -13,27 +15,27 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
      * @return The OCID of the masking policy..
      * 
      */
-    private String policyId;
+    private @Nullable String policyId;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
 
     private GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension() {}
     /**
      * @return The OCID of the masking policy..
      * 
      */
-    public String policyId() {
-        return this.policyId;
+    public Optional<String> policyId() {
+        return Optional.ofNullable(this.policyId);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String policyId;
-        private String targetId;
+        private @Nullable String policyId;
+        private @Nullable String targetId;
         public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
         }
 
         @CustomType.Setter
-        public Builder policyId(String policyId) {
-            this.policyId = Objects.requireNonNull(policyId);
+        public Builder policyId(@Nullable String policyId) {
+            this.policyId = policyId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension build() {

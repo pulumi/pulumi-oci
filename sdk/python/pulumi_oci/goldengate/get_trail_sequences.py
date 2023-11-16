@@ -54,9 +54,6 @@ class GetTrailSequencesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +63,7 @@ class GetTrailSequencesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +76,7 @@ class GetTrailSequencesResult:
 
     @property
     @pulumi.getter(name="trailSequenceCollections")
-    def trail_sequence_collections(self) -> Sequence['outputs.GetTrailSequencesTrailSequenceCollectionResult']:
-        """
-        The list of trail_sequence_collection.
-        """
+    def trail_sequence_collections(self) -> Optional[Sequence['outputs.GetTrailSequencesTrailSequenceCollectionResult']]:
         return pulumi.get(self, "trail_sequence_collections")
 
     @property
@@ -113,27 +107,7 @@ def get_trail_sequences(deployment_id: Optional[str] = None,
                         trail_sequence_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTrailSequencesResult:
     """
-    This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Trail Sequences for a TrailFile in a given deployment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_sequence_display_name"],
-        trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str trail_file_id: A Trail File identifier
-    :param str trail_sequence_id: A Trail Sequence identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -162,26 +136,6 @@ def get_trail_sequences_output(deployment_id: Optional[pulumi.Input[str]] = None
                                trail_sequence_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTrailSequencesResult]:
     """
-    This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Trail Sequences for a TrailFile in a given deployment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trail_sequences = oci.GoldenGate.get_trail_sequences(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_sequence_display_name"],
-        trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str trail_file_id: A Trail File identifier
-    :param str trail_sequence_id: A Trail Sequence identifier
+    Use this data source to access information about an existing resource.
     """
     ...

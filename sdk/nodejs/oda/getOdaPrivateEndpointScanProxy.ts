@@ -53,29 +53,29 @@ export interface GetOdaPrivateEndpointScanProxyResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly odaPrivateEndpointId: string;
     readonly odaPrivateEndpointScanProxyId: string;
     /**
      * The protocol used for communication between client, scanProxy and RAC's scan listeners
      */
-    readonly protocol: string;
+    readonly protocol?: string;
     /**
      * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
      */
-    readonly scanListenerInfos: outputs.Oda.GetOdaPrivateEndpointScanProxyScanListenerInfo[];
+    readonly scanListenerInfos?: outputs.Oda.GetOdaPrivateEndpointScanProxyScanListenerInfo[];
     /**
      * Type indicating whether Scan listener is specified by its FQDN or list of IPs
      */
-    readonly scanListenerType: string;
+    readonly scanListenerType?: string;
     /**
      * The current state of the ODA Private Endpoint Scan Proxy.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.

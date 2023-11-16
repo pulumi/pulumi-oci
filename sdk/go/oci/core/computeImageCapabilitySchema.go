@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
@@ -75,13 +74,13 @@ type ComputeImageCapabilitySchema struct {
 	// (Updatable) The OCID of the compartment that contains the resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The ocid of the compute global image capability schema
-	ComputeGlobalImageCapabilitySchemaId pulumi.StringOutput `pulumi:"computeGlobalImageCapabilitySchemaId"`
+	ComputeGlobalImageCapabilitySchemaId pulumi.StringPtrOutput `pulumi:"computeGlobalImageCapabilitySchemaId"`
 	// The name of the compute global image capability schema version
 	ComputeGlobalImageCapabilitySchemaVersionName pulumi.StringOutput `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The ocid of the image
@@ -89,7 +88,7 @@ type ComputeImageCapabilitySchema struct {
 	// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
 	SchemaData pulumi.MapOutput `pulumi:"schemaData"`
 	// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewComputeImageCapabilitySchema registers a new resource with the given unique name, arguments, and options.
@@ -237,12 +236,6 @@ func (i *ComputeImageCapabilitySchema) ToComputeImageCapabilitySchemaOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeImageCapabilitySchemaOutput)
 }
 
-func (i *ComputeImageCapabilitySchema) ToOutput(ctx context.Context) pulumix.Output[*ComputeImageCapabilitySchema] {
-	return pulumix.Output[*ComputeImageCapabilitySchema]{
-		OutputState: i.ToComputeImageCapabilitySchemaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ComputeImageCapabilitySchemaArrayInput is an input type that accepts ComputeImageCapabilitySchemaArray and ComputeImageCapabilitySchemaArrayOutput values.
 // You can construct a concrete instance of `ComputeImageCapabilitySchemaArrayInput` via:
 //
@@ -266,12 +259,6 @@ func (i ComputeImageCapabilitySchemaArray) ToComputeImageCapabilitySchemaArrayOu
 
 func (i ComputeImageCapabilitySchemaArray) ToComputeImageCapabilitySchemaArrayOutputWithContext(ctx context.Context) ComputeImageCapabilitySchemaArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeImageCapabilitySchemaArrayOutput)
-}
-
-func (i ComputeImageCapabilitySchemaArray) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeImageCapabilitySchema] {
-	return pulumix.Output[[]*ComputeImageCapabilitySchema]{
-		OutputState: i.ToComputeImageCapabilitySchemaArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ComputeImageCapabilitySchemaMapInput is an input type that accepts ComputeImageCapabilitySchemaMap and ComputeImageCapabilitySchemaMapOutput values.
@@ -299,12 +286,6 @@ func (i ComputeImageCapabilitySchemaMap) ToComputeImageCapabilitySchemaMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeImageCapabilitySchemaMapOutput)
 }
 
-func (i ComputeImageCapabilitySchemaMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeImageCapabilitySchema] {
-	return pulumix.Output[map[string]*ComputeImageCapabilitySchema]{
-		OutputState: i.ToComputeImageCapabilitySchemaMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ComputeImageCapabilitySchemaOutput struct{ *pulumi.OutputState }
 
 func (ComputeImageCapabilitySchemaOutput) ElementType() reflect.Type {
@@ -319,22 +300,16 @@ func (o ComputeImageCapabilitySchemaOutput) ToComputeImageCapabilitySchemaOutput
 	return o
 }
 
-func (o ComputeImageCapabilitySchemaOutput) ToOutput(ctx context.Context) pulumix.Output[*ComputeImageCapabilitySchema] {
-	return pulumix.Output[*ComputeImageCapabilitySchema]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that contains the resource.
 func (o ComputeImageCapabilitySchemaOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The ocid of the compute global image capability schema
-func (o ComputeImageCapabilitySchemaOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringOutput {
+func (o ComputeImageCapabilitySchemaOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringPtrOutput {
 		return v.ComputeGlobalImageCapabilitySchemaId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the compute global image capability schema version
@@ -350,8 +325,8 @@ func (o ComputeImageCapabilitySchemaOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o ComputeImageCapabilitySchemaOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ComputeImageCapabilitySchemaOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -370,8 +345,8 @@ func (o ComputeImageCapabilitySchemaOutput) SchemaData() pulumi.MapOutput {
 }
 
 // The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ComputeImageCapabilitySchemaOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ComputeImageCapabilitySchemaOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ComputeImageCapabilitySchemaArrayOutput struct{ *pulumi.OutputState }
@@ -386,12 +361,6 @@ func (o ComputeImageCapabilitySchemaArrayOutput) ToComputeImageCapabilitySchemaA
 
 func (o ComputeImageCapabilitySchemaArrayOutput) ToComputeImageCapabilitySchemaArrayOutputWithContext(ctx context.Context) ComputeImageCapabilitySchemaArrayOutput {
 	return o
-}
-
-func (o ComputeImageCapabilitySchemaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeImageCapabilitySchema] {
-	return pulumix.Output[[]*ComputeImageCapabilitySchema]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeImageCapabilitySchemaArrayOutput) Index(i pulumi.IntInput) ComputeImageCapabilitySchemaOutput {
@@ -412,12 +381,6 @@ func (o ComputeImageCapabilitySchemaMapOutput) ToComputeImageCapabilitySchemaMap
 
 func (o ComputeImageCapabilitySchemaMapOutput) ToComputeImageCapabilitySchemaMapOutputWithContext(ctx context.Context) ComputeImageCapabilitySchemaMapOutput {
 	return o
-}
-
-func (o ComputeImageCapabilitySchemaMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeImageCapabilitySchema] {
-	return pulumix.Output[map[string]*ComputeImageCapabilitySchema]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeImageCapabilitySchemaMapOutput) MapIndex(k pulumi.StringInput) ComputeImageCapabilitySchemaOutput {

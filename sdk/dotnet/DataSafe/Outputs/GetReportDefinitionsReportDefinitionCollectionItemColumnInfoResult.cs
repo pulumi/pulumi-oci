@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Specifies the data type of the column.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// The name of the report definition to query.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Specifies the order in which the summary must be displayed.
         /// </summary>
-        public readonly int DisplayOrder;
+        public readonly int? DisplayOrder;
         /// <summary>
         /// Name of the column that must be sorted.
         /// </summary>
-        public readonly string FieldName;
+        public readonly string? FieldName;
         /// <summary>
         /// Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         /// </summary>
-        public readonly bool IsHidden;
+        public readonly bool? IsHidden;
 
         [OutputConstructor]
         private GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult(
-            string dataType,
+            string? dataType,
 
-            string displayName,
+            string? displayName,
 
-            int displayOrder,
+            int? displayOrder,
 
-            string fieldName,
+            string? fieldName,
 
-            bool isHidden)
+            bool? isHidden)
         {
             DataType = dataType;
             DisplayName = displayName;

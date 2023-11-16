@@ -103,19 +103,19 @@ export class Config extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A description of the metric.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of dimensions for the metric. This variable should not be used.
      */
-    public readonly dimensions!: pulumi.Output<outputs.ApmConfig.ConfigDimension[]>;
+    public readonly dimensions!: pulumi.Output<outputs.ApmConfig.ConfigDimension[] | undefined>;
     /**
      * (Updatable) The name by which a configuration entity is displayed to the end user.
      */
@@ -123,59 +123,59 @@ export class Config extends pulumi.CustomResource {
     /**
      * For optimistic concurrency control. See `if-match`.
      */
-    public /*out*/ readonly etag!: pulumi.Output<string>;
+    public /*out*/ readonly etag!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
      */
-    public readonly filterId!: pulumi.Output<string>;
+    public readonly filterId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The string that defines the Span Filter expression.
      */
-    public readonly filterText!: pulumi.Output<string>;
+    public readonly filterText!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A string that specifies the group that an OPTIONS item belongs to.
      */
-    public readonly group!: pulumi.Output<string>;
+    public readonly group!: pulumi.Output<string | undefined>;
     /**
      * The list of configuration items that reference the span filter.
      */
-    public readonly inUseBies!: pulumi.Output<outputs.ApmConfig.ConfigInUseBy[]>;
+    public readonly inUseBies!: pulumi.Output<outputs.ApmConfig.ConfigInUseBy[] | undefined>;
     /**
      * (Updatable) The list of metrics in this group.
      */
-    public readonly metrics!: pulumi.Output<outputs.ApmConfig.ConfigMetric[]>;
+    public readonly metrics!: pulumi.Output<outputs.ApmConfig.ConfigMetric[] | undefined>;
     /**
      * (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
      */
-    public readonly namespace!: pulumi.Output<string>;
+    public readonly namespace!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    public readonly opcDryRun!: pulumi.Output<string>;
+    public readonly opcDryRun!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The options are stored here as JSON.
      */
-    public readonly options!: pulumi.Output<string>;
+    public readonly options!: pulumi.Output<string | undefined>;
     /**
      * (Updatable)
      */
-    public readonly rules!: pulumi.Output<outputs.ApmConfig.ConfigRule[]>;
+    public readonly rules!: pulumi.Output<outputs.ApmConfig.ConfigRule[] | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
-    public /*out*/ readonly updatedBy!: pulumi.Output<string>;
+    public /*out*/ readonly updatedBy!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Config resource with the given unique name, arguments, and options.

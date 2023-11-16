@@ -65,10 +65,7 @@ class GetJobExecutionsStatusResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetJobExecutionsStatusItemResult']:
-        """
-        A list of JobExecutionsSummary objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetJobExecutionsStatusItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -117,33 +114,7 @@ def get_job_executions_status(compartment_id: Optional[str] = None,
                               start_time: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobExecutionsStatusResult:
     """
-    This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_executions_status = oci.DatabaseManagement.get_job_executions_status(compartment_id=var["compartment_id"],
-        end_time=var["job_executions_status_end_time"],
-        start_time=var["job_executions_status_start_time"],
-        id=var["job_executions_status_id"],
-        managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["job_executions_status_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str end_time: The end time of the time range to retrieve the status summary of job executions in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str id: The identifier of the resource.
-    :param str managed_database_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str start_time: The start time of the time range to retrieve the status summary of job executions in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -177,32 +148,6 @@ def get_job_executions_status_output(compartment_id: Optional[pulumi.Input[str]]
                                      start_time: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobExecutionsStatusResult]:
     """
-    This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_executions_status = oci.DatabaseManagement.get_job_executions_status(compartment_id=var["compartment_id"],
-        end_time=var["job_executions_status_end_time"],
-        start_time=var["job_executions_status_start_time"],
-        id=var["job_executions_status_id"],
-        managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["job_executions_status_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str end_time: The end time of the time range to retrieve the status summary of job executions in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str id: The identifier of the resource.
-    :param str managed_database_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str start_time: The start time of the time range to retrieve the status summary of job executions in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+    Use this data source to access information about an existing resource.
     """
     ...

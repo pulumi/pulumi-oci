@@ -72,7 +72,7 @@ export interface GetRepositoryRefsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique reference name inside a repository.
      */
@@ -88,7 +88,7 @@ export interface GetRepositoryRefsResult {
     /**
      * The list of repository_ref_collection.
      */
-    readonly repositoryRefCollections: outputs.DevOps.GetRepositoryRefsRepositoryRefCollection[];
+    readonly repositoryRefCollections?: outputs.DevOps.GetRepositoryRefsRepositoryRefCollection[];
 }
 /**
  * This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.

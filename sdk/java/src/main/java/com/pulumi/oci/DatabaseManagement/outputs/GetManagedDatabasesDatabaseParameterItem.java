@@ -10,6 +10,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesDatabaseParameterItem {
@@ -17,77 +19,77 @@ public final class GetManagedDatabasesDatabaseParameterItem {
      * @return A list of allowed values for this parameter.
      * 
      */
-    private List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues;
+    private @Nullable List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues;
     /**
      * @return The parameter category.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
      * 
      */
-    private String constraint;
+    private @Nullable String constraint;
     /**
      * @return The ID of the database container to which the data pertains. Possible values include:
      * 
      */
-    private Double containerId;
+    private @Nullable Double containerId;
     /**
      * @return The description of the parameter.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
      * 
      */
-    private String displayValue;
+    private @Nullable String displayValue;
     /**
      * @return Indicates whether Oracle adjusted the input value to a more suitable value.
      * 
      */
-    private Boolean isAdjusted;
+    private @Nullable Boolean isAdjusted;
     /**
      * @return Indicates whether the parameter is a basic parameter (`TRUE`) or not (`FALSE`).
      * 
      */
-    private Boolean isBasic;
+    private @Nullable Boolean isBasic;
     /**
      * @return Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return Indicates whether the parameter has been deprecated (`TRUE`) or not (`FALSE`).
      * 
      */
-    private Boolean isDeprecated;
+    private @Nullable Boolean isDeprecated;
     /**
      * @return For parameters that can be changed with `ALTER SYSTEM`, indicates whether the value of the parameter can be different for every instance (`TRUE`) or whether the parameter must have the same value for all Real Application Clusters instances (`FALSE`). For other parameters, this is always `FALSE`.
      * 
      */
-    private Boolean isInstanceModifiable;
+    private @Nullable Boolean isInstanceModifiable;
     /**
      * @return Indicates how the parameter was modified. If an `ALTER SYSTEM` was performed, the value will be `MODIFIED`.
      * 
      */
-    private String isModified;
+    private @Nullable String isModified;
     /**
      * @return Indicates whether the parameter can be modified on a per-PDB basis (`TRUE`) or not (`FALSE`). In a non-CDB, the value of this property is `null`.
      * 
      */
-    private Boolean isPdbModifiable;
+    private @Nullable Boolean isPdbModifiable;
     /**
      * @return Indicates whether the parameter can be changed with `ALTER SESSION` (`TRUE`) or not (`FALSE`)
      * 
      */
-    private Boolean isSessionModifiable;
+    private @Nullable Boolean isSessionModifiable;
     /**
      * @return Indicates whether the parameter was specified in the server parameter file (`TRUE`) or not (`FALSE`). Applicable only when the parameter source is `SPFILE`.
      * 
      */
-    private Boolean isSpecified;
+    private @Nullable Boolean isSpecified;
     /**
      * @return Indicates whether the parameter can be changed with `ALTER SYSTEM` and when the change takes effect:
      * * IMMEDIATE: Parameter can be changed with `ALTER SYSTEM` regardless of the type of parameter file used to start the instance. The change takes effect immediately.
@@ -95,42 +97,42 @@ public final class GetManagedDatabasesDatabaseParameterItem {
      * * FALSE: Parameter cannot be changed with `ALTER SYSTEM` unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
      * 
      */
-    private String isSystemModifiable;
+    private @Nullable String isSystemModifiable;
     /**
      * @return A filter to return all parameters that have the text given in their names.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The parameter number.
      * 
      */
-    private Double number;
+    private @Nullable Double number;
     /**
      * @return The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
      * 
      */
-    private Double ordinal;
+    private @Nullable Double ordinal;
     /**
      * @return The database instance SID for which the parameter is defined.
      * 
      */
-    private String sid;
+    private @Nullable String sid;
     /**
      * @return The parameter type.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The comments associated with the most recent update.
      * 
      */
-    private String updateComment;
+    private @Nullable String updateComment;
     /**
      * @return The parameter value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetManagedDatabasesDatabaseParameterItem() {}
     /**
@@ -138,105 +140,105 @@ public final class GetManagedDatabasesDatabaseParameterItem {
      * 
      */
     public List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues() {
-        return this.allowedValues;
+        return this.allowedValues == null ? List.of() : this.allowedValues;
     }
     /**
      * @return The parameter category.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
      * 
      */
-    public String constraint() {
-        return this.constraint;
+    public Optional<String> constraint() {
+        return Optional.ofNullable(this.constraint);
     }
     /**
      * @return The ID of the database container to which the data pertains. Possible values include:
      * 
      */
-    public Double containerId() {
-        return this.containerId;
+    public Optional<Double> containerId() {
+        return Optional.ofNullable(this.containerId);
     }
     /**
      * @return The description of the parameter.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
      * 
      */
-    public String displayValue() {
-        return this.displayValue;
+    public Optional<String> displayValue() {
+        return Optional.ofNullable(this.displayValue);
     }
     /**
      * @return Indicates whether Oracle adjusted the input value to a more suitable value.
      * 
      */
-    public Boolean isAdjusted() {
-        return this.isAdjusted;
+    public Optional<Boolean> isAdjusted() {
+        return Optional.ofNullable(this.isAdjusted);
     }
     /**
      * @return Indicates whether the parameter is a basic parameter (`TRUE`) or not (`FALSE`).
      * 
      */
-    public Boolean isBasic() {
-        return this.isBasic;
+    public Optional<Boolean> isBasic() {
+        return Optional.ofNullable(this.isBasic);
     }
     /**
      * @return Indicates whether the parameter is set to the default value (`TRUE`) or the parameter value was specified in the parameter file (`FALSE`).
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return Indicates whether the parameter has been deprecated (`TRUE`) or not (`FALSE`).
      * 
      */
-    public Boolean isDeprecated() {
-        return this.isDeprecated;
+    public Optional<Boolean> isDeprecated() {
+        return Optional.ofNullable(this.isDeprecated);
     }
     /**
      * @return For parameters that can be changed with `ALTER SYSTEM`, indicates whether the value of the parameter can be different for every instance (`TRUE`) or whether the parameter must have the same value for all Real Application Clusters instances (`FALSE`). For other parameters, this is always `FALSE`.
      * 
      */
-    public Boolean isInstanceModifiable() {
-        return this.isInstanceModifiable;
+    public Optional<Boolean> isInstanceModifiable() {
+        return Optional.ofNullable(this.isInstanceModifiable);
     }
     /**
      * @return Indicates how the parameter was modified. If an `ALTER SYSTEM` was performed, the value will be `MODIFIED`.
      * 
      */
-    public String isModified() {
-        return this.isModified;
+    public Optional<String> isModified() {
+        return Optional.ofNullable(this.isModified);
     }
     /**
      * @return Indicates whether the parameter can be modified on a per-PDB basis (`TRUE`) or not (`FALSE`). In a non-CDB, the value of this property is `null`.
      * 
      */
-    public Boolean isPdbModifiable() {
-        return this.isPdbModifiable;
+    public Optional<Boolean> isPdbModifiable() {
+        return Optional.ofNullable(this.isPdbModifiable);
     }
     /**
      * @return Indicates whether the parameter can be changed with `ALTER SESSION` (`TRUE`) or not (`FALSE`)
      * 
      */
-    public Boolean isSessionModifiable() {
-        return this.isSessionModifiable;
+    public Optional<Boolean> isSessionModifiable() {
+        return Optional.ofNullable(this.isSessionModifiable);
     }
     /**
      * @return Indicates whether the parameter was specified in the server parameter file (`TRUE`) or not (`FALSE`). Applicable only when the parameter source is `SPFILE`.
      * 
      */
-    public Boolean isSpecified() {
-        return this.isSpecified;
+    public Optional<Boolean> isSpecified() {
+        return Optional.ofNullable(this.isSpecified);
     }
     /**
      * @return Indicates whether the parameter can be changed with `ALTER SYSTEM` and when the change takes effect:
@@ -245,57 +247,57 @@ public final class GetManagedDatabasesDatabaseParameterItem {
      * * FALSE: Parameter cannot be changed with `ALTER SYSTEM` unless a server parameter file was used to start the instance. The change takes effect in subsequent instances.
      * 
      */
-    public String isSystemModifiable() {
-        return this.isSystemModifiable;
+    public Optional<String> isSystemModifiable() {
+        return Optional.ofNullable(this.isSystemModifiable);
     }
     /**
      * @return A filter to return all parameters that have the text given in their names.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The parameter number.
      * 
      */
-    public Double number() {
-        return this.number;
+    public Optional<Double> number() {
+        return Optional.ofNullable(this.number);
     }
     /**
      * @return The position (ordinal number) of the parameter value. Useful only for parameters whose values are lists of strings.
      * 
      */
-    public Double ordinal() {
-        return this.ordinal;
+    public Optional<Double> ordinal() {
+        return Optional.ofNullable(this.ordinal);
     }
     /**
      * @return The database instance SID for which the parameter is defined.
      * 
      */
-    public String sid() {
-        return this.sid;
+    public Optional<String> sid() {
+        return Optional.ofNullable(this.sid);
     }
     /**
      * @return The parameter type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The comments associated with the most recent update.
      * 
      */
-    public String updateComment() {
-        return this.updateComment;
+    public Optional<String> updateComment() {
+        return Optional.ofNullable(this.updateComment);
     }
     /**
      * @return The parameter value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -307,29 +309,29 @@ public final class GetManagedDatabasesDatabaseParameterItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues;
-        private String category;
-        private String constraint;
-        private Double containerId;
-        private String description;
-        private String displayValue;
-        private Boolean isAdjusted;
-        private Boolean isBasic;
-        private Boolean isDefault;
-        private Boolean isDeprecated;
-        private Boolean isInstanceModifiable;
-        private String isModified;
-        private Boolean isPdbModifiable;
-        private Boolean isSessionModifiable;
-        private Boolean isSpecified;
-        private String isSystemModifiable;
-        private String name;
-        private Double number;
-        private Double ordinal;
-        private String sid;
-        private String type;
-        private String updateComment;
-        private String value;
+        private @Nullable List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues;
+        private @Nullable String category;
+        private @Nullable String constraint;
+        private @Nullable Double containerId;
+        private @Nullable String description;
+        private @Nullable String displayValue;
+        private @Nullable Boolean isAdjusted;
+        private @Nullable Boolean isBasic;
+        private @Nullable Boolean isDefault;
+        private @Nullable Boolean isDeprecated;
+        private @Nullable Boolean isInstanceModifiable;
+        private @Nullable String isModified;
+        private @Nullable Boolean isPdbModifiable;
+        private @Nullable Boolean isSessionModifiable;
+        private @Nullable Boolean isSpecified;
+        private @Nullable String isSystemModifiable;
+        private @Nullable String name;
+        private @Nullable Double number;
+        private @Nullable Double ordinal;
+        private @Nullable String sid;
+        private @Nullable String type;
+        private @Nullable String updateComment;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParameterItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -359,121 +361,121 @@ public final class GetManagedDatabasesDatabaseParameterItem {
         }
 
         @CustomType.Setter
-        public Builder allowedValues(List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues) {
-            this.allowedValues = Objects.requireNonNull(allowedValues);
+        public Builder allowedValues(@Nullable List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues) {
+            this.allowedValues = allowedValues;
             return this;
         }
         public Builder allowedValues(GetManagedDatabasesDatabaseParameterItemAllowedValue... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder constraint(String constraint) {
-            this.constraint = Objects.requireNonNull(constraint);
+        public Builder constraint(@Nullable String constraint) {
+            this.constraint = constraint;
             return this;
         }
         @CustomType.Setter
-        public Builder containerId(Double containerId) {
-            this.containerId = Objects.requireNonNull(containerId);
+        public Builder containerId(@Nullable Double containerId) {
+            this.containerId = containerId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayValue(String displayValue) {
-            this.displayValue = Objects.requireNonNull(displayValue);
+        public Builder displayValue(@Nullable String displayValue) {
+            this.displayValue = displayValue;
             return this;
         }
         @CustomType.Setter
-        public Builder isAdjusted(Boolean isAdjusted) {
-            this.isAdjusted = Objects.requireNonNull(isAdjusted);
+        public Builder isAdjusted(@Nullable Boolean isAdjusted) {
+            this.isAdjusted = isAdjusted;
             return this;
         }
         @CustomType.Setter
-        public Builder isBasic(Boolean isBasic) {
-            this.isBasic = Objects.requireNonNull(isBasic);
+        public Builder isBasic(@Nullable Boolean isBasic) {
+            this.isBasic = isBasic;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder isDeprecated(Boolean isDeprecated) {
-            this.isDeprecated = Objects.requireNonNull(isDeprecated);
+        public Builder isDeprecated(@Nullable Boolean isDeprecated) {
+            this.isDeprecated = isDeprecated;
             return this;
         }
         @CustomType.Setter
-        public Builder isInstanceModifiable(Boolean isInstanceModifiable) {
-            this.isInstanceModifiable = Objects.requireNonNull(isInstanceModifiable);
+        public Builder isInstanceModifiable(@Nullable Boolean isInstanceModifiable) {
+            this.isInstanceModifiable = isInstanceModifiable;
             return this;
         }
         @CustomType.Setter
-        public Builder isModified(String isModified) {
-            this.isModified = Objects.requireNonNull(isModified);
+        public Builder isModified(@Nullable String isModified) {
+            this.isModified = isModified;
             return this;
         }
         @CustomType.Setter
-        public Builder isPdbModifiable(Boolean isPdbModifiable) {
-            this.isPdbModifiable = Objects.requireNonNull(isPdbModifiable);
+        public Builder isPdbModifiable(@Nullable Boolean isPdbModifiable) {
+            this.isPdbModifiable = isPdbModifiable;
             return this;
         }
         @CustomType.Setter
-        public Builder isSessionModifiable(Boolean isSessionModifiable) {
-            this.isSessionModifiable = Objects.requireNonNull(isSessionModifiable);
+        public Builder isSessionModifiable(@Nullable Boolean isSessionModifiable) {
+            this.isSessionModifiable = isSessionModifiable;
             return this;
         }
         @CustomType.Setter
-        public Builder isSpecified(Boolean isSpecified) {
-            this.isSpecified = Objects.requireNonNull(isSpecified);
+        public Builder isSpecified(@Nullable Boolean isSpecified) {
+            this.isSpecified = isSpecified;
             return this;
         }
         @CustomType.Setter
-        public Builder isSystemModifiable(String isSystemModifiable) {
-            this.isSystemModifiable = Objects.requireNonNull(isSystemModifiable);
+        public Builder isSystemModifiable(@Nullable String isSystemModifiable) {
+            this.isSystemModifiable = isSystemModifiable;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder number(Double number) {
-            this.number = Objects.requireNonNull(number);
+        public Builder number(@Nullable Double number) {
+            this.number = number;
             return this;
         }
         @CustomType.Setter
-        public Builder ordinal(Double ordinal) {
-            this.ordinal = Objects.requireNonNull(ordinal);
+        public Builder ordinal(@Nullable Double ordinal) {
+            this.ordinal = ordinal;
             return this;
         }
         @CustomType.Setter
-        public Builder sid(String sid) {
-            this.sid = Objects.requireNonNull(sid);
+        public Builder sid(@Nullable String sid) {
+            this.sid = sid;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder updateComment(String updateComment) {
-            this.updateComment = Objects.requireNonNull(updateComment);
+        public Builder updateComment(@Nullable String updateComment) {
+            this.updateComment = updateComment;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetManagedDatabasesDatabaseParameterItem build() {

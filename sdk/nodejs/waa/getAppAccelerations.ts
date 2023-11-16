@@ -90,7 +90,7 @@ export interface GetAppAccelerationsResult {
     /**
      * The list of web_app_acceleration_collection.
      */
-    readonly webAppAccelerationCollections: outputs.Waa.GetAppAccelerationsWebAppAccelerationCollection[];
+    readonly webAppAccelerationCollections?: outputs.Waa.GetAppAccelerationsWebAppAccelerationCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
      */

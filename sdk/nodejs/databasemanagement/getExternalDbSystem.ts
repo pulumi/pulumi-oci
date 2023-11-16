@@ -47,56 +47,56 @@ export interface GetExternalDbSystemResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The details required to enable Database Management for an external DB system.
      */
-    readonly databaseManagementConfigs: outputs.DatabaseManagement.GetExternalDbSystemDatabaseManagementConfig[];
+    readonly databaseManagementConfigs?: outputs.DatabaseManagement.GetExternalDbSystemDatabaseManagementConfig[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      */
-    readonly dbSystemDiscoveryId: string;
+    readonly dbSystemDiscoveryId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
-    readonly discoveryAgentId: string;
+    readonly discoveryAgentId?: string;
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalDbSystemId: string;
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */
-    readonly homeDirectory: string;
+    readonly homeDirectory?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the DB system is a cluster DB system or not.
      */
-    readonly isCluster: boolean;
+    readonly isCluster?: boolean;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The configuration details of Stack Monitoring for an external DB system.
      */
-    readonly stackMonitoringConfigs: outputs.DatabaseManagement.GetExternalDbSystemStackMonitoringConfig[];
+    readonly stackMonitoringConfigs?: outputs.DatabaseManagement.GetExternalDbSystemStackMonitoringConfig[];
     /**
      * The current lifecycle state of the external DB system resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external DB system was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external DB system was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific External Db System resource in Oracle Cloud Infrastructure Database Management service.

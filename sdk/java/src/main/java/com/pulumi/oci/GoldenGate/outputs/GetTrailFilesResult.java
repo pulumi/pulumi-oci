@@ -25,12 +25,12 @@ public final class GetTrailFilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of trail_file_collection.
      * 
      */
-    private List<GetTrailFilesTrailFileCollection> trailFileCollections;
+    private @Nullable List<GetTrailFilesTrailFileCollection> trailFileCollections;
     /**
      * @return The TrailFile Id.
      * 
@@ -55,15 +55,15 @@ public final class GetTrailFilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of trail_file_collection.
      * 
      */
     public List<GetTrailFilesTrailFileCollection> trailFileCollections() {
-        return this.trailFileCollections;
+        return this.trailFileCollections == null ? List.of() : this.trailFileCollections;
     }
     /**
      * @return The TrailFile Id.
@@ -85,8 +85,8 @@ public final class GetTrailFilesResult {
         private String deploymentId;
         private @Nullable String displayName;
         private @Nullable List<GetTrailFilesFilter> filters;
-        private String id;
-        private List<GetTrailFilesTrailFileCollection> trailFileCollections;
+        private @Nullable String id;
+        private @Nullable List<GetTrailFilesTrailFileCollection> trailFileCollections;
         private String trailFileId;
         public Builder() {}
         public Builder(GetTrailFilesResult defaults) {
@@ -118,13 +118,13 @@ public final class GetTrailFilesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder trailFileCollections(List<GetTrailFilesTrailFileCollection> trailFileCollections) {
-            this.trailFileCollections = Objects.requireNonNull(trailFileCollections);
+        public Builder trailFileCollections(@Nullable List<GetTrailFilesTrailFileCollection> trailFileCollections) {
+            this.trailFileCollections = trailFileCollections;
             return this;
         }
         public Builder trailFileCollections(GetTrailFilesTrailFileCollection... trailFileCollections) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.
@@ -62,40 +61,40 @@ type LookupImageResult struct {
 	// Oracle Cloud Agent features supported on the image.
 	AgentFeatures []GetImageAgentFeature `pulumi:"agentFeatures"`
 	// The OCID of the image originally used to launch the instance.
-	BaseImageId string `pulumi:"baseImageId"`
+	BaseImageId *string `pulumi:"baseImageId"`
 	// The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-	BillableSizeInGbs string `pulumi:"billableSizeInGbs"`
+	BillableSizeInGbs *string `pulumi:"billableSizeInGbs"`
 	// The OCID of the compartment containing the instance you want to use as the basis for the image.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-	CreateImageAllowed bool `pulumi:"createImageAllowed"`
+	CreateImageAllowed *bool `pulumi:"createImageAllowed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the image.
-	Id                 string                      `pulumi:"id"`
+	Id                 *string                     `pulumi:"id"`
 	ImageId            string                      `pulumi:"imageId"`
 	ImageSourceDetails []GetImageImageSourceDetail `pulumi:"imageSourceDetails"`
-	InstanceId         string                      `pulumi:"instanceId"`
+	InstanceId         *string                     `pulumi:"instanceId"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	LaunchMode string `pulumi:"launchMode"`
+	LaunchMode *string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions []GetImageLaunchOption `pulumi:"launchOptions"`
 	// The listing type of the image. The default value is "NONE".
-	ListingType string `pulumi:"listingType"`
+	ListingType *string `pulumi:"listingType"`
 	// The image's operating system.  Example: `Oracle Linux`
-	OperatingSystem string `pulumi:"operatingSystem"`
+	OperatingSystem *string `pulumi:"operatingSystem"`
 	// The image's operating system version.  Example: `7.2`
-	OperatingSystemVersion string `pulumi:"operatingSystemVersion"`
+	OperatingSystemVersion *string `pulumi:"operatingSystemVersion"`
 	// The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-	SizeInMbs string `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
 	// The current state of the image.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupImageOutput(ctx *pulumi.Context, args LookupImageOutputArgs, opts ...pulumi.InvokeOption) LookupImageResultOutput {
@@ -136,35 +135,29 @@ func (o LookupImageResultOutput) ToLookupImageResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupImageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupImageResult] {
-	return pulumix.Output[LookupImageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Oracle Cloud Agent features supported on the image.
 func (o LookupImageResultOutput) AgentFeatures() GetImageAgentFeatureArrayOutput {
 	return o.ApplyT(func(v LookupImageResult) []GetImageAgentFeature { return v.AgentFeatures }).(GetImageAgentFeatureArrayOutput)
 }
 
 // The OCID of the image originally used to launch the instance.
-func (o LookupImageResultOutput) BaseImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.BaseImageId }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) BaseImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.BaseImageId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
-func (o LookupImageResultOutput) BillableSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.BillableSizeInGbs }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) BillableSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.BillableSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing the instance you want to use as the basis for the image.
-func (o LookupImageResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-func (o LookupImageResultOutput) CreateImageAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupImageResult) bool { return v.CreateImageAllowed }).(pulumi.BoolOutput)
+func (o LookupImageResultOutput) CreateImageAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *bool { return v.CreateImageAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -173,8 +166,8 @@ func (o LookupImageResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupImageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -183,8 +176,8 @@ func (o LookupImageResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the image.
-func (o LookupImageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupImageResultOutput) ImageId() pulumi.StringOutput {
@@ -195,13 +188,13 @@ func (o LookupImageResultOutput) ImageSourceDetails() GetImageImageSourceDetailA
 	return o.ApplyT(func(v LookupImageResult) []GetImageImageSourceDetail { return v.ImageSourceDetails }).(GetImageImageSourceDetailArrayOutput)
 }
 
-func (o LookupImageResultOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.InstanceId }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-func (o LookupImageResultOutput) LaunchMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.LaunchMode }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) LaunchMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.LaunchMode }).(pulumi.StringPtrOutput)
 }
 
 // Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -210,33 +203,33 @@ func (o LookupImageResultOutput) LaunchOptions() GetImageLaunchOptionArrayOutput
 }
 
 // The listing type of the image. The default value is "NONE".
-func (o LookupImageResultOutput) ListingType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.ListingType }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) ListingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.ListingType }).(pulumi.StringPtrOutput)
 }
 
 // The image's operating system.  Example: `Oracle Linux`
-func (o LookupImageResultOutput) OperatingSystem() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.OperatingSystem }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) OperatingSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.OperatingSystem }).(pulumi.StringPtrOutput)
 }
 
 // The image's operating system version.  Example: `7.2`
-func (o LookupImageResultOutput) OperatingSystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.OperatingSystemVersion }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) OperatingSystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.OperatingSystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
-func (o LookupImageResultOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the image.
-func (o LookupImageResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupImageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupImageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupImageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupImageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

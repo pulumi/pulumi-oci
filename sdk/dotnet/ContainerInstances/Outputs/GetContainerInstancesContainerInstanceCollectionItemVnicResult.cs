@@ -16,47 +16,47 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
-        public readonly string HostnameLabel;
-        public readonly bool IsPublicIpAssigned;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly string? HostnameLabel;
+        public readonly bool? IsPublicIpAssigned;
         public readonly ImmutableArray<string> NsgIds;
-        public readonly string PrivateIp;
-        public readonly bool SkipSourceDestCheck;
-        public readonly string SubnetId;
+        public readonly string? PrivateIp;
+        public readonly bool? SkipSourceDestCheck;
+        public readonly string? SubnetId;
         /// <summary>
         /// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         /// </summary>
-        public readonly string VnicId;
+        public readonly string? VnicId;
 
         [OutputConstructor]
         private GetContainerInstancesContainerInstanceCollectionItemVnicResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
-            bool isPublicIpAssigned,
+            bool? isPublicIpAssigned,
 
             ImmutableArray<string> nsgIds,
 
-            string privateIp,
+            string? privateIp,
 
-            bool skipSourceDestCheck,
+            bool? skipSourceDestCheck,
 
-            string subnetId,
+            string? subnetId,
 
-            string vnicId)
+            string? vnicId)
         {
             DefinedTags = definedTags;
             DisplayName = displayName;

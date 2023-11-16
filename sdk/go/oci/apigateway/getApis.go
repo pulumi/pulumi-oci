@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Apis in Oracle Cloud Infrastructure API Gateway service.
@@ -74,7 +73,7 @@ type GetApisResult struct {
 	DisplayName *string         `pulumi:"displayName"`
 	Filters     []GetApisFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the API.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetApisResultOutput) ToGetApisResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetApisResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApisResult] {
-	return pulumix.Output[GetApisResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of api_collection.
 func (o GetApisResultOutput) ApiCollections() GetApisApiCollectionArrayOutput {
 	return o.ApplyT(func(v GetApisResult) []GetApisApiCollection { return v.ApiCollections }).(GetApisApiCollectionArrayOutput)
@@ -148,8 +141,8 @@ func (o GetApisResultOutput) Filters() GetApisFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApisResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApisResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApisResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApisResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the API.

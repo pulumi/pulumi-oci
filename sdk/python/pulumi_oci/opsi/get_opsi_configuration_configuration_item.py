@@ -57,10 +57,7 @@ class GetOpsiConfigurationConfigurationItemResult:
 
     @property
     @pulumi.getter(name="configItems")
-    def config_items(self) -> Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemResult']:
-        """
-        Array of configuration item summary objects.
-        """
+    def config_items(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemResult']]:
         return pulumi.get(self, "config_items")
 
     @property
@@ -70,7 +67,7 @@ class GetOpsiConfigurationConfigurationItemResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,17 +76,11 @@ class GetOpsiConfigurationConfigurationItemResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of configuration item.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="opsiConfigType")
     def opsi_config_type(self) -> str:
-        """
-        OPSI configuration type.
-        """
         return pulumi.get(self, "opsi_config_type")
 
 
@@ -115,30 +106,7 @@ def get_opsi_configuration_configuration_item(compartment_id: Optional[str] = No
                                               opsi_config_type: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpsiConfigurationConfigurationItemResult:
     """
-    This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
-    Values specified in configItemField param will determine what fields for each configuration items have to be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=var["compartment_id"],
-        config_item_fields=var["opsi_configuration_configuration_item_config_item_field"],
-        config_items_applicable_contexts=var["opsi_configuration_configuration_item_config_items_applicable_context"],
-        name=var["opsi_configuration_configuration_item_name"],
-        opsi_config_type=var["opsi_configuration_configuration_item_opsi_config_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param Sequence[str] config_item_fields: Specifies the fields to return in a config item summary.
-    :param Sequence[str] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-    :param str name: A filter to return only configuration items that match the entire name.
-    :param str opsi_config_type: Filter to return configuration items based on configuration type of OPSI configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -167,29 +135,6 @@ def get_opsi_configuration_configuration_item_output(compartment_id: Optional[pu
                                                      opsi_config_type: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpsiConfigurationConfigurationItemResult]:
     """
-    This data source provides details about a specific Opsi Configuration Configuration Item resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
-    Values specified in configItemField param will determine what fields for each configuration items have to be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=var["compartment_id"],
-        config_item_fields=var["opsi_configuration_configuration_item_config_item_field"],
-        config_items_applicable_contexts=var["opsi_configuration_configuration_item_config_items_applicable_context"],
-        name=var["opsi_configuration_configuration_item_name"],
-        opsi_config_type=var["opsi_configuration_configuration_item_opsi_config_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param Sequence[str] config_item_fields: Specifies the fields to return in a config item summary.
-    :param Sequence[str] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-    :param str name: A filter to return only configuration items that match the entire name.
-    :param str opsi_config_type: Filter to return configuration items based on configuration type of OPSI configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -115,27 +115,17 @@ class ApplicationApplicationLogConfig(dict):
     def __init__(__self__, *,
                  log_group_id: str,
                  log_id: str):
-        """
-        :param str log_group_id: (Updatable) The log group id for where log objects will be for Data Flow Runs.
-        :param str log_id: (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        (Updatable) The log group id for where log objects will be for Data Flow Runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> str:
-        """
-        (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -161,10 +151,6 @@ class ApplicationDriverShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
-        :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -173,17 +159,11 @@ class ApplicationDriverShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -209,10 +189,6 @@ class ApplicationExecutorShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
-        :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -221,17 +197,11 @@ class ApplicationExecutorShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -240,27 +210,17 @@ class ApplicationParameter(dict):
     def __init__(__self__, *,
                  name: str,
                  value: str):
-        """
-        :param str name: (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param str value: (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> str:
-        """
-        (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         return pulumi.get(self, "value")
 
 
@@ -288,27 +248,17 @@ class InvokeRunApplicationLogConfig(dict):
     def __init__(__self__, *,
                  log_group_id: str,
                  log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
-        :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> str:
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -334,10 +284,6 @@ class InvokeRunDriverShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -346,17 +292,11 @@ class InvokeRunDriverShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -382,10 +322,6 @@ class InvokeRunExecutorShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -394,17 +330,11 @@ class InvokeRunExecutorShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -413,27 +343,17 @@ class InvokeRunParameter(dict):
     def __init__(__self__, *,
                  name: str,
                  value: str):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> str:
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         return pulumi.get(self, "value")
 
 
@@ -461,12 +381,6 @@ class PoolConfiguration(dict):
                  min: Optional[int] = None,
                  shape: Optional[str] = None,
                  shape_config: Optional['outputs.PoolConfigurationShapeConfig'] = None):
-        """
-        :param int max: (Updatable) Maximum number of compute instances in the pool for a given compute shape.
-        :param int min: (Updatable) Minimum number of compute instances in the pool for a given compute shape.
-        :param str shape: (Updatable) The compute shape of the resources you would like to provision.
-        :param 'PoolConfigurationShapeConfigArgs' shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         if max is not None:
             pulumi.set(__self__, "max", max)
         if min is not None:
@@ -479,33 +393,21 @@ class PoolConfiguration(dict):
     @property
     @pulumi.getter
     def max(self) -> Optional[int]:
-        """
-        (Updatable) Maximum number of compute instances in the pool for a given compute shape.
-        """
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
     def min(self) -> Optional[int]:
-        """
-        (Updatable) Minimum number of compute instances in the pool for a given compute shape.
-        """
         return pulumi.get(self, "min")
 
     @property
     @pulumi.getter
     def shape(self) -> Optional[str]:
-        """
-        (Updatable) The compute shape of the resources you would like to provision.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional['outputs.PoolConfigurationShapeConfig']:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "shape_config")
 
 
@@ -531,10 +433,6 @@ class PoolConfigurationShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
-        :param float ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -543,17 +441,11 @@ class PoolConfigurationShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -593,14 +485,6 @@ class PoolPoolMetric(dict):
                  time_last_started: Optional[str] = None,
                  time_last_stopped: Optional[str] = None,
                  time_last_used: Optional[str] = None):
-        """
-        :param str active_runs_count: The number of runs that are currently running that are using this pool.
-        :param Sequence['PoolPoolMetricActivelyUsedNodeCountArgs'] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
-        :param str time_last_metrics_updated: The last time the mertics were updated for this.
-        :param str time_last_started: The last time this pool was started.
-        :param str time_last_stopped: The last time this pool was stopped.
-        :param str time_last_used: The last time a run used this pool.
-        """
         if active_runs_count is not None:
             pulumi.set(__self__, "active_runs_count", active_runs_count)
         if actively_used_node_counts is not None:
@@ -617,49 +501,31 @@ class PoolPoolMetric(dict):
     @property
     @pulumi.getter(name="activeRunsCount")
     def active_runs_count(self) -> Optional[str]:
-        """
-        The number of runs that are currently running that are using this pool.
-        """
         return pulumi.get(self, "active_runs_count")
 
     @property
     @pulumi.getter(name="activelyUsedNodeCounts")
     def actively_used_node_counts(self) -> Optional[Sequence['outputs.PoolPoolMetricActivelyUsedNodeCount']]:
-        """
-        A count of the nodes that are currently being used for each shape in this pool.
-        """
         return pulumi.get(self, "actively_used_node_counts")
 
     @property
     @pulumi.getter(name="timeLastMetricsUpdated")
     def time_last_metrics_updated(self) -> Optional[str]:
-        """
-        The last time the mertics were updated for this.
-        """
         return pulumi.get(self, "time_last_metrics_updated")
 
     @property
     @pulumi.getter(name="timeLastStarted")
     def time_last_started(self) -> Optional[str]:
-        """
-        The last time this pool was started.
-        """
         return pulumi.get(self, "time_last_started")
 
     @property
     @pulumi.getter(name="timeLastStopped")
     def time_last_stopped(self) -> Optional[str]:
-        """
-        The last time this pool was stopped.
-        """
         return pulumi.get(self, "time_last_stopped")
 
     @property
     @pulumi.getter(name="timeLastUsed")
     def time_last_used(self) -> Optional[str]:
-        """
-        The last time a run used this pool.
-        """
         return pulumi.get(self, "time_last_used")
 
 
@@ -687,10 +553,6 @@ class PoolPoolMetricActivelyUsedNodeCount(dict):
     def __init__(__self__, *,
                  logical_shape: Optional[str] = None,
                  pool_count: Optional[int] = None):
-        """
-        :param str logical_shape: The compute shape of the nodes that the count is for.
-        :param int pool_count: The node count of this compute shape.
-        """
         if logical_shape is not None:
             pulumi.set(__self__, "logical_shape", logical_shape)
         if pool_count is not None:
@@ -699,17 +561,11 @@ class PoolPoolMetricActivelyUsedNodeCount(dict):
     @property
     @pulumi.getter(name="logicalShape")
     def logical_shape(self) -> Optional[str]:
-        """
-        The compute shape of the nodes that the count is for.
-        """
         return pulumi.get(self, "logical_shape")
 
     @property
     @pulumi.getter(name="poolCount")
     def pool_count(self) -> Optional[int]:
-        """
-        The node count of this compute shape.
-        """
         return pulumi.get(self, "pool_count")
 
 
@@ -740,11 +596,6 @@ class PoolSchedule(dict):
                  day_of_week: Optional[str] = None,
                  start_time: Optional[int] = None,
                  stop_time: Optional[int] = None):
-        """
-        :param str day_of_week: (Updatable) Day of the week SUN-SAT
-        :param int start_time: (Updatable) Hour of the day to start or stop pool.
-        :param int stop_time: (Updatable) Hour of the day to stop the pool.
-        """
         if day_of_week is not None:
             pulumi.set(__self__, "day_of_week", day_of_week)
         if start_time is not None:
@@ -755,25 +606,16 @@ class PoolSchedule(dict):
     @property
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[str]:
-        """
-        (Updatable) Day of the week SUN-SAT
-        """
         return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="startTime")
     def start_time(self) -> Optional[int]:
-        """
-        (Updatable) Hour of the day to start or stop pool.
-        """
         return pulumi.get(self, "start_time")
 
     @property
     @pulumi.getter(name="stopTime")
     def stop_time(self) -> Optional[int]:
-        """
-        (Updatable) Hour of the day to stop the pool.
-        """
         return pulumi.get(self, "stop_time")
 
 
@@ -782,10 +624,6 @@ class PrivateEndpointScanDetail(dict):
     def __init__(__self__, *,
                  fqdn: Optional[str] = None,
                  port: Optional[str] = None):
-        """
-        :param str fqdn: (Updatable) A fully-qualified domain name (FQDN).
-        :param str port: (Updatable) The port number of the FQDN
-        """
         if fqdn is not None:
             pulumi.set(__self__, "fqdn", fqdn)
         if port is not None:
@@ -794,17 +632,11 @@ class PrivateEndpointScanDetail(dict):
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[str]:
-        """
-        (Updatable) A fully-qualified domain name (FQDN).
-        """
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[str]:
-        """
-        (Updatable) The port number of the FQDN
-        """
         return pulumi.get(self, "port")
 
 
@@ -835,13 +667,6 @@ class RunStatementOutput(dict):
                  error_value: Optional[str] = None,
                  status: Optional[str] = None,
                  tracebacks: Optional[Sequence[str]] = None):
-        """
-        :param Sequence['RunStatementOutputDataArgs'] datas: An object representing execution output of a statement.
-        :param str error_name: The name of the error in the statement output.
-        :param str error_value: The value of the error in the statement output.
-        :param str status: Status of the statement output.
-        :param Sequence[str] tracebacks: The traceback of the statement output.
-        """
         if datas is not None:
             pulumi.set(__self__, "datas", datas)
         if error_name is not None:
@@ -856,41 +681,26 @@ class RunStatementOutput(dict):
     @property
     @pulumi.getter
     def datas(self) -> Optional[Sequence['outputs.RunStatementOutputData']]:
-        """
-        An object representing execution output of a statement.
-        """
         return pulumi.get(self, "datas")
 
     @property
     @pulumi.getter(name="errorName")
     def error_name(self) -> Optional[str]:
-        """
-        The name of the error in the statement output.
-        """
         return pulumi.get(self, "error_name")
 
     @property
     @pulumi.getter(name="errorValue")
     def error_value(self) -> Optional[str]:
-        """
-        The value of the error in the statement output.
-        """
         return pulumi.get(self, "error_value")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        Status of the statement output.
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def tracebacks(self) -> Optional[Sequence[str]]:
-        """
-        The traceback of the statement output.
-        """
         return pulumi.get(self, "tracebacks")
 
 
@@ -899,10 +709,6 @@ class RunStatementOutputData(dict):
     def __init__(__self__, *,
                  type: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        :param str value: The statement code execution output in html format.
-        """
         if type is not None:
             pulumi.set(__self__, "type", type)
         if value is not None:
@@ -911,17 +717,11 @@ class RunStatementOutputData(dict):
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        The statement code execution output in html format.
-        """
         return pulumi.get(self, "value")
 
 
@@ -947,10 +747,6 @@ class SqlEndpointDriverShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -959,17 +755,11 @@ class SqlEndpointDriverShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -995,10 +785,6 @@ class SqlEndpointExecutorShapeConfig(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1007,17 +793,11 @@ class SqlEndpointExecutorShapeConfig(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -1060,15 +840,6 @@ class SqlEndpointNetworkConfiguration(dict):
                  public_endpoint_ip: Optional[str] = None,
                  subnet_id: Optional[str] = None,
                  vcn_id: Optional[str] = None):
-        """
-        :param str network_type: The type of network configuration.
-        :param Sequence['SqlEndpointNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
-        :param str host_name_prefix: The host name prefix.
-        :param str private_endpoint_ip: Ip Address of private endpoint
-        :param str public_endpoint_ip: Ip Address of public endpoint
-        :param str subnet_id: The VCN Subnet OCID.
-        :param str vcn_id: The VCN OCID.
-        """
         pulumi.set(__self__, "network_type", network_type)
         if access_control_rules is not None:
             pulumi.set(__self__, "access_control_rules", access_control_rules)
@@ -1086,57 +857,36 @@ class SqlEndpointNetworkConfiguration(dict):
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> str:
-        """
-        The type of network configuration.
-        """
         return pulumi.get(self, "network_type")
 
     @property
     @pulumi.getter(name="accessControlRules")
     def access_control_rules(self) -> Optional[Sequence['outputs.SqlEndpointNetworkConfigurationAccessControlRule']]:
-        """
-        A list of SecureAccessControlRule's to which access is limited to
-        """
         return pulumi.get(self, "access_control_rules")
 
     @property
     @pulumi.getter(name="hostNamePrefix")
     def host_name_prefix(self) -> Optional[str]:
-        """
-        The host name prefix.
-        """
         return pulumi.get(self, "host_name_prefix")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> Optional[str]:
-        """
-        Ip Address of private endpoint
-        """
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter(name="publicEndpointIp")
     def public_endpoint_ip(self) -> Optional[str]:
-        """
-        Ip Address of public endpoint
-        """
         return pulumi.get(self, "public_endpoint_ip")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        The VCN Subnet OCID.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The VCN OCID.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -1165,11 +915,6 @@ class SqlEndpointNetworkConfigurationAccessControlRule(dict):
                  ip_notation: Optional[str] = None,
                  value: Optional[str] = None,
                  vcn_ips: Optional[str] = None):
-        """
-        :param str ip_notation: The type of IP notation.
-        :param str value: The associated value of the selected IP notation.
-        :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
         if ip_notation is not None:
             pulumi.set(__self__, "ip_notation", ip_notation)
         if value is not None:
@@ -1180,638 +925,461 @@ class SqlEndpointNetworkConfigurationAccessControlRule(dict):
     @property
     @pulumi.getter(name="ipNotation")
     def ip_notation(self) -> Optional[str]:
-        """
-        The type of IP notation.
-        """
         return pulumi.get(self, "ip_notation")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        The associated value of the selected IP notation.
-        """
         return pulumi.get(self, "value")
 
     @property
     @pulumi.getter(name="vcnIps")
     def vcn_ips(self) -> Optional[str]:
-        """
-        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
         return pulumi.get(self, "vcn_ips")
 
 
 @pulumi.output_type
 class GetApplicationApplicationLogConfigResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
-        :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetApplicationDriverShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetApplicationExecutorShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetApplicationParameterResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetApplicationsApplicationResult(dict):
     def __init__(__self__, *,
-                 application_log_configs: Sequence['outputs.GetApplicationsApplicationApplicationLogConfigResult'],
-                 archive_uri: str,
-                 arguments: Sequence[str],
-                 class_name: str,
-                 compartment_id: str,
-                 configuration: Mapping[str, Any],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 driver_shape: str,
-                 driver_shape_configs: Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult'],
-                 execute: str,
-                 executor_shape: str,
-                 executor_shape_configs: Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult'],
-                 file_uri: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 idle_timeout_in_minutes: str,
-                 language: str,
-                 logs_bucket_uri: str,
-                 max_duration_in_minutes: str,
-                 metastore_id: str,
-                 num_executors: int,
-                 owner_principal_id: str,
-                 owner_user_name: str,
-                 parameters: Sequence['outputs.GetApplicationsApplicationParameterResult'],
-                 pool_id: str,
-                 private_endpoint_id: str,
-                 spark_version: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str,
-                 type: str,
-                 warehouse_bucket_uri: str):
-        """
-        :param Sequence['GetApplicationsApplicationApplicationLogConfigArgs'] application_log_configs: Logging details of Application logs for Data Flow Run.
-        :param str archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param Sequence[str] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param str class_name: The class for the application.
-        :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A user-friendly description.
-        :param str display_name: The query parameter for the Spark application name.
-        :param str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
-        :param Sequence['GetApplicationsApplicationDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param str execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        :param str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
-        :param Sequence['GetApplicationsApplicationExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The application ID.
-        :param str idle_timeout_in_minutes: The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        :param str language: The Spark language.
-        :param str logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param str max_duration_in_minutes: The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param int num_executors: The number of executor VMs requested.
-        :param str owner_principal_id: The OCID of the user who created the resource.
-        :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param Sequence['GetApplicationsApplicationParameterArgs'] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        :param str pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        :param str private_endpoint_id: The OCID of a private endpoint.
-        :param str spark_version: The Spark version utilized to run the application.
-        :param str state: The current state of this application.
-        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str type: The Spark application processing type.
-        :param str warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
-        pulumi.set(__self__, "application_log_configs", application_log_configs)
-        pulumi.set(__self__, "archive_uri", archive_uri)
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "class_name", class_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration", configuration)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
-        pulumi.set(__self__, "execute", execute)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
-        pulumi.set(__self__, "file_uri", file_uri)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
-        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
-        pulumi.set(__self__, "metastore_id", metastore_id)
-        pulumi.set(__self__, "num_executors", num_executors)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "pool_id", pool_id)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "spark_version", spark_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+                 application_log_configs: Optional[Sequence['outputs.GetApplicationsApplicationApplicationLogConfigResult']] = None,
+                 archive_uri: Optional[str] = None,
+                 arguments: Optional[Sequence[str]] = None,
+                 class_name: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 configuration: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 driver_shape: Optional[str] = None,
+                 driver_shape_configs: Optional[Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult']] = None,
+                 execute: Optional[str] = None,
+                 executor_shape: Optional[str] = None,
+                 executor_shape_configs: Optional[Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult']] = None,
+                 file_uri: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 idle_timeout_in_minutes: Optional[str] = None,
+                 language: Optional[str] = None,
+                 logs_bucket_uri: Optional[str] = None,
+                 max_duration_in_minutes: Optional[str] = None,
+                 metastore_id: Optional[str] = None,
+                 num_executors: Optional[int] = None,
+                 owner_principal_id: Optional[str] = None,
+                 owner_user_name: Optional[str] = None,
+                 parameters: Optional[Sequence['outputs.GetApplicationsApplicationParameterResult']] = None,
+                 pool_id: Optional[str] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 spark_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 type: Optional[str] = None,
+                 warehouse_bucket_uri: Optional[str] = None):
+        if application_log_configs is not None:
+            pulumi.set(__self__, "application_log_configs", application_log_configs)
+        if archive_uri is not None:
+            pulumi.set(__self__, "archive_uri", archive_uri)
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+        if class_name is not None:
+            pulumi.set(__self__, "class_name", class_name)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if driver_shape is not None:
+            pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_configs is not None:
+            pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
+        if execute is not None:
+            pulumi.set(__self__, "execute", execute)
+        if executor_shape is not None:
+            pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_configs is not None:
+            pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
+        if file_uri is not None:
+            pulumi.set(__self__, "file_uri", file_uri)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idle_timeout_in_minutes is not None:
+            pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if logs_bucket_uri is not None:
+            pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        if max_duration_in_minutes is not None:
+            pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
+        if metastore_id is not None:
+            pulumi.set(__self__, "metastore_id", metastore_id)
+        if num_executors is not None:
+            pulumi.set(__self__, "num_executors", num_executors)
+        if owner_principal_id is not None:
+            pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+        if owner_user_name is not None:
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if spark_version is not None:
+            pulumi.set(__self__, "spark_version", spark_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if warehouse_bucket_uri is not None:
+            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="applicationLogConfigs")
-    def application_log_configs(self) -> Sequence['outputs.GetApplicationsApplicationApplicationLogConfigResult']:
-        """
-        Logging details of Application logs for Data Flow Run.
-        """
+    def application_log_configs(self) -> Optional[Sequence['outputs.GetApplicationsApplicationApplicationLogConfigResult']]:
         return pulumi.get(self, "application_log_configs")
 
     @property
     @pulumi.getter(name="archiveUri")
-    def archive_uri(self) -> str:
-        """
-        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def archive_uri(self) -> Optional[str]:
         return pulumi.get(self, "archive_uri")
 
     @property
     @pulumi.getter
-    def arguments(self) -> Sequence[str]:
-        """
-        The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        """
+    def arguments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "arguments")
 
     @property
     @pulumi.getter(name="className")
-    def class_name(self) -> str:
-        """
-        The class for the application.
-        """
+    def class_name(self) -> Optional[str]:
         return pulumi.get(self, "class_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configuration(self) -> Mapping[str, Any]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
+    def configuration(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "configuration")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-friendly description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query parameter for the Spark application name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="driverShape")
-    def driver_shape(self) -> str:
-        """
-        The VM shape for the driver. Sets the driver cores and memory.
-        """
+    def driver_shape(self) -> Optional[str]:
         return pulumi.get(self, "driver_shape")
 
     @property
     @pulumi.getter(name="driverShapeConfigs")
-    def driver_shape_configs(self) -> Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def driver_shape_configs(self) -> Optional[Sequence['outputs.GetApplicationsApplicationDriverShapeConfigResult']]:
         return pulumi.get(self, "driver_shape_configs")
 
     @property
     @pulumi.getter
-    def execute(self) -> str:
-        """
-        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        """
+    def execute(self) -> Optional[str]:
         return pulumi.get(self, "execute")
 
     @property
     @pulumi.getter(name="executorShape")
-    def executor_shape(self) -> str:
-        """
-        The VM shape for the executors. Sets the executor cores and memory.
-        """
+    def executor_shape(self) -> Optional[str]:
         return pulumi.get(self, "executor_shape")
 
     @property
     @pulumi.getter(name="executorShapeConfigs")
-    def executor_shape_configs(self) -> Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def executor_shape_configs(self) -> Optional[Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult']]:
         return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="fileUri")
-    def file_uri(self) -> str:
-        """
-        An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def file_uri(self) -> Optional[str]:
         return pulumi.get(self, "file_uri")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The application ID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> str:
-        """
-        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        """
+    def idle_timeout_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @property
     @pulumi.getter
-    def language(self) -> str:
-        """
-        The Spark language.
-        """
+    def language(self) -> Optional[str]:
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter(name="logsBucketUri")
-    def logs_bucket_uri(self) -> str:
-        """
-        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def logs_bucket_uri(self) -> Optional[str]:
         return pulumi.get(self, "logs_bucket_uri")
 
     @property
     @pulumi.getter(name="maxDurationInMinutes")
-    def max_duration_in_minutes(self) -> str:
-        """
-        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        """
+    def max_duration_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "max_duration_in_minutes")
 
     @property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> str:
-        """
-        The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
+    def metastore_id(self) -> Optional[str]:
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="numExecutors")
-    def num_executors(self) -> int:
-        """
-        The number of executor VMs requested.
-        """
+    def num_executors(self) -> Optional[int]:
         return pulumi.get(self, "num_executors")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> str:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> str:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> Optional[str]:
         return pulumi.get(self, "owner_user_name")
 
     @property
     @pulumi.getter
-    def parameters(self) -> Sequence['outputs.GetApplicationsApplicationParameterResult']:
-        """
-        An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        """
+    def parameters(self) -> Optional[Sequence['outputs.GetApplicationsApplicationParameterResult']]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter(name="poolId")
-    def pool_id(self) -> str:
-        """
-        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        """
+    def pool_id(self) -> Optional[str]:
         return pulumi.get(self, "pool_id")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The OCID of a private endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="sparkVersion")
-    def spark_version(self) -> str:
-        """
-        The Spark version utilized to run the application.
-        """
+    def spark_version(self) -> Optional[str]:
         return pulumi.get(self, "spark_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of this application.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The Spark application processing type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> str:
-        """
-        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def warehouse_bucket_uri(self) -> Optional[str]:
         return pulumi.get(self, "warehouse_bucket_uri")
 
 
 @pulumi.output_type
 class GetApplicationsApplicationApplicationLogConfigResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
-        :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetApplicationsApplicationDriverShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetApplicationsApplicationExecutorShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetApplicationsApplicationParameterResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -1821,9 +1389,6 @@ class GetApplicationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1832,9 +1397,6 @@ class GetApplicationsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1851,116 +1413,84 @@ class GetApplicationsFilterResult(dict):
 @pulumi.output_type
 class GetInvokeRunApplicationLogConfigResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
-        :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetInvokeRunDriverShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetInvokeRunExecutorShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetInvokeRunParameterResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -1970,9 +1500,6 @@ class GetInvokeRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1981,9 +1508,6 @@ class GetInvokeRunsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2000,836 +1524,610 @@ class GetInvokeRunsFilterResult(dict):
 @pulumi.output_type
 class GetInvokeRunsRunResult(dict):
     def __init__(__self__, *,
-                 application_id: str,
-                 application_log_configs: Sequence['outputs.GetInvokeRunsRunApplicationLogConfigResult'],
-                 archive_uri: str,
-                 arguments: Sequence[str],
-                 asynchronous: bool,
-                 class_name: str,
-                 compartment_id: str,
-                 configuration: Mapping[str, Any],
-                 data_read_in_bytes: str,
-                 data_written_in_bytes: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 driver_shape: str,
-                 driver_shape_configs: Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult'],
-                 execute: str,
-                 executor_shape: str,
-                 executor_shape_configs: Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult'],
-                 file_uri: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 idle_timeout_in_minutes: str,
-                 language: str,
-                 lifecycle_details: str,
-                 logs_bucket_uri: str,
-                 max_duration_in_minutes: str,
-                 metastore_id: str,
-                 num_executors: int,
-                 opc_request_id: str,
-                 owner_principal_id: str,
-                 owner_user_name: str,
-                 parameters: Sequence['outputs.GetInvokeRunsRunParameterResult'],
-                 pool_id: str,
-                 private_endpoint_dns_zones: Sequence[str],
-                 private_endpoint_id: str,
-                 private_endpoint_max_host_count: int,
-                 private_endpoint_nsg_ids: Sequence[str],
-                 private_endpoint_subnet_id: str,
-                 run_duration_in_milliseconds: str,
-                 spark_version: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str,
-                 total_ocpu: int,
-                 type: str,
-                 warehouse_bucket_uri: str):
-        """
-        :param str application_id: The ID of the application.
-        :param Sequence['GetInvokeRunsRunApplicationLogConfigArgs'] application_log_configs: Logging details of Application logs for Data Flow Run.
-        :param str archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param Sequence[str] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param str class_name: The class for the application.
-        :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param str data_read_in_bytes: The data read by the run in bytes.
-        :param str data_written_in_bytes: The data written by the run in bytes.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: The query parameter for the Spark application name.
-        :param str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
-        :param Sequence['GetInvokeRunsRunDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param str execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        :param str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
-        :param Sequence['GetInvokeRunsRunExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The ID of a run.
-        :param str idle_timeout_in_minutes: The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        :param str language: The Spark language.
-        :param str lifecycle_details: The detailed messages about the lifecycle state.
-        :param str logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param str max_duration_in_minutes: The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param int num_executors: The number of executor VMs requested.
-        :param str opc_request_id: Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-        :param str owner_principal_id: The OCID of the user who created the resource.
-        :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param Sequence['GetInvokeRunsRunParameterArgs'] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        :param str pool_id: The ID of the pool.
-        :param Sequence[str] private_endpoint_dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        :param str private_endpoint_id: The OCID of a private endpoint.
-        :param int private_endpoint_max_host_count: The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-        :param Sequence[str] private_endpoint_nsg_ids: An array of network security group OCIDs.
-        :param str private_endpoint_subnet_id: The OCID of a subnet.
-        :param str run_duration_in_milliseconds: The duration of the run in milliseconds.
-        :param str spark_version: The Spark version utilized to run the application.
-        :param str state: The LifecycleState of the run.
-        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param int total_ocpu: The total number of oCPU requested by the run.
-        :param str type: The Spark application processing type.
-        :param str warehouse_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
-        pulumi.set(__self__, "application_id", application_id)
-        pulumi.set(__self__, "application_log_configs", application_log_configs)
-        pulumi.set(__self__, "archive_uri", archive_uri)
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "asynchronous", asynchronous)
-        pulumi.set(__self__, "class_name", class_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration", configuration)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written_in_bytes", data_written_in_bytes)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
-        pulumi.set(__self__, "execute", execute)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
-        pulumi.set(__self__, "file_uri", file_uri)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
-        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
-        pulumi.set(__self__, "metastore_id", metastore_id)
-        pulumi.set(__self__, "num_executors", num_executors)
-        pulumi.set(__self__, "opc_request_id", opc_request_id)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "pool_id", pool_id)
-        pulumi.set(__self__, "private_endpoint_dns_zones", private_endpoint_dns_zones)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "private_endpoint_max_host_count", private_endpoint_max_host_count)
-        pulumi.set(__self__, "private_endpoint_nsg_ids", private_endpoint_nsg_ids)
-        pulumi.set(__self__, "private_endpoint_subnet_id", private_endpoint_subnet_id)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "spark_version", spark_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_ocpu", total_ocpu)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+                 application_id: Optional[str] = None,
+                 application_log_configs: Optional[Sequence['outputs.GetInvokeRunsRunApplicationLogConfigResult']] = None,
+                 archive_uri: Optional[str] = None,
+                 arguments: Optional[Sequence[str]] = None,
+                 asynchronous: Optional[bool] = None,
+                 class_name: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 configuration: Optional[Mapping[str, Any]] = None,
+                 data_read_in_bytes: Optional[str] = None,
+                 data_written_in_bytes: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 driver_shape: Optional[str] = None,
+                 driver_shape_configs: Optional[Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult']] = None,
+                 execute: Optional[str] = None,
+                 executor_shape: Optional[str] = None,
+                 executor_shape_configs: Optional[Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult']] = None,
+                 file_uri: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 idle_timeout_in_minutes: Optional[str] = None,
+                 language: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 logs_bucket_uri: Optional[str] = None,
+                 max_duration_in_minutes: Optional[str] = None,
+                 metastore_id: Optional[str] = None,
+                 num_executors: Optional[int] = None,
+                 opc_request_id: Optional[str] = None,
+                 owner_principal_id: Optional[str] = None,
+                 owner_user_name: Optional[str] = None,
+                 parameters: Optional[Sequence['outputs.GetInvokeRunsRunParameterResult']] = None,
+                 pool_id: Optional[str] = None,
+                 private_endpoint_dns_zones: Optional[Sequence[str]] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 private_endpoint_max_host_count: Optional[int] = None,
+                 private_endpoint_nsg_ids: Optional[Sequence[str]] = None,
+                 private_endpoint_subnet_id: Optional[str] = None,
+                 run_duration_in_milliseconds: Optional[str] = None,
+                 spark_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 total_ocpu: Optional[int] = None,
+                 type: Optional[str] = None,
+                 warehouse_bucket_uri: Optional[str] = None):
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
+        if application_log_configs is not None:
+            pulumi.set(__self__, "application_log_configs", application_log_configs)
+        if archive_uri is not None:
+            pulumi.set(__self__, "archive_uri", archive_uri)
+        if arguments is not None:
+            pulumi.set(__self__, "arguments", arguments)
+        if asynchronous is not None:
+            pulumi.set(__self__, "asynchronous", asynchronous)
+        if class_name is not None:
+            pulumi.set(__self__, "class_name", class_name)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if data_read_in_bytes is not None:
+            pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
+        if data_written_in_bytes is not None:
+            pulumi.set(__self__, "data_written_in_bytes", data_written_in_bytes)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if driver_shape is not None:
+            pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_configs is not None:
+            pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
+        if execute is not None:
+            pulumi.set(__self__, "execute", execute)
+        if executor_shape is not None:
+            pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_configs is not None:
+            pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
+        if file_uri is not None:
+            pulumi.set(__self__, "file_uri", file_uri)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idle_timeout_in_minutes is not None:
+            pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if logs_bucket_uri is not None:
+            pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        if max_duration_in_minutes is not None:
+            pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
+        if metastore_id is not None:
+            pulumi.set(__self__, "metastore_id", metastore_id)
+        if num_executors is not None:
+            pulumi.set(__self__, "num_executors", num_executors)
+        if opc_request_id is not None:
+            pulumi.set(__self__, "opc_request_id", opc_request_id)
+        if owner_principal_id is not None:
+            pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+        if owner_user_name is not None:
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if pool_id is not None:
+            pulumi.set(__self__, "pool_id", pool_id)
+        if private_endpoint_dns_zones is not None:
+            pulumi.set(__self__, "private_endpoint_dns_zones", private_endpoint_dns_zones)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if private_endpoint_max_host_count is not None:
+            pulumi.set(__self__, "private_endpoint_max_host_count", private_endpoint_max_host_count)
+        if private_endpoint_nsg_ids is not None:
+            pulumi.set(__self__, "private_endpoint_nsg_ids", private_endpoint_nsg_ids)
+        if private_endpoint_subnet_id is not None:
+            pulumi.set(__self__, "private_endpoint_subnet_id", private_endpoint_subnet_id)
+        if run_duration_in_milliseconds is not None:
+            pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
+        if spark_version is not None:
+            pulumi.set(__self__, "spark_version", spark_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if total_ocpu is not None:
+            pulumi.set(__self__, "total_ocpu", total_ocpu)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if warehouse_bucket_uri is not None:
+            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> str:
-        """
-        The ID of the application.
-        """
+    def application_id(self) -> Optional[str]:
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="applicationLogConfigs")
-    def application_log_configs(self) -> Sequence['outputs.GetInvokeRunsRunApplicationLogConfigResult']:
-        """
-        Logging details of Application logs for Data Flow Run.
-        """
+    def application_log_configs(self) -> Optional[Sequence['outputs.GetInvokeRunsRunApplicationLogConfigResult']]:
         return pulumi.get(self, "application_log_configs")
 
     @property
     @pulumi.getter(name="archiveUri")
-    def archive_uri(self) -> str:
-        """
-        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def archive_uri(self) -> Optional[str]:
         return pulumi.get(self, "archive_uri")
 
     @property
     @pulumi.getter
-    def arguments(self) -> Sequence[str]:
-        """
-        The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        """
+    def arguments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "arguments")
 
     @property
     @pulumi.getter
-    def asynchronous(self) -> bool:
+    def asynchronous(self) -> Optional[bool]:
         return pulumi.get(self, "asynchronous")
 
     @property
     @pulumi.getter(name="className")
-    def class_name(self) -> str:
-        """
-        The class for the application.
-        """
+    def class_name(self) -> Optional[str]:
         return pulumi.get(self, "class_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configuration(self) -> Mapping[str, Any]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
+    def configuration(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "configuration")
 
     @property
     @pulumi.getter(name="dataReadInBytes")
-    def data_read_in_bytes(self) -> str:
-        """
-        The data read by the run in bytes.
-        """
+    def data_read_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "data_read_in_bytes")
 
     @property
     @pulumi.getter(name="dataWrittenInBytes")
-    def data_written_in_bytes(self) -> str:
-        """
-        The data written by the run in bytes.
-        """
+    def data_written_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "data_written_in_bytes")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query parameter for the Spark application name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="driverShape")
-    def driver_shape(self) -> str:
-        """
-        The VM shape for the driver. Sets the driver cores and memory.
-        """
+    def driver_shape(self) -> Optional[str]:
         return pulumi.get(self, "driver_shape")
 
     @property
     @pulumi.getter(name="driverShapeConfigs")
-    def driver_shape_configs(self) -> Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def driver_shape_configs(self) -> Optional[Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult']]:
         return pulumi.get(self, "driver_shape_configs")
 
     @property
     @pulumi.getter
-    def execute(self) -> str:
-        """
-        The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
-        """
+    def execute(self) -> Optional[str]:
         return pulumi.get(self, "execute")
 
     @property
     @pulumi.getter(name="executorShape")
-    def executor_shape(self) -> str:
-        """
-        The VM shape for the executors. Sets the executor cores and memory.
-        """
+    def executor_shape(self) -> Optional[str]:
         return pulumi.get(self, "executor_shape")
 
     @property
     @pulumi.getter(name="executorShapeConfigs")
-    def executor_shape_configs(self) -> Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def executor_shape_configs(self) -> Optional[Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult']]:
         return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="fileUri")
-    def file_uri(self) -> str:
-        """
-        An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def file_uri(self) -> Optional[str]:
         return pulumi.get(self, "file_uri")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ID of a run.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> str:
-        """
-        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
-        """
+    def idle_timeout_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @property
     @pulumi.getter
-    def language(self) -> str:
-        """
-        The Spark language.
-        """
+    def language(self) -> Optional[str]:
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed messages about the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logsBucketUri")
-    def logs_bucket_uri(self) -> str:
-        """
-        An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def logs_bucket_uri(self) -> Optional[str]:
         return pulumi.get(self, "logs_bucket_uri")
 
     @property
     @pulumi.getter(name="maxDurationInMinutes")
-    def max_duration_in_minutes(self) -> str:
-        """
-        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
-        """
+    def max_duration_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "max_duration_in_minutes")
 
     @property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> str:
-        """
-        The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
+    def metastore_id(self) -> Optional[str]:
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="numExecutors")
-    def num_executors(self) -> int:
-        """
-        The number of executor VMs requested.
-        """
+    def num_executors(self) -> Optional[int]:
         return pulumi.get(self, "num_executors")
 
     @property
     @pulumi.getter(name="opcRequestId")
-    def opc_request_id(self) -> str:
-        """
-        Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-        """
+    def opc_request_id(self) -> Optional[str]:
         return pulumi.get(self, "opc_request_id")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> str:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> str:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> Optional[str]:
         return pulumi.get(self, "owner_user_name")
 
     @property
     @pulumi.getter
-    def parameters(self) -> Sequence['outputs.GetInvokeRunsRunParameterResult']:
-        """
-        An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-        """
+    def parameters(self) -> Optional[Sequence['outputs.GetInvokeRunsRunParameterResult']]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter(name="poolId")
-    def pool_id(self) -> str:
-        """
-        The ID of the pool.
-        """
+    def pool_id(self) -> Optional[str]:
         return pulumi.get(self, "pool_id")
 
     @property
     @pulumi.getter(name="privateEndpointDnsZones")
-    def private_endpoint_dns_zones(self) -> Sequence[str]:
-        """
-        An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        """
+    def private_endpoint_dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "private_endpoint_dns_zones")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The OCID of a private endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="privateEndpointMaxHostCount")
-    def private_endpoint_max_host_count(self) -> int:
-        """
-        The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-        """
+    def private_endpoint_max_host_count(self) -> Optional[int]:
         return pulumi.get(self, "private_endpoint_max_host_count")
 
     @property
     @pulumi.getter(name="privateEndpointNsgIds")
-    def private_endpoint_nsg_ids(self) -> Sequence[str]:
-        """
-        An array of network security group OCIDs.
-        """
+    def private_endpoint_nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "private_endpoint_nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointSubnetId")
-    def private_endpoint_subnet_id(self) -> str:
-        """
-        The OCID of a subnet.
-        """
+    def private_endpoint_subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_subnet_id")
 
     @property
     @pulumi.getter(name="runDurationInMilliseconds")
-    def run_duration_in_milliseconds(self) -> str:
-        """
-        The duration of the run in milliseconds.
-        """
+    def run_duration_in_milliseconds(self) -> Optional[str]:
         return pulumi.get(self, "run_duration_in_milliseconds")
 
     @property
     @pulumi.getter(name="sparkVersion")
-    def spark_version(self) -> str:
-        """
-        The Spark version utilized to run the application.
-        """
+    def spark_version(self) -> Optional[str]:
         return pulumi.get(self, "spark_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The LifecycleState of the run.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="totalOcpu")
-    def total_ocpu(self) -> int:
-        """
-        The total number of oCPU requested by the run.
-        """
+    def total_ocpu(self) -> Optional[int]:
         return pulumi.get(self, "total_ocpu")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The Spark application processing type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> str:
-        """
-        An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        """
+    def warehouse_bucket_uri(self) -> Optional[str]:
         return pulumi.get(self, "warehouse_bucket_uri")
 
 
 @pulumi.output_type
 class GetInvokeRunsRunApplicationLogConfigResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for Data Flow Runs.
-        :param str log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetInvokeRunsRunDriverShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetInvokeRunsRunExecutorShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetInvokeRunsRunParameterResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param str value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetPoolConfigurationResult(dict):
     def __init__(__self__, *,
-                 max: int,
-                 min: int,
-                 shape: str,
-                 shape_configs: Sequence['outputs.GetPoolConfigurationShapeConfigResult']):
-        """
-        :param int max: Maximum number of compute instances in the pool for a given compute shape.
-        :param int min: Minimum number of compute instances in the pool for a given compute shape.
-        :param str shape: The compute shape of the resources you would like to provision.
-        :param Sequence['GetPoolConfigurationShapeConfigArgs'] shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
+                 max: Optional[int] = None,
+                 min: Optional[int] = None,
+                 shape: Optional[str] = None,
+                 shape_configs: Optional[Sequence['outputs.GetPoolConfigurationShapeConfigResult']] = None):
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_configs is not None:
+            pulumi.set(__self__, "shape_configs", shape_configs)
 
     @property
     @pulumi.getter
-    def max(self) -> int:
-        """
-        Maximum number of compute instances in the pool for a given compute shape.
-        """
+    def max(self) -> Optional[int]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> int:
-        """
-        Minimum number of compute instances in the pool for a given compute shape.
-        """
+    def min(self) -> Optional[int]:
         return pulumi.get(self, "min")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The compute shape of the resources you would like to provision.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfigs")
-    def shape_configs(self) -> Sequence['outputs.GetPoolConfigurationShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def shape_configs(self) -> Optional[Sequence['outputs.GetPoolConfigurationShapeConfigResult']]:
         return pulumi.get(self, "shape_configs")
 
 
 @pulumi.output_type
 class GetPoolConfigurationShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetPoolPoolMetricResult(dict):
     def __init__(__self__, *,
-                 active_runs_count: str,
-                 actively_used_node_counts: Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult'],
-                 time_last_metrics_updated: str,
-                 time_last_started: str,
-                 time_last_stopped: str,
-                 time_last_used: str):
-        """
-        :param str active_runs_count: The number of runs that are currently running that are using this pool.
-        :param Sequence['GetPoolPoolMetricActivelyUsedNodeCountArgs'] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
-        :param str time_last_metrics_updated: The last time the mertics were updated for this.
-        :param str time_last_started: The last time this pool was started.
-        :param str time_last_stopped: The last time this pool was stopped.
-        :param str time_last_used: The last time a run used this pool.
-        """
-        pulumi.set(__self__, "active_runs_count", active_runs_count)
-        pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
-        pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
-        pulumi.set(__self__, "time_last_started", time_last_started)
-        pulumi.set(__self__, "time_last_stopped", time_last_stopped)
-        pulumi.set(__self__, "time_last_used", time_last_used)
+                 active_runs_count: Optional[str] = None,
+                 actively_used_node_counts: Optional[Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult']] = None,
+                 time_last_metrics_updated: Optional[str] = None,
+                 time_last_started: Optional[str] = None,
+                 time_last_stopped: Optional[str] = None,
+                 time_last_used: Optional[str] = None):
+        if active_runs_count is not None:
+            pulumi.set(__self__, "active_runs_count", active_runs_count)
+        if actively_used_node_counts is not None:
+            pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+        if time_last_metrics_updated is not None:
+            pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+        if time_last_started is not None:
+            pulumi.set(__self__, "time_last_started", time_last_started)
+        if time_last_stopped is not None:
+            pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+        if time_last_used is not None:
+            pulumi.set(__self__, "time_last_used", time_last_used)
 
     @property
     @pulumi.getter(name="activeRunsCount")
-    def active_runs_count(self) -> str:
-        """
-        The number of runs that are currently running that are using this pool.
-        """
+    def active_runs_count(self) -> Optional[str]:
         return pulumi.get(self, "active_runs_count")
 
     @property
     @pulumi.getter(name="activelyUsedNodeCounts")
-    def actively_used_node_counts(self) -> Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult']:
-        """
-        A count of the nodes that are currently being used for each shape in this pool.
-        """
+    def actively_used_node_counts(self) -> Optional[Sequence['outputs.GetPoolPoolMetricActivelyUsedNodeCountResult']]:
         return pulumi.get(self, "actively_used_node_counts")
 
     @property
     @pulumi.getter(name="timeLastMetricsUpdated")
-    def time_last_metrics_updated(self) -> str:
-        """
-        The last time the mertics were updated for this.
-        """
+    def time_last_metrics_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_metrics_updated")
 
     @property
     @pulumi.getter(name="timeLastStarted")
-    def time_last_started(self) -> str:
-        """
-        The last time this pool was started.
-        """
+    def time_last_started(self) -> Optional[str]:
         return pulumi.get(self, "time_last_started")
 
     @property
     @pulumi.getter(name="timeLastStopped")
-    def time_last_stopped(self) -> str:
-        """
-        The last time this pool was stopped.
-        """
+    def time_last_stopped(self) -> Optional[str]:
         return pulumi.get(self, "time_last_stopped")
 
     @property
     @pulumi.getter(name="timeLastUsed")
-    def time_last_used(self) -> str:
-        """
-        The last time a run used this pool.
-        """
+    def time_last_used(self) -> Optional[str]:
         return pulumi.get(self, "time_last_used")
 
 
 @pulumi.output_type
 class GetPoolPoolMetricActivelyUsedNodeCountResult(dict):
     def __init__(__self__, *,
-                 logical_shape: str,
-                 pool_count: int):
-        """
-        :param str logical_shape: The compute shape of the nodes that the count is for.
-        :param int pool_count: The node count of this compute shape.
-        """
-        pulumi.set(__self__, "logical_shape", logical_shape)
-        pulumi.set(__self__, "pool_count", pool_count)
+                 logical_shape: Optional[str] = None,
+                 pool_count: Optional[int] = None):
+        if logical_shape is not None:
+            pulumi.set(__self__, "logical_shape", logical_shape)
+        if pool_count is not None:
+            pulumi.set(__self__, "pool_count", pool_count)
 
     @property
     @pulumi.getter(name="logicalShape")
-    def logical_shape(self) -> str:
-        """
-        The compute shape of the nodes that the count is for.
-        """
+    def logical_shape(self) -> Optional[str]:
         return pulumi.get(self, "logical_shape")
 
     @property
     @pulumi.getter(name="poolCount")
-    def pool_count(self) -> int:
-        """
-        The node count of this compute shape.
-        """
+    def pool_count(self) -> Optional[int]:
         return pulumi.get(self, "pool_count")
 
 
 @pulumi.output_type
 class GetPoolScheduleResult(dict):
     def __init__(__self__, *,
-                 day_of_week: str,
-                 start_time: int,
-                 stop_time: int):
-        """
-        :param str day_of_week: Day of the week SUN-SAT
-        :param int start_time: Hour of the day to start or stop pool.
-        :param int stop_time: Hour of the day to stop the pool.
-        """
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "stop_time", stop_time)
+                 day_of_week: Optional[str] = None,
+                 start_time: Optional[int] = None,
+                 stop_time: Optional[int] = None):
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if stop_time is not None:
+            pulumi.set(__self__, "stop_time", stop_time)
 
     @property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> str:
-        """
-        Day of the week SUN-SAT
-        """
+    def day_of_week(self) -> Optional[str]:
         return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> int:
-        """
-        Hour of the day to start or stop pool.
-        """
+    def start_time(self) -> Optional[int]:
         return pulumi.get(self, "start_time")
 
     @property
     @pulumi.getter(name="stopTime")
-    def stop_time(self) -> int:
-        """
-        Hour of the day to stop the pool.
-        """
+    def stop_time(self) -> Optional[int]:
         return pulumi.get(self, "stop_time")
 
 
@@ -2863,446 +2161,328 @@ class GetPoolsFilterResult(dict):
 @pulumi.output_type
 class GetPoolsPoolCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetPoolsPoolCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetPoolsPoolCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetPoolsPoolCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetPoolsPoolCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 configurations: Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 idle_timeout_in_minutes: int,
-                 lifecycle_details: str,
-                 owner_principal_id: str,
-                 owner_user_name: str,
-                 pool_metrics: Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult'],
-                 schedules: Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult'],
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment.
-        :param Sequence['GetPoolsPoolCollectionItemConfigurationArgs'] configurations: List of PoolConfig items.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A user-friendly description. Avoid entering confidential information.
-        :param str display_name: The query parameter for the Spark application name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        :param int idle_timeout_in_minutes: Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        :param str lifecycle_details: The detailed messages about the lifecycle state.
-        :param str owner_principal_id: The OCID of the user who created the resource.
-        :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param Sequence['GetPoolsPoolCollectionItemPoolMetricArgs'] pool_metrics: A collection of metrics related to a particular pool.
-        :param Sequence['GetPoolsPoolCollectionItemScheduleArgs'] schedules: A list of schedules for pool to auto start and stop.
-        :param str state: The LifecycleState of the pool.
-        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "pool_metrics", pool_metrics)
-        pulumi.set(__self__, "schedules", schedules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 idle_timeout_in_minutes: Optional[int] = None,
+                 lifecycle_details: Optional[str] = None,
+                 owner_principal_id: Optional[str] = None,
+                 owner_user_name: Optional[str] = None,
+                 pool_metrics: Optional[Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult']] = None,
+                 schedules: Optional[Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult']] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idle_timeout_in_minutes is not None:
+            pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if owner_principal_id is not None:
+            pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+        if owner_user_name is not None:
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
+        if pool_metrics is not None:
+            pulumi.set(__self__, "pool_metrics", pool_metrics)
+        if schedules is not None:
+            pulumi.set(__self__, "schedules", schedules)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult']:
-        """
-        List of PoolConfig items.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query parameter for the Spark application name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idleTimeoutInMinutes")
-    def idle_timeout_in_minutes(self) -> int:
-        """
-        Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
-        """
+    def idle_timeout_in_minutes(self) -> Optional[int]:
         return pulumi.get(self, "idle_timeout_in_minutes")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed messages about the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> str:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> str:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> Optional[str]:
         return pulumi.get(self, "owner_user_name")
 
     @property
     @pulumi.getter(name="poolMetrics")
-    def pool_metrics(self) -> Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult']:
-        """
-        A collection of metrics related to a particular pool.
-        """
+    def pool_metrics(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricResult']]:
         return pulumi.get(self, "pool_metrics")
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult']:
-        """
-        A list of schedules for pool to auto start and stop.
-        """
+    def schedules(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionItemScheduleResult']]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The LifecycleState of the pool.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetPoolsPoolCollectionItemConfigurationResult(dict):
     def __init__(__self__, *,
-                 max: int,
-                 min: int,
-                 shape: str,
-                 shape_configs: Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']):
-        """
-        :param int max: Maximum number of compute instances in the pool for a given compute shape.
-        :param int min: Minimum number of compute instances in the pool for a given compute shape.
-        :param str shape: The compute shape of the resources you would like to provision.
-        :param Sequence['GetPoolsPoolCollectionItemConfigurationShapeConfigArgs'] shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
+                 max: Optional[int] = None,
+                 min: Optional[int] = None,
+                 shape: Optional[str] = None,
+                 shape_configs: Optional[Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']] = None):
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if shape_configs is not None:
+            pulumi.set(__self__, "shape_configs", shape_configs)
 
     @property
     @pulumi.getter
-    def max(self) -> int:
-        """
-        Maximum number of compute instances in the pool for a given compute shape.
-        """
+    def max(self) -> Optional[int]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> int:
-        """
-        Minimum number of compute instances in the pool for a given compute shape.
-        """
+    def min(self) -> Optional[int]:
         return pulumi.get(self, "min")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The compute shape of the resources you would like to provision.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfigs")
-    def shape_configs(self) -> Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def shape_configs(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionItemConfigurationShapeConfigResult']]:
         return pulumi.get(self, "shape_configs")
 
 
 @pulumi.output_type
 class GetPoolsPoolCollectionItemConfigurationShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetPoolsPoolCollectionItemPoolMetricResult(dict):
     def __init__(__self__, *,
-                 active_runs_count: str,
-                 actively_used_node_counts: Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult'],
-                 time_last_metrics_updated: str,
-                 time_last_started: str,
-                 time_last_stopped: str,
-                 time_last_used: str):
-        """
-        :param str active_runs_count: The number of runs that are currently running that are using this pool.
-        :param Sequence['GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountArgs'] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
-        :param str time_last_metrics_updated: The last time the mertics were updated for this.
-        :param str time_last_started: The last time this pool was started.
-        :param str time_last_stopped: The last time this pool was stopped.
-        :param str time_last_used: The last time a run used this pool.
-        """
-        pulumi.set(__self__, "active_runs_count", active_runs_count)
-        pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
-        pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
-        pulumi.set(__self__, "time_last_started", time_last_started)
-        pulumi.set(__self__, "time_last_stopped", time_last_stopped)
-        pulumi.set(__self__, "time_last_used", time_last_used)
+                 active_runs_count: Optional[str] = None,
+                 actively_used_node_counts: Optional[Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult']] = None,
+                 time_last_metrics_updated: Optional[str] = None,
+                 time_last_started: Optional[str] = None,
+                 time_last_stopped: Optional[str] = None,
+                 time_last_used: Optional[str] = None):
+        if active_runs_count is not None:
+            pulumi.set(__self__, "active_runs_count", active_runs_count)
+        if actively_used_node_counts is not None:
+            pulumi.set(__self__, "actively_used_node_counts", actively_used_node_counts)
+        if time_last_metrics_updated is not None:
+            pulumi.set(__self__, "time_last_metrics_updated", time_last_metrics_updated)
+        if time_last_started is not None:
+            pulumi.set(__self__, "time_last_started", time_last_started)
+        if time_last_stopped is not None:
+            pulumi.set(__self__, "time_last_stopped", time_last_stopped)
+        if time_last_used is not None:
+            pulumi.set(__self__, "time_last_used", time_last_used)
 
     @property
     @pulumi.getter(name="activeRunsCount")
-    def active_runs_count(self) -> str:
-        """
-        The number of runs that are currently running that are using this pool.
-        """
+    def active_runs_count(self) -> Optional[str]:
         return pulumi.get(self, "active_runs_count")
 
     @property
     @pulumi.getter(name="activelyUsedNodeCounts")
-    def actively_used_node_counts(self) -> Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult']:
-        """
-        A count of the nodes that are currently being used for each shape in this pool.
-        """
+    def actively_used_node_counts(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult']]:
         return pulumi.get(self, "actively_used_node_counts")
 
     @property
     @pulumi.getter(name="timeLastMetricsUpdated")
-    def time_last_metrics_updated(self) -> str:
-        """
-        The last time the mertics were updated for this.
-        """
+    def time_last_metrics_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_metrics_updated")
 
     @property
     @pulumi.getter(name="timeLastStarted")
-    def time_last_started(self) -> str:
-        """
-        The last time this pool was started.
-        """
+    def time_last_started(self) -> Optional[str]:
         return pulumi.get(self, "time_last_started")
 
     @property
     @pulumi.getter(name="timeLastStopped")
-    def time_last_stopped(self) -> str:
-        """
-        The last time this pool was stopped.
-        """
+    def time_last_stopped(self) -> Optional[str]:
         return pulumi.get(self, "time_last_stopped")
 
     @property
     @pulumi.getter(name="timeLastUsed")
-    def time_last_used(self) -> str:
-        """
-        The last time a run used this pool.
-        """
+    def time_last_used(self) -> Optional[str]:
         return pulumi.get(self, "time_last_used")
 
 
 @pulumi.output_type
 class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult(dict):
     def __init__(__self__, *,
-                 logical_shape: str,
-                 pool_count: int):
-        """
-        :param str logical_shape: The compute shape of the nodes that the count is for.
-        :param int pool_count: The node count of this compute shape.
-        """
-        pulumi.set(__self__, "logical_shape", logical_shape)
-        pulumi.set(__self__, "pool_count", pool_count)
+                 logical_shape: Optional[str] = None,
+                 pool_count: Optional[int] = None):
+        if logical_shape is not None:
+            pulumi.set(__self__, "logical_shape", logical_shape)
+        if pool_count is not None:
+            pulumi.set(__self__, "pool_count", pool_count)
 
     @property
     @pulumi.getter(name="logicalShape")
-    def logical_shape(self) -> str:
-        """
-        The compute shape of the nodes that the count is for.
-        """
+    def logical_shape(self) -> Optional[str]:
         return pulumi.get(self, "logical_shape")
 
     @property
     @pulumi.getter(name="poolCount")
-    def pool_count(self) -> int:
-        """
-        The node count of this compute shape.
-        """
+    def pool_count(self) -> Optional[int]:
         return pulumi.get(self, "pool_count")
 
 
 @pulumi.output_type
 class GetPoolsPoolCollectionItemScheduleResult(dict):
     def __init__(__self__, *,
-                 day_of_week: str,
-                 start_time: int,
-                 stop_time: int):
-        """
-        :param str day_of_week: Day of the week SUN-SAT
-        :param int start_time: Hour of the day to start or stop pool.
-        :param int stop_time: Hour of the day to stop the pool.
-        """
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "stop_time", stop_time)
+                 day_of_week: Optional[str] = None,
+                 start_time: Optional[int] = None,
+                 stop_time: Optional[int] = None):
+        if day_of_week is not None:
+            pulumi.set(__self__, "day_of_week", day_of_week)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if stop_time is not None:
+            pulumi.set(__self__, "stop_time", stop_time)
 
     @property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> str:
-        """
-        Day of the week SUN-SAT
-        """
+    def day_of_week(self) -> Optional[str]:
         return pulumi.get(self, "day_of_week")
 
     @property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> int:
-        """
-        Hour of the day to start or stop pool.
-        """
+    def start_time(self) -> Optional[int]:
         return pulumi.get(self, "start_time")
 
     @property
     @pulumi.getter(name="stopTime")
-    def stop_time(self) -> int:
-        """
-        Hour of the day to stop the pool.
-        """
+    def stop_time(self) -> Optional[int]:
         return pulumi.get(self, "stop_time")
 
 
 @pulumi.output_type
 class GetPrivateEndpointScanDetailResult(dict):
     def __init__(__self__, *,
-                 fqdn: str,
-                 port: str):
-        """
-        :param str fqdn: A fully-qualified domain name (FQDN).
-        :param str port: The port number of the FQDN
-        """
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "port", port)
+                 fqdn: Optional[str] = None,
+                 port: Optional[str] = None):
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        A fully-qualified domain name (FQDN).
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        The port number of the FQDN
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
 
@@ -3336,235 +2516,175 @@ class GetPrivateEndpointsFilterResult(dict):
 @pulumi.output_type
 class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 dns_zones: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 max_host_count: int,
-                 nsg_ids: Sequence[str],
-                 owner_principal_id: str,
-                 owner_user_name: str,
-                 scan_details: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult'],
-                 state: str,
-                 subnet_id: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A user-friendly description. Avoid entering confidential information.
-        :param str display_name: The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
-        :param Sequence[str] dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of a private endpoint.
-        :param str lifecycle_details: The detailed messages about the lifecycle state.
-        :param int max_host_count: The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
-        :param str owner_principal_id: The OCID of the user who created the resource.
-        :param str owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        :param Sequence['GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs'] scan_details: An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
-        :param str state: The LifecycleState of the private endpoint.
-        :param str subnet_id: The OCID of a subnet.
-        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_zones", dns_zones)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_host_count", max_host_count)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "owner_principal_id", owner_principal_id)
-        pulumi.set(__self__, "owner_user_name", owner_user_name)
-        pulumi.set(__self__, "scan_details", scan_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 dns_zones: Optional[Sequence[str]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 max_host_count: Optional[int] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 owner_principal_id: Optional[str] = None,
+                 owner_user_name: Optional[str] = None,
+                 scan_details: Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult']] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if dns_zones is not None:
+            pulumi.set(__self__, "dns_zones", dns_zones)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if max_host_count is not None:
+            pulumi.set(__self__, "max_host_count", max_host_count)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if owner_principal_id is not None:
+            pulumi.set(__self__, "owner_principal_id", owner_principal_id)
+        if owner_user_name is not None:
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
+        if scan_details is not None:
+            pulumi.set(__self__, "scan_details", scan_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user-friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> Sequence[str]:
-        """
-        An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        """
+    def dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed messages about the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxHostCount")
-    def max_host_count(self) -> int:
-        """
-        The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
-        """
+    def max_host_count(self) -> Optional[int]:
         return pulumi.get(self, "max_host_count")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of network security group OCIDs.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="ownerPrincipalId")
-    def owner_principal_id(self) -> str:
-        """
-        The OCID of the user who created the resource.
-        """
+    def owner_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="ownerUserName")
-    def owner_user_name(self) -> str:
-        """
-        The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
-        """
+    def owner_user_name(self) -> Optional[str]:
         return pulumi.get(self, "owner_user_name")
 
     @property
     @pulumi.getter(name="scanDetails")
-    def scan_details(self) -> Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult']:
-        """
-        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
-        """
+    def scan_details(self) -> Optional[Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult']]:
         return pulumi.get(self, "scan_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The LifecycleState of the private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of a subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult(dict):
     def __init__(__self__, *,
-                 fqdn: str,
-                 port: str):
-        """
-        :param str fqdn: A fully-qualified domain name (FQDN).
-        :param str port: The port number of the FQDN
-        """
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "port", port)
+                 fqdn: Optional[str] = None,
+                 port: Optional[str] = None):
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        A fully-qualified domain name (FQDN).
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter
-    def port(self) -> str:
-        """
-        The port number of the FQDN
-        """
+    def port(self) -> Optional[str]:
         return pulumi.get(self, "port")
 
 
@@ -3598,144 +2718,119 @@ class GetRunLogsFilterResult(dict):
 @pulumi.output_type
 class GetRunLogsRunLogResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 run_id: str,
-                 size_in_bytes: str,
-                 source: str,
-                 time_created: str,
-                 type: str):
-        """
-        :param str run_id: The unique ID for the run
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "run_id", run_id)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "type", type)
+                 name: Optional[str] = None,
+                 run_id: Optional[str] = None,
+                 size_in_bytes: Optional[str] = None,
+                 source: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 type: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if run_id is not None:
+            pulumi.set(__self__, "run_id", run_id)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="runId")
-    def run_id(self) -> str:
-        """
-        The unique ID for the run
-        """
+    def run_id(self) -> Optional[str]:
         return pulumi.get(self, "run_id")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetRunStatementOutputResult(dict):
     def __init__(__self__, *,
-                 datas: Sequence['outputs.GetRunStatementOutputDataResult'],
-                 error_name: str,
-                 error_value: str,
-                 status: str,
-                 tracebacks: Sequence[str]):
-        """
-        :param Sequence['GetRunStatementOutputDataArgs'] datas: An object representing execution output of a statement.
-        :param str error_name: The name of the error in the statement output.
-        :param str error_value: The value of the error in the statement output.
-        :param str status: Status of the statement output.
-        :param Sequence[str] tracebacks: The traceback of the statement output.
-        """
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "error_name", error_name)
-        pulumi.set(__self__, "error_value", error_value)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "tracebacks", tracebacks)
+                 datas: Optional[Sequence['outputs.GetRunStatementOutputDataResult']] = None,
+                 error_name: Optional[str] = None,
+                 error_value: Optional[str] = None,
+                 status: Optional[str] = None,
+                 tracebacks: Optional[Sequence[str]] = None):
+        if datas is not None:
+            pulumi.set(__self__, "datas", datas)
+        if error_name is not None:
+            pulumi.set(__self__, "error_name", error_name)
+        if error_value is not None:
+            pulumi.set(__self__, "error_value", error_value)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tracebacks is not None:
+            pulumi.set(__self__, "tracebacks", tracebacks)
 
     @property
     @pulumi.getter
-    def datas(self) -> Sequence['outputs.GetRunStatementOutputDataResult']:
-        """
-        An object representing execution output of a statement.
-        """
+    def datas(self) -> Optional[Sequence['outputs.GetRunStatementOutputDataResult']]:
         return pulumi.get(self, "datas")
 
     @property
     @pulumi.getter(name="errorName")
-    def error_name(self) -> str:
-        """
-        The name of the error in the statement output.
-        """
+    def error_name(self) -> Optional[str]:
         return pulumi.get(self, "error_name")
 
     @property
     @pulumi.getter(name="errorValue")
-    def error_value(self) -> str:
-        """
-        The value of the error in the statement output.
-        """
+    def error_value(self) -> Optional[str]:
         return pulumi.get(self, "error_value")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the statement output.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def tracebacks(self) -> Sequence[str]:
-        """
-        The traceback of the statement output.
-        """
+    def tracebacks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "tracebacks")
 
 
 @pulumi.output_type
 class GetRunStatementOutputDataResult(dict):
     def __init__(__self__, *,
-                 type: str,
-                 value: str):
-        """
-        :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        :param str value: The statement code execution output in html format.
-        """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The statement code execution output in html format.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -3769,380 +2864,280 @@ class GetRunStatementsFilterResult(dict):
 @pulumi.output_type
 class GetRunStatementsStatementCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetRunStatementsStatementCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRunStatementsStatementCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetRunStatementsStatementCollectionItemResult(dict):
     def __init__(__self__, *,
-                 code: str,
-                 id: str,
-                 outputs: Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult'],
-                 progress: float,
-                 run_id: str,
-                 state: str,
-                 time_completed: str,
-                 time_created: str):
-        """
-        :param str code: The statement code to execute. Example: `println(sc.version)`
-        :param str id: The statement ID.
-        :param Sequence['GetRunStatementsStatementCollectionItemOutputArgs'] outputs: The execution output of a statement.
-        :param float progress: The execution progress.
-        :param str run_id: The unique ID for the run
-        :param str state: The LifecycleState of the statement.
-        :param str time_completed: The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        :param str time_created: The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "outputs", outputs)
-        pulumi.set(__self__, "progress", progress)
-        pulumi.set(__self__, "run_id", run_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_completed", time_completed)
-        pulumi.set(__self__, "time_created", time_created)
+                 code: Optional[str] = None,
+                 id: Optional[str] = None,
+                 outputs: Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult']] = None,
+                 progress: Optional[float] = None,
+                 run_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_completed: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if outputs is not None:
+            pulumi.set(__self__, "outputs", outputs)
+        if progress is not None:
+            pulumi.set(__self__, "progress", progress)
+        if run_id is not None:
+            pulumi.set(__self__, "run_id", run_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_completed is not None:
+            pulumi.set(__self__, "time_completed", time_completed)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        The statement code to execute. Example: `println(sc.version)`
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The statement ID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def outputs(self) -> Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult']:
-        """
-        The execution output of a statement.
-        """
+    def outputs(self) -> Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemOutputResult']]:
         return pulumi.get(self, "outputs")
 
     @property
     @pulumi.getter
-    def progress(self) -> float:
-        """
-        The execution progress.
-        """
+    def progress(self) -> Optional[float]:
         return pulumi.get(self, "progress")
 
     @property
     @pulumi.getter(name="runId")
-    def run_id(self) -> str:
-        """
-        The unique ID for the run
-        """
+    def run_id(self) -> Optional[str]:
         return pulumi.get(self, "run_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The LifecycleState of the statement.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> str:
-        """
-        The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        """
+    def time_completed(self) -> Optional[str]:
         return pulumi.get(self, "time_completed")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetRunStatementsStatementCollectionItemOutputResult(dict):
     def __init__(__self__, *,
-                 datas: Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult'],
-                 error_name: str,
-                 error_value: str,
-                 status: str,
-                 tracebacks: Sequence[str]):
-        """
-        :param Sequence['GetRunStatementsStatementCollectionItemOutputDataArgs'] datas: An object representing execution output of a statement.
-        :param str error_name: The name of the error in the statement output.
-        :param str error_value: The value of the error in the statement output.
-        :param str status: Status of the statement output.
-        :param Sequence[str] tracebacks: The traceback of the statement output.
-        """
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "error_name", error_name)
-        pulumi.set(__self__, "error_value", error_value)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "tracebacks", tracebacks)
+                 datas: Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult']] = None,
+                 error_name: Optional[str] = None,
+                 error_value: Optional[str] = None,
+                 status: Optional[str] = None,
+                 tracebacks: Optional[Sequence[str]] = None):
+        if datas is not None:
+            pulumi.set(__self__, "datas", datas)
+        if error_name is not None:
+            pulumi.set(__self__, "error_name", error_name)
+        if error_value is not None:
+            pulumi.set(__self__, "error_value", error_value)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tracebacks is not None:
+            pulumi.set(__self__, "tracebacks", tracebacks)
 
     @property
     @pulumi.getter
-    def datas(self) -> Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult']:
-        """
-        An object representing execution output of a statement.
-        """
+    def datas(self) -> Optional[Sequence['outputs.GetRunStatementsStatementCollectionItemOutputDataResult']]:
         return pulumi.get(self, "datas")
 
     @property
     @pulumi.getter(name="errorName")
-    def error_name(self) -> str:
-        """
-        The name of the error in the statement output.
-        """
+    def error_name(self) -> Optional[str]:
         return pulumi.get(self, "error_name")
 
     @property
     @pulumi.getter(name="errorValue")
-    def error_value(self) -> str:
-        """
-        The value of the error in the statement output.
-        """
+    def error_value(self) -> Optional[str]:
         return pulumi.get(self, "error_value")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the statement output.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def tracebacks(self) -> Sequence[str]:
-        """
-        The traceback of the statement output.
-        """
+    def tracebacks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "tracebacks")
 
 
 @pulumi.output_type
 class GetRunStatementsStatementCollectionItemOutputDataResult(dict):
     def __init__(__self__, *,
-                 type: str,
-                 value: str):
-        """
-        :param str type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        :param str value: The statement code execution output in html format.
-        """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The statement code execution output in html format.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetSqlEndpointDriverShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetSqlEndpointExecutorShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetSqlEndpointNetworkConfigurationResult(dict):
     def __init__(__self__, *,
-                 access_control_rules: Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult'],
-                 host_name_prefix: str,
-                 network_type: str,
-                 private_endpoint_ip: str,
-                 public_endpoint_ip: str,
-                 subnet_id: str,
-                 vcn_id: str):
-        """
-        :param Sequence['GetSqlEndpointNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
-        :param str host_name_prefix: The host name prefix.
-        :param str network_type: The type of network configuration.
-        :param str private_endpoint_ip: Ip Address of private endpoint
-        :param str public_endpoint_ip: Ip Address of public endpoint
-        :param str subnet_id: The VCN Subnet OCID.
-        :param str vcn_id: The VCN OCID.
-        """
-        pulumi.set(__self__, "access_control_rules", access_control_rules)
-        pulumi.set(__self__, "host_name_prefix", host_name_prefix)
-        pulumi.set(__self__, "network_type", network_type)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 access_control_rules: Optional[Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult']] = None,
+                 host_name_prefix: Optional[str] = None,
+                 network_type: Optional[str] = None,
+                 private_endpoint_ip: Optional[str] = None,
+                 public_endpoint_ip: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if access_control_rules is not None:
+            pulumi.set(__self__, "access_control_rules", access_control_rules)
+        if host_name_prefix is not None:
+            pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if public_endpoint_ip is not None:
+            pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="accessControlRules")
-    def access_control_rules(self) -> Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult']:
-        """
-        A list of SecureAccessControlRule's to which access is limited to
-        """
+    def access_control_rules(self) -> Optional[Sequence['outputs.GetSqlEndpointNetworkConfigurationAccessControlRuleResult']]:
         return pulumi.get(self, "access_control_rules")
 
     @property
     @pulumi.getter(name="hostNamePrefix")
-    def host_name_prefix(self) -> str:
-        """
-        The host name prefix.
-        """
+    def host_name_prefix(self) -> Optional[str]:
         return pulumi.get(self, "host_name_prefix")
 
     @property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> str:
-        """
-        The type of network configuration.
-        """
+    def network_type(self) -> Optional[str]:
         return pulumi.get(self, "network_type")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> str:
-        """
-        Ip Address of private endpoint
-        """
+    def private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter(name="publicEndpointIp")
-    def public_endpoint_ip(self) -> str:
-        """
-        Ip Address of public endpoint
-        """
+    def public_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "public_endpoint_ip")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The VCN Subnet OCID.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The VCN OCID.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
 @pulumi.output_type
 class GetSqlEndpointNetworkConfigurationAccessControlRuleResult(dict):
     def __init__(__self__, *,
-                 ip_notation: str,
-                 value: str,
-                 vcn_ips: str):
-        """
-        :param str ip_notation: The type of IP notation.
-        :param str value: The associated value of the selected IP notation.
-        :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
-        pulumi.set(__self__, "ip_notation", ip_notation)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "vcn_ips", vcn_ips)
+                 ip_notation: Optional[str] = None,
+                 value: Optional[str] = None,
+                 vcn_ips: Optional[str] = None):
+        if ip_notation is not None:
+            pulumi.set(__self__, "ip_notation", ip_notation)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if vcn_ips is not None:
+            pulumi.set(__self__, "vcn_ips", vcn_ips)
 
     @property
     @pulumi.getter(name="ipNotation")
-    def ip_notation(self) -> str:
-        """
-        The type of IP notation.
-        """
+    def ip_notation(self) -> Optional[str]:
         return pulumi.get(self, "ip_notation")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The associated value of the selected IP notation.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
     @property
     @pulumi.getter(name="vcnIps")
-    def vcn_ips(self) -> str:
-        """
-        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
+    def vcn_ips(self) -> Optional[str]:
         return pulumi.get(self, "vcn_ips")
 
 
@@ -4176,476 +3171,350 @@ class GetSqlEndpointsFilterResult(dict):
 @pulumi.output_type
 class GetSqlEndpointsSqlEndpointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 driver_shape: str,
-                 driver_shape_configs: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult'],
-                 executor_shape: str,
-                 executor_shape_configs: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult'],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 jdbc_endpoint_url: str,
-                 lake_id: str,
-                 last_accepted_request_token: str,
-                 max_executor_count: int,
-                 metastore_id: str,
-                 min_executor_count: int,
-                 network_configurations: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult'],
-                 spark_advanced_configurations: Mapping[str, Any],
-                 sql_endpoint_version: str,
-                 state: str,
-                 state_message: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 warehouse_bucket_uri: str):
-        """
-        :param str compartment_id: The OCID of the compartment in which to query resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: The description of the SQL Endpoint.
-        :param str display_name: The query parameter for the Spark application name.
-        :param str driver_shape: The shape of the SQL Endpoint driver instance.
-        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param str executor_shape: The shape of the SQL Endpoint executor instance.
-        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The provision identifier that is immutable on creation.
-        :param str jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        :param str lake_id: The OCID of Oracle Cloud Infrastructure Lake.
-        :param str last_accepted_request_token: This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        :param int max_executor_count: The maximum number of executors.
-        :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        :param int min_executor_count: The minimum number of executors.
-        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs'] network_configurations: The network configuration of a SQL Endpoint.
-        :param Mapping[str, Any] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param str sql_endpoint_version: The version of SQL Endpoint.
-        :param str state: A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
-        :param str state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param str time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        :param str warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "driver_shape", driver_shape)
-        pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
-        pulumi.set(__self__, "executor_shape", executor_shape)
-        pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
-        pulumi.set(__self__, "lake_id", lake_id)
-        pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
-        pulumi.set(__self__, "max_executor_count", max_executor_count)
-        pulumi.set(__self__, "metastore_id", metastore_id)
-        pulumi.set(__self__, "min_executor_count", min_executor_count)
-        pulumi.set(__self__, "network_configurations", network_configurations)
-        pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
-        pulumi.set(__self__, "sql_endpoint_version", sql_endpoint_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 driver_shape: Optional[str] = None,
+                 driver_shape_configs: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult']] = None,
+                 executor_shape: Optional[str] = None,
+                 executor_shape_configs: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult']] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 jdbc_endpoint_url: Optional[str] = None,
+                 lake_id: Optional[str] = None,
+                 last_accepted_request_token: Optional[str] = None,
+                 max_executor_count: Optional[int] = None,
+                 metastore_id: Optional[str] = None,
+                 min_executor_count: Optional[int] = None,
+                 network_configurations: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult']] = None,
+                 spark_advanced_configurations: Optional[Mapping[str, Any]] = None,
+                 sql_endpoint_version: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_message: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 warehouse_bucket_uri: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if driver_shape is not None:
+            pulumi.set(__self__, "driver_shape", driver_shape)
+        if driver_shape_configs is not None:
+            pulumi.set(__self__, "driver_shape_configs", driver_shape_configs)
+        if executor_shape is not None:
+            pulumi.set(__self__, "executor_shape", executor_shape)
+        if executor_shape_configs is not None:
+            pulumi.set(__self__, "executor_shape_configs", executor_shape_configs)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if jdbc_endpoint_url is not None:
+            pulumi.set(__self__, "jdbc_endpoint_url", jdbc_endpoint_url)
+        if lake_id is not None:
+            pulumi.set(__self__, "lake_id", lake_id)
+        if last_accepted_request_token is not None:
+            pulumi.set(__self__, "last_accepted_request_token", last_accepted_request_token)
+        if max_executor_count is not None:
+            pulumi.set(__self__, "max_executor_count", max_executor_count)
+        if metastore_id is not None:
+            pulumi.set(__self__, "metastore_id", metastore_id)
+        if min_executor_count is not None:
+            pulumi.set(__self__, "min_executor_count", min_executor_count)
+        if network_configurations is not None:
+            pulumi.set(__self__, "network_configurations", network_configurations)
+        if spark_advanced_configurations is not None:
+            pulumi.set(__self__, "spark_advanced_configurations", spark_advanced_configurations)
+        if sql_endpoint_version is not None:
+            pulumi.set(__self__, "sql_endpoint_version", sql_endpoint_version)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_message is not None:
+            pulumi.set(__self__, "state_message", state_message)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if warehouse_bucket_uri is not None:
+            pulumi.set(__self__, "warehouse_bucket_uri", warehouse_bucket_uri)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which to query resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the SQL Endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query parameter for the Spark application name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="driverShape")
-    def driver_shape(self) -> str:
-        """
-        The shape of the SQL Endpoint driver instance.
-        """
+    def driver_shape(self) -> Optional[str]:
         return pulumi.get(self, "driver_shape")
 
     @property
     @pulumi.getter(name="driverShapeConfigs")
-    def driver_shape_configs(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def driver_shape_configs(self) -> Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult']]:
         return pulumi.get(self, "driver_shape_configs")
 
     @property
     @pulumi.getter(name="executorShape")
-    def executor_shape(self) -> str:
-        """
-        The shape of the SQL Endpoint executor instance.
-        """
+    def executor_shape(self) -> Optional[str]:
         return pulumi.get(self, "executor_shape")
 
     @property
     @pulumi.getter(name="executorShapeConfigs")
-    def executor_shape_configs(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult']:
-        """
-        This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
+    def executor_shape_configs(self) -> Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult']]:
         return pulumi.get(self, "executor_shape_configs")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The provision identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="jdbcEndpointUrl")
-    def jdbc_endpoint_url(self) -> str:
-        """
-        The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
-        """
+    def jdbc_endpoint_url(self) -> Optional[str]:
         return pulumi.get(self, "jdbc_endpoint_url")
 
     @property
     @pulumi.getter(name="lakeId")
-    def lake_id(self) -> str:
-        """
-        The OCID of Oracle Cloud Infrastructure Lake.
-        """
+    def lake_id(self) -> Optional[str]:
         return pulumi.get(self, "lake_id")
 
     @property
     @pulumi.getter(name="lastAcceptedRequestToken")
-    def last_accepted_request_token(self) -> str:
-        """
-        This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
-        """
+    def last_accepted_request_token(self) -> Optional[str]:
         return pulumi.get(self, "last_accepted_request_token")
 
     @property
     @pulumi.getter(name="maxExecutorCount")
-    def max_executor_count(self) -> int:
-        """
-        The maximum number of executors.
-        """
+    def max_executor_count(self) -> Optional[int]:
         return pulumi.get(self, "max_executor_count")
 
     @property
     @pulumi.getter(name="metastoreId")
-    def metastore_id(self) -> str:
-        """
-        The OCID of Oracle Cloud Infrastructure Hive Metastore.
-        """
+    def metastore_id(self) -> Optional[str]:
         return pulumi.get(self, "metastore_id")
 
     @property
     @pulumi.getter(name="minExecutorCount")
-    def min_executor_count(self) -> int:
-        """
-        The minimum number of executors.
-        """
+    def min_executor_count(self) -> Optional[int]:
         return pulumi.get(self, "min_executor_count")
 
     @property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult']:
-        """
-        The network configuration of a SQL Endpoint.
-        """
+    def network_configurations(self) -> Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult']]:
         return pulumi.get(self, "network_configurations")
 
     @property
     @pulumi.getter(name="sparkAdvancedConfigurations")
-    def spark_advanced_configurations(self) -> Mapping[str, Any]:
-        """
-        The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        """
+    def spark_advanced_configurations(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "spark_advanced_configurations")
 
     @property
     @pulumi.getter(name="sqlEndpointVersion")
-    def sql_endpoint_version(self) -> str:
-        """
-        The version of SQL Endpoint.
-        """
+    def sql_endpoint_version(self) -> Optional[str]:
         return pulumi.get(self, "sql_endpoint_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="warehouseBucketUri")
-    def warehouse_bucket_uri(self) -> str:
-        """
-        The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
-        """
+    def warehouse_bucket_uri(self) -> Optional[str]:
         return pulumi.get(self, "warehouse_bucket_uri")
 
 
 @pulumi.output_type
 class GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The amount of memory used for the driver or executors.
-        :param float ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The amount of memory used for the driver or executors.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(dict):
     def __init__(__self__, *,
-                 access_control_rules: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult'],
-                 host_name_prefix: str,
-                 network_type: str,
-                 private_endpoint_ip: str,
-                 public_endpoint_ip: str,
-                 subnet_id: str,
-                 vcn_id: str):
-        """
-        :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleArgs'] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
-        :param str host_name_prefix: The host name prefix.
-        :param str network_type: The type of network configuration.
-        :param str private_endpoint_ip: Ip Address of private endpoint
-        :param str public_endpoint_ip: Ip Address of public endpoint
-        :param str subnet_id: The VCN Subnet OCID.
-        :param str vcn_id: The VCN OCID.
-        """
-        pulumi.set(__self__, "access_control_rules", access_control_rules)
-        pulumi.set(__self__, "host_name_prefix", host_name_prefix)
-        pulumi.set(__self__, "network_type", network_type)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+                 access_control_rules: Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult']] = None,
+                 host_name_prefix: Optional[str] = None,
+                 network_type: Optional[str] = None,
+                 private_endpoint_ip: Optional[str] = None,
+                 public_endpoint_ip: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 vcn_id: Optional[str] = None):
+        if access_control_rules is not None:
+            pulumi.set(__self__, "access_control_rules", access_control_rules)
+        if host_name_prefix is not None:
+            pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if private_endpoint_ip is not None:
+            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if public_endpoint_ip is not None:
+            pulumi.set(__self__, "public_endpoint_ip", public_endpoint_ip)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vcn_id is not None:
+            pulumi.set(__self__, "vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="accessControlRules")
-    def access_control_rules(self) -> Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult']:
-        """
-        A list of SecureAccessControlRule's to which access is limited to
-        """
+    def access_control_rules(self) -> Optional[Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult']]:
         return pulumi.get(self, "access_control_rules")
 
     @property
     @pulumi.getter(name="hostNamePrefix")
-    def host_name_prefix(self) -> str:
-        """
-        The host name prefix.
-        """
+    def host_name_prefix(self) -> Optional[str]:
         return pulumi.get(self, "host_name_prefix")
 
     @property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> str:
-        """
-        The type of network configuration.
-        """
+    def network_type(self) -> Optional[str]:
         return pulumi.get(self, "network_type")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> str:
-        """
-        Ip Address of private endpoint
-        """
+    def private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter(name="publicEndpointIp")
-    def public_endpoint_ip(self) -> str:
-        """
-        Ip Address of public endpoint
-        """
+    def public_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "public_endpoint_ip")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The VCN Subnet OCID.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The VCN OCID.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
 @pulumi.output_type
 class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult(dict):
     def __init__(__self__, *,
-                 ip_notation: str,
-                 value: str,
-                 vcn_ips: str):
-        """
-        :param str ip_notation: The type of IP notation.
-        :param str value: The associated value of the selected IP notation.
-        :param str vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
-        pulumi.set(__self__, "ip_notation", ip_notation)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "vcn_ips", vcn_ips)
+                 ip_notation: Optional[str] = None,
+                 value: Optional[str] = None,
+                 vcn_ips: Optional[str] = None):
+        if ip_notation is not None:
+            pulumi.set(__self__, "ip_notation", ip_notation)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if vcn_ips is not None:
+            pulumi.set(__self__, "vcn_ips", vcn_ips)
 
     @property
     @pulumi.getter(name="ipNotation")
-    def ip_notation(self) -> str:
-        """
-        The type of IP notation.
-        """
+    def ip_notation(self) -> Optional[str]:
         return pulumi.get(self, "ip_notation")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The associated value of the selected IP notation.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
     @property
     @pulumi.getter(name="vcnIps")
-    def vcn_ips(self) -> str:
-        """
-        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
+    def vcn_ips(self) -> Optional[str]:
         return pulumi.get(self, "vcn_ips")
 
 

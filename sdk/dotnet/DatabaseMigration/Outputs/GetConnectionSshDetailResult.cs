@@ -16,26 +16,26 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Name of the host the SSH key is valid for.
         /// </summary>
-        public readonly string Host;
-        public readonly string Sshkey;
+        public readonly string? Host;
+        public readonly string? Sshkey;
         /// <summary>
         /// Sudo location
         /// </summary>
-        public readonly string SudoLocation;
+        public readonly string? SudoLocation;
         /// <summary>
         /// SSH user
         /// </summary>
-        public readonly string User;
+        public readonly string? User;
 
         [OutputConstructor]
         private GetConnectionSshDetailResult(
-            string host,
+            string? host,
 
-            string sshkey,
+            string? sshkey,
 
-            string sudoLocation,
+            string? sudoLocation,
 
-            string user)
+            string? user)
         {
             Host = host;
             Sshkey = sshkey;

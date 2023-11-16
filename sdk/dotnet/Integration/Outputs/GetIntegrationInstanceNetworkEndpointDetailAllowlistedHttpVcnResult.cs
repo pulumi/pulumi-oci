@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// The Virtual Cloud Network OCID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult(
             ImmutableArray<string> allowlistedIps,
 
-            string id)
+            string? id)
         {
             AllowlistedIps = allowlistedIps;
             Id = id;

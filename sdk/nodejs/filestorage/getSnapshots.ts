@@ -94,7 +94,7 @@ export interface GetSnapshotsResult {
     /**
      * The list of snapshots.
      */
-    readonly snapshots: outputs.FileStorage.GetSnapshotsSnapshot[];
+    readonly snapshots?: outputs.FileStorage.GetSnapshotsSnapshot[];
     /**
      * The current state of the snapshot.
      */

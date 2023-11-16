@@ -17,32 +17,32 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly int DisassociateTrigger;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly int? DisassociateTrigger;
         /// <summary>
         /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the DR protection group's current state in more detail.
         /// </summary>
-        public readonly string LifeCycleDetails;
+        public readonly string? LifeCycleDetails;
         /// <summary>
         /// A filter to return only DR protection groups that match the given lifecycle sub-state.
         /// </summary>
-        public readonly string LifecycleSubState;
+        public readonly string? LifecycleSubState;
         /// <summary>
         /// The details of an object storage log location for a DR protection group.
         /// </summary>
@@ -54,69 +54,69 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
-        public readonly string PeerId;
+        public readonly string? PeerId;
         /// <summary>
         /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
-        public readonly string PeerRegion;
+        public readonly string? PeerRegion;
         /// <summary>
         /// The DR protection group Role.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// A filter to return only DR protection groups that match the given lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult> associations,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            int disassociateTrigger,
+            int? disassociateTrigger,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifeCycleDetails,
+            string? lifeCycleDetails,
 
-            string lifecycleSubState,
+            string? lifecycleSubState,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult> logLocations,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult> members,
 
-            string peerId,
+            string? peerId,
 
-            string peerRegion,
+            string? peerRegion,
 
-            string role,
+            string? role,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Associations = associations;
             CompartmentId = compartmentId;

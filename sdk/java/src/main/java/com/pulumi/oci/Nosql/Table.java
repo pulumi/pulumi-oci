@@ -19,6 +19,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -111,84 +112,84 @@ public class Table extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * True if table can be reclaimed after an idle period.
      * 
      */
     @Export(name="isAutoReclaimable", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutoReclaimable;
+    private Output</* @Nullable */ Boolean> isAutoReclaimable;
 
     /**
      * @return True if table can be reclaimed after an idle period.
      * 
      */
-    public Output<Boolean> isAutoReclaimable() {
-        return this.isAutoReclaimable;
+    public Output<Optional<Boolean>> isAutoReclaimable() {
+        return Codegen.optional(this.isAutoReclaimable);
     }
     /**
      * True if this table is currently a member of a replication set.
      * 
      */
     @Export(name="isMultiRegion", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMultiRegion;
+    private Output</* @Nullable */ Boolean> isMultiRegion;
 
     /**
      * @return True if this table is currently a member of a replication set.
      * 
      */
-    public Output<Boolean> isMultiRegion() {
-        return this.isMultiRegion;
+    public Output<Optional<Boolean>> isMultiRegion() {
+        return Codegen.optional(this.isMultiRegion);
     }
     /**
      * A message describing the current state in more detail.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
      * 
      */
     @Export(name="localReplicaInitializationInPercent", refs={Integer.class}, tree="[0]")
-    private Output<Integer> localReplicaInitializationInPercent;
+    private Output</* @Nullable */ Integer> localReplicaInitializationInPercent;
 
     /**
      * @return If this table is in a replication set, this value represents the progress of the initialization of the replica&#39;s data.  A value of 100 indicates that initialization has completed.
      * 
      */
-    public Output<Integer> localReplicaInitializationInPercent() {
-        return this.localReplicaInitializationInPercent;
+    public Output<Optional<Integer>> localReplicaInitializationInPercent() {
+        return Codegen.optional(this.localReplicaInitializationInPercent);
     }
     /**
      * Table name.
@@ -209,126 +210,126 @@ public class Table extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="replicas", refs={List.class,TableReplica.class}, tree="[0,1]")
-    private Output<List<TableReplica>> replicas;
+    private Output</* @Nullable */ List<TableReplica>> replicas;
 
     /**
      * @return An array of Replica listing this table&#39;s replicas, if any
      * 
      */
-    public Output<List<TableReplica>> replicas() {
-        return this.replicas;
+    public Output<Optional<List<TableReplica>>> replicas() {
+        return Codegen.optional(this.replicas);
     }
     /**
      * The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      * 
      */
     @Export(name="schemaState", refs={String.class}, tree="[0]")
-    private Output<String> schemaState;
+    private Output</* @Nullable */ String> schemaState;
 
     /**
      * @return The current state of this table&#39;s schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
      * 
      */
-    public Output<String> schemaState() {
-        return this.schemaState;
+    public Output<Optional<String>> schemaState() {
+        return Codegen.optional(this.schemaState);
     }
     /**
      * The table schema information as a JSON object.
      * 
      */
     @Export(name="schemas", refs={List.class,TableSchema.class}, tree="[0,1]")
-    private Output<List<TableSchema>> schemas;
+    private Output</* @Nullable */ List<TableSchema>> schemas;
 
     /**
      * @return The table schema information as a JSON object.
      * 
      */
-    public Output<List<TableSchema>> schemas() {
-        return this.schemas;
+    public Output<Optional<List<TableSchema>>> schemas() {
+        return Codegen.optional(this.schemas);
     }
     /**
      * The state of a table.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of a table.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
     @Export(name="tableLimits", refs={TableTableLimits.class}, tree="[0]")
-    private Output<TableTableLimits> tableLimits;
+    private Output</* @Nullable */ TableTableLimits> tableLimits;
 
     /**
      * @return (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table&#39;s limits.
      * 
      */
-    public Output<TableTableLimits> tableLimits() {
-        return this.tableLimits;
+    public Output<Optional<TableTableLimits>> tableLimits() {
+        return Codegen.optional(this.tableLimits);
     }
     /**
      * The time the the table was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the table was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeOfExpiration", refs={String.class}, tree="[0]")
-    private Output<String> timeOfExpiration;
+    private Output</* @Nullable */ String> timeOfExpiration;
 
     /**
      * @return If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeOfExpiration() {
-        return this.timeOfExpiration;
+    public Output<Optional<String>> timeOfExpiration() {
+        return Codegen.optional(this.timeOfExpiration);
     }
     /**
      * The time the the table&#39;s metadata was last updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the the table&#39;s metadata was last updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

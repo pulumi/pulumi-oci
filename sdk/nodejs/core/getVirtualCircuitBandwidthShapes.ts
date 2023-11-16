@@ -53,12 +53,12 @@ export interface GetVirtualCircuitBandwidthShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly providerServiceId: string;
     /**
      * The list of virtual_circuit_bandwidth_shapes.
      */
-    readonly virtualCircuitBandwidthShapes: outputs.Core.GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape[];
+    readonly virtualCircuitBandwidthShapes?: outputs.Core.GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape[];
 }
 /**
  * This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.

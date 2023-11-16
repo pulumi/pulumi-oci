@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIntegrationInstanceNetworkEndpointDetail {
@@ -16,22 +18,22 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
      * @return Source IP addresses or IP address ranges ingress rules. (ex: &#34;168.122.59.5&#34;, &#34;10.20.30.0/26&#34;) An invalid IP or CIDR block will result in a 400 response.
      * 
      */
-    private List<String> allowlistedHttpIps;
+    private @Nullable List<String> allowlistedHttpIps;
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
      * 
      */
-    private List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns;
+    private @Nullable List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns;
     /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
      * 
      */
-    private Boolean isIntegrationVcnAllowlisted;
+    private @Nullable Boolean isIntegrationVcnAllowlisted;
     /**
      * @return The type of network endpoint.
      * 
      */
-    private String networkEndpointType;
+    private @Nullable String networkEndpointType;
 
     private GetIntegrationInstanceNetworkEndpointDetail() {}
     /**
@@ -39,28 +41,28 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
      * 
      */
     public List<String> allowlistedHttpIps() {
-        return this.allowlistedHttpIps;
+        return this.allowlistedHttpIps == null ? List.of() : this.allowlistedHttpIps;
     }
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
      * 
      */
     public List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns() {
-        return this.allowlistedHttpVcns;
+        return this.allowlistedHttpVcns == null ? List.of() : this.allowlistedHttpVcns;
     }
     /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
      * 
      */
-    public Boolean isIntegrationVcnAllowlisted() {
-        return this.isIntegrationVcnAllowlisted;
+    public Optional<Boolean> isIntegrationVcnAllowlisted() {
+        return Optional.ofNullable(this.isIntegrationVcnAllowlisted);
     }
     /**
      * @return The type of network endpoint.
      * 
      */
-    public String networkEndpointType() {
-        return this.networkEndpointType;
+    public Optional<String> networkEndpointType() {
+        return Optional.ofNullable(this.networkEndpointType);
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> allowlistedHttpIps;
-        private List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns;
-        private Boolean isIntegrationVcnAllowlisted;
-        private String networkEndpointType;
+        private @Nullable List<String> allowlistedHttpIps;
+        private @Nullable List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns;
+        private @Nullable Boolean isIntegrationVcnAllowlisted;
+        private @Nullable String networkEndpointType;
         public Builder() {}
         public Builder(GetIntegrationInstanceNetworkEndpointDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,29 +88,29 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
         }
 
         @CustomType.Setter
-        public Builder allowlistedHttpIps(List<String> allowlistedHttpIps) {
-            this.allowlistedHttpIps = Objects.requireNonNull(allowlistedHttpIps);
+        public Builder allowlistedHttpIps(@Nullable List<String> allowlistedHttpIps) {
+            this.allowlistedHttpIps = allowlistedHttpIps;
             return this;
         }
         public Builder allowlistedHttpIps(String... allowlistedHttpIps) {
             return allowlistedHttpIps(List.of(allowlistedHttpIps));
         }
         @CustomType.Setter
-        public Builder allowlistedHttpVcns(List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns) {
-            this.allowlistedHttpVcns = Objects.requireNonNull(allowlistedHttpVcns);
+        public Builder allowlistedHttpVcns(@Nullable List<GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn> allowlistedHttpVcns) {
+            this.allowlistedHttpVcns = allowlistedHttpVcns;
             return this;
         }
         public Builder allowlistedHttpVcns(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn... allowlistedHttpVcns) {
             return allowlistedHttpVcns(List.of(allowlistedHttpVcns));
         }
         @CustomType.Setter
-        public Builder isIntegrationVcnAllowlisted(Boolean isIntegrationVcnAllowlisted) {
-            this.isIntegrationVcnAllowlisted = Objects.requireNonNull(isIntegrationVcnAllowlisted);
+        public Builder isIntegrationVcnAllowlisted(@Nullable Boolean isIntegrationVcnAllowlisted) {
+            this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             return this;
         }
         @CustomType.Setter
-        public Builder networkEndpointType(String networkEndpointType) {
-            this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
+        public Builder networkEndpointType(@Nullable String networkEndpointType) {
+            this.networkEndpointType = networkEndpointType;
             return this;
         }
         public GetIntegrationInstanceNetworkEndpointDetail build() {

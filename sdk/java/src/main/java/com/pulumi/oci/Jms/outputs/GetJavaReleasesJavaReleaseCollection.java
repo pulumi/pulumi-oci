@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesJavaReleaseCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJavaReleasesJavaReleaseCollection {
-    private List<GetJavaReleasesJavaReleaseCollectionItem> items;
+    private @Nullable List<GetJavaReleasesJavaReleaseCollectionItem> items;
 
     private GetJavaReleasesJavaReleaseCollection() {}
     public List<GetJavaReleasesJavaReleaseCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetJavaReleasesJavaReleaseCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetJavaReleasesJavaReleaseCollectionItem> items;
+        private @Nullable List<GetJavaReleasesJavaReleaseCollectionItem> items;
         public Builder() {}
         public Builder(GetJavaReleasesJavaReleaseCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetJavaReleasesJavaReleaseCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetJavaReleasesJavaReleaseCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetJavaReleasesJavaReleaseCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetJavaReleasesJavaReleaseCollectionItem... items) {

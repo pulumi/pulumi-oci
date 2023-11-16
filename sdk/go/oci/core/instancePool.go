@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
@@ -107,21 +106,21 @@ type InstancePool struct {
 	pulumi.CustomResourceState
 
 	// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-	ActualSize pulumi.IntOutput `pulumi:"actualSize"`
+	ActualSize pulumi.IntPtrOutput `pulumi:"actualSize"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
 	InstanceConfigurationId pulumi.StringOutput `pulumi:"instanceConfigurationId"`
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-	InstanceDisplayNameFormatter pulumi.StringOutput `pulumi:"instanceDisplayNameFormatter"`
+	InstanceDisplayNameFormatter pulumi.StringPtrOutput `pulumi:"instanceDisplayNameFormatter"`
 	// (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-	InstanceHostnameFormatter pulumi.StringOutput `pulumi:"instanceHostnameFormatter"`
+	InstanceHostnameFormatter pulumi.StringPtrOutput `pulumi:"instanceHostnameFormatter"`
 	// The load balancers to attach to the instance pool.
 	LoadBalancers InstancePoolLoadBalancerArrayOutput `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -134,9 +133,9 @@ type InstancePool struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewInstancePool registers a new resource with the given unique name, arguments, and options.
@@ -336,12 +335,6 @@ func (i *InstancePool) ToInstancePoolOutputWithContext(ctx context.Context) Inst
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolOutput)
 }
 
-func (i *InstancePool) ToOutput(ctx context.Context) pulumix.Output[*InstancePool] {
-	return pulumix.Output[*InstancePool]{
-		OutputState: i.ToInstancePoolOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstancePoolArrayInput is an input type that accepts InstancePoolArray and InstancePoolArrayOutput values.
 // You can construct a concrete instance of `InstancePoolArrayInput` via:
 //
@@ -365,12 +358,6 @@ func (i InstancePoolArray) ToInstancePoolArrayOutput() InstancePoolArrayOutput {
 
 func (i InstancePoolArray) ToInstancePoolArrayOutputWithContext(ctx context.Context) InstancePoolArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolArrayOutput)
-}
-
-func (i InstancePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePool] {
-	return pulumix.Output[[]*InstancePool]{
-		OutputState: i.ToInstancePoolArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstancePoolMapInput is an input type that accepts InstancePoolMap and InstancePoolMapOutput values.
@@ -398,12 +385,6 @@ func (i InstancePoolMap) ToInstancePoolMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(InstancePoolMapOutput)
 }
 
-func (i InstancePoolMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePool] {
-	return pulumix.Output[map[string]*InstancePool]{
-		OutputState: i.ToInstancePoolMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstancePoolOutput struct{ *pulumi.OutputState }
 
 func (InstancePoolOutput) ElementType() reflect.Type {
@@ -418,15 +399,9 @@ func (o InstancePoolOutput) ToInstancePoolOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o InstancePoolOutput) ToOutput(ctx context.Context) pulumix.Output[*InstancePool] {
-	return pulumix.Output[*InstancePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
-func (o InstancePoolOutput) ActualSize() pulumi.IntOutput {
-	return o.ApplyT(func(v *InstancePool) pulumi.IntOutput { return v.ActualSize }).(pulumi.IntOutput)
+func (o InstancePoolOutput) ActualSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.IntPtrOutput { return v.ActualSize }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -440,8 +415,8 @@ func (o InstancePoolOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-func (o InstancePoolOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o InstancePoolOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -455,13 +430,13 @@ func (o InstancePoolOutput) InstanceConfigurationId() pulumi.StringOutput {
 }
 
 // (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
-func (o InstancePoolOutput) InstanceDisplayNameFormatter() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.InstanceDisplayNameFormatter }).(pulumi.StringOutput)
+func (o InstancePoolOutput) InstanceDisplayNameFormatter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringPtrOutput { return v.InstanceDisplayNameFormatter }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
-func (o InstancePoolOutput) InstanceHostnameFormatter() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.InstanceHostnameFormatter }).(pulumi.StringOutput)
+func (o InstancePoolOutput) InstanceHostnameFormatter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringPtrOutput { return v.InstanceHostnameFormatter }).(pulumi.StringPtrOutput)
 }
 
 // The load balancers to attach to the instance pool.
@@ -485,13 +460,13 @@ func (o InstancePoolOutput) Size() pulumi.IntOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o InstancePoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o InstancePoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o InstancePoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstancePool) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o InstancePoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePool) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type InstancePoolArrayOutput struct{ *pulumi.OutputState }
@@ -506,12 +481,6 @@ func (o InstancePoolArrayOutput) ToInstancePoolArrayOutput() InstancePoolArrayOu
 
 func (o InstancePoolArrayOutput) ToInstancePoolArrayOutputWithContext(ctx context.Context) InstancePoolArrayOutput {
 	return o
-}
-
-func (o InstancePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstancePool] {
-	return pulumix.Output[[]*InstancePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstancePoolArrayOutput) Index(i pulumi.IntInput) InstancePoolOutput {
@@ -532,12 +501,6 @@ func (o InstancePoolMapOutput) ToInstancePoolMapOutput() InstancePoolMapOutput {
 
 func (o InstancePoolMapOutput) ToInstancePoolMapOutputWithContext(ctx context.Context) InstancePoolMapOutput {
 	return o
-}
-
-func (o InstancePoolMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstancePool] {
-	return pulumix.Output[map[string]*InstancePool]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstancePoolMapOutput) MapIndex(k pulumi.StringInput) InstancePoolOutput {

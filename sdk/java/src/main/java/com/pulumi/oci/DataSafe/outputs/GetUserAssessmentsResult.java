@@ -33,12 +33,12 @@ public final class GetUserAssessmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private List<GetUserAssessmentsIgnoredTarget> ignoredTargets;
+    private @Nullable List<GetUserAssessmentsIgnoredTarget> ignoredTargets;
     /**
      * @return Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      * 
@@ -68,7 +68,7 @@ public final class GetUserAssessmentsResult {
      * @return The list of user_assessments.
      * 
      */
-    private List<GetUserAssessmentsUserAssessment> userAssessments;
+    private @Nullable List<GetUserAssessmentsUserAssessment> userAssessments;
 
     private GetUserAssessmentsResult() {}
     public Optional<String> accessLevel() {
@@ -98,15 +98,15 @@ public final class GetUserAssessmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     public List<GetUserAssessmentsIgnoredTarget> ignoredTargets() {
-        return this.ignoredTargets;
+        return this.ignoredTargets == null ? List.of() : this.ignoredTargets;
     }
     /**
      * @return Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
@@ -156,7 +156,7 @@ public final class GetUserAssessmentsResult {
      * 
      */
     public List<GetUserAssessmentsUserAssessment> userAssessments() {
-        return this.userAssessments;
+        return this.userAssessments == null ? List.of() : this.userAssessments;
     }
 
     public static Builder builder() {
@@ -173,8 +173,8 @@ public final class GetUserAssessmentsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetUserAssessmentsFilter> filters;
-        private String id;
-        private List<GetUserAssessmentsIgnoredTarget> ignoredTargets;
+        private @Nullable String id;
+        private @Nullable List<GetUserAssessmentsIgnoredTarget> ignoredTargets;
         private @Nullable Boolean isBaseline;
         private @Nullable Boolean isScheduleAssessment;
         private @Nullable String scheduleUserAssessmentId;
@@ -184,7 +184,7 @@ public final class GetUserAssessmentsResult {
         private @Nullable String timeCreatedLessThan;
         private @Nullable String triggeredBy;
         private @Nullable String type;
-        private List<GetUserAssessmentsUserAssessment> userAssessments;
+        private @Nullable List<GetUserAssessmentsUserAssessment> userAssessments;
         public Builder() {}
         public Builder(GetUserAssessmentsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -236,13 +236,13 @@ public final class GetUserAssessmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ignoredTargets(List<GetUserAssessmentsIgnoredTarget> ignoredTargets) {
-            this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
+        public Builder ignoredTargets(@Nullable List<GetUserAssessmentsIgnoredTarget> ignoredTargets) {
+            this.ignoredTargets = ignoredTargets;
             return this;
         }
         public Builder ignoredTargets(GetUserAssessmentsIgnoredTarget... ignoredTargets) {
@@ -294,8 +294,8 @@ public final class GetUserAssessmentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder userAssessments(List<GetUserAssessmentsUserAssessment> userAssessments) {
-            this.userAssessments = Objects.requireNonNull(userAssessments);
+        public Builder userAssessments(@Nullable List<GetUserAssessmentsUserAssessment> userAssessments) {
+            this.userAssessments = userAssessments;
             return this;
         }
         public Builder userAssessments(GetUserAssessmentsUserAssessment... userAssessments) {

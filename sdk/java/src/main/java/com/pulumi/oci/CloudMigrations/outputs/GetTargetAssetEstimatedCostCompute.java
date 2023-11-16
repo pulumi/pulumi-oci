@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudMigrations.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetAssetEstimatedCostCompute {
@@ -13,135 +15,135 @@ public final class GetTargetAssetEstimatedCostCompute {
      * @return Total number of GPU
      * 
      */
-    private Double gpuCount;
+    private @Nullable Double gpuCount;
     /**
      * @return GPU per hour
      * 
      */
-    private Double gpuPerHour;
+    private @Nullable Double gpuPerHour;
     /**
      * @return GPU per hour by subscription
      * 
      */
-    private Double gpuPerHourBySubscription;
+    private @Nullable Double gpuPerHourBySubscription;
     /**
      * @return Total usage of memory
      * 
      */
-    private Double memoryAmountGb;
+    private @Nullable Double memoryAmountGb;
     /**
      * @return Gigabyte per hour
      * 
      */
-    private Double memoryGbPerHour;
+    private @Nullable Double memoryGbPerHour;
     /**
      * @return Gigabyte per hour by subscription
      * 
      */
-    private Double memoryGbPerHourBySubscription;
+    private @Nullable Double memoryGbPerHourBySubscription;
     /**
      * @return Total number of OCPUs
      * 
      */
-    private Double ocpuCount;
+    private @Nullable Double ocpuCount;
     /**
      * @return OCPU per hour
      * 
      */
-    private Double ocpuPerHour;
+    private @Nullable Double ocpuPerHour;
     /**
      * @return OCPU per hour by subscription
      * 
      */
-    private Double ocpuPerHourBySubscription;
+    private @Nullable Double ocpuPerHourBySubscription;
     /**
      * @return Total price per hour
      * 
      */
-    private Double totalPerHour;
+    private @Nullable Double totalPerHour;
     /**
      * @return Total price per hour by subscription
      * 
      */
-    private Double totalPerHourBySubscription;
+    private @Nullable Double totalPerHourBySubscription;
 
     private GetTargetAssetEstimatedCostCompute() {}
     /**
      * @return Total number of GPU
      * 
      */
-    public Double gpuCount() {
-        return this.gpuCount;
+    public Optional<Double> gpuCount() {
+        return Optional.ofNullable(this.gpuCount);
     }
     /**
      * @return GPU per hour
      * 
      */
-    public Double gpuPerHour() {
-        return this.gpuPerHour;
+    public Optional<Double> gpuPerHour() {
+        return Optional.ofNullable(this.gpuPerHour);
     }
     /**
      * @return GPU per hour by subscription
      * 
      */
-    public Double gpuPerHourBySubscription() {
-        return this.gpuPerHourBySubscription;
+    public Optional<Double> gpuPerHourBySubscription() {
+        return Optional.ofNullable(this.gpuPerHourBySubscription);
     }
     /**
      * @return Total usage of memory
      * 
      */
-    public Double memoryAmountGb() {
-        return this.memoryAmountGb;
+    public Optional<Double> memoryAmountGb() {
+        return Optional.ofNullable(this.memoryAmountGb);
     }
     /**
      * @return Gigabyte per hour
      * 
      */
-    public Double memoryGbPerHour() {
-        return this.memoryGbPerHour;
+    public Optional<Double> memoryGbPerHour() {
+        return Optional.ofNullable(this.memoryGbPerHour);
     }
     /**
      * @return Gigabyte per hour by subscription
      * 
      */
-    public Double memoryGbPerHourBySubscription() {
-        return this.memoryGbPerHourBySubscription;
+    public Optional<Double> memoryGbPerHourBySubscription() {
+        return Optional.ofNullable(this.memoryGbPerHourBySubscription);
     }
     /**
      * @return Total number of OCPUs
      * 
      */
-    public Double ocpuCount() {
-        return this.ocpuCount;
+    public Optional<Double> ocpuCount() {
+        return Optional.ofNullable(this.ocpuCount);
     }
     /**
      * @return OCPU per hour
      * 
      */
-    public Double ocpuPerHour() {
-        return this.ocpuPerHour;
+    public Optional<Double> ocpuPerHour() {
+        return Optional.ofNullable(this.ocpuPerHour);
     }
     /**
      * @return OCPU per hour by subscription
      * 
      */
-    public Double ocpuPerHourBySubscription() {
-        return this.ocpuPerHourBySubscription;
+    public Optional<Double> ocpuPerHourBySubscription() {
+        return Optional.ofNullable(this.ocpuPerHourBySubscription);
     }
     /**
      * @return Total price per hour
      * 
      */
-    public Double totalPerHour() {
-        return this.totalPerHour;
+    public Optional<Double> totalPerHour() {
+        return Optional.ofNullable(this.totalPerHour);
     }
     /**
      * @return Total price per hour by subscription
      * 
      */
-    public Double totalPerHourBySubscription() {
-        return this.totalPerHourBySubscription;
+    public Optional<Double> totalPerHourBySubscription() {
+        return Optional.ofNullable(this.totalPerHourBySubscription);
     }
 
     public static Builder builder() {
@@ -153,17 +155,17 @@ public final class GetTargetAssetEstimatedCostCompute {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double gpuCount;
-        private Double gpuPerHour;
-        private Double gpuPerHourBySubscription;
-        private Double memoryAmountGb;
-        private Double memoryGbPerHour;
-        private Double memoryGbPerHourBySubscription;
-        private Double ocpuCount;
-        private Double ocpuPerHour;
-        private Double ocpuPerHourBySubscription;
-        private Double totalPerHour;
-        private Double totalPerHourBySubscription;
+        private @Nullable Double gpuCount;
+        private @Nullable Double gpuPerHour;
+        private @Nullable Double gpuPerHourBySubscription;
+        private @Nullable Double memoryAmountGb;
+        private @Nullable Double memoryGbPerHour;
+        private @Nullable Double memoryGbPerHourBySubscription;
+        private @Nullable Double ocpuCount;
+        private @Nullable Double ocpuPerHour;
+        private @Nullable Double ocpuPerHourBySubscription;
+        private @Nullable Double totalPerHour;
+        private @Nullable Double totalPerHourBySubscription;
         public Builder() {}
         public Builder(GetTargetAssetEstimatedCostCompute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -181,58 +183,58 @@ public final class GetTargetAssetEstimatedCostCompute {
         }
 
         @CustomType.Setter
-        public Builder gpuCount(Double gpuCount) {
-            this.gpuCount = Objects.requireNonNull(gpuCount);
+        public Builder gpuCount(@Nullable Double gpuCount) {
+            this.gpuCount = gpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder gpuPerHour(Double gpuPerHour) {
-            this.gpuPerHour = Objects.requireNonNull(gpuPerHour);
+        public Builder gpuPerHour(@Nullable Double gpuPerHour) {
+            this.gpuPerHour = gpuPerHour;
             return this;
         }
         @CustomType.Setter
-        public Builder gpuPerHourBySubscription(Double gpuPerHourBySubscription) {
-            this.gpuPerHourBySubscription = Objects.requireNonNull(gpuPerHourBySubscription);
+        public Builder gpuPerHourBySubscription(@Nullable Double gpuPerHourBySubscription) {
+            this.gpuPerHourBySubscription = gpuPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryAmountGb(Double memoryAmountGb) {
-            this.memoryAmountGb = Objects.requireNonNull(memoryAmountGb);
+        public Builder memoryAmountGb(@Nullable Double memoryAmountGb) {
+            this.memoryAmountGb = memoryAmountGb;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryGbPerHour(Double memoryGbPerHour) {
-            this.memoryGbPerHour = Objects.requireNonNull(memoryGbPerHour);
+        public Builder memoryGbPerHour(@Nullable Double memoryGbPerHour) {
+            this.memoryGbPerHour = memoryGbPerHour;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryGbPerHourBySubscription(Double memoryGbPerHourBySubscription) {
-            this.memoryGbPerHourBySubscription = Objects.requireNonNull(memoryGbPerHourBySubscription);
+        public Builder memoryGbPerHourBySubscription(@Nullable Double memoryGbPerHourBySubscription) {
+            this.memoryGbPerHourBySubscription = memoryGbPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuCount(Double ocpuCount) {
-            this.ocpuCount = Objects.requireNonNull(ocpuCount);
+        public Builder ocpuCount(@Nullable Double ocpuCount) {
+            this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuPerHour(Double ocpuPerHour) {
-            this.ocpuPerHour = Objects.requireNonNull(ocpuPerHour);
+        public Builder ocpuPerHour(@Nullable Double ocpuPerHour) {
+            this.ocpuPerHour = ocpuPerHour;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpuPerHourBySubscription(Double ocpuPerHourBySubscription) {
-            this.ocpuPerHourBySubscription = Objects.requireNonNull(ocpuPerHourBySubscription);
+        public Builder ocpuPerHourBySubscription(@Nullable Double ocpuPerHourBySubscription) {
+            this.ocpuPerHourBySubscription = ocpuPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
-        public Builder totalPerHour(Double totalPerHour) {
-            this.totalPerHour = Objects.requireNonNull(totalPerHour);
+        public Builder totalPerHour(@Nullable Double totalPerHour) {
+            this.totalPerHour = totalPerHour;
             return this;
         }
         @CustomType.Setter
-        public Builder totalPerHourBySubscription(Double totalPerHourBySubscription) {
-            this.totalPerHourBySubscription = Objects.requireNonNull(totalPerHourBySubscription);
+        public Builder totalPerHourBySubscription(@Nullable Double totalPerHourBySubscription) {
+            this.totalPerHourBySubscription = totalPerHourBySubscription;
             return this;
         }
         public GetTargetAssetEstimatedCostCompute build() {

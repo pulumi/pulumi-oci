@@ -32,115 +32,6 @@ class DomainsGrantArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsGrant resource.
-        :param pulumi.Input[str] grant_mechanism: Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsGrantGranteeArgs'] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsGrantAppArgs'] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input['DomainsGrantAppEntitlementCollectionArgs'] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input['DomainsGrantEntitlementArgs'] entitlement: The entitlement or privilege that is being granted
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] granted_attribute_values_json: Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-               
-               **Added In:** 18.3.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
         """
         pulumi.set(__self__, "grant_mechanism", grant_mechanism)
         pulumi.set(__self__, "grantee", grantee)
@@ -170,23 +61,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter(name="grantMechanism")
     def grant_mechanism(self) -> pulumi.Input[str]:
-        """
-        Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "grant_mechanism")
 
     @grant_mechanism.setter
@@ -196,19 +70,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def grantee(self) -> pulumi.Input['DomainsGrantGranteeArgs']:
-        """
-        Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "grantee")
 
     @grantee.setter
@@ -218,9 +79,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Input[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -230,19 +88,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -252,19 +97,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input['DomainsGrantAppArgs']]:
-        """
-        Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -274,20 +106,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter(name="appEntitlementCollection")
     def app_entitlement_collection(self) -> Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']]:
-        """
-        Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-
-        **Added In:** 18.2.4
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app_entitlement_collection")
 
     @app_entitlement_collection.setter
@@ -297,9 +115,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -309,9 +124,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -321,9 +133,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -333,18 +142,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def entitlement(self) -> Optional[pulumi.Input['DomainsGrantEntitlementArgs']]:
-        """
-        The entitlement or privilege that is being granted
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "entitlement")
 
     @entitlement.setter
@@ -354,20 +151,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter(name="grantedAttributeValuesJson")
     def granted_attribute_values_json(self) -> Optional[pulumi.Input[str]]:
-        """
-        Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-
-        **Added In:** 18.3.4
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "granted_attribute_values_json")
 
     @granted_attribute_values_json.setter
@@ -377,19 +160,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -399,9 +169,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -411,19 +178,6 @@ class DomainsGrantArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]:
-        """
-        A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -462,246 +216,6 @@ class _DomainsGrantState:
                  tenancy_ocid: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DomainsGrant resources.
-        :param pulumi.Input['DomainsGrantAppArgs'] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input['DomainsGrantAppEntitlementCollectionArgs'] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] composite_key: (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: server
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsGrantEntitlementArgs'] entitlement: The entitlement or privilege that is being granted
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] grant_mechanism: Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] granted_attribute_values_json: Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-               
-               **Added In:** 18.3.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsGrantGranteeArgs'] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]] grantors: (Updatable) User conferring the grant to the beneficiary
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete: true
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] is_fulfilled: (Updatable) If true, this Grant has been fulfilled successfully.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGrantMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if app is not None:
             pulumi.set(__self__, "app", app)
@@ -759,19 +273,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def app(self) -> Optional[pulumi.Input['DomainsGrantAppArgs']]:
-        """
-        Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app")
 
     @app.setter
@@ -781,20 +282,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="appEntitlementCollection")
     def app_entitlement_collection(self) -> Optional[pulumi.Input['DomainsGrantAppEntitlementCollectionArgs']]:
-        """
-        Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-
-        **Added In:** 18.2.4
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "app_entitlement_collection")
 
     @app_entitlement_collection.setter
@@ -804,9 +291,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -816,9 +300,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -828,9 +309,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -840,19 +318,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="compartmentOcid")
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
@@ -862,21 +327,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="compositeKey")
     def composite_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: server
-        """
         return pulumi.get(self, "composite_key")
 
     @composite_key.setter
@@ -886,19 +336,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="deleteInProgress")
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
@@ -908,19 +345,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="domainOcid")
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
@@ -930,18 +354,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def entitlement(self) -> Optional[pulumi.Input['DomainsGrantEntitlementArgs']]:
-        """
-        The entitlement or privilege that is being granted
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "entitlement")
 
     @entitlement.setter
@@ -951,23 +363,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="grantMechanism")
     def grant_mechanism(self) -> Optional[pulumi.Input[str]]:
-        """
-        Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "grant_mechanism")
 
     @grant_mechanism.setter
@@ -977,20 +372,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="grantedAttributeValuesJson")
     def granted_attribute_values_json(self) -> Optional[pulumi.Input[str]]:
-        """
-        Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-
-        **Added In:** 18.3.4
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "granted_attribute_values_json")
 
     @granted_attribute_values_json.setter
@@ -1000,19 +381,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def grantee(self) -> Optional[pulumi.Input['DomainsGrantGranteeArgs']]:
-        """
-        Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "grantee")
 
     @grantee.setter
@@ -1022,18 +390,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def grantors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantGrantorArgs']]]]:
-        """
-        (Updatable) User conferring the grant to the beneficiary
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete: true
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "grantors")
 
     @grantors.setter
@@ -1043,17 +399,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="idcsCreatedBies")
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsCreatedByArgs']]]]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
@@ -1063,9 +408,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -1075,17 +417,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantIdcsLastModifiedByArgs']]]]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
@@ -1095,19 +426,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
@@ -1117,18 +435,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="idcsPreventedOperations")
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
@@ -1138,18 +444,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="isFulfilled")
     def is_fulfilled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this Grant has been fulfilled successfully.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_fulfilled")
 
     @is_fulfilled.setter
@@ -1159,19 +453,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantMetaArgs']]]]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
         return pulumi.get(self, "metas")
 
     @metas.setter
@@ -1181,19 +462,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -1203,9 +471,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -1215,19 +480,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -1237,19 +489,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGrantTagArgs']]]]:
-        """
-        A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -1259,23 +498,6 @@ class _DomainsGrantState:
     @property
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
@@ -1304,129 +526,9 @@ class DomainsGrant(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Add a Grantee to an AppRole
-
-        ## Import
-
-        Grants can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
-        ```
-
+        Create a DomainsGrant resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']] entitlement: The entitlement or privilege that is being granted
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] grant_mechanism: Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] granted_attribute_values_json: Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-               
-               **Added In:** 18.3.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
         """
         ...
     @overload
@@ -1435,18 +537,7 @@ class DomainsGrant(pulumi.CustomResource):
                  args: DomainsGrantArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Add a Grantee to an AppRole
-
-        ## Import
-
-        Grants can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsGrant:DomainsGrant test_grant "idcsEndpoint/{idcsEndpoint}/grants/{grantId}"
-        ```
-
+        Create a DomainsGrant resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainsGrantArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1562,246 +653,6 @@ class DomainsGrant(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppArgs']] app: Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantAppEntitlementCollectionArgs']] app_entitlement_collection: Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] composite_key: (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: server
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantEntitlementArgs']] entitlement: The entitlement or privilege that is being granted
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] grant_mechanism: Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-               * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-               * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-               * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] granted_attribute_values_json: Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-               
-               **Added In:** 18.3.4
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsGrantGranteeArgs']] grantee: Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-               
-               **SCIM++ Properties:**
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantGrantorArgs']]]] grantors: (Updatable) User conferring the grant to the beneficiary
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete: true
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] is_fulfilled: (Updatable) If true, this Grant has been fulfilled successfully.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsGrantTagArgs']]]] tags: A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1837,423 +688,131 @@ class DomainsGrant(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def app(self) -> pulumi.Output['outputs.DomainsGrantApp']:
-        """
-        Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:App Name, defaultValue:jobParam:appDisplayName, mapsTo:app.value]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def app(self) -> pulumi.Output[Optional['outputs.DomainsGrantApp']]:
         return pulumi.get(self, "app")
 
     @property
     @pulumi.getter(name="appEntitlementCollection")
-    def app_entitlement_collection(self) -> pulumi.Output['outputs.DomainsGrantAppEntitlementCollection']:
-        """
-        Application-Entitlement-Collection that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
-
-        **Added In:** 18.2.4
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def app_entitlement_collection(self) -> pulumi.Output[Optional['outputs.DomainsGrantAppEntitlementCollection']]:
         return pulumi.get(self, "app_entitlement_collection")
 
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @property
     @pulumi.getter
     def attributes(self) -> pulumi.Output[Optional[str]]:
-        """
-        A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[str]]:
-        """
-        The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def compartment_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="compositeKey")
-    def composite_key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Unique key of grant, composed by combining a subset of app, entitlement, grantee, grantor and grantMechanism.  Used to prevent duplicate Grants.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: server
-        """
+    def composite_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "composite_key")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def delete_in_progress(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def domain_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
-    def entitlement(self) -> pulumi.Output['outputs.DomainsGrantEntitlement']:
-        """
-        The entitlement or privilege that is being granted
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Entitlement Value, csvColumnForResolvingResourceType:Entitlement Name, mapsTo:entitlement.attributeValue, referencedResourceTypeUniqueAttributeNameMappings:[[mapsFromColumnName:Entitlement Value, resourceTypeAttributeName:displayName], [mapsFromColumnName:App Name, resourceTypeAttributeName:app.display]], resolveValueUsingResourceType:[[resolveBy:AppRole, valueToBeResolved:appRoles]]], [columnHeaderName:Entitlement Name, defaultValue:appRoles, mapsTo:entitlement.attributeName]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def entitlement(self) -> pulumi.Output[Optional['outputs.DomainsGrantEntitlement']]:
         return pulumi.get(self, "entitlement")
 
     @property
     @pulumi.getter(name="grantMechanism")
     def grant_mechanism(self) -> pulumi.Output[str]:
-        """
-        Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
-        * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
-        * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
-        * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCsvAttributeNameMappings: [[defaultValue:IMPORT_GRANTS]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "grant_mechanism")
 
     @property
     @pulumi.getter(name="grantedAttributeValuesJson")
-    def granted_attribute_values_json(self) -> pulumi.Output[str]:
-        """
-        Store granted attribute-values as a string in Javascript Object Notation (JSON) format.
-
-        **Added In:** 18.3.4
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def granted_attribute_values_json(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "granted_attribute_values_json")
 
     @property
     @pulumi.getter
     def grantee(self) -> pulumi.Output['outputs.DomainsGrantGrantee']:
-        """
-        Grantee beneficiary. The grantee may be a User, Group, App or DynamicResourceGroup.
-
-        **SCIM++ Properties:**
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Grantee Name, csvColumnForResolvingResourceType:Grantee Type, mapsTo:grantee.value], [columnHeaderName:Grantee Type, mapsTo:grantee.type]]
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "grantee")
 
     @property
     @pulumi.getter
-    def grantors(self) -> pulumi.Output[Sequence['outputs.DomainsGrantGrantor']]:
-        """
-        (Updatable) User conferring the grant to the beneficiary
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * idcsIgnoreReadOnlyAndImmutableRefAttrsDuringForceDelete: true
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def grantors(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGrantGrantor']]]:
         return pulumi.get(self, "grantors")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsGrantIdcsCreatedBy']]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
+    def idcs_created_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGrantIdcsCreatedBy']]]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Output[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsGrantIdcsLastModifiedBy']]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def idcs_last_modified_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGrantIdcsLastModifiedBy']]]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_last_upgraded_in_release(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_prevented_operations(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="isFulfilled")
-    def is_fulfilled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this Grant has been fulfilled successfully.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_fulfilled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_fulfilled")
 
     @property
     @pulumi.getter
-    def metas(self) -> pulumi.Output[Sequence['outputs.DomainsGrantMeta']]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
+    def metas(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGrantMeta']]]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
-    def ocid(self) -> pulumi.Output[str]:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
+    def ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> pulumi.Output[str]:
-        """
-        An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
+    def resource_type_schema_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_type_schema_version")
 
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Output[Sequence[str]]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[Sequence['outputs.DomainsGrantTag']]:
-        """
-        A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def tags(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsGrantTag']]]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def tenancy_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_ocid")
 

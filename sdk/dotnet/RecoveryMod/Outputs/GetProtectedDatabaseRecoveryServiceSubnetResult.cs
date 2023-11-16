@@ -16,17 +16,17 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// <summary>
         /// Recovery Service Subnet Identifier.
         /// </summary>
-        public readonly string RecoveryServiceSubnetId;
+        public readonly string? RecoveryServiceSubnetId;
         /// <summary>
         /// The current state of the Protected Database.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetProtectedDatabaseRecoveryServiceSubnetResult(
-            string recoveryServiceSubnetId,
+            string? recoveryServiceSubnetId,
 
-            string state)
+            string? state)
         {
             RecoveryServiceSubnetId = recoveryServiceSubnetId;
             State = state;

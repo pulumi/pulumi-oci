@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccInfrastructureInfrastructureInventory {
@@ -14,63 +16,63 @@ public final class GetAtCustomerCccInfrastructureInfrastructureInventory {
      * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
      * 
      */
-    private Integer capacityStorageTrayCount;
+    private @Nullable Integer capacityStorageTrayCount;
     /**
      * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
-    private Integer computeNodeCount;
+    private @Nullable Integer computeNodeCount;
     /**
      * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
      * 
      */
-    private Integer managementNodeCount;
+    private @Nullable Integer managementNodeCount;
     /**
      * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
      * 
      */
-    private Integer performanceStorageTrayCount;
+    private @Nullable Integer performanceStorageTrayCount;
     /**
      * @return The serial number of the Compute Cloud@Customer infrastructure rack.
      * 
      */
-    private String serialNumber;
+    private @Nullable String serialNumber;
 
     private GetAtCustomerCccInfrastructureInfrastructureInventory() {}
     /**
      * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
      * 
      */
-    public Integer capacityStorageTrayCount() {
-        return this.capacityStorageTrayCount;
+    public Optional<Integer> capacityStorageTrayCount() {
+        return Optional.ofNullable(this.capacityStorageTrayCount);
     }
     /**
      * @return The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
      * 
      */
-    public Integer computeNodeCount() {
-        return this.computeNodeCount;
+    public Optional<Integer> computeNodeCount() {
+        return Optional.ofNullable(this.computeNodeCount);
     }
     /**
      * @return The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
      * 
      */
-    public Integer managementNodeCount() {
-        return this.managementNodeCount;
+    public Optional<Integer> managementNodeCount() {
+        return Optional.ofNullable(this.managementNodeCount);
     }
     /**
      * @return The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
      * 
      */
-    public Integer performanceStorageTrayCount() {
-        return this.performanceStorageTrayCount;
+    public Optional<Integer> performanceStorageTrayCount() {
+        return Optional.ofNullable(this.performanceStorageTrayCount);
     }
     /**
      * @return The serial number of the Compute Cloud@Customer infrastructure rack.
      * 
      */
-    public String serialNumber() {
-        return this.serialNumber;
+    public Optional<String> serialNumber() {
+        return Optional.ofNullable(this.serialNumber);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetAtCustomerCccInfrastructureInfrastructureInventory {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer capacityStorageTrayCount;
-        private Integer computeNodeCount;
-        private Integer managementNodeCount;
-        private Integer performanceStorageTrayCount;
-        private String serialNumber;
+        private @Nullable Integer capacityStorageTrayCount;
+        private @Nullable Integer computeNodeCount;
+        private @Nullable Integer managementNodeCount;
+        private @Nullable Integer performanceStorageTrayCount;
+        private @Nullable String serialNumber;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructureInfrastructureInventory defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetAtCustomerCccInfrastructureInfrastructureInventory {
         }
 
         @CustomType.Setter
-        public Builder capacityStorageTrayCount(Integer capacityStorageTrayCount) {
-            this.capacityStorageTrayCount = Objects.requireNonNull(capacityStorageTrayCount);
+        public Builder capacityStorageTrayCount(@Nullable Integer capacityStorageTrayCount) {
+            this.capacityStorageTrayCount = capacityStorageTrayCount;
             return this;
         }
         @CustomType.Setter
-        public Builder computeNodeCount(Integer computeNodeCount) {
-            this.computeNodeCount = Objects.requireNonNull(computeNodeCount);
+        public Builder computeNodeCount(@Nullable Integer computeNodeCount) {
+            this.computeNodeCount = computeNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder managementNodeCount(Integer managementNodeCount) {
-            this.managementNodeCount = Objects.requireNonNull(managementNodeCount);
+        public Builder managementNodeCount(@Nullable Integer managementNodeCount) {
+            this.managementNodeCount = managementNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder performanceStorageTrayCount(Integer performanceStorageTrayCount) {
-            this.performanceStorageTrayCount = Objects.requireNonNull(performanceStorageTrayCount);
+        public Builder performanceStorageTrayCount(@Nullable Integer performanceStorageTrayCount) {
+            this.performanceStorageTrayCount = performanceStorageTrayCount;
             return this;
         }
         @CustomType.Setter
-        public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+        public Builder serialNumber(@Nullable String serialNumber) {
+            this.serialNumber = serialNumber;
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureInventory build() {

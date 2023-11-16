@@ -64,11 +64,11 @@ export interface GetVantagePointResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of PublicVantagePointSummary items.
      */
-    readonly items: outputs.ApmSynthetics.GetVantagePointItem[];
+    readonly items?: outputs.ApmSynthetics.GetVantagePointItem[];
     /**
      * Unique permanent name of the vantage point.
      */

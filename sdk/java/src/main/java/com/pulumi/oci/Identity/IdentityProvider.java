@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -103,14 +104,14 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it&#39;s changeable.
@@ -131,42 +132,42 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformAttributes", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformAttributes;
+    private Output</* @Nullable */ Map<String,Object>> freeformAttributes;
 
     /**
      * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformAttributes() {
-        return this.freeformAttributes;
+    public Output<Optional<Map<String,Object>>> freeformAttributes() {
+        return Codegen.optional(this.freeformAttributes);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
     @Export(name="inactiveState", refs={String.class}, tree="[0]")
-    private Output<String> inactiveState;
+    private Output</* @Nullable */ String> inactiveState;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveState() {
-        return this.inactiveState;
+    public Output<Optional<String>> inactiveState() {
+        return Codegen.optional(this.inactiveState);
     }
     /**
      * (Updatable) The XML that contains the information required for federating.
@@ -249,56 +250,56 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="redirectUrl", refs={String.class}, tree="[0]")
-    private Output<String> redirectUrl;
+    private Output</* @Nullable */ String> redirectUrl;
 
     /**
      * @return The URL to redirect federated users to for authentication with the identity provider.
      * 
      */
-    public Output<String> redirectUrl() {
-        return this.redirectUrl;
+    public Output<Optional<String>> redirectUrl() {
+        return Codegen.optional(this.redirectUrl);
     }
     /**
      * The identity provider&#39;s signing certificate used by the IAM Service to validate the SAML2 token.
      * 
      */
     @Export(name="signingCertificate", refs={String.class}, tree="[0]")
-    private Output<String> signingCertificate;
+    private Output</* @Nullable */ String> signingCertificate;
 
     /**
      * @return The identity provider&#39;s signing certificate used by the IAM Service to validate the SAML2 token.
      * 
      */
-    public Output<String> signingCertificate() {
-        return this.signingCertificate;
+    public Output<Optional<String>> signingCertificate() {
+        return Codegen.optional(this.signingCertificate);
     }
     /**
      * The current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the `IdentityProvider` was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

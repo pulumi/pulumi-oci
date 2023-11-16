@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpsiConfigurationsOpsiConfigurationsCollection {
-    private List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items;
+    private @Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items;
 
     private GetOpsiConfigurationsOpsiConfigurationsCollection() {}
     public List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items;
+        private @Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items;
         public Builder() {}
         public Builder(GetOpsiConfigurationsOpsiConfigurationsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOpsiConfigurationsOpsiConfigurationsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOpsiConfigurationsOpsiConfigurationsCollectionItem... items) {

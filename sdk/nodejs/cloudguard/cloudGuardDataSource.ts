@@ -91,11 +91,11 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
     /**
      * (Updatable) Details specific to the data source type.
      */
-    public readonly dataSourceDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetails>;
+    public readonly dataSourceDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetails | undefined>;
     /**
      * Information about the detector recipe and rule attached
      */
-    public /*out*/ readonly dataSourceDetectorMappingInfos!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo[]>;
+    public /*out*/ readonly dataSourceDetectorMappingInfos!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo[] | undefined>;
     /**
      * Possible type of dataSourceFeed Provider(LoggingQuery)
      */
@@ -103,7 +103,7 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Data Source display name.
      */
@@ -117,31 +117,31 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Information about the region and status of query replication
      */
-    public /*out*/ readonly regionStatusDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail[]>;
+    public /*out*/ readonly regionStatusDetails!: pulumi.Output<outputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail[] | undefined>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Status of data Source
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the Data source was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Data source was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CloudGuardDataSource resource with the given unique name, arguments, and options.

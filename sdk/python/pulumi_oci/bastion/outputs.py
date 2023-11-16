@@ -44,17 +44,11 @@ class SessionKeyDetails(dict):
 
     def __init__(__self__, *,
                  public_key_content: str):
-        """
-        :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
         pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
     def public_key_content(self) -> str:
-        """
-        The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
         return pulumi.get(self, "public_key_content")
 
 
@@ -97,19 +91,6 @@ class SessionTargetResourceDetails(dict):
                  target_resource_operating_system_user_name: Optional[str] = None,
                  target_resource_port: Optional[int] = None,
                  target_resource_private_ip_address: Optional[str] = None):
-        """
-        :param str session_type: The session type.
-        :param str target_resource_display_name: The display name of the target Compute instance that the session connects to.
-        :param str target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
-        :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        :param str target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
-        :param int target_resource_port: The port number to connect to on the target resource.
-        :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "session_type", session_type)
         if target_resource_display_name is not None:
             pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
@@ -127,288 +108,201 @@ class SessionTargetResourceDetails(dict):
     @property
     @pulumi.getter(name="sessionType")
     def session_type(self) -> str:
-        """
-        The session type.
-        """
         return pulumi.get(self, "session_type")
 
     @property
     @pulumi.getter(name="targetResourceDisplayName")
     def target_resource_display_name(self) -> Optional[str]:
-        """
-        The display name of the target Compute instance that the session connects to.
-        """
         return pulumi.get(self, "target_resource_display_name")
 
     @property
     @pulumi.getter(name="targetResourceFqdn")
     def target_resource_fqdn(self) -> Optional[str]:
-        """
-        The Fully Qualified Domain Name of the target resource that the session connects to.
-        """
         return pulumi.get(self, "target_resource_fqdn")
 
     @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[str]:
-        """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        """
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceOperatingSystemUserName")
     def target_resource_operating_system_user_name(self) -> Optional[str]:
-        """
-        The name of the user on the target resource operating system that the session uses for the connection.
-        """
         return pulumi.get(self, "target_resource_operating_system_user_name")
 
     @property
     @pulumi.getter(name="targetResourcePort")
     def target_resource_port(self) -> Optional[int]:
-        """
-        The port number to connect to on the target resource.
-        """
         return pulumi.get(self, "target_resource_port")
 
     @property
     @pulumi.getter(name="targetResourcePrivateIpAddress")
     def target_resource_private_ip_address(self) -> Optional[str]:
-        """
-        The private IP address of the target resource that the session connects to.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_resource_private_ip_address")
 
 
 @pulumi.output_type
 class GetBastionsBastionResult(dict):
     def __init__(__self__, *,
-                 bastion_type: str,
-                 client_cidr_block_allow_lists: Sequence[str],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 dns_proxy_status: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 max_session_ttl_in_seconds: int,
-                 max_sessions_allowed: int,
-                 name: str,
-                 phone_book_entry: str,
-                 private_endpoint_ip_address: str,
-                 state: str,
-                 static_jump_host_ip_addresses: Sequence[str],
-                 system_tags: Mapping[str, Any],
-                 target_subnet_id: str,
-                 target_vcn_id: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str bastion_type: The type of bastion.
-        :param Sequence[str] client_cidr_block_allow_lists: A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        :param str compartment_id: The unique identifier (OCID) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The unique identifier (OCID) of the bastion, which can't be changed after creation.
-        :param str lifecycle_details: A message describing the current state in more detail.
-        :param int max_session_ttl_in_seconds: The maximum amount of time that any session on the bastion can remain active.
-        :param int max_sessions_allowed: The maximum number of active sessions allowed on the bastion.
-        :param str name: A filter to return only resources that match the entire name given.
-        :param str phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        :param str private_endpoint_ip_address: The private IP address of the created private endpoint.
-        :param str state: The current state of the bastion.
-        :param Sequence[str] static_jump_host_ip_addresses: A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
-        :param str target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        :param str time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        :param str time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "bastion_type", bastion_type)
-        pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_session_ttl_in_seconds", max_session_ttl_in_seconds)
-        pulumi.set(__self__, "max_sessions_allowed", max_sessions_allowed)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone_book_entry", phone_book_entry)
-        pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_subnet_id", target_subnet_id)
-        pulumi.set(__self__, "target_vcn_id", target_vcn_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 bastion_type: Optional[str] = None,
+                 client_cidr_block_allow_lists: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 dns_proxy_status: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 max_session_ttl_in_seconds: Optional[int] = None,
+                 max_sessions_allowed: Optional[int] = None,
+                 name: Optional[str] = None,
+                 phone_book_entry: Optional[str] = None,
+                 private_endpoint_ip_address: Optional[str] = None,
+                 state: Optional[str] = None,
+                 static_jump_host_ip_addresses: Optional[Sequence[str]] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 target_subnet_id: Optional[str] = None,
+                 target_vcn_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if bastion_type is not None:
+            pulumi.set(__self__, "bastion_type", bastion_type)
+        if client_cidr_block_allow_lists is not None:
+            pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if dns_proxy_status is not None:
+            pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if max_session_ttl_in_seconds is not None:
+            pulumi.set(__self__, "max_session_ttl_in_seconds", max_session_ttl_in_seconds)
+        if max_sessions_allowed is not None:
+            pulumi.set(__self__, "max_sessions_allowed", max_sessions_allowed)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone_book_entry is not None:
+            pulumi.set(__self__, "phone_book_entry", phone_book_entry)
+        if private_endpoint_ip_address is not None:
+            pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if static_jump_host_ip_addresses is not None:
+            pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if target_subnet_id is not None:
+            pulumi.set(__self__, "target_subnet_id", target_subnet_id)
+        if target_vcn_id is not None:
+            pulumi.set(__self__, "target_vcn_id", target_vcn_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionType")
-    def bastion_type(self) -> str:
-        """
-        The type of bastion.
-        """
+    def bastion_type(self) -> Optional[str]:
         return pulumi.get(self, "bastion_type")
 
     @property
     @pulumi.getter(name="clientCidrBlockAllowLists")
-    def client_cidr_block_allow_lists(self) -> Sequence[str]:
-        """
-        A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
-        """
+    def client_cidr_block_allow_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "client_cidr_block_allow_lists")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The unique identifier (OCID) of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dnsProxyStatus")
-    def dns_proxy_status(self) -> str:
-        """
-        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        """
+    def dns_proxy_status(self) -> Optional[str]:
         return pulumi.get(self, "dns_proxy_status")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier (OCID) of the bastion, which can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxSessionTtlInSeconds")
-    def max_session_ttl_in_seconds(self) -> int:
-        """
-        The maximum amount of time that any session on the bastion can remain active.
-        """
+    def max_session_ttl_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "max_session_ttl_in_seconds")
 
     @property
     @pulumi.getter(name="maxSessionsAllowed")
-    def max_sessions_allowed(self) -> int:
-        """
-        The maximum number of active sessions allowed on the bastion.
-        """
+    def max_sessions_allowed(self) -> Optional[int]:
         return pulumi.get(self, "max_sessions_allowed")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="phoneBookEntry")
-    def phone_book_entry(self) -> str:
-        """
-        The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
-        """
+    def phone_book_entry(self) -> Optional[str]:
         return pulumi.get(self, "phone_book_entry")
 
     @property
     @pulumi.getter(name="privateEndpointIpAddress")
-    def private_endpoint_ip_address(self) -> str:
-        """
-        The private IP address of the created private endpoint.
-        """
+    def private_endpoint_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip_address")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the bastion.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="staticJumpHostIpAddresses")
-    def static_jump_host_ip_addresses(self) -> Sequence[str]:
-        """
-        A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        """
+    def static_jump_host_ip_addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "static_jump_host_ip_addresses")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetSubnetId")
-    def target_subnet_id(self) -> str:
-        """
-        The unique identifier (OCID) of the subnet that the bastion connects to.
-        """
+    def target_subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "target_subnet_id")
 
     @property
     @pulumi.getter(name="targetVcnId")
-    def target_vcn_id(self) -> str:
-        """
-        The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
-        """
+    def target_vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "target_vcn_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -418,9 +312,6 @@ class GetBastionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -429,9 +320,6 @@ class GetBastionsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -448,102 +336,74 @@ class GetBastionsFilterResult(dict):
 @pulumi.output_type
 class GetSessionKeyDetailResult(dict):
     def __init__(__self__, *,
-                 public_key_content: str):
-        """
-        :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
-        pulumi.set(__self__, "public_key_content", public_key_content)
+                 public_key_content: Optional[str] = None):
+        if public_key_content is not None:
+            pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
-    def public_key_content(self) -> str:
-        """
-        The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
+    def public_key_content(self) -> Optional[str]:
         return pulumi.get(self, "public_key_content")
 
 
 @pulumi.output_type
 class GetSessionTargetResourceDetailResult(dict):
     def __init__(__self__, *,
-                 session_type: str,
-                 target_resource_display_name: str,
-                 target_resource_fqdn: str,
-                 target_resource_id: str,
-                 target_resource_operating_system_user_name: str,
-                 target_resource_port: int,
-                 target_resource_private_ip_address: str):
-        """
-        :param str session_type: The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-        :param str target_resource_display_name: The display name of the target Compute instance that the session connects to.
-        :param str target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
-        :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        :param str target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
-        :param int target_resource_port: The port number to connect to on the target resource.
-        :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
-        """
-        pulumi.set(__self__, "session_type", session_type)
-        pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
-        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
-        pulumi.set(__self__, "target_resource_id", target_resource_id)
-        pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
-        pulumi.set(__self__, "target_resource_port", target_resource_port)
-        pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
+                 session_type: Optional[str] = None,
+                 target_resource_display_name: Optional[str] = None,
+                 target_resource_fqdn: Optional[str] = None,
+                 target_resource_id: Optional[str] = None,
+                 target_resource_operating_system_user_name: Optional[str] = None,
+                 target_resource_port: Optional[int] = None,
+                 target_resource_private_ip_address: Optional[str] = None):
+        if session_type is not None:
+            pulumi.set(__self__, "session_type", session_type)
+        if target_resource_display_name is not None:
+            pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        if target_resource_fqdn is not None:
+            pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
+        if target_resource_id is not None:
+            pulumi.set(__self__, "target_resource_id", target_resource_id)
+        if target_resource_operating_system_user_name is not None:
+            pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+        if target_resource_port is not None:
+            pulumi.set(__self__, "target_resource_port", target_resource_port)
+        if target_resource_private_ip_address is not None:
+            pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")
-    def session_type(self) -> str:
-        """
-        The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-        """
+    def session_type(self) -> Optional[str]:
         return pulumi.get(self, "session_type")
 
     @property
     @pulumi.getter(name="targetResourceDisplayName")
-    def target_resource_display_name(self) -> str:
-        """
-        The display name of the target Compute instance that the session connects to.
-        """
+    def target_resource_display_name(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_display_name")
 
     @property
     @pulumi.getter(name="targetResourceFqdn")
-    def target_resource_fqdn(self) -> str:
-        """
-        The Fully Qualified Domain Name of the target resource that the session connects to.
-        """
+    def target_resource_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_fqdn")
 
     @property
     @pulumi.getter(name="targetResourceId")
-    def target_resource_id(self) -> str:
-        """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        """
+    def target_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceOperatingSystemUserName")
-    def target_resource_operating_system_user_name(self) -> str:
-        """
-        The name of the user on the target resource operating system that the session uses for the connection.
-        """
+    def target_resource_operating_system_user_name(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_operating_system_user_name")
 
     @property
     @pulumi.getter(name="targetResourcePort")
-    def target_resource_port(self) -> int:
-        """
-        The port number to connect to on the target resource.
-        """
+    def target_resource_port(self) -> Optional[int]:
         return pulumi.get(self, "target_resource_port")
 
     @property
     @pulumi.getter(name="targetResourcePrivateIpAddress")
-    def target_resource_private_ip_address(self) -> str:
-        """
-        The private IP address of the target resource that the session connects to.
-        """
+    def target_resource_private_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_private_ip_address")
 
 
@@ -577,274 +437,199 @@ class GetSessionsFilterResult(dict):
 @pulumi.output_type
 class GetSessionsSessionResult(dict):
     def __init__(__self__, *,
-                 bastion_id: str,
-                 bastion_name: str,
-                 bastion_public_host_key_info: str,
-                 bastion_user_name: str,
-                 display_name: str,
-                 id: str,
-                 key_details: Sequence['outputs.GetSessionsSessionKeyDetailResult'],
-                 key_type: str,
-                 lifecycle_details: str,
-                 session_ttl_in_seconds: int,
-                 ssh_metadata: Mapping[str, Any],
-                 state: str,
-                 target_resource_details: Sequence['outputs.GetSessionsSessionTargetResourceDetailResult'],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str bastion_id: The unique identifier (OCID) of the bastion in which to list sessions.
-        :param str bastion_name: The name of the bastion that is hosting this session.
-        :param str bastion_public_host_key_info: The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        :param str bastion_user_name: The username that the session uses to connect to the target resource.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param str id: The unique identifier (OCID) of the session, which can't be changed after creation.
-        :param Sequence['GetSessionsSessionKeyDetailArgs'] key_details: Public key details for a bastion session.
-        :param str key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        :param str lifecycle_details: A message describing the current session state in more detail.
-        :param int session_ttl_in_seconds: The amount of time the session can remain active.
-        :param Mapping[str, Any] ssh_metadata: The connection message for the session.
-        :param str state: The current state of the session.
-        :param Sequence['GetSessionsSessionTargetResourceDetailArgs'] target_resource_details: Details about a bastion session's target resource.
-        :param str time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        :param str time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "bastion_id", bastion_id)
-        pulumi.set(__self__, "bastion_name", bastion_name)
-        pulumi.set(__self__, "bastion_public_host_key_info", bastion_public_host_key_info)
-        pulumi.set(__self__, "bastion_user_name", bastion_user_name)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "key_details", key_details)
-        pulumi.set(__self__, "key_type", key_type)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "session_ttl_in_seconds", session_ttl_in_seconds)
-        pulumi.set(__self__, "ssh_metadata", ssh_metadata)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_resource_details", target_resource_details)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 bastion_id: Optional[str] = None,
+                 bastion_name: Optional[str] = None,
+                 bastion_public_host_key_info: Optional[str] = None,
+                 bastion_user_name: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 key_details: Optional[Sequence['outputs.GetSessionsSessionKeyDetailResult']] = None,
+                 key_type: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 session_ttl_in_seconds: Optional[int] = None,
+                 ssh_metadata: Optional[Mapping[str, Any]] = None,
+                 state: Optional[str] = None,
+                 target_resource_details: Optional[Sequence['outputs.GetSessionsSessionTargetResourceDetailResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if bastion_id is not None:
+            pulumi.set(__self__, "bastion_id", bastion_id)
+        if bastion_name is not None:
+            pulumi.set(__self__, "bastion_name", bastion_name)
+        if bastion_public_host_key_info is not None:
+            pulumi.set(__self__, "bastion_public_host_key_info", bastion_public_host_key_info)
+        if bastion_user_name is not None:
+            pulumi.set(__self__, "bastion_user_name", bastion_user_name)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if key_details is not None:
+            pulumi.set(__self__, "key_details", key_details)
+        if key_type is not None:
+            pulumi.set(__self__, "key_type", key_type)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if session_ttl_in_seconds is not None:
+            pulumi.set(__self__, "session_ttl_in_seconds", session_ttl_in_seconds)
+        if ssh_metadata is not None:
+            pulumi.set(__self__, "ssh_metadata", ssh_metadata)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if target_resource_details is not None:
+            pulumi.set(__self__, "target_resource_details", target_resource_details)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionId")
-    def bastion_id(self) -> str:
-        """
-        The unique identifier (OCID) of the bastion in which to list sessions.
-        """
+    def bastion_id(self) -> Optional[str]:
         return pulumi.get(self, "bastion_id")
 
     @property
     @pulumi.getter(name="bastionName")
-    def bastion_name(self) -> str:
-        """
-        The name of the bastion that is hosting this session.
-        """
+    def bastion_name(self) -> Optional[str]:
         return pulumi.get(self, "bastion_name")
 
     @property
     @pulumi.getter(name="bastionPublicHostKeyInfo")
-    def bastion_public_host_key_info(self) -> str:
-        """
-        The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
-        """
+    def bastion_public_host_key_info(self) -> Optional[str]:
         return pulumi.get(self, "bastion_public_host_key_info")
 
     @property
     @pulumi.getter(name="bastionUserName")
-    def bastion_user_name(self) -> str:
-        """
-        The username that the session uses to connect to the target resource.
-        """
+    def bastion_user_name(self) -> Optional[str]:
         return pulumi.get(self, "bastion_user_name")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique identifier (OCID) of the session, which can't be changed after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyDetails")
-    def key_details(self) -> Sequence['outputs.GetSessionsSessionKeyDetailResult']:
-        """
-        Public key details for a bastion session.
-        """
+    def key_details(self) -> Optional[Sequence['outputs.GetSessionsSessionKeyDetailResult']]:
         return pulumi.get(self, "key_details")
 
     @property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> str:
-        """
-        The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
-        """
+    def key_type(self) -> Optional[str]:
         return pulumi.get(self, "key_type")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current session state in more detail.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="sessionTtlInSeconds")
-    def session_ttl_in_seconds(self) -> int:
-        """
-        The amount of time the session can remain active.
-        """
+    def session_ttl_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "session_ttl_in_seconds")
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> Mapping[str, Any]:
-        """
-        The connection message for the session.
-        """
+    def ssh_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "ssh_metadata")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the session.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetResourceDetails")
-    def target_resource_details(self) -> Sequence['outputs.GetSessionsSessionTargetResourceDetailResult']:
-        """
-        Details about a bastion session's target resource.
-        """
+    def target_resource_details(self) -> Optional[Sequence['outputs.GetSessionsSessionTargetResourceDetailResult']]:
         return pulumi.get(self, "target_resource_details")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetSessionsSessionKeyDetailResult(dict):
     def __init__(__self__, *,
-                 public_key_content: str):
-        """
-        :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
-        pulumi.set(__self__, "public_key_content", public_key_content)
+                 public_key_content: Optional[str] = None):
+        if public_key_content is not None:
+            pulumi.set(__self__, "public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
-    def public_key_content(self) -> str:
-        """
-        The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
+    def public_key_content(self) -> Optional[str]:
         return pulumi.get(self, "public_key_content")
 
 
 @pulumi.output_type
 class GetSessionsSessionTargetResourceDetailResult(dict):
     def __init__(__self__, *,
-                 session_type: str,
-                 target_resource_display_name: str,
-                 target_resource_fqdn: str,
-                 target_resource_id: str,
-                 target_resource_operating_system_user_name: str,
-                 target_resource_port: int,
-                 target_resource_private_ip_address: str):
-        """
-        :param str session_type: The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-        :param str target_resource_display_name: The display name of the target Compute instance that the session connects to.
-        :param str target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
-        :param str target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        :param str target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
-        :param int target_resource_port: The port number to connect to on the target resource.
-        :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
-        """
-        pulumi.set(__self__, "session_type", session_type)
-        pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
-        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
-        pulumi.set(__self__, "target_resource_id", target_resource_id)
-        pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
-        pulumi.set(__self__, "target_resource_port", target_resource_port)
-        pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
+                 session_type: Optional[str] = None,
+                 target_resource_display_name: Optional[str] = None,
+                 target_resource_fqdn: Optional[str] = None,
+                 target_resource_id: Optional[str] = None,
+                 target_resource_operating_system_user_name: Optional[str] = None,
+                 target_resource_port: Optional[int] = None,
+                 target_resource_private_ip_address: Optional[str] = None):
+        if session_type is not None:
+            pulumi.set(__self__, "session_type", session_type)
+        if target_resource_display_name is not None:
+            pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        if target_resource_fqdn is not None:
+            pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
+        if target_resource_id is not None:
+            pulumi.set(__self__, "target_resource_id", target_resource_id)
+        if target_resource_operating_system_user_name is not None:
+            pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+        if target_resource_port is not None:
+            pulumi.set(__self__, "target_resource_port", target_resource_port)
+        if target_resource_private_ip_address is not None:
+            pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")
-    def session_type(self) -> str:
-        """
-        The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
-        """
+    def session_type(self) -> Optional[str]:
         return pulumi.get(self, "session_type")
 
     @property
     @pulumi.getter(name="targetResourceDisplayName")
-    def target_resource_display_name(self) -> str:
-        """
-        The display name of the target Compute instance that the session connects to.
-        """
+    def target_resource_display_name(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_display_name")
 
     @property
     @pulumi.getter(name="targetResourceFqdn")
-    def target_resource_fqdn(self) -> str:
-        """
-        The Fully Qualified Domain Name of the target resource that the session connects to.
-        """
+    def target_resource_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_fqdn")
 
     @property
     @pulumi.getter(name="targetResourceId")
-    def target_resource_id(self) -> str:
-        """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        """
+    def target_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_id")
 
     @property
     @pulumi.getter(name="targetResourceOperatingSystemUserName")
-    def target_resource_operating_system_user_name(self) -> str:
-        """
-        The name of the user on the target resource operating system that the session uses for the connection.
-        """
+    def target_resource_operating_system_user_name(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_operating_system_user_name")
 
     @property
     @pulumi.getter(name="targetResourcePort")
-    def target_resource_port(self) -> int:
-        """
-        The port number to connect to on the target resource.
-        """
+    def target_resource_port(self) -> Optional[int]:
         return pulumi.get(self, "target_resource_port")
 
     @property
     @pulumi.getter(name="targetResourcePrivateIpAddress")
-    def target_resource_private_ip_address(self) -> str:
-        """
-        The private IP address of the target resource that the session connects to.
-        """
+    def target_resource_private_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "target_resource_private_ip_address")
 
 

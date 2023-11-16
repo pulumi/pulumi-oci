@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -103,22 +102,22 @@ type OutboundConnector struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayOutput `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-	PasswordSecretId pulumi.StringOutput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrOutput `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	PasswordSecretVersion pulumi.IntOutput `pulumi:"passwordSecretVersion"`
+	PasswordSecretVersion pulumi.IntPtrOutput `pulumi:"passwordSecretVersion"`
 	// The current state of this outbound connector.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewOutboundConnector registers a new resource with the given unique name, arguments, and options.
@@ -305,12 +304,6 @@ func (i *OutboundConnector) ToOutboundConnectorOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorOutput)
 }
 
-func (i *OutboundConnector) ToOutput(ctx context.Context) pulumix.Output[*OutboundConnector] {
-	return pulumix.Output[*OutboundConnector]{
-		OutputState: i.ToOutboundConnectorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OutboundConnectorArrayInput is an input type that accepts OutboundConnectorArray and OutboundConnectorArrayOutput values.
 // You can construct a concrete instance of `OutboundConnectorArrayInput` via:
 //
@@ -334,12 +327,6 @@ func (i OutboundConnectorArray) ToOutboundConnectorArrayOutput() OutboundConnect
 
 func (i OutboundConnectorArray) ToOutboundConnectorArrayOutputWithContext(ctx context.Context) OutboundConnectorArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorArrayOutput)
-}
-
-func (i OutboundConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]*OutboundConnector] {
-	return pulumix.Output[[]*OutboundConnector]{
-		OutputState: i.ToOutboundConnectorArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OutboundConnectorMapInput is an input type that accepts OutboundConnectorMap and OutboundConnectorMapOutput values.
@@ -367,12 +354,6 @@ func (i OutboundConnectorMap) ToOutboundConnectorMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorMapOutput)
 }
 
-func (i OutboundConnectorMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutboundConnector] {
-	return pulumix.Output[map[string]*OutboundConnector]{
-		OutputState: i.ToOutboundConnectorMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OutboundConnectorOutput struct{ *pulumi.OutputState }
 
 func (OutboundConnectorOutput) ElementType() reflect.Type {
@@ -385,12 +366,6 @@ func (o OutboundConnectorOutput) ToOutboundConnectorOutput() OutboundConnectorOu
 
 func (o OutboundConnectorOutput) ToOutboundConnectorOutputWithContext(ctx context.Context) OutboundConnectorOutput {
 	return o
-}
-
-func (o OutboundConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[*OutboundConnector] {
-	return pulumix.Output[*OutboundConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
@@ -419,8 +394,8 @@ func (o OutboundConnectorOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
-func (o OutboundConnectorOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o OutboundConnectorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Array of server endpoints to use when connecting with the LDAP bind account.
@@ -434,26 +409,26 @@ func (o OutboundConnectorOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-func (o OutboundConnectorOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.StringOutput { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o OutboundConnectorOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.StringPtrOutput { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Version of the password secret in the Vault to use.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OutboundConnectorOutput) PasswordSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.IntOutput { return v.PasswordSecretVersion }).(pulumi.IntOutput)
+func (o OutboundConnectorOutput) PasswordSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.IntPtrOutput { return v.PasswordSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // The current state of this outbound connector.
-func (o OutboundConnectorOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o OutboundConnectorOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o OutboundConnectorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o OutboundConnectorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type OutboundConnectorArrayOutput struct{ *pulumi.OutputState }
@@ -468,12 +443,6 @@ func (o OutboundConnectorArrayOutput) ToOutboundConnectorArrayOutput() OutboundC
 
 func (o OutboundConnectorArrayOutput) ToOutboundConnectorArrayOutputWithContext(ctx context.Context) OutboundConnectorArrayOutput {
 	return o
-}
-
-func (o OutboundConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OutboundConnector] {
-	return pulumix.Output[[]*OutboundConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OutboundConnectorArrayOutput) Index(i pulumi.IntInput) OutboundConnectorOutput {
@@ -494,12 +463,6 @@ func (o OutboundConnectorMapOutput) ToOutboundConnectorMapOutput() OutboundConne
 
 func (o OutboundConnectorMapOutput) ToOutboundConnectorMapOutputWithContext(ctx context.Context) OutboundConnectorMapOutput {
 	return o
-}
-
-func (o OutboundConnectorMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OutboundConnector] {
-	return pulumix.Output[map[string]*OutboundConnector]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OutboundConnectorMapOutput) MapIndex(k pulumi.StringInput) OutboundConnectorOutput {

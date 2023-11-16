@@ -14,6 +14,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -76,70 +77,70 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment that contains the stream.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Any additional details about the current state of the stream.
      * 
      */
     @Export(name="lifecycleStateDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleStateDetails;
+    private Output</* @Nullable */ String> lifecycleStateDetails;
 
     /**
      * @return Any additional details about the current state of the stream.
      * 
      */
-    public Output<String> lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Output<Optional<String>> lifecycleStateDetails() {
+        return Codegen.optional(this.lifecycleStateDetails);
     }
     /**
      * The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool&#39;s associated subnet.
      * 
      */
     @Export(name="messagesEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> messagesEndpoint;
+    private Output</* @Nullable */ String> messagesEndpoint;
 
     /**
      * @return The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool&#39;s associated subnet.
      * 
      */
-    public Output<String> messagesEndpoint() {
-        return this.messagesEndpoint;
+    public Output<Optional<String>> messagesEndpoint() {
+        return Codegen.optional(this.messagesEndpoint);
     }
     /**
      * The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
@@ -174,28 +175,28 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="retentionInHours", refs={Integer.class}, tree="[0]")
-    private Output<Integer> retentionInHours;
+    private Output</* @Nullable */ Integer> retentionInHours;
 
     /**
      * @return The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
      * 
      */
-    public Output<Integer> retentionInHours() {
-        return this.retentionInHours;
+    public Output<Optional<Integer>> retentionInHours() {
+        return Codegen.optional(this.retentionInHours);
     }
     /**
      * The current state of the stream.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the stream.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The OCID of the stream pool that contains the stream.
@@ -205,7 +206,7 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="streamPoolId", refs={String.class}, tree="[0]")
-    private Output<String> streamPoolId;
+    private Output</* @Nullable */ String> streamPoolId;
 
     /**
      * @return (Updatable) The OCID of the stream pool that contains the stream.
@@ -214,22 +215,22 @@ public class Stream extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> streamPoolId() {
-        return this.streamPoolId;
+    public Output<Optional<String>> streamPoolId() {
+        return Codegen.optional(this.streamPoolId);
     }
     /**
      * The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

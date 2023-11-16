@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Http Redirects in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -82,7 +81,7 @@ type GetHttpRedirectsResult struct {
 	// The list of http_redirects.
 	HttpRedirects []GetHttpRedirectsHttpRedirect `pulumi:"httpRedirects"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                              string   `pulumi:"id"`
+	Id                              *string  `pulumi:"id"`
 	Ids                             []string `pulumi:"ids"`
 	States                          []string `pulumi:"states"`
 	TimeCreatedGreaterThanOrEqualTo *string  `pulumi:"timeCreatedGreaterThanOrEqualTo"`
@@ -138,12 +137,6 @@ func (o GetHttpRedirectsResultOutput) ToGetHttpRedirectsResultOutputWithContext(
 	return o
 }
 
-func (o GetHttpRedirectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsResult] {
-	return pulumix.Output[GetHttpRedirectsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.
 func (o GetHttpRedirectsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHttpRedirectsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -163,8 +156,8 @@ func (o GetHttpRedirectsResultOutput) HttpRedirects() GetHttpRedirectsHttpRedire
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetHttpRedirectsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHttpRedirectsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetHttpRedirectsResultOutput) Ids() pulumi.StringArrayOutput {

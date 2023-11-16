@@ -77,11 +77,11 @@ export interface GetNatGatewaysResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of nat_gateways.
      */
-    readonly natGateways: outputs.Core.GetNatGatewaysNatGateway[];
+    readonly natGateways?: outputs.Core.GetNatGatewaysNatGateway[];
     /**
      * The NAT gateway's current state.
      */

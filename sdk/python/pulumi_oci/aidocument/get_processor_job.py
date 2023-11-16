@@ -65,66 +65,42 @@ class GetProcessorJobResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the processor job.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The id of the processor job.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inputLocations")
-    def input_locations(self) -> Sequence['outputs.GetProcessorJobInputLocationResult']:
-        """
-        The location of the inputs.
-        """
+    def input_locations(self) -> Optional[Sequence['outputs.GetProcessorJobInputLocationResult']]:
         return pulumi.get(self, "input_locations")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed status of FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="outputLocations")
-    def output_locations(self) -> Sequence['outputs.GetProcessorJobOutputLocationResult']:
-        """
-        The object storage location where to store analysis results.
-        """
+    def output_locations(self) -> Optional[Sequence['outputs.GetProcessorJobOutputLocationResult']]:
         return pulumi.get(self, "output_locations")
 
     @property
     @pulumi.getter(name="percentComplete")
-    def percent_complete(self) -> float:
-        """
-        How much progress the operation has made, compared to the total amount of work to be performed.
-        """
+    def percent_complete(self) -> Optional[float]:
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter(name="processorConfigs")
-    def processor_configs(self) -> Sequence['outputs.GetProcessorJobProcessorConfigResult']:
-        """
-        The configuration of a processor.
-        """
+    def processor_configs(self) -> Optional[Sequence['outputs.GetProcessorJobProcessorConfigResult']]:
         return pulumi.get(self, "processor_configs")
 
     @property
@@ -134,34 +110,22 @@ class GetProcessorJobResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the processor job.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        The job acceptance time.
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The job finish time.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The job start time.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -189,21 +153,7 @@ class AwaitableGetProcessorJobResult(GetProcessorJobResult):
 def get_processor_job(processor_job_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProcessorJobResult:
     """
-    This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
-
-    Get the details of a processor job.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=oci_ai_document_processor_job["test_processor_job"]["id"])
-    ```
-
-
-    :param str processor_job_id: Processor job id.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['processorJobId'] = processor_job_id
@@ -230,20 +180,6 @@ def get_processor_job(processor_job_id: Optional[str] = None,
 def get_processor_job_output(processor_job_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProcessorJobResult]:
     """
-    This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
-
-    Get the details of a processor job.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_processor_job = oci.AiDocument.get_processor_job(processor_job_id=oci_ai_document_processor_job["test_processor_job"]["id"])
-    ```
-
-
-    :param str processor_job_id: Processor job id.
+    Use this data source to access information about an existing resource.
     """
     ...

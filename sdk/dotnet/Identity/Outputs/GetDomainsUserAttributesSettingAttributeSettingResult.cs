@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// End User mutability
         /// </summary>
-        public readonly string EndUserMutability;
+        public readonly string? EndUserMutability;
         /// <summary>
         /// Specifies the list of User mutabilities allowed.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Fully-qualified attribute or complex mapping Name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetDomainsUserAttributesSettingAttributeSettingResult(
-            string endUserMutability,
+            string? endUserMutability,
 
             ImmutableArray<string> endUserMutabilityCanonicalValues,
 
-            string name)
+            string? name)
         {
             EndUserMutability = endUserMutability;
             EndUserMutabilityCanonicalValues = endUserMutabilityCanonicalValues;

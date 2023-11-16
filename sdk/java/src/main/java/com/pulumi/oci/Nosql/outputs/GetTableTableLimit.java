@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTableTableLimit {
@@ -14,51 +16,51 @@ public final class GetTableTableLimit {
      * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
-    private String capacityMode;
+    private @Nullable String capacityMode;
     /**
      * @return Maximum sustained read throughput limit for the table.
      * 
      */
-    private Integer maxReadUnits;
+    private @Nullable Integer maxReadUnits;
     /**
      * @return Maximum size of storage used by the table.
      * 
      */
-    private Integer maxStorageInGbs;
+    private @Nullable Integer maxStorageInGbs;
     /**
      * @return Maximum sustained write throughput limit for the table.
      * 
      */
-    private Integer maxWriteUnits;
+    private @Nullable Integer maxWriteUnits;
 
     private GetTableTableLimit() {}
     /**
      * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
-    public String capacityMode() {
-        return this.capacityMode;
+    public Optional<String> capacityMode() {
+        return Optional.ofNullable(this.capacityMode);
     }
     /**
      * @return Maximum sustained read throughput limit for the table.
      * 
      */
-    public Integer maxReadUnits() {
-        return this.maxReadUnits;
+    public Optional<Integer> maxReadUnits() {
+        return Optional.ofNullable(this.maxReadUnits);
     }
     /**
      * @return Maximum size of storage used by the table.
      * 
      */
-    public Integer maxStorageInGbs() {
-        return this.maxStorageInGbs;
+    public Optional<Integer> maxStorageInGbs() {
+        return Optional.ofNullable(this.maxStorageInGbs);
     }
     /**
      * @return Maximum sustained write throughput limit for the table.
      * 
      */
-    public Integer maxWriteUnits() {
-        return this.maxWriteUnits;
+    public Optional<Integer> maxWriteUnits() {
+        return Optional.ofNullable(this.maxWriteUnits);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetTableTableLimit {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String capacityMode;
-        private Integer maxReadUnits;
-        private Integer maxStorageInGbs;
-        private Integer maxWriteUnits;
+        private @Nullable String capacityMode;
+        private @Nullable Integer maxReadUnits;
+        private @Nullable Integer maxStorageInGbs;
+        private @Nullable Integer maxWriteUnits;
         public Builder() {}
         public Builder(GetTableTableLimit defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetTableTableLimit {
         }
 
         @CustomType.Setter
-        public Builder capacityMode(String capacityMode) {
-            this.capacityMode = Objects.requireNonNull(capacityMode);
+        public Builder capacityMode(@Nullable String capacityMode) {
+            this.capacityMode = capacityMode;
             return this;
         }
         @CustomType.Setter
-        public Builder maxReadUnits(Integer maxReadUnits) {
-            this.maxReadUnits = Objects.requireNonNull(maxReadUnits);
+        public Builder maxReadUnits(@Nullable Integer maxReadUnits) {
+            this.maxReadUnits = maxReadUnits;
             return this;
         }
         @CustomType.Setter
-        public Builder maxStorageInGbs(Integer maxStorageInGbs) {
-            this.maxStorageInGbs = Objects.requireNonNull(maxStorageInGbs);
+        public Builder maxStorageInGbs(@Nullable Integer maxStorageInGbs) {
+            this.maxStorageInGbs = maxStorageInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxWriteUnits(Integer maxWriteUnits) {
-            this.maxWriteUnits = Objects.requireNonNull(maxWriteUnits);
+        public Builder maxWriteUnits(@Nullable Integer maxWriteUnits) {
+            this.maxWriteUnits = maxWriteUnits;
             return this;
         }
         public GetTableTableLimit build() {

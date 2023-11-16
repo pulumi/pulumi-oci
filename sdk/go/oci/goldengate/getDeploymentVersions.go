@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
@@ -74,7 +73,7 @@ type GetDeploymentVersionsResult struct {
 	DeploymentVersionCollections []GetDeploymentVersionsDeploymentVersionCollection `pulumi:"deploymentVersionCollections"`
 	Filters                      []GetDeploymentVersionsFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDeploymentVersionsOutput(ctx *pulumi.Context, args GetDeploymentVersionsOutputArgs, opts ...pulumi.InvokeOption) GetDeploymentVersionsResultOutput {
@@ -120,12 +119,6 @@ func (o GetDeploymentVersionsResultOutput) ToGetDeploymentVersionsResultOutputWi
 	return o
 }
 
-func (o GetDeploymentVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentVersionsResult] {
-	return pulumix.Output[GetDeploymentVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDeploymentVersionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentVersionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -151,8 +144,8 @@ func (o GetDeploymentVersionsResultOutput) Filters() GetDeploymentVersionsFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDeploymentVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDeploymentVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -85,14 +85,14 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * EULA link
@@ -127,14 +127,14 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="listingResourceId", refs={String.class}, tree="[0]")
-    private Output<String> listingResourceId;
+    private Output</* @Nullable */ String> listingResourceId;
 
     /**
      * @return Listing resource id.
      * 
      */
-    public Output<String> listingResourceId() {
-        return this.listingResourceId;
+    public Output<Optional<String>> listingResourceId() {
+        return Codegen.optional(this.listingResourceId);
     }
     /**
      * Listing resource version.
@@ -169,14 +169,14 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="publisherName", refs={String.class}, tree="[0]")
-    private Output<String> publisherName;
+    private Output</* @Nullable */ String> publisherName;
 
     /**
      * @return Name of the publisher who published this listing.
      * 
      */
-    public Output<String> publisherName() {
-        return this.publisherName;
+    public Output<Optional<String>> publisherName() {
+        return Codegen.optional(this.publisherName);
     }
     /**
      * A generated signature for this listing resource version retrieved the agreements API.
@@ -197,28 +197,28 @@ public class AppCatalogSubscription extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="summary", refs={String.class}, tree="[0]")
-    private Output<String> summary;
+    private Output</* @Nullable */ String> summary;
 
     /**
      * @return The short summary to the listing.
      * 
      */
-    public Output<String> summary() {
-        return this.summary;
+    public Output<Optional<String>> summary() {
+        return Codegen.optional(this.summary);
     }
     /**
      * Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`

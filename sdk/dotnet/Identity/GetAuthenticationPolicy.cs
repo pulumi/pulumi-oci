@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Identity
         /// Compartment OCID.
         /// </summary>
         public readonly string CompartmentId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Network policy, Consists of a list of Network Source ids.
         /// </summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Identity
         private GetAuthenticationPolicyResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAuthenticationPolicyNetworkPolicyResult> networkPolicies,
 

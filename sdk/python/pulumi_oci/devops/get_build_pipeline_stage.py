@@ -107,10 +107,7 @@ class GetBuildPipelineStageResult:
 
     @property
     @pulumi.getter(name="buildPipelineId")
-    def build_pipeline_id(self) -> str:
-        """
-        The OCID of the build pipeline.
-        """
+    def build_pipeline_id(self) -> Optional[str]:
         return pulumi.get(self, "build_pipeline_id")
 
     @property
@@ -120,202 +117,127 @@ class GetBuildPipelineStageResult:
 
     @property
     @pulumi.getter(name="buildPipelineStagePredecessorCollections")
-    def build_pipeline_stage_predecessor_collections(self) -> Sequence['outputs.GetBuildPipelineStageBuildPipelineStagePredecessorCollectionResult']:
-        """
-        The collection containing the predecessors of a stage.
-        """
+    def build_pipeline_stage_predecessor_collections(self) -> Optional[Sequence['outputs.GetBuildPipelineStageBuildPipelineStagePredecessorCollectionResult']]:
         return pulumi.get(self, "build_pipeline_stage_predecessor_collections")
 
     @property
     @pulumi.getter(name="buildPipelineStageType")
-    def build_pipeline_stage_type(self) -> str:
-        """
-        Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
-        """
+    def build_pipeline_stage_type(self) -> Optional[str]:
         return pulumi.get(self, "build_pipeline_stage_type")
 
     @property
     @pulumi.getter(name="buildRunnerShapeConfigs")
-    def build_runner_shape_configs(self) -> Sequence['outputs.GetBuildPipelineStageBuildRunnerShapeConfigResult']:
-        """
-        The information about build runner.
-        """
+    def build_runner_shape_configs(self) -> Optional[Sequence['outputs.GetBuildPipelineStageBuildRunnerShapeConfigResult']]:
         return pulumi.get(self, "build_runner_shape_configs")
 
     @property
     @pulumi.getter(name="buildSourceCollections")
-    def build_source_collections(self) -> Sequence['outputs.GetBuildPipelineStageBuildSourceCollectionResult']:
-        """
-        Collection of build sources.
-        """
+    def build_source_collections(self) -> Optional[Sequence['outputs.GetBuildPipelineStageBuildSourceCollectionResult']]:
         return pulumi.get(self, "build_source_collections")
 
     @property
     @pulumi.getter(name="buildSpecFile")
-    def build_spec_file(self) -> str:
-        """
-        The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
-        """
+    def build_spec_file(self) -> Optional[str]:
         return pulumi.get(self, "build_spec_file")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the pipeline is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deliverArtifactCollections")
-    def deliver_artifact_collections(self) -> Sequence['outputs.GetBuildPipelineStageDeliverArtifactCollectionResult']:
-        """
-        Specifies an array of artifacts that need to be pushed to the artifactory stores.
-        """
+    def deliver_artifact_collections(self) -> Optional[Sequence['outputs.GetBuildPipelineStageDeliverArtifactCollectionResult']]:
         return pulumi.get(self, "deliver_artifact_collections")
 
     @property
     @pulumi.getter(name="deployPipelineId")
-    def deploy_pipeline_id(self) -> str:
-        """
-        A target deployment pipeline OCID that will run in this stage.
-        """
+    def deploy_pipeline_id(self) -> Optional[str]:
         return pulumi.get(self, "deploy_pipeline_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Optional description about the build stage.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def image(self) -> str:
-        """
-        Image name for the build environment.
-        """
+    def image(self) -> Optional[str]:
         return pulumi.get(self, "image")
 
     @property
     @pulumi.getter(name="isPassAllParametersEnabled")
-    def is_pass_all_parameters_enabled(self) -> bool:
-        """
-        A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
-        """
+    def is_pass_all_parameters_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_pass_all_parameters_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="primaryBuildSource")
-    def primary_build_source(self) -> str:
-        """
-        Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
-        """
+    def primary_build_source(self) -> Optional[str]:
         return pulumi.get(self, "primary_build_source")
 
     @property
     @pulumi.getter(name="privateAccessConfigs")
-    def private_access_configs(self) -> Sequence['outputs.GetBuildPipelineStagePrivateAccessConfigResult']:
-        """
-        Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        """
+    def private_access_configs(self) -> Optional[Sequence['outputs.GetBuildPipelineStagePrivateAccessConfigResult']]:
         return pulumi.get(self, "private_access_configs")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of the DevOps project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter(name="stageExecutionTimeoutInSeconds")
-    def stage_execution_timeout_in_seconds(self) -> int:
-        """
-        Timeout for the build stage execution. Specify value in seconds.
-        """
+    def stage_execution_timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "stage_execution_timeout_in_seconds")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the stage.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="waitCriterias")
-    def wait_criterias(self) -> Sequence['outputs.GetBuildPipelineStageWaitCriteriaResult']:
-        """
-        Specifies wait criteria for the Wait stage.
-        """
+    def wait_criterias(self) -> Optional[Sequence['outputs.GetBuildPipelineStageWaitCriteriaResult']]:
         return pulumi.get(self, "wait_criterias")
 
 
@@ -357,21 +279,7 @@ class AwaitableGetBuildPipelineStageResult(GetBuildPipelineStageResult):
 def get_build_pipeline_stage(build_pipeline_stage_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBuildPipelineStageResult:
     """
-    This data source provides details about a specific Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a stage based on the stage ID provided in the request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_pipeline_stage = oci.DevOps.get_build_pipeline_stage(build_pipeline_stage_id=oci_devops_build_pipeline_stage["test_build_pipeline_stage"]["id"])
-    ```
-
-
-    :param str build_pipeline_stage_id: Unique stage identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['buildPipelineStageId'] = build_pipeline_stage_id
@@ -412,20 +320,6 @@ def get_build_pipeline_stage(build_pipeline_stage_id: Optional[str] = None,
 def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelineStageResult]:
     """
-    This data source provides details about a specific Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a stage based on the stage ID provided in the request.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_pipeline_stage = oci.DevOps.get_build_pipeline_stage(build_pipeline_stage_id=oci_devops_build_pipeline_stage["test_build_pipeline_stage"]["id"])
-    ```
-
-
-    :param str build_pipeline_stage_id: Unique stage identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

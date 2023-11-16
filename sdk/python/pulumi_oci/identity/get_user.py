@@ -80,141 +80,87 @@ class GetUserResult:
 
     @property
     @pulumi.getter
-    def capabilities(self) -> Sequence['outputs.GetUserCapabilityResult']:
-        """
-        Properties indicating how the user is allowed to authenticate.
-        """
+    def capabilities(self) -> Optional[Sequence['outputs.GetUserCapabilityResult']]:
         return pulumi.get(self, "capabilities")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the user.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbUserName")
-    def db_user_name(self) -> str:
-        """
-        DB username of the DB credential. Has to be unique across the tenancy.
-        """
+    def db_user_name(self) -> Optional[str]:
         return pulumi.get(self, "db_user_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the user. Does not have to be unique, and it's changeable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def email(self) -> str:
-        """
-        The email address you assign to the user. The email address must be unique across all users in the tenancy.
-        """
+    def email(self) -> Optional[str]:
         return pulumi.get(self, "email")
 
     @property
     @pulumi.getter(name="emailVerified")
-    def email_verified(self) -> bool:
-        """
-        Whether the email address has been validated.
-        """
+    def email_verified(self) -> Optional[bool]:
         return pulumi.get(self, "email_verified")
 
     @property
     @pulumi.getter(name="externalIdentifier")
-    def external_identifier(self) -> str:
-        """
-        Identifier of the user in the identity provider
-        """
+    def external_identifier(self) -> Optional[str]:
         return pulumi.get(self, "external_identifier")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the user.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="identityProviderId")
-    def identity_provider_id(self) -> str:
-        """
-        The OCID of the `IdentityProvider` this user belongs to.
-        """
+    def identity_provider_id(self) -> Optional[str]:
         return pulumi.get(self, "identity_provider_id")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> str:
-        """
-        Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
-        * bit 0: SUSPENDED (reserved for future use)
-        * bit 1: DISABLED (reserved for future use)
-        * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
-        """
+    def inactive_state(self) -> Optional[str]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter(name="lastSuccessfulLoginTime")
-    def last_successful_login_time(self) -> str:
-        """
-        The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
-        """
+    def last_successful_login_time(self) -> Optional[str]:
         return pulumi.get(self, "last_successful_login_time")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="previousSuccessfulLoginTime")
-    def previous_successful_login_time(self) -> str:
-        """
-        The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
-        """
+    def previous_successful_login_time(self) -> Optional[str]:
         return pulumi.get(self, "previous_successful_login_time")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The user's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
@@ -252,21 +198,7 @@ class AwaitableGetUserResult(GetUserResult):
 def get_user(user_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserResult:
     """
-    This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified user's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user = oci.Identity.get_user(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['userId'] = user_id
@@ -298,20 +230,6 @@ def get_user(user_id: Optional[str] = None,
 def get_user_output(user_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
     """
-    This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified user's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user = oci.Identity.get_user(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

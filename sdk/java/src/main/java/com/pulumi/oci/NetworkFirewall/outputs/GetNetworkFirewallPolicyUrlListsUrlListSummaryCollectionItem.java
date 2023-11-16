@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem {
@@ -26,12 +28,12 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
      * @return OCID of the Network Firewall Policy this URL List belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Total count of URLs in the URL List
      * 
      */
-    private Integer totalUrls;
+    private @Nullable Integer totalUrls;
     /**
      * @return List of urls.
      * 
@@ -57,15 +59,15 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
      * @return OCID of the Network Firewall Policy this URL List belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Total count of URLs in the URL List
      * 
      */
-    public Integer totalUrls() {
-        return this.totalUrls;
+    public Optional<Integer> totalUrls() {
+        return Optional.ofNullable(this.totalUrls);
     }
     /**
      * @return List of urls.
@@ -86,8 +88,8 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
     public static final class Builder {
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private Integer totalUrls;
+        private @Nullable String parentResourceId;
+        private @Nullable Integer totalUrls;
         private List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl> urls;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem defaults) {
@@ -110,13 +112,13 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalUrls(Integer totalUrls) {
-            this.totalUrls = Objects.requireNonNull(totalUrls);
+        public Builder totalUrls(@Nullable Integer totalUrls) {
+            this.totalUrls = totalUrls;
             return this;
         }
         @CustomType.Setter

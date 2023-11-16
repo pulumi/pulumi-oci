@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption {
@@ -13,39 +15,39 @@ public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOpt
      * @return The default percentage of cores enabled.
      * 
      */
-    private Integer defaultValue;
+    private @Nullable Integer defaultValue;
     /**
      * @return The maximum allowed percentage of cores enabled.
      * 
      */
-    private Integer max;
+    private @Nullable Integer max;
     /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
-    private Integer min;
+    private @Nullable Integer min;
 
     private GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption() {}
     /**
      * @return The default percentage of cores enabled.
      * 
      */
-    public Integer defaultValue() {
-        return this.defaultValue;
+    public Optional<Integer> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
     /**
      * @return The maximum allowed percentage of cores enabled.
      * 
      */
-    public Integer max() {
-        return this.max;
+    public Optional<Integer> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return The minimum allowed percentage of cores enabled.
      * 
      */
-    public Integer min() {
-        return this.min;
+    public Optional<Integer> min() {
+        return Optional.ofNullable(this.min);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOpt
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer defaultValue;
-        private Integer max;
-        private Integer min;
+        private @Nullable Integer defaultValue;
+        private @Nullable Integer max;
+        private @Nullable Integer min;
         public Builder() {}
         public Builder(GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOpt
         }
 
         @CustomType.Setter
-        public Builder defaultValue(Integer defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable Integer defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Integer max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Integer min) {
+            this.min = min;
             return this;
         }
         public GetShapesShapePlatformConfigOptionPercentageOfCoresEnabledOption build() {

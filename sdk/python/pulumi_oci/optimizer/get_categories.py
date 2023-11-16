@@ -54,10 +54,7 @@ class GetCategoriesResult:
 
     @property
     @pulumi.getter(name="categoryCollections")
-    def category_collections(self) -> Sequence['outputs.GetCategoriesCategoryCollectionResult']:
-        """
-        The list of category_collection.
-        """
+    def category_collections(self) -> Optional[Sequence['outputs.GetCategoriesCategoryCollectionResult']]:
         return pulumi.get(self, "category_collections")
 
     @property
@@ -68,9 +65,6 @@ class GetCategoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,7 +79,7 @@ class GetCategoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,17 +93,11 @@ class GetCategoriesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name assigned to the category.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The category's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -139,43 +127,7 @@ def get_categories(child_tenancy_ids: Optional[Sequence[str]] = None,
                    state: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCategoriesResult:
     """
-    This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the supported Cloud Advisor categories.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_categories = oci.Optimizer.get_categories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["category_compartment_id_in_subtree"],
-        child_tenancy_ids=var["category_child_tenancy_ids"],
-        include_organization=var["category_include_organization"],
-        name=var["category_name"],
-        state=var["category_state"])
-    ```
-
-
-    :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
-           
-           If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
-           
-           It is important to note that if you are setting the includeOrganization parameter value as true and  also populating the childTenancyIds parameter with a list of child tenancies, the request will fail. The childTenancyIds and includeOrganization should be used exclusively.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param bool include_organization: When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
-           
-           Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['childTenancyIds'] = child_tenancy_ids
@@ -210,42 +162,6 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
                           state: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoriesResult]:
     """
-    This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the supported Cloud Advisor categories.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_categories = oci.Optimizer.get_categories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["category_compartment_id_in_subtree"],
-        child_tenancy_ids=var["category_child_tenancy_ids"],
-        include_organization=var["category_include_organization"],
-        name=var["category_name"],
-        state=var["category_state"])
-    ```
-
-
-    :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
-           
-           If this list contains a tenancy id that isn't part of the organization of parent P, the request will  fail. That is, let's say there is an organization with parent P with children A and B, and also one  other tenant T that isn't part of the organization. If T is included in the list of  childTenancyIds, the request will fail.
-           
-           It is important to note that if you are setting the includeOrganization parameter value as true and  also populating the childTenancyIds parameter with a list of child tenancies, the request will fail. The childTenancyIds and includeOrganization should be used exclusively.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param bool include_organization: When set to true, the data for all child tenancies including the parent is returned. That is, if  there is an organization with parent P and children A and B, to return the data for the parent P, child  A and child B, this parameter value should be set to true.
-           
-           Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
-           
-           When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str state: A filter that returns results that match the lifecycle state specified.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -128,28 +128,6 @@ class DataAssetDataSourceDetails(dict):
                  user_name: Optional[str] = None,
                  version_specific_details: Optional['outputs.DataAssetDataSourceDetailsVersionSpecificDetails'] = None,
                  wallet_password_secret_id: Optional[str] = None):
-        """
-        :param str data_source_type: Data source type where actually data asset is being stored
-        :param str atp_password_secret_id: atp db password Secret Id
-        :param str atp_user_name: atp db user name
-        :param str bucket: Bucket Name for influx connection
-        :param str cwallet_file_secret_id: OCID of the secret containing the containers certificates of ATP wallet
-        :param str database_name: DB Name for influx connection
-        :param str ewallet_file_secret_id: OCID of the secret containing the PDB'S certificates of ATP wallet
-        :param str key_store_file_secret_id: OCID of the secret containing Keystore.jks file of the ATP wallet
-        :param str measurement_name: Measurement name for influx
-        :param str namespace: Object storage namespace
-        :param str object: File name
-        :param str ojdbc_file_secret_id: OCID of the secret that contains jdbc properties file of ATP wallet
-        :param str password_secret_id: Password Secret Id for the influx connection
-        :param str table_name: atp database table name
-        :param str tnsnames_file_secret_id: OCID of the secret that contains the tnsnames file of ATP wallet
-        :param str truststore_file_secret_id: OCID of the secret containing truststore.jks file of the ATP wallet
-        :param str url: public IP address and port to influx DB
-        :param str user_name: Username for connection to Influx
-        :param 'DataAssetDataSourceDetailsVersionSpecificDetailsArgs' version_specific_details: Possible data sources
-        :param str wallet_password_secret_id: wallet password Secret ID in String format
-        """
         pulumi.set(__self__, "data_source_type", data_source_type)
         if atp_password_secret_id is not None:
             pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
@@ -193,161 +171,101 @@ class DataAssetDataSourceDetails(dict):
     @property
     @pulumi.getter(name="dataSourceType")
     def data_source_type(self) -> str:
-        """
-        Data source type where actually data asset is being stored
-        """
         return pulumi.get(self, "data_source_type")
 
     @property
     @pulumi.getter(name="atpPasswordSecretId")
     def atp_password_secret_id(self) -> Optional[str]:
-        """
-        atp db password Secret Id
-        """
         return pulumi.get(self, "atp_password_secret_id")
 
     @property
     @pulumi.getter(name="atpUserName")
     def atp_user_name(self) -> Optional[str]:
-        """
-        atp db user name
-        """
         return pulumi.get(self, "atp_user_name")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        Bucket Name for influx connection
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="cwalletFileSecretId")
     def cwallet_file_secret_id(self) -> Optional[str]:
-        """
-        OCID of the secret containing the containers certificates of ATP wallet
-        """
         return pulumi.get(self, "cwallet_file_secret_id")
 
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[str]:
-        """
-        DB Name for influx connection
-        """
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="ewalletFileSecretId")
     def ewallet_file_secret_id(self) -> Optional[str]:
-        """
-        OCID of the secret containing the PDB'S certificates of ATP wallet
-        """
         return pulumi.get(self, "ewallet_file_secret_id")
 
     @property
     @pulumi.getter(name="keyStoreFileSecretId")
     def key_store_file_secret_id(self) -> Optional[str]:
-        """
-        OCID of the secret containing Keystore.jks file of the ATP wallet
-        """
         return pulumi.get(self, "key_store_file_secret_id")
 
     @property
     @pulumi.getter(name="measurementName")
     def measurement_name(self) -> Optional[str]:
-        """
-        Measurement name for influx
-        """
         return pulumi.get(self, "measurement_name")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        Object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        File name
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="ojdbcFileSecretId")
     def ojdbc_file_secret_id(self) -> Optional[str]:
-        """
-        OCID of the secret that contains jdbc properties file of ATP wallet
-        """
         return pulumi.get(self, "ojdbc_file_secret_id")
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[str]:
-        """
-        Password Secret Id for the influx connection
-        """
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[str]:
-        """
-        atp database table name
-        """
         return pulumi.get(self, "table_name")
 
     @property
     @pulumi.getter(name="tnsnamesFileSecretId")
     def tnsnames_file_secret_id(self) -> Optional[str]:
-        """
-        OCID of the secret that contains the tnsnames file of ATP wallet
-        """
         return pulumi.get(self, "tnsnames_file_secret_id")
 
     @property
     @pulumi.getter(name="truststoreFileSecretId")
     def truststore_file_secret_id(self) -> Optional[str]:
-        """
-        OCID of the secret containing truststore.jks file of the ATP wallet
-        """
         return pulumi.get(self, "truststore_file_secret_id")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
-        """
-        public IP address and port to influx DB
-        """
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
-        """
-        Username for connection to Influx
-        """
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="versionSpecificDetails")
     def version_specific_details(self) -> Optional['outputs.DataAssetDataSourceDetailsVersionSpecificDetails']:
-        """
-        Possible data sources
-        """
         return pulumi.get(self, "version_specific_details")
 
     @property
     @pulumi.getter(name="walletPasswordSecretId")
     def wallet_password_secret_id(self) -> Optional[str]:
-        """
-        wallet password Secret ID in String format
-        """
         return pulumi.get(self, "wallet_password_secret_id")
 
 
@@ -382,13 +300,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetails(dict):
                  database_name: Optional[str] = None,
                  organization_name: Optional[str] = None,
                  retention_policy_name: Optional[str] = None):
-        """
-        :param str influx_version: Data source type where actually data asset is being stored
-        :param str bucket: Bucket Name for influx connection
-        :param str database_name: DB Name for influx connection
-        :param str organization_name: Org name for the influx db
-        :param str retention_policy_name: retention policy is how long the bucket would last
-        """
         pulumi.set(__self__, "influx_version", influx_version)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -402,41 +313,26 @@ class DataAssetDataSourceDetailsVersionSpecificDetails(dict):
     @property
     @pulumi.getter(name="influxVersion")
     def influx_version(self) -> str:
-        """
-        Data source type where actually data asset is being stored
-        """
         return pulumi.get(self, "influx_version")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        Bucket Name for influx connection
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[str]:
-        """
-        DB Name for influx connection
-        """
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="organizationName")
     def organization_name(self) -> Optional[str]:
-        """
-        Org name for the influx db
-        """
         return pulumi.get(self, "organization_name")
 
     @property
     @pulumi.getter(name="retentionPolicyName")
     def retention_policy_name(self) -> Optional[str]:
-        """
-        retention policy is how long the bucket would last
-        """
         return pulumi.get(self, "retention_policy_name")
 
 
@@ -473,13 +369,6 @@ class DetectAnomalyJobInputDetails(dict):
                  message: Optional[str] = None,
                  object_locations: Optional[Sequence['outputs.DetectAnomalyJobInputDetailsObjectLocation']] = None,
                  signal_names: Optional[Sequence[str]] = None):
-        """
-        :param str input_type: Type of request. This parameter is automatically populated by classes generated by the SDK. For raw curl requests, you must provide this field.
-        :param Sequence['DetectAnomalyJobInputDetailsDataArgs'] datas: Array containing data.
-        :param str message: Inline input details.
-        :param Sequence['DetectAnomalyJobInputDetailsObjectLocationArgs'] object_locations: List of ObjectLocations.
-        :param Sequence[str] signal_names: List of signal names.
-        """
         pulumi.set(__self__, "input_type", input_type)
         if content is not None:
             pulumi.set(__self__, "content", content)
@@ -497,9 +386,6 @@ class DetectAnomalyJobInputDetails(dict):
     @property
     @pulumi.getter(name="inputType")
     def input_type(self) -> str:
-        """
-        Type of request. This parameter is automatically populated by classes generated by the SDK. For raw curl requests, you must provide this field.
-        """
         return pulumi.get(self, "input_type")
 
     @property
@@ -515,33 +401,21 @@ class DetectAnomalyJobInputDetails(dict):
     @property
     @pulumi.getter
     def datas(self) -> Optional[Sequence['outputs.DetectAnomalyJobInputDetailsData']]:
-        """
-        Array containing data.
-        """
         return pulumi.get(self, "datas")
 
     @property
     @pulumi.getter
     def message(self) -> Optional[str]:
-        """
-        Inline input details.
-        """
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter(name="objectLocations")
     def object_locations(self) -> Optional[Sequence['outputs.DetectAnomalyJobInputDetailsObjectLocation']]:
-        """
-        List of ObjectLocations.
-        """
         return pulumi.get(self, "object_locations")
 
     @property
     @pulumi.getter(name="signalNames")
     def signal_names(self) -> Optional[Sequence[str]]:
-        """
-        List of signal names.
-        """
         return pulumi.get(self, "signal_names")
 
 
@@ -550,10 +424,6 @@ class DetectAnomalyJobInputDetailsData(dict):
     def __init__(__self__, *,
                  timestamp: Optional[str] = None,
                  values: Optional[Sequence[float]] = None):
-        """
-        :param str timestamp: Nullable string representing timestamp.
-        :param Sequence[float] values: Array of double precision values.
-        """
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
         if values is not None:
@@ -562,17 +432,11 @@ class DetectAnomalyJobInputDetailsData(dict):
     @property
     @pulumi.getter
     def timestamp(self) -> Optional[str]:
-        """
-        Nullable string representing timestamp.
-        """
         return pulumi.get(self, "timestamp")
 
     @property
     @pulumi.getter
     def values(self) -> Optional[Sequence[float]]:
-        """
-        Array of double precision values.
-        """
         return pulumi.get(self, "values")
 
 
@@ -582,11 +446,6 @@ class DetectAnomalyJobInputDetailsObjectLocation(dict):
                  bucket: Optional[str] = None,
                  namespace: Optional[str] = None,
                  object: Optional[str] = None):
-        """
-        :param str bucket: Object Storage bucket name.
-        :param str namespace: Object Storage namespace.
-        :param str object: Object Storage object name.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
@@ -597,25 +456,16 @@ class DetectAnomalyJobInputDetailsObjectLocation(dict):
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        Object Storage object name.
-        """
         return pulumi.get(self, "object")
 
 
@@ -643,12 +493,6 @@ class DetectAnomalyJobOutputDetails(dict):
                  namespace: str,
                  output_type: str,
                  prefix: Optional[str] = None):
-        """
-        :param str bucket: Object Storage bucket name.
-        :param str namespace: Object Storage namespace.
-        :param str output_type: The type of output location. Allowed values are:
-        :param str prefix: Object Storage folder name.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "output_type", output_type)
@@ -658,33 +502,21 @@ class DetectAnomalyJobOutputDetails(dict):
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="outputType")
     def output_type(self) -> str:
-        """
-        The type of output location. Allowed values are:
-        """
         return pulumi.get(self, "output_type")
 
     @property
     @pulumi.getter
     def prefix(self) -> Optional[str]:
-        """
-        Object Storage folder name.
-        """
         return pulumi.get(self, "prefix")
 
 
@@ -721,13 +553,6 @@ class ModelModelTrainingDetails(dict):
                  target_fap: Optional[float] = None,
                  training_fraction: Optional[float] = None,
                  window_size: Optional[int] = None):
-        """
-        :param Sequence[str] data_asset_ids: The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        :param str algorithm_hint: User can choose specific algorithm for training.
-        :param float target_fap: A target model accuracy metric user provides as their requirement
-        :param float training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        :param int window_size: This value would determine the window size of the training algorithm.
-        """
         pulumi.set(__self__, "data_asset_ids", data_asset_ids)
         if algorithm_hint is not None:
             pulumi.set(__self__, "algorithm_hint", algorithm_hint)
@@ -741,41 +566,26 @@ class ModelModelTrainingDetails(dict):
     @property
     @pulumi.getter(name="dataAssetIds")
     def data_asset_ids(self) -> Sequence[str]:
-        """
-        The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        """
         return pulumi.get(self, "data_asset_ids")
 
     @property
     @pulumi.getter(name="algorithmHint")
     def algorithm_hint(self) -> Optional[str]:
-        """
-        User can choose specific algorithm for training.
-        """
         return pulumi.get(self, "algorithm_hint")
 
     @property
     @pulumi.getter(name="targetFap")
     def target_fap(self) -> Optional[float]:
-        """
-        A target model accuracy metric user provides as their requirement
-        """
         return pulumi.get(self, "target_fap")
 
     @property
     @pulumi.getter(name="trainingFraction")
     def training_fraction(self) -> Optional[float]:
-        """
-        Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        """
         return pulumi.get(self, "training_fraction")
 
     @property
     @pulumi.getter(name="windowSize")
     def window_size(self) -> Optional[int]:
-        """
-        This value would determine the window size of the training algorithm.
-        """
         return pulumi.get(self, "window_size")
 
 
@@ -819,15 +629,6 @@ class ModelModelTrainingResult(dict):
                  signal_details: Optional[Sequence['outputs.ModelModelTrainingResultSignalDetail']] = None,
                  warning: Optional[str] = None,
                  window_size: Optional[int] = None):
-        """
-        :param float fap: Accuracy metric for a signal.
-        :param bool is_training_goal_achieved: A boolean value to indicate if train goal/targetFap is achieved for trained model
-        :param float multivariate_fap: The model accuracy metric on timestamp level.
-        :param Sequence['ModelModelTrainingResultRowReductionDetailArgs'] row_reduction_details: Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        :param Sequence['ModelModelTrainingResultSignalDetailArgs'] signal_details: The list of signal details.
-        :param str warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
-        :param int window_size: This value would determine the window size of the training algorithm.
-        """
         if fap is not None:
             pulumi.set(__self__, "fap", fap)
         if is_training_goal_achieved is not None:
@@ -852,17 +653,11 @@ class ModelModelTrainingResult(dict):
     @property
     @pulumi.getter
     def fap(self) -> Optional[float]:
-        """
-        Accuracy metric for a signal.
-        """
         return pulumi.get(self, "fap")
 
     @property
     @pulumi.getter(name="isTrainingGoalAchieved")
     def is_training_goal_achieved(self) -> Optional[bool]:
-        """
-        A boolean value to indicate if train goal/targetFap is achieved for trained model
-        """
         return pulumi.get(self, "is_training_goal_achieved")
 
     @property
@@ -878,9 +673,6 @@ class ModelModelTrainingResult(dict):
     @property
     @pulumi.getter(name="multivariateFap")
     def multivariate_fap(self) -> Optional[float]:
-        """
-        The model accuracy metric on timestamp level.
-        """
         return pulumi.get(self, "multivariate_fap")
 
     @property
@@ -891,33 +683,21 @@ class ModelModelTrainingResult(dict):
     @property
     @pulumi.getter(name="rowReductionDetails")
     def row_reduction_details(self) -> Optional[Sequence['outputs.ModelModelTrainingResultRowReductionDetail']]:
-        """
-        Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        """
         return pulumi.get(self, "row_reduction_details")
 
     @property
     @pulumi.getter(name="signalDetails")
     def signal_details(self) -> Optional[Sequence['outputs.ModelModelTrainingResultSignalDetail']]:
-        """
-        The list of signal details.
-        """
         return pulumi.get(self, "signal_details")
 
     @property
     @pulumi.getter
     def warning(self) -> Optional[str]:
-        """
-        A warning message to explain the reason when targetFap cannot be achieved for trained model
-        """
         return pulumi.get(self, "warning")
 
     @property
     @pulumi.getter(name="windowSize")
     def window_size(self) -> Optional[int]:
-        """
-        This value would determine the window size of the training algorithm.
-        """
         return pulumi.get(self, "window_size")
 
 
@@ -948,13 +728,6 @@ class ModelModelTrainingResultRowReductionDetail(dict):
                  is_reduction_enabled: Optional[bool] = None,
                  reduction_method: Optional[str] = None,
                  reduction_percentage: Optional[float] = None):
-        """
-        :param bool is_reduction_enabled: A boolean value to indicate if row reduction is applied
-        :param str reduction_method: Method for row reduction:
-               * DELETE_ROW - delete rows with equal intervals
-               * AVERAGE_ROW - average multiple rows to one row
-        :param float reduction_percentage: A percentage to reduce data size down to on top of original data
-        """
         if is_reduction_enabled is not None:
             pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
         if reduction_method is not None:
@@ -965,27 +738,16 @@ class ModelModelTrainingResultRowReductionDetail(dict):
     @property
     @pulumi.getter(name="isReductionEnabled")
     def is_reduction_enabled(self) -> Optional[bool]:
-        """
-        A boolean value to indicate if row reduction is applied
-        """
         return pulumi.get(self, "is_reduction_enabled")
 
     @property
     @pulumi.getter(name="reductionMethod")
     def reduction_method(self) -> Optional[str]:
-        """
-        Method for row reduction:
-        * DELETE_ROW - delete rows with equal intervals
-        * AVERAGE_ROW - average multiple rows to one row
-        """
         return pulumi.get(self, "reduction_method")
 
     @property
     @pulumi.getter(name="reductionPercentage")
     def reduction_percentage(self) -> Optional[float]:
-        """
-        A percentage to reduce data size down to on top of original data
-        """
         return pulumi.get(self, "reduction_percentage")
 
 
@@ -1022,20 +784,6 @@ class ModelModelTrainingResultSignalDetail(dict):
                  signal_name: Optional[str] = None,
                  status: Optional[str] = None,
                  std: Optional[float] = None):
-        """
-        :param str details: detailed information for a signal.
-        :param float fap: Accuracy metric for a signal.
-        :param bool is_quantized: A boolean value to indicate if a signal is quantized or not.
-        :param float max: Max value within a signal.
-        :param float min: Min value within a signal.
-        :param float mvi_ratio: The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        :param str signal_name: The name of a signal.
-        :param str status: Status of the signal:
-               * ACCEPTED - the signal is used for training the model
-               * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-               * OTHER - placeholder for other status
-        :param float std: Standard deviation of values within a signal.
-        """
         if details is not None:
             pulumi.set(__self__, "details", details)
         if fap is not None:
@@ -1058,238 +806,168 @@ class ModelModelTrainingResultSignalDetail(dict):
     @property
     @pulumi.getter
     def details(self) -> Optional[str]:
-        """
-        detailed information for a signal.
-        """
         return pulumi.get(self, "details")
 
     @property
     @pulumi.getter
     def fap(self) -> Optional[float]:
-        """
-        Accuracy metric for a signal.
-        """
         return pulumi.get(self, "fap")
 
     @property
     @pulumi.getter(name="isQuantized")
     def is_quantized(self) -> Optional[bool]:
-        """
-        A boolean value to indicate if a signal is quantized or not.
-        """
         return pulumi.get(self, "is_quantized")
 
     @property
     @pulumi.getter
     def max(self) -> Optional[float]:
-        """
-        Max value within a signal.
-        """
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
     def min(self) -> Optional[float]:
-        """
-        Min value within a signal.
-        """
         return pulumi.get(self, "min")
 
     @property
     @pulumi.getter(name="mviRatio")
     def mvi_ratio(self) -> Optional[float]:
-        """
-        The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        """
         return pulumi.get(self, "mvi_ratio")
 
     @property
     @pulumi.getter(name="signalName")
     def signal_name(self) -> Optional[str]:
-        """
-        The name of a signal.
-        """
         return pulumi.get(self, "signal_name")
 
     @property
     @pulumi.getter
     def status(self) -> Optional[str]:
-        """
-        Status of the signal:
-        * ACCEPTED - the signal is used for training the model
-        * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-        * OTHER - placeholder for other status
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def std(self) -> Optional[float]:
-        """
-        Standard deviation of values within a signal.
-        """
         return pulumi.get(self, "std")
 
 
 @pulumi.output_type
 class GetAiPrivateEndpointsAiPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 attached_data_assets: Sequence[str],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 dns_zones: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 state: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param Sequence[str] attached_data_assets: The list of dataAssets using the private reverse connection endpoint.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Sequence[str] dns_zones: List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique AiPrivateEndpoint identifier
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str subnet_id: Subnet Identifier
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param str time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
-        pulumi.set(__self__, "attached_data_assets", attached_data_assets)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_zones", dns_zones)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 attached_data_assets: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 dns_zones: Optional[Sequence[str]] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if attached_data_assets is not None:
+            pulumi.set(__self__, "attached_data_assets", attached_data_assets)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if dns_zones is not None:
+            pulumi.set(__self__, "dns_zones", dns_zones)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="attachedDataAssets")
-    def attached_data_assets(self) -> Sequence[str]:
-        """
-        The list of dataAssets using the private reverse connection endpoint.
-        """
+    def attached_data_assets(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "attached_data_assets")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> Sequence[str]:
-        """
-        List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
+    def dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique AiPrivateEndpoint identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        Subnet Identifier
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -1323,562 +1001,450 @@ class GetAiPrivateEndpointsFilterResult(dict):
 @pulumi.output_type
 class GetDetectAnomalyJobInputDetailResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 content_type: str,
-                 datas: Sequence['outputs.GetDetectAnomalyJobInputDetailDataResult'],
-                 input_type: str,
-                 message: str,
-                 object_locations: Sequence['outputs.GetDetectAnomalyJobInputDetailObjectLocationResult'],
-                 signal_names: Sequence[str]):
-        """
-        :param str input_type: The type of input location Allowed values are:
-        :param str message: Inline input details.
-        :param Sequence['GetDetectAnomalyJobInputDetailObjectLocationArgs'] object_locations: List of ObjectLocations.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "input_type", input_type)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "object_locations", object_locations)
-        pulumi.set(__self__, "signal_names", signal_names)
+                 content: Optional[str] = None,
+                 content_type: Optional[str] = None,
+                 datas: Optional[Sequence['outputs.GetDetectAnomalyJobInputDetailDataResult']] = None,
+                 input_type: Optional[str] = None,
+                 message: Optional[str] = None,
+                 object_locations: Optional[Sequence['outputs.GetDetectAnomalyJobInputDetailObjectLocationResult']] = None,
+                 signal_names: Optional[Sequence[str]] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if datas is not None:
+            pulumi.set(__self__, "datas", datas)
+        if input_type is not None:
+            pulumi.set(__self__, "input_type", input_type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if object_locations is not None:
+            pulumi.set(__self__, "object_locations", object_locations)
+        if signal_names is not None:
+            pulumi.set(__self__, "signal_names", signal_names)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def datas(self) -> Sequence['outputs.GetDetectAnomalyJobInputDetailDataResult']:
+    def datas(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobInputDetailDataResult']]:
         return pulumi.get(self, "datas")
 
     @property
     @pulumi.getter(name="inputType")
-    def input_type(self) -> str:
-        """
-        The type of input location Allowed values are:
-        """
+    def input_type(self) -> Optional[str]:
         return pulumi.get(self, "input_type")
 
     @property
     @pulumi.getter
-    def message(self) -> str:
-        """
-        Inline input details.
-        """
+    def message(self) -> Optional[str]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter(name="objectLocations")
-    def object_locations(self) -> Sequence['outputs.GetDetectAnomalyJobInputDetailObjectLocationResult']:
-        """
-        List of ObjectLocations.
-        """
+    def object_locations(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobInputDetailObjectLocationResult']]:
         return pulumi.get(self, "object_locations")
 
     @property
     @pulumi.getter(name="signalNames")
-    def signal_names(self) -> Sequence[str]:
+    def signal_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "signal_names")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobInputDetailDataResult(dict):
     def __init__(__self__, *,
-                 timestamp: str,
-                 values: Sequence[float]):
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "values", values)
+                 timestamp: Optional[str] = None,
+                 values: Optional[Sequence[float]] = None):
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
     @property
     @pulumi.getter
-    def values(self) -> Sequence[float]:
+    def values(self) -> Optional[Sequence[float]]:
         return pulumi.get(self, "values")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobInputDetailObjectLocationResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: Object Storage bucket name.
-        :param str namespace: Object Storage namespace.
-        :param str object: Object Storage object name.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Object Storage bucket name.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Object Storage object name.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobOutputDetailResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 namespace: str,
-                 output_type: str,
-                 prefix: str):
-        """
-        :param str bucket: Object Storage bucket name.
-        :param str namespace: Object Storage namespace.
-        :param str output_type: The type of output location Allowed values are:
-        :param str prefix: Object Storage folder name.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "output_type", output_type)
-        pulumi.set(__self__, "prefix", prefix)
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 output_type: Optional[str] = None,
+                 prefix: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if output_type is not None:
+            pulumi.set(__self__, "output_type", output_type)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Object Storage bucket name.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="outputType")
-    def output_type(self) -> str:
-        """
-        The type of output location Allowed values are:
-        """
+    def output_type(self) -> Optional[str]:
         return pulumi.get(self, "output_type")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Object Storage folder name.
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 input_details: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult'],
-                 lifecycle_state_details: str,
-                 model_id: str,
-                 output_details: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult'],
-                 project_id: str,
-                 sensitivity: float,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_accepted: str,
-                 time_finished: str,
-                 time_started: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Detect anomaly job description.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Id of the job.
-        :param Sequence['GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs'] input_details: Input details for detect anomaly job.
-        :param str lifecycle_state_details: The current state details of the batch document job.
-        :param str model_id: The ID of the trained model for which to list the resources.
-        :param Sequence['GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs'] output_details: Output details for detect anomaly job.
-        :param str project_id: The ID of the project for which to list the objects.
-        :param float sensitivity: The value that customer can adjust to control the sensitivity of anomaly detection
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_accepted: Job accepted time
-        :param str time_finished: Job finished time
-        :param str time_started: Job started time
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "input_details", input_details)
-        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "output_details", output_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "sensitivity", sensitivity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 input_details: Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult']] = None,
+                 lifecycle_state_details: Optional[str] = None,
+                 model_id: Optional[str] = None,
+                 output_details: Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult']] = None,
+                 project_id: Optional[str] = None,
+                 sensitivity: Optional[float] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_accepted: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if input_details is not None:
+            pulumi.set(__self__, "input_details", input_details)
+        if lifecycle_state_details is not None:
+            pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if output_details is not None:
+            pulumi.set(__self__, "output_details", output_details)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if sensitivity is not None:
+            pulumi.set(__self__, "sensitivity", sensitivity)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_accepted is not None:
+            pulumi.set(__self__, "time_accepted", time_accepted)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Detect anomaly job description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Id of the job.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inputDetails")
-    def input_details(self) -> Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult']:
-        """
-        Input details for detect anomaly job.
-        """
+    def input_details(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult']]:
         return pulumi.get(self, "input_details")
 
     @property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> str:
-        """
-        The current state details of the batch document job.
-        """
+    def lifecycle_state_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_state_details")
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The ID of the trained model for which to list the resources.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="outputDetails")
-    def output_details(self) -> Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult']:
-        """
-        Output details for detect anomaly job.
-        """
+    def output_details(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult']]:
         return pulumi.get(self, "output_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The ID of the project for which to list the objects.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def sensitivity(self) -> float:
-        """
-        The value that customer can adjust to control the sensitivity of anomaly detection
-        """
+    def sensitivity(self) -> Optional[float]:
         return pulumi.get(self, "sensitivity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        Job accepted time
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        Job finished time
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Job started time
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 content_type: str,
-                 datas: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult'],
-                 input_type: str,
-                 message: str,
-                 object_locations: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult'],
-                 signal_names: Sequence[str]):
-        """
-        :param str input_type: The type of input location Allowed values are:
-        :param str message: Inline input details.
-        :param Sequence['GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs'] object_locations: List of ObjectLocations.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "input_type", input_type)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "object_locations", object_locations)
-        pulumi.set(__self__, "signal_names", signal_names)
+                 content: Optional[str] = None,
+                 content_type: Optional[str] = None,
+                 datas: Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult']] = None,
+                 input_type: Optional[str] = None,
+                 message: Optional[str] = None,
+                 object_locations: Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult']] = None,
+                 signal_names: Optional[Sequence[str]] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if datas is not None:
+            pulumi.set(__self__, "datas", datas)
+        if input_type is not None:
+            pulumi.set(__self__, "input_type", input_type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if object_locations is not None:
+            pulumi.set(__self__, "object_locations", object_locations)
+        if signal_names is not None:
+            pulumi.set(__self__, "signal_names", signal_names)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter
-    def datas(self) -> Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult']:
+    def datas(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult']]:
         return pulumi.get(self, "datas")
 
     @property
     @pulumi.getter(name="inputType")
-    def input_type(self) -> str:
-        """
-        The type of input location Allowed values are:
-        """
+    def input_type(self) -> Optional[str]:
         return pulumi.get(self, "input_type")
 
     @property
     @pulumi.getter
-    def message(self) -> str:
-        """
-        Inline input details.
-        """
+    def message(self) -> Optional[str]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter(name="objectLocations")
-    def object_locations(self) -> Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult']:
-        """
-        List of ObjectLocations.
-        """
+    def object_locations(self) -> Optional[Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult']]:
         return pulumi.get(self, "object_locations")
 
     @property
     @pulumi.getter(name="signalNames")
-    def signal_names(self) -> Sequence[str]:
+    def signal_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "signal_names")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult(dict):
     def __init__(__self__, *,
-                 timestamp: str,
-                 values: Sequence[float]):
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "values", values)
+                 timestamp: Optional[str] = None,
+                 values: Optional[Sequence[float]] = None):
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
     @property
     @pulumi.getter
-    def values(self) -> Sequence[float]:
+    def values(self) -> Optional[Sequence[float]]:
         return pulumi.get(self, "values")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 namespace: str,
-                 object: str):
-        """
-        :param str bucket: Object Storage bucket name.
-        :param str namespace: Object Storage namespace.
-        :param str object: Object Storage object name.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Object Storage bucket name.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Object Storage object name.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
 
 @pulumi.output_type
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 namespace: str,
-                 output_type: str,
-                 prefix: str):
-        """
-        :param str bucket: Object Storage bucket name.
-        :param str namespace: Object Storage namespace.
-        :param str output_type: The type of output location Allowed values are:
-        :param str prefix: Object Storage folder name.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "output_type", output_type)
-        pulumi.set(__self__, "prefix", prefix)
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 output_type: Optional[str] = None,
+                 prefix: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if output_type is not None:
+            pulumi.set(__self__, "output_type", output_type)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Object Storage bucket name.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="outputType")
-    def output_type(self) -> str:
-        """
-        The type of output location Allowed values are:
-        """
+    def output_type(self) -> Optional[str]:
         return pulumi.get(self, "output_type")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Object Storage folder name.
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
 
@@ -1912,740 +1478,542 @@ class GetDetectAnomalyJobsFilterResult(dict):
 @pulumi.output_type
 class GetDetectionDataAssetDataSourceDetailResult(dict):
     def __init__(__self__, *,
-                 atp_password_secret_id: str,
-                 atp_user_name: str,
-                 bucket: str,
-                 cwallet_file_secret_id: str,
-                 data_source_type: str,
-                 database_name: str,
-                 ewallet_file_secret_id: str,
-                 key_store_file_secret_id: str,
-                 measurement_name: str,
-                 namespace: str,
-                 object: str,
-                 ojdbc_file_secret_id: str,
-                 password_secret_id: str,
-                 table_name: str,
-                 tnsnames_file_secret_id: str,
-                 truststore_file_secret_id: str,
-                 url: str,
-                 user_name: str,
-                 version_specific_details: Sequence['outputs.GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult'],
-                 wallet_password_secret_id: str):
-        """
-        :param str atp_password_secret_id: atp db password Secret Id
-        :param str atp_user_name: atp db user name
-        :param str bucket: Bucket Name for influx connection
-        :param str cwallet_file_secret_id: OCID of the secret containing the containers certificates of ATP wallet
-        :param str data_source_type: Data source type where actually data asset is being stored
-        :param str database_name: DB Name for influx connection
-        :param str ewallet_file_secret_id: OCID of the secret containing the PDB'S certificates of ATP wallet
-        :param str key_store_file_secret_id: OCID of the secret containing Keystore.jks file of the ATP wallet
-        :param str measurement_name: Measurement name for influx
-        :param str namespace: Object storage namespace
-        :param str object: File name
-        :param str ojdbc_file_secret_id: OCID of the secret that contains jdbc properties file of ATP wallet
-        :param str password_secret_id: Password Secret Id for the influx connection
-        :param str table_name: atp database table name
-        :param str tnsnames_file_secret_id: OCID of the secret that contains the tnsnames file of ATP wallet
-        :param str truststore_file_secret_id: OCID of the secret containing truststore.jks file of the ATP wallet
-        :param str url: public IP address and port to influx DB
-        :param str user_name: Username for connection to Influx
-        :param Sequence['GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs'] version_specific_details: Possible data sources
-        :param str wallet_password_secret_id: wallet password Secret ID in String format
-        """
-        pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
-        pulumi.set(__self__, "atp_user_name", atp_user_name)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
-        pulumi.set(__self__, "data_source_type", data_source_type)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
-        pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
-        pulumi.set(__self__, "measurement_name", measurement_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
-        pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "version_specific_details", version_specific_details)
-        pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
+                 atp_password_secret_id: Optional[str] = None,
+                 atp_user_name: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 cwallet_file_secret_id: Optional[str] = None,
+                 data_source_type: Optional[str] = None,
+                 database_name: Optional[str] = None,
+                 ewallet_file_secret_id: Optional[str] = None,
+                 key_store_file_secret_id: Optional[str] = None,
+                 measurement_name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 ojdbc_file_secret_id: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 table_name: Optional[str] = None,
+                 tnsnames_file_secret_id: Optional[str] = None,
+                 truststore_file_secret_id: Optional[str] = None,
+                 url: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 version_specific_details: Optional[Sequence['outputs.GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult']] = None,
+                 wallet_password_secret_id: Optional[str] = None):
+        if atp_password_secret_id is not None:
+            pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
+        if atp_user_name is not None:
+            pulumi.set(__self__, "atp_user_name", atp_user_name)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if cwallet_file_secret_id is not None:
+            pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
+        if data_source_type is not None:
+            pulumi.set(__self__, "data_source_type", data_source_type)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if ewallet_file_secret_id is not None:
+            pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
+        if key_store_file_secret_id is not None:
+            pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
+        if measurement_name is not None:
+            pulumi.set(__self__, "measurement_name", measurement_name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if ojdbc_file_secret_id is not None:
+            pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if table_name is not None:
+            pulumi.set(__self__, "table_name", table_name)
+        if tnsnames_file_secret_id is not None:
+            pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
+        if truststore_file_secret_id is not None:
+            pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if version_specific_details is not None:
+            pulumi.set(__self__, "version_specific_details", version_specific_details)
+        if wallet_password_secret_id is not None:
+            pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
 
     @property
     @pulumi.getter(name="atpPasswordSecretId")
-    def atp_password_secret_id(self) -> str:
-        """
-        atp db password Secret Id
-        """
+    def atp_password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "atp_password_secret_id")
 
     @property
     @pulumi.getter(name="atpUserName")
-    def atp_user_name(self) -> str:
-        """
-        atp db user name
-        """
+    def atp_user_name(self) -> Optional[str]:
         return pulumi.get(self, "atp_user_name")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Bucket Name for influx connection
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="cwalletFileSecretId")
-    def cwallet_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing the containers certificates of ATP wallet
-        """
+    def cwallet_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "cwallet_file_secret_id")
 
     @property
     @pulumi.getter(name="dataSourceType")
-    def data_source_type(self) -> str:
-        """
-        Data source type where actually data asset is being stored
-        """
+    def data_source_type(self) -> Optional[str]:
         return pulumi.get(self, "data_source_type")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        DB Name for influx connection
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="ewalletFileSecretId")
-    def ewallet_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing the PDB'S certificates of ATP wallet
-        """
+    def ewallet_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "ewallet_file_secret_id")
 
     @property
     @pulumi.getter(name="keyStoreFileSecretId")
-    def key_store_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing Keystore.jks file of the ATP wallet
-        """
+    def key_store_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "key_store_file_secret_id")
 
     @property
     @pulumi.getter(name="measurementName")
-    def measurement_name(self) -> str:
-        """
-        Measurement name for influx
-        """
+    def measurement_name(self) -> Optional[str]:
         return pulumi.get(self, "measurement_name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        File name
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="ojdbcFileSecretId")
-    def ojdbc_file_secret_id(self) -> str:
-        """
-        OCID of the secret that contains jdbc properties file of ATP wallet
-        """
+    def ojdbc_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "ojdbc_file_secret_id")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        Password Secret Id for the influx connection
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> str:
-        """
-        atp database table name
-        """
+    def table_name(self) -> Optional[str]:
         return pulumi.get(self, "table_name")
 
     @property
     @pulumi.getter(name="tnsnamesFileSecretId")
-    def tnsnames_file_secret_id(self) -> str:
-        """
-        OCID of the secret that contains the tnsnames file of ATP wallet
-        """
+    def tnsnames_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "tnsnames_file_secret_id")
 
     @property
     @pulumi.getter(name="truststoreFileSecretId")
-    def truststore_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing truststore.jks file of the ATP wallet
-        """
+    def truststore_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "truststore_file_secret_id")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        public IP address and port to influx DB
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        Username for connection to Influx
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="versionSpecificDetails")
-    def version_specific_details(self) -> Sequence['outputs.GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult']:
-        """
-        Possible data sources
-        """
+    def version_specific_details(self) -> Optional[Sequence['outputs.GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult']]:
         return pulumi.get(self, "version_specific_details")
 
     @property
     @pulumi.getter(name="walletPasswordSecretId")
-    def wallet_password_secret_id(self) -> str:
-        """
-        wallet password Secret ID in String format
-        """
+    def wallet_password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_password_secret_id")
 
 
 @pulumi.output_type
 class GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 database_name: str,
-                 influx_version: str,
-                 organization_name: str,
-                 retention_policy_name: str):
-        """
-        :param str bucket: Bucket Name for influx connection
-        :param str database_name: DB Name for influx connection
-        :param str influx_version: Data source type where actually data asset is being stored
-        :param str organization_name: Org name for the influx db
-        :param str retention_policy_name: retention policy is how long the bucket would last
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "influx_version", influx_version)
-        pulumi.set(__self__, "organization_name", organization_name)
-        pulumi.set(__self__, "retention_policy_name", retention_policy_name)
+                 bucket: Optional[str] = None,
+                 database_name: Optional[str] = None,
+                 influx_version: Optional[str] = None,
+                 organization_name: Optional[str] = None,
+                 retention_policy_name: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if influx_version is not None:
+            pulumi.set(__self__, "influx_version", influx_version)
+        if organization_name is not None:
+            pulumi.set(__self__, "organization_name", organization_name)
+        if retention_policy_name is not None:
+            pulumi.set(__self__, "retention_policy_name", retention_policy_name)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Bucket Name for influx connection
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        DB Name for influx connection
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="influxVersion")
-    def influx_version(self) -> str:
-        """
-        Data source type where actually data asset is being stored
-        """
+    def influx_version(self) -> Optional[str]:
         return pulumi.get(self, "influx_version")
 
     @property
     @pulumi.getter(name="organizationName")
-    def organization_name(self) -> str:
-        """
-        Org name for the influx db
-        """
+    def organization_name(self) -> Optional[str]:
         return pulumi.get(self, "organization_name")
 
     @property
     @pulumi.getter(name="retentionPolicyName")
-    def retention_policy_name(self) -> str:
-        """
-        retention policy is how long the bucket would last
-        """
+    def retention_policy_name(self) -> Optional[str]:
         return pulumi.get(self, "retention_policy_name")
 
 
 @pulumi.output_type
 class GetDetectionDataAssetsDataAssetCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDetectionDataAssetsDataAssetCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 data_source_details: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult'],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 private_endpoint_id: str,
-                 project_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Sequence['GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs'] data_source_details: Possible data sources
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A short description of the data asset.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The Unique Oracle ID (OCID) that is immutable on creation.
-        :param str private_endpoint_id: OCID of Private Endpoint.
-        :param str project_id: The ID of the project for which to list the objects.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the DataAsset was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the the DataAsset was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_source_details", data_source_details)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 data_source_details: Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_source_details is not None:
+            pulumi.set(__self__, "data_source_details", data_source_details)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataSourceDetails")
-    def data_source_details(self) -> Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult']:
-        """
-        Possible data sources
-        """
+    def data_source_details(self) -> Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult']]:
         return pulumi.get(self, "data_source_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the data asset.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The Unique Oracle ID (OCID) that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        OCID of Private Endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The ID of the project for which to list the objects.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the DataAsset was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the the DataAsset was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult(dict):
     def __init__(__self__, *,
-                 atp_password_secret_id: str,
-                 atp_user_name: str,
-                 bucket: str,
-                 cwallet_file_secret_id: str,
-                 data_source_type: str,
-                 database_name: str,
-                 ewallet_file_secret_id: str,
-                 key_store_file_secret_id: str,
-                 measurement_name: str,
-                 namespace: str,
-                 object: str,
-                 ojdbc_file_secret_id: str,
-                 password_secret_id: str,
-                 table_name: str,
-                 tnsnames_file_secret_id: str,
-                 truststore_file_secret_id: str,
-                 url: str,
-                 user_name: str,
-                 version_specific_details: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult'],
-                 wallet_password_secret_id: str):
-        """
-        :param str atp_password_secret_id: atp db password Secret Id
-        :param str atp_user_name: atp db user name
-        :param str bucket: Bucket Name for influx connection
-        :param str cwallet_file_secret_id: OCID of the secret containing the containers certificates of ATP wallet
-        :param str data_source_type: Data source type where actually data asset is being stored
-        :param str database_name: DB Name for influx connection
-        :param str ewallet_file_secret_id: OCID of the secret containing the PDB'S certificates of ATP wallet
-        :param str key_store_file_secret_id: OCID of the secret containing Keystore.jks file of the ATP wallet
-        :param str measurement_name: Measurement name for influx
-        :param str namespace: Object storage namespace
-        :param str object: File name
-        :param str ojdbc_file_secret_id: OCID of the secret that contains jdbc properties file of ATP wallet
-        :param str password_secret_id: Password Secret Id for the influx connection
-        :param str table_name: atp database table name
-        :param str tnsnames_file_secret_id: OCID of the secret that contains the tnsnames file of ATP wallet
-        :param str truststore_file_secret_id: OCID of the secret containing truststore.jks file of the ATP wallet
-        :param str url: public IP address and port to influx DB
-        :param str user_name: Username for connection to Influx
-        :param Sequence['GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs'] version_specific_details: Possible data sources
-        :param str wallet_password_secret_id: wallet password Secret ID in String format
-        """
-        pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
-        pulumi.set(__self__, "atp_user_name", atp_user_name)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
-        pulumi.set(__self__, "data_source_type", data_source_type)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
-        pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
-        pulumi.set(__self__, "measurement_name", measurement_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
-        pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "version_specific_details", version_specific_details)
-        pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
+                 atp_password_secret_id: Optional[str] = None,
+                 atp_user_name: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 cwallet_file_secret_id: Optional[str] = None,
+                 data_source_type: Optional[str] = None,
+                 database_name: Optional[str] = None,
+                 ewallet_file_secret_id: Optional[str] = None,
+                 key_store_file_secret_id: Optional[str] = None,
+                 measurement_name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 ojdbc_file_secret_id: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 table_name: Optional[str] = None,
+                 tnsnames_file_secret_id: Optional[str] = None,
+                 truststore_file_secret_id: Optional[str] = None,
+                 url: Optional[str] = None,
+                 user_name: Optional[str] = None,
+                 version_specific_details: Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult']] = None,
+                 wallet_password_secret_id: Optional[str] = None):
+        if atp_password_secret_id is not None:
+            pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
+        if atp_user_name is not None:
+            pulumi.set(__self__, "atp_user_name", atp_user_name)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if cwallet_file_secret_id is not None:
+            pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
+        if data_source_type is not None:
+            pulumi.set(__self__, "data_source_type", data_source_type)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if ewallet_file_secret_id is not None:
+            pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
+        if key_store_file_secret_id is not None:
+            pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
+        if measurement_name is not None:
+            pulumi.set(__self__, "measurement_name", measurement_name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if ojdbc_file_secret_id is not None:
+            pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if table_name is not None:
+            pulumi.set(__self__, "table_name", table_name)
+        if tnsnames_file_secret_id is not None:
+            pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
+        if truststore_file_secret_id is not None:
+            pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if version_specific_details is not None:
+            pulumi.set(__self__, "version_specific_details", version_specific_details)
+        if wallet_password_secret_id is not None:
+            pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
 
     @property
     @pulumi.getter(name="atpPasswordSecretId")
-    def atp_password_secret_id(self) -> str:
-        """
-        atp db password Secret Id
-        """
+    def atp_password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "atp_password_secret_id")
 
     @property
     @pulumi.getter(name="atpUserName")
-    def atp_user_name(self) -> str:
-        """
-        atp db user name
-        """
+    def atp_user_name(self) -> Optional[str]:
         return pulumi.get(self, "atp_user_name")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Bucket Name for influx connection
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="cwalletFileSecretId")
-    def cwallet_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing the containers certificates of ATP wallet
-        """
+    def cwallet_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "cwallet_file_secret_id")
 
     @property
     @pulumi.getter(name="dataSourceType")
-    def data_source_type(self) -> str:
-        """
-        Data source type where actually data asset is being stored
-        """
+    def data_source_type(self) -> Optional[str]:
         return pulumi.get(self, "data_source_type")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        DB Name for influx connection
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="ewalletFileSecretId")
-    def ewallet_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing the PDB'S certificates of ATP wallet
-        """
+    def ewallet_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "ewallet_file_secret_id")
 
     @property
     @pulumi.getter(name="keyStoreFileSecretId")
-    def key_store_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing Keystore.jks file of the ATP wallet
-        """
+    def key_store_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "key_store_file_secret_id")
 
     @property
     @pulumi.getter(name="measurementName")
-    def measurement_name(self) -> str:
-        """
-        Measurement name for influx
-        """
+    def measurement_name(self) -> Optional[str]:
         return pulumi.get(self, "measurement_name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        File name
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="ojdbcFileSecretId")
-    def ojdbc_file_secret_id(self) -> str:
-        """
-        OCID of the secret that contains jdbc properties file of ATP wallet
-        """
+    def ojdbc_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "ojdbc_file_secret_id")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        Password Secret Id for the influx connection
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> str:
-        """
-        atp database table name
-        """
+    def table_name(self) -> Optional[str]:
         return pulumi.get(self, "table_name")
 
     @property
     @pulumi.getter(name="tnsnamesFileSecretId")
-    def tnsnames_file_secret_id(self) -> str:
-        """
-        OCID of the secret that contains the tnsnames file of ATP wallet
-        """
+    def tnsnames_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "tnsnames_file_secret_id")
 
     @property
     @pulumi.getter(name="truststoreFileSecretId")
-    def truststore_file_secret_id(self) -> str:
-        """
-        OCID of the secret containing truststore.jks file of the ATP wallet
-        """
+    def truststore_file_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "truststore_file_secret_id")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        public IP address and port to influx DB
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="userName")
-    def user_name(self) -> str:
-        """
-        Username for connection to Influx
-        """
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="versionSpecificDetails")
-    def version_specific_details(self) -> Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult']:
-        """
-        Possible data sources
-        """
+    def version_specific_details(self) -> Optional[Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult']]:
         return pulumi.get(self, "version_specific_details")
 
     @property
     @pulumi.getter(name="walletPasswordSecretId")
-    def wallet_password_secret_id(self) -> str:
-        """
-        wallet password Secret ID in String format
-        """
+    def wallet_password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "wallet_password_secret_id")
 
 
 @pulumi.output_type
 class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 database_name: str,
-                 influx_version: str,
-                 organization_name: str,
-                 retention_policy_name: str):
-        """
-        :param str bucket: Bucket Name for influx connection
-        :param str database_name: DB Name for influx connection
-        :param str influx_version: Data source type where actually data asset is being stored
-        :param str organization_name: Org name for the influx db
-        :param str retention_policy_name: retention policy is how long the bucket would last
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "influx_version", influx_version)
-        pulumi.set(__self__, "organization_name", organization_name)
-        pulumi.set(__self__, "retention_policy_name", retention_policy_name)
+                 bucket: Optional[str] = None,
+                 database_name: Optional[str] = None,
+                 influx_version: Optional[str] = None,
+                 organization_name: Optional[str] = None,
+                 retention_policy_name: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if influx_version is not None:
+            pulumi.set(__self__, "influx_version", influx_version)
+        if organization_name is not None:
+            pulumi.set(__self__, "organization_name", organization_name)
+        if retention_policy_name is not None:
+            pulumi.set(__self__, "retention_policy_name", retention_policy_name)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Bucket Name for influx connection
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        DB Name for influx connection
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="influxVersion")
-    def influx_version(self) -> str:
-        """
-        Data source type where actually data asset is being stored
-        """
+    def influx_version(self) -> Optional[str]:
         return pulumi.get(self, "influx_version")
 
     @property
     @pulumi.getter(name="organizationName")
-    def organization_name(self) -> str:
-        """
-        Org name for the influx db
-        """
+    def organization_name(self) -> Optional[str]:
         return pulumi.get(self, "organization_name")
 
     @property
     @pulumi.getter(name="retentionPolicyName")
-    def retention_policy_name(self) -> str:
-        """
-        retention policy is how long the bucket would last
-        """
+    def retention_policy_name(self) -> Optional[str]:
         return pulumi.get(self, "retention_policy_name")
 
 
@@ -2679,323 +2047,236 @@ class GetDetectionDataAssetsFilterResult(dict):
 @pulumi.output_type
 class GetDetectionModelModelTrainingDetailResult(dict):
     def __init__(__self__, *,
-                 algorithm_hint: str,
-                 data_asset_ids: Sequence[str],
-                 target_fap: float,
-                 training_fraction: float,
-                 window_size: int):
-        """
-        :param str algorithm_hint: User can choose specific algorithm for training.
-        :param Sequence[str] data_asset_ids: The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        :param float target_fap: A target model accuracy metric user provides as their requirement
-        :param float training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        :param int window_size: Window size defined during training or deduced by the algorithm.
-        """
-        pulumi.set(__self__, "algorithm_hint", algorithm_hint)
-        pulumi.set(__self__, "data_asset_ids", data_asset_ids)
-        pulumi.set(__self__, "target_fap", target_fap)
-        pulumi.set(__self__, "training_fraction", training_fraction)
-        pulumi.set(__self__, "window_size", window_size)
+                 algorithm_hint: Optional[str] = None,
+                 data_asset_ids: Optional[Sequence[str]] = None,
+                 target_fap: Optional[float] = None,
+                 training_fraction: Optional[float] = None,
+                 window_size: Optional[int] = None):
+        if algorithm_hint is not None:
+            pulumi.set(__self__, "algorithm_hint", algorithm_hint)
+        if data_asset_ids is not None:
+            pulumi.set(__self__, "data_asset_ids", data_asset_ids)
+        if target_fap is not None:
+            pulumi.set(__self__, "target_fap", target_fap)
+        if training_fraction is not None:
+            pulumi.set(__self__, "training_fraction", training_fraction)
+        if window_size is not None:
+            pulumi.set(__self__, "window_size", window_size)
 
     @property
     @pulumi.getter(name="algorithmHint")
-    def algorithm_hint(self) -> str:
-        """
-        User can choose specific algorithm for training.
-        """
+    def algorithm_hint(self) -> Optional[str]:
         return pulumi.get(self, "algorithm_hint")
 
     @property
     @pulumi.getter(name="dataAssetIds")
-    def data_asset_ids(self) -> Sequence[str]:
-        """
-        The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        """
+    def data_asset_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "data_asset_ids")
 
     @property
     @pulumi.getter(name="targetFap")
-    def target_fap(self) -> float:
-        """
-        A target model accuracy metric user provides as their requirement
-        """
+    def target_fap(self) -> Optional[float]:
         return pulumi.get(self, "target_fap")
 
     @property
     @pulumi.getter(name="trainingFraction")
-    def training_fraction(self) -> float:
-        """
-        Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        """
+    def training_fraction(self) -> Optional[float]:
         return pulumi.get(self, "training_fraction")
 
     @property
     @pulumi.getter(name="windowSize")
-    def window_size(self) -> int:
-        """
-        Window size defined during training or deduced by the algorithm.
-        """
+    def window_size(self) -> Optional[int]:
         return pulumi.get(self, "window_size")
 
 
 @pulumi.output_type
 class GetDetectionModelModelTrainingResultResult(dict):
     def __init__(__self__, *,
-                 fap: float,
-                 is_training_goal_achieved: bool,
-                 mae: float,
-                 max_inference_sync_rows: int,
-                 multivariate_fap: float,
-                 rmse: float,
-                 row_reduction_details: Sequence['outputs.GetDetectionModelModelTrainingResultRowReductionDetailResult'],
-                 signal_details: Sequence['outputs.GetDetectionModelModelTrainingResultSignalDetailResult'],
-                 warning: str,
-                 window_size: int):
-        """
-        :param float fap: Accuracy metric for a signal.
-        :param bool is_training_goal_achieved: A boolean value to indicate if train goal/targetFap is achieved for trained model
-        :param float multivariate_fap: The model accuracy metric on timestamp level.
-        :param Sequence['GetDetectionModelModelTrainingResultRowReductionDetailArgs'] row_reduction_details: Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        :param Sequence['GetDetectionModelModelTrainingResultSignalDetailArgs'] signal_details: The list of signal details.
-        :param str warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
-        :param int window_size: Window size defined during training or deduced by the algorithm.
-        """
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
-        pulumi.set(__self__, "mae", mae)
-        pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
-        pulumi.set(__self__, "multivariate_fap", multivariate_fap)
-        pulumi.set(__self__, "rmse", rmse)
-        pulumi.set(__self__, "row_reduction_details", row_reduction_details)
-        pulumi.set(__self__, "signal_details", signal_details)
-        pulumi.set(__self__, "warning", warning)
-        pulumi.set(__self__, "window_size", window_size)
+                 fap: Optional[float] = None,
+                 is_training_goal_achieved: Optional[bool] = None,
+                 mae: Optional[float] = None,
+                 max_inference_sync_rows: Optional[int] = None,
+                 multivariate_fap: Optional[float] = None,
+                 rmse: Optional[float] = None,
+                 row_reduction_details: Optional[Sequence['outputs.GetDetectionModelModelTrainingResultRowReductionDetailResult']] = None,
+                 signal_details: Optional[Sequence['outputs.GetDetectionModelModelTrainingResultSignalDetailResult']] = None,
+                 warning: Optional[str] = None,
+                 window_size: Optional[int] = None):
+        if fap is not None:
+            pulumi.set(__self__, "fap", fap)
+        if is_training_goal_achieved is not None:
+            pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
+        if mae is not None:
+            pulumi.set(__self__, "mae", mae)
+        if max_inference_sync_rows is not None:
+            pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
+        if multivariate_fap is not None:
+            pulumi.set(__self__, "multivariate_fap", multivariate_fap)
+        if rmse is not None:
+            pulumi.set(__self__, "rmse", rmse)
+        if row_reduction_details is not None:
+            pulumi.set(__self__, "row_reduction_details", row_reduction_details)
+        if signal_details is not None:
+            pulumi.set(__self__, "signal_details", signal_details)
+        if warning is not None:
+            pulumi.set(__self__, "warning", warning)
+        if window_size is not None:
+            pulumi.set(__self__, "window_size", window_size)
 
     @property
     @pulumi.getter
-    def fap(self) -> float:
-        """
-        Accuracy metric for a signal.
-        """
+    def fap(self) -> Optional[float]:
         return pulumi.get(self, "fap")
 
     @property
     @pulumi.getter(name="isTrainingGoalAchieved")
-    def is_training_goal_achieved(self) -> bool:
-        """
-        A boolean value to indicate if train goal/targetFap is achieved for trained model
-        """
+    def is_training_goal_achieved(self) -> Optional[bool]:
         return pulumi.get(self, "is_training_goal_achieved")
 
     @property
     @pulumi.getter
-    def mae(self) -> float:
+    def mae(self) -> Optional[float]:
         return pulumi.get(self, "mae")
 
     @property
     @pulumi.getter(name="maxInferenceSyncRows")
-    def max_inference_sync_rows(self) -> int:
+    def max_inference_sync_rows(self) -> Optional[int]:
         return pulumi.get(self, "max_inference_sync_rows")
 
     @property
     @pulumi.getter(name="multivariateFap")
-    def multivariate_fap(self) -> float:
-        """
-        The model accuracy metric on timestamp level.
-        """
+    def multivariate_fap(self) -> Optional[float]:
         return pulumi.get(self, "multivariate_fap")
 
     @property
     @pulumi.getter
-    def rmse(self) -> float:
+    def rmse(self) -> Optional[float]:
         return pulumi.get(self, "rmse")
 
     @property
     @pulumi.getter(name="rowReductionDetails")
-    def row_reduction_details(self) -> Sequence['outputs.GetDetectionModelModelTrainingResultRowReductionDetailResult']:
-        """
-        Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        """
+    def row_reduction_details(self) -> Optional[Sequence['outputs.GetDetectionModelModelTrainingResultRowReductionDetailResult']]:
         return pulumi.get(self, "row_reduction_details")
 
     @property
     @pulumi.getter(name="signalDetails")
-    def signal_details(self) -> Sequence['outputs.GetDetectionModelModelTrainingResultSignalDetailResult']:
-        """
-        The list of signal details.
-        """
+    def signal_details(self) -> Optional[Sequence['outputs.GetDetectionModelModelTrainingResultSignalDetailResult']]:
         return pulumi.get(self, "signal_details")
 
     @property
     @pulumi.getter
-    def warning(self) -> str:
-        """
-        A warning message to explain the reason when targetFap cannot be achieved for trained model
-        """
+    def warning(self) -> Optional[str]:
         return pulumi.get(self, "warning")
 
     @property
     @pulumi.getter(name="windowSize")
-    def window_size(self) -> int:
-        """
-        Window size defined during training or deduced by the algorithm.
-        """
+    def window_size(self) -> Optional[int]:
         return pulumi.get(self, "window_size")
 
 
 @pulumi.output_type
 class GetDetectionModelModelTrainingResultRowReductionDetailResult(dict):
     def __init__(__self__, *,
-                 is_reduction_enabled: bool,
-                 reduction_method: str,
-                 reduction_percentage: float):
-        """
-        :param bool is_reduction_enabled: A boolean value to indicate if row reduction is applied
-        :param str reduction_method: Method for row reduction:
-               * DELETE_ROW - delete rows with equal intervals
-               * AVERAGE_ROW - average multiple rows to one row
-        :param float reduction_percentage: A percentage to reduce data size down to on top of original data
-        """
-        pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
-        pulumi.set(__self__, "reduction_method", reduction_method)
-        pulumi.set(__self__, "reduction_percentage", reduction_percentage)
+                 is_reduction_enabled: Optional[bool] = None,
+                 reduction_method: Optional[str] = None,
+                 reduction_percentage: Optional[float] = None):
+        if is_reduction_enabled is not None:
+            pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
+        if reduction_method is not None:
+            pulumi.set(__self__, "reduction_method", reduction_method)
+        if reduction_percentage is not None:
+            pulumi.set(__self__, "reduction_percentage", reduction_percentage)
 
     @property
     @pulumi.getter(name="isReductionEnabled")
-    def is_reduction_enabled(self) -> bool:
-        """
-        A boolean value to indicate if row reduction is applied
-        """
+    def is_reduction_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_reduction_enabled")
 
     @property
     @pulumi.getter(name="reductionMethod")
-    def reduction_method(self) -> str:
-        """
-        Method for row reduction:
-        * DELETE_ROW - delete rows with equal intervals
-        * AVERAGE_ROW - average multiple rows to one row
-        """
+    def reduction_method(self) -> Optional[str]:
         return pulumi.get(self, "reduction_method")
 
     @property
     @pulumi.getter(name="reductionPercentage")
-    def reduction_percentage(self) -> float:
-        """
-        A percentage to reduce data size down to on top of original data
-        """
+    def reduction_percentage(self) -> Optional[float]:
         return pulumi.get(self, "reduction_percentage")
 
 
 @pulumi.output_type
 class GetDetectionModelModelTrainingResultSignalDetailResult(dict):
     def __init__(__self__, *,
-                 details: str,
-                 fap: float,
-                 is_quantized: bool,
-                 max: float,
-                 min: float,
-                 mvi_ratio: float,
-                 signal_name: str,
-                 status: str,
-                 std: float):
-        """
-        :param str details: detailed information for a signal.
-        :param float fap: Accuracy metric for a signal.
-        :param bool is_quantized: A boolean value to indicate if a signal is quantized or not.
-        :param float max: Max value within a signal.
-        :param float min: Min value within a signal.
-        :param float mvi_ratio: The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        :param str signal_name: The name of a signal.
-        :param str status: Status of the signal:
-               * ACCEPTED - the signal is used for training the model
-               * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-               * OTHER - placeholder for other status
-        :param float std: Standard deviation of values within a signal.
-        """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_quantized", is_quantized)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "mvi_ratio", mvi_ratio)
-        pulumi.set(__self__, "signal_name", signal_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "std", std)
+                 details: Optional[str] = None,
+                 fap: Optional[float] = None,
+                 is_quantized: Optional[bool] = None,
+                 max: Optional[float] = None,
+                 min: Optional[float] = None,
+                 mvi_ratio: Optional[float] = None,
+                 signal_name: Optional[str] = None,
+                 status: Optional[str] = None,
+                 std: Optional[float] = None):
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if fap is not None:
+            pulumi.set(__self__, "fap", fap)
+        if is_quantized is not None:
+            pulumi.set(__self__, "is_quantized", is_quantized)
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
+        if mvi_ratio is not None:
+            pulumi.set(__self__, "mvi_ratio", mvi_ratio)
+        if signal_name is not None:
+            pulumi.set(__self__, "signal_name", signal_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if std is not None:
+            pulumi.set(__self__, "std", std)
 
     @property
     @pulumi.getter
-    def details(self) -> str:
-        """
-        detailed information for a signal.
-        """
+    def details(self) -> Optional[str]:
         return pulumi.get(self, "details")
 
     @property
     @pulumi.getter
-    def fap(self) -> float:
-        """
-        Accuracy metric for a signal.
-        """
+    def fap(self) -> Optional[float]:
         return pulumi.get(self, "fap")
 
     @property
     @pulumi.getter(name="isQuantized")
-    def is_quantized(self) -> bool:
-        """
-        A boolean value to indicate if a signal is quantized or not.
-        """
+    def is_quantized(self) -> Optional[bool]:
         return pulumi.get(self, "is_quantized")
 
     @property
     @pulumi.getter
-    def max(self) -> float:
-        """
-        Max value within a signal.
-        """
+    def max(self) -> Optional[float]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> float:
-        """
-        Min value within a signal.
-        """
+    def min(self) -> Optional[float]:
         return pulumi.get(self, "min")
 
     @property
     @pulumi.getter(name="mviRatio")
-    def mvi_ratio(self) -> float:
-        """
-        The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        """
+    def mvi_ratio(self) -> Optional[float]:
         return pulumi.get(self, "mvi_ratio")
 
     @property
     @pulumi.getter(name="signalName")
-    def signal_name(self) -> str:
-        """
-        The name of a signal.
-        """
+    def signal_name(self) -> Optional[str]:
         return pulumi.get(self, "signal_name")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the signal:
-        * ACCEPTED - the signal is used for training the model
-        * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-        * OTHER - placeholder for other status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def std(self) -> float:
-        """
-        Standard deviation of values within a signal.
-        """
+    def std(self) -> Optional[float]:
         return pulumi.get(self, "std")
 
 
@@ -3029,496 +2310,366 @@ class GetDetectionModelsFilterResult(dict):
 @pulumi.output_type
 class GetDetectionModelsModelCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDetectionModelsModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDetectionModelsModelCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDetectionModelsModelCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 model_training_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingDetailResult'],
-                 model_training_results: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultResult'],
-                 project_id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A short description of the Model.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The OCID of the model that is immutable on creation.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Sequence['GetDetectionModelsModelCollectionItemModelTrainingDetailArgs'] model_training_details: Specifies the details of the MSET model during the create call.
-        :param Sequence['GetDetectionModelsModelCollectionItemModelTrainingResultArgs'] model_training_results: Specifies the details for an Anomaly Detection model trained with MSET.
-        :param str project_id: The ID of the project for which to list the objects.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the Model was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the Model was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_training_details", model_training_details)
-        pulumi.set(__self__, "model_training_results", model_training_results)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 model_training_details: Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingDetailResult']] = None,
+                 model_training_results: Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultResult']] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if model_training_details is not None:
+            pulumi.set(__self__, "model_training_details", model_training_details)
+        if model_training_results is not None:
+            pulumi.set(__self__, "model_training_results", model_training_results)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the Model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the model that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="modelTrainingDetails")
-    def model_training_details(self) -> Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingDetailResult']:
-        """
-        Specifies the details of the MSET model during the create call.
-        """
+    def model_training_details(self) -> Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingDetailResult']]:
         return pulumi.get(self, "model_training_details")
 
     @property
     @pulumi.getter(name="modelTrainingResults")
-    def model_training_results(self) -> Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultResult']:
-        """
-        Specifies the details for an Anomaly Detection model trained with MSET.
-        """
+    def model_training_results(self) -> Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultResult']]:
         return pulumi.get(self, "model_training_results")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The ID of the project for which to list the objects.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Model was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Model was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetDetectionModelsModelCollectionItemModelTrainingDetailResult(dict):
     def __init__(__self__, *,
-                 algorithm_hint: str,
-                 data_asset_ids: Sequence[str],
-                 target_fap: float,
-                 training_fraction: float,
-                 window_size: int):
-        """
-        :param str algorithm_hint: User can choose specific algorithm for training.
-        :param Sequence[str] data_asset_ids: The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        :param float target_fap: A target model accuracy metric user provides as their requirement
-        :param float training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        :param int window_size: Window size defined during training or deduced by the algorithm.
-        """
-        pulumi.set(__self__, "algorithm_hint", algorithm_hint)
-        pulumi.set(__self__, "data_asset_ids", data_asset_ids)
-        pulumi.set(__self__, "target_fap", target_fap)
-        pulumi.set(__self__, "training_fraction", training_fraction)
-        pulumi.set(__self__, "window_size", window_size)
+                 algorithm_hint: Optional[str] = None,
+                 data_asset_ids: Optional[Sequence[str]] = None,
+                 target_fap: Optional[float] = None,
+                 training_fraction: Optional[float] = None,
+                 window_size: Optional[int] = None):
+        if algorithm_hint is not None:
+            pulumi.set(__self__, "algorithm_hint", algorithm_hint)
+        if data_asset_ids is not None:
+            pulumi.set(__self__, "data_asset_ids", data_asset_ids)
+        if target_fap is not None:
+            pulumi.set(__self__, "target_fap", target_fap)
+        if training_fraction is not None:
+            pulumi.set(__self__, "training_fraction", training_fraction)
+        if window_size is not None:
+            pulumi.set(__self__, "window_size", window_size)
 
     @property
     @pulumi.getter(name="algorithmHint")
-    def algorithm_hint(self) -> str:
-        """
-        User can choose specific algorithm for training.
-        """
+    def algorithm_hint(self) -> Optional[str]:
         return pulumi.get(self, "algorithm_hint")
 
     @property
     @pulumi.getter(name="dataAssetIds")
-    def data_asset_ids(self) -> Sequence[str]:
-        """
-        The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        """
+    def data_asset_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "data_asset_ids")
 
     @property
     @pulumi.getter(name="targetFap")
-    def target_fap(self) -> float:
-        """
-        A target model accuracy metric user provides as their requirement
-        """
+    def target_fap(self) -> Optional[float]:
         return pulumi.get(self, "target_fap")
 
     @property
     @pulumi.getter(name="trainingFraction")
-    def training_fraction(self) -> float:
-        """
-        Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        """
+    def training_fraction(self) -> Optional[float]:
         return pulumi.get(self, "training_fraction")
 
     @property
     @pulumi.getter(name="windowSize")
-    def window_size(self) -> int:
-        """
-        Window size defined during training or deduced by the algorithm.
-        """
+    def window_size(self) -> Optional[int]:
         return pulumi.get(self, "window_size")
 
 
 @pulumi.output_type
 class GetDetectionModelsModelCollectionItemModelTrainingResultResult(dict):
     def __init__(__self__, *,
-                 fap: float,
-                 is_training_goal_achieved: bool,
-                 mae: float,
-                 max_inference_sync_rows: int,
-                 multivariate_fap: float,
-                 rmse: float,
-                 row_reduction_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult'],
-                 signal_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult'],
-                 warning: str,
-                 window_size: int):
-        """
-        :param float fap: Accuracy metric for a signal.
-        :param bool is_training_goal_achieved: A boolean value to indicate if train goal/targetFap is achieved for trained model
-        :param float multivariate_fap: The model accuracy metric on timestamp level.
-        :param Sequence['GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs'] row_reduction_details: Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        :param Sequence['GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs'] signal_details: The list of signal details.
-        :param str warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
-        :param int window_size: Window size defined during training or deduced by the algorithm.
-        """
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
-        pulumi.set(__self__, "mae", mae)
-        pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
-        pulumi.set(__self__, "multivariate_fap", multivariate_fap)
-        pulumi.set(__self__, "rmse", rmse)
-        pulumi.set(__self__, "row_reduction_details", row_reduction_details)
-        pulumi.set(__self__, "signal_details", signal_details)
-        pulumi.set(__self__, "warning", warning)
-        pulumi.set(__self__, "window_size", window_size)
+                 fap: Optional[float] = None,
+                 is_training_goal_achieved: Optional[bool] = None,
+                 mae: Optional[float] = None,
+                 max_inference_sync_rows: Optional[int] = None,
+                 multivariate_fap: Optional[float] = None,
+                 rmse: Optional[float] = None,
+                 row_reduction_details: Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult']] = None,
+                 signal_details: Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult']] = None,
+                 warning: Optional[str] = None,
+                 window_size: Optional[int] = None):
+        if fap is not None:
+            pulumi.set(__self__, "fap", fap)
+        if is_training_goal_achieved is not None:
+            pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
+        if mae is not None:
+            pulumi.set(__self__, "mae", mae)
+        if max_inference_sync_rows is not None:
+            pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
+        if multivariate_fap is not None:
+            pulumi.set(__self__, "multivariate_fap", multivariate_fap)
+        if rmse is not None:
+            pulumi.set(__self__, "rmse", rmse)
+        if row_reduction_details is not None:
+            pulumi.set(__self__, "row_reduction_details", row_reduction_details)
+        if signal_details is not None:
+            pulumi.set(__self__, "signal_details", signal_details)
+        if warning is not None:
+            pulumi.set(__self__, "warning", warning)
+        if window_size is not None:
+            pulumi.set(__self__, "window_size", window_size)
 
     @property
     @pulumi.getter
-    def fap(self) -> float:
-        """
-        Accuracy metric for a signal.
-        """
+    def fap(self) -> Optional[float]:
         return pulumi.get(self, "fap")
 
     @property
     @pulumi.getter(name="isTrainingGoalAchieved")
-    def is_training_goal_achieved(self) -> bool:
-        """
-        A boolean value to indicate if train goal/targetFap is achieved for trained model
-        """
+    def is_training_goal_achieved(self) -> Optional[bool]:
         return pulumi.get(self, "is_training_goal_achieved")
 
     @property
     @pulumi.getter
-    def mae(self) -> float:
+    def mae(self) -> Optional[float]:
         return pulumi.get(self, "mae")
 
     @property
     @pulumi.getter(name="maxInferenceSyncRows")
-    def max_inference_sync_rows(self) -> int:
+    def max_inference_sync_rows(self) -> Optional[int]:
         return pulumi.get(self, "max_inference_sync_rows")
 
     @property
     @pulumi.getter(name="multivariateFap")
-    def multivariate_fap(self) -> float:
-        """
-        The model accuracy metric on timestamp level.
-        """
+    def multivariate_fap(self) -> Optional[float]:
         return pulumi.get(self, "multivariate_fap")
 
     @property
     @pulumi.getter
-    def rmse(self) -> float:
+    def rmse(self) -> Optional[float]:
         return pulumi.get(self, "rmse")
 
     @property
     @pulumi.getter(name="rowReductionDetails")
-    def row_reduction_details(self) -> Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult']:
-        """
-        Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        """
+    def row_reduction_details(self) -> Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult']]:
         return pulumi.get(self, "row_reduction_details")
 
     @property
     @pulumi.getter(name="signalDetails")
-    def signal_details(self) -> Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult']:
-        """
-        The list of signal details.
-        """
+    def signal_details(self) -> Optional[Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult']]:
         return pulumi.get(self, "signal_details")
 
     @property
     @pulumi.getter
-    def warning(self) -> str:
-        """
-        A warning message to explain the reason when targetFap cannot be achieved for trained model
-        """
+    def warning(self) -> Optional[str]:
         return pulumi.get(self, "warning")
 
     @property
     @pulumi.getter(name="windowSize")
-    def window_size(self) -> int:
-        """
-        Window size defined during training or deduced by the algorithm.
-        """
+    def window_size(self) -> Optional[int]:
         return pulumi.get(self, "window_size")
 
 
 @pulumi.output_type
 class GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult(dict):
     def __init__(__self__, *,
-                 is_reduction_enabled: bool,
-                 reduction_method: str,
-                 reduction_percentage: float):
-        """
-        :param bool is_reduction_enabled: A boolean value to indicate if row reduction is applied
-        :param str reduction_method: Method for row reduction:
-               * DELETE_ROW - delete rows with equal intervals
-               * AVERAGE_ROW - average multiple rows to one row
-        :param float reduction_percentage: A percentage to reduce data size down to on top of original data
-        """
-        pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
-        pulumi.set(__self__, "reduction_method", reduction_method)
-        pulumi.set(__self__, "reduction_percentage", reduction_percentage)
+                 is_reduction_enabled: Optional[bool] = None,
+                 reduction_method: Optional[str] = None,
+                 reduction_percentage: Optional[float] = None):
+        if is_reduction_enabled is not None:
+            pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
+        if reduction_method is not None:
+            pulumi.set(__self__, "reduction_method", reduction_method)
+        if reduction_percentage is not None:
+            pulumi.set(__self__, "reduction_percentage", reduction_percentage)
 
     @property
     @pulumi.getter(name="isReductionEnabled")
-    def is_reduction_enabled(self) -> bool:
-        """
-        A boolean value to indicate if row reduction is applied
-        """
+    def is_reduction_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_reduction_enabled")
 
     @property
     @pulumi.getter(name="reductionMethod")
-    def reduction_method(self) -> str:
-        """
-        Method for row reduction:
-        * DELETE_ROW - delete rows with equal intervals
-        * AVERAGE_ROW - average multiple rows to one row
-        """
+    def reduction_method(self) -> Optional[str]:
         return pulumi.get(self, "reduction_method")
 
     @property
     @pulumi.getter(name="reductionPercentage")
-    def reduction_percentage(self) -> float:
-        """
-        A percentage to reduce data size down to on top of original data
-        """
+    def reduction_percentage(self) -> Optional[float]:
         return pulumi.get(self, "reduction_percentage")
 
 
 @pulumi.output_type
 class GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult(dict):
     def __init__(__self__, *,
-                 details: str,
-                 fap: float,
-                 is_quantized: bool,
-                 max: float,
-                 min: float,
-                 mvi_ratio: float,
-                 signal_name: str,
-                 status: str,
-                 std: float):
-        """
-        :param str details: detailed information for a signal.
-        :param float fap: Accuracy metric for a signal.
-        :param bool is_quantized: A boolean value to indicate if a signal is quantized or not.
-        :param float max: Max value within a signal.
-        :param float min: Min value within a signal.
-        :param float mvi_ratio: The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        :param str signal_name: The name of a signal.
-        :param str status: Status of the signal:
-               * ACCEPTED - the signal is used for training the model
-               * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-               * OTHER - placeholder for other status
-        :param float std: Standard deviation of values within a signal.
-        """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_quantized", is_quantized)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "mvi_ratio", mvi_ratio)
-        pulumi.set(__self__, "signal_name", signal_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "std", std)
+                 details: Optional[str] = None,
+                 fap: Optional[float] = None,
+                 is_quantized: Optional[bool] = None,
+                 max: Optional[float] = None,
+                 min: Optional[float] = None,
+                 mvi_ratio: Optional[float] = None,
+                 signal_name: Optional[str] = None,
+                 status: Optional[str] = None,
+                 std: Optional[float] = None):
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if fap is not None:
+            pulumi.set(__self__, "fap", fap)
+        if is_quantized is not None:
+            pulumi.set(__self__, "is_quantized", is_quantized)
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
+        if mvi_ratio is not None:
+            pulumi.set(__self__, "mvi_ratio", mvi_ratio)
+        if signal_name is not None:
+            pulumi.set(__self__, "signal_name", signal_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if std is not None:
+            pulumi.set(__self__, "std", std)
 
     @property
     @pulumi.getter
-    def details(self) -> str:
-        """
-        detailed information for a signal.
-        """
+    def details(self) -> Optional[str]:
         return pulumi.get(self, "details")
 
     @property
     @pulumi.getter
-    def fap(self) -> float:
-        """
-        Accuracy metric for a signal.
-        """
+    def fap(self) -> Optional[float]:
         return pulumi.get(self, "fap")
 
     @property
     @pulumi.getter(name="isQuantized")
-    def is_quantized(self) -> bool:
-        """
-        A boolean value to indicate if a signal is quantized or not.
-        """
+    def is_quantized(self) -> Optional[bool]:
         return pulumi.get(self, "is_quantized")
 
     @property
     @pulumi.getter
-    def max(self) -> float:
-        """
-        Max value within a signal.
-        """
+    def max(self) -> Optional[float]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> float:
-        """
-        Min value within a signal.
-        """
+    def min(self) -> Optional[float]:
         return pulumi.get(self, "min")
 
     @property
     @pulumi.getter(name="mviRatio")
-    def mvi_ratio(self) -> float:
-        """
-        The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        """
+    def mvi_ratio(self) -> Optional[float]:
         return pulumi.get(self, "mvi_ratio")
 
     @property
     @pulumi.getter(name="signalName")
-    def signal_name(self) -> str:
-        """
-        The name of a signal.
-        """
+    def signal_name(self) -> Optional[str]:
         return pulumi.get(self, "signal_name")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the signal:
-        * ACCEPTED - the signal is used for training the model
-        * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-        * OTHER - placeholder for other status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def std(self) -> float:
-        """
-        Standard deviation of values within a signal.
-        """
+    def std(self) -> Optional[float]:
         return pulumi.get(self, "std")
 
 
@@ -3552,129 +2703,98 @@ class GetDetectionProjectsFilterResult(dict):
 @pulumi.output_type
 class GetDetectionProjectsProjectCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDetectionProjectsProjectCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A short description of the project.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The OCID of the project that is immutable on creation.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the project.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the project that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 

@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobJobInfrastructureConfigurationDetail {
@@ -16,63 +18,63 @@ public final class GetJobJobInfrastructureConfigurationDetail {
      * @return The size of the block storage volume to attach to the instance running the job
      * 
      */
-    private Integer blockStorageSizeInGbs;
+    private @Nullable Integer blockStorageSizeInGbs;
     /**
      * @return The infrastructure type used for job run.
      * 
      */
-    private String jobInfrastructureType;
+    private @Nullable String jobInfrastructureType;
     /**
      * @return Details for the job run shape configuration. Specify only when a flex shape is selected.
      * 
      */
-    private List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+    private @Nullable List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
     /**
      * @return The shape used to launch the job run instances.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return The subnet to create a secondary vnic in to attach to the instance running the job
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetJobJobInfrastructureConfigurationDetail() {}
     /**
      * @return The size of the block storage volume to attach to the instance running the job
      * 
      */
-    public Integer blockStorageSizeInGbs() {
-        return this.blockStorageSizeInGbs;
+    public Optional<Integer> blockStorageSizeInGbs() {
+        return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
     /**
      * @return The infrastructure type used for job run.
      * 
      */
-    public String jobInfrastructureType() {
-        return this.jobInfrastructureType;
+    public Optional<String> jobInfrastructureType() {
+        return Optional.ofNullable(this.jobInfrastructureType);
     }
     /**
      * @return Details for the job run shape configuration. Specify only when a flex shape is selected.
      * 
      */
     public List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails() {
-        return this.jobShapeConfigDetails;
+        return this.jobShapeConfigDetails == null ? List.of() : this.jobShapeConfigDetails;
     }
     /**
      * @return The shape used to launch the job run instances.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return The subnet to create a secondary vnic in to attach to the instance running the job
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetJobJobInfrastructureConfigurationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer blockStorageSizeInGbs;
-        private String jobInfrastructureType;
-        private List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
-        private String shapeName;
-        private String subnetId;
+        private @Nullable Integer blockStorageSizeInGbs;
+        private @Nullable String jobInfrastructureType;
+        private @Nullable List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
+        private @Nullable String shapeName;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetJobJobInfrastructureConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetJobJobInfrastructureConfigurationDetail {
         }
 
         @CustomType.Setter
-        public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+        public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder jobInfrastructureType(String jobInfrastructureType) {
-            this.jobInfrastructureType = Objects.requireNonNull(jobInfrastructureType);
+        public Builder jobInfrastructureType(@Nullable String jobInfrastructureType) {
+            this.jobInfrastructureType = jobInfrastructureType;
             return this;
         }
         @CustomType.Setter
-        public Builder jobShapeConfigDetails(List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails) {
-            this.jobShapeConfigDetails = Objects.requireNonNull(jobShapeConfigDetails);
+        public Builder jobShapeConfigDetails(@Nullable List<GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails) {
+            this.jobShapeConfigDetails = jobShapeConfigDetails;
             return this;
         }
         public Builder jobShapeConfigDetails(GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail... jobShapeConfigDetails) {
             return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetJobJobInfrastructureConfigurationDetail build() {

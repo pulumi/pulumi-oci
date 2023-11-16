@@ -19,6 +19,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -146,126 +147,126 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accessKeyId", refs={String.class}, tree="[0]")
-    private Output<String> accessKeyId;
+    private Output</* @Nullable */ String> accessKeyId;
 
     /**
      * @return (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    public Output<String> accessKeyId() {
-        return this.accessKeyId;
+    public Output<Optional<String>> accessKeyId() {
+        return Codegen.optional(this.accessKeyId);
     }
     /**
      * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      * 
      */
     @Export(name="accountKey", refs={String.class}, tree="[0]")
-    private Output<String> accountKey;
+    private Output</* @Nullable */ String> accountKey;
 
     /**
      * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
      * 
      */
-    public Output<String> accountKey() {
-        return this.accountKey;
+    public Output<Optional<String>> accountKey() {
+        return Codegen.optional(this.accountKey);
     }
     /**
      * (Updatable) Sets the Azure storage account name.
      * 
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
-    private Output<String> accountName;
+    private Output</* @Nullable */ String> accountName;
 
     /**
      * @return (Updatable) Sets the Azure storage account name.
      * 
      */
-    public Output<String> accountName() {
-        return this.accountName;
+    public Output<Optional<String>> accountName() {
+        return Codegen.optional(this.accountName);
     }
     /**
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      * 
      */
     @Export(name="additionalAttributes", refs={List.class,ConnectionAdditionalAttribute.class}, tree="[0,1]")
-    private Output<List<ConnectionAdditionalAttribute>> additionalAttributes;
+    private Output</* @Nullable */ List<ConnectionAdditionalAttribute>> additionalAttributes;
 
     /**
      * @return (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      * 
      */
-    public Output<List<ConnectionAdditionalAttribute>> additionalAttributes() {
-        return this.additionalAttributes;
+    public Output<Optional<List<ConnectionAdditionalAttribute>>> additionalAttributes() {
+        return Codegen.optional(this.additionalAttributes);
     }
     /**
      * (Updatable) Used authentication mechanism.
      * 
      */
     @Export(name="authenticationType", refs={String.class}, tree="[0]")
-    private Output<String> authenticationType;
+    private Output</* @Nullable */ String> authenticationType;
 
     /**
      * @return (Updatable) Used authentication mechanism.
      * 
      */
-    public Output<String> authenticationType() {
-        return this.authenticationType;
+    public Output<Optional<String>> authenticationType() {
+        return Codegen.optional(this.authenticationType);
     }
     /**
      * (Updatable) Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
     @Export(name="azureTenantId", refs={String.class}, tree="[0]")
-    private Output<String> azureTenantId;
+    private Output</* @Nullable */ String> azureTenantId;
 
     /**
      * @return (Updatable) Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
-    public Output<String> azureTenantId() {
-        return this.azureTenantId;
+    public Output<Optional<String>> azureTenantId() {
+        return Codegen.optional(this.azureTenantId);
     }
     /**
      * (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `&#34;server1.example.com:9092,server2.example.com:9092&#34;`
      * 
      */
     @Export(name="bootstrapServers", refs={List.class,ConnectionBootstrapServer.class}, tree="[0,1]")
-    private Output<List<ConnectionBootstrapServer>> bootstrapServers;
+    private Output</* @Nullable */ List<ConnectionBootstrapServer>> bootstrapServers;
 
     /**
      * @return (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `&#34;server1.example.com:9092,server2.example.com:9092&#34;`
      * 
      */
-    public Output<List<ConnectionBootstrapServer>> bootstrapServers() {
-        return this.bootstrapServers;
+    public Output<Optional<List<ConnectionBootstrapServer>>> bootstrapServers() {
+        return Codegen.optional(this.bootstrapServers);
     }
     /**
      * (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     @Export(name="clientId", refs={String.class}, tree="[0]")
-    private Output<String> clientId;
+    private Output</* @Nullable */ String> clientId;
 
     /**
      * @return (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
-    public Output<String> clientId() {
-        return this.clientId;
+    public Output<Optional<String>> clientId() {
+        return Codegen.optional(this.clientId);
     }
     /**
      * (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
      * 
      */
     @Export(name="clientSecret", refs={String.class}, tree="[0]")
-    private Output<String> clientSecret;
+    private Output</* @Nullable */ String> clientSecret;
 
     /**
      * @return (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
      * 
      */
-    public Output<String> clientSecret() {
-        return this.clientSecret;
+    public Output<Optional<String>> clientSecret() {
+        return Codegen.optional(this.clientSecret);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -286,28 +287,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="connectionFactory", refs={String.class}, tree="[0]")
-    private Output<String> connectionFactory;
+    private Output</* @Nullable */ String> connectionFactory;
 
     /**
      * @return (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: &#39;com.stc.jmsjca.core.JConnectionFactoryXA&#39;
      * 
      */
-    public Output<String> connectionFactory() {
-        return this.connectionFactory;
+    public Output<Optional<String>> connectionFactory() {
+        return Codegen.optional(this.connectionFactory);
     }
     /**
      * (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
     @Export(name="connectionString", refs={String.class}, tree="[0]")
-    private Output<String> connectionString;
+    private Output</* @Nullable */ String> connectionString;
 
     /**
      * @return (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
      * 
      */
-    public Output<String> connectionString() {
-        return this.connectionString;
+    public Output<Optional<String>> connectionString() {
+        return Codegen.optional(this.connectionString);
     }
     /**
      * (Updatable) The connection type.
@@ -328,126 +329,126 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="connectionUrl", refs={String.class}, tree="[0]")
-    private Output<String> connectionUrl;
+    private Output</* @Nullable */ String> connectionUrl;
 
     /**
      * @return (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
-    public Output<String> connectionUrl() {
-        return this.connectionUrl;
+    public Output<Optional<String>> connectionUrl() {
+        return Codegen.optional(this.connectionUrl);
     }
     /**
      * (Updatable) The base64 encoded content of the consumer.properties file.
      * 
      */
     @Export(name="consumerProperties", refs={String.class}, tree="[0]")
-    private Output<String> consumerProperties;
+    private Output</* @Nullable */ String> consumerProperties;
 
     /**
      * @return (Updatable) The base64 encoded content of the consumer.properties file.
      * 
      */
-    public Output<String> consumerProperties() {
-        return this.consumerProperties;
+    public Output<Optional<String>> consumerProperties() {
+        return Codegen.optional(this.consumerProperties);
     }
     /**
      * (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
      * 
      */
     @Export(name="coreSiteXml", refs={String.class}, tree="[0]")
-    private Output<String> coreSiteXml;
+    private Output</* @Nullable */ String> coreSiteXml;
 
     /**
      * @return (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
      * 
      */
-    public Output<String> coreSiteXml() {
-        return this.coreSiteXml;
+    public Output<Optional<String>> coreSiteXml() {
+        return Codegen.optional(this.coreSiteXml);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      * 
      */
     @Export(name="databaseId", refs={String.class}, tree="[0]")
-    private Output<String> databaseId;
+    private Output</* @Nullable */ String> databaseId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      * 
      */
-    public Output<String> databaseId() {
-        return this.databaseId;
+    public Output<Optional<String>> databaseId() {
+        return Codegen.optional(this.databaseId);
     }
     /**
      * (Updatable) The name of the database.
      * 
      */
     @Export(name="databaseName", refs={String.class}, tree="[0]")
-    private Output<String> databaseName;
+    private Output</* @Nullable */ String> databaseName;
 
     /**
      * @return (Updatable) The name of the database.
      * 
      */
-    public Output<String> databaseName() {
-        return this.databaseName;
+    public Output<Optional<String>> databaseName() {
+        return Codegen.optional(this.databaseName);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      * 
      */
     @Export(name="dbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> dbSystemId;
+    private Output</* @Nullable */ String> dbSystemId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
      * 
      */
-    public Output<String> dbSystemId() {
-        return this.dbSystemId;
+    public Output<Optional<String>> dbSystemId() {
+        return Codegen.optional(this.dbSystemId);
     }
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
     @Export(name="deploymentId", refs={String.class}, tree="[0]")
-    private Output<String> deploymentId;
+    private Output</* @Nullable */ String> deploymentId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
-    public Output<String> deploymentId() {
-        return this.deploymentId;
+    public Output<Optional<String>> deploymentId() {
+        return Codegen.optional(this.deploymentId);
     }
     /**
      * (Updatable) Metadata about this specific object.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Metadata about this specific object.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) An object&#39;s Display Name.
@@ -468,532 +469,532 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="endpoint", refs={String.class}, tree="[0]")
-    private Output<String> endpoint;
+    private Output</* @Nullable */ String> endpoint;
 
     /**
      * @return (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      * 
      */
-    public Output<String> endpoint() {
-        return this.endpoint;
+    public Output<Optional<String>> endpoint() {
+        return Codegen.optional(this.endpoint);
     }
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The name or address of a host.
      * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
-    private Output<String> host;
+    private Output</* @Nullable */ String> host;
 
     /**
      * @return (Updatable) The name or address of a host.
      * 
      */
-    public Output<String> host() {
-        return this.host;
+    public Output<Optional<String>> host() {
+        return Codegen.optional(this.host);
     }
     /**
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
     @Export(name="ingressIps", refs={List.class,ConnectionIngressIp.class}, tree="[0,1]")
-    private Output<List<ConnectionIngressIp>> ingressIps;
+    private Output</* @Nullable */ List<ConnectionIngressIp>> ingressIps;
 
     /**
      * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      * 
      */
-    public Output<List<ConnectionIngressIp>> ingressIps() {
-        return this.ingressIps;
+    public Output<Optional<List<ConnectionIngressIp>>> ingressIps() {
+        return Codegen.optional(this.ingressIps);
     }
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
      */
     @Export(name="jndiConnectionFactory", refs={String.class}, tree="[0]")
-    private Output<String> jndiConnectionFactory;
+    private Output</* @Nullable */ String> jndiConnectionFactory;
 
     /**
      * @return (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
      */
-    public Output<String> jndiConnectionFactory() {
-        return this.jndiConnectionFactory;
+    public Output<Optional<String>> jndiConnectionFactory() {
+        return Codegen.optional(this.jndiConnectionFactory);
     }
     /**
      * (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
      * 
      */
     @Export(name="jndiInitialContextFactory", refs={String.class}, tree="[0]")
-    private Output<String> jndiInitialContextFactory;
+    private Output</* @Nullable */ String> jndiInitialContextFactory;
 
     /**
      * @return (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: &#39;org.apache.activemq.jndi.ActiveMQInitialContextFactory&#39;
      * 
      */
-    public Output<String> jndiInitialContextFactory() {
-        return this.jndiInitialContextFactory;
+    public Output<Optional<String>> jndiInitialContextFactory() {
+        return Codegen.optional(this.jndiInitialContextFactory);
     }
     /**
      * (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
      * 
      */
     @Export(name="jndiProviderUrl", refs={String.class}, tree="[0]")
-    private Output<String> jndiProviderUrl;
+    private Output</* @Nullable */ String> jndiProviderUrl;
 
     /**
      * @return (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: &#39;tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000&#39;
      * 
      */
-    public Output<String> jndiProviderUrl() {
-        return this.jndiProviderUrl;
+    public Output<Optional<String>> jndiProviderUrl() {
+        return Codegen.optional(this.jndiProviderUrl);
     }
     /**
      * (Updatable) The password associated to the principal.
      * 
      */
     @Export(name="jndiSecurityCredentials", refs={String.class}, tree="[0]")
-    private Output<String> jndiSecurityCredentials;
+    private Output</* @Nullable */ String> jndiSecurityCredentials;
 
     /**
      * @return (Updatable) The password associated to the principal.
      * 
      */
-    public Output<String> jndiSecurityCredentials() {
-        return this.jndiSecurityCredentials;
+    public Output<Optional<String>> jndiSecurityCredentials() {
+        return Codegen.optional(this.jndiSecurityCredentials);
     }
     /**
      * (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
     @Export(name="jndiSecurityPrincipal", refs={String.class}, tree="[0]")
-    private Output<String> jndiSecurityPrincipal;
+    private Output</* @Nullable */ String> jndiSecurityPrincipal;
 
     /**
      * @return (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: &#39;admin2&#39;
      * 
      */
-    public Output<String> jndiSecurityPrincipal() {
-        return this.jndiSecurityPrincipal;
+    public Output<Optional<String>> jndiSecurityPrincipal() {
+        return Codegen.optional(this.jndiSecurityPrincipal);
     }
     /**
      * (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
     @Export(name="keyId", refs={String.class}, tree="[0]")
-    private Output<String> keyId;
+    private Output</* @Nullable */ String> keyId;
 
     /**
      * @return (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      * 
      */
-    public Output<String> keyId() {
-        return this.keyId;
+    public Output<Optional<String>> keyId() {
+        return Codegen.optional(this.keyId);
     }
     /**
      * (Updatable) The base64 encoded content of the KeyStore file.
      * 
      */
     @Export(name="keyStore", refs={String.class}, tree="[0]")
-    private Output<String> keyStore;
+    private Output</* @Nullable */ String> keyStore;
 
     /**
      * @return (Updatable) The base64 encoded content of the KeyStore file.
      * 
      */
-    public Output<String> keyStore() {
-        return this.keyStore;
+    public Output<Optional<String>> keyStore() {
+        return Codegen.optional(this.keyStore);
     }
     /**
      * (Updatable) The KeyStore password.
      * 
      */
     @Export(name="keyStorePassword", refs={String.class}, tree="[0]")
-    private Output<String> keyStorePassword;
+    private Output</* @Nullable */ String> keyStorePassword;
 
     /**
      * @return (Updatable) The KeyStore password.
      * 
      */
-    public Output<String> keyStorePassword() {
-        return this.keyStorePassword;
+    public Output<Optional<String>> keyStorePassword() {
+        return Codegen.optional(this.keyStorePassword);
     }
     /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
-    private Output<String> password;
+    private Output</* @Nullable */ String> password;
 
     /**
      * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
      * 
      */
-    public Output<String> password() {
-        return this.password;
+    public Output<Optional<String>> password() {
+        return Codegen.optional(this.password);
     }
     /**
      * (Updatable) The port of an endpoint usually specified for a connection.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
-    private Output<Integer> port;
+    private Output</* @Nullable */ Integer> port;
 
     /**
      * @return (Updatable) The port of an endpoint usually specified for a connection.
      * 
      */
-    public Output<Integer> port() {
-        return this.port;
+    public Output<Optional<Integer>> port() {
+        return Codegen.optional(this.port);
     }
     /**
      * (Updatable) The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
     @Export(name="privateIp", refs={String.class}, tree="[0]")
-    private Output<String> privateIp;
+    private Output</* @Nullable */ String> privateIp;
 
     /**
      * @return (Updatable) The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
-    public Output<String> privateIp() {
-        return this.privateIp;
+    public Output<Optional<String>> privateIp() {
+        return Codegen.optional(this.privateIp);
     }
     /**
      * (Updatable) The base64 encoded content of private key file in PEM format.
      * 
      */
     @Export(name="privateKeyFile", refs={String.class}, tree="[0]")
-    private Output<String> privateKeyFile;
+    private Output</* @Nullable */ String> privateKeyFile;
 
     /**
      * @return (Updatable) The base64 encoded content of private key file in PEM format.
      * 
      */
-    public Output<String> privateKeyFile() {
-        return this.privateKeyFile;
+    public Output<Optional<String>> privateKeyFile() {
+        return Codegen.optional(this.privateKeyFile);
     }
     /**
      * (Updatable) Password if the private key file is encrypted.
      * 
      */
     @Export(name="privateKeyPassphrase", refs={String.class}, tree="[0]")
-    private Output<String> privateKeyPassphrase;
+    private Output</* @Nullable */ String> privateKeyPassphrase;
 
     /**
      * @return (Updatable) Password if the private key file is encrypted.
      * 
      */
-    public Output<String> privateKeyPassphrase() {
-        return this.privateKeyPassphrase;
+    public Output<Optional<String>> privateKeyPassphrase() {
+        return Codegen.optional(this.privateKeyPassphrase);
     }
     /**
      * (Updatable) The base64 encoded content of the producer.properties file.
      * 
      */
     @Export(name="producerProperties", refs={String.class}, tree="[0]")
-    private Output<String> producerProperties;
+    private Output</* @Nullable */ String> producerProperties;
 
     /**
      * @return (Updatable) The base64 encoded content of the producer.properties file.
      * 
      */
-    public Output<String> producerProperties() {
-        return this.producerProperties;
+    public Output<Optional<String>> producerProperties() {
+        return Codegen.optional(this.producerProperties);
     }
     /**
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
     @Export(name="publicKeyFingerprint", refs={String.class}, tree="[0]")
-    private Output<String> publicKeyFingerprint;
+    private Output</* @Nullable */ String> publicKeyFingerprint;
 
     /**
      * @return (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
-    public Output<String> publicKeyFingerprint() {
-        return this.publicKeyFingerprint;
+    public Output<Optional<String>> publicKeyFingerprint() {
+        return Codegen.optional(this.publicKeyFingerprint);
     }
     /**
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
-    private Output<String> region;
+    private Output</* @Nullable */ String> region;
 
     /**
      * @return (Updatable) The name of the region. e.g.: us-ashburn-1
      * 
      */
-    public Output<String> region() {
-        return this.region;
+    public Output<Optional<String>> region() {
+        return Codegen.optional(this.region);
     }
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      * 
      */
     @Export(name="sasToken", refs={String.class}, tree="[0]")
-    private Output<String> sasToken;
+    private Output</* @Nullable */ String> sasToken;
 
     /**
      * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      * 
      */
-    public Output<String> sasToken() {
-        return this.sasToken;
+    public Output<Optional<String>> sasToken() {
+        return Codegen.optional(this.sasToken);
     }
     /**
      * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
     @Export(name="secretAccessKey", refs={String.class}, tree="[0]")
-    private Output<String> secretAccessKey;
+    private Output</* @Nullable */ String> secretAccessKey;
 
     /**
      * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
      * 
      */
-    public Output<String> secretAccessKey() {
-        return this.secretAccessKey;
+    public Output<Optional<String>> secretAccessKey() {
+        return Codegen.optional(this.secretAccessKey);
     }
     /**
      * (Updatable) Security Protocol.
      * 
      */
     @Export(name="securityProtocol", refs={String.class}, tree="[0]")
-    private Output<String> securityProtocol;
+    private Output</* @Nullable */ String> securityProtocol;
 
     /**
      * @return (Updatable) Security Protocol.
      * 
      */
-    public Output<String> securityProtocol() {
-        return this.securityProtocol;
+    public Output<Optional<String>> securityProtocol() {
+        return Codegen.optional(this.securityProtocol);
     }
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
     @Export(name="sessionMode", refs={String.class}, tree="[0]")
-    private Output<String> sessionMode;
+    private Output</* @Nullable */ String> sessionMode;
 
     /**
      * @return (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
      */
-    public Output<String> sessionMode() {
-        return this.sessionMode;
+    public Output<Optional<String>> sessionMode() {
+        return Codegen.optional(this.sessionMode);
     }
     /**
      * (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      * 
      */
     @Export(name="shouldUseJndi", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldUseJndi;
+    private Output</* @Nullable */ Boolean> shouldUseJndi;
 
     /**
      * @return (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      * 
      */
-    public Output<Boolean> shouldUseJndi() {
-        return this.shouldUseJndi;
+    public Output<Optional<Boolean>> shouldUseJndi() {
+        return Codegen.optional(this.shouldUseJndi);
     }
     /**
      * (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
     @Export(name="shouldValidateServerCertificate", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> shouldValidateServerCertificate;
+    private Output</* @Nullable */ Boolean> shouldValidateServerCertificate;
 
     /**
      * @return (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
      * 
      */
-    public Output<Boolean> shouldValidateServerCertificate() {
-        return this.shouldValidateServerCertificate;
+    public Output<Optional<Boolean>> shouldValidateServerCertificate() {
+        return Codegen.optional(this.shouldValidateServerCertificate);
     }
     /**
      * (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
     @Export(name="sslCa", refs={String.class}, tree="[0]")
-    private Output<String> sslCa;
+    private Output</* @Nullable */ String> sslCa;
 
     /**
      * @return (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
      * 
      */
-    public Output<String> sslCa() {
-        return this.sslCa;
+    public Output<Optional<String>> sslCa() {
+        return Codegen.optional(this.sslCa);
     }
     /**
      * (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      * 
      */
     @Export(name="sslCert", refs={String.class}, tree="[0]")
-    private Output<String> sslCert;
+    private Output</* @Nullable */ String> sslCert;
 
     /**
      * @return (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
      * 
      */
-    public Output<String> sslCert() {
-        return this.sslCert;
+    public Output<Optional<String>> sslCert() {
+        return Codegen.optional(this.sslCert);
     }
     /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      * 
      */
     @Export(name="sslCrl", refs={String.class}, tree="[0]")
-    private Output<String> sslCrl;
+    private Output</* @Nullable */ String> sslCrl;
 
     /**
      * @return (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      * 
      */
-    public Output<String> sslCrl() {
-        return this.sslCrl;
+    public Output<Optional<String>> sslCrl() {
+        return Codegen.optional(this.sslCrl);
     }
     /**
      * (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      * 
      */
     @Export(name="sslKey", refs={String.class}, tree="[0]")
-    private Output<String> sslKey;
+    private Output</* @Nullable */ String> sslKey;
 
     /**
      * @return (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
      * 
      */
-    public Output<String> sslKey() {
-        return this.sslKey;
+    public Output<Optional<String>> sslKey() {
+        return Codegen.optional(this.sslKey);
     }
     /**
      * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
      * 
      */
     @Export(name="sslKeyPassword", refs={String.class}, tree="[0]")
-    private Output<String> sslKeyPassword;
+    private Output</* @Nullable */ String> sslKeyPassword;
 
     /**
      * @return (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
      * 
      */
-    public Output<String> sslKeyPassword() {
-        return this.sslKeyPassword;
+    public Output<Optional<String>> sslKeyPassword() {
+        return Codegen.optional(this.sslKeyPassword);
     }
     /**
      * (Updatable) SSL modes for PostgreSQL.
      * 
      */
     @Export(name="sslMode", refs={String.class}, tree="[0]")
-    private Output<String> sslMode;
+    private Output</* @Nullable */ String> sslMode;
 
     /**
      * @return (Updatable) SSL modes for PostgreSQL.
      * 
      */
-    public Output<String> sslMode() {
-        return this.sslMode;
+    public Output<Optional<String>> sslMode() {
+        return Codegen.optional(this.sslMode);
     }
     /**
      * Possible lifecycle states for connection.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return Possible lifecycle states for connection.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
     @Export(name="streamPoolId", refs={String.class}, tree="[0]")
-    private Output<String> streamPoolId;
+    private Output</* @Nullable */ String> streamPoolId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
      */
-    public Output<String> streamPoolId() {
-        return this.streamPoolId;
+    public Output<Optional<String>> streamPoolId() {
+        return Codegen.optional(this.streamPoolId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
-    private Output<String> subnetId;
+    private Output</* @Nullable */ String> subnetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    public Output<Optional<String>> subnetId() {
+        return Codegen.optional(this.subnetId);
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The Kafka (e.g. Confluent) Schema Registry technology type.
@@ -1014,126 +1015,126 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyId", refs={String.class}, tree="[0]")
-    private Output<String> tenancyId;
+    private Output</* @Nullable */ String> tenancyId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
      * 
      */
-    public Output<String> tenancyId() {
-        return this.tenancyId;
+    public Output<Optional<String>> tenancyId() {
+        return Codegen.optional(this.tenancyId);
     }
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The base64 encoded content of the TrustStore file.
      * 
      */
     @Export(name="trustStore", refs={String.class}, tree="[0]")
-    private Output<String> trustStore;
+    private Output</* @Nullable */ String> trustStore;
 
     /**
      * @return (Updatable) The base64 encoded content of the TrustStore file.
      * 
      */
-    public Output<String> trustStore() {
-        return this.trustStore;
+    public Output<Optional<String>> trustStore() {
+        return Codegen.optional(this.trustStore);
     }
     /**
      * (Updatable) The TrustStore password.
      * 
      */
     @Export(name="trustStorePassword", refs={String.class}, tree="[0]")
-    private Output<String> trustStorePassword;
+    private Output</* @Nullable */ String> trustStorePassword;
 
     /**
      * @return (Updatable) The TrustStore password.
      * 
      */
-    public Output<String> trustStorePassword() {
-        return this.trustStorePassword;
+    public Output<Optional<String>> trustStorePassword() {
+        return Codegen.optional(this.trustStorePassword);
     }
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
-    private Output<String> url;
+    private Output</* @Nullable */ String> url;
 
     /**
      * @return (Updatable) Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
      */
-    public Output<String> url() {
-        return this.url;
+    public Output<Optional<String>> url() {
+        return Codegen.optional(this.url);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
-    private Output<String> userId;
+    private Output</* @Nullable */ String> userId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
      * 
      */
-    public Output<String> userId() {
-        return this.userId;
+    public Output<Optional<String>> userId() {
+        return Codegen.optional(this.userId);
     }
     /**
      * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
-    private Output<String> username;
+    private Output</* @Nullable */ String> username;
 
     /**
      * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
      * 
      */
-    public Output<String> username() {
-        return this.username;
+    public Output<Optional<String>> username() {
+        return Codegen.optional(this.username);
     }
     /**
      * (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
@@ -1143,7 +1144,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="wallet", refs={String.class}, tree="[0]")
-    private Output<String> wallet;
+    private Output</* @Nullable */ String> wallet;
 
     /**
      * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
@@ -1152,8 +1153,8 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> wallet() {
-        return this.wallet;
+    public Output<Optional<String>> wallet() {
+        return Codegen.optional(this.wallet);
     }
 
     /**

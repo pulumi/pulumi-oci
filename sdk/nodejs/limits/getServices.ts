@@ -52,11 +52,11 @@ export interface GetServicesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of services.
      */
-    readonly services: outputs.Limits.GetServicesService[];
+    readonly services?: outputs.Limits.GetServicesService[];
 }
 /**
  * This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.

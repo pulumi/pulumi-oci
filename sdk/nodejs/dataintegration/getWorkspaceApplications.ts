@@ -73,13 +73,13 @@ export interface GetWorkspaceApplicationsResult {
     /**
      * The list of application_summary_collection.
      */
-    readonly applicationSummaryCollections: outputs.DataIntegration.GetWorkspaceApplicationsApplicationSummaryCollection[];
+    readonly applicationSummaryCollections?: outputs.DataIntegration.GetWorkspaceApplicationsApplicationSummaryCollection[];
     readonly fields?: string[];
     readonly filters?: outputs.DataIntegration.GetWorkspaceApplicationsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */

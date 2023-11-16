@@ -87,13 +87,13 @@ export interface GetDrProtectionGroupsResult {
     /**
      * The list of dr_protection_group_collection.
      */
-    readonly drProtectionGroupCollections: outputs.DisasterRecovery.GetDrProtectionGroupsDrProtectionGroupCollection[];
+    readonly drProtectionGroupCollections?: outputs.DisasterRecovery.GetDrProtectionGroupsDrProtectionGroupCollection[];
     readonly drProtectionGroupId?: string;
     readonly filters?: outputs.DisasterRecovery.GetDrProtectionGroupsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current sub-state of the DR protection group.
      */

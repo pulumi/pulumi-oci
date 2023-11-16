@@ -125,7 +125,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of listener_collection.
         /// </summary>
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         private GetListenersResult(
             ImmutableArray<Outputs.GetListenersFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetListenersListenerCollectionResult> listenerCollections,
 

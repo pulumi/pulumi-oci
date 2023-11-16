@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i AddonAddonErrorArgs) ToAddonAddonErrorOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AddonAddonErrorOutput)
 }
 
-func (i AddonAddonErrorArgs) ToOutput(ctx context.Context) pulumix.Output[AddonAddonError] {
-	return pulumix.Output[AddonAddonError]{
-		OutputState: i.ToAddonAddonErrorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddonAddonErrorArrayInput is an input type that accepts AddonAddonErrorArray and AddonAddonErrorArrayOutput values.
 // You can construct a concrete instance of `AddonAddonErrorArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i AddonAddonErrorArray) ToAddonAddonErrorArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AddonAddonErrorArrayOutput)
 }
 
-func (i AddonAddonErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]AddonAddonError] {
-	return pulumix.Output[[]AddonAddonError]{
-		OutputState: i.ToAddonAddonErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddonAddonErrorOutput struct{ *pulumi.OutputState }
 
 func (AddonAddonErrorOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o AddonAddonErrorOutput) ToAddonAddonErrorOutput() AddonAddonErrorOutput {
 
 func (o AddonAddonErrorOutput) ToAddonAddonErrorOutputWithContext(ctx context.Context) AddonAddonErrorOutput {
 	return o
-}
-
-func (o AddonAddonErrorOutput) ToOutput(ctx context.Context) pulumix.Output[AddonAddonError] {
-	return pulumix.Output[AddonAddonError]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -139,12 +120,6 @@ func (o AddonAddonErrorArrayOutput) ToAddonAddonErrorArrayOutput() AddonAddonErr
 
 func (o AddonAddonErrorArrayOutput) ToAddonAddonErrorArrayOutputWithContext(ctx context.Context) AddonAddonErrorArrayOutput {
 	return o
-}
-
-func (o AddonAddonErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AddonAddonError] {
-	return pulumix.Output[[]AddonAddonError]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddonAddonErrorArrayOutput) Index(i pulumi.IntInput) AddonAddonErrorOutput {
@@ -190,12 +165,6 @@ func (i AddonConfigurationArgs) ToAddonConfigurationOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AddonConfigurationOutput)
 }
 
-func (i AddonConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[AddonConfiguration] {
-	return pulumix.Output[AddonConfiguration]{
-		OutputState: i.ToAddonConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddonConfigurationArrayInput is an input type that accepts AddonConfigurationArray and AddonConfigurationArrayOutput values.
 // You can construct a concrete instance of `AddonConfigurationArrayInput` via:
 //
@@ -221,12 +190,6 @@ func (i AddonConfigurationArray) ToAddonConfigurationArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AddonConfigurationArrayOutput)
 }
 
-func (i AddonConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]AddonConfiguration] {
-	return pulumix.Output[[]AddonConfiguration]{
-		OutputState: i.ToAddonConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddonConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AddonConfigurationOutput) ElementType() reflect.Type {
@@ -239,12 +202,6 @@ func (o AddonConfigurationOutput) ToAddonConfigurationOutput() AddonConfiguratio
 
 func (o AddonConfigurationOutput) ToAddonConfigurationOutputWithContext(ctx context.Context) AddonConfigurationOutput {
 	return o
-}
-
-func (o AddonConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[AddonConfiguration] {
-	return pulumix.Output[AddonConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) configuration key name
@@ -269,12 +226,6 @@ func (o AddonConfigurationArrayOutput) ToAddonConfigurationArrayOutput() AddonCo
 
 func (o AddonConfigurationArrayOutput) ToAddonConfigurationArrayOutputWithContext(ctx context.Context) AddonConfigurationArrayOutput {
 	return o
-}
-
-func (o AddonConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AddonConfiguration] {
-	return pulumix.Output[[]AddonConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AddonConfigurationArrayOutput) Index(i pulumi.IntInput) AddonConfigurationOutput {
@@ -316,12 +267,6 @@ func (i ClusterClusterPodNetworkOptionArgs) ToClusterClusterPodNetworkOptionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterPodNetworkOptionOutput)
 }
 
-func (i ClusterClusterPodNetworkOptionArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterClusterPodNetworkOption] {
-	return pulumix.Output[ClusterClusterPodNetworkOption]{
-		OutputState: i.ToClusterClusterPodNetworkOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterClusterPodNetworkOptionArrayInput is an input type that accepts ClusterClusterPodNetworkOptionArray and ClusterClusterPodNetworkOptionArrayOutput values.
 // You can construct a concrete instance of `ClusterClusterPodNetworkOptionArrayInput` via:
 //
@@ -347,12 +292,6 @@ func (i ClusterClusterPodNetworkOptionArray) ToClusterClusterPodNetworkOptionArr
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterClusterPodNetworkOptionArrayOutput)
 }
 
-func (i ClusterClusterPodNetworkOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterClusterPodNetworkOption] {
-	return pulumix.Output[[]ClusterClusterPodNetworkOption]{
-		OutputState: i.ToClusterClusterPodNetworkOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
 
 func (ClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
@@ -365,12 +304,6 @@ func (o ClusterClusterPodNetworkOptionOutput) ToClusterClusterPodNetworkOptionOu
 
 func (o ClusterClusterPodNetworkOptionOutput) ToClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionOutput {
 	return o
-}
-
-func (o ClusterClusterPodNetworkOptionOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterClusterPodNetworkOption] {
-	return pulumix.Output[ClusterClusterPodNetworkOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CNI used by the node pools of this cluster
@@ -390,12 +323,6 @@ func (o ClusterClusterPodNetworkOptionArrayOutput) ToClusterClusterPodNetworkOpt
 
 func (o ClusterClusterPodNetworkOptionArrayOutput) ToClusterClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) ClusterClusterPodNetworkOptionArrayOutput {
 	return o
-}
-
-func (o ClusterClusterPodNetworkOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterClusterPodNetworkOption] {
-	return pulumix.Output[[]ClusterClusterPodNetworkOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) ClusterClusterPodNetworkOptionOutput {
@@ -449,12 +376,6 @@ func (i ClusterEndpointArgs) ToClusterEndpointOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointOutput)
 }
 
-func (i ClusterEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpoint] {
-	return pulumix.Output[ClusterEndpoint]{
-		OutputState: i.ToClusterEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterEndpointArrayInput is an input type that accepts ClusterEndpointArray and ClusterEndpointArrayOutput values.
 // You can construct a concrete instance of `ClusterEndpointArrayInput` via:
 //
@@ -480,12 +401,6 @@ func (i ClusterEndpointArray) ToClusterEndpointArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointArrayOutput)
 }
 
-func (i ClusterEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterEndpoint] {
-	return pulumix.Output[[]ClusterEndpoint]{
-		OutputState: i.ToClusterEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterEndpointOutput struct{ *pulumi.OutputState }
 
 func (ClusterEndpointOutput) ElementType() reflect.Type {
@@ -498,12 +413,6 @@ func (o ClusterEndpointOutput) ToClusterEndpointOutput() ClusterEndpointOutput {
 
 func (o ClusterEndpointOutput) ToClusterEndpointOutputWithContext(ctx context.Context) ClusterEndpointOutput {
 	return o
-}
-
-func (o ClusterEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpoint] {
-	return pulumix.Output[ClusterEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The non-native networking Kubernetes API server endpoint.
@@ -538,12 +447,6 @@ func (o ClusterEndpointArrayOutput) ToClusterEndpointArrayOutput() ClusterEndpoi
 
 func (o ClusterEndpointArrayOutput) ToClusterEndpointArrayOutputWithContext(ctx context.Context) ClusterEndpointArrayOutput {
 	return o
-}
-
-func (o ClusterEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterEndpoint] {
-	return pulumix.Output[[]ClusterEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterEndpointArrayOutput) Index(i pulumi.IntInput) ClusterEndpointOutput {
@@ -593,12 +496,6 @@ func (i ClusterEndpointConfigArgs) ToClusterEndpointConfigOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointConfigOutput)
 }
 
-func (i ClusterEndpointConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpointConfig] {
-	return pulumix.Output[ClusterEndpointConfig]{
-		OutputState: i.ToClusterEndpointConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterEndpointConfigArgs) ToClusterEndpointConfigPtrOutput() ClusterEndpointConfigPtrOutput {
 	return i.ToClusterEndpointConfigPtrOutputWithContext(context.Background())
 }
@@ -640,12 +537,6 @@ func (i *clusterEndpointConfigPtrType) ToClusterEndpointConfigPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterEndpointConfigPtrOutput)
 }
 
-func (i *clusterEndpointConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterEndpointConfig] {
-	return pulumix.Output[*ClusterEndpointConfig]{
-		OutputState: i.ToClusterEndpointConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterEndpointConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterEndpointConfigOutput) ElementType() reflect.Type {
@@ -668,12 +559,6 @@ func (o ClusterEndpointConfigOutput) ToClusterEndpointConfigPtrOutputWithContext
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterEndpointConfig) *ClusterEndpointConfig {
 		return &v
 	}).(ClusterEndpointConfigPtrOutput)
-}
-
-func (o ClusterEndpointConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterEndpointConfig] {
-	return pulumix.Output[ClusterEndpointConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
@@ -703,12 +588,6 @@ func (o ClusterEndpointConfigPtrOutput) ToClusterEndpointConfigPtrOutput() Clust
 
 func (o ClusterEndpointConfigPtrOutput) ToClusterEndpointConfigPtrOutputWithContext(ctx context.Context) ClusterEndpointConfigPtrOutput {
 	return o
-}
-
-func (o ClusterEndpointConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterEndpointConfig] {
-	return pulumix.Output[*ClusterEndpointConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterEndpointConfigPtrOutput) Elem() ClusterEndpointConfigOutput {
@@ -788,12 +667,6 @@ func (i ClusterImagePolicyConfigArgs) ToClusterImagePolicyConfigOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigOutput)
 }
 
-func (i ClusterImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfig] {
-	return pulumix.Output[ClusterImagePolicyConfig]{
-		OutputState: i.ToClusterImagePolicyConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterImagePolicyConfigArgs) ToClusterImagePolicyConfigPtrOutput() ClusterImagePolicyConfigPtrOutput {
 	return i.ToClusterImagePolicyConfigPtrOutputWithContext(context.Background())
 }
@@ -835,12 +708,6 @@ func (i *clusterImagePolicyConfigPtrType) ToClusterImagePolicyConfigPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigPtrOutput)
 }
 
-func (i *clusterImagePolicyConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterImagePolicyConfig] {
-	return pulumix.Output[*ClusterImagePolicyConfig]{
-		OutputState: i.ToClusterImagePolicyConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -865,12 +732,6 @@ func (o ClusterImagePolicyConfigOutput) ToClusterImagePolicyConfigPtrOutputWithC
 	}).(ClusterImagePolicyConfigPtrOutput)
 }
 
-func (o ClusterImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfig] {
-	return pulumix.Output[ClusterImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
 func (o ClusterImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterImagePolicyConfig) *bool { return v.IsPolicyEnabled }).(pulumi.BoolPtrOutput)
@@ -893,12 +754,6 @@ func (o ClusterImagePolicyConfigPtrOutput) ToClusterImagePolicyConfigPtrOutput()
 
 func (o ClusterImagePolicyConfigPtrOutput) ToClusterImagePolicyConfigPtrOutputWithContext(ctx context.Context) ClusterImagePolicyConfigPtrOutput {
 	return o
-}
-
-func (o ClusterImagePolicyConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterImagePolicyConfig] {
-	return pulumix.Output[*ClusterImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterImagePolicyConfigPtrOutput) Elem() ClusterImagePolicyConfigOutput {
@@ -964,12 +819,6 @@ func (i ClusterImagePolicyConfigKeyDetailArgs) ToClusterImagePolicyConfigKeyDeta
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigKeyDetailOutput)
 }
 
-func (i ClusterImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[ClusterImagePolicyConfigKeyDetail]{
-		OutputState: i.ToClusterImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterImagePolicyConfigKeyDetailArrayInput is an input type that accepts ClusterImagePolicyConfigKeyDetailArray and ClusterImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `ClusterImagePolicyConfigKeyDetailArrayInput` via:
 //
@@ -995,12 +844,6 @@ func (i ClusterImagePolicyConfigKeyDetailArray) ToClusterImagePolicyConfigKeyDet
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterImagePolicyConfigKeyDetailArrayOutput)
 }
 
-func (i ClusterImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]ClusterImagePolicyConfigKeyDetail]{
-		OutputState: i.ToClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (ClusterImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -1013,12 +856,6 @@ func (o ClusterImagePolicyConfigKeyDetailOutput) ToClusterImagePolicyConfigKeyDe
 
 func (o ClusterImagePolicyConfigKeyDetailOutput) ToClusterImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) ClusterImagePolicyConfigKeyDetailOutput {
 	return o
-}
-
-func (o ClusterImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[ClusterImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -1038,12 +875,6 @@ func (o ClusterImagePolicyConfigKeyDetailArrayOutput) ToClusterImagePolicyConfig
 
 func (o ClusterImagePolicyConfigKeyDetailArrayOutput) ToClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx context.Context) ClusterImagePolicyConfigKeyDetailArrayOutput {
 	return o
-}
-
-func (o ClusterImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]ClusterImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) ClusterImagePolicyConfigKeyDetailOutput {
@@ -1121,12 +952,6 @@ func (i ClusterMetadataArgs) ToClusterMetadataOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterMetadataOutput)
 }
 
-func (i ClusterMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterMetadata] {
-	return pulumix.Output[ClusterMetadata]{
-		OutputState: i.ToClusterMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterMetadataArrayInput is an input type that accepts ClusterMetadataArray and ClusterMetadataArrayOutput values.
 // You can construct a concrete instance of `ClusterMetadataArrayInput` via:
 //
@@ -1152,12 +977,6 @@ func (i ClusterMetadataArray) ToClusterMetadataArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterMetadataArrayOutput)
 }
 
-func (i ClusterMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]ClusterMetadata] {
-	return pulumix.Output[[]ClusterMetadata]{
-		OutputState: i.ToClusterMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterMetadataOutput struct{ *pulumi.OutputState }
 
 func (ClusterMetadataOutput) ElementType() reflect.Type {
@@ -1170,12 +989,6 @@ func (o ClusterMetadataOutput) ToClusterMetadataOutput() ClusterMetadataOutput {
 
 func (o ClusterMetadataOutput) ToClusterMetadataOutputWithContext(ctx context.Context) ClusterMetadataOutput {
 	return o
-}
-
-func (o ClusterMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterMetadata] {
-	return pulumix.Output[ClusterMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The user who created the cluster.
@@ -1242,12 +1055,6 @@ func (o ClusterMetadataArrayOutput) ToClusterMetadataArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ClusterMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ClusterMetadata] {
-	return pulumix.Output[[]ClusterMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ClusterMetadataArrayOutput) Index(i pulumi.IntInput) ClusterMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterMetadata {
 		return vs[0].([]ClusterMetadata)[vs[1].(int)]
@@ -1307,12 +1114,6 @@ func (i ClusterOptionsArgs) ToClusterOptionsOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsOutput)
 }
 
-func (i ClusterOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptions] {
-	return pulumix.Output[ClusterOptions]{
-		OutputState: i.ToClusterOptionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterOptionsArgs) ToClusterOptionsPtrOutput() ClusterOptionsPtrOutput {
 	return i.ToClusterOptionsPtrOutputWithContext(context.Background())
 }
@@ -1354,12 +1155,6 @@ func (i *clusterOptionsPtrType) ToClusterOptionsPtrOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsPtrOutput)
 }
 
-func (i *clusterOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptions] {
-	return pulumix.Output[*ClusterOptions]{
-		OutputState: i.ToClusterOptionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOptionsOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsOutput) ElementType() reflect.Type {
@@ -1382,12 +1177,6 @@ func (o ClusterOptionsOutput) ToClusterOptionsPtrOutputWithContext(ctx context.C
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterOptions) *ClusterOptions {
 		return &v
 	}).(ClusterOptionsPtrOutput)
-}
-
-func (o ClusterOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptions] {
-	return pulumix.Output[ClusterOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Configurable cluster add-ons
@@ -1432,12 +1221,6 @@ func (o ClusterOptionsPtrOutput) ToClusterOptionsPtrOutput() ClusterOptionsPtrOu
 
 func (o ClusterOptionsPtrOutput) ToClusterOptionsPtrOutputWithContext(ctx context.Context) ClusterOptionsPtrOutput {
 	return o
-}
-
-func (o ClusterOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptions] {
-	return pulumix.Output[*ClusterOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterOptionsPtrOutput) Elem() ClusterOptionsOutput {
@@ -1547,12 +1330,6 @@ func (i ClusterOptionsAddOnsArgs) ToClusterOptionsAddOnsOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAddOnsOutput)
 }
 
-func (i ClusterOptionsAddOnsArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAddOns] {
-	return pulumix.Output[ClusterOptionsAddOns]{
-		OutputState: i.ToClusterOptionsAddOnsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterOptionsAddOnsArgs) ToClusterOptionsAddOnsPtrOutput() ClusterOptionsAddOnsPtrOutput {
 	return i.ToClusterOptionsAddOnsPtrOutputWithContext(context.Background())
 }
@@ -1594,12 +1371,6 @@ func (i *clusterOptionsAddOnsPtrType) ToClusterOptionsAddOnsPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAddOnsPtrOutput)
 }
 
-func (i *clusterOptionsAddOnsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAddOns] {
-	return pulumix.Output[*ClusterOptionsAddOns]{
-		OutputState: i.ToClusterOptionsAddOnsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOptionsAddOnsOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsAddOnsOutput) ElementType() reflect.Type {
@@ -1624,12 +1395,6 @@ func (o ClusterOptionsAddOnsOutput) ToClusterOptionsAddOnsPtrOutputWithContext(c
 	}).(ClusterOptionsAddOnsPtrOutput)
 }
 
-func (o ClusterOptionsAddOnsOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAddOns] {
-	return pulumix.Output[ClusterOptionsAddOns]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether or not to enable the Kubernetes Dashboard add-on.
 func (o ClusterOptionsAddOnsOutput) IsKubernetesDashboardEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsAddOns) *bool { return v.IsKubernetesDashboardEnabled }).(pulumi.BoolPtrOutput)
@@ -1652,12 +1417,6 @@ func (o ClusterOptionsAddOnsPtrOutput) ToClusterOptionsAddOnsPtrOutput() Cluster
 
 func (o ClusterOptionsAddOnsPtrOutput) ToClusterOptionsAddOnsPtrOutputWithContext(ctx context.Context) ClusterOptionsAddOnsPtrOutput {
 	return o
-}
-
-func (o ClusterOptionsAddOnsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAddOns] {
-	return pulumix.Output[*ClusterOptionsAddOns]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterOptionsAddOnsPtrOutput) Elem() ClusterOptionsAddOnsOutput {
@@ -1723,12 +1482,6 @@ func (i ClusterOptionsAdmissionControllerOptionsArgs) ToClusterOptionsAdmissionC
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAdmissionControllerOptionsOutput)
 }
 
-func (i ClusterOptionsAdmissionControllerOptionsArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAdmissionControllerOptions] {
-	return pulumix.Output[ClusterOptionsAdmissionControllerOptions]{
-		OutputState: i.ToClusterOptionsAdmissionControllerOptionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterOptionsAdmissionControllerOptionsArgs) ToClusterOptionsAdmissionControllerOptionsPtrOutput() ClusterOptionsAdmissionControllerOptionsPtrOutput {
 	return i.ToClusterOptionsAdmissionControllerOptionsPtrOutputWithContext(context.Background())
 }
@@ -1770,12 +1523,6 @@ func (i *clusterOptionsAdmissionControllerOptionsPtrType) ToClusterOptionsAdmiss
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
-func (i *clusterOptionsAdmissionControllerOptionsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAdmissionControllerOptions] {
-	return pulumix.Output[*ClusterOptionsAdmissionControllerOptions]{
-		OutputState: i.ToClusterOptionsAdmissionControllerOptionsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOptionsAdmissionControllerOptionsOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsAdmissionControllerOptionsOutput) ElementType() reflect.Type {
@@ -1800,12 +1547,6 @@ func (o ClusterOptionsAdmissionControllerOptionsOutput) ToClusterOptionsAdmissio
 	}).(ClusterOptionsAdmissionControllerOptionsPtrOutput)
 }
 
-func (o ClusterOptionsAdmissionControllerOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsAdmissionControllerOptions] {
-	return pulumix.Output[ClusterOptionsAdmissionControllerOptions]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Whether or not to enable the Pod Security Policy admission controller.
 func (o ClusterOptionsAdmissionControllerOptionsOutput) IsPodSecurityPolicyEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsAdmissionControllerOptions) *bool { return v.IsPodSecurityPolicyEnabled }).(pulumi.BoolPtrOutput)
@@ -1823,12 +1564,6 @@ func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) ToClusterOptionsAdmis
 
 func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) ToClusterOptionsAdmissionControllerOptionsPtrOutputWithContext(ctx context.Context) ClusterOptionsAdmissionControllerOptionsPtrOutput {
 	return o
-}
-
-func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsAdmissionControllerOptions] {
-	return pulumix.Output[*ClusterOptionsAdmissionControllerOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterOptionsAdmissionControllerOptionsPtrOutput) Elem() ClusterOptionsAdmissionControllerOptionsOutput {
@@ -1888,12 +1623,6 @@ func (i ClusterOptionsKubernetesNetworkConfigArgs) ToClusterOptionsKubernetesNet
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsKubernetesNetworkConfigOutput)
 }
 
-func (i ClusterOptionsKubernetesNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsKubernetesNetworkConfig] {
-	return pulumix.Output[ClusterOptionsKubernetesNetworkConfig]{
-		OutputState: i.ToClusterOptionsKubernetesNetworkConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterOptionsKubernetesNetworkConfigArgs) ToClusterOptionsKubernetesNetworkConfigPtrOutput() ClusterOptionsKubernetesNetworkConfigPtrOutput {
 	return i.ToClusterOptionsKubernetesNetworkConfigPtrOutputWithContext(context.Background())
 }
@@ -1935,12 +1664,6 @@ func (i *clusterOptionsKubernetesNetworkConfigPtrType) ToClusterOptionsKubernete
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
 }
 
-func (i *clusterOptionsKubernetesNetworkConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsKubernetesNetworkConfig] {
-	return pulumix.Output[*ClusterOptionsKubernetesNetworkConfig]{
-		OutputState: i.ToClusterOptionsKubernetesNetworkConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOptionsKubernetesNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsKubernetesNetworkConfigOutput) ElementType() reflect.Type {
@@ -1965,12 +1688,6 @@ func (o ClusterOptionsKubernetesNetworkConfigOutput) ToClusterOptionsKubernetesN
 	}).(ClusterOptionsKubernetesNetworkConfigPtrOutput)
 }
 
-func (o ClusterOptionsKubernetesNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsKubernetesNetworkConfig] {
-	return pulumix.Output[ClusterOptionsKubernetesNetworkConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
 func (o ClusterOptionsKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterOptionsKubernetesNetworkConfig) *string { return v.PodsCidr }).(pulumi.StringPtrOutput)
@@ -1993,12 +1710,6 @@ func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ToClusterOptionsKubernet
 
 func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ToClusterOptionsKubernetesNetworkConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsKubernetesNetworkConfigPtrOutput {
 	return o
-}
-
-func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsKubernetesNetworkConfig] {
-	return pulumix.Output[*ClusterOptionsKubernetesNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) Elem() ClusterOptionsKubernetesNetworkConfigOutput {
@@ -2068,12 +1779,6 @@ func (i ClusterOptionsPersistentVolumeConfigArgs) ToClusterOptionsPersistentVolu
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsPersistentVolumeConfigOutput)
 }
 
-func (i ClusterOptionsPersistentVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsPersistentVolumeConfig] {
-	return pulumix.Output[ClusterOptionsPersistentVolumeConfig]{
-		OutputState: i.ToClusterOptionsPersistentVolumeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterOptionsPersistentVolumeConfigArgs) ToClusterOptionsPersistentVolumeConfigPtrOutput() ClusterOptionsPersistentVolumeConfigPtrOutput {
 	return i.ToClusterOptionsPersistentVolumeConfigPtrOutputWithContext(context.Background())
 }
@@ -2115,12 +1820,6 @@ func (i *clusterOptionsPersistentVolumeConfigPtrType) ToClusterOptionsPersistent
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsPersistentVolumeConfigPtrOutput)
 }
 
-func (i *clusterOptionsPersistentVolumeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsPersistentVolumeConfig] {
-	return pulumix.Output[*ClusterOptionsPersistentVolumeConfig]{
-		OutputState: i.ToClusterOptionsPersistentVolumeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOptionsPersistentVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsPersistentVolumeConfigOutput) ElementType() reflect.Type {
@@ -2145,12 +1844,6 @@ func (o ClusterOptionsPersistentVolumeConfigOutput) ToClusterOptionsPersistentVo
 	}).(ClusterOptionsPersistentVolumeConfigPtrOutput)
 }
 
-func (o ClusterOptionsPersistentVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsPersistentVolumeConfig] {
-	return pulumix.Output[ClusterOptionsPersistentVolumeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o ClusterOptionsPersistentVolumeConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ClusterOptionsPersistentVolumeConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -2173,12 +1866,6 @@ func (o ClusterOptionsPersistentVolumeConfigPtrOutput) ToClusterOptionsPersisten
 
 func (o ClusterOptionsPersistentVolumeConfigPtrOutput) ToClusterOptionsPersistentVolumeConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsPersistentVolumeConfigPtrOutput {
 	return o
-}
-
-func (o ClusterOptionsPersistentVolumeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsPersistentVolumeConfig] {
-	return pulumix.Output[*ClusterOptionsPersistentVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterOptionsPersistentVolumeConfigPtrOutput) Elem() ClusterOptionsPersistentVolumeConfigOutput {
@@ -2248,12 +1935,6 @@ func (i ClusterOptionsServiceLbConfigArgs) ToClusterOptionsServiceLbConfigOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsServiceLbConfigOutput)
 }
 
-func (i ClusterOptionsServiceLbConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsServiceLbConfig] {
-	return pulumix.Output[ClusterOptionsServiceLbConfig]{
-		OutputState: i.ToClusterOptionsServiceLbConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ClusterOptionsServiceLbConfigArgs) ToClusterOptionsServiceLbConfigPtrOutput() ClusterOptionsServiceLbConfigPtrOutput {
 	return i.ToClusterOptionsServiceLbConfigPtrOutputWithContext(context.Background())
 }
@@ -2295,12 +1976,6 @@ func (i *clusterOptionsServiceLbConfigPtrType) ToClusterOptionsServiceLbConfigPt
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOptionsServiceLbConfigPtrOutput)
 }
 
-func (i *clusterOptionsServiceLbConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsServiceLbConfig] {
-	return pulumix.Output[*ClusterOptionsServiceLbConfig]{
-		OutputState: i.ToClusterOptionsServiceLbConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOptionsServiceLbConfigOutput struct{ *pulumi.OutputState }
 
 func (ClusterOptionsServiceLbConfigOutput) ElementType() reflect.Type {
@@ -2325,12 +2000,6 @@ func (o ClusterOptionsServiceLbConfigOutput) ToClusterOptionsServiceLbConfigPtrO
 	}).(ClusterOptionsServiceLbConfigPtrOutput)
 }
 
-func (o ClusterOptionsServiceLbConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ClusterOptionsServiceLbConfig] {
-	return pulumix.Output[ClusterOptionsServiceLbConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o ClusterOptionsServiceLbConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -2353,12 +2022,6 @@ func (o ClusterOptionsServiceLbConfigPtrOutput) ToClusterOptionsServiceLbConfigP
 
 func (o ClusterOptionsServiceLbConfigPtrOutput) ToClusterOptionsServiceLbConfigPtrOutputWithContext(ctx context.Context) ClusterOptionsServiceLbConfigPtrOutput {
 	return o
-}
-
-func (o ClusterOptionsServiceLbConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ClusterOptionsServiceLbConfig] {
-	return pulumix.Output[*ClusterOptionsServiceLbConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterOptionsServiceLbConfigPtrOutput) Elem() ClusterOptionsServiceLbConfigOutput {
@@ -2544,12 +2207,6 @@ func (i ContainerInstanceContainerArgs) ToContainerInstanceContainerOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerOutput)
 }
 
-func (i ContainerInstanceContainerArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainer] {
-	return pulumix.Output[ContainerInstanceContainer]{
-		OutputState: i.ToContainerInstanceContainerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceContainerArrayInput is an input type that accepts ContainerInstanceContainerArray and ContainerInstanceContainerArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerArrayInput` via:
 //
@@ -2575,12 +2232,6 @@ func (i ContainerInstanceContainerArray) ToContainerInstanceContainerArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerArrayOutput)
 }
 
-func (i ContainerInstanceContainerArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainer] {
-	return pulumix.Output[[]ContainerInstanceContainer]{
-		OutputState: i.ToContainerInstanceContainerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceContainerOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerOutput) ElementType() reflect.Type {
@@ -2593,12 +2244,6 @@ func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutput() C
 
 func (o ContainerInstanceContainerOutput) ToContainerInstanceContainerOutputWithContext(ctx context.Context) ContainerInstanceContainerOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainer] {
-	return pulumix.Output[ContainerInstanceContainer]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of string arguments for a container's ENTRYPOINT process.
@@ -2754,12 +2399,6 @@ func (o ContainerInstanceContainerArrayOutput) ToContainerInstanceContainerArray
 	return o
 }
 
-func (o ContainerInstanceContainerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainer] {
-	return pulumix.Output[[]ContainerInstanceContainer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ContainerInstanceContainerArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainer {
 		return vs[0].([]ContainerInstanceContainer)[vs[1].(int)]
@@ -2847,12 +2486,6 @@ func (i ContainerInstanceContainerHealthCheckArgs) ToContainerInstanceContainerH
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckOutput)
 }
 
-func (i ContainerInstanceContainerHealthCheckArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[ContainerInstanceContainerHealthCheck]{
-		OutputState: i.ToContainerInstanceContainerHealthCheckOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceContainerHealthCheckArrayInput is an input type that accepts ContainerInstanceContainerHealthCheckArray and ContainerInstanceContainerHealthCheckArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerHealthCheckArrayInput` via:
 //
@@ -2878,12 +2511,6 @@ func (i ContainerInstanceContainerHealthCheckArray) ToContainerInstanceContainer
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckArrayOutput)
 }
 
-func (i ContainerInstanceContainerHealthCheckArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[[]ContainerInstanceContainerHealthCheck]{
-		OutputState: i.ToContainerInstanceContainerHealthCheckArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceContainerHealthCheckOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerHealthCheckOutput) ElementType() reflect.Type {
@@ -2896,12 +2523,6 @@ func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContaine
 
 func (o ContainerInstanceContainerHealthCheckOutput) ToContainerInstanceContainerHealthCheckOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerHealthCheckOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[ContainerInstanceContainerHealthCheck]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of strings that will be simplified to a single command for checking the status of the container.
@@ -2988,12 +2609,6 @@ func (o ContainerInstanceContainerHealthCheckArrayOutput) ToContainerInstanceCon
 	return o
 }
 
-func (o ContainerInstanceContainerHealthCheckArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheck] {
-	return pulumix.Output[[]ContainerInstanceContainerHealthCheck]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ContainerInstanceContainerHealthCheckArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerHealthCheckOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceContainerHealthCheck {
 		return vs[0].([]ContainerInstanceContainerHealthCheck)[vs[1].(int)]
@@ -3037,12 +2652,6 @@ func (i ContainerInstanceContainerHealthCheckHeaderArgs) ToContainerInstanceCont
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckHeaderOutput)
 }
 
-func (i ContainerInstanceContainerHealthCheckHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[ContainerInstanceContainerHealthCheckHeader]{
-		OutputState: i.ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceContainerHealthCheckHeaderArrayInput is an input type that accepts ContainerInstanceContainerHealthCheckHeaderArray and ContainerInstanceContainerHealthCheckHeaderArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerHealthCheckHeaderArrayInput` via:
 //
@@ -3068,12 +2677,6 @@ func (i ContainerInstanceContainerHealthCheckHeaderArray) ToContainerInstanceCon
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerHealthCheckHeaderArrayOutput)
 }
 
-func (i ContainerInstanceContainerHealthCheckHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader]{
-		OutputState: i.ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceContainerHealthCheckHeaderOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerHealthCheckHeaderOutput) ElementType() reflect.Type {
@@ -3086,12 +2689,6 @@ func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceCo
 
 func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToContainerInstanceContainerHealthCheckHeaderOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerHealthCheckHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[ContainerInstanceContainerHealthCheckHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the volume. This must be unique within a single container instance.
@@ -3116,12 +2713,6 @@ func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToContainerInsta
 
 func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToContainerInstanceContainerHealthCheckHeaderArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerHealthCheckHeaderArrayOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader] {
-	return pulumix.Output[[]ContainerInstanceContainerHealthCheckHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceContainerHealthCheckHeaderArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerHealthCheckHeaderOutput {
@@ -3183,12 +2774,6 @@ func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContain
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigOutput)
 }
 
-func (i ContainerInstanceContainerResourceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[ContainerInstanceContainerResourceConfig]{
-		OutputState: i.ToContainerInstanceContainerResourceConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ContainerInstanceContainerResourceConfigArgs) ToContainerInstanceContainerResourceConfigPtrOutput() ContainerInstanceContainerResourceConfigPtrOutput {
 	return i.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(context.Background())
 }
@@ -3230,12 +2815,6 @@ func (i *containerInstanceContainerResourceConfigPtrType) ToContainerInstanceCon
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerResourceConfigPtrOutput)
 }
 
-func (i *containerInstanceContainerResourceConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[*ContainerInstanceContainerResourceConfig]{
-		OutputState: i.ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceContainerResourceConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerResourceConfigOutput) ElementType() reflect.Type {
@@ -3258,12 +2837,6 @@ func (o ContainerInstanceContainerResourceConfigOutput) ToContainerInstanceConta
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerResourceConfig) *ContainerInstanceContainerResourceConfig {
 		return &v
 	}).(ContainerInstanceContainerResourceConfigPtrOutput)
-}
-
-func (o ContainerInstanceContainerResourceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[ContainerInstanceContainerResourceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The maximum amount of memory that can be consumed by the container's process.
@@ -3296,12 +2869,6 @@ func (o ContainerInstanceContainerResourceConfigPtrOutput) ToContainerInstanceCo
 
 func (o ContainerInstanceContainerResourceConfigPtrOutput) ToContainerInstanceContainerResourceConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerResourceConfigPtrOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerResourceConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerResourceConfig] {
-	return pulumix.Output[*ContainerInstanceContainerResourceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceContainerResourceConfigPtrOutput) Elem() ContainerInstanceContainerResourceConfigOutput {
@@ -3391,12 +2958,6 @@ func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContai
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextOutput)
 }
 
-func (i ContainerInstanceContainerSecurityContextArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[ContainerInstanceContainerSecurityContext]{
-		OutputState: i.ToContainerInstanceContainerSecurityContextOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ContainerInstanceContainerSecurityContextArgs) ToContainerInstanceContainerSecurityContextPtrOutput() ContainerInstanceContainerSecurityContextPtrOutput {
 	return i.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(context.Background())
 }
@@ -3438,12 +2999,6 @@ func (i *containerInstanceContainerSecurityContextPtrType) ToContainerInstanceCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerSecurityContextPtrOutput)
 }
 
-func (i *containerInstanceContainerSecurityContextPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[*ContainerInstanceContainerSecurityContext]{
-		OutputState: i.ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceContainerSecurityContextOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerSecurityContextOutput) ElementType() reflect.Type {
@@ -3466,12 +3021,6 @@ func (o ContainerInstanceContainerSecurityContextOutput) ToContainerInstanceCont
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceContainerSecurityContext) *ContainerInstanceContainerSecurityContext {
 		return &v
 	}).(ContainerInstanceContainerSecurityContextPtrOutput)
-}
-
-func (o ContainerInstanceContainerSecurityContextOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[ContainerInstanceContainerSecurityContext]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
@@ -3511,12 +3060,6 @@ func (o ContainerInstanceContainerSecurityContextPtrOutput) ToContainerInstanceC
 
 func (o ContainerInstanceContainerSecurityContextPtrOutput) ToContainerInstanceContainerSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceContainerSecurityContextPtrOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerSecurityContextPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceContainerSecurityContext] {
-	return pulumix.Output[*ContainerInstanceContainerSecurityContext]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceContainerSecurityContextPtrOutput) Elem() ContainerInstanceContainerSecurityContextOutput {
@@ -3628,12 +3171,6 @@ func (i ContainerInstanceContainerVolumeMountArgs) ToContainerInstanceContainerV
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerVolumeMountOutput)
 }
 
-func (i ContainerInstanceContainerVolumeMountArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[ContainerInstanceContainerVolumeMount]{
-		OutputState: i.ToContainerInstanceContainerVolumeMountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceContainerVolumeMountArrayInput is an input type that accepts ContainerInstanceContainerVolumeMountArray and ContainerInstanceContainerVolumeMountArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceContainerVolumeMountArrayInput` via:
 //
@@ -3659,12 +3196,6 @@ func (i ContainerInstanceContainerVolumeMountArray) ToContainerInstanceContainer
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceContainerVolumeMountArrayOutput)
 }
 
-func (i ContainerInstanceContainerVolumeMountArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[[]ContainerInstanceContainerVolumeMount]{
-		OutputState: i.ToContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceContainerVolumeMountOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceContainerVolumeMountOutput) ElementType() reflect.Type {
@@ -3677,12 +3208,6 @@ func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContaine
 
 func (o ContainerInstanceContainerVolumeMountOutput) ToContainerInstanceContainerVolumeMountOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerVolumeMountOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[ContainerInstanceContainerVolumeMount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
@@ -3722,12 +3247,6 @@ func (o ContainerInstanceContainerVolumeMountArrayOutput) ToContainerInstanceCon
 
 func (o ContainerInstanceContainerVolumeMountArrayOutput) ToContainerInstanceContainerVolumeMountArrayOutputWithContext(ctx context.Context) ContainerInstanceContainerVolumeMountArrayOutput {
 	return o
-}
-
-func (o ContainerInstanceContainerVolumeMountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceContainerVolumeMount] {
-	return pulumix.Output[[]ContainerInstanceContainerVolumeMount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceContainerVolumeMountArrayOutput) Index(i pulumi.IntInput) ContainerInstanceContainerVolumeMountOutput {
@@ -3777,12 +3296,6 @@ func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigOutput)
 }
 
-func (i ContainerInstanceDnsConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceDnsConfig] {
-	return pulumix.Output[ContainerInstanceDnsConfig]{
-		OutputState: i.ToContainerInstanceDnsConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ContainerInstanceDnsConfigArgs) ToContainerInstanceDnsConfigPtrOutput() ContainerInstanceDnsConfigPtrOutput {
 	return i.ToContainerInstanceDnsConfigPtrOutputWithContext(context.Background())
 }
@@ -3824,12 +3337,6 @@ func (i *containerInstanceDnsConfigPtrType) ToContainerInstanceDnsConfigPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceDnsConfigPtrOutput)
 }
 
-func (i *containerInstanceDnsConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceDnsConfig] {
-	return pulumix.Output[*ContainerInstanceDnsConfig]{
-		OutputState: i.ToContainerInstanceDnsConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceDnsConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceDnsConfigOutput) ElementType() reflect.Type {
@@ -3852,12 +3359,6 @@ func (o ContainerInstanceDnsConfigOutput) ToContainerInstanceDnsConfigPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceDnsConfig) *ContainerInstanceDnsConfig {
 		return &v
 	}).(ContainerInstanceDnsConfigPtrOutput)
-}
-
-func (o ContainerInstanceDnsConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceDnsConfig] {
-	return pulumix.Output[ContainerInstanceDnsConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
@@ -3887,12 +3388,6 @@ func (o ContainerInstanceDnsConfigPtrOutput) ToContainerInstanceDnsConfigPtrOutp
 
 func (o ContainerInstanceDnsConfigPtrOutput) ToContainerInstanceDnsConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceDnsConfigPtrOutput {
 	return o
-}
-
-func (o ContainerInstanceDnsConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceDnsConfig] {
-	return pulumix.Output[*ContainerInstanceDnsConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceDnsConfigPtrOutput) Elem() ContainerInstanceDnsConfigOutput {
@@ -3984,12 +3479,6 @@ func (i ContainerInstanceImagePullSecretArgs) ToContainerInstanceImagePullSecret
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceImagePullSecretOutput)
 }
 
-func (i ContainerInstanceImagePullSecretArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceImagePullSecret] {
-	return pulumix.Output[ContainerInstanceImagePullSecret]{
-		OutputState: i.ToContainerInstanceImagePullSecretOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceImagePullSecretArrayInput is an input type that accepts ContainerInstanceImagePullSecretArray and ContainerInstanceImagePullSecretArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceImagePullSecretArrayInput` via:
 //
@@ -4015,12 +3504,6 @@ func (i ContainerInstanceImagePullSecretArray) ToContainerInstanceImagePullSecre
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceImagePullSecretArrayOutput)
 }
 
-func (i ContainerInstanceImagePullSecretArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceImagePullSecret] {
-	return pulumix.Output[[]ContainerInstanceImagePullSecret]{
-		OutputState: i.ToContainerInstanceImagePullSecretArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceImagePullSecretOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceImagePullSecretOutput) ElementType() reflect.Type {
@@ -4033,12 +3516,6 @@ func (o ContainerInstanceImagePullSecretOutput) ToContainerInstanceImagePullSecr
 
 func (o ContainerInstanceImagePullSecretOutput) ToContainerInstanceImagePullSecretOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretOutput {
 	return o
-}
-
-func (o ContainerInstanceImagePullSecretOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceImagePullSecret] {
-	return pulumix.Output[ContainerInstanceImagePullSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The password which should be used with the registry for authentication. The value is expected in base64 format.
@@ -4078,12 +3555,6 @@ func (o ContainerInstanceImagePullSecretArrayOutput) ToContainerInstanceImagePul
 
 func (o ContainerInstanceImagePullSecretArrayOutput) ToContainerInstanceImagePullSecretArrayOutputWithContext(ctx context.Context) ContainerInstanceImagePullSecretArrayOutput {
 	return o
-}
-
-func (o ContainerInstanceImagePullSecretArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceImagePullSecret] {
-	return pulumix.Output[[]ContainerInstanceImagePullSecret]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput) ContainerInstanceImagePullSecretOutput {
@@ -4137,12 +3608,6 @@ func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigOutput)
 }
 
-func (i ContainerInstanceShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceShapeConfig] {
-	return pulumix.Output[ContainerInstanceShapeConfig]{
-		OutputState: i.ToContainerInstanceShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ContainerInstanceShapeConfigArgs) ToContainerInstanceShapeConfigPtrOutput() ContainerInstanceShapeConfigPtrOutput {
 	return i.ToContainerInstanceShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -4184,12 +3649,6 @@ func (i *containerInstanceShapeConfigPtrType) ToContainerInstanceShapeConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceShapeConfigPtrOutput)
 }
 
-func (i *containerInstanceShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceShapeConfig] {
-	return pulumix.Output[*ContainerInstanceShapeConfig]{
-		OutputState: i.ToContainerInstanceShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceShapeConfigOutput) ElementType() reflect.Type {
@@ -4212,12 +3671,6 @@ func (o ContainerInstanceShapeConfigOutput) ToContainerInstanceShapeConfigPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceShapeConfig) *ContainerInstanceShapeConfig {
 		return &v
 	}).(ContainerInstanceShapeConfigPtrOutput)
-}
-
-func (o ContainerInstanceShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceShapeConfig] {
-	return pulumix.Output[ContainerInstanceShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total amount of memory available to the container instance (GB).
@@ -4252,12 +3705,6 @@ func (o ContainerInstanceShapeConfigPtrOutput) ToContainerInstanceShapeConfigPtr
 
 func (o ContainerInstanceShapeConfigPtrOutput) ToContainerInstanceShapeConfigPtrOutputWithContext(ctx context.Context) ContainerInstanceShapeConfigPtrOutput {
 	return o
-}
-
-func (o ContainerInstanceShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerInstanceShapeConfig] {
-	return pulumix.Output[*ContainerInstanceShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceShapeConfigPtrOutput) Elem() ContainerInstanceShapeConfigOutput {
@@ -4379,12 +3826,6 @@ func (i ContainerInstanceVnicArgs) ToContainerInstanceVnicOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVnicOutput)
 }
 
-func (i ContainerInstanceVnicArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVnic] {
-	return pulumix.Output[ContainerInstanceVnic]{
-		OutputState: i.ToContainerInstanceVnicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceVnicArrayInput is an input type that accepts ContainerInstanceVnicArray and ContainerInstanceVnicArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceVnicArrayInput` via:
 //
@@ -4410,12 +3851,6 @@ func (i ContainerInstanceVnicArray) ToContainerInstanceVnicArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVnicArrayOutput)
 }
 
-func (i ContainerInstanceVnicArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVnic] {
-	return pulumix.Output[[]ContainerInstanceVnic]{
-		OutputState: i.ToContainerInstanceVnicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceVnicOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceVnicOutput) ElementType() reflect.Type {
@@ -4428,12 +3863,6 @@ func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutput() ContainerIn
 
 func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutputWithContext(ctx context.Context) ContainerInstanceVnicOutput {
 	return o
-}
-
-func (o ContainerInstanceVnicOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVnic] {
-	return pulumix.Output[ContainerInstanceVnic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
@@ -4500,12 +3929,6 @@ func (o ContainerInstanceVnicArrayOutput) ToContainerInstanceVnicArrayOutputWith
 	return o
 }
 
-func (o ContainerInstanceVnicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVnic] {
-	return pulumix.Output[[]ContainerInstanceVnic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ContainerInstanceVnicArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVnicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVnic {
 		return vs[0].([]ContainerInstanceVnic)[vs[1].(int)]
@@ -4557,12 +3980,6 @@ func (i ContainerInstanceVolumeArgs) ToContainerInstanceVolumeOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeOutput)
 }
 
-func (i ContainerInstanceVolumeArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolume] {
-	return pulumix.Output[ContainerInstanceVolume]{
-		OutputState: i.ToContainerInstanceVolumeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceVolumeArrayInput is an input type that accepts ContainerInstanceVolumeArray and ContainerInstanceVolumeArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceVolumeArrayInput` via:
 //
@@ -4588,12 +4005,6 @@ func (i ContainerInstanceVolumeArray) ToContainerInstanceVolumeArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeArrayOutput)
 }
 
-func (i ContainerInstanceVolumeArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolume] {
-	return pulumix.Output[[]ContainerInstanceVolume]{
-		OutputState: i.ToContainerInstanceVolumeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceVolumeOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceVolumeOutput) ElementType() reflect.Type {
@@ -4606,12 +4017,6 @@ func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutput() Contain
 
 func (o ContainerInstanceVolumeOutput) ToContainerInstanceVolumeOutputWithContext(ctx context.Context) ContainerInstanceVolumeOutput {
 	return o
-}
-
-func (o ContainerInstanceVolumeOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolume] {
-	return pulumix.Output[ContainerInstanceVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The volume type of the empty directory, can be either File Storage or Memory.
@@ -4646,12 +4051,6 @@ func (o ContainerInstanceVolumeArrayOutput) ToContainerInstanceVolumeArrayOutput
 
 func (o ContainerInstanceVolumeArrayOutput) ToContainerInstanceVolumeArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeArrayOutput {
 	return o
-}
-
-func (o ContainerInstanceVolumeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolume] {
-	return pulumix.Output[[]ContainerInstanceVolume]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceVolumeArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeOutput {
@@ -4701,12 +4100,6 @@ func (i ContainerInstanceVolumeConfigArgs) ToContainerInstanceVolumeConfigOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeConfigOutput)
 }
 
-func (i ContainerInstanceVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolumeConfig] {
-	return pulumix.Output[ContainerInstanceVolumeConfig]{
-		OutputState: i.ToContainerInstanceVolumeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ContainerInstanceVolumeConfigArrayInput is an input type that accepts ContainerInstanceVolumeConfigArray and ContainerInstanceVolumeConfigArrayOutput values.
 // You can construct a concrete instance of `ContainerInstanceVolumeConfigArrayInput` via:
 //
@@ -4732,12 +4125,6 @@ func (i ContainerInstanceVolumeConfigArray) ToContainerInstanceVolumeConfigArray
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeConfigArrayOutput)
 }
 
-func (i ContainerInstanceVolumeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolumeConfig] {
-	return pulumix.Output[[]ContainerInstanceVolumeConfig]{
-		OutputState: i.ToContainerInstanceVolumeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerInstanceVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (ContainerInstanceVolumeConfigOutput) ElementType() reflect.Type {
@@ -4750,12 +4137,6 @@ func (o ContainerInstanceVolumeConfigOutput) ToContainerInstanceVolumeConfigOutp
 
 func (o ContainerInstanceVolumeConfigOutput) ToContainerInstanceVolumeConfigOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigOutput {
 	return o
-}
-
-func (o ContainerInstanceVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerInstanceVolumeConfig] {
-	return pulumix.Output[ContainerInstanceVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
@@ -4785,12 +4166,6 @@ func (o ContainerInstanceVolumeConfigArrayOutput) ToContainerInstanceVolumeConfi
 
 func (o ContainerInstanceVolumeConfigArrayOutput) ToContainerInstanceVolumeConfigArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeConfigArrayOutput {
 	return o
-}
-
-func (o ContainerInstanceVolumeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ContainerInstanceVolumeConfig] {
-	return pulumix.Output[[]ContainerInstanceVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerInstanceVolumeConfigArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeConfigOutput {
@@ -4836,12 +4211,6 @@ func (i NodePoolInitialNodeLabelArgs) ToNodePoolInitialNodeLabelOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolInitialNodeLabelOutput)
 }
 
-func (i NodePoolInitialNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolInitialNodeLabel] {
-	return pulumix.Output[NodePoolInitialNodeLabel]{
-		OutputState: i.ToNodePoolInitialNodeLabelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NodePoolInitialNodeLabelArrayInput is an input type that accepts NodePoolInitialNodeLabelArray and NodePoolInitialNodeLabelArrayOutput values.
 // You can construct a concrete instance of `NodePoolInitialNodeLabelArrayInput` via:
 //
@@ -4867,12 +4236,6 @@ func (i NodePoolInitialNodeLabelArray) ToNodePoolInitialNodeLabelArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolInitialNodeLabelArrayOutput)
 }
 
-func (i NodePoolInitialNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolInitialNodeLabel] {
-	return pulumix.Output[[]NodePoolInitialNodeLabel]{
-		OutputState: i.ToNodePoolInitialNodeLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolInitialNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (NodePoolInitialNodeLabelOutput) ElementType() reflect.Type {
@@ -4885,12 +4248,6 @@ func (o NodePoolInitialNodeLabelOutput) ToNodePoolInitialNodeLabelOutput() NodeP
 
 func (o NodePoolInitialNodeLabelOutput) ToNodePoolInitialNodeLabelOutputWithContext(ctx context.Context) NodePoolInitialNodeLabelOutput {
 	return o
-}
-
-func (o NodePoolInitialNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolInitialNodeLabel] {
-	return pulumix.Output[NodePoolInitialNodeLabel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The key of the pair.
@@ -4915,12 +4272,6 @@ func (o NodePoolInitialNodeLabelArrayOutput) ToNodePoolInitialNodeLabelArrayOutp
 
 func (o NodePoolInitialNodeLabelArrayOutput) ToNodePoolInitialNodeLabelArrayOutputWithContext(ctx context.Context) NodePoolInitialNodeLabelArrayOutput {
 	return o
-}
-
-func (o NodePoolInitialNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolInitialNodeLabel] {
-	return pulumix.Output[[]NodePoolInitialNodeLabel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) NodePoolInitialNodeLabelOutput {
@@ -5014,12 +4365,6 @@ func (i NodePoolNodeArgs) ToNodePoolNodeOutputWithContext(ctx context.Context) N
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeOutput)
 }
 
-func (i NodePoolNodeArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNode] {
-	return pulumix.Output[NodePoolNode]{
-		OutputState: i.ToNodePoolNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NodePoolNodeArrayInput is an input type that accepts NodePoolNodeArray and NodePoolNodeArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeArrayInput` via:
 //
@@ -5045,12 +4390,6 @@ func (i NodePoolNodeArray) ToNodePoolNodeArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeArrayOutput)
 }
 
-func (i NodePoolNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNode] {
-	return pulumix.Output[[]NodePoolNode]{
-		OutputState: i.ToNodePoolNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeOutput) ElementType() reflect.Type {
@@ -5063,12 +4402,6 @@ func (o NodePoolNodeOutput) ToNodePoolNodeOutput() NodePoolNodeOutput {
 
 func (o NodePoolNodeOutput) ToNodePoolNodeOutputWithContext(ctx context.Context) NodePoolNodeOutput {
 	return o
-}
-
-func (o NodePoolNodeOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNode] {
-	return pulumix.Output[NodePoolNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -5155,12 +4488,6 @@ func (o NodePoolNodeArrayOutput) ToNodePoolNodeArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o NodePoolNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNode] {
-	return pulumix.Output[[]NodePoolNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NodePoolNodeArrayOutput) Index(i pulumi.IntInput) NodePoolNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolNode {
 		return vs[0].([]NodePoolNode)[vs[1].(int)]
@@ -5232,12 +4559,6 @@ func (i NodePoolNodeConfigDetailsArgs) ToNodePoolNodeConfigDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsOutput)
 }
 
-func (i NodePoolNodeConfigDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetails] {
-	return pulumix.Output[NodePoolNodeConfigDetails]{
-		OutputState: i.ToNodePoolNodeConfigDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodeConfigDetailsArgs) ToNodePoolNodeConfigDetailsPtrOutput() NodePoolNodeConfigDetailsPtrOutput {
 	return i.ToNodePoolNodeConfigDetailsPtrOutputWithContext(context.Background())
 }
@@ -5279,12 +4600,6 @@ func (i *nodePoolNodeConfigDetailsPtrType) ToNodePoolNodeConfigDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPtrOutput)
 }
 
-func (i *nodePoolNodeConfigDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetails] {
-	return pulumix.Output[*NodePoolNodeConfigDetails]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeConfigDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsOutput) ElementType() reflect.Type {
@@ -5307,12 +4622,6 @@ func (o NodePoolNodeConfigDetailsOutput) ToNodePoolNodeConfigDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetails) *NodePoolNodeConfigDetails {
 		return &v
 	}).(NodePoolNodeConfigDetailsPtrOutput)
-}
-
-func (o NodePoolNodeConfigDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetails] {
-	return pulumix.Output[NodePoolNodeConfigDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5373,12 +4682,6 @@ func (o NodePoolNodeConfigDetailsPtrOutput) ToNodePoolNodeConfigDetailsPtrOutput
 
 func (o NodePoolNodeConfigDetailsPtrOutput) ToNodePoolNodeConfigDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeConfigDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetails] {
-	return pulumix.Output[*NodePoolNodeConfigDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeConfigDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsOutput {
@@ -5518,12 +4821,6 @@ func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePool
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput)
 }
 
-func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
-	return pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
-		OutputState: i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
 	return i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(context.Background())
 }
@@ -5565,12 +4862,6 @@ func (i *nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ToNode
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
 }
 
-func (i *nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
-	return pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
-		OutputState: i.ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ElementType() reflect.Type {
@@ -5593,12 +4884,6 @@ func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToNodePo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails) *NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
 		return &v
 	}).(NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput)
-}
-
-func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
-	return pulumix.Output[NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The CNI plugin used by this node pool
@@ -5633,12 +4918,6 @@ func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToNod
 
 func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToNodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails] {
-	return pulumix.Output[*NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsOutput {
@@ -5740,12 +5019,6 @@ func (i NodePoolNodeConfigDetailsPlacementConfigArgs) ToNodePoolNodeConfigDetail
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigOutput)
 }
 
-func (i NodePoolNodeConfigDetailsPlacementConfigArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig] {
-	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NodePoolNodeConfigDetailsPlacementConfigArrayInput is an input type that accepts NodePoolNodeConfigDetailsPlacementConfigArray and NodePoolNodeConfigDetailsPlacementConfigArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeConfigDetailsPlacementConfigArrayInput` via:
 //
@@ -5771,12 +5044,6 @@ func (i NodePoolNodeConfigDetailsPlacementConfigArray) ToNodePoolNodeConfigDetai
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigArrayOutput)
 }
 
-func (i NodePoolNodeConfigDetailsPlacementConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig] {
-	return pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeConfigDetailsPlacementConfigOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsPlacementConfigOutput) ElementType() reflect.Type {
@@ -5789,12 +5056,6 @@ func (o NodePoolNodeConfigDetailsPlacementConfigOutput) ToNodePoolNodeConfigDeta
 
 func (o NodePoolNodeConfigDetailsPlacementConfigOutput) ToNodePoolNodeConfigDetailsPlacementConfigOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigOutput {
 	return o
-}
-
-func (o NodePoolNodeConfigDetailsPlacementConfigOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig] {
-	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
@@ -5838,12 +5099,6 @@ func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) ToNodePoolNodeConfi
 	return o
 }
 
-func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig] {
-	return pulumix.Output[[]NodePoolNodeConfigDetailsPlacementConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NodePoolNodeConfigDetailsPlacementConfigArrayOutput) Index(i pulumi.IntInput) NodePoolNodeConfigDetailsPlacementConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolNodeConfigDetailsPlacementConfig {
 		return vs[0].([]NodePoolNodeConfigDetailsPlacementConfig)[vs[1].(int)]
@@ -5881,12 +5136,6 @@ func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNod
 
 func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput)
-}
-
-func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
@@ -5930,12 +5179,6 @@ func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) T
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
 }
 
-func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
@@ -5960,12 +5203,6 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToN
 	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput)
 }
 
-func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The action to run when the preemptible node is interrupted for eviction.
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput) PreemptionAction() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
@@ -5985,12 +5222,6 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) 
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPtrOutput) Elem() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigOutput {
@@ -6050,12 +5281,6 @@ func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionA
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
 }
 
-func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
 	return i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(context.Background())
 }
@@ -6097,12 +5322,6 @@ func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemption
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
 }
 
-func (i *nodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: i.ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -6125,12 +5344,6 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionA
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction) *NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction {
 		return &v
 	}).(NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput)
-}
-
-func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -6159,12 +5372,6 @@ func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionA
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ToNodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutputWithContext(ctx context.Context) NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[*NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionPtrOutput) Elem() NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
@@ -6238,12 +5445,6 @@ func (i NodePoolNodeErrorArgs) ToNodePoolNodeErrorOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeErrorOutput)
 }
 
-func (i NodePoolNodeErrorArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeError] {
-	return pulumix.Output[NodePoolNodeError]{
-		OutputState: i.ToNodePoolNodeErrorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NodePoolNodeErrorArrayInput is an input type that accepts NodePoolNodeErrorArray and NodePoolNodeErrorArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeErrorArrayInput` via:
 //
@@ -6269,12 +5470,6 @@ func (i NodePoolNodeErrorArray) ToNodePoolNodeErrorArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeErrorArrayOutput)
 }
 
-func (i NodePoolNodeErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeError] {
-	return pulumix.Output[[]NodePoolNodeError]{
-		OutputState: i.ToNodePoolNodeErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeErrorOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeErrorOutput) ElementType() reflect.Type {
@@ -6287,12 +5482,6 @@ func (o NodePoolNodeErrorOutput) ToNodePoolNodeErrorOutput() NodePoolNodeErrorOu
 
 func (o NodePoolNodeErrorOutput) ToNodePoolNodeErrorOutputWithContext(ctx context.Context) NodePoolNodeErrorOutput {
 	return o
-}
-
-func (o NodePoolNodeErrorOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeError] {
-	return pulumix.Output[NodePoolNodeError]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -6322,12 +5511,6 @@ func (o NodePoolNodeErrorArrayOutput) ToNodePoolNodeErrorArrayOutput() NodePoolN
 
 func (o NodePoolNodeErrorArrayOutput) ToNodePoolNodeErrorArrayOutputWithContext(ctx context.Context) NodePoolNodeErrorArrayOutput {
 	return o
-}
-
-func (o NodePoolNodeErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeError] {
-	return pulumix.Output[[]NodePoolNodeError]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) NodePoolNodeErrorOutput {
@@ -6373,12 +5556,6 @@ func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePool
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsOutput)
 }
 
-func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeEvictionNodePoolSettings] {
-	return pulumix.Output[NodePoolNodeEvictionNodePoolSettings]{
-		OutputState: i.ToNodePoolNodeEvictionNodePoolSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodeEvictionNodePoolSettingsArgs) ToNodePoolNodeEvictionNodePoolSettingsPtrOutput() NodePoolNodeEvictionNodePoolSettingsPtrOutput {
 	return i.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(context.Background())
 }
@@ -6420,12 +5597,6 @@ func (i *nodePoolNodeEvictionNodePoolSettingsPtrType) ToNodePoolNodeEvictionNode
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
 }
 
-func (i *nodePoolNodeEvictionNodePoolSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeEvictionNodePoolSettings] {
-	return pulumix.Output[*NodePoolNodeEvictionNodePoolSettings]{
-		OutputState: i.ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeEvictionNodePoolSettingsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeEvictionNodePoolSettingsOutput) ElementType() reflect.Type {
@@ -6450,12 +5621,6 @@ func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToNodePoolNodeEvictionNodePo
 	}).(NodePoolNodeEvictionNodePoolSettingsPtrOutput)
 }
 
-func (o NodePoolNodeEvictionNodePoolSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeEvictionNodePoolSettings] {
-	return pulumix.Output[NodePoolNodeEvictionNodePoolSettings]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
 func (o NodePoolNodeEvictionNodePoolSettingsOutput) EvictionGraceDuration() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeEvictionNodePoolSettings) *string { return v.EvictionGraceDuration }).(pulumi.StringPtrOutput)
@@ -6478,12 +5643,6 @@ func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToNodePoolNodeEvictionNod
 
 func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToNodePoolNodeEvictionNodePoolSettingsPtrOutputWithContext(ctx context.Context) NodePoolNodeEvictionNodePoolSettingsPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeEvictionNodePoolSettings] {
-	return pulumix.Output[*NodePoolNodeEvictionNodePoolSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeEvictionNodePoolSettingsPtrOutput) Elem() NodePoolNodeEvictionNodePoolSettingsOutput {
@@ -6557,12 +5716,6 @@ func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsOutp
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsOutput)
 }
 
-func (i NodePoolNodePoolCyclingDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodePoolCyclingDetails] {
-	return pulumix.Output[NodePoolNodePoolCyclingDetails]{
-		OutputState: i.ToNodePoolNodePoolCyclingDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodePoolCyclingDetailsArgs) ToNodePoolNodePoolCyclingDetailsPtrOutput() NodePoolNodePoolCyclingDetailsPtrOutput {
 	return i.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
 }
@@ -6604,12 +5757,6 @@ func (i *nodePoolNodePoolCyclingDetailsPtrType) ToNodePoolNodePoolCyclingDetails
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodePoolCyclingDetailsPtrOutput)
 }
 
-func (i *nodePoolNodePoolCyclingDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodePoolCyclingDetails] {
-	return pulumix.Output[*NodePoolNodePoolCyclingDetails]{
-		OutputState: i.ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodePoolCyclingDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodePoolCyclingDetailsOutput) ElementType() reflect.Type {
@@ -6632,12 +5779,6 @@ func (o NodePoolNodePoolCyclingDetailsOutput) ToNodePoolNodePoolCyclingDetailsPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodePoolCyclingDetails) *NodePoolNodePoolCyclingDetails {
 		return &v
 	}).(NodePoolNodePoolCyclingDetailsPtrOutput)
-}
-
-func (o NodePoolNodePoolCyclingDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodePoolCyclingDetails] {
-	return pulumix.Output[NodePoolNodePoolCyclingDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If nodes in the nodepool will be cycled to have new changes.
@@ -6667,12 +5808,6 @@ func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToNodePoolNodePoolCyclingDetail
 
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToNodePoolNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodePoolCyclingDetailsPtrOutput {
 	return o
-}
-
-func (o NodePoolNodePoolCyclingDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodePoolCyclingDetails] {
-	return pulumix.Output[*NodePoolNodePoolCyclingDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodePoolCyclingDetailsPtrOutput) Elem() NodePoolNodePoolCyclingDetailsOutput {
@@ -6752,12 +5887,6 @@ func (i NodePoolNodeShapeConfigArgs) ToNodePoolNodeShapeConfigOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeShapeConfigOutput)
 }
 
-func (i NodePoolNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeShapeConfig] {
-	return pulumix.Output[NodePoolNodeShapeConfig]{
-		OutputState: i.ToNodePoolNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodeShapeConfigArgs) ToNodePoolNodeShapeConfigPtrOutput() NodePoolNodeShapeConfigPtrOutput {
 	return i.ToNodePoolNodeShapeConfigPtrOutputWithContext(context.Background())
 }
@@ -6799,12 +5928,6 @@ func (i *nodePoolNodeShapeConfigPtrType) ToNodePoolNodeShapeConfigPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeShapeConfigPtrOutput)
 }
 
-func (i *nodePoolNodeShapeConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeShapeConfig] {
-	return pulumix.Output[*NodePoolNodeShapeConfig]{
-		OutputState: i.ToNodePoolNodeShapeConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -6829,12 +5952,6 @@ func (o NodePoolNodeShapeConfigOutput) ToNodePoolNodeShapeConfigPtrOutputWithCon
 	}).(NodePoolNodeShapeConfigPtrOutput)
 }
 
-func (o NodePoolNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeShapeConfig] {
-	return pulumix.Output[NodePoolNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The total amount of memory available to each node, in gigabytes.
 func (o NodePoolNodeShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NodePoolNodeShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
@@ -6857,12 +5974,6 @@ func (o NodePoolNodeShapeConfigPtrOutput) ToNodePoolNodeShapeConfigPtrOutput() N
 
 func (o NodePoolNodeShapeConfigPtrOutput) ToNodePoolNodeShapeConfigPtrOutputWithContext(ctx context.Context) NodePoolNodeShapeConfigPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeShapeConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeShapeConfig] {
-	return pulumix.Output[*NodePoolNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeShapeConfigPtrOutput) Elem() NodePoolNodeShapeConfigOutput {
@@ -6936,12 +6047,6 @@ func (i NodePoolNodeSourceArgs) ToNodePoolNodeSourceOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceOutput)
 }
 
-func (i NodePoolNodeSourceArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSource] {
-	return pulumix.Output[NodePoolNodeSource]{
-		OutputState: i.ToNodePoolNodeSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NodePoolNodeSourceArrayInput is an input type that accepts NodePoolNodeSourceArray and NodePoolNodeSourceArrayOutput values.
 // You can construct a concrete instance of `NodePoolNodeSourceArrayInput` via:
 //
@@ -6967,12 +6072,6 @@ func (i NodePoolNodeSourceArray) ToNodePoolNodeSourceArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceArrayOutput)
 }
 
-func (i NodePoolNodeSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeSource] {
-	return pulumix.Output[[]NodePoolNodeSource]{
-		OutputState: i.ToNodePoolNodeSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeSourceOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeSourceOutput) ElementType() reflect.Type {
@@ -6985,12 +6084,6 @@ func (o NodePoolNodeSourceOutput) ToNodePoolNodeSourceOutput() NodePoolNodeSourc
 
 func (o NodePoolNodeSourceOutput) ToNodePoolNodeSourceOutputWithContext(ctx context.Context) NodePoolNodeSourceOutput {
 	return o
-}
-
-func (o NodePoolNodeSourceOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSource] {
-	return pulumix.Output[NodePoolNodeSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the image used to boot the node.
@@ -7020,12 +6113,6 @@ func (o NodePoolNodeSourceArrayOutput) ToNodePoolNodeSourceArrayOutput() NodePoo
 
 func (o NodePoolNodeSourceArrayOutput) ToNodePoolNodeSourceArrayOutputWithContext(ctx context.Context) NodePoolNodeSourceArrayOutput {
 	return o
-}
-
-func (o NodePoolNodeSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]NodePoolNodeSource] {
-	return pulumix.Output[[]NodePoolNodeSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) NodePoolNodeSourceOutput {
@@ -7075,12 +6162,6 @@ func (i NodePoolNodeSourceDetailsArgs) ToNodePoolNodeSourceDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceDetailsOutput)
 }
 
-func (i NodePoolNodeSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSourceDetails] {
-	return pulumix.Output[NodePoolNodeSourceDetails]{
-		OutputState: i.ToNodePoolNodeSourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i NodePoolNodeSourceDetailsArgs) ToNodePoolNodeSourceDetailsPtrOutput() NodePoolNodeSourceDetailsPtrOutput {
 	return i.ToNodePoolNodeSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -7122,12 +6203,6 @@ func (i *nodePoolNodeSourceDetailsPtrType) ToNodePoolNodeSourceDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(NodePoolNodeSourceDetailsPtrOutput)
 }
 
-func (i *nodePoolNodeSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeSourceDetails] {
-	return pulumix.Output[*NodePoolNodeSourceDetails]{
-		OutputState: i.ToNodePoolNodeSourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NodePoolNodeSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (NodePoolNodeSourceDetailsOutput) ElementType() reflect.Type {
@@ -7150,12 +6225,6 @@ func (o NodePoolNodeSourceDetailsOutput) ToNodePoolNodeSourceDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolNodeSourceDetails) *NodePoolNodeSourceDetails {
 		return &v
 	}).(NodePoolNodeSourceDetailsPtrOutput)
-}
-
-func (o NodePoolNodeSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[NodePoolNodeSourceDetails] {
-	return pulumix.Output[NodePoolNodeSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
@@ -7185,12 +6254,6 @@ func (o NodePoolNodeSourceDetailsPtrOutput) ToNodePoolNodeSourceDetailsPtrOutput
 
 func (o NodePoolNodeSourceDetailsPtrOutput) ToNodePoolNodeSourceDetailsPtrOutputWithContext(ctx context.Context) NodePoolNodeSourceDetailsPtrOutput {
 	return o
-}
-
-func (o NodePoolNodeSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*NodePoolNodeSourceDetails] {
-	return pulumix.Output[*NodePoolNodeSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NodePoolNodeSourceDetailsPtrOutput) Elem() NodePoolNodeSourceDetailsOutput {
@@ -7270,12 +6333,6 @@ func (i VirtualNodePoolInitialVirtualNodeLabelArgs) ToVirtualNodePoolInitialVirt
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolInitialVirtualNodeLabelOutput)
 }
 
-func (i VirtualNodePoolInitialVirtualNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: i.ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts VirtualNodePoolInitialVirtualNodeLabelArray and VirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolInitialVirtualNodeLabelArrayInput` via:
 //
@@ -7301,12 +6358,6 @@ func (i VirtualNodePoolInitialVirtualNodeLabelArray) ToVirtualNodePoolInitialVir
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolInitialVirtualNodeLabelArrayOutput)
 }
 
-func (i VirtualNodePoolInitialVirtualNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: i.ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
@@ -7319,12 +6370,6 @@ func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToVirtualNodePoolInitialVi
 
 func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelOutput {
 	return o
-}
-
-func (o VirtualNodePoolInitialVirtualNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[VirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The key of the pair.
@@ -7349,12 +6394,6 @@ func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToVirtualNodePoolInit
 
 func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx context.Context) VirtualNodePoolInitialVirtualNodeLabelArrayOutput {
 	return o
-}
-
-func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[[]VirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolInitialVirtualNodeLabelOutput {
@@ -7404,12 +6443,6 @@ func (i VirtualNodePoolPlacementConfigurationArgs) ToVirtualNodePoolPlacementCon
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPlacementConfigurationOutput)
 }
 
-func (i VirtualNodePoolPlacementConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[VirtualNodePoolPlacementConfiguration]{
-		OutputState: i.ToVirtualNodePoolPlacementConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts VirtualNodePoolPlacementConfigurationArray and VirtualNodePoolPlacementConfigurationArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolPlacementConfigurationArrayInput` via:
 //
@@ -7435,12 +6468,6 @@ func (i VirtualNodePoolPlacementConfigurationArray) ToVirtualNodePoolPlacementCo
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPlacementConfigurationArrayOutput)
 }
 
-func (i VirtualNodePoolPlacementConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[[]VirtualNodePoolPlacementConfiguration]{
-		OutputState: i.ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
@@ -7453,12 +6480,6 @@ func (o VirtualNodePoolPlacementConfigurationOutput) ToVirtualNodePoolPlacementC
 
 func (o VirtualNodePoolPlacementConfigurationOutput) ToVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationOutput {
 	return o
-}
-
-func (o VirtualNodePoolPlacementConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[VirtualNodePoolPlacementConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
@@ -7488,12 +6509,6 @@ func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToVirtualNodePoolPlace
 
 func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) VirtualNodePoolPlacementConfigurationArrayOutput {
 	return o
-}
-
-func (o VirtualNodePoolPlacementConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[[]VirtualNodePoolPlacementConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolPlacementConfigurationOutput {
@@ -7543,12 +6558,6 @@ func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationOu
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationOutput)
 }
 
-func (i VirtualNodePoolPodConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPodConfiguration] {
-	return pulumix.Output[VirtualNodePoolPodConfiguration]{
-		OutputState: i.ToVirtualNodePoolPodConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VirtualNodePoolPodConfigurationArgs) ToVirtualNodePoolPodConfigurationPtrOutput() VirtualNodePoolPodConfigurationPtrOutput {
 	return i.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(context.Background())
 }
@@ -7590,12 +6599,6 @@ func (i *virtualNodePoolPodConfigurationPtrType) ToVirtualNodePoolPodConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolPodConfigurationPtrOutput)
 }
 
-func (i *virtualNodePoolPodConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolPodConfiguration] {
-	return pulumix.Output[*VirtualNodePoolPodConfiguration]{
-		OutputState: i.ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
@@ -7618,12 +6621,6 @@ func (o VirtualNodePoolPodConfigurationOutput) ToVirtualNodePoolPodConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolPodConfiguration) *VirtualNodePoolPodConfiguration {
 		return &v
 	}).(VirtualNodePoolPodConfigurationPtrOutput)
-}
-
-func (o VirtualNodePoolPodConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolPodConfiguration] {
-	return pulumix.Output[VirtualNodePoolPodConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of network security group IDs applied to the Pod VNIC.
@@ -7653,12 +6650,6 @@ func (o VirtualNodePoolPodConfigurationPtrOutput) ToVirtualNodePoolPodConfigurat
 
 func (o VirtualNodePoolPodConfigurationPtrOutput) ToVirtualNodePoolPodConfigurationPtrOutputWithContext(ctx context.Context) VirtualNodePoolPodConfigurationPtrOutput {
 	return o
-}
-
-func (o VirtualNodePoolPodConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolPodConfiguration] {
-	return pulumix.Output[*VirtualNodePoolPodConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolPodConfigurationPtrOutput) Elem() VirtualNodePoolPodConfigurationOutput {
@@ -7742,12 +6733,6 @@ func (i VirtualNodePoolTaintArgs) ToVirtualNodePoolTaintOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolTaintOutput)
 }
 
-func (i VirtualNodePoolTaintArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolTaint] {
-	return pulumix.Output[VirtualNodePoolTaint]{
-		OutputState: i.ToVirtualNodePoolTaintOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualNodePoolTaintArrayInput is an input type that accepts VirtualNodePoolTaintArray and VirtualNodePoolTaintArrayOutput values.
 // You can construct a concrete instance of `VirtualNodePoolTaintArrayInput` via:
 //
@@ -7773,12 +6758,6 @@ func (i VirtualNodePoolTaintArray) ToVirtualNodePoolTaintArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolTaintArrayOutput)
 }
 
-func (i VirtualNodePoolTaintArray) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolTaint] {
-	return pulumix.Output[[]VirtualNodePoolTaint]{
-		OutputState: i.ToVirtualNodePoolTaintArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolTaintOutput) ElementType() reflect.Type {
@@ -7791,12 +6770,6 @@ func (o VirtualNodePoolTaintOutput) ToVirtualNodePoolTaintOutput() VirtualNodePo
 
 func (o VirtualNodePoolTaintOutput) ToVirtualNodePoolTaintOutputWithContext(ctx context.Context) VirtualNodePoolTaintOutput {
 	return o
-}
-
-func (o VirtualNodePoolTaintOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolTaint] {
-	return pulumix.Output[VirtualNodePoolTaint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The effect of the pair.
@@ -7826,12 +6799,6 @@ func (o VirtualNodePoolTaintArrayOutput) ToVirtualNodePoolTaintArrayOutput() Vir
 
 func (o VirtualNodePoolTaintArrayOutput) ToVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) VirtualNodePoolTaintArrayOutput {
 	return o
-}
-
-func (o VirtualNodePoolTaintArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VirtualNodePoolTaint] {
-	return pulumix.Output[[]VirtualNodePoolTaint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) VirtualNodePoolTaintOutput {
@@ -7883,12 +6850,6 @@ func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsOutp
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsOutput)
 }
 
-func (i VirtualNodePoolVirtualNodeTagsArgs) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolVirtualNodeTags] {
-	return pulumix.Output[VirtualNodePoolVirtualNodeTags]{
-		OutputState: i.ToVirtualNodePoolVirtualNodeTagsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VirtualNodePoolVirtualNodeTagsArgs) ToVirtualNodePoolVirtualNodeTagsPtrOutput() VirtualNodePoolVirtualNodeTagsPtrOutput {
 	return i.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(context.Background())
 }
@@ -7930,12 +6891,6 @@ func (i *virtualNodePoolVirtualNodeTagsPtrType) ToVirtualNodePoolVirtualNodeTags
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodeTagsPtrOutput)
 }
 
-func (i *virtualNodePoolVirtualNodeTagsPtrType) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolVirtualNodeTags] {
-	return pulumix.Output[*VirtualNodePoolVirtualNodeTags]{
-		OutputState: i.ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNodePoolVirtualNodeTagsOutput struct{ *pulumi.OutputState }
 
 func (VirtualNodePoolVirtualNodeTagsOutput) ElementType() reflect.Type {
@@ -7958,12 +6913,6 @@ func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolVirtualNodeTags) *VirtualNodePoolVirtualNodeTags {
 		return &v
 	}).(VirtualNodePoolVirtualNodeTagsPtrOutput)
-}
-
-func (o VirtualNodePoolVirtualNodeTagsOutput) ToOutput(ctx context.Context) pulumix.Output[VirtualNodePoolVirtualNodeTags] {
-	return pulumix.Output[VirtualNodePoolVirtualNodeTags]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -7991,12 +6940,6 @@ func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToVirtualNodePoolVirtualNodeTag
 
 func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToVirtualNodePoolVirtualNodeTagsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodeTagsPtrOutput {
 	return o
-}
-
-func (o VirtualNodePoolVirtualNodeTagsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNodePoolVirtualNodeTags] {
-	return pulumix.Output[*VirtualNodePoolVirtualNodeTags]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNodePoolVirtualNodeTagsPtrOutput) Elem() VirtualNodePoolVirtualNodeTagsOutput {
@@ -8034,11 +6977,11 @@ func (o VirtualNodePoolVirtualNodeTagsPtrOutput) FreeformTags() pulumi.MapOutput
 
 type GetAddonAddonError struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code string `pulumi:"code"`
+	Code *string `pulumi:"code"`
 	// A human-readable error string of the upstream error.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The status of the HTTP response encountered in the upstream error.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetAddonAddonErrorInput is an input type that accepts GetAddonAddonErrorArgs and GetAddonAddonErrorOutput values.
@@ -8054,11 +6997,11 @@ type GetAddonAddonErrorInput interface {
 
 type GetAddonAddonErrorArgs struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code pulumi.StringInput `pulumi:"code"`
+	Code pulumi.StringPtrInput `pulumi:"code"`
 	// A human-readable error string of the upstream error.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The status of the HTTP response encountered in the upstream error.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetAddonAddonErrorArgs) ElementType() reflect.Type {
@@ -8071,12 +7014,6 @@ func (i GetAddonAddonErrorArgs) ToGetAddonAddonErrorOutput() GetAddonAddonErrorO
 
 func (i GetAddonAddonErrorArgs) ToGetAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonAddonErrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonAddonErrorOutput)
-}
-
-func (i GetAddonAddonErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonAddonError] {
-	return pulumix.Output[GetAddonAddonError]{
-		OutputState: i.ToGetAddonAddonErrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonAddonErrorArrayInput is an input type that accepts GetAddonAddonErrorArray and GetAddonAddonErrorArrayOutput values.
@@ -8104,12 +7041,6 @@ func (i GetAddonAddonErrorArray) ToGetAddonAddonErrorArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonAddonErrorArrayOutput)
 }
 
-func (i GetAddonAddonErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonAddonError] {
-	return pulumix.Output[[]GetAddonAddonError]{
-		OutputState: i.ToGetAddonAddonErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonAddonErrorOutput struct{ *pulumi.OutputState }
 
 func (GetAddonAddonErrorOutput) ElementType() reflect.Type {
@@ -8124,25 +7055,19 @@ func (o GetAddonAddonErrorOutput) ToGetAddonAddonErrorOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetAddonAddonErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonAddonError] {
-	return pulumix.Output[GetAddonAddonError]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-func (o GetAddonAddonErrorOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonAddonError) string { return v.Code }).(pulumi.StringOutput)
+func (o GetAddonAddonErrorOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonAddonError) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable error string of the upstream error.
-func (o GetAddonAddonErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonAddonError) string { return v.Message }).(pulumi.StringOutput)
+func (o GetAddonAddonErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonAddonError) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The status of the HTTP response encountered in the upstream error.
-func (o GetAddonAddonErrorOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonAddonError) string { return v.Status }).(pulumi.StringOutput)
+func (o GetAddonAddonErrorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonAddonError) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonAddonErrorArrayOutput struct{ *pulumi.OutputState }
@@ -8159,12 +7084,6 @@ func (o GetAddonAddonErrorArrayOutput) ToGetAddonAddonErrorArrayOutputWithContex
 	return o
 }
 
-func (o GetAddonAddonErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonAddonError] {
-	return pulumix.Output[[]GetAddonAddonError]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonAddonErrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonAddonError {
 		return vs[0].([]GetAddonAddonError)[vs[1].(int)]
@@ -8173,9 +7092,9 @@ func (o GetAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonAddonErr
 
 type GetAddonConfiguration struct {
 	// configuration key name
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// configuration value name
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddonConfigurationInput is an input type that accepts GetAddonConfigurationArgs and GetAddonConfigurationOutput values.
@@ -8191,9 +7110,9 @@ type GetAddonConfigurationInput interface {
 
 type GetAddonConfigurationArgs struct {
 	// configuration key name
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// configuration value name
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddonConfigurationArgs) ElementType() reflect.Type {
@@ -8206,12 +7125,6 @@ func (i GetAddonConfigurationArgs) ToGetAddonConfigurationOutput() GetAddonConfi
 
 func (i GetAddonConfigurationArgs) ToGetAddonConfigurationOutputWithContext(ctx context.Context) GetAddonConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonConfigurationOutput)
-}
-
-func (i GetAddonConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonConfiguration] {
-	return pulumix.Output[GetAddonConfiguration]{
-		OutputState: i.ToGetAddonConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonConfigurationArrayInput is an input type that accepts GetAddonConfigurationArray and GetAddonConfigurationArrayOutput values.
@@ -8239,12 +7152,6 @@ func (i GetAddonConfigurationArray) ToGetAddonConfigurationArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonConfigurationArrayOutput)
 }
 
-func (i GetAddonConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonConfiguration] {
-	return pulumix.Output[[]GetAddonConfiguration]{
-		OutputState: i.ToGetAddonConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAddonConfigurationOutput) ElementType() reflect.Type {
@@ -8259,20 +7166,14 @@ func (o GetAddonConfigurationOutput) ToGetAddonConfigurationOutputWithContext(ct
 	return o
 }
 
-func (o GetAddonConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonConfiguration] {
-	return pulumix.Output[GetAddonConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // configuration key name
-func (o GetAddonConfigurationOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonConfiguration) string { return v.Key }).(pulumi.StringOutput)
+func (o GetAddonConfigurationOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonConfiguration) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // configuration value name
-func (o GetAddonConfigurationOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonConfiguration) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddonConfigurationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -8289,12 +7190,6 @@ func (o GetAddonConfigurationArrayOutput) ToGetAddonConfigurationArrayOutputWith
 	return o
 }
 
-func (o GetAddonConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonConfiguration] {
-	return pulumix.Output[[]GetAddonConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonConfiguration {
 		return vs[0].([]GetAddonConfiguration)[vs[1].(int)]
@@ -8303,25 +7198,25 @@ func (o GetAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonConfi
 
 type GetAddonOptionsAddonOption struct {
 	// Addon group info, a namespace concept that groups addons with similar functionalities.
-	AddonGroup string `pulumi:"addonGroup"`
+	AddonGroup *string `pulumi:"addonGroup"`
 	// Addon definition schema version to validate addon.
-	AddonSchemaVersion string `pulumi:"addonSchemaVersion"`
+	AddonSchemaVersion *string `pulumi:"addonSchemaVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information about the addon version.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Is it an essential addon for cluster operation or not.
-	IsEssential bool `pulumi:"isEssential"`
+	IsEssential *bool `pulumi:"isEssential"`
 	// Name of the addon and it would be unique.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The life cycle state of the addon.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the work request was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The resources this work request affects.
 	Versions []GetAddonOptionsAddonOptionVersion `pulumi:"versions"`
 }
@@ -8339,25 +7234,25 @@ type GetAddonOptionsAddonOptionInput interface {
 
 type GetAddonOptionsAddonOptionArgs struct {
 	// Addon group info, a namespace concept that groups addons with similar functionalities.
-	AddonGroup pulumi.StringInput `pulumi:"addonGroup"`
+	AddonGroup pulumi.StringPtrInput `pulumi:"addonGroup"`
 	// Addon definition schema version to validate addon.
-	AddonSchemaVersion pulumi.StringInput `pulumi:"addonSchemaVersion"`
+	AddonSchemaVersion pulumi.StringPtrInput `pulumi:"addonSchemaVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Information about the addon version.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Is it an essential addon for cluster operation or not.
-	IsEssential pulumi.BoolInput `pulumi:"isEssential"`
+	IsEssential pulumi.BoolPtrInput `pulumi:"isEssential"`
 	// Name of the addon and it would be unique.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The life cycle state of the addon.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the work request was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The resources this work request affects.
 	Versions GetAddonOptionsAddonOptionVersionArrayInput `pulumi:"versions"`
 }
@@ -8372,12 +7267,6 @@ func (i GetAddonOptionsAddonOptionArgs) ToGetAddonOptionsAddonOptionOutput() Get
 
 func (i GetAddonOptionsAddonOptionArgs) ToGetAddonOptionsAddonOptionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionOutput)
-}
-
-func (i GetAddonOptionsAddonOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOption] {
-	return pulumix.Output[GetAddonOptionsAddonOption]{
-		OutputState: i.ToGetAddonOptionsAddonOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonOptionsAddonOptionArrayInput is an input type that accepts GetAddonOptionsAddonOptionArray and GetAddonOptionsAddonOptionArrayOutput values.
@@ -8405,12 +7294,6 @@ func (i GetAddonOptionsAddonOptionArray) ToGetAddonOptionsAddonOptionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionArrayOutput)
 }
 
-func (i GetAddonOptionsAddonOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOption] {
-	return pulumix.Output[[]GetAddonOptionsAddonOption]{
-		OutputState: i.ToGetAddonOptionsAddonOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonOptionsAddonOptionOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionOutput) ElementType() reflect.Type {
@@ -8425,20 +7308,14 @@ func (o GetAddonOptionsAddonOptionOutput) ToGetAddonOptionsAddonOptionOutputWith
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOption] {
-	return pulumix.Output[GetAddonOptionsAddonOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Addon group info, a namespace concept that groups addons with similar functionalities.
-func (o GetAddonOptionsAddonOptionOutput) AddonGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.AddonGroup }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionOutput) AddonGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *string { return v.AddonGroup }).(pulumi.StringPtrOutput)
 }
 
 // Addon definition schema version to validate addon.
-func (o GetAddonOptionsAddonOptionOutput) AddonSchemaVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.AddonSchemaVersion }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionOutput) AddonSchemaVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *string { return v.AddonSchemaVersion }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -8447,8 +7324,8 @@ func (o GetAddonOptionsAddonOptionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Information about the addon version.
-func (o GetAddonOptionsAddonOptionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -8457,18 +7334,18 @@ func (o GetAddonOptionsAddonOptionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Is it an essential addon for cluster operation or not.
-func (o GetAddonOptionsAddonOptionOutput) IsEssential() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) bool { return v.IsEssential }).(pulumi.BoolOutput)
+func (o GetAddonOptionsAddonOptionOutput) IsEssential() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *bool { return v.IsEssential }).(pulumi.BoolPtrOutput)
 }
 
 // Name of the addon and it would be unique.
-func (o GetAddonOptionsAddonOptionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The life cycle state of the addon.
-func (o GetAddonOptionsAddonOptionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.State }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -8477,8 +7354,8 @@ func (o GetAddonOptionsAddonOptionOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the work request was created.
-func (o GetAddonOptionsAddonOptionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The resources this work request affects.
@@ -8500,12 +7377,6 @@ func (o GetAddonOptionsAddonOptionArrayOutput) ToGetAddonOptionsAddonOptionArray
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOption] {
-	return pulumix.Output[[]GetAddonOptionsAddonOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonOptionsAddonOptionArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOption {
 		return vs[0].([]GetAddonOptionsAddonOption)[vs[1].(int)]
@@ -8516,13 +7387,13 @@ type GetAddonOptionsAddonOptionVersion struct {
 	// Addon version configuration details.
 	Configurations []GetAddonOptionsAddonOptionVersionConfiguration `pulumi:"configurations"`
 	// Information about the addon version.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The range of kubernetes versions an addon can be configured.
 	KubernetesVersionFilters []GetAddonOptionsAddonOptionVersionKubernetesVersionFilter `pulumi:"kubernetesVersionFilters"`
 	// Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Version number, need be comparable within an addon.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetAddonOptionsAddonOptionVersionInput is an input type that accepts GetAddonOptionsAddonOptionVersionArgs and GetAddonOptionsAddonOptionVersionOutput values.
@@ -8540,13 +7411,13 @@ type GetAddonOptionsAddonOptionVersionArgs struct {
 	// Addon version configuration details.
 	Configurations GetAddonOptionsAddonOptionVersionConfigurationArrayInput `pulumi:"configurations"`
 	// Information about the addon version.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The range of kubernetes versions an addon can be configured.
 	KubernetesVersionFilters GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput `pulumi:"kubernetesVersionFilters"`
 	// Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Version number, need be comparable within an addon.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetAddonOptionsAddonOptionVersionArgs) ElementType() reflect.Type {
@@ -8559,12 +7430,6 @@ func (i GetAddonOptionsAddonOptionVersionArgs) ToGetAddonOptionsAddonOptionVersi
 
 func (i GetAddonOptionsAddonOptionVersionArgs) ToGetAddonOptionsAddonOptionVersionOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionOutput)
-}
-
-func (i GetAddonOptionsAddonOptionVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersion] {
-	return pulumix.Output[GetAddonOptionsAddonOptionVersion]{
-		OutputState: i.ToGetAddonOptionsAddonOptionVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonOptionsAddonOptionVersionArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionArray and GetAddonOptionsAddonOptionVersionArrayOutput values.
@@ -8592,12 +7457,6 @@ func (i GetAddonOptionsAddonOptionVersionArray) ToGetAddonOptionsAddonOptionVers
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionArrayOutput)
 }
 
-func (i GetAddonOptionsAddonOptionVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersion] {
-	return pulumix.Output[[]GetAddonOptionsAddonOptionVersion]{
-		OutputState: i.ToGetAddonOptionsAddonOptionVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonOptionsAddonOptionVersionOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionVersionOutput) ElementType() reflect.Type {
@@ -8612,12 +7471,6 @@ func (o GetAddonOptionsAddonOptionVersionOutput) ToGetAddonOptionsAddonOptionVer
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersion] {
-	return pulumix.Output[GetAddonOptionsAddonOptionVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Addon version configuration details.
 func (o GetAddonOptionsAddonOptionVersionOutput) Configurations() GetAddonOptionsAddonOptionVersionConfigurationArrayOutput {
 	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) []GetAddonOptionsAddonOptionVersionConfiguration {
@@ -8626,8 +7479,8 @@ func (o GetAddonOptionsAddonOptionVersionOutput) Configurations() GetAddonOption
 }
 
 // Information about the addon version.
-func (o GetAddonOptionsAddonOptionVersionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The range of kubernetes versions an addon can be configured.
@@ -8638,13 +7491,13 @@ func (o GetAddonOptionsAddonOptionVersionOutput) KubernetesVersionFilters() GetA
 }
 
 // Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
-func (o GetAddonOptionsAddonOptionVersionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) string { return v.Status }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Version number, need be comparable within an addon.
-func (o GetAddonOptionsAddonOptionVersionOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersion) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonOptionsAddonOptionVersionArrayOutput struct{ *pulumi.OutputState }
@@ -8661,12 +7514,6 @@ func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToGetAddonOptionsAddonOpti
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersion] {
-	return pulumix.Output[[]GetAddonOptionsAddonOptionVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonOptionsAddonOptionVersionArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOptionVersion {
 		return vs[0].([]GetAddonOptionsAddonOptionVersion)[vs[1].(int)]
@@ -8675,15 +7522,15 @@ func (o GetAddonOptionsAddonOptionVersionArrayOutput) Index(i pulumi.IntInput) G
 
 type GetAddonOptionsAddonOptionVersionConfiguration struct {
 	// Information about the addon version.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Display name of addon version.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// If the the configuration is required or not.
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// Addon configuration key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Addon configuration value
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddonOptionsAddonOptionVersionConfigurationInput is an input type that accepts GetAddonOptionsAddonOptionVersionConfigurationArgs and GetAddonOptionsAddonOptionVersionConfigurationOutput values.
@@ -8699,15 +7546,15 @@ type GetAddonOptionsAddonOptionVersionConfigurationInput interface {
 
 type GetAddonOptionsAddonOptionVersionConfigurationArgs struct {
 	// Information about the addon version.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Display name of addon version.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// If the the configuration is required or not.
-	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrInput `pulumi:"isRequired"`
 	// Addon configuration key
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Addon configuration value
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddonOptionsAddonOptionVersionConfigurationArgs) ElementType() reflect.Type {
@@ -8720,12 +7567,6 @@ func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToGetAddonOptionsAdd
 
 func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionConfigurationOutput)
-}
-
-func (i GetAddonOptionsAddonOptionVersionConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration] {
-	return pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration]{
-		OutputState: i.ToGetAddonOptionsAddonOptionVersionConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonOptionsAddonOptionVersionConfigurationArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionConfigurationArray and GetAddonOptionsAddonOptionVersionConfigurationArrayOutput values.
@@ -8753,12 +7594,6 @@ func (i GetAddonOptionsAddonOptionVersionConfigurationArray) ToGetAddonOptionsAd
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionConfigurationArrayOutput)
 }
 
-func (i GetAddonOptionsAddonOptionVersionConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration] {
-	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration]{
-		OutputState: i.ToGetAddonOptionsAddonOptionVersionConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonOptionsAddonOptionVersionConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionVersionConfigurationOutput) ElementType() reflect.Type {
@@ -8773,35 +7608,29 @@ func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToGetAddonOptionsA
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration] {
-	return pulumix.Output[GetAddonOptionsAddonOptionVersionConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Information about the addon version.
-func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Display name of addon version.
-func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // If the the configuration is required or not.
-func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) bool { return v.IsRequired }).(pulumi.BoolOutput)
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) *bool { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Addon configuration key
-func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.Key }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Addon configuration value
-func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionConfigurationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonOptionsAddonOptionVersionConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -8818,12 +7647,6 @@ func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToGetAddonOpt
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration] {
-	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonOptionsAddonOptionVersionConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsAddonOptionVersionConfiguration {
 		return vs[0].([]GetAddonOptionsAddonOptionVersionConfiguration)[vs[1].(int)]
@@ -8834,9 +7657,9 @@ type GetAddonOptionsAddonOptionVersionKubernetesVersionFilter struct {
 	// The exact version of kubernetes that are compatible.
 	ExactKubernetesVersions []string `pulumi:"exactKubernetesVersions"`
 	// The latest kubernetes version.
-	MaximumVersion string `pulumi:"maximumVersion"`
+	MaximumVersion *string `pulumi:"maximumVersion"`
 	// The earliest kubernetes version.
-	MinimalVersion string `pulumi:"minimalVersion"`
+	MinimalVersion *string `pulumi:"minimalVersion"`
 }
 
 // GetAddonOptionsAddonOptionVersionKubernetesVersionFilterInput is an input type that accepts GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs and GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput values.
@@ -8854,9 +7677,9 @@ type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs struct {
 	// The exact version of kubernetes that are compatible.
 	ExactKubernetesVersions pulumi.StringArrayInput `pulumi:"exactKubernetesVersions"`
 	// The latest kubernetes version.
-	MaximumVersion pulumi.StringInput `pulumi:"maximumVersion"`
+	MaximumVersion pulumi.StringPtrInput `pulumi:"maximumVersion"`
 	// The earliest kubernetes version.
-	MinimalVersion pulumi.StringInput `pulumi:"minimalVersion"`
+	MinimalVersion pulumi.StringPtrInput `pulumi:"minimalVersion"`
 }
 
 func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ElementType() reflect.Type {
@@ -8869,12 +7692,6 @@ func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToGetAddon
 
 func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput)
-}
-
-func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
-	return pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
-		OutputState: i.ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayInput is an input type that accepts GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray and GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput values.
@@ -8902,12 +7719,6 @@ func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ToGetAddo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput)
 }
 
-func (i GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
-	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
-		OutputState: i.ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ElementType() reflect.Type {
@@ -8922,12 +7733,6 @@ func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToGetAdd
 	return o
 }
 
-func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
-	return pulumix.Output[GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The exact version of kubernetes that are compatible.
 func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ExactKubernetesVersions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) []string {
@@ -8936,13 +7741,13 @@ func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) ExactKub
 }
 
 // The latest kubernetes version.
-func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) MaximumVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) string { return v.MaximumVersion }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) MaximumVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) *string { return v.MaximumVersion }).(pulumi.StringPtrOutput)
 }
 
 // The earliest kubernetes version.
-func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) MinimalVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) string { return v.MinimalVersion }).(pulumi.StringOutput)
+func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput) MinimalVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOptionVersionKubernetesVersionFilter) *string { return v.MinimalVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput struct{ *pulumi.OutputState }
@@ -8957,12 +7762,6 @@ func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToG
 
 func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToGetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutputWithContext(ctx context.Context) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput {
 	return o
-}
-
-func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter] {
-	return pulumix.Output[[]GetAddonOptionsAddonOptionVersionKubernetesVersionFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddonOptionsAddonOptionVersionKubernetesVersionFilterArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsAddonOptionVersionKubernetesVersionFilterOutput {
@@ -9008,12 +7807,6 @@ func (i GetAddonOptionsFilterArgs) ToGetAddonOptionsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsFilterOutput)
 }
 
-func (i GetAddonOptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsFilter] {
-	return pulumix.Output[GetAddonOptionsFilter]{
-		OutputState: i.ToGetAddonOptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddonOptionsFilterArrayInput is an input type that accepts GetAddonOptionsFilterArray and GetAddonOptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddonOptionsFilterArrayInput` via:
 //
@@ -9039,12 +7832,6 @@ func (i GetAddonOptionsFilterArray) ToGetAddonOptionsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonOptionsFilterArrayOutput)
 }
 
-func (i GetAddonOptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsFilter] {
-	return pulumix.Output[[]GetAddonOptionsFilter]{
-		OutputState: i.ToGetAddonOptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonOptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddonOptionsFilterOutput) ElementType() reflect.Type {
@@ -9057,12 +7844,6 @@ func (o GetAddonOptionsFilterOutput) ToGetAddonOptionsFilterOutput() GetAddonOpt
 
 func (o GetAddonOptionsFilterOutput) ToGetAddonOptionsFilterOutputWithContext(ctx context.Context) GetAddonOptionsFilterOutput {
 	return o
-}
-
-func (o GetAddonOptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonOptionsFilter] {
-	return pulumix.Output[GetAddonOptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the addon and it would be unique.
@@ -9092,12 +7873,6 @@ func (o GetAddonOptionsFilterArrayOutput) ToGetAddonOptionsFilterArrayOutputWith
 	return o
 }
 
-func (o GetAddonOptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonOptionsFilter] {
-	return pulumix.Output[[]GetAddonOptionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonOptionsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonOptionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonOptionsFilter {
 		return vs[0].([]GetAddonOptionsFilter)[vs[1].(int)]
@@ -9114,14 +7889,14 @@ type GetAddonsAddon struct {
 	// Addon configuration details.
 	Configurations []GetAddonsAddonConfiguration `pulumi:"configurations"`
 	// current installed version of the addon
-	CurrentInstalledVersion      string `pulumi:"currentInstalledVersion"`
-	RemoveAddonResourcesOnDelete bool   `pulumi:"removeAddonResourcesOnDelete"`
+	CurrentInstalledVersion      *string `pulumi:"currentInstalledVersion"`
+	RemoveAddonResourcesOnDelete bool    `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// selected addon version, or null indicates autoUpdate
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetAddonsAddonInput is an input type that accepts GetAddonsAddonArgs and GetAddonsAddonOutput values.
@@ -9145,14 +7920,14 @@ type GetAddonsAddonArgs struct {
 	// Addon configuration details.
 	Configurations GetAddonsAddonConfigurationArrayInput `pulumi:"configurations"`
 	// current installed version of the addon
-	CurrentInstalledVersion      pulumi.StringInput `pulumi:"currentInstalledVersion"`
-	RemoveAddonResourcesOnDelete pulumi.BoolInput   `pulumi:"removeAddonResourcesOnDelete"`
+	CurrentInstalledVersion      pulumi.StringPtrInput `pulumi:"currentInstalledVersion"`
+	RemoveAddonResourcesOnDelete pulumi.BoolInput      `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// selected addon version, or null indicates autoUpdate
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetAddonsAddonArgs) ElementType() reflect.Type {
@@ -9165,12 +7940,6 @@ func (i GetAddonsAddonArgs) ToGetAddonsAddonOutput() GetAddonsAddonOutput {
 
 func (i GetAddonsAddonArgs) ToGetAddonsAddonOutputWithContext(ctx context.Context) GetAddonsAddonOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonOutput)
-}
-
-func (i GetAddonsAddonArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddon] {
-	return pulumix.Output[GetAddonsAddon]{
-		OutputState: i.ToGetAddonsAddonOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonsAddonArrayInput is an input type that accepts GetAddonsAddonArray and GetAddonsAddonArrayOutput values.
@@ -9198,12 +7967,6 @@ func (i GetAddonsAddonArray) ToGetAddonsAddonArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonArrayOutput)
 }
 
-func (i GetAddonsAddonArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddon] {
-	return pulumix.Output[[]GetAddonsAddon]{
-		OutputState: i.ToGetAddonsAddonArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonsAddonOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsAddonOutput) ElementType() reflect.Type {
@@ -9216,12 +7979,6 @@ func (o GetAddonsAddonOutput) ToGetAddonsAddonOutput() GetAddonsAddonOutput {
 
 func (o GetAddonsAddonOutput) ToGetAddonsAddonOutputWithContext(ctx context.Context) GetAddonsAddonOutput {
 	return o
-}
-
-func (o GetAddonsAddonOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddon] {
-	return pulumix.Output[GetAddonsAddon]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The error info of the addon.
@@ -9245,8 +8002,8 @@ func (o GetAddonsAddonOutput) Configurations() GetAddonsAddonConfigurationArrayO
 }
 
 // current installed version of the addon
-func (o GetAddonsAddonOutput) CurrentInstalledVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddon) string { return v.CurrentInstalledVersion }).(pulumi.StringOutput)
+func (o GetAddonsAddonOutput) CurrentInstalledVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddon) *string { return v.CurrentInstalledVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAddonsAddonOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {
@@ -9254,18 +8011,18 @@ func (o GetAddonsAddonOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {
 }
 
 // The state of the addon.
-func (o GetAddonsAddonOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddon) string { return v.State }).(pulumi.StringOutput)
+func (o GetAddonsAddonOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddon) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o GetAddonsAddonOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddon) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAddonsAddonOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddon) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // selected addon version, or null indicates autoUpdate
-func (o GetAddonsAddonOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddon) string { return v.Version }).(pulumi.StringOutput)
+func (o GetAddonsAddonOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddon) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonsAddonArrayOutput struct{ *pulumi.OutputState }
@@ -9282,12 +8039,6 @@ func (o GetAddonsAddonArrayOutput) ToGetAddonsAddonArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAddonsAddonArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddon] {
-	return pulumix.Output[[]GetAddonsAddon]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonsAddonArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsAddon {
 		return vs[0].([]GetAddonsAddon)[vs[1].(int)]
@@ -9296,11 +8047,11 @@ func (o GetAddonsAddonArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonOutput
 
 type GetAddonsAddonAddonError struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code string `pulumi:"code"`
+	Code *string `pulumi:"code"`
 	// A human-readable error string of the upstream error.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The status of the HTTP response encountered in the upstream error.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetAddonsAddonAddonErrorInput is an input type that accepts GetAddonsAddonAddonErrorArgs and GetAddonsAddonAddonErrorOutput values.
@@ -9316,11 +8067,11 @@ type GetAddonsAddonAddonErrorInput interface {
 
 type GetAddonsAddonAddonErrorArgs struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code pulumi.StringInput `pulumi:"code"`
+	Code pulumi.StringPtrInput `pulumi:"code"`
 	// A human-readable error string of the upstream error.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The status of the HTTP response encountered in the upstream error.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetAddonsAddonAddonErrorArgs) ElementType() reflect.Type {
@@ -9333,12 +8084,6 @@ func (i GetAddonsAddonAddonErrorArgs) ToGetAddonsAddonAddonErrorOutput() GetAddo
 
 func (i GetAddonsAddonAddonErrorArgs) ToGetAddonsAddonAddonErrorOutputWithContext(ctx context.Context) GetAddonsAddonAddonErrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonAddonErrorOutput)
-}
-
-func (i GetAddonsAddonAddonErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonAddonError] {
-	return pulumix.Output[GetAddonsAddonAddonError]{
-		OutputState: i.ToGetAddonsAddonAddonErrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonsAddonAddonErrorArrayInput is an input type that accepts GetAddonsAddonAddonErrorArray and GetAddonsAddonAddonErrorArrayOutput values.
@@ -9366,12 +8111,6 @@ func (i GetAddonsAddonAddonErrorArray) ToGetAddonsAddonAddonErrorArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonAddonErrorArrayOutput)
 }
 
-func (i GetAddonsAddonAddonErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonAddonError] {
-	return pulumix.Output[[]GetAddonsAddonAddonError]{
-		OutputState: i.ToGetAddonsAddonAddonErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonsAddonAddonErrorOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsAddonAddonErrorOutput) ElementType() reflect.Type {
@@ -9386,25 +8125,19 @@ func (o GetAddonsAddonAddonErrorOutput) ToGetAddonsAddonAddonErrorOutputWithCont
 	return o
 }
 
-func (o GetAddonsAddonAddonErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonAddonError] {
-	return pulumix.Output[GetAddonsAddonAddonError]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-func (o GetAddonsAddonAddonErrorOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddonAddonError) string { return v.Code }).(pulumi.StringOutput)
+func (o GetAddonsAddonAddonErrorOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddonAddonError) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable error string of the upstream error.
-func (o GetAddonsAddonAddonErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddonAddonError) string { return v.Message }).(pulumi.StringOutput)
+func (o GetAddonsAddonAddonErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddonAddonError) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The status of the HTTP response encountered in the upstream error.
-func (o GetAddonsAddonAddonErrorOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddonAddonError) string { return v.Status }).(pulumi.StringOutput)
+func (o GetAddonsAddonAddonErrorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddonAddonError) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonsAddonAddonErrorArrayOutput struct{ *pulumi.OutputState }
@@ -9421,12 +8154,6 @@ func (o GetAddonsAddonAddonErrorArrayOutput) ToGetAddonsAddonAddonErrorArrayOutp
 	return o
 }
 
-func (o GetAddonsAddonAddonErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonAddonError] {
-	return pulumix.Output[[]GetAddonsAddonAddonError]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonsAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonAddonErrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsAddonAddonError {
 		return vs[0].([]GetAddonsAddonAddonError)[vs[1].(int)]
@@ -9435,9 +8162,9 @@ func (o GetAddonsAddonAddonErrorArrayOutput) Index(i pulumi.IntInput) GetAddonsA
 
 type GetAddonsAddonConfiguration struct {
 	// configuration key name
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// configuration value name
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddonsAddonConfigurationInput is an input type that accepts GetAddonsAddonConfigurationArgs and GetAddonsAddonConfigurationOutput values.
@@ -9453,9 +8180,9 @@ type GetAddonsAddonConfigurationInput interface {
 
 type GetAddonsAddonConfigurationArgs struct {
 	// configuration key name
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// configuration value name
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddonsAddonConfigurationArgs) ElementType() reflect.Type {
@@ -9468,12 +8195,6 @@ func (i GetAddonsAddonConfigurationArgs) ToGetAddonsAddonConfigurationOutput() G
 
 func (i GetAddonsAddonConfigurationArgs) ToGetAddonsAddonConfigurationOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonConfigurationOutput)
-}
-
-func (i GetAddonsAddonConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonConfiguration] {
-	return pulumix.Output[GetAddonsAddonConfiguration]{
-		OutputState: i.ToGetAddonsAddonConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddonsAddonConfigurationArrayInput is an input type that accepts GetAddonsAddonConfigurationArray and GetAddonsAddonConfigurationArrayOutput values.
@@ -9501,12 +8222,6 @@ func (i GetAddonsAddonConfigurationArray) ToGetAddonsAddonConfigurationArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsAddonConfigurationArrayOutput)
 }
 
-func (i GetAddonsAddonConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonConfiguration] {
-	return pulumix.Output[[]GetAddonsAddonConfiguration]{
-		OutputState: i.ToGetAddonsAddonConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonsAddonConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsAddonConfigurationOutput) ElementType() reflect.Type {
@@ -9521,20 +8236,14 @@ func (o GetAddonsAddonConfigurationOutput) ToGetAddonsAddonConfigurationOutputWi
 	return o
 }
 
-func (o GetAddonsAddonConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsAddonConfiguration] {
-	return pulumix.Output[GetAddonsAddonConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // configuration key name
-func (o GetAddonsAddonConfigurationOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddonConfiguration) string { return v.Key }).(pulumi.StringOutput)
+func (o GetAddonsAddonConfigurationOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddonConfiguration) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // configuration value name
-func (o GetAddonsAddonConfigurationOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddonConfiguration) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddonsAddonConfigurationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddonConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonsAddonConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -9549,12 +8258,6 @@ func (o GetAddonsAddonConfigurationArrayOutput) ToGetAddonsAddonConfigurationArr
 
 func (o GetAddonsAddonConfigurationArrayOutput) ToGetAddonsAddonConfigurationArrayOutputWithContext(ctx context.Context) GetAddonsAddonConfigurationArrayOutput {
 	return o
-}
-
-func (o GetAddonsAddonConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsAddonConfiguration] {
-	return pulumix.Output[[]GetAddonsAddonConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddonsAddonConfigurationArrayOutput) Index(i pulumi.IntInput) GetAddonsAddonConfigurationOutput {
@@ -9598,12 +8301,6 @@ func (i GetAddonsFilterArgs) ToGetAddonsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsFilterOutput)
 }
 
-func (i GetAddonsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddonsFilter] {
-	return pulumix.Output[GetAddonsFilter]{
-		OutputState: i.ToGetAddonsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddonsFilterArrayInput is an input type that accepts GetAddonsFilterArray and GetAddonsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddonsFilterArrayInput` via:
 //
@@ -9629,12 +8326,6 @@ func (i GetAddonsFilterArray) ToGetAddonsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddonsFilterArrayOutput)
 }
 
-func (i GetAddonsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsFilter] {
-	return pulumix.Output[[]GetAddonsFilter]{
-		OutputState: i.ToGetAddonsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddonsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddonsFilterOutput) ElementType() reflect.Type {
@@ -9647,12 +8338,6 @@ func (o GetAddonsFilterOutput) ToGetAddonsFilterOutput() GetAddonsFilterOutput {
 
 func (o GetAddonsFilterOutput) ToGetAddonsFilterOutputWithContext(ctx context.Context) GetAddonsFilterOutput {
 	return o
-}
-
-func (o GetAddonsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddonsFilter] {
-	return pulumix.Output[GetAddonsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddonsFilterOutput) Name() pulumi.StringOutput {
@@ -9681,12 +8366,6 @@ func (o GetAddonsFilterArrayOutput) ToGetAddonsFilterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAddonsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddonsFilter] {
-	return pulumix.Output[[]GetAddonsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddonsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddonsFilter {
 		return vs[0].([]GetAddonsFilter)[vs[1].(int)]
@@ -9695,7 +8374,7 @@ func (o GetAddonsFilterArrayOutput) Index(i pulumi.IntInput) GetAddonsFilterOutp
 
 type GetClusterOptionClusterPodNetworkOption struct {
 	// The CNI used by the node pools of this cluster
-	CniType string `pulumi:"cniType"`
+	CniType *string `pulumi:"cniType"`
 }
 
 // GetClusterOptionClusterPodNetworkOptionInput is an input type that accepts GetClusterOptionClusterPodNetworkOptionArgs and GetClusterOptionClusterPodNetworkOptionOutput values.
@@ -9711,7 +8390,7 @@ type GetClusterOptionClusterPodNetworkOptionInput interface {
 
 type GetClusterOptionClusterPodNetworkOptionArgs struct {
 	// The CNI used by the node pools of this cluster
-	CniType pulumi.StringInput `pulumi:"cniType"`
+	CniType pulumi.StringPtrInput `pulumi:"cniType"`
 }
 
 func (GetClusterOptionClusterPodNetworkOptionArgs) ElementType() reflect.Type {
@@ -9724,12 +8403,6 @@ func (i GetClusterOptionClusterPodNetworkOptionArgs) ToGetClusterOptionClusterPo
 
 func (i GetClusterOptionClusterPodNetworkOptionArgs) ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionClusterPodNetworkOptionOutput)
-}
-
-func (i GetClusterOptionClusterPodNetworkOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClusterOptionClusterPodNetworkOption] {
-	return pulumix.Output[GetClusterOptionClusterPodNetworkOption]{
-		OutputState: i.ToGetClusterOptionClusterPodNetworkOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClusterOptionClusterPodNetworkOptionArrayInput is an input type that accepts GetClusterOptionClusterPodNetworkOptionArray and GetClusterOptionClusterPodNetworkOptionArrayOutput values.
@@ -9757,12 +8430,6 @@ func (i GetClusterOptionClusterPodNetworkOptionArray) ToGetClusterOptionClusterP
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterOptionClusterPodNetworkOptionArrayOutput)
 }
 
-func (i GetClusterOptionClusterPodNetworkOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterOptionClusterPodNetworkOption] {
-	return pulumix.Output[[]GetClusterOptionClusterPodNetworkOption]{
-		OutputState: i.ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClusterOptionClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClusterOptionClusterPodNetworkOptionOutput) ElementType() reflect.Type {
@@ -9777,15 +8444,9 @@ func (o GetClusterOptionClusterPodNetworkOptionOutput) ToGetClusterOptionCluster
 	return o
 }
 
-func (o GetClusterOptionClusterPodNetworkOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterOptionClusterPodNetworkOption] {
-	return pulumix.Output[GetClusterOptionClusterPodNetworkOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CNI used by the node pools of this cluster
-func (o GetClusterOptionClusterPodNetworkOptionOutput) CniType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterOptionClusterPodNetworkOption) string { return v.CniType }).(pulumi.StringOutput)
+func (o GetClusterOptionClusterPodNetworkOptionOutput) CniType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterOptionClusterPodNetworkOption) *string { return v.CniType }).(pulumi.StringPtrOutput)
 }
 
 type GetClusterOptionClusterPodNetworkOptionArrayOutput struct{ *pulumi.OutputState }
@@ -9800,12 +8461,6 @@ func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToGetClusterOptionCl
 
 func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToGetClusterOptionClusterPodNetworkOptionArrayOutputWithContext(ctx context.Context) GetClusterOptionClusterPodNetworkOptionArrayOutput {
 	return o
-}
-
-func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterOptionClusterPodNetworkOption] {
-	return pulumix.Output[[]GetClusterOptionClusterPodNetworkOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClusterOptionClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClusterOptionClusterPodNetworkOptionOutput {
@@ -9849,12 +8504,6 @@ func (i GetClusterWorkloadMappingsFilterArgs) ToGetClusterWorkloadMappingsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsFilterOutput)
 }
 
-func (i GetClusterWorkloadMappingsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsFilter] {
-	return pulumix.Output[GetClusterWorkloadMappingsFilter]{
-		OutputState: i.ToGetClusterWorkloadMappingsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetClusterWorkloadMappingsFilterArrayInput is an input type that accepts GetClusterWorkloadMappingsFilterArray and GetClusterWorkloadMappingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetClusterWorkloadMappingsFilterArrayInput` via:
 //
@@ -9880,12 +8529,6 @@ func (i GetClusterWorkloadMappingsFilterArray) ToGetClusterWorkloadMappingsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsFilterArrayOutput)
 }
 
-func (i GetClusterWorkloadMappingsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsFilter] {
-	return pulumix.Output[[]GetClusterWorkloadMappingsFilter]{
-		OutputState: i.ToGetClusterWorkloadMappingsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClusterWorkloadMappingsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetClusterWorkloadMappingsFilterOutput) ElementType() reflect.Type {
@@ -9898,12 +8541,6 @@ func (o GetClusterWorkloadMappingsFilterOutput) ToGetClusterWorkloadMappingsFilt
 
 func (o GetClusterWorkloadMappingsFilterOutput) ToGetClusterWorkloadMappingsFilterOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsFilterOutput {
 	return o
-}
-
-func (o GetClusterWorkloadMappingsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsFilter] {
-	return pulumix.Output[GetClusterWorkloadMappingsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClusterWorkloadMappingsFilterOutput) Name() pulumi.StringOutput {
@@ -9932,12 +8569,6 @@ func (o GetClusterWorkloadMappingsFilterArrayOutput) ToGetClusterWorkloadMapping
 	return o
 }
 
-func (o GetClusterWorkloadMappingsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsFilter] {
-	return pulumix.Output[[]GetClusterWorkloadMappingsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClusterWorkloadMappingsFilterArrayOutput) Index(i pulumi.IntInput) GetClusterWorkloadMappingsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterWorkloadMappingsFilter {
 		return vs[0].([]GetClusterWorkloadMappingsFilter)[vs[1].(int)]
@@ -9946,23 +8577,23 @@ func (o GetClusterWorkloadMappingsFilterArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetClusterWorkloadMappingsWorkloadMapping struct {
 	// The OCID of the cluster.
-	ClusterId string `pulumi:"clusterId"`
+	ClusterId *string `pulumi:"clusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ocid of the workloadMapping.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the mapped customer compartment.
-	MappedCompartmentId string `pulumi:"mappedCompartmentId"`
+	MappedCompartmentId *string `pulumi:"mappedCompartmentId"`
 	// The OCID of the mapped customer tenancy.
-	MappedTenancyId string `pulumi:"mappedTenancyId"`
+	MappedTenancyId *string `pulumi:"mappedTenancyId"`
 	// The namespace of the workloadMapping.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The state of the workloadMapping.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetClusterWorkloadMappingsWorkloadMappingInput is an input type that accepts GetClusterWorkloadMappingsWorkloadMappingArgs and GetClusterWorkloadMappingsWorkloadMappingOutput values.
@@ -9978,23 +8609,23 @@ type GetClusterWorkloadMappingsWorkloadMappingInput interface {
 
 type GetClusterWorkloadMappingsWorkloadMappingArgs struct {
 	// The OCID of the cluster.
-	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ocid of the workloadMapping.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the mapped customer compartment.
-	MappedCompartmentId pulumi.StringInput `pulumi:"mappedCompartmentId"`
+	MappedCompartmentId pulumi.StringPtrInput `pulumi:"mappedCompartmentId"`
 	// The OCID of the mapped customer tenancy.
-	MappedTenancyId pulumi.StringInput `pulumi:"mappedTenancyId"`
+	MappedTenancyId pulumi.StringPtrInput `pulumi:"mappedTenancyId"`
 	// The namespace of the workloadMapping.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The state of the workloadMapping.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetClusterWorkloadMappingsWorkloadMappingArgs) ElementType() reflect.Type {
@@ -10007,12 +8638,6 @@ func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToGetClusterWorkloadMappi
 
 func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(ctx context.Context) GetClusterWorkloadMappingsWorkloadMappingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsWorkloadMappingOutput)
-}
-
-func (i GetClusterWorkloadMappingsWorkloadMappingArgs) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping] {
-	return pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping]{
-		OutputState: i.ToGetClusterWorkloadMappingsWorkloadMappingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClusterWorkloadMappingsWorkloadMappingArrayInput is an input type that accepts GetClusterWorkloadMappingsWorkloadMappingArray and GetClusterWorkloadMappingsWorkloadMappingArrayOutput values.
@@ -10040,12 +8665,6 @@ func (i GetClusterWorkloadMappingsWorkloadMappingArray) ToGetClusterWorkloadMapp
 	return pulumi.ToOutputWithContext(ctx, i).(GetClusterWorkloadMappingsWorkloadMappingArrayOutput)
 }
 
-func (i GetClusterWorkloadMappingsWorkloadMappingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping] {
-	return pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping]{
-		OutputState: i.ToGetClusterWorkloadMappingsWorkloadMappingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClusterWorkloadMappingsWorkloadMappingOutput struct{ *pulumi.OutputState }
 
 func (GetClusterWorkloadMappingsWorkloadMappingOutput) ElementType() reflect.Type {
@@ -10060,15 +8679,9 @@ func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToGetClusterWorkloadMap
 	return o
 }
 
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping] {
-	return pulumix.Output[GetClusterWorkloadMappingsWorkloadMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.ClusterId }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10082,33 +8695,33 @@ func (o GetClusterWorkloadMappingsWorkloadMappingOutput) FreeformTags() pulumi.M
 }
 
 // The ocid of the workloadMapping.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the mapped customer compartment.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) MappedCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.MappedCompartmentId }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) MappedCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.MappedCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the mapped customer tenancy.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) MappedTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.MappedTenancyId }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) MappedTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.MappedTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The namespace of the workloadMapping.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The state of the workloadMapping.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.State }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetClusterWorkloadMappingsWorkloadMappingArrayOutput struct{ *pulumi.OutputState }
@@ -10125,12 +8738,6 @@ func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToGetClusterWorklo
 	return o
 }
 
-func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping] {
-	return pulumix.Output[[]GetClusterWorkloadMappingsWorkloadMapping]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClusterWorkloadMappingsWorkloadMappingArrayOutput) Index(i pulumi.IntInput) GetClusterWorkloadMappingsWorkloadMappingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterWorkloadMappingsWorkloadMapping {
 		return vs[0].([]GetClusterWorkloadMappingsWorkloadMapping)[vs[1].(int)]
@@ -10143,7 +8750,7 @@ type GetClustersCluster struct {
 	// Available CNIs and network options for existing and new node pools of the cluster
 	ClusterPodNetworkOptions []GetClustersClusterClusterPodNetworkOption `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
@@ -10153,27 +8760,27 @@ type GetClustersCluster struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the cluster.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The image verification policy for signature validation.
 	ImagePolicyConfigs []GetClustersClusterImagePolicyConfig `pulumi:"imagePolicyConfigs"`
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The version of Kubernetes running on the cluster masters.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the cluster masters.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Metadata about the cluster.
 	Metadatas []GetClustersClusterMetadata `pulumi:"metadatas"`
 	// The name to filter on.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Optional attributes for the cluster.
 	Options []GetClustersClusterOption `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetClustersClusterInput is an input type that accepts GetClustersClusterArgs and GetClustersClusterOutput values.
@@ -10193,7 +8800,7 @@ type GetClustersClusterArgs struct {
 	// Available CNIs and network options for existing and new node pools of the cluster
 	ClusterPodNetworkOptions GetClustersClusterClusterPodNetworkOptionArrayInput `pulumi:"clusterPodNetworkOptions"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
@@ -10203,27 +8810,27 @@ type GetClustersClusterArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the cluster.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The image verification policy for signature validation.
 	ImagePolicyConfigs GetClustersClusterImagePolicyConfigArrayInput `pulumi:"imagePolicyConfigs"`
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The version of Kubernetes running on the cluster masters.
-	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrInput `pulumi:"kubernetesVersion"`
 	// Details about the state of the cluster masters.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Metadata about the cluster.
 	Metadatas GetClustersClusterMetadataArrayInput `pulumi:"metadatas"`
 	// The name to filter on.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Optional attributes for the cluster.
 	Options GetClustersClusterOptionArrayInput `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetClustersClusterArgs) ElementType() reflect.Type {
@@ -10236,12 +8843,6 @@ func (i GetClustersClusterArgs) ToGetClustersClusterOutput() GetClustersClusterO
 
 func (i GetClustersClusterArgs) ToGetClustersClusterOutputWithContext(ctx context.Context) GetClustersClusterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOutput)
-}
-
-func (i GetClustersClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersCluster] {
-	return pulumix.Output[GetClustersCluster]{
-		OutputState: i.ToGetClustersClusterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterArrayInput is an input type that accepts GetClustersClusterArray and GetClustersClusterArrayOutput values.
@@ -10269,12 +8870,6 @@ func (i GetClustersClusterArray) ToGetClustersClusterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterArrayOutput)
 }
 
-func (i GetClustersClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersCluster] {
-	return pulumix.Output[[]GetClustersCluster]{
-		OutputState: i.ToGetClustersClusterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOutput) ElementType() reflect.Type {
@@ -10287,12 +8882,6 @@ func (o GetClustersClusterOutput) ToGetClustersClusterOutput() GetClustersCluste
 
 func (o GetClustersClusterOutput) ToGetClustersClusterOutputWithContext(ctx context.Context) GetClustersClusterOutput {
 	return o
-}
-
-func (o GetClustersClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersCluster] {
-	return pulumix.Output[GetClustersCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Available Kubernetes versions to which the clusters masters may be upgraded.
@@ -10308,8 +8897,8 @@ func (o GetClustersClusterOutput) ClusterPodNetworkOptions() GetClustersClusterC
 }
 
 // The OCID of the compartment.
-func (o GetClustersClusterOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10333,8 +8922,8 @@ func (o GetClustersClusterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the cluster.
-func (o GetClustersClusterOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.Id }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The image verification policy for signature validation.
@@ -10343,18 +8932,18 @@ func (o GetClustersClusterOutput) ImagePolicyConfigs() GetClustersClusterImagePo
 }
 
 // The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-func (o GetClustersClusterOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The version of Kubernetes running on the cluster masters.
-func (o GetClustersClusterOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the cluster masters.
-func (o GetClustersClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Metadata about the cluster.
@@ -10363,8 +8952,8 @@ func (o GetClustersClusterOutput) Metadatas() GetClustersClusterMetadataArrayOut
 }
 
 // The name to filter on.
-func (o GetClustersClusterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.Name }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Optional attributes for the cluster.
@@ -10373,18 +8962,18 @@ func (o GetClustersClusterOutput) Options() GetClustersClusterOptionArrayOutput 
 }
 
 // A cluster lifecycle state to filter on. Can have multiple parameters of this name.
-func (o GetClustersClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.State }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
-func (o GetClustersClusterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.Type }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual cloud network (VCN) in which the cluster exists.
-func (o GetClustersClusterOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersCluster) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetClustersClusterOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersCluster) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterArrayOutput struct{ *pulumi.OutputState }
@@ -10401,12 +8990,6 @@ func (o GetClustersClusterArrayOutput) ToGetClustersClusterArrayOutputWithContex
 	return o
 }
 
-func (o GetClustersClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersCluster] {
-	return pulumix.Output[[]GetClustersCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersCluster {
 		return vs[0].([]GetClustersCluster)[vs[1].(int)]
@@ -10415,7 +8998,7 @@ func (o GetClustersClusterArrayOutput) Index(i pulumi.IntInput) GetClustersClust
 
 type GetClustersClusterClusterPodNetworkOption struct {
 	// The CNI used by the node pools of this cluster
-	CniType string `pulumi:"cniType"`
+	CniType *string `pulumi:"cniType"`
 }
 
 // GetClustersClusterClusterPodNetworkOptionInput is an input type that accepts GetClustersClusterClusterPodNetworkOptionArgs and GetClustersClusterClusterPodNetworkOptionOutput values.
@@ -10431,7 +9014,7 @@ type GetClustersClusterClusterPodNetworkOptionInput interface {
 
 type GetClustersClusterClusterPodNetworkOptionArgs struct {
 	// The CNI used by the node pools of this cluster
-	CniType pulumi.StringInput `pulumi:"cniType"`
+	CniType pulumi.StringPtrInput `pulumi:"cniType"`
 }
 
 func (GetClustersClusterClusterPodNetworkOptionArgs) ElementType() reflect.Type {
@@ -10444,12 +9027,6 @@ func (i GetClustersClusterClusterPodNetworkOptionArgs) ToGetClustersClusterClust
 
 func (i GetClustersClusterClusterPodNetworkOptionArgs) ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(ctx context.Context) GetClustersClusterClusterPodNetworkOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterClusterPodNetworkOptionOutput)
-}
-
-func (i GetClustersClusterClusterPodNetworkOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterClusterPodNetworkOption] {
-	return pulumix.Output[GetClustersClusterClusterPodNetworkOption]{
-		OutputState: i.ToGetClustersClusterClusterPodNetworkOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterClusterPodNetworkOptionArrayInput is an input type that accepts GetClustersClusterClusterPodNetworkOptionArray and GetClustersClusterClusterPodNetworkOptionArrayOutput values.
@@ -10477,12 +9054,6 @@ func (i GetClustersClusterClusterPodNetworkOptionArray) ToGetClustersClusterClus
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterClusterPodNetworkOptionArrayOutput)
 }
 
-func (i GetClustersClusterClusterPodNetworkOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterClusterPodNetworkOption] {
-	return pulumix.Output[[]GetClustersClusterClusterPodNetworkOption]{
-		OutputState: i.ToGetClustersClusterClusterPodNetworkOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterClusterPodNetworkOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterClusterPodNetworkOptionOutput) ElementType() reflect.Type {
@@ -10497,15 +9068,9 @@ func (o GetClustersClusterClusterPodNetworkOptionOutput) ToGetClustersClusterClu
 	return o
 }
 
-func (o GetClustersClusterClusterPodNetworkOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterClusterPodNetworkOption] {
-	return pulumix.Output[GetClustersClusterClusterPodNetworkOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CNI used by the node pools of this cluster
-func (o GetClustersClusterClusterPodNetworkOptionOutput) CniType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterClusterPodNetworkOption) string { return v.CniType }).(pulumi.StringOutput)
+func (o GetClustersClusterClusterPodNetworkOptionOutput) CniType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterClusterPodNetworkOption) *string { return v.CniType }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterClusterPodNetworkOptionArrayOutput struct{ *pulumi.OutputState }
@@ -10522,12 +9087,6 @@ func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToGetClustersClust
 	return o
 }
 
-func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterClusterPodNetworkOption] {
-	return pulumix.Output[[]GetClustersClusterClusterPodNetworkOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterClusterPodNetworkOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterClusterPodNetworkOption {
 		return vs[0].([]GetClustersClusterClusterPodNetworkOption)[vs[1].(int)]
@@ -10536,13 +9095,13 @@ func (o GetClustersClusterClusterPodNetworkOptionArrayOutput) Index(i pulumi.Int
 
 type GetClustersClusterEndpoint struct {
 	// The non-native networking Kubernetes API server endpoint.
-	Kubernetes string `pulumi:"kubernetes"`
+	Kubernetes *string `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
-	PrivateEndpoint string `pulumi:"privateEndpoint"`
+	PrivateEndpoint *string `pulumi:"privateEndpoint"`
 	// The public native networking Kubernetes API server endpoint, if one was requested.
-	PublicEndpoint string `pulumi:"publicEndpoint"`
+	PublicEndpoint *string `pulumi:"publicEndpoint"`
 	// The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
-	VcnHostnameEndpoint string `pulumi:"vcnHostnameEndpoint"`
+	VcnHostnameEndpoint *string `pulumi:"vcnHostnameEndpoint"`
 }
 
 // GetClustersClusterEndpointInput is an input type that accepts GetClustersClusterEndpointArgs and GetClustersClusterEndpointOutput values.
@@ -10558,13 +9117,13 @@ type GetClustersClusterEndpointInput interface {
 
 type GetClustersClusterEndpointArgs struct {
 	// The non-native networking Kubernetes API server endpoint.
-	Kubernetes pulumi.StringInput `pulumi:"kubernetes"`
+	Kubernetes pulumi.StringPtrInput `pulumi:"kubernetes"`
 	// The private native networking Kubernetes API server endpoint.
-	PrivateEndpoint pulumi.StringInput `pulumi:"privateEndpoint"`
+	PrivateEndpoint pulumi.StringPtrInput `pulumi:"privateEndpoint"`
 	// The public native networking Kubernetes API server endpoint, if one was requested.
-	PublicEndpoint pulumi.StringInput `pulumi:"publicEndpoint"`
+	PublicEndpoint pulumi.StringPtrInput `pulumi:"publicEndpoint"`
 	// The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
-	VcnHostnameEndpoint pulumi.StringInput `pulumi:"vcnHostnameEndpoint"`
+	VcnHostnameEndpoint pulumi.StringPtrInput `pulumi:"vcnHostnameEndpoint"`
 }
 
 func (GetClustersClusterEndpointArgs) ElementType() reflect.Type {
@@ -10577,12 +9136,6 @@ func (i GetClustersClusterEndpointArgs) ToGetClustersClusterEndpointOutput() Get
 
 func (i GetClustersClusterEndpointArgs) ToGetClustersClusterEndpointOutputWithContext(ctx context.Context) GetClustersClusterEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointOutput)
-}
-
-func (i GetClustersClusterEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpoint] {
-	return pulumix.Output[GetClustersClusterEndpoint]{
-		OutputState: i.ToGetClustersClusterEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterEndpointArrayInput is an input type that accepts GetClustersClusterEndpointArray and GetClustersClusterEndpointArrayOutput values.
@@ -10610,12 +9163,6 @@ func (i GetClustersClusterEndpointArray) ToGetClustersClusterEndpointArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointArrayOutput)
 }
 
-func (i GetClustersClusterEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpoint] {
-	return pulumix.Output[[]GetClustersClusterEndpoint]{
-		OutputState: i.ToGetClustersClusterEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterEndpointOutput) ElementType() reflect.Type {
@@ -10630,30 +9177,24 @@ func (o GetClustersClusterEndpointOutput) ToGetClustersClusterEndpointOutputWith
 	return o
 }
 
-func (o GetClustersClusterEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpoint] {
-	return pulumix.Output[GetClustersClusterEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The non-native networking Kubernetes API server endpoint.
-func (o GetClustersClusterEndpointOutput) Kubernetes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterEndpoint) string { return v.Kubernetes }).(pulumi.StringOutput)
+func (o GetClustersClusterEndpointOutput) Kubernetes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpoint) *string { return v.Kubernetes }).(pulumi.StringPtrOutput)
 }
 
 // The private native networking Kubernetes API server endpoint.
-func (o GetClustersClusterEndpointOutput) PrivateEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterEndpoint) string { return v.PrivateEndpoint }).(pulumi.StringOutput)
+func (o GetClustersClusterEndpointOutput) PrivateEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpoint) *string { return v.PrivateEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The public native networking Kubernetes API server endpoint, if one was requested.
-func (o GetClustersClusterEndpointOutput) PublicEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterEndpoint) string { return v.PublicEndpoint }).(pulumi.StringOutput)
+func (o GetClustersClusterEndpointOutput) PublicEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpoint) *string { return v.PublicEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
-func (o GetClustersClusterEndpointOutput) VcnHostnameEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterEndpoint) string { return v.VcnHostnameEndpoint }).(pulumi.StringOutput)
+func (o GetClustersClusterEndpointOutput) VcnHostnameEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpoint) *string { return v.VcnHostnameEndpoint }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -10670,12 +9211,6 @@ func (o GetClustersClusterEndpointArrayOutput) ToGetClustersClusterEndpointArray
 	return o
 }
 
-func (o GetClustersClusterEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpoint] {
-	return pulumix.Output[[]GetClustersClusterEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterEndpointArrayOutput) Index(i pulumi.IntInput) GetClustersClusterEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterEndpoint {
 		return vs[0].([]GetClustersClusterEndpoint)[vs[1].(int)]
@@ -10684,11 +9219,11 @@ func (o GetClustersClusterEndpointArrayOutput) Index(i pulumi.IntInput) GetClust
 
 type GetClustersClusterEndpointConfig struct {
 	// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
-	IsPublicIpEnabled bool `pulumi:"isPublicIpEnabled"`
+	IsPublicIpEnabled *bool `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetClustersClusterEndpointConfigInput is an input type that accepts GetClustersClusterEndpointConfigArgs and GetClustersClusterEndpointConfigOutput values.
@@ -10704,11 +9239,11 @@ type GetClustersClusterEndpointConfigInput interface {
 
 type GetClustersClusterEndpointConfigArgs struct {
 	// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
-	IsPublicIpEnabled pulumi.BoolInput `pulumi:"isPublicIpEnabled"`
+	IsPublicIpEnabled pulumi.BoolPtrInput `pulumi:"isPublicIpEnabled"`
 	// A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The OCID of the regional subnet in which to place the Cluster endpoint.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetClustersClusterEndpointConfigArgs) ElementType() reflect.Type {
@@ -10721,12 +9256,6 @@ func (i GetClustersClusterEndpointConfigArgs) ToGetClustersClusterEndpointConfig
 
 func (i GetClustersClusterEndpointConfigArgs) ToGetClustersClusterEndpointConfigOutputWithContext(ctx context.Context) GetClustersClusterEndpointConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointConfigOutput)
-}
-
-func (i GetClustersClusterEndpointConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpointConfig] {
-	return pulumix.Output[GetClustersClusterEndpointConfig]{
-		OutputState: i.ToGetClustersClusterEndpointConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterEndpointConfigArrayInput is an input type that accepts GetClustersClusterEndpointConfigArray and GetClustersClusterEndpointConfigArrayOutput values.
@@ -10754,12 +9283,6 @@ func (i GetClustersClusterEndpointConfigArray) ToGetClustersClusterEndpointConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterEndpointConfigArrayOutput)
 }
 
-func (i GetClustersClusterEndpointConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpointConfig] {
-	return pulumix.Output[[]GetClustersClusterEndpointConfig]{
-		OutputState: i.ToGetClustersClusterEndpointConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterEndpointConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterEndpointConfigOutput) ElementType() reflect.Type {
@@ -10774,15 +9297,9 @@ func (o GetClustersClusterEndpointConfigOutput) ToGetClustersClusterEndpointConf
 	return o
 }
 
-func (o GetClustersClusterEndpointConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterEndpointConfig] {
-	return pulumix.Output[GetClustersClusterEndpointConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
-func (o GetClustersClusterEndpointConfigOutput) IsPublicIpEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetClustersClusterEndpointConfig) bool { return v.IsPublicIpEnabled }).(pulumi.BoolOutput)
+func (o GetClustersClusterEndpointConfigOutput) IsPublicIpEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpointConfig) *bool { return v.IsPublicIpEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -10791,8 +9308,8 @@ func (o GetClustersClusterEndpointConfigOutput) NsgIds() pulumi.StringArrayOutpu
 }
 
 // The OCID of the regional subnet in which to place the Cluster endpoint.
-func (o GetClustersClusterEndpointConfigOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterEndpointConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetClustersClusterEndpointConfigOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterEndpointConfig) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterEndpointConfigArrayOutput struct{ *pulumi.OutputState }
@@ -10809,12 +9326,6 @@ func (o GetClustersClusterEndpointConfigArrayOutput) ToGetClustersClusterEndpoin
 	return o
 }
 
-func (o GetClustersClusterEndpointConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterEndpointConfig] {
-	return pulumix.Output[[]GetClustersClusterEndpointConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterEndpointConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterEndpointConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterEndpointConfig {
 		return vs[0].([]GetClustersClusterEndpointConfig)[vs[1].(int)]
@@ -10823,7 +9334,7 @@ func (o GetClustersClusterEndpointConfigArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetClustersClusterImagePolicyConfig struct {
 	// Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-	IsPolicyEnabled bool `pulumi:"isPolicyEnabled"`
+	IsPolicyEnabled *bool `pulumi:"isPolicyEnabled"`
 	// A list of KMS key details.
 	KeyDetails []GetClustersClusterImagePolicyConfigKeyDetail `pulumi:"keyDetails"`
 }
@@ -10841,7 +9352,7 @@ type GetClustersClusterImagePolicyConfigInput interface {
 
 type GetClustersClusterImagePolicyConfigArgs struct {
 	// Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-	IsPolicyEnabled pulumi.BoolInput `pulumi:"isPolicyEnabled"`
+	IsPolicyEnabled pulumi.BoolPtrInput `pulumi:"isPolicyEnabled"`
 	// A list of KMS key details.
 	KeyDetails GetClustersClusterImagePolicyConfigKeyDetailArrayInput `pulumi:"keyDetails"`
 }
@@ -10856,12 +9367,6 @@ func (i GetClustersClusterImagePolicyConfigArgs) ToGetClustersClusterImagePolicy
 
 func (i GetClustersClusterImagePolicyConfigArgs) ToGetClustersClusterImagePolicyConfigOutputWithContext(ctx context.Context) GetClustersClusterImagePolicyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigOutput)
-}
-
-func (i GetClustersClusterImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfig] {
-	return pulumix.Output[GetClustersClusterImagePolicyConfig]{
-		OutputState: i.ToGetClustersClusterImagePolicyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterImagePolicyConfigArrayInput is an input type that accepts GetClustersClusterImagePolicyConfigArray and GetClustersClusterImagePolicyConfigArrayOutput values.
@@ -10889,12 +9394,6 @@ func (i GetClustersClusterImagePolicyConfigArray) ToGetClustersClusterImagePolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigArrayOutput)
 }
 
-func (i GetClustersClusterImagePolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfig] {
-	return pulumix.Output[[]GetClustersClusterImagePolicyConfig]{
-		OutputState: i.ToGetClustersClusterImagePolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -10909,15 +9408,9 @@ func (o GetClustersClusterImagePolicyConfigOutput) ToGetClustersClusterImagePoli
 	return o
 }
 
-func (o GetClustersClusterImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfig] {
-	return pulumix.Output[GetClustersClusterImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
-func (o GetClustersClusterImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetClustersClusterImagePolicyConfig) bool { return v.IsPolicyEnabled }).(pulumi.BoolOutput)
+func (o GetClustersClusterImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterImagePolicyConfig) *bool { return v.IsPolicyEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A list of KMS key details.
@@ -10941,12 +9434,6 @@ func (o GetClustersClusterImagePolicyConfigArrayOutput) ToGetClustersClusterImag
 	return o
 }
 
-func (o GetClustersClusterImagePolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfig] {
-	return pulumix.Output[[]GetClustersClusterImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterImagePolicyConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterImagePolicyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterImagePolicyConfig {
 		return vs[0].([]GetClustersClusterImagePolicyConfig)[vs[1].(int)]
@@ -10955,7 +9442,7 @@ func (o GetClustersClusterImagePolicyConfigArrayOutput) Index(i pulumi.IntInput)
 
 type GetClustersClusterImagePolicyConfigKeyDetail struct {
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetClustersClusterImagePolicyConfigKeyDetailInput is an input type that accepts GetClustersClusterImagePolicyConfigKeyDetailArgs and GetClustersClusterImagePolicyConfigKeyDetailOutput values.
@@ -10971,7 +9458,7 @@ type GetClustersClusterImagePolicyConfigKeyDetailInput interface {
 
 type GetClustersClusterImagePolicyConfigKeyDetailArgs struct {
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetClustersClusterImagePolicyConfigKeyDetailArgs) ElementType() reflect.Type {
@@ -10984,12 +9471,6 @@ func (i GetClustersClusterImagePolicyConfigKeyDetailArgs) ToGetClustersClusterIm
 
 func (i GetClustersClusterImagePolicyConfigKeyDetailArgs) ToGetClustersClusterImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) GetClustersClusterImagePolicyConfigKeyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigKeyDetailOutput)
-}
-
-func (i GetClustersClusterImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail]{
-		OutputState: i.ToGetClustersClusterImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetClustersClusterImagePolicyConfigKeyDetailArray and GetClustersClusterImagePolicyConfigKeyDetailArrayOutput values.
@@ -11017,12 +9498,6 @@ func (i GetClustersClusterImagePolicyConfigKeyDetailArray) ToGetClustersClusterI
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterImagePolicyConfigKeyDetailArrayOutput)
 }
 
-func (i GetClustersClusterImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail]{
-		OutputState: i.ToGetClustersClusterImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -11037,15 +9512,9 @@ func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) ToGetClustersCluster
 	return o
 }
 
-func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[GetClustersClusterImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
-func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterImagePolicyConfigKeyDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetClustersClusterImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterImagePolicyConfigKeyDetail) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterImagePolicyConfigKeyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -11062,12 +9531,6 @@ func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) ToGetClustersCl
 	return o
 }
 
-func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]GetClustersClusterImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) GetClustersClusterImagePolicyConfigKeyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterImagePolicyConfigKeyDetail {
 		return vs[0].([]GetClustersClusterImagePolicyConfigKeyDetail)[vs[1].(int)]
@@ -11076,25 +9539,25 @@ func (o GetClustersClusterImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.
 
 type GetClustersClusterMetadata struct {
 	// The user who created the cluster.
-	CreatedByUserId string `pulumi:"createdByUserId"`
+	CreatedByUserId *string `pulumi:"createdByUserId"`
 	// The OCID of the work request which created the cluster.
-	CreatedByWorkRequestId string `pulumi:"createdByWorkRequestId"`
+	CreatedByWorkRequestId *string `pulumi:"createdByWorkRequestId"`
 	// The user who deleted the cluster.
-	DeletedByUserId string `pulumi:"deletedByUserId"`
+	DeletedByUserId *string `pulumi:"deletedByUserId"`
 	// The OCID of the work request which deleted the cluster.
-	DeletedByWorkRequestId string `pulumi:"deletedByWorkRequestId"`
+	DeletedByWorkRequestId *string `pulumi:"deletedByWorkRequestId"`
 	// The time the cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time until which the cluster credential is valid.
-	TimeCredentialExpiration string `pulumi:"timeCredentialExpiration"`
+	TimeCredentialExpiration *string `pulumi:"timeCredentialExpiration"`
 	// The time the cluster was deleted.
-	TimeDeleted string `pulumi:"timeDeleted"`
+	TimeDeleted *string `pulumi:"timeDeleted"`
 	// The time the cluster was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The user who updated the cluster.
-	UpdatedByUserId string `pulumi:"updatedByUserId"`
+	UpdatedByUserId *string `pulumi:"updatedByUserId"`
 	// The OCID of the work request which updated the cluster.
-	UpdatedByWorkRequestId string `pulumi:"updatedByWorkRequestId"`
+	UpdatedByWorkRequestId *string `pulumi:"updatedByWorkRequestId"`
 }
 
 // GetClustersClusterMetadataInput is an input type that accepts GetClustersClusterMetadataArgs and GetClustersClusterMetadataOutput values.
@@ -11110,25 +9573,25 @@ type GetClustersClusterMetadataInput interface {
 
 type GetClustersClusterMetadataArgs struct {
 	// The user who created the cluster.
-	CreatedByUserId pulumi.StringInput `pulumi:"createdByUserId"`
+	CreatedByUserId pulumi.StringPtrInput `pulumi:"createdByUserId"`
 	// The OCID of the work request which created the cluster.
-	CreatedByWorkRequestId pulumi.StringInput `pulumi:"createdByWorkRequestId"`
+	CreatedByWorkRequestId pulumi.StringPtrInput `pulumi:"createdByWorkRequestId"`
 	// The user who deleted the cluster.
-	DeletedByUserId pulumi.StringInput `pulumi:"deletedByUserId"`
+	DeletedByUserId pulumi.StringPtrInput `pulumi:"deletedByUserId"`
 	// The OCID of the work request which deleted the cluster.
-	DeletedByWorkRequestId pulumi.StringInput `pulumi:"deletedByWorkRequestId"`
+	DeletedByWorkRequestId pulumi.StringPtrInput `pulumi:"deletedByWorkRequestId"`
 	// The time the cluster was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time until which the cluster credential is valid.
-	TimeCredentialExpiration pulumi.StringInput `pulumi:"timeCredentialExpiration"`
+	TimeCredentialExpiration pulumi.StringPtrInput `pulumi:"timeCredentialExpiration"`
 	// The time the cluster was deleted.
-	TimeDeleted pulumi.StringInput `pulumi:"timeDeleted"`
+	TimeDeleted pulumi.StringPtrInput `pulumi:"timeDeleted"`
 	// The time the cluster was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The user who updated the cluster.
-	UpdatedByUserId pulumi.StringInput `pulumi:"updatedByUserId"`
+	UpdatedByUserId pulumi.StringPtrInput `pulumi:"updatedByUserId"`
 	// The OCID of the work request which updated the cluster.
-	UpdatedByWorkRequestId pulumi.StringInput `pulumi:"updatedByWorkRequestId"`
+	UpdatedByWorkRequestId pulumi.StringPtrInput `pulumi:"updatedByWorkRequestId"`
 }
 
 func (GetClustersClusterMetadataArgs) ElementType() reflect.Type {
@@ -11141,12 +9604,6 @@ func (i GetClustersClusterMetadataArgs) ToGetClustersClusterMetadataOutput() Get
 
 func (i GetClustersClusterMetadataArgs) ToGetClustersClusterMetadataOutputWithContext(ctx context.Context) GetClustersClusterMetadataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterMetadataOutput)
-}
-
-func (i GetClustersClusterMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterMetadata] {
-	return pulumix.Output[GetClustersClusterMetadata]{
-		OutputState: i.ToGetClustersClusterMetadataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterMetadataArrayInput is an input type that accepts GetClustersClusterMetadataArray and GetClustersClusterMetadataArrayOutput values.
@@ -11174,12 +9631,6 @@ func (i GetClustersClusterMetadataArray) ToGetClustersClusterMetadataArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterMetadataArrayOutput)
 }
 
-func (i GetClustersClusterMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterMetadata] {
-	return pulumix.Output[[]GetClustersClusterMetadata]{
-		OutputState: i.ToGetClustersClusterMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterMetadataOutput) ElementType() reflect.Type {
@@ -11194,60 +9645,54 @@ func (o GetClustersClusterMetadataOutput) ToGetClustersClusterMetadataOutputWith
 	return o
 }
 
-func (o GetClustersClusterMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterMetadata] {
-	return pulumix.Output[GetClustersClusterMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The user who created the cluster.
-func (o GetClustersClusterMetadataOutput) CreatedByUserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.CreatedByUserId }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) CreatedByUserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.CreatedByUserId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the work request which created the cluster.
-func (o GetClustersClusterMetadataOutput) CreatedByWorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.CreatedByWorkRequestId }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) CreatedByWorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.CreatedByWorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 // The user who deleted the cluster.
-func (o GetClustersClusterMetadataOutput) DeletedByUserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.DeletedByUserId }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) DeletedByUserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.DeletedByUserId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the work request which deleted the cluster.
-func (o GetClustersClusterMetadataOutput) DeletedByWorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.DeletedByWorkRequestId }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) DeletedByWorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.DeletedByWorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o GetClustersClusterMetadataOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time until which the cluster credential is valid.
-func (o GetClustersClusterMetadataOutput) TimeCredentialExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.TimeCredentialExpiration }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) TimeCredentialExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.TimeCredentialExpiration }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was deleted.
-func (o GetClustersClusterMetadataOutput) TimeDeleted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.TimeDeleted }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) TimeDeleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.TimeDeleted }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was updated.
-func (o GetClustersClusterMetadataOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The user who updated the cluster.
-func (o GetClustersClusterMetadataOutput) UpdatedByUserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.UpdatedByUserId }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) UpdatedByUserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.UpdatedByUserId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the work request which updated the cluster.
-func (o GetClustersClusterMetadataOutput) UpdatedByWorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterMetadata) string { return v.UpdatedByWorkRequestId }).(pulumi.StringOutput)
+func (o GetClustersClusterMetadataOutput) UpdatedByWorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterMetadata) *string { return v.UpdatedByWorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -11262,12 +9707,6 @@ func (o GetClustersClusterMetadataArrayOutput) ToGetClustersClusterMetadataArray
 
 func (o GetClustersClusterMetadataArrayOutput) ToGetClustersClusterMetadataArrayOutputWithContext(ctx context.Context) GetClustersClusterMetadataArrayOutput {
 	return o
-}
-
-func (o GetClustersClusterMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterMetadata] {
-	return pulumix.Output[[]GetClustersClusterMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClustersClusterMetadataArrayOutput) Index(i pulumi.IntInput) GetClustersClusterMetadataOutput {
@@ -11329,12 +9768,6 @@ func (i GetClustersClusterOptionArgs) ToGetClustersClusterOptionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionOutput)
 }
 
-func (i GetClustersClusterOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOption] {
-	return pulumix.Output[GetClustersClusterOption]{
-		OutputState: i.ToGetClustersClusterOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetClustersClusterOptionArrayInput is an input type that accepts GetClustersClusterOptionArray and GetClustersClusterOptionArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionArrayInput` via:
 //
@@ -11360,12 +9793,6 @@ func (i GetClustersClusterOptionArray) ToGetClustersClusterOptionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionArrayOutput)
 }
 
-func (i GetClustersClusterOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOption] {
-	return pulumix.Output[[]GetClustersClusterOption]{
-		OutputState: i.ToGetClustersClusterOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionOutput) ElementType() reflect.Type {
@@ -11378,12 +9805,6 @@ func (o GetClustersClusterOptionOutput) ToGetClustersClusterOptionOutput() GetCl
 
 func (o GetClustersClusterOptionOutput) ToGetClustersClusterOptionOutputWithContext(ctx context.Context) GetClustersClusterOptionOutput {
 	return o
-}
-
-func (o GetClustersClusterOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOption] {
-	return pulumix.Output[GetClustersClusterOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Configurable cluster add-ons
@@ -11436,12 +9857,6 @@ func (o GetClustersClusterOptionArrayOutput) ToGetClustersClusterOptionArrayOutp
 	return o
 }
 
-func (o GetClustersClusterOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOption] {
-	return pulumix.Output[[]GetClustersClusterOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOption {
 		return vs[0].([]GetClustersClusterOption)[vs[1].(int)]
@@ -11450,9 +9865,9 @@ func (o GetClustersClusterOptionArrayOutput) Index(i pulumi.IntInput) GetCluster
 
 type GetClustersClusterOptionAddOn struct {
 	// Whether or not to enable the Kubernetes Dashboard add-on.
-	IsKubernetesDashboardEnabled bool `pulumi:"isKubernetesDashboardEnabled"`
+	IsKubernetesDashboardEnabled *bool `pulumi:"isKubernetesDashboardEnabled"`
 	// Whether or not to enable the Tiller add-on.
-	IsTillerEnabled bool `pulumi:"isTillerEnabled"`
+	IsTillerEnabled *bool `pulumi:"isTillerEnabled"`
 }
 
 // GetClustersClusterOptionAddOnInput is an input type that accepts GetClustersClusterOptionAddOnArgs and GetClustersClusterOptionAddOnOutput values.
@@ -11468,9 +9883,9 @@ type GetClustersClusterOptionAddOnInput interface {
 
 type GetClustersClusterOptionAddOnArgs struct {
 	// Whether or not to enable the Kubernetes Dashboard add-on.
-	IsKubernetesDashboardEnabled pulumi.BoolInput `pulumi:"isKubernetesDashboardEnabled"`
+	IsKubernetesDashboardEnabled pulumi.BoolPtrInput `pulumi:"isKubernetesDashboardEnabled"`
 	// Whether or not to enable the Tiller add-on.
-	IsTillerEnabled pulumi.BoolInput `pulumi:"isTillerEnabled"`
+	IsTillerEnabled pulumi.BoolPtrInput `pulumi:"isTillerEnabled"`
 }
 
 func (GetClustersClusterOptionAddOnArgs) ElementType() reflect.Type {
@@ -11483,12 +9898,6 @@ func (i GetClustersClusterOptionAddOnArgs) ToGetClustersClusterOptionAddOnOutput
 
 func (i GetClustersClusterOptionAddOnArgs) ToGetClustersClusterOptionAddOnOutputWithContext(ctx context.Context) GetClustersClusterOptionAddOnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAddOnOutput)
-}
-
-func (i GetClustersClusterOptionAddOnArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAddOn] {
-	return pulumix.Output[GetClustersClusterOptionAddOn]{
-		OutputState: i.ToGetClustersClusterOptionAddOnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterOptionAddOnArrayInput is an input type that accepts GetClustersClusterOptionAddOnArray and GetClustersClusterOptionAddOnArrayOutput values.
@@ -11516,12 +9925,6 @@ func (i GetClustersClusterOptionAddOnArray) ToGetClustersClusterOptionAddOnArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAddOnArrayOutput)
 }
 
-func (i GetClustersClusterOptionAddOnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAddOn] {
-	return pulumix.Output[[]GetClustersClusterOptionAddOn]{
-		OutputState: i.ToGetClustersClusterOptionAddOnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOptionAddOnOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionAddOnOutput) ElementType() reflect.Type {
@@ -11536,20 +9939,14 @@ func (o GetClustersClusterOptionAddOnOutput) ToGetClustersClusterOptionAddOnOutp
 	return o
 }
 
-func (o GetClustersClusterOptionAddOnOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAddOn] {
-	return pulumix.Output[GetClustersClusterOptionAddOn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether or not to enable the Kubernetes Dashboard add-on.
-func (o GetClustersClusterOptionAddOnOutput) IsKubernetesDashboardEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionAddOn) bool { return v.IsKubernetesDashboardEnabled }).(pulumi.BoolOutput)
+func (o GetClustersClusterOptionAddOnOutput) IsKubernetesDashboardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionAddOn) *bool { return v.IsKubernetesDashboardEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether or not to enable the Tiller add-on.
-func (o GetClustersClusterOptionAddOnOutput) IsTillerEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionAddOn) bool { return v.IsTillerEnabled }).(pulumi.BoolOutput)
+func (o GetClustersClusterOptionAddOnOutput) IsTillerEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionAddOn) *bool { return v.IsTillerEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetClustersClusterOptionAddOnArrayOutput struct{ *pulumi.OutputState }
@@ -11566,12 +9963,6 @@ func (o GetClustersClusterOptionAddOnArrayOutput) ToGetClustersClusterOptionAddO
 	return o
 }
 
-func (o GetClustersClusterOptionAddOnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAddOn] {
-	return pulumix.Output[[]GetClustersClusterOptionAddOn]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterOptionAddOnArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionAddOnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOptionAddOn {
 		return vs[0].([]GetClustersClusterOptionAddOn)[vs[1].(int)]
@@ -11580,7 +9971,7 @@ func (o GetClustersClusterOptionAddOnArrayOutput) Index(i pulumi.IntInput) GetCl
 
 type GetClustersClusterOptionAdmissionControllerOption struct {
 	// Whether or not to enable the Pod Security Policy admission controller.
-	IsPodSecurityPolicyEnabled bool `pulumi:"isPodSecurityPolicyEnabled"`
+	IsPodSecurityPolicyEnabled *bool `pulumi:"isPodSecurityPolicyEnabled"`
 }
 
 // GetClustersClusterOptionAdmissionControllerOptionInput is an input type that accepts GetClustersClusterOptionAdmissionControllerOptionArgs and GetClustersClusterOptionAdmissionControllerOptionOutput values.
@@ -11596,7 +9987,7 @@ type GetClustersClusterOptionAdmissionControllerOptionInput interface {
 
 type GetClustersClusterOptionAdmissionControllerOptionArgs struct {
 	// Whether or not to enable the Pod Security Policy admission controller.
-	IsPodSecurityPolicyEnabled pulumi.BoolInput `pulumi:"isPodSecurityPolicyEnabled"`
+	IsPodSecurityPolicyEnabled pulumi.BoolPtrInput `pulumi:"isPodSecurityPolicyEnabled"`
 }
 
 func (GetClustersClusterOptionAdmissionControllerOptionArgs) ElementType() reflect.Type {
@@ -11609,12 +10000,6 @@ func (i GetClustersClusterOptionAdmissionControllerOptionArgs) ToGetClustersClus
 
 func (i GetClustersClusterOptionAdmissionControllerOptionArgs) ToGetClustersClusterOptionAdmissionControllerOptionOutputWithContext(ctx context.Context) GetClustersClusterOptionAdmissionControllerOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAdmissionControllerOptionOutput)
-}
-
-func (i GetClustersClusterOptionAdmissionControllerOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAdmissionControllerOption] {
-	return pulumix.Output[GetClustersClusterOptionAdmissionControllerOption]{
-		OutputState: i.ToGetClustersClusterOptionAdmissionControllerOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterOptionAdmissionControllerOptionArrayInput is an input type that accepts GetClustersClusterOptionAdmissionControllerOptionArray and GetClustersClusterOptionAdmissionControllerOptionArrayOutput values.
@@ -11642,12 +10027,6 @@ func (i GetClustersClusterOptionAdmissionControllerOptionArray) ToGetClustersClu
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionAdmissionControllerOptionArrayOutput)
 }
 
-func (i GetClustersClusterOptionAdmissionControllerOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption] {
-	return pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption]{
-		OutputState: i.ToGetClustersClusterOptionAdmissionControllerOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOptionAdmissionControllerOptionOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionAdmissionControllerOptionOutput) ElementType() reflect.Type {
@@ -11662,15 +10041,9 @@ func (o GetClustersClusterOptionAdmissionControllerOptionOutput) ToGetClustersCl
 	return o
 }
 
-func (o GetClustersClusterOptionAdmissionControllerOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionAdmissionControllerOption] {
-	return pulumix.Output[GetClustersClusterOptionAdmissionControllerOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether or not to enable the Pod Security Policy admission controller.
-func (o GetClustersClusterOptionAdmissionControllerOptionOutput) IsPodSecurityPolicyEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionAdmissionControllerOption) bool { return v.IsPodSecurityPolicyEnabled }).(pulumi.BoolOutput)
+func (o GetClustersClusterOptionAdmissionControllerOptionOutput) IsPodSecurityPolicyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionAdmissionControllerOption) *bool { return v.IsPodSecurityPolicyEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetClustersClusterOptionAdmissionControllerOptionArrayOutput struct{ *pulumi.OutputState }
@@ -11687,12 +10060,6 @@ func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) ToGetClust
 	return o
 }
 
-func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption] {
-	return pulumix.Output[[]GetClustersClusterOptionAdmissionControllerOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionAdmissionControllerOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterOptionAdmissionControllerOption {
 		return vs[0].([]GetClustersClusterOptionAdmissionControllerOption)[vs[1].(int)]
@@ -11701,9 +10068,9 @@ func (o GetClustersClusterOptionAdmissionControllerOptionArrayOutput) Index(i pu
 
 type GetClustersClusterOptionKubernetesNetworkConfig struct {
 	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-	PodsCidr string `pulumi:"podsCidr"`
+	PodsCidr *string `pulumi:"podsCidr"`
 	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-	ServicesCidr string `pulumi:"servicesCidr"`
+	ServicesCidr *string `pulumi:"servicesCidr"`
 }
 
 // GetClustersClusterOptionKubernetesNetworkConfigInput is an input type that accepts GetClustersClusterOptionKubernetesNetworkConfigArgs and GetClustersClusterOptionKubernetesNetworkConfigOutput values.
@@ -11719,9 +10086,9 @@ type GetClustersClusterOptionKubernetesNetworkConfigInput interface {
 
 type GetClustersClusterOptionKubernetesNetworkConfigArgs struct {
 	// The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-	PodsCidr pulumi.StringInput `pulumi:"podsCidr"`
+	PodsCidr pulumi.StringPtrInput `pulumi:"podsCidr"`
 	// The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-	ServicesCidr pulumi.StringInput `pulumi:"servicesCidr"`
+	ServicesCidr pulumi.StringPtrInput `pulumi:"servicesCidr"`
 }
 
 func (GetClustersClusterOptionKubernetesNetworkConfigArgs) ElementType() reflect.Type {
@@ -11734,12 +10101,6 @@ func (i GetClustersClusterOptionKubernetesNetworkConfigArgs) ToGetClustersCluste
 
 func (i GetClustersClusterOptionKubernetesNetworkConfigArgs) ToGetClustersClusterOptionKubernetesNetworkConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionKubernetesNetworkConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionKubernetesNetworkConfigOutput)
-}
-
-func (i GetClustersClusterOptionKubernetesNetworkConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig] {
-	return pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig]{
-		OutputState: i.ToGetClustersClusterOptionKubernetesNetworkConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetClustersClusterOptionKubernetesNetworkConfigArrayInput is an input type that accepts GetClustersClusterOptionKubernetesNetworkConfigArray and GetClustersClusterOptionKubernetesNetworkConfigArrayOutput values.
@@ -11767,12 +10128,6 @@ func (i GetClustersClusterOptionKubernetesNetworkConfigArray) ToGetClustersClust
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionKubernetesNetworkConfigArrayOutput)
 }
 
-func (i GetClustersClusterOptionKubernetesNetworkConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig] {
-	return pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig]{
-		OutputState: i.ToGetClustersClusterOptionKubernetesNetworkConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOptionKubernetesNetworkConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionKubernetesNetworkConfigOutput) ElementType() reflect.Type {
@@ -11787,20 +10142,14 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ToGetClustersClus
 	return o
 }
 
-func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig] {
-	return pulumix.Output[GetClustersClusterOptionKubernetesNetworkConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
-func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionKubernetesNetworkConfig) string { return v.PodsCidr }).(pulumi.StringOutput)
+func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) PodsCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionKubernetesNetworkConfig) *string { return v.PodsCidr }).(pulumi.StringPtrOutput)
 }
 
 // The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
-func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ServicesCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionKubernetesNetworkConfig) string { return v.ServicesCidr }).(pulumi.StringOutput)
+func (o GetClustersClusterOptionKubernetesNetworkConfigOutput) ServicesCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionKubernetesNetworkConfig) *string { return v.ServicesCidr }).(pulumi.StringPtrOutput)
 }
 
 type GetClustersClusterOptionKubernetesNetworkConfigArrayOutput struct{ *pulumi.OutputState }
@@ -11815,12 +10164,6 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) ToGetCluster
 
 func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) ToGetClustersClusterOptionKubernetesNetworkConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionKubernetesNetworkConfigArrayOutput {
 	return o
-}
-
-func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig] {
-	return pulumix.Output[[]GetClustersClusterOptionKubernetesNetworkConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionKubernetesNetworkConfigOutput {
@@ -11866,12 +10209,6 @@ func (i GetClustersClusterOptionPersistentVolumeConfigArgs) ToGetClustersCluster
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionPersistentVolumeConfigOutput)
 }
 
-func (i GetClustersClusterOptionPersistentVolumeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig] {
-	return pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig]{
-		OutputState: i.ToGetClustersClusterOptionPersistentVolumeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetClustersClusterOptionPersistentVolumeConfigArrayInput is an input type that accepts GetClustersClusterOptionPersistentVolumeConfigArray and GetClustersClusterOptionPersistentVolumeConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionPersistentVolumeConfigArrayInput` via:
 //
@@ -11897,12 +10234,6 @@ func (i GetClustersClusterOptionPersistentVolumeConfigArray) ToGetClustersCluste
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionPersistentVolumeConfigArrayOutput)
 }
 
-func (i GetClustersClusterOptionPersistentVolumeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig] {
-	return pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig]{
-		OutputState: i.ToGetClustersClusterOptionPersistentVolumeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOptionPersistentVolumeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionPersistentVolumeConfigOutput) ElementType() reflect.Type {
@@ -11915,12 +10246,6 @@ func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToGetClustersClust
 
 func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToGetClustersClusterOptionPersistentVolumeConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionPersistentVolumeConfigOutput {
 	return o
-}
-
-func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig] {
-	return pulumix.Output[GetClustersClusterOptionPersistentVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -11945,12 +10270,6 @@ func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) ToGetClusters
 
 func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) ToGetClustersClusterOptionPersistentVolumeConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionPersistentVolumeConfigArrayOutput {
 	return o
-}
-
-func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig] {
-	return pulumix.Output[[]GetClustersClusterOptionPersistentVolumeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionPersistentVolumeConfigOutput {
@@ -11996,12 +10315,6 @@ func (i GetClustersClusterOptionServiceLbConfigArgs) ToGetClustersClusterOptionS
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionServiceLbConfigOutput)
 }
 
-func (i GetClustersClusterOptionServiceLbConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionServiceLbConfig] {
-	return pulumix.Output[GetClustersClusterOptionServiceLbConfig]{
-		OutputState: i.ToGetClustersClusterOptionServiceLbConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetClustersClusterOptionServiceLbConfigArrayInput is an input type that accepts GetClustersClusterOptionServiceLbConfigArray and GetClustersClusterOptionServiceLbConfigArrayOutput values.
 // You can construct a concrete instance of `GetClustersClusterOptionServiceLbConfigArrayInput` via:
 //
@@ -12027,12 +10340,6 @@ func (i GetClustersClusterOptionServiceLbConfigArray) ToGetClustersClusterOption
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterOptionServiceLbConfigArrayOutput)
 }
 
-func (i GetClustersClusterOptionServiceLbConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionServiceLbConfig] {
-	return pulumix.Output[[]GetClustersClusterOptionServiceLbConfig]{
-		OutputState: i.ToGetClustersClusterOptionServiceLbConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersClusterOptionServiceLbConfigOutput struct{ *pulumi.OutputState }
 
 func (GetClustersClusterOptionServiceLbConfigOutput) ElementType() reflect.Type {
@@ -12045,12 +10352,6 @@ func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptio
 
 func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptionServiceLbConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionServiceLbConfigOutput {
 	return o
-}
-
-func (o GetClustersClusterOptionServiceLbConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersClusterOptionServiceLbConfig] {
-	return pulumix.Output[GetClustersClusterOptionServiceLbConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -12075,12 +10376,6 @@ func (o GetClustersClusterOptionServiceLbConfigArrayOutput) ToGetClustersCluster
 
 func (o GetClustersClusterOptionServiceLbConfigArrayOutput) ToGetClustersClusterOptionServiceLbConfigArrayOutputWithContext(ctx context.Context) GetClustersClusterOptionServiceLbConfigArrayOutput {
 	return o
-}
-
-func (o GetClustersClusterOptionServiceLbConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersClusterOptionServiceLbConfig] {
-	return pulumix.Output[[]GetClustersClusterOptionServiceLbConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClustersClusterOptionServiceLbConfigArrayOutput) Index(i pulumi.IntInput) GetClustersClusterOptionServiceLbConfigOutput {
@@ -12126,12 +10421,6 @@ func (i GetClustersFilterArgs) ToGetClustersFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersFilterOutput)
 }
 
-func (i GetClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetClustersFilter] {
-	return pulumix.Output[GetClustersFilter]{
-		OutputState: i.ToGetClustersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetClustersFilterArrayInput is an input type that accepts GetClustersFilterArray and GetClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetClustersFilterArrayInput` via:
 //
@@ -12157,12 +10446,6 @@ func (i GetClustersFilterArray) ToGetClustersFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetClustersFilterArrayOutput)
 }
 
-func (i GetClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersFilter] {
-	return pulumix.Output[[]GetClustersFilter]{
-		OutputState: i.ToGetClustersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetClustersFilterOutput) ElementType() reflect.Type {
@@ -12175,12 +10458,6 @@ func (o GetClustersFilterOutput) ToGetClustersFilterOutput() GetClustersFilterOu
 
 func (o GetClustersFilterOutput) ToGetClustersFilterOutputWithContext(ctx context.Context) GetClustersFilterOutput {
 	return o
-}
-
-func (o GetClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersFilter] {
-	return pulumix.Output[GetClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name to filter on.
@@ -12210,12 +10487,6 @@ func (o GetClustersFilterArrayOutput) ToGetClustersFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetClustersFilter] {
-	return pulumix.Output[[]GetClustersFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetClustersFilterArrayOutput) Index(i pulumi.IntInput) GetClustersFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersFilter {
 		return vs[0].([]GetClustersFilter)[vs[1].(int)]
@@ -12224,9 +10495,9 @@ func (o GetClustersFilterArrayOutput) Index(i pulumi.IntInput) GetClustersFilter
 
 type GetNodePoolInitialNodeLabel struct {
 	// The key of the pair.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The value of the pair.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetNodePoolInitialNodeLabelInput is an input type that accepts GetNodePoolInitialNodeLabelArgs and GetNodePoolInitialNodeLabelOutput values.
@@ -12242,9 +10513,9 @@ type GetNodePoolInitialNodeLabelInput interface {
 
 type GetNodePoolInitialNodeLabelArgs struct {
 	// The key of the pair.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The value of the pair.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetNodePoolInitialNodeLabelArgs) ElementType() reflect.Type {
@@ -12257,12 +10528,6 @@ func (i GetNodePoolInitialNodeLabelArgs) ToGetNodePoolInitialNodeLabelOutput() G
 
 func (i GetNodePoolInitialNodeLabelArgs) ToGetNodePoolInitialNodeLabelOutputWithContext(ctx context.Context) GetNodePoolInitialNodeLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolInitialNodeLabelOutput)
-}
-
-func (i GetNodePoolInitialNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolInitialNodeLabel] {
-	return pulumix.Output[GetNodePoolInitialNodeLabel]{
-		OutputState: i.ToGetNodePoolInitialNodeLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolInitialNodeLabelArrayInput is an input type that accepts GetNodePoolInitialNodeLabelArray and GetNodePoolInitialNodeLabelArrayOutput values.
@@ -12290,12 +10555,6 @@ func (i GetNodePoolInitialNodeLabelArray) ToGetNodePoolInitialNodeLabelArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolInitialNodeLabelArrayOutput)
 }
 
-func (i GetNodePoolInitialNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolInitialNodeLabel] {
-	return pulumix.Output[[]GetNodePoolInitialNodeLabel]{
-		OutputState: i.ToGetNodePoolInitialNodeLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolInitialNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolInitialNodeLabelOutput) ElementType() reflect.Type {
@@ -12310,20 +10569,14 @@ func (o GetNodePoolInitialNodeLabelOutput) ToGetNodePoolInitialNodeLabelOutputWi
 	return o
 }
 
-func (o GetNodePoolInitialNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolInitialNodeLabel] {
-	return pulumix.Output[GetNodePoolInitialNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key of the pair.
-func (o GetNodePoolInitialNodeLabelOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolInitialNodeLabel) string { return v.Key }).(pulumi.StringOutput)
+func (o GetNodePoolInitialNodeLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolInitialNodeLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The value of the pair.
-func (o GetNodePoolInitialNodeLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolInitialNodeLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetNodePoolInitialNodeLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolInitialNodeLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolInitialNodeLabelArrayOutput struct{ *pulumi.OutputState }
@@ -12340,12 +10593,6 @@ func (o GetNodePoolInitialNodeLabelArrayOutput) ToGetNodePoolInitialNodeLabelArr
 	return o
 }
 
-func (o GetNodePoolInitialNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolInitialNodeLabel] {
-	return pulumix.Output[[]GetNodePoolInitialNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) GetNodePoolInitialNodeLabelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolInitialNodeLabel {
 		return vs[0].([]GetNodePoolInitialNodeLabel)[vs[1].(int)]
@@ -12354,33 +10601,33 @@ func (o GetNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) GetNode
 
 type GetNodePoolNode struct {
 	// The name of the availability domain in which this node is placed.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// An error that may be associated with the node.
 	Errors []GetNodePoolNodeError `pulumi:"errors"`
 	// The fault domain of this node.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The version of Kubernetes this node is running.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the node.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name of the node.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The OCID of the node pool.
-	NodePoolId string `pulumi:"nodePoolId"`
+	NodePoolId *string `pulumi:"nodePoolId"`
 	// The private IP address of this node.
-	PrivateIp string `pulumi:"privateIp"`
+	PrivateIp *string `pulumi:"privateIp"`
 	// The public IP address of this node.
-	PublicIp string `pulumi:"publicIp"`
+	PublicIp *string `pulumi:"publicIp"`
 	// The state of the nodepool.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet in which this node is placed.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetNodePoolNodeInput is an input type that accepts GetNodePoolNodeArgs and GetNodePoolNodeOutput values.
@@ -12396,33 +10643,33 @@ type GetNodePoolNodeInput interface {
 
 type GetNodePoolNodeArgs struct {
 	// The name of the availability domain in which this node is placed.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// An error that may be associated with the node.
 	Errors GetNodePoolNodeErrorArrayInput `pulumi:"errors"`
 	// The fault domain of this node.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The version of Kubernetes this node is running.
-	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrInput `pulumi:"kubernetesVersion"`
 	// Details about the state of the node.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The name of the node.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The OCID of the node pool.
-	NodePoolId pulumi.StringInput `pulumi:"nodePoolId"`
+	NodePoolId pulumi.StringPtrInput `pulumi:"nodePoolId"`
 	// The private IP address of this node.
-	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 	// The public IP address of this node.
-	PublicIp pulumi.StringInput `pulumi:"publicIp"`
+	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
 	// The state of the nodepool.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet in which this node is placed.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetNodePoolNodeArgs) ElementType() reflect.Type {
@@ -12435,12 +10682,6 @@ func (i GetNodePoolNodeArgs) ToGetNodePoolNodeOutput() GetNodePoolNodeOutput {
 
 func (i GetNodePoolNodeArgs) ToGetNodePoolNodeOutputWithContext(ctx context.Context) GetNodePoolNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeOutput)
-}
-
-func (i GetNodePoolNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNode] {
-	return pulumix.Output[GetNodePoolNode]{
-		OutputState: i.ToGetNodePoolNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeArrayInput is an input type that accepts GetNodePoolNodeArray and GetNodePoolNodeArrayOutput values.
@@ -12468,12 +10709,6 @@ func (i GetNodePoolNodeArray) ToGetNodePoolNodeArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeArrayOutput)
 }
 
-func (i GetNodePoolNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNode] {
-	return pulumix.Output[[]GetNodePoolNode]{
-		OutputState: i.ToGetNodePoolNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeOutput) ElementType() reflect.Type {
@@ -12488,15 +10723,9 @@ func (o GetNodePoolNodeOutput) ToGetNodePoolNodeOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetNodePoolNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNode] {
-	return pulumix.Output[GetNodePoolNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain in which this node is placed.
-func (o GetNodePoolNodeOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -12510,8 +10739,8 @@ func (o GetNodePoolNodeOutput) Errors() GetNodePoolNodeErrorArrayOutput {
 }
 
 // The fault domain of this node.
-func (o GetNodePoolNodeOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -12520,48 +10749,48 @@ func (o GetNodePoolNodeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the compute instance backing this node.
-func (o GetNodePoolNodeOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The version of Kubernetes this node is running.
-func (o GetNodePoolNodeOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the node.
-func (o GetNodePoolNodeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The name of the node.
-func (o GetNodePoolNodeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the node pool.
-func (o GetNodePoolNodeOutput) NodePoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.NodePoolId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) NodePoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.NodePoolId }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of this node.
-func (o GetNodePoolNodeOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.PrivateIp }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The public IP address of this node.
-func (o GetNodePoolNodeOutput) PublicIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.PublicIp }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
 }
 
 // The state of the nodepool.
-func (o GetNodePoolNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.State }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet in which this node is placed.
-func (o GetNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodeArrayOutput struct{ *pulumi.OutputState }
@@ -12578,12 +10807,6 @@ func (o GetNodePoolNodeArrayOutput) ToGetNodePoolNodeArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetNodePoolNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNode] {
-	return pulumix.Output[[]GetNodePoolNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNode {
 		return vs[0].([]GetNodePoolNode)[vs[1].(int)]
@@ -12596,9 +10819,9 @@ type GetNodePoolNodeConfigDetail struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails []GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -12606,7 +10829,7 @@ type GetNodePoolNodeConfigDetail struct {
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs []GetNodePoolNodeConfigDetailPlacementConfig `pulumi:"placementConfigs"`
 	// The number of nodes in the node pool.
-	Size int `pulumi:"size"`
+	Size *int `pulumi:"size"`
 }
 
 // GetNodePoolNodeConfigDetailInput is an input type that accepts GetNodePoolNodeConfigDetailArgs and GetNodePoolNodeConfigDetailOutput values.
@@ -12626,9 +10849,9 @@ type GetNodePoolNodeConfigDetailArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -12636,7 +10859,7 @@ type GetNodePoolNodeConfigDetailArgs struct {
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs GetNodePoolNodeConfigDetailPlacementConfigArrayInput `pulumi:"placementConfigs"`
 	// The number of nodes in the node pool.
-	Size pulumi.IntInput `pulumi:"size"`
+	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
 func (GetNodePoolNodeConfigDetailArgs) ElementType() reflect.Type {
@@ -12649,12 +10872,6 @@ func (i GetNodePoolNodeConfigDetailArgs) ToGetNodePoolNodeConfigDetailOutput() G
 
 func (i GetNodePoolNodeConfigDetailArgs) ToGetNodePoolNodeConfigDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailOutput)
-}
-
-func (i GetNodePoolNodeConfigDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetail] {
-	return pulumix.Output[GetNodePoolNodeConfigDetail]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeConfigDetailArrayInput is an input type that accepts GetNodePoolNodeConfigDetailArray and GetNodePoolNodeConfigDetailArrayOutput values.
@@ -12682,12 +10899,6 @@ func (i GetNodePoolNodeConfigDetailArray) ToGetNodePoolNodeConfigDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailArrayOutput)
 }
 
-func (i GetNodePoolNodeConfigDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetail] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetail]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeConfigDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailOutput) ElementType() reflect.Type {
@@ -12702,12 +10913,6 @@ func (o GetNodePoolNodeConfigDetailOutput) ToGetNodePoolNodeConfigDetailOutputWi
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetail] {
-	return pulumix.Output[GetNodePoolNodeConfigDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetNodePoolNodeConfigDetailOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -12719,13 +10924,13 @@ func (o GetNodePoolNodeConfigDetailOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-func (o GetNodePoolNodeConfigDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+func (o GetNodePoolNodeConfigDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) *bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the Key Management Service key assigned to the boot volume.
-func (o GetNodePoolNodeConfigDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeConfigDetailOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The CNI related configuration of pods in the node pool.
@@ -12748,8 +10953,8 @@ func (o GetNodePoolNodeConfigDetailOutput) PlacementConfigs() GetNodePoolNodeCon
 }
 
 // The number of nodes in the node pool.
-func (o GetNodePoolNodeConfigDetailOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) int { return v.Size }).(pulumi.IntOutput)
+func (o GetNodePoolNodeConfigDetailOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
 type GetNodePoolNodeConfigDetailArrayOutput struct{ *pulumi.OutputState }
@@ -12766,12 +10971,6 @@ func (o GetNodePoolNodeConfigDetailArrayOutput) ToGetNodePoolNodeConfigDetailArr
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetail] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetail {
 		return vs[0].([]GetNodePoolNodeConfigDetail)[vs[1].(int)]
@@ -12780,9 +10979,9 @@ func (o GetNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNode
 
 type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail struct {
 	// The CNI plugin used by this node pool
-	CniType string `pulumi:"cniType"`
+	CniType *string `pulumi:"cniType"`
 	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-	MaxPodsPerNode int `pulumi:"maxPodsPerNode"`
+	MaxPodsPerNode *int `pulumi:"maxPodsPerNode"`
 	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	PodNsgIds []string `pulumi:"podNsgIds"`
 	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
@@ -12802,9 +11001,9 @@ type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput interface {
 
 type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs struct {
 	// The CNI plugin used by this node pool
-	CniType pulumi.StringInput `pulumi:"cniType"`
+	CniType pulumi.StringPtrInput `pulumi:"cniType"`
 	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-	MaxPodsPerNode pulumi.IntInput `pulumi:"maxPodsPerNode"`
+	MaxPodsPerNode pulumi.IntPtrInput `pulumi:"maxPodsPerNode"`
 	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	PodNsgIds pulumi.StringArrayInput `pulumi:"podNsgIds"`
 	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
@@ -12821,12 +11020,6 @@ func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNode
 
 func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
-}
-
-func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput is an input type that accepts GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray and GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput values.
@@ -12854,12 +11047,6 @@ func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToGetNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
 }
 
-func (i GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ElementType() reflect.Type {
@@ -12874,20 +11061,14 @@ func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToGetNo
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CNI plugin used by this node pool
-func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) CniType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) string { return v.CniType }).(pulumi.StringOutput)
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) CniType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) *string { return v.CniType }).(pulumi.StringPtrOutput)
 }
 
 // The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) MaxPodsPerNode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) int { return v.MaxPodsPerNode }).(pulumi.IntOutput)
+func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) MaxPodsPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) *int { return v.MaxPodsPerNode }).(pulumi.IntPtrOutput)
 }
 
 // The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -12914,12 +11095,6 @@ func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) To
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
 		return vs[0].([]GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)[vs[1].(int)]
@@ -12928,15 +11103,15 @@ func (o GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) In
 
 type GetNodePoolNodeConfigDetailPlacementConfig struct {
 	// The name of the availability domain in which this node is placed.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which this node is placed.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetNodePoolNodeConfigDetailPlacementConfigInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigArgs and GetNodePoolNodeConfigDetailPlacementConfigOutput values.
@@ -12952,15 +11127,15 @@ type GetNodePoolNodeConfigDetailPlacementConfigInput interface {
 
 type GetNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	// The name of the availability domain in which this node is placed.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which this node is placed.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigArgs) ElementType() reflect.Type {
@@ -12973,12 +11148,6 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigArgs) ToGetNodePoolNodeConfigD
 
 func (i GetNodePoolNodeConfigDetailPlacementConfigArgs) ToGetNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigOutput)
-}
-
-func (i GetNodePoolNodeConfigDetailPlacementConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeConfigDetailPlacementConfigArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigArray and GetNodePoolNodeConfigDetailPlacementConfigArrayOutput values.
@@ -13006,12 +11175,6 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigArray) ToGetNodePoolNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigArrayOutput)
 }
 
-func (i GetNodePoolNodeConfigDetailPlacementConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeConfigDetailPlacementConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigOutput) ElementType() reflect.Type {
@@ -13026,20 +11189,14 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePoolNodeConfi
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain in which this node is placed.
-func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compute capacity reservation in which to place the compute instance.
-func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // A list of fault domains in which to place nodes.
@@ -13055,8 +11212,8 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNodeConfigs
 }
 
 // The OCID of the subnet in which this node is placed.
-func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfig) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodeConfigDetailPlacementConfigArrayOutput struct{ *pulumi.OutputState }
@@ -13071,12 +11228,6 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToGetNodePoolNode
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToGetNodePoolNodeConfigDetailPlacementConfigArrayOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigArrayOutput {
 	return o
-}
-
-func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigOutput {
@@ -13118,12 +11269,6 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
 }
 
-func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput` via:
 //
@@ -13149,12 +11294,6 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
-func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
@@ -13167,12 +11306,6 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) T
 
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
 	return o
-}
-
-func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to run when the preemptible node is interrupted for eviction.
@@ -13196,12 +11329,6 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutp
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
 		return vs[0].([]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)[vs[1].(int)]
@@ -13210,9 +11337,9 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutp
 
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction struct {
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	IsPreserveBootVolume bool `pulumi:"isPreserveBootVolume"`
+	IsPreserveBootVolume *bool `pulumi:"isPreserveBootVolume"`
 	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput values.
@@ -13228,9 +11355,9 @@ type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAc
 
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs struct {
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	IsPreserveBootVolume pulumi.BoolInput `pulumi:"isPreserveBootVolume"`
+	IsPreserveBootVolume pulumi.BoolPtrInput `pulumi:"isPreserveBootVolume"`
 	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ElementType() reflect.Type {
@@ -13243,12 +11370,6 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 
 func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
-}
-
-func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput is an input type that accepts GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray and GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput values.
@@ -13276,12 +11397,6 @@ func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
 }
 
-func (i GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: i.ToGetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -13296,24 +11411,18 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) bool {
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) *bool {
 		return v.IsPreserveBootVolume
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The type of action to run when the instance is interrupted for eviction.
-func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) string {
+func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
@@ -13330,12 +11439,6 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 	return o
 }
 
-func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[[]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
 		return vs[0].([]GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)[vs[1].(int)]
@@ -13344,11 +11447,11 @@ func (o GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptio
 
 type GetNodePoolNodeError struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code string `pulumi:"code"`
+	Code *string `pulumi:"code"`
 	// A human-readable error string of the upstream error.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The status of the HTTP response encountered in the upstream error.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 }
 
 // GetNodePoolNodeErrorInput is an input type that accepts GetNodePoolNodeErrorArgs and GetNodePoolNodeErrorOutput values.
@@ -13364,11 +11467,11 @@ type GetNodePoolNodeErrorInput interface {
 
 type GetNodePoolNodeErrorArgs struct {
 	// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code pulumi.StringInput `pulumi:"code"`
+	Code pulumi.StringPtrInput `pulumi:"code"`
 	// A human-readable error string of the upstream error.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The status of the HTTP response encountered in the upstream error.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetNodePoolNodeErrorArgs) ElementType() reflect.Type {
@@ -13381,12 +11484,6 @@ func (i GetNodePoolNodeErrorArgs) ToGetNodePoolNodeErrorOutput() GetNodePoolNode
 
 func (i GetNodePoolNodeErrorArgs) ToGetNodePoolNodeErrorOutputWithContext(ctx context.Context) GetNodePoolNodeErrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeErrorOutput)
-}
-
-func (i GetNodePoolNodeErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeError] {
-	return pulumix.Output[GetNodePoolNodeError]{
-		OutputState: i.ToGetNodePoolNodeErrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeErrorArrayInput is an input type that accepts GetNodePoolNodeErrorArray and GetNodePoolNodeErrorArrayOutput values.
@@ -13414,12 +11511,6 @@ func (i GetNodePoolNodeErrorArray) ToGetNodePoolNodeErrorArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeErrorArrayOutput)
 }
 
-func (i GetNodePoolNodeErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeError] {
-	return pulumix.Output[[]GetNodePoolNodeError]{
-		OutputState: i.ToGetNodePoolNodeErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeErrorOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeErrorOutput) ElementType() reflect.Type {
@@ -13434,25 +11525,19 @@ func (o GetNodePoolNodeErrorOutput) ToGetNodePoolNodeErrorOutputWithContext(ctx 
 	return o
 }
 
-func (o GetNodePoolNodeErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeError] {
-	return pulumix.Output[GetNodePoolNodeError]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-func (o GetNodePoolNodeErrorOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeError) string { return v.Code }).(pulumi.StringOutput)
+func (o GetNodePoolNodeErrorOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeError) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable error string of the upstream error.
-func (o GetNodePoolNodeErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeError) string { return v.Message }).(pulumi.StringOutput)
+func (o GetNodePoolNodeErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeError) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The status of the HTTP response encountered in the upstream error.
-func (o GetNodePoolNodeErrorOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeError) string { return v.Status }).(pulumi.StringOutput)
+func (o GetNodePoolNodeErrorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeError) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodeErrorArrayOutput struct{ *pulumi.OutputState }
@@ -13469,12 +11554,6 @@ func (o GetNodePoolNodeErrorArrayOutput) ToGetNodePoolNodeErrorArrayOutputWithCo
 	return o
 }
 
-func (o GetNodePoolNodeErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeError] {
-	return pulumix.Output[[]GetNodePoolNodeError]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeErrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeError {
 		return vs[0].([]GetNodePoolNodeError)[vs[1].(int)]
@@ -13483,9 +11562,9 @@ func (o GetNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolNod
 
 type GetNodePoolNodeEvictionNodePoolSetting struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-	EvictionGraceDuration string `pulumi:"evictionGraceDuration"`
+	EvictionGraceDuration *string `pulumi:"evictionGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-	IsForceDeleteAfterGraceDuration bool `pulumi:"isForceDeleteAfterGraceDuration"`
+	IsForceDeleteAfterGraceDuration *bool `pulumi:"isForceDeleteAfterGraceDuration"`
 }
 
 // GetNodePoolNodeEvictionNodePoolSettingInput is an input type that accepts GetNodePoolNodeEvictionNodePoolSettingArgs and GetNodePoolNodeEvictionNodePoolSettingOutput values.
@@ -13501,9 +11580,9 @@ type GetNodePoolNodeEvictionNodePoolSettingInput interface {
 
 type GetNodePoolNodeEvictionNodePoolSettingArgs struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-	EvictionGraceDuration pulumi.StringInput `pulumi:"evictionGraceDuration"`
+	EvictionGraceDuration pulumi.StringPtrInput `pulumi:"evictionGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-	IsForceDeleteAfterGraceDuration pulumi.BoolInput `pulumi:"isForceDeleteAfterGraceDuration"`
+	IsForceDeleteAfterGraceDuration pulumi.BoolPtrInput `pulumi:"isForceDeleteAfterGraceDuration"`
 }
 
 func (GetNodePoolNodeEvictionNodePoolSettingArgs) ElementType() reflect.Type {
@@ -13516,12 +11595,6 @@ func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolNodeEvictionNod
 
 func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolNodeEvictionNodePoolSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeEvictionNodePoolSettingOutput)
-}
-
-func (i GetNodePoolNodeEvictionNodePoolSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: i.ToGetNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeEvictionNodePoolSettingArrayInput is an input type that accepts GetNodePoolNodeEvictionNodePoolSettingArray and GetNodePoolNodeEvictionNodePoolSettingArrayOutput values.
@@ -13549,12 +11622,6 @@ func (i GetNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolNodeEvictionNo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeEvictionNodePoolSettingArrayOutput)
 }
 
-func (i GetNodePoolNodeEvictionNodePoolSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: i.ToGetNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeEvictionNodePoolSettingOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeEvictionNodePoolSettingOutput) ElementType() reflect.Type {
@@ -13569,20 +11636,14 @@ func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolNodeEvictionN
 	return o
 }
 
-func (o GetNodePoolNodeEvictionNodePoolSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[GetNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-func (o GetNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) string { return v.EvictionGraceDuration }).(pulumi.StringOutput)
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) *string { return v.EvictionGraceDuration }).(pulumi.StringPtrOutput)
 }
 
 // If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-func (o GetNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolOutput)
+func (o GetNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeEvictionNodePoolSetting) *bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolPtrOutput)
 }
 
 type GetNodePoolNodeEvictionNodePoolSettingArrayOutput struct{ *pulumi.OutputState }
@@ -13599,12 +11660,6 @@ func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoolNodeEvic
 	return o
 }
 
-func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[[]GetNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeEvictionNodePoolSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeEvictionNodePoolSetting {
 		return vs[0].([]GetNodePoolNodeEvictionNodePoolSetting)[vs[1].(int)]
@@ -13613,11 +11668,11 @@ func (o GetNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInp
 
 type GetNodePoolNodePoolCyclingDetail struct {
 	// If nodes in the nodepool will be cycled to have new changes.
-	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
+	IsNodeCyclingEnabled *bool `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumSurge string `pulumi:"maximumSurge"`
+	MaximumSurge *string `pulumi:"maximumSurge"`
 	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumUnavailable string `pulumi:"maximumUnavailable"`
+	MaximumUnavailable *string `pulumi:"maximumUnavailable"`
 }
 
 // GetNodePoolNodePoolCyclingDetailInput is an input type that accepts GetNodePoolNodePoolCyclingDetailArgs and GetNodePoolNodePoolCyclingDetailOutput values.
@@ -13633,11 +11688,11 @@ type GetNodePoolNodePoolCyclingDetailInput interface {
 
 type GetNodePoolNodePoolCyclingDetailArgs struct {
 	// If nodes in the nodepool will be cycled to have new changes.
-	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
+	IsNodeCyclingEnabled pulumi.BoolPtrInput `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
+	MaximumSurge pulumi.StringPtrInput `pulumi:"maximumSurge"`
 	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
+	MaximumUnavailable pulumi.StringPtrInput `pulumi:"maximumUnavailable"`
 }
 
 func (GetNodePoolNodePoolCyclingDetailArgs) ElementType() reflect.Type {
@@ -13650,12 +11705,6 @@ func (i GetNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolNodePoolCyclingDetail
 
 func (i GetNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolNodePoolCyclingDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodePoolCyclingDetailOutput)
-}
-
-func (i GetNodePoolNodePoolCyclingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[GetNodePoolNodePoolCyclingDetail]{
-		OutputState: i.ToGetNodePoolNodePoolCyclingDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodePoolCyclingDetailArrayInput is an input type that accepts GetNodePoolNodePoolCyclingDetailArray and GetNodePoolNodePoolCyclingDetailArrayOutput values.
@@ -13683,12 +11732,6 @@ func (i GetNodePoolNodePoolCyclingDetailArray) ToGetNodePoolNodePoolCyclingDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
-func (i GetNodePoolNodePoolCyclingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[[]GetNodePoolNodePoolCyclingDetail]{
-		OutputState: i.ToGetNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodePoolCyclingDetailOutput) ElementType() reflect.Type {
@@ -13703,25 +11746,19 @@ func (o GetNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolNodePoolCyclingDeta
 	return o
 }
 
-func (o GetNodePoolNodePoolCyclingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[GetNodePoolNodePoolCyclingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If nodes in the nodepool will be cycled to have new changes.
-func (o GetNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
+func (o GetNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) *bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
+func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) *string { return v.MaximumSurge }).(pulumi.StringPtrOutput)
 }
 
 // Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
+func (o GetNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodePoolCyclingDetail) *string { return v.MaximumUnavailable }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodePoolCyclingDetailArrayOutput struct{ *pulumi.OutputState }
@@ -13738,12 +11775,6 @@ func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolNodePoolCyclin
 	return o
 }
 
-func (o GetNodePoolNodePoolCyclingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[[]GetNodePoolNodePoolCyclingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodePoolCyclingDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodePoolCyclingDetail {
 		return vs[0].([]GetNodePoolNodePoolCyclingDetail)[vs[1].(int)]
@@ -13752,9 +11783,9 @@ func (o GetNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetNodePoolNodeShapeConfig struct {
 	// The total amount of memory available to each node, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetNodePoolNodeShapeConfigInput is an input type that accepts GetNodePoolNodeShapeConfigArgs and GetNodePoolNodeShapeConfigOutput values.
@@ -13770,9 +11801,9 @@ type GetNodePoolNodeShapeConfigInput interface {
 
 type GetNodePoolNodeShapeConfigArgs struct {
 	// The total amount of memory available to each node, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetNodePoolNodeShapeConfigArgs) ElementType() reflect.Type {
@@ -13785,12 +11816,6 @@ func (i GetNodePoolNodeShapeConfigArgs) ToGetNodePoolNodeShapeConfigOutput() Get
 
 func (i GetNodePoolNodeShapeConfigArgs) ToGetNodePoolNodeShapeConfigOutputWithContext(ctx context.Context) GetNodePoolNodeShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeShapeConfigOutput)
-}
-
-func (i GetNodePoolNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeShapeConfig] {
-	return pulumix.Output[GetNodePoolNodeShapeConfig]{
-		OutputState: i.ToGetNodePoolNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeShapeConfigArrayInput is an input type that accepts GetNodePoolNodeShapeConfigArray and GetNodePoolNodeShapeConfigArrayOutput values.
@@ -13818,12 +11843,6 @@ func (i GetNodePoolNodeShapeConfigArray) ToGetNodePoolNodeShapeConfigArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeShapeConfigArrayOutput)
 }
 
-func (i GetNodePoolNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeShapeConfig] {
-	return pulumix.Output[[]GetNodePoolNodeShapeConfig]{
-		OutputState: i.ToGetNodePoolNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -13838,20 +11857,14 @@ func (o GetNodePoolNodeShapeConfigOutput) ToGetNodePoolNodeShapeConfigOutputWith
 	return o
 }
 
-func (o GetNodePoolNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeShapeConfig] {
-	return pulumix.Output[GetNodePoolNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The total amount of memory available to each node, in gigabytes.
-func (o GetNodePoolNodeShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNodePoolNodeShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetNodePoolNodeShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetNodePoolNodeShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNodePoolNodeShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetNodePoolNodeShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetNodePoolNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -13868,12 +11881,6 @@ func (o GetNodePoolNodeShapeConfigArrayOutput) ToGetNodePoolNodeShapeConfigArray
 	return o
 }
 
-func (o GetNodePoolNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeShapeConfig] {
-	return pulumix.Output[[]GetNodePoolNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeShapeConfig {
 		return vs[0].([]GetNodePoolNodeShapeConfig)[vs[1].(int)]
@@ -13882,11 +11889,11 @@ func (o GetNodePoolNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetNodeP
 
 type GetNodePoolNodeSource struct {
 	// The OCID of the image used to boot the node.
-	ImageId string `pulumi:"imageId"`
+	ImageId *string `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
-	SourceName string `pulumi:"sourceName"`
+	SourceName *string `pulumi:"sourceName"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetNodePoolNodeSourceInput is an input type that accepts GetNodePoolNodeSourceArgs and GetNodePoolNodeSourceOutput values.
@@ -13902,11 +11909,11 @@ type GetNodePoolNodeSourceInput interface {
 
 type GetNodePoolNodeSourceArgs struct {
 	// The OCID of the image used to boot the node.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
-	SourceName pulumi.StringInput `pulumi:"sourceName"`
+	SourceName pulumi.StringPtrInput `pulumi:"sourceName"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetNodePoolNodeSourceArgs) ElementType() reflect.Type {
@@ -13919,12 +11926,6 @@ func (i GetNodePoolNodeSourceArgs) ToGetNodePoolNodeSourceOutput() GetNodePoolNo
 
 func (i GetNodePoolNodeSourceArgs) ToGetNodePoolNodeSourceOutputWithContext(ctx context.Context) GetNodePoolNodeSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceOutput)
-}
-
-func (i GetNodePoolNodeSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSource] {
-	return pulumix.Output[GetNodePoolNodeSource]{
-		OutputState: i.ToGetNodePoolNodeSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeSourceArrayInput is an input type that accepts GetNodePoolNodeSourceArray and GetNodePoolNodeSourceArrayOutput values.
@@ -13952,12 +11953,6 @@ func (i GetNodePoolNodeSourceArray) ToGetNodePoolNodeSourceArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceArrayOutput)
 }
 
-func (i GetNodePoolNodeSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSource] {
-	return pulumix.Output[[]GetNodePoolNodeSource]{
-		OutputState: i.ToGetNodePoolNodeSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeSourceOutput) ElementType() reflect.Type {
@@ -13972,25 +11967,19 @@ func (o GetNodePoolNodeSourceOutput) ToGetNodePoolNodeSourceOutputWithContext(ct
 	return o
 }
 
-func (o GetNodePoolNodeSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSource] {
-	return pulumix.Output[GetNodePoolNodeSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the image used to boot the node.
-func (o GetNodePoolNodeSourceOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeSource) string { return v.ImageId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeSourceOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeSource) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name of the entity corresponding to the OCID.
-func (o GetNodePoolNodeSourceOutput) SourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeSource) string { return v.SourceName }).(pulumi.StringOutput)
+func (o GetNodePoolNodeSourceOutput) SourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeSource) *string { return v.SourceName }).(pulumi.StringPtrOutput)
 }
 
 // The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-func (o GetNodePoolNodeSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetNodePoolNodeSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodeSourceArrayOutput struct{ *pulumi.OutputState }
@@ -14007,12 +11996,6 @@ func (o GetNodePoolNodeSourceArrayOutput) ToGetNodePoolNodeSourceArrayOutputWith
 	return o
 }
 
-func (o GetNodePoolNodeSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSource] {
-	return pulumix.Output[[]GetNodePoolNodeSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeSource {
 		return vs[0].([]GetNodePoolNodeSource)[vs[1].(int)]
@@ -14021,11 +12004,11 @@ func (o GetNodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolNo
 
 type GetNodePoolNodeSourceDetail struct {
 	// The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-	BootVolumeSizeInGbs string `pulumi:"bootVolumeSizeInGbs"`
+	BootVolumeSizeInGbs *string `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the image used to boot the node.
-	ImageId string `pulumi:"imageId"`
+	ImageId *string `pulumi:"imageId"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetNodePoolNodeSourceDetailInput is an input type that accepts GetNodePoolNodeSourceDetailArgs and GetNodePoolNodeSourceDetailOutput values.
@@ -14041,11 +12024,11 @@ type GetNodePoolNodeSourceDetailInput interface {
 
 type GetNodePoolNodeSourceDetailArgs struct {
 	// The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-	BootVolumeSizeInGbs pulumi.StringInput `pulumi:"bootVolumeSizeInGbs"`
+	BootVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the image used to boot the node.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetNodePoolNodeSourceDetailArgs) ElementType() reflect.Type {
@@ -14058,12 +12041,6 @@ func (i GetNodePoolNodeSourceDetailArgs) ToGetNodePoolNodeSourceDetailOutput() G
 
 func (i GetNodePoolNodeSourceDetailArgs) ToGetNodePoolNodeSourceDetailOutputWithContext(ctx context.Context) GetNodePoolNodeSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceDetailOutput)
-}
-
-func (i GetNodePoolNodeSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSourceDetail] {
-	return pulumix.Output[GetNodePoolNodeSourceDetail]{
-		OutputState: i.ToGetNodePoolNodeSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolNodeSourceDetailArrayInput is an input type that accepts GetNodePoolNodeSourceDetailArray and GetNodePoolNodeSourceDetailArrayOutput values.
@@ -14091,12 +12068,6 @@ func (i GetNodePoolNodeSourceDetailArray) ToGetNodePoolNodeSourceDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolNodeSourceDetailArrayOutput)
 }
 
-func (i GetNodePoolNodeSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSourceDetail] {
-	return pulumix.Output[[]GetNodePoolNodeSourceDetail]{
-		OutputState: i.ToGetNodePoolNodeSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolNodeSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolNodeSourceDetailOutput) ElementType() reflect.Type {
@@ -14111,25 +12082,19 @@ func (o GetNodePoolNodeSourceDetailOutput) ToGetNodePoolNodeSourceDetailOutputWi
 	return o
 }
 
-func (o GetNodePoolNodeSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolNodeSourceDetail] {
-	return pulumix.Output[GetNodePoolNodeSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-func (o GetNodePoolNodeSourceDetailOutput) BootVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeSourceDetail) string { return v.BootVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o GetNodePoolNodeSourceDetailOutput) BootVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeSourceDetail) *string { return v.BootVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the image used to boot the node.
-func (o GetNodePoolNodeSourceDetailOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeSourceDetail) string { return v.ImageId }).(pulumi.StringOutput)
+func (o GetNodePoolNodeSourceDetailOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeSourceDetail) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-func (o GetNodePoolNodeSourceDetailOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolNodeSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetNodePoolNodeSourceDetailOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolNodeSourceDetail) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolNodeSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -14146,12 +12111,6 @@ func (o GetNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolNodeSourceDetailArr
 	return o
 }
 
-func (o GetNodePoolNodeSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolNodeSourceDetail] {
-	return pulumix.Output[[]GetNodePoolNodeSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolNodeSourceDetail {
 		return vs[0].([]GetNodePoolNodeSourceDetail)[vs[1].(int)]
@@ -14160,11 +12119,11 @@ func (o GetNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetNode
 
 type GetNodePoolOptionSource struct {
 	// The OCID of the image.
-	ImageId string `pulumi:"imageId"`
+	ImageId *string `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
-	SourceName string `pulumi:"sourceName"`
+	SourceName *string `pulumi:"sourceName"`
 	// The source type of this option. `IMAGE` means the OCID is of an image.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetNodePoolOptionSourceInput is an input type that accepts GetNodePoolOptionSourceArgs and GetNodePoolOptionSourceOutput values.
@@ -14180,11 +12139,11 @@ type GetNodePoolOptionSourceInput interface {
 
 type GetNodePoolOptionSourceArgs struct {
 	// The OCID of the image.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
-	SourceName pulumi.StringInput `pulumi:"sourceName"`
+	SourceName pulumi.StringPtrInput `pulumi:"sourceName"`
 	// The source type of this option. `IMAGE` means the OCID is of an image.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetNodePoolOptionSourceArgs) ElementType() reflect.Type {
@@ -14197,12 +12156,6 @@ func (i GetNodePoolOptionSourceArgs) ToGetNodePoolOptionSourceOutput() GetNodePo
 
 func (i GetNodePoolOptionSourceArgs) ToGetNodePoolOptionSourceOutputWithContext(ctx context.Context) GetNodePoolOptionSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolOptionSourceOutput)
-}
-
-func (i GetNodePoolOptionSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolOptionSource] {
-	return pulumix.Output[GetNodePoolOptionSource]{
-		OutputState: i.ToGetNodePoolOptionSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolOptionSourceArrayInput is an input type that accepts GetNodePoolOptionSourceArray and GetNodePoolOptionSourceArrayOutput values.
@@ -14230,12 +12183,6 @@ func (i GetNodePoolOptionSourceArray) ToGetNodePoolOptionSourceArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolOptionSourceArrayOutput)
 }
 
-func (i GetNodePoolOptionSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolOptionSource] {
-	return pulumix.Output[[]GetNodePoolOptionSource]{
-		OutputState: i.ToGetNodePoolOptionSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolOptionSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolOptionSourceOutput) ElementType() reflect.Type {
@@ -14250,25 +12197,19 @@ func (o GetNodePoolOptionSourceOutput) ToGetNodePoolOptionSourceOutputWithContex
 	return o
 }
 
-func (o GetNodePoolOptionSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolOptionSource] {
-	return pulumix.Output[GetNodePoolOptionSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the image.
-func (o GetNodePoolOptionSourceOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolOptionSource) string { return v.ImageId }).(pulumi.StringOutput)
+func (o GetNodePoolOptionSourceOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionSource) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name of the entity corresponding to the OCID.
-func (o GetNodePoolOptionSourceOutput) SourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolOptionSource) string { return v.SourceName }).(pulumi.StringOutput)
+func (o GetNodePoolOptionSourceOutput) SourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionSource) *string { return v.SourceName }).(pulumi.StringPtrOutput)
 }
 
 // The source type of this option. `IMAGE` means the OCID is of an image.
-func (o GetNodePoolOptionSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolOptionSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetNodePoolOptionSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolOptionSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolOptionSourceArrayOutput struct{ *pulumi.OutputState }
@@ -14283,12 +12224,6 @@ func (o GetNodePoolOptionSourceArrayOutput) ToGetNodePoolOptionSourceArrayOutput
 
 func (o GetNodePoolOptionSourceArrayOutput) ToGetNodePoolOptionSourceArrayOutputWithContext(ctx context.Context) GetNodePoolOptionSourceArrayOutput {
 	return o
-}
-
-func (o GetNodePoolOptionSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolOptionSource] {
-	return pulumix.Output[[]GetNodePoolOptionSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNodePoolOptionSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolOptionSourceOutput {
@@ -14334,12 +12269,6 @@ func (i GetNodePoolsFilterArgs) ToGetNodePoolsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsFilterOutput)
 }
 
-func (i GetNodePoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsFilter] {
-	return pulumix.Output[GetNodePoolsFilter]{
-		OutputState: i.ToGetNodePoolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNodePoolsFilterArrayInput is an input type that accepts GetNodePoolsFilterArray and GetNodePoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsFilterArrayInput` via:
 //
@@ -14365,12 +12294,6 @@ func (i GetNodePoolsFilterArray) ToGetNodePoolsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsFilterArrayOutput)
 }
 
-func (i GetNodePoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsFilter] {
-	return pulumix.Output[[]GetNodePoolsFilter]{
-		OutputState: i.ToGetNodePoolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsFilterOutput) ElementType() reflect.Type {
@@ -14383,12 +12306,6 @@ func (o GetNodePoolsFilterOutput) ToGetNodePoolsFilterOutput() GetNodePoolsFilte
 
 func (o GetNodePoolsFilterOutput) ToGetNodePoolsFilterOutputWithContext(ctx context.Context) GetNodePoolsFilterOutput {
 	return o
-}
-
-func (o GetNodePoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsFilter] {
-	return pulumix.Output[GetNodePoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name to filter on.
@@ -14418,12 +12335,6 @@ func (o GetNodePoolsFilterArrayOutput) ToGetNodePoolsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetNodePoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsFilter] {
-	return pulumix.Output[[]GetNodePoolsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetNodePoolsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsFilter {
 		return vs[0].([]GetNodePoolsFilter)[vs[1].(int)]
@@ -14432,23 +12343,23 @@ func (o GetNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetNodePoolsFilt
 
 type GetNodePoolsNodePool struct {
 	// The OCID of the cluster.
-	ClusterId string `pulumi:"clusterId"`
+	ClusterId *string `pulumi:"clusterId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the node pool.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels []GetNodePoolsNodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the nodepool.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name to filter on.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails []GetNodePoolsNodePoolNodeConfigDetail `pulumi:"nodeConfigDetails"`
 	// Node Eviction Details configuration
@@ -14456,18 +12367,18 @@ type GetNodePoolsNodePool struct {
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageId string `pulumi:"nodeImageId"`
+	NodeImageId *string `pulumi:"nodeImageId"`
 	// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageName string `pulumi:"nodeImageName"`
+	NodeImageName *string `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails []GetNodePoolsNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
-	NodePoolId             string                                      `pulumi:"nodePoolId"`
+	NodePoolId             *string                                     `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
-	NodeShape string `pulumi:"nodeShape"`
+	NodeShape *string `pulumi:"nodeShape"`
 	// The shape configuration of the nodes.
 	NodeShapeConfigs []GetNodePoolsNodePoolNodeShapeConfig `pulumi:"nodeShapeConfigs"`
 	// Source running on the nodes in the node pool.
@@ -14476,11 +12387,11 @@ type GetNodePoolsNodePool struct {
 	NodeSources []GetNodePoolsNodePoolNodeSource `pulumi:"nodeSources"`
 	Nodes       []GetNodePoolsNodePoolNode       `pulumi:"nodes"`
 	// The number of nodes in each subnet.
-	QuantityPerSubnet int `pulumi:"quantityPerSubnet"`
+	QuantityPerSubnet *int `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
-	SshPublicKey string `pulumi:"sshPublicKey"`
+	SshPublicKey *string `pulumi:"sshPublicKey"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds []string `pulumi:"subnetIds"`
 }
@@ -14498,23 +12409,23 @@ type GetNodePoolsNodePoolInput interface {
 
 type GetNodePoolsNodePoolArgs struct {
 	// The OCID of the cluster.
-	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the node pool.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels GetNodePoolsNodePoolInitialNodeLabelArrayInput `pulumi:"initialNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrInput `pulumi:"kubernetesVersion"`
 	// Details about the state of the nodepool.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The name to filter on.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The configuration of nodes in the node pool.
 	NodeConfigDetails GetNodePoolsNodePoolNodeConfigDetailArrayInput `pulumi:"nodeConfigDetails"`
 	// Node Eviction Details configuration
@@ -14522,18 +12433,18 @@ type GetNodePoolsNodePoolArgs struct {
 	// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageId pulumi.StringInput `pulumi:"nodeImageId"`
+	NodeImageId pulumi.StringPtrInput `pulumi:"nodeImageId"`
 	// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 	//
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-	NodeImageName pulumi.StringInput `pulumi:"nodeImageName"`
+	NodeImageName pulumi.StringPtrInput `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
 	NodeMetadata pulumi.MapInput `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput `pulumi:"nodePoolCyclingDetails"`
-	NodePoolId             pulumi.StringInput                                  `pulumi:"nodePoolId"`
+	NodePoolId             pulumi.StringPtrInput                               `pulumi:"nodePoolId"`
 	// The name of the node shape of the nodes in the node pool.
-	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
+	NodeShape pulumi.StringPtrInput `pulumi:"nodeShape"`
 	// The shape configuration of the nodes.
 	NodeShapeConfigs GetNodePoolsNodePoolNodeShapeConfigArrayInput `pulumi:"nodeShapeConfigs"`
 	// Source running on the nodes in the node pool.
@@ -14542,11 +12453,11 @@ type GetNodePoolsNodePoolArgs struct {
 	NodeSources GetNodePoolsNodePoolNodeSourceArrayInput `pulumi:"nodeSources"`
 	Nodes       GetNodePoolsNodePoolNodeArrayInput       `pulumi:"nodes"`
 	// The number of nodes in each subnet.
-	QuantityPerSubnet pulumi.IntInput `pulumi:"quantityPerSubnet"`
+	QuantityPerSubnet pulumi.IntPtrInput `pulumi:"quantityPerSubnet"`
 	// The SSH public key on each node in the node pool on launch.
-	SshPublicKey pulumi.StringInput `pulumi:"sshPublicKey"`
+	SshPublicKey pulumi.StringPtrInput `pulumi:"sshPublicKey"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 }
@@ -14561,12 +12472,6 @@ func (i GetNodePoolsNodePoolArgs) ToGetNodePoolsNodePoolOutput() GetNodePoolsNod
 
 func (i GetNodePoolsNodePoolArgs) ToGetNodePoolsNodePoolOutputWithContext(ctx context.Context) GetNodePoolsNodePoolOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolOutput)
-}
-
-func (i GetNodePoolsNodePoolArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePool] {
-	return pulumix.Output[GetNodePoolsNodePool]{
-		OutputState: i.ToGetNodePoolsNodePoolOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolArrayInput is an input type that accepts GetNodePoolsNodePoolArray and GetNodePoolsNodePoolArrayOutput values.
@@ -14594,12 +12499,6 @@ func (i GetNodePoolsNodePoolArray) ToGetNodePoolsNodePoolArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePool] {
-	return pulumix.Output[[]GetNodePoolsNodePool]{
-		OutputState: i.ToGetNodePoolsNodePoolArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolOutput) ElementType() reflect.Type {
@@ -14614,20 +12513,14 @@ func (o GetNodePoolsNodePoolOutput) ToGetNodePoolsNodePoolOutputWithContext(ctx 
 	return o
 }
 
-func (o GetNodePoolsNodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePool] {
-	return pulumix.Output[GetNodePoolsNodePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
-func (o GetNodePoolsNodePoolOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.ClusterId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetNodePoolsNodePoolOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -14641,8 +12534,8 @@ func (o GetNodePoolsNodePoolOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the node pool.
-func (o GetNodePoolsNodePoolOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -14651,18 +12544,18 @@ func (o GetNodePoolsNodePoolOutput) InitialNodeLabels() GetNodePoolsNodePoolInit
 }
 
 // The version of Kubernetes running on the nodes in the node pool.
-func (o GetNodePoolsNodePoolOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the nodepool.
-func (o GetNodePoolsNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The name to filter on.
-func (o GetNodePoolsNodePoolOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of nodes in the node pool.
@@ -14680,15 +12573,15 @@ func (o GetNodePoolsNodePoolOutput) NodeEvictionNodePoolSettings() GetNodePoolsN
 // Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 //
 // Deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-func (o GetNodePoolsNodePoolOutput) NodeImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NodeImageId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) NodeImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.NodeImageId }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 //
 // Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
-func (o GetNodePoolsNodePoolOutput) NodeImageName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NodeImageName }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) NodeImageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.NodeImageName }).(pulumi.StringPtrOutput)
 }
 
 // A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
@@ -14703,13 +12596,13 @@ func (o GetNodePoolsNodePoolOutput) NodePoolCyclingDetails() GetNodePoolsNodePoo
 	}).(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
-func (o GetNodePoolsNodePoolOutput) NodePoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NodePoolId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) NodePoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.NodePoolId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the node shape of the nodes in the node pool.
-func (o GetNodePoolsNodePoolOutput) NodeShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.NodeShape }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) NodeShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.NodeShape }).(pulumi.StringPtrOutput)
 }
 
 // The shape configuration of the nodes.
@@ -14732,18 +12625,18 @@ func (o GetNodePoolsNodePoolOutput) Nodes() GetNodePoolsNodePoolNodeArrayOutput 
 }
 
 // The number of nodes in each subnet.
-func (o GetNodePoolsNodePoolOutput) QuantityPerSubnet() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) int { return v.QuantityPerSubnet }).(pulumi.IntOutput)
+func (o GetNodePoolsNodePoolOutput) QuantityPerSubnet() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *int { return v.QuantityPerSubnet }).(pulumi.IntPtrOutput)
 }
 
 // The SSH public key on each node in the node pool on launch.
-func (o GetNodePoolsNodePoolOutput) SshPublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.SshPublicKey }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) SshPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.SshPublicKey }).(pulumi.StringPtrOutput)
 }
 
 // A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-func (o GetNodePoolsNodePoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) string { return v.State }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCIDs of the subnets in which to place nodes for this node pool.
@@ -14765,12 +12658,6 @@ func (o GetNodePoolsNodePoolArrayOutput) ToGetNodePoolsNodePoolArrayOutputWithCo
 	return o
 }
 
-func (o GetNodePoolsNodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePool] {
-	return pulumix.Output[[]GetNodePoolsNodePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePool {
 		return vs[0].([]GetNodePoolsNodePool)[vs[1].(int)]
@@ -14779,9 +12666,9 @@ func (o GetNodePoolsNodePoolArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNo
 
 type GetNodePoolsNodePoolInitialNodeLabel struct {
 	// The key of the pair.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The value of the pair.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetNodePoolsNodePoolInitialNodeLabelInput is an input type that accepts GetNodePoolsNodePoolInitialNodeLabelArgs and GetNodePoolsNodePoolInitialNodeLabelOutput values.
@@ -14797,9 +12684,9 @@ type GetNodePoolsNodePoolInitialNodeLabelInput interface {
 
 type GetNodePoolsNodePoolInitialNodeLabelArgs struct {
 	// The key of the pair.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The value of the pair.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetNodePoolsNodePoolInitialNodeLabelArgs) ElementType() reflect.Type {
@@ -14812,12 +12699,6 @@ func (i GetNodePoolsNodePoolInitialNodeLabelArgs) ToGetNodePoolsNodePoolInitialN
 
 func (i GetNodePoolsNodePoolInitialNodeLabelArgs) ToGetNodePoolsNodePoolInitialNodeLabelOutputWithContext(ctx context.Context) GetNodePoolsNodePoolInitialNodeLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolInitialNodeLabelOutput)
-}
-
-func (i GetNodePoolsNodePoolInitialNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel] {
-	return pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel]{
-		OutputState: i.ToGetNodePoolsNodePoolInitialNodeLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolInitialNodeLabelArrayInput is an input type that accepts GetNodePoolsNodePoolInitialNodeLabelArray and GetNodePoolsNodePoolInitialNodeLabelArrayOutput values.
@@ -14845,12 +12726,6 @@ func (i GetNodePoolsNodePoolInitialNodeLabelArray) ToGetNodePoolsNodePoolInitial
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolInitialNodeLabelArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolInitialNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel] {
-	return pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel]{
-		OutputState: i.ToGetNodePoolsNodePoolInitialNodeLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolInitialNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolInitialNodeLabelOutput) ElementType() reflect.Type {
@@ -14865,20 +12740,14 @@ func (o GetNodePoolsNodePoolInitialNodeLabelOutput) ToGetNodePoolsNodePoolInitia
 	return o
 }
 
-func (o GetNodePoolsNodePoolInitialNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel] {
-	return pulumix.Output[GetNodePoolsNodePoolInitialNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key of the pair.
-func (o GetNodePoolsNodePoolInitialNodeLabelOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolInitialNodeLabel) string { return v.Key }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolInitialNodeLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolInitialNodeLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The value of the pair.
-func (o GetNodePoolsNodePoolInitialNodeLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolInitialNodeLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolInitialNodeLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolInitialNodeLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolInitialNodeLabelArrayOutput struct{ *pulumi.OutputState }
@@ -14895,12 +12764,6 @@ func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) ToGetNodePoolsNodePoolI
 	return o
 }
 
-func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel] {
-	return pulumix.Output[[]GetNodePoolsNodePoolInitialNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolInitialNodeLabelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolInitialNodeLabel {
 		return vs[0].([]GetNodePoolsNodePoolInitialNodeLabel)[vs[1].(int)]
@@ -14909,28 +12772,28 @@ func (o GetNodePoolsNodePoolInitialNodeLabelArrayOutput) Index(i pulumi.IntInput
 
 type GetNodePoolsNodePoolNode struct {
 	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{}          `pulumi:"definedTags"`
 	Errors      []GetNodePoolsNodePoolNodeError `pulumi:"errors"`
-	FaultDomain string                          `pulumi:"faultDomain"`
+	FaultDomain *string                         `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the node pool.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the nodepool.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name to filter on.
-	Name       string `pulumi:"name"`
-	NodePoolId string `pulumi:"nodePoolId"`
-	PrivateIp  string `pulumi:"privateIp"`
-	PublicIp   string `pulumi:"publicIp"`
+	Name       *string `pulumi:"name"`
+	NodePoolId *string `pulumi:"nodePoolId"`
+	PrivateIp  *string `pulumi:"privateIp"`
+	PublicIp   *string `pulumi:"publicIp"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet in which to place nodes.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetNodePoolsNodePoolNodeInput is an input type that accepts GetNodePoolsNodePoolNodeArgs and GetNodePoolsNodePoolNodeOutput values.
@@ -14946,28 +12809,28 @@ type GetNodePoolsNodePoolNodeInput interface {
 
 type GetNodePoolsNodePoolNodeArgs struct {
 	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput                         `pulumi:"definedTags"`
 	Errors      GetNodePoolsNodePoolNodeErrorArrayInput `pulumi:"errors"`
-	FaultDomain pulumi.StringInput                      `pulumi:"faultDomain"`
+	FaultDomain pulumi.StringPtrInput                   `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the node pool.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrInput `pulumi:"kubernetesVersion"`
 	// Details about the state of the nodepool.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The name to filter on.
-	Name       pulumi.StringInput `pulumi:"name"`
-	NodePoolId pulumi.StringInput `pulumi:"nodePoolId"`
-	PrivateIp  pulumi.StringInput `pulumi:"privateIp"`
-	PublicIp   pulumi.StringInput `pulumi:"publicIp"`
+	Name       pulumi.StringPtrInput `pulumi:"name"`
+	NodePoolId pulumi.StringPtrInput `pulumi:"nodePoolId"`
+	PrivateIp  pulumi.StringPtrInput `pulumi:"privateIp"`
+	PublicIp   pulumi.StringPtrInput `pulumi:"publicIp"`
 	// A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet in which to place nodes.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetNodePoolsNodePoolNodeArgs) ElementType() reflect.Type {
@@ -14980,12 +12843,6 @@ func (i GetNodePoolsNodePoolNodeArgs) ToGetNodePoolsNodePoolNodeOutput() GetNode
 
 func (i GetNodePoolsNodePoolNodeArgs) ToGetNodePoolsNodePoolNodeOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNode] {
-	return pulumix.Output[GetNodePoolsNodePoolNode]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeArrayInput is an input type that accepts GetNodePoolsNodePoolNodeArray and GetNodePoolsNodePoolNodeArrayOutput values.
@@ -15013,12 +12870,6 @@ func (i GetNodePoolsNodePoolNodeArray) ToGetNodePoolsNodePoolNodeArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNode] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNode]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeOutput) ElementType() reflect.Type {
@@ -15033,15 +12884,9 @@ func (o GetNodePoolsNodePoolNodeOutput) ToGetNodePoolsNodePoolNodeOutputWithCont
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNode] {
-	return pulumix.Output[GetNodePoolsNodePoolNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-func (o GetNodePoolsNodePoolNodeOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -15053,8 +12898,8 @@ func (o GetNodePoolsNodePoolNodeOutput) Errors() GetNodePoolsNodePoolNodeErrorAr
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) []GetNodePoolsNodePoolNodeError { return v.Errors }).(GetNodePoolsNodePoolNodeErrorArrayOutput)
 }
 
-func (o GetNodePoolsNodePoolNodeOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -15063,45 +12908,45 @@ func (o GetNodePoolsNodePoolNodeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the node pool.
-func (o GetNodePoolsNodePoolNodeOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The version of Kubernetes running on the nodes in the node pool.
-func (o GetNodePoolsNodePoolNodeOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the nodepool.
-func (o GetNodePoolsNodePoolNodeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The name to filter on.
-func (o GetNodePoolsNodePoolNodeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNodePoolsNodePoolNodeOutput) NodePoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.NodePoolId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) NodePoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.NodePoolId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNodePoolsNodePoolNodeOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.PrivateIp }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNodePoolsNodePoolNodeOutput) PublicIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.PublicIp }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
 }
 
 // A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
-func (o GetNodePoolsNodePoolNodeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.State }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet in which to place nodes.
-func (o GetNodePoolsNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeArrayOutput struct{ *pulumi.OutputState }
@@ -15118,12 +12963,6 @@ func (o GetNodePoolsNodePoolNodeArrayOutput) ToGetNodePoolsNodePoolNodeArrayOutp
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNode] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNode {
 		return vs[0].([]GetNodePoolsNodePoolNode)[vs[1].(int)]
@@ -15136,9 +12975,9 @@ type GetNodePoolsNodePoolNodeConfigDetail struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails []GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -15146,7 +12985,7 @@ type GetNodePoolsNodePoolNodeConfigDetail struct {
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfig `pulumi:"placementConfigs"`
 	// The number of nodes in the node pool.
-	Size int `pulumi:"size"`
+	Size *int `pulumi:"size"`
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailArgs and GetNodePoolsNodePoolNodeConfigDetailOutput values.
@@ -15166,9 +13005,9 @@ type GetNodePoolsNodePoolNodeConfigDetailArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The CNI related configuration of pods in the node pool.
 	NodePoolPodNetworkOptionDetails GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput `pulumi:"nodePoolPodNetworkOptionDetails"`
 	// The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -15176,7 +13015,7 @@ type GetNodePoolsNodePoolNodeConfigDetailArgs struct {
 	// The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
 	PlacementConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput `pulumi:"placementConfigs"`
 	// The number of nodes in the node pool.
-	Size pulumi.IntInput `pulumi:"size"`
+	Size pulumi.IntPtrInput `pulumi:"size"`
 }
 
 func (GetNodePoolsNodePoolNodeConfigDetailArgs) ElementType() reflect.Type {
@@ -15189,12 +13028,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailArgs) ToGetNodePoolsNodePoolNodeConf
 
 func (i GetNodePoolsNodePoolNodeConfigDetailArgs) ToGetNodePoolsNodePoolNodeConfigDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeConfigDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailArray and GetNodePoolsNodePoolNodeConfigDetailArrayOutput values.
@@ -15222,12 +13055,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailArray) ToGetNodePoolsNodePoolNodeCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeConfigDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeConfigDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailOutput) ElementType() reflect.Type {
@@ -15242,12 +13069,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToGetNodePoolsNodePoolNodeCo
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetNodePoolsNodePoolNodeConfigDetailOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -15259,13 +13080,13 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) FreeformTags() pulumi.MapOut
 }
 
 // Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
-func (o GetNodePoolsNodePoolNodeConfigDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) *bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the Key Management Service key assigned to the boot volume.
-func (o GetNodePoolsNodePoolNodeConfigDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The CNI related configuration of pods in the node pool.
@@ -15288,8 +13109,8 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) PlacementConfigs() GetNodePo
 }
 
 // The number of nodes in the node pool.
-func (o GetNodePoolsNodePoolNodeConfigDetailOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) int { return v.Size }).(pulumi.IntOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeConfigDetailArrayOutput struct{ *pulumi.OutputState }
@@ -15306,12 +13127,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) ToGetNodePoolsNodePoolN
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetail {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetail)[vs[1].(int)]
@@ -15320,9 +13135,9 @@ func (o GetNodePoolsNodePoolNodeConfigDetailArrayOutput) Index(i pulumi.IntInput
 
 type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail struct {
 	// The CNI plugin used by this node pool
-	CniType string `pulumi:"cniType"`
+	CniType *string `pulumi:"cniType"`
 	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-	MaxPodsPerNode int `pulumi:"maxPodsPerNode"`
+	MaxPodsPerNode *int `pulumi:"maxPodsPerNode"`
 	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	PodNsgIds []string `pulumi:"podNsgIds"`
 	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
@@ -15342,9 +13157,9 @@ type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailInput int
 
 type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs struct {
 	// The CNI plugin used by this node pool
-	CniType pulumi.StringInput `pulumi:"cniType"`
+	CniType pulumi.StringPtrInput `pulumi:"cniType"`
 	// The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-	MaxPodsPerNode pulumi.IntInput `pulumi:"maxPodsPerNode"`
+	MaxPodsPerNode pulumi.IntPtrInput `pulumi:"maxPodsPerNode"`
 	// The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	PodNsgIds pulumi.StringArrayInput `pulumi:"podNsgIds"`
 	// The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
@@ -15361,12 +13176,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) 
 
 func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray and GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput values.
@@ -15394,12 +13203,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ElementType() reflect.Type {
@@ -15414,22 +13217,16 @@ func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CNI plugin used by this node pool
-func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) CniType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) string { return v.CniType }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) CniType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) *string { return v.CniType }).(pulumi.StringPtrOutput)
 }
 
 // The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
-func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) MaxPodsPerNode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) int {
+func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput) MaxPodsPerNode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail) *int {
 		return v.MaxPodsPerNode
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -15460,12 +13257,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayO
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail)[vs[1].(int)]
@@ -15474,15 +13265,15 @@ func (o GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailArrayO
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfig struct {
 	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs []GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which to place nodes.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput values.
@@ -15498,15 +13289,15 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigInput interface {
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs struct {
 	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The OCID of the compute capacity reservation in which to place the compute instance.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// A list of fault domains in which to place nodes.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// Configuration options for preemptible nodes.
 	PreemptibleNodeConfigs GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput `pulumi:"preemptibleNodeConfigs"`
 	// The OCID of the subnet in which to place nodes.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs) ElementType() reflect.Type {
@@ -15519,12 +13310,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs) ToGetNodePoolsN
 
 func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput values.
@@ -15552,12 +13337,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray) ToGetNodePools
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ElementType() reflect.Type {
@@ -15572,20 +13351,14 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ToGetNodePool
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compute capacity reservation in which to place the compute instance.
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // A list of fault domains in which to place nodes.
@@ -15601,8 +13374,8 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) PreemptibleNo
 }
 
 // The OCID of the subnet in which to place nodes.
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfig) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput struct{ *pulumi.OutputState }
@@ -15617,12 +13390,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToGetNod
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput {
 	return o
-}
-
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigOutput {
@@ -15664,12 +13431,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput values.
 // You can construct a concrete instance of `GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayInput` via:
 //
@@ -15695,12 +13456,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ElementType() reflect.Type {
@@ -15713,12 +13468,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
 	return o
-}
-
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to run when the preemptible node is interrupted for eviction.
@@ -15742,12 +13491,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig)[vs[1].(int)]
@@ -15756,9 +13499,9 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction struct {
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	IsPreserveBootVolume bool `pulumi:"isPreserveBootVolume"`
+	IsPreserveBootVolume *bool `pulumi:"isPreserveBootVolume"`
 	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput values.
@@ -15774,9 +13517,9 @@ type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPre
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs struct {
 	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	IsPreserveBootVolume pulumi.BoolInput `pulumi:"isPreserveBootVolume"`
+	IsPreserveBootVolume pulumi.BoolPtrInput `pulumi:"isPreserveBootVolume"`
 	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ElementType() reflect.Type {
@@ -15789,12 +13532,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 
 func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayInput is an input type that accepts GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray and GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput values.
@@ -15822,12 +13559,6 @@ func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ElementType() reflect.Type {
@@ -15842,24 +13573,18 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) bool {
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) IsPreserveBootVolume() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) *bool {
 		return v.IsPreserveBootVolume
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The type of action to run when the instance is interrupted for eviction.
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) string {
+func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
@@ -15876,12 +13601,6 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction {
 		return vs[0].([]GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction)[vs[1].(int)]
@@ -15889,9 +13608,9 @@ func (o GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig
 }
 
 type GetNodePoolsNodePoolNodeError struct {
-	Code    string `pulumi:"code"`
-	Message string `pulumi:"message"`
-	Status  string `pulumi:"status"`
+	Code    *string `pulumi:"code"`
+	Message *string `pulumi:"message"`
+	Status  *string `pulumi:"status"`
 }
 
 // GetNodePoolsNodePoolNodeErrorInput is an input type that accepts GetNodePoolsNodePoolNodeErrorArgs and GetNodePoolsNodePoolNodeErrorOutput values.
@@ -15906,9 +13625,9 @@ type GetNodePoolsNodePoolNodeErrorInput interface {
 }
 
 type GetNodePoolsNodePoolNodeErrorArgs struct {
-	Code    pulumi.StringInput `pulumi:"code"`
-	Message pulumi.StringInput `pulumi:"message"`
-	Status  pulumi.StringInput `pulumi:"status"`
+	Code    pulumi.StringPtrInput `pulumi:"code"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	Status  pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetNodePoolsNodePoolNodeErrorArgs) ElementType() reflect.Type {
@@ -15921,12 +13640,6 @@ func (i GetNodePoolsNodePoolNodeErrorArgs) ToGetNodePoolsNodePoolNodeErrorOutput
 
 func (i GetNodePoolsNodePoolNodeErrorArgs) ToGetNodePoolsNodePoolNodeErrorOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeErrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeErrorOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeError] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeError]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeErrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeErrorArrayInput is an input type that accepts GetNodePoolsNodePoolNodeErrorArray and GetNodePoolsNodePoolNodeErrorArrayOutput values.
@@ -15954,12 +13667,6 @@ func (i GetNodePoolsNodePoolNodeErrorArray) ToGetNodePoolsNodePoolNodeErrorArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeErrorArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeError] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeError]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeErrorOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeErrorOutput) ElementType() reflect.Type {
@@ -15974,22 +13681,16 @@ func (o GetNodePoolsNodePoolNodeErrorOutput) ToGetNodePoolsNodePoolNodeErrorOutp
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeError] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeError]{
-		OutputState: o.OutputState,
-	}
+func (o GetNodePoolsNodePoolNodeErrorOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNodePoolsNodePoolNodeErrorOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) string { return v.Code }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
-func (o GetNodePoolsNodePoolNodeErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) string { return v.Message }).(pulumi.StringOutput)
-}
-
-func (o GetNodePoolsNodePoolNodeErrorOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) string { return v.Status }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeErrorOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeError) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeErrorArrayOutput struct{ *pulumi.OutputState }
@@ -16006,12 +13707,6 @@ func (o GetNodePoolsNodePoolNodeErrorArrayOutput) ToGetNodePoolsNodePoolNodeErro
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeError] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeError]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeErrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeError {
 		return vs[0].([]GetNodePoolsNodePoolNodeError)[vs[1].(int)]
@@ -16020,9 +13715,9 @@ func (o GetNodePoolsNodePoolNodeErrorArrayOutput) Index(i pulumi.IntInput) GetNo
 
 type GetNodePoolsNodePoolNodeEvictionNodePoolSetting struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-	EvictionGraceDuration string `pulumi:"evictionGraceDuration"`
+	EvictionGraceDuration *string `pulumi:"evictionGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-	IsForceDeleteAfterGraceDuration bool `pulumi:"isForceDeleteAfterGraceDuration"`
+	IsForceDeleteAfterGraceDuration *bool `pulumi:"isForceDeleteAfterGraceDuration"`
 }
 
 // GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput is an input type that accepts GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs and GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput values.
@@ -16038,9 +13733,9 @@ type GetNodePoolsNodePoolNodeEvictionNodePoolSettingInput interface {
 
 type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs struct {
 	// Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-	EvictionGraceDuration pulumi.StringInput `pulumi:"evictionGraceDuration"`
+	EvictionGraceDuration pulumi.StringPtrInput `pulumi:"evictionGraceDuration"`
 	// If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-	IsForceDeleteAfterGraceDuration pulumi.BoolInput `pulumi:"isForceDeleteAfterGraceDuration"`
+	IsForceDeleteAfterGraceDuration pulumi.BoolPtrInput `pulumi:"isForceDeleteAfterGraceDuration"`
 }
 
 func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ElementType() reflect.Type {
@@ -16053,12 +13748,6 @@ func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolsNodeP
 
 func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayInput is an input type that accepts GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray and GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput values.
@@ -16086,12 +13775,6 @@ func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ToGetNodePoolsNode
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeEvictionNodePoolSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ElementType() reflect.Type {
@@ -16106,20 +13789,16 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToGetNodePoolsNod
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) string { return v.EvictionGraceDuration }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) EvictionGraceDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) *string { return v.EvictionGraceDuration }).(pulumi.StringPtrOutput)
 }
 
 // If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) bool { return v.IsForceDeleteAfterGraceDuration }).(pulumi.BoolOutput)
+func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput) IsForceDeleteAfterGraceDuration() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeEvictionNodePoolSetting) *bool {
+		return v.IsForceDeleteAfterGraceDuration
+	}).(pulumi.BoolPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput struct{ *pulumi.OutputState }
@@ -16136,12 +13815,6 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToGetNodePoo
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeEvictionNodePoolSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeEvictionNodePoolSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeEvictionNodePoolSetting {
 		return vs[0].([]GetNodePoolsNodePoolNodeEvictionNodePoolSetting)[vs[1].(int)]
@@ -16150,11 +13823,11 @@ func (o GetNodePoolsNodePoolNodeEvictionNodePoolSettingArrayOutput) Index(i pulu
 
 type GetNodePoolsNodePoolNodePoolCyclingDetail struct {
 	// If nodes in the nodepool will be cycled to have new changes.
-	IsNodeCyclingEnabled bool `pulumi:"isNodeCyclingEnabled"`
+	IsNodeCyclingEnabled *bool `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumSurge string `pulumi:"maximumSurge"`
+	MaximumSurge *string `pulumi:"maximumSurge"`
 	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumUnavailable string `pulumi:"maximumUnavailable"`
+	MaximumUnavailable *string `pulumi:"maximumUnavailable"`
 }
 
 // GetNodePoolsNodePoolNodePoolCyclingDetailInput is an input type that accepts GetNodePoolsNodePoolNodePoolCyclingDetailArgs and GetNodePoolsNodePoolNodePoolCyclingDetailOutput values.
@@ -16170,11 +13843,11 @@ type GetNodePoolsNodePoolNodePoolCyclingDetailInput interface {
 
 type GetNodePoolsNodePoolNodePoolCyclingDetailArgs struct {
 	// If nodes in the nodepool will be cycled to have new changes.
-	IsNodeCyclingEnabled pulumi.BoolInput `pulumi:"isNodeCyclingEnabled"`
+	IsNodeCyclingEnabled pulumi.BoolPtrInput `pulumi:"isNodeCyclingEnabled"`
 	// Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
+	MaximumSurge pulumi.StringPtrInput `pulumi:"maximumSurge"`
 	// Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
+	MaximumUnavailable pulumi.StringPtrInput `pulumi:"maximumUnavailable"`
 }
 
 func (GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ElementType() reflect.Type {
@@ -16187,12 +13860,6 @@ func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolsNodePoolNod
 
 func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodePoolCyclingDetailOutput)
-}
-
-func (i GetNodePoolsNodePoolNodePoolCyclingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodePoolCyclingDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodePoolCyclingDetailArray and GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput values.
@@ -16220,12 +13887,6 @@ func (i GetNodePoolsNodePoolNodePoolCyclingDetailArray) ToGetNodePoolsNodePoolNo
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodePoolCyclingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodePoolCyclingDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ElementType() reflect.Type {
@@ -16240,25 +13901,19 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToGetNodePoolsNodePoolN
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodePoolCyclingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If nodes in the nodepool will be cycled to have new changes.
-func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolOutput)
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) IsNodeCyclingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) *bool { return v.IsNodeCyclingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
-func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) *string { return v.MaximumSurge }).(pulumi.StringPtrOutput)
 }
 
 // Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
-func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodePoolCyclingDetail) *string { return v.MaximumUnavailable }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput struct{ *pulumi.OutputState }
@@ -16275,12 +13930,6 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToGetNodePoolsNode
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodePoolCyclingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodePoolCyclingDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodePoolCyclingDetail {
 		return vs[0].([]GetNodePoolsNodePoolNodePoolCyclingDetail)[vs[1].(int)]
@@ -16289,9 +13938,9 @@ func (o GetNodePoolsNodePoolNodePoolCyclingDetailArrayOutput) Index(i pulumi.Int
 
 type GetNodePoolsNodePoolNodeShapeConfig struct {
 	// The total amount of memory available to each node, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus float64 `pulumi:"ocpus"`
+	Ocpus *float64 `pulumi:"ocpus"`
 }
 
 // GetNodePoolsNodePoolNodeShapeConfigInput is an input type that accepts GetNodePoolsNodePoolNodeShapeConfigArgs and GetNodePoolsNodePoolNodeShapeConfigOutput values.
@@ -16307,9 +13956,9 @@ type GetNodePoolsNodePoolNodeShapeConfigInput interface {
 
 type GetNodePoolsNodePoolNodeShapeConfigArgs struct {
 	// The total amount of memory available to each node, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
 	// The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
 func (GetNodePoolsNodePoolNodeShapeConfigArgs) ElementType() reflect.Type {
@@ -16322,12 +13971,6 @@ func (i GetNodePoolsNodePoolNodeShapeConfigArgs) ToGetNodePoolsNodePoolNodeShape
 
 func (i GetNodePoolsNodePoolNodeShapeConfigArgs) ToGetNodePoolsNodePoolNodeShapeConfigOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeShapeConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeShapeConfigOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeShapeConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeShapeConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeShapeConfigArrayInput is an input type that accepts GetNodePoolsNodePoolNodeShapeConfigArray and GetNodePoolsNodePoolNodeShapeConfigArrayOutput values.
@@ -16355,12 +13998,6 @@ func (i GetNodePoolsNodePoolNodeShapeConfigArray) ToGetNodePoolsNodePoolNodeShap
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeShapeConfigArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeShapeConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeShapeConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeShapeConfigOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeShapeConfigOutput) ElementType() reflect.Type {
@@ -16375,20 +14012,14 @@ func (o GetNodePoolsNodePoolNodeShapeConfigOutput) ToGetNodePoolsNodePoolNodeSha
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeShapeConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The total amount of memory available to each node, in gigabytes.
-func (o GetNodePoolsNodePoolNodeShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+func (o GetNodePoolsNodePoolNodeShapeConfigOutput) MemoryInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeShapeConfig) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-func (o GetNodePoolsNodePoolNodeShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+func (o GetNodePoolsNodePoolNodeShapeConfigOutput) Ocpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeShapeConfig) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -16405,12 +14036,6 @@ func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) ToGetNodePoolsNodePoolNo
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeShapeConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeShapeConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeShapeConfig {
 		return vs[0].([]GetNodePoolsNodePoolNodeShapeConfig)[vs[1].(int)]
@@ -16419,11 +14044,11 @@ func (o GetNodePoolsNodePoolNodeShapeConfigArrayOutput) Index(i pulumi.IntInput)
 
 type GetNodePoolsNodePoolNodeSource struct {
 	// The OCID of the image used to boot the node.
-	ImageId string `pulumi:"imageId"`
+	ImageId *string `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
-	SourceName string `pulumi:"sourceName"`
+	SourceName *string `pulumi:"sourceName"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetNodePoolsNodePoolNodeSourceInput is an input type that accepts GetNodePoolsNodePoolNodeSourceArgs and GetNodePoolsNodePoolNodeSourceOutput values.
@@ -16439,11 +14064,11 @@ type GetNodePoolsNodePoolNodeSourceInput interface {
 
 type GetNodePoolsNodePoolNodeSourceArgs struct {
 	// The OCID of the image used to boot the node.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The user-friendly name of the entity corresponding to the OCID.
-	SourceName pulumi.StringInput `pulumi:"sourceName"`
+	SourceName pulumi.StringPtrInput `pulumi:"sourceName"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetNodePoolsNodePoolNodeSourceArgs) ElementType() reflect.Type {
@@ -16456,12 +14081,6 @@ func (i GetNodePoolsNodePoolNodeSourceArgs) ToGetNodePoolsNodePoolNodeSourceOutp
 
 func (i GetNodePoolsNodePoolNodeSourceArgs) ToGetNodePoolsNodePoolNodeSourceOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSource] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeSource]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeSourceArrayInput is an input type that accepts GetNodePoolsNodePoolNodeSourceArray and GetNodePoolsNodePoolNodeSourceArrayOutput values.
@@ -16489,12 +14108,6 @@ func (i GetNodePoolsNodePoolNodeSourceArray) ToGetNodePoolsNodePoolNodeSourceArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSource] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeSource]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeSourceOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeSourceOutput) ElementType() reflect.Type {
@@ -16509,25 +14122,19 @@ func (o GetNodePoolsNodePoolNodeSourceOutput) ToGetNodePoolsNodePoolNodeSourceOu
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSource] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the image used to boot the node.
-func (o GetNodePoolsNodePoolNodeSourceOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSource) string { return v.ImageId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeSourceOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSource) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name of the entity corresponding to the OCID.
-func (o GetNodePoolsNodePoolNodeSourceOutput) SourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSource) string { return v.SourceName }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeSourceOutput) SourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSource) *string { return v.SourceName }).(pulumi.StringPtrOutput)
 }
 
 // The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-func (o GetNodePoolsNodePoolNodeSourceOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSource) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeSourceArrayOutput struct{ *pulumi.OutputState }
@@ -16544,12 +14151,6 @@ func (o GetNodePoolsNodePoolNodeSourceArrayOutput) ToGetNodePoolsNodePoolNodeSou
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSource] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNodePoolsNodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolsNodePoolNodeSource {
 		return vs[0].([]GetNodePoolsNodePoolNodeSource)[vs[1].(int)]
@@ -16558,11 +14159,11 @@ func (o GetNodePoolsNodePoolNodeSourceArrayOutput) Index(i pulumi.IntInput) GetN
 
 type GetNodePoolsNodePoolNodeSourceDetail struct {
 	// The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-	BootVolumeSizeInGbs string `pulumi:"bootVolumeSizeInGbs"`
+	BootVolumeSizeInGbs *string `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the image used to boot the node.
-	ImageId string `pulumi:"imageId"`
+	ImageId *string `pulumi:"imageId"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetNodePoolsNodePoolNodeSourceDetailInput is an input type that accepts GetNodePoolsNodePoolNodeSourceDetailArgs and GetNodePoolsNodePoolNodeSourceDetailOutput values.
@@ -16578,11 +14179,11 @@ type GetNodePoolsNodePoolNodeSourceDetailInput interface {
 
 type GetNodePoolsNodePoolNodeSourceDetailArgs struct {
 	// The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-	BootVolumeSizeInGbs pulumi.StringInput `pulumi:"bootVolumeSizeInGbs"`
+	BootVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"bootVolumeSizeInGbs"`
 	// The OCID of the image used to boot the node.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetNodePoolsNodePoolNodeSourceDetailArgs) ElementType() reflect.Type {
@@ -16595,12 +14196,6 @@ func (i GetNodePoolsNodePoolNodeSourceDetailArgs) ToGetNodePoolsNodePoolNodeSour
 
 func (i GetNodePoolsNodePoolNodeSourceDetailArgs) ToGetNodePoolsNodePoolNodeSourceDetailOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceDetailOutput)
-}
-
-func (i GetNodePoolsNodePoolNodeSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNodePoolsNodePoolNodeSourceDetailArrayInput is an input type that accepts GetNodePoolsNodePoolNodeSourceDetailArray and GetNodePoolsNodePoolNodeSourceDetailArrayOutput values.
@@ -16628,12 +14223,6 @@ func (i GetNodePoolsNodePoolNodeSourceDetailArray) ToGetNodePoolsNodePoolNodeSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolsNodePoolNodeSourceDetailArrayOutput)
 }
 
-func (i GetNodePoolsNodePoolNodeSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail]{
-		OutputState: i.ToGetNodePoolsNodePoolNodeSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNodePoolsNodePoolNodeSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolNodeSourceDetailOutput) ElementType() reflect.Type {
@@ -16648,25 +14237,19 @@ func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ToGetNodePoolsNodePoolNodeSo
 	return o
 }
 
-func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail] {
-	return pulumix.Output[GetNodePoolsNodePoolNodeSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
-func (o GetNodePoolsNodePoolNodeSourceDetailOutput) BootVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSourceDetail) string { return v.BootVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeSourceDetailOutput) BootVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSourceDetail) *string { return v.BootVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the image used to boot the node.
-func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSourceDetail) string { return v.ImageId }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeSourceDetailOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSourceDetail) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The source type for the node. Use `IMAGE` when specifying an OCID of an image.
-func (o GetNodePoolsNodePoolNodeSourceDetailOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetNodePoolsNodePoolNodeSourceDetailOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeSourceDetail) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetNodePoolsNodePoolNodeSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -16681,12 +14264,6 @@ func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolsNodePoolN
 
 func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) ToGetNodePoolsNodePoolNodeSourceDetailArrayOutputWithContext(ctx context.Context) GetNodePoolsNodePoolNodeSourceDetailArrayOutput {
 	return o
-}
-
-func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail] {
-	return pulumix.Output[[]GetNodePoolsNodePoolNodeSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNodePoolsNodePoolNodeSourceDetailArrayOutput) Index(i pulumi.IntInput) GetNodePoolsNodePoolNodeSourceDetailOutput {
@@ -16732,12 +14309,6 @@ func (i GetPodShapesFilterArgs) ToGetPodShapesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesFilterOutput)
 }
 
-func (i GetPodShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesFilter] {
-	return pulumix.Output[GetPodShapesFilter]{
-		OutputState: i.ToGetPodShapesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPodShapesFilterArrayInput is an input type that accepts GetPodShapesFilterArray and GetPodShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPodShapesFilterArrayInput` via:
 //
@@ -16763,12 +14334,6 @@ func (i GetPodShapesFilterArray) ToGetPodShapesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesFilterArrayOutput)
 }
 
-func (i GetPodShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesFilter] {
-	return pulumix.Output[[]GetPodShapesFilter]{
-		OutputState: i.ToGetPodShapesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPodShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesFilterOutput) ElementType() reflect.Type {
@@ -16781,12 +14346,6 @@ func (o GetPodShapesFilterOutput) ToGetPodShapesFilterOutput() GetPodShapesFilte
 
 func (o GetPodShapesFilterOutput) ToGetPodShapesFilterOutputWithContext(ctx context.Context) GetPodShapesFilterOutput {
 	return o
-}
-
-func (o GetPodShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesFilter] {
-	return pulumix.Output[GetPodShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name to filter on.
@@ -16816,12 +14375,6 @@ func (o GetPodShapesFilterArrayOutput) ToGetPodShapesFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetPodShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesFilter] {
-	return pulumix.Output[[]GetPodShapesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPodShapesFilterArrayOutput) Index(i pulumi.IntInput) GetPodShapesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesFilter {
 		return vs[0].([]GetPodShapesFilter)[vs[1].(int)]
@@ -16832,13 +14385,13 @@ type GetPodShapesPodShape struct {
 	// ShapeMemoryOptions.
 	MemoryOptions []GetPodShapesPodShapeMemoryOption `pulumi:"memoryOptions"`
 	// The name to filter on.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// ShapeNetworkBandwidthOptions.
 	NetworkBandwidthOptions []GetPodShapesPodShapeNetworkBandwidthOption `pulumi:"networkBandwidthOptions"`
 	// Options for OCPU shape.
 	OcpuOptions []GetPodShapesPodShapeOcpuOption `pulumi:"ocpuOptions"`
 	// A short description of the VM's processor (CPU).
-	ProcessorDescription string `pulumi:"processorDescription"`
+	ProcessorDescription *string `pulumi:"processorDescription"`
 }
 
 // GetPodShapesPodShapeInput is an input type that accepts GetPodShapesPodShapeArgs and GetPodShapesPodShapeOutput values.
@@ -16856,13 +14409,13 @@ type GetPodShapesPodShapeArgs struct {
 	// ShapeMemoryOptions.
 	MemoryOptions GetPodShapesPodShapeMemoryOptionArrayInput `pulumi:"memoryOptions"`
 	// The name to filter on.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// ShapeNetworkBandwidthOptions.
 	NetworkBandwidthOptions GetPodShapesPodShapeNetworkBandwidthOptionArrayInput `pulumi:"networkBandwidthOptions"`
 	// Options for OCPU shape.
 	OcpuOptions GetPodShapesPodShapeOcpuOptionArrayInput `pulumi:"ocpuOptions"`
 	// A short description of the VM's processor (CPU).
-	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+	ProcessorDescription pulumi.StringPtrInput `pulumi:"processorDescription"`
 }
 
 func (GetPodShapesPodShapeArgs) ElementType() reflect.Type {
@@ -16875,12 +14428,6 @@ func (i GetPodShapesPodShapeArgs) ToGetPodShapesPodShapeOutput() GetPodShapesPod
 
 func (i GetPodShapesPodShapeArgs) ToGetPodShapesPodShapeOutputWithContext(ctx context.Context) GetPodShapesPodShapeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOutput)
-}
-
-func (i GetPodShapesPodShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShape] {
-	return pulumix.Output[GetPodShapesPodShape]{
-		OutputState: i.ToGetPodShapesPodShapeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPodShapesPodShapeArrayInput is an input type that accepts GetPodShapesPodShapeArray and GetPodShapesPodShapeArrayOutput values.
@@ -16908,12 +14455,6 @@ func (i GetPodShapesPodShapeArray) ToGetPodShapesPodShapeArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeArrayOutput)
 }
 
-func (i GetPodShapesPodShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShape] {
-	return pulumix.Output[[]GetPodShapesPodShape]{
-		OutputState: i.ToGetPodShapesPodShapeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPodShapesPodShapeOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeOutput) ElementType() reflect.Type {
@@ -16928,20 +14469,14 @@ func (o GetPodShapesPodShapeOutput) ToGetPodShapesPodShapeOutputWithContext(ctx 
 	return o
 }
 
-func (o GetPodShapesPodShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShape] {
-	return pulumix.Output[GetPodShapesPodShape]{
-		OutputState: o.OutputState,
-	}
-}
-
 // ShapeMemoryOptions.
 func (o GetPodShapesPodShapeOutput) MemoryOptions() GetPodShapesPodShapeMemoryOptionArrayOutput {
 	return o.ApplyT(func(v GetPodShapesPodShape) []GetPodShapesPodShapeMemoryOption { return v.MemoryOptions }).(GetPodShapesPodShapeMemoryOptionArrayOutput)
 }
 
 // The name to filter on.
-func (o GetPodShapesPodShapeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPodShapesPodShape) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPodShapesPodShapeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // ShapeNetworkBandwidthOptions.
@@ -16957,8 +14492,8 @@ func (o GetPodShapesPodShapeOutput) OcpuOptions() GetPodShapesPodShapeOcpuOption
 }
 
 // A short description of the VM's processor (CPU).
-func (o GetPodShapesPodShapeOutput) ProcessorDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPodShapesPodShape) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+func (o GetPodShapesPodShapeOutput) ProcessorDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShape) *string { return v.ProcessorDescription }).(pulumi.StringPtrOutput)
 }
 
 type GetPodShapesPodShapeArrayOutput struct{ *pulumi.OutputState }
@@ -16975,12 +14510,6 @@ func (o GetPodShapesPodShapeArrayOutput) ToGetPodShapesPodShapeArrayOutputWithCo
 	return o
 }
 
-func (o GetPodShapesPodShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShape] {
-	return pulumix.Output[[]GetPodShapesPodShape]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPodShapesPodShapeArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShape {
 		return vs[0].([]GetPodShapesPodShape)[vs[1].(int)]
@@ -16989,15 +14518,15 @@ func (o GetPodShapesPodShapeArrayOutput) Index(i pulumi.IntInput) GetPodShapesPo
 
 type GetPodShapesPodShapeMemoryOption struct {
 	// The default amount of memory per OCPU available for this shape, in gigabytes.
-	DefaultPerOcpuInGbs float64 `pulumi:"defaultPerOcpuInGbs"`
+	DefaultPerOcpuInGbs *float64 `pulumi:"defaultPerOcpuInGbs"`
 	// The maximum amount of memory, in gigabytes.
-	MaxInGbs float64 `pulumi:"maxInGbs"`
+	MaxInGbs *float64 `pulumi:"maxInGbs"`
 	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
-	MaxPerOcpuInGbs float64 `pulumi:"maxPerOcpuInGbs"`
+	MaxPerOcpuInGbs *float64 `pulumi:"maxPerOcpuInGbs"`
 	// The minimum amount of memory, in gigabytes.
-	MinInGbs float64 `pulumi:"minInGbs"`
+	MinInGbs *float64 `pulumi:"minInGbs"`
 	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
-	MinPerOcpuInGbs float64 `pulumi:"minPerOcpuInGbs"`
+	MinPerOcpuInGbs *float64 `pulumi:"minPerOcpuInGbs"`
 }
 
 // GetPodShapesPodShapeMemoryOptionInput is an input type that accepts GetPodShapesPodShapeMemoryOptionArgs and GetPodShapesPodShapeMemoryOptionOutput values.
@@ -17013,15 +14542,15 @@ type GetPodShapesPodShapeMemoryOptionInput interface {
 
 type GetPodShapesPodShapeMemoryOptionArgs struct {
 	// The default amount of memory per OCPU available for this shape, in gigabytes.
-	DefaultPerOcpuInGbs pulumi.Float64Input `pulumi:"defaultPerOcpuInGbs"`
+	DefaultPerOcpuInGbs pulumi.Float64PtrInput `pulumi:"defaultPerOcpuInGbs"`
 	// The maximum amount of memory, in gigabytes.
-	MaxInGbs pulumi.Float64Input `pulumi:"maxInGbs"`
+	MaxInGbs pulumi.Float64PtrInput `pulumi:"maxInGbs"`
 	// The maximum amount of memory per OCPU available for this shape, in gigabytes.
-	MaxPerOcpuInGbs pulumi.Float64Input `pulumi:"maxPerOcpuInGbs"`
+	MaxPerOcpuInGbs pulumi.Float64PtrInput `pulumi:"maxPerOcpuInGbs"`
 	// The minimum amount of memory, in gigabytes.
-	MinInGbs pulumi.Float64Input `pulumi:"minInGbs"`
+	MinInGbs pulumi.Float64PtrInput `pulumi:"minInGbs"`
 	// The minimum amount of memory per OCPU available for this shape, in gigabytes.
-	MinPerOcpuInGbs pulumi.Float64Input `pulumi:"minPerOcpuInGbs"`
+	MinPerOcpuInGbs pulumi.Float64PtrInput `pulumi:"minPerOcpuInGbs"`
 }
 
 func (GetPodShapesPodShapeMemoryOptionArgs) ElementType() reflect.Type {
@@ -17034,12 +14563,6 @@ func (i GetPodShapesPodShapeMemoryOptionArgs) ToGetPodShapesPodShapeMemoryOption
 
 func (i GetPodShapesPodShapeMemoryOptionArgs) ToGetPodShapesPodShapeMemoryOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeMemoryOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeMemoryOptionOutput)
-}
-
-func (i GetPodShapesPodShapeMemoryOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeMemoryOption] {
-	return pulumix.Output[GetPodShapesPodShapeMemoryOption]{
-		OutputState: i.ToGetPodShapesPodShapeMemoryOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPodShapesPodShapeMemoryOptionArrayInput is an input type that accepts GetPodShapesPodShapeMemoryOptionArray and GetPodShapesPodShapeMemoryOptionArrayOutput values.
@@ -17067,12 +14590,6 @@ func (i GetPodShapesPodShapeMemoryOptionArray) ToGetPodShapesPodShapeMemoryOptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeMemoryOptionArrayOutput)
 }
 
-func (i GetPodShapesPodShapeMemoryOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeMemoryOption] {
-	return pulumix.Output[[]GetPodShapesPodShapeMemoryOption]{
-		OutputState: i.ToGetPodShapesPodShapeMemoryOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPodShapesPodShapeMemoryOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeMemoryOptionOutput) ElementType() reflect.Type {
@@ -17087,35 +14604,29 @@ func (o GetPodShapesPodShapeMemoryOptionOutput) ToGetPodShapesPodShapeMemoryOpti
 	return o
 }
 
-func (o GetPodShapesPodShapeMemoryOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeMemoryOption] {
-	return pulumix.Output[GetPodShapesPodShapeMemoryOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The default amount of memory per OCPU available for this shape, in gigabytes.
-func (o GetPodShapesPodShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.DefaultPerOcpuInGbs }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) *float64 { return v.DefaultPerOcpuInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The maximum amount of memory, in gigabytes.
-func (o GetPodShapesPodShapeMemoryOptionOutput) MaxInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MaxInGbs }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeMemoryOptionOutput) MaxInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) *float64 { return v.MaxInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The maximum amount of memory per OCPU available for this shape, in gigabytes.
-func (o GetPodShapesPodShapeMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MaxPerOcpuInGbs }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) *float64 { return v.MaxPerOcpuInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The minimum amount of memory, in gigabytes.
-func (o GetPodShapesPodShapeMemoryOptionOutput) MinInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MinInGbs }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeMemoryOptionOutput) MinInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) *float64 { return v.MinInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The minimum amount of memory per OCPU available for this shape, in gigabytes.
-func (o GetPodShapesPodShapeMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) float64 { return v.MinPerOcpuInGbs }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeMemoryOption) *float64 { return v.MinPerOcpuInGbs }).(pulumi.Float64PtrOutput)
 }
 
 type GetPodShapesPodShapeMemoryOptionArrayOutput struct{ *pulumi.OutputState }
@@ -17132,12 +14643,6 @@ func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToGetPodShapesPodShapeMemor
 	return o
 }
 
-func (o GetPodShapesPodShapeMemoryOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeMemoryOption] {
-	return pulumix.Output[[]GetPodShapesPodShapeMemoryOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPodShapesPodShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeMemoryOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShapeMemoryOption {
 		return vs[0].([]GetPodShapesPodShapeMemoryOption)[vs[1].(int)]
@@ -17146,11 +14651,11 @@ func (o GetPodShapesPodShapeMemoryOptionArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetPodShapesPodShapeNetworkBandwidthOption struct {
 	// The default amount of networking bandwidth per OCPU, in gigabits per second.
-	DefaultPerOcpuInGbps float64 `pulumi:"defaultPerOcpuInGbps"`
+	DefaultPerOcpuInGbps *float64 `pulumi:"defaultPerOcpuInGbps"`
 	// The maximum amount of networking bandwidth, in gigabits per second.
-	MaxInGbps float64 `pulumi:"maxInGbps"`
+	MaxInGbps *float64 `pulumi:"maxInGbps"`
 	// The minimum amount of networking bandwidth, in gigabits per second.
-	MinInGbps float64 `pulumi:"minInGbps"`
+	MinInGbps *float64 `pulumi:"minInGbps"`
 }
 
 // GetPodShapesPodShapeNetworkBandwidthOptionInput is an input type that accepts GetPodShapesPodShapeNetworkBandwidthOptionArgs and GetPodShapesPodShapeNetworkBandwidthOptionOutput values.
@@ -17166,11 +14671,11 @@ type GetPodShapesPodShapeNetworkBandwidthOptionInput interface {
 
 type GetPodShapesPodShapeNetworkBandwidthOptionArgs struct {
 	// The default amount of networking bandwidth per OCPU, in gigabits per second.
-	DefaultPerOcpuInGbps pulumi.Float64Input `pulumi:"defaultPerOcpuInGbps"`
+	DefaultPerOcpuInGbps pulumi.Float64PtrInput `pulumi:"defaultPerOcpuInGbps"`
 	// The maximum amount of networking bandwidth, in gigabits per second.
-	MaxInGbps pulumi.Float64Input `pulumi:"maxInGbps"`
+	MaxInGbps pulumi.Float64PtrInput `pulumi:"maxInGbps"`
 	// The minimum amount of networking bandwidth, in gigabits per second.
-	MinInGbps pulumi.Float64Input `pulumi:"minInGbps"`
+	MinInGbps pulumi.Float64PtrInput `pulumi:"minInGbps"`
 }
 
 func (GetPodShapesPodShapeNetworkBandwidthOptionArgs) ElementType() reflect.Type {
@@ -17183,12 +14688,6 @@ func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToGetPodShapesPodShapeNe
 
 func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeNetworkBandwidthOptionOutput)
-}
-
-func (i GetPodShapesPodShapeNetworkBandwidthOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption] {
-	return pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption]{
-		OutputState: i.ToGetPodShapesPodShapeNetworkBandwidthOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPodShapesPodShapeNetworkBandwidthOptionArrayInput is an input type that accepts GetPodShapesPodShapeNetworkBandwidthOptionArray and GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput values.
@@ -17216,12 +14715,6 @@ func (i GetPodShapesPodShapeNetworkBandwidthOptionArray) ToGetPodShapesPodShapeN
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput)
 }
 
-func (i GetPodShapesPodShapeNetworkBandwidthOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption] {
-	return pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption]{
-		OutputState: i.ToGetPodShapesPodShapeNetworkBandwidthOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPodShapesPodShapeNetworkBandwidthOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeNetworkBandwidthOptionOutput) ElementType() reflect.Type {
@@ -17236,25 +14729,19 @@ func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToGetPodShapesPodShape
 	return o
 }
 
-func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption] {
-	return pulumix.Output[GetPodShapesPodShapeNetworkBandwidthOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The default amount of networking bandwidth per OCPU, in gigabits per second.
-func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) float64 { return v.DefaultPerOcpuInGbps }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) *float64 { return v.DefaultPerOcpuInGbps }).(pulumi.Float64PtrOutput)
 }
 
 // The maximum amount of networking bandwidth, in gigabits per second.
-func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) MaxInGbps() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) float64 { return v.MaxInGbps }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) MaxInGbps() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) *float64 { return v.MaxInGbps }).(pulumi.Float64PtrOutput)
 }
 
 // The minimum amount of networking bandwidth, in gigabits per second.
-func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) MinInGbps() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) float64 { return v.MinInGbps }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeNetworkBandwidthOptionOutput) MinInGbps() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeNetworkBandwidthOption) *float64 { return v.MinInGbps }).(pulumi.Float64PtrOutput)
 }
 
 type GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput struct{ *pulumi.OutputState }
@@ -17271,12 +14758,6 @@ func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToGetPodShapesPod
 	return o
 }
 
-func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption] {
-	return pulumix.Output[[]GetPodShapesPodShapeNetworkBandwidthOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeNetworkBandwidthOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShapeNetworkBandwidthOption {
 		return vs[0].([]GetPodShapesPodShapeNetworkBandwidthOption)[vs[1].(int)]
@@ -17285,9 +14766,9 @@ func (o GetPodShapesPodShapeNetworkBandwidthOptionArrayOutput) Index(i pulumi.In
 
 type GetPodShapesPodShapeOcpuOption struct {
 	// The maximum number of OCPUs.
-	Max float64 `pulumi:"max"`
+	Max *float64 `pulumi:"max"`
 	// The minimum number of OCPUs.
-	Min float64 `pulumi:"min"`
+	Min *float64 `pulumi:"min"`
 }
 
 // GetPodShapesPodShapeOcpuOptionInput is an input type that accepts GetPodShapesPodShapeOcpuOptionArgs and GetPodShapesPodShapeOcpuOptionOutput values.
@@ -17303,9 +14784,9 @@ type GetPodShapesPodShapeOcpuOptionInput interface {
 
 type GetPodShapesPodShapeOcpuOptionArgs struct {
 	// The maximum number of OCPUs.
-	Max pulumi.Float64Input `pulumi:"max"`
+	Max pulumi.Float64PtrInput `pulumi:"max"`
 	// The minimum number of OCPUs.
-	Min pulumi.Float64Input `pulumi:"min"`
+	Min pulumi.Float64PtrInput `pulumi:"min"`
 }
 
 func (GetPodShapesPodShapeOcpuOptionArgs) ElementType() reflect.Type {
@@ -17318,12 +14799,6 @@ func (i GetPodShapesPodShapeOcpuOptionArgs) ToGetPodShapesPodShapeOcpuOptionOutp
 
 func (i GetPodShapesPodShapeOcpuOptionArgs) ToGetPodShapesPodShapeOcpuOptionOutputWithContext(ctx context.Context) GetPodShapesPodShapeOcpuOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOcpuOptionOutput)
-}
-
-func (i GetPodShapesPodShapeOcpuOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeOcpuOption] {
-	return pulumix.Output[GetPodShapesPodShapeOcpuOption]{
-		OutputState: i.ToGetPodShapesPodShapeOcpuOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPodShapesPodShapeOcpuOptionArrayInput is an input type that accepts GetPodShapesPodShapeOcpuOptionArray and GetPodShapesPodShapeOcpuOptionArrayOutput values.
@@ -17351,12 +14826,6 @@ func (i GetPodShapesPodShapeOcpuOptionArray) ToGetPodShapesPodShapeOcpuOptionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPodShapesPodShapeOcpuOptionArrayOutput)
 }
 
-func (i GetPodShapesPodShapeOcpuOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeOcpuOption] {
-	return pulumix.Output[[]GetPodShapesPodShapeOcpuOption]{
-		OutputState: i.ToGetPodShapesPodShapeOcpuOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPodShapesPodShapeOcpuOptionOutput struct{ *pulumi.OutputState }
 
 func (GetPodShapesPodShapeOcpuOptionOutput) ElementType() reflect.Type {
@@ -17371,20 +14840,14 @@ func (o GetPodShapesPodShapeOcpuOptionOutput) ToGetPodShapesPodShapeOcpuOptionOu
 	return o
 }
 
-func (o GetPodShapesPodShapeOcpuOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPodShapesPodShapeOcpuOption] {
-	return pulumix.Output[GetPodShapesPodShapeOcpuOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum number of OCPUs.
-func (o GetPodShapesPodShapeOcpuOptionOutput) Max() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeOcpuOption) float64 { return v.Max }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeOcpuOptionOutput) Max() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeOcpuOption) *float64 { return v.Max }).(pulumi.Float64PtrOutput)
 }
 
 // The minimum number of OCPUs.
-func (o GetPodShapesPodShapeOcpuOptionOutput) Min() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPodShapesPodShapeOcpuOption) float64 { return v.Min }).(pulumi.Float64Output)
+func (o GetPodShapesPodShapeOcpuOptionOutput) Min() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPodShapesPodShapeOcpuOption) *float64 { return v.Min }).(pulumi.Float64PtrOutput)
 }
 
 type GetPodShapesPodShapeOcpuOptionArrayOutput struct{ *pulumi.OutputState }
@@ -17401,12 +14864,6 @@ func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToGetPodShapesPodShapeOcpuOpt
 	return o
 }
 
-func (o GetPodShapesPodShapeOcpuOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPodShapesPodShapeOcpuOption] {
-	return pulumix.Output[[]GetPodShapesPodShapeOcpuOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPodShapesPodShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetPodShapesPodShapeOcpuOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPodShapesPodShapeOcpuOption {
 		return vs[0].([]GetPodShapesPodShapeOcpuOption)[vs[1].(int)]
@@ -17415,9 +14872,9 @@ func (o GetPodShapesPodShapeOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetP
 
 type GetVirtualNodePoolInitialVirtualNodeLabel struct {
 	// The key of the pair.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The value of the pair.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetVirtualNodePoolInitialVirtualNodeLabelInput is an input type that accepts GetVirtualNodePoolInitialVirtualNodeLabelArgs and GetVirtualNodePoolInitialVirtualNodeLabelOutput values.
@@ -17433,9 +14890,9 @@ type GetVirtualNodePoolInitialVirtualNodeLabelInput interface {
 
 type GetVirtualNodePoolInitialVirtualNodeLabelArgs struct {
 	// The key of the pair.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The value of the pair.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetVirtualNodePoolInitialVirtualNodeLabelArgs) ElementType() reflect.Type {
@@ -17448,12 +14905,6 @@ func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolIniti
 
 func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolInitialVirtualNodeLabelOutput)
-}
-
-func (i GetVirtualNodePoolInitialVirtualNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: i.ToGetVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts GetVirtualNodePoolInitialVirtualNodeLabelArray and GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
@@ -17481,12 +14932,6 @@ func (i GetVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVirtualNodePoolInit
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
 }
 
-func (i GetVirtualNodePoolInitialVirtualNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: i.ToGetVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
@@ -17501,20 +14946,14 @@ func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVirtualNodePoolIni
 	return o
 }
 
-func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[GetVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key of the pair.
-func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolInitialVirtualNodeLabel) string { return v.Key }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolInitialVirtualNodeLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The value of the pair.
-func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolInitialVirtualNodeLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolInitialVirtualNodeLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput struct{ *pulumi.OutputState }
@@ -17531,12 +14970,6 @@ func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToGetVirtualNodePo
 	return o
 }
 
-func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[[]GetVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolInitialVirtualNodeLabelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolInitialVirtualNodeLabel {
 		return vs[0].([]GetVirtualNodePoolInitialVirtualNodeLabel)[vs[1].(int)]
@@ -17545,11 +14978,11 @@ func (o GetVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.Int
 
 type GetVirtualNodePoolPlacementConfiguration struct {
 	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetVirtualNodePoolPlacementConfigurationInput is an input type that accepts GetVirtualNodePoolPlacementConfigurationArgs and GetVirtualNodePoolPlacementConfigurationOutput values.
@@ -17565,11 +14998,11 @@ type GetVirtualNodePoolPlacementConfigurationInput interface {
 
 type GetVirtualNodePoolPlacementConfigurationArgs struct {
 	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetVirtualNodePoolPlacementConfigurationArgs) ElementType() reflect.Type {
@@ -17582,12 +15015,6 @@ func (i GetVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolPlacem
 
 func (i GetVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPlacementConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPlacementConfigurationOutput)
-}
-
-func (i GetVirtualNodePoolPlacementConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolPlacementConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolPlacementConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts GetVirtualNodePoolPlacementConfigurationArray and GetVirtualNodePoolPlacementConfigurationArrayOutput values.
@@ -17615,12 +15042,6 @@ func (i GetVirtualNodePoolPlacementConfigurationArray) ToGetVirtualNodePoolPlace
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPlacementConfigurationArrayOutput)
 }
 
-func (i GetVirtualNodePoolPlacementConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
@@ -17635,15 +15056,9 @@ func (o GetVirtualNodePoolPlacementConfigurationOutput) ToGetVirtualNodePoolPlac
 	return o
 }
 
-func (o GetVirtualNodePoolPlacementConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolPlacementConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-func (o GetVirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The fault domain of this virtual node.
@@ -17652,8 +15067,8 @@ func (o GetVirtualNodePoolPlacementConfigurationOutput) FaultDomains() pulumi.St
 }
 
 // The regional subnet where pods' VNIC will be placed.
-func (o GetVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -17670,12 +15085,6 @@ func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToGetVirtualNodePoo
 	return o
 }
 
-func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolPlacementConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolPlacementConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolPlacementConfiguration {
 		return vs[0].([]GetVirtualNodePoolPlacementConfiguration)[vs[1].(int)]
@@ -17686,9 +15095,9 @@ type GetVirtualNodePoolPodConfiguration struct {
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Shape of the pods.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetVirtualNodePoolPodConfigurationInput is an input type that accepts GetVirtualNodePoolPodConfigurationArgs and GetVirtualNodePoolPodConfigurationOutput values.
@@ -17706,9 +15115,9 @@ type GetVirtualNodePoolPodConfigurationArgs struct {
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Shape of the pods.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetVirtualNodePoolPodConfigurationArgs) ElementType() reflect.Type {
@@ -17721,12 +15130,6 @@ func (i GetVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolPodConfigura
 
 func (i GetVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolPodConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPodConfigurationOutput)
-}
-
-func (i GetVirtualNodePoolPodConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolPodConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolPodConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolPodConfigurationArrayInput is an input type that accepts GetVirtualNodePoolPodConfigurationArray and GetVirtualNodePoolPodConfigurationArrayOutput values.
@@ -17754,12 +15157,6 @@ func (i GetVirtualNodePoolPodConfigurationArray) ToGetVirtualNodePoolPodConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolPodConfigurationArrayOutput)
 }
 
-func (i GetVirtualNodePoolPodConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolPodConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
@@ -17774,25 +15171,19 @@ func (o GetVirtualNodePoolPodConfigurationOutput) ToGetVirtualNodePoolPodConfigu
 	return o
 }
 
-func (o GetVirtualNodePoolPodConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolPodConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of network security group IDs applied to the Pod VNIC.
 func (o GetVirtualNodePoolPodConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Shape of the pods.
-func (o GetVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The regional subnet where pods' VNIC will be placed.
-func (o GetVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolPodConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -17809,12 +15200,6 @@ func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToGetVirtualNodePoolPodCo
 	return o
 }
 
-func (o GetVirtualNodePoolPodConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolPodConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolPodConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolPodConfiguration {
 		return vs[0].([]GetVirtualNodePoolPodConfiguration)[vs[1].(int)]
@@ -17823,11 +15208,11 @@ func (o GetVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) 
 
 type GetVirtualNodePoolTaint struct {
 	// The effect of the pair.
-	Effect string `pulumi:"effect"`
+	Effect *string `pulumi:"effect"`
 	// The key of the pair.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The value of the pair.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetVirtualNodePoolTaintInput is an input type that accepts GetVirtualNodePoolTaintArgs and GetVirtualNodePoolTaintOutput values.
@@ -17843,11 +15228,11 @@ type GetVirtualNodePoolTaintInput interface {
 
 type GetVirtualNodePoolTaintArgs struct {
 	// The effect of the pair.
-	Effect pulumi.StringInput `pulumi:"effect"`
+	Effect pulumi.StringPtrInput `pulumi:"effect"`
 	// The key of the pair.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The value of the pair.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetVirtualNodePoolTaintArgs) ElementType() reflect.Type {
@@ -17860,12 +15245,6 @@ func (i GetVirtualNodePoolTaintArgs) ToGetVirtualNodePoolTaintOutput() GetVirtua
 
 func (i GetVirtualNodePoolTaintArgs) ToGetVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolTaintOutput)
-}
-
-func (i GetVirtualNodePoolTaintArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolTaint] {
-	return pulumix.Output[GetVirtualNodePoolTaint]{
-		OutputState: i.ToGetVirtualNodePoolTaintOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolTaintArrayInput is an input type that accepts GetVirtualNodePoolTaintArray and GetVirtualNodePoolTaintArrayOutput values.
@@ -17893,12 +15272,6 @@ func (i GetVirtualNodePoolTaintArray) ToGetVirtualNodePoolTaintArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolTaintArrayOutput)
 }
 
-func (i GetVirtualNodePoolTaintArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolTaint] {
-	return pulumix.Output[[]GetVirtualNodePoolTaint]{
-		OutputState: i.ToGetVirtualNodePoolTaintArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolTaintOutput) ElementType() reflect.Type {
@@ -17913,25 +15286,19 @@ func (o GetVirtualNodePoolTaintOutput) ToGetVirtualNodePoolTaintOutputWithContex
 	return o
 }
 
-func (o GetVirtualNodePoolTaintOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolTaint] {
-	return pulumix.Output[GetVirtualNodePoolTaint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The effect of the pair.
-func (o GetVirtualNodePoolTaintOutput) Effect() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolTaint) string { return v.Effect }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolTaintOutput) Effect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
 }
 
 // The key of the pair.
-func (o GetVirtualNodePoolTaintOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolTaint) string { return v.Key }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolTaintOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The value of the pair.
-func (o GetVirtualNodePoolTaintOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolTaint) string { return v.Value }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolTaintOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolTaintArrayOutput struct{ *pulumi.OutputState }
@@ -17946,12 +15313,6 @@ func (o GetVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolTaintArrayOutput
 
 func (o GetVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolTaintArrayOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolTaintArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolTaint] {
-	return pulumix.Output[[]GetVirtualNodePoolTaint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolTaintOutput {
@@ -17997,12 +15358,6 @@ func (i GetVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePoolVirtualNodeTag
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodeTagOutput)
 }
 
-func (i GetVirtualNodePoolVirtualNodeTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[GetVirtualNodePoolVirtualNodeTag]{
-		OutputState: i.ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualNodePoolVirtualNodeTagArrayInput is an input type that accepts GetVirtualNodePoolVirtualNodeTagArray and GetVirtualNodePoolVirtualNodeTagArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolVirtualNodeTagArrayInput` via:
 //
@@ -18028,12 +15383,6 @@ func (i GetVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodePoolVirtualNodeTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodeTagArrayOutput)
 }
 
-func (i GetVirtualNodePoolVirtualNodeTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag]{
-		OutputState: i.ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolVirtualNodeTagOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolVirtualNodeTagOutput) ElementType() reflect.Type {
@@ -18046,12 +15395,6 @@ func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeT
 
 func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolVirtualNodeTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[GetVirtualNodePoolVirtualNodeTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -18076,12 +15419,6 @@ func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolVirtual
 
 func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodeTagArrayOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[[]GetVirtualNodePoolVirtualNodeTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualNodePoolVirtualNodeTagArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolVirtualNodeTagOutput {
@@ -18127,12 +15464,6 @@ func (i GetVirtualNodePoolsFilterArgs) ToGetVirtualNodePoolsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsFilterOutput)
 }
 
-func (i GetVirtualNodePoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsFilter] {
-	return pulumix.Output[GetVirtualNodePoolsFilter]{
-		OutputState: i.ToGetVirtualNodePoolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualNodePoolsFilterArrayInput is an input type that accepts GetVirtualNodePoolsFilterArray and GetVirtualNodePoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsFilterArrayInput` via:
 //
@@ -18158,12 +15489,6 @@ func (i GetVirtualNodePoolsFilterArray) ToGetVirtualNodePoolsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsFilterArrayOutput)
 }
 
-func (i GetVirtualNodePoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsFilter] {
-	return pulumix.Output[[]GetVirtualNodePoolsFilter]{
-		OutputState: i.ToGetVirtualNodePoolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsFilterOutput) ElementType() reflect.Type {
@@ -18176,12 +15501,6 @@ func (o GetVirtualNodePoolsFilterOutput) ToGetVirtualNodePoolsFilterOutput() Get
 
 func (o GetVirtualNodePoolsFilterOutput) ToGetVirtualNodePoolsFilterOutputWithContext(ctx context.Context) GetVirtualNodePoolsFilterOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsFilter] {
-	return pulumix.Output[GetVirtualNodePoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name to filter on.
@@ -18211,12 +15530,6 @@ func (o GetVirtualNodePoolsFilterArrayOutput) ToGetVirtualNodePoolsFilterArrayOu
 	return o
 }
 
-func (o GetVirtualNodePoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsFilter] {
-	return pulumix.Output[[]GetVirtualNodePoolsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsFilter {
 		return vs[0].([]GetVirtualNodePoolsFilter)[vs[1].(int)]
@@ -18225,23 +15538,23 @@ func (o GetVirtualNodePoolsFilterArrayOutput) Index(i pulumi.IntInput) GetVirtua
 
 type GetVirtualNodePoolsVirtualNodePool struct {
 	// The OCID of the cluster.
-	ClusterId string `pulumi:"clusterId"`
+	ClusterId *string `pulumi:"clusterId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Display name of the virtual node pool. This is a non-unique value.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the virtual node pool.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
 	InitialVirtualNodeLabels []GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion string `pulumi:"kubernetesVersion"`
+	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the Virtual Node Pool.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
@@ -18249,18 +15562,18 @@ type GetVirtualNodePoolsVirtualNodePool struct {
 	// The pod configuration for pods run on virtual nodes of this virtual node pool.
 	PodConfigurations []GetVirtualNodePoolsVirtualNodePoolPodConfiguration `pulumi:"podConfigurations"`
 	// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-	Size int `pulumi:"size"`
+	Size *int `pulumi:"size"`
 	// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints []GetVirtualNodePoolsVirtualNodePoolTaint `pulumi:"taints"`
 	// The time the virtual node pool was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated       string `pulumi:"timeUpdated"`
-	VirtualNodePoolId string `pulumi:"virtualNodePoolId"`
+	TimeUpdated       *string `pulumi:"timeUpdated"`
+	VirtualNodePoolId *string `pulumi:"virtualNodePoolId"`
 	// The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags []GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag `pulumi:"virtualNodeTags"`
 }
@@ -18278,23 +15591,23 @@ type GetVirtualNodePoolsVirtualNodePoolInput interface {
 
 type GetVirtualNodePoolsVirtualNodePoolArgs struct {
 	// The OCID of the cluster.
-	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Display name of the virtual node pool. This is a non-unique value.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the virtual node pool.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
 	InitialVirtualNodeLabels GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput `pulumi:"initialVirtualNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
-	KubernetesVersion pulumi.StringInput `pulumi:"kubernetesVersion"`
+	KubernetesVersion pulumi.StringPtrInput `pulumi:"kubernetesVersion"`
 	// Details about the state of the Virtual Node Pool.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
@@ -18302,18 +15615,18 @@ type GetVirtualNodePoolsVirtualNodePoolArgs struct {
 	// The pod configuration for pods run on virtual nodes of this virtual node pool.
 	PodConfigurations GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput `pulumi:"podConfigurations"`
 	// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-	Size pulumi.IntInput `pulumi:"size"`
+	Size pulumi.IntPtrInput `pulumi:"size"`
 	// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints GetVirtualNodePoolsVirtualNodePoolTaintArrayInput `pulumi:"taints"`
 	// The time the virtual node pool was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated       pulumi.StringInput `pulumi:"timeUpdated"`
-	VirtualNodePoolId pulumi.StringInput `pulumi:"virtualNodePoolId"`
+	TimeUpdated       pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	VirtualNodePoolId pulumi.StringPtrInput `pulumi:"virtualNodePoolId"`
 	// The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput `pulumi:"virtualNodeTags"`
 }
@@ -18328,12 +15641,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToGetVirtualNodePoolsVirtualNode
 
 func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolOutput)
-}
-
-func (i GetVirtualNodePoolsVirtualNodePoolArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePool] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePool]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolsVirtualNodePoolArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolArray and GetVirtualNodePoolsVirtualNodePoolArrayOutput values.
@@ -18361,12 +15668,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolArray) ToGetVirtualNodePoolsVirtualNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolArrayOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsVirtualNodePoolOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolOutput) ElementType() reflect.Type {
@@ -18381,20 +15682,14 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToGetVirtualNodePoolsVirtualNo
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePool] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) ClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.ClusterId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -18403,8 +15698,8 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) DefinedTags() pulumi.MapOutput
 }
 
 // Display name of the virtual node pool. This is a non-unique value.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -18413,8 +15708,8 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // The OCID of the virtual node pool.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
@@ -18425,13 +15720,13 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) InitialVirtualNodeLabels() Get
 }
 
 // The version of Kubernetes running on the nodes in the node pool.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) KubernetesVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.KubernetesVersion }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) KubernetesVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.KubernetesVersion }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the Virtual Node Pool.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // List of network security group IDs applied to the Pod VNIC.
@@ -18454,13 +15749,13 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) PodConfigurations() GetVirtual
 }
 
 // The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) Size() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) int { return v.Size }).(pulumi.IntOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
 // A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.State }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -18474,17 +15769,17 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) Taints() GetVirtualNodePoolsVi
 }
 
 // The time the virtual node pool was created.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the virtual node pool was updated.
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) VirtualNodePoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.VirtualNodePoolId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) VirtualNodePoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) *string { return v.VirtualNodePoolId }).(pulumi.StringPtrOutput)
 }
 
 // The tags associated to the virtual nodes in this virtual node pool.
@@ -18508,12 +15803,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) ToGetVirtualNodePoolsVirt
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePool {
 		return vs[0].([]GetVirtualNodePoolsVirtualNodePool)[vs[1].(int)]
@@ -18522,9 +15811,9 @@ func (o GetVirtualNodePoolsVirtualNodePoolArrayOutput) Index(i pulumi.IntInput) 
 
 type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel struct {
 	// The key of the pair.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The value of the pair.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs and GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput values.
@@ -18540,9 +15829,9 @@ type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelInput interface {
 
 type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs struct {
 	// The key of the pair.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The value of the pair.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ElementType() reflect.Type {
@@ -18555,12 +15844,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirt
 
 func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput)
-}
-
-func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray and GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput values.
@@ -18588,12 +15871,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ToGetVir
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ElementType() reflect.Type {
@@ -18608,20 +15885,14 @@ func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToGetVi
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key of the pair.
-func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel) string { return v.Key }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The value of the pair.
-func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput struct{ *pulumi.OutputState }
@@ -18638,12 +15909,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) To
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel {
 		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel)[vs[1].(int)]
@@ -18652,11 +15917,11 @@ func (o GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelArrayOutput) In
 
 type GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration struct {
 	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs and GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput values.
@@ -18672,11 +15937,11 @@ type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationInput interface {
 
 type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs struct {
 	// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ElementType() reflect.Type {
@@ -18689,12 +15954,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToGetVirtu
 
 func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput)
-}
-
-func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray and GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput values.
@@ -18722,12 +15981,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ToGetVirt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ElementType() reflect.Type {
@@ -18742,15 +15995,9 @@ func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToGetVir
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
-func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The fault domain of this virtual node.
@@ -18759,8 +16006,8 @@ func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) FaultDom
 }
 
 // The regional subnet where pods' VNIC will be placed.
-func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -18777,12 +16024,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToG
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration {
 		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration)[vs[1].(int)]
@@ -18793,9 +16034,9 @@ type GetVirtualNodePoolsVirtualNodePoolPodConfiguration struct {
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Shape of the pods.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetVirtualNodePoolsVirtualNodePoolPodConfigurationInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs and GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput values.
@@ -18813,9 +16054,9 @@ type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs struct {
 	// List of network security group IDs applied to the Pod VNIC.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Shape of the pods.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The regional subnet where pods' VNIC will be placed.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ElementType() reflect.Type {
@@ -18828,12 +16069,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToGetVirtualNode
 
 func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput)
-}
-
-func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray and GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput values.
@@ -18861,12 +16096,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ToGetVirtualNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ElementType() reflect.Type {
@@ -18881,25 +16110,19 @@ func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToGetVirtualNo
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of network security group IDs applied to the Pod VNIC.
 func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Shape of the pods.
-func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The regional subnet where pods' VNIC will be placed.
-func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -18916,12 +16139,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToGetVirt
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolPodConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolPodConfiguration {
 		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolPodConfiguration)[vs[1].(int)]
@@ -18930,11 +16147,11 @@ func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput) Index(i p
 
 type GetVirtualNodePoolsVirtualNodePoolTaint struct {
 	// The effect of the pair.
-	Effect string `pulumi:"effect"`
+	Effect *string `pulumi:"effect"`
 	// The key of the pair.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The value of the pair.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetVirtualNodePoolsVirtualNodePoolTaintInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolTaintArgs and GetVirtualNodePoolsVirtualNodePoolTaintOutput values.
@@ -18950,11 +16167,11 @@ type GetVirtualNodePoolsVirtualNodePoolTaintInput interface {
 
 type GetVirtualNodePoolsVirtualNodePoolTaintArgs struct {
 	// The effect of the pair.
-	Effect pulumi.StringInput `pulumi:"effect"`
+	Effect pulumi.StringPtrInput `pulumi:"effect"`
 	// The key of the pair.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The value of the pair.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetVirtualNodePoolsVirtualNodePoolTaintArgs) ElementType() reflect.Type {
@@ -18967,12 +16184,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToGetVirtualNodePoolsVirtua
 
 func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolTaintOutput)
-}
-
-func (i GetVirtualNodePoolsVirtualNodePoolTaintArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolTaintOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVirtualNodePoolsVirtualNodePoolTaintArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolTaintArray and GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput values.
@@ -19000,12 +16211,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolTaintArray) ToGetVirtualNodePoolsVirtu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolTaintArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsVirtualNodePoolTaintOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolTaintOutput) ElementType() reflect.Type {
@@ -19020,25 +16225,19 @@ func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToGetVirtualNodePoolsVirt
 	return o
 }
 
-func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolTaint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The effect of the pair.
-func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Effect() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) string { return v.Effect }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Effect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
 }
 
 // The key of the pair.
-func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) string { return v.Key }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The value of the pair.
-func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) string { return v.Value }).(pulumi.StringOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolTaintOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput struct{ *pulumi.OutputState }
@@ -19053,12 +16252,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePool
 
 func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolTaintArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolTaint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolTaintOutput {
@@ -19104,12 +16297,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ToGetVirtualNodePo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray and GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput values.
 // You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput` via:
 //
@@ -19135,12 +16322,6 @@ func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ToGetVirtualNodeP
 	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput)
 }
 
-func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
-		OutputState: i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput struct{ *pulumi.OutputState }
 
 func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ElementType() reflect.Type {
@@ -19153,12 +16334,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNode
 
 func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -19183,12 +16358,6 @@ func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtua
 
 func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput {
 	return o
-}
-
-func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag] {
-	return pulumix.Output[[]GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput {
@@ -19232,12 +16401,6 @@ func (i GetWorkRequestErrorsFilterArgs) ToGetWorkRequestErrorsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsFilterOutput)
 }
 
-func (i GetWorkRequestErrorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsFilter] {
-	return pulumix.Output[GetWorkRequestErrorsFilter]{
-		OutputState: i.ToGetWorkRequestErrorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkRequestErrorsFilterArrayInput is an input type that accepts GetWorkRequestErrorsFilterArray and GetWorkRequestErrorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestErrorsFilterArrayInput` via:
 //
@@ -19263,12 +16426,6 @@ func (i GetWorkRequestErrorsFilterArray) ToGetWorkRequestErrorsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsFilterArrayOutput)
 }
 
-func (i GetWorkRequestErrorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsFilter] {
-	return pulumix.Output[[]GetWorkRequestErrorsFilter]{
-		OutputState: i.ToGetWorkRequestErrorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestErrorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestErrorsFilterOutput) ElementType() reflect.Type {
@@ -19281,12 +16438,6 @@ func (o GetWorkRequestErrorsFilterOutput) ToGetWorkRequestErrorsFilterOutput() G
 
 func (o GetWorkRequestErrorsFilterOutput) ToGetWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetWorkRequestErrorsFilterOutput {
 	return o
-}
-
-func (o GetWorkRequestErrorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsFilter] {
-	return pulumix.Output[GetWorkRequestErrorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkRequestErrorsFilterOutput) Name() pulumi.StringOutput {
@@ -19315,12 +16466,6 @@ func (o GetWorkRequestErrorsFilterArrayOutput) ToGetWorkRequestErrorsFilterArray
 	return o
 }
 
-func (o GetWorkRequestErrorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsFilter] {
-	return pulumix.Output[[]GetWorkRequestErrorsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkRequestErrorsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkRequestErrorsFilter {
 		return vs[0].([]GetWorkRequestErrorsFilter)[vs[1].(int)]
@@ -19329,11 +16474,11 @@ func (o GetWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkR
 
 type GetWorkRequestErrorsWorkRequestError struct {
 	// A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code string `pulumi:"code"`
+	Code *string `pulumi:"code"`
 	// A human-readable error string.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The date and time the error occurred.
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 }
 
 // GetWorkRequestErrorsWorkRequestErrorInput is an input type that accepts GetWorkRequestErrorsWorkRequestErrorArgs and GetWorkRequestErrorsWorkRequestErrorOutput values.
@@ -19349,11 +16494,11 @@ type GetWorkRequestErrorsWorkRequestErrorInput interface {
 
 type GetWorkRequestErrorsWorkRequestErrorArgs struct {
 	// A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-	Code pulumi.StringInput `pulumi:"code"`
+	Code pulumi.StringPtrInput `pulumi:"code"`
 	// A human-readable error string.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The date and time the error occurred.
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 }
 
 func (GetWorkRequestErrorsWorkRequestErrorArgs) ElementType() reflect.Type {
@@ -19366,12 +16511,6 @@ func (i GetWorkRequestErrorsWorkRequestErrorArgs) ToGetWorkRequestErrorsWorkRequ
 
 func (i GetWorkRequestErrorsWorkRequestErrorArgs) ToGetWorkRequestErrorsWorkRequestErrorOutputWithContext(ctx context.Context) GetWorkRequestErrorsWorkRequestErrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsWorkRequestErrorOutput)
-}
-
-func (i GetWorkRequestErrorsWorkRequestErrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsWorkRequestError] {
-	return pulumix.Output[GetWorkRequestErrorsWorkRequestError]{
-		OutputState: i.ToGetWorkRequestErrorsWorkRequestErrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkRequestErrorsWorkRequestErrorArrayInput is an input type that accepts GetWorkRequestErrorsWorkRequestErrorArray and GetWorkRequestErrorsWorkRequestErrorArrayOutput values.
@@ -19399,12 +16538,6 @@ func (i GetWorkRequestErrorsWorkRequestErrorArray) ToGetWorkRequestErrorsWorkReq
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestErrorsWorkRequestErrorArrayOutput)
 }
 
-func (i GetWorkRequestErrorsWorkRequestErrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsWorkRequestError] {
-	return pulumix.Output[[]GetWorkRequestErrorsWorkRequestError]{
-		OutputState: i.ToGetWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestErrorsWorkRequestErrorOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestErrorsWorkRequestErrorOutput) ElementType() reflect.Type {
@@ -19419,25 +16552,19 @@ func (o GetWorkRequestErrorsWorkRequestErrorOutput) ToGetWorkRequestErrorsWorkRe
 	return o
 }
 
-func (o GetWorkRequestErrorsWorkRequestErrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestErrorsWorkRequestError] {
-	return pulumix.Output[GetWorkRequestErrorsWorkRequestError]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A short error code that defines the error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
-func (o GetWorkRequestErrorsWorkRequestErrorOutput) Code() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestErrorsWorkRequestError) string { return v.Code }).(pulumi.StringOutput)
+func (o GetWorkRequestErrorsWorkRequestErrorOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestErrorsWorkRequestError) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
 // A human-readable error string.
-func (o GetWorkRequestErrorsWorkRequestErrorOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestErrorsWorkRequestError) string { return v.Message }).(pulumi.StringOutput)
+func (o GetWorkRequestErrorsWorkRequestErrorOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestErrorsWorkRequestError) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the error occurred.
-func (o GetWorkRequestErrorsWorkRequestErrorOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestErrorsWorkRequestError) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetWorkRequestErrorsWorkRequestErrorOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestErrorsWorkRequestError) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkRequestErrorsWorkRequestErrorArrayOutput struct{ *pulumi.OutputState }
@@ -19452,12 +16579,6 @@ func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) ToGetWorkRequestErrorsW
 
 func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) ToGetWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetWorkRequestErrorsWorkRequestErrorArrayOutput {
 	return o
-}
-
-func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestErrorsWorkRequestError] {
-	return pulumix.Output[[]GetWorkRequestErrorsWorkRequestError]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkRequestErrorsWorkRequestErrorArrayOutput) Index(i pulumi.IntInput) GetWorkRequestErrorsWorkRequestErrorOutput {
@@ -19501,12 +16622,6 @@ func (i GetWorkRequestLogEntriesFilterArgs) ToGetWorkRequestLogEntriesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesFilterOutput)
 }
 
-func (i GetWorkRequestLogEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesFilter] {
-	return pulumix.Output[GetWorkRequestLogEntriesFilter]{
-		OutputState: i.ToGetWorkRequestLogEntriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkRequestLogEntriesFilterArrayInput is an input type that accepts GetWorkRequestLogEntriesFilterArray and GetWorkRequestLogEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestLogEntriesFilterArrayInput` via:
 //
@@ -19532,12 +16647,6 @@ func (i GetWorkRequestLogEntriesFilterArray) ToGetWorkRequestLogEntriesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesFilterArrayOutput)
 }
 
-func (i GetWorkRequestLogEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesFilter] {
-	return pulumix.Output[[]GetWorkRequestLogEntriesFilter]{
-		OutputState: i.ToGetWorkRequestLogEntriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestLogEntriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestLogEntriesFilterOutput) ElementType() reflect.Type {
@@ -19550,12 +16659,6 @@ func (o GetWorkRequestLogEntriesFilterOutput) ToGetWorkRequestLogEntriesFilterOu
 
 func (o GetWorkRequestLogEntriesFilterOutput) ToGetWorkRequestLogEntriesFilterOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesFilterOutput {
 	return o
-}
-
-func (o GetWorkRequestLogEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesFilter] {
-	return pulumix.Output[GetWorkRequestLogEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkRequestLogEntriesFilterOutput) Name() pulumi.StringOutput {
@@ -19584,12 +16687,6 @@ func (o GetWorkRequestLogEntriesFilterArrayOutput) ToGetWorkRequestLogEntriesFil
 	return o
 }
 
-func (o GetWorkRequestLogEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesFilter] {
-	return pulumix.Output[[]GetWorkRequestLogEntriesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestLogEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetWorkRequestLogEntriesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkRequestLogEntriesFilter {
 		return vs[0].([]GetWorkRequestLogEntriesFilter)[vs[1].(int)]
@@ -19598,9 +16695,9 @@ func (o GetWorkRequestLogEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetW
 
 type GetWorkRequestLogEntriesWorkRequestLogEntry struct {
 	// The description of an action that occurred.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The date and time the log entry occurred.
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 }
 
 // GetWorkRequestLogEntriesWorkRequestLogEntryInput is an input type that accepts GetWorkRequestLogEntriesWorkRequestLogEntryArgs and GetWorkRequestLogEntriesWorkRequestLogEntryOutput values.
@@ -19616,9 +16713,9 @@ type GetWorkRequestLogEntriesWorkRequestLogEntryInput interface {
 
 type GetWorkRequestLogEntriesWorkRequestLogEntryArgs struct {
 	// The description of an action that occurred.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The date and time the log entry occurred.
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 }
 
 func (GetWorkRequestLogEntriesWorkRequestLogEntryArgs) ElementType() reflect.Type {
@@ -19631,12 +16728,6 @@ func (i GetWorkRequestLogEntriesWorkRequestLogEntryArgs) ToGetWorkRequestLogEntr
 
 func (i GetWorkRequestLogEntriesWorkRequestLogEntryArgs) ToGetWorkRequestLogEntriesWorkRequestLogEntryOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesWorkRequestLogEntryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesWorkRequestLogEntryOutput)
-}
-
-func (i GetWorkRequestLogEntriesWorkRequestLogEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry] {
-	return pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry]{
-		OutputState: i.ToGetWorkRequestLogEntriesWorkRequestLogEntryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkRequestLogEntriesWorkRequestLogEntryArrayInput is an input type that accepts GetWorkRequestLogEntriesWorkRequestLogEntryArray and GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput values.
@@ -19664,12 +16755,6 @@ func (i GetWorkRequestLogEntriesWorkRequestLogEntryArray) ToGetWorkRequestLogEnt
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput)
 }
 
-func (i GetWorkRequestLogEntriesWorkRequestLogEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry] {
-	return pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry]{
-		OutputState: i.ToGetWorkRequestLogEntriesWorkRequestLogEntryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestLogEntriesWorkRequestLogEntryOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ElementType() reflect.Type {
@@ -19684,20 +16769,14 @@ func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ToGetWorkRequestLogEn
 	return o
 }
 
-func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry] {
-	return pulumix.Output[GetWorkRequestLogEntriesWorkRequestLogEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The description of an action that occurred.
-func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestLogEntriesWorkRequestLogEntry) string { return v.Message }).(pulumi.StringOutput)
+func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestLogEntriesWorkRequestLogEntry) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the log entry occurred.
-func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestLogEntriesWorkRequestLogEntry) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetWorkRequestLogEntriesWorkRequestLogEntryOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestLogEntriesWorkRequestLogEntry) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput struct{ *pulumi.OutputState }
@@ -19712,12 +16791,6 @@ func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) ToGetWorkRequest
 
 func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) ToGetWorkRequestLogEntriesWorkRequestLogEntryArrayOutputWithContext(ctx context.Context) GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput {
 	return o
-}
-
-func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry] {
-	return pulumix.Output[[]GetWorkRequestLogEntriesWorkRequestLogEntry]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkRequestLogEntriesWorkRequestLogEntryArrayOutput) Index(i pulumi.IntInput) GetWorkRequestLogEntriesWorkRequestLogEntryOutput {
@@ -19761,12 +16834,6 @@ func (i GetWorkRequestsFilterArgs) ToGetWorkRequestsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsFilterOutput)
 }
 
-func (i GetWorkRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsFilter] {
-	return pulumix.Output[GetWorkRequestsFilter]{
-		OutputState: i.ToGetWorkRequestsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWorkRequestsFilterArrayInput is an input type that accepts GetWorkRequestsFilterArray and GetWorkRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetWorkRequestsFilterArrayInput` via:
 //
@@ -19792,12 +16859,6 @@ func (i GetWorkRequestsFilterArray) ToGetWorkRequestsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsFilterArrayOutput)
 }
 
-func (i GetWorkRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsFilter] {
-	return pulumix.Output[[]GetWorkRequestsFilter]{
-		OutputState: i.ToGetWorkRequestsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestsFilterOutput) ElementType() reflect.Type {
@@ -19810,12 +16871,6 @@ func (o GetWorkRequestsFilterOutput) ToGetWorkRequestsFilterOutput() GetWorkRequ
 
 func (o GetWorkRequestsFilterOutput) ToGetWorkRequestsFilterOutputWithContext(ctx context.Context) GetWorkRequestsFilterOutput {
 	return o
-}
-
-func (o GetWorkRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsFilter] {
-	return pulumix.Output[GetWorkRequestsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkRequestsFilterOutput) Name() pulumi.StringOutput {
@@ -19844,12 +16899,6 @@ func (o GetWorkRequestsFilterArrayOutput) ToGetWorkRequestsFilterArrayOutputWith
 	return o
 }
 
-func (o GetWorkRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsFilter] {
-	return pulumix.Output[[]GetWorkRequestsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkRequestsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkRequestsFilter {
 		return vs[0].([]GetWorkRequestsFilter)[vs[1].(int)]
@@ -19858,21 +16907,21 @@ func (o GetWorkRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkReques
 
 type GetWorkRequestsWorkRequest struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the work request.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The type of work the work request is doing.
-	OperationType string `pulumi:"operationType"`
+	OperationType *string `pulumi:"operationType"`
 	// The resources this work request affects.
 	Resources []GetWorkRequestsWorkRequestResource `pulumi:"resources"`
 	// A work request status to filter on. Can have multiple parameters of this name.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The time the work request was accepted.
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// The time the work request was finished.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The time the work request was started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 // GetWorkRequestsWorkRequestInput is an input type that accepts GetWorkRequestsWorkRequestArgs and GetWorkRequestsWorkRequestOutput values.
@@ -19888,21 +16937,21 @@ type GetWorkRequestsWorkRequestInput interface {
 
 type GetWorkRequestsWorkRequestArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the work request.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The type of work the work request is doing.
-	OperationType pulumi.StringInput `pulumi:"operationType"`
+	OperationType pulumi.StringPtrInput `pulumi:"operationType"`
 	// The resources this work request affects.
 	Resources GetWorkRequestsWorkRequestResourceArrayInput `pulumi:"resources"`
 	// A work request status to filter on. Can have multiple parameters of this name.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The time the work request was accepted.
-	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrInput `pulumi:"timeAccepted"`
 	// The time the work request was finished.
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// The time the work request was started.
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
 func (GetWorkRequestsWorkRequestArgs) ElementType() reflect.Type {
@@ -19915,12 +16964,6 @@ func (i GetWorkRequestsWorkRequestArgs) ToGetWorkRequestsWorkRequestOutput() Get
 
 func (i GetWorkRequestsWorkRequestArgs) ToGetWorkRequestsWorkRequestOutputWithContext(ctx context.Context) GetWorkRequestsWorkRequestOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestOutput)
-}
-
-func (i GetWorkRequestsWorkRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequest] {
-	return pulumix.Output[GetWorkRequestsWorkRequest]{
-		OutputState: i.ToGetWorkRequestsWorkRequestOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkRequestsWorkRequestArrayInput is an input type that accepts GetWorkRequestsWorkRequestArray and GetWorkRequestsWorkRequestArrayOutput values.
@@ -19948,12 +16991,6 @@ func (i GetWorkRequestsWorkRequestArray) ToGetWorkRequestsWorkRequestArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestArrayOutput)
 }
 
-func (i GetWorkRequestsWorkRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequest] {
-	return pulumix.Output[[]GetWorkRequestsWorkRequest]{
-		OutputState: i.ToGetWorkRequestsWorkRequestArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestsWorkRequestOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestsWorkRequestOutput) ElementType() reflect.Type {
@@ -19968,25 +17005,19 @@ func (o GetWorkRequestsWorkRequestOutput) ToGetWorkRequestsWorkRequestOutputWith
 	return o
 }
 
-func (o GetWorkRequestsWorkRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequest] {
-	return pulumix.Output[GetWorkRequestsWorkRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetWorkRequestsWorkRequestOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the work request.
-func (o GetWorkRequestsWorkRequestOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The type of work the work request is doing.
-func (o GetWorkRequestsWorkRequestOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.OperationType }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) OperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.OperationType }).(pulumi.StringPtrOutput)
 }
 
 // The resources this work request affects.
@@ -19995,23 +17026,23 @@ func (o GetWorkRequestsWorkRequestOutput) Resources() GetWorkRequestsWorkRequest
 }
 
 // A work request status to filter on. Can have multiple parameters of this name.
-func (o GetWorkRequestsWorkRequestOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.Status }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The time the work request was accepted.
-func (o GetWorkRequestsWorkRequestOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // The time the work request was finished.
-func (o GetWorkRequestsWorkRequestOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The time the work request was started.
-func (o GetWorkRequestsWorkRequestOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequest) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequest) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkRequestsWorkRequestArrayOutput struct{ *pulumi.OutputState }
@@ -20028,12 +17059,6 @@ func (o GetWorkRequestsWorkRequestArrayOutput) ToGetWorkRequestsWorkRequestArray
 	return o
 }
 
-func (o GetWorkRequestsWorkRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequest] {
-	return pulumix.Output[[]GetWorkRequestsWorkRequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestsWorkRequestArrayOutput) Index(i pulumi.IntInput) GetWorkRequestsWorkRequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkRequestsWorkRequest {
 		return vs[0].([]GetWorkRequestsWorkRequest)[vs[1].(int)]
@@ -20042,13 +17067,13 @@ func (o GetWorkRequestsWorkRequestArrayOutput) Index(i pulumi.IntInput) GetWorkR
 
 type GetWorkRequestsWorkRequestResource struct {
 	// The way in which this resource was affected by the work tracked by the work request.
-	ActionType string `pulumi:"actionType"`
+	ActionType *string `pulumi:"actionType"`
 	// The resource type the work request affects.
-	EntityType string `pulumi:"entityType"`
+	EntityType *string `pulumi:"entityType"`
 	// The URI path on which the user can issue a GET request to access the resource metadata.
-	EntityUri string `pulumi:"entityUri"`
+	EntityUri *string `pulumi:"entityUri"`
 	// The OCID of the resource the work request affects.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 }
 
 // GetWorkRequestsWorkRequestResourceInput is an input type that accepts GetWorkRequestsWorkRequestResourceArgs and GetWorkRequestsWorkRequestResourceOutput values.
@@ -20064,13 +17089,13 @@ type GetWorkRequestsWorkRequestResourceInput interface {
 
 type GetWorkRequestsWorkRequestResourceArgs struct {
 	// The way in which this resource was affected by the work tracked by the work request.
-	ActionType pulumi.StringInput `pulumi:"actionType"`
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
 	// The resource type the work request affects.
-	EntityType pulumi.StringInput `pulumi:"entityType"`
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	// The URI path on which the user can issue a GET request to access the resource metadata.
-	EntityUri pulumi.StringInput `pulumi:"entityUri"`
+	EntityUri pulumi.StringPtrInput `pulumi:"entityUri"`
 	// The OCID of the resource the work request affects.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 }
 
 func (GetWorkRequestsWorkRequestResourceArgs) ElementType() reflect.Type {
@@ -20083,12 +17108,6 @@ func (i GetWorkRequestsWorkRequestResourceArgs) ToGetWorkRequestsWorkRequestReso
 
 func (i GetWorkRequestsWorkRequestResourceArgs) ToGetWorkRequestsWorkRequestResourceOutputWithContext(ctx context.Context) GetWorkRequestsWorkRequestResourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestResourceOutput)
-}
-
-func (i GetWorkRequestsWorkRequestResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequestResource] {
-	return pulumix.Output[GetWorkRequestsWorkRequestResource]{
-		OutputState: i.ToGetWorkRequestsWorkRequestResourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWorkRequestsWorkRequestResourceArrayInput is an input type that accepts GetWorkRequestsWorkRequestResourceArray and GetWorkRequestsWorkRequestResourceArrayOutput values.
@@ -20116,12 +17135,6 @@ func (i GetWorkRequestsWorkRequestResourceArray) ToGetWorkRequestsWorkRequestRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetWorkRequestsWorkRequestResourceArrayOutput)
 }
 
-func (i GetWorkRequestsWorkRequestResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequestResource] {
-	return pulumix.Output[[]GetWorkRequestsWorkRequestResource]{
-		OutputState: i.ToGetWorkRequestsWorkRequestResourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWorkRequestsWorkRequestResourceOutput struct{ *pulumi.OutputState }
 
 func (GetWorkRequestsWorkRequestResourceOutput) ElementType() reflect.Type {
@@ -20136,30 +17149,24 @@ func (o GetWorkRequestsWorkRequestResourceOutput) ToGetWorkRequestsWorkRequestRe
 	return o
 }
 
-func (o GetWorkRequestsWorkRequestResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsWorkRequestResource] {
-	return pulumix.Output[GetWorkRequestsWorkRequestResource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The way in which this resource was affected by the work tracked by the work request.
-func (o GetWorkRequestsWorkRequestResourceOutput) ActionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) string { return v.ActionType }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestResourceOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) *string { return v.ActionType }).(pulumi.StringPtrOutput)
 }
 
 // The resource type the work request affects.
-func (o GetWorkRequestsWorkRequestResourceOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) string { return v.EntityType }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestResourceOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
 // The URI path on which the user can issue a GET request to access the resource metadata.
-func (o GetWorkRequestsWorkRequestResourceOutput) EntityUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) string { return v.EntityUri }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestResourceOutput) EntityUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) *string { return v.EntityUri }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource the work request affects.
-func (o GetWorkRequestsWorkRequestResourceOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) string { return v.Identifier }).(pulumi.StringOutput)
+func (o GetWorkRequestsWorkRequestResourceOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsWorkRequestResource) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 type GetWorkRequestsWorkRequestResourceArrayOutput struct{ *pulumi.OutputState }
@@ -20174,12 +17181,6 @@ func (o GetWorkRequestsWorkRequestResourceArrayOutput) ToGetWorkRequestsWorkRequ
 
 func (o GetWorkRequestsWorkRequestResourceArrayOutput) ToGetWorkRequestsWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetWorkRequestsWorkRequestResourceArrayOutput {
 	return o
-}
-
-func (o GetWorkRequestsWorkRequestResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWorkRequestsWorkRequestResource] {
-	return pulumix.Output[[]GetWorkRequestsWorkRequestResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWorkRequestsWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetWorkRequestsWorkRequestResourceOutput {

@@ -70,12 +70,12 @@ export interface GetLogGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     /**
      * The list of log_groups.
      */
-    readonly logGroups: outputs.Logging.GetLogGroupsLogGroup[];
+    readonly logGroups?: outputs.Logging.GetLogGroupsLogGroup[];
 }
 /**
  * This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.

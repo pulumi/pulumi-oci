@@ -49,7 +49,7 @@ class GetServicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetServicesResult:
 
     @property
     @pulumi.getter
-    def services(self) -> Sequence['outputs.GetServicesServiceResult']:
-        """
-        The list of services.
-        """
+    def services(self) -> Optional[Sequence['outputs.GetServicesServiceResult']]:
         return pulumi.get(self, "services")
 
 
@@ -80,22 +77,7 @@ def get_services(compartment_id: Optional[str] = None,
                  filters: Optional[Sequence[pulumi.InputType['GetServicesFilterArgs']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServicesResult:
     """
-    This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
-
-    Returns the list of supported services.
-    This includes the programmatic service name, along with the friendly service name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_services = oci.Limits.get_services(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -115,21 +97,6 @@ def get_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServicesFilterArgs']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServicesResult]:
     """
-    This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
-
-    Returns the list of supported services.
-    This includes the programmatic service name, along with the friendly service name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_services = oci.Limits.get_services(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+    Use this data source to access information about an existing resource.
     """
     ...

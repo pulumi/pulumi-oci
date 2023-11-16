@@ -122,18 +122,12 @@ class GetListingResult:
 
     @property
     @pulumi.getter
-    def banners(self) -> Sequence['outputs.GetListingBannerResult']:
-        """
-        The model for upload data for images and icons.
-        """
+    def banners(self) -> Optional[Sequence['outputs.GetListingBannerResult']]:
         return pulumi.get(self, "banners")
 
     @property
     @pulumi.getter
-    def categories(self) -> Sequence[str]:
-        """
-        Product categories that the listing belongs to.
-        """
+    def categories(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "categories")
 
     @property
@@ -143,39 +137,27 @@ class GetListingResult:
 
     @property
     @pulumi.getter(name="compatibleArchitectures")
-    def compatible_architectures(self) -> Sequence[str]:
-        """
-        The list of compatible architectures supported by the listing
-        """
+    def compatible_architectures(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "compatible_architectures")
 
     @property
     @pulumi.getter(name="defaultPackageVersion")
-    def default_package_version(self) -> str:
-        """
-        The default package version.
-        """
+    def default_package_version(self) -> Optional[str]:
         return pulumi.get(self, "default_package_version")
 
     @property
     @pulumi.getter(name="documentationLinks")
-    def documentation_links(self) -> Sequence['outputs.GetListingDocumentationLinkResult']:
-        """
-        Links to additional documentation provided by the publisher specifically for the listing.
-        """
+    def documentation_links(self) -> Optional[Sequence['outputs.GetListingDocumentationLinkResult']]:
         return pulumi.get(self, "documentation_links")
 
     @property
     @pulumi.getter
-    def icons(self) -> Sequence['outputs.GetListingIconResult']:
-        """
-        The model for upload data for images and icons.
-        """
+    def icons(self) -> Optional[Sequence['outputs.GetListingIconResult']]:
         return pulumi.get(self, "icons")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -183,42 +165,27 @@ class GetListingResult:
 
     @property
     @pulumi.getter(name="isFeatured")
-    def is_featured(self) -> bool:
-        """
-        Indicates whether the listing is included in Featured Listings.
-        """
+    def is_featured(self) -> Optional[bool]:
         return pulumi.get(self, "is_featured")
 
     @property
     @pulumi.getter
-    def keywords(self) -> str:
-        """
-        Keywords associated with the listing.
-        """
+    def keywords(self) -> Optional[str]:
         return pulumi.get(self, "keywords")
 
     @property
     @pulumi.getter
-    def languages(self) -> Sequence['outputs.GetListingLanguageResult']:
-        """
-        Languages supported by the listing.
-        """
+    def languages(self) -> Optional[Sequence['outputs.GetListingLanguageResult']]:
         return pulumi.get(self, "languages")
 
     @property
     @pulumi.getter(name="licenseModelDescription")
-    def license_model_description(self) -> str:
-        """
-        A description of the publisher's licensing model for the listing.
-        """
+    def license_model_description(self) -> Optional[str]:
         return pulumi.get(self, "license_model_description")
 
     @property
     @pulumi.getter
-    def links(self) -> Sequence['outputs.GetListingLinkResult']:
-        """
-        Reference links.
-        """
+    def links(self) -> Optional[Sequence['outputs.GetListingLinkResult']]:
         return pulumi.get(self, "links")
 
     @property
@@ -228,146 +195,92 @@ class GetListingResult:
 
     @property
     @pulumi.getter(name="listingType")
-    def listing_type(self) -> str:
-        """
-        The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
-        """
+    def listing_type(self) -> Optional[str]:
         return pulumi.get(self, "listing_type")
 
     @property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> str:
-        """
-        A long description of the listing.
-        """
+    def long_description(self) -> Optional[str]:
         return pulumi.get(self, "long_description")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Text that describes the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> str:
-        """
-        The listing's package type.
-        """
+    def package_type(self) -> Optional[str]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter
-    def publishers(self) -> Sequence['outputs.GetListingPublisherResult']:
-        """
-        Summary details about the publisher of the listing.
-        """
+    def publishers(self) -> Optional[Sequence['outputs.GetListingPublisherResult']]:
         return pulumi.get(self, "publishers")
 
     @property
     @pulumi.getter
-    def regions(self) -> Sequence['outputs.GetListingRegionResult']:
-        """
-        The regions where the listing is eligible to be deployed.
-        """
+    def regions(self) -> Optional[Sequence['outputs.GetListingRegionResult']]:
         return pulumi.get(self, "regions")
 
     @property
     @pulumi.getter(name="releaseNotes")
-    def release_notes(self) -> str:
-        """
-        Release notes for the listing.
-        """
+    def release_notes(self) -> Optional[str]:
         return pulumi.get(self, "release_notes")
 
     @property
     @pulumi.getter
-    def screenshots(self) -> Sequence['outputs.GetListingScreenshotResult']:
-        """
-        Screenshots of the listing.
-        """
+    def screenshots(self) -> Optional[Sequence['outputs.GetListingScreenshotResult']]:
         return pulumi.get(self, "screenshots")
 
     @property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> str:
-        """
-        A short description of the listing.
-        """
+    def short_description(self) -> Optional[str]:
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter(name="supportContacts")
-    def support_contacts(self) -> Sequence['outputs.GetListingSupportContactResult']:
-        """
-        Contact information to use to get support from the publisher for the listing.
-        """
+    def support_contacts(self) -> Optional[Sequence['outputs.GetListingSupportContactResult']]:
         return pulumi.get(self, "support_contacts")
 
     @property
     @pulumi.getter(name="supportLinks")
-    def support_links(self) -> Sequence['outputs.GetListingSupportLinkResult']:
-        """
-        Links to support resources for the listing.
-        """
+    def support_links(self) -> Optional[Sequence['outputs.GetListingSupportLinkResult']]:
         return pulumi.get(self, "support_links")
 
     @property
     @pulumi.getter(name="supportedOperatingSystems")
-    def supported_operating_systems(self) -> Sequence['outputs.GetListingSupportedOperatingSystemResult']:
-        """
-        The list of operating systems supported by the listing.
-        """
+    def supported_operating_systems(self) -> Optional[Sequence['outputs.GetListingSupportedOperatingSystemResult']]:
         return pulumi.get(self, "supported_operating_systems")
 
     @property
     @pulumi.getter(name="systemRequirements")
-    def system_requirements(self) -> str:
-        """
-        System requirements for the listing.
-        """
+    def system_requirements(self) -> Optional[str]:
         return pulumi.get(self, "system_requirements")
 
     @property
     @pulumi.getter
-    def tagline(self) -> str:
-        """
-        The tagline of the listing.
-        """
+    def tagline(self) -> Optional[str]:
         return pulumi.get(self, "tagline")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The release date of the listing.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter(name="usageInformation")
-    def usage_information(self) -> str:
-        """
-        Usage information for the listing.
-        """
+    def usage_information(self) -> Optional[str]:
         return pulumi.get(self, "usage_information")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the listing.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
-    def videos(self) -> Sequence['outputs.GetListingVideoResult']:
-        """
-        Videos of the listing.
-        """
+    def videos(self) -> Optional[Sequence['outputs.GetListingVideoResult']]:
         return pulumi.get(self, "videos")
 
 
@@ -415,37 +328,7 @@ def get_listing(compartment_id: Optional[str] = None,
                 listing_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingResult:
     """
-    This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets detailed information about a listing, including the listing's name, version, description, and
-    resources.
-
-    If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
-    you launch the instance, you also need to provide the image ID of the listing resource version that you want.
-
-    Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
-    listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
-    The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
-    its signature, is returned in the response. With the signature for the terms of use agreement for the desired
-    listing resource version, create a subscription by issuing a
-    [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
-
-    To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
-    Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing = oci.Marketplace.get_listing(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
-    :param str listing_id: The unique identifier for the listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -493,36 +376,6 @@ def get_listing_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        listing_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingResult]:
     """
-    This data source provides details about a specific Listing resource in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets detailed information about a listing, including the listing's name, version, description, and
-    resources.
-
-    If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
-    you launch the instance, you also need to provide the image ID of the listing resource version that you want.
-
-    Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
-    listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
-    The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
-    its signature, is returned in the response. With the signature for the terms of use agreement for the desired
-    listing resource version, create a subscription by issuing a
-    [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
-
-    To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
-    Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing = oci.Marketplace.get_listing(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
-    :param str listing_id: The unique identifier for the listing.
+    Use this data source to access information about an existing resource.
     """
     ...

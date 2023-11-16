@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -63,16 +62,16 @@ type GetLogAnalyticsEntitiesSummaryArgs struct {
 // A collection of values returned by getLogAnalyticsEntitiesSummary.
 type GetLogAnalyticsEntitiesSummaryResult struct {
 	// Total number of ACTIVE entities
-	ActiveEntitiesCount int `pulumi:"activeEntitiesCount"`
+	ActiveEntitiesCount *int `pulumi:"activeEntitiesCount"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Entities with log collection enabled
-	EntitiesWithHasLogsCollectedCount int `pulumi:"entitiesWithHasLogsCollectedCount"`
+	EntitiesWithHasLogsCollectedCount *int `pulumi:"entitiesWithHasLogsCollectedCount"`
 	// Entities with management agent
-	EntitiesWithManagementAgentCount int `pulumi:"entitiesWithManagementAgentCount"`
+	EntitiesWithManagementAgentCount *int `pulumi:"entitiesWithManagementAgentCount"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 }
 
 func GetLogAnalyticsEntitiesSummaryOutput(ctx *pulumi.Context, args GetLogAnalyticsEntitiesSummaryOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsEntitiesSummaryResultOutput {
@@ -115,15 +114,9 @@ func (o GetLogAnalyticsEntitiesSummaryResultOutput) ToGetLogAnalyticsEntitiesSum
 	return o
 }
 
-func (o GetLogAnalyticsEntitiesSummaryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesSummaryResult] {
-	return pulumix.Output[GetLogAnalyticsEntitiesSummaryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total number of ACTIVE entities
-func (o GetLogAnalyticsEntitiesSummaryResultOutput) ActiveEntitiesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) int { return v.ActiveEntitiesCount }).(pulumi.IntOutput)
+func (o GetLogAnalyticsEntitiesSummaryResultOutput) ActiveEntitiesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) *int { return v.ActiveEntitiesCount }).(pulumi.IntPtrOutput)
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -132,18 +125,18 @@ func (o GetLogAnalyticsEntitiesSummaryResultOutput) CompartmentId() pulumi.Strin
 }
 
 // Entities with log collection enabled
-func (o GetLogAnalyticsEntitiesSummaryResultOutput) EntitiesWithHasLogsCollectedCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) int { return v.EntitiesWithHasLogsCollectedCount }).(pulumi.IntOutput)
+func (o GetLogAnalyticsEntitiesSummaryResultOutput) EntitiesWithHasLogsCollectedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) *int { return v.EntitiesWithHasLogsCollectedCount }).(pulumi.IntPtrOutput)
 }
 
 // Entities with management agent
-func (o GetLogAnalyticsEntitiesSummaryResultOutput) EntitiesWithManagementAgentCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) int { return v.EntitiesWithManagementAgentCount }).(pulumi.IntOutput)
+func (o GetLogAnalyticsEntitiesSummaryResultOutput) EntitiesWithManagementAgentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) *int { return v.EntitiesWithManagementAgentCount }).(pulumi.IntPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsEntitiesSummaryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsEntitiesSummaryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesSummaryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLogAnalyticsEntitiesSummaryResultOutput) Namespace() pulumi.StringOutput {

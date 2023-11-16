@@ -72,42 +72,42 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
-    private Output<String> content;
+    private Output</* @Nullable */ String> content;
 
     /**
      * @return Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
      * 
      */
-    public Output<String> content() {
-        return this.content;
+    public Output<Optional<String>> content() {
+        return Codegen.optional(this.content);
     }
     /**
      * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. &#39;httprequest&#39;, &#39;cloudevent&#39;.
      * 
      */
     @Export(name="fnIntent", refs={String.class}, tree="[0]")
-    private Output<String> fnIntent;
+    private Output</* @Nullable */ String> fnIntent;
 
     /**
      * @return An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. &#39;httprequest&#39;, &#39;cloudevent&#39;.
      * 
      */
-    public Output<String> fnIntent() {
-        return this.fnIntent;
+    public Output<Optional<String>> fnIntent() {
+        return Codegen.optional(this.fnIntent);
     }
     /**
      * Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
     @Export(name="fnInvokeType", refs={String.class}, tree="[0]")
-    private Output<String> fnInvokeType;
+    private Output</* @Nullable */ String> fnInvokeType;
 
     /**
      * @return Indicates whether Oracle Functions should execute the request and return the result (&#39;sync&#39;) of the execution,  or whether Oracle Functions should return as soon as processing has begun (&#39;detached&#39;) and leave result handling to the function.
      * 
      */
-    public Output<String> fnInvokeType() {
-        return this.fnInvokeType;
+    public Output<Optional<String>> fnInvokeType() {
+        return Codegen.optional(this.fnInvokeType);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -144,30 +144,30 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.inputBodySourcePath);
     }
     @Export(name="invokeEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> invokeEndpoint;
+    private Output</* @Nullable */ String> invokeEndpoint;
 
-    public Output<String> invokeEndpoint() {
-        return this.invokeEndpoint;
+    public Output<Optional<String>> invokeEndpoint() {
+        return Codegen.optional(this.invokeEndpoint);
     }
     /**
      * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
      * 
      */
     @Export(name="invokeFunctionBody", refs={String.class}, tree="[0]")
-    private Output<String> invokeFunctionBody;
+    private Output</* @Nullable */ String> invokeFunctionBody;
 
     /**
      * @return The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
      * 
      */
-    public Output<String> invokeFunctionBody() {
-        return this.invokeFunctionBody;
+    public Output<Optional<String>> invokeFunctionBody() {
+        return Codegen.optional(this.invokeFunctionBody);
     }
     @Export(name="invokeFunctionBodyBase64Encoded", refs={String.class}, tree="[0]")
-    private Output<String> invokeFunctionBodyBase64Encoded;
+    private Output</* @Nullable */ String> invokeFunctionBodyBase64Encoded;
 
-    public Output<String> invokeFunctionBodyBase64Encoded() {
-        return this.invokeFunctionBodyBase64Encoded;
+    public Output<Optional<String>> invokeFunctionBodyBase64Encoded() {
+        return Codegen.optional(this.invokeFunctionBodyBase64Encoded);
     }
 
     /**

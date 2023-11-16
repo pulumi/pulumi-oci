@@ -56,79 +56,52 @@ class GetHeatWaveClusterResult:
 
     @property
     @pulumi.getter(name="clusterNodes")
-    def cluster_nodes(self) -> Sequence['outputs.GetHeatWaveClusterClusterNodeResult']:
-        """
-        A HeatWave node is a compute host that is part of a HeatWave cluster.
-        """
+    def cluster_nodes(self) -> Optional[Sequence['outputs.GetHeatWaveClusterClusterNodeResult']]:
         return pulumi.get(self, "cluster_nodes")
 
     @property
     @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> int:
-        """
-        The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        """
+    def cluster_size(self) -> Optional[int]:
         return pulumi.get(self, "cluster_size")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> str:
-        """
-        The OCID of the parent DB System this HeatWave cluster is attached to.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isLakehouseEnabled")
-    def is_lakehouse_enabled(self) -> bool:
-        """
-        Lakehouse enabled status for the HeatWave cluster.
-        """
+    def is_lakehouse_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycleState.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the HeatWave cluster.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -153,21 +126,7 @@ class AwaitableGetHeatWaveClusterResult(GetHeatWaveClusterResult):
 def get_heat_wave_cluster(db_system_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHeatWaveClusterResult:
     """
-    This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-
-    Gets information about the HeatWave cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_heat_wave_cluster = oci.Mysql.get_heat_wave_cluster(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -191,20 +150,6 @@ def get_heat_wave_cluster(db_system_id: Optional[str] = None,
 def get_heat_wave_cluster_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHeatWaveClusterResult]:
     """
-    This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-
-    Gets information about the HeatWave cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_heat_wave_cluster = oci.Mysql.get_heat_wave_cluster(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

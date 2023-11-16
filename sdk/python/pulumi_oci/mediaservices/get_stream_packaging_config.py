@@ -68,74 +68,47 @@ class GetStreamPackagingConfigResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the stream packaging configuration. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="distributionChannelId")
-    def distribution_channel_id(self) -> str:
-        """
-        Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
-        """
+    def distribution_channel_id(self) -> Optional[str]:
         return pulumi.get(self, "distribution_channel_id")
 
     @property
     @pulumi.getter
-    def encryptions(self) -> Sequence['outputs.GetStreamPackagingConfigEncryptionResult']:
-        """
-        The encryption used by the stream packaging configuration.
-        """
+    def encryptions(self) -> Optional[Sequence['outputs.GetStreamPackagingConfigEncryptionResult']]:
         return pulumi.get(self, "encryptions")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="segmentTimeInSeconds")
-    def segment_time_in_seconds(self) -> int:
-        """
-        The duration in seconds for each fragment.
-        """
+    def segment_time_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "segment_time_in_seconds")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Packaging Configuration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -145,34 +118,22 @@ class GetStreamPackagingConfigResult:
 
     @property
     @pulumi.getter(name="streamPackagingFormat")
-    def stream_packaging_format(self) -> str:
-        """
-        The output format for the package.
-        """
+    def stream_packaging_format(self) -> Optional[str]:
         return pulumi.get(self, "stream_packaging_format")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetStreamPackagingConfigResult(GetStreamPackagingConfigResult):
 def get_stream_packaging_config(stream_packaging_config_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamPackagingConfigResult:
     """
-    This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a Stream Packaging Configuration by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
-    ```
-
-
-    :param str stream_packaging_config_id: Unique Stream Packaging Configuration path identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['streamPackagingConfigId'] = stream_packaging_config_id
@@ -243,20 +190,6 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[str] = None
 def get_stream_packaging_config_output(stream_packaging_config_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamPackagingConfigResult]:
     """
-    This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a Stream Packaging Configuration by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
-    ```
-
-
-    :param str stream_packaging_config_id: Unique Stream Packaging Configuration path identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

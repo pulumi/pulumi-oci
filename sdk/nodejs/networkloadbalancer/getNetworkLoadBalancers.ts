@@ -70,11 +70,11 @@ export interface GetNetworkLoadBalancersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of network_load_balancer_collection.
      */
-    readonly networkLoadBalancerCollections: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersNetworkLoadBalancerCollection[];
+    readonly networkLoadBalancerCollections?: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersNetworkLoadBalancerCollection[];
     /**
      * The current state of the network load balancer.
      */

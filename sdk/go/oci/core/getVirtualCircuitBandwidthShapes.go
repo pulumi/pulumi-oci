@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
@@ -65,8 +64,8 @@ type GetVirtualCircuitBandwidthShapesArgs struct {
 type GetVirtualCircuitBandwidthShapesResult struct {
 	Filters []GetVirtualCircuitBandwidthShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ProviderServiceId string `pulumi:"providerServiceId"`
+	Id                *string `pulumi:"id"`
+	ProviderServiceId string  `pulumi:"providerServiceId"`
 	// The list of virtual_circuit_bandwidth_shapes.
 	VirtualCircuitBandwidthShapes []GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape `pulumi:"virtualCircuitBandwidthShapes"`
 }
@@ -110,12 +109,6 @@ func (o GetVirtualCircuitBandwidthShapesResultOutput) ToGetVirtualCircuitBandwid
 	return o
 }
 
-func (o GetVirtualCircuitBandwidthShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitBandwidthShapesResult] {
-	return pulumix.Output[GetVirtualCircuitBandwidthShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualCircuitBandwidthShapesResultOutput) Filters() GetVirtualCircuitBandwidthShapesFilterArrayOutput {
 	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesResult) []GetVirtualCircuitBandwidthShapesFilter {
 		return v.Filters
@@ -123,8 +116,8 @@ func (o GetVirtualCircuitBandwidthShapesResultOutput) Filters() GetVirtualCircui
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVirtualCircuitBandwidthShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualCircuitBandwidthShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitBandwidthShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVirtualCircuitBandwidthShapesResultOutput) ProviderServiceId() pulumi.StringOutput {

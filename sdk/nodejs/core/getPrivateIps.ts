@@ -100,7 +100,7 @@ export interface GetPrivateIpsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
      */
@@ -108,7 +108,7 @@ export interface GetPrivateIpsResult {
     /**
      * The list of private_ips.
      */
-    readonly privateIps: outputs.Core.GetPrivateIpsPrivateIp[];
+    readonly privateIps?: outputs.Core.GetPrivateIpsPrivateIp[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      */

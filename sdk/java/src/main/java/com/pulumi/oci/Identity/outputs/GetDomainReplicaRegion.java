@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainReplicaRegion {
@@ -13,39 +15,39 @@ public final class GetDomainReplicaRegion {
      * @return A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return The current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Region agnostic domain URL.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetDomainReplicaRegion() {}
     /**
      * @return A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Region agnostic domain URL.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainReplicaRegion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String region;
-        private String state;
-        private String url;
+        private @Nullable String region;
+        private @Nullable String state;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetDomainReplicaRegion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainReplicaRegion {
         }
 
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetDomainReplicaRegion build() {

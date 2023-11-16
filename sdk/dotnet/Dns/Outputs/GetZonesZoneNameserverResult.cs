@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The hostname of the nameserver.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
 
         [OutputConstructor]
-        private GetZonesZoneNameserverResult(string hostname)
+        private GetZonesZoneNameserverResult(string? hostname)
         {
             Hostname = hostname;
         }

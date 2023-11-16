@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -71,12 +70,6 @@ func (i ProtectedDatabaseMetricArgs) ToProtectedDatabaseMetricOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseMetricOutput)
 }
 
-func (i ProtectedDatabaseMetricArgs) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseMetric] {
-	return pulumix.Output[ProtectedDatabaseMetric]{
-		OutputState: i.ToProtectedDatabaseMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectedDatabaseMetricArrayInput is an input type that accepts ProtectedDatabaseMetricArray and ProtectedDatabaseMetricArrayOutput values.
 // You can construct a concrete instance of `ProtectedDatabaseMetricArrayInput` via:
 //
@@ -102,12 +95,6 @@ func (i ProtectedDatabaseMetricArray) ToProtectedDatabaseMetricArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseMetricArrayOutput)
 }
 
-func (i ProtectedDatabaseMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseMetric] {
-	return pulumix.Output[[]ProtectedDatabaseMetric]{
-		OutputState: i.ToProtectedDatabaseMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectedDatabaseMetricOutput struct{ *pulumi.OutputState }
 
 func (ProtectedDatabaseMetricOutput) ElementType() reflect.Type {
@@ -120,12 +107,6 @@ func (o ProtectedDatabaseMetricOutput) ToProtectedDatabaseMetricOutput() Protect
 
 func (o ProtectedDatabaseMetricOutput) ToProtectedDatabaseMetricOutputWithContext(ctx context.Context) ProtectedDatabaseMetricOutput {
 	return o
-}
-
-func (o ProtectedDatabaseMetricOutput) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseMetric] {
-	return pulumix.Output[ProtectedDatabaseMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
@@ -177,12 +158,6 @@ func (o ProtectedDatabaseMetricArrayOutput) ToProtectedDatabaseMetricArrayOutput
 	return o
 }
 
-func (o ProtectedDatabaseMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseMetric] {
-	return pulumix.Output[[]ProtectedDatabaseMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) ProtectedDatabaseMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProtectedDatabaseMetric {
 		return vs[0].([]ProtectedDatabaseMetric)[vs[1].(int)]
@@ -232,12 +207,6 @@ func (i ProtectedDatabaseRecoveryServiceSubnetArgs) ToProtectedDatabaseRecoveryS
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseRecoveryServiceSubnetOutput)
 }
 
-func (i ProtectedDatabaseRecoveryServiceSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: i.ToProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectedDatabaseRecoveryServiceSubnetArrayInput is an input type that accepts ProtectedDatabaseRecoveryServiceSubnetArray and ProtectedDatabaseRecoveryServiceSubnetArrayOutput values.
 // You can construct a concrete instance of `ProtectedDatabaseRecoveryServiceSubnetArrayInput` via:
 //
@@ -263,12 +232,6 @@ func (i ProtectedDatabaseRecoveryServiceSubnetArray) ToProtectedDatabaseRecovery
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectedDatabaseRecoveryServiceSubnetArrayOutput)
 }
 
-func (i ProtectedDatabaseRecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: i.ToProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectedDatabaseRecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (ProtectedDatabaseRecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -281,12 +244,6 @@ func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToProtectedDatabaseRecover
 
 func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx context.Context) ProtectedDatabaseRecoveryServiceSubnetOutput {
 	return o
-}
-
-func (o ProtectedDatabaseRecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[ProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The recovery service subnet OCID.
@@ -316,12 +273,6 @@ func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToProtectedDatabaseRe
 	return o
 }
 
-func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[[]ProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) ProtectedDatabaseRecoveryServiceSubnetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProtectedDatabaseRecoveryServiceSubnet {
 		return vs[0].([]ProtectedDatabaseRecoveryServiceSubnet)[vs[1].(int)]
@@ -330,19 +281,19 @@ func (o ProtectedDatabaseRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInp
 
 type GetProtectedDatabaseMetric struct {
 	// The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-	BackupSpaceEstimateInGbs float64 `pulumi:"backupSpaceEstimateInGbs"`
+	BackupSpaceEstimateInGbs *float64 `pulumi:"backupSpaceEstimateInGbs"`
 	// Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-	BackupSpaceUsedInGbs float64 `pulumi:"backupSpaceUsedInGbs"`
+	BackupSpaceUsedInGbs *float64 `pulumi:"backupSpaceUsedInGbs"`
 	// Number of seconds backups are currently retained for this database.
-	CurrentRetentionPeriodInSeconds float64 `pulumi:"currentRetentionPeriodInSeconds"`
+	CurrentRetentionPeriodInSeconds *float64 `pulumi:"currentRetentionPeriodInSeconds"`
 	// The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-	DbSizeInGbs float64 `pulumi:"dbSizeInGbs"`
+	DbSizeInGbs *float64 `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-	IsRedoLogsEnabled bool `pulumi:"isRedoLogsEnabled"`
+	IsRedoLogsEnabled *bool `pulumi:"isRedoLogsEnabled"`
 	// The maximum number of days to retain backups for a protected database.
-	RetentionPeriodInDays float64 `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInDays *float64 `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-	UnprotectedWindowInSeconds float64 `pulumi:"unprotectedWindowInSeconds"`
+	UnprotectedWindowInSeconds *float64 `pulumi:"unprotectedWindowInSeconds"`
 }
 
 // GetProtectedDatabaseMetricInput is an input type that accepts GetProtectedDatabaseMetricArgs and GetProtectedDatabaseMetricOutput values.
@@ -358,19 +309,19 @@ type GetProtectedDatabaseMetricInput interface {
 
 type GetProtectedDatabaseMetricArgs struct {
 	// The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-	BackupSpaceEstimateInGbs pulumi.Float64Input `pulumi:"backupSpaceEstimateInGbs"`
+	BackupSpaceEstimateInGbs pulumi.Float64PtrInput `pulumi:"backupSpaceEstimateInGbs"`
 	// Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-	BackupSpaceUsedInGbs pulumi.Float64Input `pulumi:"backupSpaceUsedInGbs"`
+	BackupSpaceUsedInGbs pulumi.Float64PtrInput `pulumi:"backupSpaceUsedInGbs"`
 	// Number of seconds backups are currently retained for this database.
-	CurrentRetentionPeriodInSeconds pulumi.Float64Input `pulumi:"currentRetentionPeriodInSeconds"`
+	CurrentRetentionPeriodInSeconds pulumi.Float64PtrInput `pulumi:"currentRetentionPeriodInSeconds"`
 	// The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-	DbSizeInGbs pulumi.Float64Input `pulumi:"dbSizeInGbs"`
+	DbSizeInGbs pulumi.Float64PtrInput `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-	IsRedoLogsEnabled pulumi.BoolInput `pulumi:"isRedoLogsEnabled"`
+	IsRedoLogsEnabled pulumi.BoolPtrInput `pulumi:"isRedoLogsEnabled"`
 	// The maximum number of days to retain backups for a protected database.
-	RetentionPeriodInDays pulumi.Float64Input `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInDays pulumi.Float64PtrInput `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-	UnprotectedWindowInSeconds pulumi.Float64Input `pulumi:"unprotectedWindowInSeconds"`
+	UnprotectedWindowInSeconds pulumi.Float64PtrInput `pulumi:"unprotectedWindowInSeconds"`
 }
 
 func (GetProtectedDatabaseMetricArgs) ElementType() reflect.Type {
@@ -383,12 +334,6 @@ func (i GetProtectedDatabaseMetricArgs) ToGetProtectedDatabaseMetricOutput() Get
 
 func (i GetProtectedDatabaseMetricArgs) ToGetProtectedDatabaseMetricOutputWithContext(ctx context.Context) GetProtectedDatabaseMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseMetricOutput)
-}
-
-func (i GetProtectedDatabaseMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseMetric] {
-	return pulumix.Output[GetProtectedDatabaseMetric]{
-		OutputState: i.ToGetProtectedDatabaseMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectedDatabaseMetricArrayInput is an input type that accepts GetProtectedDatabaseMetricArray and GetProtectedDatabaseMetricArrayOutput values.
@@ -416,12 +361,6 @@ func (i GetProtectedDatabaseMetricArray) ToGetProtectedDatabaseMetricArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseMetricArrayOutput)
 }
 
-func (i GetProtectedDatabaseMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseMetric] {
-	return pulumix.Output[[]GetProtectedDatabaseMetric]{
-		OutputState: i.ToGetProtectedDatabaseMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabaseMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabaseMetricOutput) ElementType() reflect.Type {
@@ -436,45 +375,39 @@ func (o GetProtectedDatabaseMetricOutput) ToGetProtectedDatabaseMetricOutputWith
 	return o
 }
 
-func (o GetProtectedDatabaseMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseMetric] {
-	return pulumix.Output[GetProtectedDatabaseMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-func (o GetProtectedDatabaseMetricOutput) BackupSpaceEstimateInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.BackupSpaceEstimateInGbs }).(pulumi.Float64Output)
+func (o GetProtectedDatabaseMetricOutput) BackupSpaceEstimateInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *float64 { return v.BackupSpaceEstimateInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-func (o GetProtectedDatabaseMetricOutput) BackupSpaceUsedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.BackupSpaceUsedInGbs }).(pulumi.Float64Output)
+func (o GetProtectedDatabaseMetricOutput) BackupSpaceUsedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *float64 { return v.BackupSpaceUsedInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // Number of seconds backups are currently retained for this database.
-func (o GetProtectedDatabaseMetricOutput) CurrentRetentionPeriodInSeconds() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.CurrentRetentionPeriodInSeconds }).(pulumi.Float64Output)
+func (o GetProtectedDatabaseMetricOutput) CurrentRetentionPeriodInSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *float64 { return v.CurrentRetentionPeriodInSeconds }).(pulumi.Float64PtrOutput)
 }
 
 // The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-func (o GetProtectedDatabaseMetricOutput) DbSizeInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.DbSizeInGbs }).(pulumi.Float64Output)
+func (o GetProtectedDatabaseMetricOutput) DbSizeInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *float64 { return v.DbSizeInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-func (o GetProtectedDatabaseMetricOutput) IsRedoLogsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) bool { return v.IsRedoLogsEnabled }).(pulumi.BoolOutput)
+func (o GetProtectedDatabaseMetricOutput) IsRedoLogsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *bool { return v.IsRedoLogsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of days to retain backups for a protected database.
-func (o GetProtectedDatabaseMetricOutput) RetentionPeriodInDays() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.RetentionPeriodInDays }).(pulumi.Float64Output)
+func (o GetProtectedDatabaseMetricOutput) RetentionPeriodInDays() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *float64 { return v.RetentionPeriodInDays }).(pulumi.Float64PtrOutput)
 }
 
 // This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-func (o GetProtectedDatabaseMetricOutput) UnprotectedWindowInSeconds() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.UnprotectedWindowInSeconds }).(pulumi.Float64Output)
+func (o GetProtectedDatabaseMetricOutput) UnprotectedWindowInSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) *float64 { return v.UnprotectedWindowInSeconds }).(pulumi.Float64PtrOutput)
 }
 
 type GetProtectedDatabaseMetricArrayOutput struct{ *pulumi.OutputState }
@@ -491,12 +424,6 @@ func (o GetProtectedDatabaseMetricArrayOutput) ToGetProtectedDatabaseMetricArray
 	return o
 }
 
-func (o GetProtectedDatabaseMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseMetric] {
-	return pulumix.Output[[]GetProtectedDatabaseMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabaseMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabaseMetric {
 		return vs[0].([]GetProtectedDatabaseMetric)[vs[1].(int)]
@@ -505,9 +432,9 @@ func (o GetProtectedDatabaseMetricArrayOutput) Index(i pulumi.IntInput) GetProte
 
 type GetProtectedDatabaseRecoveryServiceSubnet struct {
 	// Recovery Service Subnet Identifier.
-	RecoveryServiceSubnetId string `pulumi:"recoveryServiceSubnetId"`
+	RecoveryServiceSubnetId *string `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the Protected Database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 // GetProtectedDatabaseRecoveryServiceSubnetInput is an input type that accepts GetProtectedDatabaseRecoveryServiceSubnetArgs and GetProtectedDatabaseRecoveryServiceSubnetOutput values.
@@ -523,9 +450,9 @@ type GetProtectedDatabaseRecoveryServiceSubnetInput interface {
 
 type GetProtectedDatabaseRecoveryServiceSubnetArgs struct {
 	// Recovery Service Subnet Identifier.
-	RecoveryServiceSubnetId pulumi.StringInput `pulumi:"recoveryServiceSubnetId"`
+	RecoveryServiceSubnetId pulumi.StringPtrInput `pulumi:"recoveryServiceSubnetId"`
 	// The current state of the Protected Database.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetProtectedDatabaseRecoveryServiceSubnetArgs) ElementType() reflect.Type {
@@ -538,12 +465,6 @@ func (i GetProtectedDatabaseRecoveryServiceSubnetArgs) ToGetProtectedDatabaseRec
 
 func (i GetProtectedDatabaseRecoveryServiceSubnetArgs) ToGetProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx context.Context) GetProtectedDatabaseRecoveryServiceSubnetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseRecoveryServiceSubnetOutput)
-}
-
-func (i GetProtectedDatabaseRecoveryServiceSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: i.ToGetProtectedDatabaseRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectedDatabaseRecoveryServiceSubnetArrayInput is an input type that accepts GetProtectedDatabaseRecoveryServiceSubnetArray and GetProtectedDatabaseRecoveryServiceSubnetArrayOutput values.
@@ -571,12 +492,6 @@ func (i GetProtectedDatabaseRecoveryServiceSubnetArray) ToGetProtectedDatabaseRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabaseRecoveryServiceSubnetArrayOutput)
 }
 
-func (i GetProtectedDatabaseRecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: i.ToGetProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabaseRecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabaseRecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -591,20 +506,14 @@ func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) ToGetProtectedDatabaseR
 	return o
 }
 
-func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[GetProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Recovery Service Subnet Identifier.
-func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) RecoveryServiceSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabaseRecoveryServiceSubnet) string { return v.RecoveryServiceSubnetId }).(pulumi.StringOutput)
+func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) RecoveryServiceSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseRecoveryServiceSubnet) *string { return v.RecoveryServiceSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Protected Database.
-func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabaseRecoveryServiceSubnet) string { return v.State }).(pulumi.StringOutput)
+func (o GetProtectedDatabaseRecoveryServiceSubnetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabaseRecoveryServiceSubnet) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetProtectedDatabaseRecoveryServiceSubnetArrayOutput struct{ *pulumi.OutputState }
@@ -619,12 +528,6 @@ func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToGetProtectedData
 
 func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToGetProtectedDatabaseRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) GetProtectedDatabaseRecoveryServiceSubnetArrayOutput {
 	return o
-}
-
-func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet] {
-	return pulumix.Output[[]GetProtectedDatabaseRecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectedDatabaseRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabaseRecoveryServiceSubnetOutput {
@@ -668,12 +571,6 @@ func (i GetProtectedDatabasesFilterArgs) ToGetProtectedDatabasesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesFilterOutput)
 }
 
-func (i GetProtectedDatabasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesFilter] {
-	return pulumix.Output[GetProtectedDatabasesFilter]{
-		OutputState: i.ToGetProtectedDatabasesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectedDatabasesFilterArrayInput is an input type that accepts GetProtectedDatabasesFilterArray and GetProtectedDatabasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesFilterArrayInput` via:
 //
@@ -699,12 +596,6 @@ func (i GetProtectedDatabasesFilterArray) ToGetProtectedDatabasesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesFilterArrayOutput)
 }
 
-func (i GetProtectedDatabasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesFilter] {
-	return pulumix.Output[[]GetProtectedDatabasesFilter]{
-		OutputState: i.ToGetProtectedDatabasesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesFilterOutput) ElementType() reflect.Type {
@@ -717,12 +608,6 @@ func (o GetProtectedDatabasesFilterOutput) ToGetProtectedDatabasesFilterOutput()
 
 func (o GetProtectedDatabasesFilterOutput) ToGetProtectedDatabasesFilterOutputWithContext(ctx context.Context) GetProtectedDatabasesFilterOutput {
 	return o
-}
-
-func (o GetProtectedDatabasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesFilter] {
-	return pulumix.Output[GetProtectedDatabasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectedDatabasesFilterOutput) Name() pulumi.StringOutput {
@@ -749,12 +634,6 @@ func (o GetProtectedDatabasesFilterArrayOutput) ToGetProtectedDatabasesFilterArr
 
 func (o GetProtectedDatabasesFilterArrayOutput) ToGetProtectedDatabasesFilterArrayOutputWithContext(ctx context.Context) GetProtectedDatabasesFilterArrayOutput {
 	return o
-}
-
-func (o GetProtectedDatabasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesFilter] {
-	return pulumix.Output[[]GetProtectedDatabasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectedDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesFilterOutput {
@@ -794,12 +673,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionArgs) ToGetProtectedData
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionOutput)
 }
 
-func (i GetProtectedDatabasesProtectedDatabaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectedDatabasesProtectedDatabaseCollectionArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionArray and GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectedDatabasesProtectedDatabaseCollectionArrayInput` via:
 //
@@ -825,12 +698,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionArray) ToGetProtectedDat
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput)
 }
 
-func (i GetProtectedDatabasesProtectedDatabaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabasesProtectedDatabaseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionOutput) ElementType() reflect.Type {
@@ -843,12 +710,6 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) ToGetProtectedDa
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionOutput {
 	return o
-}
-
-func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionOutput) Items() GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput {
@@ -871,12 +732,6 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) ToGetProtec
 	return o
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabasesProtectedDatabaseCollection {
 		return vs[0].([]GetProtectedDatabasesProtectedDatabaseCollection)[vs[1].(int)]
@@ -885,51 +740,51 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionArrayOutput) Index(i pul
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItem struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the protected database.
-	DatabaseId string `pulumi:"databaseId"`
+	DatabaseId *string `pulumi:"databaseId"`
 	// The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-	DatabaseSize string `pulumi:"databaseSize"`
+	DatabaseSize *string `pulumi:"databaseSize"`
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-	DbUniqueName string `pulumi:"dbUniqueName"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Indicates the protection status of the database. Allowed values are:
 	// * HEALTHY
 	// * WARNING
 	// * ALERT
-	Health string `pulumi:"health"`
+	Health *string `pulumi:"health"`
 	// A message describing the current health of the protected database.
-	HealthDetails string `pulumi:"healthDetails"`
+	HealthDetails *string `pulumi:"healthDetails"`
 	// The protected database OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-	IsReadOnlyResource bool `pulumi:"isReadOnlyResource"`
+	IsReadOnlyResource *bool `pulumi:"isReadOnlyResource"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-	IsRedoLogsShipped bool `pulumi:"isRedoLogsShipped"`
+	IsRedoLogsShipped *bool `pulumi:"isRedoLogsShipped"`
 	// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics  []GetProtectedDatabasesProtectedDatabaseCollectionItemMetric `pulumi:"metrics"`
-	Password string                                                       `pulumi:"password"`
+	Password *string                                                      `pulumi:"password"`
 	// The protection policy OCID.
-	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
+	ProtectionPolicyId *string `pulumi:"protectionPolicyId"`
 	// List of recovery service subnet resources associated with the protected database.
 	RecoveryServiceSubnets []GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet `pulumi:"recoveryServiceSubnets"`
 	// A filter to return only the resources that match the specified lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-	VpcUserName string `pulumi:"vpcUserName"`
+	VpcUserName *string `pulumi:"vpcUserName"`
 }
 
 // GetProtectedDatabasesProtectedDatabaseCollectionItemInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemArgs and GetProtectedDatabasesProtectedDatabaseCollectionItemOutput values.
@@ -945,51 +800,51 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemInput interface {
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemArgs struct {
 	// The compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the protected database.
-	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	DatabaseId pulumi.StringPtrInput `pulumi:"databaseId"`
 	// The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-	DatabaseSize pulumi.StringInput `pulumi:"databaseSize"`
+	DatabaseSize pulumi.StringPtrInput `pulumi:"databaseSize"`
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	DbUniqueName pulumi.StringPtrInput `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Indicates the protection status of the database. Allowed values are:
 	// * HEALTHY
 	// * WARNING
 	// * ALERT
-	Health pulumi.StringInput `pulumi:"health"`
+	Health pulumi.StringPtrInput `pulumi:"health"`
 	// A message describing the current health of the protected database.
-	HealthDetails pulumi.StringInput `pulumi:"healthDetails"`
+	HealthDetails pulumi.StringPtrInput `pulumi:"healthDetails"`
 	// The protected database OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-	IsReadOnlyResource pulumi.BoolInput `pulumi:"isReadOnlyResource"`
+	IsReadOnlyResource pulumi.BoolPtrInput `pulumi:"isReadOnlyResource"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-	IsRedoLogsShipped pulumi.BoolInput `pulumi:"isRedoLogsShipped"`
+	IsRedoLogsShipped pulumi.BoolPtrInput `pulumi:"isRedoLogsShipped"`
 	// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics  GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayInput `pulumi:"metrics"`
-	Password pulumi.StringInput                                                   `pulumi:"password"`
+	Password pulumi.StringPtrInput                                                `pulumi:"password"`
 	// The protection policy OCID.
-	ProtectionPolicyId pulumi.StringInput `pulumi:"protectionPolicyId"`
+	ProtectionPolicyId pulumi.StringPtrInput `pulumi:"protectionPolicyId"`
 	// List of recovery service subnet resources associated with the protected database.
 	RecoveryServiceSubnets GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayInput `pulumi:"recoveryServiceSubnets"`
 	// A filter to return only the resources that match the specified lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-	VpcUserName pulumi.StringInput `pulumi:"vpcUserName"`
+	VpcUserName pulumi.StringPtrInput `pulumi:"vpcUserName"`
 }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemArgs) ElementType() reflect.Type {
@@ -1002,12 +857,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArgs) ToGetProtected
 
 func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArgs) ToGetProtectedDatabasesProtectedDatabaseCollectionItemOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemOutput)
-}
-
-func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectedDatabasesProtectedDatabaseCollectionItemArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemArray and GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput values.
@@ -1035,12 +884,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArray) ToGetProtecte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput)
 }
 
-func (i GetProtectedDatabasesProtectedDatabaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabasesProtectedDatabaseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ElementType() reflect.Type {
@@ -1055,30 +898,24 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ToGetProtect
 	return o
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the protected database.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DatabaseSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.DatabaseSize }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DatabaseSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.DatabaseSize }).(pulumi.StringPtrOutput)
 }
 
 // The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1089,8 +926,8 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DefinedTags(
 }
 
 // A filter to return only resources that match the entire 'displayname' given.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1104,33 +941,33 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) FreeformTags
 // * HEALTHY
 // * WARNING
 // * ALERT
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.Health }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Health() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.Health }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current health of the protected database.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) HealthDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.HealthDetails }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) HealthDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.HealthDetails }).(pulumi.StringPtrOutput)
 }
 
 // The protected database OCID.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) IsReadOnlyResource() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) bool { return v.IsReadOnlyResource }).(pulumi.BoolOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) IsReadOnlyResource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *bool { return v.IsReadOnlyResource }).(pulumi.BoolPtrOutput)
 }
 
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) IsRedoLogsShipped() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) bool { return v.IsRedoLogsShipped }).(pulumi.BoolOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) IsRedoLogsShipped() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *bool { return v.IsRedoLogsShipped }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Backup performance and storage utilization metrics for the protected database.
@@ -1140,13 +977,13 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Metrics() Ge
 	}).(GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput)
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The protection policy OCID.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ProtectionPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.ProtectionPolicyId }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) ProtectionPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.ProtectionPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // List of recovery service subnet resources associated with the protected database.
@@ -1157,8 +994,8 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) RecoveryServ
 }
 
 // A filter to return only the resources that match the specified lifecycle state.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1169,18 +1006,18 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) SystemTags()
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) VpcUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.VpcUserName }).(pulumi.StringOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) VpcUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) *string { return v.VpcUserName }).(pulumi.StringPtrOutput)
 }
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1197,12 +1034,6 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) ToGetPr
 	return o
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabasesProtectedDatabaseCollectionItem {
 		return vs[0].([]GetProtectedDatabasesProtectedDatabaseCollectionItem)[vs[1].(int)]
@@ -1211,19 +1042,19 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemArrayOutput) Index(i
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemMetric struct {
 	// The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-	BackupSpaceEstimateInGbs float64 `pulumi:"backupSpaceEstimateInGbs"`
+	BackupSpaceEstimateInGbs *float64 `pulumi:"backupSpaceEstimateInGbs"`
 	// Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-	BackupSpaceUsedInGbs float64 `pulumi:"backupSpaceUsedInGbs"`
+	BackupSpaceUsedInGbs *float64 `pulumi:"backupSpaceUsedInGbs"`
 	// Number of seconds backups are currently retained for this database.
-	CurrentRetentionPeriodInSeconds float64 `pulumi:"currentRetentionPeriodInSeconds"`
+	CurrentRetentionPeriodInSeconds *float64 `pulumi:"currentRetentionPeriodInSeconds"`
 	// The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-	DbSizeInGbs float64 `pulumi:"dbSizeInGbs"`
+	DbSizeInGbs *float64 `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-	IsRedoLogsEnabled bool `pulumi:"isRedoLogsEnabled"`
+	IsRedoLogsEnabled *bool `pulumi:"isRedoLogsEnabled"`
 	// The maximum number of days to retain backups for a protected database.
-	RetentionPeriodInDays float64 `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInDays *float64 `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-	UnprotectedWindowInSeconds float64 `pulumi:"unprotectedWindowInSeconds"`
+	UnprotectedWindowInSeconds *float64 `pulumi:"unprotectedWindowInSeconds"`
 }
 
 // GetProtectedDatabasesProtectedDatabaseCollectionItemMetricInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs and GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput values.
@@ -1239,19 +1070,19 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemMetricInput interface {
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs struct {
 	// The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-	BackupSpaceEstimateInGbs pulumi.Float64Input `pulumi:"backupSpaceEstimateInGbs"`
+	BackupSpaceEstimateInGbs pulumi.Float64PtrInput `pulumi:"backupSpaceEstimateInGbs"`
 	// Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-	BackupSpaceUsedInGbs pulumi.Float64Input `pulumi:"backupSpaceUsedInGbs"`
+	BackupSpaceUsedInGbs pulumi.Float64PtrInput `pulumi:"backupSpaceUsedInGbs"`
 	// Number of seconds backups are currently retained for this database.
-	CurrentRetentionPeriodInSeconds pulumi.Float64Input `pulumi:"currentRetentionPeriodInSeconds"`
+	CurrentRetentionPeriodInSeconds pulumi.Float64PtrInput `pulumi:"currentRetentionPeriodInSeconds"`
 	// The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-	DbSizeInGbs pulumi.Float64Input `pulumi:"dbSizeInGbs"`
+	DbSizeInGbs pulumi.Float64PtrInput `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-	IsRedoLogsEnabled pulumi.BoolInput `pulumi:"isRedoLogsEnabled"`
+	IsRedoLogsEnabled pulumi.BoolPtrInput `pulumi:"isRedoLogsEnabled"`
 	// The maximum number of days to retain backups for a protected database.
-	RetentionPeriodInDays pulumi.Float64Input `pulumi:"retentionPeriodInDays"`
+	RetentionPeriodInDays pulumi.Float64PtrInput `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-	UnprotectedWindowInSeconds pulumi.Float64Input `pulumi:"unprotectedWindowInSeconds"`
+	UnprotectedWindowInSeconds pulumi.Float64PtrInput `pulumi:"unprotectedWindowInSeconds"`
 }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs) ElementType() reflect.Type {
@@ -1264,12 +1095,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs) ToGetPro
 
 func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs) ToGetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput)
-}
-
-func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArray and GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput values.
@@ -1297,12 +1122,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArray) ToGetPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput)
 }
 
-func (i GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -1317,55 +1136,49 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ToGetP
 	return o
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) BackupSpaceEstimateInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) BackupSpaceEstimateInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *float64 {
 		return v.BackupSpaceEstimateInGbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) BackupSpaceUsedInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) BackupSpaceUsedInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *float64 {
 		return v.BackupSpaceUsedInGbs
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // Number of seconds backups are currently retained for this database.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) CurrentRetentionPeriodInSeconds() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) CurrentRetentionPeriodInSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *float64 {
 		return v.CurrentRetentionPeriodInSeconds
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) DbSizeInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 { return v.DbSizeInGbs }).(pulumi.Float64Output)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) DbSizeInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *float64 { return v.DbSizeInGbs }).(pulumi.Float64PtrOutput)
 }
 
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) IsRedoLogsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) bool { return v.IsRedoLogsEnabled }).(pulumi.BoolOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) IsRedoLogsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *bool { return v.IsRedoLogsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of days to retain backups for a protected database.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) RetentionPeriodInDays() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) RetentionPeriodInDays() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *float64 {
 		return v.RetentionPeriodInDays
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) UnprotectedWindowInSeconds() pulumi.Float64Output {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) UnprotectedWindowInSeconds() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) *float64 {
 		return v.UnprotectedWindowInSeconds
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput struct{ *pulumi.OutputState }
@@ -1382,12 +1195,6 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) T
 	return o
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectedDatabasesProtectedDatabaseCollectionItemMetric {
 		return vs[0].([]GetProtectedDatabasesProtectedDatabaseCollectionItemMetric)[vs[1].(int)]
@@ -1396,9 +1203,9 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayOutput) I
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet struct {
 	// The recovery service subnet OCID.
-	RecoveryServiceSubnetId string `pulumi:"recoveryServiceSubnetId"`
+	RecoveryServiceSubnetId *string `pulumi:"recoveryServiceSubnetId"`
 	// A filter to return only the resources that match the specified lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 // GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs and GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput values.
@@ -1414,9 +1221,9 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetIn
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs struct {
 	// The recovery service subnet OCID.
-	RecoveryServiceSubnetId pulumi.StringInput `pulumi:"recoveryServiceSubnetId"`
+	RecoveryServiceSubnetId pulumi.StringPtrInput `pulumi:"recoveryServiceSubnetId"`
 	// A filter to return only the resources that match the specified lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs) ElementType() reflect.Type {
@@ -1429,12 +1236,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 
 func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs) ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput)
-}
-
-func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayInput is an input type that accepts GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArray and GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput values.
@@ -1462,12 +1263,6 @@ func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput)
 }
 
-func (i GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
-		OutputState: i.ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) ElementType() reflect.Type {
@@ -1482,24 +1277,18 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 	return o
 }
 
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
-	return pulumix.Output[GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The recovery service subnet OCID.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) RecoveryServiceSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet) string {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) RecoveryServiceSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet) *string {
 		return v.RecoveryServiceSubnetId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources that match the specified lifecycle state.
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet) string {
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput struct{ *pulumi.OutputState }
@@ -1514,12 +1303,6 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubne
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput) ToGetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutputWithContext(ctx context.Context) GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput {
 	return o
-}
-
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet] {
-	return pulumix.Output[[]GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetArrayOutput) Index(i pulumi.IntInput) GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetOutput {
@@ -1563,12 +1346,6 @@ func (i GetProtectionPoliciesFilterArgs) ToGetProtectionPoliciesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesFilterOutput)
 }
 
-func (i GetProtectionPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesFilter] {
-	return pulumix.Output[GetProtectionPoliciesFilter]{
-		OutputState: i.ToGetProtectionPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionPoliciesFilterArrayInput is an input type that accepts GetProtectionPoliciesFilterArray and GetProtectionPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionPoliciesFilterArrayInput` via:
 //
@@ -1594,12 +1371,6 @@ func (i GetProtectionPoliciesFilterArray) ToGetProtectionPoliciesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesFilterArrayOutput)
 }
 
-func (i GetProtectionPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesFilter] {
-	return pulumix.Output[[]GetProtectionPoliciesFilter]{
-		OutputState: i.ToGetProtectionPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionPoliciesFilterOutput) ElementType() reflect.Type {
@@ -1612,12 +1383,6 @@ func (o GetProtectionPoliciesFilterOutput) ToGetProtectionPoliciesFilterOutput()
 
 func (o GetProtectionPoliciesFilterOutput) ToGetProtectionPoliciesFilterOutputWithContext(ctx context.Context) GetProtectionPoliciesFilterOutput {
 	return o
-}
-
-func (o GetProtectionPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesFilter] {
-	return pulumix.Output[GetProtectionPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -1644,12 +1409,6 @@ func (o GetProtectionPoliciesFilterArrayOutput) ToGetProtectionPoliciesFilterArr
 
 func (o GetProtectionPoliciesFilterArrayOutput) ToGetProtectionPoliciesFilterArrayOutputWithContext(ctx context.Context) GetProtectionPoliciesFilterArrayOutput {
 	return o
-}
-
-func (o GetProtectionPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesFilter] {
-	return pulumix.Output[[]GetProtectionPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectionPoliciesFilterOutput {
@@ -1689,12 +1448,6 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionArgs) ToGetProtectionPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionOutput)
 }
 
-func (i GetProtectionPoliciesProtectionPolicyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection] {
-	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection]{
-		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionPoliciesProtectionPolicyCollectionArrayInput is an input type that accepts GetProtectionPoliciesProtectionPolicyCollectionArray and GetProtectionPoliciesProtectionPolicyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionPoliciesProtectionPolicyCollectionArrayInput` via:
 //
@@ -1720,12 +1473,6 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionArray) ToGetProtectionPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionArrayOutput)
 }
 
-func (i GetProtectionPoliciesProtectionPolicyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection] {
-	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection]{
-		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionPoliciesProtectionPolicyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionPoliciesProtectionPolicyCollectionOutput) ElementType() reflect.Type {
@@ -1738,12 +1485,6 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) ToGetProtectionPo
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) ToGetProtectionPoliciesProtectionPolicyCollectionOutputWithContext(ctx context.Context) GetProtectionPoliciesProtectionPolicyCollectionOutput {
 	return o
-}
-
-func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection] {
-	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionOutput) Items() GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput {
@@ -1766,12 +1507,6 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) ToGetProtect
 	return o
 }
 
-func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection] {
-	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) Index(i pulumi.IntInput) GetProtectionPoliciesProtectionPolicyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectionPoliciesProtectionPolicyCollection {
 		return vs[0].([]GetProtectionPoliciesProtectionPolicyCollection)[vs[1].(int)]
@@ -1780,29 +1515,29 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionArrayOutput) Index(i pulu
 
 type GetProtectionPoliciesProtectionPolicyCollectionItem struct {
 	// The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-	BackupRetentionPeriodInDays int `pulumi:"backupRetentionPeriodInDays"`
+	BackupRetentionPeriodInDays *int `pulumi:"backupRetentionPeriodInDays"`
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The protection policy OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
+	IsPredefinedPolicy *bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetProtectionPoliciesProtectionPolicyCollectionItemInput is an input type that accepts GetProtectionPoliciesProtectionPolicyCollectionItemArgs and GetProtectionPoliciesProtectionPolicyCollectionItemOutput values.
@@ -1818,29 +1553,29 @@ type GetProtectionPoliciesProtectionPolicyCollectionItemInput interface {
 
 type GetProtectionPoliciesProtectionPolicyCollectionItemArgs struct {
 	// The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-	BackupRetentionPeriodInDays pulumi.IntInput `pulumi:"backupRetentionPeriodInDays"`
+	BackupRetentionPeriodInDays pulumi.IntPtrInput `pulumi:"backupRetentionPeriodInDays"`
 	// The compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The protection policy OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-	IsPredefinedPolicy pulumi.BoolInput `pulumi:"isPredefinedPolicy"`
+	IsPredefinedPolicy pulumi.BoolPtrInput `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetProtectionPoliciesProtectionPolicyCollectionItemArgs) ElementType() reflect.Type {
@@ -1853,12 +1588,6 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionItemArgs) ToGetProtection
 
 func (i GetProtectionPoliciesProtectionPolicyCollectionItemArgs) ToGetProtectionPoliciesProtectionPolicyCollectionItemOutputWithContext(ctx context.Context) GetProtectionPoliciesProtectionPolicyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionItemOutput)
-}
-
-func (i GetProtectionPoliciesProtectionPolicyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem] {
-	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem]{
-		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectionPoliciesProtectionPolicyCollectionItemArrayInput is an input type that accepts GetProtectionPoliciesProtectionPolicyCollectionItemArray and GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput values.
@@ -1886,12 +1615,6 @@ func (i GetProtectionPoliciesProtectionPolicyCollectionItemArray) ToGetProtectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput)
 }
 
-func (i GetProtectionPoliciesProtectionPolicyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem] {
-	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem]{
-		OutputState: i.ToGetProtectionPoliciesProtectionPolicyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionPoliciesProtectionPolicyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ElementType() reflect.Type {
@@ -1906,20 +1629,14 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ToGetProtecti
 	return o
 }
 
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem] {
-	return pulumix.Output[GetProtectionPoliciesProtectionPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) BackupRetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) int { return v.BackupRetentionPeriodInDays }).(pulumi.IntOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) BackupRetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *int { return v.BackupRetentionPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 // The compartment OCID.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1930,8 +1647,8 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) DefinedTags()
 }
 
 // A filter to return only resources that match the entire 'displayname' given.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1942,23 +1659,23 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) FreeformTags(
 }
 
 // The protection policy OCID.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) IsPredefinedPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) bool { return v.IsPredefinedPolicy }).(pulumi.BoolOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) IsPredefinedPolicy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *bool { return v.IsPredefinedPolicy }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1969,13 +1686,13 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) SystemTags() 
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1990,12 +1707,6 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) ToGetPro
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) ToGetProtectionPoliciesProtectionPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem] {
-	return pulumix.Output[[]GetProtectionPoliciesProtectionPolicyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProtectionPoliciesProtectionPolicyCollectionItemOutput {
@@ -2039,12 +1750,6 @@ func (i GetRecoveryServiceSubnetsFilterArgs) ToGetRecoveryServiceSubnetsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsFilterOutput)
 }
 
-func (i GetRecoveryServiceSubnetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsFilter] {
-	return pulumix.Output[GetRecoveryServiceSubnetsFilter]{
-		OutputState: i.ToGetRecoveryServiceSubnetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecoveryServiceSubnetsFilterArrayInput is an input type that accepts GetRecoveryServiceSubnetsFilterArray and GetRecoveryServiceSubnetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecoveryServiceSubnetsFilterArrayInput` via:
 //
@@ -2070,12 +1775,6 @@ func (i GetRecoveryServiceSubnetsFilterArray) ToGetRecoveryServiceSubnetsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsFilterArrayOutput)
 }
 
-func (i GetRecoveryServiceSubnetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsFilter] {
-	return pulumix.Output[[]GetRecoveryServiceSubnetsFilter]{
-		OutputState: i.ToGetRecoveryServiceSubnetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecoveryServiceSubnetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecoveryServiceSubnetsFilterOutput) ElementType() reflect.Type {
@@ -2088,12 +1787,6 @@ func (o GetRecoveryServiceSubnetsFilterOutput) ToGetRecoveryServiceSubnetsFilter
 
 func (o GetRecoveryServiceSubnetsFilterOutput) ToGetRecoveryServiceSubnetsFilterOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsFilterOutput {
 	return o
-}
-
-func (o GetRecoveryServiceSubnetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsFilter] {
-	return pulumix.Output[GetRecoveryServiceSubnetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecoveryServiceSubnetsFilterOutput) Name() pulumi.StringOutput {
@@ -2120,12 +1813,6 @@ func (o GetRecoveryServiceSubnetsFilterArrayOutput) ToGetRecoveryServiceSubnetsF
 
 func (o GetRecoveryServiceSubnetsFilterArrayOutput) ToGetRecoveryServiceSubnetsFilterArrayOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsFilterArrayOutput {
 	return o
-}
-
-func (o GetRecoveryServiceSubnetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsFilter] {
-	return pulumix.Output[[]GetRecoveryServiceSubnetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecoveryServiceSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetRecoveryServiceSubnetsFilterOutput {
@@ -2165,12 +1852,6 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArgs) ToGetRecov
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput)
 }
 
-func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
-	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
-		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayInput is an input type that accepts GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArray and GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayInput` via:
 //
@@ -2196,12 +1877,6 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArray) ToGetReco
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput)
 }
 
-func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
-	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
-		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ElementType() reflect.Type {
@@ -2214,12 +1889,6 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ToGetRec
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput {
 	return o
-}
-
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
-	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput) Items() GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput {
@@ -2242,12 +1911,6 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) ToG
 	return o
 }
 
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection] {
-	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) Index(i pulumi.IntInput) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection {
 		return vs[0].([]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection)[vs[1].(int)]
@@ -2256,17 +1919,17 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput) Ind
 
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The recovery service subnet OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
 	// * CREATING
 	// * UPDATING
@@ -2274,17 +1937,17 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem struct {
 	// * DELETING
 	// * DELETED
 	// * FAILED
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet used as the recovery service subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemInput is an input type that accepts GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs and GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput values.
@@ -2300,17 +1963,17 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemInput interface
 
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs struct {
 	// The compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The recovery service subnet OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
 	// * CREATING
 	// * UPDATING
@@ -2318,17 +1981,17 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs struct {
 	// * DELETING
 	// * DELETED
 	// * FAILED
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet used as the recovery service subnet.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs) ElementType() reflect.Type {
@@ -2341,12 +2004,6 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs) ToGetR
 
 func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput)
-}
-
-func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
-	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
-		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayInput is an input type that accepts GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArray and GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput values.
@@ -2374,12 +2031,6 @@ func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput)
 }
 
-func (i GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
-	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
-		OutputState: i.ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ElementType() reflect.Type {
@@ -2394,15 +2045,9 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ToGe
 	return o
 }
 
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
-	return pulumix.Output[GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -2413,8 +2058,8 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Defi
 }
 
 // A filter to return only resources that match the entire 'displayname' given.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2425,13 +2070,15 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Free
 }
 
 // The recovery service subnet OCID.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string {
+		return v.LifecycleDetails
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only the resources that match the specified lifecycle state. Allowed values are:
@@ -2441,13 +2088,13 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Life
 // * DELETING
 // * DELETED
 // * FAILED
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet used as the recovery service subnet.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -2458,18 +2105,18 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Syst
 }
 
 // An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2484,12 +2131,6 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput)
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput) ToGetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutputWithContext(ctx context.Context) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem] {
-	return pulumix.Output[[]GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput {

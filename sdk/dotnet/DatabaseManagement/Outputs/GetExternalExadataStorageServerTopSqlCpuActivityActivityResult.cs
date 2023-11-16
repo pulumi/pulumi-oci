@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The CPU activity percentage.
         /// </summary>
-        public readonly double CpuActivity;
+        public readonly double? CpuActivity;
         /// <summary>
         /// The database name.
         /// </summary>
-        public readonly string DatabaseName;
+        public readonly string? DatabaseName;
         /// <summary>
         /// The SQL ID.
         /// </summary>
-        public readonly string SqlId;
+        public readonly string? SqlId;
 
         [OutputConstructor]
         private GetExternalExadataStorageServerTopSqlCpuActivityActivityResult(
-            double cpuActivity,
+            double? cpuActivity,
 
-            string databaseName,
+            string? databaseName,
 
-            string sqlId)
+            string? sqlId)
         {
             CpuActivity = cpuActivity;
             DatabaseName = databaseName;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
@@ -66,8 +65,8 @@ type GetListingTaxesResult struct {
 	CompartmentId *string                 `pulumi:"compartmentId"`
 	Filters       []GetListingTaxesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	ListingId string `pulumi:"listingId"`
+	Id        *string `pulumi:"id"`
+	ListingId string  `pulumi:"listingId"`
 	// The list of taxes.
 	Taxes []GetListingTaxesTax `pulumi:"taxes"`
 }
@@ -113,12 +112,6 @@ func (o GetListingTaxesResultOutput) ToGetListingTaxesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetListingTaxesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingTaxesResult] {
-	return pulumix.Output[GetListingTaxesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListingTaxesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetListingTaxesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -128,8 +121,8 @@ func (o GetListingTaxesResultOutput) Filters() GetListingTaxesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListingTaxesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingTaxesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListingTaxesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingTaxesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListingTaxesResultOutput) ListingId() pulumi.StringOutput {

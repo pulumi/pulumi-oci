@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.GetDbSystemComputePerformancesDbSystemCom
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
@@ -15,12 +17,12 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
      * @return List of Compute performance details for the specified DB system shape.
      * 
      */
-    private List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
+    private @Nullable List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
     /**
      * @return The shape of the DB system.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
 
     private GetDbSystemComputePerformancesDbSystemComputePerformance() {}
     /**
@@ -28,14 +30,14 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
      * 
      */
     public List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists() {
-        return this.computePerformanceLists;
+        return this.computePerformanceLists == null ? List.of() : this.computePerformanceLists;
     }
     /**
      * @return The shape of the DB system.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
-        private String shape;
+        private @Nullable List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists;
+        private @Nullable String shape;
         public Builder() {}
         public Builder(GetDbSystemComputePerformancesDbSystemComputePerformance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
         }
 
         @CustomType.Setter
-        public Builder computePerformanceLists(List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists) {
-            this.computePerformanceLists = Objects.requireNonNull(computePerformanceLists);
+        public Builder computePerformanceLists(@Nullable List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists) {
+            this.computePerformanceLists = computePerformanceLists;
             return this;
         }
         public Builder computePerformanceLists(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList... computePerformanceLists) {
             return computePerformanceLists(List.of(computePerformanceLists));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         public GetDbSystemComputePerformancesDbSystemComputePerformance build() {

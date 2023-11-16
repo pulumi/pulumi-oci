@@ -101,110 +101,77 @@ class GetPluggableDatabaseResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Sequence['outputs.GetPluggableDatabaseConnectionStringResult']:
-        """
-        Connection strings to connect to an Oracle Pluggable Database.
-        """
+    def connection_strings(self) -> Optional[Sequence['outputs.GetPluggableDatabaseConnectionStringResult']]:
         return pulumi.get(self, "connection_strings")
 
     @property
     @pulumi.getter(name="containerDatabaseAdminPassword")
-    def container_database_admin_password(self) -> str:
+    def container_database_admin_password(self) -> Optional[str]:
         return pulumi.get(self, "container_database_admin_password")
 
     @property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        """
+    def container_database_id(self) -> Optional[str]:
         return pulumi.get(self, "container_database_id")
 
     @property
     @pulumi.getter(name="convertToRegularTrigger")
-    def convert_to_regular_trigger(self) -> int:
+    def convert_to_regular_trigger(self) -> Optional[int]:
         return pulumi.get(self, "convert_to_regular_trigger")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isRestricted")
-    def is_restricted(self) -> bool:
-        """
-        The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-        """
+    def is_restricted(self) -> Optional[bool]:
         return pulumi.get(self, "is_restricted")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed message for the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> str:
-        """
-        The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-        """
+    def open_mode(self) -> Optional[str]:
         return pulumi.get(self, "open_mode")
 
     @property
     @pulumi.getter(name="pdbAdminPassword")
-    def pdb_admin_password(self) -> str:
+    def pdb_admin_password(self) -> Optional[str]:
         return pulumi.get(self, "pdb_admin_password")
 
     @property
     @pulumi.getter(name="pdbCreationTypeDetails")
-    def pdb_creation_type_details(self) -> Sequence['outputs.GetPluggableDatabasePdbCreationTypeDetailResult']:
+    def pdb_creation_type_details(self) -> Optional[Sequence['outputs.GetPluggableDatabasePdbCreationTypeDetailResult']]:
         return pulumi.get(self, "pdb_creation_type_details")
 
     @property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> str:
-        """
-        The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-        """
+    def pdb_name(self) -> Optional[str]:
         return pulumi.get(self, "pdb_name")
 
     @property
     @pulumi.getter(name="pdbNodeLevelDetails")
-    def pdb_node_level_details(self) -> Sequence['outputs.GetPluggableDatabasePdbNodeLevelDetailResult']:
-        """
-        Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
-        """
+    def pdb_node_level_details(self) -> Optional[Sequence['outputs.GetPluggableDatabasePdbNodeLevelDetailResult']]:
         return pulumi.get(self, "pdb_node_level_details")
 
     @property
@@ -214,59 +181,47 @@ class GetPluggableDatabaseResult:
 
     @property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
-    def pluggable_database_management_configs(self) -> Sequence['outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult']:
-        """
-        The configuration of the Pluggable Database Management service.
-        """
+    def pluggable_database_management_configs(self) -> Optional[Sequence['outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult']]:
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @property
     @pulumi.getter(name="refreshTrigger")
-    def refresh_trigger(self) -> int:
+    def refresh_trigger(self) -> Optional[int]:
         return pulumi.get(self, "refresh_trigger")
 
     @property
     @pulumi.getter(name="refreshableCloneConfigs")
-    def refreshable_clone_configs(self) -> Sequence['outputs.GetPluggableDatabaseRefreshableCloneConfigResult']:
-        """
-        Pluggable Database Refreshable Clone Configuration.
-        """
+    def refreshable_clone_configs(self) -> Optional[Sequence['outputs.GetPluggableDatabaseRefreshableCloneConfigResult']]:
         return pulumi.get(self, "refreshable_clone_configs")
 
     @property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> int:
+    def rotate_key_trigger(self) -> Optional[int]:
         return pulumi.get(self, "rotate_key_trigger")
 
     @property
     @pulumi.getter(name="shouldCreatePdbBackup")
-    def should_create_pdb_backup(self) -> bool:
+    def should_create_pdb_backup(self) -> Optional[bool]:
         return pulumi.get(self, "should_create_pdb_backup")
 
     @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
-    def should_pdb_admin_account_be_locked(self) -> bool:
+    def should_pdb_admin_account_be_locked(self) -> Optional[bool]:
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the pluggable database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tdeWalletPassword")
-    def tde_wallet_password(self) -> str:
+    def tde_wallet_password(self) -> Optional[str]:
         return pulumi.get(self, "tde_wallet_password")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the pluggable database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -306,21 +261,7 @@ class AwaitableGetPluggableDatabaseResult(GetPluggableDatabaseResult):
 def get_pluggable_database(pluggable_database_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPluggableDatabaseResult:
     """
-    This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified pluggable database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"])
-    ```
-
-
-    :param str pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['pluggableDatabaseId'] = pluggable_database_id
@@ -359,20 +300,6 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
 def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPluggableDatabaseResult]:
     """
-    This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified pluggable database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"])
-    ```
-
-
-    :param str pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

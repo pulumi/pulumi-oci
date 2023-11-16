@@ -24,12 +24,12 @@ public final class GetSubscriptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of subscriptions.
      * 
      */
-    private List<GetSubscriptionsSubscription> subscriptions;
+    private @Nullable List<GetSubscriptionsSubscription> subscriptions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      * 
@@ -51,15 +51,15 @@ public final class GetSubscriptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of subscriptions.
      * 
      */
     public List<GetSubscriptionsSubscription> subscriptions() {
-        return this.subscriptions;
+        return this.subscriptions == null ? List.of() : this.subscriptions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
@@ -80,8 +80,8 @@ public final class GetSubscriptionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSubscriptionsFilter> filters;
-        private String id;
-        private List<GetSubscriptionsSubscription> subscriptions;
+        private @Nullable String id;
+        private @Nullable List<GetSubscriptionsSubscription> subscriptions;
         private @Nullable String topicId;
         public Builder() {}
         public Builder(GetSubscriptionsResult defaults) {
@@ -107,13 +107,13 @@ public final class GetSubscriptionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptions(List<GetSubscriptionsSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+        public Builder subscriptions(@Nullable List<GetSubscriptionsSubscription> subscriptions) {
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetSubscriptionsSubscription... subscriptions) {

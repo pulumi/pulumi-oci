@@ -41,7 +41,7 @@ class GetManagedDatabaseSqlTuningSetResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,18 +49,12 @@ class GetManagedDatabaseSqlTuningSetResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningSetItemResult']:
-        """
-        The details in the SQL tuning set summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningSetItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="managedDatabaseId")
     def managed_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-        """
         return pulumi.get(self, "managed_database_id")
 
     @property
@@ -71,9 +65,6 @@ class GetManagedDatabaseSqlTuningSetResult:
     @property
     @pulumi.getter
     def owner(self) -> Optional[str]:
-        """
-        The owner of the SQL tuning set.
-        """
         return pulumi.get(self, "owner")
 
 
@@ -95,25 +86,7 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[str] = Non
                                         owner: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningSetResult:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL tuning sets for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_set = oci.DatabaseManagement.get_managed_database_sql_tuning_set(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        owner=var["managed_database_sql_tuning_set_owner"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
-    :param str owner: The owner of the SQL tuning set.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -136,24 +109,6 @@ def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pul
                                                owner: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningSetResult]:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the SQL tuning sets for the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_set = oci.DatabaseManagement.get_managed_database_sql_tuning_set(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        owner=var["managed_database_sql_tuning_set_owner"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name_contains: Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
-    :param str owner: The owner of the SQL tuning set.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -50,31 +50,22 @@ class GetActionResult:
 
     @property
     @pulumi.getter
-    def component(self) -> str:
-        """
-        Name of the infrastructure layer associated with the operator action.
-        """
+    def component(self) -> Optional[str]:
         return pulumi.get(self, "component")
 
     @property
     @pulumi.getter(name="customerDisplayName")
-    def customer_display_name(self) -> str:
-        """
-        Display Name of the operator action.
-        """
+    def customer_display_name(self) -> Optional[str]:
         return pulumi.get(self, "customer_display_name")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,10 +73,7 @@ class GetActionResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the property
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -95,18 +83,12 @@ class GetActionResult:
 
     @property
     @pulumi.getter
-    def properties(self) -> Sequence['outputs.GetActionPropertyResult']:
-        """
-        Fine grained properties associated with the operator control.
-        """
+    def properties(self) -> Optional[Sequence['outputs.GetActionPropertyResult']]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        resourceType for which the OperatorAction is applicable
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
 
@@ -129,21 +111,7 @@ class AwaitableGetActionResult(GetActionResult):
 def get_action(operator_action_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetActionResult:
     """
-    This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets the operator action associated with the specified operator action ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=oci_operator_access_control_operator_action["test_operator_action"]["id"])
-    ```
-
-
-    :param str operator_action_id: Unique Oracle supplied identifier associated with the operator action.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['operatorActionId'] = operator_action_id
@@ -165,20 +133,6 @@ def get_action(operator_action_id: Optional[str] = None,
 def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetActionResult]:
     """
-    This data source provides details about a specific Operator Action resource in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Gets the operator action associated with the specified operator action ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=oci_operator_access_control_operator_action["test_operator_action"]["id"])
-    ```
-
-
-    :param str operator_action_id: Unique Oracle supplied identifier associated with the operator action.
+    Use this data source to access information about an existing resource.
     """
     ...

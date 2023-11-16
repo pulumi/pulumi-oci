@@ -18,13 +18,13 @@ public final class GetDbSystemStoragePerformancesResult {
      * @return The list of db_system_storage_performances.
      * 
      */
-    private List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
+    private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
     private @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return ShapeType of the DbSystems,INTEL or AMD
      * 
@@ -38,7 +38,7 @@ public final class GetDbSystemStoragePerformancesResult {
      * 
      */
     public List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances() {
-        return this.dbSystemStoragePerformances;
+        return this.dbSystemStoragePerformances == null ? List.of() : this.dbSystemStoragePerformances;
     }
     public List<GetDbSystemStoragePerformancesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -47,8 +47,8 @@ public final class GetDbSystemStoragePerformancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return ShapeType of the DbSystems,INTEL or AMD
@@ -70,9 +70,9 @@ public final class GetDbSystemStoragePerformancesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
+        private @Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances;
         private @Nullable List<GetDbSystemStoragePerformancesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String shapeType;
         private String storageManagement;
         public Builder() {}
@@ -86,8 +86,8 @@ public final class GetDbSystemStoragePerformancesResult {
         }
 
         @CustomType.Setter
-        public Builder dbSystemStoragePerformances(List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances) {
-            this.dbSystemStoragePerformances = Objects.requireNonNull(dbSystemStoragePerformances);
+        public Builder dbSystemStoragePerformances(@Nullable List<GetDbSystemStoragePerformancesDbSystemStoragePerformance> dbSystemStoragePerformances) {
+            this.dbSystemStoragePerformances = dbSystemStoragePerformances;
             return this;
         }
         public Builder dbSystemStoragePerformances(GetDbSystemStoragePerformancesDbSystemStoragePerformance... dbSystemStoragePerformances) {
@@ -102,8 +102,8 @@ public final class GetDbSystemStoragePerformancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

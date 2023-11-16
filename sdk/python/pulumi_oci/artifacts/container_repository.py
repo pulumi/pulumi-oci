@@ -25,13 +25,6 @@ class ContainerRepositoryArgs:
                  readme: Optional[pulumi.Input['ContainerRepositoryReadmeArgs']] = None):
         """
         The set of arguments for constructing a ContainerRepository resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        :param pulumi.Input[str] display_name: The container repository name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        :param pulumi.Input[bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        :param pulumi.Input['ContainerRepositoryReadmeArgs'] readme: (Updatable) Container repository readme.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -49,9 +42,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -61,9 +51,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The container repository name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -73,9 +60,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -85,9 +69,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -97,9 +78,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter(name="isImmutable")
     def is_immutable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        """
         return pulumi.get(self, "is_immutable")
 
     @is_immutable.setter
@@ -109,9 +87,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        """
         return pulumi.get(self, "is_public")
 
     @is_public.setter
@@ -121,9 +96,6 @@ class ContainerRepositoryArgs:
     @property
     @pulumi.getter
     def readme(self) -> Optional[pulumi.Input['ContainerRepositoryReadmeArgs']]:
-        """
-        (Updatable) Container repository readme.
-        """
         return pulumi.get(self, "readme")
 
     @readme.setter
@@ -153,23 +125,6 @@ class _ContainerRepositoryState:
                  time_last_pushed: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ContainerRepository resources.
-        :param pulumi.Input[str] billable_size_in_gbs: Total storage size in GBs that will be charged.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        :param pulumi.Input[str] created_by: The id of the user or principal that created the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The container repository name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] image_count: Total number of images.
-        :param pulumi.Input[bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        :param pulumi.Input[bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        :param pulumi.Input[int] layer_count: Total number of layers.
-        :param pulumi.Input[str] layers_size_in_bytes: Total storage in bytes consumed by layers.
-        :param pulumi.Input[str] namespace: The tenancy namespace used in the container repository path.
-        :param pulumi.Input['ContainerRepositoryReadmeArgs'] readme: (Updatable) Container repository readme.
-        :param pulumi.Input[str] state: The current state of the container repository.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
-        :param pulumi.Input[str] time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
         if billable_size_in_gbs is not None:
             pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
@@ -209,9 +164,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="billableSizeInGbs")
     def billable_size_in_gbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        Total storage size in GBs that will be charged.
-        """
         return pulumi.get(self, "billable_size_in_gbs")
 
     @billable_size_in_gbs.setter
@@ -221,9 +173,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -233,9 +182,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        The id of the user or principal that created the resource.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -245,9 +191,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -257,9 +200,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The container repository name.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -269,9 +209,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -281,9 +218,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="imageCount")
     def image_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total number of images.
-        """
         return pulumi.get(self, "image_count")
 
     @image_count.setter
@@ -293,9 +227,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="isImmutable")
     def is_immutable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        """
         return pulumi.get(self, "is_immutable")
 
     @is_immutable.setter
@@ -305,9 +236,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        """
         return pulumi.get(self, "is_public")
 
     @is_public.setter
@@ -317,9 +245,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="layerCount")
     def layer_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Total number of layers.
-        """
         return pulumi.get(self, "layer_count")
 
     @layer_count.setter
@@ -329,9 +254,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="layersSizeInBytes")
     def layers_size_in_bytes(self) -> Optional[pulumi.Input[str]]:
-        """
-        Total storage in bytes consumed by layers.
-        """
         return pulumi.get(self, "layers_size_in_bytes")
 
     @layers_size_in_bytes.setter
@@ -341,9 +263,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The tenancy namespace used in the container repository path.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -353,9 +272,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter
     def readme(self) -> Optional[pulumi.Input['ContainerRepositoryReadmeArgs']]:
-        """
-        (Updatable) Container repository readme.
-        """
         return pulumi.get(self, "readme")
 
     @readme.setter
@@ -365,9 +281,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the container repository.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -377,9 +290,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -389,9 +299,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -401,9 +308,6 @@ class _ContainerRepositoryState:
     @property
     @pulumi.getter(name="timeLastPushed")
     def time_last_pushed(self) -> Optional[pulumi.Input[str]]:
-        """
-        An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-        """
         return pulumi.get(self, "time_last_pushed")
 
     @time_last_pushed.setter
@@ -425,50 +329,9 @@ class ContainerRepository(pulumi.CustomResource):
                  readme: Optional[pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Create a new empty container repository. Avoid entering confidential information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_repository = oci.artifacts.ContainerRepository("testContainerRepository",
-            compartment_id=var["compartment_id"],
-            display_name=var["container_repository_display_name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_immutable=var["container_repository_is_immutable"],
-            is_public=var["container_repository_is_public"],
-            readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=var["container_repository_readme_content"],
-                format=var["container_repository_readme_format"],
-            ))
-        ```
-
-        ## Import
-
-        ContainerRepositories can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
-        ```
-
+        Create a ContainerRepository resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The container repository name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        :param pulumi.Input[bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        :param pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']] readme: (Updatable) Container repository readme.
         """
         ...
     @overload
@@ -477,41 +340,7 @@ class ContainerRepository(pulumi.CustomResource):
                  args: ContainerRepositoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Create a new empty container repository. Avoid entering confidential information.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_repository = oci.artifacts.ContainerRepository("testContainerRepository",
-            compartment_id=var["compartment_id"],
-            display_name=var["container_repository_display_name"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_immutable=var["container_repository_is_immutable"],
-            is_public=var["container_repository_is_public"],
-            readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=var["container_repository_readme_content"],
-                format=var["container_repository_readme_format"],
-            ))
-        ```
-
-        ## Import
-
-        ContainerRepositories can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository "container/repositories/{repositoryId}"
-        ```
-
+        Create a ContainerRepository resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ContainerRepositoryArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -598,23 +427,6 @@ class ContainerRepository(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] billable_size_in_gbs: Total storage size in GBs that will be charged.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        :param pulumi.Input[str] created_by: The id of the user or principal that created the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The container repository name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] image_count: Total number of images.
-        :param pulumi.Input[bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        :param pulumi.Input[bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        :param pulumi.Input[int] layer_count: Total number of layers.
-        :param pulumi.Input[str] layers_size_in_bytes: Total storage in bytes consumed by layers.
-        :param pulumi.Input[str] namespace: The tenancy namespace used in the container repository path.
-        :param pulumi.Input[pulumi.InputType['ContainerRepositoryReadmeArgs']] readme: (Updatable) Container repository readme.
-        :param pulumi.Input[str] state: The current state of the container repository.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
-        :param pulumi.Input[str] time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -641,137 +453,86 @@ class ContainerRepository(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="billableSizeInGbs")
-    def billable_size_in_gbs(self) -> pulumi.Output[str]:
-        """
-        Total storage size in GBs that will be charged.
-        """
+    def billable_size_in_gbs(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "billable_size_in_gbs")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        The id of the user or principal that created the resource.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The container repository name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imageCount")
-    def image_count(self) -> pulumi.Output[int]:
-        """
-        Total number of images.
-        """
+    def image_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "image_count")
 
     @property
     @pulumi.getter(name="isImmutable")
-    def is_immutable(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-        """
+    def is_immutable(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_immutable")
 
     @property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
-        """
+    def is_public(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_public")
 
     @property
     @pulumi.getter(name="layerCount")
-    def layer_count(self) -> pulumi.Output[int]:
-        """
-        Total number of layers.
-        """
+    def layer_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "layer_count")
 
     @property
     @pulumi.getter(name="layersSizeInBytes")
-    def layers_size_in_bytes(self) -> pulumi.Output[str]:
-        """
-        Total storage in bytes consumed by layers.
-        """
+    def layers_size_in_bytes(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "layers_size_in_bytes")
 
     @property
     @pulumi.getter
-    def namespace(self) -> pulumi.Output[str]:
-        """
-        The tenancy namespace used in the container repository path.
-        """
+    def namespace(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def readme(self) -> pulumi.Output['outputs.ContainerRepositoryReadme']:
-        """
-        (Updatable) Container repository readme.
-        """
+    def readme(self) -> pulumi.Output[Optional['outputs.ContainerRepositoryReadme']]:
         return pulumi.get(self, "readme")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the container repository.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        An RFC 3339 timestamp indicating when the repository was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastPushed")
-    def time_last_pushed(self) -> pulumi.Output[str]:
-        """
-        An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-        """
+    def time_last_pushed(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_pushed")
 

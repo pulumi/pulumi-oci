@@ -14,6 +14,7 @@ import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -118,28 +119,28 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The fault domain for the dedicated virtual machine host&#39;s assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
@@ -150,7 +151,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="faultDomain", refs={String.class}, tree="[0]")
-    private Output<String> faultDomain;
+    private Output</* @Nullable */ String> faultDomain;
 
     /**
      * @return The fault domain for the dedicated virtual machine host&#39;s assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
@@ -160,8 +161,8 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * Example: `FAULT-DOMAIN-1`
      * 
      */
-    public Output<String> faultDomain() {
-        return this.faultDomain;
+    public Output<Optional<String>> faultDomain() {
+        return Codegen.optional(this.faultDomain);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -171,7 +172,7 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -180,92 +181,92 @@ public class DedicatedVmHost extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The current available memory of the dedicated VM host, in GBs.
      * 
      */
     @Export(name="remainingMemoryInGbs", refs={Double.class}, tree="[0]")
-    private Output<Double> remainingMemoryInGbs;
+    private Output</* @Nullable */ Double> remainingMemoryInGbs;
 
     /**
      * @return The current available memory of the dedicated VM host, in GBs.
      * 
      */
-    public Output<Double> remainingMemoryInGbs() {
-        return this.remainingMemoryInGbs;
+    public Output<Optional<Double>> remainingMemoryInGbs() {
+        return Codegen.optional(this.remainingMemoryInGbs);
     }
     /**
      * The current available OCPUs of the dedicated VM host.
      * 
      */
     @Export(name="remainingOcpus", refs={Double.class}, tree="[0]")
-    private Output<Double> remainingOcpus;
+    private Output</* @Nullable */ Double> remainingOcpus;
 
     /**
      * @return The current available OCPUs of the dedicated VM host.
      * 
      */
-    public Output<Double> remainingOcpus() {
-        return this.remainingOcpus;
+    public Output<Optional<Double>> remainingOcpus() {
+        return Codegen.optional(this.remainingOcpus);
     }
     /**
      * The current state of the dedicated VM host.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the dedicated VM host.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The current total memory of the dedicated VM host, in GBs.
      * 
      */
     @Export(name="totalMemoryInGbs", refs={Double.class}, tree="[0]")
-    private Output<Double> totalMemoryInGbs;
+    private Output</* @Nullable */ Double> totalMemoryInGbs;
 
     /**
      * @return The current total memory of the dedicated VM host, in GBs.
      * 
      */
-    public Output<Double> totalMemoryInGbs() {
-        return this.totalMemoryInGbs;
+    public Output<Optional<Double>> totalMemoryInGbs() {
+        return Codegen.optional(this.totalMemoryInGbs);
     }
     /**
      * The current total OCPUs of the dedicated VM host.
      * 
      */
     @Export(name="totalOcpus", refs={Double.class}, tree="[0]")
-    private Output<Double> totalOcpus;
+    private Output</* @Nullable */ Double> totalOcpus;
 
     /**
      * @return The current total OCPUs of the dedicated VM host.
      * 
      */
-    public Output<Double> totalOcpus() {
-        return this.totalOcpus;
+    public Output<Optional<Double>> totalOcpus() {
+        return Codegen.optional(this.totalOcpus);
     }
 
     /**

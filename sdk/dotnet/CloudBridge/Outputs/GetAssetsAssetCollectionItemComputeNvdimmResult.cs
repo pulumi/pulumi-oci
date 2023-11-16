@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Controller key.
         /// </summary>
-        public readonly int ControllerKey;
+        public readonly int? ControllerKey;
         /// <summary>
         /// Provides a label and summary information for the device.
         /// </summary>
-        public readonly string Label;
+        public readonly string? Label;
         /// <summary>
         /// The unit number of the SCSI controller.
         /// </summary>
-        public readonly int UnitNumber;
+        public readonly int? UnitNumber;
 
         [OutputConstructor]
         private GetAssetsAssetCollectionItemComputeNvdimmResult(
-            int controllerKey,
+            int? controllerKey,
 
-            string label,
+            string? label,
 
-            int unitNumber)
+            int? unitNumber)
         {
             ControllerKey = controllerKey;
             Label = label;

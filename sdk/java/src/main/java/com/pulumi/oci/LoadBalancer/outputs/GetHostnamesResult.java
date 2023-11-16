@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetHostnamesHostname;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetHostnamesResult {
      * @return The list of hostnames.
      * 
      */
-    private List<GetHostnamesHostname> hostnames;
+    private @Nullable List<GetHostnamesHostname> hostnames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
 
     private GetHostnamesResult() {}
@@ -35,14 +36,14 @@ public final class GetHostnamesResult {
      * 
      */
     public List<GetHostnamesHostname> hostnames() {
-        return this.hostnames;
+        return this.hostnames == null ? List.of() : this.hostnames;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -58,8 +59,8 @@ public final class GetHostnamesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetHostnamesFilter> filters;
-        private List<GetHostnamesHostname> hostnames;
-        private String id;
+        private @Nullable List<GetHostnamesHostname> hostnames;
+        private @Nullable String id;
         private String loadBalancerId;
         public Builder() {}
         public Builder(GetHostnamesResult defaults) {
@@ -79,16 +80,16 @@ public final class GetHostnamesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder hostnames(List<GetHostnamesHostname> hostnames) {
-            this.hostnames = Objects.requireNonNull(hostnames);
+        public Builder hostnames(@Nullable List<GetHostnamesHostname> hostnames) {
+            this.hostnames = hostnames;
             return this;
         }
         public Builder hostnames(GetHostnamesHostname... hostnames) {
             return hostnames(List.of(hostnames));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

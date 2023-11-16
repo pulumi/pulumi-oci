@@ -75,11 +75,11 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
     /**
      * The OCID of the user who created this operator control assignment.
      */
-    public /*out*/ readonly assignerId!: pulumi.Output<string>;
+    public /*out*/ readonly assignerId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Comment about the assignment of the operator control to this target resource.
      */
-    public readonly comment!: pulumi.Output<string>;
+    public readonly comment!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the operator control assignment.
      */
@@ -87,31 +87,31 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * description containing reason for releasing of OperatorControl.
      */
-    public /*out*/ readonly detachmentDescription!: pulumi.Output<string>;
+    public /*out*/ readonly detachmentDescription!: pulumi.Output<string | undefined>;
     /**
      * The code identifying the error occurred during Assignment operation.
      */
-    public /*out*/ readonly errorCode!: pulumi.Output<number>;
+    public /*out*/ readonly errorCode!: pulumi.Output<number | undefined>;
     /**
      * The message describing the error occurred during Assignment operation.
      */
-    public /*out*/ readonly errorMessage!: pulumi.Output<string>;
+    public /*out*/ readonly errorMessage!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The boolean if true would autoApprove during maintenance.
      */
-    public readonly isAutoApproveDuringMaintenance!: pulumi.Output<boolean>;
+    public readonly isAutoApproveDuringMaintenance!: pulumi.Output<boolean | undefined>;
     /**
      * Whether the assignment is a default assignment.
      */
-    public /*out*/ readonly isDefaultAssignment!: pulumi.Output<boolean>;
+    public /*out*/ readonly isDefaultAssignment!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If set, then the target resource is always governed by the operator control.
      */
@@ -119,11 +119,11 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
     /**
      * (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
      */
-    public readonly isLogForwarded!: pulumi.Output<boolean>;
+    public readonly isLogForwarded!: pulumi.Output<boolean | undefined>;
     /**
      * More in detail about the lifeCycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the operator control that is being assigned to a target resource.
      */
@@ -131,15 +131,15 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
     /**
      * (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
      */
-    public readonly remoteSyslogServerAddress!: pulumi.Output<string>;
+    public readonly remoteSyslogServerAddress!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
      */
-    public readonly remoteSyslogServerCaCert!: pulumi.Output<string>;
+    public readonly remoteSyslogServerCaCert!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      */
-    public readonly remoteSyslogServerPort!: pulumi.Output<number>;
+    public readonly remoteSyslogServerPort!: pulumi.Output<number | undefined>;
     /**
      * The OCID of the compartment that contains the target resource.
      */
@@ -159,11 +159,11 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
     /**
      * The current lifcycle state of the OperatorControl.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    public readonly timeAssignmentFrom!: pulumi.Output<string>;
+    public readonly timeAssignmentFrom!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z' 
      *
@@ -171,19 +171,19 @@ export class OperatorControlAssignment extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeAssignmentTo!: pulumi.Output<string>;
+    public readonly timeAssignmentTo!: pulumi.Output<string | undefined>;
     /**
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeOfAssignment!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfAssignment!: pulumi.Output<string | undefined>;
     /**
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfDeletion!: pulumi.Output<string | undefined>;
     /**
      * User id who released the operatorControl.
      */
-    public /*out*/ readonly unassignerId!: pulumi.Output<string>;
+    public /*out*/ readonly unassignerId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OperatorControlAssignment resource with the given unique name, arguments, and options.

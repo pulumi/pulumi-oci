@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The OCID of the Autonomous Database registered as a target database in Data Safe.
         /// </summary>
-        public readonly string AutonomousDatabaseId;
+        public readonly string? AutonomousDatabaseId;
         /// <summary>
         /// A filter to return only target databases that match the specified database type.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The OCID of the cloud database registered as a target database in Data Safe.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// A filter to return only target databases that match the specified infrastructure type.
         /// </summary>
-        public readonly string InfrastructureType;
+        public readonly string? InfrastructureType;
         /// <summary>
         /// The OCID of the compute instance on which the database is running.
         /// </summary>
-        public readonly string InstanceId;
+        public readonly string? InstanceId;
         /// <summary>
         /// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         /// </summary>
@@ -40,35 +40,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The port number of the database listener.
         /// </summary>
-        public readonly int ListenerPort;
+        public readonly int? ListenerPort;
         /// <summary>
         /// The service name of the database registered as target database.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
         /// <summary>
         /// The OCID of the VM cluster in which the database is running.
         /// </summary>
-        public readonly string VmClusterId;
+        public readonly string? VmClusterId;
 
         [OutputConstructor]
         private GetTargetDatabasesTargetDatabaseDatabaseDetailResult(
-            string autonomousDatabaseId,
+            string? autonomousDatabaseId,
 
-            string databaseType,
+            string? databaseType,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            string infrastructureType,
+            string? infrastructureType,
 
-            string instanceId,
+            string? instanceId,
 
             ImmutableArray<string> ipAddresses,
 
-            int listenerPort,
+            int? listenerPort,
 
-            string serviceName,
+            string? serviceName,
 
-            string vmClusterId)
+            string? vmClusterId)
         {
             AutonomousDatabaseId = autonomousDatabaseId;
             DatabaseType = databaseType;

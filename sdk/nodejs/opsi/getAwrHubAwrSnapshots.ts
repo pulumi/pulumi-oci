@@ -69,13 +69,13 @@ export interface GetAwrHubAwrSnapshotsResult {
     /**
      * The list of awr_snapshot_collection.
      */
-    readonly awrSnapshotCollections: outputs.Opsi.GetAwrHubAwrSnapshotsAwrSnapshotCollection[];
+    readonly awrSnapshotCollections?: outputs.Opsi.GetAwrHubAwrSnapshotsAwrSnapshotCollection[];
     readonly awrSourceDatabaseIdentifier: string;
     readonly filters?: outputs.Opsi.GetAwrHubAwrSnapshotsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly timeGreaterThanOrEqualTo?: string;
     readonly timeLessThanOrEqualTo?: string;
 }

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Ons.Outputs
         /// <summary>
         /// The maximum retry duration in milliseconds.
         /// </summary>
-        public readonly int MaxRetryDuration;
+        public readonly int? MaxRetryDuration;
         /// <summary>
         /// The type of delivery policy. Default value: EXPONENTIAL.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult(
-            int maxRetryDuration,
+            int? maxRetryDuration,
 
-            string policyType)
+            string? policyType)
         {
             MaxRetryDuration = maxRetryDuration;
             PolicyType = policyType;

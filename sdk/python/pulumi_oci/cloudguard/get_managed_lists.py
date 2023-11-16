@@ -63,9 +63,6 @@ class GetManagedListsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier where the resource is created
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -76,9 +73,6 @@ class GetManagedListsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        ManagedList display name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +82,7 @@ class GetManagedListsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,17 +91,11 @@ class GetManagedListsResult:
     @property
     @pulumi.getter(name="listType")
     def list_type(self) -> Optional[str]:
-        """
-        type of the list
-        """
         return pulumi.get(self, "list_type")
 
     @property
     @pulumi.getter(name="managedListCollections")
-    def managed_list_collections(self) -> Sequence['outputs.GetManagedListsManagedListCollectionResult']:
-        """
-        The list of managed_list_collection.
-        """
+    def managed_list_collections(self) -> Optional[Sequence['outputs.GetManagedListsManagedListCollectionResult']]:
         return pulumi.get(self, "managed_list_collections")
 
     @property
@@ -118,9 +106,6 @@ class GetManagedListsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -152,46 +137,7 @@ def get_managed_lists(access_level: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedListsResult:
     """
-    This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of ListManagedLists.
-    The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return ManagedLists in only
-    those compartments for which the requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListManagedLists on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=var["compartment_id"],
-        access_level=var["managed_list_access_level"],
-        compartment_id_in_subtree=var["managed_list_compartment_id_in_subtree"],
-        display_name=var["managed_list_display_name"],
-        list_type=var["managed_list_list_type"],
-        resource_metadata_only=var["managed_list_resource_metadata_only"],
-        state=var["managed_list_state"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str list_type: The type of the ManagedList.
-    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -229,45 +175,6 @@ def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[str]]]
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedListsResult]:
     """
-    This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of ListManagedLists.
-    The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
-
-    The parameter `accessLevel` specifies whether to return ManagedLists in only
-    those compartments for which the requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListManagedLists on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=var["compartment_id"],
-        access_level=var["managed_list_access_level"],
-        compartment_id_in_subtree=var["managed_list_compartment_id_in_subtree"],
-        display_name=var["managed_list_display_name"],
-        list_type=var["managed_list_list_type"],
-        resource_metadata_only=var["managed_list_resource_metadata_only"],
-        state=var["managed_list_state"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str list_type: The type of the ManagedList.
-    :param bool resource_metadata_only: Default is false. When set to true, the list of all Oracle Managed Resources Metadata supported by Cloud Guard are returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    Use this data source to access information about an existing resource.
     """
     ...

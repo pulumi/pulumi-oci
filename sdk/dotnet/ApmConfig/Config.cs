@@ -107,19 +107,19 @@ namespace Pulumi.Oci.ApmConfig
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A description of the metric.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -137,31 +137,31 @@ namespace Pulumi.Oci.ApmConfig
         /// For optimistic concurrency control. See `if-match`.
         /// </summary>
         [Output("etag")]
-        public Output<string> Etag { get; private set; } = null!;
+        public Output<string?> Etag { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         /// </summary>
         [Output("filterId")]
-        public Output<string> FilterId { get; private set; } = null!;
+        public Output<string?> FilterId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The string that defines the Span Filter expression.
         /// </summary>
         [Output("filterText")]
-        public Output<string> FilterText { get; private set; } = null!;
+        public Output<string?> FilterText { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         /// </summary>
         [Output("group")]
-        public Output<string> Group { get; private set; } = null!;
+        public Output<string?> Group { get; private set; } = null!;
 
         /// <summary>
         /// The list of configuration items that reference the span filter.
@@ -179,19 +179,19 @@ namespace Pulumi.Oci.ApmConfig
         /// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
         /// </summary>
         [Output("namespace")]
-        public Output<string> Namespace { get; private set; } = null!;
+        public Output<string?> Namespace { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
         /// </summary>
         [Output("opcDryRun")]
-        public Output<string> OpcDryRun { get; private set; } = null!;
+        public Output<string?> OpcDryRun { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The options are stored here as JSON.
         /// </summary>
         [Output("options")]
-        public Output<string> Options { get; private set; } = null!;
+        public Output<string?> Options { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable)
@@ -203,19 +203,19 @@ namespace Pulumi.Oci.ApmConfig
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         /// </summary>
         [Output("updatedBy")]
-        public Output<string> UpdatedBy { get; private set; } = null!;
+        public Output<string?> UpdatedBy { get; private set; } = null!;
 
 
         /// <summary>

@@ -67,74 +67,47 @@ class GetManagementAgentInstallKeyResult:
 
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
-    def allowed_key_install_count(self) -> int:
-        """
-        Total number of install for this keys
-        """
+    def allowed_key_install_count(self) -> Optional[int]:
         return pulumi.get(self, "allowed_key_install_count")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdByPrincipalId")
-    def created_by_principal_id(self) -> str:
-        """
-        Principal id of user who created the Agent Install key
-        """
+    def created_by_principal_id(self) -> Optional[str]:
         return pulumi.get(self, "created_by_principal_id")
 
     @property
     @pulumi.getter(name="currentKeyInstallCount")
-    def current_key_install_count(self) -> int:
-        """
-        Total number of install for this keys
-        """
+    def current_key_install_count(self) -> Optional[int]:
         return pulumi.get(self, "current_key_install_count")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Management Agent Install Key Name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Agent install Key identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Management Agent Install Key
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -144,34 +117,22 @@ class GetManagementAgentInstallKeyResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Status of Key
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when Management Agent install Key was created. An RFC3339 formatted date time string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> str:
-        """
-        date after which key would expire after creation
-        """
+    def time_expires(self) -> Optional[str]:
         return pulumi.get(self, "time_expires")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetManagementAgentInstallKeyResult(GetManagementAgentInstallKeyRe
 def get_management_agent_install_key(management_agent_install_key_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentInstallKeyResult:
     """
-    This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets complete details of the Agent install Key for a given key id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=oci_management_agent_management_agent_install_key["test_management_agent_install_key"]["id"])
-    ```
-
-
-    :param str management_agent_install_key_id: Unique Management Agent Install Key identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managementAgentInstallKeyId'] = management_agent_install_key_id
@@ -242,20 +189,6 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[s
 def get_management_agent_install_key_output(management_agent_install_key_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentInstallKeyResult]:
     """
-    This data source provides details about a specific Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
-
-    Gets complete details of the Agent install Key for a given key id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=oci_management_agent_management_agent_install_key["test_management_agent_install_key"]["id"])
-    ```
-
-
-    :param str management_agent_install_key_id: Unique Management Agent Install Key identifier
+    Use this data source to access information about an existing resource.
     """
     ...

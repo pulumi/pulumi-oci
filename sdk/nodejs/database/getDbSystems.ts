@@ -86,7 +86,7 @@ export interface GetDbSystemsResult {
     /**
      * The list of db_systems.
      */
-    readonly dbSystems: outputs.Database.GetDbSystemsDbSystem[];
+    readonly dbSystems?: outputs.Database.GetDbSystemsDbSystem[];
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      */
@@ -95,7 +95,7 @@ export interface GetDbSystemsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the DB system.
      */

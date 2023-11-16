@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
@@ -68,35 +67,35 @@ type LookupResolverEndpointArgs struct {
 // A collection of values returned by getResolverEndpoint.
 type LookupResolverEndpointResult struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
-	EndpointType string `pulumi:"endpointType"`
+	EndpointType *string `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-	ForwardingAddress string `pulumi:"forwardingAddress"`
-	Id                string `pulumi:"id"`
+	ForwardingAddress *string `pulumi:"forwardingAddress"`
+	Id                *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-	IsForwarding bool `pulumi:"isForwarding"`
+	IsForwarding *bool `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
-	IsListening bool `pulumi:"isListening"`
+	IsListening *bool `pulumi:"isListening"`
 	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-	ListeningAddress string `pulumi:"listeningAddress"`
+	ListeningAddress *string `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
 	NsgIds               []string `pulumi:"nsgIds"`
 	ResolverEndpointName string   `pulumi:"resolverEndpointName"`
 	ResolverId           string   `pulumi:"resolverId"`
 	Scope                *string  `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupResolverEndpointOutput(ctx *pulumi.Context, args LookupResolverEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupResolverEndpointResultOutput {
@@ -141,49 +140,43 @@ func (o LookupResolverEndpointResultOutput) ToLookupResolverEndpointResultOutput
 	return o
 }
 
-func (o LookupResolverEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupResolverEndpointResult] {
-	return pulumix.Output[LookupResolverEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
-func (o LookupResolverEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The type of resolver endpoint. VNIC is currently the only supported type.
-func (o LookupResolverEndpointResultOutput) EndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.EndpointType }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-func (o LookupResolverEndpointResultOutput) ForwardingAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.ForwardingAddress }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) ForwardingAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.ForwardingAddress }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupResolverEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-func (o LookupResolverEndpointResultOutput) IsForwarding() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) bool { return v.IsForwarding }).(pulumi.BoolOutput)
+func (o LookupResolverEndpointResultOutput) IsForwarding() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *bool { return v.IsForwarding }).(pulumi.BoolPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for listening.
-func (o LookupResolverEndpointResultOutput) IsListening() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) bool { return v.IsListening }).(pulumi.BoolOutput)
+func (o LookupResolverEndpointResultOutput) IsListening() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *bool { return v.IsListening }).(pulumi.BoolPtrOutput)
 }
 
 // An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-func (o LookupResolverEndpointResultOutput) ListeningAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.ListeningAddress }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) ListeningAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.ListeningAddress }).(pulumi.StringPtrOutput)
 }
 
 // The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-func (o LookupResolverEndpointResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
@@ -204,28 +197,28 @@ func (o LookupResolverEndpointResultOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o LookupResolverEndpointResultOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Self }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupResolverEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-func (o LookupResolverEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupResolverEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupResolverEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupResolverEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupResolverEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

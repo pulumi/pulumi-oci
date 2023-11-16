@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstancePatchHistoriesPatchHistory {
@@ -13,51 +15,51 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
      * @return The type of a BDS patch history entity.
      * 
      */
-    private String patchType;
+    private @Nullable String patchType;
     /**
      * @return The status of the patch.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time when the patch history was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The version of the patch.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetBdsInstancePatchHistoriesPatchHistory() {}
     /**
      * @return The type of a BDS patch history entity.
      * 
      */
-    public String patchType() {
-        return this.patchType;
+    public Optional<String> patchType() {
+        return Optional.ofNullable(this.patchType);
     }
     /**
      * @return The status of the patch.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time when the patch history was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The version of the patch.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String patchType;
-        private String state;
-        private String timeUpdated;
-        private String version;
+        private @Nullable String patchType;
+        private @Nullable String state;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetBdsInstancePatchHistoriesPatchHistory defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
         }
 
         @CustomType.Setter
-        public Builder patchType(String patchType) {
-            this.patchType = Objects.requireNonNull(patchType);
+        public Builder patchType(@Nullable String patchType) {
+            this.patchType = patchType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetBdsInstancePatchHistoriesPatchHistory build() {

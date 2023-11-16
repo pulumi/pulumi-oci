@@ -48,23 +48,23 @@ export class DbNode extends pulumi.CustomResource {
     /**
      * Additional information about the planned maintenance.
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<string>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      */
-    public /*out*/ readonly backupIpId!: pulumi.Output<string>;
+    public /*out*/ readonly backupIpId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      */
-    public /*out*/ readonly backupVnic2id!: pulumi.Output<string>;
+    public /*out*/ readonly backupVnic2id!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      */
-    public /*out*/ readonly backupVnicId!: pulumi.Output<string>;
+    public /*out*/ readonly backupVnicId!: pulumi.Output<string | undefined>;
     /**
      * The number of CPU cores enabled on the Db node.
      */
-    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
+    public /*out*/ readonly cpuCoreCount!: pulumi.Output<number | undefined>;
     /**
      * The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -72,23 +72,23 @@ export class DbNode extends pulumi.CustomResource {
     /**
      * The allocated local node storage in GBs on the Db node.
      */
-    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      */
-    public /*out*/ readonly dbServerId!: pulumi.Output<string>;
+    public /*out*/ readonly dbServerId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public /*out*/ readonly dbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly dbSystemId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The name of the Fault Domain the instance is contained in.
      */
-    public /*out*/ readonly faultDomain!: pulumi.Output<string>;
+    public /*out*/ readonly faultDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -96,55 +96,55 @@ export class DbNode extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      */
-    public /*out*/ readonly hostIpId!: pulumi.Output<string>;
+    public /*out*/ readonly hostIpId!: pulumi.Output<string | undefined>;
     /**
      * The host name for the database node.
      */
-    public /*out*/ readonly hostname!: pulumi.Output<string>;
+    public /*out*/ readonly hostname!: pulumi.Output<string | undefined>;
     /**
      * Information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The type of database node maintenance.
      */
-    public /*out*/ readonly maintenanceType!: pulumi.Output<string>;
+    public /*out*/ readonly maintenanceType!: pulumi.Output<string | undefined>;
     /**
      * The allocated memory in GBs on the Db node.
      */
-    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      */
-    public /*out*/ readonly softwareStorageSizeInGb!: pulumi.Output<number>;
+    public /*out*/ readonly softwareStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * The current state of the database node.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time that the database node was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * End date and time of maintenance window.
      */
-    public /*out*/ readonly timeMaintenanceWindowEnd!: pulumi.Output<string>;
+    public /*out*/ readonly timeMaintenanceWindowEnd!: pulumi.Output<string | undefined>;
     /**
      * Start date and time of maintenance window.
      */
-    public /*out*/ readonly timeMaintenanceWindowStart!: pulumi.Output<string>;
+    public /*out*/ readonly timeMaintenanceWindowStart!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      */
-    public /*out*/ readonly vnic2id!: pulumi.Output<string>;
+    public /*out*/ readonly vnic2id!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      */
-    public /*out*/ readonly vnicId!: pulumi.Output<string>;
+    public /*out*/ readonly vnicId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DbNode resource with the given unique name, arguments, and options.

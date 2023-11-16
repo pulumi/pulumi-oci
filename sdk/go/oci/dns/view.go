@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
@@ -66,26 +65,26 @@ type View struct {
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the view.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrOutput `pulumi:"isProtected"`
 	// If specified, must be `PRIVATE` when creating a view for private zones.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringOutput `pulumi:"self"`
+	Self pulumi.StringPtrOutput `pulumi:"self"`
 	// The current state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewView registers a new resource with the given unique name, arguments, and options.
@@ -248,12 +247,6 @@ func (i *View) ToViewOutputWithContext(ctx context.Context) ViewOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ViewOutput)
 }
 
-func (i *View) ToOutput(ctx context.Context) pulumix.Output[*View] {
-	return pulumix.Output[*View]{
-		OutputState: i.ToViewOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ViewArrayInput is an input type that accepts ViewArray and ViewArrayOutput values.
 // You can construct a concrete instance of `ViewArrayInput` via:
 //
@@ -277,12 +270,6 @@ func (i ViewArray) ToViewArrayOutput() ViewArrayOutput {
 
 func (i ViewArray) ToViewArrayOutputWithContext(ctx context.Context) ViewArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ViewArrayOutput)
-}
-
-func (i ViewArray) ToOutput(ctx context.Context) pulumix.Output[[]*View] {
-	return pulumix.Output[[]*View]{
-		OutputState: i.ToViewArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ViewMapInput is an input type that accepts ViewMap and ViewMapOutput values.
@@ -310,12 +297,6 @@ func (i ViewMap) ToViewMapOutputWithContext(ctx context.Context) ViewMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ViewMapOutput)
 }
 
-func (i ViewMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*View] {
-	return pulumix.Output[map[string]*View]{
-		OutputState: i.ToViewMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ViewOutput struct{ *pulumi.OutputState }
 
 func (ViewOutput) ElementType() reflect.Type {
@@ -328,12 +309,6 @@ func (o ViewOutput) ToViewOutput() ViewOutput {
 
 func (o ViewOutput) ToViewOutputWithContext(ctx context.Context) ViewOutput {
 	return o
-}
-
-func (o ViewOutput) ToOutput(ctx context.Context) pulumix.Output[*View] {
-	return pulumix.Output[*View]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the owning compartment.
@@ -349,8 +324,8 @@ func (o ViewOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The display name of the view.
-func (o ViewOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ViewOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -361,8 +336,8 @@ func (o ViewOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o ViewOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v *View) pulumi.BoolOutput { return v.IsProtected }).(pulumi.BoolOutput)
+func (o ViewOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.BoolPtrOutput { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // If specified, must be `PRIVATE` when creating a view for private zones.
@@ -374,23 +349,23 @@ func (o ViewOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o ViewOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.Self }).(pulumi.StringOutput)
+func (o ViewOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o ViewOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ViewOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ViewOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ViewOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ViewOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *View) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ViewOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *View) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ViewArrayOutput struct{ *pulumi.OutputState }
@@ -405,12 +380,6 @@ func (o ViewArrayOutput) ToViewArrayOutput() ViewArrayOutput {
 
 func (o ViewArrayOutput) ToViewArrayOutputWithContext(ctx context.Context) ViewArrayOutput {
 	return o
-}
-
-func (o ViewArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*View] {
-	return pulumix.Output[[]*View]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ViewArrayOutput) Index(i pulumi.IntInput) ViewOutput {
@@ -431,12 +400,6 @@ func (o ViewMapOutput) ToViewMapOutput() ViewMapOutput {
 
 func (o ViewMapOutput) ToViewMapOutputWithContext(ctx context.Context) ViewMapOutput {
 	return o
-}
-
-func (o ViewMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*View] {
-	return pulumix.Output[map[string]*View]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ViewMapOutput) MapIndex(k pulumi.StringInput) ViewOutput {

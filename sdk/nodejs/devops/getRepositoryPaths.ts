@@ -76,14 +76,14 @@ export interface GetRepositoryPathsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly pathsInSubtree?: boolean;
     readonly ref?: string;
     readonly repositoryId: string;
     /**
      * The list of repository_path_collection.
      */
-    readonly repositoryPathCollections: outputs.DevOps.GetRepositoryPathsRepositoryPathCollection[];
+    readonly repositoryPathCollections?: outputs.DevOps.GetRepositoryPathsRepositoryPathCollection[];
 }
 /**
  * This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.

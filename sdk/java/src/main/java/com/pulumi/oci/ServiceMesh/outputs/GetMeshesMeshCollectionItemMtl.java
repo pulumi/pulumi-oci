@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceMesh.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMeshesMeshCollectionItemMtl {
@@ -13,15 +15,15 @@ public final class GetMeshesMeshCollectionItemMtl {
      * @return DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
      * 
      */
-    private String minimum;
+    private @Nullable String minimum;
 
     private GetMeshesMeshCollectionItemMtl() {}
     /**
      * @return DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
      * 
      */
-    public String minimum() {
-        return this.minimum;
+    public Optional<String> minimum() {
+        return Optional.ofNullable(this.minimum);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMeshesMeshCollectionItemMtl {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String minimum;
+        private @Nullable String minimum;
         public Builder() {}
         public Builder(GetMeshesMeshCollectionItemMtl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMeshesMeshCollectionItemMtl {
         }
 
         @CustomType.Setter
-        public Builder minimum(String minimum) {
-            this.minimum = Objects.requireNonNull(minimum);
+        public Builder minimum(@Nullable String minimum) {
+            this.minimum = minimum;
             return this;
         }
         public GetMeshesMeshCollectionItemMtl build() {

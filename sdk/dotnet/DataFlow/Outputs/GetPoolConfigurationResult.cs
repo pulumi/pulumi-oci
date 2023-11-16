@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// Maximum number of compute instances in the pool for a given compute shape.
         /// </summary>
-        public readonly int Max;
+        public readonly int? Max;
         /// <summary>
         /// Minimum number of compute instances in the pool for a given compute shape.
         /// </summary>
-        public readonly int Min;
+        public readonly int? Min;
         /// <summary>
         /// The compute shape of the resources you would like to provision.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
         [OutputConstructor]
         private GetPoolConfigurationResult(
-            int max,
+            int? max,
 
-            int min,
+            int? min,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetPoolConfigurationShapeConfigResult> shapeConfigs)
         {

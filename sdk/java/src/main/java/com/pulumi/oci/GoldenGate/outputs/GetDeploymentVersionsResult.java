@@ -25,13 +25,13 @@ public final class GetDeploymentVersionsResult {
      * @return The list of deployment_version_collection.
      * 
      */
-    private List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections;
+    private @Nullable List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections;
     private @Nullable List<GetDeploymentVersionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDeploymentVersionsResult() {}
     public String compartmentId() {
@@ -52,7 +52,7 @@ public final class GetDeploymentVersionsResult {
      * 
      */
     public List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections() {
-        return this.deploymentVersionCollections;
+        return this.deploymentVersionCollections == null ? List.of() : this.deploymentVersionCollections;
     }
     public List<GetDeploymentVersionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -61,8 +61,8 @@ public final class GetDeploymentVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -77,9 +77,9 @@ public final class GetDeploymentVersionsResult {
         private String compartmentId;
         private @Nullable String deploymentId;
         private @Nullable String deploymentType;
-        private List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections;
+        private @Nullable List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections;
         private @Nullable List<GetDeploymentVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDeploymentVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -107,8 +107,8 @@ public final class GetDeploymentVersionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentVersionCollections(List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections) {
-            this.deploymentVersionCollections = Objects.requireNonNull(deploymentVersionCollections);
+        public Builder deploymentVersionCollections(@Nullable List<GetDeploymentVersionsDeploymentVersionCollection> deploymentVersionCollections) {
+            this.deploymentVersionCollections = deploymentVersionCollections;
             return this;
         }
         public Builder deploymentVersionCollections(GetDeploymentVersionsDeploymentVersionCollection... deploymentVersionCollections) {
@@ -123,8 +123,8 @@ public final class GetDeploymentVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDeploymentVersionsResult build() {

@@ -37,17 +37,17 @@ class GetNamespaceMetadataResult:
 
     @property
     @pulumi.getter(name="defaultS3compartmentId")
-    def default_s3compartment_id(self) -> str:
+    def default_s3compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "default_s3compartment_id")
 
     @property
     @pulumi.getter(name="defaultSwiftCompartmentId")
-    def default_swift_compartment_id(self) -> str:
+    def default_swift_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "default_swift_compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """

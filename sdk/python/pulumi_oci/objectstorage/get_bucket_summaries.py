@@ -42,18 +42,12 @@ class GetBucketSummariesResult:
 
     @property
     @pulumi.getter(name="bucketSummaries")
-    def bucket_summaries(self) -> Sequence['outputs.GetBucketSummariesBucketSummaryResult']:
-        """
-        The list of bucket_summaries.
-        """
+    def bucket_summaries(self) -> Optional[Sequence['outputs.GetBucketSummariesBucketSummaryResult']]:
         return pulumi.get(self, "bucket_summaries")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment ID in which the bucket is authorized.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -63,7 +57,7 @@ class GetBucketSummariesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetBucketSummariesResult:
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The Object Storage namespace in which the bucket resides.
-        """
         return pulumi.get(self, "namespace")
 
 
@@ -96,31 +87,7 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
                          namespace: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBucketSummariesResult:
     """
-    This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
-    and does not contain fields like the user-defined metadata.
-
-    ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
-    `opc-next-page` value with the `page` request parameter.
-
-    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
-    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=var["compartment_id"],
-        namespace=var["bucket_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list buckets.
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -143,30 +110,6 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = No
                                 namespace: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBucketSummariesResult]:
     """
-    This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
-
-    Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
-    and does not contain fields like the user-defined metadata.
-
-    ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
-    `opc-next-page` value with the `page` request parameter.
-
-    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
-    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=var["compartment_id"],
-        namespace=var["bucket_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list buckets.
-    :param str namespace: The Object Storage namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

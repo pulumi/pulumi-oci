@@ -16,139 +16,139 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         /// </summary>
-        public readonly string CaptureFilterId;
+        public readonly string? CaptureFilterId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Defines an encapsulation header type for the VTAP's mirrored traffic.
         /// </summary>
-        public readonly string EncapsulationProtocol;
+        public readonly string? EncapsulationProtocol;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether to list all VTAPs or only running VTAPs.
         /// * When `FALSE`, lists ALL running and stopped VTAPs.
         /// * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
         /// </summary>
-        public readonly bool IsVtapEnabled;
+        public readonly bool? IsVtapEnabled;
         /// <summary>
         /// The VTAP's current running state.
         /// </summary>
-        public readonly string LifecycleStateDetails;
+        public readonly string? LifecycleStateDetails;
         /// <summary>
         /// The maximum size of the packets to be included in the filter.
         /// </summary>
-        public readonly int MaxPacketSize;
+        public readonly int? MaxPacketSize;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
         /// </summary>
-        public readonly string SourceId;
+        public readonly string? SourceId;
         /// <summary>
         /// The IP Address of the source private endpoint.
         /// </summary>
-        public readonly string SourcePrivateEndpointIp;
+        public readonly string? SourcePrivateEndpointIp;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
         /// </summary>
-        public readonly string SourcePrivateEndpointSubnetId;
+        public readonly string? SourcePrivateEndpointSubnetId;
         /// <summary>
         /// The source type for the VTAP.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
         /// <summary>
         /// A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The IP address of the VTAP target.
         /// </summary>
-        public readonly string TargetIp;
+        public readonly string? TargetIp;
         /// <summary>
         /// The target type for the VTAP.
         /// </summary>
-        public readonly string TargetType;
+        public readonly string? TargetType;
         /// <summary>
         /// The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         /// </summary>
-        public readonly string TrafficMode;
+        public readonly string? TrafficMode;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
         /// <summary>
         /// The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
         /// </summary>
-        public readonly string VxlanNetworkIdentifier;
+        public readonly string? VxlanNetworkIdentifier;
 
         [OutputConstructor]
         private GetVtapsVtapResult(
-            string captureFilterId,
+            string? captureFilterId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string encapsulationProtocol,
+            string? encapsulationProtocol,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isVtapEnabled,
+            bool? isVtapEnabled,
 
-            string lifecycleStateDetails,
+            string? lifecycleStateDetails,
 
-            int maxPacketSize,
+            int? maxPacketSize,
 
-            string sourceId,
+            string? sourceId,
 
-            string sourcePrivateEndpointIp,
+            string? sourcePrivateEndpointIp,
 
-            string sourcePrivateEndpointSubnetId,
+            string? sourcePrivateEndpointSubnetId,
 
-            string sourceType,
+            string? sourceType,
 
-            string state,
+            string? state,
 
-            string targetId,
+            string? targetId,
 
-            string targetIp,
+            string? targetIp,
 
-            string targetType,
+            string? targetType,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string trafficMode,
+            string? trafficMode,
 
-            string vcnId,
+            string? vcnId,
 
-            string vxlanNetworkIdentifier)
+            string? vxlanNetworkIdentifier)
         {
             CaptureFilterId = captureFilterId;
             CompartmentId = compartmentId;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -66,7 +65,7 @@ type GetDeploymentTypeResult struct {
 	// An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of DeploymentTypeSummary
 	Items []GetDeploymentTypeItem `pulumi:"items"`
 }
@@ -111,12 +110,6 @@ func (o GetDeploymentTypeResultOutput) ToGetDeploymentTypeResultOutputWithContex
 	return o
 }
 
-func (o GetDeploymentTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentTypeResult] {
-	return pulumix.Output[GetDeploymentTypeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDeploymentTypeResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -127,8 +120,8 @@ func (o GetDeploymentTypeResultOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDeploymentTypeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDeploymentTypeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDeploymentTypeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDeploymentTypeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of DeploymentTypeSummary

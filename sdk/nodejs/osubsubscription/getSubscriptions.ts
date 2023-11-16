@@ -91,14 +91,14 @@ export interface GetSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCommitInfoRequired?: boolean;
     readonly planNumber?: string;
     readonly subscriptionId?: string;
     /**
      * The list of subscriptions.
      */
-    readonly subscriptions: outputs.OsubSubscription.GetSubscriptionsSubscription[];
+    readonly subscriptions?: outputs.OsubSubscription.GetSubscriptionsSubscription[];
     readonly xOneGatewaySubscriptionId?: string;
     readonly xOneOriginRegion?: string;
 }

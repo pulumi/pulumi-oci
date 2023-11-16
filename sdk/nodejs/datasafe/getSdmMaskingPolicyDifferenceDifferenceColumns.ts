@@ -94,7 +94,7 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The database object that contains the difference column.
      */
@@ -110,7 +110,7 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
     /**
      * The list of sdm_masking_policy_difference_column_collection.
      */
-    readonly sdmMaskingPolicyDifferenceColumnCollections: outputs.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection[];
+    readonly sdmMaskingPolicyDifferenceColumnCollections?: outputs.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection[];
     readonly sdmMaskingPolicyDifferenceId: string;
     /**
      * Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.

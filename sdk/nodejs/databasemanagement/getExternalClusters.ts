@@ -70,7 +70,7 @@ export interface GetExternalClustersResult {
     /**
      * The list of external_cluster_collection.
      */
-    readonly externalClusterCollections: outputs.DatabaseManagement.GetExternalClustersExternalClusterCollection[];
+    readonly externalClusterCollections?: outputs.DatabaseManagement.GetExternalClustersExternalClusterCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      */
@@ -79,7 +79,7 @@ export interface GetExternalClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.

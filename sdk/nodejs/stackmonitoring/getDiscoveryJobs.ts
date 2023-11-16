@@ -59,12 +59,12 @@ export interface GetDiscoveryJobsResult {
     /**
      * The list of discovery_job_collection.
      */
-    readonly discoveryJobCollections: outputs.StackMonitoring.GetDiscoveryJobsDiscoveryJobCollection[];
+    readonly discoveryJobCollections?: outputs.StackMonitoring.GetDiscoveryJobsDiscoveryJobCollection[];
     readonly filters?: outputs.StackMonitoring.GetDiscoveryJobsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly name?: string;
 }
 /**

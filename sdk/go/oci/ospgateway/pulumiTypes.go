@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -153,12 +152,6 @@ func (i AddressActionVerificationAddressArgs) ToAddressActionVerificationAddress
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationAddressOutput)
 }
 
-func (i AddressActionVerificationAddressArgs) ToOutput(ctx context.Context) pulumix.Output[AddressActionVerificationAddress] {
-	return pulumix.Output[AddressActionVerificationAddress]{
-		OutputState: i.ToAddressActionVerificationAddressOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AddressActionVerificationAddressArrayInput is an input type that accepts AddressActionVerificationAddressArray and AddressActionVerificationAddressArrayOutput values.
 // You can construct a concrete instance of `AddressActionVerificationAddressArrayInput` via:
 //
@@ -184,12 +177,6 @@ func (i AddressActionVerificationAddressArray) ToAddressActionVerificationAddres
 	return pulumi.ToOutputWithContext(ctx, i).(AddressActionVerificationAddressArrayOutput)
 }
 
-func (i AddressActionVerificationAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]AddressActionVerificationAddress] {
-	return pulumix.Output[[]AddressActionVerificationAddress]{
-		OutputState: i.ToAddressActionVerificationAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AddressActionVerificationAddressOutput struct{ *pulumi.OutputState }
 
 func (AddressActionVerificationAddressOutput) ElementType() reflect.Type {
@@ -202,12 +189,6 @@ func (o AddressActionVerificationAddressOutput) ToAddressActionVerificationAddre
 
 func (o AddressActionVerificationAddressOutput) ToAddressActionVerificationAddressOutputWithContext(ctx context.Context) AddressActionVerificationAddressOutput {
 	return o
-}
-
-func (o AddressActionVerificationAddressOutput) ToOutput(ctx context.Context) pulumix.Output[AddressActionVerificationAddress] {
-	return pulumix.Output[AddressActionVerificationAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Address identifier.
@@ -357,12 +338,6 @@ func (o AddressActionVerificationAddressArrayOutput) ToAddressActionVerification
 	return o
 }
 
-func (o AddressActionVerificationAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AddressActionVerificationAddress] {
-	return pulumix.Output[[]AddressActionVerificationAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AddressActionVerificationAddressArrayOutput) Index(i pulumi.IntInput) AddressActionVerificationAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddressActionVerificationAddress {
 		return vs[0].([]AddressActionVerificationAddress)[vs[1].(int)]
@@ -502,12 +477,6 @@ func (i SubscriptionBillingAddressArgs) ToSubscriptionBillingAddressOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionBillingAddressOutput)
 }
 
-func (i SubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionBillingAddress] {
-	return pulumix.Output[SubscriptionBillingAddress]{
-		OutputState: i.ToSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionBillingAddressArrayInput is an input type that accepts SubscriptionBillingAddressArray and SubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `SubscriptionBillingAddressArrayInput` via:
 //
@@ -533,12 +502,6 @@ func (i SubscriptionBillingAddressArray) ToSubscriptionBillingAddressArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionBillingAddressArrayOutput)
 }
 
-func (i SubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionBillingAddress] {
-	return pulumix.Output[[]SubscriptionBillingAddress]{
-		OutputState: i.ToSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -551,12 +514,6 @@ func (o SubscriptionBillingAddressOutput) ToSubscriptionBillingAddressOutput() S
 
 func (o SubscriptionBillingAddressOutput) ToSubscriptionBillingAddressOutputWithContext(ctx context.Context) SubscriptionBillingAddressOutput {
 	return o
-}
-
-func (o SubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionBillingAddress] {
-	return pulumix.Output[SubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Address identifier.
@@ -703,12 +660,6 @@ func (o SubscriptionBillingAddressArrayOutput) ToSubscriptionBillingAddressArray
 	return o
 }
 
-func (o SubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionBillingAddress] {
-	return pulumix.Output[[]SubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) SubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionBillingAddress {
 		return vs[0].([]SubscriptionBillingAddress)[vs[1].(int)]
@@ -748,12 +699,6 @@ func (i SubscriptionPaymentGatewayArgs) ToSubscriptionPaymentGatewayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayOutput)
 }
 
-func (i SubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGateway] {
-	return pulumix.Output[SubscriptionPaymentGateway]{
-		OutputState: i.ToSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionPaymentGatewayArrayInput is an input type that accepts SubscriptionPaymentGatewayArray and SubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayArrayInput` via:
 //
@@ -779,12 +724,6 @@ func (i SubscriptionPaymentGatewayArray) ToSubscriptionPaymentGatewayArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayArrayOutput)
 }
 
-func (i SubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGateway] {
-	return pulumix.Output[[]SubscriptionPaymentGateway]{
-		OutputState: i.ToSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -797,12 +736,6 @@ func (o SubscriptionPaymentGatewayOutput) ToSubscriptionPaymentGatewayOutput() S
 
 func (o SubscriptionPaymentGatewayOutput) ToSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayOutput {
 	return o
-}
-
-func (o SubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGateway] {
-	return pulumix.Output[SubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Merchant details.
@@ -824,12 +757,6 @@ func (o SubscriptionPaymentGatewayArrayOutput) ToSubscriptionPaymentGatewayArray
 
 func (o SubscriptionPaymentGatewayArrayOutput) ToSubscriptionPaymentGatewayArrayOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayArrayOutput {
 	return o
-}
-
-func (o SubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGateway] {
-	return pulumix.Output[[]SubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) SubscriptionPaymentGatewayOutput {
@@ -875,12 +802,6 @@ func (i SubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscriptionPayment
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
-func (i SubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts SubscriptionPaymentGatewayMerchantDefinedDataArray and SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentGatewayMerchantDefinedDataArrayInput` via:
 //
@@ -906,12 +827,6 @@ func (i SubscriptionPaymentGatewayMerchantDefinedDataArray) ToSubscriptionPaymen
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
-func (i SubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -924,12 +839,6 @@ func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubscriptionPayme
 
 func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return o
-}
-
-func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[SubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Cloud account name.
@@ -954,12 +863,6 @@ func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToSubscription
 
 func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx context.Context) SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o
-}
-
-func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]SubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) SubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -1041,12 +944,6 @@ func (i SubscriptionPaymentOptionArgs) ToSubscriptionPaymentOptionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentOptionOutput)
 }
 
-func (i SubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentOption] {
-	return pulumix.Output[SubscriptionPaymentOption]{
-		OutputState: i.ToSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionPaymentOptionArrayInput is an input type that accepts SubscriptionPaymentOptionArray and SubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionPaymentOptionArrayInput` via:
 //
@@ -1072,12 +969,6 @@ func (i SubscriptionPaymentOptionArray) ToSubscriptionPaymentOptionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionPaymentOptionArrayOutput)
 }
 
-func (i SubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentOption] {
-	return pulumix.Output[[]SubscriptionPaymentOption]{
-		OutputState: i.ToSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -1090,12 +981,6 @@ func (o SubscriptionPaymentOptionOutput) ToSubscriptionPaymentOptionOutput() Sub
 
 func (o SubscriptionPaymentOptionOutput) ToSubscriptionPaymentOptionOutputWithContext(ctx context.Context) SubscriptionPaymentOptionOutput {
 	return o
-}
-
-func (o SubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionPaymentOption] {
-	return pulumix.Output[SubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Credit card type.
@@ -1165,12 +1050,6 @@ func (o SubscriptionPaymentOptionArrayOutput) ToSubscriptionPaymentOptionArrayOu
 
 func (o SubscriptionPaymentOptionArrayOutput) ToSubscriptionPaymentOptionArrayOutputWithContext(ctx context.Context) SubscriptionPaymentOptionArrayOutput {
 	return o
-}
-
-func (o SubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionPaymentOption] {
-	return pulumix.Output[[]SubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) SubscriptionPaymentOptionOutput {
@@ -1292,12 +1171,6 @@ func (i SubscriptionSubscriptionArgs) ToSubscriptionSubscriptionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionOutput)
 }
 
-func (i SubscriptionSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscription] {
-	return pulumix.Output[SubscriptionSubscription]{
-		OutputState: i.ToSubscriptionSubscriptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SubscriptionSubscriptionArgs) ToSubscriptionSubscriptionPtrOutput() SubscriptionSubscriptionPtrOutput {
 	return i.ToSubscriptionSubscriptionPtrOutputWithContext(context.Background())
 }
@@ -1339,12 +1212,6 @@ func (i *subscriptionSubscriptionPtrType) ToSubscriptionSubscriptionPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPtrOutput)
 }
 
-func (i *subscriptionSubscriptionPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscription] {
-	return pulumix.Output[*SubscriptionSubscription]{
-		OutputState: i.ToSubscriptionSubscriptionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionOutput) ElementType() reflect.Type {
@@ -1367,12 +1234,6 @@ func (o SubscriptionSubscriptionOutput) ToSubscriptionSubscriptionPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SubscriptionSubscription) *SubscriptionSubscription {
 		return &v
 	}).(SubscriptionSubscriptionPtrOutput)
-}
-
-func (o SubscriptionSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscription] {
-	return pulumix.Output[SubscriptionSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Account type.
@@ -1492,12 +1353,6 @@ func (o SubscriptionSubscriptionPtrOutput) ToSubscriptionSubscriptionPtrOutput()
 
 func (o SubscriptionSubscriptionPtrOutput) ToSubscriptionSubscriptionPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionPtrOutput {
 	return o
-}
-
-func (o SubscriptionSubscriptionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscription] {
-	return pulumix.Output[*SubscriptionSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionSubscriptionPtrOutput) Elem() SubscriptionSubscriptionOutput {
@@ -1853,12 +1708,6 @@ func (i SubscriptionSubscriptionBillingAddressArgs) ToSubscriptionSubscriptionBi
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionBillingAddressOutput)
 }
 
-func (i SubscriptionSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[SubscriptionSubscriptionBillingAddress]{
-		OutputState: i.ToSubscriptionSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionSubscriptionBillingAddressArrayInput is an input type that accepts SubscriptionSubscriptionBillingAddressArray and SubscriptionSubscriptionBillingAddressArrayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionBillingAddressArrayInput` via:
 //
@@ -1884,12 +1733,6 @@ func (i SubscriptionSubscriptionBillingAddressArray) ToSubscriptionSubscriptionB
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionBillingAddressArrayOutput)
 }
 
-func (i SubscriptionSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[[]SubscriptionSubscriptionBillingAddress]{
-		OutputState: i.ToSubscriptionSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -1902,12 +1745,6 @@ func (o SubscriptionSubscriptionBillingAddressOutput) ToSubscriptionSubscription
 
 func (o SubscriptionSubscriptionBillingAddressOutput) ToSubscriptionSubscriptionBillingAddressOutputWithContext(ctx context.Context) SubscriptionSubscriptionBillingAddressOutput {
 	return o
-}
-
-func (o SubscriptionSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[SubscriptionSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Address identifier.
@@ -2054,12 +1891,6 @@ func (o SubscriptionSubscriptionBillingAddressArrayOutput) ToSubscriptionSubscri
 	return o
 }
 
-func (o SubscriptionSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[[]SubscriptionSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriptionSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) SubscriptionSubscriptionBillingAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionSubscriptionBillingAddress {
 		return vs[0].([]SubscriptionSubscriptionBillingAddress)[vs[1].(int)]
@@ -2097,12 +1928,6 @@ func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPa
 
 func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentGatewayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayOutput)
-}
-
-func (i SubscriptionSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[SubscriptionSubscriptionPaymentGateway]{
-		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i SubscriptionSubscriptionPaymentGatewayArgs) ToSubscriptionSubscriptionPaymentGatewayPtrOutput() SubscriptionSubscriptionPaymentGatewayPtrOutput {
@@ -2146,12 +1971,6 @@ func (i *subscriptionSubscriptionPaymentGatewayPtrType) ToSubscriptionSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayPtrOutput)
 }
 
-func (i *subscriptionSubscriptionPaymentGatewayPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[*SubscriptionSubscriptionPaymentGateway]{
-		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -2176,12 +1995,6 @@ func (o SubscriptionSubscriptionPaymentGatewayOutput) ToSubscriptionSubscription
 	}).(SubscriptionSubscriptionPaymentGatewayPtrOutput)
 }
 
-func (o SubscriptionSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[SubscriptionSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Merchant details.
 func (o SubscriptionSubscriptionPaymentGatewayOutput) MerchantDefinedData() SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionPaymentGateway) *SubscriptionSubscriptionPaymentGatewayMerchantDefinedData {
@@ -2201,12 +2014,6 @@ func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) ToSubscriptionSubscript
 
 func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) ToSubscriptionSubscriptionPaymentGatewayPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentGatewayPtrOutput {
 	return o
-}
-
-func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[*SubscriptionSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionSubscriptionPaymentGatewayPtrOutput) Elem() SubscriptionSubscriptionPaymentGatewayOutput {
@@ -2266,12 +2073,6 @@ func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput)
 }
 
-func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput() SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput {
 	return i.ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutputWithContext(context.Background())
 }
@@ -2313,12 +2114,6 @@ func (i *subscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrType) ToSub
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput)
 }
 
-func (i *subscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -2343,12 +2138,6 @@ func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubsc
 	}).(SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput)
 }
 
-func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Cloud account name.
 func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionPaymentGatewayMerchantDefinedData) *string { return v.CloudAccountName }).(pulumi.StringPtrOutput)
@@ -2371,12 +2160,6 @@ func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) ToSu
 
 func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) ToSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput {
 	return o
-}
-
-func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[*SubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataPtrOutput) Elem() SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput {
@@ -2482,12 +2265,6 @@ func (i SubscriptionSubscriptionPaymentOptionArgs) ToSubscriptionSubscriptionPay
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentOptionOutput)
 }
 
-func (i SubscriptionSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[SubscriptionSubscriptionPaymentOption]{
-		OutputState: i.ToSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionSubscriptionPaymentOptionArrayInput is an input type that accepts SubscriptionSubscriptionPaymentOptionArray and SubscriptionSubscriptionPaymentOptionArrayOutput values.
 // You can construct a concrete instance of `SubscriptionSubscriptionPaymentOptionArrayInput` via:
 //
@@ -2513,12 +2290,6 @@ func (i SubscriptionSubscriptionPaymentOptionArray) ToSubscriptionSubscriptionPa
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionPaymentOptionArrayOutput)
 }
 
-func (i SubscriptionSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[[]SubscriptionSubscriptionPaymentOption]{
-		OutputState: i.ToSubscriptionSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -2531,12 +2302,6 @@ func (o SubscriptionSubscriptionPaymentOptionOutput) ToSubscriptionSubscriptionP
 
 func (o SubscriptionSubscriptionPaymentOptionOutput) ToSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx context.Context) SubscriptionSubscriptionPaymentOptionOutput {
 	return o
-}
-
-func (o SubscriptionSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[SubscriptionSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Credit card type.
@@ -2608,12 +2373,6 @@ func (o SubscriptionSubscriptionPaymentOptionArrayOutput) ToSubscriptionSubscrip
 	return o
 }
 
-func (o SubscriptionSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[[]SubscriptionSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriptionSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) SubscriptionSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionSubscriptionPaymentOption {
 		return vs[0].([]SubscriptionSubscriptionPaymentOption)[vs[1].(int)]
@@ -2669,12 +2428,6 @@ func (i SubscriptionSubscriptionTaxInfoArgs) ToSubscriptionSubscriptionTaxInfoOu
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionTaxInfoOutput)
 }
 
-func (i SubscriptionSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[SubscriptionSubscriptionTaxInfo]{
-		OutputState: i.ToSubscriptionSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SubscriptionSubscriptionTaxInfoArgs) ToSubscriptionSubscriptionTaxInfoPtrOutput() SubscriptionSubscriptionTaxInfoPtrOutput {
 	return i.ToSubscriptionSubscriptionTaxInfoPtrOutputWithContext(context.Background())
 }
@@ -2716,12 +2469,6 @@ func (i *subscriptionSubscriptionTaxInfoPtrType) ToSubscriptionSubscriptionTaxIn
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionSubscriptionTaxInfoPtrOutput)
 }
 
-func (i *subscriptionSubscriptionTaxInfoPtrType) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[*SubscriptionSubscriptionTaxInfo]{
-		OutputState: i.ToSubscriptionSubscriptionTaxInfoPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -2744,12 +2491,6 @@ func (o SubscriptionSubscriptionTaxInfoOutput) ToSubscriptionSubscriptionTaxInfo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SubscriptionSubscriptionTaxInfo) *SubscriptionSubscriptionTaxInfo {
 		return &v
 	}).(SubscriptionSubscriptionTaxInfoPtrOutput)
-}
-
-func (o SubscriptionSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[SubscriptionSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Tax exemption reason code.
@@ -2789,12 +2530,6 @@ func (o SubscriptionSubscriptionTaxInfoPtrOutput) ToSubscriptionSubscriptionTaxI
 
 func (o SubscriptionSubscriptionTaxInfoPtrOutput) ToSubscriptionSubscriptionTaxInfoPtrOutputWithContext(ctx context.Context) SubscriptionSubscriptionTaxInfoPtrOutput {
 	return o
-}
-
-func (o SubscriptionSubscriptionTaxInfoPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[*SubscriptionSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionSubscriptionTaxInfoPtrOutput) Elem() SubscriptionSubscriptionTaxInfoOutput {
@@ -2906,12 +2641,6 @@ func (i SubscriptionTaxInfoArgs) ToSubscriptionTaxInfoOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionTaxInfoOutput)
 }
 
-func (i SubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionTaxInfo] {
-	return pulumix.Output[SubscriptionTaxInfo]{
-		OutputState: i.ToSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionTaxInfoArrayInput is an input type that accepts SubscriptionTaxInfoArray and SubscriptionTaxInfoArrayOutput values.
 // You can construct a concrete instance of `SubscriptionTaxInfoArrayInput` via:
 //
@@ -2937,12 +2666,6 @@ func (i SubscriptionTaxInfoArray) ToSubscriptionTaxInfoArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionTaxInfoArrayOutput)
 }
 
-func (i SubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionTaxInfo] {
-	return pulumix.Output[[]SubscriptionTaxInfo]{
-		OutputState: i.ToSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -2955,12 +2678,6 @@ func (o SubscriptionTaxInfoOutput) ToSubscriptionTaxInfoOutput() SubscriptionTax
 
 func (o SubscriptionTaxInfoOutput) ToSubscriptionTaxInfoOutputWithContext(ctx context.Context) SubscriptionTaxInfoOutput {
 	return o
-}
-
-func (o SubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionTaxInfo] {
-	return pulumix.Output[SubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Tax exemption reason code.
@@ -3002,12 +2719,6 @@ func (o SubscriptionTaxInfoArrayOutput) ToSubscriptionTaxInfoArrayOutputWithCont
 	return o
 }
 
-func (o SubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionTaxInfo] {
-	return pulumix.Output[[]SubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) SubscriptionTaxInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubscriptionTaxInfo {
 		return vs[0].([]SubscriptionTaxInfo)[vs[1].(int)]
@@ -3018,7 +2729,7 @@ type GetAddressRuleAddress struct {
 	// Tax type rule fields
 	Fields []GetAddressRuleAddressField `pulumi:"fields"`
 	// Third party validation.
-	ThirdPartyValidation string `pulumi:"thirdPartyValidation"`
+	ThirdPartyValidation *string `pulumi:"thirdPartyValidation"`
 }
 
 // GetAddressRuleAddressInput is an input type that accepts GetAddressRuleAddressArgs and GetAddressRuleAddressOutput values.
@@ -3036,7 +2747,7 @@ type GetAddressRuleAddressArgs struct {
 	// Tax type rule fields
 	Fields GetAddressRuleAddressFieldArrayInput `pulumi:"fields"`
 	// Third party validation.
-	ThirdPartyValidation pulumi.StringInput `pulumi:"thirdPartyValidation"`
+	ThirdPartyValidation pulumi.StringPtrInput `pulumi:"thirdPartyValidation"`
 }
 
 func (GetAddressRuleAddressArgs) ElementType() reflect.Type {
@@ -3049,12 +2760,6 @@ func (i GetAddressRuleAddressArgs) ToGetAddressRuleAddressOutput() GetAddressRul
 
 func (i GetAddressRuleAddressArgs) ToGetAddressRuleAddressOutputWithContext(ctx context.Context) GetAddressRuleAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressOutput)
-}
-
-func (i GetAddressRuleAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddress] {
-	return pulumix.Output[GetAddressRuleAddress]{
-		OutputState: i.ToGetAddressRuleAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleAddressArrayInput is an input type that accepts GetAddressRuleAddressArray and GetAddressRuleAddressArrayOutput values.
@@ -3082,12 +2787,6 @@ func (i GetAddressRuleAddressArray) ToGetAddressRuleAddressArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressArrayOutput)
 }
 
-func (i GetAddressRuleAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddress] {
-	return pulumix.Output[[]GetAddressRuleAddress]{
-		OutputState: i.ToGetAddressRuleAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleAddressOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressOutput) ElementType() reflect.Type {
@@ -3102,20 +2801,14 @@ func (o GetAddressRuleAddressOutput) ToGetAddressRuleAddressOutputWithContext(ct
 	return o
 }
 
-func (o GetAddressRuleAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddress] {
-	return pulumix.Output[GetAddressRuleAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Tax type rule fields
 func (o GetAddressRuleAddressOutput) Fields() GetAddressRuleAddressFieldArrayOutput {
 	return o.ApplyT(func(v GetAddressRuleAddress) []GetAddressRuleAddressField { return v.Fields }).(GetAddressRuleAddressFieldArrayOutput)
 }
 
 // Third party validation.
-func (o GetAddressRuleAddressOutput) ThirdPartyValidation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddress) string { return v.ThirdPartyValidation }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressOutput) ThirdPartyValidation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddress) *string { return v.ThirdPartyValidation }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleAddressArrayOutput struct{ *pulumi.OutputState }
@@ -3132,12 +2825,6 @@ func (o GetAddressRuleAddressArrayOutput) ToGetAddressRuleAddressArrayOutputWith
 	return o
 }
 
-func (o GetAddressRuleAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddress] {
-	return pulumix.Output[[]GetAddressRuleAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleAddressArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleAddress {
 		return vs[0].([]GetAddressRuleAddress)[vs[1].(int)]
@@ -3148,13 +2835,13 @@ type GetAddressRuleAddressField struct {
 	// Format information
 	Formats []GetAddressRuleAddressFieldFormat `pulumi:"formats"`
 	// The given field is requeired or not
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// Label information
 	Labels []GetAddressRuleAddressFieldLabel `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-	Language string `pulumi:"language"`
+	Language *string `pulumi:"language"`
 	// The field name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAddressRuleAddressFieldInput is an input type that accepts GetAddressRuleAddressFieldArgs and GetAddressRuleAddressFieldOutput values.
@@ -3172,13 +2859,13 @@ type GetAddressRuleAddressFieldArgs struct {
 	// Format information
 	Formats GetAddressRuleAddressFieldFormatArrayInput `pulumi:"formats"`
 	// The given field is requeired or not
-	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrInput `pulumi:"isRequired"`
 	// Label information
 	Labels GetAddressRuleAddressFieldLabelArrayInput `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-	Language pulumi.StringInput `pulumi:"language"`
+	Language pulumi.StringPtrInput `pulumi:"language"`
 	// The field name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAddressRuleAddressFieldArgs) ElementType() reflect.Type {
@@ -3191,12 +2878,6 @@ func (i GetAddressRuleAddressFieldArgs) ToGetAddressRuleAddressFieldOutput() Get
 
 func (i GetAddressRuleAddressFieldArgs) ToGetAddressRuleAddressFieldOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldOutput)
-}
-
-func (i GetAddressRuleAddressFieldArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressField] {
-	return pulumix.Output[GetAddressRuleAddressField]{
-		OutputState: i.ToGetAddressRuleAddressFieldOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleAddressFieldArrayInput is an input type that accepts GetAddressRuleAddressFieldArray and GetAddressRuleAddressFieldArrayOutput values.
@@ -3224,12 +2905,6 @@ func (i GetAddressRuleAddressFieldArray) ToGetAddressRuleAddressFieldArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldArrayOutput)
 }
 
-func (i GetAddressRuleAddressFieldArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressField] {
-	return pulumix.Output[[]GetAddressRuleAddressField]{
-		OutputState: i.ToGetAddressRuleAddressFieldArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleAddressFieldOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressFieldOutput) ElementType() reflect.Type {
@@ -3244,20 +2919,14 @@ func (o GetAddressRuleAddressFieldOutput) ToGetAddressRuleAddressFieldOutputWith
 	return o
 }
 
-func (o GetAddressRuleAddressFieldOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressField] {
-	return pulumix.Output[GetAddressRuleAddressField]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Format information
 func (o GetAddressRuleAddressFieldOutput) Formats() GetAddressRuleAddressFieldFormatArrayOutput {
 	return o.ApplyT(func(v GetAddressRuleAddressField) []GetAddressRuleAddressFieldFormat { return v.Formats }).(GetAddressRuleAddressFieldFormatArrayOutput)
 }
 
 // The given field is requeired or not
-func (o GetAddressRuleAddressFieldOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressField) bool { return v.IsRequired }).(pulumi.BoolOutput)
+func (o GetAddressRuleAddressFieldOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressField) *bool { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Label information
@@ -3266,13 +2935,13 @@ func (o GetAddressRuleAddressFieldOutput) Labels() GetAddressRuleAddressFieldLab
 }
 
 // Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-func (o GetAddressRuleAddressFieldOutput) Language() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressField) string { return v.Language }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressFieldOutput) Language() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressField) *string { return v.Language }).(pulumi.StringPtrOutput)
 }
 
 // The field name
-func (o GetAddressRuleAddressFieldOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressField) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressFieldOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressField) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleAddressFieldArrayOutput struct{ *pulumi.OutputState }
@@ -3289,12 +2958,6 @@ func (o GetAddressRuleAddressFieldArrayOutput) ToGetAddressRuleAddressFieldArray
 	return o
 }
 
-func (o GetAddressRuleAddressFieldArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressField] {
-	return pulumix.Output[[]GetAddressRuleAddressField]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleAddressFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressFieldOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleAddressField {
 		return vs[0].([]GetAddressRuleAddressField)[vs[1].(int)]
@@ -3303,9 +2966,9 @@ func (o GetAddressRuleAddressFieldArrayOutput) Index(i pulumi.IntInput) GetAddre
 
 type GetAddressRuleAddressFieldFormat struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example string `pulumi:"example"`
+	Example *string `pulumi:"example"`
 	// Language token of the required label
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddressRuleAddressFieldFormatInput is an input type that accepts GetAddressRuleAddressFieldFormatArgs and GetAddressRuleAddressFieldFormatOutput values.
@@ -3321,9 +2984,9 @@ type GetAddressRuleAddressFieldFormatInput interface {
 
 type GetAddressRuleAddressFieldFormatArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example pulumi.StringInput `pulumi:"example"`
+	Example pulumi.StringPtrInput `pulumi:"example"`
 	// Language token of the required label
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddressRuleAddressFieldFormatArgs) ElementType() reflect.Type {
@@ -3336,12 +2999,6 @@ func (i GetAddressRuleAddressFieldFormatArgs) ToGetAddressRuleAddressFieldFormat
 
 func (i GetAddressRuleAddressFieldFormatArgs) ToGetAddressRuleAddressFieldFormatOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldFormatOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldFormatOutput)
-}
-
-func (i GetAddressRuleAddressFieldFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldFormat] {
-	return pulumix.Output[GetAddressRuleAddressFieldFormat]{
-		OutputState: i.ToGetAddressRuleAddressFieldFormatOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleAddressFieldFormatArrayInput is an input type that accepts GetAddressRuleAddressFieldFormatArray and GetAddressRuleAddressFieldFormatArrayOutput values.
@@ -3369,12 +3026,6 @@ func (i GetAddressRuleAddressFieldFormatArray) ToGetAddressRuleAddressFieldForma
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldFormatArrayOutput)
 }
 
-func (i GetAddressRuleAddressFieldFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldFormat] {
-	return pulumix.Output[[]GetAddressRuleAddressFieldFormat]{
-		OutputState: i.ToGetAddressRuleAddressFieldFormatArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleAddressFieldFormatOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressFieldFormatOutput) ElementType() reflect.Type {
@@ -3389,20 +3040,14 @@ func (o GetAddressRuleAddressFieldFormatOutput) ToGetAddressRuleAddressFieldForm
 	return o
 }
 
-func (o GetAddressRuleAddressFieldFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldFormat] {
-	return pulumix.Output[GetAddressRuleAddressFieldFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 // English translation of the label (for reference only - translation is not provided)
-func (o GetAddressRuleAddressFieldFormatOutput) Example() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressFieldFormat) string { return v.Example }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressFieldFormatOutput) Example() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressFieldFormat) *string { return v.Example }).(pulumi.StringPtrOutput)
 }
 
 // Language token of the required label
-func (o GetAddressRuleAddressFieldFormatOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressFieldFormat) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressFieldFormatOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressFieldFormat) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleAddressFieldFormatArrayOutput struct{ *pulumi.OutputState }
@@ -3419,12 +3064,6 @@ func (o GetAddressRuleAddressFieldFormatArrayOutput) ToGetAddressRuleAddressFiel
 	return o
 }
 
-func (o GetAddressRuleAddressFieldFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldFormat] {
-	return pulumix.Output[[]GetAddressRuleAddressFieldFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleAddressFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressFieldFormatOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleAddressFieldFormat {
 		return vs[0].([]GetAddressRuleAddressFieldFormat)[vs[1].(int)]
@@ -3433,9 +3072,9 @@ func (o GetAddressRuleAddressFieldFormatArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetAddressRuleAddressFieldLabel struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example string `pulumi:"example"`
+	Example *string `pulumi:"example"`
 	// Language token of the required label
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddressRuleAddressFieldLabelInput is an input type that accepts GetAddressRuleAddressFieldLabelArgs and GetAddressRuleAddressFieldLabelOutput values.
@@ -3451,9 +3090,9 @@ type GetAddressRuleAddressFieldLabelInput interface {
 
 type GetAddressRuleAddressFieldLabelArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example pulumi.StringInput `pulumi:"example"`
+	Example pulumi.StringPtrInput `pulumi:"example"`
 	// Language token of the required label
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddressRuleAddressFieldLabelArgs) ElementType() reflect.Type {
@@ -3466,12 +3105,6 @@ func (i GetAddressRuleAddressFieldLabelArgs) ToGetAddressRuleAddressFieldLabelOu
 
 func (i GetAddressRuleAddressFieldLabelArgs) ToGetAddressRuleAddressFieldLabelOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldLabelOutput)
-}
-
-func (i GetAddressRuleAddressFieldLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldLabel] {
-	return pulumix.Output[GetAddressRuleAddressFieldLabel]{
-		OutputState: i.ToGetAddressRuleAddressFieldLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleAddressFieldLabelArrayInput is an input type that accepts GetAddressRuleAddressFieldLabelArray and GetAddressRuleAddressFieldLabelArrayOutput values.
@@ -3499,12 +3132,6 @@ func (i GetAddressRuleAddressFieldLabelArray) ToGetAddressRuleAddressFieldLabelA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleAddressFieldLabelArrayOutput)
 }
 
-func (i GetAddressRuleAddressFieldLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldLabel] {
-	return pulumix.Output[[]GetAddressRuleAddressFieldLabel]{
-		OutputState: i.ToGetAddressRuleAddressFieldLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleAddressFieldLabelOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleAddressFieldLabelOutput) ElementType() reflect.Type {
@@ -3519,20 +3146,14 @@ func (o GetAddressRuleAddressFieldLabelOutput) ToGetAddressRuleAddressFieldLabel
 	return o
 }
 
-func (o GetAddressRuleAddressFieldLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleAddressFieldLabel] {
-	return pulumix.Output[GetAddressRuleAddressFieldLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // English translation of the label (for reference only - translation is not provided)
-func (o GetAddressRuleAddressFieldLabelOutput) Example() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressFieldLabel) string { return v.Example }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressFieldLabelOutput) Example() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressFieldLabel) *string { return v.Example }).(pulumi.StringPtrOutput)
 }
 
 // Language token of the required label
-func (o GetAddressRuleAddressFieldLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleAddressFieldLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddressRuleAddressFieldLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleAddressFieldLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleAddressFieldLabelArrayOutput struct{ *pulumi.OutputState }
@@ -3547,12 +3168,6 @@ func (o GetAddressRuleAddressFieldLabelArrayOutput) ToGetAddressRuleAddressField
 
 func (o GetAddressRuleAddressFieldLabelArrayOutput) ToGetAddressRuleAddressFieldLabelArrayOutputWithContext(ctx context.Context) GetAddressRuleAddressFieldLabelArrayOutput {
 	return o
-}
-
-func (o GetAddressRuleAddressFieldLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleAddressFieldLabel] {
-	return pulumix.Output[[]GetAddressRuleAddressFieldLabel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddressRuleAddressFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddressRuleAddressFieldLabelOutput {
@@ -3594,12 +3209,6 @@ func (i GetAddressRuleContactArgs) ToGetAddressRuleContactOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactOutput)
 }
 
-func (i GetAddressRuleContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContact] {
-	return pulumix.Output[GetAddressRuleContact]{
-		OutputState: i.ToGetAddressRuleContactOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddressRuleContactArrayInput is an input type that accepts GetAddressRuleContactArray and GetAddressRuleContactArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleContactArrayInput` via:
 //
@@ -3625,12 +3234,6 @@ func (i GetAddressRuleContactArray) ToGetAddressRuleContactArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactArrayOutput)
 }
 
-func (i GetAddressRuleContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContact] {
-	return pulumix.Output[[]GetAddressRuleContact]{
-		OutputState: i.ToGetAddressRuleContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleContactOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactOutput) ElementType() reflect.Type {
@@ -3643,12 +3246,6 @@ func (o GetAddressRuleContactOutput) ToGetAddressRuleContactOutput() GetAddressR
 
 func (o GetAddressRuleContactOutput) ToGetAddressRuleContactOutputWithContext(ctx context.Context) GetAddressRuleContactOutput {
 	return o
-}
-
-func (o GetAddressRuleContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContact] {
-	return pulumix.Output[GetAddressRuleContact]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Tax type rule fields
@@ -3670,12 +3267,6 @@ func (o GetAddressRuleContactArrayOutput) ToGetAddressRuleContactArrayOutputWith
 	return o
 }
 
-func (o GetAddressRuleContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContact] {
-	return pulumix.Output[[]GetAddressRuleContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleContactArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleContact {
 		return vs[0].([]GetAddressRuleContact)[vs[1].(int)]
@@ -3686,13 +3277,13 @@ type GetAddressRuleContactField struct {
 	// Format information
 	Formats []GetAddressRuleContactFieldFormat `pulumi:"formats"`
 	// The given field is requeired or not
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// Label information
 	Labels []GetAddressRuleContactFieldLabel `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-	Language string `pulumi:"language"`
+	Language *string `pulumi:"language"`
 	// The field name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAddressRuleContactFieldInput is an input type that accepts GetAddressRuleContactFieldArgs and GetAddressRuleContactFieldOutput values.
@@ -3710,13 +3301,13 @@ type GetAddressRuleContactFieldArgs struct {
 	// Format information
 	Formats GetAddressRuleContactFieldFormatArrayInput `pulumi:"formats"`
 	// The given field is requeired or not
-	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrInput `pulumi:"isRequired"`
 	// Label information
 	Labels GetAddressRuleContactFieldLabelArrayInput `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-	Language pulumi.StringInput `pulumi:"language"`
+	Language pulumi.StringPtrInput `pulumi:"language"`
 	// The field name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAddressRuleContactFieldArgs) ElementType() reflect.Type {
@@ -3729,12 +3320,6 @@ func (i GetAddressRuleContactFieldArgs) ToGetAddressRuleContactFieldOutput() Get
 
 func (i GetAddressRuleContactFieldArgs) ToGetAddressRuleContactFieldOutputWithContext(ctx context.Context) GetAddressRuleContactFieldOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldOutput)
-}
-
-func (i GetAddressRuleContactFieldArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactField] {
-	return pulumix.Output[GetAddressRuleContactField]{
-		OutputState: i.ToGetAddressRuleContactFieldOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleContactFieldArrayInput is an input type that accepts GetAddressRuleContactFieldArray and GetAddressRuleContactFieldArrayOutput values.
@@ -3762,12 +3347,6 @@ func (i GetAddressRuleContactFieldArray) ToGetAddressRuleContactFieldArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldArrayOutput)
 }
 
-func (i GetAddressRuleContactFieldArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactField] {
-	return pulumix.Output[[]GetAddressRuleContactField]{
-		OutputState: i.ToGetAddressRuleContactFieldArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleContactFieldOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactFieldOutput) ElementType() reflect.Type {
@@ -3782,20 +3361,14 @@ func (o GetAddressRuleContactFieldOutput) ToGetAddressRuleContactFieldOutputWith
 	return o
 }
 
-func (o GetAddressRuleContactFieldOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactField] {
-	return pulumix.Output[GetAddressRuleContactField]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Format information
 func (o GetAddressRuleContactFieldOutput) Formats() GetAddressRuleContactFieldFormatArrayOutput {
 	return o.ApplyT(func(v GetAddressRuleContactField) []GetAddressRuleContactFieldFormat { return v.Formats }).(GetAddressRuleContactFieldFormatArrayOutput)
 }
 
 // The given field is requeired or not
-func (o GetAddressRuleContactFieldOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAddressRuleContactField) bool { return v.IsRequired }).(pulumi.BoolOutput)
+func (o GetAddressRuleContactFieldOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactField) *bool { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Label information
@@ -3804,13 +3377,13 @@ func (o GetAddressRuleContactFieldOutput) Labels() GetAddressRuleContactFieldLab
 }
 
 // Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-func (o GetAddressRuleContactFieldOutput) Language() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleContactField) string { return v.Language }).(pulumi.StringOutput)
+func (o GetAddressRuleContactFieldOutput) Language() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactField) *string { return v.Language }).(pulumi.StringPtrOutput)
 }
 
 // The field name
-func (o GetAddressRuleContactFieldOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleContactField) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAddressRuleContactFieldOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactField) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleContactFieldArrayOutput struct{ *pulumi.OutputState }
@@ -3827,12 +3400,6 @@ func (o GetAddressRuleContactFieldArrayOutput) ToGetAddressRuleContactFieldArray
 	return o
 }
 
-func (o GetAddressRuleContactFieldArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactField] {
-	return pulumix.Output[[]GetAddressRuleContactField]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleContactFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactFieldOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleContactField {
 		return vs[0].([]GetAddressRuleContactField)[vs[1].(int)]
@@ -3841,9 +3408,9 @@ func (o GetAddressRuleContactFieldArrayOutput) Index(i pulumi.IntInput) GetAddre
 
 type GetAddressRuleContactFieldFormat struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example string `pulumi:"example"`
+	Example *string `pulumi:"example"`
 	// Language token of the required label
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddressRuleContactFieldFormatInput is an input type that accepts GetAddressRuleContactFieldFormatArgs and GetAddressRuleContactFieldFormatOutput values.
@@ -3859,9 +3426,9 @@ type GetAddressRuleContactFieldFormatInput interface {
 
 type GetAddressRuleContactFieldFormatArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example pulumi.StringInput `pulumi:"example"`
+	Example pulumi.StringPtrInput `pulumi:"example"`
 	// Language token of the required label
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddressRuleContactFieldFormatArgs) ElementType() reflect.Type {
@@ -3874,12 +3441,6 @@ func (i GetAddressRuleContactFieldFormatArgs) ToGetAddressRuleContactFieldFormat
 
 func (i GetAddressRuleContactFieldFormatArgs) ToGetAddressRuleContactFieldFormatOutputWithContext(ctx context.Context) GetAddressRuleContactFieldFormatOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldFormatOutput)
-}
-
-func (i GetAddressRuleContactFieldFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldFormat] {
-	return pulumix.Output[GetAddressRuleContactFieldFormat]{
-		OutputState: i.ToGetAddressRuleContactFieldFormatOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleContactFieldFormatArrayInput is an input type that accepts GetAddressRuleContactFieldFormatArray and GetAddressRuleContactFieldFormatArrayOutput values.
@@ -3907,12 +3468,6 @@ func (i GetAddressRuleContactFieldFormatArray) ToGetAddressRuleContactFieldForma
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldFormatArrayOutput)
 }
 
-func (i GetAddressRuleContactFieldFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldFormat] {
-	return pulumix.Output[[]GetAddressRuleContactFieldFormat]{
-		OutputState: i.ToGetAddressRuleContactFieldFormatArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleContactFieldFormatOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactFieldFormatOutput) ElementType() reflect.Type {
@@ -3927,20 +3482,14 @@ func (o GetAddressRuleContactFieldFormatOutput) ToGetAddressRuleContactFieldForm
 	return o
 }
 
-func (o GetAddressRuleContactFieldFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldFormat] {
-	return pulumix.Output[GetAddressRuleContactFieldFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 // English translation of the label (for reference only - translation is not provided)
-func (o GetAddressRuleContactFieldFormatOutput) Example() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleContactFieldFormat) string { return v.Example }).(pulumi.StringOutput)
+func (o GetAddressRuleContactFieldFormatOutput) Example() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactFieldFormat) *string { return v.Example }).(pulumi.StringPtrOutput)
 }
 
 // Language token of the required label
-func (o GetAddressRuleContactFieldFormatOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleContactFieldFormat) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddressRuleContactFieldFormatOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactFieldFormat) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleContactFieldFormatArrayOutput struct{ *pulumi.OutputState }
@@ -3957,12 +3506,6 @@ func (o GetAddressRuleContactFieldFormatArrayOutput) ToGetAddressRuleContactFiel
 	return o
 }
 
-func (o GetAddressRuleContactFieldFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldFormat] {
-	return pulumix.Output[[]GetAddressRuleContactFieldFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleContactFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactFieldFormatOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleContactFieldFormat {
 		return vs[0].([]GetAddressRuleContactFieldFormat)[vs[1].(int)]
@@ -3971,9 +3514,9 @@ func (o GetAddressRuleContactFieldFormatArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetAddressRuleContactFieldLabel struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example string `pulumi:"example"`
+	Example *string `pulumi:"example"`
 	// Language token of the required label
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddressRuleContactFieldLabelInput is an input type that accepts GetAddressRuleContactFieldLabelArgs and GetAddressRuleContactFieldLabelOutput values.
@@ -3989,9 +3532,9 @@ type GetAddressRuleContactFieldLabelInput interface {
 
 type GetAddressRuleContactFieldLabelArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example pulumi.StringInput `pulumi:"example"`
+	Example pulumi.StringPtrInput `pulumi:"example"`
 	// Language token of the required label
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddressRuleContactFieldLabelArgs) ElementType() reflect.Type {
@@ -4004,12 +3547,6 @@ func (i GetAddressRuleContactFieldLabelArgs) ToGetAddressRuleContactFieldLabelOu
 
 func (i GetAddressRuleContactFieldLabelArgs) ToGetAddressRuleContactFieldLabelOutputWithContext(ctx context.Context) GetAddressRuleContactFieldLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldLabelOutput)
-}
-
-func (i GetAddressRuleContactFieldLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldLabel] {
-	return pulumix.Output[GetAddressRuleContactFieldLabel]{
-		OutputState: i.ToGetAddressRuleContactFieldLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleContactFieldLabelArrayInput is an input type that accepts GetAddressRuleContactFieldLabelArray and GetAddressRuleContactFieldLabelArrayOutput values.
@@ -4037,12 +3574,6 @@ func (i GetAddressRuleContactFieldLabelArray) ToGetAddressRuleContactFieldLabelA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleContactFieldLabelArrayOutput)
 }
 
-func (i GetAddressRuleContactFieldLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldLabel] {
-	return pulumix.Output[[]GetAddressRuleContactFieldLabel]{
-		OutputState: i.ToGetAddressRuleContactFieldLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleContactFieldLabelOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleContactFieldLabelOutput) ElementType() reflect.Type {
@@ -4057,20 +3588,14 @@ func (o GetAddressRuleContactFieldLabelOutput) ToGetAddressRuleContactFieldLabel
 	return o
 }
 
-func (o GetAddressRuleContactFieldLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleContactFieldLabel] {
-	return pulumix.Output[GetAddressRuleContactFieldLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // English translation of the label (for reference only - translation is not provided)
-func (o GetAddressRuleContactFieldLabelOutput) Example() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleContactFieldLabel) string { return v.Example }).(pulumi.StringOutput)
+func (o GetAddressRuleContactFieldLabelOutput) Example() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactFieldLabel) *string { return v.Example }).(pulumi.StringPtrOutput)
 }
 
 // Language token of the required label
-func (o GetAddressRuleContactFieldLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleContactFieldLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddressRuleContactFieldLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleContactFieldLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleContactFieldLabelArrayOutput struct{ *pulumi.OutputState }
@@ -4085,12 +3610,6 @@ func (o GetAddressRuleContactFieldLabelArrayOutput) ToGetAddressRuleContactField
 
 func (o GetAddressRuleContactFieldLabelArrayOutput) ToGetAddressRuleContactFieldLabelArrayOutputWithContext(ctx context.Context) GetAddressRuleContactFieldLabelArrayOutput {
 	return o
-}
-
-func (o GetAddressRuleContactFieldLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleContactFieldLabel] {
-	return pulumix.Output[[]GetAddressRuleContactFieldLabel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddressRuleContactFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddressRuleContactFieldLabelOutput {
@@ -4132,12 +3651,6 @@ func (i GetAddressRuleTaxArgs) ToGetAddressRuleTaxOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxOutput)
 }
 
-func (i GetAddressRuleTaxArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTax] {
-	return pulumix.Output[GetAddressRuleTax]{
-		OutputState: i.ToGetAddressRuleTaxOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddressRuleTaxArrayInput is an input type that accepts GetAddressRuleTaxArray and GetAddressRuleTaxArrayOutput values.
 // You can construct a concrete instance of `GetAddressRuleTaxArrayInput` via:
 //
@@ -4163,12 +3676,6 @@ func (i GetAddressRuleTaxArray) ToGetAddressRuleTaxArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxArrayOutput)
 }
 
-func (i GetAddressRuleTaxArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTax] {
-	return pulumix.Output[[]GetAddressRuleTax]{
-		OutputState: i.ToGetAddressRuleTaxArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleTaxOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxOutput) ElementType() reflect.Type {
@@ -4181,12 +3688,6 @@ func (o GetAddressRuleTaxOutput) ToGetAddressRuleTaxOutput() GetAddressRuleTaxOu
 
 func (o GetAddressRuleTaxOutput) ToGetAddressRuleTaxOutputWithContext(ctx context.Context) GetAddressRuleTaxOutput {
 	return o
-}
-
-func (o GetAddressRuleTaxOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTax] {
-	return pulumix.Output[GetAddressRuleTax]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Tax type rule fields
@@ -4208,12 +3709,6 @@ func (o GetAddressRuleTaxArrayOutput) ToGetAddressRuleTaxArrayOutputWithContext(
 	return o
 }
 
-func (o GetAddressRuleTaxArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTax] {
-	return pulumix.Output[[]GetAddressRuleTax]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleTaxArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleTax {
 		return vs[0].([]GetAddressRuleTax)[vs[1].(int)]
@@ -4224,13 +3719,13 @@ type GetAddressRuleTaxField struct {
 	// Format information
 	Formats []GetAddressRuleTaxFieldFormat `pulumi:"formats"`
 	// The given field is requeired or not
-	IsRequired bool `pulumi:"isRequired"`
+	IsRequired *bool `pulumi:"isRequired"`
 	// Label information
 	Labels []GetAddressRuleTaxFieldLabel `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-	Language string `pulumi:"language"`
+	Language *string `pulumi:"language"`
 	// The field name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAddressRuleTaxFieldInput is an input type that accepts GetAddressRuleTaxFieldArgs and GetAddressRuleTaxFieldOutput values.
@@ -4248,13 +3743,13 @@ type GetAddressRuleTaxFieldArgs struct {
 	// Format information
 	Formats GetAddressRuleTaxFieldFormatArrayInput `pulumi:"formats"`
 	// The given field is requeired or not
-	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	IsRequired pulumi.BoolPtrInput `pulumi:"isRequired"`
 	// Label information
 	Labels GetAddressRuleTaxFieldLabelArrayInput `pulumi:"labels"`
 	// Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-	Language pulumi.StringInput `pulumi:"language"`
+	Language pulumi.StringPtrInput `pulumi:"language"`
 	// The field name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAddressRuleTaxFieldArgs) ElementType() reflect.Type {
@@ -4267,12 +3762,6 @@ func (i GetAddressRuleTaxFieldArgs) ToGetAddressRuleTaxFieldOutput() GetAddressR
 
 func (i GetAddressRuleTaxFieldArgs) ToGetAddressRuleTaxFieldOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldOutput)
-}
-
-func (i GetAddressRuleTaxFieldArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxField] {
-	return pulumix.Output[GetAddressRuleTaxField]{
-		OutputState: i.ToGetAddressRuleTaxFieldOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleTaxFieldArrayInput is an input type that accepts GetAddressRuleTaxFieldArray and GetAddressRuleTaxFieldArrayOutput values.
@@ -4300,12 +3789,6 @@ func (i GetAddressRuleTaxFieldArray) ToGetAddressRuleTaxFieldArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldArrayOutput)
 }
 
-func (i GetAddressRuleTaxFieldArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxField] {
-	return pulumix.Output[[]GetAddressRuleTaxField]{
-		OutputState: i.ToGetAddressRuleTaxFieldArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleTaxFieldOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxFieldOutput) ElementType() reflect.Type {
@@ -4320,20 +3803,14 @@ func (o GetAddressRuleTaxFieldOutput) ToGetAddressRuleTaxFieldOutputWithContext(
 	return o
 }
 
-func (o GetAddressRuleTaxFieldOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxField] {
-	return pulumix.Output[GetAddressRuleTaxField]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Format information
 func (o GetAddressRuleTaxFieldOutput) Formats() GetAddressRuleTaxFieldFormatArrayOutput {
 	return o.ApplyT(func(v GetAddressRuleTaxField) []GetAddressRuleTaxFieldFormat { return v.Formats }).(GetAddressRuleTaxFieldFormatArrayOutput)
 }
 
 // The given field is requeired or not
-func (o GetAddressRuleTaxFieldOutput) IsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxField) bool { return v.IsRequired }).(pulumi.BoolOutput)
+func (o GetAddressRuleTaxFieldOutput) IsRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxField) *bool { return v.IsRequired }).(pulumi.BoolPtrOutput)
 }
 
 // Label information
@@ -4342,13 +3819,13 @@ func (o GetAddressRuleTaxFieldOutput) Labels() GetAddressRuleTaxFieldLabelArrayO
 }
 
 // Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
-func (o GetAddressRuleTaxFieldOutput) Language() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxField) string { return v.Language }).(pulumi.StringOutput)
+func (o GetAddressRuleTaxFieldOutput) Language() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxField) *string { return v.Language }).(pulumi.StringPtrOutput)
 }
 
 // The field name
-func (o GetAddressRuleTaxFieldOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxField) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAddressRuleTaxFieldOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxField) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleTaxFieldArrayOutput struct{ *pulumi.OutputState }
@@ -4365,12 +3842,6 @@ func (o GetAddressRuleTaxFieldArrayOutput) ToGetAddressRuleTaxFieldArrayOutputWi
 	return o
 }
 
-func (o GetAddressRuleTaxFieldArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxField] {
-	return pulumix.Output[[]GetAddressRuleTaxField]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleTaxFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxFieldOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleTaxField {
 		return vs[0].([]GetAddressRuleTaxField)[vs[1].(int)]
@@ -4379,9 +3850,9 @@ func (o GetAddressRuleTaxFieldArrayOutput) Index(i pulumi.IntInput) GetAddressRu
 
 type GetAddressRuleTaxFieldFormat struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example string `pulumi:"example"`
+	Example *string `pulumi:"example"`
 	// Language token of the required label
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddressRuleTaxFieldFormatInput is an input type that accepts GetAddressRuleTaxFieldFormatArgs and GetAddressRuleTaxFieldFormatOutput values.
@@ -4397,9 +3868,9 @@ type GetAddressRuleTaxFieldFormatInput interface {
 
 type GetAddressRuleTaxFieldFormatArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example pulumi.StringInput `pulumi:"example"`
+	Example pulumi.StringPtrInput `pulumi:"example"`
 	// Language token of the required label
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddressRuleTaxFieldFormatArgs) ElementType() reflect.Type {
@@ -4412,12 +3883,6 @@ func (i GetAddressRuleTaxFieldFormatArgs) ToGetAddressRuleTaxFieldFormatOutput()
 
 func (i GetAddressRuleTaxFieldFormatArgs) ToGetAddressRuleTaxFieldFormatOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldFormatOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldFormatOutput)
-}
-
-func (i GetAddressRuleTaxFieldFormatArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldFormat] {
-	return pulumix.Output[GetAddressRuleTaxFieldFormat]{
-		OutputState: i.ToGetAddressRuleTaxFieldFormatOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleTaxFieldFormatArrayInput is an input type that accepts GetAddressRuleTaxFieldFormatArray and GetAddressRuleTaxFieldFormatArrayOutput values.
@@ -4445,12 +3910,6 @@ func (i GetAddressRuleTaxFieldFormatArray) ToGetAddressRuleTaxFieldFormatArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldFormatArrayOutput)
 }
 
-func (i GetAddressRuleTaxFieldFormatArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldFormat] {
-	return pulumix.Output[[]GetAddressRuleTaxFieldFormat]{
-		OutputState: i.ToGetAddressRuleTaxFieldFormatArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleTaxFieldFormatOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxFieldFormatOutput) ElementType() reflect.Type {
@@ -4465,20 +3924,14 @@ func (o GetAddressRuleTaxFieldFormatOutput) ToGetAddressRuleTaxFieldFormatOutput
 	return o
 }
 
-func (o GetAddressRuleTaxFieldFormatOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldFormat] {
-	return pulumix.Output[GetAddressRuleTaxFieldFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 // English translation of the label (for reference only - translation is not provided)
-func (o GetAddressRuleTaxFieldFormatOutput) Example() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxFieldFormat) string { return v.Example }).(pulumi.StringOutput)
+func (o GetAddressRuleTaxFieldFormatOutput) Example() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxFieldFormat) *string { return v.Example }).(pulumi.StringPtrOutput)
 }
 
 // Language token of the required label
-func (o GetAddressRuleTaxFieldFormatOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxFieldFormat) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddressRuleTaxFieldFormatOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxFieldFormat) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleTaxFieldFormatArrayOutput struct{ *pulumi.OutputState }
@@ -4495,12 +3948,6 @@ func (o GetAddressRuleTaxFieldFormatArrayOutput) ToGetAddressRuleTaxFieldFormatA
 	return o
 }
 
-func (o GetAddressRuleTaxFieldFormatArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldFormat] {
-	return pulumix.Output[[]GetAddressRuleTaxFieldFormat]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleTaxFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxFieldFormatOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleTaxFieldFormat {
 		return vs[0].([]GetAddressRuleTaxFieldFormat)[vs[1].(int)]
@@ -4509,9 +3956,9 @@ func (o GetAddressRuleTaxFieldFormatArrayOutput) Index(i pulumi.IntInput) GetAdd
 
 type GetAddressRuleTaxFieldLabel struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example string `pulumi:"example"`
+	Example *string `pulumi:"example"`
 	// Language token of the required label
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAddressRuleTaxFieldLabelInput is an input type that accepts GetAddressRuleTaxFieldLabelArgs and GetAddressRuleTaxFieldLabelOutput values.
@@ -4527,9 +3974,9 @@ type GetAddressRuleTaxFieldLabelInput interface {
 
 type GetAddressRuleTaxFieldLabelArgs struct {
 	// English translation of the label (for reference only - translation is not provided)
-	Example pulumi.StringInput `pulumi:"example"`
+	Example pulumi.StringPtrInput `pulumi:"example"`
 	// Language token of the required label
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAddressRuleTaxFieldLabelArgs) ElementType() reflect.Type {
@@ -4542,12 +3989,6 @@ func (i GetAddressRuleTaxFieldLabelArgs) ToGetAddressRuleTaxFieldLabelOutput() G
 
 func (i GetAddressRuleTaxFieldLabelArgs) ToGetAddressRuleTaxFieldLabelOutputWithContext(ctx context.Context) GetAddressRuleTaxFieldLabelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldLabelOutput)
-}
-
-func (i GetAddressRuleTaxFieldLabelArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldLabel] {
-	return pulumix.Output[GetAddressRuleTaxFieldLabel]{
-		OutputState: i.ToGetAddressRuleTaxFieldLabelOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressRuleTaxFieldLabelArrayInput is an input type that accepts GetAddressRuleTaxFieldLabelArray and GetAddressRuleTaxFieldLabelArrayOutput values.
@@ -4575,12 +4016,6 @@ func (i GetAddressRuleTaxFieldLabelArray) ToGetAddressRuleTaxFieldLabelArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressRuleTaxFieldLabelArrayOutput)
 }
 
-func (i GetAddressRuleTaxFieldLabelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldLabel] {
-	return pulumix.Output[[]GetAddressRuleTaxFieldLabel]{
-		OutputState: i.ToGetAddressRuleTaxFieldLabelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressRuleTaxFieldLabelOutput struct{ *pulumi.OutputState }
 
 func (GetAddressRuleTaxFieldLabelOutput) ElementType() reflect.Type {
@@ -4595,20 +4030,14 @@ func (o GetAddressRuleTaxFieldLabelOutput) ToGetAddressRuleTaxFieldLabelOutputWi
 	return o
 }
 
-func (o GetAddressRuleTaxFieldLabelOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressRuleTaxFieldLabel] {
-	return pulumix.Output[GetAddressRuleTaxFieldLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 // English translation of the label (for reference only - translation is not provided)
-func (o GetAddressRuleTaxFieldLabelOutput) Example() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxFieldLabel) string { return v.Example }).(pulumi.StringOutput)
+func (o GetAddressRuleTaxFieldLabelOutput) Example() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxFieldLabel) *string { return v.Example }).(pulumi.StringPtrOutput)
 }
 
 // Language token of the required label
-func (o GetAddressRuleTaxFieldLabelOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressRuleTaxFieldLabel) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAddressRuleTaxFieldLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressRuleTaxFieldLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressRuleTaxFieldLabelArrayOutput struct{ *pulumi.OutputState }
@@ -4625,12 +4054,6 @@ func (o GetAddressRuleTaxFieldLabelArrayOutput) ToGetAddressRuleTaxFieldLabelArr
 	return o
 }
 
-func (o GetAddressRuleTaxFieldLabelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressRuleTaxFieldLabel] {
-	return pulumix.Output[[]GetAddressRuleTaxFieldLabel]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressRuleTaxFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddressRuleTaxFieldLabelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressRuleTaxFieldLabel {
 		return vs[0].([]GetAddressRuleTaxFieldLabel)[vs[1].(int)]
@@ -4639,33 +4062,33 @@ func (o GetAddressRuleTaxFieldLabelArrayOutput) Index(i pulumi.IntInput) GetAddr
 
 type GetInvoiceBillToAddress struct {
 	// Address line 1
-	AddressLine1 string `pulumi:"addressLine1"`
+	AddressLine1 *string `pulumi:"addressLine1"`
 	// Address line 2
-	AddressLine2 string `pulumi:"addressLine2"`
+	AddressLine2 *string `pulumi:"addressLine2"`
 	// Address line 3
-	AddressLine3 string `pulumi:"addressLine3"`
+	AddressLine3 *string `pulumi:"addressLine3"`
 	// Address line 4
-	AddressLine4 string `pulumi:"addressLine4"`
+	AddressLine4 *string `pulumi:"addressLine4"`
 	// Name of the city
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company
-	CompanyName string `pulumi:"companyName"`
+	CompanyName *string `pulumi:"companyName"`
 	// Name of the contact person
-	ContactName string `pulumi:"contactName"`
+	ContactName *string `pulumi:"contactName"`
 	// Country details model
 	Countries []GetInvoiceBillToAddressCountry `pulumi:"countries"`
 	// County name
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// ZIP no
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Name of the province
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// Name of the state
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Street name
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// House no
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 // GetInvoiceBillToAddressInput is an input type that accepts GetInvoiceBillToAddressArgs and GetInvoiceBillToAddressOutput values.
@@ -4681,33 +4104,33 @@ type GetInvoiceBillToAddressInput interface {
 
 type GetInvoiceBillToAddressArgs struct {
 	// Address line 1
-	AddressLine1 pulumi.StringInput `pulumi:"addressLine1"`
+	AddressLine1 pulumi.StringPtrInput `pulumi:"addressLine1"`
 	// Address line 2
-	AddressLine2 pulumi.StringInput `pulumi:"addressLine2"`
+	AddressLine2 pulumi.StringPtrInput `pulumi:"addressLine2"`
 	// Address line 3
-	AddressLine3 pulumi.StringInput `pulumi:"addressLine3"`
+	AddressLine3 pulumi.StringPtrInput `pulumi:"addressLine3"`
 	// Address line 4
-	AddressLine4 pulumi.StringInput `pulumi:"addressLine4"`
+	AddressLine4 pulumi.StringPtrInput `pulumi:"addressLine4"`
 	// Name of the city
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Name of the customer company
-	CompanyName pulumi.StringInput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
 	// Name of the contact person
-	ContactName pulumi.StringInput `pulumi:"contactName"`
+	ContactName pulumi.StringPtrInput `pulumi:"contactName"`
 	// Country details model
 	Countries GetInvoiceBillToAddressCountryArrayInput `pulumi:"countries"`
 	// County name
-	County pulumi.StringInput `pulumi:"county"`
+	County pulumi.StringPtrInput `pulumi:"county"`
 	// ZIP no
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Name of the province
-	Province pulumi.StringInput `pulumi:"province"`
+	Province pulumi.StringPtrInput `pulumi:"province"`
 	// Name of the state
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Street name
-	StreetName pulumi.StringInput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
 	// House no
-	StreetNumber pulumi.StringInput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
 func (GetInvoiceBillToAddressArgs) ElementType() reflect.Type {
@@ -4720,12 +4143,6 @@ func (i GetInvoiceBillToAddressArgs) ToGetInvoiceBillToAddressOutput() GetInvoic
 
 func (i GetInvoiceBillToAddressArgs) ToGetInvoiceBillToAddressOutputWithContext(ctx context.Context) GetInvoiceBillToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressOutput)
-}
-
-func (i GetInvoiceBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddress] {
-	return pulumix.Output[GetInvoiceBillToAddress]{
-		OutputState: i.ToGetInvoiceBillToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceBillToAddressArrayInput is an input type that accepts GetInvoiceBillToAddressArray and GetInvoiceBillToAddressArrayOutput values.
@@ -4753,12 +4170,6 @@ func (i GetInvoiceBillToAddressArray) ToGetInvoiceBillToAddressArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressArrayOutput)
 }
 
-func (i GetInvoiceBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddress] {
-	return pulumix.Output[[]GetInvoiceBillToAddress]{
-		OutputState: i.ToGetInvoiceBillToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceBillToAddressOutput) ElementType() reflect.Type {
@@ -4773,45 +4184,39 @@ func (o GetInvoiceBillToAddressOutput) ToGetInvoiceBillToAddressOutputWithContex
 	return o
 }
 
-func (o GetInvoiceBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddress] {
-	return pulumix.Output[GetInvoiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address line 1
-func (o GetInvoiceBillToAddressOutput) AddressLine1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.AddressLine1 }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) AddressLine1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.AddressLine1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2
-func (o GetInvoiceBillToAddressOutput) AddressLine2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.AddressLine2 }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) AddressLine2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.AddressLine2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3
-func (o GetInvoiceBillToAddressOutput) AddressLine3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.AddressLine3 }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) AddressLine3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.AddressLine3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4
-func (o GetInvoiceBillToAddressOutput) AddressLine4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.AddressLine4 }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) AddressLine4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.AddressLine4 }).(pulumi.StringPtrOutput)
 }
 
 // Name of the city
-func (o GetInvoiceBillToAddressOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.City }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company
-func (o GetInvoiceBillToAddressOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.CompanyName }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the contact person
-func (o GetInvoiceBillToAddressOutput) ContactName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.ContactName }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) ContactName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.ContactName }).(pulumi.StringPtrOutput)
 }
 
 // Country details model
@@ -4820,33 +4225,33 @@ func (o GetInvoiceBillToAddressOutput) Countries() GetInvoiceBillToAddressCountr
 }
 
 // County name
-func (o GetInvoiceBillToAddressOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.County }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // ZIP no
-func (o GetInvoiceBillToAddressOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Name of the province
-func (o GetInvoiceBillToAddressOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.Province }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // Name of the state
-func (o GetInvoiceBillToAddressOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.State }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Street name
-func (o GetInvoiceBillToAddressOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.StreetName }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // House no
-func (o GetInvoiceBillToAddressOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddress) string { return v.StreetNumber }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddress) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoiceBillToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -4863,12 +4268,6 @@ func (o GetInvoiceBillToAddressArrayOutput) ToGetInvoiceBillToAddressArrayOutput
 	return o
 }
 
-func (o GetInvoiceBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddress] {
-	return pulumix.Output[[]GetInvoiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceBillToAddressArrayOutput) Index(i pulumi.IntInput) GetInvoiceBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceBillToAddress {
 		return vs[0].([]GetInvoiceBillToAddress)[vs[1].(int)]
@@ -4877,15 +4276,15 @@ func (o GetInvoiceBillToAddressArrayOutput) Index(i pulumi.IntInput) GetInvoiceB
 
 type GetInvoiceBillToAddressCountry struct {
 	// Country code in ISO-3166-1 3-letter format
-	Ascii3countryCode string `pulumi:"ascii3countryCode"`
+	Ascii3countryCode *string `pulumi:"ascii3countryCode"`
 	// Country code in ISO-3166-1 2-letter format
-	CountryCode string `pulumi:"countryCode"`
+	CountryCode *string `pulumi:"countryCode"`
 	// Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-	CountryId float64 `pulumi:"countryId"`
+	CountryId *float64 `pulumi:"countryId"`
 	// Name of the country
-	CountryName string `pulumi:"countryName"`
+	CountryName *string `pulumi:"countryName"`
 	// Language identifier
-	LanguageId float64 `pulumi:"languageId"`
+	LanguageId *float64 `pulumi:"languageId"`
 }
 
 // GetInvoiceBillToAddressCountryInput is an input type that accepts GetInvoiceBillToAddressCountryArgs and GetInvoiceBillToAddressCountryOutput values.
@@ -4901,15 +4300,15 @@ type GetInvoiceBillToAddressCountryInput interface {
 
 type GetInvoiceBillToAddressCountryArgs struct {
 	// Country code in ISO-3166-1 3-letter format
-	Ascii3countryCode pulumi.StringInput `pulumi:"ascii3countryCode"`
+	Ascii3countryCode pulumi.StringPtrInput `pulumi:"ascii3countryCode"`
 	// Country code in ISO-3166-1 2-letter format
-	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	CountryCode pulumi.StringPtrInput `pulumi:"countryCode"`
 	// Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-	CountryId pulumi.Float64Input `pulumi:"countryId"`
+	CountryId pulumi.Float64PtrInput `pulumi:"countryId"`
 	// Name of the country
-	CountryName pulumi.StringInput `pulumi:"countryName"`
+	CountryName pulumi.StringPtrInput `pulumi:"countryName"`
 	// Language identifier
-	LanguageId pulumi.Float64Input `pulumi:"languageId"`
+	LanguageId pulumi.Float64PtrInput `pulumi:"languageId"`
 }
 
 func (GetInvoiceBillToAddressCountryArgs) ElementType() reflect.Type {
@@ -4922,12 +4321,6 @@ func (i GetInvoiceBillToAddressCountryArgs) ToGetInvoiceBillToAddressCountryOutp
 
 func (i GetInvoiceBillToAddressCountryArgs) ToGetInvoiceBillToAddressCountryOutputWithContext(ctx context.Context) GetInvoiceBillToAddressCountryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressCountryOutput)
-}
-
-func (i GetInvoiceBillToAddressCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddressCountry] {
-	return pulumix.Output[GetInvoiceBillToAddressCountry]{
-		OutputState: i.ToGetInvoiceBillToAddressCountryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceBillToAddressCountryArrayInput is an input type that accepts GetInvoiceBillToAddressCountryArray and GetInvoiceBillToAddressCountryArrayOutput values.
@@ -4955,12 +4348,6 @@ func (i GetInvoiceBillToAddressCountryArray) ToGetInvoiceBillToAddressCountryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceBillToAddressCountryArrayOutput)
 }
 
-func (i GetInvoiceBillToAddressCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddressCountry] {
-	return pulumix.Output[[]GetInvoiceBillToAddressCountry]{
-		OutputState: i.ToGetInvoiceBillToAddressCountryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceBillToAddressCountryOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceBillToAddressCountryOutput) ElementType() reflect.Type {
@@ -4975,35 +4362,29 @@ func (o GetInvoiceBillToAddressCountryOutput) ToGetInvoiceBillToAddressCountryOu
 	return o
 }
 
-func (o GetInvoiceBillToAddressCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceBillToAddressCountry] {
-	return pulumix.Output[GetInvoiceBillToAddressCountry]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Country code in ISO-3166-1 3-letter format
-func (o GetInvoiceBillToAddressCountryOutput) Ascii3countryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) string { return v.Ascii3countryCode }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressCountryOutput) Ascii3countryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) *string { return v.Ascii3countryCode }).(pulumi.StringPtrOutput)
 }
 
 // Country code in ISO-3166-1 2-letter format
-func (o GetInvoiceBillToAddressCountryOutput) CountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) string { return v.CountryCode }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressCountryOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) *string { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-func (o GetInvoiceBillToAddressCountryOutput) CountryId() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) float64 { return v.CountryId }).(pulumi.Float64Output)
+func (o GetInvoiceBillToAddressCountryOutput) CountryId() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) *float64 { return v.CountryId }).(pulumi.Float64PtrOutput)
 }
 
 // Name of the country
-func (o GetInvoiceBillToAddressCountryOutput) CountryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) string { return v.CountryName }).(pulumi.StringOutput)
+func (o GetInvoiceBillToAddressCountryOutput) CountryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) *string { return v.CountryName }).(pulumi.StringPtrOutput)
 }
 
 // Language identifier
-func (o GetInvoiceBillToAddressCountryOutput) LanguageId() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) float64 { return v.LanguageId }).(pulumi.Float64Output)
+func (o GetInvoiceBillToAddressCountryOutput) LanguageId() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceBillToAddressCountry) *float64 { return v.LanguageId }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoiceBillToAddressCountryArrayOutput struct{ *pulumi.OutputState }
@@ -5020,12 +4401,6 @@ func (o GetInvoiceBillToAddressCountryArrayOutput) ToGetInvoiceBillToAddressCoun
 	return o
 }
 
-func (o GetInvoiceBillToAddressCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceBillToAddressCountry] {
-	return pulumix.Output[[]GetInvoiceBillToAddressCountry]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceBillToAddressCountryArrayOutput) Index(i pulumi.IntInput) GetInvoiceBillToAddressCountryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceBillToAddressCountry {
 		return vs[0].([]GetInvoiceBillToAddressCountry)[vs[1].(int)]
@@ -5034,15 +4409,15 @@ func (o GetInvoiceBillToAddressCountryArrayOutput) Index(i pulumi.IntInput) GetI
 
 type GetInvoiceCurrency struct {
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol string `pulumi:"currencySymbol"`
+	CurrencySymbol *string `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint float64 `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint *float64 `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion float64 `pulumi:"usdConversion"`
+	UsdConversion *float64 `pulumi:"usdConversion"`
 }
 
 // GetInvoiceCurrencyInput is an input type that accepts GetInvoiceCurrencyArgs and GetInvoiceCurrencyOutput values.
@@ -5058,15 +4433,15 @@ type GetInvoiceCurrencyInput interface {
 
 type GetInvoiceCurrencyArgs struct {
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol pulumi.StringInput `pulumi:"currencySymbol"`
+	CurrencySymbol pulumi.StringPtrInput `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint pulumi.Float64Input `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint pulumi.Float64PtrInput `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion pulumi.Float64Input `pulumi:"usdConversion"`
+	UsdConversion pulumi.Float64PtrInput `pulumi:"usdConversion"`
 }
 
 func (GetInvoiceCurrencyArgs) ElementType() reflect.Type {
@@ -5079,12 +4454,6 @@ func (i GetInvoiceCurrencyArgs) ToGetInvoiceCurrencyOutput() GetInvoiceCurrencyO
 
 func (i GetInvoiceCurrencyArgs) ToGetInvoiceCurrencyOutputWithContext(ctx context.Context) GetInvoiceCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceCurrencyOutput)
-}
-
-func (i GetInvoiceCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceCurrency] {
-	return pulumix.Output[GetInvoiceCurrency]{
-		OutputState: i.ToGetInvoiceCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceCurrencyArrayInput is an input type that accepts GetInvoiceCurrencyArray and GetInvoiceCurrencyArrayOutput values.
@@ -5112,12 +4481,6 @@ func (i GetInvoiceCurrencyArray) ToGetInvoiceCurrencyArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceCurrencyArrayOutput)
 }
 
-func (i GetInvoiceCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceCurrency] {
-	return pulumix.Output[[]GetInvoiceCurrency]{
-		OutputState: i.ToGetInvoiceCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceCurrencyOutput) ElementType() reflect.Type {
@@ -5132,35 +4495,29 @@ func (o GetInvoiceCurrencyOutput) ToGetInvoiceCurrencyOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetInvoiceCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceCurrency] {
-	return pulumix.Output[GetInvoiceCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency code
-func (o GetInvoiceCurrencyOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceCurrency) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetInvoiceCurrencyOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceCurrency) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Currency symbol
-func (o GetInvoiceCurrencyOutput) CurrencySymbol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceCurrency) string { return v.CurrencySymbol }).(pulumi.StringOutput)
+func (o GetInvoiceCurrencyOutput) CurrencySymbol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceCurrency) *string { return v.CurrencySymbol }).(pulumi.StringPtrOutput)
 }
 
 // Name of the currency
-func (o GetInvoiceCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoiceCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Round decimal point
-func (o GetInvoiceCurrencyOutput) RoundDecimalPoint() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceCurrency) float64 { return v.RoundDecimalPoint }).(pulumi.Float64Output)
+func (o GetInvoiceCurrencyOutput) RoundDecimalPoint() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceCurrency) *float64 { return v.RoundDecimalPoint }).(pulumi.Float64PtrOutput)
 }
 
 // USD conversion rate of the currency
-func (o GetInvoiceCurrencyOutput) UsdConversion() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceCurrency) float64 { return v.UsdConversion }).(pulumi.Float64Output)
+func (o GetInvoiceCurrencyOutput) UsdConversion() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceCurrency) *float64 { return v.UsdConversion }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoiceCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -5177,12 +4534,6 @@ func (o GetInvoiceCurrencyArrayOutput) ToGetInvoiceCurrencyArrayOutputWithContex
 	return o
 }
 
-func (o GetInvoiceCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceCurrency] {
-	return pulumix.Output[[]GetInvoiceCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoiceCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceCurrency {
 		return vs[0].([]GetInvoiceCurrency)[vs[1].(int)]
@@ -5191,33 +4542,33 @@ func (o GetInvoiceCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoiceCurren
 
 type GetInvoiceLastPaymentDetail struct {
 	// Account number of the card owner
-	AccountNumber string `pulumi:"accountNumber"`
+	AccountNumber *string `pulumi:"accountNumber"`
 	// Amount that paid
-	AmountPaid float64 `pulumi:"amountPaid"`
+	AmountPaid *float64 `pulumi:"amountPaid"`
 	// Echeck card type
-	CardType string `pulumi:"cardType"`
+	CardType *string `pulumi:"cardType"`
 	// Credit card type
-	CreditCardType string `pulumi:"creditCardType"`
+	CreditCardType *string `pulumi:"creditCardType"`
 	// Last four routing digits of the card
-	EcheckRouting string `pulumi:"echeckRouting"`
+	EcheckRouting *string `pulumi:"echeckRouting"`
 	// Last four digits of the card
-	LastDigits string `pulumi:"lastDigits"`
+	LastDigits *string `pulumi:"lastDigits"`
 	// Name on the credit card
-	NameOnCard string `pulumi:"nameOnCard"`
+	NameOnCard *string `pulumi:"nameOnCard"`
 	// example
-	PaidBy string `pulumi:"paidBy"`
+	PaidBy *string `pulumi:"paidBy"`
 	// Payment method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// The id (email address) of the paypal payment
-	PaypalId string `pulumi:"paypalId"`
+	PaypalId *string `pulumi:"paypalId"`
 	// paypal payment reference
-	PaypalReference string `pulumi:"paypalReference"`
+	PaypalReference *string `pulumi:"paypalReference"`
 	// Routing number of the echeck card
-	RoutingNumber string `pulumi:"routingNumber"`
+	RoutingNumber *string `pulumi:"routingNumber"`
 	// Expired date of the credit card
-	TimeExpiration string `pulumi:"timeExpiration"`
+	TimeExpiration *string `pulumi:"timeExpiration"`
 	// Paid the invoice on this day
-	TimePaidOn string `pulumi:"timePaidOn"`
+	TimePaidOn *string `pulumi:"timePaidOn"`
 }
 
 // GetInvoiceLastPaymentDetailInput is an input type that accepts GetInvoiceLastPaymentDetailArgs and GetInvoiceLastPaymentDetailOutput values.
@@ -5233,33 +4584,33 @@ type GetInvoiceLastPaymentDetailInput interface {
 
 type GetInvoiceLastPaymentDetailArgs struct {
 	// Account number of the card owner
-	AccountNumber pulumi.StringInput `pulumi:"accountNumber"`
+	AccountNumber pulumi.StringPtrInput `pulumi:"accountNumber"`
 	// Amount that paid
-	AmountPaid pulumi.Float64Input `pulumi:"amountPaid"`
+	AmountPaid pulumi.Float64PtrInput `pulumi:"amountPaid"`
 	// Echeck card type
-	CardType pulumi.StringInput `pulumi:"cardType"`
+	CardType pulumi.StringPtrInput `pulumi:"cardType"`
 	// Credit card type
-	CreditCardType pulumi.StringInput `pulumi:"creditCardType"`
+	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
 	// Last four routing digits of the card
-	EcheckRouting pulumi.StringInput `pulumi:"echeckRouting"`
+	EcheckRouting pulumi.StringPtrInput `pulumi:"echeckRouting"`
 	// Last four digits of the card
-	LastDigits pulumi.StringInput `pulumi:"lastDigits"`
+	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
 	// Name on the credit card
-	NameOnCard pulumi.StringInput `pulumi:"nameOnCard"`
+	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
 	// example
-	PaidBy pulumi.StringInput `pulumi:"paidBy"`
+	PaidBy pulumi.StringPtrInput `pulumi:"paidBy"`
 	// Payment method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// The id (email address) of the paypal payment
-	PaypalId pulumi.StringInput `pulumi:"paypalId"`
+	PaypalId pulumi.StringPtrInput `pulumi:"paypalId"`
 	// paypal payment reference
-	PaypalReference pulumi.StringInput `pulumi:"paypalReference"`
+	PaypalReference pulumi.StringPtrInput `pulumi:"paypalReference"`
 	// Routing number of the echeck card
-	RoutingNumber pulumi.StringInput `pulumi:"routingNumber"`
+	RoutingNumber pulumi.StringPtrInput `pulumi:"routingNumber"`
 	// Expired date of the credit card
-	TimeExpiration pulumi.StringInput `pulumi:"timeExpiration"`
+	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
 	// Paid the invoice on this day
-	TimePaidOn pulumi.StringInput `pulumi:"timePaidOn"`
+	TimePaidOn pulumi.StringPtrInput `pulumi:"timePaidOn"`
 }
 
 func (GetInvoiceLastPaymentDetailArgs) ElementType() reflect.Type {
@@ -5272,12 +4623,6 @@ func (i GetInvoiceLastPaymentDetailArgs) ToGetInvoiceLastPaymentDetailOutput() G
 
 func (i GetInvoiceLastPaymentDetailArgs) ToGetInvoiceLastPaymentDetailOutputWithContext(ctx context.Context) GetInvoiceLastPaymentDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLastPaymentDetailOutput)
-}
-
-func (i GetInvoiceLastPaymentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLastPaymentDetail] {
-	return pulumix.Output[GetInvoiceLastPaymentDetail]{
-		OutputState: i.ToGetInvoiceLastPaymentDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceLastPaymentDetailArrayInput is an input type that accepts GetInvoiceLastPaymentDetailArray and GetInvoiceLastPaymentDetailArrayOutput values.
@@ -5305,12 +4650,6 @@ func (i GetInvoiceLastPaymentDetailArray) ToGetInvoiceLastPaymentDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLastPaymentDetailArrayOutput)
 }
 
-func (i GetInvoiceLastPaymentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLastPaymentDetail] {
-	return pulumix.Output[[]GetInvoiceLastPaymentDetail]{
-		OutputState: i.ToGetInvoiceLastPaymentDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceLastPaymentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceLastPaymentDetailOutput) ElementType() reflect.Type {
@@ -5325,80 +4664,74 @@ func (o GetInvoiceLastPaymentDetailOutput) ToGetInvoiceLastPaymentDetailOutputWi
 	return o
 }
 
-func (o GetInvoiceLastPaymentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLastPaymentDetail] {
-	return pulumix.Output[GetInvoiceLastPaymentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Account number of the card owner
-func (o GetInvoiceLastPaymentDetailOutput) AccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.AccountNumber }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) AccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.AccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // Amount that paid
-func (o GetInvoiceLastPaymentDetailOutput) AmountPaid() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) float64 { return v.AmountPaid }).(pulumi.Float64Output)
+func (o GetInvoiceLastPaymentDetailOutput) AmountPaid() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *float64 { return v.AmountPaid }).(pulumi.Float64PtrOutput)
 }
 
 // Echeck card type
-func (o GetInvoiceLastPaymentDetailOutput) CardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.CardType }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) CardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.CardType }).(pulumi.StringPtrOutput)
 }
 
 // Credit card type
-func (o GetInvoiceLastPaymentDetailOutput) CreditCardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.CreditCardType }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) CreditCardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.CreditCardType }).(pulumi.StringPtrOutput)
 }
 
 // Last four routing digits of the card
-func (o GetInvoiceLastPaymentDetailOutput) EcheckRouting() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.EcheckRouting }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) EcheckRouting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.EcheckRouting }).(pulumi.StringPtrOutput)
 }
 
 // Last four digits of the card
-func (o GetInvoiceLastPaymentDetailOutput) LastDigits() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.LastDigits }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) LastDigits() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.LastDigits }).(pulumi.StringPtrOutput)
 }
 
 // Name on the credit card
-func (o GetInvoiceLastPaymentDetailOutput) NameOnCard() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.NameOnCard }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) NameOnCard() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.NameOnCard }).(pulumi.StringPtrOutput)
 }
 
 // example
-func (o GetInvoiceLastPaymentDetailOutput) PaidBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.PaidBy }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) PaidBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.PaidBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment method
-func (o GetInvoiceLastPaymentDetailOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // The id (email address) of the paypal payment
-func (o GetInvoiceLastPaymentDetailOutput) PaypalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.PaypalId }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) PaypalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.PaypalId }).(pulumi.StringPtrOutput)
 }
 
 // paypal payment reference
-func (o GetInvoiceLastPaymentDetailOutput) PaypalReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.PaypalReference }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) PaypalReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.PaypalReference }).(pulumi.StringPtrOutput)
 }
 
 // Routing number of the echeck card
-func (o GetInvoiceLastPaymentDetailOutput) RoutingNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.RoutingNumber }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) RoutingNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.RoutingNumber }).(pulumi.StringPtrOutput)
 }
 
 // Expired date of the credit card
-func (o GetInvoiceLastPaymentDetailOutput) TimeExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.TimeExpiration }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) TimeExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.TimeExpiration }).(pulumi.StringPtrOutput)
 }
 
 // Paid the invoice on this day
-func (o GetInvoiceLastPaymentDetailOutput) TimePaidOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) string { return v.TimePaidOn }).(pulumi.StringOutput)
+func (o GetInvoiceLastPaymentDetailOutput) TimePaidOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLastPaymentDetail) *string { return v.TimePaidOn }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoiceLastPaymentDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5413,12 +4746,6 @@ func (o GetInvoiceLastPaymentDetailArrayOutput) ToGetInvoiceLastPaymentDetailArr
 
 func (o GetInvoiceLastPaymentDetailArrayOutput) ToGetInvoiceLastPaymentDetailArrayOutputWithContext(ctx context.Context) GetInvoiceLastPaymentDetailArrayOutput {
 	return o
-}
-
-func (o GetInvoiceLastPaymentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLastPaymentDetail] {
-	return pulumix.Output[[]GetInvoiceLastPaymentDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoiceLastPaymentDetailArrayOutput) Index(i pulumi.IntInput) GetInvoiceLastPaymentDetailOutput {
@@ -5464,12 +4791,6 @@ func (i GetInvoicesFilterArgs) ToGetInvoicesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesFilterOutput)
 }
 
-func (i GetInvoicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesFilter] {
-	return pulumix.Output[GetInvoicesFilter]{
-		OutputState: i.ToGetInvoicesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvoicesFilterArrayInput is an input type that accepts GetInvoicesFilterArray and GetInvoicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesFilterArrayInput` via:
 //
@@ -5495,12 +4816,6 @@ func (i GetInvoicesFilterArray) ToGetInvoicesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesFilterArrayOutput)
 }
 
-func (i GetInvoicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesFilter] {
-	return pulumix.Output[[]GetInvoicesFilter]{
-		OutputState: i.ToGetInvoicesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesFilterOutput) ElementType() reflect.Type {
@@ -5513,12 +4828,6 @@ func (o GetInvoicesFilterOutput) ToGetInvoicesFilterOutput() GetInvoicesFilterOu
 
 func (o GetInvoicesFilterOutput) ToGetInvoicesFilterOutputWithContext(ctx context.Context) GetInvoicesFilterOutput {
 	return o
-}
-
-func (o GetInvoicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesFilter] {
-	return pulumix.Output[GetInvoicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the currency
@@ -5546,12 +4855,6 @@ func (o GetInvoicesFilterArrayOutput) ToGetInvoicesFilterArrayOutput() GetInvoic
 
 func (o GetInvoicesFilterArrayOutput) ToGetInvoicesFilterArrayOutputWithContext(ctx context.Context) GetInvoicesFilterArrayOutput {
 	return o
-}
-
-func (o GetInvoicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesFilter] {
-	return pulumix.Output[[]GetInvoicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoicesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoicesFilterOutput {
@@ -5591,12 +4894,6 @@ func (i GetInvoicesInvoiceCollectionArgs) ToGetInvoicesInvoiceCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollection] {
-	return pulumix.Output[GetInvoicesInvoiceCollection]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvoicesInvoiceCollectionArrayInput is an input type that accepts GetInvoicesInvoiceCollectionArray and GetInvoicesInvoiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceCollectionArrayInput` via:
 //
@@ -5622,12 +4919,6 @@ func (i GetInvoicesInvoiceCollectionArray) ToGetInvoicesInvoiceCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollection] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollection]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionOutput) ElementType() reflect.Type {
@@ -5640,12 +4931,6 @@ func (o GetInvoicesInvoiceCollectionOutput) ToGetInvoicesInvoiceCollectionOutput
 
 func (o GetInvoicesInvoiceCollectionOutput) ToGetInvoicesInvoiceCollectionOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionOutput {
 	return o
-}
-
-func (o GetInvoicesInvoiceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollection] {
-	return pulumix.Output[GetInvoicesInvoiceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoicesInvoiceCollectionOutput) Items() GetInvoicesInvoiceCollectionItemArrayOutput {
@@ -5666,12 +4951,6 @@ func (o GetInvoicesInvoiceCollectionArrayOutput) ToGetInvoicesInvoiceCollectionA
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollection] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCollectionArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollection {
 		return vs[0].([]GetInvoicesInvoiceCollection)[vs[1].(int)]
@@ -5684,56 +4963,56 @@ type GetInvoicesInvoiceCollectionItem struct {
 	// Currency details model
 	Currencies []GetInvoicesInvoiceCollectionItemCurrency `pulumi:"currencies"`
 	// Transaction identifier
-	InternalInvoiceId string `pulumi:"internalInvoiceId"`
+	InternalInvoiceId *string `pulumi:"internalInvoiceId"`
 	// Total amount of invoice
-	InvoiceAmount float64 `pulumi:"invoiceAmount"`
+	InvoiceAmount *float64 `pulumi:"invoiceAmount"`
 	// Invoice amount adjust
-	InvoiceAmountAdjusted float64 `pulumi:"invoiceAmountAdjusted"`
+	InvoiceAmountAdjusted *float64 `pulumi:"invoiceAmountAdjusted"`
 	// Invoice amount applied
-	InvoiceAmountApplied float64 `pulumi:"invoiceAmountApplied"`
+	InvoiceAmountApplied *float64 `pulumi:"invoiceAmountApplied"`
 	// Invoice amount credit
-	InvoiceAmountCredited float64 `pulumi:"invoiceAmountCredited"`
+	InvoiceAmountCredited *float64 `pulumi:"invoiceAmountCredited"`
 	// Balance of invoice
-	InvoiceAmountDue       float64 `pulumi:"invoiceAmountDue"`
-	InvoiceAmountInDispute float64 `pulumi:"invoiceAmountInDispute"`
+	InvoiceAmountDue       *float64 `pulumi:"invoiceAmountDue"`
+	InvoiceAmountInDispute *float64 `pulumi:"invoiceAmountInDispute"`
 	// The invoice query param (not unique).
-	InvoiceId string `pulumi:"invoiceId"`
+	InvoiceId *string `pulumi:"invoiceId"`
 	// Invoice external reference
-	InvoiceNumber string `pulumi:"invoiceNumber"`
+	InvoiceNumber *string `pulumi:"invoiceNumber"`
 	// Invoice PO number
-	InvoicePoNumber string `pulumi:"invoicePoNumber"`
+	InvoicePoNumber *string `pulumi:"invoicePoNumber"`
 	// Invoice reference number
-	InvoiceRefNumber string `pulumi:"invoiceRefNumber"`
+	InvoiceRefNumber *string `pulumi:"invoiceRefNumber"`
 	// Invoice status
-	InvoiceStatus string `pulumi:"invoiceStatus"`
+	InvoiceStatus *string `pulumi:"invoiceStatus"`
 	// Type of invoice
-	InvoiceType string `pulumi:"invoiceType"`
+	InvoiceType *string `pulumi:"invoiceType"`
 	// Is credit card payment eligible
-	IsCreditCardPayable bool `pulumi:"isCreditCardPayable"`
+	IsCreditCardPayable *bool `pulumi:"isCreditCardPayable"`
 	// Is pdf download access allowed
-	IsDisplayDownloadPdf bool `pulumi:"isDisplayDownloadPdf"`
-	IsDisplayViewPdf     bool `pulumi:"isDisplayViewPdf"`
-	IsPaid               bool `pulumi:"isPaid"`
+	IsDisplayDownloadPdf *bool `pulumi:"isDisplayDownloadPdf"`
+	IsDisplayViewPdf     *bool `pulumi:"isDisplayViewPdf"`
+	IsPaid               *bool `pulumi:"isPaid"`
 	// Whether invoice can be payed
-	IsPayable       bool `pulumi:"isPayable"`
-	IsPaymentFailed bool `pulumi:"isPaymentFailed"`
+	IsPayable       *bool `pulumi:"isPayable"`
+	IsPaymentFailed *bool `pulumi:"isPaymentFailed"`
 	// Is emailing pdf allowed
-	IsPdfEmailAvailable bool `pulumi:"isPdfEmailAvailable"`
+	IsPdfEmailAvailable *bool `pulumi:"isPdfEmailAvailable"`
 	// Payment related details
 	LastPaymentDetails []GetInvoicesInvoiceCollectionItemLastPaymentDetail `pulumi:"lastPaymentDetails"`
-	PartyName          string                                              `pulumi:"partyName"`
+	PartyName          *string                                             `pulumi:"partyName"`
 	// Payment terms
-	PaymentTerms string `pulumi:"paymentTerms"`
+	PaymentTerms *string `pulumi:"paymentTerms"`
 	// Preferred Email on the invoice
-	PreferredEmail string `pulumi:"preferredEmail"`
+	PreferredEmail *string `pulumi:"preferredEmail"`
 	// List of subscription identifiers
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	// Tax of invoice amount
-	Tax float64 `pulumi:"tax"`
+	Tax *float64 `pulumi:"tax"`
 	// Date of invoice
-	TimeInvoice string `pulumi:"timeInvoice"`
+	TimeInvoice *string `pulumi:"timeInvoice"`
 	// Due date of invoice
-	TimeInvoiceDue string `pulumi:"timeInvoiceDue"`
+	TimeInvoiceDue *string `pulumi:"timeInvoiceDue"`
 }
 
 // GetInvoicesInvoiceCollectionItemInput is an input type that accepts GetInvoicesInvoiceCollectionItemArgs and GetInvoicesInvoiceCollectionItemOutput values.
@@ -5753,56 +5032,56 @@ type GetInvoicesInvoiceCollectionItemArgs struct {
 	// Currency details model
 	Currencies GetInvoicesInvoiceCollectionItemCurrencyArrayInput `pulumi:"currencies"`
 	// Transaction identifier
-	InternalInvoiceId pulumi.StringInput `pulumi:"internalInvoiceId"`
+	InternalInvoiceId pulumi.StringPtrInput `pulumi:"internalInvoiceId"`
 	// Total amount of invoice
-	InvoiceAmount pulumi.Float64Input `pulumi:"invoiceAmount"`
+	InvoiceAmount pulumi.Float64PtrInput `pulumi:"invoiceAmount"`
 	// Invoice amount adjust
-	InvoiceAmountAdjusted pulumi.Float64Input `pulumi:"invoiceAmountAdjusted"`
+	InvoiceAmountAdjusted pulumi.Float64PtrInput `pulumi:"invoiceAmountAdjusted"`
 	// Invoice amount applied
-	InvoiceAmountApplied pulumi.Float64Input `pulumi:"invoiceAmountApplied"`
+	InvoiceAmountApplied pulumi.Float64PtrInput `pulumi:"invoiceAmountApplied"`
 	// Invoice amount credit
-	InvoiceAmountCredited pulumi.Float64Input `pulumi:"invoiceAmountCredited"`
+	InvoiceAmountCredited pulumi.Float64PtrInput `pulumi:"invoiceAmountCredited"`
 	// Balance of invoice
-	InvoiceAmountDue       pulumi.Float64Input `pulumi:"invoiceAmountDue"`
-	InvoiceAmountInDispute pulumi.Float64Input `pulumi:"invoiceAmountInDispute"`
+	InvoiceAmountDue       pulumi.Float64PtrInput `pulumi:"invoiceAmountDue"`
+	InvoiceAmountInDispute pulumi.Float64PtrInput `pulumi:"invoiceAmountInDispute"`
 	// The invoice query param (not unique).
-	InvoiceId pulumi.StringInput `pulumi:"invoiceId"`
+	InvoiceId pulumi.StringPtrInput `pulumi:"invoiceId"`
 	// Invoice external reference
-	InvoiceNumber pulumi.StringInput `pulumi:"invoiceNumber"`
+	InvoiceNumber pulumi.StringPtrInput `pulumi:"invoiceNumber"`
 	// Invoice PO number
-	InvoicePoNumber pulumi.StringInput `pulumi:"invoicePoNumber"`
+	InvoicePoNumber pulumi.StringPtrInput `pulumi:"invoicePoNumber"`
 	// Invoice reference number
-	InvoiceRefNumber pulumi.StringInput `pulumi:"invoiceRefNumber"`
+	InvoiceRefNumber pulumi.StringPtrInput `pulumi:"invoiceRefNumber"`
 	// Invoice status
-	InvoiceStatus pulumi.StringInput `pulumi:"invoiceStatus"`
+	InvoiceStatus pulumi.StringPtrInput `pulumi:"invoiceStatus"`
 	// Type of invoice
-	InvoiceType pulumi.StringInput `pulumi:"invoiceType"`
+	InvoiceType pulumi.StringPtrInput `pulumi:"invoiceType"`
 	// Is credit card payment eligible
-	IsCreditCardPayable pulumi.BoolInput `pulumi:"isCreditCardPayable"`
+	IsCreditCardPayable pulumi.BoolPtrInput `pulumi:"isCreditCardPayable"`
 	// Is pdf download access allowed
-	IsDisplayDownloadPdf pulumi.BoolInput `pulumi:"isDisplayDownloadPdf"`
-	IsDisplayViewPdf     pulumi.BoolInput `pulumi:"isDisplayViewPdf"`
-	IsPaid               pulumi.BoolInput `pulumi:"isPaid"`
+	IsDisplayDownloadPdf pulumi.BoolPtrInput `pulumi:"isDisplayDownloadPdf"`
+	IsDisplayViewPdf     pulumi.BoolPtrInput `pulumi:"isDisplayViewPdf"`
+	IsPaid               pulumi.BoolPtrInput `pulumi:"isPaid"`
 	// Whether invoice can be payed
-	IsPayable       pulumi.BoolInput `pulumi:"isPayable"`
-	IsPaymentFailed pulumi.BoolInput `pulumi:"isPaymentFailed"`
+	IsPayable       pulumi.BoolPtrInput `pulumi:"isPayable"`
+	IsPaymentFailed pulumi.BoolPtrInput `pulumi:"isPaymentFailed"`
 	// Is emailing pdf allowed
-	IsPdfEmailAvailable pulumi.BoolInput `pulumi:"isPdfEmailAvailable"`
+	IsPdfEmailAvailable pulumi.BoolPtrInput `pulumi:"isPdfEmailAvailable"`
 	// Payment related details
 	LastPaymentDetails GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput `pulumi:"lastPaymentDetails"`
-	PartyName          pulumi.StringInput                                          `pulumi:"partyName"`
+	PartyName          pulumi.StringPtrInput                                       `pulumi:"partyName"`
 	// Payment terms
-	PaymentTerms pulumi.StringInput `pulumi:"paymentTerms"`
+	PaymentTerms pulumi.StringPtrInput `pulumi:"paymentTerms"`
 	// Preferred Email on the invoice
-	PreferredEmail pulumi.StringInput `pulumi:"preferredEmail"`
+	PreferredEmail pulumi.StringPtrInput `pulumi:"preferredEmail"`
 	// List of subscription identifiers
 	SubscriptionIds pulumi.StringArrayInput `pulumi:"subscriptionIds"`
 	// Tax of invoice amount
-	Tax pulumi.Float64Input `pulumi:"tax"`
+	Tax pulumi.Float64PtrInput `pulumi:"tax"`
 	// Date of invoice
-	TimeInvoice pulumi.StringInput `pulumi:"timeInvoice"`
+	TimeInvoice pulumi.StringPtrInput `pulumi:"timeInvoice"`
 	// Due date of invoice
-	TimeInvoiceDue pulumi.StringInput `pulumi:"timeInvoiceDue"`
+	TimeInvoiceDue pulumi.StringPtrInput `pulumi:"timeInvoiceDue"`
 }
 
 func (GetInvoicesInvoiceCollectionItemArgs) ElementType() reflect.Type {
@@ -5815,12 +5094,6 @@ func (i GetInvoicesInvoiceCollectionItemArgs) ToGetInvoicesInvoiceCollectionItem
 
 func (i GetInvoicesInvoiceCollectionItemArgs) ToGetInvoicesInvoiceCollectionItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemOutput)
-}
-
-func (i GetInvoicesInvoiceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItem] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItem]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceCollectionItemArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemArray and GetInvoicesInvoiceCollectionItemArrayOutput values.
@@ -5848,12 +5121,6 @@ func (i GetInvoicesInvoiceCollectionItemArray) ToGetInvoicesInvoiceCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItem] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItem]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemOutput) ElementType() reflect.Type {
@@ -5866,12 +5133,6 @@ func (o GetInvoicesInvoiceCollectionItemOutput) ToGetInvoicesInvoiceCollectionIt
 
 func (o GetInvoicesInvoiceCollectionItemOutput) ToGetInvoicesInvoiceCollectionItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemOutput {
 	return o
-}
-
-func (o GetInvoicesInvoiceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItem] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Address details model
@@ -5889,99 +5150,99 @@ func (o GetInvoicesInvoiceCollectionItemOutput) Currencies() GetInvoicesInvoiceC
 }
 
 // Transaction identifier
-func (o GetInvoicesInvoiceCollectionItemOutput) InternalInvoiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InternalInvoiceId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InternalInvoiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InternalInvoiceId }).(pulumi.StringPtrOutput)
 }
 
 // Total amount of invoice
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.InvoiceAmount }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.InvoiceAmount }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice amount adjust
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountAdjusted() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.InvoiceAmountAdjusted }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountAdjusted() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.InvoiceAmountAdjusted }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice amount applied
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountApplied() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.InvoiceAmountApplied }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountApplied() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.InvoiceAmountApplied }).(pulumi.Float64PtrOutput)
 }
 
 // Invoice amount credit
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountCredited() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.InvoiceAmountCredited }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountCredited() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.InvoiceAmountCredited }).(pulumi.Float64PtrOutput)
 }
 
 // Balance of invoice
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountDue() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.InvoiceAmountDue }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountDue() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.InvoiceAmountDue }).(pulumi.Float64PtrOutput)
 }
 
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountInDispute() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.InvoiceAmountInDispute }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceAmountInDispute() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.InvoiceAmountInDispute }).(pulumi.Float64PtrOutput)
 }
 
 // The invoice query param (not unique).
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InvoiceId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InvoiceId }).(pulumi.StringPtrOutput)
 }
 
 // Invoice external reference
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InvoiceNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // Invoice PO number
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoicePoNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InvoicePoNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoicePoNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InvoicePoNumber }).(pulumi.StringPtrOutput)
 }
 
 // Invoice reference number
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceRefNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InvoiceRefNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceRefNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InvoiceRefNumber }).(pulumi.StringPtrOutput)
 }
 
 // Invoice status
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InvoiceStatus }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InvoiceStatus }).(pulumi.StringPtrOutput)
 }
 
 // Type of invoice
-func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.InvoiceType }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) InvoiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.InvoiceType }).(pulumi.StringPtrOutput)
 }
 
 // Is credit card payment eligible
-func (o GetInvoicesInvoiceCollectionItemOutput) IsCreditCardPayable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsCreditCardPayable }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsCreditCardPayable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsCreditCardPayable }).(pulumi.BoolPtrOutput)
 }
 
 // Is pdf download access allowed
-func (o GetInvoicesInvoiceCollectionItemOutput) IsDisplayDownloadPdf() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsDisplayDownloadPdf }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsDisplayDownloadPdf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsDisplayDownloadPdf }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetInvoicesInvoiceCollectionItemOutput) IsDisplayViewPdf() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsDisplayViewPdf }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsDisplayViewPdf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsDisplayViewPdf }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetInvoicesInvoiceCollectionItemOutput) IsPaid() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsPaid }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsPaid() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsPaid }).(pulumi.BoolPtrOutput)
 }
 
 // Whether invoice can be payed
-func (o GetInvoicesInvoiceCollectionItemOutput) IsPayable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsPayable }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsPayable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsPayable }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetInvoicesInvoiceCollectionItemOutput) IsPaymentFailed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsPaymentFailed }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsPaymentFailed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsPaymentFailed }).(pulumi.BoolPtrOutput)
 }
 
 // Is emailing pdf allowed
-func (o GetInvoicesInvoiceCollectionItemOutput) IsPdfEmailAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) bool { return v.IsPdfEmailAvailable }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) IsPdfEmailAvailable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *bool { return v.IsPdfEmailAvailable }).(pulumi.BoolPtrOutput)
 }
 
 // Payment related details
@@ -5991,18 +5252,18 @@ func (o GetInvoicesInvoiceCollectionItemOutput) LastPaymentDetails() GetInvoices
 	}).(GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput)
 }
 
-func (o GetInvoicesInvoiceCollectionItemOutput) PartyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.PartyName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) PartyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.PartyName }).(pulumi.StringPtrOutput)
 }
 
 // Payment terms
-func (o GetInvoicesInvoiceCollectionItemOutput) PaymentTerms() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.PaymentTerms }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) PaymentTerms() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.PaymentTerms }).(pulumi.StringPtrOutput)
 }
 
 // Preferred Email on the invoice
-func (o GetInvoicesInvoiceCollectionItemOutput) PreferredEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.PreferredEmail }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) PreferredEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.PreferredEmail }).(pulumi.StringPtrOutput)
 }
 
 // List of subscription identifiers
@@ -6011,18 +5272,18 @@ func (o GetInvoicesInvoiceCollectionItemOutput) SubscriptionIds() pulumi.StringA
 }
 
 // Tax of invoice amount
-func (o GetInvoicesInvoiceCollectionItemOutput) Tax() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) float64 { return v.Tax }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemOutput) Tax() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *float64 { return v.Tax }).(pulumi.Float64PtrOutput)
 }
 
 // Date of invoice
-func (o GetInvoicesInvoiceCollectionItemOutput) TimeInvoice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.TimeInvoice }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) TimeInvoice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.TimeInvoice }).(pulumi.StringPtrOutput)
 }
 
 // Due date of invoice
-func (o GetInvoicesInvoiceCollectionItemOutput) TimeInvoiceDue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) string { return v.TimeInvoiceDue }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemOutput) TimeInvoiceDue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItem) *string { return v.TimeInvoiceDue }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6039,12 +5300,6 @@ func (o GetInvoicesInvoiceCollectionItemArrayOutput) ToGetInvoicesInvoiceCollect
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItem] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItem {
 		return vs[0].([]GetInvoicesInvoiceCollectionItem)[vs[1].(int)]
@@ -6053,33 +5308,33 @@ func (o GetInvoicesInvoiceCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetInvoicesInvoiceCollectionItemBillToAddress struct {
 	// Address line 1
-	AddressLine1 string `pulumi:"addressLine1"`
+	AddressLine1 *string `pulumi:"addressLine1"`
 	// Address line 2
-	AddressLine2 string `pulumi:"addressLine2"`
+	AddressLine2 *string `pulumi:"addressLine2"`
 	// Address line 3
-	AddressLine3 string `pulumi:"addressLine3"`
+	AddressLine3 *string `pulumi:"addressLine3"`
 	// Address line 4
-	AddressLine4 string `pulumi:"addressLine4"`
+	AddressLine4 *string `pulumi:"addressLine4"`
 	// Name of the city
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company
-	CompanyName string `pulumi:"companyName"`
+	CompanyName *string `pulumi:"companyName"`
 	// Name of the contact person
-	ContactName string `pulumi:"contactName"`
+	ContactName *string `pulumi:"contactName"`
 	// Country details model
 	Countries []GetInvoicesInvoiceCollectionItemBillToAddressCountry `pulumi:"countries"`
 	// County name
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// ZIP no
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Name of the province
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// Name of the state
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Street name
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// House no
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 // GetInvoicesInvoiceCollectionItemBillToAddressInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressArgs and GetInvoicesInvoiceCollectionItemBillToAddressOutput values.
@@ -6095,33 +5350,33 @@ type GetInvoicesInvoiceCollectionItemBillToAddressInput interface {
 
 type GetInvoicesInvoiceCollectionItemBillToAddressArgs struct {
 	// Address line 1
-	AddressLine1 pulumi.StringInput `pulumi:"addressLine1"`
+	AddressLine1 pulumi.StringPtrInput `pulumi:"addressLine1"`
 	// Address line 2
-	AddressLine2 pulumi.StringInput `pulumi:"addressLine2"`
+	AddressLine2 pulumi.StringPtrInput `pulumi:"addressLine2"`
 	// Address line 3
-	AddressLine3 pulumi.StringInput `pulumi:"addressLine3"`
+	AddressLine3 pulumi.StringPtrInput `pulumi:"addressLine3"`
 	// Address line 4
-	AddressLine4 pulumi.StringInput `pulumi:"addressLine4"`
+	AddressLine4 pulumi.StringPtrInput `pulumi:"addressLine4"`
 	// Name of the city
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Name of the customer company
-	CompanyName pulumi.StringInput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
 	// Name of the contact person
-	ContactName pulumi.StringInput `pulumi:"contactName"`
+	ContactName pulumi.StringPtrInput `pulumi:"contactName"`
 	// Country details model
 	Countries GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput `pulumi:"countries"`
 	// County name
-	County pulumi.StringInput `pulumi:"county"`
+	County pulumi.StringPtrInput `pulumi:"county"`
 	// ZIP no
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Name of the province
-	Province pulumi.StringInput `pulumi:"province"`
+	Province pulumi.StringPtrInput `pulumi:"province"`
 	// Name of the state
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Street name
-	StreetName pulumi.StringInput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
 	// House no
-	StreetNumber pulumi.StringInput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
 func (GetInvoicesInvoiceCollectionItemBillToAddressArgs) ElementType() reflect.Type {
@@ -6134,12 +5389,6 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressArgs) ToGetInvoicesInvoiceC
 
 func (i GetInvoicesInvoiceCollectionItemBillToAddressArgs) ToGetInvoicesInvoiceCollectionItemBillToAddressOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemBillToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressOutput)
-}
-
-func (i GetInvoicesInvoiceCollectionItemBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceCollectionItemBillToAddressArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressArray and GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput values.
@@ -6167,12 +5416,6 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressArray) ToGetInvoicesInvoice
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionItemBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCollectionItemBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemBillToAddressOutput) ElementType() reflect.Type {
@@ -6187,45 +5430,39 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ToGetInvoicesInvoic
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address line 1
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.AddressLine1 }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.AddressLine1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.AddressLine2 }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.AddressLine2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.AddressLine3 }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.AddressLine3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.AddressLine4 }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) AddressLine4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.AddressLine4 }).(pulumi.StringPtrOutput)
 }
 
 // Name of the city
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.City }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.CompanyName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the contact person
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ContactName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.ContactName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) ContactName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.ContactName }).(pulumi.StringPtrOutput)
 }
 
 // Country details model
@@ -6236,33 +5473,33 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) Countries() GetInvo
 }
 
 // County name
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.County }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // ZIP no
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Name of the province
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.Province }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // Name of the state
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.State }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Street name
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.StreetName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // House no
-func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) string { return v.StreetNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddress) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -6279,12 +5516,6 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) ToGetInvoicesI
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItemBillToAddress {
 		return vs[0].([]GetInvoicesInvoiceCollectionItemBillToAddress)[vs[1].(int)]
@@ -6293,15 +5524,15 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressArrayOutput) Index(i pulumi
 
 type GetInvoicesInvoiceCollectionItemBillToAddressCountry struct {
 	// Country code in ISO-3166-1 3-letter format
-	Ascii3countryCode string `pulumi:"ascii3countryCode"`
+	Ascii3countryCode *string `pulumi:"ascii3countryCode"`
 	// Country code in ISO-3166-1 2-letter format
-	CountryCode string `pulumi:"countryCode"`
+	CountryCode *string `pulumi:"countryCode"`
 	// Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-	CountryId float64 `pulumi:"countryId"`
+	CountryId *float64 `pulumi:"countryId"`
 	// Name of the country
-	CountryName string `pulumi:"countryName"`
+	CountryName *string `pulumi:"countryName"`
 	// Language identifier
-	LanguageId float64 `pulumi:"languageId"`
+	LanguageId *float64 `pulumi:"languageId"`
 }
 
 // GetInvoicesInvoiceCollectionItemBillToAddressCountryInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs and GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput values.
@@ -6317,15 +5548,15 @@ type GetInvoicesInvoiceCollectionItemBillToAddressCountryInput interface {
 
 type GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs struct {
 	// Country code in ISO-3166-1 3-letter format
-	Ascii3countryCode pulumi.StringInput `pulumi:"ascii3countryCode"`
+	Ascii3countryCode pulumi.StringPtrInput `pulumi:"ascii3countryCode"`
 	// Country code in ISO-3166-1 2-letter format
-	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	CountryCode pulumi.StringPtrInput `pulumi:"countryCode"`
 	// Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-	CountryId pulumi.Float64Input `pulumi:"countryId"`
+	CountryId pulumi.Float64PtrInput `pulumi:"countryId"`
 	// Name of the country
-	CountryName pulumi.StringInput `pulumi:"countryName"`
+	CountryName pulumi.StringPtrInput `pulumi:"countryName"`
 	// Language identifier
-	LanguageId pulumi.Float64Input `pulumi:"languageId"`
+	LanguageId pulumi.Float64PtrInput `pulumi:"languageId"`
 }
 
 func (GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ElementType() reflect.Type {
@@ -6338,12 +5569,6 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ToGetInvoicesI
 
 func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ToGetInvoicesInvoiceCollectionItemBillToAddressCountryOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput)
-}
-
-func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressCountryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemBillToAddressCountryArray and GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput values.
@@ -6371,12 +5596,6 @@ func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArray) ToGetInvoices
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionItemBillToAddressCountryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ElementType() reflect.Type {
@@ -6391,35 +5610,29 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ToGetInvoice
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Country code in ISO-3166-1 3-letter format
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) Ascii3countryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) string { return v.Ascii3countryCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) Ascii3countryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) *string { return v.Ascii3countryCode }).(pulumi.StringPtrOutput)
 }
 
 // Country code in ISO-3166-1 2-letter format
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) CountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) string { return v.CountryCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) *string { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) CountryId() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) float64 { return v.CountryId }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) CountryId() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) *float64 { return v.CountryId }).(pulumi.Float64PtrOutput)
 }
 
 // Name of the country
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) CountryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) string { return v.CountryName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) CountryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) *string { return v.CountryName }).(pulumi.StringPtrOutput)
 }
 
 // Language identifier
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) LanguageId() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) float64 { return v.LanguageId }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput) LanguageId() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemBillToAddressCountry) *float64 { return v.LanguageId }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput struct{ *pulumi.OutputState }
@@ -6436,12 +5649,6 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) ToGetIn
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemBillToAddressCountry]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemBillToAddressCountryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItemBillToAddressCountry {
 		return vs[0].([]GetInvoicesInvoiceCollectionItemBillToAddressCountry)[vs[1].(int)]
@@ -6450,15 +5657,15 @@ func (o GetInvoicesInvoiceCollectionItemBillToAddressCountryArrayOutput) Index(i
 
 type GetInvoicesInvoiceCollectionItemCurrency struct {
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol string `pulumi:"currencySymbol"`
+	CurrencySymbol *string `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint float64 `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint *float64 `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion float64 `pulumi:"usdConversion"`
+	UsdConversion *float64 `pulumi:"usdConversion"`
 }
 
 // GetInvoicesInvoiceCollectionItemCurrencyInput is an input type that accepts GetInvoicesInvoiceCollectionItemCurrencyArgs and GetInvoicesInvoiceCollectionItemCurrencyOutput values.
@@ -6474,15 +5681,15 @@ type GetInvoicesInvoiceCollectionItemCurrencyInput interface {
 
 type GetInvoicesInvoiceCollectionItemCurrencyArgs struct {
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol pulumi.StringInput `pulumi:"currencySymbol"`
+	CurrencySymbol pulumi.StringPtrInput `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint pulumi.Float64Input `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint pulumi.Float64PtrInput `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion pulumi.Float64Input `pulumi:"usdConversion"`
+	UsdConversion pulumi.Float64PtrInput `pulumi:"usdConversion"`
 }
 
 func (GetInvoicesInvoiceCollectionItemCurrencyArgs) ElementType() reflect.Type {
@@ -6495,12 +5702,6 @@ func (i GetInvoicesInvoiceCollectionItemCurrencyArgs) ToGetInvoicesInvoiceCollec
 
 func (i GetInvoicesInvoiceCollectionItemCurrencyArgs) ToGetInvoicesInvoiceCollectionItemCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemCurrencyOutput)
-}
-
-func (i GetInvoicesInvoiceCollectionItemCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceCollectionItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemCurrencyArray and GetInvoicesInvoiceCollectionItemCurrencyArrayOutput values.
@@ -6528,12 +5729,6 @@ func (i GetInvoicesInvoiceCollectionItemCurrencyArray) ToGetInvoicesInvoiceColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemCurrencyArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionItemCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCollectionItemCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemCurrencyOutput) ElementType() reflect.Type {
@@ -6548,35 +5743,29 @@ func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) ToGetInvoicesInvoiceColl
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency code
-func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Currency symbol
-func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) CurrencySymbol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) string { return v.CurrencySymbol }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) CurrencySymbol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) *string { return v.CurrencySymbol }).(pulumi.StringPtrOutput)
 }
 
 // Name of the currency
-func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Round decimal point
-func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) RoundDecimalPoint() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) float64 { return v.RoundDecimalPoint }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) RoundDecimalPoint() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) *float64 { return v.RoundDecimalPoint }).(pulumi.Float64PtrOutput)
 }
 
 // USD conversion rate of the currency
-func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) UsdConversion() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) float64 { return v.UsdConversion }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemCurrencyOutput) UsdConversion() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemCurrency) *float64 { return v.UsdConversion }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceCollectionItemCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -6593,12 +5782,6 @@ func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) ToGetInvoicesInvoic
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItemCurrency {
 		return vs[0].([]GetInvoicesInvoiceCollectionItemCurrency)[vs[1].(int)]
@@ -6607,33 +5790,33 @@ func (o GetInvoicesInvoiceCollectionItemCurrencyArrayOutput) Index(i pulumi.IntI
 
 type GetInvoicesInvoiceCollectionItemLastPaymentDetail struct {
 	// Account number of the card owner
-	AccountNumber string `pulumi:"accountNumber"`
+	AccountNumber *string `pulumi:"accountNumber"`
 	// Amount that paid
-	AmountPaid float64 `pulumi:"amountPaid"`
+	AmountPaid *float64 `pulumi:"amountPaid"`
 	// Echeck card type
-	CardType string `pulumi:"cardType"`
+	CardType *string `pulumi:"cardType"`
 	// Credit card type
-	CreditCardType string `pulumi:"creditCardType"`
+	CreditCardType *string `pulumi:"creditCardType"`
 	// Last four routing digits of the card
-	EcheckRouting string `pulumi:"echeckRouting"`
+	EcheckRouting *string `pulumi:"echeckRouting"`
 	// Last four digits of the card
-	LastDigits string `pulumi:"lastDigits"`
+	LastDigits *string `pulumi:"lastDigits"`
 	// Name on the credit card
-	NameOnCard string `pulumi:"nameOnCard"`
+	NameOnCard *string `pulumi:"nameOnCard"`
 	// example
-	PaidBy string `pulumi:"paidBy"`
+	PaidBy *string `pulumi:"paidBy"`
 	// Payment method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// The id (email address) of the paypal payment
-	PaypalId string `pulumi:"paypalId"`
+	PaypalId *string `pulumi:"paypalId"`
 	// paypal payment reference
-	PaypalReference string `pulumi:"paypalReference"`
+	PaypalReference *string `pulumi:"paypalReference"`
 	// Routing number of the echeck card
-	RoutingNumber string `pulumi:"routingNumber"`
+	RoutingNumber *string `pulumi:"routingNumber"`
 	// Expired date of the credit card
-	TimeExpiration string `pulumi:"timeExpiration"`
+	TimeExpiration *string `pulumi:"timeExpiration"`
 	// Paid the invoice on this day
-	TimePaidOn string `pulumi:"timePaidOn"`
+	TimePaidOn *string `pulumi:"timePaidOn"`
 }
 
 // GetInvoicesInvoiceCollectionItemLastPaymentDetailInput is an input type that accepts GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs and GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput values.
@@ -6649,33 +5832,33 @@ type GetInvoicesInvoiceCollectionItemLastPaymentDetailInput interface {
 
 type GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs struct {
 	// Account number of the card owner
-	AccountNumber pulumi.StringInput `pulumi:"accountNumber"`
+	AccountNumber pulumi.StringPtrInput `pulumi:"accountNumber"`
 	// Amount that paid
-	AmountPaid pulumi.Float64Input `pulumi:"amountPaid"`
+	AmountPaid pulumi.Float64PtrInput `pulumi:"amountPaid"`
 	// Echeck card type
-	CardType pulumi.StringInput `pulumi:"cardType"`
+	CardType pulumi.StringPtrInput `pulumi:"cardType"`
 	// Credit card type
-	CreditCardType pulumi.StringInput `pulumi:"creditCardType"`
+	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
 	// Last four routing digits of the card
-	EcheckRouting pulumi.StringInput `pulumi:"echeckRouting"`
+	EcheckRouting pulumi.StringPtrInput `pulumi:"echeckRouting"`
 	// Last four digits of the card
-	LastDigits pulumi.StringInput `pulumi:"lastDigits"`
+	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
 	// Name on the credit card
-	NameOnCard pulumi.StringInput `pulumi:"nameOnCard"`
+	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
 	// example
-	PaidBy pulumi.StringInput `pulumi:"paidBy"`
+	PaidBy pulumi.StringPtrInput `pulumi:"paidBy"`
 	// Payment method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// The id (email address) of the paypal payment
-	PaypalId pulumi.StringInput `pulumi:"paypalId"`
+	PaypalId pulumi.StringPtrInput `pulumi:"paypalId"`
 	// paypal payment reference
-	PaypalReference pulumi.StringInput `pulumi:"paypalReference"`
+	PaypalReference pulumi.StringPtrInput `pulumi:"paypalReference"`
 	// Routing number of the echeck card
-	RoutingNumber pulumi.StringInput `pulumi:"routingNumber"`
+	RoutingNumber pulumi.StringPtrInput `pulumi:"routingNumber"`
 	// Expired date of the credit card
-	TimeExpiration pulumi.StringInput `pulumi:"timeExpiration"`
+	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
 	// Paid the invoice on this day
-	TimePaidOn pulumi.StringInput `pulumi:"timePaidOn"`
+	TimePaidOn pulumi.StringPtrInput `pulumi:"timePaidOn"`
 }
 
 func (GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ElementType() reflect.Type {
@@ -6688,12 +5871,6 @@ func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ToGetInvoicesInvo
 
 func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ToGetInvoicesInvoiceCollectionItemLastPaymentDetailOutputWithContext(ctx context.Context) GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput)
-}
-
-func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemLastPaymentDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayInput is an input type that accepts GetInvoicesInvoiceCollectionItemLastPaymentDetailArray and GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput values.
@@ -6721,12 +5898,6 @@ func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArray) ToGetInvoicesInv
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCollectionItemLastPaymentDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
-		OutputState: i.ToGetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ElementType() reflect.Type {
@@ -6741,80 +5912,74 @@ func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ToGetInvoicesIn
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
-	return pulumix.Output[GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Account number of the card owner
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) AccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.AccountNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) AccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.AccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // Amount that paid
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) AmountPaid() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) float64 { return v.AmountPaid }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) AmountPaid() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *float64 { return v.AmountPaid }).(pulumi.Float64PtrOutput)
 }
 
 // Echeck card type
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) CardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.CardType }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) CardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.CardType }).(pulumi.StringPtrOutput)
 }
 
 // Credit card type
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) CreditCardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.CreditCardType }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) CreditCardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.CreditCardType }).(pulumi.StringPtrOutput)
 }
 
 // Last four routing digits of the card
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) EcheckRouting() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.EcheckRouting }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) EcheckRouting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.EcheckRouting }).(pulumi.StringPtrOutput)
 }
 
 // Last four digits of the card
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) LastDigits() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.LastDigits }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) LastDigits() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.LastDigits }).(pulumi.StringPtrOutput)
 }
 
 // Name on the credit card
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) NameOnCard() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.NameOnCard }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) NameOnCard() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.NameOnCard }).(pulumi.StringPtrOutput)
 }
 
 // example
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaidBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.PaidBy }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaidBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.PaidBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment method
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // The id (email address) of the paypal payment
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaypalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.PaypalId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaypalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.PaypalId }).(pulumi.StringPtrOutput)
 }
 
 // paypal payment reference
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaypalReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.PaypalReference }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) PaypalReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.PaypalReference }).(pulumi.StringPtrOutput)
 }
 
 // Routing number of the echeck card
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) RoutingNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.RoutingNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) RoutingNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.RoutingNumber }).(pulumi.StringPtrOutput)
 }
 
 // Expired date of the credit card
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) TimeExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.TimeExpiration }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) TimeExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.TimeExpiration }).(pulumi.StringPtrOutput)
 }
 
 // Paid the invoice on this day
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) TimePaidOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) string { return v.TimePaidOn }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput) TimePaidOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCollectionItemLastPaymentDetail) *string { return v.TimePaidOn }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6831,12 +5996,6 @@ func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput) ToGetInvoi
 	return o
 }
 
-func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail] {
-	return pulumix.Output[[]GetInvoicesInvoiceCollectionItemLastPaymentDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCollectionItemLastPaymentDetailArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCollectionItemLastPaymentDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCollectionItemLastPaymentDetail {
 		return vs[0].([]GetInvoicesInvoiceCollectionItemLastPaymentDetail)[vs[1].(int)]
@@ -6847,21 +6006,21 @@ type GetInvoicesInvoiceLineItem struct {
 	// Currency details model
 	Currencies []GetInvoicesInvoiceLineItemCurrency `pulumi:"currencies"`
 	// Unit price of the ordered product
-	NetUnitPrice float64 `pulumi:"netUnitPrice"`
+	NetUnitPrice *float64 `pulumi:"netUnitPrice"`
 	// Product of the item
-	OrderNo string `pulumi:"orderNo"`
+	OrderNo *string `pulumi:"orderNo"`
 	// Part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product of the item
-	Product string `pulumi:"product"`
+	Product *string `pulumi:"product"`
 	// Quantity of the ordered product
-	Quantity float64 `pulumi:"quantity"`
+	Quantity *float64 `pulumi:"quantity"`
 	// End date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Total price of the ordered product (Net unit price x quantity)
-	TotalPrice float64 `pulumi:"totalPrice"`
+	TotalPrice *float64 `pulumi:"totalPrice"`
 }
 
 // GetInvoicesInvoiceLineItemInput is an input type that accepts GetInvoicesInvoiceLineItemArgs and GetInvoicesInvoiceLineItemOutput values.
@@ -6879,21 +6038,21 @@ type GetInvoicesInvoiceLineItemArgs struct {
 	// Currency details model
 	Currencies GetInvoicesInvoiceLineItemCurrencyArrayInput `pulumi:"currencies"`
 	// Unit price of the ordered product
-	NetUnitPrice pulumi.Float64Input `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.Float64PtrInput `pulumi:"netUnitPrice"`
 	// Product of the item
-	OrderNo pulumi.StringInput `pulumi:"orderNo"`
+	OrderNo pulumi.StringPtrInput `pulumi:"orderNo"`
 	// Part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product of the item
-	Product pulumi.StringInput `pulumi:"product"`
+	Product pulumi.StringPtrInput `pulumi:"product"`
 	// Quantity of the ordered product
-	Quantity pulumi.Float64Input `pulumi:"quantity"`
+	Quantity pulumi.Float64PtrInput `pulumi:"quantity"`
 	// End date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Total price of the ordered product (Net unit price x quantity)
-	TotalPrice pulumi.Float64Input `pulumi:"totalPrice"`
+	TotalPrice pulumi.Float64PtrInput `pulumi:"totalPrice"`
 }
 
 func (GetInvoicesInvoiceLineItemArgs) ElementType() reflect.Type {
@@ -6906,12 +6065,6 @@ func (i GetInvoicesInvoiceLineItemArgs) ToGetInvoicesInvoiceLineItemOutput() Get
 
 func (i GetInvoicesInvoiceLineItemArgs) ToGetInvoicesInvoiceLineItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemOutput)
-}
-
-func (i GetInvoicesInvoiceLineItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItem] {
-	return pulumix.Output[GetInvoicesInvoiceLineItem]{
-		OutputState: i.ToGetInvoicesInvoiceLineItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceLineItemArrayInput is an input type that accepts GetInvoicesInvoiceLineItemArray and GetInvoicesInvoiceLineItemArrayOutput values.
@@ -6939,12 +6092,6 @@ func (i GetInvoicesInvoiceLineItemArray) ToGetInvoicesInvoiceLineItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemArrayOutput)
 }
 
-func (i GetInvoicesInvoiceLineItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItem] {
-	return pulumix.Output[[]GetInvoicesInvoiceLineItem]{
-		OutputState: i.ToGetInvoicesInvoiceLineItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceLineItemOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLineItemOutput) ElementType() reflect.Type {
@@ -6959,55 +6106,49 @@ func (o GetInvoicesInvoiceLineItemOutput) ToGetInvoicesInvoiceLineItemOutputWith
 	return o
 }
 
-func (o GetInvoicesInvoiceLineItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItem] {
-	return pulumix.Output[GetInvoicesInvoiceLineItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details model
 func (o GetInvoicesInvoiceLineItemOutput) Currencies() GetInvoicesInvoiceLineItemCurrencyArrayOutput {
 	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) []GetInvoicesInvoiceLineItemCurrency { return v.Currencies }).(GetInvoicesInvoiceLineItemCurrencyArrayOutput)
 }
 
 // Unit price of the ordered product
-func (o GetInvoicesInvoiceLineItemOutput) NetUnitPrice() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) float64 { return v.NetUnitPrice }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLineItemOutput) NetUnitPrice() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *float64 { return v.NetUnitPrice }).(pulumi.Float64PtrOutput)
 }
 
 // Product of the item
-func (o GetInvoicesInvoiceLineItemOutput) OrderNo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) string { return v.OrderNo }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemOutput) OrderNo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *string { return v.OrderNo }).(pulumi.StringPtrOutput)
 }
 
 // Part number
-func (o GetInvoicesInvoiceLineItemOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product of the item
-func (o GetInvoicesInvoiceLineItemOutput) Product() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) string { return v.Product }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemOutput) Product() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *string { return v.Product }).(pulumi.StringPtrOutput)
 }
 
 // Quantity of the ordered product
-func (o GetInvoicesInvoiceLineItemOutput) Quantity() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) float64 { return v.Quantity }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLineItemOutput) Quantity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *float64 { return v.Quantity }).(pulumi.Float64PtrOutput)
 }
 
 // End date
-func (o GetInvoicesInvoiceLineItemOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Start date
-func (o GetInvoicesInvoiceLineItemOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Total price of the ordered product (Net unit price x quantity)
-func (o GetInvoicesInvoiceLineItemOutput) TotalPrice() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) float64 { return v.TotalPrice }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLineItemOutput) TotalPrice() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItem) *float64 { return v.TotalPrice }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceLineItemArrayOutput struct{ *pulumi.OutputState }
@@ -7024,12 +6165,6 @@ func (o GetInvoicesInvoiceLineItemArrayOutput) ToGetInvoicesInvoiceLineItemArray
 	return o
 }
 
-func (o GetInvoicesInvoiceLineItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItem] {
-	return pulumix.Output[[]GetInvoicesInvoiceLineItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceLineItemArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLineItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceLineItem {
 		return vs[0].([]GetInvoicesInvoiceLineItem)[vs[1].(int)]
@@ -7038,15 +6173,15 @@ func (o GetInvoicesInvoiceLineItemArrayOutput) Index(i pulumi.IntInput) GetInvoi
 
 type GetInvoicesInvoiceLineItemCurrency struct {
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol string `pulumi:"currencySymbol"`
+	CurrencySymbol *string `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint float64 `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint *float64 `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion float64 `pulumi:"usdConversion"`
+	UsdConversion *float64 `pulumi:"usdConversion"`
 }
 
 // GetInvoicesInvoiceLineItemCurrencyInput is an input type that accepts GetInvoicesInvoiceLineItemCurrencyArgs and GetInvoicesInvoiceLineItemCurrencyOutput values.
@@ -7062,15 +6197,15 @@ type GetInvoicesInvoiceLineItemCurrencyInput interface {
 
 type GetInvoicesInvoiceLineItemCurrencyArgs struct {
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol pulumi.StringInput `pulumi:"currencySymbol"`
+	CurrencySymbol pulumi.StringPtrInput `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint pulumi.Float64Input `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint pulumi.Float64PtrInput `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion pulumi.Float64Input `pulumi:"usdConversion"`
+	UsdConversion pulumi.Float64PtrInput `pulumi:"usdConversion"`
 }
 
 func (GetInvoicesInvoiceLineItemCurrencyArgs) ElementType() reflect.Type {
@@ -7083,12 +6218,6 @@ func (i GetInvoicesInvoiceLineItemCurrencyArgs) ToGetInvoicesInvoiceLineItemCurr
 
 func (i GetInvoicesInvoiceLineItemCurrencyArgs) ToGetInvoicesInvoiceLineItemCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineItemCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemCurrencyOutput)
-}
-
-func (i GetInvoicesInvoiceLineItemCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItemCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceLineItemCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceLineItemCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceLineItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceLineItemCurrencyArray and GetInvoicesInvoiceLineItemCurrencyArrayOutput values.
@@ -7116,12 +6245,6 @@ func (i GetInvoicesInvoiceLineItemCurrencyArray) ToGetInvoicesInvoiceLineItemCur
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLineItemCurrencyArrayOutput)
 }
 
-func (i GetInvoicesInvoiceLineItemCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceLineItemCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceLineItemCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLineItemCurrencyOutput) ElementType() reflect.Type {
@@ -7136,35 +6259,29 @@ func (o GetInvoicesInvoiceLineItemCurrencyOutput) ToGetInvoicesInvoiceLineItemCu
 	return o
 }
 
-func (o GetInvoicesInvoiceLineItemCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineItemCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceLineItemCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency code
-func (o GetInvoicesInvoiceLineItemCurrencyOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemCurrencyOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Currency symbol
-func (o GetInvoicesInvoiceLineItemCurrencyOutput) CurrencySymbol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) string { return v.CurrencySymbol }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemCurrencyOutput) CurrencySymbol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) *string { return v.CurrencySymbol }).(pulumi.StringPtrOutput)
 }
 
 // Name of the currency
-func (o GetInvoicesInvoiceLineItemCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineItemCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Round decimal point
-func (o GetInvoicesInvoiceLineItemCurrencyOutput) RoundDecimalPoint() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) float64 { return v.RoundDecimalPoint }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLineItemCurrencyOutput) RoundDecimalPoint() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) *float64 { return v.RoundDecimalPoint }).(pulumi.Float64PtrOutput)
 }
 
 // USD conversion rate of the currency
-func (o GetInvoicesInvoiceLineItemCurrencyOutput) UsdConversion() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) float64 { return v.UsdConversion }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLineItemCurrencyOutput) UsdConversion() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineItemCurrency) *float64 { return v.UsdConversion }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceLineItemCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -7179,12 +6296,6 @@ func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) ToGetInvoicesInvoiceLineI
 
 func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) ToGetInvoicesInvoiceLineItemCurrencyArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceLineItemCurrencyArrayOutput {
 	return o
-}
-
-func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceLineItemCurrency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoicesInvoiceLineItemCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLineItemCurrencyOutput {
@@ -7230,12 +6341,6 @@ func (i GetInvoicesInvoiceLinesFilterArgs) ToGetInvoicesInvoiceLinesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesFilterOutput)
 }
 
-func (i GetInvoicesInvoiceLinesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesFilter] {
-	return pulumix.Output[GetInvoicesInvoiceLinesFilter]{
-		OutputState: i.ToGetInvoicesInvoiceLinesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvoicesInvoiceLinesFilterArrayInput is an input type that accepts GetInvoicesInvoiceLinesFilterArray and GetInvoicesInvoiceLinesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesFilterArrayInput` via:
 //
@@ -7261,12 +6366,6 @@ func (i GetInvoicesInvoiceLinesFilterArray) ToGetInvoicesInvoiceLinesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesFilterArrayOutput)
 }
 
-func (i GetInvoicesInvoiceLinesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesFilter] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesFilter]{
-		OutputState: i.ToGetInvoicesInvoiceLinesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceLinesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesFilterOutput) ElementType() reflect.Type {
@@ -7279,12 +6378,6 @@ func (o GetInvoicesInvoiceLinesFilterOutput) ToGetInvoicesInvoiceLinesFilterOutp
 
 func (o GetInvoicesInvoiceLinesFilterOutput) ToGetInvoicesInvoiceLinesFilterOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesFilterOutput {
 	return o
-}
-
-func (o GetInvoicesInvoiceLinesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesFilter] {
-	return pulumix.Output[GetInvoicesInvoiceLinesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the currency
@@ -7312,12 +6405,6 @@ func (o GetInvoicesInvoiceLinesFilterArrayOutput) ToGetInvoicesInvoiceLinesFilte
 
 func (o GetInvoicesInvoiceLinesFilterArrayOutput) ToGetInvoicesInvoiceLinesFilterArrayOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesFilterArrayOutput {
 	return o
-}
-
-func (o GetInvoicesInvoiceLinesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesFilter] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoicesInvoiceLinesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesFilterOutput {
@@ -7359,12 +6446,6 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArgs) ToGetInvoicesInvoiceLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionOutput)
 }
 
-func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection] {
-	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection]{
-		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionArray and GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesInvoiceLinesInvoiceLineCollectionArrayInput` via:
 //
@@ -7390,12 +6471,6 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArray) ToGetInvoicesInvoiceL
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput)
 }
 
-func (i GetInvoicesInvoiceLinesInvoiceLineCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection]{
-		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceLinesInvoiceLineCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ElementType() reflect.Type {
@@ -7408,12 +6483,6 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ToGetInvoicesInvoice
 
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ToGetInvoicesInvoiceLinesInvoiceLineCollectionOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionOutput {
 	return o
-}
-
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection] {
-	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Invoice line list elements
@@ -7437,12 +6506,6 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) ToGetInvoicesIn
 	return o
 }
 
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesInvoiceLineCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceLinesInvoiceLineCollection {
 		return vs[0].([]GetInvoicesInvoiceLinesInvoiceLineCollection)[vs[1].(int)]
@@ -7453,21 +6516,21 @@ type GetInvoicesInvoiceLinesInvoiceLineCollectionItem struct {
 	// Currency details model
 	Currencies []GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency `pulumi:"currencies"`
 	// Unit price of the ordered product
-	NetUnitPrice float64 `pulumi:"netUnitPrice"`
+	NetUnitPrice *float64 `pulumi:"netUnitPrice"`
 	// Product of the item
-	OrderNo string `pulumi:"orderNo"`
+	OrderNo *string `pulumi:"orderNo"`
 	// Part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product of the item
-	Product string `pulumi:"product"`
+	Product *string `pulumi:"product"`
 	// Quantity of the ordered product
-	Quantity float64 `pulumi:"quantity"`
+	Quantity *float64 `pulumi:"quantity"`
 	// End date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Total price of the ordered product (Net unit price x quantity)
-	TotalPrice float64 `pulumi:"totalPrice"`
+	TotalPrice *float64 `pulumi:"totalPrice"`
 }
 
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs and GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput values.
@@ -7485,21 +6548,21 @@ type GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs struct {
 	// Currency details model
 	Currencies GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput `pulumi:"currencies"`
 	// Unit price of the ordered product
-	NetUnitPrice pulumi.Float64Input `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.Float64PtrInput `pulumi:"netUnitPrice"`
 	// Product of the item
-	OrderNo pulumi.StringInput `pulumi:"orderNo"`
+	OrderNo pulumi.StringPtrInput `pulumi:"orderNo"`
 	// Part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product of the item
-	Product pulumi.StringInput `pulumi:"product"`
+	Product pulumi.StringPtrInput `pulumi:"product"`
 	// Quantity of the ordered product
-	Quantity pulumi.Float64Input `pulumi:"quantity"`
+	Quantity pulumi.Float64PtrInput `pulumi:"quantity"`
 	// End date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Total price of the ordered product (Net unit price x quantity)
-	TotalPrice pulumi.Float64Input `pulumi:"totalPrice"`
+	TotalPrice pulumi.Float64PtrInput `pulumi:"totalPrice"`
 }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ElementType() reflect.Type {
@@ -7512,12 +6575,6 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ToGetInvoicesInvoi
 
 func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput)
-}
-
-func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
-	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
-		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray and GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput values.
@@ -7545,12 +6602,6 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray) ToGetInvoicesInvo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput)
 }
 
-func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
-		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ElementType() reflect.Type {
@@ -7565,12 +6616,6 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ToGetInvoicesInv
 	return o
 }
 
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
-	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details model
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) Currencies() GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput {
 	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) []GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency {
@@ -7579,43 +6624,43 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) Currencies() Get
 }
 
 // Unit price of the ordered product
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) NetUnitPrice() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) float64 { return v.NetUnitPrice }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) NetUnitPrice() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *float64 { return v.NetUnitPrice }).(pulumi.Float64PtrOutput)
 }
 
 // Product of the item
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) OrderNo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) string { return v.OrderNo }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) OrderNo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *string { return v.OrderNo }).(pulumi.StringPtrOutput)
 }
 
 // Part number
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product of the item
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) Product() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) string { return v.Product }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) Product() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *string { return v.Product }).(pulumi.StringPtrOutput)
 }
 
 // Quantity of the ordered product
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) Quantity() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) float64 { return v.Quantity }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) Quantity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *float64 { return v.Quantity }).(pulumi.Float64PtrOutput)
 }
 
 // End date
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Start date
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Total price of the ordered product (Net unit price x quantity)
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) TotalPrice() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) float64 { return v.TotalPrice }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput) TotalPrice() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItem) *float64 { return v.TotalPrice }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7632,12 +6677,6 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) ToGetInvoic
 	return o
 }
 
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesInvoiceLineCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
 		return vs[0].([]GetInvoicesInvoiceLinesInvoiceLineCollectionItem)[vs[1].(int)]
@@ -7646,15 +6685,15 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemArrayOutput) Index(i pul
 
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency struct {
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol string `pulumi:"currencySymbol"`
+	CurrencySymbol *string `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint float64 `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint *float64 `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion float64 `pulumi:"usdConversion"`
+	UsdConversion *float64 `pulumi:"usdConversion"`
 }
 
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs and GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput values.
@@ -7670,15 +6709,15 @@ type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyInput interface {
 
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs struct {
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Currency symbol
-	CurrencySymbol pulumi.StringInput `pulumi:"currencySymbol"`
+	CurrencySymbol pulumi.StringPtrInput `pulumi:"currencySymbol"`
 	// Name of the currency
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Round decimal point
-	RoundDecimalPoint pulumi.Float64Input `pulumi:"roundDecimalPoint"`
+	RoundDecimalPoint pulumi.Float64PtrInput `pulumi:"roundDecimalPoint"`
 	// USD conversion rate of the currency
-	UsdConversion pulumi.Float64Input `pulumi:"usdConversion"`
+	UsdConversion pulumi.Float64PtrInput `pulumi:"usdConversion"`
 }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ElementType() reflect.Type {
@@ -7691,12 +6730,6 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ToGetInvoi
 
 func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput)
-}
-
-func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray and GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput values.
@@ -7724,12 +6757,6 @@ func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray) ToGetInvo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput)
 }
 
-func (i GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ElementType() reflect.Type {
@@ -7744,35 +6771,29 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ToGetInv
 	return o
 }
 
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency code
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Currency symbol
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) CurrencySymbol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) string { return v.CurrencySymbol }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) CurrencySymbol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) *string { return v.CurrencySymbol }).(pulumi.StringPtrOutput)
 }
 
 // Name of the currency
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Round decimal point
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) RoundDecimalPoint() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) float64 { return v.RoundDecimalPoint }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) RoundDecimalPoint() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) *float64 { return v.RoundDecimalPoint }).(pulumi.Float64PtrOutput)
 }
 
 // USD conversion rate of the currency
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) UsdConversion() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) float64 { return v.UsdConversion }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput) UsdConversion() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency) *float64 { return v.UsdConversion }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -7789,12 +6810,6 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) ToG
 	return o
 }
 
-func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency {
 		return vs[0].([]GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrency)[vs[1].(int)]
@@ -7803,57 +6818,57 @@ func (o GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyArrayOutput) Ind
 
 type GetSubscriptionBillingAddress struct {
 	// Address identifier.
-	AddressKey string `pulumi:"addressKey"`
+	AddressKey *string `pulumi:"addressKey"`
 	// Name of the city.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName string `pulumi:"companyName"`
+	CompanyName *string `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass string `pulumi:"contributorClass"`
+	ContributorClass *string `pulumi:"contributorClass"`
 	// Country of the address.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// County of the address.
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName string `pulumi:"departmentName"`
+	DepartmentName *string `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber string `pulumi:"internalNumber"`
+	InternalNumber *string `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle string `pulumi:"jobTitle"`
+	JobTitle *string `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Address line 1.
-	Line1 string `pulumi:"line1"`
+	Line1 *string `pulumi:"line1"`
 	// Address line 2.
-	Line2 string `pulumi:"line2"`
+	Line2 *string `pulumi:"line2"`
 	// Address line 3.
-	Line3 string `pulumi:"line3"`
+	Line3 *string `pulumi:"line3"`
 	// Address line 4.
-	Line4 string `pulumi:"line4"`
+	Line4 *string `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName string `pulumi:"middleName"`
+	MiddleName *string `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription string `pulumi:"municipalInscription"`
+	MunicipalInscription *string `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode string `pulumi:"phoneCountryCode"`
+	PhoneCountryCode *string `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber string `pulumi:"phoneNumber"`
+	PhoneNumber *string `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Province of the address.
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// State of the address.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// State Inscription.
-	StateInscription string `pulumi:"stateInscription"`
+	StateInscription *string `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 // GetSubscriptionBillingAddressInput is an input type that accepts GetSubscriptionBillingAddressArgs and GetSubscriptionBillingAddressOutput values.
@@ -7869,57 +6884,57 @@ type GetSubscriptionBillingAddressInput interface {
 
 type GetSubscriptionBillingAddressArgs struct {
 	// Address identifier.
-	AddressKey pulumi.StringInput `pulumi:"addressKey"`
+	AddressKey pulumi.StringPtrInput `pulumi:"addressKey"`
 	// Name of the city.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName pulumi.StringInput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass pulumi.StringInput `pulumi:"contributorClass"`
+	ContributorClass pulumi.StringPtrInput `pulumi:"contributorClass"`
 	// Country of the address.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// County of the address.
-	County pulumi.StringInput `pulumi:"county"`
+	County pulumi.StringPtrInput `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName pulumi.StringInput `pulumi:"departmentName"`
+	DepartmentName pulumi.StringPtrInput `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber pulumi.StringInput `pulumi:"internalNumber"`
+	InternalNumber pulumi.StringPtrInput `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle pulumi.StringInput `pulumi:"jobTitle"`
+	JobTitle pulumi.StringPtrInput `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Address line 1.
-	Line1 pulumi.StringInput `pulumi:"line1"`
+	Line1 pulumi.StringPtrInput `pulumi:"line1"`
 	// Address line 2.
-	Line2 pulumi.StringInput `pulumi:"line2"`
+	Line2 pulumi.StringPtrInput `pulumi:"line2"`
 	// Address line 3.
-	Line3 pulumi.StringInput `pulumi:"line3"`
+	Line3 pulumi.StringPtrInput `pulumi:"line3"`
 	// Address line 4.
-	Line4 pulumi.StringInput `pulumi:"line4"`
+	Line4 pulumi.StringPtrInput `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName pulumi.StringInput `pulumi:"middleName"`
+	MiddleName pulumi.StringPtrInput `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription pulumi.StringInput `pulumi:"municipalInscription"`
+	MunicipalInscription pulumi.StringPtrInput `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode pulumi.StringInput `pulumi:"phoneCountryCode"`
+	PhoneCountryCode pulumi.StringPtrInput `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber pulumi.StringInput `pulumi:"phoneNumber"`
+	PhoneNumber pulumi.StringPtrInput `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Province of the address.
-	Province pulumi.StringInput `pulumi:"province"`
+	Province pulumi.StringPtrInput `pulumi:"province"`
 	// State of the address.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// State Inscription.
-	StateInscription pulumi.StringInput `pulumi:"stateInscription"`
+	StateInscription pulumi.StringPtrInput `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName pulumi.StringInput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber pulumi.StringInput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
 func (GetSubscriptionBillingAddressArgs) ElementType() reflect.Type {
@@ -7932,12 +6947,6 @@ func (i GetSubscriptionBillingAddressArgs) ToGetSubscriptionBillingAddressOutput
 
 func (i GetSubscriptionBillingAddressArgs) ToGetSubscriptionBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionBillingAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionBillingAddressOutput)
-}
-
-func (i GetSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionBillingAddress] {
-	return pulumix.Output[GetSubscriptionBillingAddress]{
-		OutputState: i.ToGetSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionBillingAddressArray and GetSubscriptionBillingAddressArrayOutput values.
@@ -7965,12 +6974,6 @@ func (i GetSubscriptionBillingAddressArray) ToGetSubscriptionBillingAddressArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionBillingAddressArrayOutput)
 }
 
-func (i GetSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionBillingAddress]{
-		OutputState: i.ToGetSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -7985,140 +6988,134 @@ func (o GetSubscriptionBillingAddressOutput) ToGetSubscriptionBillingAddressOutp
 	return o
 }
 
-func (o GetSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionBillingAddress] {
-	return pulumix.Output[GetSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address identifier.
-func (o GetSubscriptionBillingAddressOutput) AddressKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.AddressKey }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) AddressKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.AddressKey }).(pulumi.StringPtrOutput)
 }
 
 // Name of the city.
-func (o GetSubscriptionBillingAddressOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company.
-func (o GetSubscriptionBillingAddressOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.CompanyName }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 // Contributor class of the customer company.
-func (o GetSubscriptionBillingAddressOutput) ContributorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.ContributorClass }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) ContributorClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.ContributorClass }).(pulumi.StringPtrOutput)
 }
 
 // Country of the address.
-func (o GetSubscriptionBillingAddressOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // County of the address.
-func (o GetSubscriptionBillingAddressOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.County }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // Department name of the customer company.
-func (o GetSubscriptionBillingAddressOutput) DepartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.DepartmentName }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) DepartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionBillingAddressOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Internal number of the customer company.
-func (o GetSubscriptionBillingAddressOutput) InternalNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.InternalNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) InternalNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.InternalNumber }).(pulumi.StringPtrOutput)
 }
 
 // Job title of the contact person.
-func (o GetSubscriptionBillingAddressOutput) JobTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.JobTitle }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) JobTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionBillingAddressOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Address line 1.
-func (o GetSubscriptionBillingAddressOutput) Line1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.Line1 }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) Line1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2.
-func (o GetSubscriptionBillingAddressOutput) Line2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.Line2 }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) Line2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3.
-func (o GetSubscriptionBillingAddressOutput) Line3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.Line3 }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) Line3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4.
-func (o GetSubscriptionBillingAddressOutput) Line4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.Line4 }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) Line4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
 // Middle name of the contact person.
-func (o GetSubscriptionBillingAddressOutput) MiddleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.MiddleName }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) MiddleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.MiddleName }).(pulumi.StringPtrOutput)
 }
 
 // Municipal Inscription.
-func (o GetSubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.MunicipalInscription }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.MunicipalInscription }).(pulumi.StringPtrOutput)
 }
 
 // Phone country code of the contact person.
-func (o GetSubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.PhoneCountryCode }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.PhoneCountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the contact person.
-func (o GetSubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.PhoneNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
 // Post code of the address.
-func (o GetSubscriptionBillingAddressOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Province of the address.
-func (o GetSubscriptionBillingAddressOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.Province }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // State of the address.
-func (o GetSubscriptionBillingAddressOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.State }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // State Inscription.
-func (o GetSubscriptionBillingAddressOutput) StateInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.StateInscription }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) StateInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.StateInscription }).(pulumi.StringPtrOutput)
 }
 
 // Street name of the address.
-func (o GetSubscriptionBillingAddressOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.StreetName }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // Street number of the address.
-func (o GetSubscriptionBillingAddressOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionBillingAddress) string { return v.StreetNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionBillingAddressOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionBillingAddress) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionBillingAddressArrayOutput struct{ *pulumi.OutputState }
@@ -8133,12 +7130,6 @@ func (o GetSubscriptionBillingAddressArrayOutput) ToGetSubscriptionBillingAddres
 
 func (o GetSubscriptionBillingAddressArrayOutput) ToGetSubscriptionBillingAddressArrayOutputWithContext(ctx context.Context) GetSubscriptionBillingAddressArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionBillingAddressOutput {
@@ -8180,12 +7171,6 @@ func (i GetSubscriptionPaymentGatewayArgs) ToGetSubscriptionPaymentGatewayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayOutput)
 }
 
-func (i GetSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGateway] {
-	return pulumix.Output[GetSubscriptionPaymentGateway]{
-		OutputState: i.ToGetSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionPaymentGatewayArray and GetSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionPaymentGatewayArrayInput` via:
 //
@@ -8211,12 +7196,6 @@ func (i GetSubscriptionPaymentGatewayArray) ToGetSubscriptionPaymentGatewayArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayArrayOutput)
 }
 
-func (i GetSubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionPaymentGateway]{
-		OutputState: i.ToGetSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -8229,12 +7208,6 @@ func (o GetSubscriptionPaymentGatewayOutput) ToGetSubscriptionPaymentGatewayOutp
 
 func (o GetSubscriptionPaymentGatewayOutput) ToGetSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionPaymentGatewayOutput {
 	return o
-}
-
-func (o GetSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGateway] {
-	return pulumix.Output[GetSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Merchant details.
@@ -8258,12 +7231,6 @@ func (o GetSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionPaymentGatewa
 	return o
 }
 
-func (o GetSubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionPaymentGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionPaymentGateway {
 		return vs[0].([]GetSubscriptionPaymentGateway)[vs[1].(int)]
@@ -8272,9 +7239,9 @@ func (o GetSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSu
 
 type GetSubscriptionPaymentGatewayMerchantDefinedData struct {
 	// Cloud account name.
-	CloudAccountName string `pulumi:"cloudAccountName"`
+	CloudAccountName *string `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 }
 
 // GetSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
@@ -8290,9 +7257,9 @@ type GetSubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 
 type GetSubscriptionPaymentGatewayMerchantDefinedDataArgs struct {
 	// Cloud account name.
-	CloudAccountName pulumi.StringInput `pulumi:"cloudAccountName"`
+	CloudAccountName pulumi.StringPtrInput `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 }
 
 func (GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ElementType() reflect.Type {
@@ -8305,12 +7272,6 @@ func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionP
 
 func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayMerchantDefinedDataOutput)
-}
-
-func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
@@ -8338,12 +7299,6 @@ func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArray) ToGetSubscription
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
-func (i GetSubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -8358,20 +7313,14 @@ func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGetSubscriptio
 	return o
 }
 
-func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Cloud account name.
-func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentGatewayMerchantDefinedData) string { return v.CloudAccountName }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentGatewayMerchantDefinedData) *string { return v.CloudAccountName }).(pulumi.StringPtrOutput)
 }
 
 // Promotion type code.
-func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentGatewayMerchantDefinedData) string { return v.PromoType }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentGatewayMerchantDefinedData) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput struct{ *pulumi.OutputState }
@@ -8388,12 +7337,6 @@ func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToGetSubscr
 	return o
 }
 
-func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionPaymentGatewayMerchantDefinedData {
 		return vs[0].([]GetSubscriptionPaymentGatewayMerchantDefinedData)[vs[1].(int)]
@@ -8402,27 +7345,27 @@ func (o GetSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pul
 
 type GetSubscriptionPaymentOption struct {
 	// Credit card type.
-	CreditCardType string `pulumi:"creditCardType"`
+	CreditCardType *string `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId string `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId *string `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits string `pulumi:"lastDigits"`
+	LastDigits *string `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard string `pulumi:"nameOnCard"`
+	NameOnCard *string `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration string `pulumi:"timeExpiration"`
+	TimeExpiration *string `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId string `pulumi:"walletInstrumentId"`
+	WalletInstrumentId *string `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId string `pulumi:"walletTransactionId"`
+	WalletTransactionId *string `pulumi:"walletTransactionId"`
 }
 
 // GetSubscriptionPaymentOptionInput is an input type that accepts GetSubscriptionPaymentOptionArgs and GetSubscriptionPaymentOptionOutput values.
@@ -8438,27 +7381,27 @@ type GetSubscriptionPaymentOptionInput interface {
 
 type GetSubscriptionPaymentOptionArgs struct {
 	// Credit card type.
-	CreditCardType pulumi.StringInput `pulumi:"creditCardType"`
+	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId pulumi.StringInput `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId pulumi.StringPtrInput `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits pulumi.StringInput `pulumi:"lastDigits"`
+	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard pulumi.StringInput `pulumi:"nameOnCard"`
+	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration pulumi.StringInput `pulumi:"timeExpiration"`
+	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId pulumi.StringInput `pulumi:"walletInstrumentId"`
+	WalletInstrumentId pulumi.StringPtrInput `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId pulumi.StringInput `pulumi:"walletTransactionId"`
+	WalletTransactionId pulumi.StringPtrInput `pulumi:"walletTransactionId"`
 }
 
 func (GetSubscriptionPaymentOptionArgs) ElementType() reflect.Type {
@@ -8471,12 +7414,6 @@ func (i GetSubscriptionPaymentOptionArgs) ToGetSubscriptionPaymentOptionOutput()
 
 func (i GetSubscriptionPaymentOptionArgs) ToGetSubscriptionPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionPaymentOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentOptionOutput)
-}
-
-func (i GetSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentOption] {
-	return pulumix.Output[GetSubscriptionPaymentOption]{
-		OutputState: i.ToGetSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionPaymentOptionArray and GetSubscriptionPaymentOptionArrayOutput values.
@@ -8504,12 +7441,6 @@ func (i GetSubscriptionPaymentOptionArray) ToGetSubscriptionPaymentOptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionPaymentOptionArrayOutput)
 }
 
-func (i GetSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionPaymentOption]{
-		OutputState: i.ToGetSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -8524,65 +7455,59 @@ func (o GetSubscriptionPaymentOptionOutput) ToGetSubscriptionPaymentOptionOutput
 	return o
 }
 
-func (o GetSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionPaymentOption] {
-	return pulumix.Output[GetSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credit card type.
-func (o GetSubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.CreditCardType }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.CreditCardType }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Agreement id for the paypal account.
-func (o GetSubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.ExtBillingAgreementId }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.ExtBillingAgreementId }).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionPaymentOptionOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last four digits of the card.
-func (o GetSubscriptionPaymentOptionOutput) LastDigits() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.LastDigits }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) LastDigits() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.LastDigits }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionPaymentOptionOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Name on the credit card.
-func (o GetSubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.NameOnCard }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.NameOnCard }).(pulumi.StringPtrOutput)
 }
 
 // Payment method
-func (o GetSubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Expired date of the credit card.
-func (o GetSubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.TimeExpiration }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.TimeExpiration }).(pulumi.StringPtrOutput)
 }
 
 // Wallet instrument internal id.
-func (o GetSubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.WalletInstrumentId }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.WalletInstrumentId }).(pulumi.StringPtrOutput)
 }
 
 // Wallet transaction id.
-func (o GetSubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionPaymentOption) string { return v.WalletTransactionId }).(pulumi.StringOutput)
+func (o GetSubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionPaymentOption) *string { return v.WalletTransactionId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionPaymentOptionArrayOutput struct{ *pulumi.OutputState }
@@ -8599,12 +7524,6 @@ func (o GetSubscriptionPaymentOptionArrayOutput) ToGetSubscriptionPaymentOptionA
 	return o
 }
 
-func (o GetSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionPaymentOption {
 		return vs[0].([]GetSubscriptionPaymentOption)[vs[1].(int)]
@@ -8613,47 +7532,47 @@ func (o GetSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSub
 
 type GetSubscriptionSubscription struct {
 	// Account type.
-	AccountType string `pulumi:"accountType"`
+	AccountType *string `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId string `pulumi:"billToCustAccountId"`
+	BillToCustAccountId *string `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses []GetSubscriptionSubscriptionBillingAddress `pulumi:"billingAddresses"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// GSI Subscription external code.
-	GsiOrgCode string `pulumi:"gsiOrgCode"`
+	GsiOrgCode *string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode string `pulumi:"languageCode"`
+	LanguageCode *string `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId string `pulumi:"organizationId"`
+	OrganizationId *string `pulumi:"organizationId"`
 	// Payment gateway details.
 	PaymentGateways []GetSubscriptionSubscriptionPaymentGateway `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions []GetSubscriptionSubscriptionPaymentOption `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType string `pulumi:"planType"`
+	PlanType *string `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId string `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId *string `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId string `pulumi:"shipToCustAcctSiteId"`
+	ShipToCustAcctSiteId *string `pulumi:"shipToCustAcctSiteId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber string `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber *string `pulumi:"subscriptionPlanNumber"`
 	// Tax details.
 	TaxInfos []GetSubscriptionSubscriptionTaxInfo `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv string `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv *string `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade string `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade *string `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState string `pulumi:"upgradeState"`
+	UpgradeState *string `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails string `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails *string `pulumi:"upgradeStateDetails"`
 }
 
 // GetSubscriptionSubscriptionInput is an input type that accepts GetSubscriptionSubscriptionArgs and GetSubscriptionSubscriptionOutput values.
@@ -8669,47 +7588,47 @@ type GetSubscriptionSubscriptionInput interface {
 
 type GetSubscriptionSubscriptionArgs struct {
 	// Account type.
-	AccountType pulumi.StringInput `pulumi:"accountType"`
+	AccountType pulumi.StringPtrInput `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId pulumi.StringInput `pulumi:"billToCustAccountId"`
+	BillToCustAccountId pulumi.StringPtrInput `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses GetSubscriptionSubscriptionBillingAddressArrayInput `pulumi:"billingAddresses"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// GSI Subscription external code.
-	GsiOrgCode pulumi.StringInput `pulumi:"gsiOrgCode"`
+	GsiOrgCode pulumi.StringPtrInput `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
+	LanguageCode pulumi.StringPtrInput `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId pulumi.StringInput `pulumi:"organizationId"`
+	OrganizationId pulumi.StringPtrInput `pulumi:"organizationId"`
 	// Payment gateway details.
 	PaymentGateways GetSubscriptionSubscriptionPaymentGatewayArrayInput `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions GetSubscriptionSubscriptionPaymentOptionArrayInput `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType pulumi.StringInput `pulumi:"planType"`
+	PlanType pulumi.StringPtrInput `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId pulumi.StringInput `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId pulumi.StringPtrInput `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId pulumi.StringInput `pulumi:"shipToCustAcctSiteId"`
+	ShipToCustAcctSiteId pulumi.StringPtrInput `pulumi:"shipToCustAcctSiteId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber pulumi.StringInput `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber pulumi.StringPtrInput `pulumi:"subscriptionPlanNumber"`
 	// Tax details.
 	TaxInfos GetSubscriptionSubscriptionTaxInfoArrayInput `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv pulumi.StringInput `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv pulumi.StringPtrInput `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade pulumi.StringInput `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade pulumi.StringPtrInput `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState pulumi.StringInput `pulumi:"upgradeState"`
+	UpgradeState pulumi.StringPtrInput `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails pulumi.StringInput `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails pulumi.StringPtrInput `pulumi:"upgradeStateDetails"`
 }
 
 func (GetSubscriptionSubscriptionArgs) ElementType() reflect.Type {
@@ -8722,12 +7641,6 @@ func (i GetSubscriptionSubscriptionArgs) ToGetSubscriptionSubscriptionOutput() G
 
 func (i GetSubscriptionSubscriptionArgs) ToGetSubscriptionSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionOutput)
-}
-
-func (i GetSubscriptionSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscription] {
-	return pulumix.Output[GetSubscriptionSubscription]{
-		OutputState: i.ToGetSubscriptionSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionSubscriptionArrayInput is an input type that accepts GetSubscriptionSubscriptionArray and GetSubscriptionSubscriptionArrayOutput values.
@@ -8755,12 +7668,6 @@ func (i GetSubscriptionSubscriptionArray) ToGetSubscriptionSubscriptionArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionArrayOutput)
 }
 
-func (i GetSubscriptionSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscription] {
-	return pulumix.Output[[]GetSubscriptionSubscription]{
-		OutputState: i.ToGetSubscriptionSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionOutput) ElementType() reflect.Type {
@@ -8775,20 +7682,14 @@ func (o GetSubscriptionSubscriptionOutput) ToGetSubscriptionSubscriptionOutputWi
 	return o
 }
 
-func (o GetSubscriptionSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscription] {
-	return pulumix.Output[GetSubscriptionSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Account type.
-func (o GetSubscriptionSubscriptionOutput) AccountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.AccountType }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) AccountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.AccountType }).(pulumi.StringPtrOutput)
 }
 
 // Bill to customer Account id.
-func (o GetSubscriptionSubscriptionOutput) BillToCustAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.BillToCustAccountId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) BillToCustAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.BillToCustAccountId }).(pulumi.StringPtrOutput)
 }
 
 // Address details model.
@@ -8799,33 +7700,33 @@ func (o GetSubscriptionSubscriptionOutput) BillingAddresses() GetSubscriptionSub
 }
 
 // Currency code
-func (o GetSubscriptionSubscriptionOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // GSI Subscription external code.
-func (o GetSubscriptionSubscriptionOutput) GsiOrgCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.GsiOrgCode }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) GsiOrgCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.GsiOrgCode }).(pulumi.StringPtrOutput)
 }
 
 // Subscription id identifier (OCID).
-func (o GetSubscriptionSubscriptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Payment intension.
-func (o GetSubscriptionSubscriptionOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscriptionSubscriptionOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Language short code (en, de, hu, etc)
-func (o GetSubscriptionSubscriptionOutput) LanguageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.LanguageCode }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) LanguageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.LanguageCode }).(pulumi.StringPtrOutput)
 }
 
 // GSI organization external identifier.
-func (o GetSubscriptionSubscriptionOutput) OrganizationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.OrganizationId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) OrganizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.OrganizationId }).(pulumi.StringPtrOutput)
 }
 
 // Payment gateway details.
@@ -8843,23 +7744,23 @@ func (o GetSubscriptionSubscriptionOutput) PaymentOptions() GetSubscriptionSubsc
 }
 
 // Subscription plan type.
-func (o GetSubscriptionSubscriptionOutput) PlanType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.PlanType }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) PlanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.PlanType }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account role.
-func (o GetSubscriptionSubscriptionOutput) ShipToCustAcctRoleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.ShipToCustAcctRoleId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) ShipToCustAcctRoleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.ShipToCustAcctRoleId }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account site address id.
-func (o GetSubscriptionSubscriptionOutput) ShipToCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.ShipToCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) ShipToCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.ShipToCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription plan number.
-func (o GetSubscriptionSubscriptionOutput) SubscriptionPlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.SubscriptionPlanNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) SubscriptionPlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.SubscriptionPlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // Tax details.
@@ -8868,28 +7769,28 @@ func (o GetSubscriptionSubscriptionOutput) TaxInfos() GetSubscriptionSubscriptio
 }
 
 // Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-func (o GetSubscriptionSubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.TimePersonalToCorporateConv }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.TimePersonalToCorporateConv }).(pulumi.StringPtrOutput)
 }
 
 // Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-func (o GetSubscriptionSubscriptionOutput) TimePlanUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.TimePlanUpgrade }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) TimePlanUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.TimePlanUpgrade }).(pulumi.StringPtrOutput)
 }
 
 // Start date of the subscription.
-func (o GetSubscriptionSubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Status of the upgrade.
-func (o GetSubscriptionSubscriptionOutput) UpgradeState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.UpgradeState }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) UpgradeState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.UpgradeState }).(pulumi.StringPtrOutput)
 }
 
 // This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-func (o GetSubscriptionSubscriptionOutput) UpgradeStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.UpgradeStateDetails }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionOutput) UpgradeStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) *string { return v.UpgradeStateDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -8906,12 +7807,6 @@ func (o GetSubscriptionSubscriptionArrayOutput) ToGetSubscriptionSubscriptionArr
 	return o
 }
 
-func (o GetSubscriptionSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscription] {
-	return pulumix.Output[[]GetSubscriptionSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscription {
 		return vs[0].([]GetSubscriptionSubscription)[vs[1].(int)]
@@ -8920,57 +7815,57 @@ func (o GetSubscriptionSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubs
 
 type GetSubscriptionSubscriptionBillingAddress struct {
 	// Address identifier.
-	AddressKey string `pulumi:"addressKey"`
+	AddressKey *string `pulumi:"addressKey"`
 	// Name of the city.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName string `pulumi:"companyName"`
+	CompanyName *string `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass string `pulumi:"contributorClass"`
+	ContributorClass *string `pulumi:"contributorClass"`
 	// Country of the address.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// County of the address.
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName string `pulumi:"departmentName"`
+	DepartmentName *string `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber string `pulumi:"internalNumber"`
+	InternalNumber *string `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle string `pulumi:"jobTitle"`
+	JobTitle *string `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Address line 1.
-	Line1 string `pulumi:"line1"`
+	Line1 *string `pulumi:"line1"`
 	// Address line 2.
-	Line2 string `pulumi:"line2"`
+	Line2 *string `pulumi:"line2"`
 	// Address line 3.
-	Line3 string `pulumi:"line3"`
+	Line3 *string `pulumi:"line3"`
 	// Address line 4.
-	Line4 string `pulumi:"line4"`
+	Line4 *string `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName string `pulumi:"middleName"`
+	MiddleName *string `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription string `pulumi:"municipalInscription"`
+	MunicipalInscription *string `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode string `pulumi:"phoneCountryCode"`
+	PhoneCountryCode *string `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber string `pulumi:"phoneNumber"`
+	PhoneNumber *string `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Province of the address.
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// State of the address.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// State Inscription.
-	StateInscription string `pulumi:"stateInscription"`
+	StateInscription *string `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 // GetSubscriptionSubscriptionBillingAddressInput is an input type that accepts GetSubscriptionSubscriptionBillingAddressArgs and GetSubscriptionSubscriptionBillingAddressOutput values.
@@ -8986,57 +7881,57 @@ type GetSubscriptionSubscriptionBillingAddressInput interface {
 
 type GetSubscriptionSubscriptionBillingAddressArgs struct {
 	// Address identifier.
-	AddressKey pulumi.StringInput `pulumi:"addressKey"`
+	AddressKey pulumi.StringPtrInput `pulumi:"addressKey"`
 	// Name of the city.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName pulumi.StringInput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass pulumi.StringInput `pulumi:"contributorClass"`
+	ContributorClass pulumi.StringPtrInput `pulumi:"contributorClass"`
 	// Country of the address.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// County of the address.
-	County pulumi.StringInput `pulumi:"county"`
+	County pulumi.StringPtrInput `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName pulumi.StringInput `pulumi:"departmentName"`
+	DepartmentName pulumi.StringPtrInput `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber pulumi.StringInput `pulumi:"internalNumber"`
+	InternalNumber pulumi.StringPtrInput `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle pulumi.StringInput `pulumi:"jobTitle"`
+	JobTitle pulumi.StringPtrInput `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Address line 1.
-	Line1 pulumi.StringInput `pulumi:"line1"`
+	Line1 pulumi.StringPtrInput `pulumi:"line1"`
 	// Address line 2.
-	Line2 pulumi.StringInput `pulumi:"line2"`
+	Line2 pulumi.StringPtrInput `pulumi:"line2"`
 	// Address line 3.
-	Line3 pulumi.StringInput `pulumi:"line3"`
+	Line3 pulumi.StringPtrInput `pulumi:"line3"`
 	// Address line 4.
-	Line4 pulumi.StringInput `pulumi:"line4"`
+	Line4 pulumi.StringPtrInput `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName pulumi.StringInput `pulumi:"middleName"`
+	MiddleName pulumi.StringPtrInput `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription pulumi.StringInput `pulumi:"municipalInscription"`
+	MunicipalInscription pulumi.StringPtrInput `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode pulumi.StringInput `pulumi:"phoneCountryCode"`
+	PhoneCountryCode pulumi.StringPtrInput `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber pulumi.StringInput `pulumi:"phoneNumber"`
+	PhoneNumber pulumi.StringPtrInput `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Province of the address.
-	Province pulumi.StringInput `pulumi:"province"`
+	Province pulumi.StringPtrInput `pulumi:"province"`
 	// State of the address.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// State Inscription.
-	StateInscription pulumi.StringInput `pulumi:"stateInscription"`
+	StateInscription pulumi.StringPtrInput `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName pulumi.StringInput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber pulumi.StringInput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
 func (GetSubscriptionSubscriptionBillingAddressArgs) ElementType() reflect.Type {
@@ -9049,12 +7944,6 @@ func (i GetSubscriptionSubscriptionBillingAddressArgs) ToGetSubscriptionSubscrip
 
 func (i GetSubscriptionSubscriptionBillingAddressArgs) ToGetSubscriptionSubscriptionBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionBillingAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionBillingAddressOutput)
-}
-
-func (i GetSubscriptionSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[GetSubscriptionSubscriptionBillingAddress]{
-		OutputState: i.ToGetSubscriptionSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionSubscriptionBillingAddressArray and GetSubscriptionSubscriptionBillingAddressArrayOutput values.
@@ -9082,12 +7971,6 @@ func (i GetSubscriptionSubscriptionBillingAddressArray) ToGetSubscriptionSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionBillingAddressArrayOutput)
 }
 
-func (i GetSubscriptionSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress]{
-		OutputState: i.ToGetSubscriptionSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -9102,140 +7985,134 @@ func (o GetSubscriptionSubscriptionBillingAddressOutput) ToGetSubscriptionSubscr
 	return o
 }
 
-func (o GetSubscriptionSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[GetSubscriptionSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address identifier.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) AddressKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.AddressKey }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) AddressKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.AddressKey }).(pulumi.StringPtrOutput)
 }
 
 // Name of the city.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.CompanyName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 // Contributor class of the customer company.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) ContributorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.ContributorClass }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) ContributorClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.ContributorClass }).(pulumi.StringPtrOutput)
 }
 
 // Country of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // County of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.County }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // Department name of the customer company.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) DepartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.DepartmentName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) DepartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Internal number of the customer company.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) InternalNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.InternalNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) InternalNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.InternalNumber }).(pulumi.StringPtrOutput)
 }
 
 // Job title of the contact person.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) JobTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.JobTitle }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) JobTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Address line 1.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) Line1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.Line1 }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) Line1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) Line2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.Line2 }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) Line2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) Line3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.Line3 }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) Line3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) Line4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.Line4 }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) Line4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
 // Middle name of the contact person.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) MiddleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.MiddleName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) MiddleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.MiddleName }).(pulumi.StringPtrOutput)
 }
 
 // Municipal Inscription.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.MunicipalInscription }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.MunicipalInscription }).(pulumi.StringPtrOutput)
 }
 
 // Phone country code of the contact person.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.PhoneCountryCode }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.PhoneCountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the contact person.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.PhoneNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
 // Post code of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Province of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.Province }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // State of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.State }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // State Inscription.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) StateInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.StateInscription }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) StateInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.StateInscription }).(pulumi.StringPtrOutput)
 }
 
 // Street name of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.StreetName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // Street number of the address.
-func (o GetSubscriptionSubscriptionBillingAddressOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) string { return v.StreetNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionBillingAddressOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionBillingAddress) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionSubscriptionBillingAddressArrayOutput struct{ *pulumi.OutputState }
@@ -9250,12 +8127,6 @@ func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) ToGetSubscriptionS
 
 func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) ToGetSubscriptionSubscriptionBillingAddressArrayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionBillingAddressArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionBillingAddressOutput {
@@ -9297,12 +8168,6 @@ func (i GetSubscriptionSubscriptionPaymentGatewayArgs) ToGetSubscriptionSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayOutput)
 }
 
-func (i GetSubscriptionSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[GetSubscriptionSubscriptionPaymentGateway]{
-		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayArray and GetSubscriptionSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionSubscriptionPaymentGatewayArrayInput` via:
 //
@@ -9328,12 +8193,6 @@ func (i GetSubscriptionSubscriptionPaymentGatewayArray) ToGetSubscriptionSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayArrayOutput)
 }
 
-func (i GetSubscriptionSubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway]{
-		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -9346,12 +8205,6 @@ func (o GetSubscriptionSubscriptionPaymentGatewayOutput) ToGetSubscriptionSubscr
 
 func (o GetSubscriptionSubscriptionPaymentGatewayOutput) ToGetSubscriptionSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentGatewayOutput {
 	return o
-}
-
-func (o GetSubscriptionSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[GetSubscriptionSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Merchant details.
@@ -9375,12 +8228,6 @@ func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) ToGetSubscriptionS
 	return o
 }
 
-func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionPaymentGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscriptionPaymentGateway {
 		return vs[0].([]GetSubscriptionSubscriptionPaymentGateway)[vs[1].(int)]
@@ -9389,9 +8236,9 @@ func (o GetSubscriptionSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.Int
 
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData struct {
 	// Cloud account name.
-	CloudAccountName string `pulumi:"cloudAccountName"`
+	CloudAccountName *string `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 }
 
 // GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
@@ -9407,9 +8254,9 @@ type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataInput interface
 
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs struct {
 	// Cloud account name.
-	CloudAccountName pulumi.StringInput `pulumi:"cloudAccountName"`
+	CloudAccountName pulumi.StringPtrInput `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 }
 
 func (GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ElementType() reflect.Type {
@@ -9422,12 +8269,6 @@ func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetS
 
 func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput)
-}
-
-func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
@@ -9455,12 +8296,6 @@ func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
-func (i GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -9475,20 +8310,16 @@ func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToGe
 	return o
 }
 
-func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Cloud account name.
-func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData) string { return v.CloudAccountName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData) *string {
+		return v.CloudAccountName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Promotion type code.
-func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData) string { return v.PromoType }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput struct{ *pulumi.OutputState }
@@ -9505,12 +8336,6 @@ func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 	return o
 }
 
-func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData {
 		return vs[0].([]GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData)[vs[1].(int)]
@@ -9519,27 +8344,27 @@ func (o GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 
 type GetSubscriptionSubscriptionPaymentOption struct {
 	// Credit card type.
-	CreditCardType string `pulumi:"creditCardType"`
+	CreditCardType *string `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId string `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId *string `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits string `pulumi:"lastDigits"`
+	LastDigits *string `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard string `pulumi:"nameOnCard"`
+	NameOnCard *string `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration string `pulumi:"timeExpiration"`
+	TimeExpiration *string `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId string `pulumi:"walletInstrumentId"`
+	WalletInstrumentId *string `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId string `pulumi:"walletTransactionId"`
+	WalletTransactionId *string `pulumi:"walletTransactionId"`
 }
 
 // GetSubscriptionSubscriptionPaymentOptionInput is an input type that accepts GetSubscriptionSubscriptionPaymentOptionArgs and GetSubscriptionSubscriptionPaymentOptionOutput values.
@@ -9555,27 +8380,27 @@ type GetSubscriptionSubscriptionPaymentOptionInput interface {
 
 type GetSubscriptionSubscriptionPaymentOptionArgs struct {
 	// Credit card type.
-	CreditCardType pulumi.StringInput `pulumi:"creditCardType"`
+	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId pulumi.StringInput `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId pulumi.StringPtrInput `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits pulumi.StringInput `pulumi:"lastDigits"`
+	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard pulumi.StringInput `pulumi:"nameOnCard"`
+	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration pulumi.StringInput `pulumi:"timeExpiration"`
+	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId pulumi.StringInput `pulumi:"walletInstrumentId"`
+	WalletInstrumentId pulumi.StringPtrInput `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId pulumi.StringInput `pulumi:"walletTransactionId"`
+	WalletTransactionId pulumi.StringPtrInput `pulumi:"walletTransactionId"`
 }
 
 func (GetSubscriptionSubscriptionPaymentOptionArgs) ElementType() reflect.Type {
@@ -9588,12 +8413,6 @@ func (i GetSubscriptionSubscriptionPaymentOptionArgs) ToGetSubscriptionSubscript
 
 func (i GetSubscriptionSubscriptionPaymentOptionArgs) ToGetSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionPaymentOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentOptionOutput)
-}
-
-func (i GetSubscriptionSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[GetSubscriptionSubscriptionPaymentOption]{
-		OutputState: i.ToGetSubscriptionSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionSubscriptionPaymentOptionArray and GetSubscriptionSubscriptionPaymentOptionArrayOutput values.
@@ -9621,12 +8440,6 @@ func (i GetSubscriptionSubscriptionPaymentOptionArray) ToGetSubscriptionSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionPaymentOptionArrayOutput)
 }
 
-func (i GetSubscriptionSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption]{
-		OutputState: i.ToGetSubscriptionSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -9641,65 +8454,59 @@ func (o GetSubscriptionSubscriptionPaymentOptionOutput) ToGetSubscriptionSubscri
 	return o
 }
 
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[GetSubscriptionSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credit card type.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.CreditCardType }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.CreditCardType }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Agreement id for the paypal account.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.ExtBillingAgreementId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.ExtBillingAgreementId }).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last four digits of the card.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) LastDigits() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.LastDigits }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) LastDigits() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.LastDigits }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Name on the credit card.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.NameOnCard }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.NameOnCard }).(pulumi.StringPtrOutput)
 }
 
 // Payment method
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Expired date of the credit card.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.TimeExpiration }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.TimeExpiration }).(pulumi.StringPtrOutput)
 }
 
 // Wallet instrument internal id.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.WalletInstrumentId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.WalletInstrumentId }).(pulumi.StringPtrOutput)
 }
 
 // Wallet transaction id.
-func (o GetSubscriptionSubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) string { return v.WalletTransactionId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionPaymentOption) *string { return v.WalletTransactionId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionSubscriptionPaymentOptionArrayOutput struct{ *pulumi.OutputState }
@@ -9716,12 +8523,6 @@ func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) ToGetSubscriptionSu
 	return o
 }
 
-func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscriptionPaymentOption {
 		return vs[0].([]GetSubscriptionSubscriptionPaymentOption)[vs[1].(int)]
@@ -9730,15 +8531,15 @@ func (o GetSubscriptionSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntI
 
 type GetSubscriptionSubscriptionTaxInfo struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode string `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode *string `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails string `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails *string `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj string `pulumi:"taxCnpj"`
+	TaxCnpj *string `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId string `pulumi:"taxPayerId"`
+	TaxPayerId *string `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber string `pulumi:"taxRegNumber"`
+	TaxRegNumber *string `pulumi:"taxRegNumber"`
 }
 
 // GetSubscriptionSubscriptionTaxInfoInput is an input type that accepts GetSubscriptionSubscriptionTaxInfoArgs and GetSubscriptionSubscriptionTaxInfoOutput values.
@@ -9754,15 +8555,15 @@ type GetSubscriptionSubscriptionTaxInfoInput interface {
 
 type GetSubscriptionSubscriptionTaxInfoArgs struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode pulumi.StringInput `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode pulumi.StringPtrInput `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails pulumi.StringInput `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails pulumi.StringPtrInput `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj pulumi.StringInput `pulumi:"taxCnpj"`
+	TaxCnpj pulumi.StringPtrInput `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId pulumi.StringInput `pulumi:"taxPayerId"`
+	TaxPayerId pulumi.StringPtrInput `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber pulumi.StringInput `pulumi:"taxRegNumber"`
+	TaxRegNumber pulumi.StringPtrInput `pulumi:"taxRegNumber"`
 }
 
 func (GetSubscriptionSubscriptionTaxInfoArgs) ElementType() reflect.Type {
@@ -9775,12 +8576,6 @@ func (i GetSubscriptionSubscriptionTaxInfoArgs) ToGetSubscriptionSubscriptionTax
 
 func (i GetSubscriptionSubscriptionTaxInfoArgs) ToGetSubscriptionSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionSubscriptionTaxInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionTaxInfoOutput)
-}
-
-func (i GetSubscriptionSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[GetSubscriptionSubscriptionTaxInfo]{
-		OutputState: i.ToGetSubscriptionSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionSubscriptionTaxInfoArray and GetSubscriptionSubscriptionTaxInfoArrayOutput values.
@@ -9808,12 +8603,6 @@ func (i GetSubscriptionSubscriptionTaxInfoArray) ToGetSubscriptionSubscriptionTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionSubscriptionTaxInfoArrayOutput)
 }
 
-func (i GetSubscriptionSubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo]{
-		OutputState: i.ToGetSubscriptionSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -9828,35 +8617,29 @@ func (o GetSubscriptionSubscriptionTaxInfoOutput) ToGetSubscriptionSubscriptionT
 	return o
 }
 
-func (o GetSubscriptionSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[GetSubscriptionSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Tax exemption reason code.
-func (o GetSubscriptionSubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) string { return v.NoTaxReasonCode }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) *string { return v.NoTaxReasonCode }).(pulumi.StringPtrOutput)
 }
 
 // Tax exemption reason description.
-func (o GetSubscriptionSubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) string { return v.NoTaxReasonCodeDetails }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) *string { return v.NoTaxReasonCodeDetails }).(pulumi.StringPtrOutput)
 }
 
 // Brazilian companies' CNPJ number.
-func (o GetSubscriptionSubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) string { return v.TaxCnpj }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) *string { return v.TaxCnpj }).(pulumi.StringPtrOutput)
 }
 
 // Tay payer identifier.
-func (o GetSubscriptionSubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) string { return v.TaxPayerId }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) *string { return v.TaxPayerId }).(pulumi.StringPtrOutput)
 }
 
 // Tax registration number.
-func (o GetSubscriptionSubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) string { return v.TaxRegNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionSubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscriptionTaxInfo) *string { return v.TaxRegNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionSubscriptionTaxInfoArrayOutput struct{ *pulumi.OutputState }
@@ -9873,12 +8656,6 @@ func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) ToGetSubscriptionSubscrip
 	return o
 }
 
-func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionSubscriptionTaxInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionSubscriptionTaxInfo {
 		return vs[0].([]GetSubscriptionSubscriptionTaxInfo)[vs[1].(int)]
@@ -9887,15 +8664,15 @@ func (o GetSubscriptionSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSubscriptionTaxInfo struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode string `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode *string `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails string `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails *string `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj string `pulumi:"taxCnpj"`
+	TaxCnpj *string `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId string `pulumi:"taxPayerId"`
+	TaxPayerId *string `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber string `pulumi:"taxRegNumber"`
+	TaxRegNumber *string `pulumi:"taxRegNumber"`
 }
 
 // GetSubscriptionTaxInfoInput is an input type that accepts GetSubscriptionTaxInfoArgs and GetSubscriptionTaxInfoOutput values.
@@ -9911,15 +8688,15 @@ type GetSubscriptionTaxInfoInput interface {
 
 type GetSubscriptionTaxInfoArgs struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode pulumi.StringInput `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode pulumi.StringPtrInput `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails pulumi.StringInput `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails pulumi.StringPtrInput `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj pulumi.StringInput `pulumi:"taxCnpj"`
+	TaxCnpj pulumi.StringPtrInput `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId pulumi.StringInput `pulumi:"taxPayerId"`
+	TaxPayerId pulumi.StringPtrInput `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber pulumi.StringInput `pulumi:"taxRegNumber"`
+	TaxRegNumber pulumi.StringPtrInput `pulumi:"taxRegNumber"`
 }
 
 func (GetSubscriptionTaxInfoArgs) ElementType() reflect.Type {
@@ -9932,12 +8709,6 @@ func (i GetSubscriptionTaxInfoArgs) ToGetSubscriptionTaxInfoOutput() GetSubscrip
 
 func (i GetSubscriptionTaxInfoArgs) ToGetSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionTaxInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionTaxInfoOutput)
-}
-
-func (i GetSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionTaxInfo] {
-	return pulumix.Output[GetSubscriptionTaxInfo]{
-		OutputState: i.ToGetSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionTaxInfoArray and GetSubscriptionTaxInfoArrayOutput values.
@@ -9965,12 +8736,6 @@ func (i GetSubscriptionTaxInfoArray) ToGetSubscriptionTaxInfoArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionTaxInfoArrayOutput)
 }
 
-func (i GetSubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionTaxInfo]{
-		OutputState: i.ToGetSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -9985,35 +8750,29 @@ func (o GetSubscriptionTaxInfoOutput) ToGetSubscriptionTaxInfoOutputWithContext(
 	return o
 }
 
-func (o GetSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionTaxInfo] {
-	return pulumix.Output[GetSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Tax exemption reason code.
-func (o GetSubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionTaxInfo) string { return v.NoTaxReasonCode }).(pulumi.StringOutput)
+func (o GetSubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionTaxInfo) *string { return v.NoTaxReasonCode }).(pulumi.StringPtrOutput)
 }
 
 // Tax exemption reason description.
-func (o GetSubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionTaxInfo) string { return v.NoTaxReasonCodeDetails }).(pulumi.StringOutput)
+func (o GetSubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionTaxInfo) *string { return v.NoTaxReasonCodeDetails }).(pulumi.StringPtrOutput)
 }
 
 // Brazilian companies' CNPJ number.
-func (o GetSubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionTaxInfo) string { return v.TaxCnpj }).(pulumi.StringOutput)
+func (o GetSubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionTaxInfo) *string { return v.TaxCnpj }).(pulumi.StringPtrOutput)
 }
 
 // Tay payer identifier.
-func (o GetSubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionTaxInfo) string { return v.TaxPayerId }).(pulumi.StringOutput)
+func (o GetSubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionTaxInfo) *string { return v.TaxPayerId }).(pulumi.StringPtrOutput)
 }
 
 // Tax registration number.
-func (o GetSubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionTaxInfo) string { return v.TaxRegNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionTaxInfo) *string { return v.TaxRegNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionTaxInfoArrayOutput struct{ *pulumi.OutputState }
@@ -10028,12 +8787,6 @@ func (o GetSubscriptionTaxInfoArrayOutput) ToGetSubscriptionTaxInfoArrayOutput()
 
 func (o GetSubscriptionTaxInfoArrayOutput) ToGetSubscriptionTaxInfoArrayOutputWithContext(ctx context.Context) GetSubscriptionTaxInfoArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionTaxInfoOutput {
@@ -10077,12 +8830,6 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterOutput)
 }
 
-func (i GetSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
@@ -10108,12 +8855,6 @@ func (i GetSubscriptionsFilterArray) ToGetSubscriptionsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterArrayOutput)
 }
 
-func (i GetSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -10126,12 +8867,6 @@ func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutput() GetSubscr
 
 func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsFilterOutput) Name() pulumi.StringOutput {
@@ -10158,12 +8893,6 @@ func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutput()
 
 func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionsFilterArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsFilterOutput {
@@ -10203,12 +8932,6 @@ func (i GetSubscriptionsSubscriptionCollectionArgs) ToGetSubscriptionsSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollection] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollection]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsSubscriptionCollectionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionArray and GetSubscriptionsSubscriptionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionArrayInput` via:
 //
@@ -10234,12 +8957,6 @@ func (i GetSubscriptionsSubscriptionCollectionArray) ToGetSubscriptionsSubscript
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollection] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollection]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionOutput) ElementType() reflect.Type {
@@ -10252,12 +8969,6 @@ func (o GetSubscriptionsSubscriptionCollectionOutput) ToGetSubscriptionsSubscrip
 
 func (o GetSubscriptionsSubscriptionCollectionOutput) ToGetSubscriptionsSubscriptionCollectionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollection] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionOutput) Items() GetSubscriptionsSubscriptionCollectionItemArrayOutput {
@@ -10280,12 +8991,6 @@ func (o GetSubscriptionsSubscriptionCollectionArrayOutput) ToGetSubscriptionsSub
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollection] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollection {
 		return vs[0].([]GetSubscriptionsSubscriptionCollection)[vs[1].(int)]
@@ -10294,54 +8999,54 @@ func (o GetSubscriptionsSubscriptionCollectionArrayOutput) Index(i pulumi.IntInp
 
 type GetSubscriptionsSubscriptionCollectionItem struct {
 	// Account type.
-	AccountType string `pulumi:"accountType"`
+	AccountType *string `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId string `pulumi:"billToCustAccountId"`
+	BillToCustAccountId *string `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses []GetSubscriptionsSubscriptionCollectionItemBillingAddress `pulumi:"billingAddresses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
-	Email        string `pulumi:"email"`
+	CurrencyCode *string `pulumi:"currencyCode"`
+	Email        *string `pulumi:"email"`
 	// GSI Subscription external code.
-	GsiOrgCode string `pulumi:"gsiOrgCode"`
+	GsiOrgCode *string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode string `pulumi:"languageCode"`
+	LanguageCode *string `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId string `pulumi:"organizationId"`
+	OrganizationId *string `pulumi:"organizationId"`
 	// The home region's public name of the logged in user.
-	OspHomeRegion string `pulumi:"ospHomeRegion"`
+	OspHomeRegion *string `pulumi:"ospHomeRegion"`
 	// Payment gateway details.
 	PaymentGateways []GetSubscriptionsSubscriptionCollectionItemPaymentGateway `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions []GetSubscriptionsSubscriptionCollectionItemPaymentOption `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType string `pulumi:"planType"`
+	PlanType *string `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId string `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId *string `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId string `pulumi:"shipToCustAcctSiteId"`
-	SubscriptionId       string `pulumi:"subscriptionId"`
+	ShipToCustAcctSiteId *string `pulumi:"shipToCustAcctSiteId"`
+	SubscriptionId       *string `pulumi:"subscriptionId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber string                                                   `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber *string                                                  `pulumi:"subscriptionPlanNumber"`
 	Subscriptions          []GetSubscriptionsSubscriptionCollectionItemSubscription `pulumi:"subscriptions"`
 	// Tax details.
 	TaxInfos []GetSubscriptionsSubscriptionCollectionItemTaxInfo `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv string `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv *string `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade string `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade *string `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState string `pulumi:"upgradeState"`
+	UpgradeState *string `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails string `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails *string `pulumi:"upgradeStateDetails"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemArgs and GetSubscriptionsSubscriptionCollectionItemOutput values.
@@ -10357,54 +9062,54 @@ type GetSubscriptionsSubscriptionCollectionItemInput interface {
 
 type GetSubscriptionsSubscriptionCollectionItemArgs struct {
 	// Account type.
-	AccountType pulumi.StringInput `pulumi:"accountType"`
+	AccountType pulumi.StringPtrInput `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId pulumi.StringInput `pulumi:"billToCustAccountId"`
+	BillToCustAccountId pulumi.StringPtrInput `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput `pulumi:"billingAddresses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
-	Email        pulumi.StringInput `pulumi:"email"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
+	Email        pulumi.StringPtrInput `pulumi:"email"`
 	// GSI Subscription external code.
-	GsiOrgCode pulumi.StringInput `pulumi:"gsiOrgCode"`
+	GsiOrgCode pulumi.StringPtrInput `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
+	LanguageCode pulumi.StringPtrInput `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId pulumi.StringInput `pulumi:"organizationId"`
+	OrganizationId pulumi.StringPtrInput `pulumi:"organizationId"`
 	// The home region's public name of the logged in user.
-	OspHomeRegion pulumi.StringInput `pulumi:"ospHomeRegion"`
+	OspHomeRegion pulumi.StringPtrInput `pulumi:"ospHomeRegion"`
 	// Payment gateway details.
 	PaymentGateways GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType pulumi.StringInput `pulumi:"planType"`
+	PlanType pulumi.StringPtrInput `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId pulumi.StringInput `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId pulumi.StringPtrInput `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId pulumi.StringInput `pulumi:"shipToCustAcctSiteId"`
-	SubscriptionId       pulumi.StringInput `pulumi:"subscriptionId"`
+	ShipToCustAcctSiteId pulumi.StringPtrInput `pulumi:"shipToCustAcctSiteId"`
+	SubscriptionId       pulumi.StringPtrInput `pulumi:"subscriptionId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber pulumi.StringInput                                               `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber pulumi.StringPtrInput                                            `pulumi:"subscriptionPlanNumber"`
 	Subscriptions          GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput `pulumi:"subscriptions"`
 	// Tax details.
 	TaxInfos GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv pulumi.StringInput `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv pulumi.StringPtrInput `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade pulumi.StringInput `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade pulumi.StringPtrInput `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState pulumi.StringInput `pulumi:"upgradeState"`
+	UpgradeState pulumi.StringPtrInput `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails pulumi.StringInput `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails pulumi.StringPtrInput `pulumi:"upgradeStateDetails"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemArgs) ElementType() reflect.Type {
@@ -10417,12 +9122,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemArgs) ToGetSubscriptionsSubscr
 
 func (i GetSubscriptionsSubscriptionCollectionItemArgs) ToGetSubscriptionsSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItem] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItem]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemArray and GetSubscriptionsSubscriptionCollectionItemArrayOutput values.
@@ -10450,12 +9149,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemArray) ToGetSubscriptionsSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemOutput) ElementType() reflect.Type {
@@ -10470,20 +9163,14 @@ func (o GetSubscriptionsSubscriptionCollectionItemOutput) ToGetSubscriptionsSubs
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItem] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Account type.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) AccountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.AccountType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) AccountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.AccountType }).(pulumi.StringPtrOutput)
 }
 
 // Bill to customer Account id.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) BillToCustAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.BillToCustAccountId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) BillToCustAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.BillToCustAccountId }).(pulumi.StringPtrOutput)
 }
 
 // Address details model.
@@ -10494,47 +9181,47 @@ func (o GetSubscriptionsSubscriptionCollectionItemOutput) BillingAddresses() Get
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Currency code
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // GSI Subscription external code.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) GsiOrgCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.GsiOrgCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) GsiOrgCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.GsiOrgCode }).(pulumi.StringPtrOutput)
 }
 
 // Subscription id identifier (OCID).
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Payment intension.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Language short code (en, de, hu, etc)
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) LanguageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.LanguageCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) LanguageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.LanguageCode }).(pulumi.StringPtrOutput)
 }
 
 // GSI organization external identifier.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) OrganizationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.OrganizationId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) OrganizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.OrganizationId }).(pulumi.StringPtrOutput)
 }
 
 // The home region's public name of the logged in user.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) OspHomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.OspHomeRegion }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) OspHomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.OspHomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // Payment gateway details.
@@ -10552,27 +9239,27 @@ func (o GetSubscriptionsSubscriptionCollectionItemOutput) PaymentOptions() GetSu
 }
 
 // Subscription plan type.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) PlanType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.PlanType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) PlanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.PlanType }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account role.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) ShipToCustAcctRoleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.ShipToCustAcctRoleId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) ShipToCustAcctRoleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.ShipToCustAcctRoleId }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account site address id.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) ShipToCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.ShipToCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) ShipToCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.ShipToCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription plan number.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) SubscriptionPlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.SubscriptionPlanNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) SubscriptionPlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.SubscriptionPlanNumber }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemOutput) Subscriptions() GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput {
@@ -10589,28 +9276,28 @@ func (o GetSubscriptionsSubscriptionCollectionItemOutput) TaxInfos() GetSubscrip
 }
 
 // Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.TimePersonalToCorporateConv }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) TimePersonalToCorporateConv() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.TimePersonalToCorporateConv }).(pulumi.StringPtrOutput)
 }
 
 // Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) TimePlanUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.TimePlanUpgrade }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) TimePlanUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.TimePlanUpgrade }).(pulumi.StringPtrOutput)
 }
 
 // Start date of the subscription.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Status of the upgrade.
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) UpgradeState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.UpgradeState }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) UpgradeState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.UpgradeState }).(pulumi.StringPtrOutput)
 }
 
 // This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-func (o GetSubscriptionsSubscriptionCollectionItemOutput) UpgradeStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.UpgradeStateDetails }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) UpgradeStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) *string { return v.UpgradeStateDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10627,12 +9314,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) ToGetSubscription
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItem {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItem)[vs[1].(int)]
@@ -10641,57 +9322,57 @@ func (o GetSubscriptionsSubscriptionCollectionItemArrayOutput) Index(i pulumi.In
 
 type GetSubscriptionsSubscriptionCollectionItemBillingAddress struct {
 	// Address identifier.
-	AddressKey string `pulumi:"addressKey"`
+	AddressKey *string `pulumi:"addressKey"`
 	// Name of the city.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName string `pulumi:"companyName"`
+	CompanyName *string `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass string `pulumi:"contributorClass"`
+	ContributorClass *string `pulumi:"contributorClass"`
 	// Country of the address.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// County of the address.
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName string `pulumi:"departmentName"`
+	DepartmentName *string `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber string `pulumi:"internalNumber"`
+	InternalNumber *string `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle string `pulumi:"jobTitle"`
+	JobTitle *string `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Address line 1.
-	Line1 string `pulumi:"line1"`
+	Line1 *string `pulumi:"line1"`
 	// Address line 2.
-	Line2 string `pulumi:"line2"`
+	Line2 *string `pulumi:"line2"`
 	// Address line 3.
-	Line3 string `pulumi:"line3"`
+	Line3 *string `pulumi:"line3"`
 	// Address line 4.
-	Line4 string `pulumi:"line4"`
+	Line4 *string `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName string `pulumi:"middleName"`
+	MiddleName *string `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription string `pulumi:"municipalInscription"`
+	MunicipalInscription *string `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode string `pulumi:"phoneCountryCode"`
+	PhoneCountryCode *string `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber string `pulumi:"phoneNumber"`
+	PhoneNumber *string `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Province of the address.
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// State of the address.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// State Inscription.
-	StateInscription string `pulumi:"stateInscription"`
+	StateInscription *string `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemBillingAddressInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs and GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput values.
@@ -10707,57 +9388,57 @@ type GetSubscriptionsSubscriptionCollectionItemBillingAddressInput interface {
 
 type GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs struct {
 	// Address identifier.
-	AddressKey pulumi.StringInput `pulumi:"addressKey"`
+	AddressKey pulumi.StringPtrInput `pulumi:"addressKey"`
 	// Name of the city.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName pulumi.StringInput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass pulumi.StringInput `pulumi:"contributorClass"`
+	ContributorClass pulumi.StringPtrInput `pulumi:"contributorClass"`
 	// Country of the address.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// County of the address.
-	County pulumi.StringInput `pulumi:"county"`
+	County pulumi.StringPtrInput `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName pulumi.StringInput `pulumi:"departmentName"`
+	DepartmentName pulumi.StringPtrInput `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber pulumi.StringInput `pulumi:"internalNumber"`
+	InternalNumber pulumi.StringPtrInput `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle pulumi.StringInput `pulumi:"jobTitle"`
+	JobTitle pulumi.StringPtrInput `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Address line 1.
-	Line1 pulumi.StringInput `pulumi:"line1"`
+	Line1 pulumi.StringPtrInput `pulumi:"line1"`
 	// Address line 2.
-	Line2 pulumi.StringInput `pulumi:"line2"`
+	Line2 pulumi.StringPtrInput `pulumi:"line2"`
 	// Address line 3.
-	Line3 pulumi.StringInput `pulumi:"line3"`
+	Line3 pulumi.StringPtrInput `pulumi:"line3"`
 	// Address line 4.
-	Line4 pulumi.StringInput `pulumi:"line4"`
+	Line4 pulumi.StringPtrInput `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName pulumi.StringInput `pulumi:"middleName"`
+	MiddleName pulumi.StringPtrInput `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription pulumi.StringInput `pulumi:"municipalInscription"`
+	MunicipalInscription pulumi.StringPtrInput `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode pulumi.StringInput `pulumi:"phoneCountryCode"`
+	PhoneCountryCode pulumi.StringPtrInput `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber pulumi.StringInput `pulumi:"phoneNumber"`
+	PhoneNumber pulumi.StringPtrInput `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Province of the address.
-	Province pulumi.StringInput `pulumi:"province"`
+	Province pulumi.StringPtrInput `pulumi:"province"`
 	// State of the address.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// State Inscription.
-	StateInscription pulumi.StringInput `pulumi:"stateInscription"`
+	StateInscription pulumi.StringPtrInput `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName pulumi.StringInput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber pulumi.StringInput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ElementType() reflect.Type {
@@ -10770,12 +9451,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ToGetSubsc
 
 func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ToGetSubscriptionsSubscriptionCollectionItemBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemBillingAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemBillingAddressArray and GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput values.
@@ -10803,12 +9478,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArray) ToGetSubs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ElementType() reflect.Type {
@@ -10823,140 +9492,136 @@ func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ToGetSub
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address identifier.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) AddressKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.AddressKey }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) AddressKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.AddressKey }).(pulumi.StringPtrOutput)
 }
 
 // Name of the city.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.CompanyName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
 // Contributor class of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ContributorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.ContributorClass }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) ContributorClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.ContributorClass }).(pulumi.StringPtrOutput)
 }
 
 // Country of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // County of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.County }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // Department name of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) DepartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.DepartmentName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) DepartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Internal number of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) InternalNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.InternalNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) InternalNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.InternalNumber }).(pulumi.StringPtrOutput)
 }
 
 // Job title of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) JobTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.JobTitle }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) JobTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Address line 1.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.Line1 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.Line2 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.Line3 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.Line4 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Line4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
 // Middle name of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) MiddleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.MiddleName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) MiddleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.MiddleName }).(pulumi.StringPtrOutput)
 }
 
 // Municipal Inscription.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) MunicipalInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.MunicipalInscription }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) MunicipalInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string {
+		return v.MunicipalInscription
+	}).(pulumi.StringPtrOutput)
 }
 
 // Phone country code of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) PhoneCountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.PhoneCountryCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) PhoneCountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.PhoneCountryCode }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.PhoneNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
 // Post code of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Province of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.Province }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
 // State of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.State }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // State Inscription.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) StateInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.StateInscription }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) StateInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.StateInscription }).(pulumi.StringPtrOutput)
 }
 
 // Street name of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.StreetName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
 // Street number of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) string { return v.StreetNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemBillingAddress) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput struct{ *pulumi.OutputState }
@@ -10971,12 +9636,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) ToG
 
 func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemBillingAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemBillingAddressOutput {
@@ -11018,12 +9677,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayInput` via:
 //
@@ -11049,12 +9702,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray) ToGetSubs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ElementType() reflect.Type {
@@ -11067,12 +9714,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ToGetSub
 
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Merchant details.
@@ -11096,12 +9737,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) ToG
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemPaymentGateway)[vs[1].(int)]
@@ -11110,9 +9745,9 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayArrayOutput) Ind
 
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData struct {
 	// Cloud account name.
-	CloudAccountName string `pulumi:"cloudAccountName"`
+	CloudAccountName *string `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput values.
@@ -11128,9 +9763,9 @@ type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData
 
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs struct {
 	// Cloud account name.
-	CloudAccountName pulumi.StringInput `pulumi:"cloudAccountName"`
+	CloudAccountName pulumi.StringPtrInput `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs) ElementType() reflect.Type {
@@ -11143,12 +9778,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 
 func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray and GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput values.
@@ -11176,12 +9805,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -11196,24 +9819,18 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Cloud account name.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData) string {
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData) *string {
 		return v.CloudAccountName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Promotion type code.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData) string {
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData) *string {
 		return v.PromoType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput struct{ *pulumi.OutputState }
@@ -11230,12 +9847,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedData)[vs[1].(int)]
@@ -11244,27 +9855,27 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedD
 
 type GetSubscriptionsSubscriptionCollectionItemPaymentOption struct {
 	// Credit card type.
-	CreditCardType string `pulumi:"creditCardType"`
+	CreditCardType *string `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId string `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId *string `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits string `pulumi:"lastDigits"`
+	LastDigits *string `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard string `pulumi:"nameOnCard"`
+	NameOnCard *string `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration string `pulumi:"timeExpiration"`
+	TimeExpiration *string `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId string `pulumi:"walletInstrumentId"`
+	WalletInstrumentId *string `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId string `pulumi:"walletTransactionId"`
+	WalletTransactionId *string `pulumi:"walletTransactionId"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemPaymentOptionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs and GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput values.
@@ -11280,27 +9891,27 @@ type GetSubscriptionsSubscriptionCollectionItemPaymentOptionInput interface {
 
 type GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs struct {
 	// Credit card type.
-	CreditCardType pulumi.StringInput `pulumi:"creditCardType"`
+	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId pulumi.StringInput `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId pulumi.StringPtrInput `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits pulumi.StringInput `pulumi:"lastDigits"`
+	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard pulumi.StringInput `pulumi:"nameOnCard"`
+	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration pulumi.StringInput `pulumi:"timeExpiration"`
+	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId pulumi.StringInput `pulumi:"walletInstrumentId"`
+	WalletInstrumentId pulumi.StringPtrInput `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId pulumi.StringInput `pulumi:"walletTransactionId"`
+	WalletTransactionId pulumi.StringPtrInput `pulumi:"walletTransactionId"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ElementType() reflect.Type {
@@ -11313,12 +9924,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ToGetSubscr
 
 func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray and GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput values.
@@ -11346,12 +9951,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ElementType() reflect.Type {
@@ -11366,65 +9965,61 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ToGetSubs
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credit card type.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) CreditCardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.CreditCardType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) CreditCardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.CreditCardType }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Agreement id for the paypal account.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.ExtBillingAgreementId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string {
+		return v.ExtBillingAgreementId
+	}).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last four digits of the card.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) LastDigits() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.LastDigits }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) LastDigits() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.LastDigits }).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Name on the credit card.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) NameOnCard() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.NameOnCard }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) NameOnCard() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.NameOnCard }).(pulumi.StringPtrOutput)
 }
 
 // Payment method
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Expired date of the credit card.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) TimeExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.TimeExpiration }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) TimeExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.TimeExpiration }).(pulumi.StringPtrOutput)
 }
 
 // Wallet instrument internal id.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) WalletInstrumentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.WalletInstrumentId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) WalletInstrumentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.WalletInstrumentId }).(pulumi.StringPtrOutput)
 }
 
 // Wallet transaction id.
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) WalletTransactionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) string { return v.WalletTransactionId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput) WalletTransactionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemPaymentOption) *string { return v.WalletTransactionId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput struct{ *pulumi.OutputState }
@@ -11441,12 +10036,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) ToGe
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemPaymentOption {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemPaymentOption)[vs[1].(int)]
@@ -11455,47 +10044,47 @@ func (o GetSubscriptionsSubscriptionCollectionItemPaymentOptionArrayOutput) Inde
 
 type GetSubscriptionsSubscriptionCollectionItemSubscription struct {
 	// Account type.
-	AccountType string `pulumi:"accountType"`
+	AccountType *string `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId string `pulumi:"billToCustAccountId"`
+	BillToCustAccountId *string `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses []GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress `pulumi:"billingAddresses"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// GSI Subscription external code.
-	GsiOrgCode string `pulumi:"gsiOrgCode"`
+	GsiOrgCode *string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode string `pulumi:"languageCode"`
+	LanguageCode *string `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId string `pulumi:"organizationId"`
+	OrganizationId *string `pulumi:"organizationId"`
 	// Payment gateway details.
 	PaymentGateways []GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions []GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType string `pulumi:"planType"`
+	PlanType *string `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId string `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId *string `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId string `pulumi:"shipToCustAcctSiteId"`
+	ShipToCustAcctSiteId *string `pulumi:"shipToCustAcctSiteId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber string `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber *string `pulumi:"subscriptionPlanNumber"`
 	// Tax details.
 	TaxInfos []GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv string `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv *string `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade string `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade *string `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState string `pulumi:"upgradeState"`
+	UpgradeState *string `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails string `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails *string `pulumi:"upgradeStateDetails"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput values.
@@ -11511,47 +10100,47 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionInput interface {
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs struct {
 	// Account type.
-	AccountType pulumi.StringInput `pulumi:"accountType"`
+	AccountType pulumi.StringPtrInput `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId pulumi.StringInput `pulumi:"billToCustAccountId"`
+	BillToCustAccountId pulumi.StringPtrInput `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput `pulumi:"billingAddresses"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// GSI Subscription external code.
-	GsiOrgCode pulumi.StringInput `pulumi:"gsiOrgCode"`
+	GsiOrgCode pulumi.StringPtrInput `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
+	LanguageCode pulumi.StringPtrInput `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId pulumi.StringInput `pulumi:"organizationId"`
+	OrganizationId pulumi.StringPtrInput `pulumi:"organizationId"`
 	// Payment gateway details.
 	PaymentGateways GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType pulumi.StringInput `pulumi:"planType"`
+	PlanType pulumi.StringPtrInput `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId pulumi.StringInput `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId pulumi.StringPtrInput `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId pulumi.StringInput `pulumi:"shipToCustAcctSiteId"`
+	ShipToCustAcctSiteId pulumi.StringPtrInput `pulumi:"shipToCustAcctSiteId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber pulumi.StringInput `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber pulumi.StringPtrInput `pulumi:"subscriptionPlanNumber"`
 	// Tax details.
 	TaxInfos GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv pulumi.StringInput `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv pulumi.StringPtrInput `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade pulumi.StringInput `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade pulumi.StringPtrInput `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState pulumi.StringInput `pulumi:"upgradeState"`
+	UpgradeState pulumi.StringPtrInput `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails pulumi.StringInput `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails pulumi.StringPtrInput `pulumi:"upgradeStateDetails"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ElementType() reflect.Type {
@@ -11564,12 +10153,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ToGetSubscri
 
 func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput values.
@@ -11597,12 +10180,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ElementType() reflect.Type {
@@ -11617,20 +10194,14 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Account type.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) AccountType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.AccountType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) AccountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.AccountType }).(pulumi.StringPtrOutput)
 }
 
 // Bill to customer Account id.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) BillToCustAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.BillToCustAccountId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) BillToCustAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.BillToCustAccountId }).(pulumi.StringPtrOutput)
 }
 
 // Address details model.
@@ -11641,33 +10212,33 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) BillingAdd
 }
 
 // Currency code
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // GSI Subscription external code.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) GsiOrgCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.GsiOrgCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) GsiOrgCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.GsiOrgCode }).(pulumi.StringPtrOutput)
 }
 
 // Subscription id identifier (OCID).
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Payment intension.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Language short code (en, de, hu, etc)
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) LanguageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.LanguageCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) LanguageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.LanguageCode }).(pulumi.StringPtrOutput)
 }
 
 // GSI organization external identifier.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) OrganizationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.OrganizationId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) OrganizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.OrganizationId }).(pulumi.StringPtrOutput)
 }
 
 // Payment gateway details.
@@ -11685,23 +10256,25 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) PaymentOpt
 }
 
 // Subscription plan type.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) PlanType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.PlanType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) PlanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.PlanType }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account role.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ShipToCustAcctRoleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.ShipToCustAcctRoleId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ShipToCustAcctRoleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.ShipToCustAcctRoleId }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account site address id.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ShipToCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.ShipToCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) ShipToCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.ShipToCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription plan number.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) SubscriptionPlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.SubscriptionPlanNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) SubscriptionPlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string {
+		return v.SubscriptionPlanNumber
+	}).(pulumi.StringPtrOutput)
 }
 
 // Tax details.
@@ -11712,30 +10285,30 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TaxInfos()
 }
 
 // Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TimePersonalToCorporateConv() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string {
 		return v.TimePersonalToCorporateConv
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TimePlanUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.TimePlanUpgrade }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TimePlanUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.TimePlanUpgrade }).(pulumi.StringPtrOutput)
 }
 
 // Start date of the subscription.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Status of the upgrade.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) UpgradeState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.UpgradeState }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) UpgradeState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.UpgradeState }).(pulumi.StringPtrOutput)
 }
 
 // This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) UpgradeStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.UpgradeStateDetails }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) UpgradeStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) *string { return v.UpgradeStateDetails }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -11752,12 +10325,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscription {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscription)[vs[1].(int)]
@@ -11766,57 +10333,57 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionArrayOutput) Index
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress struct {
 	// Address identifier.
-	AddressKey string `pulumi:"addressKey"`
+	AddressKey *string `pulumi:"addressKey"`
 	// Name of the city.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName string `pulumi:"companyName"`
+	CompanyName *string `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass string `pulumi:"contributorClass"`
+	ContributorClass *string `pulumi:"contributorClass"`
 	// Country of the address.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// County of the address.
-	County string `pulumi:"county"`
+	County *string `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName string `pulumi:"departmentName"`
+	DepartmentName *string `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber string `pulumi:"internalNumber"`
+	InternalNumber *string `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle string `pulumi:"jobTitle"`
+	JobTitle *string `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Address line 1.
-	Line1 string `pulumi:"line1"`
+	Line1 *string `pulumi:"line1"`
 	// Address line 2.
-	Line2 string `pulumi:"line2"`
+	Line2 *string `pulumi:"line2"`
 	// Address line 3.
-	Line3 string `pulumi:"line3"`
+	Line3 *string `pulumi:"line3"`
 	// Address line 4.
-	Line4 string `pulumi:"line4"`
+	Line4 *string `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName string `pulumi:"middleName"`
+	MiddleName *string `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription string `pulumi:"municipalInscription"`
+	MunicipalInscription *string `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode string `pulumi:"phoneCountryCode"`
+	PhoneCountryCode *string `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber string `pulumi:"phoneNumber"`
+	PhoneNumber *string `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Province of the address.
-	Province string `pulumi:"province"`
+	Province *string `pulumi:"province"`
 	// State of the address.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// State Inscription.
-	StateInscription string `pulumi:"stateInscription"`
+	StateInscription *string `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName string `pulumi:"streetName"`
+	StreetName *string `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber string `pulumi:"streetNumber"`
+	StreetNumber *string `pulumi:"streetNumber"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput values.
@@ -11832,57 +10399,57 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressInput i
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs struct {
 	// Address identifier.
-	AddressKey pulumi.StringInput `pulumi:"addressKey"`
+	AddressKey pulumi.StringPtrInput `pulumi:"addressKey"`
 	// Name of the city.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Name of the customer company.
-	CompanyName pulumi.StringInput `pulumi:"companyName"`
+	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
 	// Contributor class of the customer company.
-	ContributorClass pulumi.StringInput `pulumi:"contributorClass"`
+	ContributorClass pulumi.StringPtrInput `pulumi:"contributorClass"`
 	// Country of the address.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// County of the address.
-	County pulumi.StringInput `pulumi:"county"`
+	County pulumi.StringPtrInput `pulumi:"county"`
 	// Department name of the customer company.
-	DepartmentName pulumi.StringInput `pulumi:"departmentName"`
+	DepartmentName pulumi.StringPtrInput `pulumi:"departmentName"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Internal number of the customer company.
-	InternalNumber pulumi.StringInput `pulumi:"internalNumber"`
+	InternalNumber pulumi.StringPtrInput `pulumi:"internalNumber"`
 	// Job title of the contact person.
-	JobTitle pulumi.StringInput `pulumi:"jobTitle"`
+	JobTitle pulumi.StringPtrInput `pulumi:"jobTitle"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Address line 1.
-	Line1 pulumi.StringInput `pulumi:"line1"`
+	Line1 pulumi.StringPtrInput `pulumi:"line1"`
 	// Address line 2.
-	Line2 pulumi.StringInput `pulumi:"line2"`
+	Line2 pulumi.StringPtrInput `pulumi:"line2"`
 	// Address line 3.
-	Line3 pulumi.StringInput `pulumi:"line3"`
+	Line3 pulumi.StringPtrInput `pulumi:"line3"`
 	// Address line 4.
-	Line4 pulumi.StringInput `pulumi:"line4"`
+	Line4 pulumi.StringPtrInput `pulumi:"line4"`
 	// Middle name of the contact person.
-	MiddleName pulumi.StringInput `pulumi:"middleName"`
+	MiddleName pulumi.StringPtrInput `pulumi:"middleName"`
 	// Municipal Inscription.
-	MunicipalInscription pulumi.StringInput `pulumi:"municipalInscription"`
+	MunicipalInscription pulumi.StringPtrInput `pulumi:"municipalInscription"`
 	// Phone country code of the contact person.
-	PhoneCountryCode pulumi.StringInput `pulumi:"phoneCountryCode"`
+	PhoneCountryCode pulumi.StringPtrInput `pulumi:"phoneCountryCode"`
 	// Phone number of the contact person.
-	PhoneNumber pulumi.StringInput `pulumi:"phoneNumber"`
+	PhoneNumber pulumi.StringPtrInput `pulumi:"phoneNumber"`
 	// Post code of the address.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Province of the address.
-	Province pulumi.StringInput `pulumi:"province"`
+	Province pulumi.StringPtrInput `pulumi:"province"`
 	// State of the address.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// State Inscription.
-	StateInscription pulumi.StringInput `pulumi:"stateInscription"`
+	StateInscription pulumi.StringPtrInput `pulumi:"stateInscription"`
 	// Street name of the address.
-	StreetName pulumi.StringInput `pulumi:"streetName"`
+	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
 	// Street number of the address.
-	StreetNumber pulumi.StringInput `pulumi:"streetNumber"`
+	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs) ElementType() reflect.Type {
@@ -11895,12 +10462,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs
 
 func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput values.
@@ -11928,12 +10489,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ElementType() reflect.Type {
@@ -11948,170 +10503,170 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutp
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address identifier.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) AddressKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) AddressKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.AddressKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Name of the city.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Name of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) CompanyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) CompanyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.CompanyName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Contributor class of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ContributorClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) ContributorClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.ContributorClass
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Country of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // County of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) County() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.County }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) County() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
 // Department name of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) DepartmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) DepartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.DepartmentName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.EmailAddress
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.FirstName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Internal number of the customer company.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) InternalNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) InternalNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.InternalNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Job title of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) JobTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.JobTitle }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) JobTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
+		return v.JobTitle
+	}).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
+		return v.LastName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Address line 1.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.Line1 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 2.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.Line2 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 3.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line3() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.Line3 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line3() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
 // Address line 4.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line4() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.Line4 }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Line4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
 // Middle name of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) MiddleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) MiddleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.MiddleName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Municipal Inscription.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.MunicipalInscription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Phone country code of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.PhoneCountryCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the contact person.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.PhoneNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Post code of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.PostalCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Province of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Province() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.Province }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) Province() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
+		return v.Province
+	}).(pulumi.StringPtrOutput)
 }
 
 // State of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string { return v.State }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // State Inscription.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) StateInscription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) StateInscription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.StateInscription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Street name of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) StreetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) StreetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.StreetName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Street number of the address.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) StreetNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput) StreetNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress) *string {
 		return v.StreetNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput struct{ *pulumi.OutputState }
@@ -12126,12 +10681,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArra
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddress]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressOutput {
@@ -12173,12 +10722,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayInput` via:
 //
@@ -12204,12 +10747,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput) ElementType() reflect.Type {
@@ -12222,12 +10759,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutp
 
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Merchant details.
@@ -12251,12 +10782,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArra
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGateway)[vs[1].(int)]
@@ -12265,9 +10790,9 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayArra
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData struct {
 	// Cloud account name.
-	CloudAccountName string `pulumi:"cloudAccountName"`
+	CloudAccountName *string `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput values.
@@ -12283,9 +10808,9 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchan
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs struct {
 	// Cloud account name.
-	CloudAccountName pulumi.StringInput `pulumi:"cloudAccountName"`
+	CloudAccountName pulumi.StringPtrInput `pulumi:"cloudAccountName"`
 	// Promotion type code.
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs) ElementType() reflect.Type {
@@ -12298,12 +10823,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 
 func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput values.
@@ -12331,12 +10850,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) ElementType() reflect.Type {
@@ -12351,24 +10864,18 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Cloud account name.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData) *string {
 		return v.CloudAccountName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Promotion type code.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData) *string {
 		return v.PromoType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput struct{ *pulumi.OutputState }
@@ -12385,12 +10892,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedData)[vs[1].(int)]
@@ -12399,27 +10900,27 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerc
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption struct {
 	// Credit card type.
-	CreditCardType string `pulumi:"creditCardType"`
+	CreditCardType *string `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId string `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId *string `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits string `pulumi:"lastDigits"`
+	LastDigits *string `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard string `pulumi:"nameOnCard"`
+	NameOnCard *string `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration string `pulumi:"timeExpiration"`
+	TimeExpiration *string `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId string `pulumi:"walletInstrumentId"`
+	WalletInstrumentId *string `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId string `pulumi:"walletTransactionId"`
+	WalletTransactionId *string `pulumi:"walletTransactionId"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput values.
@@ -12435,27 +10936,27 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionInput in
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs struct {
 	// Credit card type.
-	CreditCardType pulumi.StringInput `pulumi:"creditCardType"`
+	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
 	// The email address of the paypal user.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Agreement id for the paypal account.
-	ExtBillingAgreementId pulumi.StringInput `pulumi:"extBillingAgreementId"`
+	ExtBillingAgreementId pulumi.StringPtrInput `pulumi:"extBillingAgreementId"`
 	// First name of the paypal user.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last four digits of the card.
-	LastDigits pulumi.StringInput `pulumi:"lastDigits"`
+	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
 	// Last name of the paypal user.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Name on the credit card.
-	NameOnCard pulumi.StringInput `pulumi:"nameOnCard"`
+	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
 	// Payment method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// Expired date of the credit card.
-	TimeExpiration pulumi.StringInput `pulumi:"timeExpiration"`
+	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
 	// Wallet instrument internal id.
-	WalletInstrumentId pulumi.StringInput `pulumi:"walletInstrumentId"`
+	WalletInstrumentId pulumi.StringPtrInput `pulumi:"walletInstrumentId"`
 	// Wallet transaction id.
-	WalletTransactionId pulumi.StringInput `pulumi:"walletTransactionId"`
+	WalletTransactionId pulumi.StringPtrInput `pulumi:"walletTransactionId"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs) ElementType() reflect.Type {
@@ -12468,12 +10969,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs)
 
 func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput values.
@@ -12501,12 +10996,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ElementType() reflect.Type {
@@ -12521,83 +11010,79 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutpu
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credit card type.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.CreditCardType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The email address of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.EmailAddress
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Agreement id for the paypal account.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.ExtBillingAgreementId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // First name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
+		return v.FirstName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Last four digits of the card.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) LastDigits() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) LastDigits() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.LastDigits
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Last name of the paypal user.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Name on the credit card.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.NameOnCard
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Payment method
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.PaymentMethod
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Expired date of the credit card.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.TimeExpiration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Wallet instrument internal id.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.WalletInstrumentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Wallet transaction id.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption) *string {
 		return v.WalletTransactionId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput struct{ *pulumi.OutputState }
@@ -12614,12 +11099,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOption)[vs[1].(int)]
@@ -12628,15 +11107,15 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionArray
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode string `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode *string `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails string `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails *string `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj string `pulumi:"taxCnpj"`
+	TaxCnpj *string `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId string `pulumi:"taxPayerId"`
+	TaxPayerId *string `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber string `pulumi:"taxRegNumber"`
+	TaxRegNumber *string `pulumi:"taxRegNumber"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs and GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput values.
@@ -12652,15 +11131,15 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoInput interfac
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode pulumi.StringInput `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode pulumi.StringPtrInput `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails pulumi.StringInput `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails pulumi.StringPtrInput `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj pulumi.StringInput `pulumi:"taxCnpj"`
+	TaxCnpj pulumi.StringPtrInput `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId pulumi.StringInput `pulumi:"taxPayerId"`
+	TaxPayerId pulumi.StringPtrInput `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber pulumi.StringInput `pulumi:"taxRegNumber"`
+	TaxRegNumber pulumi.StringPtrInput `pulumi:"taxRegNumber"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ElementType() reflect.Type {
@@ -12673,12 +11152,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ToGet
 
 func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray and GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput values.
@@ -12706,12 +11179,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ElementType() reflect.Type {
@@ -12726,37 +11193,33 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ToG
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Tax exemption reason code.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) string { return v.NoTaxReasonCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) *string {
+		return v.NoTaxReasonCode
+	}).(pulumi.StringPtrOutput)
 }
 
 // Tax exemption reason description.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) string {
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) *string {
 		return v.NoTaxReasonCodeDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Brazilian companies' CNPJ number.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) string { return v.TaxCnpj }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) *string { return v.TaxCnpj }).(pulumi.StringPtrOutput)
 }
 
 // Tay payer identifier.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) string { return v.TaxPayerId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) *string { return v.TaxPayerId }).(pulumi.StringPtrOutput)
 }
 
 // Tax registration number.
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) string { return v.TaxRegNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo) *string { return v.TaxRegNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput struct{ *pulumi.OutputState }
@@ -12773,12 +11236,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo {
 		return vs[0].([]GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfo)[vs[1].(int)]
@@ -12787,15 +11244,15 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoArrayOutput
 
 type GetSubscriptionsSubscriptionCollectionItemTaxInfo struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode string `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode *string `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails string `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails *string `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj string `pulumi:"taxCnpj"`
+	TaxCnpj *string `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId string `pulumi:"taxPayerId"`
+	TaxPayerId *string `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber string `pulumi:"taxRegNumber"`
+	TaxRegNumber *string `pulumi:"taxRegNumber"`
 }
 
 // GetSubscriptionsSubscriptionCollectionItemTaxInfoInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs and GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput values.
@@ -12811,15 +11268,15 @@ type GetSubscriptionsSubscriptionCollectionItemTaxInfoInput interface {
 
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs struct {
 	// Tax exemption reason code.
-	NoTaxReasonCode pulumi.StringInput `pulumi:"noTaxReasonCode"`
+	NoTaxReasonCode pulumi.StringPtrInput `pulumi:"noTaxReasonCode"`
 	// Tax exemption reason description.
-	NoTaxReasonCodeDetails pulumi.StringInput `pulumi:"noTaxReasonCodeDetails"`
+	NoTaxReasonCodeDetails pulumi.StringPtrInput `pulumi:"noTaxReasonCodeDetails"`
 	// Brazilian companies' CNPJ number.
-	TaxCnpj pulumi.StringInput `pulumi:"taxCnpj"`
+	TaxCnpj pulumi.StringPtrInput `pulumi:"taxCnpj"`
 	// Tay payer identifier.
-	TaxPayerId pulumi.StringInput `pulumi:"taxPayerId"`
+	TaxPayerId pulumi.StringPtrInput `pulumi:"taxPayerId"`
 	// Tax registration number.
-	TaxRegNumber pulumi.StringInput `pulumi:"taxRegNumber"`
+	TaxRegNumber pulumi.StringPtrInput `pulumi:"taxRegNumber"`
 }
 
 func (GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ElementType() reflect.Type {
@@ -12832,12 +11289,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ToGetSubscription
 
 func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ToGetSubscriptionsSubscriptionCollectionItemTaxInfoOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemTaxInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayInput is an input type that accepts GetSubscriptionsSubscriptionCollectionItemTaxInfoArray and GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput values.
@@ -12865,12 +11316,6 @@ func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArray) ToGetSubscriptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCollectionItemTaxInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ElementType() reflect.Type {
@@ -12885,35 +11330,29 @@ func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToGetSubscripti
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Tax exemption reason code.
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) NoTaxReasonCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) string { return v.NoTaxReasonCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) NoTaxReasonCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) *string { return v.NoTaxReasonCode }).(pulumi.StringPtrOutput)
 }
 
 // Tax exemption reason description.
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) string { return v.NoTaxReasonCodeDetails }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) *string { return v.NoTaxReasonCodeDetails }).(pulumi.StringPtrOutput)
 }
 
 // Brazilian companies' CNPJ number.
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) TaxCnpj() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) string { return v.TaxCnpj }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) TaxCnpj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) *string { return v.TaxCnpj }).(pulumi.StringPtrOutput)
 }
 
 // Tay payer identifier.
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) TaxPayerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) string { return v.TaxPayerId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) TaxPayerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) *string { return v.TaxPayerId }).(pulumi.StringPtrOutput)
 }
 
 // Tax registration number.
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) TaxRegNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) string { return v.TaxRegNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput) TaxRegNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemTaxInfo) *string { return v.TaxRegNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput struct{ *pulumi.OutputState }
@@ -12928,12 +11367,6 @@ func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) ToGetSubsc
 
 func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) ToGetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCollectionItemTaxInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionCollectionItemTaxInfoArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCollectionItemTaxInfoOutput {

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Key/Value pair of Property
         /// </summary>
-        public readonly ImmutableDictionary<string, object> PropertiesMap;
+        public readonly ImmutableDictionary<string, object>? PropertiesMap;
 
         [OutputConstructor]
-        private GetDiscoveryJobDiscoveryDetailTagResult(ImmutableDictionary<string, object> propertiesMap)
+        private GetDiscoveryJobDiscoveryDetailTagResult(ImmutableDictionary<string, object>? propertiesMap)
         {
             PropertiesMap = propertiesMap;
         }

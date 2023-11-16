@@ -43,7 +43,7 @@ class GetNamespaceStorageRecalledDataSizeResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,34 +56,22 @@ class GetNamespaceStorageRecalledDataSizeResult:
 
     @property
     @pulumi.getter(name="notRecalledDataInBytes")
-    def not_recalled_data_in_bytes(self) -> str:
-        """
-        This is the size of the archival data not recalled yet
-        """
+    def not_recalled_data_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "not_recalled_data_in_bytes")
 
     @property
     @pulumi.getter(name="recalledDataInBytes")
-    def recalled_data_in_bytes(self) -> str:
-        """
-        This is the size of the recalled data
-        """
+    def recalled_data_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "recalled_data_in_bytes")
 
     @property
     @pulumi.getter(name="timeDataEnded")
-    def time_data_ended(self) -> str:
-        """
-        This is the end of the time range of the archival data
-        """
+    def time_data_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_data_ended")
 
     @property
     @pulumi.getter(name="timeDataStarted")
-    def time_data_started(self) -> str:
-        """
-        This is the start of the time range of the archival data
-        """
+    def time_data_started(self) -> Optional[str]:
         return pulumi.get(self, "time_data_started")
 
 
@@ -106,25 +94,7 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[str] = None,
                                              time_data_started: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceStorageRecalledDataSizeResult:
     """
-    This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the datasize of recalls for a given timeframe
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=var["namespace_storage_recalled_data_size_namespace"],
-        time_data_ended=var["namespace_storage_recalled_data_size_time_data_ended"],
-        time_data_started=var["namespace_storage_recalled_data_size_time_data_started"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str time_data_ended: This is the end of the time range for recalled data
-    :param str time_data_started: This is the start of the time range for recalled data
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -148,24 +118,6 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
                                                     time_data_started: Optional[pulumi.Input[Optional[str]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceStorageRecalledDataSizeResult]:
     """
-    This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API gets the datasize of recalls for a given timeframe
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=var["namespace_storage_recalled_data_size_namespace"],
-        time_data_ended=var["namespace_storage_recalled_data_size_time_data_ended"],
-        time_data_started=var["namespace_storage_recalled_data_size_time_data_started"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str time_data_ended: This is the end of the time range for recalled data
-    :param str time_data_started: This is the start of the time range for recalled data
+    Use this data source to access information about an existing resource.
     """
     ...

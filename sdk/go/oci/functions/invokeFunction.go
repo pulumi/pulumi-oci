@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
@@ -55,11 +54,11 @@ type InvokeFunction struct {
 
 	Base64EncodeContent pulumi.BoolPtrOutput `pulumi:"base64EncodeContent"`
 	// Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-	Content pulumi.StringOutput `pulumi:"content"`
+	Content pulumi.StringPtrOutput `pulumi:"content"`
 	// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-	FnIntent pulumi.StringOutput `pulumi:"fnIntent"`
+	FnIntent pulumi.StringPtrOutput `pulumi:"fnIntent"`
 	// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-	FnInvokeType pulumi.StringOutput `pulumi:"fnInvokeType"`
+	FnInvokeType pulumi.StringPtrOutput `pulumi:"fnInvokeType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
 	FunctionId pulumi.StringOutput `pulumi:"functionId"`
 	// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
@@ -67,10 +66,10 @@ type InvokeFunction struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	InputBodySourcePath pulumi.StringPtrOutput `pulumi:"inputBodySourcePath"`
-	InvokeEndpoint      pulumi.StringOutput    `pulumi:"invokeEndpoint"`
+	InvokeEndpoint      pulumi.StringPtrOutput `pulumi:"invokeEndpoint"`
 	// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-	InvokeFunctionBody              pulumi.StringOutput `pulumi:"invokeFunctionBody"`
-	InvokeFunctionBodyBase64Encoded pulumi.StringOutput `pulumi:"invokeFunctionBodyBase64Encoded"`
+	InvokeFunctionBody              pulumi.StringPtrOutput `pulumi:"invokeFunctionBody"`
+	InvokeFunctionBodyBase64Encoded pulumi.StringPtrOutput `pulumi:"invokeFunctionBodyBase64Encoded"`
 }
 
 // NewInvokeFunction registers a new resource with the given unique name, arguments, and options.
@@ -211,12 +210,6 @@ func (i *InvokeFunction) ToInvokeFunctionOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeFunctionOutput)
 }
 
-func (i *InvokeFunction) ToOutput(ctx context.Context) pulumix.Output[*InvokeFunction] {
-	return pulumix.Output[*InvokeFunction]{
-		OutputState: i.ToInvokeFunctionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InvokeFunctionArrayInput is an input type that accepts InvokeFunctionArray and InvokeFunctionArrayOutput values.
 // You can construct a concrete instance of `InvokeFunctionArrayInput` via:
 //
@@ -240,12 +233,6 @@ func (i InvokeFunctionArray) ToInvokeFunctionArrayOutput() InvokeFunctionArrayOu
 
 func (i InvokeFunctionArray) ToInvokeFunctionArrayOutputWithContext(ctx context.Context) InvokeFunctionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeFunctionArrayOutput)
-}
-
-func (i InvokeFunctionArray) ToOutput(ctx context.Context) pulumix.Output[[]*InvokeFunction] {
-	return pulumix.Output[[]*InvokeFunction]{
-		OutputState: i.ToInvokeFunctionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InvokeFunctionMapInput is an input type that accepts InvokeFunctionMap and InvokeFunctionMapOutput values.
@@ -273,12 +260,6 @@ func (i InvokeFunctionMap) ToInvokeFunctionMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(InvokeFunctionMapOutput)
 }
 
-func (i InvokeFunctionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InvokeFunction] {
-	return pulumix.Output[map[string]*InvokeFunction]{
-		OutputState: i.ToInvokeFunctionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InvokeFunctionOutput struct{ *pulumi.OutputState }
 
 func (InvokeFunctionOutput) ElementType() reflect.Type {
@@ -293,29 +274,23 @@ func (o InvokeFunctionOutput) ToInvokeFunctionOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o InvokeFunctionOutput) ToOutput(ctx context.Context) pulumix.Output[*InvokeFunction] {
-	return pulumix.Output[*InvokeFunction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o InvokeFunctionOutput) Base64EncodeContent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InvokeFunction) pulumi.BoolPtrOutput { return v.Base64EncodeContent }).(pulumi.BoolPtrOutput)
 }
 
 // Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
-func (o InvokeFunctionOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.Content }).(pulumi.StringOutput)
+func (o InvokeFunctionOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-func (o InvokeFunctionOutput) FnIntent() pulumi.StringOutput {
-	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.FnIntent }).(pulumi.StringOutput)
+func (o InvokeFunctionOutput) FnIntent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.FnIntent }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-func (o InvokeFunctionOutput) FnInvokeType() pulumi.StringOutput {
-	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.FnInvokeType }).(pulumi.StringOutput)
+func (o InvokeFunctionOutput) FnInvokeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.FnInvokeType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -331,17 +306,17 @@ func (o InvokeFunctionOutput) InputBodySourcePath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.InputBodySourcePath }).(pulumi.StringPtrOutput)
 }
 
-func (o InvokeFunctionOutput) InvokeEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.InvokeEndpoint }).(pulumi.StringOutput)
+func (o InvokeFunctionOutput) InvokeEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.InvokeEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
-func (o InvokeFunctionOutput) InvokeFunctionBody() pulumi.StringOutput {
-	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.InvokeFunctionBody }).(pulumi.StringOutput)
+func (o InvokeFunctionOutput) InvokeFunctionBody() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.InvokeFunctionBody }).(pulumi.StringPtrOutput)
 }
 
-func (o InvokeFunctionOutput) InvokeFunctionBodyBase64Encoded() pulumi.StringOutput {
-	return o.ApplyT(func(v *InvokeFunction) pulumi.StringOutput { return v.InvokeFunctionBodyBase64Encoded }).(pulumi.StringOutput)
+func (o InvokeFunctionOutput) InvokeFunctionBodyBase64Encoded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InvokeFunction) pulumi.StringPtrOutput { return v.InvokeFunctionBodyBase64Encoded }).(pulumi.StringPtrOutput)
 }
 
 type InvokeFunctionArrayOutput struct{ *pulumi.OutputState }
@@ -356,12 +331,6 @@ func (o InvokeFunctionArrayOutput) ToInvokeFunctionArrayOutput() InvokeFunctionA
 
 func (o InvokeFunctionArrayOutput) ToInvokeFunctionArrayOutputWithContext(ctx context.Context) InvokeFunctionArrayOutput {
 	return o
-}
-
-func (o InvokeFunctionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InvokeFunction] {
-	return pulumix.Output[[]*InvokeFunction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeFunctionArrayOutput) Index(i pulumi.IntInput) InvokeFunctionOutput {
@@ -382,12 +351,6 @@ func (o InvokeFunctionMapOutput) ToInvokeFunctionMapOutput() InvokeFunctionMapOu
 
 func (o InvokeFunctionMapOutput) ToInvokeFunctionMapOutputWithContext(ctx context.Context) InvokeFunctionMapOutput {
 	return o
-}
-
-func (o InvokeFunctionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InvokeFunction] {
-	return pulumix.Output[map[string]*InvokeFunction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InvokeFunctionMapOutput) MapIndex(k pulumi.StringInput) InvokeFunctionOutput {

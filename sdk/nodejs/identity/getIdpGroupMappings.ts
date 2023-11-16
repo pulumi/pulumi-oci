@@ -52,7 +52,7 @@ export interface GetIdpGroupMappingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the `IdentityProvider` this mapping belongs to.
      */
@@ -60,7 +60,7 @@ export interface GetIdpGroupMappingsResult {
     /**
      * The list of idp_group_mappings.
      */
-    readonly idpGroupMappings: outputs.Identity.GetIdpGroupMappingsIdpGroupMapping[];
+    readonly idpGroupMappings?: outputs.Identity.GetIdpGroupMappingsIdpGroupMapping[];
 }
 /**
  * This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.

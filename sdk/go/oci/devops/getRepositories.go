@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
@@ -76,7 +75,7 @@ type GetRepositoriesResult struct {
 	CompartmentId *string                 `pulumi:"compartmentId"`
 	Filters       []GetRepositoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique name of a repository. This value is mutable.
 	Name *string `pulumi:"name"`
 	// The OCID of the DevOps project containing the repository.
@@ -135,12 +134,6 @@ func (o GetRepositoriesResultOutput) ToGetRepositoriesResultOutputWithContext(ct
 	return o
 }
 
-func (o GetRepositoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesResult] {
-	return pulumix.Output[GetRepositoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the repository's compartment.
 func (o GetRepositoriesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoriesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -151,8 +144,8 @@ func (o GetRepositoriesResultOutput) Filters() GetRepositoriesFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique name of a repository. This value is mutable.

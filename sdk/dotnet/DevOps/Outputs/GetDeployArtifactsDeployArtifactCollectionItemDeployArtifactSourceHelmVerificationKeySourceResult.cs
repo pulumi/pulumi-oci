@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Current version of Base64 encoding of the public key which is in binary GPG exported format.
         /// </summary>
-        public readonly string CurrentPublicKey;
+        public readonly string? CurrentPublicKey;
         /// <summary>
         /// Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
         /// </summary>
-        public readonly string PreviousPublicKey;
+        public readonly string? PreviousPublicKey;
         /// <summary>
         /// The OCID of the Vault Secret containing the verification key versions.
         /// </summary>
-        public readonly string VaultSecretId;
+        public readonly string? VaultSecretId;
         /// <summary>
         /// Specifies type of verification material.
         /// </summary>
-        public readonly string VerificationKeySourceType;
+        public readonly string? VerificationKeySourceType;
 
         [OutputConstructor]
         private GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceResult(
-            string currentPublicKey,
+            string? currentPublicKey,
 
-            string previousPublicKey,
+            string? previousPublicKey,
 
-            string vaultSecretId,
+            string? vaultSecretId,
 
-            string verificationKeySourceType)
+            string? verificationKeySourceType)
         {
             CurrentPublicKey = currentPublicKey;
             PreviousPublicKey = previousPublicKey;

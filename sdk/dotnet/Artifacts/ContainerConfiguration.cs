@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Artifacts
         /// The tenancy namespace used in the container repository path.
         /// </summary>
         [Output("namespace")]
-        public Output<string> Namespace { get; private set; } = null!;
+        public Output<string?> Namespace { get; private set; } = null!;
 
 
         /// <summary>

@@ -9,6 +9,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeEffec
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGuardTargetTargetDetectorRecipe {
@@ -16,147 +18,147 @@ public final class GetGuardTargetTargetDetectorRecipe {
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return ResponderRule description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return detector for the rule
      * 
      */
-    private String detector;
+    private @Nullable String detector;
     /**
      * @return Unique identifier for Detector Recipe of which this is an extension
      * 
      */
-    private String detectorRecipeId;
+    private @Nullable String detectorRecipeId;
     /**
      * @return List of detector rules for the detector type for recipe - user input
      * 
      */
-    private List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules;
+    private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules;
     /**
      * @return ResponderRule display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return List of effective detector rules for the detector type for recipe after applying defaults
      * 
      */
-    private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
+    private @Nullable List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
      * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Owner of ResponderRecipe
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return The current state of the ResponderRule.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetGuardTargetTargetDetectorRecipe() {}
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return ResponderRule description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return detector for the rule
      * 
      */
-    public String detector() {
-        return this.detector;
+    public Optional<String> detector() {
+        return Optional.ofNullable(this.detector);
     }
     /**
      * @return Unique identifier for Detector Recipe of which this is an extension
      * 
      */
-    public String detectorRecipeId() {
-        return this.detectorRecipeId;
+    public Optional<String> detectorRecipeId() {
+        return Optional.ofNullable(this.detectorRecipeId);
     }
     /**
      * @return List of detector rules for the detector type for recipe - user input
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules() {
-        return this.detectorRules;
+        return this.detectorRules == null ? List.of() : this.detectorRules;
     }
     /**
      * @return ResponderRule display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return List of effective detector rules for the detector type for recipe after applying defaults
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules() {
-        return this.effectiveDetectorRules;
+        return this.effectiveDetectorRules == null ? List.of() : this.effectiveDetectorRules;
     }
     /**
      * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Owner of ResponderRecipe
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return The current state of the ResponderRule.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the target was created. Format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the target was updated. Format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -168,18 +170,18 @@ public final class GetGuardTargetTargetDetectorRecipe {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String description;
-        private String detector;
-        private String detectorRecipeId;
-        private List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules;
-        private String displayName;
-        private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
-        private String id;
-        private String owner;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable String description;
+        private @Nullable String detector;
+        private @Nullable String detectorRecipeId;
+        private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules;
+        private @Nullable String displayName;
+        private @Nullable List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
+        private @Nullable String id;
+        private @Nullable String owner;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetGuardTargetTargetDetectorRecipe defaults) {
     	      Objects.requireNonNull(defaults);
@@ -198,69 +200,69 @@ public final class GetGuardTargetTargetDetectorRecipe {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder detector(String detector) {
-            this.detector = Objects.requireNonNull(detector);
+        public Builder detector(@Nullable String detector) {
+            this.detector = detector;
             return this;
         }
         @CustomType.Setter
-        public Builder detectorRecipeId(String detectorRecipeId) {
-            this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
+        public Builder detectorRecipeId(@Nullable String detectorRecipeId) {
+            this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
-        public Builder detectorRules(List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules) {
-            this.detectorRules = Objects.requireNonNull(detectorRules);
+        public Builder detectorRules(@Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRule> detectorRules) {
+            this.detectorRules = detectorRules;
             return this;
         }
         public Builder detectorRules(GetGuardTargetTargetDetectorRecipeDetectorRule... detectorRules) {
             return detectorRules(List.of(detectorRules));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder effectiveDetectorRules(List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
-            this.effectiveDetectorRules = Objects.requireNonNull(effectiveDetectorRules);
+        public Builder effectiveDetectorRules(@Nullable List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules) {
+            this.effectiveDetectorRules = effectiveDetectorRules;
             return this;
         }
         public Builder effectiveDetectorRules(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule... effectiveDetectorRules) {
             return effectiveDetectorRules(List.of(effectiveDetectorRules));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetGuardTargetTargetDetectorRecipe build() {

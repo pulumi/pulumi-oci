@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Invoices Invoice Line resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -67,8 +66,8 @@ type GetInvoicesInvoiceLineArgs struct {
 type GetInvoicesInvoiceLineResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	InternalInvoiceId string `pulumi:"internalInvoiceId"`
+	Id                *string `pulumi:"id"`
+	InternalInvoiceId string  `pulumi:"internalInvoiceId"`
 	// Invoice line list elements
 	Items         []GetInvoicesInvoiceLineItem `pulumi:"items"`
 	OspHomeRegion string                       `pulumi:"ospHomeRegion"`
@@ -116,19 +115,13 @@ func (o GetInvoicesInvoiceLineResultOutput) ToGetInvoicesInvoiceLineResultOutput
 	return o
 }
 
-func (o GetInvoicesInvoiceLineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLineResult] {
-	return pulumix.Output[GetInvoicesInvoiceLineResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceLineResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvoicesInvoiceLineResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInvoicesInvoiceLineResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLineResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLineResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLineResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInvoicesInvoiceLineResultOutput) InternalInvoiceId() pulumi.StringOutput {

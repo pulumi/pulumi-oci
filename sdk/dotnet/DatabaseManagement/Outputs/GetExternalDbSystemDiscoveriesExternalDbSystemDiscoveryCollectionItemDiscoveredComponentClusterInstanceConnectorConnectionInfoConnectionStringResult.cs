@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The host name of the database or the SCAN name in case of a RAC database.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The list of host names of the ASM instances.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The port used to connect to the ASM instance.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The protocol used to connect to the ASM instance.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The service name of the ASM instance.
         /// </summary>
-        public readonly string Service;
+        public readonly string? Service;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult(
-            string hostName,
+            string? hostName,
 
             ImmutableArray<string> hosts,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string service)
+            string? service)
         {
             HostName = hostName;
             Hosts = hosts;

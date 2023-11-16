@@ -61,82 +61,52 @@ class GetSubscriptionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> str:
-        """
-        The time when this suscription was created.
-        """
+    def created_time(self) -> Optional[str]:
         return pulumi.get(self, "created_time")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deliveryPolicy")
-    def delivery_policy(self) -> str:
-        """
-        The delivery policy of the subscription. Stored as a JSON string.
-        """
+    def delivery_policy(self) -> Optional[str]:
         return pulumi.get(self, "delivery_policy")
 
     @property
     @pulumi.getter
-    def endpoint(self) -> str:
-        """
-        A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
-        """
+    def endpoint(self) -> Optional[str]:
         return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        For optimistic concurrency control. See `if-match`.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocol used for the subscription.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -146,10 +116,7 @@ class GetSubscriptionResult:
 
     @property
     @pulumi.getter(name="topicId")
-    def topic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
-        """
+    def topic_id(self) -> Optional[str]:
         return pulumi.get(self, "topic_id")
 
 
@@ -176,23 +143,7 @@ class AwaitableGetSubscriptionResult(GetSubscriptionResult):
 def get_subscription(subscription_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionResult:
     """
-    This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Notifications service.
-
-    Gets the specified subscription's configuration information.
-
-    Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription = oci.Ons.get_subscription(subscription_id=oci_ons_subscription["test_subscription"]["id"])
-    ```
-
-
-    :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['subscriptionId'] = subscription_id
@@ -218,22 +169,6 @@ def get_subscription(subscription_id: Optional[str] = None,
 def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
-    This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Notifications service.
-
-    Gets the specified subscription's configuration information.
-
-    Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription = oci.Ons.get_subscription(subscription_id=oci_ons_subscription["test_subscription"]["id"])
-    ```
-
-
-    :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.
+    Use this data source to access information about an existing resource.
     """
     ...

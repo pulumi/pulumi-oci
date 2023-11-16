@@ -16,17 +16,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The OCID of the volume attachment.
         /// </summary>
-        public readonly string VolumeAttachmentId;
+        public readonly string? VolumeAttachmentId;
         /// <summary>
         /// The size of the volume in GBs.
         /// </summary>
-        public readonly string VolumeSizeInGbs;
+        public readonly string? VolumeSizeInGbs;
 
         [OutputConstructor]
         private GetBdsInstanceNodeAttachedBlockVolumeResult(
-            string volumeAttachmentId,
+            string? volumeAttachmentId,
 
-            string volumeSizeInGbs)
+            string? volumeSizeInGbs)
         {
             VolumeAttachmentId = volumeAttachmentId;
             VolumeSizeInGbs = volumeSizeInGbs;

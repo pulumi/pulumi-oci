@@ -60,9 +60,6 @@ class GetSecurityPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the security policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -73,9 +70,6 @@ class GetSecurityPoliciesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the security policy.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +79,7 @@ class GetSecurityPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,10 +87,7 @@ class GetSecurityPoliciesResult:
 
     @property
     @pulumi.getter(name="securityPolicyCollections")
-    def security_policy_collections(self) -> Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionResult']:
-        """
-        The list of security_policy_collection.
-        """
+    def security_policy_collections(self) -> Optional[Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionResult']]:
         return pulumi.get(self, "security_policy_collections")
 
     @property
@@ -107,9 +98,6 @@ class GetSecurityPoliciesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the security policy.
-        """
         return pulumi.get(self, "state")
 
 
@@ -139,44 +127,7 @@ def get_security_policies(access_level: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPoliciesResult:
     """
-    This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all security policies in Data Safe.
-
-    The ListSecurityPolicies operation returns only the security policies in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicies on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_policies = oci.DataSafe.get_security_policies(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_access_level"],
-        compartment_id_in_subtree=var["security_policy_compartment_id_in_subtree"],
-        display_name=var["security_policy_display_name"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["security_policy_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
-    :param str state: The current state of the security policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -211,43 +162,6 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
     """
-    This data source provides the list of Security Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all security policies in Data Safe.
-
-    The ListSecurityPolicies operation returns only the security policies in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSecurityPolicies on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_policies = oci.DataSafe.get_security_policies(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_access_level"],
-        compartment_id_in_subtree=var["security_policy_compartment_id_in_subtree"],
-        display_name=var["security_policy_display_name"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["security_policy_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
-    :param str state: The current state of the security policy.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -62,12 +62,12 @@ export interface GetDatabaseUpgradeHistoryEntriesResult {
     /**
      * The list of database_upgrade_history_entries.
      */
-    readonly databaseUpgradeHistoryEntries: outputs.Database.GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry[];
+    readonly databaseUpgradeHistoryEntries?: outputs.Database.GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry[];
     readonly filters?: outputs.Database.GetDatabaseUpgradeHistoryEntriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
      */

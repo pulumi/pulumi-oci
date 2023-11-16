@@ -7,18 +7,20 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapeShapePlatformConfigOptionSecureBootOption {
-    private List<Boolean> allowedValues;
-    private Boolean isDefaultEnabled;
+    private @Nullable List<Boolean> allowedValues;
+    private @Nullable Boolean isDefaultEnabled;
 
     private GetShapeShapePlatformConfigOptionSecureBootOption() {}
     public List<Boolean> allowedValues() {
-        return this.allowedValues;
+        return this.allowedValues == null ? List.of() : this.allowedValues;
     }
-    public Boolean isDefaultEnabled() {
-        return this.isDefaultEnabled;
+    public Optional<Boolean> isDefaultEnabled() {
+        return Optional.ofNullable(this.isDefaultEnabled);
     }
 
     public static Builder builder() {
@@ -30,8 +32,8 @@ public final class GetShapeShapePlatformConfigOptionSecureBootOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<Boolean> allowedValues;
-        private Boolean isDefaultEnabled;
+        private @Nullable List<Boolean> allowedValues;
+        private @Nullable Boolean isDefaultEnabled;
         public Builder() {}
         public Builder(GetShapeShapePlatformConfigOptionSecureBootOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -40,16 +42,16 @@ public final class GetShapeShapePlatformConfigOptionSecureBootOption {
         }
 
         @CustomType.Setter
-        public Builder allowedValues(List<Boolean> allowedValues) {
-            this.allowedValues = Objects.requireNonNull(allowedValues);
+        public Builder allowedValues(@Nullable List<Boolean> allowedValues) {
+            this.allowedValues = allowedValues;
             return this;
         }
         public Builder allowedValues(Boolean... allowedValues) {
             return allowedValues(List.of(allowedValues));
         }
         @CustomType.Setter
-        public Builder isDefaultEnabled(Boolean isDefaultEnabled) {
-            this.isDefaultEnabled = Objects.requireNonNull(isDefaultEnabled);
+        public Builder isDefaultEnabled(@Nullable Boolean isDefaultEnabled) {
+            this.isDefaultEnabled = isDefaultEnabled;
             return this;
         }
         public GetShapeShapePlatformConfigOptionSecureBootOption build() {

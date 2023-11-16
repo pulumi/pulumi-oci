@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
@@ -70,7 +69,7 @@ type GetLogSavedSearchesResult struct {
 	CompartmentId string                      `pulumi:"compartmentId"`
 	Filters       []GetLogSavedSearchesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string  `pulumi:"id"`
+	Id               *string `pulumi:"id"`
 	LogSavedSearchId *string `pulumi:"logSavedSearchId"`
 	// The list of log_saved_search_summary_collection.
 	LogSavedSearchSummaryCollections []GetLogSavedSearchesLogSavedSearchSummaryCollection `pulumi:"logSavedSearchSummaryCollections"`
@@ -121,12 +120,6 @@ func (o GetLogSavedSearchesResultOutput) ToGetLogSavedSearchesResultOutputWithCo
 	return o
 }
 
-func (o GetLogSavedSearchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogSavedSearchesResult] {
-	return pulumix.Output[GetLogSavedSearchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
 func (o GetLogSavedSearchesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogSavedSearchesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetLogSavedSearchesResultOutput) Filters() GetLogSavedSearchesFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogSavedSearchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogSavedSearchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogSavedSearchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogSavedSearchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLogSavedSearchesResultOutput) LogSavedSearchId() pulumi.StringPtrOutput {

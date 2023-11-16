@@ -61,34 +61,22 @@ class GetEmailDomainResult:
 
     @property
     @pulumi.getter(name="activeDkimId")
-    def active_dkim_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-        """
+    def active_dkim_id(self) -> Optional[str]:
         return pulumi.get(self, "active_dkim_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of a email domain.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
@@ -98,58 +86,37 @@ class GetEmailDomainResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isSpf")
-    def is_spf(self) -> bool:
-        """
-        Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-        """
+    def is_spf(self) -> Optional[bool]:
         return pulumi.get(self, "is_spf")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the email domain.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -176,21 +143,7 @@ class AwaitableGetEmailDomainResult(GetEmailDomainResult):
 def get_email_domain(email_domain_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEmailDomainResult:
     """
-    This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
-
-    Retrieves the specified email domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_email_domain = oci.Email.get_email_domain(email_domain_id=oci_email_email_domain["test_email_domain"]["id"])
-    ```
-
-
-    :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['emailDomainId'] = email_domain_id
@@ -216,20 +169,6 @@ def get_email_domain(email_domain_id: Optional[str] = None,
 def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmailDomainResult]:
     """
-    This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
-
-    Retrieves the specified email domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_email_domain = oci.Email.get_email_domain(email_domain_id=oci_email_email_domain["test_email_domain"]["id"])
-    ```
-
-
-    :param str email_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
+    Use this data source to access information about an existing resource.
     """
     ...

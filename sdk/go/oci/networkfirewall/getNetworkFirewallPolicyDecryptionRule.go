@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -38,22 +37,22 @@ type LookupNetworkFirewallPolicyDecryptionRuleResult struct {
 	// Action:
 	// * NO_DECRYPT - Matching traffic is not decrypted.
 	// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Match criteria used in Decryption Rule used on the firewall policy rules.
 	Conditions []GetNetworkFirewallPolicyDecryptionRuleCondition `pulumi:"conditions"`
 	// The name of the decryption profile to use.
-	DecryptionProfile string `pulumi:"decryptionProfile"`
-	Id                string `pulumi:"id"`
+	DecryptionProfile *string `pulumi:"decryptionProfile"`
+	Id                *string `pulumi:"id"`
 	// Name for the decryption rule, must be unique within the policy.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this decryption rule belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// An object which defines the position of the rule.
 	Positions     []GetNetworkFirewallPolicyDecryptionRulePosition `pulumi:"positions"`
-	PriorityOrder string                                           `pulumi:"priorityOrder"`
+	PriorityOrder *string                                          `pulumi:"priorityOrder"`
 	// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-	Secret string `pulumi:"secret"`
+	Secret *string `pulumi:"secret"`
 }
 
 func LookupNetworkFirewallPolicyDecryptionRuleOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyDecryptionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyDecryptionRuleResultOutput {
@@ -96,17 +95,11 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ToLookupNetworkFi
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyDecryptionRuleResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyDecryptionRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Action:
 // * NO_DECRYPT - Matching traffic is not decrypted.
 // * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.Action }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Match criteria used in Decryption Rule used on the firewall policy rules.
@@ -117,12 +110,12 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Conditions() GetN
 }
 
 // The name of the decryption profile to use.
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) DecryptionProfile() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.DecryptionProfile }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) DecryptionProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) *string { return v.DecryptionProfile }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name for the decryption rule, must be unique within the policy.
@@ -135,8 +128,8 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) NetworkFirewallPo
 }
 
 // OCID of the Network Firewall Policy this decryption rule belongs to.
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // An object which defines the position of the rule.
@@ -146,13 +139,13 @@ func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Positions() GetNe
 	}).(GetNetworkFirewallPolicyDecryptionRulePositionArrayOutput)
 }
 
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) PriorityOrder() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.PriorityOrder }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) PriorityOrder() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) *string { return v.PriorityOrder }).(pulumi.StringPtrOutput)
 }
 
 // The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Secret() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) string { return v.Secret }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyDecryptionRuleResultOutput) Secret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyDecryptionRuleResult) *string { return v.Secret }).(pulumi.StringPtrOutput)
 }
 
 func init() {

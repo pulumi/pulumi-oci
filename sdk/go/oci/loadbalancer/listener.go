@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -81,7 +80,7 @@ type Listener struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Configuration details for the connection between the client and backend servers.
-	ConnectionConfiguration ListenerConnectionConfigurationOutput `pulumi:"connectionConfiguration"`
+	ConnectionConfiguration ListenerConnectionConfigurationPtrOutput `pulumi:"connectionConfiguration"`
 	// (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
 	DefaultBackendSetName pulumi.StringOutput `pulumi:"defaultBackendSetName"`
 	// (Updatable) An array of hostname resource names.
@@ -95,20 +94,20 @@ type Listener struct {
 	// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
 	//
 	// Example: `examplePathRouteSet`
-	PathRouteSetName pulumi.StringOutput `pulumi:"pathRouteSetName"`
+	PathRouteSetName pulumi.StringPtrOutput `pulumi:"pathRouteSetName"`
 	// (Updatable) The communication port for the listener.  Example: `80`
 	Port pulumi.IntOutput `pulumi:"port"`
 	// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
-	RoutingPolicyName pulumi.StringOutput `pulumi:"routingPolicyName"`
+	RoutingPolicyName pulumi.StringPtrOutput `pulumi:"routingPolicyName"`
 	// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
 	RuleSetNames pulumi.StringArrayOutput `pulumi:"ruleSetNames"`
 	// (Updatable) The load balancer's SSL handling configuration details.
 	//
 	// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 	SslConfiguration ListenerSslConfigurationPtrOutput `pulumi:"sslConfiguration"`
-	State            pulumi.StringOutput               `pulumi:"state"`
+	State            pulumi.StringPtrOutput            `pulumi:"state"`
 }
 
 // NewListener registers a new resource with the given unique name, arguments, and options.
@@ -306,12 +305,6 @@ func (i *Listener) ToListenerOutputWithContext(ctx context.Context) ListenerOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerOutput)
 }
 
-func (i *Listener) ToOutput(ctx context.Context) pulumix.Output[*Listener] {
-	return pulumix.Output[*Listener]{
-		OutputState: i.ToListenerOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ListenerArrayInput is an input type that accepts ListenerArray and ListenerArrayOutput values.
 // You can construct a concrete instance of `ListenerArrayInput` via:
 //
@@ -335,12 +328,6 @@ func (i ListenerArray) ToListenerArrayOutput() ListenerArrayOutput {
 
 func (i ListenerArray) ToListenerArrayOutputWithContext(ctx context.Context) ListenerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerArrayOutput)
-}
-
-func (i ListenerArray) ToOutput(ctx context.Context) pulumix.Output[[]*Listener] {
-	return pulumix.Output[[]*Listener]{
-		OutputState: i.ToListenerArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ListenerMapInput is an input type that accepts ListenerMap and ListenerMapOutput values.
@@ -368,12 +355,6 @@ func (i ListenerMap) ToListenerMapOutputWithContext(ctx context.Context) Listene
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerMapOutput)
 }
 
-func (i ListenerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Listener] {
-	return pulumix.Output[map[string]*Listener]{
-		OutputState: i.ToListenerMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ListenerOutput struct{ *pulumi.OutputState }
 
 func (ListenerOutput) ElementType() reflect.Type {
@@ -388,15 +369,9 @@ func (o ListenerOutput) ToListenerOutputWithContext(ctx context.Context) Listene
 	return o
 }
 
-func (o ListenerOutput) ToOutput(ctx context.Context) pulumix.Output[*Listener] {
-	return pulumix.Output[*Listener]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Configuration details for the connection between the client and backend servers.
-func (o ListenerOutput) ConnectionConfiguration() ListenerConnectionConfigurationOutput {
-	return o.ApplyT(func(v *Listener) ListenerConnectionConfigurationOutput { return v.ConnectionConfiguration }).(ListenerConnectionConfigurationOutput)
+func (o ListenerOutput) ConnectionConfiguration() ListenerConnectionConfigurationPtrOutput {
+	return o.ApplyT(func(v *Listener) ListenerConnectionConfigurationPtrOutput { return v.ConnectionConfiguration }).(ListenerConnectionConfigurationPtrOutput)
 }
 
 // (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
@@ -424,8 +399,8 @@ func (o ListenerOutput) Name() pulumi.StringOutput {
 // The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
 //
 // Example: `examplePathRouteSet`
-func (o ListenerOutput) PathRouteSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PathRouteSetName }).(pulumi.StringOutput)
+func (o ListenerOutput) PathRouteSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringPtrOutput { return v.PathRouteSetName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The communication port for the listener.  Example: `80`
@@ -439,8 +414,8 @@ func (o ListenerOutput) Protocol() pulumi.StringOutput {
 }
 
 // (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `exampleRoutingPolicy`
-func (o ListenerOutput) RoutingPolicyName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.RoutingPolicyName }).(pulumi.StringOutput)
+func (o ListenerOutput) RoutingPolicyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringPtrOutput { return v.RoutingPolicyName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["exampleRuleSet"]
@@ -455,8 +430,8 @@ func (o ListenerOutput) SslConfiguration() ListenerSslConfigurationPtrOutput {
 	return o.ApplyT(func(v *Listener) ListenerSslConfigurationPtrOutput { return v.SslConfiguration }).(ListenerSslConfigurationPtrOutput)
 }
 
-func (o ListenerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ListenerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type ListenerArrayOutput struct{ *pulumi.OutputState }
@@ -471,12 +446,6 @@ func (o ListenerArrayOutput) ToListenerArrayOutput() ListenerArrayOutput {
 
 func (o ListenerArrayOutput) ToListenerArrayOutputWithContext(ctx context.Context) ListenerArrayOutput {
 	return o
-}
-
-func (o ListenerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Listener] {
-	return pulumix.Output[[]*Listener]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListenerArrayOutput) Index(i pulumi.IntInput) ListenerOutput {
@@ -497,12 +466,6 @@ func (o ListenerMapOutput) ToListenerMapOutput() ListenerMapOutput {
 
 func (o ListenerMapOutput) ToListenerMapOutputWithContext(ctx context.Context) ListenerMapOutput {
 	return o
-}
-
-func (o ListenerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Listener] {
-	return pulumix.Output[map[string]*Listener]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListenerMapOutput) MapIndex(k pulumi.StringInput) ListenerOutput {

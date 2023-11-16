@@ -9,6 +9,8 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation {
@@ -16,17 +18,17 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
      * @return The details for attaching or detaching a block volume.
      * 
      */
-    private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails;
+    private @Nullable List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails;
     /**
      * @return The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
      * 
      */
-    private String blockVolumeId;
+    private @Nullable String blockVolumeId;
     /**
      * @return Mount details of a file system.
      * 
      */
-    private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails;
+    private @Nullable List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails;
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
      * 
      */
     public List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails() {
-        return this.attachmentDetails;
+        return this.attachmentDetails == null ? List.of() : this.attachmentDetails;
     }
     /**
      * @return The OCID of the block volume.  Example: `ocid1.volume.oc1..uniqueID`
      * 
      */
-    public String blockVolumeId() {
-        return this.blockVolumeId;
+    public Optional<String> blockVolumeId() {
+        return Optional.ofNullable(this.blockVolumeId);
     }
     /**
      * @return Mount details of a file system.
      * 
      */
     public List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails() {
-        return this.mountDetails;
+        return this.mountDetails == null ? List.of() : this.mountDetails;
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails;
-        private String blockVolumeId;
-        private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails;
+        private @Nullable List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails;
+        private @Nullable String blockVolumeId;
+        private @Nullable List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails;
         public Builder() {}
         public Builder(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
         }
 
         @CustomType.Setter
-        public Builder attachmentDetails(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails) {
-            this.attachmentDetails = Objects.requireNonNull(attachmentDetails);
+        public Builder attachmentDetails(@Nullable List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails) {
+            this.attachmentDetails = attachmentDetails;
             return this;
         }
         public Builder attachmentDetails(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail... attachmentDetails) {
             return attachmentDetails(List.of(attachmentDetails));
         }
         @CustomType.Setter
-        public Builder blockVolumeId(String blockVolumeId) {
-            this.blockVolumeId = Objects.requireNonNull(blockVolumeId);
+        public Builder blockVolumeId(@Nullable String blockVolumeId) {
+            this.blockVolumeId = blockVolumeId;
             return this;
         }
         @CustomType.Setter
-        public Builder mountDetails(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails) {
-            this.mountDetails = Objects.requireNonNull(mountDetails);
+        public Builder mountDetails(@Nullable List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails) {
+            this.mountDetails = mountDetails;
             return this;
         }
         public Builder mountDetails(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail... mountDetails) {

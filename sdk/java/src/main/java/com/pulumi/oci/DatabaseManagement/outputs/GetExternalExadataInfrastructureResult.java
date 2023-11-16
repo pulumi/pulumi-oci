@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataInfrastructureResult {
@@ -18,86 +20,86 @@ public final class GetExternalExadataInfrastructureResult {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * 
      */
-    private List<String> databaseCompartments;
+    private @Nullable List<String> databaseCompartments;
     /**
      * @return A list of DB systems.
      * 
      */
-    private List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems;
-    private List<String> dbSystemIds;
-    private String discoveryKey;
+    private @Nullable List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems;
+    private @Nullable List<String> dbSystemIds;
+    private @Nullable String discoveryKey;
     /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String externalExadataInfrastructureId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The internal ID of the Exadata resource.
      * 
      */
-    private String internalId;
+    private @Nullable String internalId;
     /**
      * @return The Oracle license model that applies to the database management resources.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
     /**
      * @return The details of the lifecycle state of the Exadata resource.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The rack size of the Exadata infrastructure.
      * 
      */
-    private String rackSize;
+    private @Nullable String rackSize;
     /**
      * @return The current lifecycle state of the database resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The status of the Exadata resource.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The Exadata storage server grid of the Exadata infrastructure.
      * 
      */
-    private List<GetExternalExadataInfrastructureStorageGrid> storageGrids;
-    private List<String> storageServerNames;
+    private @Nullable List<GetExternalExadataInfrastructureStorageGrid> storageGrids;
+    private @Nullable List<String> storageServerNames;
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The timestamp of the last update of the Exadata resource.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The version of the Exadata resource.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetExternalExadataInfrastructureResult() {}
     /**
@@ -105,41 +107,41 @@ public final class GetExternalExadataInfrastructureResult {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * 
      */
     public List<String> databaseCompartments() {
-        return this.databaseCompartments;
+        return this.databaseCompartments == null ? List.of() : this.databaseCompartments;
     }
     /**
      * @return A list of DB systems.
      * 
      */
     public List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems() {
-        return this.databaseSystems;
+        return this.databaseSystems == null ? List.of() : this.databaseSystems;
     }
     public List<String> dbSystemIds() {
-        return this.dbSystemIds;
+        return this.dbSystemIds == null ? List.of() : this.dbSystemIds;
     }
-    public String discoveryKey() {
-        return this.discoveryKey;
+    public Optional<String> discoveryKey() {
+        return Optional.ofNullable(this.discoveryKey);
     }
     /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String externalExadataInfrastructureId() {
         return this.externalExadataInfrastructureId;
@@ -148,81 +150,81 @@ public final class GetExternalExadataInfrastructureResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The internal ID of the Exadata resource.
      * 
      */
-    public String internalId() {
-        return this.internalId;
+    public Optional<String> internalId() {
+        return Optional.ofNullable(this.internalId);
     }
     /**
      * @return The Oracle license model that applies to the database management resources.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
     /**
      * @return The details of the lifecycle state of the Exadata resource.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The rack size of the Exadata infrastructure.
      * 
      */
-    public String rackSize() {
-        return this.rackSize;
+    public Optional<String> rackSize() {
+        return Optional.ofNullable(this.rackSize);
     }
     /**
      * @return The current lifecycle state of the database resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The status of the Exadata resource.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The Exadata storage server grid of the Exadata infrastructure.
      * 
      */
     public List<GetExternalExadataInfrastructureStorageGrid> storageGrids() {
-        return this.storageGrids;
+        return this.storageGrids == null ? List.of() : this.storageGrids;
     }
     public List<String> storageServerNames() {
-        return this.storageServerNames;
+        return this.storageServerNames == null ? List.of() : this.storageServerNames;
     }
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The timestamp of the last update of the Exadata resource.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The version of the Exadata resource.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -234,26 +236,26 @@ public final class GetExternalExadataInfrastructureResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String compartmentId;
-        private List<String> databaseCompartments;
-        private List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems;
-        private List<String> dbSystemIds;
-        private String discoveryKey;
-        private String displayName;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String compartmentId;
+        private @Nullable List<String> databaseCompartments;
+        private @Nullable List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems;
+        private @Nullable List<String> dbSystemIds;
+        private @Nullable String discoveryKey;
+        private @Nullable String displayName;
         private String externalExadataInfrastructureId;
-        private String id;
-        private String internalId;
-        private String licenseModel;
-        private String lifecycleDetails;
-        private String rackSize;
-        private String state;
-        private String status;
-        private List<GetExternalExadataInfrastructureStorageGrid> storageGrids;
-        private List<String> storageServerNames;
-        private String timeCreated;
-        private String timeUpdated;
-        private String version;
+        private @Nullable String id;
+        private @Nullable String internalId;
+        private @Nullable String licenseModel;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String rackSize;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable List<GetExternalExadataInfrastructureStorageGrid> storageGrids;
+        private @Nullable List<String> storageServerNames;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetExternalExadataInfrastructureResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -280,47 +282,47 @@ public final class GetExternalExadataInfrastructureResult {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseCompartments(List<String> databaseCompartments) {
-            this.databaseCompartments = Objects.requireNonNull(databaseCompartments);
+        public Builder databaseCompartments(@Nullable List<String> databaseCompartments) {
+            this.databaseCompartments = databaseCompartments;
             return this;
         }
         public Builder databaseCompartments(String... databaseCompartments) {
             return databaseCompartments(List.of(databaseCompartments));
         }
         @CustomType.Setter
-        public Builder databaseSystems(List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems) {
-            this.databaseSystems = Objects.requireNonNull(databaseSystems);
+        public Builder databaseSystems(@Nullable List<GetExternalExadataInfrastructureDatabaseSystem> databaseSystems) {
+            this.databaseSystems = databaseSystems;
             return this;
         }
         public Builder databaseSystems(GetExternalExadataInfrastructureDatabaseSystem... databaseSystems) {
             return databaseSystems(List.of(databaseSystems));
         }
         @CustomType.Setter
-        public Builder dbSystemIds(List<String> dbSystemIds) {
-            this.dbSystemIds = Objects.requireNonNull(dbSystemIds);
+        public Builder dbSystemIds(@Nullable List<String> dbSystemIds) {
+            this.dbSystemIds = dbSystemIds;
             return this;
         }
         public Builder dbSystemIds(String... dbSystemIds) {
             return dbSystemIds(List.of(dbSystemIds));
         }
         @CustomType.Setter
-        public Builder discoveryKey(String discoveryKey) {
-            this.discoveryKey = Objects.requireNonNull(discoveryKey);
+        public Builder discoveryKey(@Nullable String discoveryKey) {
+            this.discoveryKey = discoveryKey;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -329,69 +331,69 @@ public final class GetExternalExadataInfrastructureResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder internalId(String internalId) {
-            this.internalId = Objects.requireNonNull(internalId);
+        public Builder internalId(@Nullable String internalId) {
+            this.internalId = internalId;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder rackSize(String rackSize) {
-            this.rackSize = Objects.requireNonNull(rackSize);
+        public Builder rackSize(@Nullable String rackSize) {
+            this.rackSize = rackSize;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder storageGrids(List<GetExternalExadataInfrastructureStorageGrid> storageGrids) {
-            this.storageGrids = Objects.requireNonNull(storageGrids);
+        public Builder storageGrids(@Nullable List<GetExternalExadataInfrastructureStorageGrid> storageGrids) {
+            this.storageGrids = storageGrids;
             return this;
         }
         public Builder storageGrids(GetExternalExadataInfrastructureStorageGrid... storageGrids) {
             return storageGrids(List.of(storageGrids));
         }
         @CustomType.Setter
-        public Builder storageServerNames(List<String> storageServerNames) {
-            this.storageServerNames = Objects.requireNonNull(storageServerNames);
+        public Builder storageServerNames(@Nullable List<String> storageServerNames) {
+            this.storageServerNames = storageServerNames;
             return this;
         }
         public Builder storageServerNames(String... storageServerNames) {
             return storageServerNames(List.of(storageServerNames));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetExternalExadataInfrastructureResult build() {

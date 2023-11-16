@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
@@ -60,24 +59,24 @@ type LookupLogGroupArgs struct {
 // A collection of values returned by getLogGroup.
 type LookupLogGroupResult struct {
 	// The OCID of the compartment that the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description for this resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resource.
-	Id         string `pulumi:"id"`
-	LogGroupId string `pulumi:"logGroupId"`
+	Id         *string `pulumi:"id"`
+	LogGroupId string  `pulumi:"logGroupId"`
 	// The log group object state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time the resource was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified string `pulumi:"timeLastModified"`
+	TimeLastModified *string `pulumi:"timeLastModified"`
 }
 
 func LookupLogGroupOutput(ctx *pulumi.Context, args LookupLogGroupOutputArgs, opts ...pulumi.InvokeOption) LookupLogGroupResultOutput {
@@ -118,15 +117,9 @@ func (o LookupLogGroupResultOutput) ToLookupLogGroupResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupLogGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogGroupResult] {
-	return pulumix.Output[LookupLogGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
-func (o LookupLogGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -135,13 +128,13 @@ func (o LookupLogGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description for this resource.
-func (o LookupLogGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-func (o LookupLogGroupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -150,8 +143,8 @@ func (o LookupLogGroupResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the resource.
-func (o LookupLogGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogGroupResultOutput) LogGroupId() pulumi.StringOutput {
@@ -159,18 +152,18 @@ func (o LookupLogGroupResultOutput) LogGroupId() pulumi.StringOutput {
 }
 
 // The log group object state.
-func (o LookupLogGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LookupLogGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LookupLogGroupResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogGroupResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LookupLogGroupResultOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogGroupResult) *string { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 func init() {

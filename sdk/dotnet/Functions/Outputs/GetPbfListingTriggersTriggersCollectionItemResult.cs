@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// A filter to return only resources that match the service trigger source of a PBF.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPbfListingTriggersTriggersCollectionItemResult(string name)
+        private GetPbfListingTriggersTriggersCollectionItemResult(string? name)
         {
             Name = name;
         }

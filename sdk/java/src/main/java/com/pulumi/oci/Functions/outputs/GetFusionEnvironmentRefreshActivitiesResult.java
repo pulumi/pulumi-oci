@@ -25,12 +25,12 @@ public final class GetFusionEnvironmentRefreshActivitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of refresh_activity_collection.
      * 
      */
-    private List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections;
+    private @Nullable List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections;
     /**
      * @return The current state of the refreshActivity.
      * 
@@ -57,15 +57,15 @@ public final class GetFusionEnvironmentRefreshActivitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of refresh_activity_collection.
      * 
      */
     public List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections() {
-        return this.refreshActivityCollections;
+        return this.refreshActivityCollections == null ? List.of() : this.refreshActivityCollections;
     }
     /**
      * @return The current state of the refreshActivity.
@@ -93,8 +93,8 @@ public final class GetFusionEnvironmentRefreshActivitiesResult {
         private @Nullable String displayName;
         private @Nullable List<GetFusionEnvironmentRefreshActivitiesFilter> filters;
         private String fusionEnvironmentId;
-        private String id;
-        private List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections;
+        private @Nullable String id;
+        private @Nullable List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections;
         private @Nullable String state;
         private @Nullable String timeExpectedFinishLessThanOrEqualTo;
         private @Nullable String timeScheduledStartGreaterThanOrEqualTo;
@@ -130,13 +130,13 @@ public final class GetFusionEnvironmentRefreshActivitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshActivityCollections(List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections) {
-            this.refreshActivityCollections = Objects.requireNonNull(refreshActivityCollections);
+        public Builder refreshActivityCollections(@Nullable List<GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection> refreshActivityCollections) {
+            this.refreshActivityCollections = refreshActivityCollections;
             return this;
         }
         public Builder refreshActivityCollections(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection... refreshActivityCollections) {

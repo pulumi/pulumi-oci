@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
@@ -73,21 +72,21 @@ type AppAcceleration struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) WebAppAcceleration display name, can be renamed.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
 	// The current state of the WebAppAcceleration.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
 	//
 	// ** IMPORTANT **
@@ -268,12 +267,6 @@ func (i *AppAcceleration) ToAppAccelerationOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationOutput)
 }
 
-func (i *AppAcceleration) ToOutput(ctx context.Context) pulumix.Output[*AppAcceleration] {
-	return pulumix.Output[*AppAcceleration]{
-		OutputState: i.ToAppAccelerationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AppAccelerationArrayInput is an input type that accepts AppAccelerationArray and AppAccelerationArrayOutput values.
 // You can construct a concrete instance of `AppAccelerationArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i AppAccelerationArray) ToAppAccelerationArrayOutput() AppAccelerationArra
 
 func (i AppAccelerationArray) ToAppAccelerationArrayOutputWithContext(ctx context.Context) AppAccelerationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationArrayOutput)
-}
-
-func (i AppAccelerationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppAcceleration] {
-	return pulumix.Output[[]*AppAcceleration]{
-		OutputState: i.ToAppAccelerationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AppAccelerationMapInput is an input type that accepts AppAccelerationMap and AppAccelerationMapOutput values.
@@ -330,12 +317,6 @@ func (i AppAccelerationMap) ToAppAccelerationMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AppAccelerationMapOutput)
 }
 
-func (i AppAccelerationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAcceleration] {
-	return pulumix.Output[map[string]*AppAcceleration]{
-		OutputState: i.ToAppAccelerationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AppAccelerationOutput struct{ *pulumi.OutputState }
 
 func (AppAccelerationOutput) ElementType() reflect.Type {
@@ -348,12 +329,6 @@ func (o AppAccelerationOutput) ToAppAccelerationOutput() AppAccelerationOutput {
 
 func (o AppAccelerationOutput) ToAppAccelerationOutputWithContext(ctx context.Context) AppAccelerationOutput {
 	return o
-}
-
-func (o AppAccelerationOutput) ToOutput(ctx context.Context) pulumix.Output[*AppAcceleration] {
-	return pulumix.Output[*AppAcceleration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -372,8 +347,8 @@ func (o AppAccelerationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) WebAppAcceleration display name, can be renamed.
-func (o AppAccelerationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAcceleration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AppAccelerationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAcceleration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -382,8 +357,8 @@ func (o AppAccelerationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o AppAccelerationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAcceleration) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AppAccelerationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAcceleration) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppAccelerationPolicy is attached to.
@@ -392,8 +367,8 @@ func (o AppAccelerationOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // The current state of the WebAppAcceleration.
-func (o AppAccelerationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAcceleration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AppAccelerationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAcceleration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -402,13 +377,13 @@ func (o AppAccelerationOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the WebAppAcceleration was created. An RFC3339 formatted datetime string.
-func (o AppAccelerationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAcceleration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AppAccelerationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAcceleration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
-func (o AppAccelerationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AppAcceleration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AppAccelerationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppAcceleration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
@@ -433,12 +408,6 @@ func (o AppAccelerationArrayOutput) ToAppAccelerationArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o AppAccelerationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppAcceleration] {
-	return pulumix.Output[[]*AppAcceleration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AppAccelerationArrayOutput) Index(i pulumi.IntInput) AppAccelerationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppAcceleration {
 		return vs[0].([]*AppAcceleration)[vs[1].(int)]
@@ -457,12 +426,6 @@ func (o AppAccelerationMapOutput) ToAppAccelerationMapOutput() AppAccelerationMa
 
 func (o AppAccelerationMapOutput) ToAppAccelerationMapOutputWithContext(ctx context.Context) AppAccelerationMapOutput {
 	return o
-}
-
-func (o AppAccelerationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppAcceleration] {
-	return pulumix.Output[map[string]*AppAcceleration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AppAccelerationMapOutput) MapIndex(k pulumi.StringInput) AppAccelerationOutput {

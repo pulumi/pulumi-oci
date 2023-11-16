@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
@@ -75,7 +74,7 @@ type GetIpv6sArgs struct {
 type GetIpv6sResult struct {
 	Filters []GetIpv6sFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
 	IpAddress *string `pulumi:"ipAddress"`
 	// The list of ipv6s.
@@ -129,19 +128,13 @@ func (o GetIpv6sResultOutput) ToGetIpv6sResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetIpv6sResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpv6sResult] {
-	return pulumix.Output[GetIpv6sResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIpv6sResultOutput) Filters() GetIpv6sFilterArrayOutput {
 	return o.ApplyT(func(v GetIpv6sResult) []GetIpv6sFilter { return v.Filters }).(GetIpv6sFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpv6sResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpv6sResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpv6sResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpv6sResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`

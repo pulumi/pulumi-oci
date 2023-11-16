@@ -45,60 +45,60 @@ export interface GetInstVbsInstanceResult {
     /**
      * Compartment of the service instance
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Service instance display name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
-    readonly idcsAccessToken: string;
+    readonly id?: string;
+    readonly idcsAccessToken?: string;
     /**
      * Whether the VBS service instance owner explicitly approved VBS to create and use resources in the customer tenancy
      */
-    readonly isResourceUsageAgreementGranted: boolean;
+    readonly isResourceUsageAgreementGranted?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecyleDetails: string;
+    readonly lifecyleDetails?: string;
     /**
      * Service instance name (unique identifier)
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Compartment where VBS may create additional resources for the service instance
      */
-    readonly resourceCompartmentId: string;
+    readonly resourceCompartmentId?: string;
     /**
      * The current state of the VbsInstance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the VbsInstance was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the VbsInstance was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Public web URL for accessing the VBS service instance
      */
-    readonly vbsAccessUrl: string;
+    readonly vbsAccessUrl?: string;
     readonly vbsInstanceId: string;
 }
 /**

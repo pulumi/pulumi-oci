@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
         /// </summary>
-        public readonly bool Expired;
+        public readonly bool? Expired;
         /// <summary>
         /// The date and time that the current resource was locked.
         /// </summary>
-        public readonly string LockDate;
+        public readonly string? LockDate;
         /// <summary>
         /// Indicates that the recovery is locked.
         /// </summary>
-        public readonly bool On;
+        public readonly bool? On;
         /// <summary>
         /// Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
         /// </summary>
-        public readonly int Reason;
+        public readonly int? Reason;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedResult(
-            bool expired,
+            bool? expired,
 
-            string lockDate,
+            string? lockDate,
 
-            bool on,
+            bool? on,
 
-            int reason)
+            int? reason)
         {
             Expired = expired;
             LockDate = lockDate;

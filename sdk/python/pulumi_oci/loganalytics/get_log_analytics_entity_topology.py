@@ -41,7 +41,7 @@ class GetLogAnalyticsEntityTopologyResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetLogAnalyticsEntityTopologyResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemResult']:
-        """
-        Array of log analytics entity summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -68,9 +65,6 @@ class GetLogAnalyticsEntityTopologyResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the log analytics entity.
-        """
         return pulumi.get(self, "state")
 
 
@@ -92,25 +86,7 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
                                       state: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsEntityTopologyResult:
     """
-    This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        namespace=var["log_analytics_entity_topology_namespace"],
-        state=var["log_analytics_entity_topology_state"])
-    ```
-
-
-    :param str log_analytics_entity_id: The log analytics entity OCID.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['logAnalyticsEntityId'] = log_analytics_entity_id
@@ -133,24 +109,6 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
                                              state: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntityTopologyResult]:
     """
-    This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        namespace=var["log_analytics_entity_topology_namespace"],
-        state=var["log_analytics_entity_topology_state"])
-    ```
-
-
-    :param str log_analytics_entity_id: The log analytics entity OCID.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

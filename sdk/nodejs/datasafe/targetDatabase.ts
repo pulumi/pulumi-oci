@@ -96,7 +96,7 @@ export class TargetDatabase extends pulumi.CustomResource {
     /**
      * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      */
-    public /*out*/ readonly associatedResourceIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly associatedResourceIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment in which to create the Data Safe target database.
      */
@@ -104,11 +104,11 @@ export class TargetDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Types of connection supported by Data Safe.
      */
-    public readonly connectionOption!: pulumi.Output<outputs.DataSafe.TargetDatabaseConnectionOption>;
+    public readonly connectionOption!: pulumi.Output<outputs.DataSafe.TargetDatabaseConnectionOption | undefined>;
     /**
      * (Updatable) The database credentials required for Data Safe to connect to the database.
      */
-    public readonly credentials!: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials>;
+    public readonly credentials!: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials | undefined>;
     /**
      * (Updatable) Details of the database for the registration in Data Safe.
      */
@@ -116,43 +116,43 @@ export class TargetDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the target database in Data Safe.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details about the current state of the target database in Data Safe.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The current state of the target database in Data Safe.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the database was registered in Data Safe and created as a target database in Data Safe.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time of the target database update in Data Safe.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    public readonly tlsConfig!: pulumi.Output<outputs.DataSafe.TargetDatabaseTlsConfig>;
+    public readonly tlsConfig!: pulumi.Output<outputs.DataSafe.TargetDatabaseTlsConfig | undefined>;
 
     /**
      * Create a TargetDatabase resource with the given unique name, arguments, and options.

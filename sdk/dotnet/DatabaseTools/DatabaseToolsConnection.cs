@@ -88,7 +88,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         /// </summary>
         [Output("advancedProperties")]
-        public Output<ImmutableDictionary<string, object>> AdvancedProperties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> AdvancedProperties { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -100,13 +100,13 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
         /// </summary>
         [Output("connectionString")]
-        public Output<string> ConnectionString { get; private set; } = null!;
+        public Output<string?> ConnectionString { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
@@ -130,43 +130,43 @@ namespace Pulumi.Oci.DatabaseTools
         /// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         [Output("privateEndpointId")]
-        public Output<string> PrivateEndpointId { get; private set; } = null!;
+        public Output<string?> PrivateEndpointId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The related resource
         /// </summary>
         [Output("relatedResource")]
-        public Output<Outputs.DatabaseToolsConnectionRelatedResource> RelatedResource { get; private set; } = null!;
+        public Output<Outputs.DatabaseToolsConnectionRelatedResource?> RelatedResource { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Database Tools connection.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The DatabaseToolsConnection type.
@@ -178,13 +178,13 @@ namespace Pulumi.Oci.DatabaseTools
         /// (Updatable) The database user name.
         /// </summary>
         [Output("userName")]
-        public Output<string> UserName { get; private set; } = null!;
+        public Output<string?> UserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user password.
         /// </summary>
         [Output("userPassword")]
-        public Output<Outputs.DatabaseToolsConnectionUserPassword> UserPassword { get; private set; } = null!;
+        public Output<Outputs.DatabaseToolsConnectionUserPassword?> UserPassword { get; private set; } = null!;
 
 
         /// <summary>

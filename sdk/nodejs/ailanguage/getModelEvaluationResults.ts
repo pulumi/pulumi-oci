@@ -49,12 +49,12 @@ export interface GetModelEvaluationResultsResult {
     /**
      * The list of evaluation_result_collection.
      */
-    readonly evaluationResultCollections: outputs.AiLanguage.GetModelEvaluationResultsEvaluationResultCollection[];
+    readonly evaluationResultCollections?: outputs.AiLanguage.GetModelEvaluationResultsEvaluationResultCollection[];
     readonly filters?: outputs.AiLanguage.GetModelEvaluationResultsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly modelId: string;
 }
 /**

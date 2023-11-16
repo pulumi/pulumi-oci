@@ -16,23 +16,23 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// The name of a module.  This parameter is required if a streamName is specified.
         /// </summary>
-        public readonly string ModuleName;
+        public readonly string? ModuleName;
         /// <summary>
         /// The name of the profile of the containing module stream
         /// </summary>
-        public readonly string ProfileName;
+        public readonly string? ProfileName;
         /// <summary>
         /// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         /// </summary>
-        public readonly string StreamName;
+        public readonly string? StreamName;
 
         [OutputConstructor]
         private GetSoftwareSourceStreamProfileModuleStreamProfileResult(
-            string moduleName,
+            string? moduleName,
 
-            string profileName,
+            string? profileName,
 
-            string streamName)
+            string? streamName)
         {
             ModuleName = moduleName;
             ProfileName = profileName;

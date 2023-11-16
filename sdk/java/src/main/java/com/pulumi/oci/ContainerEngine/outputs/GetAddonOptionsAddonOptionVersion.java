@@ -9,6 +9,8 @@ import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsAddonOptionVersionK
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddonOptionsAddonOptionVersion {
@@ -16,27 +18,27 @@ public final class GetAddonOptionsAddonOptionVersion {
      * @return Addon version configuration details.
      * 
      */
-    private List<GetAddonOptionsAddonOptionVersionConfiguration> configurations;
+    private @Nullable List<GetAddonOptionsAddonOptionVersionConfiguration> configurations;
     /**
      * @return Information about the addon version.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The range of kubernetes versions an addon can be configured.
      * 
      */
-    private List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters;
+    private @Nullable List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters;
     /**
      * @return Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Version number, need be comparable within an addon.
      * 
      */
-    private String versionNumber;
+    private @Nullable String versionNumber;
 
     private GetAddonOptionsAddonOptionVersion() {}
     /**
@@ -44,35 +46,35 @@ public final class GetAddonOptionsAddonOptionVersion {
      * 
      */
     public List<GetAddonOptionsAddonOptionVersionConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return Information about the addon version.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The range of kubernetes versions an addon can be configured.
      * 
      */
     public List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters() {
-        return this.kubernetesVersionFilters;
+        return this.kubernetesVersionFilters == null ? List.of() : this.kubernetesVersionFilters;
     }
     /**
      * @return Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Version number, need be comparable within an addon.
      * 
      */
-    public String versionNumber() {
-        return this.versionNumber;
+    public Optional<String> versionNumber() {
+        return Optional.ofNullable(this.versionNumber);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetAddonOptionsAddonOptionVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddonOptionsAddonOptionVersionConfiguration> configurations;
-        private String description;
-        private List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters;
-        private String status;
-        private String versionNumber;
+        private @Nullable List<GetAddonOptionsAddonOptionVersionConfiguration> configurations;
+        private @Nullable String description;
+        private @Nullable List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters;
+        private @Nullable String status;
+        private @Nullable String versionNumber;
         public Builder() {}
         public Builder(GetAddonOptionsAddonOptionVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,34 +102,34 @@ public final class GetAddonOptionsAddonOptionVersion {
         }
 
         @CustomType.Setter
-        public Builder configurations(List<GetAddonOptionsAddonOptionVersionConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetAddonOptionsAddonOptionVersionConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetAddonOptionsAddonOptionVersionConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder kubernetesVersionFilters(List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters) {
-            this.kubernetesVersionFilters = Objects.requireNonNull(kubernetesVersionFilters);
+        public Builder kubernetesVersionFilters(@Nullable List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters) {
+            this.kubernetesVersionFilters = kubernetesVersionFilters;
             return this;
         }
         public Builder kubernetesVersionFilters(GetAddonOptionsAddonOptionVersionKubernetesVersionFilter... kubernetesVersionFilters) {
             return kubernetesVersionFilters(List.of(kubernetesVersionFilters));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder versionNumber(String versionNumber) {
-            this.versionNumber = Objects.requireNonNull(versionNumber);
+        public Builder versionNumber(@Nullable String versionNumber) {
+            this.versionNumber = versionNumber;
             return this;
         }
         public GetAddonOptionsAddonOptionVersion build() {

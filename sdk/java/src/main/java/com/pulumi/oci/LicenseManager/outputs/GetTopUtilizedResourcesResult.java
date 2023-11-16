@@ -19,13 +19,13 @@ public final class GetTopUtilizedResourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return The top utilized resource summary collection.
      * 
      */
-    private List<GetTopUtilizedResourcesItem> items;
+    private @Nullable List<GetTopUtilizedResourcesItem> items;
     private @Nullable String resourceUnitType;
 
     private GetTopUtilizedResourcesResult() {}
@@ -36,8 +36,8 @@ public final class GetTopUtilizedResourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -47,7 +47,7 @@ public final class GetTopUtilizedResourcesResult {
      * 
      */
     public List<GetTopUtilizedResourcesItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> resourceUnitType() {
         return Optional.ofNullable(this.resourceUnitType);
@@ -63,9 +63,9 @@ public final class GetTopUtilizedResourcesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
-        private List<GetTopUtilizedResourcesItem> items;
+        private @Nullable List<GetTopUtilizedResourcesItem> items;
         private @Nullable String resourceUnitType;
         public Builder() {}
         public Builder(GetTopUtilizedResourcesResult defaults) {
@@ -83,8 +83,8 @@ public final class GetTopUtilizedResourcesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -93,8 +93,8 @@ public final class GetTopUtilizedResourcesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetTopUtilizedResourcesItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetTopUtilizedResourcesItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetTopUtilizedResourcesItem... items) {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
@@ -72,27 +71,27 @@ type DataSafePrivateEndpoint struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the private endpoint.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
-	EndpointFqdn pulumi.StringOutput `pulumi:"endpointFqdn"`
+	EndpointFqdn pulumi.StringPtrOutput `pulumi:"endpointFqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The OCID of the underlying private endpoint.
-	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrOutput `pulumi:"privateEndpointId"`
 	// The private IP address of the private endpoint.
-	PrivateEndpointIp pulumi.StringOutput `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp pulumi.StringPtrOutput `pulumi:"privateEndpointIp"`
 	// The current state of the private endpoint.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of the subnet.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the VCN.
 	//
 	// ** IMPORTANT **
@@ -285,12 +284,6 @@ func (i *DataSafePrivateEndpoint) ToDataSafePrivateEndpointOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafePrivateEndpointOutput)
 }
 
-func (i *DataSafePrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*DataSafePrivateEndpoint] {
-	return pulumix.Output[*DataSafePrivateEndpoint]{
-		OutputState: i.ToDataSafePrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DataSafePrivateEndpointArrayInput is an input type that accepts DataSafePrivateEndpointArray and DataSafePrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `DataSafePrivateEndpointArrayInput` via:
 //
@@ -314,12 +307,6 @@ func (i DataSafePrivateEndpointArray) ToDataSafePrivateEndpointArrayOutput() Dat
 
 func (i DataSafePrivateEndpointArray) ToDataSafePrivateEndpointArrayOutputWithContext(ctx context.Context) DataSafePrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafePrivateEndpointArrayOutput)
-}
-
-func (i DataSafePrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafePrivateEndpoint] {
-	return pulumix.Output[[]*DataSafePrivateEndpoint]{
-		OutputState: i.ToDataSafePrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DataSafePrivateEndpointMapInput is an input type that accepts DataSafePrivateEndpointMap and DataSafePrivateEndpointMapOutput values.
@@ -347,12 +334,6 @@ func (i DataSafePrivateEndpointMap) ToDataSafePrivateEndpointMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DataSafePrivateEndpointMapOutput)
 }
 
-func (i DataSafePrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafePrivateEndpoint] {
-	return pulumix.Output[map[string]*DataSafePrivateEndpoint]{
-		OutputState: i.ToDataSafePrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataSafePrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (DataSafePrivateEndpointOutput) ElementType() reflect.Type {
@@ -367,12 +348,6 @@ func (o DataSafePrivateEndpointOutput) ToDataSafePrivateEndpointOutputWithContex
 	return o
 }
 
-func (o DataSafePrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*DataSafePrivateEndpoint] {
-	return pulumix.Output[*DataSafePrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment.
 func (o DataSafePrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -384,8 +359,8 @@ func (o DataSafePrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the private endpoint.
-func (o DataSafePrivateEndpointOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DataSafePrivateEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
@@ -394,8 +369,8 @@ func (o DataSafePrivateEndpointOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
-func (o DataSafePrivateEndpointOutput) EndpointFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.EndpointFqdn }).(pulumi.StringOutput)
+func (o DataSafePrivateEndpointOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringPtrOutput { return v.EndpointFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -409,18 +384,18 @@ func (o DataSafePrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // The OCID of the underlying private endpoint.
-func (o DataSafePrivateEndpointOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o DataSafePrivateEndpointOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringPtrOutput { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the private endpoint.
-func (o DataSafePrivateEndpointOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o DataSafePrivateEndpointOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringPtrOutput { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint.
-func (o DataSafePrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DataSafePrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet.
@@ -434,8 +409,8 @@ func (o DataSafePrivateEndpointOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o DataSafePrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DataSafePrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the VCN.
@@ -460,12 +435,6 @@ func (o DataSafePrivateEndpointArrayOutput) ToDataSafePrivateEndpointArrayOutput
 	return o
 }
 
-func (o DataSafePrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DataSafePrivateEndpoint] {
-	return pulumix.Output[[]*DataSafePrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DataSafePrivateEndpointArrayOutput) Index(i pulumi.IntInput) DataSafePrivateEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DataSafePrivateEndpoint {
 		return vs[0].([]*DataSafePrivateEndpoint)[vs[1].(int)]
@@ -484,12 +453,6 @@ func (o DataSafePrivateEndpointMapOutput) ToDataSafePrivateEndpointMapOutput() D
 
 func (o DataSafePrivateEndpointMapOutput) ToDataSafePrivateEndpointMapOutputWithContext(ctx context.Context) DataSafePrivateEndpointMapOutput {
 	return o
-}
-
-func (o DataSafePrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DataSafePrivateEndpoint] {
-	return pulumix.Output[map[string]*DataSafePrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataSafePrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) DataSafePrivateEndpointOutput {

@@ -208,7 +208,7 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of rrsets.
         /// </summary>
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.Dns
 
             ImmutableArray<Outputs.GetRrsetsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetRrsetsRrsetResult> rrsets,
 

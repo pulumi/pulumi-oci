@@ -69,10 +69,7 @@ class GetDbVersionsResult:
 
     @property
     @pulumi.getter(name="dbVersions")
-    def db_versions(self) -> Sequence['outputs.GetDbVersionsDbVersionResult']:
-        """
-        The list of db_versions.
-        """
+    def db_versions(self) -> Optional[Sequence['outputs.GetDbVersionsDbVersionResult']]:
         return pulumi.get(self, "db_versions")
 
     @property
@@ -82,7 +79,7 @@ class GetDbVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,9 +93,6 @@ class GetDbVersionsResult:
     @property
     @pulumi.getter(name="isUpgradeSupported")
     def is_upgrade_supported(self) -> Optional[bool]:
-        """
-        True if this version of the Oracle Database software is supported for Upgrade.
-        """
         return pulumi.get(self, "is_upgrade_supported")
 
     @property
@@ -133,33 +127,7 @@ def get_db_versions(compartment_id: Optional[str] = None,
                     storage_management: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbVersionsResult:
     """
-    This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported Oracle Database versions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_versions = oci.Database.get_db_versions(compartment_id=var["compartment_id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        db_system_shape=var["db_version_db_system_shape"],
-        is_database_software_image_supported=var["db_version_is_database_software_image_supported"],
-        is_upgrade_supported=var["db_version_is_upgrade_supported"],
-        storage_management=var["db_version_storage_management"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-    :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
-    :param bool is_database_software_image_supported: If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
-    :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
-    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
-           * ASM specifies Oracle Automatic Storage Management
-           * LVM specifies logical volume manager, sometimes called logical disk manager.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -194,32 +162,6 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            storage_management: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbVersionsResult]:
     """
-    This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported Oracle Database versions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_versions = oci.Database.get_db_versions(compartment_id=var["compartment_id"],
-        db_system_id=oci_database_db_system["test_db_system"]["id"],
-        db_system_shape=var["db_version_db_system_shape"],
-        is_database_software_image_supported=var["db_version_is_database_software_image_supported"],
-        is_upgrade_supported=var["db_version_is_upgrade_supported"],
-        storage_management=var["db_version_storage_management"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-    :param str db_system_shape: If provided, filters the results to the set of database versions which are supported for the given shape.
-    :param bool is_database_software_image_supported: If true, filters the results to the set of Oracle Database versions that are supported for Oracle Cloud Infrastructure database software images.
-    :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
-    :param str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
-           * ASM specifies Oracle Automatic Storage Management
-           * LVM specifies logical volume manager, sometimes called logical disk manager.
+    Use this data source to access information about an existing resource.
     """
     ...

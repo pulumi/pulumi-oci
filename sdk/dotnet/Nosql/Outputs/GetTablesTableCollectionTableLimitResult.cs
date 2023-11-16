@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         /// </summary>
-        public readonly string CapacityMode;
+        public readonly string? CapacityMode;
         /// <summary>
         /// Maximum sustained read throughput limit for the table.
         /// </summary>
-        public readonly int MaxReadUnits;
+        public readonly int? MaxReadUnits;
         /// <summary>
         /// Maximum size of storage used by the table.
         /// </summary>
-        public readonly int MaxStorageInGbs;
+        public readonly int? MaxStorageInGbs;
         /// <summary>
         /// Maximum sustained write throughput limit for the table.
         /// </summary>
-        public readonly int MaxWriteUnits;
+        public readonly int? MaxWriteUnits;
 
         [OutputConstructor]
         private GetTablesTableCollectionTableLimitResult(
-            string capacityMode,
+            string? capacityMode,
 
-            int maxReadUnits,
+            int? maxReadUnits,
 
-            int maxStorageInGbs,
+            int? maxStorageInGbs,
 
-            int maxWriteUnits)
+            int? maxWriteUnits)
         {
             CapacityMode = capacityMode;
             MaxReadUnits = maxReadUnits;

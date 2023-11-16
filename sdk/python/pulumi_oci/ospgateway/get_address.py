@@ -120,26 +120,17 @@ class GetAddressResult:
 
     @property
     @pulumi.getter(name="addressKey")
-    def address_key(self) -> str:
-        """
-        Address identifier.
-        """
+    def address_key(self) -> Optional[str]:
         return pulumi.get(self, "address_key")
 
     @property
     @pulumi.getter
-    def city(self) -> str:
-        """
-        Name of the city.
-        """
+    def city(self) -> Optional[str]:
         return pulumi.get(self, "city")
 
     @property
     @pulumi.getter(name="companyName")
-    def company_name(self) -> str:
-        """
-        Name of the customer company.
-        """
+    def company_name(self) -> Optional[str]:
         return pulumi.get(self, "company_name")
 
     @property
@@ -149,55 +140,37 @@ class GetAddressResult:
 
     @property
     @pulumi.getter(name="contributorClass")
-    def contributor_class(self) -> str:
-        """
-        Contributor class of the customer company.
-        """
+    def contributor_class(self) -> Optional[str]:
         return pulumi.get(self, "contributor_class")
 
     @property
     @pulumi.getter
-    def country(self) -> str:
-        """
-        Country of the address.
-        """
+    def country(self) -> Optional[str]:
         return pulumi.get(self, "country")
 
     @property
     @pulumi.getter
-    def county(self) -> str:
-        """
-        County of the address.
-        """
+    def county(self) -> Optional[str]:
         return pulumi.get(self, "county")
 
     @property
     @pulumi.getter(name="departmentName")
-    def department_name(self) -> str:
-        """
-        Department name of the customer company.
-        """
+    def department_name(self) -> Optional[str]:
         return pulumi.get(self, "department_name")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        Contact person email address.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        First name of the contact person.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -205,74 +178,47 @@ class GetAddressResult:
 
     @property
     @pulumi.getter(name="internalNumber")
-    def internal_number(self) -> str:
-        """
-        Internal number of the customer company.
-        """
+    def internal_number(self) -> Optional[str]:
         return pulumi.get(self, "internal_number")
 
     @property
     @pulumi.getter(name="jobTitle")
-    def job_title(self) -> str:
-        """
-        Job title of the contact person.
-        """
+    def job_title(self) -> Optional[str]:
         return pulumi.get(self, "job_title")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Last name of the contact person.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def line1(self) -> str:
-        """
-        Address line 1.
-        """
+    def line1(self) -> Optional[str]:
         return pulumi.get(self, "line1")
 
     @property
     @pulumi.getter
-    def line2(self) -> str:
-        """
-        Address line 2.
-        """
+    def line2(self) -> Optional[str]:
         return pulumi.get(self, "line2")
 
     @property
     @pulumi.getter
-    def line3(self) -> str:
-        """
-        Address line 3.
-        """
+    def line3(self) -> Optional[str]:
         return pulumi.get(self, "line3")
 
     @property
     @pulumi.getter
-    def line4(self) -> str:
-        """
-        Address line 4.
-        """
+    def line4(self) -> Optional[str]:
         return pulumi.get(self, "line4")
 
     @property
     @pulumi.getter(name="middleName")
-    def middle_name(self) -> str:
-        """
-        Middle name of the contact person.
-        """
+    def middle_name(self) -> Optional[str]:
         return pulumi.get(self, "middle_name")
 
     @property
     @pulumi.getter(name="municipalInscription")
-    def municipal_inscription(self) -> str:
-        """
-        Municipal Inscription.
-        """
+    def municipal_inscription(self) -> Optional[str]:
         return pulumi.get(self, "municipal_inscription")
 
     @property
@@ -282,66 +228,42 @@ class GetAddressResult:
 
     @property
     @pulumi.getter(name="phoneCountryCode")
-    def phone_country_code(self) -> str:
-        """
-        Phone country code of the contact person.
-        """
+    def phone_country_code(self) -> Optional[str]:
         return pulumi.get(self, "phone_country_code")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> str:
-        """
-        Phone number of the contact person.
-        """
+    def phone_number(self) -> Optional[str]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter(name="postalCode")
-    def postal_code(self) -> str:
-        """
-        Post code of the address.
-        """
+    def postal_code(self) -> Optional[str]:
         return pulumi.get(self, "postal_code")
 
     @property
     @pulumi.getter
-    def province(self) -> str:
-        """
-        Province of the address.
-        """
+    def province(self) -> Optional[str]:
         return pulumi.get(self, "province")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        State of the address.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateInscription")
-    def state_inscription(self) -> str:
-        """
-        State Inscription.
-        """
+    def state_inscription(self) -> Optional[str]:
         return pulumi.get(self, "state_inscription")
 
     @property
     @pulumi.getter(name="streetName")
-    def street_name(self) -> str:
-        """
-        Street name of the address.
-        """
+    def street_name(self) -> Optional[str]:
         return pulumi.get(self, "street_name")
 
     @property
     @pulumi.getter(name="streetNumber")
-    def street_number(self) -> str:
-        """
-        Street number of the address.
-        """
+    def street_number(self) -> Optional[str]:
         return pulumi.get(self, "street_number")
 
 
@@ -388,25 +310,7 @@ def get_address(address_id: Optional[str] = None,
                 osp_home_region: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddressResult:
     """
-    This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the address by id for the compartment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_address = oci.OspGateway.get_address(address_id=oci_osp_gateway_addres["test_addres"]["id"],
-        compartment_id=var["compartment_id"],
-        osp_home_region=var["address_osp_home_region"])
-    ```
-
-
-    :param str address_id: The identifier of the address.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['addressId'] = address_id
@@ -454,24 +358,6 @@ def get_address_output(address_id: Optional[pulumi.Input[str]] = None,
                        osp_home_region: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressResult]:
     """
-    This data source provides details about a specific Address resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the address by id for the compartment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_address = oci.OspGateway.get_address(address_id=oci_osp_gateway_addres["test_addres"]["id"],
-        compartment_id=var["compartment_id"],
-        osp_home_region=var["address_osp_home_region"])
-    ```
-
-
-    :param str address_id: The identifier of the address.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     ...

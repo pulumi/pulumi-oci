@@ -16,17 +16,17 @@ namespace Pulumi.Oci.AnnouncementsService.Outputs
         /// <summary>
         /// The type of filter.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The value of the filter.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterResult(
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Type = type;
             Value = value;

@@ -22,22 +22,22 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/defaultSecurityList:DefaultSecurityList")
 public class DefaultSecurityList extends com.pulumi.resources.CustomResource {
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     @Export(name="egressSecurityRules", refs={List.class,DefaultSecurityListEgressSecurityRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DefaultSecurityListEgressSecurityRule>> egressSecurityRules;
@@ -46,10 +46,10 @@ public class DefaultSecurityList extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.egressSecurityRules);
     }
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="ingressSecurityRules", refs={List.class,DefaultSecurityListIngressSecurityRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DefaultSecurityListIngressSecurityRule>> ingressSecurityRules;
@@ -64,16 +64,16 @@ public class DefaultSecurityList extends com.pulumi.resources.CustomResource {
         return this.manageDefaultResourceId;
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

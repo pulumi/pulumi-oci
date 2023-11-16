@@ -259,7 +259,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsAccepted;
         public readonly bool? IsAdaptive;
         public readonly bool? IsEnabled;
@@ -292,7 +292,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseSqlPlanBaselinesResult(
             ImmutableArray<Outputs.GetManagedDatabaseSqlPlanBaselinesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isAccepted,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
@@ -60,20 +59,20 @@ type LookupEnrollmentStatusArgs struct {
 // A collection of values returned by getEnrollmentStatus.
 type LookupEnrollmentStatusResult struct {
 	// The OCID of the compartment.
-	CompartmentId      string `pulumi:"compartmentId"`
-	EnrollmentStatusId string `pulumi:"enrollmentStatusId"`
+	CompartmentId      *string `pulumi:"compartmentId"`
+	EnrollmentStatusId string  `pulumi:"enrollmentStatusId"`
 	// The OCID of the enrollment status.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The enrollment status' current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The current Cloud Advisor enrollment status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The reason for the enrollment status of the tenancy.
-	StatusReason string `pulumi:"statusReason"`
+	StatusReason *string `pulumi:"statusReason"`
 	// The date and time the enrollment status was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the enrollment status was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupEnrollmentStatusOutput(ctx *pulumi.Context, args LookupEnrollmentStatusOutputArgs, opts ...pulumi.InvokeOption) LookupEnrollmentStatusResultOutput {
@@ -114,15 +113,9 @@ func (o LookupEnrollmentStatusResultOutput) ToLookupEnrollmentStatusResultOutput
 	return o
 }
 
-func (o LookupEnrollmentStatusResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEnrollmentStatusResult] {
-	return pulumix.Output[LookupEnrollmentStatusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o LookupEnrollmentStatusResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEnrollmentStatusResultOutput) EnrollmentStatusId() pulumi.StringOutput {
@@ -130,33 +123,33 @@ func (o LookupEnrollmentStatusResultOutput) EnrollmentStatusId() pulumi.StringOu
 }
 
 // The OCID of the enrollment status.
-func (o LookupEnrollmentStatusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The enrollment status' current state.
-func (o LookupEnrollmentStatusResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current Cloud Advisor enrollment status.
-func (o LookupEnrollmentStatusResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The reason for the enrollment status of the tenancy.
-func (o LookupEnrollmentStatusResultOutput) StatusReason() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.StatusReason }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) StatusReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.StatusReason }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the enrollment status was created, in the format defined by RFC3339.
-func (o LookupEnrollmentStatusResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the enrollment status was last updated, in the format defined by RFC3339.
-func (o LookupEnrollmentStatusResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnrollmentStatusResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupEnrollmentStatusResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnrollmentStatusResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

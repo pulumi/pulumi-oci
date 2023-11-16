@@ -101,11 +101,11 @@ export interface GetLifecycleEnvironmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of lifecycle_environment_collection.
      */
-    readonly lifecycleEnvironmentCollections: outputs.OsManagementHub.GetLifecycleEnvironmentsLifecycleEnvironmentCollection[];
+    readonly lifecycleEnvironmentCollections?: outputs.OsManagementHub.GetLifecycleEnvironmentsLifecycleEnvironmentCollection[];
     /**
      * The OCID of the lifecycle environment for the lifecycle stage.
      */

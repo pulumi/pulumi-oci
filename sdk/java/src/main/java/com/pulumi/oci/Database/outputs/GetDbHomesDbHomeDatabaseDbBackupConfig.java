@@ -10,42 +10,44 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
-    private Boolean autoBackupEnabled;
-    private String autoBackupWindow;
-    private String autoFullBackupDay;
-    private String autoFullBackupWindow;
-    private String backupDeletionPolicy;
-    private List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
-    private Integer recoveryWindowInDays;
-    private Boolean runImmediateFullBackup;
+    private @Nullable Boolean autoBackupEnabled;
+    private @Nullable String autoBackupWindow;
+    private @Nullable String autoFullBackupDay;
+    private @Nullable String autoFullBackupWindow;
+    private @Nullable String backupDeletionPolicy;
+    private @Nullable List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+    private @Nullable Integer recoveryWindowInDays;
+    private @Nullable Boolean runImmediateFullBackup;
 
     private GetDbHomesDbHomeDatabaseDbBackupConfig() {}
-    public Boolean autoBackupEnabled() {
-        return this.autoBackupEnabled;
+    public Optional<Boolean> autoBackupEnabled() {
+        return Optional.ofNullable(this.autoBackupEnabled);
     }
-    public String autoBackupWindow() {
-        return this.autoBackupWindow;
+    public Optional<String> autoBackupWindow() {
+        return Optional.ofNullable(this.autoBackupWindow);
     }
-    public String autoFullBackupDay() {
-        return this.autoFullBackupDay;
+    public Optional<String> autoFullBackupDay() {
+        return Optional.ofNullable(this.autoFullBackupDay);
     }
-    public String autoFullBackupWindow() {
-        return this.autoFullBackupWindow;
+    public Optional<String> autoFullBackupWindow() {
+        return Optional.ofNullable(this.autoFullBackupWindow);
     }
-    public String backupDeletionPolicy() {
-        return this.backupDeletionPolicy;
+    public Optional<String> backupDeletionPolicy() {
+        return Optional.ofNullable(this.backupDeletionPolicy);
     }
     public List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails() {
-        return this.backupDestinationDetails;
+        return this.backupDestinationDetails == null ? List.of() : this.backupDestinationDetails;
     }
-    public Integer recoveryWindowInDays() {
-        return this.recoveryWindowInDays;
+    public Optional<Integer> recoveryWindowInDays() {
+        return Optional.ofNullable(this.recoveryWindowInDays);
     }
-    public Boolean runImmediateFullBackup() {
-        return this.runImmediateFullBackup;
+    public Optional<Boolean> runImmediateFullBackup() {
+        return Optional.ofNullable(this.runImmediateFullBackup);
     }
 
     public static Builder builder() {
@@ -57,14 +59,14 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean autoBackupEnabled;
-        private String autoBackupWindow;
-        private String autoFullBackupDay;
-        private String autoFullBackupWindow;
-        private String backupDeletionPolicy;
-        private List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
-        private Integer recoveryWindowInDays;
-        private Boolean runImmediateFullBackup;
+        private @Nullable Boolean autoBackupEnabled;
+        private @Nullable String autoBackupWindow;
+        private @Nullable String autoFullBackupDay;
+        private @Nullable String autoFullBackupWindow;
+        private @Nullable String backupDeletionPolicy;
+        private @Nullable List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails;
+        private @Nullable Integer recoveryWindowInDays;
+        private @Nullable Boolean runImmediateFullBackup;
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseDbBackupConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,46 +81,46 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfig {
         }
 
         @CustomType.Setter
-        public Builder autoBackupEnabled(Boolean autoBackupEnabled) {
-            this.autoBackupEnabled = Objects.requireNonNull(autoBackupEnabled);
+        public Builder autoBackupEnabled(@Nullable Boolean autoBackupEnabled) {
+            this.autoBackupEnabled = autoBackupEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder autoBackupWindow(String autoBackupWindow) {
-            this.autoBackupWindow = Objects.requireNonNull(autoBackupWindow);
+        public Builder autoBackupWindow(@Nullable String autoBackupWindow) {
+            this.autoBackupWindow = autoBackupWindow;
             return this;
         }
         @CustomType.Setter
-        public Builder autoFullBackupDay(String autoFullBackupDay) {
-            this.autoFullBackupDay = Objects.requireNonNull(autoFullBackupDay);
+        public Builder autoFullBackupDay(@Nullable String autoFullBackupDay) {
+            this.autoFullBackupDay = autoFullBackupDay;
             return this;
         }
         @CustomType.Setter
-        public Builder autoFullBackupWindow(String autoFullBackupWindow) {
-            this.autoFullBackupWindow = Objects.requireNonNull(autoFullBackupWindow);
+        public Builder autoFullBackupWindow(@Nullable String autoFullBackupWindow) {
+            this.autoFullBackupWindow = autoFullBackupWindow;
             return this;
         }
         @CustomType.Setter
-        public Builder backupDeletionPolicy(String backupDeletionPolicy) {
-            this.backupDeletionPolicy = Objects.requireNonNull(backupDeletionPolicy);
+        public Builder backupDeletionPolicy(@Nullable String backupDeletionPolicy) {
+            this.backupDeletionPolicy = backupDeletionPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder backupDestinationDetails(List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+        public Builder backupDestinationDetails(@Nullable List<GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail... backupDestinationDetails) {
             return backupDestinationDetails(List.of(backupDestinationDetails));
         }
         @CustomType.Setter
-        public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+        public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder runImmediateFullBackup(Boolean runImmediateFullBackup) {
-            this.runImmediateFullBackup = Objects.requireNonNull(runImmediateFullBackup);
+        public Builder runImmediateFullBackup(@Nullable Boolean runImmediateFullBackup) {
+            this.runImmediateFullBackup = runImmediateFullBackup;
             return this;
         }
         public GetDbHomesDbHomeDatabaseDbBackupConfig build() {

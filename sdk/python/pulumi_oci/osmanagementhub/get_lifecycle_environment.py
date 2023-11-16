@@ -74,130 +74,82 @@ class GetLifecycleEnvironmentResult:
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The CPU architecture of the target instances.
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the lifecycle stage.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Software source description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Software source name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the software source.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> str:
-        """
-        The OCID of the lifecycle environment for the lifecycle stage.
-        """
         return pulumi.get(self, "lifecycle_environment_id")
 
     @property
     @pulumi.getter(name="managedInstanceIds")
-    def managed_instance_ids(self) -> Sequence['outputs.GetLifecycleEnvironmentManagedInstanceIdResult']:
-        """
-        The list of managed instances specified lifecycle stage.
-        """
+    def managed_instance_ids(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentManagedInstanceIdResult']]:
         return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="osFamily")
-    def os_family(self) -> str:
-        """
-        The operating system type of the target instances.
-        """
+    def os_family(self) -> Optional[str]:
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence['outputs.GetLifecycleEnvironmentStageResult']:
-        """
-        User specified list of lifecycle stages to be created for the lifecycle environment.
-        """
+    def stages(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentStageResult']]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the lifecycle environment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="vendorName")
-    def vendor_name(self) -> str:
-        """
-        The software source vendor name.
-        """
+    def vendor_name(self) -> Optional[str]:
         return pulumi.get(self, "vendor_name")
 
 
@@ -228,21 +180,7 @@ class AwaitableGetLifecycleEnvironmentResult(GetLifecycleEnvironmentResult):
 def get_lifecycle_environment(lifecycle_environment_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLifecycleEnvironmentResult:
     """
-    This data source provides details about a specific Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified lifecycle environment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_lifecycle_environment = oci.OsManagementHub.get_lifecycle_environment(lifecycle_environment_id=oci_os_management_hub_lifecycle_environment["test_lifecycle_environment"]["id"])
-    ```
-
-
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['lifecycleEnvironmentId'] = lifecycle_environment_id
@@ -272,20 +210,6 @@ def get_lifecycle_environment(lifecycle_environment_id: Optional[str] = None,
 def get_lifecycle_environment_output(lifecycle_environment_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLifecycleEnvironmentResult]:
     """
-    This data source provides details about a specific Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified lifecycle environment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_lifecycle_environment = oci.OsManagementHub.get_lifecycle_environment(lifecycle_environment_id=oci_os_management_hub_lifecycle_environment["test_lifecycle_environment"]["id"])
-    ```
-
-
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
+    Use this data source to access information about an existing resource.
     """
     ...

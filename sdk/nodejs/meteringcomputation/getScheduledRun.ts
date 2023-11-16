@@ -45,28 +45,28 @@ export interface GetScheduledRunResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional details about scheduled run failure
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The ocid representing unique shedule
      */
-    readonly scheduleId: string;
+    readonly scheduleId?: string;
     readonly scheduledRunId: string;
     /**
      * Specifies if the schedule job was run successfully or not.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time when schedule started executing
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when schedule finished executing
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
 }
 /**
  * This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.

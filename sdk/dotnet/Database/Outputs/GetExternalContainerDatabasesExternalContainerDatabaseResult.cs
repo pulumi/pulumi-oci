@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The character set of the external database.
         /// </summary>
-        public readonly string CharacterSet;
+        public readonly string? CharacterSet;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The Oracle Database configuration
         /// </summary>
-        public readonly string DatabaseConfiguration;
+        public readonly string? DatabaseConfiguration;
         /// <summary>
         /// The Oracle Database edition.
         /// </summary>
-        public readonly string DatabaseEdition;
+        public readonly string? DatabaseEdition;
         /// <summary>
         /// The configuration of the Database Management service.
         /// </summary>
@@ -36,43 +36,43 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The Oracle Database version.
         /// </summary>
-        public readonly string DatabaseVersion;
+        public readonly string? DatabaseVersion;
         /// <summary>
         /// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         /// </summary>
-        public readonly string DbId;
+        public readonly string? DbId;
         /// <summary>
         /// The database packs licensed for the external Oracle Database.
         /// </summary>
-        public readonly string DbPacks;
+        public readonly string? DbPacks;
         /// <summary>
         /// The `DB_UNIQUE_NAME` of the external database.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The national character of the external database.
         /// </summary>
-        public readonly string NcharacterSet;
+        public readonly string? NcharacterSet;
         /// <summary>
         /// The configuration of Stack Monitoring for the external database.
         /// </summary>
@@ -80,55 +80,55 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         /// </summary>
-        public readonly string TimeZone;
+        public readonly string? TimeZone;
 
         [OutputConstructor]
         private GetExternalContainerDatabasesExternalContainerDatabaseResult(
-            string characterSet,
+            string? characterSet,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseConfiguration,
+            string? databaseConfiguration,
 
-            string databaseEdition,
+            string? databaseEdition,
 
             ImmutableArray<Outputs.GetExternalContainerDatabasesExternalContainerDatabaseDatabaseManagementConfigResult> databaseManagementConfigs,
 
-            string databaseVersion,
+            string? databaseVersion,
 
-            string dbId,
+            string? dbId,
 
-            string dbPacks,
+            string? dbPacks,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string ncharacterSet,
+            string? ncharacterSet,
 
             ImmutableArray<Outputs.GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigResult> stackMonitoringConfigs,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeZone)
+            string? timeZone)
         {
             CharacterSet = characterSet;
             CompartmentId = compartmentId;

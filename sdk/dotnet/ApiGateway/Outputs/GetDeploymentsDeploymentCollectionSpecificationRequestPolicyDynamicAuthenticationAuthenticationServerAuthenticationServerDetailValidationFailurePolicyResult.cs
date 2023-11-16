@@ -20,19 +20,19 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The path to be used as fallback after OAuth2.
         /// </summary>
-        public readonly string FallbackRedirectPath;
+        public readonly string? FallbackRedirectPath;
         /// <summary>
         /// The path to be used as logout.
         /// </summary>
-        public readonly string LogoutPath;
+        public readonly string? LogoutPath;
         /// <summary>
         /// The duration for which the OAuth2 success token should be cached before it is fetched again.
         /// </summary>
-        public readonly int MaxExpiryDurationInHours;
+        public readonly int? MaxExpiryDurationInHours;
         /// <summary>
         /// HTTP response code, can include context variables.
         /// </summary>
-        public readonly string ResponseCode;
+        public readonly string? ResponseCode;
         /// <summary>
         /// A set of transformations to apply to HTTP headers that pass through the gateway.
         /// </summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// HTTP response message.
         /// </summary>
-        public readonly string ResponseMessage;
+        public readonly string? ResponseMessage;
         /// <summary>
         /// Response Type.
         /// </summary>
-        public readonly string ResponseType;
+        public readonly string? ResponseType;
         /// <summary>
         /// List of scopes.
         /// </summary>
@@ -56,49 +56,49 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Defines whether or not to use cookies for OAuth2 intermediate steps.
         /// </summary>
-        public readonly bool UseCookiesForIntermediateSteps;
+        public readonly bool? UseCookiesForIntermediateSteps;
         /// <summary>
         /// Defines whether or not to use cookies for session maintenance.
         /// </summary>
-        public readonly bool UseCookiesForSession;
+        public readonly bool? UseCookiesForSession;
         /// <summary>
         /// Defines whether or not to support PKCE.
         /// </summary>
-        public readonly bool UsePkce;
+        public readonly bool? UsePkce;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResult(
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailResult> clientDetails,
 
-            string fallbackRedirectPath,
+            string? fallbackRedirectPath,
 
-            string logoutPath,
+            string? logoutPath,
 
-            int maxExpiryDurationInHours,
+            int? maxExpiryDurationInHours,
 
-            string responseCode,
+            string? responseCode,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationResult> responseHeaderTransformations,
 
-            string responseMessage,
+            string? responseMessage,
 
-            string responseType,
+            string? responseType,
 
             ImmutableArray<string> scopes,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailResult> sourceUriDetails,
 
-            string type,
+            string? type,
 
-            bool useCookiesForIntermediateSteps,
+            bool? useCookiesForIntermediateSteps,
 
-            bool useCookiesForSession,
+            bool? useCookiesForSession,
 
-            bool usePkce)
+            bool? usePkce)
         {
             ClientDetails = clientDetails;
             FallbackRedirectPath = fallbackRedirectPath;

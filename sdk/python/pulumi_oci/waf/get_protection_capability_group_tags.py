@@ -55,7 +55,7 @@ class GetProtectionCapabilityGroupTagsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -64,17 +64,11 @@ class GetProtectionCapabilityGroupTagsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Unique name of protection capability group tag.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="protectionCapabilityGroupTagCollections")
-    def protection_capability_group_tag_collections(self) -> Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionResult']:
-        """
-        The list of protection_capability_group_tag_collection.
-        """
+    def protection_capability_group_tag_collections(self) -> Optional[Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionResult']]:
         return pulumi.get(self, "protection_capability_group_tag_collections")
 
     @property
@@ -103,25 +97,7 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
                                          type: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionCapabilityGroupTagsResult:
     """
-    This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
-
-    Lists of available group tags filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=var["compartment_id"],
-        name=var["protection_capability_group_tag_name"],
-        type=var["protection_capability_group_tag_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str type: A filter to return only resources that matches given type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -147,24 +123,6 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
                                                 type: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionCapabilityGroupTagsResult]:
     """
-    This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
-
-    Lists of available group tags filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=var["compartment_id"],
-        name=var["protection_capability_group_tag_name"],
-        type=var["protection_capability_group_tag_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str type: A filter to return only resources that matches given type.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -49,12 +49,12 @@ export interface GetCertificatesResult {
     /**
      * The list of certificates.
      */
-    readonly certificates: outputs.LoadBalancer.GetCertificatesCertificate[];
+    readonly certificates?: outputs.LoadBalancer.GetCertificatesCertificate[];
     readonly filters?: outputs.LoadBalancer.GetCertificatesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
 }
 /**

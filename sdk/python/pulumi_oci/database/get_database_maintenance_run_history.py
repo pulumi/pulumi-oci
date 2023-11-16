@@ -38,15 +38,12 @@ class GetDatabaseMaintenanceRunHistoryResult:
 
     @property
     @pulumi.getter(name="dbServersHistoryDetails")
-    def db_servers_history_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult']:
-        """
-        List of database server history details.
-        """
+    def db_servers_history_details(self) -> Optional[Sequence['outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult']]:
         return pulumi.get(self, "db_servers_history_details")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -54,10 +51,7 @@ class GetDatabaseMaintenanceRunHistoryResult:
 
     @property
     @pulumi.getter(name="maintenanceRunDetails")
-    def maintenance_run_details(self) -> Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult']:
-        """
-        Details of a maintenance run.
-        """
+    def maintenance_run_details(self) -> Optional[Sequence['outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult']]:
         return pulumi.get(self, "maintenance_run_details")
 
     @property
@@ -81,21 +75,7 @@ class AwaitableGetDatabaseMaintenanceRunHistoryResult(GetDatabaseMaintenanceRunH
 def get_database_maintenance_run_history(maintenance_run_history_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseMaintenanceRunHistoryResult:
     """
-    This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified maintenance run history.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=oci_database_maintenance_run_history["test_maintenance_run_history"]["id"])
-    ```
-
-
-    :param str maintenance_run_history_id: The maintenance run history OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['maintenanceRunHistoryId'] = maintenance_run_history_id
@@ -113,20 +93,6 @@ def get_database_maintenance_run_history(maintenance_run_history_id: Optional[st
 def get_database_maintenance_run_history_output(maintenance_run_history_id: Optional[pulumi.Input[str]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseMaintenanceRunHistoryResult]:
     """
-    This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified maintenance run history.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=oci_database_maintenance_run_history["test_maintenance_run_history"]["id"])
-    ```
-
-
-    :param str maintenance_run_history_id: The maintenance run history OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

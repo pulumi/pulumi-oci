@@ -20,13 +20,13 @@ public final class GetListingTaxesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String listingId;
     /**
      * @return The list of taxes.
      * 
      */
-    private List<GetListingTaxesTax> taxes;
+    private @Nullable List<GetListingTaxesTax> taxes;
 
     private GetListingTaxesResult() {}
     public Optional<String> compartmentId() {
@@ -39,8 +39,8 @@ public final class GetListingTaxesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String listingId() {
         return this.listingId;
@@ -50,7 +50,7 @@ public final class GetListingTaxesResult {
      * 
      */
     public List<GetListingTaxesTax> taxes() {
-        return this.taxes;
+        return this.taxes == null ? List.of() : this.taxes;
     }
 
     public static Builder builder() {
@@ -64,9 +64,9 @@ public final class GetListingTaxesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetListingTaxesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String listingId;
-        private List<GetListingTaxesTax> taxes;
+        private @Nullable List<GetListingTaxesTax> taxes;
         public Builder() {}
         public Builder(GetListingTaxesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,8 +91,8 @@ public final class GetListingTaxesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -101,8 +101,8 @@ public final class GetListingTaxesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder taxes(List<GetListingTaxesTax> taxes) {
-            this.taxes = Objects.requireNonNull(taxes);
+        public Builder taxes(@Nullable List<GetListingTaxesTax> taxes) {
+            this.taxes = taxes;
             return this;
         }
         public Builder taxes(GetListingTaxesTax... taxes) {

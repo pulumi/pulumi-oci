@@ -76,7 +76,7 @@ export interface GetBudgetsResult {
     /**
      * The list of budgets.
      */
-    readonly budgets: outputs.Budget.GetBudgetsBudget[];
+    readonly budgets?: outputs.Budget.GetBudgetsBudget[];
     /**
      * The OCID of the compartment.
      */
@@ -89,7 +89,7 @@ export interface GetBudgetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the budget.
      */

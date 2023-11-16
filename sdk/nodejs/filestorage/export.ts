@@ -82,7 +82,7 @@ export class Export extends pulumi.CustomResource {
      *
      * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
-    public readonly exportOptions!: pulumi.Output<outputs.FileStorage.ExportExportOption[]>;
+    public readonly exportOptions!: pulumi.Output<outputs.FileStorage.ExportExportOption[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
      */
@@ -94,7 +94,7 @@ export class Export extends pulumi.CustomResource {
     /**
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
-    public readonly isIdmapGroupsForSysAuth!: pulumi.Output<boolean>;
+    public readonly isIdmapGroupsForSysAuth!: pulumi.Output<boolean | undefined>;
     /**
      * Path used to access the associated file system.
      *
@@ -110,11 +110,11 @@ export class Export extends pulumi.CustomResource {
     /**
      * The current state of this export.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Export resource with the given unique name, arguments, and options.

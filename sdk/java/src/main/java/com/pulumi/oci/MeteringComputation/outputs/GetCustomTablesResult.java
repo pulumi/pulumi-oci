@@ -9,6 +9,7 @@ import com.pulumi.oci.MeteringComputation.outputs.GetCustomTablesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -22,13 +23,13 @@ public final class GetCustomTablesResult {
      * @return The list of custom_table_collection.
      * 
      */
-    private List<GetCustomTablesCustomTableCollection> customTableCollections;
+    private @Nullable List<GetCustomTablesCustomTableCollection> customTableCollections;
     private @Nullable List<GetCustomTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The custom table associated saved report OCID.
      * 
@@ -48,7 +49,7 @@ public final class GetCustomTablesResult {
      * 
      */
     public List<GetCustomTablesCustomTableCollection> customTableCollections() {
-        return this.customTableCollections;
+        return this.customTableCollections == null ? List.of() : this.customTableCollections;
     }
     public List<GetCustomTablesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -57,8 +58,8 @@ public final class GetCustomTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The custom table associated saved report OCID.
@@ -78,9 +79,9 @@ public final class GetCustomTablesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetCustomTablesCustomTableCollection> customTableCollections;
+        private @Nullable List<GetCustomTablesCustomTableCollection> customTableCollections;
         private @Nullable List<GetCustomTablesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String savedReportId;
         public Builder() {}
         public Builder(GetCustomTablesResult defaults) {
@@ -98,8 +99,8 @@ public final class GetCustomTablesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder customTableCollections(List<GetCustomTablesCustomTableCollection> customTableCollections) {
-            this.customTableCollections = Objects.requireNonNull(customTableCollections);
+        public Builder customTableCollections(@Nullable List<GetCustomTablesCustomTableCollection> customTableCollections) {
+            this.customTableCollections = customTableCollections;
             return this;
         }
         public Builder customTableCollections(GetCustomTablesCustomTableCollection... customTableCollections) {
@@ -114,8 +115,8 @@ public final class GetCustomTablesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

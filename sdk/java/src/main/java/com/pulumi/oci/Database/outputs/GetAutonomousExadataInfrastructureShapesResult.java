@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousExadataInfrastructureShapesF
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,7 +18,7 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
      * @return The list of autonomous_exadata_infrastructure_shapes.
      * 
      */
-    private List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
+    private @Nullable List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
     private String availabilityDomain;
     private String compartmentId;
     private @Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters;
@@ -25,7 +26,7 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousExadataInfrastructureShapesResult() {}
     /**
@@ -33,7 +34,7 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
      * 
      */
     public List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes() {
-        return this.autonomousExadataInfrastructureShapes;
+        return this.autonomousExadataInfrastructureShapes == null ? List.of() : this.autonomousExadataInfrastructureShapes;
     }
     public String availabilityDomain() {
         return this.availabilityDomain;
@@ -48,8 +49,8 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -61,11 +62,11 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
+        private @Nullable List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes;
         private String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetAutonomousExadataInfrastructureShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -77,8 +78,8 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousExadataInfrastructureShapes(List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes) {
-            this.autonomousExadataInfrastructureShapes = Objects.requireNonNull(autonomousExadataInfrastructureShapes);
+        public Builder autonomousExadataInfrastructureShapes(@Nullable List<GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape> autonomousExadataInfrastructureShapes) {
+            this.autonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
             return this;
         }
         public Builder autonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape... autonomousExadataInfrastructureShapes) {
@@ -103,8 +104,8 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousExadataInfrastructureShapesResult build() {

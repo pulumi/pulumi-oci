@@ -21,14 +21,14 @@ public final class GetNamespaceEffectivePropertiesResult {
      * @return The list of effective_property_collection.
      * 
      */
-    private List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections;
+    private @Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections;
     private @Nullable String entityId;
     private @Nullable List<GetNamespaceEffectivePropertiesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isIncludePatterns;
     /**
      * @return The property name.
@@ -48,7 +48,7 @@ public final class GetNamespaceEffectivePropertiesResult {
      * 
      */
     public List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections() {
-        return this.effectivePropertyCollections;
+        return this.effectivePropertyCollections == null ? List.of() : this.effectivePropertyCollections;
     }
     public Optional<String> entityId() {
         return Optional.ofNullable(this.entityId);
@@ -60,8 +60,8 @@ public final class GetNamespaceEffectivePropertiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isIncludePatterns() {
         return Optional.ofNullable(this.isIncludePatterns);
@@ -93,10 +93,10 @@ public final class GetNamespaceEffectivePropertiesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String agentId;
-        private List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections;
+        private @Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections;
         private @Nullable String entityId;
         private @Nullable List<GetNamespaceEffectivePropertiesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isIncludePatterns;
         private @Nullable String name;
         private String namespace;
@@ -123,8 +123,8 @@ public final class GetNamespaceEffectivePropertiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder effectivePropertyCollections(List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections) {
-            this.effectivePropertyCollections = Objects.requireNonNull(effectivePropertyCollections);
+        public Builder effectivePropertyCollections(@Nullable List<GetNamespaceEffectivePropertiesEffectivePropertyCollection> effectivePropertyCollections) {
+            this.effectivePropertyCollections = effectivePropertyCollections;
             return this;
         }
         public Builder effectivePropertyCollections(GetNamespaceEffectivePropertiesEffectivePropertyCollection... effectivePropertyCollections) {
@@ -144,8 +144,8 @@ public final class GetNamespaceEffectivePropertiesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

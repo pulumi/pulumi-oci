@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRegionSubscriptionsRegionSubscription {
@@ -14,7 +16,7 @@ public final class GetRegionSubscriptionsRegionSubscription {
      * @return Indicates if the region is the home region or not.
      * 
      */
-    private Boolean isHomeRegion;
+    private @Nullable Boolean isHomeRegion;
     /**
      * @return The region&#39;s key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
      * 
@@ -24,8 +26,8 @@ public final class GetRegionSubscriptionsRegionSubscription {
      * @return The region&#39;s name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    private String regionName;
-    private String state;
+    private @Nullable String regionName;
+    private @Nullable String state;
     /**
      * @return The OCID of the tenancy.
      * 
@@ -37,8 +39,8 @@ public final class GetRegionSubscriptionsRegionSubscription {
      * @return Indicates if the region is the home region or not.
      * 
      */
-    public Boolean isHomeRegion() {
-        return this.isHomeRegion;
+    public Optional<Boolean> isHomeRegion() {
+        return Optional.ofNullable(this.isHomeRegion);
     }
     /**
      * @return The region&#39;s key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported 3-letter region codes.  Example: `PHX`
@@ -51,11 +53,11 @@ public final class GetRegionSubscriptionsRegionSubscription {
      * @return The region&#39;s name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
      * 
      */
-    public String regionName() {
-        return this.regionName;
+    public Optional<String> regionName() {
+        return Optional.ofNullable(this.regionName);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the tenancy.
@@ -74,10 +76,10 @@ public final class GetRegionSubscriptionsRegionSubscription {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isHomeRegion;
+        private @Nullable Boolean isHomeRegion;
         private String regionKey;
-        private String regionName;
-        private String state;
+        private @Nullable String regionName;
+        private @Nullable String state;
         private String tenancyId;
         public Builder() {}
         public Builder(GetRegionSubscriptionsRegionSubscription defaults) {
@@ -90,8 +92,8 @@ public final class GetRegionSubscriptionsRegionSubscription {
         }
 
         @CustomType.Setter
-        public Builder isHomeRegion(Boolean isHomeRegion) {
-            this.isHomeRegion = Objects.requireNonNull(isHomeRegion);
+        public Builder isHomeRegion(@Nullable Boolean isHomeRegion) {
+            this.isHomeRegion = isHomeRegion;
             return this;
         }
         @CustomType.Setter
@@ -100,13 +102,13 @@ public final class GetRegionSubscriptionsRegionSubscription {
             return this;
         }
         @CustomType.Setter
-        public Builder regionName(String regionName) {
-            this.regionName = Objects.requireNonNull(regionName);
+        public Builder regionName(@Nullable String regionName) {
+            this.regionName = regionName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter

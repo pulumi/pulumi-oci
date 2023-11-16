@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -42,7 +41,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -54,7 +53,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// Description
 	//
 	// **SCIM++ Properties:**
@@ -63,7 +62,7 @@ type DomainsMySmtpCredential struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -75,7 +74,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// User credential expires on
 	//
 	// **Added In:** 2109090424
@@ -89,7 +88,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	ExpiresOn pulumi.StringOutput `pulumi:"expiresOn"`
+	ExpiresOn pulumi.StringPtrOutput `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -123,7 +122,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -158,7 +157,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -186,7 +185,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: never
 	// * type: string
 	// * uniqueness: none
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -210,7 +209,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// User linked to smtp credential
 	//
 	// **SCIM++ Properties:**
@@ -222,7 +221,7 @@ type DomainsMySmtpCredential struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsMySmtpCredentialUserOutput `pulumi:"user"`
+	User DomainsMySmtpCredentialUserPtrOutput `pulumi:"user"`
 	// (Updatable) User name
 	//
 	// **SCIM++ Properties:**
@@ -234,7 +233,7 @@ type DomainsMySmtpCredential struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	UserName pulumi.StringOutput `pulumi:"userName"`
+	UserName pulumi.StringPtrOutput `pulumi:"userName"`
 }
 
 // NewDomainsMySmtpCredential registers a new resource with the given unique name, arguments, and options.
@@ -906,12 +905,6 @@ func (i *DomainsMySmtpCredential) ToDomainsMySmtpCredentialOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySmtpCredentialOutput)
 }
 
-func (i *DomainsMySmtpCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySmtpCredential] {
-	return pulumix.Output[*DomainsMySmtpCredential]{
-		OutputState: i.ToDomainsMySmtpCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMySmtpCredentialArrayInput is an input type that accepts DomainsMySmtpCredentialArray and DomainsMySmtpCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsMySmtpCredentialArrayInput` via:
 //
@@ -935,12 +928,6 @@ func (i DomainsMySmtpCredentialArray) ToDomainsMySmtpCredentialArrayOutput() Dom
 
 func (i DomainsMySmtpCredentialArray) ToDomainsMySmtpCredentialArrayOutputWithContext(ctx context.Context) DomainsMySmtpCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySmtpCredentialArrayOutput)
-}
-
-func (i DomainsMySmtpCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySmtpCredential] {
-	return pulumix.Output[[]*DomainsMySmtpCredential]{
-		OutputState: i.ToDomainsMySmtpCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMySmtpCredentialMapInput is an input type that accepts DomainsMySmtpCredentialMap and DomainsMySmtpCredentialMapOutput values.
@@ -968,12 +955,6 @@ func (i DomainsMySmtpCredentialMap) ToDomainsMySmtpCredentialMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySmtpCredentialMapOutput)
 }
 
-func (i DomainsMySmtpCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySmtpCredential] {
-	return pulumix.Output[map[string]*DomainsMySmtpCredential]{
-		OutputState: i.ToDomainsMySmtpCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMySmtpCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsMySmtpCredentialOutput) ElementType() reflect.Type {
@@ -986,12 +967,6 @@ func (o DomainsMySmtpCredentialOutput) ToDomainsMySmtpCredentialOutput() Domains
 
 func (o DomainsMySmtpCredentialOutput) ToDomainsMySmtpCredentialOutputWithContext(ctx context.Context) DomainsMySmtpCredentialOutput {
 	return o
-}
-
-func (o DomainsMySmtpCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySmtpCredential] {
-	return pulumix.Output[*DomainsMySmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1010,8 +985,8 @@ func (o DomainsMySmtpCredentialOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1025,8 +1000,8 @@ func (o DomainsMySmtpCredentialOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsMySmtpCredentialOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
@@ -1037,8 +1012,8 @@ func (o DomainsMySmtpCredentialOutput) DeleteInProgress() pulumi.BoolOutput {
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsMySmtpCredentialOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1052,8 +1027,8 @@ func (o DomainsMySmtpCredentialOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // User credential expires on
@@ -1069,8 +1044,8 @@ func (o DomainsMySmtpCredentialOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1119,8 +1094,8 @@ func (o DomainsMySmtpCredentialOutput) IdcsLastModifiedBies() DomainsMySmtpCrede
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1163,8 +1138,8 @@ func (o DomainsMySmtpCredentialOutput) Metas() DomainsMySmtpCredentialMetaArrayO
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1200,8 +1175,8 @@ func (o DomainsMySmtpCredentialOutput) Schemas() pulumi.StringArrayOutput {
 // * returned: never
 // * type: string
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -1230,8 +1205,8 @@ func (o DomainsMySmtpCredentialOutput) Tags() DomainsMySmtpCredentialTagArrayOut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // User linked to smtp credential
@@ -1245,8 +1220,8 @@ func (o DomainsMySmtpCredentialOutput) TenancyOcid() pulumi.StringOutput {
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsMySmtpCredentialOutput) User() DomainsMySmtpCredentialUserOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) DomainsMySmtpCredentialUserOutput { return v.User }).(DomainsMySmtpCredentialUserOutput)
+func (o DomainsMySmtpCredentialOutput) User() DomainsMySmtpCredentialUserPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) DomainsMySmtpCredentialUserPtrOutput { return v.User }).(DomainsMySmtpCredentialUserPtrOutput)
 }
 
 // (Updatable) User name
@@ -1260,8 +1235,8 @@ func (o DomainsMySmtpCredentialOutput) User() DomainsMySmtpCredentialUserOutput 
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsMySmtpCredentialOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.UserName }).(pulumi.StringOutput)
+func (o DomainsMySmtpCredentialOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringPtrOutput { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 type DomainsMySmtpCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -1276,12 +1251,6 @@ func (o DomainsMySmtpCredentialArrayOutput) ToDomainsMySmtpCredentialArrayOutput
 
 func (o DomainsMySmtpCredentialArrayOutput) ToDomainsMySmtpCredentialArrayOutputWithContext(ctx context.Context) DomainsMySmtpCredentialArrayOutput {
 	return o
-}
-
-func (o DomainsMySmtpCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySmtpCredential] {
-	return pulumix.Output[[]*DomainsMySmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMySmtpCredentialArrayOutput) Index(i pulumi.IntInput) DomainsMySmtpCredentialOutput {
@@ -1302,12 +1271,6 @@ func (o DomainsMySmtpCredentialMapOutput) ToDomainsMySmtpCredentialMapOutput() D
 
 func (o DomainsMySmtpCredentialMapOutput) ToDomainsMySmtpCredentialMapOutputWithContext(ctx context.Context) DomainsMySmtpCredentialMapOutput {
 	return o
-}
-
-func (o DomainsMySmtpCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySmtpCredential] {
-	return pulumix.Output[map[string]*DomainsMySmtpCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMySmtpCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsMySmtpCredentialOutput {

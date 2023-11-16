@@ -19,13 +19,13 @@ public final class GetOpsiConfigurationConfigurationItemResult {
      * @return Array of configuration item summary objects.
      * 
      */
-    private List<GetOpsiConfigurationConfigurationItemConfigItem> configItems;
+    private @Nullable List<GetOpsiConfigurationConfigurationItemConfigItem> configItems;
     private @Nullable List<String> configItemsApplicableContexts;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of configuration item.
      * 
@@ -49,7 +49,7 @@ public final class GetOpsiConfigurationConfigurationItemResult {
      * 
      */
     public List<GetOpsiConfigurationConfigurationItemConfigItem> configItems() {
-        return this.configItems;
+        return this.configItems == null ? List.of() : this.configItems;
     }
     public List<String> configItemsApplicableContexts() {
         return this.configItemsApplicableContexts == null ? List.of() : this.configItemsApplicableContexts;
@@ -58,8 +58,8 @@ public final class GetOpsiConfigurationConfigurationItemResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of configuration item.
@@ -87,9 +87,9 @@ public final class GetOpsiConfigurationConfigurationItemResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<String> configItemFields;
-        private List<GetOpsiConfigurationConfigurationItemConfigItem> configItems;
+        private @Nullable List<GetOpsiConfigurationConfigurationItemConfigItem> configItems;
         private @Nullable List<String> configItemsApplicableContexts;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private String opsiConfigType;
         public Builder() {}
@@ -118,8 +118,8 @@ public final class GetOpsiConfigurationConfigurationItemResult {
             return configItemFields(List.of(configItemFields));
         }
         @CustomType.Setter
-        public Builder configItems(List<GetOpsiConfigurationConfigurationItemConfigItem> configItems) {
-            this.configItems = Objects.requireNonNull(configItems);
+        public Builder configItems(@Nullable List<GetOpsiConfigurationConfigurationItemConfigItem> configItems) {
+            this.configItems = configItems;
             return this;
         }
         public Builder configItems(GetOpsiConfigurationConfigurationItemConfigItem... configItems) {
@@ -134,8 +134,8 @@ public final class GetOpsiConfigurationConfigurationItemResult {
             return configItemsApplicableContexts(List.of(configItemsApplicableContexts));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

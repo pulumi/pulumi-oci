@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of the reference compute instance from which to obtain the attachment details for the volume. This reference compute instance is from the peer DR protection group.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
-        public readonly string VolumeAttachmentReferenceInstanceId;
+        public readonly string? VolumeAttachmentReferenceInstanceId;
 
         [OutputConstructor]
-        private GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult(string volumeAttachmentReferenceInstanceId)
+        private GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetailResult(string? volumeAttachmentReferenceInstanceId)
         {
             VolumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
         }

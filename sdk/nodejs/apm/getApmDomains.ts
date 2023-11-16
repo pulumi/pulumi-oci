@@ -61,7 +61,7 @@ export interface GetApmDomainsResult {
     /**
      * The list of apm_domains.
      */
-    readonly apmDomains: outputs.Apm.GetApmDomainsApmDomain[];
+    readonly apmDomains?: outputs.Apm.GetApmDomainsApmDomain[];
     /**
      * The OCID of the compartment corresponding to the APM domain.
      */
@@ -74,7 +74,7 @@ export interface GetApmDomainsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the APM domain.
      */

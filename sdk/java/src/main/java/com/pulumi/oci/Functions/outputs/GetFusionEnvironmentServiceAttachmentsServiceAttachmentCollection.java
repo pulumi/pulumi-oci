@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection {
-    private List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items;
 
     private GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection() {}
     public List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem... items) {

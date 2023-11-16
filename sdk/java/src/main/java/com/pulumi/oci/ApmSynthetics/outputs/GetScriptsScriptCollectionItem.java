@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScriptsScriptCollectionItem {
@@ -19,171 +21,171 @@ public final class GetScriptsScriptCollectionItem {
      * @return The APM domain ID the request is intended for.
      * 
      */
-    private String apmDomainId;
+    private @Nullable String apmDomainId;
     /**
      * @return The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;OS&gt;isParamValueSecret(true/false)&lt;/OS&gt;&lt;/ORAP&gt;`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;/ORAP&gt;` With parameter name and value : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;/ORAP&gt;` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return File name of the uploaded script content.
      * 
      */
-    private String contentFileName;
+    private @Nullable String contentFileName;
     /**
      * @return Size of the script content.
      * 
      */
-    private Integer contentSizeInBytes;
+    private @Nullable Integer contentSizeInBytes;
     /**
      * @return A filter to return only resources that match the content type given.
      * 
      */
-    private String contentType;
+    private @Nullable String contentType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
-    private List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
+    private @Nullable List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
     /**
      * @return List of script parameters. Example: `[{&#34;scriptParameter&#34;: {&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;, &#34;isSecret&#34;: false}, &#34;isOverwritten&#34;: false}]`
      * 
      */
-    private List<GetScriptsScriptCollectionItemParameter> parameters;
+    private @Nullable List<GetScriptsScriptCollectionItemParameter> parameters;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The time the script was uploaded.
      * 
      */
-    private String timeUploaded;
+    private @Nullable String timeUploaded;
 
     private GetScriptsScriptCollectionItem() {}
     /**
      * @return The APM domain ID the request is intended for.
      * 
      */
-    public String apmDomainId() {
-        return this.apmDomainId;
+    public Optional<String> apmDomainId() {
+        return Optional.ofNullable(this.apmDomainId);
     }
     /**
      * @return The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;OS&gt;isParamValueSecret(true/false)&lt;/OS&gt;&lt;/ORAP&gt;`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;/ORAP&gt;` With parameter name and value : `&lt;ORAP&gt;&lt;ON&gt;param name&lt;/ON&gt;&lt;OV&gt;param value&lt;/OV&gt;&lt;/ORAP&gt;` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return File name of the uploaded script content.
      * 
      */
-    public String contentFileName() {
-        return this.contentFileName;
+    public Optional<String> contentFileName() {
+        return Optional.ofNullable(this.contentFileName);
     }
     /**
      * @return Size of the script content.
      * 
      */
-    public Integer contentSizeInBytes() {
-        return this.contentSizeInBytes;
+    public Optional<Integer> contentSizeInBytes() {
+        return Optional.ofNullable(this.contentSizeInBytes);
     }
     /**
      * @return A filter to return only resources that match the content type given.
      * 
      */
-    public String contentType() {
-        return this.contentType;
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details of the monitor count per state. Example: `{ &#34;total&#34; : 5, &#34;enabled&#34; : 3 , &#34;disabled&#34; : 2, &#34;invalid&#34; : 0 }`
      * 
      */
     public List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps() {
-        return this.monitorStatusCountMaps;
+        return this.monitorStatusCountMaps == null ? List.of() : this.monitorStatusCountMaps;
     }
     /**
      * @return List of script parameters. Example: `[{&#34;scriptParameter&#34;: {&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;, &#34;isSecret&#34;: false}, &#34;isOverwritten&#34;: false}]`
      * 
      */
     public List<GetScriptsScriptCollectionItemParameter> parameters() {
-        return this.parameters;
+        return this.parameters == null ? List.of() : this.parameters;
     }
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The time the script was uploaded.
      * 
      */
-    public String timeUploaded() {
-        return this.timeUploaded;
+    public Optional<String> timeUploaded() {
+        return Optional.ofNullable(this.timeUploaded);
     }
 
     public static Builder builder() {
@@ -195,20 +197,20 @@ public final class GetScriptsScriptCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String apmDomainId;
-        private String content;
-        private String contentFileName;
-        private Integer contentSizeInBytes;
-        private String contentType;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
-        private List<GetScriptsScriptCollectionItemParameter> parameters;
-        private String timeCreated;
-        private String timeUpdated;
-        private String timeUploaded;
+        private @Nullable String apmDomainId;
+        private @Nullable String content;
+        private @Nullable String contentFileName;
+        private @Nullable Integer contentSizeInBytes;
+        private @Nullable String contentType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps;
+        private @Nullable List<GetScriptsScriptCollectionItemParameter> parameters;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String timeUploaded;
         public Builder() {}
         public Builder(GetScriptsScriptCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -229,79 +231,79 @@ public final class GetScriptsScriptCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+        public Builder apmDomainId(@Nullable String apmDomainId) {
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder contentFileName(String contentFileName) {
-            this.contentFileName = Objects.requireNonNull(contentFileName);
+        public Builder contentFileName(@Nullable String contentFileName) {
+            this.contentFileName = contentFileName;
             return this;
         }
         @CustomType.Setter
-        public Builder contentSizeInBytes(Integer contentSizeInBytes) {
-            this.contentSizeInBytes = Objects.requireNonNull(contentSizeInBytes);
+        public Builder contentSizeInBytes(@Nullable Integer contentSizeInBytes) {
+            this.contentSizeInBytes = contentSizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder monitorStatusCountMaps(List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps) {
-            this.monitorStatusCountMaps = Objects.requireNonNull(monitorStatusCountMaps);
+        public Builder monitorStatusCountMaps(@Nullable List<GetScriptsScriptCollectionItemMonitorStatusCountMap> monitorStatusCountMaps) {
+            this.monitorStatusCountMaps = monitorStatusCountMaps;
             return this;
         }
         public Builder monitorStatusCountMaps(GetScriptsScriptCollectionItemMonitorStatusCountMap... monitorStatusCountMaps) {
             return monitorStatusCountMaps(List.of(monitorStatusCountMaps));
         }
         @CustomType.Setter
-        public Builder parameters(List<GetScriptsScriptCollectionItemParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable List<GetScriptsScriptCollectionItemParameter> parameters) {
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetScriptsScriptCollectionItemParameter... parameters) {
             return parameters(List.of(parameters));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUploaded(String timeUploaded) {
-            this.timeUploaded = Objects.requireNonNull(timeUploaded);
+        public Builder timeUploaded(@Nullable String timeUploaded) {
+            this.timeUploaded = timeUploaded;
             return this;
         }
         public GetScriptsScriptCollectionItem build() {

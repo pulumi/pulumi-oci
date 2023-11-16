@@ -6,6 +6,8 @@ package com.pulumi.oci.Oda.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaInstanceRestrictedOperation {
@@ -13,27 +15,27 @@ public final class GetOdaInstanceRestrictedOperation {
      * @return Name of the restricted operation.
      * 
      */
-    private String operationName;
+    private @Nullable String operationName;
     /**
      * @return Name of the service restricting the operation.
      * 
      */
-    private String restrictingService;
+    private @Nullable String restrictingService;
 
     private GetOdaInstanceRestrictedOperation() {}
     /**
      * @return Name of the restricted operation.
      * 
      */
-    public String operationName() {
-        return this.operationName;
+    public Optional<String> operationName() {
+        return Optional.ofNullable(this.operationName);
     }
     /**
      * @return Name of the service restricting the operation.
      * 
      */
-    public String restrictingService() {
-        return this.restrictingService;
+    public Optional<String> restrictingService() {
+        return Optional.ofNullable(this.restrictingService);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetOdaInstanceRestrictedOperation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String operationName;
-        private String restrictingService;
+        private @Nullable String operationName;
+        private @Nullable String restrictingService;
         public Builder() {}
         public Builder(GetOdaInstanceRestrictedOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetOdaInstanceRestrictedOperation {
         }
 
         @CustomType.Setter
-        public Builder operationName(String operationName) {
-            this.operationName = Objects.requireNonNull(operationName);
+        public Builder operationName(@Nullable String operationName) {
+            this.operationName = operationName;
             return this;
         }
         @CustomType.Setter
-        public Builder restrictingService(String restrictingService) {
-            this.restrictingService = Objects.requireNonNull(restrictingService);
+        public Builder restrictingService(@Nullable String restrictingService) {
+            this.restrictingService = restrictingService;
             return this;
         }
         public GetOdaInstanceRestrictedOperation build() {

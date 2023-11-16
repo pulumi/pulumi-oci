@@ -84,7 +84,7 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly userId!: pulumi.Output<string>;
+    public readonly userId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SubscriptionRedeemableUser resource with the given unique name, arguments, and options.

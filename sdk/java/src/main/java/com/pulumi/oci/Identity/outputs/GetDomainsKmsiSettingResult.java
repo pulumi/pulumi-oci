@@ -25,110 +25,110 @@ public final class GetDomainsKmsiSettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Identifier represents KMSI feature is enabled or not.
      * 
      */
-    private Boolean kmsiFeatureEnabled;
+    private @Nullable Boolean kmsiFeatureEnabled;
     /**
      * @return Identifier represents KMSI to be prompted to user or not.
      * 
      */
-    private Boolean kmsiPromptEnabled;
+    private @Nullable Boolean kmsiPromptEnabled;
     private String kmsiSettingId;
     /**
      * @return Timestamp of when the KmsiSettings was enabled last time.
      * 
      */
-    private String lastEnabledOn;
+    private @Nullable String lastEnabledOn;
     /**
      * @return Identifier represents duration in days within which kmsi token must be used.
      * 
      */
-    private Integer lastUsedValidityInDays;
+    private @Nullable Integer lastUsedValidityInDays;
     /**
      * @return Identifier represents maximum KMSI sessions allowed in the system.
      * 
      */
-    private Integer maxAllowedSessions;
+    private @Nullable Integer maxAllowedSessions;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsKmsiSettingMeta> metas;
+    private @Nullable List<GetDomainsKmsiSettingMeta> metas;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsKmsiSettingTag> tags;
+    private @Nullable List<GetDomainsKmsiSettingTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Identifier represents validity duration in days.
      * 
      */
-    private Integer tokenValidityInDays;
+    private @Nullable Integer tokenValidityInDays;
     /**
      * @return Identifier represents whether user is prompted for ToU or not.
      * 
      */
-    private Boolean touPromptDisabled;
+    private @Nullable Boolean touPromptDisabled;
 
     private GetDomainsKmsiSettingResult() {}
     public List<String> attributeSets() {
@@ -144,43 +144,43 @@ public final class GetDomainsKmsiSettingResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -190,35 +190,35 @@ public final class GetDomainsKmsiSettingResult {
      * 
      */
     public List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Identifier represents KMSI feature is enabled or not.
      * 
      */
-    public Boolean kmsiFeatureEnabled() {
-        return this.kmsiFeatureEnabled;
+    public Optional<Boolean> kmsiFeatureEnabled() {
+        return Optional.ofNullable(this.kmsiFeatureEnabled);
     }
     /**
      * @return Identifier represents KMSI to be prompted to user or not.
      * 
      */
-    public Boolean kmsiPromptEnabled() {
-        return this.kmsiPromptEnabled;
+    public Optional<Boolean> kmsiPromptEnabled() {
+        return Optional.ofNullable(this.kmsiPromptEnabled);
     }
     public String kmsiSettingId() {
         return this.kmsiSettingId;
@@ -227,36 +227,36 @@ public final class GetDomainsKmsiSettingResult {
      * @return Timestamp of when the KmsiSettings was enabled last time.
      * 
      */
-    public String lastEnabledOn() {
-        return this.lastEnabledOn;
+    public Optional<String> lastEnabledOn() {
+        return Optional.ofNullable(this.lastEnabledOn);
     }
     /**
      * @return Identifier represents duration in days within which kmsi token must be used.
      * 
      */
-    public Integer lastUsedValidityInDays() {
-        return this.lastUsedValidityInDays;
+    public Optional<Integer> lastUsedValidityInDays() {
+        return Optional.ofNullable(this.lastUsedValidityInDays);
     }
     /**
      * @return Identifier represents maximum KMSI sessions allowed in the system.
      * 
      */
-    public Integer maxAllowedSessions() {
-        return this.maxAllowedSessions;
+    public Optional<Integer> maxAllowedSessions() {
+        return Optional.ofNullable(this.maxAllowedSessions);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsKmsiSettingMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -266,35 +266,35 @@ public final class GetDomainsKmsiSettingResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsKmsiSettingTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Identifier represents validity duration in days.
      * 
      */
-    public Integer tokenValidityInDays() {
-        return this.tokenValidityInDays;
+    public Optional<Integer> tokenValidityInDays() {
+        return Optional.ofNullable(this.tokenValidityInDays);
     }
     /**
      * @return Identifier represents whether user is prompted for ToU or not.
      * 
      */
-    public Boolean touPromptDisabled() {
-        return this.touPromptDisabled;
+    public Optional<Boolean> touPromptDisabled() {
+        return Optional.ofNullable(this.touPromptDisabled);
     }
 
     public static Builder builder() {
@@ -309,30 +309,30 @@ public final class GetDomainsKmsiSettingResult {
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private String externalId;
-        private String id;
-        private List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable String externalId;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Boolean kmsiFeatureEnabled;
-        private Boolean kmsiPromptEnabled;
+        private @Nullable List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Boolean kmsiFeatureEnabled;
+        private @Nullable Boolean kmsiPromptEnabled;
         private String kmsiSettingId;
-        private String lastEnabledOn;
-        private Integer lastUsedValidityInDays;
-        private Integer maxAllowedSessions;
-        private List<GetDomainsKmsiSettingMeta> metas;
-        private String ocid;
+        private @Nullable String lastEnabledOn;
+        private @Nullable Integer lastUsedValidityInDays;
+        private @Nullable Integer maxAllowedSessions;
+        private @Nullable List<GetDomainsKmsiSettingMeta> metas;
+        private @Nullable String ocid;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private List<GetDomainsKmsiSettingTag> tags;
-        private String tenancyOcid;
-        private Integer tokenValidityInDays;
-        private Boolean touPromptDisabled;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsKmsiSettingTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable Integer tokenValidityInDays;
+        private @Nullable Boolean touPromptDisabled;
         public Builder() {}
         public Builder(GetDomainsKmsiSettingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -384,33 +384,33 @@ public final class GetDomainsKmsiSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsKmsiSettingIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsKmsiSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -422,34 +422,34 @@ public final class GetDomainsKmsiSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsKmsiSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsKmsiSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder kmsiFeatureEnabled(Boolean kmsiFeatureEnabled) {
-            this.kmsiFeatureEnabled = Objects.requireNonNull(kmsiFeatureEnabled);
+        public Builder kmsiFeatureEnabled(@Nullable Boolean kmsiFeatureEnabled) {
+            this.kmsiFeatureEnabled = kmsiFeatureEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsiPromptEnabled(Boolean kmsiPromptEnabled) {
-            this.kmsiPromptEnabled = Objects.requireNonNull(kmsiPromptEnabled);
+        public Builder kmsiPromptEnabled(@Nullable Boolean kmsiPromptEnabled) {
+            this.kmsiPromptEnabled = kmsiPromptEnabled;
             return this;
         }
         @CustomType.Setter
@@ -458,31 +458,31 @@ public final class GetDomainsKmsiSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder lastEnabledOn(String lastEnabledOn) {
-            this.lastEnabledOn = Objects.requireNonNull(lastEnabledOn);
+        public Builder lastEnabledOn(@Nullable String lastEnabledOn) {
+            this.lastEnabledOn = lastEnabledOn;
             return this;
         }
         @CustomType.Setter
-        public Builder lastUsedValidityInDays(Integer lastUsedValidityInDays) {
-            this.lastUsedValidityInDays = Objects.requireNonNull(lastUsedValidityInDays);
+        public Builder lastUsedValidityInDays(@Nullable Integer lastUsedValidityInDays) {
+            this.lastUsedValidityInDays = lastUsedValidityInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder maxAllowedSessions(Integer maxAllowedSessions) {
-            this.maxAllowedSessions = Objects.requireNonNull(maxAllowedSessions);
+        public Builder maxAllowedSessions(@Nullable Integer maxAllowedSessions) {
+            this.maxAllowedSessions = maxAllowedSessions;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsKmsiSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsKmsiSettingMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsKmsiSettingMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
@@ -491,34 +491,34 @@ public final class GetDomainsKmsiSettingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsKmsiSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsKmsiSettingTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsKmsiSettingTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder tokenValidityInDays(Integer tokenValidityInDays) {
-            this.tokenValidityInDays = Objects.requireNonNull(tokenValidityInDays);
+        public Builder tokenValidityInDays(@Nullable Integer tokenValidityInDays) {
+            this.tokenValidityInDays = tokenValidityInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder touPromptDisabled(Boolean touPromptDisabled) {
-            this.touPromptDisabled = Objects.requireNonNull(touPromptDisabled);
+        public Builder touPromptDisabled(@Nullable Boolean touPromptDisabled) {
+            this.touPromptDisabled = touPromptDisabled;
             return this;
         }
         public GetDomainsKmsiSettingResult build() {

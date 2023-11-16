@@ -101,7 +101,7 @@ export interface GetTriggersResult {
     /**
      * The list of trigger_collection.
      */
-    readonly triggerCollections: outputs.DevOps.GetTriggersTriggerCollection[];
+    readonly triggerCollections?: outputs.DevOps.GetTriggersTriggerCollection[];
 }
 /**
  * This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// Availability Domain of peer
         /// </summary>
-        public readonly string Ad;
+        public readonly string? Ad;
         /// <summary>
         /// OCPU allocation parameter
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// OSN identifier
         /// </summary>
-        public readonly string OsnKey;
+        public readonly string? OsnKey;
         /// <summary>
         /// The current state of the Platform Instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetBlockchainPlatformComponentDetailOsnResult(
-            string ad,
+            string? ad,
 
             ImmutableArray<Outputs.GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult> ocpuAllocationParams,
 
-            string osnKey,
+            string? osnKey,
 
-            string state)
+            string? state)
         {
             Ad = ad;
             OcpuAllocationParams = ocpuAllocationParams;

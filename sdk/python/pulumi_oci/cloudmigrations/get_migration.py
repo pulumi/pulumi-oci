@@ -64,58 +64,37 @@ class GetMigrationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Migration Identifier that can be renamed
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCompleted")
-    def is_completed(self) -> bool:
-        """
-        Indicates whether migration is marked as completed.
-        """
+    def is_completed(self) -> Optional[bool]:
         return pulumi.get(self, "is_completed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -125,42 +104,27 @@ class GetMigrationResult:
 
     @property
     @pulumi.getter(name="replicationScheduleId")
-    def replication_schedule_id(self) -> str:
-        """
-        Replication schedule identifier
-        """
+    def replication_schedule_id(self) -> Optional[str]:
         return pulumi.get(self, "replication_schedule_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of migration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the migration project was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the migration project was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -188,21 +152,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
 def get_migration(migration_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationResult:
     """
-    This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Gets a migration by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration = oci.CloudMigrations.get_migration(migration_id=oci_cloud_migrations_migration["test_migration"]["id"])
-    ```
-
-
-    :param str migration_id: Unique migration identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['migrationId'] = migration_id
@@ -229,20 +179,6 @@ def get_migration(migration_id: Optional[str] = None,
 def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationResult]:
     """
-    This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-    Gets a migration by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_migration = oci.CloudMigrations.get_migration(migration_id=oci_cloud_migrations_migration["test_migration"]["id"])
-    ```
-
-
-    :param str migration_id: Unique migration identifier
+    Use this data source to access information about an existing resource.
     """
     ...

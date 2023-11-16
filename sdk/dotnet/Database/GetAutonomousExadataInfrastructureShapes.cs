@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetAutonomousExadataInfrastructureShapesResult(
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousExadataInfrastructureShapesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AutonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
             AvailabilityDomain = availabilityDomain;

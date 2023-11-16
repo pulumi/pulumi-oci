@@ -101,98 +101,62 @@ class GetNodePoolResult:
 
     @property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> str:
-        """
-        The OCID of the cluster to which this node pool is attached.
-        """
+    def cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the node pool exists.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the compute instance backing this node.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="initialNodeLabels")
-    def initial_node_labels(self) -> Sequence['outputs.GetNodePoolInitialNodeLabelResult']:
-        """
-        A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        """
+    def initial_node_labels(self) -> Optional[Sequence['outputs.GetNodePoolInitialNodeLabelResult']]:
         return pulumi.get(self, "initial_node_labels")
 
     @property
     @pulumi.getter(name="kubernetesVersion")
-    def kubernetes_version(self) -> str:
-        """
-        The version of Kubernetes this node is running.
-        """
+    def kubernetes_version(self) -> Optional[str]:
         return pulumi.get(self, "kubernetes_version")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the state of the node.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the node.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nodeConfigDetails")
-    def node_config_details(self) -> Sequence['outputs.GetNodePoolNodeConfigDetailResult']:
-        """
-        The configuration of nodes in the node pool.
-        """
+    def node_config_details(self) -> Optional[Sequence['outputs.GetNodePoolNodeConfigDetailResult']]:
         return pulumi.get(self, "node_config_details")
 
     @property
     @pulumi.getter(name="nodeEvictionNodePoolSettings")
-    def node_eviction_node_pool_settings(self) -> Sequence['outputs.GetNodePoolNodeEvictionNodePoolSettingResult']:
-        """
-        Node Eviction Details configuration
-        """
+    def node_eviction_node_pool_settings(self) -> Optional[Sequence['outputs.GetNodePoolNodeEvictionNodePoolSettingResult']]:
         return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @property
     @pulumi.getter(name="nodeImageId")
-    def node_image_id(self) -> str:
-        """
-        Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        """
+    def node_image_id(self) -> Optional[str]:
         warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -200,10 +164,7 @@ class GetNodePoolResult:
 
     @property
     @pulumi.getter(name="nodeImageName")
-    def node_image_name(self) -> str:
-        """
-        Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
-        """
+    def node_image_name(self) -> Optional[str]:
         warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -211,98 +172,62 @@ class GetNodePoolResult:
 
     @property
     @pulumi.getter(name="nodeMetadata")
-    def node_metadata(self) -> Mapping[str, Any]:
-        """
-        A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        """
+    def node_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "node_metadata")
 
     @property
     @pulumi.getter(name="nodePoolCyclingDetails")
-    def node_pool_cycling_details(self) -> Sequence['outputs.GetNodePoolNodePoolCyclingDetailResult']:
-        """
-        Node Pool Cycling Details
-        """
+    def node_pool_cycling_details(self) -> Optional[Sequence['outputs.GetNodePoolNodePoolCyclingDetailResult']]:
         return pulumi.get(self, "node_pool_cycling_details")
 
     @property
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> str:
-        """
-        The OCID of the node pool to which this node belongs.
-        """
         return pulumi.get(self, "node_pool_id")
 
     @property
     @pulumi.getter(name="nodeShape")
-    def node_shape(self) -> str:
-        """
-        The name of the node shape of the nodes in the node pool.
-        """
+    def node_shape(self) -> Optional[str]:
         return pulumi.get(self, "node_shape")
 
     @property
     @pulumi.getter(name="nodeShapeConfigs")
-    def node_shape_configs(self) -> Sequence['outputs.GetNodePoolNodeShapeConfigResult']:
-        """
-        The shape configuration of the nodes.
-        """
+    def node_shape_configs(self) -> Optional[Sequence['outputs.GetNodePoolNodeShapeConfigResult']]:
         return pulumi.get(self, "node_shape_configs")
 
     @property
     @pulumi.getter(name="nodeSourceDetails")
-    def node_source_details(self) -> Sequence['outputs.GetNodePoolNodeSourceDetailResult']:
-        """
-        Source running on the nodes in the node pool.
-        """
+    def node_source_details(self) -> Optional[Sequence['outputs.GetNodePoolNodeSourceDetailResult']]:
         return pulumi.get(self, "node_source_details")
 
     @property
     @pulumi.getter(name="nodeSources")
-    def node_sources(self) -> Sequence['outputs.GetNodePoolNodeSourceResult']:
-        """
-        Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        """
+    def node_sources(self) -> Optional[Sequence['outputs.GetNodePoolNodeSourceResult']]:
         return pulumi.get(self, "node_sources")
 
     @property
     @pulumi.getter
-    def nodes(self) -> Sequence['outputs.GetNodePoolNodeResult']:
-        """
-        The nodes in the node pool.
-        """
+    def nodes(self) -> Optional[Sequence['outputs.GetNodePoolNodeResult']]:
         return pulumi.get(self, "nodes")
 
     @property
     @pulumi.getter(name="quantityPerSubnet")
-    def quantity_per_subnet(self) -> int:
-        """
-        The number of nodes in each subnet.
-        """
+    def quantity_per_subnet(self) -> Optional[int]:
         return pulumi.get(self, "quantity_per_subnet")
 
     @property
     @pulumi.getter(name="sshPublicKey")
-    def ssh_public_key(self) -> str:
-        """
-        The SSH public key on each node in the node pool on launch.
-        """
+    def ssh_public_key(self) -> Optional[str]:
         return pulumi.get(self, "ssh_public_key")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the nodepool.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetIds")
-    def subnet_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of the subnets in which to place nodes for this node pool.
-        """
+    def subnet_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "subnet_ids")
 
 
@@ -342,21 +267,7 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
 def get_node_pool(node_pool_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNodePoolResult:
     """
-    This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the details of a node pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=oci_containerengine_node_pool["test_node_pool"]["id"])
-    ```
-
-
-    :param str node_pool_id: The OCID of the node pool.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['nodePoolId'] = node_pool_id
@@ -395,20 +306,6 @@ def get_node_pool(node_pool_id: Optional[str] = None,
 def get_node_pool_output(node_pool_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolResult]:
     """
-    This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the details of a node pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=oci_containerengine_node_pool["test_node_pool"]["id"])
-    ```
-
-
-    :param str node_pool_id: The OCID of the node pool.
+    Use this data source to access information about an existing resource.
     """
     ...

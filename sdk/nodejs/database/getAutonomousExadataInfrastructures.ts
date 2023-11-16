@@ -67,7 +67,7 @@ export interface GetAutonomousExadataInfrastructuresResult {
     /**
      * The list of autonomous_exadata_infrastructures.
      */
-    readonly autonomousExadataInfrastructures: outputs.Database.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure[];
+    readonly autonomousExadataInfrastructures?: outputs.Database.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure[];
     /**
      * The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
      */
@@ -84,7 +84,7 @@ export interface GetAutonomousExadataInfrastructuresResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the Autonomous Exadata Infrastructure.
      */

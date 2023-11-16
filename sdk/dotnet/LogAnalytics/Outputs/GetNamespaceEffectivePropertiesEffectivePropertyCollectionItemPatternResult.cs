@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The effective level of the property value.
         /// </summary>
-        public readonly string EffectiveLevel;
+        public readonly string? EffectiveLevel;
         /// <summary>
         /// The pattern id.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The effective value of the property. This is determined by considering the value set at the most effective level.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult(
-            string effectiveLevel,
+            string? effectiveLevel,
 
-            string id,
+            string? id,
 
-            string value)
+            string? value)
         {
             EffectiveLevel = effectiveLevel;
             Id = id;

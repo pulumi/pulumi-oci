@@ -13,6 +13,7 @@ import com.pulumi.oci.UsageProxy.outputs.SubscriptionRedeemableUserItem;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -119,7 +120,7 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
-    private Output<String> userId;
+    private Output</* @Nullable */ String> userId;
 
     /**
      * @return The user ID of the person to send a copy of an email.
@@ -128,8 +129,8 @@ public class SubscriptionRedeemableUser extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> userId() {
-        return this.userId;
+    public Output<Optional<String>> userId() {
+        return Codegen.optional(this.userId);
     }
 
     /**

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataIormConfigDbPlan {
@@ -14,39 +16,39 @@ public final class GetExadataIormConfigDbPlan {
      * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
-    private String dbName;
+    private @Nullable String dbName;
     /**
      * @return The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
      * 
      */
-    private String flashCacheLimit;
+    private @Nullable String flashCacheLimit;
     /**
      * @return The relative priority of this database.
      * 
      */
-    private Integer share;
+    private @Nullable Integer share;
 
     private GetExadataIormConfigDbPlan() {}
     /**
      * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
     /**
      * @return The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
      * 
      */
-    public String flashCacheLimit() {
-        return this.flashCacheLimit;
+    public Optional<String> flashCacheLimit() {
+        return Optional.ofNullable(this.flashCacheLimit);
     }
     /**
      * @return The relative priority of this database.
      * 
      */
-    public Integer share() {
-        return this.share;
+    public Optional<Integer> share() {
+        return Optional.ofNullable(this.share);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetExadataIormConfigDbPlan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbName;
-        private String flashCacheLimit;
-        private Integer share;
+        private @Nullable String dbName;
+        private @Nullable String flashCacheLimit;
+        private @Nullable Integer share;
         public Builder() {}
         public Builder(GetExadataIormConfigDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetExadataIormConfigDbPlan {
         }
 
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder flashCacheLimit(String flashCacheLimit) {
-            this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
+        public Builder flashCacheLimit(@Nullable String flashCacheLimit) {
+            this.flashCacheLimit = flashCacheLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder share(Integer share) {
-            this.share = Objects.requireNonNull(share);
+        public Builder share(@Nullable Integer share) {
+            this.share = share;
             return this;
         }
         public GetExadataIormConfigDbPlan build() {

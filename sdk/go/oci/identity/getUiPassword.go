@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
@@ -60,13 +59,13 @@ type LookupUiPasswordArgs struct {
 
 // A collection of values returned by getUiPassword.
 type LookupUiPasswordResult struct {
-	Id             string `pulumi:"id"`
-	InactiveStatus string `pulumi:"inactiveStatus"`
-	Password       string `pulumi:"password"`
+	Id             *string `pulumi:"id"`
+	InactiveStatus *string `pulumi:"inactiveStatus"`
+	Password       *string `pulumi:"password"`
 	// The password's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the user.
 	UserId string `pulumi:"userId"`
 }
@@ -109,32 +108,26 @@ func (o LookupUiPasswordResultOutput) ToLookupUiPasswordResultOutputWithContext(
 	return o
 }
 
-func (o LookupUiPasswordResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUiPasswordResult] {
-	return pulumix.Output[LookupUiPasswordResult]{
-		OutputState: o.OutputState,
-	}
+func (o LookupUiPasswordResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUiPasswordResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupUiPasswordResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUiPasswordResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupUiPasswordResultOutput) InactiveStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUiPasswordResult) *string { return v.InactiveStatus }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupUiPasswordResultOutput) InactiveStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUiPasswordResult) string { return v.InactiveStatus }).(pulumi.StringOutput)
-}
-
-func (o LookupUiPasswordResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUiPasswordResult) string { return v.Password }).(pulumi.StringOutput)
+func (o LookupUiPasswordResultOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUiPasswordResult) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // The password's current state.
-func (o LookupUiPasswordResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUiPasswordResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupUiPasswordResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUiPasswordResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupUiPasswordResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupUiPasswordResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupUiPasswordResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupUiPasswordResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.

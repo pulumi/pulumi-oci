@@ -172,12 +172,12 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         public readonly string? GenerateType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Password;
 
         [OutputConstructor]
@@ -186,11 +186,11 @@ namespace Pulumi.Oci.Database
 
             bool? base64EncodeContent,
 
-            string content,
+            string? content,
 
             string? generateType,
 
-            string id,
+            string? id,
 
             string password)
         {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -66,52 +65,52 @@ type LookupSubscriptionArgs struct {
 // A collection of values returned by getSubscription.
 type LookupSubscriptionResult struct {
 	// Account type.
-	AccountType string `pulumi:"accountType"`
+	AccountType *string `pulumi:"accountType"`
 	// Bill to customer Account id.
-	BillToCustAccountId string `pulumi:"billToCustAccountId"`
+	BillToCustAccountId *string `pulumi:"billToCustAccountId"`
 	// Address details model.
 	BillingAddresses []GetSubscriptionBillingAddress `pulumi:"billingAddresses"`
 	CompartmentId    string                          `pulumi:"compartmentId"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
-	Email        string `pulumi:"email"`
+	CurrencyCode *string `pulumi:"currencyCode"`
+	Email        *string `pulumi:"email"`
 	// GSI Subscription external code.
-	GsiOrgCode string `pulumi:"gsiOrgCode"`
+	GsiOrgCode *string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Payment intension.
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
-	LanguageCode string `pulumi:"languageCode"`
+	LanguageCode *string `pulumi:"languageCode"`
 	// GSI organization external identifier.
-	OrganizationId string `pulumi:"organizationId"`
-	OspHomeRegion  string `pulumi:"ospHomeRegion"`
+	OrganizationId *string `pulumi:"organizationId"`
+	OspHomeRegion  string  `pulumi:"ospHomeRegion"`
 	// Payment gateway details.
 	PaymentGateways []GetSubscriptionPaymentGateway `pulumi:"paymentGateways"`
 	// Payment option list of a subscription.
 	PaymentOptions []GetSubscriptionPaymentOption `pulumi:"paymentOptions"`
 	// Subscription plan type.
-	PlanType string `pulumi:"planType"`
+	PlanType *string `pulumi:"planType"`
 	// Ship to customer account role.
-	ShipToCustAcctRoleId string `pulumi:"shipToCustAcctRoleId"`
+	ShipToCustAcctRoleId *string `pulumi:"shipToCustAcctRoleId"`
 	// Ship to customer account site address id.
-	ShipToCustAcctSiteId string `pulumi:"shipToCustAcctSiteId"`
-	SubscriptionId       string `pulumi:"subscriptionId"`
+	ShipToCustAcctSiteId *string `pulumi:"shipToCustAcctSiteId"`
+	SubscriptionId       string  `pulumi:"subscriptionId"`
 	// Subscription plan number.
-	SubscriptionPlanNumber string                        `pulumi:"subscriptionPlanNumber"`
+	SubscriptionPlanNumber *string                       `pulumi:"subscriptionPlanNumber"`
 	Subscriptions          []GetSubscriptionSubscription `pulumi:"subscriptions"`
 	// Tax details.
 	TaxInfos []GetSubscriptionTaxInfo `pulumi:"taxInfos"`
 	// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-	TimePersonalToCorporateConv string `pulumi:"timePersonalToCorporateConv"`
+	TimePersonalToCorporateConv *string `pulumi:"timePersonalToCorporateConv"`
 	// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-	TimePlanUpgrade string `pulumi:"timePlanUpgrade"`
+	TimePlanUpgrade *string `pulumi:"timePlanUpgrade"`
 	// Start date of the subscription.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Status of the upgrade.
-	UpgradeState string `pulumi:"upgradeState"`
+	UpgradeState *string `pulumi:"upgradeState"`
 	// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-	UpgradeStateDetails string `pulumi:"upgradeStateDetails"`
+	UpgradeStateDetails *string `pulumi:"upgradeStateDetails"`
 }
 
 func LookupSubscriptionOutput(ctx *pulumi.Context, args LookupSubscriptionOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriptionResultOutput {
@@ -156,20 +155,14 @@ func (o LookupSubscriptionResultOutput) ToLookupSubscriptionResultOutputWithCont
 	return o
 }
 
-func (o LookupSubscriptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubscriptionResult] {
-	return pulumix.Output[LookupSubscriptionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Account type.
-func (o LookupSubscriptionResultOutput) AccountType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.AccountType }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) AccountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.AccountType }).(pulumi.StringPtrOutput)
 }
 
 // Bill to customer Account id.
-func (o LookupSubscriptionResultOutput) BillToCustAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.BillToCustAccountId }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) BillToCustAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.BillToCustAccountId }).(pulumi.StringPtrOutput)
 }
 
 // Address details model.
@@ -182,37 +175,37 @@ func (o LookupSubscriptionResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Currency code
-func (o LookupSubscriptionResultOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupSubscriptionResultOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Email }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // GSI Subscription external code.
-func (o LookupSubscriptionResultOutput) GsiOrgCode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.GsiOrgCode }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) GsiOrgCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.GsiOrgCode }).(pulumi.StringPtrOutput)
 }
 
 // Subscription id identifier (OCID).
-func (o LookupSubscriptionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Payment intension.
-func (o LookupSubscriptionResultOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o LookupSubscriptionResultOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Language short code (en, de, hu, etc)
-func (o LookupSubscriptionResultOutput) LanguageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.LanguageCode }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) LanguageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.LanguageCode }).(pulumi.StringPtrOutput)
 }
 
 // GSI organization external identifier.
-func (o LookupSubscriptionResultOutput) OrganizationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.OrganizationId }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) OrganizationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.OrganizationId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSubscriptionResultOutput) OspHomeRegion() pulumi.StringOutput {
@@ -230,18 +223,18 @@ func (o LookupSubscriptionResultOutput) PaymentOptions() GetSubscriptionPaymentO
 }
 
 // Subscription plan type.
-func (o LookupSubscriptionResultOutput) PlanType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.PlanType }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) PlanType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.PlanType }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account role.
-func (o LookupSubscriptionResultOutput) ShipToCustAcctRoleId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.ShipToCustAcctRoleId }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) ShipToCustAcctRoleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.ShipToCustAcctRoleId }).(pulumi.StringPtrOutput)
 }
 
 // Ship to customer account site address id.
-func (o LookupSubscriptionResultOutput) ShipToCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.ShipToCustAcctSiteId }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) ShipToCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.ShipToCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSubscriptionResultOutput) SubscriptionId() pulumi.StringOutput {
@@ -249,8 +242,8 @@ func (o LookupSubscriptionResultOutput) SubscriptionId() pulumi.StringOutput {
 }
 
 // Subscription plan number.
-func (o LookupSubscriptionResultOutput) SubscriptionPlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.SubscriptionPlanNumber }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) SubscriptionPlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.SubscriptionPlanNumber }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSubscriptionResultOutput) Subscriptions() GetSubscriptionSubscriptionArrayOutput {
@@ -263,28 +256,28 @@ func (o LookupSubscriptionResultOutput) TaxInfos() GetSubscriptionTaxInfoArrayOu
 }
 
 // Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-func (o LookupSubscriptionResultOutput) TimePersonalToCorporateConv() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.TimePersonalToCorporateConv }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) TimePersonalToCorporateConv() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.TimePersonalToCorporateConv }).(pulumi.StringPtrOutput)
 }
 
 // Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-func (o LookupSubscriptionResultOutput) TimePlanUpgrade() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.TimePlanUpgrade }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) TimePlanUpgrade() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.TimePlanUpgrade }).(pulumi.StringPtrOutput)
 }
 
 // Start date of the subscription.
-func (o LookupSubscriptionResultOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Status of the upgrade.
-func (o LookupSubscriptionResultOutput) UpgradeState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.UpgradeState }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) UpgradeState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.UpgradeState }).(pulumi.StringPtrOutput)
 }
 
 // This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
-func (o LookupSubscriptionResultOutput) UpgradeStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.UpgradeStateDetails }).(pulumi.StringOutput)
+func (o LookupSubscriptionResultOutput) UpgradeStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) *string { return v.UpgradeStateDetails }).(pulumi.StringPtrOutput)
 }
 
 func init() {

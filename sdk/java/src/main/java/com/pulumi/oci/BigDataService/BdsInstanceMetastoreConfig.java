@@ -148,14 +148,14 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the metastore configuration
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The OCID of the Data Catalog metastore.
@@ -176,56 +176,56 @@ public class BdsInstanceMetastoreConfig extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="metastoreType", refs={String.class}, tree="[0]")
-    private Output<String> metastoreType;
+    private Output</* @Nullable */ String> metastoreType;
 
     /**
      * @return The type of the metastore in the metastore configuration.
      * 
      */
-    public Output<String> metastoreType() {
-        return this.metastoreType;
+    public Output<Optional<String>> metastoreType() {
+        return Codegen.optional(this.metastoreType);
     }
     /**
      * the lifecycle state of the metastore configuration.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return the lifecycle state of the metastore configuration.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

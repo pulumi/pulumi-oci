@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -66,40 +65,40 @@ type GetControlResult struct {
 	// List of users who can approve an access request associated with a target resource under the governance of this operator control.
 	ApproversLists []string `pulumi:"approversLists"`
 	// The OCID of the compartment that contains the operator control.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of operator control.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// List of emailId.
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the operator control.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the operator control is a default Operator Control.
-	IsDefaultOperatorControl bool `pulumi:"isDefaultOperatorControl"`
+	IsDefaultOperatorControl *bool `pulumi:"isDefaultOperatorControl"`
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
+	IsFullyPreApproved *bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
-	LastModifiedInfo  string `pulumi:"lastModifiedInfo"`
-	OperatorControlId string `pulumi:"operatorControlId"`
+	LastModifiedInfo  *string `pulumi:"lastModifiedInfo"`
+	OperatorControlId string  `pulumi:"operatorControlId"`
 	// Name of the operator control. The name must be unique.
-	OperatorControlName string `pulumi:"operatorControlName"`
+	OperatorControlName *string `pulumi:"operatorControlName"`
 	// List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
 	PreApprovedOpActionLists []string `pulumi:"preApprovedOpActionLists"`
 	// resourceType for which the OperatorControl is applicable
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// The current lifecycle state of the operator control.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-	SystemMessage string `pulumi:"systemMessage"`
+	SystemMessage *string `pulumi:"systemMessage"`
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfCreation string `pulumi:"timeOfCreation"`
+	TimeOfCreation *string `pulumi:"timeOfCreation"`
 	// Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfModification string `pulumi:"timeOfModification"`
+	TimeOfModification *string `pulumi:"timeOfModification"`
 }
 
 func GetControlOutput(ctx *pulumi.Context, args GetControlOutputArgs, opts ...pulumi.InvokeOption) GetControlResultOutput {
@@ -140,12 +139,6 @@ func (o GetControlResultOutput) ToGetControlResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetControlResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlResult] {
-	return pulumix.Output[GetControlResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
 func (o GetControlResultOutput) ApprovalRequiredOpActionLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetControlResult) []string { return v.ApprovalRequiredOpActionLists }).(pulumi.StringArrayOutput)
@@ -162,8 +155,8 @@ func (o GetControlResultOutput) ApproversLists() pulumi.StringArrayOutput {
 }
 
 // The OCID of the compartment that contains the operator control.
-func (o GetControlResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetControlResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -172,8 +165,8 @@ func (o GetControlResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of operator control.
-func (o GetControlResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetControlResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // List of emailId.
@@ -187,23 +180,23 @@ func (o GetControlResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the operator control.
-func (o GetControlResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetControlResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the operator control is a default Operator Control.
-func (o GetControlResultOutput) IsDefaultOperatorControl() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlResult) bool { return v.IsDefaultOperatorControl }).(pulumi.BoolOutput)
+func (o GetControlResultOutput) IsDefaultOperatorControl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *bool { return v.IsDefaultOperatorControl }).(pulumi.BoolPtrOutput)
 }
 
 // Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-func (o GetControlResultOutput) IsFullyPreApproved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlResult) bool { return v.IsFullyPreApproved }).(pulumi.BoolOutput)
+func (o GetControlResultOutput) IsFullyPreApproved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *bool { return v.IsFullyPreApproved }).(pulumi.BoolPtrOutput)
 }
 
 // Description associated with the latest modification of the operator control.
-func (o GetControlResultOutput) LastModifiedInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.LastModifiedInfo }).(pulumi.StringOutput)
+func (o GetControlResultOutput) LastModifiedInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.LastModifiedInfo }).(pulumi.StringPtrOutput)
 }
 
 func (o GetControlResultOutput) OperatorControlId() pulumi.StringOutput {
@@ -211,8 +204,8 @@ func (o GetControlResultOutput) OperatorControlId() pulumi.StringOutput {
 }
 
 // Name of the operator control. The name must be unique.
-func (o GetControlResultOutput) OperatorControlName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.OperatorControlName }).(pulumi.StringOutput)
+func (o GetControlResultOutput) OperatorControlName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.OperatorControlName }).(pulumi.StringPtrOutput)
 }
 
 // List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
@@ -221,33 +214,33 @@ func (o GetControlResultOutput) PreApprovedOpActionLists() pulumi.StringArrayOut
 }
 
 // resourceType for which the OperatorControl is applicable
-func (o GetControlResultOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetControlResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the operator control.
-func (o GetControlResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetControlResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-func (o GetControlResultOutput) SystemMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.SystemMessage }).(pulumi.StringOutput)
+func (o GetControlResultOutput) SystemMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.SystemMessage }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlResultOutput) TimeOfCreation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.TimeOfCreation }).(pulumi.StringOutput)
+func (o GetControlResultOutput) TimeOfCreation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.TimeOfCreation }).(pulumi.StringPtrOutput)
 }
 
 // Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-func (o GetControlResultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetControlResultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlResultOutput) TimeOfModification() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlResult) string { return v.TimeOfModification }).(pulumi.StringOutput)
+func (o GetControlResultOutput) TimeOfModification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlResult) *string { return v.TimeOfModification }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterEndpoint {
@@ -13,51 +15,51 @@ public final class GetClustersClusterEndpoint {
      * @return The non-native networking Kubernetes API server endpoint.
      * 
      */
-    private String kubernetes;
+    private @Nullable String kubernetes;
     /**
      * @return The private native networking Kubernetes API server endpoint.
      * 
      */
-    private String privateEndpoint;
+    private @Nullable String privateEndpoint;
     /**
      * @return The public native networking Kubernetes API server endpoint, if one was requested.
      * 
      */
-    private String publicEndpoint;
+    private @Nullable String publicEndpoint;
     /**
      * @return The FQDN assigned to the Kubernetes API private endpoint. Example: &#39;https://yourVcnHostnameEndpoint&#39;
      * 
      */
-    private String vcnHostnameEndpoint;
+    private @Nullable String vcnHostnameEndpoint;
 
     private GetClustersClusterEndpoint() {}
     /**
      * @return The non-native networking Kubernetes API server endpoint.
      * 
      */
-    public String kubernetes() {
-        return this.kubernetes;
+    public Optional<String> kubernetes() {
+        return Optional.ofNullable(this.kubernetes);
     }
     /**
      * @return The private native networking Kubernetes API server endpoint.
      * 
      */
-    public String privateEndpoint() {
-        return this.privateEndpoint;
+    public Optional<String> privateEndpoint() {
+        return Optional.ofNullable(this.privateEndpoint);
     }
     /**
      * @return The public native networking Kubernetes API server endpoint, if one was requested.
      * 
      */
-    public String publicEndpoint() {
-        return this.publicEndpoint;
+    public Optional<String> publicEndpoint() {
+        return Optional.ofNullable(this.publicEndpoint);
     }
     /**
      * @return The FQDN assigned to the Kubernetes API private endpoint. Example: &#39;https://yourVcnHostnameEndpoint&#39;
      * 
      */
-    public String vcnHostnameEndpoint() {
-        return this.vcnHostnameEndpoint;
+    public Optional<String> vcnHostnameEndpoint() {
+        return Optional.ofNullable(this.vcnHostnameEndpoint);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetClustersClusterEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kubernetes;
-        private String privateEndpoint;
-        private String publicEndpoint;
-        private String vcnHostnameEndpoint;
+        private @Nullable String kubernetes;
+        private @Nullable String privateEndpoint;
+        private @Nullable String publicEndpoint;
+        private @Nullable String vcnHostnameEndpoint;
         public Builder() {}
         public Builder(GetClustersClusterEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetClustersClusterEndpoint {
         }
 
         @CustomType.Setter
-        public Builder kubernetes(String kubernetes) {
-            this.kubernetes = Objects.requireNonNull(kubernetes);
+        public Builder kubernetes(@Nullable String kubernetes) {
+            this.kubernetes = kubernetes;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpoint(String privateEndpoint) {
-            this.privateEndpoint = Objects.requireNonNull(privateEndpoint);
+        public Builder privateEndpoint(@Nullable String privateEndpoint) {
+            this.privateEndpoint = privateEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder publicEndpoint(String publicEndpoint) {
-            this.publicEndpoint = Objects.requireNonNull(publicEndpoint);
+        public Builder publicEndpoint(@Nullable String publicEndpoint) {
+            this.publicEndpoint = publicEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnHostnameEndpoint(String vcnHostnameEndpoint) {
-            this.vcnHostnameEndpoint = Objects.requireNonNull(vcnHostnameEndpoint);
+        public Builder vcnHostnameEndpoint(@Nullable String vcnHostnameEndpoint) {
+            this.vcnHostnameEndpoint = vcnHostnameEndpoint;
             return this;
         }
         public GetClustersClusterEndpoint build() {

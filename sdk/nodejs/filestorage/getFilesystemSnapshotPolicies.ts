@@ -85,7 +85,7 @@ export interface GetFilesystemSnapshotPoliciesResult {
     /**
      * The list of filesystem_snapshot_policies.
      */
-    readonly filesystemSnapshotPolicies: outputs.FileStorage.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy[];
+    readonly filesystemSnapshotPolicies?: outputs.FileStorage.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy[];
     readonly filters?: outputs.FileStorage.GetFilesystemSnapshotPoliciesFilter[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.

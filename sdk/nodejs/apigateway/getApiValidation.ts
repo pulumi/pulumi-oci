@@ -48,11 +48,11 @@ export interface GetApiValidationResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * API validation results.
      */
-    readonly validations: outputs.ApiGateway.GetApiValidationValidation[];
+    readonly validations?: outputs.ApiGateway.GetApiValidationValidation[];
 }
 /**
  * This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.

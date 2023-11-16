@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
@@ -71,9 +70,9 @@ type TargetAlertPolicyAssociation struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the target-alert policy association.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
@@ -81,7 +80,7 @@ type TargetAlertPolicyAssociation struct {
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringOutput `pulumi:"policyId"`
 	// The current state of the target-alert policy association.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The OCID of the target.
@@ -90,9 +89,9 @@ type TargetAlertPolicyAssociation struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewTargetAlertPolicyAssociation registers a new resource with the given unique name, arguments, and options.
@@ -268,12 +267,6 @@ func (i *TargetAlertPolicyAssociation) ToTargetAlertPolicyAssociationOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAlertPolicyAssociationOutput)
 }
 
-func (i *TargetAlertPolicyAssociation) ToOutput(ctx context.Context) pulumix.Output[*TargetAlertPolicyAssociation] {
-	return pulumix.Output[*TargetAlertPolicyAssociation]{
-		OutputState: i.ToTargetAlertPolicyAssociationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetAlertPolicyAssociationArrayInput is an input type that accepts TargetAlertPolicyAssociationArray and TargetAlertPolicyAssociationArrayOutput values.
 // You can construct a concrete instance of `TargetAlertPolicyAssociationArrayInput` via:
 //
@@ -297,12 +290,6 @@ func (i TargetAlertPolicyAssociationArray) ToTargetAlertPolicyAssociationArrayOu
 
 func (i TargetAlertPolicyAssociationArray) ToTargetAlertPolicyAssociationArrayOutputWithContext(ctx context.Context) TargetAlertPolicyAssociationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAlertPolicyAssociationArrayOutput)
-}
-
-func (i TargetAlertPolicyAssociationArray) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAlertPolicyAssociation] {
-	return pulumix.Output[[]*TargetAlertPolicyAssociation]{
-		OutputState: i.ToTargetAlertPolicyAssociationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TargetAlertPolicyAssociationMapInput is an input type that accepts TargetAlertPolicyAssociationMap and TargetAlertPolicyAssociationMapOutput values.
@@ -330,12 +317,6 @@ func (i TargetAlertPolicyAssociationMap) ToTargetAlertPolicyAssociationMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(TargetAlertPolicyAssociationMapOutput)
 }
 
-func (i TargetAlertPolicyAssociationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAlertPolicyAssociation] {
-	return pulumix.Output[map[string]*TargetAlertPolicyAssociation]{
-		OutputState: i.ToTargetAlertPolicyAssociationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetAlertPolicyAssociationOutput struct{ *pulumi.OutputState }
 
 func (TargetAlertPolicyAssociationOutput) ElementType() reflect.Type {
@@ -350,12 +331,6 @@ func (o TargetAlertPolicyAssociationOutput) ToTargetAlertPolicyAssociationOutput
 	return o
 }
 
-func (o TargetAlertPolicyAssociationOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetAlertPolicyAssociation] {
-	return pulumix.Output[*TargetAlertPolicyAssociation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment where the target-alert policy association is created.
 func (o TargetAlertPolicyAssociationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -367,13 +342,13 @@ func (o TargetAlertPolicyAssociationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Describes the target-alert policy association.
-func (o TargetAlertPolicyAssociationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o TargetAlertPolicyAssociationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the target-alert policy association.
-func (o TargetAlertPolicyAssociationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o TargetAlertPolicyAssociationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -392,8 +367,8 @@ func (o TargetAlertPolicyAssociationOutput) PolicyId() pulumi.StringOutput {
 }
 
 // The current state of the target-alert policy association.
-func (o TargetAlertPolicyAssociationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TargetAlertPolicyAssociationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -410,13 +385,13 @@ func (o TargetAlertPolicyAssociationOutput) TargetId() pulumi.StringOutput {
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o TargetAlertPolicyAssociationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TargetAlertPolicyAssociationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o TargetAlertPolicyAssociationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o TargetAlertPolicyAssociationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type TargetAlertPolicyAssociationArrayOutput struct{ *pulumi.OutputState }
@@ -431,12 +406,6 @@ func (o TargetAlertPolicyAssociationArrayOutput) ToTargetAlertPolicyAssociationA
 
 func (o TargetAlertPolicyAssociationArrayOutput) ToTargetAlertPolicyAssociationArrayOutputWithContext(ctx context.Context) TargetAlertPolicyAssociationArrayOutput {
 	return o
-}
-
-func (o TargetAlertPolicyAssociationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TargetAlertPolicyAssociation] {
-	return pulumix.Output[[]*TargetAlertPolicyAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetAlertPolicyAssociationArrayOutput) Index(i pulumi.IntInput) TargetAlertPolicyAssociationOutput {
@@ -457,12 +426,6 @@ func (o TargetAlertPolicyAssociationMapOutput) ToTargetAlertPolicyAssociationMap
 
 func (o TargetAlertPolicyAssociationMapOutput) ToTargetAlertPolicyAssociationMapOutputWithContext(ctx context.Context) TargetAlertPolicyAssociationMapOutput {
 	return o
-}
-
-func (o TargetAlertPolicyAssociationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetAlertPolicyAssociation] {
-	return pulumix.Output[map[string]*TargetAlertPolicyAssociation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetAlertPolicyAssociationMapOutput) MapIndex(k pulumi.StringInput) TargetAlertPolicyAssociationOutput {

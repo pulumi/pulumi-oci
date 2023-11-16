@@ -49,13 +49,13 @@ export interface GetFusionEnvironmentAdminUsersResult {
     /**
      * The list of admin_user_collection.
      */
-    readonly adminUserCollections: outputs.Functions.GetFusionEnvironmentAdminUsersAdminUserCollection[];
+    readonly adminUserCollections?: outputs.Functions.GetFusionEnvironmentAdminUsersAdminUserCollection[];
     readonly filters?: outputs.Functions.GetFusionEnvironmentAdminUsersFilter[];
     readonly fusionEnvironmentId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.

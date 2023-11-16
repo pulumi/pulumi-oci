@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// SFF auth keys clob
         /// </summary>
-        public readonly string SffAuthKeys;
+        public readonly string? SffAuthKeys;
 
         [OutputConstructor]
-        private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserResult(string sffAuthKeys)
+        private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsffUserResult(string? sffAuthKeys)
         {
             SffAuthKeys = sffAuthKeys;
         }

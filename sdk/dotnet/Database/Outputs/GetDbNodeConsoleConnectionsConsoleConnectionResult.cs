@@ -16,68 +16,68 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The OCID of the compartment to contain the console connection.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The SSH connection string for the console connection.
         /// </summary>
-        public readonly string ConnectionString;
+        public readonly string? ConnectionString;
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string DbNodeId;
+        public readonly string? DbNodeId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The SSH public key fingerprint for the console connection.
         /// </summary>
-        public readonly string Fingerprint;
+        public readonly string? Fingerprint;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the console connection.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly string PublicKey;
+        public readonly string? LifecycleDetails;
+        public readonly string? PublicKey;
         /// <summary>
         /// The SSH public key's fingerprint for the console connection service host.
         /// </summary>
-        public readonly string ServiceHostKeyFingerprint;
+        public readonly string? ServiceHostKeyFingerprint;
         /// <summary>
         /// The current state of the console connection.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetDbNodeConsoleConnectionsConsoleConnectionResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string connectionString,
+            string? connectionString,
 
-            string dbNodeId,
+            string? dbNodeId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string fingerprint,
+            string? fingerprint,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string publicKey,
+            string? publicKey,
 
-            string serviceHostKeyFingerprint,
+            string? serviceHostKeyFingerprint,
 
-            string state)
+            string? state)
         {
             CompartmentId = compartmentId;
             ConnectionString = connectionString;

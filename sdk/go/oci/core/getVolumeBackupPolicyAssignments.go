@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Volume Backup Policy Assignments in Oracle Cloud Infrastructure Core service.
@@ -66,7 +65,7 @@ type GetVolumeBackupPolicyAssignmentsResult struct {
 	AssetId string                                   `pulumi:"assetId"`
 	Filters []GetVolumeBackupPolicyAssignmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of volume_backup_policy_assignments.
 	VolumeBackupPolicyAssignments []GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment `pulumi:"volumeBackupPolicyAssignments"`
 }
@@ -110,12 +109,6 @@ func (o GetVolumeBackupPolicyAssignmentsResultOutput) ToGetVolumeBackupPolicyAss
 	return o
 }
 
-func (o GetVolumeBackupPolicyAssignmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVolumeBackupPolicyAssignmentsResult] {
-	return pulumix.Output[GetVolumeBackupPolicyAssignmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the volume the policy has been assigned to.
 func (o GetVolumeBackupPolicyAssignmentsResultOutput) AssetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeBackupPolicyAssignmentsResult) string { return v.AssetId }).(pulumi.StringOutput)
@@ -128,8 +121,8 @@ func (o GetVolumeBackupPolicyAssignmentsResultOutput) Filters() GetVolumeBackupP
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVolumeBackupPolicyAssignmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVolumeBackupPolicyAssignmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVolumeBackupPolicyAssignmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumeBackupPolicyAssignmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of volume_backup_policy_assignments.

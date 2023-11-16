@@ -96,31 +96,31 @@ export class Vtap extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
      */
-    public readonly encapsulationProtocol!: pulumi.Output<string>;
+    public readonly encapsulationProtocol!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Used to start or stop a `Vtap` resource.
      */
-    public readonly isVtapEnabled!: pulumi.Output<boolean>;
+    public readonly isVtapEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The VTAP's current running state.
      */
-    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleStateDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The maximum size of the packets to be included in the filter.
      */
-    public readonly maxPacketSize!: pulumi.Output<number>;
+    public readonly maxPacketSize!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
      */
@@ -128,39 +128,39 @@ export class Vtap extends pulumi.CustomResource {
     /**
      * (Updatable) The IP Address of the source private endpoint.
      */
-    public readonly sourcePrivateEndpointIp!: pulumi.Output<string>;
+    public readonly sourcePrivateEndpointIp!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
      */
-    public readonly sourcePrivateEndpointSubnetId!: pulumi.Output<string>;
+    public readonly sourcePrivateEndpointSubnetId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The source type for the VTAP.
      */
-    public readonly sourceType!: pulumi.Output<string>;
+    public readonly sourceType!: pulumi.Output<string | undefined>;
     /**
      * The VTAP's administrative lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
      */
-    public readonly targetId!: pulumi.Output<string>;
+    public readonly targetId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The IP address of the destination resource where mirrored packets are sent.
      */
-    public readonly targetIp!: pulumi.Output<string>;
+    public readonly targetIp!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The target type for the VTAP.
      */
-    public readonly targetType!: pulumi.Output<string>;
+    public readonly targetType!: pulumi.Output<string | undefined>;
     /**
      * The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
      */
-    public readonly trafficMode!: pulumi.Output<string>;
+    public readonly trafficMode!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
      */
@@ -172,7 +172,7 @@ export class Vtap extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vxlanNetworkIdentifier!: pulumi.Output<string>;
+    public readonly vxlanNetworkIdentifier!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Vtap resource with the given unique name, arguments, and options.

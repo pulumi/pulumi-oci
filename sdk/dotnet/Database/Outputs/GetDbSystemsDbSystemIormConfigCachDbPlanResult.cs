@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbSystemsDbSystemIormConfigCachDbPlanResult
     {
-        public readonly string DbName;
-        public readonly string FlashCacheLimit;
-        public readonly int Share;
+        public readonly string? DbName;
+        public readonly string? FlashCacheLimit;
+        public readonly int? Share;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemIormConfigCachDbPlanResult(
-            string dbName,
+            string? dbName,
 
-            string flashCacheLimit,
+            string? flashCacheLimit,
 
-            int share)
+            int? share)
         {
             DbName = dbName;
             FlashCacheLimit = flashCacheLimit;

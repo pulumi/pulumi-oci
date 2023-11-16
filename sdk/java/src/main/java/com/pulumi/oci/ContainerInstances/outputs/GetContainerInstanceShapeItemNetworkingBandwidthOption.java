@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceShapeItemNetworkingBandwidthOption {
@@ -13,39 +15,39 @@ public final class GetContainerInstanceShapeItemNetworkingBandwidthOption {
      * @return The default amount of networking bandwidth per OCPU, in gigabits per second.
      * 
      */
-    private Double defaultPerOcpuInGbps;
+    private @Nullable Double defaultPerOcpuInGbps;
     /**
      * @return The maximum amount of networking bandwidth, in gigabits per second.
      * 
      */
-    private Double maxInGbps;
+    private @Nullable Double maxInGbps;
     /**
      * @return The minimum amount of networking bandwidth, in gigabits per second.
      * 
      */
-    private Double minInGbps;
+    private @Nullable Double minInGbps;
 
     private GetContainerInstanceShapeItemNetworkingBandwidthOption() {}
     /**
      * @return The default amount of networking bandwidth per OCPU, in gigabits per second.
      * 
      */
-    public Double defaultPerOcpuInGbps() {
-        return this.defaultPerOcpuInGbps;
+    public Optional<Double> defaultPerOcpuInGbps() {
+        return Optional.ofNullable(this.defaultPerOcpuInGbps);
     }
     /**
      * @return The maximum amount of networking bandwidth, in gigabits per second.
      * 
      */
-    public Double maxInGbps() {
-        return this.maxInGbps;
+    public Optional<Double> maxInGbps() {
+        return Optional.ofNullable(this.maxInGbps);
     }
     /**
      * @return The minimum amount of networking bandwidth, in gigabits per second.
      * 
      */
-    public Double minInGbps() {
-        return this.minInGbps;
+    public Optional<Double> minInGbps() {
+        return Optional.ofNullable(this.minInGbps);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetContainerInstanceShapeItemNetworkingBandwidthOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double defaultPerOcpuInGbps;
-        private Double maxInGbps;
-        private Double minInGbps;
+        private @Nullable Double defaultPerOcpuInGbps;
+        private @Nullable Double maxInGbps;
+        private @Nullable Double minInGbps;
         public Builder() {}
         public Builder(GetContainerInstanceShapeItemNetworkingBandwidthOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetContainerInstanceShapeItemNetworkingBandwidthOption {
         }
 
         @CustomType.Setter
-        public Builder defaultPerOcpuInGbps(Double defaultPerOcpuInGbps) {
-            this.defaultPerOcpuInGbps = Objects.requireNonNull(defaultPerOcpuInGbps);
+        public Builder defaultPerOcpuInGbps(@Nullable Double defaultPerOcpuInGbps) {
+            this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder maxInGbps(Double maxInGbps) {
-            this.maxInGbps = Objects.requireNonNull(maxInGbps);
+        public Builder maxInGbps(@Nullable Double maxInGbps) {
+            this.maxInGbps = maxInGbps;
             return this;
         }
         @CustomType.Setter
-        public Builder minInGbps(Double minInGbps) {
-            this.minInGbps = Objects.requireNonNull(minInGbps);
+        public Builder minInGbps(@Nullable Double minInGbps) {
+            this.minInGbps = minInGbps;
             return this;
         }
         public GetContainerInstanceShapeItemNetworkingBandwidthOption build() {

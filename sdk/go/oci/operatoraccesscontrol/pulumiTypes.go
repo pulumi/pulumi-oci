@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -18,17 +17,17 @@ type GetAccessRequestHistoryItem struct {
 	// List of operator actions for which approvals were requested by the operator.
 	ActionsLists []string `pulumi:"actionsLists"`
 	// Reason or description about the cause of change.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Duration for approval of request or extension depending on the type of action.
-	Duration int `pulumi:"duration"`
+	Duration *int `pulumi:"duration"`
 	// Whether the access request was automatically approved.
-	IsAutoApproved bool `pulumi:"isAutoApproved"`
+	IsAutoApproved *bool `pulumi:"isAutoApproved"`
 	// The current state of the AccessRequest.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfAction string `pulumi:"timeOfAction"`
+	TimeOfAction *string `pulumi:"timeOfAction"`
 	// Approver who modified the access request.
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetAccessRequestHistoryItemInput is an input type that accepts GetAccessRequestHistoryItemArgs and GetAccessRequestHistoryItemOutput values.
@@ -46,17 +45,17 @@ type GetAccessRequestHistoryItemArgs struct {
 	// List of operator actions for which approvals were requested by the operator.
 	ActionsLists pulumi.StringArrayInput `pulumi:"actionsLists"`
 	// Reason or description about the cause of change.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Duration for approval of request or extension depending on the type of action.
-	Duration pulumi.IntInput `pulumi:"duration"`
+	Duration pulumi.IntPtrInput `pulumi:"duration"`
 	// Whether the access request was automatically approved.
-	IsAutoApproved pulumi.BoolInput `pulumi:"isAutoApproved"`
+	IsAutoApproved pulumi.BoolPtrInput `pulumi:"isAutoApproved"`
 	// The current state of the AccessRequest.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfAction pulumi.StringInput `pulumi:"timeOfAction"`
+	TimeOfAction pulumi.StringPtrInput `pulumi:"timeOfAction"`
 	// Approver who modified the access request.
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetAccessRequestHistoryItemArgs) ElementType() reflect.Type {
@@ -69,12 +68,6 @@ func (i GetAccessRequestHistoryItemArgs) ToGetAccessRequestHistoryItemOutput() G
 
 func (i GetAccessRequestHistoryItemArgs) ToGetAccessRequestHistoryItemOutputWithContext(ctx context.Context) GetAccessRequestHistoryItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestHistoryItemOutput)
-}
-
-func (i GetAccessRequestHistoryItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestHistoryItem] {
-	return pulumix.Output[GetAccessRequestHistoryItem]{
-		OutputState: i.ToGetAccessRequestHistoryItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessRequestHistoryItemArrayInput is an input type that accepts GetAccessRequestHistoryItemArray and GetAccessRequestHistoryItemArrayOutput values.
@@ -102,12 +95,6 @@ func (i GetAccessRequestHistoryItemArray) ToGetAccessRequestHistoryItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestHistoryItemArrayOutput)
 }
 
-func (i GetAccessRequestHistoryItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestHistoryItem] {
-	return pulumix.Output[[]GetAccessRequestHistoryItem]{
-		OutputState: i.ToGetAccessRequestHistoryItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessRequestHistoryItemOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestHistoryItemOutput) ElementType() reflect.Type {
@@ -122,45 +109,39 @@ func (o GetAccessRequestHistoryItemOutput) ToGetAccessRequestHistoryItemOutputWi
 	return o
 }
 
-func (o GetAccessRequestHistoryItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestHistoryItem] {
-	return pulumix.Output[GetAccessRequestHistoryItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of operator actions for which approvals were requested by the operator.
 func (o GetAccessRequestHistoryItemOutput) ActionsLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAccessRequestHistoryItem) []string { return v.ActionsLists }).(pulumi.StringArrayOutput)
 }
 
 // Reason or description about the cause of change.
-func (o GetAccessRequestHistoryItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAccessRequestHistoryItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Duration for approval of request or extension depending on the type of action.
-func (o GetAccessRequestHistoryItemOutput) Duration() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryItem) int { return v.Duration }).(pulumi.IntOutput)
+func (o GetAccessRequestHistoryItemOutput) Duration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryItem) *int { return v.Duration }).(pulumi.IntPtrOutput)
 }
 
 // Whether the access request was automatically approved.
-func (o GetAccessRequestHistoryItemOutput) IsAutoApproved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryItem) bool { return v.IsAutoApproved }).(pulumi.BoolOutput)
+func (o GetAccessRequestHistoryItemOutput) IsAutoApproved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryItem) *bool { return v.IsAutoApproved }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the AccessRequest.
-func (o GetAccessRequestHistoryItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAccessRequestHistoryItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetAccessRequestHistoryItemOutput) TimeOfAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryItem) string { return v.TimeOfAction }).(pulumi.StringOutput)
+func (o GetAccessRequestHistoryItemOutput) TimeOfAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryItem) *string { return v.TimeOfAction }).(pulumi.StringPtrOutput)
 }
 
 // Approver who modified the access request.
-func (o GetAccessRequestHistoryItemOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestHistoryItem) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetAccessRequestHistoryItemOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestHistoryItem) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetAccessRequestHistoryItemArrayOutput struct{ *pulumi.OutputState }
@@ -175,12 +156,6 @@ func (o GetAccessRequestHistoryItemArrayOutput) ToGetAccessRequestHistoryItemArr
 
 func (o GetAccessRequestHistoryItemArrayOutput) ToGetAccessRequestHistoryItemArrayOutputWithContext(ctx context.Context) GetAccessRequestHistoryItemArrayOutput {
 	return o
-}
-
-func (o GetAccessRequestHistoryItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestHistoryItem] {
-	return pulumix.Output[[]GetAccessRequestHistoryItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAccessRequestHistoryItemArrayOutput) Index(i pulumi.IntInput) GetAccessRequestHistoryItemOutput {
@@ -220,12 +195,6 @@ func (i GetAccessRequestsAccessRequestCollectionArgs) ToGetAccessRequestsAccessR
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionOutput)
 }
 
-func (i GetAccessRequestsAccessRequestCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollection] {
-	return pulumix.Output[GetAccessRequestsAccessRequestCollection]{
-		OutputState: i.ToGetAccessRequestsAccessRequestCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAccessRequestsAccessRequestCollectionArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionArray and GetAccessRequestsAccessRequestCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsAccessRequestCollectionArrayInput` via:
 //
@@ -251,12 +220,6 @@ func (i GetAccessRequestsAccessRequestCollectionArray) ToGetAccessRequestsAccess
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionArrayOutput)
 }
 
-func (i GetAccessRequestsAccessRequestCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollection] {
-	return pulumix.Output[[]GetAccessRequestsAccessRequestCollection]{
-		OutputState: i.ToGetAccessRequestsAccessRequestCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessRequestsAccessRequestCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestsAccessRequestCollectionOutput) ElementType() reflect.Type {
@@ -269,12 +232,6 @@ func (o GetAccessRequestsAccessRequestCollectionOutput) ToGetAccessRequestsAcces
 
 func (o GetAccessRequestsAccessRequestCollectionOutput) ToGetAccessRequestsAccessRequestCollectionOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionOutput {
 	return o
-}
-
-func (o GetAccessRequestsAccessRequestCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollection] {
-	return pulumix.Output[GetAccessRequestsAccessRequestCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAccessRequestsAccessRequestCollectionOutput) Items() GetAccessRequestsAccessRequestCollectionItemArrayOutput {
@@ -297,12 +254,6 @@ func (o GetAccessRequestsAccessRequestCollectionArrayOutput) ToGetAccessRequests
 	return o
 }
 
-func (o GetAccessRequestsAccessRequestCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollection] {
-	return pulumix.Output[[]GetAccessRequestsAccessRequestCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessRequestsAccessRequestCollectionArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsAccessRequestCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestsAccessRequestCollection {
 		return vs[0].([]GetAccessRequestsAccessRequestCollection)[vs[1].(int)]
@@ -311,65 +262,65 @@ func (o GetAccessRequestsAccessRequestCollectionArrayOutput) Index(i pulumi.IntI
 
 type GetAccessRequestsAccessRequestCollectionItem struct {
 	// Summary comment by the operator creating the access request.
-	AccessReasonSummary string `pulumi:"accessReasonSummary"`
+	AccessReasonSummary *string `pulumi:"accessReasonSummary"`
 	// List of operator actions for which approval is sought by the operator user.
 	ActionRequestsLists []string `pulumi:"actionRequestsLists"`
 	// The last recent Comment entered by the approver of the request.
-	ApproverComment string `pulumi:"approverComment"`
+	ApproverComment *string `pulumi:"approverComment"`
 	// Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 	AuditTypes []string `pulumi:"auditTypes"`
 	// The comment entered by the operator while closing the request.
-	ClosureComment string `pulumi:"closureComment"`
+	ClosureComment *string `pulumi:"closureComment"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Duration in hours for which access is sought on the target resource.
-	Duration int `pulumi:"duration"`
+	Duration *int `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
-	ExtendDuration int `pulumi:"extendDuration"`
+	ExtendDuration *int `pulumi:"extendDuration"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the access request.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the access request was automatically approved.
-	IsAutoApproved bool `pulumi:"isAutoApproved"`
+	IsAutoApproved *bool `pulumi:"isAutoApproved"`
 	// more in detail about the lifeCycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
-	OpctlAdditionalMessage string `pulumi:"opctlAdditionalMessage"`
+	OpctlAdditionalMessage *string `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
-	OpctlId string `pulumi:"opctlId"`
+	OpctlId *string `pulumi:"opctlId"`
 	// Name of the Operator control governing the target resource.
-	OpctlName string `pulumi:"opctlName"`
+	OpctlName *string `pulumi:"opctlName"`
 	// A unique identifier associated with the operator who raised the request. This identifier can not be used directly to identify the operator. You need to provide this identifier if you would like Oracle to provide additional information about the operator action within Oracle tenancy.
-	OperatorId string `pulumi:"operatorId"`
+	OperatorId *string `pulumi:"operatorId"`
 	// Summary reason for which the operator is requesting access on the target resource.
-	Reason string `pulumi:"reason"`
+	Reason *string `pulumi:"reason"`
 	// This is an automatic identifier generated by the system which is easier for human comprehension.
-	RequestId string `pulumi:"requestId"`
+	RequestId *string `pulumi:"requestId"`
 	// The OCID of the target resource associated with the access request. The operator raises an access request to get approval to  access the target resource.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// A filter to return only resources that match the given ResourceName.
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// Priority assigned to the access request by the operator
-	Severity string `pulumi:"severity"`
+	Severity *string `pulumi:"severity"`
 	// A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subresources requested for approval.
 	SubResourceLists []string `pulumi:"subResourceLists"`
 	// System message that will be displayed to the operator at login to the target resource.
-	SystemMessage string `pulumi:"systemMessage"`
+	SystemMessage *string `pulumi:"systemMessage"`
 	// Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfCreation string `pulumi:"timeOfCreation"`
+	TimeOfCreation *string `pulumi:"timeOfCreation"`
 	// Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfModification string `pulumi:"timeOfModification"`
+	TimeOfModification *string `pulumi:"timeOfModification"`
 	// The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	TimeOfUserCreation string `pulumi:"timeOfUserCreation"`
+	TimeOfUserCreation *string `pulumi:"timeOfUserCreation"`
 	// The OCID of the user that last modified the access request.
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 	// The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
 	WorkflowIds []string `pulumi:"workflowIds"`
 }
@@ -387,65 +338,65 @@ type GetAccessRequestsAccessRequestCollectionItemInput interface {
 
 type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	// Summary comment by the operator creating the access request.
-	AccessReasonSummary pulumi.StringInput `pulumi:"accessReasonSummary"`
+	AccessReasonSummary pulumi.StringPtrInput `pulumi:"accessReasonSummary"`
 	// List of operator actions for which approval is sought by the operator user.
 	ActionRequestsLists pulumi.StringArrayInput `pulumi:"actionRequestsLists"`
 	// The last recent Comment entered by the approver of the request.
-	ApproverComment pulumi.StringInput `pulumi:"approverComment"`
+	ApproverComment pulumi.StringPtrInput `pulumi:"approverComment"`
 	// Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
 	AuditTypes pulumi.StringArrayInput `pulumi:"auditTypes"`
 	// The comment entered by the operator while closing the request.
-	ClosureComment pulumi.StringInput `pulumi:"closureComment"`
+	ClosureComment pulumi.StringPtrInput `pulumi:"closureComment"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Duration in hours for which access is sought on the target resource.
-	Duration pulumi.IntInput `pulumi:"duration"`
+	Duration pulumi.IntPtrInput `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
-	ExtendDuration pulumi.IntInput `pulumi:"extendDuration"`
+	ExtendDuration pulumi.IntPtrInput `pulumi:"extendDuration"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the access request.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the access request was automatically approved.
-	IsAutoApproved pulumi.BoolInput `pulumi:"isAutoApproved"`
+	IsAutoApproved pulumi.BoolPtrInput `pulumi:"isAutoApproved"`
 	// more in detail about the lifeCycleState.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Additional message specific to the access request that can be specified by the approver at the time of approval.
-	OpctlAdditionalMessage pulumi.StringInput `pulumi:"opctlAdditionalMessage"`
+	OpctlAdditionalMessage pulumi.StringPtrInput `pulumi:"opctlAdditionalMessage"`
 	// The OCID of the operator control governing the target resource.
-	OpctlId pulumi.StringInput `pulumi:"opctlId"`
+	OpctlId pulumi.StringPtrInput `pulumi:"opctlId"`
 	// Name of the Operator control governing the target resource.
-	OpctlName pulumi.StringInput `pulumi:"opctlName"`
+	OpctlName pulumi.StringPtrInput `pulumi:"opctlName"`
 	// A unique identifier associated with the operator who raised the request. This identifier can not be used directly to identify the operator. You need to provide this identifier if you would like Oracle to provide additional information about the operator action within Oracle tenancy.
-	OperatorId pulumi.StringInput `pulumi:"operatorId"`
+	OperatorId pulumi.StringPtrInput `pulumi:"operatorId"`
 	// Summary reason for which the operator is requesting access on the target resource.
-	Reason pulumi.StringInput `pulumi:"reason"`
+	Reason pulumi.StringPtrInput `pulumi:"reason"`
 	// This is an automatic identifier generated by the system which is easier for human comprehension.
-	RequestId pulumi.StringInput `pulumi:"requestId"`
+	RequestId pulumi.StringPtrInput `pulumi:"requestId"`
 	// The OCID of the target resource associated with the access request. The operator raises an access request to get approval to  access the target resource.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// A filter to return only resources that match the given ResourceName.
-	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// Priority assigned to the access request by the operator
-	Severity pulumi.StringInput `pulumi:"severity"`
+	Severity pulumi.StringPtrInput `pulumi:"severity"`
 	// A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The subresources requested for approval.
 	SubResourceLists pulumi.StringArrayInput `pulumi:"subResourceLists"`
 	// System message that will be displayed to the operator at login to the target resource.
-	SystemMessage pulumi.StringInput `pulumi:"systemMessage"`
+	SystemMessage pulumi.StringPtrInput `pulumi:"systemMessage"`
 	// Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfCreation pulumi.StringInput `pulumi:"timeOfCreation"`
+	TimeOfCreation pulumi.StringPtrInput `pulumi:"timeOfCreation"`
 	// Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfModification pulumi.StringInput `pulumi:"timeOfModification"`
+	TimeOfModification pulumi.StringPtrInput `pulumi:"timeOfModification"`
 	// The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	TimeOfUserCreation pulumi.StringInput `pulumi:"timeOfUserCreation"`
+	TimeOfUserCreation pulumi.StringPtrInput `pulumi:"timeOfUserCreation"`
 	// The OCID of the user that last modified the access request.
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 	// The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
 	WorkflowIds pulumi.StringArrayInput `pulumi:"workflowIds"`
 }
@@ -460,12 +411,6 @@ func (i GetAccessRequestsAccessRequestCollectionItemArgs) ToGetAccessRequestsAcc
 
 func (i GetAccessRequestsAccessRequestCollectionItemArgs) ToGetAccessRequestsAccessRequestCollectionItemOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemOutput)
-}
-
-func (i GetAccessRequestsAccessRequestCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollectionItem] {
-	return pulumix.Output[GetAccessRequestsAccessRequestCollectionItem]{
-		OutputState: i.ToGetAccessRequestsAccessRequestCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAccessRequestsAccessRequestCollectionItemArrayInput is an input type that accepts GetAccessRequestsAccessRequestCollectionItemArray and GetAccessRequestsAccessRequestCollectionItemArrayOutput values.
@@ -493,12 +438,6 @@ func (i GetAccessRequestsAccessRequestCollectionItemArray) ToGetAccessRequestsAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsAccessRequestCollectionItemArrayOutput)
 }
 
-func (i GetAccessRequestsAccessRequestCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem] {
-	return pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem]{
-		OutputState: i.ToGetAccessRequestsAccessRequestCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessRequestsAccessRequestCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestsAccessRequestCollectionItemOutput) ElementType() reflect.Type {
@@ -513,15 +452,9 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) ToGetAccessRequestsA
 	return o
 }
 
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsAccessRequestCollectionItem] {
-	return pulumix.Output[GetAccessRequestsAccessRequestCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Summary comment by the operator creating the access request.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) AccessReasonSummary() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.AccessReasonSummary }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) AccessReasonSummary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.AccessReasonSummary }).(pulumi.StringPtrOutput)
 }
 
 // List of operator actions for which approval is sought by the operator user.
@@ -530,8 +463,8 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) ActionRequestsLists(
 }
 
 // The last recent Comment entered by the approver of the request.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ApproverComment() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.ApproverComment }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ApproverComment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.ApproverComment }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
@@ -540,13 +473,13 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) AuditTypes() pulumi.
 }
 
 // The comment entered by the operator while closing the request.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ClosureComment() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.ClosureComment }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ClosureComment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.ClosureComment }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -555,13 +488,13 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) DefinedTags() pulumi
 }
 
 // Duration in hours for which access is sought on the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) Duration() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) int { return v.Duration }).(pulumi.IntOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) Duration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *int { return v.Duration }).(pulumi.IntPtrOutput)
 }
 
 // Duration in hours for which extension access is sought on the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ExtendDuration() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) int { return v.ExtendDuration }).(pulumi.IntOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ExtendDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *int { return v.ExtendDuration }).(pulumi.IntPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -570,73 +503,73 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) FreeformTags() pulum
 }
 
 // The OCID of the access request.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the access request was automatically approved.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) IsAutoApproved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) bool { return v.IsAutoApproved }).(pulumi.BoolOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) IsAutoApproved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *bool { return v.IsAutoApproved }).(pulumi.BoolPtrOutput)
 }
 
 // more in detail about the lifeCycleState.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Additional message specific to the access request that can be specified by the approver at the time of approval.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) OpctlAdditionalMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.OpctlAdditionalMessage }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) OpctlAdditionalMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.OpctlAdditionalMessage }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the operator control governing the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) OpctlId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.OpctlId }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) OpctlId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.OpctlId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the Operator control governing the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) OpctlName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.OpctlName }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) OpctlName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.OpctlName }).(pulumi.StringPtrOutput)
 }
 
 // A unique identifier associated with the operator who raised the request. This identifier can not be used directly to identify the operator. You need to provide this identifier if you would like Oracle to provide additional information about the operator action within Oracle tenancy.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) OperatorId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.OperatorId }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) OperatorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.OperatorId }).(pulumi.StringPtrOutput)
 }
 
 // Summary reason for which the operator is requesting access on the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) Reason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
 
 // This is an automatic identifier generated by the system which is easier for human comprehension.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) RequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.RequestId }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) RequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.RequestId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target resource associated with the access request. The operator raises an access request to get approval to  access the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given ResourceName.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only lists of resources that match the entire given service type.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // Priority assigned to the access request by the operator
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.Severity }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subresources requested for approval.
@@ -645,28 +578,28 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) SubResourceLists() p
 }
 
 // System message that will be displayed to the operator at login to the target resource.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) SystemMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.SystemMessage }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) SystemMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.SystemMessage }).(pulumi.StringPtrOutput)
 }
 
 // Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfCreation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.TimeOfCreation }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfCreation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.TimeOfCreation }).(pulumi.StringPtrOutput)
 }
 
 // Time when the access request was last modified in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfModification() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.TimeOfModification }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfModification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.TimeOfModification }).(pulumi.StringPtrOutput)
 }
 
 // The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfUserCreation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.TimeOfUserCreation }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) TimeOfUserCreation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.TimeOfUserCreation }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user that last modified the access request.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
@@ -686,12 +619,6 @@ func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) ToGetAccessRequ
 
 func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) ToGetAccessRequestsAccessRequestCollectionItemArrayOutputWithContext(ctx context.Context) GetAccessRequestsAccessRequestCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem] {
-	return pulumix.Output[[]GetAccessRequestsAccessRequestCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAccessRequestsAccessRequestCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsAccessRequestCollectionItemOutput {
@@ -735,12 +662,6 @@ func (i GetAccessRequestsFilterArgs) ToGetAccessRequestsFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsFilterOutput)
 }
 
-func (i GetAccessRequestsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsFilter] {
-	return pulumix.Output[GetAccessRequestsFilter]{
-		OutputState: i.ToGetAccessRequestsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAccessRequestsFilterArrayInput is an input type that accepts GetAccessRequestsFilterArray and GetAccessRequestsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAccessRequestsFilterArrayInput` via:
 //
@@ -766,12 +687,6 @@ func (i GetAccessRequestsFilterArray) ToGetAccessRequestsFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAccessRequestsFilterArrayOutput)
 }
 
-func (i GetAccessRequestsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsFilter] {
-	return pulumix.Output[[]GetAccessRequestsFilter]{
-		OutputState: i.ToGetAccessRequestsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAccessRequestsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAccessRequestsFilterOutput) ElementType() reflect.Type {
@@ -784,12 +699,6 @@ func (o GetAccessRequestsFilterOutput) ToGetAccessRequestsFilterOutput() GetAcce
 
 func (o GetAccessRequestsFilterOutput) ToGetAccessRequestsFilterOutputWithContext(ctx context.Context) GetAccessRequestsFilterOutput {
 	return o
-}
-
-func (o GetAccessRequestsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessRequestsFilter] {
-	return pulumix.Output[GetAccessRequestsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAccessRequestsFilterOutput) Name() pulumi.StringOutput {
@@ -818,12 +727,6 @@ func (o GetAccessRequestsFilterArrayOutput) ToGetAccessRequestsFilterArrayOutput
 	return o
 }
 
-func (o GetAccessRequestsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAccessRequestsFilter] {
-	return pulumix.Output[[]GetAccessRequestsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAccessRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetAccessRequestsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAccessRequestsFilter {
 		return vs[0].([]GetAccessRequestsFilter)[vs[1].(int)]
@@ -832,9 +735,9 @@ func (o GetAccessRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetAccessRe
 
 type GetActionProperty struct {
 	// Name of the property
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// value of the property
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetActionPropertyInput is an input type that accepts GetActionPropertyArgs and GetActionPropertyOutput values.
@@ -850,9 +753,9 @@ type GetActionPropertyInput interface {
 
 type GetActionPropertyArgs struct {
 	// Name of the property
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// value of the property
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetActionPropertyArgs) ElementType() reflect.Type {
@@ -865,12 +768,6 @@ func (i GetActionPropertyArgs) ToGetActionPropertyOutput() GetActionPropertyOutp
 
 func (i GetActionPropertyArgs) ToGetActionPropertyOutputWithContext(ctx context.Context) GetActionPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionPropertyOutput)
-}
-
-func (i GetActionPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionProperty] {
-	return pulumix.Output[GetActionProperty]{
-		OutputState: i.ToGetActionPropertyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetActionPropertyArrayInput is an input type that accepts GetActionPropertyArray and GetActionPropertyArrayOutput values.
@@ -898,12 +795,6 @@ func (i GetActionPropertyArray) ToGetActionPropertyArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionPropertyArrayOutput)
 }
 
-func (i GetActionPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionProperty] {
-	return pulumix.Output[[]GetActionProperty]{
-		OutputState: i.ToGetActionPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetActionPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetActionPropertyOutput) ElementType() reflect.Type {
@@ -918,20 +809,14 @@ func (o GetActionPropertyOutput) ToGetActionPropertyOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetActionPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionProperty] {
-	return pulumix.Output[GetActionProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the property
-func (o GetActionPropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionProperty) string { return v.Name }).(pulumi.StringOutput)
+func (o GetActionPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // value of the property
-func (o GetActionPropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionProperty) string { return v.Value }).(pulumi.StringOutput)
+func (o GetActionPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetActionPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -946,12 +831,6 @@ func (o GetActionPropertyArrayOutput) ToGetActionPropertyArrayOutput() GetAction
 
 func (o GetActionPropertyArrayOutput) ToGetActionPropertyArrayOutputWithContext(ctx context.Context) GetActionPropertyArrayOutput {
 	return o
-}
-
-func (o GetActionPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionProperty] {
-	return pulumix.Output[[]GetActionProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetActionPropertyArrayOutput) Index(i pulumi.IntInput) GetActionPropertyOutput {
@@ -997,12 +876,6 @@ func (i GetActionsFilterArgs) ToGetActionsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsFilterOutput)
 }
 
-func (i GetActionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsFilter] {
-	return pulumix.Output[GetActionsFilter]{
-		OutputState: i.ToGetActionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetActionsFilterArrayInput is an input type that accepts GetActionsFilterArray and GetActionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetActionsFilterArrayInput` via:
 //
@@ -1028,12 +901,6 @@ func (i GetActionsFilterArray) ToGetActionsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsFilterArrayOutput)
 }
 
-func (i GetActionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsFilter] {
-	return pulumix.Output[[]GetActionsFilter]{
-		OutputState: i.ToGetActionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetActionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetActionsFilterOutput) ElementType() reflect.Type {
@@ -1046,12 +913,6 @@ func (o GetActionsFilterOutput) ToGetActionsFilterOutput() GetActionsFilterOutpu
 
 func (o GetActionsFilterOutput) ToGetActionsFilterOutputWithContext(ctx context.Context) GetActionsFilterOutput {
 	return o
-}
-
-func (o GetActionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsFilter] {
-	return pulumix.Output[GetActionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -1079,12 +940,6 @@ func (o GetActionsFilterArrayOutput) ToGetActionsFilterArrayOutput() GetActionsF
 
 func (o GetActionsFilterArrayOutput) ToGetActionsFilterArrayOutputWithContext(ctx context.Context) GetActionsFilterArrayOutput {
 	return o
-}
-
-func (o GetActionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsFilter] {
-	return pulumix.Output[[]GetActionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetActionsFilterArrayOutput) Index(i pulumi.IntInput) GetActionsFilterOutput {
@@ -1124,12 +979,6 @@ func (i GetActionsOperatorActionCollectionArgs) ToGetActionsOperatorActionCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionOutput)
 }
 
-func (i GetActionsOperatorActionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollection] {
-	return pulumix.Output[GetActionsOperatorActionCollection]{
-		OutputState: i.ToGetActionsOperatorActionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetActionsOperatorActionCollectionArrayInput is an input type that accepts GetActionsOperatorActionCollectionArray and GetActionsOperatorActionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetActionsOperatorActionCollectionArrayInput` via:
 //
@@ -1155,12 +1004,6 @@ func (i GetActionsOperatorActionCollectionArray) ToGetActionsOperatorActionColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionArrayOutput)
 }
 
-func (i GetActionsOperatorActionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollection] {
-	return pulumix.Output[[]GetActionsOperatorActionCollection]{
-		OutputState: i.ToGetActionsOperatorActionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetActionsOperatorActionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetActionsOperatorActionCollectionOutput) ElementType() reflect.Type {
@@ -1173,12 +1016,6 @@ func (o GetActionsOperatorActionCollectionOutput) ToGetActionsOperatorActionColl
 
 func (o GetActionsOperatorActionCollectionOutput) ToGetActionsOperatorActionCollectionOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionOutput {
 	return o
-}
-
-func (o GetActionsOperatorActionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollection] {
-	return pulumix.Output[GetActionsOperatorActionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetActionsOperatorActionCollectionOutput) Items() GetActionsOperatorActionCollectionItemArrayOutput {
@@ -1199,12 +1036,6 @@ func (o GetActionsOperatorActionCollectionArrayOutput) ToGetActionsOperatorActio
 	return o
 }
 
-func (o GetActionsOperatorActionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollection] {
-	return pulumix.Output[[]GetActionsOperatorActionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetActionsOperatorActionCollectionArrayOutput) Index(i pulumi.IntInput) GetActionsOperatorActionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetActionsOperatorActionCollection {
 		return vs[0].([]GetActionsOperatorActionCollection)[vs[1].(int)]
@@ -1215,19 +1046,19 @@ type GetActionsOperatorActionCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Name of the infrastructure layer associated with the operator action.
-	Component string `pulumi:"component"`
+	Component *string `pulumi:"component"`
 	// Display Name of the operator action.
-	CustomerDisplayName string `pulumi:"customerDisplayName"`
+	CustomerDisplayName *string `pulumi:"customerDisplayName"`
 	// Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Unique Oracle assigned identifier for the operator action.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return only resources that match the entire display name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Fine grained properties associated with the operator control.
 	Properties []GetActionsOperatorActionCollectionItemProperty `pulumi:"properties"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
 	State *string `pulumi:"state"`
 }
@@ -1247,19 +1078,19 @@ type GetActionsOperatorActionCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Name of the infrastructure layer associated with the operator action.
-	Component pulumi.StringInput `pulumi:"component"`
+	Component pulumi.StringPtrInput `pulumi:"component"`
 	// Display Name of the operator action.
-	CustomerDisplayName pulumi.StringInput `pulumi:"customerDisplayName"`
+	CustomerDisplayName pulumi.StringPtrInput `pulumi:"customerDisplayName"`
 	// Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Unique Oracle assigned identifier for the operator action.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources that match the entire display name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Fine grained properties associated with the operator control.
 	Properties GetActionsOperatorActionCollectionItemPropertyArrayInput `pulumi:"properties"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -1274,12 +1105,6 @@ func (i GetActionsOperatorActionCollectionItemArgs) ToGetActionsOperatorActionCo
 
 func (i GetActionsOperatorActionCollectionItemArgs) ToGetActionsOperatorActionCollectionItemOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemOutput)
-}
-
-func (i GetActionsOperatorActionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItem] {
-	return pulumix.Output[GetActionsOperatorActionCollectionItem]{
-		OutputState: i.ToGetActionsOperatorActionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetActionsOperatorActionCollectionItemArrayInput is an input type that accepts GetActionsOperatorActionCollectionItemArray and GetActionsOperatorActionCollectionItemArrayOutput values.
@@ -1307,12 +1132,6 @@ func (i GetActionsOperatorActionCollectionItemArray) ToGetActionsOperatorActionC
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemArrayOutput)
 }
 
-func (i GetActionsOperatorActionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItem] {
-	return pulumix.Output[[]GetActionsOperatorActionCollectionItem]{
-		OutputState: i.ToGetActionsOperatorActionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetActionsOperatorActionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetActionsOperatorActionCollectionItemOutput) ElementType() reflect.Type {
@@ -1327,40 +1146,34 @@ func (o GetActionsOperatorActionCollectionItemOutput) ToGetActionsOperatorAction
 	return o
 }
 
-func (o GetActionsOperatorActionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItem] {
-	return pulumix.Output[GetActionsOperatorActionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
 func (o GetActionsOperatorActionCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Name of the infrastructure layer associated with the operator action.
-func (o GetActionsOperatorActionCollectionItemOutput) Component() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) string { return v.Component }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemOutput) Component() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.Component }).(pulumi.StringPtrOutput)
 }
 
 // Display Name of the operator action.
-func (o GetActionsOperatorActionCollectionItemOutput) CustomerDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) string { return v.CustomerDisplayName }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemOutput) CustomerDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.CustomerDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
-func (o GetActionsOperatorActionCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Unique Oracle assigned identifier for the operator action.
-func (o GetActionsOperatorActionCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetActionsOperatorActionCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Fine grained properties associated with the operator control.
@@ -1371,8 +1184,8 @@ func (o GetActionsOperatorActionCollectionItemOutput) Properties() GetActionsOpe
 }
 
 // A filter to return only lists of resources that match the entire given service type.
-func (o GetActionsOperatorActionCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
@@ -1394,12 +1207,6 @@ func (o GetActionsOperatorActionCollectionItemArrayOutput) ToGetActionsOperatorA
 	return o
 }
 
-func (o GetActionsOperatorActionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItem] {
-	return pulumix.Output[[]GetActionsOperatorActionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetActionsOperatorActionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetActionsOperatorActionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetActionsOperatorActionCollectionItem {
 		return vs[0].([]GetActionsOperatorActionCollectionItem)[vs[1].(int)]
@@ -1408,9 +1215,9 @@ func (o GetActionsOperatorActionCollectionItemArrayOutput) Index(i pulumi.IntInp
 
 type GetActionsOperatorActionCollectionItemProperty struct {
 	// A filter to return only resources that match the entire display name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// value of the property
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetActionsOperatorActionCollectionItemPropertyInput is an input type that accepts GetActionsOperatorActionCollectionItemPropertyArgs and GetActionsOperatorActionCollectionItemPropertyOutput values.
@@ -1426,9 +1233,9 @@ type GetActionsOperatorActionCollectionItemPropertyInput interface {
 
 type GetActionsOperatorActionCollectionItemPropertyArgs struct {
 	// A filter to return only resources that match the entire display name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// value of the property
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetActionsOperatorActionCollectionItemPropertyArgs) ElementType() reflect.Type {
@@ -1441,12 +1248,6 @@ func (i GetActionsOperatorActionCollectionItemPropertyArgs) ToGetActionsOperator
 
 func (i GetActionsOperatorActionCollectionItemPropertyArgs) ToGetActionsOperatorActionCollectionItemPropertyOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionItemPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemPropertyOutput)
-}
-
-func (i GetActionsOperatorActionCollectionItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItemProperty] {
-	return pulumix.Output[GetActionsOperatorActionCollectionItemProperty]{
-		OutputState: i.ToGetActionsOperatorActionCollectionItemPropertyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetActionsOperatorActionCollectionItemPropertyArrayInput is an input type that accepts GetActionsOperatorActionCollectionItemPropertyArray and GetActionsOperatorActionCollectionItemPropertyArrayOutput values.
@@ -1474,12 +1275,6 @@ func (i GetActionsOperatorActionCollectionItemPropertyArray) ToGetActionsOperato
 	return pulumi.ToOutputWithContext(ctx, i).(GetActionsOperatorActionCollectionItemPropertyArrayOutput)
 }
 
-func (i GetActionsOperatorActionCollectionItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty] {
-	return pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty]{
-		OutputState: i.ToGetActionsOperatorActionCollectionItemPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetActionsOperatorActionCollectionItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetActionsOperatorActionCollectionItemPropertyOutput) ElementType() reflect.Type {
@@ -1494,20 +1289,14 @@ func (o GetActionsOperatorActionCollectionItemPropertyOutput) ToGetActionsOperat
 	return o
 }
 
-func (o GetActionsOperatorActionCollectionItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetActionsOperatorActionCollectionItemProperty] {
-	return pulumix.Output[GetActionsOperatorActionCollectionItemProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the entire display name given.
-func (o GetActionsOperatorActionCollectionItemPropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItemProperty) string { return v.Name }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItemProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // value of the property
-func (o GetActionsOperatorActionCollectionItemPropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetActionsOperatorActionCollectionItemProperty) string { return v.Value }).(pulumi.StringOutput)
+func (o GetActionsOperatorActionCollectionItemPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetActionsOperatorActionCollectionItemProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetActionsOperatorActionCollectionItemPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -1522,12 +1311,6 @@ func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) ToGetActionsO
 
 func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) ToGetActionsOperatorActionCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetActionsOperatorActionCollectionItemPropertyArrayOutput {
 	return o
-}
-
-func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty] {
-	return pulumix.Output[[]GetActionsOperatorActionCollectionItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetActionsOperatorActionCollectionItemPropertyArrayOutput) Index(i pulumi.IntInput) GetActionsOperatorActionCollectionItemPropertyOutput {
@@ -1571,12 +1354,6 @@ func (i GetControlAssignmentsFilterArgs) ToGetControlAssignmentsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsFilterOutput)
 }
 
-func (i GetControlAssignmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsFilter] {
-	return pulumix.Output[GetControlAssignmentsFilter]{
-		OutputState: i.ToGetControlAssignmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetControlAssignmentsFilterArrayInput is an input type that accepts GetControlAssignmentsFilterArray and GetControlAssignmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsFilterArrayInput` via:
 //
@@ -1602,12 +1379,6 @@ func (i GetControlAssignmentsFilterArray) ToGetControlAssignmentsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsFilterArrayOutput)
 }
 
-func (i GetControlAssignmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsFilter] {
-	return pulumix.Output[[]GetControlAssignmentsFilter]{
-		OutputState: i.ToGetControlAssignmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetControlAssignmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetControlAssignmentsFilterOutput) ElementType() reflect.Type {
@@ -1620,12 +1391,6 @@ func (o GetControlAssignmentsFilterOutput) ToGetControlAssignmentsFilterOutput()
 
 func (o GetControlAssignmentsFilterOutput) ToGetControlAssignmentsFilterOutputWithContext(ctx context.Context) GetControlAssignmentsFilterOutput {
 	return o
-}
-
-func (o GetControlAssignmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsFilter] {
-	return pulumix.Output[GetControlAssignmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlAssignmentsFilterOutput) Name() pulumi.StringOutput {
@@ -1652,12 +1417,6 @@ func (o GetControlAssignmentsFilterArrayOutput) ToGetControlAssignmentsFilterArr
 
 func (o GetControlAssignmentsFilterArrayOutput) ToGetControlAssignmentsFilterArrayOutputWithContext(ctx context.Context) GetControlAssignmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetControlAssignmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsFilter] {
-	return pulumix.Output[[]GetControlAssignmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlAssignmentsFilterArrayOutput) Index(i pulumi.IntInput) GetControlAssignmentsFilterOutput {
@@ -1697,12 +1456,6 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionArgs) ToGetContr
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionOutput)
 }
 
-func (i GetControlAssignmentsOperatorControlAssignmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection] {
-	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection]{
-		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionArray and GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetControlAssignmentsOperatorControlAssignmentCollectionArrayInput` via:
 //
@@ -1728,12 +1481,6 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionArray) ToGetCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput)
 }
 
-func (i GetControlAssignmentsOperatorControlAssignmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection] {
-	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection]{
-		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetControlAssignmentsOperatorControlAssignmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ElementType() reflect.Type {
@@ -1746,12 +1493,6 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ToGetCon
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ToGetControlAssignmentsOperatorControlAssignmentCollectionOutputWithContext(ctx context.Context) GetControlAssignmentsOperatorControlAssignmentCollectionOutput {
 	return o
-}
-
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection] {
-	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionOutput) Items() GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput {
@@ -1774,12 +1515,6 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) ToG
 	return o
 }
 
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection] {
-	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) Index(i pulumi.IntInput) GetControlAssignmentsOperatorControlAssignmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetControlAssignmentsOperatorControlAssignmentCollection {
 		return vs[0].([]GetControlAssignmentsOperatorControlAssignmentCollection)[vs[1].(int)]
@@ -1788,61 +1523,61 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionArrayOutput) Ind
 
 type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	// The OCID of the user who created this operator control assignment.
-	AssignerId string `pulumi:"assignerId"`
+	AssignerId *string `pulumi:"assignerId"`
 	// Comment about the assignment of the operator control to this target resource.
-	Comment string `pulumi:"comment"`
+	Comment *string `pulumi:"comment"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
-	DetachmentDescription string `pulumi:"detachmentDescription"`
+	DetachmentDescription *string `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
-	ErrorCode int `pulumi:"errorCode"`
+	ErrorCode *int `pulumi:"errorCode"`
 	// The message describing the error occurred during Assignment operation.
-	ErrorMessage string `pulumi:"errorMessage"`
+	ErrorMessage *string `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the operator control assignment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
-	IsAutoApproveDuringMaintenance bool `pulumi:"isAutoApproveDuringMaintenance"`
+	IsAutoApproveDuringMaintenance *bool `pulumi:"isAutoApproveDuringMaintenance"`
 	// Whether the assignment is a default assignment.
-	IsDefaultAssignment bool `pulumi:"isDefaultAssignment"`
+	IsDefaultAssignment *bool `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
-	IsEnforcedAlways bool `pulumi:"isEnforcedAlways"`
+	IsEnforcedAlways *bool `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
-	IsLogForwarded bool `pulumi:"isLogForwarded"`
+	IsLogForwarded *bool `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control.
-	OperatorControlId string `pulumi:"operatorControlId"`
+	OperatorControlId *string `pulumi:"operatorControlId"`
 	// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
-	RemoteSyslogServerAddress string `pulumi:"remoteSyslogServerAddress"`
+	RemoteSyslogServerAddress *string `pulumi:"remoteSyslogServerAddress"`
 	// The CA certificate of the remote syslog server.
-	RemoteSyslogServerCaCert string `pulumi:"remoteSyslogServerCaCert"`
+	RemoteSyslogServerCaCert *string `pulumi:"remoteSyslogServerCaCert"`
 	// The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-	RemoteSyslogServerPort int `pulumi:"remoteSyslogServerPort"`
+	RemoteSyslogServerPort *int `pulumi:"remoteSyslogServerPort"`
 	// The OCID of the compartment that contains the target resource.
-	ResourceCompartmentId string `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId *string `pulumi:"resourceCompartmentId"`
 	// The OCID of the target resource.
-	ResourceId string `pulumi:"resourceId"`
+	ResourceId *string `pulumi:"resourceId"`
 	// A filter to return only resources that match the given ResourceName.
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
-	TimeAssignmentFrom string `pulumi:"timeAssignmentFrom"`
+	TimeAssignmentFrom *string `pulumi:"timeAssignmentFrom"`
 	// The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeAssignmentTo string `pulumi:"timeAssignmentTo"`
+	TimeAssignmentTo *string `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfAssignment string `pulumi:"timeOfAssignment"`
+	TimeOfAssignment *string `pulumi:"timeOfAssignment"`
 	// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
-	UnassignerId string `pulumi:"unassignerId"`
+	UnassignerId *string `pulumi:"unassignerId"`
 }
 
 // GetControlAssignmentsOperatorControlAssignmentCollectionItemInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs and GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput values.
@@ -1858,61 +1593,61 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemInput interface
 
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	// The OCID of the user who created this operator control assignment.
-	AssignerId pulumi.StringInput `pulumi:"assignerId"`
+	AssignerId pulumi.StringPtrInput `pulumi:"assignerId"`
 	// Comment about the assignment of the operator control to this target resource.
-	Comment pulumi.StringInput `pulumi:"comment"`
+	Comment pulumi.StringPtrInput `pulumi:"comment"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
-	DetachmentDescription pulumi.StringInput `pulumi:"detachmentDescription"`
+	DetachmentDescription pulumi.StringPtrInput `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
-	ErrorCode pulumi.IntInput `pulumi:"errorCode"`
+	ErrorCode pulumi.IntPtrInput `pulumi:"errorCode"`
 	// The message describing the error occurred during Assignment operation.
-	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	ErrorMessage pulumi.StringPtrInput `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the operator control assignment.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
-	IsAutoApproveDuringMaintenance pulumi.BoolInput `pulumi:"isAutoApproveDuringMaintenance"`
+	IsAutoApproveDuringMaintenance pulumi.BoolPtrInput `pulumi:"isAutoApproveDuringMaintenance"`
 	// Whether the assignment is a default assignment.
-	IsDefaultAssignment pulumi.BoolInput `pulumi:"isDefaultAssignment"`
+	IsDefaultAssignment pulumi.BoolPtrInput `pulumi:"isDefaultAssignment"`
 	// If set, then the target resource is always governed by the operator control.
-	IsEnforcedAlways pulumi.BoolInput `pulumi:"isEnforcedAlways"`
+	IsEnforcedAlways pulumi.BoolPtrInput `pulumi:"isEnforcedAlways"`
 	// If set indicates that the audit logs are being forwarded to the relevant remote logging server
-	IsLogForwarded pulumi.BoolInput `pulumi:"isLogForwarded"`
+	IsLogForwarded pulumi.BoolPtrInput `pulumi:"isLogForwarded"`
 	// More in detail about the lifeCycleState.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The OCID of the operator control.
-	OperatorControlId pulumi.StringInput `pulumi:"operatorControlId"`
+	OperatorControlId pulumi.StringPtrInput `pulumi:"operatorControlId"`
 	// The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
-	RemoteSyslogServerAddress pulumi.StringInput `pulumi:"remoteSyslogServerAddress"`
+	RemoteSyslogServerAddress pulumi.StringPtrInput `pulumi:"remoteSyslogServerAddress"`
 	// The CA certificate of the remote syslog server.
-	RemoteSyslogServerCaCert pulumi.StringInput `pulumi:"remoteSyslogServerCaCert"`
+	RemoteSyslogServerCaCert pulumi.StringPtrInput `pulumi:"remoteSyslogServerCaCert"`
 	// The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-	RemoteSyslogServerPort pulumi.IntInput `pulumi:"remoteSyslogServerPort"`
+	RemoteSyslogServerPort pulumi.IntPtrInput `pulumi:"remoteSyslogServerPort"`
 	// The OCID of the compartment that contains the target resource.
-	ResourceCompartmentId pulumi.StringInput `pulumi:"resourceCompartmentId"`
+	ResourceCompartmentId pulumi.StringPtrInput `pulumi:"resourceCompartmentId"`
 	// The OCID of the target resource.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// A filter to return only resources that match the given ResourceName.
-	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
-	TimeAssignmentFrom pulumi.StringInput `pulumi:"timeAssignmentFrom"`
+	TimeAssignmentFrom pulumi.StringPtrInput `pulumi:"timeAssignmentFrom"`
 	// The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeAssignmentTo pulumi.StringInput `pulumi:"timeAssignmentTo"`
+	TimeAssignmentTo pulumi.StringPtrInput `pulumi:"timeAssignmentTo"`
 	// Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfAssignment pulumi.StringInput `pulumi:"timeOfAssignment"`
+	TimeOfAssignment pulumi.StringPtrInput `pulumi:"timeOfAssignment"`
 	// Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// User id who released the operatorControl.
-	UnassignerId pulumi.StringInput `pulumi:"unassignerId"`
+	UnassignerId pulumi.StringPtrInput `pulumi:"unassignerId"`
 }
 
 func (GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ElementType() reflect.Type {
@@ -1925,12 +1660,6 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ToGetC
 
 func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ToGetControlAssignmentsOperatorControlAssignmentCollectionItemOutputWithContext(ctx context.Context) GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput)
-}
-
-func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
-	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
-		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayInput is an input type that accepts GetControlAssignmentsOperatorControlAssignmentCollectionItemArray and GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput values.
@@ -1958,12 +1687,6 @@ func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput)
 }
 
-func (i GetControlAssignmentsOperatorControlAssignmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
-	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
-		OutputState: i.ToGetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ElementType() reflect.Type {
@@ -1978,25 +1701,19 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ToGe
 	return o
 }
 
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
-	return pulumix.Output[GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the user who created this operator control assignment.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) AssignerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.AssignerId }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) AssignerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.AssignerId }).(pulumi.StringPtrOutput)
 }
 
 // Comment about the assignment of the operator control to this target resource.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Comment() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.Comment }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.Comment }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -2007,20 +1724,20 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Defi
 }
 
 // description containing reason for releasing of OperatorControl.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) DetachmentDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) DetachmentDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
 		return v.DetachmentDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The code identifying the error occurred during Assignment operation.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ErrorCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) int { return v.ErrorCode }).(pulumi.IntOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ErrorCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *int { return v.ErrorCode }).(pulumi.IntPtrOutput)
 }
 
 // The message describing the error occurred during Assignment operation.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ErrorMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.ErrorMessage }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -2031,119 +1748,125 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Free
 }
 
 // The OCID of the operator control assignment.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The boolean if true would autoApprove during maintenance.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsAutoApproveDuringMaintenance() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsAutoApproveDuringMaintenance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *bool {
 		return v.IsAutoApproveDuringMaintenance
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Whether the assignment is a default assignment.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsDefaultAssignment() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsDefaultAssignment() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *bool {
 		return v.IsDefaultAssignment
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // If set, then the target resource is always governed by the operator control.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsEnforcedAlways() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool { return v.IsEnforcedAlways }).(pulumi.BoolOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsEnforcedAlways() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *bool { return v.IsEnforcedAlways }).(pulumi.BoolPtrOutput)
 }
 
 // If set indicates that the audit logs are being forwarded to the relevant remote logging server
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsLogForwarded() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) bool { return v.IsLogForwarded }).(pulumi.BoolOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) IsLogForwarded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *bool { return v.IsLogForwarded }).(pulumi.BoolPtrOutput)
 }
 
 // More in detail about the lifeCycleState.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
+		return v.LifecycleDetails
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the operator control.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) OperatorControlId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) OperatorControlId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
 		return v.OperatorControlId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) RemoteSyslogServerAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) RemoteSyslogServerAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
 		return v.RemoteSyslogServerAddress
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The CA certificate of the remote syslog server.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) RemoteSyslogServerCaCert() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) RemoteSyslogServerCaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
 		return v.RemoteSyslogServerCaCert
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) RemoteSyslogServerPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) int {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) RemoteSyslogServerPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *int {
 		return v.RemoteSyslogServerPort
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the compartment that contains the target resource.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
 		return v.ResourceCompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target resource.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.ResourceId }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given ResourceName.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only lists of resources that match the entire given service type.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeAssignmentFrom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeAssignmentFrom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
 		return v.TimeAssignmentFrom
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeAssignmentTo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.TimeAssignmentTo }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeAssignmentTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
+		return v.TimeAssignmentTo
+	}).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeOfAssignment() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.TimeOfAssignment }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeOfAssignment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string {
+		return v.TimeOfAssignment
+	}).(pulumi.StringPtrOutput)
 }
 
 // Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // User id who released the operatorControl.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) UnassignerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) string { return v.UnassignerId }).(pulumi.StringOutput)
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) UnassignerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) *string { return v.UnassignerId }).(pulumi.StringPtrOutput)
 }
 
 type GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2158,12 +1881,6 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput)
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput) ToGetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutputWithContext(ctx context.Context) GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem] {
-	return pulumix.Output[[]GetControlAssignmentsOperatorControlAssignmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput {
@@ -2207,12 +1924,6 @@ func (i GetControlsFilterArgs) ToGetControlsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsFilterOutput)
 }
 
-func (i GetControlsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlsFilter] {
-	return pulumix.Output[GetControlsFilter]{
-		OutputState: i.ToGetControlsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetControlsFilterArrayInput is an input type that accepts GetControlsFilterArray and GetControlsFilterArrayOutput values.
 // You can construct a concrete instance of `GetControlsFilterArrayInput` via:
 //
@@ -2238,12 +1949,6 @@ func (i GetControlsFilterArray) ToGetControlsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsFilterArrayOutput)
 }
 
-func (i GetControlsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsFilter] {
-	return pulumix.Output[[]GetControlsFilter]{
-		OutputState: i.ToGetControlsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetControlsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetControlsFilterOutput) ElementType() reflect.Type {
@@ -2256,12 +1961,6 @@ func (o GetControlsFilterOutput) ToGetControlsFilterOutput() GetControlsFilterOu
 
 func (o GetControlsFilterOutput) ToGetControlsFilterOutputWithContext(ctx context.Context) GetControlsFilterOutput {
 	return o
-}
-
-func (o GetControlsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsFilter] {
-	return pulumix.Output[GetControlsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlsFilterOutput) Name() pulumi.StringOutput {
@@ -2288,12 +1987,6 @@ func (o GetControlsFilterArrayOutput) ToGetControlsFilterArrayOutput() GetContro
 
 func (o GetControlsFilterArrayOutput) ToGetControlsFilterArrayOutputWithContext(ctx context.Context) GetControlsFilterArrayOutput {
 	return o
-}
-
-func (o GetControlsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsFilter] {
-	return pulumix.Output[[]GetControlsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlsFilterArrayOutput) Index(i pulumi.IntInput) GetControlsFilterOutput {
@@ -2333,12 +2026,6 @@ func (i GetControlsOperatorControlCollectionArgs) ToGetControlsOperatorControlCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionOutput)
 }
 
-func (i GetControlsOperatorControlCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollection] {
-	return pulumix.Output[GetControlsOperatorControlCollection]{
-		OutputState: i.ToGetControlsOperatorControlCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetControlsOperatorControlCollectionArrayInput is an input type that accepts GetControlsOperatorControlCollectionArray and GetControlsOperatorControlCollectionArrayOutput values.
 // You can construct a concrete instance of `GetControlsOperatorControlCollectionArrayInput` via:
 //
@@ -2364,12 +2051,6 @@ func (i GetControlsOperatorControlCollectionArray) ToGetControlsOperatorControlC
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionArrayOutput)
 }
 
-func (i GetControlsOperatorControlCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollection] {
-	return pulumix.Output[[]GetControlsOperatorControlCollection]{
-		OutputState: i.ToGetControlsOperatorControlCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetControlsOperatorControlCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetControlsOperatorControlCollectionOutput) ElementType() reflect.Type {
@@ -2382,12 +2063,6 @@ func (o GetControlsOperatorControlCollectionOutput) ToGetControlsOperatorControl
 
 func (o GetControlsOperatorControlCollectionOutput) ToGetControlsOperatorControlCollectionOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionOutput {
 	return o
-}
-
-func (o GetControlsOperatorControlCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollection] {
-	return pulumix.Output[GetControlsOperatorControlCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlsOperatorControlCollectionOutput) Items() GetControlsOperatorControlCollectionItemArrayOutput {
@@ -2410,12 +2085,6 @@ func (o GetControlsOperatorControlCollectionArrayOutput) ToGetControlsOperatorCo
 	return o
 }
 
-func (o GetControlsOperatorControlCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollection] {
-	return pulumix.Output[[]GetControlsOperatorControlCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetControlsOperatorControlCollectionArrayOutput) Index(i pulumi.IntInput) GetControlsOperatorControlCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetControlsOperatorControlCollection {
 		return vs[0].([]GetControlsOperatorControlCollection)[vs[1].(int)]
@@ -2430,39 +2099,39 @@ type GetControlsOperatorControlCollectionItem struct {
 	// List of users who can approve an access request associated with a target resource under the governance of this operator control.
 	ApproversLists []string `pulumi:"approversLists"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of operator control.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// List of emailId.
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the operator control.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the operator control is a default Operator Control.
-	IsDefaultOperatorControl bool `pulumi:"isDefaultOperatorControl"`
+	IsDefaultOperatorControl *bool `pulumi:"isDefaultOperatorControl"`
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
+	IsFullyPreApproved *bool `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
-	LastModifiedInfo string `pulumi:"lastModifiedInfo"`
+	LastModifiedInfo *string `pulumi:"lastModifiedInfo"`
 	// Name of the operator control. The name must be unique.
-	OperatorControlName string `pulumi:"operatorControlName"`
+	OperatorControlName *string `pulumi:"operatorControlName"`
 	// List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
 	PreApprovedOpActionLists []string `pulumi:"preApprovedOpActionLists"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType string `pulumi:"resourceType"`
+	ResourceType *string `pulumi:"resourceType"`
 	// A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-	SystemMessage string `pulumi:"systemMessage"`
+	SystemMessage *string `pulumi:"systemMessage"`
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfCreation string `pulumi:"timeOfCreation"`
+	TimeOfCreation *string `pulumi:"timeOfCreation"`
 	// Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfModification string `pulumi:"timeOfModification"`
+	TimeOfModification *string `pulumi:"timeOfModification"`
 }
 
 // GetControlsOperatorControlCollectionItemInput is an input type that accepts GetControlsOperatorControlCollectionItemArgs and GetControlsOperatorControlCollectionItemOutput values.
@@ -2484,39 +2153,39 @@ type GetControlsOperatorControlCollectionItemArgs struct {
 	// List of users who can approve an access request associated with a target resource under the governance of this operator control.
 	ApproversLists pulumi.StringArrayInput `pulumi:"approversLists"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of operator control.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// List of emailId.
 	EmailIdLists pulumi.StringArrayInput `pulumi:"emailIdLists"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the operator control.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the operator control is a default Operator Control.
-	IsDefaultOperatorControl pulumi.BoolInput `pulumi:"isDefaultOperatorControl"`
+	IsDefaultOperatorControl pulumi.BoolPtrInput `pulumi:"isDefaultOperatorControl"`
 	// Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-	IsFullyPreApproved pulumi.BoolInput `pulumi:"isFullyPreApproved"`
+	IsFullyPreApproved pulumi.BoolPtrInput `pulumi:"isFullyPreApproved"`
 	// Description associated with the latest modification of the operator control.
-	LastModifiedInfo pulumi.StringInput `pulumi:"lastModifiedInfo"`
+	LastModifiedInfo pulumi.StringPtrInput `pulumi:"lastModifiedInfo"`
 	// Name of the operator control. The name must be unique.
-	OperatorControlName pulumi.StringInput `pulumi:"operatorControlName"`
+	OperatorControlName pulumi.StringPtrInput `pulumi:"operatorControlName"`
 	// List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
 	PreApprovedOpActionLists pulumi.StringArrayInput `pulumi:"preApprovedOpActionLists"`
 	// A filter to return only lists of resources that match the entire given service type.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-	SystemMessage pulumi.StringInput `pulumi:"systemMessage"`
+	SystemMessage pulumi.StringPtrInput `pulumi:"systemMessage"`
 	// Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfCreation pulumi.StringInput `pulumi:"timeOfCreation"`
+	TimeOfCreation pulumi.StringPtrInput `pulumi:"timeOfCreation"`
 	// Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-	TimeOfModification pulumi.StringInput `pulumi:"timeOfModification"`
+	TimeOfModification pulumi.StringPtrInput `pulumi:"timeOfModification"`
 }
 
 func (GetControlsOperatorControlCollectionItemArgs) ElementType() reflect.Type {
@@ -2529,12 +2198,6 @@ func (i GetControlsOperatorControlCollectionItemArgs) ToGetControlsOperatorContr
 
 func (i GetControlsOperatorControlCollectionItemArgs) ToGetControlsOperatorControlCollectionItemOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionItemOutput)
-}
-
-func (i GetControlsOperatorControlCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollectionItem] {
-	return pulumix.Output[GetControlsOperatorControlCollectionItem]{
-		OutputState: i.ToGetControlsOperatorControlCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetControlsOperatorControlCollectionItemArrayInput is an input type that accepts GetControlsOperatorControlCollectionItemArray and GetControlsOperatorControlCollectionItemArrayOutput values.
@@ -2562,12 +2225,6 @@ func (i GetControlsOperatorControlCollectionItemArray) ToGetControlsOperatorCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetControlsOperatorControlCollectionItemArrayOutput)
 }
 
-func (i GetControlsOperatorControlCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollectionItem] {
-	return pulumix.Output[[]GetControlsOperatorControlCollectionItem]{
-		OutputState: i.ToGetControlsOperatorControlCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetControlsOperatorControlCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetControlsOperatorControlCollectionItemOutput) ElementType() reflect.Type {
@@ -2580,12 +2237,6 @@ func (o GetControlsOperatorControlCollectionItemOutput) ToGetControlsOperatorCon
 
 func (o GetControlsOperatorControlCollectionItemOutput) ToGetControlsOperatorControlCollectionItemOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionItemOutput {
 	return o
-}
-
-func (o GetControlsOperatorControlCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlsOperatorControlCollectionItem] {
-	return pulumix.Output[GetControlsOperatorControlCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
@@ -2604,8 +2255,8 @@ func (o GetControlsOperatorControlCollectionItemOutput) ApproversLists() pulumi.
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetControlsOperatorControlCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -2614,8 +2265,8 @@ func (o GetControlsOperatorControlCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // Description of operator control.
-func (o GetControlsOperatorControlCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // List of emailId.
@@ -2629,28 +2280,28 @@ func (o GetControlsOperatorControlCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // The OCID of the operator control.
-func (o GetControlsOperatorControlCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the operator control is a default Operator Control.
-func (o GetControlsOperatorControlCollectionItemOutput) IsDefaultOperatorControl() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) bool { return v.IsDefaultOperatorControl }).(pulumi.BoolOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) IsDefaultOperatorControl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *bool { return v.IsDefaultOperatorControl }).(pulumi.BoolPtrOutput)
 }
 
 // Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
-func (o GetControlsOperatorControlCollectionItemOutput) IsFullyPreApproved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) bool { return v.IsFullyPreApproved }).(pulumi.BoolOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) IsFullyPreApproved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *bool { return v.IsFullyPreApproved }).(pulumi.BoolPtrOutput)
 }
 
 // Description associated with the latest modification of the operator control.
-func (o GetControlsOperatorControlCollectionItemOutput) LastModifiedInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.LastModifiedInfo }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) LastModifiedInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.LastModifiedInfo }).(pulumi.StringPtrOutput)
 }
 
 // Name of the operator control. The name must be unique.
-func (o GetControlsOperatorControlCollectionItemOutput) OperatorControlName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.OperatorControlName }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) OperatorControlName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.OperatorControlName }).(pulumi.StringPtrOutput)
 }
 
 // List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be automatically approved if the access request only contain operator actions in the pre-approved list.
@@ -2659,33 +2310,33 @@ func (o GetControlsOperatorControlCollectionItemOutput) PreApprovedOpActionLists
 }
 
 // A filter to return only lists of resources that match the entire given service type.
-func (o GetControlsOperatorControlCollectionItemOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.ResourceType }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
-func (o GetControlsOperatorControlCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.
-func (o GetControlsOperatorControlCollectionItemOutput) SystemMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.SystemMessage }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) SystemMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.SystemMessage }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlsOperatorControlCollectionItemOutput) TimeOfCreation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.TimeOfCreation }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) TimeOfCreation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.TimeOfCreation }).(pulumi.StringPtrOutput)
 }
 
 // Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
-func (o GetControlsOperatorControlCollectionItemOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
-func (o GetControlsOperatorControlCollectionItemOutput) TimeOfModification() pulumi.StringOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) string { return v.TimeOfModification }).(pulumi.StringOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) TimeOfModification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) *string { return v.TimeOfModification }).(pulumi.StringPtrOutput)
 }
 
 type GetControlsOperatorControlCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2700,12 +2351,6 @@ func (o GetControlsOperatorControlCollectionItemArrayOutput) ToGetControlsOperat
 
 func (o GetControlsOperatorControlCollectionItemArrayOutput) ToGetControlsOperatorControlCollectionItemArrayOutputWithContext(ctx context.Context) GetControlsOperatorControlCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetControlsOperatorControlCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetControlsOperatorControlCollectionItem] {
-	return pulumix.Output[[]GetControlsOperatorControlCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetControlsOperatorControlCollectionItemArrayOutput) Index(i pulumi.IntInput) GetControlsOperatorControlCollectionItemOutput {

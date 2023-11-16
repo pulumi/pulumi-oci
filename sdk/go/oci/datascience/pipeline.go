@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
@@ -110,37 +109,37 @@ type Pipeline struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The configuration details of a pipeline.
-	ConfigurationDetails PipelineConfigurationDetailsOutput `pulumi:"configurationDetails"`
+	ConfigurationDetails PipelineConfigurationDetailsPtrOutput `pulumi:"configurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags               pulumi.MapOutput     `pulumi:"definedTags"`
 	DeleteRelatedPipelineRuns pulumi.BoolPtrOutput `pulumi:"deleteRelatedPipelineRuns"`
 	// (Updatable) A short description of the step.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The infrastructure configuration details of a pipeline or a step.
-	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsOutput `pulumi:"infrastructureConfigurationDetails"`
+	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsPtrOutput `pulumi:"infrastructureConfigurationDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The pipeline log configuration details.
-	LogConfigurationDetails PipelineLogConfigurationDetailsOutput `pulumi:"logConfigurationDetails"`
+	LogConfigurationDetails PipelineLogConfigurationDetailsPtrOutput `pulumi:"logConfigurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the pipeline.
-	State        pulumi.StringOutput        `pulumi:"state"`
-	StepArtifact PipelineStepArtifactOutput `pulumi:"stepArtifact"`
+	State        pulumi.StringPtrOutput        `pulumi:"state"`
+	StepArtifact PipelineStepArtifactPtrOutput `pulumi:"stepArtifact"`
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayOutput `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewPipeline registers a new resource with the given unique name, arguments, and options.
@@ -333,12 +332,6 @@ func (i *Pipeline) ToPipelineOutputWithContext(ctx context.Context) PipelineOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineOutput)
 }
 
-func (i *Pipeline) ToOutput(ctx context.Context) pulumix.Output[*Pipeline] {
-	return pulumix.Output[*Pipeline]{
-		OutputState: i.ToPipelineOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PipelineArrayInput is an input type that accepts PipelineArray and PipelineArrayOutput values.
 // You can construct a concrete instance of `PipelineArrayInput` via:
 //
@@ -362,12 +355,6 @@ func (i PipelineArray) ToPipelineArrayOutput() PipelineArrayOutput {
 
 func (i PipelineArray) ToPipelineArrayOutputWithContext(ctx context.Context) PipelineArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineArrayOutput)
-}
-
-func (i PipelineArray) ToOutput(ctx context.Context) pulumix.Output[[]*Pipeline] {
-	return pulumix.Output[[]*Pipeline]{
-		OutputState: i.ToPipelineArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PipelineMapInput is an input type that accepts PipelineMap and PipelineMapOutput values.
@@ -395,12 +382,6 @@ func (i PipelineMap) ToPipelineMapOutputWithContext(ctx context.Context) Pipelin
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineMapOutput)
 }
 
-func (i PipelineMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Pipeline] {
-	return pulumix.Output[map[string]*Pipeline]{
-		OutputState: i.ToPipelineMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PipelineOutput struct{ *pulumi.OutputState }
 
 func (PipelineOutput) ElementType() reflect.Type {
@@ -415,25 +396,19 @@ func (o PipelineOutput) ToPipelineOutputWithContext(ctx context.Context) Pipelin
 	return o
 }
 
-func (o PipelineOutput) ToOutput(ctx context.Context) pulumix.Output[*Pipeline] {
-	return pulumix.Output[*Pipeline]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
 func (o PipelineOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The configuration details of a pipeline.
-func (o PipelineOutput) ConfigurationDetails() PipelineConfigurationDetailsOutput {
-	return o.ApplyT(func(v *Pipeline) PipelineConfigurationDetailsOutput { return v.ConfigurationDetails }).(PipelineConfigurationDetailsOutput)
+func (o PipelineOutput) ConfigurationDetails() PipelineConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineConfigurationDetailsPtrOutput { return v.ConfigurationDetails }).(PipelineConfigurationDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
-func (o PipelineOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o PipelineOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -446,13 +421,13 @@ func (o PipelineOutput) DeleteRelatedPipelineRuns() pulumi.BoolPtrOutput {
 }
 
 // (Updatable) A short description of the step.
-func (o PipelineOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o PipelineOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource.
-func (o PipelineOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o PipelineOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -461,20 +436,20 @@ func (o PipelineOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The infrastructure configuration details of a pipeline or a step.
-func (o PipelineOutput) InfrastructureConfigurationDetails() PipelineInfrastructureConfigurationDetailsOutput {
-	return o.ApplyT(func(v *Pipeline) PipelineInfrastructureConfigurationDetailsOutput {
+func (o PipelineOutput) InfrastructureConfigurationDetails() PipelineInfrastructureConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineInfrastructureConfigurationDetailsPtrOutput {
 		return v.InfrastructureConfigurationDetails
-	}).(PipelineInfrastructureConfigurationDetailsOutput)
+	}).(PipelineInfrastructureConfigurationDetailsPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o PipelineOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o PipelineOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The pipeline log configuration details.
-func (o PipelineOutput) LogConfigurationDetails() PipelineLogConfigurationDetailsOutput {
-	return o.ApplyT(func(v *Pipeline) PipelineLogConfigurationDetailsOutput { return v.LogConfigurationDetails }).(PipelineLogConfigurationDetailsOutput)
+func (o PipelineOutput) LogConfigurationDetails() PipelineLogConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineLogConfigurationDetailsPtrOutput { return v.LogConfigurationDetails }).(PipelineLogConfigurationDetailsPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -483,12 +458,12 @@ func (o PipelineOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The current state of the pipeline.
-func (o PipelineOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PipelineOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o PipelineOutput) StepArtifact() PipelineStepArtifactOutput {
-	return o.ApplyT(func(v *Pipeline) PipelineStepArtifactOutput { return v.StepArtifact }).(PipelineStepArtifactOutput)
+func (o PipelineOutput) StepArtifact() PipelineStepArtifactPtrOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineStepArtifactPtrOutput { return v.StepArtifact }).(PipelineStepArtifactPtrOutput)
 }
 
 // (Updatable) Array of step details for each step.
@@ -502,13 +477,13 @@ func (o PipelineOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-func (o PipelineOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PipelineOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-func (o PipelineOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o PipelineOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type PipelineArrayOutput struct{ *pulumi.OutputState }
@@ -523,12 +498,6 @@ func (o PipelineArrayOutput) ToPipelineArrayOutput() PipelineArrayOutput {
 
 func (o PipelineArrayOutput) ToPipelineArrayOutputWithContext(ctx context.Context) PipelineArrayOutput {
 	return o
-}
-
-func (o PipelineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Pipeline] {
-	return pulumix.Output[[]*Pipeline]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PipelineArrayOutput) Index(i pulumi.IntInput) PipelineOutput {
@@ -549,12 +518,6 @@ func (o PipelineMapOutput) ToPipelineMapOutput() PipelineMapOutput {
 
 func (o PipelineMapOutput) ToPipelineMapOutputWithContext(ctx context.Context) PipelineMapOutput {
 	return o
-}
-
-func (o PipelineMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Pipeline] {
-	return pulumix.Output[map[string]*Pipeline]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PipelineMapOutput) MapIndex(k pulumi.StringInput) PipelineOutput {

@@ -61,26 +61,17 @@ class GetComputeImageCapabilitySchemaResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the compute global image capability schema
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaId")
-    def compute_global_image_capability_schema_id(self) -> str:
-        """
-        The ocid of the compute global image capability schema
-        """
+    def compute_global_image_capability_schema_id(self) -> Optional[str]:
         return pulumi.get(self, "compute_global_image_capability_schema_id")
 
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaVersionName")
-    def compute_global_image_capability_schema_version_name(self) -> str:
-        """
-        The name of the compute global image capability schema version
-        """
+    def compute_global_image_capability_schema_version_name(self) -> Optional[str]:
         return pulumi.get(self, "compute_global_image_capability_schema_version_name")
 
     @property
@@ -90,42 +81,27 @@ class GetComputeImageCapabilitySchemaResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> str:
-        """
-        The OCID of the image associated with this compute image capability schema
-        """
+    def image_id(self) -> Optional[str]:
         return pulumi.get(self, "image_id")
 
     @property
@@ -135,18 +111,12 @@ class GetComputeImageCapabilitySchemaResult:
 
     @property
     @pulumi.getter(name="schemaData")
-    def schema_data(self) -> Mapping[str, Any]:
-        """
-        A mapping of each capability name to its ImageCapabilityDescriptor.
-        """
+    def schema_data(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "schema_data")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -174,23 +144,7 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
                                         is_merge_enabled: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeImageCapabilitySchemaResult:
     """
-    This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified Compute Image Capability Schema
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=oci_core_compute_image_capability_schema["test_compute_image_capability_schema"]["id"],
-        is_merge_enabled=var["compute_image_capability_schema_is_merge_enabled"])
-    ```
-
-
-    :param str compute_image_capability_schema_id: The id of the compute image capability schema or the image ocid
-    :param str is_merge_enabled: Merge the image capability schema with the global image capability schema
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['computeImageCapabilitySchemaId'] = compute_image_capability_schema_id
@@ -218,22 +172,6 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
                                                is_merge_enabled: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeImageCapabilitySchemaResult]:
     """
-    This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified Compute Image Capability Schema
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=oci_core_compute_image_capability_schema["test_compute_image_capability_schema"]["id"],
-        is_merge_enabled=var["compute_image_capability_schema_is_merge_enabled"])
-    ```
-
-
-    :param str compute_image_capability_schema_id: The id of the compute image capability schema or the image ocid
-    :param str is_merge_enabled: Merge the image capability schema with the global image capability schema
+    Use this data source to access information about an existing resource.
     """
     ...

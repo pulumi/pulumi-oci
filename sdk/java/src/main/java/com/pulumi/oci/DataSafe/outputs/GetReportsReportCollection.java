@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetReportsReportCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportsReportCollection {
-    private List<GetReportsReportCollectionItem> items;
+    private @Nullable List<GetReportsReportCollectionItem> items;
 
     private GetReportsReportCollection() {}
     public List<GetReportsReportCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetReportsReportCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetReportsReportCollectionItem> items;
+        private @Nullable List<GetReportsReportCollectionItem> items;
         public Builder() {}
         public Builder(GetReportsReportCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetReportsReportCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetReportsReportCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetReportsReportCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetReportsReportCollectionItem... items) {

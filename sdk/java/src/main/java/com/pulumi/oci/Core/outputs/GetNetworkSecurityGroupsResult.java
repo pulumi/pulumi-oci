@@ -29,12 +29,12 @@ public final class GetNetworkSecurityGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of network_security_groups.
      * 
      */
-    private List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups;
+    private @Nullable List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups;
     /**
      * @return The network security group&#39;s current state.
      * 
@@ -69,15 +69,15 @@ public final class GetNetworkSecurityGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of network_security_groups.
      * 
      */
     public List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups() {
-        return this.networkSecurityGroups;
+        return this.networkSecurityGroups == null ? List.of() : this.networkSecurityGroups;
     }
     /**
      * @return The network security group&#39;s current state.
@@ -109,8 +109,8 @@ public final class GetNetworkSecurityGroupsResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetNetworkSecurityGroupsFilter> filters;
-        private String id;
-        private List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups;
+        private @Nullable String id;
+        private @Nullable List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups;
         private @Nullable String state;
         private @Nullable String vcnId;
         private @Nullable String vlanId;
@@ -146,13 +146,13 @@ public final class GetNetworkSecurityGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder networkSecurityGroups(List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups) {
-            this.networkSecurityGroups = Objects.requireNonNull(networkSecurityGroups);
+        public Builder networkSecurityGroups(@Nullable List<GetNetworkSecurityGroupsNetworkSecurityGroup> networkSecurityGroups) {
+            this.networkSecurityGroups = networkSecurityGroups;
             return this;
         }
         public Builder networkSecurityGroups(GetNetworkSecurityGroupsNetworkSecurityGroup... networkSecurityGroups) {

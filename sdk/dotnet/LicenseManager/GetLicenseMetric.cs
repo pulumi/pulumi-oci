@@ -123,40 +123,40 @@ namespace Pulumi.Oci.LicenseManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsCompartmentIdInSubtree;
         /// <summary>
         /// Total number of license records that will expire within 90 days in a particular compartment.
         /// </summary>
-        public readonly int LicenseRecordExpiringSoonCount;
+        public readonly int? LicenseRecordExpiringSoonCount;
         /// <summary>
         /// Total number of BYOL instances in a particular compartment.
         /// </summary>
-        public readonly int TotalByolInstanceCount;
+        public readonly int? TotalByolInstanceCount;
         /// <summary>
         /// Total number of License Included (LI) instances in a particular compartment.
         /// </summary>
-        public readonly int TotalLicenseIncludedInstanceCount;
+        public readonly int? TotalLicenseIncludedInstanceCount;
         /// <summary>
         /// Total number of product licenses in a particular compartment.
         /// </summary>
-        public readonly int TotalProductLicenseCount;
+        public readonly int? TotalProductLicenseCount;
 
         [OutputConstructor]
         private GetLicenseMetricResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             bool? isCompartmentIdInSubtree,
 
-            int licenseRecordExpiringSoonCount,
+            int? licenseRecordExpiringSoonCount,
 
-            int totalByolInstanceCount,
+            int? totalByolInstanceCount,
 
-            int totalLicenseIncludedInstanceCount,
+            int? totalLicenseIncludedInstanceCount,
 
-            int totalProductLicenseCount)
+            int? totalProductLicenseCount)
         {
             CompartmentId = compartmentId;
             Id = id;

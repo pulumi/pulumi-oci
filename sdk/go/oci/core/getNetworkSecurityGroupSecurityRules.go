@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
@@ -67,8 +66,8 @@ type GetNetworkSecurityGroupSecurityRulesResult struct {
 	Direction *string                                      `pulumi:"direction"`
 	Filters   []GetNetworkSecurityGroupSecurityRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	NetworkSecurityGroupId string `pulumi:"networkSecurityGroupId"`
+	Id                     *string `pulumi:"id"`
+	NetworkSecurityGroupId string  `pulumi:"networkSecurityGroupId"`
 	// The list of security_rules.
 	SecurityRules []GetNetworkSecurityGroupSecurityRulesSecurityRule `pulumi:"securityRules"`
 }
@@ -114,12 +113,6 @@ func (o GetNetworkSecurityGroupSecurityRulesResultOutput) ToGetNetworkSecurityGr
 	return o
 }
 
-func (o GetNetworkSecurityGroupSecurityRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSecurityGroupSecurityRulesResult] {
-	return pulumix.Output[GetNetworkSecurityGroupSecurityRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
 func (o GetNetworkSecurityGroupSecurityRulesResultOutput) Direction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesResult) *string { return v.Direction }).(pulumi.StringPtrOutput)
@@ -132,8 +125,8 @@ func (o GetNetworkSecurityGroupSecurityRulesResultOutput) Filters() GetNetworkSe
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkSecurityGroupSecurityRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkSecurityGroupSecurityRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkSecurityGroupSecurityRulesResultOutput) NetworkSecurityGroupId() pulumi.StringOutput {

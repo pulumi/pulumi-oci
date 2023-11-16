@@ -16,53 +16,53 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Email.
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
         /// <summary>
         /// First name.
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         /// <summary>
         /// Last name.
         /// </summary>
-        public readonly string LastName;
+        public readonly string? LastName;
         /// <summary>
         /// Payment Term name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// TCA contact ID.
         /// </summary>
-        public readonly string TcaContactId;
+        public readonly string? TcaContactId;
         /// <summary>
         /// TCA customer account site ID.
         /// </summary>
-        public readonly string TcaCustAccntSiteId;
+        public readonly string? TcaCustAccntSiteId;
         /// <summary>
         /// TCA party ID.
         /// </summary>
-        public readonly string TcaPartyId;
+        public readonly string? TcaPartyId;
         /// <summary>
         /// userName.
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
 
         [OutputConstructor]
         private GetInvoicesInvoiceBillToContactResult(
-            string email,
+            string? email,
 
-            string firstName,
+            string? firstName,
 
-            string lastName,
+            string? lastName,
 
-            string name,
+            string? name,
 
-            string tcaContactId,
+            string? tcaContactId,
 
-            string tcaCustAccntSiteId,
+            string? tcaCustAccntSiteId,
 
-            string tcaPartyId,
+            string? tcaPartyId,
 
-            string userName)
+            string? userName)
         {
             Email = email;
             FirstName = firstName;

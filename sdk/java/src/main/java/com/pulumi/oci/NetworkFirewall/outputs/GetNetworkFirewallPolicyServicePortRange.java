@@ -6,6 +6,8 @@ package com.pulumi.oci.NetworkFirewall.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyServicePortRange {
@@ -13,27 +15,27 @@ public final class GetNetworkFirewallPolicyServicePortRange {
      * @return The maximum port in the range (inclusive), which may be absent for a single-port range.
      * 
      */
-    private Integer maximumPort;
+    private @Nullable Integer maximumPort;
     /**
      * @return The minimum port in the range (inclusive), or the sole port of a single-port range.
      * 
      */
-    private Integer minimumPort;
+    private @Nullable Integer minimumPort;
 
     private GetNetworkFirewallPolicyServicePortRange() {}
     /**
      * @return The maximum port in the range (inclusive), which may be absent for a single-port range.
      * 
      */
-    public Integer maximumPort() {
-        return this.maximumPort;
+    public Optional<Integer> maximumPort() {
+        return Optional.ofNullable(this.maximumPort);
     }
     /**
      * @return The minimum port in the range (inclusive), or the sole port of a single-port range.
      * 
      */
-    public Integer minimumPort() {
-        return this.minimumPort;
+    public Optional<Integer> minimumPort() {
+        return Optional.ofNullable(this.minimumPort);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetNetworkFirewallPolicyServicePortRange {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maximumPort;
-        private Integer minimumPort;
+        private @Nullable Integer maximumPort;
+        private @Nullable Integer minimumPort;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyServicePortRange defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetNetworkFirewallPolicyServicePortRange {
         }
 
         @CustomType.Setter
-        public Builder maximumPort(Integer maximumPort) {
-            this.maximumPort = Objects.requireNonNull(maximumPort);
+        public Builder maximumPort(@Nullable Integer maximumPort) {
+            this.maximumPort = maximumPort;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumPort(Integer minimumPort) {
-            this.minimumPort = Objects.requireNonNull(minimumPort);
+        public Builder minimumPort(@Nullable Integer minimumPort) {
+            this.minimumPort = minimumPort;
             return this;
         }
         public GetNetworkFirewallPolicyServicePortRange build() {

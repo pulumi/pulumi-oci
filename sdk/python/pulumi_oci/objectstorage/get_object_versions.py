@@ -88,7 +88,7 @@ class GetObjectVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,10 +96,7 @@ class GetObjectVersionsResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetObjectVersionsItemResult']:
-        """
-        An array of object version summaries.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetObjectVersionsItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -114,10 +111,7 @@ class GetObjectVersionsResult:
 
     @property
     @pulumi.getter
-    def prefixes(self) -> Sequence[str]:
-        """
-        Prefixes that are common to the results returned by the request if the request specified a delimiter.
-        """
+    def prefixes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "prefixes")
 
     @property
@@ -162,42 +156,7 @@ def get_object_versions(bucket: Optional[str] = None,
                         start_after: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetObjectVersionsResult:
     """
-    This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
-
-    Lists the object versions in a bucket.
-
-    ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
-    more object versions, use the returned `opc-next-page` value with the `page` request parameter.
-
-    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
-    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=var["object_version_bucket"],
-        namespace=var["object_version_namespace"],
-        delimiter=var["object_version_delimiter"],
-        end=var["object_version_end"],
-        fields=var["object_version_fields"],
-        prefix=var["object_version_prefix"],
-        start=var["object_version_start"],
-        start_after=var["object_version_start_after"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-    :param str end: Object names returned by a list query must be strictly less than this parameter.
-    :param str fields: Object summary by default includes only the 'name' field. Use this parameter to also include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time), 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields. Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.  For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str prefix: The string to use for matching against the start of object names in a list query.
-    :param str start: Object names returned by a list query must be greater or equal to this parameter.
-    :param str start_after: Object names returned by a list query must be greater than this parameter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -239,41 +198,6 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
                                start_after: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectVersionsResult]:
     """
-    This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
-
-    Lists the object versions in a bucket.
-
-    ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
-    more object versions, use the returned `opc-next-page` value with the `page` request parameter.
-
-    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
-    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=var["object_version_bucket"],
-        namespace=var["object_version_namespace"],
-        delimiter=var["object_version_delimiter"],
-        end=var["object_version_end"],
-        fields=var["object_version_fields"],
-        prefix=var["object_version_prefix"],
-        start=var["object_version_start"],
-        start_after=var["object_version_start_after"])
-    ```
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-    :param str end: Object names returned by a list query must be strictly less than this parameter.
-    :param str fields: Object summary by default includes only the 'name' field. Use this parameter to also include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time), 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields. Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.  For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str prefix: The string to use for matching against the start of object names in a list query.
-    :param str start: Object names returned by a list query must be greater or equal to this parameter.
-    :param str start_after: Object names returned by a list query must be greater than this parameter.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
         /// </summary>
-        public readonly string CredentialSourceName;
+        public readonly string? CredentialSourceName;
         /// <summary>
         /// Credential type.
         /// </summary>
-        public readonly string CredentialType;
+        public readonly string? CredentialType;
         /// <summary>
         /// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         /// </summary>
-        public readonly string PasswordSecretId;
+        public readonly string? PasswordSecretId;
         /// <summary>
         /// database user role.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
         /// <summary>
         /// database user name.
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         /// </summary>
-        public readonly string WalletSecretId;
+        public readonly string? WalletSecretId;
 
         [OutputConstructor]
         private GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult(
-            string credentialSourceName,
+            string? credentialSourceName,
 
-            string credentialType,
+            string? credentialType,
 
-            string passwordSecretId,
+            string? passwordSecretId,
 
-            string role,
+            string? role,
 
-            string userName,
+            string? userName,
 
-            string walletSecretId)
+            string? walletSecretId)
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;

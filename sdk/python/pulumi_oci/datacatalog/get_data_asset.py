@@ -80,17 +80,11 @@ class GetDataAssetResult:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> str:
-        """
-        The data catalog's OCID.
-        """
         return pulumi.get(self, "catalog_id")
 
     @property
     @pulumi.getter(name="createdById")
-    def created_by_id(self) -> str:
-        """
-        OCID of the user who created the data asset.
-        """
+    def created_by_id(self) -> Optional[str]:
         return pulumi.get(self, "created_by_id")
 
     @property
@@ -100,26 +94,17 @@ class GetDataAssetResult:
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Detailed description of the data asset.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalKey")
-    def external_key(self) -> str:
-        """
-        External URI that can be used to reference the object. Format will differ based on the type of object.
-        """
+    def external_key(self) -> Optional[str]:
         return pulumi.get(self, "external_key")
 
     @property
@@ -129,87 +114,57 @@ class GetDataAssetResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique data asset key that is immutable.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
-        """
-        A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        """
+    def properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the data asset.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeHarvested")
-    def time_harvested(self) -> str:
-        """
-        The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_harvested(self) -> Optional[str]:
         return pulumi.get(self, "time_harvested")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="typeKey")
-    def type_key(self) -> str:
-        """
-        The key of the object type. Type key's can be found via the '/types' endpoint.
-        """
+    def type_key(self) -> Optional[str]:
         return pulumi.get(self, "type_key")
 
     @property
     @pulumi.getter(name="updatedById")
-    def updated_by_id(self) -> str:
-        """
-        OCID of the user who last modified the data asset.
-        """
+    def updated_by_id(self) -> Optional[str]:
         return pulumi.get(self, "updated_by_id")
 
     @property
     @pulumi.getter
-    def uri(self) -> str:
-        """
-        URI to the data asset instance in the API.
-        """
+    def uri(self) -> Optional[str]:
         return pulumi.get(self, "uri")
 
 
@@ -244,25 +199,7 @@ def get_data_asset(catalog_id: Optional[str] = None,
                    fields: Optional[Sequence[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataAssetResult:
     """
-    This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific data asset for the given key within a data catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["data_asset_data_asset_key"],
-        fields=var["data_asset_fields"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str data_asset_key: Unique data asset key.
-    :param Sequence[str] fields: Specifies the fields to return in a data asset response.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -298,24 +235,6 @@ def get_data_asset_output(catalog_id: Optional[pulumi.Input[str]] = None,
                           fields: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataAssetResult]:
     """
-    This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific data asset for the given key within a data catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["data_asset_data_asset_key"],
-        fields=var["data_asset_fields"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param str data_asset_key: Unique data asset key.
-    :param Sequence[str] fields: Specifies the fields to return in a data asset response.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -25,7 +25,7 @@ public final class GetWorkRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String resourceId;
     private @Nullable String resourceType;
     /**
@@ -37,7 +37,7 @@ public final class GetWorkRequestsResult {
      * @return The list of work_requests.
      * 
      */
-    private List<GetWorkRequestsWorkRequest> workRequests;
+    private @Nullable List<GetWorkRequestsWorkRequest> workRequests;
 
     private GetWorkRequestsResult() {}
     public Optional<String> clusterId() {
@@ -57,8 +57,8 @@ public final class GetWorkRequestsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
@@ -78,7 +78,7 @@ public final class GetWorkRequestsResult {
      * 
      */
     public List<GetWorkRequestsWorkRequest> workRequests() {
-        return this.workRequests;
+        return this.workRequests == null ? List.of() : this.workRequests;
     }
 
     public static Builder builder() {
@@ -93,11 +93,11 @@ public final class GetWorkRequestsResult {
         private @Nullable String clusterId;
         private String compartmentId;
         private @Nullable List<GetWorkRequestsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String resourceId;
         private @Nullable String resourceType;
         private @Nullable List<String> statuses;
-        private List<GetWorkRequestsWorkRequest> workRequests;
+        private @Nullable List<GetWorkRequestsWorkRequest> workRequests;
         public Builder() {}
         public Builder(GetWorkRequestsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -130,8 +130,8 @@ public final class GetWorkRequestsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -153,8 +153,8 @@ public final class GetWorkRequestsResult {
             return statuses(List.of(statuses));
         }
         @CustomType.Setter
-        public Builder workRequests(List<GetWorkRequestsWorkRequest> workRequests) {
-            this.workRequests = Objects.requireNonNull(workRequests);
+        public Builder workRequests(@Nullable List<GetWorkRequestsWorkRequest> workRequests) {
+            this.workRequests = workRequests;
             return this;
         }
         public Builder workRequests(GetWorkRequestsWorkRequest... workRequests) {

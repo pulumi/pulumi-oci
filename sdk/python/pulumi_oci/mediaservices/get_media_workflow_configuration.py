@@ -61,50 +61,32 @@ class GetMediaWorkflowConfigurationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display name for the MediaWorkflowConfiguration. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
@@ -114,42 +96,27 @@ class GetMediaWorkflowConfigurationResult:
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the MediaWorkflowConfiguration.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -176,21 +143,7 @@ class AwaitableGetMediaWorkflowConfigurationResult(GetMediaWorkflowConfiguration
 def get_media_workflow_configuration(media_workflow_configuration_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowConfigurationResult:
     """
-    This data source provides details about a specific Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a MediaWorkflowConfiguration by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_configuration = oci.MediaServices.get_media_workflow_configuration(media_workflow_configuration_id=oci_media_services_media_workflow_configuration["test_media_workflow_configuration"]["id"])
-    ```
-
-
-    :param str media_workflow_configuration_id: Unique MediaWorkflowConfiguration identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['mediaWorkflowConfigurationId'] = media_workflow_configuration_id
@@ -216,20 +169,6 @@ def get_media_workflow_configuration(media_workflow_configuration_id: Optional[s
 def get_media_workflow_configuration_output(media_workflow_configuration_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowConfigurationResult]:
     """
-    This data source provides details about a specific Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a MediaWorkflowConfiguration by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_configuration = oci.MediaServices.get_media_workflow_configuration(media_workflow_configuration_id=oci_media_services_media_workflow_configuration["test_media_workflow_configuration"]["id"])
-    ```
-
-
-    :param str media_workflow_configuration_id: Unique MediaWorkflowConfiguration identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem {
@@ -21,7 +23,7 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * @return State of unified agent service configuration.
      * 
      */
-    private String configurationState;
+    private @Nullable String configurationState;
     /**
      * @return Type of Unified Agent service configuration.
      * 
@@ -31,27 +33,27 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description for this resource.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Resource name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether or not this resource is currently enabled.
      * 
@@ -61,17 +63,17 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * @return Lifecycle state of the log object
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Time the resource was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time the resource was last modified.
      * 
      */
-    private String timeLastModified;
+    private @Nullable String timeLastModified;
 
     private GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem() {}
     /**
@@ -85,8 +87,8 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * @return State of unified agent service configuration.
      * 
      */
-    public String configurationState() {
-        return this.configurationState;
+    public Optional<String> configurationState() {
+        return Optional.ofNullable(this.configurationState);
     }
     /**
      * @return Type of Unified Agent service configuration.
@@ -100,35 +102,35 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description for this resource.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Resource name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether or not this resource is currently enabled.
@@ -141,22 +143,22 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
      * @return Lifecycle state of the log object
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Time the resource was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time the resource was last modified.
      * 
      */
-    public String timeLastModified() {
-        return this.timeLastModified;
+    public Optional<String> timeLastModified() {
+        return Optional.ofNullable(this.timeLastModified);
     }
 
     public static Builder builder() {
@@ -169,17 +171,17 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String configurationState;
+        private @Nullable String configurationState;
         private String configurationType;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private Boolean isEnabled;
-        private String state;
-        private String timeCreated;
-        private String timeLastModified;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastModified;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -203,8 +205,8 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
             return this;
         }
         @CustomType.Setter
-        public Builder configurationState(String configurationState) {
-            this.configurationState = Objects.requireNonNull(configurationState);
+        public Builder configurationState(@Nullable String configurationState) {
+            this.configurationState = configurationState;
             return this;
         }
         @CustomType.Setter
@@ -213,28 +215,28 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -243,18 +245,18 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+        public Builder timeLastModified(@Nullable String timeLastModified) {
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem build() {

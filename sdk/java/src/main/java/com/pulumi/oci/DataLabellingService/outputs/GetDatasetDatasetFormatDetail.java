@@ -8,6 +8,8 @@ import com.pulumi.oci.DataLabellingService.outputs.GetDatasetDatasetFormatDetail
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetDatasetFormatDetail {
@@ -15,27 +17,27 @@ public final class GetDatasetDatasetFormatDetail {
      * @return It defines the format type of text files.
      * 
      */
-    private String formatType;
+    private @Nullable String formatType;
     /**
      * @return Metadata for files with text content.
      * 
      */
-    private List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
+    private @Nullable List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
 
     private GetDatasetDatasetFormatDetail() {}
     /**
      * @return It defines the format type of text files.
      * 
      */
-    public String formatType() {
-        return this.formatType;
+    public Optional<String> formatType() {
+        return Optional.ofNullable(this.formatType);
     }
     /**
      * @return Metadata for files with text content.
      * 
      */
     public List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas() {
-        return this.textFileTypeMetadatas;
+        return this.textFileTypeMetadatas == null ? List.of() : this.textFileTypeMetadatas;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetDatasetDatasetFormatDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String formatType;
-        private List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
+        private @Nullable String formatType;
+        private @Nullable List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas;
         public Builder() {}
         public Builder(GetDatasetDatasetFormatDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetDatasetDatasetFormatDetail {
         }
 
         @CustomType.Setter
-        public Builder formatType(String formatType) {
-            this.formatType = Objects.requireNonNull(formatType);
+        public Builder formatType(@Nullable String formatType) {
+            this.formatType = formatType;
             return this;
         }
         @CustomType.Setter
-        public Builder textFileTypeMetadatas(List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas) {
-            this.textFileTypeMetadatas = Objects.requireNonNull(textFileTypeMetadatas);
+        public Builder textFileTypeMetadatas(@Nullable List<GetDatasetDatasetFormatDetailTextFileTypeMetadata> textFileTypeMetadatas) {
+            this.textFileTypeMetadatas = textFileTypeMetadatas;
             return this;
         }
         public Builder textFileTypeMetadatas(GetDatasetDatasetFormatDetailTextFileTypeMetadata... textFileTypeMetadatas) {

@@ -61,10 +61,7 @@ class GetDbManagementPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -74,82 +71,52 @@ class GetDbManagementPrivateEndpointResult:
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the Database Management private endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> bool:
-        """
-        Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
-        """
+    def is_cluster(self) -> Optional[bool]:
         return pulumi.get(self, "is_cluster")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The display name of the Database Management private endpoint.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The IP addresses assigned to the Database Management private endpoint.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the Database Management private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -176,21 +143,7 @@ class AwaitableGetDbManagementPrivateEndpointResult(GetDbManagementPrivateEndpoi
 def get_db_management_private_endpoint(db_management_private_endpoint_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbManagementPrivateEndpointResult:
     """
-    This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details of a specific Database Management private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
-    ```
-
-
-    :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbManagementPrivateEndpointId'] = db_management_private_endpoint_id
@@ -216,20 +169,6 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
 def get_db_management_private_endpoint_output(db_management_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointResult]:
     """
-    This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details of a specific Database Management private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
-    ```
-
-
-    :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

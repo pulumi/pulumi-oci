@@ -37,7 +37,7 @@ class GetInstanceCredentialsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -50,18 +50,12 @@ class GetInstanceCredentialsResult:
 
     @property
     @pulumi.getter
-    def password(self) -> str:
-        """
-        The password for the username.
-        """
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
-        """
-        The username.
-        """
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
 
@@ -80,22 +74,7 @@ class AwaitableGetInstanceCredentialsResult(GetInstanceCredentialsResult):
 def get_instance_credentials(instance_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceCredentialsResult:
     """
-    This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
-    For certain operating systems, users will be forced to change the initial credentials.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_credential = oci.Core.get_instance_credentials(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
@@ -113,21 +92,6 @@ def get_instance_credentials(instance_id: Optional[str] = None,
 def get_instance_credentials_output(instance_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceCredentialsResult]:
     """
-    This data source provides details about a specific Instance Credential resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
-    For certain operating systems, users will be forced to change the initial credentials.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_credential = oci.Core.get_instance_credentials(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     ...

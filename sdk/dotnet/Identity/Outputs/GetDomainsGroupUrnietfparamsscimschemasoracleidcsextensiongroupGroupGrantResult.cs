@@ -16,32 +16,32 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// App identifier
         /// </summary>
-        public readonly string AppId;
+        public readonly string? AppId;
         /// <summary>
         /// Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted. A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
         /// * 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
         /// * 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
         /// * 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
         /// </summary>
-        public readonly string GrantMechanism;
+        public readonly string? GrantMechanism;
         /// <summary>
         /// App URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The ID of the App.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantResult(
-            string appId,
+            string? appId,
 
-            string grantMechanism,
+            string? grantMechanism,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             AppId = appId;
             GrantMechanism = grantMechanism;

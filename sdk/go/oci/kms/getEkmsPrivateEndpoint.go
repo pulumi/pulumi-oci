@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
@@ -60,34 +59,34 @@ type LookupEkmsPrivateEndpointArgs struct {
 // A collection of values returned by getEkmsPrivateEndpoint.
 type LookupEkmsPrivateEndpointResult struct {
 	// CABundle to validate TLS certificate of the external key manager system in PEM format
-	CaBundle string `pulumi:"caBundle"`
+	CaBundle *string `pulumi:"caBundle"`
 	// Identifier of the compartment this EKMS private endpoint belongs to
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Mutable name of the EKMS private endpoint
-	DisplayName           string `pulumi:"displayName"`
-	EkmsPrivateEndpointId string `pulumi:"ekmsPrivateEndpointId"`
+	DisplayName           *string `pulumi:"displayName"`
+	EkmsPrivateEndpointId string  `pulumi:"ekmsPrivateEndpointId"`
 	// Private IP of the external key manager system to connect to from the EKMS private endpoint
-	ExternalKeyManagerIp string `pulumi:"externalKeyManagerIp"`
+	ExternalKeyManagerIp *string `pulumi:"externalKeyManagerIp"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The port of the external key manager system
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The current state of the EKMS private endpoint resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupEkmsPrivateEndpointOutput(ctx *pulumi.Context, args LookupEkmsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupEkmsPrivateEndpointResultOutput {
@@ -128,20 +127,14 @@ func (o LookupEkmsPrivateEndpointResultOutput) ToLookupEkmsPrivateEndpointResult
 	return o
 }
 
-func (o LookupEkmsPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEkmsPrivateEndpointResult] {
-	return pulumix.Output[LookupEkmsPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // CABundle to validate TLS certificate of the external key manager system in PEM format
-func (o LookupEkmsPrivateEndpointResultOutput) CaBundle() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.CaBundle }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) CaBundle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.CaBundle }).(pulumi.StringPtrOutput)
 }
 
 // Identifier of the compartment this EKMS private endpoint belongs to
-func (o LookupEkmsPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -150,8 +143,8 @@ func (o LookupEkmsPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Mutable name of the EKMS private endpoint
-func (o LookupEkmsPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEkmsPrivateEndpointResultOutput) EkmsPrivateEndpointId() pulumi.StringOutput {
@@ -159,8 +152,8 @@ func (o LookupEkmsPrivateEndpointResultOutput) EkmsPrivateEndpointId() pulumi.St
 }
 
 // Private IP of the external key manager system to connect to from the EKMS private endpoint
-func (o LookupEkmsPrivateEndpointResultOutput) ExternalKeyManagerIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.ExternalKeyManagerIp }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) ExternalKeyManagerIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.ExternalKeyManagerIp }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -169,43 +162,43 @@ func (o LookupEkmsPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable
-func (o LookupEkmsPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o LookupEkmsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The port of the external key manager system
-func (o LookupEkmsPrivateEndpointResultOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) int { return v.Port }).(pulumi.IntOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-func (o LookupEkmsPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the EKMS private endpoint resource.
-func (o LookupEkmsPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Subnet Identifier
-func (o LookupEkmsPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupEkmsPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupEkmsPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupEkmsPrivateEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEkmsPrivateEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

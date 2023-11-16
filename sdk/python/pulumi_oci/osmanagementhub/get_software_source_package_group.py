@@ -58,31 +58,22 @@ class GetSoftwareSourcePackageGroupResult:
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        description of the package group.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayOrder")
-    def display_order(self) -> int:
-        """
-        Indicates the order to display category or environment.
-        """
+    def display_order(self) -> Optional[int]:
         return pulumi.get(self, "display_order")
 
     @property
     @pulumi.getter(name="groupType")
-    def group_type(self) -> str:
-        """
-        Indicates if this is a group, category or environment.
-        """
+    def group_type(self) -> Optional[str]:
         return pulumi.get(self, "group_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,26 +81,17 @@ class GetSoftwareSourcePackageGroupResult:
 
     @property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> bool:
-        """
-        Indicates if this package group is the default.
-        """
+    def is_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_default")
 
     @property
     @pulumi.getter(name="isUserVisible")
-    def is_user_visible(self) -> bool:
-        """
-        Indicates if this package group is visible by users.
-        """
+    def is_user_visible(self) -> Optional[bool]:
         return pulumi.get(self, "is_user_visible")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Package group name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -119,18 +101,12 @@ class GetSoftwareSourcePackageGroupResult:
 
     @property
     @pulumi.getter
-    def packages(self) -> Sequence[str]:
-        """
-        The list of packages in the package group.
-        """
+    def packages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter
-    def repositories(self) -> Sequence[str]:
-        """
-        the IDs of the package group's repositories.
-        """
+    def repositories(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "repositories")
 
     @property
@@ -162,23 +138,7 @@ def get_software_source_package_group(package_group_id: Optional[str] = None,
                                       software_source_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourcePackageGroupResult:
     """
-    This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified package group from a software source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_package_group = oci.OsManagementHub.get_software_source_package_group(package_group_id=oci_identity_group["test_group"]["id"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str package_group_id: The unique package group identifier.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['packageGroupId'] = package_group_id
@@ -205,22 +165,6 @@ def get_software_source_package_group_output(package_group_id: Optional[pulumi.I
                                              software_source_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupResult]:
     """
-    This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Gets information about the specified package group from a software source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_package_group = oci.OsManagementHub.get_software_source_package_group(package_group_id=oci_identity_group["test_group"]["id"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str package_group_id: The unique package group identifier.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

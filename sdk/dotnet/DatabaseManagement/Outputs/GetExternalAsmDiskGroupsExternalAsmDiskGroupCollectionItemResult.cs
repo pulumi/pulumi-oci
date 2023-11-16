@@ -20,55 +20,55 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of ASM instances that have the disk group in dismounted state.
         /// </summary>
-        public readonly int DismountingInstanceCount;
+        public readonly int? DismountingInstanceCount;
         /// <summary>
         /// Indicates whether the disk group is a sparse disk group or not.
         /// </summary>
-        public readonly bool IsSparse;
+        public readonly bool? IsSparse;
         /// <summary>
         /// The number of ASM instances that have the disk group in mounted state.
         /// </summary>
-        public readonly int MountingInstanceCount;
+        public readonly int? MountingInstanceCount;
         /// <summary>
         /// The name of the ASM disk group.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The redundancy type of the disk group.
         /// </summary>
-        public readonly string RedundancyType;
+        public readonly string? RedundancyType;
         /// <summary>
         /// The total capacity of the disk group (in megabytes).
         /// </summary>
-        public readonly string TotalSizeInMbs;
+        public readonly string? TotalSizeInMbs;
         /// <summary>
         /// The percentage of used space in the disk group.
         /// </summary>
-        public readonly double UsedPercent;
+        public readonly double? UsedPercent;
         /// <summary>
         /// The used capacity of the disk group (in megabytes).
         /// </summary>
-        public readonly string UsedSizeInMbs;
+        public readonly string? UsedSizeInMbs;
 
         [OutputConstructor]
         private GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItemResult(
             ImmutableArray<string> databases,
 
-            int dismountingInstanceCount,
+            int? dismountingInstanceCount,
 
-            bool isSparse,
+            bool? isSparse,
 
-            int mountingInstanceCount,
+            int? mountingInstanceCount,
 
-            string name,
+            string? name,
 
-            string redundancyType,
+            string? redundancyType,
 
-            string totalSizeInMbs,
+            string? totalSizeInMbs,
 
-            double usedPercent,
+            double? usedPercent,
 
-            string usedSizeInMbs)
+            string? usedSizeInMbs)
         {
             Databases = databases;
             DismountingInstanceCount = dismountingInstanceCount;

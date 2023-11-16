@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
@@ -77,7 +76,7 @@ type GetBucketSummariesResult struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetBucketSummariesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The Object Storage namespace in which the bucket resides.
 	Namespace string `pulumi:"namespace"`
 }
@@ -123,12 +122,6 @@ func (o GetBucketSummariesResultOutput) ToGetBucketSummariesResultOutputWithCont
 	return o
 }
 
-func (o GetBucketSummariesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesResult] {
-	return pulumix.Output[GetBucketSummariesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of bucket_summaries.
 func (o GetBucketSummariesResultOutput) BucketSummaries() GetBucketSummariesBucketSummaryArrayOutput {
 	return o.ApplyT(func(v GetBucketSummariesResult) []GetBucketSummariesBucketSummary { return v.BucketSummaries }).(GetBucketSummariesBucketSummaryArrayOutput)
@@ -144,8 +137,8 @@ func (o GetBucketSummariesResultOutput) Filters() GetBucketSummariesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBucketSummariesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBucketSummariesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBucketSummariesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBucketSummariesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace in which the bucket resides.

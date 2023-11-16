@@ -20,7 +20,7 @@ public final class GetChannelsResult {
      * @return The list of channels.
      * 
      */
-    private List<GetChannelsChannel> channels;
+    private @Nullable List<GetChannelsChannel> channels;
     /**
      * @return The OCID of the compartment.
      * 
@@ -41,7 +41,7 @@ public final class GetChannelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the Channel has been enabled by the user.
      * 
@@ -62,7 +62,7 @@ public final class GetChannelsResult {
      * 
      */
     public List<GetChannelsChannel> channels() {
-        return this.channels;
+        return this.channels == null ? List.of() : this.channels;
     }
     /**
      * @return The OCID of the compartment.
@@ -92,8 +92,8 @@ public final class GetChannelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the Channel has been enabled by the user.
@@ -120,12 +120,12 @@ public final class GetChannelsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String channelId;
-        private List<GetChannelsChannel> channels;
+        private @Nullable List<GetChannelsChannel> channels;
         private String compartmentId;
         private @Nullable String dbSystemId;
         private @Nullable String displayName;
         private @Nullable List<GetChannelsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isEnabled;
         private @Nullable String state;
         public Builder() {}
@@ -148,8 +148,8 @@ public final class GetChannelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder channels(List<GetChannelsChannel> channels) {
-            this.channels = Objects.requireNonNull(channels);
+        public Builder channels(@Nullable List<GetChannelsChannel> channels) {
+            this.channels = channels;
             return this;
         }
         public Builder channels(GetChannelsChannel... channels) {
@@ -179,8 +179,8 @@ public final class GetChannelsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

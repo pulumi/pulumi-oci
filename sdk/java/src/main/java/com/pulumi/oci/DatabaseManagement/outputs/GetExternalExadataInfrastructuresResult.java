@@ -28,13 +28,13 @@ public final class GetExternalExadataInfrastructuresResult {
      * @return The list of external_exadata_infrastructure_collection.
      * 
      */
-    private List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections;
+    private @Nullable List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections;
     private @Nullable List<GetExternalExadataInfrastructuresFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalExadataInfrastructuresResult() {}
     /**
@@ -56,7 +56,7 @@ public final class GetExternalExadataInfrastructuresResult {
      * 
      */
     public List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections() {
-        return this.externalExadataInfrastructureCollections;
+        return this.externalExadataInfrastructureCollections == null ? List.of() : this.externalExadataInfrastructureCollections;
     }
     public List<GetExternalExadataInfrastructuresFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -65,8 +65,8 @@ public final class GetExternalExadataInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -80,9 +80,9 @@ public final class GetExternalExadataInfrastructuresResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections;
+        private @Nullable List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections;
         private @Nullable List<GetExternalExadataInfrastructuresFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalExadataInfrastructuresResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -104,8 +104,8 @@ public final class GetExternalExadataInfrastructuresResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalExadataInfrastructureCollections(List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections) {
-            this.externalExadataInfrastructureCollections = Objects.requireNonNull(externalExadataInfrastructureCollections);
+        public Builder externalExadataInfrastructureCollections(@Nullable List<GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection> externalExadataInfrastructureCollections) {
+            this.externalExadataInfrastructureCollections = externalExadataInfrastructureCollections;
             return this;
         }
         public Builder externalExadataInfrastructureCollections(GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection... externalExadataInfrastructureCollections) {
@@ -120,8 +120,8 @@ public final class GetExternalExadataInfrastructuresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalExadataInfrastructuresResult build() {

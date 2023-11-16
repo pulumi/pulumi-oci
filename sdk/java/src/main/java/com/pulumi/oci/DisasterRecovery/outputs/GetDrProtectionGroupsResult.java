@@ -28,14 +28,14 @@ public final class GetDrProtectionGroupsResult {
      * @return The list of dr_protection_group_collection.
      * 
      */
-    private List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections;
+    private @Nullable List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections;
     private @Nullable String drProtectionGroupId;
     private @Nullable List<GetDrProtectionGroupsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current sub-state of the DR protection group.
      * 
@@ -72,7 +72,7 @@ public final class GetDrProtectionGroupsResult {
      * 
      */
     public List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections() {
-        return this.drProtectionGroupCollections;
+        return this.drProtectionGroupCollections == null ? List.of() : this.drProtectionGroupCollections;
     }
     public Optional<String> drProtectionGroupId() {
         return Optional.ofNullable(this.drProtectionGroupId);
@@ -84,8 +84,8 @@ public final class GetDrProtectionGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current sub-state of the DR protection group.
@@ -120,10 +120,10 @@ public final class GetDrProtectionGroupsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections;
+        private @Nullable List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections;
         private @Nullable String drProtectionGroupId;
         private @Nullable List<GetDrProtectionGroupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String lifecycleSubState;
         private @Nullable String role;
         private @Nullable String state;
@@ -152,8 +152,8 @@ public final class GetDrProtectionGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drProtectionGroupCollections(List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections) {
-            this.drProtectionGroupCollections = Objects.requireNonNull(drProtectionGroupCollections);
+        public Builder drProtectionGroupCollections(@Nullable List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections) {
+            this.drProtectionGroupCollections = drProtectionGroupCollections;
             return this;
         }
         public Builder drProtectionGroupCollections(GetDrProtectionGroupsDrProtectionGroupCollection... drProtectionGroupCollections) {
@@ -173,8 +173,8 @@ public final class GetDrProtectionGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

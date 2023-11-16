@@ -56,59 +56,59 @@ export interface GetAlertRuleResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the alert rule.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The name of the alert rule. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the alert rule.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The custom message that will be sent when the alert is triggered.
      */
-    readonly message: string;
+    readonly message?: string;
     /**
      * The delimited list of email addresses to receive the alert when it triggers. Delimiter characters can be a comma, space, TAB, or semicolon.
      */
-    readonly recipients: string;
+    readonly recipients?: string;
     /**
      * The current state of the alert rule.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      */
-    readonly threshold: number;
+    readonly threshold?: number;
     /**
      * The type of threshold.
      */
-    readonly thresholdType: string;
+    readonly thresholdType?: string;
     /**
      * The time when the budget was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the budget was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * The version of the alert rule. Starts from 1 and increments by 1.
      */
-    readonly version: number;
+    readonly version?: number;
 }
 /**
  * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.

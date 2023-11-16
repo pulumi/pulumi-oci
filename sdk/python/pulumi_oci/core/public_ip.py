@@ -23,21 +23,6 @@ class PublicIpArgs:
                  public_ip_pool_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PublicIp resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] lifetime: Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] private_ip_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-               
-               Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-               
-               Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        :param pulumi.Input[str] public_ip_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "lifetime", lifetime)
@@ -55,9 +40,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +49,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter
     def lifetime(self) -> pulumi.Input[str]:
-        """
-        Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        """
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
@@ -79,9 +58,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -91,9 +67,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -103,9 +76,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -115,13 +85,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter(name="privateIpId")
     def private_ip_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-
-        Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-
-        Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        """
         return pulumi.get(self, "private_ip_id")
 
     @private_ip_id.setter
@@ -131,13 +94,6 @@ class PublicIpArgs:
     @property
     @pulumi.getter(name="publicIpPoolId")
     def public_ip_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "public_ip_pool_id")
 
     @public_ip_pool_id.setter
@@ -164,28 +120,6 @@ class _PublicIpState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PublicIp resources.
-        :param pulumi.Input[str] assigned_entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-        :param pulumi.Input[str] assigned_entity_type: The type of entity the public IP is assigned to, or in the process of being assigned to.
-        :param pulumi.Input[str] availability_domain: The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ip_address: The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-        :param pulumi.Input[str] lifetime: Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        :param pulumi.Input[str] private_ip_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-               
-               Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-               
-               Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        :param pulumi.Input[str] public_ip_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] scope: Whether the public IP is regional or specific to a particular availability domain.
-        :param pulumi.Input[str] state: The public IP's current state.
-        :param pulumi.Input[str] time_created: The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if assigned_entity_id is not None:
             pulumi.set(__self__, "assigned_entity_id", assigned_entity_id)
@@ -219,9 +153,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="assignedEntityId")
     def assigned_entity_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-        """
         return pulumi.get(self, "assigned_entity_id")
 
     @assigned_entity_id.setter
@@ -231,9 +162,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="assignedEntityType")
     def assigned_entity_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of entity the public IP is assigned to, or in the process of being assigned to.
-        """
         return pulumi.get(self, "assigned_entity_type")
 
     @assigned_entity_type.setter
@@ -243,9 +171,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -255,9 +180,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -267,9 +189,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -279,9 +198,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -291,9 +207,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -303,9 +216,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -315,9 +225,6 @@ class _PublicIpState:
     @property
     @pulumi.getter
     def lifetime(self) -> Optional[pulumi.Input[str]]:
-        """
-        Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        """
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
@@ -327,13 +234,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="privateIpId")
     def private_ip_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-
-        Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-
-        Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        """
         return pulumi.get(self, "private_ip_id")
 
     @private_ip_id.setter
@@ -343,13 +243,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="publicIpPoolId")
     def public_ip_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "public_ip_pool_id")
 
     @public_ip_pool_id.setter
@@ -359,9 +252,6 @@ class _PublicIpState:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        Whether the public IP is regional or specific to a particular availability domain.
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -371,9 +261,6 @@ class _PublicIpState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public IP's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -383,9 +270,6 @@ class _PublicIpState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -407,75 +291,9 @@ class PublicIp(pulumi.CustomResource):
                  public_ip_pool_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Public Ip resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
-        reserved public IP. For information about limits on how many you can create, see
-        [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-
-        * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
-        with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary private IP you want to assign the public IP to. The public IP is
-        created in the same availability domain as the private IP. An ephemeral public IP must always be
-        assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
-        private IP. Exception: If you create a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), Oracle
-        automatically assigns the NAT gateway a regional ephemeral public IP that you cannot remove.
-
-        * **For a reserved public IP:** You may also optionally assign the public IP to a private
-        IP by specifying `privateIpId`. Or you can later assign the public IP with
-        [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-
-        **Note:** When assigning a public IP to a private IP, the private IP must not already have
-        a public IP with `lifecycleState` = ASSIGNING or ASSIGNED. If it does, an error is returned.
-
-        Also, for reserved public IPs, the optional assignment part of this operation is
-        asynchronous. Poll the public IP's `lifecycleState` to determine if the assignment
-        succeeded.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_public_ip = oci.core.PublicIp("testPublicIp",
-            compartment_id=var["compartment_id"],
-            lifetime=var["public_ip_lifetime"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["public_ip_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            private_ip_id=oci_core_private_ip["test_private_ip"]["id"],
-            public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
-        ```
-
-        ## Import
-
-        PublicIps can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
-        ```
-
+        Create a PublicIp resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifetime: Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        :param pulumi.Input[str] private_ip_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-               
-               Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-               
-               Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        :param pulumi.Input[str] public_ip_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -484,58 +302,7 @@ class PublicIp(pulumi.CustomResource):
                  args: PublicIpArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Public Ip resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
-        reserved public IP. For information about limits on how many you can create, see
-        [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-
-        * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
-        with the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary private IP you want to assign the public IP to. The public IP is
-        created in the same availability domain as the private IP. An ephemeral public IP must always be
-        assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
-        private IP. Exception: If you create a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), Oracle
-        automatically assigns the NAT gateway a regional ephemeral public IP that you cannot remove.
-
-        * **For a reserved public IP:** You may also optionally assign the public IP to a private
-        IP by specifying `privateIpId`. Or you can later assign the public IP with
-        [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-
-        **Note:** When assigning a public IP to a private IP, the private IP must not already have
-        a public IP with `lifecycleState` = ASSIGNING or ASSIGNED. If it does, an error is returned.
-
-        Also, for reserved public IPs, the optional assignment part of this operation is
-        asynchronous. Poll the public IP's `lifecycleState` to determine if the assignment
-        succeeded.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_public_ip = oci.core.PublicIp("testPublicIp",
-            compartment_id=var["compartment_id"],
-            lifetime=var["public_ip_lifetime"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["public_ip_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            private_ip_id=oci_core_private_ip["test_private_ip"]["id"],
-            public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
-        ```
-
-        ## Import
-
-        PublicIps can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/publicIp:PublicIp test_public_ip "id"
-        ```
-
+        Create a PublicIp resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PublicIpArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -616,28 +383,6 @@ class PublicIp(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] assigned_entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-        :param pulumi.Input[str] assigned_entity_type: The type of entity the public IP is assigned to, or in the process of being assigned to.
-        :param pulumi.Input[str] availability_domain: The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ip_address: The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-        :param pulumi.Input[str] lifetime: Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        :param pulumi.Input[str] private_ip_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-               
-               Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-               
-               Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        :param pulumi.Input[str] public_ip_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] scope: Whether the public IP is regional or specific to a particular availability domain.
-        :param pulumi.Input[str] state: The public IP's current state.
-        :param pulumi.Input[str] time_created: The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -661,121 +406,71 @@ class PublicIp(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="assignedEntityId")
-    def assigned_entity_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-        """
+    def assigned_entity_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "assigned_entity_id")
 
     @property
     @pulumi.getter(name="assignedEntityType")
-    def assigned_entity_type(self) -> pulumi.Output[str]:
-        """
-        The type of entity the public IP is assigned to, or in the process of being assigned to.
-        """
+    def assigned_entity_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "assigned_entity_type")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> pulumi.Output[str]:
-        """
-        The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-        """
+    def ip_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter
     def lifetime(self) -> pulumi.Output[str]:
-        """
-        Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-        """
         return pulumi.get(self, "lifetime")
 
     @property
     @pulumi.getter(name="privateIpId")
     def private_ip_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-
-        Required for an ephemeral public IP because it must always be assigned to a private IP (specifically a *primary* private IP).
-
-        Optional for a reserved public IP. If you don't provide it, the public IP is created but not assigned to a private IP. You can later assign the public IP with [UpdatePublicIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/UpdatePublicIp).
-        """
         return pulumi.get(self, "private_ip_id")
 
     @property
     @pulumi.getter(name="publicIpPoolId")
-    def public_ip_pool_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def public_ip_pool_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "public_ip_pool_id")
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
-        """
-        Whether the public IP is regional or specific to a particular availability domain.
-        """
+    def scope(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The public IP's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

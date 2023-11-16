@@ -80,11 +80,11 @@ export interface GetManagementAgentPluginsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of management_agent_plugins.
      */
-    readonly managementAgentPlugins: outputs.ManagementAgent.GetManagementAgentPluginsManagementAgentPlugin[];
+    readonly managementAgentPlugins?: outputs.ManagementAgent.GetManagementAgentPluginsManagementAgentPlugin[];
     readonly platformTypes?: string[];
     /**
      * The current state of Management Agent Plugin

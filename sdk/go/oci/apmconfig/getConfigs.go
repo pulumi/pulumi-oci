@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Configs in Oracle Cloud Infrastructure Apm Config service.
@@ -94,7 +93,7 @@ type GetConfigsResult struct {
 	FreeformTagEquals []string           `pulumi:"freeformTagEquals"`
 	FreeformTagExists []string           `pulumi:"freeformTagExists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A string that specifies the group that an OPTIONS item belongs to.
 	OptionsGroup *string `pulumi:"optionsGroup"`
 }
@@ -152,12 +151,6 @@ func (o GetConfigsResultOutput) ToGetConfigsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsResult] {
-	return pulumix.Output[GetConfigsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -198,8 +191,8 @@ func (o GetConfigsResultOutput) FreeformTagExists() pulumi.StringArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConfigsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConfigsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConfigsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConfigsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A string that specifies the group that an OPTIONS item belongs to.

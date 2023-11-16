@@ -6,6 +6,8 @@ package com.pulumi.oci.Ocvp.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedVmwareSoftwareVersionsItem {
@@ -13,27 +15,27 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
      * @return A description of the software in the bundle.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A short, unique string that identifies the version of bundled software.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetSupportedVmwareSoftwareVersionsItem() {}
     /**
      * @return A description of the software in the bundle.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A short, unique string that identifies the version of bundled software.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String version;
+        private @Nullable String description;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetSupportedVmwareSoftwareVersionsItem build() {

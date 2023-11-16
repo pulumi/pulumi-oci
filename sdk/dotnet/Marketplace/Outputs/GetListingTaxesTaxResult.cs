@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// Unique code for the tax.
         /// </summary>
-        public readonly string Code;
+        public readonly string? Code;
         /// <summary>
         /// Country, which imposes the tax.
         /// </summary>
-        public readonly string Country;
+        public readonly string? Country;
         /// <summary>
         /// Name of the tax code.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The URL with more details about this tax.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetListingTaxesTaxResult(
-            string code,
+            string? code,
 
-            string country,
+            string? country,
 
-            string name,
+            string? name,
 
-            string url)
+            string? url)
         {
             Code = code;
             Country = country;

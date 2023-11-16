@@ -20,7 +20,7 @@ public final class GetAuditArchiveRetrievalsResult {
      * @return The list of audit_archive_retrieval_collection.
      * 
      */
-    private List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections;
+    private @Nullable List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections;
     private @Nullable String auditArchiveRetrievalId;
     /**
      * @return The OCID of the compartment that contains archive retrieval.
@@ -38,7 +38,7 @@ public final class GetAuditArchiveRetrievalsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the archive retrieval.
      * 
@@ -64,7 +64,7 @@ public final class GetAuditArchiveRetrievalsResult {
      * 
      */
     public List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections() {
-        return this.auditArchiveRetrievalCollections;
+        return this.auditArchiveRetrievalCollections == null ? List.of() : this.auditArchiveRetrievalCollections;
     }
     public Optional<String> auditArchiveRetrievalId() {
         return Optional.ofNullable(this.auditArchiveRetrievalId);
@@ -93,8 +93,8 @@ public final class GetAuditArchiveRetrievalsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the archive retrieval.
@@ -128,13 +128,13 @@ public final class GetAuditArchiveRetrievalsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections;
+        private @Nullable List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections;
         private @Nullable String auditArchiveRetrievalId;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetAuditArchiveRetrievalsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String timeOfExpiry;
@@ -160,8 +160,8 @@ public final class GetAuditArchiveRetrievalsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder auditArchiveRetrievalCollections(List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections) {
-            this.auditArchiveRetrievalCollections = Objects.requireNonNull(auditArchiveRetrievalCollections);
+        public Builder auditArchiveRetrievalCollections(@Nullable List<GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection> auditArchiveRetrievalCollections) {
+            this.auditArchiveRetrievalCollections = auditArchiveRetrievalCollections;
             return this;
         }
         public Builder auditArchiveRetrievalCollections(GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection... auditArchiveRetrievalCollections) {
@@ -196,8 +196,8 @@ public final class GetAuditArchiveRetrievalsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

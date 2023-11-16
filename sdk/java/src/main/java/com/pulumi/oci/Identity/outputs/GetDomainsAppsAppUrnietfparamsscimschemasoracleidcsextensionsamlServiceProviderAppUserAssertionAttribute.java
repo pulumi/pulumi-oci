@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute {
@@ -13,39 +15,39 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
      * @return Indicates the format of the assertion attribute.
      * 
      */
-    private String format;
+    private @Nullable String format;
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. &lt;br&gt;&lt;b&gt;Note&lt;/b&gt;: Attributes from extensions to the Core User schema are not supported in v1.0.
      * 
      */
-    private String userStoreAttributeName;
+    private @Nullable String userStoreAttributeName;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute() {}
     /**
      * @return Indicates the format of the assertion attribute.
      * 
      */
-    public String format() {
-        return this.format;
+    public Optional<String> format() {
+        return Optional.ofNullable(this.format);
     }
     /**
      * @return The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. &lt;br&gt;&lt;b&gt;Note&lt;/b&gt;: Attributes from extensions to the Core User schema are not supported in v1.0.
      * 
      */
-    public String userStoreAttributeName() {
-        return this.userStoreAttributeName;
+    public Optional<String> userStoreAttributeName() {
+        return Optional.ofNullable(this.userStoreAttributeName);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
     }
     @CustomType.Builder
     public static final class Builder {
-        private String format;
-        private String name;
-        private String userStoreAttributeName;
+        private @Nullable String format;
+        private @Nullable String name;
+        private @Nullable String userStoreAttributeName;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
         }
 
         @CustomType.Setter
-        public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+        public Builder format(@Nullable String format) {
+            this.format = format;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder userStoreAttributeName(String userStoreAttributeName) {
-            this.userStoreAttributeName = Objects.requireNonNull(userStoreAttributeName);
+        public Builder userStoreAttributeName(@Nullable String userStoreAttributeName) {
+            this.userStoreAttributeName = userStoreAttributeName;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute build() {

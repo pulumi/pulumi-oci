@@ -96,11 +96,11 @@ export interface GetReportsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of report_collection.
      */
-    readonly reportCollections: outputs.DataSafe.GetReportsReportCollection[];
+    readonly reportCollections?: outputs.DataSafe.GetReportsReportCollection[];
     /**
      * The OCID of the report definition.
      */

@@ -113,15 +113,15 @@ namespace Pulumi.Oci.LicenseManager
         /// The list of associated configuration email IDs.
         /// </summary>
         public readonly ImmutableArray<string> EmailIds;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetConfigurationResult(
@@ -129,11 +129,11 @@ namespace Pulumi.Oci.LicenseManager
 
             ImmutableArray<string> emailIds,
 
-            string id,
+            string? id,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             EmailIds = emailIds;

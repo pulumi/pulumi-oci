@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -89,7 +88,7 @@ type GetTargetDatabasesColumnsResult struct {
 	Datatypes []string                          `pulumi:"datatypes"`
 	Filters   []GetTargetDatabasesColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string  `pulumi:"id"`
+	Id                 *string `pulumi:"id"`
 	SchemaNameContains *string `pulumi:"schemaNameContains"`
 	// Name of the schema.
 	SchemaNames       []string `pulumi:"schemaNames"`
@@ -152,12 +151,6 @@ func (o GetTargetDatabasesColumnsResultOutput) ToGetTargetDatabasesColumnsResult
 	return o
 }
 
-func (o GetTargetDatabasesColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTargetDatabasesColumnsResult] {
-	return pulumix.Output[GetTargetDatabasesColumnsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTargetDatabasesColumnsResultOutput) ColumnNameContains() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetDatabasesColumnsResult) *string { return v.ColumnNameContains }).(pulumi.StringPtrOutput)
 }
@@ -181,8 +174,8 @@ func (o GetTargetDatabasesColumnsResultOutput) Filters() GetTargetDatabasesColum
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTargetDatabasesColumnsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTargetDatabasesColumnsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTargetDatabasesColumnsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetDatabasesColumnsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTargetDatabasesColumnsResultOutput) SchemaNameContains() pulumi.StringPtrOutput {

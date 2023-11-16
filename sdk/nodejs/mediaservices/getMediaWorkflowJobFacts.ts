@@ -62,7 +62,7 @@ export interface GetMediaWorkflowJobFactsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
      */
@@ -70,7 +70,7 @@ export interface GetMediaWorkflowJobFactsResult {
     /**
      * The list of media_workflow_job_fact_collection.
      */
-    readonly mediaWorkflowJobFactCollections: outputs.MediaServices.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection[];
+    readonly mediaWorkflowJobFactCollections?: outputs.MediaServices.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection[];
     /**
      * Reference to the parent job.
      */

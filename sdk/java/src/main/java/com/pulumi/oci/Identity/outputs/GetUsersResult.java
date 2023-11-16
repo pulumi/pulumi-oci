@@ -29,7 +29,7 @@ public final class GetUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
      * 
@@ -49,7 +49,7 @@ public final class GetUsersResult {
      * @return The list of users.
      * 
      */
-    private List<GetUsersUser> users;
+    private @Nullable List<GetUsersUser> users;
 
     private GetUsersResult() {}
     /**
@@ -73,8 +73,8 @@ public final class GetUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
@@ -102,7 +102,7 @@ public final class GetUsersResult {
      * 
      */
     public List<GetUsersUser> users() {
-        return this.users;
+        return this.users == null ? List.of() : this.users;
     }
 
     public static Builder builder() {
@@ -117,11 +117,11 @@ public final class GetUsersResult {
         private String compartmentId;
         private @Nullable String externalIdentifier;
         private @Nullable List<GetUsersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String identityProviderId;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetUsersUser> users;
+        private @Nullable List<GetUsersUser> users;
         public Builder() {}
         public Builder(GetUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,8 +154,8 @@ public final class GetUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -174,8 +174,8 @@ public final class GetUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder users(List<GetUsersUser> users) {
-            this.users = Objects.requireNonNull(users);
+        public Builder users(@Nullable List<GetUsersUser> users) {
+            this.users = users;
             return this;
         }
         public Builder users(GetUsersUser... users) {

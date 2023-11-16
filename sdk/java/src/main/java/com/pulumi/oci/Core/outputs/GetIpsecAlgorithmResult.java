@@ -11,6 +11,8 @@ import com.pulumi.oci.Core.outputs.GetIpsecAlgorithmDefaultPhaseTwoParameter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIpsecAlgorithmResult {
@@ -18,27 +20,27 @@ public final class GetIpsecAlgorithmResult {
      * @return Allowed phase one parameters.
      * 
      */
-    private List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters;
+    private @Nullable List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters;
     /**
      * @return Allowed phase two parameters.
      * 
      */
-    private List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters;
+    private @Nullable List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters;
     /**
      * @return Default phase one parameters.
      * 
      */
-    private List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters;
+    private @Nullable List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters;
     /**
      * @return Default phase two parameters.
      * 
      */
-    private List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters;
+    private @Nullable List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetIpsecAlgorithmResult() {}
     /**
@@ -46,35 +48,35 @@ public final class GetIpsecAlgorithmResult {
      * 
      */
     public List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters() {
-        return this.allowedPhaseOneParameters;
+        return this.allowedPhaseOneParameters == null ? List.of() : this.allowedPhaseOneParameters;
     }
     /**
      * @return Allowed phase two parameters.
      * 
      */
     public List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters() {
-        return this.allowedPhaseTwoParameters;
+        return this.allowedPhaseTwoParameters == null ? List.of() : this.allowedPhaseTwoParameters;
     }
     /**
      * @return Default phase one parameters.
      * 
      */
     public List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters() {
-        return this.defaultPhaseOneParameters;
+        return this.defaultPhaseOneParameters == null ? List.of() : this.defaultPhaseOneParameters;
     }
     /**
      * @return Default phase two parameters.
      * 
      */
     public List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters() {
-        return this.defaultPhaseTwoParameters;
+        return this.defaultPhaseTwoParameters == null ? List.of() : this.defaultPhaseTwoParameters;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -86,11 +88,11 @@ public final class GetIpsecAlgorithmResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters;
-        private List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters;
-        private List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters;
-        private List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters;
-        private String id;
+        private @Nullable List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters;
+        private @Nullable List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters;
+        private @Nullable List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters;
+        private @Nullable List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetIpsecAlgorithmResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,40 +104,40 @@ public final class GetIpsecAlgorithmResult {
         }
 
         @CustomType.Setter
-        public Builder allowedPhaseOneParameters(List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters) {
-            this.allowedPhaseOneParameters = Objects.requireNonNull(allowedPhaseOneParameters);
+        public Builder allowedPhaseOneParameters(@Nullable List<GetIpsecAlgorithmAllowedPhaseOneParameter> allowedPhaseOneParameters) {
+            this.allowedPhaseOneParameters = allowedPhaseOneParameters;
             return this;
         }
         public Builder allowedPhaseOneParameters(GetIpsecAlgorithmAllowedPhaseOneParameter... allowedPhaseOneParameters) {
             return allowedPhaseOneParameters(List.of(allowedPhaseOneParameters));
         }
         @CustomType.Setter
-        public Builder allowedPhaseTwoParameters(List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters) {
-            this.allowedPhaseTwoParameters = Objects.requireNonNull(allowedPhaseTwoParameters);
+        public Builder allowedPhaseTwoParameters(@Nullable List<GetIpsecAlgorithmAllowedPhaseTwoParameter> allowedPhaseTwoParameters) {
+            this.allowedPhaseTwoParameters = allowedPhaseTwoParameters;
             return this;
         }
         public Builder allowedPhaseTwoParameters(GetIpsecAlgorithmAllowedPhaseTwoParameter... allowedPhaseTwoParameters) {
             return allowedPhaseTwoParameters(List.of(allowedPhaseTwoParameters));
         }
         @CustomType.Setter
-        public Builder defaultPhaseOneParameters(List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters) {
-            this.defaultPhaseOneParameters = Objects.requireNonNull(defaultPhaseOneParameters);
+        public Builder defaultPhaseOneParameters(@Nullable List<GetIpsecAlgorithmDefaultPhaseOneParameter> defaultPhaseOneParameters) {
+            this.defaultPhaseOneParameters = defaultPhaseOneParameters;
             return this;
         }
         public Builder defaultPhaseOneParameters(GetIpsecAlgorithmDefaultPhaseOneParameter... defaultPhaseOneParameters) {
             return defaultPhaseOneParameters(List.of(defaultPhaseOneParameters));
         }
         @CustomType.Setter
-        public Builder defaultPhaseTwoParameters(List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters) {
-            this.defaultPhaseTwoParameters = Objects.requireNonNull(defaultPhaseTwoParameters);
+        public Builder defaultPhaseTwoParameters(@Nullable List<GetIpsecAlgorithmDefaultPhaseTwoParameter> defaultPhaseTwoParameters) {
+            this.defaultPhaseTwoParameters = defaultPhaseTwoParameters;
             return this;
         }
         public Builder defaultPhaseTwoParameters(GetIpsecAlgorithmDefaultPhaseTwoParameter... defaultPhaseTwoParameters) {
             return defaultPhaseTwoParameters(List.of(defaultPhaseTwoParameters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetIpsecAlgorithmResult build() {

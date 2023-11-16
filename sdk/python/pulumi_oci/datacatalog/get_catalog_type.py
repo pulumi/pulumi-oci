@@ -71,25 +71,16 @@ class GetCatalogTypeResult:
     @property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> str:
-        """
-        The data catalog's OCID.
-        """
         return pulumi.get(self, "catalog_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Detailed description of the type.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="externalTypeName")
-    def external_type_name(self) -> str:
-        """
-        Mapping type equivalence in the external system.
-        """
+    def external_type_name(self) -> Optional[str]:
         return pulumi.get(self, "external_type_name")
 
     @property
@@ -99,7 +90,7 @@ class GetCatalogTypeResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -107,66 +98,42 @@ class GetCatalogTypeResult:
 
     @property
     @pulumi.getter(name="isApproved")
-    def is_approved(self) -> bool:
-        """
-        Indicates whether the type is approved for use as a classifying object.
-        """
+    def is_approved(self) -> Optional[bool]:
         return pulumi.get(self, "is_approved")
 
     @property
     @pulumi.getter(name="isInternal")
-    def is_internal(self) -> bool:
-        """
-        Indicates whether the type is internal, making it unavailable for use by metadata elements.
-        """
+    def is_internal(self) -> Optional[bool]:
         return pulumi.get(self, "is_internal")
 
     @property
     @pulumi.getter(name="isTag")
-    def is_tag(self) -> bool:
-        """
-        Indicates whether the type can be used for tagging metadata elements.
-        """
+    def is_tag(self) -> Optional[bool]:
         return pulumi.get(self, "is_tag")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique type key that is immutable.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The immutable name of the type.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
-        """
-        A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
-        """
+    def properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="typeCategory")
-    def type_category(self) -> str:
-        """
-        Indicates the category this type belongs to. For instance, data assets, connections.
-        """
+    def type_category(self) -> Optional[str]:
         return pulumi.get(self, "type_category")
 
     @property
@@ -176,10 +143,7 @@ class GetCatalogTypeResult:
 
     @property
     @pulumi.getter
-    def uri(self) -> str:
-        """
-        URI to the type instance in the API.
-        """
+    def uri(self) -> Optional[str]:
         return pulumi.get(self, "uri")
 
 
@@ -211,25 +175,7 @@ def get_catalog_type(catalog_id: Optional[str] = None,
                      type_key: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogTypeResult:
     """
-    This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific type by key within a data catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_type = oci.DataCatalog.get_catalog_type(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        type_key=var["catalog_type_type_key"],
-        fields=var["catalog_type_fields"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param Sequence[str] fields: Specifies the fields to return in a type response.
-    :param str type_key: Unique type key.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -262,24 +208,6 @@ def get_catalog_type_output(catalog_id: Optional[pulumi.Input[str]] = None,
                             type_key: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogTypeResult]:
     """
-    This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a specific type by key within a data catalog.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog_type = oci.DataCatalog.get_catalog_type(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        type_key=var["catalog_type_type_key"],
-        fields=var["catalog_type_fields"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
-    :param Sequence[str] fields: Specifies the fields to return in a type response.
-    :param str type_key: Unique type key.
+    Use this data source to access information about an existing resource.
     """
     ...

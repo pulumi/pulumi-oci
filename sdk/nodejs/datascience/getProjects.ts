@@ -90,7 +90,7 @@ export interface GetProjectsResult {
     /**
      * The list of projects.
      */
-    readonly projects: outputs.DataScience.GetProjectsProject[];
+    readonly projects?: outputs.DataScience.GetProjectsProject[];
     /**
      * The state of the project.
      */

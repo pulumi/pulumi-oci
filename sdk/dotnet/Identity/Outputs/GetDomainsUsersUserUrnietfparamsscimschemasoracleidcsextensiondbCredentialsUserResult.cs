@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The number of failed login attempts. The value is reset to 0 after a successful login.
         /// </summary>
-        public readonly int DbLoginAttempts;
+        public readonly int? DbLoginAttempts;
         /// <summary>
         /// The database username.
         /// </summary>
-        public readonly string DbUserName;
+        public readonly string? DbUserName;
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserResult(
-            int dbLoginAttempts,
+            int? dbLoginAttempts,
 
-            string dbUserName)
+            string? dbUserName)
         {
             DbLoginAttempts = dbLoginAttempts;
             DbUserName = dbUserName;

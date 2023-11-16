@@ -129,7 +129,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The list of table_statistics_collection.
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseTableStatisticsResult(
             ImmutableArray<Outputs.GetManagedDatabaseTableStatisticsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue {
@@ -13,39 +15,39 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      * @return configuration list item type, either CUSTOM or MANAGED
      * 
      */
-    private String listType;
+    private @Nullable String listType;
     /**
      * @return type of the managed list
      * 
      */
-    private String managedListType;
+    private @Nullable String managedListType;
     /**
      * @return configuration value
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue() {}
     /**
      * @return configuration list item type, either CUSTOM or MANAGED
      * 
      */
-    public String listType() {
-        return this.listType;
+    public Optional<String> listType() {
+        return Optional.ofNullable(this.listType);
     }
     /**
      * @return type of the managed list
      * 
      */
-    public String managedListType() {
-        return this.managedListType;
+    public Optional<String> managedListType() {
+        return Optional.ofNullable(this.managedListType);
     }
     /**
      * @return configuration value
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String listType;
-        private String managedListType;
-        private String value;
+        private @Nullable String listType;
+        private @Nullable String managedListType;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         }
 
         @CustomType.Setter
-        public Builder listType(String listType) {
-            this.listType = Objects.requireNonNull(listType);
+        public Builder listType(@Nullable String listType) {
+            this.listType = listType;
             return this;
         }
         @CustomType.Setter
-        public Builder managedListType(String managedListType) {
-            this.managedListType = Objects.requireNonNull(managedListType);
+        public Builder managedListType(@Nullable String managedListType) {
+            this.managedListType = managedListType;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue build() {

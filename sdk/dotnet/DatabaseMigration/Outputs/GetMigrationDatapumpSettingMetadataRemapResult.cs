@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Specifies the new value that oldValue should be translated into.
         /// </summary>
-        public readonly string NewValue;
+        public readonly string? NewValue;
         /// <summary>
         /// Specifies the value which needs to be reset.
         /// </summary>
-        public readonly string OldValue;
+        public readonly string? OldValue;
         /// <summary>
         /// Migration type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMigrationDatapumpSettingMetadataRemapResult(
-            string newValue,
+            string? newValue,
 
-            string oldValue,
+            string? oldValue,
 
-            string type)
+            string? type)
         {
             NewValue = newValue;
             OldValue = oldValue;

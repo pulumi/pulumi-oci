@@ -54,10 +54,6 @@ class OdaInstanceRestrictedOperation(dict):
     def __init__(__self__, *,
                  operation_name: Optional[str] = None,
                  restricting_service: Optional[str] = None):
-        """
-        :param str operation_name: Name of the restricted operation.
-        :param str restricting_service: Name of the service restricting the operation.
-        """
         if operation_name is not None:
             pulumi.set(__self__, "operation_name", operation_name)
         if restricting_service is not None:
@@ -66,17 +62,11 @@ class OdaInstanceRestrictedOperation(dict):
     @property
     @pulumi.getter(name="operationName")
     def operation_name(self) -> Optional[str]:
-        """
-        Name of the restricted operation.
-        """
         return pulumi.get(self, "operation_name")
 
     @property
     @pulumi.getter(name="restrictingService")
     def restricting_service(self) -> Optional[str]:
-        """
-        Name of the service restricting the operation.
-        """
         return pulumi.get(self, "restricting_service")
 
 
@@ -107,11 +97,6 @@ class OdaPrivateEndpointScanProxyScanListenerInfo(dict):
                  scan_listener_fqdn: Optional[str] = None,
                  scan_listener_ip: Optional[str] = None,
                  scan_listener_port: Optional[int] = None):
-        """
-        :param str scan_listener_fqdn: FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param str scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        :param int scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
         if scan_listener_fqdn is not None:
             pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
         if scan_listener_ip is not None:
@@ -122,54 +107,37 @@ class OdaPrivateEndpointScanProxyScanListenerInfo(dict):
     @property
     @pulumi.getter(name="scanListenerFqdn")
     def scan_listener_fqdn(self) -> Optional[str]:
-        """
-        FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
         return pulumi.get(self, "scan_listener_fqdn")
 
     @property
     @pulumi.getter(name="scanListenerIp")
     def scan_listener_ip(self) -> Optional[str]:
-        """
-        A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        """
         return pulumi.get(self, "scan_listener_ip")
 
     @property
     @pulumi.getter(name="scanListenerPort")
     def scan_listener_port(self) -> Optional[int]:
-        """
-        The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
         return pulumi.get(self, "scan_listener_port")
 
 
 @pulumi.output_type
 class GetOdaInstanceRestrictedOperationResult(dict):
     def __init__(__self__, *,
-                 operation_name: str,
-                 restricting_service: str):
-        """
-        :param str operation_name: Name of the restricted operation.
-        :param str restricting_service: Name of the service restricting the operation.
-        """
-        pulumi.set(__self__, "operation_name", operation_name)
-        pulumi.set(__self__, "restricting_service", restricting_service)
+                 operation_name: Optional[str] = None,
+                 restricting_service: Optional[str] = None):
+        if operation_name is not None:
+            pulumi.set(__self__, "operation_name", operation_name)
+        if restricting_service is not None:
+            pulumi.set(__self__, "restricting_service", restricting_service)
 
     @property
     @pulumi.getter(name="operationName")
-    def operation_name(self) -> str:
-        """
-        Name of the restricted operation.
-        """
+    def operation_name(self) -> Optional[str]:
         return pulumi.get(self, "operation_name")
 
     @property
     @pulumi.getter(name="restrictingService")
-    def restricting_service(self) -> str:
-        """
-        Name of the service restricting the operation.
-        """
+    def restricting_service(self) -> Optional[str]:
         return pulumi.get(self, "restricting_service")
 
 
@@ -203,289 +171,210 @@ class GetOdaInstancesFilterResult(dict):
 @pulumi.output_type
 class GetOdaInstancesOdaInstanceResult(dict):
     def __init__(__self__, *,
-                 attachment_ids: Sequence[str],
-                 attachment_types: Sequence[str],
-                 compartment_id: str,
-                 connector_url: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 identity_app_console_url: str,
-                 identity_app_guid: str,
-                 identity_domain: str,
-                 imported_package_ids: Sequence[str],
-                 imported_package_names: Sequence[str],
-                 is_role_based_access: bool,
-                 lifecycle_sub_state: str,
-                 restricted_operations: Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult'],
-                 shape_name: str,
-                 state: str,
-                 state_message: str,
-                 time_created: str,
-                 time_updated: str,
-                 web_app_url: str):
-        """
-        :param Sequence[str] attachment_ids: A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        :param Sequence[str] attachment_types: A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
-        :param str compartment_id: List the Digital Assistant instances that belong to this compartment.
-        :param str connector_url: URL for the connector's endpoint.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description of the Digital Assistant instance.
-        :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        :param str id: Unique immutable identifier that was assigned when the instance was created.
-        :param str identity_app_console_url: If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-        :param str identity_app_guid: If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-        :param str identity_domain: If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        :param Sequence[str] imported_package_ids: A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
-        :param Sequence[str] imported_package_names: A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
-        :param bool is_role_based_access: Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        :param str lifecycle_sub_state: The current sub-state of the Digital Assistant instance.
-        :param Sequence['GetOdaInstancesOdaInstanceRestrictedOperationArgs'] restricted_operations: A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        :param str shape_name: Shape or size of the instance.
-        :param str state: List only the Digital Assistant instances that are in this lifecycle state.
-        :param str state_message: A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-        :param str time_created: When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str time_updated: When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str web_app_url: URL for the Digital Assistant web application that's associated with the instance.
-        """
-        pulumi.set(__self__, "attachment_ids", attachment_ids)
-        pulumi.set(__self__, "attachment_types", attachment_types)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connector_url", connector_url)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "identity_app_console_url", identity_app_console_url)
-        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
-        pulumi.set(__self__, "identity_domain", identity_domain)
-        pulumi.set(__self__, "imported_package_ids", imported_package_ids)
-        pulumi.set(__self__, "imported_package_names", imported_package_names)
-        pulumi.set(__self__, "is_role_based_access", is_role_based_access)
-        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
-        pulumi.set(__self__, "restricted_operations", restricted_operations)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "web_app_url", web_app_url)
+                 attachment_ids: Optional[Sequence[str]] = None,
+                 attachment_types: Optional[Sequence[str]] = None,
+                 compartment_id: Optional[str] = None,
+                 connector_url: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 identity_app_console_url: Optional[str] = None,
+                 identity_app_guid: Optional[str] = None,
+                 identity_domain: Optional[str] = None,
+                 imported_package_ids: Optional[Sequence[str]] = None,
+                 imported_package_names: Optional[Sequence[str]] = None,
+                 is_role_based_access: Optional[bool] = None,
+                 lifecycle_sub_state: Optional[str] = None,
+                 restricted_operations: Optional[Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult']] = None,
+                 shape_name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_message: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 web_app_url: Optional[str] = None):
+        if attachment_ids is not None:
+            pulumi.set(__self__, "attachment_ids", attachment_ids)
+        if attachment_types is not None:
+            pulumi.set(__self__, "attachment_types", attachment_types)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connector_url is not None:
+            pulumi.set(__self__, "connector_url", connector_url)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if identity_app_console_url is not None:
+            pulumi.set(__self__, "identity_app_console_url", identity_app_console_url)
+        if identity_app_guid is not None:
+            pulumi.set(__self__, "identity_app_guid", identity_app_guid)
+        if identity_domain is not None:
+            pulumi.set(__self__, "identity_domain", identity_domain)
+        if imported_package_ids is not None:
+            pulumi.set(__self__, "imported_package_ids", imported_package_ids)
+        if imported_package_names is not None:
+            pulumi.set(__self__, "imported_package_names", imported_package_names)
+        if is_role_based_access is not None:
+            pulumi.set(__self__, "is_role_based_access", is_role_based_access)
+        if lifecycle_sub_state is not None:
+            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if restricted_operations is not None:
+            pulumi.set(__self__, "restricted_operations", restricted_operations)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_message is not None:
+            pulumi.set(__self__, "state_message", state_message)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if web_app_url is not None:
+            pulumi.set(__self__, "web_app_url", web_app_url)
 
     @property
     @pulumi.getter(name="attachmentIds")
-    def attachment_ids(self) -> Sequence[str]:
-        """
-        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        """
+    def attachment_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "attachment_ids")
 
     @property
     @pulumi.getter(name="attachmentTypes")
-    def attachment_types(self) -> Sequence[str]:
-        """
-        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
-        """
+    def attachment_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "attachment_types")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        List the Digital Assistant instances that belong to this compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectorUrl")
-    def connector_url(self) -> str:
-        """
-        URL for the connector's endpoint.
-        """
+    def connector_url(self) -> Optional[str]:
         return pulumi.get(self, "connector_url")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the Digital Assistant instance.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique immutable identifier that was assigned when the instance was created.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="identityAppConsoleUrl")
-    def identity_app_console_url(self) -> str:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
-        """
+    def identity_app_console_url(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_console_url")
 
     @property
     @pulumi.getter(name="identityAppGuid")
-    def identity_app_guid(self) -> str:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
-        """
+    def identity_app_guid(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_guid")
 
     @property
     @pulumi.getter(name="identityDomain")
-    def identity_domain(self) -> str:
-        """
-        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
-        """
+    def identity_domain(self) -> Optional[str]:
         return pulumi.get(self, "identity_domain")
 
     @property
     @pulumi.getter(name="importedPackageIds")
-    def imported_package_ids(self) -> Sequence[str]:
-        """
-        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
-        """
+    def imported_package_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "imported_package_ids")
 
     @property
     @pulumi.getter(name="importedPackageNames")
-    def imported_package_names(self) -> Sequence[str]:
-        """
-        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
-        """
+    def imported_package_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "imported_package_names")
 
     @property
     @pulumi.getter(name="isRoleBasedAccess")
-    def is_role_based_access(self) -> bool:
-        """
-        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
-        """
+    def is_role_based_access(self) -> Optional[bool]:
         return pulumi.get(self, "is_role_based_access")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> str:
-        """
-        The current sub-state of the Digital Assistant instance.
-        """
+    def lifecycle_sub_state(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="restrictedOperations")
-    def restricted_operations(self) -> Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult']:
-        """
-        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
-        """
+    def restricted_operations(self) -> Optional[Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult']]:
         return pulumi.get(self, "restricted_operations")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        Shape or size of the instance.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        List only the Digital Assistant instances that are in this lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="webAppUrl")
-    def web_app_url(self) -> str:
-        """
-        URL for the Digital Assistant web application that's associated with the instance.
-        """
+    def web_app_url(self) -> Optional[str]:
         return pulumi.get(self, "web_app_url")
 
 
 @pulumi.output_type
 class GetOdaInstancesOdaInstanceRestrictedOperationResult(dict):
     def __init__(__self__, *,
-                 operation_name: str,
-                 restricting_service: str):
-        """
-        :param str operation_name: Name of the restricted operation.
-        :param str restricting_service: Name of the service restricting the operation.
-        """
-        pulumi.set(__self__, "operation_name", operation_name)
-        pulumi.set(__self__, "restricting_service", restricting_service)
+                 operation_name: Optional[str] = None,
+                 restricting_service: Optional[str] = None):
+        if operation_name is not None:
+            pulumi.set(__self__, "operation_name", operation_name)
+        if restricting_service is not None:
+            pulumi.set(__self__, "restricting_service", restricting_service)
 
     @property
     @pulumi.getter(name="operationName")
-    def operation_name(self) -> str:
-        """
-        Name of the restricted operation.
-        """
+    def operation_name(self) -> Optional[str]:
         return pulumi.get(self, "operation_name")
 
     @property
     @pulumi.getter(name="restrictingService")
-    def restricting_service(self) -> str:
-        """
-        Name of the service restricting the operation.
-        """
+    def restricting_service(self) -> Optional[str]:
         return pulumi.get(self, "restricting_service")
 
 
@@ -519,96 +408,74 @@ class GetOdaPrivateEndpointAttachmentsFilterResult(dict):
 @pulumi.output_type
 class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 id: str,
-                 oda_instance_id: str,
-                 oda_private_endpoint_id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: List the ODA Private Endpoint Attachments that belong to this compartment.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-        :param str oda_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        :param str oda_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-        :param str state: List only the ODA Private Endpoint Attachments that are in this lifecycle state.
-        :param str time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "oda_instance_id", oda_instance_id)
-        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 oda_instance_id: Optional[str] = None,
+                 oda_private_endpoint_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if oda_instance_id is not None:
+            pulumi.set(__self__, "oda_instance_id", oda_instance_id)
+        if oda_private_endpoint_id is not None:
+            pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        List the ODA Private Endpoint Attachments that belong to this compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Attachment.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="odaInstanceId")
-    def oda_instance_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
-        """
+    def oda_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "oda_instance_id")
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
-    def oda_private_endpoint_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint.
-        """
+    def oda_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        List only the ODA Private Endpoint Attachments that are in this lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -642,176 +509,132 @@ class GetOdaPrivateEndpointScanProxiesFilterResult(dict):
 @pulumi.output_type
 class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 id: str,
-                 oda_private_endpoint_id: str,
-                 protocol: str,
-                 scan_listener_infos: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult'],
-                 scan_listener_type: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-        :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
-        :param Sequence['GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoArgs'] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param str scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
-        :param str state: List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
-        :param str time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
-        pulumi.set(__self__, "scan_listener_type", scan_listener_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 id: Optional[str] = None,
+                 oda_private_endpoint_id: Optional[str] = None,
+                 protocol: Optional[str] = None,
+                 scan_listener_infos: Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult']] = None,
+                 scan_listener_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if oda_private_endpoint_id is not None:
+            pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if scan_listener_infos is not None:
+            pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
+        if scan_listener_type is not None:
+            pulumi.set(__self__, "scan_listener_type", scan_listener_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
-    def oda_private_endpoint_id(self) -> str:
-        """
-        Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def oda_private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        The protocol used for communication between client, scanProxy and RAC's scan listeners
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="scanListenerInfos")
-    def scan_listener_infos(self) -> Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult']:
-        """
-        The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
+    def scan_listener_infos(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult']]:
         return pulumi.get(self, "scan_listener_infos")
 
     @property
     @pulumi.getter(name="scanListenerType")
-    def scan_listener_type(self) -> str:
-        """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs
-        """
+    def scan_listener_type(self) -> Optional[str]:
         return pulumi.get(self, "scan_listener_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult(dict):
     def __init__(__self__, *,
-                 scan_listener_fqdn: str,
-                 scan_listener_ip: str,
-                 scan_listener_port: int):
-        """
-        :param str scan_listener_fqdn: FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param str scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        :param int scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
-        pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
-        pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
-        pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+                 scan_listener_fqdn: Optional[str] = None,
+                 scan_listener_ip: Optional[str] = None,
+                 scan_listener_port: Optional[int] = None):
+        if scan_listener_fqdn is not None:
+            pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
+        if scan_listener_ip is not None:
+            pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
+        if scan_listener_port is not None:
+            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
 
     @property
     @pulumi.getter(name="scanListenerFqdn")
-    def scan_listener_fqdn(self) -> str:
-        """
-        FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
+    def scan_listener_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "scan_listener_fqdn")
 
     @property
     @pulumi.getter(name="scanListenerIp")
-    def scan_listener_ip(self) -> str:
-        """
-        A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        """
+    def scan_listener_ip(self) -> Optional[str]:
         return pulumi.get(self, "scan_listener_ip")
 
     @property
     @pulumi.getter(name="scanListenerPort")
-    def scan_listener_port(self) -> int:
-        """
-        The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
+    def scan_listener_port(self) -> Optional[int]:
         return pulumi.get(self, "scan_listener_port")
 
 
 @pulumi.output_type
 class GetOdaPrivateEndpointScanProxyScanListenerInfoResult(dict):
     def __init__(__self__, *,
-                 scan_listener_fqdn: str,
-                 scan_listener_ip: str,
-                 scan_listener_port: int):
-        """
-        :param str scan_listener_fqdn: FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param str scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        :param int scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
-        pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
-        pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
-        pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+                 scan_listener_fqdn: Optional[str] = None,
+                 scan_listener_ip: Optional[str] = None,
+                 scan_listener_port: Optional[int] = None):
+        if scan_listener_fqdn is not None:
+            pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
+        if scan_listener_ip is not None:
+            pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
+        if scan_listener_port is not None:
+            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
 
     @property
     @pulumi.getter(name="scanListenerFqdn")
-    def scan_listener_fqdn(self) -> str:
-        """
-        FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
-        """
+    def scan_listener_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "scan_listener_fqdn")
 
     @property
     @pulumi.getter(name="scanListenerIp")
-    def scan_listener_ip(self) -> str:
-        """
-        A SCAN listener's IP of the customer's Real Application Cluster (RAC).
-        """
+    def scan_listener_ip(self) -> Optional[str]:
         return pulumi.get(self, "scan_listener_ip")
 
     @property
     @pulumi.getter(name="scanListenerPort")
-    def scan_listener_port(self) -> int:
-        """
-        The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
-        """
+    def scan_listener_port(self) -> Optional[int]:
         return pulumi.get(self, "scan_listener_port")
 
 
@@ -845,140 +668,106 @@ class GetOdaPrivateEndpointsFilterResult(dict):
 @pulumi.output_type
 class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 nsg_ids: Sequence[str],
-                 state: str,
-                 subnet_id: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: List the ODA Private Endpoints that belong to this compartment.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description of the ODA private endpoint.
-        :param str display_name: List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-        :param Sequence[str] nsg_ids: List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-        :param str state: List only the ODA Private Endpoints that are in this lifecycle state.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-        :param str time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param str time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        List the ODA Private Endpoints that belong to this compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the ODA private endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        List only the ODA Private Endpoints that are in this lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 

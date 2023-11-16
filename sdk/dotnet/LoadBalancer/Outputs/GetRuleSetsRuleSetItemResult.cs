@@ -16,7 +16,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The list of HTTP methods allowed for this listener.
         /// </summary>
@@ -24,26 +24,26 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
         /// </summary>
-        public readonly bool AreInvalidCharactersAllowed;
+        public readonly bool? AreInvalidCharactersAllowed;
         public readonly ImmutableArray<Outputs.GetRuleSetsRuleSetItemConditionResult> Conditions;
         /// <summary>
         /// A brief description of the access control rule. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A header name that conforms to RFC 7230.  Example: `example_header_name`
         /// </summary>
-        public readonly string Header;
+        public readonly string? Header;
         /// <summary>
         /// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
         /// </summary>
-        public readonly int HttpLargeHeaderSizeInKb;
+        public readonly int? HttpLargeHeaderSizeInKb;
         /// <summary>
         /// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// </summary>
-        public readonly string Prefix;
+        public readonly string? Prefix;
         /// <summary>
         /// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
         /// </summary>
@@ -51,51 +51,51 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The HTTP status code to return when the incoming request is redirected.
         /// </summary>
-        public readonly int ResponseCode;
+        public readonly int? ResponseCode;
         /// <summary>
         /// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
         /// </summary>
-        public readonly int StatusCode;
+        public readonly int? StatusCode;
         /// <summary>
         /// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// </summary>
-        public readonly string Suffix;
+        public readonly string? Suffix;
         /// <summary>
         /// A header value that conforms to RFC 7230. With the following exceptions:
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetRuleSetsRuleSetItemResult(
-            string action,
+            string? action,
 
             ImmutableArray<string> allowedMethods,
 
-            bool areInvalidCharactersAllowed,
+            bool? areInvalidCharactersAllowed,
 
             ImmutableArray<Outputs.GetRuleSetsRuleSetItemConditionResult> conditions,
 
-            string description,
+            string? description,
 
-            string header,
+            string? header,
 
-            int httpLargeHeaderSizeInKb,
+            int? httpLargeHeaderSizeInKb,
 
-            string prefix,
+            string? prefix,
 
             ImmutableArray<Outputs.GetRuleSetsRuleSetItemRedirectUriResult> redirectUris,
 
-            int responseCode,
+            int? responseCode,
 
-            int statusCode,
+            int? statusCode,
 
-            string suffix,
+            string? suffix,
 
-            string value)
+            string? value)
         {
             Action = action;
             AllowedMethods = allowedMethods;

@@ -32,12 +32,12 @@ public final class GetMaskingPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of masking_policy_collection.
      * 
      */
-    private List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections;
+    private @Nullable List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections;
     private @Nullable String maskingPolicyId;
     /**
      * @return The OCID of the sensitive data model that&#39;s used as the source of masking columns.
@@ -85,15 +85,15 @@ public final class GetMaskingPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of masking_policy_collection.
      * 
      */
     public List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections() {
-        return this.maskingPolicyCollections;
+        return this.maskingPolicyCollections == null ? List.of() : this.maskingPolicyCollections;
     }
     public Optional<String> maskingPolicyId() {
         return Optional.ofNullable(this.maskingPolicyId);
@@ -140,8 +140,8 @@ public final class GetMaskingPoliciesResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetMaskingPoliciesFilter> filters;
-        private String id;
-        private List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections;
         private @Nullable String maskingPolicyId;
         private @Nullable String sensitiveDataModelId;
         private @Nullable String state;
@@ -195,13 +195,13 @@ public final class GetMaskingPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingPolicyCollections(List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections) {
-            this.maskingPolicyCollections = Objects.requireNonNull(maskingPolicyCollections);
+        public Builder maskingPolicyCollections(@Nullable List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections) {
+            this.maskingPolicyCollections = maskingPolicyCollections;
             return this;
         }
         public Builder maskingPolicyCollections(GetMaskingPoliciesMaskingPolicyCollection... maskingPolicyCollections) {

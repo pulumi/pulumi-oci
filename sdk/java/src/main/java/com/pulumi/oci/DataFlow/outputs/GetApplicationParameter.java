@@ -6,6 +6,8 @@ package com.pulumi.oci.DataFlow.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApplicationParameter {
@@ -13,27 +15,27 @@ public final class GetApplicationParameter {
      * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: &#34;&#34; (empty string), &#34;10&#34;, &#34;mydata.xml&#34;, &#34;${x}&#34;
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetApplicationParameter() {}
     /**
      * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: &#34;&#34; (empty string), &#34;10&#34;, &#34;mydata.xml&#34;, &#34;${x}&#34;
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetApplicationParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String value;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetApplicationParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetApplicationParameter {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetApplicationParameter build() {

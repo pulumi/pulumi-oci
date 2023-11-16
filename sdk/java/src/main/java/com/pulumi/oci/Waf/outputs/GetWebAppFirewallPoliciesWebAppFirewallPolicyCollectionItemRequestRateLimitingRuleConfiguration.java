@@ -6,6 +6,8 @@ package com.pulumi.oci.Waf.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration {
@@ -13,39 +15,39 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * @return Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
      * 
      */
-    private Integer actionDurationInSeconds;
+    private @Nullable Integer actionDurationInSeconds;
     /**
      * @return Evaluation period in seconds.
      * 
      */
-    private Integer periodInSeconds;
+    private @Nullable Integer periodInSeconds;
     /**
      * @return Requests allowed per evaluation period.
      * 
      */
-    private Integer requestsLimit;
+    private @Nullable Integer requestsLimit;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration() {}
     /**
      * @return Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
      * 
      */
-    public Integer actionDurationInSeconds() {
-        return this.actionDurationInSeconds;
+    public Optional<Integer> actionDurationInSeconds() {
+        return Optional.ofNullable(this.actionDurationInSeconds);
     }
     /**
      * @return Evaluation period in seconds.
      * 
      */
-    public Integer periodInSeconds() {
-        return this.periodInSeconds;
+    public Optional<Integer> periodInSeconds() {
+        return Optional.ofNullable(this.periodInSeconds);
     }
     /**
      * @return Requests allowed per evaluation period.
      * 
      */
-    public Integer requestsLimit() {
-        return this.requestsLimit;
+    public Optional<Integer> requestsLimit() {
+        return Optional.ofNullable(this.requestsLimit);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer actionDurationInSeconds;
-        private Integer periodInSeconds;
-        private Integer requestsLimit;
+        private @Nullable Integer actionDurationInSeconds;
+        private @Nullable Integer periodInSeconds;
+        private @Nullable Integer requestsLimit;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
 
         @CustomType.Setter
-        public Builder actionDurationInSeconds(Integer actionDurationInSeconds) {
-            this.actionDurationInSeconds = Objects.requireNonNull(actionDurationInSeconds);
+        public Builder actionDurationInSeconds(@Nullable Integer actionDurationInSeconds) {
+            this.actionDurationInSeconds = actionDurationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder periodInSeconds(Integer periodInSeconds) {
-            this.periodInSeconds = Objects.requireNonNull(periodInSeconds);
+        public Builder periodInSeconds(@Nullable Integer periodInSeconds) {
+            this.periodInSeconds = periodInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder requestsLimit(Integer requestsLimit) {
-            this.requestsLimit = Objects.requireNonNull(requestsLimit);
+        public Builder requestsLimit(@Nullable Integer requestsLimit) {
+            this.requestsLimit = requestsLimit;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration build() {

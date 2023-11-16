@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail {
@@ -14,51 +16,51 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServe
      * @return Estimated time, in minutes, to patch one database server.
      * 
      */
-    private Integer estimatedPatchDuration;
+    private @Nullable Integer estimatedPatchDuration;
     /**
      * @return The status of the patching operation.
      * 
      */
-    private String patchingStatus;
+    private @Nullable String patchingStatus;
     /**
      * @return The time when the patching operation ended.
      * 
      */
-    private String timePatchingEnded;
+    private @Nullable String timePatchingEnded;
     /**
      * @return The time when the patching operation started.
      * 
      */
-    private String timePatchingStarted;
+    private @Nullable String timePatchingStarted;
 
     private GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail() {}
     /**
      * @return Estimated time, in minutes, to patch one database server.
      * 
      */
-    public Integer estimatedPatchDuration() {
-        return this.estimatedPatchDuration;
+    public Optional<Integer> estimatedPatchDuration() {
+        return Optional.ofNullable(this.estimatedPatchDuration);
     }
     /**
      * @return The status of the patching operation.
      * 
      */
-    public String patchingStatus() {
-        return this.patchingStatus;
+    public Optional<String> patchingStatus() {
+        return Optional.ofNullable(this.patchingStatus);
     }
     /**
      * @return The time when the patching operation ended.
      * 
      */
-    public String timePatchingEnded() {
-        return this.timePatchingEnded;
+    public Optional<String> timePatchingEnded() {
+        return Optional.ofNullable(this.timePatchingEnded);
     }
     /**
      * @return The time when the patching operation started.
      * 
      */
-    public String timePatchingStarted() {
-        return this.timePatchingStarted;
+    public Optional<String> timePatchingStarted() {
+        return Optional.ofNullable(this.timePatchingStarted);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServe
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer estimatedPatchDuration;
-        private String patchingStatus;
-        private String timePatchingEnded;
-        private String timePatchingStarted;
+        private @Nullable Integer estimatedPatchDuration;
+        private @Nullable String patchingStatus;
+        private @Nullable String timePatchingEnded;
+        private @Nullable String timePatchingStarted;
         public Builder() {}
         public Builder(GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServe
         }
 
         @CustomType.Setter
-        public Builder estimatedPatchDuration(Integer estimatedPatchDuration) {
-            this.estimatedPatchDuration = Objects.requireNonNull(estimatedPatchDuration);
+        public Builder estimatedPatchDuration(@Nullable Integer estimatedPatchDuration) {
+            this.estimatedPatchDuration = estimatedPatchDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder patchingStatus(String patchingStatus) {
-            this.patchingStatus = Objects.requireNonNull(patchingStatus);
+        public Builder patchingStatus(@Nullable String patchingStatus) {
+            this.patchingStatus = patchingStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder timePatchingEnded(String timePatchingEnded) {
-            this.timePatchingEnded = Objects.requireNonNull(timePatchingEnded);
+        public Builder timePatchingEnded(@Nullable String timePatchingEnded) {
+            this.timePatchingEnded = timePatchingEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timePatchingStarted(String timePatchingStarted) {
-            this.timePatchingStarted = Objects.requireNonNull(timePatchingStarted);
+        public Builder timePatchingStarted(@Nullable String timePatchingStarted) {
+            this.timePatchingStarted = timePatchingStarted;
             return this;
         }
         public GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail build() {

@@ -46,25 +46,16 @@ class GetBootVolumesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="bootVolumes")
-    def boot_volumes(self) -> Sequence['outputs.GetBootVolumesBootVolumeResult']:
-        """
-        The list of boot_volumes.
-        """
+    def boot_volumes(self) -> Optional[Sequence['outputs.GetBootVolumesBootVolumeResult']]:
         return pulumi.get(self, "boot_volumes")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment that contains the boot volume.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -74,7 +65,7 @@ class GetBootVolumesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,9 +74,6 @@ class GetBootVolumesResult:
     @property
     @pulumi.getter(name="volumeGroupId")
     def volume_group_id(self) -> Optional[str]:
-        """
-        The OCID of the source volume group.
-        """
         return pulumi.get(self, "volume_group_id")
 
 
@@ -109,25 +97,7 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
                      volume_group_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBootVolumesResult:
     """
-    This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
-
-    Lists the boot volumes in the specified compartment and availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=var["boot_volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str volume_group_id: The OCID of the volume group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -153,24 +123,6 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
                             volume_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBootVolumesResult]:
     """
-    This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
-
-    Lists the boot volumes in the specified compartment and availability domain.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=var["boot_volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str volume_group_id: The OCID of the volume group.
+    Use this data source to access information about an existing resource.
     """
     ...

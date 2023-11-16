@@ -42,18 +42,12 @@ class GetBackupDestinationsResult:
 
     @property
     @pulumi.getter(name="backupDestinations")
-    def backup_destinations(self) -> Sequence['outputs.GetBackupDestinationsBackupDestinationResult']:
-        """
-        The list of backup_destinations.
-        """
+    def backup_destinations(self) -> Optional[Sequence['outputs.GetBackupDestinationsBackupDestinationResult']]:
         return pulumi.get(self, "backup_destinations")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -63,7 +57,7 @@ class GetBackupDestinationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetBackupDestinationsResult:
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        Type of the backup destination.
-        """
         return pulumi.get(self, "type")
 
 
@@ -96,23 +87,7 @@ def get_backup_destinations(compartment_id: Optional[str] = None,
                             type: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupDestinationsResult:
     """
-    This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of backup destinations in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=var["compartment_id"],
-        type=var["backup_destination_type"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str type: A filter to return only resources that match the given type of the Backup Destination.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[str]] =
                                    type: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupDestinationsResult]:
     """
-    This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of backup destinations in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=var["compartment_id"],
-        type=var["backup_destination_type"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str type: A filter to return only resources that match the given type of the Backup Destination.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -49,23 +49,17 @@ class GetModelProvenanceResult:
 
     @property
     @pulumi.getter(name="gitBranch")
-    def git_branch(self) -> str:
-        """
-        For model reproducibility purposes. Branch of the git repository associated with model training.
-        """
+    def git_branch(self) -> Optional[str]:
         return pulumi.get(self, "git_branch")
 
     @property
     @pulumi.getter(name="gitCommit")
-    def git_commit(self) -> str:
-        """
-        For model reproducibility purposes. Commit ID of the git repository associated with model training.
-        """
+    def git_commit(self) -> Optional[str]:
         return pulumi.get(self, "git_commit")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -75,34 +69,22 @@ class GetModelProvenanceResult:
 
     @property
     @pulumi.getter(name="repositoryUrl")
-    def repository_url(self) -> str:
-        """
-        For model reproducibility purposes. URL of the git repository associated with model training.
-        """
+    def repository_url(self) -> Optional[str]:
         return pulumi.get(self, "repository_url")
 
     @property
     @pulumi.getter(name="scriptDir")
-    def script_dir(self) -> str:
-        """
-        For model reproducibility purposes. Path to model artifacts.
-        """
+    def script_dir(self) -> Optional[str]:
         return pulumi.get(self, "script_dir")
 
     @property
     @pulumi.getter(name="trainingId")
-    def training_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-        """
+    def training_id(self) -> Optional[str]:
         return pulumi.get(self, "training_id")
 
     @property
     @pulumi.getter(name="trainingScript")
-    def training_script(self) -> str:
-        """
-        For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
-        """
+    def training_script(self) -> Optional[str]:
         return pulumi.get(self, "training_script")
 
 
@@ -125,21 +107,7 @@ class AwaitableGetModelProvenanceResult(GetModelProvenanceResult):
 def get_model_provenance(model_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelProvenanceResult:
     """
-    This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets provenance information for specified model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_provenance = oci.DataScience.get_model_provenance(model_id=oci_datascience_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['modelId'] = model_id
@@ -161,20 +129,6 @@ def get_model_provenance(model_id: Optional[str] = None,
 def get_model_provenance_output(model_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelProvenanceResult]:
     """
-    This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
-
-    Gets provenance information for specified model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_model_provenance = oci.DataScience.get_model_provenance(model_id=oci_datascience_model["test_model"]["id"])
-    ```
-
-
-    :param str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+    Use this data source to access information about an existing resource.
     """
     ...

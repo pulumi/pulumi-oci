@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
         /// </summary>
-        public readonly bool AutoBackupEnabled;
+        public readonly bool? AutoBackupEnabled;
         /// <summary>
         /// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         /// </summary>
-        public readonly string AutoBackupWindow;
+        public readonly string? AutoBackupWindow;
         /// <summary>
         /// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         /// </summary>
-        public readonly string AutoFullBackupDay;
+        public readonly string? AutoFullBackupDay;
         /// <summary>
         /// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         /// </summary>
-        public readonly string AutoFullBackupWindow;
+        public readonly string? AutoFullBackupWindow;
         /// <summary>
         /// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
         /// </summary>
-        public readonly string BackupDeletionPolicy;
+        public readonly string? BackupDeletionPolicy;
         /// <summary>
         /// Backup destination details.
         /// </summary>
@@ -40,29 +40,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         /// </summary>
-        public readonly int RecoveryWindowInDays;
+        public readonly int? RecoveryWindowInDays;
         /// <summary>
         /// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         /// </summary>
-        public readonly bool RunImmediateFullBackup;
+        public readonly bool? RunImmediateFullBackup;
 
         [OutputConstructor]
         private GetDatabaseDatabaseDbBackupConfigResult(
-            bool autoBackupEnabled,
+            bool? autoBackupEnabled,
 
-            string autoBackupWindow,
+            string? autoBackupWindow,
 
-            string autoFullBackupDay,
+            string? autoFullBackupDay,
 
-            string autoFullBackupWindow,
+            string? autoFullBackupWindow,
 
-            string backupDeletionPolicy,
+            string? backupDeletionPolicy,
 
             ImmutableArray<Outputs.GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult> backupDestinationDetails,
 
-            int recoveryWindowInDays,
+            int? recoveryWindowInDays,
 
-            bool runImmediateFullBackup)
+            bool? runImmediateFullBackup)
         {
             AutoBackupEnabled = autoBackupEnabled;
             AutoBackupWindow = autoBackupWindow;

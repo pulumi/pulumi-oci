@@ -128,78 +128,78 @@ namespace Pulumi.Oci.Database
         /// * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
         /// * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Additional container database parameter.
         /// </summary>
-        public readonly string AdditionalCdbParams;
+        public readonly string? AdditionalCdbParams;
         /// <summary>
         /// The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
         /// </summary>
-        public readonly string CdbName;
+        public readonly string? CdbName;
         public readonly string DatabaseId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state for the conversion operation.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly string PdbConversionHistoryEntryId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string SourceDatabaseId;
+        public readonly string? SourceDatabaseId;
         /// <summary>
         /// Status of an operation performed during the conversion of a non-container database to a pluggable database.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
         /// * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string TargetDatabaseId;
+        public readonly string? TargetDatabaseId;
         /// <summary>
         /// The date and time when the database conversion operation ended.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time when the database conversion operation started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetDatabasePdbConversionHistoryEntryResult(
-            string action,
+            string? action,
 
-            string additionalCdbParams,
+            string? additionalCdbParams,
 
-            string cdbName,
+            string? cdbName,
 
             string databaseId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             string pdbConversionHistoryEntryId,
 
-            string sourceDatabaseId,
+            string? sourceDatabaseId,
 
-            string state,
+            string? state,
 
-            string target,
+            string? target,
 
-            string targetDatabaseId,
+            string? targetDatabaseId,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Action = action;
             AdditionalCdbParams = additionalCdbParams;

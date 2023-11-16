@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
@@ -72,7 +71,7 @@ type GetOneoffPatchesResult struct {
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetOneoffPatchesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of oneoff_patches.
 	OneoffPatches []GetOneoffPatchesOneoffPatch `pulumi:"oneoffPatches"`
 	// The current state of the one-off patch.
@@ -122,12 +121,6 @@ func (o GetOneoffPatchesResultOutput) ToGetOneoffPatchesResultOutputWithContext(
 	return o
 }
 
-func (o GetOneoffPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOneoffPatchesResult] {
-	return pulumix.Output[GetOneoffPatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetOneoffPatchesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOneoffPatchesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetOneoffPatchesResultOutput) Filters() GetOneoffPatchesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOneoffPatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOneoffPatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOneoffPatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOneoffPatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of oneoff_patches.

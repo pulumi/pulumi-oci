@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -63,25 +62,25 @@ type GetDbSystemsUpgradeHistoryEntryArgs struct {
 // A collection of values returned by getDbSystemsUpgradeHistoryEntry.
 type GetDbSystemsUpgradeHistoryEntryResult struct {
 	// The operating system upgrade action.
-	Action     string `pulumi:"action"`
-	DbSystemId string `pulumi:"dbSystemId"`
+	Action     *string `pulumi:"action"`
+	DbSystemId string  `pulumi:"dbSystemId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
-	NewGiVersion string `pulumi:"newGiVersion"`
+	NewGiVersion *string `pulumi:"newGiVersion"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
-	OldGiVersion string `pulumi:"oldGiVersion"`
+	OldGiVersion *string `pulumi:"oldGiVersion"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-	SnapshotRetentionPeriodInDays int `pulumi:"snapshotRetentionPeriodInDays"`
+	SnapshotRetentionPeriodInDays *int `pulumi:"snapshotRetentionPeriodInDays"`
 	// The current state of the action.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time when the upgrade action completed
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time when the upgrade action started.
-	TimeStarted           string `pulumi:"timeStarted"`
-	UpgradeHistoryEntryId string `pulumi:"upgradeHistoryEntryId"`
+	TimeStarted           *string `pulumi:"timeStarted"`
+	UpgradeHistoryEntryId string  `pulumi:"upgradeHistoryEntryId"`
 }
 
 func GetDbSystemsUpgradeHistoryEntryOutput(ctx *pulumi.Context, args GetDbSystemsUpgradeHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetDbSystemsUpgradeHistoryEntryResultOutput {
@@ -124,15 +123,9 @@ func (o GetDbSystemsUpgradeHistoryEntryResultOutput) ToGetDbSystemsUpgradeHistor
 	return o
 }
 
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemsUpgradeHistoryEntryResult] {
-	return pulumix.Output[GetDbSystemsUpgradeHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operating system upgrade action.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.Action }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDbSystemsUpgradeHistoryEntryResultOutput) DbSystemId() pulumi.StringOutput {
@@ -140,43 +133,43 @@ func (o GetDbSystemsUpgradeHistoryEntryResultOutput) DbSystemId() pulumi.StringO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A valid Oracle Grid Infrastructure (GI) software version.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) NewGiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.NewGiVersion }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) NewGiVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.NewGiVersion }).(pulumi.StringPtrOutput)
 }
 
 // A valid Oracle Grid Infrastructure (GI) software version.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) OldGiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.OldGiVersion }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) OldGiVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.OldGiVersion }).(pulumi.StringPtrOutput)
 }
 
 // The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) SnapshotRetentionPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) int { return v.SnapshotRetentionPeriodInDays }).(pulumi.IntOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) SnapshotRetentionPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *int { return v.SnapshotRetentionPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the action.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the upgrade action completed
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the upgrade action started.
-func (o GetDbSystemsUpgradeHistoryEntryResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDbSystemsUpgradeHistoryEntryResultOutput) UpgradeHistoryEntryId() pulumi.StringOutput {

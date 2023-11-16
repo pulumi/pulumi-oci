@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetHttpMonitorsFilterArgs) ToGetHttpMonitorsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsFilterOutput)
 }
 
-func (i GetHttpMonitorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsFilter] {
-	return pulumix.Output[GetHttpMonitorsFilter]{
-		OutputState: i.ToGetHttpMonitorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpMonitorsFilterArrayInput is an input type that accepts GetHttpMonitorsFilterArray and GetHttpMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpMonitorsFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetHttpMonitorsFilterArray) ToGetHttpMonitorsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsFilterArrayOutput)
 }
 
-func (i GetHttpMonitorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsFilter] {
-	return pulumix.Output[[]GetHttpMonitorsFilter]{
-		OutputState: i.ToGetHttpMonitorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpMonitorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHttpMonitorsFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetHttpMonitorsFilterOutput) ToGetHttpMonitorsFilterOutput() GetHttpMoni
 
 func (o GetHttpMonitorsFilterOutput) ToGetHttpMonitorsFilterOutputWithContext(ctx context.Context) GetHttpMonitorsFilterOutput {
 	return o
-}
-
-func (o GetHttpMonitorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsFilter] {
-	return pulumix.Output[GetHttpMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpMonitorsFilterOutput) Name() pulumi.StringOutput {
@@ -132,12 +113,6 @@ func (o GetHttpMonitorsFilterArrayOutput) ToGetHttpMonitorsFilterArrayOutputWith
 	return o
 }
 
-func (o GetHttpMonitorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsFilter] {
-	return pulumix.Output[[]GetHttpMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpMonitorsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpMonitorsFilter {
 		return vs[0].([]GetHttpMonitorsFilter)[vs[1].(int)]
@@ -146,39 +121,39 @@ func (o GetHttpMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpMonito
 
 type GetHttpMonitorsHttpMonitor struct {
 	// Filters results by compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A dictionary of HTTP request headers.
 	Headers map[string]interface{} `pulumi:"headers"`
 	// Filters results that match the `homeRegion`.
-	HomeRegion string `pulumi:"homeRegion"`
+	HomeRegion *string `pulumi:"homeRegion"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The monitor interval in seconds. Valid values: 10, 30, and 60.
-	IntervalInSeconds int `pulumi:"intervalInSeconds"`
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The supported HTTP methods available for probes.
-	Method string `pulumi:"method"`
+	Method *string `pulumi:"method"`
 	// The optional URL path to probe, including query parameters.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The supported protocols available for HTTP probes.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl string `pulumi:"resultsUrl"`
+	ResultsUrl *string `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets []string `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
@@ -196,39 +171,39 @@ type GetHttpMonitorsHttpMonitorInput interface {
 
 type GetHttpMonitorsHttpMonitorArgs struct {
 	// Filters results by compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A dictionary of HTTP request headers.
 	Headers pulumi.MapInput `pulumi:"headers"`
 	// Filters results that match the `homeRegion`.
-	HomeRegion pulumi.StringInput `pulumi:"homeRegion"`
+	HomeRegion pulumi.StringPtrInput `pulumi:"homeRegion"`
 	// The OCID of the resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The monitor interval in seconds. Valid values: 10, 30, and 60.
-	IntervalInSeconds pulumi.IntInput `pulumi:"intervalInSeconds"`
+	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
 	// Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The supported HTTP methods available for probes.
-	Method pulumi.StringInput `pulumi:"method"`
+	Method pulumi.StringPtrInput `pulumi:"method"`
 	// The optional URL path to probe, including query parameters.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The supported protocols available for HTTP probes.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl pulumi.StringInput `pulumi:"resultsUrl"`
+	ResultsUrl pulumi.StringPtrInput `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	VantagePointNames pulumi.StringArrayInput `pulumi:"vantagePointNames"`
 }
@@ -243,12 +218,6 @@ func (i GetHttpMonitorsHttpMonitorArgs) ToGetHttpMonitorsHttpMonitorOutput() Get
 
 func (i GetHttpMonitorsHttpMonitorArgs) ToGetHttpMonitorsHttpMonitorOutputWithContext(ctx context.Context) GetHttpMonitorsHttpMonitorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsHttpMonitorOutput)
-}
-
-func (i GetHttpMonitorsHttpMonitorArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[GetHttpMonitorsHttpMonitor]{
-		OutputState: i.ToGetHttpMonitorsHttpMonitorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpMonitorsHttpMonitorArrayInput is an input type that accepts GetHttpMonitorsHttpMonitorArray and GetHttpMonitorsHttpMonitorArrayOutput values.
@@ -276,12 +245,6 @@ func (i GetHttpMonitorsHttpMonitorArray) ToGetHttpMonitorsHttpMonitorArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpMonitorsHttpMonitorArrayOutput)
 }
 
-func (i GetHttpMonitorsHttpMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[[]GetHttpMonitorsHttpMonitor]{
-		OutputState: i.ToGetHttpMonitorsHttpMonitorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpMonitorsHttpMonitorOutput struct{ *pulumi.OutputState }
 
 func (GetHttpMonitorsHttpMonitorOutput) ElementType() reflect.Type {
@@ -296,15 +259,9 @@ func (o GetHttpMonitorsHttpMonitorOutput) ToGetHttpMonitorsHttpMonitorOutputWith
 	return o
 }
 
-func (o GetHttpMonitorsHttpMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[GetHttpMonitorsHttpMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filters results by compartment.
-func (o GetHttpMonitorsHttpMonitorOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -313,8 +270,8 @@ func (o GetHttpMonitorsHttpMonitorOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Filters results that exactly match the `displayName` field.
-func (o GetHttpMonitorsHttpMonitorOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -328,48 +285,48 @@ func (o GetHttpMonitorsHttpMonitorOutput) Headers() pulumi.MapOutput {
 }
 
 // Filters results that match the `homeRegion`.
-func (o GetHttpMonitorsHttpMonitorOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.HomeRegion }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource.
-func (o GetHttpMonitorsHttpMonitorOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The monitor interval in seconds. Valid values: 10, 30, and 60.
-func (o GetHttpMonitorsHttpMonitorOutput) IntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the monitor. Set to 'true' to launch monitoring.
-func (o GetHttpMonitorsHttpMonitorOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The supported HTTP methods available for probes.
-func (o GetHttpMonitorsHttpMonitorOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.Method }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 // The optional URL path to probe, including query parameters.
-func (o GetHttpMonitorsHttpMonitorOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.Path }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o GetHttpMonitorsHttpMonitorOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) int { return v.Port }).(pulumi.IntOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The supported protocols available for HTTP probes.
-func (o GetHttpMonitorsHttpMonitorOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // A URL for fetching the probe results.
-func (o GetHttpMonitorsHttpMonitorOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of targets (hostnames or IP addresses) of the probe.
@@ -378,13 +335,13 @@ func (o GetHttpMonitorsHttpMonitorOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o GetHttpMonitorsHttpMonitorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o GetHttpMonitorsHttpMonitorOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A list of names of vantage points from which to execute the probe.
@@ -404,12 +361,6 @@ func (o GetHttpMonitorsHttpMonitorArrayOutput) ToGetHttpMonitorsHttpMonitorArray
 
 func (o GetHttpMonitorsHttpMonitorArrayOutput) ToGetHttpMonitorsHttpMonitorArrayOutputWithContext(ctx context.Context) GetHttpMonitorsHttpMonitorArrayOutput {
 	return o
-}
-
-func (o GetHttpMonitorsHttpMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpMonitorsHttpMonitor] {
-	return pulumix.Output[[]GetHttpMonitorsHttpMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpMonitorsHttpMonitorArrayOutput) Index(i pulumi.IntInput) GetHttpMonitorsHttpMonitorOutput {
@@ -453,12 +404,6 @@ func (i GetHttpProbeResultsFilterArgs) ToGetHttpProbeResultsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsFilterOutput)
 }
 
-func (i GetHttpProbeResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsFilter] {
-	return pulumix.Output[GetHttpProbeResultsFilter]{
-		OutputState: i.ToGetHttpProbeResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpProbeResultsFilterArrayInput is an input type that accepts GetHttpProbeResultsFilterArray and GetHttpProbeResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpProbeResultsFilterArrayInput` via:
 //
@@ -484,12 +429,6 @@ func (i GetHttpProbeResultsFilterArray) ToGetHttpProbeResultsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsFilterArrayOutput)
 }
 
-func (i GetHttpProbeResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsFilter] {
-	return pulumix.Output[[]GetHttpProbeResultsFilter]{
-		OutputState: i.ToGetHttpProbeResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsFilterOutput) ElementType() reflect.Type {
@@ -502,12 +441,6 @@ func (o GetHttpProbeResultsFilterOutput) ToGetHttpProbeResultsFilterOutput() Get
 
 func (o GetHttpProbeResultsFilterOutput) ToGetHttpProbeResultsFilterOutputWithContext(ctx context.Context) GetHttpProbeResultsFilterOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsFilter] {
-	return pulumix.Output[GetHttpProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsFilterOutput) Name() pulumi.StringOutput {
@@ -536,12 +469,6 @@ func (o GetHttpProbeResultsFilterArrayOutput) ToGetHttpProbeResultsFilterArrayOu
 	return o
 }
 
-func (o GetHttpProbeResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsFilter] {
-	return pulumix.Output[[]GetHttpProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpProbeResultsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpProbeResultsFilter {
 		return vs[0].([]GetHttpProbeResultsFilter)[vs[1].(int)]
@@ -550,58 +477,58 @@ func (o GetHttpProbeResultsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpPr
 
 type GetHttpProbeResultsHttpProbeResult struct {
 	// The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
-	ConnectEnd float64 `pulumi:"connectEnd"`
+	ConnectEnd *float64 `pulumi:"connectEnd"`
 	// The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
-	ConnectStart float64 `pulumi:"connectStart"`
+	ConnectStart *float64 `pulumi:"connectStart"`
 	// TCP connection results.  All durations are in milliseconds.
 	Connections []GetHttpProbeResultsHttpProbeResultConnection `pulumi:"connections"`
 	// The DNS resolution results.
 	Dns []GetHttpProbeResultsHttpProbeResultDn `pulumi:"dns"`
 	// The time immediately before the vantage point finishes the domain name lookup for the resource.
-	DomainLookupEnd float64 `pulumi:"domainLookupEnd"`
+	DomainLookupEnd *float64 `pulumi:"domainLookupEnd"`
 	// The time immediately before the vantage point starts the domain name lookup for the resource.
-	DomainLookupStart float64 `pulumi:"domainLookupStart"`
+	DomainLookupStart *float64 `pulumi:"domainLookupStart"`
 	// The total duration from start of request until response is fully consumed or the connection is closed.
-	Duration float64 `pulumi:"duration"`
+	Duration *float64 `pulumi:"duration"`
 	// The size, in octets, of the payload body prior to removing any applied content-codings.
-	EncodedBodySize int `pulumi:"encodedBodySize"`
+	EncodedBodySize *int `pulumi:"encodedBodySize"`
 	// The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
 	// * NONE - No error
 	// * DNS - DNS errors
 	// * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
 	// * NETWORK - Network-related errors, for example a "network unreachable" error.
 	// * SYSTEM - Internal system errors.
-	ErrorCategory string `pulumi:"errorCategory"`
+	ErrorCategory *string `pulumi:"errorCategory"`
 	// The error information indicating why a probe execution failed.
-	ErrorMessage string `pulumi:"errorMessage"`
+	ErrorMessage *string `pulumi:"errorMessage"`
 	// The time immediately before the vantage point starts to fetch the resource.
-	FetchStart float64 `pulumi:"fetchStart"`
+	FetchStart *float64 `pulumi:"fetchStart"`
 	// True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-	IsHealthy bool `pulumi:"isHealthy"`
+	IsHealthy *bool `pulumi:"isHealthy"`
 	// True if the probe did not complete before the configured `timeoutInSeconds` value.
-	IsTimedOut bool `pulumi:"isTimedOut"`
+	IsTimedOut *bool `pulumi:"isTimedOut"`
 	// A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The OCID of a monitor or on-demand probe.
-	ProbeConfigurationId string `pulumi:"probeConfigurationId"`
+	ProbeConfigurationId *string `pulumi:"probeConfigurationId"`
 	// The supported protocols available for HTTP probes.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The time immediately before the vantage point starts requesting the resource from the server.
-	RequestStart float64 `pulumi:"requestStart"`
+	RequestStart *float64 `pulumi:"requestStart"`
 	// The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
-	ResponseEnd float64 `pulumi:"responseEnd"`
+	ResponseEnd *float64 `pulumi:"responseEnd"`
 	// The time immediately after the vantage point's HTTP parser receives the first byte of the response.
-	ResponseStart float64 `pulumi:"responseStart"`
+	ResponseStart *float64 `pulumi:"responseStart"`
 	// The time immediately before the vantage point starts the handshake process to secure the current connection.
-	SecureConnectionStart float64 `pulumi:"secureConnectionStart"`
+	SecureConnectionStart *float64 `pulumi:"secureConnectionStart"`
 	// The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-	StartTime float64 `pulumi:"startTime"`
+	StartTime *float64 `pulumi:"startTime"`
 	// The HTTP response status code.
-	StatusCode int `pulumi:"statusCode"`
+	StatusCode *int `pulumi:"statusCode"`
 	// Filters results that match the `target`.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// The name of the vantage point that executed the probe.
-	VantagePointName string `pulumi:"vantagePointName"`
+	VantagePointName *string `pulumi:"vantagePointName"`
 }
 
 // GetHttpProbeResultsHttpProbeResultInput is an input type that accepts GetHttpProbeResultsHttpProbeResultArgs and GetHttpProbeResultsHttpProbeResultOutput values.
@@ -617,58 +544,58 @@ type GetHttpProbeResultsHttpProbeResultInput interface {
 
 type GetHttpProbeResultsHttpProbeResultArgs struct {
 	// The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
-	ConnectEnd pulumi.Float64Input `pulumi:"connectEnd"`
+	ConnectEnd pulumi.Float64PtrInput `pulumi:"connectEnd"`
 	// The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
-	ConnectStart pulumi.Float64Input `pulumi:"connectStart"`
+	ConnectStart pulumi.Float64PtrInput `pulumi:"connectStart"`
 	// TCP connection results.  All durations are in milliseconds.
 	Connections GetHttpProbeResultsHttpProbeResultConnectionArrayInput `pulumi:"connections"`
 	// The DNS resolution results.
 	Dns GetHttpProbeResultsHttpProbeResultDnArrayInput `pulumi:"dns"`
 	// The time immediately before the vantage point finishes the domain name lookup for the resource.
-	DomainLookupEnd pulumi.Float64Input `pulumi:"domainLookupEnd"`
+	DomainLookupEnd pulumi.Float64PtrInput `pulumi:"domainLookupEnd"`
 	// The time immediately before the vantage point starts the domain name lookup for the resource.
-	DomainLookupStart pulumi.Float64Input `pulumi:"domainLookupStart"`
+	DomainLookupStart pulumi.Float64PtrInput `pulumi:"domainLookupStart"`
 	// The total duration from start of request until response is fully consumed or the connection is closed.
-	Duration pulumi.Float64Input `pulumi:"duration"`
+	Duration pulumi.Float64PtrInput `pulumi:"duration"`
 	// The size, in octets, of the payload body prior to removing any applied content-codings.
-	EncodedBodySize pulumi.IntInput `pulumi:"encodedBodySize"`
+	EncodedBodySize pulumi.IntPtrInput `pulumi:"encodedBodySize"`
 	// The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
 	// * NONE - No error
 	// * DNS - DNS errors
 	// * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
 	// * NETWORK - Network-related errors, for example a "network unreachable" error.
 	// * SYSTEM - Internal system errors.
-	ErrorCategory pulumi.StringInput `pulumi:"errorCategory"`
+	ErrorCategory pulumi.StringPtrInput `pulumi:"errorCategory"`
 	// The error information indicating why a probe execution failed.
-	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	ErrorMessage pulumi.StringPtrInput `pulumi:"errorMessage"`
 	// The time immediately before the vantage point starts to fetch the resource.
-	FetchStart pulumi.Float64Input `pulumi:"fetchStart"`
+	FetchStart pulumi.Float64PtrInput `pulumi:"fetchStart"`
 	// True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-	IsHealthy pulumi.BoolInput `pulumi:"isHealthy"`
+	IsHealthy pulumi.BoolPtrInput `pulumi:"isHealthy"`
 	// True if the probe did not complete before the configured `timeoutInSeconds` value.
-	IsTimedOut pulumi.BoolInput `pulumi:"isTimedOut"`
+	IsTimedOut pulumi.BoolPtrInput `pulumi:"isTimedOut"`
 	// A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The OCID of a monitor or on-demand probe.
-	ProbeConfigurationId pulumi.StringInput `pulumi:"probeConfigurationId"`
+	ProbeConfigurationId pulumi.StringPtrInput `pulumi:"probeConfigurationId"`
 	// The supported protocols available for HTTP probes.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The time immediately before the vantage point starts requesting the resource from the server.
-	RequestStart pulumi.Float64Input `pulumi:"requestStart"`
+	RequestStart pulumi.Float64PtrInput `pulumi:"requestStart"`
 	// The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
-	ResponseEnd pulumi.Float64Input `pulumi:"responseEnd"`
+	ResponseEnd pulumi.Float64PtrInput `pulumi:"responseEnd"`
 	// The time immediately after the vantage point's HTTP parser receives the first byte of the response.
-	ResponseStart pulumi.Float64Input `pulumi:"responseStart"`
+	ResponseStart pulumi.Float64PtrInput `pulumi:"responseStart"`
 	// The time immediately before the vantage point starts the handshake process to secure the current connection.
-	SecureConnectionStart pulumi.Float64Input `pulumi:"secureConnectionStart"`
+	SecureConnectionStart pulumi.Float64PtrInput `pulumi:"secureConnectionStart"`
 	// The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-	StartTime pulumi.Float64Input `pulumi:"startTime"`
+	StartTime pulumi.Float64PtrInput `pulumi:"startTime"`
 	// The HTTP response status code.
-	StatusCode pulumi.IntInput `pulumi:"statusCode"`
+	StatusCode pulumi.IntPtrInput `pulumi:"statusCode"`
 	// Filters results that match the `target`.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 	// The name of the vantage point that executed the probe.
-	VantagePointName pulumi.StringInput `pulumi:"vantagePointName"`
+	VantagePointName pulumi.StringPtrInput `pulumi:"vantagePointName"`
 }
 
 func (GetHttpProbeResultsHttpProbeResultArgs) ElementType() reflect.Type {
@@ -681,12 +608,6 @@ func (i GetHttpProbeResultsHttpProbeResultArgs) ToGetHttpProbeResultsHttpProbeRe
 
 func (i GetHttpProbeResultsHttpProbeResultArgs) ToGetHttpProbeResultsHttpProbeResultOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultOutput)
-}
-
-func (i GetHttpProbeResultsHttpProbeResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResult]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpProbeResultsHttpProbeResultArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultArray and GetHttpProbeResultsHttpProbeResultArrayOutput values.
@@ -714,12 +635,6 @@ func (i GetHttpProbeResultsHttpProbeResultArray) ToGetHttpProbeResultsHttpProbeR
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultArrayOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResult]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsHttpProbeResultOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsHttpProbeResultOutput) ElementType() reflect.Type {
@@ -734,20 +649,14 @@ func (o GetHttpProbeResultsHttpProbeResultOutput) ToGetHttpProbeResultsHttpProbe
 	return o
 }
 
-func (o GetHttpProbeResultsHttpProbeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The time immediately after the vantage point finishes establishing the connection to the server to retrieve the resource.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ConnectEnd() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.ConnectEnd }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ConnectEnd() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.ConnectEnd }).(pulumi.Float64PtrOutput)
 }
 
 // The time immediately before the vantage point starts establishing the connection to the server to retrieve the resource.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ConnectStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.ConnectStart }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ConnectStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.ConnectStart }).(pulumi.Float64PtrOutput)
 }
 
 // TCP connection results.  All durations are in milliseconds.
@@ -763,23 +672,23 @@ func (o GetHttpProbeResultsHttpProbeResultOutput) Dns() GetHttpProbeResultsHttpP
 }
 
 // The time immediately before the vantage point finishes the domain name lookup for the resource.
-func (o GetHttpProbeResultsHttpProbeResultOutput) DomainLookupEnd() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.DomainLookupEnd }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) DomainLookupEnd() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.DomainLookupEnd }).(pulumi.Float64PtrOutput)
 }
 
 // The time immediately before the vantage point starts the domain name lookup for the resource.
-func (o GetHttpProbeResultsHttpProbeResultOutput) DomainLookupStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.DomainLookupStart }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) DomainLookupStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.DomainLookupStart }).(pulumi.Float64PtrOutput)
 }
 
 // The total duration from start of request until response is fully consumed or the connection is closed.
-func (o GetHttpProbeResultsHttpProbeResultOutput) Duration() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.Duration }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) Duration() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.Duration }).(pulumi.Float64PtrOutput)
 }
 
 // The size, in octets, of the payload body prior to removing any applied content-codings.
-func (o GetHttpProbeResultsHttpProbeResultOutput) EncodedBodySize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) int { return v.EncodedBodySize }).(pulumi.IntOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) EncodedBodySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *int { return v.EncodedBodySize }).(pulumi.IntPtrOutput)
 }
 
 // The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
@@ -788,83 +697,83 @@ func (o GetHttpProbeResultsHttpProbeResultOutput) EncodedBodySize() pulumi.IntOu
 // * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
 // * NETWORK - Network-related errors, for example a "network unreachable" error.
 // * SYSTEM - Internal system errors.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ErrorCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.ErrorCategory }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ErrorCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.ErrorCategory }).(pulumi.StringPtrOutput)
 }
 
 // The error information indicating why a probe execution failed.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ErrorMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.ErrorMessage }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
 }
 
 // The time immediately before the vantage point starts to fetch the resource.
-func (o GetHttpProbeResultsHttpProbeResultOutput) FetchStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.FetchStart }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) FetchStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.FetchStart }).(pulumi.Float64PtrOutput)
 }
 
 // True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-func (o GetHttpProbeResultsHttpProbeResultOutput) IsHealthy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) bool { return v.IsHealthy }).(pulumi.BoolOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) IsHealthy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *bool { return v.IsHealthy }).(pulumi.BoolPtrOutput)
 }
 
 // True if the probe did not complete before the configured `timeoutInSeconds` value.
-func (o GetHttpProbeResultsHttpProbeResultOutput) IsTimedOut() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) bool { return v.IsTimedOut }).(pulumi.BoolOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) IsTimedOut() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *bool { return v.IsTimedOut }).(pulumi.BoolPtrOutput)
 }
 
 // A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-func (o GetHttpProbeResultsHttpProbeResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.Key }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a monitor or on-demand probe.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ProbeConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.ProbeConfigurationId }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ProbeConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.ProbeConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The supported protocols available for HTTP probes.
-func (o GetHttpProbeResultsHttpProbeResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The time immediately before the vantage point starts requesting the resource from the server.
-func (o GetHttpProbeResultsHttpProbeResultOutput) RequestStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.RequestStart }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) RequestStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.RequestStart }).(pulumi.Float64PtrOutput)
 }
 
 // The time immediately after the vantage point receives the last byte of the response or immediately before the transport connection is closed, whichever comes first.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ResponseEnd() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.ResponseEnd }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ResponseEnd() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.ResponseEnd }).(pulumi.Float64PtrOutput)
 }
 
 // The time immediately after the vantage point's HTTP parser receives the first byte of the response.
-func (o GetHttpProbeResultsHttpProbeResultOutput) ResponseStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.ResponseStart }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) ResponseStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.ResponseStart }).(pulumi.Float64PtrOutput)
 }
 
 // The time immediately before the vantage point starts the handshake process to secure the current connection.
-func (o GetHttpProbeResultsHttpProbeResultOutput) SecureConnectionStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.SecureConnectionStart }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) SecureConnectionStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.SecureConnectionStart }).(pulumi.Float64PtrOutput)
 }
 
 // The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-func (o GetHttpProbeResultsHttpProbeResultOutput) StartTime() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) float64 { return v.StartTime }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultOutput) StartTime() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *float64 { return v.StartTime }).(pulumi.Float64PtrOutput)
 }
 
 // The HTTP response status code.
-func (o GetHttpProbeResultsHttpProbeResultOutput) StatusCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) int { return v.StatusCode }).(pulumi.IntOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
 }
 
 // Filters results that match the `target`.
-func (o GetHttpProbeResultsHttpProbeResultOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.Target }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // The name of the vantage point that executed the probe.
-func (o GetHttpProbeResultsHttpProbeResultOutput) VantagePointName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) string { return v.VantagePointName }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultOutput) VantagePointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResult) *string { return v.VantagePointName }).(pulumi.StringPtrOutput)
 }
 
 type GetHttpProbeResultsHttpProbeResultArrayOutput struct{ *pulumi.OutputState }
@@ -881,12 +790,6 @@ func (o GetHttpProbeResultsHttpProbeResultArrayOutput) ToGetHttpProbeResultsHttp
 	return o
 }
 
-func (o GetHttpProbeResultsHttpProbeResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResult] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpProbeResultsHttpProbeResultArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsHttpProbeResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpProbeResultsHttpProbeResult {
 		return vs[0].([]GetHttpProbeResultsHttpProbeResult)[vs[1].(int)]
@@ -895,13 +798,13 @@ func (o GetHttpProbeResultsHttpProbeResultArrayOutput) Index(i pulumi.IntInput) 
 
 type GetHttpProbeResultsHttpProbeResultConnection struct {
 	// The connection IP address.
-	Address string `pulumi:"address"`
+	Address *string `pulumi:"address"`
 	// Total connect duration, calculated using `connectEnd` minus `connectStart`.
-	ConnectDuration float64 `pulumi:"connectDuration"`
+	ConnectDuration *float64 `pulumi:"connectDuration"`
 	// The port.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
-	SecureConnectDuration float64 `pulumi:"secureConnectDuration"`
+	SecureConnectDuration *float64 `pulumi:"secureConnectDuration"`
 }
 
 // GetHttpProbeResultsHttpProbeResultConnectionInput is an input type that accepts GetHttpProbeResultsHttpProbeResultConnectionArgs and GetHttpProbeResultsHttpProbeResultConnectionOutput values.
@@ -917,13 +820,13 @@ type GetHttpProbeResultsHttpProbeResultConnectionInput interface {
 
 type GetHttpProbeResultsHttpProbeResultConnectionArgs struct {
 	// The connection IP address.
-	Address pulumi.StringInput `pulumi:"address"`
+	Address pulumi.StringPtrInput `pulumi:"address"`
 	// Total connect duration, calculated using `connectEnd` minus `connectStart`.
-	ConnectDuration pulumi.Float64Input `pulumi:"connectDuration"`
+	ConnectDuration pulumi.Float64PtrInput `pulumi:"connectDuration"`
 	// The port.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
-	SecureConnectDuration pulumi.Float64Input `pulumi:"secureConnectDuration"`
+	SecureConnectDuration pulumi.Float64PtrInput `pulumi:"secureConnectDuration"`
 }
 
 func (GetHttpProbeResultsHttpProbeResultConnectionArgs) ElementType() reflect.Type {
@@ -936,12 +839,6 @@ func (i GetHttpProbeResultsHttpProbeResultConnectionArgs) ToGetHttpProbeResultsH
 
 func (i GetHttpProbeResultsHttpProbeResultConnectionArgs) ToGetHttpProbeResultsHttpProbeResultConnectionOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultConnectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultConnectionOutput)
-}
-
-func (i GetHttpProbeResultsHttpProbeResultConnectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultConnectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpProbeResultsHttpProbeResultConnectionArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultConnectionArray and GetHttpProbeResultsHttpProbeResultConnectionArrayOutput values.
@@ -969,12 +866,6 @@ func (i GetHttpProbeResultsHttpProbeResultConnectionArray) ToGetHttpProbeResults
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultConnectionArrayOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultConnectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsHttpProbeResultConnectionOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsHttpProbeResultConnectionOutput) ElementType() reflect.Type {
@@ -989,30 +880,24 @@ func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ToGetHttpProbeResult
 	return o
 }
 
-func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The connection IP address.
-func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) string { return v.Address }).(pulumi.StringOutput)
+func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
 // Total connect duration, calculated using `connectEnd` minus `connectStart`.
-func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ConnectDuration() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) float64 { return v.ConnectDuration }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) ConnectDuration() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) *float64 { return v.ConnectDuration }).(pulumi.Float64PtrOutput)
 }
 
 // The port.
-func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) int { return v.Port }).(pulumi.IntOutput)
+func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
-func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) SecureConnectDuration() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) float64 { return v.SecureConnectDuration }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultConnectionOutput) SecureConnectDuration() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultConnection) *float64 { return v.SecureConnectDuration }).(pulumi.Float64PtrOutput)
 }
 
 type GetHttpProbeResultsHttpProbeResultConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -1029,12 +914,6 @@ func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) ToGetHttpProbeR
 	return o
 }
 
-func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpProbeResultsHttpProbeResultConnectionArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsHttpProbeResultConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpProbeResultsHttpProbeResultConnection {
 		return vs[0].([]GetHttpProbeResultsHttpProbeResultConnection)[vs[1].(int)]
@@ -1045,7 +924,7 @@ type GetHttpProbeResultsHttpProbeResultDn struct {
 	// The addresses returned by DNS resolution.
 	Addresses []string `pulumi:"addresses"`
 	// Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-	DomainLookupDuration float64 `pulumi:"domainLookupDuration"`
+	DomainLookupDuration *float64 `pulumi:"domainLookupDuration"`
 }
 
 // GetHttpProbeResultsHttpProbeResultDnInput is an input type that accepts GetHttpProbeResultsHttpProbeResultDnArgs and GetHttpProbeResultsHttpProbeResultDnOutput values.
@@ -1063,7 +942,7 @@ type GetHttpProbeResultsHttpProbeResultDnArgs struct {
 	// The addresses returned by DNS resolution.
 	Addresses pulumi.StringArrayInput `pulumi:"addresses"`
 	// Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-	DomainLookupDuration pulumi.Float64Input `pulumi:"domainLookupDuration"`
+	DomainLookupDuration pulumi.Float64PtrInput `pulumi:"domainLookupDuration"`
 }
 
 func (GetHttpProbeResultsHttpProbeResultDnArgs) ElementType() reflect.Type {
@@ -1076,12 +955,6 @@ func (i GetHttpProbeResultsHttpProbeResultDnArgs) ToGetHttpProbeResultsHttpProbe
 
 func (i GetHttpProbeResultsHttpProbeResultDnArgs) ToGetHttpProbeResultsHttpProbeResultDnOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultDnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultDnOutput)
-}
-
-func (i GetHttpProbeResultsHttpProbeResultDnArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultDnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpProbeResultsHttpProbeResultDnArrayInput is an input type that accepts GetHttpProbeResultsHttpProbeResultDnArray and GetHttpProbeResultsHttpProbeResultDnArrayOutput values.
@@ -1109,12 +982,6 @@ func (i GetHttpProbeResultsHttpProbeResultDnArray) ToGetHttpProbeResultsHttpProb
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpProbeResultsHttpProbeResultDnArrayOutput)
 }
 
-func (i GetHttpProbeResultsHttpProbeResultDnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: i.ToGetHttpProbeResultsHttpProbeResultDnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpProbeResultsHttpProbeResultDnOutput struct{ *pulumi.OutputState }
 
 func (GetHttpProbeResultsHttpProbeResultDnOutput) ElementType() reflect.Type {
@@ -1129,20 +996,14 @@ func (o GetHttpProbeResultsHttpProbeResultDnOutput) ToGetHttpProbeResultsHttpPro
 	return o
 }
 
-func (o GetHttpProbeResultsHttpProbeResultDnOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The addresses returned by DNS resolution.
 func (o GetHttpProbeResultsHttpProbeResultDnOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultDn) []string { return v.Addresses }).(pulumi.StringArrayOutput)
 }
 
 // Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-func (o GetHttpProbeResultsHttpProbeResultDnOutput) DomainLookupDuration() pulumi.Float64Output {
-	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultDn) float64 { return v.DomainLookupDuration }).(pulumi.Float64Output)
+func (o GetHttpProbeResultsHttpProbeResultDnOutput) DomainLookupDuration() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetHttpProbeResultsHttpProbeResultDn) *float64 { return v.DomainLookupDuration }).(pulumi.Float64PtrOutput)
 }
 
 type GetHttpProbeResultsHttpProbeResultDnArrayOutput struct{ *pulumi.OutputState }
@@ -1157,12 +1018,6 @@ func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) ToGetHttpProbeResultsHt
 
 func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) ToGetHttpProbeResultsHttpProbeResultDnArrayOutputWithContext(ctx context.Context) GetHttpProbeResultsHttpProbeResultDnArrayOutput {
 	return o
-}
-
-func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn] {
-	return pulumix.Output[[]GetHttpProbeResultsHttpProbeResultDn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpProbeResultsHttpProbeResultDnArrayOutput) Index(i pulumi.IntInput) GetHttpProbeResultsHttpProbeResultDnOutput {
@@ -1206,12 +1061,6 @@ func (i GetPingMonitorsFilterArgs) ToGetPingMonitorsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsFilterOutput)
 }
 
-func (i GetPingMonitorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsFilter] {
-	return pulumix.Output[GetPingMonitorsFilter]{
-		OutputState: i.ToGetPingMonitorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingMonitorsFilterArrayInput is an input type that accepts GetPingMonitorsFilterArray and GetPingMonitorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPingMonitorsFilterArrayInput` via:
 //
@@ -1237,12 +1086,6 @@ func (i GetPingMonitorsFilterArray) ToGetPingMonitorsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsFilterArrayOutput)
 }
 
-func (i GetPingMonitorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsFilter] {
-	return pulumix.Output[[]GetPingMonitorsFilter]{
-		OutputState: i.ToGetPingMonitorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingMonitorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPingMonitorsFilterOutput) ElementType() reflect.Type {
@@ -1255,12 +1098,6 @@ func (o GetPingMonitorsFilterOutput) ToGetPingMonitorsFilterOutput() GetPingMoni
 
 func (o GetPingMonitorsFilterOutput) ToGetPingMonitorsFilterOutputWithContext(ctx context.Context) GetPingMonitorsFilterOutput {
 	return o
-}
-
-func (o GetPingMonitorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsFilter] {
-	return pulumix.Output[GetPingMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingMonitorsFilterOutput) Name() pulumi.StringOutput {
@@ -1289,12 +1126,6 @@ func (o GetPingMonitorsFilterArrayOutput) ToGetPingMonitorsFilterArrayOutputWith
 	return o
 }
 
-func (o GetPingMonitorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsFilter] {
-	return pulumix.Output[[]GetPingMonitorsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPingMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetPingMonitorsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPingMonitorsFilter {
 		return vs[0].([]GetPingMonitorsFilter)[vs[1].(int)]
@@ -1303,33 +1134,33 @@ func (o GetPingMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetPingMonito
 
 type GetPingMonitorsPingMonitor struct {
 	// Filters results by compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filters results that match the `homeRegion`.
-	HomeRegion string `pulumi:"homeRegion"`
+	HomeRegion *string `pulumi:"homeRegion"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The monitor interval in seconds. Valid values: 10, 30, and 60.
-	IntervalInSeconds int `pulumi:"intervalInSeconds"`
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocols for ping probes.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl string `pulumi:"resultsUrl"`
+	ResultsUrl *string `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets []string `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	VantagePointNames []string `pulumi:"vantagePointNames"`
 }
@@ -1347,33 +1178,33 @@ type GetPingMonitorsPingMonitorInput interface {
 
 type GetPingMonitorsPingMonitorArgs struct {
 	// Filters results by compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filters results that match the `homeRegion`.
-	HomeRegion pulumi.StringInput `pulumi:"homeRegion"`
+	HomeRegion pulumi.StringPtrInput `pulumi:"homeRegion"`
 	// The OCID of the resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The monitor interval in seconds. Valid values: 10, 30, and 60.
-	IntervalInSeconds pulumi.IntInput `pulumi:"intervalInSeconds"`
+	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
 	// Enables or disables the monitor. Set to 'true' to launch monitoring.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocols for ping probes.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// A URL for fetching the probe results.
-	ResultsUrl pulumi.StringInput `pulumi:"resultsUrl"`
+	ResultsUrl pulumi.StringPtrInput `pulumi:"resultsUrl"`
 	// A list of targets (hostnames or IP addresses) of the probe.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 	// The RFC 3339-formatted creation date and time of the probe.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// A list of names of vantage points from which to execute the probe.
 	VantagePointNames pulumi.StringArrayInput `pulumi:"vantagePointNames"`
 }
@@ -1388,12 +1219,6 @@ func (i GetPingMonitorsPingMonitorArgs) ToGetPingMonitorsPingMonitorOutput() Get
 
 func (i GetPingMonitorsPingMonitorArgs) ToGetPingMonitorsPingMonitorOutputWithContext(ctx context.Context) GetPingMonitorsPingMonitorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsPingMonitorOutput)
-}
-
-func (i GetPingMonitorsPingMonitorArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsPingMonitor] {
-	return pulumix.Output[GetPingMonitorsPingMonitor]{
-		OutputState: i.ToGetPingMonitorsPingMonitorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPingMonitorsPingMonitorArrayInput is an input type that accepts GetPingMonitorsPingMonitorArray and GetPingMonitorsPingMonitorArrayOutput values.
@@ -1421,12 +1246,6 @@ func (i GetPingMonitorsPingMonitorArray) ToGetPingMonitorsPingMonitorArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingMonitorsPingMonitorArrayOutput)
 }
 
-func (i GetPingMonitorsPingMonitorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsPingMonitor] {
-	return pulumix.Output[[]GetPingMonitorsPingMonitor]{
-		OutputState: i.ToGetPingMonitorsPingMonitorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingMonitorsPingMonitorOutput struct{ *pulumi.OutputState }
 
 func (GetPingMonitorsPingMonitorOutput) ElementType() reflect.Type {
@@ -1441,15 +1260,9 @@ func (o GetPingMonitorsPingMonitorOutput) ToGetPingMonitorsPingMonitorOutputWith
 	return o
 }
 
-func (o GetPingMonitorsPingMonitorOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsPingMonitor] {
-	return pulumix.Output[GetPingMonitorsPingMonitor]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filters results by compartment.
-func (o GetPingMonitorsPingMonitorOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1458,8 +1271,8 @@ func (o GetPingMonitorsPingMonitorOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Filters results that exactly match the `displayName` field.
-func (o GetPingMonitorsPingMonitorOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1468,38 +1281,38 @@ func (o GetPingMonitorsPingMonitorOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Filters results that match the `homeRegion`.
-func (o GetPingMonitorsPingMonitorOutput) HomeRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.HomeRegion }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) HomeRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.HomeRegion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource.
-func (o GetPingMonitorsPingMonitorOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The monitor interval in seconds. Valid values: 10, 30, and 60.
-func (o GetPingMonitorsPingMonitorOutput) IntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
+func (o GetPingMonitorsPingMonitorOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the monitor. Set to 'true' to launch monitoring.
-func (o GetPingMonitorsPingMonitorOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetPingMonitorsPingMonitorOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
-func (o GetPingMonitorsPingMonitorOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) int { return v.Port }).(pulumi.IntOutput)
+func (o GetPingMonitorsPingMonitorOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocols for ping probes.
-func (o GetPingMonitorsPingMonitorOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // A URL for fetching the probe results.
-func (o GetPingMonitorsPingMonitorOutput) ResultsUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.ResultsUrl }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) ResultsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.ResultsUrl }).(pulumi.StringPtrOutput)
 }
 
 // A list of targets (hostnames or IP addresses) of the probe.
@@ -1508,13 +1321,13 @@ func (o GetPingMonitorsPingMonitorOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The RFC 3339-formatted creation date and time of the probe.
-func (o GetPingMonitorsPingMonitorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPingMonitorsPingMonitorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
-func (o GetPingMonitorsPingMonitorOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetPingMonitorsPingMonitorOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // A list of names of vantage points from which to execute the probe.
@@ -1534,12 +1347,6 @@ func (o GetPingMonitorsPingMonitorArrayOutput) ToGetPingMonitorsPingMonitorArray
 
 func (o GetPingMonitorsPingMonitorArrayOutput) ToGetPingMonitorsPingMonitorArrayOutputWithContext(ctx context.Context) GetPingMonitorsPingMonitorArrayOutput {
 	return o
-}
-
-func (o GetPingMonitorsPingMonitorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingMonitorsPingMonitor] {
-	return pulumix.Output[[]GetPingMonitorsPingMonitor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingMonitorsPingMonitorArrayOutput) Index(i pulumi.IntInput) GetPingMonitorsPingMonitorOutput {
@@ -1583,12 +1390,6 @@ func (i GetPingProbeResultsFilterArgs) ToGetPingProbeResultsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsFilterOutput)
 }
 
-func (i GetPingProbeResultsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsFilter] {
-	return pulumix.Output[GetPingProbeResultsFilter]{
-		OutputState: i.ToGetPingProbeResultsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPingProbeResultsFilterArrayInput is an input type that accepts GetPingProbeResultsFilterArray and GetPingProbeResultsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPingProbeResultsFilterArrayInput` via:
 //
@@ -1614,12 +1415,6 @@ func (i GetPingProbeResultsFilterArray) ToGetPingProbeResultsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsFilterArrayOutput)
 }
 
-func (i GetPingProbeResultsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsFilter] {
-	return pulumix.Output[[]GetPingProbeResultsFilter]{
-		OutputState: i.ToGetPingProbeResultsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsFilterOutput) ElementType() reflect.Type {
@@ -1632,12 +1427,6 @@ func (o GetPingProbeResultsFilterOutput) ToGetPingProbeResultsFilterOutput() Get
 
 func (o GetPingProbeResultsFilterOutput) ToGetPingProbeResultsFilterOutputWithContext(ctx context.Context) GetPingProbeResultsFilterOutput {
 	return o
-}
-
-func (o GetPingProbeResultsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsFilter] {
-	return pulumix.Output[GetPingProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingProbeResultsFilterOutput) Name() pulumi.StringOutput {
@@ -1666,12 +1455,6 @@ func (o GetPingProbeResultsFilterArrayOutput) ToGetPingProbeResultsFilterArrayOu
 	return o
 }
 
-func (o GetPingProbeResultsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsFilter] {
-	return pulumix.Output[[]GetPingProbeResultsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPingProbeResultsFilterArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPingProbeResultsFilter {
 		return vs[0].([]GetPingProbeResultsFilter)[vs[1].(int)]
@@ -1684,38 +1467,38 @@ type GetPingProbeResultsPingProbeResult struct {
 	// The DNS resolution results.
 	Dns []GetPingProbeResultsPingProbeResultDn `pulumi:"dns"`
 	// The time immediately before the vantage point finishes the domain name lookup for the resource.
-	DomainLookupEnd float64 `pulumi:"domainLookupEnd"`
+	DomainLookupEnd *float64 `pulumi:"domainLookupEnd"`
 	// The time immediately before the vantage point starts the domain name lookup for the resource.
-	DomainLookupStart float64 `pulumi:"domainLookupStart"`
+	DomainLookupStart *float64 `pulumi:"domainLookupStart"`
 	// The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
 	// * NONE - No error
 	// * DNS - DNS errors
 	// * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
 	// * NETWORK - Network-related errors, for example a "network unreachable" error.
 	// * SYSTEM - Internal system errors.
-	ErrorCategory string `pulumi:"errorCategory"`
+	ErrorCategory *string `pulumi:"errorCategory"`
 	// The error information indicating why a probe execution failed.
-	ErrorMessage string `pulumi:"errorMessage"`
+	ErrorMessage *string `pulumi:"errorMessage"`
 	// The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
-	IcmpCode int `pulumi:"icmpCode"`
+	IcmpCode *int `pulumi:"icmpCode"`
 	// True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-	IsHealthy bool `pulumi:"isHealthy"`
+	IsHealthy *bool `pulumi:"isHealthy"`
 	// True if the probe did not complete before the configured `timeoutInSeconds` value.
-	IsTimedOut bool `pulumi:"isTimedOut"`
+	IsTimedOut *bool `pulumi:"isTimedOut"`
 	// A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The latency of the probe execution, in milliseconds.
-	LatencyInMs float64 `pulumi:"latencyInMs"`
+	LatencyInMs *float64 `pulumi:"latencyInMs"`
 	// The OCID of a monitor or on-demand probe.
-	ProbeConfigurationId string `pulumi:"probeConfigurationId"`
+	ProbeConfigurationId *string `pulumi:"probeConfigurationId"`
 	// The protocols for ping probes.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-	StartTime float64 `pulumi:"startTime"`
+	StartTime *float64 `pulumi:"startTime"`
 	// Filters results that match the `target`.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 	// The name of the vantage point that executed the probe.
-	VantagePointName string `pulumi:"vantagePointName"`
+	VantagePointName *string `pulumi:"vantagePointName"`
 }
 
 // GetPingProbeResultsPingProbeResultInput is an input type that accepts GetPingProbeResultsPingProbeResultArgs and GetPingProbeResultsPingProbeResultOutput values.
@@ -1735,38 +1518,38 @@ type GetPingProbeResultsPingProbeResultArgs struct {
 	// The DNS resolution results.
 	Dns GetPingProbeResultsPingProbeResultDnArrayInput `pulumi:"dns"`
 	// The time immediately before the vantage point finishes the domain name lookup for the resource.
-	DomainLookupEnd pulumi.Float64Input `pulumi:"domainLookupEnd"`
+	DomainLookupEnd pulumi.Float64PtrInput `pulumi:"domainLookupEnd"`
 	// The time immediately before the vantage point starts the domain name lookup for the resource.
-	DomainLookupStart pulumi.Float64Input `pulumi:"domainLookupStart"`
+	DomainLookupStart pulumi.Float64PtrInput `pulumi:"domainLookupStart"`
 	// The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
 	// * NONE - No error
 	// * DNS - DNS errors
 	// * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
 	// * NETWORK - Network-related errors, for example a "network unreachable" error.
 	// * SYSTEM - Internal system errors.
-	ErrorCategory pulumi.StringInput `pulumi:"errorCategory"`
+	ErrorCategory pulumi.StringPtrInput `pulumi:"errorCategory"`
 	// The error information indicating why a probe execution failed.
-	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	ErrorMessage pulumi.StringPtrInput `pulumi:"errorMessage"`
 	// The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
-	IcmpCode pulumi.IntInput `pulumi:"icmpCode"`
+	IcmpCode pulumi.IntPtrInput `pulumi:"icmpCode"`
 	// True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-	IsHealthy pulumi.BoolInput `pulumi:"isHealthy"`
+	IsHealthy pulumi.BoolPtrInput `pulumi:"isHealthy"`
 	// True if the probe did not complete before the configured `timeoutInSeconds` value.
-	IsTimedOut pulumi.BoolInput `pulumi:"isTimedOut"`
+	IsTimedOut pulumi.BoolPtrInput `pulumi:"isTimedOut"`
 	// A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The latency of the probe execution, in milliseconds.
-	LatencyInMs pulumi.Float64Input `pulumi:"latencyInMs"`
+	LatencyInMs pulumi.Float64PtrInput `pulumi:"latencyInMs"`
 	// The OCID of a monitor or on-demand probe.
-	ProbeConfigurationId pulumi.StringInput `pulumi:"probeConfigurationId"`
+	ProbeConfigurationId pulumi.StringPtrInput `pulumi:"probeConfigurationId"`
 	// The protocols for ping probes.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-	StartTime pulumi.Float64Input `pulumi:"startTime"`
+	StartTime pulumi.Float64PtrInput `pulumi:"startTime"`
 	// Filters results that match the `target`.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 	// The name of the vantage point that executed the probe.
-	VantagePointName pulumi.StringInput `pulumi:"vantagePointName"`
+	VantagePointName pulumi.StringPtrInput `pulumi:"vantagePointName"`
 }
 
 func (GetPingProbeResultsPingProbeResultArgs) ElementType() reflect.Type {
@@ -1779,12 +1562,6 @@ func (i GetPingProbeResultsPingProbeResultArgs) ToGetPingProbeResultsPingProbeRe
 
 func (i GetPingProbeResultsPingProbeResultArgs) ToGetPingProbeResultsPingProbeResultOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultOutput)
-}
-
-func (i GetPingProbeResultsPingProbeResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResult]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPingProbeResultsPingProbeResultArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultArray and GetPingProbeResultsPingProbeResultArrayOutput values.
@@ -1812,12 +1589,6 @@ func (i GetPingProbeResultsPingProbeResultArray) ToGetPingProbeResultsPingProbeR
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultArrayOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResult]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsPingProbeResultOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsPingProbeResultOutput) ElementType() reflect.Type {
@@ -1830,12 +1601,6 @@ func (o GetPingProbeResultsPingProbeResultOutput) ToGetPingProbeResultsPingProbe
 
 func (o GetPingProbeResultsPingProbeResultOutput) ToGetPingProbeResultsPingProbeResultOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network connection results.
@@ -1851,13 +1616,13 @@ func (o GetPingProbeResultsPingProbeResultOutput) Dns() GetPingProbeResultsPingP
 }
 
 // The time immediately before the vantage point finishes the domain name lookup for the resource.
-func (o GetPingProbeResultsPingProbeResultOutput) DomainLookupEnd() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) float64 { return v.DomainLookupEnd }).(pulumi.Float64Output)
+func (o GetPingProbeResultsPingProbeResultOutput) DomainLookupEnd() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *float64 { return v.DomainLookupEnd }).(pulumi.Float64PtrOutput)
 }
 
 // The time immediately before the vantage point starts the domain name lookup for the resource.
-func (o GetPingProbeResultsPingProbeResultOutput) DomainLookupStart() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) float64 { return v.DomainLookupStart }).(pulumi.Float64Output)
+func (o GetPingProbeResultsPingProbeResultOutput) DomainLookupStart() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *float64 { return v.DomainLookupStart }).(pulumi.Float64PtrOutput)
 }
 
 // The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
@@ -1866,63 +1631,63 @@ func (o GetPingProbeResultsPingProbeResultOutput) DomainLookupStart() pulumi.Flo
 // * TRANSPORT - Transport-related errors, for example a "TLS certificate expired" error.
 // * NETWORK - Network-related errors, for example a "network unreachable" error.
 // * SYSTEM - Internal system errors.
-func (o GetPingProbeResultsPingProbeResultOutput) ErrorCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.ErrorCategory }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) ErrorCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.ErrorCategory }).(pulumi.StringPtrOutput)
 }
 
 // The error information indicating why a probe execution failed.
-func (o GetPingProbeResultsPingProbeResultOutput) ErrorMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.ErrorMessage }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
 }
 
 // The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
-func (o GetPingProbeResultsPingProbeResultOutput) IcmpCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) int { return v.IcmpCode }).(pulumi.IntOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) IcmpCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *int { return v.IcmpCode }).(pulumi.IntPtrOutput)
 }
 
 // True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
-func (o GetPingProbeResultsPingProbeResultOutput) IsHealthy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) bool { return v.IsHealthy }).(pulumi.BoolOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) IsHealthy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *bool { return v.IsHealthy }).(pulumi.BoolPtrOutput)
 }
 
 // True if the probe did not complete before the configured `timeoutInSeconds` value.
-func (o GetPingProbeResultsPingProbeResultOutput) IsTimedOut() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) bool { return v.IsTimedOut }).(pulumi.BoolOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) IsTimedOut() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *bool { return v.IsTimedOut }).(pulumi.BoolPtrOutput)
 }
 
 // A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
-func (o GetPingProbeResultsPingProbeResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.Key }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The latency of the probe execution, in milliseconds.
-func (o GetPingProbeResultsPingProbeResultOutput) LatencyInMs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) float64 { return v.LatencyInMs }).(pulumi.Float64Output)
+func (o GetPingProbeResultsPingProbeResultOutput) LatencyInMs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *float64 { return v.LatencyInMs }).(pulumi.Float64PtrOutput)
 }
 
 // The OCID of a monitor or on-demand probe.
-func (o GetPingProbeResultsPingProbeResultOutput) ProbeConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.ProbeConfigurationId }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) ProbeConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.ProbeConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The protocols for ping probes.
-func (o GetPingProbeResultsPingProbeResultOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
-func (o GetPingProbeResultsPingProbeResultOutput) StartTime() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) float64 { return v.StartTime }).(pulumi.Float64Output)
+func (o GetPingProbeResultsPingProbeResultOutput) StartTime() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *float64 { return v.StartTime }).(pulumi.Float64PtrOutput)
 }
 
 // Filters results that match the `target`.
-func (o GetPingProbeResultsPingProbeResultOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.Target }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 // The name of the vantage point that executed the probe.
-func (o GetPingProbeResultsPingProbeResultOutput) VantagePointName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) string { return v.VantagePointName }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultOutput) VantagePointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResult) *string { return v.VantagePointName }).(pulumi.StringPtrOutput)
 }
 
 type GetPingProbeResultsPingProbeResultArrayOutput struct{ *pulumi.OutputState }
@@ -1939,12 +1704,6 @@ func (o GetPingProbeResultsPingProbeResultArrayOutput) ToGetPingProbeResultsPing
 	return o
 }
 
-func (o GetPingProbeResultsPingProbeResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResult] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPingProbeResultsPingProbeResultArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsPingProbeResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPingProbeResultsPingProbeResult {
 		return vs[0].([]GetPingProbeResultsPingProbeResult)[vs[1].(int)]
@@ -1953,9 +1712,9 @@ func (o GetPingProbeResultsPingProbeResultArrayOutput) Index(i pulumi.IntInput) 
 
 type GetPingProbeResultsPingProbeResultConnection struct {
 	// The connection IP address.
-	Address string `pulumi:"address"`
+	Address *string `pulumi:"address"`
 	// The port.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 }
 
 // GetPingProbeResultsPingProbeResultConnectionInput is an input type that accepts GetPingProbeResultsPingProbeResultConnectionArgs and GetPingProbeResultsPingProbeResultConnectionOutput values.
@@ -1971,9 +1730,9 @@ type GetPingProbeResultsPingProbeResultConnectionInput interface {
 
 type GetPingProbeResultsPingProbeResultConnectionArgs struct {
 	// The connection IP address.
-	Address pulumi.StringInput `pulumi:"address"`
+	Address pulumi.StringPtrInput `pulumi:"address"`
 	// The port.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
 func (GetPingProbeResultsPingProbeResultConnectionArgs) ElementType() reflect.Type {
@@ -1986,12 +1745,6 @@ func (i GetPingProbeResultsPingProbeResultConnectionArgs) ToGetPingProbeResultsP
 
 func (i GetPingProbeResultsPingProbeResultConnectionArgs) ToGetPingProbeResultsPingProbeResultConnectionOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultConnectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultConnectionOutput)
-}
-
-func (i GetPingProbeResultsPingProbeResultConnectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultConnectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPingProbeResultsPingProbeResultConnectionArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultConnectionArray and GetPingProbeResultsPingProbeResultConnectionArrayOutput values.
@@ -2019,12 +1772,6 @@ func (i GetPingProbeResultsPingProbeResultConnectionArray) ToGetPingProbeResults
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultConnectionArrayOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultConnectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsPingProbeResultConnectionOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsPingProbeResultConnectionOutput) ElementType() reflect.Type {
@@ -2039,20 +1786,14 @@ func (o GetPingProbeResultsPingProbeResultConnectionOutput) ToGetPingProbeResult
 	return o
 }
 
-func (o GetPingProbeResultsPingProbeResultConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The connection IP address.
-func (o GetPingProbeResultsPingProbeResultConnectionOutput) Address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultConnection) string { return v.Address }).(pulumi.StringOutput)
+func (o GetPingProbeResultsPingProbeResultConnectionOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultConnection) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
 // The port.
-func (o GetPingProbeResultsPingProbeResultConnectionOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultConnection) int { return v.Port }).(pulumi.IntOutput)
+func (o GetPingProbeResultsPingProbeResultConnectionOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultConnection) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 type GetPingProbeResultsPingProbeResultConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -2069,12 +1810,6 @@ func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) ToGetPingProbeR
 	return o
 }
 
-func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPingProbeResultsPingProbeResultConnectionArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsPingProbeResultConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPingProbeResultsPingProbeResultConnection {
 		return vs[0].([]GetPingProbeResultsPingProbeResultConnection)[vs[1].(int)]
@@ -2085,7 +1820,7 @@ type GetPingProbeResultsPingProbeResultDn struct {
 	// The addresses returned by DNS resolution.
 	Addresses []string `pulumi:"addresses"`
 	// Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-	DomainLookupDuration float64 `pulumi:"domainLookupDuration"`
+	DomainLookupDuration *float64 `pulumi:"domainLookupDuration"`
 }
 
 // GetPingProbeResultsPingProbeResultDnInput is an input type that accepts GetPingProbeResultsPingProbeResultDnArgs and GetPingProbeResultsPingProbeResultDnOutput values.
@@ -2103,7 +1838,7 @@ type GetPingProbeResultsPingProbeResultDnArgs struct {
 	// The addresses returned by DNS resolution.
 	Addresses pulumi.StringArrayInput `pulumi:"addresses"`
 	// Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-	DomainLookupDuration pulumi.Float64Input `pulumi:"domainLookupDuration"`
+	DomainLookupDuration pulumi.Float64PtrInput `pulumi:"domainLookupDuration"`
 }
 
 func (GetPingProbeResultsPingProbeResultDnArgs) ElementType() reflect.Type {
@@ -2116,12 +1851,6 @@ func (i GetPingProbeResultsPingProbeResultDnArgs) ToGetPingProbeResultsPingProbe
 
 func (i GetPingProbeResultsPingProbeResultDnArgs) ToGetPingProbeResultsPingProbeResultDnOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultDnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultDnOutput)
-}
-
-func (i GetPingProbeResultsPingProbeResultDnArgs) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultDn]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultDnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPingProbeResultsPingProbeResultDnArrayInput is an input type that accepts GetPingProbeResultsPingProbeResultDnArray and GetPingProbeResultsPingProbeResultDnArrayOutput values.
@@ -2149,12 +1878,6 @@ func (i GetPingProbeResultsPingProbeResultDnArray) ToGetPingProbeResultsPingProb
 	return pulumi.ToOutputWithContext(ctx, i).(GetPingProbeResultsPingProbeResultDnArrayOutput)
 }
 
-func (i GetPingProbeResultsPingProbeResultDnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultDn]{
-		OutputState: i.ToGetPingProbeResultsPingProbeResultDnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPingProbeResultsPingProbeResultDnOutput struct{ *pulumi.OutputState }
 
 func (GetPingProbeResultsPingProbeResultDnOutput) ElementType() reflect.Type {
@@ -2169,20 +1892,14 @@ func (o GetPingProbeResultsPingProbeResultDnOutput) ToGetPingProbeResultsPingPro
 	return o
 }
 
-func (o GetPingProbeResultsPingProbeResultDnOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[GetPingProbeResultsPingProbeResultDn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The addresses returned by DNS resolution.
 func (o GetPingProbeResultsPingProbeResultDnOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultDn) []string { return v.Addresses }).(pulumi.StringArrayOutput)
 }
 
 // Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
-func (o GetPingProbeResultsPingProbeResultDnOutput) DomainLookupDuration() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultDn) float64 { return v.DomainLookupDuration }).(pulumi.Float64Output)
+func (o GetPingProbeResultsPingProbeResultDnOutput) DomainLookupDuration() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetPingProbeResultsPingProbeResultDn) *float64 { return v.DomainLookupDuration }).(pulumi.Float64PtrOutput)
 }
 
 type GetPingProbeResultsPingProbeResultDnArrayOutput struct{ *pulumi.OutputState }
@@ -2197,12 +1914,6 @@ func (o GetPingProbeResultsPingProbeResultDnArrayOutput) ToGetPingProbeResultsPi
 
 func (o GetPingProbeResultsPingProbeResultDnArrayOutput) ToGetPingProbeResultsPingProbeResultDnArrayOutputWithContext(ctx context.Context) GetPingProbeResultsPingProbeResultDnArrayOutput {
 	return o
-}
-
-func (o GetPingProbeResultsPingProbeResultDnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPingProbeResultsPingProbeResultDn] {
-	return pulumix.Output[[]GetPingProbeResultsPingProbeResultDn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPingProbeResultsPingProbeResultDnArrayOutput) Index(i pulumi.IntInput) GetPingProbeResultsPingProbeResultDnOutput {
@@ -2248,12 +1959,6 @@ func (i GetVantagePointsFilterArgs) ToGetVantagePointsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsFilterOutput)
 }
 
-func (i GetVantagePointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsFilter] {
-	return pulumix.Output[GetVantagePointsFilter]{
-		OutputState: i.ToGetVantagePointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVantagePointsFilterArrayInput is an input type that accepts GetVantagePointsFilterArray and GetVantagePointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVantagePointsFilterArrayInput` via:
 //
@@ -2279,12 +1984,6 @@ func (i GetVantagePointsFilterArray) ToGetVantagePointsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsFilterArrayOutput)
 }
 
-func (i GetVantagePointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsFilter] {
-	return pulumix.Output[[]GetVantagePointsFilter]{
-		OutputState: i.ToGetVantagePointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsFilterOutput) ElementType() reflect.Type {
@@ -2297,12 +1996,6 @@ func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutput() GetVantag
 
 func (o GetVantagePointsFilterOutput) ToGetVantagePointsFilterOutputWithContext(ctx context.Context) GetVantagePointsFilterOutput {
 	return o
-}
-
-func (o GetVantagePointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsFilter] {
-	return pulumix.Output[GetVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filters results that exactly match the `name` field.
@@ -2332,12 +2025,6 @@ func (o GetVantagePointsFilterArrayOutput) ToGetVantagePointsFilterArrayOutputWi
 	return o
 }
 
-func (o GetVantagePointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsFilter] {
-	return pulumix.Output[[]GetVantagePointsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetVantagePointsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVantagePointsFilter {
 		return vs[0].([]GetVantagePointsFilter)[vs[1].(int)]
@@ -2346,13 +2033,13 @@ func (o GetVantagePointsFilterArrayOutput) Index(i pulumi.IntInput) GetVantagePo
 
 type GetVantagePointsHealthChecksVantagePoint struct {
 	// Filters results that exactly match the `displayName` field.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Geographic information about a vantage point.
 	Geos []GetVantagePointsHealthChecksVantagePointGeo `pulumi:"geos"`
 	// Filters results that exactly match the `name` field.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
-	ProviderName string `pulumi:"providerName"`
+	ProviderName *string `pulumi:"providerName"`
 	// An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
 	Routings []GetVantagePointsHealthChecksVantagePointRouting `pulumi:"routings"`
 }
@@ -2370,13 +2057,13 @@ type GetVantagePointsHealthChecksVantagePointInput interface {
 
 type GetVantagePointsHealthChecksVantagePointArgs struct {
 	// Filters results that exactly match the `displayName` field.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Geographic information about a vantage point.
 	Geos GetVantagePointsHealthChecksVantagePointGeoArrayInput `pulumi:"geos"`
 	// Filters results that exactly match the `name` field.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
-	ProviderName pulumi.StringInput `pulumi:"providerName"`
+	ProviderName pulumi.StringPtrInput `pulumi:"providerName"`
 	// An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
 	Routings GetVantagePointsHealthChecksVantagePointRoutingArrayInput `pulumi:"routings"`
 }
@@ -2391,12 +2078,6 @@ func (i GetVantagePointsHealthChecksVantagePointArgs) ToGetVantagePointsHealthCh
 
 func (i GetVantagePointsHealthChecksVantagePointArgs) ToGetVantagePointsHealthChecksVantagePointOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointOutput)
-}
-
-func (i GetVantagePointsHealthChecksVantagePointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointsHealthChecksVantagePointArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointArray and GetVantagePointsHealthChecksVantagePointArrayOutput values.
@@ -2424,12 +2105,6 @@ func (i GetVantagePointsHealthChecksVantagePointArray) ToGetVantagePointsHealthC
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointArrayOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsHealthChecksVantagePointOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsHealthChecksVantagePointOutput) ElementType() reflect.Type {
@@ -2444,15 +2119,9 @@ func (o GetVantagePointsHealthChecksVantagePointOutput) ToGetVantagePointsHealth
 	return o
 }
 
-func (o GetVantagePointsHealthChecksVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filters results that exactly match the `displayName` field.
-func (o GetVantagePointsHealthChecksVantagePointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePoint) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePoint) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Geographic information about a vantage point.
@@ -2463,13 +2132,13 @@ func (o GetVantagePointsHealthChecksVantagePointOutput) Geos() GetVantagePointsH
 }
 
 // Filters results that exactly match the `name` field.
-func (o GetVantagePointsHealthChecksVantagePointOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePoint) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
-func (o GetVantagePointsHealthChecksVantagePointOutput) ProviderName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePoint) string { return v.ProviderName }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointOutput) ProviderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePoint) *string { return v.ProviderName }).(pulumi.StringPtrOutput)
 }
 
 // An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
@@ -2493,12 +2162,6 @@ func (o GetVantagePointsHealthChecksVantagePointArrayOutput) ToGetVantagePointsH
 	return o
 }
 
-func (o GetVantagePointsHealthChecksVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointsHealthChecksVantagePointArrayOutput) Index(i pulumi.IntInput) GetVantagePointsHealthChecksVantagePointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVantagePointsHealthChecksVantagePoint {
 		return vs[0].([]GetVantagePointsHealthChecksVantagePoint)[vs[1].(int)]
@@ -2507,19 +2170,19 @@ func (o GetVantagePointsHealthChecksVantagePointArrayOutput) Index(i pulumi.IntI
 
 type GetVantagePointsHealthChecksVantagePointGeo struct {
 	// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-	AdminDivCode string `pulumi:"adminDivCode"`
+	AdminDivCode *string `pulumi:"adminDivCode"`
 	// Common English-language name for the city.
-	CityName string `pulumi:"cityName"`
+	CityName *string `pulumi:"cityName"`
 	// The ISO 3166-1 alpha-2 country code. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-	CountryCode string `pulumi:"countryCode"`
+	CountryCode *string `pulumi:"countryCode"`
 	// The common English-language name for the country.
-	CountryName string `pulumi:"countryName"`
+	CountryName *string `pulumi:"countryName"`
 	// An opaque identifier for the geographic location of the vantage point.
-	GeoKey string `pulumi:"geoKey"`
+	GeoKey *string `pulumi:"geoKey"`
 	// Degrees north of the Equator.
-	Latitude float64 `pulumi:"latitude"`
+	Latitude *float64 `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
-	Longitude float64 `pulumi:"longitude"`
+	Longitude *float64 `pulumi:"longitude"`
 }
 
 // GetVantagePointsHealthChecksVantagePointGeoInput is an input type that accepts GetVantagePointsHealthChecksVantagePointGeoArgs and GetVantagePointsHealthChecksVantagePointGeoOutput values.
@@ -2535,19 +2198,19 @@ type GetVantagePointsHealthChecksVantagePointGeoInput interface {
 
 type GetVantagePointsHealthChecksVantagePointGeoArgs struct {
 	// The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-	AdminDivCode pulumi.StringInput `pulumi:"adminDivCode"`
+	AdminDivCode pulumi.StringPtrInput `pulumi:"adminDivCode"`
 	// Common English-language name for the city.
-	CityName pulumi.StringInput `pulumi:"cityName"`
+	CityName pulumi.StringPtrInput `pulumi:"cityName"`
 	// The ISO 3166-1 alpha-2 country code. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	CountryCode pulumi.StringPtrInput `pulumi:"countryCode"`
 	// The common English-language name for the country.
-	CountryName pulumi.StringInput `pulumi:"countryName"`
+	CountryName pulumi.StringPtrInput `pulumi:"countryName"`
 	// An opaque identifier for the geographic location of the vantage point.
-	GeoKey pulumi.StringInput `pulumi:"geoKey"`
+	GeoKey pulumi.StringPtrInput `pulumi:"geoKey"`
 	// Degrees north of the Equator.
-	Latitude pulumi.Float64Input `pulumi:"latitude"`
+	Latitude pulumi.Float64PtrInput `pulumi:"latitude"`
 	// Degrees east of the prime meridian.
-	Longitude pulumi.Float64Input `pulumi:"longitude"`
+	Longitude pulumi.Float64PtrInput `pulumi:"longitude"`
 }
 
 func (GetVantagePointsHealthChecksVantagePointGeoArgs) ElementType() reflect.Type {
@@ -2560,12 +2223,6 @@ func (i GetVantagePointsHealthChecksVantagePointGeoArgs) ToGetVantagePointsHealt
 
 func (i GetVantagePointsHealthChecksVantagePointGeoArgs) ToGetVantagePointsHealthChecksVantagePointGeoOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointGeoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointGeoOutput)
-}
-
-func (i GetVantagePointsHealthChecksVantagePointGeoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointGeoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointsHealthChecksVantagePointGeoArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointGeoArray and GetVantagePointsHealthChecksVantagePointGeoArrayOutput values.
@@ -2593,12 +2250,6 @@ func (i GetVantagePointsHealthChecksVantagePointGeoArray) ToGetVantagePointsHeal
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointGeoArrayOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointGeoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointGeoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsHealthChecksVantagePointGeoOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsHealthChecksVantagePointGeoOutput) ElementType() reflect.Type {
@@ -2613,45 +2264,39 @@ func (o GetVantagePointsHealthChecksVantagePointGeoOutput) ToGetVantagePointsHea
 	return o
 }
 
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) AdminDivCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) string { return v.AdminDivCode }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) AdminDivCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *string { return v.AdminDivCode }).(pulumi.StringPtrOutput)
 }
 
 // Common English-language name for the city.
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) CityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) string { return v.CityName }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) CityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *string { return v.CityName }).(pulumi.StringPtrOutput)
 }
 
 // The ISO 3166-1 alpha-2 country code. For a list of codes, see [Country Codes](https://www.iso.org/obp/ui/#search).
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) CountryCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) string { return v.CountryCode }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *string { return v.CountryCode }).(pulumi.StringPtrOutput)
 }
 
 // The common English-language name for the country.
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) CountryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) string { return v.CountryName }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) CountryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *string { return v.CountryName }).(pulumi.StringPtrOutput)
 }
 
 // An opaque identifier for the geographic location of the vantage point.
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) GeoKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) string { return v.GeoKey }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) GeoKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *string { return v.GeoKey }).(pulumi.StringPtrOutput)
 }
 
 // Degrees north of the Equator.
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) Latitude() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) float64 { return v.Latitude }).(pulumi.Float64Output)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) Latitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *float64 { return v.Latitude }).(pulumi.Float64PtrOutput)
 }
 
 // Degrees east of the prime meridian.
-func (o GetVantagePointsHealthChecksVantagePointGeoOutput) Longitude() pulumi.Float64Output {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) float64 { return v.Longitude }).(pulumi.Float64Output)
+func (o GetVantagePointsHealthChecksVantagePointGeoOutput) Longitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointGeo) *float64 { return v.Longitude }).(pulumi.Float64PtrOutput)
 }
 
 type GetVantagePointsHealthChecksVantagePointGeoArrayOutput struct{ *pulumi.OutputState }
@@ -2668,12 +2313,6 @@ func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) ToGetVantagePoin
 	return o
 }
 
-func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointGeo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) Index(i pulumi.IntInput) GetVantagePointsHealthChecksVantagePointGeoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVantagePointsHealthChecksVantagePointGeo {
 		return vs[0].([]GetVantagePointsHealthChecksVantagePointGeo)[vs[1].(int)]
@@ -2682,13 +2321,13 @@ func (o GetVantagePointsHealthChecksVantagePointGeoArrayOutput) Index(i pulumi.I
 
 type GetVantagePointsHealthChecksVantagePointRouting struct {
 	// The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
-	AsLabel string `pulumi:"asLabel"`
+	AsLabel *string `pulumi:"asLabel"`
 	// The Autonomous System Number (ASN) identifying the organization responsible for routing packets to `prefix`.
-	Asn int `pulumi:"asn"`
+	Asn *int `pulumi:"asn"`
 	// An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
-	Prefix string `pulumi:"prefix"`
+	Prefix *string `pulumi:"prefix"`
 	// An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetVantagePointsHealthChecksVantagePointRoutingInput is an input type that accepts GetVantagePointsHealthChecksVantagePointRoutingArgs and GetVantagePointsHealthChecksVantagePointRoutingOutput values.
@@ -2704,13 +2343,13 @@ type GetVantagePointsHealthChecksVantagePointRoutingInput interface {
 
 type GetVantagePointsHealthChecksVantagePointRoutingArgs struct {
 	// The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
-	AsLabel pulumi.StringInput `pulumi:"asLabel"`
+	AsLabel pulumi.StringPtrInput `pulumi:"asLabel"`
 	// The Autonomous System Number (ASN) identifying the organization responsible for routing packets to `prefix`.
-	Asn pulumi.IntInput `pulumi:"asn"`
+	Asn pulumi.IntPtrInput `pulumi:"asn"`
 	// An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
-	Prefix pulumi.StringInput `pulumi:"prefix"`
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 	// An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetVantagePointsHealthChecksVantagePointRoutingArgs) ElementType() reflect.Type {
@@ -2723,12 +2362,6 @@ func (i GetVantagePointsHealthChecksVantagePointRoutingArgs) ToGetVantagePointsH
 
 func (i GetVantagePointsHealthChecksVantagePointRoutingArgs) ToGetVantagePointsHealthChecksVantagePointRoutingOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointRoutingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointRoutingOutput)
-}
-
-func (i GetVantagePointsHealthChecksVantagePointRoutingArgs) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointRoutingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVantagePointsHealthChecksVantagePointRoutingArrayInput is an input type that accepts GetVantagePointsHealthChecksVantagePointRoutingArray and GetVantagePointsHealthChecksVantagePointRoutingArrayOutput values.
@@ -2756,12 +2389,6 @@ func (i GetVantagePointsHealthChecksVantagePointRoutingArray) ToGetVantagePoints
 	return pulumi.ToOutputWithContext(ctx, i).(GetVantagePointsHealthChecksVantagePointRoutingArrayOutput)
 }
 
-func (i GetVantagePointsHealthChecksVantagePointRoutingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: i.ToGetVantagePointsHealthChecksVantagePointRoutingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVantagePointsHealthChecksVantagePointRoutingOutput struct{ *pulumi.OutputState }
 
 func (GetVantagePointsHealthChecksVantagePointRoutingOutput) ElementType() reflect.Type {
@@ -2776,30 +2403,24 @@ func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) ToGetVantagePoint
 	return o
 }
 
-func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
-func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) AsLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) string { return v.AsLabel }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) AsLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) *string { return v.AsLabel }).(pulumi.StringPtrOutput)
 }
 
 // The Autonomous System Number (ASN) identifying the organization responsible for routing packets to `prefix`.
-func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) Asn() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) int { return v.Asn }).(pulumi.IntOutput)
+func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) Asn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) *int { return v.Asn }).(pulumi.IntPtrOutput)
 }
 
 // An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
-func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) string { return v.Prefix }).(pulumi.StringOutput)
+func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 // An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
-func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetVantagePointsHealthChecksVantagePointRoutingOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsHealthChecksVantagePointRouting) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetVantagePointsHealthChecksVantagePointRoutingArrayOutput struct{ *pulumi.OutputState }
@@ -2814,12 +2435,6 @@ func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) ToGetVantage
 
 func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) ToGetVantagePointsHealthChecksVantagePointRoutingArrayOutputWithContext(ctx context.Context) GetVantagePointsHealthChecksVantagePointRoutingArrayOutput {
 	return o
-}
-
-func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting] {
-	return pulumix.Output[[]GetVantagePointsHealthChecksVantagePointRouting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVantagePointsHealthChecksVantagePointRoutingArrayOutput) Index(i pulumi.IntInput) GetVantagePointsHealthChecksVantagePointRoutingOutput {

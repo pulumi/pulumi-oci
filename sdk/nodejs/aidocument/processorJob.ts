@@ -93,7 +93,7 @@ export class ProcessorJob extends pulumi.CustomResource {
     /**
      * The display name of the processor job.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The location of the inputs.
      */
@@ -101,7 +101,7 @@ export class ProcessorJob extends pulumi.CustomResource {
     /**
      * The detailed status of FAILED state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The object storage location where to store analysis results.
      */
@@ -109,7 +109,7 @@ export class ProcessorJob extends pulumi.CustomResource {
     /**
      * How much progress the operation has made, compared to the total amount of work to be performed.
      */
-    public /*out*/ readonly percentComplete!: pulumi.Output<number>;
+    public /*out*/ readonly percentComplete!: pulumi.Output<number | undefined>;
     /**
      * The configuration of a processor.
      */
@@ -117,19 +117,19 @@ export class ProcessorJob extends pulumi.CustomResource {
     /**
      * The current state of the processor job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The job acceptance time.
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    public /*out*/ readonly timeAccepted!: pulumi.Output<string | undefined>;
     /**
      * The job finish time.
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeFinished!: pulumi.Output<string | undefined>;
     /**
      * The job start time.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ProcessorJob resource with the given unique name, arguments, and options.

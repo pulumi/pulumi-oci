@@ -54,41 +54,41 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
     /**
      * Display Name of the Private Access Channel.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      */
-    readonly egressSourceIpAddresses: string[];
-    readonly id: string;
+    readonly egressSourceIpAddresses?: string[];
+    readonly id?: string;
     /**
      * IP Address of the Private Access channel.
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     /**
      * Private Access Channel unique identifier key.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * Network Security Group OCIDs for an Analytics instance.
      */
-    readonly networkSecurityGroupIds: string[];
+    readonly networkSecurityGroupIds?: string[];
     readonly privateAccessChannelKey: string;
     /**
      * List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      */
-    readonly privateSourceDnsZones: outputs.Analytics.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone[];
+    readonly privateSourceDnsZones?: outputs.Analytics.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone[];
     /**
      * List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      */
-    readonly privateSourceScanHosts: outputs.Analytics.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[];
+    readonly privateSourceScanHosts?: outputs.Analytics.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost[];
     /**
      * OCID of the customer subnet connected to private access channel.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * OCID of the customer VCN peered with private access channel.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.

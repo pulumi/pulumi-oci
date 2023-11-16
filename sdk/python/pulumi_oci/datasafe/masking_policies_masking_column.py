@@ -27,19 +27,6 @@ class MaskingPoliciesMaskingColumnArgs:
                  sensitive_type_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MaskingPoliciesMaskingColumn resource.
-        :param pulumi.Input[str] column_name: (Updatable) The name of the substitution column.
-        :param pulumi.Input[str] masking_policy_id: The OCID of the masking policy.
-        :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[bool] is_masking_enabled: (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        :param pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "column_name", column_name)
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
@@ -59,9 +46,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="columnName")
     def column_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the substitution column.
-        """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
@@ -71,9 +55,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the masking policy.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
@@ -83,9 +64,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
-        """
-        The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -95,9 +73,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> pulumi.Input[str]:
-        """
-        The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
@@ -107,9 +82,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="isMaskingEnabled")
     def is_masking_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        """
         return pulumi.get(self, "is_masking_enabled")
 
     @is_masking_enabled.setter
@@ -119,9 +91,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="maskingColumnGroup")
     def masking_column_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        """
         return pulumi.get(self, "masking_column_group")
 
     @masking_column_group.setter
@@ -131,9 +100,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="maskingFormats")
     def masking_formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]:
-        """
-        (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        """
         return pulumi.get(self, "masking_formats")
 
     @masking_formats.setter
@@ -143,9 +109,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the object that contains the database column.
-        """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
@@ -155,13 +118,6 @@ class MaskingPoliciesMaskingColumnArgs:
     @property
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
@@ -190,26 +146,6 @@ class _MaskingPoliciesMaskingColumnState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MaskingPoliciesMaskingColumn resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] child_columns: An array of child columns that are in referential relationship with the masking column.
-        :param pulumi.Input[str] column_name: (Updatable) The name of the substitution column.
-        :param pulumi.Input[str] data_type: The data type of the masking column.
-        :param pulumi.Input[bool] is_masking_enabled: (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        :param pulumi.Input[str] key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the masking column.
-        :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        :param pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        :param pulumi.Input[str] masking_policy_id: The OCID of the masking policy.
-        :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
-        :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the masking column.
-        :param pulumi.Input[str] time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         if child_columns is not None:
             pulumi.set(__self__, "child_columns", child_columns)
@@ -247,9 +183,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="childColumns")
     def child_columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of child columns that are in referential relationship with the masking column.
-        """
         return pulumi.get(self, "child_columns")
 
     @child_columns.setter
@@ -259,9 +192,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="columnName")
     def column_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the substitution column.
-        """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
@@ -271,9 +201,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The data type of the masking column.
-        """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
@@ -283,9 +210,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="isMaskingEnabled")
     def is_masking_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        """
         return pulumi.get(self, "is_masking_enabled")
 
     @is_masking_enabled.setter
@@ -295,9 +219,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -307,9 +228,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the masking column.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -319,9 +237,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="maskingColumnGroup")
     def masking_column_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        """
         return pulumi.get(self, "masking_column_group")
 
     @masking_column_group.setter
@@ -331,9 +246,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="maskingFormats")
     def masking_formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]:
-        """
-        (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        """
         return pulumi.get(self, "masking_formats")
 
     @masking_formats.setter
@@ -343,9 +255,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the masking policy.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
@@ -355,9 +264,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -367,9 +273,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of the object that contains the database column.
-        """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
@@ -379,9 +282,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
@@ -391,13 +291,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
@@ -407,9 +300,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the masking column.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -419,9 +309,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -431,9 +318,6 @@ class _MaskingPoliciesMaskingColumnState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -457,98 +341,9 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                  sensitive_type_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new masking column in the specified masking policy. Use this operation
-        to add parent columns only. It automatically adds the child columns from the
-        associated sensitive data model or target database. If you provide the
-        sensitiveTypeId attribute but not the maskingFormats attribute, it automatically
-        assigns the default masking format associated with the specified sensitive type.
-        Alternatively, if you provide the maskingFormats attribute, the specified masking
-        formats are assigned to the column.
-
-        Using the maskingFormats attribute, you can assign one or more masking formats
-        to a column. You need to specify a condition as part of each masking format. It
-        enables you to do <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
-        so that you can mask the column data values differently using different
-        masking conditions. A masking format can have one or more format entries. The
-        combined output of all the format entries is used for masking. It provides the
-        flexibility to define a masking format that can generate different parts of a data
-        value separately and then combine them to get the final data value for masking.
-
-        You can use the maskingColumnGroup attribute to group the columns that you would
-        like to mask together. It enables you to do <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037">group or compound masking</a> that ensures that the
-        masked data across the columns in a group continue to retain the same logical relationship.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_masking_policies_masking_column = oci.data_safe.MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn",
-            column_name=var["masking_policies_masking_column_column_name"],
-            masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-            object=var["masking_policies_masking_column_object"],
-            schema_name=var["masking_policies_masking_column_schema_name"],
-            is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
-            masking_column_group=var["masking_policies_masking_column_masking_column_group"],
-            masking_formats=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatArgs(
-                format_entries=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs(
-                    type=var["masking_policies_masking_column_masking_formats_format_entries_type"],
-                    column_name=var["masking_policies_masking_column_masking_formats_format_entries_column_name"],
-                    description=var["masking_policies_masking_column_masking_formats_format_entries_description"],
-                    end_date=var["masking_policies_masking_column_masking_formats_format_entries_end_date"],
-                    end_length=var["masking_policies_masking_column_masking_formats_format_entries_end_length"],
-                    end_value=var["masking_policies_masking_column_masking_formats_format_entries_end_value"],
-                    fixed_number=var["masking_policies_masking_column_masking_formats_format_entries_fixed_number"],
-                    fixed_string=var["masking_policies_masking_column_masking_formats_format_entries_fixed_string"],
-                    grouping_columns=var["masking_policies_masking_column_masking_formats_format_entries_grouping_columns"],
-                    length=var["masking_policies_masking_column_masking_formats_format_entries_length"],
-                    library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"],
-                    post_processing_function=var["masking_policies_masking_column_masking_formats_format_entries_post_processing_function"],
-                    random_lists=var["masking_policies_masking_column_masking_formats_format_entries_random_list"],
-                    regular_expression=var["masking_policies_masking_column_masking_formats_format_entries_regular_expression"],
-                    replace_with=var["masking_policies_masking_column_masking_formats_format_entries_replace_with"],
-                    schema_name=var["masking_policies_masking_column_masking_formats_format_entries_schema_name"],
-                    sql_expression=var["masking_policies_masking_column_masking_formats_format_entries_sql_expression"],
-                    start_date=var["masking_policies_masking_column_masking_formats_format_entries_start_date"],
-                    start_length=var["masking_policies_masking_column_masking_formats_format_entries_start_length"],
-                    start_position=var["masking_policies_masking_column_masking_formats_format_entries_start_position"],
-                    start_value=var["masking_policies_masking_column_masking_formats_format_entries_start_value"],
-                    table_name=oci_nosql_table["test_table"]["name"],
-                    user_defined_function=var["masking_policies_masking_column_masking_formats_format_entries_user_defined_function"],
-                )],
-                condition=var["masking_policies_masking_column_masking_formats_condition"],
-                description=var["masking_policies_masking_column_masking_formats_description"],
-            )],
-            object_type=var["masking_policies_masking_column_object_type"],
-            sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
-        ```
-
-        ## Import
-
-        MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
-        ```
-
+        Create a MaskingPoliciesMaskingColumn resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] column_name: (Updatable) The name of the substitution column.
-        :param pulumi.Input[bool] is_masking_enabled: (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        :param pulumi.Input[str] masking_policy_id: The OCID of the masking policy.
-        :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
-        :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -557,83 +352,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                  args: MaskingPoliciesMaskingColumnArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new masking column in the specified masking policy. Use this operation
-        to add parent columns only. It automatically adds the child columns from the
-        associated sensitive data model or target database. If you provide the
-        sensitiveTypeId attribute but not the maskingFormats attribute, it automatically
-        assigns the default masking format associated with the specified sensitive type.
-        Alternatively, if you provide the maskingFormats attribute, the specified masking
-        formats are assigned to the column.
-
-        Using the maskingFormats attribute, you can assign one or more masking formats
-        to a column. You need to specify a condition as part of each masking format. It
-        enables you to do <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>
-        so that you can mask the column data values differently using different
-        masking conditions. A masking format can have one or more format entries. The
-        combined output of all the format entries is used for masking. It provides the
-        flexibility to define a masking format that can generate different parts of a data
-        value separately and then combine them to get the final data value for masking.
-
-        You can use the maskingColumnGroup attribute to group the columns that you would
-        like to mask together. It enables you to do <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037">group or compound masking</a> that ensures that the
-        masked data across the columns in a group continue to retain the same logical relationship.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_masking_policies_masking_column = oci.data_safe.MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn",
-            column_name=var["masking_policies_masking_column_column_name"],
-            masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-            object=var["masking_policies_masking_column_object"],
-            schema_name=var["masking_policies_masking_column_schema_name"],
-            is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
-            masking_column_group=var["masking_policies_masking_column_masking_column_group"],
-            masking_formats=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatArgs(
-                format_entries=[oci.data_safe.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs(
-                    type=var["masking_policies_masking_column_masking_formats_format_entries_type"],
-                    column_name=var["masking_policies_masking_column_masking_formats_format_entries_column_name"],
-                    description=var["masking_policies_masking_column_masking_formats_format_entries_description"],
-                    end_date=var["masking_policies_masking_column_masking_formats_format_entries_end_date"],
-                    end_length=var["masking_policies_masking_column_masking_formats_format_entries_end_length"],
-                    end_value=var["masking_policies_masking_column_masking_formats_format_entries_end_value"],
-                    fixed_number=var["masking_policies_masking_column_masking_formats_format_entries_fixed_number"],
-                    fixed_string=var["masking_policies_masking_column_masking_formats_format_entries_fixed_string"],
-                    grouping_columns=var["masking_policies_masking_column_masking_formats_format_entries_grouping_columns"],
-                    length=var["masking_policies_masking_column_masking_formats_format_entries_length"],
-                    library_masking_format_id=oci_data_safe_library_masking_format["test_library_masking_format"]["id"],
-                    post_processing_function=var["masking_policies_masking_column_masking_formats_format_entries_post_processing_function"],
-                    random_lists=var["masking_policies_masking_column_masking_formats_format_entries_random_list"],
-                    regular_expression=var["masking_policies_masking_column_masking_formats_format_entries_regular_expression"],
-                    replace_with=var["masking_policies_masking_column_masking_formats_format_entries_replace_with"],
-                    schema_name=var["masking_policies_masking_column_masking_formats_format_entries_schema_name"],
-                    sql_expression=var["masking_policies_masking_column_masking_formats_format_entries_sql_expression"],
-                    start_date=var["masking_policies_masking_column_masking_formats_format_entries_start_date"],
-                    start_length=var["masking_policies_masking_column_masking_formats_format_entries_start_length"],
-                    start_position=var["masking_policies_masking_column_masking_formats_format_entries_start_position"],
-                    start_value=var["masking_policies_masking_column_masking_formats_format_entries_start_value"],
-                    table_name=oci_nosql_table["test_table"]["name"],
-                    user_defined_function=var["masking_policies_masking_column_masking_formats_format_entries_user_defined_function"],
-                )],
-                condition=var["masking_policies_masking_column_masking_formats_condition"],
-                description=var["masking_policies_masking_column_masking_formats_description"],
-            )],
-            object_type=var["masking_policies_masking_column_object_type"],
-            sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
-        ```
-
-        ## Import
-
-        MaskingPoliciesMaskingColumns can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn test_masking_policies_masking_column "maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
-        ```
-
+        Create a MaskingPoliciesMaskingColumn resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MaskingPoliciesMaskingColumnArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -724,26 +443,6 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] child_columns: An array of child columns that are in referential relationship with the masking column.
-        :param pulumi.Input[str] column_name: (Updatable) The name of the substitution column.
-        :param pulumi.Input[str] data_type: The data type of the masking column.
-        :param pulumi.Input[bool] is_masking_enabled: (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        :param pulumi.Input[str] key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the masking column.
-        :param pulumi.Input[str] masking_column_group: (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] masking_formats: (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        :param pulumi.Input[str] masking_policy_id: The OCID of the masking policy.
-        :param pulumi.Input[str] object: The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] object_type: (Updatable) The type of the object that contains the database column.
-        :param pulumi.Input[str] schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param pulumi.Input[str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the masking column.
-        :param pulumi.Input[str] time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -769,133 +468,81 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="childColumns")
-    def child_columns(self) -> pulumi.Output[Sequence[str]]:
-        """
-        An array of child columns that are in referential relationship with the masking column.
-        """
+    def child_columns(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "child_columns")
 
     @property
     @pulumi.getter(name="columnName")
     def column_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the substitution column.
-        """
         return pulumi.get(self, "column_name")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> pulumi.Output[str]:
-        """
-        The data type of the masking column.
-        """
+    def data_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="isMaskingEnabled")
-    def is_masking_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
-        """
+    def is_masking_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_masking_enabled")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        The unique key that identifies the masking column. It's numeric and unique within a masking policy.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the current state of the masking column.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maskingColumnGroup")
-    def masking_column_group(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        """
+    def masking_column_group(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "masking_column_group")
 
     @property
     @pulumi.getter(name="maskingFormats")
-    def masking_formats(self) -> pulumi.Output[Sequence['outputs.MaskingPoliciesMaskingColumnMaskingFormat']]:
-        """
-        (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
-        """
+    def masking_formats(self) -> pulumi.Output[Optional[Sequence['outputs.MaskingPoliciesMaskingColumnMaskingFormat']]]:
         return pulumi.get(self, "masking_formats")
 
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the masking policy.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @property
     @pulumi.getter
     def object(self) -> pulumi.Output[str]:
-        """
-        The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of the object that contains the database column.
-        """
+    def object_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_type")
 
     @property
     @pulumi.getter(name="schemaName")
     def schema_name(self) -> pulumi.Output[str]:
-        """
-        The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        """
         return pulumi.get(self, "schema_name")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def sensitive_type_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "sensitive_type_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the masking column.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

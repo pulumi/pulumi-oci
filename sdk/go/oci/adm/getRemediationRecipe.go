@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
@@ -60,34 +59,34 @@ type LookupRemediationRecipeArgs struct {
 // A collection of values returned by getRemediationRecipe.
 type LookupRemediationRecipeResult struct {
 	// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfigurations []GetRemediationRecipeDetectConfiguration `pulumi:"detectConfigurations"`
 	// The name of the Remediation Recipe.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
-	IsRunTriggeredOnKbChange bool `pulumi:"isRunTriggeredOnKbChange"`
+	IsRunTriggeredOnKbChange *bool `pulumi:"isRunTriggeredOnKbChange"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	KnowledgeBaseId *string `pulumi:"knowledgeBaseId"`
 	// A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
 	NetworkConfigurations []GetRemediationRecipeNetworkConfiguration `pulumi:"networkConfigurations"`
 	RemediationRecipeId   string                                     `pulumi:"remediationRecipeId"`
 	// A configuration for the Source Code Management tool/platform used by a remediation recipe.
 	ScmConfigurations []GetRemediationRecipeScmConfiguration `pulumi:"scmConfigurations"`
 	// The current lifecycle state of the Remediation Recipe.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
 	VerifyConfigurations []GetRemediationRecipeVerifyConfiguration `pulumi:"verifyConfigurations"`
 }
@@ -130,15 +129,9 @@ func (o LookupRemediationRecipeResultOutput) ToLookupRemediationRecipeResultOutp
 	return o
 }
 
-func (o LookupRemediationRecipeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRemediationRecipeResult] {
-	return pulumix.Output[LookupRemediationRecipeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-func (o LookupRemediationRecipeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -154,8 +147,8 @@ func (o LookupRemediationRecipeResultOutput) DetectConfigurations() GetRemediati
 }
 
 // The name of the Remediation Recipe.
-func (o LookupRemediationRecipeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -164,18 +157,18 @@ func (o LookupRemediationRecipeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-func (o LookupRemediationRecipeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
-func (o LookupRemediationRecipeResultOutput) IsRunTriggeredOnKbChange() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) bool { return v.IsRunTriggeredOnKbChange }).(pulumi.BoolOutput)
+func (o LookupRemediationRecipeResultOutput) IsRunTriggeredOnKbChange() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *bool { return v.IsRunTriggeredOnKbChange }).(pulumi.BoolPtrOutput)
 }
 
 // The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-func (o LookupRemediationRecipeResultOutput) KnowledgeBaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) KnowledgeBaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.KnowledgeBaseId }).(pulumi.StringPtrOutput)
 }
 
 // A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
@@ -197,8 +190,8 @@ func (o LookupRemediationRecipeResultOutput) ScmConfigurations() GetRemediationR
 }
 
 // The current lifecycle state of the Remediation Recipe.
-func (o LookupRemediationRecipeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -207,13 +200,13 @@ func (o LookupRemediationRecipeResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o LookupRemediationRecipeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o LookupRemediationRecipeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupRemediationRecipeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.

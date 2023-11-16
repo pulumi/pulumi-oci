@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackupDestinationAssociatedDatabase {
@@ -13,27 +15,27 @@ public final class GetBackupDestinationAssociatedDatabase {
      * @return The display name of the database that is associated with the backup destination.
      * 
      */
-    private String dbName;
+    private @Nullable String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetBackupDestinationAssociatedDatabase() {}
     /**
      * @return The display name of the database that is associated with the backup destination.
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBackupDestinationAssociatedDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbName;
-        private String id;
+        private @Nullable String dbName;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetBackupDestinationAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBackupDestinationAssociatedDatabase {
         }
 
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetBackupDestinationAssociatedDatabase build() {

@@ -24,11 +24,11 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this URL List belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Total count of URLs in the URL List
         /// </summary>
-        public readonly int TotalUrls;
+        public readonly int? TotalUrls;
         /// <summary>
         /// List of urls.
         /// </summary>
@@ -40,9 +40,9 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            int totalUrls,
+            int? totalUrls,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrlResult> urls)
         {

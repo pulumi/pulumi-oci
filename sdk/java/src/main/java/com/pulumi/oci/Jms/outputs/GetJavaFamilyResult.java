@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJavaFamilyResult {
@@ -13,17 +15,17 @@ public final class GetJavaFamilyResult {
      * @return The display name of the release family.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Link to access the documentation for the release.
      * 
      */
-    private String docUrl;
+    private @Nullable String docUrl;
     /**
      * @return The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String endOfSupportLifeDate;
+    private @Nullable String endOfSupportLifeDate;
     /**
      * @return The Java release family identifier.
      * 
@@ -33,34 +35,34 @@ public final class GetJavaFamilyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return This indicates the support category for the Java release family.
      * 
      */
-    private String supportType;
+    private @Nullable String supportType;
 
     private GetJavaFamilyResult() {}
     /**
      * @return The display name of the release family.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Link to access the documentation for the release.
      * 
      */
-    public String docUrl() {
-        return this.docUrl;
+    public Optional<String> docUrl() {
+        return Optional.ofNullable(this.docUrl);
     }
     /**
      * @return The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String endOfSupportLifeDate() {
-        return this.endOfSupportLifeDate;
+    public Optional<String> endOfSupportLifeDate() {
+        return Optional.ofNullable(this.endOfSupportLifeDate);
     }
     /**
      * @return The Java release family identifier.
@@ -73,15 +75,15 @@ public final class GetJavaFamilyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return This indicates the support category for the Java release family.
      * 
      */
-    public String supportType() {
-        return this.supportType;
+    public Optional<String> supportType() {
+        return Optional.ofNullable(this.supportType);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetJavaFamilyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String docUrl;
-        private String endOfSupportLifeDate;
+        private @Nullable String displayName;
+        private @Nullable String docUrl;
+        private @Nullable String endOfSupportLifeDate;
         private String familyVersion;
-        private String id;
-        private String supportType;
+        private @Nullable String id;
+        private @Nullable String supportType;
         public Builder() {}
         public Builder(GetJavaFamilyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,18 +113,18 @@ public final class GetJavaFamilyResult {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder docUrl(String docUrl) {
-            this.docUrl = Objects.requireNonNull(docUrl);
+        public Builder docUrl(@Nullable String docUrl) {
+            this.docUrl = docUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder endOfSupportLifeDate(String endOfSupportLifeDate) {
-            this.endOfSupportLifeDate = Objects.requireNonNull(endOfSupportLifeDate);
+        public Builder endOfSupportLifeDate(@Nullable String endOfSupportLifeDate) {
+            this.endOfSupportLifeDate = endOfSupportLifeDate;
             return this;
         }
         @CustomType.Setter
@@ -131,13 +133,13 @@ public final class GetJavaFamilyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder supportType(String supportType) {
-            this.supportType = Objects.requireNonNull(supportType);
+        public Builder supportType(@Nullable String supportType) {
+            this.supportType = supportType;
             return this;
         }
         public GetJavaFamilyResult build() {

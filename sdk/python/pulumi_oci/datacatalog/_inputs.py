@@ -63,9 +63,6 @@ class GetCatalogTypesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Immutable resource name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -74,9 +71,6 @@ class GetCatalogTypesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Immutable resource name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

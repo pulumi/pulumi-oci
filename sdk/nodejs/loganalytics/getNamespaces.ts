@@ -55,11 +55,11 @@ export interface GetNamespacesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of namespace_collection.
      */
-    readonly namespaceCollections: outputs.LogAnalytics.GetNamespacesNamespaceCollection[];
+    readonly namespaceCollections?: outputs.LogAnalytics.GetNamespacesNamespaceCollection[];
 }
 /**
  * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.

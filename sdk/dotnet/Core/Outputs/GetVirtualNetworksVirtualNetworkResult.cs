@@ -15,24 +15,24 @@ namespace Pulumi.Oci.Core.Outputs
     {
         public readonly ImmutableArray<string> Byoipv6cidrBlocks;
         public readonly ImmutableArray<Outputs.GetVirtualNetworksVirtualNetworkByoipv6cidrDetailResult> Byoipv6cidrDetails;
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         public readonly ImmutableArray<string> CidrBlocks;
-        public readonly string CompartmentId;
-        public readonly string DefaultDhcpOptionsId;
-        public readonly string DefaultRouteTableId;
-        public readonly string DefaultSecurityListId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly string DisplayName;
-        public readonly string DnsLabel;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
-        public readonly string Id;
+        public readonly string? CompartmentId;
+        public readonly string? DefaultDhcpOptionsId;
+        public readonly string? DefaultRouteTableId;
+        public readonly string? DefaultSecurityListId;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly string? DisplayName;
+        public readonly string? DnsLabel;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly string? Id;
         public readonly ImmutableArray<string> Ipv6cidrBlocks;
         public readonly ImmutableArray<string> Ipv6privateCidrBlocks;
-        public readonly bool IsIpv6enabled;
-        public readonly bool IsOracleGuaAllocationEnabled;
-        public readonly string State;
-        public readonly string TimeCreated;
-        public readonly string VcnDomainName;
+        public readonly bool? IsIpv6enabled;
+        public readonly bool? IsOracleGuaAllocationEnabled;
+        public readonly string? State;
+        public readonly string? TimeCreated;
+        public readonly string? VcnDomainName;
 
         [OutputConstructor]
         private GetVirtualNetworksVirtualNetworkResult(
@@ -40,41 +40,41 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetVirtualNetworksVirtualNetworkByoipv6cidrDetailResult> byoipv6cidrDetails,
 
-            string cidrBlock,
+            string? cidrBlock,
 
             ImmutableArray<string> cidrBlocks,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string defaultDhcpOptionsId,
+            string? defaultDhcpOptionsId,
 
-            string defaultRouteTableId,
+            string? defaultRouteTableId,
 
-            string defaultSecurityListId,
+            string? defaultSecurityListId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string dnsLabel,
+            string? dnsLabel,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> ipv6cidrBlocks,
 
             ImmutableArray<string> ipv6privateCidrBlocks,
 
-            bool isIpv6enabled,
+            bool? isIpv6enabled,
 
-            bool isOracleGuaAllocationEnabled,
+            bool? isOracleGuaAllocationEnabled,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vcnDomainName)
+            string? vcnDomainName)
         {
             Byoipv6cidrBlocks = byoipv6cidrBlocks;
             Byoipv6cidrDetails = byoipv6cidrDetails;

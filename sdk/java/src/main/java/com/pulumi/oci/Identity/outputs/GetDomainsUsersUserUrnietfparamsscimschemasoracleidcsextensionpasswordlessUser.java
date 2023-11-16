@@ -8,6 +8,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschem
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser {
@@ -15,17 +17,17 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Factor Identifier ID
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers;
     /**
      * @return Authentication Factor Method
      * 
      */
-    private String factorMethod;
+    private @Nullable String factorMethod;
     /**
      * @return Authentication Factor Type
      * 
      */
-    private String factorType;
+    private @Nullable String factorType;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser() {}
     /**
@@ -33,21 +35,21 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers() {
-        return this.factorIdentifiers;
+        return this.factorIdentifiers == null ? List.of() : this.factorIdentifiers;
     }
     /**
      * @return Authentication Factor Method
      * 
      */
-    public String factorMethod() {
-        return this.factorMethod;
+    public Optional<String> factorMethod() {
+        return Optional.ofNullable(this.factorMethod);
     }
     /**
      * @return Authentication Factor Type
      * 
      */
-    public String factorType() {
-        return this.factorType;
+    public Optional<String> factorType() {
+        return Optional.ofNullable(this.factorType);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers;
-        private String factorMethod;
-        private String factorType;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers;
+        private @Nullable String factorMethod;
+        private @Nullable String factorType;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder factorIdentifiers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers) {
-            this.factorIdentifiers = Objects.requireNonNull(factorIdentifiers);
+        public Builder factorIdentifiers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers) {
+            this.factorIdentifiers = factorIdentifiers;
             return this;
         }
         public Builder factorIdentifiers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier... factorIdentifiers) {
             return factorIdentifiers(List.of(factorIdentifiers));
         }
         @CustomType.Setter
-        public Builder factorMethod(String factorMethod) {
-            this.factorMethod = Objects.requireNonNull(factorMethod);
+        public Builder factorMethod(@Nullable String factorMethod) {
+            this.factorMethod = factorMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder factorType(String factorType) {
-            this.factorType = Objects.requireNonNull(factorType);
+        public Builder factorType(@Nullable String factorType) {
+            this.factorType = factorType;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser build() {

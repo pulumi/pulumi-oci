@@ -49,9 +49,6 @@ class GetRepositoryRefsResult:
     @property
     @pulumi.getter(name="commitId")
     def commit_id(self) -> Optional[str]:
-        """
-        Commit ID pointed to by the new branch.
-        """
         return pulumi.get(self, "commit_id")
 
     @property
@@ -61,7 +58,7 @@ class GetRepositoryRefsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,33 +67,21 @@ class GetRepositoryRefsResult:
     @property
     @pulumi.getter(name="refName")
     def ref_name(self) -> Optional[str]:
-        """
-        Unique reference name inside a repository.
-        """
         return pulumi.get(self, "ref_name")
 
     @property
     @pulumi.getter(name="refType")
     def ref_type(self) -> Optional[str]:
-        """
-        The type of reference (BRANCH or TAG).
-        """
         return pulumi.get(self, "ref_type")
 
     @property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> str:
-        """
-        The OCID of the repository containing the reference.
-        """
         return pulumi.get(self, "repository_id")
 
     @property
     @pulumi.getter(name="repositoryRefCollections")
-    def repository_ref_collections(self) -> Sequence['outputs.GetRepositoryRefsRepositoryRefCollectionResult']:
-        """
-        The list of repository_ref_collection.
-        """
+    def repository_ref_collections(self) -> Optional[Sequence['outputs.GetRepositoryRefsRepositoryRefCollectionResult']]:
         return pulumi.get(self, "repository_ref_collections")
 
 
@@ -122,27 +107,7 @@ def get_repository_refs(commit_id: Optional[str] = None,
                         repository_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryRefsResult:
     """
-    This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of references.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=oci_devops_repository["test_repository"]["id"],
-        commit_id=oci_devops_commit["test_commit"]["id"],
-        ref_name=var["repository_ref_ref_name"],
-        ref_type=var["repository_ref_ref_type"])
-    ```
-
-
-    :param str commit_id: Commit ID in a repository.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str ref_type: Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['commitId'] = commit_id
@@ -171,26 +136,6 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[str]]] 
                                repository_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryRefsResult]:
     """
-    This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of references.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=oci_devops_repository["test_repository"]["id"],
-        commit_id=oci_devops_commit["test_commit"]["id"],
-        ref_name=var["repository_ref_ref_name"],
-        ref_type=var["repository_ref_ref_type"])
-    ```
-
-
-    :param str commit_id: Commit ID in a repository.
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str ref_type: Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

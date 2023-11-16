@@ -6,6 +6,8 @@ package com.pulumi.oci.MediaServices.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaAssetDistributionChannelAttachmentResult {
@@ -13,7 +15,7 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return OCID of associated Distribution Channel.
      * 
@@ -23,36 +25,36 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String mediaAssetId;
     /**
      * @return The ingest MediaWorkflowJob ID that created this attachment.
      * 
      */
-    private String mediaWorkflowJobId;
+    private @Nullable String mediaWorkflowJobId;
     /**
      * @return The identifier for the metadata.
      * 
      */
-    private String metadataRef;
+    private @Nullable String metadataRef;
     /**
      * @return Lifecycle state of the attachment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Version of the attachment.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetMediaAssetDistributionChannelAttachmentResult() {}
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return OCID of associated Distribution Channel.
@@ -65,8 +67,8 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String mediaAssetId() {
         return this.mediaAssetId;
@@ -75,29 +77,29 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
      * @return The ingest MediaWorkflowJob ID that created this attachment.
      * 
      */
-    public String mediaWorkflowJobId() {
-        return this.mediaWorkflowJobId;
+    public Optional<String> mediaWorkflowJobId() {
+        return Optional.ofNullable(this.mediaWorkflowJobId);
     }
     /**
      * @return The identifier for the metadata.
      * 
      */
-    public String metadataRef() {
-        return this.metadataRef;
+    public Optional<String> metadataRef() {
+        return Optional.ofNullable(this.metadataRef);
     }
     /**
      * @return Lifecycle state of the attachment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Version of the attachment.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -109,14 +111,14 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
+        private @Nullable String displayName;
         private String distributionChannelId;
-        private String id;
+        private @Nullable String id;
         private String mediaAssetId;
-        private String mediaWorkflowJobId;
-        private String metadataRef;
-        private String state;
-        private String version;
+        private @Nullable String mediaWorkflowJobId;
+        private @Nullable String metadataRef;
+        private @Nullable String state;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetMediaAssetDistributionChannelAttachmentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,8 +133,8 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -141,8 +143,8 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -151,23 +153,23 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+        public Builder mediaWorkflowJobId(@Nullable String mediaWorkflowJobId) {
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
-        public Builder metadataRef(String metadataRef) {
-            this.metadataRef = Objects.requireNonNull(metadataRef);
+        public Builder metadataRef(@Nullable String metadataRef) {
+            this.metadataRef = metadataRef;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetMediaAssetDistributionChannelAttachmentResult build() {

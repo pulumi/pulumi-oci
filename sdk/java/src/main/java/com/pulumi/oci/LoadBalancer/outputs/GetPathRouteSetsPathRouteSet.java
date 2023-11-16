@@ -8,6 +8,8 @@ import com.pulumi.oci.LoadBalancer.outputs.GetPathRouteSetsPathRouteSetPathRoute
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPathRouteSetsPathRouteSet {
@@ -26,7 +28,7 @@ public final class GetPathRouteSetsPathRouteSet {
      * 
      */
     private List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes;
-    private String state;
+    private @Nullable String state;
 
     private GetPathRouteSetsPathRouteSet() {}
     /**
@@ -50,8 +52,8 @@ public final class GetPathRouteSetsPathRouteSet {
     public List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes() {
         return this.pathRoutes;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -66,7 +68,7 @@ public final class GetPathRouteSetsPathRouteSet {
         private String loadBalancerId;
         private String name;
         private List<GetPathRouteSetsPathRouteSetPathRoute> pathRoutes;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetPathRouteSetsPathRouteSet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,8 +97,8 @@ public final class GetPathRouteSetsPathRouteSet {
             return pathRoutes(List.of(pathRoutes));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetPathRouteSetsPathRouteSet build() {

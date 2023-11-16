@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployEnvironmentResult {
@@ -18,117 +20,117 @@ public final class GetDeployEnvironmentResult {
      * @return The OCID of the Kubernetes cluster.
      * 
      */
-    private String clusterId;
+    private @Nullable String clusterId;
     /**
      * @return The OCID of a compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A collection of selectors. The combination of instances matching the selectors are included in the instance group.
      * 
      */
-    private List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors;
+    private @Nullable List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     private String deployEnvironmentId;
     /**
      * @return Deployment environment type.
      * 
      */
-    private String deployEnvironmentType;
+    private @Nullable String deployEnvironmentType;
     /**
      * @return Optional description about the deployment environment.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the Function.
      * 
      */
-    private String functionId;
+    private @Nullable String functionId;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    private List<GetDeployEnvironmentNetworkChannel> networkChannels;
+    private @Nullable List<GetDeployEnvironmentNetworkChannel> networkChannels;
     /**
      * @return The OCID of a project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the deployment environment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetDeployEnvironmentResult() {}
     /**
      * @return The OCID of the Kubernetes cluster.
      * 
      */
-    public String clusterId() {
-        return this.clusterId;
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
     }
     /**
      * @return The OCID of a compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A collection of selectors. The combination of instances matching the selectors are included in the instance group.
      * 
      */
     public List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors() {
-        return this.computeInstanceGroupSelectors;
+        return this.computeInstanceGroupSelectors == null ? List.of() : this.computeInstanceGroupSelectors;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     public String deployEnvironmentId() {
         return this.deployEnvironmentId;
@@ -137,92 +139,92 @@ public final class GetDeployEnvironmentResult {
      * @return Deployment environment type.
      * 
      */
-    public String deployEnvironmentType() {
-        return this.deployEnvironmentType;
+    public Optional<String> deployEnvironmentType() {
+        return Optional.ofNullable(this.deployEnvironmentType);
     }
     /**
      * @return Optional description about the deployment environment.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Deployment environment display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the Function.
      * 
      */
-    public String functionId() {
-        return this.functionId;
+    public Optional<String> functionId() {
+        return Optional.ofNullable(this.functionId);
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
     public List<GetDeployEnvironmentNetworkChannel> networkChannels() {
-        return this.networkChannels;
+        return this.networkChannels == null ? List.of() : this.networkChannels;
     }
     /**
      * @return The OCID of a project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The current state of the deployment environment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -234,24 +236,24 @@ public final class GetDeployEnvironmentResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String clusterId;
-        private String compartmentId;
-        private List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors;
-        private Map<String,Object> definedTags;
+        private @Nullable String clusterId;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors;
+        private @Nullable Map<String,Object> definedTags;
         private String deployEnvironmentId;
-        private String deployEnvironmentType;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String functionId;
-        private String id;
-        private String lifecycleDetails;
-        private List<GetDeployEnvironmentNetworkChannel> networkChannels;
-        private String projectId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String deployEnvironmentType;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String functionId;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetDeployEnvironmentNetworkChannel> networkChannels;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetDeployEnvironmentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -276,26 +278,26 @@ public final class GetDeployEnvironmentResult {
         }
 
         @CustomType.Setter
-        public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+        public Builder clusterId(@Nullable String clusterId) {
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeInstanceGroupSelectors(List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors) {
-            this.computeInstanceGroupSelectors = Objects.requireNonNull(computeInstanceGroupSelectors);
+        public Builder computeInstanceGroupSelectors(@Nullable List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors) {
+            this.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
             return this;
         }
         public Builder computeInstanceGroupSelectors(GetDeployEnvironmentComputeInstanceGroupSelector... computeInstanceGroupSelectors) {
             return computeInstanceGroupSelectors(List.of(computeInstanceGroupSelectors));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -304,71 +306,71 @@ public final class GetDeployEnvironmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deployEnvironmentType(String deployEnvironmentType) {
-            this.deployEnvironmentType = Objects.requireNonNull(deployEnvironmentType);
+        public Builder deployEnvironmentType(@Nullable String deployEnvironmentType) {
+            this.deployEnvironmentType = deployEnvironmentType;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+        public Builder functionId(@Nullable String functionId) {
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder networkChannels(List<GetDeployEnvironmentNetworkChannel> networkChannels) {
-            this.networkChannels = Objects.requireNonNull(networkChannels);
+        public Builder networkChannels(@Nullable List<GetDeployEnvironmentNetworkChannel> networkChannels) {
+            this.networkChannels = networkChannels;
             return this;
         }
         public Builder networkChannels(GetDeployEnvironmentNetworkChannel... networkChannels) {
             return networkChannels(List.of(networkChannels));
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDeployEnvironmentResult build() {

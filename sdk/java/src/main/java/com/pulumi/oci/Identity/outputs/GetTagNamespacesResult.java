@@ -25,7 +25,7 @@ public final class GetTagNamespacesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean includeSubcompartments;
     /**
      * @return The tagnamespace&#39;s current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
@@ -36,7 +36,7 @@ public final class GetTagNamespacesResult {
      * @return The list of tag_namespaces.
      * 
      */
-    private List<GetTagNamespacesTagNamespace> tagNamespaces;
+    private @Nullable List<GetTagNamespacesTagNamespace> tagNamespaces;
 
     private GetTagNamespacesResult() {}
     /**
@@ -53,8 +53,8 @@ public final class GetTagNamespacesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> includeSubcompartments() {
         return Optional.ofNullable(this.includeSubcompartments);
@@ -71,7 +71,7 @@ public final class GetTagNamespacesResult {
      * 
      */
     public List<GetTagNamespacesTagNamespace> tagNamespaces() {
-        return this.tagNamespaces;
+        return this.tagNamespaces == null ? List.of() : this.tagNamespaces;
     }
 
     public static Builder builder() {
@@ -85,10 +85,10 @@ public final class GetTagNamespacesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetTagNamespacesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean includeSubcompartments;
         private @Nullable String state;
-        private List<GetTagNamespacesTagNamespace> tagNamespaces;
+        private @Nullable List<GetTagNamespacesTagNamespace> tagNamespaces;
         public Builder() {}
         public Builder(GetTagNamespacesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,8 +114,8 @@ public final class GetTagNamespacesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -129,8 +129,8 @@ public final class GetTagNamespacesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tagNamespaces(List<GetTagNamespacesTagNamespace> tagNamespaces) {
-            this.tagNamespaces = Objects.requireNonNull(tagNamespaces);
+        public Builder tagNamespaces(@Nullable List<GetTagNamespacesTagNamespace> tagNamespaces) {
+            this.tagNamespaces = tagNamespaces;
             return this;
         }
         public Builder tagNamespaces(GetTagNamespacesTagNamespace... tagNamespaces) {

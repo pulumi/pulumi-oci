@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -62,7 +61,7 @@ type LookupDeployStageResult struct {
 	// Specifies the approval policy.
 	ApprovalPolicies []GetDeployStageApprovalPolicy `pulumi:"approvalPolicies"`
 	// Disable pre/post upgrade hooks. Set to false by default.
-	AreHooksEnabled bool `pulumi:"areHooksEnabled"`
+	AreHooksEnabled *bool `pulumi:"areHooksEnabled"`
 	// Collection of backend environment IP addresses.
 	BlueBackendIps []GetDeployStageBlueBackendIp `pulumi:"blueBackendIps"`
 	// Specifies the required blue green release strategy for OKE deployment.
@@ -70,17 +69,17 @@ type LookupDeployStageResult struct {
 	// Specifies the required canary release strategy for OKE deployment.
 	CanaryStrategies []GetDeployStageCanaryStrategy `pulumi:"canaryStrategies"`
 	// The OCID of the artifact that contains the command specification.
-	CommandSpecDeployArtifactId string `pulumi:"commandSpecDeployArtifactId"`
+	CommandSpecDeployArtifactId *string `pulumi:"commandSpecDeployArtifactId"`
 	// The OCID of the compartment where the ContainerInstance will be created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-	ComputeInstanceGroupBlueGreenDeploymentDeployStageId string `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
+	ComputeInstanceGroupBlueGreenDeploymentDeployStageId *string `pulumi:"computeInstanceGroupBlueGreenDeploymentDeployStageId"`
 	// The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
-	ComputeInstanceGroupCanaryDeployStageId string `pulumi:"computeInstanceGroupCanaryDeployStageId"`
+	ComputeInstanceGroupCanaryDeployStageId *string `pulumi:"computeInstanceGroupCanaryDeployStageId"`
 	// A compute instance group canary traffic shift stage OCID for load balancer.
-	ComputeInstanceGroupCanaryTrafficShiftDeployStageId string `pulumi:"computeInstanceGroupCanaryTrafficShiftDeployStageId"`
+	ComputeInstanceGroupCanaryTrafficShiftDeployStageId *string `pulumi:"computeInstanceGroupCanaryTrafficShiftDeployStageId"`
 	// A compute instance group environment OCID for rolling deployment.
-	ComputeInstanceGroupDeployEnvironmentId string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
+	ComputeInstanceGroupDeployEnvironmentId *string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
 	Config map[string]interface{} `pulumi:"config"`
 	// Specifies the container configuration.
@@ -88,76 +87,76 @@ type LookupDeployStageResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-	DeployArtifactId string `pulumi:"deployArtifactId"`
+	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
 	DeployArtifactIds []string `pulumi:"deployArtifactIds"`
 	// First compute instance group environment OCID for deployment.
-	DeployEnvironmentIdA string `pulumi:"deployEnvironmentIdA"`
+	DeployEnvironmentIdA *string `pulumi:"deployEnvironmentIdA"`
 	// Second compute instance group environment OCID for deployment.
-	DeployEnvironmentIdB string `pulumi:"deployEnvironmentIdB"`
+	DeployEnvironmentIdB *string `pulumi:"deployEnvironmentIdB"`
 	// The OCID of a pipeline.
-	DeployPipelineId string `pulumi:"deployPipelineId"`
-	DeployStageId    string `pulumi:"deployStageId"`
+	DeployPipelineId *string `pulumi:"deployPipelineId"`
+	DeployStageId    string  `pulumi:"deployStageId"`
 	// Collection containing the predecessors of a stage.
 	DeployStagePredecessorCollections []GetDeployStageDeployStagePredecessorCollection `pulumi:"deployStagePredecessorCollections"`
 	// Deployment stage type.
-	DeployStageType string `pulumi:"deployStageType"`
+	DeployStageType *string `pulumi:"deployStageType"`
 	// The OCID of the artifact that contains the deployment specification.
-	DeploymentSpecDeployArtifactId string `pulumi:"deploymentSpecDeployArtifactId"`
+	DeploymentSpecDeployArtifactId *string `pulumi:"deploymentSpecDeployArtifactId"`
 	// Optional description about the deployment stage.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A Docker image artifact OCID.
-	DockerImageDeployArtifactId string `pulumi:"dockerImageDeployArtifactId"`
+	DockerImageDeployArtifactId *string `pulumi:"dockerImageDeployArtifactId"`
 	// Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicies []GetDeployStageFailurePolicy `pulumi:"failurePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Function environment OCID.
-	FunctionDeployEnvironmentId string `pulumi:"functionDeployEnvironmentId"`
+	FunctionDeployEnvironmentId *string `pulumi:"functionDeployEnvironmentId"`
 	// Timeout for execution of the Function. Value in seconds.
-	FunctionTimeoutInSeconds int `pulumi:"functionTimeoutInSeconds"`
+	FunctionTimeoutInSeconds *int `pulumi:"functionTimeoutInSeconds"`
 	// Collection of backend environment IP addresses.
 	GreenBackendIps []GetDeployStageGreenBackendIp `pulumi:"greenBackendIps"`
 	// Helm chart artifact OCID.
-	HelmChartDeployArtifactId string `pulumi:"helmChartDeployArtifactId"`
+	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
-	IsAsync bool `pulumi:"isAsync"`
+	IsAsync *bool `pulumi:"isAsync"`
 	// Enables helm --debug option to stream output to tf stdout. Set to false by default.
-	IsDebugEnabled bool `pulumi:"isDebugEnabled"`
+	IsDebugEnabled *bool `pulumi:"isDebugEnabled"`
 	// Force resource update through delete; or if required, recreate. Set to false by default.
-	IsForceEnabled bool `pulumi:"isForceEnabled"`
+	IsForceEnabled *bool `pulumi:"isForceEnabled"`
 	// A boolean flag specifies whether the invoked function must be validated.
-	IsValidationEnabled bool `pulumi:"isValidationEnabled"`
+	IsValidationEnabled *bool `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
 	KubernetesManifestDeployArtifactIds []string `pulumi:"kubernetesManifestDeployArtifactIds"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	LoadBalancerConfigs []GetDeployStageLoadBalancerConfig `pulumi:"loadBalancerConfigs"`
 	// Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-	MaxHistory int `pulumi:"maxHistory"`
+	MaxHistory *int `pulumi:"maxHistory"`
 	// Maximum usable memory for the Function (in MB).
-	MaxMemoryInMbs string `pulumi:"maxMemoryInMbs"`
+	MaxMemoryInMbs *string `pulumi:"maxMemoryInMbs"`
 	// Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-	OkeBlueGreenDeployStageId string `pulumi:"okeBlueGreenDeployStageId"`
+	OkeBlueGreenDeployStageId *string `pulumi:"okeBlueGreenDeployStageId"`
 	// The OCID of an upstream OKE canary deployment stage in this pipeline.
-	OkeCanaryDeployStageId string `pulumi:"okeCanaryDeployStageId"`
+	OkeCanaryDeployStageId *string `pulumi:"okeCanaryDeployStageId"`
 	// The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-	OkeCanaryTrafficShiftDeployStageId string `pulumi:"okeCanaryTrafficShiftDeployStageId"`
+	OkeCanaryTrafficShiftDeployStageId *string `pulumi:"okeCanaryTrafficShiftDeployStageId"`
 	// Kubernetes cluster environment OCID for deployment.
-	OkeClusterDeployEnvironmentId string `pulumi:"okeClusterDeployEnvironmentId"`
+	OkeClusterDeployEnvironmentId *string `pulumi:"okeClusterDeployEnvironmentId"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	ProductionLoadBalancerConfigs []GetDeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// Release name of the Helm chart.
-	ReleaseName string `pulumi:"releaseName"`
+	ReleaseName *string `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
 	RollbackPolicies []GetDeployStageRollbackPolicy `pulumi:"rollbackPolicies"`
 	// Description of rollout policy for load balancer traffic shift stage.
@@ -167,31 +166,31 @@ type LookupDeployStageResult struct {
 	// Specifies the name and value pairs to set helm values.
 	SetValues []GetDeployStageSetValue `pulumi:"setValues"`
 	// Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-	ShouldCleanupOnFail bool `pulumi:"shouldCleanupOnFail"`
+	ShouldCleanupOnFail *bool `pulumi:"shouldCleanupOnFail"`
 	// Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
-	ShouldNotWait bool `pulumi:"shouldNotWait"`
+	ShouldNotWait *bool `pulumi:"shouldNotWait"`
 	// During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-	ShouldResetValues bool `pulumi:"shouldResetValues"`
+	ShouldResetValues *bool `pulumi:"shouldResetValues"`
 	// During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-	ShouldReuseValues bool `pulumi:"shouldReuseValues"`
+	ShouldReuseValues *bool `pulumi:"shouldReuseValues"`
 	// If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-	ShouldSkipCrds bool `pulumi:"shouldSkipCrds"`
+	ShouldSkipCrds *bool `pulumi:"shouldSkipCrds"`
 	// If set, renders subchart notes along with the parent. Set to false by default.
-	ShouldSkipRenderSubchartNotes bool `pulumi:"shouldSkipRenderSubchartNotes"`
+	ShouldSkipRenderSubchartNotes *bool `pulumi:"shouldSkipRenderSubchartNotes"`
 	// The current state of the deployment stage.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfigs []GetDeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfigs"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Specifies the target or destination backend set.
-	TrafficShiftTarget string `pulumi:"trafficShiftTarget"`
+	TrafficShiftTarget *string `pulumi:"trafficShiftTarget"`
 	// List of values.yaml file artifact OCIDs.
 	ValuesArtifactIds []string `pulumi:"valuesArtifactIds"`
 	// Specifies wait criteria for the Wait stage.
@@ -236,20 +235,14 @@ func (o LookupDeployStageResultOutput) ToLookupDeployStageResultOutputWithContex
 	return o
 }
 
-func (o LookupDeployStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeployStageResult] {
-	return pulumix.Output[LookupDeployStageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Specifies the approval policy.
 func (o LookupDeployStageResultOutput) ApprovalPolicies() GetDeployStageApprovalPolicyArrayOutput {
 	return o.ApplyT(func(v LookupDeployStageResult) []GetDeployStageApprovalPolicy { return v.ApprovalPolicies }).(GetDeployStageApprovalPolicyArrayOutput)
 }
 
 // Disable pre/post upgrade hooks. Set to false by default.
-func (o LookupDeployStageResultOutput) AreHooksEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.AreHooksEnabled }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) AreHooksEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.AreHooksEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Collection of backend environment IP addresses.
@@ -268,33 +261,33 @@ func (o LookupDeployStageResultOutput) CanaryStrategies() GetDeployStageCanarySt
 }
 
 // The OCID of the artifact that contains the command specification.
-func (o LookupDeployStageResultOutput) CommandSpecDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.CommandSpecDeployArtifactId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) CommandSpecDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.CommandSpecDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment where the ContainerInstance will be created.
-func (o LookupDeployStageResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
-func (o LookupDeployStageResultOutput) ComputeInstanceGroupBlueGreenDeploymentDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ComputeInstanceGroupBlueGreenDeploymentDeployStageId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) ComputeInstanceGroupBlueGreenDeploymentDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.ComputeInstanceGroupBlueGreenDeploymentDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
-func (o LookupDeployStageResultOutput) ComputeInstanceGroupCanaryDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ComputeInstanceGroupCanaryDeployStageId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) ComputeInstanceGroupCanaryDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.ComputeInstanceGroupCanaryDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // A compute instance group canary traffic shift stage OCID for load balancer.
-func (o LookupDeployStageResultOutput) ComputeInstanceGroupCanaryTrafficShiftDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ComputeInstanceGroupCanaryTrafficShiftDeployStageId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) ComputeInstanceGroupCanaryTrafficShiftDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.ComputeInstanceGroupCanaryTrafficShiftDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // A compute instance group environment OCID for rolling deployment.
-func (o LookupDeployStageResultOutput) ComputeInstanceGroupDeployEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ComputeInstanceGroupDeployEnvironmentId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) ComputeInstanceGroupDeployEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.ComputeInstanceGroupDeployEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // User provided key and value pair configuration, which is assigned through constants or parameter.
@@ -313,8 +306,8 @@ func (o LookupDeployStageResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
-func (o LookupDeployStageResultOutput) DeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeployArtifactId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // The list of file artifact OCIDs to deploy.
@@ -323,18 +316,18 @@ func (o LookupDeployStageResultOutput) DeployArtifactIds() pulumi.StringArrayOut
 }
 
 // First compute instance group environment OCID for deployment.
-func (o LookupDeployStageResultOutput) DeployEnvironmentIdA() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeployEnvironmentIdA }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DeployEnvironmentIdA() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DeployEnvironmentIdA }).(pulumi.StringPtrOutput)
 }
 
 // Second compute instance group environment OCID for deployment.
-func (o LookupDeployStageResultOutput) DeployEnvironmentIdB() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeployEnvironmentIdB }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DeployEnvironmentIdB() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DeployEnvironmentIdB }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a pipeline.
-func (o LookupDeployStageResultOutput) DeployPipelineId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeployPipelineId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DeployPipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DeployPipelineId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDeployStageResultOutput) DeployStageId() pulumi.StringOutput {
@@ -349,28 +342,28 @@ func (o LookupDeployStageResultOutput) DeployStagePredecessorCollections() GetDe
 }
 
 // Deployment stage type.
-func (o LookupDeployStageResultOutput) DeployStageType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeployStageType }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DeployStageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DeployStageType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the artifact that contains the deployment specification.
-func (o LookupDeployStageResultOutput) DeploymentSpecDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DeploymentSpecDeployArtifactId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DeploymentSpecDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DeploymentSpecDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // Optional description about the deployment stage.
-func (o LookupDeployStageResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o LookupDeployStageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A Docker image artifact OCID.
-func (o LookupDeployStageResultOutput) DockerImageDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.DockerImageDeployArtifactId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) DockerImageDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.DockerImageDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies a failure policy for a compute instance group rolling deployment stage.
@@ -384,13 +377,13 @@ func (o LookupDeployStageResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Function environment OCID.
-func (o LookupDeployStageResultOutput) FunctionDeployEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.FunctionDeployEnvironmentId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) FunctionDeployEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.FunctionDeployEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // Timeout for execution of the Function. Value in seconds.
-func (o LookupDeployStageResultOutput) FunctionTimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) int { return v.FunctionTimeoutInSeconds }).(pulumi.IntOutput)
+func (o LookupDeployStageResultOutput) FunctionTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *int { return v.FunctionTimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Collection of backend environment IP addresses.
@@ -399,33 +392,33 @@ func (o LookupDeployStageResultOutput) GreenBackendIps() GetDeployStageGreenBack
 }
 
 // Helm chart artifact OCID.
-func (o LookupDeployStageResultOutput) HelmChartDeployArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) HelmChartDeployArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.HelmChartDeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupDeployStageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag specifies whether this stage executes asynchronously.
-func (o LookupDeployStageResultOutput) IsAsync() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsAsync }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) IsAsync() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.IsAsync }).(pulumi.BoolPtrOutput)
 }
 
 // Enables helm --debug option to stream output to tf stdout. Set to false by default.
-func (o LookupDeployStageResultOutput) IsDebugEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsDebugEnabled }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) IsDebugEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.IsDebugEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Force resource update through delete; or if required, recreate. Set to false by default.
-func (o LookupDeployStageResultOutput) IsForceEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsForceEnabled }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) IsForceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.IsForceEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A boolean flag specifies whether the invoked function must be validated.
-func (o LookupDeployStageResultOutput) IsValidationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.IsValidationEnabled }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) IsValidationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.IsValidationEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // List of Kubernetes manifest artifact OCIDs.
@@ -434,8 +427,8 @@ func (o LookupDeployStageResultOutput) KubernetesManifestDeployArtifactIds() pul
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupDeployStageResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
@@ -444,38 +437,38 @@ func (o LookupDeployStageResultOutput) LoadBalancerConfigs() GetDeployStageLoadB
 }
 
 // Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
-func (o LookupDeployStageResultOutput) MaxHistory() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) int { return v.MaxHistory }).(pulumi.IntOutput)
+func (o LookupDeployStageResultOutput) MaxHistory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *int { return v.MaxHistory }).(pulumi.IntPtrOutput)
 }
 
 // Maximum usable memory for the Function (in MB).
-func (o LookupDeployStageResultOutput) MaxMemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.MaxMemoryInMbs }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) MaxMemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.MaxMemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
-func (o LookupDeployStageResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the upstream OKE blue-green deployment stage in this pipeline.
-func (o LookupDeployStageResultOutput) OkeBlueGreenDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.OkeBlueGreenDeployStageId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) OkeBlueGreenDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.OkeBlueGreenDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of an upstream OKE canary deployment stage in this pipeline.
-func (o LookupDeployStageResultOutput) OkeCanaryDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.OkeCanaryDeployStageId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) OkeCanaryDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.OkeCanaryDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of an upstream OKE canary deployment traffic shift stage in this pipeline.
-func (o LookupDeployStageResultOutput) OkeCanaryTrafficShiftDeployStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.OkeCanaryTrafficShiftDeployStageId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) OkeCanaryTrafficShiftDeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.OkeCanaryTrafficShiftDeployStageId }).(pulumi.StringPtrOutput)
 }
 
 // Kubernetes cluster environment OCID for deployment.
-func (o LookupDeployStageResultOutput) OkeClusterDeployEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.OkeClusterDeployEnvironmentId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) OkeClusterDeployEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.OkeClusterDeployEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
@@ -486,13 +479,13 @@ func (o LookupDeployStageResultOutput) ProductionLoadBalancerConfigs() GetDeploy
 }
 
 // The OCID of a project.
-func (o LookupDeployStageResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // Release name of the Helm chart.
-func (o LookupDeployStageResultOutput) ReleaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.ReleaseName }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) ReleaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.ReleaseName }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -516,38 +509,38 @@ func (o LookupDeployStageResultOutput) SetValues() GetDeployStageSetValueArrayOu
 }
 
 // Allow deletion of new resources created during when an upgrade fails. Set to false by default.
-func (o LookupDeployStageResultOutput) ShouldCleanupOnFail() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldCleanupOnFail }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) ShouldCleanupOnFail() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.ShouldCleanupOnFail }).(pulumi.BoolPtrOutput)
 }
 
 // Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
-func (o LookupDeployStageResultOutput) ShouldNotWait() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldNotWait }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) ShouldNotWait() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.ShouldNotWait }).(pulumi.BoolPtrOutput)
 }
 
 // During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
-func (o LookupDeployStageResultOutput) ShouldResetValues() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldResetValues }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) ShouldResetValues() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.ShouldResetValues }).(pulumi.BoolPtrOutput)
 }
 
 // During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
-func (o LookupDeployStageResultOutput) ShouldReuseValues() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldReuseValues }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) ShouldReuseValues() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.ShouldReuseValues }).(pulumi.BoolPtrOutput)
 }
 
 // If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
-func (o LookupDeployStageResultOutput) ShouldSkipCrds() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldSkipCrds }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) ShouldSkipCrds() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.ShouldSkipCrds }).(pulumi.BoolPtrOutput)
 }
 
 // If set, renders subchart notes along with the parent. Set to false by default.
-func (o LookupDeployStageResultOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) bool { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolOutput)
+func (o LookupDeployStageResultOutput) ShouldSkipRenderSubchartNotes() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *bool { return v.ShouldSkipRenderSubchartNotes }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the deployment stage.
-func (o LookupDeployStageResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -563,23 +556,23 @@ func (o LookupDeployStageResultOutput) TestLoadBalancerConfigs() GetDeployStageT
 }
 
 // Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupDeployStageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupDeployStageResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Time to wait for execution of a Shell/Helm stage. Defaults to 36000 seconds for Shell and 300 seconds for Helm Stage
-func (o LookupDeployStageResultOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o LookupDeployStageResultOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Specifies the target or destination backend set.
-func (o LookupDeployStageResultOutput) TrafficShiftTarget() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) string { return v.TrafficShiftTarget }).(pulumi.StringOutput)
+func (o LookupDeployStageResultOutput) TrafficShiftTarget() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) *string { return v.TrafficShiftTarget }).(pulumi.StringPtrOutput)
 }
 
 // List of values.yaml file artifact OCIDs.

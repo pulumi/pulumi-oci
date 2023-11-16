@@ -51,22 +51,16 @@ class GetServiceEnvironmentResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consoleUrl")
-    def console_url(self) -> str:
-        """
-        The URL for the console.
-        """
+    def console_url(self) -> Optional[str]:
         return pulumi.get(self, "console_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetServiceEnvironmentResult:
 
     @property
     @pulumi.getter(name="serviceDefinitions")
-    def service_definitions(self) -> Sequence['outputs.GetServiceEnvironmentServiceDefinitionResult']:
-        """
-        Details for a service definition.
-        """
+    def service_definitions(self) -> Optional[Sequence['outputs.GetServiceEnvironmentServiceDefinitionResult']]:
         return pulumi.get(self, "service_definitions")
 
     @property
     @pulumi.getter(name="serviceEnvironmentEndpoints")
-    def service_environment_endpoints(self) -> Sequence['outputs.GetServiceEnvironmentServiceEnvironmentEndpointResult']:
-        """
-        Array of service environment end points.
-        """
+    def service_environment_endpoints(self) -> Optional[Sequence['outputs.GetServiceEnvironmentServiceEnvironmentEndpointResult']]:
         return pulumi.get(self, "service_environment_endpoints")
 
     @property
@@ -95,18 +83,12 @@ class GetServiceEnvironmentResult:
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the entitlement registration for the service.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
-        """
-        The unique subscription ID associated with the service environment ID.
-        """
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
 
@@ -130,25 +112,7 @@ def get_service_environment(compartment_id: Optional[str] = None,
                             service_environment_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceEnvironmentResult:
     """
-    This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
-
-    Get the detailed information for a specific service environment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=var["compartment_id"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-    :param str service_environment_id: The unique identifier associated with the service environment. 
-           
-           **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -172,24 +136,6 @@ def get_service_environment_output(compartment_id: Optional[pulumi.Input[str]] =
                                    service_environment_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceEnvironmentResult]:
     """
-    This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
-
-    Get the detailed information for a specific service environment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_environment = oci.ServiceManagerProxy.get_service_environment(compartment_id=var["compartment_id"],
-        service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
-    :param str service_environment_id: The unique identifier associated with the service environment. 
-           
-           **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

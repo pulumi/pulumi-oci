@@ -52,15 +52,12 @@ class GetGiVersionsResult:
 
     @property
     @pulumi.getter(name="giVersions")
-    def gi_versions(self) -> Sequence['outputs.GetGiVersionsGiVersionResult']:
-        """
-        The list of gi_versions.
-        """
+    def gi_versions(self) -> Optional[Sequence['outputs.GetGiVersionsGiVersionResult']]:
         return pulumi.get(self, "gi_versions")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_gi_versions(compartment_id: Optional[str] = None,
                     shape: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGiVersionsResult:
     """
-    This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_gi_versions = oci.Database.get_gi_versions(compartment_id=var["compartment_id"],
-        shape=var["gi_version_shape"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str shape: If provided, filters the results for the given shape.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_gi_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            shape: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGiVersionsResult]:
     """
-    This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_gi_versions = oci.Database.get_gi_versions(compartment_id=var["compartment_id"],
-        shape=var["gi_version_shape"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str shape: If provided, filters the results for the given shape.
+    Use this data source to access information about an existing resource.
     """
     ...

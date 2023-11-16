@@ -39,7 +39,7 @@ public final class GetInstVbsInstancesResult {
      * @return The list of vbs_instance_summary_collection.
      * 
      */
-    private List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections;
+    private @Nullable List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections;
 
     private GetInstVbsInstancesResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetInstVbsInstancesResult {
      * 
      */
     public List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections() {
-        return this.vbsInstanceSummaryCollections;
+        return this.vbsInstanceSummaryCollections == null ? List.of() : this.vbsInstanceSummaryCollections;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetInstVbsInstancesResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections;
+        private @Nullable List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections;
         public Builder() {}
         public Builder(GetInstVbsInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -136,8 +136,8 @@ public final class GetInstVbsInstancesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vbsInstanceSummaryCollections(List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections) {
-            this.vbsInstanceSummaryCollections = Objects.requireNonNull(vbsInstanceSummaryCollections);
+        public Builder vbsInstanceSummaryCollections(@Nullable List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections) {
+            this.vbsInstanceSummaryCollections = vbsInstanceSummaryCollections;
             return this;
         }
         public Builder vbsInstanceSummaryCollections(GetInstVbsInstancesVbsInstanceSummaryCollection... vbsInstanceSummaryCollections) {

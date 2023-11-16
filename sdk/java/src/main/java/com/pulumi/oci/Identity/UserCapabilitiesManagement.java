@@ -12,6 +12,7 @@ import com.pulumi.oci.Identity.inputs.UserCapabilitiesManagementState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -72,56 +73,56 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="canUseApiKeys", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> canUseApiKeys;
+    private Output</* @Nullable */ Boolean> canUseApiKeys;
 
     /**
      * @return (Updatable) Indicates if the user can use API keys.
      * 
      */
-    public Output<Boolean> canUseApiKeys() {
-        return this.canUseApiKeys;
+    public Output<Optional<Boolean>> canUseApiKeys() {
+        return Codegen.optional(this.canUseApiKeys);
     }
     /**
      * (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      * 
      */
     @Export(name="canUseAuthTokens", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> canUseAuthTokens;
+    private Output</* @Nullable */ Boolean> canUseAuthTokens;
 
     /**
      * @return (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
      * 
      */
-    public Output<Boolean> canUseAuthTokens() {
-        return this.canUseAuthTokens;
+    public Output<Optional<Boolean>> canUseAuthTokens() {
+        return Codegen.optional(this.canUseAuthTokens);
     }
     /**
      * (Updatable) Indicates if the user can log in to the console.
      * 
      */
     @Export(name="canUseConsolePassword", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> canUseConsolePassword;
+    private Output</* @Nullable */ Boolean> canUseConsolePassword;
 
     /**
      * @return (Updatable) Indicates if the user can log in to the console.
      * 
      */
-    public Output<Boolean> canUseConsolePassword() {
-        return this.canUseConsolePassword;
+    public Output<Optional<Boolean>> canUseConsolePassword() {
+        return Codegen.optional(this.canUseConsolePassword);
     }
     /**
      * (Updatable) Indicates if the user can use SigV4 symmetric keys.
      * 
      */
     @Export(name="canUseCustomerSecretKeys", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> canUseCustomerSecretKeys;
+    private Output</* @Nullable */ Boolean> canUseCustomerSecretKeys;
 
     /**
      * @return (Updatable) Indicates if the user can use SigV4 symmetric keys.
      * 
      */
-    public Output<Boolean> canUseCustomerSecretKeys() {
-        return this.canUseCustomerSecretKeys;
+    public Output<Optional<Boolean>> canUseCustomerSecretKeys() {
+        return Codegen.optional(this.canUseCustomerSecretKeys);
     }
     /**
      * (Updatable) Indicates if the user can use SMTP passwords.
@@ -131,7 +132,7 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="canUseSmtpCredentials", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> canUseSmtpCredentials;
+    private Output</* @Nullable */ Boolean> canUseSmtpCredentials;
 
     /**
      * @return (Updatable) Indicates if the user can use SMTP passwords.
@@ -140,8 +141,8 @@ public class UserCapabilitiesManagement extends com.pulumi.resources.CustomResou
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> canUseSmtpCredentials() {
-        return this.canUseSmtpCredentials;
+    public Output<Optional<Boolean>> canUseSmtpCredentials() {
+        return Codegen.optional(this.canUseSmtpCredentials);
     }
     /**
      * The OCID of the user.

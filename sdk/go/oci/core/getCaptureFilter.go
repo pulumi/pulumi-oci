@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
@@ -61,23 +60,23 @@ type LookupCaptureFilterArgs struct {
 type LookupCaptureFilterResult struct {
 	CaptureFilterId string `pulumi:"captureFilterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules []GetCaptureFilterFlowLogCaptureFilterRule `pulumi:"flowLogCaptureFilterRules"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The capture filter's current administrative state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The set of rules governing what traffic a VTAP mirrors.
 	VtapCaptureFilterRules []GetCaptureFilterVtapCaptureFilterRule `pulumi:"vtapCaptureFilterRules"`
 }
@@ -120,19 +119,13 @@ func (o LookupCaptureFilterResultOutput) ToLookupCaptureFilterResultOutputWithCo
 	return o
 }
 
-func (o LookupCaptureFilterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCaptureFilterResult] {
-	return pulumix.Output[LookupCaptureFilterResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupCaptureFilterResultOutput) CaptureFilterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.CaptureFilterId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
-func (o LookupCaptureFilterResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCaptureFilterResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -141,13 +134,13 @@ func (o LookupCaptureFilterResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupCaptureFilterResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCaptureFilterResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Indicates which service will use this capture filter
-func (o LookupCaptureFilterResultOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.FilterType }).(pulumi.StringOutput)
+func (o LookupCaptureFilterResultOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) *string { return v.FilterType }).(pulumi.StringPtrOutput)
 }
 
 // The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
@@ -163,18 +156,18 @@ func (o LookupCaptureFilterResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-func (o LookupCaptureFilterResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCaptureFilterResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The capture filter's current administrative state.
-func (o LookupCaptureFilterResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCaptureFilterResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
-func (o LookupCaptureFilterResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCaptureFilterResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The set of rules governing what traffic a VTAP mirrors.

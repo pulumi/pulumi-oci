@@ -6,6 +6,8 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationPoliciesReplicationPolicy {
@@ -13,67 +15,67 @@ public final class GetReplicationPoliciesReplicationPolicy {
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @deprecated
      * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
     @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
-    private String deleteObjectInDestinationBucket;
+    private @Nullable String deleteObjectInDestinationBucket;
     /**
      * @return The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      * 
      */
-    private String destinationBucketName;
+    private @Nullable String destinationBucketName;
     /**
      * @return The destination region to replicate to, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    private String destinationRegionName;
+    private @Nullable String destinationRegionName;
     /**
      * @return The id of the replication policy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the policy.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return A human-readable description of the status.
      * 
      */
-    private String statusMessage;
+    private @Nullable String statusMessage;
     /**
      * @return The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Changes made to the source bucket before this time has been replicated.
      * 
      */
-    private String timeLastSync;
+    private @Nullable String timeLastSync;
 
     private GetReplicationPoliciesReplicationPolicy() {}
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @deprecated
@@ -81,71 +83,71 @@ public final class GetReplicationPoliciesReplicationPolicy {
      * 
      */
     @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
-    public String deleteObjectInDestinationBucket() {
-        return this.deleteObjectInDestinationBucket;
+    public Optional<String> deleteObjectInDestinationBucket() {
+        return Optional.ofNullable(this.deleteObjectInDestinationBucket);
     }
     /**
      * @return The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
      * 
      */
-    public String destinationBucketName() {
-        return this.destinationBucketName;
+    public Optional<String> destinationBucketName() {
+        return Optional.ofNullable(this.destinationBucketName);
     }
     /**
      * @return The destination region to replicate to, for example &#34;us-ashburn-1&#34;.
      * 
      */
-    public String destinationRegionName() {
-        return this.destinationRegionName;
+    public Optional<String> destinationRegionName() {
+        return Optional.ofNullable(this.destinationRegionName);
     }
     /**
      * @return The id of the replication policy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the policy.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return A human-readable description of the status.
      * 
      */
-    public String statusMessage() {
-        return this.statusMessage;
+    public Optional<String> statusMessage() {
+        return Optional.ofNullable(this.statusMessage);
     }
     /**
      * @return The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Changes made to the source bucket before this time has been replicated.
      * 
      */
-    public String timeLastSync() {
-        return this.timeLastSync;
+    public Optional<String> timeLastSync() {
+        return Optional.ofNullable(this.timeLastSync);
     }
 
     public static Builder builder() {
@@ -157,17 +159,17 @@ public final class GetReplicationPoliciesReplicationPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String deleteObjectInDestinationBucket;
-        private String destinationBucketName;
-        private String destinationRegionName;
-        private String id;
-        private String name;
-        private String namespace;
-        private String status;
-        private String statusMessage;
-        private String timeCreated;
-        private String timeLastSync;
+        private @Nullable String bucket;
+        private @Nullable String deleteObjectInDestinationBucket;
+        private @Nullable String destinationBucketName;
+        private @Nullable String destinationRegionName;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable String status;
+        private @Nullable String statusMessage;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastSync;
         public Builder() {}
         public Builder(GetReplicationPoliciesReplicationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -185,58 +187,58 @@ public final class GetReplicationPoliciesReplicationPolicy {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteObjectInDestinationBucket(String deleteObjectInDestinationBucket) {
-            this.deleteObjectInDestinationBucket = Objects.requireNonNull(deleteObjectInDestinationBucket);
+        public Builder deleteObjectInDestinationBucket(@Nullable String deleteObjectInDestinationBucket) {
+            this.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationBucketName(String destinationBucketName) {
-            this.destinationBucketName = Objects.requireNonNull(destinationBucketName);
+        public Builder destinationBucketName(@Nullable String destinationBucketName) {
+            this.destinationBucketName = destinationBucketName;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationRegionName(String destinationRegionName) {
-            this.destinationRegionName = Objects.requireNonNull(destinationRegionName);
+        public Builder destinationRegionName(@Nullable String destinationRegionName) {
+            this.destinationRegionName = destinationRegionName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusMessage(String statusMessage) {
-            this.statusMessage = Objects.requireNonNull(statusMessage);
+        public Builder statusMessage(@Nullable String statusMessage) {
+            this.statusMessage = statusMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSync(String timeLastSync) {
-            this.timeLastSync = Objects.requireNonNull(timeLastSync);
+        public Builder timeLastSync(@Nullable String timeLastSync) {
+            this.timeLastSync = timeLastSync;
             return this;
         }
         public GetReplicationPoliciesReplicationPolicy build() {

@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.ExternalNonContainerDatabaseManagementStat
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -103,7 +104,7 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return The Oracle license model that applies to the external database. Required only for enabling database management.
@@ -112,8 +113,8 @@ public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
 
     /**

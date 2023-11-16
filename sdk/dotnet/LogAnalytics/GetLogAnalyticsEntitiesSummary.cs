@@ -122,7 +122,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// Total number of ACTIVE entities
         /// </summary>
-        public readonly int ActiveEntitiesCount;
+        public readonly int? ActiveEntitiesCount;
         /// <summary>
         /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -130,28 +130,28 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// Entities with log collection enabled
         /// </summary>
-        public readonly int EntitiesWithHasLogsCollectedCount;
+        public readonly int? EntitiesWithHasLogsCollectedCount;
         /// <summary>
         /// Entities with management agent
         /// </summary>
-        public readonly int EntitiesWithManagementAgentCount;
+        public readonly int? EntitiesWithManagementAgentCount;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
 
         [OutputConstructor]
         private GetLogAnalyticsEntitiesSummaryResult(
-            int activeEntitiesCount,
+            int? activeEntitiesCount,
 
             string compartmentId,
 
-            int entitiesWithHasLogsCollectedCount,
+            int? entitiesWithHasLogsCollectedCount,
 
-            int entitiesWithManagementAgentCount,
+            int? entitiesWithManagementAgentCount,
 
-            string id,
+            string? id,
 
             string @namespace)
         {

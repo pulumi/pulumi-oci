@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The maximum number of OCPUs.
         /// </summary>
-        public readonly double Max;
+        public readonly double? Max;
         /// <summary>
         /// The minimum number of OCPUs.
         /// </summary>
-        public readonly double Min;
+        public readonly double? Min;
 
         [OutputConstructor]
         private GetPodShapesPodShapeOcpuOptionResult(
-            double max,
+            double? max,
 
-            double min)
+            double? min)
         {
             Max = max;
             Min = min;

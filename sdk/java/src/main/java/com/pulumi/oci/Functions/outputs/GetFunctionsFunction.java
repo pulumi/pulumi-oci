@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFunctionsFunction {
@@ -20,231 +22,231 @@ public final class GetFunctionsFunction {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
      * 
      */
-    private String applicationId;
+    private @Nullable String applicationId;
     /**
      * @return The OCID of the compartment that contains the function.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
      * 
      */
-    private Map<String,Object> config;
+    private @Nullable Map<String,Object> config;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only functions with display names that match the display name string. Matching is exact.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to return only functions with the specified OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    private String image;
+    private @Nullable String image;
     /**
      * @return The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
-    private String imageDigest;
+    private @Nullable String imageDigest;
     /**
      * @return The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      * 
      */
-    private String invokeEndpoint;
+    private @Nullable String invokeEndpoint;
     /**
      * @return Maximum usable memory for the function (MiB).
      * 
      */
-    private String memoryInMbs;
+    private @Nullable String memoryInMbs;
     /**
      * @return Define the strategy for provisioned concurrency for the function.
      * 
      */
-    private List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+    private @Nullable List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
     /**
      * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      * 
      */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The source details for the Function. The function can be created from various sources.
      * 
      */
-    private List<GetFunctionsFunctionSourceDetail> sourceDetails;
+    private @Nullable List<GetFunctionsFunctionSourceDetail> sourceDetails;
     /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Timeout for executions of the function. Value in seconds.
      * 
      */
-    private Integer timeoutInSeconds;
+    private @Nullable Integer timeoutInSeconds;
     /**
      * @return Define the tracing configuration for a function.
      * 
      */
-    private List<GetFunctionsFunctionTraceConfig> traceConfigs;
+    private @Nullable List<GetFunctionsFunctionTraceConfig> traceConfigs;
 
     private GetFunctionsFunction() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
      * 
      */
-    public String applicationId() {
-        return this.applicationId;
+    public Optional<String> applicationId() {
+        return Optional.ofNullable(this.applicationId);
     }
     /**
      * @return The OCID of the compartment that contains the function.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
      * 
      */
     public Map<String,Object> config() {
-        return this.config;
+        return this.config == null ? Map.of() : this.config;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only functions with display names that match the display name string. Matching is exact.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A filter to return only functions with the specified OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
      */
-    public String image() {
-        return this.image;
+    public Optional<String> image() {
+        return Optional.ofNullable(this.image);
     }
     /**
      * @return The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      * 
      */
-    public String imageDigest() {
-        return this.imageDigest;
+    public Optional<String> imageDigest() {
+        return Optional.ofNullable(this.imageDigest);
     }
     /**
      * @return The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      * 
      */
-    public String invokeEndpoint() {
-        return this.invokeEndpoint;
+    public Optional<String> invokeEndpoint() {
+        return Optional.ofNullable(this.invokeEndpoint);
     }
     /**
      * @return Maximum usable memory for the function (MiB).
      * 
      */
-    public String memoryInMbs() {
-        return this.memoryInMbs;
+    public Optional<String> memoryInMbs() {
+        return Optional.ofNullable(this.memoryInMbs);
     }
     /**
      * @return Define the strategy for provisioned concurrency for the function.
      * 
      */
     public List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs() {
-        return this.provisionedConcurrencyConfigs;
+        return this.provisionedConcurrencyConfigs == null ? List.of() : this.provisionedConcurrencyConfigs;
     }
     /**
      * @return The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      * 
      */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The source details for the Function. The function can be created from various sources.
      * 
      */
     public List<GetFunctionsFunctionSourceDetail> sourceDetails() {
-        return this.sourceDetails;
+        return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }
     /**
      * @return A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Timeout for executions of the function. Value in seconds.
      * 
      */
-    public Integer timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Optional<Integer> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
     }
     /**
      * @return Define the tracing configuration for a function.
      * 
      */
     public List<GetFunctionsFunctionTraceConfig> traceConfigs() {
-        return this.traceConfigs;
+        return this.traceConfigs == null ? List.of() : this.traceConfigs;
     }
 
     public static Builder builder() {
@@ -256,25 +258,25 @@ public final class GetFunctionsFunction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applicationId;
-        private String compartmentId;
-        private Map<String,Object> config;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String image;
-        private String imageDigest;
-        private String invokeEndpoint;
-        private String memoryInMbs;
-        private List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
-        private String shape;
-        private List<GetFunctionsFunctionSourceDetail> sourceDetails;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private Integer timeoutInSeconds;
-        private List<GetFunctionsFunctionTraceConfig> traceConfigs;
+        private @Nullable String applicationId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> config;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String image;
+        private @Nullable String imageDigest;
+        private @Nullable String invokeEndpoint;
+        private @Nullable String memoryInMbs;
+        private @Nullable List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs;
+        private @Nullable String shape;
+        private @Nullable List<GetFunctionsFunctionSourceDetail> sourceDetails;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Integer timeoutInSeconds;
+        private @Nullable List<GetFunctionsFunctionTraceConfig> traceConfigs;
         public Builder() {}
         public Builder(GetFunctionsFunction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -300,104 +302,104 @@ public final class GetFunctionsFunction {
         }
 
         @CustomType.Setter
-        public Builder applicationId(String applicationId) {
-            this.applicationId = Objects.requireNonNull(applicationId);
+        public Builder applicationId(@Nullable String applicationId) {
+            this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder config(Map<String,Object> config) {
-            this.config = Objects.requireNonNull(config);
+        public Builder config(@Nullable Map<String,Object> config) {
+            this.config = config;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder image(String image) {
-            this.image = Objects.requireNonNull(image);
+        public Builder image(@Nullable String image) {
+            this.image = image;
             return this;
         }
         @CustomType.Setter
-        public Builder imageDigest(String imageDigest) {
-            this.imageDigest = Objects.requireNonNull(imageDigest);
+        public Builder imageDigest(@Nullable String imageDigest) {
+            this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
-        public Builder invokeEndpoint(String invokeEndpoint) {
-            this.invokeEndpoint = Objects.requireNonNull(invokeEndpoint);
+        public Builder invokeEndpoint(@Nullable String invokeEndpoint) {
+            this.invokeEndpoint = invokeEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInMbs(String memoryInMbs) {
-            this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
+        public Builder memoryInMbs(@Nullable String memoryInMbs) {
+            this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionedConcurrencyConfigs(List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs) {
-            this.provisionedConcurrencyConfigs = Objects.requireNonNull(provisionedConcurrencyConfigs);
+        public Builder provisionedConcurrencyConfigs(@Nullable List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs) {
+            this.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
             return this;
         }
         public Builder provisionedConcurrencyConfigs(GetFunctionsFunctionProvisionedConcurrencyConfig... provisionedConcurrencyConfigs) {
             return provisionedConcurrencyConfigs(List.of(provisionedConcurrencyConfigs));
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDetails(List<GetFunctionsFunctionSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+        public Builder sourceDetails(@Nullable List<GetFunctionsFunctionSourceDetail> sourceDetails) {
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetFunctionsFunctionSourceDetail... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+        public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder traceConfigs(List<GetFunctionsFunctionTraceConfig> traceConfigs) {
-            this.traceConfigs = Objects.requireNonNull(traceConfigs);
+        public Builder traceConfigs(@Nullable List<GetFunctionsFunctionTraceConfig> traceConfigs) {
+            this.traceConfigs = traceConfigs;
             return this;
         }
         public Builder traceConfigs(GetFunctionsFunctionTraceConfig... traceConfigs) {

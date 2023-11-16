@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
@@ -13,27 +15,27 @@ public final class GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
      * @return Data Source replication region.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Status of data Source
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetDataSourcesDataSourceCollectionItemRegionStatusDetail() {}
     /**
      * @return Data Source replication region.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Status of data Source
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String region;
-        private String status;
+        private @Nullable String region;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetDataSourcesDataSourceCollectionItemRegionStatusDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDataSourcesDataSourceCollectionItemRegionStatusDetail {
         }
 
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemRegionStatusDetail build() {

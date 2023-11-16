@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i GetNotificationTopicsFilterArgs) ToGetNotificationTopicsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsFilterOutput)
 }
 
-func (i GetNotificationTopicsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsFilter] {
-	return pulumix.Output[GetNotificationTopicsFilter]{
-		OutputState: i.ToGetNotificationTopicsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetNotificationTopicsFilterArrayInput is an input type that accepts GetNotificationTopicsFilterArray and GetNotificationTopicsFilterArrayOutput values.
 // You can construct a concrete instance of `GetNotificationTopicsFilterArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i GetNotificationTopicsFilterArray) ToGetNotificationTopicsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsFilterArrayOutput)
 }
 
-func (i GetNotificationTopicsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsFilter] {
-	return pulumix.Output[[]GetNotificationTopicsFilter]{
-		OutputState: i.ToGetNotificationTopicsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNotificationTopicsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetNotificationTopicsFilterOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o GetNotificationTopicsFilterOutput) ToGetNotificationTopicsFilterOutput()
 
 func (o GetNotificationTopicsFilterOutput) ToGetNotificationTopicsFilterOutputWithContext(ctx context.Context) GetNotificationTopicsFilterOutput {
 	return o
-}
-
-func (o GetNotificationTopicsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsFilter] {
-	return pulumix.Output[GetNotificationTopicsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to only return resources that match the given name exactly.
@@ -135,12 +116,6 @@ func (o GetNotificationTopicsFilterArrayOutput) ToGetNotificationTopicsFilterArr
 	return o
 }
 
-func (o GetNotificationTopicsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsFilter] {
-	return pulumix.Output[[]GetNotificationTopicsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNotificationTopicsFilterArrayOutput) Index(i pulumi.IntInput) GetNotificationTopicsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNotificationTopicsFilter {
 		return vs[0].([]GetNotificationTopicsFilter)[vs[1].(int)]
@@ -149,29 +124,29 @@ func (o GetNotificationTopicsFilterArrayOutput) Index(i pulumi.IntInput) GetNoti
 
 type GetNotificationTopicsNotificationTopic struct {
 	// The endpoint for managing subscriptions or publishing messages to the topic.
-	ApiEndpoint string `pulumi:"apiEndpoint"`
+	ApiEndpoint *string `pulumi:"apiEndpoint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the topic.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to only return resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
-	ShortTopicId string `pulumi:"shortTopicId"`
+	ShortTopicId *string `pulumi:"shortTopicId"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the topic was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-	TopicId string `pulumi:"topicId"`
+	TopicId *string `pulumi:"topicId"`
 }
 
 // GetNotificationTopicsNotificationTopicInput is an input type that accepts GetNotificationTopicsNotificationTopicArgs and GetNotificationTopicsNotificationTopicOutput values.
@@ -187,29 +162,29 @@ type GetNotificationTopicsNotificationTopicInput interface {
 
 type GetNotificationTopicsNotificationTopicArgs struct {
 	// The endpoint for managing subscriptions or publishing messages to the topic.
-	ApiEndpoint pulumi.StringInput `pulumi:"apiEndpoint"`
+	ApiEndpoint pulumi.StringPtrInput `pulumi:"apiEndpoint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the topic.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag pulumi.StringInput `pulumi:"etag"`
+	Etag pulumi.StringPtrInput `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to only return resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
-	ShortTopicId pulumi.StringInput `pulumi:"shortTopicId"`
+	ShortTopicId pulumi.StringPtrInput `pulumi:"shortTopicId"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the topic was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-	TopicId pulumi.StringInput `pulumi:"topicId"`
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
 }
 
 func (GetNotificationTopicsNotificationTopicArgs) ElementType() reflect.Type {
@@ -222,12 +197,6 @@ func (i GetNotificationTopicsNotificationTopicArgs) ToGetNotificationTopicsNotif
 
 func (i GetNotificationTopicsNotificationTopicArgs) ToGetNotificationTopicsNotificationTopicOutputWithContext(ctx context.Context) GetNotificationTopicsNotificationTopicOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsNotificationTopicOutput)
-}
-
-func (i GetNotificationTopicsNotificationTopicArgs) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsNotificationTopic] {
-	return pulumix.Output[GetNotificationTopicsNotificationTopic]{
-		OutputState: i.ToGetNotificationTopicsNotificationTopicOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetNotificationTopicsNotificationTopicArrayInput is an input type that accepts GetNotificationTopicsNotificationTopicArray and GetNotificationTopicsNotificationTopicArrayOutput values.
@@ -255,12 +224,6 @@ func (i GetNotificationTopicsNotificationTopicArray) ToGetNotificationTopicsNoti
 	return pulumi.ToOutputWithContext(ctx, i).(GetNotificationTopicsNotificationTopicArrayOutput)
 }
 
-func (i GetNotificationTopicsNotificationTopicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsNotificationTopic] {
-	return pulumix.Output[[]GetNotificationTopicsNotificationTopic]{
-		OutputState: i.ToGetNotificationTopicsNotificationTopicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetNotificationTopicsNotificationTopicOutput struct{ *pulumi.OutputState }
 
 func (GetNotificationTopicsNotificationTopicOutput) ElementType() reflect.Type {
@@ -275,20 +238,14 @@ func (o GetNotificationTopicsNotificationTopicOutput) ToGetNotificationTopicsNot
 	return o
 }
 
-func (o GetNotificationTopicsNotificationTopicOutput) ToOutput(ctx context.Context) pulumix.Output[GetNotificationTopicsNotificationTopic] {
-	return pulumix.Output[GetNotificationTopicsNotificationTopic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The endpoint for managing subscriptions or publishing messages to the topic.
-func (o GetNotificationTopicsNotificationTopicOutput) ApiEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.ApiEndpoint }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) ApiEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.ApiEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetNotificationTopicsNotificationTopicOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -297,13 +254,13 @@ func (o GetNotificationTopicsNotificationTopicOutput) DefinedTags() pulumi.MapOu
 }
 
 // The description of the topic.
-func (o GetNotificationTopicsNotificationTopicOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.Description }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o GetNotificationTopicsNotificationTopicOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -312,33 +269,33 @@ func (o GetNotificationTopicsNotificationTopicOutput) FreeformTags() pulumi.MapO
 }
 
 // A filter to only return resources that match the given id exactly.
-func (o GetNotificationTopicsNotificationTopicOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to only return resources that match the given name exactly.
-func (o GetNotificationTopicsNotificationTopicOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.Name }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A unique short topic Id. This is used only for SMS subscriptions.
-func (o GetNotificationTopicsNotificationTopicOutput) ShortTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.ShortTopicId }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) ShortTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.ShortTopicId }).(pulumi.StringPtrOutput)
 }
 
 // Filter returned list by specified lifecycle state. This parameter is case-insensitive.
-func (o GetNotificationTopicsNotificationTopicOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.State }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the topic was created.
-func (o GetNotificationTopicsNotificationTopicOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-func (o GetNotificationTopicsNotificationTopicOutput) TopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) string { return v.TopicId }).(pulumi.StringOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
 type GetNotificationTopicsNotificationTopicArrayOutput struct{ *pulumi.OutputState }
@@ -353,12 +310,6 @@ func (o GetNotificationTopicsNotificationTopicArrayOutput) ToGetNotificationTopi
 
 func (o GetNotificationTopicsNotificationTopicArrayOutput) ToGetNotificationTopicsNotificationTopicArrayOutputWithContext(ctx context.Context) GetNotificationTopicsNotificationTopicArrayOutput {
 	return o
-}
-
-func (o GetNotificationTopicsNotificationTopicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetNotificationTopicsNotificationTopic] {
-	return pulumix.Output[[]GetNotificationTopicsNotificationTopic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNotificationTopicsNotificationTopicArrayOutput) Index(i pulumi.IntInput) GetNotificationTopicsNotificationTopicOutput {
@@ -402,12 +353,6 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterOutput)
 }
 
-func (i GetSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
@@ -433,12 +378,6 @@ func (i GetSubscriptionsFilterArray) ToGetSubscriptionsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterArrayOutput)
 }
 
-func (i GetSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -451,12 +390,6 @@ func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutput() GetSubscr
 
 func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsFilterOutput) Name() pulumi.StringOutput {
@@ -485,12 +418,6 @@ func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutputWi
 	return o
 }
 
-func (o GetSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsFilter {
 		return vs[0].([]GetSubscriptionsFilter)[vs[1].(int)]
@@ -499,26 +426,26 @@ func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscript
 
 type GetSubscriptionsSubscription struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The time when this suscription was created.
-	CreatedTime string `pulumi:"createdTime"`
+	CreatedTime *string `pulumi:"createdTime"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      map[string]interface{}                       `pulumi:"definedTags"`
 	DeliveryPolicies []GetSubscriptionsSubscriptionDeliveryPolicy `pulumi:"deliveryPolicies"`
 	// A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
-	Endpoint string `pulumi:"endpoint"`
+	Endpoint *string `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag string `pulumi:"etag"`
+	Etag *string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The protocol used for the subscription.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
-	TopicId string `pulumi:"topicId"`
+	TopicId *string `pulumi:"topicId"`
 }
 
 // GetSubscriptionsSubscriptionInput is an input type that accepts GetSubscriptionsSubscriptionArgs and GetSubscriptionsSubscriptionOutput values.
@@ -534,26 +461,26 @@ type GetSubscriptionsSubscriptionInput interface {
 
 type GetSubscriptionsSubscriptionArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The time when this suscription was created.
-	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags      pulumi.MapInput                                      `pulumi:"definedTags"`
 	DeliveryPolicies GetSubscriptionsSubscriptionDeliveryPolicyArrayInput `pulumi:"deliveryPolicies"`
 	// A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
-	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag pulumi.StringInput `pulumi:"etag"`
+	Etag pulumi.StringPtrInput `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The protocol used for the subscription.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
-	TopicId pulumi.StringInput `pulumi:"topicId"`
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
 }
 
 func (GetSubscriptionsSubscriptionArgs) ElementType() reflect.Type {
@@ -566,12 +493,6 @@ func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutput()
 
 func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionOutput)
-}
-
-func (i GetSubscriptionsSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionArray and GetSubscriptionsSubscriptionArrayOutput values.
@@ -599,12 +520,6 @@ func (i GetSubscriptionsSubscriptionArray) ToGetSubscriptionsSubscriptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionOutput) ElementType() reflect.Type {
@@ -619,20 +534,14 @@ func (o GetSubscriptionsSubscriptionOutput) ToGetSubscriptionsSubscriptionOutput
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetSubscriptionsSubscriptionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The time when this suscription was created.
-func (o GetSubscriptionsSubscriptionOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.CreatedTime }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -647,13 +556,13 @@ func (o GetSubscriptionsSubscriptionOutput) DeliveryPolicies() GetSubscriptionsS
 }
 
 // A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
-func (o GetSubscriptionsSubscriptionOutput) Endpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.Endpoint }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o GetSubscriptionsSubscriptionOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.Etag }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -662,23 +571,23 @@ func (o GetSubscriptionsSubscriptionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
-func (o GetSubscriptionsSubscriptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The protocol used for the subscription.
-func (o GetSubscriptionsSubscriptionOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
-func (o GetSubscriptionsSubscriptionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.State }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
-func (o GetSubscriptionsSubscriptionOutput) TopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.TopicId }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -693,12 +602,6 @@ func (o GetSubscriptionsSubscriptionArrayOutput) ToGetSubscriptionsSubscriptionA
 
 func (o GetSubscriptionsSubscriptionArrayOutput) ToGetSubscriptionsSubscriptionArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionOutput {
@@ -738,12 +641,6 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyArgs) ToGetSubscriptionsSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyOutput)
 }
 
-func (i GetSubscriptionsSubscriptionDeliveryPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy] {
-	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy]{
-		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsSubscriptionDeliveryPolicyArrayInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyArray and GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsSubscriptionDeliveryPolicyArrayInput` via:
 //
@@ -769,12 +666,6 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyArray) ToGetSubscriptionsSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionDeliveryPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy]{
-		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionDeliveryPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionDeliveryPolicyOutput) ElementType() reflect.Type {
@@ -787,12 +678,6 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) ToGetSubscriptionsSubs
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) ToGetSubscriptionsSubscriptionDeliveryPolicyOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy] {
-	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyOutput) BackoffRetryPolicies() GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput {
@@ -815,12 +700,6 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) ToGetSubscription
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionDeliveryPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionDeliveryPolicy {
 		return vs[0].([]GetSubscriptionsSubscriptionDeliveryPolicy)[vs[1].(int)]
@@ -829,9 +708,9 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput) Index(i pulumi.In
 
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy struct {
 	// The maximum retry duration in milliseconds.
-	MaxRetryDuration int `pulumi:"maxRetryDuration"`
+	MaxRetryDuration *int `pulumi:"maxRetryDuration"`
 	// The type of delivery policy. Default value: EXPONENTIAL.
-	PolicyType string `pulumi:"policyType"`
+	PolicyType *string `pulumi:"policyType"`
 }
 
 // GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs and GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput values.
@@ -847,9 +726,9 @@ type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyInput interface
 
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs struct {
 	// The maximum retry duration in milliseconds.
-	MaxRetryDuration pulumi.IntInput `pulumi:"maxRetryDuration"`
+	MaxRetryDuration pulumi.IntPtrInput `pulumi:"maxRetryDuration"`
 	// The type of delivery policy. Default value: EXPONENTIAL.
-	PolicyType pulumi.StringInput `pulumi:"policyType"`
+	PolicyType pulumi.StringPtrInput `pulumi:"policyType"`
 }
 
 func (GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ElementType() reflect.Type {
@@ -862,12 +741,6 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ToGetS
 
 func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput)
-}
-
-func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
-	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
-		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayInput is an input type that accepts GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray and GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput values.
@@ -895,12 +768,6 @@ func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
-		OutputState: i.ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ElementType() reflect.Type {
@@ -915,20 +782,14 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ToGe
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
-	return pulumix.Output[GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum retry duration in milliseconds.
-func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) MaxRetryDuration() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy) int { return v.MaxRetryDuration }).(pulumi.IntOutput)
+func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) MaxRetryDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy) *int { return v.MaxRetryDuration }).(pulumi.IntPtrOutput)
 }
 
 // The type of delivery policy. Default value: EXPONENTIAL.
-func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) PolicyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput) PolicyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy) *string { return v.PolicyType }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -943,12 +804,6 @@ func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput)
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput) ToGetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyOutput {

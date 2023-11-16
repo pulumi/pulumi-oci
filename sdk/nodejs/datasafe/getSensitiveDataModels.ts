@@ -112,11 +112,11 @@ export interface GetSensitiveDataModelsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of sensitive_data_model_collection.
      */
-    readonly sensitiveDataModelCollections: outputs.DataSafe.GetSensitiveDataModelsSensitiveDataModelCollection[];
+    readonly sensitiveDataModelCollections?: outputs.DataSafe.GetSensitiveDataModelsSensitiveDataModelCollection[];
     readonly sensitiveDataModelId?: string;
     /**
      * The current state of the sensitive data model.

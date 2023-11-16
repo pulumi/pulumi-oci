@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dr Plan Executions in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -82,7 +81,7 @@ type GetDrPlanExecutionsResult struct {
 	DrProtectionGroupId string                      `pulumi:"drProtectionGroupId"`
 	Filters             []GetDrPlanExecutionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the DR plan execution.
 	State *string `pulumi:"state"`
 }
@@ -134,12 +133,6 @@ func (o GetDrPlanExecutionsResultOutput) ToGetDrPlanExecutionsResultOutputWithCo
 	return o
 }
 
-func (o GetDrPlanExecutionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrPlanExecutionsResult] {
-	return pulumix.Output[GetDrPlanExecutionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 func (o GetDrPlanExecutionsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -170,8 +163,8 @@ func (o GetDrPlanExecutionsResultOutput) Filters() GetDrPlanExecutionsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDrPlanExecutionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrPlanExecutionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the DR plan execution.

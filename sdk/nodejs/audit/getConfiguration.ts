@@ -43,11 +43,11 @@ export interface GetConfigurationArgs {
  */
 export interface GetConfigurationResult {
     readonly compartmentId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      */
-    readonly retentionPeriodDays: number;
+    readonly retentionPeriodDays?: number;
 }
 /**
  * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.

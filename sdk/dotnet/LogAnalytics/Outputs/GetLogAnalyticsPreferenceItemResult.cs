@@ -16,17 +16,17 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The preference name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The preference value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetLogAnalyticsPreferenceItemResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

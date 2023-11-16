@@ -82,39 +82,39 @@ export class DiscoveryMod extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      */
-    public readonly discoveryType!: pulumi.Output<string>;
+    public readonly discoveryType!: pulumi.Output<string | undefined>;
     /**
      * A user-friendly name for the discovery job. Does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
      */
-    public readonly isAppDefinedRelationDiscoveryEnabled!: pulumi.Output<boolean>;
+    public readonly isAppDefinedRelationDiscoveryEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    public readonly isIncludeAllSchemas!: pulumi.Output<boolean>;
+    public readonly isIncludeAllSchemas!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
      */
-    public readonly isIncludeAllSensitiveTypes!: pulumi.Output<boolean>;
+    public readonly isIncludeAllSensitiveTypes!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
      */
-    public readonly isSampleDataCollectionEnabled!: pulumi.Output<boolean>;
+    public readonly isSampleDataCollectionEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
      */
-    public readonly schemasForDiscoveries!: pulumi.Output<string[]>;
+    public readonly schemasForDiscoveries!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the sensitive data model.
      */
@@ -126,51 +126,51 @@ export class DiscoveryMod extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[]>;
+    public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[] | undefined>;
     /**
      * The current state of the discovery job.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the target database associated with the discovery job.
      */
-    public /*out*/ readonly targetId!: pulumi.Output<string>;
+    public /*out*/ readonly targetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeFinished!: pulumi.Output<string | undefined>;
     /**
      * The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * The total number of columns scanned by the discovery job.
      */
-    public /*out*/ readonly totalColumnsScanned!: pulumi.Output<string>;
+    public /*out*/ readonly totalColumnsScanned!: pulumi.Output<string | undefined>;
     /**
      * The total number of deleted sensitive columns identified by the discovery job.
      */
-    public /*out*/ readonly totalDeletedSensitiveColumns!: pulumi.Output<string>;
+    public /*out*/ readonly totalDeletedSensitiveColumns!: pulumi.Output<string | undefined>;
     /**
      * The total number of modified sensitive columns identified by the discovery job.
      */
-    public /*out*/ readonly totalModifiedSensitiveColumns!: pulumi.Output<string>;
+    public /*out*/ readonly totalModifiedSensitiveColumns!: pulumi.Output<string | undefined>;
     /**
      * The total number of new sensitive columns identified by the discovery job.
      */
-    public /*out*/ readonly totalNewSensitiveColumns!: pulumi.Output<string>;
+    public /*out*/ readonly totalNewSensitiveColumns!: pulumi.Output<string | undefined>;
     /**
      * The total number of objects (tables and editioning views) scanned by the discovery job.
      */
-    public /*out*/ readonly totalObjectsScanned!: pulumi.Output<string>;
+    public /*out*/ readonly totalObjectsScanned!: pulumi.Output<string | undefined>;
     /**
      * The total number of schemas scanned by the discovery job.
      */
-    public /*out*/ readonly totalSchemasScanned!: pulumi.Output<string>;
+    public /*out*/ readonly totalSchemasScanned!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DiscoveryMod resource with the given unique name, arguments, and options.

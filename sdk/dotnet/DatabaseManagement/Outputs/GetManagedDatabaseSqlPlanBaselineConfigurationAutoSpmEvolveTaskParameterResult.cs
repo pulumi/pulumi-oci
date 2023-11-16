@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The global time limit in seconds. This is the total time allowed for the task.
         /// </summary>
-        public readonly int AllowedTimeLimit;
+        public readonly int? AllowedTimeLimit;
         /// <summary>
         /// Determines which alternative plans should be loaded.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Specifies the maximum number of plans to load in total (that is, not the limit for each SQL statement). A value of zero indicates `UNLIMITED` number of plans.
         /// </summary>
-        public readonly int AlternatePlanLimit;
+        public readonly int? AlternatePlanLimit;
         /// <summary>
         /// Determines which sources to search for additional plans.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Specifies whether to accept recommended plans automatically.
         /// </summary>
-        public readonly bool ArePlansAutoAccepted;
+        public readonly bool? ArePlansAutoAccepted;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterResult(
-            int allowedTimeLimit,
+            int? allowedTimeLimit,
 
             ImmutableArray<string> alternatePlanBaselines,
 
-            int alternatePlanLimit,
+            int? alternatePlanLimit,
 
             ImmutableArray<string> alternatePlanSources,
 
-            bool arePlansAutoAccepted)
+            bool? arePlansAutoAccepted)
         {
             AllowedTimeLimit = allowedTimeLimit;
             AlternatePlanBaselines = alternatePlanBaselines;

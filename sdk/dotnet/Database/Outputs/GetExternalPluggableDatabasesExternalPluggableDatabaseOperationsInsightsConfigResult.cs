@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         /// </summary>
-        public readonly string OperationsInsightsConnectorId;
+        public readonly string? OperationsInsightsConnectorId;
         /// <summary>
         /// The status of Operations Insights
         /// </summary>
-        public readonly string OperationsInsightsStatus;
+        public readonly string? OperationsInsightsStatus;
 
         [OutputConstructor]
         private GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigResult(
-            string operationsInsightsConnectorId,
+            string? operationsInsightsConnectorId,
 
-            string operationsInsightsStatus)
+            string? operationsInsightsStatus)
         {
             OperationsInsightsConnectorId = operationsInsightsConnectorId;
             OperationsInsightsStatus = operationsInsightsStatus;

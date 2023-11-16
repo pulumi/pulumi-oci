@@ -62,7 +62,7 @@ export interface GetAppCatalogListingsResult {
     /**
      * The list of app_catalog_listings.
      */
-    readonly appCatalogListings: outputs.Core.GetAppCatalogListingsAppCatalogListing[];
+    readonly appCatalogListings?: outputs.Core.GetAppCatalogListingsAppCatalogListing[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -71,7 +71,7 @@ export interface GetAppCatalogListingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the publisher who published this listing.
      */

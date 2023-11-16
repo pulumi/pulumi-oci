@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,28 +96,28 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return Name of the user who initiated import request.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * Contains key of the error
      * 
      */
     @Export(name="errorMessages", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> errorMessages;
+    private Output</* @Nullable */ Map<String,Object>> errorMessages;
 
     /**
      * @return Contains key of the error
      * 
      */
-    public Output<Map<String,Object>> errorMessages() {
-        return this.errorMessages;
+    public Output<Optional<Map<String,Object>>> errorMessages() {
+        return Codegen.optional(this.errorMessages);
     }
     /**
      * Name of the zip file to be imported.
@@ -137,154 +138,154 @@ public class WorkspaceImportRequest extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="importConflictResolution", refs={WorkspaceImportRequestImportConflictResolution.class}, tree="[0]")
-    private Output<WorkspaceImportRequestImportConflictResolution> importConflictResolution;
+    private Output</* @Nullable */ WorkspaceImportRequestImportConflictResolution> importConflictResolution;
 
     /**
      * @return Import Objects Conflict resolution.
      * 
      */
-    public Output<WorkspaceImportRequestImportConflictResolution> importConflictResolution() {
-        return this.importConflictResolution;
+    public Output<Optional<WorkspaceImportRequestImportConflictResolution>> importConflictResolution() {
+        return Codegen.optional(this.importConflictResolution);
     }
     /**
      * The array of imported object details.
      * 
      */
     @Export(name="importedObjects", refs={List.class,WorkspaceImportRequestImportedObject.class}, tree="[0,1]")
-    private Output<List<WorkspaceImportRequestImportedObject>> importedObjects;
+    private Output</* @Nullable */ List<WorkspaceImportRequestImportedObject>> importedObjects;
 
     /**
      * @return The array of imported object details.
      * 
      */
-    public Output<List<WorkspaceImportRequestImportedObject>> importedObjects() {
-        return this.importedObjects;
+    public Output<Optional<List<WorkspaceImportRequestImportedObject>>> importedObjects() {
+        return Codegen.optional(this.importedObjects);
     }
     /**
      * Import object request key
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return Import object request key
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * Name of the import request.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return Name of the import request.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * Key of the object inside which all the objects will be imported
      * 
      */
     @Export(name="objectKeyForImport", refs={String.class}, tree="[0]")
-    private Output<String> objectKeyForImport;
+    private Output</* @Nullable */ String> objectKeyForImport;
 
     /**
      * @return Key of the object inside which all the objects will be imported
      * 
      */
-    public Output<String> objectKeyForImport() {
-        return this.objectKeyForImport;
+    public Output<Optional<String>> objectKeyForImport() {
+        return Codegen.optional(this.objectKeyForImport);
     }
     /**
      * Region of the object storage (if using object storage of different region)
      * 
      */
     @Export(name="objectStorageRegion", refs={String.class}, tree="[0]")
-    private Output<String> objectStorageRegion;
+    private Output</* @Nullable */ String> objectStorageRegion;
 
     /**
      * @return Region of the object storage (if using object storage of different region)
      * 
      */
-    public Output<String> objectStorageRegion() {
-        return this.objectStorageRegion;
+    public Output<Optional<String>> objectStorageRegion() {
+        return Codegen.optional(this.objectStorageRegion);
     }
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
     @Export(name="objectStorageTenancyId", refs={String.class}, tree="[0]")
-    private Output<String> objectStorageTenancyId;
+    private Output</* @Nullable */ String> objectStorageTenancyId;
 
     /**
      * @return Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
-    public Output<String> objectStorageTenancyId() {
-        return this.objectStorageTenancyId;
+    public Output<Optional<String>> objectStorageTenancyId() {
+        return Codegen.optional(this.objectStorageTenancyId);
     }
     /**
      * Import Objects request status.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return Import Objects request status.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * Time at which the request was completely processed.
      * 
      */
     @Export(name="timeEndedInMillis", refs={String.class}, tree="[0]")
-    private Output<String> timeEndedInMillis;
+    private Output</* @Nullable */ String> timeEndedInMillis;
 
     /**
      * @return Time at which the request was completely processed.
      * 
      */
-    public Output<String> timeEndedInMillis() {
-        return this.timeEndedInMillis;
+    public Output<Optional<String>> timeEndedInMillis() {
+        return Codegen.optional(this.timeEndedInMillis);
     }
     /**
      * Time at which the request started getting processed.
      * 
      */
     @Export(name="timeStartedInMillis", refs={String.class}, tree="[0]")
-    private Output<String> timeStartedInMillis;
+    private Output</* @Nullable */ String> timeStartedInMillis;
 
     /**
      * @return Time at which the request started getting processed.
      * 
      */
-    public Output<String> timeStartedInMillis() {
-        return this.timeStartedInMillis;
+    public Output<Optional<String>> timeStartedInMillis() {
+        return Codegen.optional(this.timeStartedInMillis);
     }
     /**
      * Number of objects that are imported.
      * 
      */
     @Export(name="totalImportedObjectCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalImportedObjectCount;
+    private Output</* @Nullable */ Integer> totalImportedObjectCount;
 
     /**
      * @return Number of objects that are imported.
      * 
      */
-    public Output<Integer> totalImportedObjectCount() {
-        return this.totalImportedObjectCount;
+    public Output<Optional<Integer>> totalImportedObjectCount() {
+        return Codegen.optional(this.totalImportedObjectCount);
     }
     /**
      * The workspace ID.

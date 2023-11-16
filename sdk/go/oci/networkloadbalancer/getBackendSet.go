@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -40,16 +39,16 @@ type LookupBackendSetResult struct {
 	Backends []GetBackendSetBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetHealthChecker `pulumi:"healthCheckers"`
-	Id             string                       `pulumi:"id"`
+	Id             *string                      `pulumi:"id"`
 	// IP version associated with the backend set.
-	IpVersion string `pulumi:"ipVersion"`
+	IpVersion *string `pulumi:"ipVersion"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-	IsPreserveSource bool `pulumi:"isPreserveSource"`
+	IsPreserveSource *bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	Name                  string `pulumi:"name"`
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	Name                  *string `pulumi:"name"`
+	NetworkLoadBalancerId string  `pulumi:"networkLoadBalancerId"`
 	// The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 }
 
 func LookupBackendSetOutput(ctx *pulumi.Context, args LookupBackendSetOutputArgs, opts ...pulumi.InvokeOption) LookupBackendSetResultOutput {
@@ -92,12 +91,6 @@ func (o LookupBackendSetResultOutput) ToLookupBackendSetResultOutputWithContext(
 	return o
 }
 
-func (o LookupBackendSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBackendSetResult] {
-	return pulumix.Output[LookupBackendSetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupBackendSetResultOutput) BackendSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) string { return v.BackendSetName }).(pulumi.StringOutput)
 }
@@ -112,23 +105,23 @@ func (o LookupBackendSetResultOutput) HealthCheckers() GetBackendSetHealthChecke
 	return o.ApplyT(func(v LookupBackendSetResult) []GetBackendSetHealthChecker { return v.HealthCheckers }).(GetBackendSetHealthCheckerArrayOutput)
 }
 
-func (o LookupBackendSetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackendSetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBackendSetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // IP version associated with the backend set.
-func (o LookupBackendSetResultOutput) IpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackendSetResult) string { return v.IpVersion }).(pulumi.StringOutput)
+func (o LookupBackendSetResultOutput) IpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
 
 // If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
-func (o LookupBackendSetResultOutput) IsPreserveSource() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBackendSetResult) bool { return v.IsPreserveSource }).(pulumi.BoolOutput)
+func (o LookupBackendSetResultOutput) IsPreserveSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) *bool { return v.IsPreserveSource }).(pulumi.BoolPtrOutput)
 }
 
 // A user-friendly name for the backend set that must be unique and cannot be changed.
-func (o LookupBackendSetResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackendSetResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupBackendSetResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBackendSetResultOutput) NetworkLoadBalancerId() pulumi.StringOutput {
@@ -136,8 +129,8 @@ func (o LookupBackendSetResultOutput) NetworkLoadBalancerId() pulumi.StringOutpu
 }
 
 // The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
-func (o LookupBackendSetResultOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackendSetResult) string { return v.Policy }).(pulumi.StringOutput)
+func (o LookupBackendSetResultOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 func init() {

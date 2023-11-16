@@ -60,11 +60,11 @@ export interface GetQueriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of query_collection.
      */
-    readonly queryCollections: outputs.MeteringComputation.GetQueriesQueryCollection[];
+    readonly queryCollections?: outputs.MeteringComputation.GetQueriesQueryCollection[];
 }
 /**
  * This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.

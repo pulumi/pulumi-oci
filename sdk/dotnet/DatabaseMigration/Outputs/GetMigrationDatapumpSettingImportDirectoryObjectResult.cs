@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Name of directory object in database
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Absolute path of directory on database server
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
 
         [OutputConstructor]
         private GetMigrationDatapumpSettingImportDirectoryObjectResult(
-            string name,
+            string? name,
 
-            string path)
+            string? path)
         {
             Name = name;
             Path = path;

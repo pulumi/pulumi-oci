@@ -104,13 +104,13 @@ export interface GetSqlFirewallViolationAnalyticsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly queryTimeZone?: string;
     readonly scimQuery?: string;
     /**
      * The list of sql_firewall_violation_analytics_collection.
      */
-    readonly sqlFirewallViolationAnalyticsCollections: outputs.DataSafe.GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection[];
+    readonly sqlFirewallViolationAnalyticsCollections?: outputs.DataSafe.GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollection[];
     readonly summaryFields?: string[];
     /**
      * The time at which the aggregation ended.

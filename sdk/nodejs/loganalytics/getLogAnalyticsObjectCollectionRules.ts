@@ -72,11 +72,11 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of log_analytics_object_collection_rule_collection.
      */
-    readonly logAnalyticsObjectCollectionRuleCollections: outputs.LogAnalytics.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection[];
+    readonly logAnalyticsObjectCollectionRuleCollections?: outputs.LogAnalytics.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection[];
     /**
      * A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
      */

@@ -70,11 +70,11 @@ export interface GetInstancePoolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of instance_pools.
      */
-    readonly instancePools: outputs.Core.GetInstancePoolsInstancePool[];
+    readonly instancePools?: outputs.Core.GetInstancePoolsInstancePool[];
     /**
      * The current state of the instance pool.
      */

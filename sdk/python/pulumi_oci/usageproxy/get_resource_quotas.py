@@ -55,7 +55,7 @@ class GetResourceQuotasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,10 +63,7 @@ class GetResourceQuotasResult:
 
     @property
     @pulumi.getter(name="resourceQuotumCollections")
-    def resource_quotum_collections(self) -> Sequence['outputs.GetResourceQuotasResourceQuotumCollectionResult']:
-        """
-        The list of resource_quotum_collection.
-        """
+    def resource_quotum_collections(self) -> Optional[Sequence['outputs.GetResourceQuotasResourceQuotumCollectionResult']]:
         return pulumi.get(self, "resource_quotum_collections")
 
     @property
@@ -100,26 +97,7 @@ def get_resource_quotas(compartment_id: Optional[str] = None,
                         service_name: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceQuotasResult:
     """
-    This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the resource quota details under a tenancy
-    > **Important**: Calls to this API will only succeed against the endpoint in the home region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        service_entitlement=var["resource_quota_service_entitlement"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str service_entitlement: Service entitlement Id.
-    :param str service_name: Service Name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -145,25 +123,6 @@ def get_resource_quotas_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                service_name: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceQuotasResult]:
     """
-    This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the resource quota details under a tenancy
-    > **Important**: Calls to this API will only succeed against the endpoint in the home region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        service_entitlement=var["resource_quota_service_entitlement"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str service_entitlement: Service entitlement Id.
-    :param str service_name: Service Name.
+    Use this data source to access information about an existing resource.
     """
     ...

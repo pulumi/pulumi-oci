@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// An edge node subnet. This can include /24 or /8 addresses.
         /// </summary>
-        public readonly string Cidr;
+        public readonly string? Cidr;
         /// <summary>
         /// The name of the region containing the indicated subnet.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
 
         [OutputConstructor]
         private GetEdgeSubnetsEdgeSubnetResult(
-            string cidr,
+            string? cidr,
 
-            string region,
+            string? region,
 
-            string timeModified)
+            string? timeModified)
         {
             Cidr = cidr;
             Region = region;

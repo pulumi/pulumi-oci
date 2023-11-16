@@ -77,82 +77,52 @@ class GetScheduleResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The customer tenancy.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the schedule.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID representing a unique shedule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The unique name of the schedule created by the user.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="outputFileFormat")
-    def output_file_format(self) -> str:
-        """
-        Specifies supported output file format.
-        """
+    def output_file_format(self) -> Optional[str]:
         return pulumi.get(self, "output_file_format")
 
     @property
     @pulumi.getter(name="queryProperties")
-    def query_properties(self) -> Sequence['outputs.GetScheduleQueryPropertyResult']:
-        """
-        The query properties.
-        """
+    def query_properties(self) -> Optional[Sequence['outputs.GetScheduleQueryPropertyResult']]:
         return pulumi.get(self, "query_properties")
 
     @property
     @pulumi.getter(name="resultLocations")
-    def result_locations(self) -> Sequence['outputs.GetScheduleResultLocationResult']:
-        """
-        The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        """
+    def result_locations(self) -> Optional[Sequence['outputs.GetScheduleResultLocationResult']]:
         return pulumi.get(self, "result_locations")
 
     @property
     @pulumi.getter(name="savedReportId")
-    def saved_report_id(self) -> str:
-        """
-        The saved report id which can also be used to generate query.
-        """
+    def saved_report_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_report_id")
 
     @property
@@ -162,50 +132,32 @@ class GetScheduleResult:
 
     @property
     @pulumi.getter(name="scheduleRecurrences")
-    def schedule_recurrences(self) -> str:
-        """
-        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-        """
+    def schedule_recurrences(self) -> Optional[str]:
         return pulumi.get(self, "schedule_recurrences")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The schedule lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the schedule was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeNextRun")
-    def time_next_run(self) -> str:
-        """
-        The date and time of the next job execution.
-        """
+    def time_next_run(self) -> Optional[str]:
         return pulumi.get(self, "time_next_run")
 
     @property
     @pulumi.getter(name="timeScheduled")
-    def time_scheduled(self) -> str:
-        """
-        The date and time of the first time job execution.
-        """
+    def time_scheduled(self) -> Optional[str]:
         return pulumi.get(self, "time_scheduled")
 
 
@@ -237,21 +189,7 @@ class AwaitableGetScheduleResult(GetScheduleResult):
 def get_schedule(schedule_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScheduleResult:
     """
-    This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved schedule.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
-    ```
-
-
-    :param str schedule_id: The schedule unique OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['scheduleId'] = schedule_id
@@ -282,20 +220,6 @@ def get_schedule(schedule_id: Optional[str] = None,
 def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScheduleResult]:
     """
-    This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved schedule.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
-    ```
-
-
-    :param str schedule_id: The schedule unique OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -112,11 +112,11 @@ export interface GetListUserGrantsResult {
     /**
      * The list of grants.
      */
-    readonly grants: outputs.DataSafe.GetListUserGrantsGrant[];
+    readonly grants?: outputs.DataSafe.GetListUserGrantsGrant[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The privilege category.
      */

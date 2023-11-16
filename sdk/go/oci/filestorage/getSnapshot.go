@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
@@ -62,35 +61,35 @@ type LookupSnapshotResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The time when this snapshot will be deleted.
-	ExpirationTime string `pulumi:"expirationTime"`
+	ExpirationTime *string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
-	FileSystemId string `pulumi:"fileSystemId"`
+	FileSystemId *string `pulumi:"fileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
-	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
+	FilesystemSnapshotPolicyId *string `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource bool `pulumi:"isCloneSource"`
+	IsCloneSource *bool `pulumi:"isCloneSource"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	ProvenanceId string `pulumi:"provenanceId"`
-	SnapshotId   string `pulumi:"snapshotId"`
+	ProvenanceId *string `pulumi:"provenanceId"`
+	SnapshotId   string  `pulumi:"snapshotId"`
 	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
 	// * If the snapshot is created in the original file system directory.
 	// * If the snapshot is cloned from a file system.
 	// * If the snapshot is replicated from a file system.
-	SnapshotTime string `pulumi:"snapshotTime"`
+	SnapshotTime *string `pulumi:"snapshotTime"`
 	// Specifies the generation type of the snapshot.
-	SnapshotType string `pulumi:"snapshotType"`
+	SnapshotType *string `pulumi:"snapshotType"`
 	// The current state of the snapshot.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupSnapshotOutput(ctx *pulumi.Context, args LookupSnapshotOutputArgs, opts ...pulumi.InvokeOption) LookupSnapshotResultOutput {
@@ -131,30 +130,24 @@ func (o LookupSnapshotResultOutput) ToLookupSnapshotResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupSnapshotResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSnapshotResult] {
-	return pulumix.Output[LookupSnapshotResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o LookupSnapshotResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The time when this snapshot will be deleted.
-func (o LookupSnapshotResultOutput) ExpirationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.ExpirationTime }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) ExpirationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.ExpirationTime }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
-func (o LookupSnapshotResultOutput) FileSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.FileSystemId }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
-func (o LookupSnapshotResultOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) FilesystemSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -163,28 +156,28 @@ func (o LookupSnapshotResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
-func (o LookupSnapshotResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o LookupSnapshotResultOutput) IsCloneSource() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) bool { return v.IsCloneSource }).(pulumi.BoolOutput)
+func (o LookupSnapshotResultOutput) IsCloneSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *bool { return v.IsCloneSource }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current `lifecycleState`.
-func (o LookupSnapshotResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Name of the snapshot. This value is immutable.
-func (o LookupSnapshotResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o LookupSnapshotResultOutput) ProvenanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.ProvenanceId }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) ProvenanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.ProvenanceId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSnapshotResultOutput) SnapshotId() pulumi.StringOutput {
@@ -195,23 +188,23 @@ func (o LookupSnapshotResultOutput) SnapshotId() pulumi.StringOutput {
 // * If the snapshot is created in the original file system directory.
 // * If the snapshot is cloned from a file system.
 // * If the snapshot is replicated from a file system.
-func (o LookupSnapshotResultOutput) SnapshotTime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.SnapshotTime }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) SnapshotTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.SnapshotTime }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the generation type of the snapshot.
-func (o LookupSnapshotResultOutput) SnapshotType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.SnapshotType }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) SnapshotType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.SnapshotType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the snapshot.
-func (o LookupSnapshotResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupSnapshotResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSnapshotResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

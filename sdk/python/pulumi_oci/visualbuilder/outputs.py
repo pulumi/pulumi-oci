@@ -55,11 +55,6 @@ class VbInstanceAlternateCustomEndpoint(dict):
                  hostname: str,
                  certificate_secret_id: Optional[str] = None,
                  certificate_secret_version: Optional[int] = None):
-        """
-        :param str hostname: (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
-        :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
         pulumi.set(__self__, "hostname", hostname)
         if certificate_secret_id is not None:
             pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
@@ -69,25 +64,16 @@ class VbInstanceAlternateCustomEndpoint(dict):
     @property
     @pulumi.getter
     def hostname(self) -> str:
-        """
-        (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="certificateSecretId")
     def certificate_secret_id(self) -> Optional[str]:
-        """
-        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
-        """
         return pulumi.get(self, "certificate_secret_id")
 
     @property
     @pulumi.getter(name="certificateSecretVersion")
     def certificate_secret_version(self) -> Optional[int]:
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
         return pulumi.get(self, "certificate_secret_version")
 
 
@@ -124,14 +110,6 @@ class VbInstanceAttachment(dict):
                  target_instance_url: Optional[str] = None,
                  target_role: Optional[str] = None,
                  target_service_type: Optional[str] = None):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
         if is_implicit is not None:
             pulumi.set(__self__, "is_implicit", is_implicit)
         if target_id is not None:
@@ -146,42 +124,26 @@ class VbInstanceAttachment(dict):
     @property
     @pulumi.getter(name="isImplicit")
     def is_implicit(self) -> Optional[bool]:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
         return pulumi.get(self, "is_implicit")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetInstanceUrl")
     def target_instance_url(self) -> Optional[str]:
-        """
-        The dataplane instance URL of the attached instance
-        """
         return pulumi.get(self, "target_instance_url")
 
     @property
     @pulumi.getter(name="targetRole")
     def target_role(self) -> Optional[str]:
-        """
-        The role of the target attachment.
-        """
         return pulumi.get(self, "target_role")
 
     @property
     @pulumi.getter(name="targetServiceType")
     def target_service_type(self) -> Optional[str]:
-        """
-        The type of the target instance, such as "FUSION".
-        """
         return pulumi.get(self, "target_service_type")
 
 
@@ -210,11 +172,6 @@ class VbInstanceCustomEndpoint(dict):
                  hostname: str,
                  certificate_secret_id: Optional[str] = None,
                  certificate_secret_version: Optional[int] = None):
-        """
-        :param str hostname: (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
-        :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
         pulumi.set(__self__, "hostname", hostname)
         if certificate_secret_id is not None:
             pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
@@ -224,25 +181,16 @@ class VbInstanceCustomEndpoint(dict):
     @property
     @pulumi.getter
     def hostname(self) -> str:
-        """
-        (Updatable) A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="certificateSecretId")
     def certificate_secret_id(self) -> Optional[str]:
-        """
-        (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
-        """
         return pulumi.get(self, "certificate_secret_id")
 
     @property
     @pulumi.getter(name="certificateSecretVersion")
     def certificate_secret_version(self) -> Optional[int]:
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
         return pulumi.get(self, "certificate_secret_version")
 
 
@@ -279,13 +227,6 @@ class VbInstanceIdcsInfo(dict):
                  idcs_app_location_url: Optional[str] = None,
                  idcs_app_name: Optional[str] = None,
                  instance_primary_audience_url: Optional[str] = None):
-        """
-        :param str idcs_app_display_name: The IDCS application display name associated with the instance
-        :param str idcs_app_id: The IDCS application ID associated with the instance
-        :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
-        :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
-        """
         if idcs_app_display_name is not None:
             pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
@@ -300,93 +241,68 @@ class VbInstanceIdcsInfo(dict):
     @property
     @pulumi.getter(name="idcsAppDisplayName")
     def idcs_app_display_name(self) -> Optional[str]:
-        """
-        The IDCS application display name associated with the instance
-        """
         return pulumi.get(self, "idcs_app_display_name")
 
     @property
     @pulumi.getter(name="idcsAppId")
     def idcs_app_id(self) -> Optional[str]:
-        """
-        The IDCS application ID associated with the instance
-        """
         return pulumi.get(self, "idcs_app_id")
 
     @property
     @pulumi.getter(name="idcsAppLocationUrl")
     def idcs_app_location_url(self) -> Optional[str]:
-        """
-        URL for the location of the IDCS Application (used by IDCS APIs)
-        """
         return pulumi.get(self, "idcs_app_location_url")
 
     @property
     @pulumi.getter(name="idcsAppName")
     def idcs_app_name(self) -> Optional[str]:
-        """
-        The IDCS application name associated with the instance
-        """
         return pulumi.get(self, "idcs_app_name")
 
     @property
     @pulumi.getter(name="instancePrimaryAudienceUrl")
     def instance_primary_audience_url(self) -> Optional[str]:
-        """
-        The URL used as the primary audience for visual builder flows in this instance type: string
-        """
         return pulumi.get(self, "instance_primary_audience_url")
 
 
 @pulumi.output_type
 class GetVbInstanceAlternateCustomEndpointResult(dict):
     def __init__(__self__, *,
-                 certificate_secret_id: str,
-                 certificate_secret_version: int,
-                 hostname: str):
-        """
-        :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+                 certificate_secret_id: Optional[str] = None,
+                 certificate_secret_version: Optional[int] = None,
+                 hostname: Optional[str] = None):
+        if certificate_secret_id is not None:
+            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        if certificate_secret_version is not None:
+            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
-    def certificate_secret_id(self) -> str:
-        """
-        Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        """
+    def certificate_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "certificate_secret_id")
 
     @property
     @pulumi.getter(name="certificateSecretVersion")
-    def certificate_secret_version(self) -> int:
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
+    def certificate_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "certificate_secret_version")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
 
 @pulumi.output_type
 class GetVbInstanceApplicationsApplicationSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -397,12 +313,6 @@ class GetVbInstanceApplicationsApplicationSummaryCollectionItemResult(dict):
                  project_id: str,
                  state: str,
                  version: str):
-        """
-        :param str id: The Visual Builder application identifier.
-        :param str project_id: The Visual Builder application project identifier.
-        :param str state: The state of visual builder application. Either LIVE or STAGED
-        :param str version: The Visual Builder application version
-        """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
@@ -411,199 +321,140 @@ class GetVbInstanceApplicationsApplicationSummaryCollectionItemResult(dict):
     @property
     @pulumi.getter
     def id(self) -> str:
-        """
-        The Visual Builder application identifier.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
-        """
-        The Visual Builder application project identifier.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> str:
-        """
-        The state of visual builder application. Either LIVE or STAGED
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def version(self) -> str:
-        """
-        The Visual Builder application version
-        """
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetVbInstanceAttachmentResult(dict):
     def __init__(__self__, *,
-                 is_implicit: bool,
-                 target_id: str,
-                 target_instance_url: str,
-                 target_role: str,
-                 target_service_type: str):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+                 is_implicit: Optional[bool] = None,
+                 target_id: Optional[str] = None,
+                 target_instance_url: Optional[str] = None,
+                 target_role: Optional[str] = None,
+                 target_service_type: Optional[str] = None):
+        if is_implicit is not None:
+            pulumi.set(__self__, "is_implicit", is_implicit)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_instance_url is not None:
+            pulumi.set(__self__, "target_instance_url", target_instance_url)
+        if target_role is not None:
+            pulumi.set(__self__, "target_role", target_role)
+        if target_service_type is not None:
+            pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> bool:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
+    def is_implicit(self) -> Optional[bool]:
         return pulumi.get(self, "is_implicit")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> str:
-        """
-        The dataplane instance URL of the attached instance
-        """
+    def target_instance_url(self) -> Optional[str]:
         return pulumi.get(self, "target_instance_url")
 
     @property
     @pulumi.getter(name="targetRole")
-    def target_role(self) -> str:
-        """
-        The role of the target attachment.
-        """
+    def target_role(self) -> Optional[str]:
         return pulumi.get(self, "target_role")
 
     @property
     @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> str:
-        """
-        The type of the target instance, such as "FUSION".
-        """
+    def target_service_type(self) -> Optional[str]:
         return pulumi.get(self, "target_service_type")
 
 
 @pulumi.output_type
 class GetVbInstanceCustomEndpointResult(dict):
     def __init__(__self__, *,
-                 certificate_secret_id: str,
-                 certificate_secret_version: int,
-                 hostname: str):
-        """
-        :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+                 certificate_secret_id: Optional[str] = None,
+                 certificate_secret_version: Optional[int] = None,
+                 hostname: Optional[str] = None):
+        if certificate_secret_id is not None:
+            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        if certificate_secret_version is not None:
+            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
-    def certificate_secret_id(self) -> str:
-        """
-        Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        """
+    def certificate_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "certificate_secret_id")
 
     @property
     @pulumi.getter(name="certificateSecretVersion")
-    def certificate_secret_version(self) -> int:
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
+    def certificate_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "certificate_secret_version")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
 
 @pulumi.output_type
 class GetVbInstanceIdcsInfoResult(dict):
     def __init__(__self__, *,
-                 idcs_app_display_name: str,
-                 idcs_app_id: str,
-                 idcs_app_location_url: str,
-                 idcs_app_name: str,
-                 instance_primary_audience_url: str):
-        """
-        :param str idcs_app_display_name: The IDCS application display name associated with the instance
-        :param str idcs_app_id: The IDCS application ID associated with the instance
-        :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
-        :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
-        """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+                 idcs_app_display_name: Optional[str] = None,
+                 idcs_app_id: Optional[str] = None,
+                 idcs_app_location_url: Optional[str] = None,
+                 idcs_app_name: Optional[str] = None,
+                 instance_primary_audience_url: Optional[str] = None):
+        if idcs_app_display_name is not None:
+            pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
+        if idcs_app_id is not None:
+            pulumi.set(__self__, "idcs_app_id", idcs_app_id)
+        if idcs_app_location_url is not None:
+            pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
+        if idcs_app_name is not None:
+            pulumi.set(__self__, "idcs_app_name", idcs_app_name)
+        if instance_primary_audience_url is not None:
+            pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
-    def idcs_app_display_name(self) -> str:
-        """
-        The IDCS application display name associated with the instance
-        """
+    def idcs_app_display_name(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_display_name")
 
     @property
     @pulumi.getter(name="idcsAppId")
-    def idcs_app_id(self) -> str:
-        """
-        The IDCS application ID associated with the instance
-        """
+    def idcs_app_id(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_id")
 
     @property
     @pulumi.getter(name="idcsAppLocationUrl")
-    def idcs_app_location_url(self) -> str:
-        """
-        URL for the location of the IDCS Application (used by IDCS APIs)
-        """
+    def idcs_app_location_url(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_location_url")
 
     @property
     @pulumi.getter(name="idcsAppName")
-    def idcs_app_name(self) -> str:
-        """
-        The IDCS application name associated with the instance
-        """
+    def idcs_app_name(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_name")
 
     @property
     @pulumi.getter(name="instancePrimaryAudienceUrl")
-    def instance_primary_audience_url(self) -> str:
-        """
-        The URL used as the primary audience for visual builder flows in this instance type: string
-        """
+    def instance_primary_audience_url(self) -> Optional[str]:
         return pulumi.get(self, "instance_primary_audience_url")
 
 
@@ -637,474 +488,350 @@ class GetVbInstancesFilterResult(dict):
 @pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 alternate_custom_endpoints: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult'],
-                 attachments: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult'],
-                 compartment_id: str,
-                 consumption_model: str,
-                 custom_endpoints: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult'],
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 idcs_infos: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult'],
-                 idcs_open_id: str,
-                 instance_url: str,
-                 is_visual_builder_enabled: bool,
-                 management_nat_gateway_ip: str,
-                 management_vcn_id: str,
-                 node_count: int,
-                 service_nat_gateway_ip: str,
-                 service_vcn_id: str,
-                 state: str,
-                 state_message: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs'] alternate_custom_endpoints: A list of alternate custom endpoints used for the vb instance URL.
-        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs'] attachments: A list of associated attachments to other services
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str consumption_model: The entitlement used for billing purposes.
-        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs'] custom_endpoints: Details for a custom endpoint for the vb instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique identifier that is immutable on creation.
-        :param Sequence['GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs'] idcs_infos: Information for IDCS access
-        :param str instance_url: The Vb Instance URL.
-        :param bool is_visual_builder_enabled: Visual Builder is enabled or not.
-        :param str management_nat_gateway_ip: The NAT gateway IP address for the VB management VCN
-        :param str management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        :param int node_count: The number of Nodes
-        :param str service_nat_gateway_ip: The NAT gateway IP address for the VB service VCN
-        :param str service_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-        :param str state: Life cycle state to query on.
-        :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the the VbInstance was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the VbInstance was updated. An RFC3339 formatted datetime string.
-        """
-        pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
-        pulumi.set(__self__, "attachments", attachments)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "consumption_model", consumption_model)
-        pulumi.set(__self__, "custom_endpoints", custom_endpoints)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_infos", idcs_infos)
-        pulumi.set(__self__, "idcs_open_id", idcs_open_id)
-        pulumi.set(__self__, "instance_url", instance_url)
-        pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
-        pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
-        pulumi.set(__self__, "management_vcn_id", management_vcn_id)
-        pulumi.set(__self__, "node_count", node_count)
-        pulumi.set(__self__, "service_nat_gateway_ip", service_nat_gateway_ip)
-        pulumi.set(__self__, "service_vcn_id", service_vcn_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 alternate_custom_endpoints: Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult']] = None,
+                 attachments: Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 consumption_model: Optional[str] = None,
+                 custom_endpoints: Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 idcs_infos: Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult']] = None,
+                 idcs_open_id: Optional[str] = None,
+                 instance_url: Optional[str] = None,
+                 is_visual_builder_enabled: Optional[bool] = None,
+                 management_nat_gateway_ip: Optional[str] = None,
+                 management_vcn_id: Optional[str] = None,
+                 node_count: Optional[int] = None,
+                 service_nat_gateway_ip: Optional[str] = None,
+                 service_vcn_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 state_message: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if alternate_custom_endpoints is not None:
+            pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if consumption_model is not None:
+            pulumi.set(__self__, "consumption_model", consumption_model)
+        if custom_endpoints is not None:
+            pulumi.set(__self__, "custom_endpoints", custom_endpoints)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idcs_infos is not None:
+            pulumi.set(__self__, "idcs_infos", idcs_infos)
+        if idcs_open_id is not None:
+            pulumi.set(__self__, "idcs_open_id", idcs_open_id)
+        if instance_url is not None:
+            pulumi.set(__self__, "instance_url", instance_url)
+        if is_visual_builder_enabled is not None:
+            pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        if management_nat_gateway_ip is not None:
+            pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
+        if management_vcn_id is not None:
+            pulumi.set(__self__, "management_vcn_id", management_vcn_id)
+        if node_count is not None:
+            pulumi.set(__self__, "node_count", node_count)
+        if service_nat_gateway_ip is not None:
+            pulumi.set(__self__, "service_nat_gateway_ip", service_nat_gateway_ip)
+        if service_vcn_id is not None:
+            pulumi.set(__self__, "service_vcn_id", service_vcn_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_message is not None:
+            pulumi.set(__self__, "state_message", state_message)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
-    def alternate_custom_endpoints(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult']:
-        """
-        A list of alternate custom endpoints used for the vb instance URL.
-        """
+    def alternate_custom_endpoints(self) -> Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult']]:
         return pulumi.get(self, "alternate_custom_endpoints")
 
     @property
     @pulumi.getter
-    def attachments(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult']:
-        """
-        A list of associated attachments to other services
-        """
+    def attachments(self) -> Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult']]:
         return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> str:
-        """
-        The entitlement used for billing purposes.
-        """
+    def consumption_model(self) -> Optional[str]:
         return pulumi.get(self, "consumption_model")
 
     @property
     @pulumi.getter(name="customEndpoints")
-    def custom_endpoints(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult']:
-        """
-        Details for a custom endpoint for the vb instance.
-        """
+    def custom_endpoints(self) -> Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult']]:
         return pulumi.get(self, "custom_endpoints")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsInfos")
-    def idcs_infos(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult']:
-        """
-        Information for IDCS access
-        """
+    def idcs_infos(self) -> Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult']]:
         return pulumi.get(self, "idcs_infos")
 
     @property
     @pulumi.getter(name="idcsOpenId")
-    def idcs_open_id(self) -> str:
+    def idcs_open_id(self) -> Optional[str]:
         return pulumi.get(self, "idcs_open_id")
 
     @property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> str:
-        """
-        The Vb Instance URL.
-        """
+    def instance_url(self) -> Optional[str]:
         return pulumi.get(self, "instance_url")
 
     @property
     @pulumi.getter(name="isVisualBuilderEnabled")
-    def is_visual_builder_enabled(self) -> bool:
-        """
-        Visual Builder is enabled or not.
-        """
+    def is_visual_builder_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_visual_builder_enabled")
 
     @property
     @pulumi.getter(name="managementNatGatewayIp")
-    def management_nat_gateway_ip(self) -> str:
-        """
-        The NAT gateway IP address for the VB management VCN
-        """
+    def management_nat_gateway_ip(self) -> Optional[str]:
         return pulumi.get(self, "management_nat_gateway_ip")
 
     @property
     @pulumi.getter(name="managementVcnId")
-    def management_vcn_id(self) -> str:
-        """
-        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-        """
+    def management_vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "management_vcn_id")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> int:
-        """
-        The number of Nodes
-        """
+    def node_count(self) -> Optional[int]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="serviceNatGatewayIp")
-    def service_nat_gateway_ip(self) -> str:
-        """
-        The NAT gateway IP address for the VB service VCN
-        """
+    def service_nat_gateway_ip(self) -> Optional[str]:
         return pulumi.get(self, "service_nat_gateway_ip")
 
     @property
     @pulumi.getter(name="serviceVcnId")
-    def service_vcn_id(self) -> str:
-        """
-        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-        """
+    def service_vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "service_vcn_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Life cycle state to query on.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> str:
-        """
-        An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def state_message(self) -> Optional[str]:
         return pulumi.get(self, "state_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the VbInstance was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the VbInstance was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult(dict):
     def __init__(__self__, *,
-                 certificate_secret_id: str,
-                 certificate_secret_version: int,
-                 hostname: str):
-        """
-        :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+                 certificate_secret_id: Optional[str] = None,
+                 certificate_secret_version: Optional[int] = None,
+                 hostname: Optional[str] = None):
+        if certificate_secret_id is not None:
+            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        if certificate_secret_version is not None:
+            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
-    def certificate_secret_id(self) -> str:
-        """
-        Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        """
+    def certificate_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "certificate_secret_id")
 
     @property
     @pulumi.getter(name="certificateSecretVersion")
-    def certificate_secret_version(self) -> int:
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
+    def certificate_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "certificate_secret_version")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
 
 @pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult(dict):
     def __init__(__self__, *,
-                 is_implicit: bool,
-                 target_id: str,
-                 target_instance_url: str,
-                 target_role: str,
-                 target_service_type: str):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+                 is_implicit: Optional[bool] = None,
+                 target_id: Optional[str] = None,
+                 target_instance_url: Optional[str] = None,
+                 target_role: Optional[str] = None,
+                 target_service_type: Optional[str] = None):
+        if is_implicit is not None:
+            pulumi.set(__self__, "is_implicit", is_implicit)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_instance_url is not None:
+            pulumi.set(__self__, "target_instance_url", target_instance_url)
+        if target_role is not None:
+            pulumi.set(__self__, "target_role", target_role)
+        if target_service_type is not None:
+            pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> bool:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
+    def is_implicit(self) -> Optional[bool]:
         return pulumi.get(self, "is_implicit")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> str:
-        """
-        The dataplane instance URL of the attached instance
-        """
+    def target_instance_url(self) -> Optional[str]:
         return pulumi.get(self, "target_instance_url")
 
     @property
     @pulumi.getter(name="targetRole")
-    def target_role(self) -> str:
-        """
-        The role of the target attachment.
-        """
+    def target_role(self) -> Optional[str]:
         return pulumi.get(self, "target_role")
 
     @property
     @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> str:
-        """
-        The type of the target instance, such as "FUSION".
-        """
+    def target_service_type(self) -> Optional[str]:
         return pulumi.get(self, "target_service_type")
 
 
 @pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult(dict):
     def __init__(__self__, *,
-                 certificate_secret_id: str,
-                 certificate_secret_version: int,
-                 hostname: str):
-        """
-        :param str certificate_secret_id: Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+                 certificate_secret_id: Optional[str] = None,
+                 certificate_secret_version: Optional[int] = None,
+                 hostname: Optional[str] = None):
+        if certificate_secret_id is not None:
+            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+        if certificate_secret_version is not None:
+            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
-    def certificate_secret_id(self) -> str:
-        """
-        Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-        """
+    def certificate_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "certificate_secret_id")
 
     @property
     @pulumi.getter(name="certificateSecretVersion")
-    def certificate_secret_version(self) -> int:
-        """
-        The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-        """
+    def certificate_secret_version(self) -> Optional[int]:
         return pulumi.get(self, "certificate_secret_version")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        A custom hostname to be used for the vb instance URL, in FQDN format.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
 
 @pulumi.output_type
 class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult(dict):
     def __init__(__self__, *,
-                 idcs_app_display_name: str,
-                 idcs_app_id: str,
-                 idcs_app_location_url: str,
-                 idcs_app_name: str,
-                 instance_primary_audience_url: str):
-        """
-        :param str idcs_app_display_name: The IDCS application display name associated with the instance
-        :param str idcs_app_id: The IDCS application ID associated with the instance
-        :param str idcs_app_location_url: URL for the location of the IDCS Application (used by IDCS APIs)
-        :param str idcs_app_name: The IDCS application name associated with the instance
-        :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
-        """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+                 idcs_app_display_name: Optional[str] = None,
+                 idcs_app_id: Optional[str] = None,
+                 idcs_app_location_url: Optional[str] = None,
+                 idcs_app_name: Optional[str] = None,
+                 instance_primary_audience_url: Optional[str] = None):
+        if idcs_app_display_name is not None:
+            pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
+        if idcs_app_id is not None:
+            pulumi.set(__self__, "idcs_app_id", idcs_app_id)
+        if idcs_app_location_url is not None:
+            pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
+        if idcs_app_name is not None:
+            pulumi.set(__self__, "idcs_app_name", idcs_app_name)
+        if instance_primary_audience_url is not None:
+            pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
-    def idcs_app_display_name(self) -> str:
-        """
-        The IDCS application display name associated with the instance
-        """
+    def idcs_app_display_name(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_display_name")
 
     @property
     @pulumi.getter(name="idcsAppId")
-    def idcs_app_id(self) -> str:
-        """
-        The IDCS application ID associated with the instance
-        """
+    def idcs_app_id(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_id")
 
     @property
     @pulumi.getter(name="idcsAppLocationUrl")
-    def idcs_app_location_url(self) -> str:
-        """
-        URL for the location of the IDCS Application (used by IDCS APIs)
-        """
+    def idcs_app_location_url(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_location_url")
 
     @property
     @pulumi.getter(name="idcsAppName")
-    def idcs_app_name(self) -> str:
-        """
-        The IDCS application name associated with the instance
-        """
+    def idcs_app_name(self) -> Optional[str]:
         return pulumi.get(self, "idcs_app_name")
 
     @property
     @pulumi.getter(name="instancePrimaryAudienceUrl")
-    def instance_primary_audience_url(self) -> str:
-        """
-        The URL used as the primary audience for visual builder flows in this instance type: string
-        """
+    def instance_primary_audience_url(self) -> Optional[str]:
         return pulumi.get(self, "instance_primary_audience_url")
 
 

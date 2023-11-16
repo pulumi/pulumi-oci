@@ -45,19 +45,19 @@ namespace Pulumi.Oci.ManagementAgent
         /// The current availability status of managementAgent
         /// </summary>
         [Output("availabilityStatus")]
-        public Output<string> AvailabilityStatus { get; private set; } = null!;
+        public Output<string?> AvailabilityStatus { get; private set; } = null!;
 
         /// <summary>
         /// Compartment Identifier
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Plugin Id list
@@ -72,61 +72,61 @@ namespace Pulumi.Oci.ManagementAgent
         /// (Updatable) New displayName of Agent.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Management Agent host machine name
         /// </summary>
         [Output("host")]
-        public Output<string> Host { get; private set; } = null!;
+        public Output<string?> Host { get; private set; } = null!;
 
         /// <summary>
         /// Host resource ocid
         /// </summary>
         [Output("hostId")]
-        public Output<string> HostId { get; private set; } = null!;
+        public Output<string?> HostId { get; private set; } = null!;
 
         /// <summary>
         /// agent install key identifier
         /// </summary>
         [Output("installKeyId")]
-        public Output<string> InstallKeyId { get; private set; } = null!;
+        public Output<string?> InstallKeyId { get; private set; } = null!;
 
         /// <summary>
         /// Path where Management Agent is installed
         /// </summary>
         [Output("installPath")]
-        public Output<string> InstallPath { get; private set; } = null!;
+        public Output<string?> InstallPath { get; private set; } = null!;
 
         /// <summary>
         /// The install type, either AGENT or GATEWAY
         /// </summary>
         [Output("installType")]
-        public Output<string> InstallType { get; private set; } = null!;
+        public Output<string?> InstallType { get; private set; } = null!;
 
         /// <summary>
         /// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
         /// </summary>
         [Output("isAgentAutoUpgradable")]
-        public Output<bool> IsAgentAutoUpgradable { get; private set; } = null!;
+        public Output<bool?> IsAgentAutoUpgradable { get; private set; } = null!;
 
         /// <summary>
         /// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         /// </summary>
         [Output("isCustomerDeployed")]
-        public Output<bool> IsCustomerDeployed { get; private set; } = null!;
+        public Output<bool?> IsCustomerDeployed { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Unique Management Agent identifier
@@ -144,19 +144,19 @@ namespace Pulumi.Oci.ManagementAgent
         /// Platform Name
         /// </summary>
         [Output("platformName")]
-        public Output<string> PlatformName { get; private set; } = null!;
+        public Output<string?> PlatformName { get; private set; } = null!;
 
         /// <summary>
         /// Platform Type
         /// </summary>
         [Output("platformType")]
-        public Output<string> PlatformType { get; private set; } = null!;
+        public Output<string?> PlatformType { get; private set; } = null!;
 
         /// <summary>
         /// Platform Version
         /// </summary>
         [Output("platformVersion")]
-        public Output<string> PlatformVersion { get; private set; } = null!;
+        public Output<string?> PlatformVersion { get; private set; } = null!;
 
         /// <summary>
         /// list of managementAgentPlugins associated with the agent
@@ -168,37 +168,37 @@ namespace Pulumi.Oci.ManagementAgent
         /// Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         /// </summary>
         [Output("resourceArtifactVersion")]
-        public Output<string> ResourceArtifactVersion { get; private set; } = null!;
+        public Output<string?> ResourceArtifactVersion { get; private set; } = null!;
 
         /// <summary>
         /// The current state of managementAgent
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the Management Agent was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeLastHeartbeat")]
-        public Output<string> TimeLastHeartbeat { get; private set; } = null!;
+        public Output<string?> TimeLastHeartbeat { get; private set; } = null!;
 
         /// <summary>
         /// The time the Management Agent was last updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Management Agent Version
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

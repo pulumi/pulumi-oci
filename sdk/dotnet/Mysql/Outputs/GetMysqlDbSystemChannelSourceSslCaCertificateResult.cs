@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The type of CA certificate.
         /// </summary>
-        public readonly string CertificateType;
+        public readonly string? CertificateType;
         /// <summary>
         /// The string containing the CA certificate in PEM format.
         /// </summary>
-        public readonly string Contents;
+        public readonly string? Contents;
 
         [OutputConstructor]
         private GetMysqlDbSystemChannelSourceSslCaCertificateResult(
-            string certificateType,
+            string? certificateType,
 
-            string contents)
+            string? contents)
         {
             CertificateType = certificateType;
             Contents = contents;

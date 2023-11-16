@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Appliance Image resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -66,7 +65,7 @@ type GetApplianceImageResult struct {
 	// The name of the image to be displayed.
 	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of appliance images.
 	Items []GetApplianceImageItem `pulumi:"items"`
 }
@@ -111,12 +110,6 @@ func (o GetApplianceImageResultOutput) ToGetApplianceImageResultOutputWithContex
 	return o
 }
 
-func (o GetApplianceImageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImageResult] {
-	return pulumix.Output[GetApplianceImageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplianceImageResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplianceImageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -127,8 +120,8 @@ func (o GetApplianceImageResultOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApplianceImageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplianceImageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of appliance images.

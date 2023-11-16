@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousExadataInfrastructureOcpuResult {
@@ -17,22 +19,22 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
      * @return The number of consumed OCPUs, by database workload type.
      * 
      */
-    private List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes;
+    private @Nullable List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes;
     /**
      * @return The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
      * 
      */
-    private Double consumedCpu;
+    private @Nullable Double consumedCpu;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
      * 
      */
-    private Double totalCpu;
+    private @Nullable Double totalCpu;
 
     private GetAutonomousExadataInfrastructureOcpuResult() {}
     public String autonomousExadataInfrastructureId() {
@@ -43,28 +45,28 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
      * 
      */
     public List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes() {
-        return this.byWorkloadTypes;
+        return this.byWorkloadTypes == null ? List.of() : this.byWorkloadTypes;
     }
     /**
      * @return The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
      * 
      */
-    public Double consumedCpu() {
-        return this.consumedCpu;
+    public Optional<Double> consumedCpu() {
+        return Optional.ofNullable(this.consumedCpu);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
      * 
      */
-    public Double totalCpu() {
-        return this.totalCpu;
+    public Optional<Double> totalCpu() {
+        return Optional.ofNullable(this.totalCpu);
     }
 
     public static Builder builder() {
@@ -77,10 +79,10 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
     @CustomType.Builder
     public static final class Builder {
         private String autonomousExadataInfrastructureId;
-        private List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes;
-        private Double consumedCpu;
-        private String id;
-        private Double totalCpu;
+        private @Nullable List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes;
+        private @Nullable Double consumedCpu;
+        private @Nullable String id;
+        private @Nullable Double totalCpu;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureOcpuResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,26 +99,26 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
             return this;
         }
         @CustomType.Setter
-        public Builder byWorkloadTypes(List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes) {
-            this.byWorkloadTypes = Objects.requireNonNull(byWorkloadTypes);
+        public Builder byWorkloadTypes(@Nullable List<GetAutonomousExadataInfrastructureOcpuByWorkloadType> byWorkloadTypes) {
+            this.byWorkloadTypes = byWorkloadTypes;
             return this;
         }
         public Builder byWorkloadTypes(GetAutonomousExadataInfrastructureOcpuByWorkloadType... byWorkloadTypes) {
             return byWorkloadTypes(List.of(byWorkloadTypes));
         }
         @CustomType.Setter
-        public Builder consumedCpu(Double consumedCpu) {
-            this.consumedCpu = Objects.requireNonNull(consumedCpu);
+        public Builder consumedCpu(@Nullable Double consumedCpu) {
+            this.consumedCpu = consumedCpu;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder totalCpu(Double totalCpu) {
-            this.totalCpu = Objects.requireNonNull(totalCpu);
+        public Builder totalCpu(@Nullable Double totalCpu) {
+            this.totalCpu = totalCpu;
             return this;
         }
         public GetAutonomousExadataInfrastructureOcpuResult build() {

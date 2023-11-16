@@ -8,6 +8,7 @@ import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialImportDatase
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPath;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetInitialImportDatasetConfiguration {
@@ -15,12 +16,12 @@ public final class GetDatasetInitialImportDatasetConfiguration {
      * @return File format details used for importing dataset
      * 
      */
-    private List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats;
+    private @Nullable List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats;
     /**
      * @return Object storage path for the metadata file
      * 
      */
-    private List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
+    private @Nullable List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
 
     private GetDatasetInitialImportDatasetConfiguration() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDatasetInitialImportDatasetConfiguration {
      * 
      */
     public List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats() {
-        return this.importFormats;
+        return this.importFormats == null ? List.of() : this.importFormats;
     }
     /**
      * @return Object storage path for the metadata file
      * 
      */
     public List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths() {
-        return this.importMetadataPaths;
+        return this.importMetadataPaths == null ? List.of() : this.importMetadataPaths;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDatasetInitialImportDatasetConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats;
-        private List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
+        private @Nullable List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats;
+        private @Nullable List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths;
         public Builder() {}
         public Builder(GetDatasetInitialImportDatasetConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDatasetInitialImportDatasetConfiguration {
         }
 
         @CustomType.Setter
-        public Builder importFormats(List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats) {
-            this.importFormats = Objects.requireNonNull(importFormats);
+        public Builder importFormats(@Nullable List<GetDatasetInitialImportDatasetConfigurationImportFormat> importFormats) {
+            this.importFormats = importFormats;
             return this;
         }
         public Builder importFormats(GetDatasetInitialImportDatasetConfigurationImportFormat... importFormats) {
             return importFormats(List.of(importFormats));
         }
         @CustomType.Setter
-        public Builder importMetadataPaths(List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths) {
-            this.importMetadataPaths = Objects.requireNonNull(importMetadataPaths);
+        public Builder importMetadataPaths(@Nullable List<GetDatasetInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths) {
+            this.importMetadataPaths = importMetadataPaths;
             return this;
         }
         public Builder importMetadataPaths(GetDatasetInitialImportDatasetConfigurationImportMetadataPath... importMetadataPaths) {

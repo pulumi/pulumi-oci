@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Virtual Circuit Associated Tunnels in Oracle Cloud Infrastructure Core service.
@@ -62,7 +61,7 @@ type GetVirtualCircuitAssociatedTunnelsArgs struct {
 type GetVirtualCircuitAssociatedTunnelsResult struct {
 	Filters []GetVirtualCircuitAssociatedTunnelsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of virtual_circuit_associated_tunnel_details.
 	VirtualCircuitAssociatedTunnelDetails []GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail `pulumi:"virtualCircuitAssociatedTunnelDetails"`
 	VirtualCircuitId                      string                                                                   `pulumi:"virtualCircuitId"`
@@ -107,12 +106,6 @@ func (o GetVirtualCircuitAssociatedTunnelsResultOutput) ToGetVirtualCircuitAssoc
 	return o
 }
 
-func (o GetVirtualCircuitAssociatedTunnelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualCircuitAssociatedTunnelsResult] {
-	return pulumix.Output[GetVirtualCircuitAssociatedTunnelsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualCircuitAssociatedTunnelsResultOutput) Filters() GetVirtualCircuitAssociatedTunnelsFilterArrayOutput {
 	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsResult) []GetVirtualCircuitAssociatedTunnelsFilter {
 		return v.Filters
@@ -120,8 +113,8 @@ func (o GetVirtualCircuitAssociatedTunnelsResultOutput) Filters() GetVirtualCirc
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVirtualCircuitAssociatedTunnelsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualCircuitAssociatedTunnelsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualCircuitAssociatedTunnelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of virtual_circuit_associated_tunnel_details.

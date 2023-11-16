@@ -138,52 +138,52 @@ namespace Pulumi.Oci.OsubSubscription
         /// <summary>
         /// Commitment available amount
         /// </summary>
-        public readonly string AvailableAmount;
+        public readonly string? AvailableAmount;
         public readonly string CommitmentId;
         /// <summary>
         /// Funded Allocation line value example: 12000.00
         /// </summary>
-        public readonly string FundedAllocationValue;
+        public readonly string? FundedAllocationValue;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Commitment quantity
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// Commitment end date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Commitment start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// Commitment used amount
         /// </summary>
-        public readonly string UsedAmount;
+        public readonly string? UsedAmount;
         public readonly string? XOneGatewaySubscriptionId;
         public readonly string? XOneOriginRegion;
 
         [OutputConstructor]
         private GetCommitmentResult(
-            string availableAmount,
+            string? availableAmount,
 
             string commitmentId,
 
-            string fundedAllocationValue,
+            string? fundedAllocationValue,
 
-            string id,
+            string? id,
 
-            string quantity,
+            string? quantity,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart,
+            string? timeStart,
 
-            string usedAmount,
+            string? usedAmount,
 
             string? xOneGatewaySubscriptionId,
 

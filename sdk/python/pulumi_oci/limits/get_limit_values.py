@@ -52,9 +52,6 @@ class GetLimitValuesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        If present, the returned value is only specific to this availability domain.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -69,7 +66,7 @@ class GetLimitValuesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,26 +74,17 @@ class GetLimitValuesResult:
 
     @property
     @pulumi.getter(name="limitValues")
-    def limit_values(self) -> Sequence['outputs.GetLimitValuesLimitValueResult']:
-        """
-        The list of limit_values.
-        """
+    def limit_values(self) -> Optional[Sequence['outputs.GetLimitValuesLimitValueResult']]:
         return pulumi.get(self, "limit_values")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="scopeType")
     def scope_type(self) -> Optional[str]:
-        """
-        The scope type of the limit.
-        """
         return pulumi.get(self, "scope_type")
 
     @property
@@ -129,29 +117,7 @@ def get_limit_values(availability_domain: Optional[str] = None,
                      service_name: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLimitValuesResult:
     """
-    This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
-
-    Includes a full list of resource limits belonging to a given service.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=var["tenancy_ocid"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["limit_value_availability_domain"],
-        name=var["limit_value_name"],
-        scope_type=var["limit_value_scope_type"])
-    ```
-
-
-    :param str availability_domain: Filter entries by availability domain. This implies that only AD-specific values are returned.
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param str name: Optional field, can be used to see a specific resource limit value.
-    :param str scope_type: Filter entries by scope type.
-    :param str service_name: The target service name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -183,28 +149,6 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
                             service_name: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLimitValuesResult]:
     """
-    This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
-
-    Includes a full list of resource limits belonging to a given service.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=var["tenancy_ocid"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["limit_value_availability_domain"],
-        name=var["limit_value_name"],
-        scope_type=var["limit_value_scope_type"])
-    ```
-
-
-    :param str availability_domain: Filter entries by availability domain. This implies that only AD-specific values are returned.
-    :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
-    :param str name: Optional field, can be used to see a specific resource limit value.
-    :param str scope_type: Filter entries by scope type.
-    :param str service_name: The target service name.
+    Use this data source to access information about an existing resource.
     """
     ...

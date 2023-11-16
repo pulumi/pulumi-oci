@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseScheduledOperationDa
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseScheduledOperation {
@@ -15,17 +17,17 @@ public final class GetAutonomousDatabaseScheduledOperation {
      * @return Day of the week.
      * 
      */
-    private List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
+    private @Nullable List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
     /**
      * @return auto start time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    private String scheduledStartTime;
+    private @Nullable String scheduledStartTime;
     /**
      * @return auto stop time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    private String scheduledStopTime;
+    private @Nullable String scheduledStopTime;
 
     private GetAutonomousDatabaseScheduledOperation() {}
     /**
@@ -33,21 +35,21 @@ public final class GetAutonomousDatabaseScheduledOperation {
      * 
      */
     public List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks() {
-        return this.dayOfWeeks;
+        return this.dayOfWeeks == null ? List.of() : this.dayOfWeeks;
     }
     /**
      * @return auto start time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    public String scheduledStartTime() {
-        return this.scheduledStartTime;
+    public Optional<String> scheduledStartTime() {
+        return Optional.ofNullable(this.scheduledStartTime);
     }
     /**
      * @return auto stop time. value must be of ISO-8601 format &#34;HH:mm&#34;
      * 
      */
-    public String scheduledStopTime() {
-        return this.scheduledStopTime;
+    public Optional<String> scheduledStopTime() {
+        return Optional.ofNullable(this.scheduledStopTime);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetAutonomousDatabaseScheduledOperation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
-        private String scheduledStartTime;
-        private String scheduledStopTime;
+        private @Nullable List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks;
+        private @Nullable String scheduledStartTime;
+        private @Nullable String scheduledStopTime;
         public Builder() {}
         public Builder(GetAutonomousDatabaseScheduledOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetAutonomousDatabaseScheduledOperation {
         }
 
         @CustomType.Setter
-        public Builder dayOfWeeks(List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks) {
-            this.dayOfWeeks = Objects.requireNonNull(dayOfWeeks);
+        public Builder dayOfWeeks(@Nullable List<GetAutonomousDatabaseScheduledOperationDayOfWeek> dayOfWeeks) {
+            this.dayOfWeeks = dayOfWeeks;
             return this;
         }
         public Builder dayOfWeeks(GetAutonomousDatabaseScheduledOperationDayOfWeek... dayOfWeeks) {
             return dayOfWeeks(List.of(dayOfWeeks));
         }
         @CustomType.Setter
-        public Builder scheduledStartTime(String scheduledStartTime) {
-            this.scheduledStartTime = Objects.requireNonNull(scheduledStartTime);
+        public Builder scheduledStartTime(@Nullable String scheduledStartTime) {
+            this.scheduledStartTime = scheduledStartTime;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledStopTime(String scheduledStopTime) {
-            this.scheduledStopTime = Objects.requireNonNull(scheduledStopTime);
+        public Builder scheduledStopTime(@Nullable String scheduledStopTime) {
+            this.scheduledStopTime = scheduledStopTime;
             return this;
         }
         public GetAutonomousDatabaseScheduledOperation build() {

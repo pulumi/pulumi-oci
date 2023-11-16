@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.
@@ -62,26 +61,26 @@ type GetExternalDbHomeResult struct {
 	// The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the external DB home.
-	ComponentName string `pulumi:"componentName"`
+	ComponentName *string `pulumi:"componentName"`
 	// The user-friendly name for the external DB home. The name does not have to be unique.
-	DisplayName      string `pulumi:"displayName"`
-	ExternalDbHomeId string `pulumi:"externalDbHomeId"`
+	DisplayName      *string `pulumi:"displayName"`
+	ExternalDbHomeId string  `pulumi:"externalDbHomeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
-	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The location of the DB home.
-	HomeDirectory string `pulumi:"homeDirectory"`
+	HomeDirectory *string `pulumi:"homeDirectory"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external DB home.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the external DB home was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external DB home was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetExternalDbHomeOutput(ctx *pulumi.Context, args GetExternalDbHomeOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbHomeResultOutput {
@@ -122,30 +121,24 @@ func (o GetExternalDbHomeResultOutput) ToGetExternalDbHomeResultOutputWithContex
 	return o
 }
 
-func (o GetExternalDbHomeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalDbHomeResult] {
-	return pulumix.Output[GetExternalDbHomeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
 func (o GetExternalDbHomeResultOutput) AdditionalDetails() pulumi.MapOutput {
 	return o.ApplyT(func(v GetExternalDbHomeResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExternalDbHomeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external DB home.
-func (o GetExternalDbHomeResultOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.ComponentName }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the external DB home. The name does not have to be unique.
-func (o GetExternalDbHomeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExternalDbHomeResultOutput) ExternalDbHomeId() pulumi.StringOutput {
@@ -153,38 +146,38 @@ func (o GetExternalDbHomeResultOutput) ExternalDbHomeId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
-func (o GetExternalDbHomeResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The location of the DB home.
-func (o GetExternalDbHomeResultOutput) HomeDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.HomeDirectory }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) HomeDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.HomeDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalDbHomeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetExternalDbHomeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external DB home.
-func (o GetExternalDbHomeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB home was created.
-func (o GetExternalDbHomeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external DB home was last updated.
-func (o GetExternalDbHomeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbHomeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetExternalDbHomeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbHomeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

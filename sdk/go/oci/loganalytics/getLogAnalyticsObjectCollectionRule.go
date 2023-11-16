@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -63,59 +62,59 @@ type LookupLogAnalyticsObjectCollectionRuleArgs struct {
 // A collection of values returned by getLogAnalyticsObjectCollectionRule.
 type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	// An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-	CharEncoding string `pulumi:"charEncoding"`
+	CharEncoding *string `pulumi:"charEncoding"`
 	// The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-	CollectionType string `pulumi:"collectionType"`
+	CollectionType *string `pulumi:"collectionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Logging Analytics entity OCID to associate the processed logs with.
-	EntityId string `pulumi:"entityId"`
+	EntityId *string `pulumi:"entityId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A detailed status of the life cycle state.
-	LifecycleDetails                   string `pulumi:"lifecycleDetails"`
-	LogAnalyticsObjectCollectionRuleId string `pulumi:"logAnalyticsObjectCollectionRuleId"`
+	LifecycleDetails                   *string `pulumi:"lifecycleDetails"`
+	LogAnalyticsObjectCollectionRuleId string  `pulumi:"logAnalyticsObjectCollectionRuleId"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
-	LogGroupId string `pulumi:"logGroupId"`
+	LogGroupId *string `pulumi:"logGroupId"`
 	// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-	LogSet string `pulumi:"logSet"`
+	LogSet *string `pulumi:"logSet"`
 	// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-	LogSetExtRegex string `pulumi:"logSetExtRegex"`
+	LogSetExtRegex *string `pulumi:"logSetExtRegex"`
 	// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-	LogSetKey string `pulumi:"logSetKey"`
+	LogSetKey *string `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
-	LogSourceName string `pulumi:"logSourceName"`
+	LogSourceName *string `pulumi:"logSourceName"`
 	// A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
-	Name      string `pulumi:"name"`
-	Namespace string `pulumi:"namespace"`
+	Name      *string `pulumi:"name"`
+	Namespace string  `pulumi:"namespace"`
 	// When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
 	ObjectNameFilters []string `pulumi:"objectNameFilters"`
 	// Name of the Object Storage bucket.
-	OsBucketName string `pulumi:"osBucketName"`
+	OsBucketName *string `pulumi:"osBucketName"`
 	// Object Storage namespace.
-	OsNamespace string `pulumi:"osNamespace"`
+	OsNamespace *string `pulumi:"osNamespace"`
 	// Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
 	Overrides []GetLogAnalyticsObjectCollectionRuleOverride `pulumi:"overrides"`
 	// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-	PollSince string `pulumi:"pollSince"`
+	PollSince *string `pulumi:"pollSince"`
 	// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-	PollTill string `pulumi:"pollTill"`
+	PollTill *string `pulumi:"pollTill"`
 	// The current state of the rule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when this rule was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-	Timezone string `pulumi:"timezone"`
+	Timezone *string `pulumi:"timezone"`
 }
 
 func LookupLogAnalyticsObjectCollectionRuleOutput(ctx *pulumi.Context, args LookupLogAnalyticsObjectCollectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsObjectCollectionRuleResultOutput {
@@ -158,25 +157,19 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) ToLookupLogAnalytics
 	return o
 }
 
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogAnalyticsObjectCollectionRuleResult] {
-	return pulumix.Output[LookupLogAnalyticsObjectCollectionRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CharEncoding() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.CharEncoding }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CharEncoding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.CharEncoding }).(pulumi.StringPtrOutput)
 }
 
 // The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CollectionType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.CollectionType }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CollectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.CollectionType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -185,13 +178,13 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) DefinedTags() pulumi
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Logging Analytics entity OCID to associate the processed logs with.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.EntityId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) EntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.EntityId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -200,18 +193,18 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) FreeformTags() pulum
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this rule is currently enabled.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A detailed status of the life cycle state.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogAnalyticsObjectCollectionRuleId() pulumi.StringOutput {
@@ -221,33 +214,33 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogAnalyticsObjectCo
 }
 
 // Logging Analytics Log group OCID to associate the processed logs with.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogGroupId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSet() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSet }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.LogSet }).(pulumi.StringPtrOutput)
 }
 
 // The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetExtRegex() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSetExtRegex }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetExtRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.LogSetExtRegex }).(pulumi.StringPtrOutput)
 }
 
 // An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSetKey }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.LogSetKey }).(pulumi.StringPtrOutput)
 }
 
 // Name of the Logging Analytics Source to use for the processing.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSourceName }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.LogSourceName }).(pulumi.StringPtrOutput)
 }
 
 // A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Namespace() pulumi.StringOutput {
@@ -260,13 +253,13 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) ObjectNameFilters() 
 }
 
 // Name of the Object Storage bucket.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) OsBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.OsBucketName }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) OsBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.OsBucketName }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage namespace.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) OsNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.OsNamespace }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) OsNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.OsNamespace }).(pulumi.StringPtrOutput)
 }
 
 // Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
@@ -277,33 +270,33 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Overrides() GetLogAn
 }
 
 // The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) PollSince() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.PollSince }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) PollSince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.PollSince }).(pulumi.StringPtrOutput)
 }
 
 // The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) PollTill() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.PollTill }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) PollTill() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.PollTill }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the rule.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when this rule was created. An RFC3339 formatted datetime string.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this rule was last updated. An RFC3339 formatted datetime string.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Timezone() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.Timezone }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) *string { return v.Timezone }).(pulumi.StringPtrOutput)
 }
 
 func init() {

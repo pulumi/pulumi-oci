@@ -60,12 +60,12 @@ export interface GetCertificateVersionsResult {
     /**
      * The list of certificate_version_collection.
      */
-    readonly certificateVersionCollections: outputs.CertificatesManagement.GetCertificateVersionsCertificateVersionCollection[];
+    readonly certificateVersionCollections?: outputs.CertificatesManagement.GetCertificateVersionsCertificateVersionCollection[];
     readonly filters?: outputs.CertificatesManagement.GetCertificateVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The version number of the certificate.
      */

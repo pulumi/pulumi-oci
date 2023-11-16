@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceProjectMetadata {
@@ -20,171 +22,171 @@ public final class GetWorkspaceProjectMetadata {
      * @return The owning object key for this object.
      * 
      */
-    private String aggregatorKey;
+    private @Nullable String aggregatorKey;
     /**
      * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
      * 
      */
-    private List<GetWorkspaceProjectMetadataAggregator> aggregators;
+    private @Nullable List<GetWorkspaceProjectMetadataAggregator> aggregators;
     /**
      * @return A count statistics.
      * 
      */
-    private List<GetWorkspaceProjectMetadataCountStatistic> countStatistics;
+    private @Nullable List<GetWorkspaceProjectMetadataCountStatistic> countStatistics;
     /**
      * @return The user that created the object.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return The user that created the object.
      * 
      */
-    private String createdByName;
+    private @Nullable String createdByName;
     /**
      * @return The full path to identify this object.
      * 
      */
-    private String identifierPath;
+    private @Nullable String identifierPath;
     /**
      * @return Information property fields.
      * 
      */
-    private Map<String,Object> infoFields;
+    private @Nullable Map<String,Object> infoFields;
     /**
      * @return Specifies whether this object is a favorite or not.
      * 
      */
-    private Boolean isFavorite;
+    private @Nullable Boolean isFavorite;
     /**
      * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return The registry version of the object.
      * 
      */
-    private Integer registryVersion;
+    private @Nullable Integer registryVersion;
     /**
      * @return The date and time that the object was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time that the object was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The user that updated the object.
      * 
      */
-    private String updatedBy;
+    private @Nullable String updatedBy;
     /**
      * @return The user that updated the object.
      * 
      */
-    private String updatedByName;
+    private @Nullable String updatedByName;
 
     private GetWorkspaceProjectMetadata() {}
     /**
      * @return The owning object key for this object.
      * 
      */
-    public String aggregatorKey() {
-        return this.aggregatorKey;
+    public Optional<String> aggregatorKey() {
+        return Optional.ofNullable(this.aggregatorKey);
     }
     /**
      * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
      * 
      */
     public List<GetWorkspaceProjectMetadataAggregator> aggregators() {
-        return this.aggregators;
+        return this.aggregators == null ? List.of() : this.aggregators;
     }
     /**
      * @return A count statistics.
      * 
      */
     public List<GetWorkspaceProjectMetadataCountStatistic> countStatistics() {
-        return this.countStatistics;
+        return this.countStatistics == null ? List.of() : this.countStatistics;
     }
     /**
      * @return The user that created the object.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return The user that created the object.
      * 
      */
-    public String createdByName() {
-        return this.createdByName;
+    public Optional<String> createdByName() {
+        return Optional.ofNullable(this.createdByName);
     }
     /**
      * @return The full path to identify this object.
      * 
      */
-    public String identifierPath() {
-        return this.identifierPath;
+    public Optional<String> identifierPath() {
+        return Optional.ofNullable(this.identifierPath);
     }
     /**
      * @return Information property fields.
      * 
      */
     public Map<String,Object> infoFields() {
-        return this.infoFields;
+        return this.infoFields == null ? Map.of() : this.infoFields;
     }
     /**
      * @return Specifies whether this object is a favorite or not.
      * 
      */
-    public Boolean isFavorite() {
-        return this.isFavorite;
+    public Optional<Boolean> isFavorite() {
+        return Optional.ofNullable(this.isFavorite);
     }
     /**
      * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return The registry version of the object.
      * 
      */
-    public Integer registryVersion() {
-        return this.registryVersion;
+    public Optional<Integer> registryVersion() {
+        return Optional.ofNullable(this.registryVersion);
     }
     /**
      * @return The date and time that the object was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time that the object was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The user that updated the object.
      * 
      */
-    public String updatedBy() {
-        return this.updatedBy;
+    public Optional<String> updatedBy() {
+        return Optional.ofNullable(this.updatedBy);
     }
     /**
      * @return The user that updated the object.
      * 
      */
-    public String updatedByName() {
-        return this.updatedByName;
+    public Optional<String> updatedByName() {
+        return Optional.ofNullable(this.updatedByName);
     }
 
     public static Builder builder() {
@@ -196,20 +198,20 @@ public final class GetWorkspaceProjectMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String aggregatorKey;
-        private List<GetWorkspaceProjectMetadataAggregator> aggregators;
-        private List<GetWorkspaceProjectMetadataCountStatistic> countStatistics;
-        private String createdBy;
-        private String createdByName;
-        private String identifierPath;
-        private Map<String,Object> infoFields;
-        private Boolean isFavorite;
-        private List<String> labels;
-        private Integer registryVersion;
-        private String timeCreated;
-        private String timeUpdated;
-        private String updatedBy;
-        private String updatedByName;
+        private @Nullable String aggregatorKey;
+        private @Nullable List<GetWorkspaceProjectMetadataAggregator> aggregators;
+        private @Nullable List<GetWorkspaceProjectMetadataCountStatistic> countStatistics;
+        private @Nullable String createdBy;
+        private @Nullable String createdByName;
+        private @Nullable String identifierPath;
+        private @Nullable Map<String,Object> infoFields;
+        private @Nullable Boolean isFavorite;
+        private @Nullable List<String> labels;
+        private @Nullable Integer registryVersion;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String updatedBy;
+        private @Nullable String updatedByName;
         public Builder() {}
         public Builder(GetWorkspaceProjectMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -230,82 +232,82 @@ public final class GetWorkspaceProjectMetadata {
         }
 
         @CustomType.Setter
-        public Builder aggregatorKey(String aggregatorKey) {
-            this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
+        public Builder aggregatorKey(@Nullable String aggregatorKey) {
+            this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
-        public Builder aggregators(List<GetWorkspaceProjectMetadataAggregator> aggregators) {
-            this.aggregators = Objects.requireNonNull(aggregators);
+        public Builder aggregators(@Nullable List<GetWorkspaceProjectMetadataAggregator> aggregators) {
+            this.aggregators = aggregators;
             return this;
         }
         public Builder aggregators(GetWorkspaceProjectMetadataAggregator... aggregators) {
             return aggregators(List.of(aggregators));
         }
         @CustomType.Setter
-        public Builder countStatistics(List<GetWorkspaceProjectMetadataCountStatistic> countStatistics) {
-            this.countStatistics = Objects.requireNonNull(countStatistics);
+        public Builder countStatistics(@Nullable List<GetWorkspaceProjectMetadataCountStatistic> countStatistics) {
+            this.countStatistics = countStatistics;
             return this;
         }
         public Builder countStatistics(GetWorkspaceProjectMetadataCountStatistic... countStatistics) {
             return countStatistics(List.of(countStatistics));
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder createdByName(String createdByName) {
-            this.createdByName = Objects.requireNonNull(createdByName);
+        public Builder createdByName(@Nullable String createdByName) {
+            this.createdByName = createdByName;
             return this;
         }
         @CustomType.Setter
-        public Builder identifierPath(String identifierPath) {
-            this.identifierPath = Objects.requireNonNull(identifierPath);
+        public Builder identifierPath(@Nullable String identifierPath) {
+            this.identifierPath = identifierPath;
             return this;
         }
         @CustomType.Setter
-        public Builder infoFields(Map<String,Object> infoFields) {
-            this.infoFields = Objects.requireNonNull(infoFields);
+        public Builder infoFields(@Nullable Map<String,Object> infoFields) {
+            this.infoFields = infoFields;
             return this;
         }
         @CustomType.Setter
-        public Builder isFavorite(Boolean isFavorite) {
-            this.isFavorite = Objects.requireNonNull(isFavorite);
+        public Builder isFavorite(@Nullable Boolean isFavorite) {
+            this.isFavorite = isFavorite;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder registryVersion(Integer registryVersion) {
-            this.registryVersion = Objects.requireNonNull(registryVersion);
+        public Builder registryVersion(@Nullable Integer registryVersion) {
+            this.registryVersion = registryVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+        public Builder updatedBy(@Nullable String updatedBy) {
+            this.updatedBy = updatedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedByName(String updatedByName) {
-            this.updatedByName = Objects.requireNonNull(updatedByName);
+        public Builder updatedByName(@Nullable String updatedByName) {
+            this.updatedByName = updatedByName;
             return this;
         }
         public GetWorkspaceProjectMetadata build() {

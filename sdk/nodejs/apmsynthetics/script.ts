@@ -84,11 +84,11 @@ export class Script extends pulumi.CustomResource {
     /**
      * (Updatable) File name of uploaded script content.
      */
-    public readonly contentFileName!: pulumi.Output<string>;
+    public readonly contentFileName!: pulumi.Output<string | undefined>;
     /**
      * Size of the script content.
      */
-    public /*out*/ readonly contentSizeInBytes!: pulumi.Output<number>;
+    public /*out*/ readonly contentSizeInBytes!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Content type of script.
      */
@@ -96,7 +96,7 @@ export class Script extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
@@ -104,27 +104,27 @@ export class Script extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    public /*out*/ readonly monitorStatusCountMaps!: pulumi.Output<outputs.ApmSynthetics.ScriptMonitorStatusCountMap[]>;
+    public /*out*/ readonly monitorStatusCountMaps!: pulumi.Output<outputs.ApmSynthetics.ScriptMonitorStatusCountMap[] | undefined>;
     /**
      * (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
      */
-    public readonly parameters!: pulumi.Output<outputs.ApmSynthetics.ScriptParameter[]>;
+    public readonly parameters!: pulumi.Output<outputs.ApmSynthetics.ScriptParameter[] | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The time the script was uploaded.
      */
-    public /*out*/ readonly timeUploaded!: pulumi.Output<string>;
+    public /*out*/ readonly timeUploaded!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Script resource with the given unique name, arguments, and options.

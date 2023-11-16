@@ -49,17 +49,11 @@ class GetFleetsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the Fleet.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,26 +68,17 @@ class GetFleetsResult:
 
     @property
     @pulumi.getter(name="fleetCollections")
-    def fleet_collections(self) -> Sequence['outputs.GetFleetsFleetCollectionResult']:
-        """
-        The list of fleet_collection.
-        """
+    def fleet_collections(self) -> Optional[Sequence['outputs.GetFleetsFleetCollectionResult']]:
         return pulumi.get(self, "fleet_collections")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The lifecycle state of the Fleet.
-        """
         return pulumi.get(self, "state")
 
 
@@ -120,30 +105,7 @@ def get_fleets(compartment_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetsResult:
     """
-    This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
-    is required unless the query parameter `id` is specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleets = oci.Jms.get_fleets(compartment_id=var["compartment_id"],
-        display_name=var["fleet_display_name"],
-        display_name_contains=var["fleet_display_name_contains"],
-        id=var["fleet_id"],
-        state=var["fleet_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: The display name.
-    :param str display_name_contains: Filter the list with displayName contains the given value.
-    :param str id: The ID of the Fleet.
-    :param str state: The state of the lifecycle.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -174,29 +136,6 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetsResult]:
     """
-    This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
-
-    Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
-    is required unless the query parameter `id` is specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleets = oci.Jms.get_fleets(compartment_id=var["compartment_id"],
-        display_name=var["fleet_display_name"],
-        display_name_contains=var["fleet_display_name_contains"],
-        id=var["fleet_id"],
-        state=var["fleet_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: The display name.
-    :param str display_name_contains: Filter the list with displayName contains the given value.
-    :param str id: The ID of the Fleet.
-    :param str state: The state of the lifecycle.
+    Use this data source to access information about an existing resource.
     """
     ...

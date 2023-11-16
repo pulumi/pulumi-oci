@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
@@ -52,7 +51,7 @@ type GetCommitmentAggregatedsResult struct {
 	Filters                  []GetCommitmentAggregatedsFilter                  `pulumi:"filters"`
 	Grouping                 *string                                           `pulumi:"grouping"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Product description
 	ParentProduct *string `pulumi:"parentProduct"`
 	// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
@@ -113,12 +112,6 @@ func (o GetCommitmentAggregatedsResultOutput) ToGetCommitmentAggregatedsResultOu
 	return o
 }
 
-func (o GetCommitmentAggregatedsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentAggregatedsResult] {
-	return pulumix.Output[GetCommitmentAggregatedsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCommitmentAggregatedsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommitmentAggregatedsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -139,8 +132,8 @@ func (o GetCommitmentAggregatedsResultOutput) Grouping() pulumi.StringPtrOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCommitmentAggregatedsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentAggregatedsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCommitmentAggregatedsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentAggregatedsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Product description

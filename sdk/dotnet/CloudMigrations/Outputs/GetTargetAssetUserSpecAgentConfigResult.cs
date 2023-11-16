@@ -16,15 +16,15 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
         /// </summary>
-        public readonly bool AreAllPluginsDisabled;
+        public readonly bool? AreAllPluginsDisabled;
         /// <summary>
         /// Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
         /// </summary>
-        public readonly bool IsManagementDisabled;
+        public readonly bool? IsManagementDisabled;
         /// <summary>
         /// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
         /// </summary>
-        public readonly bool IsMonitoringDisabled;
+        public readonly bool? IsMonitoringDisabled;
         /// <summary>
         /// The configuration of plugins associated with this instance.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
         [OutputConstructor]
         private GetTargetAssetUserSpecAgentConfigResult(
-            bool areAllPluginsDisabled,
+            bool? areAllPluginsDisabled,
 
-            bool isManagementDisabled,
+            bool? isManagementDisabled,
 
-            bool isMonitoringDisabled,
+            bool? isMonitoringDisabled,
 
             ImmutableArray<Outputs.GetTargetAssetUserSpecAgentConfigPluginsConfigResult> pluginsConfigs)
         {

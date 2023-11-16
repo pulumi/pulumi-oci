@@ -86,7 +86,7 @@ namespace Pulumi.Oci.BigDataService
         /// (Updatable) The display name of the metastore configuration
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Data Catalog metastore.
@@ -98,25 +98,25 @@ namespace Pulumi.Oci.BigDataService
         /// The type of the metastore in the metastore configuration.
         /// </summary>
         [Output("metastoreType")]
-        public Output<string> MetastoreType { get; private set; } = null!;
+        public Output<string?> MetastoreType { get; private set; } = null!;
 
         /// <summary>
         /// the lifecycle state of the metastore configuration.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -71,7 +70,7 @@ type CustomProtectionRule struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A description for the Custom Protection rule.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name for the custom protection rule.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -79,7 +78,7 @@ type CustomProtectionRule struct {
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds pulumi.StringArrayOutput `pulumi:"modSecurityRuleIds"`
 	// The current lifecycle state of the custom protection rule.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
 	//
 	// Additionally, each rule must include two placeholder variables that are updated by the WAF service upon publication of the rule.
@@ -102,7 +101,7 @@ type CustomProtectionRule struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Template pulumi.StringOutput `pulumi:"template"`
 	// The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewCustomProtectionRule registers a new resource with the given unique name, arguments, and options.
@@ -319,12 +318,6 @@ func (i *CustomProtectionRule) ToCustomProtectionRuleOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(CustomProtectionRuleOutput)
 }
 
-func (i *CustomProtectionRule) ToOutput(ctx context.Context) pulumix.Output[*CustomProtectionRule] {
-	return pulumix.Output[*CustomProtectionRule]{
-		OutputState: i.ToCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CustomProtectionRuleArrayInput is an input type that accepts CustomProtectionRuleArray and CustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `CustomProtectionRuleArrayInput` via:
 //
@@ -348,12 +341,6 @@ func (i CustomProtectionRuleArray) ToCustomProtectionRuleArrayOutput() CustomPro
 
 func (i CustomProtectionRuleArray) ToCustomProtectionRuleArrayOutputWithContext(ctx context.Context) CustomProtectionRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CustomProtectionRuleArrayOutput)
-}
-
-func (i CustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*CustomProtectionRule] {
-	return pulumix.Output[[]*CustomProtectionRule]{
-		OutputState: i.ToCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CustomProtectionRuleMapInput is an input type that accepts CustomProtectionRuleMap and CustomProtectionRuleMapOutput values.
@@ -381,12 +368,6 @@ func (i CustomProtectionRuleMap) ToCustomProtectionRuleMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CustomProtectionRuleMapOutput)
 }
 
-func (i CustomProtectionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomProtectionRule] {
-	return pulumix.Output[map[string]*CustomProtectionRule]{
-		OutputState: i.ToCustomProtectionRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (CustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -401,12 +382,6 @@ func (o CustomProtectionRuleOutput) ToCustomProtectionRuleOutputWithContext(ctx 
 	return o
 }
 
-func (o CustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*CustomProtectionRule] {
-	return pulumix.Output[*CustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 func (o CustomProtectionRuleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -418,8 +393,8 @@ func (o CustomProtectionRuleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A description for the Custom Protection rule.
-func (o CustomProtectionRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o CustomProtectionRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name for the custom protection rule.
@@ -438,8 +413,8 @@ func (o CustomProtectionRuleOutput) ModSecurityRuleIds() pulumi.StringArrayOutpu
 }
 
 // The current lifecycle state of the custom protection rule.
-func (o CustomProtectionRuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CustomProtectionRuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
@@ -467,8 +442,8 @@ func (o CustomProtectionRuleOutput) Template() pulumi.StringOutput {
 }
 
 // The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-func (o CustomProtectionRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CustomProtectionRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type CustomProtectionRuleArrayOutput struct{ *pulumi.OutputState }
@@ -483,12 +458,6 @@ func (o CustomProtectionRuleArrayOutput) ToCustomProtectionRuleArrayOutput() Cus
 
 func (o CustomProtectionRuleArrayOutput) ToCustomProtectionRuleArrayOutputWithContext(ctx context.Context) CustomProtectionRuleArrayOutput {
 	return o
-}
-
-func (o CustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CustomProtectionRule] {
-	return pulumix.Output[[]*CustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) CustomProtectionRuleOutput {
@@ -509,12 +478,6 @@ func (o CustomProtectionRuleMapOutput) ToCustomProtectionRuleMapOutput() CustomP
 
 func (o CustomProtectionRuleMapOutput) ToCustomProtectionRuleMapOutputWithContext(ctx context.Context) CustomProtectionRuleMapOutput {
 	return o
-}
-
-func (o CustomProtectionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomProtectionRule] {
-	return pulumix.Output[map[string]*CustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomProtectionRuleMapOutput) MapIndex(k pulumi.StringInput) CustomProtectionRuleOutput {

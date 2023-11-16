@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
@@ -85,7 +84,7 @@ type GetDataSafePrivateEndpointsResult struct {
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetDataSafePrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the private endpoint.
 	State *string `pulumi:"state"`
 	// The OCID of the VCN.
@@ -141,12 +140,6 @@ func (o GetDataSafePrivateEndpointsResultOutput) ToGetDataSafePrivateEndpointsRe
 	return o
 }
 
-func (o GetDataSafePrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSafePrivateEndpointsResult] {
-	return pulumix.Output[GetDataSafePrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataSafePrivateEndpointsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDataSafePrivateEndpointsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -177,8 +170,8 @@ func (o GetDataSafePrivateEndpointsResultOutput) Filters() GetDataSafePrivateEnd
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataSafePrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataSafePrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataSafePrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataSafePrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the private endpoint.

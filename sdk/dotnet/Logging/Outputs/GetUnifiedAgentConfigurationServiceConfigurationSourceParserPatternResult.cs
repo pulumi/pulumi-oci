@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Process value using the specified format. This is available only when time_type is a string.
         /// </summary>
-        public readonly string FieldTimeFormat;
+        public readonly string? FieldTimeFormat;
         /// <summary>
         /// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
-        public readonly string FieldTimeKey;
+        public readonly string? FieldTimeKey;
         /// <summary>
         /// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
         /// </summary>
-        public readonly string FieldTimeZone;
+        public readonly string? FieldTimeZone;
         /// <summary>
         /// The name key to tag this Grok pattern.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The Grok pattern.
         /// </summary>
-        public readonly string Pattern;
+        public readonly string? Pattern;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult(
-            string fieldTimeFormat,
+            string? fieldTimeFormat,
 
-            string fieldTimeKey,
+            string? fieldTimeKey,
 
-            string fieldTimeZone,
+            string? fieldTimeZone,
 
-            string name,
+            string? name,
 
-            string pattern)
+            string? pattern)
         {
             FieldTimeFormat = fieldTimeFormat;
             FieldTimeKey = fieldTimeKey;

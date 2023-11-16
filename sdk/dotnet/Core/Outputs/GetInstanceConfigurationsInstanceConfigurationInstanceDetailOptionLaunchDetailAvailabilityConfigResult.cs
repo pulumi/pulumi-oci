@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
         /// </summary>
-        public readonly bool IsLiveMigrationPreferred;
+        public readonly bool? IsLiveMigrationPreferred;
         /// <summary>
         /// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
         /// </summary>
-        public readonly string RecoveryAction;
+        public readonly string? RecoveryAction;
 
         [OutputConstructor]
         private GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigResult(
-            bool isLiveMigrationPreferred,
+            bool? isLiveMigrationPreferred,
 
-            string recoveryAction)
+            string? recoveryAction)
         {
             IsLiveMigrationPreferred = isLiveMigrationPreferred;
             RecoveryAction = recoveryAction;

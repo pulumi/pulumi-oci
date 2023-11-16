@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Instances in Oracle Cloud Infrastructure Container Instances service.
@@ -79,7 +78,7 @@ type GetContainerInstancesResult struct {
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetContainerInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the container instance.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetContainerInstancesResultOutput) ToGetContainerInstancesResultOutputWi
 	return o
 }
 
-func (o GetContainerInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstancesResult] {
-	return pulumix.Output[GetContainerInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain to place the container instance.
 func (o GetContainerInstancesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerInstancesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -162,8 +155,8 @@ func (o GetContainerInstancesResultOutput) Filters() GetContainerInstancesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the container instance.

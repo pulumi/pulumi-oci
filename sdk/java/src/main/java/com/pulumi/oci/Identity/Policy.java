@@ -14,6 +14,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -86,10 +87,10 @@ public class Policy extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="ETag", refs={String.class}, tree="[0]")
-    private Output<String> ETag;
+    private Output</* @Nullable */ String> ETag;
 
-    public Output<String> ETag() {
-        return this.ETag;
+    public Output<Optional<String>> ETag() {
+        return Codegen.optional(this.ETag);
     }
     /**
      * The OCID of the compartment containing the policy (either the tenancy or another compartment).
@@ -110,14 +111,14 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it&#39;s changeable.
@@ -138,28 +139,28 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
     @Export(name="inactiveState", refs={String.class}, tree="[0]")
-    private Output<String> inactiveState;
+    private Output</* @Nullable */ String> inactiveState;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveState() {
-        return this.inactiveState;
+    public Output<Optional<String>> inactiveState() {
+        return Codegen.optional(this.inactiveState);
     }
     /**
      * @deprecated
@@ -168,10 +169,10 @@ public class Policy extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="lastUpdateETag", refs={String.class}, tree="[0]")
-    private Output<String> lastUpdateETag;
+    private Output</* @Nullable */ String> lastUpdateETag;
 
-    public Output<String> lastUpdateETag() {
-        return this.lastUpdateETag;
+    public Output<Optional<String>> lastUpdateETag() {
+        return Codegen.optional(this.lastUpdateETag);
     }
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
@@ -194,24 +195,24 @@ public class Policy extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
     @Export(name="policyHash", refs={String.class}, tree="[0]")
-    private Output<String> policyHash;
+    private Output</* @Nullable */ String> policyHash;
 
-    public Output<String> policyHash() {
-        return this.policyHash;
+    public Output<Optional<String>> policyHash() {
+        return Codegen.optional(this.policyHash);
     }
     /**
      * The policy&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The policy&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
@@ -232,14 +233,14 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
@@ -249,7 +250,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="versionDate", refs={String.class}, tree="[0]")
-    private Output<String> versionDate;
+    private Output</* @Nullable */ String> versionDate;
 
     /**
      * @return (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
@@ -258,8 +259,8 @@ public class Policy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> versionDate() {
-        return this.versionDate;
+    public Output<Optional<String>> versionDate() {
+        return Codegen.optional(this.versionDate);
     }
 
     /**

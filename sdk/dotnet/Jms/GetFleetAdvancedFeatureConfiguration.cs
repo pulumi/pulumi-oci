@@ -114,11 +114,11 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// Bucket name required to store JFR and related data.
         /// </summary>
-        public readonly string AnalyticBucketName;
+        public readonly string? AnalyticBucketName;
         /// <summary>
         /// Namespace for the Fleet advanced feature.
         /// </summary>
-        public readonly string AnalyticNamespace;
+        public readonly string? AnalyticNamespace;
         /// <summary>
         /// CryptoEventAnalysis configuration
         /// </summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// JavaMigrationAnalysis configuration
         /// </summary>
@@ -147,21 +147,21 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeLastModified;
+        public readonly string? TimeLastModified;
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationResult(
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult> advancedUsageTrackings,
 
-            string analyticBucketName,
+            string? analyticBucketName,
 
-            string analyticNamespace,
+            string? analyticNamespace,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult> cryptoEventAnalyses,
 
             string fleetId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult> javaMigrationAnalyses,
 
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult> performanceTuningAnalyses,
 
-            string timeLastModified)
+            string? timeLastModified)
         {
             AdvancedUsageTrackings = advancedUsageTrackings;
             AnalyticBucketName = analyticBucketName;

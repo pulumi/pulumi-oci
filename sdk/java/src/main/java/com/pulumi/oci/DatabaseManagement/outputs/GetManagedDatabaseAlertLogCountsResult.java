@@ -19,14 +19,14 @@ public final class GetManagedDatabaseAlertLogCountsResult {
      * @return The list of alert_log_counts_collection.
      * 
      */
-    private List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections;
+    private @Nullable List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections;
     private @Nullable List<GetManagedDatabaseAlertLogCountsFilter> filters;
     private @Nullable String groupBy;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isRegularExpression;
     private @Nullable String levelFilter;
     private @Nullable String logSearchText;
@@ -45,7 +45,7 @@ public final class GetManagedDatabaseAlertLogCountsResult {
      * 
      */
     public List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections() {
-        return this.alertLogCountsCollections;
+        return this.alertLogCountsCollections == null ? List.of() : this.alertLogCountsCollections;
     }
     public List<GetManagedDatabaseAlertLogCountsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -57,8 +57,8 @@ public final class GetManagedDatabaseAlertLogCountsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isRegularExpression() {
         return Optional.ofNullable(this.isRegularExpression);
@@ -95,10 +95,10 @@ public final class GetManagedDatabaseAlertLogCountsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections;
+        private @Nullable List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections;
         private @Nullable List<GetManagedDatabaseAlertLogCountsFilter> filters;
         private @Nullable String groupBy;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isRegularExpression;
         private @Nullable String levelFilter;
         private @Nullable String logSearchText;
@@ -123,8 +123,8 @@ public final class GetManagedDatabaseAlertLogCountsResult {
         }
 
         @CustomType.Setter
-        public Builder alertLogCountsCollections(List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections) {
-            this.alertLogCountsCollections = Objects.requireNonNull(alertLogCountsCollections);
+        public Builder alertLogCountsCollections(@Nullable List<GetManagedDatabaseAlertLogCountsAlertLogCountsCollection> alertLogCountsCollections) {
+            this.alertLogCountsCollections = alertLogCountsCollections;
             return this;
         }
         public Builder alertLogCountsCollections(GetManagedDatabaseAlertLogCountsAlertLogCountsCollection... alertLogCountsCollections) {
@@ -144,8 +144,8 @@ public final class GetManagedDatabaseAlertLogCountsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

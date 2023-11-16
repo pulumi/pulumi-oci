@@ -60,15 +60,15 @@ export class Backup extends pulumi.CustomResource {
     /**
      * The name of the availability domain where the database backup is stored.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Database edition of the DB system from which the database backup was taken.
      */
-    public /*out*/ readonly databaseEdition!: pulumi.Output<string>;
+    public /*out*/ readonly databaseEdition!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
@@ -76,7 +76,7 @@ export class Backup extends pulumi.CustomResource {
     /**
      * The size of the database in gigabytes at the time the backup was taken.
      */
-    public /*out*/ readonly databaseSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly databaseSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      *
@@ -88,51 +88,51 @@ export class Backup extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    public /*out*/ readonly keyStoreId!: pulumi.Output<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Shape of the backup's source database.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * The current state of the backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the backup was completed.
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    public /*out*/ readonly timeEnded!: pulumi.Output<string | undefined>;
     /**
      * The date and time the backup started.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * The type of backup.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    public /*out*/ readonly type!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    public /*out*/ readonly vaultId!: pulumi.Output<string | undefined>;
     /**
      * Version of the backup's source database
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Backup resource with the given unique name, arguments, and options.

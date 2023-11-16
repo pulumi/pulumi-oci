@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DataFlow
         /// The execution progress.
         /// </summary>
         [Output("progress")]
-        public Output<double> Progress { get; private set; } = null!;
+        public Output<double?> Progress { get; private set; } = null!;
 
         /// <summary>
         /// The unique ID for the run 
@@ -76,19 +76,19 @@ namespace Pulumi.Oci.DataFlow
         /// The current state of this statement.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
         /// </summary>
         [Output("timeCompleted")]
-        public Output<string> TimeCompleted { get; private set; } = null!;
+        public Output<string?> TimeCompleted { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
@@ -74,7 +73,7 @@ type GetManagementAgentCountResult struct {
 	// Whether or not a managementAgent has at least one plugin
 	HasPlugins *bool `pulumi:"hasPlugins"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The install type, either AGENT or GATEWAY
 	InstallType *string `pulumi:"installType"`
 	// List in which each item describes an aggregation of Managment Agents
@@ -125,12 +124,6 @@ func (o GetManagementAgentCountResultOutput) ToGetManagementAgentCountResultOutp
 	return o
 }
 
-func (o GetManagementAgentCountResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountResult] {
-	return pulumix.Output[GetManagementAgentCountResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentCountResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentCountResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -145,8 +138,8 @@ func (o GetManagementAgentCountResultOutput) HasPlugins() pulumi.BoolPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentCountResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentCountResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentCountResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The install type, either AGENT or GATEWAY

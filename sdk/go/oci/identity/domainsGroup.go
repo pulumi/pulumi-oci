@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) The Group display name.
 	//
 	// **SCIM++ Properties:**
@@ -84,7 +83,7 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -96,7 +95,7 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -130,7 +129,7 @@ type DomainsGroup struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -182,7 +181,7 @@ type DomainsGroup struct {
 	// * required: false
 	// * returned: always
 	// * type: string
-	NonUniqueDisplayName pulumi.StringOutput `pulumi:"nonUniqueDisplayName"`
+	NonUniqueDisplayName pulumi.StringPtrOutput `pulumi:"nonUniqueDisplayName"`
 	// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
@@ -194,7 +193,7 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -232,19 +231,19 @@ type DomainsGroup struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Oracle Cloud Infrastructure Tags.
-	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
+	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 	// (Updatable) Schema for Database Service  Resource
 	UrnietfparamsscimschemasoracleidcsextensiondbcsGroups DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArrayOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbcsGroups"`
 	// (Updatable) Dynamic Group
-	UrnietfparamsscimschemasoracleidcsextensiondynamicGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondynamicGroup"`
+	UrnietfparamsscimschemasoracleidcsextensiondynamicGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondynamicGroup"`
 	// (Updatable) Oracle Identity Cloud Service Group
-	UrnietfparamsscimschemasoracleidcsextensiongroupGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiongroupGroup"`
+	UrnietfparamsscimschemasoracleidcsextensiongroupGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiongroupGroup"`
 	// (Updatable) POSIX Group extension
-	UrnietfparamsscimschemasoracleidcsextensionposixGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixGroup"`
+	UrnietfparamsscimschemasoracleidcsextensionposixGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionposixGroup"`
 	// (Updatable) Requestable Group
-	UrnietfparamsscimschemasoracleidcsextensionrequestableGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionrequestableGroup"`
+	UrnietfparamsscimschemasoracleidcsextensionrequestableGroup DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionrequestableGroup"`
 }
 
 // NewDomainsGroup registers a new resource with the given unique name, arguments, and options.
@@ -979,12 +978,6 @@ func (i *DomainsGroup) ToDomainsGroupOutputWithContext(ctx context.Context) Doma
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGroupOutput)
 }
 
-func (i *DomainsGroup) ToOutput(ctx context.Context) pulumix.Output[*DomainsGroup] {
-	return pulumix.Output[*DomainsGroup]{
-		OutputState: i.ToDomainsGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsGroupArrayInput is an input type that accepts DomainsGroupArray and DomainsGroupArrayOutput values.
 // You can construct a concrete instance of `DomainsGroupArrayInput` via:
 //
@@ -1008,12 +1001,6 @@ func (i DomainsGroupArray) ToDomainsGroupArrayOutput() DomainsGroupArrayOutput {
 
 func (i DomainsGroupArray) ToDomainsGroupArrayOutputWithContext(ctx context.Context) DomainsGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGroupArrayOutput)
-}
-
-func (i DomainsGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGroup] {
-	return pulumix.Output[[]*DomainsGroup]{
-		OutputState: i.ToDomainsGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsGroupMapInput is an input type that accepts DomainsGroupMap and DomainsGroupMapOutput values.
@@ -1041,12 +1028,6 @@ func (i DomainsGroupMap) ToDomainsGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsGroupMapOutput)
 }
 
-func (i DomainsGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGroup] {
-	return pulumix.Output[map[string]*DomainsGroup]{
-		OutputState: i.ToDomainsGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsGroupOutput struct{ *pulumi.OutputState }
 
 func (DomainsGroupOutput) ElementType() reflect.Type {
@@ -1059,12 +1040,6 @@ func (o DomainsGroupOutput) ToDomainsGroupOutput() DomainsGroupOutput {
 
 func (o DomainsGroupOutput) ToDomainsGroupOutputWithContext(ctx context.Context) DomainsGroupOutput {
 	return o
-}
-
-func (o DomainsGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsGroup] {
-	return pulumix.Output[*DomainsGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1093,8 +1068,8 @@ func (o DomainsGroupOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGroupOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1108,8 +1083,8 @@ func (o DomainsGroupOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsGroupOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsGroupOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The Group display name.
@@ -1140,8 +1115,8 @@ func (o DomainsGroupOutput) DisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGroupOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -1155,8 +1130,8 @@ func (o DomainsGroupOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGroupOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1201,8 +1176,8 @@ func (o DomainsGroupOutput) IdcsLastModifiedBies() DomainsGroupIdcsLastModifiedB
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsGroupOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1265,8 +1240,8 @@ func (o DomainsGroupOutput) Metas() DomainsGroupMetaArrayOutput {
 // * required: false
 // * returned: always
 // * type: string
-func (o DomainsGroupOutput) NonUniqueDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.NonUniqueDisplayName }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) NonUniqueDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.NonUniqueDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -1280,8 +1255,8 @@ func (o DomainsGroupOutput) NonUniqueDisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsGroupOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1330,15 +1305,15 @@ func (o DomainsGroupOutput) Tags() DomainsGroupTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsGroupOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsGroup) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsGroupOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tags.
-func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
-	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
+func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionOciTags
-	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput)
+	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput)
 }
 
 // (Updatable) Schema for Database Service  Resource
@@ -1349,31 +1324,31 @@ func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensiondbcsGroup
 }
 
 // (Updatable) Dynamic Group
-func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensiondynamicGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupOutput {
-	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupOutput {
+func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensiondynamicGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensiondynamicGroup
-	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupOutput)
+	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupPtrOutput)
 }
 
 // (Updatable) Oracle Identity Cloud Service Group
-func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensiongroupGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOutput {
-	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOutput {
+func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensiongroupGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensiongroupGroup
-	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOutput)
+	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPtrOutput)
 }
 
 // (Updatable) POSIX Group extension
-func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensionposixGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupOutput {
-	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupOutput {
+func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensionposixGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionposixGroup
-	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupOutput)
+	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupPtrOutput)
 }
 
 // (Updatable) Requestable Group
-func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensionrequestableGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupOutput {
-	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupOutput {
+func (o DomainsGroupOutput) UrnietfparamsscimschemasoracleidcsextensionrequestableGroup() DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupPtrOutput {
+	return o.ApplyT(func(v *DomainsGroup) DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionrequestableGroup
-	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupOutput)
+	}).(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupPtrOutput)
 }
 
 type DomainsGroupArrayOutput struct{ *pulumi.OutputState }
@@ -1388,12 +1363,6 @@ func (o DomainsGroupArrayOutput) ToDomainsGroupArrayOutput() DomainsGroupArrayOu
 
 func (o DomainsGroupArrayOutput) ToDomainsGroupArrayOutputWithContext(ctx context.Context) DomainsGroupArrayOutput {
 	return o
-}
-
-func (o DomainsGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsGroup] {
-	return pulumix.Output[[]*DomainsGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsGroupArrayOutput) Index(i pulumi.IntInput) DomainsGroupOutput {
@@ -1414,12 +1383,6 @@ func (o DomainsGroupMapOutput) ToDomainsGroupMapOutput() DomainsGroupMapOutput {
 
 func (o DomainsGroupMapOutput) ToDomainsGroupMapOutputWithContext(ctx context.Context) DomainsGroupMapOutput {
 	return o
-}
-
-func (o DomainsGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsGroup] {
-	return pulumix.Output[map[string]*DomainsGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsGroupMapOutput) MapIndex(k pulumi.StringInput) DomainsGroupOutput {

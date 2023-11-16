@@ -74,7 +74,7 @@ export interface GetSoftwareSourceSoftwarePackagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether this package is the latest version.
      */
@@ -82,7 +82,7 @@ export interface GetSoftwareSourceSoftwarePackagesResult {
     /**
      * The list of software_package_collection.
      */
-    readonly softwarePackageCollections: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection[];
+    readonly softwarePackageCollections?: outputs.OsManagementHub.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection[];
     readonly softwareSourceId: string;
 }
 /**

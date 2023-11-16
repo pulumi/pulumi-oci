@@ -64,9 +64,6 @@ class GetListUserGrantsResult:
     @property
     @pulumi.getter(name="depthLevel")
     def depth_level(self) -> Optional[int]:
-        """
-        The grant depth level of the indirect grant. An indirectly granted role/privilege is granted to the user through another role. The depth level indicates how deep a privilege is within the grant hierarchy.
-        """
         return pulumi.get(self, "depth_level")
 
     @property
@@ -92,22 +89,16 @@ class GetListUserGrantsResult:
     @property
     @pulumi.getter(name="grantName")
     def grant_name(self) -> Optional[str]:
-        """
-        The name of a user grant.
-        """
         return pulumi.get(self, "grant_name")
 
     @property
     @pulumi.getter
-    def grants(self) -> Sequence['outputs.GetListUserGrantsGrantResult']:
-        """
-        The list of grants.
-        """
+    def grants(self) -> Optional[Sequence['outputs.GetListUserGrantsGrantResult']]:
         return pulumi.get(self, "grants")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,17 +107,11 @@ class GetListUserGrantsResult:
     @property
     @pulumi.getter(name="privilegeCategory")
     def privilege_category(self) -> Optional[str]:
-        """
-        The privilege category.
-        """
         return pulumi.get(self, "privilege_category")
 
     @property
     @pulumi.getter(name="privilegeType")
     def privilege_type(self) -> Optional[str]:
-        """
-        The type of a user grant.
-        """
         return pulumi.get(self, "privilege_type")
 
     @property
@@ -172,40 +157,7 @@ def get_list_user_grants(depth_level: Optional[int] = None,
                          user_key: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListUserGrantsResult:
     """
-    This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of grants for a particular user in the specified user assessment. A user grant contains details such as the
-    privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
-    roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
-    to get the userKey for a particular user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_key=var["list_user_grant_user_key"],
-        depth_level=var["list_user_grant_depth_level"],
-        depth_level_greater_than_or_equal_to=var["list_user_grant_depth_level_greater_than_or_equal_to"],
-        depth_level_less_than=var["list_user_grant_depth_level_less_than"],
-        grant_key=var["list_user_grant_grant_key"],
-        grant_name=var["list_user_grant_grant_name"],
-        privilege_category=var["list_user_grant_privilege_category"],
-        privilege_type=var["list_user_grant_privilege_type"])
-    ```
-
-
-    :param int depth_level: A filter to return only items that match the specified user grant depth level.
-    :param int depth_level_greater_than_or_equal_to: A filter to return only items that are at a level greater than or equal to the specified user grant depth level.
-    :param int depth_level_less_than: A filter to return only items that are at a level less than the specified user grant depth level.
-    :param str grant_key: A filter to return only items that match the specified user grant key.
-    :param str grant_name: A filter to return only items that match the specified user grant name.
-    :param str privilege_category: A filter to return only items that match the specified user privilege category.
-    :param str privilege_type: A filter to return only items that match the specified privilege grant type.
-    :param str user_assessment_id: The OCID of the user assessment.
-    :param str user_key: The unique user key. This is a system-generated identifier. ListUsers gets the user key for a user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['depthLevel'] = depth_level
@@ -249,39 +201,6 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
                                 user_key: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListUserGrantsResult]:
     """
-    This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of grants for a particular user in the specified user assessment. A user grant contains details such as the
-    privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
-    roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
-    to get the userKey for a particular user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_key=var["list_user_grant_user_key"],
-        depth_level=var["list_user_grant_depth_level"],
-        depth_level_greater_than_or_equal_to=var["list_user_grant_depth_level_greater_than_or_equal_to"],
-        depth_level_less_than=var["list_user_grant_depth_level_less_than"],
-        grant_key=var["list_user_grant_grant_key"],
-        grant_name=var["list_user_grant_grant_name"],
-        privilege_category=var["list_user_grant_privilege_category"],
-        privilege_type=var["list_user_grant_privilege_type"])
-    ```
-
-
-    :param int depth_level: A filter to return only items that match the specified user grant depth level.
-    :param int depth_level_greater_than_or_equal_to: A filter to return only items that are at a level greater than or equal to the specified user grant depth level.
-    :param int depth_level_less_than: A filter to return only items that are at a level less than the specified user grant depth level.
-    :param str grant_key: A filter to return only items that match the specified user grant key.
-    :param str grant_name: A filter to return only items that match the specified user grant name.
-    :param str privilege_category: A filter to return only items that match the specified user privilege category.
-    :param str privilege_type: A filter to return only items that match the specified privilege grant type.
-    :param str user_assessment_id: The OCID of the user assessment.
-    :param str user_key: The unique user key. This is a system-generated identifier. ListUsers gets the user key for a user.
+    Use this data source to access information about an existing resource.
     """
     ...

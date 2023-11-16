@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The user-provided name of the backup destination.
@@ -94,37 +94,37 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
         /// </summary>
         [Output("localMountPointPath")]
-        public Output<string> LocalMountPointPath { get; private set; } = null!;
+        public Output<string?> LocalMountPointPath { get; private set; } = null!;
 
         /// <summary>
         /// Mount type details for backup destination.
         /// </summary>
         [Output("mountTypeDetails")]
-        public Output<Outputs.BackupDestinationMountTypeDetails> MountTypeDetails { get; private set; } = null!;
+        public Output<Outputs.BackupDestinationMountTypeDetails?> MountTypeDetails { get; private set; } = null!;
 
         /// <summary>
         /// NFS Mount type for backup destination.
         /// </summary>
         [Output("nfsMountType")]
-        public Output<string> NfsMountType { get; private set; } = null!;
+        public Output<string?> NfsMountType { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the directory on which to mount the file system
         /// </summary>
         [Output("nfsServerExport")]
-        public Output<string> NfsServerExport { get; private set; } = null!;
+        public Output<string?> NfsServerExport { get; private set; } = null!;
 
         /// <summary>
         /// IP addresses for NFS Auto mount.
@@ -136,13 +136,13 @@ namespace Pulumi.Oci.Database
         /// The current lifecycle state of the backup destination.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the backup destination was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Type of the backup destination.

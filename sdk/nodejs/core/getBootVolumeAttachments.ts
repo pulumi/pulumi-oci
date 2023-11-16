@@ -52,7 +52,7 @@ export interface GetBootVolumeAttachmentsResult {
     /**
      * The list of boot_volume_attachments.
      */
-    readonly bootVolumeAttachments: outputs.Core.GetBootVolumeAttachmentsBootVolumeAttachment[];
+    readonly bootVolumeAttachments?: outputs.Core.GetBootVolumeAttachmentsBootVolumeAttachment[];
     /**
      * The OCID of the boot volume.
      */
@@ -65,7 +65,7 @@ export interface GetBootVolumeAttachmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the instance the boot volume is attached to.
      */

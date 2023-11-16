@@ -9,6 +9,8 @@ import com.pulumi.oci.DevOps.outputs.GetDeployStageContainerConfigShapeConfig;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageContainerConfig {
@@ -16,75 +18,75 @@ public final class GetDeployStageContainerConfig {
      * @return Availability domain where the ContainerInstance will be created.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Container configuration type.
      * 
      */
-    private String containerConfigType;
+    private @Nullable String containerConfigType;
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
-    private List<GetDeployStageContainerConfigNetworkChannel> networkChannels;
+    private @Nullable List<GetDeployStageContainerConfigNetworkChannel> networkChannels;
     /**
      * @return Determines the size and amount of resources available to the instance.
      * 
      */
-    private List<GetDeployStageContainerConfigShapeConfig> shapeConfigs;
+    private @Nullable List<GetDeployStageContainerConfigShapeConfig> shapeConfigs;
     /**
      * @return The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
 
     private GetDeployStageContainerConfig() {}
     /**
      * @return Availability domain where the ContainerInstance will be created.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Container configuration type.
      * 
      */
-    public String containerConfigType() {
-        return this.containerConfigType;
+    public Optional<String> containerConfigType() {
+        return Optional.ofNullable(this.containerConfigType);
     }
     /**
      * @return Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer&#39;s private network.
      * 
      */
     public List<GetDeployStageContainerConfigNetworkChannel> networkChannels() {
-        return this.networkChannels;
+        return this.networkChannels == null ? List.of() : this.networkChannels;
     }
     /**
      * @return Determines the size and amount of resources available to the instance.
      * 
      */
     public List<GetDeployStageContainerConfigShapeConfig> shapeConfigs() {
-        return this.shapeConfigs;
+        return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
     /**
      * @return The shape of the ContainerInstance. The shape determines the resources available to the ContainerInstance.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetDeployStageContainerConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private String containerConfigType;
-        private List<GetDeployStageContainerConfigNetworkChannel> networkChannels;
-        private List<GetDeployStageContainerConfigShapeConfig> shapeConfigs;
-        private String shapeName;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable String containerConfigType;
+        private @Nullable List<GetDeployStageContainerConfigNetworkChannel> networkChannels;
+        private @Nullable List<GetDeployStageContainerConfigShapeConfig> shapeConfigs;
+        private @Nullable String shapeName;
         public Builder() {}
         public Builder(GetDeployStageContainerConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,39 +116,39 @@ public final class GetDeployStageContainerConfig {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder containerConfigType(String containerConfigType) {
-            this.containerConfigType = Objects.requireNonNull(containerConfigType);
+        public Builder containerConfigType(@Nullable String containerConfigType) {
+            this.containerConfigType = containerConfigType;
             return this;
         }
         @CustomType.Setter
-        public Builder networkChannels(List<GetDeployStageContainerConfigNetworkChannel> networkChannels) {
-            this.networkChannels = Objects.requireNonNull(networkChannels);
+        public Builder networkChannels(@Nullable List<GetDeployStageContainerConfigNetworkChannel> networkChannels) {
+            this.networkChannels = networkChannels;
             return this;
         }
         public Builder networkChannels(GetDeployStageContainerConfigNetworkChannel... networkChannels) {
             return networkChannels(List.of(networkChannels));
         }
         @CustomType.Setter
-        public Builder shapeConfigs(List<GetDeployStageContainerConfigShapeConfig> shapeConfigs) {
-            this.shapeConfigs = Objects.requireNonNull(shapeConfigs);
+        public Builder shapeConfigs(@Nullable List<GetDeployStageContainerConfigShapeConfig> shapeConfigs) {
+            this.shapeConfigs = shapeConfigs;
             return this;
         }
         public Builder shapeConfigs(GetDeployStageContainerConfigShapeConfig... shapeConfigs) {
             return shapeConfigs(List.of(shapeConfigs));
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         public GetDeployStageContainerConfig build() {

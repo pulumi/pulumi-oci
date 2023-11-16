@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult
     {
-        public readonly int DefaultValue;
-        public readonly int Max;
-        public readonly int Min;
+        public readonly int? DefaultValue;
+        public readonly int? Max;
+        public readonly int? Min;
 
         [OutputConstructor]
         private GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOptionResult(
-            int defaultValue,
+            int? defaultValue,
 
-            int max,
+            int? max,
 
-            int min)
+            int? min)
         {
             DefaultValue = defaultValue;
             Max = max;

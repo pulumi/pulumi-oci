@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -60,7 +59,7 @@ type GetNamespaceStorageEncryptionKeyInfoArgs struct {
 // A collection of values returned by getNamespaceStorageEncryptionKeyInfo.
 type GetNamespaceStorageEncryptionKeyInfoResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// This is an array of encryption key info. There are at most 2 items in the list.
 	Items     []GetNamespaceStorageEncryptionKeyInfoItem `pulumi:"items"`
 	Namespace string                                     `pulumi:"namespace"`
@@ -104,15 +103,9 @@ func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) ToGetNamespaceStorageE
 	return o
 }
 
-func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageEncryptionKeyInfoResult] {
-	return pulumix.Output[GetNamespaceStorageEncryptionKeyInfoResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceStorageEncryptionKeyInfoResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // This is an array of encryption key info. There are at most 2 items in the list.

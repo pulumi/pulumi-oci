@@ -67,11 +67,11 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
     /**
      * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
      */
-    public readonly defaultRegion!: pulumi.Output<string>;
+    public readonly defaultRegion!: pulumi.Output<string | undefined>;
     /**
      * The fingerprint that corresponds to the public API key requested.
      */
-    public /*out*/ readonly fingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly fingerprint!: pulumi.Output<string | undefined>;
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
      */
@@ -83,19 +83,19 @@ export class BdsInstanceApiKey extends pulumi.CustomResource {
     /**
      * The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      */
-    public /*out*/ readonly pemfilepath!: pulumi.Output<string>;
+    public /*out*/ readonly pemfilepath!: pulumi.Output<string | undefined>;
     /**
      * The current status of the API key.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID of your tenancy.
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    public /*out*/ readonly tenantId!: pulumi.Output<string | undefined>;
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
      *

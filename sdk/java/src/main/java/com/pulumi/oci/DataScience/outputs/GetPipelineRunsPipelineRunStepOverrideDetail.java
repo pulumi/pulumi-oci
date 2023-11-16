@@ -8,6 +8,8 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverride
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineRunsPipelineRunStepOverrideDetail {
@@ -15,12 +17,12 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
      * @return The configuration details of a step.
      * 
      */
-    private List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
+    private @Nullable List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
     /**
      * @return The name of the step.
      * 
      */
-    private String stepName;
+    private @Nullable String stepName;
 
     private GetPipelineRunsPipelineRunStepOverrideDetail() {}
     /**
@@ -28,14 +30,14 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
      * 
      */
     public List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails() {
-        return this.stepConfigurationDetails;
+        return this.stepConfigurationDetails == null ? List.of() : this.stepConfigurationDetails;
     }
     /**
      * @return The name of the step.
      * 
      */
-    public String stepName() {
-        return this.stepName;
+    public Optional<String> stepName() {
+        return Optional.ofNullable(this.stepName);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
-        private String stepName;
+        private @Nullable List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
+        private @Nullable String stepName;
         public Builder() {}
         public Builder(GetPipelineRunsPipelineRunStepOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
         }
 
         @CustomType.Setter
-        public Builder stepConfigurationDetails(List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails) {
-            this.stepConfigurationDetails = Objects.requireNonNull(stepConfigurationDetails);
+        public Builder stepConfigurationDetails(@Nullable List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails) {
+            this.stepConfigurationDetails = stepConfigurationDetails;
             return this;
         }
         public Builder stepConfigurationDetails(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail... stepConfigurationDetails) {
             return stepConfigurationDetails(List.of(stepConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+        public Builder stepName(@Nullable String stepName) {
+            this.stepName = stepName;
             return this;
         }
         public GetPipelineRunsPipelineRunStepOverrideDetail build() {

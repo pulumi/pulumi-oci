@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The IP address and mask of the partner subnet used in policy based VPNs or static routes.
         /// </summary>
-        public readonly string CpeSubnet;
+        public readonly string? CpeSubnet;
         /// <summary>
         /// The IP address and mask of the local subnet used in policy based VPNs or static routes.
         /// </summary>
-        public readonly string OracleSubnet;
+        public readonly string? OracleSubnet;
         /// <summary>
         /// Time in the current state, in seconds.
         /// </summary>
-        public readonly string Time;
+        public readonly string? Time;
         /// <summary>
         /// Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
         /// </summary>
-        public readonly string TunnelSaErrorInfo;
+        public readonly string? TunnelSaErrorInfo;
         /// <summary>
         /// The IPSec tunnel's phase one status.
         /// </summary>
-        public readonly string TunnelSaStatus;
+        public readonly string? TunnelSaStatus;
 
         [OutputConstructor]
         private GetTunnelSecurityAssociationsTunnelSecurityAssociationResult(
-            string cpeSubnet,
+            string? cpeSubnet,
 
-            string oracleSubnet,
+            string? oracleSubnet,
 
-            string time,
+            string? time,
 
-            string tunnelSaErrorInfo,
+            string? tunnelSaErrorInfo,
 
-            string tunnelSaStatus)
+            string? tunnelSaStatus)
         {
             CpeSubnet = cpeSubnet;
             OracleSubnet = oracleSubnet;

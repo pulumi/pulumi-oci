@@ -52,9 +52,6 @@ class GetNewsReportsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -69,7 +66,7 @@ class GetNewsReportsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +74,7 @@ class GetNewsReportsResult:
 
     @property
     @pulumi.getter(name="newsReportCollections")
-    def news_report_collections(self) -> Sequence['outputs.GetNewsReportsNewsReportCollectionResult']:
-        """
-        The list of news_report_collection.
-        """
+    def news_report_collections(self) -> Optional[Sequence['outputs.GetNewsReportsNewsReportCollectionResult']]:
         return pulumi.get(self, "news_report_collections")
 
     @property
@@ -91,17 +85,11 @@ class GetNewsReportsResult:
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the news report.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
-        """
-        Indicates the status of a news report in Operations Insights.
-        """
         return pulumi.get(self, "statuses")
 
 
@@ -129,29 +117,7 @@ def get_news_reports(compartment_id: Optional[str] = None,
                      statuses: Optional[Sequence[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNewsReportsResult:
     """
-    This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_news_reports = oci.Opsi.get_news_reports(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["news_report_compartment_id_in_subtree"],
-        news_report_id=oci_opsi_news_report["test_news_report"]["id"],
-        states=var["news_report_state"],
-        statuses=var["news_report_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str news_report_id: Unique Operations Insights news report identifier
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -183,28 +149,6 @@ def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNewsReportsResult]:
     """
-    This data source provides the list of News Reports in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_news_reports = oci.Opsi.get_news_reports(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["news_report_compartment_id_in_subtree"],
-        news_report_id=oci_opsi_news_report["test_news_report"]["id"],
-        states=var["news_report_state"],
-        statuses=var["news_report_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str news_report_id: Unique Operations Insights news report identifier
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     ...

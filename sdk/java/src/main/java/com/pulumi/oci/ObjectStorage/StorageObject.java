@@ -172,14 +172,14 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="contentLength", refs={String.class}, tree="[0]")
-    private Output<String> contentLength;
+    private Output</* @Nullable */ String> contentLength;
 
     /**
      * @return (Updatable) The content length of the body.
      * 
      */
-    public Output<String> contentLength() {
-        return this.contentLength;
+    public Output<Optional<String>> contentLength() {
+        return Codegen.optional(this.contentLength);
     }
     /**
      * (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
@@ -188,7 +188,7 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="contentMd5", refs={String.class}, tree="[0]")
-    private Output<String> contentMd5;
+    private Output</* @Nullable */ String> contentMd5;
 
     /**
      * @return (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
@@ -196,22 +196,22 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * &#34;The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)&#34;
      * 
      */
-    public Output<String> contentMd5() {
-        return this.contentMd5;
+    public Output<Optional<String>> contentMd5() {
+        return Codegen.optional(this.contentMd5);
     }
     /**
      * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to &#39;application/octet-stream&#39; if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      * 
      */
     @Export(name="contentType", refs={String.class}, tree="[0]")
-    private Output<String> contentType;
+    private Output</* @Nullable */ String> contentType;
 
     /**
      * @return The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to &#39;application/octet-stream&#39; if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      * 
      */
-    public Output<String> contentType() {
-        return this.contentType;
+    public Output<Optional<String>> contentType() {
+        return Codegen.optional(this.contentType);
     }
     /**
      * (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
@@ -276,14 +276,14 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="opcSseKmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> opcSseKmsKeyId;
+    private Output</* @Nullable */ String> opcSseKmsKeyId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
-    public Output<String> opcSseKmsKeyId() {
-        return this.opcSseKmsKeyId;
+    public Output<Optional<String>> opcSseKmsKeyId() {
+        return Codegen.optional(this.opcSseKmsKeyId);
     }
     /**
      * An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
@@ -316,36 +316,36 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sourceUriDetails);
     }
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      * 
      */
     @Export(name="storageTier", refs={String.class}, tree="[0]")
-    private Output<String> storageTier;
+    private Output</* @Nullable */ String> storageTier;
 
     /**
      * @return (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      * 
      */
-    public Output<String> storageTier() {
-        return this.storageTier;
+    public Output<Optional<String>> storageTier() {
+        return Codegen.optional(this.storageTier);
     }
     @Export(name="versionId", refs={String.class}, tree="[0]")
-    private Output<String> versionId;
+    private Output</* @Nullable */ String> versionId;
 
-    public Output<String> versionId() {
-        return this.versionId;
+    public Output<Optional<String>> versionId() {
+        return Codegen.optional(this.versionId);
     }
     @Export(name="workRequestId", refs={String.class}, tree="[0]")
-    private Output<String> workRequestId;
+    private Output</* @Nullable */ String> workRequestId;
 
-    public Output<String> workRequestId() {
-        return this.workRequestId;
+    public Output<Optional<String>> workRequestId() {
+        return Codegen.optional(this.workRequestId);
     }
 
     /**

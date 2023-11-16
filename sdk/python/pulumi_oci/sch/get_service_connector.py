@@ -71,58 +71,37 @@ class GetServiceConnectorResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the resource. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
@@ -132,58 +111,37 @@ class GetServiceConnectorResult:
 
     @property
     @pulumi.getter
-    def sources(self) -> Sequence['outputs.GetServiceConnectorSourceResult']:
-        """
-        An object that represents the source of the flow defined by the service connector. An example source is the VCNFlow logs within the NetworkLogs group. For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
-        """
+    def sources(self) -> Optional[Sequence['outputs.GetServiceConnectorSourceResult']]:
         return pulumi.get(self, "sources")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the service connector.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter
-    def targets(self) -> Sequence['outputs.GetServiceConnectorTargetResult']:
-        """
-        An object that represents the target of the flow defined by the service connector. An example target is a stream (Streaming service). For more information about flows defined by service connectors, see [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm). For configuration instructions, see [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
-        """
+    def targets(self) -> Optional[Sequence['outputs.GetServiceConnectorTargetResult']]:
         return pulumi.get(self, "targets")
 
     @property
     @pulumi.getter
-    def tasks(self) -> Sequence['outputs.GetServiceConnectorTaskResult']:
-        """
-        The list of tasks.
-        """
+    def tasks(self) -> Optional[Sequence['outputs.GetServiceConnectorTaskResult']]:
         return pulumi.get(self, "tasks")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time when the service connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time when the service connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -213,21 +171,7 @@ class AwaitableGetServiceConnectorResult(GetServiceConnectorResult):
 def get_service_connector(service_connector_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceConnectorResult:
     """
-    This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
-
-    Gets the specified service connector's configuration information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_connector = oci.Sch.get_service_connector(service_connector_id=oci_sch_service_connector["test_service_connector"]["id"])
-    ```
-
-
-    :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['serviceConnectorId'] = service_connector_id
@@ -256,20 +200,6 @@ def get_service_connector(service_connector_id: Optional[str] = None,
 def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceConnectorResult]:
     """
-    This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
-
-    Gets the specified service connector's configuration information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_connector = oci.Sch.get_service_connector(service_connector_id=oci_sch_service_connector["test_service_connector"]["id"])
-    ```
-
-
-    :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+    Use this data source to access information about an existing resource.
     """
     ...

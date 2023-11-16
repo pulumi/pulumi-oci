@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -103,23 +102,23 @@ type MetricExtension struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Type of possible collection methods.
-	CollectionMethod pulumi.StringOutput `pulumi:"collectionMethod"`
+	CollectionMethod pulumi.StringPtrOutput `pulumi:"collectionMethod"`
 	// (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
 	CollectionRecurrences pulumi.StringOutput `pulumi:"collectionRecurrences"`
 	// (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Created by user
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Description of the metric extension.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Display name of the metric.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// List of resource objects on which this metric extension is enabled.
 	EnabledOnResources MetricExtensionEnabledOnResourceArrayOutput `pulumi:"enabledOnResources"`
 	// Count of resources on which this metric extension is enabled.
-	EnabledOnResourcesCount pulumi.IntOutput `pulumi:"enabledOnResourcesCount"`
+	EnabledOnResourcesCount pulumi.IntPtrOutput `pulumi:"enabledOnResourcesCount"`
 	// Last updated by user
-	LastUpdatedBy pulumi.StringOutput `pulumi:"lastUpdatedBy"`
+	LastUpdatedBy pulumi.StringPtrOutput `pulumi:"lastUpdatedBy"`
 	// (Updatable) List of metrics which are part of this metric extension
 	MetricLists MetricExtensionMetricListArrayOutput `pulumi:"metricLists"`
 	// (Updatable) Name of the script file
@@ -134,17 +133,17 @@ type MetricExtension struct {
 	// Resource type to which Metric Extension applies
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// The URI path that the user can do a GET on to access the metric extension metadata
-	ResourceUri pulumi.StringOutput `pulumi:"resourceUri"`
+	ResourceUri pulumi.StringPtrOutput `pulumi:"resourceUri"`
 	// The current lifecycle state of the metric extension
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The current status of the metric extension i.e. whether it is Draft or Published
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-	TenantId pulumi.StringOutput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrOutput `pulumi:"tenantId"`
 	// Metric Extension creation time. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Metric Extension update time. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMetricExtension registers a new resource with the given unique name, arguments, and options.
@@ -362,12 +361,6 @@ func (i *MetricExtension) ToMetricExtensionOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionOutput)
 }
 
-func (i *MetricExtension) ToOutput(ctx context.Context) pulumix.Output[*MetricExtension] {
-	return pulumix.Output[*MetricExtension]{
-		OutputState: i.ToMetricExtensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionArrayInput is an input type that accepts MetricExtensionArray and MetricExtensionArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionArrayInput` via:
 //
@@ -391,12 +384,6 @@ func (i MetricExtensionArray) ToMetricExtensionArrayOutput() MetricExtensionArra
 
 func (i MetricExtensionArray) ToMetricExtensionArrayOutputWithContext(ctx context.Context) MetricExtensionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionArrayOutput)
-}
-
-func (i MetricExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtension] {
-	return pulumix.Output[[]*MetricExtension]{
-		OutputState: i.ToMetricExtensionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MetricExtensionMapInput is an input type that accepts MetricExtensionMap and MetricExtensionMapOutput values.
@@ -424,12 +411,6 @@ func (i MetricExtensionMap) ToMetricExtensionMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMapOutput)
 }
 
-func (i MetricExtensionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtension] {
-	return pulumix.Output[map[string]*MetricExtension]{
-		OutputState: i.ToMetricExtensionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionOutput) ElementType() reflect.Type {
@@ -444,15 +425,9 @@ func (o MetricExtensionOutput) ToMetricExtensionOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o MetricExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtension] {
-	return pulumix.Output[*MetricExtension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Type of possible collection methods.
-func (o MetricExtensionOutput) CollectionMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.CollectionMethod }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) CollectionMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.CollectionMethod }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
@@ -466,13 +441,13 @@ func (o MetricExtensionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Created by user
-func (o MetricExtensionOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Description of the metric extension.
-func (o MetricExtensionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Display name of the metric.
@@ -486,13 +461,13 @@ func (o MetricExtensionOutput) EnabledOnResources() MetricExtensionEnabledOnReso
 }
 
 // Count of resources on which this metric extension is enabled.
-func (o MetricExtensionOutput) EnabledOnResourcesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.IntOutput { return v.EnabledOnResourcesCount }).(pulumi.IntOutput)
+func (o MetricExtensionOutput) EnabledOnResourcesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.IntPtrOutput { return v.EnabledOnResourcesCount }).(pulumi.IntPtrOutput)
 }
 
 // Last updated by user
-func (o MetricExtensionOutput) LastUpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.LastUpdatedBy }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) LastUpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.LastUpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of metrics which are part of this metric extension
@@ -524,33 +499,33 @@ func (o MetricExtensionOutput) ResourceType() pulumi.StringOutput {
 }
 
 // The URI path that the user can do a GET on to access the metric extension metadata
-func (o MetricExtensionOutput) ResourceUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.ResourceUri }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) ResourceUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.ResourceUri }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the metric extension
-func (o MetricExtensionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The current status of the metric extension i.e. whether it is Draft or Published
-func (o MetricExtensionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-func (o MetricExtensionOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // Metric Extension creation time. An RFC3339 formatted datetime string.
-func (o MetricExtensionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Metric Extension update time. An RFC3339 formatted datetime string.
-func (o MetricExtensionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MetricExtensionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MetricExtension) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MetricExtensionArrayOutput struct{ *pulumi.OutputState }
@@ -565,12 +540,6 @@ func (o MetricExtensionArrayOutput) ToMetricExtensionArrayOutput() MetricExtensi
 
 func (o MetricExtensionArrayOutput) ToMetricExtensionArrayOutputWithContext(ctx context.Context) MetricExtensionArrayOutput {
 	return o
-}
-
-func (o MetricExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MetricExtension] {
-	return pulumix.Output[[]*MetricExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionArrayOutput) Index(i pulumi.IntInput) MetricExtensionOutput {
@@ -591,12 +560,6 @@ func (o MetricExtensionMapOutput) ToMetricExtensionMapOutput() MetricExtensionMa
 
 func (o MetricExtensionMapOutput) ToMetricExtensionMapOutputWithContext(ctx context.Context) MetricExtensionMapOutput {
 	return o
-}
-
-func (o MetricExtensionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MetricExtension] {
-	return pulumix.Output[map[string]*MetricExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionMapOutput) MapIndex(k pulumi.StringInput) MetricExtensionOutput {

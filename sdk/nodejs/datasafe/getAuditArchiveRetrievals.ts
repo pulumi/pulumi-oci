@@ -92,7 +92,7 @@ export interface GetAuditArchiveRetrievalsResult {
     /**
      * The list of audit_archive_retrieval_collection.
      */
-    readonly auditArchiveRetrievalCollections: outputs.DataSafe.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection[];
+    readonly auditArchiveRetrievalCollections?: outputs.DataSafe.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection[];
     readonly auditArchiveRetrievalId?: string;
     /**
      * The OCID of the compartment that contains archive retrieval.
@@ -107,7 +107,7 @@ export interface GetAuditArchiveRetrievalsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the archive retrieval.
      */

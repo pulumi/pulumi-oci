@@ -57,9 +57,6 @@ class GetMaskingReportsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the masking report.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -74,7 +71,7 @@ class GetMaskingReportsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,25 +80,16 @@ class GetMaskingReportsResult:
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> Optional[str]:
-        """
-        The OCID of the masking policy used.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @property
     @pulumi.getter(name="maskingReportCollections")
-    def masking_report_collections(self) -> Sequence['outputs.GetMaskingReportsMaskingReportCollectionResult']:
-        """
-        The list of masking_report_collection.
-        """
+    def masking_report_collections(self) -> Optional[Sequence['outputs.GetMaskingReportsMaskingReportCollectionResult']]:
         return pulumi.get(self, "masking_report_collections")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target database masked.
-        """
         return pulumi.get(self, "target_id")
 
 
@@ -129,29 +117,7 @@ def get_masking_reports(access_level: Optional[str] = None,
                         target_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingReportsResult:
     """
-    This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking reports based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=var["compartment_id"],
-        access_level=var["masking_report_access_level"],
-        compartment_id_in_subtree=var["masking_report_compartment_id_in_subtree"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -183,28 +149,6 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
                                target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportsResult]:
     """
-    This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking reports based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=var["compartment_id"],
-        access_level=var["masking_report_access_level"],
-        compartment_id_in_subtree=var["masking_report_compartment_id_in_subtree"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str target_id: A filter to return only items related to a specific target OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

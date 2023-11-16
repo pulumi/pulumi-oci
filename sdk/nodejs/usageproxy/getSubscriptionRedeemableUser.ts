@@ -50,14 +50,14 @@ export interface GetSubscriptionRedeemableUserArgs {
  * A collection of values returned by getSubscriptionRedeemableUser.
  */
 export interface GetSubscriptionRedeemableUserResult {
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of user summary that can redeem rewards.
      */
-    readonly items: outputs.UsageProxy.GetSubscriptionRedeemableUserItem[];
+    readonly items?: outputs.UsageProxy.GetSubscriptionRedeemableUserItem[];
     readonly subscriptionId: string;
     readonly tenancyId: string;
-    readonly userId: string;
+    readonly userId?: string;
 }
 /**
  * This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.

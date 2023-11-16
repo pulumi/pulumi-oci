@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
@@ -63,36 +62,36 @@ type LookupBackupDestinationResult struct {
 	AssociatedDatabases []GetBackupDestinationAssociatedDatabase `pulumi:"associatedDatabases"`
 	BackupDestinationId string                                   `pulumi:"backupDestinationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-	ConnectionString string `pulumi:"connectionString"`
+	ConnectionString *string `pulumi:"connectionString"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-provided name of the backup destination.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
 	//
 	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-	LocalMountPointPath string                                `pulumi:"localMountPointPath"`
+	LocalMountPointPath *string                               `pulumi:"localMountPointPath"`
 	MountTypeDetails    []GetBackupDestinationMountTypeDetail `pulumi:"mountTypeDetails"`
 	// NFS Mount type for backup destination.
-	NfsMountType string `pulumi:"nfsMountType"`
+	NfsMountType *string `pulumi:"nfsMountType"`
 	// Specifies the directory on which to mount the file system
-	NfsServerExport string `pulumi:"nfsServerExport"`
+	NfsServerExport *string `pulumi:"nfsServerExport"`
 	// Host names or IP addresses for NFS Auto mount.
 	NfsServers []string `pulumi:"nfsServers"`
 	// The current lifecycle state of the backup destination.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the backup destination was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Type of the backup destination.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
 	VpcUsers []string `pulumi:"vpcUsers"`
 }
@@ -135,12 +134,6 @@ func (o LookupBackupDestinationResultOutput) ToLookupBackupDestinationResultOutp
 	return o
 }
 
-func (o LookupBackupDestinationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBackupDestinationResult] {
-	return pulumix.Output[LookupBackupDestinationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of databases associated with the backup destination.
 func (o LookupBackupDestinationResultOutput) AssociatedDatabases() GetBackupDestinationAssociatedDatabaseArrayOutput {
 	return o.ApplyT(func(v LookupBackupDestinationResult) []GetBackupDestinationAssociatedDatabase {
@@ -153,13 +146,13 @@ func (o LookupBackupDestinationResultOutput) BackupDestinationId() pulumi.String
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupBackupDestinationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-func (o LookupBackupDestinationResultOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.ConnectionString }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -168,8 +161,8 @@ func (o LookupBackupDestinationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-provided name of the backup destination.
-func (o LookupBackupDestinationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -178,20 +171,20 @@ func (o LookupBackupDestinationResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-func (o LookupBackupDestinationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-func (o LookupBackupDestinationResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
 //
 // Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-func (o LookupBackupDestinationResultOutput) LocalMountPointPath() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.LocalMountPointPath }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) LocalMountPointPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.LocalMountPointPath }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBackupDestinationResultOutput) MountTypeDetails() GetBackupDestinationMountTypeDetailArrayOutput {
@@ -199,13 +192,13 @@ func (o LookupBackupDestinationResultOutput) MountTypeDetails() GetBackupDestina
 }
 
 // NFS Mount type for backup destination.
-func (o LookupBackupDestinationResultOutput) NfsMountType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.NfsMountType }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) NfsMountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.NfsMountType }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the directory on which to mount the file system
-func (o LookupBackupDestinationResultOutput) NfsServerExport() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.NfsServerExport }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) NfsServerExport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.NfsServerExport }).(pulumi.StringPtrOutput)
 }
 
 // Host names or IP addresses for NFS Auto mount.
@@ -214,18 +207,18 @@ func (o LookupBackupDestinationResultOutput) NfsServers() pulumi.StringArrayOutp
 }
 
 // The current lifecycle state of the backup destination.
-func (o LookupBackupDestinationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the backup destination was created.
-func (o LookupBackupDestinationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Type of the backup destination.
-func (o LookupBackupDestinationResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupBackupDestinationResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.

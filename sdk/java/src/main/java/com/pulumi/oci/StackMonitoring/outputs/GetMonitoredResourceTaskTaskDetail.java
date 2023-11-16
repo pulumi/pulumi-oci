@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourceTaskTaskDetail {
@@ -15,63 +17,63 @@ public final class GetMonitoredResourceTaskTaskDetail {
      * @return Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property &#39;availabilityProxyMetrics&#39;.
      * 
      */
-    private Integer availabilityProxyMetricCollectionInterval;
+    private @Nullable Integer availabilityProxyMetricCollectionInterval;
     /**
      * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
-    private List<String> availabilityProxyMetrics;
+    private @Nullable List<String> availabilityProxyMetrics;
     /**
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources&#39; import.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
     /**
      * @return Source from where the metrics pushed to telemetry. Possible values:
      * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
      * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return Task type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMonitoredResourceTaskTaskDetail() {}
     /**
      * @return Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property &#39;availabilityProxyMetrics&#39;.
      * 
      */
-    public Integer availabilityProxyMetricCollectionInterval() {
-        return this.availabilityProxyMetricCollectionInterval;
+    public Optional<Integer> availabilityProxyMetricCollectionInterval() {
+        return Optional.ofNullable(this.availabilityProxyMetricCollectionInterval);
     }
     /**
      * @return List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  &#39;availabilityProxyMetricCollectionIntervalInSeconds&#39;. If no metrics are specified, availability will not be calculated for the resource.
      * 
      */
     public List<String> availabilityProxyMetrics() {
-        return this.availabilityProxyMetrics;
+        return this.availabilityProxyMetrics == null ? List.of() : this.availabilityProxyMetrics;
     }
     /**
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources&#39; import.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
     /**
      * @return Source from where the metrics pushed to telemetry. Possible values:
@@ -79,15 +81,15 @@ public final class GetMonitoredResourceTaskTaskDetail {
      * * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return Task type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -99,12 +101,12 @@ public final class GetMonitoredResourceTaskTaskDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer availabilityProxyMetricCollectionInterval;
-        private List<String> availabilityProxyMetrics;
-        private String namespace;
-        private String resourceGroup;
-        private String source;
-        private String type;
+        private @Nullable Integer availabilityProxyMetricCollectionInterval;
+        private @Nullable List<String> availabilityProxyMetrics;
+        private @Nullable String namespace;
+        private @Nullable String resourceGroup;
+        private @Nullable String source;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMonitoredResourceTaskTaskDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,36 +119,36 @@ public final class GetMonitoredResourceTaskTaskDetail {
         }
 
         @CustomType.Setter
-        public Builder availabilityProxyMetricCollectionInterval(Integer availabilityProxyMetricCollectionInterval) {
-            this.availabilityProxyMetricCollectionInterval = Objects.requireNonNull(availabilityProxyMetricCollectionInterval);
+        public Builder availabilityProxyMetricCollectionInterval(@Nullable Integer availabilityProxyMetricCollectionInterval) {
+            this.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityProxyMetrics(List<String> availabilityProxyMetrics) {
-            this.availabilityProxyMetrics = Objects.requireNonNull(availabilityProxyMetrics);
+        public Builder availabilityProxyMetrics(@Nullable List<String> availabilityProxyMetrics) {
+            this.availabilityProxyMetrics = availabilityProxyMetrics;
             return this;
         }
         public Builder availabilityProxyMetrics(String... availabilityProxyMetrics) {
             return availabilityProxyMetrics(List.of(availabilityProxyMetrics));
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMonitoredResourceTaskTaskDetail build() {

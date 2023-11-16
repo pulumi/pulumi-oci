@@ -8,18 +8,20 @@ import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyOriginGroupOriginGro
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyOriginGroup {
-    private String label;
-    private List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
+    private @Nullable String label;
+    private @Nullable List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
 
     private GetWaasPoliciesWaasPolicyOriginGroup() {}
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     public List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups() {
-        return this.originGroups;
+        return this.originGroups == null ? List.of() : this.originGroups;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetWaasPoliciesWaasPolicyOriginGroup {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String label;
-        private List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
+        private @Nullable String label;
+        private @Nullable List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyOriginGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetWaasPoliciesWaasPolicyOriginGroup {
         }
 
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder originGroups(List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups) {
-            this.originGroups = Objects.requireNonNull(originGroups);
+        public Builder originGroups(@Nullable List<GetWaasPoliciesWaasPolicyOriginGroupOriginGroup> originGroups) {
+            this.originGroups = originGroups;
             return this;
         }
         public Builder originGroups(GetWaasPoliciesWaasPolicyOriginGroupOriginGroup... originGroups) {

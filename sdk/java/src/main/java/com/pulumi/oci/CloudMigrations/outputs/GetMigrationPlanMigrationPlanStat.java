@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationPlanMigrationPlanStat {
@@ -16,39 +18,39 @@ public final class GetMigrationPlanMigrationPlanStat {
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Cost estimation description
      * 
      */
-    private List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
+    private @Nullable List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
     /**
      * @return The total count of VMs in migration
      * 
      */
-    private Integer vmCount;
+    private @Nullable Integer vmCount;
 
     private GetMigrationPlanMigrationPlanStat() {}
     /**
      * @return The time when the migration plan was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Cost estimation description
      * 
      */
     public List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts() {
-        return this.totalEstimatedCosts;
+        return this.totalEstimatedCosts == null ? List.of() : this.totalEstimatedCosts;
     }
     /**
      * @return The total count of VMs in migration
      * 
      */
-    public Integer vmCount() {
-        return this.vmCount;
+    public Optional<Integer> vmCount() {
+        return Optional.ofNullable(this.vmCount);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetMigrationPlanMigrationPlanStat {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeUpdated;
-        private List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
-        private Integer vmCount;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts;
+        private @Nullable Integer vmCount;
         public Builder() {}
         public Builder(GetMigrationPlanMigrationPlanStat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetMigrationPlanMigrationPlanStat {
         }
 
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder totalEstimatedCosts(List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts) {
-            this.totalEstimatedCosts = Objects.requireNonNull(totalEstimatedCosts);
+        public Builder totalEstimatedCosts(@Nullable List<GetMigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts) {
+            this.totalEstimatedCosts = totalEstimatedCosts;
             return this;
         }
         public Builder totalEstimatedCosts(GetMigrationPlanMigrationPlanStatTotalEstimatedCost... totalEstimatedCosts) {
             return totalEstimatedCosts(List.of(totalEstimatedCosts));
         }
         @CustomType.Setter
-        public Builder vmCount(Integer vmCount) {
-            this.vmCount = Objects.requireNonNull(vmCount);
+        public Builder vmCount(@Nullable Integer vmCount) {
+            this.vmCount = vmCount;
             return this;
         }
         public GetMigrationPlanMigrationPlanStat build() {

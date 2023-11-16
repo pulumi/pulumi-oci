@@ -29,13 +29,13 @@ public final class GetNamespaceScheduledTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return The list of scheduled_task_collection.
      * 
      */
-    private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
+    private @Nullable List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
     /**
      * @return Task type.
      * 
@@ -64,8 +64,8 @@ public final class GetNamespaceScheduledTasksResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -75,7 +75,7 @@ public final class GetNamespaceScheduledTasksResult {
      * 
      */
     public List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections() {
-        return this.scheduledTaskCollections;
+        return this.scheduledTaskCollections == null ? List.of() : this.scheduledTaskCollections;
     }
     /**
      * @return Task type.
@@ -97,9 +97,9 @@ public final class GetNamespaceScheduledTasksResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetNamespaceScheduledTasksFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
+        private @Nullable List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections;
         private String taskType;
         public Builder() {}
         public Builder(GetNamespaceScheduledTasksResult defaults) {
@@ -132,8 +132,8 @@ public final class GetNamespaceScheduledTasksResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,8 +142,8 @@ public final class GetNamespaceScheduledTasksResult {
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledTaskCollections(List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections) {
-            this.scheduledTaskCollections = Objects.requireNonNull(scheduledTaskCollections);
+        public Builder scheduledTaskCollections(@Nullable List<GetNamespaceScheduledTasksScheduledTaskCollection> scheduledTaskCollections) {
+            this.scheduledTaskCollections = scheduledTaskCollections;
             return this;
         }
         public Builder scheduledTaskCollections(GetNamespaceScheduledTasksScheduledTaskCollection... scheduledTaskCollections) {

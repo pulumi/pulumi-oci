@@ -35,12 +35,12 @@ public final class GetKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of keys.
      * 
      */
-    private List<GetKeysKey> keys;
+    private @Nullable List<GetKeysKey> keys;
     /**
      * @return The length of the key in bytes, expressed as an integer. Supported values include the following:
      * * AES: 16, 24, or 32
@@ -85,15 +85,15 @@ public final class GetKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of keys.
      * 
      */
     public List<GetKeysKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return The length of the key in bytes, expressed as an integer. Supported values include the following:
@@ -129,8 +129,8 @@ public final class GetKeysResult {
         private String compartmentId;
         private @Nullable String curveId;
         private @Nullable List<GetKeysFilter> filters;
-        private String id;
-        private List<GetKeysKey> keys;
+        private @Nullable String id;
+        private @Nullable List<GetKeysKey> keys;
         private @Nullable Integer length;
         private String managementEndpoint;
         private @Nullable String protectionMode;
@@ -172,13 +172,13 @@ public final class GetKeysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder keys(List<GetKeysKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetKeysKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetKeysKey... keys) {

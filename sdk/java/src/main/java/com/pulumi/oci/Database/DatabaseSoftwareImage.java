@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -92,56 +93,56 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="databaseSoftwareImageIncludedPatches", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> databaseSoftwareImageIncludedPatches;
+    private Output</* @Nullable */ List<String>> databaseSoftwareImageIncludedPatches;
 
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    public Output<List<String>> databaseSoftwareImageIncludedPatches() {
-        return this.databaseSoftwareImageIncludedPatches;
+    public Output<Optional<List<String>>> databaseSoftwareImageIncludedPatches() {
+        return Codegen.optional(this.databaseSoftwareImageIncludedPatches);
     }
     /**
      * List of one-off patches for Database Homes.
      * 
      */
     @Export(name="databaseSoftwareImageOneOffPatches", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> databaseSoftwareImageOneOffPatches;
+    private Output</* @Nullable */ List<String>> databaseSoftwareImageOneOffPatches;
 
     /**
      * @return List of one-off patches for Database Homes.
      * 
      */
-    public Output<List<String>> databaseSoftwareImageOneOffPatches() {
-        return this.databaseSoftwareImageOneOffPatches;
+    public Output<Optional<List<String>>> databaseSoftwareImageOneOffPatches() {
+        return Codegen.optional(this.databaseSoftwareImageOneOffPatches);
     }
     /**
      * The database version with which the database software image is to be built.
      * 
      */
     @Export(name="databaseVersion", refs={String.class}, tree="[0]")
-    private Output<String> databaseVersion;
+    private Output</* @Nullable */ String> databaseVersion;
 
     /**
      * @return The database version with which the database software image is to be built.
      * 
      */
-    public Output<String> databaseVersion() {
-        return this.databaseVersion;
+    public Output<Optional<String>> databaseVersion() {
+        return Codegen.optional(this.databaseVersion);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
@@ -162,112 +163,112 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * To what shape the image is meant for.
      * 
      */
     @Export(name="imageShapeFamily", refs={String.class}, tree="[0]")
-    private Output<String> imageShapeFamily;
+    private Output</* @Nullable */ String> imageShapeFamily;
 
     /**
      * @return To what shape the image is meant for.
      * 
      */
-    public Output<String> imageShapeFamily() {
-        return this.imageShapeFamily;
+    public Output<Optional<String>> imageShapeFamily() {
+        return Codegen.optional(this.imageShapeFamily);
     }
     /**
      * The type of software image. Can be grid or database.
      * 
      */
     @Export(name="imageType", refs={String.class}, tree="[0]")
-    private Output<String> imageType;
+    private Output</* @Nullable */ String> imageType;
 
     /**
      * @return The type of software image. Can be grid or database.
      * 
      */
-    public Output<String> imageType() {
-        return this.imageType;
+    public Output<Optional<String>> imageType() {
+        return Codegen.optional(this.imageType);
     }
     /**
      * The patches included in the image and the version of the image.
      * 
      */
     @Export(name="includedPatchesSummary", refs={String.class}, tree="[0]")
-    private Output<String> includedPatchesSummary;
+    private Output</* @Nullable */ String> includedPatchesSummary;
 
     /**
      * @return The patches included in the image and the version of the image.
      * 
      */
-    public Output<String> includedPatchesSummary() {
-        return this.includedPatchesSummary;
+    public Output<Optional<String>> includedPatchesSummary() {
+        return Codegen.optional(this.includedPatchesSummary);
     }
     /**
      * True if this Database software image is supported for Upgrade.
      * 
      */
     @Export(name="isUpgradeSupported", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUpgradeSupported;
+    private Output</* @Nullable */ Boolean> isUpgradeSupported;
 
     /**
      * @return True if this Database software image is supported for Upgrade.
      * 
      */
-    public Output<Boolean> isUpgradeSupported() {
-        return this.isUpgradeSupported;
+    public Output<Optional<Boolean>> isUpgradeSupported() {
+        return Codegen.optional(this.isUpgradeSupported);
     }
     /**
      * Detailed message for the lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Detailed message for the lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
     @Export(name="lsInventory", refs={String.class}, tree="[0]")
-    private Output<String> lsInventory;
+    private Output</* @Nullable */ String> lsInventory;
 
     /**
      * @return The output from the OPatch lsInventory command, which is passed as a string.
      * 
      */
-    public Output<String> lsInventory() {
-        return this.lsInventory;
+    public Output<Optional<String>> lsInventory() {
+        return Codegen.optional(this.lsInventory);
     }
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
     @Export(name="patchSet", refs={String.class}, tree="[0]")
-    private Output<String> patchSet;
+    private Output</* @Nullable */ String> patchSet;
 
     /**
      * @return The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      * 
      */
-    public Output<String> patchSet() {
-        return this.patchSet;
+    public Output<Optional<String>> patchSet() {
+        return Codegen.optional(this.patchSet);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -277,7 +278,7 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourceDbHomeId", refs={String.class}, tree="[0]")
-    private Output<String> sourceDbHomeId;
+    private Output</* @Nullable */ String> sourceDbHomeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -286,36 +287,36 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> sourceDbHomeId() {
-        return this.sourceDbHomeId;
+    public Output<Optional<String>> sourceDbHomeId() {
+        return Codegen.optional(this.sourceDbHomeId);
     }
     /**
      * The current state of the database software image.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the database software image.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the database software image was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the database software image was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

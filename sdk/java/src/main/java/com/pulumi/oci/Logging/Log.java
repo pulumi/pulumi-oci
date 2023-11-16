@@ -16,6 +16,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -87,42 +88,42 @@ public class Log extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Log object configuration.
      * 
      */
     @Export(name="configuration", refs={LogConfiguration.class}, tree="[0]")
-    private Output<LogConfiguration> configuration;
+    private Output</* @Nullable */ LogConfiguration> configuration;
 
     /**
      * @return Log object configuration.
      * 
      */
-    public Output<LogConfiguration> configuration() {
-        return this.configuration;
+    public Output<Optional<LogConfiguration>> configuration() {
+        return Codegen.optional(this.configuration);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
@@ -143,28 +144,28 @@ public class Log extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Whether or not this resource is currently enabled.
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    private Output</* @Nullable */ Boolean> isEnabled;
 
     /**
      * @return (Updatable) Whether or not this resource is currently enabled.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Output<Optional<Boolean>> isEnabled() {
+        return Codegen.optional(this.isEnabled);
     }
     /**
      * (Updatable) OCID of a log group to work with.
@@ -202,7 +203,7 @@ public class Log extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="retentionDuration", refs={Integer.class}, tree="[0]")
-    private Output<Integer> retentionDuration;
+    private Output</* @Nullable */ Integer> retentionDuration;
 
     /**
      * @return (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
@@ -211,64 +212,64 @@ public class Log extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> retentionDuration() {
-        return this.retentionDuration;
+    public Output<Optional<Integer>> retentionDuration() {
+        return Codegen.optional(this.retentionDuration);
     }
     /**
      * The pipeline state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The pipeline state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID of the tenancy.
      * 
      */
     @Export(name="tenancyId", refs={String.class}, tree="[0]")
-    private Output<String> tenancyId;
+    private Output</* @Nullable */ String> tenancyId;
 
     /**
      * @return The OCID of the tenancy.
      * 
      */
-    public Output<String> tenancyId() {
-        return this.tenancyId;
+    public Output<Optional<String>> tenancyId() {
+        return Codegen.optional(this.tenancyId);
     }
     /**
      * Time the resource was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Time the resource was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Time the resource was last modified.
      * 
      */
     @Export(name="timeLastModified", refs={String.class}, tree="[0]")
-    private Output<String> timeLastModified;
+    private Output</* @Nullable */ String> timeLastModified;
 
     /**
      * @return Time the resource was last modified.
      * 
      */
-    public Output<String> timeLastModified() {
-        return this.timeLastModified;
+    public Output<Optional<String>> timeLastModified() {
+        return Codegen.optional(this.timeLastModified);
     }
 
     /**

@@ -22,7 +22,7 @@ public final class GetRepositoryPathsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean pathsInSubtree;
     private @Nullable String ref;
     private String repositoryId;
@@ -30,7 +30,7 @@ public final class GetRepositoryPathsResult {
      * @return The list of repository_path_collection.
      * 
      */
-    private List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections;
+    private @Nullable List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections;
 
     private GetRepositoryPathsResult() {}
     public Optional<String> displayName() {
@@ -46,8 +46,8 @@ public final class GetRepositoryPathsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> pathsInSubtree() {
         return Optional.ofNullable(this.pathsInSubtree);
@@ -63,7 +63,7 @@ public final class GetRepositoryPathsResult {
      * 
      */
     public List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections() {
-        return this.repositoryPathCollections;
+        return this.repositoryPathCollections == null ? List.of() : this.repositoryPathCollections;
     }
 
     public static Builder builder() {
@@ -78,11 +78,11 @@ public final class GetRepositoryPathsResult {
         private @Nullable String displayName;
         private @Nullable List<GetRepositoryPathsFilter> filters;
         private @Nullable String folderPath;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean pathsInSubtree;
         private @Nullable String ref;
         private String repositoryId;
-        private List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections;
+        private @Nullable List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections;
         public Builder() {}
         public Builder(GetRepositoryPathsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,8 +115,8 @@ public final class GetRepositoryPathsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -135,8 +135,8 @@ public final class GetRepositoryPathsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryPathCollections(List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections) {
-            this.repositoryPathCollections = Objects.requireNonNull(repositoryPathCollections);
+        public Builder repositoryPathCollections(@Nullable List<GetRepositoryPathsRepositoryPathCollection> repositoryPathCollections) {
+            this.repositoryPathCollections = repositoryPathCollections;
             return this;
         }
         public Builder repositoryPathCollections(GetRepositoryPathsRepositoryPathCollection... repositoryPathCollections) {

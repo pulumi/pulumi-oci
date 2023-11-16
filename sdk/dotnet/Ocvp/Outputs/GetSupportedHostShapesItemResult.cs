@@ -16,27 +16,27 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// <summary>
         /// The default OCPU count of the shape.
         /// </summary>
-        public readonly double DefaultOcpuCount;
+        public readonly double? DefaultOcpuCount;
         /// <summary>
         /// Description of the shape.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Whether the shape supports "MONTH" SKU.
         /// </summary>
-        public readonly bool IsSupportMonthlySku;
+        public readonly bool? IsSupportMonthlySku;
         /// <summary>
         /// Indicates whether the shape supports shielded instances.
         /// </summary>
-        public readonly bool IsSupportShieldedInstances;
+        public readonly bool? IsSupportShieldedInstances;
         /// <summary>
         /// A filter to return only resources that match the given name exactly.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The family of the shape. ESXi hosts of one SDDC must have the same shape family.
         /// </summary>
-        public readonly string ShapeFamily;
+        public readonly string? ShapeFamily;
         /// <summary>
         /// Support OCPU count of the shape.
         /// </summary>
@@ -56,17 +56,17 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
         [OutputConstructor]
         private GetSupportedHostShapesItemResult(
-            double defaultOcpuCount,
+            double? defaultOcpuCount,
 
-            string description,
+            string? description,
 
-            bool isSupportMonthlySku,
+            bool? isSupportMonthlySku,
 
-            bool isSupportShieldedInstances,
+            bool? isSupportShieldedInstances,
 
-            string name,
+            string? name,
 
-            string shapeFamily,
+            string? shapeFamily,
 
             ImmutableArray<double> supportedOcpuCounts,
 

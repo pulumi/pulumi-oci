@@ -143,160 +143,160 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="autonomousExadataInfrastructureId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousExadataInfrastructureId;
+    private Output</* @Nullable */ String> autonomousExadataInfrastructureId;
 
     /**
      * @return **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
-    public Output<String> autonomousExadataInfrastructureId() {
-        return this.autonomousExadataInfrastructureId;
+    public Output<Optional<String>> autonomousExadataInfrastructureId() {
+        return Codegen.optional(this.autonomousExadataInfrastructureId);
     }
     /**
      * The OCID of the Autonomous VM Cluster.
      * 
      */
     @Export(name="autonomousVmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousVmClusterId;
+    private Output</* @Nullable */ String> autonomousVmClusterId;
 
     /**
      * @return The OCID of the Autonomous VM Cluster.
      * 
      */
-    public Output<String> autonomousVmClusterId() {
-        return this.autonomousVmClusterId;
+    public Output<Optional<String>> autonomousVmClusterId() {
+        return Codegen.optional(this.autonomousVmClusterId);
     }
     /**
      * The availability domain of the Autonomous Container Database
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The availability domain of the Autonomous Container Database
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     @Export(name="availableCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> availableCpus;
+    private Output</* @Nullable */ Double> availableCpus;
 
     /**
      * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    public Output<Double> availableCpus() {
-        return this.availableCpus;
+    public Output<Optional<Double>> availableCpus() {
+        return Codegen.optional(this.availableCpus);
     }
     /**
      * (Updatable) Backup options for the Autonomous Container Database.
      * 
      */
     @Export(name="backupConfig", refs={AutonomousContainerDatabaseBackupConfig.class}, tree="[0]")
-    private Output<AutonomousContainerDatabaseBackupConfig> backupConfig;
+    private Output</* @Nullable */ AutonomousContainerDatabaseBackupConfig> backupConfig;
 
     /**
      * @return (Updatable) Backup options for the Autonomous Container Database.
      * 
      */
-    public Output<AutonomousContainerDatabaseBackupConfig> backupConfig() {
-        return this.backupConfig;
+    public Output<Optional<AutonomousContainerDatabaseBackupConfig>> backupConfig() {
+        return Codegen.optional(this.backupConfig);
     }
     /**
      * The OCID of the Cloud Autonomous VM Cluster.
      * 
      */
     @Export(name="cloudAutonomousVmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> cloudAutonomousVmClusterId;
+    private Output</* @Nullable */ String> cloudAutonomousVmClusterId;
 
     /**
      * @return The OCID of the Cloud Autonomous VM Cluster.
      * 
      */
-    public Output<String> cloudAutonomousVmClusterId() {
-        return this.cloudAutonomousVmClusterId;
+    public Output<Optional<String>> cloudAutonomousVmClusterId() {
+        return Codegen.optional(this.cloudAutonomousVmClusterId);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The compute model of the Autonomous VM Cluster.
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
-    private Output<String> computeModel;
+    private Output</* @Nullable */ String> computeModel;
 
     /**
      * @return The compute model of the Autonomous VM Cluster.
      * 
      */
-    public Output<String> computeModel() {
-        return this.computeModel;
+    public Output<Optional<String>> computeModel() {
+        return Codegen.optional(this.computeModel);
     }
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
-    private Output<String> dbName;
+    private Output</* @Nullable */ String> dbName;
 
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
-    public Output<String> dbName() {
-        return this.dbName;
+    public Output<Optional<String>> dbName() {
+        return Codegen.optional(this.dbName);
     }
     @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
-    private Output<String> dbUniqueName;
+    private Output</* @Nullable */ String> dbUniqueName;
 
-    public Output<String> dbUniqueName() {
-        return this.dbUniqueName;
+    public Output<Optional<String>> dbUniqueName() {
+        return Codegen.optional(this.dbUniqueName);
     }
     /**
      * The base version for the Autonomous Container Database.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
-    private Output<String> dbVersion;
+    private Output</* @Nullable */ String> dbVersion;
 
     /**
      * @return The base version for the Autonomous Container Database.
      * 
      */
-    public Output<String> dbVersion() {
-        return this.dbVersion;
+    public Output<Optional<String>> dbVersion() {
+        return Codegen.optional(this.dbVersion);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The display name for the Autonomous Container Database.
@@ -317,182 +317,182 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="dstFileVersion", refs={String.class}, tree="[0]")
-    private Output<String> dstFileVersion;
+    private Output</* @Nullable */ String> dstFileVersion;
 
     /**
      * @return DST Time Zone File version of the Autonomous Container Database.
      * 
      */
-    public Output<String> dstFileVersion() {
-        return this.dstFileVersion;
+    public Output<Optional<String>> dstFileVersion() {
+        return Codegen.optional(this.dstFileVersion);
     }
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
     @Export(name="fastStartFailOverLagLimitInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> fastStartFailOverLagLimitInSeconds;
+    private Output</* @Nullable */ Integer> fastStartFailOverLagLimitInSeconds;
 
     /**
      * @return The lag time for my preference based on data loss tolerance in seconds.
      * 
      */
-    public Output<Integer> fastStartFailOverLagLimitInSeconds() {
-        return this.fastStartFailOverLagLimitInSeconds;
+    public Output<Optional<Integer>> fastStartFailOverLagLimitInSeconds() {
+        return Codegen.optional(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The infrastructure type this resource belongs to.
      * 
      */
     @Export(name="infrastructureType", refs={String.class}, tree="[0]")
-    private Output<String> infrastructureType;
+    private Output</* @Nullable */ String> infrastructureType;
 
     /**
      * @return The infrastructure type this resource belongs to.
      * 
      */
-    public Output<String> infrastructureType() {
-        return this.infrastructureType;
+    public Output<Optional<String>> infrastructureType() {
+        return Codegen.optional(this.infrastructureType);
     }
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
     @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutomaticFailoverEnabled;
+    private Output</* @Nullable */ Boolean> isAutomaticFailoverEnabled;
 
     /**
      * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
      * 
      */
-    public Output<Boolean> isAutomaticFailoverEnabled() {
-        return this.isAutomaticFailoverEnabled;
+    public Output<Optional<Boolean>> isAutomaticFailoverEnabled() {
+        return Codegen.optional(this.isAutomaticFailoverEnabled);
     }
     /**
      * (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
     @Export(name="isDstFileUpdateEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDstFileUpdateEnabled;
+    private Output</* @Nullable */ Boolean> isDstFileUpdateEnabled;
 
     /**
      * @return (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    public Output<Boolean> isDstFileUpdateEnabled() {
-        return this.isDstFileUpdateEnabled;
+    public Output<Optional<Boolean>> isDstFileUpdateEnabled() {
+        return Codegen.optional(this.isDstFileUpdateEnabled);
     }
     /**
      * Key History Entry.
      * 
      */
     @Export(name="keyHistoryEntries", refs={List.class,AutonomousContainerDatabaseKeyHistoryEntry.class}, tree="[0,1]")
-    private Output<List<AutonomousContainerDatabaseKeyHistoryEntry>> keyHistoryEntries;
+    private Output</* @Nullable */ List<AutonomousContainerDatabaseKeyHistoryEntry>> keyHistoryEntries;
 
     /**
      * @return Key History Entry.
      * 
      */
-    public Output<List<AutonomousContainerDatabaseKeyHistoryEntry>> keyHistoryEntries() {
-        return this.keyHistoryEntries;
+    public Output<Optional<List<AutonomousContainerDatabaseKeyHistoryEntry>>> keyHistoryEntries() {
+        return Codegen.optional(this.keyHistoryEntries);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
     @Export(name="keyStoreId", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreId;
+    private Output</* @Nullable */ String> keyStoreId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public Output<String> keyStoreId() {
-        return this.keyStoreId;
+    public Output<Optional<String>> keyStoreId() {
+        return Codegen.optional(this.keyStoreId);
     }
     /**
      * The wallet name for Oracle Key Vault.
      * 
      */
     @Export(name="keyStoreWalletName", refs={String.class}, tree="[0]")
-    private Output<String> keyStoreWalletName;
+    private Output</* @Nullable */ String> keyStoreWalletName;
 
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public Output<String> keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Output<Optional<String>> keyStoreWalletName() {
+        return Codegen.optional(this.keyStoreWalletName);
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
     @Export(name="largestProvisionableAutonomousDatabaseInCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> largestProvisionableAutonomousDatabaseInCpus;
+    private Output</* @Nullable */ Double> largestProvisionableAutonomousDatabaseInCpus;
 
     /**
      * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
-    public Output<Double> largestProvisionableAutonomousDatabaseInCpus() {
-        return this.largestProvisionableAutonomousDatabaseInCpus;
+    public Output<Optional<Double>> largestProvisionableAutonomousDatabaseInCpus() {
+        return Codegen.optional(this.largestProvisionableAutonomousDatabaseInCpus);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
     @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> lastMaintenanceRunId;
+    private Output</* @Nullable */ String> lastMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public Output<String> lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Output<Optional<String>> lastMaintenanceRunId() {
+        return Codegen.optional(this.lastMaintenanceRunId);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -513,56 +513,56 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="maintenanceWindows", refs={List.class,AutonomousContainerDatabaseMaintenanceWindow.class}, tree="[0,1]")
-    private Output<List<AutonomousContainerDatabaseMaintenanceWindow>> maintenanceWindows;
+    private Output</* @Nullable */ List<AutonomousContainerDatabaseMaintenanceWindow>> maintenanceWindows;
 
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    public Output<List<AutonomousContainerDatabaseMaintenanceWindow>> maintenanceWindows() {
-        return this.maintenanceWindows;
+    public Output<Optional<List<AutonomousContainerDatabaseMaintenanceWindow>>> maintenanceWindows() {
+        return Codegen.optional(this.maintenanceWindows);
     }
     /**
      * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memoryPerOracleComputeUnitInGbs;
+    private Output</* @Nullable */ Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
-    public Output<Integer> memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Output<Optional<Integer>> memoryPerOracleComputeUnitInGbs() {
+        return Codegen.optional(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
     @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> nextMaintenanceRunId;
+    private Output</* @Nullable */ String> nextMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public Output<String> nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Output<Optional<String>> nextMaintenanceRunId() {
+        return Codegen.optional(this.nextMaintenanceRunId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
     @Export(name="patchId", refs={String.class}, tree="[0]")
-    private Output<String> patchId;
+    private Output</* @Nullable */ String> patchId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
-    public Output<String> patchId() {
-        return this.patchId;
+    public Output<Optional<String>> patchId() {
+        return Codegen.optional(this.patchId);
     }
     /**
      * (Updatable) Database Patch model preference.
@@ -579,128 +579,128 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.patchModel;
     }
     @Export(name="peerAutonomousContainerDatabaseBackupConfig", refs={AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig.class}, tree="[0]")
-    private Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig;
+    private Output</* @Nullable */ AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig;
 
-    public Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig() {
-        return this.peerAutonomousContainerDatabaseBackupConfig;
+    public Output<Optional<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig>> peerAutonomousContainerDatabaseBackupConfig() {
+        return Codegen.optional(this.peerAutonomousContainerDatabaseBackupConfig);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      * 
      */
     @Export(name="peerAutonomousContainerDatabaseCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> peerAutonomousContainerDatabaseCompartmentId;
+    private Output</* @Nullable */ String> peerAutonomousContainerDatabaseCompartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      * 
      */
-    public Output<String> peerAutonomousContainerDatabaseCompartmentId() {
-        return this.peerAutonomousContainerDatabaseCompartmentId;
+    public Output<Optional<String>> peerAutonomousContainerDatabaseCompartmentId() {
+        return Codegen.optional(this.peerAutonomousContainerDatabaseCompartmentId);
     }
     /**
      * The display name for the peer Autonomous Container Database.
      * 
      */
     @Export(name="peerAutonomousContainerDatabaseDisplayName", refs={String.class}, tree="[0]")
-    private Output<String> peerAutonomousContainerDatabaseDisplayName;
+    private Output</* @Nullable */ String> peerAutonomousContainerDatabaseDisplayName;
 
     /**
      * @return The display name for the peer Autonomous Container Database.
      * 
      */
-    public Output<String> peerAutonomousContainerDatabaseDisplayName() {
-        return this.peerAutonomousContainerDatabaseDisplayName;
+    public Output<Optional<String>> peerAutonomousContainerDatabaseDisplayName() {
+        return Codegen.optional(this.peerAutonomousContainerDatabaseDisplayName);
     }
     /**
      * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     @Export(name="peerAutonomousExadataInfrastructureId", refs={String.class}, tree="[0]")
-    private Output<String> peerAutonomousExadataInfrastructureId;
+    private Output</* @Nullable */ String> peerAutonomousExadataInfrastructureId;
 
     /**
      * @return *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
-    public Output<String> peerAutonomousExadataInfrastructureId() {
-        return this.peerAutonomousExadataInfrastructureId;
+    public Output<Optional<String>> peerAutonomousExadataInfrastructureId() {
+        return Codegen.optional(this.peerAutonomousExadataInfrastructureId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
      * 
      */
     @Export(name="peerAutonomousVmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> peerAutonomousVmClusterId;
+    private Output</* @Nullable */ String> peerAutonomousVmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
      * 
      */
-    public Output<String> peerAutonomousVmClusterId() {
-        return this.peerAutonomousVmClusterId;
+    public Output<Optional<String>> peerAutonomousVmClusterId() {
+        return Codegen.optional(this.peerAutonomousVmClusterId);
     }
     /**
      * The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
      * 
      */
     @Export(name="peerCloudAutonomousVmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> peerCloudAutonomousVmClusterId;
+    private Output</* @Nullable */ String> peerCloudAutonomousVmClusterId;
 
     /**
      * @return The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
      * 
      */
-    public Output<String> peerCloudAutonomousVmClusterId() {
-        return this.peerCloudAutonomousVmClusterId;
+    public Output<Optional<String>> peerCloudAutonomousVmClusterId() {
+        return Codegen.optional(this.peerCloudAutonomousVmClusterId);
     }
     @Export(name="peerDbUniqueName", refs={String.class}, tree="[0]")
-    private Output<String> peerDbUniqueName;
+    private Output</* @Nullable */ String> peerDbUniqueName;
 
-    public Output<String> peerDbUniqueName() {
-        return this.peerDbUniqueName;
+    public Output<Optional<String>> peerDbUniqueName() {
+        return Codegen.optional(this.peerDbUniqueName);
     }
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
     @Export(name="protectionMode", refs={String.class}, tree="[0]")
-    private Output<String> protectionMode;
+    private Output</* @Nullable */ String> protectionMode;
 
     /**
      * @return The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    public Output<String> protectionMode() {
-        return this.protectionMode;
+    public Output<Optional<String>> protectionMode() {
+        return Codegen.optional(this.protectionMode);
     }
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     @Export(name="provisionableCpuses", refs={List.class,Double.class}, tree="[0,1]")
-    private Output<List<Double>> provisionableCpuses;
+    private Output</* @Nullable */ List<Double>> provisionableCpuses;
 
     /**
      * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Output<List<Double>> provisionableCpuses() {
-        return this.provisionableCpuses;
+    public Output<Optional<List<Double>>> provisionableCpuses() {
+        return Codegen.optional(this.provisionableCpuses);
     }
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
      * 
      */
     @Export(name="provisionedCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> provisionedCpus;
+    private Output</* @Nullable */ Double> provisionedCpus;
 
     /**
      * @return The number of CPUs provisioned in an Autonomous Container Database.
      * 
      */
-    public Output<Double> provisionedCpus() {
-        return this.provisionedCpus;
+    public Output<Optional<Double>> provisionedCpus() {
+        return Codegen.optional(this.provisionedCpus);
     }
     /**
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -709,7 +709,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="reclaimableCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> reclaimableCpus;
+    private Output</* @Nullable */ Double> reclaimableCpus;
 
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -717,8 +717,8 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Output<Double> reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Output<Optional<Double>> reclaimableCpus() {
+        return Codegen.optional(this.reclaimableCpus);
     }
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
@@ -727,7 +727,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="reservedCpus", refs={Double.class}, tree="[0]")
-    private Output<Double> reservedCpus;
+    private Output</* @Nullable */ Double> reservedCpus;
 
     /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
@@ -735,22 +735,22 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    public Output<Double> reservedCpus() {
-        return this.reservedCpus;
+    public Output<Optional<Double>> reservedCpus() {
+        return Codegen.optional(this.reservedCpus);
     }
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
-    private Output<String> role;
+    private Output</* @Nullable */ String> role;
 
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public Output<String> role() {
-        return this.role;
+    public Output<Optional<String>> role() {
+        return Codegen.optional(this.role);
     }
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
@@ -771,14 +771,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="serviceLevelAgreementType", refs={String.class}, tree="[0]")
-    private Output<String> serviceLevelAgreementType;
+    private Output</* @Nullable */ String> serviceLevelAgreementType;
 
     /**
      * @return The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      * 
      */
-    public Output<String> serviceLevelAgreementType() {
-        return this.serviceLevelAgreementType;
+    public Output<Optional<String>> serviceLevelAgreementType() {
+        return Codegen.optional(this.serviceLevelAgreementType);
     }
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
@@ -788,7 +788,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * 
      */
     @Export(name="standbyMaintenanceBufferInDays", refs={Integer.class}, tree="[0]")
-    private Output<Integer> standbyMaintenanceBufferInDays;
+    private Output</* @Nullable */ Integer> standbyMaintenanceBufferInDays;
 
     /**
      * @return (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
@@ -797,92 +797,92 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Integer> standbyMaintenanceBufferInDays() {
-        return this.standbyMaintenanceBufferInDays;
+    public Output<Optional<Integer>> standbyMaintenanceBufferInDays() {
+        return Codegen.optional(this.standbyMaintenanceBufferInDays);
     }
     /**
      * The current state of the Autonomous Container Database.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Autonomous Container Database.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the Autonomous Container Database was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Autonomous Container Database was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
     @Export(name="timeSnapshotStandbyRevert", refs={String.class}, tree="[0]")
-    private Output<String> timeSnapshotStandbyRevert;
+    private Output</* @Nullable */ String> timeSnapshotStandbyRevert;
 
     /**
      * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
-    public Output<String> timeSnapshotStandbyRevert() {
-        return this.timeSnapshotStandbyRevert;
+    public Output<Optional<String>> timeSnapshotStandbyRevert() {
+        return Codegen.optional(this.timeSnapshotStandbyRevert);
     }
     /**
      * The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     @Export(name="totalCpus", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalCpus;
+    private Output</* @Nullable */ Integer> totalCpus;
 
     /**
      * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Output<Integer> totalCpus() {
-        return this.totalCpus;
+    public Output<Optional<Integer>> totalCpus() {
+        return Codegen.optional(this.totalCpus);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
-    private Output<String> vaultId;
+    private Output</* @Nullable */ String> vaultId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public Output<String> vaultId() {
-        return this.vaultId;
+    public Output<Optional<String>> vaultId() {
+        return Codegen.optional(this.vaultId);
     }
     /**
      * (Updatable) The next maintenance version preference.
      * 
      */
     @Export(name="versionPreference", refs={String.class}, tree="[0]")
-    private Output<String> versionPreference;
+    private Output</* @Nullable */ String> versionPreference;
 
     /**
      * @return (Updatable) The next maintenance version preference.
      * 
      */
-    public Output<String> versionPreference() {
-        return this.versionPreference;
+    public Output<Optional<String>> versionPreference() {
+        return Codegen.optional(this.versionPreference);
     }
 
     /**

@@ -6,30 +6,32 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiContentResult {
     private String apiId;
-    private String content;
+    private @Nullable String content;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetApiContentResult() {}
     public String apiId() {
         return this.apiId;
     }
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -42,8 +44,8 @@ public final class GetApiContentResult {
     @CustomType.Builder
     public static final class Builder {
         private String apiId;
-        private String content;
-        private String id;
+        private @Nullable String content;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetApiContentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -58,13 +60,13 @@ public final class GetApiContentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetApiContentResult build() {

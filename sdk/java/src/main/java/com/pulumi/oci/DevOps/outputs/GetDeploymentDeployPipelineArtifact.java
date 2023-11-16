@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployPipelineArtifactItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentDeployPipelineArtifact {
@@ -14,7 +15,7 @@ public final class GetDeploymentDeployPipelineArtifact {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private List<GetDeploymentDeployPipelineArtifactItem> items;
+    private @Nullable List<GetDeploymentDeployPipelineArtifactItem> items;
 
     private GetDeploymentDeployPipelineArtifact() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentDeployPipelineArtifact {
      * 
      */
     public List<GetDeploymentDeployPipelineArtifactItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentDeployPipelineArtifact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentDeployPipelineArtifactItem> items;
+        private @Nullable List<GetDeploymentDeployPipelineArtifactItem> items;
         public Builder() {}
         public Builder(GetDeploymentDeployPipelineArtifact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentDeployPipelineArtifact {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentDeployPipelineArtifactItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentDeployPipelineArtifactItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentDeployPipelineArtifactItem... items) {

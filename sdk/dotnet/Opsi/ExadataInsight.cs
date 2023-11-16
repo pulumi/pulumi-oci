@@ -115,43 +115,43 @@ namespace Pulumi.Oci.Opsi
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// OPSI Enterprise Manager Bridge OCID
         /// </summary>
         [Output("enterpriseManagerBridgeId")]
-        public Output<string> EnterpriseManagerBridgeId { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerBridgeId { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Display Name
         /// </summary>
         [Output("enterpriseManagerEntityDisplayName")]
-        public Output<string> EnterpriseManagerEntityDisplayName { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
         [Output("enterpriseManagerEntityIdentifier")]
-        public Output<string> EnterpriseManagerEntityIdentifier { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Name
         /// </summary>
         [Output("enterpriseManagerEntityName")]
-        public Output<string> EnterpriseManagerEntityName { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityName { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Entity Type
         /// </summary>
         [Output("enterpriseManagerEntityType")]
-        public Output<string> EnterpriseManagerEntityType { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerEntityType { get; private set; } = null!;
 
         /// <summary>
         /// Enterprise Manager Unique Identifier
         /// </summary>
         [Output("enterpriseManagerIdentifier")]
-        public Output<string> EnterpriseManagerIdentifier { get; private set; } = null!;
+        public Output<string?> EnterpriseManagerIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// Source of the database entity.
@@ -163,58 +163,58 @@ namespace Pulumi.Oci.Opsi
         /// The user-friendly name for the Exadata system. The name does not have to be unique.
         /// </summary>
         [Output("exadataDisplayName")]
-        public Output<string> ExadataDisplayName { get; private set; } = null!;
+        public Output<string?> ExadataDisplayName { get; private set; } = null!;
 
         [Output("exadataInfraId")]
-        public Output<string> ExadataInfraId { get; private set; } = null!;
+        public Output<string?> ExadataInfraId { get; private set; } = null!;
 
         [Output("exadataInfraResourceType")]
-        public Output<string> ExadataInfraResourceType { get; private set; } = null!;
+        public Output<string?> ExadataInfraResourceType { get; private set; } = null!;
 
         /// <summary>
         /// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         /// </summary>
         [Output("exadataName")]
-        public Output<string> ExadataName { get; private set; } = null!;
+        public Output<string?> ExadataName { get; private set; } = null!;
 
         /// <summary>
         /// Exadata rack type.
         /// </summary>
         [Output("exadataRackType")]
-        public Output<string> ExadataRackType { get; private set; } = null!;
+        public Output<string?> ExadataRackType { get; private set; } = null!;
 
         [Output("exadataShape")]
-        public Output<string> ExadataShape { get; private set; } = null!;
+        public Output<string?> ExadataShape { get; private set; } = null!;
 
         /// <summary>
         /// Operations Insights internal representation of the the Exadata system type.
         /// </summary>
         [Output("exadataType")]
-        public Output<string> ExadataType { get; private set; } = null!;
+        public Output<string?> ExadataType { get; private set; } = null!;
 
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
         /// </summary>
         [Output("isAutoSyncEnabled")]
-        public Output<bool> IsAutoSyncEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutoSyncEnabled { get; private set; } = null!;
 
         /// <summary>
         /// true if virtualization is used in the Exadata system
         /// </summary>
         [Output("isVirtualizedExadata")]
-        public Output<bool> IsVirtualizedExadata { get; private set; } = null!;
+        public Output<bool?> IsVirtualizedExadata { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         [Output("memberVmClusterDetails")]
         public Output<ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetail>> MemberVmClusterDetails { get; private set; } = null!;
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.Opsi
         /// The current state of the Exadata insight.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -232,25 +232,25 @@ namespace Pulumi.Oci.Opsi
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the Exadata insight was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

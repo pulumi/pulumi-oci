@@ -64,13 +64,13 @@ export interface GetClusterKubeConfigResult {
     /**
      * content of the Kubeconfig YAML for the cluster.
      */
-    readonly content: string;
+    readonly content?: string;
     readonly endpoint?: string;
     readonly expiration?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly tokenVersion?: string;
 }
 /**

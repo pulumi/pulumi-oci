@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
         /// </summary>
-        public readonly string ConcurrentMaintenance;
+        public readonly string? ConcurrentMaintenance;
         /// <summary>
         /// When True, monthly patching is enabled for the environment family.
         /// </summary>
-        public readonly bool IsMonthlyPatchingEnabled;
+        public readonly bool? IsMonthlyPatchingEnabled;
         /// <summary>
         /// The quarterly maintenance month group schedule of the Fusion environment family.
         /// </summary>
-        public readonly string QuarterlyUpgradeBeginTimes;
+        public readonly string? QuarterlyUpgradeBeginTimes;
 
         [OutputConstructor]
         private GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult(
-            string concurrentMaintenance,
+            string? concurrentMaintenance,
 
-            bool isMonthlyPatchingEnabled,
+            bool? isMonthlyPatchingEnabled,
 
-            string quarterlyUpgradeBeginTimes)
+            string? quarterlyUpgradeBeginTimes)
         {
             ConcurrentMaintenance = concurrentMaintenance;
             IsMonthlyPatchingEnabled = isMonthlyPatchingEnabled;

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter {
@@ -14,7 +16,7 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
      * @return The database user who last updated the filter value.
      * 
      */
-    private String modifiedBy;
+    private @Nullable String modifiedBy;
     /**
      * @return The name of the automatic capture filter.
      * * AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
@@ -23,30 +25,30 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
      * * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The time the filter value was last updated.
      * 
      */
-    private String timeLastModified;
+    private @Nullable String timeLastModified;
     /**
      * @return A list of filter values to exclude.
      * 
      */
-    private List<String> valuesToExcludes;
+    private @Nullable List<String> valuesToExcludes;
     /**
      * @return A list of filter values to include.
      * 
      */
-    private List<String> valuesToIncludes;
+    private @Nullable List<String> valuesToIncludes;
 
     private GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter() {}
     /**
      * @return The database user who last updated the filter value.
      * 
      */
-    public String modifiedBy() {
-        return this.modifiedBy;
+    public Optional<String> modifiedBy() {
+        return Optional.ofNullable(this.modifiedBy);
     }
     /**
      * @return The name of the automatic capture filter.
@@ -56,29 +58,29 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
      * * AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The time the filter value was last updated.
      * 
      */
-    public String timeLastModified() {
-        return this.timeLastModified;
+    public Optional<String> timeLastModified() {
+        return Optional.ofNullable(this.timeLastModified);
     }
     /**
      * @return A list of filter values to exclude.
      * 
      */
     public List<String> valuesToExcludes() {
-        return this.valuesToExcludes;
+        return this.valuesToExcludes == null ? List.of() : this.valuesToExcludes;
     }
     /**
      * @return A list of filter values to include.
      * 
      */
     public List<String> valuesToIncludes() {
-        return this.valuesToIncludes;
+        return this.valuesToIncludes == null ? List.of() : this.valuesToIncludes;
     }
 
     public static Builder builder() {
@@ -90,11 +92,11 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
     }
     @CustomType.Builder
     public static final class Builder {
-        private String modifiedBy;
-        private String name;
-        private String timeLastModified;
-        private List<String> valuesToExcludes;
-        private List<String> valuesToIncludes;
+        private @Nullable String modifiedBy;
+        private @Nullable String name;
+        private @Nullable String timeLastModified;
+        private @Nullable List<String> valuesToExcludes;
+        private @Nullable List<String> valuesToIncludes;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -106,31 +108,31 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
         }
 
         @CustomType.Setter
-        public Builder modifiedBy(String modifiedBy) {
-            this.modifiedBy = Objects.requireNonNull(modifiedBy);
+        public Builder modifiedBy(@Nullable String modifiedBy) {
+            this.modifiedBy = modifiedBy;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+        public Builder timeLastModified(@Nullable String timeLastModified) {
+            this.timeLastModified = timeLastModified;
             return this;
         }
         @CustomType.Setter
-        public Builder valuesToExcludes(List<String> valuesToExcludes) {
-            this.valuesToExcludes = Objects.requireNonNull(valuesToExcludes);
+        public Builder valuesToExcludes(@Nullable List<String> valuesToExcludes) {
+            this.valuesToExcludes = valuesToExcludes;
             return this;
         }
         public Builder valuesToExcludes(String... valuesToExcludes) {
             return valuesToExcludes(List.of(valuesToExcludes));
         }
         @CustomType.Setter
-        public Builder valuesToIncludes(List<String> valuesToIncludes) {
-            this.valuesToIncludes = Objects.requireNonNull(valuesToIncludes);
+        public Builder valuesToIncludes(@Nullable List<String> valuesToIncludes) {
+            this.valuesToIncludes = valuesToIncludes;
             return this;
         }
         public Builder valuesToIncludes(String... valuesToIncludes) {

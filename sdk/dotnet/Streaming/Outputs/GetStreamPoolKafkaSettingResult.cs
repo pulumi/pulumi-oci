@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Streaming.Outputs
         /// <summary>
         /// Enable auto creation of topic on the server.
         /// </summary>
-        public readonly bool AutoCreateTopicsEnable;
+        public readonly bool? AutoCreateTopicsEnable;
         /// <summary>
         /// Bootstrap servers.
         /// </summary>
-        public readonly string BootstrapServers;
+        public readonly string? BootstrapServers;
         /// <summary>
         /// The number of hours to keep a log file before deleting it (in hours).
         /// </summary>
-        public readonly int LogRetentionHours;
+        public readonly int? LogRetentionHours;
         /// <summary>
         /// The default number of log partitions per topic.
         /// </summary>
-        public readonly int NumPartitions;
+        public readonly int? NumPartitions;
 
         [OutputConstructor]
         private GetStreamPoolKafkaSettingResult(
-            bool autoCreateTopicsEnable,
+            bool? autoCreateTopicsEnable,
 
-            string bootstrapServers,
+            string? bootstrapServers,
 
-            int logRetentionHours,
+            int? logRetentionHours,
 
-            int numPartitions)
+            int? numPartitions)
         {
             AutoCreateTopicsEnable = autoCreateTopicsEnable;
             BootstrapServers = bootstrapServers;

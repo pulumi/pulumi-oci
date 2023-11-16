@@ -23,17 +23,6 @@ class PolicyArgs:
                  version_date: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Policy resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        :param pulumi.Input[str] version_date: (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "description", description)
@@ -50,9 +39,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -62,9 +48,6 @@ class PolicyArgs:
     @property
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -74,9 +57,6 @@ class PolicyArgs:
     @property
     @pulumi.getter
     def statements(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        """
         return pulumi.get(self, "statements")
 
     @statements.setter
@@ -86,9 +66,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -98,9 +75,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -110,9 +84,6 @@ class PolicyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -122,13 +93,6 @@ class PolicyArgs:
     @property
     @pulumi.getter(name="versionDate")
     def version_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version_date")
 
     @version_date.setter
@@ -154,20 +118,6 @@ class _PolicyState:
                  version_date: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Policy resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] name: The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        :param pulumi.Input[str] state: The policy's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        :param pulumi.Input[str] time_created: Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] version_date: (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if e_tag is not None:
             warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
@@ -220,9 +170,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -232,9 +179,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -244,9 +188,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -256,9 +197,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -268,9 +206,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="inactiveState")
     def inactive_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
         return pulumi.get(self, "inactive_state")
 
     @inactive_state.setter
@@ -292,9 +227,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -316,9 +248,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The policy's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -328,9 +257,6 @@ class _PolicyState:
     @property
     @pulumi.getter
     def statements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        """
         return pulumi.get(self, "statements")
 
     @statements.setter
@@ -340,9 +266,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -352,13 +275,6 @@ class _PolicyState:
     @property
     @pulumi.getter(name="versionDate")
     def version_date(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version_date")
 
     @version_date.setter
@@ -380,62 +296,9 @@ class Policy(pulumi.CustomResource):
                  version_date: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Policy resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
-        If you're new to policies, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-        You must specify a *name* for the policy, which must be unique across all policies in your tenancy
-        and cannot be changed.
-
-        You must also specify a *description* for the policy (although it can be an empty string). It does not
-        have to be unique, and you can change it anytime with [UpdatePolicy](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy).
-
-        You must specify one or more policy statements in the statements array. For information about writing
-        policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and
-        [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        New policies take effect typically within 10 seconds.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_policy = oci.identity.Policy("testPolicy",
-            compartment_id=var["tenancy_ocid"],
-            description=var["policy_description"],
-            statements=var["policy_statements"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            version_date=var["policy_version_date"])
-        ```
-
-        ## Import
-
-        Policies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/policy:Policy test_policy "id"
-        ```
-
+        Create a Policy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] name: The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        :param pulumi.Input[str] version_date: (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -444,49 +307,7 @@ class Policy(pulumi.CustomResource):
                  args: PolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Policy resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
-        If you're new to policies, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-        You must specify a *name* for the policy, which must be unique across all policies in your tenancy
-        and cannot be changed.
-
-        You must also specify a *description* for the policy (although it can be an empty string). It does not
-        have to be unique, and you can change it anytime with [UpdatePolicy](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy).
-
-        You must specify one or more policy statements in the statements array. For information about writing
-        policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and
-        [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        New policies take effect typically within 10 seconds.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_policy = oci.identity.Policy("testPolicy",
-            compartment_id=var["tenancy_ocid"],
-            description=var["policy_description"],
-            statements=var["policy_statements"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            version_date=var["policy_version_date"])
-        ```
-
-        ## Import
-
-        Policies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/policy:Policy test_policy "id"
-        ```
-
+        Create a Policy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -567,20 +388,6 @@ class Policy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] name: The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        :param pulumi.Input[str] state: The policy's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] statements: (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        :param pulumi.Input[str] time_created: Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] version_date: (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -603,7 +410,7 @@ class Policy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="ETag")
-    def e_tag(self) -> pulumi.Output[str]:
+    def e_tag(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""e_tag is deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -612,46 +419,31 @@ class Policy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment containing the policy (either the tenancy or another compartment).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> pulumi.Output[str]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter(name="lastUpdateETag")
-    def last_update_e_tag(self) -> pulumi.Output[str]:
+    def last_update_e_tag(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""last_update_e_tag is deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -660,14 +452,11 @@ class Policy(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="policyHash")
-    def policy_hash(self) -> pulumi.Output[str]:
+    def policy_hash(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""policy_hash is deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -675,37 +464,21 @@ class Policy(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The policy's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def statements(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
-        """
         return pulumi.get(self, "statements")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="versionDate")
-    def version_date(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def version_date(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version_date")
 

@@ -57,11 +57,11 @@ export class SqlEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The description of CreateSQLEndpointDetails.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * The SQL Endpoint name, which can be changed.
      */
@@ -73,7 +73,7 @@ export class SqlEndpoint extends pulumi.CustomResource {
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    public readonly driverShapeConfig!: pulumi.Output<outputs.DataFlow.SqlEndpointDriverShapeConfig>;
+    public readonly driverShapeConfig!: pulumi.Output<outputs.DataFlow.SqlEndpointDriverShapeConfig | undefined>;
     /**
      * The shape of the SQL Endpoint worker instance.
      */
@@ -81,23 +81,23 @@ export class SqlEndpoint extends pulumi.CustomResource {
     /**
      * This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    public readonly executorShapeConfig!: pulumi.Output<outputs.DataFlow.SqlEndpointExecutorShapeConfig>;
+    public readonly executorShapeConfig!: pulumi.Output<outputs.DataFlow.SqlEndpointExecutorShapeConfig | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      */
-    public /*out*/ readonly jdbcEndpointUrl!: pulumi.Output<string>;
+    public /*out*/ readonly jdbcEndpointUrl!: pulumi.Output<string | undefined>;
     /**
      * Oracle Cloud Infrastructure lake OCID
      */
-    public /*out*/ readonly lakeId!: pulumi.Output<string>;
+    public /*out*/ readonly lakeId!: pulumi.Output<string | undefined>;
     /**
      * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      */
-    public /*out*/ readonly lastAcceptedRequestToken!: pulumi.Output<string>;
+    public /*out*/ readonly lastAcceptedRequestToken!: pulumi.Output<string | undefined>;
     /**
      * The maximum number of executors.
      */
@@ -117,7 +117,7 @@ export class SqlEndpoint extends pulumi.CustomResource {
     /**
      * The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    public readonly sparkAdvancedConfigurations!: pulumi.Output<{[key: string]: any}>;
+    public readonly sparkAdvancedConfigurations!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The version of the SQL Endpoint.
      */
@@ -125,23 +125,23 @@ export class SqlEndpoint extends pulumi.CustomResource {
     /**
      * The current state of the Sql Endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    public /*out*/ readonly stateMessage!: pulumi.Output<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
      *
@@ -149,7 +149,7 @@ export class SqlEndpoint extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly warehouseBucketUri!: pulumi.Output<string>;
+    public /*out*/ readonly warehouseBucketUri!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SqlEndpoint resource with the given unique name, arguments, and options.

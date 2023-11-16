@@ -108,31 +108,31 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The CPU architecture of the target instances.
         /// </summary>
-        public readonly string ArchType;
+        public readonly string? ArchType;
         /// <summary>
         /// The OCID of the tenancy containing the lifecycle stage.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Software source description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Software source name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the software source.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the lifecycle environment for the lifecycle stage.
         /// </summary>
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The operating system type of the target instances.
         /// </summary>
-        public readonly string OsFamily;
+        public readonly string? OsFamily;
         /// <summary>
         /// User specified list of lifecycle stages to be created for the lifecycle environment.
         /// </summary>
@@ -152,57 +152,57 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The current state of the lifecycle environment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeModified;
+        public readonly string? TimeModified;
         /// <summary>
         /// The software source vendor name.
         /// </summary>
-        public readonly string VendorName;
+        public readonly string? VendorName;
 
         [OutputConstructor]
         private GetLifecycleEnvironmentResult(
-            string archType,
+            string? archType,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             string lifecycleEnvironmentId,
 
             ImmutableArray<Outputs.GetLifecycleEnvironmentManagedInstanceIdResult> managedInstanceIds,
 
-            string osFamily,
+            string? osFamily,
 
             ImmutableArray<Outputs.GetLifecycleEnvironmentStageResult> stages,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeModified,
+            string? timeModified,
 
-            string vendorName)
+            string? vendorName)
         {
             ArchType = archType;
             CompartmentId = compartmentId;

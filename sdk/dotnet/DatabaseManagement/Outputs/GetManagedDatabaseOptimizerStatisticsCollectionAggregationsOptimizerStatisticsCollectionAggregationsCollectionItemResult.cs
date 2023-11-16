@@ -16,71 +16,71 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of tasks or objects for which statistics gathering is completed.
         /// </summary>
-        public readonly int Completed;
+        public readonly int? Completed;
         /// <summary>
         /// The number of tasks or objects for which statistics gathering failed.
         /// </summary>
-        public readonly int Failed;
+        public readonly int? Failed;
         /// <summary>
         /// The optimizer statistics tasks grouped by type.
         /// </summary>
-        public readonly string GroupBy;
+        public readonly string? GroupBy;
         /// <summary>
         /// The number of tasks or objects for which statistics gathering is in progress.
         /// </summary>
-        public readonly int InProgress;
+        public readonly int? InProgress;
         /// <summary>
         /// The number of tasks or objects for which statistics are yet to be gathered.
         /// </summary>
-        public readonly int Pending;
+        public readonly int? Pending;
         /// <summary>
         /// The number of tasks or objects for which statistics gathering was skipped.
         /// </summary>
-        public readonly int Skipped;
+        public readonly int? Skipped;
         /// <summary>
         /// Indicates the end of the hour as the statistics are aggregated per hour.
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Indicates the start of the hour as the statistics are aggregated per hour.
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
         /// <summary>
         /// The number of tasks or objects for which statistics gathering timed out.
         /// </summary>
-        public readonly int TimedOut;
+        public readonly int? TimedOut;
         /// <summary>
         /// The total number of tasks or objects for which statistics collection is finished. This number is the sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped, timedOut, and unknown.
         /// </summary>
-        public readonly int Total;
+        public readonly int? Total;
         /// <summary>
         /// The number of tasks or objects for which the status of statistics gathering is unknown.
         /// </summary>
-        public readonly int Unknown;
+        public readonly int? Unknown;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItemResult(
-            int completed,
+            int? completed,
 
-            int failed,
+            int? failed,
 
-            string groupBy,
+            string? groupBy,
 
-            int inProgress,
+            int? inProgress,
 
-            int pending,
+            int? pending,
 
-            int skipped,
+            int? skipped,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart,
+            string? timeStart,
 
-            int timedOut,
+            int? timedOut,
 
-            int total,
+            int? total,
 
-            int unknown)
+            int? unknown)
         {
             Completed = completed;
             Failed = failed;

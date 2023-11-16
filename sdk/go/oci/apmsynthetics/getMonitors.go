@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -86,9 +85,9 @@ type GetMonitorsResult struct {
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetMonitorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                        string `pulumi:"id"`
-	IsMaintenanceWindowActive *bool  `pulumi:"isMaintenanceWindowActive"`
-	IsMaintenanceWindowSet    *bool  `pulumi:"isMaintenanceWindowSet"`
+	Id                        *string `pulumi:"id"`
+	IsMaintenanceWindowActive *bool   `pulumi:"isMaintenanceWindowActive"`
+	IsMaintenanceWindowSet    *bool   `pulumi:"isMaintenanceWindowSet"`
 	// The list of monitor_collection.
 	MonitorCollections []GetMonitorsMonitorCollection `pulumi:"monitorCollections"`
 	// Type of monitor.
@@ -153,12 +152,6 @@ func (o GetMonitorsResultOutput) ToGetMonitorsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetMonitorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitorsResult] {
-	return pulumix.Output[GetMonitorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitorsResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -173,8 +166,8 @@ func (o GetMonitorsResultOutput) Filters() GetMonitorsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMonitorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMonitorsResultOutput) IsMaintenanceWindowActive() pulumi.BoolPtrOutput {

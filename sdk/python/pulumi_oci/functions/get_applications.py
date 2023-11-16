@@ -45,26 +45,17 @@ class GetApplicationsResult:
 
     @property
     @pulumi.getter
-    def applications(self) -> Sequence['outputs.GetApplicationsApplicationResult']:
-        """
-        The list of applications.
-        """
+    def applications(self) -> Optional[Sequence['outputs.GetApplicationsApplicationResult']]:
         return pulumi.get(self, "applications")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the application.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the application. The display name is unique within the compartment containing the application.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -75,17 +66,11 @@ class GetApplicationsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the application.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_applications(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationsResult:
     """
-    This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
-
-    Lists applications for a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_applications = oci.Functions.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        id=var["application_id"],
-        state=var["application_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
-    :param str display_name: A filter to return only applications with display names that match the display name string. Matching is exact.
-    :param str id: A filter to return only applications with the specified OCID.
-    :param str state: A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationsResult]:
     """
-    This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
-
-    Lists applications for a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_applications = oci.Functions.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        id=var["application_id"],
-        state=var["application_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
-    :param str display_name: A filter to return only applications with display names that match the display name string. Matching is exact.
-    :param str id: A filter to return only applications with the specified OCID.
-    :param str state: A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
+    Use this data source to access information about an existing resource.
     """
     ...

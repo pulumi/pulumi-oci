@@ -18,12 +18,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
                  operations_insights_warehouse_wallet_password: pulumi.Input[str]):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseDownloadWarehouseWallet resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
         pulumi.set(__self__, "operations_insights_warehouse_wallet_password", operations_insights_warehouse_wallet_password)
@@ -31,9 +25,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
-        """
-        Unique Operations Insights Warehouse identifier
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -43,13 +34,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
     def operations_insights_warehouse_wallet_password(self) -> pulumi.Input[str]:
-        """
-        User provided ADW wallet password for the Operations Insights Warehouse.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 
     @operations_insights_warehouse_wallet_password.setter
@@ -64,12 +48,6 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
                  operations_insights_warehouse_wallet_password: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseDownloadWarehouseWallet resources.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if operations_insights_warehouse_id is not None:
             pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
@@ -79,9 +57,6 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Operations Insights Warehouse identifier
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -91,13 +66,6 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
     def operations_insights_warehouse_wallet_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        User provided ADW wallet password for the Operations Insights Warehouse.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 
     @operations_insights_warehouse_wallet_password.setter
@@ -114,37 +82,9 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
                  operations_insights_warehouse_wallet_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_operations_insights_warehouse_download_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet",
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            operations_insights_warehouse_wallet_password=var["operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password"])
-        ```
-
-        ## Import
-
-        OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
-        ```
-
+        Create a OperationsInsightsWarehouseDownloadWarehouseWallet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -153,29 +93,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseDownloadWarehouseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_operations_insights_warehouse_download_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet",
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            operations_insights_warehouse_wallet_password=var["operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password"])
-        ```
-
-        ## Import
-
-        OperationsInsightsWarehouseDownloadWarehouseWallet can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet test_operations_insights_warehouse_download_warehouse_wallet "id"
-        ```
-
+        Create a OperationsInsightsWarehouseDownloadWarehouseWallet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OperationsInsightsWarehouseDownloadWarehouseWalletArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -229,12 +147,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -247,20 +159,10 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
-        """
-        Unique Operations Insights Warehouse identifier
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
     def operations_insights_warehouse_wallet_password(self) -> pulumi.Output[str]:
-        """
-        User provided ADW wallet password for the Operations Insights Warehouse.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_wallet_password")
 

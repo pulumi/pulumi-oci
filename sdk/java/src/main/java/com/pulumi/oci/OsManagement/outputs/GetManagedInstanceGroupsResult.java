@@ -29,12 +29,12 @@ public final class GetManagedInstanceGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of managed_instance_groups.
      * 
      */
-    private List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
+    private @Nullable List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
     /**
      * @return The Operating System type of the managed instance.
      * 
@@ -68,15 +68,15 @@ public final class GetManagedInstanceGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of managed_instance_groups.
      * 
      */
     public List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups() {
-        return this.managedInstanceGroups;
+        return this.managedInstanceGroups == null ? List.of() : this.managedInstanceGroups;
     }
     /**
      * @return The Operating System type of the managed instance.
@@ -105,8 +105,8 @@ public final class GetManagedInstanceGroupsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetManagedInstanceGroupsFilter> filters;
-        private String id;
-        private List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
+        private @Nullable String id;
+        private @Nullable List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups;
         private @Nullable String osFamily;
         private @Nullable String state;
         public Builder() {}
@@ -140,13 +140,13 @@ public final class GetManagedInstanceGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceGroups(List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups) {
-            this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
+        public Builder managedInstanceGroups(@Nullable List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups) {
+            this.managedInstanceGroups = managedInstanceGroups;
             return this;
         }
         public Builder managedInstanceGroups(GetManagedInstanceGroupsManagedInstanceGroup... managedInstanceGroups) {

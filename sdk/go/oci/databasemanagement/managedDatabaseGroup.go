@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
@@ -65,17 +64,17 @@ type ManagedDatabaseGroup struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The information specified by the user about the Managed Database Group.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
 	ManagedDatabases ManagedDatabaseGroupManagedDatabaseArrayOutput `pulumi:"managedDatabases"`
 	// The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current lifecycle state of the Managed Database Group.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the Managed Database Group was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the Managed Database Group was last updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewManagedDatabaseGroup registers a new resource with the given unique name, arguments, and options.
@@ -194,12 +193,6 @@ func (i *ManagedDatabaseGroup) ToManagedDatabaseGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseGroupOutput)
 }
 
-func (i *ManagedDatabaseGroup) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabaseGroup] {
-	return pulumix.Output[*ManagedDatabaseGroup]{
-		OutputState: i.ToManagedDatabaseGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedDatabaseGroupArrayInput is an input type that accepts ManagedDatabaseGroupArray and ManagedDatabaseGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabaseGroupArrayInput` via:
 //
@@ -223,12 +216,6 @@ func (i ManagedDatabaseGroupArray) ToManagedDatabaseGroupArrayOutput() ManagedDa
 
 func (i ManagedDatabaseGroupArray) ToManagedDatabaseGroupArrayOutputWithContext(ctx context.Context) ManagedDatabaseGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseGroupArrayOutput)
-}
-
-func (i ManagedDatabaseGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabaseGroup] {
-	return pulumix.Output[[]*ManagedDatabaseGroup]{
-		OutputState: i.ToManagedDatabaseGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedDatabaseGroupMapInput is an input type that accepts ManagedDatabaseGroupMap and ManagedDatabaseGroupMapOutput values.
@@ -256,12 +243,6 @@ func (i ManagedDatabaseGroupMap) ToManagedDatabaseGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabaseGroupMapOutput)
 }
 
-func (i ManagedDatabaseGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabaseGroup] {
-	return pulumix.Output[map[string]*ManagedDatabaseGroup]{
-		OutputState: i.ToManagedDatabaseGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedDatabaseGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedDatabaseGroupOutput) ElementType() reflect.Type {
@@ -276,20 +257,14 @@ func (o ManagedDatabaseGroupOutput) ToManagedDatabaseGroupOutputWithContext(ctx 
 	return o
 }
 
-func (o ManagedDatabaseGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabaseGroup] {
-	return pulumix.Output[*ManagedDatabaseGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 func (o ManagedDatabaseGroupOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The information specified by the user about the Managed Database Group.
-func (o ManagedDatabaseGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ManagedDatabaseGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
@@ -305,18 +280,18 @@ func (o ManagedDatabaseGroupOutput) Name() pulumi.StringOutput {
 }
 
 // The current lifecycle state of the Managed Database Group.
-func (o ManagedDatabaseGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ManagedDatabaseGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Managed Database Group was created.
-func (o ManagedDatabaseGroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ManagedDatabaseGroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Managed Database Group was last updated.
-func (o ManagedDatabaseGroupOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ManagedDatabaseGroupOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedDatabaseGroup) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ManagedDatabaseGroupArrayOutput struct{ *pulumi.OutputState }
@@ -331,12 +306,6 @@ func (o ManagedDatabaseGroupArrayOutput) ToManagedDatabaseGroupArrayOutput() Man
 
 func (o ManagedDatabaseGroupArrayOutput) ToManagedDatabaseGroupArrayOutputWithContext(ctx context.Context) ManagedDatabaseGroupArrayOutput {
 	return o
-}
-
-func (o ManagedDatabaseGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabaseGroup] {
-	return pulumix.Output[[]*ManagedDatabaseGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedDatabaseGroupArrayOutput) Index(i pulumi.IntInput) ManagedDatabaseGroupOutput {
@@ -357,12 +326,6 @@ func (o ManagedDatabaseGroupMapOutput) ToManagedDatabaseGroupMapOutput() Managed
 
 func (o ManagedDatabaseGroupMapOutput) ToManagedDatabaseGroupMapOutputWithContext(ctx context.Context) ManagedDatabaseGroupMapOutput {
 	return o
-}
-
-func (o ManagedDatabaseGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabaseGroup] {
-	return pulumix.Output[map[string]*ManagedDatabaseGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedDatabaseGroupMapOutput) MapIndex(k pulumi.StringInput) ManagedDatabaseGroupOutput {

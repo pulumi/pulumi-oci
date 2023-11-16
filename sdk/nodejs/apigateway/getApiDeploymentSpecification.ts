@@ -48,19 +48,19 @@ export interface GetApiDeploymentSpecificationResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
      */
-    readonly loggingPolicies: outputs.ApiGateway.GetApiDeploymentSpecificationLoggingPolicy[];
+    readonly loggingPolicies?: outputs.ApiGateway.GetApiDeploymentSpecificationLoggingPolicy[];
     /**
      * Behavior applied to any requests received by the API on this route.
      */
-    readonly requestPolicies: outputs.ApiGateway.GetApiDeploymentSpecificationRequestPolicy[];
+    readonly requestPolicies?: outputs.ApiGateway.GetApiDeploymentSpecificationRequestPolicy[];
     /**
      * A list of routes that this API exposes.
      */
-    readonly routes: outputs.ApiGateway.GetApiDeploymentSpecificationRoute[];
+    readonly routes?: outputs.ApiGateway.GetApiDeploymentSpecificationRoute[];
 }
 /**
  * This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.

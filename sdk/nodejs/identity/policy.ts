@@ -80,7 +80,7 @@ export class Policy extends pulumi.CustomResource {
     /**
      * @deprecated The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly ETag!: pulumi.Output<string>;
+    public /*out*/ readonly ETag!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment containing the policy (either the tenancy or another compartment).
      */
@@ -88,7 +88,7 @@ export class Policy extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description you assign to the policy during creation. Does not have to be unique, and it's changeable.
      */
@@ -96,15 +96,15 @@ export class Policy extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * @deprecated The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly lastUpdateETag!: pulumi.Output<string>;
+    public /*out*/ readonly lastUpdateETag!: pulumi.Output<string | undefined>;
     /**
      * The name you assign to the policy during creation. The name must be unique across all policies in the tenancy and cannot be changed.
      */
@@ -112,11 +112,11 @@ export class Policy extends pulumi.CustomResource {
     /**
      * @deprecated The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly policyHash!: pulumi.Output<string>;
+    public /*out*/ readonly policyHash!: pulumi.Output<string | undefined>;
     /**
      * The policy's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of policy statements written in the policy language. See [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm) and [Common Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm).
      */
@@ -124,7 +124,7 @@ export class Policy extends pulumi.CustomResource {
     /**
      * Date and time the policy was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The version of the policy. If null or set to an empty string, when a request comes in for authorization, the policy will be evaluated according to the current behavior of the services at that moment. If set to a particular date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date. 
      *
@@ -132,7 +132,7 @@ export class Policy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly versionDate!: pulumi.Output<string>;
+    public readonly versionDate!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Policy resource with the given unique name, arguments, and options.

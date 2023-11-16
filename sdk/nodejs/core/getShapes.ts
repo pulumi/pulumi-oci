@@ -65,12 +65,12 @@ export interface GetShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageId?: string;
     /**
      * The list of shapes.
      */
-    readonly shapes: outputs.Core.GetShapesShape[];
+    readonly shapes?: outputs.Core.GetShapesShape[];
 }
 /**
  * This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.

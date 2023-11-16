@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
@@ -63,7 +62,7 @@ type GetExternalExadataStorageServerTopSqlCpuActivityResult struct {
 	Activities                     []GetExternalExadataStorageServerTopSqlCpuActivityActivity `pulumi:"activities"`
 	ExternalExadataStorageServerId string                                                     `pulumi:"externalExadataStorageServerId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalExadataStorageServerTopSqlCpuActivityOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerTopSqlCpuActivityOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerTopSqlCpuActivityResultOutput {
@@ -104,12 +103,6 @@ func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) ToGetExter
 	return o
 }
 
-func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult] {
-	return pulumix.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of sql CPU activity.
 func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) Activities() GetExternalExadataStorageServerTopSqlCpuActivityActivityArrayOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServerTopSqlCpuActivityResult) []GetExternalExadataStorageServerTopSqlCpuActivityActivity {
@@ -124,8 +117,8 @@ func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) ExternalEx
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerTopSqlCpuActivityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerTopSqlCpuActivityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerTopSqlCpuActivityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

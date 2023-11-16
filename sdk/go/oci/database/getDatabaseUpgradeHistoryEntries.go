@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Upgrade History Entries in Oracle Cloud Infrastructure Database service.
@@ -71,7 +70,7 @@ type GetDatabaseUpgradeHistoryEntriesResult struct {
 	DatabaseUpgradeHistoryEntries []GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry `pulumi:"databaseUpgradeHistoryEntries"`
 	Filters                       []GetDatabaseUpgradeHistoryEntriesFilter                      `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
 	State         *string `pulumi:"state"`
 	UpgradeAction *string `pulumi:"upgradeAction"`
@@ -120,12 +119,6 @@ func (o GetDatabaseUpgradeHistoryEntriesResultOutput) ToGetDatabaseUpgradeHistor
 	return o
 }
 
-func (o GetDatabaseUpgradeHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseUpgradeHistoryEntriesResult] {
-	return pulumix.Output[GetDatabaseUpgradeHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseUpgradeHistoryEntriesResultOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntriesResult) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
@@ -144,8 +137,8 @@ func (o GetDatabaseUpgradeHistoryEntriesResultOutput) Filters() GetDatabaseUpgra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseUpgradeHistoryEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.

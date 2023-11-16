@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Request resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -40,7 +39,7 @@ type DomainsMyRequest struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -52,7 +51,7 @@ type DomainsMyRequest struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -64,7 +63,7 @@ type DomainsMyRequest struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -98,7 +97,7 @@ type DomainsMyRequest struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -145,7 +144,7 @@ type DomainsMyRequest struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// Requestable resource reference.
 	//
 	// **SCIM++ Properties:**
@@ -167,7 +166,7 @@ type DomainsMyRequest struct {
 	// * returned: request
 	// * type: complex
 	// * uniqueness: none
-	Requestor DomainsMyRequestRequestorOutput `pulumi:"requestor"`
+	Requestor DomainsMyRequestRequestorPtrOutput `pulumi:"requestor"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -193,7 +192,7 @@ type DomainsMyRequest struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -220,7 +219,7 @@ type DomainsMyRequest struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 }
 
 // NewDomainsMyRequest registers a new resource with the given unique name, arguments, and options.
@@ -884,12 +883,6 @@ func (i *DomainsMyRequest) ToDomainsMyRequestOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyRequestOutput)
 }
 
-func (i *DomainsMyRequest) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyRequest] {
-	return pulumix.Output[*DomainsMyRequest]{
-		OutputState: i.ToDomainsMyRequestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMyRequestArrayInput is an input type that accepts DomainsMyRequestArray and DomainsMyRequestArrayOutput values.
 // You can construct a concrete instance of `DomainsMyRequestArrayInput` via:
 //
@@ -913,12 +906,6 @@ func (i DomainsMyRequestArray) ToDomainsMyRequestArrayOutput() DomainsMyRequestA
 
 func (i DomainsMyRequestArray) ToDomainsMyRequestArrayOutputWithContext(ctx context.Context) DomainsMyRequestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyRequestArrayOutput)
-}
-
-func (i DomainsMyRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyRequest] {
-	return pulumix.Output[[]*DomainsMyRequest]{
-		OutputState: i.ToDomainsMyRequestArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMyRequestMapInput is an input type that accepts DomainsMyRequestMap and DomainsMyRequestMapOutput values.
@@ -946,12 +933,6 @@ func (i DomainsMyRequestMap) ToDomainsMyRequestMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyRequestMapOutput)
 }
 
-func (i DomainsMyRequestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyRequest] {
-	return pulumix.Output[map[string]*DomainsMyRequest]{
-		OutputState: i.ToDomainsMyRequestMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMyRequestOutput struct{ *pulumi.OutputState }
 
 func (DomainsMyRequestOutput) ElementType() reflect.Type {
@@ -964,12 +945,6 @@ func (o DomainsMyRequestOutput) ToDomainsMyRequestOutput() DomainsMyRequestOutpu
 
 func (o DomainsMyRequestOutput) ToDomainsMyRequestOutputWithContext(ctx context.Context) DomainsMyRequestOutput {
 	return o
-}
-
-func (o DomainsMyRequestOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyRequest] {
-	return pulumix.Output[*DomainsMyRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -998,8 +973,8 @@ func (o DomainsMyRequestOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMyRequestOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsMyRequestOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1013,8 +988,8 @@ func (o DomainsMyRequestOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsMyRequestOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsMyRequestOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1028,8 +1003,8 @@ func (o DomainsMyRequestOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMyRequestOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsMyRequestOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1074,8 +1049,8 @@ func (o DomainsMyRequestOutput) IdcsLastModifiedBies() DomainsMyRequestIdcsLastM
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsMyRequestOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsMyRequestOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1133,8 +1108,8 @@ func (o DomainsMyRequestOutput) Metas() DomainsMyRequestMetaArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsMyRequestOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsMyRequestOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Requestable resource reference.
@@ -1161,8 +1136,8 @@ func (o DomainsMyRequestOutput) Requesting() DomainsMyRequestRequestingOutput {
 // * returned: request
 // * type: complex
 // * uniqueness: none
-func (o DomainsMyRequestOutput) Requestor() DomainsMyRequestRequestorOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) DomainsMyRequestRequestorOutput { return v.Requestor }).(DomainsMyRequestRequestorOutput)
+func (o DomainsMyRequestOutput) Requestor() DomainsMyRequestRequestorPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) DomainsMyRequestRequestorPtrOutput { return v.Requestor }).(DomainsMyRequestRequestorPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1196,8 +1171,8 @@ func (o DomainsMyRequestOutput) Schemas() pulumi.StringArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMyRequestOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DomainsMyRequestOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -1229,8 +1204,8 @@ func (o DomainsMyRequestOutput) Tags() DomainsMyRequestTagArrayOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsMyRequestOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsMyRequestOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 type DomainsMyRequestArrayOutput struct{ *pulumi.OutputState }
@@ -1245,12 +1220,6 @@ func (o DomainsMyRequestArrayOutput) ToDomainsMyRequestArrayOutput() DomainsMyRe
 
 func (o DomainsMyRequestArrayOutput) ToDomainsMyRequestArrayOutputWithContext(ctx context.Context) DomainsMyRequestArrayOutput {
 	return o
-}
-
-func (o DomainsMyRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyRequest] {
-	return pulumix.Output[[]*DomainsMyRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMyRequestArrayOutput) Index(i pulumi.IntInput) DomainsMyRequestOutput {
@@ -1271,12 +1240,6 @@ func (o DomainsMyRequestMapOutput) ToDomainsMyRequestMapOutput() DomainsMyReques
 
 func (o DomainsMyRequestMapOutput) ToDomainsMyRequestMapOutputWithContext(ctx context.Context) DomainsMyRequestMapOutput {
 	return o
-}
-
-func (o DomainsMyRequestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyRequest] {
-	return pulumix.Output[map[string]*DomainsMyRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMyRequestMapOutput) MapIndex(k pulumi.StringInput) DomainsMyRequestOutput {

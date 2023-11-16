@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
@@ -77,7 +76,7 @@ type GetOdaPrivateEndpointsResult struct {
 	DisplayName *string                        `pulumi:"displayName"`
 	Filters     []GetOdaPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of oda_private_endpoint_collection.
 	OdaPrivateEndpointCollections []GetOdaPrivateEndpointsOdaPrivateEndpointCollection `pulumi:"odaPrivateEndpointCollections"`
 	// The current state of the ODA private endpoint.
@@ -127,12 +126,6 @@ func (o GetOdaPrivateEndpointsResultOutput) ToGetOdaPrivateEndpointsResultOutput
 	return o
 }
 
-func (o GetOdaPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOdaPrivateEndpointsResult] {
-	return pulumix.Output[GetOdaPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
 func (o GetOdaPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOdaPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -148,8 +141,8 @@ func (o GetOdaPrivateEndpointsResultOutput) Filters() GetOdaPrivateEndpointsFilt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetOdaPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOdaPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of oda_private_endpoint_collection.

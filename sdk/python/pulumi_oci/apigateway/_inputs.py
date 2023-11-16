@@ -130,10 +130,6 @@ class ApiValidationResultArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  result: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the validation.
-        :param pulumi.Input[str] result: Result of the validation.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if result is not None:
@@ -142,9 +138,6 @@ class ApiValidationResultArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the validation.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -154,9 +147,6 @@ class ApiValidationResultArgs:
     @property
     @pulumi.getter
     def result(self) -> Optional[pulumi.Input[str]]:
-        """
-        Result of the validation.
-        """
         return pulumi.get(self, "result")
 
     @result.setter
@@ -170,11 +160,6 @@ class DeploymentSpecificationArgs:
                  routes: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgs']]],
                  logging_policies: Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesArgs']] = None,
                  request_policies: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesArgs']] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgs']]] routes: (Updatable) A list of routes that this API exposes.
-        :param pulumi.Input['DeploymentSpecificationLoggingPoliciesArgs'] logging_policies: (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesArgs'] request_policies: (Updatable) Behavior applied to any requests received by the API on this route.
-        """
         pulumi.set(__self__, "routes", routes)
         if logging_policies is not None:
             pulumi.set(__self__, "logging_policies", logging_policies)
@@ -184,9 +169,6 @@ class DeploymentSpecificationArgs:
     @property
     @pulumi.getter
     def routes(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteArgs']]]:
-        """
-        (Updatable) A list of routes that this API exposes.
-        """
         return pulumi.get(self, "routes")
 
     @routes.setter
@@ -196,9 +178,6 @@ class DeploymentSpecificationArgs:
     @property
     @pulumi.getter(name="loggingPolicies")
     def logging_policies(self) -> Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesArgs']]:
-        """
-        (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        """
         return pulumi.get(self, "logging_policies")
 
     @logging_policies.setter
@@ -208,9 +187,6 @@ class DeploymentSpecificationArgs:
     @property
     @pulumi.getter(name="requestPolicies")
     def request_policies(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesArgs']]:
-        """
-        (Updatable) Behavior applied to any requests received by the API on this route.
-        """
         return pulumi.get(self, "request_policies")
 
     @request_policies.setter
@@ -223,10 +199,6 @@ class DeploymentSpecificationLoggingPoliciesArgs:
     def __init__(__self__, *,
                  access_log: Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesAccessLogArgs']] = None,
                  execution_log: Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesExecutionLogArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationLoggingPoliciesAccessLogArgs'] access_log: (Updatable) Configures the logging policies for the access logs of an API Deployment.
-        :param pulumi.Input['DeploymentSpecificationLoggingPoliciesExecutionLogArgs'] execution_log: (Updatable) Configures the logging policies for the execution logs of an API Deployment.
-        """
         if access_log is not None:
             pulumi.set(__self__, "access_log", access_log)
         if execution_log is not None:
@@ -235,9 +207,6 @@ class DeploymentSpecificationLoggingPoliciesArgs:
     @property
     @pulumi.getter(name="accessLog")
     def access_log(self) -> Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesAccessLogArgs']]:
-        """
-        (Updatable) Configures the logging policies for the access logs of an API Deployment.
-        """
         return pulumi.get(self, "access_log")
 
     @access_log.setter
@@ -247,9 +216,6 @@ class DeploymentSpecificationLoggingPoliciesArgs:
     @property
     @pulumi.getter(name="executionLog")
     def execution_log(self) -> Optional[pulumi.Input['DeploymentSpecificationLoggingPoliciesExecutionLogArgs']]:
-        """
-        (Updatable) Configures the logging policies for the execution logs of an API Deployment.
-        """
         return pulumi.get(self, "execution_log")
 
     @execution_log.setter
@@ -261,18 +227,12 @@ class DeploymentSpecificationLoggingPoliciesArgs:
 class DeploymentSpecificationLoggingPoliciesAccessLogArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether this policy is currently enabled.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this policy is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -285,10 +245,6 @@ class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  log_level: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether this policy is currently enabled.
-        :param pulumi.Input[str] log_level: (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
         if log_level is not None:
@@ -297,9 +253,6 @@ class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this policy is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -309,9 +262,6 @@ class DeploymentSpecificationLoggingPoliciesExecutionLogArgs:
     @property
     @pulumi.getter(name="logLevel")
     def log_level(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
-        """
         return pulumi.get(self, "log_level")
 
     @log_level.setter
@@ -328,14 +278,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
                  mutual_tls: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgs']] = None,
                  rate_limiting: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs']] = None,
                  usage_plans: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationArgs'] authentication: (Updatable) Information on how to authenticate incoming requests.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesCorsArgs'] cors: (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs'] dynamic_authentication: (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgs'] mutual_tls: (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs'] rate_limiting: (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs'] usage_plans: (Updatable) Usage plan policies for this deployment
-        """
         if authentication is not None:
             pulumi.set(__self__, "authentication", authentication)
         if cors is not None:
@@ -352,9 +294,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @property
     @pulumi.getter
     def authentication(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationArgs']]:
-        """
-        (Updatable) Information on how to authenticate incoming requests.
-        """
         return pulumi.get(self, "authentication")
 
     @authentication.setter
@@ -364,9 +303,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @property
     @pulumi.getter
     def cors(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesCorsArgs']]:
-        """
-        (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
-        """
         return pulumi.get(self, "cors")
 
     @cors.setter
@@ -376,9 +312,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @property
     @pulumi.getter(name="dynamicAuthentication")
     def dynamic_authentication(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs']]:
-        """
-        (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
-        """
         return pulumi.get(self, "dynamic_authentication")
 
     @dynamic_authentication.setter
@@ -388,9 +321,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @property
     @pulumi.getter(name="mutualTls")
     def mutual_tls(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesMutualTlsArgs']]:
-        """
-        (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
-        """
         return pulumi.get(self, "mutual_tls")
 
     @mutual_tls.setter
@@ -400,9 +330,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @property
     @pulumi.getter(name="rateLimiting")
     def rate_limiting(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesRateLimitingArgs']]:
-        """
-        (Updatable) Limit the number of requests that should be handled for the specified window using a specfic key.
-        """
         return pulumi.get(self, "rate_limiting")
 
     @rate_limiting.setter
@@ -412,9 +339,6 @@ class DeploymentSpecificationRequestPoliciesArgs:
     @property
     @pulumi.getter(name="usagePlans")
     def usage_plans(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesUsagePlansArgs']]:
-        """
-        (Updatable) Usage plan policies for this deployment
-        """
         return pulumi.get(self, "usage_plans")
 
     @usage_plans.setter
@@ -440,27 +364,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
                  validation_failure_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs']] = None,
                  validation_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs']] = None,
                  verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs']]]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] audiences: (Updatable) The list of intended recipients for the token.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] cache_keys: (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
-        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        :param pulumi.Input[bool] is_anonymous_access_allowed: (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] issuers: (Updatable) A list of parties that could have issued the token.
-        :param pulumi.Input[float] max_clock_skew_in_seconds: (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        :param pulumi.Input[Mapping[str, Any]] parameters: (Updatable)
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs'] public_keys: (Updatable) A set of Public Keys that will be used to verify the JWT signature.
-        :param pulumi.Input[str] token_auth_scheme: (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
-        :param pulumi.Input[str] token_header: (Updatable) The name of the header containing the authentication token.
-        :param pulumi.Input[str] token_query_param: (Updatable) The name of the query parameter containing the authentication token.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs'] validation_failure_policy: (Updatable) Policy for defining behaviour on validation failure.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs'] validation_policy: (Updatable) Authentication Policies for the Token Authentication types.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs']]] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         pulumi.set(__self__, "type", type)
         if audiences is not None:
             pulumi.set(__self__, "audiences", audiences)
@@ -494,13 +397,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -510,9 +406,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter
     def audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
         return pulumi.get(self, "audiences")
 
     @audiences.setter
@@ -522,9 +415,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="cacheKeys")
     def cache_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
-        """
         return pulumi.get(self, "cache_keys")
 
     @cache_keys.setter
@@ -534,9 +424,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -546,9 +433,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="isAnonymousAccessAllowed")
     def is_anonymous_access_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
-        """
         return pulumi.get(self, "is_anonymous_access_allowed")
 
     @is_anonymous_access_allowed.setter
@@ -558,9 +442,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter
     def issuers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
         return pulumi.get(self, "issuers")
 
     @issuers.setter
@@ -570,9 +451,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="maxClockSkewInSeconds")
     def max_clock_skew_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        """
         return pulumi.get(self, "max_clock_skew_in_seconds")
 
     @max_clock_skew_in_seconds.setter
@@ -582,9 +460,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -594,9 +469,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="publicKeys")
     def public_keys(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs']]:
-        """
-        (Updatable) A set of Public Keys that will be used to verify the JWT signature.
-        """
         return pulumi.get(self, "public_keys")
 
     @public_keys.setter
@@ -606,9 +478,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="tokenAuthScheme")
     def token_auth_scheme(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
-        """
         return pulumi.get(self, "token_auth_scheme")
 
     @token_auth_scheme.setter
@@ -618,9 +487,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="tokenHeader")
     def token_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the header containing the authentication token.
-        """
         return pulumi.get(self, "token_header")
 
     @token_header.setter
@@ -630,9 +496,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="tokenQueryParam")
     def token_query_param(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the query parameter containing the authentication token.
-        """
         return pulumi.get(self, "token_query_param")
 
     @token_query_param.setter
@@ -642,9 +505,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="validationFailurePolicy")
     def validation_failure_policy(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs']]:
-        """
-        (Updatable) Policy for defining behaviour on validation failure.
-        """
         return pulumi.get(self, "validation_failure_policy")
 
     @validation_failure_policy.setter
@@ -654,9 +514,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="validationPolicy")
     def validation_policy(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs']]:
-        """
-        (Updatable) Authentication Policies for the Token Authentication types.
-        """
         return pulumi.get(self, "validation_policy")
 
     @validation_policy.setter
@@ -666,9 +523,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
     @property
     @pulumi.getter(name="verifyClaims")
     def verify_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs']]]]:
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         return pulumi.get(self, "verify_claims")
 
     @verify_claims.setter
@@ -684,17 +538,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
                  keys: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs']]]] = None,
                  max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs']]] keys: (Updatable) The set of static public keys.
-        :param pulumi.Input[int] max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if is_ssl_verify_disabled is not None:
             pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -708,13 +551,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -724,9 +560,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -736,9 +569,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     @property
     @pulumi.getter
     def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs']]]]:
-        """
-        (Updatable) The set of static public keys.
-        """
         return pulumi.get(self, "keys")
 
     @keys.setter
@@ -748,9 +578,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     @property
     @pulumi.getter(name="maxCacheDurationInHours")
     def max_cache_duration_in_hours(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        """
         return pulumi.get(self, "max_cache_duration_in_hours")
 
     @max_cache_duration_in_hours.setter
@@ -760,9 +587,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs:
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -782,17 +606,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
                  kty: Optional[pulumi.Input[str]] = None,
                  n: Optional[pulumi.Input[str]] = None,
                  use: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] format: (Updatable) The format of the public key.
-        :param pulumi.Input[str] alg: (Updatable) The algorithm intended for use with this key.
-        :param pulumi.Input[str] e: (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] key_ops: (Updatable) The operations for which this key is to be used.
-        :param pulumi.Input[str] kid: (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        :param pulumi.Input[str] kty: (Updatable) The key type.
-        :param pulumi.Input[str] n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        :param pulumi.Input[str] use: (Updatable) The intended use of the public key.
-        """
         pulumi.set(__self__, "format", format)
         if alg is not None:
             pulumi.set(__self__, "alg", alg)
@@ -814,9 +627,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def format(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The format of the public key.
-        """
         return pulumi.get(self, "format")
 
     @format.setter
@@ -826,9 +636,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def alg(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
         return pulumi.get(self, "alg")
 
     @alg.setter
@@ -838,9 +645,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def e(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "e")
 
     @e.setter
@@ -850,9 +654,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -862,9 +663,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter(name="keyOps")
     def key_ops(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
         return pulumi.get(self, "key_ops")
 
     @key_ops.setter
@@ -874,9 +672,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def kid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
         return pulumi.get(self, "kid")
 
     @kid.setter
@@ -886,9 +681,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def kty(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key type.
-        """
         return pulumi.get(self, "kty")
 
     @kty.setter
@@ -898,9 +690,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def n(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "n")
 
     @n.setter
@@ -910,9 +699,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs:
     @property
     @pulumi.getter
     def use(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The intended use of the public key.
-        """
         return pulumi.get(self, "use")
 
     @use.setter
@@ -937,26 +723,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  use_cookies_for_intermediate_steps: Optional[pulumi.Input[bool]] = None,
                  use_cookies_for_session: Optional[pulumi.Input[bool]] = None,
                  use_pkce: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
-        :param pulumi.Input[str] fallback_redirect_path: (Updatable) The path to be used as fallback after OAuth2.
-        :param pulumi.Input[str] logout_path: (Updatable) The path to be used as logout.
-        :param pulumi.Input[int] max_expiry_duration_in_hours: (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
-        :param pulumi.Input[str] response_code: (Updatable) HTTP response code, can include context variables.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs'] response_header_transformations: (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        :param pulumi.Input[str] response_message: (Updatable) HTTP response message.
-        :param pulumi.Input[str] response_type: (Updatable) Response Type.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: (Updatable) List of scopes.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs'] source_uri_details: (Updatable) Auth endpoint details.
-        :param pulumi.Input[bool] use_cookies_for_intermediate_steps: (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
-        :param pulumi.Input[bool] use_cookies_for_session: (Updatable) Defines whether or not to use cookies for session maintenance.
-        :param pulumi.Input[bool] use_pkce: (Updatable) Defines whether or not to support PKCE.
-        """
         pulumi.set(__self__, "type", type)
         if client_details is not None:
             pulumi.set(__self__, "client_details", client_details)
@@ -988,13 +754,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1004,9 +763,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="clientDetails")
     def client_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs']]:
-        """
-        (Updatable) Client App Credential details.
-        """
         return pulumi.get(self, "client_details")
 
     @client_details.setter
@@ -1016,9 +772,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="fallbackRedirectPath")
     def fallback_redirect_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The path to be used as fallback after OAuth2.
-        """
         return pulumi.get(self, "fallback_redirect_path")
 
     @fallback_redirect_path.setter
@@ -1028,9 +781,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="logoutPath")
     def logout_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The path to be used as logout.
-        """
         return pulumi.get(self, "logout_path")
 
     @logout_path.setter
@@ -1040,9 +790,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="maxExpiryDurationInHours")
     def max_expiry_duration_in_hours(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
-        """
         return pulumi.get(self, "max_expiry_duration_in_hours")
 
     @max_expiry_duration_in_hours.setter
@@ -1052,9 +799,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="responseCode")
     def response_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) HTTP response code, can include context variables.
-        """
         return pulumi.get(self, "response_code")
 
     @response_code.setter
@@ -1064,9 +808,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="responseHeaderTransformations")
     def response_header_transformations(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs']]:
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
         return pulumi.get(self, "response_header_transformations")
 
     @response_header_transformations.setter
@@ -1076,9 +817,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="responseMessage")
     def response_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) HTTP response message.
-        """
         return pulumi.get(self, "response_message")
 
     @response_message.setter
@@ -1088,9 +826,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="responseType")
     def response_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Response Type.
-        """
         return pulumi.get(self, "response_type")
 
     @response_type.setter
@@ -1100,9 +835,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of scopes.
-        """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
@@ -1112,9 +844,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs']]:
-        """
-        (Updatable) Auth endpoint details.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
@@ -1124,9 +853,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="useCookiesForIntermediateSteps")
     def use_cookies_for_intermediate_steps(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
-        """
         return pulumi.get(self, "use_cookies_for_intermediate_steps")
 
     @use_cookies_for_intermediate_steps.setter
@@ -1136,9 +862,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="useCookiesForSession")
     def use_cookies_for_session(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to use cookies for session maintenance.
-        """
         return pulumi.get(self, "use_cookies_for_session")
 
     @use_cookies_for_session.setter
@@ -1148,9 +871,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="usePkce")
     def use_pkce(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to support PKCE.
-        """
         return pulumi.get(self, "use_pkce")
 
     @use_pkce.setter
@@ -1165,16 +885,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret_id: Optional[pulumi.Input[str]] = None,
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
-        :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
-        """
         pulumi.set(__self__, "type", type)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -1186,13 +896,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1202,9 +905,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="clientId")
     def client_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
@@ -1214,9 +914,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="clientSecretId")
     def client_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
         return pulumi.get(self, "client_secret_id")
 
     @client_secret_id.setter
@@ -1226,9 +923,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="clientSecretVersionNumber")
     def client_secret_version_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version number of the client secret to use.
-        """
         return pulumi.get(self, "client_secret_version_number")
 
     @client_secret_version_number.setter
@@ -1242,11 +936,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  filter_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']] = None,
                  rename_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']] = None,
                  set_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs'] filter_headers: (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs'] rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs'] set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         if filter_headers is not None:
             pulumi.set(__self__, "filter_headers", filter_headers)
         if rename_headers is not None:
@@ -1257,9 +946,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="filterHeaders")
     def filter_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']]:
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
         return pulumi.get(self, "filter_headers")
 
     @filter_headers.setter
@@ -1269,9 +955,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="renameHeaders")
     def rename_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']]:
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "rename_headers")
 
     @rename_headers.setter
@@ -1281,9 +964,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="setHeaders")
     def set_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']]:
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "set_headers")
 
     @set_headers.setter
@@ -1296,14 +976,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
         if type is not None:
@@ -1312,9 +984,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -1324,13 +993,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1342,18 +1004,12 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1365,18 +1021,12 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -1389,10 +1039,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def __init__(__self__, *,
                  from_: Optional[pulumi.Input[str]] = None,
                  to: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         if from_ is not None:
             pulumi.set(__self__, "from_", from_)
         if to is not None:
@@ -1401,9 +1047,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="from")
     def from_(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "from_")
 
     @from_.setter
@@ -1413,9 +1056,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def to(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "to")
 
     @to.setter
@@ -1427,18 +1067,12 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
 class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -1452,11 +1086,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  if_exists: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         if if_exists is not None:
             pulumi.set(__self__, "if_exists", if_exists)
         if name is not None:
@@ -1467,9 +1096,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter(name="ifExists")
     def if_exists(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         return pulumi.get(self, "if_exists")
 
     @if_exists.setter
@@ -1479,9 +1105,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1491,9 +1114,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -1506,14 +1126,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if uri is not None:
             pulumi.set(__self__, "uri", uri)
@@ -1521,13 +1133,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1537,9 +1142,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -1558,20 +1160,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
                  max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
                  source_uri_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs']] = None,
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs'] additional_validation_policy: (Updatable) Additional JWT validation checks.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs']]] keys: (Updatable) The set of static public keys.
-        :param pulumi.Input[int] max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs'] source_uri_details: (Updatable) Auth endpoint details.
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if additional_validation_policy is not None:
             pulumi.set(__self__, "additional_validation_policy", additional_validation_policy)
@@ -1591,13 +1179,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1607,9 +1188,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter(name="additionalValidationPolicy")
     def additional_validation_policy(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs']]:
-        """
-        (Updatable) Additional JWT validation checks.
-        """
         return pulumi.get(self, "additional_validation_policy")
 
     @additional_validation_policy.setter
@@ -1619,9 +1197,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter(name="clientDetails")
     def client_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs']]:
-        """
-        (Updatable) Client App Credential details.
-        """
         return pulumi.get(self, "client_details")
 
     @client_details.setter
@@ -1631,9 +1206,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -1643,9 +1215,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter
     def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs']]]]:
-        """
-        (Updatable) The set of static public keys.
-        """
         return pulumi.get(self, "keys")
 
     @keys.setter
@@ -1655,9 +1224,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter(name="maxCacheDurationInHours")
     def max_cache_duration_in_hours(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        """
         return pulumi.get(self, "max_cache_duration_in_hours")
 
     @max_cache_duration_in_hours.setter
@@ -1667,9 +1233,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs']]:
-        """
-        (Updatable) Auth endpoint details.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
@@ -1679,9 +1242,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs:
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -1695,11 +1255,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
                  audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  issuers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] audiences: (Updatable) The list of intended recipients for the token.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] issuers: (Updatable) A list of parties that could have issued the token.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         if audiences is not None:
             pulumi.set(__self__, "audiences", audiences)
         if issuers is not None:
@@ -1710,9 +1265,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     @property
     @pulumi.getter
     def audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
         return pulumi.get(self, "audiences")
 
     @audiences.setter
@@ -1722,9 +1274,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     @property
     @pulumi.getter
     def issuers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
         return pulumi.get(self, "issuers")
 
     @issuers.setter
@@ -1734,9 +1283,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     @property
     @pulumi.getter(name="verifyClaims")
     def verify_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]]:
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         return pulumi.get(self, "verify_claims")
 
     @verify_claims.setter
@@ -1750,11 +1296,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
                  is_required: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[bool] is_required: (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         if is_required is not None:
             pulumi.set(__self__, "is_required", is_required)
         if key is not None:
@@ -1765,9 +1306,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     @property
     @pulumi.getter(name="isRequired")
     def is_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
         return pulumi.get(self, "is_required")
 
     @is_required.setter
@@ -1777,9 +1315,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -1789,9 +1324,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditi
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -1806,16 +1338,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret_id: Optional[pulumi.Input[str]] = None,
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
-        :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
-        """
         pulumi.set(__self__, "type", type)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -1827,13 +1349,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1843,9 +1358,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
     @property
     @pulumi.getter(name="clientId")
     def client_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
@@ -1855,9 +1367,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
     @property
     @pulumi.getter(name="clientSecretId")
     def client_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
         return pulumi.get(self, "client_secret_id")
 
     @client_secret_id.setter
@@ -1867,9 +1376,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClient
     @property
     @pulumi.getter(name="clientSecretVersionNumber")
     def client_secret_version_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version number of the client secret to use.
-        """
         return pulumi.get(self, "client_secret_version_number")
 
     @client_secret_version_number.setter
@@ -1889,17 +1395,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
                  kty: Optional[pulumi.Input[str]] = None,
                  n: Optional[pulumi.Input[str]] = None,
                  use: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] format: (Updatable) The format of the public key.
-        :param pulumi.Input[str] alg: (Updatable) The algorithm intended for use with this key.
-        :param pulumi.Input[str] e: (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] key_ops: (Updatable) The operations for which this key is to be used.
-        :param pulumi.Input[str] kid: (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        :param pulumi.Input[str] kty: (Updatable) The key type.
-        :param pulumi.Input[str] n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        :param pulumi.Input[str] use: (Updatable) The intended use of the public key.
-        """
         pulumi.set(__self__, "format", format)
         if alg is not None:
             pulumi.set(__self__, "alg", alg)
@@ -1921,9 +1416,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def format(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The format of the public key.
-        """
         return pulumi.get(self, "format")
 
     @format.setter
@@ -1933,9 +1425,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def alg(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
         return pulumi.get(self, "alg")
 
     @alg.setter
@@ -1945,9 +1434,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def e(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "e")
 
     @e.setter
@@ -1957,9 +1443,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -1969,9 +1452,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter(name="keyOps")
     def key_ops(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
         return pulumi.get(self, "key_ops")
 
     @key_ops.setter
@@ -1981,9 +1461,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def kid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
         return pulumi.get(self, "kid")
 
     @kid.setter
@@ -1993,9 +1470,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def kty(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key type.
-        """
         return pulumi.get(self, "kty")
 
     @kty.setter
@@ -2005,9 +1479,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def n(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "n")
 
     @n.setter
@@ -2017,9 +1488,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArg
     @property
     @pulumi.getter
     def use(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The intended use of the public key.
-        """
         return pulumi.get(self, "use")
 
     @use.setter
@@ -2032,14 +1500,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if uri is not None:
             pulumi.set(__self__, "uri", uri)
@@ -2047,13 +1507,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2063,9 +1516,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySource
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -2079,11 +1529,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
                  is_required: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[bool] is_required: (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         if is_required is not None:
             pulumi.set(__self__, "is_required", is_required)
         if key is not None:
@@ -2094,9 +1539,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
     @property
     @pulumi.getter(name="isRequired")
     def is_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
         return pulumi.get(self, "is_required")
 
     @is_required.setter
@@ -2106,9 +1548,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -2118,9 +1557,6 @@ class DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs:
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -2137,14 +1573,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
                  exposed_headers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_allow_credentials_enabled: Optional[pulumi.Input[bool]] = None,
                  max_age_in_seconds: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_origins: (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_headers: (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_methods: (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exposed_headers: (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
-        :param pulumi.Input[bool] is_allow_credentials_enabled: (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-        :param pulumi.Input[int] max_age_in_seconds: (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
-        """
         pulumi.set(__self__, "allowed_origins", allowed_origins)
         if allowed_headers is not None:
             pulumi.set(__self__, "allowed_headers", allowed_headers)
@@ -2160,9 +1588,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="allowedOrigins")
     def allowed_origins(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
-        """
         return pulumi.get(self, "allowed_origins")
 
     @allowed_origins.setter
@@ -2172,9 +1597,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="allowedHeaders")
     def allowed_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
-        """
         return pulumi.get(self, "allowed_headers")
 
     @allowed_headers.setter
@@ -2184,9 +1606,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="allowedMethods")
     def allowed_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
-        """
         return pulumi.get(self, "allowed_methods")
 
     @allowed_methods.setter
@@ -2196,9 +1615,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="exposedHeaders")
     def exposed_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
-        """
         return pulumi.get(self, "exposed_headers")
 
     @exposed_headers.setter
@@ -2208,9 +1624,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="isAllowCredentialsEnabled")
     def is_allow_credentials_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-        """
         return pulumi.get(self, "is_allow_credentials_enabled")
 
     @is_allow_credentials_enabled.setter
@@ -2220,9 +1633,6 @@ class DeploymentSpecificationRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="maxAgeInSeconds")
     def max_age_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
-        """
         return pulumi.get(self, "max_age_in_seconds")
 
     @max_age_in_seconds.setter
@@ -2235,19 +1645,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs:
     def __init__(__self__, *,
                  authentication_servers: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs']]],
                  selection_source: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs']):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs']]] authentication_servers: (Updatable) List of authentication servers to choose from during dynamic authentication.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs'] selection_source: (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
-        """
         pulumi.set(__self__, "authentication_servers", authentication_servers)
         pulumi.set(__self__, "selection_source", selection_source)
 
     @property
     @pulumi.getter(name="authenticationServers")
     def authentication_servers(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs']]]:
-        """
-        (Updatable) List of authentication servers to choose from during dynamic authentication.
-        """
         return pulumi.get(self, "authentication_servers")
 
     @authentication_servers.setter
@@ -2257,9 +1660,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs:
     @property
     @pulumi.getter(name="selectionSource")
     def selection_source(self) -> pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs']:
-        """
-        (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
-        """
         return pulumi.get(self, "selection_source")
 
     @selection_source.setter
@@ -2272,19 +1672,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def __init__(__self__, *,
                  authentication_server_detail: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs'],
                  key: pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs']):
-        """
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs'] authentication_server_detail: (Updatable) Information on how to authenticate incoming requests.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs'] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         pulumi.set(__self__, "authentication_server_detail", authentication_server_detail)
         pulumi.set(__self__, "key", key)
 
     @property
     @pulumi.getter(name="authenticationServerDetail")
     def authentication_server_detail(self) -> pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs']:
-        """
-        (Updatable) Information on how to authenticate incoming requests.
-        """
         return pulumi.get(self, "authentication_server_detail")
 
     @authentication_server_detail.setter
@@ -2294,9 +1687,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def key(self) -> pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs']:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -2322,27 +1712,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  validation_failure_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs']] = None,
                  validation_policy: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs']] = None,
                  verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs']]]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] audiences: (Updatable) The list of intended recipients for the token.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] cache_keys: (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
-        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        :param pulumi.Input[bool] is_anonymous_access_allowed: (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] issuers: (Updatable) A list of parties that could have issued the token.
-        :param pulumi.Input[float] max_clock_skew_in_seconds: (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        :param pulumi.Input[Mapping[str, Any]] parameters: (Updatable)
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs'] public_keys: (Updatable) A set of Public Keys that will be used to verify the JWT signature.
-        :param pulumi.Input[str] token_auth_scheme: (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
-        :param pulumi.Input[str] token_header: (Updatable) The name of the header containing the authentication token.
-        :param pulumi.Input[str] token_query_param: (Updatable) The name of the query parameter containing the authentication token.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs'] validation_failure_policy: (Updatable) Policy for defining behaviour on validation failure.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs'] validation_policy: (Updatable) Authentication Policies for the Token Authentication types.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs']]] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         pulumi.set(__self__, "type", type)
         if audiences is not None:
             pulumi.set(__self__, "audiences", audiences)
@@ -2376,13 +1745,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2392,9 +1754,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
         return pulumi.get(self, "audiences")
 
     @audiences.setter
@@ -2404,9 +1763,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="cacheKeys")
     def cache_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
-        """
         return pulumi.get(self, "cache_keys")
 
     @cache_keys.setter
@@ -2416,9 +1772,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -2428,9 +1781,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="isAnonymousAccessAllowed")
     def is_anonymous_access_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
-        """
         return pulumi.get(self, "is_anonymous_access_allowed")
 
     @is_anonymous_access_allowed.setter
@@ -2440,9 +1790,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def issuers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
         return pulumi.get(self, "issuers")
 
     @issuers.setter
@@ -2452,9 +1799,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="maxClockSkewInSeconds")
     def max_clock_skew_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        """
         return pulumi.get(self, "max_clock_skew_in_seconds")
 
     @max_clock_skew_in_seconds.setter
@@ -2464,9 +1808,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -2476,9 +1817,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="publicKeys")
     def public_keys(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs']]:
-        """
-        (Updatable) A set of Public Keys that will be used to verify the JWT signature.
-        """
         return pulumi.get(self, "public_keys")
 
     @public_keys.setter
@@ -2488,9 +1826,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="tokenAuthScheme")
     def token_auth_scheme(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
-        """
         return pulumi.get(self, "token_auth_scheme")
 
     @token_auth_scheme.setter
@@ -2500,9 +1835,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="tokenHeader")
     def token_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the header containing the authentication token.
-        """
         return pulumi.get(self, "token_header")
 
     @token_header.setter
@@ -2512,9 +1844,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="tokenQueryParam")
     def token_query_param(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the query parameter containing the authentication token.
-        """
         return pulumi.get(self, "token_query_param")
 
     @token_query_param.setter
@@ -2524,9 +1853,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="validationFailurePolicy")
     def validation_failure_policy(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs']]:
-        """
-        (Updatable) Policy for defining behaviour on validation failure.
-        """
         return pulumi.get(self, "validation_failure_policy")
 
     @validation_failure_policy.setter
@@ -2536,9 +1862,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="validationPolicy")
     def validation_policy(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs']]:
-        """
-        (Updatable) Authentication Policies for the Token Authentication types.
-        """
         return pulumi.get(self, "validation_policy")
 
     @validation_policy.setter
@@ -2548,9 +1871,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="verifyClaims")
     def verify_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs']]]]:
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         return pulumi.get(self, "verify_claims")
 
     @verify_claims.setter
@@ -2566,17 +1886,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  keys: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs']]]] = None,
                  max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs']]] keys: (Updatable) The set of static public keys.
-        :param pulumi.Input[int] max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if is_ssl_verify_disabled is not None:
             pulumi.set(__self__, "is_ssl_verify_disabled", is_ssl_verify_disabled)
@@ -2590,13 +1899,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2606,9 +1908,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -2618,9 +1917,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs']]]]:
-        """
-        (Updatable) The set of static public keys.
-        """
         return pulumi.get(self, "keys")
 
     @keys.setter
@@ -2630,9 +1926,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="maxCacheDurationInHours")
     def max_cache_duration_in_hours(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        """
         return pulumi.get(self, "max_cache_duration_in_hours")
 
     @max_cache_duration_in_hours.setter
@@ -2642,9 +1935,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -2664,17 +1954,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  kty: Optional[pulumi.Input[str]] = None,
                  n: Optional[pulumi.Input[str]] = None,
                  use: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] format: (Updatable) The format of the public key.
-        :param pulumi.Input[str] alg: (Updatable) The algorithm intended for use with this key.
-        :param pulumi.Input[str] e: (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] key_ops: (Updatable) The operations for which this key is to be used.
-        :param pulumi.Input[str] kid: (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        :param pulumi.Input[str] kty: (Updatable) The key type.
-        :param pulumi.Input[str] n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        :param pulumi.Input[str] use: (Updatable) The intended use of the public key.
-        """
         pulumi.set(__self__, "format", format)
         if alg is not None:
             pulumi.set(__self__, "alg", alg)
@@ -2696,9 +1975,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def format(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The format of the public key.
-        """
         return pulumi.get(self, "format")
 
     @format.setter
@@ -2708,9 +1984,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def alg(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
         return pulumi.get(self, "alg")
 
     @alg.setter
@@ -2720,9 +1993,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def e(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "e")
 
     @e.setter
@@ -2732,9 +2002,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -2744,9 +2011,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="keyOps")
     def key_ops(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
         return pulumi.get(self, "key_ops")
 
     @key_ops.setter
@@ -2756,9 +2020,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def kid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
         return pulumi.get(self, "kid")
 
     @kid.setter
@@ -2768,9 +2029,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def kty(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key type.
-        """
         return pulumi.get(self, "kty")
 
     @kty.setter
@@ -2780,9 +2038,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def n(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "n")
 
     @n.setter
@@ -2792,9 +2047,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def use(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The intended use of the public key.
-        """
         return pulumi.get(self, "use")
 
     @use.setter
@@ -2819,26 +2071,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  use_cookies_for_intermediate_steps: Optional[pulumi.Input[bool]] = None,
                  use_cookies_for_session: Optional[pulumi.Input[bool]] = None,
                  use_pkce: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
-        :param pulumi.Input[str] fallback_redirect_path: (Updatable) The path to be used as fallback after OAuth2.
-        :param pulumi.Input[str] logout_path: (Updatable) The path to be used as logout.
-        :param pulumi.Input[int] max_expiry_duration_in_hours: (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
-        :param pulumi.Input[str] response_code: (Updatable) HTTP response code, can include context variables.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs'] response_header_transformations: (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        :param pulumi.Input[str] response_message: (Updatable) HTTP response message.
-        :param pulumi.Input[str] response_type: (Updatable) Response Type.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: (Updatable) List of scopes.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs'] source_uri_details: (Updatable) Auth endpoint details.
-        :param pulumi.Input[bool] use_cookies_for_intermediate_steps: (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
-        :param pulumi.Input[bool] use_cookies_for_session: (Updatable) Defines whether or not to use cookies for session maintenance.
-        :param pulumi.Input[bool] use_pkce: (Updatable) Defines whether or not to support PKCE.
-        """
         pulumi.set(__self__, "type", type)
         if client_details is not None:
             pulumi.set(__self__, "client_details", client_details)
@@ -2870,13 +2102,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -2886,9 +2111,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientDetails")
     def client_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs']]:
-        """
-        (Updatable) Client App Credential details.
-        """
         return pulumi.get(self, "client_details")
 
     @client_details.setter
@@ -2898,9 +2120,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="fallbackRedirectPath")
     def fallback_redirect_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The path to be used as fallback after OAuth2.
-        """
         return pulumi.get(self, "fallback_redirect_path")
 
     @fallback_redirect_path.setter
@@ -2910,9 +2129,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="logoutPath")
     def logout_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The path to be used as logout.
-        """
         return pulumi.get(self, "logout_path")
 
     @logout_path.setter
@@ -2922,9 +2138,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="maxExpiryDurationInHours")
     def max_expiry_duration_in_hours(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
-        """
         return pulumi.get(self, "max_expiry_duration_in_hours")
 
     @max_expiry_duration_in_hours.setter
@@ -2934,9 +2147,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="responseCode")
     def response_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) HTTP response code, can include context variables.
-        """
         return pulumi.get(self, "response_code")
 
     @response_code.setter
@@ -2946,9 +2156,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="responseHeaderTransformations")
     def response_header_transformations(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs']]:
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
         return pulumi.get(self, "response_header_transformations")
 
     @response_header_transformations.setter
@@ -2958,9 +2165,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="responseMessage")
     def response_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) HTTP response message.
-        """
         return pulumi.get(self, "response_message")
 
     @response_message.setter
@@ -2970,9 +2174,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="responseType")
     def response_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Response Type.
-        """
         return pulumi.get(self, "response_type")
 
     @response_type.setter
@@ -2982,9 +2183,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of scopes.
-        """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
@@ -2994,9 +2192,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs']]:
-        """
-        (Updatable) Auth endpoint details.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
@@ -3006,9 +2201,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="useCookiesForIntermediateSteps")
     def use_cookies_for_intermediate_steps(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to use cookies for OAuth2 intermediate steps.
-        """
         return pulumi.get(self, "use_cookies_for_intermediate_steps")
 
     @use_cookies_for_intermediate_steps.setter
@@ -3018,9 +2210,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="useCookiesForSession")
     def use_cookies_for_session(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to use cookies for session maintenance.
-        """
         return pulumi.get(self, "use_cookies_for_session")
 
     @use_cookies_for_session.setter
@@ -3030,9 +2219,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="usePkce")
     def use_pkce(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to support PKCE.
-        """
         return pulumi.get(self, "use_pkce")
 
     @use_pkce.setter
@@ -3047,16 +2233,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret_id: Optional[pulumi.Input[str]] = None,
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
-        :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
-        """
         pulumi.set(__self__, "type", type)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -3068,13 +2244,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3084,9 +2253,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientId")
     def client_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
@@ -3096,9 +2262,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientSecretId")
     def client_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
         return pulumi.get(self, "client_secret_id")
 
     @client_secret_id.setter
@@ -3108,9 +2271,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientSecretVersionNumber")
     def client_secret_version_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version number of the client secret to use.
-        """
         return pulumi.get(self, "client_secret_version_number")
 
     @client_secret_version_number.setter
@@ -3124,11 +2284,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  filter_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']] = None,
                  rename_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']] = None,
                  set_headers: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs'] filter_headers: (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs'] rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs'] set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         if filter_headers is not None:
             pulumi.set(__self__, "filter_headers", filter_headers)
         if rename_headers is not None:
@@ -3139,9 +2294,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="filterHeaders")
     def filter_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs']]:
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
         return pulumi.get(self, "filter_headers")
 
     @filter_headers.setter
@@ -3151,9 +2303,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="renameHeaders")
     def rename_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs']]:
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "rename_headers")
 
     @rename_headers.setter
@@ -3163,9 +2312,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="setHeaders")
     def set_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs']]:
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "set_headers")
 
     @set_headers.setter
@@ -3178,14 +2324,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
         if type is not None:
@@ -3194,9 +2332,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs']]]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -3206,13 +2341,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3224,18 +2352,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3247,18 +2369,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs']]]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -3271,10 +2387,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def __init__(__self__, *,
                  from_: Optional[pulumi.Input[str]] = None,
                  to: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         if from_ is not None:
             pulumi.set(__self__, "from_", from_)
         if to is not None:
@@ -3283,9 +2395,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="from")
     def from_(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "from_")
 
     @from_.setter
@@ -3295,9 +2404,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def to(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "to")
 
     @to.setter
@@ -3309,18 +2415,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs:
     def __init__(__self__, *,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         if items is not None:
             pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs']]]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -3334,11 +2434,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  if_exists: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         if if_exists is not None:
             pulumi.set(__self__, "if_exists", if_exists)
         if name is not None:
@@ -3349,9 +2444,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="ifExists")
     def if_exists(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         return pulumi.get(self, "if_exists")
 
     @if_exists.setter
@@ -3361,9 +2453,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3373,9 +2462,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -3388,14 +2474,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if uri is not None:
             pulumi.set(__self__, "uri", uri)
@@ -3403,13 +2481,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3419,9 +2490,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -3440,20 +2508,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  max_cache_duration_in_hours: Optional[pulumi.Input[int]] = None,
                  source_uri_details: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs']] = None,
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs'] additional_validation_policy: (Updatable) Additional JWT validation checks.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs']]] keys: (Updatable) The set of static public keys.
-        :param pulumi.Input[int] max_cache_duration_in_hours: (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs'] source_uri_details: (Updatable) Auth endpoint details.
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if additional_validation_policy is not None:
             pulumi.set(__self__, "additional_validation_policy", additional_validation_policy)
@@ -3473,13 +2527,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3489,9 +2536,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="additionalValidationPolicy")
     def additional_validation_policy(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs']]:
-        """
-        (Updatable) Additional JWT validation checks.
-        """
         return pulumi.get(self, "additional_validation_policy")
 
     @additional_validation_policy.setter
@@ -3501,9 +2545,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientDetails")
     def client_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs']]:
-        """
-        (Updatable) Client App Credential details.
-        """
         return pulumi.get(self, "client_details")
 
     @client_details.setter
@@ -3513,9 +2554,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -3525,9 +2563,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs']]]]:
-        """
-        (Updatable) The set of static public keys.
-        """
         return pulumi.get(self, "keys")
 
     @keys.setter
@@ -3537,9 +2572,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="maxCacheDurationInHours")
     def max_cache_duration_in_hours(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
-        """
         return pulumi.get(self, "max_cache_duration_in_hours")
 
     @max_cache_duration_in_hours.setter
@@ -3549,9 +2581,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs']]:
-        """
-        (Updatable) Auth endpoint details.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
@@ -3561,9 +2590,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -3577,11 +2603,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  issuers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  verify_claims: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] audiences: (Updatable) The list of intended recipients for the token.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] issuers: (Updatable) A list of parties that could have issued the token.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]] verify_claims: (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         if audiences is not None:
             pulumi.set(__self__, "audiences", audiences)
         if issuers is not None:
@@ -3592,9 +2613,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of intended recipients for the token.
-        """
         return pulumi.get(self, "audiences")
 
     @audiences.setter
@@ -3604,9 +2622,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def issuers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of parties that could have issued the token.
-        """
         return pulumi.get(self, "issuers")
 
     @issuers.setter
@@ -3616,9 +2631,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="verifyClaims")
     def verify_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs']]]]:
-        """
-        (Updatable) A list of claims which should be validated to consider the token valid.
-        """
         return pulumi.get(self, "verify_claims")
 
     @verify_claims.setter
@@ -3632,11 +2644,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  is_required: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[bool] is_required: (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         if is_required is not None:
             pulumi.set(__self__, "is_required", is_required)
         if key is not None:
@@ -3647,9 +2654,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="isRequired")
     def is_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
         return pulumi.get(self, "is_required")
 
     @is_required.setter
@@ -3659,9 +2663,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -3671,9 +2672,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -3688,16 +2686,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  client_id: Optional[pulumi.Input[str]] = None,
                  client_secret_id: Optional[pulumi.Input[str]] = None,
                  client_secret_version_number: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] client_id: (Updatable) Client ID for the OAuth2/OIDC app.
-        :param pulumi.Input[str] client_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        :param pulumi.Input[str] client_secret_version_number: (Updatable) The version number of the client secret to use.
-        """
         pulumi.set(__self__, "type", type)
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -3709,13 +2697,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3725,9 +2706,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientId")
     def client_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Client ID for the OAuth2/OIDC app.
-        """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
@@ -3737,9 +2715,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientSecretId")
     def client_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
         return pulumi.get(self, "client_secret_id")
 
     @client_secret_id.setter
@@ -3749,9 +2724,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="clientSecretVersionNumber")
     def client_secret_version_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version number of the client secret to use.
-        """
         return pulumi.get(self, "client_secret_version_number")
 
     @client_secret_version_number.setter
@@ -3771,17 +2743,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  kty: Optional[pulumi.Input[str]] = None,
                  n: Optional[pulumi.Input[str]] = None,
                  use: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] format: (Updatable) The format of the public key.
-        :param pulumi.Input[str] alg: (Updatable) The algorithm intended for use with this key.
-        :param pulumi.Input[str] e: (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] key_ops: (Updatable) The operations for which this key is to be used.
-        :param pulumi.Input[str] kid: (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        :param pulumi.Input[str] kty: (Updatable) The key type.
-        :param pulumi.Input[str] n: (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        :param pulumi.Input[str] use: (Updatable) The intended use of the public key.
-        """
         pulumi.set(__self__, "format", format)
         if alg is not None:
             pulumi.set(__self__, "alg", alg)
@@ -3803,9 +2764,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def format(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The format of the public key.
-        """
         return pulumi.get(self, "format")
 
     @format.setter
@@ -3815,9 +2773,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def alg(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The algorithm intended for use with this key.
-        """
         return pulumi.get(self, "alg")
 
     @alg.setter
@@ -3827,9 +2782,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def e(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded exponent of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "e")
 
     @e.setter
@@ -3839,9 +2791,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -3851,9 +2800,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="keyOps")
     def key_ops(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The operations for which this key is to be used.
-        """
         return pulumi.get(self, "key_ops")
 
     @key_ops.setter
@@ -3863,9 +2809,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def kid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A unique key ID. This key will be used to verify the signature of a JWT with matching "kid".
-        """
         return pulumi.get(self, "kid")
 
     @kid.setter
@@ -3875,9 +2818,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def kty(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key type.
-        """
         return pulumi.get(self, "kty")
 
     @kty.setter
@@ -3887,9 +2827,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def n(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base64 url encoded modulus of the RSA public key represented by this key.
-        """
         return pulumi.get(self, "n")
 
     @n.setter
@@ -3899,9 +2836,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def use(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The intended use of the public key.
-        """
         return pulumi.get(self, "use")
 
     @use.setter
@@ -3914,14 +2848,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  uri: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] uri: (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         pulumi.set(__self__, "type", type)
         if uri is not None:
             pulumi.set(__self__, "uri", uri)
@@ -3929,13 +2855,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -3945,9 +2864,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -3961,11 +2877,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  is_required: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[bool] is_required: (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        :param pulumi.Input[str] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         if is_required is not None:
             pulumi.set(__self__, "is_required", is_required)
         if key is not None:
@@ -3976,9 +2887,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="isRequired")
     def is_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the claim is required to be present in the JWT or not. If set to "false", the claim values will be matched only if the claim is present in the JWT.
-        """
         return pulumi.get(self, "is_required")
 
     @is_required.setter
@@ -3988,9 +2896,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -4000,9 +2905,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -4018,17 +2920,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  is_default: Optional[pulumi.Input[bool]] = None,
                  type: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] expression: (Updatable) String describing the expression with wildcards.
-        :param pulumi.Input[bool] is_default: (Updatable) Information regarding whether this is the default branch.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         pulumi.set(__self__, "name", name)
         if expression is not None:
             pulumi.set(__self__, "expression", expression)
@@ -4042,9 +2933,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4054,9 +2942,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) String describing the expression with wildcards.
-        """
         return pulumi.get(self, "expression")
 
     @expression.setter
@@ -4066,9 +2951,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Information regarding whether this is the default branch.
-        """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
@@ -4078,13 +2960,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4094,9 +2969,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -4109,23 +2981,12 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
     def __init__(__self__, *,
                  selector: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] selector: (Updatable) String describing the context variable used as selector.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "selector", selector)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def selector(self) -> pulumi.Input[str]:
-        """
-        (Updatable) String describing the context variable used as selector.
-        """
         return pulumi.get(self, "selector")
 
     @selector.setter
@@ -4135,13 +2996,6 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4154,10 +3008,6 @@ class DeploymentSpecificationRequestPoliciesMutualTlsArgs:
     def __init__(__self__, *,
                  allowed_sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_verified_certificate_required: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_sans: (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
-        :param pulumi.Input[bool] is_verified_certificate_required: (Updatable) Determines whether to enable client verification when API Consumer makes connection to the gateway.
-        """
         if allowed_sans is not None:
             pulumi.set(__self__, "allowed_sans", allowed_sans)
         if is_verified_certificate_required is not None:
@@ -4166,9 +3016,6 @@ class DeploymentSpecificationRequestPoliciesMutualTlsArgs:
     @property
     @pulumi.getter(name="allowedSans")
     def allowed_sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Allowed list of CN or SAN which will be used for verification of certificate.
-        """
         return pulumi.get(self, "allowed_sans")
 
     @allowed_sans.setter
@@ -4178,9 +3025,6 @@ class DeploymentSpecificationRequestPoliciesMutualTlsArgs:
     @property
     @pulumi.getter(name="isVerifiedCertificateRequired")
     def is_verified_certificate_required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Determines whether to enable client verification when API Consumer makes connection to the gateway.
-        """
         return pulumi.get(self, "is_verified_certificate_required")
 
     @is_verified_certificate_required.setter
@@ -4193,19 +3037,12 @@ class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
     def __init__(__self__, *,
                  rate_in_requests_per_second: pulumi.Input[int],
                  rate_key: pulumi.Input[str]):
-        """
-        :param pulumi.Input[int] rate_in_requests_per_second: (Updatable) The maximum number of requests per second to allow.
-        :param pulumi.Input[str] rate_key: (Updatable) The key used to group requests together.
-        """
         pulumi.set(__self__, "rate_in_requests_per_second", rate_in_requests_per_second)
         pulumi.set(__self__, "rate_key", rate_key)
 
     @property
     @pulumi.getter(name="rateInRequestsPerSecond")
     def rate_in_requests_per_second(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The maximum number of requests per second to allow.
-        """
         return pulumi.get(self, "rate_in_requests_per_second")
 
     @rate_in_requests_per_second.setter
@@ -4215,9 +3052,6 @@ class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
     @property
     @pulumi.getter(name="rateKey")
     def rate_key(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The key used to group requests together.
-        """
         return pulumi.get(self, "rate_key")
 
     @rate_key.setter
@@ -4229,25 +3063,11 @@ class DeploymentSpecificationRequestPoliciesRateLimitingArgs:
 class DeploymentSpecificationRequestPoliciesUsagePlansArgs:
     def __init__(__self__, *,
                  token_locations: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] token_locations: (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
-               * "request.headers[token]"
-               * "request.query[token]"
-               * "request.auth[Token]"
-               * "request.path[TOKEN]"
-        """
         pulumi.set(__self__, "token_locations", token_locations)
 
     @property
     @pulumi.getter(name="tokenLocations")
     def token_locations(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) A list of context variables specifying where API tokens may be located in a request. Example locations:
-        * "request.headers[token]"
-        * "request.query[token]"
-        * "request.auth[Token]"
-        * "request.path[TOKEN]"
-        """
         return pulumi.get(self, "token_locations")
 
     @token_locations.setter
@@ -4264,14 +3084,6 @@ class DeploymentSpecificationRouteArgs:
                  methods: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  request_policies: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesArgs']] = None,
                  response_policies: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteBackendArgs'] backend: (Updatable) The backend to forward requests to.
-        :param pulumi.Input[str] path: (Updatable) A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
-        :param pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesArgs'] logging_policies: (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] methods: (Updatable) A list of allowed methods on this route.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesArgs'] request_policies: (Updatable) Behavior applied to any requests received by the API on this route.
-        :param pulumi.Input['DeploymentSpecificationRouteResponsePoliciesArgs'] response_policies: (Updatable) Behavior applied to any responses sent by the API for requests on this route.
-        """
         pulumi.set(__self__, "backend", backend)
         pulumi.set(__self__, "path", path)
         if logging_policies is not None:
@@ -4286,9 +3098,6 @@ class DeploymentSpecificationRouteArgs:
     @property
     @pulumi.getter
     def backend(self) -> pulumi.Input['DeploymentSpecificationRouteBackendArgs']:
-        """
-        (Updatable) The backend to forward requests to.
-        """
         return pulumi.get(self, "backend")
 
     @backend.setter
@@ -4298,9 +3107,6 @@ class DeploymentSpecificationRouteArgs:
     @property
     @pulumi.getter
     def path(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A URL path pattern that must be matched on this route. The path pattern may contain a subset of RFC 6570 identifiers to allow wildcard and parameterized matching.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -4310,9 +3116,6 @@ class DeploymentSpecificationRouteArgs:
     @property
     @pulumi.getter(name="loggingPolicies")
     def logging_policies(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesArgs']]:
-        """
-        (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
-        """
         return pulumi.get(self, "logging_policies")
 
     @logging_policies.setter
@@ -4322,9 +3125,6 @@ class DeploymentSpecificationRouteArgs:
     @property
     @pulumi.getter
     def methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of allowed methods on this route.
-        """
         return pulumi.get(self, "methods")
 
     @methods.setter
@@ -4334,9 +3134,6 @@ class DeploymentSpecificationRouteArgs:
     @property
     @pulumi.getter(name="requestPolicies")
     def request_policies(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesArgs']]:
-        """
-        (Updatable) Behavior applied to any requests received by the API on this route.
-        """
         return pulumi.get(self, "request_policies")
 
     @request_policies.setter
@@ -4346,9 +3143,6 @@ class DeploymentSpecificationRouteArgs:
     @property
     @pulumi.getter(name="responsePolicies")
     def response_policies(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesArgs']]:
-        """
-        (Updatable) Behavior applied to any responses sent by the API for requests on this route.
-        """
         return pulumi.get(self, "response_policies")
 
     @response_policies.setter
@@ -4373,26 +3167,6 @@ class DeploymentSpecificationRouteBackendArgs:
                  send_timeout_in_seconds: Optional[pulumi.Input[float]] = None,
                  status: Optional[pulumi.Input[int]] = None,
                  url: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_post_logout_uris: (Updatable)
-        :param pulumi.Input[str] body: (Updatable) The body of the stock response from the mock backend.
-        :param pulumi.Input[float] connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
-        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendHeaderArgs']]] headers: (Updatable)
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[str] post_logout_state: (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
-        :param pulumi.Input[float] read_timeout_in_seconds: (Updatable) Defines a timeout for reading a response from the proxied server.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendArgs']]] routing_backends: (Updatable) List of backends to chose from for Dynamic Routing.
-        :param pulumi.Input['DeploymentSpecificationRouteBackendSelectionSourceArgs'] selection_source: (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
-        :param pulumi.Input[float] send_timeout_in_seconds: (Updatable) Defines a timeout for transmitting a request to the proxied server.
-        :param pulumi.Input[int] status: (Updatable) The status code of the stock response from the mock backend.
-        :param pulumi.Input[str] url: (Updatable)
-        """
         pulumi.set(__self__, "type", type)
         if allowed_post_logout_uris is not None:
             pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
@@ -4424,13 +3198,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4440,9 +3207,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="allowedPostLogoutUris")
     def allowed_post_logout_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "allowed_post_logout_uris")
 
     @allowed_post_logout_uris.setter
@@ -4452,9 +3216,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter
     def body(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The body of the stock response from the mock backend.
-        """
         return pulumi.get(self, "body")
 
     @body.setter
@@ -4464,9 +3225,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="connectTimeoutInSeconds")
     def connect_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) Defines a timeout for establishing a connection with a proxied server.
-        """
         return pulumi.get(self, "connect_timeout_in_seconds")
 
     @connect_timeout_in_seconds.setter
@@ -4476,9 +3234,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -4488,9 +3243,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendHeaderArgs']]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -4500,9 +3252,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -4512,9 +3261,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="postLogoutState")
     def post_logout_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
-        """
         return pulumi.get(self, "post_logout_state")
 
     @post_logout_state.setter
@@ -4524,9 +3270,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="readTimeoutInSeconds")
     def read_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) Defines a timeout for reading a response from the proxied server.
-        """
         return pulumi.get(self, "read_timeout_in_seconds")
 
     @read_timeout_in_seconds.setter
@@ -4536,9 +3279,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="routingBackends")
     def routing_backends(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendArgs']]]]:
-        """
-        (Updatable) List of backends to chose from for Dynamic Routing.
-        """
         return pulumi.get(self, "routing_backends")
 
     @routing_backends.setter
@@ -4548,9 +3288,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="selectionSource")
     def selection_source(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteBackendSelectionSourceArgs']]:
-        """
-        (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
-        """
         return pulumi.get(self, "selection_source")
 
     @selection_source.setter
@@ -4560,9 +3297,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter(name="sendTimeoutInSeconds")
     def send_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) Defines a timeout for transmitting a request to the proxied server.
-        """
         return pulumi.get(self, "send_timeout_in_seconds")
 
     @send_timeout_in_seconds.setter
@@ -4572,9 +3306,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status code of the stock response from the mock backend.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -4584,9 +3315,6 @@ class DeploymentSpecificationRouteBackendArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -4599,10 +3327,6 @@ class DeploymentSpecificationRouteBackendHeaderArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] value: (Updatable) Value of the header.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -4611,9 +3335,6 @@ class DeploymentSpecificationRouteBackendHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4623,9 +3344,6 @@ class DeploymentSpecificationRouteBackendHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -4638,10 +3356,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendArgs:
     def __init__(__self__, *,
                  backend: Optional[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendArgs']] = None,
                  key: Optional[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendKeyArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendArgs'] backend: (Updatable) The backend to forward requests to.
-        :param pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendKeyArgs'] key: (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         if backend is not None:
             pulumi.set(__self__, "backend", backend)
         if key is not None:
@@ -4650,9 +3364,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendArgs:
     @property
     @pulumi.getter
     def backend(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendArgs']]:
-        """
-        (Updatable) The backend to forward requests to.
-        """
         return pulumi.get(self, "backend")
 
     @backend.setter
@@ -4662,9 +3373,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendKeyArgs']]:
-        """
-        (Updatable) Information around the values for selector of an authentication/ routing branch.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -4685,22 +3393,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
                  send_timeout_in_seconds: Optional[pulumi.Input[float]] = None,
                  status: Optional[pulumi.Input[int]] = None,
                  url: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] body: (Updatable) The body of the stock response from the mock backend.
-        :param pulumi.Input[float] connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
-        :param pulumi.Input[str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]] headers: (Updatable)
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[float] read_timeout_in_seconds: (Updatable) Defines a timeout for reading a response from the proxied server.
-        :param pulumi.Input[float] send_timeout_in_seconds: (Updatable) Defines a timeout for transmitting a request to the proxied server.
-        :param pulumi.Input[int] status: (Updatable) The status code of the stock response from the mock backend.
-        :param pulumi.Input[str] url: (Updatable)
-        """
         pulumi.set(__self__, "type", type)
         if body is not None:
             pulumi.set(__self__, "body", body)
@@ -4724,13 +3416,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4740,9 +3425,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def body(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The body of the stock response from the mock backend.
-        """
         return pulumi.get(self, "body")
 
     @body.setter
@@ -4752,9 +3434,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter(name="connectTimeoutInSeconds")
     def connect_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) Defines a timeout for establishing a connection with a proxied server.
-        """
         return pulumi.get(self, "connect_timeout_in_seconds")
 
     @connect_timeout_in_seconds.setter
@@ -4764,9 +3443,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -4776,9 +3452,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -4788,9 +3461,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -4800,9 +3470,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter(name="readTimeoutInSeconds")
     def read_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) Defines a timeout for reading a response from the proxied server.
-        """
         return pulumi.get(self, "read_timeout_in_seconds")
 
     @read_timeout_in_seconds.setter
@@ -4812,9 +3479,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter(name="sendTimeoutInSeconds")
     def send_timeout_in_seconds(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) Defines a timeout for transmitting a request to the proxied server.
-        """
         return pulumi.get(self, "send_timeout_in_seconds")
 
     @send_timeout_in_seconds.setter
@@ -4824,9 +3488,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status code of the stock response from the mock backend.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -4836,9 +3497,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -4851,10 +3509,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] value: (Updatable) Value of the header.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -4863,9 +3517,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4875,9 +3526,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -4893,17 +3541,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
                  expression: Optional[pulumi.Input[str]] = None,
                  is_default: Optional[pulumi.Input[bool]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] expression: (Updatable) String describing the expression with wildcards.
-        :param pulumi.Input[bool] is_default: (Updatable) Information regarding whether this is the default branch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
         if expression is not None:
@@ -4916,9 +3553,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4928,13 +3562,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -4944,9 +3571,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     @property
     @pulumi.getter
     def expression(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) String describing the expression with wildcards.
-        """
         return pulumi.get(self, "expression")
 
     @expression.setter
@@ -4956,9 +3580,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     @property
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Information regarding whether this is the default branch.
-        """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
@@ -4968,9 +3589,6 @@ class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs:
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -4983,23 +3601,12 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
     def __init__(__self__, *,
                  selector: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] selector: (Updatable) String describing the context variable used as selector.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "selector", selector)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def selector(self) -> pulumi.Input[str]:
-        """
-        (Updatable) String describing the context variable used as selector.
-        """
         return pulumi.get(self, "selector")
 
     @selector.setter
@@ -5009,13 +3616,6 @@ class DeploymentSpecificationRouteBackendSelectionSourceArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5028,10 +3628,6 @@ class DeploymentSpecificationRouteLoggingPoliciesArgs:
     def __init__(__self__, *,
                  access_log: Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs']] = None,
                  execution_log: Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs'] access_log: (Updatable) Configures the logging policies for the access logs of an API Deployment.
-        :param pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs'] execution_log: (Updatable) Configures the logging policies for the execution logs of an API Deployment.
-        """
         if access_log is not None:
             pulumi.set(__self__, "access_log", access_log)
         if execution_log is not None:
@@ -5040,9 +3636,6 @@ class DeploymentSpecificationRouteLoggingPoliciesArgs:
     @property
     @pulumi.getter(name="accessLog")
     def access_log(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs']]:
-        """
-        (Updatable) Configures the logging policies for the access logs of an API Deployment.
-        """
         return pulumi.get(self, "access_log")
 
     @access_log.setter
@@ -5052,9 +3645,6 @@ class DeploymentSpecificationRouteLoggingPoliciesArgs:
     @property
     @pulumi.getter(name="executionLog")
     def execution_log(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs']]:
-        """
-        (Updatable) Configures the logging policies for the execution logs of an API Deployment.
-        """
         return pulumi.get(self, "execution_log")
 
     @execution_log.setter
@@ -5066,18 +3656,12 @@ class DeploymentSpecificationRouteLoggingPoliciesArgs:
 class DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether this policy is currently enabled.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this policy is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -5090,10 +3674,6 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  log_level: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether this policy is currently enabled.
-        :param pulumi.Input[str] log_level: (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
         if log_level is not None:
@@ -5102,9 +3682,6 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this policy is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -5114,9 +3691,6 @@ class DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs:
     @property
     @pulumi.getter(name="logLevel")
     def log_level(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the log level used to control logging output of execution logs. Enabling logging at a given level also enables logging at all higher levels.
-        """
         return pulumi.get(self, "log_level")
 
     @log_level.setter
@@ -5135,16 +3709,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
                  query_parameter_transformations: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs']] = None,
                  query_parameter_validations: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs']] = None,
                  response_cache_lookup: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs'] authorization: (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs'] body_validation: (Updatable) Validate the payload body of the incoming API requests on a specific route.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesCorsArgs'] cors: (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs'] header_transformations: (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs'] header_validations: (Updatable) Validate the HTTP headers on the incoming API requests on a specific route.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs'] query_parameter_transformations: (Updatable) A set of transformations to apply to query parameters that pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs'] query_parameter_validations: (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs'] response_cache_lookup: (Updatable) Base policy for Response Cache lookup.
-        """
         if authorization is not None:
             pulumi.set(__self__, "authorization", authorization)
         if body_validation is not None:
@@ -5165,9 +3729,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs']]:
-        """
-        (Updatable) If authentication has been performed, validate whether the request scope (if any) applies to this route. If no RouteAuthorizationPolicy is defined for a route, a policy with a type of AUTHENTICATION_ONLY is applied.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -5177,9 +3738,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter(name="bodyValidation")
     def body_validation(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs']]:
-        """
-        (Updatable) Validate the payload body of the incoming API requests on a specific route.
-        """
         return pulumi.get(self, "body_validation")
 
     @body_validation.setter
@@ -5189,9 +3747,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter
     def cors(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesCorsArgs']]:
-        """
-        (Updatable) Enable CORS (Cross-Origin-Resource-Sharing) request handling.
-        """
         return pulumi.get(self, "cors")
 
     @cors.setter
@@ -5201,9 +3756,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter(name="headerTransformations")
     def header_transformations(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs']]:
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
         return pulumi.get(self, "header_transformations")
 
     @header_transformations.setter
@@ -5213,9 +3765,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter(name="headerValidations")
     def header_validations(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs']]:
-        """
-        (Updatable) Validate the HTTP headers on the incoming API requests on a specific route.
-        """
         return pulumi.get(self, "header_validations")
 
     @header_validations.setter
@@ -5225,9 +3774,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter(name="queryParameterTransformations")
     def query_parameter_transformations(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs']]:
-        """
-        (Updatable) A set of transformations to apply to query parameters that pass through the gateway.
-        """
         return pulumi.get(self, "query_parameter_transformations")
 
     @query_parameter_transformations.setter
@@ -5237,9 +3783,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter(name="queryParameterValidations")
     def query_parameter_validations(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs']]:
-        """
-        (Updatable) Validate the URL query parameters on the incoming API requests on a specific route.
-        """
         return pulumi.get(self, "query_parameter_validations")
 
     @query_parameter_validations.setter
@@ -5249,9 +3792,6 @@ class DeploymentSpecificationRouteRequestPoliciesArgs:
     @property
     @pulumi.getter(name="responseCacheLookup")
     def response_cache_lookup(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs']]:
-        """
-        (Updatable) Base policy for Response Cache lookup.
-        """
         return pulumi.get(self, "response_cache_lookup")
 
     @response_cache_lookup.setter
@@ -5264,14 +3804,6 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
     def __init__(__self__, *,
                  allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_scopes: (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if allowed_scopes is not None:
             pulumi.set(__self__, "allowed_scopes", allowed_scopes)
         if type is not None:
@@ -5280,9 +3812,6 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
     @property
     @pulumi.getter(name="allowedScopes")
     def allowed_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
-        """
         return pulumi.get(self, "allowed_scopes")
 
     @allowed_scopes.setter
@@ -5292,13 +3821,6 @@ class DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5312,17 +3834,6 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
                  contents: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs']]]] = None,
                  required: Optional[pulumi.Input[bool]] = None,
                  validation_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs']]] contents: (Updatable) The content of the request body.
-        :param pulumi.Input[bool] required: (Updatable) Determines if the parameter is required in the request.
-        :param pulumi.Input[str] validation_mode: (Updatable) Validation behavior mode.
-               
-               In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
-               
-               In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
-               
-               `DISABLED` type turns the validation off.
-        """
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
         if required is not None:
@@ -5333,9 +3844,6 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
     @property
     @pulumi.getter
     def contents(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs']]]]:
-        """
-        (Updatable) The content of the request body.
-        """
         return pulumi.get(self, "contents")
 
     @contents.setter
@@ -5345,9 +3853,6 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
     @property
     @pulumi.getter
     def required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Determines if the parameter is required in the request.
-        """
         return pulumi.get(self, "required")
 
     @required.setter
@@ -5357,15 +3862,6 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs:
     @property
     @pulumi.getter(name="validationMode")
     def validation_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Validation behavior mode.
-
-        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
-
-        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
-
-        `DISABLED` type turns the validation off.
-        """
         return pulumi.get(self, "validation_mode")
 
     @validation_mode.setter
@@ -5378,29 +3874,12 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
     def __init__(__self__, *,
                  media_type: pulumi.Input[str],
                  validation_type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] media_type: (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
-               
-               media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
-               
-               For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
-        :param pulumi.Input[str] validation_type: (Updatable) Validation type defines the content validation method.
-               
-               Make the validation to first parse the body as the respective format.
-        """
         pulumi.set(__self__, "media_type", media_type)
         pulumi.set(__self__, "validation_type", validation_type)
 
     @property
     @pulumi.getter(name="mediaType")
     def media_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
-
-        media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
-
-        For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
-        """
         return pulumi.get(self, "media_type")
 
     @media_type.setter
@@ -5410,11 +3889,6 @@ class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs:
     @property
     @pulumi.getter(name="validationType")
     def validation_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Validation type defines the content validation method.
-
-        Make the validation to first parse the body as the respective format.
-        """
         return pulumi.get(self, "validation_type")
 
     @validation_type.setter
@@ -5431,14 +3905,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
                  exposed_headers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_allow_credentials_enabled: Optional[pulumi.Input[bool]] = None,
                  max_age_in_seconds: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_origins: (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_headers: (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_methods: (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exposed_headers: (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
-        :param pulumi.Input[bool] is_allow_credentials_enabled: (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-        :param pulumi.Input[int] max_age_in_seconds: (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
-        """
         pulumi.set(__self__, "allowed_origins", allowed_origins)
         if allowed_headers is not None:
             pulumi.set(__self__, "allowed_headers", allowed_headers)
@@ -5454,9 +3920,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="allowedOrigins")
     def allowed_origins(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The list of allowed origins that the CORS handler will use to respond to CORS requests. The gateway will send the Access-Control-Allow-Origin header with the best origin match for the circumstances. '*' will match any origins, and 'null' will match queries from 'file:' origins. All other origins must be qualified with the scheme, full hostname, and port if necessary.
-        """
         return pulumi.get(self, "allowed_origins")
 
     @allowed_origins.setter
@@ -5466,9 +3929,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="allowedHeaders")
     def allowed_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of headers that will be allowed from the client via the Access-Control-Allow-Headers header. '*' will allow all headers.
-        """
         return pulumi.get(self, "allowed_headers")
 
     @allowed_headers.setter
@@ -5478,9 +3938,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="allowedMethods")
     def allowed_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of allowed HTTP methods that will be returned for the preflight OPTIONS request in the Access-Control-Allow-Methods header. '*' will allow all methods.
-        """
         return pulumi.get(self, "allowed_methods")
 
     @allowed_methods.setter
@@ -5490,9 +3947,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="exposedHeaders")
     def exposed_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of headers that the client will be allowed to see from the response as indicated by the Access-Control-Expose-Headers header. '*' will expose all headers.
-        """
         return pulumi.get(self, "exposed_headers")
 
     @exposed_headers.setter
@@ -5502,9 +3956,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="isAllowCredentialsEnabled")
     def is_allow_credentials_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to send the Access-Control-Allow-Credentials header to allow CORS requests with cookies.
-        """
         return pulumi.get(self, "is_allow_credentials_enabled")
 
     @is_allow_credentials_enabled.setter
@@ -5514,9 +3965,6 @@ class DeploymentSpecificationRouteRequestPoliciesCorsArgs:
     @property
     @pulumi.getter(name="maxAgeInSeconds")
     def max_age_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The time in seconds for the client to cache preflight responses. This is sent as the Access-Control-Max-Age if greater than 0.
-        """
         return pulumi.get(self, "max_age_in_seconds")
 
     @max_age_in_seconds.setter
@@ -5530,11 +3978,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
                  filter_headers: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs']] = None,
                  rename_headers: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs']] = None,
                  set_headers: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs'] filter_headers: (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs'] rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs'] set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         if filter_headers is not None:
             pulumi.set(__self__, "filter_headers", filter_headers)
         if rename_headers is not None:
@@ -5545,9 +3988,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
     @property
     @pulumi.getter(name="filterHeaders")
     def filter_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs']]:
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
         return pulumi.get(self, "filter_headers")
 
     @filter_headers.setter
@@ -5557,9 +3997,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
     @property
     @pulumi.getter(name="renameHeaders")
     def rename_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs']]:
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "rename_headers")
 
     @rename_headers.setter
@@ -5569,9 +4006,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs:
     @property
     @pulumi.getter(name="setHeaders")
     def set_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs']]:
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "set_headers")
 
     @set_headers.setter
@@ -5584,23 +4018,12 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs']]],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -5610,13 +4033,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5628,17 +4044,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5650,17 +4060,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHead
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs']]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -5673,19 +4077,12 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
     def __init__(__self__, *,
                  from_: pulumi.Input[str],
                  to: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "to", to)
 
     @property
     @pulumi.getter(name="from")
     def from_(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "from_")
 
     @from_.setter
@@ -5695,9 +4092,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
     @property
     @pulumi.getter
     def to(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "to")
 
     @to.setter
@@ -5709,17 +4103,11 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHead
 class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs']]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -5733,11 +4121,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
                  name: pulumi.Input[str],
                  values: pulumi.Input[Sequence[pulumi.Input[str]]],
                  if_exists: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        :param pulumi.Input[str] if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if if_exists is not None:
@@ -5746,9 +4129,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5758,9 +4138,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
     @property
     @pulumi.getter
     def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -5770,9 +4147,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeaders
     @property
     @pulumi.getter(name="ifExists")
     def if_exists(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         return pulumi.get(self, "if_exists")
 
     @if_exists.setter
@@ -5785,16 +4159,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
     def __init__(__self__, *,
                  headers: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]]] = None,
                  validation_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]] headers: (Updatable)
-        :param pulumi.Input[str] validation_mode: (Updatable) Validation behavior mode.
-               
-               In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
-               
-               In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
-               
-               `DISABLED` type turns the validation off.
-        """
         if headers is not None:
             pulumi.set(__self__, "headers", headers)
         if validation_mode is not None:
@@ -5803,9 +4167,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
     @property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -5815,15 +4176,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
     @property
     @pulumi.getter(name="validationMode")
     def validation_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Validation behavior mode.
-
-        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
-
-        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
-
-        `DISABLED` type turns the validation off.
-        """
         return pulumi.get(self, "validation_mode")
 
     @validation_mode.setter
@@ -5836,10 +4188,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  required: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[bool] required: (Updatable) Determines if the parameter is required in the request.
-        """
         pulumi.set(__self__, "name", name)
         if required is not None:
             pulumi.set(__self__, "required", required)
@@ -5847,9 +4195,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5859,9 +4204,6 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs:
     @property
     @pulumi.getter
     def required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Determines if the parameter is required in the request.
-        """
         return pulumi.get(self, "required")
 
     @required.setter
@@ -5875,11 +4217,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsAr
                  filter_query_parameters: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs']] = None,
                  rename_query_parameters: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs']] = None,
                  set_query_parameters: Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs'] filter_query_parameters: (Updatable) Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs'] rename_query_parameters: (Updatable) Rename parameters on the query string as they pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs'] set_query_parameters: (Updatable) Set parameters on the query string as they pass through the gateway.
-        """
         if filter_query_parameters is not None:
             pulumi.set(__self__, "filter_query_parameters", filter_query_parameters)
         if rename_query_parameters is not None:
@@ -5890,9 +4227,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsAr
     @property
     @pulumi.getter(name="filterQueryParameters")
     def filter_query_parameters(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs']]:
-        """
-        (Updatable) Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
-        """
         return pulumi.get(self, "filter_query_parameters")
 
     @filter_query_parameters.setter
@@ -5902,9 +4236,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsAr
     @property
     @pulumi.getter(name="renameQueryParameters")
     def rename_query_parameters(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs']]:
-        """
-        (Updatable) Rename parameters on the query string as they pass through the gateway.
-        """
         return pulumi.get(self, "rename_query_parameters")
 
     @rename_query_parameters.setter
@@ -5914,9 +4245,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsAr
     @property
     @pulumi.getter(name="setQueryParameters")
     def set_query_parameters(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs']]:
-        """
-        (Updatable) Set parameters on the query string as they pass through the gateway.
-        """
         return pulumi.get(self, "set_query_parameters")
 
     @set_query_parameters.setter
@@ -5929,23 +4257,12 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs']]],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs']]] items: (Updatable) The list of headers.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -5955,13 +4272,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -5973,17 +4283,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -5995,17 +4299,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFi
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs']]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs']]] items: (Updatable) The list of headers.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -6018,19 +4316,12 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
     def __init__(__self__, *,
                  from_: pulumi.Input[str],
                  to: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "to", to)
 
     @property
     @pulumi.getter(name="from")
     def from_(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "from_")
 
     @from_.setter
@@ -6040,9 +4331,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
     @property
     @pulumi.getter
     def to(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "to")
 
     @to.setter
@@ -6054,17 +4342,11 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRe
 class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs']]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs']]] items: (Updatable) The list of headers.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -6078,11 +4360,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
                  name: pulumi.Input[str],
                  values: pulumi.Input[Sequence[pulumi.Input[str]]],
                  if_exists: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        :param pulumi.Input[str] if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if if_exists is not None:
@@ -6091,9 +4368,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6103,9 +4377,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
     @property
     @pulumi.getter
     def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -6115,9 +4386,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSe
     @property
     @pulumi.getter(name="ifExists")
     def if_exists(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         return pulumi.get(self, "if_exists")
 
     @if_exists.setter
@@ -6130,16 +4398,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
     def __init__(__self__, *,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]]] = None,
                  validation_mode: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]] parameters: (Updatable)
-        :param pulumi.Input[str] validation_mode: (Updatable) Validation behavior mode.
-               
-               In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
-               
-               In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
-               
-               `DISABLED` type turns the validation off.
-        """
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
         if validation_mode is not None:
@@ -6148,9 +4406,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]]]:
-        """
-        (Updatable)
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -6160,15 +4415,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
     @property
     @pulumi.getter(name="validationMode")
     def validation_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Validation behavior mode.
-
-        In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
-
-        In `PERMISSIVE` mode, the result of the validation will be exposed as metrics while the request will follow the normal path.
-
-        `DISABLED` type turns the validation off.
-        """
         return pulumi.get(self, "validation_mode")
 
     @validation_mode.setter
@@ -6181,10 +4427,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  required: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[bool] required: (Updatable) Determines if the parameter is required in the request.
-        """
         pulumi.set(__self__, "name", name)
         if required is not None:
             pulumi.set(__self__, "required", required)
@@ -6192,9 +4434,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6204,9 +4443,6 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParame
     @property
     @pulumi.getter
     def required(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Determines if the parameter is required in the request.
-        """
         return pulumi.get(self, "required")
 
     @required.setter
@@ -6221,20 +4457,6 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
                  cache_key_additions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
                  is_private_caching_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] cache_key_additions: (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether this policy is currently enabled.
-        :param pulumi.Input[bool] is_private_caching_enabled: (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
-               
-               When false, any request with an Authorization header will not be stored in the Response Cache.
-               
-               If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
-        """
         pulumi.set(__self__, "type", type)
         if cache_key_additions is not None:
             pulumi.set(__self__, "cache_key_additions", cache_key_additions)
@@ -6246,13 +4468,6 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6262,9 +4477,6 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     @property
     @pulumi.getter(name="cacheKeyAdditions")
     def cache_key_additions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
-        """
         return pulumi.get(self, "cache_key_additions")
 
     @cache_key_additions.setter
@@ -6274,9 +4486,6 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether this policy is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -6286,13 +4495,6 @@ class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs:
     @property
     @pulumi.getter(name="isPrivateCachingEnabled")
     def is_private_caching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
-
-        When false, any request with an Authorization header will not be stored in the Response Cache.
-
-        If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
-        """
         return pulumi.get(self, "is_private_caching_enabled")
 
     @is_private_caching_enabled.setter
@@ -6305,10 +4507,6 @@ class DeploymentSpecificationRouteResponsePoliciesArgs:
     def __init__(__self__, *,
                  header_transformations: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs']] = None,
                  response_cache_store: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs'] header_transformations: (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs'] response_cache_store: (Updatable) Base policy for how a response from a backend is cached in the Response Cache.
-        """
         if header_transformations is not None:
             pulumi.set(__self__, "header_transformations", header_transformations)
         if response_cache_store is not None:
@@ -6317,9 +4515,6 @@ class DeploymentSpecificationRouteResponsePoliciesArgs:
     @property
     @pulumi.getter(name="headerTransformations")
     def header_transformations(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs']]:
-        """
-        (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
-        """
         return pulumi.get(self, "header_transformations")
 
     @header_transformations.setter
@@ -6329,9 +4524,6 @@ class DeploymentSpecificationRouteResponsePoliciesArgs:
     @property
     @pulumi.getter(name="responseCacheStore")
     def response_cache_store(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs']]:
-        """
-        (Updatable) Base policy for how a response from a backend is cached in the Response Cache.
-        """
         return pulumi.get(self, "response_cache_store")
 
     @response_cache_store.setter
@@ -6345,11 +4537,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
                  filter_headers: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs']] = None,
                  rename_headers: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs']] = None,
                  set_headers: Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs']] = None):
-        """
-        :param pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs'] filter_headers: (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        :param pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs'] rename_headers: (Updatable) Rename HTTP headers as they pass through the gateway.
-        :param pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs'] set_headers: (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         if filter_headers is not None:
             pulumi.set(__self__, "filter_headers", filter_headers)
         if rename_headers is not None:
@@ -6360,9 +4547,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
     @property
     @pulumi.getter(name="filterHeaders")
     def filter_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs']]:
-        """
-        (Updatable) Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations, so any headers set or renamed must also be listed here when using an ALLOW type policy.
-        """
         return pulumi.get(self, "filter_headers")
 
     @filter_headers.setter
@@ -6372,9 +4556,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
     @property
     @pulumi.getter(name="renameHeaders")
     def rename_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs']]:
-        """
-        (Updatable) Rename HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "rename_headers")
 
     @rename_headers.setter
@@ -6384,9 +4565,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs:
     @property
     @pulumi.getter(name="setHeaders")
     def set_headers(self) -> Optional[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs']]:
-        """
-        (Updatable) Set HTTP headers as they pass through the gateway.
-        """
         return pulumi.get(self, "set_headers")
 
     @set_headers.setter
@@ -6399,23 +4577,12 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs']]],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs']]] items: (Updatable) The list of headers.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -6425,13 +4592,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6443,17 +4603,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6465,17 +4619,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHea
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs']]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -6488,19 +4636,12 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
     def __init__(__self__, *,
                  from_: pulumi.Input[str],
                  to: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] from_: (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[str] to: (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "to", to)
 
     @property
     @pulumi.getter(name="from")
     def from_(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "from_")
 
     @from_.setter
@@ -6510,9 +4651,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
     @property
     @pulumi.getter
     def to(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The new name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "to")
 
     @to.setter
@@ -6524,17 +4662,11 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHea
 class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs:
     def __init__(__self__, *,
                  items: pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs']]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs']]] items: (Updatable) The list of headers.
-        """
         pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs']]]:
-        """
-        (Updatable) The list of headers.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -6548,11 +4680,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
                  name: pulumi.Input[str],
                  values: pulumi.Input[Sequence[pulumi.Input[str]]],
                  if_exists: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        :param pulumi.Input[str] if_exists: (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if if_exists is not None:
@@ -6561,9 +4688,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6573,9 +4697,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
     @property
     @pulumi.getter
     def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -6585,9 +4706,6 @@ class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeader
     @property
     @pulumi.getter(name="ifExists")
     def if_exists(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
-        """
         return pulumi.get(self, "if_exists")
 
     @if_exists.setter
@@ -6600,23 +4718,12 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
     def __init__(__self__, *,
                  time_to_live_in_seconds: pulumi.Input[int],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[int] time_to_live_in_seconds: (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache Store Policy.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "time_to_live_in_seconds", time_to_live_in_seconds)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="timeToLiveInSeconds")
     def time_to_live_in_seconds(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
-        """
         return pulumi.get(self, "time_to_live_in_seconds")
 
     @time_to_live_in_seconds.setter
@@ -6626,13 +4733,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache Store Policy.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6646,11 +4746,6 @@ class GatewayCaBundleArgs:
                  type: pulumi.Input[str],
                  ca_bundle_id: Optional[pulumi.Input[str]] = None,
                  certificate_authority_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache.
-        :param pulumi.Input[str] ca_bundle_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        :param pulumi.Input[str] certificate_authority_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
         pulumi.set(__self__, "type", type)
         if ca_bundle_id is not None:
             pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
@@ -6660,9 +4755,6 @@ class GatewayCaBundleArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6672,9 +4764,6 @@ class GatewayCaBundleArgs:
     @property
     @pulumi.getter(name="caBundleId")
     def ca_bundle_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
@@ -6684,9 +4773,6 @@ class GatewayCaBundleArgs:
     @property
     @pulumi.getter(name="certificateAuthorityId")
     def certificate_authority_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
         return pulumi.get(self, "certificate_authority_id")
 
     @certificate_authority_id.setter
@@ -6698,18 +4784,12 @@ class GatewayCaBundleArgs:
 class GatewayIpAddressArgs:
     def __init__(__self__, *,
                  ip_address: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ip_address: An IP address.
-        """
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
 
     @property
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        An IP address.
-        """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
@@ -6729,17 +4809,6 @@ class GatewayResponseCacheDetailsArgs:
                  read_timeout_in_ms: Optional[pulumi.Input[int]] = None,
                  send_timeout_in_ms: Optional[pulumi.Input[int]] = None,
                  servers: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgs']]]] = None):
-        """
-        :param pulumi.Input[str] type: (Updatable) Type of the Response Cache.
-        :param pulumi.Input[str] authentication_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        :param pulumi.Input[str] authentication_secret_version_number: (Updatable) The version number of the authentication secret to use.
-        :param pulumi.Input[int] connect_timeout_in_ms: (Updatable) Defines the timeout for establishing a connection with the Response Cache.
-        :param pulumi.Input[bool] is_ssl_enabled: (Updatable) Defines if the connection should be over SSL.
-        :param pulumi.Input[bool] is_ssl_verify_disabled: (Updatable) Defines whether or not to uphold SSL verification.
-        :param pulumi.Input[int] read_timeout_in_ms: (Updatable) Defines the timeout for reading data from the Response Cache.
-        :param pulumi.Input[int] send_timeout_in_ms: (Updatable) Defines the timeout for transmitting data to the Response Cache.
-        :param pulumi.Input[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgs']]] servers: (Updatable) The set of cache store members to connect to. At present only a single server is supported.
-        """
         pulumi.set(__self__, "type", type)
         if authentication_secret_id is not None:
             pulumi.set(__self__, "authentication_secret_id", authentication_secret_id)
@@ -6761,9 +4830,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Type of the Response Cache.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -6773,9 +4839,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="authenticationSecretId")
     def authentication_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
-        """
         return pulumi.get(self, "authentication_secret_id")
 
     @authentication_secret_id.setter
@@ -6785,9 +4848,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="authenticationSecretVersionNumber")
     def authentication_secret_version_number(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version number of the authentication secret to use.
-        """
         return pulumi.get(self, "authentication_secret_version_number")
 
     @authentication_secret_version_number.setter
@@ -6797,9 +4857,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="connectTimeoutInMs")
     def connect_timeout_in_ms(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the timeout for establishing a connection with the Response Cache.
-        """
         return pulumi.get(self, "connect_timeout_in_ms")
 
     @connect_timeout_in_ms.setter
@@ -6809,9 +4866,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="isSslEnabled")
     def is_ssl_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines if the connection should be over SSL.
-        """
         return pulumi.get(self, "is_ssl_enabled")
 
     @is_ssl_enabled.setter
@@ -6821,9 +4875,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="isSslVerifyDisabled")
     def is_ssl_verify_disabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Defines whether or not to uphold SSL verification.
-        """
         return pulumi.get(self, "is_ssl_verify_disabled")
 
     @is_ssl_verify_disabled.setter
@@ -6833,9 +4884,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="readTimeoutInMs")
     def read_timeout_in_ms(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the timeout for reading data from the Response Cache.
-        """
         return pulumi.get(self, "read_timeout_in_ms")
 
     @read_timeout_in_ms.setter
@@ -6845,9 +4893,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter(name="sendTimeoutInMs")
     def send_timeout_in_ms(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Defines the timeout for transmitting data to the Response Cache.
-        """
         return pulumi.get(self, "send_timeout_in_ms")
 
     @send_timeout_in_ms.setter
@@ -6857,9 +4902,6 @@ class GatewayResponseCacheDetailsArgs:
     @property
     @pulumi.getter
     def servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayResponseCacheDetailsServerArgs']]]]:
-        """
-        (Updatable) The set of cache store members to connect to. At present only a single server is supported.
-        """
         return pulumi.get(self, "servers")
 
     @servers.setter
@@ -6872,10 +4914,6 @@ class GatewayResponseCacheDetailsServerArgs:
     def __init__(__self__, *,
                  host: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] host: (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
-        :param pulumi.Input[int] port: (Updatable) The port the cache store is exposed on.
-        """
         if host is not None:
             pulumi.set(__self__, "host", host)
         if port is not None:
@@ -6884,9 +4922,6 @@ class GatewayResponseCacheDetailsServerArgs:
     @property
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -6896,9 +4931,6 @@ class GatewayResponseCacheDetailsServerArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The port the cache store is exposed on.
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -6911,19 +4943,12 @@ class SubscriberClientArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  token: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The name of the client. Must be unique within a subscriber.
-        :param pulumi.Input[str] token: (Updatable) The token for the client. Must be unique within a tenancy.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "token", token)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the client. Must be unique within a subscriber.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6933,9 +4958,6 @@ class SubscriberClientArgs:
     @property
     @pulumi.getter
     def token(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The token for the client. Must be unique within a tenancy.
-        """
         return pulumi.get(self, "token")
 
     @token.setter
@@ -6951,13 +4973,6 @@ class UsagePlanEntitlementArgs:
                  quota: Optional[pulumi.Input['UsagePlanEntitlementQuotaArgs']] = None,
                  rate_limit: Optional[pulumi.Input['UsagePlanEntitlementRateLimitArgs']] = None,
                  targets: Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) An entitlement name, unique within a usage plan.
-        :param pulumi.Input[str] description: (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        :param pulumi.Input['UsagePlanEntitlementQuotaArgs'] quota: (Updatable) Quota policy for a usage plan.
-        :param pulumi.Input['UsagePlanEntitlementRateLimitArgs'] rate_limit: (Updatable) Rate-limiting policy for a usage plan.
-        :param pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]] targets: (Updatable) A collection of targeted deployments that the entitlement will be applied to.
-        """
         pulumi.set(__self__, "name", name)
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -6971,9 +4986,6 @@ class UsagePlanEntitlementArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) An entitlement name, unique within a usage plan.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6983,9 +4995,6 @@ class UsagePlanEntitlementArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -6995,9 +5004,6 @@ class UsagePlanEntitlementArgs:
     @property
     @pulumi.getter
     def quota(self) -> Optional[pulumi.Input['UsagePlanEntitlementQuotaArgs']]:
-        """
-        (Updatable) Quota policy for a usage plan.
-        """
         return pulumi.get(self, "quota")
 
     @quota.setter
@@ -7007,9 +5013,6 @@ class UsagePlanEntitlementArgs:
     @property
     @pulumi.getter(name="rateLimit")
     def rate_limit(self) -> Optional[pulumi.Input['UsagePlanEntitlementRateLimitArgs']]:
-        """
-        (Updatable) Rate-limiting policy for a usage plan.
-        """
         return pulumi.get(self, "rate_limit")
 
     @rate_limit.setter
@@ -7019,9 +5022,6 @@ class UsagePlanEntitlementArgs:
     @property
     @pulumi.getter
     def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsagePlanEntitlementTargetArgs']]]]:
-        """
-        (Updatable) A collection of targeted deployments that the entitlement will be applied to.
-        """
         return pulumi.get(self, "targets")
 
     @targets.setter
@@ -7036,12 +5036,6 @@ class UsagePlanEntitlementQuotaArgs:
                  reset_policy: pulumi.Input[str],
                  unit: pulumi.Input[str],
                  value: pulumi.Input[int]):
-        """
-        :param pulumi.Input[str] operation_on_breach: (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
-        :param pulumi.Input[str] reset_policy: (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
-        :param pulumi.Input[str] unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
-        :param pulumi.Input[int] value: (Updatable) The number of requests that can be made per time period.
-        """
         pulumi.set(__self__, "operation_on_breach", operation_on_breach)
         pulumi.set(__self__, "reset_policy", reset_policy)
         pulumi.set(__self__, "unit", unit)
@@ -7050,9 +5044,6 @@ class UsagePlanEntitlementQuotaArgs:
     @property
     @pulumi.getter(name="operationOnBreach")
     def operation_on_breach(self) -> pulumi.Input[str]:
-        """
-        (Updatable) What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
-        """
         return pulumi.get(self, "operation_on_breach")
 
     @operation_on_breach.setter
@@ -7062,9 +5053,6 @@ class UsagePlanEntitlementQuotaArgs:
     @property
     @pulumi.getter(name="resetPolicy")
     def reset_policy(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The policy that controls when quotas will reset. Example: `CALENDAR`
-        """
         return pulumi.get(self, "reset_policy")
 
     @reset_policy.setter
@@ -7074,9 +5062,6 @@ class UsagePlanEntitlementQuotaArgs:
     @property
     @pulumi.getter
     def unit(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
-        """
         return pulumi.get(self, "unit")
 
     @unit.setter
@@ -7086,9 +5071,6 @@ class UsagePlanEntitlementQuotaArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of requests that can be made per time period.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -7101,19 +5083,12 @@ class UsagePlanEntitlementRateLimitArgs:
     def __init__(__self__, *,
                  unit: pulumi.Input[str],
                  value: pulumi.Input[int]):
-        """
-        :param pulumi.Input[str] unit: (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
-        :param pulumi.Input[int] value: (Updatable) The number of requests that can be made per time period.
-        """
         pulumi.set(__self__, "unit", unit)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def unit(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
-        """
         return pulumi.get(self, "unit")
 
     @unit.setter
@@ -7123,9 +5098,6 @@ class UsagePlanEntitlementRateLimitArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of requests that can be made per time period.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -7137,17 +5109,11 @@ class UsagePlanEntitlementRateLimitArgs:
 class UsagePlanEntitlementTargetArgs:
     def __init__(__self__, *,
                  deployment_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
-        """
         pulumi.set(__self__, "deployment_id", deployment_id)
 
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
-        """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
@@ -7161,9 +5127,6 @@ class GetApisFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the validation.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -7172,9 +5135,6 @@ class GetApisFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the validation.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7245,10 +5205,6 @@ class GetDeploymentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The case-insensitive name of the header.  This name must be unique across transformation policies.
-        :param Sequence[str] values: A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -7257,9 +5213,6 @@ class GetDeploymentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The case-insensitive name of the header.  This name must be unique across transformation policies.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7269,9 +5222,6 @@ class GetDeploymentsFilterArgs:
     @property
     @pulumi.getter
     def values(self) -> Sequence[str]:
-        """
-        A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -7333,9 +5283,6 @@ class GetSubscribersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the client. Must be unique within a subscriber.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -7344,9 +5291,6 @@ class GetSubscribersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the client. Must be unique within a subscriber.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -7378,9 +5322,6 @@ class GetUsagePlansFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: An entitlement name, unique within a usage plan.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -7389,9 +5330,6 @@ class GetUsagePlansFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        An entitlement name, unique within a usage plan.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

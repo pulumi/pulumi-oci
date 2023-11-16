@@ -58,9 +58,6 @@ class GetHostInsightsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -71,17 +68,11 @@ class GetHostInsightsResult:
     @property
     @pulumi.getter(name="enterpriseManagerBridgeId")
     def enterprise_manager_bridge_id(self) -> Optional[str]:
-        """
-        OPSI Enterprise Manager Bridge OCID
-        """
         return pulumi.get(self, "enterprise_manager_bridge_id")
 
     @property
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-        """
         return pulumi.get(self, "exadata_insight_id")
 
     @property
@@ -91,42 +82,27 @@ class GetHostInsightsResult:
 
     @property
     @pulumi.getter(name="hostInsightSummaryCollections")
-    def host_insight_summary_collections(self) -> Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionResult']:
-        """
-        The list of host_insight_summary_collection.
-        """
+    def host_insight_summary_collections(self) -> Optional[Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionResult']]:
         return pulumi.get(self, "host_insight_summary_collections")
 
     @property
     @pulumi.getter(name="hostTypes")
     def host_types(self) -> Optional[Sequence[str]]:
-        """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-        """
         return pulumi.get(self, "host_types")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the host.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
-        """
-        Indicates the status of a host insight in Operations Insights
-        """
         return pulumi.get(self, "statuses")
 
 
@@ -159,36 +135,7 @@ def get_host_insights(compartment_id: Optional[str] = None,
                       statuses: Optional[Sequence[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostInsightsResult:
     """
-    This data source provides the list of Host Insights in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_host_insights = oci.Opsi.get_host_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["host_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-        host_types=var["host_insight_host_type"],
-        id=var["host_insight_id"],
-        states=var["host_insight_state"],
-        statuses=var["host_insight_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-    :param Sequence[str] host_types: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-    :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -228,35 +175,6 @@ def get_host_insights_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              statuses: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostInsightsResult]:
     """
-    This data source provides the list of Host Insights in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
-    When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_host_insights = oci.Opsi.get_host_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["host_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-        host_types=var["host_insight_host_type"],
-        id=var["host_insight_id"],
-        states=var["host_insight_state"],
-        statuses=var["host_insight_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-    :param Sequence[str] host_types: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
-    :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: Lifecycle states
-    :param Sequence[str] statuses: Resource Status
+    Use this data source to access information about an existing resource.
     """
     ...

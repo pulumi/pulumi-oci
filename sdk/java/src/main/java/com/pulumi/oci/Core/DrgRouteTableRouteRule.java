@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -70,14 +71,14 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="attributes", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> attributes;
+    private Output</* @Nullable */ Map<String,Object>> attributes;
 
     /**
      * @return Additional properties for the route, computed by the service.
      * 
      */
-    public Output<Map<String,Object>> attributes() {
-        return this.attributes;
+    public Output<Optional<Map<String,Object>>> attributes() {
+        return Codegen.optional(this.attributes);
     }
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
@@ -138,28 +139,28 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="isBlackhole", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isBlackhole;
+    private Output</* @Nullable */ Boolean> isBlackhole;
 
     /**
      * @return Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
      * 
      */
-    public Output<Boolean> isBlackhole() {
-        return this.isBlackhole;
+    public Output<Optional<Boolean>> isBlackhole() {
+        return Codegen.optional(this.isBlackhole);
     }
     /**
      * Indicates that the route was not imported due to a conflict between route rules.
      * 
      */
     @Export(name="isConflict", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isConflict;
+    private Output</* @Nullable */ Boolean> isConflict;
 
     /**
      * @return Indicates that the route was not imported due to a conflict between route rules.
      * 
      */
-    public Output<Boolean> isConflict() {
-        return this.isConflict;
+    public Output<Optional<Boolean>> isConflict() {
+        return Codegen.optional(this.isConflict);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
@@ -186,28 +187,28 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="routeProvenance", refs={String.class}, tree="[0]")
-    private Output<String> routeProvenance;
+    private Output</* @Nullable */ String> routeProvenance;
 
     /**
      * @return The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route&#39;s provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
      * 
      */
-    public Output<String> routeProvenance() {
-        return this.routeProvenance;
+    public Output<Optional<String>> routeProvenance() {
+        return Codegen.optional(this.routeProvenance);
     }
     /**
      * You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      * 
      */
     @Export(name="routeType", refs={String.class}, tree="[0]")
-    private Output<String> routeType;
+    private Output</* @Nullable */ String> routeType;
 
     /**
      * @return You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
      * 
      */
-    public Output<String> routeType() {
-        return this.routeType;
+    public Output<Optional<String>> routeType() {
+        return Codegen.optional(this.routeType);
     }
 
     /**

@@ -51,13 +51,13 @@ export interface GetCategoriesResult {
     /**
      * The list of categories.
      */
-    readonly categories: outputs.Marketplace.GetCategoriesCategory[];
+    readonly categories?: outputs.Marketplace.GetCategoriesCategory[];
     readonly compartmentId?: string;
     readonly filters?: outputs.Marketplace.GetCategoriesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.

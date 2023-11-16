@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor {
@@ -13,39 +15,39 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor 
      * @return Trusted Factor Type. Local, X509, SAML SOCIAL
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return trust factor creation time
      * 
      */
-    private String creationTime;
+    private @Nullable String creationTime;
     /**
      * @return Trusted Factor
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor() {}
     /**
      * @return Trusted Factor Type. Local, X509, SAML SOCIAL
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return trust factor creation time
      * 
      */
-    public String creationTime() {
-        return this.creationTime;
+    public Optional<String> creationTime() {
+        return Optional.ofNullable(this.creationTime);
     }
     /**
      * @return Trusted Factor
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private String creationTime;
-        private String type;
+        private @Nullable String category;
+        private @Nullable String creationTime;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor 
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder creationTime(String creationTime) {
-            this.creationTime = Objects.requireNonNull(creationTime);
+        public Builder creationTime(@Nullable String creationTime) {
+            this.creationTime = creationTime;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDomainsMyTrustedUserAgentsMyTrustedUserAgentTrustedFactor build() {

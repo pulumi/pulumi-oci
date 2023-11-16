@@ -108,7 +108,7 @@ export interface GetMysqlDbSystemsResult {
     /**
      * The list of db_systems.
      */
-    readonly dbSystems: outputs.Mysql.GetMysqlDbSystemsDbSystem[];
+    readonly dbSystems?: outputs.Mysql.GetMysqlDbSystemsDbSystem[];
     /**
      * The user-friendly name for the DB System. It does not have to be unique.
      */
@@ -117,7 +117,7 @@ export interface GetMysqlDbSystemsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */

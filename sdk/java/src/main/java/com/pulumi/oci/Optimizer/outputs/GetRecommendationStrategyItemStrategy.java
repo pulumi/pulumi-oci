@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationStrategyItemStrategy {
@@ -16,39 +18,39 @@ public final class GetRecommendationStrategyItemStrategy {
      * @return Whether this is the default recommendation strategy.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return The list of strategies for the parameters.
      * 
      */
-    private List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
+    private @Nullable List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
     /**
      * @return The name of the strategy.
      * 
      */
-    private String strategyName;
+    private @Nullable String strategyName;
 
     private GetRecommendationStrategyItemStrategy() {}
     /**
      * @return Whether this is the default recommendation strategy.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return The list of strategies for the parameters.
      * 
      */
     public List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions() {
-        return this.parametersDefinitions;
+        return this.parametersDefinitions == null ? List.of() : this.parametersDefinitions;
     }
     /**
      * @return The name of the strategy.
      * 
      */
-    public String strategyName() {
-        return this.strategyName;
+    public Optional<String> strategyName() {
+        return Optional.ofNullable(this.strategyName);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetRecommendationStrategyItemStrategy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isDefault;
-        private List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
-        private String strategyName;
+        private @Nullable Boolean isDefault;
+        private @Nullable List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions;
+        private @Nullable String strategyName;
         public Builder() {}
         public Builder(GetRecommendationStrategyItemStrategy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,21 +74,21 @@ public final class GetRecommendationStrategyItemStrategy {
         }
 
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder parametersDefinitions(List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions) {
-            this.parametersDefinitions = Objects.requireNonNull(parametersDefinitions);
+        public Builder parametersDefinitions(@Nullable List<GetRecommendationStrategyItemStrategyParametersDefinition> parametersDefinitions) {
+            this.parametersDefinitions = parametersDefinitions;
             return this;
         }
         public Builder parametersDefinitions(GetRecommendationStrategyItemStrategyParametersDefinition... parametersDefinitions) {
             return parametersDefinitions(List.of(parametersDefinitions));
         }
         @CustomType.Setter
-        public Builder strategyName(String strategyName) {
-            this.strategyName = Objects.requireNonNull(strategyName);
+        public Builder strategyName(@Nullable String strategyName) {
+            this.strategyName = strategyName;
             return this;
         }
         public GetRecommendationStrategyItemStrategy build() {

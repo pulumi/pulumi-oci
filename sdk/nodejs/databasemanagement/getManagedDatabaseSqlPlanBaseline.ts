@@ -51,44 +51,44 @@ export interface GetManagedDatabaseSqlPlanBaselineResult {
     /**
      * Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
      */
-    readonly accepted: string;
+    readonly accepted?: string;
     /**
      * The application action.
      */
-    readonly action: string;
+    readonly action?: string;
     /**
      * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
      */
-    readonly adaptive: string;
+    readonly adaptive?: string;
     /**
      * Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
      */
-    readonly autoPurge: string;
+    readonly autoPurge?: string;
     /**
      * Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
      */
-    readonly enabled: string;
+    readonly enabled?: string;
     /**
      * The execution plan for the SQL statement.
      */
-    readonly executionPlan: string;
+    readonly executionPlan?: string;
     /**
      * Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
      */
-    readonly fixed: string;
+    readonly fixed?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The application module name.
      */
-    readonly module: string;
+    readonly module?: string;
     /**
      * The origin of the SQL plan baseline.
      */
-    readonly origin: string;
+    readonly origin?: string;
     /**
      * The unique plan identifier.
      */
@@ -96,27 +96,27 @@ export interface GetManagedDatabaseSqlPlanBaselineResult {
     /**
      * Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
      */
-    readonly reproduced: string;
+    readonly reproduced?: string;
     /**
      * The unique SQL identifier.
      */
-    readonly sqlHandle: string;
+    readonly sqlHandle?: string;
     /**
      * The SQL text.
      */
-    readonly sqlText: string;
+    readonly sqlText?: string;
     /**
      * The date and time when the plan baseline was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time when the plan baseline was last executed.
      */
-    readonly timeLastExecuted: string;
+    readonly timeLastExecuted?: string;
     /**
      * The date and time when the plan baseline was last modified.
      */
-    readonly timeLastModified: string;
+    readonly timeLastModified?: string;
 }
 /**
  * This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.

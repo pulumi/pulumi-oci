@@ -45,60 +45,60 @@ export interface GetDedicatedVmHostResult {
     /**
      * The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The OCID of the compartment that contains the dedicated virtual machine host.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly dedicatedVmHostId: string;
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
      */
-    readonly dedicatedVmHostShape: string;
+    readonly dedicatedVmHostShape?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
      */
-    readonly faultDomain: string;
+    readonly faultDomain?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current available memory of the dedicated VM host, in GBs.
      */
-    readonly remainingMemoryInGbs: number;
+    readonly remainingMemoryInGbs?: number;
     /**
      * The current available OCPUs of the dedicated VM host.
      */
-    readonly remainingOcpus: number;
+    readonly remainingOcpus?: number;
     /**
      * The current state of the dedicated VM host.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The current total memory of the dedicated VM host, in GBs.
      */
-    readonly totalMemoryInGbs: number;
+    readonly totalMemoryInGbs?: number;
     /**
      * The current total OCPUs of the dedicated VM host.
      */
-    readonly totalOcpus: number;
+    readonly totalOcpus?: number;
 }
 /**
  * This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.

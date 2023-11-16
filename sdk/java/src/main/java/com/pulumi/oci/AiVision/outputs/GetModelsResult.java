@@ -34,7 +34,7 @@ public final class GetModelsResult {
      * @return The list of model_collection.
      * 
      */
-    private List<GetModelsModelCollection> modelCollections;
+    private @Nullable List<GetModelsModelCollection> modelCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
@@ -76,7 +76,7 @@ public final class GetModelsResult {
      * 
      */
     public List<GetModelsModelCollection> modelCollections() {
-        return this.modelCollections;
+        return this.modelCollections == null ? List.of() : this.modelCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -106,7 +106,7 @@ public final class GetModelsResult {
         private @Nullable String displayName;
         private @Nullable List<GetModelsFilter> filters;
         private @Nullable String id;
-        private List<GetModelsModelCollection> modelCollections;
+        private @Nullable List<GetModelsModelCollection> modelCollections;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -145,8 +145,8 @@ public final class GetModelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder modelCollections(List<GetModelsModelCollection> modelCollections) {
-            this.modelCollections = Objects.requireNonNull(modelCollections);
+        public Builder modelCollections(@Nullable List<GetModelsModelCollection> modelCollections) {
+            this.modelCollections = modelCollections;
             return this;
         }
         public Builder modelCollections(GetModelsModelCollection... modelCollections) {

@@ -86,7 +86,7 @@ export interface GetIngressGatewayRouteTablesResult {
     /**
      * The list of ingress_gateway_route_table_collection.
      */
-    readonly ingressGatewayRouteTableCollections: outputs.ServiceMesh.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection[];
+    readonly ingressGatewayRouteTableCollections?: outputs.ServiceMesh.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection[];
     /**
      * Name of the ingress gateway host that this route should apply to.
      */

@@ -8,6 +8,8 @@ import com.pulumi.oci.OneSubsription.outputs.GetInvoicesInvoiceInvoiceLineProduc
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceInvoiceLine {
@@ -15,75 +17,75 @@ public final class GetInvoicesInvoiceInvoiceLine {
      * @return AR Invoice Number for Invoice Line
      * 
      */
-    private String arInvoiceNumber;
+    private @Nullable String arInvoiceNumber;
     /**
      * @return Data Center Attribute.
      * 
      */
-    private String dataCenter;
+    private @Nullable String dataCenter;
     /**
      * @return SPM Invoice Line internal identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Product description
      * 
      */
-    private List<GetInvoicesInvoiceInvoiceLineProduct> products;
+    private @Nullable List<GetInvoicesInvoiceInvoiceLineProduct> products;
     /**
      * @return Usage end time
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Usage start time
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetInvoicesInvoiceInvoiceLine() {}
     /**
      * @return AR Invoice Number for Invoice Line
      * 
      */
-    public String arInvoiceNumber() {
-        return this.arInvoiceNumber;
+    public Optional<String> arInvoiceNumber() {
+        return Optional.ofNullable(this.arInvoiceNumber);
     }
     /**
      * @return Data Center Attribute.
      * 
      */
-    public String dataCenter() {
-        return this.dataCenter;
+    public Optional<String> dataCenter() {
+        return Optional.ofNullable(this.dataCenter);
     }
     /**
      * @return SPM Invoice Line internal identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetInvoicesInvoiceInvoiceLineProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return Usage end time
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Usage start time
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetInvoicesInvoiceInvoiceLine {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String arInvoiceNumber;
-        private String dataCenter;
-        private String id;
-        private List<GetInvoicesInvoiceInvoiceLineProduct> products;
-        private String timeEnd;
-        private String timeStart;
+        private @Nullable String arInvoiceNumber;
+        private @Nullable String dataCenter;
+        private @Nullable String id;
+        private @Nullable List<GetInvoicesInvoiceInvoiceLineProduct> products;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetInvoicesInvoiceInvoiceLine defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetInvoicesInvoiceInvoiceLine {
         }
 
         @CustomType.Setter
-        public Builder arInvoiceNumber(String arInvoiceNumber) {
-            this.arInvoiceNumber = Objects.requireNonNull(arInvoiceNumber);
+        public Builder arInvoiceNumber(@Nullable String arInvoiceNumber) {
+            this.arInvoiceNumber = arInvoiceNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+        public Builder dataCenter(@Nullable String dataCenter) {
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder products(List<GetInvoicesInvoiceInvoiceLineProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetInvoicesInvoiceInvoiceLineProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetInvoicesInvoiceInvoiceLineProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetInvoicesInvoiceInvoiceLine build() {

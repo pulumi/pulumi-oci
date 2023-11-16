@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Logging
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Log group OCID.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.Logging
 
             ImmutableArray<Outputs.GetLogsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string logGroupId,
 

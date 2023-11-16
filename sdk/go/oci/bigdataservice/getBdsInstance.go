@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -61,60 +60,60 @@ type LookupBdsInstanceArgs struct {
 type LookupBdsInstanceResult struct {
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
-	BootstrapScriptUrl string `pulumi:"bootstrapScriptUrl"`
+	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
 	// The information about added Cloud SQL capability
 	CloudSqlDetails      []GetBdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	ClusterAdminPassword string                         `pulumi:"clusterAdminPassword"`
+	ClusterAdminPassword *string                        `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails []GetBdsInstanceClusterDetail `pulumi:"clusterDetails"`
 	// Profile of the Big Data Service cluster.
-	ClusterProfile   string `pulumi:"clusterProfile"`
-	ClusterPublicKey string `pulumi:"clusterPublicKey"`
+	ClusterProfile   *string `pulumi:"clusterProfile"`
+	ClusterPublicKey *string `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution.
-	ClusterVersion string `pulumi:"clusterVersion"`
+	ClusterVersion *string `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
-	CompartmentId          string                                `pulumi:"compartmentId"`
+	CompartmentId          *string                               `pulumi:"compartmentId"`
 	ComputeOnlyWorkerNodes []GetBdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNodes"`
 	// The user who created the cluster.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the node.
-	DisplayName string                   `pulumi:"displayName"`
+	DisplayName *string                  `pulumi:"displayName"`
 	EdgeNodes   []GetBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
-	IsCloudSqlConfigured bool `pulumi:"isCloudSqlConfigured"`
-	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
+	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
+	IsForceStopJobs      *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
-	IsHighAvailability bool `pulumi:"isHighAvailability"`
+	IsHighAvailability *bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not Kafka should be configured.
-	IsKafkaConfigured bool `pulumi:"isKafkaConfigured"`
+	IsKafkaConfigured *bool `pulumi:"isKafkaConfigured"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
-	IsSecure          bool                            `pulumi:"isSecure"`
+	IsSecure          *bool                           `pulumi:"isSecure"`
 	KafkaBrokerNodes  []GetBdsInstanceKafkaBrokerNode `pulumi:"kafkaBrokerNodes"`
-	KerberosRealmName string                          `pulumi:"kerberosRealmName"`
+	KerberosRealmName *string                         `pulumi:"kerberosRealmName"`
 	// The OCID of the Key Management master encryption key.
-	KmsKeyId    string                     `pulumi:"kmsKeyId"`
+	KmsKeyId    *string                    `pulumi:"kmsKeyId"`
 	MasterNodes []GetBdsInstanceMasterNode `pulumi:"masterNodes"`
 	// Additional configuration of the user's network.
 	NetworkConfigs []GetBdsInstanceNetworkConfig `pulumi:"networkConfigs"`
 	// The list of nodes in the cluster.
 	Nodes []GetBdsInstanceNode `pulumi:"nodes"`
 	// The number of nodes that form the cluster.
-	NumberOfNodes int `pulumi:"numberOfNodes"`
+	NumberOfNodes *int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
-	NumberOfNodesRequiringMaintenanceReboot int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
-	OsPatchVersion                          string `pulumi:"osPatchVersion"`
+	NumberOfNodesRequiringMaintenanceReboot *int    `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
+	OsPatchVersion                          *string `pulumi:"osPatchVersion"`
 	// The state of the cluster.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-	TimeUpdated string                     `pulumi:"timeUpdated"`
+	TimeUpdated *string                    `pulumi:"timeUpdated"`
 	UtilNodes   []GetBdsInstanceUtilNode   `pulumi:"utilNodes"`
 	WorkerNodes []GetBdsInstanceWorkerNode `pulumi:"workerNodes"`
 }
@@ -157,19 +156,13 @@ func (o LookupBdsInstanceResultOutput) ToLookupBdsInstanceResultOutputWithContex
 	return o
 }
 
-func (o LookupBdsInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBdsInstanceResult] {
-	return pulumix.Output[LookupBdsInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupBdsInstanceResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
 // pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
-func (o LookupBdsInstanceResultOutput) BootstrapScriptUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) BootstrapScriptUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.BootstrapScriptUrl }).(pulumi.StringPtrOutput)
 }
 
 // The information about added Cloud SQL capability
@@ -177,8 +170,8 @@ func (o LookupBdsInstanceResultOutput) CloudSqlDetails() GetBdsInstanceCloudSqlD
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceCloudSqlDetail { return v.CloudSqlDetails }).(GetBdsInstanceCloudSqlDetailArrayOutput)
 }
 
-func (o LookupBdsInstanceResultOutput) ClusterAdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.ClusterAdminPassword }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) ClusterAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.ClusterAdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // Specific info about a Hadoop cluster
@@ -187,22 +180,22 @@ func (o LookupBdsInstanceResultOutput) ClusterDetails() GetBdsInstanceClusterDet
 }
 
 // Profile of the Big Data Service cluster.
-func (o LookupBdsInstanceResultOutput) ClusterProfile() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.ClusterProfile }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) ClusterProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.ClusterProfile }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupBdsInstanceResultOutput) ClusterPublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.ClusterPublicKey }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) ClusterPublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.ClusterPublicKey }).(pulumi.StringPtrOutput)
 }
 
 // Version of the Hadoop distribution.
-func (o LookupBdsInstanceResultOutput) ClusterVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.ClusterVersion }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) ClusterVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.ClusterVersion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o LookupBdsInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) ComputeOnlyWorkerNodes() GetBdsInstanceComputeOnlyWorkerNodeArrayOutput {
@@ -210,8 +203,8 @@ func (o LookupBdsInstanceResultOutput) ComputeOnlyWorkerNodes() GetBdsInstanceCo
 }
 
 // The user who created the cluster.
-func (o LookupBdsInstanceResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
@@ -220,8 +213,8 @@ func (o LookupBdsInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The name of the node.
-func (o LookupBdsInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) EdgeNodes() GetBdsInstanceEdgeNodeArrayOutput {
@@ -234,45 +227,45 @@ func (o LookupBdsInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the Big Data Service resource.
-func (o LookupBdsInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Boolean flag specifying whether or not Cloud SQL should be configured.
-func (o LookupBdsInstanceResultOutput) IsCloudSqlConfigured() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
+func (o LookupBdsInstanceResultOutput) IsCloudSqlConfigured() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *bool { return v.IsCloudSqlConfigured }).(pulumi.BoolPtrOutput)
 }
 
-func (o LookupBdsInstanceResultOutput) IsForceStopJobs() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsForceStopJobs }).(pulumi.BoolOutput)
+func (o LookupBdsInstanceResultOutput) IsForceStopJobs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *bool { return v.IsForceStopJobs }).(pulumi.BoolPtrOutput)
 }
 
 // Boolean flag specifying whether or not the cluster is highly available (HA)
-func (o LookupBdsInstanceResultOutput) IsHighAvailability() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsHighAvailability }).(pulumi.BoolOutput)
+func (o LookupBdsInstanceResultOutput) IsHighAvailability() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *bool { return v.IsHighAvailability }).(pulumi.BoolPtrOutput)
 }
 
 // Boolean flag specifying whether or not Kafka should be configured.
-func (o LookupBdsInstanceResultOutput) IsKafkaConfigured() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsKafkaConfigured }).(pulumi.BoolOutput)
+func (o LookupBdsInstanceResultOutput) IsKafkaConfigured() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *bool { return v.IsKafkaConfigured }).(pulumi.BoolPtrOutput)
 }
 
 // Boolean flag specifying whether or not the cluster should be set up as secure.
-func (o LookupBdsInstanceResultOutput) IsSecure() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) bool { return v.IsSecure }).(pulumi.BoolOutput)
+func (o LookupBdsInstanceResultOutput) IsSecure() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *bool { return v.IsSecure }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) KafkaBrokerNodes() GetBdsInstanceKafkaBrokerNodeArrayOutput {
 	return o.ApplyT(func(v LookupBdsInstanceResult) []GetBdsInstanceKafkaBrokerNode { return v.KafkaBrokerNodes }).(GetBdsInstanceKafkaBrokerNodeArrayOutput)
 }
 
-func (o LookupBdsInstanceResultOutput) KerberosRealmName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.KerberosRealmName }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) KerberosRealmName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.KerberosRealmName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Key Management master encryption key.
-func (o LookupBdsInstanceResultOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) MasterNodes() GetBdsInstanceMasterNodeArrayOutput {
@@ -290,32 +283,32 @@ func (o LookupBdsInstanceResultOutput) Nodes() GetBdsInstanceNodeArrayOutput {
 }
 
 // The number of nodes that form the cluster.
-func (o LookupBdsInstanceResultOutput) NumberOfNodes() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+func (o LookupBdsInstanceResultOutput) NumberOfNodes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *int { return v.NumberOfNodes }).(pulumi.IntPtrOutput)
 }
 
 // Number of nodes that require a maintenance reboot
-func (o LookupBdsInstanceResultOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) int { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntOutput)
+func (o LookupBdsInstanceResultOutput) NumberOfNodesRequiringMaintenanceReboot() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *int { return v.NumberOfNodesRequiringMaintenanceReboot }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupBdsInstanceResultOutput) OsPatchVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.OsPatchVersion }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) OsPatchVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.OsPatchVersion }).(pulumi.StringPtrOutput)
 }
 
 // The state of the cluster.
-func (o LookupBdsInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-func (o LookupBdsInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
-func (o LookupBdsInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupBdsInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBdsInstanceResultOutput) UtilNodes() GetBdsInstanceUtilNodeArrayOutput {

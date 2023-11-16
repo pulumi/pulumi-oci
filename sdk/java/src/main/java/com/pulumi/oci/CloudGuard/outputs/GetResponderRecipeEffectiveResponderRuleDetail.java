@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResponderRecipeEffectiveResponderRuleDetail {
@@ -16,51 +18,51 @@ public final class GetResponderRecipeEffectiveResponderRuleDetail {
      * @return Base condition object
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return ResponderRule configurations
      * 
      */
-    private List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
+    private @Nullable List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Execution Mode for ResponderRule
      * 
      */
-    private String mode;
+    private @Nullable String mode;
 
     private GetResponderRecipeEffectiveResponderRuleDetail() {}
     /**
      * @return Base condition object
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return ResponderRule configurations
      * 
      */
     public List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Execution Mode for ResponderRule
      * 
      */
-    public String mode() {
-        return this.mode;
+    public Optional<String> mode() {
+        return Optional.ofNullable(this.mode);
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetResponderRecipeEffectiveResponderRuleDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
-        private Boolean isEnabled;
-        private String mode;
+        private @Nullable String condition;
+        private @Nullable List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String mode;
         public Builder() {}
         public Builder(GetResponderRecipeEffectiveResponderRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,26 +88,26 @@ public final class GetResponderRecipeEffectiveResponderRuleDetail {
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetResponderRecipeEffectiveResponderRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+        public Builder mode(@Nullable String mode) {
+            this.mode = mode;
             return this;
         }
         public GetResponderRecipeEffectiveResponderRuleDetail build() {

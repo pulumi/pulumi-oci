@@ -56,7 +56,7 @@ export interface GetTagsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
      */
@@ -68,7 +68,7 @@ export interface GetTagsResult {
     /**
      * The list of tags.
      */
-    readonly tags: outputs.Identity.GetTagsTag[];
+    readonly tags?: outputs.Identity.GetTagsTag[];
 }
 /**
  * This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.

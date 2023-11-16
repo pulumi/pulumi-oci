@@ -129,7 +129,7 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of appliance images.
         /// </summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.CloudBridge
 
             string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetApplianceImageItemResult> items)
         {

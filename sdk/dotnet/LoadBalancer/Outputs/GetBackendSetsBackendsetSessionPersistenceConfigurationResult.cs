@@ -16,17 +16,17 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         /// </summary>
-        public readonly string CookieName;
+        public readonly string? CookieName;
         /// <summary>
         /// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         /// </summary>
-        public readonly bool DisableFallback;
+        public readonly bool? DisableFallback;
 
         [OutputConstructor]
         private GetBackendSetsBackendsetSessionPersistenceConfigurationResult(
-            string cookieName,
+            string? cookieName,
 
-            bool disableFallback)
+            bool? disableFallback)
         {
             CookieName = cookieName;
             DisableFallback = disableFallback;

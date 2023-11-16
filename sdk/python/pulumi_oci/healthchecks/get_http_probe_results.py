@@ -53,15 +53,12 @@ class GetHttpProbeResultsResult:
 
     @property
     @pulumi.getter(name="httpProbeResults")
-    def http_probe_results(self) -> Sequence['outputs.GetHttpProbeResultsHttpProbeResultResult']:
-        """
-        The list of http_probe_results.
-        """
+    def http_probe_results(self) -> Optional[Sequence['outputs.GetHttpProbeResultsHttpProbeResultResult']]:
         return pulumi.get(self, "http_probe_results")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,9 +67,6 @@ class GetHttpProbeResultsResult:
     @property
     @pulumi.getter(name="probeConfigurationId")
     def probe_configuration_id(self) -> str:
-        """
-        The OCID of the monitor or on-demand probe responsible for creating this result.
-        """
         return pulumi.get(self, "probe_configuration_id")
 
     @property
@@ -88,9 +82,6 @@ class GetHttpProbeResultsResult:
     @property
     @pulumi.getter
     def target(self) -> Optional[str]:
-        """
-        The target hostname or IP address of the probe.
-        """
         return pulumi.get(self, "target")
 
 
@@ -116,29 +107,7 @@ def get_http_probe_results(filters: Optional[Sequence[pulumi.InputType['GetHttpP
                            target: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHttpProbeResultsResult:
     """
-    This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets the HTTP probe results for the specified probe or monitor, where
-    the `probeConfigurationId` is the OCID of either a monitor or an
-    on-demand probe.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_http_probe_results = oci.HealthChecks.get_http_probe_results(probe_configuration_id=oci_health_checks_probe_configuration["test_probe_configuration"]["id"],
-        start_time_greater_than_or_equal_to=var["http_probe_result_start_time_greater_than_or_equal_to"],
-        start_time_less_than_or_equal_to=var["http_probe_result_start_time_less_than_or_equal_to"],
-        target=var["http_probe_result_target"])
-    ```
-
-
-    :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
-    :param float start_time_greater_than_or_equal_to: Returns results with a `startTime` equal to or greater than the specified value.
-    :param float start_time_less_than_or_equal_to: Returns results with a `startTime` equal to or less than the specified value.
-    :param str target: Filters results that match the `target`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -167,28 +136,6 @@ def get_http_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
                                   target: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHttpProbeResultsResult]:
     """
-    This data source provides the list of Http Probe Results in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets the HTTP probe results for the specified probe or monitor, where
-    the `probeConfigurationId` is the OCID of either a monitor or an
-    on-demand probe.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_http_probe_results = oci.HealthChecks.get_http_probe_results(probe_configuration_id=oci_health_checks_probe_configuration["test_probe_configuration"]["id"],
-        start_time_greater_than_or_equal_to=var["http_probe_result_start_time_greater_than_or_equal_to"],
-        start_time_less_than_or_equal_to=var["http_probe_result_start_time_less_than_or_equal_to"],
-        target=var["http_probe_result_target"])
-    ```
-
-
-    :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
-    :param float start_time_greater_than_or_equal_to: Returns results with a `startTime` equal to or greater than the specified value.
-    :param float start_time_less_than_or_equal_to: Returns results with a `startTime` equal to or less than the specified value.
-    :param str target: Filters results that match the `target`.
+    Use this data source to access information about an existing resource.
     """
     ...

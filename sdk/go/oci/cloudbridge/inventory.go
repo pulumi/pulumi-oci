@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -74,15 +73,15 @@ type Inventory struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the inventory.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the inventory was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the inventory was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewInventory registers a new resource with the given unique name, arguments, and options.
@@ -224,12 +223,6 @@ func (i *Inventory) ToInventoryOutputWithContext(ctx context.Context) InventoryO
 	return pulumi.ToOutputWithContext(ctx, i).(InventoryOutput)
 }
 
-func (i *Inventory) ToOutput(ctx context.Context) pulumix.Output[*Inventory] {
-	return pulumix.Output[*Inventory]{
-		OutputState: i.ToInventoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InventoryArrayInput is an input type that accepts InventoryArray and InventoryArrayOutput values.
 // You can construct a concrete instance of `InventoryArrayInput` via:
 //
@@ -253,12 +246,6 @@ func (i InventoryArray) ToInventoryArrayOutput() InventoryArrayOutput {
 
 func (i InventoryArray) ToInventoryArrayOutputWithContext(ctx context.Context) InventoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InventoryArrayOutput)
-}
-
-func (i InventoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*Inventory] {
-	return pulumix.Output[[]*Inventory]{
-		OutputState: i.ToInventoryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InventoryMapInput is an input type that accepts InventoryMap and InventoryMapOutput values.
@@ -286,12 +273,6 @@ func (i InventoryMap) ToInventoryMapOutputWithContext(ctx context.Context) Inven
 	return pulumi.ToOutputWithContext(ctx, i).(InventoryMapOutput)
 }
 
-func (i InventoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Inventory] {
-	return pulumix.Output[map[string]*Inventory]{
-		OutputState: i.ToInventoryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InventoryOutput struct{ *pulumi.OutputState }
 
 func (InventoryOutput) ElementType() reflect.Type {
@@ -304,12 +285,6 @@ func (o InventoryOutput) ToInventoryOutput() InventoryOutput {
 
 func (o InventoryOutput) ToInventoryOutputWithContext(ctx context.Context) InventoryOutput {
 	return o
-}
-
-func (o InventoryOutput) ToOutput(ctx context.Context) pulumix.Output[*Inventory] {
-	return pulumix.Output[*Inventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenantId.
@@ -336,13 +311,13 @@ func (o InventoryOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o InventoryOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Inventory) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o InventoryOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Inventory) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the inventory.
-func (o InventoryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Inventory) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o InventoryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Inventory) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -351,13 +326,13 @@ func (o InventoryOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the inventory was created. An RFC3339 formatted datetime string.
-func (o InventoryOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Inventory) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o InventoryOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Inventory) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the inventory was updated. An RFC3339 formatted datetime string.
-func (o InventoryOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Inventory) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o InventoryOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Inventory) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type InventoryArrayOutput struct{ *pulumi.OutputState }
@@ -372,12 +347,6 @@ func (o InventoryArrayOutput) ToInventoryArrayOutput() InventoryArrayOutput {
 
 func (o InventoryArrayOutput) ToInventoryArrayOutputWithContext(ctx context.Context) InventoryArrayOutput {
 	return o
-}
-
-func (o InventoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Inventory] {
-	return pulumix.Output[[]*Inventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InventoryArrayOutput) Index(i pulumi.IntInput) InventoryOutput {
@@ -398,12 +367,6 @@ func (o InventoryMapOutput) ToInventoryMapOutput() InventoryMapOutput {
 
 func (o InventoryMapOutput) ToInventoryMapOutputWithContext(ctx context.Context) InventoryMapOutput {
 	return o
-}
-
-func (o InventoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Inventory] {
-	return pulumix.Output[map[string]*Inventory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InventoryMapOutput) MapIndex(k pulumi.StringInput) InventoryOutput {

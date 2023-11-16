@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -40,7 +39,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	AccessTokenExpiry pulumi.IntOutput `pulumi:"accessTokenExpiry"`
+	AccessTokenExpiry pulumi.IntPtrOutput `pulumi:"accessTokenExpiry"`
 	// (Updatable) Accounts of App
 	//
 	// **SCIM++ Properties:**
@@ -63,7 +62,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	Active pulumi.BoolOutput `pulumi:"active"`
+	Active pulumi.BoolPtrOutput `pulumi:"active"`
 	// (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
 	//
 	// **SCIM++ Properties:**
@@ -98,7 +97,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AllUrlSchemesAllowed pulumi.BoolOutput `pulumi:"allUrlSchemesAllowed"`
+	AllUrlSchemesAllowed pulumi.BoolPtrOutput `pulumi:"allUrlSchemesAllowed"`
 	// (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
 	//
 	// **SCIM++ Properties:**
@@ -109,7 +108,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AllowAccessControl pulumi.BoolOutput `pulumi:"allowAccessControl"`
+	AllowAccessControl pulumi.BoolPtrOutput `pulumi:"allowAccessControl"`
 	// (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
 	//
 	// **SCIM++ Properties:**
@@ -120,7 +119,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	AllowOffline pulumi.BoolOutput `pulumi:"allowOffline"`
+	AllowOffline pulumi.BoolPtrOutput `pulumi:"allowOffline"`
 	// (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
 	//
 	// **SCIM++ Properties:**
@@ -182,7 +181,7 @@ type DomainsApp struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	AppIcon pulumi.StringOutput `pulumi:"appIcon"`
+	AppIcon pulumi.StringPtrOutput `pulumi:"appIcon"`
 	// (Updatable) App Sign-on Policy.
 	//
 	// **SCIM++ Properties:**
@@ -192,7 +191,7 @@ type DomainsApp struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	AppSignonPolicy DomainsAppAppSignonPolicyOutput `pulumi:"appSignonPolicy"`
+	AppSignonPolicy DomainsAppAppSignonPolicyPtrOutput `pulumi:"appSignonPolicy"`
 	// (Updatable) Application thumbnail.
 	//
 	// **SCIM++ Properties:**
@@ -203,7 +202,7 @@ type DomainsApp struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	AppThumbnail pulumi.StringOutput `pulumi:"appThumbnail"`
+	AppThumbnail pulumi.StringPtrOutput `pulumi:"appThumbnail"`
 	// (Updatable) Network Perimeter
 	//
 	// **Added In:** 2010242156
@@ -227,7 +226,7 @@ type DomainsApp struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	AsOpcService DomainsAppAsOpcServiceOutput `pulumi:"asOpcService"`
+	AsOpcService DomainsAppAsOpcServicePtrOutput `pulumi:"asOpcService"`
 	// (Updatable) Label for the attribute to be shown in the UI.
 	//
 	// **SCIM++ Properties:**
@@ -255,7 +254,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Audience pulumi.StringOutput `pulumi:"audience"`
+	Audience pulumi.StringPtrOutput `pulumi:"audience"`
 	// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization pulumi.StringPtrOutput `pulumi:"authorization"`
 	// (Updatable) Application template on which the application is based.
@@ -281,7 +280,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	BypassConsent pulumi.BoolOutput `pulumi:"bypassConsent"`
+	BypassConsent pulumi.BoolPtrOutput `pulumi:"bypassConsent"`
 	// (Updatable) Callback Service URL
 	//
 	// **SCIM++ Properties:**
@@ -293,7 +292,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CallbackServiceUrl pulumi.StringOutput `pulumi:"callbackServiceUrl"`
+	CallbackServiceUrl pulumi.StringPtrOutput `pulumi:"callbackServiceUrl"`
 	// (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
 	//
 	// **SCIM++ Properties:**
@@ -320,7 +319,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ClientIpChecking pulumi.StringOutput `pulumi:"clientIpChecking"`
+	ClientIpChecking pulumi.StringPtrOutput `pulumi:"clientIpChecking"`
 	// (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
 	//
 	// **SCIM++ Properties:**
@@ -333,7 +332,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ClientSecret pulumi.StringOutput `pulumi:"clientSecret"`
+	ClientSecret pulumi.StringPtrOutput `pulumi:"clientSecret"`
 	// (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
 	//
 	// **SCIM++ Properties:**
@@ -345,7 +344,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ClientType pulumi.StringOutput `pulumi:"clientType"`
+	ClientType pulumi.StringPtrOutput `pulumi:"clientType"`
 	// (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
 	//
 	// **Added In:** 18.4.2
@@ -371,7 +370,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) Contact Email Address
 	//
 	// **Added In:** 19.2.1
@@ -384,7 +383,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ContactEmailAddress pulumi.StringOutput `pulumi:"contactEmailAddress"`
+	ContactEmailAddress pulumi.StringPtrOutput `pulumi:"contactEmailAddress"`
 	// (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
 	//
 	// **Added In:** 2207040824
@@ -410,7 +409,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) The description of the AppRole.
 	//
 	// **SCIM++ Properties:**
@@ -421,7 +420,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Indicates whether the application is allowed to be access using kmsi token.
 	//
 	// **Added In:** 2111190457
@@ -434,7 +433,7 @@ type DomainsApp struct {
 	// * returned: always
 	// * type: boolean
 	// * uniqueness: none
-	DisableKmsiTokenAuthentication pulumi.BoolOutput `pulumi:"disableKmsiTokenAuthentication"`
+	DisableKmsiTokenAuthentication pulumi.BoolPtrOutput `pulumi:"disableKmsiTokenAuthentication"`
 	// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
 	//
 	// **SCIM++ Properties:**
@@ -458,7 +457,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) App attributes editable by subject
 	//
 	// **Added In:** 18.2.6
@@ -485,7 +484,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ErrorPageUrl pulumi.StringOutput `pulumi:"errorPageUrl"`
+	ErrorPageUrl pulumi.StringPtrOutput `pulumi:"errorPageUrl"`
 	// (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
 	//
 	// **SCIM++ Properties:**
@@ -524,7 +523,7 @@ type DomainsApp struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	HashedClientSecret pulumi.StringOutput `pulumi:"hashedClientSecret"`
+	HashedClientSecret pulumi.StringPtrOutput `pulumi:"hashedClientSecret"`
 	// (Updatable) Home Page URL
 	//
 	// **Added In:** 19.2.1
@@ -537,7 +536,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	HomePageUrl pulumi.StringOutput `pulumi:"homePageUrl"`
+	HomePageUrl pulumi.StringPtrOutput `pulumi:"homePageUrl"`
 	// (Updatable) URL of application icon.
 	//
 	// **SCIM++ Properties:**
@@ -548,7 +547,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: reference
 	// * uniqueness: none
-	Icon pulumi.StringOutput `pulumi:"icon"`
+	Icon pulumi.StringPtrOutput `pulumi:"icon"`
 	// (Updatable) Encryption Alogrithm to use for encrypting ID token.
 	//
 	// **Added In:** 2010242156
@@ -562,7 +561,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	IdTokenEncAlgo pulumi.StringOutput `pulumi:"idTokenEncAlgo"`
+	IdTokenEncAlgo pulumi.StringPtrOutput `pulumi:"idTokenEncAlgo"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -596,7 +595,7 @@ type DomainsApp struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -630,7 +629,7 @@ type DomainsApp struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	IdpPolicy DomainsAppIdpPolicyOutput `pulumi:"idpPolicy"`
+	IdpPolicy DomainsAppIdpPolicyPtrOutput `pulumi:"idpPolicy"`
 	// (Updatable) If true, this App is an internal infrastructure App.
 	//
 	// **SCIM++ Properties:**
@@ -641,7 +640,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	Infrastructure pulumi.BoolOutput `pulumi:"infrastructure"`
+	Infrastructure pulumi.BoolPtrOutput `pulumi:"infrastructure"`
 	// If true, this App is an AliasApp and it cannot be granted to an end-user directly.
 	//
 	// **SCIM++ Properties:**
@@ -652,7 +651,7 @@ type DomainsApp struct {
 	// * returned: always
 	// * type: boolean
 	// * uniqueness: none
-	IsAliasApp pulumi.BoolOutput `pulumi:"isAliasApp"`
+	IsAliasApp pulumi.BoolPtrOutput `pulumi:"isAliasApp"`
 	// (Updatable) If true, this application acts as database service Application
 	//
 	// **Added In:** 18.2.2
@@ -663,7 +662,7 @@ type DomainsApp struct {
 	// * mutability: readOnly
 	// * required: false
 	// * type: boolean
-	IsDatabaseService pulumi.BoolOutput `pulumi:"isDatabaseService"`
+	IsDatabaseService pulumi.BoolPtrOutput `pulumi:"isDatabaseService"`
 	// (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
 	//
 	// **Added In:** 19.2.1
@@ -676,7 +675,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsEnterpriseApp pulumi.BoolOutput `pulumi:"isEnterpriseApp"`
+	IsEnterpriseApp pulumi.BoolPtrOutput `pulumi:"isEnterpriseApp"`
 	// (Updatable) If true, this application acts as FormFill Application
 	//
 	// **SCIM++ Properties:**
@@ -687,7 +686,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsFormFill pulumi.BoolOutput `pulumi:"isFormFill"`
+	IsFormFill pulumi.BoolPtrOutput `pulumi:"isFormFill"`
 	// (Updatable) If true, indicates that this App supports Kerberos Authentication
 	//
 	// **SCIM++ Properties:**
@@ -698,7 +697,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsKerberosRealm pulumi.BoolOutput `pulumi:"isKerberosRealm"`
+	IsKerberosRealm pulumi.BoolPtrOutput `pulumi:"isKerberosRealm"`
 	// (Updatable) If true, this App allows runtime services to log end users into this App automatically.
 	//
 	// **SCIM++ Properties:**
@@ -709,7 +708,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsLoginTarget pulumi.BoolOutput `pulumi:"isLoginTarget"`
+	IsLoginTarget pulumi.BoolPtrOutput `pulumi:"isLoginTarget"`
 	// (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
 	//
 	// **SCIM++ Properties:**
@@ -720,7 +719,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsManagedApp pulumi.BoolOutput `pulumi:"isManagedApp"`
+	IsManagedApp pulumi.BoolPtrOutput `pulumi:"isManagedApp"`
 	// (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
 	//
 	// **SCIM++ Properties:**
@@ -731,7 +730,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsMobileTarget pulumi.BoolOutput `pulumi:"isMobileTarget"`
+	IsMobileTarget pulumi.BoolPtrOutput `pulumi:"isMobileTarget"`
 	// (Updatable) If true, indicates the app is used for multicloud service integration.
 	//
 	// **Added In:** 2301202328
@@ -744,7 +743,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsMulticloudServiceApp pulumi.BoolOutput `pulumi:"isMulticloudServiceApp"`
+	IsMulticloudServiceApp pulumi.BoolPtrOutput `pulumi:"isMulticloudServiceApp"`
 	// (Updatable) If true, this application acts as an OAuth Client
 	//
 	// **SCIM++ Properties:**
@@ -755,7 +754,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsOauthClient pulumi.BoolOutput `pulumi:"isOauthClient"`
+	IsOauthClient pulumi.BoolPtrOutput `pulumi:"isOauthClient"`
 	// (Updatable) If true, indicates that this application acts as an OAuth Resource.
 	//
 	// **SCIM++ Properties:**
@@ -766,7 +765,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsOauthResource pulumi.BoolOutput `pulumi:"isOauthResource"`
+	IsOauthResource pulumi.BoolPtrOutput `pulumi:"isOauthResource"`
 	// (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
 	//
 	// **SCIM++ Properties:**
@@ -778,7 +777,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsObligationCapable pulumi.BoolOutput `pulumi:"isObligationCapable"`
+	IsObligationCapable pulumi.BoolPtrOutput `pulumi:"isObligationCapable"`
 	// (Updatable) If true, this application is an Oracle Public Cloud service-instance.
 	//
 	// **SCIM++ Properties:**
@@ -789,7 +788,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsOpcService pulumi.BoolOutput `pulumi:"isOpcService"`
+	IsOpcService pulumi.BoolPtrOutput `pulumi:"isOpcService"`
 	// (Updatable) If true, this application acts as an Radius App
 	//
 	// **Added In:** 20.1.3
@@ -802,7 +801,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsRadiusApp pulumi.BoolOutput `pulumi:"isRadiusApp"`
+	IsRadiusApp pulumi.BoolPtrOutput `pulumi:"isRadiusApp"`
 	// (Updatable) If true, then this App acts as a SAML Service Provider.
 	//
 	// **SCIM++ Properties:**
@@ -813,7 +812,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsSamlServiceProvider pulumi.BoolOutput `pulumi:"isSamlServiceProvider"`
+	IsSamlServiceProvider pulumi.BoolPtrOutput `pulumi:"isSamlServiceProvider"`
 	// If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
 	//
 	// **SCIM++ Properties:**
@@ -824,7 +823,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsUnmanagedApp pulumi.BoolOutput `pulumi:"isUnmanagedApp"`
+	IsUnmanagedApp pulumi.BoolPtrOutput `pulumi:"isUnmanagedApp"`
 	// (Updatable) If true, the webtier policy is active
 	//
 	// **SCIM++ Properties:**
@@ -835,7 +834,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	IsWebTierPolicy pulumi.BoolOutput `pulumi:"isWebTierPolicy"`
+	IsWebTierPolicy pulumi.BoolPtrOutput `pulumi:"isWebTierPolicy"`
 	// (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
 	//
 	// **SCIM++ Properties:**
@@ -846,7 +845,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	LandingPageUrl pulumi.StringOutput `pulumi:"landingPageUrl"`
+	LandingPageUrl pulumi.StringPtrOutput `pulumi:"landingPageUrl"`
 	// (Updatable) This attribute specifies the callback URL for the social linking operation.
 	//
 	// **Added In:** 18.2.4
@@ -860,7 +859,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	LinkingCallbackUrl pulumi.StringOutput `pulumi:"linkingCallbackUrl"`
+	LinkingCallbackUrl pulumi.StringPtrOutput `pulumi:"linkingCallbackUrl"`
 	// (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
 	//
 	// **SCIM++ Properties:**
@@ -872,7 +871,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	LoginMechanism pulumi.StringOutput `pulumi:"loginMechanism"`
+	LoginMechanism pulumi.StringPtrOutput `pulumi:"loginMechanism"`
 	// (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
 	//
 	// **SCIM++ Properties:**
@@ -884,7 +883,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	LoginPageUrl pulumi.StringOutput `pulumi:"loginPageUrl"`
+	LoginPageUrl pulumi.StringPtrOutput `pulumi:"loginPageUrl"`
 	// (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
 	//
 	// **Added In:** 17.4.2
@@ -898,7 +897,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	LogoutPageUrl pulumi.StringOutput `pulumi:"logoutPageUrl"`
+	LogoutPageUrl pulumi.StringPtrOutput `pulumi:"logoutPageUrl"`
 	// (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
 	//
 	// **SCIM++ Properties:**
@@ -910,7 +909,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	LogoutUri pulumi.StringOutput `pulumi:"logoutUri"`
+	LogoutUri pulumi.StringPtrOutput `pulumi:"logoutUri"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -935,7 +934,7 @@ type DomainsApp struct {
 	// * returned: always
 	// * type: boolean
 	// * uniqueness: none
-	MeterAsOpcService pulumi.BoolOutput `pulumi:"meterAsOpcService"`
+	MeterAsOpcService pulumi.BoolPtrOutput `pulumi:"meterAsOpcService"`
 	// (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
 	//
 	// **SCIM++ Properties:**
@@ -946,7 +945,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	Migrated pulumi.BoolOutput `pulumi:"migrated"`
+	Migrated pulumi.BoolPtrOutput `pulumi:"migrated"`
 	// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
 	//
 	// **Deprecated Since: 18.2.2**
@@ -973,7 +972,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
 	//
 	// **SCIM++ Properties:**
@@ -998,7 +997,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	PrivacyPolicyUrl pulumi.StringOutput `pulumi:"privacyPolicyUrl"`
+	PrivacyPolicyUrl pulumi.StringPtrOutput `pulumi:"privacyPolicyUrl"`
 	// (Updatable) Application Logo URL
 	//
 	// **Added In:** 19.2.1
@@ -1011,7 +1010,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ProductLogoUrl pulumi.StringOutput `pulumi:"productLogoUrl"`
+	ProductLogoUrl pulumi.StringPtrOutput `pulumi:"productLogoUrl"`
 	// (Updatable) Product Name
 	//
 	// **Added In:** 19.2.1
@@ -1024,7 +1023,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ProductName pulumi.StringOutput `pulumi:"productName"`
+	ProductName pulumi.StringPtrOutput `pulumi:"productName"`
 	// (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
 	//
 	// **Added In:** 18.2.2
@@ -1051,7 +1050,7 @@ type DomainsApp struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	RadiusPolicy DomainsAppRadiusPolicyOutput `pulumi:"radiusPolicy"`
+	RadiusPolicy DomainsAppRadiusPolicyPtrOutput `pulumi:"radiusPolicy"`
 	// (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
 	//
 	// **SCIM++ Properties:**
@@ -1062,7 +1061,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	ReadyToUpgrade pulumi.BoolOutput `pulumi:"readyToUpgrade"`
+	ReadyToUpgrade pulumi.BoolPtrOutput `pulumi:"readyToUpgrade"`
 	// (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
 	//
 	// **SCIM++ Properties:**
@@ -1085,7 +1084,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: integer
 	// * uniqueness: none
-	RefreshTokenExpiry pulumi.IntOutput `pulumi:"refreshTokenExpiry"`
+	RefreshTokenExpiry pulumi.IntPtrOutput `pulumi:"refreshTokenExpiry"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
@@ -1098,7 +1097,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	SamlServiceProvider DomainsAppSamlServiceProviderOutput `pulumi:"samlServiceProvider"`
+	SamlServiceProvider DomainsAppSamlServiceProviderPtrOutput `pulumi:"samlServiceProvider"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	//
 	// **SCIM++ Properties:**
@@ -1161,7 +1160,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ServiceTypeUrn pulumi.StringOutput `pulumi:"serviceTypeUrn"`
+	ServiceTypeUrn pulumi.StringPtrOutput `pulumi:"serviceTypeUrn"`
 	// (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
 	//
 	// **SCIM++ Properties:**
@@ -1173,7 +1172,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ServiceTypeVersion pulumi.StringOutput `pulumi:"serviceTypeVersion"`
+	ServiceTypeVersion pulumi.StringPtrOutput `pulumi:"serviceTypeVersion"`
 	// (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
 	//
 	// **Added In:** 18.1.2
@@ -1186,7 +1185,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	ShowInMyApps pulumi.BoolOutput `pulumi:"showInMyApps"`
+	ShowInMyApps pulumi.BoolPtrOutput `pulumi:"showInMyApps"`
 	// (Updatable) Sign-on Policy.
 	//
 	// **Deprecated Since: 17.3.4**
@@ -1198,7 +1197,7 @@ type DomainsApp struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	SignonPolicy DomainsAppSignonPolicyOutput `pulumi:"signonPolicy"`
+	SignonPolicy DomainsAppSignonPolicyPtrOutput `pulumi:"signonPolicy"`
 	// (Updatable) A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -1222,7 +1221,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Terms of Service URL
 	//
 	// **Added In:** 19.2.1
@@ -1235,7 +1234,7 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TermsOfServiceUrl pulumi.StringOutput `pulumi:"termsOfServiceUrl"`
+	TermsOfServiceUrl pulumi.StringPtrOutput `pulumi:"termsOfServiceUrl"`
 	// (Updatable) Terms Of Use.
 	//
 	// **Added In:** 18.2.6
@@ -1247,7 +1246,7 @@ type DomainsApp struct {
 	// * required: false
 	// * returned: default
 	// * type: complex
-	TermsOfUse DomainsAppTermsOfUseOutput `pulumi:"termsOfUse"`
+	TermsOfUse DomainsAppTermsOfUsePtrOutput `pulumi:"termsOfUse"`
 	// (Updatable) Trust Policies.
 	//
 	// **SCIM++ Properties:**
@@ -1272,33 +1271,33 @@ type DomainsApp struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TrustScope pulumi.StringOutput `pulumi:"trustScope"`
+	TrustScope pulumi.StringPtrOutput `pulumi:"trustScope"`
 	// (Updatable) Oracle Cloud Infrastructure Tags.
-	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
+	UrnietfparamsscimschemasoracleidcsextensionOciTags DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionOciTags"`
 	// (Updatable) This extension provides attributes for database service facet of an App
-	UrnietfparamsscimschemasoracleidcsextensiondbcsApp DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbcsApp"`
+	UrnietfparamsscimschemasoracleidcsextensiondbcsApp DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensiondbcsApp"`
 	// (Updatable) This extension defines the Enterprise App related attributes.
-	UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp"`
+	UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp"`
 	// (Updatable) This extension provides attributes for Form-Fill facet of App
-	UrnietfparamsscimschemasoracleidcsextensionformFillAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionformFillAppApp"`
+	UrnietfparamsscimschemasoracleidcsextensionformFillAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionformFillAppApp"`
 	// (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-	UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate"`
+	UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplatePtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate"`
 	// (Updatable) Kerberos Realm
-	UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp"`
+	UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp"`
 	// (Updatable) Managed App
-	UrnietfparamsscimschemasoracleidcsextensionmanagedappApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionmanagedappApp"`
+	UrnietfparamsscimschemasoracleidcsextensionmanagedappApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionmanagedappApp"`
 	// (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-	UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp"`
+	UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp"`
 	// (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-	UrnietfparamsscimschemasoracleidcsextensionopcServiceApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionopcServiceApp"`
+	UrnietfparamsscimschemasoracleidcsextensionopcServiceApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionopcServiceApp"`
 	// (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-	UrnietfparamsscimschemasoracleidcsextensionradiusAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionradiusAppApp"`
+	UrnietfparamsscimschemasoracleidcsextensionradiusAppApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionradiusAppApp"`
 	// (Updatable) Requestable App
-	UrnietfparamsscimschemasoracleidcsextensionrequestableApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionrequestableApp"`
+	UrnietfparamsscimschemasoracleidcsextensionrequestableApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionrequestableApp"`
 	// (Updatable) This extension defines attributes related to the Service Providers configuration.
-	UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp"`
+	UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp"`
 	// (Updatable) WebTier Policy
-	UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp"`
+	UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp"`
 	// (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
 	//
 	// **SCIM++ Properties:**
@@ -5899,12 +5898,6 @@ func (i *DomainsApp) ToDomainsAppOutputWithContext(ctx context.Context) DomainsA
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppOutput)
 }
 
-func (i *DomainsApp) ToOutput(ctx context.Context) pulumix.Output[*DomainsApp] {
-	return pulumix.Output[*DomainsApp]{
-		OutputState: i.ToDomainsAppOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAppArrayInput is an input type that accepts DomainsAppArray and DomainsAppArrayOutput values.
 // You can construct a concrete instance of `DomainsAppArrayInput` via:
 //
@@ -5928,12 +5921,6 @@ func (i DomainsAppArray) ToDomainsAppArrayOutput() DomainsAppArrayOutput {
 
 func (i DomainsAppArray) ToDomainsAppArrayOutputWithContext(ctx context.Context) DomainsAppArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppArrayOutput)
-}
-
-func (i DomainsAppArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApp] {
-	return pulumix.Output[[]*DomainsApp]{
-		OutputState: i.ToDomainsAppArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAppMapInput is an input type that accepts DomainsAppMap and DomainsAppMapOutput values.
@@ -5961,12 +5948,6 @@ func (i DomainsAppMap) ToDomainsAppMapOutputWithContext(ctx context.Context) Dom
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAppMapOutput)
 }
 
-func (i DomainsAppMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApp] {
-	return pulumix.Output[map[string]*DomainsApp]{
-		OutputState: i.ToDomainsAppMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAppOutput struct{ *pulumi.OutputState }
 
 func (DomainsAppOutput) ElementType() reflect.Type {
@@ -5981,12 +5962,6 @@ func (o DomainsAppOutput) ToDomainsAppOutputWithContext(ctx context.Context) Dom
 	return o
 }
 
-func (o DomainsAppOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsApp] {
-	return pulumix.Output[*DomainsApp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Access token expiry
 //
 // **SCIM++ Properties:**
@@ -5998,8 +5973,8 @@ func (o DomainsAppOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsA
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsAppOutput) AccessTokenExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.IntOutput { return v.AccessTokenExpiry }).(pulumi.IntOutput)
+func (o DomainsAppOutput) AccessTokenExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.IntPtrOutput { return v.AccessTokenExpiry }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Accounts of App
@@ -6027,8 +6002,8 @@ func (o DomainsAppOutput) Accounts() DomainsAppAccountArrayOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) Active() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
@@ -6071,8 +6046,8 @@ func (o DomainsAppOutput) AliasApps() DomainsAppAliasAppArrayOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) AllUrlSchemesAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.AllUrlSchemesAllowed }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) AllUrlSchemesAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.AllUrlSchemesAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
@@ -6085,8 +6060,8 @@ func (o DomainsAppOutput) AllUrlSchemesAllowed() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) AllowAccessControl() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.AllowAccessControl }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) AllowAccessControl() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.AllowAccessControl }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
@@ -6099,8 +6074,8 @@ func (o DomainsAppOutput) AllowAccessControl() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) AllowOffline() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.AllowOffline }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) AllowOffline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.AllowOffline }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
@@ -6176,8 +6151,8 @@ func (o DomainsAppOutput) AllowedTags() DomainsAppAllowedTagArrayOutput {
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) AppIcon() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.AppIcon }).(pulumi.StringOutput)
+func (o DomainsAppOutput) AppIcon() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.AppIcon }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) App Sign-on Policy.
@@ -6189,8 +6164,8 @@ func (o DomainsAppOutput) AppIcon() pulumi.StringOutput {
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsAppOutput) AppSignonPolicy() DomainsAppAppSignonPolicyOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppAppSignonPolicyOutput { return v.AppSignonPolicy }).(DomainsAppAppSignonPolicyOutput)
+func (o DomainsAppOutput) AppSignonPolicy() DomainsAppAppSignonPolicyPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppAppSignonPolicyPtrOutput { return v.AppSignonPolicy }).(DomainsAppAppSignonPolicyPtrOutput)
 }
 
 // (Updatable) Application thumbnail.
@@ -6203,8 +6178,8 @@ func (o DomainsAppOutput) AppSignonPolicy() DomainsAppAppSignonPolicyOutput {
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) AppThumbnail() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.AppThumbnail }).(pulumi.StringOutput)
+func (o DomainsAppOutput) AppThumbnail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.AppThumbnail }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Network Perimeter
@@ -6233,8 +6208,8 @@ func (o DomainsAppOutput) AppsNetworkPerimeters() DomainsAppAppsNetworkPerimeter
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsAppOutput) AsOpcService() DomainsAppAsOpcServiceOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppAsOpcServiceOutput { return v.AsOpcService }).(DomainsAppAsOpcServiceOutput)
+func (o DomainsAppOutput) AsOpcService() DomainsAppAsOpcServicePtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppAsOpcServicePtrOutput { return v.AsOpcService }).(DomainsAppAsOpcServicePtrOutput)
 }
 
 // (Updatable) Label for the attribute to be shown in the UI.
@@ -6273,8 +6248,8 @@ func (o DomainsAppOutput) Attributes() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) Audience() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.Audience }).(pulumi.StringOutput)
+func (o DomainsAppOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.Audience }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -6308,8 +6283,8 @@ func (o DomainsAppOutput) BasedOnTemplate() DomainsAppBasedOnTemplateOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) BypassConsent() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.BypassConsent }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) BypassConsent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.BypassConsent }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Callback Service URL
@@ -6323,8 +6298,8 @@ func (o DomainsAppOutput) BypassConsent() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) CallbackServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.CallbackServiceUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) CallbackServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.CallbackServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
@@ -6356,8 +6331,8 @@ func (o DomainsAppOutput) Certificates() DomainsAppCertificateArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ClientIpChecking() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ClientIpChecking }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ClientIpChecking() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ClientIpChecking }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
@@ -6372,8 +6347,8 @@ func (o DomainsAppOutput) ClientIpChecking() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ClientSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ClientSecret }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ClientSecret }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
@@ -6387,8 +6362,8 @@ func (o DomainsAppOutput) ClientSecret() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ClientType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ClientType }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ClientType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ClientType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
@@ -6419,8 +6394,8 @@ func (o DomainsAppOutput) CloudControlProperties() DomainsAppCloudControlPropert
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsAppOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Contact Email Address
@@ -6435,8 +6410,8 @@ func (o DomainsAppOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ContactEmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ContactEmailAddress }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ContactEmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ContactEmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
@@ -6467,8 +6442,8 @@ func (o DomainsAppOutput) DelegatedServiceNames() pulumi.StringArrayOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The description of the AppRole.
@@ -6481,8 +6456,8 @@ func (o DomainsAppOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsAppOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates whether the application is allowed to be access using kmsi token.
@@ -6497,8 +6472,8 @@ func (o DomainsAppOutput) Description() pulumi.StringOutput {
 // * returned: always
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) DisableKmsiTokenAuthentication() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.DisableKmsiTokenAuthentication }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) DisableKmsiTokenAuthentication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.DisableKmsiTokenAuthentication }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
@@ -6527,8 +6502,8 @@ func (o DomainsAppOutput) DisplayName() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsAppOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) App attributes editable by subject
@@ -6560,8 +6535,8 @@ func (o DomainsAppOutput) EditableAttributes() DomainsAppEditableAttributeArrayO
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ErrorPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ErrorPageUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ErrorPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ErrorPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
@@ -6608,8 +6583,8 @@ func (o DomainsAppOutput) Grants() DomainsAppGrantArrayOutput {
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) HashedClientSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.HashedClientSecret }).(pulumi.StringOutput)
+func (o DomainsAppOutput) HashedClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.HashedClientSecret }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Home Page URL
@@ -6624,8 +6599,8 @@ func (o DomainsAppOutput) HashedClientSecret() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) HomePageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.HomePageUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) HomePageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.HomePageUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) URL of application icon.
@@ -6638,8 +6613,8 @@ func (o DomainsAppOutput) HomePageUrl() pulumi.StringOutput {
 // * returned: default
 // * type: reference
 // * uniqueness: none
-func (o DomainsAppOutput) Icon() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.Icon }).(pulumi.StringOutput)
+func (o DomainsAppOutput) Icon() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.Icon }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Encryption Alogrithm to use for encrypting ID token.
@@ -6655,8 +6630,8 @@ func (o DomainsAppOutput) Icon() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) IdTokenEncAlgo() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.IdTokenEncAlgo }).(pulumi.StringOutput)
+func (o DomainsAppOutput) IdTokenEncAlgo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.IdTokenEncAlgo }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -6701,8 +6676,8 @@ func (o DomainsAppOutput) IdcsLastModifiedBies() DomainsAppIdcsLastModifiedByArr
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsAppOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -6744,8 +6719,8 @@ func (o DomainsAppOutput) IdentityProviders() DomainsAppIdentityProviderArrayOut
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsAppOutput) IdpPolicy() DomainsAppIdpPolicyOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppIdpPolicyOutput { return v.IdpPolicy }).(DomainsAppIdpPolicyOutput)
+func (o DomainsAppOutput) IdpPolicy() DomainsAppIdpPolicyPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppIdpPolicyPtrOutput { return v.IdpPolicy }).(DomainsAppIdpPolicyPtrOutput)
 }
 
 // (Updatable) If true, this App is an internal infrastructure App.
@@ -6758,8 +6733,8 @@ func (o DomainsAppOutput) IdpPolicy() DomainsAppIdpPolicyOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) Infrastructure() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.Infrastructure }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) Infrastructure() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.Infrastructure }).(pulumi.BoolPtrOutput)
 }
 
 // If true, this App is an AliasApp and it cannot be granted to an end-user directly.
@@ -6772,8 +6747,8 @@ func (o DomainsAppOutput) Infrastructure() pulumi.BoolOutput {
 // * returned: always
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsAliasApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsAliasApp }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsAliasApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsAliasApp }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this application acts as database service Application
@@ -6786,8 +6761,8 @@ func (o DomainsAppOutput) IsAliasApp() pulumi.BoolOutput {
 // * mutability: readOnly
 // * required: false
 // * type: boolean
-func (o DomainsAppOutput) IsDatabaseService() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsDatabaseService }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsDatabaseService() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsDatabaseService }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
@@ -6802,8 +6777,8 @@ func (o DomainsAppOutput) IsDatabaseService() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsEnterpriseApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsEnterpriseApp }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsEnterpriseApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsEnterpriseApp }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this application acts as FormFill Application
@@ -6816,8 +6791,8 @@ func (o DomainsAppOutput) IsEnterpriseApp() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsFormFill() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsFormFill }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsFormFill() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsFormFill }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that this App supports Kerberos Authentication
@@ -6830,8 +6805,8 @@ func (o DomainsAppOutput) IsFormFill() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsKerberosRealm() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsKerberosRealm }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsKerberosRealm() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsKerberosRealm }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this App allows runtime services to log end users into this App automatically.
@@ -6844,8 +6819,8 @@ func (o DomainsAppOutput) IsKerberosRealm() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsLoginTarget() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsLoginTarget }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsLoginTarget() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsLoginTarget }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
@@ -6858,8 +6833,8 @@ func (o DomainsAppOutput) IsLoginTarget() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsManagedApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsManagedApp }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsManagedApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsManagedApp }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
@@ -6872,8 +6847,8 @@ func (o DomainsAppOutput) IsManagedApp() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsMobileTarget() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsMobileTarget }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsMobileTarget() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsMobileTarget }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates the app is used for multicloud service integration.
@@ -6888,8 +6863,8 @@ func (o DomainsAppOutput) IsMobileTarget() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsMulticloudServiceApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsMulticloudServiceApp }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsMulticloudServiceApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsMulticloudServiceApp }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this application acts as an OAuth Client
@@ -6902,8 +6877,8 @@ func (o DomainsAppOutput) IsMulticloudServiceApp() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsOauthClient() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsOauthClient }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsOauthClient() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsOauthClient }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, indicates that this application acts as an OAuth Resource.
@@ -6916,8 +6891,8 @@ func (o DomainsAppOutput) IsOauthClient() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsOauthResource() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsOauthResource }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsOauthResource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsOauthResource }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
@@ -6931,8 +6906,8 @@ func (o DomainsAppOutput) IsOauthResource() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsObligationCapable() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsObligationCapable }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsObligationCapable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsObligationCapable }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this application is an Oracle Public Cloud service-instance.
@@ -6945,8 +6920,8 @@ func (o DomainsAppOutput) IsObligationCapable() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsOpcService() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsOpcService }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsOpcService() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsOpcService }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this application acts as an Radius App
@@ -6961,8 +6936,8 @@ func (o DomainsAppOutput) IsOpcService() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsRadiusApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsRadiusApp }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsRadiusApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsRadiusApp }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, then this App acts as a SAML Service Provider.
@@ -6975,8 +6950,8 @@ func (o DomainsAppOutput) IsRadiusApp() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsSamlServiceProvider() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsSamlServiceProvider }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsSamlServiceProvider() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsSamlServiceProvider }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
@@ -6989,8 +6964,8 @@ func (o DomainsAppOutput) IsSamlServiceProvider() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsUnmanagedApp() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsUnmanagedApp }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsUnmanagedApp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsUnmanagedApp }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, the webtier policy is active
@@ -7003,8 +6978,8 @@ func (o DomainsAppOutput) IsUnmanagedApp() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) IsWebTierPolicy() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.IsWebTierPolicy }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) IsWebTierPolicy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.IsWebTierPolicy }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
@@ -7017,8 +6992,8 @@ func (o DomainsAppOutput) IsWebTierPolicy() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) LandingPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.LandingPageUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) LandingPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.LandingPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This attribute specifies the callback URL for the social linking operation.
@@ -7034,8 +7009,8 @@ func (o DomainsAppOutput) LandingPageUrl() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) LinkingCallbackUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.LinkingCallbackUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) LinkingCallbackUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.LinkingCallbackUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
@@ -7049,8 +7024,8 @@ func (o DomainsAppOutput) LinkingCallbackUrl() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) LoginMechanism() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.LoginMechanism }).(pulumi.StringOutput)
+func (o DomainsAppOutput) LoginMechanism() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.LoginMechanism }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
@@ -7064,8 +7039,8 @@ func (o DomainsAppOutput) LoginMechanism() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) LoginPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.LoginPageUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) LoginPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.LoginPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
@@ -7081,8 +7056,8 @@ func (o DomainsAppOutput) LoginPageUrl() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) LogoutPageUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.LogoutPageUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) LogoutPageUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.LogoutPageUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
@@ -7096,8 +7071,8 @@ func (o DomainsAppOutput) LogoutPageUrl() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) LogoutUri() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.LogoutUri }).(pulumi.StringOutput)
+func (o DomainsAppOutput) LogoutUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.LogoutUri }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -7127,8 +7102,8 @@ func (o DomainsAppOutput) Metas() DomainsAppMetaArrayOutput {
 // * returned: always
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) MeterAsOpcService() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.MeterAsOpcService }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) MeterAsOpcService() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.MeterAsOpcService }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
@@ -7141,8 +7116,8 @@ func (o DomainsAppOutput) MeterAsOpcService() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) Migrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.Migrated }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) Migrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.Migrated }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
@@ -7174,8 +7149,8 @@ func (o DomainsAppOutput) Name() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsAppOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsAppOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
@@ -7205,8 +7180,8 @@ func (o DomainsAppOutput) PostLogoutRedirectUris() pulumi.StringArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) PrivacyPolicyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.PrivacyPolicyUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) PrivacyPolicyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.PrivacyPolicyUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Application Logo URL
@@ -7221,8 +7196,8 @@ func (o DomainsAppOutput) PrivacyPolicyUrl() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ProductLogoUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ProductLogoUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ProductLogoUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ProductLogoUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Product Name
@@ -7237,8 +7212,8 @@ func (o DomainsAppOutput) ProductLogoUrl() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ProductName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ProductName }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ProductName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ProductName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
@@ -7272,8 +7247,8 @@ func (o DomainsAppOutput) ProtectableSecondaryAudiences() DomainsAppProtectableS
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsAppOutput) RadiusPolicy() DomainsAppRadiusPolicyOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppRadiusPolicyOutput { return v.RadiusPolicy }).(DomainsAppRadiusPolicyOutput)
+func (o DomainsAppOutput) RadiusPolicy() DomainsAppRadiusPolicyPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppRadiusPolicyPtrOutput { return v.RadiusPolicy }).(DomainsAppRadiusPolicyPtrOutput)
 }
 
 // (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
@@ -7286,8 +7261,8 @@ func (o DomainsAppOutput) RadiusPolicy() DomainsAppRadiusPolicyOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) ReadyToUpgrade() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.ReadyToUpgrade }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) ReadyToUpgrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.ReadyToUpgrade }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
@@ -7315,8 +7290,8 @@ func (o DomainsAppOutput) RedirectUris() pulumi.StringArrayOutput {
 // * returned: default
 // * type: integer
 // * uniqueness: none
-func (o DomainsAppOutput) RefreshTokenExpiry() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.IntOutput { return v.RefreshTokenExpiry }).(pulumi.IntOutput)
+func (o DomainsAppOutput) RefreshTokenExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.IntPtrOutput { return v.RefreshTokenExpiry }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -7334,8 +7309,8 @@ func (o DomainsAppOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsAppOutput) SamlServiceProvider() DomainsAppSamlServiceProviderOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppSamlServiceProviderOutput { return v.SamlServiceProvider }).(DomainsAppSamlServiceProviderOutput)
+func (o DomainsAppOutput) SamlServiceProvider() DomainsAppSamlServiceProviderPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppSamlServiceProviderPtrOutput { return v.SamlServiceProvider }).(DomainsAppSamlServiceProviderPtrOutput)
 }
 
 // (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -7412,8 +7387,8 @@ func (o DomainsAppOutput) ServiceParams() DomainsAppServiceParamArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ServiceTypeUrn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ServiceTypeUrn }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ServiceTypeUrn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ServiceTypeUrn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
@@ -7427,8 +7402,8 @@ func (o DomainsAppOutput) ServiceTypeUrn() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) ServiceTypeVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.ServiceTypeVersion }).(pulumi.StringOutput)
+func (o DomainsAppOutput) ServiceTypeVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.ServiceTypeVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
@@ -7443,8 +7418,8 @@ func (o DomainsAppOutput) ServiceTypeVersion() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsAppOutput) ShowInMyApps() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.BoolOutput { return v.ShowInMyApps }).(pulumi.BoolOutput)
+func (o DomainsAppOutput) ShowInMyApps() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.BoolPtrOutput { return v.ShowInMyApps }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Sign-on Policy.
@@ -7458,8 +7433,8 @@ func (o DomainsAppOutput) ShowInMyApps() pulumi.BoolOutput {
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsAppOutput) SignonPolicy() DomainsAppSignonPolicyOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppSignonPolicyOutput { return v.SignonPolicy }).(DomainsAppSignonPolicyOutput)
+func (o DomainsAppOutput) SignonPolicy() DomainsAppSignonPolicyPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppSignonPolicyPtrOutput { return v.SignonPolicy }).(DomainsAppSignonPolicyPtrOutput)
 }
 
 // (Updatable) A list of tags on this resource.
@@ -7488,8 +7463,8 @@ func (o DomainsAppOutput) Tags() DomainsAppTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsAppOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Terms of Service URL
@@ -7504,8 +7479,8 @@ func (o DomainsAppOutput) TenancyOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) TermsOfServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.TermsOfServiceUrl }).(pulumi.StringOutput)
+func (o DomainsAppOutput) TermsOfServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.TermsOfServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Terms Of Use.
@@ -7519,8 +7494,8 @@ func (o DomainsAppOutput) TermsOfServiceUrl() pulumi.StringOutput {
 // * required: false
 // * returned: default
 // * type: complex
-func (o DomainsAppOutput) TermsOfUse() DomainsAppTermsOfUseOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppTermsOfUseOutput { return v.TermsOfUse }).(DomainsAppTermsOfUseOutput)
+func (o DomainsAppOutput) TermsOfUse() DomainsAppTermsOfUsePtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppTermsOfUsePtrOutput { return v.TermsOfUse }).(DomainsAppTermsOfUsePtrOutput)
 }
 
 // (Updatable) Trust Policies.
@@ -7550,99 +7525,99 @@ func (o DomainsAppOutput) TrustPolicies() DomainsAppTrustPolicyArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsAppOutput) TrustScope() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApp) pulumi.StringOutput { return v.TrustScope }).(pulumi.StringOutput)
+func (o DomainsAppOutput) TrustScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) pulumi.StringPtrOutput { return v.TrustScope }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Tags.
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionOciTags() DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionOciTags
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsPtrOutput)
 }
 
 // (Updatable) This extension provides attributes for database service facet of an App
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensiondbcsApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensiondbcsApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensiondbcsApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppPtrOutput)
 }
 
 // (Updatable) This extension defines the Enterprise App related attributes.
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppPtrOutput)
 }
 
 // (Updatable) This extension provides attributes for Form-Fill facet of App
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionformFillAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionformFillAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionformFillAppApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppPtrOutput)
 }
 
 // (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate() DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate() DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplatePtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplatePtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplatePtrOutput)
 }
 
 // (Updatable) Kerberos Realm
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppPtrOutput)
 }
 
 // (Updatable) Managed App
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionmanagedappApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionmanagedappApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionmanagedappApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppPtrOutput)
 }
 
 // (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppPtrOutput)
 }
 
 // (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionopcServiceApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionopcServiceApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionopcServiceApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppPtrOutput)
 }
 
 // (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionradiusAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionradiusAppApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionradiusAppApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPtrOutput)
 }
 
 // (Updatable) Requestable App
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionrequestableApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionrequestableApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionrequestableApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppPtrOutput)
 }
 
 // (Updatable) This extension defines attributes related to the Service Providers configuration.
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPtrOutput)
 }
 
 // (Updatable) WebTier Policy
-func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppOutput {
-	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppOutput {
+func (o DomainsAppOutput) UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp() DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppPtrOutput {
+	return o.ApplyT(func(v *DomainsApp) DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp
-	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppOutput)
+	}).(DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppPtrOutput)
 }
 
 // (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
@@ -7673,12 +7648,6 @@ func (o DomainsAppArrayOutput) ToDomainsAppArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o DomainsAppArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApp] {
-	return pulumix.Output[[]*DomainsApp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsAppArrayOutput) Index(i pulumi.IntInput) DomainsAppOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsApp {
 		return vs[0].([]*DomainsApp)[vs[1].(int)]
@@ -7697,12 +7666,6 @@ func (o DomainsAppMapOutput) ToDomainsAppMapOutput() DomainsAppMapOutput {
 
 func (o DomainsAppMapOutput) ToDomainsAppMapOutputWithContext(ctx context.Context) DomainsAppMapOutput {
 	return o
-}
-
-func (o DomainsAppMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApp] {
-	return pulumix.Output[map[string]*DomainsApp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAppMapOutput) MapIndex(k pulumi.StringInput) DomainsAppOutput {

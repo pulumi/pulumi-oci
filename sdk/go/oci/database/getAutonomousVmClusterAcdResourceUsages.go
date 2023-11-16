@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
@@ -69,7 +68,7 @@ type GetAutonomousVmClusterAcdResourceUsagesResult struct {
 	CompartmentId                             *string                                                                           `pulumi:"compartmentId"`
 	Filters                                   []GetAutonomousVmClusterAcdResourceUsagesFilter                                   `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousVmClusterAcdResourceUsagesOutput(ctx *pulumi.Context, args GetAutonomousVmClusterAcdResourceUsagesOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousVmClusterAcdResourceUsagesResultOutput {
@@ -113,12 +112,6 @@ func (o GetAutonomousVmClusterAcdResourceUsagesResultOutput) ToGetAutonomousVmCl
 	return o
 }
 
-func (o GetAutonomousVmClusterAcdResourceUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousVmClusterAcdResourceUsagesResult] {
-	return pulumix.Output[GetAutonomousVmClusterAcdResourceUsagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_container_database_resource_usages.
 func (o GetAutonomousVmClusterAcdResourceUsagesResultOutput) AutonomousContainerDatabaseResourceUsages() GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVmClusterAcdResourceUsagesResult) []GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage {
@@ -141,8 +134,8 @@ func (o GetAutonomousVmClusterAcdResourceUsagesResultOutput) Filters() GetAutono
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousVmClusterAcdResourceUsagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVmClusterAcdResourceUsagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousVmClusterAcdResourceUsagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVmClusterAcdResourceUsagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

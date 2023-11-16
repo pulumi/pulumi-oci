@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
@@ -69,7 +68,7 @@ type GetContainerInstanceShapesResult struct {
 	ContainerInstanceShapeCollections []GetContainerInstanceShapesContainerInstanceShapeCollection `pulumi:"containerInstanceShapeCollections"`
 	Filters                           []GetContainerInstanceShapesFilter                           `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetContainerInstanceShapesOutput(ctx *pulumi.Context, args GetContainerInstanceShapesOutputArgs, opts ...pulumi.InvokeOption) GetContainerInstanceShapesResultOutput {
@@ -113,12 +112,6 @@ func (o GetContainerInstanceShapesResultOutput) ToGetContainerInstanceShapesResu
 	return o
 }
 
-func (o GetContainerInstanceShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapesResult] {
-	return pulumix.Output[GetContainerInstanceShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstanceShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -139,8 +132,8 @@ func (o GetContainerInstanceShapesResultOutput) Filters() GetContainerInstanceSh
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerInstanceShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerInstanceShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

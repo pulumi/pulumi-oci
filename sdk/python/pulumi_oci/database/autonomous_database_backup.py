@@ -23,15 +23,6 @@ class AutonomousDatabaseBackupArgs:
                  retention_period_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseBackup resource.
-        :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
-        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         if backup_destination_details is not None:
@@ -46,9 +37,6 @@ class AutonomousDatabaseBackupArgs:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
@@ -58,9 +46,6 @@ class AutonomousDatabaseBackupArgs:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
-        """
-        Backup destination details
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -70,9 +55,6 @@ class AutonomousDatabaseBackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -82,9 +64,6 @@ class AutonomousDatabaseBackupArgs:
     @property
     @pulumi.getter(name="isLongTermBackup")
     def is_long_term_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the backup is long-term
-        """
         return pulumi.get(self, "is_long_term_backup")
 
     @is_long_term_backup.setter
@@ -94,13 +73,6 @@ class AutonomousDatabaseBackupArgs:
     @property
     @pulumi.getter(name="retentionPeriodInDays")
     def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Retention period, in days, for long-term backups
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
@@ -135,32 +107,6 @@ class _AutonomousDatabaseBackupState:
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseBackup resources.
-        :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-        :param pulumi.Input[bool] is_automatic: Indicates whether the backup is user-initiated or automatic.
-        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
-        :param pulumi.Input[bool] is_restorable: Indicates whether the backup can be used to restore the associated Autonomous Database.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[float] size_in_tbs: The backup size in terrabytes (TB).
-        :param pulumi.Input[str] state: The current state of the backup.
-        :param pulumi.Input[str] time_available_till: Timestamp until when the backup will be available
-        :param pulumi.Input[str] time_ended: The date and time the backup completed.
-        :param pulumi.Input[str] time_started: The date and time the backup started.
-        :param pulumi.Input[str] type: The type of backup.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -210,9 +156,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
@@ -222,9 +165,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="backupDestinationDetails")
     def backup_destination_details(self) -> Optional[pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs']]:
-        """
-        Backup destination details
-        """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
@@ -234,9 +174,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -246,9 +183,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="databaseSizeInTbs")
     def database_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The size of the database in terabytes at the time the backup was taken.
-        """
         return pulumi.get(self, "database_size_in_tbs")
 
     @database_size_in_tbs.setter
@@ -258,9 +192,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Database version for Autonomous Database.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -270,9 +201,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -282,9 +210,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="isAutomatic")
     def is_automatic(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the backup is user-initiated or automatic.
-        """
         return pulumi.get(self, "is_automatic")
 
     @is_automatic.setter
@@ -294,9 +219,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="isLongTermBackup")
     def is_long_term_backup(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the backup is long-term
-        """
         return pulumi.get(self, "is_long_term_backup")
 
     @is_long_term_backup.setter
@@ -306,9 +228,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="isRestorable")
     def is_restorable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether the backup can be used to restore the associated Autonomous Database.
-        """
         return pulumi.get(self, "is_restorable")
 
     @is_restorable.setter
@@ -318,9 +237,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
@@ -330,9 +246,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="keyStoreWalletName")
     def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
@@ -342,9 +255,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -354,9 +264,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -366,9 +273,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -378,13 +282,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="retentionPeriodInDays")
     def retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Retention period, in days, for long-term backups
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
@@ -394,9 +291,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="sizeInTbs")
     def size_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The backup size in terrabytes (TB).
-        """
         return pulumi.get(self, "size_in_tbs")
 
     @size_in_tbs.setter
@@ -406,9 +300,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the backup.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -418,9 +309,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="timeAvailableTill")
     def time_available_till(self) -> Optional[pulumi.Input[str]]:
-        """
-        Timestamp until when the backup will be available
-        """
         return pulumi.get(self, "time_available_till")
 
     @time_available_till.setter
@@ -430,9 +318,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the backup completed.
-        """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
@@ -442,9 +327,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the backup started.
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -454,9 +336,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -466,9 +345,6 @@ class _AutonomousDatabaseBackupState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -488,42 +364,9 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            display_name=var["autonomous_database_backup_display_name"],
-            is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
-            retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
-        ```
-
-        ## Import
-
-        AutonomousDatabaseBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
-        ```
-
+        Create a AutonomousDatabaseBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] backup_destination_details: Backup destination details
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
-        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -532,31 +375,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
                  args: AutonomousDatabaseBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            display_name=var["autonomous_database_backup_display_name"],
-            is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
-            retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
-        ```
-
-        ## Import
-
-        AutonomousDatabaseBackups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup test_autonomous_database_backup "id"
-        ```
-
+        Create a AutonomousDatabaseBackup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseBackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -649,32 +468,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        :param pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupBackupDestinationDetailsArgs']] backup_destination_details: Backup destination details
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
-        :param pulumi.Input[str] db_version: A valid Oracle Database version for Autonomous Database.
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-        :param pulumi.Input[bool] is_automatic: Indicates whether the backup is user-initiated or automatic.
-        :param pulumi.Input[bool] is_long_term_backup: Indicates whether the backup is long-term
-        :param pulumi.Input[bool] is_restorable: Indicates whether the backup can be used to restore the associated Autonomous Database.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[float] size_in_tbs: The backup size in terrabytes (TB).
-        :param pulumi.Input[str] state: The current state of the backup.
-        :param pulumi.Input[str] time_available_till: Timestamp until when the backup will be available
-        :param pulumi.Input[str] time_ended: The date and time the backup completed.
-        :param pulumi.Input[str] time_started: The date and time the backup started.
-        :param pulumi.Input[str] type: The type of backup.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -707,180 +500,110 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
     @pulumi.getter(name="backupDestinationDetails")
-    def backup_destination_details(self) -> pulumi.Output['outputs.AutonomousDatabaseBackupBackupDestinationDetails']:
-        """
-        Backup destination details
-        """
+    def backup_destination_details(self) -> pulumi.Output[Optional['outputs.AutonomousDatabaseBackupBackupDestinationDetails']]:
         return pulumi.get(self, "backup_destination_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseSizeInTbs")
-    def database_size_in_tbs(self) -> pulumi.Output[float]:
-        """
-        The size of the database in terabytes at the time the backup was taken.
-        """
+    def database_size_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "database_size_in_tbs")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> pulumi.Output[str]:
-        """
-        A valid Oracle Database version for Autonomous Database.
-        """
+    def db_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="isAutomatic")
-    def is_automatic(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the backup is user-initiated or automatic.
-        """
+    def is_automatic(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_automatic")
 
     @property
     @pulumi.getter(name="isLongTermBackup")
-    def is_long_term_backup(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the backup is long-term
-        """
+    def is_long_term_backup(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_long_term_backup")
 
     @property
     @pulumi.getter(name="isRestorable")
-    def is_restorable(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether the backup can be used to restore the associated Autonomous Database.
-        """
+    def is_restorable(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_restorable")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> pulumi.Output[str]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
+    def kms_key_version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Retention period, in days, for long-term backups
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def retention_period_in_days(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "retention_period_in_days")
 
     @property
     @pulumi.getter(name="sizeInTbs")
-    def size_in_tbs(self) -> pulumi.Output[float]:
-        """
-        The backup size in terrabytes (TB).
-        """
+    def size_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "size_in_tbs")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the backup.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAvailableTill")
-    def time_available_till(self) -> pulumi.Output[str]:
-        """
-        Timestamp until when the backup will be available
-        """
+    def time_available_till(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_available_till")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> pulumi.Output[str]:
-        """
-        The date and time the backup completed.
-        """
+    def time_ended(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> pulumi.Output[str]:
-        """
-        The date and time the backup started.
-        """
+    def time_started(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of backup.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vault_id")
 

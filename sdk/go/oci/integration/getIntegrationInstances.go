@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Integration Instances in Oracle Cloud Infrastructure Integration service.
@@ -72,7 +71,7 @@ type GetIntegrationInstancesResult struct {
 	DisplayName *string                         `pulumi:"displayName"`
 	Filters     []GetIntegrationInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of integration_instances.
 	IntegrationInstances []GetIntegrationInstancesIntegrationInstance `pulumi:"integrationInstances"`
 	// The current state of the integration instance.
@@ -122,12 +121,6 @@ func (o GetIntegrationInstancesResultOutput) ToGetIntegrationInstancesResultOutp
 	return o
 }
 
-func (o GetIntegrationInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIntegrationInstancesResult] {
-	return pulumix.Output[GetIntegrationInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
 func (o GetIntegrationInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetIntegrationInstancesResultOutput) Filters() GetIntegrationInstancesFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIntegrationInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIntegrationInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIntegrationInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of integration_instances.

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Apm.Outputs
         /// <summary>
         /// Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Type of the Data Key.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Value of the Data Key.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDataKeysDataKeyResult(
-            string name,
+            string? name,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Name = name;
             Type = type;

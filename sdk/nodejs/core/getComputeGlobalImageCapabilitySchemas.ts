@@ -60,7 +60,7 @@ export interface GetComputeGlobalImageCapabilitySchemasResult {
     /**
      * The list of compute_global_image_capability_schemas.
      */
-    readonly computeGlobalImageCapabilitySchemas: outputs.Core.GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema[];
+    readonly computeGlobalImageCapabilitySchemas?: outputs.Core.GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -69,7 +69,7 @@ export interface GetComputeGlobalImageCapabilitySchemasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.

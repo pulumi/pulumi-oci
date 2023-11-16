@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         /// </summary>
         [Output("calculatedLimits")]
-        public Output<ImmutableDictionary<string, object>> CalculatedLimits { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> CalculatedLimits { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Compartment identifier
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Migration plan identifier
@@ -53,13 +53,13 @@ namespace Pulumi.Oci.CloudMigrations
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the associated migration.
@@ -77,19 +77,19 @@ namespace Pulumi.Oci.CloudMigrations
         /// OCID of the referenced ORM job.
         /// </summary>
         [Output("referenceToRmsStack")]
-        public Output<string> ReferenceToRmsStack { get; private set; } = null!;
+        public Output<string?> ReferenceToRmsStack { get; private set; } = null!;
 
         /// <summary>
         /// Source migraiton plan ID to be cloned.
         /// </summary>
         [Output("sourceMigrationPlanId")]
-        public Output<string> SourceMigrationPlanId { get; private set; } = null!;
+        public Output<string?> SourceMigrationPlanId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the migration plan.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of strategies for the resources to be migrated.
@@ -101,7 +101,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of target environments.
@@ -113,13 +113,13 @@ namespace Pulumi.Oci.CloudMigrations
         /// The time when the migration plan was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when the migration plan was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

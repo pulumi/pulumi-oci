@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// The user's database password.
 	//
 	// **SCIM++ Properties:**
@@ -66,7 +65,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// Description
 	//
 	// **Added In:** 2109020413
@@ -77,7 +76,7 @@ type DomainsUserDbCredential struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -89,14 +88,14 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) Indicates that the database password has expired.
 	//
 	// **SCIM++ Properties:**
 	// * type: boolean
 	// * mutability: readOnly
 	// * returned: default
-	Expired pulumi.BoolOutput `pulumi:"expired"`
+	Expired pulumi.BoolPtrOutput `pulumi:"expired"`
 	// When the user credential expires.
 	//
 	// **Added In:** 2109090424
@@ -110,7 +109,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	ExpiresOn pulumi.StringOutput `pulumi:"expiresOn"`
+	ExpiresOn pulumi.StringPtrOutput `pulumi:"expiresOn"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -144,7 +143,7 @@ type DomainsUserDbCredential struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -162,7 +161,7 @@ type DomainsUserDbCredential struct {
 	// * type: dateTime
 	// * mutability: readOnly
 	// * returned: default
-	LastSetDate pulumi.StringOutput `pulumi:"lastSetDate"`
+	LastSetDate pulumi.StringPtrOutput `pulumi:"lastSetDate"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -182,7 +181,7 @@ type DomainsUserDbCredential struct {
 	// * mutability: readOnly
 	// * returned: default
 	// * required: false
-	MixedDbPassword pulumi.StringOutput `pulumi:"mixedDbPassword"`
+	MixedDbPassword pulumi.StringPtrOutput `pulumi:"mixedDbPassword"`
 	// (Updatable) The mixed salt of the password.
 	//
 	// **SCIM++ Properties:**
@@ -190,7 +189,7 @@ type DomainsUserDbCredential struct {
 	// * mutability: readOnly
 	// * returned: default
 	// * required: false
-	MixedSalt pulumi.StringOutput `pulumi:"mixedSalt"`
+	MixedSalt pulumi.StringPtrOutput `pulumi:"mixedSalt"`
 	// (Updatable) The username.
 	//
 	// **SCIM++ Properties:**
@@ -202,7 +201,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// The user's OCID.
 	//
 	// **SCIM++ Properties:**
@@ -214,7 +213,7 @@ type DomainsUserDbCredential struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) The salt of the password.
@@ -224,7 +223,7 @@ type DomainsUserDbCredential struct {
 	// * mutability: readOnly
 	// * returned: default
 	// * required: false
-	Salt pulumi.StringOutput `pulumi:"salt"`
+	Salt pulumi.StringPtrOutput `pulumi:"salt"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	//
 	// **SCIM++ Properties:**
@@ -250,7 +249,7 @@ type DomainsUserDbCredential struct {
 	// * returned: never
 	// * type: string
 	// * uniqueness: none
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -274,9 +273,9 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
-	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// The user linked to the database credential.
 	//
 	// **SCIM++ Properties:**
@@ -289,7 +288,7 @@ type DomainsUserDbCredential struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsUserDbCredentialUserOutput `pulumi:"user"`
+	User DomainsUserDbCredentialUserPtrOutput `pulumi:"user"`
 }
 
 // NewDomainsUserDbCredential registers a new resource with the given unique name, arguments, and options.
@@ -1115,12 +1114,6 @@ func (i *DomainsUserDbCredential) ToDomainsUserDbCredentialOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserDbCredentialOutput)
 }
 
-func (i *DomainsUserDbCredential) ToOutput(ctx context.Context) pulumix.Output[*DomainsUserDbCredential] {
-	return pulumix.Output[*DomainsUserDbCredential]{
-		OutputState: i.ToDomainsUserDbCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsUserDbCredentialArrayInput is an input type that accepts DomainsUserDbCredentialArray and DomainsUserDbCredentialArrayOutput values.
 // You can construct a concrete instance of `DomainsUserDbCredentialArrayInput` via:
 //
@@ -1144,12 +1137,6 @@ func (i DomainsUserDbCredentialArray) ToDomainsUserDbCredentialArrayOutput() Dom
 
 func (i DomainsUserDbCredentialArray) ToDomainsUserDbCredentialArrayOutputWithContext(ctx context.Context) DomainsUserDbCredentialArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserDbCredentialArrayOutput)
-}
-
-func (i DomainsUserDbCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUserDbCredential] {
-	return pulumix.Output[[]*DomainsUserDbCredential]{
-		OutputState: i.ToDomainsUserDbCredentialArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsUserDbCredentialMapInput is an input type that accepts DomainsUserDbCredentialMap and DomainsUserDbCredentialMapOutput values.
@@ -1177,12 +1164,6 @@ func (i DomainsUserDbCredentialMap) ToDomainsUserDbCredentialMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsUserDbCredentialMapOutput)
 }
 
-func (i DomainsUserDbCredentialMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUserDbCredential] {
-	return pulumix.Output[map[string]*DomainsUserDbCredential]{
-		OutputState: i.ToDomainsUserDbCredentialMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsUserDbCredentialOutput struct{ *pulumi.OutputState }
 
 func (DomainsUserDbCredentialOutput) ElementType() reflect.Type {
@@ -1195,12 +1176,6 @@ func (o DomainsUserDbCredentialOutput) ToDomainsUserDbCredentialOutput() Domains
 
 func (o DomainsUserDbCredentialOutput) ToDomainsUserDbCredentialOutputWithContext(ctx context.Context) DomainsUserDbCredentialOutput {
 	return o
-}
-
-func (o DomainsUserDbCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsUserDbCredential] {
-	return pulumix.Output[*DomainsUserDbCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1229,8 +1204,8 @@ func (o DomainsUserDbCredentialOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // The user's database password.
@@ -1255,8 +1230,8 @@ func (o DomainsUserDbCredentialOutput) DbPassword() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsUserDbCredentialOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
@@ -1269,8 +1244,8 @@ func (o DomainsUserDbCredentialOutput) DeleteInProgress() pulumi.BoolOutput {
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsUserDbCredentialOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1284,8 +1259,8 @@ func (o DomainsUserDbCredentialOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Indicates that the database password has expired.
@@ -1294,8 +1269,8 @@ func (o DomainsUserDbCredentialOutput) DomainOcid() pulumi.StringOutput {
 // * type: boolean
 // * mutability: readOnly
 // * returned: default
-func (o DomainsUserDbCredentialOutput) Expired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.BoolOutput { return v.Expired }).(pulumi.BoolOutput)
+func (o DomainsUserDbCredentialOutput) Expired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.BoolPtrOutput { return v.Expired }).(pulumi.BoolPtrOutput)
 }
 
 // When the user credential expires.
@@ -1311,8 +1286,8 @@ func (o DomainsUserDbCredentialOutput) Expired() pulumi.BoolOutput {
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1361,8 +1336,8 @@ func (o DomainsUserDbCredentialOutput) IdcsLastModifiedBies() DomainsUserDbCrede
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1385,8 +1360,8 @@ func (o DomainsUserDbCredentialOutput) IdcsPreventedOperations() pulumi.StringAr
 // * type: dateTime
 // * mutability: readOnly
 // * returned: default
-func (o DomainsUserDbCredentialOutput) LastSetDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.LastSetDate }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) LastSetDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.LastSetDate }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1411,8 +1386,8 @@ func (o DomainsUserDbCredentialOutput) Metas() DomainsUserDbCredentialMetaArrayO
 // * mutability: readOnly
 // * returned: default
 // * required: false
-func (o DomainsUserDbCredentialOutput) MixedDbPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.MixedDbPassword }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) MixedDbPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.MixedDbPassword }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The mixed salt of the password.
@@ -1422,8 +1397,8 @@ func (o DomainsUserDbCredentialOutput) MixedDbPassword() pulumi.StringOutput {
 // * mutability: readOnly
 // * returned: default
 // * required: false
-func (o DomainsUserDbCredentialOutput) MixedSalt() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.MixedSalt }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) MixedSalt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.MixedSalt }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The username.
@@ -1437,8 +1412,8 @@ func (o DomainsUserDbCredentialOutput) MixedSalt() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The user's OCID.
@@ -1452,8 +1427,8 @@ func (o DomainsUserDbCredentialOutput) Name() pulumi.StringOutput {
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1468,8 +1443,8 @@ func (o DomainsUserDbCredentialOutput) ResourceTypeSchemaVersion() pulumi.String
 // * mutability: readOnly
 // * returned: default
 // * required: false
-func (o DomainsUserDbCredentialOutput) Salt() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.Salt }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) Salt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.Salt }).(pulumi.StringPtrOutput)
 }
 
 // REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -1500,8 +1475,8 @@ func (o DomainsUserDbCredentialOutput) Schemas() pulumi.StringArrayOutput {
 // * returned: never
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -1530,15 +1505,15 @@ func (o DomainsUserDbCredentialOutput) Tags() DomainsUserDbCredentialTagArrayOut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsUserDbCredentialOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs
-func (o DomainsUserDbCredentialOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+func (o DomainsUserDbCredentialOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfChangeUser
-	}).(DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+	}).(DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput)
 }
 
 // The user linked to the database credential.
@@ -1553,8 +1528,8 @@ func (o DomainsUserDbCredentialOutput) Urnietfparamsscimschemasoracleidcsextensi
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsUserDbCredentialOutput) User() DomainsUserDbCredentialUserOutput {
-	return o.ApplyT(func(v *DomainsUserDbCredential) DomainsUserDbCredentialUserOutput { return v.User }).(DomainsUserDbCredentialUserOutput)
+func (o DomainsUserDbCredentialOutput) User() DomainsUserDbCredentialUserPtrOutput {
+	return o.ApplyT(func(v *DomainsUserDbCredential) DomainsUserDbCredentialUserPtrOutput { return v.User }).(DomainsUserDbCredentialUserPtrOutput)
 }
 
 type DomainsUserDbCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -1569,12 +1544,6 @@ func (o DomainsUserDbCredentialArrayOutput) ToDomainsUserDbCredentialArrayOutput
 
 func (o DomainsUserDbCredentialArrayOutput) ToDomainsUserDbCredentialArrayOutputWithContext(ctx context.Context) DomainsUserDbCredentialArrayOutput {
 	return o
-}
-
-func (o DomainsUserDbCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsUserDbCredential] {
-	return pulumix.Output[[]*DomainsUserDbCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsUserDbCredentialArrayOutput) Index(i pulumi.IntInput) DomainsUserDbCredentialOutput {
@@ -1595,12 +1564,6 @@ func (o DomainsUserDbCredentialMapOutput) ToDomainsUserDbCredentialMapOutput() D
 
 func (o DomainsUserDbCredentialMapOutput) ToDomainsUserDbCredentialMapOutputWithContext(ctx context.Context) DomainsUserDbCredentialMapOutput {
 	return o
-}
-
-func (o DomainsUserDbCredentialMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsUserDbCredential] {
-	return pulumix.Output[map[string]*DomainsUserDbCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsUserDbCredentialMapOutput) MapIndex(k pulumi.StringInput) DomainsUserDbCredentialOutput {

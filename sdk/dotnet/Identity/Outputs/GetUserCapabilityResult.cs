@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Indicates if the user can use API keys.
         /// </summary>
-        public readonly bool CanUseApiKeys;
+        public readonly bool? CanUseApiKeys;
         /// <summary>
         /// Indicates if the user can use SWIFT passwords / auth tokens.
         /// </summary>
-        public readonly bool CanUseAuthTokens;
+        public readonly bool? CanUseAuthTokens;
         /// <summary>
         /// Indicates if the user can log in to the console.
         /// </summary>
-        public readonly bool CanUseConsolePassword;
+        public readonly bool? CanUseConsolePassword;
         /// <summary>
         /// Indicates if the user can use SigV4 symmetric keys.
         /// </summary>
-        public readonly bool CanUseCustomerSecretKeys;
+        public readonly bool? CanUseCustomerSecretKeys;
         /// <summary>
         /// Indicates if the user can use DB passwords.
         /// </summary>
-        public readonly bool CanUseDbCredentials;
+        public readonly bool? CanUseDbCredentials;
         /// <summary>
         /// Indicates if the user can use OAuth2 credentials and tokens.
         /// </summary>
-        public readonly bool CanUseOauth2clientCredentials;
+        public readonly bool? CanUseOauth2clientCredentials;
         /// <summary>
         /// Indicates if the user can use SMTP passwords.
         /// </summary>
-        public readonly bool CanUseSmtpCredentials;
+        public readonly bool? CanUseSmtpCredentials;
 
         [OutputConstructor]
         private GetUserCapabilityResult(
-            bool canUseApiKeys,
+            bool? canUseApiKeys,
 
-            bool canUseAuthTokens,
+            bool? canUseAuthTokens,
 
-            bool canUseConsolePassword,
+            bool? canUseConsolePassword,
 
-            bool canUseCustomerSecretKeys,
+            bool? canUseCustomerSecretKeys,
 
-            bool canUseDbCredentials,
+            bool? canUseDbCredentials,
 
-            bool canUseOauth2clientCredentials,
+            bool? canUseOauth2clientCredentials,
 
-            bool canUseSmtpCredentials)
+            bool? canUseSmtpCredentials)
         {
             CanUseApiKeys = canUseApiKeys;
             CanUseAuthTokens = canUseAuthTokens;

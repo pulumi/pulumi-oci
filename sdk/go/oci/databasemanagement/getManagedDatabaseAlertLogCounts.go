@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
@@ -86,7 +85,7 @@ type GetManagedDatabaseAlertLogCountsResult struct {
 	Filters                   []GetManagedDatabaseAlertLogCountsFilter                   `pulumi:"filters"`
 	GroupBy                   *string                                                    `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string  `pulumi:"id"`
+	Id                  *string `pulumi:"id"`
 	IsRegularExpression *bool   `pulumi:"isRegularExpression"`
 	LevelFilter         *string `pulumi:"levelFilter"`
 	LogSearchText       *string `pulumi:"logSearchText"`
@@ -150,12 +149,6 @@ func (o GetManagedDatabaseAlertLogCountsResultOutput) ToGetManagedDatabaseAlertL
 	return o
 }
 
-func (o GetManagedDatabaseAlertLogCountsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAlertLogCountsResult] {
-	return pulumix.Output[GetManagedDatabaseAlertLogCountsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of alert_log_counts_collection.
 func (o GetManagedDatabaseAlertLogCountsResultOutput) AlertLogCountsCollections() GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsResult) []GetManagedDatabaseAlertLogCountsAlertLogCountsCollection {
@@ -174,8 +167,8 @@ func (o GetManagedDatabaseAlertLogCountsResultOutput) GroupBy() pulumi.StringPtr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseAlertLogCountsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseAlertLogCountsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseAlertLogCountsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseAlertLogCountsResultOutput) IsRegularExpression() pulumi.BoolPtrOutput {

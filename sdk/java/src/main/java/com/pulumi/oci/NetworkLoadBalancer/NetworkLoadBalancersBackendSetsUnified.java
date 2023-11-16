@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,14 +96,14 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * 
      */
     @Export(name="backends", refs={List.class,NetworkLoadBalancersBackendSetsUnifiedBackend.class}, tree="[0,1]")
-    private Output<List<NetworkLoadBalancersBackendSetsUnifiedBackend>> backends;
+    private Output</* @Nullable */ List<NetworkLoadBalancersBackendSetsUnifiedBackend>> backends;
 
     /**
      * @return (Updatable) An array of backends to be associated with the backend set.
      * 
      */
-    public Output<List<NetworkLoadBalancersBackendSetsUnifiedBackend>> backends() {
-        return this.backends;
+    public Output<Optional<List<NetworkLoadBalancersBackendSetsUnifiedBackend>>> backends() {
+        return Codegen.optional(this.backends);
     }
     /**
      * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
@@ -123,28 +124,28 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * 
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
-    private Output<String> ipVersion;
+    private Output</* @Nullable */ String> ipVersion;
 
     /**
      * @return (Updatable) IP version associated with the backend set.
      * 
      */
-    public Output<String> ipVersion() {
-        return this.ipVersion;
+    public Output<Optional<String>> ipVersion() {
+        return Codegen.optional(this.ipVersion);
     }
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
     @Export(name="isPreserveSource", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPreserveSource;
+    private Output</* @Nullable */ Boolean> isPreserveSource;
 
     /**
      * @return (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
-    public Output<Boolean> isPreserveSource() {
-        return this.isPreserveSource;
+    public Output<Optional<Boolean>> isPreserveSource() {
+        return Codegen.optional(this.isPreserveSource);
     }
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The CNI used by the node pools of this cluster
         /// </summary>
-        public readonly string CniType;
+        public readonly string? CniType;
 
         [OutputConstructor]
-        private GetClustersClusterClusterPodNetworkOptionResult(string cniType)
+        private GetClustersClusterClusterPodNetworkOptionResult(string? cniType)
         {
             CniType = cniType;
         }

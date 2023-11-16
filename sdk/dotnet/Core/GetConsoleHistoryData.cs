@@ -143,11 +143,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The console history data.
         /// </summary>
-        public readonly string Data;
+        public readonly string? Data;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly int? Length;
         public readonly int? Offset;
 
@@ -155,9 +155,9 @@ namespace Pulumi.Oci.Core
         private GetConsoleHistoryDataResult(
             string consoleHistoryId,
 
-            string data,
+            string? data,
 
-            string id,
+            string? id,
 
             int? length,
 

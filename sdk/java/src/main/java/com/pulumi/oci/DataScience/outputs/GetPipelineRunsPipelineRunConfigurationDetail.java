@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineRunsPipelineRunConfigurationDetail {
@@ -15,51 +17,51 @@ public final class GetPipelineRunsPipelineRunConfigurationDetail {
      * @return The command line arguments to set for step.
      * 
      */
-    private String commandLineArguments;
+    private @Nullable String commandLineArguments;
     /**
      * @return Environment variables to set for step.
      * 
      */
-    private Map<String,Object> environmentVariables;
+    private @Nullable Map<String,Object> environmentVariables;
     /**
      * @return A time bound for the execution of the step.
      * 
      */
-    private String maximumRuntimeInMinutes;
+    private @Nullable String maximumRuntimeInMinutes;
     /**
      * @return The type of pipeline.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetPipelineRunsPipelineRunConfigurationDetail() {}
     /**
      * @return The command line arguments to set for step.
      * 
      */
-    public String commandLineArguments() {
-        return this.commandLineArguments;
+    public Optional<String> commandLineArguments() {
+        return Optional.ofNullable(this.commandLineArguments);
     }
     /**
      * @return Environment variables to set for step.
      * 
      */
     public Map<String,Object> environmentVariables() {
-        return this.environmentVariables;
+        return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
      * @return A time bound for the execution of the step.
      * 
      */
-    public String maximumRuntimeInMinutes() {
-        return this.maximumRuntimeInMinutes;
+    public Optional<String> maximumRuntimeInMinutes() {
+        return Optional.ofNullable(this.maximumRuntimeInMinutes);
     }
     /**
      * @return The type of pipeline.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetPipelineRunsPipelineRunConfigurationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String commandLineArguments;
-        private Map<String,Object> environmentVariables;
-        private String maximumRuntimeInMinutes;
-        private String type;
+        private @Nullable String commandLineArguments;
+        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable String maximumRuntimeInMinutes;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetPipelineRunsPipelineRunConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetPipelineRunsPipelineRunConfigurationDetail {
         }
 
         @CustomType.Setter
-        public Builder commandLineArguments(String commandLineArguments) {
-            this.commandLineArguments = Objects.requireNonNull(commandLineArguments);
+        public Builder commandLineArguments(@Nullable String commandLineArguments) {
+            this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
-        public Builder maximumRuntimeInMinutes(String maximumRuntimeInMinutes) {
-            this.maximumRuntimeInMinutes = Objects.requireNonNull(maximumRuntimeInMinutes);
+        public Builder maximumRuntimeInMinutes(@Nullable String maximumRuntimeInMinutes) {
+            this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetPipelineRunsPipelineRunConfigurationDetail build() {

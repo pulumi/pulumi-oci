@@ -60,7 +60,7 @@ export class ContainerConfiguration extends pulumi.CustomResource {
     /**
      * The tenancy namespace used in the container repository path.
      */
-    public /*out*/ readonly namespace!: pulumi.Output<string>;
+    public /*out*/ readonly namespace!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ContainerConfiguration resource with the given unique name, arguments, and options.

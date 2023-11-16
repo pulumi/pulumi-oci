@@ -41,7 +41,7 @@ class GetSubscriptionRewardResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,34 +49,22 @@ class GetSubscriptionRewardResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionRewardItemResult']:
-        """
-        The monthly summary of rewards.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionRewardItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> str:
-        """
-        The entitlement ID from MQS, which is the same as the subcription ID.
-        """
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter
-    def summaries(self) -> Sequence['outputs.GetSubscriptionRewardSummaryResult']:
-        """
-        The overall monthly reward summary.
-        """
+    def summaries(self) -> Optional[Sequence['outputs.GetSubscriptionRewardSummaryResult']]:
         return pulumi.get(self, "summaries")
 
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> str:
-        """
-        The OCID of the target tenancy.
-        """
         return pulumi.get(self, "tenancy_id")
 
 
@@ -97,23 +85,7 @@ def get_subscription_reward(subscription_id: Optional[str] = None,
                             tenancy_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionRewardResult:
     """
-    This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the list of rewards for a subscription ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_reward = oci.UsageProxy.get_subscription_reward(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['subscriptionId'] = subscription_id
@@ -134,22 +106,6 @@ def get_subscription_reward_output(subscription_id: Optional[pulumi.Input[str]] 
                                    tenancy_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionRewardResult]:
     """
-    This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the list of rewards for a subscription ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscription_reward = oci.UsageProxy.get_subscription_reward(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     ...

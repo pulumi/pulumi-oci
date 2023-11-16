@@ -96,19 +96,19 @@ namespace Pulumi.Oci.Analytics
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional description.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Email address receiving notifications.
         /// </summary>
         [Output("emailNotification")]
-        public Output<string> EmailNotification { get; private set; } = null!;
+        public Output<string?> EmailNotification { get; private set; } = null!;
 
         /// <summary>
         /// Analytics feature set.
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Analytics
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// IDCS access token identifying a stripe and service administrator user.
@@ -150,13 +150,13 @@ namespace Pulumi.Oci.Analytics
         /// Base representation of a network endpoint.
         /// </summary>
         [Output("networkEndpointDetails")]
-        public Output<Outputs.AnalyticsInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
+        public Output<Outputs.AnalyticsInstanceNetworkEndpointDetails?> NetworkEndpointDetails { get; private set; } = null!;
 
         /// <summary>
         /// URL of the Analytics service.
         /// </summary>
         [Output("serviceUrl")]
-        public Output<string> ServiceUrl { get; private set; } = null!;
+        public Output<string?> ServiceUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -166,19 +166,19 @@ namespace Pulumi.Oci.Analytics
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -112,11 +112,11 @@ export interface GetLibraryMaskingFormatsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of library_masking_format_collection.
      */
-    readonly libraryMaskingFormatCollections: outputs.DataSafe.GetLibraryMaskingFormatsLibraryMaskingFormatCollection[];
+    readonly libraryMaskingFormatCollections?: outputs.DataSafe.GetLibraryMaskingFormatsLibraryMaskingFormatCollection[];
     /**
      * The OCID of the library masking format.
      */

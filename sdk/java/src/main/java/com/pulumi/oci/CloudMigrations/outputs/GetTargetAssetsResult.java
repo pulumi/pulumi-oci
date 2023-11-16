@@ -24,7 +24,7 @@ public final class GetTargetAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return OCID of the associated migration plan.
      * 
@@ -39,7 +39,7 @@ public final class GetTargetAssetsResult {
      * @return The list of target_asset_collection.
      * 
      */
-    private List<GetTargetAssetsTargetAssetCollection> targetAssetCollections;
+    private @Nullable List<GetTargetAssetsTargetAssetCollection> targetAssetCollections;
     private @Nullable String targetAssetId;
 
     private GetTargetAssetsResult() {}
@@ -57,8 +57,8 @@ public final class GetTargetAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return OCID of the associated migration plan.
@@ -79,7 +79,7 @@ public final class GetTargetAssetsResult {
      * 
      */
     public List<GetTargetAssetsTargetAssetCollection> targetAssetCollections() {
-        return this.targetAssetCollections;
+        return this.targetAssetCollections == null ? List.of() : this.targetAssetCollections;
     }
     public Optional<String> targetAssetId() {
         return Optional.ofNullable(this.targetAssetId);
@@ -96,10 +96,10 @@ public final class GetTargetAssetsResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetTargetAssetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String migrationPlanId;
         private @Nullable String state;
-        private List<GetTargetAssetsTargetAssetCollection> targetAssetCollections;
+        private @Nullable List<GetTargetAssetsTargetAssetCollection> targetAssetCollections;
         private @Nullable String targetAssetId;
         public Builder() {}
         public Builder(GetTargetAssetsResult defaults) {
@@ -127,8 +127,8 @@ public final class GetTargetAssetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -142,8 +142,8 @@ public final class GetTargetAssetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder targetAssetCollections(List<GetTargetAssetsTargetAssetCollection> targetAssetCollections) {
-            this.targetAssetCollections = Objects.requireNonNull(targetAssetCollections);
+        public Builder targetAssetCollections(@Nullable List<GetTargetAssetsTargetAssetCollection> targetAssetCollections) {
+            this.targetAssetCollections = targetAssetCollections;
             return this;
         }
         public Builder targetAssetCollections(GetTargetAssetsTargetAssetCollection... targetAssetCollections) {

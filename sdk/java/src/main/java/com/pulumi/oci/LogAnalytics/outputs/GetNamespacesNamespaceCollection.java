@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesNamespaceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespacesNamespaceCollection {
-    private List<GetNamespacesNamespaceCollectionItem> items;
+    private @Nullable List<GetNamespacesNamespaceCollectionItem> items;
 
     private GetNamespacesNamespaceCollection() {}
     public List<GetNamespacesNamespaceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNamespacesNamespaceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespacesNamespaceCollectionItem> items;
+        private @Nullable List<GetNamespacesNamespaceCollectionItem> items;
         public Builder() {}
         public Builder(GetNamespacesNamespaceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNamespacesNamespaceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNamespacesNamespaceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespacesNamespaceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespacesNamespaceCollectionItem... items) {

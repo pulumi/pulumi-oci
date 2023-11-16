@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemPointInTimeRecoveryDetail {
@@ -13,27 +15,27 @@ public final class GetMysqlDbSystemPointInTimeRecoveryDetail {
      * @return Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeEarliestRecoveryPoint;
+    private @Nullable String timeEarliestRecoveryPoint;
     /**
      * @return Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeLatestRecoveryPoint;
+    private @Nullable String timeLatestRecoveryPoint;
 
     private GetMysqlDbSystemPointInTimeRecoveryDetail() {}
     /**
      * @return Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeEarliestRecoveryPoint() {
-        return this.timeEarliestRecoveryPoint;
+    public Optional<String> timeEarliestRecoveryPoint() {
+        return Optional.ofNullable(this.timeEarliestRecoveryPoint);
     }
     /**
      * @return Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeLatestRecoveryPoint() {
-        return this.timeLatestRecoveryPoint;
+    public Optional<String> timeLatestRecoveryPoint() {
+        return Optional.ofNullable(this.timeLatestRecoveryPoint);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMysqlDbSystemPointInTimeRecoveryDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeEarliestRecoveryPoint;
-        private String timeLatestRecoveryPoint;
+        private @Nullable String timeEarliestRecoveryPoint;
+        private @Nullable String timeLatestRecoveryPoint;
         public Builder() {}
         public Builder(GetMysqlDbSystemPointInTimeRecoveryDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMysqlDbSystemPointInTimeRecoveryDetail {
         }
 
         @CustomType.Setter
-        public Builder timeEarliestRecoveryPoint(String timeEarliestRecoveryPoint) {
-            this.timeEarliestRecoveryPoint = Objects.requireNonNull(timeEarliestRecoveryPoint);
+        public Builder timeEarliestRecoveryPoint(@Nullable String timeEarliestRecoveryPoint) {
+            this.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLatestRecoveryPoint(String timeLatestRecoveryPoint) {
-            this.timeLatestRecoveryPoint = Objects.requireNonNull(timeLatestRecoveryPoint);
+        public Builder timeLatestRecoveryPoint(@Nullable String timeLatestRecoveryPoint) {
+            this.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
             return this;
         }
         public GetMysqlDbSystemPointInTimeRecoveryDetail build() {

@@ -53,7 +53,7 @@ export interface GetAddonResult {
     /**
      * The error info of the addon.
      */
-    readonly addonErrors: outputs.ContainerEngine.GetAddonAddonError[];
+    readonly addonErrors?: outputs.ContainerEngine.GetAddonAddonError[];
     /**
      * The name of the addon.
      */
@@ -62,25 +62,25 @@ export interface GetAddonResult {
     /**
      * Addon configuration details.
      */
-    readonly configurations: outputs.ContainerEngine.GetAddonConfiguration[];
+    readonly configurations?: outputs.ContainerEngine.GetAddonConfiguration[];
     /**
      * current installed version of the addon
      */
-    readonly currentInstalledVersion: string;
-    readonly id: string;
-    readonly removeAddonResourcesOnDelete: boolean;
+    readonly currentInstalledVersion?: string;
+    readonly id?: string;
+    readonly removeAddonResourcesOnDelete?: boolean;
     /**
      * The state of the addon.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * selected addon version, or null indicates autoUpdate
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.

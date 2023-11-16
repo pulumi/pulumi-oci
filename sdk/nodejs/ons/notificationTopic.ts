@@ -79,7 +79,7 @@ export class NotificationTopic extends pulumi.CustomResource {
     /**
      * The endpoint for managing subscriptions or publishing messages to the topic.
      */
-    public /*out*/ readonly apiEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly apiEndpoint!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
      */
@@ -87,19 +87,19 @@ export class NotificationTopic extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the topic being created. Avoid entering confidential information.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * For optimistic concurrency control. See `if-match`.
      */
-    public /*out*/ readonly etag!: pulumi.Output<string>;
+    public /*out*/ readonly etag!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      *
@@ -111,19 +111,19 @@ export class NotificationTopic extends pulumi.CustomResource {
     /**
      * A unique short topic Id. This is used only for SMS subscriptions.
      */
-    public /*out*/ readonly shortTopicId!: pulumi.Output<string>;
+    public /*out*/ readonly shortTopicId!: pulumi.Output<string | undefined>;
     /**
      * The lifecycle state of the topic.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the topic was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      */
-    public /*out*/ readonly topicId!: pulumi.Output<string>;
+    public /*out*/ readonly topicId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a NotificationTopic resource with the given unique name, arguments, and options.

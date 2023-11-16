@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceStorageRecallCountResult {
@@ -14,41 +16,41 @@ public final class GetNamespaceStorageRecallCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String namespace;
     /**
      * @return This is the total number of recalls made so far
      * 
      */
-    private Integer recallCount;
+    private @Nullable Integer recallCount;
     /**
      * @return This is the number of recalls that failed
      * 
      */
-    private Integer recallFailed;
+    private @Nullable Integer recallFailed;
     /**
      * @return This is the maximum number of recalls (including successful and pending recalls) allowed
      * 
      */
-    private Integer recallLimit;
+    private @Nullable Integer recallLimit;
     /**
      * @return This is the number of recalls in pending state
      * 
      */
-    private Integer recallPending;
+    private @Nullable Integer recallPending;
     /**
      * @return This is the number of recalls that succeeded
      * 
      */
-    private Integer recallSucceeded;
+    private @Nullable Integer recallSucceeded;
 
     private GetNamespaceStorageRecallCountResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String namespace() {
         return this.namespace;
@@ -57,36 +59,36 @@ public final class GetNamespaceStorageRecallCountResult {
      * @return This is the total number of recalls made so far
      * 
      */
-    public Integer recallCount() {
-        return this.recallCount;
+    public Optional<Integer> recallCount() {
+        return Optional.ofNullable(this.recallCount);
     }
     /**
      * @return This is the number of recalls that failed
      * 
      */
-    public Integer recallFailed() {
-        return this.recallFailed;
+    public Optional<Integer> recallFailed() {
+        return Optional.ofNullable(this.recallFailed);
     }
     /**
      * @return This is the maximum number of recalls (including successful and pending recalls) allowed
      * 
      */
-    public Integer recallLimit() {
-        return this.recallLimit;
+    public Optional<Integer> recallLimit() {
+        return Optional.ofNullable(this.recallLimit);
     }
     /**
      * @return This is the number of recalls in pending state
      * 
      */
-    public Integer recallPending() {
-        return this.recallPending;
+    public Optional<Integer> recallPending() {
+        return Optional.ofNullable(this.recallPending);
     }
     /**
      * @return This is the number of recalls that succeeded
      * 
      */
-    public Integer recallSucceeded() {
-        return this.recallSucceeded;
+    public Optional<Integer> recallSucceeded() {
+        return Optional.ofNullable(this.recallSucceeded);
     }
 
     public static Builder builder() {
@@ -98,13 +100,13 @@ public final class GetNamespaceStorageRecallCountResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String namespace;
-        private Integer recallCount;
-        private Integer recallFailed;
-        private Integer recallLimit;
-        private Integer recallPending;
-        private Integer recallSucceeded;
+        private @Nullable Integer recallCount;
+        private @Nullable Integer recallFailed;
+        private @Nullable Integer recallLimit;
+        private @Nullable Integer recallPending;
+        private @Nullable Integer recallSucceeded;
         public Builder() {}
         public Builder(GetNamespaceStorageRecallCountResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +120,8 @@ public final class GetNamespaceStorageRecallCountResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,28 +130,28 @@ public final class GetNamespaceStorageRecallCountResult {
             return this;
         }
         @CustomType.Setter
-        public Builder recallCount(Integer recallCount) {
-            this.recallCount = Objects.requireNonNull(recallCount);
+        public Builder recallCount(@Nullable Integer recallCount) {
+            this.recallCount = recallCount;
             return this;
         }
         @CustomType.Setter
-        public Builder recallFailed(Integer recallFailed) {
-            this.recallFailed = Objects.requireNonNull(recallFailed);
+        public Builder recallFailed(@Nullable Integer recallFailed) {
+            this.recallFailed = recallFailed;
             return this;
         }
         @CustomType.Setter
-        public Builder recallLimit(Integer recallLimit) {
-            this.recallLimit = Objects.requireNonNull(recallLimit);
+        public Builder recallLimit(@Nullable Integer recallLimit) {
+            this.recallLimit = recallLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder recallPending(Integer recallPending) {
-            this.recallPending = Objects.requireNonNull(recallPending);
+        public Builder recallPending(@Nullable Integer recallPending) {
+            this.recallPending = recallPending;
             return this;
         }
         @CustomType.Setter
-        public Builder recallSucceeded(Integer recallSucceeded) {
-            this.recallSucceeded = Objects.requireNonNull(recallSucceeded);
+        public Builder recallSucceeded(@Nullable Integer recallSucceeded) {
+            this.recallSucceeded = recallSucceeded;
             return this;
         }
         public GetNamespaceStorageRecallCountResult build() {

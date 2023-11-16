@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Adm
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string RemediationRunId;
 
         [OutputConstructor]
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Adm
 
             string? gav,
 
-            string id,
+            string? id,
 
             string remediationRunId)
         {

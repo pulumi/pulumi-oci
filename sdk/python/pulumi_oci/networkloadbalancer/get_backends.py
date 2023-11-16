@@ -42,10 +42,7 @@ class GetBackendsResult:
 
     @property
     @pulumi.getter(name="backendCollections")
-    def backend_collections(self) -> Sequence['outputs.GetBackendsBackendCollectionResult']:
-        """
-        The list of backend_collection.
-        """
+    def backend_collections(self) -> Optional[Sequence['outputs.GetBackendsBackendCollectionResult']]:
         return pulumi.get(self, "backend_collections")
 
     @property
@@ -60,7 +57,7 @@ class GetBackendsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_backends(backend_set_name: Optional[str] = None,
                  network_load_balancer_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackendsResult:
     """
-    This data source provides the list of Backends in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists the backend servers for a given network load balancer and backend set.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str backend_set_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['backendSetName'] = backend_set_name
@@ -129,22 +110,6 @@ def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
                         network_load_balancer_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackendsResult]:
     """
-    This data source provides the list of Backends in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Lists the backend servers for a given network load balancer and backend set.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
-    ```
-
-
-    :param str backend_set_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`
-    :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -60,36 +59,36 @@ type LookupDrPlanArgs struct {
 // A collection of values returned by getDrPlan.
 type LookupDrPlanResult struct {
 	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
-	DisplayName string `pulumi:"displayName"`
-	DrPlanId    string `pulumi:"drPlanId"`
+	DisplayName *string `pulumi:"displayName"`
+	DrPlanId    string  `pulumi:"drPlanId"`
 	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
-	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
+	DrProtectionGroupId *string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
-	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
+	LifeCycleDetails *string `pulumi:"lifeCycleDetails"`
 	// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-	PeerDrProtectionGroupId string `pulumi:"peerDrProtectionGroupId"`
+	PeerDrProtectionGroupId *string `pulumi:"peerDrProtectionGroupId"`
 	// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-	PeerRegion string `pulumi:"peerRegion"`
+	PeerRegion *string `pulumi:"peerRegion"`
 	// The list of groups in this DR plan.
 	PlanGroups []GetDrPlanPlanGroup `pulumi:"planGroups"`
 	// The current state of the DR plan.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of the DR plan.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func LookupDrPlanOutput(ctx *pulumi.Context, args LookupDrPlanOutputArgs, opts ...pulumi.InvokeOption) LookupDrPlanResultOutput {
@@ -130,15 +129,9 @@ func (o LookupDrPlanResultOutput) ToLookupDrPlanResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupDrPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDrPlanResult] {
-	return pulumix.Output[LookupDrPlanResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-func (o LookupDrPlanResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -147,8 +140,8 @@ func (o LookupDrPlanResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
-func (o LookupDrPlanResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDrPlanResultOutput) DrPlanId() pulumi.StringOutput {
@@ -156,8 +149,8 @@ func (o LookupDrPlanResultOutput) DrPlanId() pulumi.StringOutput {
 }
 
 // The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
-func (o LookupDrPlanResultOutput) DrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.DrProtectionGroupId }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) DrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.DrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
@@ -166,23 +159,23 @@ func (o LookupDrPlanResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
-func (o LookupDrPlanResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the DR plan's current state in more detail.
-func (o LookupDrPlanResultOutput) LifeCycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.LifeCycleDetails }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) LifeCycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.LifeCycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-func (o LookupDrPlanResultOutput) PeerDrProtectionGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.PeerDrProtectionGroupId }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) PeerDrProtectionGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.PeerDrProtectionGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-func (o LookupDrPlanResultOutput) PeerRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.PeerRegion }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) PeerRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.PeerRegion }).(pulumi.StringPtrOutput)
 }
 
 // The list of groups in this DR plan.
@@ -191,8 +184,8 @@ func (o LookupDrPlanResultOutput) PlanGroups() GetDrPlanPlanGroupArrayOutput {
 }
 
 // The current state of the DR plan.
-func (o LookupDrPlanResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -201,18 +194,18 @@ func (o LookupDrPlanResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o LookupDrPlanResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-func (o LookupDrPlanResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The type of the DR plan.
-func (o LookupDrPlanResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupDrPlanResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

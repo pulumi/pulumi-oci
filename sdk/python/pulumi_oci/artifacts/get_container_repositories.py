@@ -55,9 +55,6 @@ class GetContainerRepositoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the container repository exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -67,18 +64,12 @@ class GetContainerRepositoriesResult:
 
     @property
     @pulumi.getter(name="containerRepositoryCollections")
-    def container_repository_collections(self) -> Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionResult']:
-        """
-        The list of container_repository_collection.
-        """
+    def container_repository_collections(self) -> Optional[Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionResult']]:
         return pulumi.get(self, "container_repository_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The container repository name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +79,7 @@ class GetContainerRepositoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,9 +88,6 @@ class GetContainerRepositoriesResult:
     @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> Optional[bool]:
-        """
-        Whether the repository is public. A public repository allows unauthenticated access.
-        """
         return pulumi.get(self, "is_public")
 
     @property
@@ -110,9 +98,6 @@ class GetContainerRepositoriesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the container repository.
-        """
         return pulumi.get(self, "state")
 
 
@@ -142,31 +127,7 @@ def get_container_repositories(compartment_id: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerRepositoriesResult:
     """
-    This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
-
-    List container repositories in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_repository_compartment_id_in_subtree"],
-        display_name=var["container_repository_display_name"],
-        is_public=var["container_repository_is_public"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        state=var["container_repository_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param bool is_public: A filter to return resources that match the isPublic value.
-    :param str repository_id: A filter to return container images only for the specified container repository OCID.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -201,30 +162,6 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerRepositoriesResult]:
     """
-    This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
-
-    List container repositories in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_repository_compartment_id_in_subtree"],
-        display_name=var["container_repository_display_name"],
-        is_public=var["container_repository_is_public"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        state=var["container_repository_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param bool is_public: A filter to return resources that match the isPublic value.
-    :param str repository_id: A filter to return container images only for the specified container repository OCID.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

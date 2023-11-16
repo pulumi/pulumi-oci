@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// An optional description of your choice for the rule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
         /// </summary>
-        public readonly string Destination;
+        public readonly string? Destination;
         /// <summary>
         /// Type of destination for the rule. The default is `CIDR_BLOCK`.
         /// </summary>
-        public readonly string DestinationType;
+        public readonly string? DestinationType;
         /// <summary>
         /// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         /// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -34,11 +34,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         /// </summary>
-        public readonly bool Stateless;
+        public readonly bool? Stateless;
         /// <summary>
         /// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
         /// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
@@ -52,17 +52,17 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetSecurityListsSecurityListEgressSecurityRuleResult(
-            string description,
+            string? description,
 
-            string destination,
+            string? destination,
 
-            string destinationType,
+            string? destinationType,
 
             ImmutableArray<Outputs.GetSecurityListsSecurityListEgressSecurityRuleIcmpOptionResult> icmpOptions,
 
-            string protocol,
+            string? protocol,
 
-            bool stateless,
+            bool? stateless,
 
             ImmutableArray<Outputs.GetSecurityListsSecurityListEgressSecurityRuleTcpOptionResult> tcpOptions,
 

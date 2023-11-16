@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction {
@@ -17,27 +19,27 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
      * @return Type of returned HTTP response body.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
     /**
      * @return Response code.
      * 
      */
-    private Integer code;
+    private @Nullable Integer code;
     /**
      * @return Adds headers defined in this array for HTTP response.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction() {}
     /**
@@ -45,35 +47,35 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies() {
-        return this.bodies;
+        return this.bodies == null ? List.of() : this.bodies;
     }
     /**
      * @return Response code.
      * 
      */
-    public Integer code() {
-        return this.code;
+    public Optional<Integer> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return Adds headers defined in this array for HTTP response.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers() {
-        return this.headers;
+        return this.headers == null ? List.of() : this.headers;
     }
     /**
      * @return Rule name. Must be unique within the module.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Type of WebAppFirewallPolicyRule.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
-        private Integer code;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
-        private String name;
-        private String type;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies;
+        private @Nullable Integer code;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,34 +103,34 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
         }
 
         @CustomType.Setter
-        public Builder bodies(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies) {
-            this.bodies = Objects.requireNonNull(bodies);
+        public Builder bodies(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody> bodies) {
+            this.bodies = bodies;
             return this;
         }
         public Builder bodies(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBody... bodies) {
             return bodies(List.of(bodies));
         }
         @CustomType.Setter
-        public Builder code(Integer code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable Integer code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder headers(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader> headers) {
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader... headers) {
             return headers(List.of(headers));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction build() {

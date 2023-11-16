@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -83,56 +84,56 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="accessToken", refs={String.class}, tree="[0]")
-    private Output<String> accessToken;
+    private Output</* @Nullable */ String> accessToken;
 
     /**
      * @return (Updatable) The OCID of personal access token saved in secret store.
      * 
      */
-    public Output<String> accessToken() {
-        return this.accessToken;
+    public Output<Optional<String>> accessToken() {
+        return Codegen.optional(this.accessToken);
     }
     /**
      * (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      * 
      */
     @Export(name="appPassword", refs={String.class}, tree="[0]")
-    private Output<String> appPassword;
+    private Output</* @Nullable */ String> appPassword;
 
     /**
      * @return (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
      * 
      */
-    public Output<String> appPassword() {
-        return this.appPassword;
+    public Output<Optional<String>> appPassword() {
+        return Codegen.optional(this.appPassword);
     }
     /**
      * (Updatable) The Base URL of the hosted BitbucketServer.
      * 
      */
     @Export(name="baseUrl", refs={String.class}, tree="[0]")
-    private Output<String> baseUrl;
+    private Output</* @Nullable */ String> baseUrl;
 
     /**
      * @return (Updatable) The Base URL of the hosted BitbucketServer.
      * 
      */
-    public Output<String> baseUrl() {
-        return this.baseUrl;
+    public Output<Optional<String>> baseUrl() {
+        return Codegen.optional(this.baseUrl);
     }
     /**
      * The OCID of the compartment containing the connection.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment containing the connection.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) The type of connection.
@@ -153,70 +154,70 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Optional description about the connection.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Optional description about the connection.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Optional connection display name. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) Optional connection display name. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The result of validating the credentials of a connection.
      * 
      */
     @Export(name="lastConnectionValidationResults", refs={List.class,ConnectionLastConnectionValidationResult.class}, tree="[0,1]")
-    private Output<List<ConnectionLastConnectionValidationResult>> lastConnectionValidationResults;
+    private Output</* @Nullable */ List<ConnectionLastConnectionValidationResult>> lastConnectionValidationResults;
 
     /**
      * @return The result of validating the credentials of a connection.
      * 
      */
-    public Output<List<ConnectionLastConnectionValidationResult>> lastConnectionValidationResults() {
-        return this.lastConnectionValidationResults;
+    public Output<Optional<List<ConnectionLastConnectionValidationResult>>> lastConnectionValidationResults() {
+        return Codegen.optional(this.lastConnectionValidationResults);
     }
     /**
      * The OCID of the DevOps project.
@@ -237,70 +238,70 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the connection.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) TLS configuration used by build service to verify TLS connection.
      * 
      */
     @Export(name="tlsVerifyConfig", refs={ConnectionTlsVerifyConfig.class}, tree="[0]")
-    private Output<ConnectionTlsVerifyConfig> tlsVerifyConfig;
+    private Output</* @Nullable */ ConnectionTlsVerifyConfig> tlsVerifyConfig;
 
     /**
      * @return (Updatable) TLS configuration used by build service to verify TLS connection.
      * 
      */
-    public Output<ConnectionTlsVerifyConfig> tlsVerifyConfig() {
-        return this.tlsVerifyConfig;
+    public Output<Optional<ConnectionTlsVerifyConfig>> tlsVerifyConfig() {
+        return Codegen.optional(this.tlsVerifyConfig);
     }
     /**
      * (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
@@ -310,7 +311,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
-    private Output<String> username;
+    private Output</* @Nullable */ String> username;
 
     /**
      * @return (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
@@ -319,8 +320,8 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> username() {
-        return this.username;
+    public Output<Optional<String>> username() {
+        return Codegen.optional(this.username);
     }
 
     /**

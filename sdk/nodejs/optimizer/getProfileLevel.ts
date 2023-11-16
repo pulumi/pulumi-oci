@@ -69,11 +69,11 @@ export interface GetProfileLevelResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A collection of profile levels.
      */
-    readonly items: outputs.Optimizer.GetProfileLevelItem[];
+    readonly items?: outputs.Optimizer.GetProfileLevelItem[];
     /**
      * A unique name for the profile level.
      */

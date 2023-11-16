@@ -108,11 +108,11 @@ namespace Pulumi.Oci.AiLanguage
         /// <summary>
         /// Model information capabilities related to version
         /// </summary>
-        public readonly string Capabilities;
+        public readonly string? Capabilities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ModelType;
         /// <summary>
         /// Model versions available for this model type
@@ -121,9 +121,9 @@ namespace Pulumi.Oci.AiLanguage
 
         [OutputConstructor]
         private GetModelTypeResult(
-            string capabilities,
+            string? capabilities,
 
-            string id,
+            string? id,
 
             string modelType,
 

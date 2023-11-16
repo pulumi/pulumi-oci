@@ -64,7 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The details required to enable Database Management for an external DB system.
         /// </summary>
         [Output("databaseManagementConfig")]
-        public Output<Outputs.ExternalDbSystemDatabaseManagementConfig> DatabaseManagementConfig { get; private set; } = null!;
+        public Output<Outputs.ExternalDbSystemDatabaseManagementConfig?> DatabaseManagementConfig { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
@@ -76,55 +76,55 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
         /// </summary>
         [Output("discoveryAgentId")]
-        public Output<string> DiscoveryAgentId { get; private set; } = null!;
+        public Output<string?> DiscoveryAgentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
         /// </summary>
         [Output("homeDirectory")]
-        public Output<string> HomeDirectory { get; private set; } = null!;
+        public Output<string?> HomeDirectory { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether the DB system is a cluster DB system or not.
         /// </summary>
         [Output("isCluster")]
-        public Output<bool> IsCluster { get; private set; } = null!;
+        public Output<bool?> IsCluster { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The details of the associated service that will be enabled or disabled for an external DB System.
         /// </summary>
         [Output("stackMonitoringConfig")]
-        public Output<Outputs.ExternalDbSystemStackMonitoringConfig> StackMonitoringConfig { get; private set; } = null!;
+        public Output<Outputs.ExternalDbSystemStackMonitoringConfig?> StackMonitoringConfig { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the external DB system resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB system was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB system was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

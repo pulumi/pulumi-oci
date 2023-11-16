@@ -18,14 +18,14 @@ public final class GetInstanceAvailablePluginResult {
      * @return The list of available_plugins.
      * 
      */
-    private List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
+    private @Nullable List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
     private String compartmentId;
     private @Nullable List<GetInstanceAvailablePluginFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The plugin name
      * 
@@ -40,7 +40,7 @@ public final class GetInstanceAvailablePluginResult {
      * 
      */
     public List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins() {
-        return this.availablePlugins;
+        return this.availablePlugins == null ? List.of() : this.availablePlugins;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -52,8 +52,8 @@ public final class GetInstanceAvailablePluginResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The plugin name
@@ -78,10 +78,10 @@ public final class GetInstanceAvailablePluginResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
+        private @Nullable List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins;
         private String compartmentId;
         private @Nullable List<GetInstanceAvailablePluginFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private String osName;
         private String osVersion;
@@ -98,8 +98,8 @@ public final class GetInstanceAvailablePluginResult {
         }
 
         @CustomType.Setter
-        public Builder availablePlugins(List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins) {
-            this.availablePlugins = Objects.requireNonNull(availablePlugins);
+        public Builder availablePlugins(@Nullable List<GetInstanceAvailablePluginAvailablePlugin> availablePlugins) {
+            this.availablePlugins = availablePlugins;
             return this;
         }
         public Builder availablePlugins(GetInstanceAvailablePluginAvailablePlugin... availablePlugins) {
@@ -119,8 +119,8 @@ public final class GetInstanceAvailablePluginResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

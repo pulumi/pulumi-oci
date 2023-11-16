@@ -19,12 +19,6 @@ class PublicIpPoolCapacityArgs:
                  public_ip_pool_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a PublicIpPoolCapacity resource.
-        :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
-        :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         pulumi.set(__self__, "byoip_id", byoip_id)
         pulumi.set(__self__, "cidr_block", cidr_block)
@@ -33,9 +27,6 @@ class PublicIpPoolCapacityArgs:
     @property
     @pulumi.getter(name="byoipId")
     def byoip_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the Byoip Range Id object to which the cidr block belongs.
-        """
         return pulumi.get(self, "byoip_id")
 
     @byoip_id.setter
@@ -45,12 +36,6 @@ class PublicIpPoolCapacityArgs:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Input[str]:
-        """
-        The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -60,9 +45,6 @@ class PublicIpPoolCapacityArgs:
     @property
     @pulumi.getter(name="publicIpPoolId")
     def public_ip_pool_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the pool object created by the current tenancy
-        """
         return pulumi.get(self, "public_ip_pool_id")
 
     @public_ip_pool_id.setter
@@ -78,12 +60,6 @@ class _PublicIpPoolCapacityState:
                  public_ip_pool_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PublicIpPoolCapacity resources.
-        :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
-        :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         if byoip_id is not None:
             pulumi.set(__self__, "byoip_id", byoip_id)
@@ -95,9 +71,6 @@ class _PublicIpPoolCapacityState:
     @property
     @pulumi.getter(name="byoipId")
     def byoip_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Byoip Range Id object to which the cidr block belongs.
-        """
         return pulumi.get(self, "byoip_id")
 
     @byoip_id.setter
@@ -107,12 +80,6 @@ class _PublicIpPoolCapacityState:
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
-        """
-        The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -122,9 +89,6 @@ class _PublicIpPoolCapacityState:
     @property
     @pulumi.getter(name="publicIpPoolId")
     def public_ip_pool_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the pool object created by the current tenancy
-        """
         return pulumi.get(self, "public_ip_pool_id")
 
     @public_ip_pool_id.setter
@@ -142,34 +106,9 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
                  public_ip_pool_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_public_ip_pool_capacity = oci.core.PublicIpPoolCapacity("testPublicIpPoolCapacity",
-            byoip_id=var["byoip_id"],
-            cidr_block=var["cidr_block"],
-            public_ip_pool_id=var["public_ip_pool_id"])
-        ```
-
-        ## Import
-
-        PublicIpPoolCapacity can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
-        ```
-
+        Create a PublicIpPoolCapacity resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
-        :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         ...
     @overload
@@ -178,26 +117,7 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
                  args: PublicIpPoolCapacityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_public_ip_pool_capacity = oci.core.PublicIpPoolCapacity("testPublicIpPoolCapacity",
-            byoip_id=var["byoip_id"],
-            cidr_block=var["cidr_block"],
-            public_ip_pool_id=var["public_ip_pool_id"])
-        ```
-
-        ## Import
-
-        PublicIpPoolCapacity can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity test_public_ip_pool_capacity "publicIpPoolId/{publicIpPoolId}/byoipId/{byoipId}/cidrBlock/{cidrBlock}"
-        ```
-
+        Create a PublicIpPoolCapacity resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PublicIpPoolCapacityArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -254,12 +174,6 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] byoip_id: The OCID of the Byoip Range Id object to which the cidr block belongs.
-        :param pulumi.Input[str] cidr_block: The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -273,27 +187,15 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
     @property
     @pulumi.getter(name="byoipId")
     def byoip_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Byoip Range Id object to which the cidr block belongs.
-        """
         return pulumi.get(self, "byoip_id")
 
     @property
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Output[str]:
-        """
-        The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "cidr_block")
 
     @property
     @pulumi.getter(name="publicIpPoolId")
     def public_ip_pool_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the pool object created by the current tenancy
-        """
         return pulumi.get(self, "public_ip_pool_id")
 

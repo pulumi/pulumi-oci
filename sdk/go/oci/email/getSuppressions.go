@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
@@ -81,7 +80,7 @@ type GetSuppressionsResult struct {
 	EmailAddress *string                 `pulumi:"emailAddress"`
 	Filters      []GetSuppressionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of suppressions.
 	Suppressions                    []GetSuppressionsSuppression `pulumi:"suppressions"`
 	TimeCreatedGreaterThanOrEqualTo *string                      `pulumi:"timeCreatedGreaterThanOrEqualTo"`
@@ -137,12 +136,6 @@ func (o GetSuppressionsResultOutput) ToGetSuppressionsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetSuppressionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSuppressionsResult] {
-	return pulumix.Output[GetSuppressionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 func (o GetSuppressionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSuppressionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -158,8 +151,8 @@ func (o GetSuppressionsResultOutput) Filters() GetSuppressionsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSuppressionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSuppressionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSuppressionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSuppressionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of suppressions.

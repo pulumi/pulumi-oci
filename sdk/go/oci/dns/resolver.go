@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Resolver resource in Oracle Cloud Infrastructure DNS service.
@@ -33,19 +32,19 @@ type Resolver struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the attached VCN.
-	AttachedVcnId pulumi.StringOutput `pulumi:"attachedVcnId"`
+	AttachedVcnId pulumi.StringPtrOutput `pulumi:"attachedVcnId"`
 	// (Updatable) The attached views. Views are evaluated in order.
 	AttachedViews ResolverAttachedViewArrayOutput `pulumi:"attachedViews"`
 	// (Updatable) The OCID of the owning compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The OCID of the default view.
-	DefaultViewId pulumi.StringOutput `pulumi:"defaultViewId"`
+	DefaultViewId pulumi.StringPtrOutput `pulumi:"defaultViewId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the resolver.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// Read-only array of endpoints for the resolver.
 	Endpoints ResolverEndpointTypeArrayOutput `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -53,7 +52,7 @@ type Resolver struct {
 	// **Example:** `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
+	IsProtected pulumi.BoolPtrOutput `pulumi:"isProtected"`
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringOutput `pulumi:"resolverId"`
 	// (Updatable) Rules for the resolver. Rules are evaluated in order.
@@ -64,13 +63,13 @@ type Resolver struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self pulumi.StringOutput `pulumi:"self"`
+	Self pulumi.StringPtrOutput `pulumi:"self"`
 	// The current state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewResolver registers a new resource with the given unique name, arguments, and options.
@@ -269,12 +268,6 @@ func (i *Resolver) ToResolverOutputWithContext(ctx context.Context) ResolverOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverOutput)
 }
 
-func (i *Resolver) ToOutput(ctx context.Context) pulumix.Output[*Resolver] {
-	return pulumix.Output[*Resolver]{
-		OutputState: i.ToResolverOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResolverArrayInput is an input type that accepts ResolverArray and ResolverArrayOutput values.
 // You can construct a concrete instance of `ResolverArrayInput` via:
 //
@@ -298,12 +291,6 @@ func (i ResolverArray) ToResolverArrayOutput() ResolverArrayOutput {
 
 func (i ResolverArray) ToResolverArrayOutputWithContext(ctx context.Context) ResolverArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverArrayOutput)
-}
-
-func (i ResolverArray) ToOutput(ctx context.Context) pulumix.Output[[]*Resolver] {
-	return pulumix.Output[[]*Resolver]{
-		OutputState: i.ToResolverArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ResolverMapInput is an input type that accepts ResolverMap and ResolverMapOutput values.
@@ -331,12 +318,6 @@ func (i ResolverMap) ToResolverMapOutputWithContext(ctx context.Context) Resolve
 	return pulumi.ToOutputWithContext(ctx, i).(ResolverMapOutput)
 }
 
-func (i ResolverMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Resolver] {
-	return pulumix.Output[map[string]*Resolver]{
-		OutputState: i.ToResolverMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResolverOutput struct{ *pulumi.OutputState }
 
 func (ResolverOutput) ElementType() reflect.Type {
@@ -351,15 +332,9 @@ func (o ResolverOutput) ToResolverOutputWithContext(ctx context.Context) Resolve
 	return o
 }
 
-func (o ResolverOutput) ToOutput(ctx context.Context) pulumix.Output[*Resolver] {
-	return pulumix.Output[*Resolver]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the attached VCN.
-func (o ResolverOutput) AttachedVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.AttachedVcnId }).(pulumi.StringOutput)
+func (o ResolverOutput) AttachedVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.AttachedVcnId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The attached views. Views are evaluated in order.
@@ -368,13 +343,13 @@ func (o ResolverOutput) AttachedViews() ResolverAttachedViewArrayOutput {
 }
 
 // (Updatable) The OCID of the owning compartment.
-func (o ResolverOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ResolverOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the default view.
-func (o ResolverOutput) DefaultViewId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.DefaultViewId }).(pulumi.StringOutput)
+func (o ResolverOutput) DefaultViewId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.DefaultViewId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -385,8 +360,8 @@ func (o ResolverOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The display name of the resolver.
-func (o ResolverOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ResolverOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Read-only array of endpoints for the resolver.
@@ -402,8 +377,8 @@ func (o ResolverOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o ResolverOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.BoolOutput { return v.IsProtected }).(pulumi.BoolOutput)
+func (o ResolverOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.BoolPtrOutput { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target resolver.
@@ -425,23 +400,23 @@ func (o ResolverOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o ResolverOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.Self }).(pulumi.StringOutput)
+func (o ResolverOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o ResolverOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ResolverOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ResolverOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ResolverOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o ResolverOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Resolver) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ResolverOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Resolver) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ResolverArrayOutput struct{ *pulumi.OutputState }
@@ -456,12 +431,6 @@ func (o ResolverArrayOutput) ToResolverArrayOutput() ResolverArrayOutput {
 
 func (o ResolverArrayOutput) ToResolverArrayOutputWithContext(ctx context.Context) ResolverArrayOutput {
 	return o
-}
-
-func (o ResolverArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Resolver] {
-	return pulumix.Output[[]*Resolver]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResolverArrayOutput) Index(i pulumi.IntInput) ResolverOutput {
@@ -482,12 +451,6 @@ func (o ResolverMapOutput) ToResolverMapOutput() ResolverMapOutput {
 
 func (o ResolverMapOutput) ToResolverMapOutputWithContext(ctx context.Context) ResolverMapOutput {
 	return o
-}
-
-func (o ResolverMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Resolver] {
-	return pulumix.Output[map[string]*Resolver]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResolverMapOutput) MapIndex(k pulumi.StringInput) ResolverOutput {

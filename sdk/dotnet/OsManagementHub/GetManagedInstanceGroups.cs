@@ -252,7 +252,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of managed_instance_group_collection.
         /// </summary>
@@ -280,7 +280,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetManagedInstanceGroupsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionResult> managedInstanceGroupCollections,
 

@@ -110,18 +110,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// This is the total number of log sets the tenancy has configured.
         /// </summary>
-        public readonly string LogSetsCount;
+        public readonly string? LogSetsCount;
         public readonly string Namespace;
 
         [OutputConstructor]
         private GetLogSetsCountResult(
-            string id,
+            string? id,
 
-            string logSetsCount,
+            string? logSetsCount,
 
             string @namespace)
         {

@@ -34,7 +34,7 @@ public final class GetVolumeGroupReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of a volume group.
      * 
@@ -44,7 +44,7 @@ public final class GetVolumeGroupReplicasResult {
      * @return The list of volume_group_replicas.
      * 
      */
-    private List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas;
+    private @Nullable List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas;
 
     private GetVolumeGroupReplicasResult() {}
     /**
@@ -75,8 +75,8 @@ public final class GetVolumeGroupReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of a volume group.
@@ -90,7 +90,7 @@ public final class GetVolumeGroupReplicasResult {
      * 
      */
     public List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas() {
-        return this.volumeGroupReplicas;
+        return this.volumeGroupReplicas == null ? List.of() : this.volumeGroupReplicas;
     }
 
     public static Builder builder() {
@@ -106,9 +106,9 @@ public final class GetVolumeGroupReplicasResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumeGroupReplicasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas;
+        private @Nullable List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas;
         public Builder() {}
         public Builder(GetVolumeGroupReplicasResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,8 +145,8 @@ public final class GetVolumeGroupReplicasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +155,8 @@ public final class GetVolumeGroupReplicasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupReplicas(List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas) {
-            this.volumeGroupReplicas = Objects.requireNonNull(volumeGroupReplicas);
+        public Builder volumeGroupReplicas(@Nullable List<GetVolumeGroupReplicasVolumeGroupReplica> volumeGroupReplicas) {
+            this.volumeGroupReplicas = volumeGroupReplicas;
             return this;
         }
         public Builder volumeGroupReplicas(GetVolumeGroupReplicasVolumeGroupReplica... volumeGroupReplicas) {

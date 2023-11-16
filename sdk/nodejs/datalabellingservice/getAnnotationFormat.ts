@@ -48,11 +48,11 @@ export interface GetAnnotationFormatResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of annotation formats.
      */
-    readonly items: outputs.DataLabellingService.GetAnnotationFormatItem[];
+    readonly items?: outputs.DataLabellingService.GetAnnotationFormatItem[];
 }
 /**
  * This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.

@@ -108,122 +108,122 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the compartment that contains the masking report.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if the temporary tables created during the masking operation were dropped after masking.
         /// </summary>
-        public readonly bool IsDropTempTablesEnabled;
+        public readonly bool? IsDropTempTablesEnabled;
         /// <summary>
         /// Indicates if redo logging was enabled during the masking operation.
         /// </summary>
-        public readonly bool IsRedoLoggingEnabled;
+        public readonly bool? IsRedoLoggingEnabled;
         /// <summary>
         /// Indicates if statistics gathering was enabled during the masking operation.
         /// </summary>
-        public readonly bool IsRefreshStatsEnabled;
+        public readonly bool? IsRefreshStatsEnabled;
         /// <summary>
         /// The OCID of the masking policy used.
         /// </summary>
-        public readonly string MaskingPolicyId;
+        public readonly string? MaskingPolicyId;
         public readonly string MaskingReportId;
         /// <summary>
         /// The OCID of the masking work request that resulted in this masking report.
         /// </summary>
-        public readonly string MaskingWorkRequestId;
+        public readonly string? MaskingWorkRequestId;
         /// <summary>
         /// Indicates if parallel execution was enabled during the masking operation.
         /// </summary>
-        public readonly string ParallelDegree;
+        public readonly string? ParallelDegree;
         /// <summary>
         /// Indicates how invalid objects were recompiled post the masking operation.
         /// </summary>
-        public readonly string Recompile;
+        public readonly string? Recompile;
         /// <summary>
         /// The current state of the masking report.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the target database masked.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         /// </summary>
-        public readonly string TimeMaskingFinished;
+        public readonly string? TimeMaskingFinished;
         /// <summary>
         /// The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         /// </summary>
-        public readonly string TimeMaskingStarted;
+        public readonly string? TimeMaskingStarted;
         /// <summary>
         /// The total number of masked columns.
         /// </summary>
-        public readonly string TotalMaskedColumns;
+        public readonly string? TotalMaskedColumns;
         /// <summary>
         /// The total number of unique objects (tables and editioning views) that contain the masked columns.
         /// </summary>
-        public readonly string TotalMaskedObjects;
+        public readonly string? TotalMaskedObjects;
         /// <summary>
         /// The total number of unique schemas that contain the masked columns.
         /// </summary>
-        public readonly string TotalMaskedSchemas;
+        public readonly string? TotalMaskedSchemas;
         /// <summary>
         /// The total number of unique sensitive types associated with the masked columns.
         /// </summary>
-        public readonly string TotalMaskedSensitiveTypes;
+        public readonly string? TotalMaskedSensitiveTypes;
         /// <summary>
         /// The total number of masked values.
         /// </summary>
-        public readonly string TotalMaskedValues;
+        public readonly string? TotalMaskedValues;
 
         [OutputConstructor]
         private GetMaskingReportResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            bool isDropTempTablesEnabled,
+            bool? isDropTempTablesEnabled,
 
-            bool isRedoLoggingEnabled,
+            bool? isRedoLoggingEnabled,
 
-            bool isRefreshStatsEnabled,
+            bool? isRefreshStatsEnabled,
 
-            string maskingPolicyId,
+            string? maskingPolicyId,
 
             string maskingReportId,
 
-            string maskingWorkRequestId,
+            string? maskingWorkRequestId,
 
-            string parallelDegree,
+            string? parallelDegree,
 
-            string recompile,
+            string? recompile,
 
-            string state,
+            string? state,
 
-            string targetId,
+            string? targetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeMaskingFinished,
+            string? timeMaskingFinished,
 
-            string timeMaskingStarted,
+            string? timeMaskingStarted,
 
-            string totalMaskedColumns,
+            string? totalMaskedColumns,
 
-            string totalMaskedObjects,
+            string? totalMaskedObjects,
 
-            string totalMaskedSchemas,
+            string? totalMaskedSchemas,
 
-            string totalMaskedSensitiveTypes,
+            string? totalMaskedSensitiveTypes,
 
-            string totalMaskedValues)
+            string? totalMaskedValues)
         {
             CompartmentId = compartmentId;
             Id = id;

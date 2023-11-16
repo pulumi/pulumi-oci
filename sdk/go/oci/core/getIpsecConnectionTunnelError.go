@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
@@ -63,19 +62,19 @@ type GetIpsecConnectionTunnelErrorArgs struct {
 // A collection of values returned by getIpsecConnectionTunnelError.
 type GetIpsecConnectionTunnelErrorResult struct {
 	// Unique code describes the error type.
-	ErrorCode string `pulumi:"errorCode"`
+	ErrorCode *string `pulumi:"errorCode"`
 	// A detailed description of the error.
-	ErrorDescription string `pulumi:"errorDescription"`
+	ErrorDescription *string `pulumi:"errorDescription"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	IpsecId string `pulumi:"ipsecId"`
+	Id      *string `pulumi:"id"`
+	IpsecId string  `pulumi:"ipsecId"`
 	// Link to more Oracle resources or relevant documentation.
-	OciResourcesLink string `pulumi:"ociResourcesLink"`
+	OciResourcesLink *string `pulumi:"ociResourcesLink"`
 	// Resolution for the error.
-	Solution string `pulumi:"solution"`
+	Solution *string `pulumi:"solution"`
 	// Timestamp when the error occurred.
-	Timestamp string `pulumi:"timestamp"`
-	TunnelId  string `pulumi:"tunnelId"`
+	Timestamp *string `pulumi:"timestamp"`
+	TunnelId  string  `pulumi:"tunnelId"`
 }
 
 func GetIpsecConnectionTunnelErrorOutput(ctx *pulumi.Context, args GetIpsecConnectionTunnelErrorOutputArgs, opts ...pulumi.InvokeOption) GetIpsecConnectionTunnelErrorResultOutput {
@@ -118,25 +117,19 @@ func (o GetIpsecConnectionTunnelErrorResultOutput) ToGetIpsecConnectionTunnelErr
 	return o
 }
 
-func (o GetIpsecConnectionTunnelErrorResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelErrorResult] {
-	return pulumix.Output[GetIpsecConnectionTunnelErrorResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique code describes the error type.
-func (o GetIpsecConnectionTunnelErrorResultOutput) ErrorCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) string { return v.ErrorCode }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelErrorResultOutput) ErrorCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) *string { return v.ErrorCode }).(pulumi.StringPtrOutput)
 }
 
 // A detailed description of the error.
-func (o GetIpsecConnectionTunnelErrorResultOutput) ErrorDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) string { return v.ErrorDescription }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelErrorResultOutput) ErrorDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) *string { return v.ErrorDescription }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecConnectionTunnelErrorResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelErrorResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConnectionTunnelErrorResultOutput) IpsecId() pulumi.StringOutput {
@@ -144,18 +137,18 @@ func (o GetIpsecConnectionTunnelErrorResultOutput) IpsecId() pulumi.StringOutput
 }
 
 // Link to more Oracle resources or relevant documentation.
-func (o GetIpsecConnectionTunnelErrorResultOutput) OciResourcesLink() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) string { return v.OciResourcesLink }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelErrorResultOutput) OciResourcesLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) *string { return v.OciResourcesLink }).(pulumi.StringPtrOutput)
 }
 
 // Resolution for the error.
-func (o GetIpsecConnectionTunnelErrorResultOutput) Solution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) string { return v.Solution }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelErrorResultOutput) Solution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) *string { return v.Solution }).(pulumi.StringPtrOutput)
 }
 
 // Timestamp when the error occurred.
-func (o GetIpsecConnectionTunnelErrorResultOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetIpsecConnectionTunnelErrorResultOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelErrorResult) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConnectionTunnelErrorResultOutput) TunnelId() pulumi.StringOutput {

@@ -27,19 +27,6 @@ class CertificateAuthorityArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CertificateAuthority resource.
-        :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
-        :param pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs'] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -60,9 +47,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="certificateAuthorityConfig")
     def certificate_authority_config(self) -> pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']:
-        """
-        (Updatable) The configuration details for creating a certificate authority (CA).
-        """
         return pulumi.get(self, "certificate_authority_config")
 
     @certificate_authority_config.setter
@@ -72,9 +56,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The compartment in which you want to create the CA.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -84,9 +65,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -96,9 +74,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="certificateAuthorityRules")
     def certificate_authority_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]:
-        """
-        (Updatable) A list of rules that control how the CA is used and managed.
-        """
         return pulumi.get(self, "certificate_authority_rules")
 
     @certificate_authority_rules.setter
@@ -108,9 +83,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="certificateRevocationListDetails")
     def certificate_revocation_list_details(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']]:
-        """
-        (Updatable) The details of the certificate revocation list (CRL).
-        """
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @certificate_revocation_list_details.setter
@@ -120,9 +92,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -132,9 +101,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A brief description of the CA.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -144,9 +110,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -156,13 +119,6 @@ class CertificateAuthorityArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -193,28 +149,6 @@ class _CertificateAuthorityState:
                  time_of_deletion: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CertificateAuthority resources.
-        :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
-        :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
-        :param pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs'] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[str] config_type: (Updatable) The origin of the CA.
-        :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] issuer_certificate_authority_id: The OCID of the private CA.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
-        :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] signing_algorithm: The algorithm used to sign public key certificates that the CA issues.
-        :param pulumi.Input[str] state: The current lifecycle state of the certificate authority.
-        :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        :param pulumi.Input[str] time_created: A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         if certificate_authority_config is not None:
             pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
@@ -256,9 +190,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="certificateAuthorityConfig")
     def certificate_authority_config(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']]:
-        """
-        (Updatable) The configuration details for creating a certificate authority (CA).
-        """
         return pulumi.get(self, "certificate_authority_config")
 
     @certificate_authority_config.setter
@@ -268,9 +199,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="certificateAuthorityRules")
     def certificate_authority_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]]:
-        """
-        (Updatable) A list of rules that control how the CA is used and managed.
-        """
         return pulumi.get(self, "certificate_authority_rules")
 
     @certificate_authority_rules.setter
@@ -280,9 +208,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="certificateRevocationListDetails")
     def certificate_revocation_list_details(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']]:
-        """
-        (Updatable) The details of the certificate revocation list (CRL).
-        """
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @certificate_revocation_list_details.setter
@@ -292,9 +217,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment in which you want to create the CA.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -304,9 +226,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The origin of the CA.
-        """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
@@ -316,9 +235,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="currentVersions")
     def current_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]]:
-        """
-        The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
-        """
         return pulumi.get(self, "current_versions")
 
     @current_versions.setter
@@ -328,9 +244,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -340,9 +253,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A brief description of the CA.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -352,9 +262,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -364,9 +271,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="issuerCertificateAuthorityId")
     def issuer_certificate_authority_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the private CA.
-        """
         return pulumi.get(self, "issuer_certificate_authority_id")
 
     @issuer_certificate_authority_id.setter
@@ -376,9 +280,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -388,9 +289,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current CA lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -400,13 +298,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -416,9 +307,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> Optional[pulumi.Input[str]]:
-        """
-        The algorithm used to sign public key certificates that the CA issues.
-        """
         return pulumi.get(self, "signing_algorithm")
 
     @signing_algorithm.setter
@@ -428,9 +316,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the certificate authority.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -440,9 +325,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter
     def subjects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]]:
-        """
-        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        """
         return pulumi.get(self, "subjects")
 
     @subjects.setter
@@ -452,9 +334,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -464,9 +343,6 @@ class _CertificateAuthorityState:
     @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
-        """
-        An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
@@ -490,33 +366,9 @@ class CertificateAuthority(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new certificate authority (CA) according to the details of the request.
-
-        ## Import
-
-        CertificateAuthorities can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
-        ```
-
+        Create a CertificateAuthority resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateAuthorityConfigArgs']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateAuthorityRuleArgs']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
-        :param pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateRevocationListDetailsArgs']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -525,18 +377,7 @@ class CertificateAuthority(pulumi.CustomResource):
                  args: CertificateAuthorityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
-
-        Creates a new certificate authority (CA) according to the details of the request.
-
-        ## Import
-
-        CertificateAuthorities can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CertificatesManagement/certificateAuthority:CertificateAuthority test_certificate_authority "id"
-        ```
-
+        Create a CertificateAuthority resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CertificateAuthorityArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -629,28 +470,6 @@ class CertificateAuthority(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateAuthorityConfigArgs']] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateAuthorityRuleArgs']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
-        :param pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateRevocationListDetailsArgs']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[str] config_type: (Updatable) The origin of the CA.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthorityCurrentVersionArgs']]]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] issuer_certificate_authority_id: The OCID of the private CA.
-        :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
-        :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] signing_algorithm: The algorithm used to sign public key certificates that the CA issues.
-        :param pulumi.Input[str] state: The current lifecycle state of the certificate authority.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthoritySubjectArgs']]]] subjects: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        :param pulumi.Input[str] time_created: A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -679,148 +498,90 @@ class CertificateAuthority(pulumi.CustomResource):
     @property
     @pulumi.getter(name="certificateAuthorityConfig")
     def certificate_authority_config(self) -> pulumi.Output['outputs.CertificateAuthorityCertificateAuthorityConfig']:
-        """
-        (Updatable) The configuration details for creating a certificate authority (CA).
-        """
         return pulumi.get(self, "certificate_authority_config")
 
     @property
     @pulumi.getter(name="certificateAuthorityRules")
     def certificate_authority_rules(self) -> pulumi.Output[Optional[Sequence['outputs.CertificateAuthorityCertificateAuthorityRule']]]:
-        """
-        (Updatable) A list of rules that control how the CA is used and managed.
-        """
         return pulumi.get(self, "certificate_authority_rules")
 
     @property
     @pulumi.getter(name="certificateRevocationListDetails")
     def certificate_revocation_list_details(self) -> pulumi.Output[Optional['outputs.CertificateAuthorityCertificateRevocationListDetails']]:
-        """
-        (Updatable) The details of the certificate revocation list (CRL).
-        """
         return pulumi.get(self, "certificate_revocation_list_details")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The compartment in which you want to create the CA.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The origin of the CA.
-        """
+    def config_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="currentVersions")
-    def current_versions(self) -> pulumi.Output[Sequence['outputs.CertificateAuthorityCurrentVersion']]:
-        """
-        The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
-        """
+    def current_versions(self) -> pulumi.Output[Optional[Sequence['outputs.CertificateAuthorityCurrentVersion']]]:
         return pulumi.get(self, "current_versions")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) A brief description of the CA.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="issuerCertificateAuthorityId")
-    def issuer_certificate_authority_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the private CA.
-        """
+    def issuer_certificate_authority_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "issuer_certificate_authority_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current CA lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="signingAlgorithm")
-    def signing_algorithm(self) -> pulumi.Output[str]:
-        """
-        The algorithm used to sign public key certificates that the CA issues.
-        """
+    def signing_algorithm(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "signing_algorithm")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the certificate authority.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def subjects(self) -> pulumi.Output[Sequence['outputs.CertificateAuthoritySubject']]:
-        """
-        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        """
+    def subjects(self) -> pulumi.Output[Optional[Sequence['outputs.CertificateAuthoritySubject']]]:
         return pulumi.get(self, "subjects")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> pulumi.Output[str]:
-        """
-        An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_deletion")
 

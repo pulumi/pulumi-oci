@@ -118,11 +118,11 @@ export interface GetMaskingPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of masking_policy_collection.
      */
-    readonly maskingPolicyCollections: outputs.DataSafe.GetMaskingPoliciesMaskingPolicyCollection[];
+    readonly maskingPolicyCollections?: outputs.DataSafe.GetMaskingPoliciesMaskingPolicyCollection[];
     readonly maskingPolicyId?: string;
     /**
      * The OCID of the sensitive data model that's used as the source of masking columns.

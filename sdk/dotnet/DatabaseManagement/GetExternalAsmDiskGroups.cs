@@ -132,7 +132,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetExternalAsmDiskGroupsResult(
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetExternalAsmDiskGroupsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             ExternalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
             ExternalAsmId = externalAsmId;

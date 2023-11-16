@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbHomeResult {
@@ -15,58 +17,58 @@ public final class GetExternalDbHomeResult {
      * @return The additional details of the DB home defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the external DB home.
      * 
      */
-    private String componentName;
+    private @Nullable String componentName;
     /**
      * @return The user-friendly name for the external DB home. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String externalDbHomeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
      * 
      */
-    private String externalDbSystemId;
+    private @Nullable String externalDbSystemId;
     /**
      * @return The location of the DB home.
      * 
      */
-    private String homeDirectory;
+    private @Nullable String homeDirectory;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current lifecycle state of the external DB home.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the external DB home was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the external DB home was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetExternalDbHomeResult() {}
     /**
@@ -74,28 +76,28 @@ public final class GetExternalDbHomeResult {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the external DB home.
      * 
      */
-    public String componentName() {
-        return this.componentName;
+    public Optional<String> componentName() {
+        return Optional.ofNullable(this.componentName);
     }
     /**
      * @return The user-friendly name for the external DB home. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String externalDbHomeId() {
         return this.externalDbHomeId;
@@ -104,50 +106,50 @@ public final class GetExternalDbHomeResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
      * 
      */
-    public String externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Optional<String> externalDbSystemId() {
+        return Optional.ofNullable(this.externalDbSystemId);
     }
     /**
      * @return The location of the DB home.
      * 
      */
-    public String homeDirectory() {
-        return this.homeDirectory;
+    public Optional<String> homeDirectory() {
+        return Optional.ofNullable(this.homeDirectory);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current lifecycle state of the external DB home.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the external DB home was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the external DB home was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -159,18 +161,18 @@ public final class GetExternalDbHomeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String compartmentId;
-        private String componentName;
-        private String displayName;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String compartmentId;
+        private @Nullable String componentName;
+        private @Nullable String displayName;
         private String externalDbHomeId;
-        private String externalDbSystemId;
-        private String homeDirectory;
-        private String id;
-        private String lifecycleDetails;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String externalDbSystemId;
+        private @Nullable String homeDirectory;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetExternalDbHomeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -189,23 +191,23 @@ public final class GetExternalDbHomeResult {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+        public Builder componentName(@Nullable String componentName) {
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -214,38 +216,38 @@ public final class GetExternalDbHomeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+        public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+        public Builder homeDirectory(@Nullable String homeDirectory) {
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbHomeResult build() {

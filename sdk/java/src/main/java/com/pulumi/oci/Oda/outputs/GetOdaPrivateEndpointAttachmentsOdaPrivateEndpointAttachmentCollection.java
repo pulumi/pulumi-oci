@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection {
-    private List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items;
+    private @Nullable List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items;
 
     private GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection() {}
     public List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentC
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items;
+        private @Nullable List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentC
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem... items) {

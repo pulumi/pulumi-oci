@@ -64,82 +64,52 @@ class GetCaptureFilterResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> str:
-        """
-        Indicates which service will use this capture filter
-        """
+    def filter_type(self) -> Optional[str]:
         return pulumi.get(self, "filter_type")
 
     @property
     @pulumi.getter(name="flowLogCaptureFilterRules")
-    def flow_log_capture_filter_rules(self) -> Sequence['outputs.GetCaptureFilterFlowLogCaptureFilterRuleResult']:
-        """
-        The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
-        """
+    def flow_log_capture_filter_rules(self) -> Optional[Sequence['outputs.GetCaptureFilterFlowLogCaptureFilterRuleResult']]:
         return pulumi.get(self, "flow_log_capture_filter_rules")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The capture filter's current administrative state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vtapCaptureFilterRules")
-    def vtap_capture_filter_rules(self) -> Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleResult']:
-        """
-        The set of rules governing what traffic a VTAP mirrors.
-        """
+    def vtap_capture_filter_rules(self) -> Optional[Sequence['outputs.GetCaptureFilterVtapCaptureFilterRuleResult']]:
         return pulumi.get(self, "vtap_capture_filter_rules")
 
 
@@ -165,21 +135,7 @@ class AwaitableGetCaptureFilterResult(GetCaptureFilterResult):
 def get_capture_filter(capture_filter_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCaptureFilterResult:
     """
-    This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified VTAP capture filter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"])
-    ```
-
-
-    :param str capture_filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['captureFilterId'] = capture_filter_id
@@ -204,20 +160,6 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
 def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCaptureFilterResult]:
     """
-    This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about the specified VTAP capture filter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"])
-    ```
-
-
-    :param str capture_filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
+    Use this data source to access information about an existing resource.
     """
     ...

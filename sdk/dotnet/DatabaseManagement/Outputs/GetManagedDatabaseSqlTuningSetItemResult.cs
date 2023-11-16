@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The description of the SQL tuning set.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The name of the SQL tuning set.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The owner of the SQL tuning set.
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// The number of SQL statements in the SQL tuning set.
         /// </summary>
-        public readonly int StatementCounts;
+        public readonly int? StatementCounts;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningSetItemResult(
-            string description,
+            string? description,
 
-            string name,
+            string? name,
 
-            string owner,
+            string? owner,
 
-            int statementCounts)
+            int? statementCounts)
         {
             Description = description;
             Name = name;

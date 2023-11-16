@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -75,129 +74,129 @@ type LookupDomainsIdentityProviderArgs struct {
 // A collection of values returned by getDomainsIdentityProvider.
 type LookupDomainsIdentityProviderResult struct {
 	// Assertion attribute name.
-	AssertionAttribute string   `pulumi:"assertionAttribute"`
+	AssertionAttribute *string  `pulumi:"assertionAttribute"`
 	AttributeSets      []string `pulumi:"attributeSets"`
 	Attributes         *string  `pulumi:"attributes"`
 	// HTTP binding to use for authentication requests.
-	AuthnRequestBinding string  `pulumi:"authnRequestBinding"`
+	AuthnRequestBinding *string `pulumi:"authnRequestBinding"`
 	Authorization       *string `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// Correlation policy
 	CorrelationPolicies []GetDomainsIdentityProviderCorrelationPolicy `pulumi:"correlationPolicies"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// Set to true to indicate Partner enabled.
-	Enabled bool `pulumi:"enabled"`
+	Enabled *bool `pulumi:"enabled"`
 	// Encryption certificate
-	EncryptionCertificate string `pulumi:"encryptionCertificate"`
+	EncryptionCertificate *string `pulumi:"encryptionCertificate"`
 	// An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-	ExternalId string `pulumi:"externalId"`
+	ExternalId *string `pulumi:"externalId"`
 	// Identity Provider Icon URL.
-	IconUrl string `pulumi:"iconUrl"`
+	IconUrl *string `pulumi:"iconUrl"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsIdentityProviderIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                    `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsIdentityProviderIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	IdentityProviderId      string   `pulumi:"identityProviderId"`
 	// Identity Provider SSO URL
-	IdpSsoUrl string `pulumi:"idpSsoUrl"`
+	IdpSsoUrl *string `pulumi:"idpSsoUrl"`
 	// Set to true to include the signing certificate in the signature.
-	IncludeSigningCertInSignature bool `pulumi:"includeSigningCertInSignature"`
+	IncludeSigningCertInSignature *bool `pulumi:"includeSigningCertInSignature"`
 	// Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
 	JitUserProvAssignedGroups []GetDomainsIdentityProviderJitUserProvAssignedGroup `pulumi:"jitUserProvAssignedGroups"`
 	// Set to true to indicate JIT User Creation is enabled
-	JitUserProvAttributeUpdateEnabled bool `pulumi:"jitUserProvAttributeUpdateEnabled"`
+	JitUserProvAttributeUpdateEnabled *bool `pulumi:"jitUserProvAttributeUpdateEnabled"`
 	// Assertion To User Mapping
 	JitUserProvAttributes []GetDomainsIdentityProviderJitUserProvAttribute `pulumi:"jitUserProvAttributes"`
 	// Set to true to indicate JIT User Creation is enabled
-	JitUserProvCreateUserEnabled bool `pulumi:"jitUserProvCreateUserEnabled"`
+	JitUserProvCreateUserEnabled *bool `pulumi:"jitUserProvCreateUserEnabled"`
 	// Set to true to indicate JIT User Provisioning is enabled
-	JitUserProvEnabled bool `pulumi:"jitUserProvEnabled"`
+	JitUserProvEnabled *bool `pulumi:"jitUserProvEnabled"`
 	// Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
-	JitUserProvGroupAssertionAttributeEnabled bool `pulumi:"jitUserProvGroupAssertionAttributeEnabled"`
+	JitUserProvGroupAssertionAttributeEnabled *bool `pulumi:"jitUserProvGroupAssertionAttributeEnabled"`
 	// The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
-	JitUserProvGroupAssignmentMethod string `pulumi:"jitUserProvGroupAssignmentMethod"`
+	JitUserProvGroupAssignmentMethod *string `pulumi:"jitUserProvGroupAssignmentMethod"`
 	// Property to indicate the mode of group mapping
-	JitUserProvGroupMappingMode string `pulumi:"jitUserProvGroupMappingMode"`
+	JitUserProvGroupMappingMode *string `pulumi:"jitUserProvGroupMappingMode"`
 	// The list of mappings between the Identity Domain Group and the IDP group.
 	JitUserProvGroupMappings []GetDomainsIdentityProviderJitUserProvGroupMapping `pulumi:"jitUserProvGroupMappings"`
 	// Name of the assertion attribute containing the users groups
-	JitUserProvGroupSamlAttributeName string `pulumi:"jitUserProvGroupSamlAttributeName"`
+	JitUserProvGroupSamlAttributeName *string `pulumi:"jitUserProvGroupSamlAttributeName"`
 	// Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
-	JitUserProvGroupStaticListEnabled bool `pulumi:"jitUserProvGroupStaticListEnabled"`
+	JitUserProvGroupStaticListEnabled *bool `pulumi:"jitUserProvGroupStaticListEnabled"`
 	// Set to true to indicate ignoring absence of group while provisioning
-	JitUserProvIgnoreErrorOnAbsentGroups bool `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
+	JitUserProvIgnoreErrorOnAbsentGroups *bool `pulumi:"jitUserProvIgnoreErrorOnAbsentGroups"`
 	// Records the notification timestamp for the IdP whose signing certificate is about to expire
-	LastNotificationSentTime string `pulumi:"lastNotificationSentTime"`
+	LastNotificationSentTime *string `pulumi:"lastNotificationSentTime"`
 	// HTTP binding to use for logout.
-	LogoutBinding string `pulumi:"logoutBinding"`
+	LogoutBinding *string `pulumi:"logoutBinding"`
 	// Set to true to enable logout.
-	LogoutEnabled bool `pulumi:"logoutEnabled"`
+	LogoutEnabled *bool `pulumi:"logoutEnabled"`
 	// Logout request URL
-	LogoutRequestUrl string `pulumi:"logoutRequestUrl"`
+	LogoutRequestUrl *string `pulumi:"logoutRequestUrl"`
 	// Logout response URL
-	LogoutResponseUrl string `pulumi:"logoutResponseUrl"`
+	LogoutResponseUrl *string `pulumi:"logoutResponseUrl"`
 	// Metadata
-	Metadata string `pulumi:"metadata"`
+	Metadata *string `pulumi:"metadata"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsIdentityProviderMeta `pulumi:"metas"`
 	// Default authentication request name ID format.
-	NameIdFormat string `pulumi:"nameIdFormat"`
+	NameIdFormat *string `pulumi:"nameIdFormat"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// Unique name of the trusted Identity Provider.
-	PartnerName string `pulumi:"partnerName"`
+	PartnerName *string `pulumi:"partnerName"`
 	// Provider ID
-	PartnerProviderId string `pulumi:"partnerProviderId"`
+	PartnerProviderId *string `pulumi:"partnerProviderId"`
 	// SAML SP authentication type.
 	RequestedAuthenticationContexts []string `pulumi:"requestedAuthenticationContexts"`
 	// This SP requires requests SAML IdP to enforce re-authentication.
-	RequireForceAuthn bool `pulumi:"requireForceAuthn"`
+	RequireForceAuthn *bool `pulumi:"requireForceAuthn"`
 	// SAML SP must accept encrypted assertion only.
-	RequiresEncryptedAssertion bool    `pulumi:"requiresEncryptedAssertion"`
+	RequiresEncryptedAssertion *bool   `pulumi:"requiresEncryptedAssertion"`
 	ResourceTypeSchemaVersion  *string `pulumi:"resourceTypeSchemaVersion"`
 	// SAML SP HoK Enabled.
-	SamlHoKrequired bool `pulumi:"samlHoKrequired"`
+	SamlHoKrequired *bool `pulumi:"samlHoKrequired"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
-	ServiceInstanceIdentifier string `pulumi:"serviceInstanceIdentifier"`
+	ServiceInstanceIdentifier *string `pulumi:"serviceInstanceIdentifier"`
 	// Set to true to indicate whether to show IdP in login page or not.
-	ShownOnLoginPage bool `pulumi:"shownOnLoginPage"`
+	ShownOnLoginPage *bool `pulumi:"shownOnLoginPage"`
 	// Signature hash algorithm.
-	SignatureHashAlgorithm string `pulumi:"signatureHashAlgorithm"`
+	SignatureHashAlgorithm *string `pulumi:"signatureHashAlgorithm"`
 	// Signing certificate
-	SigningCertificate string `pulumi:"signingCertificate"`
+	SigningCertificate *string `pulumi:"signingCertificate"`
 	// Succinct ID
-	SuccinctId string `pulumi:"succinctId"`
+	SuccinctId *string `pulumi:"succinctId"`
 	// A list of tags on this resource.
 	Tags []GetDomainsIdentityProviderTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
-	TenantProviderId string `pulumi:"tenantProviderId"`
+	TenantProviderId *string `pulumi:"tenantProviderId"`
 	// Identity Provider Type
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Social Identity Provider Extension Schema
 	UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders []GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider `pulumi:"urnietfparamsscimschemasoracleidcsextensionsocialIdentityProviders"`
 	// X509 Identity Provider Extension Schema
 	Urnietfparamsscimschemasoracleidcsextensionx509identityProviders []GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider `pulumi:"urnietfparamsscimschemasoracleidcsextensionx509identityProviders"`
 	// User mapping method.
-	UserMappingMethod string `pulumi:"userMappingMethod"`
+	UserMappingMethod *string `pulumi:"userMappingMethod"`
 	// This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
-	UserMappingStoreAttribute string `pulumi:"userMappingStoreAttribute"`
+	UserMappingStoreAttribute *string `pulumi:"userMappingStoreAttribute"`
 }
 
 func LookupDomainsIdentityProviderOutput(ctx *pulumi.Context, args LookupDomainsIdentityProviderOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsIdentityProviderResultOutput {
@@ -248,15 +247,9 @@ func (o LookupDomainsIdentityProviderResultOutput) ToLookupDomainsIdentityProvid
 	return o
 }
 
-func (o LookupDomainsIdentityProviderResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsIdentityProviderResult] {
-	return pulumix.Output[LookupDomainsIdentityProviderResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Assertion attribute name.
-func (o LookupDomainsIdentityProviderResultOutput) AssertionAttribute() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.AssertionAttribute }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) AssertionAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.AssertionAttribute }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsIdentityProviderResultOutput) AttributeSets() pulumi.StringArrayOutput {
@@ -268,8 +261,8 @@ func (o LookupDomainsIdentityProviderResultOutput) Attributes() pulumi.StringPtr
 }
 
 // HTTP binding to use for authentication requests.
-func (o LookupDomainsIdentityProviderResultOutput) AuthnRequestBinding() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.AuthnRequestBinding }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) AuthnRequestBinding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.AuthnRequestBinding }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsIdentityProviderResultOutput) Authorization() pulumi.StringPtrOutput {
@@ -277,8 +270,8 @@ func (o LookupDomainsIdentityProviderResultOutput) Authorization() pulumi.String
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsIdentityProviderResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // Correlation policy
@@ -289,43 +282,43 @@ func (o LookupDomainsIdentityProviderResultOutput) CorrelationPolicies() GetDoma
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsIdentityProviderResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
-func (o LookupDomainsIdentityProviderResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsIdentityProviderResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // Set to true to indicate Partner enabled.
-func (o LookupDomainsIdentityProviderResultOutput) Enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.Enabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
 // Encryption certificate
-func (o LookupDomainsIdentityProviderResultOutput) EncryptionCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.EncryptionCertificate }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) EncryptionCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.EncryptionCertificate }).(pulumi.StringPtrOutput)
 }
 
 // An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-func (o LookupDomainsIdentityProviderResultOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.ExternalId }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // Identity Provider Icon URL.
-func (o LookupDomainsIdentityProviderResultOutput) IconUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.IconUrl }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) IconUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.IconUrl }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsIdentityProviderResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -347,8 +340,8 @@ func (o LookupDomainsIdentityProviderResultOutput) IdcsLastModifiedBies() GetDom
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsIdentityProviderResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -361,13 +354,13 @@ func (o LookupDomainsIdentityProviderResultOutput) IdentityProviderId() pulumi.S
 }
 
 // Identity Provider SSO URL
-func (o LookupDomainsIdentityProviderResultOutput) IdpSsoUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.IdpSsoUrl }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) IdpSsoUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.IdpSsoUrl }).(pulumi.StringPtrOutput)
 }
 
 // Set to true to include the signing certificate in the signature.
-func (o LookupDomainsIdentityProviderResultOutput) IncludeSigningCertInSignature() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.IncludeSigningCertInSignature }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) IncludeSigningCertInSignature() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.IncludeSigningCertInSignature }).(pulumi.BoolPtrOutput)
 }
 
 // Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
@@ -378,8 +371,8 @@ func (o LookupDomainsIdentityProviderResultOutput) JitUserProvAssignedGroups() G
 }
 
 // Set to true to indicate JIT User Creation is enabled
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvAttributeUpdateEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvAttributeUpdateEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvAttributeUpdateEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.JitUserProvAttributeUpdateEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Assertion To User Mapping
@@ -390,28 +383,28 @@ func (o LookupDomainsIdentityProviderResultOutput) JitUserProvAttributes() GetDo
 }
 
 // Set to true to indicate JIT User Creation is enabled
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvCreateUserEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvCreateUserEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvCreateUserEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.JitUserProvCreateUserEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Set to true to indicate JIT User Provisioning is enabled
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.JitUserProvEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupAssertionAttributeEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvGroupAssertionAttributeEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupAssertionAttributeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.JitUserProvGroupAssertionAttributeEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupAssignmentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.JitUserProvGroupAssignmentMethod }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupAssignmentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.JitUserProvGroupAssignmentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Property to indicate the mode of group mapping
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupMappingMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.JitUserProvGroupMappingMode }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupMappingMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.JitUserProvGroupMappingMode }).(pulumi.StringPtrOutput)
 }
 
 // The list of mappings between the Identity Domain Group and the IDP group.
@@ -422,48 +415,48 @@ func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupMappings() Ge
 }
 
 // Name of the assertion attribute containing the users groups
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupSamlAttributeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.JitUserProvGroupSamlAttributeName }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupSamlAttributeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.JitUserProvGroupSamlAttributeName }).(pulumi.StringPtrOutput)
 }
 
 // Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupStaticListEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvGroupStaticListEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvGroupStaticListEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.JitUserProvGroupStaticListEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Set to true to indicate ignoring absence of group while provisioning
-func (o LookupDomainsIdentityProviderResultOutput) JitUserProvIgnoreErrorOnAbsentGroups() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.JitUserProvIgnoreErrorOnAbsentGroups }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) JitUserProvIgnoreErrorOnAbsentGroups() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.JitUserProvIgnoreErrorOnAbsentGroups }).(pulumi.BoolPtrOutput)
 }
 
 // Records the notification timestamp for the IdP whose signing certificate is about to expire
-func (o LookupDomainsIdentityProviderResultOutput) LastNotificationSentTime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.LastNotificationSentTime }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) LastNotificationSentTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.LastNotificationSentTime }).(pulumi.StringPtrOutput)
 }
 
 // HTTP binding to use for logout.
-func (o LookupDomainsIdentityProviderResultOutput) LogoutBinding() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.LogoutBinding }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) LogoutBinding() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.LogoutBinding }).(pulumi.StringPtrOutput)
 }
 
 // Set to true to enable logout.
-func (o LookupDomainsIdentityProviderResultOutput) LogoutEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.LogoutEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) LogoutEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.LogoutEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Logout request URL
-func (o LookupDomainsIdentityProviderResultOutput) LogoutRequestUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.LogoutRequestUrl }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) LogoutRequestUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.LogoutRequestUrl }).(pulumi.StringPtrOutput)
 }
 
 // Logout response URL
-func (o LookupDomainsIdentityProviderResultOutput) LogoutResponseUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.LogoutResponseUrl }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) LogoutResponseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.LogoutResponseUrl }).(pulumi.StringPtrOutput)
 }
 
 // Metadata
-func (o LookupDomainsIdentityProviderResultOutput) Metadata() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.Metadata }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) Metadata() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -472,23 +465,23 @@ func (o LookupDomainsIdentityProviderResultOutput) Metas() GetDomainsIdentityPro
 }
 
 // Default authentication request name ID format.
-func (o LookupDomainsIdentityProviderResultOutput) NameIdFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.NameIdFormat }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) NameIdFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.NameIdFormat }).(pulumi.StringPtrOutput)
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsIdentityProviderResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // Unique name of the trusted Identity Provider.
-func (o LookupDomainsIdentityProviderResultOutput) PartnerName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.PartnerName }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) PartnerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.PartnerName }).(pulumi.StringPtrOutput)
 }
 
 // Provider ID
-func (o LookupDomainsIdentityProviderResultOutput) PartnerProviderId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.PartnerProviderId }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) PartnerProviderId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.PartnerProviderId }).(pulumi.StringPtrOutput)
 }
 
 // SAML SP authentication type.
@@ -497,13 +490,13 @@ func (o LookupDomainsIdentityProviderResultOutput) RequestedAuthenticationContex
 }
 
 // This SP requires requests SAML IdP to enforce re-authentication.
-func (o LookupDomainsIdentityProviderResultOutput) RequireForceAuthn() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.RequireForceAuthn }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) RequireForceAuthn() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.RequireForceAuthn }).(pulumi.BoolPtrOutput)
 }
 
 // SAML SP must accept encrypted assertion only.
-func (o LookupDomainsIdentityProviderResultOutput) RequiresEncryptedAssertion() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.RequiresEncryptedAssertion }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) RequiresEncryptedAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.RequiresEncryptedAssertion }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupDomainsIdentityProviderResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -511,8 +504,8 @@ func (o LookupDomainsIdentityProviderResultOutput) ResourceTypeSchemaVersion() p
 }
 
 // SAML SP HoK Enabled.
-func (o LookupDomainsIdentityProviderResultOutput) SamlHoKrequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.SamlHoKrequired }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) SamlHoKrequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.SamlHoKrequired }).(pulumi.BoolPtrOutput)
 }
 
 // REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -521,28 +514,28 @@ func (o LookupDomainsIdentityProviderResultOutput) Schemas() pulumi.StringArrayO
 }
 
 // The serviceInstanceIdentifier of the App that hosts this IdP. This value will match the opcServiceInstanceGUID of any service-instance that the IdP represents.
-func (o LookupDomainsIdentityProviderResultOutput) ServiceInstanceIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.ServiceInstanceIdentifier }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) ServiceInstanceIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.ServiceInstanceIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Set to true to indicate whether to show IdP in login page or not.
-func (o LookupDomainsIdentityProviderResultOutput) ShownOnLoginPage() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) bool { return v.ShownOnLoginPage }).(pulumi.BoolOutput)
+func (o LookupDomainsIdentityProviderResultOutput) ShownOnLoginPage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *bool { return v.ShownOnLoginPage }).(pulumi.BoolPtrOutput)
 }
 
 // Signature hash algorithm.
-func (o LookupDomainsIdentityProviderResultOutput) SignatureHashAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.SignatureHashAlgorithm }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) SignatureHashAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.SignatureHashAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // Signing certificate
-func (o LookupDomainsIdentityProviderResultOutput) SigningCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.SigningCertificate }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) SigningCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.SigningCertificate }).(pulumi.StringPtrOutput)
 }
 
 // Succinct ID
-func (o LookupDomainsIdentityProviderResultOutput) SuccinctId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.SuccinctId }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) SuccinctId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.SuccinctId }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -551,18 +544,18 @@ func (o LookupDomainsIdentityProviderResultOutput) Tags() GetDomainsIdentityProv
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsIdentityProviderResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
-func (o LookupDomainsIdentityProviderResultOutput) TenantProviderId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.TenantProviderId }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) TenantProviderId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.TenantProviderId }).(pulumi.StringPtrOutput)
 }
 
 // Identity Provider Type
-func (o LookupDomainsIdentityProviderResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Social Identity Provider Extension Schema
@@ -580,13 +573,13 @@ func (o LookupDomainsIdentityProviderResultOutput) Urnietfparamsscimschemasoracl
 }
 
 // User mapping method.
-func (o LookupDomainsIdentityProviderResultOutput) UserMappingMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.UserMappingMethod }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) UserMappingMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.UserMappingMethod }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.<br>You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the <b>Example of a Request Body</b> section of the Examples tab for the <a href='./op-admin-v1-identityproviders-post.html'>POST</a> and <a href='./op-admin-v1-identityproviders-id-put.html'>PUT</a> methods of the /IdentityProviders endpoint.
-func (o LookupDomainsIdentityProviderResultOutput) UserMappingStoreAttribute() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) string { return v.UserMappingStoreAttribute }).(pulumi.StringOutput)
+func (o LookupDomainsIdentityProviderResultOutput) UserMappingStoreAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsIdentityProviderResult) *string { return v.UserMappingStoreAttribute }).(pulumi.StringPtrOutput)
 }
 
 func init() {

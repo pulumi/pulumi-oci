@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Ons.outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionDeliveryPolicy {
-    private List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
+    private @Nullable List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
 
     private GetSubscriptionsSubscriptionDeliveryPolicy() {}
     public List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies() {
-        return this.backoffRetryPolicies;
+        return this.backoffRetryPolicies == null ? List.of() : this.backoffRetryPolicies;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
+        private @Nullable List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionDeliveryPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicy {
         }
 
         @CustomType.Setter
-        public Builder backoffRetryPolicies(List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies) {
-            this.backoffRetryPolicies = Objects.requireNonNull(backoffRetryPolicies);
+        public Builder backoffRetryPolicies(@Nullable List<GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy> backoffRetryPolicies) {
+            this.backoffRetryPolicies = backoffRetryPolicies;
             return this;
         }
         public Builder backoffRetryPolicies(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy... backoffRetryPolicies) {

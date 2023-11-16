@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
@@ -60,7 +59,7 @@ type GetJobOutputArgs struct {
 // A collection of values returned by getJobOutput.
 type GetJobOutputResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Items in collection.
 	Items []GetJobOutputItem `pulumi:"items"`
 	JobId string             `pulumi:"jobId"`
@@ -104,15 +103,9 @@ func (o GetJobOutputResultOutput) ToGetJobOutputResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetJobOutputResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobOutputResult] {
-	return pulumix.Output[GetJobOutputResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetJobOutputResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJobOutputResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJobOutputResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJobOutputResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Items in collection.

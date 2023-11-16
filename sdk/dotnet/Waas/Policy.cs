@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Waas
         /// The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
         /// </summary>
         [Output("cname")]
-        public Output<string> Cname { get; private set; } = null!;
+        public Output<string?> Cname { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
@@ -59,13 +59,13 @@ namespace Pulumi.Oci.Waas
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Waas
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -95,25 +95,25 @@ namespace Pulumi.Oci.Waas
         /// (Updatable) The configuration details for the WAAS policy.
         /// </summary>
         [Output("policyConfig")]
-        public Output<Outputs.PolicyPolicyConfig> PolicyConfig { get; private set; } = null!;
+        public Output<Outputs.PolicyPolicyConfig?> PolicyConfig { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the WAAS policy.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the policy was created, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         /// </summary>
         [Output("wafConfig")]
-        public Output<Outputs.PolicyWafConfig> WafConfig { get; private set; } = null!;
+        public Output<Outputs.PolicyWafConfig?> WafConfig { get; private set; } = null!;
 
 
         /// <summary>

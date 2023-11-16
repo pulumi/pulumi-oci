@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
@@ -66,7 +65,7 @@ type GetDrgsResult struct {
 	Drgs    []GetDrgsDrg    `pulumi:"drgs"`
 	Filters []GetDrgsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDrgsOutput(ctx *pulumi.Context, args GetDrgsOutputArgs, opts ...pulumi.InvokeOption) GetDrgsResultOutput {
@@ -108,12 +107,6 @@ func (o GetDrgsResultOutput) ToGetDrgsResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetDrgsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgsResult] {
-	return pulumix.Output[GetDrgsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG.
 func (o GetDrgsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrgsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -129,8 +122,8 @@ func (o GetDrgsResultOutput) Filters() GetDrgsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDrgsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrgsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

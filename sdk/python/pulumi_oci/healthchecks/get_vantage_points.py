@@ -43,9 +43,6 @@ class GetVantagePointsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name for the vantage point. Display names are determined by the best information available and may change over time.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -55,15 +52,12 @@ class GetVantagePointsResult:
 
     @property
     @pulumi.getter(name="healthChecksVantagePoints")
-    def health_checks_vantage_points(self) -> Sequence['outputs.GetVantagePointsHealthChecksVantagePointResult']:
-        """
-        The list of health_checks_vantage_points.
-        """
+    def health_checks_vantage_points(self) -> Optional[Sequence['outputs.GetVantagePointsHealthChecksVantagePointResult']]:
         return pulumi.get(self, "health_checks_vantage_points")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +66,6 @@ class GetVantagePointsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The unique, permanent name for the vantage point.
-        """
         return pulumi.get(self, "name")
 
 
@@ -96,23 +87,7 @@ def get_vantage_points(display_name: Optional[str] = None,
                        name: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVantagePointsResult:
     """
-    This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets information about all vantage points available to the user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=var["vantage_point_display_name"],
-        name=var["vantage_point_name"])
-    ```
-
-
-    :param str display_name: Filters results that exactly match the `displayName` field.
-    :param str name: Filters results that exactly match the `name` field.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -135,22 +110,6 @@ def get_vantage_points_output(display_name: Optional[pulumi.Input[Optional[str]]
                               name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVantagePointsResult]:
     """
-    This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
-
-    Gets information about all vantage points available to the user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vantage_points = oci.HealthChecks.get_vantage_points(display_name=var["vantage_point_display_name"],
-        name=var["vantage_point_name"])
-    ```
-
-
-    :param str display_name: Filters results that exactly match the `displayName` field.
-    :param str name: Filters results that exactly match the `name` field.
+    Use this data source to access information about an existing resource.
     """
     ...

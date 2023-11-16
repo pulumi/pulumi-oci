@@ -189,7 +189,7 @@ namespace Pulumi.Oci.Email
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of suppressions.
         /// </summary>
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Email
 
             ImmutableArray<Outputs.GetSuppressionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSuppressionsSuppressionResult> suppressions,
 

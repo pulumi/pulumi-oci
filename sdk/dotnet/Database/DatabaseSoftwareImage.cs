@@ -78,13 +78,13 @@ namespace Pulumi.Oci.Database
         /// The database version with which the database software image is to be built.
         /// </summary>
         [Output("databaseVersion")]
-        public Output<string> DatabaseVersion { get; private set; } = null!;
+        public Output<string?> DatabaseVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
@@ -96,49 +96,49 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// To what shape the image is meant for.
         /// </summary>
         [Output("imageShapeFamily")]
-        public Output<string> ImageShapeFamily { get; private set; } = null!;
+        public Output<string?> ImageShapeFamily { get; private set; } = null!;
 
         /// <summary>
         /// The type of software image. Can be grid or database.
         /// </summary>
         [Output("imageType")]
-        public Output<string> ImageType { get; private set; } = null!;
+        public Output<string?> ImageType { get; private set; } = null!;
 
         /// <summary>
         /// The patches included in the image and the version of the image.
         /// </summary>
         [Output("includedPatchesSummary")]
-        public Output<string> IncludedPatchesSummary { get; private set; } = null!;
+        public Output<string?> IncludedPatchesSummary { get; private set; } = null!;
 
         /// <summary>
         /// True if this Database software image is supported for Upgrade.
         /// </summary>
         [Output("isUpgradeSupported")]
-        public Output<bool> IsUpgradeSupported { get; private set; } = null!;
+        public Output<bool?> IsUpgradeSupported { get; private set; } = null!;
 
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The output from the OPatch lsInventory command, which is passed as a string.
         /// </summary>
         [Output("lsInventory")]
-        public Output<string> LsInventory { get; private set; } = null!;
+        public Output<string?> LsInventory { get; private set; } = null!;
 
         /// <summary>
         /// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         /// </summary>
         [Output("patchSet")]
-        public Output<string> PatchSet { get; private set; } = null!;
+        public Output<string?> PatchSet { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -148,19 +148,19 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceDbHomeId")]
-        public Output<string> SourceDbHomeId { get; private set; } = null!;
+        public Output<string?> SourceDbHomeId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the database software image.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the database software image was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

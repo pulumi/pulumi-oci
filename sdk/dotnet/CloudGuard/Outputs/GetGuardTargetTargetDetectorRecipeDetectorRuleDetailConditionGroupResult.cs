@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Base condition object
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string condition)
+            string? condition)
         {
             CompartmentId = compartmentId;
             Condition = condition;

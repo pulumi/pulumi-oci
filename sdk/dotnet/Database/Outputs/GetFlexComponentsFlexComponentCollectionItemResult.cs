@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
         /// </summary>
-        public readonly int AvailableCoreCount;
+        public readonly int? AvailableCoreCount;
         /// <summary>
         /// The maximum  storage that can be enabled on the Storage Server for this Flex Component.
         /// </summary>
-        public readonly int AvailableDbStorageInGbs;
+        public readonly int? AvailableDbStorageInGbs;
         /// <summary>
         /// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
         /// </summary>
-        public readonly int MinimumCoreCount;
+        public readonly int? MinimumCoreCount;
         /// <summary>
         /// A filter to return only resources that match the entire name given. The match is not case sensitive.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetFlexComponentsFlexComponentCollectionItemResult(
-            int availableCoreCount,
+            int? availableCoreCount,
 
-            int availableDbStorageInGbs,
+            int? availableDbStorageInGbs,
 
-            int minimumCoreCount,
+            int? minimumCoreCount,
 
-            string name)
+            string? name)
         {
             AvailableCoreCount = availableCoreCount;
             AvailableDbStorageInGbs = availableDbStorageInGbs;

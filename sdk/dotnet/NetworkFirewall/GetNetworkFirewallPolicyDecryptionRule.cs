@@ -78,7 +78,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// * NO_DECRYPT - Matching traffic is not decrypted.
         /// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// Match criteria used in Decryption Rule used on the firewall policy rules.
         /// </summary>
@@ -86,8 +86,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// The name of the decryption profile to use.
         /// </summary>
-        public readonly string DecryptionProfile;
-        public readonly string Id;
+        public readonly string? DecryptionProfile;
+        public readonly string? Id;
         /// <summary>
         /// Name for the decryption rule, must be unique within the policy.
         /// </summary>
@@ -96,38 +96,38 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this decryption rule belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// An object which defines the position of the rule.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicyDecryptionRulePositionResult> Positions;
-        public readonly string PriorityOrder;
+        public readonly string? PriorityOrder;
         /// <summary>
         /// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         /// </summary>
-        public readonly string Secret;
+        public readonly string? Secret;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyDecryptionRuleResult(
-            string action,
+            string? action,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyDecryptionRuleConditionResult> conditions,
 
-            string decryptionProfile,
+            string? decryptionProfile,
 
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicyDecryptionRulePositionResult> positions,
 
-            string priorityOrder,
+            string? priorityOrder,
 
-            string secret)
+            string? secret)
         {
             Action = action;
             Conditions = conditions;

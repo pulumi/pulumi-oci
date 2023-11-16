@@ -81,25 +81,25 @@ namespace Pulumi.Oci.Identity
         /// The admin email address
         /// </summary>
         [Output("adminEmail")]
-        public Output<string> AdminEmail { get; private set; } = null!;
+        public Output<string?> AdminEmail { get; private set; } = null!;
 
         /// <summary>
         /// The admin first name
         /// </summary>
         [Output("adminFirstName")]
-        public Output<string> AdminFirstName { get; private set; } = null!;
+        public Output<string?> AdminFirstName { get; private set; } = null!;
 
         /// <summary>
         /// The admin last name
         /// </summary>
         [Output("adminLastName")]
-        public Output<string> AdminLastName { get; private set; } = null!;
+        public Output<string?> AdminLastName { get; private set; } = null!;
 
         /// <summary>
         /// The admin user name
         /// </summary>
         [Output("adminUserName")]
-        public Output<string> AdminUserName { get; private set; } = null!;
+        public Output<string?> AdminUserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Compartment where domain is created
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Domain entity description
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The region's name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
@@ -141,25 +141,25 @@ namespace Pulumi.Oci.Identity
         /// Region specific domain URL.
         /// </summary>
         [Output("homeRegionUrl")]
-        public Output<string> HomeRegionUrl { get; private set; } = null!;
+        public Output<string?> HomeRegionUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether domain is hidden on login screen or not.
         /// </summary>
         [Output("isHiddenOnLogin")]
-        public Output<bool> IsHiddenOnLogin { get; private set; } = null!;
+        public Output<bool?> IsHiddenOnLogin { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
         /// </summary>
         [Output("isNotificationBypassed")]
-        public Output<bool> IsNotificationBypassed { get; private set; } = null!;
+        public Output<bool?> IsNotificationBypassed { get; private set; } = null!;
 
         /// <summary>
         /// Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
         /// </summary>
         [Output("isPrimaryEmailRequired")]
-        public Output<bool> IsPrimaryEmailRequired { get; private set; } = null!;
+        public Output<bool?> IsPrimaryEmailRequired { get; private set; } = null!;
 
         /// <summary>
         /// The License type of Domain
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Identity
         /// Any additional details about the current state of the Domain.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The regions domain is replication to.
@@ -187,25 +187,25 @@ namespace Pulumi.Oci.Identity
         /// The current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The type of the domain.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// Region agnostic domain URL.
         /// </summary>
         [Output("url")]
-        public Output<string> Url { get; private set; } = null!;
+        public Output<string?> Url { get; private set; } = null!;
 
 
         /// <summary>

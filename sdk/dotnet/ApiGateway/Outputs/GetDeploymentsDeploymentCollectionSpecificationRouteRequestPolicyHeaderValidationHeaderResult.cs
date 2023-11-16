@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The case-insensitive name of the header.  This name must be unique across transformation policies.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Determines if the parameter is required in the request.
         /// </summary>
-        public readonly bool Required;
+        public readonly bool? Required;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderResult(
-            string name,
+            string? name,
 
-            bool required)
+            bool? required)
         {
             Name = name;
             Required = required;

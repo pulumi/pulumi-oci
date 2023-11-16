@@ -24,7 +24,7 @@ public final class GetZonesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the zone.
      * 
@@ -64,7 +64,7 @@ public final class GetZonesResult {
      * @return The list of zones.
      * 
      */
-    private List<GetZonesZone> zones;
+    private @Nullable List<GetZonesZone> zones;
 
     private GetZonesResult() {}
     /**
@@ -81,8 +81,8 @@ public final class GetZonesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the zone.
@@ -146,7 +146,7 @@ public final class GetZonesResult {
      * 
      */
     public List<GetZonesZone> zones() {
-        return this.zones;
+        return this.zones == null ? List.of() : this.zones;
     }
 
     public static Builder builder() {
@@ -160,7 +160,7 @@ public final class GetZonesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetZonesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String nameContains;
         private @Nullable String scope;
@@ -172,7 +172,7 @@ public final class GetZonesResult {
         private @Nullable String tsigKeyId;
         private @Nullable String viewId;
         private @Nullable String zoneType;
-        private List<GetZonesZone> zones;
+        private @Nullable List<GetZonesZone> zones;
         public Builder() {}
         public Builder(GetZonesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -207,8 +207,8 @@ public final class GetZonesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -267,8 +267,8 @@ public final class GetZonesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder zones(List<GetZonesZone> zones) {
-            this.zones = Objects.requireNonNull(zones);
+        public Builder zones(@Nullable List<GetZonesZone> zones) {
+            this.zones = zones;
             return this;
         }
         public Builder zones(GetZonesZone... zones) {

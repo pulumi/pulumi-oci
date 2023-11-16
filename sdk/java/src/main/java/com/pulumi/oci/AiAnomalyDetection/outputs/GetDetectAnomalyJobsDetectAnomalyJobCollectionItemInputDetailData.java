@@ -8,18 +8,20 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData {
-    private String timestamp;
-    private List<Double> values;
+    private @Nullable String timestamp;
+    private @Nullable List<Double> values;
 
     private GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData() {}
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
     public List<Double> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timestamp;
-        private List<Double> values;
+        private @Nullable String timestamp;
+        private @Nullable List<Double> values;
         public Builder() {}
         public Builder(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail
         }
 
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<Double> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<Double> values) {
+            this.values = values;
             return this;
         }
         public Builder values(Double... values) {

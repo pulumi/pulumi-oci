@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The type of instance details. Supported instanceType is compute
         /// </summary>
-        public readonly string InstanceType;
+        public readonly string? InstanceType;
         /// <summary>
         /// Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         /// </summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         private GetInstanceConfigurationInstanceDetailResult(
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailBlockVolumeResult> blockVolumes,
 
-            string instanceType,
+            string? instanceType,
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailLaunchDetailResult> launchDetails,
 

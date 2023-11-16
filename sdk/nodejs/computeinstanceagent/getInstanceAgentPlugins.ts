@@ -65,11 +65,11 @@ export interface GetInstanceAgentPluginsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of instance_agent_plugins.
      */
-    readonly instanceAgentPlugins: outputs.ComputeInstanceAgent.GetInstanceAgentPluginsInstanceAgentPlugin[];
+    readonly instanceAgentPlugins?: outputs.ComputeInstanceAgent.GetInstanceAgentPluginsInstanceAgentPlugin[];
     readonly instanceagentId: string;
     /**
      * The plugin name

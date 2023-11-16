@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionProjectsProjectCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectionProjectsProjectCollection {
-    private List<GetDetectionProjectsProjectCollectionItem> items;
+    private @Nullable List<GetDetectionProjectsProjectCollectionItem> items;
 
     private GetDetectionProjectsProjectCollection() {}
     public List<GetDetectionProjectsProjectCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDetectionProjectsProjectCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDetectionProjectsProjectCollectionItem> items;
+        private @Nullable List<GetDetectionProjectsProjectCollectionItem> items;
         public Builder() {}
         public Builder(GetDetectionProjectsProjectCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDetectionProjectsProjectCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDetectionProjectsProjectCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDetectionProjectsProjectCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDetectionProjectsProjectCollectionItem... items) {

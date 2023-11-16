@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabasesDatabase {
@@ -22,395 +24,395 @@ public final class GetDatabasesDatabase {
      * @return The character set for the database.
      * 
      */
-    private String characterSet;
+    private @Nullable String characterSet;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The Connection strings used to connect to the Oracle Database.
      * 
      */
-    private List<GetDatabasesDatabaseConnectionString> connectionStrings;
+    private @Nullable List<GetDatabasesDatabaseConnectionString> connectionStrings;
     /**
      * @return The configuration of the Database Management service.
      * 
      */
-    private List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs;
+    private @Nullable List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private String databaseSoftwareImageId;
-    private List<GetDatabasesDatabaseDatabase> databases;
+    private @Nullable String databaseSoftwareImageId;
+    private @Nullable List<GetDatabasesDatabaseDatabase> databases;
     /**
      * @return Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
-    private List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs;
+    private @Nullable List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs;
     /**
      * @return A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
      * 
      */
-    private String dbHomeId;
+    private @Nullable String dbHomeId;
     /**
      * @return A filter to return only resources that match the entire database name given. The match is not case sensitive.
      * 
      */
-    private String dbName;
+    private @Nullable String dbName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
-    private String dbUniqueName;
-    private String dbVersion;
+    private @Nullable String dbUniqueName;
+    private @Nullable String dbVersion;
     /**
      * @return **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
-    private String dbWorkload;
+    private @Nullable String dbWorkload;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return True if the database is a container database.
      * 
      */
-    private Boolean isCdb;
+    private @Nullable Boolean isCdb;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private String keyStoreId;
+    private @Nullable String keyStoreId;
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    private String keyStoreWalletName;
+    private @Nullable String keyStoreWalletName;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
-    private Boolean kmsKeyMigration;
-    private Integer kmsKeyRotation;
+    private @Nullable String kmsKeyId;
+    private @Nullable Boolean kmsKeyMigration;
+    private @Nullable Integer kmsKeyRotation;
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The duration when the latest database backup created.
      * 
      */
-    private Integer lastBackupDurationInSeconds;
+    private @Nullable Integer lastBackupDurationInSeconds;
     /**
      * @return The date and time when the latest database backup was created.
      * 
      */
-    private String lastBackupTimestamp;
+    private @Nullable String lastBackupTimestamp;
     /**
      * @return The date and time when the latest database backup failed.
      * 
      */
-    private String lastFailedBackupTimestamp;
+    private @Nullable String lastFailedBackupTimestamp;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The national character set for the database.
      * 
      */
-    private String ncharacterSet;
+    private @Nullable String ncharacterSet;
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    private String pdbName;
+    private @Nullable String pdbName;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    private String sidPrefix;
-    private String source;
+    private @Nullable String sidPrefix;
+    private @Nullable String source;
     /**
      * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * 
      */
-    private String sourceDatabasePointInTimeRecoveryTimestamp;
+    private @Nullable String sourceDatabasePointInTimeRecoveryTimestamp;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the database was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private String vmClusterId;
+    private @Nullable String vmClusterId;
 
     private GetDatabasesDatabase() {}
     /**
      * @return The character set for the database.
      * 
      */
-    public String characterSet() {
-        return this.characterSet;
+    public Optional<String> characterSet() {
+        return Optional.ofNullable(this.characterSet);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The Connection strings used to connect to the Oracle Database.
      * 
      */
     public List<GetDatabasesDatabaseConnectionString> connectionStrings() {
-        return this.connectionStrings;
+        return this.connectionStrings == null ? List.of() : this.connectionStrings;
     }
     /**
      * @return The configuration of the Database Management service.
      * 
      */
     public List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs() {
-        return this.databaseManagementConfigs;
+        return this.databaseManagementConfigs == null ? List.of() : this.databaseManagementConfigs;
     }
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public String databaseSoftwareImageId() {
-        return this.databaseSoftwareImageId;
+    public Optional<String> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
     }
     public List<GetDatabasesDatabaseDatabase> databases() {
-        return this.databases;
+        return this.databases == null ? List.of() : this.databases;
     }
     /**
      * @return Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you&#39;re not authorized, talk to an administrator. If you&#39;re an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      */
     public List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs() {
-        return this.dbBackupConfigs;
+        return this.dbBackupConfigs == null ? List.of() : this.dbBackupConfigs;
     }
     /**
      * @return A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
      * 
      */
-    public String dbHomeId() {
-        return this.dbHomeId;
+    public Optional<String> dbHomeId() {
+        return Optional.ofNullable(this.dbHomeId);
     }
     /**
      * @return A filter to return only resources that match the entire database name given. The match is not case sensitive.
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      * 
      */
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      * 
      */
-    public String dbWorkload() {
-        return this.dbWorkload;
+    public Optional<String> dbWorkload() {
+        return Optional.ofNullable(this.dbWorkload);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return True if the database is a container database.
      * 
      */
-    public Boolean isCdb() {
-        return this.isCdb;
+    public Optional<Boolean> isCdb() {
+        return Optional.ofNullable(this.isCdb);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public String keyStoreId() {
-        return this.keyStoreId;
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
     }
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public String keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Optional<String> keyStoreWalletName() {
+        return Optional.ofNullable(this.keyStoreWalletName);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public Boolean kmsKeyMigration() {
-        return this.kmsKeyMigration;
+    public Optional<Boolean> kmsKeyMigration() {
+        return Optional.ofNullable(this.kmsKeyMigration);
     }
-    public Integer kmsKeyRotation() {
-        return this.kmsKeyRotation;
+    public Optional<Integer> kmsKeyRotation() {
+        return Optional.ofNullable(this.kmsKeyRotation);
     }
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return The duration when the latest database backup created.
      * 
      */
-    public Integer lastBackupDurationInSeconds() {
-        return this.lastBackupDurationInSeconds;
+    public Optional<Integer> lastBackupDurationInSeconds() {
+        return Optional.ofNullable(this.lastBackupDurationInSeconds);
     }
     /**
      * @return The date and time when the latest database backup was created.
      * 
      */
-    public String lastBackupTimestamp() {
-        return this.lastBackupTimestamp;
+    public Optional<String> lastBackupTimestamp() {
+        return Optional.ofNullable(this.lastBackupTimestamp);
     }
     /**
      * @return The date and time when the latest database backup failed.
      * 
      */
-    public String lastFailedBackupTimestamp() {
-        return this.lastFailedBackupTimestamp;
+    public Optional<String> lastFailedBackupTimestamp() {
+        return Optional.ofNullable(this.lastFailedBackupTimestamp);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The national character set for the database.
      * 
      */
-    public String ncharacterSet() {
-        return this.ncharacterSet;
+    public Optional<String> ncharacterSet() {
+        return Optional.ofNullable(this.ncharacterSet);
     }
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
-    public String pdbName() {
-        return this.pdbName;
+    public Optional<String> pdbName() {
+        return Optional.ofNullable(this.pdbName);
     }
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
-    public String sidPrefix() {
-        return this.sidPrefix;
+    public Optional<String> sidPrefix() {
+        return Optional.ofNullable(this.sidPrefix);
     }
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      * 
      */
-    public String sourceDatabasePointInTimeRecoveryTimestamp() {
-        return this.sourceDatabasePointInTimeRecoveryTimestamp;
+    public Optional<String> sourceDatabasePointInTimeRecoveryTimestamp() {
+        return Optional.ofNullable(this.sourceDatabasePointInTimeRecoveryTimestamp);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the database was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    public String vmClusterId() {
-        return this.vmClusterId;
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
 
     public static Builder builder() {
@@ -422,42 +424,42 @@ public final class GetDatabasesDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String characterSet;
-        private String compartmentId;
-        private List<GetDatabasesDatabaseConnectionString> connectionStrings;
-        private List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs;
-        private String databaseSoftwareImageId;
-        private List<GetDatabasesDatabaseDatabase> databases;
-        private List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs;
-        private String dbHomeId;
-        private String dbName;
-        private String dbSystemId;
-        private String dbUniqueName;
-        private String dbVersion;
-        private String dbWorkload;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCdb;
-        private String keyStoreId;
-        private String keyStoreWalletName;
-        private String kmsKeyId;
-        private Boolean kmsKeyMigration;
-        private Integer kmsKeyRotation;
-        private String kmsKeyVersionId;
-        private Integer lastBackupDurationInSeconds;
-        private String lastBackupTimestamp;
-        private String lastFailedBackupTimestamp;
-        private String lifecycleDetails;
-        private String ncharacterSet;
-        private String pdbName;
-        private String sidPrefix;
-        private String source;
-        private String sourceDatabasePointInTimeRecoveryTimestamp;
-        private String state;
-        private String timeCreated;
-        private String vaultId;
-        private String vmClusterId;
+        private @Nullable String characterSet;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetDatabasesDatabaseConnectionString> connectionStrings;
+        private @Nullable List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs;
+        private @Nullable String databaseSoftwareImageId;
+        private @Nullable List<GetDatabasesDatabaseDatabase> databases;
+        private @Nullable List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs;
+        private @Nullable String dbHomeId;
+        private @Nullable String dbName;
+        private @Nullable String dbSystemId;
+        private @Nullable String dbUniqueName;
+        private @Nullable String dbVersion;
+        private @Nullable String dbWorkload;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCdb;
+        private @Nullable String keyStoreId;
+        private @Nullable String keyStoreWalletName;
+        private @Nullable String kmsKeyId;
+        private @Nullable Boolean kmsKeyMigration;
+        private @Nullable Integer kmsKeyRotation;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable Integer lastBackupDurationInSeconds;
+        private @Nullable String lastBackupTimestamp;
+        private @Nullable String lastFailedBackupTimestamp;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String ncharacterSet;
+        private @Nullable String pdbName;
+        private @Nullable String sidPrefix;
+        private @Nullable String source;
+        private @Nullable String sourceDatabasePointInTimeRecoveryTimestamp;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String vaultId;
+        private @Nullable String vmClusterId;
         public Builder() {}
         public Builder(GetDatabasesDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -500,195 +502,195 @@ public final class GetDatabasesDatabase {
         }
 
         @CustomType.Setter
-        public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+        public Builder characterSet(@Nullable String characterSet) {
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionStrings(List<GetDatabasesDatabaseConnectionString> connectionStrings) {
-            this.connectionStrings = Objects.requireNonNull(connectionStrings);
+        public Builder connectionStrings(@Nullable List<GetDatabasesDatabaseConnectionString> connectionStrings) {
+            this.connectionStrings = connectionStrings;
             return this;
         }
         public Builder connectionStrings(GetDatabasesDatabaseConnectionString... connectionStrings) {
             return connectionStrings(List.of(connectionStrings));
         }
         @CustomType.Setter
-        public Builder databaseManagementConfigs(List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+        public Builder databaseManagementConfigs(@Nullable List<GetDatabasesDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetDatabasesDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
             return databaseManagementConfigs(List.of(databaseManagementConfigs));
         }
         @CustomType.Setter
-        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+        public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder databases(List<GetDatabasesDatabaseDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+        public Builder databases(@Nullable List<GetDatabasesDatabaseDatabase> databases) {
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDatabasesDatabaseDatabase... databases) {
             return databases(List.of(databases));
         }
         @CustomType.Setter
-        public Builder dbBackupConfigs(List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs) {
-            this.dbBackupConfigs = Objects.requireNonNull(dbBackupConfigs);
+        public Builder dbBackupConfigs(@Nullable List<GetDatabasesDatabaseDbBackupConfig> dbBackupConfigs) {
+            this.dbBackupConfigs = dbBackupConfigs;
             return this;
         }
         public Builder dbBackupConfigs(GetDatabasesDatabaseDbBackupConfig... dbBackupConfigs) {
             return dbBackupConfigs(List.of(dbBackupConfigs));
         }
         @CustomType.Setter
-        public Builder dbHomeId(String dbHomeId) {
-            this.dbHomeId = Objects.requireNonNull(dbHomeId);
+        public Builder dbHomeId(@Nullable String dbHomeId) {
+            this.dbHomeId = dbHomeId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder dbWorkload(String dbWorkload) {
-            this.dbWorkload = Objects.requireNonNull(dbWorkload);
+        public Builder dbWorkload(@Nullable String dbWorkload) {
+            this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCdb(Boolean isCdb) {
-            this.isCdb = Objects.requireNonNull(isCdb);
+        public Builder isCdb(@Nullable Boolean isCdb) {
+            this.isCdb = isCdb;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+        public Builder keyStoreWalletName(@Nullable String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyMigration(Boolean kmsKeyMigration) {
-            this.kmsKeyMigration = Objects.requireNonNull(kmsKeyMigration);
+        public Builder kmsKeyMigration(@Nullable Boolean kmsKeyMigration) {
+            this.kmsKeyMigration = kmsKeyMigration;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyRotation(Integer kmsKeyRotation) {
-            this.kmsKeyRotation = Objects.requireNonNull(kmsKeyRotation);
+        public Builder kmsKeyRotation(@Nullable Integer kmsKeyRotation) {
+            this.kmsKeyRotation = kmsKeyRotation;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder lastBackupDurationInSeconds(Integer lastBackupDurationInSeconds) {
-            this.lastBackupDurationInSeconds = Objects.requireNonNull(lastBackupDurationInSeconds);
+        public Builder lastBackupDurationInSeconds(@Nullable Integer lastBackupDurationInSeconds) {
+            this.lastBackupDurationInSeconds = lastBackupDurationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder lastBackupTimestamp(String lastBackupTimestamp) {
-            this.lastBackupTimestamp = Objects.requireNonNull(lastBackupTimestamp);
+        public Builder lastBackupTimestamp(@Nullable String lastBackupTimestamp) {
+            this.lastBackupTimestamp = lastBackupTimestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder lastFailedBackupTimestamp(String lastFailedBackupTimestamp) {
-            this.lastFailedBackupTimestamp = Objects.requireNonNull(lastFailedBackupTimestamp);
+        public Builder lastFailedBackupTimestamp(@Nullable String lastFailedBackupTimestamp) {
+            this.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+        public Builder ncharacterSet(@Nullable String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
-        public Builder pdbName(String pdbName) {
-            this.pdbName = Objects.requireNonNull(pdbName);
+        public Builder pdbName(@Nullable String pdbName) {
+            this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
-        public Builder sidPrefix(String sidPrefix) {
-            this.sidPrefix = Objects.requireNonNull(sidPrefix);
+        public Builder sidPrefix(@Nullable String sidPrefix) {
+            this.sidPrefix = sidPrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDatabasePointInTimeRecoveryTimestamp(String sourceDatabasePointInTimeRecoveryTimestamp) {
-            this.sourceDatabasePointInTimeRecoveryTimestamp = Objects.requireNonNull(sourceDatabasePointInTimeRecoveryTimestamp);
+        public Builder sourceDatabasePointInTimeRecoveryTimestamp(@Nullable String sourceDatabasePointInTimeRecoveryTimestamp) {
+            this.sourceDatabasePointInTimeRecoveryTimestamp = sourceDatabasePointInTimeRecoveryTimestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetDatabasesDatabase build() {

@@ -109,12 +109,12 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
         /// </summary>
-        public readonly string BootstrapScriptUrl;
+        public readonly string? BootstrapScriptUrl;
         /// <summary>
         /// The information about added Cloud SQL capability
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstanceCloudSqlDetailResult> CloudSqlDetails;
-        public readonly string ClusterAdminPassword;
+        public readonly string? ClusterAdminPassword;
         /// <summary>
         /// Specific info about a Hadoop cluster
         /// </summary>
@@ -122,61 +122,61 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// Profile of the Big Data Service cluster.
         /// </summary>
-        public readonly string ClusterProfile;
-        public readonly string ClusterPublicKey;
+        public readonly string? ClusterProfile;
+        public readonly string? ClusterPublicKey;
         /// <summary>
         /// Version of the Hadoop distribution.
         /// </summary>
-        public readonly string ClusterVersion;
+        public readonly string? ClusterVersion;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly ImmutableArray<Outputs.GetBdsInstanceComputeOnlyWorkerNodeResult> ComputeOnlyWorkerNodes;
         /// <summary>
         /// The user who created the cluster.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The name of the node.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetBdsInstanceEdgeNodeResult> EdgeNodes;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the Big Data Service resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Boolean flag specifying whether or not Cloud SQL should be configured.
         /// </summary>
-        public readonly bool IsCloudSqlConfigured;
-        public readonly bool IsForceStopJobs;
+        public readonly bool? IsCloudSqlConfigured;
+        public readonly bool? IsForceStopJobs;
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is highly available (HA)
         /// </summary>
-        public readonly bool IsHighAvailability;
+        public readonly bool? IsHighAvailability;
         /// <summary>
         /// Boolean flag specifying whether or not Kafka should be configured.
         /// </summary>
-        public readonly bool IsKafkaConfigured;
+        public readonly bool? IsKafkaConfigured;
         /// <summary>
         /// Boolean flag specifying whether or not the cluster should be set up as secure.
         /// </summary>
-        public readonly bool IsSecure;
+        public readonly bool? IsSecure;
         public readonly ImmutableArray<Outputs.GetBdsInstanceKafkaBrokerNodeResult> KafkaBrokerNodes;
-        public readonly string KerberosRealmName;
+        public readonly string? KerberosRealmName;
         /// <summary>
         /// The OCID of the Key Management master encryption key.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         public readonly ImmutableArray<Outputs.GetBdsInstanceMasterNodeResult> MasterNodes;
         /// <summary>
         /// Additional configuration of the user's network.
@@ -189,24 +189,24 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The number of nodes that form the cluster.
         /// </summary>
-        public readonly int NumberOfNodes;
+        public readonly int? NumberOfNodes;
         /// <summary>
         /// Number of nodes that require a maintenance reboot
         /// </summary>
-        public readonly int NumberOfNodesRequiringMaintenanceReboot;
-        public readonly string OsPatchVersion;
+        public readonly int? NumberOfNodesRequiringMaintenanceReboot;
+        public readonly string? OsPatchVersion;
         /// <summary>
         /// The state of the cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         public readonly ImmutableArray<Outputs.GetBdsInstanceUtilNodeResult> UtilNodes;
         public readonly ImmutableArray<Outputs.GetBdsInstanceWorkerNodeResult> WorkerNodes;
 
@@ -214,51 +214,51 @@ namespace Pulumi.Oci.BigDataService
         private GetBdsInstanceResult(
             string bdsInstanceId,
 
-            string bootstrapScriptUrl,
+            string? bootstrapScriptUrl,
 
             ImmutableArray<Outputs.GetBdsInstanceCloudSqlDetailResult> cloudSqlDetails,
 
-            string clusterAdminPassword,
+            string? clusterAdminPassword,
 
             ImmutableArray<Outputs.GetBdsInstanceClusterDetailResult> clusterDetails,
 
-            string clusterProfile,
+            string? clusterProfile,
 
-            string clusterPublicKey,
+            string? clusterPublicKey,
 
-            string clusterVersion,
+            string? clusterVersion,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetBdsInstanceComputeOnlyWorkerNodeResult> computeOnlyWorkerNodes,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetBdsInstanceEdgeNodeResult> edgeNodes,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isCloudSqlConfigured,
+            bool? isCloudSqlConfigured,
 
-            bool isForceStopJobs,
+            bool? isForceStopJobs,
 
-            bool isHighAvailability,
+            bool? isHighAvailability,
 
-            bool isKafkaConfigured,
+            bool? isKafkaConfigured,
 
-            bool isSecure,
+            bool? isSecure,
 
             ImmutableArray<Outputs.GetBdsInstanceKafkaBrokerNodeResult> kafkaBrokerNodes,
 
-            string kerberosRealmName,
+            string? kerberosRealmName,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
             ImmutableArray<Outputs.GetBdsInstanceMasterNodeResult> masterNodes,
 
@@ -266,17 +266,17 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceNodeResult> nodes,
 
-            int numberOfNodes,
+            int? numberOfNodes,
 
-            int numberOfNodesRequiringMaintenanceReboot,
+            int? numberOfNodesRequiringMaintenanceReboot,
 
-            string osPatchVersion,
+            string? osPatchVersion,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetBdsInstanceUtilNodeResult> utilNodes,
 

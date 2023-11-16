@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The number of runs that are currently running that are using this pool.
         /// </summary>
-        public readonly string ActiveRunsCount;
+        public readonly string? ActiveRunsCount;
         /// <summary>
         /// A count of the nodes that are currently being used for each shape in this pool.
         /// </summary>
@@ -24,33 +24,33 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The last time the mertics were updated for this.
         /// </summary>
-        public readonly string TimeLastMetricsUpdated;
+        public readonly string? TimeLastMetricsUpdated;
         /// <summary>
         /// The last time this pool was started.
         /// </summary>
-        public readonly string TimeLastStarted;
+        public readonly string? TimeLastStarted;
         /// <summary>
         /// The last time this pool was stopped.
         /// </summary>
-        public readonly string TimeLastStopped;
+        public readonly string? TimeLastStopped;
         /// <summary>
         /// The last time a run used this pool.
         /// </summary>
-        public readonly string TimeLastUsed;
+        public readonly string? TimeLastUsed;
 
         [OutputConstructor]
         private GetPoolsPoolCollectionItemPoolMetricResult(
-            string activeRunsCount,
+            string? activeRunsCount,
 
             ImmutableArray<Outputs.GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult> activelyUsedNodeCounts,
 
-            string timeLastMetricsUpdated,
+            string? timeLastMetricsUpdated,
 
-            string timeLastStarted,
+            string? timeLastStarted,
 
-            string timeLastStopped,
+            string? timeLastStopped,
 
-            string timeLastUsed)
+            string? timeLastUsed)
         {
             ActiveRunsCount = activeRunsCount;
             ActivelyUsedNodeCounts = activelyUsedNodeCounts;

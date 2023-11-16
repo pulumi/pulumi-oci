@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Unique name of the configuration
         /// </summary>
-        public readonly string ConfigKey;
+        public readonly string? ConfigKey;
         /// <summary>
         /// configuration name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// configuration value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationResult(
-            string configKey,
+            string? configKey,
 
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             ConfigKey = configKey;
             Name = name;

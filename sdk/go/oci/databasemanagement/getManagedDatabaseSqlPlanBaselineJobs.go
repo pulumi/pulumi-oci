@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
@@ -65,8 +64,8 @@ type GetManagedDatabaseSqlPlanBaselineJobsArgs struct {
 type GetManagedDatabaseSqlPlanBaselineJobsResult struct {
 	Filters []GetManagedDatabaseSqlPlanBaselineJobsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of the job.
 	Name *string `pulumi:"name"`
 	// The list of sql_plan_baseline_job_collection.
@@ -114,12 +113,6 @@ func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ToGetManagedDatabaseS
 	return o
 }
 
-func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselineJobsResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselineJobsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) Filters() GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsResult) []GetManagedDatabaseSqlPlanBaselineJobsFilter {
 		return v.Filters
@@ -127,8 +120,8 @@ func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) Filters() GetManagedD
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineJobsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ManagedDatabaseId() pulumi.StringOutput {

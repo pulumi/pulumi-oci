@@ -88,7 +88,7 @@ export class BdsInstanceMetastoreConfig extends pulumi.CustomResource {
     /**
      * (Updatable) The display name of the metastore configuration
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the Data Catalog metastore.
      */
@@ -96,19 +96,19 @@ export class BdsInstanceMetastoreConfig extends pulumi.CustomResource {
     /**
      * The type of the metastore in the metastore configuration.
      */
-    public /*out*/ readonly metastoreType!: pulumi.Output<string>;
+    public /*out*/ readonly metastoreType!: pulumi.Output<string | undefined>;
     /**
      * the lifecycle state of the metastore configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a BdsInstanceMetastoreConfig resource with the given unique name, arguments, and options.

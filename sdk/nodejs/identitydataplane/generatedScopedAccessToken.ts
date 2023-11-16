@@ -72,7 +72,7 @@ export class GeneratedScopedAccessToken extends pulumi.CustomResource {
     /**
      * The security token, signed by auth service
      */
-    public /*out*/ readonly token!: pulumi.Output<string>;
+    public /*out*/ readonly token!: pulumi.Output<string | undefined>;
 
     /**
      * Create a GeneratedScopedAccessToken resource with the given unique name, arguments, and options.

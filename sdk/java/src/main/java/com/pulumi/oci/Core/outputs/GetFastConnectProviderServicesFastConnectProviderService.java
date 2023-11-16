@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFastConnectProviderServicesFastConnectProviderService {
@@ -15,147 +17,147 @@ public final class GetFastConnectProviderServicesFastConnectProviderService {
      * @return Who is responsible for managing the virtual circuit bandwidth.
      * 
      */
-    private String bandwithShapeManagement;
+    private @Nullable String bandwithShapeManagement;
     /**
      * @return Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
      * 
      */
-    private String customerAsnManagement;
+    private @Nullable String customerAsnManagement;
     /**
      * @return The location of the provider&#39;s website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Who is responsible for managing the private peering BGP information.
      * 
      */
-    private String privatePeeringBgpManagement;
+    private @Nullable String privatePeeringBgpManagement;
     /**
      * @return The name of the provider.
      * 
      */
-    private String providerName;
+    private @Nullable String providerName;
     /**
      * @return Who is responsible for managing the provider service key.
      * 
      */
-    private String providerServiceKeyManagement;
+    private @Nullable String providerServiceKeyManagement;
     /**
      * @return The name of the service offered by the provider.
      * 
      */
-    private String providerServiceName;
+    private @Nullable String providerServiceName;
     /**
      * @return Who is responsible for managing the public peering BGP information.
      * 
      */
-    private String publicPeeringBgpManagement;
+    private @Nullable String publicPeeringBgpManagement;
     /**
      * @return Total number of cross-connect or cross-connect groups required for the virtual circuit.
      * 
      */
-    private Integer requiredTotalCrossConnects;
+    private @Nullable Integer requiredTotalCrossConnects;
     /**
      * @return An array of virtual circuit types supported by this service.
      * 
      */
-    private List<String> supportedVirtualCircuitTypes;
+    private @Nullable List<String> supportedVirtualCircuitTypes;
     /**
      * @return Provider service type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetFastConnectProviderServicesFastConnectProviderService() {}
     /**
      * @return Who is responsible for managing the virtual circuit bandwidth.
      * 
      */
-    public String bandwithShapeManagement() {
-        return this.bandwithShapeManagement;
+    public Optional<String> bandwithShapeManagement() {
+        return Optional.ofNullable(this.bandwithShapeManagement);
     }
     /**
      * @return Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
      * 
      */
-    public String customerAsnManagement() {
-        return this.customerAsnManagement;
+    public Optional<String> customerAsnManagement() {
+        return Optional.ofNullable(this.customerAsnManagement);
     }
     /**
      * @return The location of the provider&#39;s website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Who is responsible for managing the private peering BGP information.
      * 
      */
-    public String privatePeeringBgpManagement() {
-        return this.privatePeeringBgpManagement;
+    public Optional<String> privatePeeringBgpManagement() {
+        return Optional.ofNullable(this.privatePeeringBgpManagement);
     }
     /**
      * @return The name of the provider.
      * 
      */
-    public String providerName() {
-        return this.providerName;
+    public Optional<String> providerName() {
+        return Optional.ofNullable(this.providerName);
     }
     /**
      * @return Who is responsible for managing the provider service key.
      * 
      */
-    public String providerServiceKeyManagement() {
-        return this.providerServiceKeyManagement;
+    public Optional<String> providerServiceKeyManagement() {
+        return Optional.ofNullable(this.providerServiceKeyManagement);
     }
     /**
      * @return The name of the service offered by the provider.
      * 
      */
-    public String providerServiceName() {
-        return this.providerServiceName;
+    public Optional<String> providerServiceName() {
+        return Optional.ofNullable(this.providerServiceName);
     }
     /**
      * @return Who is responsible for managing the public peering BGP information.
      * 
      */
-    public String publicPeeringBgpManagement() {
-        return this.publicPeeringBgpManagement;
+    public Optional<String> publicPeeringBgpManagement() {
+        return Optional.ofNullable(this.publicPeeringBgpManagement);
     }
     /**
      * @return Total number of cross-connect or cross-connect groups required for the virtual circuit.
      * 
      */
-    public Integer requiredTotalCrossConnects() {
-        return this.requiredTotalCrossConnects;
+    public Optional<Integer> requiredTotalCrossConnects() {
+        return Optional.ofNullable(this.requiredTotalCrossConnects);
     }
     /**
      * @return An array of virtual circuit types supported by this service.
      * 
      */
     public List<String> supportedVirtualCircuitTypes() {
-        return this.supportedVirtualCircuitTypes;
+        return this.supportedVirtualCircuitTypes == null ? List.of() : this.supportedVirtualCircuitTypes;
     }
     /**
      * @return Provider service type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -167,18 +169,18 @@ public final class GetFastConnectProviderServicesFastConnectProviderService {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bandwithShapeManagement;
-        private String customerAsnManagement;
-        private String description;
-        private String id;
-        private String privatePeeringBgpManagement;
-        private String providerName;
-        private String providerServiceKeyManagement;
-        private String providerServiceName;
-        private String publicPeeringBgpManagement;
-        private Integer requiredTotalCrossConnects;
-        private List<String> supportedVirtualCircuitTypes;
-        private String type;
+        private @Nullable String bandwithShapeManagement;
+        private @Nullable String customerAsnManagement;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String privatePeeringBgpManagement;
+        private @Nullable String providerName;
+        private @Nullable String providerServiceKeyManagement;
+        private @Nullable String providerServiceName;
+        private @Nullable String publicPeeringBgpManagement;
+        private @Nullable Integer requiredTotalCrossConnects;
+        private @Nullable List<String> supportedVirtualCircuitTypes;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetFastConnectProviderServicesFastConnectProviderService defaults) {
     	      Objects.requireNonNull(defaults);
@@ -197,66 +199,66 @@ public final class GetFastConnectProviderServicesFastConnectProviderService {
         }
 
         @CustomType.Setter
-        public Builder bandwithShapeManagement(String bandwithShapeManagement) {
-            this.bandwithShapeManagement = Objects.requireNonNull(bandwithShapeManagement);
+        public Builder bandwithShapeManagement(@Nullable String bandwithShapeManagement) {
+            this.bandwithShapeManagement = bandwithShapeManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder customerAsnManagement(String customerAsnManagement) {
-            this.customerAsnManagement = Objects.requireNonNull(customerAsnManagement);
+        public Builder customerAsnManagement(@Nullable String customerAsnManagement) {
+            this.customerAsnManagement = customerAsnManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder privatePeeringBgpManagement(String privatePeeringBgpManagement) {
-            this.privatePeeringBgpManagement = Objects.requireNonNull(privatePeeringBgpManagement);
+        public Builder privatePeeringBgpManagement(@Nullable String privatePeeringBgpManagement) {
+            this.privatePeeringBgpManagement = privatePeeringBgpManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder providerName(String providerName) {
-            this.providerName = Objects.requireNonNull(providerName);
+        public Builder providerName(@Nullable String providerName) {
+            this.providerName = providerName;
             return this;
         }
         @CustomType.Setter
-        public Builder providerServiceKeyManagement(String providerServiceKeyManagement) {
-            this.providerServiceKeyManagement = Objects.requireNonNull(providerServiceKeyManagement);
+        public Builder providerServiceKeyManagement(@Nullable String providerServiceKeyManagement) {
+            this.providerServiceKeyManagement = providerServiceKeyManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder providerServiceName(String providerServiceName) {
-            this.providerServiceName = Objects.requireNonNull(providerServiceName);
+        public Builder providerServiceName(@Nullable String providerServiceName) {
+            this.providerServiceName = providerServiceName;
             return this;
         }
         @CustomType.Setter
-        public Builder publicPeeringBgpManagement(String publicPeeringBgpManagement) {
-            this.publicPeeringBgpManagement = Objects.requireNonNull(publicPeeringBgpManagement);
+        public Builder publicPeeringBgpManagement(@Nullable String publicPeeringBgpManagement) {
+            this.publicPeeringBgpManagement = publicPeeringBgpManagement;
             return this;
         }
         @CustomType.Setter
-        public Builder requiredTotalCrossConnects(Integer requiredTotalCrossConnects) {
-            this.requiredTotalCrossConnects = Objects.requireNonNull(requiredTotalCrossConnects);
+        public Builder requiredTotalCrossConnects(@Nullable Integer requiredTotalCrossConnects) {
+            this.requiredTotalCrossConnects = requiredTotalCrossConnects;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedVirtualCircuitTypes(List<String> supportedVirtualCircuitTypes) {
-            this.supportedVirtualCircuitTypes = Objects.requireNonNull(supportedVirtualCircuitTypes);
+        public Builder supportedVirtualCircuitTypes(@Nullable List<String> supportedVirtualCircuitTypes) {
+            this.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
             return this;
         }
         public Builder supportedVirtualCircuitTypes(String... supportedVirtualCircuitTypes) {
             return supportedVirtualCircuitTypes(List.of(supportedVirtualCircuitTypes));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetFastConnectProviderServicesFastConnectProviderService build() {

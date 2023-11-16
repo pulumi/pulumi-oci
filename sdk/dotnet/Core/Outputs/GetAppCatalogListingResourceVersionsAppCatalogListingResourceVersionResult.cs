@@ -32,19 +32,19 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the listing.
         /// </summary>
-        public readonly string ListingId;
+        public readonly string? ListingId;
         /// <summary>
         /// OCID of the listing resource.
         /// </summary>
-        public readonly string ListingResourceId;
+        public readonly string? ListingResourceId;
         /// <summary>
         /// Resource Version.
         /// </summary>
-        public readonly string ListingResourceVersion;
+        public readonly string? ListingResourceVersion;
         /// <summary>
         /// Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
         /// </summary>
-        public readonly string TimePublished;
+        public readonly string? TimePublished;
 
         [OutputConstructor]
         private GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersionResult(
@@ -56,13 +56,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<string> compatibleShapes,
 
-            string listingId,
+            string? listingId,
 
-            string listingResourceId,
+            string? listingResourceId,
 
-            string listingResourceVersion,
+            string? listingResourceVersion,
 
-            string timePublished)
+            string? timePublished)
         {
             AccessiblePorts = accessiblePorts;
             AllowedActions = allowedActions;

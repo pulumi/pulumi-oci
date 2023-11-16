@@ -54,11 +54,11 @@ export interface GetTraceAggregatedSnapshotDataResult {
     /**
      * Aggregated snapshot details.
      */
-    readonly details: outputs.ApmTraces.GetTraceAggregatedSnapshotDataDetail[];
+    readonly details?: outputs.ApmTraces.GetTraceAggregatedSnapshotDataDetail[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly traceKey: string;
 }
 /**

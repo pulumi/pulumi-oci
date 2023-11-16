@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Waas
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly ImmutableArray<string> ModSecurityRuleIds;
         /// <summary>
         /// The list of protection_rules.
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.Waas
 
             ImmutableArray<Outputs.GetProtectionRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> modSecurityRuleIds,
 

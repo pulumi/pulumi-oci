@@ -12,6 +12,7 @@ import com.pulumi.oci.DataSafe.inputs.SetUserAssessmentBaselineState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -66,14 +67,14 @@ public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="assessmentIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> assessmentIds;
+    private Output</* @Nullable */ List<String>> assessmentIds;
 
     /**
      * @return The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      * 
      */
-    public Output<List<String>> assessmentIds() {
-        return this.assessmentIds;
+    public Output<Optional<List<String>>> assessmentIds() {
+        return Codegen.optional(this.assessmentIds);
     }
     /**
      * The OCID of the user assessment.

@@ -14,6 +14,7 @@ import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourcesAssociateMonitor
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -89,7 +90,7 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * 
      */
     @Export(name="category", refs={String.class}, tree="[0]")
-    private Output<String> category;
+    private Output</* @Nullable */ String> category;
 
     /**
      * @return Association category. Possible values are:
@@ -98,8 +99,8 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * * User created using tags (USER_TAG_ASSOC).
      * 
      */
-    public Output<String> category() {
-        return this.category;
+    public Output<Optional<String>> category() {
+        return Codegen.optional(this.category);
     }
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120,14 +121,14 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * 
      */
     @Export(name="destinationResourceDetails", refs={List.class,MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail.class}, tree="[0,1]")
-    private Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>> destinationResourceDetails;
+    private Output</* @Nullable */ List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>> destinationResourceDetails;
 
     /**
      * @return Association Resource Details.
      * 
      */
-    public Output<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>> destinationResourceDetails() {
-        return this.destinationResourceDetails;
+    public Output<Optional<List<MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>>> destinationResourceDetails() {
+        return Codegen.optional(this.destinationResourceDetails);
     }
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -148,14 +149,14 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * 
      */
     @Export(name="sourceResourceDetails", refs={List.class,MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail.class}, tree="[0,1]")
-    private Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> sourceResourceDetails;
+    private Output</* @Nullable */ List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> sourceResourceDetails;
 
     /**
      * @return Association Resource Details.
      * 
      */
-    public Output<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> sourceResourceDetails() {
-        return this.sourceResourceDetails;
+    public Output<Optional<List<MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>>> sourceResourceDetails() {
+        return Codegen.optional(this.sourceResourceDetails);
     }
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -182,28 +183,28 @@ public class MonitoredResourcesAssociateMonitoredResource extends com.pulumi.res
      * 
      */
     @Export(name="tenantId", refs={String.class}, tree="[0]")
-    private Output<String> tenantId;
+    private Output</* @Nullable */ String> tenantId;
 
     /**
      * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public Output<String> tenantId() {
-        return this.tenantId;
+    public Output<Optional<String>> tenantId() {
+        return Codegen.optional(this.tenantId);
     }
     /**
      * The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the association was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

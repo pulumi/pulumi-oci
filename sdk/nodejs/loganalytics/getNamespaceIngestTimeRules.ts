@@ -103,11 +103,11 @@ export interface GetNamespaceIngestTimeRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of ingest_time_rule_summary_collection.
      */
-    readonly ingestTimeRuleSummaryCollections: outputs.LogAnalytics.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection[];
+    readonly ingestTimeRuleSummaryCollections?: outputs.LogAnalytics.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection[];
     /**
      * The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      */

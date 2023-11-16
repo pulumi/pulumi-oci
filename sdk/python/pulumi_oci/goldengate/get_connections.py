@@ -76,33 +76,21 @@ class GetConnectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionCollections")
-    def connection_collections(self) -> Sequence['outputs.GetConnectionsConnectionCollectionResult']:
-        """
-        The list of connection_collection.
-        """
+    def connection_collections(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionResult']]:
         return pulumi.get(self, "connection_collections")
 
     @property
     @pulumi.getter(name="connectionTypes")
     def connection_types(self) -> Optional[Sequence[str]]:
-        """
-        The connection type.
-        """
         return pulumi.get(self, "connection_types")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -112,7 +100,7 @@ class GetConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -121,17 +109,11 @@ class GetConnectionsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Possible lifecycle states for connection.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="technologyTypes")
     def technology_types(self) -> Optional[Sequence[str]]:
-        """
-        The Kafka (e.g. Confluent) Schema Registry technology type.
-        """
         return pulumi.get(self, "technology_types")
 
 
@@ -165,35 +147,7 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
                     technology_types: Optional[Sequence[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionsResult:
     """
-    This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Connections in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connections = oci.GoldenGate.get_connections(compartment_id=var["compartment_id"],
-        assignable_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        assignable_deployment_type=var["connection_assignable_deployment_type"],
-        assigned_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        connection_types=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        state=var["connection_state"],
-        technology_types=var["connection_technology_type"])
-    ```
-
-
-    :param str assignable_deployment_id: Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.
-    :param str assignable_deployment_type: Filters for connections which can be assigned to the latest version of the specified deployment type.
-    :param str assigned_deployment_id: The OCID of the deployment which for the connection must be assigned.
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param Sequence[str] connection_types: The array of connection types.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str state: A filter to return only connections having the 'lifecycleState' given.
-    :param Sequence[str] technology_types: The array of technology types.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['assignableDeploymentId'] = assignable_deployment_id
@@ -234,34 +188,6 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
                            technology_types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionsResult]:
     """
-    This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Connections in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connections = oci.GoldenGate.get_connections(compartment_id=var["compartment_id"],
-        assignable_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        assignable_deployment_type=var["connection_assignable_deployment_type"],
-        assigned_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        connection_types=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        state=var["connection_state"],
-        technology_types=var["connection_technology_type"])
-    ```
-
-
-    :param str assignable_deployment_id: Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.
-    :param str assignable_deployment_type: Filters for connections which can be assigned to the latest version of the specified deployment type.
-    :param str assigned_deployment_id: The OCID of the deployment which for the connection must be assigned.
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param Sequence[str] connection_types: The array of connection types.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str state: A filter to return only connections having the 'lifecycleState' given.
-    :param Sequence[str] technology_types: The array of technology types.
+    Use this data source to access information about an existing resource.
     """
     ...

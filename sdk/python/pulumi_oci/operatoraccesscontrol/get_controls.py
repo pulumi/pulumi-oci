@@ -49,9 +49,6 @@ class GetControlsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the operator control.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -66,7 +63,7 @@ class GetControlsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,26 +71,17 @@ class GetControlsResult:
 
     @property
     @pulumi.getter(name="operatorControlCollections")
-    def operator_control_collections(self) -> Sequence['outputs.GetControlsOperatorControlCollectionResult']:
-        """
-        The list of operator_control_collection.
-        """
+    def operator_control_collections(self) -> Optional[Sequence['outputs.GetControlsOperatorControlCollectionResult']]:
         return pulumi.get(self, "operator_control_collections")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
-        """
-        resourceType for which the OperatorControl is applicable
-        """
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the operator control.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_controls(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetControlsResult:
     """
-    This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists the operator controls in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=var["compartment_id"],
-        display_name=var["operator_control_display_name"],
-        resource_type=var["operator_control_resource_type"],
-        state=var["operator_control_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return OperatorControl that match the entire display name given.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_controls_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetControlsResult]:
     """
-    This data source provides the list of Operator Controls in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists the operator controls in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_controls = oci.OperatorAccessControl.get_controls(compartment_id=var["compartment_id"],
-        display_name=var["operator_control_display_name"],
-        resource_type=var["operator_control_resource_type"],
-        state=var["operator_control_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return OperatorControl that match the entire display name given.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

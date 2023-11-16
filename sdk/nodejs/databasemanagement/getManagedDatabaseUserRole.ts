@@ -59,11 +59,11 @@ export interface GetManagedDatabaseUserRoleResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of roles.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseUserRoleItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseUserRoleItem[];
     readonly managedDatabaseId: string;
     /**
      * The name of the role granted to the user.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -64,14 +63,14 @@ type GetUserAssessmentComparisonArgs struct {
 type GetUserAssessmentComparisonResult struct {
 	ComparisonUserAssessmentId string `pulumi:"comparisonUserAssessmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the user assessment comparison.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	Summaries []GetUserAssessmentComparisonSummary `pulumi:"summaries"`
 	// The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated      string `pulumi:"timeCreated"`
-	UserAssessmentId string `pulumi:"userAssessmentId"`
+	TimeCreated      *string `pulumi:"timeCreated"`
+	UserAssessmentId string  `pulumi:"userAssessmentId"`
 }
 
 func GetUserAssessmentComparisonOutput(ctx *pulumi.Context, args GetUserAssessmentComparisonOutputArgs, opts ...pulumi.InvokeOption) GetUserAssessmentComparisonResultOutput {
@@ -114,24 +113,18 @@ func (o GetUserAssessmentComparisonResultOutput) ToGetUserAssessmentComparisonRe
 	return o
 }
 
-func (o GetUserAssessmentComparisonResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonResult] {
-	return pulumix.Output[GetUserAssessmentComparisonResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUserAssessmentComparisonResultOutput) ComparisonUserAssessmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserAssessmentComparisonResult) string { return v.ComparisonUserAssessmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserAssessmentComparisonResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentComparisonResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserAssessmentComparisonResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentComparisonResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the user assessment comparison.
-func (o GetUserAssessmentComparisonResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentComparisonResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetUserAssessmentComparisonResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentComparisonResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -140,8 +133,8 @@ func (o GetUserAssessmentComparisonResultOutput) Summaries() GetUserAssessmentCo
 }
 
 // The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetUserAssessmentComparisonResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentComparisonResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetUserAssessmentComparisonResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentComparisonResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUserAssessmentComparisonResultOutput) UserAssessmentId() pulumi.StringOutput {

@@ -110,11 +110,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The list of DB system components that were found in the DB system discovery.
         /// </summary>
@@ -122,65 +122,65 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string ExternalDbSystemDiscoveryId;
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
-        public readonly string GridHome;
+        public readonly string? GridHome;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryPatchOperationResult> PatchOperations;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// The current lifecycle state of the external DB system discovery resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external DB system discovery was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external DB system discovery was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryResult(
-            string agentId,
+            string? agentId,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentResult> discoveredComponents,
 
-            string displayName,
+            string? displayName,
 
             string externalDbSystemDiscoveryId,
 
-            string gridHome,
+            string? gridHome,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryPatchOperationResult> patchOperations,
 
-            string resourceId,
+            string? resourceId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AgentId = agentId;
             CompartmentId = compartmentId;

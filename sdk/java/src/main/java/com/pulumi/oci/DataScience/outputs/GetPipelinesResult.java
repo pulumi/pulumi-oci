@@ -39,7 +39,7 @@ public final class GetPipelinesResult {
      * @return The list of pipelines.
      * 
      */
-    private List<GetPipelinesPipeline> pipelines;
+    private @Nullable List<GetPipelinesPipeline> pipelines;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      * 
@@ -88,7 +88,7 @@ public final class GetPipelinesResult {
      * 
      */
     public List<GetPipelinesPipeline> pipelines() {
-        return this.pipelines;
+        return this.pipelines == null ? List.of() : this.pipelines;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -119,7 +119,7 @@ public final class GetPipelinesResult {
         private @Nullable String displayName;
         private @Nullable List<GetPipelinesFilter> filters;
         private @Nullable String id;
-        private List<GetPipelinesPipeline> pipelines;
+        private @Nullable List<GetPipelinesPipeline> pipelines;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -164,8 +164,8 @@ public final class GetPipelinesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder pipelines(List<GetPipelinesPipeline> pipelines) {
-            this.pipelines = Objects.requireNonNull(pipelines);
+        public Builder pipelines(@Nullable List<GetPipelinesPipeline> pipelines) {
+            this.pipelines = pipelines;
             return this;
         }
         public Builder pipelines(GetPipelinesPipeline... pipelines) {

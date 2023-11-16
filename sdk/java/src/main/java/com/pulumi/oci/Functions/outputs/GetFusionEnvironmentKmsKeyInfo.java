@@ -6,38 +6,40 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentKmsKeyInfo {
-    private String activeKeyId;
-    private String activeKeyVersion;
-    private String currentKeyLifecycleState;
-    private String scheduledKeyId;
-    private String scheduledKeyStatus;
-    private String scheduledKeyVersion;
-    private String scheduledLifecycleState;
+    private @Nullable String activeKeyId;
+    private @Nullable String activeKeyVersion;
+    private @Nullable String currentKeyLifecycleState;
+    private @Nullable String scheduledKeyId;
+    private @Nullable String scheduledKeyStatus;
+    private @Nullable String scheduledKeyVersion;
+    private @Nullable String scheduledLifecycleState;
 
     private GetFusionEnvironmentKmsKeyInfo() {}
-    public String activeKeyId() {
-        return this.activeKeyId;
+    public Optional<String> activeKeyId() {
+        return Optional.ofNullable(this.activeKeyId);
     }
-    public String activeKeyVersion() {
-        return this.activeKeyVersion;
+    public Optional<String> activeKeyVersion() {
+        return Optional.ofNullable(this.activeKeyVersion);
     }
-    public String currentKeyLifecycleState() {
-        return this.currentKeyLifecycleState;
+    public Optional<String> currentKeyLifecycleState() {
+        return Optional.ofNullable(this.currentKeyLifecycleState);
     }
-    public String scheduledKeyId() {
-        return this.scheduledKeyId;
+    public Optional<String> scheduledKeyId() {
+        return Optional.ofNullable(this.scheduledKeyId);
     }
-    public String scheduledKeyStatus() {
-        return this.scheduledKeyStatus;
+    public Optional<String> scheduledKeyStatus() {
+        return Optional.ofNullable(this.scheduledKeyStatus);
     }
-    public String scheduledKeyVersion() {
-        return this.scheduledKeyVersion;
+    public Optional<String> scheduledKeyVersion() {
+        return Optional.ofNullable(this.scheduledKeyVersion);
     }
-    public String scheduledLifecycleState() {
-        return this.scheduledLifecycleState;
+    public Optional<String> scheduledLifecycleState() {
+        return Optional.ofNullable(this.scheduledLifecycleState);
     }
 
     public static Builder builder() {
@@ -49,13 +51,13 @@ public final class GetFusionEnvironmentKmsKeyInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String activeKeyId;
-        private String activeKeyVersion;
-        private String currentKeyLifecycleState;
-        private String scheduledKeyId;
-        private String scheduledKeyStatus;
-        private String scheduledKeyVersion;
-        private String scheduledLifecycleState;
+        private @Nullable String activeKeyId;
+        private @Nullable String activeKeyVersion;
+        private @Nullable String currentKeyLifecycleState;
+        private @Nullable String scheduledKeyId;
+        private @Nullable String scheduledKeyStatus;
+        private @Nullable String scheduledKeyVersion;
+        private @Nullable String scheduledLifecycleState;
         public Builder() {}
         public Builder(GetFusionEnvironmentKmsKeyInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,38 +71,38 @@ public final class GetFusionEnvironmentKmsKeyInfo {
         }
 
         @CustomType.Setter
-        public Builder activeKeyId(String activeKeyId) {
-            this.activeKeyId = Objects.requireNonNull(activeKeyId);
+        public Builder activeKeyId(@Nullable String activeKeyId) {
+            this.activeKeyId = activeKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder activeKeyVersion(String activeKeyVersion) {
-            this.activeKeyVersion = Objects.requireNonNull(activeKeyVersion);
+        public Builder activeKeyVersion(@Nullable String activeKeyVersion) {
+            this.activeKeyVersion = activeKeyVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder currentKeyLifecycleState(String currentKeyLifecycleState) {
-            this.currentKeyLifecycleState = Objects.requireNonNull(currentKeyLifecycleState);
+        public Builder currentKeyLifecycleState(@Nullable String currentKeyLifecycleState) {
+            this.currentKeyLifecycleState = currentKeyLifecycleState;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledKeyId(String scheduledKeyId) {
-            this.scheduledKeyId = Objects.requireNonNull(scheduledKeyId);
+        public Builder scheduledKeyId(@Nullable String scheduledKeyId) {
+            this.scheduledKeyId = scheduledKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledKeyStatus(String scheduledKeyStatus) {
-            this.scheduledKeyStatus = Objects.requireNonNull(scheduledKeyStatus);
+        public Builder scheduledKeyStatus(@Nullable String scheduledKeyStatus) {
+            this.scheduledKeyStatus = scheduledKeyStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledKeyVersion(String scheduledKeyVersion) {
-            this.scheduledKeyVersion = Objects.requireNonNull(scheduledKeyVersion);
+        public Builder scheduledKeyVersion(@Nullable String scheduledKeyVersion) {
+            this.scheduledKeyVersion = scheduledKeyVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduledLifecycleState(String scheduledLifecycleState) {
-            this.scheduledLifecycleState = Objects.requireNonNull(scheduledLifecycleState);
+        public Builder scheduledLifecycleState(@Nullable String scheduledLifecycleState) {
+            this.scheduledLifecycleState = scheduledLifecycleState;
             return this;
         }
         public GetFusionEnvironmentKmsKeyInfo build() {
